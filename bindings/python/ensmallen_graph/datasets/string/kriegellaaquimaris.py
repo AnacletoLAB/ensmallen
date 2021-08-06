@@ -88,7 +88,7 @@ def KriegellaAquimaris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KriegellaAquimaris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

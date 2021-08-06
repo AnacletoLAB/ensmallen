@@ -78,7 +78,7 @@ def Eu2005(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Eu2005",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

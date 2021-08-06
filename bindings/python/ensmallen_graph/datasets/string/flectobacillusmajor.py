@@ -91,7 +91,7 @@ def FlectobacillusMajor(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlectobacillusMajor",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ParaburkholderiaPhenazinium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParaburkholderiaPhenazinium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

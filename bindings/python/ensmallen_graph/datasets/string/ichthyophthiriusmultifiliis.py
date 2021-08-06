@@ -91,7 +91,7 @@ def IchthyophthiriusMultifiliis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IchthyophthiriusMultifiliis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

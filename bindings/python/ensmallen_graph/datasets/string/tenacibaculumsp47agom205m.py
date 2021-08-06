@@ -91,7 +91,7 @@ def TenacibaculumSp47agom205m(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TenacibaculumSp47agom205m",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

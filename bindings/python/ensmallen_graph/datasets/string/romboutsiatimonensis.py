@@ -88,7 +88,7 @@ def RomboutsiaTimonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RomboutsiaTimonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AcetanaerobacteriumElongatum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcetanaerobacteriumElongatum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

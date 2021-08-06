@@ -88,7 +88,7 @@ def HoefleaSpImcc20628(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HoefleaSpImcc20628",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SulfurovumSpFs083(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfurovumSpFs083",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

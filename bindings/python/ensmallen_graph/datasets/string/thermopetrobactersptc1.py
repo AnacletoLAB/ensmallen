@@ -88,7 +88,7 @@ def ThermopetrobacterSpTc1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermopetrobacterSpTc1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

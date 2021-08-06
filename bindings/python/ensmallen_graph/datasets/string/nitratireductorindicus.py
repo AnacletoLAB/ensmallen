@@ -91,7 +91,7 @@ def NitratireductorIndicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitratireductorIndicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

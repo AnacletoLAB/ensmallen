@@ -91,7 +91,7 @@ def StreptacidiphilusNeutrinimicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptacidiphilusNeutrinimicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

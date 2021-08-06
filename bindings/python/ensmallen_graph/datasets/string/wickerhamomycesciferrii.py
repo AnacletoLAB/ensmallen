@@ -91,7 +91,7 @@ def WickerhamomycesCiferrii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WickerhamomycesCiferrii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

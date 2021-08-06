@@ -91,7 +91,7 @@ def LactobacillusFabifermentans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusFabifermentans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

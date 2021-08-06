@@ -88,7 +88,7 @@ def ErwiniaSpEjp617(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErwiniaSpEjp617",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

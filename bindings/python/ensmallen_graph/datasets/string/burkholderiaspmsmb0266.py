@@ -88,7 +88,7 @@ def BurkholderiaSpMsmb0266(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BurkholderiaSpMsmb0266",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

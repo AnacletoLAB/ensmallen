@@ -88,7 +88,7 @@ def ExiguobacteriumAlkaliphilum121(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ExiguobacteriumAlkaliphilum121",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

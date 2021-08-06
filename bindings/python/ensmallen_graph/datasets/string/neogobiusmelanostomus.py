@@ -88,7 +88,7 @@ def NeogobiusMelanostomus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeogobiusMelanostomus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

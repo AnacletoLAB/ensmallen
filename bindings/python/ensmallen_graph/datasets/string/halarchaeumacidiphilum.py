@@ -91,7 +91,7 @@ def HalarchaeumAcidiphilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalarchaeumAcidiphilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

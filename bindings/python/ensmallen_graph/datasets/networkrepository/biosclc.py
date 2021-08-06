@@ -100,7 +100,7 @@ def BioScLc(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BioScLc",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

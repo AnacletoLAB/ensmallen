@@ -88,7 +88,7 @@ def ChondromycesCrocatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChondromycesCrocatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

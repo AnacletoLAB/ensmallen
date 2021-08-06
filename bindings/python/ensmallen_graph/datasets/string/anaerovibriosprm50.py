@@ -91,7 +91,7 @@ def AnaerovibrioSpRm50(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerovibrioSpRm50",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

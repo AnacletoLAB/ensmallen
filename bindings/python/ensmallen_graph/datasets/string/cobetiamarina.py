@@ -91,7 +91,7 @@ def CobetiaMarina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CobetiaMarina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

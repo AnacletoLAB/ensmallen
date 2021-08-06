@@ -78,7 +78,7 @@ def Sw100060d3Trial2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Sw100060d3Trial2",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

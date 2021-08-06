@@ -91,7 +91,7 @@ def ParacaedibacterSymbiosus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParacaedibacterSymbiosus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

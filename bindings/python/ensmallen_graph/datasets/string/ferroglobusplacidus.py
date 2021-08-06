@@ -91,7 +91,7 @@ def FerroglobusPlacidus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FerroglobusPlacidus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

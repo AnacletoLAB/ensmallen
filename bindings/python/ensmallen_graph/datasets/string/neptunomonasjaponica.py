@@ -91,7 +91,7 @@ def NeptunomonasJaponica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeptunomonasJaponica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

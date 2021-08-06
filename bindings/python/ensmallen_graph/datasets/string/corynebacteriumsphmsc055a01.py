@@ -88,7 +88,7 @@ def CorynebacteriumSpHmsc055a01(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumSpHmsc055a01",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

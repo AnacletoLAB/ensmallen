@@ -88,7 +88,7 @@ def AspergillusHomomorphusCbs101889(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AspergillusHomomorphusCbs101889",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

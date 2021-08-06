@@ -88,7 +88,7 @@ def MyroidesGuanonis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MyroidesGuanonis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

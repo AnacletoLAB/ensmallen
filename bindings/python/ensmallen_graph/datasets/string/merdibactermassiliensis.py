@@ -88,7 +88,7 @@ def MerdibacterMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MerdibacterMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

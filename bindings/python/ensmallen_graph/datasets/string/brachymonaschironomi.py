@@ -91,7 +91,7 @@ def BrachymonasChironomi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrachymonasChironomi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

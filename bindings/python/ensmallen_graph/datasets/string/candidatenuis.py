@@ -91,7 +91,7 @@ def CandidaTenuis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidaTenuis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

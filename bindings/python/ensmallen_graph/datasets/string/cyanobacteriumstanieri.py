@@ -91,7 +91,7 @@ def CyanobacteriumStanieri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CyanobacteriumStanieri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

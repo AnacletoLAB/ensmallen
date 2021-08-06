@@ -88,7 +88,7 @@ def ConfluentimicrobiumSpEmb200Ns6(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ConfluentimicrobiumSpEmb200Ns6",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

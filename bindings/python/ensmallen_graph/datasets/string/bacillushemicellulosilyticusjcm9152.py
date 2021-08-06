@@ -88,7 +88,7 @@ def BacillusHemicellulosilyticusJcm9152(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusHemicellulosilyticusJcm9152",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

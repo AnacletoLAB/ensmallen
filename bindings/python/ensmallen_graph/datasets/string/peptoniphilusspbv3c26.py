@@ -91,7 +91,7 @@ def PeptoniphilusSpBv3c26(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeptoniphilusSpBv3c26",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

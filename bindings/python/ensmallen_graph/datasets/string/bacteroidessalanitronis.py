@@ -91,7 +91,7 @@ def BacteroidesSalanitronis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesSalanitronis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

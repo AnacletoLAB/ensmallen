@@ -91,7 +91,7 @@ def NeisseriaMucosaAtcc25996(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeisseriaMucosaAtcc25996",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

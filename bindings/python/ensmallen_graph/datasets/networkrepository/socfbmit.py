@@ -120,7 +120,7 @@ def SocfbMit(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbMit",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

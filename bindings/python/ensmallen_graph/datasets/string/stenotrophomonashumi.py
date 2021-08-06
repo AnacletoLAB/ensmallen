@@ -88,7 +88,7 @@ def StenotrophomonasHumi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StenotrophomonasHumi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

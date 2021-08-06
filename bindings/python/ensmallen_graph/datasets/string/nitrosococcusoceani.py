@@ -91,7 +91,7 @@ def NitrosococcusOceani(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrosococcusOceani",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

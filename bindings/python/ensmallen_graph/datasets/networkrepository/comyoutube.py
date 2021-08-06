@@ -78,7 +78,7 @@ def ComYoutube(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ComYoutube",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

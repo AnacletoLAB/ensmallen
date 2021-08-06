@@ -88,7 +88,7 @@ def GracilibacterSpBrhC7a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GracilibacterSpBrhC7a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

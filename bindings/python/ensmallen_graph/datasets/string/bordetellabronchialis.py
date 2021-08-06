@@ -88,7 +88,7 @@ def BordetellaBronchialis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BordetellaBronchialis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

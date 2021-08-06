@@ -91,7 +91,7 @@ def AquaspirillumSerpens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AquaspirillumSerpens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def LactobacillusCamelliaeDsm22697Jcm13995(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusCamelliaeDsm22697Jcm13995",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

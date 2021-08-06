@@ -88,7 +88,7 @@ def IzhakiellaAustraliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IzhakiellaAustraliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MusaAcuminataSubspMalaccensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MusaAcuminataSubspMalaccensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

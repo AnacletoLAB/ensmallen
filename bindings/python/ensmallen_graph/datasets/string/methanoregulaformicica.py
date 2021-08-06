@@ -91,7 +91,7 @@ def MethanoregulaFormicica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanoregulaFormicica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

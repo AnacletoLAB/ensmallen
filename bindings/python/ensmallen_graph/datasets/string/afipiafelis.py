@@ -91,7 +91,7 @@ def AfipiaFelis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AfipiaFelis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

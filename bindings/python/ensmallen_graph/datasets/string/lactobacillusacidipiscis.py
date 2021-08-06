@@ -88,7 +88,7 @@ def LactobacillusAcidipiscis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusAcidipiscis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

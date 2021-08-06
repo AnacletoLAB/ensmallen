@@ -91,7 +91,7 @@ def RhodospirillumRubrum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodospirillumRubrum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

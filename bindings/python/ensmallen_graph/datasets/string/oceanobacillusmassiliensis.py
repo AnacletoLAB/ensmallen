@@ -91,7 +91,7 @@ def OceanobacillusMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OceanobacillusMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

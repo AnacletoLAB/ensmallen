@@ -88,7 +88,7 @@ def CyclobacteriumHalophilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CyclobacteriumHalophilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

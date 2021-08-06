@@ -91,7 +91,7 @@ def GallaecimonasXiamenensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GallaecimonasXiamenensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def HalothermothrixOrenii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalothermothrixOrenii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

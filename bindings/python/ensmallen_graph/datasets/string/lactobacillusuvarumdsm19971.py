@@ -88,7 +88,7 @@ def LactobacillusUvarumDsm19971(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusUvarumDsm19971",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

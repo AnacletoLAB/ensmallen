@@ -88,7 +88,7 @@ def ScheffersomycesStipitisCbs6054(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ScheffersomycesStipitisCbs6054",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def NatrialbaceaeArchaeonTcBr11E2g28(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NatrialbaceaeArchaeonTcBr11E2g28",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

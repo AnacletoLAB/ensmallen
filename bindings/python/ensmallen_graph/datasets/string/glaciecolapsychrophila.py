@@ -91,7 +91,7 @@ def GlaciecolaPsychrophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GlaciecolaPsychrophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

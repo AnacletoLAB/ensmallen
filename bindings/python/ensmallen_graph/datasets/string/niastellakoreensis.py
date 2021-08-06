@@ -91,7 +91,7 @@ def NiastellaKoreensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NiastellaKoreensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

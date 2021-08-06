@@ -91,7 +91,7 @@ def GeodermatophilaceaeBacteriumUrhb0048(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeodermatophilaceaeBacteriumUrhb0048",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

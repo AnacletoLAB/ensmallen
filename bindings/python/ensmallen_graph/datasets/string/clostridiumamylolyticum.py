@@ -88,7 +88,7 @@ def ClostridiumAmylolyticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumAmylolyticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

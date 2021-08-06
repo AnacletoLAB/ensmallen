@@ -88,7 +88,7 @@ def MetallosphaeraHakonensisJcm8857Dsm7519(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MetallosphaeraHakonensisJcm8857Dsm7519",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

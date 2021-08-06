@@ -91,7 +91,7 @@ def BradyrhizobiumOligotrophicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BradyrhizobiumOligotrophicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

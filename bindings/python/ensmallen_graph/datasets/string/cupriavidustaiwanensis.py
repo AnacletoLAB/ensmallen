@@ -91,7 +91,7 @@ def CupriavidusTaiwanensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CupriavidusTaiwanensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def SporisoriumReilianum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SporisoriumReilianum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

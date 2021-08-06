@@ -88,7 +88,7 @@ def HydrogenophagaSpIbvhs1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HydrogenophagaSpIbvhs1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

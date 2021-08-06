@@ -88,7 +88,7 @@ def MarinobacteriumJannaschiiDsm6295(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinobacteriumJannaschiiDsm6295",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

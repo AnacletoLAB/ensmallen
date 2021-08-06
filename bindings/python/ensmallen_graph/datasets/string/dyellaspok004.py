@@ -88,7 +88,7 @@ def DyellaSpOk004(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DyellaSpOk004",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

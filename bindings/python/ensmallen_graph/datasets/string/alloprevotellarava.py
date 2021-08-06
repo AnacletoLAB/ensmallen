@@ -91,7 +91,7 @@ def AlloprevotellaRava(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlloprevotellaRava",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

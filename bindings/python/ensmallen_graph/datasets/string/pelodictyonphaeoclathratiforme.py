@@ -91,7 +91,7 @@ def PelodictyonPhaeoclathratiforme(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PelodictyonPhaeoclathratiforme",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

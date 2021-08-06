@@ -88,7 +88,7 @@ def CastorCanadensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CastorCanadensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def FolsomiaCandida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FolsomiaCandida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

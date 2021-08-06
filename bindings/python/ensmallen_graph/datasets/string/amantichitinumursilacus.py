@@ -88,7 +88,7 @@ def AmantichitinumUrsilacus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmantichitinumUrsilacus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

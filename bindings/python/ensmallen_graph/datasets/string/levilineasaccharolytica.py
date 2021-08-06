@@ -88,7 +88,7 @@ def LevilineaSaccharolytica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LevilineaSaccharolytica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

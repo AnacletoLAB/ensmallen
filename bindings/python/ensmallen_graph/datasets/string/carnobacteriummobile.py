@@ -91,7 +91,7 @@ def CarnobacteriumMobile(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CarnobacteriumMobile",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

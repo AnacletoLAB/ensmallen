@@ -88,7 +88,7 @@ def ErwiniaTeleogrylli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErwiniaTeleogrylli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

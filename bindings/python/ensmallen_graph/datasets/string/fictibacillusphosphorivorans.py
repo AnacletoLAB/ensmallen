@@ -88,7 +88,7 @@ def FictibacillusPhosphorivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FictibacillusPhosphorivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

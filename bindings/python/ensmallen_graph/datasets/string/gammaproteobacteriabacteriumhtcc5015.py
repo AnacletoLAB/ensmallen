@@ -88,7 +88,7 @@ def GammaproteobacteriaBacteriumHtcc5015(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GammaproteobacteriaBacteriumHtcc5015",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

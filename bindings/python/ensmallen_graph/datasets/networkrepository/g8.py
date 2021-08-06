@@ -78,7 +78,7 @@ def G8(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="G8",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

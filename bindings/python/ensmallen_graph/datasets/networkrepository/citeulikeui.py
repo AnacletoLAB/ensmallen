@@ -78,7 +78,7 @@ def CiteulikeUi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CiteulikeUi",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

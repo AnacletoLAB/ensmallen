@@ -91,7 +91,7 @@ def EubacteriumAcidaminophilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EubacteriumAcidaminophilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

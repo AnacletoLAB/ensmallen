@@ -91,7 +91,7 @@ def ActinoalloteichusCyanogriseus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinoalloteichusCyanogriseus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

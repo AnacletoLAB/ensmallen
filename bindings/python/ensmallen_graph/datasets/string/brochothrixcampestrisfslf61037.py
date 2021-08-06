@@ -88,7 +88,7 @@ def BrochothrixCampestrisFslF61037(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrochothrixCampestrisFslF61037",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

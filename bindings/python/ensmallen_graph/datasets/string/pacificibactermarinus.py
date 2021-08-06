@@ -88,7 +88,7 @@ def PacificibacterMarinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PacificibacterMarinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

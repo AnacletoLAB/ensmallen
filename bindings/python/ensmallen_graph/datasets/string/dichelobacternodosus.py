@@ -91,7 +91,7 @@ def DichelobacterNodosus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DichelobacterNodosus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

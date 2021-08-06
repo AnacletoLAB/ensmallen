@@ -91,7 +91,7 @@ def PandoraeaSpSd62(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PandoraeaSpSd62",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

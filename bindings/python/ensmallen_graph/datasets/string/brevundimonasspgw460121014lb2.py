@@ -88,7 +88,7 @@ def BrevundimonasSpGw460121014Lb2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrevundimonasSpGw460121014Lb2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

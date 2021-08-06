@@ -88,7 +88,7 @@ def AtopobiumDeltae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AtopobiumDeltae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

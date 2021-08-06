@@ -91,7 +91,7 @@ def DonghicolaXiamenensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DonghicolaXiamenensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

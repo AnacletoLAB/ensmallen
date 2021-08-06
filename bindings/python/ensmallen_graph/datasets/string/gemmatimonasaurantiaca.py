@@ -91,7 +91,7 @@ def GemmatimonasAurantiaca(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GemmatimonasAurantiaca",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

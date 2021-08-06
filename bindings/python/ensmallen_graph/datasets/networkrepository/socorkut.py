@@ -94,7 +94,7 @@ def SocOrkut(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocOrkut",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

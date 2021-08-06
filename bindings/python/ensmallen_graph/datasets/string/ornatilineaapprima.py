@@ -88,7 +88,7 @@ def OrnatilineaApprima(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OrnatilineaApprima",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

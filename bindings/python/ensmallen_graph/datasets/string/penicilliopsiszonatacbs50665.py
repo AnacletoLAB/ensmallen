@@ -88,7 +88,7 @@ def PenicilliopsisZonataCbs50665(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PenicilliopsisZonataCbs50665",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

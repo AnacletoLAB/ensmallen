@@ -88,7 +88,7 @@ def HistophilusSomni2336(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HistophilusSomni2336",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

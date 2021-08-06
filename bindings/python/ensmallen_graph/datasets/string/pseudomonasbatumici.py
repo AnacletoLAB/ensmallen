@@ -88,7 +88,7 @@ def PseudomonasBatumici(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasBatumici",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

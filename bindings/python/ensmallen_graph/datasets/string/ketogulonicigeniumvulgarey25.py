@@ -88,7 +88,7 @@ def KetogulonicigeniumVulgareY25(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KetogulonicigeniumVulgareY25",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

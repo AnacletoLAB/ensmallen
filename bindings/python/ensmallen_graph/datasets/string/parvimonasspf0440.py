@@ -91,7 +91,7 @@ def ParvimonasSpF0440(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParvimonasSpF0440",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

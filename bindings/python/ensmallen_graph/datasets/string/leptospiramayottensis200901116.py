@@ -88,7 +88,7 @@ def LeptospiraMayottensis200901116(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptospiraMayottensis200901116",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

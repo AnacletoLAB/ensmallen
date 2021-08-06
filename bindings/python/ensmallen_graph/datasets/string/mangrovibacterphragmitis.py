@@ -88,7 +88,7 @@ def MangrovibacterPhragmitis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MangrovibacterPhragmitis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

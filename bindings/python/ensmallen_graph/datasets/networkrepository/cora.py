@@ -78,7 +78,7 @@ def Cora(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Cora",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

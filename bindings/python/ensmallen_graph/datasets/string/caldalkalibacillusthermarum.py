@@ -91,7 +91,7 @@ def CaldalkalibacillusThermarum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaldalkalibacillusThermarum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

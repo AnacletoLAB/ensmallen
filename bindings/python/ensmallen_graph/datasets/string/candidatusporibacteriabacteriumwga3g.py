@@ -88,7 +88,7 @@ def CandidatusPoribacteriaBacteriumWga3g(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusPoribacteriaBacteriumWga3g",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def OryziasLatipes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OryziasLatipes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

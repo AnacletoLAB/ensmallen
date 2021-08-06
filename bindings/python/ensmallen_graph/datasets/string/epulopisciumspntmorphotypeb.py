@@ -88,7 +88,7 @@ def EpulopisciumSpNTMorphotypeB(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EpulopisciumSpNTMorphotypeB",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

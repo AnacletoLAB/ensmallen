@@ -91,7 +91,7 @@ def EnsiferSpBr816(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnsiferSpBr816",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

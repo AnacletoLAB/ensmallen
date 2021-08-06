@@ -88,7 +88,7 @@ def ColeophomaCylindrospora(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ColeophomaCylindrospora",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def RheinheimeraSpSa1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RheinheimeraSpSa1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

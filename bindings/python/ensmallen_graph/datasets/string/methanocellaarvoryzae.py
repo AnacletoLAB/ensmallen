@@ -91,7 +91,7 @@ def MethanocellaArvoryzae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanocellaArvoryzae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

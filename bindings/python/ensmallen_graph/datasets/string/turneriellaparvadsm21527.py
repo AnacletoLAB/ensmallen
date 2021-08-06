@@ -88,7 +88,7 @@ def TurneriellaParvaDsm21527(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TurneriellaParvaDsm21527",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

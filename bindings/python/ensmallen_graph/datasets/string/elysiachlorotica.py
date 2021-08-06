@@ -88,7 +88,7 @@ def ElysiaChlorotica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ElysiaChlorotica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

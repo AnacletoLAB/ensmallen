@@ -91,7 +91,7 @@ def ActinomycesNeuiiBvs029a5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomycesNeuiiBvs029a5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

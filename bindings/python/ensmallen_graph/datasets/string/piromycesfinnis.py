@@ -88,7 +88,7 @@ def PiromycesFinnis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PiromycesFinnis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def StrongylocentrotusPurpuratus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StrongylocentrotusPurpuratus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SulfurovumLithotrophicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfurovumLithotrophicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

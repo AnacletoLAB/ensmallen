@@ -78,7 +78,7 @@ def DblpCite(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DblpCite",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

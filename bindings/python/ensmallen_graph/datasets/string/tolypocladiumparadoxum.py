@@ -88,7 +88,7 @@ def TolypocladiumParadoxum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TolypocladiumParadoxum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

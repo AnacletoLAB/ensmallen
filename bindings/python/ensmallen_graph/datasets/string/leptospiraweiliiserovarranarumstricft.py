@@ -88,7 +88,7 @@ def LeptospiraWeiliiSerovarRanarumStrIcft(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptospiraWeiliiSerovarRanarumStrIcft",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MarineGroupIiEuryarchaeoteRedseaS11B3n4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarineGroupIiEuryarchaeoteRedseaS11B3n4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

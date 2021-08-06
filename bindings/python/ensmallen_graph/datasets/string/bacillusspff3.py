@@ -91,7 +91,7 @@ def BacillusSpFf3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusSpFf3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

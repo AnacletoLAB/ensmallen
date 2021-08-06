@@ -88,7 +88,7 @@ def MethyloterricolaOryzae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethyloterricolaOryzae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

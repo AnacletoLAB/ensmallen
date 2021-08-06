@@ -110,7 +110,7 @@ def BioCelegansneural(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BioCelegansneural",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

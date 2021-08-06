@@ -88,7 +88,7 @@ def TersicoccusSpBi70(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TersicoccusSpBi70",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

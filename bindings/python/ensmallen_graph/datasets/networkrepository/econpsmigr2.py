@@ -78,7 +78,7 @@ def EconPsmigr2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EconPsmigr2",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

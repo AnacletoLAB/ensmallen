@@ -88,7 +88,7 @@ def IntrasporangiumFlavum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IntrasporangiumFlavum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

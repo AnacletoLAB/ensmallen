@@ -91,7 +91,7 @@ def UrsusMaritimus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UrsusMaritimus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

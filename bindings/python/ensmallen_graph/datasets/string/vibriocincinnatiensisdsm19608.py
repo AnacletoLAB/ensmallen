@@ -88,7 +88,7 @@ def VibrioCincinnatiensisDsm19608(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioCincinnatiensisDsm19608",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

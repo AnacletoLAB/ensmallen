@@ -88,7 +88,7 @@ def ParacoccusSolventivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParacoccusSolventivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

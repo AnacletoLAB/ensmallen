@@ -91,7 +91,7 @@ def ArenibacterCertesii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArenibacterCertesii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

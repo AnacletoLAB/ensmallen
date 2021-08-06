@@ -88,7 +88,7 @@ def AlbidiferaxSpOv413(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlbidiferaxSpOv413",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

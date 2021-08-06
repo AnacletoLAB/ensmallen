@@ -88,7 +88,7 @@ def DeinococcusFicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DeinococcusFicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

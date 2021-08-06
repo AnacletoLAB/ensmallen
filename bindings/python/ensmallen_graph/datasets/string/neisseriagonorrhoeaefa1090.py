@@ -88,7 +88,7 @@ def NeisseriaGonorrhoeaeFa1090(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeisseriaGonorrhoeaeFa1090",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -96,7 +96,7 @@ def WebPolblogs(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebPolblogs",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

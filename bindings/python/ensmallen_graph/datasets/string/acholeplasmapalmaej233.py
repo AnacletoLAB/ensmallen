@@ -88,7 +88,7 @@ def AcholeplasmaPalmaeJ233(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcholeplasmaPalmaeJ233",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

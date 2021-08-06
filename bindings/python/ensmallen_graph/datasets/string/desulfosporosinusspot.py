@@ -91,7 +91,7 @@ def DesulfosporosinusSpOt(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfosporosinusSpOt",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

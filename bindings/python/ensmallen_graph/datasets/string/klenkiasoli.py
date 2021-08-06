@@ -88,7 +88,7 @@ def KlenkiaSoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KlenkiaSoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

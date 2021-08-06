@@ -91,7 +91,7 @@ def MethanothermococcusThermolithotrophicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanothermococcusThermolithotrophicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

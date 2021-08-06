@@ -88,7 +88,7 @@ def BacteroidesCaecimuris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesCaecimuris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PalaeococcusPacificus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PalaeococcusPacificus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ThaueraPhenolivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThaueraPhenolivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

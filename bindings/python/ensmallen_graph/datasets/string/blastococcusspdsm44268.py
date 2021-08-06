@@ -88,7 +88,7 @@ def BlastococcusSpDsm44268(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlastococcusSpDsm44268",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

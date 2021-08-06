@@ -88,7 +88,7 @@ def RathayibacterOskolensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RathayibacterOskolensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

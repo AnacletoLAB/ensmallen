@@ -88,7 +88,7 @@ def CopresenceLh10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CopresenceLh10",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def RickettsiaFelis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RickettsiaFelis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

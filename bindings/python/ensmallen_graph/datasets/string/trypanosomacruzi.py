@@ -91,7 +91,7 @@ def TrypanosomaCruzi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrypanosomaCruzi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def LachanceaDasiensisCbs10888(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LachanceaDasiensisCbs10888",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

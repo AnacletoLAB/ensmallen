@@ -78,7 +78,7 @@ def CaAminer(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaAminer",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

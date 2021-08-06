@@ -88,7 +88,7 @@ def MonascusPurpureus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MonascusPurpureus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ActinomycesRuminicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomycesRuminicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ElusimicrobiaBacteriumGwa26223(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ElusimicrobiaBacteriumGwa26223",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

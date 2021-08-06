@@ -88,7 +88,7 @@ def PantoeaDispersa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PantoeaDispersa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -112,7 +112,7 @@ def WebArabic2005(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebArabic2005",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

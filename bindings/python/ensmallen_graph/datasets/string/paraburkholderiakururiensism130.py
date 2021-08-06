@@ -88,7 +88,7 @@ def ParaburkholderiaKururiensisM130(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParaburkholderiaKururiensisM130",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

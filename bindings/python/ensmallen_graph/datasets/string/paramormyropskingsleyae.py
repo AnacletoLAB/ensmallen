@@ -88,7 +88,7 @@ def ParamormyropsKingsleyae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParamormyropsKingsleyae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

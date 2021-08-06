@@ -91,7 +91,7 @@ def PseudophaeobacterArcticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudophaeobacterArcticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ThermosiphoSp1063(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermosiphoSp1063",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

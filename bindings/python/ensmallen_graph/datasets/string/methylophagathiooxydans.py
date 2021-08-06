@@ -88,7 +88,7 @@ def MethylophagaThiooxydans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylophagaThiooxydans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def CitDblp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CitDblp",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

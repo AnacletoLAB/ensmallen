@@ -88,7 +88,7 @@ def GeodermatophilusDictyosporus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeodermatophilusDictyosporus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

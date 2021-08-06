@@ -91,7 +91,7 @@ def ErysipelotrichaceaeBacterium5254faa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErysipelotrichaceaeBacterium5254faa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def RaineyellaAntarctica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RaineyellaAntarctica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

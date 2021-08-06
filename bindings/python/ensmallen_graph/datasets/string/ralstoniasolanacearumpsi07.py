@@ -91,7 +91,7 @@ def RalstoniaSolanacearumPsi07(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RalstoniaSolanacearumPsi07",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

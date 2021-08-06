@@ -88,7 +88,7 @@ def MethylomicrobiumBuryatense5g(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylomicrobiumBuryatense5g",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

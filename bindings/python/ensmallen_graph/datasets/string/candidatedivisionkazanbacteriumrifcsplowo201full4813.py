@@ -88,7 +88,7 @@ def CandidateDivisionKazanBacteriumRifcsplowo201Full4813(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidateDivisionKazanBacteriumRifcsplowo201Full4813",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

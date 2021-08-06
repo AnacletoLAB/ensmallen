@@ -92,7 +92,7 @@ def ScRel9(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ScRel9",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

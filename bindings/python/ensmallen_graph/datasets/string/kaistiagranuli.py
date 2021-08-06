@@ -91,7 +91,7 @@ def KaistiaGranuli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KaistiaGranuli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

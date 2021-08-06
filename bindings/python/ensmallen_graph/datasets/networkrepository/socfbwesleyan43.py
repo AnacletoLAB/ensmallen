@@ -120,7 +120,7 @@ def SocfbWesleyan43(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbWesleyan43",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

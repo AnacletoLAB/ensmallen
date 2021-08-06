@@ -88,7 +88,7 @@ def CryomycesMinteri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CryomycesMinteri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -100,7 +100,7 @@ def InfUsair97(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="InfUsair97",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

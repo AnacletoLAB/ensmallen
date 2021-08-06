@@ -88,7 +88,7 @@ def FournierellaMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FournierellaMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

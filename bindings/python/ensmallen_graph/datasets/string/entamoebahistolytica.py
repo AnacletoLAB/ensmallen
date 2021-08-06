@@ -91,7 +91,7 @@ def EntamoebaHistolytica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EntamoebaHistolytica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

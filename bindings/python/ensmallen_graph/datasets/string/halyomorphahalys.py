@@ -91,7 +91,7 @@ def HalyomorphaHalys(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalyomorphaHalys",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

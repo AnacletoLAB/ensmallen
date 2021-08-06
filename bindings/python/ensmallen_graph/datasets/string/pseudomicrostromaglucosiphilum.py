@@ -88,7 +88,7 @@ def PseudomicrostromaGlucosiphilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomicrostromaGlucosiphilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

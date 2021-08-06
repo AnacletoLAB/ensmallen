@@ -91,7 +91,7 @@ def AnabaenaSp90(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnabaenaSp90",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def HaloarculaArgentinensisDsm12282(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaloarculaArgentinensisDsm12282",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

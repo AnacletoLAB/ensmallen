@@ -88,7 +88,7 @@ def RhodobacaBarguzinensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodobacaBarguzinensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

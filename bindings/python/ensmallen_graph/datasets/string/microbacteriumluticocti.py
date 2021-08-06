@@ -91,7 +91,7 @@ def MicrobacteriumLuticocti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriumLuticocti",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

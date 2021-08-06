@@ -91,7 +91,7 @@ def CorynebacteriumKroppenstedtii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumKroppenstedtii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

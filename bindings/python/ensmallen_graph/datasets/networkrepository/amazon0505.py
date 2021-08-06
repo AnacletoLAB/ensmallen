@@ -78,7 +78,7 @@ def Amazon0505(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Amazon0505",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

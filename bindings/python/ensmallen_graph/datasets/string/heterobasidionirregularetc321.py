@@ -88,7 +88,7 @@ def HeterobasidionIrregulareTc321(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HeterobasidionIrregulareTc321",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

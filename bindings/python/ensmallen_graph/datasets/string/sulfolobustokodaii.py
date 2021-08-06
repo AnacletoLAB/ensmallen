@@ -91,7 +91,7 @@ def SulfolobusTokodaii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfolobusTokodaii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

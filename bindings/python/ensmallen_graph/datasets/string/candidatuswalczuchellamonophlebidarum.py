@@ -88,7 +88,7 @@ def CandidatusWalczuchellaMonophlebidarum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusWalczuchellaMonophlebidarum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PhycicoccusSpSoil803(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhycicoccusSpSoil803",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

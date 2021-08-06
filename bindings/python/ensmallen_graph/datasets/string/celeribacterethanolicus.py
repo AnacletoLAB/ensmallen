@@ -88,7 +88,7 @@ def CeleribacterEthanolicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CeleribacterEthanolicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

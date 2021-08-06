@@ -91,7 +91,7 @@ def HaloferaxVolcanii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaloferaxVolcanii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

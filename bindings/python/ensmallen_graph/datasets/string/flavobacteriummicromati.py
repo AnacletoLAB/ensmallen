@@ -88,7 +88,7 @@ def FlavobacteriumMicromati(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumMicromati",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PhoceaMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhoceaMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

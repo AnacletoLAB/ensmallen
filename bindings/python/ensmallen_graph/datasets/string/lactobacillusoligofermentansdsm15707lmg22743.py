@@ -88,7 +88,7 @@ def LactobacillusOligofermentansDsm15707Lmg22743(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusOligofermentansDsm15707Lmg22743",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

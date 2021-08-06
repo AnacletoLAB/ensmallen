@@ -88,7 +88,7 @@ def MycobacteriumConspicuum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumConspicuum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

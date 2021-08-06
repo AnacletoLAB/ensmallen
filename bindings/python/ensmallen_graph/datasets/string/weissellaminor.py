@@ -88,7 +88,7 @@ def WeissellaMinor(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WeissellaMinor",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

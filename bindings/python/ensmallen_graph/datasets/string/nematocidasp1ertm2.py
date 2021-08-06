@@ -88,7 +88,7 @@ def NematocidaSp1Ertm2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NematocidaSp1Ertm2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

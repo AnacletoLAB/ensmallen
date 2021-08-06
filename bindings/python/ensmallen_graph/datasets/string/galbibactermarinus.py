@@ -91,7 +91,7 @@ def GalbibacterMarinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GalbibacterMarinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

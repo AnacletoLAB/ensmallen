@@ -88,7 +88,7 @@ def ArcobacterCryaerophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArcobacterCryaerophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

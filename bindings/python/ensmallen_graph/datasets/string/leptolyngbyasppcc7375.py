@@ -91,7 +91,7 @@ def LeptolyngbyaSpPcc7375(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptolyngbyaSpPcc7375",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -92,7 +92,7 @@ def ScLdoor(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ScLdoor",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def AvesSparrowSocial(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AvesSparrowSocial",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def CaulobacterSegnis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaulobacterSegnis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

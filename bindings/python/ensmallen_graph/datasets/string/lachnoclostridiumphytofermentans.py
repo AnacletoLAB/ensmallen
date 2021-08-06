@@ -91,7 +91,7 @@ def LachnoclostridiumPhytofermentans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LachnoclostridiumPhytofermentans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

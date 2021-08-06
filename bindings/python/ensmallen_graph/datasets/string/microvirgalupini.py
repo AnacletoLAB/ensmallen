@@ -91,7 +91,7 @@ def MicrovirgaLupini(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrovirgaLupini",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

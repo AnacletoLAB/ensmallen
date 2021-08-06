@@ -88,7 +88,7 @@ def AnophelesAtroparvus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnophelesAtroparvus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

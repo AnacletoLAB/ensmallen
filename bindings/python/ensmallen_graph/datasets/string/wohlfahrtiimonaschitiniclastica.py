@@ -91,7 +91,7 @@ def WohlfahrtiimonasChitiniclastica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WohlfahrtiimonasChitiniclastica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

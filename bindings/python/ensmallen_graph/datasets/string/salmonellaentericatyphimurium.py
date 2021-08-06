@@ -91,7 +91,7 @@ def SalmonellaEntericaTyphimurium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalmonellaEntericaTyphimurium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

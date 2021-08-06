@@ -91,7 +91,7 @@ def ProchlorococcusMarinusGp2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProchlorococcusMarinusGp2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

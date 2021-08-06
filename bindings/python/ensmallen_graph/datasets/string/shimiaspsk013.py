@@ -88,7 +88,7 @@ def ShimiaSpSk013(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShimiaSpSk013",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

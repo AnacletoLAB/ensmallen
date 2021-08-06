@@ -88,7 +88,7 @@ def MetarhiziumAcridumCqma102(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MetarhiziumAcridumCqma102",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

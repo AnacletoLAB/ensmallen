@@ -91,7 +91,7 @@ def SanguibacterKeddieii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SanguibacterKeddieii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

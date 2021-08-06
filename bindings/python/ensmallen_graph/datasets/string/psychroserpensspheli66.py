@@ -88,7 +88,7 @@ def PsychroserpensSpHelI66(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PsychroserpensSpHelI66",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

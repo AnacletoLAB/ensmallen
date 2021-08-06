@@ -91,7 +91,7 @@ def YaniellaHalotolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="YaniellaHalotolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

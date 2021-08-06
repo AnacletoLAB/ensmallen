@@ -88,7 +88,7 @@ def PseudovibrioHongkongensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudovibrioHongkongensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

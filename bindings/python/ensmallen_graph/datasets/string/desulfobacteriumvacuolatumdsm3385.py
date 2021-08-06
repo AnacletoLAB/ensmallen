@@ -88,7 +88,7 @@ def DesulfobacteriumVacuolatumDsm3385(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfobacteriumVacuolatumDsm3385",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

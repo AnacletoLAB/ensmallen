@@ -88,7 +88,7 @@ def ThioalkalivibrioParadoxusArh1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThioalkalivibrioParadoxusArh1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

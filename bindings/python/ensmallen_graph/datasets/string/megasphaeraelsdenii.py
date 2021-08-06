@@ -91,7 +91,7 @@ def MegasphaeraElsdenii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MegasphaeraElsdenii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CordycepsFumosoroseaArsef2679(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CordycepsFumosoroseaArsef2679",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

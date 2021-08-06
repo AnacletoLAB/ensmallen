@@ -100,7 +100,7 @@ def BioScTs(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BioScTs",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

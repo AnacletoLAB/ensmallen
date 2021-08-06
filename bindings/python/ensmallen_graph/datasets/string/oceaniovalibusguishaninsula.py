@@ -91,7 +91,7 @@ def OceaniovalibusGuishaninsula(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OceaniovalibusGuishaninsula",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

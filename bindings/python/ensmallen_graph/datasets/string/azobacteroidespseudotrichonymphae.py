@@ -91,7 +91,7 @@ def AzobacteroidesPseudotrichonymphae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AzobacteroidesPseudotrichonymphae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

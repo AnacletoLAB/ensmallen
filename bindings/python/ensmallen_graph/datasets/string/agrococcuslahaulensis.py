@@ -91,7 +91,7 @@ def AgrococcusLahaulensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AgrococcusLahaulensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

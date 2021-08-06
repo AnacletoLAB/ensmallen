@@ -91,7 +91,7 @@ def ClostridiumAcetobutylicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumAcetobutylicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

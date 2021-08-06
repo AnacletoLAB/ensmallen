@@ -88,7 +88,7 @@ def CaproniaCoronataCbs61796(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaproniaCoronataCbs61796",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

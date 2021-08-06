@@ -91,7 +91,7 @@ def NeurosporaTetrasperma(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeurosporaTetrasperma",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

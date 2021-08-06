@@ -91,7 +91,7 @@ def RahnellaSpY9602(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RahnellaSpY9602",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

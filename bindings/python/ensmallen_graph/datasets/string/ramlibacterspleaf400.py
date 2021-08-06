@@ -88,7 +88,7 @@ def RamlibacterSpLeaf400(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RamlibacterSpLeaf400",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def MycoplasmaSynoviae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaSynoviae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

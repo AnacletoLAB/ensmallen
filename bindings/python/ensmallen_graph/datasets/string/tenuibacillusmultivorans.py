@@ -88,7 +88,7 @@ def TenuibacillusMultivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TenuibacillusMultivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CalidrisPygmaea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CalidrisPygmaea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

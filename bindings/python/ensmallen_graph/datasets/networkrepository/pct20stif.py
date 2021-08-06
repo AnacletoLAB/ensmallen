@@ -78,7 +78,7 @@ def Pct20stif(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Pct20stif",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

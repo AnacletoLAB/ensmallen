@@ -88,7 +88,7 @@ def PaenibacillusSpSoil750(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillusSpSoil750",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ComamonasBadiaDsm17552(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ComamonasBadiaDsm17552",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def MitsuokellaMultacida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MitsuokellaMultacida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

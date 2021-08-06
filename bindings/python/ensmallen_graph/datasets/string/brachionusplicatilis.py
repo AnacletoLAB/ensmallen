@@ -88,7 +88,7 @@ def BrachionusPlicatilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrachionusPlicatilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

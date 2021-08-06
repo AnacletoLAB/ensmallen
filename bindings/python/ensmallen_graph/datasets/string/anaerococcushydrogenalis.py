@@ -91,7 +91,7 @@ def AnaerococcusHydrogenalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerococcusHydrogenalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

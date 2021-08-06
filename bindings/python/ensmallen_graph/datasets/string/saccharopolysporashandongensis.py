@@ -88,7 +88,7 @@ def SaccharopolysporaShandongensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SaccharopolysporaShandongensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

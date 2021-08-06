@@ -91,7 +91,7 @@ def PanicumVirgatum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PanicumVirgatum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

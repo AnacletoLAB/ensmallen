@@ -91,7 +91,7 @@ def MegasphaeraSpUpii135e(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MegasphaeraSpUpii135e",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SerinicoccusChungangensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SerinicoccusChungangensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

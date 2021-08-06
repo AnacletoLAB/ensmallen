@@ -78,7 +78,7 @@ def Net100(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Net100",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

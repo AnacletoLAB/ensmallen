@@ -91,7 +91,7 @@ def AerococcusViridansLl1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AerococcusViridansLl1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

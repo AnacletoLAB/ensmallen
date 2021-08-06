@@ -88,7 +88,7 @@ def ProvidenciaAlcalifaciensDsm30120(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProvidenciaAlcalifaciensDsm30120",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

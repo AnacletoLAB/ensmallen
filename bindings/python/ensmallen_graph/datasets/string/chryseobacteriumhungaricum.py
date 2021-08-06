@@ -88,7 +88,7 @@ def ChryseobacteriumHungaricum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChryseobacteriumHungaricum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

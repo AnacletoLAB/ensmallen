@@ -91,7 +91,7 @@ def HerbidosporaCretacea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HerbidosporaCretacea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

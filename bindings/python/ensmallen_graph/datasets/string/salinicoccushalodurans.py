@@ -88,7 +88,7 @@ def SalinicoccusHalodurans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinicoccusHalodurans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

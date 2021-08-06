@@ -88,7 +88,7 @@ def ClonorchisSinensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClonorchisSinensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

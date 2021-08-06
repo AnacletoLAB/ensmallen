@@ -91,7 +91,7 @@ def LysinibacillusVarians(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LysinibacillusVarians",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

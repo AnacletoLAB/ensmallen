@@ -88,7 +88,7 @@ def BacteroidalesBacteriumWce2008(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidalesBacteriumWce2008",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

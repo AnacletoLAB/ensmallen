@@ -88,7 +88,7 @@ def ActinomaduraLatinaNbrc106108(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomaduraLatinaNbrc106108",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

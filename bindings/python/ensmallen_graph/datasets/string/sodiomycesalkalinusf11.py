@@ -88,7 +88,7 @@ def SodiomycesAlkalinusF11(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SodiomycesAlkalinusF11",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

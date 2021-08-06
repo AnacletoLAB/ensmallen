@@ -91,7 +91,7 @@ def ElizabethkingiaAnophelis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ElizabethkingiaAnophelis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

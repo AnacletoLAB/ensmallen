@@ -88,7 +88,7 @@ def AlgibacterPectinivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlgibacterPectinivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

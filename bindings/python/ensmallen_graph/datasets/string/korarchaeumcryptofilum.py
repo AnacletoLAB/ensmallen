@@ -91,7 +91,7 @@ def KorarchaeumCryptofilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KorarchaeumCryptofilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

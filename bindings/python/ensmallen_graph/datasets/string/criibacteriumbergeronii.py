@@ -88,7 +88,7 @@ def CriibacteriumBergeronii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CriibacteriumBergeronii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

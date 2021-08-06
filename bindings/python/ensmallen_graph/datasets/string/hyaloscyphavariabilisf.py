@@ -88,7 +88,7 @@ def HyaloscyphaVariabilisF(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HyaloscyphaVariabilisF",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

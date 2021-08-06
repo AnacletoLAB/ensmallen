@@ -91,7 +91,7 @@ def CandidaOrthopsilosis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidaOrthopsilosis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

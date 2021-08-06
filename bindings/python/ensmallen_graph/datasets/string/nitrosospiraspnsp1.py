@@ -88,7 +88,7 @@ def NitrosospiraSpNsp1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrosospiraSpNsp1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

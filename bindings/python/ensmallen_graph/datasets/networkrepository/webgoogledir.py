@@ -100,7 +100,7 @@ def WebGoogleDir(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebGoogleDir",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

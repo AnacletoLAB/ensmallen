@@ -88,7 +88,7 @@ def MelampsoraLariciPopulina98ag31(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MelampsoraLariciPopulina98ag31",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

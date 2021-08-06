@@ -91,7 +91,7 @@ def MethanococcusMaripaludisC5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanococcusMaripaludisC5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def MeiothermusRuber(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MeiothermusRuber",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

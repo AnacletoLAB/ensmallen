@@ -88,7 +88,7 @@ def ChryseobacteriumScophthalmum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChryseobacteriumScophthalmum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CaballeroniaMegalochromosomata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaballeroniaMegalochromosomata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

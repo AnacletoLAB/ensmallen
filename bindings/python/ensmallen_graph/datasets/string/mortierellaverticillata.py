@@ -91,7 +91,7 @@ def MortierellaVerticillata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MortierellaVerticillata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

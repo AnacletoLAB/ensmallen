@@ -88,7 +88,7 @@ def AcholeplasmaSpCag878(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcholeplasmaSpCag878",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

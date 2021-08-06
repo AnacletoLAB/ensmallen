@@ -88,7 +88,7 @@ def TessaracoccusBendigoensisDsm12906(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TessaracoccusBendigoensisDsm12906",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

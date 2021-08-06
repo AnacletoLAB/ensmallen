@@ -91,7 +91,7 @@ def AromatoleumAromaticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AromatoleumAromaticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

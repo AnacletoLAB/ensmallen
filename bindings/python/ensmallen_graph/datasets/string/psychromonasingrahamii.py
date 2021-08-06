@@ -91,7 +91,7 @@ def PsychromonasIngrahamii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PsychromonasIngrahamii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

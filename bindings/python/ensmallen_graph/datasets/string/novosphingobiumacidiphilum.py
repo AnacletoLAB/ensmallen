@@ -91,7 +91,7 @@ def NovosphingobiumAcidiphilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NovosphingobiumAcidiphilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

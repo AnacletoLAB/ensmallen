@@ -88,7 +88,7 @@ def BotrytisCinereaT4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BotrytisCinereaT4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def GordoniaSpNb41y(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GordoniaSpNb41y",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

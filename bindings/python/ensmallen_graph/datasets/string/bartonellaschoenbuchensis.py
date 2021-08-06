@@ -91,7 +91,7 @@ def BartonellaSchoenbuchensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BartonellaSchoenbuchensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

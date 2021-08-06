@@ -88,7 +88,7 @@ def MarinimicrobiaBacteriumTcs52(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinimicrobiaBacteriumTcs52",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

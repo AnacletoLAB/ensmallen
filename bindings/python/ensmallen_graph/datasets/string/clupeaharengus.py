@@ -88,7 +88,7 @@ def ClupeaHarengus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClupeaHarengus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

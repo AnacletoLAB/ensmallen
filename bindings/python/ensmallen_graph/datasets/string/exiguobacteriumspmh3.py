@@ -91,7 +91,7 @@ def ExiguobacteriumSpMh3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ExiguobacteriumSpMh3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

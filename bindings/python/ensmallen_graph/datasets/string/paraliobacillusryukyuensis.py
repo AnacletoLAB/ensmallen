@@ -88,7 +88,7 @@ def ParaliobacillusRyukyuensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParaliobacillusRyukyuensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

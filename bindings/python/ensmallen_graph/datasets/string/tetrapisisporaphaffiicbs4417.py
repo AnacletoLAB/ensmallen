@@ -88,7 +88,7 @@ def TetrapisisporaPhaffiiCbs4417(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TetrapisisporaPhaffiiCbs4417",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AcetivibrioEthanolgignens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcetivibrioEthanolgignens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

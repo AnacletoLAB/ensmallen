@@ -88,7 +88,7 @@ def DyadobacterSp5039(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DyadobacterSp5039",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

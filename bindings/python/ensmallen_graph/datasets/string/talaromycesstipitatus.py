@@ -91,7 +91,7 @@ def TalaromycesStipitatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TalaromycesStipitatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

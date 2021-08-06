@@ -88,7 +88,7 @@ def VitrellaBrassicaformisCcmp3155(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VitrellaBrassicaformisCcmp3155",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

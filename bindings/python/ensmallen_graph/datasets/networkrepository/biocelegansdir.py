@@ -96,7 +96,7 @@ def BioCelegansDir(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BioCelegansDir",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

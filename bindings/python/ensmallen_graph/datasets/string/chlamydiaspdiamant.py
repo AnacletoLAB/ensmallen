@@ -91,7 +91,7 @@ def ChlamydiaSpDiamant(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlamydiaSpDiamant",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

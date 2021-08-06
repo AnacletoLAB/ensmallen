@@ -91,7 +91,7 @@ def OreniaMarismortui(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OreniaMarismortui",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

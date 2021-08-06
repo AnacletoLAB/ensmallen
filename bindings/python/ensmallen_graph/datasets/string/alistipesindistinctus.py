@@ -91,7 +91,7 @@ def AlistipesIndistinctus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlistipesIndistinctus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

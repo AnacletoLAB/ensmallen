@@ -88,7 +88,7 @@ def PhytoplasmaAsterYellows(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhytoplasmaAsterYellows",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

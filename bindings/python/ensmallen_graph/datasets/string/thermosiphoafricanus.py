@@ -91,7 +91,7 @@ def ThermosiphoAfricanus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermosiphoAfricanus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

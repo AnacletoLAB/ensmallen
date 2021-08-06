@@ -88,7 +88,7 @@ def DubosiellaNewyorkensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DubosiellaNewyorkensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

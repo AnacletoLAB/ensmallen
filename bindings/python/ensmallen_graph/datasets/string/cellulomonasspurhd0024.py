@@ -88,7 +88,7 @@ def CellulomonasSpUrhd0024(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CellulomonasSpUrhd0024",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

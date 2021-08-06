@@ -91,7 +91,7 @@ def PyrobaculumIslandicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PyrobaculumIslandicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

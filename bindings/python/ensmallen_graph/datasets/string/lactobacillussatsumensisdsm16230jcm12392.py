@@ -88,7 +88,7 @@ def LactobacillusSatsumensisDsm16230Jcm12392(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusSatsumensisDsm16230Jcm12392",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

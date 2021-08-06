@@ -88,7 +88,7 @@ def TrichodermaVirensGv298(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichodermaVirensGv298",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

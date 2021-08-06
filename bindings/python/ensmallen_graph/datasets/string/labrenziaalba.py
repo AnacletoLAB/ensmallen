@@ -88,7 +88,7 @@ def LabrenziaAlba(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LabrenziaAlba",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

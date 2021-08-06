@@ -91,7 +91,7 @@ def NatrinemaSpJ72(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NatrinemaSpJ72",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

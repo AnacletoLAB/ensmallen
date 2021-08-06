@@ -91,7 +91,7 @@ def PseudoflavonifractorCapillosus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoflavonifractorCapillosus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

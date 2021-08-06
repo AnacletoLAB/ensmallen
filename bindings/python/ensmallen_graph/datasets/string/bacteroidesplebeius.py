@@ -91,7 +91,7 @@ def BacteroidesPlebeius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesPlebeius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

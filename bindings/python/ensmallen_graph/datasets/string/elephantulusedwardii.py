@@ -91,7 +91,7 @@ def ElephantulusEdwardii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ElephantulusEdwardii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

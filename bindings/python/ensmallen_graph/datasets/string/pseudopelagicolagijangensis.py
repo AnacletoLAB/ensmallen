@@ -88,7 +88,7 @@ def PseudopelagicolaGijangensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudopelagicolaGijangensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

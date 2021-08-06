@@ -88,7 +88,7 @@ def SiccationiduransArizonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SiccationiduransArizonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

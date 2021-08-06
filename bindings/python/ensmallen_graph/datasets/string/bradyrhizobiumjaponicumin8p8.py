@@ -91,7 +91,7 @@ def BradyrhizobiumJaponicumIn8p8(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BradyrhizobiumJaponicumIn8p8",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

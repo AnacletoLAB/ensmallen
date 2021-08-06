@@ -88,7 +88,7 @@ def LeptospiraLicerasiaeStrMmd4847(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptospiraLicerasiaeStrMmd4847",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

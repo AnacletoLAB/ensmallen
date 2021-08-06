@@ -88,7 +88,7 @@ def DysgonomonasCapnocytophagoidesDsm22835(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DysgonomonasCapnocytophagoidesDsm22835",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

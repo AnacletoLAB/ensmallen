@@ -88,7 +88,7 @@ def SinocyclocheilusGrahami(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SinocyclocheilusGrahami",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

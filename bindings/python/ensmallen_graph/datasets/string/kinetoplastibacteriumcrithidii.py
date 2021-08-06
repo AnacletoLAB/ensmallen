@@ -91,7 +91,7 @@ def KinetoplastibacteriumCrithidii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KinetoplastibacteriumCrithidii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

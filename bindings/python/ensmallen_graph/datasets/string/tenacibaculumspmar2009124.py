@@ -88,7 +88,7 @@ def TenacibaculumSpMar2009124(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TenacibaculumSpMar2009124",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

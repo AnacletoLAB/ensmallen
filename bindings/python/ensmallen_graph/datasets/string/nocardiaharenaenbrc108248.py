@@ -88,7 +88,7 @@ def NocardiaHarenaeNbrc108248(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardiaHarenaeNbrc108248",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

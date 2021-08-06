@@ -91,7 +91,7 @@ def GordoniaBronchialis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GordoniaBronchialis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AlteromonadaceaeBacteriumBs31(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlteromonadaceaeBacteriumBs31",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

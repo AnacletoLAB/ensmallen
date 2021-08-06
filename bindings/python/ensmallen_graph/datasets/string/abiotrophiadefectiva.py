@@ -91,7 +91,7 @@ def AbiotrophiaDefectiva(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AbiotrophiaDefectiva",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

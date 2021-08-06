@@ -88,7 +88,7 @@ def SpirosomaEndophyticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpirosomaEndophyticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

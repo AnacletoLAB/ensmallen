@@ -91,7 +91,7 @@ def ArenimonasMetalli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArenimonasMetalli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

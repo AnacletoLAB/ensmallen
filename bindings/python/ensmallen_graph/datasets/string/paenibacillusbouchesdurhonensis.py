@@ -88,7 +88,7 @@ def PaenibacillusBouchesdurhonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillusBouchesdurhonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

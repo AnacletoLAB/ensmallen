@@ -88,7 +88,7 @@ def DyadobacterSoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DyadobacterSoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

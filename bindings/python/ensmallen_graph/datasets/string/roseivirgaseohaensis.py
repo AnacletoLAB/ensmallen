@@ -88,7 +88,7 @@ def RoseivirgaSeohaensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseivirgaSeohaensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

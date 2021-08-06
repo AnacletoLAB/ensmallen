@@ -78,7 +78,7 @@ def DbpediaTeam(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DbpediaTeam",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

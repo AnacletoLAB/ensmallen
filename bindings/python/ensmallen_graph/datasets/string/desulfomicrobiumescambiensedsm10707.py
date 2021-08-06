@@ -88,7 +88,7 @@ def DesulfomicrobiumEscambienseDsm10707(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfomicrobiumEscambienseDsm10707",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

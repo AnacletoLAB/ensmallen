@@ -91,7 +91,7 @@ def CorynebacteriumLubricantis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumLubricantis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

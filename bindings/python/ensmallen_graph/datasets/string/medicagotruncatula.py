@@ -91,7 +91,7 @@ def MedicagoTruncatula(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MedicagoTruncatula",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

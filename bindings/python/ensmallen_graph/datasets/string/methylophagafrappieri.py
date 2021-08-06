@@ -91,7 +91,7 @@ def MethylophagaFrappieri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylophagaFrappieri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

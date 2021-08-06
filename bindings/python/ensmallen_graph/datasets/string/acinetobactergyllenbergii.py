@@ -91,7 +91,7 @@ def AcinetobacterGyllenbergii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcinetobacterGyllenbergii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def HyaloscyphaBicolorE(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HyaloscyphaBicolorE",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

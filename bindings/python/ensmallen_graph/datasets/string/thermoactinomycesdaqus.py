@@ -91,7 +91,7 @@ def ThermoactinomycesDaqus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermoactinomycesDaqus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

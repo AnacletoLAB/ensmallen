@@ -91,7 +91,7 @@ def PhotorhabdusLuminescens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhotorhabdusLuminescens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

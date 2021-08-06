@@ -88,7 +88,7 @@ def BacteroidalesBacteriumM1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidalesBacteriumM1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

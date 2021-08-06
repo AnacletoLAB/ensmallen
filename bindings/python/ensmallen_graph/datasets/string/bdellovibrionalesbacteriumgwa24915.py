@@ -88,7 +88,7 @@ def BdellovibrionalesBacteriumGwa24915(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BdellovibrionalesBacteriumGwa24915",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

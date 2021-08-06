@@ -91,7 +91,7 @@ def AhrensiaSp13gom1096m(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AhrensiaSp13gom1096m",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

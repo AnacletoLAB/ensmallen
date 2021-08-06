@@ -88,7 +88,7 @@ def RodentolepisNana(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RodentolepisNana",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

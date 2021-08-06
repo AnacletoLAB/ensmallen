@@ -88,7 +88,7 @@ def NakamurellaPanacisegetis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NakamurellaPanacisegetis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

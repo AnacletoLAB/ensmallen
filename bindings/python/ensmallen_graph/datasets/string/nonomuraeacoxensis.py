@@ -91,7 +91,7 @@ def NonomuraeaCoxensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NonomuraeaCoxensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

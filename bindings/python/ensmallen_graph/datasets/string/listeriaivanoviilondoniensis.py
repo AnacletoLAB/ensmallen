@@ -91,7 +91,7 @@ def ListeriaIvanoviiLondoniensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ListeriaIvanoviiLondoniensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def Lock1074(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Lock1074",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

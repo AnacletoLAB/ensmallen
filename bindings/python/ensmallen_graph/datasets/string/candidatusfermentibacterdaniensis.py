@@ -88,7 +88,7 @@ def CandidatusFermentibacterDaniensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusFermentibacterDaniensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

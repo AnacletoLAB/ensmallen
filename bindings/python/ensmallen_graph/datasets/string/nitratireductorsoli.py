@@ -88,7 +88,7 @@ def NitratireductorSoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitratireductorSoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

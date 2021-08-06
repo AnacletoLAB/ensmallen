@@ -91,7 +91,7 @@ def MethylobacteriumPopuli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylobacteriumPopuli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

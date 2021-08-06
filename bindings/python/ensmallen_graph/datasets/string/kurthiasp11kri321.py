@@ -88,7 +88,7 @@ def KurthiaSp11kri321(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KurthiaSp11kri321",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

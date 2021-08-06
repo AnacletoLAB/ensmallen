@@ -88,7 +88,7 @@ def AltererythrobacterNamhicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AltererythrobacterNamhicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

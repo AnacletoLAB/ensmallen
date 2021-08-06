@@ -88,7 +88,7 @@ def MarmoricolaSpLeaf446(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarmoricolaSpLeaf446",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def InediibacteriumMassiliense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="InediibacteriumMassiliense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

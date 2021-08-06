@@ -88,7 +88,7 @@ def MalonomonasRubraDsm5091(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MalonomonasRubraDsm5091",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

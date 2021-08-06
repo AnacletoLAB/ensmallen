@@ -91,7 +91,7 @@ def AlgoriphagusMarincolaDsm16067(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlgoriphagusMarincolaDsm16067",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

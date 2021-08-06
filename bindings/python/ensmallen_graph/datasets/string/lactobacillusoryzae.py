@@ -91,7 +91,7 @@ def LactobacillusOryzae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusOryzae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

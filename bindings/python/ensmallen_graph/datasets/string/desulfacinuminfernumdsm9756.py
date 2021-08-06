@@ -88,7 +88,7 @@ def DesulfacinumInfernumDsm9756(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfacinumInfernumDsm9756",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

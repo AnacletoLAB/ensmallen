@@ -88,7 +88,7 @@ def MycobacteroidesSalmoniphilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteroidesSalmoniphilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

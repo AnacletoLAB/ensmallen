@@ -91,7 +91,7 @@ def ProvidenciaBurhodogranariea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProvidenciaBurhodogranariea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

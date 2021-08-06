@@ -88,7 +88,7 @@ def ZobelliaGalactanivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZobelliaGalactanivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

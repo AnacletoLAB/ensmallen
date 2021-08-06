@@ -88,7 +88,7 @@ def PseudonocardiaSpinosisporaDsm44797(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudonocardiaSpinosisporaDsm44797",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

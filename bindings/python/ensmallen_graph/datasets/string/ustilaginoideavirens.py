@@ -88,7 +88,7 @@ def UstilaginoideaVirens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UstilaginoideaVirens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

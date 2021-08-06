@@ -91,7 +91,7 @@ def RhodanobacterSpathiphylli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodanobacterSpathiphylli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def Ash331(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Ash331",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

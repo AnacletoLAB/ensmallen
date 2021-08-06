@@ -88,7 +88,7 @@ def MillerozymaFarinosaCbs7064(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MillerozymaFarinosaCbs7064",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

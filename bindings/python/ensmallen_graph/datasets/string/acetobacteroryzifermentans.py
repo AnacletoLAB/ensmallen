@@ -88,7 +88,7 @@ def AcetobacterOryzifermentans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcetobacterOryzifermentans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

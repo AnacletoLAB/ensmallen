@@ -88,7 +88,7 @@ def HymenobacterRoseosalivariusDsm11622(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HymenobacterRoseosalivariusDsm11622",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

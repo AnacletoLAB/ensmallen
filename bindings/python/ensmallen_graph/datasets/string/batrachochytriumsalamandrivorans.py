@@ -88,7 +88,7 @@ def BatrachochytriumSalamandrivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BatrachochytriumSalamandrivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

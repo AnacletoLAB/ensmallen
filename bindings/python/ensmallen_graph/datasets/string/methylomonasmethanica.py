@@ -91,7 +91,7 @@ def MethylomonasMethanica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylomonasMethanica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AcidobacteriaBacteriumMor1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidobacteriaBacteriumMor1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

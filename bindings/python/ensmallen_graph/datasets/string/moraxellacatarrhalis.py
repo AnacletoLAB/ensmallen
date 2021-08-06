@@ -91,7 +91,7 @@ def MoraxellaCatarrhalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MoraxellaCatarrhalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

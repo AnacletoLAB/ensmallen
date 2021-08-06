@@ -91,7 +91,7 @@ def DyadobacterFermentans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DyadobacterFermentans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

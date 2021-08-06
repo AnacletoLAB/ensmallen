@@ -91,7 +91,7 @@ def BarnesiellaIntestinihominis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BarnesiellaIntestinihominis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

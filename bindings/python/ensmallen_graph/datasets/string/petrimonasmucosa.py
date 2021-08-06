@@ -88,7 +88,7 @@ def PetrimonasMucosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PetrimonasMucosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

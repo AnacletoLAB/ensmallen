@@ -91,7 +91,7 @@ def PorphyromonasAsaccharolytica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PorphyromonasAsaccharolytica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

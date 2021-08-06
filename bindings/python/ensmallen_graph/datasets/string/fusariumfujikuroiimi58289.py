@@ -88,7 +88,7 @@ def FusariumFujikuroiImi58289(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FusariumFujikuroiImi58289",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

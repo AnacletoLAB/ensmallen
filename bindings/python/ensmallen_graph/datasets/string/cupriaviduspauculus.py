@@ -88,7 +88,7 @@ def CupriavidusPauculus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CupriavidusPauculus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

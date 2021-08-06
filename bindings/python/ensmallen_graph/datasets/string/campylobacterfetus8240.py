@@ -91,7 +91,7 @@ def CampylobacterFetus8240(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterFetus8240",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

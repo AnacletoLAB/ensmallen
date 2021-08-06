@@ -88,7 +88,7 @@ def TrueperellaBernardiae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrueperellaBernardiae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

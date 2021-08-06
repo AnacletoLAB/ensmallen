@@ -88,7 +88,7 @@ def MoelleriellaLiberaRcef2490(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MoelleriellaLiberaRcef2490",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

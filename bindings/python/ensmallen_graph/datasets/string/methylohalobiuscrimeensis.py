@@ -91,7 +91,7 @@ def MethylohalobiusCrimeensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylohalobiusCrimeensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

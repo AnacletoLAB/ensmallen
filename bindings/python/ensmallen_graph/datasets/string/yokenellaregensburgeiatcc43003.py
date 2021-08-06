@@ -88,7 +88,7 @@ def YokenellaRegensburgeiAtcc43003(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="YokenellaRegensburgeiAtcc43003",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

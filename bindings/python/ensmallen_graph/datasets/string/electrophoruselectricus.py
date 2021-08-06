@@ -88,7 +88,7 @@ def ElectrophorusElectricus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ElectrophorusElectricus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def MobiluncusMulierisAtcc35243(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MobiluncusMulierisAtcc35243",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def Adjnoun(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Adjnoun",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

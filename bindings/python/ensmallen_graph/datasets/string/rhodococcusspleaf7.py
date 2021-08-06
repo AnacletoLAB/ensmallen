@@ -88,7 +88,7 @@ def RhodococcusSpLeaf7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodococcusSpLeaf7",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

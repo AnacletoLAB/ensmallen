@@ -88,7 +88,7 @@ def CandidatusOmnitrophicaBacterium4484213(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusOmnitrophicaBacterium4484213",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

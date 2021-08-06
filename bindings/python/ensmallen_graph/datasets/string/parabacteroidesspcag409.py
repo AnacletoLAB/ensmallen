@@ -88,7 +88,7 @@ def ParabacteroidesSpCag409(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParabacteroidesSpCag409",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

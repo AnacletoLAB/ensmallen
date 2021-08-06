@@ -91,7 +91,7 @@ def PseudomonasSyringaeTomato(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasSyringaeTomato",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

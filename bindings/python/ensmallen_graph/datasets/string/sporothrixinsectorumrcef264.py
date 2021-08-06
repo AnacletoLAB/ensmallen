@@ -88,7 +88,7 @@ def SporothrixInsectorumRcef264(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SporothrixInsectorumRcef264",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

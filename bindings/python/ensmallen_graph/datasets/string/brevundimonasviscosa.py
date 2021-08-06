@@ -88,7 +88,7 @@ def BrevundimonasViscosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrevundimonasViscosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

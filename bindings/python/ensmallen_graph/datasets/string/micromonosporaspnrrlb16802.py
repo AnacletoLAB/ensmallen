@@ -88,7 +88,7 @@ def MicromonosporaSpNrrlB16802(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicromonosporaSpNrrlB16802",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def CondMat2003(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CondMat2003",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

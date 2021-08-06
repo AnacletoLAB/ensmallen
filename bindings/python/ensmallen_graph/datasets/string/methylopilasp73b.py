@@ -91,7 +91,7 @@ def MethylopilaSp73b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylopilaSp73b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

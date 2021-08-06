@@ -91,7 +91,7 @@ def MariprofundusFerrooxydans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MariprofundusFerrooxydans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

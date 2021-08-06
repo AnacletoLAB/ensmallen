@@ -88,7 +88,7 @@ def HalorubrumCaliforniensisDsm19288(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalorubrumCaliforniensisDsm19288",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def HalorubrumSpSd626r(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalorubrumSpSd626r",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

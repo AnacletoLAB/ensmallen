@@ -88,7 +88,7 @@ def SyntrophusGentianae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SyntrophusGentianae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

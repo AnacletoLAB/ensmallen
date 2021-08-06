@@ -88,7 +88,7 @@ def AerococcusSanguinicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AerococcusSanguinicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

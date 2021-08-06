@@ -88,7 +88,7 @@ def ChoanephoraCucurbitarum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChoanephoraCucurbitarum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

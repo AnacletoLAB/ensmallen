@@ -88,7 +88,7 @@ def RosenbergiellaNectarea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RosenbergiellaNectarea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

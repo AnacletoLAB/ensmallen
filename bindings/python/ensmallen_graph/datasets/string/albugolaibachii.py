@@ -91,7 +91,7 @@ def AlbugoLaibachii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlbugoLaibachii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

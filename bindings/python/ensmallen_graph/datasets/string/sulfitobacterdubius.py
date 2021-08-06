@@ -88,7 +88,7 @@ def SulfitobacterDubius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfitobacterDubius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

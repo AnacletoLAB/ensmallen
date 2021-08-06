@@ -88,7 +88,7 @@ def ThiomicrospiraSpXs5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThiomicrospiraSpXs5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

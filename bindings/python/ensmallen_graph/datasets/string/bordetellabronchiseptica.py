@@ -91,7 +91,7 @@ def BordetellaBronchiseptica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BordetellaBronchiseptica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

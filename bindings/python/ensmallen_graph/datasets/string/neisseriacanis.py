@@ -88,7 +88,7 @@ def NeisseriaCanis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeisseriaCanis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

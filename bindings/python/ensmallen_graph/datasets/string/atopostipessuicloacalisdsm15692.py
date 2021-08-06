@@ -88,7 +88,7 @@ def AtopostipesSuicloacalisDsm15692(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AtopostipesSuicloacalisDsm15692",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

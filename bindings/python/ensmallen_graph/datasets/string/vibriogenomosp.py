@@ -91,7 +91,7 @@ def VibrioGenomosp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioGenomosp",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def TidjanibacterMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TidjanibacterMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

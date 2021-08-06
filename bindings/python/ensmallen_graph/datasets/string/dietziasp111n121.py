@@ -88,7 +88,7 @@ def DietziaSp111n121(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DietziaSp111n121",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

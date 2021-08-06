@@ -91,7 +91,7 @@ def PhytophthoraKernoviae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhytophthoraKernoviae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

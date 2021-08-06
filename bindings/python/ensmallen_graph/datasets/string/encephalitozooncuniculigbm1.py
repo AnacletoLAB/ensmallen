@@ -88,7 +88,7 @@ def EncephalitozoonCuniculiGbM1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EncephalitozoonCuniculiGbM1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

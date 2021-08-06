@@ -88,7 +88,7 @@ def RhodobacteraceaeBacteriumSb2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodobacteraceaeBacteriumSb2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

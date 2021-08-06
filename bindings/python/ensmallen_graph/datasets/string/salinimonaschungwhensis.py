@@ -91,7 +91,7 @@ def SalinimonasChungwhensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinimonasChungwhensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def AcidocellaFacilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidocellaFacilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

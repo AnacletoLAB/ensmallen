@@ -91,7 +91,7 @@ def AmoebophilusAsiaticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmoebophilusAsiaticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

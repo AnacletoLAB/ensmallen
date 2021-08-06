@@ -91,7 +91,7 @@ def ProvidenciaRettgeriDsm1131(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProvidenciaRettgeriDsm1131",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

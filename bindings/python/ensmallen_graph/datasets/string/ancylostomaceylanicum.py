@@ -88,7 +88,7 @@ def AncylostomaCeylanicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AncylostomaCeylanicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

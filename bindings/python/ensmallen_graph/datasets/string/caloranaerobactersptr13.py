@@ -88,7 +88,7 @@ def CaloranaerobacterSpTr13(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaloranaerobacterSpTr13",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

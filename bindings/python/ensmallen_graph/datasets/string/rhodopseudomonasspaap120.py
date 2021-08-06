@@ -88,7 +88,7 @@ def RhodopseudomonasSpAap120(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodopseudomonasSpAap120",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

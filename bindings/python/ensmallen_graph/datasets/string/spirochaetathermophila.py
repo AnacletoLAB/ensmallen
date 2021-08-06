@@ -91,7 +91,7 @@ def SpirochaetaThermophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpirochaetaThermophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def MarichromatiumPurpuratum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarichromatiumPurpuratum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

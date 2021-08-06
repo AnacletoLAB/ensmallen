@@ -88,7 +88,7 @@ def NiveispirillumIrakenseDsm11586(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NiveispirillumIrakenseDsm11586",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

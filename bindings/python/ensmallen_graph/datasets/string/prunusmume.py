@@ -91,7 +91,7 @@ def PrunusMume(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrunusMume",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

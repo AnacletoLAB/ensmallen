@@ -88,7 +88,7 @@ def CandidatusAcetothermiaBacteriumJdfr48(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusAcetothermiaBacteriumJdfr48",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

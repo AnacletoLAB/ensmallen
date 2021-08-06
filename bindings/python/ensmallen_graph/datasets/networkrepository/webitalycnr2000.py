@@ -112,7 +112,7 @@ def WebItalycnr2000(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebItalycnr2000",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

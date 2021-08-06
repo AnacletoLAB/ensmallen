@@ -88,7 +88,7 @@ def CaldicoprobacterFaecalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaldicoprobacterFaecalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

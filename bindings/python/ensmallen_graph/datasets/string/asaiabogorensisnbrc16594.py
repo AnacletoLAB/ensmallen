@@ -88,7 +88,7 @@ def AsaiaBogorensisNbrc16594(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AsaiaBogorensisNbrc16594",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

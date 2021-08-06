@@ -88,7 +88,7 @@ def UnculturedBacteroidesSp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UnculturedBacteroidesSp",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

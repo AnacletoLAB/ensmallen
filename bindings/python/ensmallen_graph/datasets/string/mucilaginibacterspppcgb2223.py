@@ -88,7 +88,7 @@ def MucilaginibacterSpPpcgb2223(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MucilaginibacterSpPpcgb2223",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

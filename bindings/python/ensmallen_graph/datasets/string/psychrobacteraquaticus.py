@@ -91,7 +91,7 @@ def PsychrobacterAquaticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PsychrobacterAquaticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

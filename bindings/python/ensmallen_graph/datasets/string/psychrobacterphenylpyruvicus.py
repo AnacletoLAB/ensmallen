@@ -91,7 +91,7 @@ def PsychrobacterPhenylpyruvicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PsychrobacterPhenylpyruvicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

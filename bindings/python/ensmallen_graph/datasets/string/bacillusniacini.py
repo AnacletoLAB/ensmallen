@@ -88,7 +88,7 @@ def BacillusNiacini(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusNiacini",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

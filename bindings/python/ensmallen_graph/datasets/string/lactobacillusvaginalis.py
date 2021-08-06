@@ -91,7 +91,7 @@ def LactobacillusVaginalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusVaginalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

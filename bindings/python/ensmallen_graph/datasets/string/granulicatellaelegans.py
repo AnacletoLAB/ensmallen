@@ -91,7 +91,7 @@ def GranulicatellaElegans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GranulicatellaElegans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

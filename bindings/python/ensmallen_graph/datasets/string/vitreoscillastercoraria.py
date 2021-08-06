@@ -91,7 +91,7 @@ def VitreoscillaStercoraria(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VitreoscillaStercoraria",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

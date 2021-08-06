@@ -88,7 +88,7 @@ def NothoproctaPerdicaria(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NothoproctaPerdicaria",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

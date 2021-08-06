@@ -88,7 +88,7 @@ def LeucobacterSpUcdThu(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeucobacterSpUcdThu",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

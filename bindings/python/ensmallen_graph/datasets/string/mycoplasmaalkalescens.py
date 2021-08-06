@@ -91,7 +91,7 @@ def MycoplasmaAlkalescens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaAlkalescens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

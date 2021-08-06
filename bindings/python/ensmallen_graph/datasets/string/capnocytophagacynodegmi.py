@@ -91,7 +91,7 @@ def CapnocytophagaCynodegmi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CapnocytophagaCynodegmi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

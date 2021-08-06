@@ -88,7 +88,7 @@ def RhodobacteraceaeBacteriumWds1c4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodobacteraceaeBacteriumWds1c4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

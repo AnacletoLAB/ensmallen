@@ -88,7 +88,7 @@ def FlagellimonasEckloniae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlagellimonasEckloniae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

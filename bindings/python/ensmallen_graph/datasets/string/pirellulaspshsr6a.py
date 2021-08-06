@@ -88,7 +88,7 @@ def PirellulaSpShSr6a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PirellulaSpShSr6a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -92,7 +92,7 @@ def ScNasasrb(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ScNasasrb",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

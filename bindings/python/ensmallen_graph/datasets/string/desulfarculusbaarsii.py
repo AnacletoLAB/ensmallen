@@ -91,7 +91,7 @@ def DesulfarculusBaarsii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfarculusBaarsii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

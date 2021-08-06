@@ -88,7 +88,7 @@ def RunellaLimosaDsm17973(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RunellaLimosaDsm17973",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

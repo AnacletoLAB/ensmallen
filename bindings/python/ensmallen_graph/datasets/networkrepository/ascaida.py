@@ -78,7 +78,7 @@ def AsCaida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AsCaida",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

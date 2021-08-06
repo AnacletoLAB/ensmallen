@@ -88,7 +88,7 @@ def MethyloligellaHalotolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethyloligellaHalotolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

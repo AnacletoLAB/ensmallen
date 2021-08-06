@@ -88,7 +88,7 @@ def HalocynthiibacterNamhaensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalocynthiibacterNamhaensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

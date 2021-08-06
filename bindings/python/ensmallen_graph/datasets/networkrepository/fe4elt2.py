@@ -92,7 +92,7 @@ def Fe4elt2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Fe4elt2",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def FlavobacteriumCucumis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumCucumis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

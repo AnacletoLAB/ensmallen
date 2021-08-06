@@ -88,7 +88,7 @@ def SunxiuqiniaElliptica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SunxiuqiniaElliptica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

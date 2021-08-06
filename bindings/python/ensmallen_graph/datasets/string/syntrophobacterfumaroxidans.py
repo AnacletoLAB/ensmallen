@@ -91,7 +91,7 @@ def SyntrophobacterFumaroxidans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SyntrophobacterFumaroxidans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

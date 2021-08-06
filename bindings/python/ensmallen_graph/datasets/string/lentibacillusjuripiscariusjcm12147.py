@@ -88,7 +88,7 @@ def LentibacillusJuripiscariusJcm12147(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LentibacillusJuripiscariusJcm12147",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

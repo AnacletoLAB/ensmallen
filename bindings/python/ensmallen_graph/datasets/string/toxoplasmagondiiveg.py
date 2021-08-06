@@ -88,7 +88,7 @@ def ToxoplasmaGondiiVeg(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ToxoplasmaGondiiVeg",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

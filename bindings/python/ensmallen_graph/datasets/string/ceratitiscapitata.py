@@ -91,7 +91,7 @@ def CeratitisCapitata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CeratitisCapitata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

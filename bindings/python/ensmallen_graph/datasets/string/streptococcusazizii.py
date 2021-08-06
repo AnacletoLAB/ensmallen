@@ -88,7 +88,7 @@ def StreptococcusAzizii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusAzizii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

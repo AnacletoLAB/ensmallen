@@ -88,7 +88,7 @@ def PhotobacteriumDamselaeSubspDamselae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhotobacteriumDamselaeSubspDamselae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

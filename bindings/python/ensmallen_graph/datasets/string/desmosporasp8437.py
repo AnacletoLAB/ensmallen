@@ -91,7 +91,7 @@ def DesmosporaSp8437(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesmosporaSp8437",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

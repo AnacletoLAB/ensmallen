@@ -88,7 +88,7 @@ def GeoalkalibacterSubterraneus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeoalkalibacterSubterraneus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def EhrlichiaRuminantium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EhrlichiaRuminantium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

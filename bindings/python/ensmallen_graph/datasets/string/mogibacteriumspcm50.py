@@ -91,7 +91,7 @@ def MogibacteriumSpCm50(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MogibacteriumSpCm50",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

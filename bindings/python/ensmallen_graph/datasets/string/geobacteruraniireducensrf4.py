@@ -88,7 +88,7 @@ def GeobacterUraniireducensRf4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeobacterUraniireducensRf4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

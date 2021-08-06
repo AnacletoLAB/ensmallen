@@ -88,7 +88,7 @@ def DesulfobulbusPropionicusDsm2032(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfobulbusPropionicusDsm2032",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

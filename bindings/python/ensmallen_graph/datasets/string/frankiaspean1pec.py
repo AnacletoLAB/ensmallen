@@ -91,7 +91,7 @@ def FrankiaSpEan1pec(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FrankiaSpEan1pec",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

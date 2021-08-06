@@ -88,7 +88,7 @@ def AquimarinaSpongiae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AquimarinaSpongiae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SynergistalesBacterium5424(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SynergistalesBacterium5424",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

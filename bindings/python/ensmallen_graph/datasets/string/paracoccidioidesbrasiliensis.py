@@ -91,7 +91,7 @@ def ParacoccidioidesBrasiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParacoccidioidesBrasiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

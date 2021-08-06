@@ -88,7 +88,7 @@ def DesulfosporosinusSpBg(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfosporosinusSpBg",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PaenibacillusPolymyxaE681(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillusPolymyxaE681",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

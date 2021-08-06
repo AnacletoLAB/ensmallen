@@ -88,7 +88,7 @@ def CeleribacterHalophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CeleribacterHalophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

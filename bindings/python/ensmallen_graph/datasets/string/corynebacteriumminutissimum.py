@@ -88,7 +88,7 @@ def CorynebacteriumMinutissimum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumMinutissimum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

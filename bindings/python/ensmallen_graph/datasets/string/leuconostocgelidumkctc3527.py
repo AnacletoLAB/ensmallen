@@ -91,7 +91,7 @@ def LeuconostocGelidumKctc3527(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeuconostocGelidumKctc3527",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

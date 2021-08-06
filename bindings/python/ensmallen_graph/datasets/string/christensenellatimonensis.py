@@ -88,7 +88,7 @@ def ChristensenellaTimonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChristensenellaTimonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

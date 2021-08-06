@@ -88,7 +88,7 @@ def AcidocellaSpMxAz02(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidocellaSpMxAz02",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

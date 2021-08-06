@@ -88,7 +88,7 @@ def LimnobacterSpCaciam66h1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LimnobacterSpCaciam66h1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

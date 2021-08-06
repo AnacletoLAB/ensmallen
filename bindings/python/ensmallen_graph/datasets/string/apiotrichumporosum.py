@@ -88,7 +88,7 @@ def ApiotrichumPorosum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ApiotrichumPorosum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

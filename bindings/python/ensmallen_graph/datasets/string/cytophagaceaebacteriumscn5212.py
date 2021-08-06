@@ -88,7 +88,7 @@ def CytophagaceaeBacteriumScn5212(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CytophagaceaeBacteriumScn5212",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

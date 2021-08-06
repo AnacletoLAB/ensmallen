@@ -90,7 +90,7 @@ def InfOpenflights(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="InfOpenflights",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

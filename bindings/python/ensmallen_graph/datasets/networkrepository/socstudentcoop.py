@@ -94,7 +94,7 @@ def SocStudentCoop(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocStudentCoop",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

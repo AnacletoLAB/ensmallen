@@ -88,7 +88,7 @@ def CellulosimicrobiumFunkei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CellulosimicrobiumFunkei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

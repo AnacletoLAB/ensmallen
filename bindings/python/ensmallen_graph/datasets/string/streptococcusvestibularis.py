@@ -91,7 +91,7 @@ def StreptococcusVestibularis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusVestibularis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

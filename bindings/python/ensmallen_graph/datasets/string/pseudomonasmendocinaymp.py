@@ -91,7 +91,7 @@ def PseudomonasMendocinaYmp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasMendocinaYmp",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

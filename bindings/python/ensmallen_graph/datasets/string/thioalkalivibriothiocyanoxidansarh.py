@@ -88,7 +88,7 @@ def ThioalkalivibrioThiocyanoxidansArh(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThioalkalivibrioThiocyanoxidansArh",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

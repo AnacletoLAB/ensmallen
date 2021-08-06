@@ -88,7 +88,7 @@ def DeltaproteobacteriaBacteriumTcs42(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DeltaproteobacteriaBacteriumTcs42",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

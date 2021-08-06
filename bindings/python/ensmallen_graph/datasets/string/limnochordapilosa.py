@@ -88,7 +88,7 @@ def LimnochordaPilosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LimnochordaPilosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

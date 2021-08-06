@@ -88,7 +88,7 @@ def AnabasTestudineus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnabasTestudineus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

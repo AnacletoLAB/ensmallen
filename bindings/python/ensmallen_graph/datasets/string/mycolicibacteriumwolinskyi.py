@@ -88,7 +88,7 @@ def MycolicibacteriumWolinskyi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycolicibacteriumWolinskyi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

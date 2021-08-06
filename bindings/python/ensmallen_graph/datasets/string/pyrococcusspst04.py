@@ -91,7 +91,7 @@ def PyrococcusSpSt04(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PyrococcusSpSt04",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ButyricimonasSynergistica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ButyricimonasSynergistica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

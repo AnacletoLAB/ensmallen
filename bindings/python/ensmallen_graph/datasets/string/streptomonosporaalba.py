@@ -88,7 +88,7 @@ def StreptomonosporaAlba(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomonosporaAlba",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

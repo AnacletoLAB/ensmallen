@@ -78,7 +78,7 @@ def FsFa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FsFa",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

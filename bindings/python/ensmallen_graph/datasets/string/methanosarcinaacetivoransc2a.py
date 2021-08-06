@@ -88,7 +88,7 @@ def MethanosarcinaAcetivoransC2a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanosarcinaAcetivoransC2a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

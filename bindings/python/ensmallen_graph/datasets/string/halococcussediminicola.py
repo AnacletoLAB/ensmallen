@@ -88,7 +88,7 @@ def HalococcusSediminicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalococcusSediminicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

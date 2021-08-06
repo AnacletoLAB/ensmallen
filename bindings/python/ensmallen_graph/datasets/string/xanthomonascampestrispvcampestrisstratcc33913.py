@@ -88,7 +88,7 @@ def XanthomonasCampestrisPvCampestrisStrAtcc33913(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XanthomonasCampestrisPvCampestrisStrAtcc33913",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

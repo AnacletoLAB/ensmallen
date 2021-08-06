@@ -88,7 +88,7 @@ def PectobacteriumBrasiliense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PectobacteriumBrasiliense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

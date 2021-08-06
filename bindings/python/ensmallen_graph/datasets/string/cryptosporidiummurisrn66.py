@@ -88,7 +88,7 @@ def CryptosporidiumMurisRn66(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CryptosporidiumMurisRn66",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def HelicobacterTyphlonius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelicobacterTyphlonius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

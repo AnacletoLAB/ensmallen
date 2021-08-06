@@ -88,7 +88,7 @@ def CoriobacteriaceaeBacteriumChkci002(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CoriobacteriaceaeBacteriumChkci002",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

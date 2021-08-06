@@ -88,7 +88,7 @@ def LeucobacterSpG161(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeucobacterSpG161",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

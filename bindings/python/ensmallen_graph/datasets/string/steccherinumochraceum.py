@@ -88,7 +88,7 @@ def SteccherinumOchraceum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SteccherinumOchraceum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

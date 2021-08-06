@@ -88,7 +88,7 @@ def KiloniellaMajae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KiloniellaMajae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

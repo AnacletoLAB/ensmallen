@@ -88,7 +88,7 @@ def StrongyloidesVenezuelensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StrongyloidesVenezuelensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

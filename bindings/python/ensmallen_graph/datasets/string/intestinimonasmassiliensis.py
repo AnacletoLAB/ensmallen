@@ -88,7 +88,7 @@ def IntestinimonasMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IntestinimonasMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

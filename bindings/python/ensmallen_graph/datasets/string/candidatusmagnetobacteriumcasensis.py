@@ -88,7 +88,7 @@ def CandidatusMagnetobacteriumCasensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusMagnetobacteriumCasensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

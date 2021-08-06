@@ -88,7 +88,7 @@ def IgnicoccusIslandicusDsm13165(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IgnicoccusIslandicusDsm13165",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

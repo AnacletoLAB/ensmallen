@@ -91,7 +91,7 @@ def GordoniaRhizosphera(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GordoniaRhizosphera",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ActinoalloteichusHymeniacidonis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinoalloteichusHymeniacidonis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

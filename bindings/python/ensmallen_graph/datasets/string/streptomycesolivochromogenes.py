@@ -88,7 +88,7 @@ def StreptomycesOlivochromogenes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesOlivochromogenes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

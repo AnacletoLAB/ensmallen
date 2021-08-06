@@ -88,7 +88,7 @@ def SaimiriBoliviensisBoliviensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SaimiriBoliviensisBoliviensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

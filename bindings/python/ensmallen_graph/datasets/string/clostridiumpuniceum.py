@@ -88,7 +88,7 @@ def ClostridiumPuniceum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumPuniceum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def StreptacidiphilusJeojiense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptacidiphilusJeojiense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

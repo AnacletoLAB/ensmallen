@@ -88,7 +88,7 @@ def LactobacillusPaucivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusPaucivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

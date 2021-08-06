@@ -88,7 +88,7 @@ def WinogradskyellaJejuensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WinogradskyellaJejuensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

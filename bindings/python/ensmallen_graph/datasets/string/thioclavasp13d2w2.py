@@ -91,7 +91,7 @@ def ThioclavaSp13d2w2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThioclavaSp13d2w2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

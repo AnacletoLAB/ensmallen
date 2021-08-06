@@ -91,7 +91,7 @@ def PhotodesmusKatoptron(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhotodesmusKatoptron",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

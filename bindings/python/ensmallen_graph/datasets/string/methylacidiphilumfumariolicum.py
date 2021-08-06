@@ -91,7 +91,7 @@ def MethylacidiphilumFumariolicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylacidiphilumFumariolicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

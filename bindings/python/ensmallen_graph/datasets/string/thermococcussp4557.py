@@ -91,7 +91,7 @@ def ThermococcusSp4557(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermococcusSp4557",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

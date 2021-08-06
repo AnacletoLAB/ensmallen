@@ -88,7 +88,7 @@ def PaenibacillaceaeBacteriumGas479(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillaceaeBacteriumGas479",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

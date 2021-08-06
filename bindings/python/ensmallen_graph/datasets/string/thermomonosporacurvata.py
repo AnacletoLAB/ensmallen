@@ -91,7 +91,7 @@ def ThermomonosporaCurvata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermomonosporaCurvata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

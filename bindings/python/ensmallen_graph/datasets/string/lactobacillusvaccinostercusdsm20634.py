@@ -88,7 +88,7 @@ def LactobacillusVaccinostercusDsm20634(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusVaccinostercusDsm20634",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

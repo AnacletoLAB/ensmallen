@@ -91,7 +91,7 @@ def ArthrobacterPhenanthrenivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArthrobacterPhenanthrenivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

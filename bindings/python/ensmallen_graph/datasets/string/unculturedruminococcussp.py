@@ -88,7 +88,7 @@ def UnculturedRuminococcusSp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UnculturedRuminococcusSp",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

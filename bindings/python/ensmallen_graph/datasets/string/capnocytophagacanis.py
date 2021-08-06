@@ -88,7 +88,7 @@ def CapnocytophagaCanis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CapnocytophagaCanis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

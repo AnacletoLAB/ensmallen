@@ -88,7 +88,7 @@ def PrevotellaceaeBacteriumMarseilleP2826(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaceaeBacteriumMarseilleP2826",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

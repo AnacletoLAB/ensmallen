@@ -91,7 +91,7 @@ def EutypaLata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EutypaLata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

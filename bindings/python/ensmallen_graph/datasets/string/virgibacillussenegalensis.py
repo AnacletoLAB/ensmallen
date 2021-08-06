@@ -88,7 +88,7 @@ def VirgibacillusSenegalensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VirgibacillusSenegalensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

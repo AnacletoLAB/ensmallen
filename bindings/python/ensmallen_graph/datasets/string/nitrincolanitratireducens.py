@@ -88,7 +88,7 @@ def NitrincolaNitratireducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrincolaNitratireducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

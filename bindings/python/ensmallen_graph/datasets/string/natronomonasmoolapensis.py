@@ -91,7 +91,7 @@ def NatronomonasMoolapensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NatronomonasMoolapensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def Livejournal(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Livejournal",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

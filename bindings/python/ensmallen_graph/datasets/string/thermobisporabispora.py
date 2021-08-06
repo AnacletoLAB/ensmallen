@@ -91,7 +91,7 @@ def ThermobisporaBispora(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermobisporaBispora",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

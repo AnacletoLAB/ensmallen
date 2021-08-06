@@ -91,7 +91,7 @@ def PrevotellaMarshii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaMarshii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

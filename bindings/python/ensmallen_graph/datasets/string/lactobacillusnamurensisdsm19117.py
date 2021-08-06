@@ -88,7 +88,7 @@ def LactobacillusNamurensisDsm19117(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusNamurensisDsm19117",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

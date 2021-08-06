@@ -88,7 +88,7 @@ def ShimiaAestuarii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShimiaAestuarii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

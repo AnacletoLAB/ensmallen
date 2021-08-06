@@ -88,7 +88,7 @@ def HalorubrumAethiopicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalorubrumAethiopicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

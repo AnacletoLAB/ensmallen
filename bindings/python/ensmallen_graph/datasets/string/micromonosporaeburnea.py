@@ -88,7 +88,7 @@ def MicromonosporaEburnea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicromonosporaEburnea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

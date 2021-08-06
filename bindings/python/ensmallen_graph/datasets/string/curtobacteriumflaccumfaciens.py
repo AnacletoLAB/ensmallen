@@ -88,7 +88,7 @@ def CurtobacteriumFlaccumfaciens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CurtobacteriumFlaccumfaciens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

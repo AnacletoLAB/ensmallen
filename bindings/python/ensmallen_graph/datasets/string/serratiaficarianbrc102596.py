@@ -88,7 +88,7 @@ def SerratiaFicariaNbrc102596(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SerratiaFicariaNbrc102596",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

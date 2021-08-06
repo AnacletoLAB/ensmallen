@@ -88,7 +88,7 @@ def DrechmeriaConiospora(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DrechmeriaConiospora",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

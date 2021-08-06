@@ -91,7 +91,7 @@ def SulfurihydrogenibiumAzorense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfurihydrogenibiumAzorense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

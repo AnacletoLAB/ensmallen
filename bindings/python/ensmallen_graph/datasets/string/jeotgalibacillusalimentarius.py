@@ -88,7 +88,7 @@ def JeotgalibacillusAlimentarius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JeotgalibacillusAlimentarius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

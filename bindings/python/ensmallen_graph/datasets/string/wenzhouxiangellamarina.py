@@ -88,7 +88,7 @@ def WenzhouxiangellaMarina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WenzhouxiangellaMarina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def HerbaspirillumChlorophenolicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HerbaspirillumChlorophenolicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

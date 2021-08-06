@@ -88,7 +88,7 @@ def AgrobacteriumSalinitoleransStrHayward0363(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AgrobacteriumSalinitoleransStrHayward0363",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

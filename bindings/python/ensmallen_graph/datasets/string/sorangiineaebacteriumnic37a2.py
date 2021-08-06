@@ -88,7 +88,7 @@ def SorangiineaeBacteriumNic37a2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SorangiineaeBacteriumNic37a2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

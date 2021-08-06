@@ -91,7 +91,7 @@ def PlanococcusSpPamc21323(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlanococcusSpPamc21323",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

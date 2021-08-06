@@ -104,7 +104,7 @@ def Dsjc10005(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Dsjc10005",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

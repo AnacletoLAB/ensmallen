@@ -91,7 +91,7 @@ def HalorhabdusUtahensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalorhabdusUtahensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

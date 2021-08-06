@@ -88,7 +88,7 @@ def BatrachochytriumDendrobatidisJam81(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BatrachochytriumDendrobatidisJam81",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def NocardioidesInsulaeDsm17944(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardioidesInsulaeDsm17944",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

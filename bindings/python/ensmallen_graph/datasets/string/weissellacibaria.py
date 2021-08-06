@@ -91,7 +91,7 @@ def WeissellaCibaria(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WeissellaCibaria",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

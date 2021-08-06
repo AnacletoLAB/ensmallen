@@ -88,7 +88,7 @@ def AspergillusKawachiiIfo4308(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AspergillusKawachiiIfo4308",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

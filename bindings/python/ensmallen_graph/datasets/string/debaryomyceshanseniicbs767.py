@@ -88,7 +88,7 @@ def DebaryomycesHanseniiCbs767(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DebaryomycesHanseniiCbs767",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

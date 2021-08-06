@@ -88,7 +88,7 @@ def FuerstiaMarisgermanicae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FuerstiaMarisgermanicae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

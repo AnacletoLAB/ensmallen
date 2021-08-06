@@ -91,7 +91,7 @@ def BifidobacteriumPseudocatenulatum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BifidobacteriumPseudocatenulatum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

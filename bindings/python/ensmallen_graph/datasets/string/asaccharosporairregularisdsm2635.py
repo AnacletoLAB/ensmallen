@@ -88,7 +88,7 @@ def AsaccharosporaIrregularisDsm2635(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AsaccharosporaIrregularisDsm2635",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

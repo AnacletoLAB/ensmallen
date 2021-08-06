@@ -88,7 +88,7 @@ def WinogradskyellaSpPg2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WinogradskyellaSpPg2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

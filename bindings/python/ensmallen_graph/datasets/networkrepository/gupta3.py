@@ -78,7 +78,7 @@ def Gupta3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Gupta3",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

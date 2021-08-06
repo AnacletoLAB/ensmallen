@@ -91,7 +91,7 @@ def BacteroidesSalyersiae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesSalyersiae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

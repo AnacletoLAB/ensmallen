@@ -88,7 +88,7 @@ def PararhizobiumAntarcticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PararhizobiumAntarcticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ThermusBrockianus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermusBrockianus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

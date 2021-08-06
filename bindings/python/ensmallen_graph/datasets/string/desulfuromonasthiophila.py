@@ -88,7 +88,7 @@ def DesulfuromonasThiophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfuromonasThiophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

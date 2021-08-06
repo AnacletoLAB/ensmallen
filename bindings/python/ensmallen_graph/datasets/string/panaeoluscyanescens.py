@@ -88,7 +88,7 @@ def PanaeolusCyanescens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PanaeolusCyanescens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

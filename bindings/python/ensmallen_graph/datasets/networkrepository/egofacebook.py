@@ -78,7 +78,7 @@ def EgoFacebook(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EgoFacebook",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

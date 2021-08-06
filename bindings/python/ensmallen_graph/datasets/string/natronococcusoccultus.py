@@ -91,7 +91,7 @@ def NatronococcusOccultus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NatronococcusOccultus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

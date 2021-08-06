@@ -88,7 +88,7 @@ def CandidatusBrocadiaSpUtamx1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusBrocadiaSpUtamx1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

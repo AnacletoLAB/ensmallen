@@ -88,7 +88,7 @@ def DolosicoccusPaucivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DolosicoccusPaucivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

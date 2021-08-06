@@ -91,7 +91,7 @@ def OrnithinibacillusScapharcae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OrnithinibacillusScapharcae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

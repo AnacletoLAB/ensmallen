@@ -88,7 +88,7 @@ def ParvularculaSpBbd199113(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParvularculaSpBbd199113",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MarinococcusHalophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinococcusHalophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SporosarcinaSpZbg7a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SporosarcinaSpZbg7a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

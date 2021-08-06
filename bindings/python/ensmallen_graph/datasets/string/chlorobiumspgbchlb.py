@@ -91,7 +91,7 @@ def ChlorobiumSpGbchlb(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlorobiumSpGbchlb",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

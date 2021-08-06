@@ -88,7 +88,7 @@ def EnterococcusRotai(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterococcusRotai",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

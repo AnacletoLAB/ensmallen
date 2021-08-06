@@ -88,7 +88,7 @@ def AnaerobiumAcetethylicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerobiumAcetethylicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

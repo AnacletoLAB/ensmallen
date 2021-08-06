@@ -88,7 +88,7 @@ def CephaloticoccusPrimus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CephaloticoccusPrimus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

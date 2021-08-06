@@ -91,7 +91,7 @@ def ClostridiumLentocellum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumLentocellum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

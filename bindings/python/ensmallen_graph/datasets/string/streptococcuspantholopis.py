@@ -88,7 +88,7 @@ def StreptococcusPantholopis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusPantholopis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def BacillusFumarioliNbrc102428(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusFumarioliNbrc102428",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

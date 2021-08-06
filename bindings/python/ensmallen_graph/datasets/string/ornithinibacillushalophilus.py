@@ -88,7 +88,7 @@ def OrnithinibacillusHalophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OrnithinibacillusHalophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

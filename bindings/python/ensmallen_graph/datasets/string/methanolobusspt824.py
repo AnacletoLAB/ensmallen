@@ -88,7 +88,7 @@ def MethanolobusSpT824(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanolobusSpT824",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PyrobaculumArsenaticumDsm13514(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PyrobaculumArsenaticumDsm13514",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

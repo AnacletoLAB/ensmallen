@@ -91,7 +91,7 @@ def MetallosphaeraSedula(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MetallosphaeraSedula",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

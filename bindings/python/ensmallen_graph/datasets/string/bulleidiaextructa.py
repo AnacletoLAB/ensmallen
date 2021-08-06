@@ -91,7 +91,7 @@ def BulleidiaExtructa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BulleidiaExtructa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

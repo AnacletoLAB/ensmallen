@@ -91,7 +91,7 @@ def CapsellaGrandiflora(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CapsellaGrandiflora",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

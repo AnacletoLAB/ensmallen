@@ -120,7 +120,7 @@ def SocfbPepperdine86(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbPepperdine86",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

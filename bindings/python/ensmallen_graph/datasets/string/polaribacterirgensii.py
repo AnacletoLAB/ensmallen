@@ -91,7 +91,7 @@ def PolaribacterIrgensii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PolaribacterIrgensii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

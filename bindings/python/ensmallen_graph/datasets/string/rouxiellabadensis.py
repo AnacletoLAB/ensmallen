@@ -88,7 +88,7 @@ def RouxiellaBadensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RouxiellaBadensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

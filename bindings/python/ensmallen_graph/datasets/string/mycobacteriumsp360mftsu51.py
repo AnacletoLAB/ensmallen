@@ -91,7 +91,7 @@ def MycobacteriumSp360mftsu51(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumSp360mftsu51",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

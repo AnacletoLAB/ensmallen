@@ -91,7 +91,7 @@ def SalinisphaeraHydrothermalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinisphaeraHydrothermalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def RoseovariusNubinhibens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseovariusNubinhibens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

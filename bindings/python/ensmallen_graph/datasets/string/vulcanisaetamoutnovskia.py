@@ -91,7 +91,7 @@ def VulcanisaetaMoutnovskia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VulcanisaetaMoutnovskia",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

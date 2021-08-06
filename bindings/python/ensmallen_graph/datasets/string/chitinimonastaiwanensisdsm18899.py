@@ -88,7 +88,7 @@ def ChitinimonasTaiwanensisDsm18899(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChitinimonasTaiwanensisDsm18899",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

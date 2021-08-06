@@ -88,7 +88,7 @@ def TerrisporobacterGlycolicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TerrisporobacterGlycolicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CandidatusHoaglandellaEndobia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusHoaglandellaEndobia",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

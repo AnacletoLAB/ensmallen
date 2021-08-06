@@ -88,7 +88,7 @@ def CaballeroniaTemeraria(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaballeroniaTemeraria",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

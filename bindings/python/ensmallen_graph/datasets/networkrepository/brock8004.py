@@ -104,7 +104,7 @@ def Brock8004(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Brock8004",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

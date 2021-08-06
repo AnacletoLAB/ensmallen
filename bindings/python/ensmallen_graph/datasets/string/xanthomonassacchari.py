@@ -88,7 +88,7 @@ def XanthomonasSacchari(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XanthomonasSacchari",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def MucispirillumSchaedleri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MucispirillumSchaedleri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

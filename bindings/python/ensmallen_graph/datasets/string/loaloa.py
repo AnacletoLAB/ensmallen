@@ -91,7 +91,7 @@ def LoaLoa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LoaLoa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

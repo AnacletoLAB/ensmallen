@@ -78,7 +78,7 @@ def BioGridYeast(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BioGridYeast",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

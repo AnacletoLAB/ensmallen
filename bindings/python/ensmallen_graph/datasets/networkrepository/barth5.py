@@ -78,7 +78,7 @@ def Barth5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Barth5",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def LinderinaPennispora(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LinderinaPennispora",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

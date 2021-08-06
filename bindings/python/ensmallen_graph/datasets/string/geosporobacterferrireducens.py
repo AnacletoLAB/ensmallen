@@ -88,7 +88,7 @@ def GeosporobacterFerrireducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeosporobacterFerrireducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

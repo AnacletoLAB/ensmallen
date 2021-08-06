@@ -88,7 +88,7 @@ def CoprobacillusSp8254bfaa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CoprobacillusSp8254bfaa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def StappiaStellulataDsm5886(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StappiaStellulataDsm5886",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

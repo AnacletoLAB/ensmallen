@@ -78,7 +78,7 @@ def Enron(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Enron",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

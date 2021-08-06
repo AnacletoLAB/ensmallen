@@ -88,7 +88,7 @@ def SanguibacterMarinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SanguibacterMarinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

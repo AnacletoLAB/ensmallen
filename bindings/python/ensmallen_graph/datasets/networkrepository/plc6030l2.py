@@ -78,7 +78,7 @@ def Plc6030L2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Plc6030L2",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

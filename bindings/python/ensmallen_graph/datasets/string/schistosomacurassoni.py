@@ -88,7 +88,7 @@ def SchistosomaCurassoni(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SchistosomaCurassoni",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

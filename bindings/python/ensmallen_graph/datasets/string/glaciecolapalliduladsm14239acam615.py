@@ -88,7 +88,7 @@ def GlaciecolaPallidulaDsm14239Acam615(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GlaciecolaPallidulaDsm14239Acam615",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

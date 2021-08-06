@@ -78,7 +78,7 @@ def SlashdotZoo(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SlashdotZoo",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def RhodoferaxSaidenbachensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodoferaxSaidenbachensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

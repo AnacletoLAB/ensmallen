@@ -88,7 +88,7 @@ def SmittiumSimulii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SmittiumSimulii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

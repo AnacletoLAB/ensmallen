@@ -91,7 +91,7 @@ def HalomicrobiumMukohataei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalomicrobiumMukohataei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

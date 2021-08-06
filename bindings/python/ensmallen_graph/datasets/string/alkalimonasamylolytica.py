@@ -88,7 +88,7 @@ def AlkalimonasAmylolytica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlkalimonasAmylolytica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

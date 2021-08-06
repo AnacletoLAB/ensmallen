@@ -88,7 +88,7 @@ def KomagataeibacterNataicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KomagataeibacterNataicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

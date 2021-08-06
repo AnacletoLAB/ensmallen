@@ -88,7 +88,7 @@ def ThermobifidaCellulosilyticaTb100(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermobifidaCellulosilyticaTb100",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

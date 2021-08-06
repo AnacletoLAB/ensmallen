@@ -88,7 +88,7 @@ def CaedimonasVaricaedens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaedimonasVaricaedens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

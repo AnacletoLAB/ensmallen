@@ -91,7 +91,7 @@ def DictyoglomusTurgidum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DictyoglomusTurgidum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

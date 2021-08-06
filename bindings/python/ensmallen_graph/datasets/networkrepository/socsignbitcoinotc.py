@@ -78,7 +78,7 @@ def SocSignBitcoinotc(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocSignBitcoinotc",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

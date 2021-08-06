@@ -91,7 +91,7 @@ def OphiostomaPiceae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OphiostomaPiceae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

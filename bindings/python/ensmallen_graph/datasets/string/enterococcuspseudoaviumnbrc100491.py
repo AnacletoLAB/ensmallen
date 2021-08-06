@@ -88,7 +88,7 @@ def EnterococcusPseudoaviumNbrc100491(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterococcusPseudoaviumNbrc100491",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

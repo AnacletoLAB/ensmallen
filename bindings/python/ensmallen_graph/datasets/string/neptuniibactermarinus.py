@@ -88,7 +88,7 @@ def NeptuniibacterMarinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeptuniibacterMarinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

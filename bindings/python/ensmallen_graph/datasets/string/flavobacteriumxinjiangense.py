@@ -88,7 +88,7 @@ def FlavobacteriumXinjiangense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumXinjiangense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

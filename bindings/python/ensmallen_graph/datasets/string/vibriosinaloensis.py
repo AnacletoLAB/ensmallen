@@ -91,7 +91,7 @@ def VibrioSinaloensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioSinaloensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

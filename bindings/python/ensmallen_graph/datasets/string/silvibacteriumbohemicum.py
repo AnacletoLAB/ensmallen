@@ -88,7 +88,7 @@ def SilvibacteriumBohemicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SilvibacteriumBohemicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ThermoproteusUzoniensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermoproteusUzoniensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

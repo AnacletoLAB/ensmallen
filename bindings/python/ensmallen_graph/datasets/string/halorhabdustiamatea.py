@@ -91,7 +91,7 @@ def HalorhabdusTiamatea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalorhabdusTiamatea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PorphyromonasCircumdentaria(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PorphyromonasCircumdentaria",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

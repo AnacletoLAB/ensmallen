@@ -88,7 +88,7 @@ def OreniaMetallireducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OreniaMetallireducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

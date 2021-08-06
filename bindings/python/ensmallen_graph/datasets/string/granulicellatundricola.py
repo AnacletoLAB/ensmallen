@@ -91,7 +91,7 @@ def GranulicellaTundricola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GranulicellaTundricola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

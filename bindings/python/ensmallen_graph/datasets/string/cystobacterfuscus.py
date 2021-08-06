@@ -91,7 +91,7 @@ def CystobacterFuscus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CystobacterFuscus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

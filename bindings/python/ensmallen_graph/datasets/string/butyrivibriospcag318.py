@@ -88,7 +88,7 @@ def ButyrivibrioSpCag318(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ButyrivibrioSpCag318",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

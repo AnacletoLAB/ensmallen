@@ -88,7 +88,7 @@ def ParabacteroidesSpMarseilleP3160(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParabacteroidesSpMarseilleP3160",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

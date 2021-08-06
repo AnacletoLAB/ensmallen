@@ -88,7 +88,7 @@ def ScardoviaInopinataJcm12537(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ScardoviaInopinataJcm12537",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

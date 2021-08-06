@@ -91,7 +91,7 @@ def BilophilaWadsworthia316(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BilophilaWadsworthia316",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

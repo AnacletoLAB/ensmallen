@@ -88,7 +88,7 @@ def LactobacillusSaniviriJcm17471Dsm24301(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusSaniviriJcm17471Dsm24301",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

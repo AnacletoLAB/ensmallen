@@ -88,7 +88,7 @@ def SphingobacterialesBacterium3919(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingobacterialesBacterium3919",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

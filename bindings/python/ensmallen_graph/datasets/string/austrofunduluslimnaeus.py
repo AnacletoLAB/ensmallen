@@ -88,7 +88,7 @@ def AustrofundulusLimnaeus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AustrofundulusLimnaeus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

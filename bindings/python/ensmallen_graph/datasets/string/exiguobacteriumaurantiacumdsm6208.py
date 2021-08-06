@@ -88,7 +88,7 @@ def ExiguobacteriumAurantiacumDsm6208(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ExiguobacteriumAurantiacumDsm6208",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

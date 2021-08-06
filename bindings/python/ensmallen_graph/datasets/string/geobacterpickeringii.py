@@ -88,7 +88,7 @@ def GeobacterPickeringii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeobacterPickeringii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

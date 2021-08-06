@@ -91,7 +91,7 @@ def NakamurellaMultipartita(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NakamurellaMultipartita",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

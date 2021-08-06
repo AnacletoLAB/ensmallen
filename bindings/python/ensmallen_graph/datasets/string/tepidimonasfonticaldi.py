@@ -88,7 +88,7 @@ def TepidimonasFonticaldi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TepidimonasFonticaldi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

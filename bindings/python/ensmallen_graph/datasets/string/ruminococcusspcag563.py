@@ -88,7 +88,7 @@ def RuminococcusSpCag563(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminococcusSpCag563",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def DialisterSuccinatiphilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DialisterSuccinatiphilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

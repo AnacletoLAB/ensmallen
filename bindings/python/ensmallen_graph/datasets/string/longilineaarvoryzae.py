@@ -88,7 +88,7 @@ def LongilineaArvoryzae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LongilineaArvoryzae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

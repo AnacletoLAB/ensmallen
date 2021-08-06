@@ -91,7 +91,7 @@ def MobilicoccusPelagius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MobilicoccusPelagius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PapillibacterCinnamivoransDsm12816(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PapillibacterCinnamivoransDsm12816",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def Actor(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Actor",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

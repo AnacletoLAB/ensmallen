@@ -91,7 +91,7 @@ def CoccomyxaSubellipsoidea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CoccomyxaSubellipsoidea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

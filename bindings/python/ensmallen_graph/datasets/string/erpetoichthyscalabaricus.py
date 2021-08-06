@@ -88,7 +88,7 @@ def ErpetoichthysCalabaricus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErpetoichthysCalabaricus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

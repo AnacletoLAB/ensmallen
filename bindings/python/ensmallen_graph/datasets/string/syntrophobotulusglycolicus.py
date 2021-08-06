@@ -91,7 +91,7 @@ def SyntrophobotulusGlycolicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SyntrophobotulusGlycolicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

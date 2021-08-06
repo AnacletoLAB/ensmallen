@@ -88,7 +88,7 @@ def BuchneraAphidicolaStr5aAcyrthosiphonPisum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BuchneraAphidicolaStr5aAcyrthosiphonPisum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

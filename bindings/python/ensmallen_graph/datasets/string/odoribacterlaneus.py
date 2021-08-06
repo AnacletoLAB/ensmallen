@@ -91,7 +91,7 @@ def OdoribacterLaneus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OdoribacterLaneus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def TrueperaRadiovictrix(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrueperaRadiovictrix",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

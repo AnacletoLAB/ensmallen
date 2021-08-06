@@ -88,7 +88,7 @@ def NicotianaTabacum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NicotianaTabacum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

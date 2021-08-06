@@ -91,7 +91,7 @@ def PseudomonasFluorescensNz007(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasFluorescensNz007",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

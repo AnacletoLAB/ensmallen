@@ -91,7 +91,7 @@ def KitasatosporaCheerisanensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KitasatosporaCheerisanensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

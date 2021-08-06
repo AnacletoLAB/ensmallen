@@ -88,7 +88,7 @@ def StaphylococcusGallinarum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StaphylococcusGallinarum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

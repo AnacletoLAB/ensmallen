@@ -88,7 +88,7 @@ def DenticepsClupeoides(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DenticepsClupeoides",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

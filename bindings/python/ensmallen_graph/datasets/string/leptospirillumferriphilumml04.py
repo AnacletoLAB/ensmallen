@@ -88,7 +88,7 @@ def LeptospirillumFerriphilumMl04(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptospirillumFerriphilumMl04",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

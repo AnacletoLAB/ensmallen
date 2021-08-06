@@ -88,7 +88,7 @@ def CoprococcusPhoceensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CoprococcusPhoceensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

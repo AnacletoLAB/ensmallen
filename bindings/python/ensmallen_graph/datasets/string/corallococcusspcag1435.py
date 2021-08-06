@@ -88,7 +88,7 @@ def CorallococcusSpCag1435(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorallococcusSpCag1435",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

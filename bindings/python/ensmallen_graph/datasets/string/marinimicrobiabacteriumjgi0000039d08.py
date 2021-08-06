@@ -88,7 +88,7 @@ def MarinimicrobiaBacteriumJgi0000039D08(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinimicrobiaBacteriumJgi0000039D08",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

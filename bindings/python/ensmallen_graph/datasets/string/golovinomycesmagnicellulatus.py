@@ -88,7 +88,7 @@ def GolovinomycesMagnicellulatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GolovinomycesMagnicellulatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

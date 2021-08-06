@@ -91,7 +91,7 @@ def BlastococcusSaxobsidens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlastococcusSaxobsidens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

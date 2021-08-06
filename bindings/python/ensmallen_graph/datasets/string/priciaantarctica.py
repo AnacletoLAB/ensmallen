@@ -88,7 +88,7 @@ def PriciaAntarctica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PriciaAntarctica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

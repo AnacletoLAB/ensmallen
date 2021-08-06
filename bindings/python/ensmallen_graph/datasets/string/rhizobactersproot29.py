@@ -88,7 +88,7 @@ def RhizobacterSpRoot29(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizobacterSpRoot29",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

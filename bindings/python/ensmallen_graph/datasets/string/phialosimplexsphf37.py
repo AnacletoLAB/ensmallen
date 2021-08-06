@@ -88,7 +88,7 @@ def PhialosimplexSpHf37(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhialosimplexSpHf37",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

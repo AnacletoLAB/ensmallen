@@ -91,7 +91,7 @@ def MegasphaeraSpBv3c161(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MegasphaeraSpBv3c161",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

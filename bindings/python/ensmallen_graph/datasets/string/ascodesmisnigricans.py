@@ -88,7 +88,7 @@ def AscodesmisNigricans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AscodesmisNigricans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

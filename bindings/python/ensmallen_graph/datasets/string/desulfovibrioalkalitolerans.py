@@ -91,7 +91,7 @@ def DesulfovibrioAlkalitolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioAlkalitolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def LeptotrombidiumDeliense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptotrombidiumDeliense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

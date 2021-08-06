@@ -88,7 +88,7 @@ def AcidiferrobacterThiooxydans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidiferrobacterThiooxydans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

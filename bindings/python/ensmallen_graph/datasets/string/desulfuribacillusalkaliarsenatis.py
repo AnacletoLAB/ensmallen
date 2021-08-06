@@ -88,7 +88,7 @@ def DesulfuribacillusAlkaliarsenatis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfuribacillusAlkaliarsenatis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

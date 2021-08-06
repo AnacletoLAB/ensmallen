@@ -88,7 +88,7 @@ def CyanobacteriumSpPcc7702(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CyanobacteriumSpPcc7702",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

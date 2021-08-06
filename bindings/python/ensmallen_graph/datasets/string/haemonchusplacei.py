@@ -88,7 +88,7 @@ def HaemonchusPlacei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaemonchusPlacei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

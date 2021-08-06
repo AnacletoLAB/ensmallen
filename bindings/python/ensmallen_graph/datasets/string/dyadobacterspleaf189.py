@@ -88,7 +88,7 @@ def DyadobacterSpLeaf189(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DyadobacterSpLeaf189",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def DesulfonatronovibrioHydrogenovorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfonatronovibrioHydrogenovorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

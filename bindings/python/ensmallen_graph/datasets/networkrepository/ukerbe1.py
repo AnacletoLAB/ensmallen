@@ -78,7 +78,7 @@ def Ukerbe1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Ukerbe1",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

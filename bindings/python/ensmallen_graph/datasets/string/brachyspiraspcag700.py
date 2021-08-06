@@ -88,7 +88,7 @@ def BrachyspiraSpCag700(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrachyspiraSpCag700",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

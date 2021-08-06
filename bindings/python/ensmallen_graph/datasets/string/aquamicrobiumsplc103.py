@@ -88,7 +88,7 @@ def AquamicrobiumSpLc103(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AquamicrobiumSpLc103",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

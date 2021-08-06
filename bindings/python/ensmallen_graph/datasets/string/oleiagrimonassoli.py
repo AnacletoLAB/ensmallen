@@ -88,7 +88,7 @@ def OleiagrimonasSoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OleiagrimonasSoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

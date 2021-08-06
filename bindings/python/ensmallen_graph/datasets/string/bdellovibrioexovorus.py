@@ -91,7 +91,7 @@ def BdellovibrioExovorus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BdellovibrioExovorus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def GordoniaEffusa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GordoniaEffusa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

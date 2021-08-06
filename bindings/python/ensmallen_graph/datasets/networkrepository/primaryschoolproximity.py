@@ -88,7 +88,7 @@ def PrimarySchoolProximity(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrimarySchoolProximity",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

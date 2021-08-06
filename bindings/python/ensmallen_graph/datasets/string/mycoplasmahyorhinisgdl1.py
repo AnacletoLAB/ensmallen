@@ -91,7 +91,7 @@ def MycoplasmaHyorhinisGdl1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaHyorhinisGdl1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

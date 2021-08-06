@@ -88,7 +88,7 @@ def NdongobacterMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NdongobacterMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def FusariumNygamai(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FusariumNygamai",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

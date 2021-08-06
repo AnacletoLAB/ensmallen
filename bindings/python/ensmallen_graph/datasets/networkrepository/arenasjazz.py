@@ -78,7 +78,7 @@ def ArenasJazz(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArenasJazz",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

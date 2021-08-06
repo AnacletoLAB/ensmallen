@@ -91,7 +91,7 @@ def TarsiusSyrichta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TarsiusSyrichta",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

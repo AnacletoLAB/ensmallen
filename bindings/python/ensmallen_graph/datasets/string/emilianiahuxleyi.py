@@ -91,7 +91,7 @@ def EmilianiaHuxleyi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EmilianiaHuxleyi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

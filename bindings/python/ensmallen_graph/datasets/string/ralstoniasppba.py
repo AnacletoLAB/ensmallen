@@ -91,7 +91,7 @@ def RalstoniaSpPba(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RalstoniaSpPba",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

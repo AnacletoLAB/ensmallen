@@ -88,7 +88,7 @@ def EnterococcusRivorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterococcusRivorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

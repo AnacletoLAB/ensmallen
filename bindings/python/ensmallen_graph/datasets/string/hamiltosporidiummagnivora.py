@@ -88,7 +88,7 @@ def HamiltosporidiumMagnivora(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HamiltosporidiumMagnivora",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

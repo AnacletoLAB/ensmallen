@@ -88,7 +88,7 @@ def MarinobacterPsychrophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinobacterPsychrophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

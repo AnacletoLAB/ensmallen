@@ -88,7 +88,7 @@ def ClavisporaLusitaniaeAtcc42720(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClavisporaLusitaniaeAtcc42720",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

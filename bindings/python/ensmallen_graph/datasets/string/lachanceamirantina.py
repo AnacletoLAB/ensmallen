@@ -88,7 +88,7 @@ def LachanceaMirantina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LachanceaMirantina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def GeminocystisHerdmanii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeminocystisHerdmanii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

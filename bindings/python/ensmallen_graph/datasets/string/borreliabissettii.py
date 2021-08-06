@@ -91,7 +91,7 @@ def BorreliaBissettii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BorreliaBissettii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

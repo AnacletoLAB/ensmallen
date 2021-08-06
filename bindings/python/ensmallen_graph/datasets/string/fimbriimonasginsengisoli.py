@@ -91,7 +91,7 @@ def FimbriimonasGinsengisoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FimbriimonasGinsengisoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

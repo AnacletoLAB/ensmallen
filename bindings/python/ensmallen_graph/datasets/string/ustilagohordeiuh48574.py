@@ -88,7 +88,7 @@ def UstilagoHordeiUh48574(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UstilagoHordeiUh48574",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

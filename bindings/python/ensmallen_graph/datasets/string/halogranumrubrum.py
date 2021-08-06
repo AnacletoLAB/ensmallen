@@ -88,7 +88,7 @@ def HalogranumRubrum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalogranumRubrum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

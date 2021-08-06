@@ -88,7 +88,7 @@ def BauldiaLitoralis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BauldiaLitoralis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

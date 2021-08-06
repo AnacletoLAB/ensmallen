@@ -91,7 +91,7 @@ def PantoeaVagans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PantoeaVagans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

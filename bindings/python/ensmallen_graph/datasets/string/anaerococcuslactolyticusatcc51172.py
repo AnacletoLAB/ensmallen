@@ -91,7 +91,7 @@ def AnaerococcusLactolyticusAtcc51172(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerococcusLactolyticusAtcc51172",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

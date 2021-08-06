@@ -78,7 +78,7 @@ def Wave(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Wave",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

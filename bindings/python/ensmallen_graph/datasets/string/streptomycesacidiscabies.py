@@ -91,7 +91,7 @@ def StreptomycesAcidiscabies(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesAcidiscabies",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PlanktothricoidesSpSr001(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlanktothricoidesSpSr001",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MacacaNemestrina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MacacaNemestrina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

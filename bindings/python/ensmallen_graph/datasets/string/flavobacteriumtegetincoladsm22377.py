@@ -88,7 +88,7 @@ def FlavobacteriumTegetincolaDsm22377(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumTegetincolaDsm22377",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

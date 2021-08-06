@@ -88,7 +88,7 @@ def PrevotellaIntermedia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaIntermedia",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

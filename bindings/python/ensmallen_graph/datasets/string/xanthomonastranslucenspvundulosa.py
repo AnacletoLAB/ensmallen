@@ -88,7 +88,7 @@ def XanthomonasTranslucensPvUndulosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XanthomonasTranslucensPvUndulosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

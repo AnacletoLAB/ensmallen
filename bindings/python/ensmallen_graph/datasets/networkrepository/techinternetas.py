@@ -94,7 +94,7 @@ def TechInternetAs(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TechInternetAs",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

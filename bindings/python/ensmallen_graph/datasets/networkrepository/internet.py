@@ -78,7 +78,7 @@ def Internet(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Internet",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def CaGrqc(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaGrqc",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

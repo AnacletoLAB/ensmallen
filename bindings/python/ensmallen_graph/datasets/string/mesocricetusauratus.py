@@ -91,7 +91,7 @@ def MesocricetusAuratus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MesocricetusAuratus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

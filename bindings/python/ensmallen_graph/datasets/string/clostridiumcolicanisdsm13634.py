@@ -88,7 +88,7 @@ def ClostridiumColicanisDsm13634(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumColicanisDsm13634",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

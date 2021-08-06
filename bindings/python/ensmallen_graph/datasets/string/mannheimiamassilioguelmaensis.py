@@ -88,7 +88,7 @@ def MannheimiaMassilioguelmaensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MannheimiaMassilioguelmaensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

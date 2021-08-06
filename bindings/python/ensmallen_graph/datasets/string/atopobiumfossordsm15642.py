@@ -88,7 +88,7 @@ def AtopobiumFossorDsm15642(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AtopobiumFossorDsm15642",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ThaueraTerpenica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThaueraTerpenica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PirellulaStaleyi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PirellulaStaleyi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

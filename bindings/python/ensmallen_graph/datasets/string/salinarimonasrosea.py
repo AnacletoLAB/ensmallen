@@ -91,7 +91,7 @@ def SalinarimonasRosea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinarimonasRosea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

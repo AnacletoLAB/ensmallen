@@ -88,7 +88,7 @@ def ExophialaSpinifera(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ExophialaSpinifera",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

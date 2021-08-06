@@ -88,7 +88,7 @@ def JanibacterCorallicolaNbrc107790(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JanibacterCorallicolaNbrc107790",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

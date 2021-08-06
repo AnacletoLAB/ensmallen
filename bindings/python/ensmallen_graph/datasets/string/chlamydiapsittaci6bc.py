@@ -91,7 +91,7 @@ def ChlamydiaPsittaci6bc(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlamydiaPsittaci6bc",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

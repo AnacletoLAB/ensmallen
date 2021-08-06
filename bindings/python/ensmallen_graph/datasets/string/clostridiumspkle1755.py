@@ -91,7 +91,7 @@ def ClostridiumSpKle1755(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumSpKle1755",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ThermomicrobialesBacteriumKi4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermomicrobialesBacteriumKi4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

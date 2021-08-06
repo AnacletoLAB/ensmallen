@@ -88,7 +88,7 @@ def EikenellaCorrodens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EikenellaCorrodens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

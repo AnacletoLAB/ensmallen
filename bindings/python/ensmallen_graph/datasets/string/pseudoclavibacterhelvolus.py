@@ -88,7 +88,7 @@ def PseudoclavibacterHelvolus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoclavibacterHelvolus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

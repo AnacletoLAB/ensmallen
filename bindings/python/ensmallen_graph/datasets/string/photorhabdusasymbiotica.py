@@ -91,7 +91,7 @@ def PhotorhabdusAsymbiotica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhotorhabdusAsymbiotica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

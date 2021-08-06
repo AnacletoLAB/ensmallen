@@ -78,7 +78,7 @@ def Lock2232(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Lock2232",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

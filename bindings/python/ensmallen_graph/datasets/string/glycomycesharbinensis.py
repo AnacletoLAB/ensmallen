@@ -88,7 +88,7 @@ def GlycomycesHarbinensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GlycomycesHarbinensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

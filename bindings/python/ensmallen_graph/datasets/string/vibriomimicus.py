@@ -91,7 +91,7 @@ def VibrioMimicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioMimicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

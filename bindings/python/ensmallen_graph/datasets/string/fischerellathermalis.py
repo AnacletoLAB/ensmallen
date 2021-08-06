@@ -91,7 +91,7 @@ def FischerellaThermalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FischerellaThermalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CatenariaAnguillulaePl171(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CatenariaAnguillulaePl171",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

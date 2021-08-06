@@ -91,7 +91,7 @@ def StreptomycesYeochonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesYeochonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

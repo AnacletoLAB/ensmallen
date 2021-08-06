@@ -88,7 +88,7 @@ def AlphaProteobacteriumScgcAaa015N04(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlphaProteobacteriumScgcAaa015N04",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

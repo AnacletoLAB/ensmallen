@@ -98,7 +98,7 @@ def CaDblp2012(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaDblp2012",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

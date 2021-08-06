@@ -91,7 +91,7 @@ def IctidomysTridecemlineatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IctidomysTridecemlineatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

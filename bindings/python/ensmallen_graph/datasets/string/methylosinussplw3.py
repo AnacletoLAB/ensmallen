@@ -91,7 +91,7 @@ def MethylosinusSpLw3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylosinusSpLw3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

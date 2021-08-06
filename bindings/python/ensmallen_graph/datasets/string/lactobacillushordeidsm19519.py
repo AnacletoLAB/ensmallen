@@ -88,7 +88,7 @@ def LactobacillusHordeiDsm19519(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusHordeiDsm19519",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def GryllotalpicolaGinsengisoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GryllotalpicolaGinsengisoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

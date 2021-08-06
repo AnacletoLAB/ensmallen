@@ -91,7 +91,7 @@ def DickeyaSpNcppb569(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DickeyaSpNcppb569",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def FrancisellaNoatunensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FrancisellaNoatunensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

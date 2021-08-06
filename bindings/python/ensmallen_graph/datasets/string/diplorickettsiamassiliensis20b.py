@@ -88,7 +88,7 @@ def DiplorickettsiaMassiliensis20b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DiplorickettsiaMassiliensis20b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

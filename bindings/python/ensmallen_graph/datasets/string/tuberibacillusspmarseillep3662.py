@@ -88,7 +88,7 @@ def TuberibacillusSpMarseilleP3662(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TuberibacillusSpMarseilleP3662",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

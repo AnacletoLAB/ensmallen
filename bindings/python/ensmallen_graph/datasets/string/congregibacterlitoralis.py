@@ -91,7 +91,7 @@ def CongregibacterLitoralis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CongregibacterLitoralis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

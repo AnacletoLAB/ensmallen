@@ -88,7 +88,7 @@ def AcidithrixFerrooxidans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidithrixFerrooxidans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

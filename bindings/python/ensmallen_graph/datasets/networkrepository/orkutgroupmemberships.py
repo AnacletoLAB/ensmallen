@@ -78,7 +78,7 @@ def OrkutGroupmemberships(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OrkutGroupmemberships",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

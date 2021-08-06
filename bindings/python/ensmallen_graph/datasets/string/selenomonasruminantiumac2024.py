@@ -91,7 +91,7 @@ def SelenomonasRuminantiumAc2024(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SelenomonasRuminantiumAc2024",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

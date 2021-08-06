@@ -88,7 +88,7 @@ def PsychroserpensMesophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PsychroserpensMesophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

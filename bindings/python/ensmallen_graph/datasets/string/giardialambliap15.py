@@ -88,7 +88,7 @@ def GiardiaLambliaP15(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GiardiaLambliaP15",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def StaphylococcusAgnetis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StaphylococcusAgnetis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

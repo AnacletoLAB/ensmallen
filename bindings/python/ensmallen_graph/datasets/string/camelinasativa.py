@@ -91,7 +91,7 @@ def CamelinaSativa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CamelinaSativa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

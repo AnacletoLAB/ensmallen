@@ -91,7 +91,7 @@ def GluconobacterOxydansH24(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GluconobacterOxydansH24",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

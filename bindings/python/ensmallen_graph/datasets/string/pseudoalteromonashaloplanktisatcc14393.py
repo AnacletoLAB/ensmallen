@@ -91,7 +91,7 @@ def PseudoalteromonasHaloplanktisAtcc14393(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoalteromonasHaloplanktisAtcc14393",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

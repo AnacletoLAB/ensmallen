@@ -91,7 +91,7 @@ def LachnospiraceaeF0167(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LachnospiraceaeF0167",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

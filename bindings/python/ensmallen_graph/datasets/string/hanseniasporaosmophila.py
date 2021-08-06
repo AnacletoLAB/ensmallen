@@ -88,7 +88,7 @@ def HanseniasporaOsmophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HanseniasporaOsmophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

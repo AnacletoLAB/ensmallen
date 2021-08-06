@@ -88,7 +88,7 @@ def MonopterusAlbus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MonopterusAlbus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

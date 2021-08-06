@@ -88,7 +88,7 @@ def DesulfatiglansAniliniDsm4660(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfatiglansAniliniDsm4660",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

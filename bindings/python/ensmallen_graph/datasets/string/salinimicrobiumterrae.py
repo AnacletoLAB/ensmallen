@@ -91,7 +91,7 @@ def SalinimicrobiumTerrae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinimicrobiumTerrae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

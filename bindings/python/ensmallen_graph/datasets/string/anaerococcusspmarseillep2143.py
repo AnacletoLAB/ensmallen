@@ -88,7 +88,7 @@ def AnaerococcusSpMarseilleP2143(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerococcusSpMarseilleP2143",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

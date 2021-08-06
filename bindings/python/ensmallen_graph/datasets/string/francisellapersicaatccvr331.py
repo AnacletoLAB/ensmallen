@@ -88,7 +88,7 @@ def FrancisellaPersicaAtccVr331(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FrancisellaPersicaAtccVr331",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

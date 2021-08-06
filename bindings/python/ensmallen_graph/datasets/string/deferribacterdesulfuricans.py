@@ -91,7 +91,7 @@ def DeferribacterDesulfuricans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DeferribacterDesulfuricans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

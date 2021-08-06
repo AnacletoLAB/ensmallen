@@ -91,7 +91,7 @@ def EnterococcusMundtii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterococcusMundtii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

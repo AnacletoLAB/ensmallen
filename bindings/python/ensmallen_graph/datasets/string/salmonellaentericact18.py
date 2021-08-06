@@ -88,7 +88,7 @@ def SalmonellaEntericaCt18(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalmonellaEntericaCt18",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

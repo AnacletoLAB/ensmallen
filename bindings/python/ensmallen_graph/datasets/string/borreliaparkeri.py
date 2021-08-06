@@ -91,7 +91,7 @@ def BorreliaParkeri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BorreliaParkeri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

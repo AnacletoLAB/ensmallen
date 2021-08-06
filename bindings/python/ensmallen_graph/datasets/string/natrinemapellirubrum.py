@@ -91,7 +91,7 @@ def NatrinemaPellirubrum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NatrinemaPellirubrum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

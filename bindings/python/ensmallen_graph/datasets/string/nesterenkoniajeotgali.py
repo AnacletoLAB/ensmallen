@@ -88,7 +88,7 @@ def NesterenkoniaJeotgali(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NesterenkoniaJeotgali",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

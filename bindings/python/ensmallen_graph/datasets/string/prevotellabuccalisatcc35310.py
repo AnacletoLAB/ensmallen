@@ -91,7 +91,7 @@ def PrevotellaBuccalisAtcc35310(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaBuccalisAtcc35310",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

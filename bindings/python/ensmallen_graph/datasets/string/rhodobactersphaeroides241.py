@@ -91,7 +91,7 @@ def RhodobacterSphaeroides241(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodobacterSphaeroides241",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

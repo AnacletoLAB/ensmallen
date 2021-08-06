@@ -88,7 +88,7 @@ def NeokomagataeaThailandicaNbrc106555(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeokomagataeaThailandicaNbrc106555",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

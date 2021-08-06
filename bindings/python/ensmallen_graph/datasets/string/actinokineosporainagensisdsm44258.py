@@ -88,7 +88,7 @@ def ActinokineosporaInagensisDsm44258(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinokineosporaInagensisDsm44258",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def GammaProteobacteriumImcc3088(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GammaProteobacteriumImcc3088",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def GemellaMorbillorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GemellaMorbillorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

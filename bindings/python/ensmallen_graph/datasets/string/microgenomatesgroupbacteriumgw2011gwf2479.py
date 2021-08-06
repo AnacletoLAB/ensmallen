@@ -88,7 +88,7 @@ def MicrogenomatesGroupBacteriumGw2011Gwf2479(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrogenomatesGroupBacteriumGw2011Gwf2479",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

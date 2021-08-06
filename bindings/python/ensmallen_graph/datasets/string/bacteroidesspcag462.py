@@ -88,7 +88,7 @@ def BacteroidesSpCag462(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesSpCag462",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

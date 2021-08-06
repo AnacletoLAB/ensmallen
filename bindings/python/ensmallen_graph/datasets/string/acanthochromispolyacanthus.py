@@ -88,7 +88,7 @@ def AcanthochromisPolyacanthus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcanthochromisPolyacanthus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ShewanellaPutrefaciens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShewanellaPutrefaciens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

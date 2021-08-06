@@ -91,7 +91,7 @@ def NonlabensSediminis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NonlabensSediminis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

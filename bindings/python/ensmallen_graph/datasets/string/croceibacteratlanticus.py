@@ -91,7 +91,7 @@ def CroceibacterAtlanticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CroceibacterAtlanticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def CastellaniellaDefragrans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CastellaniellaDefragrans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

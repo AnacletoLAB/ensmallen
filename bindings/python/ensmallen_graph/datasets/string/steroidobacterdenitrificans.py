@@ -88,7 +88,7 @@ def SteroidobacterDenitrificans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SteroidobacterDenitrificans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

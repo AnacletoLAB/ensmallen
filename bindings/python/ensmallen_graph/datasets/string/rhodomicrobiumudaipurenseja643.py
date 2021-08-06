@@ -88,7 +88,7 @@ def RhodomicrobiumUdaipurenseJa643(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodomicrobiumUdaipurenseJa643",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def AgrobacteriumRhizogenes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AgrobacteriumRhizogenes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

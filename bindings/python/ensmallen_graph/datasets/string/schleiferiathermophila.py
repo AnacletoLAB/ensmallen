@@ -91,7 +91,7 @@ def SchleiferiaThermophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SchleiferiaThermophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

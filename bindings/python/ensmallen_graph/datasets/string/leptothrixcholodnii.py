@@ -91,7 +91,7 @@ def LeptothrixCholodnii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptothrixCholodnii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

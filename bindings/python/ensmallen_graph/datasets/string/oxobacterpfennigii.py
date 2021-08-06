@@ -88,7 +88,7 @@ def OxobacterPfennigii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OxobacterPfennigii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

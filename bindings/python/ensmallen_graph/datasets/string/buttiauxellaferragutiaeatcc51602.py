@@ -88,7 +88,7 @@ def ButtiauxellaFerragutiaeAtcc51602(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ButtiauxellaFerragutiaeAtcc51602",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

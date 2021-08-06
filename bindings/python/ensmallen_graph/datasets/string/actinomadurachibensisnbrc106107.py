@@ -88,7 +88,7 @@ def ActinomaduraChibensisNbrc106107(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomaduraChibensisNbrc106107",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

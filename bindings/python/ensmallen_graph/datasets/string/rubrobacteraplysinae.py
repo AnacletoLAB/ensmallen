@@ -88,7 +88,7 @@ def RubrobacterAplysinae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RubrobacterAplysinae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

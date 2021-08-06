@@ -88,7 +88,7 @@ def SulfurovumSpEnrichmentCultureCloneC5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfurovumSpEnrichmentCultureCloneC5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

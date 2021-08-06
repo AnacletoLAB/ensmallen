@@ -88,7 +88,7 @@ def CorchorusOlitorius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorchorusOlitorius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

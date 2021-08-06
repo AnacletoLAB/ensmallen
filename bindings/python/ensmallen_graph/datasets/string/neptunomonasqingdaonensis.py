@@ -88,7 +88,7 @@ def NeptunomonasQingdaonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeptunomonasQingdaonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

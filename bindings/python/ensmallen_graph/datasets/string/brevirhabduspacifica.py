@@ -88,7 +88,7 @@ def BrevirhabdusPacifica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrevirhabdusPacifica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

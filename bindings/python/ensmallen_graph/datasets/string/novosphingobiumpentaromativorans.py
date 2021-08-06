@@ -91,7 +91,7 @@ def NovosphingobiumPentaromativorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NovosphingobiumPentaromativorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AgrococcusJejuensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AgrococcusJejuensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

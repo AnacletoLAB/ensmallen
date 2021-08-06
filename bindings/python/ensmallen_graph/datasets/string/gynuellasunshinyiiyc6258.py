@@ -88,7 +88,7 @@ def GynuellaSunshinyiiYc6258(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GynuellaSunshinyiiYc6258",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

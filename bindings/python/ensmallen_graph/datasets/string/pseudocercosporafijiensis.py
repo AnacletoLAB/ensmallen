@@ -91,7 +91,7 @@ def PseudocercosporaFijiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudocercosporaFijiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SocTwitter(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocTwitter",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

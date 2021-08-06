@@ -88,7 +88,7 @@ def UrinicoccusMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UrinicoccusMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

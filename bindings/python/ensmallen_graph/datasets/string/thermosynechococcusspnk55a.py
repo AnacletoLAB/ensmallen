@@ -88,7 +88,7 @@ def ThermosynechococcusSpNk55a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermosynechococcusSpNk55a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MicrogenomatesGroupBacteriumRbg164519(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrogenomatesGroupBacteriumRbg164519",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

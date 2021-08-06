@@ -88,7 +88,7 @@ def ExophialaMesophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ExophialaMesophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

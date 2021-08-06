@@ -88,7 +88,7 @@ def SchaaliaOdontolytica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SchaaliaOdontolytica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ChrysolophusPictus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChrysolophusPictus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def MethanobacteriumLacus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanobacteriumLacus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

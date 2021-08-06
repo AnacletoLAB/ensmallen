@@ -88,7 +88,7 @@ def DomibacillusTundrae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DomibacillusTundrae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

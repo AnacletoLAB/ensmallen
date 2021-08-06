@@ -88,7 +88,7 @@ def AmphriteaAtlantica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmphriteaAtlantica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

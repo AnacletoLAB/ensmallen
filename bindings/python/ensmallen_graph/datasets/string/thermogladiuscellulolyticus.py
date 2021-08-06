@@ -91,7 +91,7 @@ def ThermogladiusCellulolyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermogladiusCellulolyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

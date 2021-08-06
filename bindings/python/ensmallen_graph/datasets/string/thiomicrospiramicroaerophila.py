@@ -88,7 +88,7 @@ def ThiomicrospiraMicroaerophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThiomicrospiraMicroaerophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

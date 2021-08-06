@@ -88,7 +88,7 @@ def PorphyrobacterNeustonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PorphyrobacterNeustonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

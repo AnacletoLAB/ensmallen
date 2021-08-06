@@ -88,7 +88,7 @@ def SphingobacterialesBacteriumUtbcd1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingobacterialesBacteriumUtbcd1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

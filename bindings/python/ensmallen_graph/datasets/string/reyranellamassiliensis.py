@@ -91,7 +91,7 @@ def ReyranellaMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ReyranellaMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

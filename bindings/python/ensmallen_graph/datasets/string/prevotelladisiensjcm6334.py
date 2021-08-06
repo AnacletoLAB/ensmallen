@@ -91,7 +91,7 @@ def PrevotellaDisiensJcm6334(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaDisiensJcm6334",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

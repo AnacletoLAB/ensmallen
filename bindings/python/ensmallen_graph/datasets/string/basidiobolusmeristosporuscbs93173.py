@@ -88,7 +88,7 @@ def BasidiobolusMeristosporusCbs93173(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BasidiobolusMeristosporusCbs93173",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AcidovoraxValerianellae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidovoraxValerianellae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

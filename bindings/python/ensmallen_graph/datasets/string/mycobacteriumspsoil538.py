@@ -88,7 +88,7 @@ def MycobacteriumSpSoil538(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumSpSoil538",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

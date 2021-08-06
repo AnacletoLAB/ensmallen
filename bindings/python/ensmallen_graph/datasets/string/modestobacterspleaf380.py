@@ -88,7 +88,7 @@ def ModestobacterSpLeaf380(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ModestobacterSpLeaf380",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

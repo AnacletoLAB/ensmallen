@@ -88,7 +88,7 @@ def CercosporaZeina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CercosporaZeina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

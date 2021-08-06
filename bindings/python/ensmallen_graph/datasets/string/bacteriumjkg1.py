@@ -88,7 +88,7 @@ def BacteriumJkg1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteriumJkg1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

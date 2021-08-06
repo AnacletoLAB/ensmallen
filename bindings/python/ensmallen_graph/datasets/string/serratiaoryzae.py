@@ -88,7 +88,7 @@ def SerratiaOryzae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SerratiaOryzae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

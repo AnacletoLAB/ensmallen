@@ -91,7 +91,7 @@ def ParascardoviaDenticolensDsm10105(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParascardoviaDenticolensDsm10105",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

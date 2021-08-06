@@ -88,7 +88,7 @@ def CurvibacterDelicatusNbrc14919(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CurvibacterDelicatusNbrc14919",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

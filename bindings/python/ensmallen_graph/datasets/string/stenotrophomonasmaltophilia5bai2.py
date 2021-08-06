@@ -91,7 +91,7 @@ def StenotrophomonasMaltophilia5bai2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StenotrophomonasMaltophilia5bai2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

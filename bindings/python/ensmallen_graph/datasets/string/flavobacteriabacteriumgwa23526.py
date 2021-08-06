@@ -88,7 +88,7 @@ def FlavobacteriaBacteriumGwa23526(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriaBacteriumGwa23526",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

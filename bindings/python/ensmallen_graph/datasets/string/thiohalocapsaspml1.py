@@ -88,7 +88,7 @@ def ThiohalocapsaSpMl1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThiohalocapsaSpMl1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

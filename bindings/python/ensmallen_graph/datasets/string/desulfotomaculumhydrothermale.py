@@ -91,7 +91,7 @@ def DesulfotomaculumHydrothermale(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfotomaculumHydrothermale",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def OnionYellows(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OnionYellows",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

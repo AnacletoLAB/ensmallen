@@ -91,7 +91,7 @@ def BoseaSpUnc402clcol(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BoseaSpUnc402clcol",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

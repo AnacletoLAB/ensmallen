@@ -91,7 +91,7 @@ def BlastomycesDermatitidis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlastomycesDermatitidis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

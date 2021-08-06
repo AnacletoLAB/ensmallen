@@ -91,7 +91,7 @@ def MyroidesOdoratimimus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MyroidesOdoratimimus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

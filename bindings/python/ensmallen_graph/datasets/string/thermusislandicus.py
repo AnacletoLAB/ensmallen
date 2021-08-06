@@ -91,7 +91,7 @@ def ThermusIslandicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermusIslandicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

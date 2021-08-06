@@ -88,7 +88,7 @@ def LactobacillusSharpeaeJcm1186Dsm20505(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusSharpeaeJcm1186Dsm20505",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

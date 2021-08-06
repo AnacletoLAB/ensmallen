@@ -88,7 +88,7 @@ def YersiniaEntomophaga(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="YersiniaEntomophaga",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

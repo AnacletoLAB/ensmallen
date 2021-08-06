@@ -88,7 +88,7 @@ def TemnothoraxLongispinosus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TemnothoraxLongispinosus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

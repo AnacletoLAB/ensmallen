@@ -88,7 +88,7 @@ def PlasmodiumYoeliiYoelii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlasmodiumYoeliiYoelii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

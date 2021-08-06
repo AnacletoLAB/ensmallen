@@ -91,7 +91,7 @@ def DietziaAlimentaria(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DietziaAlimentaria",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

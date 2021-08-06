@@ -91,7 +91,7 @@ def EnterobacterCloacaeJd6301(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterobacterCloacaeJd6301",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

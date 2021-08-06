@@ -91,7 +91,7 @@ def ListeriaWeihenstephanensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ListeriaWeihenstephanensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

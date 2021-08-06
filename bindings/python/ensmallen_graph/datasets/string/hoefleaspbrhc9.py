@@ -88,7 +88,7 @@ def HoefleaSpBrhC9(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HoefleaSpBrhC9",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def MahellaAustraliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MahellaAustraliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

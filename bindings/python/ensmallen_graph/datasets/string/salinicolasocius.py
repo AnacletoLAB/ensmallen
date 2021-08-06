@@ -88,7 +88,7 @@ def SalinicolaSocius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinicolaSocius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

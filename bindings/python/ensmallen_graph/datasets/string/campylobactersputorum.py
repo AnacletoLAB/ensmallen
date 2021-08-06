@@ -91,7 +91,7 @@ def CampylobacterSputorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterSputorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

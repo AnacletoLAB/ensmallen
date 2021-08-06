@@ -91,7 +91,7 @@ def OctadecabacterAntarcticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OctadecabacterAntarcticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

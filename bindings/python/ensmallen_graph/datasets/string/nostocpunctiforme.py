@@ -91,7 +91,7 @@ def NostocPunctiforme(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NostocPunctiforme",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

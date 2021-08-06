@@ -88,7 +88,7 @@ def MoraxellaLincolnii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MoraxellaLincolnii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

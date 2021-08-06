@@ -91,7 +91,7 @@ def ParaprevotellaXylaniphila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParaprevotellaXylaniphila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

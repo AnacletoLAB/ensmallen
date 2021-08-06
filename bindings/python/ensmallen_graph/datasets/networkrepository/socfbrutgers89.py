@@ -120,7 +120,7 @@ def SocfbRutgers89(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbRutgers89",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def MoritellaDasanensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MoritellaDasanensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

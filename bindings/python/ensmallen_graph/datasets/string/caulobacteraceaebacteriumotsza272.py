@@ -88,7 +88,7 @@ def CaulobacteraceaeBacteriumOtszA272(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaulobacteraceaeBacteriumOtszA272",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

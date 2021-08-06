@@ -91,7 +91,7 @@ def ShewanellaPiezotolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShewanellaPiezotolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

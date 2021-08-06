@@ -88,7 +88,7 @@ def ThermosiphoAtlanticusDsm15807(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermosiphoAtlanticusDsm15807",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

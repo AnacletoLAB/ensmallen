@@ -88,7 +88,7 @@ def AeromonasEnteropelogenes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AeromonasEnteropelogenes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

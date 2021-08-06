@@ -88,7 +88,7 @@ def StenotrophomonasKoreensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StenotrophomonasKoreensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

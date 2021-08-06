@@ -91,7 +91,7 @@ def VeillonellaAtypicaAcs049vsch6(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VeillonellaAtypicaAcs049vsch6",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

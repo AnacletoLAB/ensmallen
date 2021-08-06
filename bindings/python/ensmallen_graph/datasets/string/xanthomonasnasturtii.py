@@ -88,7 +88,7 @@ def XanthomonasNasturtii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XanthomonasNasturtii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

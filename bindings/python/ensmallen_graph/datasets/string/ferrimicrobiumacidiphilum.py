@@ -91,7 +91,7 @@ def FerrimicrobiumAcidiphilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FerrimicrobiumAcidiphilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

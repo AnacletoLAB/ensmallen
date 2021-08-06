@@ -78,7 +78,7 @@ def Flickredges(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Flickredges",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

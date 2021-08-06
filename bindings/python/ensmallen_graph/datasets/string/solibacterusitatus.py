@@ -91,7 +91,7 @@ def SolibacterUsitatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SolibacterUsitatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

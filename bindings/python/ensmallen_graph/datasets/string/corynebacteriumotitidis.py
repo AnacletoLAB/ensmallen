@@ -88,7 +88,7 @@ def CorynebacteriumOtitidis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumOtitidis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

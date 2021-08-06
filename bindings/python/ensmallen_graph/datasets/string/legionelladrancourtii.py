@@ -91,7 +91,7 @@ def LegionellaDrancourtii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LegionellaDrancourtii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

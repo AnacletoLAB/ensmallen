@@ -88,7 +88,7 @@ def LimnothrixSpCaciam69d(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LimnothrixSpCaciam69d",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

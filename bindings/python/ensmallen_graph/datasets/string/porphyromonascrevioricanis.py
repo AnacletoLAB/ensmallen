@@ -91,7 +91,7 @@ def PorphyromonasCrevioricanis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PorphyromonasCrevioricanis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def KitasatosporaAzatica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KitasatosporaAzatica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

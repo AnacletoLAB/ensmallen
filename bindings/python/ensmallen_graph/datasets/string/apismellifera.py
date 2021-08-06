@@ -91,7 +91,7 @@ def ApisMellifera(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ApisMellifera",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def CaldivirgaMaquilingensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaldivirgaMaquilingensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

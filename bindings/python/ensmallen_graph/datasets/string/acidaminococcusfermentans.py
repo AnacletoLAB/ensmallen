@@ -91,7 +91,7 @@ def AcidaminococcusFermentans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidaminococcusFermentans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

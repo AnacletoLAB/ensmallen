@@ -88,7 +88,7 @@ def ThermocrinisMinervae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermocrinisMinervae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

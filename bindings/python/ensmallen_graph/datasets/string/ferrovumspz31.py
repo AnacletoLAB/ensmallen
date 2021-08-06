@@ -88,7 +88,7 @@ def FerrovumSpZ31(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FerrovumSpZ31",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

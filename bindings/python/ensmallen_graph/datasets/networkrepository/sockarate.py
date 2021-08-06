@@ -96,7 +96,7 @@ def SocKarate(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocKarate",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

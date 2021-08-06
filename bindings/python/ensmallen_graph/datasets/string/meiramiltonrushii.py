@@ -88,7 +88,7 @@ def MeiraMiltonrushii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MeiraMiltonrushii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

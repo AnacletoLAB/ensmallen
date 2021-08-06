@@ -88,7 +88,7 @@ def TessaracoccusSpT2530(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TessaracoccusSpT2530",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

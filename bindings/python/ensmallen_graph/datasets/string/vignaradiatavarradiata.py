@@ -88,7 +88,7 @@ def VignaRadiataVarRadiata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VignaRadiataVarRadiata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ParastrongyloidesTrichosuri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParastrongyloidesTrichosuri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

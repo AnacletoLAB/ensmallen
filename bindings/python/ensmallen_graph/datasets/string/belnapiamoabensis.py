@@ -91,7 +91,7 @@ def BelnapiaMoabensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BelnapiaMoabensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

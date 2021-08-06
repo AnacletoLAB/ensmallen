@@ -91,7 +91,7 @@ def AspergillusFumigatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AspergillusFumigatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

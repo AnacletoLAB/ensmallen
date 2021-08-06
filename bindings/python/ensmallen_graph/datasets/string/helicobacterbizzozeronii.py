@@ -91,7 +91,7 @@ def HelicobacterBizzozeronii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelicobacterBizzozeronii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

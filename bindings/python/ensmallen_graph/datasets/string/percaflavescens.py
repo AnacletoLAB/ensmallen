@@ -88,7 +88,7 @@ def PercaFlavescens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PercaFlavescens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

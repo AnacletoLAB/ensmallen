@@ -88,7 +88,7 @@ def RhizobiumAethiopicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizobiumAethiopicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

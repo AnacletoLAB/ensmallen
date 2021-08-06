@@ -91,7 +91,7 @@ def XanthomonasAxonopodisCitri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XanthomonasAxonopodisCitri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

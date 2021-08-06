@@ -88,7 +88,7 @@ def DyellaMarensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DyellaMarensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

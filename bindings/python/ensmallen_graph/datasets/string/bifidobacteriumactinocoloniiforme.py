@@ -91,7 +91,7 @@ def BifidobacteriumActinocoloniiforme(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BifidobacteriumActinocoloniiforme",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

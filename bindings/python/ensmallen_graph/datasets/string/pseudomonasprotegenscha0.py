@@ -91,7 +91,7 @@ def PseudomonasProtegensCha0(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasProtegensCha0",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PlasmodiumBergheiAnka(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlasmodiumBergheiAnka",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

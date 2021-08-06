@@ -88,7 +88,7 @@ def CardiobacteriumHominis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CardiobacteriumHominis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

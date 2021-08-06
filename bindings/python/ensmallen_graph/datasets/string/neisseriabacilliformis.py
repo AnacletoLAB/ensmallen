@@ -88,7 +88,7 @@ def NeisseriaBacilliformis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeisseriaBacilliformis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

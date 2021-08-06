@@ -88,7 +88,7 @@ def XenorhabdusKoppenhoeferi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XenorhabdusKoppenhoeferi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

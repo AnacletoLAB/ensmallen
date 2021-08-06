@@ -88,7 +88,7 @@ def LactobacillusMucosaeLm1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusMucosaeLm1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

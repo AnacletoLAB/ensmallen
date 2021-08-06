@@ -91,7 +91,7 @@ def MixiaOsmundae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MixiaOsmundae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

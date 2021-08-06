@@ -91,7 +91,7 @@ def ClostridiumSenegalense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumSenegalense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

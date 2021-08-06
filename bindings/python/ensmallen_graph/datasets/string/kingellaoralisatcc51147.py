@@ -88,7 +88,7 @@ def KingellaOralisAtcc51147(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KingellaOralisAtcc51147",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

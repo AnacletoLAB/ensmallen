@@ -88,7 +88,7 @@ def StreptococcusBovimastitidis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusBovimastitidis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

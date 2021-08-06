@@ -91,7 +91,7 @@ def StanieriaCyanosphaera(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StanieriaCyanosphaera",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

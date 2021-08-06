@@ -88,7 +88,7 @@ def TatlockiaMicdadei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TatlockiaMicdadei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

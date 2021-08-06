@@ -91,7 +91,7 @@ def RhizophagusIrregularis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizophagusIrregularis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

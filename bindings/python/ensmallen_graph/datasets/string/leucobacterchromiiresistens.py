@@ -91,7 +91,7 @@ def LeucobacterChromiiresistens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeucobacterChromiiresistens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def EnterovibrioCalviensisDsm14347(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterovibrioCalviensisDsm14347",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

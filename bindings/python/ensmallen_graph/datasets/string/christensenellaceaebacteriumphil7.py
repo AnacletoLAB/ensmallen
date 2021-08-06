@@ -88,7 +88,7 @@ def ChristensenellaceaeBacteriumPhil7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChristensenellaceaeBacteriumPhil7",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

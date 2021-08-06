@@ -88,7 +88,7 @@ def CampylobacterSpNctc13003(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterSpNctc13003",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

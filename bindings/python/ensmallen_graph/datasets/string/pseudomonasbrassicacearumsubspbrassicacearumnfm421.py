@@ -88,7 +88,7 @@ def PseudomonasBrassicacearumSubspBrassicacearumNfm421(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasBrassicacearumSubspBrassicacearumNfm421",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

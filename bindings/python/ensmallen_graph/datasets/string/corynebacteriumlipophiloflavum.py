@@ -91,7 +91,7 @@ def CorynebacteriumLipophiloflavum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumLipophiloflavum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

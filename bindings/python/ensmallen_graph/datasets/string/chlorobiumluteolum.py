@@ -91,7 +91,7 @@ def ChlorobiumLuteolum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlorobiumLuteolum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

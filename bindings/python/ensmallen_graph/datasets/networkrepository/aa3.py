@@ -78,7 +78,7 @@ def Aa3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Aa3",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

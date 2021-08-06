@@ -91,7 +91,7 @@ def HaloferaxMucosum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaloferaxMucosum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

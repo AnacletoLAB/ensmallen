@@ -88,7 +88,7 @@ def MacellibacteroidesSpHhZs(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MacellibacteroidesSpHhZs",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

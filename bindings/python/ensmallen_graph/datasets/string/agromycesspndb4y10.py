@@ -88,7 +88,7 @@ def AgromycesSpNdb4y10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AgromycesSpNdb4y10",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

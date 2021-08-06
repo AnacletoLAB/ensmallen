@@ -91,7 +91,7 @@ def VibrioTasmaniensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioTasmaniensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

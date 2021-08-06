@@ -88,7 +88,7 @@ def FlavobacteriumFryxellicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumFryxellicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

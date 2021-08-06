@@ -88,7 +88,7 @@ def CardiobacteriumValvarumF0432(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CardiobacteriumValvarumF0432",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

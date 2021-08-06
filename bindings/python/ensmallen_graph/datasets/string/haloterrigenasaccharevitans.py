@@ -88,7 +88,7 @@ def HaloterrigenaSaccharevitans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaloterrigenaSaccharevitans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def KosakoniaCowanii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KosakoniaCowanii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def JonesiaDenitrificans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JonesiaDenitrificans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

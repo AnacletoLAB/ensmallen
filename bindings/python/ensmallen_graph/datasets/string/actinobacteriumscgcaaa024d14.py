@@ -88,7 +88,7 @@ def ActinobacteriumScgcAaa024D14(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinobacteriumScgcAaa024D14",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

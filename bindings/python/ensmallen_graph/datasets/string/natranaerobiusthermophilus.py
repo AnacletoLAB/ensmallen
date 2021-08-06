@@ -91,7 +91,7 @@ def NatranaerobiusThermophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NatranaerobiusThermophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def UnculturedSup05ClusterBacterium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UnculturedSup05ClusterBacterium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

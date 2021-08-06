@@ -88,7 +88,7 @@ def AnaerotruncusRubiinfantis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerotruncusRubiinfantis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

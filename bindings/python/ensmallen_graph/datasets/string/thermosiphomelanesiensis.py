@@ -91,7 +91,7 @@ def ThermosiphoMelanesiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermosiphoMelanesiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

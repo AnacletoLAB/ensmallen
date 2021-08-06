@@ -88,7 +88,7 @@ def ArthrobacterCrystallopoietes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArthrobacterCrystallopoietes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

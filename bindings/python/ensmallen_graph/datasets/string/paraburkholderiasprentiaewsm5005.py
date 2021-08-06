@@ -88,7 +88,7 @@ def ParaburkholderiaSprentiaeWsm5005(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParaburkholderiaSprentiaeWsm5005",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

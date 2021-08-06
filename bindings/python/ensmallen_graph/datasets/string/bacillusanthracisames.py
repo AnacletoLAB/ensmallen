@@ -91,7 +91,7 @@ def BacillusAnthracisAmes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusAnthracisAmes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def SinorhizobiumMeliloti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SinorhizobiumMeliloti",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

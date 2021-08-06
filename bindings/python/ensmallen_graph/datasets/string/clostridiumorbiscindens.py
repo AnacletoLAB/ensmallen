@@ -91,7 +91,7 @@ def ClostridiumOrbiscindens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumOrbiscindens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

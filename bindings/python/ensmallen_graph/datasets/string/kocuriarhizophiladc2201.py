@@ -91,7 +91,7 @@ def KocuriaRhizophilaDc2201(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KocuriaRhizophilaDc2201",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

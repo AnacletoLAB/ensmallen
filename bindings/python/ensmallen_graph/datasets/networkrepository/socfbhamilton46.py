@@ -120,7 +120,7 @@ def SocfbHamilton46(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbHamilton46",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PsychromonasArcticaDsm14288(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PsychromonasArcticaDsm14288",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

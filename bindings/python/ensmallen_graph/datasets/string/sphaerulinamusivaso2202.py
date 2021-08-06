@@ -88,7 +88,7 @@ def SphaerulinaMusivaSo2202(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphaerulinaMusivaSo2202",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SecondaryEndosymbiontOfTrabutinaMannipara(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SecondaryEndosymbiontOfTrabutinaMannipara",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

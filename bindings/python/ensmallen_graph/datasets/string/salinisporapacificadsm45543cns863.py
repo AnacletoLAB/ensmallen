@@ -88,7 +88,7 @@ def SalinisporaPacificaDsm45543Cns863(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinisporaPacificaDsm45543Cns863",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

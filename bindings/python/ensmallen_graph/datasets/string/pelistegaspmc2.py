@@ -88,7 +88,7 @@ def PelistegaSpMc2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PelistegaSpMc2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

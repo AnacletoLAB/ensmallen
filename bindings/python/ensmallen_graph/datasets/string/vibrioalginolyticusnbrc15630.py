@@ -91,7 +91,7 @@ def VibrioAlginolyticusNbrc15630(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioAlginolyticusNbrc15630",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

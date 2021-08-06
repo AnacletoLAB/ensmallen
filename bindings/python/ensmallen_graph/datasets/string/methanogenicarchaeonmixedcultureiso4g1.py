@@ -88,7 +88,7 @@ def MethanogenicArchaeonMixedCultureIso4G1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanogenicArchaeonMixedCultureIso4G1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

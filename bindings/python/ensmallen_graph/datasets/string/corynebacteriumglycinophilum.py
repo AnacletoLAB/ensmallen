@@ -91,7 +91,7 @@ def CorynebacteriumGlycinophilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumGlycinophilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

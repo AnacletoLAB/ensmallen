@@ -91,7 +91,7 @@ def NovosphingobiumSpAp12(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NovosphingobiumSpAp12",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

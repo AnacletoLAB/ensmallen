@@ -91,7 +91,7 @@ def PseudoalteromonasTunicata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoalteromonasTunicata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

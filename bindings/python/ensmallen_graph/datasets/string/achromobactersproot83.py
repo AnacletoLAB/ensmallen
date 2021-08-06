@@ -88,7 +88,7 @@ def AchromobacterSpRoot83(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AchromobacterSpRoot83",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

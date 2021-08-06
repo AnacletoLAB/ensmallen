@@ -91,7 +91,7 @@ def AlloiococcusOtitis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlloiococcusOtitis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SediminibacillusHalophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SediminibacillusHalophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def NeofusicoccumParvum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeofusicoccumParvum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

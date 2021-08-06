@@ -91,7 +91,7 @@ def SlackiaExigua(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SlackiaExigua",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

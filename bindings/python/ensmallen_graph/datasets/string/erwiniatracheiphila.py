@@ -88,7 +88,7 @@ def ErwiniaTracheiphila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErwiniaTracheiphila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

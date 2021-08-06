@@ -91,7 +91,7 @@ def ShewanellaFrigidimarina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShewanellaFrigidimarina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

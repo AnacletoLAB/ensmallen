@@ -88,7 +88,7 @@ def MobilibacteriumTimonense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MobilibacteriumTimonense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

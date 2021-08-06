@@ -91,7 +91,7 @@ def AnaerobaculumMobile(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerobaculumMobile",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

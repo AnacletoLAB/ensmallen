@@ -91,7 +91,7 @@ def AequorivitaSublithincola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AequorivitaSublithincola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PseudoruegeriaMarinistellae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoruegeriaMarinistellae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

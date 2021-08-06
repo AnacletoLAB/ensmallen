@@ -91,7 +91,7 @@ def ClostridiumSymbiosumWal14163(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumSymbiosumWal14163",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

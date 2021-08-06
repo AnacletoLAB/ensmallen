@@ -88,7 +88,7 @@ def ColletotrichumOrchidophilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ColletotrichumOrchidophilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

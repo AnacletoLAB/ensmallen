@@ -91,7 +91,7 @@ def TrichomonasVaginalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichomonasVaginalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

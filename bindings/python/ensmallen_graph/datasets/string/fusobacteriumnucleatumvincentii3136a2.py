@@ -91,7 +91,7 @@ def FusobacteriumNucleatumVincentii3136a2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FusobacteriumNucleatumVincentii3136a2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

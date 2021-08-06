@@ -91,7 +91,7 @@ def CorynebacteriumTerpenotabidum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumTerpenotabidum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def AnolisCarolinensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnolisCarolinensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

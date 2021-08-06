@@ -88,7 +88,7 @@ def CandidatusSyntrophoarchaeumCaldarius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusSyntrophoarchaeumCaldarius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

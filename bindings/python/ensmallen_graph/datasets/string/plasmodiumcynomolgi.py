@@ -91,7 +91,7 @@ def PlasmodiumCynomolgi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlasmodiumCynomolgi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def FervidobacteriumIslandicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FervidobacteriumIslandicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

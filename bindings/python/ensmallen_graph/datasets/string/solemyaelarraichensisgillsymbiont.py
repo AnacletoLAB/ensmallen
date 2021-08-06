@@ -88,7 +88,7 @@ def SolemyaElarraichensisGillSymbiont(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SolemyaElarraichensisGillSymbiont",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

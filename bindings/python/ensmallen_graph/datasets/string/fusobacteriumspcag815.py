@@ -88,7 +88,7 @@ def FusobacteriumSpCag815(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FusobacteriumSpCag815",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

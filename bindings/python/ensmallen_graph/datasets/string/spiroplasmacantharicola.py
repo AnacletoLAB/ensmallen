@@ -88,7 +88,7 @@ def SpiroplasmaCantharicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpiroplasmaCantharicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

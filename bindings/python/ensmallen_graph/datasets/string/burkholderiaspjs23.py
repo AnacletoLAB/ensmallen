@@ -88,7 +88,7 @@ def BurkholderiaSpJs23(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BurkholderiaSpJs23",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

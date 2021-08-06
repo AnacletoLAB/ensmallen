@@ -91,7 +91,7 @@ def StreptococcusConstellatusPharyngisSk1060(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusConstellatusPharyngisSk1060",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

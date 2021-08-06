@@ -91,7 +91,7 @@ def PelosinusFermentans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PelosinusFermentans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

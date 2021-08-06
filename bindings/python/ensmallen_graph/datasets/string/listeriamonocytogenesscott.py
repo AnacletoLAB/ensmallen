@@ -91,7 +91,7 @@ def ListeriaMonocytogenesScott(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ListeriaMonocytogenesScott",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

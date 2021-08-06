@@ -91,7 +91,7 @@ def RoseovariusSp217(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseovariusSp217",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

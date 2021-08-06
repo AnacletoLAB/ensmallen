@@ -88,7 +88,7 @@ def AneurinibacillusSpXh2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AneurinibacillusSpXh2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

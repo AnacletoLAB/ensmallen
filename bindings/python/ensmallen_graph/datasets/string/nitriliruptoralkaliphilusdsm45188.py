@@ -88,7 +88,7 @@ def NitriliruptorAlkaliphilusDsm45188(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitriliruptorAlkaliphilusDsm45188",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

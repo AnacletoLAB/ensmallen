@@ -91,7 +91,7 @@ def TreponemaSaccharophilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TreponemaSaccharophilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

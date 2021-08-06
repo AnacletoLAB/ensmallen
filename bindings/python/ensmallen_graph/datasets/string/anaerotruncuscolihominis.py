@@ -91,7 +91,7 @@ def AnaerotruncusColihominis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerotruncusColihominis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

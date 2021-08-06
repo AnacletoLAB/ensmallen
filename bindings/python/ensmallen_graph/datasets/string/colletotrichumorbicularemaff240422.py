@@ -88,7 +88,7 @@ def ColletotrichumOrbiculareMaff240422(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ColletotrichumOrbiculareMaff240422",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def VulcanisaetaThermophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VulcanisaetaThermophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

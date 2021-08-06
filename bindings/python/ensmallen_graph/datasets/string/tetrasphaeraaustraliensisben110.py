@@ -88,7 +88,7 @@ def TetrasphaeraAustraliensisBen110(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TetrasphaeraAustraliensisBen110",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

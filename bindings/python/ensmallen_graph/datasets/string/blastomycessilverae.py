@@ -88,7 +88,7 @@ def BlastomycesSilverae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlastomycesSilverae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

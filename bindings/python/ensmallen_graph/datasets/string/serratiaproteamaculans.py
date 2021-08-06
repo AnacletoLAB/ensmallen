@@ -91,7 +91,7 @@ def SerratiaProteamaculans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SerratiaProteamaculans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

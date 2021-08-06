@@ -88,7 +88,7 @@ def AcinetobacterSpAnc4999(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcinetobacterSpAnc4999",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

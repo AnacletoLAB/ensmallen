@@ -91,7 +91,7 @@ def AchromobacterSpRta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AchromobacterSpRta",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

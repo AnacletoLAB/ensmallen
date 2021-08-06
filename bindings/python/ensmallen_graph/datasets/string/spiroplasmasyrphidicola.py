@@ -91,7 +91,7 @@ def SpiroplasmaSyrphidicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpiroplasmaSyrphidicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

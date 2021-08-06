@@ -91,7 +91,7 @@ def GeobacterSpM21(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeobacterSpM21",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

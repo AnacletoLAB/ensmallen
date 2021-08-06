@@ -88,7 +88,7 @@ def CapsicumBaccatum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CapsicumBaccatum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

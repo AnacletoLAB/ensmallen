@@ -88,7 +88,7 @@ def OkibacteriumFritillariae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OkibacteriumFritillariae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

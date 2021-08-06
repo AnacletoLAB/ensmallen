@@ -78,7 +78,7 @@ def OpsahlSouthernwomen(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OpsahlSouthernwomen",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

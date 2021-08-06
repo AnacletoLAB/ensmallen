@@ -88,7 +88,7 @@ def BacillusCirculans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusCirculans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

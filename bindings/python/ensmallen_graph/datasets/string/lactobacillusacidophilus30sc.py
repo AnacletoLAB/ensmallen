@@ -91,7 +91,7 @@ def LactobacillusAcidophilus30sc(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusAcidophilus30sc",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

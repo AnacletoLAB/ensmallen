@@ -91,7 +91,7 @@ def AnaeromyxobacterDehalogenans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaeromyxobacterDehalogenans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

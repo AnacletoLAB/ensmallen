@@ -88,7 +88,7 @@ def ClostridiumHomopropionicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumHomopropionicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

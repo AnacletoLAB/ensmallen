@@ -88,7 +88,7 @@ def EnsiferSpLc11(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnsiferSpLc11",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

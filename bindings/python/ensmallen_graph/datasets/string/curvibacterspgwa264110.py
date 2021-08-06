@@ -88,7 +88,7 @@ def CurvibacterSpGwa264110(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CurvibacterSpGwa264110",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

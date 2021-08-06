@@ -91,7 +91,7 @@ def JeotgalicoccusPsychrophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JeotgalicoccusPsychrophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

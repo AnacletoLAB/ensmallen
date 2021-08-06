@@ -91,7 +91,7 @@ def ArcobacterCibarius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArcobacterCibarius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

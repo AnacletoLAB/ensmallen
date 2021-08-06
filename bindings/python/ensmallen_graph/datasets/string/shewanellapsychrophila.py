@@ -88,7 +88,7 @@ def ShewanellaPsychrophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShewanellaPsychrophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CercocebusAtys(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CercocebusAtys",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

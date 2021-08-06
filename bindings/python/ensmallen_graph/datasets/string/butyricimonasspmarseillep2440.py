@@ -88,7 +88,7 @@ def ButyricimonasSpMarseilleP2440(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ButyricimonasSpMarseilleP2440",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MurdochiellaMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MurdochiellaMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

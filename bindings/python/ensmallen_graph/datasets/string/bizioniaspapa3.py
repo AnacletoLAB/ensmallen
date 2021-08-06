@@ -88,7 +88,7 @@ def BizioniaSpApa3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BizioniaSpApa3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

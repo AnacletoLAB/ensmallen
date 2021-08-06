@@ -78,7 +78,7 @@ def NR3dtube(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NR3dtube",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

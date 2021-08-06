@@ -91,7 +91,7 @@ def MethanomethylophilusAlvus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanomethylophilusAlvus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

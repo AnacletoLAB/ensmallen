@@ -88,7 +88,7 @@ def AliagarivoransMarinusDsm23064(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AliagarivoransMarinusDsm23064",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

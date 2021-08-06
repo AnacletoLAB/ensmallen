@@ -91,7 +91,7 @@ def GracilimonasTropica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GracilimonasTropica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

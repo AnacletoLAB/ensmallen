@@ -88,7 +88,7 @@ def CohnellaPanacarviGsoil349(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CohnellaPanacarviGsoil349",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

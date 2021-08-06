@@ -88,7 +88,7 @@ def ArmillariaSolidipes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArmillariaSolidipes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

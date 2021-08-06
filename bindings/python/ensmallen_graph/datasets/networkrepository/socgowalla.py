@@ -96,7 +96,7 @@ def SocGowalla(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocGowalla",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

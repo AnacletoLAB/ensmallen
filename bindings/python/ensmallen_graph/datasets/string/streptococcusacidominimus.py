@@ -88,7 +88,7 @@ def StreptococcusAcidominimus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusAcidominimus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

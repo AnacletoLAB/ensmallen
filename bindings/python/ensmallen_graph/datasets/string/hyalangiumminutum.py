@@ -88,7 +88,7 @@ def HyalangiumMinutum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HyalangiumMinutum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

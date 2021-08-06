@@ -88,7 +88,7 @@ def StreptococcusAgalactiae2603vR(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusAgalactiae2603vR",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

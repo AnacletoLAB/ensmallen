@@ -78,7 +78,7 @@ def Reactome(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Reactome",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def VirgibacillusAlimentarius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VirgibacillusAlimentarius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

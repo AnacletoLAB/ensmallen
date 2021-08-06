@@ -88,7 +88,7 @@ def DromaiusNovaehollandiae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DromaiusNovaehollandiae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def LutibacterMaritimus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LutibacterMaritimus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

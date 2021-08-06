@@ -94,7 +94,7 @@ def SocYoutube(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocYoutube",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def SphingomonasWittichii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingomonasWittichii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

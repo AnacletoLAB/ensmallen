@@ -91,7 +91,7 @@ def GloeocapsaSpPcc73106(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GloeocapsaSpPcc73106",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

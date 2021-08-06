@@ -88,7 +88,7 @@ def JuncoHyemalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JuncoHyemalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

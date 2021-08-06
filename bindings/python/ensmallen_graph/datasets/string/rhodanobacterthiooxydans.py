@@ -91,7 +91,7 @@ def RhodanobacterThiooxydans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodanobacterThiooxydans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

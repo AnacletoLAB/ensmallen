@@ -88,7 +88,7 @@ def CellulomonasTimonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CellulomonasTimonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

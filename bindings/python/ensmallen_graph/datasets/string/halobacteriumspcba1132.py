@@ -88,7 +88,7 @@ def HalobacteriumSpCba1132(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalobacteriumSpCba1132",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

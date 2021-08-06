@@ -88,7 +88,7 @@ def YersiniaPekkanenii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="YersiniaPekkanenii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def FlavisolibacterGinsengisoliDsm18119(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavisolibacterGinsengisoliDsm18119",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

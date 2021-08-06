@@ -88,7 +88,7 @@ def HaloarchaeobiusIranensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaloarchaeobiusIranensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

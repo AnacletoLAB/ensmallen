@@ -88,7 +88,7 @@ def NeisseriaShayeganii871(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeisseriaShayeganii871",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

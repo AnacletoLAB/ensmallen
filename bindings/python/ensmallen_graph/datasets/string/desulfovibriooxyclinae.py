@@ -91,7 +91,7 @@ def DesulfovibrioOxyclinae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioOxyclinae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

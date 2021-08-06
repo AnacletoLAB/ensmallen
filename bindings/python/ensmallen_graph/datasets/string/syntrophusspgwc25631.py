@@ -88,7 +88,7 @@ def SyntrophusSpGwc25631(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SyntrophusSpGwc25631",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

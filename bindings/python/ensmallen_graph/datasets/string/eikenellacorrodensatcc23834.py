@@ -91,7 +91,7 @@ def EikenellaCorrodensAtcc23834(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EikenellaCorrodensAtcc23834",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

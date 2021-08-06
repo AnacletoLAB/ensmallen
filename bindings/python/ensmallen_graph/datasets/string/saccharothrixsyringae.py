@@ -91,7 +91,7 @@ def SaccharothrixSyringae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SaccharothrixSyringae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

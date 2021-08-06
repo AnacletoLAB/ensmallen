@@ -88,7 +88,7 @@ def CorynebacteriumAppendicisCip107643(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumAppendicisCip107643",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

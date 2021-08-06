@@ -91,7 +91,7 @@ def ThielaviaTerrestris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThielaviaTerrestris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

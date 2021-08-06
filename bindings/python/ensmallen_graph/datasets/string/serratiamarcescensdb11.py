@@ -91,7 +91,7 @@ def SerratiaMarcescensDb11(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SerratiaMarcescensDb11",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

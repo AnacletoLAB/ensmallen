@@ -88,7 +88,7 @@ def AfipiaSpGas231(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AfipiaSpGas231",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -96,7 +96,7 @@ def SocThemarker(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocThemarker",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

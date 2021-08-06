@@ -91,7 +91,7 @@ def BrevundimonasNaejangsanensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrevundimonasNaejangsanensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

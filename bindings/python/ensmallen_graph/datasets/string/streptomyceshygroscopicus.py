@@ -91,7 +91,7 @@ def StreptomycesHygroscopicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesHygroscopicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

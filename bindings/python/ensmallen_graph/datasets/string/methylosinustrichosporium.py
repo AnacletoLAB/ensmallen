@@ -91,7 +91,7 @@ def MethylosinusTrichosporium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylosinusTrichosporium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

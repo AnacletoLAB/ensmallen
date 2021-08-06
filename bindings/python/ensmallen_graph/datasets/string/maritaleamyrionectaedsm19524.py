@@ -88,7 +88,7 @@ def MaritaleaMyrionectaeDsm19524(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MaritaleaMyrionectaeDsm19524",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

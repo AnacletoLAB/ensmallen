@@ -88,7 +88,7 @@ def GrimontiaCeler(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GrimontiaCeler",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

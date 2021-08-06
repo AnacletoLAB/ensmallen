@@ -88,7 +88,7 @@ def NisaeaDenitrificansDsm18348(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NisaeaDenitrificansDsm18348",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

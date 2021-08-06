@@ -91,7 +91,7 @@ def PseudobutyrivibrioRuminisAd2017(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudobutyrivibrioRuminisAd2017",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

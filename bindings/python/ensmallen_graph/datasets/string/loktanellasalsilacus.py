@@ -88,7 +88,7 @@ def LoktanellaSalsilacus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LoktanellaSalsilacus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

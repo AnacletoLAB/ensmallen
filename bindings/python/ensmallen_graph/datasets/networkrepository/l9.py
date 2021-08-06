@@ -78,7 +78,7 @@ def L9(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="L9",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ChitiniphilusShinanonensisDsm23277(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChitiniphilusShinanonensisDsm23277",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

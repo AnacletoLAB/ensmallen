@@ -88,7 +88,7 @@ def VignaAngularis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VignaAngularis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

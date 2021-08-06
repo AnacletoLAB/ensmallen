@@ -91,7 +91,7 @@ def LeuconostocLactis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeuconostocLactis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

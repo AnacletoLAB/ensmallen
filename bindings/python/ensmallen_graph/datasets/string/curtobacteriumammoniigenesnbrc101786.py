@@ -88,7 +88,7 @@ def CurtobacteriumAmmoniigenesNbrc101786(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CurtobacteriumAmmoniigenesNbrc101786",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def DesulfurobacteriumSpTc51(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfurobacteriumSpTc51",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

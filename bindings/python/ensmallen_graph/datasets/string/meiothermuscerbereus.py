@@ -91,7 +91,7 @@ def MeiothermusCerbereus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MeiothermusCerbereus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

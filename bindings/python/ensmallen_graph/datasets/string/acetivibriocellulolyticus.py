@@ -91,7 +91,7 @@ def AcetivibrioCellulolyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcetivibrioCellulolyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

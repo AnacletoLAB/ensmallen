@@ -91,7 +91,7 @@ def PrevotellaEnoeca(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaEnoeca",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

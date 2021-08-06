@@ -91,7 +91,7 @@ def AcidithiobacillusThiooxidans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidithiobacillusThiooxidans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

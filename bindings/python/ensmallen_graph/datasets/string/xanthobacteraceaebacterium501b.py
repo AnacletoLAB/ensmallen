@@ -91,7 +91,7 @@ def XanthobacteraceaeBacterium501b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XanthobacteraceaeBacterium501b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -92,7 +92,7 @@ def InfRoadnetCa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="InfRoadnetCa",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

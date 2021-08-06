@@ -91,7 +91,7 @@ def ActinokineosporaSpEg49(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinokineosporaSpEg49",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

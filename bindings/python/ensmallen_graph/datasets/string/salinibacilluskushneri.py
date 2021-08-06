@@ -88,7 +88,7 @@ def SalinibacillusKushneri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinibacillusKushneri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

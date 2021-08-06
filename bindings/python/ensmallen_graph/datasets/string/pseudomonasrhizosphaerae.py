@@ -91,7 +91,7 @@ def PseudomonasRhizosphaerae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasRhizosphaerae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

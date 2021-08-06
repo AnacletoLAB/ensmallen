@@ -88,7 +88,7 @@ def PantoeaSp119(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PantoeaSp119",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

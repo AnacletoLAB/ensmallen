@@ -88,7 +88,7 @@ def MesoniaPhycicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MesoniaPhycicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def RhodanobacterDenitrificans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodanobacterDenitrificans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

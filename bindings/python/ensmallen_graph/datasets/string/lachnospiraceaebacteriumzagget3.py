@@ -88,7 +88,7 @@ def LachnospiraceaeBacteriumZagget3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LachnospiraceaeBacteriumZagget3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

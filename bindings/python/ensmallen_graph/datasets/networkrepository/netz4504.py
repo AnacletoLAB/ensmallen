@@ -78,7 +78,7 @@ def Netz4504(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Netz4504",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

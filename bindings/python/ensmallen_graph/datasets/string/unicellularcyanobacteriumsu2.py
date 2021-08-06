@@ -88,7 +88,7 @@ def UnicellularCyanobacteriumSu2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UnicellularCyanobacteriumSu2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

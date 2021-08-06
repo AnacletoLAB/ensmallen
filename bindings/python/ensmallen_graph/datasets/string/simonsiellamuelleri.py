@@ -91,7 +91,7 @@ def SimonsiellaMuelleri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SimonsiellaMuelleri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

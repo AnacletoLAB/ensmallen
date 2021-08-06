@@ -88,7 +88,7 @@ def CandidatusTremblayaPhenacolaPave(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusTremblayaPhenacolaPave",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

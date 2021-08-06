@@ -88,7 +88,7 @@ def AureobasidiumPullulansExf150(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AureobasidiumPullulansExf150",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

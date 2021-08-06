@@ -91,7 +91,7 @@ def FlavobacteriumSuncheonense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumSuncheonense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

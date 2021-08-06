@@ -91,7 +91,7 @@ def DesulfatibacillumAlkenivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfatibacillumAlkenivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

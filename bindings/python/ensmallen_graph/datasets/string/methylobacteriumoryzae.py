@@ -91,7 +91,7 @@ def MethylobacteriumOryzae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylobacteriumOryzae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

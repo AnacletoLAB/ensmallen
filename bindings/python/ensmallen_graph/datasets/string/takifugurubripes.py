@@ -91,7 +91,7 @@ def TakifuguRubripes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TakifuguRubripes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

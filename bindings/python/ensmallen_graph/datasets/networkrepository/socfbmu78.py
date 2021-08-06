@@ -120,7 +120,7 @@ def SocfbMu78(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbMu78",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

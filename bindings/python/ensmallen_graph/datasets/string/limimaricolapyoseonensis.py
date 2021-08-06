@@ -88,7 +88,7 @@ def LimimaricolaPyoseonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LimimaricolaPyoseonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

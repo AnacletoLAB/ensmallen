@@ -91,7 +91,7 @@ def SynechococcusElongatusPcc6301(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SynechococcusElongatusPcc6301",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

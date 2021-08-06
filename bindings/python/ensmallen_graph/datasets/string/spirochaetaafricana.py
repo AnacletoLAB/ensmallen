@@ -91,7 +91,7 @@ def SpirochaetaAfricana(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpirochaetaAfricana",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

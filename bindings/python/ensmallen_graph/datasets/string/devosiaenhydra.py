@@ -88,7 +88,7 @@ def DevosiaEnhydra(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DevosiaEnhydra",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

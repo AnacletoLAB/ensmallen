@@ -91,7 +91,7 @@ def NitrosococcusHalophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrosococcusHalophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

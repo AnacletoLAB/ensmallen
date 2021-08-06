@@ -88,7 +88,7 @@ def DesulfolunaSpongiiphila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfolunaSpongiiphila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

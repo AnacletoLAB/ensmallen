@@ -78,7 +78,7 @@ def YoutubeGroupmemberships(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="YoutubeGroupmemberships",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

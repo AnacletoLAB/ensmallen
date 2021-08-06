@@ -88,7 +88,7 @@ def BuchneraAphidicolaAphisGlycines(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BuchneraAphidicolaAphisGlycines",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def AcetobacterNitrogenifigens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcetobacterNitrogenifigens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

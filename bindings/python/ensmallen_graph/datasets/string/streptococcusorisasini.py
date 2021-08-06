@@ -88,7 +88,7 @@ def StreptococcusOrisasini(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusOrisasini",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

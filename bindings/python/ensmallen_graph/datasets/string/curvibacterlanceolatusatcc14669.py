@@ -88,7 +88,7 @@ def CurvibacterLanceolatusAtcc14669(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CurvibacterLanceolatusAtcc14669",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

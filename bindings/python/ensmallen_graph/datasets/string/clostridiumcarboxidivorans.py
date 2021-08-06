@@ -91,7 +91,7 @@ def ClostridiumCarboxidivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumCarboxidivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

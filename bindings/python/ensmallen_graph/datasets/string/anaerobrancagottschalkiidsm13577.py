@@ -88,7 +88,7 @@ def AnaerobrancaGottschalkiiDsm13577(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerobrancaGottschalkiiDsm13577",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

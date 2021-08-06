@@ -91,7 +91,7 @@ def EchinococcusMultilocularis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EchinococcusMultilocularis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

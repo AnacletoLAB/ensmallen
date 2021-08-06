@@ -78,7 +78,7 @@ def DblpAuthor(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DblpAuthor",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

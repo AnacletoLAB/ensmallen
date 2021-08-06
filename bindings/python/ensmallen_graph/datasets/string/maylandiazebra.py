@@ -91,7 +91,7 @@ def MaylandiaZebra(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MaylandiaZebra",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

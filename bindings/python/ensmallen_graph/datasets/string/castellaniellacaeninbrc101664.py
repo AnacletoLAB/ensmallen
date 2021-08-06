@@ -88,7 +88,7 @@ def CastellaniellaCaeniNbrc101664(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CastellaniellaCaeniNbrc101664",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

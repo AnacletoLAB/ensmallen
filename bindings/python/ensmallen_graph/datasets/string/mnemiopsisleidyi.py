@@ -91,7 +91,7 @@ def MnemiopsisLeidyi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MnemiopsisLeidyi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

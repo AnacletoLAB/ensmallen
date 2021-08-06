@@ -88,7 +88,7 @@ def SeonamhaeicolaSpS23(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SeonamhaeicolaSpS23",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

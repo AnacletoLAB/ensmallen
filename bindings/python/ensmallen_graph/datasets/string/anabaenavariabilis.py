@@ -91,7 +91,7 @@ def AnabaenaVariabilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnabaenaVariabilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

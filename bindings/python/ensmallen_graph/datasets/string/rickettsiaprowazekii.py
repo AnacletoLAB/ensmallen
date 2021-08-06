@@ -91,7 +91,7 @@ def RickettsiaProwazekii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RickettsiaProwazekii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

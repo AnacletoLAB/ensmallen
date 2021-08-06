@@ -91,7 +91,7 @@ def StreptomycesGriseoaurantiacus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesGriseoaurantiacus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

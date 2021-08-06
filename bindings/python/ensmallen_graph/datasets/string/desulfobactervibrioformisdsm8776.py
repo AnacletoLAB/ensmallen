@@ -88,7 +88,7 @@ def DesulfobacterVibrioformisDsm8776(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfobacterVibrioformisDsm8776",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

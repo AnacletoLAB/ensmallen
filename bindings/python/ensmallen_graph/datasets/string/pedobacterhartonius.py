@@ -88,7 +88,7 @@ def PedobacterHartonius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PedobacterHartonius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

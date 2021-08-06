@@ -88,7 +88,7 @@ def HypoxylonSpCi4a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HypoxylonSpCi4a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

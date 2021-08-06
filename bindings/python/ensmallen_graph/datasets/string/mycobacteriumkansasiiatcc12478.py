@@ -91,7 +91,7 @@ def MycobacteriumKansasiiAtcc12478(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumKansasiiAtcc12478",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

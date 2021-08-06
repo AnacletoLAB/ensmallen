@@ -91,7 +91,7 @@ def HalobiformaNitratireducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalobiformaNitratireducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

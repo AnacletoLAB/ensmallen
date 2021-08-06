@@ -91,7 +91,7 @@ def GallusGallus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GallusGallus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

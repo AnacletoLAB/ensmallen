@@ -91,7 +91,7 @@ def ActinobacillusCapsulatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinobacillusCapsulatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

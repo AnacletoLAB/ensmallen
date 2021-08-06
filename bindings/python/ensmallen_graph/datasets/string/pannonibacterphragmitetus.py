@@ -91,7 +91,7 @@ def PannonibacterPhragmitetus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PannonibacterPhragmitetus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

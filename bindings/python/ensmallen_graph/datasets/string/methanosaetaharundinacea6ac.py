@@ -88,7 +88,7 @@ def MethanosaetaHarundinacea6ac(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanosaetaHarundinacea6ac",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

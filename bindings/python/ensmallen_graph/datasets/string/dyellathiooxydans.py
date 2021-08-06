@@ -88,7 +88,7 @@ def DyellaThiooxydans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DyellaThiooxydans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

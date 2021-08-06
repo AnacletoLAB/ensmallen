@@ -88,7 +88,7 @@ def SphingobacteriumNematocida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingobacteriumNematocida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

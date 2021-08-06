@@ -88,7 +88,7 @@ def NanoarchaeotaArchaeonScgcAaa011G17(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NanoarchaeotaArchaeonScgcAaa011G17",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

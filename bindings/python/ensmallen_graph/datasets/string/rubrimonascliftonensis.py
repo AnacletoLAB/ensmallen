@@ -88,7 +88,7 @@ def RubrimonasCliftonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RubrimonasCliftonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

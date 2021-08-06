@@ -91,7 +91,7 @@ def OryzaGlaberrima(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OryzaGlaberrima",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

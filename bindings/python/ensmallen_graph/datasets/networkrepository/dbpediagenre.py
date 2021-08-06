@@ -78,7 +78,7 @@ def DbpediaGenre(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DbpediaGenre",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

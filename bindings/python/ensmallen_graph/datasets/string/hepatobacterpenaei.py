@@ -91,7 +91,7 @@ def HepatobacterPenaei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HepatobacterPenaei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

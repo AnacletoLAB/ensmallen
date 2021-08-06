@@ -88,7 +88,7 @@ def AnaerocolumnaXylanovoransDsm12503(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerocolumnaXylanovoransDsm12503",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

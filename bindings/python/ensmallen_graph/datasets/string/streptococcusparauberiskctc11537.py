@@ -91,7 +91,7 @@ def StreptococcusParauberisKctc11537(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusParauberisKctc11537",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def DehalogenimonasAlkenigignens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DehalogenimonasAlkenigignens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

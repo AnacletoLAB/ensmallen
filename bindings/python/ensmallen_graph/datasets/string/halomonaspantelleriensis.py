@@ -88,7 +88,7 @@ def HalomonasPantelleriensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalomonasPantelleriensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

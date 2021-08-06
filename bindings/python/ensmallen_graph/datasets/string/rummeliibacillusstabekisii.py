@@ -88,7 +88,7 @@ def RummeliibacillusStabekisii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RummeliibacillusStabekisii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

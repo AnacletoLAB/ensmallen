@@ -88,7 +88,7 @@ def ColwelliaChukchiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ColwelliaChukchiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ArmillariaGallica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArmillariaGallica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

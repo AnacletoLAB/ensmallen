@@ -88,7 +88,7 @@ def SporolituusThermophilusDsm23256(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SporolituusThermophilusDsm23256",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

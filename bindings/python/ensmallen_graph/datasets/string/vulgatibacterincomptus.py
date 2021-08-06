@@ -88,7 +88,7 @@ def VulgatibacterIncomptus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VulgatibacterIncomptus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

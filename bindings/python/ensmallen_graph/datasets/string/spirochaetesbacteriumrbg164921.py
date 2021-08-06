@@ -88,7 +88,7 @@ def SpirochaetesBacteriumRbg164921(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpirochaetesBacteriumRbg164921",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ThermocladiumSpEchB(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermocladiumSpEchB",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

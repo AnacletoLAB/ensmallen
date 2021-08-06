@@ -88,7 +88,7 @@ def MethanobrevibacterSpYe315(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanobrevibacterSpYe315",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

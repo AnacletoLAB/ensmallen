@@ -88,7 +88,7 @@ def DesulfovibrioFerrireducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioFerrireducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

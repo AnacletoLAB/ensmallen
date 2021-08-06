@@ -91,7 +91,7 @@ def DasaniaMarina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DasaniaMarina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

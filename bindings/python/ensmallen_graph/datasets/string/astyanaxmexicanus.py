@@ -91,7 +91,7 @@ def AstyanaxMexicanus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AstyanaxMexicanus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

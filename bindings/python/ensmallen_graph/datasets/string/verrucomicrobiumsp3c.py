@@ -88,7 +88,7 @@ def VerrucomicrobiumSp3c(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VerrucomicrobiumSp3c",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

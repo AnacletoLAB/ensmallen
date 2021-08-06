@@ -88,7 +88,7 @@ def Sar324ClusterBacteriumRedseaS27B3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Sar324ClusterBacteriumRedseaS27B3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

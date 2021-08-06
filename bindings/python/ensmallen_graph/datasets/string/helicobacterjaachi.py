@@ -88,7 +88,7 @@ def HelicobacterJaachi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelicobacterJaachi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def HepatoplasmaCrinochetorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HepatoplasmaCrinochetorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

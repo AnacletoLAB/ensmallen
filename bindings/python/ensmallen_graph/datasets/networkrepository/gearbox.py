@@ -78,7 +78,7 @@ def Gearbox(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Gearbox",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

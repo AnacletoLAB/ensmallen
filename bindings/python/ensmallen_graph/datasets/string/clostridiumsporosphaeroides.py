@@ -91,7 +91,7 @@ def ClostridiumSporosphaeroides(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumSporosphaeroides",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

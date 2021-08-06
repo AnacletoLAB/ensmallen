@@ -91,7 +91,7 @@ def HaloferulaSpBvorr071(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaloferulaSpBvorr071",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

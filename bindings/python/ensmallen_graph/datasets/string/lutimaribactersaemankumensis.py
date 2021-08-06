@@ -88,7 +88,7 @@ def LutimaribacterSaemankumensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LutimaribacterSaemankumensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

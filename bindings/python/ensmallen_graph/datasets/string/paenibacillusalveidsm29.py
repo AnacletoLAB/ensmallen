@@ -88,7 +88,7 @@ def PaenibacillusAlveiDsm29(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillusAlveiDsm29",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

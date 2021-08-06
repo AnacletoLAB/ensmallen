@@ -88,7 +88,7 @@ def PlesiomonasShigelloides(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlesiomonasShigelloides",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ZunongwangiaMangrovi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZunongwangiaMangrovi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PeptoniphilusIndolicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeptoniphilusIndolicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

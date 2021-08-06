@@ -88,7 +88,7 @@ def ParacoccusSpScn6821(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParacoccusSpScn6821",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

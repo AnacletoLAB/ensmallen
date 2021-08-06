@@ -88,7 +88,7 @@ def XenorhabdusSzentirmaiiDsm16338(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XenorhabdusSzentirmaiiDsm16338",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

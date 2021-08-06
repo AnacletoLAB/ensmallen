@@ -91,7 +91,7 @@ def BradyrhizobiumSpCp53(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BradyrhizobiumSpCp53",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

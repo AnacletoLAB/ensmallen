@@ -104,7 +104,7 @@ def Keller6(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Keller6",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

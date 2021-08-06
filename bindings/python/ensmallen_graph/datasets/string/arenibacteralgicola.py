@@ -91,7 +91,7 @@ def ArenibacterAlgicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArenibacterAlgicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

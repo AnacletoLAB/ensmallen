@@ -88,7 +88,7 @@ def BifidobacteriumCommune(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BifidobacteriumCommune",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

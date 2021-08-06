@@ -88,7 +88,7 @@ def XanthomonadalesBacterium66474(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XanthomonadalesBacterium66474",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

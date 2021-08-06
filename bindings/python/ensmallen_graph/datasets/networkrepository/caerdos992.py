@@ -100,7 +100,7 @@ def CaErdos992(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaErdos992",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

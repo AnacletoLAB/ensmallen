@@ -120,7 +120,7 @@ def SocfbSmith60(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbSmith60",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

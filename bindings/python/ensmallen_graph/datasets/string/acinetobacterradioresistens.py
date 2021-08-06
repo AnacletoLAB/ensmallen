@@ -91,7 +91,7 @@ def AcinetobacterRadioresistens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcinetobacterRadioresistens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

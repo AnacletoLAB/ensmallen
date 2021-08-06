@@ -91,7 +91,7 @@ def BizioniaArgentinensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BizioniaArgentinensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

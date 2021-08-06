@@ -88,7 +88,7 @@ def LachnospiraPectinoschiza(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LachnospiraPectinoschiza",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

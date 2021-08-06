@@ -88,7 +88,7 @@ def ScyliorhinusTorazame(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ScyliorhinusTorazame",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

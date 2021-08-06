@@ -88,7 +88,7 @@ def ActinomycesMarimammalium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomycesMarimammalium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

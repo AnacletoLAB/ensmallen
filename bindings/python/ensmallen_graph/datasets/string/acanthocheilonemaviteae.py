@@ -88,7 +88,7 @@ def AcanthocheilonemaViteae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcanthocheilonemaViteae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

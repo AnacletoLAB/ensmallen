@@ -98,7 +98,7 @@ def BioDmela(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BioDmela",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

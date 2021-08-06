@@ -88,7 +88,7 @@ def HaloferacaceaeArchaeonB1Br10E2g22(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaloferacaceaeArchaeonB1Br10E2g22",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

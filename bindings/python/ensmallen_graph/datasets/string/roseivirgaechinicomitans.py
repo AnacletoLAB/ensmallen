@@ -88,7 +88,7 @@ def RoseivirgaEchinicomitans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseivirgaEchinicomitans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def GeosporobacterSubterraneusDsm17957(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeosporobacterSubterraneusDsm17957",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

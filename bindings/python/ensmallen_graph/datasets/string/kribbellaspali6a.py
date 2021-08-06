@@ -88,7 +88,7 @@ def KribbellaSpAli6A(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KribbellaSpAli6A",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

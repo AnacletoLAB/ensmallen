@@ -88,7 +88,7 @@ def RuminococcaceaeBacteriumD5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminococcaceaeBacteriumD5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

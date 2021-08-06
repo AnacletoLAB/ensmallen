@@ -91,7 +91,7 @@ def AlgoriphagusVanfongensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlgoriphagusVanfongensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

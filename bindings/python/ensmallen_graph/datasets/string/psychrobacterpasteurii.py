@@ -88,7 +88,7 @@ def PsychrobacterPasteurii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PsychrobacterPasteurii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

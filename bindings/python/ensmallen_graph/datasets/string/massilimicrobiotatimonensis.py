@@ -88,7 +88,7 @@ def MassilimicrobiotaTimonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MassilimicrobiotaTimonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

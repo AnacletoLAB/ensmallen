@@ -91,7 +91,7 @@ def ClostridiumSaccharogumia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumSaccharogumia",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

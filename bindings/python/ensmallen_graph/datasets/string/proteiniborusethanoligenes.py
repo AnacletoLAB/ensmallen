@@ -88,7 +88,7 @@ def ProteiniborusEthanoligenes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProteiniborusEthanoligenes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

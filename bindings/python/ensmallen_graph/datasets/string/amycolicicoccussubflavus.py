@@ -91,7 +91,7 @@ def AmycolicicoccusSubflavus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmycolicicoccusSubflavus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

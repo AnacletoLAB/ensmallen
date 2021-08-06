@@ -78,7 +78,7 @@ def TechArenasMeta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TechArenasMeta",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

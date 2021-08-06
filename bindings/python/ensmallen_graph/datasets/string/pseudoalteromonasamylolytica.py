@@ -88,7 +88,7 @@ def PseudoalteromonasAmylolytica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoalteromonasAmylolytica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

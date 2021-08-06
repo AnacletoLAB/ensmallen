@@ -88,7 +88,7 @@ def HydrogenedentesBacteriumJgi0000039J10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HydrogenedentesBacteriumJgi0000039J10",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

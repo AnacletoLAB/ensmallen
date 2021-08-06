@@ -88,7 +88,7 @@ def MaricaulisSalignorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MaricaulisSalignorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

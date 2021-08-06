@@ -88,7 +88,7 @@ def AcholeplasmaOculi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcholeplasmaOculi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

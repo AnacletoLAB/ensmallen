@@ -88,7 +88,7 @@ def MucunaPruriens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MucunaPruriens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

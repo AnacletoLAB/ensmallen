@@ -88,7 +88,7 @@ def OpisthorchisViverrini(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OpisthorchisViverrini",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

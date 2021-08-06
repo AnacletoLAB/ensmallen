@@ -88,7 +88,7 @@ def BoseaSpBiwako01(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BoseaSpBiwako01",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

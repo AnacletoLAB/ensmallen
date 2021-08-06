@@ -88,7 +88,7 @@ def LactobacillusOzensisDsm23829Jcm17196(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusOzensisDsm23829Jcm17196",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

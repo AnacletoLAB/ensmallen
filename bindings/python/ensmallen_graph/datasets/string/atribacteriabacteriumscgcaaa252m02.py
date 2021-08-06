@@ -88,7 +88,7 @@ def AtribacteriaBacteriumScgcAaa252M02(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AtribacteriaBacteriumScgcAaa252M02",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

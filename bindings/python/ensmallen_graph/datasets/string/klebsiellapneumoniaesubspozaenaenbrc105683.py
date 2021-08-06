@@ -88,7 +88,7 @@ def KlebsiellaPneumoniaeSubspOzaenaeNbrc105683(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KlebsiellaPneumoniaeSubspOzaenaeNbrc105683",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

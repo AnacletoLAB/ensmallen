@@ -91,7 +91,7 @@ def AchromobacterInsuavis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AchromobacterInsuavis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MicromonosporaSaelicesensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicromonosporaSaelicesensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PseudomonasOryzae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasOryzae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

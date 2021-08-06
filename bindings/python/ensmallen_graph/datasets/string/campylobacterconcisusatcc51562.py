@@ -91,7 +91,7 @@ def CampylobacterConcisusAtcc51562(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterConcisusAtcc51562",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

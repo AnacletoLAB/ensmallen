@@ -88,7 +88,7 @@ def CellvibrionaceaeBacterium1162tS0a05(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CellvibrionaceaeBacterium1162tS0a05",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

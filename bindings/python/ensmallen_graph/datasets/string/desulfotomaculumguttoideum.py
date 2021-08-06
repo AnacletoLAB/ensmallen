@@ -91,7 +91,7 @@ def DesulfotomaculumGuttoideum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfotomaculumGuttoideum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

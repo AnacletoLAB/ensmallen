@@ -88,7 +88,7 @@ def HalovenusAranensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalovenusAranensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

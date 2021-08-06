@@ -91,7 +91,7 @@ def ThiobacillusDenitrificansAtcc25259(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThiobacillusDenitrificansAtcc25259",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

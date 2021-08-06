@@ -88,7 +88,7 @@ def SulfurospirillumSpUch001(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfurospirillumSpUch001",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

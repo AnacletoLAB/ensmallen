@@ -91,7 +91,7 @@ def TrichinellaSpiralis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichinellaSpiralis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def FrankiaSpBcu110501(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FrankiaSpBcu110501",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

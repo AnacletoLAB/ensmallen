@@ -91,7 +91,7 @@ def ConchiformibiusSteedae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ConchiformibiusSteedae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

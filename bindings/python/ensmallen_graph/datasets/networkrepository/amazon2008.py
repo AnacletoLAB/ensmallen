@@ -78,7 +78,7 @@ def Amazon2008(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Amazon2008",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

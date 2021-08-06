@@ -91,7 +91,7 @@ def VerrucosisporaMaris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VerrucosisporaMaris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def FlaviramulusBasaltis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlaviramulusBasaltis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

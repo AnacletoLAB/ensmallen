@@ -78,7 +78,7 @@ def Pcrystk02(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Pcrystk02",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

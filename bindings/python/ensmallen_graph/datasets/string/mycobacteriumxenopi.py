@@ -88,7 +88,7 @@ def MycobacteriumXenopi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumXenopi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

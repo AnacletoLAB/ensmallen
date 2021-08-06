@@ -88,7 +88,7 @@ def LimimonasHalophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LimimonasHalophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

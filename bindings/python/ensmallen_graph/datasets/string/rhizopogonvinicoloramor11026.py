@@ -88,7 +88,7 @@ def RhizopogonVinicolorAmOr11026(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizopogonVinicolorAmOr11026",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

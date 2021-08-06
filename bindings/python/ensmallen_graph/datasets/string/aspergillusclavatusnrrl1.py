@@ -88,7 +88,7 @@ def AspergillusClavatusNrrl1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AspergillusClavatusNrrl1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

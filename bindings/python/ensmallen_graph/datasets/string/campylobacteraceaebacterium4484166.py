@@ -88,7 +88,7 @@ def CampylobacteraceaeBacterium4484166(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacteraceaeBacterium4484166",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

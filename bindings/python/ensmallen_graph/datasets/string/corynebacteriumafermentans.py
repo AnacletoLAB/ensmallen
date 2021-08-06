@@ -88,7 +88,7 @@ def CorynebacteriumAfermentans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumAfermentans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

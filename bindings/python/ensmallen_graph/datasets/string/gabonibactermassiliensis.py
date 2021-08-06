@@ -88,7 +88,7 @@ def GabonibacterMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GabonibacterMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

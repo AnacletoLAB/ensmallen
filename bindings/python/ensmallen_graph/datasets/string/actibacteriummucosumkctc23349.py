@@ -88,7 +88,7 @@ def ActibacteriumMucosumKctc23349(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActibacteriumMucosumKctc23349",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

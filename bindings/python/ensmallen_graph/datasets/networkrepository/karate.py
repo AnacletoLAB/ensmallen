@@ -78,7 +78,7 @@ def Karate(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Karate",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

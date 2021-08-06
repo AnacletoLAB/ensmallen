@@ -88,7 +88,7 @@ def ArthrobacterSpRitPiE(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArthrobacterSpRitPiE",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

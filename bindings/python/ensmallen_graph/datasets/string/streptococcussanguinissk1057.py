@@ -91,7 +91,7 @@ def StreptococcusSanguinisSk1057(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusSanguinisSk1057",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

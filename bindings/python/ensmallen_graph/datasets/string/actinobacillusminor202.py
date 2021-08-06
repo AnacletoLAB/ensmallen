@@ -91,7 +91,7 @@ def ActinobacillusMinor202(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinobacillusMinor202",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

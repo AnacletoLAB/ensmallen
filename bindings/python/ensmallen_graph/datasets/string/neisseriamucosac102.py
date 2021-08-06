@@ -91,7 +91,7 @@ def NeisseriaMucosaC102(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeisseriaMucosaC102",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

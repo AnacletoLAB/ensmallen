@@ -88,7 +88,7 @@ def MicrobacteriumLaevaniformans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriumLaevaniformans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

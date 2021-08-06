@@ -88,7 +88,7 @@ def ChlamydialesBacterium3826(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlamydialesBacterium3826",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

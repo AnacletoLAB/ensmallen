@@ -88,7 +88,7 @@ def KalmanozymaBrasiliensisGhg001(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KalmanozymaBrasiliensisGhg001",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

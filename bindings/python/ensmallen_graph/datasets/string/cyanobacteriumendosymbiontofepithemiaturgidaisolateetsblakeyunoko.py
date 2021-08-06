@@ -88,7 +88,7 @@ def CyanobacteriumEndosymbiontOfEpithemiaTurgidaIsolateEtsbLakeYunoko(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CyanobacteriumEndosymbiontOfEpithemiaTurgidaIsolateEtsbLakeYunoko",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

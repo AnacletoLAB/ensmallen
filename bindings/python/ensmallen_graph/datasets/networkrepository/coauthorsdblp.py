@@ -78,7 +78,7 @@ def Coauthorsdblp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Coauthorsdblp",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

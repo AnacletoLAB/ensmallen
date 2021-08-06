@@ -88,7 +88,7 @@ def LactobacillusDiolivoransDsm14421(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusDiolivoransDsm14421",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

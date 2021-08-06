@@ -91,7 +91,7 @@ def LiberibacterAsiaticusGxpsy(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LiberibacterAsiaticusGxpsy",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

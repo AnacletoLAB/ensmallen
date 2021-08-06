@@ -112,7 +112,7 @@ def WebSk2005All(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebSk2005All",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

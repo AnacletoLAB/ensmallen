@@ -88,7 +88,7 @@ def GracilibacillusSpJcm18860(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GracilibacillusSpJcm18860",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AlteromonasLipolytica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlteromonasLipolytica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

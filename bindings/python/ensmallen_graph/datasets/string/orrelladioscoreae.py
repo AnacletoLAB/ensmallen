@@ -88,7 +88,7 @@ def OrrellaDioscoreae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OrrellaDioscoreae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def DictyosteliumDiscoideum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DictyosteliumDiscoideum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

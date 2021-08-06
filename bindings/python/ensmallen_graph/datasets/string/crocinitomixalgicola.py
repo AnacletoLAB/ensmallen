@@ -88,7 +88,7 @@ def CrocinitomixAlgicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CrocinitomixAlgicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

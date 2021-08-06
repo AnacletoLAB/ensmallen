@@ -91,7 +91,7 @@ def WinogradskyellaPsychrotolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WinogradskyellaPsychrotolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

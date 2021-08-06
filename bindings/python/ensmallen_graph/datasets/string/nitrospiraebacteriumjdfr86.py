@@ -88,7 +88,7 @@ def NitrospiraeBacteriumJdfr86(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrospiraeBacteriumJdfr86",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

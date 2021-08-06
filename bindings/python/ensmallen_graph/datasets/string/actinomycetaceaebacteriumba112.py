@@ -88,7 +88,7 @@ def ActinomycetaceaeBacteriumBa112(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomycetaceaeBacteriumBa112",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

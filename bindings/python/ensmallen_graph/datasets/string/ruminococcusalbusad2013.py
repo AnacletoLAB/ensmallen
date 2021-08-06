@@ -91,7 +91,7 @@ def RuminococcusAlbusAd2013(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminococcusAlbusAd2013",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

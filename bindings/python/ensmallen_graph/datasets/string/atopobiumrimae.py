@@ -91,7 +91,7 @@ def AtopobiumRimae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AtopobiumRimae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

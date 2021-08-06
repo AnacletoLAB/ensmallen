@@ -88,7 +88,7 @@ def HericiumAlpestre(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HericiumAlpestre",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

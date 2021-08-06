@@ -88,7 +88,7 @@ def FusariumOxysporumFSpRadicisCucumerinum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FusariumOxysporumFSpRadicisCucumerinum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

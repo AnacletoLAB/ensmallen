@@ -88,7 +88,7 @@ def HalorubrumLipolyticumDsm21995(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalorubrumLipolyticumDsm21995",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

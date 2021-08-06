@@ -88,7 +88,7 @@ def SulfuricurvumSpGwf24489(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfuricurvumSpGwf24489",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

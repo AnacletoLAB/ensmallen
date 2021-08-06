@@ -91,7 +91,7 @@ def ThermonemaRossianum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermonemaRossianum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

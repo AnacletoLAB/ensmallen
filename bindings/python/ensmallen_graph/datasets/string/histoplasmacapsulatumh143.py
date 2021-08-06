@@ -88,7 +88,7 @@ def HistoplasmaCapsulatumH143(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HistoplasmaCapsulatumH143",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

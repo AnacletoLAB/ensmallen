@@ -104,7 +104,7 @@ def Hamming64(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Hamming64",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

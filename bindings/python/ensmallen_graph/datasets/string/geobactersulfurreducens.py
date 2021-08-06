@@ -91,7 +91,7 @@ def GeobacterSulfurreducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeobacterSulfurreducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def LentibacillusPersicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LentibacillusPersicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

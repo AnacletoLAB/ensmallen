@@ -88,7 +88,7 @@ def SclerodermaCitrinumFougA(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SclerodermaCitrinumFougA",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def BacteroidaceaeBacteriumMs4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidaceaeBacteriumMs4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

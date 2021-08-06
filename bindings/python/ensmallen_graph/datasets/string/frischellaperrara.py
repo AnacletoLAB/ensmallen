@@ -88,7 +88,7 @@ def FrischellaPerrara(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FrischellaPerrara",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

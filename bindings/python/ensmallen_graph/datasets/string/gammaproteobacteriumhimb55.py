@@ -88,7 +88,7 @@ def GammaProteobacteriumHimb55(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GammaProteobacteriumHimb55",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

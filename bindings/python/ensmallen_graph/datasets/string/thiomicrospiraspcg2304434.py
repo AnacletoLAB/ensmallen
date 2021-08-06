@@ -88,7 +88,7 @@ def ThiomicrospiraSpCg2304434(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThiomicrospiraSpCg2304434",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def TerfeziaBoudieriAtccMya4762(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TerfeziaBoudieriAtccMya4762",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

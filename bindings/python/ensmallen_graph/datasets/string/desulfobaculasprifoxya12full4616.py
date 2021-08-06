@@ -88,7 +88,7 @@ def DesulfobaculaSpRifoxya12Full4616(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfobaculaSpRifoxya12Full4616",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

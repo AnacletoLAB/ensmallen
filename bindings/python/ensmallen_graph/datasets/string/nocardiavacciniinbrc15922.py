@@ -88,7 +88,7 @@ def NocardiaVacciniiNbrc15922(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardiaVacciniiNbrc15922",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

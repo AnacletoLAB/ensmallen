@@ -88,7 +88,7 @@ def PhaeobacterSpS60(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhaeobacterSpS60",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ThermoanaerosceptrumFracticalcis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermoanaerosceptrumFracticalcis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

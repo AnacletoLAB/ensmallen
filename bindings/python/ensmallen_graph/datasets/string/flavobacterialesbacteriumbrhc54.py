@@ -88,7 +88,7 @@ def FlavobacterialesBacteriumBrhC54(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacterialesBacteriumBrhC54",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

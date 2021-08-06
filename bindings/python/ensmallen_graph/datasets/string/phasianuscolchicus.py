@@ -88,7 +88,7 @@ def PhasianusColchicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhasianusColchicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

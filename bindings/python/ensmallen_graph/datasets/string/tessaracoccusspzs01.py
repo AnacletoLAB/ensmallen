@@ -88,7 +88,7 @@ def TessaracoccusSpZs01(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TessaracoccusSpZs01",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

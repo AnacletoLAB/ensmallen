@@ -88,7 +88,7 @@ def StreptomycesLuteocolor(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesLuteocolor",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

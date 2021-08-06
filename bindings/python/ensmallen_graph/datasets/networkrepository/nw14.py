@@ -78,7 +78,7 @@ def Nw14(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Nw14",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

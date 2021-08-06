@@ -88,7 +88,7 @@ def DesulfitobacteriumChlororespiransDsm11544(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfitobacteriumChlororespiransDsm11544",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

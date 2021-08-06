@@ -91,7 +91,7 @@ def PropionimicrobiumSpBv2f7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PropionimicrobiumSpBv2f7",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

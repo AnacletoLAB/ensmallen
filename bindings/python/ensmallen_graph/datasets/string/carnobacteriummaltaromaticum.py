@@ -91,7 +91,7 @@ def CarnobacteriumMaltaromaticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CarnobacteriumMaltaromaticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

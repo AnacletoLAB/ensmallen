@@ -91,7 +91,7 @@ def TogniniaMinima(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TogniniaMinima",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

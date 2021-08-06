@@ -91,7 +91,7 @@ def JoostellaMarina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JoostellaMarina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ZhongshaniaAliphaticivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZhongshaniaAliphaticivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

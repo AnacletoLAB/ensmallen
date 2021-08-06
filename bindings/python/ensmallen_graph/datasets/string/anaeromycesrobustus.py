@@ -88,7 +88,7 @@ def AnaeromycesRobustus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaeromycesRobustus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

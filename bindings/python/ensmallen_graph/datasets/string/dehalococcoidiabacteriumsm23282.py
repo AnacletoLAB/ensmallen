@@ -88,7 +88,7 @@ def DehalococcoidiaBacteriumSm23282(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DehalococcoidiaBacteriumSm23282",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

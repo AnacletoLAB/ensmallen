@@ -88,7 +88,7 @@ def PochoniaChlamydosporia170(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PochoniaChlamydosporia170",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

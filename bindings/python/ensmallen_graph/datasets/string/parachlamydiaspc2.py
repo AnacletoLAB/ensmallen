@@ -88,7 +88,7 @@ def ParachlamydiaSpC2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParachlamydiaSpC2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

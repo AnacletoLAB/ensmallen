@@ -88,7 +88,7 @@ def TsukamurellaPulmonis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TsukamurellaPulmonis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

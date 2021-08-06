@@ -91,7 +91,7 @@ def MaribacterForsetii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MaribacterForsetii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

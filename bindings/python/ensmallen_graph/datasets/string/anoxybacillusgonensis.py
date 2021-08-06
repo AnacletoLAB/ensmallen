@@ -91,7 +91,7 @@ def AnoxybacillusGonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnoxybacillusGonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

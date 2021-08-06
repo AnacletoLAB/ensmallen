@@ -88,7 +88,7 @@ def CandidatusJidaibacterAcanthamoeba(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusJidaibacterAcanthamoeba",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MethylobacteriumPhyllostachyos(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylobacteriumPhyllostachyos",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

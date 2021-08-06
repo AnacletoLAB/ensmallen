@@ -91,7 +91,7 @@ def MycoplasmaMobile(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaMobile",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

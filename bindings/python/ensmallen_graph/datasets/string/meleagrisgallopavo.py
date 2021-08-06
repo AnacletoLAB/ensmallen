@@ -88,7 +88,7 @@ def MeleagrisGallopavo(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MeleagrisGallopavo",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

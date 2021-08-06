@@ -88,7 +88,7 @@ def HalioglobusJaponicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalioglobusJaponicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

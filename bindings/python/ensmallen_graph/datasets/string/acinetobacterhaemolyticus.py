@@ -91,7 +91,7 @@ def AcinetobacterHaemolyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcinetobacterHaemolyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

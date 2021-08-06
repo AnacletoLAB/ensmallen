@@ -88,7 +88,7 @@ def PolaribacterReichenbachii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PolaribacterReichenbachii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CyprinodonVariegatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CyprinodonVariegatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

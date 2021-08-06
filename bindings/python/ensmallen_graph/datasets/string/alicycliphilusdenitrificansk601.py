@@ -91,7 +91,7 @@ def AlicycliphilusDenitrificansK601(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlicycliphilusDenitrificansK601",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

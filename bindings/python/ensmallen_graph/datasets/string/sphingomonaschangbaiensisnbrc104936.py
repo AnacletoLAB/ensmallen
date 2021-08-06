@@ -88,7 +88,7 @@ def SphingomonasChangbaiensisNbrc104936(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingomonasChangbaiensisNbrc104936",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

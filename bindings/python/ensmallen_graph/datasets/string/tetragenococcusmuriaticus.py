@@ -91,7 +91,7 @@ def TetragenococcusMuriaticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TetragenococcusMuriaticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

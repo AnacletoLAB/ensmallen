@@ -88,7 +88,7 @@ def ParamesorhizobiumDeserti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParamesorhizobiumDeserti",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

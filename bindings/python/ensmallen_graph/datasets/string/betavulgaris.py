@@ -91,7 +91,7 @@ def BetaVulgaris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BetaVulgaris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

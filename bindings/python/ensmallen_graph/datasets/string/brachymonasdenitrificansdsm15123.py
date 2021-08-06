@@ -88,7 +88,7 @@ def BrachymonasDenitrificansDsm15123(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrachymonasDenitrificansDsm15123",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

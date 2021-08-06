@@ -88,7 +88,7 @@ def ActinomycesNasicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomycesNasicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

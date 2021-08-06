@@ -88,7 +88,7 @@ def GordoniaOtitidisNbrc100426(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GordoniaOtitidisNbrc100426",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

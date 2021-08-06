@@ -78,7 +78,7 @@ def As20000102(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="As20000102",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

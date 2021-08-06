@@ -88,7 +88,7 @@ def ClostridiaceaeBacteriumBrhC20a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiaceaeBacteriumBrhC20a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

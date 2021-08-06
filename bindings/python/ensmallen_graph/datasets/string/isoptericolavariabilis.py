@@ -91,7 +91,7 @@ def IsoptericolaVariabilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IsoptericolaVariabilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

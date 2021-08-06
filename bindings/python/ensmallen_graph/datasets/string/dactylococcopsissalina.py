@@ -91,7 +91,7 @@ def DactylococcopsisSalina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DactylococcopsisSalina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

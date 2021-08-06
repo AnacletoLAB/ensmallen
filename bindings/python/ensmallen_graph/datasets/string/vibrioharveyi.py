@@ -88,7 +88,7 @@ def VibrioHarveyi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioHarveyi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

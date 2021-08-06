@@ -91,7 +91,7 @@ def JonesiaQuinghaiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JonesiaQuinghaiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def CytophagaAurantiaca(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CytophagaAurantiaca",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

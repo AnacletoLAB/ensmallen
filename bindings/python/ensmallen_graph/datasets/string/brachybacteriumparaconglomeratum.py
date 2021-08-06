@@ -91,7 +91,7 @@ def BrachybacteriumParaconglomeratum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrachybacteriumParaconglomeratum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

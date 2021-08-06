@@ -91,7 +91,7 @@ def GeomicrobiumSpJcm19038(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeomicrobiumSpJcm19038",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ArcobacterSpAf1440(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArcobacterSpAf1440",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ErythrobacterLongus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErythrobacterLongus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

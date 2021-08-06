@@ -88,7 +88,7 @@ def ChoiromycesVenosus1206131(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChoiromycesVenosus1206131",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

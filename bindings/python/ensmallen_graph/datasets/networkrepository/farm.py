@@ -78,7 +78,7 @@ def Farm(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Farm",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

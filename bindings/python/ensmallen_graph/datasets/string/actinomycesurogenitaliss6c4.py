@@ -91,7 +91,7 @@ def ActinomycesUrogenitalisS6c4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomycesUrogenitalisS6c4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

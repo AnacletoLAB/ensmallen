@@ -91,7 +91,7 @@ def AlkaliphilusOremlandii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlkaliphilusOremlandii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

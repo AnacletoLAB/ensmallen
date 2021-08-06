@@ -88,7 +88,7 @@ def CandidatusSaccharibacteriaOralTaxonTm7x(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusSaccharibacteriaOralTaxonTm7x",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

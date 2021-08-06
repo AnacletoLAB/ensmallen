@@ -88,7 +88,7 @@ def SnodgrassellaAlviScgcAb598O02(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SnodgrassellaAlviScgcAb598O02",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def TenacibaculumOvolyticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TenacibaculumOvolyticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def CrocinitomixCatalasitica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CrocinitomixCatalasitica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

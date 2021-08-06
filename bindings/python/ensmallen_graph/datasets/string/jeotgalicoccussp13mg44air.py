@@ -91,7 +91,7 @@ def JeotgalicoccusSp13mg44air(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JeotgalicoccusSp13mg44air",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

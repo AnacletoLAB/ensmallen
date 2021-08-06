@@ -91,7 +91,7 @@ def RhodococcusRhodnii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodococcusRhodnii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

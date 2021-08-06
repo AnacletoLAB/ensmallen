@@ -88,7 +88,7 @@ def EndomicrobiumProavitum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EndomicrobiumProavitum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

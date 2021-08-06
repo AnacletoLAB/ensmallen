@@ -88,7 +88,7 @@ def DictyocaulusViviparus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DictyocaulusViviparus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

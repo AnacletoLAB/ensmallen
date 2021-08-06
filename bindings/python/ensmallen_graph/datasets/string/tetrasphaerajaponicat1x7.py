@@ -88,7 +88,7 @@ def TetrasphaeraJaponicaT1X7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TetrasphaeraJaponicaT1X7",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

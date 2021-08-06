@@ -88,7 +88,7 @@ def PogonaVitticeps(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PogonaVitticeps",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

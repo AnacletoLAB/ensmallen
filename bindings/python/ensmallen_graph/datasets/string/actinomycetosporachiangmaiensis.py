@@ -91,7 +91,7 @@ def ActinomycetosporaChiangmaiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomycetosporaChiangmaiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

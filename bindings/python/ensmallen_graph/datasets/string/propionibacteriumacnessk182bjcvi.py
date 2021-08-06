@@ -91,7 +91,7 @@ def PropionibacteriumAcnesSk182bjcvi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PropionibacteriumAcnesSk182bjcvi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

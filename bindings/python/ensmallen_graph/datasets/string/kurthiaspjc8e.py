@@ -91,7 +91,7 @@ def KurthiaSpJc8e(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KurthiaSpJc8e",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

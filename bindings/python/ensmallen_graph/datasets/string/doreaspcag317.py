@@ -88,7 +88,7 @@ def DoreaSpCag317(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DoreaSpCag317",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

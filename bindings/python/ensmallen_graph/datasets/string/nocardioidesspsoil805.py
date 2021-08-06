@@ -88,7 +88,7 @@ def NocardioidesSpSoil805(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardioidesSpSoil805",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def YoungiibacterFragilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="YoungiibacterFragilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

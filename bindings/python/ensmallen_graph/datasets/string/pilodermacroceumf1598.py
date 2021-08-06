@@ -88,7 +88,7 @@ def PilodermaCroceumF1598(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PilodermaCroceumF1598",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CloacimonetesBacteriumScgcAaa252P10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CloacimonetesBacteriumScgcAaa252P10",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def JuglansRegia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JuglansRegia",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

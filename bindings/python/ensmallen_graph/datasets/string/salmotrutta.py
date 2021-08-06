@@ -88,7 +88,7 @@ def SalmoTrutta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalmoTrutta",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

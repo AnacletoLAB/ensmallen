@@ -88,7 +88,7 @@ def PseudomonasGingeriNcppb3146Lmg5327(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasGingeriNcppb3146Lmg5327",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

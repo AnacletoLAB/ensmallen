@@ -88,7 +88,7 @@ def PhlebiaCentrifuga(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhlebiaCentrifuga",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def LeuconostocFallax(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeuconostocFallax",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

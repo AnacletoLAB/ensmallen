@@ -88,7 +88,7 @@ def PaenibacillusNaphthalenovorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillusNaphthalenovorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

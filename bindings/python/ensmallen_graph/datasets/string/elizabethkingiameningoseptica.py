@@ -91,7 +91,7 @@ def ElizabethkingiaMeningoseptica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ElizabethkingiaMeningoseptica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

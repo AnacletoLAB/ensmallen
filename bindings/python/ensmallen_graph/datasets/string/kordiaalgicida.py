@@ -91,7 +91,7 @@ def KordiaAlgicida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KordiaAlgicida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def JiangellaGansuensisDsm44835(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JiangellaGansuensisDsm44835",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

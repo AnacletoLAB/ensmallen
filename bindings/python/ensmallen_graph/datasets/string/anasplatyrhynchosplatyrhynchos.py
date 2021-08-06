@@ -88,7 +88,7 @@ def AnasPlatyrhynchosPlatyrhynchos(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnasPlatyrhynchosPlatyrhynchos",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

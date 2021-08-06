@@ -91,7 +91,7 @@ def PasteurellaMultocida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PasteurellaMultocida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

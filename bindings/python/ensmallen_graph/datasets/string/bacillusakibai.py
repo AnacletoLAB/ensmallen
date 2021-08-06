@@ -91,7 +91,7 @@ def BacillusAkibai(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusAkibai",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

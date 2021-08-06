@@ -88,7 +88,7 @@ def CampylobacterLanienae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterLanienae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

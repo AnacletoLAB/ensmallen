@@ -88,7 +88,7 @@ def TrichodermaAtrovirideImi206040(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichodermaAtrovirideImi206040",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

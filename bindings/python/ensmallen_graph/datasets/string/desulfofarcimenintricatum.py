@@ -88,7 +88,7 @@ def DesulfofarcimenIntricatum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfofarcimenIntricatum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

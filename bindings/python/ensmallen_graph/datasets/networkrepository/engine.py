@@ -78,7 +78,7 @@ def Engine(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Engine",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

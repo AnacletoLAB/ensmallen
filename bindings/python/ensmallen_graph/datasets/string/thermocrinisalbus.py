@@ -91,7 +91,7 @@ def ThermocrinisAlbus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermocrinisAlbus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

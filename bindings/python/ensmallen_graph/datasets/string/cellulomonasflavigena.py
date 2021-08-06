@@ -91,7 +91,7 @@ def CellulomonasFlavigena(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CellulomonasFlavigena",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

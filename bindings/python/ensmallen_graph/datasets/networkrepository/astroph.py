@@ -78,7 +78,7 @@ def AstroPh(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AstroPh",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

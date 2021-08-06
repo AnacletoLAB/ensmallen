@@ -91,7 +91,7 @@ def ClostridiumBotulinumA2Kyoto(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumBotulinumA2Kyoto",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

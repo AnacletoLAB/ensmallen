@@ -88,7 +88,7 @@ def LactobacillusCrustorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusCrustorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

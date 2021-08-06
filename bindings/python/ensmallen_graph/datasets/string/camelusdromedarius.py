@@ -88,7 +88,7 @@ def CamelusDromedarius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CamelusDromedarius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

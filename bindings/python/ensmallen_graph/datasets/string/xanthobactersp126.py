@@ -91,7 +91,7 @@ def XanthobacterSp126(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XanthobacterSp126",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

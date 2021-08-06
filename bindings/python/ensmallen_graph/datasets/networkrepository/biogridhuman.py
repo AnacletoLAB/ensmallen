@@ -78,7 +78,7 @@ def BioGridHuman(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BioGridHuman",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

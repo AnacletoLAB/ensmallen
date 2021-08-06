@@ -88,7 +88,7 @@ def PodarcisMuralis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PodarcisMuralis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

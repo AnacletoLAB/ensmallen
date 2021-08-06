@@ -91,7 +91,7 @@ def ActinobaculumMassiliae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinobaculumMassiliae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

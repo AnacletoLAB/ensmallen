@@ -88,7 +88,7 @@ def AminicenantesBacteriumAaa252a02(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AminicenantesBacteriumAaa252a02",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

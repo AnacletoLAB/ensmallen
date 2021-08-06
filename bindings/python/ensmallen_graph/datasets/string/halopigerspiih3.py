@@ -91,7 +91,7 @@ def HalopigerSpIih3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalopigerSpIih3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

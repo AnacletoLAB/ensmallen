@@ -88,7 +88,7 @@ def RachicladosporiumSpCcfee5018(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RachicladosporiumSpCcfee5018",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ParabacteroidesGoldsteiniiDsm19448Wal12034(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParabacteroidesGoldsteiniiDsm19448Wal12034",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MycoplasmaDispar(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaDispar",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

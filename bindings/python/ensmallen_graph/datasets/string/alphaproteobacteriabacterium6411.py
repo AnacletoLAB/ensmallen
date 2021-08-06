@@ -88,7 +88,7 @@ def AlphaproteobacteriaBacterium6411(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlphaproteobacteriaBacterium6411",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

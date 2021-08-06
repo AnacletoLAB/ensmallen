@@ -88,7 +88,7 @@ def GeobacillusSpLemmy01(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeobacillusSpLemmy01",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

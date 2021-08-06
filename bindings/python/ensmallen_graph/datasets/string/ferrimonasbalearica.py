@@ -91,7 +91,7 @@ def FerrimonasBalearica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FerrimonasBalearica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

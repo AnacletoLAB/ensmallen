@@ -91,7 +91,7 @@ def SpiroplasmaApis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpiroplasmaApis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -100,7 +100,7 @@ def MiscReuters911(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MiscReuters911",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PropionimicrobiumSpMarseilleP3275(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PropionimicrobiumSpMarseilleP3275",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

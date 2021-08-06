@@ -88,7 +88,7 @@ def SporomusaAcidovorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SporomusaAcidovorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

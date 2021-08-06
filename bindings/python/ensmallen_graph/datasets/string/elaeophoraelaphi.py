@@ -88,7 +88,7 @@ def ElaeophoraElaphi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ElaeophoraElaphi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

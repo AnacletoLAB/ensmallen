@@ -88,7 +88,7 @@ def CorynebacteriumDesertiGimn1010(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumDesertiGimn1010",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

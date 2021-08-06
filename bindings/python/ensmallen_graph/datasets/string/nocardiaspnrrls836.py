@@ -88,7 +88,7 @@ def NocardiaSpNrrlS836(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardiaSpNrrlS836",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

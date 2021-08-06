@@ -88,7 +88,7 @@ def SphingorhabdusSpM41(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingorhabdusSpM41",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PhascolarctosCinereus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhascolarctosCinereus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

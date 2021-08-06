@@ -88,7 +88,7 @@ def ClostridiumPolysaccharolyticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumPolysaccharolyticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

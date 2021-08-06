@@ -91,7 +91,7 @@ def BosTaurus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BosTaurus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

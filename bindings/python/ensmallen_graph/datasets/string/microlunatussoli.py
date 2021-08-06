@@ -88,7 +88,7 @@ def MicrolunatusSoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrolunatusSoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

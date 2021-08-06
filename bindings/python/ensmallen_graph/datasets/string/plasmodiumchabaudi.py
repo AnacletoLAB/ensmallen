@@ -91,7 +91,7 @@ def PlasmodiumChabaudi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlasmodiumChabaudi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

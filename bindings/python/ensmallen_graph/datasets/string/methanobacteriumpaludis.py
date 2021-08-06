@@ -91,7 +91,7 @@ def MethanobacteriumPaludis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanobacteriumPaludis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

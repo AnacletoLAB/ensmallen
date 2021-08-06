@@ -91,7 +91,7 @@ def ArthrobacterArilaitensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArthrobacterArilaitensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

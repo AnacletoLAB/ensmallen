@@ -78,7 +78,7 @@ def Oregon2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Oregon2",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

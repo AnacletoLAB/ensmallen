@@ -91,7 +91,7 @@ def MesorhizobiumLotiMaff303099(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MesorhizobiumLotiMaff303099",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

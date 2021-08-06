@@ -88,7 +88,7 @@ def MycobacteriumSaskatchewanense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumSaskatchewanense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def CellulosimicrobiumCellulans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CellulosimicrobiumCellulans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

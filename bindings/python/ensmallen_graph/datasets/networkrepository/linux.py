@@ -78,7 +78,7 @@ def Linux(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Linux",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

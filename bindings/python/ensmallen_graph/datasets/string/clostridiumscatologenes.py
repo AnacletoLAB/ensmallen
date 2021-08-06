@@ -88,7 +88,7 @@ def ClostridiumScatologenes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumScatologenes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

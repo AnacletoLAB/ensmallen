@@ -88,7 +88,7 @@ def NioellaSediminis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NioellaSediminis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

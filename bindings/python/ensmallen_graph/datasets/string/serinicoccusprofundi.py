@@ -91,7 +91,7 @@ def SerinicoccusProfundi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SerinicoccusProfundi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ShimwelliaBlattae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShimwelliaBlattae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def AnaerovibrioLipolyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerovibrioLipolyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

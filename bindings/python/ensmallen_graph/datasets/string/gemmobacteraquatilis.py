@@ -88,7 +88,7 @@ def GemmobacterAquatilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GemmobacterAquatilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

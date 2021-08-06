@@ -88,7 +88,7 @@ def HalomonasChromatireducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalomonasChromatireducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

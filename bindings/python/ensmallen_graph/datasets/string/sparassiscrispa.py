@@ -88,7 +88,7 @@ def SparassisCrispa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SparassisCrispa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def AmycolatopsisRifamycinica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmycolatopsisRifamycinica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CnuellaTakakiae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CnuellaTakakiae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

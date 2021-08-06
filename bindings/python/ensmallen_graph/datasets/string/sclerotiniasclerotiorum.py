@@ -91,7 +91,7 @@ def SclerotiniaSclerotiorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SclerotiniaSclerotiorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

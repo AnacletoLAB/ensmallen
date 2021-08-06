@@ -88,7 +88,7 @@ def FlavobacteriumSegetis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumSegetis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

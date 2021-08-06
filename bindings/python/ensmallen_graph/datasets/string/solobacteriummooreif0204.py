@@ -91,7 +91,7 @@ def SolobacteriumMooreiF0204(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SolobacteriumMooreiF0204",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

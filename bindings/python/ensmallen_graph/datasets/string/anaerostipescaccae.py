@@ -91,7 +91,7 @@ def AnaerostipesCaccae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerostipesCaccae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

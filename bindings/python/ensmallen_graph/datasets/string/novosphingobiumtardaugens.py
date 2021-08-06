@@ -91,7 +91,7 @@ def NovosphingobiumTardaugens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NovosphingobiumTardaugens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

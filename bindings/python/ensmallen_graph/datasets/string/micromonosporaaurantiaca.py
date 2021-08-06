@@ -91,7 +91,7 @@ def MicromonosporaAurantiaca(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicromonosporaAurantiaca",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AedesAlbopictus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AedesAlbopictus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

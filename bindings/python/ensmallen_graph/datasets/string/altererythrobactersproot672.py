@@ -88,7 +88,7 @@ def AltererythrobacterSpRoot672(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AltererythrobacterSpRoot672",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

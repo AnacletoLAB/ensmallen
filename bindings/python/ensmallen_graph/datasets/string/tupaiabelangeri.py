@@ -88,7 +88,7 @@ def TupaiaBelangeri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TupaiaBelangeri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

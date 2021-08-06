@@ -88,7 +88,7 @@ def AnaerobutyricumHallii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerobutyricumHallii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

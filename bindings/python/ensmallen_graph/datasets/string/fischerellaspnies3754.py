@@ -88,7 +88,7 @@ def FischerellaSpNies3754(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FischerellaSpNies3754",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

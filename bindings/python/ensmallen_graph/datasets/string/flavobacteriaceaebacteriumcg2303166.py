@@ -88,7 +88,7 @@ def FlavobacteriaceaeBacteriumCg2303166(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriaceaeBacteriumCg2303166",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

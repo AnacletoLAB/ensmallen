@@ -91,7 +91,7 @@ def RenibacteriumSalmoninarum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RenibacteriumSalmoninarum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def VibrioKanaloae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioKanaloae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

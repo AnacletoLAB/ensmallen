@@ -91,7 +91,7 @@ def CorynebacteriumHalotolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumHalotolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

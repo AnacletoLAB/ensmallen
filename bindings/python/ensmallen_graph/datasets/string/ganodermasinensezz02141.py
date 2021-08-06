@@ -88,7 +88,7 @@ def GanodermaSinenseZz02141(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GanodermaSinenseZz02141",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

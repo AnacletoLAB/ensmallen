@@ -88,7 +88,7 @@ def HerpetosiphonGeysericola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HerpetosiphonGeysericola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

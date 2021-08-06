@@ -88,7 +88,7 @@ def ColletotrichumGloeosporioidesCg14(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ColletotrichumGloeosporioidesCg14",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

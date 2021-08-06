@@ -91,7 +91,7 @@ def SulfurospirillumMultivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfurospirillumMultivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

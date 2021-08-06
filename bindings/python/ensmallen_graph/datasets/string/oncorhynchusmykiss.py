@@ -88,7 +88,7 @@ def OncorhynchusMykiss(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OncorhynchusMykiss",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

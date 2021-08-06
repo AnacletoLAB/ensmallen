@@ -88,7 +88,7 @@ def FerrithrixThermotoleransDsm19514(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FerrithrixThermotoleransDsm19514",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

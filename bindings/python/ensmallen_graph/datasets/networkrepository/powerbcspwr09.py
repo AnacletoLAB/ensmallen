@@ -78,7 +78,7 @@ def PowerBcspwr09(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PowerBcspwr09",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

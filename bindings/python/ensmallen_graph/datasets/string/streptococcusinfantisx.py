@@ -91,7 +91,7 @@ def StreptococcusInfantisX(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusInfantisX",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

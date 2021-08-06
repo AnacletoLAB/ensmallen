@@ -88,7 +88,7 @@ def DermabacterVaginalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DermabacterVaginalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

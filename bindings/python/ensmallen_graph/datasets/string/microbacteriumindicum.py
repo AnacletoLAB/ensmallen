@@ -91,7 +91,7 @@ def MicrobacteriumIndicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriumIndicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def StreptococcusOrisratti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusOrisratti",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

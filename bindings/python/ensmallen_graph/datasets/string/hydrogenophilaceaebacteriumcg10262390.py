@@ -88,7 +88,7 @@ def HydrogenophilaceaeBacteriumCg10262390(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HydrogenophilaceaeBacteriumCg10262390",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

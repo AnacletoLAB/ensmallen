@@ -94,7 +94,7 @@ def WebCc12Payleveldomain(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebCc12Payleveldomain",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

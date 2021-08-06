@@ -88,7 +88,7 @@ def VanderwaltozymaPolysporaDsm70294(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VanderwaltozymaPolysporaDsm70294",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

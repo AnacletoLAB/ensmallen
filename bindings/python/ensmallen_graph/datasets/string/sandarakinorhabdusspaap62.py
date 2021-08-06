@@ -91,7 +91,7 @@ def SandarakinorhabdusSpAap62(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SandarakinorhabdusSpAap62",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

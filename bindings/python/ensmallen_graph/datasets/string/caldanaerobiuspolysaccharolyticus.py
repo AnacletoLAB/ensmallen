@@ -91,7 +91,7 @@ def CaldanaerobiusPolysaccharolyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaldanaerobiusPolysaccharolyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

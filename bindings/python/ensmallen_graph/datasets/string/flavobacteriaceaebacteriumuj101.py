@@ -88,7 +88,7 @@ def FlavobacteriaceaeBacteriumUj101(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriaceaeBacteriumUj101",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

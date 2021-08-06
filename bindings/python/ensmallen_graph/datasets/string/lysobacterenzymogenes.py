@@ -88,7 +88,7 @@ def LysobacterEnzymogenes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LysobacterEnzymogenes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

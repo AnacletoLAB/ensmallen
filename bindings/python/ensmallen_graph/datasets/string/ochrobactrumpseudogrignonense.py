@@ -88,7 +88,7 @@ def OchrobactrumPseudogrignonense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OchrobactrumPseudogrignonense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

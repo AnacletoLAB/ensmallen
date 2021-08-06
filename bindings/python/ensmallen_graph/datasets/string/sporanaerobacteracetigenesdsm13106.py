@@ -88,7 +88,7 @@ def SporanaerobacterAcetigenesDsm13106(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SporanaerobacterAcetigenesDsm13106",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

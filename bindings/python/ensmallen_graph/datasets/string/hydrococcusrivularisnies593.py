@@ -88,7 +88,7 @@ def HydrococcusRivularisNies593(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HydrococcusRivularisNies593",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

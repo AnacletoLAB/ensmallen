@@ -88,7 +88,7 @@ def TremaOrientale(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TremaOrientale",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

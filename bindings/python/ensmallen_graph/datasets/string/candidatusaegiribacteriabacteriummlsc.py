@@ -88,7 +88,7 @@ def CandidatusAegiribacteriaBacteriumMlsC(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusAegiribacteriaBacteriumMlsC",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

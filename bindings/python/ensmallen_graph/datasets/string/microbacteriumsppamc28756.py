@@ -88,7 +88,7 @@ def MicrobacteriumSpPamc28756(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriumSpPamc28756",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def MicromonasPusilla(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicromonasPusilla",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

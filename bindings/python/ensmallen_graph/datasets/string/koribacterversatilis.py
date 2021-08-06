@@ -91,7 +91,7 @@ def KoribacterVersatilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KoribacterVersatilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

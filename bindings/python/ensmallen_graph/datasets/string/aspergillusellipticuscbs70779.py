@@ -88,7 +88,7 @@ def AspergillusEllipticusCbs70779(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AspergillusEllipticusCbs70779",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

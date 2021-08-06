@@ -88,7 +88,7 @@ def CollimonasSpOk242(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CollimonasSpOk242",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def NeisseriaLactamica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeisseriaLactamica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

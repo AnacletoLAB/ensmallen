@@ -100,7 +100,7 @@ def MiscFootball(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MiscFootball",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

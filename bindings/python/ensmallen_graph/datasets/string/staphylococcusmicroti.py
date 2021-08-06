@@ -88,7 +88,7 @@ def StaphylococcusMicroti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StaphylococcusMicroti",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

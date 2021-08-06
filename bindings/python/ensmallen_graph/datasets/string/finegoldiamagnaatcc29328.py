@@ -91,7 +91,7 @@ def FinegoldiaMagnaAtcc29328(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FinegoldiaMagnaAtcc29328",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ColletotrichumHigginsianumImi349063(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ColletotrichumHigginsianumImi349063",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

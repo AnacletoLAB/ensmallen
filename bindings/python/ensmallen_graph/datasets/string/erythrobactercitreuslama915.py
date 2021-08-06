@@ -88,7 +88,7 @@ def ErythrobacterCitreusLama915(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErythrobacterCitreusLama915",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

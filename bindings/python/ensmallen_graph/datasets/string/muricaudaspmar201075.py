@@ -91,7 +91,7 @@ def MuricaudaSpMar201075(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MuricaudaSpMar201075",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def MetallosphaeraCuprina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MetallosphaeraCuprina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

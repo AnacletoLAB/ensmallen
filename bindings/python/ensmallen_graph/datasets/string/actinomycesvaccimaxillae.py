@@ -91,7 +91,7 @@ def ActinomycesVaccimaxillae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomycesVaccimaxillae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

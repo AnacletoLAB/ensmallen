@@ -91,7 +91,7 @@ def NeptuniibacterCaesariensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeptuniibacterCaesariensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

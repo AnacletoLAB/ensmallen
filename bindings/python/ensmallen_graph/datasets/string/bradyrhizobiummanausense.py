@@ -88,7 +88,7 @@ def BradyrhizobiumManausense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BradyrhizobiumManausense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

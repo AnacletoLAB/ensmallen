@@ -88,7 +88,7 @@ def PhotobacteriumProteolyticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhotobacteriumProteolyticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

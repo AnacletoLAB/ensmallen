@@ -91,7 +91,7 @@ def EubacteriumBrachy(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EubacteriumBrachy",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

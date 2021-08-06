@@ -88,7 +88,7 @@ def StylophoraPistillata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StylophoraPistillata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

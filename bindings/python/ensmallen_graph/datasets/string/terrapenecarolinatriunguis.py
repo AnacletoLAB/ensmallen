@@ -88,7 +88,7 @@ def TerrapeneCarolinaTriunguis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TerrapeneCarolinaTriunguis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

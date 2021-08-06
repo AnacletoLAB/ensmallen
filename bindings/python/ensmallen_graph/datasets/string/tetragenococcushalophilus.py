@@ -91,7 +91,7 @@ def TetragenococcusHalophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TetragenococcusHalophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def RhodobacteraceaeBacteriumEhc02(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodobacteraceaeBacteriumEhc02",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

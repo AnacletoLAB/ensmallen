@@ -88,7 +88,7 @@ def DeinococcusMurrayiDsm11303(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DeinococcusMurrayiDsm11303",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

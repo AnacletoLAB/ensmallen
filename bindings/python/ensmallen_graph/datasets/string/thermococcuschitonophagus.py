@@ -88,7 +88,7 @@ def ThermococcusChitonophagus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermococcusChitonophagus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

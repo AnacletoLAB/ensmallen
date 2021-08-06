@@ -91,7 +91,7 @@ def RothiaMucilaginosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RothiaMucilaginosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

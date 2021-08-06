@@ -88,7 +88,7 @@ def MetschnikowiaAffPulcherrima(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MetschnikowiaAffPulcherrima",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

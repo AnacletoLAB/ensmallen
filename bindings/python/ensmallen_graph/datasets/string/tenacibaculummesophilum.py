@@ -88,7 +88,7 @@ def TenacibaculumMesophilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TenacibaculumMesophilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

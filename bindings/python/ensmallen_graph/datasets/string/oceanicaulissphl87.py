@@ -91,7 +91,7 @@ def OceanicaulisSpHl87(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OceanicaulisSpHl87",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

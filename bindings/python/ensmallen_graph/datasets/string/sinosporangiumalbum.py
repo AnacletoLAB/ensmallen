@@ -88,7 +88,7 @@ def SinosporangiumAlbum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SinosporangiumAlbum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

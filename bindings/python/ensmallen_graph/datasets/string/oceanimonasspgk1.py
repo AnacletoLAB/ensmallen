@@ -91,7 +91,7 @@ def OceanimonasSpGk1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OceanimonasSpGk1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

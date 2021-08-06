@@ -91,7 +91,7 @@ def AlteromonasMacleodiiDeep(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlteromonasMacleodiiDeep",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

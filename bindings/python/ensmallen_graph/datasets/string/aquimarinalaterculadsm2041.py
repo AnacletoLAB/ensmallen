@@ -88,7 +88,7 @@ def AquimarinaLaterculaDsm2041(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AquimarinaLaterculaDsm2041",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

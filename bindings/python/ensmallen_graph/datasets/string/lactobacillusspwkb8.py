@@ -91,7 +91,7 @@ def LactobacillusSpWkb8(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusSpWkb8",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

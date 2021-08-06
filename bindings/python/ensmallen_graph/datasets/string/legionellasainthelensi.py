@@ -91,7 +91,7 @@ def LegionellaSainthelensi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LegionellaSainthelensi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

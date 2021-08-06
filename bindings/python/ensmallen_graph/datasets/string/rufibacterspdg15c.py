@@ -88,7 +88,7 @@ def RufibacterSpDg15c(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RufibacterSpDg15c",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def StreptobacillusNotomytis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptobacillusNotomytis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

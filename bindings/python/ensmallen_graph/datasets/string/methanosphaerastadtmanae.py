@@ -91,7 +91,7 @@ def MethanosphaeraStadtmanae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanosphaeraStadtmanae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

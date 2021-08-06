@@ -91,7 +91,7 @@ def ThiomonasIntermedia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThiomonasIntermedia",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

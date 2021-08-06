@@ -88,7 +88,7 @@ def BurkholderialesBacteriumGwf16617(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BurkholderialesBacteriumGwf16617",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

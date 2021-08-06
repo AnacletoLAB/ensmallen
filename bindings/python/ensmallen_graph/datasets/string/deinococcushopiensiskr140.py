@@ -88,7 +88,7 @@ def DeinococcusHopiensisKr140(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DeinococcusHopiensisKr140",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ChitinophagaGinsengisegetis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChitinophagaGinsengisegetis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

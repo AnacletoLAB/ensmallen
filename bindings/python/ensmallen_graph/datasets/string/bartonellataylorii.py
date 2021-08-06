@@ -91,7 +91,7 @@ def BartonellaTaylorii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BartonellaTaylorii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

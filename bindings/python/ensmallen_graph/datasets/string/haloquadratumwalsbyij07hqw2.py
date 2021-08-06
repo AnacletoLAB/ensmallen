@@ -91,7 +91,7 @@ def HaloquadratumWalsbyiJ07hqw2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaloquadratumWalsbyiJ07hqw2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

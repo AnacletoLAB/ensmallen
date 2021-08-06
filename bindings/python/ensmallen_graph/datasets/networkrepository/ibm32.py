@@ -78,7 +78,7 @@ def Ibm32(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Ibm32",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

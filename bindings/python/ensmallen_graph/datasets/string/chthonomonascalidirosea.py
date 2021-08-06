@@ -91,7 +91,7 @@ def ChthonomonasCalidirosea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChthonomonasCalidirosea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

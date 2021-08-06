@@ -88,7 +88,7 @@ def IctalurusPunctatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IctalurusPunctatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

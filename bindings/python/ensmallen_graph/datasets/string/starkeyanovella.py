@@ -91,7 +91,7 @@ def StarkeyaNovella(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StarkeyaNovella",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

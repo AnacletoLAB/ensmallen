@@ -91,7 +91,7 @@ def FodinicurvataFenggangensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FodinicurvataFenggangensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

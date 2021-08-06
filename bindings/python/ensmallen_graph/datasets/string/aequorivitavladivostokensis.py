@@ -88,7 +88,7 @@ def AequorivitaVladivostokensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AequorivitaVladivostokensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

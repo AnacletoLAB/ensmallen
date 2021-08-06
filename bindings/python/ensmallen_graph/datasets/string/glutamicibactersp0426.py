@@ -88,7 +88,7 @@ def GlutamicibacterSp0426(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GlutamicibacterSp0426",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

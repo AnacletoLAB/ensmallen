@@ -88,7 +88,7 @@ def StreptomycesPluripotens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesPluripotens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

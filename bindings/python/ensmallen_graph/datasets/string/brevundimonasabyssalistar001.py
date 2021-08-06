@@ -88,7 +88,7 @@ def BrevundimonasAbyssalisTar001(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrevundimonasAbyssalisTar001",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

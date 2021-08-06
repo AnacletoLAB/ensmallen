@@ -88,7 +88,7 @@ def CandidateDivisionWor3BacteriumSm2342(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidateDivisionWor3BacteriumSm2342",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

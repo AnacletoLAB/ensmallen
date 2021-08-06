@@ -88,7 +88,7 @@ def GemmatimonadetesBacterium13220cm2657(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GemmatimonadetesBacterium13220cm2657",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

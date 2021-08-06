@@ -91,7 +91,7 @@ def GlaciibacterSuperstes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GlaciibacterSuperstes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

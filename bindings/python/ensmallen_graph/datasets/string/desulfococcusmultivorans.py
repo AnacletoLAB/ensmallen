@@ -91,7 +91,7 @@ def DesulfococcusMultivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfococcusMultivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def KomagataeibacterRhaeticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KomagataeibacterRhaeticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

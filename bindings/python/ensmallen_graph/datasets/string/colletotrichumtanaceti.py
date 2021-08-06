@@ -88,7 +88,7 @@ def ColletotrichumTanaceti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ColletotrichumTanaceti",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

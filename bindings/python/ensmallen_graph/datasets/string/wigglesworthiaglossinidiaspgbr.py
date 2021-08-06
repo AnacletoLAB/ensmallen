@@ -88,7 +88,7 @@ def WigglesworthiaGlossinidiaSpGbr(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WigglesworthiaGlossinidiaSpGbr",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

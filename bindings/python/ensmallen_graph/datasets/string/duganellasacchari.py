@@ -88,7 +88,7 @@ def DuganellaSacchari(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DuganellaSacchari",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

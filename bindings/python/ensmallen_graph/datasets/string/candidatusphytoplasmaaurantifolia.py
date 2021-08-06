@@ -88,7 +88,7 @@ def CandidatusPhytoplasmaAurantifolia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusPhytoplasmaAurantifolia",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

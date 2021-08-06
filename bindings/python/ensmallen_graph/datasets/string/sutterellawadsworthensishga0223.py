@@ -91,7 +91,7 @@ def SutterellaWadsworthensisHga0223(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SutterellaWadsworthensisHga0223",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ArcticibacterSvalbardensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArcticibacterSvalbardensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

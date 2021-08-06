@@ -88,7 +88,7 @@ def LysinibacillusMacroides(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LysinibacillusMacroides",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def NonlabensSpYik11(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NonlabensSpYik11",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

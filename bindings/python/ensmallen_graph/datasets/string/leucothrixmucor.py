@@ -91,7 +91,7 @@ def LeucothrixMucor(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeucothrixMucor",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

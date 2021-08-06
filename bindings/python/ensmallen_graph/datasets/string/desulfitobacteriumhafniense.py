@@ -91,7 +91,7 @@ def DesulfitobacteriumHafniense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfitobacteriumHafniense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

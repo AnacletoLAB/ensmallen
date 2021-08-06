@@ -91,7 +91,7 @@ def Haloarchaeon3a1dgr(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Haloarchaeon3a1dgr",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

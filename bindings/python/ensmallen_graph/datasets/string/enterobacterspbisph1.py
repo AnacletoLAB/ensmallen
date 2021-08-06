@@ -88,7 +88,7 @@ def EnterobacterSpBisph1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterobacterSpBisph1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

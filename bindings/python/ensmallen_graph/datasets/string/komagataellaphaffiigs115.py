@@ -88,7 +88,7 @@ def KomagataellaPhaffiiGs115(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KomagataellaPhaffiiGs115",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CorynebacteriumSpheniscorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumSpheniscorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

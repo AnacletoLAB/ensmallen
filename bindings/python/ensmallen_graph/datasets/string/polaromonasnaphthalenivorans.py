@@ -91,7 +91,7 @@ def PolaromonasNaphthalenivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PolaromonasNaphthalenivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

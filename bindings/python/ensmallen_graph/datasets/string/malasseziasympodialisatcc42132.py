@@ -88,7 +88,7 @@ def MalasseziaSympodialisAtcc42132(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MalasseziaSympodialisAtcc42132",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def WolfiporiaCocosMd104Ss10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WolfiporiaCocosMd104Ss10",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

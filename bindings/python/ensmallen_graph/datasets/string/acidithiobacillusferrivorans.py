@@ -91,7 +91,7 @@ def AcidithiobacillusFerrivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidithiobacillusFerrivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

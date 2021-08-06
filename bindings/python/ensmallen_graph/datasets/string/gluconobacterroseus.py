@@ -88,7 +88,7 @@ def GluconobacterRoseus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GluconobacterRoseus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PatulibacterMinatonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PatulibacterMinatonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

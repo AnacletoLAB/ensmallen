@@ -88,7 +88,7 @@ def VicugnaPacos(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VicugnaPacos",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

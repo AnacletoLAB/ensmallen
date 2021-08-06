@@ -88,7 +88,7 @@ def VibrioFurnissiiNctc11218(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioFurnissiiNctc11218",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

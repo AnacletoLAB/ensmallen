@@ -88,7 +88,7 @@ def BradyrhizobiumYuanmingense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BradyrhizobiumYuanmingense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

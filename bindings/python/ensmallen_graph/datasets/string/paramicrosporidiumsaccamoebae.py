@@ -88,7 +88,7 @@ def ParamicrosporidiumSaccamoebae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParamicrosporidiumSaccamoebae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

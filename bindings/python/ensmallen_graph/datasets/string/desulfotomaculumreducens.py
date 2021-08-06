@@ -91,7 +91,7 @@ def DesulfotomaculumReducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfotomaculumReducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

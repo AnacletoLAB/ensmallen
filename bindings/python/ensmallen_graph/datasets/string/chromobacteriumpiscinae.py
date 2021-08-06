@@ -88,7 +88,7 @@ def ChromobacteriumPiscinae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChromobacteriumPiscinae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def Rajat09(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Rajat09",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

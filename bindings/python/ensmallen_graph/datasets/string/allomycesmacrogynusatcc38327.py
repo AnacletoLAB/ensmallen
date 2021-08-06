@@ -88,7 +88,7 @@ def AllomycesMacrogynusAtcc38327(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AllomycesMacrogynusAtcc38327",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

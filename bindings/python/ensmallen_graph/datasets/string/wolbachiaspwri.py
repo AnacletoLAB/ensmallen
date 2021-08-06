@@ -88,7 +88,7 @@ def WolbachiaSpWri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WolbachiaSpWri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

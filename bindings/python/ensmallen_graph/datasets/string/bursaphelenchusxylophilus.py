@@ -91,7 +91,7 @@ def BursaphelenchusXylophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BursaphelenchusXylophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AmycolatopsisRubida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmycolatopsisRubida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

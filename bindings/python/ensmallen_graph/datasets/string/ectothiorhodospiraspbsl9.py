@@ -88,7 +88,7 @@ def EctothiorhodospiraSpBsl9(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EctothiorhodospiraSpBsl9",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

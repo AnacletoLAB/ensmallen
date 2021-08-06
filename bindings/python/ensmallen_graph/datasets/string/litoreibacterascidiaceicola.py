@@ -88,7 +88,7 @@ def LitoreibacterAscidiaceicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LitoreibacterAscidiaceicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

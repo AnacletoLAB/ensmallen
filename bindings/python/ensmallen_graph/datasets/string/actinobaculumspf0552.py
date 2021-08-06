@@ -91,7 +91,7 @@ def ActinobaculumSpF0552(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinobaculumSpF0552",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ThermostaphylosporaChromogena(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermostaphylosporaChromogena",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

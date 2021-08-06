@@ -88,7 +88,7 @@ def PucciniaTriticina11BbbdRace1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PucciniaTriticina11BbbdRace1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

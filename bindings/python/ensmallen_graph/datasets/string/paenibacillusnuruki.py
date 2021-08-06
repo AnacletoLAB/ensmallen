@@ -88,7 +88,7 @@ def PaenibacillusNuruki(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillusNuruki",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

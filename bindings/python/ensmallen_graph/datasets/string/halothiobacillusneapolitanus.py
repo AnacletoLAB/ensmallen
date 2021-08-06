@@ -91,7 +91,7 @@ def HalothiobacillusNeapolitanus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalothiobacillusNeapolitanus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ActinomycesSpHpa0247(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomycesSpHpa0247",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

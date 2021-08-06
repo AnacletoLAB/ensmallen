@@ -91,7 +91,7 @@ def SideroxydansLithotrophicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SideroxydansLithotrophicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

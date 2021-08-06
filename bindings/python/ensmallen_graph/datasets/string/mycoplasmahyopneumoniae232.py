@@ -91,7 +91,7 @@ def MycoplasmaHyopneumoniae232(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaHyopneumoniae232",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

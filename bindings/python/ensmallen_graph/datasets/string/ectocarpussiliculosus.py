@@ -91,7 +91,7 @@ def EctocarpusSiliculosus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EctocarpusSiliculosus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

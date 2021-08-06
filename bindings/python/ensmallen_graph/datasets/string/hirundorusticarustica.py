@@ -88,7 +88,7 @@ def HirundoRusticaRustica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HirundoRusticaRustica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

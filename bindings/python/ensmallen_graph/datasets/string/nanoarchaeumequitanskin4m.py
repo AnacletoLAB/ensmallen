@@ -88,7 +88,7 @@ def NanoarchaeumEquitansKin4M(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NanoarchaeumEquitansKin4M",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

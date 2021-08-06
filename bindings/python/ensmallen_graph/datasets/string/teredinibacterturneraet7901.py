@@ -91,7 +91,7 @@ def TeredinibacterTurneraeT7901(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TeredinibacterTurneraeT7901",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

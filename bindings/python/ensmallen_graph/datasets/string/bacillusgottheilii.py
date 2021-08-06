@@ -88,7 +88,7 @@ def BacillusGottheilii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusGottheilii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

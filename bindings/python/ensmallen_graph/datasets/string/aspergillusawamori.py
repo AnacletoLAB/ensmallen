@@ -88,7 +88,7 @@ def AspergillusAwamori(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AspergillusAwamori",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def TindalliaCaliforniensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TindalliaCaliforniensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

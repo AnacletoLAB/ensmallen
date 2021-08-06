@@ -88,7 +88,7 @@ def UlvibacterLitoralis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UlvibacterLitoralis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AlgoriphagusTerrigenaDsm22685(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlgoriphagusTerrigenaDsm22685",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

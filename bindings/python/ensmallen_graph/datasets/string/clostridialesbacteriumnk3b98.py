@@ -91,7 +91,7 @@ def ClostridialesBacteriumNk3b98(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridialesBacteriumNk3b98",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

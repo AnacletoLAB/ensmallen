@@ -88,7 +88,7 @@ def SuricataSuricatta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SuricataSuricatta",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def OryzisolibacterPropanilivorax(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OryzisolibacterPropanilivorax",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

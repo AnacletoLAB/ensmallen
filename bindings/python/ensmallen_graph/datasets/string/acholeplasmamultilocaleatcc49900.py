@@ -88,7 +88,7 @@ def AcholeplasmaMultilocaleAtcc49900(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcholeplasmaMultilocaleAtcc49900",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

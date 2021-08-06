@@ -88,7 +88,7 @@ def AlgibacterAquaticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlgibacterAquaticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

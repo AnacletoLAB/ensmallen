@@ -91,7 +91,7 @@ def MarinobacterLipolyticusSm19(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinobacterLipolyticusSm19",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

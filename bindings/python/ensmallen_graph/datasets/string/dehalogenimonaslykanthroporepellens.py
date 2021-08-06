@@ -91,7 +91,7 @@ def DehalogenimonasLykanthroporepellens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DehalogenimonasLykanthroporepellens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

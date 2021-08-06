@@ -91,7 +91,7 @@ def PythiumIrregulare(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PythiumIrregulare",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CyanistesCaeruleus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CyanistesCaeruleus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

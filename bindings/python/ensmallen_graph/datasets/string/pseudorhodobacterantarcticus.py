@@ -88,7 +88,7 @@ def PseudorhodobacterAntarcticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudorhodobacterAntarcticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

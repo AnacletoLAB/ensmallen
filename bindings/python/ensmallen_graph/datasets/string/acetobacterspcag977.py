@@ -88,7 +88,7 @@ def AcetobacterSpCag977(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcetobacterSpCag977",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

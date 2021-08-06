@@ -91,7 +91,7 @@ def LegionellaPneumophilaPhiladelphia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LegionellaPneumophilaPhiladelphia",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

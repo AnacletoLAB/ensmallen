@@ -88,7 +88,7 @@ def LysinibacillusSpAc3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LysinibacillusSpAc3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

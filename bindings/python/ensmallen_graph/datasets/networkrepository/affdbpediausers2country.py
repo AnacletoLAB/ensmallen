@@ -78,7 +78,7 @@ def AffDbpediaUsers2country(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AffDbpediaUsers2country",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

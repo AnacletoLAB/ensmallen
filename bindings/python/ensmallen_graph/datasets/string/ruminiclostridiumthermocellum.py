@@ -91,7 +91,7 @@ def RuminiclostridiumThermocellum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminiclostridiumThermocellum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

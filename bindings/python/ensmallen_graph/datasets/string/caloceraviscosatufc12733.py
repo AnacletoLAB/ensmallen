@@ -88,7 +88,7 @@ def CaloceraViscosaTufc12733(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaloceraViscosaTufc12733",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

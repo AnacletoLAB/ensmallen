@@ -91,7 +91,7 @@ def ParascardoviaDenticolensIpla20019(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParascardoviaDenticolensIpla20019",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

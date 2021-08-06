@@ -88,7 +88,7 @@ def LentisphaeraeBacteriumRifoxyc12Full6016(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LentisphaeraeBacteriumRifoxyc12Full6016",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

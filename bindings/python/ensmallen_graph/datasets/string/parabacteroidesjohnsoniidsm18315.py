@@ -88,7 +88,7 @@ def ParabacteroidesJohnsoniiDsm18315(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParabacteroidesJohnsoniiDsm18315",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

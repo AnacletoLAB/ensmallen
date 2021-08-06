@@ -88,7 +88,7 @@ def ProvidenciaRettgeri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProvidenciaRettgeri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

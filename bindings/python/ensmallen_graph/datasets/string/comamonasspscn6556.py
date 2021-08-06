@@ -88,7 +88,7 @@ def ComamonasSpScn6556(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ComamonasSpScn6556",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

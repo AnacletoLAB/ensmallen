@@ -88,7 +88,7 @@ def ThalassobacillusDevorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThalassobacillusDevorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

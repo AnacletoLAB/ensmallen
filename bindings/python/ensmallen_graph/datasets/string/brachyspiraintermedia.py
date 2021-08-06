@@ -91,7 +91,7 @@ def BrachyspiraIntermedia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrachyspiraIntermedia",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

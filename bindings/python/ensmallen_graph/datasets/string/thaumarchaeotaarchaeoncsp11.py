@@ -88,7 +88,7 @@ def ThaumarchaeotaArchaeonCsp11(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThaumarchaeotaArchaeonCsp11",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

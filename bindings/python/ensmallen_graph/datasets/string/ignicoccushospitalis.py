@@ -91,7 +91,7 @@ def IgnicoccusHospitalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IgnicoccusHospitalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

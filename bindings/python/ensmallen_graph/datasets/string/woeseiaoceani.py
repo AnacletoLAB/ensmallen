@@ -88,7 +88,7 @@ def WoeseiaOceani(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WoeseiaOceani",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

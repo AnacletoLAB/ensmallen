@@ -88,7 +88,7 @@ def AliivibrioWodanis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AliivibrioWodanis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

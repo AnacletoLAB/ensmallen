@@ -91,7 +91,7 @@ def ChlamydophilaPecorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlamydophilaPecorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

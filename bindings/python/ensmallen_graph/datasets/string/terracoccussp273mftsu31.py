@@ -91,7 +91,7 @@ def TerracoccusSp273mftsu31(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TerracoccusSp273mftsu31",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

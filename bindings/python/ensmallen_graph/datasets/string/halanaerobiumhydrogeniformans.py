@@ -91,7 +91,7 @@ def HalanaerobiumHydrogeniformans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalanaerobiumHydrogeniformans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

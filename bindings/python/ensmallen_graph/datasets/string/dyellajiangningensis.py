@@ -88,7 +88,7 @@ def DyellaJiangningensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DyellaJiangningensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

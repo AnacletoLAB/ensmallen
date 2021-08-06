@@ -88,7 +88,7 @@ def MacrostomumLignano(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MacrostomumLignano",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

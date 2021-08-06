@@ -88,7 +88,7 @@ def NematocidaParisiiErtm3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NematocidaParisiiErtm3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

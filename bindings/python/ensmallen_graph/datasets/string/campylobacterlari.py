@@ -91,7 +91,7 @@ def CampylobacterLari(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterLari",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def Finance256(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Finance256",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

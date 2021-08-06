@@ -88,7 +88,7 @@ def MycobacteriumSpD16q13(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumSpD16q13",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

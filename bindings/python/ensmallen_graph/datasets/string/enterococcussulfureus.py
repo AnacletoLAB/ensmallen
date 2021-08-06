@@ -91,7 +91,7 @@ def EnterococcusSulfureus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterococcusSulfureus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

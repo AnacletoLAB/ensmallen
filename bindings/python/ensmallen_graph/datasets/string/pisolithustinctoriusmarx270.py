@@ -88,7 +88,7 @@ def PisolithusTinctoriusMarx270(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PisolithusTinctoriusMarx270",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

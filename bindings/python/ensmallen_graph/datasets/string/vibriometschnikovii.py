@@ -91,7 +91,7 @@ def VibrioMetschnikovii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioMetschnikovii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

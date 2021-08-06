@@ -88,7 +88,7 @@ def JeotgalicoccusHalophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JeotgalicoccusHalophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def XanthomonasGardneri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XanthomonasGardneri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

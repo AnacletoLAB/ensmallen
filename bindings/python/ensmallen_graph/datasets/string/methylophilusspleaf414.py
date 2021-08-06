@@ -88,7 +88,7 @@ def MethylophilusSpLeaf414(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylophilusSpLeaf414",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

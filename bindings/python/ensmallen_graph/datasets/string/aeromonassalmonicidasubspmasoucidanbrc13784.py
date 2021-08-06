@@ -88,7 +88,7 @@ def AeromonasSalmonicidaSubspMasoucidaNbrc13784(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AeromonasSalmonicidaSubspMasoucidaNbrc13784",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def GemmigerFormicilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GemmigerFormicilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

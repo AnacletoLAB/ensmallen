@@ -91,7 +91,7 @@ def AsticcacaulisBenevestitus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AsticcacaulisBenevestitus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

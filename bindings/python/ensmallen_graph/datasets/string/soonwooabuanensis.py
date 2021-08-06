@@ -88,7 +88,7 @@ def SoonwooaBuanensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SoonwooaBuanensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def RickettsialesBacteriumAc37b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RickettsialesBacteriumAc37b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

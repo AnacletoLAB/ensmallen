@@ -88,7 +88,7 @@ def TrypanosomaBruceiBruceiTreu927(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrypanosomaBruceiBruceiTreu927",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

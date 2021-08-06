@@ -78,7 +78,7 @@ def Webbase1m(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Webbase1m",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

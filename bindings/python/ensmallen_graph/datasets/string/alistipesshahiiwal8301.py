@@ -88,7 +88,7 @@ def AlistipesShahiiWal8301(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlistipesShahiiWal8301",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

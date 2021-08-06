@@ -88,7 +88,7 @@ def DesulfovibrioFairfieldensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioFairfieldensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CebusCapucinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CebusCapucinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

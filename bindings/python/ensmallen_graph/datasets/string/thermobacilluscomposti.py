@@ -91,7 +91,7 @@ def ThermobacillusComposti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermobacillusComposti",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

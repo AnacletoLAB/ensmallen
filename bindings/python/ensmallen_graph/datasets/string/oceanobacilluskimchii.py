@@ -91,7 +91,7 @@ def OceanobacillusKimchii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OceanobacillusKimchii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SphingobacteriumMizutaii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingobacteriumMizutaii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

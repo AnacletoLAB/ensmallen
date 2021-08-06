@@ -88,7 +88,7 @@ def XanthomonasSpMitacek01(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XanthomonasSpMitacek01",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

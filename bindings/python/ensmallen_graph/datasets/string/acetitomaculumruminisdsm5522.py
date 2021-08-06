@@ -88,7 +88,7 @@ def AcetitomaculumRuminisDsm5522(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcetitomaculumRuminisDsm5522",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

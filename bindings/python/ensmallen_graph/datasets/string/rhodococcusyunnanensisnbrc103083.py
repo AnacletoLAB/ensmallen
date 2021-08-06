@@ -88,7 +88,7 @@ def RhodococcusYunnanensisNbrc103083(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodococcusYunnanensisNbrc103083",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

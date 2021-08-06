@@ -91,7 +91,7 @@ def StereumHirsutum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StereumHirsutum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

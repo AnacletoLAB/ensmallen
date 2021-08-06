@@ -91,7 +91,7 @@ def LoxodontaAfricana(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LoxodontaAfricana",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

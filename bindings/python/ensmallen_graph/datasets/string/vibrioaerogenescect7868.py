@@ -88,7 +88,7 @@ def VibrioAerogenesCect7868(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioAerogenesCect7868",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

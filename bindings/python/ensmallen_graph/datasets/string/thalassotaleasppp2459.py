@@ -88,7 +88,7 @@ def ThalassotaleaSpPp2459(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThalassotaleaSpPp2459",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

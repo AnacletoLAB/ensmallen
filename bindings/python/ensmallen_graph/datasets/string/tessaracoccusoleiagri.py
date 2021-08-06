@@ -88,7 +88,7 @@ def TessaracoccusOleiagri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TessaracoccusOleiagri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MesorhizobiumQingshengii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MesorhizobiumQingshengii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def BacillusSubtilisSubspNatto(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusSubtilisSubspNatto",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

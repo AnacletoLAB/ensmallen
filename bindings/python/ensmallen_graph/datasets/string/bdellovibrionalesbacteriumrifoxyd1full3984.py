@@ -88,7 +88,7 @@ def BdellovibrionalesBacteriumRifoxyd1Full3984(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BdellovibrionalesBacteriumRifoxyd1Full3984",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

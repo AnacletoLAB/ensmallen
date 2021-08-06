@@ -91,7 +91,7 @@ def TriticumAestivum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TriticumAestivum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

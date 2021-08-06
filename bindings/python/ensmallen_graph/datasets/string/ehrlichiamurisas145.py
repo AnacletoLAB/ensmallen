@@ -88,7 +88,7 @@ def EhrlichiaMurisAs145(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EhrlichiaMurisAs145",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

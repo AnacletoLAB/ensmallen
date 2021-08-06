@@ -91,7 +91,7 @@ def StaphylococcusSpE463(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StaphylococcusSpE463",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

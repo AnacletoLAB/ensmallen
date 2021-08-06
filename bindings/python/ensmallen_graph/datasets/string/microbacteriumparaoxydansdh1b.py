@@ -91,7 +91,7 @@ def MicrobacteriumParaoxydansDh1b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriumParaoxydansDh1b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

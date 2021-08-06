@@ -88,7 +88,7 @@ def GlossinaPalpalisGambiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GlossinaPalpalisGambiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def LachnospiraMultiparaAtcc19207(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LachnospiraMultiparaAtcc19207",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

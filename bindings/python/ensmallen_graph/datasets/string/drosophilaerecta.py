@@ -91,7 +91,7 @@ def DrosophilaErecta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DrosophilaErecta",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

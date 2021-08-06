@@ -78,7 +78,7 @@ def Fa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Fa",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def FbCmuCarnegie49(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FbCmuCarnegie49",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

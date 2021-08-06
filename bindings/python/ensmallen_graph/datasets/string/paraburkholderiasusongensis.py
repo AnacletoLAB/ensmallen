@@ -88,7 +88,7 @@ def ParaburkholderiaSusongensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParaburkholderiaSusongensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

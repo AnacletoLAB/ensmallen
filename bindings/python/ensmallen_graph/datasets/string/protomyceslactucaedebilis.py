@@ -88,7 +88,7 @@ def ProtomycesLactucaedebilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProtomycesLactucaedebilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def EndolissoclinumFaulkneriL5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EndolissoclinumFaulkneriL5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CandidatusTerrybacteriaBacteriumRifcsplowo2024220(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusTerrybacteriaBacteriumRifcsplowo2024220",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

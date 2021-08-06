@@ -91,7 +91,7 @@ def BacteriovoraxSpSeq25v(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteriovoraxSpSeq25v",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

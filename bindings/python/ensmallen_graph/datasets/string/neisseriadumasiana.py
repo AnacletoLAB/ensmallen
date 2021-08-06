@@ -88,7 +88,7 @@ def NeisseriaDumasiana(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeisseriaDumasiana",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

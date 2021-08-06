@@ -91,7 +91,7 @@ def VulcanisaetaDistributa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VulcanisaetaDistributa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

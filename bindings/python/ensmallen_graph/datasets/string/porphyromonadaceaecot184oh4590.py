@@ -91,7 +91,7 @@ def PorphyromonadaceaeCot184oh4590(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PorphyromonadaceaeCot184oh4590",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

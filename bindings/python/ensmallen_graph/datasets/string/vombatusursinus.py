@@ -88,7 +88,7 @@ def VombatusUrsinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VombatusUrsinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

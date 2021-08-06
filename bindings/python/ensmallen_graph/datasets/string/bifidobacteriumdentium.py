@@ -91,7 +91,7 @@ def BifidobacteriumDentium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BifidobacteriumDentium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

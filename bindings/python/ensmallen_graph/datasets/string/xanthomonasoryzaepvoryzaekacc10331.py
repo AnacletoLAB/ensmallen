@@ -88,7 +88,7 @@ def XanthomonasOryzaePvOryzaeKacc10331(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XanthomonasOryzaePvOryzaeKacc10331",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

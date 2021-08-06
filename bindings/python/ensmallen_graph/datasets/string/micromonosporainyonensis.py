@@ -88,7 +88,7 @@ def MicromonosporaInyonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicromonosporaInyonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

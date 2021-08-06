@@ -88,7 +88,7 @@ def PolaribacterVadi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PolaribacterVadi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

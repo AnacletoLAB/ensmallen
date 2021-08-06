@@ -91,7 +91,7 @@ def PsychromonasOssibalaenae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PsychromonasOssibalaenae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

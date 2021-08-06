@@ -88,7 +88,7 @@ def PolyangiumBrachysporum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PolyangiumBrachysporum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

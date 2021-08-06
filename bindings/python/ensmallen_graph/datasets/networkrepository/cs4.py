@@ -78,7 +78,7 @@ def Cs4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Cs4",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

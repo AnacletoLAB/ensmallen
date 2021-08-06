@@ -91,7 +91,7 @@ def MethylocystisSpAtcc49242(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylocystisSpAtcc49242",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

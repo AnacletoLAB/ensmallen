@@ -88,7 +88,7 @@ def PseudobutyrivibrioXylanivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudobutyrivibrioXylanivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

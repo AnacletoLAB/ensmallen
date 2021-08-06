@@ -91,7 +91,7 @@ def RhodobacteraceaeBacteriumKlh11(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodobacteraceaeBacteriumKlh11",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

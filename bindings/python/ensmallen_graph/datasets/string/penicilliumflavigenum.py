@@ -88,7 +88,7 @@ def PenicilliumFlavigenum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PenicilliumFlavigenum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

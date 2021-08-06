@@ -88,7 +88,7 @@ def PseudonocardiaThermophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudonocardiaThermophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

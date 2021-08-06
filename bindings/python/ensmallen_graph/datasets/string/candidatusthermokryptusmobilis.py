@@ -88,7 +88,7 @@ def CandidatusThermokryptusMobilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusThermokryptusMobilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

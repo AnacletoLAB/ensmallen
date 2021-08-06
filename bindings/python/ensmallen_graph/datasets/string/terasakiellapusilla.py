@@ -91,7 +91,7 @@ def TerasakiellaPusilla(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TerasakiellaPusilla",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

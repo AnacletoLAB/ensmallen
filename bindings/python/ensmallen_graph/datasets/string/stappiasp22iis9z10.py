@@ -88,7 +88,7 @@ def StappiaSp22iiS9Z10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StappiaSp22iiS9Z10",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

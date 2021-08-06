@@ -88,7 +88,7 @@ def NeisseriaZoodegmatis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeisseriaZoodegmatis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

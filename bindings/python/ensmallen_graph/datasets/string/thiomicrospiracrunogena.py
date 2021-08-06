@@ -91,7 +91,7 @@ def ThiomicrospiraCrunogena(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThiomicrospiraCrunogena",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

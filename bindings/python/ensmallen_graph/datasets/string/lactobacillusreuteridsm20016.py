@@ -91,7 +91,7 @@ def LactobacillusReuteriDsm20016(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusReuteriDsm20016",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

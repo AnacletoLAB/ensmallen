@@ -91,7 +91,7 @@ def JeotgalicoccusMarinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JeotgalicoccusMarinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

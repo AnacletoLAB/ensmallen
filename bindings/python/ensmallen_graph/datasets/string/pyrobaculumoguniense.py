@@ -91,7 +91,7 @@ def PyrobaculumOguniense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PyrobaculumOguniense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

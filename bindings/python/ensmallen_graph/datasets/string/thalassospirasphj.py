@@ -88,7 +88,7 @@ def ThalassospiraSpHj(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThalassospiraSpHj",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

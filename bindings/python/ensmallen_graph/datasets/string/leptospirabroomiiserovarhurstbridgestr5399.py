@@ -88,7 +88,7 @@ def LeptospiraBroomiiSerovarHurstbridgeStr5399(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptospiraBroomiiSerovarHurstbridgeStr5399",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

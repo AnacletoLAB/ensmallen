@@ -88,7 +88,7 @@ def ColwelliaSediminilitoris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ColwelliaSediminilitoris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

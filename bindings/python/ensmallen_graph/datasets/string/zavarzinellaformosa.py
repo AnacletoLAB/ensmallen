@@ -91,7 +91,7 @@ def ZavarzinellaFormosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZavarzinellaFormosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

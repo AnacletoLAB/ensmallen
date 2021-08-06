@@ -88,7 +88,7 @@ def LactonifactorLongoviformisDsm17459(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactonifactorLongoviformisDsm17459",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

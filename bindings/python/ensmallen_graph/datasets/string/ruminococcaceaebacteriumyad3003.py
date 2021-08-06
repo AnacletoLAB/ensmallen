@@ -88,7 +88,7 @@ def RuminococcaceaeBacteriumYad3003(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminococcaceaeBacteriumYad3003",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

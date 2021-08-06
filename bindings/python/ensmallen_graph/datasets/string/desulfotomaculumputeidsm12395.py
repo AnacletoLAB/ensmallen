@@ -88,7 +88,7 @@ def DesulfotomaculumPuteiDsm12395(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfotomaculumPuteiDsm12395",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

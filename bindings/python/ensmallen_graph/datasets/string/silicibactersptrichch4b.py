@@ -91,7 +91,7 @@ def SilicibacterSpTrichch4b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SilicibacterSpTrichch4b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

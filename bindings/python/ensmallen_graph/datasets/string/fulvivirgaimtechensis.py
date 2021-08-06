@@ -91,7 +91,7 @@ def FulvivirgaImtechensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FulvivirgaImtechensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

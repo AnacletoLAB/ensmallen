@@ -88,7 +88,7 @@ def LacinutrixSpHelI90(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LacinutrixSpHelI90",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

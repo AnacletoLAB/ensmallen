@@ -88,7 +88,7 @@ def FlammeovirgaceaeBacterium311(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlammeovirgaceaeBacterium311",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

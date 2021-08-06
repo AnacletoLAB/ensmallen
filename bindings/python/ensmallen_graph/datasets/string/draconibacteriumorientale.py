@@ -91,7 +91,7 @@ def DraconibacteriumOrientale(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DraconibacteriumOrientale",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AeromonasRivuli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AeromonasRivuli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

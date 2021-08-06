@@ -91,7 +91,7 @@ def BacteroidesCoprophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesCoprophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

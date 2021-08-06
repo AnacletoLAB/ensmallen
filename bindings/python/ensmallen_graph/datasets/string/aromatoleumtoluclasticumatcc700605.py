@@ -88,7 +88,7 @@ def AromatoleumToluclasticumAtcc700605(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AromatoleumToluclasticumAtcc700605",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def StaphylococcusSpCag324(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StaphylococcusSpCag324",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

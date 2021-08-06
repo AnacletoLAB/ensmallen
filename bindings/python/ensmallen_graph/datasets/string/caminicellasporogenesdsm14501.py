@@ -88,7 +88,7 @@ def CaminicellaSporogenesDsm14501(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaminicellaSporogenesDsm14501",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

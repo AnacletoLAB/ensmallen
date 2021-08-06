@@ -78,7 +78,7 @@ def P2pGnutella09(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="P2pGnutella09",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

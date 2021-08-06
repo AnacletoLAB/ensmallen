@@ -88,7 +88,7 @@ def SyntrophobacterSpDg60(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SyntrophobacterSpDg60",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

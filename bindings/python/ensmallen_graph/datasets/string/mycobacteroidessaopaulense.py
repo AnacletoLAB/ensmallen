@@ -88,7 +88,7 @@ def MycobacteroidesSaopaulense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteroidesSaopaulense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

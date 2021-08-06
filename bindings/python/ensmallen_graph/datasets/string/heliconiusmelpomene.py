@@ -91,7 +91,7 @@ def HeliconiusMelpomene(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HeliconiusMelpomene",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

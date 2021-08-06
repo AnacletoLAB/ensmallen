@@ -88,7 +88,7 @@ def MethylophilusRhizosphaerae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylophilusRhizosphaerae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def Cities(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Cities",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

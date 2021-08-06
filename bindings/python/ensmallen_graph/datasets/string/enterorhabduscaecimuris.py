@@ -91,7 +91,7 @@ def EnterorhabdusCaecimuris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterorhabdusCaecimuris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

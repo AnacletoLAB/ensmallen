@@ -91,7 +91,7 @@ def BipolarisMaydis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BipolarisMaydis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

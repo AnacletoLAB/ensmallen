@@ -88,7 +88,7 @@ def CoturnixJaponica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CoturnixJaponica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

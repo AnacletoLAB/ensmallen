@@ -88,7 +88,7 @@ def StreptococcusSpCaviae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusSpCaviae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

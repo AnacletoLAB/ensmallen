@@ -88,7 +88,7 @@ def SulfurospirillumArsenophilumNbrc109478(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfurospirillumArsenophilumNbrc109478",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

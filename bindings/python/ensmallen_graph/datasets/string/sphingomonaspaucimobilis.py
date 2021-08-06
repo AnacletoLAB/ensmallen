@@ -91,7 +91,7 @@ def SphingomonasPaucimobilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingomonasPaucimobilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def SolitaleaCanadensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SolitaleaCanadensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ParaprevotellaClara(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParaprevotellaClara",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

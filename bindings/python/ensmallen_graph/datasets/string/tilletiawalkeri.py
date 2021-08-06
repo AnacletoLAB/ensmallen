@@ -88,7 +88,7 @@ def TilletiaWalkeri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TilletiaWalkeri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

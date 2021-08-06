@@ -88,7 +88,7 @@ def TrichodermaAsperellumCbs43397(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichodermaAsperellumCbs43397",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

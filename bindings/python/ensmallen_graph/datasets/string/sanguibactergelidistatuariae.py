@@ -88,7 +88,7 @@ def SanguibacterGelidistatuariae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SanguibacterGelidistatuariae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

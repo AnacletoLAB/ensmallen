@@ -88,7 +88,7 @@ def EdwardsiellaIctaluri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EdwardsiellaIctaluri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

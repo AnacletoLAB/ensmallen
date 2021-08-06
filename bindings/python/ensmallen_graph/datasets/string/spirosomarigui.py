@@ -88,7 +88,7 @@ def SpirosomaRigui(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpirosomaRigui",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

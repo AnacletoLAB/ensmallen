@@ -88,7 +88,7 @@ def PolytolypaHystricisUamh7299(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PolytolypaHystricisUamh7299",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

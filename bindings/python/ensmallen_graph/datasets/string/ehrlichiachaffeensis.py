@@ -91,7 +91,7 @@ def EhrlichiaChaffeensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EhrlichiaChaffeensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

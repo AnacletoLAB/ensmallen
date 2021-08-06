@@ -91,7 +91,7 @@ def VariovoraxParadoxusS110(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VariovoraxParadoxusS110",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

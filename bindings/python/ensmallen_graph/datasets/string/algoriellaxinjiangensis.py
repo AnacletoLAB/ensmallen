@@ -88,7 +88,7 @@ def AlgoriellaXinjiangensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlgoriellaXinjiangensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

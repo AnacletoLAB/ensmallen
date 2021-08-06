@@ -88,7 +88,7 @@ def AsaiaAstilbisJcm15831(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AsaiaAstilbisJcm15831",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

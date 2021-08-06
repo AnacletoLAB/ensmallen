@@ -88,7 +88,7 @@ def ArthrobacterSpU41(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArthrobacterSpU41",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

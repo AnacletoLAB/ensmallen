@@ -91,7 +91,7 @@ def DanioRerio(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DanioRerio",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

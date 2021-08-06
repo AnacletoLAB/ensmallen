@@ -88,7 +88,7 @@ def CribrihabitansMarinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CribrihabitansMarinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

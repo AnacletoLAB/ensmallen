@@ -88,7 +88,7 @@ def LactobacillusKisonensisF0435(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusKisonensisF0435",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

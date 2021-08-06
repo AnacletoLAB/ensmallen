@@ -91,7 +91,7 @@ def WeissellaHalotolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WeissellaHalotolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

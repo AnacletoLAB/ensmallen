@@ -91,7 +91,7 @@ def MethanoplanusPetrolearius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanoplanusPetrolearius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

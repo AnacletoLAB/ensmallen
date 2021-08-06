@@ -78,7 +78,7 @@ def M14b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="M14b",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

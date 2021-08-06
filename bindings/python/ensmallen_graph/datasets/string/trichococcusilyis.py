@@ -88,7 +88,7 @@ def TrichococcusIlyis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichococcusIlyis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

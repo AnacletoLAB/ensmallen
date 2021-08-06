@@ -78,7 +78,7 @@ def Brack2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Brack2",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

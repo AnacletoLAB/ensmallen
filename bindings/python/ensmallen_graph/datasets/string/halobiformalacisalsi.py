@@ -91,7 +91,7 @@ def HalobiformaLacisalsi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalobiformaLacisalsi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

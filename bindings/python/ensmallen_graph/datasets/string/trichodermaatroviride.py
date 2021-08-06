@@ -91,7 +91,7 @@ def TrichodermaAtroviride(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichodermaAtroviride",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

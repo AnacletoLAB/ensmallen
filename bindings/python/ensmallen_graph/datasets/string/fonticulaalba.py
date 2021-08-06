@@ -91,7 +91,7 @@ def FonticulaAlba(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FonticulaAlba",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

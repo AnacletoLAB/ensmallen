@@ -91,7 +91,7 @@ def SpirosomaPanaciterrae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpirosomaPanaciterrae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

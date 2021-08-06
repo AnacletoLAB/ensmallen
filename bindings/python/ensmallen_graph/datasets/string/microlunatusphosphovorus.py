@@ -91,7 +91,7 @@ def MicrolunatusPhosphovorus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrolunatusPhosphovorus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def NannizziaGypseaCbs118893(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NannizziaGypseaCbs118893",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

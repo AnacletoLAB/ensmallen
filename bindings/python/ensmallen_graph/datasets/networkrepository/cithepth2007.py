@@ -92,7 +92,7 @@ def CitHepth2007(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CitHepth2007",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

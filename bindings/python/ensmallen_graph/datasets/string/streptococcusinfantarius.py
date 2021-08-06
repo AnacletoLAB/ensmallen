@@ -91,7 +91,7 @@ def StreptococcusInfantarius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusInfantarius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

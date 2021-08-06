@@ -88,7 +88,7 @@ def FusariumSporotrichioides(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FusariumSporotrichioides",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def RicinusCommunis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RicinusCommunis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

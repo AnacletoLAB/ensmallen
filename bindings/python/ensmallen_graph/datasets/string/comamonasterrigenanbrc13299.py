@@ -88,7 +88,7 @@ def ComamonasTerrigenaNbrc13299(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ComamonasTerrigenaNbrc13299",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

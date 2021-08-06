@@ -88,7 +88,7 @@ def GracilariopsisChorda(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GracilariopsisChorda",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

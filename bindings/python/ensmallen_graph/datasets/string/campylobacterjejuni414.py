@@ -91,7 +91,7 @@ def CampylobacterJejuni414(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterJejuni414",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

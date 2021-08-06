@@ -91,7 +91,7 @@ def PasteurellaBettyae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PasteurellaBettyae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

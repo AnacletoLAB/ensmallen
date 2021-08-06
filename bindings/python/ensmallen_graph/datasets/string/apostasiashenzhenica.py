@@ -88,7 +88,7 @@ def ApostasiaShenzhenica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ApostasiaShenzhenica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

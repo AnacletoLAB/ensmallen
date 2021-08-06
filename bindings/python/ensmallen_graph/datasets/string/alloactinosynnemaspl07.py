@@ -88,7 +88,7 @@ def AlloactinosynnemaSpL07(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlloactinosynnemaSpL07",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

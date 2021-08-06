@@ -91,7 +91,7 @@ def StreptomycesAureocirculatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesAureocirculatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

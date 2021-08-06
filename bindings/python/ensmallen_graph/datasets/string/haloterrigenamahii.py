@@ -88,7 +88,7 @@ def HaloterrigenaMahii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaloterrigenaMahii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

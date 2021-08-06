@@ -91,7 +91,7 @@ def CellvibrioGilvus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CellvibrioGilvus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

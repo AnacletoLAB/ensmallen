@@ -88,7 +88,7 @@ def KushneriaAvicenniae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KushneriaAvicenniae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

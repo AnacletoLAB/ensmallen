@@ -91,7 +91,7 @@ def CollimonasFungivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CollimonasFungivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

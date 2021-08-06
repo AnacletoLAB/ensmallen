@@ -88,7 +88,7 @@ def ColletotrichumFioriniaePj7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ColletotrichumFioriniaePj7",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

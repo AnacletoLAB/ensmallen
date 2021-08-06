@@ -91,7 +91,7 @@ def SpirosomaSpitsbergense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpirosomaSpitsbergense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

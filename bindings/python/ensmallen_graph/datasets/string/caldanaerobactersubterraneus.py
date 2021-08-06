@@ -91,7 +91,7 @@ def CaldanaerobacterSubterraneus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaldanaerobacterSubterraneus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

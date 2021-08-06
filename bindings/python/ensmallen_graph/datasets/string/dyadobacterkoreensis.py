@@ -88,7 +88,7 @@ def DyadobacterKoreensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DyadobacterKoreensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

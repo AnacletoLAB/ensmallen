@@ -91,7 +91,7 @@ def PsychroserpensBurtonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PsychroserpensBurtonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

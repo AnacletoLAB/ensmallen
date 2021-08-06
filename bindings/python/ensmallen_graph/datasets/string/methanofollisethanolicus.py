@@ -88,7 +88,7 @@ def MethanofollisEthanolicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanofollisEthanolicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

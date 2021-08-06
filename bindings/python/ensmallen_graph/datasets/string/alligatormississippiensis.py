@@ -91,7 +91,7 @@ def AlligatorMississippiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlligatorMississippiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

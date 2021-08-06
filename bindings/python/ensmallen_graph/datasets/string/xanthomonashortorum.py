@@ -91,7 +91,7 @@ def XanthomonasHortorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XanthomonasHortorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

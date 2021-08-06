@@ -91,7 +91,7 @@ def RikenellaMicrofusus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RikenellaMicrofusus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

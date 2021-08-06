@@ -88,7 +88,7 @@ def LegionellaWadsworthiiDsm21896Atcc33877(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LegionellaWadsworthiiDsm21896Atcc33877",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

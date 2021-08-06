@@ -88,7 +88,7 @@ def SchwartziaSuccinivoransDsm10502(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SchwartziaSuccinivoransDsm10502",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

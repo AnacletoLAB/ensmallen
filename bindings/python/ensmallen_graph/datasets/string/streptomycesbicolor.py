@@ -91,7 +91,7 @@ def StreptomycesBicolor(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesBicolor",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

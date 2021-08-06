@@ -88,7 +88,7 @@ def AnaeromyxobacterSpRbg166914(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaeromyxobacterSpRbg166914",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

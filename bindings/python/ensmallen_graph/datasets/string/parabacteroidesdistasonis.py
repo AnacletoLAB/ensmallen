@@ -91,7 +91,7 @@ def ParabacteroidesDistasonis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParabacteroidesDistasonis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

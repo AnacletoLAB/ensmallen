@@ -88,7 +88,7 @@ def NocardiopsisAlkaliphilaYim80379(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardiopsisAlkaliphilaYim80379",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

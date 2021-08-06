@@ -88,7 +88,7 @@ def BacteroidesGallinarumDsm18171Jcm13658(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesGallinarumDsm18171Jcm13658",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

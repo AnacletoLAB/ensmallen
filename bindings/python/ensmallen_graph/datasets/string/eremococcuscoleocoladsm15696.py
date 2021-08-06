@@ -91,7 +91,7 @@ def EremococcusColeocolaDsm15696(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EremococcusColeocolaDsm15696",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

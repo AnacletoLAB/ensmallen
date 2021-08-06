@@ -88,7 +88,7 @@ def MoorellaSp6041(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MoorellaSp6041",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

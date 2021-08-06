@@ -88,7 +88,7 @@ def MonosporascusIbericus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MonosporascusIbericus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

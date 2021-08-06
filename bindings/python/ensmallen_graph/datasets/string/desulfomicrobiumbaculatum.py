@@ -91,7 +91,7 @@ def DesulfomicrobiumBaculatum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfomicrobiumBaculatum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

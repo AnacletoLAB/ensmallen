@@ -91,7 +91,7 @@ def LatimeriaChalumnae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LatimeriaChalumnae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

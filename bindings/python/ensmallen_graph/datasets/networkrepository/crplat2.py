@@ -78,7 +78,7 @@ def Crplat2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Crplat2",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

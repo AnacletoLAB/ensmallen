@@ -88,7 +88,7 @@ def RhizobiumSpRu33a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizobiumSpRu33a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

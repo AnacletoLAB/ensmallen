@@ -88,7 +88,7 @@ def SinomonasMesophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SinomonasMesophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

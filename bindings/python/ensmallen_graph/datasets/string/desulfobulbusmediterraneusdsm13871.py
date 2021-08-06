@@ -88,7 +88,7 @@ def DesulfobulbusMediterraneusDsm13871(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfobulbusMediterraneusDsm13871",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

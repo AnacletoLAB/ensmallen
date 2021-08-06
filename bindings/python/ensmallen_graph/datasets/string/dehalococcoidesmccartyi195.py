@@ -91,7 +91,7 @@ def DehalococcoidesMccartyi195(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DehalococcoidesMccartyi195",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

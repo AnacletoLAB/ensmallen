@@ -91,7 +91,7 @@ def EdwardsiellaTardaAtcc15947(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EdwardsiellaTardaAtcc15947",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

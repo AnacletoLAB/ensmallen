@@ -88,7 +88,7 @@ def ClostridiumChromiireducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumChromiireducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

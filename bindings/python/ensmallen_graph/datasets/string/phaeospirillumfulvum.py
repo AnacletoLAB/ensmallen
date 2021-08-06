@@ -91,7 +91,7 @@ def PhaeospirillumFulvum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhaeospirillumFulvum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def TolumonasSpBrl61(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TolumonasSpBrl61",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

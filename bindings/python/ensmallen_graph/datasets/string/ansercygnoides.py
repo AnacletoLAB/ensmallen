@@ -88,7 +88,7 @@ def AnserCygnoides(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnserCygnoides",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

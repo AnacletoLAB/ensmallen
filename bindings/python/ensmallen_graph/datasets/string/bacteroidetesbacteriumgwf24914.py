@@ -88,7 +88,7 @@ def BacteroidetesBacteriumGwf24914(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidetesBacteriumGwf24914",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

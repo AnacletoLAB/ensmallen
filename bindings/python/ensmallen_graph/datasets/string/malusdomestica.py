@@ -91,7 +91,7 @@ def MalusDomestica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MalusDomestica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

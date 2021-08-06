@@ -88,7 +88,7 @@ def MassiliaSpBsc265(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MassiliaSpBsc265",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def RhodopirellulaEuropaeaSh398(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodopirellulaEuropaeaSh398",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

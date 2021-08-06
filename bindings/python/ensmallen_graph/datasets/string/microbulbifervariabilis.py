@@ -91,7 +91,7 @@ def MicrobulbiferVariabilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobulbiferVariabilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

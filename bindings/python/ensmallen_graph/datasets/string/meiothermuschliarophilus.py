@@ -91,7 +91,7 @@ def MeiothermusChliarophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MeiothermusChliarophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

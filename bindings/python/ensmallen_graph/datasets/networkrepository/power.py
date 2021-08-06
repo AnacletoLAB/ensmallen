@@ -78,7 +78,7 @@ def Power(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Power",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

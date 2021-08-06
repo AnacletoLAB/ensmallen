@@ -88,7 +88,7 @@ def TubulinosemaRatisbonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TubulinosemaRatisbonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def BrugiaTimori(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrugiaTimori",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

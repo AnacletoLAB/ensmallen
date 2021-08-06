@@ -88,7 +88,7 @@ def NeptunomonasAntarctica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeptunomonasAntarctica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

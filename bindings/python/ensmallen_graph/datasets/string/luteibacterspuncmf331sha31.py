@@ -88,7 +88,7 @@ def LuteibacterSpUncmf331sha31(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LuteibacterSpUncmf331sha31",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

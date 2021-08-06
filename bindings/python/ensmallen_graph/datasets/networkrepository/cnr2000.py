@@ -78,7 +78,7 @@ def Cnr2000(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Cnr2000",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

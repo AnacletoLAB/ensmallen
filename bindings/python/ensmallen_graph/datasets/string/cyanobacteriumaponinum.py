@@ -91,7 +91,7 @@ def CyanobacteriumAponinum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CyanobacteriumAponinum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

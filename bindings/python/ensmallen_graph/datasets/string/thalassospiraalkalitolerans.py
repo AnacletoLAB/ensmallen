@@ -88,7 +88,7 @@ def ThalassospiraAlkalitolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThalassospiraAlkalitolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def DenitrobacteriumDetoxificans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DenitrobacteriumDetoxificans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

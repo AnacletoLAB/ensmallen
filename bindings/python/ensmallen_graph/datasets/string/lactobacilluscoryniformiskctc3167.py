@@ -91,7 +91,7 @@ def LactobacillusCoryniformisKctc3167(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusCoryniformisKctc3167",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

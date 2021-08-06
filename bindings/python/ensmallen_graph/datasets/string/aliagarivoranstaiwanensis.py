@@ -91,7 +91,7 @@ def AliagarivoransTaiwanensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AliagarivoransTaiwanensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

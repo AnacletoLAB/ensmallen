@@ -78,7 +78,7 @@ def Pf2177(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Pf2177",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

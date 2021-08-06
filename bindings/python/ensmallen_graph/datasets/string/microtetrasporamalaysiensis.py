@@ -88,7 +88,7 @@ def MicrotetrasporaMalaysiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrotetrasporaMalaysiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

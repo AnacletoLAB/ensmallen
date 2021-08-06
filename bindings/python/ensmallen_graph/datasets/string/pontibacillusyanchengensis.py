@@ -91,7 +91,7 @@ def PontibacillusYanchengensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PontibacillusYanchengensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MarinilactibacillusPsychrotolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinilactibacillusPsychrotolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

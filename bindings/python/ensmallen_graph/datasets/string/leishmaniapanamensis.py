@@ -91,7 +91,7 @@ def LeishmaniaPanamensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeishmaniaPanamensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

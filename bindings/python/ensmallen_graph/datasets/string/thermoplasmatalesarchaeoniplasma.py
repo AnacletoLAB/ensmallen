@@ -88,7 +88,7 @@ def ThermoplasmatalesArchaeonIPlasma(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermoplasmatalesArchaeonIPlasma",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

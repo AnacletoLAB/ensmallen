@@ -91,7 +91,7 @@ def OlivibacterSitiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OlivibacterSitiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def FervidobacteriumNodosum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FervidobacteriumNodosum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

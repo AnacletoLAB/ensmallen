@@ -88,7 +88,7 @@ def YersiniaRohdei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="YersiniaRohdei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

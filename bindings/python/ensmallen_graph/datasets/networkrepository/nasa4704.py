@@ -78,7 +78,7 @@ def Nasa4704(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Nasa4704",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

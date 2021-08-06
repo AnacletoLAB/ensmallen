@@ -91,7 +91,7 @@ def ClostridiumClariflavum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumClariflavum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

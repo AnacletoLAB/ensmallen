@@ -91,7 +91,7 @@ def DenitrovibrioAcetiphilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DenitrovibrioAcetiphilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

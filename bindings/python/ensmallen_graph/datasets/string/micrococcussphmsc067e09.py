@@ -88,7 +88,7 @@ def MicrococcusSpHmsc067e09(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrococcusSpHmsc067e09",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

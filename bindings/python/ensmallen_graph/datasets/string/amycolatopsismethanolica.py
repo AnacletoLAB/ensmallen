@@ -91,7 +91,7 @@ def AmycolatopsisMethanolica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmycolatopsisMethanolica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

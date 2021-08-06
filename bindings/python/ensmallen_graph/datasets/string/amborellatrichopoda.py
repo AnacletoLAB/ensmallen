@@ -91,7 +91,7 @@ def AmborellaTrichopoda(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmborellaTrichopoda",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

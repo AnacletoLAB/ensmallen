@@ -88,7 +88,7 @@ def FomitopsisRosea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FomitopsisRosea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

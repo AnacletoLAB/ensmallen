@@ -88,7 +88,7 @@ def DyadobacterBeijingensisDsm21582(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DyadobacterBeijingensisDsm21582",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

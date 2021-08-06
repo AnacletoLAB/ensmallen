@@ -91,7 +91,7 @@ def AccumulibacterSpBa93(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AccumulibacterSpBa93",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def DesulfitobacteriumMetallireducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfitobacteriumMetallireducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

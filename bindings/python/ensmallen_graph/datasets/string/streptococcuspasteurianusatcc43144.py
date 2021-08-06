@@ -88,7 +88,7 @@ def StreptococcusPasteurianusAtcc43144(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusPasteurianusAtcc43144",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

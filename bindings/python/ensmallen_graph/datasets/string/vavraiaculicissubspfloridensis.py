@@ -88,7 +88,7 @@ def VavraiaCulicisSubspFloridensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VavraiaCulicisSubspFloridensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

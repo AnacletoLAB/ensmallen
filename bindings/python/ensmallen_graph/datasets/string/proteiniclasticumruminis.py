@@ -91,7 +91,7 @@ def ProteiniclasticumRuminis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProteiniclasticumRuminis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

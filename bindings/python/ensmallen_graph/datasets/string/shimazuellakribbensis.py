@@ -91,7 +91,7 @@ def ShimazuellaKribbensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShimazuellaKribbensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

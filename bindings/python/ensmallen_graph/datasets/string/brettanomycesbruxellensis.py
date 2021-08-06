@@ -88,7 +88,7 @@ def BrettanomycesBruxellensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrettanomycesBruxellensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

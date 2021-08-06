@@ -88,7 +88,7 @@ def FlavobacteriumXueshanense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumXueshanense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

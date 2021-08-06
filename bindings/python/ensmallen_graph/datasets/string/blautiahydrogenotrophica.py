@@ -91,7 +91,7 @@ def BlautiaHydrogenotrophica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlautiaHydrogenotrophica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

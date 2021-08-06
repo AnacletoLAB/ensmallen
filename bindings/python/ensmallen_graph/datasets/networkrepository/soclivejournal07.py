@@ -78,7 +78,7 @@ def SocLivejournal07(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocLivejournal07",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

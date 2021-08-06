@@ -88,7 +88,7 @@ def MarinovumAlgicolaDg898(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinovumAlgicolaDg898",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

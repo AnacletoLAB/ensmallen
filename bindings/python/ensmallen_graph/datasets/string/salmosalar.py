@@ -88,7 +88,7 @@ def SalmoSalar(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalmoSalar",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

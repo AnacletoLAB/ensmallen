@@ -88,7 +88,7 @@ def MarininemaMesophilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarininemaMesophilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

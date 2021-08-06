@@ -88,7 +88,7 @@ def HymenobacterActinosclerus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HymenobacterActinosclerus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

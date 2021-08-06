@@ -91,7 +91,7 @@ def FlexibacterLitoralis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlexibacterLitoralis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

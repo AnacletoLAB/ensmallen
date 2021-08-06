@@ -88,7 +88,7 @@ def PseudarthrobacterSulfonivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudarthrobacterSulfonivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

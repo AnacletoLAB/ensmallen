@@ -88,7 +88,7 @@ def MycobacteriumLentiflavum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumLentiflavum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

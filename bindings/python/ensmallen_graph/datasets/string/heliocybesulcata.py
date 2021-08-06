@@ -88,7 +88,7 @@ def HeliocybeSulcata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HeliocybeSulcata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

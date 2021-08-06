@@ -88,7 +88,7 @@ def MicroterricolaViridarii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicroterricolaViridarii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

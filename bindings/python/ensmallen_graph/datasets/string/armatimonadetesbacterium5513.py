@@ -88,7 +88,7 @@ def ArmatimonadetesBacterium5513(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArmatimonadetesBacterium5513",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ShewanellaJaponica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShewanellaJaponica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MycolicibacteriumDiernhoferi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycolicibacteriumDiernhoferi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

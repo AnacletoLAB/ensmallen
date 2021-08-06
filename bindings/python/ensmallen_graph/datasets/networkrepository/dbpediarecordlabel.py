@@ -78,7 +78,7 @@ def DbpediaRecordlabel(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DbpediaRecordlabel",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

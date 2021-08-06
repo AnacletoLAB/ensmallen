@@ -78,7 +78,7 @@ def ProteinsAll(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProteinsAll",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

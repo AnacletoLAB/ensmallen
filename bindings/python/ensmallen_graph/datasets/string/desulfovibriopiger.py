@@ -91,7 +91,7 @@ def DesulfovibrioPiger(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioPiger",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

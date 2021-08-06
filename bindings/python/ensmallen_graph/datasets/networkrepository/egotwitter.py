@@ -78,7 +78,7 @@ def EgoTwitter(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EgoTwitter",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

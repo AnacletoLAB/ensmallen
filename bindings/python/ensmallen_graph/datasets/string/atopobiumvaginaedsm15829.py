@@ -91,7 +91,7 @@ def AtopobiumVaginaeDsm15829(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AtopobiumVaginaeDsm15829",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

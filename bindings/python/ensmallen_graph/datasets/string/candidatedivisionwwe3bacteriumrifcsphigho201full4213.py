@@ -88,7 +88,7 @@ def CandidateDivisionWwe3BacteriumRifcsphigho201Full4213(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidateDivisionWwe3BacteriumRifcsphigho201Full4213",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

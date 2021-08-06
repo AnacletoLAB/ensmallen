@@ -88,7 +88,7 @@ def DimargarisCristalligena(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DimargarisCristalligena",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

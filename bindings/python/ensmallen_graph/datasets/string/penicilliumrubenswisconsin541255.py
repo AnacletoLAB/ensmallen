@@ -88,7 +88,7 @@ def PenicilliumRubensWisconsin541255(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PenicilliumRubensWisconsin541255",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

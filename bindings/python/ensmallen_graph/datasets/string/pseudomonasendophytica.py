@@ -88,7 +88,7 @@ def PseudomonasEndophytica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasEndophytica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def TreponemaPutidum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TreponemaPutidum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

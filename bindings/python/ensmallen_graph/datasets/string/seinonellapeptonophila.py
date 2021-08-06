@@ -88,7 +88,7 @@ def SeinonellaPeptonophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SeinonellaPeptonophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

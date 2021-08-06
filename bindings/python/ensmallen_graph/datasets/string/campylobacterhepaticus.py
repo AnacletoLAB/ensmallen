@@ -88,7 +88,7 @@ def CampylobacterHepaticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterHepaticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

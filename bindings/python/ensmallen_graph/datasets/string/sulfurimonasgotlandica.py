@@ -91,7 +91,7 @@ def SulfurimonasGotlandica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfurimonasGotlandica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

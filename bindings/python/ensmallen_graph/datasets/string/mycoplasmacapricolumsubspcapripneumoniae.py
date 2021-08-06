@@ -88,7 +88,7 @@ def MycoplasmaCapricolumSubspCapripneumoniae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaCapricolumSubspCapripneumoniae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

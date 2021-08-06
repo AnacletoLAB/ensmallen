@@ -88,7 +88,7 @@ def MaritimibacterSpRedseaS28B5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MaritimibacterSpRedseaS28B5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def Odepb400(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Odepb400",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

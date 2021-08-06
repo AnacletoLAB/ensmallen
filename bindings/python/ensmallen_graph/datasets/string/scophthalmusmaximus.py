@@ -88,7 +88,7 @@ def ScophthalmusMaximus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ScophthalmusMaximus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

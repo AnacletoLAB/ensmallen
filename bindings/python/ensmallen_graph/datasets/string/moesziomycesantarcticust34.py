@@ -88,7 +88,7 @@ def MoesziomycesAntarcticusT34(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MoesziomycesAntarcticusT34",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

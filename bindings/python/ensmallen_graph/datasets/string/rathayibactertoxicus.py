@@ -91,7 +91,7 @@ def RathayibacterToxicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RathayibacterToxicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PneumocystisMurina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PneumocystisMurina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

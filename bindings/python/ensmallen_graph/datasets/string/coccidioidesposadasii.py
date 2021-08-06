@@ -91,7 +91,7 @@ def CoccidioidesPosadasii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CoccidioidesPosadasii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

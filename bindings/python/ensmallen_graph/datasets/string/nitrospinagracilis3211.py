@@ -88,7 +88,7 @@ def NitrospinaGracilis3211(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrospinaGracilis3211",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

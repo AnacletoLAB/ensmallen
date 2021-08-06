@@ -91,7 +91,7 @@ def MethanococcusVoltae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanococcusVoltae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def TheileriaParva(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TheileriaParva",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

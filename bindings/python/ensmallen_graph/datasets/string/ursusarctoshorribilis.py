@@ -88,7 +88,7 @@ def UrsusArctosHorribilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UrsusArctosHorribilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def LeeuwenhoekiellaBlandensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeeuwenhoekiellaBlandensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

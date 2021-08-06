@@ -88,7 +88,7 @@ def AeromonasJandaei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AeromonasJandaei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

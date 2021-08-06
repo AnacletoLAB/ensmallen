@@ -88,7 +88,7 @@ def TrametesCoccineaBrfm310(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrametesCoccineaBrfm310",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

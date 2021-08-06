@@ -91,7 +91,7 @@ def SulfitobacterSp20gpm1509m(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfitobacterSp20gpm1509m",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

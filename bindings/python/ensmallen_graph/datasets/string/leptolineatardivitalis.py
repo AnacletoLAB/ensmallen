@@ -88,7 +88,7 @@ def LeptolineaTardivitalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptolineaTardivitalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def JohnsonellaIgnava(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JohnsonellaIgnava",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

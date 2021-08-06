@@ -91,7 +91,7 @@ def ActinobacteriumPhsc20c1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinobacteriumPhsc20c1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

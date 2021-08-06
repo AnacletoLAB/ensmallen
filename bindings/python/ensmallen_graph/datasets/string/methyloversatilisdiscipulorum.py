@@ -88,7 +88,7 @@ def MethyloversatilisDiscipulorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethyloversatilisDiscipulorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

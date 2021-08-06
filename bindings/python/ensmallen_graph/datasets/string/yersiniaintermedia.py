@@ -91,7 +91,7 @@ def YersiniaIntermedia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="YersiniaIntermedia",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

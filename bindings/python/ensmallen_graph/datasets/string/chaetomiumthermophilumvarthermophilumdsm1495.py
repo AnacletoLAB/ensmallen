@@ -88,7 +88,7 @@ def ChaetomiumThermophilumVarThermophilumDsm1495(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChaetomiumThermophilumVarThermophilumDsm1495",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

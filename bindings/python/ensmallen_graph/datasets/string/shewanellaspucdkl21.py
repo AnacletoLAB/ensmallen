@@ -88,7 +88,7 @@ def ShewanellaSpUcdKl21(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShewanellaSpUcdKl21",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

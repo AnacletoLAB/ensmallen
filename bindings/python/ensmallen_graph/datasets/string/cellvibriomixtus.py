@@ -91,7 +91,7 @@ def CellvibrioMixtus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CellvibrioMixtus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

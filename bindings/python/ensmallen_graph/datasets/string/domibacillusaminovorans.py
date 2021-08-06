@@ -88,7 +88,7 @@ def DomibacillusAminovorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DomibacillusAminovorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

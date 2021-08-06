@@ -88,7 +88,7 @@ def GuillardiaThetaCcmp2712(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GuillardiaThetaCcmp2712",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def NeisseriaSubflava(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeisseriaSubflava",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

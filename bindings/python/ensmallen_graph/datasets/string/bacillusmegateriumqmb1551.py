@@ -91,7 +91,7 @@ def BacillusMegateriumQmB1551(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusMegateriumQmB1551",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

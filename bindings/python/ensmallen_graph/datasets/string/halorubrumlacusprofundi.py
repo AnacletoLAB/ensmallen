@@ -91,7 +91,7 @@ def HalorubrumLacusprofundi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalorubrumLacusprofundi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

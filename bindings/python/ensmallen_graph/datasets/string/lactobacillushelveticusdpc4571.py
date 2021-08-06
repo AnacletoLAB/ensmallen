@@ -91,7 +91,7 @@ def LactobacillusHelveticusDpc4571(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusHelveticusDpc4571",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

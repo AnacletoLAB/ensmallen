@@ -88,7 +88,7 @@ def CandidatusRokubacteriaBacteriumGwa27023(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusRokubacteriaBacteriumGwa27023",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

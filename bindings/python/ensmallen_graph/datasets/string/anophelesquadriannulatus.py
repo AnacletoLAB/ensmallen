@@ -88,7 +88,7 @@ def AnophelesQuadriannulatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnophelesQuadriannulatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

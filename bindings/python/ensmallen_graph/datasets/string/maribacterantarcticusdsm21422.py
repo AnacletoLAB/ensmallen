@@ -88,7 +88,7 @@ def MaribacterAntarcticusDsm21422(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MaribacterAntarcticusDsm21422",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

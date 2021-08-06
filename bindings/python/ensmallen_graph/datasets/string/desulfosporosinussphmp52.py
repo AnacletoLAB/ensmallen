@@ -91,7 +91,7 @@ def DesulfosporosinusSpHmp52(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfosporosinusSpHmp52",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MesoflavibacterZeaxanthDsm18436(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MesoflavibacterZeaxanthDsm18436",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

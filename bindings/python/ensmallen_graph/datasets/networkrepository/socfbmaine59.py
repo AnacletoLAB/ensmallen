@@ -120,7 +120,7 @@ def SocfbMaine59(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbMaine59",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

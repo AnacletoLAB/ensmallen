@@ -88,7 +88,7 @@ def BlattellaGermanica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlattellaGermanica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

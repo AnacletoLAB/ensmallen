@@ -88,7 +88,7 @@ def NonomuraeaSpAtcc55076(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NonomuraeaSpAtcc55076",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

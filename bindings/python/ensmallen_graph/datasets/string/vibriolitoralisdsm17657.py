@@ -88,7 +88,7 @@ def VibrioLitoralisDsm17657(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioLitoralisDsm17657",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

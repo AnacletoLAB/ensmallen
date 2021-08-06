@@ -88,7 +88,7 @@ def CryptococcusAmylolentusCbs6039(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CryptococcusAmylolentusCbs6039",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

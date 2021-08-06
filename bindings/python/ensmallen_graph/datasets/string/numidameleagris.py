@@ -88,7 +88,7 @@ def NumidaMeleagris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NumidaMeleagris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

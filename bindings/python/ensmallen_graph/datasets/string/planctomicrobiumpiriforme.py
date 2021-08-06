@@ -88,7 +88,7 @@ def PlanctomicrobiumPiriforme(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlanctomicrobiumPiriforme",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

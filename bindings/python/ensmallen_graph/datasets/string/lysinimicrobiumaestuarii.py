@@ -88,7 +88,7 @@ def LysinimicrobiumAestuarii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LysinimicrobiumAestuarii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def AquilunaSpImcc13023(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AquilunaSpImcc13023",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

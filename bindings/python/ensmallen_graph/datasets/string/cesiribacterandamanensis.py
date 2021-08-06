@@ -91,7 +91,7 @@ def CesiribacterAndamanensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CesiribacterAndamanensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

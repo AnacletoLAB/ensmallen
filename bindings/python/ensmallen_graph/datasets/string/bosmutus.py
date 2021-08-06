@@ -91,7 +91,7 @@ def BosMutus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BosMutus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

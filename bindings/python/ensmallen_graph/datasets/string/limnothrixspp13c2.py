@@ -88,7 +88,7 @@ def LimnothrixSpP13c2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LimnothrixSpP13c2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

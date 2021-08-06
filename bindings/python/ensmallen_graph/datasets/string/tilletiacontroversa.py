@@ -88,7 +88,7 @@ def TilletiaControversa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TilletiaControversa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

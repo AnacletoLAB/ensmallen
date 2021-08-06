@@ -88,7 +88,7 @@ def TrachymyrmexCornetzi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrachymyrmexCornetzi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

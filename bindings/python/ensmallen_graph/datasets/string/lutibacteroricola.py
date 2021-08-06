@@ -88,7 +88,7 @@ def LutibacterOricola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LutibacterOricola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

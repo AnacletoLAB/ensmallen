@@ -88,7 +88,7 @@ def EnterobacterSpKpr6(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterobacterSpKpr6",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

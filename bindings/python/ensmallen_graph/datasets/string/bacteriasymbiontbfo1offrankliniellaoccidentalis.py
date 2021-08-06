@@ -88,7 +88,7 @@ def BacteriaSymbiontBfo1OfFrankliniellaOccidentalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteriaSymbiontBfo1OfFrankliniellaOccidentalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

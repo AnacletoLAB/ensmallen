@@ -88,7 +88,7 @@ def AlloactinosynnemaIranicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlloactinosynnemaIranicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

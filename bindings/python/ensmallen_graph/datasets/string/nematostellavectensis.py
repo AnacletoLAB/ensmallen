@@ -91,7 +91,7 @@ def NematostellaVectensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NematostellaVectensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

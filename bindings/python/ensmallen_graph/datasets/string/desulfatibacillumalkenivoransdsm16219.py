@@ -88,7 +88,7 @@ def DesulfatibacillumAlkenivoransDsm16219(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfatibacillumAlkenivoransDsm16219",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

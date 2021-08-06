@@ -88,7 +88,7 @@ def NanohaloarchaeaArchaeonB1Br10U2g19(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NanohaloarchaeaArchaeonB1Br10U2g19",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

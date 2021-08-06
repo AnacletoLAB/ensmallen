@@ -88,7 +88,7 @@ def CylindrobasidiumTorrendiiFp15055Ss10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CylindrobasidiumTorrendiiFp15055Ss10",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

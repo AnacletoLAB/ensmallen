@@ -88,7 +88,7 @@ def ZimmermannellaBifidaNbrc103089(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZimmermannellaBifidaNbrc103089",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

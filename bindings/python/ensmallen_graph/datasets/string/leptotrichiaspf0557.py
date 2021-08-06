@@ -91,7 +91,7 @@ def LeptotrichiaSpF0557(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptotrichiaSpF0557",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

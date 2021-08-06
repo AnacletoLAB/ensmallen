@@ -102,7 +102,7 @@ def KGCOVID19(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KGCOVID19",
-        dataset="kghub",
+        repository="kghub",
         version=version,
         directed=directed,
         preprocess=preprocess,

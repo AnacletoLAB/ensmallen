@@ -91,7 +91,7 @@ def ExiguobacteriumOxidotolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ExiguobacteriumOxidotolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

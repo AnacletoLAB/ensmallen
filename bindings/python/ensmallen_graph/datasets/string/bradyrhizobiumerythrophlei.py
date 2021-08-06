@@ -88,7 +88,7 @@ def BradyrhizobiumErythrophlei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BradyrhizobiumErythrophlei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

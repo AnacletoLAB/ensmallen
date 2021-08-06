@@ -91,7 +91,7 @@ def MicroplitisDemolitor(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicroplitisDemolitor",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

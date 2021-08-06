@@ -88,7 +88,7 @@ def KiloniellaSpongiae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KiloniellaSpongiae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def SelenomonasSpF0473(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SelenomonasSpF0473",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

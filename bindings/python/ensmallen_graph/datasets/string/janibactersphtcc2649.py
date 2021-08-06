@@ -91,7 +91,7 @@ def JanibacterSpHtcc2649(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JanibacterSpHtcc2649",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

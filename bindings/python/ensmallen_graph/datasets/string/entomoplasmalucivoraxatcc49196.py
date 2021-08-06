@@ -88,7 +88,7 @@ def EntomoplasmaLucivoraxAtcc49196(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EntomoplasmaLucivoraxAtcc49196",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SulfurovumRiftiae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfurovumRiftiae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MethanolobusProfundi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanolobusProfundi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

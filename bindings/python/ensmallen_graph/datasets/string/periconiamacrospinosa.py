@@ -88,7 +88,7 @@ def PericoniaMacrospinosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PericoniaMacrospinosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

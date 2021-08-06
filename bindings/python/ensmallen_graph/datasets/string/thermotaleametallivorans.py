@@ -88,7 +88,7 @@ def ThermotaleaMetallivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermotaleaMetallivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

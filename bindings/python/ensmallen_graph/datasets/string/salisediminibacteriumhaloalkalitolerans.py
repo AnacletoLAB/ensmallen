@@ -88,7 +88,7 @@ def SalisediminibacteriumHaloalkalitolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalisediminibacteriumHaloalkalitolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

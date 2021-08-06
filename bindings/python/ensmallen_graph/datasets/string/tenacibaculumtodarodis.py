@@ -88,7 +88,7 @@ def TenacibaculumTodarodis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TenacibaculumTodarodis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

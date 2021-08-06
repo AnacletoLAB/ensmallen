@@ -88,7 +88,7 @@ def ConiellaLustricola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ConiellaLustricola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

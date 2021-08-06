@@ -88,7 +88,7 @@ def AcinetobacterKookii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcinetobacterKookii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

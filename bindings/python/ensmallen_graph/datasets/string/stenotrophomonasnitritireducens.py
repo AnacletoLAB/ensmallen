@@ -88,7 +88,7 @@ def StenotrophomonasNitritireducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StenotrophomonasNitritireducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

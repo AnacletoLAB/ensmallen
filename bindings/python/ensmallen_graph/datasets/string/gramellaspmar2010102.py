@@ -88,7 +88,7 @@ def GramellaSpMar2010102(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GramellaSpMar2010102",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

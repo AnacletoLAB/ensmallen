@@ -91,7 +91,7 @@ def PsychroserpensSpPamc27130(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PsychroserpensSpPamc27130",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

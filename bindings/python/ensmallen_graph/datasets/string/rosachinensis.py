@@ -88,7 +88,7 @@ def RosaChinensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RosaChinensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

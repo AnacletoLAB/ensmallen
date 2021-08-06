@@ -88,7 +88,7 @@ def MartelellaEndophytica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MartelellaEndophytica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

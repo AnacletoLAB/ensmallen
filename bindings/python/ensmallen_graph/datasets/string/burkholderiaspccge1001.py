@@ -91,7 +91,7 @@ def BurkholderiaSpCcge1001(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BurkholderiaSpCcge1001",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MicrobotryumSilenesDioicae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobotryumSilenesDioicae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

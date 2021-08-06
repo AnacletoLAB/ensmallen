@@ -88,7 +88,7 @@ def WigglesworthiaGlossinidiaEndosymbiontOfGlossinaMorsitans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WigglesworthiaGlossinidiaEndosymbiontOfGlossinaMorsitans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def OlsenellaSpKh3b4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OlsenellaSpKh3b4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

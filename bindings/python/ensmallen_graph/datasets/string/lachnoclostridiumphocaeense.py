@@ -88,7 +88,7 @@ def LachnoclostridiumPhocaeense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LachnoclostridiumPhocaeense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

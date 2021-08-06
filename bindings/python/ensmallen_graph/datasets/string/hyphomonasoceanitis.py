@@ -91,7 +91,7 @@ def HyphomonasOceanitis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HyphomonasOceanitis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

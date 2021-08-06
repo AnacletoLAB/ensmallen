@@ -88,7 +88,7 @@ def MassiliaYuzhufengensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MassiliaYuzhufengensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

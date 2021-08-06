@@ -88,7 +88,7 @@ def PseudocercosporaMusae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudocercosporaMusae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

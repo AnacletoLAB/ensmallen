@@ -91,7 +91,7 @@ def MycobacteriumTriplex(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumTriplex",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

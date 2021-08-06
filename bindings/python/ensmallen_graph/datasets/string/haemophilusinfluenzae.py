@@ -91,7 +91,7 @@ def HaemophilusInfluenzae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaemophilusInfluenzae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

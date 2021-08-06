@@ -91,7 +91,7 @@ def TatumellaSpNml063099(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TatumellaSpNml063099",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

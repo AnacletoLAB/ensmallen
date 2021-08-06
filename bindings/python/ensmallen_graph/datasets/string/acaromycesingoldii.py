@@ -88,7 +88,7 @@ def AcaromycesIngoldii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcaromycesIngoldii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

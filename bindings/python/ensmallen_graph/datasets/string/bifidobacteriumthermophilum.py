@@ -91,7 +91,7 @@ def BifidobacteriumThermophilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BifidobacteriumThermophilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

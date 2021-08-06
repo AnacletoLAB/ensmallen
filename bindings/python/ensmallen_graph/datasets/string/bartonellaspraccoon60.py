@@ -88,7 +88,7 @@ def BartonellaSpRaccoon60(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BartonellaSpRaccoon60",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

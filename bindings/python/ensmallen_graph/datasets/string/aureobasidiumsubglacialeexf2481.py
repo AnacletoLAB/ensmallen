@@ -88,7 +88,7 @@ def AureobasidiumSubglacialeExf2481(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AureobasidiumSubglacialeExf2481",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

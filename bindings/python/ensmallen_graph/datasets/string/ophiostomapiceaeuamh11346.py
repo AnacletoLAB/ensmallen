@@ -88,7 +88,7 @@ def OphiostomaPiceaeUamh11346(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OphiostomaPiceaeUamh11346",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

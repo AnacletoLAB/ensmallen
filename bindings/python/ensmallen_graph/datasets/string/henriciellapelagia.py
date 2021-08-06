@@ -88,7 +88,7 @@ def HenriciellaPelagia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HenriciellaPelagia",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

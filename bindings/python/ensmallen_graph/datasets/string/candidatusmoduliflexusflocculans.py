@@ -88,7 +88,7 @@ def CandidatusModuliflexusFlocculans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusModuliflexusFlocculans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

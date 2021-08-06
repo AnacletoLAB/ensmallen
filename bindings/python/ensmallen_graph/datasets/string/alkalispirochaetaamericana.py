@@ -88,7 +88,7 @@ def AlkalispirochaetaAmericana(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlkalispirochaetaAmericana",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

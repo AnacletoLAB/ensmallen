@@ -78,7 +78,7 @@ def Lshp3025(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Lshp3025",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

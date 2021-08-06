@@ -88,7 +88,7 @@ def ParageobacillusCaldoxylosilyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParageobacillusCaldoxylosilyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

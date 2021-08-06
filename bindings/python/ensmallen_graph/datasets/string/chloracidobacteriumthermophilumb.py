@@ -88,7 +88,7 @@ def ChloracidobacteriumThermophilumB(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChloracidobacteriumThermophilumB",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

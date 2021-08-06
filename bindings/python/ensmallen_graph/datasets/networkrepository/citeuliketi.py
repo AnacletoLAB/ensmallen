@@ -78,7 +78,7 @@ def CiteulikeTi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CiteulikeTi",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

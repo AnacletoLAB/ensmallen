@@ -88,7 +88,7 @@ def RoseburiaIntestinalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseburiaIntestinalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def XanthomonasPhaseoliPvDieffenbachiaeLmg695(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XanthomonasPhaseoliPvDieffenbachiaeLmg695",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

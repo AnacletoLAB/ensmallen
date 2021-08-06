@@ -91,7 +91,7 @@ def OgataeaParapolymorpha(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OgataeaParapolymorpha",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

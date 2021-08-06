@@ -91,7 +91,7 @@ def ChelativoransSpBnc1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChelativoransSpBnc1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

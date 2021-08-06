@@ -91,7 +91,7 @@ def PyrenophoraTriticirepentis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PyrenophoraTriticirepentis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

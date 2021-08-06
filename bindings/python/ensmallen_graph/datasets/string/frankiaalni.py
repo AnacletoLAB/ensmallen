@@ -91,7 +91,7 @@ def FrankiaAlni(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FrankiaAlni",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

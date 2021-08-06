@@ -78,7 +78,7 @@ def G35(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="G35",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def DesulfovibrioPutealisDsm16056(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioPutealisDsm16056",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

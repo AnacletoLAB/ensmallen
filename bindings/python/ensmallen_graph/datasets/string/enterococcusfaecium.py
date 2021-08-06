@@ -88,7 +88,7 @@ def EnterococcusFaecium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterococcusFaecium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

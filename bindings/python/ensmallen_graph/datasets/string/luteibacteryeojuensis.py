@@ -88,7 +88,7 @@ def LuteibacterYeojuensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LuteibacterYeojuensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

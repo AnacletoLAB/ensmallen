@@ -88,7 +88,7 @@ def AcidimicrobiaceaeBacteriumRaap2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidimicrobiaceaeBacteriumRaap2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

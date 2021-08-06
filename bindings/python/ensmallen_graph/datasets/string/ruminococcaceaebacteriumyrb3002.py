@@ -88,7 +88,7 @@ def RuminococcaceaeBacteriumYrb3002(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminococcaceaeBacteriumYrb3002",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

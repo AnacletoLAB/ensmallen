@@ -88,7 +88,7 @@ def CinnamomumMicranthumFKanehirae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CinnamomumMicranthumFKanehirae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

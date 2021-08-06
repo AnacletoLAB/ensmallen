@@ -88,7 +88,7 @@ def ActinoplanesSpTfc3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinoplanesSpTfc3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

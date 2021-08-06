@@ -88,7 +88,7 @@ def TuberMagnatum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TuberMagnatum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

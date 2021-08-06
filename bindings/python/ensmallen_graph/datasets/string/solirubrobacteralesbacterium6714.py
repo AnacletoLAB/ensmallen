@@ -88,7 +88,7 @@ def SolirubrobacteralesBacterium6714(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SolirubrobacteralesBacterium6714",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

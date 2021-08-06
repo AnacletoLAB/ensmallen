@@ -88,7 +88,7 @@ def DeinococcusSpLm3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DeinococcusSpLm3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

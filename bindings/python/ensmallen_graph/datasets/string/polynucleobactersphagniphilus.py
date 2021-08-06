@@ -88,7 +88,7 @@ def PolynucleobacterSphagniphilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PolynucleobacterSphagniphilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

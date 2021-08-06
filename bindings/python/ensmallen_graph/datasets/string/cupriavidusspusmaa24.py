@@ -88,7 +88,7 @@ def CupriavidusSpUsmaa24(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CupriavidusSpUsmaa24",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

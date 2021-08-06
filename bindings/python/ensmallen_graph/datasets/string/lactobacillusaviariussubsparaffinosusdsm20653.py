@@ -88,7 +88,7 @@ def LactobacillusAviariusSubspAraffinosusDsm20653(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusAviariusSubspAraffinosusDsm20653",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

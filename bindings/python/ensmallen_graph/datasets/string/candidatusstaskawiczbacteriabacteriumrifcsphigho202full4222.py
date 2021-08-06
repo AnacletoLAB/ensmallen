@@ -88,7 +88,7 @@ def CandidatusStaskawiczbacteriaBacteriumRifcsphigho202Full4222(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusStaskawiczbacteriaBacteriumRifcsphigho202Full4222",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ElizabethkingiaMiricola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ElizabethkingiaMiricola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

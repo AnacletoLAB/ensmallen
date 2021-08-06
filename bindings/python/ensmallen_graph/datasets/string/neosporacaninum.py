@@ -91,7 +91,7 @@ def NeosporaCaninum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeosporaCaninum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

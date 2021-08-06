@@ -91,7 +91,7 @@ def BacillusSelenitireducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusSelenitireducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

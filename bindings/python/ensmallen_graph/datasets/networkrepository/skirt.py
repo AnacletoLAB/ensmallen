@@ -78,7 +78,7 @@ def Skirt(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Skirt",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

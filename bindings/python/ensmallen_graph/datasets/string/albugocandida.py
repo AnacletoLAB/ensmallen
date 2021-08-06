@@ -88,7 +88,7 @@ def AlbugoCandida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlbugoCandida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

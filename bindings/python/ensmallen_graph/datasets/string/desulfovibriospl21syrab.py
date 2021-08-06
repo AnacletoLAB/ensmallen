@@ -91,7 +91,7 @@ def DesulfovibrioSpL21syrab(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioSpL21syrab",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

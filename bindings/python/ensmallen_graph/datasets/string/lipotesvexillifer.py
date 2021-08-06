@@ -91,7 +91,7 @@ def LipotesVexillifer(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LipotesVexillifer",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

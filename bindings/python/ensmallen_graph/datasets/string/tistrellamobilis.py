@@ -91,7 +91,7 @@ def TistrellaMobilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TistrellaMobilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

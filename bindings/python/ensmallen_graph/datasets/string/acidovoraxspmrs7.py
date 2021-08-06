@@ -91,7 +91,7 @@ def AcidovoraxSpMrs7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidovoraxSpMrs7",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

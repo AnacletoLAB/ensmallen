@@ -91,7 +91,7 @@ def SinorhizobiumFrediiNgr234(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SinorhizobiumFrediiNgr234",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

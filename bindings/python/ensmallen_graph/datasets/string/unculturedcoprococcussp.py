@@ -88,7 +88,7 @@ def UnculturedCoprococcusSp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UnculturedCoprococcusSp",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

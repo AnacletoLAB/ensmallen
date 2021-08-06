@@ -91,7 +91,7 @@ def JonquetellaAnthropiE333e1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JonquetellaAnthropiE333e1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

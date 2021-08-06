@@ -88,7 +88,7 @@ def PsathyrellaAberdarensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PsathyrellaAberdarensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

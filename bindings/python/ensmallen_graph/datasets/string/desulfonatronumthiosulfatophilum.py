@@ -88,7 +88,7 @@ def DesulfonatronumThiosulfatophilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfonatronumThiosulfatophilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

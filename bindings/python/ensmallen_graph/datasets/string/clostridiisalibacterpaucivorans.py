@@ -91,7 +91,7 @@ def ClostridiisalibacterPaucivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiisalibacterPaucivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def HelicobacterCinaediCcug18818(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelicobacterCinaediCcug18818",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

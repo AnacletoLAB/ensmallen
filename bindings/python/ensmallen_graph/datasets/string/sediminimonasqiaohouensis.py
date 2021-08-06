@@ -91,7 +91,7 @@ def SediminimonasQiaohouensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SediminimonasQiaohouensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

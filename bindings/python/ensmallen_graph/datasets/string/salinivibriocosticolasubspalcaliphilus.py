@@ -88,7 +88,7 @@ def SalinivibrioCosticolaSubspAlcaliphilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinivibrioCosticolaSubspAlcaliphilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

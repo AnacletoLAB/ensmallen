@@ -88,7 +88,7 @@ def LamprocystisPurpureaDsm4197(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LamprocystisPurpureaDsm4197",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

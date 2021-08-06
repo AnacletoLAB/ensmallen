@@ -88,7 +88,7 @@ def BalaenopteraAcutorostrataScammoni(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BalaenopteraAcutorostrataScammoni",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

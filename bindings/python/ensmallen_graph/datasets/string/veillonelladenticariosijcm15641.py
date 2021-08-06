@@ -88,7 +88,7 @@ def VeillonellaDenticariosiJcm15641(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VeillonellaDenticariosiJcm15641",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

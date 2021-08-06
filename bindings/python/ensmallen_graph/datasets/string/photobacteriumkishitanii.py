@@ -88,7 +88,7 @@ def PhotobacteriumKishitanii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhotobacteriumKishitanii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MethanosarcinaLacustrisZ7289(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanosarcinaLacustrisZ7289",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

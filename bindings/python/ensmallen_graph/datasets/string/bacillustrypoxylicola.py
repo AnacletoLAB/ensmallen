@@ -88,7 +88,7 @@ def BacillusTrypoxylicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusTrypoxylicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

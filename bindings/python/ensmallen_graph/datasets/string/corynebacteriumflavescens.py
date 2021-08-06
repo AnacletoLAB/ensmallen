@@ -88,7 +88,7 @@ def CorynebacteriumFlavescens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumFlavescens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

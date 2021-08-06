@@ -88,7 +88,7 @@ def PseudoalteromonasSpTb64(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoalteromonasSpTb64",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

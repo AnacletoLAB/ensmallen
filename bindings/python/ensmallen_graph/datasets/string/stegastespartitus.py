@@ -91,7 +91,7 @@ def StegastesPartitus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StegastesPartitus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

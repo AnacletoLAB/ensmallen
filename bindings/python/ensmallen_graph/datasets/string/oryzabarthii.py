@@ -91,7 +91,7 @@ def OryzaBarthii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OryzaBarthii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

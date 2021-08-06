@@ -88,7 +88,7 @@ def AcanthamoebaCastellaniiStrNeff(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcanthamoebaCastellaniiStrNeff",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

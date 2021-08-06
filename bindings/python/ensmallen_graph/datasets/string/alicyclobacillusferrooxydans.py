@@ -88,7 +88,7 @@ def AlicyclobacillusFerrooxydans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlicyclobacillusFerrooxydans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

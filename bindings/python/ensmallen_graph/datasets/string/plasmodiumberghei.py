@@ -91,7 +91,7 @@ def PlasmodiumBerghei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlasmodiumBerghei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

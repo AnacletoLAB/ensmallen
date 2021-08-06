@@ -91,7 +91,7 @@ def EsoxLucius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EsoxLucius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

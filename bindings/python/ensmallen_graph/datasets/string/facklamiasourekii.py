@@ -91,7 +91,7 @@ def FacklamiaSourekii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FacklamiaSourekii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

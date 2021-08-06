@@ -91,7 +91,7 @@ def CampylobacterColi76339(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterColi76339",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

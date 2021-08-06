@@ -88,7 +88,7 @@ def NovosphingobiumSpMbes04(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NovosphingobiumSpMbes04",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

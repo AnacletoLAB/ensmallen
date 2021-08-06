@@ -91,7 +91,7 @@ def AlteromonasSpLor(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlteromonasSpLor",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def FirmicutesBacteriumCag83(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FirmicutesBacteriumCag83",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

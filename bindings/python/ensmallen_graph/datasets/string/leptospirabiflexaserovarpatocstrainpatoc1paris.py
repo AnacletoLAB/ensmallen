@@ -88,7 +88,7 @@ def LeptospiraBiflexaSerovarPatocStrainPatoc1Paris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptospiraBiflexaSerovarPatocStrainPatoc1Paris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

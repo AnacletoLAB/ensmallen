@@ -91,7 +91,7 @@ def ThiomicrospiraSpMilost1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThiomicrospiraSpMilost1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

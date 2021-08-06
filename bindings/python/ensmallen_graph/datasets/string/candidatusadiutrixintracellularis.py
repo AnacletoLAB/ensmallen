@@ -88,7 +88,7 @@ def CandidatusAdiutrixIntracellularis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusAdiutrixIntracellularis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

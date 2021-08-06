@@ -78,7 +78,7 @@ def G50(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="G50",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

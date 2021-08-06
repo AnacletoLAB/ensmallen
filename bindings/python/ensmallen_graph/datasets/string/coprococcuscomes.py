@@ -88,7 +88,7 @@ def CoprococcusComes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CoprococcusComes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

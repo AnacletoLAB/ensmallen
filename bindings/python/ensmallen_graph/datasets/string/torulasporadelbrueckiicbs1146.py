@@ -88,7 +88,7 @@ def TorulasporaDelbrueckiiCbs1146(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TorulasporaDelbrueckiiCbs1146",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

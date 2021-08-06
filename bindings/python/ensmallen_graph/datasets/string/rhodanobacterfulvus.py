@@ -91,7 +91,7 @@ def RhodanobacterFulvus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodanobacterFulvus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

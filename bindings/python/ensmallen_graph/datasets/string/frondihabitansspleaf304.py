@@ -88,7 +88,7 @@ def FrondihabitansSpLeaf304(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FrondihabitansSpLeaf304",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

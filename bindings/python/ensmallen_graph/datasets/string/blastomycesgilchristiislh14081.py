@@ -88,7 +88,7 @@ def BlastomycesGilchristiiSlh14081(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlastomycesGilchristiiSlh14081",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

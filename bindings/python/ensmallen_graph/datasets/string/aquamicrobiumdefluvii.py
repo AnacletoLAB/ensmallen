@@ -91,7 +91,7 @@ def AquamicrobiumDefluvii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AquamicrobiumDefluvii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

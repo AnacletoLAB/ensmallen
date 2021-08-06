@@ -91,7 +91,7 @@ def LiberibacterSolanacearum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LiberibacterSolanacearum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

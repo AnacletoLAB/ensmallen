@@ -91,7 +91,7 @@ def LysobacterConcretionis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LysobacterConcretionis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

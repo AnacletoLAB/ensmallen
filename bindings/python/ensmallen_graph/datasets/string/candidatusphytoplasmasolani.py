@@ -88,7 +88,7 @@ def CandidatusPhytoplasmaSolani(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusPhytoplasmaSolani",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

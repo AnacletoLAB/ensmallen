@@ -88,7 +88,7 @@ def ChryseobacteriumIndoltheticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChryseobacteriumIndoltheticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

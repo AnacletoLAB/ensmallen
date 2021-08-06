@@ -88,7 +88,7 @@ def HalorhodospiraHalochlorisStrA(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalorhodospiraHalochlorisStrA",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

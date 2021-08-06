@@ -88,7 +88,7 @@ def NatronohydrobacterThiooxidans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NatronohydrobacterThiooxidans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

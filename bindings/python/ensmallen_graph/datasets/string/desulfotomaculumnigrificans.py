@@ -91,7 +91,7 @@ def DesulfotomaculumNigrificans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfotomaculumNigrificans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

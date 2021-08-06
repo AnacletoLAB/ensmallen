@@ -91,7 +91,7 @@ def UliginosibacteriumGangwonense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UliginosibacteriumGangwonense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

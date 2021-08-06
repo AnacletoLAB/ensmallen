@@ -88,7 +88,7 @@ def SedimenticolaThiotaurini(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SedimenticolaThiotaurini",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

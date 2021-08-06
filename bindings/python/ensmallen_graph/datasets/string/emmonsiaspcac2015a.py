@@ -88,7 +88,7 @@ def EmmonsiaSpCac2015a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EmmonsiaSpCac2015a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

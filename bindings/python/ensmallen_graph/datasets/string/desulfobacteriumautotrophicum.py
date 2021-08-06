@@ -91,7 +91,7 @@ def DesulfobacteriumAutotrophicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfobacteriumAutotrophicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

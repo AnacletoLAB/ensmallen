@@ -88,7 +88,7 @@ def ThermodesulfatatorAutotrophicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermodesulfatatorAutotrophicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

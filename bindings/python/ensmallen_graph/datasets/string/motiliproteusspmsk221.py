@@ -88,7 +88,7 @@ def MotiliproteusSpMsk221(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MotiliproteusSpMsk221",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

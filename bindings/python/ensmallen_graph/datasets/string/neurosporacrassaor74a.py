@@ -88,7 +88,7 @@ def NeurosporaCrassaOr74a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeurosporaCrassaOr74a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

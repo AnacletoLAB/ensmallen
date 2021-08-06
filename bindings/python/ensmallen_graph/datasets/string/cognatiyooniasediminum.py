@@ -88,7 +88,7 @@ def CognatiyooniaSediminum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CognatiyooniaSediminum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def RuminobacterAmylophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminobacterAmylophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

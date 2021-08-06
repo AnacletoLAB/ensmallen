@@ -88,7 +88,7 @@ def PseudomonasSpKk4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasSpKk4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

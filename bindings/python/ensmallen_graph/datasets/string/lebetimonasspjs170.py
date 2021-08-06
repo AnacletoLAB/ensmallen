@@ -91,7 +91,7 @@ def LebetimonasSpJs170(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LebetimonasSpJs170",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

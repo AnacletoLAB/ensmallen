@@ -91,7 +91,7 @@ def ActinoplanesGlobisporus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinoplanesGlobisporus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

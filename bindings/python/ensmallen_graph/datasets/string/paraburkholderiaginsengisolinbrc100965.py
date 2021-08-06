@@ -88,7 +88,7 @@ def ParaburkholderiaGinsengisoliNbrc100965(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParaburkholderiaGinsengisoliNbrc100965",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

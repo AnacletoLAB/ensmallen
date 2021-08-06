@@ -88,7 +88,7 @@ def WuchereriaBancrofti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WuchereriaBancrofti",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

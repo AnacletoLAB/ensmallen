@@ -88,7 +88,7 @@ def VibrioCholeraeO1Biovar(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioCholeraeO1Biovar",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

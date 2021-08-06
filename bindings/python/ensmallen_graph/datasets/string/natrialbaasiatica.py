@@ -91,7 +91,7 @@ def NatrialbaAsiatica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NatrialbaAsiatica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

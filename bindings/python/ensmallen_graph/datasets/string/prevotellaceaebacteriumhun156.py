@@ -88,7 +88,7 @@ def PrevotellaceaeBacteriumHun156(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaceaeBacteriumHun156",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def Aa4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Aa4",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

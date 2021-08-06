@@ -91,7 +91,7 @@ def BaudoiniaCompniacensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BaudoiniaCompniacensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def YahooMsg(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="YahooMsg",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

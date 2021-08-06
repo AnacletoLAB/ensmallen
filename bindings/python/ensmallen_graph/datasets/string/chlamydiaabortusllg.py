@@ -88,7 +88,7 @@ def ChlamydiaAbortusLlg(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlamydiaAbortusLlg",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

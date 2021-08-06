@@ -88,7 +88,7 @@ def MycolicibacterHiberniae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycolicibacterHiberniae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

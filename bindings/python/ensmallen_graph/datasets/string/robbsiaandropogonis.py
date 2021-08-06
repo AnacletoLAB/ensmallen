@@ -88,7 +88,7 @@ def RobbsiaAndropogonis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RobbsiaAndropogonis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

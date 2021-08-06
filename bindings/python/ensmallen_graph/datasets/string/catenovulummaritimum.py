@@ -88,7 +88,7 @@ def CatenovulumMaritimum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CatenovulumMaritimum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

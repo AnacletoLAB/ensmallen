@@ -88,7 +88,7 @@ def CandidatusOmnitrophusFodinaeScgcAaa011A17(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusOmnitrophusFodinaeScgcAaa011A17",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

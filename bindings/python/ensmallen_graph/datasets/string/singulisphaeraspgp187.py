@@ -88,7 +88,7 @@ def SingulisphaeraSpGp187(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SingulisphaeraSpGp187",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

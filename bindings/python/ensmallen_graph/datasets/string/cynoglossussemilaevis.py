@@ -91,7 +91,7 @@ def CynoglossusSemilaevis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CynoglossusSemilaevis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def BettaSplendens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BettaSplendens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def AestuariibacterSalexigens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AestuariibacterSalexigens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

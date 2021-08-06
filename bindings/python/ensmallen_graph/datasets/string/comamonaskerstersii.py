@@ -88,7 +88,7 @@ def ComamonasKerstersii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ComamonasKerstersii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MethylothermaceaeBacteriaB42(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylothermaceaeBacteriaB42",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

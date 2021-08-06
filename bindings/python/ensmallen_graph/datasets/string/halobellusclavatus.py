@@ -88,7 +88,7 @@ def HalobellusClavatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalobellusClavatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

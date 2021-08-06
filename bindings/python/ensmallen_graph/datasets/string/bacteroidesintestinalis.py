@@ -91,7 +91,7 @@ def BacteroidesIntestinalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesIntestinalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

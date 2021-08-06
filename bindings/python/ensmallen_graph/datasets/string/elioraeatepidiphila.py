@@ -91,7 +91,7 @@ def ElioraeaTepidiphila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ElioraeaTepidiphila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

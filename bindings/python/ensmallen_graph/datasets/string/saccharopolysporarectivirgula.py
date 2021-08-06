@@ -91,7 +91,7 @@ def SaccharopolysporaRectivirgula(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SaccharopolysporaRectivirgula",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

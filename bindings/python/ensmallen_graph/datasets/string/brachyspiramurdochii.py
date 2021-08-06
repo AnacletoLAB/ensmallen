@@ -91,7 +91,7 @@ def BrachyspiraMurdochii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrachyspiraMurdochii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def NitrosopelagicusSpRedseaS31B2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrosopelagicusSpRedseaS31B2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

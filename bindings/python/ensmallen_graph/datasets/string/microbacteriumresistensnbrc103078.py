@@ -88,7 +88,7 @@ def MicrobacteriumResistensNbrc103078(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriumResistensNbrc103078",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

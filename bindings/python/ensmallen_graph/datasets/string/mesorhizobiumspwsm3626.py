@@ -91,7 +91,7 @@ def MesorhizobiumSpWsm3626(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MesorhizobiumSpWsm3626",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

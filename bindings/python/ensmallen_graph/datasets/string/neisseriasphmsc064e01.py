@@ -88,7 +88,7 @@ def NeisseriaSpHmsc064e01(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeisseriaSpHmsc064e01",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

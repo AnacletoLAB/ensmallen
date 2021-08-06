@@ -88,7 +88,7 @@ def LactobacillusAcidifarinaeDsm19394(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusAcidifarinaeDsm19394",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

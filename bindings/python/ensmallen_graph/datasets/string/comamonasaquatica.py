@@ -91,7 +91,7 @@ def ComamonasAquatica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ComamonasAquatica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

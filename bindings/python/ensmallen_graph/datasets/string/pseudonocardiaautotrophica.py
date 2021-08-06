@@ -91,7 +91,7 @@ def PseudonocardiaAutotrophica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudonocardiaAutotrophica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

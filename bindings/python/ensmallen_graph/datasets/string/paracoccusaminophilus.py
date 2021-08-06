@@ -91,7 +91,7 @@ def ParacoccusAminophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParacoccusAminophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def RuegeriaSp6palisep08(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuegeriaSp6palisep08",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

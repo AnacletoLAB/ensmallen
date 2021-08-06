@@ -91,7 +91,7 @@ def KtedonobacterRacemifer(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KtedonobacterRacemifer",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

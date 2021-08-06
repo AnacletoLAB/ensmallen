@@ -91,7 +91,7 @@ def IntrasporangiumOryzae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IntrasporangiumOryzae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

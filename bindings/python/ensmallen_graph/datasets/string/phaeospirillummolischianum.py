@@ -91,7 +91,7 @@ def PhaeospirillumMolischianum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhaeospirillumMolischianum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

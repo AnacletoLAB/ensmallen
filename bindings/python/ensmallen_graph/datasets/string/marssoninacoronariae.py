@@ -88,7 +88,7 @@ def MarssoninaCoronariae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarssoninaCoronariae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

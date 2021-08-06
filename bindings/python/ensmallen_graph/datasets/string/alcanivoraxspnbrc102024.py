@@ -88,7 +88,7 @@ def AlcanivoraxSpNbrc102024(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlcanivoraxSpNbrc102024",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

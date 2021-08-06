@@ -91,7 +91,7 @@ def NiabellaAurantiaca(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NiabellaAurantiaca",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

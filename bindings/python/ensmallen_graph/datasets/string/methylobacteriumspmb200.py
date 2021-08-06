@@ -91,7 +91,7 @@ def MethylobacteriumSpMb200(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylobacteriumSpMb200",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

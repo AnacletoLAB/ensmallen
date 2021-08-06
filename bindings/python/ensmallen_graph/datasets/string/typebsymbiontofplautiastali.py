@@ -88,7 +88,7 @@ def TypeBSymbiontOfPlautiaStali(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TypeBSymbiontOfPlautiaStali",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

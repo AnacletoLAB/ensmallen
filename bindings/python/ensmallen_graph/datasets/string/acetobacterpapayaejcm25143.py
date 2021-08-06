@@ -88,7 +88,7 @@ def AcetobacterPapayaeJcm25143(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcetobacterPapayaeJcm25143",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

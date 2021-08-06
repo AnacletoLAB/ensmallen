@@ -88,7 +88,7 @@ def MusSpretus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MusSpretus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

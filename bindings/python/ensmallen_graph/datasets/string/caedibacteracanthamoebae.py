@@ -91,7 +91,7 @@ def CaedibacterAcanthamoebae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaedibacterAcanthamoebae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

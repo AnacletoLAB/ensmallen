@@ -88,7 +88,7 @@ def OhtaekwangiaKoreensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OhtaekwangiaKoreensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

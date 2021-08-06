@@ -88,7 +88,7 @@ def DialisterPneumosintes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DialisterPneumosintes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

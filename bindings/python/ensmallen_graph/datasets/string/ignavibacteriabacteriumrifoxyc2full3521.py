@@ -88,7 +88,7 @@ def IgnavibacteriaBacteriumRifoxyc2Full3521(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IgnavibacteriaBacteriumRifoxyc2Full3521",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

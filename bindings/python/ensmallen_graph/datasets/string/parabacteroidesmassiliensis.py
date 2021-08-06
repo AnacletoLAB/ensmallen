@@ -88,7 +88,7 @@ def ParabacteroidesMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParabacteroidesMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def LegionellaFalloniiLlap10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LegionellaFalloniiLlap10",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

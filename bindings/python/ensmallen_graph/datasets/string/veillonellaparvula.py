@@ -91,7 +91,7 @@ def VeillonellaParvula(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VeillonellaParvula",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

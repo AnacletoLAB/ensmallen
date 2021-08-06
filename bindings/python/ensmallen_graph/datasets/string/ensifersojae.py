@@ -91,7 +91,7 @@ def EnsiferSojae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnsiferSojae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

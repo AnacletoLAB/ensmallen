@@ -91,7 +91,7 @@ def GeobacterLovleyi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeobacterLovleyi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

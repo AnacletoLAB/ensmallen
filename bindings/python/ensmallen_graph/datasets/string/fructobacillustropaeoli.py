@@ -88,7 +88,7 @@ def FructobacillusTropaeoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FructobacillusTropaeoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

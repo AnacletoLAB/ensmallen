@@ -91,7 +91,7 @@ def TremellaMesenterica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TremellaMesenterica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

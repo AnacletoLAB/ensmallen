@@ -88,7 +88,7 @@ def ArthrobotrysOligosporaAtcc24927(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArthrobotrysOligosporaAtcc24927",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

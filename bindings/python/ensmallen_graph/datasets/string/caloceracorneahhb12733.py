@@ -88,7 +88,7 @@ def CaloceraCorneaHhb12733(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaloceraCorneaHhb12733",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def FilimonasLacunae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FilimonasLacunae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

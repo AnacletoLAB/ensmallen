@@ -91,7 +91,7 @@ def NicotianaSylvestris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NicotianaSylvestris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

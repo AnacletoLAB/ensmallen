@@ -88,7 +88,7 @@ def OpisthorchisFelineus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OpisthorchisFelineus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

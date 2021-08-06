@@ -91,7 +91,7 @@ def OribacteriumSinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OribacteriumSinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

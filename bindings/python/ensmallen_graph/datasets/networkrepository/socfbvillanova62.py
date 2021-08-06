@@ -120,7 +120,7 @@ def SocfbVillanova62(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbVillanova62",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

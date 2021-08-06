@@ -91,7 +91,7 @@ def BradyrhizobiumSpThb2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BradyrhizobiumSpThb2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

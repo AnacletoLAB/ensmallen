@@ -91,7 +91,7 @@ def PlanomicrobiumGlaciei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlanomicrobiumGlaciei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

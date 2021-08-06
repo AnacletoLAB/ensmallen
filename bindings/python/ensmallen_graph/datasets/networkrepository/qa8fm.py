@@ -78,7 +78,7 @@ def Qa8fm(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Qa8fm",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

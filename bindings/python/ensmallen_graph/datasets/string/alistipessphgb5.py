@@ -91,7 +91,7 @@ def AlistipesSpHgb5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlistipesSpHgb5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

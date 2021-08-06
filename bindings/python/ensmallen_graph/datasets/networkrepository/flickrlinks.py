@@ -78,7 +78,7 @@ def FlickrLinks(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlickrLinks",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CandidatusGullanellaEndobia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusGullanellaEndobia",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

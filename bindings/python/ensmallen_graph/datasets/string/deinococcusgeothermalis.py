@@ -91,7 +91,7 @@ def DeinococcusGeothermalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DeinococcusGeothermalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

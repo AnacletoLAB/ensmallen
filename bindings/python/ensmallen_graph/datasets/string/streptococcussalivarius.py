@@ -88,7 +88,7 @@ def StreptococcusSalivarius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusSalivarius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

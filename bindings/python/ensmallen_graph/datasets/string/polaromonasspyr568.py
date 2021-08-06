@@ -88,7 +88,7 @@ def PolaromonasSpYr568(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PolaromonasSpYr568",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

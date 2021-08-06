@@ -91,7 +91,7 @@ def PhytophthoraInfestans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhytophthoraInfestans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

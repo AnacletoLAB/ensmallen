@@ -91,7 +91,7 @@ def FormosaAgariphila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FormosaAgariphila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

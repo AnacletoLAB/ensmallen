@@ -91,7 +91,7 @@ def EnterobacterLignolyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterobacterLignolyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

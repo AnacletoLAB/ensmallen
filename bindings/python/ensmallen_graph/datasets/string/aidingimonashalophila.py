@@ -88,7 +88,7 @@ def AidingimonasHalophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AidingimonasHalophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

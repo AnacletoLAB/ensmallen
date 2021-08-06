@@ -91,7 +91,7 @@ def SebaldellaTermitidis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SebaldellaTermitidis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def BartonellaDoshiae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BartonellaDoshiae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

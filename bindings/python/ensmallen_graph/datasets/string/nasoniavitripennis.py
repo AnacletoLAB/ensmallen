@@ -91,7 +91,7 @@ def NasoniaVitripennis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NasoniaVitripennis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PseudoalteromonasHaloplanktisTb64(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoalteromonasHaloplanktisTb64",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def GayadomonasJoobiniege(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GayadomonasJoobiniege",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

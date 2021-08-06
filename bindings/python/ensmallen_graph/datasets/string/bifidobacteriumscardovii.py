@@ -91,7 +91,7 @@ def BifidobacteriumScardovii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BifidobacteriumScardovii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

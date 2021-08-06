@@ -88,7 +88,7 @@ def VeillonellaceaeBacteriumDnf00626(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VeillonellaceaeBacteriumDnf00626",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

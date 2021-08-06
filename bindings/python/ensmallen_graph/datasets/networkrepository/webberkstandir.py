@@ -96,7 +96,7 @@ def WebBerkstanDir(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebBerkstanDir",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

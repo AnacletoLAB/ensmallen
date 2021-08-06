@@ -88,7 +88,7 @@ def AquimarinaAggregata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AquimarinaAggregata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

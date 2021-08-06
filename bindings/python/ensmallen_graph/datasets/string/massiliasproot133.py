@@ -88,7 +88,7 @@ def MassiliaSpRoot133(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MassiliaSpRoot133",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

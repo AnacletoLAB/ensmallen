@@ -91,7 +91,7 @@ def VesicomyosociusOkutanii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VesicomyosociusOkutanii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

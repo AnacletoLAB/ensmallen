@@ -91,7 +91,7 @@ def EggerthellaSpYy7918(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EggerthellaSpYy7918",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

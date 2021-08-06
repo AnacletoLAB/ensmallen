@@ -88,7 +88,7 @@ def CandidatusAquilunaSpUbMaderosw2red(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusAquilunaSpUbMaderosw2red",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

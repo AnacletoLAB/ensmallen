@@ -88,7 +88,7 @@ def FonsecaeaMultimorphosaCbs102226(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FonsecaeaMultimorphosaCbs102226",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

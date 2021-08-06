@@ -88,7 +88,7 @@ def SalinicoccusQingdaonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinicoccusQingdaonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

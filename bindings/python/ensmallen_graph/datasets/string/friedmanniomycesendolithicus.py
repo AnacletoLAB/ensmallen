@@ -88,7 +88,7 @@ def FriedmanniomycesEndolithicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FriedmanniomycesEndolithicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def TatumellaSpUcdDSuzukii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TatumellaSpUcdDSuzukii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

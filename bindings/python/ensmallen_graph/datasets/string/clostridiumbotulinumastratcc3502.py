@@ -88,7 +88,7 @@ def ClostridiumBotulinumAStrAtcc3502(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumBotulinumAStrAtcc3502",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

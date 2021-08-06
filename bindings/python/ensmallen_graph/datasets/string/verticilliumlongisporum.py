@@ -88,7 +88,7 @@ def VerticilliumLongisporum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VerticilliumLongisporum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

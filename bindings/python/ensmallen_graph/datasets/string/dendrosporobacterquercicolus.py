@@ -88,7 +88,7 @@ def DendrosporobacterQuercicolus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DendrosporobacterQuercicolus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

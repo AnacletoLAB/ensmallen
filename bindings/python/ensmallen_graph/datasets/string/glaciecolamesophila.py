@@ -91,7 +91,7 @@ def GlaciecolaMesophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GlaciecolaMesophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def TuberMelanosporumMel28(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TuberMelanosporumMel28",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

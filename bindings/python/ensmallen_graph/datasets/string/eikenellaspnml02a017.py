@@ -88,7 +88,7 @@ def EikenellaSpNml02A017(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EikenellaSpNml02A017",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

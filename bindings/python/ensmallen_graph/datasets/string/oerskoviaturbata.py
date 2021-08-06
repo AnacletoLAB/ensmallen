@@ -91,7 +91,7 @@ def OerskoviaTurbata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OerskoviaTurbata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

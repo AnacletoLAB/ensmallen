@@ -88,7 +88,7 @@ def ThioclavaNitratireducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThioclavaNitratireducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

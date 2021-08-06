@@ -91,7 +91,7 @@ def CampylobacterFetusTestudinum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterFetusTestudinum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

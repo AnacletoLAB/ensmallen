@@ -91,7 +91,7 @@ def FusobacteriumSpF0437(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FusobacteriumSpF0437",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

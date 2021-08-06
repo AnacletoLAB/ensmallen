@@ -91,7 +91,7 @@ def HyphomonasNeptunium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HyphomonasNeptunium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

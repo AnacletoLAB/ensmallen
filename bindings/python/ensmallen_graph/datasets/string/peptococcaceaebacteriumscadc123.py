@@ -88,7 +88,7 @@ def PeptococcaceaeBacteriumScadc123(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeptococcaceaeBacteriumScadc123",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def AffFlickrUserGroups(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AffFlickrUserGroups",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

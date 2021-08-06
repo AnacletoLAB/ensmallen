@@ -88,7 +88,7 @@ def NatrialbaHulunbeirensisJcm10989(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NatrialbaHulunbeirensisJcm10989",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

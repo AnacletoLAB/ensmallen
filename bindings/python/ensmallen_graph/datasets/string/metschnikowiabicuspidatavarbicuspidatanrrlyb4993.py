@@ -88,7 +88,7 @@ def MetschnikowiaBicuspidataVarBicuspidataNrrlYb4993(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MetschnikowiaBicuspidataVarBicuspidataNrrlYb4993",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def FibrellaAestuarina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FibrellaAestuarina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

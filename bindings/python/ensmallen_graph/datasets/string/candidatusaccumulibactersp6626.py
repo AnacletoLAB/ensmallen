@@ -88,7 +88,7 @@ def CandidatusAccumulibacterSp6626(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusAccumulibacterSp6626",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

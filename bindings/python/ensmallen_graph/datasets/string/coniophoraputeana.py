@@ -91,7 +91,7 @@ def ConiophoraPuteana(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ConiophoraPuteana",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

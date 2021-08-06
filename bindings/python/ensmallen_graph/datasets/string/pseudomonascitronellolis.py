@@ -88,7 +88,7 @@ def PseudomonasCitronellolis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasCitronellolis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

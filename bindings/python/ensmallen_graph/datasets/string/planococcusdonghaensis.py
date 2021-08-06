@@ -91,7 +91,7 @@ def PlanococcusDonghaensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlanococcusDonghaensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def HalodesulfurarchaeumFormicicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalodesulfurarchaeumFormicicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

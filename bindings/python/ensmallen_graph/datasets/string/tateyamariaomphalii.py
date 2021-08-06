@@ -88,7 +88,7 @@ def TateyamariaOmphalii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TateyamariaOmphalii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

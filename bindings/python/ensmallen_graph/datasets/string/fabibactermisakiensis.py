@@ -88,7 +88,7 @@ def FabibacterMisakiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FabibacterMisakiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

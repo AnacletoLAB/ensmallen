@@ -91,7 +91,7 @@ def BrevundimonasBacteroides(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrevundimonasBacteroides",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

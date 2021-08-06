@@ -91,7 +91,7 @@ def ParacoccusYeei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParacoccusYeei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

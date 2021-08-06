@@ -91,7 +91,7 @@ def ThermofilumPendens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermofilumPendens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

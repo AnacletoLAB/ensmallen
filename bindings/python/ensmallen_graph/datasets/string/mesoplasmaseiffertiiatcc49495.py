@@ -88,7 +88,7 @@ def MesoplasmaSeiffertiiAtcc49495(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MesoplasmaSeiffertiiAtcc49495",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PhytoplasmaAustraliense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhytoplasmaAustraliense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

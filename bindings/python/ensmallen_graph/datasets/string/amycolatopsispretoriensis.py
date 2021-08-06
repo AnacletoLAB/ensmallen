@@ -88,7 +88,7 @@ def AmycolatopsisPretoriensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmycolatopsisPretoriensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

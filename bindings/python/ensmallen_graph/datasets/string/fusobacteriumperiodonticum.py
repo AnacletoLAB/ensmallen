@@ -91,7 +91,7 @@ def FusobacteriumPeriodonticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FusobacteriumPeriodonticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

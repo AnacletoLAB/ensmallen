@@ -88,7 +88,7 @@ def HelicobacterMuridarum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelicobacterMuridarum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ThermincolaPotens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermincolaPotens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

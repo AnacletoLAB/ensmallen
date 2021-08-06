@@ -88,7 +88,7 @@ def CaldanaerobiusFijiensisDsm17918(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaldanaerobiusFijiensisDsm17918",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

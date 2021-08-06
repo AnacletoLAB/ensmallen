@@ -91,7 +91,7 @@ def DesulfovibrioBastinii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioBastinii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

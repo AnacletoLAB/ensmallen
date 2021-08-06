@@ -88,7 +88,7 @@ def PrevotellaConceptionensis9403948(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaConceptionensis9403948",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

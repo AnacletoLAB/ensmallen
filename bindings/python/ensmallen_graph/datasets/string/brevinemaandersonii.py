@@ -88,7 +88,7 @@ def BrevinemaAndersonii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrevinemaAndersonii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

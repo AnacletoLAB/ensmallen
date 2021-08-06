@@ -88,7 +88,7 @@ def AlteribacillusIranensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlteribacillusIranensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ErwiniaGerundensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErwiniaGerundensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

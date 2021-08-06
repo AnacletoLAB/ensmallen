@@ -88,7 +88,7 @@ def NesiotobacterExalbescens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NesiotobacterExalbescens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

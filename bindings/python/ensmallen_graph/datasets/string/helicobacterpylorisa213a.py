@@ -91,7 +91,7 @@ def HelicobacterPyloriSa213a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelicobacterPyloriSa213a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

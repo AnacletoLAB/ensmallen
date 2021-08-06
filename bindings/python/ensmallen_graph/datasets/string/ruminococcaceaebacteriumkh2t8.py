@@ -88,7 +88,7 @@ def RuminococcaceaeBacteriumKh2t8(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminococcaceaeBacteriumKh2t8",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

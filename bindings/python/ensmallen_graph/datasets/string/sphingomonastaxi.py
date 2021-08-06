@@ -91,7 +91,7 @@ def SphingomonasTaxi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingomonasTaxi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

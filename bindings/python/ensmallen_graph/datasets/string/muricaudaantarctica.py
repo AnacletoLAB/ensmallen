@@ -88,7 +88,7 @@ def MuricaudaAntarctica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MuricaudaAntarctica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

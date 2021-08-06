@@ -88,7 +88,7 @@ def FlavobacteriumPhragmitis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumPhragmitis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

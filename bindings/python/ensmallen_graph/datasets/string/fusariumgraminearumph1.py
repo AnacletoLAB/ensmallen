@@ -88,7 +88,7 @@ def FusariumGraminearumPh1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FusariumGraminearumPh1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

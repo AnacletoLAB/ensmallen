@@ -91,7 +91,7 @@ def StreptacidiphilusCarbonis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptacidiphilusCarbonis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

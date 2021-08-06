@@ -88,7 +88,7 @@ def EnsiferSpLcm4579(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnsiferSpLcm4579",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

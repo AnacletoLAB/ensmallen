@@ -91,7 +91,7 @@ def DialisterMicraerophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DialisterMicraerophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

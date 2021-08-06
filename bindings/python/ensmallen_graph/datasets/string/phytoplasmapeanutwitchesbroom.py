@@ -88,7 +88,7 @@ def PhytoplasmaPeanutWitchesbroom(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhytoplasmaPeanutWitchesbroom",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

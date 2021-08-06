@@ -91,7 +91,7 @@ def TepidanaerobacterAcetatoxydans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TepidanaerobacterAcetatoxydans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

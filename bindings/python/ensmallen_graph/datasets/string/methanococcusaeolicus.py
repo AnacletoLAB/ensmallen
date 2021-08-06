@@ -91,7 +91,7 @@ def MethanococcusAeolicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanococcusAeolicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

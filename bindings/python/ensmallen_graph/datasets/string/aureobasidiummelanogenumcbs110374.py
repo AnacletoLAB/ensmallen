@@ -88,7 +88,7 @@ def AureobasidiumMelanogenumCbs110374(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AureobasidiumMelanogenumCbs110374",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

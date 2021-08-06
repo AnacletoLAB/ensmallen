@@ -91,7 +91,7 @@ def DelftiaAcidovorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DelftiaAcidovorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

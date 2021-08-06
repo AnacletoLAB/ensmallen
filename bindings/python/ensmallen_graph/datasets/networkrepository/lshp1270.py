@@ -78,7 +78,7 @@ def Lshp1270(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Lshp1270",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

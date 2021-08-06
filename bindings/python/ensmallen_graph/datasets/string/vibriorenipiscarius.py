@@ -88,7 +88,7 @@ def VibrioRenipiscarius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioRenipiscarius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

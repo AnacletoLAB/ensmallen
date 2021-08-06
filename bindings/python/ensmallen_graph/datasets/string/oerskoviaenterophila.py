@@ -88,7 +88,7 @@ def OerskoviaEnterophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OerskoviaEnterophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

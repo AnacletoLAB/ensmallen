@@ -88,7 +88,7 @@ def ErwiniaMallotivora(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErwiniaMallotivora",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def DuganellaSpCf517(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DuganellaSpCf517",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

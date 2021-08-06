@@ -88,7 +88,7 @@ def HalobacteriumJilantaiense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalobacteriumJilantaiense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

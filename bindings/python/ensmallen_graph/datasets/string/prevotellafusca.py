@@ -91,7 +91,7 @@ def PrevotellaFusca(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaFusca",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

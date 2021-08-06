@@ -88,7 +88,7 @@ def RuminococcaceaeBacteriumCpb6(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminococcaceaeBacteriumCpb6",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def DolosigranulumPigrum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DolosigranulumPigrum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

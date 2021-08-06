@@ -88,7 +88,7 @@ def MuricaudaSpCp2a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MuricaudaSpCp2a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

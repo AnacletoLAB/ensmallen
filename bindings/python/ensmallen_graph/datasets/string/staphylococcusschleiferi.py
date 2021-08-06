@@ -88,7 +88,7 @@ def StaphylococcusSchleiferi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StaphylococcusSchleiferi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

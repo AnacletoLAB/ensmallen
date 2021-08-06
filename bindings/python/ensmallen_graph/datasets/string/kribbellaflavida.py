@@ -91,7 +91,7 @@ def KribbellaFlavida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KribbellaFlavida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

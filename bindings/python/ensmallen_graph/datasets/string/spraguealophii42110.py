@@ -88,7 +88,7 @@ def SpragueaLophii42110(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpragueaLophii42110",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

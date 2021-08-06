@@ -88,7 +88,7 @@ def ThermosulfidibacterTakaiiAbi70s6(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermosulfidibacterTakaiiAbi70s6",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

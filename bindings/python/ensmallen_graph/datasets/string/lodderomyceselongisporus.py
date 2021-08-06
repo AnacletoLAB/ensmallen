@@ -91,7 +91,7 @@ def LodderomycesElongisporus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LodderomycesElongisporus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

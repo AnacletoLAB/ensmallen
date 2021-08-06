@@ -88,7 +88,7 @@ def PaenibacillusTianmuensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillusTianmuensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

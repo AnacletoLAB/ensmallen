@@ -91,7 +91,7 @@ def DesulfovibrioPiezophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioPiezophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

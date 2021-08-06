@@ -88,7 +88,7 @@ def HalodesulfovibrioSpirochaetisodalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalodesulfovibrioSpirochaetisodalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

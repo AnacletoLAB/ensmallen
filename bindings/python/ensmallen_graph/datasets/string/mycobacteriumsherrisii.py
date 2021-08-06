@@ -88,7 +88,7 @@ def MycobacteriumSherrisii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumSherrisii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

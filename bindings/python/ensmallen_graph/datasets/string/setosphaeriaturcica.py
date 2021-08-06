@@ -91,7 +91,7 @@ def SetosphaeriaTurcica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SetosphaeriaTurcica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

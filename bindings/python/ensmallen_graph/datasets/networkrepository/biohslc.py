@@ -100,7 +100,7 @@ def BioHsLc(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BioHsLc",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

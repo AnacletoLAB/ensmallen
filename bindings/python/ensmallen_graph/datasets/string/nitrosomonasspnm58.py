@@ -88,7 +88,7 @@ def NitrosomonasSpNm58(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrosomonasSpNm58",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

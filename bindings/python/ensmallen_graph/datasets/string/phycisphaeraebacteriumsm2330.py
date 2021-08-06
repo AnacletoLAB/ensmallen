@@ -88,7 +88,7 @@ def PhycisphaeraeBacteriumSm2330(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhycisphaeraeBacteriumSm2330",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SporosarcinaGlobispora(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SporosarcinaGlobispora",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

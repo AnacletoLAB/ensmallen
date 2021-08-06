@@ -88,7 +88,7 @@ def StreptococcusVarani(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusVarani",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

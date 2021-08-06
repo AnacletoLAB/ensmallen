@@ -88,7 +88,7 @@ def ButyrivibrioHungatei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ButyrivibrioHungatei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

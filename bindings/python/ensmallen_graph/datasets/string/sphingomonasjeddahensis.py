@@ -88,7 +88,7 @@ def SphingomonasJeddahensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingomonasJeddahensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

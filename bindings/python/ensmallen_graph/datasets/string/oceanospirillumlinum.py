@@ -88,7 +88,7 @@ def OceanospirillumLinum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OceanospirillumLinum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

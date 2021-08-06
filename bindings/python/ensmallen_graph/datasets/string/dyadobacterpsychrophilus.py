@@ -88,7 +88,7 @@ def DyadobacterPsychrophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DyadobacterPsychrophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def EubacteriumUniforme(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EubacteriumUniforme",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

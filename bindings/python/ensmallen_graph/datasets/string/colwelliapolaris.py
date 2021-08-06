@@ -88,7 +88,7 @@ def ColwelliaPolaris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ColwelliaPolaris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

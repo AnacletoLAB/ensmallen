@@ -91,7 +91,7 @@ def SerratiaSpDd3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SerratiaSpDd3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

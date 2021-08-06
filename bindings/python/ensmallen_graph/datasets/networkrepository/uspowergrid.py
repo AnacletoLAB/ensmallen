@@ -78,7 +78,7 @@ def Uspowergrid(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Uspowergrid",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

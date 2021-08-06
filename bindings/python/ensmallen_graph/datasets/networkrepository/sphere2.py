@@ -78,7 +78,7 @@ def Sphere2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Sphere2",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

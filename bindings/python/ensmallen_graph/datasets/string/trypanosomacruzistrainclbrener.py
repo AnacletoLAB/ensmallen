@@ -88,7 +88,7 @@ def TrypanosomaCruziStrainClBrener(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrypanosomaCruziStrainClBrener",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def DinothrombiumTinctorium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DinothrombiumTinctorium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

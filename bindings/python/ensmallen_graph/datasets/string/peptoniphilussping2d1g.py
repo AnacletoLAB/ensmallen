@@ -88,7 +88,7 @@ def PeptoniphilusSpIng2D1g(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeptoniphilusSpIng2D1g",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

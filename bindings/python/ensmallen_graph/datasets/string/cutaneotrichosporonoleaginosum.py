@@ -88,7 +88,7 @@ def CutaneotrichosporonOleaginosum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CutaneotrichosporonOleaginosum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def GrimontiaIndica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GrimontiaIndica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

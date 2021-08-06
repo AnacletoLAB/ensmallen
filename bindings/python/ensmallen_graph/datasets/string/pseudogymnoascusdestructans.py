@@ -91,7 +91,7 @@ def PseudogymnoascusDestructans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudogymnoascusDestructans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

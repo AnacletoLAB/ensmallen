@@ -88,7 +88,7 @@ def ClostridiumVentriculi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumVentriculi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

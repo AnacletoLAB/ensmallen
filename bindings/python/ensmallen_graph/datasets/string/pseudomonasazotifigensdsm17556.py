@@ -88,7 +88,7 @@ def PseudomonasAzotifigensDsm17556(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasAzotifigensDsm17556",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

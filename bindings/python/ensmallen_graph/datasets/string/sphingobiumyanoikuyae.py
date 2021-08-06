@@ -91,7 +91,7 @@ def SphingobiumYanoikuyae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingobiumYanoikuyae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ExophialaAquamarinaCbs119918(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ExophialaAquamarinaCbs119918",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

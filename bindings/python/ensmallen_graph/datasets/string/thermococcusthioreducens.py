@@ -88,7 +88,7 @@ def ThermococcusThioreducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermococcusThioreducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

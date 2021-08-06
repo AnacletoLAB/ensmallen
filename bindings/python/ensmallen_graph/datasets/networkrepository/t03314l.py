@@ -78,7 +78,7 @@ def T03314l(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="T03314l",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

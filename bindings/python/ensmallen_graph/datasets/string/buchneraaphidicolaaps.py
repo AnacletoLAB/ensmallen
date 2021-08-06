@@ -91,7 +91,7 @@ def BuchneraAphidicolaAps(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BuchneraAphidicolaAps",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

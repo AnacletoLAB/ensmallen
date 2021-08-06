@@ -91,7 +91,7 @@ def AlcanivoraxDieselolei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlcanivoraxDieselolei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ArdenticatenaMaritima(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArdenticatenaMaritima",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

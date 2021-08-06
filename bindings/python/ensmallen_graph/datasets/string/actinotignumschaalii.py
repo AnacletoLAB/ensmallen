@@ -88,7 +88,7 @@ def ActinotignumSchaalii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinotignumSchaalii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

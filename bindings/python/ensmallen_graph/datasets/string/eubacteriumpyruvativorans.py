@@ -88,7 +88,7 @@ def EubacteriumPyruvativorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EubacteriumPyruvativorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def FranconibacterPulverisDsm19144(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FranconibacterPulverisDsm19144",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

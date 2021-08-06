@@ -91,7 +91,7 @@ def PseudomonasMandeliiPd30(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasMandeliiPd30",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ArenibacterNanhaiticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArenibacterNanhaiticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

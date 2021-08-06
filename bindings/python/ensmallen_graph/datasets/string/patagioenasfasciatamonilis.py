@@ -88,7 +88,7 @@ def PatagioenasFasciataMonilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PatagioenasFasciataMonilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def HydrogenobacterThermophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HydrogenobacterThermophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def BacillusCereusAtcc14579(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusCereusAtcc14579",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

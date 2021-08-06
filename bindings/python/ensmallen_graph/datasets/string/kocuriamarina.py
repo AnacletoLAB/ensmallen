@@ -91,7 +91,7 @@ def KocuriaMarina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KocuriaMarina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CorynebacteriumRenale(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumRenale",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

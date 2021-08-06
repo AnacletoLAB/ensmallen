@@ -88,7 +88,7 @@ def TetradesmusObliquus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TetradesmusObliquus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

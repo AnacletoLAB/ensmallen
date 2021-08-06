@@ -88,7 +88,7 @@ def LegionellaHackeliae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LegionellaHackeliae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

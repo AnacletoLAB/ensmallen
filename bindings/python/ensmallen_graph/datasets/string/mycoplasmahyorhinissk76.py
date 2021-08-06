@@ -91,7 +91,7 @@ def MycoplasmaHyorhinisSk76(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaHyorhinisSk76",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

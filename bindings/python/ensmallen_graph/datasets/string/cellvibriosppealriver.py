@@ -88,7 +88,7 @@ def CellvibrioSpPealriver(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CellvibrioSpPealriver",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

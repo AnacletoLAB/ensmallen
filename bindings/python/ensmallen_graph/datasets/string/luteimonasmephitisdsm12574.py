@@ -88,7 +88,7 @@ def LuteimonasMephitisDsm12574(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LuteimonasMephitisDsm12574",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

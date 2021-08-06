@@ -88,7 +88,7 @@ def CorynebacteriumMarinumDsm44953(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumMarinumDsm44953",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

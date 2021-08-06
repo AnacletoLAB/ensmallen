@@ -88,7 +88,7 @@ def CampylobacterPeloridisLmg23910(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterPeloridisLmg23910",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

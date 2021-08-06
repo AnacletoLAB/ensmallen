@@ -88,7 +88,7 @@ def MaribiusSalinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MaribiusSalinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def BrenneriaSpEnid312(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrenneriaSpEnid312",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

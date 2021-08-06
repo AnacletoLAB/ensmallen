@@ -88,7 +88,7 @@ def MethanolaciniaPaynteri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanolaciniaPaynteri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

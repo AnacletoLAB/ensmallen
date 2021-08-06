@@ -88,7 +88,7 @@ def MethylobacteriumSpGxs13(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylobacteriumSpGxs13",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

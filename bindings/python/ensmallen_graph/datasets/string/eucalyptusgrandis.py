@@ -91,7 +91,7 @@ def EucalyptusGrandis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EucalyptusGrandis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

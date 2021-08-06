@@ -91,7 +91,7 @@ def SpirochaetaSmaragdinae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpirochaetaSmaragdinae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

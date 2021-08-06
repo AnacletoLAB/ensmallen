@@ -91,7 +91,7 @@ def AsticcacaulisBiprosthecum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AsticcacaulisBiprosthecum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def MicrococcusLuteusNctc2665(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrococcusLuteusNctc2665",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

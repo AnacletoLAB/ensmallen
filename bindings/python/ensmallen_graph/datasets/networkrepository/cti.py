@@ -78,7 +78,7 @@ def Cti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Cti",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

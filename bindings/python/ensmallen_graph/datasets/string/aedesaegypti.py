@@ -91,7 +91,7 @@ def AedesAegypti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AedesAegypti",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

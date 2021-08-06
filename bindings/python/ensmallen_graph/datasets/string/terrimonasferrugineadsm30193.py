@@ -88,7 +88,7 @@ def TerrimonasFerrugineaDsm30193(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TerrimonasFerrugineaDsm30193",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

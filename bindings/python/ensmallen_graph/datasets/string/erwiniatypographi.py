@@ -91,7 +91,7 @@ def ErwiniaTypographi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErwiniaTypographi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

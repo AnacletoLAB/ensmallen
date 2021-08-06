@@ -88,7 +88,7 @@ def GlaesserellaParasuisSh0165(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GlaesserellaParasuisSh0165",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

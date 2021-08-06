@@ -91,7 +91,7 @@ def KangiellaAquimarina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KangiellaAquimarina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

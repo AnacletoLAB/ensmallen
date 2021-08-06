@@ -100,7 +100,7 @@ def BioHsHt(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BioHsHt",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

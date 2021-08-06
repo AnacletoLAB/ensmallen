@@ -88,7 +88,7 @@ def AgrococcusBaldri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AgrococcusBaldri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

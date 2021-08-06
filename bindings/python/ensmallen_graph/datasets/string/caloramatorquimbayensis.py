@@ -88,7 +88,7 @@ def CaloramatorQuimbayensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaloramatorQuimbayensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

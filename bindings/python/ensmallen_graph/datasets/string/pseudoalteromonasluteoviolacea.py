@@ -91,7 +91,7 @@ def PseudoalteromonasLuteoviolacea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoalteromonasLuteoviolacea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

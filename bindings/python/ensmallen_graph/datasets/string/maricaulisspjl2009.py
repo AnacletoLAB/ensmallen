@@ -91,7 +91,7 @@ def MaricaulisSpJl2009(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MaricaulisSpJl2009",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

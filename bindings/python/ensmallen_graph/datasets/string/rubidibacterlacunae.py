@@ -91,7 +91,7 @@ def RubidibacterLacunae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RubidibacterLacunae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

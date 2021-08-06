@@ -91,7 +91,7 @@ def MeiothermusTaiwanensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MeiothermusTaiwanensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

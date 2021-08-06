@@ -91,7 +91,7 @@ def HalogranumSalarium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalogranumSalarium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

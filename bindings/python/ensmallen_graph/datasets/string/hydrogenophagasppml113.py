@@ -88,7 +88,7 @@ def HydrogenophagaSpPml113(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HydrogenophagaSpPml113",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

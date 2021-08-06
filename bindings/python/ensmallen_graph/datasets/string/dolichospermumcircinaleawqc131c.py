@@ -88,7 +88,7 @@ def DolichospermumCircinaleAwqc131c(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DolichospermumCircinaleAwqc131c",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

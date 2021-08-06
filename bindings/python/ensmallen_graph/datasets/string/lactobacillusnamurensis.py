@@ -91,7 +91,7 @@ def LactobacillusNamurensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusNamurensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

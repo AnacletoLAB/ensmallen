@@ -88,7 +88,7 @@ def YonghaparkiaSpRoot332(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="YonghaparkiaSpRoot332",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

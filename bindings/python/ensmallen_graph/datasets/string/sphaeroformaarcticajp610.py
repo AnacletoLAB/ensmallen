@@ -88,7 +88,7 @@ def SphaeroformaArcticaJp610(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphaeroformaArcticaJp610",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -94,7 +94,7 @@ def MiscImdbBi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MiscImdbBi",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

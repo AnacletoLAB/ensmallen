@@ -88,7 +88,7 @@ def LactobacillusConcavusDsm17758(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusConcavusDsm17758",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

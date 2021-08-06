@@ -88,7 +88,7 @@ def CollinsellaPhocaeensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CollinsellaPhocaeensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

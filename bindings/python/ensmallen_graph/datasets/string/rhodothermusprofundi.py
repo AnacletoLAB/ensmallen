@@ -88,7 +88,7 @@ def RhodothermusProfundi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodothermusProfundi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

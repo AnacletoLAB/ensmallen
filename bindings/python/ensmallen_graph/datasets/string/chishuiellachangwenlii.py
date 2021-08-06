@@ -88,7 +88,7 @@ def ChishuiellaChangwenlii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChishuiellaChangwenlii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

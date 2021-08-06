@@ -88,7 +88,7 @@ def LactococcusChungangensisCau28Dsm22330(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactococcusChungangensisCau28Dsm22330",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

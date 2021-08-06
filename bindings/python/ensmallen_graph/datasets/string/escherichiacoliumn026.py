@@ -88,7 +88,7 @@ def EscherichiaColiUmn026(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EscherichiaColiUmn026",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

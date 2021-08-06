@@ -91,7 +91,7 @@ def SphingomonasEchinoides(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingomonasEchinoides",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

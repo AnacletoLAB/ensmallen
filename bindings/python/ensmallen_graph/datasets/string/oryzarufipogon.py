@@ -91,7 +91,7 @@ def OryzaRufipogon(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OryzaRufipogon",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

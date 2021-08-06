@@ -91,7 +91,7 @@ def ThermobaculumTerrenum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermobaculumTerrenum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CandidatusMethanomethylicusMesodigestum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusMethanomethylicusMesodigestum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

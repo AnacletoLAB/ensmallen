@@ -88,7 +88,7 @@ def RhodospirillaceaeBacteriumBrhC57(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodospirillaceaeBacteriumBrhC57",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def OscillibacterSpCag241(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OscillibacterSpCag241",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PeptostreptococcaceaeBacteriumVa2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeptostreptococcaceaeBacteriumVa2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

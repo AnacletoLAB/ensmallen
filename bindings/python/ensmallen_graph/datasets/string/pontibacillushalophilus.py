@@ -91,7 +91,7 @@ def PontibacillusHalophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PontibacillusHalophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

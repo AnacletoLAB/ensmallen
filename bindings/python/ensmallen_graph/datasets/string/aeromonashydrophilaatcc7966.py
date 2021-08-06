@@ -91,7 +91,7 @@ def AeromonasHydrophilaAtcc7966(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AeromonasHydrophilaAtcc7966",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

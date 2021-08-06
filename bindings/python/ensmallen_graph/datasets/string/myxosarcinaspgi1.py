@@ -91,7 +91,7 @@ def MyxosarcinaSpGi1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MyxosarcinaSpGi1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

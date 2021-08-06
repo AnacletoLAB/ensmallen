@@ -88,7 +88,7 @@ def CrenobacterLuteus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CrenobacterLuteus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

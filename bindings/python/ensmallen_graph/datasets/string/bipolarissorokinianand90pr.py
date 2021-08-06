@@ -88,7 +88,7 @@ def BipolarisSorokinianaNd90pr(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BipolarisSorokinianaNd90pr",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

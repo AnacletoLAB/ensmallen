@@ -88,7 +88,7 @@ def PediococcusEthanolidurans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PediococcusEthanolidurans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

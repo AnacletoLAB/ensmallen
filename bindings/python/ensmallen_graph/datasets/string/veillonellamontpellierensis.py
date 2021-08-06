@@ -91,7 +91,7 @@ def VeillonellaMontpellierensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VeillonellaMontpellierensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

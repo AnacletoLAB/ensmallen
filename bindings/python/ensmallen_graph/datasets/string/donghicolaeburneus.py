@@ -88,7 +88,7 @@ def DonghicolaEburneus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DonghicolaEburneus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

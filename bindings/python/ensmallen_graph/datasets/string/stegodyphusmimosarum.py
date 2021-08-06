@@ -88,7 +88,7 @@ def StegodyphusMimosarum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StegodyphusMimosarum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

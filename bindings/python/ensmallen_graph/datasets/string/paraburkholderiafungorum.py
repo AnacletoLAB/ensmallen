@@ -88,7 +88,7 @@ def ParaburkholderiaFungorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParaburkholderiaFungorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

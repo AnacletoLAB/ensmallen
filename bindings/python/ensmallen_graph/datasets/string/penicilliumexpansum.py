@@ -88,7 +88,7 @@ def PenicilliumExpansum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PenicilliumExpansum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ThermovirgaLienii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermovirgaLienii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

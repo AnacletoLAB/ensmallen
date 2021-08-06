@@ -88,7 +88,7 @@ def AgaricusBisporusVarBurnettiiJb137S8(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AgaricusBisporusVarBurnettiiJb137S8",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

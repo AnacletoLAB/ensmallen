@@ -91,7 +91,7 @@ def LactobacillusShenzhenensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusShenzhenensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def BombusImpatiens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BombusImpatiens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

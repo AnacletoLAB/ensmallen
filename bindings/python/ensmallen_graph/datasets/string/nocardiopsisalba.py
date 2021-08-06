@@ -91,7 +91,7 @@ def NocardiopsisAlba(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardiopsisAlba",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

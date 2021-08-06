@@ -88,7 +88,7 @@ def MorganellaPsychrotolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MorganellaPsychrotolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

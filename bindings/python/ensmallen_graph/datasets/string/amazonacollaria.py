@@ -88,7 +88,7 @@ def AmazonaCollaria(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmazonaCollaria",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

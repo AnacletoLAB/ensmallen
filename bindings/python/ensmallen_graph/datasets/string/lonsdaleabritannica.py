@@ -88,7 +88,7 @@ def LonsdaleaBritannica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LonsdaleaBritannica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

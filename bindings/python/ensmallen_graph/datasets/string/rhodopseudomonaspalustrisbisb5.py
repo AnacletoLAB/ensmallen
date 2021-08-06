@@ -91,7 +91,7 @@ def RhodopseudomonasPalustrisBisb5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodopseudomonasPalustrisBisb5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

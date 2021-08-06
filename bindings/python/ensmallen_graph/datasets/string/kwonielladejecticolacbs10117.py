@@ -88,7 +88,7 @@ def KwoniellaDejecticolaCbs10117(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KwoniellaDejecticolaCbs10117",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

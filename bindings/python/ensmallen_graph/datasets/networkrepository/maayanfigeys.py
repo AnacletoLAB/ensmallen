@@ -78,7 +78,7 @@ def MaayanFigeys(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MaayanFigeys",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

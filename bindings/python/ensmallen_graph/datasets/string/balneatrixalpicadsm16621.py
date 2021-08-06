@@ -88,7 +88,7 @@ def BalneatrixAlpicaDsm16621(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BalneatrixAlpicaDsm16621",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

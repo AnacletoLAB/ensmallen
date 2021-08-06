@@ -91,7 +91,7 @@ def PaenirhodobacterEnshiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenirhodobacterEnshiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

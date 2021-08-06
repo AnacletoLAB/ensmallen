@@ -88,7 +88,7 @@ def MycobacteriumParaense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumParaense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

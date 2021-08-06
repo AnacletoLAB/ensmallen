@@ -91,7 +91,7 @@ def VibrioEzurae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioEzurae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

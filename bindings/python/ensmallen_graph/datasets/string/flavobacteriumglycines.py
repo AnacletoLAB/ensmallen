@@ -88,7 +88,7 @@ def FlavobacteriumGlycines(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumGlycines",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

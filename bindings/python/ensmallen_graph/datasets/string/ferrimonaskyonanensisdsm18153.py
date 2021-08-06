@@ -88,7 +88,7 @@ def FerrimonasKyonanensisDsm18153(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FerrimonasKyonanensisDsm18153",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

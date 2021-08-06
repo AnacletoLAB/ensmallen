@@ -91,7 +91,7 @@ def DesulfovibrioDesulfuricansAtcc27774(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioDesulfuricansAtcc27774",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

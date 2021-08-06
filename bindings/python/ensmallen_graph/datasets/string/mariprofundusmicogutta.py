@@ -88,7 +88,7 @@ def MariprofundusMicogutta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MariprofundusMicogutta",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

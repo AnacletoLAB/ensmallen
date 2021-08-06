@@ -88,7 +88,7 @@ def PseudorhodoferaxSpLeaf274(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudorhodoferaxSpLeaf274",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

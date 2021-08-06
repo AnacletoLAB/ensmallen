@@ -91,7 +91,7 @@ def NocardioidesHalotolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardioidesHalotolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

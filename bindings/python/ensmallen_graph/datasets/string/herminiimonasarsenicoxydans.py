@@ -91,7 +91,7 @@ def HerminiimonasArsenicoxydans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HerminiimonasArsenicoxydans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

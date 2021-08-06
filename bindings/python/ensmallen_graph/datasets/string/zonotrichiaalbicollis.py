@@ -88,7 +88,7 @@ def ZonotrichiaAlbicollis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZonotrichiaAlbicollis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

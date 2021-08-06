@@ -88,7 +88,7 @@ def SmittiumMucronatum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SmittiumMucronatum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

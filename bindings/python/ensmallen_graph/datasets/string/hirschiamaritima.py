@@ -91,7 +91,7 @@ def HirschiaMaritima(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HirschiaMaritima",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

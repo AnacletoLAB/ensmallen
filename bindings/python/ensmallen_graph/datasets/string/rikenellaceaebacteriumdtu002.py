@@ -88,7 +88,7 @@ def RikenellaceaeBacteriumDtu002(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RikenellaceaeBacteriumDtu002",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

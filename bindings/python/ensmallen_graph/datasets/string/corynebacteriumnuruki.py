@@ -91,7 +91,7 @@ def CorynebacteriumNuruki(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumNuruki",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

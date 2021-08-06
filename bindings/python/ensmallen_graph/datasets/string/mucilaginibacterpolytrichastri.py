@@ -88,7 +88,7 @@ def MucilaginibacterPolytrichastri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MucilaginibacterPolytrichastri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

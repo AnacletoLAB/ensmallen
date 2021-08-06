@@ -88,7 +88,7 @@ def ComamonasTerrae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ComamonasTerrae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

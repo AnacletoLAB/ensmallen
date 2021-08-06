@@ -78,7 +78,7 @@ def Minnesota(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Minnesota",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

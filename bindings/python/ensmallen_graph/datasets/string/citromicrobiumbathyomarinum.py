@@ -91,7 +91,7 @@ def CitromicrobiumBathyomarinum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CitromicrobiumBathyomarinum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

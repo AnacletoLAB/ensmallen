@@ -88,7 +88,7 @@ def HalothiobacillusSpXi15(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalothiobacillusSpXi15",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

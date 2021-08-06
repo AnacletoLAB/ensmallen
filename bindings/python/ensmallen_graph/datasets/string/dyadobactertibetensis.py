@@ -91,7 +91,7 @@ def DyadobacterTibetensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DyadobacterTibetensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def EnterococcusDurans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterococcusDurans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

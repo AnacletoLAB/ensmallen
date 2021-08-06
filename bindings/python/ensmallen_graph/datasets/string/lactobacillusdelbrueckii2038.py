@@ -88,7 +88,7 @@ def LactobacillusDelbrueckii2038(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusDelbrueckii2038",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

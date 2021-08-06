@@ -91,7 +91,7 @@ def AnditaleaAndensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnditaleaAndensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

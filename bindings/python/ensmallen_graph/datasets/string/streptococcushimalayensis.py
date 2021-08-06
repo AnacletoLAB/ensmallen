@@ -88,7 +88,7 @@ def StreptococcusHimalayensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusHimalayensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

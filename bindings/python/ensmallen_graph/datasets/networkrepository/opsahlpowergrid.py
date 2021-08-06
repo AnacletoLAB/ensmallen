@@ -78,7 +78,7 @@ def OpsahlPowergrid(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OpsahlPowergrid",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

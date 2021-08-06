@@ -120,7 +120,7 @@ def SocfbAAnon(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbAAnon",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def DracunculusMedinensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DracunculusMedinensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def DeltaproteobacteriaBacteriumGwa25412(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DeltaproteobacteriaBacteriumGwa25412",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

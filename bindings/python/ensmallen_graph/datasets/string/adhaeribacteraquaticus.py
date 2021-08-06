@@ -91,7 +91,7 @@ def AdhaeribacterAquaticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AdhaeribacterAquaticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

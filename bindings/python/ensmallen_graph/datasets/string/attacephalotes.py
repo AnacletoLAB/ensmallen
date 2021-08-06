@@ -91,7 +91,7 @@ def AttaCephalotes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AttaCephalotes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

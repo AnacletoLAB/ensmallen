@@ -88,7 +88,7 @@ def DeefgeaRivuliDsm18356(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DeefgeaRivuliDsm18356",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SphingomonasTurrisvirgatae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingomonasTurrisvirgatae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

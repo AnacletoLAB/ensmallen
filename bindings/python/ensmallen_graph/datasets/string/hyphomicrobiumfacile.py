@@ -88,7 +88,7 @@ def HyphomicrobiumFacile(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HyphomicrobiumFacile",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

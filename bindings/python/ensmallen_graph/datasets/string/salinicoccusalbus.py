@@ -91,7 +91,7 @@ def SalinicoccusAlbus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinicoccusAlbus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

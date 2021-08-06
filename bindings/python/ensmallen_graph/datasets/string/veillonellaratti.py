@@ -91,7 +91,7 @@ def VeillonellaRatti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VeillonellaRatti",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

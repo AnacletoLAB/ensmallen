@@ -88,7 +88,7 @@ def DesulfacinumHydrothermaleDsm13146(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfacinumHydrothermaleDsm13146",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

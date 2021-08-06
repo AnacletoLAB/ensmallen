@@ -88,7 +88,7 @@ def ThermoflexibacterRuber(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermoflexibacterRuber",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

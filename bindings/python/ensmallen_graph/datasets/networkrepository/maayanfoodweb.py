@@ -78,7 +78,7 @@ def MaayanFoodweb(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MaayanFoodweb",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

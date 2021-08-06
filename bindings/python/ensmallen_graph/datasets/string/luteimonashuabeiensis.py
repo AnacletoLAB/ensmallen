@@ -91,7 +91,7 @@ def LuteimonasHuabeiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LuteimonasHuabeiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

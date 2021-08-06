@@ -88,7 +88,7 @@ def EpsilonproteobacteriaBacteriumTcs49(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EpsilonproteobacteriaBacteriumTcs49",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

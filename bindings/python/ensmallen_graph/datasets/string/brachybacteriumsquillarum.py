@@ -91,7 +91,7 @@ def BrachybacteriumSquillarum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrachybacteriumSquillarum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

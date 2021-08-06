@@ -91,7 +91,7 @@ def LeifsoniaAquatica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeifsoniaAquatica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

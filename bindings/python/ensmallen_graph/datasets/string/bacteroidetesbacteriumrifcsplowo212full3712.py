@@ -88,7 +88,7 @@ def BacteroidetesBacteriumRifcsplowo212Full3712(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidetesBacteriumRifcsplowo212Full3712",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

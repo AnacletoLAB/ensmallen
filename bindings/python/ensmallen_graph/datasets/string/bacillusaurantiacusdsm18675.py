@@ -88,7 +88,7 @@ def BacillusAurantiacusDsm18675(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusAurantiacusDsm18675",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

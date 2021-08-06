@@ -88,7 +88,7 @@ def VariovoraxSpPamc28711(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VariovoraxSpPamc28711",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def NitrospiraeBacteriumGwa24611(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrospiraeBacteriumGwa24611",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

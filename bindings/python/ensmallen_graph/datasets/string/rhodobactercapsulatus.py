@@ -91,7 +91,7 @@ def RhodobacterCapsulatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodobacterCapsulatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ThalassotaleaCrassostreae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThalassotaleaCrassostreae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

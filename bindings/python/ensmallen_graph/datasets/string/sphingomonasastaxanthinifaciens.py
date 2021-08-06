@@ -91,7 +91,7 @@ def SphingomonasAstaxanthinifaciens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingomonasAstaxanthinifaciens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

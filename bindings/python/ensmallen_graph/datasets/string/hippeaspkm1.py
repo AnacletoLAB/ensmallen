@@ -91,7 +91,7 @@ def HippeaSpKm1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HippeaSpKm1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -92,7 +92,7 @@ def Wing(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Wing",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

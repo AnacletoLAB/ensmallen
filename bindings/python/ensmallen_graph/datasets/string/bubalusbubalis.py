@@ -91,7 +91,7 @@ def BubalusBubalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BubalusBubalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

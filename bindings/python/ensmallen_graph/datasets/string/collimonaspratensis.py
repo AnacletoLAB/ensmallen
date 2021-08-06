@@ -88,7 +88,7 @@ def CollimonasPratensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CollimonasPratensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

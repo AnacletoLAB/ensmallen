@@ -91,7 +91,7 @@ def GilvimarinusChinensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GilvimarinusChinensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

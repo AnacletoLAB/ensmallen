@@ -78,7 +78,7 @@ def GottronExcellent(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GottronExcellent",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

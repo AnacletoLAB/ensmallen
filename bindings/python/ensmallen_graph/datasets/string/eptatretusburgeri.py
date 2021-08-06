@@ -88,7 +88,7 @@ def EptatretusBurgeri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EptatretusBurgeri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

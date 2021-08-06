@@ -91,7 +91,7 @@ def CorallococcusCoralloides(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorallococcusCoralloides",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

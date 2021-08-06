@@ -91,7 +91,7 @@ def DesulfurispirillumIndicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfurispirillumIndicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

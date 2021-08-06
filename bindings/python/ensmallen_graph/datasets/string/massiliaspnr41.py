@@ -88,7 +88,7 @@ def MassiliaSpNr41(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MassiliaSpNr41",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

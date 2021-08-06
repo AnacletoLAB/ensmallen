@@ -88,7 +88,7 @@ def PlanctomycetesBacteriumGwf2429(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlanctomycetesBacteriumGwf2429",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

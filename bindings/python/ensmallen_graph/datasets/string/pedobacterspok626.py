@@ -88,7 +88,7 @@ def PedobacterSpOk626(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PedobacterSpOk626",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

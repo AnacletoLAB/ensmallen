@@ -88,7 +88,7 @@ def StaphylococcusFleurettii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StaphylococcusFleurettii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

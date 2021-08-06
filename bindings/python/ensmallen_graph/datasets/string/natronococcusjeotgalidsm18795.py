@@ -88,7 +88,7 @@ def NatronococcusJeotgaliDsm18795(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NatronococcusJeotgaliDsm18795",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

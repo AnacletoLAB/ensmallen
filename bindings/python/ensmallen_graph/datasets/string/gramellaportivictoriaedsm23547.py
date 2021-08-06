@@ -88,7 +88,7 @@ def GramellaPortivictoriaeDsm23547(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GramellaPortivictoriaeDsm23547",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

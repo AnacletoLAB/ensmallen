@@ -88,7 +88,7 @@ def KocuriaVarians(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KocuriaVarians",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

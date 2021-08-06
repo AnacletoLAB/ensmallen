@@ -91,7 +91,7 @@ def RuminococcusCallidus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminococcusCallidus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SediminibacteriumSalmoneumNbrc103935(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SediminibacteriumSalmoneumNbrc103935",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

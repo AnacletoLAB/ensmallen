@@ -91,7 +91,7 @@ def BurkholderiaPseudomalleiAbcpw111(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BurkholderiaPseudomalleiAbcpw111",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SphingopyxisGranuli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingopyxisGranuli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

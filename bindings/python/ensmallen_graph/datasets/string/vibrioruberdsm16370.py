@@ -88,7 +88,7 @@ def VibrioRuberDsm16370(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioRuberDsm16370",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

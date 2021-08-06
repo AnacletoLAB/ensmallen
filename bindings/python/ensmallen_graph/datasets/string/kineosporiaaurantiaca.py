@@ -91,7 +91,7 @@ def KineosporiaAurantiaca(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KineosporiaAurantiaca",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

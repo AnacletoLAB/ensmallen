@@ -88,7 +88,7 @@ def PostiaPlacentaMad698R(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PostiaPlacentaMad698R",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

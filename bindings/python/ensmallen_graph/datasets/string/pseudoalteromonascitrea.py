@@ -91,7 +91,7 @@ def PseudoalteromonasCitrea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoalteromonasCitrea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

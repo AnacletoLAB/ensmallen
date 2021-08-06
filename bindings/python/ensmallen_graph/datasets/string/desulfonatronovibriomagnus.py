@@ -88,7 +88,7 @@ def DesulfonatronovibrioMagnus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfonatronovibrioMagnus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

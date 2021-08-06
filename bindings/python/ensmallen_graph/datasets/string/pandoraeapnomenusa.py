@@ -91,7 +91,7 @@ def PandoraeaPnomenusa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PandoraeaPnomenusa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

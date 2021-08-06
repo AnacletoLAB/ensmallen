@@ -88,7 +88,7 @@ def KlebsiellaPneumoniaeSubspPneumoniaeHs11286(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KlebsiellaPneumoniaeSubspPneumoniaeHs11286",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

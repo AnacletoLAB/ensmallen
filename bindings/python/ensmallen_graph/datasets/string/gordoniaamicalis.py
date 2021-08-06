@@ -91,7 +91,7 @@ def GordoniaAmicalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GordoniaAmicalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

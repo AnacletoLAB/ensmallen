@@ -91,7 +91,7 @@ def DesulfurococcusMucosus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfurococcusMucosus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

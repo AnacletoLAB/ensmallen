@@ -88,7 +88,7 @@ def SediminibacteriumGinsengisoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SediminibacteriumGinsengisoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

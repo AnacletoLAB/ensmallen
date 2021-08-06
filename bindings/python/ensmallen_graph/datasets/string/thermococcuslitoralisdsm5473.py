@@ -88,7 +88,7 @@ def ThermococcusLitoralisDsm5473(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermococcusLitoralisDsm5473",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

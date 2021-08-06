@@ -88,7 +88,7 @@ def DefluviitaleaPhaphyphila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DefluviitaleaPhaphyphila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

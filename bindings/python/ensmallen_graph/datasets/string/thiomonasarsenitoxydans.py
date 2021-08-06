@@ -91,7 +91,7 @@ def ThiomonasArsenitoxydans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThiomonasArsenitoxydans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

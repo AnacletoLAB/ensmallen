@@ -78,7 +78,7 @@ def Rw136(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Rw136",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

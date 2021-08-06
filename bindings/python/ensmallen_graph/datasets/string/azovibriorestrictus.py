@@ -91,7 +91,7 @@ def AzovibrioRestrictus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AzovibrioRestrictus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

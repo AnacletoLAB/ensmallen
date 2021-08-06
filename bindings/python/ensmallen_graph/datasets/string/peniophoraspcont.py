@@ -88,7 +88,7 @@ def PeniophoraSpCont(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeniophoraSpCont",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

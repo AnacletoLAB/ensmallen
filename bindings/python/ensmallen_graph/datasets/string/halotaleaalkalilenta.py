@@ -88,7 +88,7 @@ def HalotaleaAlkalilenta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalotaleaAlkalilenta",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

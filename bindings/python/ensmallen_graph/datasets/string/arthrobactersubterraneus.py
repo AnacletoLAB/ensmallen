@@ -88,7 +88,7 @@ def ArthrobacterSubterraneus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArthrobacterSubterraneus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

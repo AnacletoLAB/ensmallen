@@ -88,7 +88,7 @@ def ArmadillidiumVulgare(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArmadillidiumVulgare",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

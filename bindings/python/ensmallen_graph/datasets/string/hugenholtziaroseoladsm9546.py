@@ -88,7 +88,7 @@ def HugenholtziaRoseolaDsm9546(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HugenholtziaRoseolaDsm9546",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

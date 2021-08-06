@@ -88,7 +88,7 @@ def HaladaptatusSpR4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaladaptatusSpR4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

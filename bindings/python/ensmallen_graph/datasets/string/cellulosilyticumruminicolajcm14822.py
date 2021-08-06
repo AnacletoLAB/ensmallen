@@ -88,7 +88,7 @@ def CellulosilyticumRuminicolaJcm14822(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CellulosilyticumRuminicolaJcm14822",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AcremoniumChrysogenumAtcc11550(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcremoniumChrysogenumAtcc11550",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

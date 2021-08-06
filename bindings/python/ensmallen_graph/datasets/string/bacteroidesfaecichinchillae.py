@@ -88,7 +88,7 @@ def BacteroidesFaecichinchillae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesFaecichinchillae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -104,7 +104,7 @@ def CaMathscinetDir(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaMathscinetDir",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

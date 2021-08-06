@@ -88,7 +88,7 @@ def AmazonaAestiva(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmazonaAestiva",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

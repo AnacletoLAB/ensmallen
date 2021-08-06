@@ -88,7 +88,7 @@ def CaloranaerobacterFerrireducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaloranaerobacterFerrireducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

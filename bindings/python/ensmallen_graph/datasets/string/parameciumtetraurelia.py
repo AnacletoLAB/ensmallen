@@ -91,7 +91,7 @@ def ParameciumTetraurelia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParameciumTetraurelia",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

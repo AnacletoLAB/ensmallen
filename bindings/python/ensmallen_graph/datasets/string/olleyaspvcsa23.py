@@ -88,7 +88,7 @@ def OlleyaSpVcsa23(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OlleyaSpVcsa23",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

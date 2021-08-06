@@ -78,7 +78,7 @@ def Orkut(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Orkut",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AnaerolineaceaeBacterium457278(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerolineaceaeBacterium457278",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

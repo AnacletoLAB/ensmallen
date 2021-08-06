@@ -88,7 +88,7 @@ def ProvidenciaHeimbachae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProvidenciaHeimbachae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def Divorce(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Divorce",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

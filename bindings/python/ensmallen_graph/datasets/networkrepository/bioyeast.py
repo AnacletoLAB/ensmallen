@@ -92,7 +92,7 @@ def BioYeast(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BioYeast",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

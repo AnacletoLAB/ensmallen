@@ -88,7 +88,7 @@ def TrueperellaPyogenes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrueperellaPyogenes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

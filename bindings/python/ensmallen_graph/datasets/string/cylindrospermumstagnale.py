@@ -91,7 +91,7 @@ def CylindrospermumStagnale(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CylindrospermumStagnale",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

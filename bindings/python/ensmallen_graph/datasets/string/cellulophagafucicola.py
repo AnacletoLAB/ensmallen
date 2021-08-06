@@ -88,7 +88,7 @@ def CellulophagaFucicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CellulophagaFucicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

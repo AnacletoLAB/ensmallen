@@ -88,7 +88,7 @@ def XanthomonasMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XanthomonasMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

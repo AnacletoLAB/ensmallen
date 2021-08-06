@@ -91,7 +91,7 @@ def MyotisDavidii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MyotisDavidii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def VibrioAlginolyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioAlginolyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -100,7 +100,7 @@ def MiscLesmis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MiscLesmis",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

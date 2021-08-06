@@ -91,7 +91,7 @@ def ActinocatenisporaSera(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinocatenisporaSera",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

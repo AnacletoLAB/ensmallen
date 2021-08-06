@@ -88,7 +88,7 @@ def SnodgrassellaSpCfcc13594(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SnodgrassellaSpCfcc13594",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

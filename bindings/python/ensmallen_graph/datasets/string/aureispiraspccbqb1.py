@@ -91,7 +91,7 @@ def AureispiraSpCcbqb1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AureispiraSpCcbqb1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

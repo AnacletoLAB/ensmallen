@@ -91,7 +91,7 @@ def ActinopolysporaErythraea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinopolysporaErythraea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

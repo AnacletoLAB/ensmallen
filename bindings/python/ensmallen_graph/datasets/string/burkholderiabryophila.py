@@ -91,7 +91,7 @@ def BurkholderiaBryophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BurkholderiaBryophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

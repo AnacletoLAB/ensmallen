@@ -88,7 +88,7 @@ def ArmatimonadetesBacteriumJgi0000077K19(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArmatimonadetesBacteriumJgi0000077K19",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

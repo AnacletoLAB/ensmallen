@@ -88,7 +88,7 @@ def MicrogenomatesBacteriumUtcpr1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrogenomatesBacteriumUtcpr1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ChlamydiaAvium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlamydiaAvium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MycobacteriumChimaera(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumChimaera",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

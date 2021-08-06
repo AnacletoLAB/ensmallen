@@ -88,7 +88,7 @@ def MetallibacteriumScheffleri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MetallibacteriumScheffleri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

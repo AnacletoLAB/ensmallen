@@ -91,7 +91,7 @@ def SnodgrassellaAlvi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SnodgrassellaAlvi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def WeissellaKandleri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WeissellaKandleri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

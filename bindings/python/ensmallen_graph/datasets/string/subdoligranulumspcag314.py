@@ -88,7 +88,7 @@ def SubdoligranulumSpCag314(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SubdoligranulumSpCag314",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def NitrosomonasAestuarii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrosomonasAestuarii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

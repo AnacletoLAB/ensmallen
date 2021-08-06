@@ -88,7 +88,7 @@ def LimnobacterSpMed105(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LimnobacterSpMed105",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

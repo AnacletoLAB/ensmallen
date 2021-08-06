@@ -88,7 +88,7 @@ def CandidatusBacteroidesPeriocalifornicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusBacteroidesPeriocalifornicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

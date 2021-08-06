@@ -88,7 +88,7 @@ def SynchytriumMicrobalum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SynchytriumMicrobalum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

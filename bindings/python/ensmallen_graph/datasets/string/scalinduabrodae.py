@@ -91,7 +91,7 @@ def ScalinduaBrodae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ScalinduaBrodae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

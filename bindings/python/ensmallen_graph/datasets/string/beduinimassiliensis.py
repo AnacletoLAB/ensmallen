@@ -88,7 +88,7 @@ def BeduiniMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BeduiniMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ChromobacteriumSpLk11(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChromobacteriumSpLk11",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

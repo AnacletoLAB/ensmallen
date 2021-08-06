@@ -91,7 +91,7 @@ def MaribiusSpMola401(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MaribiusSpMola401",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

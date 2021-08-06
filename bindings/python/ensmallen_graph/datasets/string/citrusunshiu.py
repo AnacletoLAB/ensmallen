@@ -88,7 +88,7 @@ def CitrusUnshiu(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CitrusUnshiu",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

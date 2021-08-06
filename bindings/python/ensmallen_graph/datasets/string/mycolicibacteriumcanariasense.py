@@ -88,7 +88,7 @@ def MycolicibacteriumCanariasense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycolicibacteriumCanariasense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

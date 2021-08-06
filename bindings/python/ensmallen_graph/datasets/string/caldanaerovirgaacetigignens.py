@@ -88,7 +88,7 @@ def CaldanaerovirgaAcetigignens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaldanaerovirgaAcetigignens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

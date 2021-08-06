@@ -88,7 +88,7 @@ def NannocystisExedens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NannocystisExedens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -96,7 +96,7 @@ def SocTwitterMpiSws(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocTwitterMpiSws",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

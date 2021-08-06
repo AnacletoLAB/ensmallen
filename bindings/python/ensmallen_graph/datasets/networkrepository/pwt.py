@@ -78,7 +78,7 @@ def Pwt(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Pwt",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

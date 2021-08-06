@@ -88,7 +88,7 @@ def ScytonemaTolypothrichoidesVb61278(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ScytonemaTolypothrichoidesVb61278",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def NicotianaAttenuata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NicotianaAttenuata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

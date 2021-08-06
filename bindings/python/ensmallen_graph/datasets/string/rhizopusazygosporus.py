@@ -88,7 +88,7 @@ def RhizopusAzygosporus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizopusAzygosporus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

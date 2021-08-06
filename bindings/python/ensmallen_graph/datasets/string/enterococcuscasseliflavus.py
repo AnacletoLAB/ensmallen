@@ -91,7 +91,7 @@ def EnterococcusCasseliflavus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterococcusCasseliflavus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

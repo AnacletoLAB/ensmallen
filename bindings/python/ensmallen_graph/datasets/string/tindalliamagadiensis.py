@@ -88,7 +88,7 @@ def TindalliaMagadiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TindalliaMagadiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

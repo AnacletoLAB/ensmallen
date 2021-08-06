@@ -88,7 +88,7 @@ def ChlorellaSorokiniana(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlorellaSorokiniana",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

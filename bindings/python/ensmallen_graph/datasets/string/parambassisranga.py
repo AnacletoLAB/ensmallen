@@ -88,7 +88,7 @@ def ParambassisRanga(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParambassisRanga",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

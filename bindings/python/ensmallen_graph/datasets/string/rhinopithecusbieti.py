@@ -88,7 +88,7 @@ def RhinopithecusBieti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhinopithecusBieti",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

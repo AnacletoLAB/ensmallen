@@ -91,7 +91,7 @@ def PopulusTrichocarpa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PopulusTrichocarpa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def XylanimicrobiumPachnodaeJcm13526Nbrc107786(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XylanimicrobiumPachnodaeJcm13526Nbrc107786",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

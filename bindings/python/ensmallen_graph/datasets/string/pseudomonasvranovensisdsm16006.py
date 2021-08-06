@@ -88,7 +88,7 @@ def PseudomonasVranovensisDsm16006(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasVranovensisDsm16006",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

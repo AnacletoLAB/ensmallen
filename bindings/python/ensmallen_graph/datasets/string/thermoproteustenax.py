@@ -91,7 +91,7 @@ def ThermoproteusTenax(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermoproteusTenax",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

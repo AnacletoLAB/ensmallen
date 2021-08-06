@@ -91,7 +91,7 @@ def SerratiaFonticolaRb25(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SerratiaFonticolaRb25",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

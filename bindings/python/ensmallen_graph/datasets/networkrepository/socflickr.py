@@ -106,7 +106,7 @@ def SocFlickr(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocFlickr",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def BacteriumEbm40(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteriumEbm40",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

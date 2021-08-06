@@ -78,7 +78,7 @@ def ArenasMeta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArenasMeta",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

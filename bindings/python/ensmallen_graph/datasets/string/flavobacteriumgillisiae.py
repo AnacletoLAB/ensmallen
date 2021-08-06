@@ -88,7 +88,7 @@ def FlavobacteriumGillisiae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumGillisiae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

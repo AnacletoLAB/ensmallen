@@ -88,7 +88,7 @@ def BabjeviellaInositovoraNrrlY12698(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BabjeviellaInositovoraNrrlY12698",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

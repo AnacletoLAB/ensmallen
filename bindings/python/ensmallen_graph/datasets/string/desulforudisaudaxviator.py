@@ -91,7 +91,7 @@ def DesulforudisAudaxviator(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulforudisAudaxviator",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

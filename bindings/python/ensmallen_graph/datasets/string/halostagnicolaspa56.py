@@ -88,7 +88,7 @@ def HalostagnicolaSpA56(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalostagnicolaSpA56",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def HaliscomenobacterHydrossis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaliscomenobacterHydrossis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

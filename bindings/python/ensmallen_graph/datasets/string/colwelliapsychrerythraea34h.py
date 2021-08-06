@@ -88,7 +88,7 @@ def ColwelliaPsychrerythraea34h(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ColwelliaPsychrerythraea34h",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

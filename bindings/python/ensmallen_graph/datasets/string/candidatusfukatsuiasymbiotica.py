@@ -88,7 +88,7 @@ def CandidatusFukatsuiaSymbiotica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusFukatsuiaSymbiotica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

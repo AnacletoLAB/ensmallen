@@ -91,7 +91,7 @@ def HaloterrigenaLimicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaloterrigenaLimicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

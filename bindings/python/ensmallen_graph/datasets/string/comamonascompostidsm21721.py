@@ -88,7 +88,7 @@ def ComamonasCompostiDsm21721(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ComamonasCompostiDsm21721",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

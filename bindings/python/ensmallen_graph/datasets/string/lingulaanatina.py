@@ -88,7 +88,7 @@ def LingulaAnatina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LingulaAnatina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

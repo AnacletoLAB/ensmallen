@@ -88,7 +88,7 @@ def PapilioMachaon(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PapilioMachaon",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

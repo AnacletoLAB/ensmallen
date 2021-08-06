@@ -91,7 +91,7 @@ def PythonBivittatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PythonBivittatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

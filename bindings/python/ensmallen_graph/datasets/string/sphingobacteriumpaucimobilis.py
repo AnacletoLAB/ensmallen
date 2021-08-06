@@ -91,7 +91,7 @@ def SphingobacteriumPaucimobilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingobacteriumPaucimobilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

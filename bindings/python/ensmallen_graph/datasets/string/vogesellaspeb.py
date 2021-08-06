@@ -88,7 +88,7 @@ def VogesellaSpEb(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VogesellaSpEb",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

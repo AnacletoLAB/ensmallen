@@ -88,7 +88,7 @@ def CandidatusSulciaMuelleriSmdsem(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusSulciaMuelleriSmdsem",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def HalophilicArchaeonJ07hx64(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalophilicArchaeonJ07hx64",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PristionchusPacificus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PristionchusPacificus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

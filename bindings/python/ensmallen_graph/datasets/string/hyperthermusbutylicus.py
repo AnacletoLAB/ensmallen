@@ -91,7 +91,7 @@ def HyperthermusButylicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HyperthermusButylicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

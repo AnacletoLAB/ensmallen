@@ -88,7 +88,7 @@ def CrocodylusPorosus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CrocodylusPorosus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

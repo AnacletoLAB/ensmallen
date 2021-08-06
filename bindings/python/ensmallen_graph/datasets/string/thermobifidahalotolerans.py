@@ -88,7 +88,7 @@ def ThermobifidaHalotolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermobifidaHalotolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

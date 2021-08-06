@@ -88,7 +88,7 @@ def CyanidioschyzonMerolaeStrain10d(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CyanidioschyzonMerolaeStrain10d",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

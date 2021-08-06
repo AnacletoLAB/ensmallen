@@ -88,7 +88,7 @@ def EscherichiaColiO157H7StrSakai(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EscherichiaColiO157H7StrSakai",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

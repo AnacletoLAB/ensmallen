@@ -91,7 +91,7 @@ def MycobacteriumVulneris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumVulneris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CulturomicaMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CulturomicaMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

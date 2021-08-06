@@ -88,7 +88,7 @@ def RisungbinellaMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RisungbinellaMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

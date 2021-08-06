@@ -91,7 +91,7 @@ def AfipiaBirgiae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AfipiaBirgiae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ThiomicrorhabdusChilensisDsm12352(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThiomicrorhabdusChilensisDsm12352",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

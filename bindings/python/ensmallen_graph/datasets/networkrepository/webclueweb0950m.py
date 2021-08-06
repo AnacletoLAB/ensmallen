@@ -92,7 +92,7 @@ def WebClueweb0950m(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebClueweb0950m",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

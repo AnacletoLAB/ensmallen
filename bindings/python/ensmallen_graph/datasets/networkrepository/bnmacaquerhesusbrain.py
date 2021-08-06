@@ -102,7 +102,7 @@ def BNMacaqueRhesusBrain(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BNMacaqueRhesusBrain",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

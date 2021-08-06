@@ -88,7 +88,7 @@ def HerbiconiuxGinsengi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HerbiconiuxGinsengi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

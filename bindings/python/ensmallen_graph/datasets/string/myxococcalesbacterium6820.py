@@ -88,7 +88,7 @@ def MyxococcalesBacterium6820(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MyxococcalesBacterium6820",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

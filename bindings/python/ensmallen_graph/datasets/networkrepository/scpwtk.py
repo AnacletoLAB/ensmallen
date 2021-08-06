@@ -92,7 +92,7 @@ def ScPwtk(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ScPwtk",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

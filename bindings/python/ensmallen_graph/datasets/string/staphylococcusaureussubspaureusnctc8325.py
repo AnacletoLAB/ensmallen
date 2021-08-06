@@ -88,7 +88,7 @@ def StaphylococcusAureusSubspAureusNctc8325(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StaphylococcusAureusSubspAureusNctc8325",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

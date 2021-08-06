@@ -88,7 +88,7 @@ def NitrobacterVulgaris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrobacterVulgaris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

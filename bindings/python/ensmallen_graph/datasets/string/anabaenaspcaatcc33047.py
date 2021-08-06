@@ -88,7 +88,7 @@ def AnabaenaSpCaAtcc33047(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnabaenaSpCaAtcc33047",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

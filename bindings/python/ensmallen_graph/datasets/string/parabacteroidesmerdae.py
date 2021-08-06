@@ -91,7 +91,7 @@ def ParabacteroidesMerdae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParabacteroidesMerdae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

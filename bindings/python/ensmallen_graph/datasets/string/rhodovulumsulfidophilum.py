@@ -91,7 +91,7 @@ def RhodovulumSulfidophilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodovulumSulfidophilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def LentzeaAlbidocapillata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LentzeaAlbidocapillata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

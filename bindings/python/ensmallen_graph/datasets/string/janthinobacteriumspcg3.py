@@ -88,7 +88,7 @@ def JanthinobacteriumSpCg3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JanthinobacteriumSpCg3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

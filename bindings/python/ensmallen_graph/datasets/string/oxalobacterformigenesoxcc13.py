@@ -91,7 +91,7 @@ def OxalobacterFormigenesOxcc13(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OxalobacterFormigenesOxcc13",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

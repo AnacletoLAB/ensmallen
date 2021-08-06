@@ -88,7 +88,7 @@ def DoreaLongicatena(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DoreaLongicatena",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -120,7 +120,7 @@ def SocfbPrinceton12(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbPrinceton12",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

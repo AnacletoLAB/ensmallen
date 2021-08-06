@@ -91,7 +91,7 @@ def RoseomonasAerilata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseomonasAerilata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -104,7 +104,7 @@ def PHat15003(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PHat15003",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

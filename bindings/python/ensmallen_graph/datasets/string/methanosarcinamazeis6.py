@@ -88,7 +88,7 @@ def MethanosarcinaMazeiS6(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanosarcinaMazeiS6",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

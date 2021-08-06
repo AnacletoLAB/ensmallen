@@ -88,7 +88,7 @@ def MarmotaMarmotaMarmota(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarmotaMarmotaMarmota",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MycobacteriumSpYcRl4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumSpYcRl4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

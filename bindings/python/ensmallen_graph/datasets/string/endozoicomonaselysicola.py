@@ -91,7 +91,7 @@ def EndozoicomonasElysicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EndozoicomonasElysicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

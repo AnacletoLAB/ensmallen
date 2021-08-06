@@ -88,7 +88,7 @@ def MethanococcoidesVulcani(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanococcoidesVulcani",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

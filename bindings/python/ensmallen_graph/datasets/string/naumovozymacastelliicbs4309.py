@@ -88,7 +88,7 @@ def NaumovozymaCastelliiCbs4309(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NaumovozymaCastelliiCbs4309",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

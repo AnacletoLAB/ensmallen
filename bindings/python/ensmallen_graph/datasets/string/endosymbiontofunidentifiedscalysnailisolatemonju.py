@@ -88,7 +88,7 @@ def EndosymbiontOfUnidentifiedScalySnailIsolateMonju(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EndosymbiontOfUnidentifiedScalySnailIsolateMonju",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

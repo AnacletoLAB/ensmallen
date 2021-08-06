@@ -88,7 +88,7 @@ def PedosphaeraParvulaEllin514(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PedosphaeraParvulaEllin514",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

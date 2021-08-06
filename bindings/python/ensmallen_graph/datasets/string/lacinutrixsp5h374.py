@@ -91,7 +91,7 @@ def LacinutrixSp5h374(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LacinutrixSp5h374",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ActinobaculumSuis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinobaculumSuis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

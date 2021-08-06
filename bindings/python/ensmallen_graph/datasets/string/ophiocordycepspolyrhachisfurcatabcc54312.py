@@ -88,7 +88,7 @@ def OphiocordycepsPolyrhachisFurcataBcc54312(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OphiocordycepsPolyrhachisFurcataBcc54312",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def NicotianaTomentosiformis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NicotianaTomentosiformis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

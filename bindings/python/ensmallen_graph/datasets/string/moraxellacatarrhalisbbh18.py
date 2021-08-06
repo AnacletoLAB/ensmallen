@@ -88,7 +88,7 @@ def MoraxellaCatarrhalisBbh18(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MoraxellaCatarrhalisBbh18",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

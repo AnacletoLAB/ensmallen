@@ -91,7 +91,7 @@ def AnaerobiospirillumSucciniciproducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerobiospirillumSucciniciproducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

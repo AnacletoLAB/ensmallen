@@ -88,7 +88,7 @@ def LachnospiraceaeBacteriumXbb2008(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LachnospiraceaeBacteriumXbb2008",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

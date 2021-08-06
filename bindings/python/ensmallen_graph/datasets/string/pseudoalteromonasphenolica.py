@@ -88,7 +88,7 @@ def PseudoalteromonasPhenolica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoalteromonasPhenolica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

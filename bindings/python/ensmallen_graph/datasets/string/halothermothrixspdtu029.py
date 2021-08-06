@@ -88,7 +88,7 @@ def HalothermothrixSpDtu029(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalothermothrixSpDtu029",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

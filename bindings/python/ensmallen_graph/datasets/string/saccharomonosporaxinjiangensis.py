@@ -91,7 +91,7 @@ def SaccharomonosporaXinjiangensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SaccharomonosporaXinjiangensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

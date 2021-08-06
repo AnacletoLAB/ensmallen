@@ -91,7 +91,7 @@ def PropionibacteriaceaeBacteriumP6a17(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PropionibacteriaceaeBacteriumP6a17",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

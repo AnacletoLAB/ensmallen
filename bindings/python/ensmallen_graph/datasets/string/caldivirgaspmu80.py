@@ -88,7 +88,7 @@ def CaldivirgaSpMu80(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaldivirgaSpMu80",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

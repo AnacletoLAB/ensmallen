@@ -88,7 +88,7 @@ def LeptotrichiaGoodfellowiiDsm19756(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptotrichiaGoodfellowiiDsm19756",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

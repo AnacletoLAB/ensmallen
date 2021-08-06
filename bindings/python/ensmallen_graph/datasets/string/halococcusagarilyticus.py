@@ -88,7 +88,7 @@ def HalococcusAgarilyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalococcusAgarilyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

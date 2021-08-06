@@ -88,7 +88,7 @@ def MinicystisRosea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MinicystisRosea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def VittaformaCorneaeAtcc50505(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VittaformaCorneaeAtcc50505",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

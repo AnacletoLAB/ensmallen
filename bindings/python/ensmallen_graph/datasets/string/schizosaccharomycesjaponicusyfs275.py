@@ -88,7 +88,7 @@ def SchizosaccharomycesJaponicusYfs275(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SchizosaccharomycesJaponicusYfs275",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

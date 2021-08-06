@@ -88,7 +88,7 @@ def PeptostreptococcusRussellii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeptostreptococcusRussellii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

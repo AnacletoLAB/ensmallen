@@ -88,7 +88,7 @@ def VibrioSpQd031(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioSpQd031",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

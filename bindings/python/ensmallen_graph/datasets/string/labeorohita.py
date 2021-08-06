@@ -88,7 +88,7 @@ def LabeoRohita(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LabeoRohita",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CorynebacteriumCystitidisDsm20524(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumCystitidisDsm20524",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

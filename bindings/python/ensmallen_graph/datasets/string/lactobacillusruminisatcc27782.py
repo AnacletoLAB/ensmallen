@@ -91,7 +91,7 @@ def LactobacillusRuminisAtcc27782(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusRuminisAtcc27782",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

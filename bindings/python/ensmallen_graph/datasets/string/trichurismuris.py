@@ -88,7 +88,7 @@ def TrichurisMuris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichurisMuris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def BacillusMuralis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusMuralis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

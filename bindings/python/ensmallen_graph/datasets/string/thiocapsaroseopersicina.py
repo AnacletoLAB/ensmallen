@@ -88,7 +88,7 @@ def ThiocapsaRoseopersicina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThiocapsaRoseopersicina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

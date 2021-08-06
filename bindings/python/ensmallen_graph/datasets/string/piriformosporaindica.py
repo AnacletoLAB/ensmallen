@@ -91,7 +91,7 @@ def PiriformosporaIndica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PiriformosporaIndica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

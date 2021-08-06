@@ -88,7 +88,7 @@ def DomibacillusEnclensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DomibacillusEnclensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

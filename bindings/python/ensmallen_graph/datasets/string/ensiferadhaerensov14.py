@@ -88,7 +88,7 @@ def EnsiferAdhaerensOv14(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnsiferAdhaerensOv14",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

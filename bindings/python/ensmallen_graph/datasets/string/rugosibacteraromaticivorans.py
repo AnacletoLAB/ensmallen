@@ -88,7 +88,7 @@ def RugosibacterAromaticivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RugosibacterAromaticivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

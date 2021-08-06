@@ -88,7 +88,7 @@ def ClostridiumSpMarseilleP3244(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumSpMarseilleP3244",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

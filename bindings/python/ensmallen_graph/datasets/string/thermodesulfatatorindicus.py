@@ -91,7 +91,7 @@ def ThermodesulfatatorIndicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermodesulfatatorIndicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def FusariumFujikuroi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FusariumFujikuroi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

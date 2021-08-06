@@ -88,7 +88,7 @@ def SporomusaMalonica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SporomusaMalonica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

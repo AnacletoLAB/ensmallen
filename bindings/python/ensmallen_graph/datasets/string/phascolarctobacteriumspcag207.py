@@ -91,7 +91,7 @@ def PhascolarctobacteriumSpCag207(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhascolarctobacteriumSpCag207",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

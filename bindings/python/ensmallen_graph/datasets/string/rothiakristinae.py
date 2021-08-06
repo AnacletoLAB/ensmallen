@@ -88,7 +88,7 @@ def RothiaKristinae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RothiaKristinae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

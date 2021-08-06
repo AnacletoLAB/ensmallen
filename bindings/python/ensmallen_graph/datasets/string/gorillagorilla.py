@@ -91,7 +91,7 @@ def GorillaGorilla(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GorillaGorilla",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def CaHepph(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaHepph",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

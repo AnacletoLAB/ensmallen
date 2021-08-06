@@ -91,7 +91,7 @@ def ArthrobacterChlorophenolicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArthrobacterChlorophenolicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

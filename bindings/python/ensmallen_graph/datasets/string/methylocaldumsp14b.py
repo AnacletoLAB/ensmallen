@@ -88,7 +88,7 @@ def MethylocaldumSp14b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylocaldumSp14b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

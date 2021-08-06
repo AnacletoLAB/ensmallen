@@ -88,7 +88,7 @@ def HaemophilusPittmaniaeHk85(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaemophilusPittmaniaeHk85",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

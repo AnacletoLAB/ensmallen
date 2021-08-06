@@ -91,7 +91,7 @@ def PeptostreptococcaceaeBacteriumCm5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeptostreptococcaceaeBacteriumCm5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

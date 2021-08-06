@@ -91,7 +91,7 @@ def AtopobiumSpF0209(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AtopobiumSpF0209",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

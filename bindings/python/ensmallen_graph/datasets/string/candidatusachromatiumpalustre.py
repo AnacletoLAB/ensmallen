@@ -88,7 +88,7 @@ def CandidatusAchromatiumPalustre(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusAchromatiumPalustre",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

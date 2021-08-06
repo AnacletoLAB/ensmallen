@@ -88,7 +88,7 @@ def AspergillusArachidicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AspergillusArachidicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

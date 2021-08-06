@@ -91,7 +91,7 @@ def ThermococcusSibiricus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermococcusSibiricus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def SyntrophorhabdusAromaticivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SyntrophorhabdusAromaticivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

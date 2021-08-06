@@ -91,7 +91,7 @@ def NonlabensDokdonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NonlabensDokdonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

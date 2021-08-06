@@ -88,7 +88,7 @@ def StreptomycesIndicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesIndicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def KyrpidiaTusciae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KyrpidiaTusciae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

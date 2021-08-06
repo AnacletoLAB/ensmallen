@@ -88,7 +88,7 @@ def VirgibacillusSp6r(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VirgibacillusSp6r",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

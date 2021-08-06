@@ -91,7 +91,7 @@ def HymenobacterNorwichensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HymenobacterNorwichensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

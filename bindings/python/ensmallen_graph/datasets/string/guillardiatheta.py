@@ -91,7 +91,7 @@ def GuillardiaTheta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GuillardiaTheta",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

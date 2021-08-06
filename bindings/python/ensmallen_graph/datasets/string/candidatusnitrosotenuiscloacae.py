@@ -88,7 +88,7 @@ def CandidatusNitrosotenuisCloacae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusNitrosotenuisCloacae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

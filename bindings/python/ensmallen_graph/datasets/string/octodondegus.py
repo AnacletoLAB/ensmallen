@@ -91,7 +91,7 @@ def OctodonDegus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OctodonDegus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

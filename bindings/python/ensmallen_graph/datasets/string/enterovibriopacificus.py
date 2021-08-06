@@ -88,7 +88,7 @@ def EnterovibrioPacificus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterovibrioPacificus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

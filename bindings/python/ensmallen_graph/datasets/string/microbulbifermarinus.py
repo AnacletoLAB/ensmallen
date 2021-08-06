@@ -88,7 +88,7 @@ def MicrobulbiferMarinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobulbiferMarinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

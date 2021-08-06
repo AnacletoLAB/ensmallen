@@ -91,7 +91,7 @@ def SphaerochaetaCoccoides(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphaerochaetaCoccoides",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def VibrioCholeraeO395(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioCholeraeO395",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

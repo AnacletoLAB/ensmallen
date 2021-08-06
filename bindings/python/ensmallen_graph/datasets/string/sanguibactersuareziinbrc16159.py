@@ -88,7 +88,7 @@ def SanguibacterSuareziiNbrc16159(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SanguibacterSuareziiNbrc16159",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

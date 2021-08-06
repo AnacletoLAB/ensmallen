@@ -91,7 +91,7 @@ def BrachybacteriumFaecium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrachybacteriumFaecium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

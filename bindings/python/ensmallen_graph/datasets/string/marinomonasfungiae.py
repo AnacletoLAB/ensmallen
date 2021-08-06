@@ -88,7 +88,7 @@ def MarinomonasFungiae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinomonasFungiae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

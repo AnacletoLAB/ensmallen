@@ -88,7 +88,7 @@ def HypholomaSublateritiumFd334Ss4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HypholomaSublateritiumFd334Ss4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def DesulfovibrioLitoralisDsm11393(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioLitoralisDsm11393",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

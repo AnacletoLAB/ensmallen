@@ -91,7 +91,7 @@ def BifidobacteriumCallitrichos(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BifidobacteriumCallitrichos",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

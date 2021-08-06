@@ -88,7 +88,7 @@ def SchistosomaBovis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SchistosomaBovis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

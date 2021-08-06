@@ -91,7 +91,7 @@ def AnoxybacillusFlavithermusTno09006(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnoxybacillusFlavithermusTno09006",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

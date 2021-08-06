@@ -91,7 +91,7 @@ def MethylobacteriumRadiotolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylobacteriumRadiotolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

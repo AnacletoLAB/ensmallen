@@ -88,7 +88,7 @@ def CandidatusSabulitectumSilens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusSabulitectumSilens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ThalassiosiraPseudonana(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThalassiosiraPseudonana",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ChamaesiphonMinutus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChamaesiphonMinutus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

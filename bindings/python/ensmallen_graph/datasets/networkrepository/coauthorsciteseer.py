@@ -78,7 +78,7 @@ def Coauthorsciteseer(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Coauthorsciteseer",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

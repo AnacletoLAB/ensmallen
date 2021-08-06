@@ -88,7 +88,7 @@ def CuculusCanorus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CuculusCanorus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

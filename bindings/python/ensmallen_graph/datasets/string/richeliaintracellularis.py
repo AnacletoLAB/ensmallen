@@ -91,7 +91,7 @@ def RicheliaIntracellularis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RicheliaIntracellularis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

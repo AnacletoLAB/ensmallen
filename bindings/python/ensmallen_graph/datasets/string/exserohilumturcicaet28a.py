@@ -88,7 +88,7 @@ def ExserohilumTurcicaEt28a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ExserohilumTurcicaEt28a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

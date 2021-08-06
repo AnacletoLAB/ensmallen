@@ -88,7 +88,7 @@ def SphingopyxisTerraeSubspTerraeNbrc15098(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingopyxisTerraeSubspTerraeNbrc15098",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

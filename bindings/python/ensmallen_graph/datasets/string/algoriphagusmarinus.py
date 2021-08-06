@@ -88,7 +88,7 @@ def AlgoriphagusMarinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlgoriphagusMarinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

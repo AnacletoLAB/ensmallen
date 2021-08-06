@@ -88,7 +88,7 @@ def HaloactinobacteriumAlbum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaloactinobacteriumAlbum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

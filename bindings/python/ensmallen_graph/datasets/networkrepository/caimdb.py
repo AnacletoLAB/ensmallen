@@ -94,7 +94,7 @@ def CaImdb(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaImdb",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def GranulicellaMallensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GranulicellaMallensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

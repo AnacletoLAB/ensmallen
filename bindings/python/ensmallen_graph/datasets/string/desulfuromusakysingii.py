@@ -88,7 +88,7 @@ def DesulfuromusaKysingii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfuromusaKysingii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

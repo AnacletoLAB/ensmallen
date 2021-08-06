@@ -88,7 +88,7 @@ def DesulfosporosinusLacusDsm15449(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfosporosinusLacusDsm15449",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

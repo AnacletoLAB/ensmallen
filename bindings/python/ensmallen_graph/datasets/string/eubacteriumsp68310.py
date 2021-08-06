@@ -88,7 +88,7 @@ def EubacteriumSp68310(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EubacteriumSp68310",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

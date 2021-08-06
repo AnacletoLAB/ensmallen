@@ -88,7 +88,7 @@ def DesulfofustisGlycolicusDsm9705(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfofustisGlycolicusDsm9705",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

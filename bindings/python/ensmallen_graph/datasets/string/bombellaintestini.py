@@ -88,7 +88,7 @@ def BombellaIntestini(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BombellaIntestini",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

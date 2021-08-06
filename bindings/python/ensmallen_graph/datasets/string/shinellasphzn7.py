@@ -88,7 +88,7 @@ def ShinellaSpHzn7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShinellaSpHzn7",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def EubacteriumDolichum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EubacteriumDolichum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

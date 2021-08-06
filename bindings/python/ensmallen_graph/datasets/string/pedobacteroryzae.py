@@ -91,7 +91,7 @@ def PedobacterOryzae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PedobacterOryzae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

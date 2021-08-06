@@ -88,7 +88,7 @@ def ManacusVitellinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ManacusVitellinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

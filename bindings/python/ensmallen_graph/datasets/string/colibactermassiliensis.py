@@ -88,7 +88,7 @@ def ColibacterMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ColibacterMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

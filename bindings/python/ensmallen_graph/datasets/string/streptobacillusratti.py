@@ -88,7 +88,7 @@ def StreptobacillusRatti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptobacillusRatti",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

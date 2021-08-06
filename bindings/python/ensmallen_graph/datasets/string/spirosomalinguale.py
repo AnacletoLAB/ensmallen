@@ -91,7 +91,7 @@ def SpirosomaLinguale(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpirosomaLinguale",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

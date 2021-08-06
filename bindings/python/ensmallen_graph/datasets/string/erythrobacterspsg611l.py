@@ -88,7 +88,7 @@ def ErythrobacterSpSg611l(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErythrobacterSpSg611l",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

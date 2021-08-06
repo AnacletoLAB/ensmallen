@@ -88,7 +88,7 @@ def MethanopyrusKandleriAv19(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanopyrusKandleriAv19",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

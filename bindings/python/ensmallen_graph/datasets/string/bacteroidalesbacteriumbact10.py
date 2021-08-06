@@ -88,7 +88,7 @@ def BacteroidalesBacteriumBact10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidalesBacteriumBact10",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SynechococcusSpWh8020(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SynechococcusSpWh8020",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PlantibacterSpLeaf314(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlantibacterSpLeaf314",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ActinobacteriaBacteriumCaspActino5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinobacteriaBacteriumCaspActino5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

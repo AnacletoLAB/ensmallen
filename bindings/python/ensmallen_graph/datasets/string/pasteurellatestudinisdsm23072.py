@@ -88,7 +88,7 @@ def PasteurellaTestudinisDsm23072(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PasteurellaTestudinisDsm23072",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MucilaginibacterGossypiicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MucilaginibacterGossypiicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

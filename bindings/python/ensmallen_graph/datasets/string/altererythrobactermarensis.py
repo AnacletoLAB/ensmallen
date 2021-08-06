@@ -88,7 +88,7 @@ def AltererythrobacterMarensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AltererythrobacterMarensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

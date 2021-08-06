@@ -88,7 +88,7 @@ def EctothiorhodosinusMongolicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EctothiorhodosinusMongolicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

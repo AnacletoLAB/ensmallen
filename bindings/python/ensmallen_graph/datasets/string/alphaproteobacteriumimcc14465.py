@@ -91,7 +91,7 @@ def AlphaProteobacteriumImcc14465(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlphaProteobacteriumImcc14465",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

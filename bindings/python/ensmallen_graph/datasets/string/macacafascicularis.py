@@ -91,7 +91,7 @@ def MacacaFascicularis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MacacaFascicularis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

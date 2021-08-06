@@ -88,7 +88,7 @@ def MusPahari(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MusPahari",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

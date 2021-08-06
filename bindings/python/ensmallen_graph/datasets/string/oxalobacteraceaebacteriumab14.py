@@ -88,7 +88,7 @@ def OxalobacteraceaeBacteriumAb14(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OxalobacteraceaeBacteriumAb14",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

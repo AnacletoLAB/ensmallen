@@ -88,7 +88,7 @@ def PelagibacaAbyssi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PelagibacaAbyssi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

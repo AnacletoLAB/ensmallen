@@ -88,7 +88,7 @@ def PseudohongiellaNitratireducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudohongiellaNitratireducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

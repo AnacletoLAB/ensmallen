@@ -91,7 +91,7 @@ def CampylobacterSpMit975078(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterSpMit975078",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

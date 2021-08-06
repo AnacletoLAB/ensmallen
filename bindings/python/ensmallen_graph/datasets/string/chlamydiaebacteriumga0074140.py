@@ -88,7 +88,7 @@ def ChlamydiaeBacteriumGa0074140(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlamydiaeBacteriumGa0074140",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

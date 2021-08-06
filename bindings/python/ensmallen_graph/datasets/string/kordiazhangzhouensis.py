@@ -88,7 +88,7 @@ def KordiaZhangzhouensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KordiaZhangzhouensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

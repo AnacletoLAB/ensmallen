@@ -91,7 +91,7 @@ def AmycolatopsisNigrescens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmycolatopsisNigrescens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

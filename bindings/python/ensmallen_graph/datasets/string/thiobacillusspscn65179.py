@@ -88,7 +88,7 @@ def ThiobacillusSpScn65179(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThiobacillusSpScn65179",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

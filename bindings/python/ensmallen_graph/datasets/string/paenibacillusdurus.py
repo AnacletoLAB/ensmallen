@@ -91,7 +91,7 @@ def PaenibacillusDurus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillusDurus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

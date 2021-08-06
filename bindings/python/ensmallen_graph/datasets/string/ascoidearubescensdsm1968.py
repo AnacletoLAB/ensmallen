@@ -88,7 +88,7 @@ def AscoideaRubescensDsm1968(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AscoideaRubescensDsm1968",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

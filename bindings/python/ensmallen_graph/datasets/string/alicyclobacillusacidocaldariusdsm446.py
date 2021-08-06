@@ -91,7 +91,7 @@ def AlicyclobacillusAcidocaldariusDsm446(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlicyclobacillusAcidocaldariusDsm446",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

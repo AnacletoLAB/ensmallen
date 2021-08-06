@@ -88,7 +88,7 @@ def MalasseziaPachydermatis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MalasseziaPachydermatis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

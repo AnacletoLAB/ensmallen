@@ -91,7 +91,7 @@ def BacteroidesUniformis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesUniformis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

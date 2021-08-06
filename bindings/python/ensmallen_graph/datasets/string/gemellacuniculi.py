@@ -91,7 +91,7 @@ def GemellaCuniculi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GemellaCuniculi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

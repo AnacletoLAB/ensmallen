@@ -91,7 +91,7 @@ def NocardiopsisDassonvillei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardiopsisDassonvillei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

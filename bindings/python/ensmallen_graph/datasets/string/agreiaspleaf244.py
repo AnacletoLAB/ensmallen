@@ -88,7 +88,7 @@ def AgreiaSpLeaf244(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AgreiaSpLeaf244",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ColwelliaMytili(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ColwelliaMytili",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

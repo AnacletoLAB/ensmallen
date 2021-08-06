@@ -88,7 +88,7 @@ def LysobacterSpA03(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LysobacterSpA03",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

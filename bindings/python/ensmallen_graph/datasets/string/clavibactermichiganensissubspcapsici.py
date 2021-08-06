@@ -88,7 +88,7 @@ def ClavibacterMichiganensisSubspCapsici(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClavibacterMichiganensisSubspCapsici",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

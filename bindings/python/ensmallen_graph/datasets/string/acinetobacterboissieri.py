@@ -88,7 +88,7 @@ def AcinetobacterBoissieri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcinetobacterBoissieri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

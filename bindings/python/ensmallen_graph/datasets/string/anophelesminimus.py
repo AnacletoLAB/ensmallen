@@ -88,7 +88,7 @@ def AnophelesMinimus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnophelesMinimus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

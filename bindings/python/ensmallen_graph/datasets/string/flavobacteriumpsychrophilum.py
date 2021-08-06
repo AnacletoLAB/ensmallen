@@ -91,7 +91,7 @@ def FlavobacteriumPsychrophilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumPsychrophilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

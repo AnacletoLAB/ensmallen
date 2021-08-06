@@ -91,7 +91,7 @@ def LewinellaCohaerens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LewinellaCohaerens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

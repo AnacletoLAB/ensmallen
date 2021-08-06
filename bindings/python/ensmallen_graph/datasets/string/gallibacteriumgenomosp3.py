@@ -88,7 +88,7 @@ def GallibacteriumGenomosp3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GallibacteriumGenomosp3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

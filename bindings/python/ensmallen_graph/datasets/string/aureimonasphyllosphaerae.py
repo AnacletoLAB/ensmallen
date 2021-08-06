@@ -88,7 +88,7 @@ def AureimonasPhyllosphaerae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AureimonasPhyllosphaerae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ActinomaduraFlavalba(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomaduraFlavalba",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

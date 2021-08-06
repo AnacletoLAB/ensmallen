@@ -88,7 +88,7 @@ def BacillusGalactosidilyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusGalactosidilyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

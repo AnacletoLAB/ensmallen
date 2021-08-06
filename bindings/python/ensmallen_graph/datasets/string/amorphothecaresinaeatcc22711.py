@@ -88,7 +88,7 @@ def AmorphothecaResinaeAtcc22711(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmorphothecaResinaeAtcc22711",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def CeleribacterBaekdonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CeleribacterBaekdonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

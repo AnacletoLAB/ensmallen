@@ -91,7 +91,7 @@ def RuminococcusLactaris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminococcusLactaris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

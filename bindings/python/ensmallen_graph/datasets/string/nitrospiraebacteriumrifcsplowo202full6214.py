@@ -88,7 +88,7 @@ def NitrospiraeBacteriumRifcsplowo202Full6214(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrospiraeBacteriumRifcsplowo202Full6214",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

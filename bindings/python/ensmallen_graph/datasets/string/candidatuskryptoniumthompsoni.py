@@ -88,7 +88,7 @@ def CandidatusKryptoniumThompsoni(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusKryptoniumThompsoni",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

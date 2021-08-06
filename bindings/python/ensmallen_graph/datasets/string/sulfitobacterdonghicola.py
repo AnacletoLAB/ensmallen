@@ -91,7 +91,7 @@ def SulfitobacterDonghicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfitobacterDonghicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

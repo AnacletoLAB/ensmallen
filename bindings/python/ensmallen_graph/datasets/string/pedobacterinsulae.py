@@ -88,7 +88,7 @@ def PedobacterInsulae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PedobacterInsulae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PseudoalteromonasSp520p1No423(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoalteromonasSp520p1No423",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

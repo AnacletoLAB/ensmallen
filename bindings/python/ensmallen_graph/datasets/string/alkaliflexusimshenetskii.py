@@ -91,7 +91,7 @@ def AlkaliflexusImshenetskii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlkaliflexusImshenetskii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

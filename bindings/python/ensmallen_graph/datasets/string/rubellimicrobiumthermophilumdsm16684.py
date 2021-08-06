@@ -88,7 +88,7 @@ def RubellimicrobiumThermophilumDsm16684(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RubellimicrobiumThermophilumDsm16684",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

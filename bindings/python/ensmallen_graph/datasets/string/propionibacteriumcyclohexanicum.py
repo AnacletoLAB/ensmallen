@@ -88,7 +88,7 @@ def PropionibacteriumCyclohexanicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PropionibacteriumCyclohexanicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

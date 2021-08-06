@@ -88,7 +88,7 @@ def KrasilnikoviellaFlava(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KrasilnikoviellaFlava",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

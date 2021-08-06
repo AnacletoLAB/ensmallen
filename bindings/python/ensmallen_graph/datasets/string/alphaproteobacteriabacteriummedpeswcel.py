@@ -88,7 +88,7 @@ def AlphaproteobacteriaBacteriumMedpeSwcel(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlphaproteobacteriaBacteriumMedpeSwcel",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

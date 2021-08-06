@@ -91,7 +91,7 @@ def KordiimonasGwangyangensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KordiimonasGwangyangensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

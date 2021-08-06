@@ -88,7 +88,7 @@ def StenotrophomonasPanacihumi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StenotrophomonasPanacihumi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

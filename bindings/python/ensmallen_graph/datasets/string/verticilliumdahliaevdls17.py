@@ -88,7 +88,7 @@ def VerticilliumDahliaeVdls17(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VerticilliumDahliaeVdls17",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

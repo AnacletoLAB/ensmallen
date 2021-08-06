@@ -88,7 +88,7 @@ def MizugakiibacterSediminis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MizugakiibacterSediminis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

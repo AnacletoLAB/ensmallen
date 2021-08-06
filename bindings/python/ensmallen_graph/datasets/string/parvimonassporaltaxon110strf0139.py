@@ -88,7 +88,7 @@ def ParvimonasSpOralTaxon110StrF0139(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParvimonasSpOralTaxon110StrF0139",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

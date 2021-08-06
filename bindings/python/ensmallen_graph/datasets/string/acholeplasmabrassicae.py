@@ -88,7 +88,7 @@ def AcholeplasmaBrassicae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcholeplasmaBrassicae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

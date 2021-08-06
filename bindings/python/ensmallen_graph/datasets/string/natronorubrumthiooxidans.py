@@ -88,7 +88,7 @@ def NatronorubrumThiooxidans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NatronorubrumThiooxidans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MarivivensSpJlt3646(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarivivensSpJlt3646",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

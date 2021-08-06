@@ -91,7 +91,7 @@ def StenotrophomonasMaltophiliaPml168(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StenotrophomonasMaltophiliaPml168",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

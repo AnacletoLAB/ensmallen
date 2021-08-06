@@ -88,7 +88,7 @@ def SerratiaRubidaea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SerratiaRubidaea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -120,7 +120,7 @@ def SocfbNorthwestern25(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbNorthwestern25",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

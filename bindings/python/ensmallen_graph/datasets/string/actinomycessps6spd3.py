@@ -91,7 +91,7 @@ def ActinomycesSpS6spd3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomycesSpS6spd3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

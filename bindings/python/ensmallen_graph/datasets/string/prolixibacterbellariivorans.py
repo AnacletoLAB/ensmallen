@@ -91,7 +91,7 @@ def ProlixibacterBellariivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProlixibacterBellariivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

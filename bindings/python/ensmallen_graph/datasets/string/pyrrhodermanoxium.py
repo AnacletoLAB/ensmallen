@@ -88,7 +88,7 @@ def PyrrhodermaNoxium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PyrrhodermaNoxium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

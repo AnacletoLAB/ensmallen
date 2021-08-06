@@ -91,7 +91,7 @@ def HelleaBalneolensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelleaBalneolensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

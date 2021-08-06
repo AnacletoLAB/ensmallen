@@ -91,7 +91,7 @@ def RoseburiaHominis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseburiaHominis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def EdwardsiellaTarda(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EdwardsiellaTarda",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

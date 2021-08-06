@@ -91,7 +91,7 @@ def PseudomonasStutzeriSdmlac(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasStutzeriSdmlac",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

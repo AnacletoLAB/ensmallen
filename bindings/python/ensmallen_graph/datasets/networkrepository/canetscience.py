@@ -100,7 +100,7 @@ def CaNetscience(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaNetscience",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

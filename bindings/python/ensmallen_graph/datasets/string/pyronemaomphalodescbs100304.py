@@ -88,7 +88,7 @@ def PyronemaOmphalodesCbs100304(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PyronemaOmphalodesCbs100304",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

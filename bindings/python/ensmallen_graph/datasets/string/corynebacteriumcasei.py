@@ -91,7 +91,7 @@ def CorynebacteriumCasei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumCasei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

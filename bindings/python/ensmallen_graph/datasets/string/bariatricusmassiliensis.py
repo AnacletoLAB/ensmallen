@@ -88,7 +88,7 @@ def BariatricusMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BariatricusMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

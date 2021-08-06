@@ -88,7 +88,7 @@ def AcidobacteriaBacteriumScn6937(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidobacteriaBacteriumScn6937",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

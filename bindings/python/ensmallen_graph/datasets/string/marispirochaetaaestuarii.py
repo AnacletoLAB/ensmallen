@@ -88,7 +88,7 @@ def MarispirochaetaAestuarii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarispirochaetaAestuarii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

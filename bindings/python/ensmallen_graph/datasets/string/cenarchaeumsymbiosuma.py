@@ -88,7 +88,7 @@ def CenarchaeumSymbiosumA(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CenarchaeumSymbiosumA",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

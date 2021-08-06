@@ -88,7 +88,7 @@ def MarinobacteriumRhizophilumDsm18822(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinobacteriumRhizophilumDsm18822",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ParacoccusIsoporae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParacoccusIsoporae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

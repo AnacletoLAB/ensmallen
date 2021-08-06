@@ -91,7 +91,7 @@ def ActinopolysporaMortivallis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinopolysporaMortivallis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

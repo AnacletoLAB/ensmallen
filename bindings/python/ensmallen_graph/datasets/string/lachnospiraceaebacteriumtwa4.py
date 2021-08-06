@@ -88,7 +88,7 @@ def LachnospiraceaeBacteriumTwa4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LachnospiraceaeBacteriumTwa4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def LeclerciaAdecarboxylata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeclerciaAdecarboxylata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

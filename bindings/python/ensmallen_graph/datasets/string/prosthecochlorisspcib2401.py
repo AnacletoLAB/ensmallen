@@ -88,7 +88,7 @@ def ProsthecochlorisSpCib2401(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProsthecochlorisSpCib2401",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

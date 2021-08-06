@@ -88,7 +88,7 @@ def OpitutaceaeBacteriumTsb47(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OpitutaceaeBacteriumTsb47",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

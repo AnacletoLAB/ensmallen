@@ -88,7 +88,7 @@ def PrevotellaBaroniaeDsm16972Jcm13447(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaBaroniaeDsm16972Jcm13447",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

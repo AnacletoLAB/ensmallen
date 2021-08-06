@@ -88,7 +88,7 @@ def MeliponaQuadrifasciata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MeliponaQuadrifasciata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

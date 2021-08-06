@@ -88,7 +88,7 @@ def PseudonajaTextilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudonajaTextilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

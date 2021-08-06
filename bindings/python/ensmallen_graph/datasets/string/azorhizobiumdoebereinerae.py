@@ -91,7 +91,7 @@ def AzorhizobiumDoebereinerae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AzorhizobiumDoebereinerae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

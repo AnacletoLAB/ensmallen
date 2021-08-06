@@ -88,7 +88,7 @@ def MicrodochiumBolleyi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrodochiumBolleyi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

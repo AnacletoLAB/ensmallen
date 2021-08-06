@@ -88,7 +88,7 @@ def FusariumSpAf8(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FusariumSpAf8",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

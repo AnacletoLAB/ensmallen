@@ -88,7 +88,7 @@ def LimnohabitansPlanktonicusIiD5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LimnohabitansPlanktonicusIiD5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

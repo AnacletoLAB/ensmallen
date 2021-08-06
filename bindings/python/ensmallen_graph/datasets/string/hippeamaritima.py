@@ -91,7 +91,7 @@ def HippeaMaritima(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HippeaMaritima",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SutterellaSpCag521(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SutterellaSpCag521",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

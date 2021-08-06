@@ -88,7 +88,7 @@ def SphingomonadalesBacteriumGa0077559(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingomonadalesBacteriumGa0077559",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

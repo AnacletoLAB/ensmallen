@@ -88,7 +88,7 @@ def AeromicrobiumSpRoot236(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AeromicrobiumSpRoot236",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

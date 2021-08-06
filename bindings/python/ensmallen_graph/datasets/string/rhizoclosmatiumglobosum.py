@@ -88,7 +88,7 @@ def RhizoclosmatiumGlobosum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizoclosmatiumGlobosum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

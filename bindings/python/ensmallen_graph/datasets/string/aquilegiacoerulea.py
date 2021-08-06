@@ -91,7 +91,7 @@ def AquilegiaCoerulea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AquilegiaCoerulea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

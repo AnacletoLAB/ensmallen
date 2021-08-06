@@ -91,7 +91,7 @@ def CucumisMelo(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CucumisMelo",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

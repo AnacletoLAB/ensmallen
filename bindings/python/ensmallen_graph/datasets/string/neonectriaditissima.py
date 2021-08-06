@@ -88,7 +88,7 @@ def NeonectriaDitissima(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeonectriaDitissima",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

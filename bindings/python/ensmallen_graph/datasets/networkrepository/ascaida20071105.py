@@ -78,7 +78,7 @@ def AsCaida20071105(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AsCaida20071105",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

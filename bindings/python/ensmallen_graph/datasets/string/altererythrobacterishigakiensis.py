@@ -88,7 +88,7 @@ def AltererythrobacterIshigakiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AltererythrobacterIshigakiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

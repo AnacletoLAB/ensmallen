@@ -88,7 +88,7 @@ def IgnavibacteriaBacteriumCg1023735(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IgnavibacteriaBacteriumCg1023735",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

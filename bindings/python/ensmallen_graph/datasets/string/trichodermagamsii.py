@@ -88,7 +88,7 @@ def TrichodermaGamsii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichodermaGamsii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

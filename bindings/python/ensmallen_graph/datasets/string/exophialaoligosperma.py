@@ -88,7 +88,7 @@ def ExophialaOligosperma(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ExophialaOligosperma",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

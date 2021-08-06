@@ -88,7 +88,7 @@ def SphingobiumChungbukense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingobiumChungbukense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def EscherichiaSpTw09308(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EscherichiaSpTw09308",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

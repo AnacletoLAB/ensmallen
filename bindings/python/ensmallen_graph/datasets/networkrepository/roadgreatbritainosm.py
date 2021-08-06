@@ -78,7 +78,7 @@ def RoadGreatBritainOsm(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoadGreatBritainOsm",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

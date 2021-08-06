@@ -91,7 +91,7 @@ def HaemophilusSomnus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaemophilusSomnus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

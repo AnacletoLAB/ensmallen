@@ -88,7 +88,7 @@ def Sar116Cluster(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Sar116Cluster",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

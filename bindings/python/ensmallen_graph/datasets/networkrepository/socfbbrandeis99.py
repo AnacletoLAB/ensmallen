@@ -120,7 +120,7 @@ def SocfbBrandeis99(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbBrandeis99",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

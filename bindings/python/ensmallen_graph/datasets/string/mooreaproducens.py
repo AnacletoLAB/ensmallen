@@ -91,7 +91,7 @@ def MooreaProducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MooreaProducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

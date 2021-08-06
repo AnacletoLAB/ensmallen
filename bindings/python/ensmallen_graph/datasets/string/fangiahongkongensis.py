@@ -91,7 +91,7 @@ def FangiaHongkongensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FangiaHongkongensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def EpilithonimonasTenax(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EpilithonimonasTenax",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

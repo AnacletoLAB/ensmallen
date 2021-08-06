@@ -88,7 +88,7 @@ def PaenibacillusXylanexedens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillusXylanexedens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

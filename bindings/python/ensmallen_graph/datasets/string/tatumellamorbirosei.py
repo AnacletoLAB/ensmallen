@@ -91,7 +91,7 @@ def TatumellaMorbirosei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TatumellaMorbirosei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CandidatusThiodiazotrophaEndolucinida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusThiodiazotrophaEndolucinida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def SchizosaccharomycesJaponicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SchizosaccharomycesJaponicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

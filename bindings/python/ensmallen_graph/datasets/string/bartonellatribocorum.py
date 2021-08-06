@@ -91,7 +91,7 @@ def BartonellaTribocorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BartonellaTribocorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

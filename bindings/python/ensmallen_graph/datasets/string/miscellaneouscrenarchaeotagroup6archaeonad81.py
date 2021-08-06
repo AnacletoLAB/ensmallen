@@ -88,7 +88,7 @@ def MiscellaneousCrenarchaeotaGroup6ArchaeonAd81(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MiscellaneousCrenarchaeotaGroup6ArchaeonAd81",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

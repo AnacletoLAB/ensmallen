@@ -88,7 +88,7 @@ def RhizobacterGummiphilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizobacterGummiphilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

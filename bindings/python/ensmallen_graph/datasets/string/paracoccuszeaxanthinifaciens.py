@@ -91,7 +91,7 @@ def ParacoccusZeaxanthinifaciens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParacoccusZeaxanthinifaciens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

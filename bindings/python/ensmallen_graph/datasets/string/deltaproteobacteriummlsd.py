@@ -88,7 +88,7 @@ def DeltaProteobacteriumMlsD(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DeltaProteobacteriumMlsD",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

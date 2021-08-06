@@ -88,7 +88,7 @@ def AcetobacteriumBakii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcetobacteriumBakii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

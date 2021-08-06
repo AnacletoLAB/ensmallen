@@ -88,7 +88,7 @@ def OblitimonasAlkaliphila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OblitimonasAlkaliphila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

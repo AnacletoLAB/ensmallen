@@ -88,7 +88,7 @@ def CapsicumAnnuum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CapsicumAnnuum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def RhodomicrobiumVannielii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodomicrobiumVannielii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

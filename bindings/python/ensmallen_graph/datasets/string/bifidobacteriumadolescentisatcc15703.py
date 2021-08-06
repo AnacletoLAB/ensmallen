@@ -88,7 +88,7 @@ def BifidobacteriumAdolescentisAtcc15703(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BifidobacteriumAdolescentisAtcc15703",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def LuteitaleaPratensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LuteitaleaPratensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def KnoelliaSpSoil729(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KnoelliaSpSoil729",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

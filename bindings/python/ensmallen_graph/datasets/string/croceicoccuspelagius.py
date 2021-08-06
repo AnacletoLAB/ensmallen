@@ -88,7 +88,7 @@ def CroceicoccusPelagius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CroceicoccusPelagius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def BipolarisOryzae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BipolarisOryzae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

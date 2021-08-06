@@ -91,7 +91,7 @@ def ArabidopsisLyrata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArabidopsisLyrata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

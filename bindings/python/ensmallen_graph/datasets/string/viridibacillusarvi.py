@@ -88,7 +88,7 @@ def ViridibacillusArvi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ViridibacillusArvi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

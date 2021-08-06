@@ -91,7 +91,7 @@ def CaldicellulosiruptorBescii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaldicellulosiruptorBescii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

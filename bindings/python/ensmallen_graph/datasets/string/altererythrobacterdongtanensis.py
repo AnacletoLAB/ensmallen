@@ -88,7 +88,7 @@ def AltererythrobacterDongtanensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AltererythrobacterDongtanensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

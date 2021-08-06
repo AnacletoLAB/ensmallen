@@ -88,7 +88,7 @@ def TreponemaBerlinense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TreponemaBerlinense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

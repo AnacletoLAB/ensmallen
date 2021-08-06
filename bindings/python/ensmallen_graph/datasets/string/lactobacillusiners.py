@@ -91,7 +91,7 @@ def LactobacillusIners(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusIners",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

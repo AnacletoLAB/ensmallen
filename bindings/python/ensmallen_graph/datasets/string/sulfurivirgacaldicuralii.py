@@ -88,7 +88,7 @@ def SulfurivirgaCaldicuralii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfurivirgaCaldicuralii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def NonomuraeaWenchangensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NonomuraeaWenchangensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

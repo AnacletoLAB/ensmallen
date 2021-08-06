@@ -88,7 +88,7 @@ def MarinactinosporaThermotoleransDsm45154(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinactinosporaThermotoleransDsm45154",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def FusariumOxysporumFo5176(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FusariumOxysporumFo5176",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

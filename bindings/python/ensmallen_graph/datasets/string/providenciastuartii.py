@@ -91,7 +91,7 @@ def ProvidenciaStuartii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProvidenciaStuartii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

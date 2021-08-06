@@ -88,7 +88,7 @@ def VibrioPonticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioPonticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

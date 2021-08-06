@@ -78,7 +78,7 @@ def Epa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Epa",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

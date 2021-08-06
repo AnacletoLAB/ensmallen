@@ -88,7 +88,7 @@ def LactobacillusBrantaeDsm23927(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusBrantaeDsm23927",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def BurkholderiaFerrariae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BurkholderiaFerrariae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def MegamonasHypermegale(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MegamonasHypermegale",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

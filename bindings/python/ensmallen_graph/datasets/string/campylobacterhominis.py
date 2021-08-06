@@ -91,7 +91,7 @@ def CampylobacterHominis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterHominis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

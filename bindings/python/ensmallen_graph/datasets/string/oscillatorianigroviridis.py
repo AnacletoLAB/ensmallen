@@ -91,7 +91,7 @@ def OscillatoriaNigroviridis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OscillatoriaNigroviridis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

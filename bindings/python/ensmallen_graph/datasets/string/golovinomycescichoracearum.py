@@ -88,7 +88,7 @@ def GolovinomycesCichoracearum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GolovinomycesCichoracearum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

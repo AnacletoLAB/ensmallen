@@ -91,7 +91,7 @@ def RhizobiumUndicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizobiumUndicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

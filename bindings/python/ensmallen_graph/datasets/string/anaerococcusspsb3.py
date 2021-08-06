@@ -88,7 +88,7 @@ def AnaerococcusSpSb3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerococcusSpSb3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

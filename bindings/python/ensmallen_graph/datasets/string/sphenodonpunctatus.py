@@ -88,7 +88,7 @@ def SphenodonPunctatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphenodonPunctatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

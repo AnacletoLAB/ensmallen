@@ -91,7 +91,7 @@ def ArabidopsisThaliana(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArabidopsisThaliana",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

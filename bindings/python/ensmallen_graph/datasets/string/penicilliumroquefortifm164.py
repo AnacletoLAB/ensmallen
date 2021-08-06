@@ -88,7 +88,7 @@ def PenicilliumRoquefortiFm164(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PenicilliumRoquefortiFm164",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

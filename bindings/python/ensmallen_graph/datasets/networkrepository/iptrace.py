@@ -78,7 +78,7 @@ def IpTrace(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IpTrace",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

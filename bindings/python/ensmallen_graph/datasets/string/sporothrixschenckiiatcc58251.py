@@ -88,7 +88,7 @@ def SporothrixSchenckiiAtcc58251(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SporothrixSchenckiiAtcc58251",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

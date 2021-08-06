@@ -91,7 +91,7 @@ def ThermotogaNeapolitana(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermotogaNeapolitana",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

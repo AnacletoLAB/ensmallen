@@ -91,7 +91,7 @@ def GordoniaAlkanivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GordoniaAlkanivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def TrichococcusPalustris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichococcusPalustris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

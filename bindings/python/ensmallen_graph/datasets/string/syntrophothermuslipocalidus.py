@@ -91,7 +91,7 @@ def SyntrophothermusLipocalidus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SyntrophothermusLipocalidus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

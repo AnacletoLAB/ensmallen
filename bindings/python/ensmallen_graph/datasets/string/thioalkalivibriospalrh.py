@@ -88,7 +88,7 @@ def ThioalkalivibrioSpAlrh(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThioalkalivibrioSpAlrh",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

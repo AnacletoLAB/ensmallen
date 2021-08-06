@@ -78,7 +78,7 @@ def Opt1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Opt1",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

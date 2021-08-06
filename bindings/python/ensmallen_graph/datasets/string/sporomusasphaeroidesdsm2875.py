@@ -88,7 +88,7 @@ def SporomusaSphaeroidesDsm2875(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SporomusaSphaeroidesDsm2875",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

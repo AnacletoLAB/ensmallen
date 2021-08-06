@@ -88,7 +88,7 @@ def ConidiobolusCoronatusNrrl28638(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ConidiobolusCoronatusNrrl28638",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

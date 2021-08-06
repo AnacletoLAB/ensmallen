@@ -88,7 +88,7 @@ def EpulopisciumSpScgB11wgaEpuloa1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EpulopisciumSpScgB11wgaEpuloa1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

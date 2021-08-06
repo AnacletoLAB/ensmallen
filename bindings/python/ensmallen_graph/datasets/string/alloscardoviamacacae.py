@@ -88,7 +88,7 @@ def AlloscardoviaMacacae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlloscardoviaMacacae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

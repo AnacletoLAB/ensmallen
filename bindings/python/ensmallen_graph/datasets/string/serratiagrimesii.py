@@ -91,7 +91,7 @@ def SerratiaGrimesii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SerratiaGrimesii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def KosmotogaArenicorallinaS304(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KosmotogaArenicorallinaS304",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

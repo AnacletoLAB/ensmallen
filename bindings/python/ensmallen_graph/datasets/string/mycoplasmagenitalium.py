@@ -91,7 +91,7 @@ def MycoplasmaGenitalium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaGenitalium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

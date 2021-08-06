@@ -88,7 +88,7 @@ def AltererythrobacterEpoxidivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AltererythrobacterEpoxidivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SecondaryEndosymbiontOfCtenarytainaEucalypti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SecondaryEndosymbiontOfCtenarytainaEucalypti",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def VibrioMediterranei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioMediterranei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

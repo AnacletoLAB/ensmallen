@@ -88,7 +88,7 @@ def LachnoanaerobaculumSpObrc55(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LachnoanaerobaculumSpObrc55",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def GrimontiaHollisae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GrimontiaHollisae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

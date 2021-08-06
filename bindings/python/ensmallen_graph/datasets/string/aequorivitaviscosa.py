@@ -88,7 +88,7 @@ def AequorivitaViscosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AequorivitaViscosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

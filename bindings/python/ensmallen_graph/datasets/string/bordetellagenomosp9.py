@@ -88,7 +88,7 @@ def BordetellaGenomosp9(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BordetellaGenomosp9",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

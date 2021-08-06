@@ -88,7 +88,7 @@ def DesulfovibrioBizertensisDsm18034(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioBizertensisDsm18034",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

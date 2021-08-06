@@ -88,7 +88,7 @@ def PelagirhabdusAlkalitolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PelagirhabdusAlkalitolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

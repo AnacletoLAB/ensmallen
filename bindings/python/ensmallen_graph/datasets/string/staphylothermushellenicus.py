@@ -91,7 +91,7 @@ def StaphylothermusHellenicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StaphylothermusHellenicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

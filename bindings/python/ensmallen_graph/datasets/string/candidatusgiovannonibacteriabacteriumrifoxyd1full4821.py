@@ -88,7 +88,7 @@ def CandidatusGiovannonibacteriaBacteriumRifoxyd1Full4821(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusGiovannonibacteriaBacteriumRifoxyd1Full4821",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def BacteriumEndosymbiontOfMortierella(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteriumEndosymbiontOfMortierella",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

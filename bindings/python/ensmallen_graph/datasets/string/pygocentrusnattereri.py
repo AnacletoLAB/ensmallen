@@ -88,7 +88,7 @@ def PygocentrusNattereri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PygocentrusNattereri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

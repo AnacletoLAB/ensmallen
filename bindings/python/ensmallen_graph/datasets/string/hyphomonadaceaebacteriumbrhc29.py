@@ -88,7 +88,7 @@ def HyphomonadaceaeBacteriumBrhC29(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HyphomonadaceaeBacteriumBrhC29",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

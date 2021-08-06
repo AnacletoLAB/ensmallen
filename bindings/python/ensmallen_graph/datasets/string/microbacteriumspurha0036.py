@@ -91,7 +91,7 @@ def MicrobacteriumSpUrha0036(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriumSpUrha0036",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

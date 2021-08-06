@@ -91,7 +91,7 @@ def OceanicolaSp22iis11g(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OceanicolaSp22iis11g",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

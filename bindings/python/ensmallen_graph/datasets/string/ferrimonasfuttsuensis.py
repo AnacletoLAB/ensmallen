@@ -91,7 +91,7 @@ def FerrimonasFuttsuensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FerrimonasFuttsuensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

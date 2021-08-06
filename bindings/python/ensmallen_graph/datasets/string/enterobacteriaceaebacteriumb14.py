@@ -91,7 +91,7 @@ def EnterobacteriaceaeBacteriumB14(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterobacteriaceaeBacteriumB14",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

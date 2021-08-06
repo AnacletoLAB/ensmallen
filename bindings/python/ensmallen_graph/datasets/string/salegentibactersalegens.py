@@ -88,7 +88,7 @@ def SalegentibacterSalegens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalegentibacterSalegens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

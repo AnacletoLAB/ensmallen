@@ -91,7 +91,7 @@ def NatrinemaAltunense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NatrinemaAltunense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

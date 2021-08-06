@@ -91,7 +91,7 @@ def ArthromitusSpSfbmousejapan(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArthromitusSpSfbmousejapan",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

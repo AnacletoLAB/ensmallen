@@ -91,7 +91,7 @@ def BryobacterAggregatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BryobacterAggregatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

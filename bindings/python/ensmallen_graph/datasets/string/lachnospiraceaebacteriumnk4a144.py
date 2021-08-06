@@ -91,7 +91,7 @@ def LachnospiraceaeBacteriumNk4a144(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LachnospiraceaeBacteriumNk4a144",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

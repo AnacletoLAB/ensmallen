@@ -88,7 +88,7 @@ def DesulfococcusSp4484241(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfococcusSp4484241",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

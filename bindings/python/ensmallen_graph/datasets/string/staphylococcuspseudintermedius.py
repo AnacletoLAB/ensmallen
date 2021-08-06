@@ -91,7 +91,7 @@ def StaphylococcusPseudintermedius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StaphylococcusPseudintermedius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

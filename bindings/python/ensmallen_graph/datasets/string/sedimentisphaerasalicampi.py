@@ -88,7 +88,7 @@ def SedimentisphaeraSalicampi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SedimentisphaeraSalicampi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

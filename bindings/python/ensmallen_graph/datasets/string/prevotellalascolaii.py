@@ -88,7 +88,7 @@ def PrevotellaLascolaii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaLascolaii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

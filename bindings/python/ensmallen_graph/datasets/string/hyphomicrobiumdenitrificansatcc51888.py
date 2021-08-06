@@ -91,7 +91,7 @@ def HyphomicrobiumDenitrificansAtcc51888(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HyphomicrobiumDenitrificansAtcc51888",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

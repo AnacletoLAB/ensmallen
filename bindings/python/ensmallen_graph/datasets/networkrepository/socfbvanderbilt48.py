@@ -120,7 +120,7 @@ def SocfbVanderbilt48(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbVanderbilt48",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

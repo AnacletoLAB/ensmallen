@@ -91,7 +91,7 @@ def CyanidioschyzonMerolae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CyanidioschyzonMerolae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

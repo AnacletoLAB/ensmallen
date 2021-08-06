@@ -88,7 +88,7 @@ def LabilithrixLuteola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LabilithrixLuteola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

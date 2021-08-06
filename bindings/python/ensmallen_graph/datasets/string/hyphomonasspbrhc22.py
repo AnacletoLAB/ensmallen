@@ -88,7 +88,7 @@ def HyphomonasSpBrhC22(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HyphomonasSpBrhC22",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

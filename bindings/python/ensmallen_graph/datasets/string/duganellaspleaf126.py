@@ -88,7 +88,7 @@ def DuganellaSpLeaf126(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DuganellaSpLeaf126",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

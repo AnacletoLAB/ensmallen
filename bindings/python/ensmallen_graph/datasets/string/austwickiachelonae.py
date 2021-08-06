@@ -91,7 +91,7 @@ def AustwickiaChelonae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AustwickiaChelonae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

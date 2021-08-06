@@ -88,7 +88,7 @@ def MesorhizobiumSp1m11(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MesorhizobiumSp1m11",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

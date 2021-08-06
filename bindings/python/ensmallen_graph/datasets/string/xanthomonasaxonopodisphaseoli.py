@@ -91,7 +91,7 @@ def XanthomonasAxonopodisPhaseoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XanthomonasAxonopodisPhaseoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

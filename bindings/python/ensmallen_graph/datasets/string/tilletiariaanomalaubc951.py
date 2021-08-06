@@ -88,7 +88,7 @@ def TilletiariaAnomalaUbc951(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TilletiariaAnomalaUbc951",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

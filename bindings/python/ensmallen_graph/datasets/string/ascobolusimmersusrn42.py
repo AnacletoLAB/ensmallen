@@ -88,7 +88,7 @@ def AscobolusImmersusRn42(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AscobolusImmersusRn42",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

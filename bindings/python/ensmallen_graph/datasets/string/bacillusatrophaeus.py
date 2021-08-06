@@ -91,7 +91,7 @@ def BacillusAtrophaeus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusAtrophaeus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

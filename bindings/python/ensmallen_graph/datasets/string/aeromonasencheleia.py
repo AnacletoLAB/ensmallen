@@ -88,7 +88,7 @@ def AeromonasEncheleia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AeromonasEncheleia",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

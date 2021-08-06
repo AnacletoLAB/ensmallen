@@ -91,7 +91,7 @@ def HelobdellaRobusta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelobdellaRobusta",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

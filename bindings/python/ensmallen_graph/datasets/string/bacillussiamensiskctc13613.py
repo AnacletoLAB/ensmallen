@@ -88,7 +88,7 @@ def BacillusSiamensisKctc13613(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusSiamensisKctc13613",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

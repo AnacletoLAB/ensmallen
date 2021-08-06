@@ -91,7 +91,7 @@ def BombyxMori(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BombyxMori",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

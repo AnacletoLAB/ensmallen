@@ -88,7 +88,7 @@ def PlanktotaleaArctica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlanktotaleaArctica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

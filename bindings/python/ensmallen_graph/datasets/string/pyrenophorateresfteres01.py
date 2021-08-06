@@ -88,7 +88,7 @@ def PyrenophoraTeresFTeres01(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PyrenophoraTeresFTeres01",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def RhizophagusSpMucl43196(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizophagusSpMucl43196",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

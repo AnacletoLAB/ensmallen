@@ -91,7 +91,7 @@ def MarssoninaBrunnea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarssoninaBrunnea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

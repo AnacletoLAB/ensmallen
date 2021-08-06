@@ -91,7 +91,7 @@ def ParasutterellaExcrementihominis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParasutterellaExcrementihominis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def DesulfovibrioVulgarisHildenborough(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioVulgarisHildenborough",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

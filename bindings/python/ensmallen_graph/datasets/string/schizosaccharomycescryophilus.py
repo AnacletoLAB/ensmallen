@@ -91,7 +91,7 @@ def SchizosaccharomycesCryophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SchizosaccharomycesCryophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def AlteromonasAustralica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlteromonasAustralica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CetobacteriumSpZor0034(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CetobacteriumSpZor0034",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

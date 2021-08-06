@@ -91,7 +91,7 @@ def HelicobacterTrogontum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelicobacterTrogontum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

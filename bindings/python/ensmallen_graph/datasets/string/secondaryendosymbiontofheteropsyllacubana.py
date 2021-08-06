@@ -88,7 +88,7 @@ def SecondaryEndosymbiontOfHeteropsyllaCubana(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SecondaryEndosymbiontOfHeteropsyllaCubana",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

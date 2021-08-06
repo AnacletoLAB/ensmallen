@@ -91,7 +91,7 @@ def RahnellaAquatilisCip7865(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RahnellaAquatilisCip7865",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def StreptococcusMutansGs5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusMutansGs5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

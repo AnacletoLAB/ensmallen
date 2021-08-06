@@ -91,7 +91,7 @@ def LachnoanaerobaculumSaburreumF0468(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LachnoanaerobaculumSaburreumF0468",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

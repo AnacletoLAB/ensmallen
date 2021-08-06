@@ -88,7 +88,7 @@ def PasteurellaSkyensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PasteurellaSkyensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

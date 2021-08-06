@@ -88,7 +88,7 @@ def VulcanibacillusModesticaldus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VulcanibacillusModesticaldus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def TumebacillusFlagellatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TumebacillusFlagellatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

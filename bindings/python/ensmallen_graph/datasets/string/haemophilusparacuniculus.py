@@ -88,7 +88,7 @@ def HaemophilusParacuniculus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaemophilusParacuniculus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

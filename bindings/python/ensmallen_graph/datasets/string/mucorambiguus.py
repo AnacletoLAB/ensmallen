@@ -88,7 +88,7 @@ def MucorAmbiguus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MucorAmbiguus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

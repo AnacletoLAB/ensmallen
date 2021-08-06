@@ -91,7 +91,7 @@ def ThermosynechococcusElongatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermosynechococcusElongatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

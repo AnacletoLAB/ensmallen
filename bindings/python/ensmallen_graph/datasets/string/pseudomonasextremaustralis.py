@@ -91,7 +91,7 @@ def PseudomonasExtremaustralis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasExtremaustralis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

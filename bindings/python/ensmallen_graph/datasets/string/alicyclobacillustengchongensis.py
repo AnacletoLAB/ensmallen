@@ -88,7 +88,7 @@ def AlicyclobacillusTengchongensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlicyclobacillusTengchongensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

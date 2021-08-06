@@ -88,7 +88,7 @@ def LottiaGigantea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LottiaGigantea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

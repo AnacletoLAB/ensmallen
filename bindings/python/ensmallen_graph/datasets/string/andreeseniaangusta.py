@@ -88,7 +88,7 @@ def AndreeseniaAngusta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AndreeseniaAngusta",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

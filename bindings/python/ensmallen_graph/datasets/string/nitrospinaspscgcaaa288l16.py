@@ -88,7 +88,7 @@ def NitrospinaSpScgcAaa288L16(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrospinaSpScgcAaa288L16",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

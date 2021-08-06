@@ -91,7 +91,7 @@ def RhizobiumSelenitireducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizobiumSelenitireducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

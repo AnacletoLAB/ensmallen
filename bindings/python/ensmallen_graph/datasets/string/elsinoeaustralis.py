@@ -88,7 +88,7 @@ def ElsinoeAustralis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ElsinoeAustralis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

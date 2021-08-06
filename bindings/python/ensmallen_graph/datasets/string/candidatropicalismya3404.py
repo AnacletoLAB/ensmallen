@@ -88,7 +88,7 @@ def CandidaTropicalisMya3404(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidaTropicalisMya3404",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

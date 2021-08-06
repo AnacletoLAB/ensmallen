@@ -88,7 +88,7 @@ def SulfurospirillumHalorespiransDsm13726(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfurospirillumHalorespiransDsm13726",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

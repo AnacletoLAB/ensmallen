@@ -88,7 +88,7 @@ def FlavobacteriaBacteriumBbfl7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriaBacteriumBbfl7",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

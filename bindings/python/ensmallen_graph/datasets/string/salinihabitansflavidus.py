@@ -88,7 +88,7 @@ def SalinihabitansFlavidus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinihabitansFlavidus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

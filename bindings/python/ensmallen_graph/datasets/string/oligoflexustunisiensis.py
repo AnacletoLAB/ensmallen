@@ -88,7 +88,7 @@ def OligoflexusTunisiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OligoflexusTunisiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

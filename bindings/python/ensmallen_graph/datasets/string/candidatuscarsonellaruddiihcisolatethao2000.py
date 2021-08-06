@@ -88,7 +88,7 @@ def CandidatusCarsonellaRuddiiHcIsolateThao2000(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusCarsonellaRuddiiHcIsolateThao2000",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

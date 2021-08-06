@@ -88,7 +88,7 @@ def FontibacillusPanacisegetis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FontibacillusPanacisegetis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

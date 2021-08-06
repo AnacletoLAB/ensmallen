@@ -94,7 +94,7 @@ def RtTwitterCopen(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RtTwitterCopen",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

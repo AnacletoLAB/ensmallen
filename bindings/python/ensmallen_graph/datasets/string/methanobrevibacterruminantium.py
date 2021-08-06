@@ -91,7 +91,7 @@ def MethanobrevibacterRuminantium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanobrevibacterRuminantium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PiscirickettsiaLitoralis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PiscirickettsiaLitoralis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

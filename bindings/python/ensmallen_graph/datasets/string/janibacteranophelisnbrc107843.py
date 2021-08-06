@@ -88,7 +88,7 @@ def JanibacterAnophelisNbrc107843(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JanibacterAnophelisNbrc107843",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def KitasatosporaGriseola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KitasatosporaGriseola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

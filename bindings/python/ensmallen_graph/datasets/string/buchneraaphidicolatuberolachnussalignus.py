@@ -88,7 +88,7 @@ def BuchneraAphidicolaTuberolachnusSalignus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BuchneraAphidicolaTuberolachnusSalignus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

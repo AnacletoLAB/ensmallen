@@ -91,7 +91,7 @@ def HaemophilusSputorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaemophilusSputorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

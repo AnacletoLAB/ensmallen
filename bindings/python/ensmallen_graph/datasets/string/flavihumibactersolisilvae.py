@@ -88,7 +88,7 @@ def FlavihumibacterSolisilvae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavihumibacterSolisilvae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

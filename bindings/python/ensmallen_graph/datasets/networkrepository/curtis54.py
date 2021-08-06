@@ -78,7 +78,7 @@ def Curtis54(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Curtis54",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

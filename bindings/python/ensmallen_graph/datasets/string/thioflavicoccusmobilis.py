@@ -91,7 +91,7 @@ def ThioflavicoccusMobilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThioflavicoccusMobilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

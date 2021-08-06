@@ -88,7 +88,7 @@ def OlsenellaSpOralTaxon807(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OlsenellaSpOralTaxon807",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def RoadNetherlandsOsm(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoadNetherlandsOsm",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

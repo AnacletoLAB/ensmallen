@@ -91,7 +91,7 @@ def JanthinobacteriumAgaricidamnosum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JanthinobacteriumAgaricidamnosum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PanicumMiliaceum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PanicumMiliaceum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

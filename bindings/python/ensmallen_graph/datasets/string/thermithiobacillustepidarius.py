@@ -91,7 +91,7 @@ def ThermithiobacillusTepidarius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermithiobacillusTepidarius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

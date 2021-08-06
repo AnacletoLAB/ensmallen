@@ -91,7 +91,7 @@ def TrichodesmiumErythraeum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichodesmiumErythraeum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

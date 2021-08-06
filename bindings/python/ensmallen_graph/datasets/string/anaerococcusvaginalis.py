@@ -91,7 +91,7 @@ def AnaerococcusVaginalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerococcusVaginalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MethanosalsumZhilinaeDsm4017(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanosalsumZhilinaeDsm4017",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def RoseovariusPacificus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseovariusPacificus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

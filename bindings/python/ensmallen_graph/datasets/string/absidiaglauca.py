@@ -88,7 +88,7 @@ def AbsidiaGlauca(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AbsidiaGlauca",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

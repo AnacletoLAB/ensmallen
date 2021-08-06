@@ -91,7 +91,7 @@ def ThaueraSpMz1t(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThaueraSpMz1t",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

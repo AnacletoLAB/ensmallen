@@ -91,7 +91,7 @@ def ConiosporiumApollinis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ConiosporiumApollinis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CanisLupusFamiliaris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CanisLupusFamiliaris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

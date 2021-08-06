@@ -91,7 +91,7 @@ def AuxenochlorellaProtothecoides(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AuxenochlorellaProtothecoides",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

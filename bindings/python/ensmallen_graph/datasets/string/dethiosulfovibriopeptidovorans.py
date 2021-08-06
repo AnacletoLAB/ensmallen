@@ -91,7 +91,7 @@ def DethiosulfovibrioPeptidovorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DethiosulfovibrioPeptidovorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

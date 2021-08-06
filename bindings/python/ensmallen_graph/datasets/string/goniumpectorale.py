@@ -88,7 +88,7 @@ def GoniumPectorale(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GoniumPectorale",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

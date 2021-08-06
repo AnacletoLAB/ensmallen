@@ -88,7 +88,7 @@ def BotryotiniaCalthae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BotryotiniaCalthae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

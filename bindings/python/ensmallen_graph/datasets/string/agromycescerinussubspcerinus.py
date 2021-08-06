@@ -88,7 +88,7 @@ def AgromycesCerinusSubspCerinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AgromycesCerinusSubspCerinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

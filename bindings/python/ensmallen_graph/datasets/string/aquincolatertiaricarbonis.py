@@ -88,7 +88,7 @@ def AquincolaTertiaricarbonis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AquincolaTertiaricarbonis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

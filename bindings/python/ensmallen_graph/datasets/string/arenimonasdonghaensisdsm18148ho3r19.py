@@ -88,7 +88,7 @@ def ArenimonasDonghaensisDsm18148Ho3R19(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArenimonasDonghaensisDsm18148Ho3R19",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

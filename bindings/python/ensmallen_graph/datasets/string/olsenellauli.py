@@ -91,7 +91,7 @@ def OlsenellaUli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OlsenellaUli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

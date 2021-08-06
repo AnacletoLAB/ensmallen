@@ -88,7 +88,7 @@ def SideroxydansSpGwf25914(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SideroxydansSpGwf25914",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

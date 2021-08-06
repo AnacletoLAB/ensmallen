@@ -88,7 +88,7 @@ def BoseaSpWao(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BoseaSpWao",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ThermococcusGammatolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermococcusGammatolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

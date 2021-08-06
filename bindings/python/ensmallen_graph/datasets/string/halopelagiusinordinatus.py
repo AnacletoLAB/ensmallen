@@ -88,7 +88,7 @@ def HalopelagiusInordinatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalopelagiusInordinatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

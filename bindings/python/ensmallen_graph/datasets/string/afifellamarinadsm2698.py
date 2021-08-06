@@ -88,7 +88,7 @@ def AfifellaMarinaDsm2698(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AfifellaMarinaDsm2698",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

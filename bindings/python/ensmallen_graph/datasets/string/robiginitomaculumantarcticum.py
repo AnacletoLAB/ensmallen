@@ -91,7 +91,7 @@ def RobiginitomaculumAntarcticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RobiginitomaculumAntarcticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

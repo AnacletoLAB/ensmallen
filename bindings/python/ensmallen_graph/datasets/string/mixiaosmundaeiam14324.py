@@ -88,7 +88,7 @@ def MixiaOsmundaeIam14324(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MixiaOsmundaeIam14324",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

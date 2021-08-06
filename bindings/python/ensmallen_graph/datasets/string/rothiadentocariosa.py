@@ -91,7 +91,7 @@ def RothiaDentocariosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RothiaDentocariosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

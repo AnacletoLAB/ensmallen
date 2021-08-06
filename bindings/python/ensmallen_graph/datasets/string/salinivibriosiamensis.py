@@ -88,7 +88,7 @@ def SalinivibrioSiamensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinivibrioSiamensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

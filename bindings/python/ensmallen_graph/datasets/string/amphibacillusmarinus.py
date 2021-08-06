@@ -88,7 +88,7 @@ def AmphibacillusMarinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmphibacillusMarinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

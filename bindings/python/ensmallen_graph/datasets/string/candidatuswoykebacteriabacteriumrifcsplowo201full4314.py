@@ -88,7 +88,7 @@ def CandidatusWoykebacteriaBacteriumRifcsplowo201Full4314(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusWoykebacteriaBacteriumRifcsplowo201Full4314",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

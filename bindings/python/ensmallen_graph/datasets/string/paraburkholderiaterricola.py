@@ -88,7 +88,7 @@ def ParaburkholderiaTerricola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParaburkholderiaTerricola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def NeisseriaPolysacchareaNs342(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeisseriaPolysacchareaNs342",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

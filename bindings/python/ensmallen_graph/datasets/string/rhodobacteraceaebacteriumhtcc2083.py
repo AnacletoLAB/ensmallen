@@ -91,7 +91,7 @@ def RhodobacteraceaeBacteriumHtcc2083(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodobacteraceaeBacteriumHtcc2083",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

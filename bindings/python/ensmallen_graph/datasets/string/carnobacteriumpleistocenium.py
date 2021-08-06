@@ -91,7 +91,7 @@ def CarnobacteriumPleistocenium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CarnobacteriumPleistocenium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

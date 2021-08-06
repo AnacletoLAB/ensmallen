@@ -91,7 +91,7 @@ def AlloscardoviaOmnicolens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlloscardoviaOmnicolens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

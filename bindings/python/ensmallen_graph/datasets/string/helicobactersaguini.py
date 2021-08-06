@@ -88,7 +88,7 @@ def HelicobacterSaguini(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelicobacterSaguini",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

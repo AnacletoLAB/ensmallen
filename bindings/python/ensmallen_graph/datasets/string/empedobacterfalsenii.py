@@ -88,7 +88,7 @@ def EmpedobacterFalsenii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EmpedobacterFalsenii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

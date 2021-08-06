@@ -88,7 +88,7 @@ def CuniculiplasmaDivulgatum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CuniculiplasmaDivulgatum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

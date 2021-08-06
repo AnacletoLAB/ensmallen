@@ -91,7 +91,7 @@ def ClostridiumSp7243faa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumSp7243faa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

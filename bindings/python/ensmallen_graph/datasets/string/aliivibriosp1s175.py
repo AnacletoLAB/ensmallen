@@ -88,7 +88,7 @@ def AliivibrioSp1s175(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AliivibrioSp1s175",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

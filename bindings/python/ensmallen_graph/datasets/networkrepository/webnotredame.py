@@ -78,7 +78,7 @@ def WebNotredame(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebNotredame",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

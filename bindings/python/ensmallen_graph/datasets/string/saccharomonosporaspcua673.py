@@ -88,7 +88,7 @@ def SaccharomonosporaSpCua673(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SaccharomonosporaSpCua673",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

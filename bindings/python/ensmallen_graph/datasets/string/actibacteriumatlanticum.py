@@ -91,7 +91,7 @@ def ActibacteriumAtlanticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActibacteriumAtlanticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

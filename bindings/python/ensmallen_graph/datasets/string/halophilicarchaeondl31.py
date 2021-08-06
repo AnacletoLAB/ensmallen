@@ -88,7 +88,7 @@ def HalophilicArchaeonDl31(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalophilicArchaeonDl31",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

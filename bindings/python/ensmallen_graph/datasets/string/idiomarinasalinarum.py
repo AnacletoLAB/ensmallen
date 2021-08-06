@@ -91,7 +91,7 @@ def IdiomarinaSalinarum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IdiomarinaSalinarum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

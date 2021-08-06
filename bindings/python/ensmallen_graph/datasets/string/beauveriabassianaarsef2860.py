@@ -88,7 +88,7 @@ def BeauveriaBassianaArsef2860(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BeauveriaBassianaArsef2860",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

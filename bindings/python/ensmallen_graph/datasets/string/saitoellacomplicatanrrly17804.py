@@ -88,7 +88,7 @@ def SaitoellaComplicataNrrlY17804(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SaitoellaComplicataNrrlY17804",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

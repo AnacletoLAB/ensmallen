@@ -78,7 +78,7 @@ def Pgpgiantcompo(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Pgpgiantcompo",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SalinicolaSpMh3r31(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinicolaSpMh3r31",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

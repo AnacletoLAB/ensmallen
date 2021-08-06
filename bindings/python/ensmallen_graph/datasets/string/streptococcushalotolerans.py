@@ -88,7 +88,7 @@ def StreptococcusHalotolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusHalotolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def AplysiaCalifornica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AplysiaCalifornica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

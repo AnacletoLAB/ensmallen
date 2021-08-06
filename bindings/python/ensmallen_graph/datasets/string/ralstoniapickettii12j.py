@@ -91,7 +91,7 @@ def RalstoniaPickettii12j(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RalstoniaPickettii12j",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

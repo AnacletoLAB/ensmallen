@@ -88,7 +88,7 @@ def PropionivibrioDicarboxylicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PropionivibrioDicarboxylicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

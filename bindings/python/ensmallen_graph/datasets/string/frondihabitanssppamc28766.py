@@ -88,7 +88,7 @@ def FrondihabitansSpPamc28766(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FrondihabitansSpPamc28766",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

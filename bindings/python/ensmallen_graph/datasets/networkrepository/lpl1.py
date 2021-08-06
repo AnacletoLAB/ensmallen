@@ -78,7 +78,7 @@ def Lpl1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Lpl1",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

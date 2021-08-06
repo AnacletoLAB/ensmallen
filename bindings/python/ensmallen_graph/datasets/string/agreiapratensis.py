@@ -88,7 +88,7 @@ def AgreiaPratensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AgreiaPratensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def SulfurihydrogenibiumSpYo3aop1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfurihydrogenibiumSpYo3aop1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

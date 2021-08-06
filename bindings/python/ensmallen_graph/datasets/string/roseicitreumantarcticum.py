@@ -88,7 +88,7 @@ def RoseicitreumAntarcticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseicitreumAntarcticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

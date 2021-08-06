@@ -91,7 +91,7 @@ def EmticiciaOligotrophica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EmticiciaOligotrophica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

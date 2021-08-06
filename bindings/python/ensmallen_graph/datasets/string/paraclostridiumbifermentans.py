@@ -88,7 +88,7 @@ def ParaclostridiumBifermentans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParaclostridiumBifermentans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

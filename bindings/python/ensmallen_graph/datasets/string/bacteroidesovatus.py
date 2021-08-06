@@ -91,7 +91,7 @@ def BacteroidesOvatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesOvatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

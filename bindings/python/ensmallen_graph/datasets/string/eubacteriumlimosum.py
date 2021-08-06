@@ -91,7 +91,7 @@ def EubacteriumLimosum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EubacteriumLimosum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

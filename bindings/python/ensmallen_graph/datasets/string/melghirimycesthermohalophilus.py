@@ -88,7 +88,7 @@ def MelghirimycesThermohalophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MelghirimycesThermohalophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

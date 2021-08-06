@@ -91,7 +91,7 @@ def HalococcusSp197a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalococcusSp197a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

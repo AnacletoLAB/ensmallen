@@ -88,7 +88,7 @@ def TieghemosteliumLacteum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TieghemosteliumLacteum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ShewanellaFidelisAtccBaa318(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShewanellaFidelisAtccBaa318",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

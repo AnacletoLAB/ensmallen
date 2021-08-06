@@ -91,7 +91,7 @@ def DesulfovibrioSp31syn3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioSp31syn3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

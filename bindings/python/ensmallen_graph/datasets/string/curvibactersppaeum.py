@@ -88,7 +88,7 @@ def CurvibacterSpPaeUm(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CurvibacterSpPaeUm",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

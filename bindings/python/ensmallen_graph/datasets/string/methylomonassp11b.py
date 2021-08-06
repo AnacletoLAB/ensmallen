@@ -88,7 +88,7 @@ def MethylomonasSp11b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylomonasSp11b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

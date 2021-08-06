@@ -91,7 +91,7 @@ def JaculusJaculus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JaculusJaculus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

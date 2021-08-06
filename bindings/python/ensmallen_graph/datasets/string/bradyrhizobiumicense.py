@@ -88,7 +88,7 @@ def BradyrhizobiumIcense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BradyrhizobiumIcense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

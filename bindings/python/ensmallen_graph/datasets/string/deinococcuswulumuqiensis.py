@@ -91,7 +91,7 @@ def DeinococcusWulumuqiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DeinococcusWulumuqiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

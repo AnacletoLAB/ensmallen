@@ -91,7 +91,7 @@ def CyclobacteriumQasimii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CyclobacteriumQasimii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

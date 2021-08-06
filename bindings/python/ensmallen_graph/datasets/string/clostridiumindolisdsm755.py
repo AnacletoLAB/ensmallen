@@ -88,7 +88,7 @@ def ClostridiumIndolisDsm755(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumIndolisDsm755",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

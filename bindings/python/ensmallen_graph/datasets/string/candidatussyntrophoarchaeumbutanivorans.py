@@ -88,7 +88,7 @@ def CandidatusSyntrophoarchaeumButanivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusSyntrophoarchaeumButanivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

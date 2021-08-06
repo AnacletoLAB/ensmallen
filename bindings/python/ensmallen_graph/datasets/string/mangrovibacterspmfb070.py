@@ -91,7 +91,7 @@ def MangrovibacterSpMfb070(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MangrovibacterSpMfb070",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

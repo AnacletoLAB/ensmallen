@@ -102,7 +102,7 @@ def BNHumanJung(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BNHumanJung",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

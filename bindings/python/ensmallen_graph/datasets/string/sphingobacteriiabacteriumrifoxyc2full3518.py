@@ -88,7 +88,7 @@ def SphingobacteriiaBacteriumRifoxyc2Full3518(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingobacteriiaBacteriumRifoxyc2Full3518",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

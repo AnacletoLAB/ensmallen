@@ -88,7 +88,7 @@ def CandidatusBlochmanniaVaferStrBvaf(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusBlochmanniaVaferStrBvaf",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

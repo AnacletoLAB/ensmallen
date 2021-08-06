@@ -88,7 +88,7 @@ def SpizellomycesPunctatusDaomBr117(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpizellomycesPunctatusDaomBr117",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

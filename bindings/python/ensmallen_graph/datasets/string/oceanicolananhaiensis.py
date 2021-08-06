@@ -91,7 +91,7 @@ def OceanicolaNanhaiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OceanicolaNanhaiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def VibrioNigripulchritudo(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioNigripulchritudo",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

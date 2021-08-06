@@ -88,7 +88,7 @@ def ArchangiumSpCbG35(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArchangiumSpCbG35",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

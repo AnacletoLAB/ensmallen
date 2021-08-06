@@ -91,7 +91,7 @@ def SorangiumCellulosumSo01572(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SorangiumCellulosumSo01572",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

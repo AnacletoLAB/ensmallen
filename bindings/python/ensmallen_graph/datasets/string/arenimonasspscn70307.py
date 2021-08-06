@@ -88,7 +88,7 @@ def ArenimonasSpScn70307(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArenimonasSpScn70307",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

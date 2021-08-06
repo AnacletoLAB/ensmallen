@@ -88,7 +88,7 @@ def AtopobiumSpIcm42b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AtopobiumSpIcm42b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

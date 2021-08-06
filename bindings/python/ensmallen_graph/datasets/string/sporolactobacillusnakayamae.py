@@ -88,7 +88,7 @@ def SporolactobacillusNakayamae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SporolactobacillusNakayamae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def DesulfobacteraceaeBacteriumRaap1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfobacteraceaeBacteriumRaap1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

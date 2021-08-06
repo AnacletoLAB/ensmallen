@@ -78,7 +78,7 @@ def Bas1lp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Bas1lp",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ClostridiumAcidisoliDsm12555(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumAcidisoliDsm12555",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

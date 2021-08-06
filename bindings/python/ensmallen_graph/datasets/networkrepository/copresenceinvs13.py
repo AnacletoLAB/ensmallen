@@ -88,7 +88,7 @@ def CopresenceInvs13(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CopresenceInvs13",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

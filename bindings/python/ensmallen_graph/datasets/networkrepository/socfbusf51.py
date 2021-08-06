@@ -120,7 +120,7 @@ def SocfbUsf51(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbUsf51",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

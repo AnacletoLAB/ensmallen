@@ -96,7 +96,7 @@ def SocTribes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocTribes",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

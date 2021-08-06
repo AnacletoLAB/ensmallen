@@ -88,7 +88,7 @@ def StreptococcusCuniculi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusCuniculi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

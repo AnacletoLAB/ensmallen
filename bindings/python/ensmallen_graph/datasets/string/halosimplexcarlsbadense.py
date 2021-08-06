@@ -91,7 +91,7 @@ def HalosimplexCarlsbadense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalosimplexCarlsbadense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

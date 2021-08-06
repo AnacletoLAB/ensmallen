@@ -88,7 +88,7 @@ def PelosinusPropionicusDsm13327(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PelosinusPropionicusDsm13327",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

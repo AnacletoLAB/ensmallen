@@ -88,7 +88,7 @@ def CandidatusRhodolunaPlanktonica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusRhodolunaPlanktonica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

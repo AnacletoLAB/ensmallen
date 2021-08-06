@@ -120,7 +120,7 @@ def SocfbWashu32(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbWashu32",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

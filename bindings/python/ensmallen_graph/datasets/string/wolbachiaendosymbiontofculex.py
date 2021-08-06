@@ -88,7 +88,7 @@ def WolbachiaEndosymbiontOfCulex(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WolbachiaEndosymbiontOfCulex",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

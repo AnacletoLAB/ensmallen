@@ -91,7 +91,7 @@ def GillisiaSpCal575(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GillisiaSpCal575",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

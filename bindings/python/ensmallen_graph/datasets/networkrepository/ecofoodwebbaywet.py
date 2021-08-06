@@ -118,7 +118,7 @@ def EcoFoodwebBaywet(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EcoFoodwebBaywet",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

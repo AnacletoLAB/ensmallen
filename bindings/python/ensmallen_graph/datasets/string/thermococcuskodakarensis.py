@@ -91,7 +91,7 @@ def ThermococcusKodakarensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermococcusKodakarensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

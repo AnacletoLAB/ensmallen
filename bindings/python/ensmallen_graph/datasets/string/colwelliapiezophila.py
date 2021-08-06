@@ -91,7 +91,7 @@ def ColwelliaPiezophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ColwelliaPiezophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

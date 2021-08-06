@@ -88,7 +88,7 @@ def RhodotorulaSpJg1b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodotorulaSpJg1b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

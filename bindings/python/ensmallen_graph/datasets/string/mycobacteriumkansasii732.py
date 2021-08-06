@@ -91,7 +91,7 @@ def MycobacteriumKansasii732(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumKansasii732",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

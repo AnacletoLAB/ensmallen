@@ -88,7 +88,7 @@ def LeptospiraInadaiSerovarLymeStr10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptospiraInadaiSerovarLymeStr10",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

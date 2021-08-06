@@ -88,7 +88,7 @@ def PseudaestuariivitaAtlantica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudaestuariivitaAtlantica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

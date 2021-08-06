@@ -91,7 +91,7 @@ def AcaryochlorisMarina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcaryochlorisMarina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def TreponemaSpC6a8(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TreponemaSpC6a8",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

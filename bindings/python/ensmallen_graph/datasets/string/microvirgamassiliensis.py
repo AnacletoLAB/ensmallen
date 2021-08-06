@@ -88,7 +88,7 @@ def MicrovirgaMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrovirgaMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PseudoxanthomonasSpYr558(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoxanthomonasSpYr558",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

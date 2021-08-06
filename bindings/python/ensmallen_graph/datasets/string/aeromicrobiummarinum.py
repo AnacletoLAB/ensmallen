@@ -91,7 +91,7 @@ def AeromicrobiumMarinum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AeromicrobiumMarinum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

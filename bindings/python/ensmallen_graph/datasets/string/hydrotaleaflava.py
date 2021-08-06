@@ -88,7 +88,7 @@ def HydrotaleaFlava(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HydrotaleaFlava",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

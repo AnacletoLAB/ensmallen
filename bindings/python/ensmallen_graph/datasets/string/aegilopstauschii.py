@@ -91,7 +91,7 @@ def AegilopsTauschii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AegilopsTauschii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

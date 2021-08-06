@@ -91,7 +91,7 @@ def FaecalicoccusPleomorphus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FaecalicoccusPleomorphus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

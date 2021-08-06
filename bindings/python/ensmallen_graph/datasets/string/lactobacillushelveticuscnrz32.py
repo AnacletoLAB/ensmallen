@@ -91,7 +91,7 @@ def LactobacillusHelveticusCnrz32(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusHelveticusCnrz32",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def RoseivivaxIsoporae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseivivaxIsoporae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

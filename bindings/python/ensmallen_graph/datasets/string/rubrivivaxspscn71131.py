@@ -88,7 +88,7 @@ def RubrivivaxSpScn71131(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RubrivivaxSpScn71131",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

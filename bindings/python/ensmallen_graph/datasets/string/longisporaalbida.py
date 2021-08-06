@@ -91,7 +91,7 @@ def LongisporaAlbida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LongisporaAlbida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

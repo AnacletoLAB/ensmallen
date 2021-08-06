@@ -88,7 +88,7 @@ def AureimonasSpAu4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AureimonasSpAu4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

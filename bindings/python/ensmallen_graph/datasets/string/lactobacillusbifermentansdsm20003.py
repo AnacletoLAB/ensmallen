@@ -88,7 +88,7 @@ def LactobacillusBifermentansDsm20003(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusBifermentansDsm20003",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

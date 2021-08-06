@@ -91,7 +91,7 @@ def OvisAries(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OvisAries",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -96,7 +96,7 @@ def SocTwitterHiggs(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocTwitterHiggs",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

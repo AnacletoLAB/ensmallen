@@ -88,7 +88,7 @@ def VibrioGalatheae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioGalatheae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

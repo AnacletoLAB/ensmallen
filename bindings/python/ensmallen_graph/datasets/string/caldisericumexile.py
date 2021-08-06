@@ -91,7 +91,7 @@ def CaldisericumExile(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaldisericumExile",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

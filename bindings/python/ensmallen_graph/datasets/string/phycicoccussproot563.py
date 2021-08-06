@@ -88,7 +88,7 @@ def PhycicoccusSpRoot563(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhycicoccusSpRoot563",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

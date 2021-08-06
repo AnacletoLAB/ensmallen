@@ -91,7 +91,7 @@ def AchromobacterPiechaudiiAtcc43553(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AchromobacterPiechaudiiAtcc43553",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

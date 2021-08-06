@@ -88,7 +88,7 @@ def RhodobacteraceaeBacteriumAsp1004a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodobacteraceaeBacteriumAsp1004a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

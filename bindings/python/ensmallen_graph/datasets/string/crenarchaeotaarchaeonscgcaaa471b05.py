@@ -88,7 +88,7 @@ def CrenarchaeotaArchaeonScgcAaa471B05(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CrenarchaeotaArchaeonScgcAaa471B05",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

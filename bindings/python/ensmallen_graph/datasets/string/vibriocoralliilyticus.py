@@ -91,7 +91,7 @@ def VibrioCoralliilyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioCoralliilyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

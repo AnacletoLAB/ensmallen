@@ -88,7 +88,7 @@ def AneurinibacillusMigulanus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AneurinibacillusMigulanus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

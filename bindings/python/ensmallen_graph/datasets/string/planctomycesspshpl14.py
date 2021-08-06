@@ -88,7 +88,7 @@ def PlanctomycesSpShPl14(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlanctomycesSpShPl14",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

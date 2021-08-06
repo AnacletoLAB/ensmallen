@@ -91,7 +91,7 @@ def BhargavaeaCecembensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BhargavaeaCecembensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def JaapiaArgillaceaMucl33604(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JaapiaArgillaceaMucl33604",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

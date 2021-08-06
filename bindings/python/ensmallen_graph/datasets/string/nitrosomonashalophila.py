@@ -88,7 +88,7 @@ def NitrosomonasHalophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrosomonasHalophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

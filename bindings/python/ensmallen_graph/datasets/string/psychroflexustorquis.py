@@ -91,7 +91,7 @@ def PsychroflexusTorquis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PsychroflexusTorquis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

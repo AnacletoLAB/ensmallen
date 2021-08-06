@@ -91,7 +91,7 @@ def DesulfovirgulaThermocuniculi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovirgulaThermocuniculi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

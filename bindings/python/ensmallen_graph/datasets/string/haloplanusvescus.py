@@ -88,7 +88,7 @@ def HaloplanusVescus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaloplanusVescus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

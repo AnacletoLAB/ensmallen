@@ -91,7 +91,7 @@ def SerpulaLacrymans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SerpulaLacrymans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

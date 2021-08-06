@@ -88,7 +88,7 @@ def PseudobutyrivibrioSpAcv2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudobutyrivibrioSpAcv2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def OryzaSativaJaponicaGroup(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OryzaSativaJaponicaGroup",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

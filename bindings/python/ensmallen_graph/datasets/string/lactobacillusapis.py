@@ -88,7 +88,7 @@ def LactobacillusApis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusApis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

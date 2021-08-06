@@ -91,7 +91,7 @@ def CohnellaLaeviribosi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CohnellaLaeviribosi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

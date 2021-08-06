@@ -88,7 +88,7 @@ def PaenibacillusMucilaginosus3016(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillusMucilaginosus3016",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

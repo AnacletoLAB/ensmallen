@@ -88,7 +88,7 @@ def ChitinophagaTerraeKimAndJung2007(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChitinophagaTerraeKimAndJung2007",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

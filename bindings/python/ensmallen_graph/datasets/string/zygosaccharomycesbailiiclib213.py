@@ -88,7 +88,7 @@ def ZygosaccharomycesBailiiClib213(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZygosaccharomycesBailiiClib213",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

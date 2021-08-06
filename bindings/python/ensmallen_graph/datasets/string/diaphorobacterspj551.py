@@ -88,7 +88,7 @@ def DiaphorobacterSpJ551(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DiaphorobacterSpJ551",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

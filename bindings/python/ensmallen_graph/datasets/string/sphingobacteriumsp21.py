@@ -91,7 +91,7 @@ def SphingobacteriumSp21(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingobacteriumSp21",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

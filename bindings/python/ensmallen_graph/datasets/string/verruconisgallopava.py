@@ -88,7 +88,7 @@ def VerruconisGallopava(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VerruconisGallopava",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

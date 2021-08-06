@@ -91,7 +91,7 @@ def ActinomaduraMadurae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomaduraMadurae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

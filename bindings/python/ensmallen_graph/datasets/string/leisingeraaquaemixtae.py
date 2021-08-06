@@ -88,7 +88,7 @@ def LeisingeraAquaemixtae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeisingeraAquaemixtae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

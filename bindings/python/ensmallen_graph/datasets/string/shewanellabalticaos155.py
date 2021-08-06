@@ -88,7 +88,7 @@ def ShewanellaBalticaOs155(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShewanellaBalticaOs155",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

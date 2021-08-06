@@ -88,7 +88,7 @@ def HydrogenovibrioMarinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HydrogenovibrioMarinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

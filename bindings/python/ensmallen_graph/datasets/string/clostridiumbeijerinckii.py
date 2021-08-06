@@ -91,7 +91,7 @@ def ClostridiumBeijerinckii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumBeijerinckii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

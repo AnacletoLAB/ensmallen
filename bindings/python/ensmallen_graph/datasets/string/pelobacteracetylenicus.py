@@ -88,7 +88,7 @@ def PelobacterAcetylenicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PelobacterAcetylenicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

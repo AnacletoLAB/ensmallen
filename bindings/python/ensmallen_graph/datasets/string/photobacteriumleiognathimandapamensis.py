@@ -91,7 +91,7 @@ def PhotobacteriumLeiognathiMandapamensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhotobacteriumLeiognathiMandapamensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

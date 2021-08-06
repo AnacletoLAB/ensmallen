@@ -88,7 +88,7 @@ def DesulfotignumBalticumDsm7044(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfotignumBalticumDsm7044",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

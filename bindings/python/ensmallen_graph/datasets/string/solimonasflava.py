@@ -91,7 +91,7 @@ def SolimonasFlava(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SolimonasFlava",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

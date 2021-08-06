@@ -88,7 +88,7 @@ def SulfurospirillumCavolei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfurospirillumCavolei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

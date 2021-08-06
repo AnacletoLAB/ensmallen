@@ -91,7 +91,7 @@ def AiluropodaMelanoleuca(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AiluropodaMelanoleuca",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def TreponemaCaldaria(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TreponemaCaldaria",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

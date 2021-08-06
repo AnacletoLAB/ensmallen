@@ -88,7 +88,7 @@ def PaenibacillusLarvaeSubspLarvae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillusLarvaeSubspLarvae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

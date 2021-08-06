@@ -88,7 +88,7 @@ def RhizopusMicrosporusAtcc52813(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizopusMicrosporusAtcc52813",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

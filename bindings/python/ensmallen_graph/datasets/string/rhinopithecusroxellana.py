@@ -91,7 +91,7 @@ def RhinopithecusRoxellana(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhinopithecusRoxellana",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

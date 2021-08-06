@@ -88,7 +88,7 @@ def AcidihalobacterProsperus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidihalobacterProsperus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

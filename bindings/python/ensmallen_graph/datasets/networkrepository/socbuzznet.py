@@ -96,7 +96,7 @@ def SocBuzznet(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocBuzznet",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

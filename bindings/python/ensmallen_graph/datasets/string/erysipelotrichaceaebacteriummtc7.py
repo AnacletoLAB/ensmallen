@@ -88,7 +88,7 @@ def ErysipelotrichaceaeBacteriumMtc7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErysipelotrichaceaeBacteriumMtc7",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

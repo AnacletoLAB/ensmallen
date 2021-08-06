@@ -91,7 +91,7 @@ def SchistosomaMansoni(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SchistosomaMansoni",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

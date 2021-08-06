@@ -88,7 +88,7 @@ def FasciolaGigantica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FasciolaGigantica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

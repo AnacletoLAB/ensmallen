@@ -88,7 +88,7 @@ def PhyllobacteriumSpOv277(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhyllobacteriumSpOv277",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

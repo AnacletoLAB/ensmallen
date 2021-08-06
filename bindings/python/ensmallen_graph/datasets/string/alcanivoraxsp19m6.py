@@ -91,7 +91,7 @@ def AlcanivoraxSp19m6(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlcanivoraxSp19m6",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

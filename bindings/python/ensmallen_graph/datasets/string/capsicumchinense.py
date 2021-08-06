@@ -88,7 +88,7 @@ def CapsicumChinense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CapsicumChinense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

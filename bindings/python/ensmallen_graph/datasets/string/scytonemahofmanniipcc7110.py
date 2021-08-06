@@ -88,7 +88,7 @@ def ScytonemaHofmanniiPcc7110(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ScytonemaHofmanniiPcc7110",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

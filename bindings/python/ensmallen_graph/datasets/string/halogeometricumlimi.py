@@ -88,7 +88,7 @@ def HalogeometricumLimi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalogeometricumLimi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

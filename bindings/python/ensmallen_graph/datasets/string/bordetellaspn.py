@@ -88,7 +88,7 @@ def BordetellaSpN(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BordetellaSpN",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def DiplosphaeraColitermitum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DiplosphaeraColitermitum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

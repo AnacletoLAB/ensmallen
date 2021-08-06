@@ -88,7 +88,7 @@ def ThiothrixCaldifontis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThiothrixCaldifontis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

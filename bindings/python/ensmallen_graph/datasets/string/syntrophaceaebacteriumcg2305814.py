@@ -88,7 +88,7 @@ def SyntrophaceaeBacteriumCg2305814(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SyntrophaceaeBacteriumCg2305814",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

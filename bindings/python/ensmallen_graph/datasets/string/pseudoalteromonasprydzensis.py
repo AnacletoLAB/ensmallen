@@ -88,7 +88,7 @@ def PseudoalteromonasPrydzensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoalteromonasPrydzensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

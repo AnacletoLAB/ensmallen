@@ -88,7 +88,7 @@ def ThermothielavioidesTerrestrisNrrl8126(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermothielavioidesTerrestrisNrrl8126",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

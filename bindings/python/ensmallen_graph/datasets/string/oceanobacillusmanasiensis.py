@@ -91,7 +91,7 @@ def OceanobacillusManasiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OceanobacillusManasiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

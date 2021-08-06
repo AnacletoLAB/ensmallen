@@ -88,7 +88,7 @@ def SphingorhabdusMarinaDsm22363(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingorhabdusMarinaDsm22363",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PantoeaConspicua(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PantoeaConspicua",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

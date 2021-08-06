@@ -88,7 +88,7 @@ def NeisseriaMeningitidisMc58(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeisseriaMeningitidisMc58",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

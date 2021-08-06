@@ -88,7 +88,7 @@ def EremotheciumCymbalariaeDbvpg7215(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EremotheciumCymbalariaeDbvpg7215",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

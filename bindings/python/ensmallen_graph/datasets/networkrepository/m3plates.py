@@ -78,7 +78,7 @@ def M3plates(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="M3plates",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

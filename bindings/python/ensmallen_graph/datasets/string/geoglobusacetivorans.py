@@ -91,7 +91,7 @@ def GeoglobusAcetivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeoglobusAcetivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

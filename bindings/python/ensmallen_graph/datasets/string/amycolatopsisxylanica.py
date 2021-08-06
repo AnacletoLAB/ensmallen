@@ -88,7 +88,7 @@ def AmycolatopsisXylanica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmycolatopsisXylanica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MegaseliaScalaris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MegaseliaScalaris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

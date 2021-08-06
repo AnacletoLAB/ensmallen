@@ -78,7 +78,7 @@ def AsSkitter(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AsSkitter",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

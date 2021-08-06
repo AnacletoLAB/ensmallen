@@ -91,7 +91,7 @@ def SimplicispiraPsychrophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SimplicispiraPsychrophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

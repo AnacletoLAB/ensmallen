@@ -88,7 +88,7 @@ def CarlitoSyrichta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CarlitoSyrichta",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

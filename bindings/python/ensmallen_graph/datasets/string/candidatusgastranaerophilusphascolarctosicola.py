@@ -88,7 +88,7 @@ def CandidatusGastranaerophilusPhascolarctosicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusGastranaerophilusPhascolarctosicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

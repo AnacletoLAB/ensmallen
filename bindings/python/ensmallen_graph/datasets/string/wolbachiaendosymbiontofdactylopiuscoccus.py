@@ -88,7 +88,7 @@ def WolbachiaEndosymbiontOfDactylopiusCoccus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WolbachiaEndosymbiontOfDactylopiusCoccus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

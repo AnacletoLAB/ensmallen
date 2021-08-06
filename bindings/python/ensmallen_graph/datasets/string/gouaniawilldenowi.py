@@ -88,7 +88,7 @@ def GouaniaWilldenowi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GouaniaWilldenowi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def VibrioBreoganii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioBreoganii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

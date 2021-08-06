@@ -88,7 +88,7 @@ def ThermoanaerobacterSpYs13(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermoanaerobacterSpYs13",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

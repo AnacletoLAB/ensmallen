@@ -88,7 +88,7 @@ def RhodoplanesSpZ2Yc6860(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodoplanesSpZ2Yc6860",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

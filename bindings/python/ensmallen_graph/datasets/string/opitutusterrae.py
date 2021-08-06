@@ -91,7 +91,7 @@ def OpitutusTerrae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OpitutusTerrae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

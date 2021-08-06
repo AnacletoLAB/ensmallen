@@ -91,7 +91,7 @@ def CommensalibacterIntestini(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CommensalibacterIntestini",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

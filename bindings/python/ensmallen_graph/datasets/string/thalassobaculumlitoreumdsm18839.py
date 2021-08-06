@@ -88,7 +88,7 @@ def ThalassobaculumLitoreumDsm18839(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThalassobaculumLitoreumDsm18839",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

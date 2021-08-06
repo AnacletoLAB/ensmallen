@@ -91,7 +91,7 @@ def LutibaculumBaratangense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LutibaculumBaratangense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

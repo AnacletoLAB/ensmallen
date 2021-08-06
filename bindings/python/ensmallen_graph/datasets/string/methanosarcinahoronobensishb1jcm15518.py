@@ -88,7 +88,7 @@ def MethanosarcinaHoronobensisHb1Jcm15518(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanosarcinaHoronobensisHb1Jcm15518",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

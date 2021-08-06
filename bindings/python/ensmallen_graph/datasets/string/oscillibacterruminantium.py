@@ -91,7 +91,7 @@ def OscillibacterRuminantium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OscillibacterRuminantium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

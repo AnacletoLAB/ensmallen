@@ -91,7 +91,7 @@ def UncinocarpusReesii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UncinocarpusReesii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

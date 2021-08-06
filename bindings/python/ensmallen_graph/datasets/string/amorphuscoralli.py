@@ -91,7 +91,7 @@ def AmorphusCoralli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmorphusCoralli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

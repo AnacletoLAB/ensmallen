@@ -88,7 +88,7 @@ def TuricibacterSpH121(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TuricibacterSpH121",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

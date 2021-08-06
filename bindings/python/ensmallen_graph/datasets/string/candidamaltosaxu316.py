@@ -88,7 +88,7 @@ def CandidaMaltosaXu316(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidaMaltosaXu316",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

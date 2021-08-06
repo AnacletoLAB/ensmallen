@@ -91,7 +91,7 @@ def SuccinatimonasHippei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SuccinatimonasHippei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

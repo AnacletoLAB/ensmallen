@@ -88,7 +88,7 @@ def EggerthellaSp519(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EggerthellaSp519",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

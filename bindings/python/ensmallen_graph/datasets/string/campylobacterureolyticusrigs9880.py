@@ -88,7 +88,7 @@ def CampylobacterUreolyticusRigs9880(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterUreolyticusRigs9880",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

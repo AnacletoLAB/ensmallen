@@ -91,7 +91,7 @@ def BartonellaSpR4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BartonellaSpR4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

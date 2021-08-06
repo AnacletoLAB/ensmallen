@@ -88,7 +88,7 @@ def LichtheimiaCorymbiferaJmrcFsu9682(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LichtheimiaCorymbiferaJmrcFsu9682",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

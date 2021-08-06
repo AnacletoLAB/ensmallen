@@ -88,7 +88,7 @@ def PlasmodiumFalciparum3d7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlasmodiumFalciparum3d7",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

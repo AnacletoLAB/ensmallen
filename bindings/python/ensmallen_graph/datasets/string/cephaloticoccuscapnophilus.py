@@ -88,7 +88,7 @@ def CephaloticoccusCapnophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CephaloticoccusCapnophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

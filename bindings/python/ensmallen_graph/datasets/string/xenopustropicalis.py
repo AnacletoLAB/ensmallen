@@ -91,7 +91,7 @@ def XenopusTropicalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XenopusTropicalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

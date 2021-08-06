@@ -88,7 +88,7 @@ def CalescamantesBacteriumScgcAaa471M6(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CalescamantesBacteriumScgcAaa471M6",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def FlavobacteriumSpKbs0721(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumSpKbs0721",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

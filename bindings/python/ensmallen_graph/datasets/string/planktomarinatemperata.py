@@ -91,7 +91,7 @@ def PlanktomarinaTemperata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlanktomarinaTemperata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

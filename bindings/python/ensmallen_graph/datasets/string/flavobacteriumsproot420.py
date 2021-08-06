@@ -88,7 +88,7 @@ def FlavobacteriumSpRoot420(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumSpRoot420",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

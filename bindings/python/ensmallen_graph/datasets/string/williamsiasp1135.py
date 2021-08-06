@@ -88,7 +88,7 @@ def WilliamsiaSp1135(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WilliamsiaSp1135",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

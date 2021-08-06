@@ -88,7 +88,7 @@ def FlavobacteriumUrocaniciphilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumUrocaniciphilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

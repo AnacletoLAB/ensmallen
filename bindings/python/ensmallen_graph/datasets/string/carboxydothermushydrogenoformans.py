@@ -91,7 +91,7 @@ def CarboxydothermusHydrogenoformans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CarboxydothermusHydrogenoformans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

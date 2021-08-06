@@ -88,7 +88,7 @@ def IgnisphaeraAggregansDsm17230(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IgnisphaeraAggregansDsm17230",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

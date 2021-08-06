@@ -91,7 +91,7 @@ def ThermoanaerobacteriumSaccharolyticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermoanaerobacteriumSaccharolyticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

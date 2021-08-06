@@ -88,7 +88,7 @@ def MethanobrevibacterCurvatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanobrevibacterCurvatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

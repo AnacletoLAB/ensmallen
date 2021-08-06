@@ -91,7 +91,7 @@ def HelicobacterRodentium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelicobacterRodentium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

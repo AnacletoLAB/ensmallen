@@ -88,7 +88,7 @@ def CupriavidusOxalaticusNbrc13593(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CupriavidusOxalaticusNbrc13593",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

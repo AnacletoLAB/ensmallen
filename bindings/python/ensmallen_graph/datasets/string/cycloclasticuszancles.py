@@ -91,7 +91,7 @@ def CycloclasticusZancles(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CycloclasticusZancles",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

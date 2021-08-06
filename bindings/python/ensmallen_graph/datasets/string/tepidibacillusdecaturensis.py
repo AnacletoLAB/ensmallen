@@ -88,7 +88,7 @@ def TepidibacillusDecaturensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TepidibacillusDecaturensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

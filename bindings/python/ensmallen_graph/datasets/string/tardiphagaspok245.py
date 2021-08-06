@@ -88,7 +88,7 @@ def TardiphagaSpOk245(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TardiphagaSpOk245",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

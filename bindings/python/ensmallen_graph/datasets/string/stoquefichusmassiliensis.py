@@ -91,7 +91,7 @@ def StoquefichusMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StoquefichusMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

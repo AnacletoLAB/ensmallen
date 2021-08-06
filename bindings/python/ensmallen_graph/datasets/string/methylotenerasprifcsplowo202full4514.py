@@ -88,7 +88,7 @@ def MethyloteneraSpRifcsplowo202Full4514(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethyloteneraSpRifcsplowo202Full4514",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

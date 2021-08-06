@@ -88,7 +88,7 @@ def PseudacidovoraxSpRu35e(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudacidovoraxSpRu35e",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

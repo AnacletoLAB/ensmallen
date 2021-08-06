@@ -78,7 +78,7 @@ def UcidataZachary(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UcidataZachary",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ThermodesulfobacteriumThermophilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermodesulfobacteriumThermophilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

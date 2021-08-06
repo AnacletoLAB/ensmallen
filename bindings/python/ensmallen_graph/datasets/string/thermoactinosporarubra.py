@@ -88,7 +88,7 @@ def ThermoactinosporaRubra(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermoactinosporaRubra",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

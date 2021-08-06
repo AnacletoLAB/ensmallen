@@ -91,7 +91,7 @@ def PlasmodiumVivax(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlasmodiumVivax",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

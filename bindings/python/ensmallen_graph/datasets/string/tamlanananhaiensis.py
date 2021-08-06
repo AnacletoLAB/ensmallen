@@ -88,7 +88,7 @@ def TamlanaNanhaiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TamlanaNanhaiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

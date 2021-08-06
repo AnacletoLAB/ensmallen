@@ -88,7 +88,7 @@ def BlastomonasSpCacia14h2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlastomonasSpCacia14h2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

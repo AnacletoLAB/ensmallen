@@ -91,7 +91,7 @@ def ClostridiumHiranonis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumHiranonis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

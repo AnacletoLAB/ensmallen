@@ -91,7 +91,7 @@ def ChlamydiaGallinacea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlamydiaGallinacea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

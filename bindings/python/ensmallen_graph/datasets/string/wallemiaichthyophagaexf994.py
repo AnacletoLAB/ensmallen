@@ -88,7 +88,7 @@ def WallemiaIchthyophagaExf994(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WallemiaIchthyophagaExf994",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

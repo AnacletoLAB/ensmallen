@@ -91,7 +91,7 @@ def ShewanellaWoodyi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShewanellaWoodyi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

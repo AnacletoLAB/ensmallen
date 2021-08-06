@@ -88,7 +88,7 @@ def GeoalkalibacterFerrihydriticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeoalkalibacterFerrihydriticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

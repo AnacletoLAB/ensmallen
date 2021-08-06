@@ -88,7 +88,7 @@ def IsoptericolaDokdonensisDs3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IsoptericolaDokdonensisDs3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

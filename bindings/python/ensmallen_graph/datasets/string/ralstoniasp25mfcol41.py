@@ -88,7 +88,7 @@ def RalstoniaSp25mfcol41(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RalstoniaSp25mfcol41",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

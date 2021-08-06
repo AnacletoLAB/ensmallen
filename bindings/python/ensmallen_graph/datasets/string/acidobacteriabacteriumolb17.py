@@ -88,7 +88,7 @@ def AcidobacteriaBacteriumOlb17(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidobacteriaBacteriumOlb17",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

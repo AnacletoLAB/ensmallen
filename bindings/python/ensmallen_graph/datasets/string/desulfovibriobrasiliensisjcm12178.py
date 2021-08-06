@@ -88,7 +88,7 @@ def DesulfovibrioBrasiliensisJcm12178(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioBrasiliensisJcm12178",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def LuteimonasAbyssi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LuteimonasAbyssi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

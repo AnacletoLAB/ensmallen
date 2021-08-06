@@ -91,7 +91,7 @@ def StenotrophomonasMaltophiliaR5513(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StenotrophomonasMaltophiliaR5513",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

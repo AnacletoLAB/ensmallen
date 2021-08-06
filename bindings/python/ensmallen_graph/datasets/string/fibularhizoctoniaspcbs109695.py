@@ -88,7 +88,7 @@ def FibularhizoctoniaSpCbs109695(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FibularhizoctoniaSpCbs109695",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

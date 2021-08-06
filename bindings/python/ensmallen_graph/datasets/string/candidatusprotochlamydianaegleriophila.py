@@ -88,7 +88,7 @@ def CandidatusProtochlamydiaNaegleriophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusProtochlamydiaNaegleriophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ShewanellaColwelliana(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShewanellaColwelliana",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

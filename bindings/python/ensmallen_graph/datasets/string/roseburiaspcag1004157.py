@@ -88,7 +88,7 @@ def RoseburiaSpCag1004157(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseburiaSpCag1004157",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def OribacteriumSpFc2011(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OribacteriumSpFc2011",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CoprobacillusCateniformis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CoprobacillusCateniformis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

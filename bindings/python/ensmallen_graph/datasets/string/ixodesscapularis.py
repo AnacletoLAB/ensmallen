@@ -88,7 +88,7 @@ def IxodesScapularis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IxodesScapularis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

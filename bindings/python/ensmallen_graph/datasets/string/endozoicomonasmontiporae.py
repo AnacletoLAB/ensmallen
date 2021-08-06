@@ -91,7 +91,7 @@ def EndozoicomonasMontiporae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EndozoicomonasMontiporae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

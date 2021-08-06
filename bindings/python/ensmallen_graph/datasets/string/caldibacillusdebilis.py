@@ -88,7 +88,7 @@ def CaldibacillusDebilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaldibacillusDebilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

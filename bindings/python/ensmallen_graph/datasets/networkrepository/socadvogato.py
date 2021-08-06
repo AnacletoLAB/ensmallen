@@ -96,7 +96,7 @@ def SocAdvogato(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocAdvogato",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

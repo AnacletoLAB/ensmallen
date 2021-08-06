@@ -88,7 +88,7 @@ def MoorellaGlycerini(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MoorellaGlycerini",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

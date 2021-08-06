@@ -88,7 +88,7 @@ def TolypothrixBouteilleiVb521301(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TolypothrixBouteilleiVb521301",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ShewanellaSpEcsmb14101(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShewanellaSpEcsmb14101",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

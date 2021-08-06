@@ -88,7 +88,7 @@ def AmycolatopsisSacchari(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmycolatopsisSacchari",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

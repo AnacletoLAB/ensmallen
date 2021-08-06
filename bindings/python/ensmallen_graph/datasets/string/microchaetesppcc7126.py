@@ -91,7 +91,7 @@ def MicrochaeteSpPcc7126(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrochaeteSpPcc7126",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

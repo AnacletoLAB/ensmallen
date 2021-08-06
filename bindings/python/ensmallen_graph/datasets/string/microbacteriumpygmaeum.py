@@ -88,7 +88,7 @@ def MicrobacteriumPygmaeum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriumPygmaeum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

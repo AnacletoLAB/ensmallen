@@ -88,7 +88,7 @@ def PseudosphingobacteriumDomesticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudosphingobacteriumDomesticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

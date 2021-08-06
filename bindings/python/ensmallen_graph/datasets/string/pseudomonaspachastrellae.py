@@ -88,7 +88,7 @@ def PseudomonasPachastrellae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasPachastrellae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def CionaSavignyi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CionaSavignyi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AspergillusOryzaeRib40(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AspergillusOryzaeRib40",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

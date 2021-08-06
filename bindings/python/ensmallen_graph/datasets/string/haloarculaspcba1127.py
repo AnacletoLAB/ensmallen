@@ -88,7 +88,7 @@ def HaloarculaSpCba1127(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaloarculaSpCba1127",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

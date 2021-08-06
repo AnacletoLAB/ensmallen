@@ -88,7 +88,7 @@ def FusariumLongipes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FusariumLongipes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PorphyromonasUenonisDsm23387Jcm13868(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PorphyromonasUenonisDsm23387Jcm13868",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PlanifilumFulgidum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlanifilumFulgidum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

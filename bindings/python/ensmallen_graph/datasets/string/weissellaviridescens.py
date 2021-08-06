@@ -88,7 +88,7 @@ def WeissellaViridescens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WeissellaViridescens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

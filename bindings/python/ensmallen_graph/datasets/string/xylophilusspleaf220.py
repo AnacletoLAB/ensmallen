@@ -88,7 +88,7 @@ def XylophilusSpLeaf220(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XylophilusSpLeaf220",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

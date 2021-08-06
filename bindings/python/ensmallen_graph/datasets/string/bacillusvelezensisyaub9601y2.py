@@ -88,7 +88,7 @@ def BacillusVelezensisYauB9601Y2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusVelezensisYauB9601Y2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

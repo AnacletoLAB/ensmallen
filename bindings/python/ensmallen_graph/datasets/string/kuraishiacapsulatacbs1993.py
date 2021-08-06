@@ -88,7 +88,7 @@ def KuraishiaCapsulataCbs1993(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KuraishiaCapsulataCbs1993",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

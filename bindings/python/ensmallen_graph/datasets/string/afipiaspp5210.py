@@ -91,7 +91,7 @@ def AfipiaSpP5210(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AfipiaSpP5210",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

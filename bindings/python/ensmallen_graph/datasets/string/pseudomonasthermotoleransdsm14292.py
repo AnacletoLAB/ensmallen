@@ -88,7 +88,7 @@ def PseudomonasThermotoleransDsm14292(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasThermotoleransDsm14292",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

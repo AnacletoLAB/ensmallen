@@ -91,7 +91,7 @@ def LentibacillusJeotgali(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LentibacillusJeotgali",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

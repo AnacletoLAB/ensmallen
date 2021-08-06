@@ -88,7 +88,7 @@ def PolynucleobacterSinensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PolynucleobacterSinensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

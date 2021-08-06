@@ -91,7 +91,7 @@ def DermacoccusNishinomiyaensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DermacoccusNishinomiyaensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

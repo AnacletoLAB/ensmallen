@@ -91,7 +91,7 @@ def PantoeaAnanatisAj13355(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PantoeaAnanatisAj13355",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

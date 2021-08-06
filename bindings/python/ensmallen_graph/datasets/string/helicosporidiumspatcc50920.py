@@ -88,7 +88,7 @@ def HelicosporidiumSpAtcc50920(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelicosporidiumSpAtcc50920",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

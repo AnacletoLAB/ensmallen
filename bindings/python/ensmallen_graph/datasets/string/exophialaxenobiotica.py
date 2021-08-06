@@ -88,7 +88,7 @@ def ExophialaXenobiotica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ExophialaXenobiotica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

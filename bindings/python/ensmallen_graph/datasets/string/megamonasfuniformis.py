@@ -88,7 +88,7 @@ def MegamonasFuniformis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MegamonasFuniformis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def SporosarcinaNewyorkensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SporosarcinaNewyorkensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

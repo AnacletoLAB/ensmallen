@@ -88,7 +88,7 @@ def BesnoitiaBesnoiti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BesnoitiaBesnoiti",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

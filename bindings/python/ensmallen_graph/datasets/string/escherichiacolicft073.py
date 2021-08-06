@@ -91,7 +91,7 @@ def EscherichiaColiCft073(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EscherichiaColiCft073",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

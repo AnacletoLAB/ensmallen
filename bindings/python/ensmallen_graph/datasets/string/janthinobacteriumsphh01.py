@@ -91,7 +91,7 @@ def JanthinobacteriumSpHh01(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JanthinobacteriumSpHh01",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

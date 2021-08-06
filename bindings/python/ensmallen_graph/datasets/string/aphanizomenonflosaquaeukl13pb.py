@@ -88,7 +88,7 @@ def AphanizomenonFlosAquaeUkl13Pb(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AphanizomenonFlosAquaeUkl13Pb",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

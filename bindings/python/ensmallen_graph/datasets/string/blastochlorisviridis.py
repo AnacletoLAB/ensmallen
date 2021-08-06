@@ -88,7 +88,7 @@ def BlastochlorisViridis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlastochlorisViridis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

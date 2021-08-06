@@ -88,7 +88,7 @@ def CorynebacteriumOculi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumOculi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CephalotusFollicularis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CephalotusFollicularis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

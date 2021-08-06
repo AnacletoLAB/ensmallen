@@ -88,7 +88,7 @@ def OryzaSativaIndicaGroup(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OryzaSativaIndicaGroup",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

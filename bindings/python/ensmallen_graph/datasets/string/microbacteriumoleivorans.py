@@ -91,7 +91,7 @@ def MicrobacteriumOleivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriumOleivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

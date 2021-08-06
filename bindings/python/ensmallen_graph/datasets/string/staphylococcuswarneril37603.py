@@ -91,7 +91,7 @@ def StaphylococcusWarneriL37603(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StaphylococcusWarneriL37603",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

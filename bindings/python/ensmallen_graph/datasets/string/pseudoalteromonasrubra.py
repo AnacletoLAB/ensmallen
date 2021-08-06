@@ -91,7 +91,7 @@ def PseudoalteromonasRubra(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoalteromonasRubra",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def IdiomarinaceaeBacteriumHl53(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IdiomarinaceaeBacteriumHl53",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

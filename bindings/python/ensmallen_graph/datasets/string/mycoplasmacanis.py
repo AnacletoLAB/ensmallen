@@ -91,7 +91,7 @@ def MycoplasmaCanis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaCanis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

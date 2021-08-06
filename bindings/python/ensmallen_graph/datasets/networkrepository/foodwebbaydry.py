@@ -78,7 +78,7 @@ def FoodwebBaydry(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FoodwebBaydry",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

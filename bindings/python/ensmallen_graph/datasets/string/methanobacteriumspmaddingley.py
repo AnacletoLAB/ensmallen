@@ -91,7 +91,7 @@ def MethanobacteriumSpMaddingley(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanobacteriumSpMaddingley",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

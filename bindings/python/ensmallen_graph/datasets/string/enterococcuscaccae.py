@@ -91,7 +91,7 @@ def EnterococcusCaccae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterococcusCaccae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

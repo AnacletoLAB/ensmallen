@@ -88,7 +88,7 @@ def MelissococcusPlutoniusAtcc35311(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MelissococcusPlutoniusAtcc35311",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

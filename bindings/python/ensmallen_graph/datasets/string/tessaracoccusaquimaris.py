@@ -88,7 +88,7 @@ def TessaracoccusAquimaris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TessaracoccusAquimaris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

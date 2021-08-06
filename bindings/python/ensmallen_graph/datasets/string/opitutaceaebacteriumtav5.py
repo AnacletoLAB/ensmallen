@@ -91,7 +91,7 @@ def OpitutaceaeBacteriumTav5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OpitutaceaeBacteriumTav5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

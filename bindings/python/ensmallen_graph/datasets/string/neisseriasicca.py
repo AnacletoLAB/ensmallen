@@ -91,7 +91,7 @@ def NeisseriaSicca(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeisseriaSicca",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

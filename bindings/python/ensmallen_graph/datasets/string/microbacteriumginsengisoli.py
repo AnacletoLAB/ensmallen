@@ -88,7 +88,7 @@ def MicrobacteriumGinsengisoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriumGinsengisoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

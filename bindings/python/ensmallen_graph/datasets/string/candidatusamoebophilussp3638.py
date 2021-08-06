@@ -88,7 +88,7 @@ def CandidatusAmoebophilusSp3638(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusAmoebophilusSp3638",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

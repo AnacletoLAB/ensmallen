@@ -88,7 +88,7 @@ def FlavihumibacterPetaseusNbrc106054(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavihumibacterPetaseusNbrc106054",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

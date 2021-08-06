@@ -88,7 +88,7 @@ def GranulicellaPectinivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GranulicellaPectinivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

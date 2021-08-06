@@ -78,7 +78,7 @@ def TechArenasPgp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TechArenasPgp",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def EnterocytozoonHepatopenaei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterocytozoonHepatopenaei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

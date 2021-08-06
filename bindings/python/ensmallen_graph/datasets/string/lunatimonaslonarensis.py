@@ -88,7 +88,7 @@ def LunatimonasLonarensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LunatimonasLonarensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

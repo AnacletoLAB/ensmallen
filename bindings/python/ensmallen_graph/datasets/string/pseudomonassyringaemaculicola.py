@@ -91,7 +91,7 @@ def PseudomonasSyringaeMaculicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasSyringaeMaculicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

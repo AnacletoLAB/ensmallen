@@ -88,7 +88,7 @@ def PapilioXuthus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PapilioXuthus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

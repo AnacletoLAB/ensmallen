@@ -88,7 +88,7 @@ def AmphilophusCitrinellus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmphilophusCitrinellus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

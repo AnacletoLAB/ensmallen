@@ -78,7 +78,7 @@ def Sls(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Sls",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

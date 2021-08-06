@@ -88,7 +88,7 @@ def AspergillusGlaucusCbs51665(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AspergillusGlaucusCbs51665",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

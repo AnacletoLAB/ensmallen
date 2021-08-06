@@ -91,7 +91,7 @@ def CorynebacteriumCapitovis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumCapitovis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

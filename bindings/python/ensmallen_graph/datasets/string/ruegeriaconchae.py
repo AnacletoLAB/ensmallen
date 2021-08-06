@@ -91,7 +91,7 @@ def RuegeriaConchae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuegeriaConchae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

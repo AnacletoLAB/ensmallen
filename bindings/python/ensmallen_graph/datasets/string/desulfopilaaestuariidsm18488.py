@@ -88,7 +88,7 @@ def DesulfopilaAestuariiDsm18488(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfopilaAestuariiDsm18488",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

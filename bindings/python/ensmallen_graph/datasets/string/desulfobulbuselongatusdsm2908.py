@@ -88,7 +88,7 @@ def DesulfobulbusElongatusDsm2908(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfobulbusElongatusDsm2908",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

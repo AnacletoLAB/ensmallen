@@ -88,7 +88,7 @@ def AminobacterSpRoot100(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AminobacterSpRoot100",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

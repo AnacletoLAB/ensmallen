@@ -91,7 +91,7 @@ def CricetulusGriseus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CricetulusGriseus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

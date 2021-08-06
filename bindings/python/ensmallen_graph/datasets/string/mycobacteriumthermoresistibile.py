@@ -91,7 +91,7 @@ def MycobacteriumThermoresistibile(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumThermoresistibile",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

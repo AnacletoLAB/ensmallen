@@ -88,7 +88,7 @@ def FlammeovirgaSpSjp92(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlammeovirgaSpSjp92",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

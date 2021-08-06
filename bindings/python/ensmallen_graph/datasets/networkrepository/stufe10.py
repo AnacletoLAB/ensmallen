@@ -78,7 +78,7 @@ def Stufe10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Stufe10",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

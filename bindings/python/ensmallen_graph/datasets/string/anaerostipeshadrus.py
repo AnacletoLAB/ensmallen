@@ -88,7 +88,7 @@ def AnaerostipesHadrus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerostipesHadrus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SistotremastrumSuecicumHhb10207Ss3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SistotremastrumSuecicumHhb10207Ss3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

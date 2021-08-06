@@ -88,7 +88,7 @@ def ChloroflexiBacterium5419(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChloroflexiBacterium5419",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

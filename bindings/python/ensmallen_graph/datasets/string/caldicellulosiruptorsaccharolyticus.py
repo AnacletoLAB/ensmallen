@@ -91,7 +91,7 @@ def CaldicellulosiruptorSaccharolyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaldicellulosiruptorSaccharolyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

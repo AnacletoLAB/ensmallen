@@ -88,7 +88,7 @@ def WolbachiaSpCulex(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WolbachiaSpCulex",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

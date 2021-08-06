@@ -91,7 +91,7 @@ def RoseovariusMucosus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseovariusMucosus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

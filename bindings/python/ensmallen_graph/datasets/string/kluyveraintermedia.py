@@ -88,7 +88,7 @@ def KluyveraIntermedia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KluyveraIntermedia",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

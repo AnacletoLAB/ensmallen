@@ -91,7 +91,7 @@ def ParacoccusPantotrophus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParacoccusPantotrophus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

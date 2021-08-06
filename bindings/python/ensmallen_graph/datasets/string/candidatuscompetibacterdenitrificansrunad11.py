@@ -88,7 +88,7 @@ def CandidatusCompetibacterDenitrificansRunAD11(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusCompetibacterDenitrificansRunAD11",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

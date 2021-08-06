@@ -91,7 +91,7 @@ def NitratifractorSalsuginis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitratifractorSalsuginis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

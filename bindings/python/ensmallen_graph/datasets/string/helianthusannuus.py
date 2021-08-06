@@ -88,7 +88,7 @@ def HelianthusAnnuus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelianthusAnnuus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

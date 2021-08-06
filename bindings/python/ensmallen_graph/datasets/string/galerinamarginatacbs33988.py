@@ -88,7 +88,7 @@ def GalerinaMarginataCbs33988(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GalerinaMarginataCbs33988",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

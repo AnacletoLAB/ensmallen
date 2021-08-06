@@ -88,7 +88,7 @@ def CycloclasticusSpSymbiontOfBathymodiolusHeckerae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CycloclasticusSpSymbiontOfBathymodiolusHeckerae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

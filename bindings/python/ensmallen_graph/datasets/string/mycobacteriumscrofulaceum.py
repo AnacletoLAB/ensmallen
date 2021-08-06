@@ -88,7 +88,7 @@ def MycobacteriumScrofulaceum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumScrofulaceum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

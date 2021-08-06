@@ -88,7 +88,7 @@ def HaloterrigenaHispanica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaloterrigenaHispanica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

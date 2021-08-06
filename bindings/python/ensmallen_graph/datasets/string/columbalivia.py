@@ -91,7 +91,7 @@ def ColumbaLivia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ColumbaLivia",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

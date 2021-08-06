@@ -91,7 +91,7 @@ def GillisiaSpHeli29(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GillisiaSpHeli29",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

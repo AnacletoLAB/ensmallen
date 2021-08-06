@@ -88,7 +88,7 @@ def MicrobotryumLychnidisDioicaeP1a1Lamole(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobotryumLychnidisDioicaeP1a1Lamole",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

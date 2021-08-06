@@ -78,7 +78,7 @@ def Tf16(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Tf16",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

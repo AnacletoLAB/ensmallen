@@ -88,7 +88,7 @@ def YooniaLitorea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="YooniaLitorea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

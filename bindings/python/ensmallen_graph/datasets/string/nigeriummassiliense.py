@@ -88,7 +88,7 @@ def NigeriumMassiliense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NigeriumMassiliense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

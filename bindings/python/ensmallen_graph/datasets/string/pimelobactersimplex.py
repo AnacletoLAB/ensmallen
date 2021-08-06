@@ -91,7 +91,7 @@ def PimelobacterSimplex(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PimelobacterSimplex",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def EndosymbiontOfAcanthamoeba(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EndosymbiontOfAcanthamoeba",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def SalpingoecaRosetta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalpingoecaRosetta",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

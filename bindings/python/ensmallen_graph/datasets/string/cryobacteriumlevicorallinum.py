@@ -88,7 +88,7 @@ def CryobacteriumLevicorallinum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CryobacteriumLevicorallinum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

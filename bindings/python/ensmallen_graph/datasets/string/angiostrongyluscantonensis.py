@@ -88,7 +88,7 @@ def AngiostrongylusCantonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AngiostrongylusCantonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

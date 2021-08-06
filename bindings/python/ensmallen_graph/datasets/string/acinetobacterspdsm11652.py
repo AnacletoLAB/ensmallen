@@ -88,7 +88,7 @@ def AcinetobacterSpDsm11652(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcinetobacterSpDsm11652",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

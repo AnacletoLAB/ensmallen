@@ -88,7 +88,7 @@ def MarineActinobacteriumMedacidiG2b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarineActinobacteriumMedacidiG2b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def HalomonasZinciduransB6(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalomonasZinciduransB6",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

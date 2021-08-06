@@ -91,7 +91,7 @@ def ThiothrixLacustris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThiothrixLacustris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

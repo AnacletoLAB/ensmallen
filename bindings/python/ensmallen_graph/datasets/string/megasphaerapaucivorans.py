@@ -88,7 +88,7 @@ def MegasphaeraPaucivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MegasphaeraPaucivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

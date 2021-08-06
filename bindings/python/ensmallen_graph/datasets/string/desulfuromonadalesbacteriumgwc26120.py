@@ -88,7 +88,7 @@ def DesulfuromonadalesBacteriumGwc26120(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfuromonadalesBacteriumGwc26120",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

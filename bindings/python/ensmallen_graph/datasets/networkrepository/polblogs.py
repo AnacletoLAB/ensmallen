@@ -78,7 +78,7 @@ def Polblogs(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Polblogs",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def DesulfosporosinusYoungiae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfosporosinusYoungiae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

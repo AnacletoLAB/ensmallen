@@ -91,7 +91,7 @@ def PleurocapsaSpPcc7319(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PleurocapsaSpPcc7319",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

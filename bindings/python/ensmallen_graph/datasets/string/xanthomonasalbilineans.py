@@ -91,7 +91,7 @@ def XanthomonasAlbilineans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XanthomonasAlbilineans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

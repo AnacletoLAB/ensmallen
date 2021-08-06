@@ -88,7 +88,7 @@ def GlobisporangiumUltimumDaomBr144(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GlobisporangiumUltimumDaomBr144",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

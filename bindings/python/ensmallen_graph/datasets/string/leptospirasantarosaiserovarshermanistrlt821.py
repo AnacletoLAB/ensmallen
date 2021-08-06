@@ -88,7 +88,7 @@ def LeptospiraSantarosaiSerovarShermaniStrLt821(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptospiraSantarosaiSerovarShermaniStrLt821",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def AlicyclobacillusMacrosporangiidus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlicyclobacillusMacrosporangiidus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

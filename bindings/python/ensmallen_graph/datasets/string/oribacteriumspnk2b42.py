@@ -91,7 +91,7 @@ def OribacteriumSpNk2b42(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OribacteriumSpNk2b42",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

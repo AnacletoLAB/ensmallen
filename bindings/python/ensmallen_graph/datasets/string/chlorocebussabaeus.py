@@ -91,7 +91,7 @@ def ChlorocebusSabaeus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlorocebusSabaeus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def WeissellaParamesenteroides(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WeissellaParamesenteroides",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

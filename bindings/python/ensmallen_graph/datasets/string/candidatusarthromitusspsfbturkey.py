@@ -88,7 +88,7 @@ def CandidatusArthromitusSpSfbTurkey(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusArthromitusSpSfbTurkey",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

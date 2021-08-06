@@ -88,7 +88,7 @@ def MagnetospirillumSp64120(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MagnetospirillumSp64120",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

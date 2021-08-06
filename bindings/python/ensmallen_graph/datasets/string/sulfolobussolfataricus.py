@@ -91,7 +91,7 @@ def SulfolobusSolfataricus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfolobusSolfataricus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

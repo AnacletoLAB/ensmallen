@@ -88,7 +88,7 @@ def PhycicoccusCremeus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhycicoccusCremeus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

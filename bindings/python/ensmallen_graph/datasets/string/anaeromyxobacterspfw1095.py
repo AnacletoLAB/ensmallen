@@ -91,7 +91,7 @@ def AnaeromyxobacterSpFw1095(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaeromyxobacterSpFw1095",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

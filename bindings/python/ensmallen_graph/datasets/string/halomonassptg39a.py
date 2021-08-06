@@ -91,7 +91,7 @@ def HalomonasSpTg39a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalomonasSpTg39a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

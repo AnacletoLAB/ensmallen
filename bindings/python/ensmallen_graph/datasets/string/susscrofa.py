@@ -91,7 +91,7 @@ def SusScrofa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SusScrofa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

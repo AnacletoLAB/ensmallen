@@ -91,7 +91,7 @@ def LeptotrichiaBuccalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptotrichiaBuccalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

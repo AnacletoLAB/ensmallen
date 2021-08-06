@@ -88,7 +88,7 @@ def BlastocystisSpAtcc50177NandIi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlastocystisSpAtcc50177NandIi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

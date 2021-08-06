@@ -91,7 +91,7 @@ def RuaniaAlbidiflava(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuaniaAlbidiflava",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

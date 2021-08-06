@@ -91,7 +91,7 @@ def MesorhizobiumOpportunistum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MesorhizobiumOpportunistum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AsbolusVerrucosus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AsbolusVerrucosus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

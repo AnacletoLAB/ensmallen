@@ -91,7 +91,7 @@ def HalomonasAlkaliantarctica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalomonasAlkaliantarctica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

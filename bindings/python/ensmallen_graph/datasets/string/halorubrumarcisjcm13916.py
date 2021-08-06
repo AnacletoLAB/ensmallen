@@ -88,7 +88,7 @@ def HalorubrumArcisJcm13916(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalorubrumArcisJcm13916",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

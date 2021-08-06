@@ -88,7 +88,7 @@ def ThorselliaAnophelisDsm18579(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThorselliaAnophelisDsm18579",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

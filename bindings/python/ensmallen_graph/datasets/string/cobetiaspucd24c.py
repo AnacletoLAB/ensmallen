@@ -88,7 +88,7 @@ def CobetiaSpUcd24c(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CobetiaSpUcd24c",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def AnabaenaCylindrica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnabaenaCylindrica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

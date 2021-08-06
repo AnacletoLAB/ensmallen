@@ -88,7 +88,7 @@ def XanthomonasCannabisPvPhaseoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XanthomonasCannabisPvPhaseoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

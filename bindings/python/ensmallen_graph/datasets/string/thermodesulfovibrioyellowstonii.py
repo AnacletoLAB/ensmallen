@@ -91,7 +91,7 @@ def ThermodesulfovibrioYellowstonii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermodesulfovibrioYellowstonii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

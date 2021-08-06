@@ -88,7 +88,7 @@ def ActinomycesSlackiiAtcc49928(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomycesSlackiiAtcc49928",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

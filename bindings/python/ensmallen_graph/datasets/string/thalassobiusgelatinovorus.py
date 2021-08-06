@@ -88,7 +88,7 @@ def ThalassobiusGelatinovorus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThalassobiusGelatinovorus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

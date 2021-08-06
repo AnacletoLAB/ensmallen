@@ -88,7 +88,7 @@ def ParaburkholderiaSpSos3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParaburkholderiaSpSos3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

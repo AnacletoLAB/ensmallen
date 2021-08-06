@@ -88,7 +88,7 @@ def PhialophoraAmericana(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhialophoraAmericana",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

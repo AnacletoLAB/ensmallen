@@ -78,7 +78,7 @@ def G55(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="G55",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

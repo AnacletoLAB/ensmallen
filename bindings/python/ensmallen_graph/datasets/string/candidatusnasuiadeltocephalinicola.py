@@ -88,7 +88,7 @@ def CandidatusNasuiaDeltocephalinicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusNasuiaDeltocephalinicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

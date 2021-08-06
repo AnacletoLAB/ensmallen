@@ -91,7 +91,7 @@ def EthanoligenensHarbinense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EthanoligenensHarbinense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

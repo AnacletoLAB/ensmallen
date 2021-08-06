@@ -78,7 +78,7 @@ def G22(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="G22",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

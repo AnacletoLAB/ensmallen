@@ -91,7 +91,7 @@ def ThermanaerovibrioAcidaminovorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermanaerovibrioAcidaminovorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

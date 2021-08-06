@@ -91,7 +91,7 @@ def StreptococcusSpC150(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusSpC150",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

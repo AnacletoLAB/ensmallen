@@ -88,7 +88,7 @@ def SediminibacillusAlbus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SediminibacillusAlbus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

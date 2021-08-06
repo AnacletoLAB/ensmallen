@@ -91,7 +91,7 @@ def ChloroflexusSpY3961(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChloroflexusSpY3961",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

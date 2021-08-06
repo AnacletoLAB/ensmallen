@@ -88,7 +88,7 @@ def PseudarthrobacterSiccitolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudarthrobacterSiccitolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

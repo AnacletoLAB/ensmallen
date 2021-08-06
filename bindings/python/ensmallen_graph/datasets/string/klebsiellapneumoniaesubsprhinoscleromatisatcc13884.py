@@ -88,7 +88,7 @@ def KlebsiellaPneumoniaeSubspRhinoscleromatisAtcc13884(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KlebsiellaPneumoniaeSubspRhinoscleromatisAtcc13884",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

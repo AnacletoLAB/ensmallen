@@ -88,7 +88,7 @@ def ParasitellaParasitica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParasitellaParasitica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

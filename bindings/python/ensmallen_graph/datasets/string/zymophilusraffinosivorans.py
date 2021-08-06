@@ -91,7 +91,7 @@ def ZymophilusRaffinosivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZymophilusRaffinosivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

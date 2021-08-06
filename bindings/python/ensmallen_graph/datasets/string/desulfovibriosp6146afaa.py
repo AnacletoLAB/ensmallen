@@ -91,7 +91,7 @@ def DesulfovibrioSp6146afaa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioSp6146afaa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ByssochlamysSpectabilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ByssochlamysSpectabilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

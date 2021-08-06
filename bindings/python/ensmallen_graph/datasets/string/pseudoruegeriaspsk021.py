@@ -88,7 +88,7 @@ def PseudoruegeriaSpSk021(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoruegeriaSpSk021",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

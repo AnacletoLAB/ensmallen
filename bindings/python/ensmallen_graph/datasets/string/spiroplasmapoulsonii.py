@@ -88,7 +88,7 @@ def SpiroplasmaPoulsonii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpiroplasmaPoulsonii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SynchytriumEndobioticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SynchytriumEndobioticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

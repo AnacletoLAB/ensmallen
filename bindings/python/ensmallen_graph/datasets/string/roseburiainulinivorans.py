@@ -91,7 +91,7 @@ def RoseburiaInulinivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseburiaInulinivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

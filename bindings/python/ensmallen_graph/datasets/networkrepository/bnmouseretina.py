@@ -102,7 +102,7 @@ def BNMouseRetina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BNMouseRetina",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

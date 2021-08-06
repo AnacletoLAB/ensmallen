@@ -91,7 +91,7 @@ def FlavobacteriumLimnosediminis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumLimnosediminis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

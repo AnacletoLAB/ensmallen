@@ -91,7 +91,7 @@ def LactobacillusFermentumIfo3956(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusFermentumIfo3956",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

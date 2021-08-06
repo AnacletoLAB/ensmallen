@@ -78,7 +78,7 @@ def NR162bit(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NR162bit",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

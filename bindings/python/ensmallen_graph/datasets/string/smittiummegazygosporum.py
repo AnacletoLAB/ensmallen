@@ -88,7 +88,7 @@ def SmittiumMegazygosporum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SmittiumMegazygosporum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

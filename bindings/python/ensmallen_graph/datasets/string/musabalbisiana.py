@@ -88,7 +88,7 @@ def MusaBalbisiana(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MusaBalbisiana",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

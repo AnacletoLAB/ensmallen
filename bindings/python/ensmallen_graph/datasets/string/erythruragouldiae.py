@@ -88,7 +88,7 @@ def ErythruraGouldiae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErythruraGouldiae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ThaueraLinaloolentis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThaueraLinaloolentis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def LachnoclostridiumSpYl32(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LachnoclostridiumSpYl32",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

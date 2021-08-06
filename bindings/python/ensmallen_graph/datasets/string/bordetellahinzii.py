@@ -91,7 +91,7 @@ def BordetellaHinzii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BordetellaHinzii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

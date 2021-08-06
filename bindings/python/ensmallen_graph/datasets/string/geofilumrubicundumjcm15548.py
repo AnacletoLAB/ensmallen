@@ -88,7 +88,7 @@ def GeofilumRubicundumJcm15548(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeofilumRubicundumJcm15548",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

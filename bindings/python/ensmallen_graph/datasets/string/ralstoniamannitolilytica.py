@@ -88,7 +88,7 @@ def RalstoniaMannitolilytica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RalstoniaMannitolilytica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

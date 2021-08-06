@@ -91,7 +91,7 @@ def HalosarcinaPallida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalosarcinaPallida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def BorreliaTuricatae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BorreliaTuricatae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def AliihoefleaSp2ww(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AliihoefleaSp2ww",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

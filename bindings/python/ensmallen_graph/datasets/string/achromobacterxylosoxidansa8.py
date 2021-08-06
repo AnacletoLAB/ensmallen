@@ -91,7 +91,7 @@ def AchromobacterXylosoxidansA8(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AchromobacterXylosoxidansA8",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

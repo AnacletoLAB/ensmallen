@@ -91,7 +91,7 @@ def LeeuwenhoekiellaSpMar2009132(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeeuwenhoekiellaSpMar2009132",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def HeliothisVirescens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HeliothisVirescens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

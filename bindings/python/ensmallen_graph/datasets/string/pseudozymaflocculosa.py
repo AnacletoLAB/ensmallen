@@ -91,7 +91,7 @@ def PseudozymaFlocculosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudozymaFlocculosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

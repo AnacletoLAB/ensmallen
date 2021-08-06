@@ -88,7 +88,7 @@ def ThermococcusPiezophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermococcusPiezophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

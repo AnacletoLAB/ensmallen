@@ -88,7 +88,7 @@ def OctopusBimaculoides(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OctopusBimaculoides",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

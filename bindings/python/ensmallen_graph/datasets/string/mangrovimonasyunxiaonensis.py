@@ -91,7 +91,7 @@ def MangrovimonasYunxiaonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MangrovimonasYunxiaonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

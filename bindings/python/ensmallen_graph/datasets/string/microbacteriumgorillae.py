@@ -88,7 +88,7 @@ def MicrobacteriumGorillae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriumGorillae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

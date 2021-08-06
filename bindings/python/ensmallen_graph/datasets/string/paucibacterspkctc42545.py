@@ -88,7 +88,7 @@ def PaucibacterSpKctc42545(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaucibacterSpKctc42545",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

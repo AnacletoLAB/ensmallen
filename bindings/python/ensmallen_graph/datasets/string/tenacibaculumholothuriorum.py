@@ -88,7 +88,7 @@ def TenacibaculumHolothuriorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TenacibaculumHolothuriorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

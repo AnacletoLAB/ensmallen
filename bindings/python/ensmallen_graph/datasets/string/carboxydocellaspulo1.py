@@ -88,7 +88,7 @@ def CarboxydocellaSpUlo1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CarboxydocellaSpUlo1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

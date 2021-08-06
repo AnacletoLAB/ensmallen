@@ -91,7 +91,7 @@ def DesulfomonileTiedjei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfomonileTiedjei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

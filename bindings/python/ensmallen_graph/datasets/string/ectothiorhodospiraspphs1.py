@@ -91,7 +91,7 @@ def EctothiorhodospiraSpPhs1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EctothiorhodospiraSpPhs1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

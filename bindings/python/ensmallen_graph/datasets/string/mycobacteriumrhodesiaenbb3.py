@@ -91,7 +91,7 @@ def MycobacteriumRhodesiaeNbb3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumRhodesiaeNbb3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

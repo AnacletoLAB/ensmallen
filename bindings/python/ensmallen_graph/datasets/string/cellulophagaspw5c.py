@@ -88,7 +88,7 @@ def CellulophagaSpW5c(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CellulophagaSpW5c",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

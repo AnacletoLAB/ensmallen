@@ -88,7 +88,7 @@ def TrametesPubescens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrametesPubescens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

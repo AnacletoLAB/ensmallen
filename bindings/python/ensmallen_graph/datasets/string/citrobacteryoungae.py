@@ -91,7 +91,7 @@ def CitrobacterYoungae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CitrobacterYoungae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

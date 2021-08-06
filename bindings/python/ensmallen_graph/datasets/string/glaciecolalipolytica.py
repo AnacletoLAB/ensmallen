@@ -91,7 +91,7 @@ def GlaciecolaLipolytica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GlaciecolaLipolytica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

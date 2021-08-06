@@ -88,7 +88,7 @@ def PyrodictiumOccultum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PyrodictiumOccultum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

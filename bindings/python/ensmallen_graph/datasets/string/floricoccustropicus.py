@@ -88,7 +88,7 @@ def FloricoccusTropicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FloricoccusTropicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

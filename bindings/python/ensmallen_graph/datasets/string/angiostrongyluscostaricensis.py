@@ -88,7 +88,7 @@ def AngiostrongylusCostaricensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AngiostrongylusCostaricensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

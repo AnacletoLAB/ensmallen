@@ -88,7 +88,7 @@ def SparusAurata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SparusAurata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

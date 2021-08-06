@@ -88,7 +88,7 @@ def DemequinaLutea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DemequinaLutea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

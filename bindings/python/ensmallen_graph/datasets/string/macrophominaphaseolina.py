@@ -91,7 +91,7 @@ def MacrophominaPhaseolina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MacrophominaPhaseolina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

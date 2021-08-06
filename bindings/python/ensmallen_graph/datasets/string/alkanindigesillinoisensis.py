@@ -91,7 +91,7 @@ def AlkanindigesIllinoisensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlkanindigesIllinoisensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

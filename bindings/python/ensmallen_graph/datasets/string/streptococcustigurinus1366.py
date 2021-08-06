@@ -91,7 +91,7 @@ def StreptococcusTigurinus1366(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusTigurinus1366",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

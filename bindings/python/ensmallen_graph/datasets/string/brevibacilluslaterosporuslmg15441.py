@@ -91,7 +91,7 @@ def BrevibacillusLaterosporusLmg15441(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrevibacillusLaterosporusLmg15441",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

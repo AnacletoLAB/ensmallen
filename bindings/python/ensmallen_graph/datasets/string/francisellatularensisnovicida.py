@@ -91,7 +91,7 @@ def FrancisellaTularensisNovicida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FrancisellaTularensisNovicida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

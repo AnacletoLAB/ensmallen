@@ -88,7 +88,7 @@ def CallipeplaSquamata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CallipeplaSquamata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

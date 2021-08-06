@@ -91,7 +91,7 @@ def ScardoviaWiggsiae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ScardoviaWiggsiae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

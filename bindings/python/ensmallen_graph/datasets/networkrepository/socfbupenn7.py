@@ -120,7 +120,7 @@ def SocfbUpenn7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbUpenn7",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

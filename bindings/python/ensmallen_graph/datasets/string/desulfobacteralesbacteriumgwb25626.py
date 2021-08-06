@@ -88,7 +88,7 @@ def DesulfobacteralesBacteriumGwb25626(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfobacteralesBacteriumGwb25626",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

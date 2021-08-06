@@ -88,7 +88,7 @@ def FusicatenibacterSaccharivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FusicatenibacterSaccharivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

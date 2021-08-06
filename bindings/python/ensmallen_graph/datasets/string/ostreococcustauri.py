@@ -91,7 +91,7 @@ def OstreococcusTauri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OstreococcusTauri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

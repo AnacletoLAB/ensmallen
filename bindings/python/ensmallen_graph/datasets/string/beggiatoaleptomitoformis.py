@@ -88,7 +88,7 @@ def BeggiatoaLeptomitoformis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BeggiatoaLeptomitoformis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

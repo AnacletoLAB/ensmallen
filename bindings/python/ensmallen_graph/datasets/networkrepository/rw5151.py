@@ -78,7 +78,7 @@ def Rw5151(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Rw5151",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

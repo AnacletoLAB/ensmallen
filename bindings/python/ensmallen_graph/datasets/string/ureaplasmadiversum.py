@@ -91,7 +91,7 @@ def UreaplasmaDiversum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UreaplasmaDiversum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

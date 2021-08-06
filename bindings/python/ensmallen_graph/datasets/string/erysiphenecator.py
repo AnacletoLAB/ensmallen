@@ -88,7 +88,7 @@ def ErysipheNecator(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErysipheNecator",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

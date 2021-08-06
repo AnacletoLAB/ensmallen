@@ -88,7 +88,7 @@ def PhormidiumTenueNies30(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhormidiumTenueNies30",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

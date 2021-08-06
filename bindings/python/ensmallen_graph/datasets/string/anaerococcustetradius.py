@@ -91,7 +91,7 @@ def AnaerococcusTetradius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerococcusTetradius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

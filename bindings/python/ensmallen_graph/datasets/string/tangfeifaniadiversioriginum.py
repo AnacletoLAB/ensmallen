@@ -88,7 +88,7 @@ def TangfeifaniaDiversioriginum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TangfeifaniaDiversioriginum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

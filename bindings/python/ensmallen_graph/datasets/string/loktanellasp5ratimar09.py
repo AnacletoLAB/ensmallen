@@ -88,7 +88,7 @@ def LoktanellaSp5ratimar09(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LoktanellaSp5ratimar09",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

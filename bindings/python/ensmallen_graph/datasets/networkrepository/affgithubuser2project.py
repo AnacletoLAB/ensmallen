@@ -92,7 +92,7 @@ def AffGithubUser2project(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AffGithubUser2project",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

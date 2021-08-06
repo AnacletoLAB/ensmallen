@@ -91,7 +91,7 @@ def KurthiaSpDielmo(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KurthiaSpDielmo",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

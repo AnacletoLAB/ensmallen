@@ -78,7 +78,7 @@ def Lesmis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Lesmis",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

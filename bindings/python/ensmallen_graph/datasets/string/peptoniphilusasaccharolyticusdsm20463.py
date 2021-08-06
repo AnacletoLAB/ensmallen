@@ -88,7 +88,7 @@ def PeptoniphilusAsaccharolyticusDsm20463(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeptoniphilusAsaccharolyticusDsm20463",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

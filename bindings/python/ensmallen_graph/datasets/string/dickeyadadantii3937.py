@@ -91,7 +91,7 @@ def DickeyaDadantii3937(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DickeyaDadantii3937",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def HerbaspirillumMassiliense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HerbaspirillumMassiliense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

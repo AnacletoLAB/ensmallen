@@ -88,7 +88,7 @@ def HypsizygusMarmoreus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HypsizygusMarmoreus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

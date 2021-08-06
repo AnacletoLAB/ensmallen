@@ -91,7 +91,7 @@ def FukomysDamarensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FukomysDamarensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

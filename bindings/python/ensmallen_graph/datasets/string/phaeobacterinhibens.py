@@ -91,7 +91,7 @@ def PhaeobacterInhibens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhaeobacterInhibens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

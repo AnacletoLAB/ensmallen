@@ -91,7 +91,7 @@ def NelumboNucifera(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NelumboNucifera",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

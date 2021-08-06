@@ -84,7 +84,7 @@ def GiantTN(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GiantTN",
-        dataset="zenodo",
+        repository="zenodo",
         version=version,
         directed=directed,
         preprocess=preprocess,

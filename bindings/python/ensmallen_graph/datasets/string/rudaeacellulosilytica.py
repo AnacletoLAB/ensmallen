@@ -91,7 +91,7 @@ def RudaeaCellulosilytica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RudaeaCellulosilytica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ActinopolymorphaCephalotaxi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinopolymorphaCephalotaxi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

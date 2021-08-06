@@ -88,7 +88,7 @@ def PhocaeicolaAbscessusCcug55929(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhocaeicolaAbscessusCcug55929",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

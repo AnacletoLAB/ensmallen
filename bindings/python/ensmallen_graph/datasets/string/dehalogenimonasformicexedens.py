@@ -88,7 +88,7 @@ def DehalogenimonasFormicexedens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DehalogenimonasFormicexedens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

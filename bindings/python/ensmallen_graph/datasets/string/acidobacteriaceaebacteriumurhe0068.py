@@ -88,7 +88,7 @@ def AcidobacteriaceaeBacteriumUrhe0068(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidobacteriaceaeBacteriumUrhe0068",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

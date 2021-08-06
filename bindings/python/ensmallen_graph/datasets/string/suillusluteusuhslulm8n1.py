@@ -88,7 +88,7 @@ def SuillusLuteusUhSluLm8N1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SuillusLuteusUhSluLm8N1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

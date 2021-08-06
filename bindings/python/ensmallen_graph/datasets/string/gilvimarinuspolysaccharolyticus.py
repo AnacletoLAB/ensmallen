@@ -88,7 +88,7 @@ def GilvimarinusPolysaccharolyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GilvimarinusPolysaccharolyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

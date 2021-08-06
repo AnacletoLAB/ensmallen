@@ -88,7 +88,7 @@ def TrametesCinnabarina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrametesCinnabarina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

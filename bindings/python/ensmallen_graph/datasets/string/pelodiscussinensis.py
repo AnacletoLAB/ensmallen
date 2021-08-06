@@ -91,7 +91,7 @@ def PelodiscusSinensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PelodiscusSinensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

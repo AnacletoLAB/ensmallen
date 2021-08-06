@@ -91,7 +91,7 @@ def LiberibacterAsiaticusPsy62(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LiberibacterAsiaticusPsy62",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

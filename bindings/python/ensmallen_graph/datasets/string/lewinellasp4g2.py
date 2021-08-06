@@ -88,7 +88,7 @@ def LewinellaSp4g2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LewinellaSp4g2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

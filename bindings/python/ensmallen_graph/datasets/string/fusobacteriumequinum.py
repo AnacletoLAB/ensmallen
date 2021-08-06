@@ -88,7 +88,7 @@ def FusobacteriumEquinum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FusobacteriumEquinum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

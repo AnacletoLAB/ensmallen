@@ -88,7 +88,7 @@ def DevosiaSpRoot413d1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DevosiaSpRoot413d1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

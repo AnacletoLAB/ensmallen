@@ -91,7 +91,7 @@ def GeobacillusCaldoxylosilyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeobacillusCaldoxylosilyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def FacklamiaHominis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FacklamiaHominis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

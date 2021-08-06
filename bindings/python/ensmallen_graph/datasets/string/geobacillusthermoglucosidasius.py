@@ -91,7 +91,7 @@ def GeobacillusThermoglucosidasius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeobacillusThermoglucosidasius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

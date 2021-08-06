@@ -91,7 +91,7 @@ def LeptonychotesWeddellii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptonychotesWeddellii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

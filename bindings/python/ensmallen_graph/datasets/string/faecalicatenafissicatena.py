@@ -88,7 +88,7 @@ def FaecalicatenaFissicatena(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FaecalicatenaFissicatena",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

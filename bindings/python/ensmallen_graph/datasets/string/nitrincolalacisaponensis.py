@@ -88,7 +88,7 @@ def NitrincolaLacisaponensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrincolaLacisaponensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

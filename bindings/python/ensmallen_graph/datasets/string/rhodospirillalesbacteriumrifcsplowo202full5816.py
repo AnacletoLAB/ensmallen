@@ -88,7 +88,7 @@ def RhodospirillalesBacteriumRifcsplowo202Full5816(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodospirillalesBacteriumRifcsplowo202Full5816",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

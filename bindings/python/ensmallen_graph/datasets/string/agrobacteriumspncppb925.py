@@ -88,7 +88,7 @@ def AgrobacteriumSpNcppb925(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AgrobacteriumSpNcppb925",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

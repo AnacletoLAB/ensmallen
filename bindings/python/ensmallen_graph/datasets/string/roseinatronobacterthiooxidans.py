@@ -88,7 +88,7 @@ def RoseinatronobacterThiooxidans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseinatronobacterThiooxidans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ActinobacteriaBacteriumImcc26256(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinobacteriaBacteriumImcc26256",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

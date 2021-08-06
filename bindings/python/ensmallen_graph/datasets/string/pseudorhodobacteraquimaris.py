@@ -88,7 +88,7 @@ def PseudorhodobacterAquimaris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudorhodobacterAquimaris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

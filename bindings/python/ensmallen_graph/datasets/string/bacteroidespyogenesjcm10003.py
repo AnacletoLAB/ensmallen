@@ -91,7 +91,7 @@ def BacteroidesPyogenesJcm10003(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesPyogenesJcm10003",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

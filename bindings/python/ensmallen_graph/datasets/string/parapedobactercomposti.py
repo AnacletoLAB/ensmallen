@@ -88,7 +88,7 @@ def ParapedobacterComposti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParapedobacterComposti",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PlesiocystisPacifica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlesiocystisPacifica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

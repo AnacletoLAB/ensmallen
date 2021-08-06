@@ -91,7 +91,7 @@ def PseudomonasPelagia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasPelagia",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

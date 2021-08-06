@@ -91,7 +91,7 @@ def ListeriaGrayi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ListeriaGrayi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

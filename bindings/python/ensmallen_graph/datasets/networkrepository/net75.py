@@ -78,7 +78,7 @@ def Net75(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Net75",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

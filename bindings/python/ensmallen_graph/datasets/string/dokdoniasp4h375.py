@@ -91,7 +91,7 @@ def DokdoniaSp4h375(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DokdoniaSp4h375",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

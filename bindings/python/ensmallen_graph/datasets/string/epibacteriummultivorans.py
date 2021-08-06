@@ -88,7 +88,7 @@ def EpibacteriumMultivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EpibacteriumMultivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

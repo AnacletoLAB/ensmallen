@@ -88,7 +88,7 @@ def PucciniaSorghi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PucciniaSorghi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

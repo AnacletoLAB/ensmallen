@@ -88,7 +88,7 @@ def SulfuricurvumSpPc0866(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfuricurvumSpPc0866",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

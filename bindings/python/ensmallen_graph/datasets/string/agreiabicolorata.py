@@ -88,7 +88,7 @@ def AgreiaBicolorata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AgreiaBicolorata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

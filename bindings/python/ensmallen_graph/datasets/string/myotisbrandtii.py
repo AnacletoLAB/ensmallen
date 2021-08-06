@@ -91,7 +91,7 @@ def MyotisBrandtii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MyotisBrandtii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

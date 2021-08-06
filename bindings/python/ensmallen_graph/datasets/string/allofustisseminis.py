@@ -91,7 +91,7 @@ def AllofustisSeminis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AllofustisSeminis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

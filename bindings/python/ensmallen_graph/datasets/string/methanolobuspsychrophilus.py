@@ -91,7 +91,7 @@ def MethanolobusPsychrophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanolobusPsychrophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ThermodesulfatatorAtlanticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermodesulfatatorAtlanticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

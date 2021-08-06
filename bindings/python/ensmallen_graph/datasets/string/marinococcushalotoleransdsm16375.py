@@ -88,7 +88,7 @@ def MarinococcusHalotoleransDsm16375(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinococcusHalotoleransDsm16375",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

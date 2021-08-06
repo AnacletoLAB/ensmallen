@@ -91,7 +91,7 @@ def HeliobacteriumModesticaldum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HeliobacteriumModesticaldum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

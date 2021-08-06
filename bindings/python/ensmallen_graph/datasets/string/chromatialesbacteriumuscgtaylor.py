@@ -88,7 +88,7 @@ def ChromatialesBacteriumUscgTaylor(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChromatialesBacteriumUscgTaylor",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

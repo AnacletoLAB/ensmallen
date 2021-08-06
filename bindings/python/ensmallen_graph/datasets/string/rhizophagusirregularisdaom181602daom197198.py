@@ -88,7 +88,7 @@ def RhizophagusIrregularisDaom181602Daom197198(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizophagusIrregularisDaom181602Daom197198",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

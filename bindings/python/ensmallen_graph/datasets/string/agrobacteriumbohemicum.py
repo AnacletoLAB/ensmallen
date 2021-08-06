@@ -88,7 +88,7 @@ def AgrobacteriumBohemicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AgrobacteriumBohemicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

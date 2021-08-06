@@ -88,7 +88,7 @@ def TrichophytonRubrumCbs118892(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichophytonRubrumCbs118892",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

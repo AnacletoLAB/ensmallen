@@ -88,7 +88,7 @@ def GigasporaRosea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GigasporaRosea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

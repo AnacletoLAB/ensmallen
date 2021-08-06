@@ -88,7 +88,7 @@ def CytosporaLeucostoma(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CytosporaLeucostoma",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

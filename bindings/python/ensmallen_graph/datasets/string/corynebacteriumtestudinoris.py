@@ -88,7 +88,7 @@ def CorynebacteriumTestudinoris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumTestudinoris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

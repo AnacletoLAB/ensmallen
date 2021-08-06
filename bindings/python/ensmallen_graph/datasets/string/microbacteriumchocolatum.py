@@ -88,7 +88,7 @@ def MicrobacteriumChocolatum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriumChocolatum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

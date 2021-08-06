@@ -88,7 +88,7 @@ def DuganellaZoogloeoidesAtcc25935(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DuganellaZoogloeoidesAtcc25935",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

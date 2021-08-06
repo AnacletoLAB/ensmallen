@@ -88,7 +88,7 @@ def PaxillusRubicundulusVe082h10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaxillusRubicundulusVe082h10",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

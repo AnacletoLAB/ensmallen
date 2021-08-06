@@ -88,7 +88,7 @@ def ParaburkholderiaTuberum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParaburkholderiaTuberum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

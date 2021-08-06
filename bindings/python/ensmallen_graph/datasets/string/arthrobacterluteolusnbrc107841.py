@@ -88,7 +88,7 @@ def ArthrobacterLuteolusNbrc107841(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArthrobacterLuteolusNbrc107841",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MicrobacteriumTrichothecenolyticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriumTrichothecenolyticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

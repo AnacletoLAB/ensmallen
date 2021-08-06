@@ -88,7 +88,7 @@ def LysinibacillusXylanilyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LysinibacillusXylanilyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

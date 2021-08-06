@@ -91,7 +91,7 @@ def LawsoniaIntracellularis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LawsoniaIntracellularis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

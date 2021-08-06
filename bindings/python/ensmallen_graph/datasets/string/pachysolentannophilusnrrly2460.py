@@ -88,7 +88,7 @@ def PachysolenTannophilusNrrlY2460(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PachysolenTannophilusNrrlY2460",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

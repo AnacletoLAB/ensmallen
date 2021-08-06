@@ -88,7 +88,7 @@ def RutstroemiaSpNjr2017aWrk4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RutstroemiaSpNjr2017aWrk4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

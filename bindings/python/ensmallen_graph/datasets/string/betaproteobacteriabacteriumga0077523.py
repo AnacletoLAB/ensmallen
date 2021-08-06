@@ -88,7 +88,7 @@ def BetaproteobacteriaBacteriumGa0077523(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BetaproteobacteriaBacteriumGa0077523",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

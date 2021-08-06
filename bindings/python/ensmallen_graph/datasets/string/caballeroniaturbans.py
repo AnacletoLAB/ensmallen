@@ -88,7 +88,7 @@ def CaballeroniaTurbans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaballeroniaTurbans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

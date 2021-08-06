@@ -88,7 +88,7 @@ def CandidateDivisionZixibacteriaBacteriumSm23732(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidateDivisionZixibacteriaBacteriumSm23732",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

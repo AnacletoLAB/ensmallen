@@ -91,7 +91,7 @@ def HalogeometricumBorinquense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalogeometricumBorinquense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

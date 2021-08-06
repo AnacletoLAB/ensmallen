@@ -88,7 +88,7 @@ def FlaviflexusMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlaviflexusMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

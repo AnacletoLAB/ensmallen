@@ -78,7 +78,7 @@ def Uk2002(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Uk2002",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

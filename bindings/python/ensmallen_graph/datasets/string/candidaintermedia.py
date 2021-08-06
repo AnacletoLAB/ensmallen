@@ -88,7 +88,7 @@ def CandidaIntermedia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidaIntermedia",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

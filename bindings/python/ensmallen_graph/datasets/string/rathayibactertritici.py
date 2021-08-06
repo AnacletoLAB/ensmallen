@@ -88,7 +88,7 @@ def RathayibacterTritici(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RathayibacterTritici",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

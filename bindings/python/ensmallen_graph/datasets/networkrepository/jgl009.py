@@ -78,7 +78,7 @@ def Jgl009(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Jgl009",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

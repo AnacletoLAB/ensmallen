@@ -91,7 +91,7 @@ def EggerthiaCatenaformis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EggerthiaCatenaformis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

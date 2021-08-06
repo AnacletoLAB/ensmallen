@@ -88,7 +88,7 @@ def GeminocystisSpNies3709(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeminocystisSpNies3709",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

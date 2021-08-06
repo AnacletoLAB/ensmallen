@@ -91,7 +91,7 @@ def NaegleriaGruberi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NaegleriaGruberi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

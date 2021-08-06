@@ -88,7 +88,7 @@ def PlatysternonMegacephalum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlatysternonMegacephalum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def HalobacillusSpKgw1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalobacillusSpKgw1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

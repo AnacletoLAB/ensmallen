@@ -91,7 +91,7 @@ def DesulfurellaAcetivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfurellaAcetivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def OmnitrophicaBacteriumGwa24115(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OmnitrophicaBacteriumGwa24115",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

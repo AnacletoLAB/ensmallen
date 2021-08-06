@@ -96,7 +96,7 @@ def SocWikiVote(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocWikiVote",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

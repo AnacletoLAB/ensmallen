@@ -88,7 +88,7 @@ def GlareaLozoyensisAtcc20868(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GlareaLozoyensisAtcc20868",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

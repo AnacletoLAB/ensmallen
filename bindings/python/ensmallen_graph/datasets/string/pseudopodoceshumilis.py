@@ -91,7 +91,7 @@ def PseudopodocesHumilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudopodocesHumilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def BrevibacteriumSpVcm10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrevibacteriumSpVcm10",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

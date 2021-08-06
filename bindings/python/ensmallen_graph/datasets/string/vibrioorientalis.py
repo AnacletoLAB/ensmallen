@@ -91,7 +91,7 @@ def VibrioOrientalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioOrientalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

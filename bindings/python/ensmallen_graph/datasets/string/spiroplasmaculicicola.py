@@ -91,7 +91,7 @@ def SpiroplasmaCulicicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpiroplasmaCulicicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

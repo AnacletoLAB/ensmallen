@@ -88,7 +88,7 @@ def ThermanaerothrixDaxensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermanaerothrixDaxensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def ZhishiHudongInternallink(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZhishiHudongInternallink",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

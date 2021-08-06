@@ -88,7 +88,7 @@ def PhoenicibacterCongonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhoenicibacterCongonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

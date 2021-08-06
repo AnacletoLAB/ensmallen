@@ -88,7 +88,7 @@ def CandidatusTachikawaeaGelatinosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusTachikawaeaGelatinosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def RiemerellaAnatipestifer(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RiemerellaAnatipestifer",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SolirubrobacterSoliDsm22325(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SolirubrobacterSoliDsm22325",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

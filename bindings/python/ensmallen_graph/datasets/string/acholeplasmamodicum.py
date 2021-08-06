@@ -91,7 +91,7 @@ def AcholeplasmaModicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcholeplasmaModicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

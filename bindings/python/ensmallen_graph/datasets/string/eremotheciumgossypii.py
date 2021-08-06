@@ -91,7 +91,7 @@ def EremotheciumGossypii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EremotheciumGossypii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PrevotellaMicans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaMicans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

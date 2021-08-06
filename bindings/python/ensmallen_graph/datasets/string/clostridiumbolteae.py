@@ -91,7 +91,7 @@ def ClostridiumBolteae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumBolteae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

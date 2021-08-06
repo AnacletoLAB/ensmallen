@@ -91,7 +91,7 @@ def AspergillusNiger(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AspergillusNiger",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

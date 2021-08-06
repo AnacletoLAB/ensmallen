@@ -88,7 +88,7 @@ def MillisiaBrevisNbrc105863(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MillisiaBrevisNbrc105863",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

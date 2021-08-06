@@ -88,7 +88,7 @@ def AbyssisolibacterFermentans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AbyssisolibacterFermentans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

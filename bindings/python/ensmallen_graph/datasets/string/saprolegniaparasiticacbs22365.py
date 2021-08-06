@@ -88,7 +88,7 @@ def SaprolegniaParasiticaCbs22365(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SaprolegniaParasiticaCbs22365",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

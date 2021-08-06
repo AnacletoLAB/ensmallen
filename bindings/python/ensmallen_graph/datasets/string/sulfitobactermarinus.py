@@ -88,7 +88,7 @@ def SulfitobacterMarinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfitobacterMarinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AlicyclobacillusVulcanalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlicyclobacillusVulcanalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PsychrobacterLutiphocae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PsychrobacterLutiphocae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

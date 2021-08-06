@@ -88,7 +88,7 @@ def ParafilimonasTerrae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParafilimonasTerrae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

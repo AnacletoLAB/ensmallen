@@ -88,7 +88,7 @@ def HalomonasIlicicolaDsm19980(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalomonasIlicicolaDsm19980",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

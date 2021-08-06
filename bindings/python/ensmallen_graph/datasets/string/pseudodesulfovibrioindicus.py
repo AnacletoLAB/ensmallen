@@ -88,7 +88,7 @@ def PseudodesulfovibrioIndicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudodesulfovibrioIndicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

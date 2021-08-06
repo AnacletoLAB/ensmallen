@@ -91,7 +91,7 @@ def HerpetosiphonAurantiacus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HerpetosiphonAurantiacus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def RhodopirellulaSpSwk7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodopirellulaSpSwk7",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

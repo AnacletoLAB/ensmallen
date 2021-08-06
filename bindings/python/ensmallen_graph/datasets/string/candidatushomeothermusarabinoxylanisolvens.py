@@ -88,7 +88,7 @@ def CandidatusHomeothermusArabinoxylanisolvens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusHomeothermusArabinoxylanisolvens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

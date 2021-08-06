@@ -91,7 +91,7 @@ def KinetoplastibacteriumBlastocrithidii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KinetoplastibacteriumBlastocrithidii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

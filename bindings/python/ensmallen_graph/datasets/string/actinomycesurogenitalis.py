@@ -88,7 +88,7 @@ def ActinomycesUrogenitalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomycesUrogenitalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

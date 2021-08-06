@@ -88,7 +88,7 @@ def PsychrilyobacterAtlanticusDsm19335(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PsychrilyobacterAtlanticusDsm19335",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ThioalkalivibrioDenitrificans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThioalkalivibrioDenitrificans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def UstilagoMaydis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UstilagoMaydis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

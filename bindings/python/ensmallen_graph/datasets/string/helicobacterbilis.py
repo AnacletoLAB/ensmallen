@@ -91,7 +91,7 @@ def HelicobacterBilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelicobacterBilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

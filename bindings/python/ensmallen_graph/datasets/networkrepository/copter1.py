@@ -78,7 +78,7 @@ def Copter1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Copter1",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

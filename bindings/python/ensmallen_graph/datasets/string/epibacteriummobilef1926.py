@@ -88,7 +88,7 @@ def EpibacteriumMobileF1926(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EpibacteriumMobileF1926",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

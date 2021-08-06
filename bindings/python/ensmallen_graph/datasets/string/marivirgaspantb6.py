@@ -88,7 +88,7 @@ def MarivirgaSpAntB6(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarivirgaSpAntB6",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ParaglaciecolaPolarisLmg21857(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParaglaciecolaPolarisLmg21857",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

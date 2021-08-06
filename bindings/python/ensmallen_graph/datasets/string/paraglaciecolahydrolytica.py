@@ -88,7 +88,7 @@ def ParaglaciecolaHydrolytica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParaglaciecolaHydrolytica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

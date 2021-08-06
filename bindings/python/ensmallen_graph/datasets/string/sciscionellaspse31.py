@@ -91,7 +91,7 @@ def SciscionellaSpSe31(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SciscionellaSpSe31",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

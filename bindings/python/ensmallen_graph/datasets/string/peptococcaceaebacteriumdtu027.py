@@ -88,7 +88,7 @@ def PeptococcaceaeBacteriumDtu027(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeptococcaceaeBacteriumDtu027",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

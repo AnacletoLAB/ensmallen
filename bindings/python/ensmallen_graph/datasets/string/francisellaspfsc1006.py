@@ -91,7 +91,7 @@ def FrancisellaSpFsc1006(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FrancisellaSpFsc1006",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

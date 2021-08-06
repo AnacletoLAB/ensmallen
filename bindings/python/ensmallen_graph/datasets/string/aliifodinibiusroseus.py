@@ -88,7 +88,7 @@ def AliifodinibiusRoseus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AliifodinibiusRoseus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

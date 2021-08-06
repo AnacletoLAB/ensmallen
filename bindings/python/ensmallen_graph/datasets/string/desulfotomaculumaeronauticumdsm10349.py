@@ -88,7 +88,7 @@ def DesulfotomaculumAeronauticumDsm10349(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfotomaculumAeronauticumDsm10349",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

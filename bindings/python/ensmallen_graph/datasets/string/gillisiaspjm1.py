@@ -88,7 +88,7 @@ def GillisiaSpJm1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GillisiaSpJm1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

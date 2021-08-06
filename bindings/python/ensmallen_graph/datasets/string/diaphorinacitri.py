@@ -88,7 +88,7 @@ def DiaphorinaCitri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DiaphorinaCitri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

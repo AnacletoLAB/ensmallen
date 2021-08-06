@@ -88,7 +88,7 @@ def ReinekeaBlandensisMed297(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ReinekeaBlandensisMed297",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

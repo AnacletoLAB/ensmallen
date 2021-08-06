@@ -88,7 +88,7 @@ def ButyrivibrioFibrisolvensDsm3071(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ButyrivibrioFibrisolvensDsm3071",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

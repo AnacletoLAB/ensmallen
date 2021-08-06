@@ -88,7 +88,7 @@ def DiaportheAmpelina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DiaportheAmpelina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ChryseobacteriumOranimense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChryseobacteriumOranimense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def CaAstroph(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaAstroph",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

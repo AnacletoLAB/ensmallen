@@ -88,7 +88,7 @@ def TesticulariaCyperi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TesticulariaCyperi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

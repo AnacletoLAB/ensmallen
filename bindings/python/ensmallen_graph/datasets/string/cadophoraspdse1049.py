@@ -88,7 +88,7 @@ def CadophoraSpDse1049(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CadophoraSpDse1049",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

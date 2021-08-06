@@ -91,7 +91,7 @@ def KutzneriaSp744(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KutzneriaSp744",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

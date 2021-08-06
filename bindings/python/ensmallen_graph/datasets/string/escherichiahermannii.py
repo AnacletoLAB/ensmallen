@@ -91,7 +91,7 @@ def EscherichiaHermannii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EscherichiaHermannii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

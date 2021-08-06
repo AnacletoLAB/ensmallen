@@ -91,7 +91,7 @@ def ThermacetogeniumPhaeum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermacetogeniumPhaeum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

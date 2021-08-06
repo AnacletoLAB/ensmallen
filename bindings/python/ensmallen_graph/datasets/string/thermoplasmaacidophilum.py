@@ -91,7 +91,7 @@ def ThermoplasmaAcidophilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermoplasmaAcidophilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

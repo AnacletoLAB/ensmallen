@@ -91,7 +91,7 @@ def AmphriteaJaponica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmphriteaJaponica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

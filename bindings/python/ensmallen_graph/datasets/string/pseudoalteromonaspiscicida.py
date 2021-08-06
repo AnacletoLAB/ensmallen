@@ -88,7 +88,7 @@ def PseudoalteromonasPiscicida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoalteromonasPiscicida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

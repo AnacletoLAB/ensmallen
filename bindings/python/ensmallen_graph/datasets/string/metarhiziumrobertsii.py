@@ -91,7 +91,7 @@ def MetarhiziumRobertsii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MetarhiziumRobertsii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

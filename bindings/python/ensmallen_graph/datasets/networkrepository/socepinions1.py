@@ -78,7 +78,7 @@ def SocEpinions1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocEpinions1",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

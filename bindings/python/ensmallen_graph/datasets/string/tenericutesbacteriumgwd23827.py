@@ -88,7 +88,7 @@ def TenericutesBacteriumGwd23827(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TenericutesBacteriumGwd23827",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

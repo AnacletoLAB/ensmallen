@@ -91,7 +91,7 @@ def GluconobacterFrateurii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GluconobacterFrateurii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

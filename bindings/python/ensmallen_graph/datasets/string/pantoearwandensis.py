@@ -91,7 +91,7 @@ def PantoeaRwandensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PantoeaRwandensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

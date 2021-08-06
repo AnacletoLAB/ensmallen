@@ -88,7 +88,7 @@ def NadsoniaFulvescensVarElongataDsm6958(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NadsoniaFulvescensVarElongataDsm6958",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

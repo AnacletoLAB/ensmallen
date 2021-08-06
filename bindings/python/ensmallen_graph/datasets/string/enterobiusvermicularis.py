@@ -88,7 +88,7 @@ def EnterobiusVermicularis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterobiusVermicularis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

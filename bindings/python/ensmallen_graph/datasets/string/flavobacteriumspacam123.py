@@ -91,7 +91,7 @@ def FlavobacteriumSpAcam123(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumSpAcam123",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

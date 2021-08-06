@@ -88,7 +88,7 @@ def HaloterrigenaDaqingensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaloterrigenaDaqingensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

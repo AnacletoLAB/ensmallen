@@ -91,7 +91,7 @@ def LaceyellaSacchari(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LaceyellaSacchari",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

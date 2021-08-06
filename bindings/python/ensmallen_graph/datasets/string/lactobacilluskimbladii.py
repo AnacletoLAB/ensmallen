@@ -88,7 +88,7 @@ def LactobacillusKimbladii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusKimbladii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

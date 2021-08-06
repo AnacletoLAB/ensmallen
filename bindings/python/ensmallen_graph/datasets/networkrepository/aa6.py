@@ -78,7 +78,7 @@ def Aa6(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Aa6",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

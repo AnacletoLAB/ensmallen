@@ -88,7 +88,7 @@ def PseudospirillumJaponicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudospirillumJaponicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

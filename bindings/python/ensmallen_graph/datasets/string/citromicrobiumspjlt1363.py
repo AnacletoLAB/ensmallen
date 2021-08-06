@@ -91,7 +91,7 @@ def CitromicrobiumSpJlt1363(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CitromicrobiumSpJlt1363",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

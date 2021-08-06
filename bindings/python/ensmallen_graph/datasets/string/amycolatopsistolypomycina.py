@@ -88,7 +88,7 @@ def AmycolatopsisTolypomycina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmycolatopsisTolypomycina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AtheneCunicularia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AtheneCunicularia",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

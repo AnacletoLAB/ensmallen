@@ -88,7 +88,7 @@ def CeraceosorusBombacis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CeraceosorusBombacis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

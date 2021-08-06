@@ -88,7 +88,7 @@ def BacillusSinesaloumensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusSinesaloumensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

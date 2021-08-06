@@ -88,7 +88,7 @@ def ParageobacillusThermoglucosidasius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParageobacillusThermoglucosidasius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

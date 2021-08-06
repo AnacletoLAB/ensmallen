@@ -88,7 +88,7 @@ def SphingopyxisSpH115(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingopyxisSpH115",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

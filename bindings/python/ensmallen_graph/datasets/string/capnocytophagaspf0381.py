@@ -91,7 +91,7 @@ def CapnocytophagaSpF0381(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CapnocytophagaSpF0381",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

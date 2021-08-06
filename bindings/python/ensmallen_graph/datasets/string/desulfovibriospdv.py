@@ -88,7 +88,7 @@ def DesulfovibrioSpDv(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioSpDv",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

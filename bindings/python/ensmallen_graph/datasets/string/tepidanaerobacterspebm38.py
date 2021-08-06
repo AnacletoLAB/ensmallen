@@ -88,7 +88,7 @@ def TepidanaerobacterSpEbm38(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TepidanaerobacterSpEbm38",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

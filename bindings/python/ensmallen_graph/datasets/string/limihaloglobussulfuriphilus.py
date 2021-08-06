@@ -88,7 +88,7 @@ def LimihaloglobusSulfuriphilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LimihaloglobusSulfuriphilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

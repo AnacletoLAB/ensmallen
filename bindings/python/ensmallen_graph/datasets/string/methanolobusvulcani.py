@@ -88,7 +88,7 @@ def MethanolobusVulcani(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanolobusVulcani",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

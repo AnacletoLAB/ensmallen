@@ -88,7 +88,7 @@ def CandidatusRiesiaPediculischaeffi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusRiesiaPediculischaeffi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

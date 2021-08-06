@@ -88,7 +88,7 @@ def SulfitobacterLitoralis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfitobacterLitoralis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

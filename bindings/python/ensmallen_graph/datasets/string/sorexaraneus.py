@@ -91,7 +91,7 @@ def SorexAraneus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SorexAraneus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

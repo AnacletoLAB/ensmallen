@@ -88,7 +88,7 @@ def FaecalicatenaContorta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FaecalicatenaContorta",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

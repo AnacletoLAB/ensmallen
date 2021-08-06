@@ -88,7 +88,7 @@ def PeptoniphilusPacaensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeptoniphilusPacaensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

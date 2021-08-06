@@ -91,7 +91,7 @@ def NitrososphaeraEvergladensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrososphaeraEvergladensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def Patents(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Patents",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

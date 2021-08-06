@@ -91,7 +91,7 @@ def ArcobacterNitrofigilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArcobacterNitrofigilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

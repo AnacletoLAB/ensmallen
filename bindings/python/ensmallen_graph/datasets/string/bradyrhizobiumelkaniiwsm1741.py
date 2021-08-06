@@ -91,7 +91,7 @@ def BradyrhizobiumElkaniiWsm1741(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BradyrhizobiumElkaniiWsm1741",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

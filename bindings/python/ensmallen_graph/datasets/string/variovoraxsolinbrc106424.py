@@ -88,7 +88,7 @@ def VariovoraxSoliNbrc106424(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VariovoraxSoliNbrc106424",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

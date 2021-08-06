@@ -91,7 +91,7 @@ def LactococcusRaffinolactis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactococcusRaffinolactis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

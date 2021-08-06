@@ -91,7 +91,7 @@ def SuccinimonasAmylolytica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SuccinimonasAmylolytica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

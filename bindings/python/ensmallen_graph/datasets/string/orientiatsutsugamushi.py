@@ -91,7 +91,7 @@ def OrientiaTsutsugamushi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OrientiaTsutsugamushi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

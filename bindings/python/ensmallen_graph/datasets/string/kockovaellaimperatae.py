@@ -88,7 +88,7 @@ def KockovaellaImperatae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KockovaellaImperatae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

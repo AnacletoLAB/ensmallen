@@ -91,7 +91,7 @@ def HelicobacterWinghamensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelicobacterWinghamensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

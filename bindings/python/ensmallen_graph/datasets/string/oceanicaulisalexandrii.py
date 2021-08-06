@@ -91,7 +91,7 @@ def OceanicaulisAlexandrii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OceanicaulisAlexandrii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

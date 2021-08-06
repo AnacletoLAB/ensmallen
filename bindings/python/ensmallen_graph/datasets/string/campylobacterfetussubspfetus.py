@@ -88,7 +88,7 @@ def CampylobacterFetusSubspFetus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterFetusSubspFetus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SucciniclasticumRuminisDsm9236(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SucciniclasticumRuminisDsm9236",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def JannaschiaDonghaensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JannaschiaDonghaensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

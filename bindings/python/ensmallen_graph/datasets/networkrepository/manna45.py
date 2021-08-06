@@ -104,7 +104,7 @@ def MannA45(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MannA45",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

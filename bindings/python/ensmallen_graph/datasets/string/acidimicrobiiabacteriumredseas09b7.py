@@ -88,7 +88,7 @@ def AcidimicrobiiaBacteriumRedseaS09B7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidimicrobiiaBacteriumRedseaS09B7",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

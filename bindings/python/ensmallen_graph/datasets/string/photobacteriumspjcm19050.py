@@ -88,7 +88,7 @@ def PhotobacteriumSpJcm19050(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhotobacteriumSpJcm19050",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

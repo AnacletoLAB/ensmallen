@@ -88,7 +88,7 @@ def ChelonoidisAbingdonii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChelonoidisAbingdonii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

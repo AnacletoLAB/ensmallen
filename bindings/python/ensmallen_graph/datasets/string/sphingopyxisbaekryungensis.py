@@ -91,7 +91,7 @@ def SphingopyxisBaekryungensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingopyxisBaekryungensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

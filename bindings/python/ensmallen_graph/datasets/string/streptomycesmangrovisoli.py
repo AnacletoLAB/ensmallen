@@ -88,7 +88,7 @@ def StreptomycesMangrovisoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesMangrovisoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

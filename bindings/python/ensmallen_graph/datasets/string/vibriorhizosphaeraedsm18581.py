@@ -88,7 +88,7 @@ def VibrioRhizosphaeraeDsm18581(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioRhizosphaeraeDsm18581",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

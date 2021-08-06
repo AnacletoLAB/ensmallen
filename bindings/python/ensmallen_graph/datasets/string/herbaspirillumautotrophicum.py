@@ -88,7 +88,7 @@ def HerbaspirillumAutotrophicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HerbaspirillumAutotrophicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

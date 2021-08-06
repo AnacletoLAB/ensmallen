@@ -88,7 +88,7 @@ def DesulfarculaceaeBacteriumJdfr97(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfarculaceaeBacteriumJdfr97",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

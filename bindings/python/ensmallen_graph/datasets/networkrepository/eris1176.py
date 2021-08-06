@@ -78,7 +78,7 @@ def Eris1176(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Eris1176",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

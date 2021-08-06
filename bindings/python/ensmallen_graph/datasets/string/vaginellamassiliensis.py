@@ -88,7 +88,7 @@ def VaginellaMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VaginellaMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def FlavobacteriumJohnsoniae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumJohnsoniae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

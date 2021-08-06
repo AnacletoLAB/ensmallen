@@ -91,7 +91,7 @@ def TheileriaAnnulata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TheileriaAnnulata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def LuteibacterSp9135(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LuteibacterSp9135",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

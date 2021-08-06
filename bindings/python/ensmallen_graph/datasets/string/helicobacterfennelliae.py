@@ -91,7 +91,7 @@ def HelicobacterFennelliae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelicobacterFennelliae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def HypoxylonSpCo275(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HypoxylonSpCo275",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

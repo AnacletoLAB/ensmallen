@@ -91,7 +91,7 @@ def AquimarinaSp22iis11z7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AquimarinaSp22iis11z7",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

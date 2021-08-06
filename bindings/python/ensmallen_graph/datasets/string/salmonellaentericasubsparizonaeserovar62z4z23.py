@@ -88,7 +88,7 @@ def SalmonellaEntericaSubspArizonaeSerovar62Z4Z23(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalmonellaEntericaSubspArizonaeSerovar62Z4Z23",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

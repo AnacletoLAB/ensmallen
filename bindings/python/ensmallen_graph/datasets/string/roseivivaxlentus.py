@@ -88,7 +88,7 @@ def RoseivivaxLentus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseivivaxLentus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

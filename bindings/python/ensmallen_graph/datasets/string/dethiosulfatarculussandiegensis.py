@@ -88,7 +88,7 @@ def DethiosulfatarculusSandiegensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DethiosulfatarculusSandiegensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

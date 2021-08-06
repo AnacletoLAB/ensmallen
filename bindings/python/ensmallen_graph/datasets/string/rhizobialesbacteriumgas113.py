@@ -88,7 +88,7 @@ def RhizobialesBacteriumGas113(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizobialesBacteriumGas113",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

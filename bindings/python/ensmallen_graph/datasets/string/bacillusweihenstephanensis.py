@@ -91,7 +91,7 @@ def BacillusWeihenstephanensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusWeihenstephanensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

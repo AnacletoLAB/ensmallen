@@ -88,7 +88,7 @@ def UlvibacterSpLpb0005(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UlvibacterSpLpb0005",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

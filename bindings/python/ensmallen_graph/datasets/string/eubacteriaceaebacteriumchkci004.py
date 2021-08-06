@@ -88,7 +88,7 @@ def EubacteriaceaeBacteriumChkci004(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EubacteriaceaeBacteriumChkci004",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

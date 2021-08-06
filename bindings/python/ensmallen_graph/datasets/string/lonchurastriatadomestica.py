@@ -88,7 +88,7 @@ def LonchuraStriataDomestica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LonchuraStriataDomestica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

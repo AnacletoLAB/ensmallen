@@ -88,7 +88,7 @@ def NeomonachusSchauinslandi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeomonachusSchauinslandi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MariniblastusFucicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MariniblastusFucicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

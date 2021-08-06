@@ -88,7 +88,7 @@ def ParcubacteriaGroupBacteriumGw2011Gwb1468(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParcubacteriaGroupBacteriumGw2011Gwb1468",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

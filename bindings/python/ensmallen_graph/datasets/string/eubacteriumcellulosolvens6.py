@@ -91,7 +91,7 @@ def EubacteriumCellulosolvens6(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EubacteriumCellulosolvens6",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

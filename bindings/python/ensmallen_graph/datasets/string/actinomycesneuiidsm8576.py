@@ -91,7 +91,7 @@ def ActinomycesNeuiiDsm8576(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomycesNeuiiDsm8576",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

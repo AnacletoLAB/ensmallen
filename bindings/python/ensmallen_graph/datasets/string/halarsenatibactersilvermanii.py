@@ -88,7 +88,7 @@ def HalarsenatibacterSilvermanii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalarsenatibacterSilvermanii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

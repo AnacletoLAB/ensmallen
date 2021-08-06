@@ -88,7 +88,7 @@ def SulfolobusSpA20(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfolobusSpA20",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

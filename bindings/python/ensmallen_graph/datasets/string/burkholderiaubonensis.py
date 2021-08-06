@@ -88,7 +88,7 @@ def BurkholderiaUbonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BurkholderiaUbonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

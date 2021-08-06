@@ -88,7 +88,7 @@ def DevosiaRiboflavina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DevosiaRiboflavina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MarmoricolaScoriae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarmoricolaScoriae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

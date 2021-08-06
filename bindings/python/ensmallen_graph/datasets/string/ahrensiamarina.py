@@ -88,7 +88,7 @@ def AhrensiaMarina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AhrensiaMarina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

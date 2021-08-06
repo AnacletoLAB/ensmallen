@@ -88,7 +88,7 @@ def AcetobacterSyzygii9h2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcetobacterSyzygii9h2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

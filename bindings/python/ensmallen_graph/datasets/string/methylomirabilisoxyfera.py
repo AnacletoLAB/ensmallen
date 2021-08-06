@@ -91,7 +91,7 @@ def MethylomirabilisOxyfera(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylomirabilisOxyfera",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

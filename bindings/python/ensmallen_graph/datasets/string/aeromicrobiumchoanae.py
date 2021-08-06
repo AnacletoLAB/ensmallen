@@ -88,7 +88,7 @@ def AeromicrobiumChoanae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AeromicrobiumChoanae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def RubrivivaxGelatinosus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RubrivivaxGelatinosus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

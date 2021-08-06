@@ -88,7 +88,7 @@ def StagonosporaSpSrc1lsm3a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StagonosporaSpSrc1lsm3a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

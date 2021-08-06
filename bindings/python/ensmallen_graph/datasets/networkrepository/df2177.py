@@ -78,7 +78,7 @@ def Df2177(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Df2177",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def DesulforegulaConservatrix(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulforegulaConservatrix",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

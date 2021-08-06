@@ -91,7 +91,7 @@ def AcidovoraxEbreus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidovoraxEbreus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

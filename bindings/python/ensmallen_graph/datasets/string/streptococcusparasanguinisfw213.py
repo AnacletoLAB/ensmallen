@@ -91,7 +91,7 @@ def StreptococcusParasanguinisFw213(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusParasanguinisFw213",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def SocSlashdot0811(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocSlashdot0811",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

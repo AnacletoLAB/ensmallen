@@ -91,7 +91,7 @@ def DesulfobacterPostgatei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfobacterPostgatei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MucilaginibacterSpOk098(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MucilaginibacterSpOk098",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

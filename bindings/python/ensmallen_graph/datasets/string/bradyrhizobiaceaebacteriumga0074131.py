@@ -88,7 +88,7 @@ def BradyrhizobiaceaeBacteriumGa0074131(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BradyrhizobiaceaeBacteriumGa0074131",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

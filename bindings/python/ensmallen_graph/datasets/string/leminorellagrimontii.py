@@ -91,7 +91,7 @@ def LeminorellaGrimontii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeminorellaGrimontii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

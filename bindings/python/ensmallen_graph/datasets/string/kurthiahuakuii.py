@@ -91,7 +91,7 @@ def KurthiaHuakuii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KurthiaHuakuii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

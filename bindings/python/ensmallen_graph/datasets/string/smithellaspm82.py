@@ -88,7 +88,7 @@ def SmithellaSpM82(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SmithellaSpM82",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

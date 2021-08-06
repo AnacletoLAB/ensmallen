@@ -91,7 +91,7 @@ def LeptosphaeriaMaculans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptosphaeriaMaculans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

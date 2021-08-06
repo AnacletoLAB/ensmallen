@@ -88,7 +88,7 @@ def WinogradskyellaThalassocola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WinogradskyellaThalassocola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def AcetohalobiumArabaticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcetohalobiumArabaticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

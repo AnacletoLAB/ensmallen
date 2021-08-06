@@ -91,7 +91,7 @@ def EwingellaAmericana(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EwingellaAmericana",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

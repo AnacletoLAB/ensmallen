@@ -91,7 +91,7 @@ def StreptococcusMarimammalium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusMarimammalium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

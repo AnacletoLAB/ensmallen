@@ -91,7 +91,7 @@ def GallionellaCapsiferriformans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GallionellaCapsiferriformans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

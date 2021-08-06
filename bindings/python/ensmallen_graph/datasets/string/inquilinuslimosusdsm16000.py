@@ -88,7 +88,7 @@ def InquilinusLimosusDsm16000(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="InquilinusLimosusDsm16000",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PsychroserpensDamuponensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PsychroserpensDamuponensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

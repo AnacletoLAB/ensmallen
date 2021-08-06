@@ -91,7 +91,7 @@ def MannheimiaSucciniciproducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MannheimiaSucciniciproducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

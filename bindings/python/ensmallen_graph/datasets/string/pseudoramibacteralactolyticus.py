@@ -91,7 +91,7 @@ def PseudoramibacterAlactolyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoramibacterAlactolyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

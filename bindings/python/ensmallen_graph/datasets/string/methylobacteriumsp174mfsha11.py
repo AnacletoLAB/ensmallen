@@ -88,7 +88,7 @@ def MethylobacteriumSp174mfsha11(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylobacteriumSp174mfsha11",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

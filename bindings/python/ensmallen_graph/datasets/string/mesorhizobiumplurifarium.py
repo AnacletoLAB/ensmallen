@@ -88,7 +88,7 @@ def MesorhizobiumPlurifarium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MesorhizobiumPlurifarium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def KwoniellaMangroviensisCbs10435(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KwoniellaMangroviensisCbs10435",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

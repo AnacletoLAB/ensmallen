@@ -88,7 +88,7 @@ def KocuriaAtrinaeC38(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KocuriaAtrinaeC38",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

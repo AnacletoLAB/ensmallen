@@ -88,7 +88,7 @@ def TetrahymenaThermophilaSb210(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TetrahymenaThermophilaSb210",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

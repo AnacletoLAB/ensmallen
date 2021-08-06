@@ -91,7 +91,7 @@ def LysobacterArseniciresistens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LysobacterArseniciresistens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

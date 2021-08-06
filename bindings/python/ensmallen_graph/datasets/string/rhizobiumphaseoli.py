@@ -88,7 +88,7 @@ def RhizobiumPhaseoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizobiumPhaseoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

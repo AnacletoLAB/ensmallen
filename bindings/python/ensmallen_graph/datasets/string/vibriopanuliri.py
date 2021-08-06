@@ -88,7 +88,7 @@ def VibrioPanuliri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioPanuliri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

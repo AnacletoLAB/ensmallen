@@ -88,7 +88,7 @@ def PeromyscusManiculatusBairdii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeromyscusManiculatusBairdii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

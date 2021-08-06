@@ -88,7 +88,7 @@ def DehalococcoidesSpJdfr54(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DehalococcoidesSpJdfr54",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

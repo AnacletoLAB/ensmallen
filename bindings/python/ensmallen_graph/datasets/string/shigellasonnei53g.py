@@ -88,7 +88,7 @@ def ShigellaSonnei53g(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShigellaSonnei53g",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

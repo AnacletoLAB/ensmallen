@@ -91,7 +91,7 @@ def AnaerosalibacterSpNd1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerosalibacterSpNd1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

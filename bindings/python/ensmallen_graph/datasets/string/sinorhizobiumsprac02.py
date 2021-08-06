@@ -88,7 +88,7 @@ def SinorhizobiumSpRac02(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SinorhizobiumSpRac02",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

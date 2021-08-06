@@ -91,7 +91,7 @@ def MesorhizobiumMetallidurans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MesorhizobiumMetallidurans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def BrassicaNapus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrassicaNapus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PectobacteriumCarotovorumPc1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PectobacteriumCarotovorumPc1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

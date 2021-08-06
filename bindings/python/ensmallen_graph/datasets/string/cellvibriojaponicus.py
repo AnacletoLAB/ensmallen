@@ -91,7 +91,7 @@ def CellvibrioJaponicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CellvibrioJaponicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

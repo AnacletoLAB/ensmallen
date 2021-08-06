@@ -88,7 +88,7 @@ def AliterellaAtlanticaCena595(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AliterellaAtlanticaCena595",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

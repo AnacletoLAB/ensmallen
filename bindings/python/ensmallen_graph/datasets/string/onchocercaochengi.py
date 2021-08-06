@@ -88,7 +88,7 @@ def OnchocercaOchengi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OnchocercaOchengi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

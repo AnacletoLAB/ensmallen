@@ -91,7 +91,7 @@ def MyroidesInjenensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MyroidesInjenensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

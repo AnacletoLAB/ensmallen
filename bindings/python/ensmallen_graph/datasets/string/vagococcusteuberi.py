@@ -88,7 +88,7 @@ def VagococcusTeuberi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VagococcusTeuberi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

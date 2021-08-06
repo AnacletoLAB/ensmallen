@@ -88,7 +88,7 @@ def ArthrobotrysFlagrans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArthrobotrysFlagrans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ThermosinusCarboxydivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermosinusCarboxydivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

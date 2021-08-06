@@ -91,7 +91,7 @@ def SalinisporaArenicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinisporaArenicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

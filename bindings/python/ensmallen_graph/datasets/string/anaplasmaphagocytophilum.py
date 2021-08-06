@@ -91,7 +91,7 @@ def AnaplasmaPhagocytophilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaplasmaPhagocytophilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

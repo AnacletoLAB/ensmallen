@@ -91,7 +91,7 @@ def GemellaBergeriae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GemellaBergeriae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

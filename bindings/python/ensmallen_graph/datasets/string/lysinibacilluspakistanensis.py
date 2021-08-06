@@ -88,7 +88,7 @@ def LysinibacillusPakistanensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LysinibacillusPakistanensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

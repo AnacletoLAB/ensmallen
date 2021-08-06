@@ -88,7 +88,7 @@ def CandidatusErwiniaHaradaeae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusErwiniaHaradaeae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

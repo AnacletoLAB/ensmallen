@@ -88,7 +88,7 @@ def ConsotaellaSalsifontis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ConsotaellaSalsifontis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

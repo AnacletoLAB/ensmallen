@@ -88,7 +88,7 @@ def LysinibacillusSphaericus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LysinibacillusSphaericus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def GammaProteobacteriumWg36(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GammaProteobacteriumWg36",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

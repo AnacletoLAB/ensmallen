@@ -88,7 +88,7 @@ def BlautiaSpYl58(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlautiaSpYl58",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AuriculariopsisAmpla(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AuriculariopsisAmpla",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

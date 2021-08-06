@@ -88,7 +88,7 @@ def DyadobacterCrusticolaDsm16708(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DyadobacterCrusticolaDsm16708",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

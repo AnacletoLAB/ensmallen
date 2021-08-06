@@ -91,7 +91,7 @@ def HalanaerobiumPraevalens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalanaerobiumPraevalens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

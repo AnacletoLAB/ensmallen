@@ -91,7 +91,7 @@ def PodosporaAnserina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PodosporaAnserina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

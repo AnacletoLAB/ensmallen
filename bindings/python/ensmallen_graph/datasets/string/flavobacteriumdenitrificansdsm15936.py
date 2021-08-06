@@ -88,7 +88,7 @@ def FlavobacteriumDenitrificansDsm15936(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumDenitrificansDsm15936",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

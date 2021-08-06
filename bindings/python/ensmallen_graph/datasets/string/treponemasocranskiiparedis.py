@@ -91,7 +91,7 @@ def TreponemaSocranskiiParedis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TreponemaSocranskiiParedis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

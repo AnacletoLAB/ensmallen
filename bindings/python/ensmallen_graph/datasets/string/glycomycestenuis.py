@@ -88,7 +88,7 @@ def GlycomycesTenuis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GlycomycesTenuis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

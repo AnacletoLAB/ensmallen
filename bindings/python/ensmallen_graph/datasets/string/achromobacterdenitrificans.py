@@ -88,7 +88,7 @@ def AchromobacterDenitrificans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AchromobacterDenitrificans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

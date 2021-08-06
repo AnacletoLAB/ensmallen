@@ -88,7 +88,7 @@ def KocuriaTurfanensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KocuriaTurfanensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

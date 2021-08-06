@@ -88,7 +88,7 @@ def VerrucosisporaSediminis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VerrucosisporaSediminis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

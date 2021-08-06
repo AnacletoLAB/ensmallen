@@ -104,7 +104,7 @@ def C1259(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="C1259",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

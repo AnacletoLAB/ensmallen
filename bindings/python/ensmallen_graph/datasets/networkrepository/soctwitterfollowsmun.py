@@ -96,7 +96,7 @@ def SocTwitterFollowsMun(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocTwitterFollowsMun",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

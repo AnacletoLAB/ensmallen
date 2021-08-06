@@ -88,7 +88,7 @@ def AnaerococcusMediterraneensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerococcusMediterraneensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

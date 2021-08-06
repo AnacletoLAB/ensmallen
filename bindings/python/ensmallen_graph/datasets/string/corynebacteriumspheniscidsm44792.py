@@ -88,7 +88,7 @@ def CorynebacteriumSphenisciDsm44792(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumSphenisciDsm44792",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

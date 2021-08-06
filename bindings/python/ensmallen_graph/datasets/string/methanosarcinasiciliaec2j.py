@@ -88,7 +88,7 @@ def MethanosarcinaSiciliaeC2j(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanosarcinaSiciliaeC2j",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

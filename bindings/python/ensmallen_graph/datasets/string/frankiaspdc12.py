@@ -88,7 +88,7 @@ def FrankiaSpDc12(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FrankiaSpDc12",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

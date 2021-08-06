@@ -91,7 +91,7 @@ def HalobacillusKuroshimensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalobacillusKuroshimensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

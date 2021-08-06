@@ -91,7 +91,7 @@ def ClostridiumMethylpentosum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumMethylpentosum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

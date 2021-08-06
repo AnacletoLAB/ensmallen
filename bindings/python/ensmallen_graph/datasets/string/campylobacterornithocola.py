@@ -88,7 +88,7 @@ def CampylobacterOrnithocola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterOrnithocola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

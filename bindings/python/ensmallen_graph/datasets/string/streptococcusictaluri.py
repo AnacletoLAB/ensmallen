@@ -91,7 +91,7 @@ def StreptococcusIctaluri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusIctaluri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

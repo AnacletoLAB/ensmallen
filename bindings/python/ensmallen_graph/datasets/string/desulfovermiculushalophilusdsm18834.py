@@ -88,7 +88,7 @@ def DesulfovermiculusHalophilusDsm18834(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovermiculusHalophilusDsm18834",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

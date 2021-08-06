@@ -91,7 +91,7 @@ def PyrolobusFumarii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PyrolobusFumarii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

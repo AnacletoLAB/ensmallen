@@ -91,7 +91,7 @@ def DevosiaSp172e8(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DevosiaSp172e8",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PolynucleobacterNecessariusStir1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PolynucleobacterNecessariusStir1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

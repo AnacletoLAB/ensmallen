@@ -91,7 +91,7 @@ def BurkholderiaSpLig30(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BurkholderiaSpLig30",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

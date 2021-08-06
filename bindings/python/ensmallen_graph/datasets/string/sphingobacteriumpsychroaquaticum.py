@@ -88,7 +88,7 @@ def SphingobacteriumPsychroaquaticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingobacteriumPsychroaquaticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

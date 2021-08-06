@@ -92,7 +92,7 @@ def SocDelicious(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocDelicious",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

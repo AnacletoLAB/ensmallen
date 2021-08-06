@@ -88,7 +88,7 @@ def MameliellaAlba(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MameliellaAlba",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

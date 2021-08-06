@@ -91,7 +91,7 @@ def StreptomycesCelluloflavus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesCelluloflavus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

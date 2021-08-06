@@ -91,7 +91,7 @@ def GordoniaSpKtr9(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GordoniaSpKtr9",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

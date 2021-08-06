@@ -91,7 +91,7 @@ def StreptococcusMinor(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusMinor",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

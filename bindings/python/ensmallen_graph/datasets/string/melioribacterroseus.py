@@ -91,7 +91,7 @@ def MelioribacterRoseus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MelioribacterRoseus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

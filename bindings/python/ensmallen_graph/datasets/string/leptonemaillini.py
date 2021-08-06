@@ -88,7 +88,7 @@ def LeptonemaIllini(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptonemaIllini",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def DickeyaSolani(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DickeyaSolani",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

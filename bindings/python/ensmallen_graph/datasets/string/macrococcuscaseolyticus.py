@@ -91,7 +91,7 @@ def MacrococcusCaseolyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MacrococcusCaseolyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

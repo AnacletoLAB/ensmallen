@@ -88,7 +88,7 @@ def PropionisporaVibrioides(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PropionisporaVibrioides",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

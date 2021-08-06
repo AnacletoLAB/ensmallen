@@ -91,7 +91,7 @@ def HahellaChejuensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HahellaChejuensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

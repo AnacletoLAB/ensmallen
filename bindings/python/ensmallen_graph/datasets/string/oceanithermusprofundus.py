@@ -91,7 +91,7 @@ def OceanithermusProfundus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OceanithermusProfundus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

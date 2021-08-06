@@ -88,7 +88,7 @@ def NocardioidesAlkalitoleransDsm16699(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardioidesAlkalitoleransDsm16699",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

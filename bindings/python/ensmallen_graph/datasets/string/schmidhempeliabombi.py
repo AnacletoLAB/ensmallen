@@ -91,7 +91,7 @@ def SchmidhempeliaBombi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SchmidhempeliaBombi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def GeobacillusStearothermophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeobacillusStearothermophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def AquimarinaMacrocephali(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AquimarinaMacrocephali",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

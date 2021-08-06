@@ -88,7 +88,7 @@ def KlenkiaMarina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KlenkiaMarina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

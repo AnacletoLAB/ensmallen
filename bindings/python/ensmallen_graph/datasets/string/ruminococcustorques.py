@@ -88,7 +88,7 @@ def RuminococcusTorques(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminococcusTorques",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

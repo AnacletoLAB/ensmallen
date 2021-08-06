@@ -88,7 +88,7 @@ def ChlorobiBacteriumOlb4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlorobiBacteriumOlb4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

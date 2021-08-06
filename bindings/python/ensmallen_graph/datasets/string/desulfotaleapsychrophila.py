@@ -91,7 +91,7 @@ def DesulfotaleaPsychrophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfotaleaPsychrophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def SphingomonasPhyllosphaerae52(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingomonasPhyllosphaerae52",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

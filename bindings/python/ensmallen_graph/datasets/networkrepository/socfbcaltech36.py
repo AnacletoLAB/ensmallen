@@ -120,7 +120,7 @@ def SocfbCaltech36(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbCaltech36",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

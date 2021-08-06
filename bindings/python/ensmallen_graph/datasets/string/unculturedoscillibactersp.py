@@ -88,7 +88,7 @@ def UnculturedOscillibacterSp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UnculturedOscillibacterSp",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

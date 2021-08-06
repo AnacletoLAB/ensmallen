@@ -91,7 +91,7 @@ def SinorhizobiumAmericanum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SinorhizobiumAmericanum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

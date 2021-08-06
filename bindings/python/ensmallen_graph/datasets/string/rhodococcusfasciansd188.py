@@ -88,7 +88,7 @@ def RhodococcusFasciansD188(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodococcusFasciansD188",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

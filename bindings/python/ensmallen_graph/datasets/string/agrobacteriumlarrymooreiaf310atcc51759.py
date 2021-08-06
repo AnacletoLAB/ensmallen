@@ -88,7 +88,7 @@ def AgrobacteriumLarrymooreiAf310Atcc51759(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AgrobacteriumLarrymooreiAf310Atcc51759",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

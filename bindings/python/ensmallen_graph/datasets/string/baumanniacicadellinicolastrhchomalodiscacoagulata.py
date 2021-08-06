@@ -88,7 +88,7 @@ def BaumanniaCicadellinicolaStrHcHomalodiscaCoagulata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BaumanniaCicadellinicolaStrHcHomalodiscaCoagulata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

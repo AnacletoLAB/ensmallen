@@ -88,7 +88,7 @@ def LeeiaOryzaeDsm17879(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeeiaOryzaeDsm17879",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

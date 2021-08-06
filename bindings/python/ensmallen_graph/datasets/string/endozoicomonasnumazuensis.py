@@ -91,7 +91,7 @@ def EndozoicomonasNumazuensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EndozoicomonasNumazuensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def EnterococcusSp7f3Div0205(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterococcusSp7f3Div0205",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

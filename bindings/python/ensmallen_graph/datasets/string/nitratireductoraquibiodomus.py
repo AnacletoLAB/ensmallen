@@ -91,7 +91,7 @@ def NitratireductorAquibiodomus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitratireductorAquibiodomus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

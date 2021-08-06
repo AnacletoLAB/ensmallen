@@ -91,7 +91,7 @@ def KinetoplastibacteriumDesouzaii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KinetoplastibacteriumDesouzaii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def StenotrophomonasAcidaminiphila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StenotrophomonasAcidaminiphila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

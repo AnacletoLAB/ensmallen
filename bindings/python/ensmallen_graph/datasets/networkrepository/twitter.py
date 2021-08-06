@@ -78,7 +78,7 @@ def Twitter(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Twitter",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

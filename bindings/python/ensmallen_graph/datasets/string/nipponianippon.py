@@ -91,7 +91,7 @@ def NipponiaNippon(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NipponiaNippon",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

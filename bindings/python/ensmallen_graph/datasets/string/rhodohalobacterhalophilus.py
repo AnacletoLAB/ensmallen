@@ -88,7 +88,7 @@ def RhodohalobacterHalophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodohalobacterHalophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

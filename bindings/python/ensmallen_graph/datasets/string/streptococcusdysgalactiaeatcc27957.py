@@ -91,7 +91,7 @@ def StreptococcusDysgalactiaeAtcc27957(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusDysgalactiaeAtcc27957",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

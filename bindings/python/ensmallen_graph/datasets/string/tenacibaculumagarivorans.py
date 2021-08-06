@@ -88,7 +88,7 @@ def TenacibaculumAgarivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TenacibaculumAgarivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

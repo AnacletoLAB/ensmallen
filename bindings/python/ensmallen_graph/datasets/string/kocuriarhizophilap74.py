@@ -91,7 +91,7 @@ def KocuriaRhizophilaP74(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KocuriaRhizophilaP74",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

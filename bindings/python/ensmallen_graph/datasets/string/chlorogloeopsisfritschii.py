@@ -91,7 +91,7 @@ def ChlorogloeopsisFritschii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlorogloeopsisFritschii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

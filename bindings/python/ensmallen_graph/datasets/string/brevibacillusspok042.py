@@ -88,7 +88,7 @@ def BrevibacillusSpOk042(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrevibacillusSpOk042",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

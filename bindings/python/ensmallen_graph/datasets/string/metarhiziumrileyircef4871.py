@@ -88,7 +88,7 @@ def MetarhiziumRileyiRcef4871(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MetarhiziumRileyiRcef4871",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

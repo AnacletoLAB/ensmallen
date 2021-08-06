@@ -92,7 +92,7 @@ def SocAnybeat(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocAnybeat",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

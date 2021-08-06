@@ -88,7 +88,7 @@ def PsychrobacillusPsychrodurans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PsychrobacillusPsychrodurans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

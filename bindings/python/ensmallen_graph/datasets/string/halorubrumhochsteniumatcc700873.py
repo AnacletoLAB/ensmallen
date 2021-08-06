@@ -88,7 +88,7 @@ def HalorubrumHochsteniumAtcc700873(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalorubrumHochsteniumAtcc700873",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

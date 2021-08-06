@@ -91,7 +91,7 @@ def ActinomycesCardiffensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomycesCardiffensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

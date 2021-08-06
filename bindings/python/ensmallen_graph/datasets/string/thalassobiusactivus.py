@@ -88,7 +88,7 @@ def ThalassobiusActivus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThalassobiusActivus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

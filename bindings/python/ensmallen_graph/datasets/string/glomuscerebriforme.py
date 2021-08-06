@@ -88,7 +88,7 @@ def GlomusCerebriforme(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GlomusCerebriforme",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

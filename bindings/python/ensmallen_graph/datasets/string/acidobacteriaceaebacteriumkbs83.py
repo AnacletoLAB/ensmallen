@@ -91,7 +91,7 @@ def AcidobacteriaceaeBacteriumKbs83(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidobacteriaceaeBacteriumKbs83",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

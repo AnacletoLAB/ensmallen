@@ -91,7 +91,7 @@ def MycobacteriumSpUrhd0025(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumSpUrhd0025",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

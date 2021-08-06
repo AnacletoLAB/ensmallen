@@ -96,7 +96,7 @@ def SocSinaweibo(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocSinaweibo",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

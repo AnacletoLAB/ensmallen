@@ -91,7 +91,7 @@ def PhytophthoraRamorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhytophthoraRamorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

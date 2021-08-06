@@ -91,7 +91,7 @@ def StreptococcusAnginosusC238(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusAnginosusC238",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

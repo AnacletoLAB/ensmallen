@@ -91,7 +91,7 @@ def DanausPlexippus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DanausPlexippus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

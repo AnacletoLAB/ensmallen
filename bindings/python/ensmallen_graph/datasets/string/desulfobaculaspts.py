@@ -91,7 +91,7 @@ def DesulfobaculaSpTs(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfobaculaSpTs",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

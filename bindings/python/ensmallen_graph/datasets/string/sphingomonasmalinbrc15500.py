@@ -88,7 +88,7 @@ def SphingomonasMaliNbrc15500(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingomonasMaliNbrc15500",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

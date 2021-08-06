@@ -91,7 +91,7 @@ def PropionibacteriumJensenii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PropionibacteriumJensenii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

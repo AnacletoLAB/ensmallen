@@ -88,7 +88,7 @@ def MicrobacteriumMangrovi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriumMangrovi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

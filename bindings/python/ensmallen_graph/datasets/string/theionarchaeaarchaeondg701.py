@@ -88,7 +88,7 @@ def TheionarchaeaArchaeonDg701(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TheionarchaeaArchaeonDg701",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

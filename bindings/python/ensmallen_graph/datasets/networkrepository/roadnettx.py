@@ -78,7 +78,7 @@ def RoadnetTx(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoadnetTx",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def MitsuokellaJalaludinii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MitsuokellaJalaludinii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

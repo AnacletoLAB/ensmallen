@@ -88,7 +88,7 @@ def MethanoculleusSediminis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanoculleusSediminis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

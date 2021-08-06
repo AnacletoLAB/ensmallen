@@ -88,7 +88,7 @@ def AquitaleaMagnusonii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AquitaleaMagnusonii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

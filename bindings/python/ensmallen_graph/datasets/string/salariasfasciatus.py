@@ -88,7 +88,7 @@ def SalariasFasciatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalariasFasciatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

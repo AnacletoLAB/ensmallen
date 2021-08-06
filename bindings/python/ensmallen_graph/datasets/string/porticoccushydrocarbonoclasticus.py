@@ -91,7 +91,7 @@ def PorticoccusHydrocarbonoclasticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PorticoccusHydrocarbonoclasticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

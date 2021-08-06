@@ -88,7 +88,7 @@ def OceanicoccusSagamiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OceanicoccusSagamiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

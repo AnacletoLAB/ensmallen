@@ -91,7 +91,7 @@ def TrichoplaxAdhaerens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichoplaxAdhaerens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

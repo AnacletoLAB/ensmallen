@@ -91,7 +91,7 @@ def RudanellaLutea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RudanellaLutea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

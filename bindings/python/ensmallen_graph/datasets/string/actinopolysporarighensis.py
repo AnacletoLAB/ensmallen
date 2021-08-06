@@ -88,7 +88,7 @@ def ActinopolysporaRighensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinopolysporaRighensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

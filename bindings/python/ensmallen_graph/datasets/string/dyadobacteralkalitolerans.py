@@ -91,7 +91,7 @@ def DyadobacterAlkalitolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DyadobacterAlkalitolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

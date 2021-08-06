@@ -88,7 +88,7 @@ def CandidatusRickettsiellaIsopodorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusRickettsiellaIsopodorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

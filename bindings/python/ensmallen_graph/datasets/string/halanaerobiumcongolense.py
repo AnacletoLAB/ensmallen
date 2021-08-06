@@ -88,7 +88,7 @@ def HalanaerobiumCongolense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalanaerobiumCongolense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

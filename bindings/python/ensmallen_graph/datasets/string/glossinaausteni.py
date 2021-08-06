@@ -88,7 +88,7 @@ def GlossinaAusteni(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GlossinaAusteni",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

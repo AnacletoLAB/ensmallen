@@ -88,7 +88,7 @@ def MarinobacteriumGeorgienseDsm11526(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinobacteriumGeorgienseDsm11526",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

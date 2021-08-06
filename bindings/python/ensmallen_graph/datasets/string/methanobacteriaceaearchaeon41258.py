@@ -88,7 +88,7 @@ def MethanobacteriaceaeArchaeon41258(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanobacteriaceaeArchaeon41258",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

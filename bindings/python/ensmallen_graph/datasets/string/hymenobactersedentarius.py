@@ -88,7 +88,7 @@ def HymenobacterSedentarius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HymenobacterSedentarius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

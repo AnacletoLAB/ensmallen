@@ -88,7 +88,7 @@ def AmphibacillusSediminisNbrc103570(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmphibacillusSediminisNbrc103570",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

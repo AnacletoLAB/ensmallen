@@ -88,7 +88,7 @@ def LentzeaWaywayandensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LentzeaWaywayandensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

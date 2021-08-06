@@ -88,7 +88,7 @@ def CaviibacterAbscessus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaviibacterAbscessus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def BacteroidesReticulotermitisJcm10512(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesReticulotermitisJcm10512",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

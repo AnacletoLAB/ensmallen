@@ -88,7 +88,7 @@ def EpulopisciumSpNuni2hMbin001(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EpulopisciumSpNuni2hMbin001",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

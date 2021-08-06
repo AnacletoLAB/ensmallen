@@ -88,7 +88,7 @@ def LentzeaAlbida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LentzeaAlbida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

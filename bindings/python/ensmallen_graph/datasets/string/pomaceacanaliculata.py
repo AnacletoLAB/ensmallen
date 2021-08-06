@@ -88,7 +88,7 @@ def PomaceaCanaliculata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PomaceaCanaliculata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

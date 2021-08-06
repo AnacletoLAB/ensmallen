@@ -91,7 +91,7 @@ def AcetobacterPasteurianus3p3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcetobacterPasteurianus3p3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

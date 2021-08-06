@@ -88,7 +88,7 @@ def CandidateDivisionKazanBacteriumGw2011Gwa15015(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidateDivisionKazanBacteriumGw2011Gwa15015",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

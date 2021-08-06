@@ -88,7 +88,7 @@ def CholoepusHoffmanni(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CholoepusHoffmanni",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

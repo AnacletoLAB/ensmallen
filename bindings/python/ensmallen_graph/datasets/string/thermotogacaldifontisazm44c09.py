@@ -88,7 +88,7 @@ def ThermotogaCaldifontisAzm44c09(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermotogaCaldifontisAzm44c09",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def OscillospiraceaeBacteriumZagget12(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OscillospiraceaeBacteriumZagget12",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

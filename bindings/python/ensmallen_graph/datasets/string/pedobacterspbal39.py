@@ -91,7 +91,7 @@ def PedobacterSpBal39(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PedobacterSpBal39",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

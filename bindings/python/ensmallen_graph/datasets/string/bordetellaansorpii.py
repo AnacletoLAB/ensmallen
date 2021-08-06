@@ -88,7 +88,7 @@ def BordetellaAnsorpii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BordetellaAnsorpii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

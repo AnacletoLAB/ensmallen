@@ -91,7 +91,7 @@ def PlautiaStali(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlautiaStali",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

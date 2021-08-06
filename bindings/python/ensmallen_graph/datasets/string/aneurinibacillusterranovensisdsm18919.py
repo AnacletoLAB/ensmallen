@@ -88,7 +88,7 @@ def AneurinibacillusTerranovensisDsm18919(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AneurinibacillusTerranovensisDsm18919",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

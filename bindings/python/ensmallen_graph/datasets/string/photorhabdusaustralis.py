@@ -88,7 +88,7 @@ def PhotorhabdusAustralis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhotorhabdusAustralis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

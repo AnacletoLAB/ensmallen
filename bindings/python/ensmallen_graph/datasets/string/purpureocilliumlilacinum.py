@@ -88,7 +88,7 @@ def PurpureocilliumLilacinum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PurpureocilliumLilacinum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def RaoultellaOrnithinolytica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RaoultellaOrnithinolytica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

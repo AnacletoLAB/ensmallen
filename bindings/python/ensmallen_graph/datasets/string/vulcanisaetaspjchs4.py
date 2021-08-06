@@ -88,7 +88,7 @@ def VulcanisaetaSpJchs4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VulcanisaetaSpJchs4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

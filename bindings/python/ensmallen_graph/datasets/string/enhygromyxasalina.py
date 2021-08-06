@@ -91,7 +91,7 @@ def EnhygromyxaSalina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnhygromyxaSalina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

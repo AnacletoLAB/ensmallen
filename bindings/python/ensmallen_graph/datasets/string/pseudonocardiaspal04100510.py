@@ -88,7 +88,7 @@ def PseudonocardiaSpAl04100510(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudonocardiaSpAl04100510",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

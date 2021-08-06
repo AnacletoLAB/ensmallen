@@ -91,7 +91,7 @@ def BrevibacillusPanacihumi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrevibacillusPanacihumi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

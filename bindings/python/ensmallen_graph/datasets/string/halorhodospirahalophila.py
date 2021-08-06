@@ -91,7 +91,7 @@ def HalorhodospiraHalophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalorhodospiraHalophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

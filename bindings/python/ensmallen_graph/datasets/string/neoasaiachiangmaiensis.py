@@ -88,7 +88,7 @@ def NeoasaiaChiangmaiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeoasaiaChiangmaiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

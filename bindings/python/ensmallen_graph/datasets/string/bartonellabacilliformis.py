@@ -91,7 +91,7 @@ def BartonellaBacilliformis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BartonellaBacilliformis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

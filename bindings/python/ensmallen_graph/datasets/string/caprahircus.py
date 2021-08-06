@@ -88,7 +88,7 @@ def CapraHircus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CapraHircus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

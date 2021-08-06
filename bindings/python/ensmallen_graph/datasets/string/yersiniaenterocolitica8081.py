@@ -91,7 +91,7 @@ def YersiniaEnterocolitica8081(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="YersiniaEnterocolitica8081",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

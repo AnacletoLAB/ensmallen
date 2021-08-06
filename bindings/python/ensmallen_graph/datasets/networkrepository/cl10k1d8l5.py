@@ -78,7 +78,7 @@ def Cl10k1d8L5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Cl10k1d8L5",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

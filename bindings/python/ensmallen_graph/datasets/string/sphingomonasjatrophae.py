@@ -88,7 +88,7 @@ def SphingomonasJatrophae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingomonasJatrophae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

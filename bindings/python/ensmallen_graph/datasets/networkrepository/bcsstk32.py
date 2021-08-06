@@ -78,7 +78,7 @@ def Bcsstk32(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Bcsstk32",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

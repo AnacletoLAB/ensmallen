@@ -91,7 +91,7 @@ def SalipigerMucosus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalipigerMucosus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

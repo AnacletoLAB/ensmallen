@@ -88,7 +88,7 @@ def KingellaNegevensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KingellaNegevensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

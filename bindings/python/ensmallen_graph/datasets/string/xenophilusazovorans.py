@@ -91,7 +91,7 @@ def XenophilusAzovorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XenophilusAzovorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

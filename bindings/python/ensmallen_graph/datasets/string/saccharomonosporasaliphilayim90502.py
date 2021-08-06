@@ -88,7 +88,7 @@ def SaccharomonosporaSaliphilaYim90502(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SaccharomonosporaSaliphilaYim90502",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

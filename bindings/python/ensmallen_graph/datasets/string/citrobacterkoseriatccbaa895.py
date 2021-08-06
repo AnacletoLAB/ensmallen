@@ -88,7 +88,7 @@ def CitrobacterKoseriAtccBaa895(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CitrobacterKoseriAtccBaa895",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

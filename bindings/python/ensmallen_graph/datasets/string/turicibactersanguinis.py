@@ -91,7 +91,7 @@ def TuricibacterSanguinis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TuricibacterSanguinis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

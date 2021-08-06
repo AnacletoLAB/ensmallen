@@ -91,7 +91,7 @@ def MycobacteriumTuberculosisH37rv(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumTuberculosisH37rv",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

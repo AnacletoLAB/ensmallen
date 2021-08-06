@@ -91,7 +91,7 @@ def FomitopsisPinicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FomitopsisPinicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

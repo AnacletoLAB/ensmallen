@@ -88,7 +88,7 @@ def AquimarinaLongaSw024(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AquimarinaLongaSw024",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

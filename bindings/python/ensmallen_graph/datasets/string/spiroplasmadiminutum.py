@@ -91,7 +91,7 @@ def SpiroplasmaDiminutum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpiroplasmaDiminutum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

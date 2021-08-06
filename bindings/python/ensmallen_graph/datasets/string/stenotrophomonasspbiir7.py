@@ -88,7 +88,7 @@ def StenotrophomonasSpBiir7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StenotrophomonasSpBiir7",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

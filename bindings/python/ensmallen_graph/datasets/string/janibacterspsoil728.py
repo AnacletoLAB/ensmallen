@@ -88,7 +88,7 @@ def JanibacterSpSoil728(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JanibacterSpSoil728",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

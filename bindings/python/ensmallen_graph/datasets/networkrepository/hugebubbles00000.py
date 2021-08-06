@@ -78,7 +78,7 @@ def Hugebubbles00000(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Hugebubbles00000",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

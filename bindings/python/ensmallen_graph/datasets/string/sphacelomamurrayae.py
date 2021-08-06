@@ -88,7 +88,7 @@ def SphacelomaMurrayae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphacelomaMurrayae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

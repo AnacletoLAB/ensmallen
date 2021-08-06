@@ -88,7 +88,7 @@ def PocilloporaDamicornis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PocilloporaDamicornis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

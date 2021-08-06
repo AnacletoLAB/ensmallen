@@ -91,7 +91,7 @@ def ThermanaerovibrioVelox(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermanaerovibrioVelox",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

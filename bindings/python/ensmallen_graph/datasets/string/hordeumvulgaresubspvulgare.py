@@ -88,7 +88,7 @@ def HordeumVulgareSubspVulgare(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HordeumVulgareSubspVulgare",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

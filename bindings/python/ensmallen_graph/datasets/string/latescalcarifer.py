@@ -88,7 +88,7 @@ def LatesCalcarifer(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LatesCalcarifer",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

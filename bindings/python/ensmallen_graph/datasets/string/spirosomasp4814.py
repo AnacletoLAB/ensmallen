@@ -88,7 +88,7 @@ def SpirosomaSp4814(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpirosomaSp4814",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

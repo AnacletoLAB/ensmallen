@@ -86,7 +86,7 @@ def PubMedDiabetes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PubMedDiabetes",
-        dataset="linqs",
+        repository="linqs",
         version=version,
         directed=directed,
         preprocess=preprocess,

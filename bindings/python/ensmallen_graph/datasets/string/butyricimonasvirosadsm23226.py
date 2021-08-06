@@ -88,7 +88,7 @@ def ButyricimonasVirosaDsm23226(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ButyricimonasVirosaDsm23226",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

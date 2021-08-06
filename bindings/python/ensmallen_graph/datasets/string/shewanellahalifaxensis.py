@@ -91,7 +91,7 @@ def ShewanellaHalifaxensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShewanellaHalifaxensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

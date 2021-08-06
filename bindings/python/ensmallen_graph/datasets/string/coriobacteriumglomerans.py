@@ -91,7 +91,7 @@ def CoriobacteriumGlomerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CoriobacteriumGlomerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

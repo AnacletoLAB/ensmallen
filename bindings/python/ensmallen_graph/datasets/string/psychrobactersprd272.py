@@ -88,7 +88,7 @@ def PsychrobacterSpRd272(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PsychrobacterSpRd272",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

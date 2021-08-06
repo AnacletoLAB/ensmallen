@@ -88,7 +88,7 @@ def ThalassotaleaAgarivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThalassotaleaAgarivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

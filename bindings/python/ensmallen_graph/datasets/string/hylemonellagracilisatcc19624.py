@@ -91,7 +91,7 @@ def HylemonellaGracilisAtcc19624(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HylemonellaGracilisAtcc19624",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def RhinocladiellaMackenzieiCbs65093(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhinocladiellaMackenzieiCbs65093",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def OceanicolaBatsensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OceanicolaBatsensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

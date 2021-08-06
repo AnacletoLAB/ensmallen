@@ -91,7 +91,7 @@ def GordoniaNeofelifaecis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GordoniaNeofelifaecis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

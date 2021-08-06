@@ -91,7 +91,7 @@ def SelenomonasInfelix(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SelenomonasInfelix",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

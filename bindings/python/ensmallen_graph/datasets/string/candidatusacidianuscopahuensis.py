@@ -88,7 +88,7 @@ def CandidatusAcidianusCopahuensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusAcidianusCopahuensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

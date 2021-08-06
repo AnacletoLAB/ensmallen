@@ -88,7 +88,7 @@ def DemequinaSpNbrc110054(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DemequinaSpNbrc110054",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

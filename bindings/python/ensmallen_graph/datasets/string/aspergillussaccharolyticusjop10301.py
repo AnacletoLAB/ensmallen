@@ -88,7 +88,7 @@ def AspergillusSaccharolyticusJop10301(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AspergillusSaccharolyticusJop10301",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

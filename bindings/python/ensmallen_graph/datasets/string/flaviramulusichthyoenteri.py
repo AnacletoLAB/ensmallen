@@ -91,7 +91,7 @@ def FlaviramulusIchthyoenteri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlaviramulusIchthyoenteri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

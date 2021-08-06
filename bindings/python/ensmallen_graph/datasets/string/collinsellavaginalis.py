@@ -88,7 +88,7 @@ def CollinsellaVaginalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CollinsellaVaginalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

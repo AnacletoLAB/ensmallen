@@ -91,7 +91,7 @@ def ArthromitusSpSfbratyit(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArthromitusSpSfbratyit",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

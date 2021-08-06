@@ -88,7 +88,7 @@ def BrochothrixThermosphacta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrochothrixThermosphacta",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

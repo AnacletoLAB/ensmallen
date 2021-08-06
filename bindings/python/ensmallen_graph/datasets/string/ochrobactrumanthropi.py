@@ -91,7 +91,7 @@ def OchrobactrumAnthropi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OchrobactrumAnthropi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

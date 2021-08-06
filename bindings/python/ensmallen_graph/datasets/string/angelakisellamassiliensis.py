@@ -88,7 +88,7 @@ def AngelakisellaMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AngelakisellaMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

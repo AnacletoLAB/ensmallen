@@ -88,7 +88,7 @@ def NatronincolaPeptidivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NatronincolaPeptidivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

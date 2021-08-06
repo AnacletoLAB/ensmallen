@@ -88,7 +88,7 @@ def LactobacillusDelbrueckiiAtcc11842(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusDelbrueckiiAtcc11842",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

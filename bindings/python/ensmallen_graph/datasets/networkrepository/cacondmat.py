@@ -78,7 +78,7 @@ def CaCondmat(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaCondmat",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

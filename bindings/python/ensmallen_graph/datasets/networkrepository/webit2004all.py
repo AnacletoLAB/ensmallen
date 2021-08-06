@@ -112,7 +112,7 @@ def WebIt2004All(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebIt2004All",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

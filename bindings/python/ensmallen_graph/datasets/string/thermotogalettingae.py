@@ -91,7 +91,7 @@ def ThermotogaLettingae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermotogaLettingae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

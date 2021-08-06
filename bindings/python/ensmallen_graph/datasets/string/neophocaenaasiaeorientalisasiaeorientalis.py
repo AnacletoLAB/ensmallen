@@ -88,7 +88,7 @@ def NeophocaenaAsiaeorientalisAsiaeorientalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeophocaenaAsiaeorientalisAsiaeorientalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def LentisphaeraeBacteriumGwf25735(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LentisphaeraeBacteriumGwf25735",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

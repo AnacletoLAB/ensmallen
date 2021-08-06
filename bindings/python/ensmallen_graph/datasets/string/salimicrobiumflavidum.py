@@ -88,7 +88,7 @@ def SalimicrobiumFlavidum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalimicrobiumFlavidum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def StreptomycesRubrolavendulae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesRubrolavendulae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

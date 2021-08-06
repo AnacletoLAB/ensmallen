@@ -88,7 +88,7 @@ def MeyerozymaSpJa9(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MeyerozymaSpJa9",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

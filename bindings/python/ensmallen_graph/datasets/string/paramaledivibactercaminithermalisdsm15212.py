@@ -88,7 +88,7 @@ def ParamaledivibacterCaminithermalisDsm15212(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParamaledivibacterCaminithermalisDsm15212",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

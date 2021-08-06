@@ -88,7 +88,7 @@ def OceanospirillumBeijerinckiiDsm7166(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OceanospirillumBeijerinckiiDsm7166",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

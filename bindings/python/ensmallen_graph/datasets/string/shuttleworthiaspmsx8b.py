@@ -91,7 +91,7 @@ def ShuttleworthiaSpMsx8b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShuttleworthiaSpMsx8b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

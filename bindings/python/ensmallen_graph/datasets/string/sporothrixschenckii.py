@@ -91,7 +91,7 @@ def SporothrixSchenckii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SporothrixSchenckii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

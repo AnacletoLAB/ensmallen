@@ -91,7 +91,7 @@ def AlistipesMarseilloanorexicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlistipesMarseilloanorexicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

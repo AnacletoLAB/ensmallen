@@ -91,7 +91,7 @@ def VagococcusLutrae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VagococcusLutrae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

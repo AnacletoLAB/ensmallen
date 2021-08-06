@@ -88,7 +88,7 @@ def LaccariaBicolorS238nH82(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LaccariaBicolorS238nH82",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

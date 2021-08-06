@@ -91,7 +91,7 @@ def CitreicellaSp357(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CitreicellaSp357",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

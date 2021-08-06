@@ -88,7 +88,7 @@ def CampylobacterInsulaenigraeNctc12927(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterInsulaenigraeNctc12927",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

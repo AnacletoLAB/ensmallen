@@ -91,7 +91,7 @@ def AmmonifexDegensii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmmonifexDegensii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

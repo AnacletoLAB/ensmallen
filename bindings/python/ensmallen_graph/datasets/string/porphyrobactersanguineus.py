@@ -88,7 +88,7 @@ def PorphyrobacterSanguineus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PorphyrobacterSanguineus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

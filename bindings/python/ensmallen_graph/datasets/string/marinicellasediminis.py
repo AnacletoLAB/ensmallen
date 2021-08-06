@@ -88,7 +88,7 @@ def MarinicellaSediminis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinicellaSediminis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

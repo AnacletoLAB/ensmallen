@@ -88,7 +88,7 @@ def PaenalcaligenesHominis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenalcaligenesHominis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

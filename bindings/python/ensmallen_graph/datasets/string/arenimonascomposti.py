@@ -91,7 +91,7 @@ def ArenimonasComposti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArenimonasComposti",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

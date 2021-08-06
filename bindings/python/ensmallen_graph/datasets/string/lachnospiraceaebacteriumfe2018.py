@@ -91,7 +91,7 @@ def LachnospiraceaeBacteriumFe2018(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LachnospiraceaeBacteriumFe2018",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

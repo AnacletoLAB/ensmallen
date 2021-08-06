@@ -91,7 +91,7 @@ def SaccharospirillumImpatiens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SaccharospirillumImpatiens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

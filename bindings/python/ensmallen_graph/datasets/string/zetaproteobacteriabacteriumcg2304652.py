@@ -88,7 +88,7 @@ def ZetaproteobacteriaBacteriumCg2304652(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZetaproteobacteriaBacteriumCg2304652",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

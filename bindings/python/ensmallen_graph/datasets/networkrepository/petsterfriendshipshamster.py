@@ -78,7 +78,7 @@ def PetsterFriendshipsHamster(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PetsterFriendshipsHamster",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

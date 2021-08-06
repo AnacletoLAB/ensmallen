@@ -78,7 +78,7 @@ def AffDigg(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AffDigg",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

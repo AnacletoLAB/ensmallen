@@ -88,7 +88,7 @@ def PantoeaAllii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PantoeaAllii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AcidovoraxTemperans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidovoraxTemperans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

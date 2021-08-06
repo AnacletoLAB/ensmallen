@@ -91,7 +91,7 @@ def PhascolarctobacteriumSuccinatutens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhascolarctobacteriumSuccinatutens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

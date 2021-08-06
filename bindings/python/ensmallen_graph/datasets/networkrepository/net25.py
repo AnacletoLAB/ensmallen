@@ -78,7 +78,7 @@ def Net25(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Net25",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

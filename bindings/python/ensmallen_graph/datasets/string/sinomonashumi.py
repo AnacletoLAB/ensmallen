@@ -88,7 +88,7 @@ def SinomonasHumi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SinomonasHumi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def FlavobacteriumFrigidarium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumFrigidarium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

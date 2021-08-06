@@ -88,7 +88,7 @@ def MesorhizobiumSpRoot102(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MesorhizobiumSpRoot102",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

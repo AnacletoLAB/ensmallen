@@ -88,7 +88,7 @@ def BorreliellaAfzelii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BorreliellaAfzelii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

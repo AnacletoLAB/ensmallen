@@ -91,7 +91,7 @@ def AminobacteriumColombiense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AminobacteriumColombiense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

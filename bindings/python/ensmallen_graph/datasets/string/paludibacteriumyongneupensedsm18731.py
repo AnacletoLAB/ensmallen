@@ -88,7 +88,7 @@ def PaludibacteriumYongneupenseDsm18731(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaludibacteriumYongneupenseDsm18731",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

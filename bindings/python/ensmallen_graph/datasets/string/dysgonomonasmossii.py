@@ -91,7 +91,7 @@ def DysgonomonasMossii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DysgonomonasMossii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

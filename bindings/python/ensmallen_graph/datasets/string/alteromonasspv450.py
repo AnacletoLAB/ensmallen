@@ -88,7 +88,7 @@ def AlteromonasSpV450(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlteromonasSpV450",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

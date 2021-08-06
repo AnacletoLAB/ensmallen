@@ -91,7 +91,7 @@ def PseudomonasSyringaePhaseolicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasSyringaePhaseolicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

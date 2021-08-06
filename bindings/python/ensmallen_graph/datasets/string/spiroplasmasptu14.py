@@ -88,7 +88,7 @@ def SpiroplasmaSpTu14(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpiroplasmaSpTu14",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

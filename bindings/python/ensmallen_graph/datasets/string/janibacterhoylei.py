@@ -91,7 +91,7 @@ def JanibacterHoylei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JanibacterHoylei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

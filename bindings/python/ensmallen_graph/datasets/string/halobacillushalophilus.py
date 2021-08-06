@@ -91,7 +91,7 @@ def HalobacillusHalophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalobacillusHalophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PhotobacteriumIliopiscarium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhotobacteriumIliopiscarium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

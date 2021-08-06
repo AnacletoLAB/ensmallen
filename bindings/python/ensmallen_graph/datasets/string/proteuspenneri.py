@@ -91,7 +91,7 @@ def ProteusPenneri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProteusPenneri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ProcaviaCapensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProcaviaCapensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

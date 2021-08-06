@@ -91,7 +91,7 @@ def CaenorhabditisRemanei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaenorhabditisRemanei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

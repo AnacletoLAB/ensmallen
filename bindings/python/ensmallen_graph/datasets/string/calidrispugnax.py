@@ -88,7 +88,7 @@ def CalidrisPugnax(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CalidrisPugnax",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ButyrivibrioSpMc2021(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ButyrivibrioSpMc2021",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

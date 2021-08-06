@@ -88,7 +88,7 @@ def StreptomycesRoseochromogenusSubspOscitansDs12976(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesRoseochromogenusSubspOscitansDs12976",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

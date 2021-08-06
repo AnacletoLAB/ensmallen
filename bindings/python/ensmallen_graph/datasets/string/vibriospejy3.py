@@ -91,7 +91,7 @@ def VibrioSpEjy3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioSpEjy3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

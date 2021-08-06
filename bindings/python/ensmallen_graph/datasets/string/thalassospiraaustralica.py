@@ -91,7 +91,7 @@ def ThalassospiraAustralica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThalassospiraAustralica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

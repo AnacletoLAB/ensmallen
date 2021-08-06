@@ -92,7 +92,7 @@ def FeTooth(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FeTooth",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

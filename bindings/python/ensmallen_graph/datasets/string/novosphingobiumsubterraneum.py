@@ -88,7 +88,7 @@ def NovosphingobiumSubterraneum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NovosphingobiumSubterraneum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

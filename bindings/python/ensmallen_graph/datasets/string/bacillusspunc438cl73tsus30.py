@@ -91,7 +91,7 @@ def BacillusSpUnc438cl73tsus30(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusSpUnc438cl73tsus30",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

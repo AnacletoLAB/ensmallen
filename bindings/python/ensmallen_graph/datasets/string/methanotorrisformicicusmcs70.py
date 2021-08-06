@@ -88,7 +88,7 @@ def MethanotorrisFormicicusMcS70(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanotorrisFormicicusMcS70",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

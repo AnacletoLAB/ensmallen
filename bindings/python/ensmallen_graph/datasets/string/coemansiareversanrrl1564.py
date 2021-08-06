@@ -88,7 +88,7 @@ def CoemansiaReversaNrrl1564(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CoemansiaReversaNrrl1564",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

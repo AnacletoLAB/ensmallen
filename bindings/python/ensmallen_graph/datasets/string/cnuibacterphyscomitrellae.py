@@ -88,7 +88,7 @@ def CnuibacterPhyscomitrellae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CnuibacterPhyscomitrellae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

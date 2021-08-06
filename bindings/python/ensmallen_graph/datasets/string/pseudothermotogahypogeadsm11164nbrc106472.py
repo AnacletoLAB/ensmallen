@@ -88,7 +88,7 @@ def PseudothermotogaHypogeaDsm11164Nbrc106472(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudothermotogaHypogeaDsm11164Nbrc106472",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

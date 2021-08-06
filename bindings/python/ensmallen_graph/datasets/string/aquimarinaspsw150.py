@@ -91,7 +91,7 @@ def AquimarinaSpSw150(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AquimarinaSpSw150",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

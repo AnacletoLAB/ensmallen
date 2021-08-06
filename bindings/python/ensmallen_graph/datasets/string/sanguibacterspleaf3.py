@@ -88,7 +88,7 @@ def SanguibacterSpLeaf3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SanguibacterSpLeaf3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

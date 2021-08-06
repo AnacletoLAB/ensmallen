@@ -88,7 +88,7 @@ def LampropediaCohaerens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LampropediaCohaerens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

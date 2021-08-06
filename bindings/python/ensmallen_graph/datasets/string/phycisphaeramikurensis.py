@@ -91,7 +91,7 @@ def PhycisphaeraMikurensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhycisphaeraMikurensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

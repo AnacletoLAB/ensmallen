@@ -88,7 +88,7 @@ def MonoraphidiumNeglectum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MonoraphidiumNeglectum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

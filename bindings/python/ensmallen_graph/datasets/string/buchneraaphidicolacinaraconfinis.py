@@ -88,7 +88,7 @@ def BuchneraAphidicolaCinaraConfinis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BuchneraAphidicolaCinaraConfinis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

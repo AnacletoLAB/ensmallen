@@ -88,7 +88,7 @@ def BacillusSpFjat25496(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusSpFjat25496",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def GammaproteobacteriaBacteriumRifcsphigho212Full3811(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GammaproteobacteriaBacteriumRifcsphigho212Full3811",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

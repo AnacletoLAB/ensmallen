@@ -88,7 +88,7 @@ def LeptospiraNoguchii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptospiraNoguchii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

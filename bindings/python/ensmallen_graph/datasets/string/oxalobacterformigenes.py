@@ -88,7 +88,7 @@ def OxalobacterFormigenes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OxalobacterFormigenes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def CorynebacteriumAmycolatum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumAmycolatum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

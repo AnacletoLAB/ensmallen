@@ -91,7 +91,7 @@ def BotrytisCinerea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BotrytisCinerea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

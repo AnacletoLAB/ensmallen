@@ -88,7 +88,7 @@ def MethylobacterLuteusImvB3098(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylobacterLuteusImvB3098",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

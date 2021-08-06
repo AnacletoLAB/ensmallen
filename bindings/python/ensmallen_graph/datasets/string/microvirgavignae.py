@@ -88,7 +88,7 @@ def MicrovirgaVignae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrovirgaVignae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

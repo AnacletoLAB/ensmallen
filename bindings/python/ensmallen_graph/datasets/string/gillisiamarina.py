@@ -88,7 +88,7 @@ def GillisiaMarina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GillisiaMarina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

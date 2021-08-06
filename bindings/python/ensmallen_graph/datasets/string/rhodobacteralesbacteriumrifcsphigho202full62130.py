@@ -88,7 +88,7 @@ def RhodobacteralesBacteriumRifcsphigho202Full62130(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodobacteralesBacteriumRifcsphigho202Full62130",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

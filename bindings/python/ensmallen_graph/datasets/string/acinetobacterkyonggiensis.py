@@ -88,7 +88,7 @@ def AcinetobacterKyonggiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcinetobacterKyonggiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

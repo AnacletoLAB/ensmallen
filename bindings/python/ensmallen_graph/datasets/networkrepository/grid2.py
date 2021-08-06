@@ -78,7 +78,7 @@ def Grid2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Grid2",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

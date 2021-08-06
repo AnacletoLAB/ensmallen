@@ -91,7 +91,7 @@ def ModestobacterMarinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ModestobacterMarinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

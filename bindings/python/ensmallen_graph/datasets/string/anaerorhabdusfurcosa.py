@@ -88,7 +88,7 @@ def AnaerorhabdusFurcosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerorhabdusFurcosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

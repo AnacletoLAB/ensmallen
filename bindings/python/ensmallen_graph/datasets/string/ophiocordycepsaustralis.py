@@ -88,7 +88,7 @@ def OphiocordycepsAustralis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OphiocordycepsAustralis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

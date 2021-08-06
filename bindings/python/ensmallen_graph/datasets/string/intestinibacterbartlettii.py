@@ -91,7 +91,7 @@ def IntestinibacterBartlettii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IntestinibacterBartlettii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

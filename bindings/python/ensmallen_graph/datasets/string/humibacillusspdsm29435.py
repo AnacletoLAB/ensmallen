@@ -88,7 +88,7 @@ def HumibacillusSpDsm29435(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HumibacillusSpDsm29435",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

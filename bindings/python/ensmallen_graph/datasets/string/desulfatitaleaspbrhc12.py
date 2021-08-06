@@ -88,7 +88,7 @@ def DesulfatitaleaSpBrhC12(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfatitaleaSpBrhC12",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

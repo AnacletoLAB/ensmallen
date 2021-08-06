@@ -88,7 +88,7 @@ def RhodobacterAestuarii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodobacterAestuarii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

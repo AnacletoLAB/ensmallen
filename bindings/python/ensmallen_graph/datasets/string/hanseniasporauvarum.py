@@ -88,7 +88,7 @@ def HanseniasporaUvarum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HanseniasporaUvarum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

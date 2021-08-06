@@ -88,7 +88,7 @@ def ThermoproteusSpJchs4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermoproteusSpJchs4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

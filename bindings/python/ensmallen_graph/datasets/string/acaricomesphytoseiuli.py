@@ -91,7 +91,7 @@ def AcaricomesPhytoseiuli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcaricomesPhytoseiuli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

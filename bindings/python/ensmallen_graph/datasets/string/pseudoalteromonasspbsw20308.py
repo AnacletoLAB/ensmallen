@@ -91,7 +91,7 @@ def PseudoalteromonasSpBsw20308(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoalteromonasSpBsw20308",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

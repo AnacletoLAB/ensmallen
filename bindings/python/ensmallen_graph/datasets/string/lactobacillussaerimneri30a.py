@@ -88,7 +88,7 @@ def LactobacillusSaerimneri30a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusSaerimneri30a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

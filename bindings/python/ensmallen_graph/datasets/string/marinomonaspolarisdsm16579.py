@@ -88,7 +88,7 @@ def MarinomonasPolarisDsm16579(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinomonasPolarisDsm16579",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

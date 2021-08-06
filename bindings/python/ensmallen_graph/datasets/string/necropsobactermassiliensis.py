@@ -88,7 +88,7 @@ def NecropsobacterMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NecropsobacterMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

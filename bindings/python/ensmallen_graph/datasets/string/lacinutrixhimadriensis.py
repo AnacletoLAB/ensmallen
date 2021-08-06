@@ -88,7 +88,7 @@ def LacinutrixHimadriensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LacinutrixHimadriensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def MarinilabiliaSalmonicolor(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinilabiliaSalmonicolor",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

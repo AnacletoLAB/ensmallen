@@ -88,7 +88,7 @@ def TrichinellaSpT9(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichinellaSpT9",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

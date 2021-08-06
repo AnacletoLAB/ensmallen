@@ -88,7 +88,7 @@ def AcetobacteriumWieringae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcetobacteriumWieringae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

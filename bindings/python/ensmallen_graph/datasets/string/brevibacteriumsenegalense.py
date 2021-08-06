@@ -91,7 +91,7 @@ def BrevibacteriumSenegalense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrevibacteriumSenegalense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

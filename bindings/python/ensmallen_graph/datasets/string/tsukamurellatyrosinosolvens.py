@@ -88,7 +88,7 @@ def TsukamurellaTyrosinosolvens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TsukamurellaTyrosinosolvens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

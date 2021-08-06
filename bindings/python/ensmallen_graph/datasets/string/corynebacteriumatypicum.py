@@ -91,7 +91,7 @@ def CorynebacteriumAtypicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumAtypicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

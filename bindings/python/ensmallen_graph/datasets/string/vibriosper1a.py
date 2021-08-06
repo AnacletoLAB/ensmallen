@@ -91,7 +91,7 @@ def VibrioSpEr1a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioSpEr1a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

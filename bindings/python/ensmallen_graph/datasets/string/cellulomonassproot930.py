@@ -88,7 +88,7 @@ def CellulomonasSpRoot930(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CellulomonasSpRoot930",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

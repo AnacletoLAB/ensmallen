@@ -88,7 +88,7 @@ def MethanocaldococcusVillosusKin24T80(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanocaldococcusVillosusKin24T80",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

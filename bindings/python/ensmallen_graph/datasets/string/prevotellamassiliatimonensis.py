@@ -88,7 +88,7 @@ def PrevotellamassiliaTimonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellamassiliaTimonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

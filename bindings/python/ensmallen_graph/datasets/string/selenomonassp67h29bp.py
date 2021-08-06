@@ -91,7 +91,7 @@ def SelenomonasSp67h29bp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SelenomonasSp67h29bp",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

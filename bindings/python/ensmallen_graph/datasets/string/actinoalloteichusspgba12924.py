@@ -88,7 +88,7 @@ def ActinoalloteichusSpGba12924(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinoalloteichusSpGba12924",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def SulfurospirillumSpScadc(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfurospirillumSpScadc",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

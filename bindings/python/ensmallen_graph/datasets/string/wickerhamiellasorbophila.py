@@ -88,7 +88,7 @@ def WickerhamiellaSorbophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WickerhamiellaSorbophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

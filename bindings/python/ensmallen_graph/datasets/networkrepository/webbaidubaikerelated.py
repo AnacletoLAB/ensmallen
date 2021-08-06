@@ -94,7 +94,7 @@ def WebBaiduBaikeRelated(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebBaiduBaikeRelated",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PeptoclostridiumDifficileCd160(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeptoclostridiumDifficileCd160",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

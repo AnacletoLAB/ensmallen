@@ -88,7 +88,7 @@ def AcidimicrobiiaBacteriumBacl6Mag120910Bin40(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidimicrobiiaBacteriumBacl6Mag120910Bin40",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

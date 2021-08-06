@@ -88,7 +88,7 @@ def StreptococcusMarmotae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusMarmotae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

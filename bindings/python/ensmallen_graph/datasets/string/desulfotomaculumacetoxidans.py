@@ -91,7 +91,7 @@ def DesulfotomaculumAcetoxidans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfotomaculumAcetoxidans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

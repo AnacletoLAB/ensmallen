@@ -88,7 +88,7 @@ def CandidatusMidichloriaMitochondriiIricva(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusMidichloriaMitochondriiIricva",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

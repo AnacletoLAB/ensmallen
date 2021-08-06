@@ -91,7 +91,7 @@ def DoreaFormicigeneransAtcc27755(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DoreaFormicigeneransAtcc27755",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def TyzzerellaNexilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TyzzerellaNexilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

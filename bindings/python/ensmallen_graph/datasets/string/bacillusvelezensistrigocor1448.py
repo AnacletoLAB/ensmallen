@@ -88,7 +88,7 @@ def BacillusVelezensisTrigocor1448(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusVelezensisTrigocor1448",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

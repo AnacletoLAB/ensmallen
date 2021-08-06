@@ -88,7 +88,7 @@ def CandidatusObscuribacterPhosphatis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusObscuribacterPhosphatis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

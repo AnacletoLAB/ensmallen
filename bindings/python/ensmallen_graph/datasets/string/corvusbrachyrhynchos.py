@@ -88,7 +88,7 @@ def CorvusBrachyrhynchos(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorvusBrachyrhynchos",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

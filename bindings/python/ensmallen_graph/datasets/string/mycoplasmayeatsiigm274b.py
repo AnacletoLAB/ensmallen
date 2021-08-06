@@ -88,7 +88,7 @@ def MycoplasmaYeatsiiGm274b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaYeatsiiGm274b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

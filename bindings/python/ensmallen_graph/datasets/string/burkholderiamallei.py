@@ -91,7 +91,7 @@ def BurkholderiaMallei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BurkholderiaMallei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def RalstoniaSolanacearumGmi1000(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RalstoniaSolanacearumGmi1000",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

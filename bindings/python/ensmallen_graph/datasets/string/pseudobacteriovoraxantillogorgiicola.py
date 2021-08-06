@@ -88,7 +88,7 @@ def PseudobacteriovoraxAntillogorgiicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudobacteriovoraxAntillogorgiicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

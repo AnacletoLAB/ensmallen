@@ -88,7 +88,7 @@ def OlsenellaSpHmsc062g07(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OlsenellaSpHmsc062g07",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

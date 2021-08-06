@@ -88,7 +88,7 @@ def CaulobacterSpRoot487d2y(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaulobacterSpRoot487d2y",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

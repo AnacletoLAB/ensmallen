@@ -88,7 +88,7 @@ def ThraustothecaClavata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThraustothecaClavata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

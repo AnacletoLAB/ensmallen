@@ -92,7 +92,7 @@ def ScShipsec5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ScShipsec5",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

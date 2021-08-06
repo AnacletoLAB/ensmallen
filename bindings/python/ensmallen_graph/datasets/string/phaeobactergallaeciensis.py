@@ -91,7 +91,7 @@ def PhaeobacterGallaeciensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhaeobacterGallaeciensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

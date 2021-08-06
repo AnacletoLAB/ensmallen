@@ -78,7 +78,7 @@ def ActorCollaboration(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActorCollaboration",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

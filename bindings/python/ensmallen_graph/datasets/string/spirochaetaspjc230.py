@@ -91,7 +91,7 @@ def SpirochaetaSpJc230(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpirochaetaSpJc230",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CryptosporidiumParvumIowaIi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CryptosporidiumParvumIowaIi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

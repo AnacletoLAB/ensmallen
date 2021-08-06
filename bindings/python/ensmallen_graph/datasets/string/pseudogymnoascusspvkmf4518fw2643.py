@@ -88,7 +88,7 @@ def PseudogymnoascusSpVkmF4518Fw2643(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudogymnoascusSpVkmF4518Fw2643",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

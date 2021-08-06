@@ -88,7 +88,7 @@ def NeglectaTimonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeglectaTimonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

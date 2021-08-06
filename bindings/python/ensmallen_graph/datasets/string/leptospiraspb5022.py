@@ -88,7 +88,7 @@ def LeptospiraSpB5022(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptospiraSpB5022",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

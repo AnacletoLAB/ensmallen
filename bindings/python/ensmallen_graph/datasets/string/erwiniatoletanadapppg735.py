@@ -88,7 +88,7 @@ def ErwiniaToletanaDappPg735(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErwiniaToletanaDappPg735",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

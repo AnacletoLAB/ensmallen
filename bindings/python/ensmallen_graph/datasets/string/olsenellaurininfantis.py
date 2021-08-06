@@ -88,7 +88,7 @@ def OlsenellaUrininfantis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OlsenellaUrininfantis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

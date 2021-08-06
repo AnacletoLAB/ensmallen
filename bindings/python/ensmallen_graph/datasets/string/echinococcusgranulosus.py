@@ -88,7 +88,7 @@ def EchinococcusGranulosus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EchinococcusGranulosus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

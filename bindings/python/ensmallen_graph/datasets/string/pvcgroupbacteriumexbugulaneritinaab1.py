@@ -88,7 +88,7 @@ def PvcGroupBacteriumExBugulaNeritinaAb1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PvcGroupBacteriumExBugulaNeritinaAb1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

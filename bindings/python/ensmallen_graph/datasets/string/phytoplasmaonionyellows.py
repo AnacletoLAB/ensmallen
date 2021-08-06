@@ -88,7 +88,7 @@ def PhytoplasmaOnionYellows(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhytoplasmaOnionYellows",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

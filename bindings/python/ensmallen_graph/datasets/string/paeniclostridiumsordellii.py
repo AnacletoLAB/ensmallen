@@ -88,7 +88,7 @@ def PaeniclostridiumSordellii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaeniclostridiumSordellii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

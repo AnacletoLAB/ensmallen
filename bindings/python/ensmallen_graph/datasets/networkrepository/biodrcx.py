@@ -100,7 +100,7 @@ def BioDrCx(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BioDrCx",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

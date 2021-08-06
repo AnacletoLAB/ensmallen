@@ -88,7 +88,7 @@ def RuminococcaceaeBacteriumFb2012(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminococcaceaeBacteriumFb2012",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

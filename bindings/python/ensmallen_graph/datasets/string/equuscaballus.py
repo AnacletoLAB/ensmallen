@@ -88,7 +88,7 @@ def EquusCaballus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EquusCaballus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

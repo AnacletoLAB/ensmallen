@@ -91,7 +91,7 @@ def VibrioSpRc586(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioSpRc586",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

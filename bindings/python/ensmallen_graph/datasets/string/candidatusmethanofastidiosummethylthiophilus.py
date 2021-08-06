@@ -88,7 +88,7 @@ def CandidatusMethanofastidiosumMethylthiophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusMethanofastidiosumMethylthiophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

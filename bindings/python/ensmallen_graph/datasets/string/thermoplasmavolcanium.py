@@ -91,7 +91,7 @@ def ThermoplasmaVolcanium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermoplasmaVolcanium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

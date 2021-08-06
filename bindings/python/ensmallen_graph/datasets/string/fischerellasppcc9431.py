@@ -91,7 +91,7 @@ def FischerellaSpPcc9431(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FischerellaSpPcc9431",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

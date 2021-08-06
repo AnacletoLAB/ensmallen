@@ -88,7 +88,7 @@ def DichantheliumOligosanthes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DichantheliumOligosanthes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ClostridiumSticklandii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumSticklandii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

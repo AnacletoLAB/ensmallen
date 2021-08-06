@@ -88,7 +88,7 @@ def BacillusNakamurai(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusNakamurai",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

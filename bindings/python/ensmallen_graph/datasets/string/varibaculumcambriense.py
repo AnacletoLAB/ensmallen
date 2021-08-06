@@ -88,7 +88,7 @@ def VaribaculumCambriense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VaribaculumCambriense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

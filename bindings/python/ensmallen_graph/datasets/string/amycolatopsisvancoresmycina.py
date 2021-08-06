@@ -91,7 +91,7 @@ def AmycolatopsisVancoresmycina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmycolatopsisVancoresmycina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

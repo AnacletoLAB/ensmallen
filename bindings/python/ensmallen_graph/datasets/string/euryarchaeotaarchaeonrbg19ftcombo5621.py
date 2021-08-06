@@ -88,7 +88,7 @@ def EuryarchaeotaArchaeonRbg19ftCombo5621(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EuryarchaeotaArchaeonRbg19ftCombo5621",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

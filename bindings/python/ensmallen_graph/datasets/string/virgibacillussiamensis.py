@@ -88,7 +88,7 @@ def VirgibacillusSiamensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VirgibacillusSiamensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

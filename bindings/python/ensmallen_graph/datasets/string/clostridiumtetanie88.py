@@ -88,7 +88,7 @@ def ClostridiumTetaniE88(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumTetaniE88",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

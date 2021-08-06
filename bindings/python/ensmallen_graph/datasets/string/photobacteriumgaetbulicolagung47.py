@@ -88,7 +88,7 @@ def PhotobacteriumGaetbulicolaGung47(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhotobacteriumGaetbulicolaGung47",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

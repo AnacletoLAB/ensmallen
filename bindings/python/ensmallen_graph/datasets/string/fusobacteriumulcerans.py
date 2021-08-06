@@ -91,7 +91,7 @@ def FusobacteriumUlcerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FusobacteriumUlcerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

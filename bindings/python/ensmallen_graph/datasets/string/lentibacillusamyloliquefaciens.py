@@ -88,7 +88,7 @@ def LentibacillusAmyloliquefaciens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LentibacillusAmyloliquefaciens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

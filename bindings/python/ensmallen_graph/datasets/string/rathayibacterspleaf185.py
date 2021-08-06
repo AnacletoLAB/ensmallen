@@ -88,7 +88,7 @@ def RathayibacterSpLeaf185(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RathayibacterSpLeaf185",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

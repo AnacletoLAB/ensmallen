@@ -88,7 +88,7 @@ def MycobacteriumHaemophilumDsm44634(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumHaemophilumDsm44634",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

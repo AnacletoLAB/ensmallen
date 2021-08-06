@@ -91,7 +91,7 @@ def ClostridiumAnorexicamassiliense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumAnorexicamassiliense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def JanthinobacteriumSpS32(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JanthinobacteriumSpS32",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

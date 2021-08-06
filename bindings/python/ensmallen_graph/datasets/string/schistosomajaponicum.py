@@ -88,7 +88,7 @@ def SchistosomaJaponicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SchistosomaJaponicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

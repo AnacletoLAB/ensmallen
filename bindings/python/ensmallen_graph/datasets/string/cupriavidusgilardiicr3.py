@@ -88,7 +88,7 @@ def CupriavidusGilardiiCr3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CupriavidusGilardiiCr3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

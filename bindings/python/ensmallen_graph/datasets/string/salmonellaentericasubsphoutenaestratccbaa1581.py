@@ -88,7 +88,7 @@ def SalmonellaEntericaSubspHoutenaeStrAtccBaa1581(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalmonellaEntericaSubspHoutenaeStrAtccBaa1581",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

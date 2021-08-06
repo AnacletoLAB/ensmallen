@@ -120,7 +120,7 @@ def SocfbNipsEgo(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbNipsEgo",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

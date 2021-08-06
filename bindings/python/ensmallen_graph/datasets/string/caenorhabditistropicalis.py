@@ -91,7 +91,7 @@ def CaenorhabditisTropicalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaenorhabditisTropicalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

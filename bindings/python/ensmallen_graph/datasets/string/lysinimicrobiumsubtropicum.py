@@ -88,7 +88,7 @@ def LysinimicrobiumSubtropicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LysinimicrobiumSubtropicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

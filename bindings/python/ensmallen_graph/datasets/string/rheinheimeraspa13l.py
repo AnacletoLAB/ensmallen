@@ -91,7 +91,7 @@ def RheinheimeraSpA13l(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RheinheimeraSpA13l",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

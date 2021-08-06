@@ -91,7 +91,7 @@ def BavariicoccusSeileri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BavariicoccusSeileri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

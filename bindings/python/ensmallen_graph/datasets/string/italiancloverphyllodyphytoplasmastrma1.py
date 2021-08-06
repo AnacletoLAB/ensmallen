@@ -88,7 +88,7 @@ def ItalianCloverPhyllodyPhytoplasmaStrMa1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ItalianCloverPhyllodyPhytoplasmaStrMa1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def RomboutsiaLituseburensisDsm797(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RomboutsiaLituseburensisDsm797",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

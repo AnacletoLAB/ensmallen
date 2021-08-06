@@ -91,7 +91,7 @@ def ConexibacterWoeseiIso977n(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ConexibacterWoeseiIso977n",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

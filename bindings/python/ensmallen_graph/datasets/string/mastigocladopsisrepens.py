@@ -91,7 +91,7 @@ def MastigocladopsisRepens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MastigocladopsisRepens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

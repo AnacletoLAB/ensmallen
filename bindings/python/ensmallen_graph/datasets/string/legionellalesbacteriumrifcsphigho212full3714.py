@@ -88,7 +88,7 @@ def LegionellalesBacteriumRifcsphigho212Full3714(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LegionellalesBacteriumRifcsphigho212Full3714",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

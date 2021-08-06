@@ -88,7 +88,7 @@ def BrenneriaGoodwinii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrenneriaGoodwinii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

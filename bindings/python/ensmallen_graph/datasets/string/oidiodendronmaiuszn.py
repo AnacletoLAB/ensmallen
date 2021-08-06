@@ -88,7 +88,7 @@ def OidiodendronMaiusZn(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OidiodendronMaiusZn",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

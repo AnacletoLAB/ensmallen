@@ -88,7 +88,7 @@ def CandidatusPortieraAleyrodidarumBtBHrs(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusPortieraAleyrodidarumBtBHrs",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

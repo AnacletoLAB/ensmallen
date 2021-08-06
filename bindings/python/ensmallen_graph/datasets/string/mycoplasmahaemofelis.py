@@ -91,7 +91,7 @@ def MycoplasmaHaemofelis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaHaemofelis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

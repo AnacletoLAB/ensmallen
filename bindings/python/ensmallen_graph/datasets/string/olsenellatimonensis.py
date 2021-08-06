@@ -88,7 +88,7 @@ def OlsenellaTimonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OlsenellaTimonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

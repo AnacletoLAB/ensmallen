@@ -88,7 +88,7 @@ def CapitellaTeleta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CapitellaTeleta",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

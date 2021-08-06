@@ -88,7 +88,7 @@ def LactobacillusSeniorisDsm24302Jcm17472(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusSeniorisDsm24302Jcm17472",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

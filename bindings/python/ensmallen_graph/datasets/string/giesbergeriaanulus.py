@@ -88,7 +88,7 @@ def GiesbergeriaAnulus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GiesbergeriaAnulus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

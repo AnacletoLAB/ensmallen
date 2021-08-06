@@ -91,7 +91,7 @@ def OscillibacterValericigenes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OscillibacterValericigenes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

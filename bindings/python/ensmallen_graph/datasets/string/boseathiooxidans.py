@@ -88,7 +88,7 @@ def BoseaThiooxidans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BoseaThiooxidans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

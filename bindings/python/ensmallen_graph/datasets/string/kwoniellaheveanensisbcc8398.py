@@ -88,7 +88,7 @@ def KwoniellaHeveanensisBcc8398(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KwoniellaHeveanensisBcc8398",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

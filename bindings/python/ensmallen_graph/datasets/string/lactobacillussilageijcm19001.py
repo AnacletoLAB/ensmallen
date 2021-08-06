@@ -88,7 +88,7 @@ def LactobacillusSilageiJcm19001(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusSilageiJcm19001",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

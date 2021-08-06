@@ -91,7 +91,7 @@ def KazachstaniaNaganishii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KazachstaniaNaganishii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SalinivibrioProteolyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinivibrioProteolyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

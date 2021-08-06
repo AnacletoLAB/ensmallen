@@ -91,7 +91,7 @@ def GregarinaNiphandrodes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GregarinaNiphandrodes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

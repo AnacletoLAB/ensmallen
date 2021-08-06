@@ -88,7 +88,7 @@ def HyphomicrobiumSpNdb2meth4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HyphomicrobiumSpNdb2meth4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

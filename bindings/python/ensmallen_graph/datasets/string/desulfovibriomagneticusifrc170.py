@@ -91,7 +91,7 @@ def DesulfovibrioMagneticusIfrc170(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioMagneticusIfrc170",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

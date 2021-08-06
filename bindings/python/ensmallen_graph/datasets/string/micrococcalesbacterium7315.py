@@ -88,7 +88,7 @@ def MicrococcalesBacterium7315(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrococcalesBacterium7315",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

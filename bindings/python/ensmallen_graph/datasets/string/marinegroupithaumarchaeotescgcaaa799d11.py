@@ -88,7 +88,7 @@ def MarineGroupIThaumarchaeoteScgcAaa799D11(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarineGroupIThaumarchaeoteScgcAaa799D11",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

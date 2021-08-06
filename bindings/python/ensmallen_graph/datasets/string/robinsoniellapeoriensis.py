@@ -91,7 +91,7 @@ def RobinsoniellaPeoriensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RobinsoniellaPeoriensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

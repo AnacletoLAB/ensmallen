@@ -88,7 +88,7 @@ def MortierellaElongataAg77(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MortierellaElongataAg77",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

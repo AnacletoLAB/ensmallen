@@ -91,7 +91,7 @@ def OscillatoriaSpPcc10802(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OscillatoriaSpPcc10802",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

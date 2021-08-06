@@ -88,7 +88,7 @@ def CoprinopsisMarcescibilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CoprinopsisMarcescibilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

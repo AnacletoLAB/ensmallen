@@ -88,7 +88,7 @@ def PseudolabrysSpRoot1462(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudolabrysSpRoot1462",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

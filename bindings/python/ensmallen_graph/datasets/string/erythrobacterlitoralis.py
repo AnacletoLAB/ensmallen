@@ -91,7 +91,7 @@ def ErythrobacterLitoralis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErythrobacterLitoralis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

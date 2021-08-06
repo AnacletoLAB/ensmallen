@@ -91,7 +91,7 @@ def BordetellaTrematum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BordetellaTrematum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

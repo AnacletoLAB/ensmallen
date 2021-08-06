@@ -88,7 +88,7 @@ def BacillusCohniiNbrc15565(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusCohniiNbrc15565",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

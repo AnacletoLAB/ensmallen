@@ -91,7 +91,7 @@ def MyxococcusFulvus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MyxococcusFulvus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

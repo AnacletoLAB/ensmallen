@@ -91,7 +91,7 @@ def CyclobacteriaceaeBacteriumAk24(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CyclobacteriaceaeBacteriumAk24",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

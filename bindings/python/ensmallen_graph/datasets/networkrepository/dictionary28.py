@@ -78,7 +78,7 @@ def Dictionary28(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Dictionary28",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

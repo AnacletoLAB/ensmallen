@@ -88,7 +88,7 @@ def CalothrixSpHk06(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CalothrixSpHk06",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

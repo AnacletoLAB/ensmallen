@@ -88,7 +88,7 @@ def MarinimicrobiumSpLsA18(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinimicrobiumSpLsA18",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

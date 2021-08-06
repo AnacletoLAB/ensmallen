@@ -91,7 +91,7 @@ def MycoplasmaBovigenitalium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaBovigenitalium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

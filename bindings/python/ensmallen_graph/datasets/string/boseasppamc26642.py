@@ -88,7 +88,7 @@ def BoseaSpPamc26642(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BoseaSpPamc26642",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

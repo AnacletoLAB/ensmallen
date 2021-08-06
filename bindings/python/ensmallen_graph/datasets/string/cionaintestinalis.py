@@ -91,7 +91,7 @@ def CionaIntestinalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CionaIntestinalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

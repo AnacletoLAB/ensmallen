@@ -91,7 +91,7 @@ def IndibacterAlkaliphilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IndibacterAlkaliphilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

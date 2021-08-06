@@ -88,7 +88,7 @@ def DendrobiumCatenatum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DendrobiumCatenatum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

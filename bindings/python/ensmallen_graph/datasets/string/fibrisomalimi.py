@@ -91,7 +91,7 @@ def FibrisomaLimi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FibrisomaLimi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

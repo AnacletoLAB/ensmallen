@@ -91,7 +91,7 @@ def ActinomycesOdontolyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomycesOdontolyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

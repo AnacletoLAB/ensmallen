@@ -88,7 +88,7 @@ def PasteurellaMultocidaSubspMultocidaStrPm70(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PasteurellaMultocidaSubspMultocidaStrPm70",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

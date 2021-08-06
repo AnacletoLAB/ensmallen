@@ -88,7 +88,7 @@ def MucilaginibacterMallensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MucilaginibacterMallensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

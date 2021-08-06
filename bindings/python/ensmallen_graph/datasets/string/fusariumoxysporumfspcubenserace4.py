@@ -88,7 +88,7 @@ def FusariumOxysporumFSpCubenseRace4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FusariumOxysporumFSpCubenseRace4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

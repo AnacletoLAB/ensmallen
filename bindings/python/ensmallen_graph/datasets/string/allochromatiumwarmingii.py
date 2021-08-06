@@ -88,7 +88,7 @@ def AllochromatiumWarmingii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AllochromatiumWarmingii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

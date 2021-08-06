@@ -88,7 +88,7 @@ def ActinobacteriaBacteriumRbg19ftCombo7019(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinobacteriaBacteriumRbg19ftCombo7019",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

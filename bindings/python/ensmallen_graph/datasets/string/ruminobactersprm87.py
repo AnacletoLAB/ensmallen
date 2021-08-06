@@ -91,7 +91,7 @@ def RuminobacterSpRm87(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminobacterSpRm87",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

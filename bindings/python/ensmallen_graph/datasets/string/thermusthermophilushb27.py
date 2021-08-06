@@ -91,7 +91,7 @@ def ThermusThermophilusHb27(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermusThermophilusHb27",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

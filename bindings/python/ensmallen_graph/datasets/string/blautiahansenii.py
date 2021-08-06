@@ -91,7 +91,7 @@ def BlautiaHansenii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlautiaHansenii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

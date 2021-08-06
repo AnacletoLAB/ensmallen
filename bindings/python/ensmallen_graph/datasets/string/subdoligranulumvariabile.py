@@ -91,7 +91,7 @@ def SubdoligranulumVariabile(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SubdoligranulumVariabile",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

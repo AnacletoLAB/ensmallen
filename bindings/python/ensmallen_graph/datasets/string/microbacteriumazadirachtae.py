@@ -88,7 +88,7 @@ def MicrobacteriumAzadirachtae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriumAzadirachtae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

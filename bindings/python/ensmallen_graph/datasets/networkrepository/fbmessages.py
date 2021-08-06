@@ -100,7 +100,7 @@ def FbMessages(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FbMessages",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

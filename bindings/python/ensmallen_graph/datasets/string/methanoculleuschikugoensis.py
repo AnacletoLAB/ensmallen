@@ -88,7 +88,7 @@ def MethanoculleusChikugoensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanoculleusChikugoensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

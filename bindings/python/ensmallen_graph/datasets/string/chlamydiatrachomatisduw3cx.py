@@ -88,7 +88,7 @@ def ChlamydiaTrachomatisDUw3Cx(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlamydiaTrachomatisDUw3Cx",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

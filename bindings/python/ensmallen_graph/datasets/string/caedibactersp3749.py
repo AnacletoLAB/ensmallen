@@ -88,7 +88,7 @@ def CaedibacterSp3749(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaedibacterSp3749",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

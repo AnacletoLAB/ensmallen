@@ -88,7 +88,7 @@ def CurtobacteriumSpLeaf261(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CurtobacteriumSpLeaf261",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def FlavobacteriumGelidilacusDsm15343(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumGelidilacusDsm15343",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

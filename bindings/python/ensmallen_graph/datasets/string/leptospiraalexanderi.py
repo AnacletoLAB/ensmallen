@@ -88,7 +88,7 @@ def LeptospiraAlexanderi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptospiraAlexanderi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

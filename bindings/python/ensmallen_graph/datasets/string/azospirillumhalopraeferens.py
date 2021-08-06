@@ -91,7 +91,7 @@ def AzospirillumHalopraeferens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AzospirillumHalopraeferens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

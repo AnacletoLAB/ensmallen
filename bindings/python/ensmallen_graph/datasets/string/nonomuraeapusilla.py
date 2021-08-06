@@ -88,7 +88,7 @@ def NonomuraeaPusilla(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NonomuraeaPusilla",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

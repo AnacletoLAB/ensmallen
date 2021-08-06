@@ -91,7 +91,7 @@ def AcetobacterMalorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcetobacterMalorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

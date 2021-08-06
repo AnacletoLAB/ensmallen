@@ -91,7 +91,7 @@ def NocardiaSpBmg51109(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardiaSpBmg51109",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

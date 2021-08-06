@@ -88,7 +88,7 @@ def ProsthecomicrobiumHirschii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProsthecomicrobiumHirschii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

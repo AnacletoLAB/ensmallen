@@ -88,7 +88,7 @@ def FusibacterSp3d3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FusibacterSp3d3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

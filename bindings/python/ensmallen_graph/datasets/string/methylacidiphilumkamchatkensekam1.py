@@ -88,7 +88,7 @@ def MethylacidiphilumKamchatkenseKam1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylacidiphilumKamchatkenseKam1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

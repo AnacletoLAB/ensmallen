@@ -91,7 +91,7 @@ def EscherichiaAlbertiiKf1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EscherichiaAlbertiiKf1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

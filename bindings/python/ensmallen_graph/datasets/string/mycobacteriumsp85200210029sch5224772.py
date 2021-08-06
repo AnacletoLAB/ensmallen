@@ -88,7 +88,7 @@ def MycobacteriumSp85200210029Sch5224772(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumSp85200210029Sch5224772",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

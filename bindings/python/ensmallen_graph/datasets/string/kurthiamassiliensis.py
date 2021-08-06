@@ -91,7 +91,7 @@ def KurthiaMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KurthiaMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

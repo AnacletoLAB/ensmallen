@@ -88,7 +88,7 @@ def TepidimonasTaiwanensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TepidimonasTaiwanensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

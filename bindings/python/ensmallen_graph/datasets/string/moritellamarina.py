@@ -91,7 +91,7 @@ def MoritellaMarina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MoritellaMarina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

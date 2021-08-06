@@ -91,7 +91,7 @@ def DictyosteliumPurpureum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DictyosteliumPurpureum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

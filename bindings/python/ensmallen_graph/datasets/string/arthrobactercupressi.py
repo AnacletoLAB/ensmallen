@@ -88,7 +88,7 @@ def ArthrobacterCupressi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArthrobacterCupressi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

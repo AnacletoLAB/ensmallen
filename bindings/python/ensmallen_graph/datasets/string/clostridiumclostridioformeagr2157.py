@@ -88,7 +88,7 @@ def ClostridiumClostridioformeAgr2157(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumClostridioformeAgr2157",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

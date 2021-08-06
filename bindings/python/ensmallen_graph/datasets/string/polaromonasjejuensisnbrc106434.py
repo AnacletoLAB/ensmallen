@@ -88,7 +88,7 @@ def PolaromonasJejuensisNbrc106434(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PolaromonasJejuensisNbrc106434",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

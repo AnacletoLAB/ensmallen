@@ -88,7 +88,7 @@ def PseudorhodobacterFerrugineus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudorhodobacterFerrugineus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

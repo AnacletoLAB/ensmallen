@@ -91,7 +91,7 @@ def BdellovibrioBacteriovorusHd100(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BdellovibrioBacteriovorusHd100",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

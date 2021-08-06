@@ -88,7 +88,7 @@ def PustulibacteriumMarinum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PustulibacteriumMarinum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

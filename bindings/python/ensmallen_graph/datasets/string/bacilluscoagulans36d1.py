@@ -91,7 +91,7 @@ def BacillusCoagulans36d1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusCoagulans36d1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

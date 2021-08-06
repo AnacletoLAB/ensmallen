@@ -91,7 +91,7 @@ def PaenibacillusPolymyxaSc2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillusPolymyxaSc2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

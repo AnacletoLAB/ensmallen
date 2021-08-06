@@ -88,7 +88,7 @@ def TulasnellaCalosporaMut4182(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TulasnellaCalosporaMut4182",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

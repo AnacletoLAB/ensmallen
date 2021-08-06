@@ -91,7 +91,7 @@ def PantoeaSpAt9b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PantoeaSpAt9b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

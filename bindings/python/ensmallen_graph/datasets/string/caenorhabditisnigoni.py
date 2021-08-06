@@ -88,7 +88,7 @@ def CaenorhabditisNigoni(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaenorhabditisNigoni",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

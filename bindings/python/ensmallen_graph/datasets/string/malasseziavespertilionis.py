@@ -88,7 +88,7 @@ def MalasseziaVespertilionis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MalasseziaVespertilionis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

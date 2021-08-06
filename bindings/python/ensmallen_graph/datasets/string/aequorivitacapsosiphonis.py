@@ -91,7 +91,7 @@ def AequorivitaCapsosiphonis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AequorivitaCapsosiphonis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

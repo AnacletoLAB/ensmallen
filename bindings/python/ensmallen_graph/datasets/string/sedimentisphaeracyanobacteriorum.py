@@ -88,7 +88,7 @@ def SedimentisphaeraCyanobacteriorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SedimentisphaeraCyanobacteriorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

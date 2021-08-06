@@ -91,7 +91,7 @@ def CaldisphaeraLagunensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaldisphaeraLagunensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

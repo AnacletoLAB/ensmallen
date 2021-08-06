@@ -78,7 +78,7 @@ def Cvxbqp1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Cvxbqp1",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -81,7 +81,7 @@ def IMDB(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IMDB",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

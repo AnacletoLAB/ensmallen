@@ -88,7 +88,7 @@ def AnaerosphaeraAminiphilaDsm21120(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerosphaeraAminiphilaDsm21120",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

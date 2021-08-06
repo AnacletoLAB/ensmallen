@@ -91,7 +91,7 @@ def RhodosporidiumToruloides(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodosporidiumToruloides",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

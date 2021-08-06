@@ -91,7 +91,7 @@ def SphaerulinaMusiva(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphaerulinaMusiva",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

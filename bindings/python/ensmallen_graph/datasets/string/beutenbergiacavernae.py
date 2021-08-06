@@ -91,7 +91,7 @@ def BeutenbergiaCavernae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BeutenbergiaCavernae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

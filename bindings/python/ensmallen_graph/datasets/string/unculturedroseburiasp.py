@@ -88,7 +88,7 @@ def UnculturedRoseburiaSp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UnculturedRoseburiaSp",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

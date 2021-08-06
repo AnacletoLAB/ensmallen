@@ -88,7 +88,7 @@ def ThermothelomycesThermophilusAtcc42464(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermothelomycesThermophilusAtcc42464",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

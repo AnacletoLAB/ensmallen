@@ -88,7 +88,7 @@ def NitrospinaeBacteriumRifcsplowo2123915(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrospinaeBacteriumRifcsplowo2123915",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

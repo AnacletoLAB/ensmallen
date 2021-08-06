@@ -91,7 +91,7 @@ def DesulfovibrioVulgarisMiyazaki(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioVulgarisMiyazaki",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

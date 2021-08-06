@@ -88,7 +88,7 @@ def CandidatusPortieraAleyrodidarumTv(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusPortieraAleyrodidarumTv",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

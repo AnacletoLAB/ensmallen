@@ -91,7 +91,7 @@ def AlicyclobacillusHerbarius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlicyclobacillusHerbarius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

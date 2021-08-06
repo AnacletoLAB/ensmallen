@@ -88,7 +88,7 @@ def RuegeriaMarina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuegeriaMarina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

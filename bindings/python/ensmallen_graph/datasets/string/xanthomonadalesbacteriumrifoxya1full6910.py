@@ -88,7 +88,7 @@ def XanthomonadalesBacteriumRifoxya1Full6910(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XanthomonadalesBacteriumRifoxya1Full6910",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

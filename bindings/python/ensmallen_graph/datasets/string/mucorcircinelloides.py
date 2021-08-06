@@ -91,7 +91,7 @@ def MucorCircinelloides(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MucorCircinelloides",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

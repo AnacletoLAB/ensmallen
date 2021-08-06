@@ -91,7 +91,7 @@ def ButyrivibrioProteoclasticusP6b7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ButyrivibrioProteoclasticusP6b7",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

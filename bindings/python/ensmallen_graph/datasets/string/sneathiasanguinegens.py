@@ -88,7 +88,7 @@ def SneathiaSanguinegens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SneathiaSanguinegens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

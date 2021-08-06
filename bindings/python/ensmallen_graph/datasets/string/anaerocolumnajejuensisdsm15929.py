@@ -88,7 +88,7 @@ def AnaerocolumnaJejuensisDsm15929(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerocolumnaJejuensisDsm15929",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

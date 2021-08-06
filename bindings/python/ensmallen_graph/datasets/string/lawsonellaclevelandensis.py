@@ -88,7 +88,7 @@ def LawsonellaClevelandensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LawsonellaClevelandensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

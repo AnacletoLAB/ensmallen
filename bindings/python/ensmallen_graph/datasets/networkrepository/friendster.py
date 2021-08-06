@@ -78,7 +78,7 @@ def Friendster(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Friendster",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

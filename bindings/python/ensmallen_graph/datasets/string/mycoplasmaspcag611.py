@@ -88,7 +88,7 @@ def MycoplasmaSpCag611(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaSpCag611",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

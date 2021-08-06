@@ -91,7 +91,7 @@ def MethylocapsaAurea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylocapsaAurea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

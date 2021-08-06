@@ -91,7 +91,7 @@ def MethanoregulaBoonei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanoregulaBoonei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

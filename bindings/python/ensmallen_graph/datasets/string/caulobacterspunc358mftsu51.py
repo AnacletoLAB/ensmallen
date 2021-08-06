@@ -91,7 +91,7 @@ def CaulobacterSpUnc358mftsu51(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaulobacterSpUnc358mftsu51",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

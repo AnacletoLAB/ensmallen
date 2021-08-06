@@ -88,7 +88,7 @@ def MycoplasmaWenyoniiStrMassachusetts(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaWenyoniiStrMassachusetts",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

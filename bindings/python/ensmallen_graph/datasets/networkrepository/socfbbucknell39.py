@@ -120,7 +120,7 @@ def SocfbBucknell39(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbBucknell39",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def AgrobacteriumTumefaciensCcnwgs0286(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AgrobacteriumTumefaciensCcnwgs0286",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

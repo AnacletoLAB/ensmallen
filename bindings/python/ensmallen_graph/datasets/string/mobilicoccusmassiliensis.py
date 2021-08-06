@@ -88,7 +88,7 @@ def MobilicoccusMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MobilicoccusMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

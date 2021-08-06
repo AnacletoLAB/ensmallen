@@ -88,7 +88,7 @@ def PodosporaAnserinaSMat(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PodosporaAnserinaSMat",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

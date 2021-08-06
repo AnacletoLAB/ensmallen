@@ -88,7 +88,7 @@ def BalneolaSpEhc07(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BalneolaSpEhc07",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

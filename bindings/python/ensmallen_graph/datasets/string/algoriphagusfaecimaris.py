@@ -88,7 +88,7 @@ def AlgoriphagusFaecimaris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlgoriphagusFaecimaris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CandidaParapsilosisCdc317(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidaParapsilosisCdc317",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

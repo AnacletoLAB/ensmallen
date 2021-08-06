@@ -88,7 +88,7 @@ def BrucellaAbortus2308(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrucellaAbortus2308",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

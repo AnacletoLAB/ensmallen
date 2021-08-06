@@ -91,7 +91,7 @@ def PropionibacteriumPropionicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PropionibacteriumPropionicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

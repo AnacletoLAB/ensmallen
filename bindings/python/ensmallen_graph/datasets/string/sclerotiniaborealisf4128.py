@@ -88,7 +88,7 @@ def SclerotiniaBorealisF4128(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SclerotiniaBorealisF4128",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

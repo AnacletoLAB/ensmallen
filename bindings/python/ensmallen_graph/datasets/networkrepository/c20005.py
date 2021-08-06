@@ -104,7 +104,7 @@ def C20005(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="C20005",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

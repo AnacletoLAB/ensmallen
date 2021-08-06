@@ -88,7 +88,7 @@ def EnterococcusUreilyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterococcusUreilyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

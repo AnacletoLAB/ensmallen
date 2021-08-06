@@ -91,7 +91,7 @@ def NeisseriaWeaveri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeisseriaWeaveri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

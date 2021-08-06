@@ -88,7 +88,7 @@ def JannaschiaRubra(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JannaschiaRubra",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def BacillusHalosaccharovorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusHalosaccharovorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

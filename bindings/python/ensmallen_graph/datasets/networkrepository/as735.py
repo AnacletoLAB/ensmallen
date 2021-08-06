@@ -78,7 +78,7 @@ def As735(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="As735",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

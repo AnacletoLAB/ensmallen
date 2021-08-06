@@ -88,7 +88,7 @@ def AspergillusThermomutatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AspergillusThermomutatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PeptoniphilusHarei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeptoniphilusHarei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

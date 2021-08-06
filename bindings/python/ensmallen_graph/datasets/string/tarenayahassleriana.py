@@ -91,7 +91,7 @@ def TarenayaHassleriana(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TarenayaHassleriana",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

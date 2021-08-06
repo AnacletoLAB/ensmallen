@@ -88,7 +88,7 @@ def YamadazymaTenuisAtcc10573(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="YamadazymaTenuisAtcc10573",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

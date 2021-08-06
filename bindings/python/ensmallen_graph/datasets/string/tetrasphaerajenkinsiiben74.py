@@ -88,7 +88,7 @@ def TetrasphaeraJenkinsiiBen74(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TetrasphaeraJenkinsiiBen74",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

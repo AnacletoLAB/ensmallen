@@ -88,7 +88,7 @@ def CandidaAlbicansSc5314(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidaAlbicansSc5314",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

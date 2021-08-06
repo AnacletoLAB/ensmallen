@@ -88,7 +88,7 @@ def LegionellaPneumophilaSubspPascullei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LegionellaPneumophilaSubspPascullei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def OenococcusKitaharae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OenococcusKitaharae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

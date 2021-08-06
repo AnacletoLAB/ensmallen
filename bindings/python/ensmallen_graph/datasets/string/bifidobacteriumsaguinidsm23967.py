@@ -88,7 +88,7 @@ def BifidobacteriumSaguiniDsm23967(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BifidobacteriumSaguiniDsm23967",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def MollicutesBacteriumHr1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MollicutesBacteriumHr1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

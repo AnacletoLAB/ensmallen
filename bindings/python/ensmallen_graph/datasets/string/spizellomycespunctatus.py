@@ -91,7 +91,7 @@ def SpizellomycesPunctatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpizellomycesPunctatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

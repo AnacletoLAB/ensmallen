@@ -78,7 +78,7 @@ def PowerUsGrid(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PowerUsGrid",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

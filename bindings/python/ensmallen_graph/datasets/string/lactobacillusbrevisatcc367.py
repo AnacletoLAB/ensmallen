@@ -91,7 +91,7 @@ def LactobacillusBrevisAtcc367(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusBrevisAtcc367",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

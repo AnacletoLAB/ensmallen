@@ -88,7 +88,7 @@ def LimnothrixRoseaIamM220(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LimnothrixRoseaIamM220",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

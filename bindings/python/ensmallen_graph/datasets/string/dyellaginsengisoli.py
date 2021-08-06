@@ -91,7 +91,7 @@ def DyellaGinsengisoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DyellaGinsengisoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

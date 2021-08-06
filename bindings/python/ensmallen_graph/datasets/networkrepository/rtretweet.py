@@ -108,7 +108,7 @@ def RtRetweet(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RtRetweet",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

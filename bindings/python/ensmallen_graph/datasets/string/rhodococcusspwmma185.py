@@ -88,7 +88,7 @@ def RhodococcusSpWmma185(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodococcusSpWmma185",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ZunongwangiaProfunda(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZunongwangiaProfunda",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

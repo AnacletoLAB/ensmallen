@@ -88,7 +88,7 @@ def CryomorphaceaeBacteriumAsp1005a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CryomorphaceaeBacteriumAsp1005a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

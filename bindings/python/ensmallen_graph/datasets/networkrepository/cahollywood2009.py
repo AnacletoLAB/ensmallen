@@ -98,7 +98,7 @@ def CaHollywood2009(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaHollywood2009",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

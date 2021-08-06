@@ -88,7 +88,7 @@ def StaphylococcusAuricularis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StaphylococcusAuricularis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

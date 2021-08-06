@@ -91,7 +91,7 @@ def AsaiaPlatycodiSf21(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AsaiaPlatycodiSf21",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

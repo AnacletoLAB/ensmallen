@@ -91,7 +91,7 @@ def MethylovorusGlucosetrophus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylovorusGlucosetrophus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

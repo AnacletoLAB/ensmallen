@@ -88,7 +88,7 @@ def NesterenkoniaSpPf2b19(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NesterenkoniaSpPf2b19",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

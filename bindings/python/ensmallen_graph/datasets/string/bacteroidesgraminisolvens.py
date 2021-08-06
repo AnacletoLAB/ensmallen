@@ -91,7 +91,7 @@ def BacteroidesGraminisolvens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesGraminisolvens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

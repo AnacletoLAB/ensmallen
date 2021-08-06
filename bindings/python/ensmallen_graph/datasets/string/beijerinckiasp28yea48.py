@@ -88,7 +88,7 @@ def BeijerinckiaSp28Yea48(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BeijerinckiaSp28Yea48",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

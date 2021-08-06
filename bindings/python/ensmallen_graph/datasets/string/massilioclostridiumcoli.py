@@ -88,7 +88,7 @@ def MassilioclostridiumColi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MassilioclostridiumColi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CupriavidusNantongensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CupriavidusNantongensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

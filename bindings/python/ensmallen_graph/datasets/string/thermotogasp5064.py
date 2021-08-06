@@ -88,7 +88,7 @@ def ThermotogaSp5064(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermotogaSp5064",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

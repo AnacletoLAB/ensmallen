@@ -88,7 +88,7 @@ def ThelaziaCallipaeda(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThelaziaCallipaeda",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def NeovisonVison(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeovisonVison",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

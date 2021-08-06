@@ -88,7 +88,7 @@ def AncylostomaCaninum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AncylostomaCaninum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

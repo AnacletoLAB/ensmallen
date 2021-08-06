@@ -88,7 +88,7 @@ def PelobacterSeleniigenesDsm18267(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PelobacterSeleniigenesDsm18267",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

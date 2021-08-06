@@ -88,7 +88,7 @@ def SyntrophomonasWolfeiSubspMethylbutyratica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SyntrophomonasWolfeiSubspMethylbutyratica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

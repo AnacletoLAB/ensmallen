@@ -91,7 +91,7 @@ def FrankiaSpCci3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FrankiaSpCci3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

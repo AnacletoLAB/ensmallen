@@ -88,7 +88,7 @@ def PhytophthoraNicotianae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhytophthoraNicotianae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

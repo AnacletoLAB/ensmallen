@@ -88,7 +88,7 @@ def LentzeaGuizhouensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LentzeaGuizhouensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

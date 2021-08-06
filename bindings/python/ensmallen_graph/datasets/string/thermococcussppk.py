@@ -88,7 +88,7 @@ def ThermococcusSpPk(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermococcusSpPk",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

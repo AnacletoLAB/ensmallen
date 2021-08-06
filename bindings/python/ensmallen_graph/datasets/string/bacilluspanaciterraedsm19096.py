@@ -88,7 +88,7 @@ def BacillusPanaciterraeDsm19096(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusPanaciterraeDsm19096",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PelotomaculumSpDtu098(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PelotomaculumSpDtu098",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

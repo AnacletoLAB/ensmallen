@@ -91,7 +91,7 @@ def HalieaSalexigens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalieaSalexigens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

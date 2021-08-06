@@ -91,7 +91,7 @@ def ThermodesulfobacteriumHveragerdense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermodesulfobacteriumHveragerdense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

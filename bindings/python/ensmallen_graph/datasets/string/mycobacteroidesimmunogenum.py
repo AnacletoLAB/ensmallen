@@ -88,7 +88,7 @@ def MycobacteroidesImmunogenum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteroidesImmunogenum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

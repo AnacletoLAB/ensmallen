@@ -88,7 +88,7 @@ def OttowiaSpOralTaxon894(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OttowiaSpOralTaxon894",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

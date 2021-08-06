@@ -88,7 +88,7 @@ def BacteroidesNdongoniae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesNdongoniae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

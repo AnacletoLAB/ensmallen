@@ -88,7 +88,7 @@ def BhargavaeaBeijingensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BhargavaeaBeijingensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

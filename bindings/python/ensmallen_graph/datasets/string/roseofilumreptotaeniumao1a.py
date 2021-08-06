@@ -88,7 +88,7 @@ def RoseofilumReptotaeniumAo1A(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseofilumReptotaeniumAo1A",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

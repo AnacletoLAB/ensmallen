@@ -91,7 +91,7 @@ def ActinosporangiumSpNrrlb3428(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinosporangiumSpNrrlb3428",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

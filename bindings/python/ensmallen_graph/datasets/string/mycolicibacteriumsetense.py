@@ -88,7 +88,7 @@ def MycolicibacteriumSetense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycolicibacteriumSetense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

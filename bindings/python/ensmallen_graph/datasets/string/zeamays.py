@@ -91,7 +91,7 @@ def ZeaMays(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZeaMays",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

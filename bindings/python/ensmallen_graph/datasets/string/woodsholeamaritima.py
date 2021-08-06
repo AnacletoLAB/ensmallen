@@ -91,7 +91,7 @@ def WoodsholeaMaritima(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WoodsholeaMaritima",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def FlavobacteriumSuccinicans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumSuccinicans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

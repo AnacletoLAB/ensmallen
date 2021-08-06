@@ -91,7 +91,7 @@ def MethylobacterTundripaludum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylobacterTundripaludum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

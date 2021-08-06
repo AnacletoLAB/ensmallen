@@ -88,7 +88,7 @@ def WolbachiaSpOoc(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WolbachiaSpOoc",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

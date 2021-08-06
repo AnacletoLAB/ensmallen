@@ -88,7 +88,7 @@ def AquamicrobiumAerolatumDsm21857(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AquamicrobiumAerolatumDsm21857",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

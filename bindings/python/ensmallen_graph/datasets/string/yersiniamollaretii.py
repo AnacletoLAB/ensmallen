@@ -88,7 +88,7 @@ def YersiniaMollaretii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="YersiniaMollaretii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

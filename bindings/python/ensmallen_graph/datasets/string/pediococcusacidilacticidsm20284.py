@@ -91,7 +91,7 @@ def PediococcusAcidilacticiDsm20284(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PediococcusAcidilacticiDsm20284",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

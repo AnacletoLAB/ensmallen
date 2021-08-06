@@ -88,7 +88,7 @@ def BrackiellaOedipodisDsm13743(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrackiellaOedipodisDsm13743",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

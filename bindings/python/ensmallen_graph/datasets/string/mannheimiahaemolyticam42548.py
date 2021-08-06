@@ -91,7 +91,7 @@ def MannheimiaHaemolyticaM42548(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MannheimiaHaemolyticaM42548",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

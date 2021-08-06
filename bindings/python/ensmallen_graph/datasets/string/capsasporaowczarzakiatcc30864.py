@@ -88,7 +88,7 @@ def CapsasporaOwczarzakiAtcc30864(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CapsasporaOwczarzakiAtcc30864",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

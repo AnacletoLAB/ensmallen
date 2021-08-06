@@ -91,7 +91,7 @@ def AdvenellaMimigardefordensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AdvenellaMimigardefordensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

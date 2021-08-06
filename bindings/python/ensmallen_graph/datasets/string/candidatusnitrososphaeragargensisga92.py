@@ -88,7 +88,7 @@ def CandidatusNitrososphaeraGargensisGa92(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusNitrososphaeraGargensisGa92",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

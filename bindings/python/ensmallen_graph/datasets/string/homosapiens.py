@@ -91,7 +91,7 @@ def HomoSapiens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HomoSapiens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

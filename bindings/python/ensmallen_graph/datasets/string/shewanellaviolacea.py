@@ -91,7 +91,7 @@ def ShewanellaViolacea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShewanellaViolacea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def AlcaligenesFaecalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlcaligenesFaecalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

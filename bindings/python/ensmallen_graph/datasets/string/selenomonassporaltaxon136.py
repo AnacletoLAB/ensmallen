@@ -88,7 +88,7 @@ def SelenomonasSpOralTaxon136(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SelenomonasSpOralTaxon136",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

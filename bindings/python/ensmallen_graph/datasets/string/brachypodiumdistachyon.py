@@ -91,7 +91,7 @@ def BrachypodiumDistachyon(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrachypodiumDistachyon",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

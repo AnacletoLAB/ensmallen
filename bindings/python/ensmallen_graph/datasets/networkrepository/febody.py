@@ -92,7 +92,7 @@ def FeBody(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FeBody",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

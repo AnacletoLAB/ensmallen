@@ -78,7 +78,7 @@ def EmailDncCorecipient(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EmailDncCorecipient",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

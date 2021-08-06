@@ -88,7 +88,7 @@ def SalinivibrioSocompensisS10b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinivibrioSocompensisS10b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

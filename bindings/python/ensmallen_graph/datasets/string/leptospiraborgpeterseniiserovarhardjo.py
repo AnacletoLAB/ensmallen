@@ -88,7 +88,7 @@ def LeptospiraBorgpeterseniiSerovarHardjo(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptospiraBorgpeterseniiSerovarHardjo",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

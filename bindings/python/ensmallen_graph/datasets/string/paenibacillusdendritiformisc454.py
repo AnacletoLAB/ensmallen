@@ -88,7 +88,7 @@ def PaenibacillusDendritiformisC454(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillusDendritiformisC454",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

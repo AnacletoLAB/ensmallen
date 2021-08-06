@@ -88,7 +88,7 @@ def ChlorobiumSpKb01(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlorobiumSpKb01",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

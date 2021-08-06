@@ -88,7 +88,7 @@ def ThioclavaSpSk1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThioclavaSpSk1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

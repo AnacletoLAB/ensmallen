@@ -112,7 +112,7 @@ def WebWebbase2001(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebWebbase2001",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

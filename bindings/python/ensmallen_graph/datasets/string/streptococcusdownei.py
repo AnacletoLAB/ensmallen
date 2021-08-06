@@ -91,7 +91,7 @@ def StreptococcusDownei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusDownei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

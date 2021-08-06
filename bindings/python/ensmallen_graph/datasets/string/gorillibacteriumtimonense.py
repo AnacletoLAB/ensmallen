@@ -88,7 +88,7 @@ def GorillibacteriumTimonense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GorillibacteriumTimonense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

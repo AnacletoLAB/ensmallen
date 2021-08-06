@@ -88,7 +88,7 @@ def PseudoalteromonasMariniglutinosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoalteromonasMariniglutinosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

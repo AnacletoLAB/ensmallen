@@ -88,7 +88,7 @@ def CitreimonasSalinaria(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CitreimonasSalinaria",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

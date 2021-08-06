@@ -88,7 +88,7 @@ def MaribacterSp12014mblMicdiv(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MaribacterSp12014mblMicdiv",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

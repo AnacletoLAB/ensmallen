@@ -88,7 +88,7 @@ def ProteobacteriaBacteriumSgBin8(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProteobacteriaBacteriumSgBin8",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

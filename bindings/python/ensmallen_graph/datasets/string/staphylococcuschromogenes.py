@@ -91,7 +91,7 @@ def StaphylococcusChromogenes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StaphylococcusChromogenes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

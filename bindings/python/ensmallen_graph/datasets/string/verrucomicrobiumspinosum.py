@@ -91,7 +91,7 @@ def VerrucomicrobiumSpinosum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VerrucomicrobiumSpinosum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

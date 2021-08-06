@@ -88,7 +88,7 @@ def TissierelliaBacteriumKa00581(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TissierelliaBacteriumKa00581",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

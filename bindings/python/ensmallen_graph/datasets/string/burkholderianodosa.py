@@ -91,7 +91,7 @@ def BurkholderiaNodosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BurkholderiaNodosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

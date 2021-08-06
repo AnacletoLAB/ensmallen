@@ -88,7 +88,7 @@ def CitromicrobiumSpJl477(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CitromicrobiumSpJl477",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

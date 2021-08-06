@@ -91,7 +91,7 @@ def EnterovibrioCalviensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterovibrioCalviensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

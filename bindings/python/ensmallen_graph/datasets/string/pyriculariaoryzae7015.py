@@ -88,7 +88,7 @@ def PyriculariaOryzae7015(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PyriculariaOryzae7015",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

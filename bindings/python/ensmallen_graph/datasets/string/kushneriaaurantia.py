@@ -91,7 +91,7 @@ def KushneriaAurantia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KushneriaAurantia",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

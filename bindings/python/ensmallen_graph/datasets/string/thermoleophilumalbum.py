@@ -88,7 +88,7 @@ def ThermoleophilumAlbum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermoleophilumAlbum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def MaritimibacterAlkaliphilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MaritimibacterAlkaliphilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

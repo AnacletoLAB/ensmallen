@@ -88,7 +88,7 @@ def MannheimiaHaemolyticaSerotypeA2Bovine(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MannheimiaHaemolyticaSerotypeA2Bovine",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def Gene(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Gene",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

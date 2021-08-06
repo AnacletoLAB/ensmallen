@@ -91,7 +91,7 @@ def ThermomonasFusca(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermomonasFusca",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MethylobacterMarinusA45(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylobacterMarinusA45",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

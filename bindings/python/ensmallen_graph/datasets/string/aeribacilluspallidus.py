@@ -88,7 +88,7 @@ def AeribacillusPallidus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AeribacillusPallidus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

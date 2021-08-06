@@ -88,7 +88,7 @@ def GlossinaFuscipesFuscipes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GlossinaFuscipesFuscipes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

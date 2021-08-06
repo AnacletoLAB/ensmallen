@@ -91,7 +91,7 @@ def SulfitobacterSpEe36(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfitobacterSpEe36",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def StreptococcusUrinalisFb127cna2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusUrinalisFb127cna2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

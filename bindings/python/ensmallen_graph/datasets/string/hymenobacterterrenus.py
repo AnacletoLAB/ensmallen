@@ -88,7 +88,7 @@ def HymenobacterTerrenus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HymenobacterTerrenus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

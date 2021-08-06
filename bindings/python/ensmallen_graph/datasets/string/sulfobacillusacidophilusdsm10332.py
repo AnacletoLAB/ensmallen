@@ -88,7 +88,7 @@ def SulfobacillusAcidophilusDsm10332(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfobacillusAcidophilusDsm10332",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

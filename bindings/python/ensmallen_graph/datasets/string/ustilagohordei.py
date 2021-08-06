@@ -91,7 +91,7 @@ def UstilagoHordei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UstilagoHordei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

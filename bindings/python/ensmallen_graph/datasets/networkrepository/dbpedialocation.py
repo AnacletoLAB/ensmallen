@@ -78,7 +78,7 @@ def DbpediaLocation(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DbpediaLocation",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

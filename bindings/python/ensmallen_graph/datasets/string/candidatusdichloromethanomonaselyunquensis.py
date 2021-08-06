@@ -88,7 +88,7 @@ def CandidatusDichloromethanomonasElyunquensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusDichloromethanomonasElyunquensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

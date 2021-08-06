@@ -91,7 +91,7 @@ def StaphylococcusPettenkoferi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StaphylococcusPettenkoferi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

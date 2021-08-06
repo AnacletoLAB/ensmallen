@@ -91,7 +91,7 @@ def CampylobacterRectus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterRectus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

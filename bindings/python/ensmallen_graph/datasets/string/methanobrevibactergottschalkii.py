@@ -88,7 +88,7 @@ def MethanobrevibacterGottschalkii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanobrevibacterGottschalkii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

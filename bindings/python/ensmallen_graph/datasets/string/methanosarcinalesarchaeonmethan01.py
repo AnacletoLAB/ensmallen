@@ -88,7 +88,7 @@ def MethanosarcinalesArchaeonMethan01(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanosarcinalesArchaeonMethan01",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

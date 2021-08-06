@@ -88,7 +88,7 @@ def KlenkiaTaihuensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KlenkiaTaihuensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

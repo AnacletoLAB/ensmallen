@@ -91,7 +91,7 @@ def CatonellaMorbi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CatonellaMorbi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

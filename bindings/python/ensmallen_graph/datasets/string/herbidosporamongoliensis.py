@@ -88,7 +88,7 @@ def HerbidosporaMongoliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HerbidosporaMongoliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

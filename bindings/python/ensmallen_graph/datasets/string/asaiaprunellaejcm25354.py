@@ -88,7 +88,7 @@ def AsaiaPrunellaeJcm25354(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AsaiaPrunellaeJcm25354",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

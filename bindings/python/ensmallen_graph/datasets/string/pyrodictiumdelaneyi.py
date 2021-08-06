@@ -88,7 +88,7 @@ def PyrodictiumDelaneyi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PyrodictiumDelaneyi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

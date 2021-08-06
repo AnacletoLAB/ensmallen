@@ -88,7 +88,7 @@ def PeptococcaceaeBacteriumBica17(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeptococcaceaeBacteriumBica17",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

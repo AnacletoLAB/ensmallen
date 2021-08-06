@@ -88,7 +88,7 @@ def BurkholderialesBacteriumRifcsphigho201Full63240(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BurkholderialesBacteriumRifcsphigho201Full63240",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

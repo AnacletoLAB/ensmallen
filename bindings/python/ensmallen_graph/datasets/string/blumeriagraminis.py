@@ -91,7 +91,7 @@ def BlumeriaGraminis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlumeriaGraminis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

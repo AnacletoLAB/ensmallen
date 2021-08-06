@@ -88,7 +88,7 @@ def NotechisScutatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NotechisScutatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SphingobacteriumWenxiniae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingobacteriumWenxiniae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

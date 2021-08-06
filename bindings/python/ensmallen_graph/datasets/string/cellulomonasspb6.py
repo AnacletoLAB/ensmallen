@@ -88,7 +88,7 @@ def CellulomonasSpB6(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CellulomonasSpB6",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

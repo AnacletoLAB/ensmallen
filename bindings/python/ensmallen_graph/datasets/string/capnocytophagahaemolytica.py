@@ -88,7 +88,7 @@ def CapnocytophagaHaemolytica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CapnocytophagaHaemolytica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SerratiaOdoriferaDsm4582(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SerratiaOdoriferaDsm4582",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

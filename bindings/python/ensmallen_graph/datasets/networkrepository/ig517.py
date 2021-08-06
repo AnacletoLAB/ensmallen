@@ -78,7 +78,7 @@ def Ig517(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Ig517",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

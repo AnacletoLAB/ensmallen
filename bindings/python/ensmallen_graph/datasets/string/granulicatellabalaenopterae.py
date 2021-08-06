@@ -88,7 +88,7 @@ def GranulicatellaBalaenopterae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GranulicatellaBalaenopterae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

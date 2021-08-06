@@ -88,7 +88,7 @@ def ThalassospiraSpMccc1a02491(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThalassospiraSpMccc1a02491",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

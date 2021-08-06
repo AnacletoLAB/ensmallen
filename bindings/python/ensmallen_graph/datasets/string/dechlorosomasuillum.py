@@ -91,7 +91,7 @@ def DechlorosomaSuillum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DechlorosomaSuillum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

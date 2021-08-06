@@ -78,7 +78,7 @@ def WordnetWords(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WordnetWords",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

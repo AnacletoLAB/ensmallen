@@ -91,7 +91,7 @@ def EnhydrobacterAerosaccus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnhydrobacterAerosaccus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

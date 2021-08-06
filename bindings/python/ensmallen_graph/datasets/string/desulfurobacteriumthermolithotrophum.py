@@ -91,7 +91,7 @@ def DesulfurobacteriumThermolithotrophum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfurobacteriumThermolithotrophum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

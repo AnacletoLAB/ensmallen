@@ -88,7 +88,7 @@ def GammaProteobacteriumL18(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GammaProteobacteriumL18",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PrevotellaOralis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaOralis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

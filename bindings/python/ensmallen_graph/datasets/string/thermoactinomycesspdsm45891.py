@@ -88,7 +88,7 @@ def ThermoactinomycesSpDsm45891(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermoactinomycesSpDsm45891",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

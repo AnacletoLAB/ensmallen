@@ -88,7 +88,7 @@ def PenicilliumNalgiovense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PenicilliumNalgiovense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

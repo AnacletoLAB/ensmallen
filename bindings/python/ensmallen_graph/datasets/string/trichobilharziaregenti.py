@@ -88,7 +88,7 @@ def TrichobilharziaRegenti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichobilharziaRegenti",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

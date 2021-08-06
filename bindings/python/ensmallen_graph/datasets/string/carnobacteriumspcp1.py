@@ -88,7 +88,7 @@ def CarnobacteriumSpCp1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CarnobacteriumSpCp1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

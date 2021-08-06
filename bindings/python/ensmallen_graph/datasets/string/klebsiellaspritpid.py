@@ -88,7 +88,7 @@ def KlebsiellaSpRitPiD(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KlebsiellaSpRitPiD",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

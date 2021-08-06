@@ -88,7 +88,7 @@ def CladophialophoraImmunda(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CladophialophoraImmunda",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

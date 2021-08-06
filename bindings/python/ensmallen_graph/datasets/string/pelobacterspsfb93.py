@@ -88,7 +88,7 @@ def PelobacterSpSfb93(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PelobacterSpSfb93",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

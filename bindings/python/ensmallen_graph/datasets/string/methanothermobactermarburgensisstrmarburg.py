@@ -88,7 +88,7 @@ def MethanothermobacterMarburgensisStrMarburg(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanothermobacterMarburgensisStrMarburg",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

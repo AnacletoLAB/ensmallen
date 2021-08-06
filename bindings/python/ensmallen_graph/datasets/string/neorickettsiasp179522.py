@@ -88,7 +88,7 @@ def NeorickettsiaSp179522(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeorickettsiaSp179522",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

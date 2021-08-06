@@ -78,7 +78,7 @@ def Eat(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Eat",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

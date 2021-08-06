@@ -91,7 +91,7 @@ def LactobacillusGallinarum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusGallinarum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

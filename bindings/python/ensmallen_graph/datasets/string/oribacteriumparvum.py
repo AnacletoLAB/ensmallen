@@ -91,7 +91,7 @@ def OribacteriumParvum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OribacteriumParvum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def HungateiclostridiumStraminisolvensJcm21531(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HungateiclostridiumStraminisolvensJcm21531",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

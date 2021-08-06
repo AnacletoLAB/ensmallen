@@ -91,7 +91,7 @@ def DechloromonasAromatica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DechloromonasAromatica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

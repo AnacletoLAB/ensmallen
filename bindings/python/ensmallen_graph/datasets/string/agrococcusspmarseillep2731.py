@@ -88,7 +88,7 @@ def AgrococcusSpMarseilleP2731(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AgrococcusSpMarseilleP2731",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

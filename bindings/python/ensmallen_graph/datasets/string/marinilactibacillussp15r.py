@@ -88,7 +88,7 @@ def MarinilactibacillusSp15r(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinilactibacillusSp15r",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

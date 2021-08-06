@@ -91,7 +91,7 @@ def PusillimonasNoertemannii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PusillimonasNoertemannii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

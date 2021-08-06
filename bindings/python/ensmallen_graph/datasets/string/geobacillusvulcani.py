@@ -91,7 +91,7 @@ def GeobacillusVulcani(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeobacillusVulcani",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

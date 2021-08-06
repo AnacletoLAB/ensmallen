@@ -91,7 +91,7 @@ def FluoribacterDumoffii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FluoribacterDumoffii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

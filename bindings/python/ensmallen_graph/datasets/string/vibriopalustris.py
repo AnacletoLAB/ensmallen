@@ -88,7 +88,7 @@ def VibrioPalustris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioPalustris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

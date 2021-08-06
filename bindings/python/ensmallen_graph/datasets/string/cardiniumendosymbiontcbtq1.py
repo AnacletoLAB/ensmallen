@@ -91,7 +91,7 @@ def CardiniumEndosymbiontCbtq1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CardiniumEndosymbiontCbtq1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

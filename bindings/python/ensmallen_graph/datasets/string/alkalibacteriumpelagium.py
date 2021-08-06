@@ -88,7 +88,7 @@ def AlkalibacteriumPelagium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlkalibacteriumPelagium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def RickettsiaTyphiStrB9991cwpp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RickettsiaTyphiStrB9991cwpp",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

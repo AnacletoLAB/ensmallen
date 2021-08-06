@@ -88,7 +88,7 @@ def MicrocebusMurinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrocebusMurinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

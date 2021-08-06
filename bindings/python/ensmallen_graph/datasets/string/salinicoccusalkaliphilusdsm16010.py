@@ -88,7 +88,7 @@ def SalinicoccusAlkaliphilusDsm16010(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinicoccusAlkaliphilusDsm16010",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

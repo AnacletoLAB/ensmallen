@@ -88,7 +88,7 @@ def AcetobacterTropicalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcetobacterTropicalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def HaplochromisBurtoni(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaplochromisBurtoni",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

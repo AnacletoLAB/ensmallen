@@ -91,7 +91,7 @@ def AciduliprofundumSpMar08339(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AciduliprofundumSpMar08339",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def DactylellinaHaptotyla(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DactylellinaHaptotyla",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def DesulfomicrobiumApsheronum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfomicrobiumApsheronum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

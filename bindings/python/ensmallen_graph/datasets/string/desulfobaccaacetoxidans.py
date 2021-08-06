@@ -91,7 +91,7 @@ def DesulfobaccaAcetoxidans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfobaccaAcetoxidans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def In2004(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="In2004",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

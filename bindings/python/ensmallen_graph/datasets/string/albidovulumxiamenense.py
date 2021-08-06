@@ -88,7 +88,7 @@ def AlbidovulumXiamenense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlbidovulumXiamenense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

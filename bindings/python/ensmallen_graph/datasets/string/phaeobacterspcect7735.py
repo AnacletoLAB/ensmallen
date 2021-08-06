@@ -88,7 +88,7 @@ def PhaeobacterSpCect7735(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhaeobacterSpCect7735",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

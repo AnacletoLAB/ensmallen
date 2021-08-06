@@ -88,7 +88,7 @@ def ChlamydiaeBacteriumRifcsplowo212Full4520(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlamydiaeBacteriumRifcsplowo212Full4520",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

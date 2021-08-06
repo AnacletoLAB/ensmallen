@@ -88,7 +88,7 @@ def MethanobacteriumSpA39(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanobacteriumSpA39",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def StreptococcusOralisAtcc35037(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusOralisAtcc35037",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

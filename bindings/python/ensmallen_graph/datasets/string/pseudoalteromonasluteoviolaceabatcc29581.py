@@ -88,7 +88,7 @@ def PseudoalteromonasLuteoviolaceaBAtcc29581(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoalteromonasLuteoviolaceaBAtcc29581",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

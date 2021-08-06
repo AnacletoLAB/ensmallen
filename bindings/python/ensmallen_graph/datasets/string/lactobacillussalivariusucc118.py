@@ -88,7 +88,7 @@ def LactobacillusSalivariusUcc118(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusSalivariusUcc118",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

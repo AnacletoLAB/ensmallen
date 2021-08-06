@@ -91,7 +91,7 @@ def NitrosomonasEuropaea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrosomonasEuropaea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

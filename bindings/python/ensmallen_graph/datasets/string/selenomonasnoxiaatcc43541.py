@@ -91,7 +91,7 @@ def SelenomonasNoxiaAtcc43541(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SelenomonasNoxiaAtcc43541",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

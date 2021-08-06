@@ -78,7 +78,7 @@ def WebBerkstan(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebBerkstan",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

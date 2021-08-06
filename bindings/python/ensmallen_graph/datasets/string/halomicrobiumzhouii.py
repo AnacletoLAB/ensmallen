@@ -88,7 +88,7 @@ def HalomicrobiumZhouii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalomicrobiumZhouii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def RuminococcusChampanellensis18p13Jcm17042(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminococcusChampanellensis18p13Jcm17042",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

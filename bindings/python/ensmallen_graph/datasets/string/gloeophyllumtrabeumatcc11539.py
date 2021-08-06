@@ -88,7 +88,7 @@ def GloeophyllumTrabeumAtcc11539(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GloeophyllumTrabeumAtcc11539",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def DemequinaAurantiaca(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DemequinaAurantiaca",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

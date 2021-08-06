@@ -88,7 +88,7 @@ def RhodanobacterGlycinis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodanobacterGlycinis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

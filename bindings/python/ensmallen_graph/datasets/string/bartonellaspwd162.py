@@ -88,7 +88,7 @@ def BartonellaSpWd162(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BartonellaSpWd162",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ThalassomonasActiniarum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThalassomonasActiniarum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

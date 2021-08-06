@@ -91,7 +91,7 @@ def CyclobacteriumMarinum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CyclobacteriumMarinum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def FabibacterPacificus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FabibacterPacificus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

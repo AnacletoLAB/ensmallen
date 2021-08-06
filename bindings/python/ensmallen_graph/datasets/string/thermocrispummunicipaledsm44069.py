@@ -88,7 +88,7 @@ def ThermocrispumMunicipaleDsm44069(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermocrispumMunicipaleDsm44069",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

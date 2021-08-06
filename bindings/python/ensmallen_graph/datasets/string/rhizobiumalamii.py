@@ -91,7 +91,7 @@ def RhizobiumAlamii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizobiumAlamii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

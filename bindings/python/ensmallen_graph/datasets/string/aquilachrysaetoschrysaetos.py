@@ -88,7 +88,7 @@ def AquilaChrysaetosChrysaetos(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AquilaChrysaetosChrysaetos",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

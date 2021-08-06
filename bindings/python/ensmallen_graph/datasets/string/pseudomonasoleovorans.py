@@ -91,7 +91,7 @@ def PseudomonasOleovorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasOleovorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

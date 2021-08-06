@@ -78,7 +78,7 @@ def Hugetrace00010(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Hugetrace00010",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

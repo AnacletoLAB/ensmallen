@@ -88,7 +88,7 @@ def MongoliimonasTerrestris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MongoliimonasTerrestris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

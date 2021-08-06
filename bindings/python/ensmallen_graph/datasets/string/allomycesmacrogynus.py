@@ -91,7 +91,7 @@ def AllomycesMacrogynus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AllomycesMacrogynus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

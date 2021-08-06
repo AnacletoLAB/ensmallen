@@ -91,7 +91,7 @@ def ChrysiogenesArsenatis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChrysiogenesArsenatis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

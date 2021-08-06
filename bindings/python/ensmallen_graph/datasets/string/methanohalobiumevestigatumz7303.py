@@ -88,7 +88,7 @@ def MethanohalobiumEvestigatumZ7303(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanohalobiumEvestigatumZ7303",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PropionimicrobiumLymphophilumAcs093VSch5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PropionimicrobiumLymphophilumAcs093VSch5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

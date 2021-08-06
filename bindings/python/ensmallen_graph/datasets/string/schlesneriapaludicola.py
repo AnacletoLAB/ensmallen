@@ -91,7 +91,7 @@ def SchlesneriaPaludicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SchlesneriaPaludicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PantheraTigris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PantheraTigris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

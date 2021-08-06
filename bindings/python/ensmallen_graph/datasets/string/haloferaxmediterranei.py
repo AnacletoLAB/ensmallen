@@ -91,7 +91,7 @@ def HaloferaxMediterranei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaloferaxMediterranei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

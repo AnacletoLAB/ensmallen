@@ -88,7 +88,7 @@ def CeratocystisFimbriataCbs114723(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CeratocystisFimbriataCbs114723",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

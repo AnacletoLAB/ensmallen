@@ -91,7 +91,7 @@ def PrevotellaSalivae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaSalivae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

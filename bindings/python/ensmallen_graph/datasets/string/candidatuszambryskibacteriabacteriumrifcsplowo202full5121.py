@@ -88,7 +88,7 @@ def CandidatusZambryskibacteriaBacteriumRifcsplowo202Full5121(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusZambryskibacteriaBacteriumRifcsplowo202Full5121",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def LeptospiraBorgpeterseniiSerovarPomonaStr200901868(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptospiraBorgpeterseniiSerovarPomonaStr200901868",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

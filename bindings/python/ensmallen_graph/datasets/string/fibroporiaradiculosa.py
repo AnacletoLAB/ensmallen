@@ -88,7 +88,7 @@ def FibroporiaRadiculosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FibroporiaRadiculosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

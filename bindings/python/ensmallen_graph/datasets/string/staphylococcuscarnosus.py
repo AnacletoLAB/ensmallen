@@ -91,7 +91,7 @@ def StaphylococcusCarnosus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StaphylococcusCarnosus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

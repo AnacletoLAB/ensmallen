@@ -88,7 +88,7 @@ def PseudogulbenkianiaSubflavaDsm22618(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudogulbenkianiaSubflavaDsm22618",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

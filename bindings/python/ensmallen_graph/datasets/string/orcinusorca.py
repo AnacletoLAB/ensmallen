@@ -91,7 +91,7 @@ def OrcinusOrca(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OrcinusOrca",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

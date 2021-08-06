@@ -91,7 +91,7 @@ def RubritaleaMarina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RubritaleaMarina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

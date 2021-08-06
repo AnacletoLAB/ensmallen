@@ -91,7 +91,7 @@ def SpiroplasmaMirum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpiroplasmaMirum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def DemequinaFlava(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DemequinaFlava",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

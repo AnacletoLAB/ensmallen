@@ -88,7 +88,7 @@ def EnterobacterHormaecheiSubspXiangfangensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterobacterHormaecheiSubspXiangfangensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -120,7 +120,7 @@ def SocfbWake73(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbWake73",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def HolosporaElegansE1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HolosporaElegansE1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

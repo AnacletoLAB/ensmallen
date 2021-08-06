@@ -88,7 +88,7 @@ def PyrococcusKukulkanii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PyrococcusKukulkanii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CamponotusFloridanus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CamponotusFloridanus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

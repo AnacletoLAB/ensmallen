@@ -88,7 +88,7 @@ def CollinsellaAerofaciens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CollinsellaAerofaciens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

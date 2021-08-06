@@ -88,7 +88,7 @@ def GemmobacterMegaterium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GemmobacterMegaterium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

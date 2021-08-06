@@ -88,7 +88,7 @@ def JanthinobacteriumSp12014mblMicdiv(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JanthinobacteriumSp12014mblMicdiv",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def StaphylococcusHominisC80(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StaphylococcusHominisC80",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

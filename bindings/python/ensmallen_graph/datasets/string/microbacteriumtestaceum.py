@@ -91,7 +91,7 @@ def MicrobacteriumTestaceum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriumTestaceum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

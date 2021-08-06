@@ -88,7 +88,7 @@ def NumidumMassiliense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NumidumMassiliense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def VibrioHepatarius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioHepatarius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

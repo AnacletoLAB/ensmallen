@@ -91,7 +91,7 @@ def RhodothermusMarinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodothermusMarinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

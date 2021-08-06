@@ -88,7 +88,7 @@ def RhodanobacterSpC06(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodanobacterSpC06",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def BacteriumEndosymbiontOfPedicinusBadii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteriumEndosymbiontOfPedicinusBadii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

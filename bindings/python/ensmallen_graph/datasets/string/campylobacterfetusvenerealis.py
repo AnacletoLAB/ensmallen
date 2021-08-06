@@ -91,7 +91,7 @@ def CampylobacterFetusVenerealis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterFetusVenerealis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

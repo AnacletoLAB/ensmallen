@@ -88,7 +88,7 @@ def MethanohalophilusSp2Gbenrich(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanohalophilusSp2Gbenrich",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

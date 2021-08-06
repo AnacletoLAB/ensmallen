@@ -88,7 +88,7 @@ def SulfuricellaSpT08(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfuricellaSpT08",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

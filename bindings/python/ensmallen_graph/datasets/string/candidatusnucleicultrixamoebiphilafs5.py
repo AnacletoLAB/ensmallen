@@ -88,7 +88,7 @@ def CandidatusNucleicultrixAmoebiphilaFs5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusNucleicultrixAmoebiphilaFs5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

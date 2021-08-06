@@ -88,7 +88,7 @@ def BacteriumMs4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteriumMs4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

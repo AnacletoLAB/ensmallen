@@ -88,7 +88,7 @@ def PseudoxanthomonasMexicana(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoxanthomonasMexicana",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def AcidothermusCellulolyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidothermusCellulolyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

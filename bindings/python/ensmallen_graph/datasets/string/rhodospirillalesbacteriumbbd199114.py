@@ -88,7 +88,7 @@ def RhodospirillalesBacteriumBbd199114(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodospirillalesBacteriumBbd199114",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

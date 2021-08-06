@@ -88,7 +88,7 @@ def CandidatusNitrosopelagicusBrevis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusNitrosopelagicusBrevis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

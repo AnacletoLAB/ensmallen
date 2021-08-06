@@ -88,7 +88,7 @@ def AcidiphiliumRubrum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidiphiliumRubrum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

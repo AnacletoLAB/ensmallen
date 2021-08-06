@@ -91,7 +91,7 @@ def OryzaPunctata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OryzaPunctata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CaloranaerobacterAzorensisH53214(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaloranaerobacterAzorensisH53214",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

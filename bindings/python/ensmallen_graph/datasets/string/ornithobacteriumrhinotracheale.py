@@ -91,7 +91,7 @@ def OrnithobacteriumRhinotracheale(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OrnithobacteriumRhinotracheale",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

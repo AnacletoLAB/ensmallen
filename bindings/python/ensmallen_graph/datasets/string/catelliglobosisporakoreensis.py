@@ -91,7 +91,7 @@ def CatelliglobosisporaKoreensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CatelliglobosisporaKoreensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

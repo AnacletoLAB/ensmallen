@@ -88,7 +88,7 @@ def ParaphaeosphaeriaSporulosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParaphaeosphaeriaSporulosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

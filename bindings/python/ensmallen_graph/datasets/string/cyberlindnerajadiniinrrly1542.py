@@ -88,7 +88,7 @@ def CyberlindneraJadiniiNrrlY1542(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CyberlindneraJadiniiNrrlY1542",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

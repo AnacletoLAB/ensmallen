@@ -91,7 +91,7 @@ def MycobacteriumCosmeticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumCosmeticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

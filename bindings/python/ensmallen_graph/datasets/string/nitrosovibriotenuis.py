@@ -88,7 +88,7 @@ def NitrosovibrioTenuis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrosovibrioTenuis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

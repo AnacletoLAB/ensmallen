@@ -88,7 +88,7 @@ def SalipigerThiooxidans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalipigerThiooxidans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

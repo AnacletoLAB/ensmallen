@@ -91,7 +91,7 @@ def AhrensiaSpR2a130(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AhrensiaSpR2a130",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

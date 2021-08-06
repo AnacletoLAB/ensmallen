@@ -88,7 +88,7 @@ def ThermococcusCelericrescens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermococcusCelericrescens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

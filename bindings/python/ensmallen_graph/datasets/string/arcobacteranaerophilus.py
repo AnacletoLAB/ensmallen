@@ -88,7 +88,7 @@ def ArcobacterAnaerophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArcobacterAnaerophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

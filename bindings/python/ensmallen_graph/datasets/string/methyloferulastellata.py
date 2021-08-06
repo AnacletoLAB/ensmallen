@@ -91,7 +91,7 @@ def MethyloferulaStellata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethyloferulaStellata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

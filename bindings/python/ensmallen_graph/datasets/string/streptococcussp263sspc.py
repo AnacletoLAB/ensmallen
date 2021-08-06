@@ -88,7 +88,7 @@ def StreptococcusSp263Sspc(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusSp263Sspc",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PlanctomycesBrasiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlanctomycesBrasiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

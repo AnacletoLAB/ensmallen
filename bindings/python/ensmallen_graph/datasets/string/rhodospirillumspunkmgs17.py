@@ -88,7 +88,7 @@ def RhodospirillumSpUnkMgs17(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodospirillumSpUnkMgs17",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

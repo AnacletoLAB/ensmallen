@@ -88,7 +88,7 @@ def LuteimonasSpFcs9(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LuteimonasSpFcs9",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

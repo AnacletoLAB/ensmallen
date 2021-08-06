@@ -78,7 +78,7 @@ def Cyl6(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Cyl6",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

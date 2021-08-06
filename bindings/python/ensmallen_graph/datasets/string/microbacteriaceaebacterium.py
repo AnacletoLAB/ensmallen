@@ -88,7 +88,7 @@ def MicrobacteriaceaeBacterium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriaceaeBacterium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

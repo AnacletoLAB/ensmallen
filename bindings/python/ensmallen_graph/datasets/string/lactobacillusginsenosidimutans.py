@@ -88,7 +88,7 @@ def LactobacillusGinsenosidimutans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusGinsenosidimutans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

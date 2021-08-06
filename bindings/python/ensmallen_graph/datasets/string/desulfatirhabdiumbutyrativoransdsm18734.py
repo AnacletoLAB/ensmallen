@@ -88,7 +88,7 @@ def DesulfatirhabdiumButyrativoransDsm18734(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfatirhabdiumButyrativoransDsm18734",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

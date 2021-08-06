@@ -88,7 +88,7 @@ def SerratiaSpLeaf50(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SerratiaSpLeaf50",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

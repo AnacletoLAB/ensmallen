@@ -88,7 +88,7 @@ def CloacibacteriumNormanense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CloacibacteriumNormanense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

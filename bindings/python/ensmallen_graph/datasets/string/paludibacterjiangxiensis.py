@@ -88,7 +88,7 @@ def PaludibacterJiangxiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaludibacterJiangxiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

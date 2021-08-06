@@ -88,7 +88,7 @@ def HalomonasSpS2151(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalomonasSpS2151",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

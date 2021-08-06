@@ -88,7 +88,7 @@ def PseudoxanthobacterSoliDsm19599(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoxanthobacterSoliDsm19599",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

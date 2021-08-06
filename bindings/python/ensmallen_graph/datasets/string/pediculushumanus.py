@@ -91,7 +91,7 @@ def PediculusHumanus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PediculusHumanus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

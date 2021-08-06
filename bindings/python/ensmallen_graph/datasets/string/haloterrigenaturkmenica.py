@@ -91,7 +91,7 @@ def HaloterrigenaTurkmenica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaloterrigenaTurkmenica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

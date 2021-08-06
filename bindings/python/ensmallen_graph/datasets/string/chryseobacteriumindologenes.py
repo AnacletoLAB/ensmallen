@@ -91,7 +91,7 @@ def ChryseobacteriumIndologenes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChryseobacteriumIndologenes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

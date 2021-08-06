@@ -91,7 +91,7 @@ def RoseivivaxHalodurans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseivivaxHalodurans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

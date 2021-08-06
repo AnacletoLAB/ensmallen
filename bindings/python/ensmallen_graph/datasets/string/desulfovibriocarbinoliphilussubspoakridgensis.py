@@ -88,7 +88,7 @@ def DesulfovibrioCarbinoliphilusSubspOakridgensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioCarbinoliphilusSubspOakridgensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

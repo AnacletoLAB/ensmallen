@@ -88,7 +88,7 @@ def ProteobacteriaBacteriumStBin15(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProteobacteriaBacteriumStBin15",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

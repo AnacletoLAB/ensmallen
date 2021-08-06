@@ -91,7 +91,7 @@ def ClavicepsPurpurea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClavicepsPurpurea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

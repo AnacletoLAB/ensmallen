@@ -88,7 +88,7 @@ def BremiaLactucae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BremiaLactucae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

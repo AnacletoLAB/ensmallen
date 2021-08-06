@@ -88,7 +88,7 @@ def ChristensenellaSpAf7305cm02(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChristensenellaSpAf7305cm02",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

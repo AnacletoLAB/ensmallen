@@ -91,7 +91,7 @@ def ParvimonasMicra(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParvimonasMicra",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

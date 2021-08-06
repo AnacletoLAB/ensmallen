@@ -91,7 +91,7 @@ def OchotonaPrinceps(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OchotonaPrinceps",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

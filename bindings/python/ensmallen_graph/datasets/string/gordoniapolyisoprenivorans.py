@@ -91,7 +91,7 @@ def GordoniaPolyisoprenivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GordoniaPolyisoprenivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

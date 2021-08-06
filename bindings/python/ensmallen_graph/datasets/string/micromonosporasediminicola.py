@@ -88,7 +88,7 @@ def MicromonosporaSediminicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicromonosporaSediminicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

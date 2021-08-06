@@ -91,7 +91,7 @@ def ArthrodermaOtae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArthrodermaOtae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

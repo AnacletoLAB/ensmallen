@@ -91,7 +91,7 @@ def PrevotellaPallens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaPallens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

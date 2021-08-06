@@ -88,7 +88,7 @@ def PeptococcaceaeBacteriumBica18(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeptococcaceaeBacteriumBica18",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

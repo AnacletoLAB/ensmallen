@@ -91,7 +91,7 @@ def ThermosphaeraAggregans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermosphaeraAggregans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

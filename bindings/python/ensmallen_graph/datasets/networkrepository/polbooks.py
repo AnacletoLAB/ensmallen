@@ -78,7 +78,7 @@ def Polbooks(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Polbooks",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PrevotellaSpCag520(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaSpCag520",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

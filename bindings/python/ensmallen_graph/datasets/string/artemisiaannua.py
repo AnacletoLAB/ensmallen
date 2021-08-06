@@ -88,7 +88,7 @@ def ArtemisiaAnnua(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArtemisiaAnnua",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

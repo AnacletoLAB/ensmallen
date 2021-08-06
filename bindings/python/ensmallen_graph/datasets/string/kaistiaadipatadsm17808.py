@@ -88,7 +88,7 @@ def KaistiaAdipataDsm17808(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KaistiaAdipataDsm17808",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

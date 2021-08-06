@@ -88,7 +88,7 @@ def AliicoccusPersicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AliicoccusPersicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

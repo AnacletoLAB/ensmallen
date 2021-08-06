@@ -88,7 +88,7 @@ def MethanomethylovoransHollandicaDsm15978(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanomethylovoransHollandicaDsm15978",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

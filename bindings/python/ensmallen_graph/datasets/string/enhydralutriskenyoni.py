@@ -88,7 +88,7 @@ def EnhydraLutrisKenyoni(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnhydraLutrisKenyoni",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def HerbaspirillumRubrisubalbicansM1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HerbaspirillumRubrisubalbicansM1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

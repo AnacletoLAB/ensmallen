@@ -91,7 +91,7 @@ def CaenispirillumSalinarum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaenispirillumSalinarum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def DinoroseobacterShibae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DinoroseobacterShibae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

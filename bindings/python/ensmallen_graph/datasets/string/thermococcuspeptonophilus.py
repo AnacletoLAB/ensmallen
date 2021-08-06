@@ -88,7 +88,7 @@ def ThermococcusPeptonophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermococcusPeptonophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

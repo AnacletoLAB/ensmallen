@@ -88,7 +88,7 @@ def MoniliophthoraPerniciosaFa553(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MoniliophthoraPerniciosaFa553",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

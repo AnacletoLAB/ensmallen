@@ -78,7 +78,7 @@ def Csphd(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Csphd",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

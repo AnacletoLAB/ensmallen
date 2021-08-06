@@ -88,7 +88,7 @@ def CandidatusPortnoybacteriaBacteriumRbg19ftCombo367(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusPortnoybacteriaBacteriumRbg19ftCombo367",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

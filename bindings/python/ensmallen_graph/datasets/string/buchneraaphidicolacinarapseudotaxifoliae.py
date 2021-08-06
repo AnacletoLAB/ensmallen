@@ -88,7 +88,7 @@ def BuchneraAphidicolaCinaraPseudotaxifoliae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BuchneraAphidicolaCinaraPseudotaxifoliae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

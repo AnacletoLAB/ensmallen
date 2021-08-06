@@ -88,7 +88,7 @@ def AestuariivitaBoseongensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AestuariivitaBoseongensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

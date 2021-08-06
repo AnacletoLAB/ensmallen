@@ -78,7 +78,7 @@ def EmailEnronOnly(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EmailEnronOnly",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

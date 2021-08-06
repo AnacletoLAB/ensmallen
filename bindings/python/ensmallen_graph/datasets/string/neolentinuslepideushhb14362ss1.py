@@ -88,7 +88,7 @@ def NeolentinusLepideusHhb14362Ss1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeolentinusLepideusHhb14362Ss1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

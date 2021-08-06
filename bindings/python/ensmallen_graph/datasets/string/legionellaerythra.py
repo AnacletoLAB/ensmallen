@@ -88,7 +88,7 @@ def LegionellaErythra(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LegionellaErythra",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

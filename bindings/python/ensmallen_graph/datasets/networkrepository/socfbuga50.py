@@ -120,7 +120,7 @@ def SocfbUga50(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbUga50",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def TepidibacterFormicigenesDsm15518(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TepidibacterFormicigenesDsm15518",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

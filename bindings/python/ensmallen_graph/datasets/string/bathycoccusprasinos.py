@@ -91,7 +91,7 @@ def BathycoccusPrasinos(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BathycoccusPrasinos",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

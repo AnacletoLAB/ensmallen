@@ -88,7 +88,7 @@ def TerrisporobacterOthiniensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TerrisporobacterOthiniensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

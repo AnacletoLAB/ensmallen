@@ -88,7 +88,7 @@ def HelicobacteraceaeBacteriumCg1023614(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelicobacteraceaeBacteriumCg1023614",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

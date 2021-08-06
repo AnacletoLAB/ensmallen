@@ -91,7 +91,7 @@ def RhizobiumEtliCfn42(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizobiumEtliCfn42",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

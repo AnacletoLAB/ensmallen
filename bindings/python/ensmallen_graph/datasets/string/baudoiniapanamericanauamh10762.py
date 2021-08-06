@@ -88,7 +88,7 @@ def BaudoiniaPanamericanaUamh10762(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BaudoiniaPanamericanaUamh10762",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

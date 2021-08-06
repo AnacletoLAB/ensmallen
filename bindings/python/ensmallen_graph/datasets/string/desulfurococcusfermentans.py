@@ -91,7 +91,7 @@ def DesulfurococcusFermentans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfurococcusFermentans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

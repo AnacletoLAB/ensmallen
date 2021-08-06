@@ -91,7 +91,7 @@ def HumibacterAlbus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HumibacterAlbus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

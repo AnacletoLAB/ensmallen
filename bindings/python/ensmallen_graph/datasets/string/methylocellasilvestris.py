@@ -91,7 +91,7 @@ def MethylocellaSilvestris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylocellaSilvestris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

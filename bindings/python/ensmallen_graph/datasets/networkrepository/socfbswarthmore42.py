@@ -120,7 +120,7 @@ def SocfbSwarthmore42(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbSwarthmore42",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PaenibacillusRhizosphaerae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillusRhizosphaerae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

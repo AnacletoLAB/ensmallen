@@ -91,7 +91,7 @@ def HyphomicrobiumDenitrificans1nes1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HyphomicrobiumDenitrificans1nes1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

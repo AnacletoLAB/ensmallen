@@ -88,7 +88,7 @@ def AlkaliphilusPeptidifermentansDsm18978(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlkaliphilusPeptidifermentansDsm18978",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

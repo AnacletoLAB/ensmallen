@@ -88,7 +88,7 @@ def MethyloprofundusSedimenti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethyloprofundusSedimenti",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

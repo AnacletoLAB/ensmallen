@@ -91,7 +91,7 @@ def CryptococcusGattii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CryptococcusGattii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

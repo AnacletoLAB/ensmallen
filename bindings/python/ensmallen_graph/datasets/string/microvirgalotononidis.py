@@ -91,7 +91,7 @@ def MicrovirgaLotononidis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrovirgaLotononidis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def AvibacteriumParagallinarum221(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AvibacteriumParagallinarum221",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

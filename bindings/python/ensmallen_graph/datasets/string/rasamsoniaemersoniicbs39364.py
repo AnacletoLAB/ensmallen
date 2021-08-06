@@ -88,7 +88,7 @@ def RasamsoniaEmersoniiCbs39364(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RasamsoniaEmersoniiCbs39364",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

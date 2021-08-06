@@ -88,7 +88,7 @@ def ThaueraHumireducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThaueraHumireducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def SphingomonasSpS17(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingomonasSpS17",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

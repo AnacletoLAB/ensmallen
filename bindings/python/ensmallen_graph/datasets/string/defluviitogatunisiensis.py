@@ -88,7 +88,7 @@ def DefluviitogaTunisiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DefluviitogaTunisiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

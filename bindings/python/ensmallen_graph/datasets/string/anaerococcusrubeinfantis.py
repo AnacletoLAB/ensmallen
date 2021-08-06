@@ -88,7 +88,7 @@ def AnaerococcusRubeinfantis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerococcusRubeinfantis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

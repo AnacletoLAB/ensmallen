@@ -91,7 +91,7 @@ def SorghumBicolor(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SorghumBicolor",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def GordonibacterMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GordonibacterMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

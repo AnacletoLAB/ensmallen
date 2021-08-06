@@ -91,7 +91,7 @@ def OdyssellaThessalonicensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OdyssellaThessalonicensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

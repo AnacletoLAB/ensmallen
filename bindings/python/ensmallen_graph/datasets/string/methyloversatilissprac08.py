@@ -88,7 +88,7 @@ def MethyloversatilisSpRac08(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethyloversatilisSpRac08",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def HarpegnathosSaltator(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HarpegnathosSaltator",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

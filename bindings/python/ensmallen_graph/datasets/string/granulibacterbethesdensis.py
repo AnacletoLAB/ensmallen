@@ -91,7 +91,7 @@ def GranulibacterBethesdensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GranulibacterBethesdensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

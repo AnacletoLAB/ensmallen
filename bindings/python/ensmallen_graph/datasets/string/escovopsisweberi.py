@@ -88,7 +88,7 @@ def EscovopsisWeberi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EscovopsisWeberi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def RachicladosporiumAntarcticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RachicladosporiumAntarcticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

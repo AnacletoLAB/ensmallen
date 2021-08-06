@@ -88,7 +88,7 @@ def TrichodermaHarzianumCbs22695(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichodermaHarzianumCbs22695",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

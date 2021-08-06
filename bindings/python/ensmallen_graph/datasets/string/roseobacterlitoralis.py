@@ -91,7 +91,7 @@ def RoseobacterLitoralis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseobacterLitoralis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

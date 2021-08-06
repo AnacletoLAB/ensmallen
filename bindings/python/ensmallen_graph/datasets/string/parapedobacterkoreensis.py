@@ -88,7 +88,7 @@ def ParapedobacterKoreensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParapedobacterKoreensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

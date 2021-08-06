@@ -91,7 +91,7 @@ def WeeksellaSpFf8(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WeeksellaSpFf8",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

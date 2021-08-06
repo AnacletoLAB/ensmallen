@@ -91,7 +91,7 @@ def RuegeriaPomeroyi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuegeriaPomeroyi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

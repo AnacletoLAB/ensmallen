@@ -88,7 +88,7 @@ def AcidaminococcusTimonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidaminococcusTimonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

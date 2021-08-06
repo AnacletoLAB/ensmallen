@@ -88,7 +88,7 @@ def GallionellalesBacteriumRifcsplowo202Full5747(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GallionellalesBacteriumRifcsplowo202Full5747",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

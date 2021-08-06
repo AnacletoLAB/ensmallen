@@ -88,7 +88,7 @@ def CandidatusTenderiaElectrophaga(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusTenderiaElectrophaga",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def NocardiaRhamnosiphila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardiaRhamnosiphila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MucorCircinelloidesFLusitanicusCbs27749(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MucorCircinelloidesFLusitanicusCbs27749",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CaballeroniaHumi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaballeroniaHumi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

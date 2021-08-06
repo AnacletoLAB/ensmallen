@@ -88,7 +88,7 @@ def GallibacteriumSalpingitidis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GallibacteriumSalpingitidis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

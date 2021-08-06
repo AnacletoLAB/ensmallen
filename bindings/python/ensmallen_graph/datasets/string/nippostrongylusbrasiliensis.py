@@ -88,7 +88,7 @@ def NippostrongylusBrasiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NippostrongylusBrasiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

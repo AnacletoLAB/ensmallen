@@ -88,7 +88,7 @@ def PsychroflexusHalocasei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PsychroflexusHalocasei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

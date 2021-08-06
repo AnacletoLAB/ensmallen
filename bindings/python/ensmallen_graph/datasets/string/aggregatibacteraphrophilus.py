@@ -91,7 +91,7 @@ def AggregatibacterAphrophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AggregatibacterAphrophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

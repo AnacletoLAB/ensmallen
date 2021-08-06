@@ -91,7 +91,7 @@ def CorynebacteriumPseudogenitalium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumPseudogenitalium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

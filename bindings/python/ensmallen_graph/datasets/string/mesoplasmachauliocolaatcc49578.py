@@ -88,7 +88,7 @@ def MesoplasmaChauliocolaAtcc49578(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MesoplasmaChauliocolaAtcc49578",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

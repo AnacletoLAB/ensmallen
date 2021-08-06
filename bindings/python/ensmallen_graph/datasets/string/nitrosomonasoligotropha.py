@@ -88,7 +88,7 @@ def NitrosomonasOligotropha(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrosomonasOligotropha",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

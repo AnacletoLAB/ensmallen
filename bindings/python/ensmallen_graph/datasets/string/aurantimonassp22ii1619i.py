@@ -88,7 +88,7 @@ def AurantimonasSp22ii1619i(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AurantimonasSp22ii1619i",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

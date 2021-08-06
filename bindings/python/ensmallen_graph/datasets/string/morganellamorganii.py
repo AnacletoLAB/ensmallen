@@ -91,7 +91,7 @@ def MorganellaMorganii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MorganellaMorganii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

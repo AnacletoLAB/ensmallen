@@ -91,7 +91,7 @@ def SegniliparusRugosus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SegniliparusRugosus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

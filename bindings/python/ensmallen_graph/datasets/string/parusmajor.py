@@ -88,7 +88,7 @@ def ParusMajor(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParusMajor",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

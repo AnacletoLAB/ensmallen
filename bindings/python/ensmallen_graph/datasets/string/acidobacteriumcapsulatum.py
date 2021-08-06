@@ -91,7 +91,7 @@ def AcidobacteriumCapsulatum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidobacteriumCapsulatum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

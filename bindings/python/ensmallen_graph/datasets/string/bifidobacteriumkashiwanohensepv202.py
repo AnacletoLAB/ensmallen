@@ -88,7 +88,7 @@ def BifidobacteriumKashiwanohensePv202(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BifidobacteriumKashiwanohensePv202",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

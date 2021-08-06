@@ -91,7 +91,7 @@ def NatronorubrumTibetense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NatronorubrumTibetense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

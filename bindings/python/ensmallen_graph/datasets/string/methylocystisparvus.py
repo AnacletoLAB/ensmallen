@@ -91,7 +91,7 @@ def MethylocystisParvus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylocystisParvus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def StappiaIndica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StappiaIndica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

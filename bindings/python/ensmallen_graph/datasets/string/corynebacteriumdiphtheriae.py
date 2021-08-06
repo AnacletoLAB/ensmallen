@@ -91,7 +91,7 @@ def CorynebacteriumDiphtheriae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumDiphtheriae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

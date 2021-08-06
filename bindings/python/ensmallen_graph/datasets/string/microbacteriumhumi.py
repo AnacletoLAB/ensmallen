@@ -88,7 +88,7 @@ def MicrobacteriumHumi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriumHumi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

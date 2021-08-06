@@ -88,7 +88,7 @@ def ImmundisolibacterCernigliae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ImmundisolibacterCernigliae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

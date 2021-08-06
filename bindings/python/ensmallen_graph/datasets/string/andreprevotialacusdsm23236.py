@@ -88,7 +88,7 @@ def AndreprevotiaLacusDsm23236(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AndreprevotiaLacusDsm23236",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def SulfurospirillumSpMes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfurospirillumSpMes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

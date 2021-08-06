@@ -88,7 +88,7 @@ def LactobacillusHammesiiDsm16381(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusHammesiiDsm16381",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PasteurellaDagmatisAtcc43325(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PasteurellaDagmatisAtcc43325",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

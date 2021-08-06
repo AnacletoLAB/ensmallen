@@ -91,7 +91,7 @@ def ClostridiumSpiroforme(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumSpiroforme",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

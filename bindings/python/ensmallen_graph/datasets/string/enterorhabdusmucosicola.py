@@ -91,7 +91,7 @@ def EnterorhabdusMucosicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterorhabdusMucosicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CharadriusVociferus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CharadriusVociferus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def BlochmanniaFloridanus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlochmanniaFloridanus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

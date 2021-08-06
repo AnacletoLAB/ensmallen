@@ -91,7 +91,7 @@ def IntrasporangiaceaeBacteriumUrhb0013(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IntrasporangiaceaeBacteriumUrhb0013",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

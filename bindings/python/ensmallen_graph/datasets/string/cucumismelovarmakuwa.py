@@ -88,7 +88,7 @@ def CucumisMeloVarMakuwa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CucumisMeloVarMakuwa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

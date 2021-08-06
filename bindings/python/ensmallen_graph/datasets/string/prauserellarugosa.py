@@ -91,7 +91,7 @@ def PrauserellaRugosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrauserellaRugosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SpiroplasmaEriocheiris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpiroplasmaEriocheiris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

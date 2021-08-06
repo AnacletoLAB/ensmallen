@@ -88,7 +88,7 @@ def TrichomalopsisSarcophagae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichomalopsisSarcophagae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

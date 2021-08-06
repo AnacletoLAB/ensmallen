@@ -91,7 +91,7 @@ def VibrioCyclitrophicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioCyclitrophicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

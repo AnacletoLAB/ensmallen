@@ -88,7 +88,7 @@ def DelphinapterusLeucas(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DelphinapterusLeucas",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

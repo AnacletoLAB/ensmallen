@@ -91,7 +91,7 @@ def VerrucomicrobiaeBacteriumDg1235(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VerrucomicrobiaeBacteriumDg1235",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def Diag(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Diag",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

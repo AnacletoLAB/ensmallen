@@ -88,7 +88,7 @@ def PseudomonasOtitidis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasOtitidis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

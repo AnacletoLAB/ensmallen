@@ -88,7 +88,7 @@ def CoprinopsisCinereaOkayama7130(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CoprinopsisCinereaOkayama7130",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

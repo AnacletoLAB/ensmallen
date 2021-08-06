@@ -88,7 +88,7 @@ def PenicilliumSubrubescens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PenicilliumSubrubescens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

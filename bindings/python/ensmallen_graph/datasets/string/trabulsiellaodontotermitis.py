@@ -88,7 +88,7 @@ def TrabulsiellaOdontotermitis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrabulsiellaOdontotermitis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

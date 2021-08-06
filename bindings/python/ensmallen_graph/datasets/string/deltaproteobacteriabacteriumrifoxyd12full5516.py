@@ -88,7 +88,7 @@ def DeltaproteobacteriaBacteriumRifoxyd12Full5516(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DeltaproteobacteriaBacteriumRifoxyd12Full5516",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

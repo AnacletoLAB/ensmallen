@@ -88,7 +88,7 @@ def ErythrobacterSpRedseaS34B3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErythrobacterSpRedseaS34B3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

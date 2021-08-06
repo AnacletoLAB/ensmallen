@@ -91,7 +91,7 @@ def SilicibacterLacuscaerulensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SilicibacterLacuscaerulensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

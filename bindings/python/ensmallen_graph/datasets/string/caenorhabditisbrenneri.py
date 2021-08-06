@@ -91,7 +91,7 @@ def CaenorhabditisBrenneri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaenorhabditisBrenneri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

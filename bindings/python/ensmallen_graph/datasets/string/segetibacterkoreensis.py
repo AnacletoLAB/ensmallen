@@ -91,7 +91,7 @@ def SegetibacterKoreensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SegetibacterKoreensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

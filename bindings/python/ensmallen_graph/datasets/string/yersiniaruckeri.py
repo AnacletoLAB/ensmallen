@@ -91,7 +91,7 @@ def YersiniaRuckeri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="YersiniaRuckeri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

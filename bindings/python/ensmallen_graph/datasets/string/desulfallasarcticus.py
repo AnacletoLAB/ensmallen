@@ -88,7 +88,7 @@ def DesulfallasArcticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfallasArcticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

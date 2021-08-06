@@ -91,7 +91,7 @@ def StreptococcusAgalactiaeLmg14747(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusAgalactiaeLmg14747",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

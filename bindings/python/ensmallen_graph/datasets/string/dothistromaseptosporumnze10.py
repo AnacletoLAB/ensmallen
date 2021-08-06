@@ -88,7 +88,7 @@ def DothistromaSeptosporumNze10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DothistromaSeptosporumNze10",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

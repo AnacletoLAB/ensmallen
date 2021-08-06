@@ -91,7 +91,7 @@ def PeptoniphilusRhinitidis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeptoniphilusRhinitidis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

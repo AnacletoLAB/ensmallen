@@ -88,7 +88,7 @@ def MethanosarcinaBarkeriMs(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanosarcinaBarkeriMs",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

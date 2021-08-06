@@ -88,7 +88,7 @@ def PlantibacterFlavus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlantibacterFlavus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

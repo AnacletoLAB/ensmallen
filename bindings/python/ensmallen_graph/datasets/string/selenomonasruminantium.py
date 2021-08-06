@@ -88,7 +88,7 @@ def SelenomonasRuminantium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SelenomonasRuminantium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

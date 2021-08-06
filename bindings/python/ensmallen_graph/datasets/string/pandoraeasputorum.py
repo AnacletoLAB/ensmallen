@@ -88,7 +88,7 @@ def PandoraeaSputorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PandoraeaSputorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MarineGroupIiiEuryarchaeoteCgEpi1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarineGroupIiiEuryarchaeoteCgEpi1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

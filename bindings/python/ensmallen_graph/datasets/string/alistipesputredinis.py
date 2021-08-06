@@ -91,7 +91,7 @@ def AlistipesPutredinis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlistipesPutredinis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

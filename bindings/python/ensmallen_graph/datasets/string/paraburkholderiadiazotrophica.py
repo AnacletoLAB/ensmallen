@@ -88,7 +88,7 @@ def ParaburkholderiaDiazotrophica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParaburkholderiaDiazotrophica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

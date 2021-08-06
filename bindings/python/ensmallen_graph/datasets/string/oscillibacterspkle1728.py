@@ -91,7 +91,7 @@ def OscillibacterSpKle1728(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OscillibacterSpKle1728",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def SchizosaccharomycesOctosporus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SchizosaccharomycesOctosporus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

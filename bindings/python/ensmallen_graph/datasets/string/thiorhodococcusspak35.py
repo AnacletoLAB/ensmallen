@@ -91,7 +91,7 @@ def ThiorhodococcusSpAk35(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThiorhodococcusSpAk35",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

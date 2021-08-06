@@ -91,7 +91,7 @@ def BradyrhizobiumDiazoefficiens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BradyrhizobiumDiazoefficiens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

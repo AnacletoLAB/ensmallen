@@ -88,7 +88,7 @@ def KluyveraCryocrescens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KluyveraCryocrescens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

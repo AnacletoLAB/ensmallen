@@ -91,7 +91,7 @@ def PectobacteriumSpScc3193(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PectobacteriumSpScc3193",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

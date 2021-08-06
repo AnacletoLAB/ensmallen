@@ -88,7 +88,7 @@ def PleurotusOstreatusPc15(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PleurotusOstreatusPc15",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

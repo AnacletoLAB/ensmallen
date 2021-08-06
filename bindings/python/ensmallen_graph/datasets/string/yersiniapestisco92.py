@@ -91,7 +91,7 @@ def YersiniaPestisCo92(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="YersiniaPestisCo92",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

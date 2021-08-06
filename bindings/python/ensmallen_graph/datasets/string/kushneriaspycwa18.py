@@ -88,7 +88,7 @@ def KushneriaSpYcwa18(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KushneriaSpYcwa18",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

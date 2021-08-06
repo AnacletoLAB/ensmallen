@@ -88,7 +88,7 @@ def PapaverSomniferum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PapaverSomniferum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

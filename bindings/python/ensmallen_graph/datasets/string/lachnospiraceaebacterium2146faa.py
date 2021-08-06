@@ -91,7 +91,7 @@ def LachnospiraceaeBacterium2146faa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LachnospiraceaeBacterium2146faa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

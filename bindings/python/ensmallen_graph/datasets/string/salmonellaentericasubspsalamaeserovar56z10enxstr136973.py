@@ -88,7 +88,7 @@ def SalmonellaEntericaSubspSalamaeSerovar56Z10ENXStr136973(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalmonellaEntericaSubspSalamaeSerovar56Z10ENXStr136973",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ThiorhodovibrioSp970(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThiorhodovibrioSp970",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

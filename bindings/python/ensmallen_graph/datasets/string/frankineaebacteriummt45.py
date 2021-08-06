@@ -88,7 +88,7 @@ def FrankineaeBacteriumMt45(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FrankineaeBacteriumMt45",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

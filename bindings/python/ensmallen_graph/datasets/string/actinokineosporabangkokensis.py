@@ -88,7 +88,7 @@ def ActinokineosporaBangkokensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinokineosporaBangkokensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

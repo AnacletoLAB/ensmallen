@@ -88,7 +88,7 @@ def MycolicibacterNonchromogenicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycolicibacterNonchromogenicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

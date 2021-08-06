@@ -88,7 +88,7 @@ def LactobacillusCollinoides(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusCollinoides",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

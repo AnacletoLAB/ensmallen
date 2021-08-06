@@ -88,7 +88,7 @@ def SodalisLikeEndosymbiontOfProechinophthirusFluctus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SodalisLikeEndosymbiontOfProechinophthirusFluctus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

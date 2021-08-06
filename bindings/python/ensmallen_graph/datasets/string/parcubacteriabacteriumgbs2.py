@@ -88,7 +88,7 @@ def ParcubacteriaBacteriumGbs2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParcubacteriaBacteriumGbs2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

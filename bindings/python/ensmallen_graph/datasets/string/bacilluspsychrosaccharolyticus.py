@@ -91,7 +91,7 @@ def BacillusPsychrosaccharolyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusPsychrosaccharolyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def AcidobacteriaBacteriumKbs146(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidobacteriaBacteriumKbs146",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

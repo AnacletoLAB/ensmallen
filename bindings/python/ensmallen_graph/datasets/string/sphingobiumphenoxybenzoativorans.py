@@ -88,7 +88,7 @@ def SphingobiumPhenoxybenzoativorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingobiumPhenoxybenzoativorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

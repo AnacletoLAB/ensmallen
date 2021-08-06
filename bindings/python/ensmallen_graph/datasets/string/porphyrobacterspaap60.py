@@ -88,7 +88,7 @@ def PorphyrobacterSpAap60(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PorphyrobacterSpAap60",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

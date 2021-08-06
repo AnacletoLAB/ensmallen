@@ -78,7 +78,7 @@ def ZhishiBaiduRelatedpages(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZhishiBaiduRelatedpages",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

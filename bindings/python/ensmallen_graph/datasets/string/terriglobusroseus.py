@@ -91,7 +91,7 @@ def TerriglobusRoseus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TerriglobusRoseus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

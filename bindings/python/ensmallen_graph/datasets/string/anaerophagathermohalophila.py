@@ -91,7 +91,7 @@ def AnaerophagaThermohalophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerophagaThermohalophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

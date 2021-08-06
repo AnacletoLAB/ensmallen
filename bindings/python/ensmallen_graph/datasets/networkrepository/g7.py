@@ -78,7 +78,7 @@ def G7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="G7",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

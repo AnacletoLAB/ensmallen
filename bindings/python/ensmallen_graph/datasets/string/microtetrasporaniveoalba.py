@@ -88,7 +88,7 @@ def MicrotetrasporaNiveoalba(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrotetrasporaNiveoalba",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

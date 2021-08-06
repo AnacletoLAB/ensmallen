@@ -91,7 +91,7 @@ def CaenorhabditisBriggsae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaenorhabditisBriggsae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def GeobacillusGenomosp3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeobacillusGenomosp3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

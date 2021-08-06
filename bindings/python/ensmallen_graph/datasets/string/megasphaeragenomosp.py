@@ -91,7 +91,7 @@ def MegasphaeraGenomosp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MegasphaeraGenomosp",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

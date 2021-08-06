@@ -91,7 +91,7 @@ def AnaerococcusSenegalensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerococcusSenegalensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

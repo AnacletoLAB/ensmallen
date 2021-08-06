@@ -91,7 +91,7 @@ def AnaerolineaThermophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerolineaThermophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

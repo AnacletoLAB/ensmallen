@@ -88,7 +88,7 @@ def MicrovirgaSpBsc39(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrovirgaSpBsc39",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

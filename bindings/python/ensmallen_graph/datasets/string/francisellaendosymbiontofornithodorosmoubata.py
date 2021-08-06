@@ -88,7 +88,7 @@ def FrancisellaEndosymbiontOfOrnithodorosMoubata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FrancisellaEndosymbiontOfOrnithodorosMoubata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

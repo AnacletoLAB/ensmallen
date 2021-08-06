@@ -91,7 +91,7 @@ def ArsenicicoccusBolidensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArsenicicoccusBolidensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

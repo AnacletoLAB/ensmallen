@@ -88,7 +88,7 @@ def EubacteriumOxidoreducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EubacteriumOxidoreducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

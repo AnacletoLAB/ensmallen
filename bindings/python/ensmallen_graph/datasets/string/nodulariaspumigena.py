@@ -91,7 +91,7 @@ def NodulariaSpumigena(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NodulariaSpumigena",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

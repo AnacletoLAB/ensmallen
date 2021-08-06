@@ -88,7 +88,7 @@ def HydrogenophagaFlavaNbrc102514(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HydrogenophagaFlavaNbrc102514",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

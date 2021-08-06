@@ -91,7 +91,7 @@ def LactobacillusSakei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusSakei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

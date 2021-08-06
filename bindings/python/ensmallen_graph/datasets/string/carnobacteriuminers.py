@@ -88,7 +88,7 @@ def CarnobacteriumIners(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CarnobacteriumIners",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

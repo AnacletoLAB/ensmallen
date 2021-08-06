@@ -88,7 +88,7 @@ def ActinokineosporaTerrae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinokineosporaTerrae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

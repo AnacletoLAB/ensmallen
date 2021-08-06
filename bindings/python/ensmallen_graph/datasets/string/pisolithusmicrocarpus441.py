@@ -88,7 +88,7 @@ def PisolithusMicrocarpus441(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PisolithusMicrocarpus441",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

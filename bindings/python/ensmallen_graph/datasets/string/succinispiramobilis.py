@@ -91,7 +91,7 @@ def SuccinispiraMobilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SuccinispiraMobilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

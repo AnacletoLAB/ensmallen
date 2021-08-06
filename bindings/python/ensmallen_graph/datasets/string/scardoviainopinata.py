@@ -91,7 +91,7 @@ def ScardoviaInopinata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ScardoviaInopinata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

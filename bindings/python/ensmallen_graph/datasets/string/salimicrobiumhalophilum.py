@@ -88,7 +88,7 @@ def SalimicrobiumHalophilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalimicrobiumHalophilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

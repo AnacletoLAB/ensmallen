@@ -88,7 +88,7 @@ def CurtobacteriumOceanosedimentum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CurtobacteriumOceanosedimentum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

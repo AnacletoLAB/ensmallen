@@ -88,7 +88,7 @@ def InsolitispirillumPeregrinum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="InsolitispirillumPeregrinum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

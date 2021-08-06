@@ -88,7 +88,7 @@ def BacillusAzotoformansLmg9581(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusAzotoformansLmg9581",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

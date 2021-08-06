@@ -88,7 +88,7 @@ def GilliamellaSpNG2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GilliamellaSpNG2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def EnterobacterKobei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterobacterKobei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

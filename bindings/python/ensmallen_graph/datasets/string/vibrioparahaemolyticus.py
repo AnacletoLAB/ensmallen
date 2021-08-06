@@ -91,7 +91,7 @@ def VibrioParahaemolyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioParahaemolyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

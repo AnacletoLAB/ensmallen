@@ -88,7 +88,7 @@ def ButyrivibrioSpMb2005(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ButyrivibrioSpMb2005",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

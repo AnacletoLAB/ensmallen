@@ -88,7 +88,7 @@ def CandidatusKapabacteriaThiocyanatum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusKapabacteriaThiocyanatum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

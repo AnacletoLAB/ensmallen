@@ -91,7 +91,7 @@ def PhycicoccusJejuensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhycicoccusJejuensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

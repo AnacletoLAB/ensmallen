@@ -91,7 +91,7 @@ def GemmatimonasSpAp64(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GemmatimonasSpAp64",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

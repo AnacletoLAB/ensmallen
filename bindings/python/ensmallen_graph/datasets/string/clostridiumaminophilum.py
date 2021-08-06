@@ -91,7 +91,7 @@ def ClostridiumAminophilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumAminophilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

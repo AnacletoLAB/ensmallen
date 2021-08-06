@@ -88,7 +88,7 @@ def CatagonusWagneri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CatagonusWagneri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

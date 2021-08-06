@@ -88,7 +88,7 @@ def MoheibacterSediminis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MoheibacterSediminis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

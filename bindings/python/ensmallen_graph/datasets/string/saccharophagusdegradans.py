@@ -91,7 +91,7 @@ def SaccharophagusDegradans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SaccharophagusDegradans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def LeptospiraTerpstraeSerovarHualinStrLt1133Atcc700639(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptospiraTerpstraeSerovarHualinStrLt1133Atcc700639",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

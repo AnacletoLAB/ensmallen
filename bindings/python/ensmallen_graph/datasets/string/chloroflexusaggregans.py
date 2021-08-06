@@ -91,7 +91,7 @@ def ChloroflexusAggregans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChloroflexusAggregans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

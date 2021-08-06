@@ -88,7 +88,7 @@ def NecatorAmericanus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NecatorAmericanus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

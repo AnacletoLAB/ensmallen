@@ -91,7 +91,7 @@ def FacklamiaIgnava(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FacklamiaIgnava",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def RhodospiraTrueperi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodospiraTrueperi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

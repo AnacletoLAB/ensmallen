@@ -88,7 +88,7 @@ def PeanutWitchesbroom(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeanutWitchesbroom",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AurantimonasCoralicida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AurantimonasCoralicida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

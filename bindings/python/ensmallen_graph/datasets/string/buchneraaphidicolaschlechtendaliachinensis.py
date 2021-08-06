@@ -88,7 +88,7 @@ def BuchneraAphidicolaSchlechtendaliaChinensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BuchneraAphidicolaSchlechtendaliaChinensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

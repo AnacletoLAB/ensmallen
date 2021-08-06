@@ -88,7 +88,7 @@ def CorynebacteriumMycetoides(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumMycetoides",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

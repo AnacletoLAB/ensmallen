@@ -91,7 +91,7 @@ def HelicobacterMustelae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelicobacterMustelae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

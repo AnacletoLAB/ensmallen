@@ -91,7 +91,7 @@ def CandidaMaltosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidaMaltosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

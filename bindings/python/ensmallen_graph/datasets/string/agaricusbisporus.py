@@ -91,7 +91,7 @@ def AgaricusBisporus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AgaricusBisporus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

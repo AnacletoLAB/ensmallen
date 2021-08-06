@@ -88,7 +88,7 @@ def DesulfatitaleaTepidiphila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfatitaleaTepidiphila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

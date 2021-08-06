@@ -91,7 +91,7 @@ def ThalassobacterStenotrophicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThalassobacterStenotrophicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

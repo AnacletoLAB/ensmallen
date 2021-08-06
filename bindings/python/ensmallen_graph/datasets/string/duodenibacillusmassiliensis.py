@@ -88,7 +88,7 @@ def DuodenibacillusMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DuodenibacillusMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

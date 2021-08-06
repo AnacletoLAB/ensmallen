@@ -88,7 +88,7 @@ def ArhodomonasAquaeoleiDsm8974(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArhodomonasAquaeoleiDsm8974",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

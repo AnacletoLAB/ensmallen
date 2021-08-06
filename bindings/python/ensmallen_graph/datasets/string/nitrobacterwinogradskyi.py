@@ -91,7 +91,7 @@ def NitrobacterWinogradskyi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrobacterWinogradskyi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

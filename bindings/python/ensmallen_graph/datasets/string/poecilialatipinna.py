@@ -88,7 +88,7 @@ def PoeciliaLatipinna(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PoeciliaLatipinna",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

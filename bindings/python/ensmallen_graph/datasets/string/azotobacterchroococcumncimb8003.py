@@ -88,7 +88,7 @@ def AzotobacterChroococcumNcimb8003(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AzotobacterChroococcumNcimb8003",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

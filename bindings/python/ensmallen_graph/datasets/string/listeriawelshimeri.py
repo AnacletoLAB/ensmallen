@@ -91,7 +91,7 @@ def ListeriaWelshimeri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ListeriaWelshimeri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def VibrioNereis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioNereis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

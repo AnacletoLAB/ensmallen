@@ -88,7 +88,7 @@ def MicromonosporaHalophytica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicromonosporaHalophytica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

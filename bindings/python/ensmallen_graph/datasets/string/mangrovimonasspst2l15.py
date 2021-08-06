@@ -88,7 +88,7 @@ def MangrovimonasSpSt2l15(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MangrovimonasSpSt2l15",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

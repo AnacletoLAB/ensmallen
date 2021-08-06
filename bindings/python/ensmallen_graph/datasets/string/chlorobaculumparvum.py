@@ -91,7 +91,7 @@ def ChlorobaculumParvum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlorobaculumParvum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

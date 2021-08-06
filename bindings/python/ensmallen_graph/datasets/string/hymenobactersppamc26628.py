@@ -88,7 +88,7 @@ def HymenobacterSpPamc26628(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HymenobacterSpPamc26628",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

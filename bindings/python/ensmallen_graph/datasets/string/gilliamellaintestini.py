@@ -88,7 +88,7 @@ def GilliamellaIntestini(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GilliamellaIntestini",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

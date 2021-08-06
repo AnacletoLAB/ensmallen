@@ -88,7 +88,7 @@ def PragiaFontium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PragiaFontium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def LeptolyngbyaSpJsc1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptolyngbyaSpJsc1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

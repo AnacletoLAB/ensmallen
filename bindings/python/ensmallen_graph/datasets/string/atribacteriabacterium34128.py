@@ -88,7 +88,7 @@ def AtribacteriaBacterium34128(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AtribacteriaBacterium34128",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

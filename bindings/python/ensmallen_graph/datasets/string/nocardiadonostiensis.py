@@ -88,7 +88,7 @@ def NocardiaDonostiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardiaDonostiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ArcobacterSpLa11(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArcobacterSpLa11",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

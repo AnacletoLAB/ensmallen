@@ -88,7 +88,7 @@ def FriedmanniellaFlava(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FriedmanniellaFlava",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

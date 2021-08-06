@@ -88,7 +88,7 @@ def CampylobacterHelveticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterHelveticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

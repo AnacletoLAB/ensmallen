@@ -91,7 +91,7 @@ def MesoplasmaFlorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MesoplasmaFlorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

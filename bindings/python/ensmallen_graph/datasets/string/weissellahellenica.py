@@ -91,7 +91,7 @@ def WeissellaHellenica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WeissellaHellenica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

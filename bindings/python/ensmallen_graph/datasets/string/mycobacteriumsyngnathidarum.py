@@ -88,7 +88,7 @@ def MycobacteriumSyngnathidarum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumSyngnathidarum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

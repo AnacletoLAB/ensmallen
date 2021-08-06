@@ -88,7 +88,7 @@ def MethanolobusTindariusDsm2278(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanolobusTindariusDsm2278",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

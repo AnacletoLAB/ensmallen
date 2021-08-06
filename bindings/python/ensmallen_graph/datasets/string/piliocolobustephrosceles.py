@@ -88,7 +88,7 @@ def PiliocolobusTephrosceles(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PiliocolobusTephrosceles",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

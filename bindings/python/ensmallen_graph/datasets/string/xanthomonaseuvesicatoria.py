@@ -88,7 +88,7 @@ def XanthomonasEuvesicatoria(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XanthomonasEuvesicatoria",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def HalonotiusSpJ07hn4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalonotiusSpJ07hn4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

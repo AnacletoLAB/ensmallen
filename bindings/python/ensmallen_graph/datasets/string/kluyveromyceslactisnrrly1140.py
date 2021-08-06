@@ -88,7 +88,7 @@ def KluyveromycesLactisNrrlY1140(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KluyveromycesLactisNrrlY1140",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

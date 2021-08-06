@@ -91,7 +91,7 @@ def OlleyaMarilimosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OlleyaMarilimosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

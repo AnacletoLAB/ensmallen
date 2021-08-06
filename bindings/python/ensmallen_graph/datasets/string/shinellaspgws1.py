@@ -88,7 +88,7 @@ def ShinellaSpGws1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShinellaSpGws1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AmanitaMuscariaKoideBx008(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmanitaMuscariaKoideBx008",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

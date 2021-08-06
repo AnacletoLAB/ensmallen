@@ -88,7 +88,7 @@ def PeptoniphilusObesiPh1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeptoniphilusObesiPh1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

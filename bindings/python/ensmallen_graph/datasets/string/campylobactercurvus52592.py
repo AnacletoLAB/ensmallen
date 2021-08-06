@@ -88,7 +88,7 @@ def CampylobacterCurvus52592(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterCurvus52592",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

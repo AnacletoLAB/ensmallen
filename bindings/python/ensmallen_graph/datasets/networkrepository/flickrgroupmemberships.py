@@ -78,7 +78,7 @@ def FlickrGroupmemberships(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlickrGroupmemberships",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

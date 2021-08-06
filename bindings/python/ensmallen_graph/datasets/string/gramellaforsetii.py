@@ -91,7 +91,7 @@ def GramellaForsetii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GramellaForsetii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

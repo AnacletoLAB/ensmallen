@@ -104,7 +104,7 @@ def C5009(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="C5009",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

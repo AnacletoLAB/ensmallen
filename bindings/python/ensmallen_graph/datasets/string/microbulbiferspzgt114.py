@@ -88,7 +88,7 @@ def MicrobulbiferSpZgt114(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobulbiferSpZgt114",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

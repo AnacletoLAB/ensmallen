@@ -88,7 +88,7 @@ def SchaedlerellaArabinosiphila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SchaedlerellaArabinosiphila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

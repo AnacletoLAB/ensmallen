@@ -88,7 +88,7 @@ def BrassicaRapaSubspPekinensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrassicaRapaSubspPekinensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

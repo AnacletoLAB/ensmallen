@@ -88,7 +88,7 @@ def StreptomycesHimastatinicusAtcc53653(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesHimastatinicusAtcc53653",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

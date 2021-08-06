@@ -88,7 +88,7 @@ def FranconibacterHelveticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FranconibacterHelveticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

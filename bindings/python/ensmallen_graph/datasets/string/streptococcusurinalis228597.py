@@ -91,7 +91,7 @@ def StreptococcusUrinalis228597(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusUrinalis228597",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PseudomonasPutidaKt2440(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasPutidaKt2440",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

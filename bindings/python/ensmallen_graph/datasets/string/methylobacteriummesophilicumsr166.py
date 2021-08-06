@@ -88,7 +88,7 @@ def MethylobacteriumMesophilicumSr166(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylobacteriumMesophilicumSr166",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def EuryarchaeotaArchaeonRbg166727(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EuryarchaeotaArchaeonRbg166727",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

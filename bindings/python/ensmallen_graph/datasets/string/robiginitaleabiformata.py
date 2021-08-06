@@ -91,7 +91,7 @@ def RobiginitaleaBiformata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RobiginitaleaBiformata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

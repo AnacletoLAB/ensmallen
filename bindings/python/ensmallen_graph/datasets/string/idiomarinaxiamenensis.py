@@ -91,7 +91,7 @@ def IdiomarinaXiamenensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IdiomarinaXiamenensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

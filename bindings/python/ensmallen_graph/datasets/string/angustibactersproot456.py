@@ -88,7 +88,7 @@ def AngustibacterSpRoot456(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AngustibacterSpRoot456",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

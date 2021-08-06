@@ -88,7 +88,7 @@ def FerriphaselusAmnicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FerriphaselusAmnicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

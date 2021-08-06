@@ -88,7 +88,7 @@ def IdiomarinaDonghaiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IdiomarinaDonghaiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

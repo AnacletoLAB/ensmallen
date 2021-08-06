@@ -88,7 +88,7 @@ def KangiellaGeojedonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KangiellaGeojedonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def KordiaJejudonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KordiaJejudonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

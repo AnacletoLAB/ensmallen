@@ -78,7 +78,7 @@ def Barth(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Barth",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

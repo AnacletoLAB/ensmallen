@@ -91,7 +91,7 @@ def KitasatosporaArboriphila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KitasatosporaArboriphila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

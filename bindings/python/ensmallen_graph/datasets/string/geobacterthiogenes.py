@@ -88,7 +88,7 @@ def GeobacterThiogenes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeobacterThiogenes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

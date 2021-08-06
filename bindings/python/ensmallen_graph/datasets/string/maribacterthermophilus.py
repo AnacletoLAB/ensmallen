@@ -88,7 +88,7 @@ def MaribacterThermophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MaribacterThermophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

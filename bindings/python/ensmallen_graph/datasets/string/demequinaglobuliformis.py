@@ -88,7 +88,7 @@ def DemequinaGlobuliformis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DemequinaGlobuliformis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

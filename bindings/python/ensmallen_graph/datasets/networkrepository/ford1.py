@@ -78,7 +78,7 @@ def Ford1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Ford1",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

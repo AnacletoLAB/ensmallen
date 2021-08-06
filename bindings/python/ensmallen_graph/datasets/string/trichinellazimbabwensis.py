@@ -88,7 +88,7 @@ def TrichinellaZimbabwensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichinellaZimbabwensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

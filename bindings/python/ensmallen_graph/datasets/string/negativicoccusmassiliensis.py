@@ -88,7 +88,7 @@ def NegativicoccusMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NegativicoccusMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

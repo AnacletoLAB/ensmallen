@@ -88,7 +88,7 @@ def CandidatusUhrbacteriaBacteriumRifoxyc2Full4719(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusUhrbacteriaBacteriumRifoxyc2Full4719",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def DesulfosporosinusMeridiei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfosporosinusMeridiei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

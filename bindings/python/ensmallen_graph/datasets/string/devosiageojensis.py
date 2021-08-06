@@ -88,7 +88,7 @@ def DevosiaGeojensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DevosiaGeojensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

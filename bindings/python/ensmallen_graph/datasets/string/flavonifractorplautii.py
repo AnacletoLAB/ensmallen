@@ -88,7 +88,7 @@ def FlavonifractorPlautii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavonifractorPlautii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

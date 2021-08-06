@@ -88,7 +88,7 @@ def JeotgalibacaDankookensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JeotgalibacaDankookensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

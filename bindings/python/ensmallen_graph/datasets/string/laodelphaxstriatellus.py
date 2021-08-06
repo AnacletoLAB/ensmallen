@@ -88,7 +88,7 @@ def LaodelphaxStriatellus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LaodelphaxStriatellus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

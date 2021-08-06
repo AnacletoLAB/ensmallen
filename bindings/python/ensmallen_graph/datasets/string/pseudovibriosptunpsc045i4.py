@@ -88,7 +88,7 @@ def PseudovibrioSpTunPsc045I4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudovibrioSpTunPsc045I4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def EmmonsiaCrescens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EmmonsiaCrescens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def VirgibacillusDokdonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VirgibacillusDokdonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

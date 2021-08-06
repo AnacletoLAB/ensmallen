@@ -91,7 +91,7 @@ def ChlorobiumPhaeovibrioides(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlorobiumPhaeovibrioides",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

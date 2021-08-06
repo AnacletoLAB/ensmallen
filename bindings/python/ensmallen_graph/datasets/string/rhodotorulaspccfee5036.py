@@ -88,7 +88,7 @@ def RhodotorulaSpCcfee5036(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodotorulaSpCcfee5036",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

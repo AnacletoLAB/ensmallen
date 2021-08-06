@@ -88,7 +88,7 @@ def HaematospirillumJordaniae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaematospirillumJordaniae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

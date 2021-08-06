@@ -88,7 +88,7 @@ def ArcanobacteriumPhocae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArcanobacteriumPhocae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

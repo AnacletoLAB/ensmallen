@@ -91,7 +91,7 @@ def MicromonosporaParva(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicromonosporaParva",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

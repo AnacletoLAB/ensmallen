@@ -91,7 +91,7 @@ def XanthomonasOryzaeOryzicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XanthomonasOryzaeOryzicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

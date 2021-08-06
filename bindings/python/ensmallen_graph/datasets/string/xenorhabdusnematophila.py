@@ -91,7 +91,7 @@ def XenorhabdusNematophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XenorhabdusNematophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

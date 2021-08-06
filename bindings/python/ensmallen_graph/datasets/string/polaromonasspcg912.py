@@ -91,7 +91,7 @@ def PolaromonasSpCg912(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PolaromonasSpCg912",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

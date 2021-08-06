@@ -91,7 +91,7 @@ def MethanothermococcusOkinawensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanothermococcusOkinawensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

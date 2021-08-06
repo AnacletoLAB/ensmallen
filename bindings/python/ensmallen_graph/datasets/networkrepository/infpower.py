@@ -100,7 +100,7 @@ def InfPower(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="InfPower",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

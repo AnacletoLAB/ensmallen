@@ -91,7 +91,7 @@ def AtelocyanobacteriumThalassaSio64986(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AtelocyanobacteriumThalassaSio64986",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

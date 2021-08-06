@@ -91,7 +91,7 @@ def PrevotellaOrisDsm18711(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaOrisDsm18711",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

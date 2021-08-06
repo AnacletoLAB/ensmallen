@@ -91,7 +91,7 @@ def TrabulsiellaGuamensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrabulsiellaGuamensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

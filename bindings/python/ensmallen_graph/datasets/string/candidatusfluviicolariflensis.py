@@ -88,7 +88,7 @@ def CandidatusFluviicolaRiflensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusFluviicolaRiflensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

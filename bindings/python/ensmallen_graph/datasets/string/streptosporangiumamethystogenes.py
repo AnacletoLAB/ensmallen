@@ -91,7 +91,7 @@ def StreptosporangiumAmethystogenes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptosporangiumAmethystogenes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

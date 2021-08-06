@@ -91,7 +91,7 @@ def ChthoniobacterFlavus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChthoniobacterFlavus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

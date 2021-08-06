@@ -91,7 +91,7 @@ def CloacimonasAcidaminovorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CloacimonasAcidaminovorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CutibacteriumAcnes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CutibacteriumAcnes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

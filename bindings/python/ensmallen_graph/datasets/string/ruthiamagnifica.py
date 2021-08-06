@@ -91,7 +91,7 @@ def RuthiaMagnifica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuthiaMagnifica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

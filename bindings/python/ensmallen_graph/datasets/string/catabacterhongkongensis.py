@@ -88,7 +88,7 @@ def CatabacterHongkongensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CatabacterHongkongensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

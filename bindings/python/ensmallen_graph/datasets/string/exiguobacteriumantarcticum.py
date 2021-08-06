@@ -91,7 +91,7 @@ def ExiguobacteriumAntarcticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ExiguobacteriumAntarcticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

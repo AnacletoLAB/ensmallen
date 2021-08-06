@@ -91,7 +91,7 @@ def EubacteriumVentriosum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EubacteriumVentriosum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def RhodobacterSp24Yea8(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodobacterSp24Yea8",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

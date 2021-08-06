@@ -88,7 +88,7 @@ def PhotorhabdusThracensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhotorhabdusThracensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

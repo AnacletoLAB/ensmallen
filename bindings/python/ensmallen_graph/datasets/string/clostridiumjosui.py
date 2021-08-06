@@ -91,7 +91,7 @@ def ClostridiumJosui(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumJosui",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

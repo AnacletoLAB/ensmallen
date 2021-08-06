@@ -88,7 +88,7 @@ def AnaerovibrioSpJc8(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerovibrioSpJc8",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

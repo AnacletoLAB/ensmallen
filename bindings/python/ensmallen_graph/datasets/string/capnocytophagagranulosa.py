@@ -91,7 +91,7 @@ def CapnocytophagaGranulosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CapnocytophagaGranulosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

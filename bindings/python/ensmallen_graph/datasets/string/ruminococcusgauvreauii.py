@@ -91,7 +91,7 @@ def RuminococcusGauvreauii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminococcusGauvreauii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

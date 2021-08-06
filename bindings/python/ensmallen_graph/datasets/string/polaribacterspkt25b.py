@@ -88,7 +88,7 @@ def PolaribacterSpKt25b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PolaribacterSpKt25b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

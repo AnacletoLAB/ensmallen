@@ -91,7 +91,7 @@ def ErwiniaPyrifoliae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErwiniaPyrifoliae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SporobacterTermitidisDsm10068(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SporobacterTermitidisDsm10068",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

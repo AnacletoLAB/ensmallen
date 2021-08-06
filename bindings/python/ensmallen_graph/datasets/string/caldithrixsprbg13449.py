@@ -88,7 +88,7 @@ def CaldithrixSpRbg13449(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaldithrixSpRbg13449",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

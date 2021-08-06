@@ -88,7 +88,7 @@ def SandaracinusAmylolyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SandaracinusAmylolyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

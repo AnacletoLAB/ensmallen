@@ -91,7 +91,7 @@ def BergeyellaZoohelcum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BergeyellaZoohelcum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

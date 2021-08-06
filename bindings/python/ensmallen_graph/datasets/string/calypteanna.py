@@ -88,7 +88,7 @@ def CalypteAnna(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CalypteAnna",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AnaeromassilibacillusSenegalensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaeromassilibacillusSenegalensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

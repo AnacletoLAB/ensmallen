@@ -91,7 +91,7 @@ def MicroscillaMarina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicroscillaMarina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

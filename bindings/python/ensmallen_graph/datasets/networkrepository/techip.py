@@ -78,7 +78,7 @@ def TechIp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TechIp",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

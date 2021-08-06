@@ -91,7 +91,7 @@ def HippeaJasoniae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HippeaJasoniae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

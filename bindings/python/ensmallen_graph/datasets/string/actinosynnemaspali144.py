@@ -88,7 +88,7 @@ def ActinosynnemaSpAli144(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinosynnemaSpAli144",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

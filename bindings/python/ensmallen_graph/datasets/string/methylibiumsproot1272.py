@@ -88,7 +88,7 @@ def MethylibiumSpRoot1272(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylibiumSpRoot1272",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

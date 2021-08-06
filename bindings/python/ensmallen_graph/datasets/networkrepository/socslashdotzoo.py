@@ -78,7 +78,7 @@ def SocSlashdotZoo(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocSlashdotZoo",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

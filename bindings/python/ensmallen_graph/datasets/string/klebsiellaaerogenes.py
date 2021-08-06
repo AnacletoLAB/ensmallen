@@ -88,7 +88,7 @@ def KlebsiellaAerogenes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KlebsiellaAerogenes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PorphyrobacterSpHl46(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PorphyrobacterSpHl46",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

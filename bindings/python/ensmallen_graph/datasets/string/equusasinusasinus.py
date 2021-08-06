@@ -88,7 +88,7 @@ def EquusAsinusAsinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EquusAsinusAsinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

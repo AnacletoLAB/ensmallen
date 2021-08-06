@@ -91,7 +91,7 @@ def NostocAzollae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NostocAzollae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

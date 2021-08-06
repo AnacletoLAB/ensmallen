@@ -88,7 +88,7 @@ def PucciniaGraminisFSpTriticiCrl75367003(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PucciniaGraminisFSpTriticiCrl75367003",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

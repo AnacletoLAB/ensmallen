@@ -88,7 +88,7 @@ def OphiocordycepsSpCamponotiLeonardi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OphiocordycepsSpCamponotiLeonardi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

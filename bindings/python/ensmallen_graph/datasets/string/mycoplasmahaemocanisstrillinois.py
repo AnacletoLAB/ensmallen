@@ -88,7 +88,7 @@ def MycoplasmaHaemocanisStrIllinois(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaHaemocanisStrIllinois",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

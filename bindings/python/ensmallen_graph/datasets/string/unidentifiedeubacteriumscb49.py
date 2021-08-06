@@ -88,7 +88,7 @@ def UnidentifiedEubacteriumScb49(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UnidentifiedEubacteriumScb49",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

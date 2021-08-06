@@ -88,7 +88,7 @@ def RhizopusDelemarRa99880(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizopusDelemarRa99880",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

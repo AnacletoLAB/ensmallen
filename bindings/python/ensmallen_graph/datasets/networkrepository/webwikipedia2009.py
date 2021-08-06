@@ -108,7 +108,7 @@ def WebWikipedia2009(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebWikipedia2009",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

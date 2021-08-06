@@ -91,7 +91,7 @@ def RhodobacteralesBacteriumY4i(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodobacteralesBacteriumY4i",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

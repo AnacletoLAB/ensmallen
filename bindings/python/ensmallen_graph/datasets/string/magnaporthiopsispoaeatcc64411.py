@@ -88,7 +88,7 @@ def MagnaporthiopsisPoaeAtcc64411(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MagnaporthiopsisPoaeAtcc64411",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

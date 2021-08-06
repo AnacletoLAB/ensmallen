@@ -91,7 +91,7 @@ def SynechocystisSpPcc6714(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SynechocystisSpPcc6714",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

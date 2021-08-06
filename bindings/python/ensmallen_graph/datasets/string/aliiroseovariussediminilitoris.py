@@ -88,7 +88,7 @@ def AliiroseovariusSediminilitoris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AliiroseovariusSediminilitoris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

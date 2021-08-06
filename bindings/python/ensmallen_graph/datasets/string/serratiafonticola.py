@@ -88,7 +88,7 @@ def SerratiaFonticola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SerratiaFonticola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

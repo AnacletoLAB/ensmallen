@@ -91,7 +91,7 @@ def MycoplasmaConjunctivae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaConjunctivae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

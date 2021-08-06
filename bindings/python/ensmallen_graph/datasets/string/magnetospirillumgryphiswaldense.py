@@ -91,7 +91,7 @@ def MagnetospirillumGryphiswaldense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MagnetospirillumGryphiswaldense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

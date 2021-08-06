@@ -88,7 +88,7 @@ def LabrysSpWjw(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LabrysSpWjw",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

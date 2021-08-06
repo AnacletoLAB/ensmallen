@@ -88,7 +88,7 @@ def LobosporangiumTransversale(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LobosporangiumTransversale",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

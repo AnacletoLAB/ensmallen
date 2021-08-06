@@ -91,7 +91,7 @@ def DermacoccusSpEllin185(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DermacoccusSpEllin185",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

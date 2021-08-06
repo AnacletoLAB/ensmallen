@@ -88,7 +88,7 @@ def MycobacteriumCelatum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumCelatum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PontibacterKorlensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PontibacterKorlensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

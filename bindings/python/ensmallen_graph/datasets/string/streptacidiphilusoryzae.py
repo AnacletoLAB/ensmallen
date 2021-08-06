@@ -91,7 +91,7 @@ def StreptacidiphilusOryzae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptacidiphilusOryzae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

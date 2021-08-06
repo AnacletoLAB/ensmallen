@@ -88,7 +88,7 @@ def CoxiellaLikeEndosymbiont(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CoxiellaLikeEndosymbiont",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

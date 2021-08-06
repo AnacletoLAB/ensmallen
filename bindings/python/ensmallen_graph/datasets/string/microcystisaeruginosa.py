@@ -91,7 +91,7 @@ def MicrocystisAeruginosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrocystisAeruginosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

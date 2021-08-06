@@ -88,7 +88,7 @@ def HymenolepisDiminuta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HymenolepisDiminuta",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

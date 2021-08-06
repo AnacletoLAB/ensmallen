@@ -88,7 +88,7 @@ def AnaerolineaceaeBacteriumOralTaxon439(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerolineaceaeBacteriumOralTaxon439",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

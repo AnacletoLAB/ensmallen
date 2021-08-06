@@ -91,7 +91,7 @@ def HalopigerSalifodinae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalopigerSalifodinae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

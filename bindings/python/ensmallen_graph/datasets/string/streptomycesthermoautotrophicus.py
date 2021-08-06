@@ -88,7 +88,7 @@ def StreptomycesThermoautotrophicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesThermoautotrophicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def FervidicolaFerrireducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FervidicolaFerrireducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

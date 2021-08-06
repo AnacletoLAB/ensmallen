@@ -88,7 +88,7 @@ def SpirosomaAerolatum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpirosomaAerolatum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

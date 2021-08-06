@@ -91,7 +91,7 @@ def PaucisalibacillusSpEb02(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaucisalibacillusSpEb02",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

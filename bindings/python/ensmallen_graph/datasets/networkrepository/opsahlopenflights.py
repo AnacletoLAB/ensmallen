@@ -78,7 +78,7 @@ def OpsahlOpenflights(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OpsahlOpenflights",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

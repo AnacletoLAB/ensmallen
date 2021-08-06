@@ -88,7 +88,7 @@ def AfipiaMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AfipiaMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def BifidobacteriumCrudilactis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BifidobacteriumCrudilactis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

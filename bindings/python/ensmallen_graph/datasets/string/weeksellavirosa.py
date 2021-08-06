@@ -91,7 +91,7 @@ def WeeksellaVirosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WeeksellaVirosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

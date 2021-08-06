@@ -88,7 +88,7 @@ def ChryseobacteriumFrigidisoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChryseobacteriumFrigidisoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

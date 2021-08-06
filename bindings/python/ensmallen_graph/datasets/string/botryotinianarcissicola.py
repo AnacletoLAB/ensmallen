@@ -88,7 +88,7 @@ def BotryotiniaNarcissicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BotryotiniaNarcissicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

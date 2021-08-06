@@ -88,7 +88,7 @@ def ThamnocephalisSphaerospora(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThamnocephalisSphaerospora",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

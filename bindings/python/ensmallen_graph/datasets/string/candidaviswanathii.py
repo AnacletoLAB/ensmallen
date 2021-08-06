@@ -88,7 +88,7 @@ def CandidaViswanathii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidaViswanathii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

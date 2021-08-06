@@ -88,7 +88,7 @@ def SiccibacterColletis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SiccibacterColletis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

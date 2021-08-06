@@ -88,7 +88,7 @@ def AspergillusNovofumigatusIbt16806(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AspergillusNovofumigatusIbt16806",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

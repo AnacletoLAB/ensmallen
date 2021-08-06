@@ -91,7 +91,7 @@ def HaloglycomycesAlbus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaloglycomycesAlbus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

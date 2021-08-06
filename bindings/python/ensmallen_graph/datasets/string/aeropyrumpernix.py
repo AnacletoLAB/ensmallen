@@ -91,7 +91,7 @@ def AeropyrumPernix(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AeropyrumPernix",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

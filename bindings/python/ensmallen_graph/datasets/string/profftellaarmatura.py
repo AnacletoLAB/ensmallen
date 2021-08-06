@@ -91,7 +91,7 @@ def ProfftellaArmatura(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProfftellaArmatura",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

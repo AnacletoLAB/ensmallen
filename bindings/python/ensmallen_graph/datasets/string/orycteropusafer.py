@@ -91,7 +91,7 @@ def OrycteropusAfer(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OrycteropusAfer",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

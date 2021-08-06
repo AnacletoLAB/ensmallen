@@ -88,7 +88,7 @@ def PhormidiumSpOscr(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhormidiumSpOscr",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

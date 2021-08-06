@@ -88,7 +88,7 @@ def PhlebiopsisGigantea110611Cr56(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhlebiopsisGigantea110611Cr56",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

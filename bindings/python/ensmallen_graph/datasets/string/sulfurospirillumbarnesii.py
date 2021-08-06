@@ -91,7 +91,7 @@ def SulfurospirillumBarnesii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfurospirillumBarnesii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

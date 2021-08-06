@@ -91,7 +91,7 @@ def MethanococcusVannielii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanococcusVannielii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

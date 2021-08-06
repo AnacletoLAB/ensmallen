@@ -91,7 +91,7 @@ def ActinobacillusSuccinogenes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinobacillusSuccinogenes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

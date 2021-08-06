@@ -88,7 +88,7 @@ def ParacoccusSanguinis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParacoccusSanguinis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

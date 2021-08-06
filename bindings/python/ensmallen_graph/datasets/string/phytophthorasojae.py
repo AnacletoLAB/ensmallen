@@ -91,7 +91,7 @@ def PhytophthoraSojae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhytophthoraSojae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ThermococcusOnnurineus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermococcusOnnurineus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

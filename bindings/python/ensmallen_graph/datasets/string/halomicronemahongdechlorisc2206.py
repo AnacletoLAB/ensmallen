@@ -88,7 +88,7 @@ def HalomicronemaHongdechlorisC2206(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalomicronemaHongdechlorisC2206",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

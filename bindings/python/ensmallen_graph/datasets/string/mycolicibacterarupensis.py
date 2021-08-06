@@ -88,7 +88,7 @@ def MycolicibacterArupensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycolicibacterArupensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

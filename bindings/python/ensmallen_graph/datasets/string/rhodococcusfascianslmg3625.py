@@ -88,7 +88,7 @@ def RhodococcusFasciansLmg3625(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodococcusFasciansLmg3625",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

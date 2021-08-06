@@ -91,7 +91,7 @@ def HalomonasJeotgali(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalomonasJeotgali",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

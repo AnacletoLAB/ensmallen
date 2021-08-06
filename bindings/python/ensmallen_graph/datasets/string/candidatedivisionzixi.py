@@ -91,7 +91,7 @@ def CandidateDivisionZixi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidateDivisionZixi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

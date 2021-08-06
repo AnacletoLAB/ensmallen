@@ -91,7 +91,7 @@ def PsychrobacterSpJcm18900(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PsychrobacterSpJcm18900",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SciscionellaMarinaDsm45152(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SciscionellaMarinaDsm45152",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def TatumellaSaanichensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TatumellaSaanichensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

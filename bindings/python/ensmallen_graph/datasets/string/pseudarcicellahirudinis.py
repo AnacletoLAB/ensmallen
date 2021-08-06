@@ -88,7 +88,7 @@ def PseudarcicellaHirudinis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudarcicellaHirudinis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

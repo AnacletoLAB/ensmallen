@@ -91,7 +91,7 @@ def SediminibacteriumSpC3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SediminibacteriumSpC3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

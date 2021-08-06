@@ -91,7 +91,7 @@ def TomitellaBiformata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TomitellaBiformata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

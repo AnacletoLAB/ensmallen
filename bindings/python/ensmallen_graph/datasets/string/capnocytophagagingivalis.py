@@ -91,7 +91,7 @@ def CapnocytophagaGingivalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CapnocytophagaGingivalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

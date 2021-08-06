@@ -91,7 +91,7 @@ def SodalisPierantonius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SodalisPierantonius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

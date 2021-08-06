@@ -88,7 +88,7 @@ def ErythrobacterGangjinensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErythrobacterGangjinensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

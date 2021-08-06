@@ -78,7 +78,7 @@ def WebkbWisc(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebkbWisc",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def LeptospiraYanagawaeSerovarSaopauloStrSaoPauloAtcc700523(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptospiraYanagawaeSerovarSaopauloStrSaoPauloAtcc700523",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

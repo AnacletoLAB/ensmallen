@@ -91,7 +91,7 @@ def AzoarcusSpBh72(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AzoarcusSpBh72",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

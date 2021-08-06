@@ -91,7 +91,7 @@ def SulfurospirillumDeleyianum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfurospirillumDeleyianum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

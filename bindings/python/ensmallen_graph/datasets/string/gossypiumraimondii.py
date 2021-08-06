@@ -91,7 +91,7 @@ def GossypiumRaimondii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GossypiumRaimondii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

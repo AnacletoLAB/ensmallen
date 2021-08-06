@@ -88,7 +88,7 @@ def MadurellaMycetomatis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MadurellaMycetomatis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

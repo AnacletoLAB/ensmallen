@@ -120,7 +120,7 @@ def SocfbReed98(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbReed98",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

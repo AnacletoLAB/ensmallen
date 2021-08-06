@@ -88,7 +88,7 @@ def SphingopyxisSpRoot154(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingopyxisSpRoot154",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

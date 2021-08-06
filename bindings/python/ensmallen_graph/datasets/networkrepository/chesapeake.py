@@ -78,7 +78,7 @@ def Chesapeake(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Chesapeake",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

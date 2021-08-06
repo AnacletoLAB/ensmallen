@@ -91,7 +91,7 @@ def ClostridiumCellulolyticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumCellulolyticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

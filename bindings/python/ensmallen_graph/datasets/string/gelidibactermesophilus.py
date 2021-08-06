@@ -91,7 +91,7 @@ def GelidibacterMesophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GelidibacterMesophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

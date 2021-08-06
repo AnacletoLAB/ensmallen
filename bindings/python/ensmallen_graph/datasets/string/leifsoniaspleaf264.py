@@ -88,7 +88,7 @@ def LeifsoniaSpLeaf264(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeifsoniaSpLeaf264",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

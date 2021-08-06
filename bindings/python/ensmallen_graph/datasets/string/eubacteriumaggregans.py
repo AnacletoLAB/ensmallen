@@ -88,7 +88,7 @@ def EubacteriumAggregans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EubacteriumAggregans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

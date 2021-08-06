@@ -88,7 +88,7 @@ def GeotogaPetraea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeotogaPetraea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

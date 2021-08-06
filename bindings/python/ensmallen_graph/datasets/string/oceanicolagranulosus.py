@@ -91,7 +91,7 @@ def OceanicolaGranulosus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OceanicolaGranulosus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

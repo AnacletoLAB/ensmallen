@@ -91,7 +91,7 @@ def BacillusXiamenensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusXiamenensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

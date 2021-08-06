@@ -110,7 +110,7 @@ def CaCiteseer(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaCiteseer",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

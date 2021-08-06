@@ -88,7 +88,7 @@ def NaemateliaEncephala(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NaemateliaEncephala",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

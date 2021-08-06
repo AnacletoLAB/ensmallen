@@ -88,7 +88,7 @@ def AcidiphiliumSpCag727(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidiphiliumSpCag727",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

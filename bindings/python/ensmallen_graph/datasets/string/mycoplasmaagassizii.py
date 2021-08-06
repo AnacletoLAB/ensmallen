@@ -88,7 +88,7 @@ def MycoplasmaAgassizii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaAgassizii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

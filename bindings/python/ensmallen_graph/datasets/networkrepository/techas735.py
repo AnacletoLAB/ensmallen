@@ -78,7 +78,7 @@ def TechAs735(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TechAs735",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

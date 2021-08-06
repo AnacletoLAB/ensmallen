@@ -91,7 +91,7 @@ def HalorubrumSaccharovorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalorubrumSaccharovorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CandidatusNitrosocosmicusOleophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusNitrosocosmicusOleophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

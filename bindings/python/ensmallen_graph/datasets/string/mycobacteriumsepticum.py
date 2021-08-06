@@ -91,7 +91,7 @@ def MycobacteriumSepticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumSepticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

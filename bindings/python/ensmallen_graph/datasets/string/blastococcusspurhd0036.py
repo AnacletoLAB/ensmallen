@@ -91,7 +91,7 @@ def BlastococcusSpUrhd0036(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlastococcusSpUrhd0036",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

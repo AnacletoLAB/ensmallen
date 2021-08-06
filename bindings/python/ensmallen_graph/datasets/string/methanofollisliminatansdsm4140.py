@@ -88,7 +88,7 @@ def MethanofollisLiminatansDsm4140(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanofollisLiminatansDsm4140",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

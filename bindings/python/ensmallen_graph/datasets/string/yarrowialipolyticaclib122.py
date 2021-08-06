@@ -88,7 +88,7 @@ def YarrowiaLipolyticaClib122(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="YarrowiaLipolyticaClib122",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

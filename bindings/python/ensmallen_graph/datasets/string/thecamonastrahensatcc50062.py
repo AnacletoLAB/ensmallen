@@ -88,7 +88,7 @@ def ThecamonasTrahensAtcc50062(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThecamonasTrahensAtcc50062",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

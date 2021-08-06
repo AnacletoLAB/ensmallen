@@ -91,7 +91,7 @@ def MethyloglobulusMorosus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethyloglobulusMorosus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def DesulfotomaculumKuznetsovii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfotomaculumKuznetsovii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

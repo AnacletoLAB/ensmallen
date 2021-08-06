@@ -91,7 +91,7 @@ def ChlamydiaTrachomatis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlamydiaTrachomatis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

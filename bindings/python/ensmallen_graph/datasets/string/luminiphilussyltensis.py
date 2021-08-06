@@ -91,7 +91,7 @@ def LuminiphilusSyltensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LuminiphilusSyltensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

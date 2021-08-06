@@ -88,7 +88,7 @@ def AlbimonasDonghaensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlbimonasDonghaensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

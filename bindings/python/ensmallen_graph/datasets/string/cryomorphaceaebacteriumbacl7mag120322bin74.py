@@ -88,7 +88,7 @@ def CryomorphaceaeBacteriumBacl7Mag120322Bin74(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CryomorphaceaeBacteriumBacl7Mag120322Bin74",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

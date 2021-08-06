@@ -88,7 +88,7 @@ def LachanceaLanzarotensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LachanceaLanzarotensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

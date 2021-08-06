@@ -88,7 +88,7 @@ def KocuriaFlava(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KocuriaFlava",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

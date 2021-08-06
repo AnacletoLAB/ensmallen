@@ -88,7 +88,7 @@ def MarineBacteriumAo1C(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarineBacteriumAo1C",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

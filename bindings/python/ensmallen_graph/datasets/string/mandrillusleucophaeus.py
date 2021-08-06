@@ -88,7 +88,7 @@ def MandrillusLeucophaeus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MandrillusLeucophaeus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

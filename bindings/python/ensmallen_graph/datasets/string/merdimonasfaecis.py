@@ -88,7 +88,7 @@ def MerdimonasFaecis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MerdimonasFaecis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

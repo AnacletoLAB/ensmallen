@@ -88,7 +88,7 @@ def BradyrhizobiumSacchari(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BradyrhizobiumSacchari",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

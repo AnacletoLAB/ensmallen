@@ -91,7 +91,7 @@ def VeillonellaAtypicaKon(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VeillonellaAtypicaKon",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def QuasibacillusThermotolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="QuasibacillusThermotolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

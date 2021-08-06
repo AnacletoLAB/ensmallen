@@ -91,7 +91,7 @@ def SerratiaSpAtcc39006(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SerratiaSpAtcc39006",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

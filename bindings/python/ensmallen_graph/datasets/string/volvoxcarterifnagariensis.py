@@ -88,7 +88,7 @@ def VolvoxCarteriFNagariensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VolvoxCarteriFNagariensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

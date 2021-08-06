@@ -91,7 +91,7 @@ def AchromobacterXylosoxidansNbrc15126(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AchromobacterXylosoxidansNbrc15126",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

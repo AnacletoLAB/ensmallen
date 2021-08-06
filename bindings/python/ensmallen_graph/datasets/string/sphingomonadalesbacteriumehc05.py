@@ -88,7 +88,7 @@ def SphingomonadalesBacteriumEhc05(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingomonadalesBacteriumEhc05",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def Abb313(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Abb313",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

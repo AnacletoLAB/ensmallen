@@ -88,7 +88,7 @@ def GammaProteobacteriumNor53(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GammaProteobacteriumNor53",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

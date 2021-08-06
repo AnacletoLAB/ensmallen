@@ -91,7 +91,7 @@ def NocardiaCarnea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardiaCarnea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

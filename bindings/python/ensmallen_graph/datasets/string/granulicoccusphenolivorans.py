@@ -91,7 +91,7 @@ def GranulicoccusPhenolivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GranulicoccusPhenolivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

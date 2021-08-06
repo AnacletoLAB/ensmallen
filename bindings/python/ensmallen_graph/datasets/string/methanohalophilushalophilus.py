@@ -88,7 +88,7 @@ def MethanohalophilusHalophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanohalophilusHalophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

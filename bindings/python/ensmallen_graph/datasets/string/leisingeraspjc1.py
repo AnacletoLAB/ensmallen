@@ -88,7 +88,7 @@ def LeisingeraSpJc1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeisingeraSpJc1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

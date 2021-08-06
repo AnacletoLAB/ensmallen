@@ -91,7 +91,7 @@ def FrateuriaAurantia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FrateuriaAurantia",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

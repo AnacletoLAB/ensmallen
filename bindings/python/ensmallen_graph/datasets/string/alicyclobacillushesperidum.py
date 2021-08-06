@@ -88,7 +88,7 @@ def AlicyclobacillusHesperidum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlicyclobacillusHesperidum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

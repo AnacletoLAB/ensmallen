@@ -88,7 +88,7 @@ def NovibacillusThermophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NovibacillusThermophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

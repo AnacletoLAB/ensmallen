@@ -88,7 +88,7 @@ def GopherusAgassizii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GopherusAgassizii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

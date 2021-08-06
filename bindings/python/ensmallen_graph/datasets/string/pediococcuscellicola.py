@@ -88,7 +88,7 @@ def PediococcusCellicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PediococcusCellicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ProteiniphilumSaccharofermentans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProteiniphilumSaccharofermentans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

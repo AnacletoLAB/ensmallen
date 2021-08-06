@@ -88,7 +88,7 @@ def FusariumFasciculatum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FusariumFasciculatum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

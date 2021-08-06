@@ -88,7 +88,7 @@ def ShimiaMarina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShimiaMarina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

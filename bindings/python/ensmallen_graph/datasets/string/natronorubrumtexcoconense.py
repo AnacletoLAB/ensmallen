@@ -88,7 +88,7 @@ def NatronorubrumTexcoconense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NatronorubrumTexcoconense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

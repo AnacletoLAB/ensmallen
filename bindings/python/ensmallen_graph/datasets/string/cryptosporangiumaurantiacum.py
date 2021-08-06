@@ -88,7 +88,7 @@ def CryptosporangiumAurantiacum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CryptosporangiumAurantiacum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

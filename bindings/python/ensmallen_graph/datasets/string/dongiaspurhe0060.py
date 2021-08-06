@@ -91,7 +91,7 @@ def DongiaSpUrhe0060(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DongiaSpUrhe0060",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

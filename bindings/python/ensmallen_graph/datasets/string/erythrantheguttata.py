@@ -91,7 +91,7 @@ def ErythrantheGuttata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErythrantheGuttata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

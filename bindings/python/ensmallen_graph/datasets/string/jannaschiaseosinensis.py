@@ -88,7 +88,7 @@ def JannaschiaSeosinensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JannaschiaSeosinensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

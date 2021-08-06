@@ -91,7 +91,7 @@ def BetaProteobacteriumCb(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BetaProteobacteriumCb",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

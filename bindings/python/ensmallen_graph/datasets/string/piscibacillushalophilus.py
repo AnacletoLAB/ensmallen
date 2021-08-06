@@ -88,7 +88,7 @@ def PiscibacillusHalophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PiscibacillusHalophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

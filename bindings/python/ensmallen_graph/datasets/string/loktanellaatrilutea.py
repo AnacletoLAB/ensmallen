@@ -88,7 +88,7 @@ def LoktanellaAtrilutea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LoktanellaAtrilutea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

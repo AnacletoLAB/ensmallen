@@ -88,7 +88,7 @@ def ChitinibacterTainanensisDsm15459(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChitinibacterTainanensisDsm15459",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

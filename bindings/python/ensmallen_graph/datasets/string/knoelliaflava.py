@@ -91,7 +91,7 @@ def KnoelliaFlava(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KnoelliaFlava",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def FormosaAlgae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FormosaAlgae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

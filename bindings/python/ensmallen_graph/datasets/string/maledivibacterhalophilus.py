@@ -88,7 +88,7 @@ def MaledivibacterHalophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MaledivibacterHalophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

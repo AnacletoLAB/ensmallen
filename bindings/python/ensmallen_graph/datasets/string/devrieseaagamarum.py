@@ -88,7 +88,7 @@ def DevrieseaAgamarum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DevrieseaAgamarum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

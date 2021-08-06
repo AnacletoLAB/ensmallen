@@ -91,7 +91,7 @@ def PyrococcusAbyssi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PyrococcusAbyssi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

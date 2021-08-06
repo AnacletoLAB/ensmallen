@@ -88,7 +88,7 @@ def DissulfuribacterThermophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DissulfuribacterThermophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

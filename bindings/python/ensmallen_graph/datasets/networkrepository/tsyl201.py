@@ -78,7 +78,7 @@ def Tsyl201(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Tsyl201",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def VenturiaEffusa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VenturiaEffusa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def CyanotheceSpPcc8801(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CyanotheceSpPcc8801",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

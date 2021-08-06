@@ -91,7 +91,7 @@ def PrevotellaOralisAtcc33269(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaOralisAtcc33269",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MicrobacteriumBarkeri2011R4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriumBarkeri2011R4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

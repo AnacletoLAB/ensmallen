@@ -88,7 +88,7 @@ def RamulariaColloCygni(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RamulariaColloCygni",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

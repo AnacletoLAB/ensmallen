@@ -91,7 +91,7 @@ def LeucobacterSalsicius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeucobacterSalsicius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

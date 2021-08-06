@@ -91,7 +91,7 @@ def BacteroidesCoprosuis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesCoprosuis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

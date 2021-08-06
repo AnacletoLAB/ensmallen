@@ -88,7 +88,7 @@ def PoeciliaMexicana(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PoeciliaMexicana",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

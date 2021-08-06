@@ -88,7 +88,7 @@ def PeptoanaerobacterStomatis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeptoanaerobacterStomatis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

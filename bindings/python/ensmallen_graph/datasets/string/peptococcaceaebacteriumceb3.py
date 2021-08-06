@@ -88,7 +88,7 @@ def PeptococcaceaeBacteriumCeb3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeptococcaceaeBacteriumCeb3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

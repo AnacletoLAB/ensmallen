@@ -88,7 +88,7 @@ def ChryseobacteriumTaihuense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChryseobacteriumTaihuense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

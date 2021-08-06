@@ -88,7 +88,7 @@ def MooreaProducensPal815081(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MooreaProducensPal815081",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

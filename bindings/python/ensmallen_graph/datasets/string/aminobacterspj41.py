@@ -91,7 +91,7 @@ def AminobacterSpJ41(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AminobacterSpJ41",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

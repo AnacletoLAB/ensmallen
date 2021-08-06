@@ -91,7 +91,7 @@ def MycobacteriumSmegmatisMc2155(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumSmegmatisMc2155",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

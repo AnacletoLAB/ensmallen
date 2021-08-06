@@ -91,7 +91,7 @@ def ArsenophonusEndosymbiont(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArsenophonusEndosymbiont",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

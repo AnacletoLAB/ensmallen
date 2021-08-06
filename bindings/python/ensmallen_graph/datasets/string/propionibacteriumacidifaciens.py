@@ -91,7 +91,7 @@ def PropionibacteriumAcidifaciens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PropionibacteriumAcidifaciens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

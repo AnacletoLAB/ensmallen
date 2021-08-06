@@ -88,7 +88,7 @@ def PediococcusStilesii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PediococcusStilesii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def AlgicolaSagamiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlgicolaSagamiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

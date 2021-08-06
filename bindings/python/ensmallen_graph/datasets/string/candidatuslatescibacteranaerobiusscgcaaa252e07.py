@@ -88,7 +88,7 @@ def CandidatusLatescibacterAnaerobiusScgcAaa252E07(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusLatescibacterAnaerobiusScgcAaa252E07",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def Cegb3024(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Cegb3024",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

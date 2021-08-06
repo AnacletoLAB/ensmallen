@@ -91,7 +91,7 @@ def LactobacillusComposti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusComposti",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

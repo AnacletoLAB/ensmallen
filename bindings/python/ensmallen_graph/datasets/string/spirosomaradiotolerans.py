@@ -88,7 +88,7 @@ def SpirosomaRadiotolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpirosomaRadiotolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

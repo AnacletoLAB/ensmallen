@@ -88,7 +88,7 @@ def SneathiellaGlossodoripedisJcm23214(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SneathiellaGlossodoripedisJcm23214",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

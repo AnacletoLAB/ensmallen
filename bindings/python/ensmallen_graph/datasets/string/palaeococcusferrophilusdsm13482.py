@@ -88,7 +88,7 @@ def PalaeococcusFerrophilusDsm13482(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PalaeococcusFerrophilusDsm13482",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

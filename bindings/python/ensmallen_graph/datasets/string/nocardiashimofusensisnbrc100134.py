@@ -88,7 +88,7 @@ def NocardiaShimofusensisNbrc100134(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardiaShimofusensisNbrc100134",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ProtochlamydiaAmoebophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProtochlamydiaAmoebophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

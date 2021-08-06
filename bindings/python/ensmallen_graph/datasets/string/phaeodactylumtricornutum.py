@@ -91,7 +91,7 @@ def PhaeodactylumTricornutum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhaeodactylumTricornutum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

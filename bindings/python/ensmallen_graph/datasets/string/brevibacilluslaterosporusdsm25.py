@@ -91,7 +91,7 @@ def BrevibacillusLaterosporusDsm25(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrevibacillusLaterosporusDsm25",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def EnterococcusPhoeniculicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterococcusPhoeniculicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

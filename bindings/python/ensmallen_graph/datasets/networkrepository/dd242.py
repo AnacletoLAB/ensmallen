@@ -78,7 +78,7 @@ def Dd242(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Dd242",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

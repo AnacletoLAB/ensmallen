@@ -91,7 +91,7 @@ def RhodopseudomonasPalustrisCga009(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodopseudomonasPalustrisCga009",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

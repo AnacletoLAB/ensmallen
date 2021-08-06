@@ -88,7 +88,7 @@ def TrichophytonInterdigitaleMr816(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichophytonInterdigitaleMr816",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

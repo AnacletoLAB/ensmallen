@@ -91,7 +91,7 @@ def SymbiobacterMobilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SymbiobacterMobilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

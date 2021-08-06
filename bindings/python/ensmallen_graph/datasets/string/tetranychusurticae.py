@@ -91,7 +91,7 @@ def TetranychusUrticae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TetranychusUrticae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

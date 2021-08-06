@@ -88,7 +88,7 @@ def PasteurellaceaeBacteriumNi1060(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PasteurellaceaeBacteriumNi1060",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

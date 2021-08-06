@@ -91,7 +91,7 @@ def ThioalkalivibrioSpAle19(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThioalkalivibrioSpAle19",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

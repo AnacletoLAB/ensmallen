@@ -88,7 +88,7 @@ def VibrioSpVpap30(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioSpVpap30",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

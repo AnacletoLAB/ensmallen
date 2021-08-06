@@ -88,7 +88,7 @@ def BranchiibiusSpNy1634622(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BranchiibiusSpNy1634622",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

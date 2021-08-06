@@ -88,7 +88,7 @@ def CottopercaGobio(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CottopercaGobio",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

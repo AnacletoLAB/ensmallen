@@ -88,7 +88,7 @@ def GeodermatophilusNigrescens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeodermatophilusNigrescens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

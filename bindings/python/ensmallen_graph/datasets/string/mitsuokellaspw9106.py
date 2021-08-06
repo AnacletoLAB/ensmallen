@@ -91,7 +91,7 @@ def MitsuokellaSpW9106(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MitsuokellaSpW9106",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

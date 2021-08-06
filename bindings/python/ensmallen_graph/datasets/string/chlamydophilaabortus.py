@@ -91,7 +91,7 @@ def ChlamydophilaAbortus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlamydophilaAbortus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

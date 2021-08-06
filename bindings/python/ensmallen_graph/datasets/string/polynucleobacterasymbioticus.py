@@ -88,7 +88,7 @@ def PolynucleobacterAsymbioticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PolynucleobacterAsymbioticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

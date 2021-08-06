@@ -88,7 +88,7 @@ def PaludibacterSp4717(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaludibacterSp4717",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

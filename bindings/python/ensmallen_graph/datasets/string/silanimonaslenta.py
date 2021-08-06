@@ -91,7 +91,7 @@ def SilanimonasLenta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SilanimonasLenta",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

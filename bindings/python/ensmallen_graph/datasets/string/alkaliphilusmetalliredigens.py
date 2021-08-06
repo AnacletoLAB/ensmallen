@@ -91,7 +91,7 @@ def AlkaliphilusMetalliredigens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlkaliphilusMetalliredigens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

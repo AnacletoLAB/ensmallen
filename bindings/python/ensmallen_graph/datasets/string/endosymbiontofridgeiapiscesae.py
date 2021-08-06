@@ -88,7 +88,7 @@ def EndosymbiontOfRidgeiaPiscesae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EndosymbiontOfRidgeiaPiscesae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

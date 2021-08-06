@@ -91,7 +91,7 @@ def MesotogaPrima(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MesotogaPrima",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

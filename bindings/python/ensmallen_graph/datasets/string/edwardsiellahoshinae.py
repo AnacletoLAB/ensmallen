@@ -91,7 +91,7 @@ def EdwardsiellaHoshinae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EdwardsiellaHoshinae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

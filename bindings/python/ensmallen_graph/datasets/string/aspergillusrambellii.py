@@ -88,7 +88,7 @@ def AspergillusRambellii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AspergillusRambellii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

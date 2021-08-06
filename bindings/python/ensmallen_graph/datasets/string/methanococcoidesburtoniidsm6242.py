@@ -88,7 +88,7 @@ def MethanococcoidesBurtoniiDsm6242(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanococcoidesBurtoniiDsm6242",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

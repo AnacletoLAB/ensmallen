@@ -91,7 +91,7 @@ def MesorhizobiumLotiCj3sym(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MesorhizobiumLotiCj3sym",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

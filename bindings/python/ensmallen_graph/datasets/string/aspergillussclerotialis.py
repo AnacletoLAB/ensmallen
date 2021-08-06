@@ -88,7 +88,7 @@ def AspergillusSclerotialis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AspergillusSclerotialis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

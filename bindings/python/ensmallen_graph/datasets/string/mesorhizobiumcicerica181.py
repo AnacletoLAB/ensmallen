@@ -88,7 +88,7 @@ def MesorhizobiumCiceriCa181(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MesorhizobiumCiceriCa181",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

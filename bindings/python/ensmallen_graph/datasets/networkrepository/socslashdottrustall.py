@@ -100,7 +100,7 @@ def SocSlashdotTrustAll(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocSlashdotTrustAll",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

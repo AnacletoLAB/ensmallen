@@ -88,7 +88,7 @@ def LeeuwenhoekiellaPalythoae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeeuwenhoekiellaPalythoae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

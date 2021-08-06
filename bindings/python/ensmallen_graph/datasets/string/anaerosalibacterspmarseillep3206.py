@@ -88,7 +88,7 @@ def AnaerosalibacterSpMarseilleP3206(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerosalibacterSpMarseilleP3206",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

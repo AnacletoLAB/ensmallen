@@ -88,7 +88,7 @@ def GordoniaPhthalatica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GordoniaPhthalatica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

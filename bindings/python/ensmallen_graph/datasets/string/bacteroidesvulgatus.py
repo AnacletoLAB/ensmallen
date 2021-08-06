@@ -91,7 +91,7 @@ def BacteroidesVulgatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesVulgatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

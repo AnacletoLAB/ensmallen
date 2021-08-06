@@ -91,7 +91,7 @@ def FilamentousCyanobacterium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FilamentousCyanobacterium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

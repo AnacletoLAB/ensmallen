@@ -88,7 +88,7 @@ def HungatellaHathewayi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HungatellaHathewayi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

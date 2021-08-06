@@ -91,7 +91,7 @@ def ThermaerobacterMarianensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermaerobacterMarianensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

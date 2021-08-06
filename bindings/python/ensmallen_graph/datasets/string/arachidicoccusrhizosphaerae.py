@@ -88,7 +88,7 @@ def ArachidicoccusRhizosphaerae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArachidicoccusRhizosphaerae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

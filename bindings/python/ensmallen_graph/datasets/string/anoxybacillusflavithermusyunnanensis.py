@@ -91,7 +91,7 @@ def AnoxybacillusFlavithermusYunnanensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnoxybacillusFlavithermusYunnanensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

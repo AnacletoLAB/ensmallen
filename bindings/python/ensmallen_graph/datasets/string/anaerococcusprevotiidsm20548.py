@@ -91,7 +91,7 @@ def AnaerococcusPrevotiiDsm20548(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerococcusPrevotiiDsm20548",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

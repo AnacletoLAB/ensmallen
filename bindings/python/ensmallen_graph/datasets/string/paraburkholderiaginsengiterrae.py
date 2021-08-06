@@ -88,7 +88,7 @@ def ParaburkholderiaGinsengiterrae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParaburkholderiaGinsengiterrae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

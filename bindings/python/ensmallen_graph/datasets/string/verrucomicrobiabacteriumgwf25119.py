@@ -88,7 +88,7 @@ def VerrucomicrobiaBacteriumGwf25119(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VerrucomicrobiaBacteriumGwf25119",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

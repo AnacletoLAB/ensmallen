@@ -88,7 +88,7 @@ def HalogranumGelatinilyticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalogranumGelatinilyticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

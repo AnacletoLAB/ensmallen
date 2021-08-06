@@ -88,7 +88,7 @@ def PedobacterRhizosphaerae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PedobacterRhizosphaerae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

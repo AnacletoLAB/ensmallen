@@ -88,7 +88,7 @@ def ProteiniphilumSpEbm39(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProteiniphilumSpEbm39",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

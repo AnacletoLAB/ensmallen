@@ -88,7 +88,7 @@ def PropionispiraArboris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PropionispiraArboris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

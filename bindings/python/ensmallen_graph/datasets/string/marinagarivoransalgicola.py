@@ -88,7 +88,7 @@ def MarinagarivoransAlgicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinagarivoransAlgicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def VariovoraxSpKk3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VariovoraxSpKk3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

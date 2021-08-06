@@ -91,7 +91,7 @@ def WeissellaConfusa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WeissellaConfusa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

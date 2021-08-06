@@ -91,7 +91,7 @@ def KluyveraAscorbata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KluyveraAscorbata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

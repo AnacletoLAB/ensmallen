@@ -91,7 +91,7 @@ def PhotobacteriumPhosphoreum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhotobacteriumPhosphoreum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

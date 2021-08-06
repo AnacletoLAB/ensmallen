@@ -104,7 +104,7 @@ def Johnson824(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Johnson824",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

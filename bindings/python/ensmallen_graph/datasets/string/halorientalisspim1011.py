@@ -88,7 +88,7 @@ def HalorientalisSpIm1011(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalorientalisSpIm1011",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

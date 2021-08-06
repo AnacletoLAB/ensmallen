@@ -91,7 +91,7 @@ def EnterococcusColumbae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterococcusColumbae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

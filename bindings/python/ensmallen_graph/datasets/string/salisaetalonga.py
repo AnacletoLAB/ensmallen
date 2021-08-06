@@ -91,7 +91,7 @@ def SalisaetaLonga(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalisaetaLonga",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

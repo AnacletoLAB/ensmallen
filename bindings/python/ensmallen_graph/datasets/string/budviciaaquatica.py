@@ -91,7 +91,7 @@ def BudviciaAquatica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BudviciaAquatica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

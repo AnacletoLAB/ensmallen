@@ -91,7 +91,7 @@ def VibrioNavarrensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioNavarrensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

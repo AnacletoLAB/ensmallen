@@ -88,7 +88,7 @@ def WilliamwhitmaniaTaraxaci(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WilliamwhitmaniaTaraxaci",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

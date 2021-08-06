@@ -91,7 +91,7 @@ def HalotheceSpPcc7418(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalotheceSpPcc7418",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

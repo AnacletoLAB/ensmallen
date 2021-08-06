@@ -88,7 +88,7 @@ def HungateiclostridiaceaeBacteriumKb18(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HungateiclostridiaceaeBacteriumKb18",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

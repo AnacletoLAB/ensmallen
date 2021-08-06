@@ -88,7 +88,7 @@ def RoseovariusLutimaris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseovariusLutimaris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

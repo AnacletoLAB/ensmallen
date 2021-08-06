@@ -91,7 +91,7 @@ def GordoniaSoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GordoniaSoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

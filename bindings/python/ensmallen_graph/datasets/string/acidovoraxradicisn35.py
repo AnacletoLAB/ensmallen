@@ -88,7 +88,7 @@ def AcidovoraxRadicisN35(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidovoraxRadicisN35",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

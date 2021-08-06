@@ -120,7 +120,7 @@ def SocfbYale4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbYale4",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

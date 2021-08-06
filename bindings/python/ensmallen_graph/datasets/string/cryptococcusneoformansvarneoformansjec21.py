@@ -88,7 +88,7 @@ def CryptococcusNeoformansVarNeoformansJec21(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CryptococcusNeoformansVarNeoformansJec21",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

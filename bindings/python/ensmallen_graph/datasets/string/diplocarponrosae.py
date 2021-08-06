@@ -88,7 +88,7 @@ def DiplocarponRosae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DiplocarponRosae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

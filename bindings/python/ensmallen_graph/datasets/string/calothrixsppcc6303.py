@@ -91,7 +91,7 @@ def CalothrixSpPcc6303(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CalothrixSpPcc6303",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

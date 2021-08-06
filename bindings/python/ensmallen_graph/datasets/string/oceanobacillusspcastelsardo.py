@@ -88,7 +88,7 @@ def OceanobacillusSpCastelsardo(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OceanobacillusSpCastelsardo",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

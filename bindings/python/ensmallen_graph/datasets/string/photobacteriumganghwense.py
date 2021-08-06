@@ -88,7 +88,7 @@ def PhotobacteriumGanghwense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhotobacteriumGanghwense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

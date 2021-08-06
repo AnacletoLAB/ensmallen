@@ -91,7 +91,7 @@ def StreptococcusMutansUa159(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusMutansUa159",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

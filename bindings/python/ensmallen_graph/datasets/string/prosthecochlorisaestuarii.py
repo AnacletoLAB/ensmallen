@@ -91,7 +91,7 @@ def ProsthecochlorisAestuarii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProsthecochlorisAestuarii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

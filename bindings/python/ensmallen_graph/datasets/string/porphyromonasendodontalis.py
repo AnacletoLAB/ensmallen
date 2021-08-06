@@ -91,7 +91,7 @@ def PorphyromonasEndodontalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PorphyromonasEndodontalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

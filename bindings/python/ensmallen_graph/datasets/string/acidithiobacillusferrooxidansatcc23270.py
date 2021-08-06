@@ -91,7 +91,7 @@ def AcidithiobacillusFerrooxidansAtcc23270(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidithiobacillusFerrooxidansAtcc23270",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

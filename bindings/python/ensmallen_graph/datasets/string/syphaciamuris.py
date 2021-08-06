@@ -88,7 +88,7 @@ def SyphaciaMuris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SyphaciaMuris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def LepisosteusOculatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LepisosteusOculatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def FervidobacteriumPennivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FervidobacteriumPennivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

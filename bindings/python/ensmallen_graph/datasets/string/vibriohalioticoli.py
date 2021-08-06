@@ -91,7 +91,7 @@ def VibrioHalioticoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioHalioticoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

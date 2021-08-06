@@ -91,7 +91,7 @@ def FibrobacterSuccinogenes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FibrobacterSuccinogenes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

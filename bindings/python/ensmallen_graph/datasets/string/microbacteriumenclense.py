@@ -88,7 +88,7 @@ def MicrobacteriumEnclense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriumEnclense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

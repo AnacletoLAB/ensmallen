@@ -88,7 +88,7 @@ def MarivitaGeojedonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarivitaGeojedonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

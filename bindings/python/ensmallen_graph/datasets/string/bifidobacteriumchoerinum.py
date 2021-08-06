@@ -91,7 +91,7 @@ def BifidobacteriumChoerinum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BifidobacteriumChoerinum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

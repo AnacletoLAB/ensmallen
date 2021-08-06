@@ -88,7 +88,7 @@ def DermatophilusCongolensisDsm44180Nbrc105199(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DermatophilusCongolensisDsm44180Nbrc105199",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

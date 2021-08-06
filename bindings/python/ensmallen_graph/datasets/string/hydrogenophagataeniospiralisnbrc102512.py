@@ -88,7 +88,7 @@ def HydrogenophagaTaeniospiralisNbrc102512(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HydrogenophagaTaeniospiralisNbrc102512",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

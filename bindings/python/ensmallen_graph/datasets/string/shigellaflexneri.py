@@ -91,7 +91,7 @@ def ShigellaFlexneri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShigellaFlexneri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

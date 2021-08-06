@@ -88,7 +88,7 @@ def BabesiaBigemina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BabesiaBigemina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

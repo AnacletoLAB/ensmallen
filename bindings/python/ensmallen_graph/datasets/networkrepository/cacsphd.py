@@ -94,7 +94,7 @@ def CaCsphd(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaCsphd",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

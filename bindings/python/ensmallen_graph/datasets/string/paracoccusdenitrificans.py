@@ -88,7 +88,7 @@ def ParacoccusDenitrificans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParacoccusDenitrificans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

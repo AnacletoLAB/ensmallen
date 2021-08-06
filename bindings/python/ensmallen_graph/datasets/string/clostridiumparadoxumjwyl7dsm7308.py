@@ -88,7 +88,7 @@ def ClostridiumParadoxumJwYl7Dsm7308(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumParadoxumJwYl7Dsm7308",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

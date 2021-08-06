@@ -88,7 +88,7 @@ def ZunongwangiaAtlantica22ii1410f7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZunongwangiaAtlantica22ii1410f7",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

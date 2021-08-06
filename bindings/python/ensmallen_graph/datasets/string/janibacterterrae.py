@@ -88,7 +88,7 @@ def JanibacterTerrae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JanibacterTerrae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

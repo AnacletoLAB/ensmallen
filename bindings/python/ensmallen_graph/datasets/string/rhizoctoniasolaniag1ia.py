@@ -88,7 +88,7 @@ def RhizoctoniaSolaniAg1Ia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizoctoniaSolaniAg1Ia",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

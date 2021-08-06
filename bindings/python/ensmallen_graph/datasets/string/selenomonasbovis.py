@@ -91,7 +91,7 @@ def SelenomonasBovis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SelenomonasBovis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

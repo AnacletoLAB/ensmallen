@@ -88,7 +88,7 @@ def DesulfitibacterAlkalitoleransDsm16504(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfitibacterAlkalitoleransDsm16504",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

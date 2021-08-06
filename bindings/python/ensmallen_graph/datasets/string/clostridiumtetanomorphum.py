@@ -91,7 +91,7 @@ def ClostridiumTetanomorphum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumTetanomorphum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

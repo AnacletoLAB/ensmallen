@@ -91,7 +91,7 @@ def ThermotogaSpMc24(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermotogaSpMc24",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

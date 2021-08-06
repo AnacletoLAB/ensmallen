@@ -88,7 +88,7 @@ def LomentosporaProlificans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LomentosporaProlificans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ArchaeoglobusSpJdfr35(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArchaeoglobusSpJdfr35",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

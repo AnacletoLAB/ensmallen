@@ -88,7 +88,7 @@ def ParcubacteriaGroupBacteriumCg2303638(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParcubacteriaGroupBacteriumCg2303638",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

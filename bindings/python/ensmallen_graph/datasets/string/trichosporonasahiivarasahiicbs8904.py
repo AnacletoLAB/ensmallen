@@ -88,7 +88,7 @@ def TrichosporonAsahiiVarAsahiiCbs8904(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichosporonAsahiiVarAsahiiCbs8904",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

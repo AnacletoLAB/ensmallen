@@ -88,7 +88,7 @@ def TorrubiellaHemipterigena(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TorrubiellaHemipterigena",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

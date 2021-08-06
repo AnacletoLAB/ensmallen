@@ -91,7 +91,7 @@ def ArenibacterLatericius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArenibacterLatericius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

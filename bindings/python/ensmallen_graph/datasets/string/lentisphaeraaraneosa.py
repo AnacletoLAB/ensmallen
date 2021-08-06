@@ -91,7 +91,7 @@ def LentisphaeraAraneosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LentisphaeraAraneosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

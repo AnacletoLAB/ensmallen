@@ -88,7 +88,7 @@ def CohnellaSp6021052837(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CohnellaSp6021052837",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

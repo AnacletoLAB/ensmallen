@@ -91,7 +91,7 @@ def OryzaSativa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OryzaSativa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

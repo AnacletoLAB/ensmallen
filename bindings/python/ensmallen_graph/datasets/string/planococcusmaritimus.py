@@ -88,7 +88,7 @@ def PlanococcusMaritimus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlanococcusMaritimus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

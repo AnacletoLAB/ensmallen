@@ -88,7 +88,7 @@ def BacteroidesPaurosaccharolyticusJcm15092(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesPaurosaccharolyticusJcm15092",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

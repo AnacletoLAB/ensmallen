@@ -88,7 +88,7 @@ def AlbimonasPacifica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlbimonasPacifica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

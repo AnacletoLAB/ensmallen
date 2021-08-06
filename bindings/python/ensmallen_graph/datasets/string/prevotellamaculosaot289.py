@@ -88,7 +88,7 @@ def PrevotellaMaculosaOt289(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaMaculosaOt289",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

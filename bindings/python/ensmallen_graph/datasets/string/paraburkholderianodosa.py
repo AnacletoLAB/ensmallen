@@ -88,7 +88,7 @@ def ParaburkholderiaNodosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParaburkholderiaNodosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

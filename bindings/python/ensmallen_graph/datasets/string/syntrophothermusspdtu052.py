@@ -88,7 +88,7 @@ def SyntrophothermusSpDtu052(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SyntrophothermusSpDtu052",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

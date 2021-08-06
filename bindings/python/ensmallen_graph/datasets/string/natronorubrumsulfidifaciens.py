@@ -91,7 +91,7 @@ def NatronorubrumSulfidifaciens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NatronorubrumSulfidifaciens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

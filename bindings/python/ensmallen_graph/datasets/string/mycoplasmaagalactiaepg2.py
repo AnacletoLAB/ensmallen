@@ -88,7 +88,7 @@ def MycoplasmaAgalactiaePg2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaAgalactiaePg2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

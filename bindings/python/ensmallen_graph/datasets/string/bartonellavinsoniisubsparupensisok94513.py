@@ -88,7 +88,7 @@ def BartonellaVinsoniiSubspArupensisOk94513(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BartonellaVinsoniiSubspArupensisOk94513",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

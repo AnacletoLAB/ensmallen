@@ -91,7 +91,7 @@ def PrevotellaDisiensFb03509an(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaDisiensFb03509an",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

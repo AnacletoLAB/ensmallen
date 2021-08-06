@@ -78,7 +78,7 @@ def Troll(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Troll",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

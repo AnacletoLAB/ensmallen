@@ -88,7 +88,7 @@ def StenotrophomonasRhizophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StenotrophomonasRhizophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

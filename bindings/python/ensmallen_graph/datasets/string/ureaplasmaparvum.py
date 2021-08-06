@@ -91,7 +91,7 @@ def UreaplasmaParvum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UreaplasmaParvum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

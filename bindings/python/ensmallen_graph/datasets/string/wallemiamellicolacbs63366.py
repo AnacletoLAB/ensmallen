@@ -88,7 +88,7 @@ def WallemiaMellicolaCbs63366(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WallemiaMellicolaCbs63366",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

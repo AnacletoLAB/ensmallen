@@ -88,7 +88,7 @@ def AeromonasBivalvium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AeromonasBivalvium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

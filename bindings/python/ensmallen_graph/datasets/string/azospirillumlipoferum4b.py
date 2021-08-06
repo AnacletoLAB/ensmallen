@@ -88,7 +88,7 @@ def AzospirillumLipoferum4b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AzospirillumLipoferum4b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

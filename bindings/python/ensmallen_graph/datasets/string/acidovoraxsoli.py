@@ -88,7 +88,7 @@ def AcidovoraxSoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidovoraxSoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

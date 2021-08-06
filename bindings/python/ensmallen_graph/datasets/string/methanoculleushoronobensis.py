@@ -88,7 +88,7 @@ def MethanoculleusHoronobensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanoculleusHoronobensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

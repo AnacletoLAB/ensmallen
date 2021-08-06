@@ -91,7 +91,7 @@ def KozakiaBaliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KozakiaBaliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

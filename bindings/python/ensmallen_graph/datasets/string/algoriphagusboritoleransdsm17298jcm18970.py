@@ -88,7 +88,7 @@ def AlgoriphagusBoritoleransDsm17298Jcm18970(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlgoriphagusBoritoleransDsm17298Jcm18970",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

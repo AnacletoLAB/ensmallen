@@ -88,7 +88,7 @@ def LaetiporusSulphureus9353(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LaetiporusSulphureus9353",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

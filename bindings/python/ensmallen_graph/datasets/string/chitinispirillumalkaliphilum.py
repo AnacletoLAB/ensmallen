@@ -88,7 +88,7 @@ def ChitinispirillumAlkaliphilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChitinispirillumAlkaliphilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

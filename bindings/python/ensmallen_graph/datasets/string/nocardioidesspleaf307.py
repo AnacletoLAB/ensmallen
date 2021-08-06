@@ -88,7 +88,7 @@ def NocardioidesSpLeaf307(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardioidesSpLeaf307",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

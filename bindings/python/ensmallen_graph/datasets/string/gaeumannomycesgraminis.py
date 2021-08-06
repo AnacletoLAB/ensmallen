@@ -91,7 +91,7 @@ def GaeumannomycesGraminis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GaeumannomycesGraminis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

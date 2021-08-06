@@ -91,7 +91,7 @@ def PichiaKudriavzevii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PichiaKudriavzevii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

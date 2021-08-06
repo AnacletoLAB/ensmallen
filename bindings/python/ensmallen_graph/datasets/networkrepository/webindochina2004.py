@@ -112,7 +112,7 @@ def WebIndochina2004(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebIndochina2004",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

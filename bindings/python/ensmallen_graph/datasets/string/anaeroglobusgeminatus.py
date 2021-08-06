@@ -91,7 +91,7 @@ def AnaeroglobusGeminatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaeroglobusGeminatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ThermodesulforhabdusNorvegica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermodesulforhabdusNorvegica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

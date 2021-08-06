@@ -88,7 +88,7 @@ def HalolaminaSpCba1230(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalolaminaSpCba1230",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

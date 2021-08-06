@@ -78,7 +78,7 @@ def Pattern1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Pattern1",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

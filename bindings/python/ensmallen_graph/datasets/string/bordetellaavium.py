@@ -91,7 +91,7 @@ def BordetellaAvium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BordetellaAvium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

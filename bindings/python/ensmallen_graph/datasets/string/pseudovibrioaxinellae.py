@@ -88,7 +88,7 @@ def PseudovibrioAxinellae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudovibrioAxinellae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

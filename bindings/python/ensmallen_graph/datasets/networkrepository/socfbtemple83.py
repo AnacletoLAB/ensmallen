@@ -120,7 +120,7 @@ def SocfbTemple83(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbTemple83",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def SynechococcusSpKordi100(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SynechococcusSpKordi100",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

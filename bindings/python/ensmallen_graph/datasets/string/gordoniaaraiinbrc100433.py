@@ -88,7 +88,7 @@ def GordoniaAraiiNbrc100433(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GordoniaAraiiNbrc100433",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

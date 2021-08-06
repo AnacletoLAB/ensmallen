@@ -88,7 +88,7 @@ def ThermoanaerobaculumAquaticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermoanaerobaculumAquaticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

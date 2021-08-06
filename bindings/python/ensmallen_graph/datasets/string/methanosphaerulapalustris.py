@@ -91,7 +91,7 @@ def MethanosphaerulaPalustris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanosphaerulaPalustris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

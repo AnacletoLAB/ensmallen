@@ -88,7 +88,7 @@ def NeptunomonasPhycophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeptunomonasPhycophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

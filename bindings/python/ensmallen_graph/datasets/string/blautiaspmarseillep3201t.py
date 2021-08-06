@@ -88,7 +88,7 @@ def BlautiaSpMarseilleP3201t(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlautiaSpMarseilleP3201t",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

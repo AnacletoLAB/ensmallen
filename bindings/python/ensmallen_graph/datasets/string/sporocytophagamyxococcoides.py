@@ -91,7 +91,7 @@ def SporocytophagaMyxococcoides(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SporocytophagaMyxococcoides",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

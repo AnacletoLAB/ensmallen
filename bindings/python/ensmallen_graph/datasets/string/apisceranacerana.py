@@ -88,7 +88,7 @@ def ApisCeranaCerana(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ApisCeranaCerana",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

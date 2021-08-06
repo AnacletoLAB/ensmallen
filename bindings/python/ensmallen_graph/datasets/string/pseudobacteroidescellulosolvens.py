@@ -91,7 +91,7 @@ def PseudobacteroidesCellulosolvens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudobacteroidesCellulosolvens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

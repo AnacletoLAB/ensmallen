@@ -91,7 +91,7 @@ def HoldemaniaFiliformis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HoldemaniaFiliformis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

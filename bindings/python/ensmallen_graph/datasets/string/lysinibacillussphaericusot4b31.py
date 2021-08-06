@@ -91,7 +91,7 @@ def LysinibacillusSphaericusOt4b31(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LysinibacillusSphaericusOt4b31",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

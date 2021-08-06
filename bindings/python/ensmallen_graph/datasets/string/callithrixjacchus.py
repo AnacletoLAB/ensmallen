@@ -91,7 +91,7 @@ def CallithrixJacchus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CallithrixJacchus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

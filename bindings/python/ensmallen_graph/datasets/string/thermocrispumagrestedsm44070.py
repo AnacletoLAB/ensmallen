@@ -88,7 +88,7 @@ def ThermocrispumAgresteDsm44070(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermocrispumAgresteDsm44070",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

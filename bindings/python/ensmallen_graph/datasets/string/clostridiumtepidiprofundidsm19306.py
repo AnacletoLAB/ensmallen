@@ -88,7 +88,7 @@ def ClostridiumTepidiprofundiDsm19306(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumTepidiprofundiDsm19306",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

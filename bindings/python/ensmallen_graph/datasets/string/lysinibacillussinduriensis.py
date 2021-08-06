@@ -91,7 +91,7 @@ def LysinibacillusSinduriensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LysinibacillusSinduriensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

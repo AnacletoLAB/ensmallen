@@ -88,7 +88,7 @@ def SalinivirgaCyanobacteriivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinivirgaCyanobacteriivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

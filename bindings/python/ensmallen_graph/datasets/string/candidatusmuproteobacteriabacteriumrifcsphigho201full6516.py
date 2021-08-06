@@ -88,7 +88,7 @@ def CandidatusMuproteobacteriaBacteriumRifcsphigho201Full6516(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusMuproteobacteriaBacteriumRifcsphigho201Full6516",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

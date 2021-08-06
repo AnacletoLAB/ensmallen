@@ -88,7 +88,7 @@ def SaccharothrixSpAli22I(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SaccharothrixSpAli22I",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

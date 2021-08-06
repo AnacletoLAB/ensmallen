@@ -88,7 +88,7 @@ def MassilibacteroidesVaginae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MassilibacteroidesVaginae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

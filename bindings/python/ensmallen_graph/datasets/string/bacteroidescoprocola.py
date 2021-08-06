@@ -91,7 +91,7 @@ def BacteroidesCoprocola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesCoprocola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

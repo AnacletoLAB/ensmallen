@@ -91,7 +91,7 @@ def SulfurimonasAutotrophica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfurimonasAutotrophica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

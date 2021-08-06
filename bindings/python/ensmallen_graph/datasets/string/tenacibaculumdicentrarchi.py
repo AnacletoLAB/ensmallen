@@ -88,7 +88,7 @@ def TenacibaculumDicentrarchi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TenacibaculumDicentrarchi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

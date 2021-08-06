@@ -91,7 +91,7 @@ def AcinetobacterIndicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcinetobacterIndicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PyramidobacterPiscolens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PyramidobacterPiscolens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def UnculturedClostridiumSp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UnculturedClostridiumSp",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

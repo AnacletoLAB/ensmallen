@@ -91,7 +91,7 @@ def SyntrophomonasWolfei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SyntrophomonasWolfei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

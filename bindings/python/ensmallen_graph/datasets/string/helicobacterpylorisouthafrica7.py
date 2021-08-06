@@ -91,7 +91,7 @@ def HelicobacterPyloriSouthafrica7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelicobacterPyloriSouthafrica7",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

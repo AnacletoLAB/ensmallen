@@ -88,7 +88,7 @@ def BordetellaFlabilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BordetellaFlabilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

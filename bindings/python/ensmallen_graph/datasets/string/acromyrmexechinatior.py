@@ -91,7 +91,7 @@ def AcromyrmexEchinatior(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcromyrmexEchinatior",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PhaeodactylibacterXiamenensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhaeodactylibacterXiamenensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

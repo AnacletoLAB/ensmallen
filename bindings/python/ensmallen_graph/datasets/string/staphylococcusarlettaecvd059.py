@@ -88,7 +88,7 @@ def StaphylococcusArlettaeCvd059(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StaphylococcusArlettaeCvd059",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

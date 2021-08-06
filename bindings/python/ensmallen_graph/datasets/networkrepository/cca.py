@@ -78,7 +78,7 @@ def Cca(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Cca",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

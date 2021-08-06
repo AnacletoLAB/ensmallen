@@ -88,7 +88,7 @@ def DevosiaChinhatensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DevosiaChinhatensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

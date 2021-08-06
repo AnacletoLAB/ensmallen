@@ -88,7 +88,7 @@ def PhyseterCatodon(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhyseterCatodon",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

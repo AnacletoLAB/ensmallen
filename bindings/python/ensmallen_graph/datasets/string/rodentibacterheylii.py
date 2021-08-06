@@ -88,7 +88,7 @@ def RodentibacterHeylii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RodentibacterHeylii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

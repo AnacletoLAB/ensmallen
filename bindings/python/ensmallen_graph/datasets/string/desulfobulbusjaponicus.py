@@ -91,7 +91,7 @@ def DesulfobulbusJaponicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfobulbusJaponicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

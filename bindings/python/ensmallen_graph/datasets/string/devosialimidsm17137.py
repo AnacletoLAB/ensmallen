@@ -88,7 +88,7 @@ def DevosiaLimiDsm17137(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DevosiaLimiDsm17137",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

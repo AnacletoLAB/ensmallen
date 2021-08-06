@@ -88,7 +88,7 @@ def ComamonadaceaeBacteriumScn6820(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ComamonadaceaeBacteriumScn6820",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def LactobacillusKefiriDsm20587Jcm5818(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusKefiriDsm20587Jcm5818",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

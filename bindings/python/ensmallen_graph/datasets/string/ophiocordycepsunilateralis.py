@@ -88,7 +88,7 @@ def OphiocordycepsUnilateralis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OphiocordycepsUnilateralis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

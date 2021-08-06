@@ -91,7 +91,7 @@ def ChryseobacteriumFormosense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChryseobacteriumFormosense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

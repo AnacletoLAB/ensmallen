@@ -91,7 +91,7 @@ def MesoaciditogaLauensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MesoaciditogaLauensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

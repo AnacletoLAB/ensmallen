@@ -91,7 +91,7 @@ def NevskiaRamosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NevskiaRamosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PucciniaStriiformisFSpTriticiPst78(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PucciniaStriiformisFSpTriticiPst78",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

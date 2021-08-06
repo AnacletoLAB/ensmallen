@@ -91,7 +91,7 @@ def LeptospirillumFerrooxidans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptospirillumFerrooxidans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

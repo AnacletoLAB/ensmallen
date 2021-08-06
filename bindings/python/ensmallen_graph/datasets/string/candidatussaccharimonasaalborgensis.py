@@ -88,7 +88,7 @@ def CandidatusSaccharimonasAalborgensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusSaccharimonasAalborgensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

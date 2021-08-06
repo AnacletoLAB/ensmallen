@@ -88,7 +88,7 @@ def ClostridiumAcetireducensDsm10703(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumAcetireducensDsm10703",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def LeptolyngbyaSpNies2104(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptolyngbyaSpNies2104",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

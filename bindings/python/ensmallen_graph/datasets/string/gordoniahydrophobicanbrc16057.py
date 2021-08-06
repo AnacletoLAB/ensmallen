@@ -88,7 +88,7 @@ def GordoniaHydrophobicaNbrc16057(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GordoniaHydrophobicaNbrc16057",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def EchinicolaPacifica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EchinicolaPacifica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

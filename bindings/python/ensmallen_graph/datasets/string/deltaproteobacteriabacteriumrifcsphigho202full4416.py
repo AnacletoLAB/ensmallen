@@ -88,7 +88,7 @@ def DeltaproteobacteriaBacteriumRifcsphigho202Full4416(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DeltaproteobacteriaBacteriumRifcsphigho202Full4416",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

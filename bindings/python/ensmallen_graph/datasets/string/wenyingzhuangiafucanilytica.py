@@ -88,7 +88,7 @@ def WenyingzhuangiaFucanilytica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WenyingzhuangiaFucanilytica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ThalassiosiraOceanica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThalassiosiraOceanica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

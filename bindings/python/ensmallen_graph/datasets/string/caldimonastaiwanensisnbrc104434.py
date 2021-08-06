@@ -88,7 +88,7 @@ def CaldimonasTaiwanensisNbrc104434(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaldimonasTaiwanensisNbrc104434",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

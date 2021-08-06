@@ -88,7 +88,7 @@ def MailhellaMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MailhellaMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

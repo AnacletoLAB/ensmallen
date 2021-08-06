@@ -91,7 +91,7 @@ def GemellaHaemolysansM341(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GemellaHaemolysansM341",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

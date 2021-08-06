@@ -88,7 +88,7 @@ def HalobacteriumHubeiense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalobacteriumHubeiense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

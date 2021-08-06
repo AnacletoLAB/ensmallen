@@ -88,7 +88,7 @@ def CercosporaBerteroae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CercosporaBerteroae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ButyricicoccusPullicaecorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ButyricicoccusPullicaecorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def WohlfahrtiimonasPopuli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WohlfahrtiimonasPopuli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

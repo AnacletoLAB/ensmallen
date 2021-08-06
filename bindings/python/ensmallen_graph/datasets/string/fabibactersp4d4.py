@@ -88,7 +88,7 @@ def FabibacterSp4d4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FabibacterSp4d4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

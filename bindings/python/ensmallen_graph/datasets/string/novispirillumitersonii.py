@@ -91,7 +91,7 @@ def NovispirillumItersonii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NovispirillumItersonii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

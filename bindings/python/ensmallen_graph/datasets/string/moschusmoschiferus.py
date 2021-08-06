@@ -88,7 +88,7 @@ def MoschusMoschiferus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MoschusMoschiferus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

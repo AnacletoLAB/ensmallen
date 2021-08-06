@@ -91,7 +91,7 @@ def ThermococcusNautili(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermococcusNautili",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

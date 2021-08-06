@@ -88,7 +88,7 @@ def ThermoanaerobacterMathraniiSubspMathraniiStrA3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermoanaerobacterMathraniiSubspMathraniiStrA3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

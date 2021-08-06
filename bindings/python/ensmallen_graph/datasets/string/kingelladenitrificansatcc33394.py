@@ -88,7 +88,7 @@ def KingellaDenitrificansAtcc33394(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KingellaDenitrificansAtcc33394",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

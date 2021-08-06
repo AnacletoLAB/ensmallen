@@ -88,7 +88,7 @@ def SocFriendster(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocFriendster",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

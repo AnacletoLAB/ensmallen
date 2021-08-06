@@ -88,7 +88,7 @@ def NeorickettsiaHelminthoecaStrOregon(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeorickettsiaHelminthoecaStrOregon",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

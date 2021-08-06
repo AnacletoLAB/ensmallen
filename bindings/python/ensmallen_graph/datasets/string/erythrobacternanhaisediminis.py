@@ -88,7 +88,7 @@ def ErythrobacterNanhaisediminis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErythrobacterNanhaisediminis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

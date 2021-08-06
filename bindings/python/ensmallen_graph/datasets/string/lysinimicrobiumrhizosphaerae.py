@@ -88,7 +88,7 @@ def LysinimicrobiumRhizosphaerae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LysinimicrobiumRhizosphaerae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

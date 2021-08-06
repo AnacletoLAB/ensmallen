@@ -91,7 +91,7 @@ def MarinimicrobiumAgarilyticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinimicrobiumAgarilyticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

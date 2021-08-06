@@ -88,7 +88,7 @@ def ChelatococcusSpCo6(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChelatococcusSpCo6",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

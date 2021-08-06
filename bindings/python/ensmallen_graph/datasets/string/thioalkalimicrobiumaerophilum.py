@@ -91,7 +91,7 @@ def ThioalkalimicrobiumAerophilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThioalkalimicrobiumAerophilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

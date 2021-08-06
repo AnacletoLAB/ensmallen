@@ -91,7 +91,7 @@ def ScheffersomycesStipitis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ScheffersomycesStipitis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

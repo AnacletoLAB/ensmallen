@@ -88,7 +88,7 @@ def SpiroplasmaKunkeliiCr23x(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpiroplasmaKunkeliiCr23x",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

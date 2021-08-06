@@ -88,7 +88,7 @@ def BerkelbacteriaBacteriumGw2011Gwb1385(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BerkelbacteriaBacteriumGw2011Gwb1385",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MuribacterMuris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MuribacterMuris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PlanococcusHalocryophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlanococcusHalocryophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

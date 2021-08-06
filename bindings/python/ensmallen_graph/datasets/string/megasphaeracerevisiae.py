@@ -88,7 +88,7 @@ def MegasphaeraCerevisiae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MegasphaeraCerevisiae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

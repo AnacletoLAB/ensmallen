@@ -88,7 +88,7 @@ def HathewayaProteolyticaDsm3090(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HathewayaProteolyticaDsm3090",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

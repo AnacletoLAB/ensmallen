@@ -91,7 +91,7 @@ def MusaAcuminata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MusaAcuminata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

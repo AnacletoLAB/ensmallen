@@ -88,7 +88,7 @@ def PelagibacteriumLuteolum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PelagibacteriumLuteolum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

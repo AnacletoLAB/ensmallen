@@ -91,7 +91,7 @@ def SingulisphaeraAcidiphila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SingulisphaeraAcidiphila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def BeijerinckiaIndica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BeijerinckiaIndica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

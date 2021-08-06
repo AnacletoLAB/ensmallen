@@ -88,7 +88,7 @@ def OceanibaculumPacificum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OceanibaculumPacificum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

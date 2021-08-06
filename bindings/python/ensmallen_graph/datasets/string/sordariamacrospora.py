@@ -91,7 +91,7 @@ def SordariaMacrospora(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SordariaMacrospora",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

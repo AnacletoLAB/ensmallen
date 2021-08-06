@@ -88,7 +88,7 @@ def ClostridiumCfSaccharolyticumK10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumCfSaccharolyticumK10",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

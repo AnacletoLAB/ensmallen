@@ -88,7 +88,7 @@ def PeronosporaEffusa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeronosporaEffusa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

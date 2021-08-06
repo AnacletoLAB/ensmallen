@@ -88,7 +88,7 @@ def MarinilactibacillusPiezotolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinilactibacillusPiezotolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

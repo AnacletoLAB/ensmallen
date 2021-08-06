@@ -88,7 +88,7 @@ def EnterovibrioCoralii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterovibrioCoralii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

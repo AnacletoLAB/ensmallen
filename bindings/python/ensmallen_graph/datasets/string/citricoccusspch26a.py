@@ -91,7 +91,7 @@ def CitricoccusSpCh26a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CitricoccusSpCh26a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

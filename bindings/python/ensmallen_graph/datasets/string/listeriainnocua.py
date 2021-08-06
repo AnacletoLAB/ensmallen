@@ -91,7 +91,7 @@ def ListeriaInnocua(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ListeriaInnocua",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

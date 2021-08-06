@@ -91,7 +91,7 @@ def CyanobiumGracile(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CyanobiumGracile",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def HymenobacterAerophilusDsm13606(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HymenobacterAerophilusDsm13606",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

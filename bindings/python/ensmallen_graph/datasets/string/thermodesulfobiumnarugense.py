@@ -91,7 +91,7 @@ def ThermodesulfobiumNarugense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermodesulfobiumNarugense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

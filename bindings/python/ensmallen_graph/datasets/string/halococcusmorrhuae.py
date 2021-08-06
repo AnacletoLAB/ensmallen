@@ -91,7 +91,7 @@ def HalococcusMorrhuae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalococcusMorrhuae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

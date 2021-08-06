@@ -88,7 +88,7 @@ def VerticilliumAlfalfaeVams102(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VerticilliumAlfalfaeVams102",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

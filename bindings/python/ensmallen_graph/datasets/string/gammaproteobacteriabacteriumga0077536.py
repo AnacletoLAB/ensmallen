@@ -88,7 +88,7 @@ def GammaproteobacteriaBacteriumGa0077536(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GammaproteobacteriaBacteriumGa0077536",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

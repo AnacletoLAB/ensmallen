@@ -88,7 +88,7 @@ def MarinimicrobiaBacteriumScgcAaa160I06(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinimicrobiaBacteriumScgcAaa160I06",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

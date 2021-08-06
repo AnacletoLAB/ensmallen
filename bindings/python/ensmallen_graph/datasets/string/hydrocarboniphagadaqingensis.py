@@ -88,7 +88,7 @@ def HydrocarboniphagaDaqingensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HydrocarboniphagaDaqingensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

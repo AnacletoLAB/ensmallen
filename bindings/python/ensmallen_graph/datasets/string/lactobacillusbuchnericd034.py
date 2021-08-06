@@ -91,7 +91,7 @@ def LactobacillusBuchneriCd034(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusBuchneriCd034",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

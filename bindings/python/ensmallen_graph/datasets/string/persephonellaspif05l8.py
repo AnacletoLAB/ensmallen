@@ -91,7 +91,7 @@ def PersephonellaSpIf05l8(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PersephonellaSpIf05l8",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def SolanumTuberosum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SolanumTuberosum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

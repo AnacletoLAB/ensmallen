@@ -91,7 +91,7 @@ def RhodobacterSpSw2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodobacterSpSw2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

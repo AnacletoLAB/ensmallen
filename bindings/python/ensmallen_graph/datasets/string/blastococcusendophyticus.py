@@ -88,7 +88,7 @@ def BlastococcusEndophyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlastococcusEndophyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def FlavobacteriaceaeBacteriumT5Br10B2g0(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriaceaeBacteriumT5Br10B2g0",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

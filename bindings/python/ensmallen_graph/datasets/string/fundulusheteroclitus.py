@@ -88,7 +88,7 @@ def FundulusHeteroclitus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FundulusHeteroclitus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

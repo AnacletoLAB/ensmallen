@@ -91,7 +91,7 @@ def CellulomonasSpHzm(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CellulomonasSpHzm",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

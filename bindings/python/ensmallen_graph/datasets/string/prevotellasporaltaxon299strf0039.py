@@ -88,7 +88,7 @@ def PrevotellaSpOralTaxon299StrF0039(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaSpOralTaxon299StrF0039",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

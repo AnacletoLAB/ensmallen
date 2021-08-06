@@ -91,7 +91,7 @@ def FervidicoccusFontis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FervidicoccusFontis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

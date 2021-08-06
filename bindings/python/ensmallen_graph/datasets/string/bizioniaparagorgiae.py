@@ -88,7 +88,7 @@ def BizioniaParagorgiae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BizioniaParagorgiae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

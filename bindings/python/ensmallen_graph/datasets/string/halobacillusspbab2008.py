@@ -91,7 +91,7 @@ def HalobacillusSpBab2008(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalobacillusSpBab2008",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

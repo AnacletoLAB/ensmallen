@@ -88,7 +88,7 @@ def CandidaHaemulonis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidaHaemulonis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

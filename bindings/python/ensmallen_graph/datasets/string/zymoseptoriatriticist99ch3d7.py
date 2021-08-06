@@ -88,7 +88,7 @@ def ZymoseptoriaTriticiSt99ch3d7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZymoseptoriaTriticiSt99ch3d7",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

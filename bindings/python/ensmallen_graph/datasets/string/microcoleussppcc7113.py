@@ -91,7 +91,7 @@ def MicrocoleusSpPcc7113(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrocoleusSpPcc7113",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

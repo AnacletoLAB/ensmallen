@@ -88,7 +88,7 @@ def ThermofilumUzonense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermofilumUzonense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

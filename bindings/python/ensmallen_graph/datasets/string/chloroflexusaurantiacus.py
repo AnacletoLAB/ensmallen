@@ -91,7 +91,7 @@ def ChloroflexusAurantiacus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChloroflexusAurantiacus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

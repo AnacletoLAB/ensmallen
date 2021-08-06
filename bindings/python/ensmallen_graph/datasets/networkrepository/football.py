@@ -78,7 +78,7 @@ def Football(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Football",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def CellulomonasFimi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CellulomonasFimi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

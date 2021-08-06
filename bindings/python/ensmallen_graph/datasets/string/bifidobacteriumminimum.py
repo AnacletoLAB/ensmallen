@@ -91,7 +91,7 @@ def BifidobacteriumMinimum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BifidobacteriumMinimum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def SocLocBrightkite(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocLocBrightkite",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

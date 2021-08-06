@@ -88,7 +88,7 @@ def PhotobacteriumHalotolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhotobacteriumHalotolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

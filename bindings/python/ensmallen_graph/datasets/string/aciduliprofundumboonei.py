@@ -91,7 +91,7 @@ def AciduliprofundumBoonei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AciduliprofundumBoonei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

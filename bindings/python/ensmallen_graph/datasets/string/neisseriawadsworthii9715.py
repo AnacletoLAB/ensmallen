@@ -88,7 +88,7 @@ def NeisseriaWadsworthii9715(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeisseriaWadsworthii9715",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

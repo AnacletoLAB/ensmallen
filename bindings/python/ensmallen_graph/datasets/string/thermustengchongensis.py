@@ -91,7 +91,7 @@ def ThermusTengchongensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermusTengchongensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

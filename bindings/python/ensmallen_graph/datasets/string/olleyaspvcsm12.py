@@ -91,7 +91,7 @@ def OlleyaSpVcsm12(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OlleyaSpVcsm12",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

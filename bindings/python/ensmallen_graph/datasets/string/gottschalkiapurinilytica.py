@@ -88,7 +88,7 @@ def GottschalkiaPurinilytica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GottschalkiaPurinilytica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def HerbaspirillumSeropedicae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HerbaspirillumSeropedicae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

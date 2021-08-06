@@ -88,7 +88,7 @@ def ChiloSuppressalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChiloSuppressalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

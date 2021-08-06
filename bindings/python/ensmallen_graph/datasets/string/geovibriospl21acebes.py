@@ -91,7 +91,7 @@ def GeovibrioSpL21acebes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeovibrioSpL21acebes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

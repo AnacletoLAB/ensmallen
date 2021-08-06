@@ -91,7 +91,7 @@ def LeptotrichiaTrevisanii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptotrichiaTrevisanii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SelenomonasArtemidisF0399(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SelenomonasArtemidisF0399",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

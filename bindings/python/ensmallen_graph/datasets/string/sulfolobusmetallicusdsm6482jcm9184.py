@@ -88,7 +88,7 @@ def SulfolobusMetallicusDsm6482Jcm9184(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfolobusMetallicusDsm6482Jcm9184",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

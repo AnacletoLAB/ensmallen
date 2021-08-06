@@ -88,7 +88,7 @@ def PrunusYedoensisVarNudiflora(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrunusYedoensisVarNudiflora",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

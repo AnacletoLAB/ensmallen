@@ -91,7 +91,7 @@ def BradyrhizobiumSpWsm2793(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BradyrhizobiumSpWsm2793",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def LeptospiraVanthieliiSerovarHollandStrWazHollandAtcc700522(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptospiraVanthieliiSerovarHollandStrWazHollandAtcc700522",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

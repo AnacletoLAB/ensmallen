@@ -91,7 +91,7 @@ def NatronococcusAmylolyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NatronococcusAmylolyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

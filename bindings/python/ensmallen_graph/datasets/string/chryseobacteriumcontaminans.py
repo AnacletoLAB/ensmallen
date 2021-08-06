@@ -88,7 +88,7 @@ def ChryseobacteriumContaminans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChryseobacteriumContaminans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

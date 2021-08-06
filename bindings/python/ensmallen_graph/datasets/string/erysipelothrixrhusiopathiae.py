@@ -91,7 +91,7 @@ def ErysipelothrixRhusiopathiae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErysipelothrixRhusiopathiae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

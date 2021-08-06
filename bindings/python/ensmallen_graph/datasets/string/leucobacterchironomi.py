@@ -91,7 +91,7 @@ def LeucobacterChironomi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeucobacterChironomi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def GymnopilusDilepis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GymnopilusDilepis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

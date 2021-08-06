@@ -88,7 +88,7 @@ def ErysipelotrichaceaeBacteriumNyuBlE8(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErysipelotrichaceaeBacteriumNyuBlE8",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

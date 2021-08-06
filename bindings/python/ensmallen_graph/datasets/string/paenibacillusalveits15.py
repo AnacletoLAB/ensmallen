@@ -88,7 +88,7 @@ def PaenibacillusAlveiTs15(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillusAlveiTs15",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

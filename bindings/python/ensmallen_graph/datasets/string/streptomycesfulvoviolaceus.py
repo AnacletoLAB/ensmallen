@@ -91,7 +91,7 @@ def StreptomycesFulvoviolaceus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesFulvoviolaceus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

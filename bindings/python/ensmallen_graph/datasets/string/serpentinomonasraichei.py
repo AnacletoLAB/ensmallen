@@ -88,7 +88,7 @@ def SerpentinomonasRaichei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SerpentinomonasRaichei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ProvidenciaRettgeriDmel1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProvidenciaRettgeriDmel1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

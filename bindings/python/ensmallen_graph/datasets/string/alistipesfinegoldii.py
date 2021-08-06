@@ -91,7 +91,7 @@ def AlistipesFinegoldii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlistipesFinegoldii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

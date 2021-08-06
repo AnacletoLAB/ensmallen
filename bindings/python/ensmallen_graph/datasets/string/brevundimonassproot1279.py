@@ -88,7 +88,7 @@ def BrevundimonasSpRoot1279(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrevundimonasSpRoot1279",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

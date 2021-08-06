@@ -91,7 +91,7 @@ def DesulfosporosinusAcidiphilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfosporosinusAcidiphilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

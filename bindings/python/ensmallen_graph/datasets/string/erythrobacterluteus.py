@@ -88,7 +88,7 @@ def ErythrobacterLuteus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErythrobacterLuteus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MethanoculleusSpSdb(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanoculleusSpSdb",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PropionicicellaSuperfundiaDsm22317(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PropionicicellaSuperfundiaDsm22317",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def TropilaelapsMercedesae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TropilaelapsMercedesae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

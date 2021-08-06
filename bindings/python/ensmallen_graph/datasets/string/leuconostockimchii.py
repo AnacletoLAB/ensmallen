@@ -91,7 +91,7 @@ def LeuconostocKimchii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeuconostocKimchii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

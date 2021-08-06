@@ -88,7 +88,7 @@ def AgrobacteriumArsenijevicii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AgrobacteriumArsenijevicii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

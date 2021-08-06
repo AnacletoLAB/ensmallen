@@ -78,7 +78,7 @@ def PowerEris1176(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PowerEris1176",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

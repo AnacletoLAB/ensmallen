@@ -91,7 +91,7 @@ def ClostridiumBifermentans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumBifermentans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

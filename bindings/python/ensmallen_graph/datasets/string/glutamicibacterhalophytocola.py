@@ -88,7 +88,7 @@ def GlutamicibacterHalophytocola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GlutamicibacterHalophytocola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

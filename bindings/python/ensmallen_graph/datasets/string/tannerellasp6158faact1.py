@@ -88,7 +88,7 @@ def TannerellaSp6158faaCt1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TannerellaSp6158faaCt1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def EnterobacteriaceaeBacteriumStrain(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterobacteriaceaeBacteriumStrain",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

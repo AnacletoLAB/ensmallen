@@ -91,7 +91,7 @@ def MycobacteriumIntracellulare(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumIntracellulare",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

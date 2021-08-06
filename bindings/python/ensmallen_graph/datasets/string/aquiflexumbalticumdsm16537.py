@@ -88,7 +88,7 @@ def AquiflexumBalticumDsm16537(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AquiflexumBalticumDsm16537",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

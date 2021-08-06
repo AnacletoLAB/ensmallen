@@ -91,7 +91,7 @@ def KineococcusRadiotolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KineococcusRadiotolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

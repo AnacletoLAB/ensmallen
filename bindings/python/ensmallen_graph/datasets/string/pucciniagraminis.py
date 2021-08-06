@@ -91,7 +91,7 @@ def PucciniaGraminis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PucciniaGraminis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

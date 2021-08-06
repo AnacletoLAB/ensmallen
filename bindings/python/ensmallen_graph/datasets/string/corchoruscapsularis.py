@@ -88,7 +88,7 @@ def CorchorusCapsularis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorchorusCapsularis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

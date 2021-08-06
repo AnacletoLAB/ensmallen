@@ -91,7 +91,7 @@ def FrancisellaPhilomiragia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FrancisellaPhilomiragia",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

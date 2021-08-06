@@ -88,7 +88,7 @@ def AnanasComosus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnanasComosus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

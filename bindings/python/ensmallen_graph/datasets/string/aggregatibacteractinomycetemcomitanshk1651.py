@@ -91,7 +91,7 @@ def AggregatibacterActinomycetemcomitansHk1651(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AggregatibacterActinomycetemcomitansHk1651",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

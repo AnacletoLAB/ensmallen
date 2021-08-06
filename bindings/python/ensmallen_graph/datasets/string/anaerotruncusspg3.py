@@ -91,7 +91,7 @@ def AnaerotruncusSpG3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerotruncusSpG3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

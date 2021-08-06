@@ -91,7 +91,7 @@ def PseudomonasCremoricolorata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasCremoricolorata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

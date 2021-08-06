@@ -88,7 +88,7 @@ def ActinopolysporaXinjiangensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinopolysporaXinjiangensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

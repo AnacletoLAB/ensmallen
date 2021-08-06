@@ -91,7 +91,7 @@ def BifidobacteriumBifidumNcimb41171(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BifidobacteriumBifidumNcimb41171",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def Ccc(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Ccc",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

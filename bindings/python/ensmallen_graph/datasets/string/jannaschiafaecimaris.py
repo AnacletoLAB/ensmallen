@@ -88,7 +88,7 @@ def JannaschiaFaecimaris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JannaschiaFaecimaris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

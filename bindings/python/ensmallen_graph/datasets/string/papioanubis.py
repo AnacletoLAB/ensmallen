@@ -91,7 +91,7 @@ def PapioAnubis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PapioAnubis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

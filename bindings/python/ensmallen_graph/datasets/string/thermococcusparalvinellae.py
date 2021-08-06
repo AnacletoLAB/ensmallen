@@ -88,7 +88,7 @@ def ThermococcusParalvinellae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermococcusParalvinellae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AnaerolineaeBacteriumUtcfx1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerolineaeBacteriumUtcfx1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

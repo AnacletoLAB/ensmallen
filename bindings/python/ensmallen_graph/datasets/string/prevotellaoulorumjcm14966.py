@@ -91,7 +91,7 @@ def PrevotellaOulorumJcm14966(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaOulorumJcm14966",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

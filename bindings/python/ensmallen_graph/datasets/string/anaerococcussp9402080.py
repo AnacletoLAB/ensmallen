@@ -91,7 +91,7 @@ def AnaerococcusSp9402080(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerococcusSp9402080",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def LactobacillusTuccetiDsm20183(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusTuccetiDsm20183",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

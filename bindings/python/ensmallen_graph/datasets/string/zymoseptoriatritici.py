@@ -91,7 +91,7 @@ def ZymoseptoriaTritici(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZymoseptoriaTritici",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

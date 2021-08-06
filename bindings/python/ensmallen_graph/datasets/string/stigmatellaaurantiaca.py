@@ -91,7 +91,7 @@ def StigmatellaAurantiaca(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StigmatellaAurantiaca",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

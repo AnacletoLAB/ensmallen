@@ -91,7 +91,7 @@ def PeptostreptococcusStomatis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeptostreptococcusStomatis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PsychroflexusSalarius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PsychroflexusSalarius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

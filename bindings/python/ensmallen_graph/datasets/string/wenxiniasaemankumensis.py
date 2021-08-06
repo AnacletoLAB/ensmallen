@@ -88,7 +88,7 @@ def WenxiniaSaemankumensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WenxiniaSaemankumensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

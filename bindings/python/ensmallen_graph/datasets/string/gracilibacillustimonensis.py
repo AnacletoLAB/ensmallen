@@ -88,7 +88,7 @@ def GracilibacillusTimonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GracilibacillusTimonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CorynebacteriumPollutisoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumPollutisoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

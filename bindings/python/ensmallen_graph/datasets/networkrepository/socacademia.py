@@ -96,7 +96,7 @@ def SocAcademia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocAcademia",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

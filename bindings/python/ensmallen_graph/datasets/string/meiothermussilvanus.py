@@ -91,7 +91,7 @@ def MeiothermusSilvanus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MeiothermusSilvanus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

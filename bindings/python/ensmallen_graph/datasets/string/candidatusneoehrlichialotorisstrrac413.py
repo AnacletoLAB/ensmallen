@@ -88,7 +88,7 @@ def CandidatusNeoehrlichiaLotorisStrRac413(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusNeoehrlichiaLotorisStrRac413",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

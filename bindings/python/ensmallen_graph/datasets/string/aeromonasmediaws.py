@@ -88,7 +88,7 @@ def AeromonasMediaWs(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AeromonasMediaWs",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

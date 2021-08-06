@@ -78,7 +78,7 @@ def TechAsCaida20071105(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TechAsCaida20071105",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

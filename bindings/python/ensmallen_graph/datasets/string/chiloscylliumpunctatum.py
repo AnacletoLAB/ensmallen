@@ -88,7 +88,7 @@ def ChiloscylliumPunctatum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChiloscylliumPunctatum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

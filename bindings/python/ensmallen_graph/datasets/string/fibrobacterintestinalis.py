@@ -88,7 +88,7 @@ def FibrobacterIntestinalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FibrobacterIntestinalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

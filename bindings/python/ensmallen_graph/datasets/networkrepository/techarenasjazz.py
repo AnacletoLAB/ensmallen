@@ -78,7 +78,7 @@ def TechArenasJazz(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TechArenasJazz",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

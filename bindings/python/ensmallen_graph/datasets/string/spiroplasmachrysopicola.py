@@ -91,7 +91,7 @@ def SpiroplasmaChrysopicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpiroplasmaChrysopicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

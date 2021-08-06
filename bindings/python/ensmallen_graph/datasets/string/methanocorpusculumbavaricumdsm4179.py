@@ -88,7 +88,7 @@ def MethanocorpusculumBavaricumDsm4179(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanocorpusculumBavaricumDsm4179",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

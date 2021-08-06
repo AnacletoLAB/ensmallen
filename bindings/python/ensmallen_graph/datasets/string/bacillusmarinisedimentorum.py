@@ -88,7 +88,7 @@ def BacillusMarinisedimentorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusMarinisedimentorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

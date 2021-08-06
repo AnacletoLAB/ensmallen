@@ -88,7 +88,7 @@ def PorphyromonadaceaeBacteriumCg2303812(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PorphyromonadaceaeBacteriumCg2303812",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PaenibacillusPolysaccharolyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillusPolysaccharolyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

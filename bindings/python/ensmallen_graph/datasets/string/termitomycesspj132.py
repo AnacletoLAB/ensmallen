@@ -88,7 +88,7 @@ def TermitomycesSpJ132(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TermitomycesSpJ132",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

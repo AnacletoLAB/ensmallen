@@ -88,7 +88,7 @@ def EpicoccumNigrum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EpicoccumNigrum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

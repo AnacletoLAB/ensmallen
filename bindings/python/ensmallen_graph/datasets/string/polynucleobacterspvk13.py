@@ -88,7 +88,7 @@ def PolynucleobacterSpVk13(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PolynucleobacterSpVk13",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

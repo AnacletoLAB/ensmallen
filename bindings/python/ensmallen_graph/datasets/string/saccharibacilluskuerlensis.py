@@ -91,7 +91,7 @@ def SaccharibacillusKuerlensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SaccharibacillusKuerlensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

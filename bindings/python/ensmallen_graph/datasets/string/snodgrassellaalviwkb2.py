@@ -88,7 +88,7 @@ def SnodgrassellaAlviWkb2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SnodgrassellaAlviWkb2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

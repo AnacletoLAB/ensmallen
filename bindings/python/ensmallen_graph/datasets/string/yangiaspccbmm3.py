@@ -88,7 +88,7 @@ def YangiaSpCcbMm3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="YangiaSpCcbMm3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def Stanford(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Stanford",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

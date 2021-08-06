@@ -88,7 +88,7 @@ def CellvibrioSpOa2007(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CellvibrioSpOa2007",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

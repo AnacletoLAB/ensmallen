@@ -88,7 +88,7 @@ def ThermofilumAdornatus1505(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermofilumAdornatus1505",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

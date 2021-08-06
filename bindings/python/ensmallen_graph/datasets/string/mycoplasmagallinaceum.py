@@ -88,7 +88,7 @@ def MycoplasmaGallinaceum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaGallinaceum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def WolbachiaEndosymbiontOfCimexLectularius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WolbachiaEndosymbiontOfCimexLectularius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

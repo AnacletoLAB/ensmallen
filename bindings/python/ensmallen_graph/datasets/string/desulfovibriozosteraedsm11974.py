@@ -88,7 +88,7 @@ def DesulfovibrioZosteraeDsm11974(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioZosteraeDsm11974",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

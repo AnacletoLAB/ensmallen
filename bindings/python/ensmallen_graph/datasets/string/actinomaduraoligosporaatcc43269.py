@@ -88,7 +88,7 @@ def ActinomaduraOligosporaAtcc43269(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomaduraOligosporaAtcc43269",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

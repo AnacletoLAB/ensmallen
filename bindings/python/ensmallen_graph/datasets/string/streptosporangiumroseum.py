@@ -91,7 +91,7 @@ def StreptosporangiumRoseum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptosporangiumRoseum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ProteusMirabilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProteusMirabilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def LactobacillusSpAsf360(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusSpAsf360",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

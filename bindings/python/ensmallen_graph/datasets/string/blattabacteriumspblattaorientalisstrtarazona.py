@@ -88,7 +88,7 @@ def BlattabacteriumSpBlattaOrientalisStrTarazona(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlattabacteriumSpBlattaOrientalisStrTarazona",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PrevotellaVeroralisF0319(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaVeroralisF0319",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

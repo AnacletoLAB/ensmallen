@@ -78,7 +78,7 @@ def Netscience(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Netscience",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

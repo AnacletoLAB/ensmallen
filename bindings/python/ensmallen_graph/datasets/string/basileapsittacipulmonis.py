@@ -91,7 +91,7 @@ def BasileaPsittacipulmonis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BasileaPsittacipulmonis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

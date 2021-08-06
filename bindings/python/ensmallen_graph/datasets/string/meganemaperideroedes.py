@@ -91,7 +91,7 @@ def MeganemaPerideroedes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MeganemaPerideroedes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

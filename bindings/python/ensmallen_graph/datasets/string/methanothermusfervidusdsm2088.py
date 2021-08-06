@@ -88,7 +88,7 @@ def MethanothermusFervidusDsm2088(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanothermusFervidusDsm2088",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

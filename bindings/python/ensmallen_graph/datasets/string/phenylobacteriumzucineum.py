@@ -91,7 +91,7 @@ def PhenylobacteriumZucineum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhenylobacteriumZucineum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

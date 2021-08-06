@@ -88,7 +88,7 @@ def RhodobacteraceaeBacteriumHlucco07(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodobacteraceaeBacteriumHlucco07",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

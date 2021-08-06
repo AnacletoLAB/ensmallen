@@ -91,7 +91,7 @@ def PseudozymaBrasiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudozymaBrasiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

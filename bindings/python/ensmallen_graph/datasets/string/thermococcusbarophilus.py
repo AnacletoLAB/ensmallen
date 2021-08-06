@@ -91,7 +91,7 @@ def ThermococcusBarophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermococcusBarophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

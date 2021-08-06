@@ -91,7 +91,7 @@ def MeyerozymaGuilliermondii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MeyerozymaGuilliermondii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

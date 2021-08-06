@@ -91,7 +91,7 @@ def GordoniaKroppenstedtii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GordoniaKroppenstedtii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

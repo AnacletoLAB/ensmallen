@@ -88,7 +88,7 @@ def PantoeaCypripedii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PantoeaCypripedii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

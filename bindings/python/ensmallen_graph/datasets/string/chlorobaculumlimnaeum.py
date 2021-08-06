@@ -88,7 +88,7 @@ def ChlorobaculumLimnaeum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlorobaculumLimnaeum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

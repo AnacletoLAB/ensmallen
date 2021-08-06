@@ -91,7 +91,7 @@ def CaldicellulosiruptorOwensensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaldicellulosiruptorOwensensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

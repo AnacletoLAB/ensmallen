@@ -91,7 +91,7 @@ def AcyrthosiphonPisum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcyrthosiphonPisum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

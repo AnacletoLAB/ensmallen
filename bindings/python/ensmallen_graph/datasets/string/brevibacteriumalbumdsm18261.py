@@ -88,7 +88,7 @@ def BrevibacteriumAlbumDsm18261(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrevibacteriumAlbumDsm18261",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

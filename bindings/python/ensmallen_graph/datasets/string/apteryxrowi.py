@@ -88,7 +88,7 @@ def ApteryxRowi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ApteryxRowi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

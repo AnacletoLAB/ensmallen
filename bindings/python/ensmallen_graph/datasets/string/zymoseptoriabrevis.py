@@ -88,7 +88,7 @@ def ZymoseptoriaBrevis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZymoseptoriaBrevis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def EubacteriumSaphenum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EubacteriumSaphenum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def RhodotorulaTaiwanensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodotorulaTaiwanensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

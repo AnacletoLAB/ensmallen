@@ -88,7 +88,7 @@ def MethanoculleusThermophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanoculleusThermophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PenicilliumSteckii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PenicilliumSteckii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

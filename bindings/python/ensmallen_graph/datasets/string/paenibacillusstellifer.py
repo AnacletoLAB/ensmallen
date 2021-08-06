@@ -88,7 +88,7 @@ def PaenibacillusStellifer(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillusStellifer",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

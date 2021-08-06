@@ -78,7 +78,7 @@ def EmailEu(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EmailEu",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

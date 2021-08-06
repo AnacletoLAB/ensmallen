@@ -88,7 +88,7 @@ def ChitinophagaEiseniae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChitinophagaEiseniae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def OdoribacterSplanchnicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OdoribacterSplanchnicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

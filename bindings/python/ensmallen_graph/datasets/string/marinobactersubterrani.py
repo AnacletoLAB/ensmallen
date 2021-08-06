@@ -88,7 +88,7 @@ def MarinobacterSubterrani(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinobacterSubterrani",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

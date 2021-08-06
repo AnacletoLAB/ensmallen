@@ -91,7 +91,7 @@ def ThalassospiraProfundimaris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThalassospiraProfundimaris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

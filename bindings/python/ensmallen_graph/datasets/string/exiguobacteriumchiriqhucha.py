@@ -88,7 +88,7 @@ def ExiguobacteriumChiriqhucha(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ExiguobacteriumChiriqhucha",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

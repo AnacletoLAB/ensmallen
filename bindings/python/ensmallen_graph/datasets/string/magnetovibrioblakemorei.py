@@ -88,7 +88,7 @@ def MagnetovibrioBlakemorei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MagnetovibrioBlakemorei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

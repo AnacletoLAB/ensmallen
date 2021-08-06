@@ -91,7 +91,7 @@ def BurkholderiaOklahomensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BurkholderiaOklahomensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

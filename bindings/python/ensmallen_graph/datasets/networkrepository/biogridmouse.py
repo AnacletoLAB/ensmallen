@@ -78,7 +78,7 @@ def BioGridMouse(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BioGridMouse",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

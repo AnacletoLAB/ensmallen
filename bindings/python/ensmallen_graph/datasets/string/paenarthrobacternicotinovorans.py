@@ -88,7 +88,7 @@ def PaenarthrobacterNicotinovorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenarthrobacterNicotinovorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def IlyobacterPolytropus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IlyobacterPolytropus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

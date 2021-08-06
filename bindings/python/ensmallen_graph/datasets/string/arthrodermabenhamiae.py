@@ -91,7 +91,7 @@ def ArthrodermaBenhamiae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArthrodermaBenhamiae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

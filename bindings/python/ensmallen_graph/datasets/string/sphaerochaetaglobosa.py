@@ -91,7 +91,7 @@ def SphaerochaetaGlobosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphaerochaetaGlobosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

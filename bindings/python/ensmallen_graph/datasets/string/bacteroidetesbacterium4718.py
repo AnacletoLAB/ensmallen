@@ -88,7 +88,7 @@ def BacteroidetesBacterium4718(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidetesBacterium4718",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

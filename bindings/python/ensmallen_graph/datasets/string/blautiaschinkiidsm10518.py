@@ -88,7 +88,7 @@ def BlautiaSchinkiiDsm10518(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlautiaSchinkiiDsm10518",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

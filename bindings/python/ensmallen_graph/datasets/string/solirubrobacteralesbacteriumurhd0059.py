@@ -91,7 +91,7 @@ def SolirubrobacteralesBacteriumUrhd0059(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SolirubrobacteralesBacteriumUrhd0059",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

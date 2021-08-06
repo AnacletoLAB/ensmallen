@@ -91,7 +91,7 @@ def SphingobiumLactosutens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingobiumLactosutens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ThermosediminibacterOceani(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermosediminibacterOceani",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

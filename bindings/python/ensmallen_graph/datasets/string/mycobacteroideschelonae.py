@@ -88,7 +88,7 @@ def MycobacteroidesChelonae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteroidesChelonae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

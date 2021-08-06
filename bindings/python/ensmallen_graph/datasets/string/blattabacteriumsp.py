@@ -88,7 +88,7 @@ def BlattabacteriumSp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlattabacteriumSp",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

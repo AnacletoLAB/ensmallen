@@ -88,7 +88,7 @@ def OlegusellaMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OlegusellaMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

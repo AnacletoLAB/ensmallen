@@ -91,7 +91,7 @@ def ParabacteroidesSpAsf519(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParabacteroidesSpAsf519",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

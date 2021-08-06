@@ -88,7 +88,7 @@ def PterulaGracilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PterulaGracilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

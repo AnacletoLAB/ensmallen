@@ -88,7 +88,7 @@ def Bacterium2013arg42i(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Bacterium2013arg42i",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

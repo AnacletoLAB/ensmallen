@@ -91,7 +91,7 @@ def BoecheraStricta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BoecheraStricta",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

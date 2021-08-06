@@ -78,7 +78,7 @@ def RoadChesapeake(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoadChesapeake",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

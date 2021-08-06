@@ -88,7 +88,7 @@ def AkkermansiaSpKle1797(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AkkermansiaSpKle1797",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

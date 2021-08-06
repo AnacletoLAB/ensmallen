@@ -88,7 +88,7 @@ def DemequinaPelophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DemequinaPelophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def FlexibacterFlexilisDsm6793(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlexibacterFlexilisDsm6793",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

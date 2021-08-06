@@ -91,7 +91,7 @@ def StaphylococcusAureus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StaphylococcusAureus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def NovosphingobiumAromaticivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NovosphingobiumAromaticivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

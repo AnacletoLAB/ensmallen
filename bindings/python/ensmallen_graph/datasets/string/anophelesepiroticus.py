@@ -88,7 +88,7 @@ def AnophelesEpiroticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnophelesEpiroticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

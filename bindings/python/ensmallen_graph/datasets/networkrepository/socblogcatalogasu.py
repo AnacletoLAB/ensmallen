@@ -78,7 +78,7 @@ def SocBlogcatalogAsu(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocBlogcatalogAsu",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

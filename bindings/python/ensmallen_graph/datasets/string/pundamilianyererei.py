@@ -91,7 +91,7 @@ def PundamiliaNyererei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PundamiliaNyererei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

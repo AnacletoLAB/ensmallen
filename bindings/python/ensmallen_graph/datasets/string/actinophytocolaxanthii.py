@@ -88,7 +88,7 @@ def ActinophytocolaXanthii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinophytocolaXanthii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

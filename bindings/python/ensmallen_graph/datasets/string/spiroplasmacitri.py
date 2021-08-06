@@ -88,7 +88,7 @@ def SpiroplasmaCitri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpiroplasmaCitri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

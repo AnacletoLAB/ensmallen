@@ -91,7 +91,7 @@ def AcholeplasmaAxanthum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcholeplasmaAxanthum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def DialisterInvisus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DialisterInvisus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

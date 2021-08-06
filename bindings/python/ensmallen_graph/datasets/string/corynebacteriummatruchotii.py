@@ -91,7 +91,7 @@ def CorynebacteriumMatruchotii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumMatruchotii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

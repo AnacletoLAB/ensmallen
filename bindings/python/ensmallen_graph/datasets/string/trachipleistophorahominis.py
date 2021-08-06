@@ -88,7 +88,7 @@ def TrachipleistophoraHominis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrachipleistophoraHominis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def EscherichiaVulneris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EscherichiaVulneris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

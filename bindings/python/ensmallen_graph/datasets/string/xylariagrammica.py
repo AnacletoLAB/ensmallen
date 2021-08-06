@@ -88,7 +88,7 @@ def XylariaGrammica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XylariaGrammica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

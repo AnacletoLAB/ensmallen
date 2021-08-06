@@ -88,7 +88,7 @@ def ChitinophagaArvensicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChitinophagaArvensicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

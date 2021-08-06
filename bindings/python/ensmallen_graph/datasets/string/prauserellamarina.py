@@ -88,7 +88,7 @@ def PrauserellaMarina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrauserellaMarina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def NiastellaVici(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NiastellaVici",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

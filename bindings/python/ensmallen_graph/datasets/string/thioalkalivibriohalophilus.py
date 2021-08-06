@@ -88,7 +88,7 @@ def ThioalkalivibrioHalophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThioalkalivibrioHalophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

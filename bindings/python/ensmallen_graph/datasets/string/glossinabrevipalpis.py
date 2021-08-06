@@ -88,7 +88,7 @@ def GlossinaBrevipalpis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GlossinaBrevipalpis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def KinetoplastibacteriumOncopeltii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KinetoplastibacteriumOncopeltii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

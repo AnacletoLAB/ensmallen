@@ -91,7 +91,7 @@ def MassiliaConsociata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MassiliaConsociata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

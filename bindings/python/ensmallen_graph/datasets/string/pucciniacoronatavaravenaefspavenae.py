@@ -88,7 +88,7 @@ def PucciniaCoronataVarAvenaeFSpAvenae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PucciniaCoronataVarAvenaeFSpAvenae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

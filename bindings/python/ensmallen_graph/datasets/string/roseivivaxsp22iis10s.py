@@ -91,7 +91,7 @@ def RoseivivaxSp22iis10s(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseivivaxSp22iis10s",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

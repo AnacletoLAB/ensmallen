@@ -91,7 +91,7 @@ def PrevotellaOralisHga0225(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaOralisHga0225",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

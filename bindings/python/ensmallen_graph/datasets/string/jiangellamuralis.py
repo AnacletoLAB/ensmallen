@@ -88,7 +88,7 @@ def JiangellaMuralis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JiangellaMuralis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

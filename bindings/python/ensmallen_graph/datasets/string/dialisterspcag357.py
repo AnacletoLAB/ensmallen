@@ -88,7 +88,7 @@ def DialisterSpCag357(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DialisterSpCag357",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

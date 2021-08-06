@@ -88,7 +88,7 @@ def FonsecaeaErecta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FonsecaeaErecta",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

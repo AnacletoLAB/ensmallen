@@ -88,7 +88,7 @@ def DaphniaMagna(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DaphniaMagna",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

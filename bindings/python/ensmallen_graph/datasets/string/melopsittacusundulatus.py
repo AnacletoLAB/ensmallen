@@ -88,7 +88,7 @@ def MelopsittacusUndulatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MelopsittacusUndulatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

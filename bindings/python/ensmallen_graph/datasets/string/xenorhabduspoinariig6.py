@@ -88,7 +88,7 @@ def XenorhabdusPoinariiG6(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XenorhabdusPoinariiG6",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

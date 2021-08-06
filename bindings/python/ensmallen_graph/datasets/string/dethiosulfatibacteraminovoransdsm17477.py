@@ -88,7 +88,7 @@ def DethiosulfatibacterAminovoransDsm17477(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DethiosulfatibacterAminovoransDsm17477",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PezolomaEricae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PezolomaEricae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def OscillatoriaAcuminata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OscillatoriaAcuminata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

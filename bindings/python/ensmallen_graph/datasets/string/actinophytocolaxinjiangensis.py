@@ -88,7 +88,7 @@ def ActinophytocolaXinjiangensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinophytocolaXinjiangensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

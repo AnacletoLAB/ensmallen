@@ -91,7 +91,7 @@ def AlphaProteobacteriumMf105b01(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlphaProteobacteriumMf105b01",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

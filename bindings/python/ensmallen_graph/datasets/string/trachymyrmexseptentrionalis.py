@@ -88,7 +88,7 @@ def TrachymyrmexSeptentrionalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrachymyrmexSeptentrionalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

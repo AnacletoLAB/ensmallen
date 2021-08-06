@@ -88,7 +88,7 @@ def CorynebacteriumBouchesdurhonense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumBouchesdurhonense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

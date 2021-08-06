@@ -91,7 +91,7 @@ def PelagibacaBermudensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PelagibacaBermudensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

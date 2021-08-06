@@ -91,7 +91,7 @@ def AeromicrobiumMassiliense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AeromicrobiumMassiliense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

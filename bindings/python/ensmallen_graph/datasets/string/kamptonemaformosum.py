@@ -91,7 +91,7 @@ def KamptonemaFormosum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KamptonemaFormosum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

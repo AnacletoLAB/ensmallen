@@ -91,7 +91,7 @@ def PseudomonasMandelii36mfcvi11(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasMandelii36mfcvi11",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AlistipesSpCag268(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlistipesSpCag268",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CaloramatorMitchellensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaloramatorMitchellensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

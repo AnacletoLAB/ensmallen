@@ -91,7 +91,7 @@ def LeadbetterellaByssophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeadbetterellaByssophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

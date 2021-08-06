@@ -88,7 +88,7 @@ def YooniaTamlensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="YooniaTamlensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

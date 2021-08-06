@@ -91,7 +91,7 @@ def AcetonemaLongum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcetonemaLongum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

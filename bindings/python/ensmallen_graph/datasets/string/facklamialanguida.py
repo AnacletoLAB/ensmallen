@@ -91,7 +91,7 @@ def FacklamiaLanguida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FacklamiaLanguida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

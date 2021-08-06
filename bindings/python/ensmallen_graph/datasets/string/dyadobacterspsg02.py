@@ -88,7 +88,7 @@ def DyadobacterSpSg02(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DyadobacterSpSg02",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

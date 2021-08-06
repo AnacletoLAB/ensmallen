@@ -88,7 +88,7 @@ def ClostridiumEstertheticumSubspEstertheticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumEstertheticumSubspEstertheticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

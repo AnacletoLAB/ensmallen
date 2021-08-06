@@ -88,7 +88,7 @@ def SpermophilusDauricus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpermophilusDauricus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

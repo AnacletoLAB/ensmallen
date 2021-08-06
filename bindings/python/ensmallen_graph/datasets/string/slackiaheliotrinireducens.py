@@ -91,7 +91,7 @@ def SlackiaHeliotrinireducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SlackiaHeliotrinireducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

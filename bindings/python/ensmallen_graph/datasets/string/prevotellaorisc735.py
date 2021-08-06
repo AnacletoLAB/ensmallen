@@ -91,7 +91,7 @@ def PrevotellaOrisC735(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaOrisC735",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

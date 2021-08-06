@@ -88,7 +88,7 @@ def FaecalitaleaCylindroidesT287(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FaecalitaleaCylindroidesT287",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

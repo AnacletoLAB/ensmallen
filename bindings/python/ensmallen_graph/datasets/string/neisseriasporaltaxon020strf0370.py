@@ -88,7 +88,7 @@ def NeisseriaSpOralTaxon020StrF0370(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeisseriaSpOralTaxon020StrF0370",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

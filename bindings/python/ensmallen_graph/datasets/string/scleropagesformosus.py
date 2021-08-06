@@ -88,7 +88,7 @@ def ScleropagesFormosus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ScleropagesFormosus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

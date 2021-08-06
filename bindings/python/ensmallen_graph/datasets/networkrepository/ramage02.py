@@ -78,7 +78,7 @@ def Ramage02(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Ramage02",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

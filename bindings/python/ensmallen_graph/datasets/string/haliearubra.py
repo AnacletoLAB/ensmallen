@@ -91,7 +91,7 @@ def HalieaRubra(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalieaRubra",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def AestuariimicrobiumKwangyangense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AestuariimicrobiumKwangyangense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

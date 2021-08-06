@@ -91,7 +91,7 @@ def AnaplasmaMarginaleFlorida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaplasmaMarginaleFlorida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

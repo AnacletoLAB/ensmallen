@@ -91,7 +91,7 @@ def AspergillusOryzae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AspergillusOryzae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

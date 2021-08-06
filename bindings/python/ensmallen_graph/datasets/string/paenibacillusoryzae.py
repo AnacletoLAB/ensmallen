@@ -88,7 +88,7 @@ def PaenibacillusOryzae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillusOryzae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

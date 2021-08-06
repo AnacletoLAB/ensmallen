@@ -88,7 +88,7 @@ def CharaBraunii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CharaBraunii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

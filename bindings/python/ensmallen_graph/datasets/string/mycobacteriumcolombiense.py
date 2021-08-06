@@ -91,7 +91,7 @@ def MycobacteriumColombiense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumColombiense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

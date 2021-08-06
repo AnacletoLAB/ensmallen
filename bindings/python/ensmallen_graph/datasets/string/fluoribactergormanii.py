@@ -88,7 +88,7 @@ def FluoribacterGormanii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FluoribacterGormanii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

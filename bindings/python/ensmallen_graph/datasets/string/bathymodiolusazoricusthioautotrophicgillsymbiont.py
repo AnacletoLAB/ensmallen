@@ -88,7 +88,7 @@ def BathymodiolusAzoricusThioautotrophicGillSymbiont(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BathymodiolusAzoricusThioautotrophicGillSymbiont",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

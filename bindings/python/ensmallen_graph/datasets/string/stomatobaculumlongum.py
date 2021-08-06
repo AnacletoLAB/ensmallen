@@ -91,7 +91,7 @@ def StomatobaculumLongum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StomatobaculumLongum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

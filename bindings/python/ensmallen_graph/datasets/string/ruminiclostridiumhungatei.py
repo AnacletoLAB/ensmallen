@@ -88,7 +88,7 @@ def RuminiclostridiumHungatei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminiclostridiumHungatei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

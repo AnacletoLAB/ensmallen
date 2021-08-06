@@ -91,7 +91,7 @@ def AlistipesOnderdonkii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlistipesOnderdonkii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

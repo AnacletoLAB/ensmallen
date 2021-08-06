@@ -88,7 +88,7 @@ def PseudorhodobacterWandonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudorhodobacterWandonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

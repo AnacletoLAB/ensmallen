@@ -88,7 +88,7 @@ def BacteriumCg104938(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteriumCg104938",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

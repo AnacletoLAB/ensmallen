@@ -91,7 +91,7 @@ def MyceliophthoraThermophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MyceliophthoraThermophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

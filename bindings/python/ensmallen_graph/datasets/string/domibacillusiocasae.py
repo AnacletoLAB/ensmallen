@@ -88,7 +88,7 @@ def DomibacillusIocasae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DomibacillusIocasae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

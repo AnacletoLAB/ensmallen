@@ -88,7 +88,7 @@ def SuhomycesTanzawaensisNrrlY17324(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SuhomycesTanzawaensisNrrlY17324",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

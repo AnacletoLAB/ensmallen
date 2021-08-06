@@ -91,7 +91,7 @@ def PelotomaculumThermopropionicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PelotomaculumThermopropionicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

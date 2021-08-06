@@ -91,7 +91,7 @@ def ShewanellaHaliotis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShewanellaHaliotis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

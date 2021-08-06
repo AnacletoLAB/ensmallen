@@ -88,7 +88,7 @@ def OceanobacterKriegiiDsm6294(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OceanobacterKriegiiDsm6294",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

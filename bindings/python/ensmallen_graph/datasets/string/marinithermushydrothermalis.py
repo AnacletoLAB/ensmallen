@@ -91,7 +91,7 @@ def MarinithermusHydrothermalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinithermusHydrothermalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

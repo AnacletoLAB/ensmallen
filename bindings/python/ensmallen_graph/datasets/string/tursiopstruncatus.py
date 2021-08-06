@@ -91,7 +91,7 @@ def TursiopsTruncatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TursiopsTruncatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

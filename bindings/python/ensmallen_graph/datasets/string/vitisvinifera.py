@@ -91,7 +91,7 @@ def VitisVinifera(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VitisVinifera",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

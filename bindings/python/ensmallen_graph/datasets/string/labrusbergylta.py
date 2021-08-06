@@ -88,7 +88,7 @@ def LabrusBergylta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LabrusBergylta",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

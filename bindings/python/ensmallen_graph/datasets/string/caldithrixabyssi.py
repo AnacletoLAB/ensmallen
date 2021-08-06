@@ -91,7 +91,7 @@ def CaldithrixAbyssi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaldithrixAbyssi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

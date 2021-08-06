@@ -91,7 +91,7 @@ def LeuconostocCitreum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeuconostocCitreum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

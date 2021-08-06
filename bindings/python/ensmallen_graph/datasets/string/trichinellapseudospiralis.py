@@ -88,7 +88,7 @@ def TrichinellaPseudospiralis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichinellaPseudospiralis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

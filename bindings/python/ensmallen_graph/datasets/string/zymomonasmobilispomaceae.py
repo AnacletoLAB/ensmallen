@@ -91,7 +91,7 @@ def ZymomonasMobilisPomaceae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZymomonasMobilisPomaceae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

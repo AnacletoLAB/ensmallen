@@ -88,7 +88,7 @@ def MicavibrioAeruginosavorusEpb(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicavibrioAeruginosavorusEpb",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

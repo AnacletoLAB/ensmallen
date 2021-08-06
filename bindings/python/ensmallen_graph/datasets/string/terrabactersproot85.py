@@ -88,7 +88,7 @@ def TerrabacterSpRoot85(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TerrabacterSpRoot85",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

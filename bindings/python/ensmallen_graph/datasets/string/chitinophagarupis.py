@@ -88,7 +88,7 @@ def ChitinophagaRupis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChitinophagaRupis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

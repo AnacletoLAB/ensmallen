@@ -88,7 +88,7 @@ def ParvimonasSpKa00067(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParvimonasSpKa00067",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

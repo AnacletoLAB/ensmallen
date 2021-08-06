@@ -91,7 +91,7 @@ def AcidianusHospitalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidianusHospitalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

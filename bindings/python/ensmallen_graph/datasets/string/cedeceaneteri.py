@@ -91,7 +91,7 @@ def CedeceaNeteri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CedeceaNeteri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

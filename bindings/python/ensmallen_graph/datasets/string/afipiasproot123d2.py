@@ -88,7 +88,7 @@ def AfipiaSpRoot123d2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AfipiaSpRoot123d2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

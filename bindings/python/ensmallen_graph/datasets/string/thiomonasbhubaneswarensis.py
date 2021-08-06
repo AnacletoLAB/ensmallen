@@ -88,7 +88,7 @@ def ThiomonasBhubaneswarensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThiomonasBhubaneswarensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

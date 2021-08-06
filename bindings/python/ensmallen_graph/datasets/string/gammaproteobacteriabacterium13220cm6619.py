@@ -88,7 +88,7 @@ def GammaproteobacteriaBacterium13220cm6619(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GammaproteobacteriaBacterium13220cm6619",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

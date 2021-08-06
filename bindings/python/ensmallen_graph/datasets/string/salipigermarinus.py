@@ -88,7 +88,7 @@ def SalipigerMarinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalipigerMarinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

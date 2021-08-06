@@ -88,7 +88,7 @@ def AlcanivoraxPacificusW115(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlcanivoraxPacificusW115",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

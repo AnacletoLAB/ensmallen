@@ -88,7 +88,7 @@ def CandidatusNanopusillusAcidilobi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusNanopusillusAcidilobi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

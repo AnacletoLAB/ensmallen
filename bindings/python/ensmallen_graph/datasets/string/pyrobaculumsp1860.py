@@ -91,7 +91,7 @@ def PyrobaculumSp1860(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PyrobaculumSp1860",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

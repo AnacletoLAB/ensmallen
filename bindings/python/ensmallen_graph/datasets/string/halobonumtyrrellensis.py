@@ -91,7 +91,7 @@ def HalobonumTyrrellensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalobonumTyrrellensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

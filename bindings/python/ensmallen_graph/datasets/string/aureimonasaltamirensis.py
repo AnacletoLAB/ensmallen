@@ -88,7 +88,7 @@ def AureimonasAltamirensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AureimonasAltamirensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

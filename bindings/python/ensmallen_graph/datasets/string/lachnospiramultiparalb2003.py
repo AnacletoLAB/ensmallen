@@ -91,7 +91,7 @@ def LachnospiraMultiparaLb2003(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LachnospiraMultiparaLb2003",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

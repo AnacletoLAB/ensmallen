@@ -88,7 +88,7 @@ def BurkholderiaceaeSpMortierella(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BurkholderiaceaeSpMortierella",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

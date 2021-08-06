@@ -91,7 +91,7 @@ def DietziaSpUcdthp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DietziaSpUcdthp",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

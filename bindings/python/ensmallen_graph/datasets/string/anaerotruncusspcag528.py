@@ -88,7 +88,7 @@ def AnaerotruncusSpCag528(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerotruncusSpCag528",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

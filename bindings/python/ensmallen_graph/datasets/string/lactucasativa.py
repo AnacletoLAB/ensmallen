@@ -88,7 +88,7 @@ def LactucaSativa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactucaSativa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

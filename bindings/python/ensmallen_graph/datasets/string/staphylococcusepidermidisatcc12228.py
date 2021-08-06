@@ -91,7 +91,7 @@ def StaphylococcusEpidermidisAtcc12228(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StaphylococcusEpidermidisAtcc12228",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ChrysemysPictaBellii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChrysemysPictaBellii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def OryzaMeridionalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OryzaMeridionalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

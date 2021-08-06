@@ -91,7 +91,7 @@ def CaldimonasManganoxidans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaldimonasManganoxidans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

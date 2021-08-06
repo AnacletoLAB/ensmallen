@@ -88,7 +88,7 @@ def LutibacterProfundi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LutibacterProfundi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

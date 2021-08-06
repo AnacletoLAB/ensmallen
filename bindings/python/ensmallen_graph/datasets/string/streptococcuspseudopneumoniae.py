@@ -91,7 +91,7 @@ def StreptococcusPseudopneumoniae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusPseudopneumoniae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

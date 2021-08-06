@@ -88,7 +88,7 @@ def AttaColombica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AttaColombica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

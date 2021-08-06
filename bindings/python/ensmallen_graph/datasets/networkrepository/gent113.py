@@ -78,7 +78,7 @@ def Gent113(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Gent113",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

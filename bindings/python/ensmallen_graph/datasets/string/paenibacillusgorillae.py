@@ -88,7 +88,7 @@ def PaenibacillusGorillae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillusGorillae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PyrusXBretschneideri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PyrusXBretschneideri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

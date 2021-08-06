@@ -88,7 +88,7 @@ def CoprococcusCatusGd7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CoprococcusCatusGd7",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

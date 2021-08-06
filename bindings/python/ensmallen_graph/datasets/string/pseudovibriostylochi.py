@@ -88,7 +88,7 @@ def PseudovibrioStylochi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudovibrioStylochi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

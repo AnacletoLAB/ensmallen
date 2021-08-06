@@ -88,7 +88,7 @@ def StachybotrysChlorohalonataIbt40285(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StachybotrysChlorohalonataIbt40285",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def BradyrhizobiumSpAi1a2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BradyrhizobiumSpAi1a2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

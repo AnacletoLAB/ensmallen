@@ -88,7 +88,7 @@ def ParasponiaAndersonii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParasponiaAndersonii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

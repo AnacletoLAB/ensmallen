@@ -88,7 +88,7 @@ def MarisediminitaleaAggregata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarisediminitaleaAggregata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

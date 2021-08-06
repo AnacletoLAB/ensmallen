@@ -88,7 +88,7 @@ def MannheimiaHaemolyticaBovine(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MannheimiaHaemolyticaBovine",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

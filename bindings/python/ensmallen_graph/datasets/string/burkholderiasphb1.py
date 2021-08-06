@@ -88,7 +88,7 @@ def BurkholderiaSpHb1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BurkholderiaSpHb1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

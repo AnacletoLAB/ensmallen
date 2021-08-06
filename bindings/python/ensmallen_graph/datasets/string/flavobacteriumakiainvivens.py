@@ -88,7 +88,7 @@ def FlavobacteriumAkiainvivens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumAkiainvivens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CopresenceSfhh(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CopresenceSfhh",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

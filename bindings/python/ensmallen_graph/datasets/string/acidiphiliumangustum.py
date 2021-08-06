@@ -91,7 +91,7 @@ def AcidiphiliumAngustum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidiphiliumAngustum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

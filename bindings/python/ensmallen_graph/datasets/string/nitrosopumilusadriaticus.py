@@ -88,7 +88,7 @@ def NitrosopumilusAdriaticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrosopumilusAdriaticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

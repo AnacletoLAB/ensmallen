@@ -88,7 +88,7 @@ def PestalotiopsisFiciW1061(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PestalotiopsisFiciW1061",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

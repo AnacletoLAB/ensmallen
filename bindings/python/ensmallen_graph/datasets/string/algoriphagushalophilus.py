@@ -88,7 +88,7 @@ def AlgoriphagusHalophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlgoriphagusHalophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

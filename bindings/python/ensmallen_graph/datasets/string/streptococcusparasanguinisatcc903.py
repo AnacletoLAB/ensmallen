@@ -91,7 +91,7 @@ def StreptococcusParasanguinisAtcc903(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusParasanguinisAtcc903",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def LactobacillusPasteurii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusPasteurii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

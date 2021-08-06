@@ -88,7 +88,7 @@ def PandoraeaThiooxydans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PandoraeaThiooxydans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

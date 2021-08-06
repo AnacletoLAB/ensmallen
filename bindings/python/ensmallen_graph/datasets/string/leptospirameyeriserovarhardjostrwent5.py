@@ -88,7 +88,7 @@ def LeptospiraMeyeriSerovarHardjoStrWent5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptospiraMeyeriSerovarHardjoStrWent5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

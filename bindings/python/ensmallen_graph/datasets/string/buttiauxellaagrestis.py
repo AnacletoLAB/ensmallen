@@ -91,7 +91,7 @@ def ButtiauxellaAgrestis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ButtiauxellaAgrestis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

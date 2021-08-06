@@ -88,7 +88,7 @@ def HelicobacterSpClo3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelicobacterSpClo3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

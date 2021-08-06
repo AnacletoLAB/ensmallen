@@ -88,7 +88,7 @@ def ParasaccharibacterApium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParasaccharibacterApium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

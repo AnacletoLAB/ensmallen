@@ -88,7 +88,7 @@ def RhodospirillalesBacterium6911(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodospirillalesBacterium6911",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

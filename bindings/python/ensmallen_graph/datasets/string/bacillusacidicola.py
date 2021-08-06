@@ -88,7 +88,7 @@ def BacillusAcidicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusAcidicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

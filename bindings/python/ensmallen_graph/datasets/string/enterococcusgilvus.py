@@ -91,7 +91,7 @@ def EnterococcusGilvus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterococcusGilvus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

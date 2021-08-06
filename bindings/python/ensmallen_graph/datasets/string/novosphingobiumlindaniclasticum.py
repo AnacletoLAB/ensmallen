@@ -91,7 +91,7 @@ def NovosphingobiumLindaniclasticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NovosphingobiumLindaniclasticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

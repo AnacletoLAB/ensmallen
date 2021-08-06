@@ -91,7 +91,7 @@ def MaricaulisMaris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MaricaulisMaris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

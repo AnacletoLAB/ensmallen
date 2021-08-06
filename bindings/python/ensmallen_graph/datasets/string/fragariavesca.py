@@ -91,7 +91,7 @@ def FragariaVesca(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FragariaVesca",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

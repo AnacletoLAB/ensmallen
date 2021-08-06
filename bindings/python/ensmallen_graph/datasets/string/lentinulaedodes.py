@@ -88,7 +88,7 @@ def LentinulaEdodes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LentinulaEdodes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

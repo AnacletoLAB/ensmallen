@@ -91,7 +91,7 @@ def RhizobiumSpCf122(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizobiumSpCf122",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

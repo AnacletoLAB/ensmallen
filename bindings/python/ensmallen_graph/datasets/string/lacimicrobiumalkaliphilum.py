@@ -88,7 +88,7 @@ def LacimicrobiumAlkaliphilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LacimicrobiumAlkaliphilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

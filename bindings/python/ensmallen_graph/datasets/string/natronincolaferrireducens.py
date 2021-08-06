@@ -88,7 +88,7 @@ def NatronincolaFerrireducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NatronincolaFerrireducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

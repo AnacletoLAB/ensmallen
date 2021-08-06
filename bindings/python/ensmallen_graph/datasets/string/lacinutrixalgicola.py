@@ -88,7 +88,7 @@ def LacinutrixAlgicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LacinutrixAlgicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

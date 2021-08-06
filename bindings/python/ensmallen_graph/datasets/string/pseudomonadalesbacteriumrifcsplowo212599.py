@@ -88,7 +88,7 @@ def PseudomonadalesBacteriumRifcsplowo212599(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonadalesBacteriumRifcsplowo212599",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

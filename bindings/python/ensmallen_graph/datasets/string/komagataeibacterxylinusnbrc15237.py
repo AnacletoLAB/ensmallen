@@ -88,7 +88,7 @@ def KomagataeibacterXylinusNbrc15237(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KomagataeibacterXylinusNbrc15237",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

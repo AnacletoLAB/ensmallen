@@ -88,7 +88,7 @@ def JiangellaAlba(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JiangellaAlba",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PhenylobacteriumImmobileAtcc35973(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhenylobacteriumImmobileAtcc35973",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

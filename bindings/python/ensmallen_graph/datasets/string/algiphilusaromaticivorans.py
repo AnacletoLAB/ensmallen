@@ -91,7 +91,7 @@ def AlgiphilusAromaticivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlgiphilusAromaticivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

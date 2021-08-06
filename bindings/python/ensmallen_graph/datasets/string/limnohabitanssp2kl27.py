@@ -88,7 +88,7 @@ def LimnohabitansSp2kl27(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LimnohabitansSp2kl27",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

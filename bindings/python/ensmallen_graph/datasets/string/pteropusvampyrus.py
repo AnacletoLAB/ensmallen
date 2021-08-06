@@ -91,7 +91,7 @@ def PteropusVampyrus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PteropusVampyrus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

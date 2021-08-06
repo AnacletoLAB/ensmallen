@@ -88,7 +88,7 @@ def MethylocapsaPalsarum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylocapsaPalsarum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

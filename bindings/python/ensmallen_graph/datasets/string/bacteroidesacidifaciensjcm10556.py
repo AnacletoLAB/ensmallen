@@ -88,7 +88,7 @@ def BacteroidesAcidifaciensJcm10556(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesAcidifaciensJcm10556",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def RuminococcusObeumAtcc29174(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminococcusObeumAtcc29174",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

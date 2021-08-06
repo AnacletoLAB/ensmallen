@@ -88,7 +88,7 @@ def RodentibacterGenomosp1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RodentibacterGenomosp1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PseudoflavonifractorSpMarseilleP3106(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoflavonifractorSpMarseilleP3106",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

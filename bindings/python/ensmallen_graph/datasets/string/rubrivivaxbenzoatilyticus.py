@@ -91,7 +91,7 @@ def RubrivivaxBenzoatilyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RubrivivaxBenzoatilyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

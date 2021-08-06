@@ -91,7 +91,7 @@ def MethylobacillusFlagellatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylobacillusFlagellatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

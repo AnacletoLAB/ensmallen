@@ -91,7 +91,7 @@ def CaldilineaAerophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaldilineaAerophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

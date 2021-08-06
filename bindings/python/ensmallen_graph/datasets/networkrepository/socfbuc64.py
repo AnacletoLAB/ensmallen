@@ -120,7 +120,7 @@ def SocfbUc64(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbUc64",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

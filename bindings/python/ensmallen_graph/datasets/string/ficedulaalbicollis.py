@@ -91,7 +91,7 @@ def FicedulaAlbicollis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FicedulaAlbicollis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

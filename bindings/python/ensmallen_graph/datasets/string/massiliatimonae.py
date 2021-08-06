@@ -91,7 +91,7 @@ def MassiliaTimonae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MassiliaTimonae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

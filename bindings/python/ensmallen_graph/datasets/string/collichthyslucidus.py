@@ -88,7 +88,7 @@ def CollichthysLucidus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CollichthysLucidus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

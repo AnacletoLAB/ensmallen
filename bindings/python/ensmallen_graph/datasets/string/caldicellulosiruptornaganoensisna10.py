@@ -88,7 +88,7 @@ def CaldicellulosiruptorNaganoensisNa10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaldicellulosiruptorNaganoensisNa10",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

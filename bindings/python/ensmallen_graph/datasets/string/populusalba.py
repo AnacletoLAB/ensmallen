@@ -88,7 +88,7 @@ def PopulusAlba(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PopulusAlba",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

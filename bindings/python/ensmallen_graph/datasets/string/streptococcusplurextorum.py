@@ -91,7 +91,7 @@ def StreptococcusPlurextorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusPlurextorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def BradyrhizobiumCanariense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BradyrhizobiumCanariense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

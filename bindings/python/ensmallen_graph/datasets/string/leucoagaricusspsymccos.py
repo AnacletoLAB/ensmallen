@@ -88,7 +88,7 @@ def LeucoagaricusSpSymcCos(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeucoagaricusSpSymcCos",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

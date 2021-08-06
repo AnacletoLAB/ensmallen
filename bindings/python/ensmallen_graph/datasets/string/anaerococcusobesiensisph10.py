@@ -88,7 +88,7 @@ def AnaerococcusObesiensisPh10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerococcusObesiensisPh10",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

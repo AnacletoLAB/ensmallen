@@ -88,7 +88,7 @@ def SerpentinomonasMccroryi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SerpentinomonasMccroryi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

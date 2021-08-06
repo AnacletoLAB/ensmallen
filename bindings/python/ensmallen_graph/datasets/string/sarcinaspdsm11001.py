@@ -88,7 +88,7 @@ def SarcinaSpDsm11001(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SarcinaSpDsm11001",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

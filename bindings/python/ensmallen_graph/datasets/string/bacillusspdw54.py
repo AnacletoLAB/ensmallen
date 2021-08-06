@@ -91,7 +91,7 @@ def BacillusSpDw54(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusSpDw54",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

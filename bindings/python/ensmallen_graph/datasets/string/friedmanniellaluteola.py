@@ -88,7 +88,7 @@ def FriedmanniellaLuteola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FriedmanniellaLuteola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -108,7 +108,7 @@ def RtRetweetCrawl(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RtRetweetCrawl",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

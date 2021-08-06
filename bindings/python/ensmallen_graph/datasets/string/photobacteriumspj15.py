@@ -88,7 +88,7 @@ def PhotobacteriumSpJ15(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhotobacteriumSpJ15",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

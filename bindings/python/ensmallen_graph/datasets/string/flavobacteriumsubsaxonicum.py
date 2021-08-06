@@ -91,7 +91,7 @@ def FlavobacteriumSubsaxonicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumSubsaxonicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

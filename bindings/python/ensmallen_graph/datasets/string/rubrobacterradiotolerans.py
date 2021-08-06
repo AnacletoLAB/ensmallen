@@ -91,7 +91,7 @@ def RubrobacterRadiotolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RubrobacterRadiotolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

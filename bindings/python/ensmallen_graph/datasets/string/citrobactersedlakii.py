@@ -91,7 +91,7 @@ def CitrobacterSedlakii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CitrobacterSedlakii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

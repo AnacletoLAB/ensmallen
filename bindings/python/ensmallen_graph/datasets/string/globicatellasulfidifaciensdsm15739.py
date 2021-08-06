@@ -88,7 +88,7 @@ def GlobicatellaSulfidifaciensDsm15739(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GlobicatellaSulfidifaciensDsm15739",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

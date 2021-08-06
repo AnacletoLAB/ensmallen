@@ -88,7 +88,7 @@ def LeucobacterSpAg1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeucobacterSpAg1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

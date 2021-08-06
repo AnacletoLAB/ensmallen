@@ -88,7 +88,7 @@ def PontibacterAkesuensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PontibacterAkesuensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

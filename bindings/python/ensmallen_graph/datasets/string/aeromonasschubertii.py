@@ -88,7 +88,7 @@ def AeromonasSchubertii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AeromonasSchubertii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

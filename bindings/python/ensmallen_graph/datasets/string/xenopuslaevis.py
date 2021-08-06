@@ -88,7 +88,7 @@ def XenopusLaevis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XenopusLaevis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

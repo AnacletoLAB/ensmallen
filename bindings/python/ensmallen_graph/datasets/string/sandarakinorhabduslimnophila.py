@@ -91,7 +91,7 @@ def SandarakinorhabdusLimnophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SandarakinorhabdusLimnophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

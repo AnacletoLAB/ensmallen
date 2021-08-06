@@ -88,7 +88,7 @@ def RhodobacterSpCacia14h1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodobacterSpCacia14h1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def RoseobacterSpAzwk3b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseobacterSpAzwk3b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

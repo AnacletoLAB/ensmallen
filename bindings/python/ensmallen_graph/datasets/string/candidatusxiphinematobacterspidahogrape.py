@@ -88,7 +88,7 @@ def CandidatusXiphinematobacterSpIdahoGrape(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusXiphinematobacterSpIdahoGrape",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

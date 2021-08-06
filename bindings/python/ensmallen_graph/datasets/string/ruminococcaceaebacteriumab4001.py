@@ -91,7 +91,7 @@ def RuminococcaceaeBacteriumAb4001(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminococcaceaeBacteriumAb4001",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

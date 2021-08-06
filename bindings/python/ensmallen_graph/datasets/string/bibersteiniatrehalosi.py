@@ -91,7 +91,7 @@ def BibersteiniaTrehalosi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BibersteiniaTrehalosi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

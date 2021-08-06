@@ -78,7 +78,7 @@ def ZhishiBaiduInternallink(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZhishiBaiduInternallink",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

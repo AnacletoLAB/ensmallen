@@ -78,7 +78,7 @@ def Ins2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Ins2",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

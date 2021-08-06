@@ -91,7 +91,7 @@ def MicrotetrasporaGlauca(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrotetrasporaGlauca",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

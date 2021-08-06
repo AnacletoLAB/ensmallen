@@ -91,7 +91,7 @@ def PseudoxanthomonasSuwonensis111(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoxanthomonasSuwonensis111",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

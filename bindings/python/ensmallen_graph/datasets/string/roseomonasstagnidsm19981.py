@@ -88,7 +88,7 @@ def RoseomonasStagniDsm19981(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseomonasStagniDsm19981",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

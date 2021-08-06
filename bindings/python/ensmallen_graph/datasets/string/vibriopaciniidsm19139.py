@@ -88,7 +88,7 @@ def VibrioPaciniiDsm19139(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioPaciniiDsm19139",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

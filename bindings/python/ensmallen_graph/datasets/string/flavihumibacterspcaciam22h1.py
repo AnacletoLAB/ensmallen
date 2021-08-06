@@ -88,7 +88,7 @@ def FlavihumibacterSpCaciam22h1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavihumibacterSpCaciam22h1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

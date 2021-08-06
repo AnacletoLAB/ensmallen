@@ -88,7 +88,7 @@ def MycobacteriumLepromatosis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumLepromatosis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

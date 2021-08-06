@@ -78,7 +78,7 @@ def Debr(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Debr",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

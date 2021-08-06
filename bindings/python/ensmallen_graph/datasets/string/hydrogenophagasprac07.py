@@ -88,7 +88,7 @@ def HydrogenophagaSpRac07(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HydrogenophagaSpRac07",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

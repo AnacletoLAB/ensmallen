@@ -88,7 +88,7 @@ def HaloferacalesArchaeonDl31(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaloferacalesArchaeonDl31",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

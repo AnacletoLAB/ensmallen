@@ -91,7 +91,7 @@ def PaenisporosarcinaSpHgh0030(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenisporosarcinaSpHgh0030",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

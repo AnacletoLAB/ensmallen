@@ -88,7 +88,7 @@ def CandidatusHodgkiniaCicadicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusHodgkiniaCicadicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

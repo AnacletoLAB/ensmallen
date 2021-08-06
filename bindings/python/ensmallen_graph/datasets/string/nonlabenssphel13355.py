@@ -88,7 +88,7 @@ def NonlabensSpHel13355(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NonlabensSpHel13355",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def MycoplasmaPutrefaciensMput9231(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaPutrefaciensMput9231",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

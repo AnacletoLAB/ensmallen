@@ -91,7 +91,7 @@ def BacillusSpSjs(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusSpSjs",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

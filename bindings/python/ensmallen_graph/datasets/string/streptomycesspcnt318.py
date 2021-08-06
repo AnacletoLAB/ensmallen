@@ -91,7 +91,7 @@ def StreptomycesSpCnt318(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesSpCnt318",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

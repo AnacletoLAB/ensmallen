@@ -88,7 +88,7 @@ def SulfolobusAcidocaldariusSusaz(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfolobusAcidocaldariusSusaz",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

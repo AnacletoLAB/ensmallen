@@ -88,7 +88,7 @@ def SaccharopolysporaAntimicrobica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SaccharopolysporaAntimicrobica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

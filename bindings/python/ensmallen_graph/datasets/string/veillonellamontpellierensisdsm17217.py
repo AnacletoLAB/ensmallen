@@ -88,7 +88,7 @@ def VeillonellaMontpellierensisDsm17217(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VeillonellaMontpellierensisDsm17217",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

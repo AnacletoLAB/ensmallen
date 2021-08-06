@@ -88,7 +88,7 @@ def BartonellaQueenslandensisAustNh15(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BartonellaQueenslandensisAustNh15",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

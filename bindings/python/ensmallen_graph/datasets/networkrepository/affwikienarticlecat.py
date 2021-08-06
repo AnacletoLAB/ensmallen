@@ -78,7 +78,7 @@ def AffWikiEnArticleCat(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AffWikiEnArticleCat",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

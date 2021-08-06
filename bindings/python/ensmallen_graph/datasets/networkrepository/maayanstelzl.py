@@ -78,7 +78,7 @@ def MaayanStelzl(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MaayanStelzl",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

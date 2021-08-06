@@ -88,7 +88,7 @@ def EscherichiaColiK12SubstrMg1655(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EscherichiaColiK12SubstrMg1655",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

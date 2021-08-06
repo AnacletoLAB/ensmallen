@@ -88,7 +88,7 @@ def TrifoliumPratense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrifoliumPratense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

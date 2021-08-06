@@ -91,7 +91,7 @@ def ZymomonasMobilisAtcc10988(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZymomonasMobilisAtcc10988",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

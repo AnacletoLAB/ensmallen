@@ -91,7 +91,7 @@ def ThermicanusAegyptius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermicanusAegyptius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

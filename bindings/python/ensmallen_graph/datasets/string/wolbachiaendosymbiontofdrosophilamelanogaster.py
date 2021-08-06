@@ -88,7 +88,7 @@ def WolbachiaEndosymbiontOfDrosophilaMelanogaster(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WolbachiaEndosymbiontOfDrosophilaMelanogaster",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

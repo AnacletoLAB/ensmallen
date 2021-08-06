@@ -88,7 +88,7 @@ def FerrimonasSenticiiDsm18821(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FerrimonasSenticiiDsm18821",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

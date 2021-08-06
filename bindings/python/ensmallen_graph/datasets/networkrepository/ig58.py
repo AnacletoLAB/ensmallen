@@ -78,7 +78,7 @@ def Ig58(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Ig58",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

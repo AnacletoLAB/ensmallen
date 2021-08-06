@@ -88,7 +88,7 @@ def MethylibiumSpCf059(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylibiumSpCf059",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

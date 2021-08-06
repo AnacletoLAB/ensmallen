@@ -88,7 +88,7 @@ def MassiliaPutida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MassiliaPutida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

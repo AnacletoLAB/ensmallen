@@ -88,7 +88,7 @@ def AnaerolineaThermolimosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerolineaThermolimosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

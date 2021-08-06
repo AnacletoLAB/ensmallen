@@ -88,7 +88,7 @@ def SpirochaetalesBacteriumSpiro02(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpirochaetalesBacteriumSpiro02",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

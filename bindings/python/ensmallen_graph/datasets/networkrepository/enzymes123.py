@@ -78,7 +78,7 @@ def Enzymes123(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Enzymes123",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

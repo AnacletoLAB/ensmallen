@@ -88,7 +88,7 @@ def PhytophthoraSojaeStrainP6497(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhytophthoraSojaeStrainP6497",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

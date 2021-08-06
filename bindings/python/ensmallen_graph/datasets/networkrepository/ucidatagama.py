@@ -78,7 +78,7 @@ def UcidataGama(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UcidataGama",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

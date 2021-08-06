@@ -88,7 +88,7 @@ def LysinimicrobiumIriomotense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LysinimicrobiumIriomotense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

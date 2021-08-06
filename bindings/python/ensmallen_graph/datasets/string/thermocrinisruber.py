@@ -91,7 +91,7 @@ def ThermocrinisRuber(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermocrinisRuber",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

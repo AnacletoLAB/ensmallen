@@ -88,7 +88,7 @@ def VariovoraxSpJgi0001016M12(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VariovoraxSpJgi0001016M12",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

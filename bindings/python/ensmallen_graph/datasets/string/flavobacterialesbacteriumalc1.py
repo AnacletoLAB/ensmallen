@@ -91,7 +91,7 @@ def FlavobacterialesBacteriumAlc1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacterialesBacteriumAlc1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

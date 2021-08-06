@@ -88,7 +88,7 @@ def FibrellaSpEs10322(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FibrellaSpEs10322",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

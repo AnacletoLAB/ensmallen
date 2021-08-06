@@ -91,7 +91,7 @@ def AphanomycesInvadans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AphanomycesInvadans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def MycobacteriumRufum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumRufum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

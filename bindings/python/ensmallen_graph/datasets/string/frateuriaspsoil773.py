@@ -88,7 +88,7 @@ def FrateuriaSpSoil773(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FrateuriaSpSoil773",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

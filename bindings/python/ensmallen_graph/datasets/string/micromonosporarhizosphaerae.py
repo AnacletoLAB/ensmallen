@@ -88,7 +88,7 @@ def MicromonosporaRhizosphaerae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicromonosporaRhizosphaerae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

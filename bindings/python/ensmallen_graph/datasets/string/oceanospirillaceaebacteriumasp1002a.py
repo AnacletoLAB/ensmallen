@@ -88,7 +88,7 @@ def OceanospirillaceaeBacteriumAsp1002a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OceanospirillaceaeBacteriumAsp1002a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

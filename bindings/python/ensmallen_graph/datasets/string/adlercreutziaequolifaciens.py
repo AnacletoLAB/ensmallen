@@ -91,7 +91,7 @@ def AdlercreutziaEquolifaciens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AdlercreutziaEquolifaciens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def LacinutrixVenerupis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LacinutrixVenerupis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PeptostreptococcaceaeBacteriumPga8(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeptostreptococcaceaeBacteriumPga8",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

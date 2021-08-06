@@ -91,7 +91,7 @@ def SerinicoccusMarinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SerinicoccusMarinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

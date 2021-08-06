@@ -91,7 +91,7 @@ def MethylibiumPetroleiphilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylibiumPetroleiphilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

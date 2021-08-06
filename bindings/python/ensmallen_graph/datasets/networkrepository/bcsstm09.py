@@ -78,7 +78,7 @@ def Bcsstm09(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Bcsstm09",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

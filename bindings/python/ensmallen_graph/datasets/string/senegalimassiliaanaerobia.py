@@ -91,7 +91,7 @@ def SenegalimassiliaAnaerobia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SenegalimassiliaAnaerobia",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

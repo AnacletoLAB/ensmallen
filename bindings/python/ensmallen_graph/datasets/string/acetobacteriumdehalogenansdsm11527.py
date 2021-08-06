@@ -88,7 +88,7 @@ def AcetobacteriumDehalogenansDsm11527(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcetobacteriumDehalogenansDsm11527",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

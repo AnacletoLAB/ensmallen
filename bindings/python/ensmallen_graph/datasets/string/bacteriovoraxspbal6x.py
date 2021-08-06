@@ -91,7 +91,7 @@ def BacteriovoraxSpBal6x(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteriovoraxSpBal6x",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

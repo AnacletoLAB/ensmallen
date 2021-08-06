@@ -88,7 +88,7 @@ def RubritaleaSqualenifaciensDsm18772(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RubritaleaSqualenifaciensDsm18772",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

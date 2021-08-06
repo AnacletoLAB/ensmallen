@@ -91,7 +91,7 @@ def NevskiaSoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NevskiaSoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

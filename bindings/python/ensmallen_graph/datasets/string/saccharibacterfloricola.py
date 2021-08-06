@@ -91,7 +91,7 @@ def SaccharibacterFloricola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SaccharibacterFloricola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

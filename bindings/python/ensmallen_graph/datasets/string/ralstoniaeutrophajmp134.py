@@ -91,7 +91,7 @@ def RalstoniaEutrophaJmp134(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RalstoniaEutrophaJmp134",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

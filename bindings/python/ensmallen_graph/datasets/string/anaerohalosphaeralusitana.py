@@ -88,7 +88,7 @@ def AnaerohalosphaeraLusitana(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerohalosphaeraLusitana",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -92,7 +92,7 @@ def FeSphere(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FeSphere",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def UnculturedFlavonifractorSp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UnculturedFlavonifractorSp",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def KlebsiellaOxytoca(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KlebsiellaOxytoca",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

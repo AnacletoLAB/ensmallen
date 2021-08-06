@@ -88,7 +88,7 @@ def BacillusShackletonii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusShackletonii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def RhodovulumSpEs010(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodovulumSpEs010",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

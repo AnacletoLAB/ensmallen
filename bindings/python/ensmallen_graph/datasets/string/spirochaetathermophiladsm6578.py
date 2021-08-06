@@ -88,7 +88,7 @@ def SpirochaetaThermophilaDsm6578(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpirochaetaThermophilaDsm6578",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

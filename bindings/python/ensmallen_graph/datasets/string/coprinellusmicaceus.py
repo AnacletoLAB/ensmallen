@@ -88,7 +88,7 @@ def CoprinellusMicaceus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CoprinellusMicaceus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

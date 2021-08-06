@@ -91,7 +91,7 @@ def EnterococcusFaecalisV583(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterococcusFaecalisV583",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

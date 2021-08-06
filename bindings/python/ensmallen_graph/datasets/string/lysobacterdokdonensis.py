@@ -91,7 +91,7 @@ def LysobacterDokdonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LysobacterDokdonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

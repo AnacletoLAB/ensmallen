@@ -91,7 +91,7 @@ def MarinobacterLipolyticusBf04cf4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinobacterLipolyticusBf04cf4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

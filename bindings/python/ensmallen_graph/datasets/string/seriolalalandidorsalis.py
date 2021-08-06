@@ -88,7 +88,7 @@ def SeriolaLalandiDorsalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SeriolaLalandiDorsalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

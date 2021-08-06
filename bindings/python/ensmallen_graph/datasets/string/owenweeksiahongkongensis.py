@@ -91,7 +91,7 @@ def OwenweeksiaHongkongensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OwenweeksiaHongkongensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

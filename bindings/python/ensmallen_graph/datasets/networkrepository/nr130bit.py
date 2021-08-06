@@ -78,7 +78,7 @@ def NR130bit(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NR130bit",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

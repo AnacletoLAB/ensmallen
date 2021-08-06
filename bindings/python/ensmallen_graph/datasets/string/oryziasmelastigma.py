@@ -88,7 +88,7 @@ def OryziasMelastigma(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OryziasMelastigma",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

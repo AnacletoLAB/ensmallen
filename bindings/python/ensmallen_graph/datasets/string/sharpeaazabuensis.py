@@ -91,7 +91,7 @@ def SharpeaAzabuensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SharpeaAzabuensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

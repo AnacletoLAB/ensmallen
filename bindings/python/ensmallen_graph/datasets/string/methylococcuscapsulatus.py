@@ -91,7 +91,7 @@ def MethylococcusCapsulatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylococcusCapsulatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

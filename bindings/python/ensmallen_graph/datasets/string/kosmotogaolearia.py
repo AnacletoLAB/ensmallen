@@ -91,7 +91,7 @@ def KosmotogaOlearia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KosmotogaOlearia",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

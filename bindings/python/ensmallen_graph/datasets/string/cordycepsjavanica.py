@@ -88,7 +88,7 @@ def CordycepsJavanica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CordycepsJavanica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

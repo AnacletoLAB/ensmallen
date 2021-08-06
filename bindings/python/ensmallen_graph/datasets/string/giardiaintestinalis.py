@@ -91,7 +91,7 @@ def GiardiaIntestinalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GiardiaIntestinalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

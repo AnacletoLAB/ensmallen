@@ -88,7 +88,7 @@ def LentibacillusHalodurans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LentibacillusHalodurans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def GlossinaMorsitansMorsitans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GlossinaMorsitansMorsitans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

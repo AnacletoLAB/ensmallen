@@ -88,7 +88,7 @@ def LactobacillusGastricusPs3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusGastricusPs3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

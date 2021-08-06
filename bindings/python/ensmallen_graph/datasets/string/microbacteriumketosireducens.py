@@ -88,7 +88,7 @@ def MicrobacteriumKetosireducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriumKetosireducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

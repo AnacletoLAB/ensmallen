@@ -88,7 +88,7 @@ def GilliamellaBombicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GilliamellaBombicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

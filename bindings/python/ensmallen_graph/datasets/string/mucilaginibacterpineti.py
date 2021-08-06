@@ -88,7 +88,7 @@ def MucilaginibacterPineti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MucilaginibacterPineti",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

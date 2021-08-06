@@ -88,7 +88,7 @@ def MethanosarcinaSpMtp4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanosarcinaSpMtp4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

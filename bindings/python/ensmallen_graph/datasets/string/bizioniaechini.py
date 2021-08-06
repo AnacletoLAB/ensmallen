@@ -88,7 +88,7 @@ def BizioniaEchini(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BizioniaEchini",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

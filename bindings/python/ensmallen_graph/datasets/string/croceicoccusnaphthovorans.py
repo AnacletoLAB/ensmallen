@@ -88,7 +88,7 @@ def CroceicoccusNaphthovorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CroceicoccusNaphthovorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

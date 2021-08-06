@@ -104,7 +104,7 @@ def Gen200P0955(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Gen200P0955",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

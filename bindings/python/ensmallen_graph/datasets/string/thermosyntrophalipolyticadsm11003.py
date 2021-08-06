@@ -88,7 +88,7 @@ def ThermosyntrophaLipolyticaDsm11003(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermosyntrophaLipolyticaDsm11003",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

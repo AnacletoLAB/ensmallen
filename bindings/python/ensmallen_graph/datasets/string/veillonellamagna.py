@@ -91,7 +91,7 @@ def VeillonellaMagna(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VeillonellaMagna",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

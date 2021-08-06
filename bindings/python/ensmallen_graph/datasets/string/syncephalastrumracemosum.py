@@ -88,7 +88,7 @@ def SyncephalastrumRacemosum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SyncephalastrumRacemosum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

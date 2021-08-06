@@ -88,7 +88,7 @@ def BurkholderiaceaeBacterium16(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BurkholderiaceaeBacterium16",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def CaldicellulosiruptorHydrothermalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaldicellulosiruptorHydrothermalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

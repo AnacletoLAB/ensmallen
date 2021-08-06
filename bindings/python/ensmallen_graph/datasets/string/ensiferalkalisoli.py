@@ -88,7 +88,7 @@ def EnsiferAlkalisoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnsiferAlkalisoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PedobacterGinsenosidimutans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PedobacterGinsenosidimutans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

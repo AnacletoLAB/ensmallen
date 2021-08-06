@@ -88,7 +88,7 @@ def DesulfovibrioGracilisDsm16080(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioGracilisDsm16080",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

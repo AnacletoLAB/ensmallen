@@ -88,7 +88,7 @@ def PseudomonasSyringaePvTagetis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasSyringaePvTagetis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

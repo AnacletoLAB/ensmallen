@@ -88,7 +88,7 @@ def TrypanosomaTheileri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrypanosomaTheileri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MicrogenomatesBacteriumOlb23(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrogenomatesBacteriumOlb23",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

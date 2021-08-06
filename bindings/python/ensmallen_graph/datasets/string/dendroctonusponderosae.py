@@ -88,7 +88,7 @@ def DendroctonusPonderosae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DendroctonusPonderosae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

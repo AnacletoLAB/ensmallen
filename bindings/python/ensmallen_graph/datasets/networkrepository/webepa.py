@@ -94,7 +94,7 @@ def WebEpa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebEpa",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

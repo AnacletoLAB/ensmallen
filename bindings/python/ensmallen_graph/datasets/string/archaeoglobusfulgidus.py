@@ -91,7 +91,7 @@ def ArchaeoglobusFulgidus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArchaeoglobusFulgidus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

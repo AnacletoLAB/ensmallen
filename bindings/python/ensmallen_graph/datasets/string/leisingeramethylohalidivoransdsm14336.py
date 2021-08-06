@@ -88,7 +88,7 @@ def LeisingeraMethylohalidivoransDsm14336(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeisingeraMethylohalidivoransDsm14336",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

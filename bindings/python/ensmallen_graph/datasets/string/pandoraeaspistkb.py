@@ -88,7 +88,7 @@ def PandoraeaSpIstkb(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PandoraeaSpIstkb",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

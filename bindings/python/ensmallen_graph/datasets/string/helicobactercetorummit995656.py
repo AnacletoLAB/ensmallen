@@ -91,7 +91,7 @@ def HelicobacterCetorumMit995656(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelicobacterCetorumMit995656",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

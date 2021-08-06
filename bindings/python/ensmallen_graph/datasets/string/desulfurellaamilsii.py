@@ -88,7 +88,7 @@ def DesulfurellaAmilsii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfurellaAmilsii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

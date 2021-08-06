@@ -88,7 +88,7 @@ def MethanomassiliicoccusLuminyensisB10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanomassiliicoccusLuminyensisB10",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

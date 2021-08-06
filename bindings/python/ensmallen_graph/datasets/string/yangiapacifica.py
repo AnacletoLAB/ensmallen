@@ -88,7 +88,7 @@ def YangiaPacifica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="YangiaPacifica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

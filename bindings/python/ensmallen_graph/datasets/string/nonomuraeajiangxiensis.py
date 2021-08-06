@@ -88,7 +88,7 @@ def NonomuraeaJiangxiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NonomuraeaJiangxiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

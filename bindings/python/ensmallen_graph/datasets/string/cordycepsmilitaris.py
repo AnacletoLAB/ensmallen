@@ -91,7 +91,7 @@ def CordycepsMilitaris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CordycepsMilitaris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

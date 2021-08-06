@@ -88,7 +88,7 @@ def CarboxydothermusIslandicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CarboxydothermusIslandicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

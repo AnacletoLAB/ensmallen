@@ -91,7 +91,7 @@ def SaccharomonosporaViridis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SaccharomonosporaViridis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

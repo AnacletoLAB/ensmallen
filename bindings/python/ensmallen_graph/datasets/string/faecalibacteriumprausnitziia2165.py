@@ -91,7 +91,7 @@ def FaecalibacteriumPrausnitziiA2165(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FaecalibacteriumPrausnitziiA2165",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

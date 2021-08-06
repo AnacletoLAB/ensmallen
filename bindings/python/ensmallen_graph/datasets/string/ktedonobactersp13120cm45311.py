@@ -88,7 +88,7 @@ def KtedonobacterSp13120cm45311(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KtedonobacterSp13120cm45311",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

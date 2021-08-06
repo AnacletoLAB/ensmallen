@@ -91,7 +91,7 @@ def XylanimonasCellulosilytica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XylanimonasCellulosilytica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

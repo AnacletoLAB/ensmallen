@@ -88,7 +88,7 @@ def PlanctomycetalesBacterium457213(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlanctomycetalesBacterium457213",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

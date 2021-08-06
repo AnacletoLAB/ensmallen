@@ -88,7 +88,7 @@ def SalinimicrobiumCatena(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinimicrobiumCatena",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

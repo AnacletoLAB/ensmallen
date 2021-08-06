@@ -88,7 +88,7 @@ def MicrobacteriumOxydans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriumOxydans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

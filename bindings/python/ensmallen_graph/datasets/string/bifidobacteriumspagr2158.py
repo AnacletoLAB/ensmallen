@@ -88,7 +88,7 @@ def BifidobacteriumSpAgr2158(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BifidobacteriumSpAgr2158",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

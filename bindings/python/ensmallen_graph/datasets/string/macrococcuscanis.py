@@ -88,7 +88,7 @@ def MacrococcusCanis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MacrococcusCanis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

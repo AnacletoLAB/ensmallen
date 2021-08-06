@@ -88,7 +88,7 @@ def ParaburkholderiaTropica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParaburkholderiaTropica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AlgoriphagusOrnithinivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlgoriphagusOrnithinivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def LactobacillusAcidophilusNcfm(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusAcidophilusNcfm",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

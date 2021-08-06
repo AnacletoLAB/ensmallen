@@ -88,7 +88,7 @@ def CandidatusTokpelaiaHoelldoblerii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusTokpelaiaHoelldoblerii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

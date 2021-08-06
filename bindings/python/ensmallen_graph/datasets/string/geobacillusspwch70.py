@@ -91,7 +91,7 @@ def GeobacillusSpWch70(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeobacillusSpWch70",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

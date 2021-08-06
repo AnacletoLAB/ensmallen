@@ -88,7 +88,7 @@ def BartonellaBovisM02(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BartonellaBovisM02",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

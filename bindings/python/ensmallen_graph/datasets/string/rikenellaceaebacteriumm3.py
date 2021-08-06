@@ -91,7 +91,7 @@ def RikenellaceaeBacteriumM3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RikenellaceaeBacteriumM3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

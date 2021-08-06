@@ -88,7 +88,7 @@ def AcinetobacterHarbinensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcinetobacterHarbinensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

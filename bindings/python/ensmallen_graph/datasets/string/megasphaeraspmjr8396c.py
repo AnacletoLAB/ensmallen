@@ -88,7 +88,7 @@ def MegasphaeraSpMjr8396c(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MegasphaeraSpMjr8396c",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

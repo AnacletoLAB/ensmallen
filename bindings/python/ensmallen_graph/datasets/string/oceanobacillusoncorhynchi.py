@@ -88,7 +88,7 @@ def OceanobacillusOncorhynchi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OceanobacillusOncorhynchi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

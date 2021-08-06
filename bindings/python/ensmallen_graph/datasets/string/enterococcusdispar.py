@@ -91,7 +91,7 @@ def EnterococcusDispar(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterococcusDispar",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def LasiusNiger(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LasiusNiger",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def EnterobacterLudwigii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterobacterLudwigii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

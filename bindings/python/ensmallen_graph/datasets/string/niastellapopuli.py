@@ -88,7 +88,7 @@ def NiastellaPopuli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NiastellaPopuli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

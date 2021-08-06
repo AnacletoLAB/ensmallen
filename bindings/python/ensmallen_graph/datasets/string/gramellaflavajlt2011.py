@@ -88,7 +88,7 @@ def GramellaFlavaJlt2011(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GramellaFlavaJlt2011",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

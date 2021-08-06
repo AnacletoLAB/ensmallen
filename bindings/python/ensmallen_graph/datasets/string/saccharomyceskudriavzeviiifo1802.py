@@ -88,7 +88,7 @@ def SaccharomycesKudriavzeviiIfo1802(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SaccharomycesKudriavzeviiIfo1802",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

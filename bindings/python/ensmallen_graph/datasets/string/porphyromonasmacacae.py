@@ -91,7 +91,7 @@ def PorphyromonasMacacae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PorphyromonasMacacae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

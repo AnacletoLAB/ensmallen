@@ -91,7 +91,7 @@ def HaloplanusNatans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaloplanusNatans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

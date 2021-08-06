@@ -91,7 +91,7 @@ def BacteroidesOleiciplenus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesOleiciplenus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

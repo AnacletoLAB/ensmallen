@@ -88,7 +88,7 @@ def BrevundimonasDiminuta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrevundimonasDiminuta",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def LitoreibacterJanthinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LitoreibacterJanthinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

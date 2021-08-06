@@ -91,7 +91,7 @@ def ThalassolituusOleivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThalassolituusOleivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CandidatusMicrogenomatusAuricolaScgcAaa011E14(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusMicrogenomatusAuricolaScgcAaa011E14",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

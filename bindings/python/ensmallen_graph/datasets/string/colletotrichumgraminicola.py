@@ -91,7 +91,7 @@ def ColletotrichumGraminicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ColletotrichumGraminicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

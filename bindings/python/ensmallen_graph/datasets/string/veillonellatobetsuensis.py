@@ -88,7 +88,7 @@ def VeillonellaTobetsuensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VeillonellaTobetsuensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

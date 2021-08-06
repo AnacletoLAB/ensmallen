@@ -88,7 +88,7 @@ def CucumibacterMarinusDsm18995(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CucumibacterMarinusDsm18995",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

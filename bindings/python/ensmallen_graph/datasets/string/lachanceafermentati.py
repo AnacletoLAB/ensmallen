@@ -88,7 +88,7 @@ def LachanceaFermentati(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LachanceaFermentati",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SphingobacteriumThalpophilumDsm11723(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingobacteriumThalpophilumDsm11723",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

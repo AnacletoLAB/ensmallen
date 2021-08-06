@@ -91,7 +91,7 @@ def MicrosporumGypseum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrosporumGypseum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

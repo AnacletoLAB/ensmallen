@@ -88,7 +88,7 @@ def CandidatusAtelocyanobacteriumThalassaIsolateAloha(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusAtelocyanobacteriumThalassaIsolateAloha",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

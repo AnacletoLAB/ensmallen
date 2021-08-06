@@ -91,7 +91,7 @@ def SpirillosporaAlbida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpirillosporaAlbida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

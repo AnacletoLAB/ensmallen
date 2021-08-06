@@ -91,7 +91,7 @@ def CanisLupus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CanisLupus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

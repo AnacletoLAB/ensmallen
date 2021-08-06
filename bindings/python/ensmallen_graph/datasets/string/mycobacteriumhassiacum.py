@@ -91,7 +91,7 @@ def MycobacteriumHassiacum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumHassiacum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

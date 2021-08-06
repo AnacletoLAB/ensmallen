@@ -91,7 +91,7 @@ def KomagataellaPastoris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KomagataellaPastoris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

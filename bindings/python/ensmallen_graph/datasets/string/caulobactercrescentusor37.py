@@ -91,7 +91,7 @@ def CaulobacterCrescentusOr37(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaulobacterCrescentusOr37",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

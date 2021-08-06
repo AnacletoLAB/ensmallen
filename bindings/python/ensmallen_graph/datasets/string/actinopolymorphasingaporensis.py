@@ -88,7 +88,7 @@ def ActinopolymorphaSingaporensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinopolymorphaSingaporensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def NitrobacterSp6223(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrobacterSp6223",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

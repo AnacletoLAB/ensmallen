@@ -91,7 +91,7 @@ def ActinobacteriumLlx17(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinobacteriumLlx17",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

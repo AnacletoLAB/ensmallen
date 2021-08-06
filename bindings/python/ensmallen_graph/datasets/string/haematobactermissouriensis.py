@@ -88,7 +88,7 @@ def HaematobacterMissouriensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaematobacterMissouriensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

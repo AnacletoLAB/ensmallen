@@ -88,7 +88,7 @@ def LysinimicrobiumSoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LysinimicrobiumSoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

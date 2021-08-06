@@ -91,7 +91,7 @@ def NitrosospiraBriensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrosospiraBriensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

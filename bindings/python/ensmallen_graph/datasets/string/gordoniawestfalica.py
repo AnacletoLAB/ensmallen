@@ -88,7 +88,7 @@ def GordoniaWestfalica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GordoniaWestfalica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

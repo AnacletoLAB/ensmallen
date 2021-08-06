@@ -91,7 +91,7 @@ def AcholeplasmaHippikon(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcholeplasmaHippikon",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

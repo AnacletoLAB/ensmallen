@@ -91,7 +91,7 @@ def SphingobiumUmmariense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingobiumUmmariense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

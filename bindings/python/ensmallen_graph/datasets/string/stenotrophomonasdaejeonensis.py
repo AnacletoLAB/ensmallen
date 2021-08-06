@@ -88,7 +88,7 @@ def StenotrophomonasDaejeonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StenotrophomonasDaejeonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

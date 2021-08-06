@@ -91,7 +91,7 @@ def LeishmaniaMajor(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeishmaniaMajor",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

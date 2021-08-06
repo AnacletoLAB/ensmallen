@@ -88,7 +88,7 @@ def AlteromonasStellipolaris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlteromonasStellipolaris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

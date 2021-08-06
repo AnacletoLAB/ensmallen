@@ -91,7 +91,7 @@ def NeisseriaSpF0314(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeisseriaSpF0314",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

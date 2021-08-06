@@ -91,7 +91,7 @@ def ThermoanaerobacterItalicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermoanaerobacterItalicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def EnterococcusAquimarinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterococcusAquimarinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

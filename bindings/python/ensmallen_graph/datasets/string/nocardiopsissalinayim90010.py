@@ -88,7 +88,7 @@ def NocardiopsisSalinaYim90010(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardiopsisSalinaYim90010",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

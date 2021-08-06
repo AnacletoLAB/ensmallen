@@ -88,7 +88,7 @@ def AzohydromonasAustralicaDsm1124(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AzohydromonasAustralicaDsm1124",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

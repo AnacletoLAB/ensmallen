@@ -91,7 +91,7 @@ def PseudoxanthomonasSpadix(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoxanthomonasSpadix",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

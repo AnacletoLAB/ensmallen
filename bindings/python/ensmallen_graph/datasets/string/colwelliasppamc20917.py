@@ -88,7 +88,7 @@ def ColwelliaSpPamc20917(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ColwelliaSpPamc20917",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

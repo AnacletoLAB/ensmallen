@@ -91,7 +91,7 @@ def DesulfotomaculumCarboxydivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfotomaculumCarboxydivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

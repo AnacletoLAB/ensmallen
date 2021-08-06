@@ -88,7 +88,7 @@ def CrucibulumLaeve(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CrucibulumLaeve",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

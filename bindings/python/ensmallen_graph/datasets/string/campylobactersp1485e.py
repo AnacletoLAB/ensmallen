@@ -91,7 +91,7 @@ def CampylobacterSp1485e(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterSp1485e",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

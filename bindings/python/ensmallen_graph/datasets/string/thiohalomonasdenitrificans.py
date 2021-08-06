@@ -88,7 +88,7 @@ def ThiohalomonasDenitrificans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThiohalomonasDenitrificans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

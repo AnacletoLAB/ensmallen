@@ -88,7 +88,7 @@ def MarinifilumFragileJcm15579(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinifilumFragileJcm15579",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

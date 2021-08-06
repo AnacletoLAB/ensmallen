@@ -91,7 +91,7 @@ def AeromonasHydrophilaYl17(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AeromonasHydrophilaYl17",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

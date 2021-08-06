@@ -120,7 +120,7 @@ def SocfbTrinity100(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbTrinity100",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

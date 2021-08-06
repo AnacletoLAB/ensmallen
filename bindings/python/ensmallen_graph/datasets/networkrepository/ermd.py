@@ -78,7 +78,7 @@ def ErMd(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErMd",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

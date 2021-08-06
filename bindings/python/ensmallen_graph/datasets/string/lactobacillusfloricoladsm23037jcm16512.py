@@ -88,7 +88,7 @@ def LactobacillusFloricolaDsm23037Jcm16512(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusFloricolaDsm23037Jcm16512",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

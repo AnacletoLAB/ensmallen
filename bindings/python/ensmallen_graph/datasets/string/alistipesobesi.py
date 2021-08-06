@@ -88,7 +88,7 @@ def AlistipesObesi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlistipesObesi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

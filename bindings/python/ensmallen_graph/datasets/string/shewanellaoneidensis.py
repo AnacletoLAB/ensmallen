@@ -91,7 +91,7 @@ def ShewanellaOneidensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShewanellaOneidensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

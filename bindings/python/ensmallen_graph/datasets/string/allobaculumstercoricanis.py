@@ -91,7 +91,7 @@ def AllobaculumStercoricanis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AllobaculumStercoricanis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

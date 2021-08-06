@@ -88,7 +88,7 @@ def JanibacterLimosusNbrc16128(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JanibacterLimosusNbrc16128",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

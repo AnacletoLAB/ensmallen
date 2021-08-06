@@ -91,7 +91,7 @@ def BabesiaEqui(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BabesiaEqui",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

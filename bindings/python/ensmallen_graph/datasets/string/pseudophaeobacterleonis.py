@@ -88,7 +88,7 @@ def PseudophaeobacterLeonis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudophaeobacterLeonis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

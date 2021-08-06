@@ -88,7 +88,7 @@ def EhrlichiaMinasensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EhrlichiaMinasensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

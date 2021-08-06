@@ -78,7 +78,7 @@ def ZhishiZhwikiInternallink(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZhishiZhwikiInternallink",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def GeobacterDaltonii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeobacterDaltonii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ThiothrixEikelboomii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThiothrixEikelboomii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

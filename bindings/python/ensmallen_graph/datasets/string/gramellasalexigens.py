@@ -88,7 +88,7 @@ def GramellaSalexigens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GramellaSalexigens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

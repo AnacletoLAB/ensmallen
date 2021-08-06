@@ -78,7 +78,7 @@ def RoadUsroads(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoadUsroads",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

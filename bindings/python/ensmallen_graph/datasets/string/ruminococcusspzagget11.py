@@ -88,7 +88,7 @@ def RuminococcusSpZagget11(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminococcusSpZagget11",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

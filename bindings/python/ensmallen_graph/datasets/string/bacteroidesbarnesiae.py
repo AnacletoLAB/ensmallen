@@ -91,7 +91,7 @@ def BacteroidesBarnesiae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesBarnesiae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

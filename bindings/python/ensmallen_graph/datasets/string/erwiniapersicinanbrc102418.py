@@ -88,7 +88,7 @@ def ErwiniaPersicinaNbrc102418(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErwiniaPersicinaNbrc102418",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

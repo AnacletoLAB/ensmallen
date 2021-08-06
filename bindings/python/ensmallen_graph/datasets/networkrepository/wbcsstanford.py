@@ -78,7 +78,7 @@ def WbCsStanford(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WbCsStanford",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def BurkholderiaXenovorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BurkholderiaXenovorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

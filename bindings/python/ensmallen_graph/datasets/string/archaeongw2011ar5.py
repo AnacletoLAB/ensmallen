@@ -88,7 +88,7 @@ def ArchaeonGw2011Ar5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArchaeonGw2011Ar5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

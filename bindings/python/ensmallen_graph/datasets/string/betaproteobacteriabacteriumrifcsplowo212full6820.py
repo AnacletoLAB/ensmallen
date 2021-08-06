@@ -88,7 +88,7 @@ def BetaproteobacteriaBacteriumRifcsplowo212Full6820(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BetaproteobacteriaBacteriumRifcsplowo212Full6820",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

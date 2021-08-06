@@ -91,7 +91,7 @@ def AnaerofustisStercorihominis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerofustisStercorihominis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

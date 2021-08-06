@@ -88,7 +88,7 @@ def NitrospiraSpGa0074138(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrospiraSpGa0074138",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

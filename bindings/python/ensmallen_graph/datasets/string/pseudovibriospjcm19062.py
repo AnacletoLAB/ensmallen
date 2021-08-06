@@ -88,7 +88,7 @@ def PseudovibrioSpJcm19062(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudovibrioSpJcm19062",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

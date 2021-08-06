@@ -88,7 +88,7 @@ def PseudomonasSeleniipraecipitans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasSeleniipraecipitans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

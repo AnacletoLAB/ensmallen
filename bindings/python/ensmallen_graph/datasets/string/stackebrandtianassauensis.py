@@ -91,7 +91,7 @@ def StackebrandtiaNassauensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StackebrandtiaNassauensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

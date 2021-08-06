@@ -91,7 +91,7 @@ def SulfurimonasDenitrificans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfurimonasDenitrificans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

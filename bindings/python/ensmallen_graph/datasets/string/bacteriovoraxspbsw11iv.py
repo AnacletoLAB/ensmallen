@@ -91,7 +91,7 @@ def BacteriovoraxSpBsw11iv(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteriovoraxSpBsw11iv",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

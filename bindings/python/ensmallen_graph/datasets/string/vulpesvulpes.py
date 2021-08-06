@@ -88,7 +88,7 @@ def VulpesVulpes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VulpesVulpes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

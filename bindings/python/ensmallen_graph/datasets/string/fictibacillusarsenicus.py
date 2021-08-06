@@ -88,7 +88,7 @@ def FictibacillusArsenicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FictibacillusArsenicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

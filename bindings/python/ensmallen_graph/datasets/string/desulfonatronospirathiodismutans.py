@@ -91,7 +91,7 @@ def DesulfonatronospiraThiodismutans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfonatronospiraThiodismutans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

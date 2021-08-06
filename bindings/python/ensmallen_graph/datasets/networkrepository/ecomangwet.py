@@ -118,7 +118,7 @@ def EcoMangwet(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EcoMangwet",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

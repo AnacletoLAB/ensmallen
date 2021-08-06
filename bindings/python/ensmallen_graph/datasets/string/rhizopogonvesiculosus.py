@@ -88,7 +88,7 @@ def RhizopogonVesiculosus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizopogonVesiculosus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

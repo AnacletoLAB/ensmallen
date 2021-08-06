@@ -88,7 +88,7 @@ def FormivibrioCitricus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FormivibrioCitricus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

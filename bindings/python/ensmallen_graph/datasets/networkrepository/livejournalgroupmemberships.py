@@ -78,7 +78,7 @@ def LivejournalGroupmemberships(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LivejournalGroupmemberships",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

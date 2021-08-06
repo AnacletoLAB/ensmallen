@@ -88,7 +88,7 @@ def OreochromisAureus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OreochromisAureus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

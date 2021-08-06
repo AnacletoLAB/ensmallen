@@ -91,7 +91,7 @@ def NocardiopsisPotens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardiopsisPotens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

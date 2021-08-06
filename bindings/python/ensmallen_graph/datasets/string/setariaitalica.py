@@ -91,7 +91,7 @@ def SetariaItalica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SetariaItalica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

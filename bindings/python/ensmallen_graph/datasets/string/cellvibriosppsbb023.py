@@ -88,7 +88,7 @@ def CellvibrioSpPsbb023(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CellvibrioSpPsbb023",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

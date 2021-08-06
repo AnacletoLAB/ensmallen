@@ -78,7 +78,7 @@ def Chem97zt(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Chem97zt",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def IsosphaeraPallida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IsosphaeraPallida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

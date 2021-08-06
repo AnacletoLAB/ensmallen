@@ -88,7 +88,7 @@ def MycobacteriumNoviomagense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumNoviomagense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

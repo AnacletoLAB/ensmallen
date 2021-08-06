@@ -88,7 +88,7 @@ def CandidatusLambdaproteobacteriaBacteriumRifoxyd2Full5016(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusLambdaproteobacteriaBacteriumRifoxyd2Full5016",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

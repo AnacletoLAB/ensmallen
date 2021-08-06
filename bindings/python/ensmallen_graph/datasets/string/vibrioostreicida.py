@@ -88,7 +88,7 @@ def VibrioOstreicida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioOstreicida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

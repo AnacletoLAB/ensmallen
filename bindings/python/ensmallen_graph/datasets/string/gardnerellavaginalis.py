@@ -88,7 +88,7 @@ def GardnerellaVaginalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GardnerellaVaginalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

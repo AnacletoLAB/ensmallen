@@ -88,7 +88,7 @@ def AchromobacterInsolitus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AchromobacterInsolitus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

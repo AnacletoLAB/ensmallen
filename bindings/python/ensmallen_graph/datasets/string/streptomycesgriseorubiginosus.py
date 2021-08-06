@@ -88,7 +88,7 @@ def StreptomycesGriseorubiginosus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesGriseorubiginosus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

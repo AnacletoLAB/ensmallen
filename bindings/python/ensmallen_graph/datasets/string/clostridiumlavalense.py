@@ -88,7 +88,7 @@ def ClostridiumLavalense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumLavalense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

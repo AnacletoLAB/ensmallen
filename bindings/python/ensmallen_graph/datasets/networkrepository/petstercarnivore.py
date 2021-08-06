@@ -78,7 +78,7 @@ def PetsterCarnivore(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PetsterCarnivore",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PyrococcusYayanosii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PyrococcusYayanosii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

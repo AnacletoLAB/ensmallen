@@ -91,7 +91,7 @@ def ActinoplanesSpN902109(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinoplanesSpN902109",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

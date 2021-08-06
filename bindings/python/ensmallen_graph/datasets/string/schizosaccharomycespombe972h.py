@@ -88,7 +88,7 @@ def SchizosaccharomycesPombe972h(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SchizosaccharomycesPombe972h",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def MycoplasmaHominis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaHominis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

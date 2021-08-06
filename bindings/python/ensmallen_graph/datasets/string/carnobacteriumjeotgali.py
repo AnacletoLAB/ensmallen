@@ -88,7 +88,7 @@ def CarnobacteriumJeotgali(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CarnobacteriumJeotgali",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

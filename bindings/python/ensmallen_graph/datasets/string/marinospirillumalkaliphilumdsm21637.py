@@ -88,7 +88,7 @@ def MarinospirillumAlkaliphilumDsm21637(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinospirillumAlkaliphilumDsm21637",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

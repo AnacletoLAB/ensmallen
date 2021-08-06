@@ -91,7 +91,7 @@ def GloeobacterViolaceus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GloeobacterViolaceus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

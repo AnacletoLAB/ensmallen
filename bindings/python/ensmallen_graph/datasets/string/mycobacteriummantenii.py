@@ -88,7 +88,7 @@ def MycobacteriumMantenii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumMantenii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

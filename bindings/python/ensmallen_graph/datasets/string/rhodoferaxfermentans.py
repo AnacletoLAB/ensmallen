@@ -88,7 +88,7 @@ def RhodoferaxFermentans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodoferaxFermentans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

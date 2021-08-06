@@ -88,7 +88,7 @@ def MethylophilalesBacteriumMbrsf5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylophilalesBacteriumMbrsf5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

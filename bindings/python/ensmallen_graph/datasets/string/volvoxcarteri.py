@@ -91,7 +91,7 @@ def VolvoxCarteri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VolvoxCarteri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

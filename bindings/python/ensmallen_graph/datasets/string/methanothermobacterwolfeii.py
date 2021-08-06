@@ -88,7 +88,7 @@ def MethanothermobacterWolfeii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanothermobacterWolfeii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

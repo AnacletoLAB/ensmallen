@@ -88,7 +88,7 @@ def PhanerochaeteCarnosaHhb10118Sp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhanerochaeteCarnosaHhb10118Sp",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

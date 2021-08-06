@@ -88,7 +88,7 @@ def AlistipesSpZagget8(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlistipesSpZagget8",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

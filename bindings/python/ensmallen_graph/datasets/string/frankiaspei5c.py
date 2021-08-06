@@ -88,7 +88,7 @@ def FrankiaSpEi5c(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FrankiaSpEi5c",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

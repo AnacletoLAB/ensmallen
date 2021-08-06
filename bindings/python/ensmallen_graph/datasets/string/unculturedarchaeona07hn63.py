@@ -88,7 +88,7 @@ def UnculturedArchaeonA07hn63(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UnculturedArchaeonA07hn63",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

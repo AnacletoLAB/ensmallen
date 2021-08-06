@@ -91,7 +91,7 @@ def PseudonocardiaDioxanivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudonocardiaDioxanivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

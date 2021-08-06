@@ -91,7 +91,7 @@ def HalopigerXanaduensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalopigerXanaduensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

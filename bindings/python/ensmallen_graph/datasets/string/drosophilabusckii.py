@@ -88,7 +88,7 @@ def DrosophilaBusckii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DrosophilaBusckii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

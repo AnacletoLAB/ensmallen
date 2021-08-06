@@ -96,7 +96,7 @@ def SocWikiTalkDir(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocWikiTalkDir",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def GambusiaAffinis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GambusiaAffinis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

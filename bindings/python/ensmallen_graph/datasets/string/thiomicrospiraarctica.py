@@ -91,7 +91,7 @@ def ThiomicrospiraArctica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThiomicrospiraArctica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

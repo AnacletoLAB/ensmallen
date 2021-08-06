@@ -88,7 +88,7 @@ def DesulfurobacteriumIndicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfurobacteriumIndicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def HaloarculaMarismortui(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaloarculaMarismortui",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

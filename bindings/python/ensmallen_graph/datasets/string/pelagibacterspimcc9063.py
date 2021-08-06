@@ -91,7 +91,7 @@ def PelagibacterSpImcc9063(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PelagibacterSpImcc9063",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

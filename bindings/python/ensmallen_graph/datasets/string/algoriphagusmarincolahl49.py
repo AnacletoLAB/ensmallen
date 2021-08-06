@@ -91,7 +91,7 @@ def AlgoriphagusMarincolaHl49(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlgoriphagusMarincolaHl49",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

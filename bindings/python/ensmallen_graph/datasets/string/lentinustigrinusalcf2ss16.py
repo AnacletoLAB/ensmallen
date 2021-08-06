@@ -88,7 +88,7 @@ def LentinusTigrinusAlcf2ss16(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LentinusTigrinusAlcf2ss16",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def TolypothrixSpPcc7601(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TolypothrixSpPcc7601",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

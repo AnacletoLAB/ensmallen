@@ -88,7 +88,7 @@ def ChitinilyticumAquatileDsm21506(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChitinilyticumAquatileDsm21506",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

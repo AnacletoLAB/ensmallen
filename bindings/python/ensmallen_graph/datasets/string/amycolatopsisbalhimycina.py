@@ -91,7 +91,7 @@ def AmycolatopsisBalhimycina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmycolatopsisBalhimycina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

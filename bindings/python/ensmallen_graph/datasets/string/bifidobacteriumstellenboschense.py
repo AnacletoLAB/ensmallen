@@ -91,7 +91,7 @@ def BifidobacteriumStellenboschense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BifidobacteriumStellenboschense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

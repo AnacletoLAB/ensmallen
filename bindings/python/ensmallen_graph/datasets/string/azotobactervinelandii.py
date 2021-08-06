@@ -91,7 +91,7 @@ def AzotobacterVinelandii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AzotobacterVinelandii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

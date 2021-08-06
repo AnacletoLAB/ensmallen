@@ -78,7 +78,7 @@ def G52(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="G52",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

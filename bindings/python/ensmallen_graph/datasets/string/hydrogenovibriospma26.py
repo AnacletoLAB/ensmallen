@@ -88,7 +88,7 @@ def HydrogenovibrioSpMa26(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HydrogenovibrioSpMa26",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ExiguobacteriumSpZwu0009(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ExiguobacteriumSpZwu0009",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

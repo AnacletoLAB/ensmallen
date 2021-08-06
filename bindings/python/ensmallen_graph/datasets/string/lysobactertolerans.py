@@ -88,7 +88,7 @@ def LysobacterTolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LysobacterTolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

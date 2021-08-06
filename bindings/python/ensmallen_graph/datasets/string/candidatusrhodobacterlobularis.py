@@ -88,7 +88,7 @@ def CandidatusRhodobacterLobularis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusRhodobacterLobularis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MesorhizobiumPrunaredense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MesorhizobiumPrunaredense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

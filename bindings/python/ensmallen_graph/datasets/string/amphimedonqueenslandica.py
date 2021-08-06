@@ -91,7 +91,7 @@ def AmphimedonQueenslandica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmphimedonQueenslandica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

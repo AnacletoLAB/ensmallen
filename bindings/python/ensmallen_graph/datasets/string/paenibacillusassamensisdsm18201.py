@@ -88,7 +88,7 @@ def PaenibacillusAssamensisDsm18201(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillusAssamensisDsm18201",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

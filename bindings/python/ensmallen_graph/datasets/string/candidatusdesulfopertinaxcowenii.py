@@ -88,7 +88,7 @@ def CandidatusDesulfopertinaxCowenii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusDesulfopertinaxCowenii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

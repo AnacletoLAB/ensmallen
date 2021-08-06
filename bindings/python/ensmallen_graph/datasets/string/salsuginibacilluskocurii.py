@@ -91,7 +91,7 @@ def SalsuginibacillusKocurii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalsuginibacillusKocurii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

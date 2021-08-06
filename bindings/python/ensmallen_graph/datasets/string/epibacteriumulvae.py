@@ -88,7 +88,7 @@ def EpibacteriumUlvae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EpibacteriumUlvae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

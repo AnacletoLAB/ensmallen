@@ -91,7 +91,7 @@ def PelosinusSpUfo1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PelosinusSpUfo1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

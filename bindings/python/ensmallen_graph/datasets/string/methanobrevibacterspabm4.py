@@ -91,7 +91,7 @@ def MethanobrevibacterSpAbm4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanobrevibacterSpAbm4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

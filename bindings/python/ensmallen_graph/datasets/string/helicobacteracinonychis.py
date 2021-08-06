@@ -91,7 +91,7 @@ def HelicobacterAcinonychis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelicobacterAcinonychis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

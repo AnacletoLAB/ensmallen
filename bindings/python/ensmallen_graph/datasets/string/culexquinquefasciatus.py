@@ -91,7 +91,7 @@ def CulexQuinquefasciatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CulexQuinquefasciatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

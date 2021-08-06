@@ -88,7 +88,7 @@ def DeltaproteobacteriaBacteriumCsp18(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DeltaproteobacteriaBacteriumCsp18",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

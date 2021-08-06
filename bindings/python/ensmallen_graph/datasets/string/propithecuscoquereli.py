@@ -88,7 +88,7 @@ def PropithecusCoquereli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PropithecusCoquereli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

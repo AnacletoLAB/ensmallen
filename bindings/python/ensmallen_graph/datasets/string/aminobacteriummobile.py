@@ -91,7 +91,7 @@ def AminobacteriumMobile(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AminobacteriumMobile",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AchromobacterSpDh1f(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AchromobacterSpDh1f",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

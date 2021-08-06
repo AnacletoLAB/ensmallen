@@ -91,7 +91,7 @@ def PicrophilusTorridus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PicrophilusTorridus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

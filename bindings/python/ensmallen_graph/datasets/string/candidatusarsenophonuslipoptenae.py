@@ -88,7 +88,7 @@ def CandidatusArsenophonusLipoptenae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusArsenophonusLipoptenae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def CytophagaHutchinsonii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CytophagaHutchinsonii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

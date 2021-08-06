@@ -88,7 +88,7 @@ def ThermococcusEurythermalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermococcusEurythermalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def DevosiaSoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DevosiaSoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

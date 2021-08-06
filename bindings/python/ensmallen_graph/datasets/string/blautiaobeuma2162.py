@@ -88,7 +88,7 @@ def BlautiaObeumA2162(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlautiaObeumA2162",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

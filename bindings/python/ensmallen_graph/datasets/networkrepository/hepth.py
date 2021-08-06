@@ -78,7 +78,7 @@ def HepTh(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HepTh",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def HalanaerobiumKushneri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalanaerobiumKushneri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

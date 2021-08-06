@@ -88,7 +88,7 @@ def PantoeaAlhagi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PantoeaAlhagi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

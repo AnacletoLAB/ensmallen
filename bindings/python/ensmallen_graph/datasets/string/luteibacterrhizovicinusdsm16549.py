@@ -88,7 +88,7 @@ def LuteibacterRhizovicinusDsm16549(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LuteibacterRhizovicinusDsm16549",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

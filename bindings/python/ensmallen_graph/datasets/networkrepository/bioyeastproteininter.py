@@ -92,7 +92,7 @@ def BioYeastProteinInter(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BioYeastProteinInter",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

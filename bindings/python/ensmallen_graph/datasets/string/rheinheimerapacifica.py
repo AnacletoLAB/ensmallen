@@ -88,7 +88,7 @@ def RheinheimeraPacifica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RheinheimeraPacifica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

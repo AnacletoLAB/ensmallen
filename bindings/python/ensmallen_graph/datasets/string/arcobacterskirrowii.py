@@ -88,7 +88,7 @@ def ArcobacterSkirrowii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArcobacterSkirrowii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

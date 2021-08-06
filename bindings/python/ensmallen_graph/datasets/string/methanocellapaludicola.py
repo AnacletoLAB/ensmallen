@@ -91,7 +91,7 @@ def MethanocellaPaludicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanocellaPaludicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

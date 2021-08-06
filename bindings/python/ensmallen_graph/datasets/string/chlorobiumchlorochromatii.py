@@ -91,7 +91,7 @@ def ChlorobiumChlorochromatii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlorobiumChlorochromatii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

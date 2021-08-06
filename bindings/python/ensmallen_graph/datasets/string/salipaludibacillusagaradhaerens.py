@@ -88,7 +88,7 @@ def SalipaludibacillusAgaradhaerens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalipaludibacillusAgaradhaerens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

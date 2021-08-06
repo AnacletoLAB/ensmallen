@@ -88,7 +88,7 @@ def HerbiconiuxSolaniNbrc106740(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HerbiconiuxSolaniNbrc106740",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

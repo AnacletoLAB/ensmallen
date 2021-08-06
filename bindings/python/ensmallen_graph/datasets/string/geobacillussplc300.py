@@ -88,7 +88,7 @@ def GeobacillusSpLc300(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeobacillusSpLc300",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

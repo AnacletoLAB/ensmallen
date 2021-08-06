@@ -88,7 +88,7 @@ def PuniceicoccalesBacteriumVerruco01(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PuniceicoccalesBacteriumVerruco01",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

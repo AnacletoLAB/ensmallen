@@ -88,7 +88,7 @@ def ThioclavaMarina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThioclavaMarina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

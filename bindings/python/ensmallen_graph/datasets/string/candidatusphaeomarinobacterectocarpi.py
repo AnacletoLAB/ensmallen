@@ -88,7 +88,7 @@ def CandidatusPhaeomarinobacterEctocarpi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusPhaeomarinobacterEctocarpi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

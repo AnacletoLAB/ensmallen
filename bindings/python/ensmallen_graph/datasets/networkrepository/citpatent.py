@@ -78,7 +78,7 @@ def CitPatent(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CitPatent",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

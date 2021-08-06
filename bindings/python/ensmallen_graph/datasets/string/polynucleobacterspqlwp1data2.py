@@ -88,7 +88,7 @@ def PolynucleobacterSpQlwP1data2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PolynucleobacterSpQlwP1data2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

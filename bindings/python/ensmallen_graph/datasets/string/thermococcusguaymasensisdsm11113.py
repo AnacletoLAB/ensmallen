@@ -88,7 +88,7 @@ def ThermococcusGuaymasensisDsm11113(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermococcusGuaymasensisDsm11113",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

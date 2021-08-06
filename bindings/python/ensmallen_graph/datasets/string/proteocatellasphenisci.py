@@ -91,7 +91,7 @@ def ProteocatellaSphenisci(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProteocatellaSphenisci",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

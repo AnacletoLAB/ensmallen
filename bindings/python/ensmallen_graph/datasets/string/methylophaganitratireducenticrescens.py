@@ -91,7 +91,7 @@ def MethylophagaNitratireducenticrescens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylophagaNitratireducenticrescens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

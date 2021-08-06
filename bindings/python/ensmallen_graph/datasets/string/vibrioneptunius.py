@@ -88,7 +88,7 @@ def VibrioNeptunius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioNeptunius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

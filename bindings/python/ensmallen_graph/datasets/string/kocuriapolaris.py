@@ -91,7 +91,7 @@ def KocuriaPolaris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KocuriaPolaris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

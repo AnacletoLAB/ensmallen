@@ -91,7 +91,7 @@ def ParachlamydiaAcanthamoebae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParachlamydiaAcanthamoebae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

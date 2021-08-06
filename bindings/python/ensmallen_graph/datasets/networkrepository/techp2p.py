@@ -100,7 +100,7 @@ def TechP2p(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TechP2p",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

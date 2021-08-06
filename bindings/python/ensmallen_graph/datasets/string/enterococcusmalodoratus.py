@@ -91,7 +91,7 @@ def EnterococcusMalodoratus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterococcusMalodoratus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

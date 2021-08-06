@@ -91,7 +91,7 @@ def CorynebacteriumAmmoniagenes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumAmmoniagenes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def WbEdu(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WbEdu",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

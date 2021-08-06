@@ -88,7 +88,7 @@ def MicrobisporaRosea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobisporaRosea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

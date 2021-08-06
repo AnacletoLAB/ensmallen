@@ -91,7 +91,7 @@ def ProteusVulgaris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProteusVulgaris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

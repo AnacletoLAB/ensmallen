@@ -88,7 +88,7 @@ def LegionellaWorsleiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LegionellaWorsleiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

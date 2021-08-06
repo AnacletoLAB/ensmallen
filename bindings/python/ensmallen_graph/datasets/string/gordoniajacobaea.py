@@ -88,7 +88,7 @@ def GordoniaJacobaea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GordoniaJacobaea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

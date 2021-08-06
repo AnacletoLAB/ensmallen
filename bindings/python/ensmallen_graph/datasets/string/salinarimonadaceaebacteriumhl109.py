@@ -88,7 +88,7 @@ def SalinarimonadaceaeBacteriumHl109(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinarimonadaceaeBacteriumHl109",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

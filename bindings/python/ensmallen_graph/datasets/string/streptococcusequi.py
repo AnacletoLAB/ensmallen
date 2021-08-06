@@ -91,7 +91,7 @@ def StreptococcusEqui(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusEqui",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

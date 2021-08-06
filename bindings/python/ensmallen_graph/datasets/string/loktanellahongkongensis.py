@@ -91,7 +91,7 @@ def LoktanellaHongkongensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LoktanellaHongkongensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

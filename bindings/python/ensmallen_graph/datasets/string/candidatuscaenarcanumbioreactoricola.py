@@ -88,7 +88,7 @@ def CandidatusCaenarcanumBioreactoricola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusCaenarcanumBioreactoricola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

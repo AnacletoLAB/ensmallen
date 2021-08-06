@@ -88,7 +88,7 @@ def AcidobacteriaBacteriumGa0077534(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidobacteriaBacteriumGa0077534",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

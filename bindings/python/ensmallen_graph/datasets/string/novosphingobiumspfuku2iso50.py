@@ -88,7 +88,7 @@ def NovosphingobiumSpFuku2Iso50(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NovosphingobiumSpFuku2Iso50",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

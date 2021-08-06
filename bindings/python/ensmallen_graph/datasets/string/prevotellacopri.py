@@ -91,7 +91,7 @@ def PrevotellaCopri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaCopri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

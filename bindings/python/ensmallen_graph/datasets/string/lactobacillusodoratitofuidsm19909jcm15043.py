@@ -88,7 +88,7 @@ def LactobacillusOdoratitofuiDsm19909Jcm15043(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusOdoratitofuiDsm19909Jcm15043",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

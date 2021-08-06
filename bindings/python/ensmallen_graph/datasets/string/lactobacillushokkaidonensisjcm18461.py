@@ -88,7 +88,7 @@ def LactobacillusHokkaidonensisJcm18461(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusHokkaidonensisJcm18461",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

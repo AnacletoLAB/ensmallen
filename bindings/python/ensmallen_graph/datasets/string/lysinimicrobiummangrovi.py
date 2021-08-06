@@ -91,7 +91,7 @@ def LysinimicrobiumMangrovi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LysinimicrobiumMangrovi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

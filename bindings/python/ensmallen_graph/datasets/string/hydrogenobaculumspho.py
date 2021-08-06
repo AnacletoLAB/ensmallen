@@ -91,7 +91,7 @@ def HydrogenobaculumSpHo(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HydrogenobaculumSpHo",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def LuteimonasSpJ29(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LuteimonasSpJ29",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def GeobacillusJurassicusNbrc107829(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeobacillusJurassicusNbrc107829",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

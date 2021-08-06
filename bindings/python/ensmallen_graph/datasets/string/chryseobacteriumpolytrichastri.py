@@ -88,7 +88,7 @@ def ChryseobacteriumPolytrichastri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChryseobacteriumPolytrichastri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

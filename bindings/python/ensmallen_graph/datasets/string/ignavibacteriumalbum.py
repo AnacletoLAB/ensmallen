@@ -91,7 +91,7 @@ def IgnavibacteriumAlbum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IgnavibacteriumAlbum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

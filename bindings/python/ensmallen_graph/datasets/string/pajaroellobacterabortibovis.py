@@ -88,7 +88,7 @@ def PajaroellobacterAbortibovis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PajaroellobacterAbortibovis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

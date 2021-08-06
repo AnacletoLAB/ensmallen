@@ -91,7 +91,7 @@ def ChloroflexusSpMsg(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChloroflexusSpMsg",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

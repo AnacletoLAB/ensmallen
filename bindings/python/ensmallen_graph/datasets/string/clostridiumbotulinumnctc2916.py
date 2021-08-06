@@ -91,7 +91,7 @@ def ClostridiumBotulinumNctc2916(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumBotulinumNctc2916",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

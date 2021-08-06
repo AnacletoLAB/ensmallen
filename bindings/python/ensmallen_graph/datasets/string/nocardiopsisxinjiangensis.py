@@ -91,7 +91,7 @@ def NocardiopsisXinjiangensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardiopsisXinjiangensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

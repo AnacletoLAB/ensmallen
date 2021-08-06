@@ -88,7 +88,7 @@ def GemellaSpOralTaxon928(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GemellaSpOralTaxon928",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

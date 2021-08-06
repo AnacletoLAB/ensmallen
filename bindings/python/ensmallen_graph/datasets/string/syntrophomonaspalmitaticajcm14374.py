@@ -88,7 +88,7 @@ def SyntrophomonasPalmitaticaJcm14374(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SyntrophomonasPalmitaticaJcm14374",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

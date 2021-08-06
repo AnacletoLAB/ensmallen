@@ -91,7 +91,7 @@ def PrevotellaBiviaDnf00188(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaBiviaDnf00188",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

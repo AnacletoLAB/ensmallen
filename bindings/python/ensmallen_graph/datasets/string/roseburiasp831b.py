@@ -88,7 +88,7 @@ def RoseburiaSp831b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseburiaSp831b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

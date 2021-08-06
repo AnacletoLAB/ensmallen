@@ -91,7 +91,7 @@ def OreochromisNiloticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OreochromisNiloticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

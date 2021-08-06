@@ -88,7 +88,7 @@ def CorynebacteriumCrudilactis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumCrudilactis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

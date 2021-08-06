@@ -88,7 +88,7 @@ def CallorhinchusMilii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CallorhinchusMilii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

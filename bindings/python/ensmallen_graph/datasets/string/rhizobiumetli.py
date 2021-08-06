@@ -88,7 +88,7 @@ def RhizobiumEtli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizobiumEtli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

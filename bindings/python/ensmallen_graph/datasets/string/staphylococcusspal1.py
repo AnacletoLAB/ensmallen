@@ -91,7 +91,7 @@ def StaphylococcusSpAl1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StaphylococcusSpAl1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

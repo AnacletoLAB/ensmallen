@@ -88,7 +88,7 @@ def VenustampullaEchinocandica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VenustampullaEchinocandica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ActinomaduraMacraNbrc14102(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomaduraMacraNbrc14102",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

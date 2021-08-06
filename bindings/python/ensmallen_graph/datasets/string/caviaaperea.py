@@ -88,7 +88,7 @@ def CaviaAperea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaviaAperea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

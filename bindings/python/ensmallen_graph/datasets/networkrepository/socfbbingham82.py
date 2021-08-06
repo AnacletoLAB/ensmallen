@@ -120,7 +120,7 @@ def SocfbBingham82(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbBingham82",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

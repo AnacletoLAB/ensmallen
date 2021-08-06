@@ -88,7 +88,7 @@ def EumetaJaponica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EumetaJaponica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

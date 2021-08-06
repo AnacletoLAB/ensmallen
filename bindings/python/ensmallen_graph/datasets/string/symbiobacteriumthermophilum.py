@@ -91,7 +91,7 @@ def SymbiobacteriumThermophilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SymbiobacteriumThermophilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

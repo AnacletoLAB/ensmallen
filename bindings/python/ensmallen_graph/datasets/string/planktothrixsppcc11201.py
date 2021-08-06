@@ -88,7 +88,7 @@ def PlanktothrixSpPcc11201(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlanktothrixSpPcc11201",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

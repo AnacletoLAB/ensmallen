@@ -88,7 +88,7 @@ def GloeomargaritaLithophoraAlchichicaD10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GloeomargaritaLithophoraAlchichicaD10",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

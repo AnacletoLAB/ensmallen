@@ -88,7 +88,7 @@ def AzonexusHydrophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AzonexusHydrophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

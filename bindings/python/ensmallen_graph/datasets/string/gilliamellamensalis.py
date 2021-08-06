@@ -88,7 +88,7 @@ def GilliamellaMensalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GilliamellaMensalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

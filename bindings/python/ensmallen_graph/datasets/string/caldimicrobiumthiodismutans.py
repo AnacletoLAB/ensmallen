@@ -88,7 +88,7 @@ def CaldimicrobiumThiodismutans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaldimicrobiumThiodismutans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def DesulforhopalusSingaporensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulforhopalusSingaporensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

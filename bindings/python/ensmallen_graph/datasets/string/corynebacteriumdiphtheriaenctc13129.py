@@ -88,7 +88,7 @@ def CorynebacteriumDiphtheriaeNctc13129(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumDiphtheriaeNctc13129",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

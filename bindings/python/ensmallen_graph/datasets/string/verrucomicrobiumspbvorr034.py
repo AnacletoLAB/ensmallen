@@ -91,7 +91,7 @@ def VerrucomicrobiumSpBvorr034(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VerrucomicrobiumSpBvorr034",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

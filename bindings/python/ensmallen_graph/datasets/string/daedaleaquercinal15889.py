@@ -88,7 +88,7 @@ def DaedaleaQuercinaL15889(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DaedaleaQuercinaL15889",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

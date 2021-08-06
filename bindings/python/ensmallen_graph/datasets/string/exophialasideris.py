@@ -88,7 +88,7 @@ def ExophialaSideris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ExophialaSideris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

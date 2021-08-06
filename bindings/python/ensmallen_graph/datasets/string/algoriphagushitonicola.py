@@ -88,7 +88,7 @@ def AlgoriphagusHitonicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlgoriphagusHitonicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

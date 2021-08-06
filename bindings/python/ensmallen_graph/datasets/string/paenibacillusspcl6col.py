@@ -88,7 +88,7 @@ def PaenibacillusSpCl6col(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillusSpCl6col",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

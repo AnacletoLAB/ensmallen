@@ -91,7 +91,7 @@ def NocardiaPneumoniae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardiaPneumoniae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

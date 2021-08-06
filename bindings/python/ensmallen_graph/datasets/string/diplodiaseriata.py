@@ -88,7 +88,7 @@ def DiplodiaSeriata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DiplodiaSeriata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

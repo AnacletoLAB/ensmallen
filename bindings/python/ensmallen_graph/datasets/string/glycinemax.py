@@ -91,7 +91,7 @@ def GlycineMax(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GlycineMax",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

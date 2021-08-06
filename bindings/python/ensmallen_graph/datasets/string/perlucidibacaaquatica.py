@@ -88,7 +88,7 @@ def PerlucidibacaAquatica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PerlucidibacaAquatica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

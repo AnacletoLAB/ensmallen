@@ -88,7 +88,7 @@ def ParachlamydiaceaeBacteriumHsT3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParachlamydiaceaeBacteriumHsT3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

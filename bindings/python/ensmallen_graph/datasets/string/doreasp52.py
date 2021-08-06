@@ -91,7 +91,7 @@ def DoreaSp52(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DoreaSp52",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

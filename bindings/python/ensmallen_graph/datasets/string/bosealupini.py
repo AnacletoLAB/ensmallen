@@ -88,7 +88,7 @@ def BoseaLupini(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BoseaLupini",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

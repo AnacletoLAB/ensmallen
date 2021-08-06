@@ -91,7 +91,7 @@ def SphingobiumChlorophenolicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingobiumChlorophenolicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def DyellaJaponicaDsm16301(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DyellaJaponicaDsm16301",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

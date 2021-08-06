@@ -88,7 +88,7 @@ def CollinsellaSp609(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CollinsellaSp609",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

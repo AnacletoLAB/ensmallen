@@ -88,7 +88,7 @@ def DefluviimonasAlba(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DefluviimonasAlba",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

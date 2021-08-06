@@ -91,7 +91,7 @@ def OceanobacillusPicturae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OceanobacillusPicturae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

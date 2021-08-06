@@ -91,7 +91,7 @@ def MartelellaMediterranea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MartelellaMediterranea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

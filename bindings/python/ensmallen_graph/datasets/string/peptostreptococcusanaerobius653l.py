@@ -91,7 +91,7 @@ def PeptostreptococcusAnaerobius653l(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeptostreptococcusAnaerobius653l",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def BlautiaProductaAtcc27340Dsm2950(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlautiaProductaAtcc27340Dsm2950",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

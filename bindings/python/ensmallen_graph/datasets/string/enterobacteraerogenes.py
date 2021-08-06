@@ -91,7 +91,7 @@ def EnterobacterAerogenes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterobacterAerogenes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

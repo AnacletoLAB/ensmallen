@@ -88,7 +88,7 @@ def LactobacillusGigeriorumDsm23908Crbip2485(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusGigeriorumDsm23908Crbip2485",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

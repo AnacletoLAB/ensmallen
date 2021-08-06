@@ -88,7 +88,7 @@ def RhodothermaceaeBacteriumRa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodothermaceaeBacteriumRa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

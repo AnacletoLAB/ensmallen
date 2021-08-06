@@ -88,7 +88,7 @@ def CorynebacteriumFrankenforstenseDsm45800(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumFrankenforstenseDsm45800",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

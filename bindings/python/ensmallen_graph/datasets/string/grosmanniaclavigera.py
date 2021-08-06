@@ -91,7 +91,7 @@ def GrosmanniaClavigera(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GrosmanniaClavigera",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

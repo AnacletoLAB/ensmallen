@@ -88,7 +88,7 @@ def TardiphagaRobiniae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TardiphagaRobiniae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

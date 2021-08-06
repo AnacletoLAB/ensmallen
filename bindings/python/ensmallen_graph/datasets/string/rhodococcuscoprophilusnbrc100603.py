@@ -88,7 +88,7 @@ def RhodococcusCoprophilusNbrc100603(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodococcusCoprophilusNbrc100603",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

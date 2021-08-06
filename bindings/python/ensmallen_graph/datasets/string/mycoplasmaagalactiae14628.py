@@ -88,7 +88,7 @@ def MycoplasmaAgalactiae14628(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaAgalactiae14628",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

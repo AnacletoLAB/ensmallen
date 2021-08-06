@@ -88,7 +88,7 @@ def LipomycesStarkeyiNrrlY11557(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LipomycesStarkeyiNrrlY11557",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

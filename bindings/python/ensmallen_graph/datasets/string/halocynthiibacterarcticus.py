@@ -88,7 +88,7 @@ def HalocynthiibacterArcticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalocynthiibacterArcticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

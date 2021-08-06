@@ -88,7 +88,7 @@ def AnaerosporobacterMobilisDsm15930(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerosporobacterMobilisDsm15930",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

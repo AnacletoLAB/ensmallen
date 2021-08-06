@@ -88,7 +88,7 @@ def NovosphingobiumMalaysiense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NovosphingobiumMalaysiense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

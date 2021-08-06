@@ -88,7 +88,7 @@ def ActinomycesSpOralTaxon414(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomycesSpOralTaxon414",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

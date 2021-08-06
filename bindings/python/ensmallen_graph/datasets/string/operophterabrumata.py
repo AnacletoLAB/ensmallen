@@ -88,7 +88,7 @@ def OperophteraBrumata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OperophteraBrumata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

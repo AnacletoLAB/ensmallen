@@ -88,7 +88,7 @@ def RoselliniaNecatrix(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoselliniaNecatrix",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

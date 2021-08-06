@@ -91,7 +91,7 @@ def EnterobacterAsburiaeLf7a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterobacterAsburiaeLf7a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

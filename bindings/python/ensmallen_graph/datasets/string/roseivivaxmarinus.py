@@ -88,7 +88,7 @@ def RoseivivaxMarinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseivivaxMarinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

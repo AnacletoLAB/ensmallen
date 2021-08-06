@@ -91,7 +91,7 @@ def AcidaminococcusIntestini(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidaminococcusIntestini",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

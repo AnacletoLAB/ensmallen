@@ -88,7 +88,7 @@ def AspergillusUdagawae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AspergillusUdagawae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

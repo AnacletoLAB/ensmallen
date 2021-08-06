@@ -91,7 +91,7 @@ def ShinellaSpDd12(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShinellaSpDd12",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

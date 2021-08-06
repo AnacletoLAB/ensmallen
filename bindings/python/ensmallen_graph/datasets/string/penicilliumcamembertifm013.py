@@ -88,7 +88,7 @@ def PenicilliumCamembertiFm013(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PenicilliumCamembertiFm013",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

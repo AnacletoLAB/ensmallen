@@ -91,7 +91,7 @@ def ArcobacterButzleriEd1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArcobacterButzleriEd1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

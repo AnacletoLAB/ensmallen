@@ -88,7 +88,7 @@ def NovosphingobiumSpNdb2meth1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NovosphingobiumSpNdb2meth1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

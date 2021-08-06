@@ -91,7 +91,7 @@ def NitrosomonasSpAl212(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrosomonasSpAl212",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

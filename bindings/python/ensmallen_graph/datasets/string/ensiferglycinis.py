@@ -88,7 +88,7 @@ def EnsiferGlycinis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnsiferGlycinis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

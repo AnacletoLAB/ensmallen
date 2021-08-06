@@ -88,7 +88,7 @@ def TrinickiaCaryophylli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrinickiaCaryophylli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

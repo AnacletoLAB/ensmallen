@@ -88,7 +88,7 @@ def PyrenophoraTriticiRepentisPt1cBfp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PyrenophoraTriticiRepentisPt1cBfp",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

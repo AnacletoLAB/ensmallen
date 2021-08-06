@@ -88,7 +88,7 @@ def NioellaNitratireducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NioellaNitratireducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

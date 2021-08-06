@@ -88,7 +88,7 @@ def FlagellimonasFlava(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlagellimonasFlava",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

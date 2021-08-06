@@ -91,7 +91,7 @@ def AnaerococcusPrevotiiAcs065vcol13(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerococcusPrevotiiAcs065vcol13",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

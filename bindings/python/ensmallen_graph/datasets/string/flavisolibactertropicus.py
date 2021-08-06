@@ -88,7 +88,7 @@ def FlavisolibacterTropicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavisolibacterTropicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

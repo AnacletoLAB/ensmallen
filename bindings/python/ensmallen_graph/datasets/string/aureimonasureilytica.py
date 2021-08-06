@@ -91,7 +91,7 @@ def AureimonasUreilytica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AureimonasUreilytica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

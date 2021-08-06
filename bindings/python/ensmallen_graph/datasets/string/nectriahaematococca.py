@@ -91,7 +91,7 @@ def NectriaHaematococca(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NectriaHaematococca",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CandidatusPeribacterRiflensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusPeribacterRiflensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

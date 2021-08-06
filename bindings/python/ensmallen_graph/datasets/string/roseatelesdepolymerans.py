@@ -88,7 +88,7 @@ def RoseatelesDepolymerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseatelesDepolymerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

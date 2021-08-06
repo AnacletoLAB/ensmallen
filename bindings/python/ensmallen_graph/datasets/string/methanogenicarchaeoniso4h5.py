@@ -88,7 +88,7 @@ def MethanogenicArchaeonIso4H5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanogenicArchaeonIso4H5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

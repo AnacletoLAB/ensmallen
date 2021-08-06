@@ -88,7 +88,7 @@ def CohaesibacterMarisflavi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CohaesibacterMarisflavi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AquisalimonasAsiatica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AquisalimonasAsiatica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

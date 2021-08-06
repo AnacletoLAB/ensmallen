@@ -91,7 +91,7 @@ def HaemophilusHaemolyticusM19501(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaemophilusHaemolyticusM19501",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

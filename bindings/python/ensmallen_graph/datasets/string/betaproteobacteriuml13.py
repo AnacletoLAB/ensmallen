@@ -88,7 +88,7 @@ def BetaProteobacteriumL13(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BetaProteobacteriumL13",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

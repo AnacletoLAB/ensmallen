@@ -88,7 +88,7 @@ def MannheimiaVarigenaUsmarc1261(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MannheimiaVarigenaUsmarc1261",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CarboxydothermusPertinax(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CarboxydothermusPertinax",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

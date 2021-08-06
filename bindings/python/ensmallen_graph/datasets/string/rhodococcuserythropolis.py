@@ -91,7 +91,7 @@ def RhodococcusErythropolis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodococcusErythropolis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

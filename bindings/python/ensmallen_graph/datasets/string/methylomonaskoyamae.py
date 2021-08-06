@@ -88,7 +88,7 @@ def MethylomonasKoyamae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylomonasKoyamae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

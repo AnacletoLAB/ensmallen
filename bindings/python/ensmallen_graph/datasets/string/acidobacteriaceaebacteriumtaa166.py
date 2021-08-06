@@ -91,7 +91,7 @@ def AcidobacteriaceaeBacteriumTaa166(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidobacteriaceaeBacteriumTaa166",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def AzorhizobiumCaulinodans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AzorhizobiumCaulinodans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def JiulongibacterSediminis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JiulongibacterSediminis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

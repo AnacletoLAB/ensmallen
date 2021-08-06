@@ -88,7 +88,7 @@ def PseudoduganellaViolaceinigraDsm15887(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoduganellaViolaceinigraDsm15887",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

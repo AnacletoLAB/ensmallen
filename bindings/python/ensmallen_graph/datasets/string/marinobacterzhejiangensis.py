@@ -88,7 +88,7 @@ def MarinobacterZhejiangensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinobacterZhejiangensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

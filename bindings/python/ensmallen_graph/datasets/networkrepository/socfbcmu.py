@@ -120,7 +120,7 @@ def SocfbCmu(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbCmu",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MarinobacterNitratireducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinobacterNitratireducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

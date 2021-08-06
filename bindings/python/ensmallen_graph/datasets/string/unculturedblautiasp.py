@@ -88,7 +88,7 @@ def UnculturedBlautiaSp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UnculturedBlautiaSp",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def TrichinellaPapuae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichinellaPapuae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

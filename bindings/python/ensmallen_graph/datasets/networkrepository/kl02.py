@@ -78,7 +78,7 @@ def Kl02(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Kl02",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

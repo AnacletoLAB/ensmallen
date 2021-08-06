@@ -78,7 +78,7 @@ def Cage10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Cage10",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

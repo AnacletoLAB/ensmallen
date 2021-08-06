@@ -88,7 +88,7 @@ def MassilibacteriumSenegalense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MassilibacteriumSenegalense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

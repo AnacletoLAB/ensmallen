@@ -104,7 +104,7 @@ def CFat5002(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CFat5002",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

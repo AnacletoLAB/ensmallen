@@ -88,7 +88,7 @@ def CoprococcusSpCag782(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CoprococcusSpCag782",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

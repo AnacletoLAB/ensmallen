@@ -88,7 +88,7 @@ def DesulfomicrobiumOraleDsm12838(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfomicrobiumOraleDsm12838",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

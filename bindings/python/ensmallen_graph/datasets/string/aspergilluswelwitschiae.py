@@ -88,7 +88,7 @@ def AspergillusWelwitschiae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AspergillusWelwitschiae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

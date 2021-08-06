@@ -91,7 +91,7 @@ def SphingobacteriaceaeBacteriumDw12(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingobacteriaceaeBacteriumDw12",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

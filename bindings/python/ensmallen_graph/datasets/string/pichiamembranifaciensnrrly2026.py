@@ -88,7 +88,7 @@ def PichiaMembranifaciensNrrlY2026(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PichiaMembranifaciensNrrlY2026",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

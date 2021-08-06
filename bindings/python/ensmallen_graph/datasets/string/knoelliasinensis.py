@@ -91,7 +91,7 @@ def KnoelliaSinensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KnoelliaSinensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

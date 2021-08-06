@@ -88,7 +88,7 @@ def CandidatusSericytochromatiaBacteriumS15bMn24Cbmw12(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusSericytochromatiaBacteriumS15bMn24Cbmw12",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

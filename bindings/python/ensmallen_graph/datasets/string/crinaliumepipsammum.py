@@ -91,7 +91,7 @@ def CrinaliumEpipsammum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CrinaliumEpipsammum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

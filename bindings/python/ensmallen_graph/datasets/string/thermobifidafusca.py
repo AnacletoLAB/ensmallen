@@ -91,7 +91,7 @@ def ThermobifidaFusca(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermobifidaFusca",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

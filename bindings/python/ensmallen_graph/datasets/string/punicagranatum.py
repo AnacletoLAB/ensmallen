@@ -88,7 +88,7 @@ def PunicaGranatum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PunicaGranatum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MycoplasmaSpExBiomphalariaGlabrata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaSpExBiomphalariaGlabrata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

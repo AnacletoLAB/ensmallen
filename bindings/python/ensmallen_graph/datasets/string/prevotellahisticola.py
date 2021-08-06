@@ -91,7 +91,7 @@ def PrevotellaHisticola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaHisticola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

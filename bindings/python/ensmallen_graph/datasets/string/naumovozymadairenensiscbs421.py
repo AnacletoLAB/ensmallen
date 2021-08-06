@@ -88,7 +88,7 @@ def NaumovozymaDairenensisCbs421(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NaumovozymaDairenensisCbs421",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -92,7 +92,7 @@ def SocLivemocha(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocLivemocha",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

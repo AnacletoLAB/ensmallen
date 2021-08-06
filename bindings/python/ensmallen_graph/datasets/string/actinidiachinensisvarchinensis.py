@@ -88,7 +88,7 @@ def ActinidiaChinensisVarChinensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinidiaChinensisVarChinensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

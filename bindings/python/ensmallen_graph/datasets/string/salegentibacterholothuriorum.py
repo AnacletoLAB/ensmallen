@@ -88,7 +88,7 @@ def SalegentibacterHolothuriorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalegentibacterHolothuriorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

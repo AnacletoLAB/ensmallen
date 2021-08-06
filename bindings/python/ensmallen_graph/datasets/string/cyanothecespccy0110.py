@@ -91,7 +91,7 @@ def CyanotheceSpCcy0110(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CyanotheceSpCcy0110",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

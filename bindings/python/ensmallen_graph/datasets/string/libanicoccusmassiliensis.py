@@ -88,7 +88,7 @@ def LibanicoccusMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LibanicoccusMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def WikiTalk(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WikiTalk",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

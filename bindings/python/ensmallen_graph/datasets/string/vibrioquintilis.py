@@ -88,7 +88,7 @@ def VibrioQuintilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioQuintilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

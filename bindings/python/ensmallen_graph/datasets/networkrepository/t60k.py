@@ -78,7 +78,7 @@ def T60k(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="T60k",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

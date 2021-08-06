@@ -88,7 +88,7 @@ def TannerellaSpOralTaxonHot286(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TannerellaSpOralTaxonHot286",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

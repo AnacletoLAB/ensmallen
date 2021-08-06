@@ -91,7 +91,7 @@ def LactobacillusCaseiDsm20011(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusCaseiDsm20011",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

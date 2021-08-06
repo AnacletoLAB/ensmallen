@@ -88,7 +88,7 @@ def KiritimatiellaGlycovorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KiritimatiellaGlycovorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

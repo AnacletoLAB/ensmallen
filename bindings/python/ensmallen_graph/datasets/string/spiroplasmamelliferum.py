@@ -91,7 +91,7 @@ def SpiroplasmaMelliferum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpiroplasmaMelliferum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

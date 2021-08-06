@@ -88,7 +88,7 @@ def MethylophagaMuralis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylophagaMuralis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

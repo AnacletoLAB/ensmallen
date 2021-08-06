@@ -91,7 +91,7 @@ def AlistipesSenegalensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlistipesSenegalensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

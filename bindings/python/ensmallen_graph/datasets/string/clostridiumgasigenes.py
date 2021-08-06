@@ -88,7 +88,7 @@ def ClostridiumGasigenes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumGasigenes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

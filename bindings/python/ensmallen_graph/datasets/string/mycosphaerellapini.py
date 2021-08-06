@@ -91,7 +91,7 @@ def MycosphaerellaPini(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycosphaerellaPini",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

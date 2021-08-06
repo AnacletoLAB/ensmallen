@@ -88,7 +88,7 @@ def JeotgalibacaSpPts2502(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JeotgalibacaSpPts2502",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

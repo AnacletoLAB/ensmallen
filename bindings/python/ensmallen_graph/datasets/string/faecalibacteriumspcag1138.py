@@ -88,7 +88,7 @@ def FaecalibacteriumSpCag1138(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FaecalibacteriumSpCag1138",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

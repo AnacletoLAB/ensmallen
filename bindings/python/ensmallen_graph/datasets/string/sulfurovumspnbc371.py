@@ -91,7 +91,7 @@ def SulfurovumSpNbc371(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfurovumSpNbc371",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def BlautiaWexlerae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlautiaWexlerae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

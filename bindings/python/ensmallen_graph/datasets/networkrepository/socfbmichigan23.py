@@ -120,7 +120,7 @@ def SocfbMichigan23(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbMichigan23",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def JeotgalibacillusSoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JeotgalibacillusSoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

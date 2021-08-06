@@ -88,7 +88,7 @@ def MethyloversatilisThermotolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethyloversatilisThermotolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

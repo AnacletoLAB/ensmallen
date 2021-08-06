@@ -88,7 +88,7 @@ def CronobacterSakazakii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CronobacterSakazakii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

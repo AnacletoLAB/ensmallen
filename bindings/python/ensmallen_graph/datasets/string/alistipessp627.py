@@ -91,7 +91,7 @@ def AlistipesSp627(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlistipesSp627",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

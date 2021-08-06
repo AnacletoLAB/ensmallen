@@ -88,7 +88,7 @@ def HelicobacterBizzozeroniiCcug35545(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelicobacterBizzozeroniiCcug35545",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

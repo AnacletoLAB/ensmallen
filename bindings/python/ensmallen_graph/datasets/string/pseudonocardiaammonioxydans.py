@@ -88,7 +88,7 @@ def PseudonocardiaAmmonioxydans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudonocardiaAmmonioxydans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

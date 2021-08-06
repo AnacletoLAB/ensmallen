@@ -91,7 +91,7 @@ def LyngbyaSpPcc8106(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LyngbyaSpPcc8106",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

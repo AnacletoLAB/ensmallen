@@ -91,7 +91,7 @@ def BradyrhizobiumJaponicumUsda6(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BradyrhizobiumJaponicumUsda6",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

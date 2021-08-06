@@ -91,7 +91,7 @@ def AureococcusAnophagefferens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AureococcusAnophagefferens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

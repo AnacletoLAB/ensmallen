@@ -91,7 +91,7 @@ def CarnimonasNigrificans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CarnimonasNigrificans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

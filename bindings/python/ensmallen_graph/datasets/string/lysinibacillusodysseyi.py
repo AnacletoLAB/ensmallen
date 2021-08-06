@@ -91,7 +91,7 @@ def LysinibacillusOdysseyi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LysinibacillusOdysseyi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def WaddliaChondrophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WaddliaChondrophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

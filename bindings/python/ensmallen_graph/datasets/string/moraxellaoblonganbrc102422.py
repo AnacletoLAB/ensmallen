@@ -88,7 +88,7 @@ def MoraxellaOblongaNbrc102422(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MoraxellaOblongaNbrc102422",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

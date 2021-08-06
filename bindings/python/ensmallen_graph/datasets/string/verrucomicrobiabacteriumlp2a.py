@@ -91,7 +91,7 @@ def VerrucomicrobiaBacteriumLp2a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VerrucomicrobiaBacteriumLp2a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

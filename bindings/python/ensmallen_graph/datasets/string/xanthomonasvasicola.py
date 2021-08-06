@@ -88,7 +88,7 @@ def XanthomonasVasicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XanthomonasVasicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

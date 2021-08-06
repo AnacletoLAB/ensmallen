@@ -88,7 +88,7 @@ def StemphyliumLycopersici(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StemphyliumLycopersici",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

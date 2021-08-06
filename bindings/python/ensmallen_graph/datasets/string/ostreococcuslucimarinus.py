@@ -91,7 +91,7 @@ def OstreococcusLucimarinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OstreococcusLucimarinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

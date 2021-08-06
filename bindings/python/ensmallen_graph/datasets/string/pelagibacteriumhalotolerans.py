@@ -91,7 +91,7 @@ def PelagibacteriumHalotolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PelagibacteriumHalotolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

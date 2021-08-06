@@ -91,7 +91,7 @@ def MycoplasmaGallisepticumS6(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaGallisepticumS6",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def HammondiaHammondi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HammondiaHammondi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

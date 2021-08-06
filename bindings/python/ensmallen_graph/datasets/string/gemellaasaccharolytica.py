@@ -88,7 +88,7 @@ def GemellaAsaccharolytica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GemellaAsaccharolytica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

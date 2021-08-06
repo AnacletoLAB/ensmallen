@@ -88,7 +88,7 @@ def EzakiellaMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EzakiellaMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

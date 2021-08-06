@@ -88,7 +88,7 @@ def PhialemoniopsisCurvata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhialemoniopsisCurvata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

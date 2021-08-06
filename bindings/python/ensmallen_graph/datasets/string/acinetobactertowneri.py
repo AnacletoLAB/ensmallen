@@ -91,7 +91,7 @@ def AcinetobacterTowneri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcinetobacterTowneri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

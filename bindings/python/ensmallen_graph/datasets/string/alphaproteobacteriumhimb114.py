@@ -91,7 +91,7 @@ def AlphaProteobacteriumHimb114(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlphaProteobacteriumHimb114",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

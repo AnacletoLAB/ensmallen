@@ -88,7 +88,7 @@ def BlochmanniaEndosymbiontOfPolyrhachisHedomyrmaTurneri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlochmanniaEndosymbiontOfPolyrhachisHedomyrmaTurneri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

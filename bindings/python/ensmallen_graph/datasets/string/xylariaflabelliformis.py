@@ -88,7 +88,7 @@ def XylariaFlabelliformis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XylariaFlabelliformis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

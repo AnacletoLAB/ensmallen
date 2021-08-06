@@ -88,7 +88,7 @@ def HalohastaLitchfieldiae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalohastaLitchfieldiae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

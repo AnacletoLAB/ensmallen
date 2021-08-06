@@ -88,7 +88,7 @@ def ColletotrichumFructicolaNaraGc5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ColletotrichumFructicolaNaraGc5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

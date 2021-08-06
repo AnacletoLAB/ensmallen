@@ -88,7 +88,7 @@ def MetarhiziumAnisopliaeBrip53293(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MetarhiziumAnisopliaeBrip53293",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ActinomaduraRifamyciniDsm43936(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomaduraRifamyciniDsm43936",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

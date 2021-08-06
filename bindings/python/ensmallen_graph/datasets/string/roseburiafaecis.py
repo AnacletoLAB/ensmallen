@@ -88,7 +88,7 @@ def RoseburiaFaecis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseburiaFaecis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

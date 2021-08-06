@@ -91,7 +91,7 @@ def ArcanobacteriumSpS3pf19(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArcanobacteriumSpS3pf19",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

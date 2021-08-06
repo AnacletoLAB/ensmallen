@@ -91,7 +91,7 @@ def BrevibacteriumMcbrellneri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrevibacteriumMcbrellneri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

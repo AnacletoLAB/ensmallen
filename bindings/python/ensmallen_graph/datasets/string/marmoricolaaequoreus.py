@@ -91,7 +91,7 @@ def MarmoricolaAequoreus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarmoricolaAequoreus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def RickettsiaBelliiOsu85389(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RickettsiaBelliiOsu85389",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

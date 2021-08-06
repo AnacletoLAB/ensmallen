@@ -88,7 +88,7 @@ def RheinheimeraSalexigens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RheinheimeraSalexigens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

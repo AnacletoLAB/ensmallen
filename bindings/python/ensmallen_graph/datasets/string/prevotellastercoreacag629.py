@@ -88,7 +88,7 @@ def PrevotellaStercoreaCag629(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaStercoreaCag629",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

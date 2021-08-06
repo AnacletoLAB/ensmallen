@@ -88,7 +88,7 @@ def LactobacillusEquiDsm15833Jcm10991(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusEquiDsm15833Jcm10991",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

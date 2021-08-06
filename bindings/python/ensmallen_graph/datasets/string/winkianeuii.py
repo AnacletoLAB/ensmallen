@@ -88,7 +88,7 @@ def WinkiaNeuii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WinkiaNeuii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

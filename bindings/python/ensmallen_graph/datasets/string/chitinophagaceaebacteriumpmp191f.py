@@ -88,7 +88,7 @@ def ChitinophagaceaeBacteriumPmp191f(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChitinophagaceaeBacteriumPmp191f",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

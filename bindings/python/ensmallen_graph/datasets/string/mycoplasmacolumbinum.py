@@ -91,7 +91,7 @@ def MycoplasmaColumbinum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaColumbinum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

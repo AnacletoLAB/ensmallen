@@ -91,7 +91,7 @@ def SphaerobacterThermophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphaerobacterThermophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

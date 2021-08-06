@@ -88,7 +88,7 @@ def AnaerotignumNeopropionicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerotignumNeopropionicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

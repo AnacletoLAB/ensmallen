@@ -88,7 +88,7 @@ def LeptospiraWolbachiiSerovarCodiceStrCdc(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptospiraWolbachiiSerovarCodiceStrCdc",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

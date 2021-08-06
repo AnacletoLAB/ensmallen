@@ -88,7 +88,7 @@ def ArchangiumGephyra(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArchangiumGephyra",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

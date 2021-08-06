@@ -91,7 +91,7 @@ def ChitinivibrioAlkaliphilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChitinivibrioAlkaliphilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

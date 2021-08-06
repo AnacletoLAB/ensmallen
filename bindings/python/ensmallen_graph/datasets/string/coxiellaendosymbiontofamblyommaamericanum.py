@@ -88,7 +88,7 @@ def CoxiellaEndosymbiontOfAmblyommaAmericanum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CoxiellaEndosymbiontOfAmblyommaAmericanum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def HydatigeraTaeniaeformis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HydatigeraTaeniaeformis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

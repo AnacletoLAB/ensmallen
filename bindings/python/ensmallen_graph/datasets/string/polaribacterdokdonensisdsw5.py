@@ -88,7 +88,7 @@ def PolaribacterDokdonensisDsw5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PolaribacterDokdonensisDsw5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

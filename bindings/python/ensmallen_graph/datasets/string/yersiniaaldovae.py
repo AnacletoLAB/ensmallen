@@ -91,7 +91,7 @@ def YersiniaAldovae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="YersiniaAldovae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

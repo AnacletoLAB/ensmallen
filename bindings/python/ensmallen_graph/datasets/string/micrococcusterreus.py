@@ -88,7 +88,7 @@ def MicrococcusTerreus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrococcusTerreus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

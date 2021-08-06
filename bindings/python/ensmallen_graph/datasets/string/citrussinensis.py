@@ -91,7 +91,7 @@ def CitrusSinensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CitrusSinensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

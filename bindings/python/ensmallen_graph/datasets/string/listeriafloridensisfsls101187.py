@@ -88,7 +88,7 @@ def ListeriaFloridensisFslS101187(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ListeriaFloridensisFslS101187",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def NostocSpMbr210(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NostocSpMbr210",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

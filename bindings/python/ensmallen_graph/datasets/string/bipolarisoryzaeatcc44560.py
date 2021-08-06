@@ -88,7 +88,7 @@ def BipolarisOryzaeAtcc44560(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BipolarisOryzaeAtcc44560",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

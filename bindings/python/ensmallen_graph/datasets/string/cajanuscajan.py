@@ -88,7 +88,7 @@ def CajanusCajan(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CajanusCajan",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

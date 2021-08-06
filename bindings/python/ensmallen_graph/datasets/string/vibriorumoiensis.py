@@ -91,7 +91,7 @@ def VibrioRumoiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioRumoiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

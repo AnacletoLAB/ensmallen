@@ -88,7 +88,7 @@ def OceanicaulisSpBbd199110(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OceanicaulisSpBbd199110",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

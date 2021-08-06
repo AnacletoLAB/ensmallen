@@ -88,7 +88,7 @@ def MethanotorrisIgneusKol5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanotorrisIgneusKol5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

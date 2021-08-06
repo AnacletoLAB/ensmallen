@@ -88,7 +88,7 @@ def LihuaxuellaThermophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LihuaxuellaThermophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

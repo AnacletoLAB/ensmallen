@@ -88,7 +88,7 @@ def DielmaFastidiosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DielmaFastidiosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

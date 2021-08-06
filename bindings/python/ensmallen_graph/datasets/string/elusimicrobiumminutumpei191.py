@@ -88,7 +88,7 @@ def ElusimicrobiumMinutumPei191(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ElusimicrobiumMinutumPei191",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

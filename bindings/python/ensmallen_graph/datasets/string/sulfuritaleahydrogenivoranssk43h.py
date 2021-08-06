@@ -88,7 +88,7 @@ def SulfuritaleaHydrogenivoransSk43h(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfuritaleaHydrogenivoransSk43h",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def GulbenkianiaIndica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GulbenkianiaIndica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

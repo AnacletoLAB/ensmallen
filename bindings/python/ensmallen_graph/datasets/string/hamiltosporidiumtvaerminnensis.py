@@ -88,7 +88,7 @@ def HamiltosporidiumTvaerminnensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HamiltosporidiumTvaerminnensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

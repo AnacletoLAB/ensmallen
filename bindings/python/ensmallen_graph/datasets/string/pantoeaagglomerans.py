@@ -91,7 +91,7 @@ def PantoeaAgglomerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PantoeaAgglomerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

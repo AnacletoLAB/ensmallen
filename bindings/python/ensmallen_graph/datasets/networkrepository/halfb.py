@@ -78,7 +78,7 @@ def Halfb(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Halfb",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

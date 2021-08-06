@@ -88,7 +88,7 @@ def PetromyzonMarinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PetromyzonMarinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

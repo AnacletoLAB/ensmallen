@@ -88,7 +88,7 @@ def BetaProteobacteriumScgcAaa027K21(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BetaProteobacteriumScgcAaa027K21",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

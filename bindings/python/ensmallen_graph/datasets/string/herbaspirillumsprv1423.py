@@ -88,7 +88,7 @@ def HerbaspirillumSpRv1423(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HerbaspirillumSpRv1423",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

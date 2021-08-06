@@ -78,7 +78,7 @@ def Channel500x100x100B050(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Channel500x100x100B050",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

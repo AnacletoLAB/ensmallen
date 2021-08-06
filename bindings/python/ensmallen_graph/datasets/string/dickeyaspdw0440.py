@@ -91,7 +91,7 @@ def DickeyaSpDw0440(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DickeyaSpDw0440",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

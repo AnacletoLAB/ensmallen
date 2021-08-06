@@ -88,7 +88,7 @@ def ListeriaGrandensisFslF60971(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ListeriaGrandensisFslF60971",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

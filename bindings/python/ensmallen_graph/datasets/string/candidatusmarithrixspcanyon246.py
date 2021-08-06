@@ -88,7 +88,7 @@ def CandidatusMarithrixSpCanyon246(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusMarithrixSpCanyon246",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

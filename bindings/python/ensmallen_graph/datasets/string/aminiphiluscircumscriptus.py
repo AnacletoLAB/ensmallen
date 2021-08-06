@@ -91,7 +91,7 @@ def AminiphilusCircumscriptus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AminiphilusCircumscriptus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

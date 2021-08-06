@@ -88,7 +88,7 @@ def FuchsiellaAlkaliacetigena(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FuchsiellaAlkaliacetigena",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

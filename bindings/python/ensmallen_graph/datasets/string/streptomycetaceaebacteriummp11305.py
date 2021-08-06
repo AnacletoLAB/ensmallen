@@ -88,7 +88,7 @@ def StreptomycetaceaeBacteriumMp11305(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycetaceaeBacteriumMp11305",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

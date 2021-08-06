@@ -88,7 +88,7 @@ def CollimonasArenae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CollimonasArenae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

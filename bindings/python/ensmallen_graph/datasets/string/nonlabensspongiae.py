@@ -88,7 +88,7 @@ def NonlabensSpongiae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NonlabensSpongiae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

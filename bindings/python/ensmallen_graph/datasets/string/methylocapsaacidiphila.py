@@ -91,7 +91,7 @@ def MethylocapsaAcidiphila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylocapsaAcidiphila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

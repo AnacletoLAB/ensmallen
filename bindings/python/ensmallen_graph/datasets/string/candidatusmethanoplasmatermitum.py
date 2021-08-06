@@ -88,7 +88,7 @@ def CandidatusMethanoplasmaTermitum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusMethanoplasmaTermitum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def BurkholderiaRhizoxinica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BurkholderiaRhizoxinica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

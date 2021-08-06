@@ -91,7 +91,7 @@ def AspergillusClavatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AspergillusClavatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

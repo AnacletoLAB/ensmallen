@@ -88,7 +88,7 @@ def PropionibacteriumNamnetense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PropionibacteriumNamnetense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

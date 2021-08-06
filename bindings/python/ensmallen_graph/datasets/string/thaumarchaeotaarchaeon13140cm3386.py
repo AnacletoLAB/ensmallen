@@ -88,7 +88,7 @@ def ThaumarchaeotaArchaeon13140cm3386(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThaumarchaeotaArchaeon13140cm3386",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

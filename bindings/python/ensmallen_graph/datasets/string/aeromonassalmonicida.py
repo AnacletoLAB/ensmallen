@@ -91,7 +91,7 @@ def AeromonasSalmonicida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AeromonasSalmonicida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

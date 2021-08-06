@@ -91,7 +91,7 @@ def FusobacteriumNecrophorumFunduliforme(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FusobacteriumNecrophorumFunduliforme",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

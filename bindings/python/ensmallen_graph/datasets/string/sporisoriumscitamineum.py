@@ -88,7 +88,7 @@ def SporisoriumScitamineum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SporisoriumScitamineum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

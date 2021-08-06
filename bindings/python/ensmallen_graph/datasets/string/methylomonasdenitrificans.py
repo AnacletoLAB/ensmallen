@@ -88,7 +88,7 @@ def MethylomonasDenitrificans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylomonasDenitrificans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CandidaGlabrataCbs138(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidaGlabrataCbs138",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

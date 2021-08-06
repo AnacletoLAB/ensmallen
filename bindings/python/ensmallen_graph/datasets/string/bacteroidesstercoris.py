@@ -91,7 +91,7 @@ def BacteroidesStercoris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesStercoris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

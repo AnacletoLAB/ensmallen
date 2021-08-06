@@ -88,7 +88,7 @@ def ChytriomycesConfervae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChytriomycesConfervae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

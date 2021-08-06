@@ -88,7 +88,7 @@ def PseudorhodoplanesSinuspersici(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudorhodoplanesSinuspersici",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def SporosarcinaSpEur3222(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SporosarcinaSpEur3222",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

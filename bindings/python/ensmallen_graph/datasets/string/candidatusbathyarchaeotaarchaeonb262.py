@@ -88,7 +88,7 @@ def CandidatusBathyarchaeotaArchaeonB262(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusBathyarchaeotaArchaeonB262",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

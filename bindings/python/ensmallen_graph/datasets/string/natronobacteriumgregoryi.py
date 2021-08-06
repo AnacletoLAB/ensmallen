@@ -91,7 +91,7 @@ def NatronobacteriumGregoryi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NatronobacteriumGregoryi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

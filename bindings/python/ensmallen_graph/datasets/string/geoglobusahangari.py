@@ -88,7 +88,7 @@ def GeoglobusAhangari(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeoglobusAhangari",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

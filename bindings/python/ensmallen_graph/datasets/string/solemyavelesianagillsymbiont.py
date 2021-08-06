@@ -88,7 +88,7 @@ def SolemyaVelesianaGillSymbiont(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SolemyaVelesianaGillSymbiont",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

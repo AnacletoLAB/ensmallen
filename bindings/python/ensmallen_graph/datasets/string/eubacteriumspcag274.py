@@ -88,7 +88,7 @@ def EubacteriumSpCag274(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EubacteriumSpCag274",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

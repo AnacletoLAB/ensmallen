@@ -88,7 +88,7 @@ def EpulopisciumSpAs2mBin001(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EpulopisciumSpAs2mBin001",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

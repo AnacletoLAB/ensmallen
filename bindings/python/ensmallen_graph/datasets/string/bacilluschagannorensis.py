@@ -91,7 +91,7 @@ def BacillusChagannorensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusChagannorensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

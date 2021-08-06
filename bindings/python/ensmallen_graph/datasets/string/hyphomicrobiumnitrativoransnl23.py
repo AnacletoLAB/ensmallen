@@ -88,7 +88,7 @@ def HyphomicrobiumNitrativoransNl23(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HyphomicrobiumNitrativoransNl23",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

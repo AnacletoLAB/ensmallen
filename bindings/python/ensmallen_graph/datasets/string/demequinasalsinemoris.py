@@ -88,7 +88,7 @@ def DemequinaSalsinemoris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DemequinaSalsinemoris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

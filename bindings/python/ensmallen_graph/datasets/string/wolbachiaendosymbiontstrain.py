@@ -88,7 +88,7 @@ def WolbachiaEndosymbiontStrain(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WolbachiaEndosymbiontStrain",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

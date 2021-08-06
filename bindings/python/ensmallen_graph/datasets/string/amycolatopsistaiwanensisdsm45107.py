@@ -88,7 +88,7 @@ def AmycolatopsisTaiwanensisDsm45107(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmycolatopsisTaiwanensisDsm45107",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

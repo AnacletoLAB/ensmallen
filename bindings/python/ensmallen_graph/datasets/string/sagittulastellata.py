@@ -91,7 +91,7 @@ def SagittulaStellata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SagittulaStellata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

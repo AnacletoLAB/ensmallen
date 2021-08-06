@@ -88,7 +88,7 @@ def SordariaMacrosporaKHell(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SordariaMacrosporaKHell",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

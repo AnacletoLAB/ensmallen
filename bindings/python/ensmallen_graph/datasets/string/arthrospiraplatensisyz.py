@@ -88,7 +88,7 @@ def ArthrospiraPlatensisYz(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArthrospiraPlatensisYz",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

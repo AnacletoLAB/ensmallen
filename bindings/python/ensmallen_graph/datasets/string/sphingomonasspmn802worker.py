@@ -91,7 +91,7 @@ def SphingomonasSpMn802worker(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingomonasSpMn802worker",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

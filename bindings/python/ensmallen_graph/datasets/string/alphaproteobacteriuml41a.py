@@ -91,7 +91,7 @@ def AlphaProteobacteriumL41a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlphaProteobacteriumL41a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def TrichinellaBritovi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichinellaBritovi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

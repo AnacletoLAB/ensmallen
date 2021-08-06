@@ -88,7 +88,7 @@ def FrigoribacteriumSpLeaf172(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FrigoribacteriumSpLeaf172",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

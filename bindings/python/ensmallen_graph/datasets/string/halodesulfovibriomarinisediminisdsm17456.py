@@ -88,7 +88,7 @@ def HalodesulfovibrioMarinisediminisDsm17456(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalodesulfovibrioMarinisediminisDsm17456",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

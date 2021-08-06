@@ -88,7 +88,7 @@ def BrevibacteriumSiliguriense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrevibacteriumSiliguriense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CandidatusMycoplasmaHaemominutumBirmingham1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusMycoplasmaHaemominutumBirmingham1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

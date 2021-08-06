@@ -88,7 +88,7 @@ def FibrobacteriaBacteriumGut307(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FibrobacteriaBacteriumGut307",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

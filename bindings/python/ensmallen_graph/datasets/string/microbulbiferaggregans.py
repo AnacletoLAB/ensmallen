@@ -88,7 +88,7 @@ def MicrobulbiferAggregans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobulbiferAggregans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def DesulfobacteraceaeBacteriumCg2305140(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfobacteraceaeBacteriumCg2305140",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

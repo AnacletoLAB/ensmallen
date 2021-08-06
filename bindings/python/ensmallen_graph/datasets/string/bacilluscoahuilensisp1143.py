@@ -88,7 +88,7 @@ def BacillusCoahuilensisP1143(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusCoahuilensisP1143",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

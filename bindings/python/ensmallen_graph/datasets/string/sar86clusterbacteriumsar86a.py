@@ -88,7 +88,7 @@ def Sar86ClusterBacteriumSar86a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Sar86ClusterBacteriumSar86a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

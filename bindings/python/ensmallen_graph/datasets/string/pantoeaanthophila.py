@@ -88,7 +88,7 @@ def PantoeaAnthophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PantoeaAnthophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

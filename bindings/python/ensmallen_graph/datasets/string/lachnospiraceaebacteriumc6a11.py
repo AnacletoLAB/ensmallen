@@ -91,7 +91,7 @@ def LachnospiraceaeBacteriumC6a11(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LachnospiraceaeBacteriumC6a11",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

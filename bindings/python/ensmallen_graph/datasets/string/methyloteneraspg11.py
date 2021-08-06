@@ -88,7 +88,7 @@ def MethyloteneraSpG11(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethyloteneraSpG11",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

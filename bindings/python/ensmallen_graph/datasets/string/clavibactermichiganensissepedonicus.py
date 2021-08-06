@@ -91,7 +91,7 @@ def ClavibacterMichiganensisSepedonicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClavibacterMichiganensisSepedonicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

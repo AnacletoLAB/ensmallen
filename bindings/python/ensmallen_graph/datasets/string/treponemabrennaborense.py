@@ -91,7 +91,7 @@ def TreponemaBrennaborense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TreponemaBrennaborense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

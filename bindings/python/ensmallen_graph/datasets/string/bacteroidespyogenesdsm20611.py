@@ -91,7 +91,7 @@ def BacteroidesPyogenesDsm20611(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesPyogenesDsm20611",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

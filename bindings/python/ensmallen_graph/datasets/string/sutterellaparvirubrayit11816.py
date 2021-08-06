@@ -88,7 +88,7 @@ def SutterellaParvirubraYit11816(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SutterellaParvirubraYit11816",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

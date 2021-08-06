@@ -78,7 +78,7 @@ def AffWikiWordbypage(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AffWikiWordbypage",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

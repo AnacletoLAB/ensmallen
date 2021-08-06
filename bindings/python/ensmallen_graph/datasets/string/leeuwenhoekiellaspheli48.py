@@ -91,7 +91,7 @@ def LeeuwenhoekiellaSpHeli48(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeeuwenhoekiellaSpHeli48",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

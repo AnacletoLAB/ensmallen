@@ -91,7 +91,7 @@ def AlgoriphagusMannitolivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlgoriphagusMannitolivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

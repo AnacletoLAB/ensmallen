@@ -91,7 +91,7 @@ def OligellaUrethralis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OligellaUrethralis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

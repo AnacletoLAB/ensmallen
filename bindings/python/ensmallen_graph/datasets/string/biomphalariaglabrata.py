@@ -88,7 +88,7 @@ def BiomphalariaGlabrata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BiomphalariaGlabrata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

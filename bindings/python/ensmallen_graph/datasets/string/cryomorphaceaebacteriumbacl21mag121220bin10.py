@@ -88,7 +88,7 @@ def CryomorphaceaeBacteriumBacl21Mag121220Bin10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CryomorphaceaeBacteriumBacl21Mag121220Bin10",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def OceanicolaLitoreus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OceanicolaLitoreus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

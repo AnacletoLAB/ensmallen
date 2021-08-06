@@ -88,7 +88,7 @@ def PyrenochaetaSpDs3say3a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PyrenochaetaSpDs3say3a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

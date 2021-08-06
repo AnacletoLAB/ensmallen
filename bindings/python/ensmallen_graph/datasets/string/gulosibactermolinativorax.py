@@ -91,7 +91,7 @@ def GulosibacterMolinativorax(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GulosibacterMolinativorax",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

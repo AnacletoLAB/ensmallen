@@ -88,7 +88,7 @@ def RiemerellaColumbipharyngis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RiemerellaColumbipharyngis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

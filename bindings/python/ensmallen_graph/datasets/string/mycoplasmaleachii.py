@@ -91,7 +91,7 @@ def MycoplasmaLeachii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaLeachii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

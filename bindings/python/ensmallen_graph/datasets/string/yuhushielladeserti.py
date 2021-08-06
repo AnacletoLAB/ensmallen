@@ -88,7 +88,7 @@ def YuhushiellaDeserti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="YuhushiellaDeserti",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

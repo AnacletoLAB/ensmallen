@@ -91,7 +91,7 @@ def DesulfuromonasSpTf(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfuromonasSpTf",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

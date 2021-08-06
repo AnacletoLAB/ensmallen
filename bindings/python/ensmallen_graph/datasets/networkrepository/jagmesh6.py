@@ -78,7 +78,7 @@ def Jagmesh6(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Jagmesh6",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

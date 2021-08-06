@@ -88,7 +88,7 @@ def AlicyclobacillusMaliNbrc102425(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlicyclobacillusMaliNbrc102425",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

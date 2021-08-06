@@ -88,7 +88,7 @@ def HelicobacterAilurogastricus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelicobacterAilurogastricus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

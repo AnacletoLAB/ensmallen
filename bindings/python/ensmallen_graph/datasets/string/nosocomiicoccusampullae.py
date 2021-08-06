@@ -88,7 +88,7 @@ def NosocomiicoccusAmpullae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NosocomiicoccusAmpullae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

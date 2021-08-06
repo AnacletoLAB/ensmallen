@@ -91,7 +91,7 @@ def DesulfurivibrioAlkaliphilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfurivibrioAlkaliphilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

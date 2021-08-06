@@ -88,7 +88,7 @@ def BartonellaBirtlesiiIbs325(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BartonellaBirtlesiiIbs325",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

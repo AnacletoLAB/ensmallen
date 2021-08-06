@@ -88,7 +88,7 @@ def ActinomycesGerencseriaeDsm6844(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomycesGerencseriaeDsm6844",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

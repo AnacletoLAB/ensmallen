@@ -91,7 +91,7 @@ def SphaerotilusNatans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphaerotilusNatans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

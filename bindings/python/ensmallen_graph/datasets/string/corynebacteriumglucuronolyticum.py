@@ -91,7 +91,7 @@ def CorynebacteriumGlucuronolyticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumGlucuronolyticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

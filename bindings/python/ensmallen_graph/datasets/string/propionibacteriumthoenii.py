@@ -91,7 +91,7 @@ def PropionibacteriumThoenii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PropionibacteriumThoenii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

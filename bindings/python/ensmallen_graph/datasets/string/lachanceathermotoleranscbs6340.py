@@ -88,7 +88,7 @@ def LachanceaThermotoleransCbs6340(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LachanceaThermotoleransCbs6340",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

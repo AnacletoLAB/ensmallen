@@ -88,7 +88,7 @@ def GeodermatophilusAmargosae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeodermatophilusAmargosae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

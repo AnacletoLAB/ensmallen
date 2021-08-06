@@ -88,7 +88,7 @@ def RhodothermaceaeBacteriumTcBr11B2g67(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodothermaceaeBacteriumTcBr11B2g67",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

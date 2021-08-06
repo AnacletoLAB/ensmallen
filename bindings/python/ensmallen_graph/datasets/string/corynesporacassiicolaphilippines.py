@@ -88,7 +88,7 @@ def CorynesporaCassiicolaPhilippines(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynesporaCassiicolaPhilippines",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

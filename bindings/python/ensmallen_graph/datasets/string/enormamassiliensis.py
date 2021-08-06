@@ -91,7 +91,7 @@ def EnormaMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnormaMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

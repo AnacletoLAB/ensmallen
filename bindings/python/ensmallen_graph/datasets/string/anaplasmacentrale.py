@@ -91,7 +91,7 @@ def AnaplasmaCentrale(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaplasmaCentrale",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

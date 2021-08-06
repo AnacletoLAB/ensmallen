@@ -88,7 +88,7 @@ def PlanomicrobiumOkeanokoites(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlanomicrobiumOkeanokoites",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

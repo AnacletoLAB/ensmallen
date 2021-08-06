@@ -88,7 +88,7 @@ def SmittiumCulicis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SmittiumCulicis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

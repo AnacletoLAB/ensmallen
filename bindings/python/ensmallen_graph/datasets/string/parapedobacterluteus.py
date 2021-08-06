@@ -88,7 +88,7 @@ def ParapedobacterLuteus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParapedobacterLuteus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

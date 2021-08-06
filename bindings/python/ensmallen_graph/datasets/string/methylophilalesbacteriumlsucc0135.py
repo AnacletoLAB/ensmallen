@@ -88,7 +88,7 @@ def MethylophilalesBacteriumLsucc0135(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylophilalesBacteriumLsucc0135",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

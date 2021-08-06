@@ -91,7 +91,7 @@ def MoorellaThermoacetica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MoorellaThermoacetica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

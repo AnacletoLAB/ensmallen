@@ -91,7 +91,7 @@ def BacillusCellulosilyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusCellulosilyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

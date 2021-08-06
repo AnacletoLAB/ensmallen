@@ -88,7 +88,7 @@ def MoraxellaPorciDsm25326(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MoraxellaPorciDsm25326",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def Caidarouterlevel(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Caidarouterlevel",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

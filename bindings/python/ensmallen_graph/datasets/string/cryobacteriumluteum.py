@@ -88,7 +88,7 @@ def CryobacteriumLuteum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CryobacteriumLuteum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

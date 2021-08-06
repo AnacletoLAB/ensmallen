@@ -78,7 +78,7 @@ def Blckhole(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Blckhole",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CampylobacterSpRm16704(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterSpRm16704",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

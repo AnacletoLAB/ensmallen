@@ -91,7 +91,7 @@ def ErysipelatoclostridiumRamosum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErysipelatoclostridiumRamosum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

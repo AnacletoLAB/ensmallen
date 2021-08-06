@@ -88,7 +88,7 @@ def RoseibacaCalidilacus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseibacaCalidilacus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def NocardiopsisGanjiahuensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardiopsisGanjiahuensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def OchrobactrumIntermedium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OchrobactrumIntermedium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

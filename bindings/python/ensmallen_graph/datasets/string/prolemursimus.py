@@ -88,7 +88,7 @@ def ProlemurSimus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProlemurSimus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

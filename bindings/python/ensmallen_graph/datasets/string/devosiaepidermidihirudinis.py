@@ -88,7 +88,7 @@ def DevosiaEpidermidihirudinis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DevosiaEpidermidihirudinis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

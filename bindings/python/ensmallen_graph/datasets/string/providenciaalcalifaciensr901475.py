@@ -88,7 +88,7 @@ def ProvidenciaAlcalifaciensR901475(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProvidenciaAlcalifaciensR901475",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

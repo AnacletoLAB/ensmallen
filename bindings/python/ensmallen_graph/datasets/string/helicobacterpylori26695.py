@@ -91,7 +91,7 @@ def HelicobacterPylori26695(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelicobacterPylori26695",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

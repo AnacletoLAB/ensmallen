@@ -88,7 +88,7 @@ def DickeyaDianthicolaNcppb3534(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DickeyaDianthicolaNcppb3534",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

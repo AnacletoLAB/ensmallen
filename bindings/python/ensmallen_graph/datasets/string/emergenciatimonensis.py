@@ -88,7 +88,7 @@ def EmergenciaTimonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EmergenciaTimonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

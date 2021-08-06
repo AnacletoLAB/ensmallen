@@ -91,7 +91,7 @@ def HyphomicrobiumZavarzinii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HyphomicrobiumZavarzinii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

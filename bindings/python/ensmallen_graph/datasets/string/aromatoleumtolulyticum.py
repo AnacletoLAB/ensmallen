@@ -88,7 +88,7 @@ def AromatoleumTolulyticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AromatoleumTolulyticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

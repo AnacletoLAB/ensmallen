@@ -91,7 +91,7 @@ def TenacibaculumMaritimum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TenacibaculumMaritimum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

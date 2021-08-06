@@ -88,7 +88,7 @@ def WheatBlue(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WheatBlue",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

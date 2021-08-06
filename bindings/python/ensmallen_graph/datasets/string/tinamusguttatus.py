@@ -88,7 +88,7 @@ def TinamusGuttatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TinamusGuttatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

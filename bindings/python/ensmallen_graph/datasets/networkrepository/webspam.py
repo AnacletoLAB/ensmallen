@@ -92,7 +92,7 @@ def WebSpam(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebSpam",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

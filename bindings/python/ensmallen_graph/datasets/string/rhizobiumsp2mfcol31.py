@@ -91,7 +91,7 @@ def RhizobiumSp2mfcol31(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizobiumSp2mfcol31",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

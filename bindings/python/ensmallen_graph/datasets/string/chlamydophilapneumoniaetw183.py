@@ -91,7 +91,7 @@ def ChlamydophilaPneumoniaeTw183(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlamydophilaPneumoniaeTw183",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

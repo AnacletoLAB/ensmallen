@@ -88,7 +88,7 @@ def FrancisellaUliginis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FrancisellaUliginis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

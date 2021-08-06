@@ -91,7 +91,7 @@ def MethyloversatilisUniversalisFam5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethyloversatilisUniversalisFam5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

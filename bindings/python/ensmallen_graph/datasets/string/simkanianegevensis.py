@@ -91,7 +91,7 @@ def SimkaniaNegevensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SimkaniaNegevensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

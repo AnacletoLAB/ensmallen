@@ -88,7 +88,7 @@ def MarinitogaSp1155(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinitogaSp1155",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

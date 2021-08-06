@@ -91,7 +91,7 @@ def ChitinophagaPinensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChitinophagaPinensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

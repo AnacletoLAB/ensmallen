@@ -88,7 +88,7 @@ def TetragenococcusSolitariusNbrc100494(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TetragenococcusSolitariusNbrc100494",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

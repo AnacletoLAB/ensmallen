@@ -91,7 +91,7 @@ def KiloniellaLaminariae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KiloniellaLaminariae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

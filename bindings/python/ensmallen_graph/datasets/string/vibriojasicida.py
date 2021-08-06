@@ -91,7 +91,7 @@ def VibrioJasicida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioJasicida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

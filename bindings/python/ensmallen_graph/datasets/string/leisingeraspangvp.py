@@ -88,7 +88,7 @@ def LeisingeraSpAngVp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeisingeraSpAngVp",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

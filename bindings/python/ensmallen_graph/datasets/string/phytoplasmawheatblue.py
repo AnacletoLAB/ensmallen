@@ -88,7 +88,7 @@ def PhytoplasmaWheatBlue(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhytoplasmaWheatBlue",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

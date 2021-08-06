@@ -91,7 +91,7 @@ def GlaciecolaPunicea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GlaciecolaPunicea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def BrachyspiraAlvinipulliAtcc51933(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrachyspiraAlvinipulliAtcc51933",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def MethylophilaceaeBacterium11(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylophilaceaeBacterium11",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

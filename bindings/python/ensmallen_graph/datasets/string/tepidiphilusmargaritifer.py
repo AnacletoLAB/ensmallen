@@ -91,7 +91,7 @@ def TepidiphilusMargaritifer(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TepidiphilusMargaritifer",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MethylosarcinaFibrataAmlC10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylosarcinaFibrataAmlC10",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

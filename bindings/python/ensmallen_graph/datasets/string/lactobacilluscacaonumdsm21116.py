@@ -88,7 +88,7 @@ def LactobacillusCacaonumDsm21116(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusCacaonumDsm21116",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

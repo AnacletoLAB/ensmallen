@@ -91,7 +91,7 @@ def GranulicatellaAdiacens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GranulicatellaAdiacens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

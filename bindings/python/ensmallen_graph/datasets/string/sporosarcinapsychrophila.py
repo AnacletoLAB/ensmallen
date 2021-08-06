@@ -88,7 +88,7 @@ def SporosarcinaPsychrophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SporosarcinaPsychrophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

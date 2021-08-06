@@ -91,7 +91,7 @@ def GemellaSanguinis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GemellaSanguinis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

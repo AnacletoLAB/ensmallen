@@ -91,7 +91,7 @@ def ZygosaccharomycesRouxii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZygosaccharomycesRouxii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

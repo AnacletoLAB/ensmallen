@@ -88,7 +88,7 @@ def NocardioidesJenseniiJcm1364Nbrc14755(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardioidesJenseniiJcm1364Nbrc14755",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def NeorickettsiaSennetsu(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeorickettsiaSennetsu",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

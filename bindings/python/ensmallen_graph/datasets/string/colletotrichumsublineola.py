@@ -91,7 +91,7 @@ def ColletotrichumSublineola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ColletotrichumSublineola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

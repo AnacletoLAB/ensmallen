@@ -91,7 +91,7 @@ def CorynebacteriumAurimucosum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumAurimucosum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

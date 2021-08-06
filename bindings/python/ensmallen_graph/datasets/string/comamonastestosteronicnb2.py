@@ -91,7 +91,7 @@ def ComamonasTestosteroniCnb2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ComamonasTestosteroniCnb2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

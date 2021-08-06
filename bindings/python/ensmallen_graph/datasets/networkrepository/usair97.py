@@ -78,7 +78,7 @@ def Usair97(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Usair97",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SchistocephalusSolidus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SchistocephalusSolidus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ChlorobiumLimicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlorobiumLimicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def BetaproteobacteriaBacteriumUkl132(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BetaproteobacteriaBacteriumUkl132",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

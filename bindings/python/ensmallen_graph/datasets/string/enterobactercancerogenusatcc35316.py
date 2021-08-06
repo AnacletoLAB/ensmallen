@@ -88,7 +88,7 @@ def EnterobacterCancerogenusAtcc35316(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterobacterCancerogenusAtcc35316",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

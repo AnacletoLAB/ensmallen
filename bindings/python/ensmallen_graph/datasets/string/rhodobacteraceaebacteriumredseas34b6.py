@@ -88,7 +88,7 @@ def RhodobacteraceaeBacteriumRedseaS34B6(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodobacteraceaeBacteriumRedseaS34B6",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PuniceibacteriumSpImcc21224(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PuniceibacteriumSpImcc21224",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

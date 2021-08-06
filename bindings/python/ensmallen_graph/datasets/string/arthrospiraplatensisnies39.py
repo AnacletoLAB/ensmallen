@@ -91,7 +91,7 @@ def ArthrospiraPlatensisNies39(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArthrospiraPlatensisNies39",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

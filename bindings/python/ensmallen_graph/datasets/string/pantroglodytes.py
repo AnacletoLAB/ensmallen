@@ -91,7 +91,7 @@ def PanTroglodytes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PanTroglodytes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

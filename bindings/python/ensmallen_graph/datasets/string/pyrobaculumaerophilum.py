@@ -91,7 +91,7 @@ def PyrobaculumAerophilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PyrobaculumAerophilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def XanthomonasCampestrisCampestris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XanthomonasCampestrisCampestris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def NiabellaDrilacis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NiabellaDrilacis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

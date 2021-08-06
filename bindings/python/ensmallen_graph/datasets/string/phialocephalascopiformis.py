@@ -88,7 +88,7 @@ def PhialocephalaScopiformis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhialocephalaScopiformis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

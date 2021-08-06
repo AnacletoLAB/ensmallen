@@ -78,7 +78,7 @@ def BioGridPlant(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BioGridPlant",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

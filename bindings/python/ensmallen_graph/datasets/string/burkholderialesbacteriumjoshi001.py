@@ -91,7 +91,7 @@ def BurkholderialesBacteriumJoshi001(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BurkholderialesBacteriumJoshi001",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

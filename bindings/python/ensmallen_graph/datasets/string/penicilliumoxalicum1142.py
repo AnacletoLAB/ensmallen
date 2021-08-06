@@ -88,7 +88,7 @@ def PenicilliumOxalicum1142(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PenicilliumOxalicum1142",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

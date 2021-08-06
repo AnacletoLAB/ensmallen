@@ -88,7 +88,7 @@ def OnchocercaVolvulus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OnchocercaVolvulus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def DrosophilaWillistoni(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DrosophilaWillistoni",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def OlsenellaScatoligenes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OlsenellaScatoligenes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

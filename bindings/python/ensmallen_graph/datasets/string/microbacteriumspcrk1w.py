@@ -88,7 +88,7 @@ def MicrobacteriumSpCrK1w(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriumSpCrK1w",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

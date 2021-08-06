@@ -91,7 +91,7 @@ def DesulfovibrioLongus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioLongus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

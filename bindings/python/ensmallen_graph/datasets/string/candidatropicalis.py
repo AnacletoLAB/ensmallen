@@ -91,7 +91,7 @@ def CandidaTropicalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidaTropicalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

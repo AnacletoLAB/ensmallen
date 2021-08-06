@@ -91,7 +91,7 @@ def NatronomonasPharaonis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NatronomonasPharaonis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

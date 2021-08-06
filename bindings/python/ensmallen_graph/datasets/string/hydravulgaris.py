@@ -91,7 +91,7 @@ def HydraVulgaris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HydraVulgaris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

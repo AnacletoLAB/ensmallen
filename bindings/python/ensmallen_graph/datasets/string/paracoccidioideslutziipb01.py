@@ -88,7 +88,7 @@ def ParacoccidioidesLutziiPb01(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParacoccidioidesLutziiPb01",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

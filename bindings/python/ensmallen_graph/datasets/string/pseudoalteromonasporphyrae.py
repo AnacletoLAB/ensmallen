@@ -88,7 +88,7 @@ def PseudoalteromonasPorphyrae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoalteromonasPorphyrae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

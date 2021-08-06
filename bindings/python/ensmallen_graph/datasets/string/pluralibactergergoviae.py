@@ -91,7 +91,7 @@ def PluralibacterGergoviae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PluralibacterGergoviae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

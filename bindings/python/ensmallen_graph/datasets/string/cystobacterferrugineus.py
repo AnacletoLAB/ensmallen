@@ -88,7 +88,7 @@ def CystobacterFerrugineus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CystobacterFerrugineus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def EggerthellaLenta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EggerthellaLenta",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

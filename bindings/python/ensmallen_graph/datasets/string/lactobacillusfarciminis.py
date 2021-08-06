@@ -91,7 +91,7 @@ def LactobacillusFarciminis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusFarciminis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

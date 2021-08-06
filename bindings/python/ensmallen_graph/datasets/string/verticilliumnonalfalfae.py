@@ -88,7 +88,7 @@ def VerticilliumNonalfalfae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VerticilliumNonalfalfae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

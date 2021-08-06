@@ -88,7 +88,7 @@ def NocardiopsisSpTsri0078(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardiopsisSpTsri0078",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

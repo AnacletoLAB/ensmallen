@@ -91,7 +91,7 @@ def SulfurihydrogenibiumSubterraneum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfurihydrogenibiumSubterraneum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

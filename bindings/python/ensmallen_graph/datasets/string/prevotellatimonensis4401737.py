@@ -91,7 +91,7 @@ def PrevotellaTimonensis4401737(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaTimonensis4401737",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

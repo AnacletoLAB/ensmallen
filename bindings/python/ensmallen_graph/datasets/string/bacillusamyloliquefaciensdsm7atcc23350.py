@@ -88,7 +88,7 @@ def BacillusAmyloliquefaciensDsm7Atcc23350(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusAmyloliquefaciensDsm7Atcc23350",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

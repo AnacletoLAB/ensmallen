@@ -88,7 +88,7 @@ def AeromonasSalmonicidaSubspSalmonicida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AeromonasSalmonicidaSubspSalmonicida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

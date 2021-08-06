@@ -91,7 +91,7 @@ def ArchaeoglobusSulfaticallidus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArchaeoglobusSulfaticallidus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

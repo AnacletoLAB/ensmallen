@@ -88,7 +88,7 @@ def AerococcusSuis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AerococcusSuis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def BurkholderiaPhytofirmans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BurkholderiaPhytofirmans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

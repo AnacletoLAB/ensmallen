@@ -91,7 +91,7 @@ def OligotrophaCarboxidovorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OligotrophaCarboxidovorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

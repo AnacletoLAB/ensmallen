@@ -78,7 +78,7 @@ def TrecWt10g(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrecWt10g",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

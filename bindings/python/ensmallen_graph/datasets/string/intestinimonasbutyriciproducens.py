@@ -91,7 +91,7 @@ def IntestinimonasButyriciproducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IntestinimonasButyriciproducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

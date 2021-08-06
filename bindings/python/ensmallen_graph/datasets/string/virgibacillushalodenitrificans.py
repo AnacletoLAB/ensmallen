@@ -91,7 +91,7 @@ def VirgibacillusHalodenitrificans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VirgibacillusHalodenitrificans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

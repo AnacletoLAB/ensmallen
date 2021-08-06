@@ -88,7 +88,7 @@ def FibrobacterSpUwb15(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FibrobacterSpUwb15",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

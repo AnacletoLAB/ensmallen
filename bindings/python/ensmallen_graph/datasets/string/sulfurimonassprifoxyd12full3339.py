@@ -88,7 +88,7 @@ def SulfurimonasSpRifoxyd12Full3339(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfurimonasSpRifoxyd12Full3339",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def NitrospiraDefluvii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrospiraDefluvii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PropionisporaSp2237(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PropionisporaSp2237",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

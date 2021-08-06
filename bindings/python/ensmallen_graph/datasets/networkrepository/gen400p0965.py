@@ -104,7 +104,7 @@ def Gen400P0965(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Gen400P0965",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

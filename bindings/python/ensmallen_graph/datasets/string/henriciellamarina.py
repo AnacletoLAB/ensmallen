@@ -91,7 +91,7 @@ def HenriciellaMarina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HenriciellaMarina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

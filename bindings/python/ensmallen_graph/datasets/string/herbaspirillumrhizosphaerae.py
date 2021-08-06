@@ -88,7 +88,7 @@ def HerbaspirillumRhizosphaerae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HerbaspirillumRhizosphaerae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

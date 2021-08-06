@@ -88,7 +88,7 @@ def TrichechusManatusLatirostris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichechusManatusLatirostris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CrenothrixSpD3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CrenothrixSpD3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

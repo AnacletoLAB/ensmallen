@@ -88,7 +88,7 @@ def TetrapisisporaBlattaeCbs6284(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TetrapisisporaBlattaeCbs6284",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

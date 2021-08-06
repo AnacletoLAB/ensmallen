@@ -88,7 +88,7 @@ def AnoxybacillusPushchinoensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnoxybacillusPushchinoensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

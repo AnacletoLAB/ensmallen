@@ -100,7 +100,7 @@ def SocDolphins(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocDolphins",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

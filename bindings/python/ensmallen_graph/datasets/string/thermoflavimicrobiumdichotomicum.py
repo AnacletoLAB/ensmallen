@@ -88,7 +88,7 @@ def ThermoflavimicrobiumDichotomicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermoflavimicrobiumDichotomicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

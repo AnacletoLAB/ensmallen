@@ -91,7 +91,7 @@ def SerratiaSymbiotica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SerratiaSymbiotica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SpirulinaMajorPcc6313(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpirulinaMajorPcc6313",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

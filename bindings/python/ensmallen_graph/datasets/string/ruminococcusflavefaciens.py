@@ -88,7 +88,7 @@ def RuminococcusFlavefaciens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminococcusFlavefaciens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

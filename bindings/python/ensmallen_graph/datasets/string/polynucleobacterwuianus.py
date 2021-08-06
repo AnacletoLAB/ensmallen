@@ -88,7 +88,7 @@ def PolynucleobacterWuianus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PolynucleobacterWuianus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

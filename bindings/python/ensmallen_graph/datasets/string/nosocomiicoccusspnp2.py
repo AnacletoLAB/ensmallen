@@ -91,7 +91,7 @@ def NosocomiicoccusSpNp2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NosocomiicoccusSpNp2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

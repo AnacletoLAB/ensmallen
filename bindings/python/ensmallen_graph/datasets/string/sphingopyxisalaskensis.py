@@ -91,7 +91,7 @@ def SphingopyxisAlaskensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingopyxisAlaskensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def RoseomonasSpB5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseomonasSpB5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

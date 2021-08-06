@@ -91,7 +91,7 @@ def LeishmaniaInfantum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeishmaniaInfantum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

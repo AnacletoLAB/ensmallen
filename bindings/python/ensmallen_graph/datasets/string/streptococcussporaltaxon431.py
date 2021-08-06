@@ -88,7 +88,7 @@ def StreptococcusSpOralTaxon431(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusSpOralTaxon431",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

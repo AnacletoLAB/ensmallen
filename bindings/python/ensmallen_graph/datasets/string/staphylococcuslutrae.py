@@ -88,7 +88,7 @@ def StaphylococcusLutrae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StaphylococcusLutrae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

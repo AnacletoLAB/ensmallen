@@ -88,7 +88,7 @@ def LuciliaCuprina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LuciliaCuprina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

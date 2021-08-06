@@ -88,7 +88,7 @@ def MethyloversatilisUniversalisEhg5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethyloversatilisUniversalisEhg5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

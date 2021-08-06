@@ -88,7 +88,7 @@ def OmnitrophicaBacteriumRifcsphigho202Full5118(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OmnitrophicaBacteriumRifcsphigho202Full5118",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

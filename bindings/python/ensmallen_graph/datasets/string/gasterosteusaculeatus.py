@@ -91,7 +91,7 @@ def GasterosteusAculeatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GasterosteusAculeatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

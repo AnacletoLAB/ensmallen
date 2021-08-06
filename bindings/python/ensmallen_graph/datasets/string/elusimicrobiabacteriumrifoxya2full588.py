@@ -88,7 +88,7 @@ def ElusimicrobiaBacteriumRifoxya2Full588(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ElusimicrobiaBacteriumRifoxya2Full588",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

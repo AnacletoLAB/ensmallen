@@ -88,7 +88,7 @@ def ApibacterMensalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ApibacterMensalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

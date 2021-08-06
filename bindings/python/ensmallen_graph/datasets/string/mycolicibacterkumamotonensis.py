@@ -88,7 +88,7 @@ def MycolicibacterKumamotonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycolicibacterKumamotonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

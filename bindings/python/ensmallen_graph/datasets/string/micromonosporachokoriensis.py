@@ -91,7 +91,7 @@ def MicromonosporaChokoriensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicromonosporaChokoriensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

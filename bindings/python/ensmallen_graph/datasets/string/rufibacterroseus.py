@@ -88,7 +88,7 @@ def RufibacterRoseus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RufibacterRoseus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

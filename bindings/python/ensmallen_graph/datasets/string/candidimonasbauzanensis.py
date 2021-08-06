@@ -88,7 +88,7 @@ def CandidimonasBauzanensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidimonasBauzanensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

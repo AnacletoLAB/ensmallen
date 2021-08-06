@@ -91,7 +91,7 @@ def SphingobiumSpSyk6(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingobiumSpSyk6",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

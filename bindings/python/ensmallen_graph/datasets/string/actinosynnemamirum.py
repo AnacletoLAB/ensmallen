@@ -91,7 +91,7 @@ def ActinosynnemaMirum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinosynnemaMirum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

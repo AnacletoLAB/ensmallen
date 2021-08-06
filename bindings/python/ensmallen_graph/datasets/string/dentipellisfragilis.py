@@ -88,7 +88,7 @@ def DentipellisFragilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DentipellisFragilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

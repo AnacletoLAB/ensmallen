@@ -88,7 +88,7 @@ def GallaecimonasPentaromativorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GallaecimonasPentaromativorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

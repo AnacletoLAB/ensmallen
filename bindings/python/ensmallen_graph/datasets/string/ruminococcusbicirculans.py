@@ -91,7 +91,7 @@ def RuminococcusBicirculans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminococcusBicirculans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

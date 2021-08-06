@@ -91,7 +91,7 @@ def BartonellaBovis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BartonellaBovis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

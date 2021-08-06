@@ -88,7 +88,7 @@ def MycobacteriumSp12451111(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumSp12451111",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ChelatococcusDaeguensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChelatococcusDaeguensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

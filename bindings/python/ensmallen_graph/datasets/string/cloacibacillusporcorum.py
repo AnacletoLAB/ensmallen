@@ -88,7 +88,7 @@ def CloacibacillusPorcorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CloacibacillusPorcorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

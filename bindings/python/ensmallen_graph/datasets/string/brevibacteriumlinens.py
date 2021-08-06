@@ -91,7 +91,7 @@ def BrevibacteriumLinens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrevibacteriumLinens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

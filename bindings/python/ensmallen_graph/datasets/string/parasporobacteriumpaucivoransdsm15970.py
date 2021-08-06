@@ -88,7 +88,7 @@ def ParasporobacteriumPaucivoransDsm15970(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParasporobacteriumPaucivoransDsm15970",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

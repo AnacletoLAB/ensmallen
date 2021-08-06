@@ -91,7 +91,7 @@ def SphingobiumJaponicumUt26s(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingobiumJaponicumUt26s",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

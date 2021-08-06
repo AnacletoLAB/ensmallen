@@ -91,7 +91,7 @@ def EscherichiaColiAtcc8739(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EscherichiaColiAtcc8739",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

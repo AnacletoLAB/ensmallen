@@ -88,7 +88,7 @@ def VerrucomicrobiaBacteriumCg1024326(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VerrucomicrobiaBacteriumCg1024326",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

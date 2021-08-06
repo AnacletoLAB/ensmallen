@@ -92,7 +92,7 @@ def TechCaidarouterlevel(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TechCaidarouterlevel",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

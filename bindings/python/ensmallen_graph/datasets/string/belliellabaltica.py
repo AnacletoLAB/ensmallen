@@ -91,7 +91,7 @@ def BelliellaBaltica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BelliellaBaltica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

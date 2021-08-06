@@ -88,7 +88,7 @@ def PontibacterSpS108(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PontibacterSpS108",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def AlysiellaCrassa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlysiellaCrassa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

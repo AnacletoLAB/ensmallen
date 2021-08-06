@@ -78,7 +78,7 @@ def DbpediaWriter(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DbpediaWriter",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

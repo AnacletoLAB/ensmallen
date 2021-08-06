@@ -91,7 +91,7 @@ def NannospalaxGalili(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NannospalaxGalili",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

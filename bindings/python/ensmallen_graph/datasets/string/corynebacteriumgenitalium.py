@@ -91,7 +91,7 @@ def CorynebacteriumGenitalium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumGenitalium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

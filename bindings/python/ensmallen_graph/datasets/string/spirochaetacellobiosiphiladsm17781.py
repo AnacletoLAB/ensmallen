@@ -88,7 +88,7 @@ def SpirochaetaCellobiosiphilaDsm17781(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpirochaetaCellobiosiphilaDsm17781",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

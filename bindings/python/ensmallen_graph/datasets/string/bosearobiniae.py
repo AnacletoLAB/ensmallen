@@ -88,7 +88,7 @@ def BoseaRobiniae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BoseaRobiniae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def EubacteriumDesmolans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EubacteriumDesmolans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

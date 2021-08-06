@@ -88,7 +88,7 @@ def SpiroplasmaLitorale(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpiroplasmaLitorale",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

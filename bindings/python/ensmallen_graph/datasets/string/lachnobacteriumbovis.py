@@ -91,7 +91,7 @@ def LachnobacteriumBovis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LachnobacteriumBovis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

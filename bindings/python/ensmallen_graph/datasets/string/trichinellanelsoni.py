@@ -88,7 +88,7 @@ def TrichinellaNelsoni(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichinellaNelsoni",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

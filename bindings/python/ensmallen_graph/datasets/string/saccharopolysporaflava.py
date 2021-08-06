@@ -88,7 +88,7 @@ def SaccharopolysporaFlava(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SaccharopolysporaFlava",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

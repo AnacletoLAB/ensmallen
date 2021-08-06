@@ -91,7 +91,7 @@ def TrichosporonAsahii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichosporonAsahii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

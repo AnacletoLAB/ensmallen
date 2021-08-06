@@ -88,7 +88,7 @@ def GeobacteraceaeBacteriumGwc25844(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeobacteraceaeBacteriumGwc25844",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

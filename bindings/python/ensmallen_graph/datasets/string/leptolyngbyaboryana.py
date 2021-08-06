@@ -91,7 +91,7 @@ def LeptolyngbyaBoryana(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptolyngbyaBoryana",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

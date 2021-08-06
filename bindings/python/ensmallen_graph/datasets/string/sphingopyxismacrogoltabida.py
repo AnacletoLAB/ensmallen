@@ -88,7 +88,7 @@ def SphingopyxisMacrogoltabida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingopyxisMacrogoltabida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

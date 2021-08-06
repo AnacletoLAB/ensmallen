@@ -91,7 +91,7 @@ def ThalassobiumSpR2a62(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThalassobiumSpR2a62",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

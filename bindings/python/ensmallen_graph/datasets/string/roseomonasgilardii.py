@@ -91,7 +91,7 @@ def RoseomonasGilardii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseomonasGilardii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

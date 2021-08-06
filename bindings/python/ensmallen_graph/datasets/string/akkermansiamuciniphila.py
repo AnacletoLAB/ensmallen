@@ -91,7 +91,7 @@ def AkkermansiaMuciniphila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AkkermansiaMuciniphila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

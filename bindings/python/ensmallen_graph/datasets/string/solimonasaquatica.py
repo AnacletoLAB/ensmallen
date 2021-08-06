@@ -88,7 +88,7 @@ def SolimonasAquatica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SolimonasAquatica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

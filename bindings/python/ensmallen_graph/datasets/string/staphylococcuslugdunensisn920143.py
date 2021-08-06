@@ -91,7 +91,7 @@ def StaphylococcusLugdunensisN920143(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StaphylococcusLugdunensisN920143",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

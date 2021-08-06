@@ -88,7 +88,7 @@ def RhizopusStolonifer(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizopusStolonifer",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

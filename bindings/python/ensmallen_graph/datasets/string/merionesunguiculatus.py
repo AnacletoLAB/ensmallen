@@ -88,7 +88,7 @@ def MerionesUnguiculatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MerionesUnguiculatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

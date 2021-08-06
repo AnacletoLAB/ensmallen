@@ -88,7 +88,7 @@ def StruthioCamelusAustralis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StruthioCamelusAustralis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def NonlabensMarinusS108(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NonlabensMarinusS108",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

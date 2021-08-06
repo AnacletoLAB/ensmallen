@@ -88,7 +88,7 @@ def DevosiaPsychrophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DevosiaPsychrophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

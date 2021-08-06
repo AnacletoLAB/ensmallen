@@ -88,7 +88,7 @@ def BosGrunniens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BosGrunniens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

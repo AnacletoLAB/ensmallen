@@ -88,7 +88,7 @@ def ThermoplasmatalesArchaeonSg8523(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermoplasmatalesArchaeonSg8523",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

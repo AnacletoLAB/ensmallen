@@ -88,7 +88,7 @@ def CronobacterDublinensisSubspLactaridiLmg23825(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CronobacterDublinensisSubspLactaridiLmg23825",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

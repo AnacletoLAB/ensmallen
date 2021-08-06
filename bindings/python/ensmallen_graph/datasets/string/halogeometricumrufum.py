@@ -88,7 +88,7 @@ def HalogeometricumRufum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalogeometricumRufum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

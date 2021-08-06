@@ -88,7 +88,7 @@ def ElusimicrobiaBacteriumRifcsplowo201Full6413(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ElusimicrobiaBacteriumRifcsplowo201Full6413",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

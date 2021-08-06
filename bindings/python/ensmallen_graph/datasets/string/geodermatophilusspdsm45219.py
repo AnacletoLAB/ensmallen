@@ -88,7 +88,7 @@ def GeodermatophilusSpDsm45219(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeodermatophilusSpDsm45219",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

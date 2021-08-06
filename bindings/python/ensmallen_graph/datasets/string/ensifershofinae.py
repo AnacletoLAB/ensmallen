@@ -88,7 +88,7 @@ def EnsiferShofinae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnsiferShofinae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

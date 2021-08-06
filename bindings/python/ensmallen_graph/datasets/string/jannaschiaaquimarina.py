@@ -88,7 +88,7 @@ def JannaschiaAquimarina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JannaschiaAquimarina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MycobacteriumParaffinicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumParaffinicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

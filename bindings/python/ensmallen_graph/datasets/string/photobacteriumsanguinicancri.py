@@ -88,7 +88,7 @@ def PhotobacteriumSanguinicancri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhotobacteriumSanguinicancri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ShewanellaBenthicaKt99(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShewanellaBenthicaKt99",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

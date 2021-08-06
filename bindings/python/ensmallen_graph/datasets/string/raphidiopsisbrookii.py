@@ -91,7 +91,7 @@ def RaphidiopsisBrookii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RaphidiopsisBrookii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

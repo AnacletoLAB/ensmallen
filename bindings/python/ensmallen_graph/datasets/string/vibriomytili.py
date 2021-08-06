@@ -88,7 +88,7 @@ def VibrioMytili(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioMytili",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MycobacteriumTuberculosisVariantBovis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumTuberculosisVariantBovis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

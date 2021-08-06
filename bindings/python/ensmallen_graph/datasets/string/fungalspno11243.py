@@ -88,7 +88,7 @@ def FungalSpNo11243(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FungalSpNo11243",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ExidiaGlandulosaHhb12029(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ExidiaGlandulosaHhb12029",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PlanktothrixAgardhii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlanktothrixAgardhii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

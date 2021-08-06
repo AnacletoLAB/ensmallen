@@ -88,7 +88,7 @@ def MarivitaCryptomonadis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarivitaCryptomonadis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

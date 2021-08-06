@@ -88,7 +88,7 @@ def PlasmoparaHalstedii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlasmoparaHalstedii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

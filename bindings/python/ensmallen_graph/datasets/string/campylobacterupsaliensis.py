@@ -91,7 +91,7 @@ def CampylobacterUpsaliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterUpsaliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

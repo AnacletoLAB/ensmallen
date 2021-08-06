@@ -88,7 +88,7 @@ def AegilopsTauschiiSubspStrangulata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AegilopsTauschiiSubspStrangulata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

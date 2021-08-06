@@ -78,7 +78,7 @@ def Tube1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Tube1",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

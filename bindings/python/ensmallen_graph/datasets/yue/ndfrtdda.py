@@ -84,7 +84,7 @@ def NDFRTDDA(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NDFRTDDA",
-        dataset="yue",
+        repository="yue",
         version=version,
         directed=directed,
         preprocess=preprocess,

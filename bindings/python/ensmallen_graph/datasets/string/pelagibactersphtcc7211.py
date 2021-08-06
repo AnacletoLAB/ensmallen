@@ -91,7 +91,7 @@ def PelagibacterSpHtcc7211(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PelagibacterSpHtcc7211",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

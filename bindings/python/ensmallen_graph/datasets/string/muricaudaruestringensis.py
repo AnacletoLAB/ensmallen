@@ -91,7 +91,7 @@ def MuricaudaRuestringensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MuricaudaRuestringensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

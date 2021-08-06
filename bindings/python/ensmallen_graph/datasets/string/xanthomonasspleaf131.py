@@ -88,7 +88,7 @@ def XanthomonasSpLeaf131(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XanthomonasSpLeaf131",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

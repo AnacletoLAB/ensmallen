@@ -91,7 +91,7 @@ def PrunusPersica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrunusPersica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -118,7 +118,7 @@ def EcoFlorida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EcoFlorida",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

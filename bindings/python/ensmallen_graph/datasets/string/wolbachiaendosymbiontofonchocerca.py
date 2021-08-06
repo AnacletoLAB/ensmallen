@@ -88,7 +88,7 @@ def WolbachiaEndosymbiontOfOnchocerca(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WolbachiaEndosymbiontOfOnchocerca",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

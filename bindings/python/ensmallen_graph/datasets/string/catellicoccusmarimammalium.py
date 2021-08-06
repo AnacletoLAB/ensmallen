@@ -91,7 +91,7 @@ def CatellicoccusMarimammalium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CatellicoccusMarimammalium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

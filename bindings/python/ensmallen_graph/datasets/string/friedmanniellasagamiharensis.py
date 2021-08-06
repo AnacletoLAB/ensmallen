@@ -88,7 +88,7 @@ def FriedmanniellaSagamiharensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FriedmanniellaSagamiharensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

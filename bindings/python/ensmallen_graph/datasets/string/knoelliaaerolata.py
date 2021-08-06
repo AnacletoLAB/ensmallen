@@ -91,7 +91,7 @@ def KnoelliaAerolata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KnoelliaAerolata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

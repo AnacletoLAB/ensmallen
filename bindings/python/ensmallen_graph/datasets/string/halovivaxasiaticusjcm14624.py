@@ -88,7 +88,7 @@ def HalovivaxAsiaticusJcm14624(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalovivaxAsiaticusJcm14624",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

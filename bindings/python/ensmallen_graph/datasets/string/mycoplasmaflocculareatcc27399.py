@@ -88,7 +88,7 @@ def MycoplasmaFlocculareAtcc27399(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaFlocculareAtcc27399",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

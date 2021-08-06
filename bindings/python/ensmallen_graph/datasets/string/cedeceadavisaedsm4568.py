@@ -88,7 +88,7 @@ def CedeceaDavisaeDsm4568(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CedeceaDavisaeDsm4568",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def MarinobacterAdhaerens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinobacterAdhaerens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

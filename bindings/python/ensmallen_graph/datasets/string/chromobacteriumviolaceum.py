@@ -91,7 +91,7 @@ def ChromobacteriumViolaceum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChromobacteriumViolaceum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

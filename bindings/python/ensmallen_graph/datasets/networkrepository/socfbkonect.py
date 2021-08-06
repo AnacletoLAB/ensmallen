@@ -120,7 +120,7 @@ def SocfbKonect(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbKonect",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

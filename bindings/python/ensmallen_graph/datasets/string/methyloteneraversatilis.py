@@ -91,7 +91,7 @@ def MethyloteneraVersatilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethyloteneraVersatilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

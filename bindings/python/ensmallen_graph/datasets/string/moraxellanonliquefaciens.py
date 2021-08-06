@@ -88,7 +88,7 @@ def MoraxellaNonliquefaciens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MoraxellaNonliquefaciens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

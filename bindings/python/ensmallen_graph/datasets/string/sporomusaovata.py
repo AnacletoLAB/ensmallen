@@ -91,7 +91,7 @@ def SporomusaOvata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SporomusaOvata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def BrachyspiraHampsonii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrachyspiraHampsonii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def VeillonellaSpAs16(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VeillonellaSpAs16",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

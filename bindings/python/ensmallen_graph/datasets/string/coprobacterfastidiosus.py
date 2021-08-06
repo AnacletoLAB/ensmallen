@@ -91,7 +91,7 @@ def CoprobacterFastidiosus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CoprobacterFastidiosus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

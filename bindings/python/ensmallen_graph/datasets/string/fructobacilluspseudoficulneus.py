@@ -88,7 +88,7 @@ def FructobacillusPseudoficulneus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FructobacillusPseudoficulneus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

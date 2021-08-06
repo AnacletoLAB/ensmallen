@@ -88,7 +88,7 @@ def NeochlamydiaSpEps4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeochlamydiaSpEps4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

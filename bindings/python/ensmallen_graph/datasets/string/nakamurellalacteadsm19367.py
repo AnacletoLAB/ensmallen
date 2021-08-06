@@ -88,7 +88,7 @@ def NakamurellaLacteaDsm19367(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NakamurellaLacteaDsm19367",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

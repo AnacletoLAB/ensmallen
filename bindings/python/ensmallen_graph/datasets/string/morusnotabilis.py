@@ -91,7 +91,7 @@ def MorusNotabilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MorusNotabilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

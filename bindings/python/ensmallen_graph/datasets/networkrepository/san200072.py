@@ -104,7 +104,7 @@ def San200072(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="San200072",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

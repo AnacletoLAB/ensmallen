@@ -88,7 +88,7 @@ def UrmitellaTimonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UrmitellaTimonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

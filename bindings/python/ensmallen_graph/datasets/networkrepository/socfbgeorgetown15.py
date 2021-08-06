@@ -120,7 +120,7 @@ def SocfbGeorgetown15(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbGeorgetown15",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def NovosphingobiumNitrogenifigens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NovosphingobiumNitrogenifigens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

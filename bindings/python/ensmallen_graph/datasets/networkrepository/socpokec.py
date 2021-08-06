@@ -88,7 +88,7 @@ def SocPokec(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocPokec",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

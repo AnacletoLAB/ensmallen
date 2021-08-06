@@ -88,7 +88,7 @@ def LewinellaAgarilytica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LewinellaAgarilytica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

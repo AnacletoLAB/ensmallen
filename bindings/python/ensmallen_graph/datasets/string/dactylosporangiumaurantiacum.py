@@ -91,7 +91,7 @@ def DactylosporangiumAurantiacum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DactylosporangiumAurantiacum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

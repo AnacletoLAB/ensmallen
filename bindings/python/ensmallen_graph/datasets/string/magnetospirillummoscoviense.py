@@ -88,7 +88,7 @@ def MagnetospirillumMoscoviense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MagnetospirillumMoscoviense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

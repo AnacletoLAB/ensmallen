@@ -91,7 +91,7 @@ def HelcococcusKunzii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelcococcusKunzii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

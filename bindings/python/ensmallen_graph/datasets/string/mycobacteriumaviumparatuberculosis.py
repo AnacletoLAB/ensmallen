@@ -91,7 +91,7 @@ def MycobacteriumAviumParatuberculosis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumAviumParatuberculosis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

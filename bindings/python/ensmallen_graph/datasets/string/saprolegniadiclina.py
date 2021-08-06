@@ -91,7 +91,7 @@ def SaprolegniaDiclina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SaprolegniaDiclina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

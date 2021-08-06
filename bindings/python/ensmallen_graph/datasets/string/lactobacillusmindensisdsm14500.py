@@ -88,7 +88,7 @@ def LactobacillusMindensisDsm14500(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusMindensisDsm14500",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def BeggiatoaAlba(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BeggiatoaAlba",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

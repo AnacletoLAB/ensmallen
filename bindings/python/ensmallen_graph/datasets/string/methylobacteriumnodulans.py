@@ -91,7 +91,7 @@ def MethylobacteriumNodulans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylobacteriumNodulans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

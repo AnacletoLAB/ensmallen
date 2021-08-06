@@ -91,7 +91,7 @@ def ChlamydiaMuridarum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlamydiaMuridarum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

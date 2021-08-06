@@ -91,7 +91,7 @@ def BurkholderiaAcidipaludis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BurkholderiaAcidipaludis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

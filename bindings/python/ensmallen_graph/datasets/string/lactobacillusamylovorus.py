@@ -88,7 +88,7 @@ def LactobacillusAmylovorus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusAmylovorus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def OrkutLinks(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OrkutLinks",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

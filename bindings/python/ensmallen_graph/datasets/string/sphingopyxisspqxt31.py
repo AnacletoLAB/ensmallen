@@ -88,7 +88,7 @@ def SphingopyxisSpQxt31(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingopyxisSpQxt31",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

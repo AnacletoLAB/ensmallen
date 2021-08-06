@@ -88,7 +88,7 @@ def MycobacteriumShimoidei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumShimoidei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

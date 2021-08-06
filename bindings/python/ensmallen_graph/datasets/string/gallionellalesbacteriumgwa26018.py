@@ -88,7 +88,7 @@ def GallionellalesBacteriumGwa26018(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GallionellalesBacteriumGwa26018",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AcidobacteriaBacteriumRifcsplowo212Full6819(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidobacteriaBacteriumRifcsplowo212Full6819",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

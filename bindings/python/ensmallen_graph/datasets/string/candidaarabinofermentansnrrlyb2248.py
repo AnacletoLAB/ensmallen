@@ -88,7 +88,7 @@ def CandidaArabinofermentansNrrlYb2248(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidaArabinofermentansNrrlYb2248",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

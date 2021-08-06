@@ -88,7 +88,7 @@ def NovosphingobiumFuchskuhlense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NovosphingobiumFuchskuhlense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

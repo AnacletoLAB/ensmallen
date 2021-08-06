@@ -91,7 +91,7 @@ def CapnocytophagaOchraceaDsm7271(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CapnocytophagaOchraceaDsm7271",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

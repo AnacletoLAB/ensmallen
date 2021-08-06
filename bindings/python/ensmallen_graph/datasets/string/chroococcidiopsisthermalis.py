@@ -91,7 +91,7 @@ def ChroococcidiopsisThermalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChroococcidiopsisThermalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PythiumUltimum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PythiumUltimum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

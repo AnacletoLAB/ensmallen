@@ -88,7 +88,7 @@ def VenturiaNashicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VenturiaNashicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

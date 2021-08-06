@@ -88,7 +88,7 @@ def LysobacterSpRoot604(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LysobacterSpRoot604",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

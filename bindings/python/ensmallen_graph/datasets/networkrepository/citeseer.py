@@ -78,7 +78,7 @@ def Citeseer(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Citeseer",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

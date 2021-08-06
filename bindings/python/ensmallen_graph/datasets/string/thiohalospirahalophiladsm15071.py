@@ -88,7 +88,7 @@ def ThiohalospiraHalophilaDsm15071(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThiohalospiraHalophilaDsm15071",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def FlavobacteriumBeibuense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumBeibuense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

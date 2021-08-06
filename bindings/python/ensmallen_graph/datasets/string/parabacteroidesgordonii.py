@@ -91,7 +91,7 @@ def ParabacteroidesGordonii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParabacteroidesGordonii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

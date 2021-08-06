@@ -88,7 +88,7 @@ def PaenibacillusWulumuqiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillusWulumuqiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

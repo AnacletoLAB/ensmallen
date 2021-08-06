@@ -91,7 +91,7 @@ def WallemiaSebi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WallemiaSebi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

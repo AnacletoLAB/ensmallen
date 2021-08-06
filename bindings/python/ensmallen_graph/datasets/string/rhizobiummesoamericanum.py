@@ -91,7 +91,7 @@ def RhizobiumMesoamericanum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizobiumMesoamericanum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

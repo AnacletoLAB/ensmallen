@@ -88,7 +88,7 @@ def MyripristisMurdjan(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MyripristisMurdjan",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

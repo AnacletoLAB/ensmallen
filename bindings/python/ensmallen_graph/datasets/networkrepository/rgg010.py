@@ -78,7 +78,7 @@ def Rgg010(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Rgg010",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def DesulfotomaculumAlcoholivorax(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfotomaculumAlcoholivorax",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

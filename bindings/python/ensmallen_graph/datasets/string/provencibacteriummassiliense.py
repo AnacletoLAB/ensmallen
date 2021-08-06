@@ -88,7 +88,7 @@ def ProvencibacteriumMassiliense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProvencibacteriumMassiliense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

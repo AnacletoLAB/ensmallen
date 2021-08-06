@@ -91,7 +91,7 @@ def PsychrobacterCryohalolentis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PsychrobacterCryohalolentis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

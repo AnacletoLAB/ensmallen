@@ -78,7 +78,7 @@ def DbpediaProducer(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DbpediaProducer",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def TamlanaSedimentorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TamlanaSedimentorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def KangiellaSediminilitoris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KangiellaSediminilitoris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def KryptolebiasMarmoratus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KryptolebiasMarmoratus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

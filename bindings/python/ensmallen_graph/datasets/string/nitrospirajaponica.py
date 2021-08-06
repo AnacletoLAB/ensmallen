@@ -88,7 +88,7 @@ def NitrospiraJaponica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrospiraJaponica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

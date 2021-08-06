@@ -112,7 +112,7 @@ def WebUk2002All(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebUk2002All",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

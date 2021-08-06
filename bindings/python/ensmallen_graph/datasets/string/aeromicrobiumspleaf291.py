@@ -88,7 +88,7 @@ def AeromicrobiumSpLeaf291(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AeromicrobiumSpLeaf291",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

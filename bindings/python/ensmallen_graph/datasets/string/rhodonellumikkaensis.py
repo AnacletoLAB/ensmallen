@@ -88,7 +88,7 @@ def RhodonellumIkkaensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodonellumIkkaensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

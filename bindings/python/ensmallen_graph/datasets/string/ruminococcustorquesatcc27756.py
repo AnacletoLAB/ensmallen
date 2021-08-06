@@ -91,7 +91,7 @@ def RuminococcusTorquesAtcc27756(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminococcusTorquesAtcc27756",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

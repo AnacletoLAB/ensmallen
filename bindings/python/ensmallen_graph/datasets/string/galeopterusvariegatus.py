@@ -91,7 +91,7 @@ def GaleopterusVariegatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GaleopterusVariegatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

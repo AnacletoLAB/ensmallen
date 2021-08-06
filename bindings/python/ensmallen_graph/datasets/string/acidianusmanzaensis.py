@@ -88,7 +88,7 @@ def AcidianusManzaensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidianusManzaensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

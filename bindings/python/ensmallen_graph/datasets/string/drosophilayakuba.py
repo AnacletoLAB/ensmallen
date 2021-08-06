@@ -91,7 +91,7 @@ def DrosophilaYakuba(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DrosophilaYakuba",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def TreponemaPedisStrTA4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TreponemaPedisStrTA4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

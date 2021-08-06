@@ -88,7 +88,7 @@ def SynechococcusLacustrisStrTous(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SynechococcusLacustrisStrTous",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

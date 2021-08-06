@@ -88,7 +88,7 @@ def SerendipitaVermiferaMaff305830(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SerendipitaVermiferaMaff305830",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

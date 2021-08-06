@@ -88,7 +88,7 @@ def XenorhabdusMauleonii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XenorhabdusMauleonii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

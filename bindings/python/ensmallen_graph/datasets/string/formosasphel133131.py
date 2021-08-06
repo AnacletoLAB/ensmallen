@@ -88,7 +88,7 @@ def FormosaSpHel133131(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FormosaSpHel133131",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

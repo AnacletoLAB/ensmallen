@@ -91,7 +91,7 @@ def XylellaFastidiosa9a5c(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XylellaFastidiosa9a5c",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

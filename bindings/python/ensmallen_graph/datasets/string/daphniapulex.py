@@ -91,7 +91,7 @@ def DaphniaPulex(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DaphniaPulex",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

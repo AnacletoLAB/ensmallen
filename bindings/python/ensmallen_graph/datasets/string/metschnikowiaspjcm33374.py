@@ -88,7 +88,7 @@ def MetschnikowiaSpJcm33374(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MetschnikowiaSpJcm33374",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

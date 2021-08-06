@@ -91,7 +91,7 @@ def AliivibrioSalmonicida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AliivibrioSalmonicida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

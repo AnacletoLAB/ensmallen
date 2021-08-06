@@ -91,7 +91,7 @@ def MethylophilusSpOh31(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylophilusSpOh31",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

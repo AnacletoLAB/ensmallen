@@ -91,7 +91,7 @@ def CupriavidusSpBis7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CupriavidusSpBis7",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

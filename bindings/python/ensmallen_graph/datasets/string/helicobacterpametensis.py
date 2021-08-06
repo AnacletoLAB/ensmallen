@@ -91,7 +91,7 @@ def HelicobacterPametensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelicobacterPametensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

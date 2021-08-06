@@ -88,7 +88,7 @@ def TropicibacterNaphthalenivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TropicibacterNaphthalenivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

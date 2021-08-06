@@ -88,7 +88,7 @@ def QuadrisphaeraSpDsm44207(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="QuadrisphaeraSpDsm44207",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

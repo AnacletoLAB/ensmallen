@@ -91,7 +91,7 @@ def MethanocaldococcusFervens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanocaldococcusFervens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

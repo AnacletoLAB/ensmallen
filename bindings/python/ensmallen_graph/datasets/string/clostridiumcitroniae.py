@@ -91,7 +91,7 @@ def ClostridiumCitroniae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumCitroniae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

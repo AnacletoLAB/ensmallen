@@ -88,7 +88,7 @@ def VaranusKomodoensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VaranusKomodoensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

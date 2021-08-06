@@ -88,7 +88,7 @@ def MannheimiaGranulomatisDsm19156(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MannheimiaGranulomatisDsm19156",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

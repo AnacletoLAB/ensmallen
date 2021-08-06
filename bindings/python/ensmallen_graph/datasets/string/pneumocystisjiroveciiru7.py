@@ -88,7 +88,7 @@ def PneumocystisJiroveciiRu7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PneumocystisJiroveciiRu7",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

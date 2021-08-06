@@ -88,7 +88,7 @@ def CatenovulumAgarivoransYm01(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CatenovulumAgarivoransYm01",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

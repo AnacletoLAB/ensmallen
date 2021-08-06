@@ -88,7 +88,7 @@ def CroceibacteriumMercuriale(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CroceibacteriumMercuriale",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

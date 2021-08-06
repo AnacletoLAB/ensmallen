@@ -88,7 +88,7 @@ def SalinicoccusSediminis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinicoccusSediminis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

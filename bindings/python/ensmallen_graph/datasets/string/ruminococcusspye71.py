@@ -88,7 +88,7 @@ def RuminococcusSpYe71(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminococcusSpYe71",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

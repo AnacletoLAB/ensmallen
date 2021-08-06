@@ -91,7 +91,7 @@ def MethylophagaLonarensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylophagaLonarensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

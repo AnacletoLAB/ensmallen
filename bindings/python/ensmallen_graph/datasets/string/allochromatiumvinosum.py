@@ -91,7 +91,7 @@ def AllochromatiumVinosum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AllochromatiumVinosum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

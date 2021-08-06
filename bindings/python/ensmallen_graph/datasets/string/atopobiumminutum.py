@@ -88,7 +88,7 @@ def AtopobiumMinutum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AtopobiumMinutum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -110,7 +110,7 @@ def EmailEnron(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EmailEnron",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

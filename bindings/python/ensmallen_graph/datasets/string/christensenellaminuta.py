@@ -88,7 +88,7 @@ def ChristensenellaMinuta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChristensenellaMinuta",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

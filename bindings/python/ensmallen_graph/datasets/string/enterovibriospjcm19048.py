@@ -88,7 +88,7 @@ def EnterovibrioSpJcm19048(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterovibrioSpJcm19048",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

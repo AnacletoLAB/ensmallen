@@ -91,7 +91,7 @@ def StenoxybacterAcetivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StenoxybacterAcetivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def CryobacteriumRoopkundense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CryobacteriumRoopkundense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

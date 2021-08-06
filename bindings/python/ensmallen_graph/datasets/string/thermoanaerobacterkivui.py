@@ -91,7 +91,7 @@ def ThermoanaerobacterKivui(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermoanaerobacterKivui",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

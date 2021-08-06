@@ -91,7 +91,7 @@ def ShuttleworthiaSatelles(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShuttleworthiaSatelles",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

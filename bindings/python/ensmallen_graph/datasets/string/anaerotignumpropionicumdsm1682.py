@@ -88,7 +88,7 @@ def AnaerotignumPropionicumDsm1682(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerotignumPropionicumDsm1682",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

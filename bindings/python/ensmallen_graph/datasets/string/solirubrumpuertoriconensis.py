@@ -88,7 +88,7 @@ def SolirubrumPuertoriconensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SolirubrumPuertoriconensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

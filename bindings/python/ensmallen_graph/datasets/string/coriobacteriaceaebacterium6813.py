@@ -88,7 +88,7 @@ def CoriobacteriaceaeBacterium6813(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CoriobacteriaceaeBacterium6813",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

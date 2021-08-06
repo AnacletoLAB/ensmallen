@@ -88,7 +88,7 @@ def MycoplasmaSpHu2014(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaSpHu2014",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

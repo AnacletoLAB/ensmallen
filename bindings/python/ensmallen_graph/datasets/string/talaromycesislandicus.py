@@ -88,7 +88,7 @@ def TalaromycesIslandicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TalaromycesIslandicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

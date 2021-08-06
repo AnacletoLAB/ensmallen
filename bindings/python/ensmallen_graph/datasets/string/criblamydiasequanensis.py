@@ -91,7 +91,7 @@ def CriblamydiaSequanensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CriblamydiaSequanensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

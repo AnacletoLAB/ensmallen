@@ -88,7 +88,7 @@ def GeothermobacterSpEprM(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeothermobacterSpEprM",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ShigellaDysenteriaeSd197(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShigellaDysenteriaeSd197",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

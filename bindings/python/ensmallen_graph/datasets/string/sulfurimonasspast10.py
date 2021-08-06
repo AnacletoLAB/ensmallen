@@ -91,7 +91,7 @@ def SulfurimonasSpAst10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfurimonasSpAst10",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

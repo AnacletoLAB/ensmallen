@@ -88,7 +88,7 @@ def NatrinemaVersiformeJcm10478(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NatrinemaVersiformeJcm10478",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def HalorubrumEzzemoulense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalorubrumEzzemoulense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

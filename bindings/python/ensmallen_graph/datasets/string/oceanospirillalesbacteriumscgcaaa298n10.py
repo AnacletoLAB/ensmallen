@@ -88,7 +88,7 @@ def OceanospirillalesBacteriumScgcAaa298N10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OceanospirillalesBacteriumScgcAaa298N10",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

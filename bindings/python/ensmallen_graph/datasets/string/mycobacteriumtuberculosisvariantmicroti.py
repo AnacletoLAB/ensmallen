@@ -88,7 +88,7 @@ def MycobacteriumTuberculosisVariantMicroti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumTuberculosisVariantMicroti",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

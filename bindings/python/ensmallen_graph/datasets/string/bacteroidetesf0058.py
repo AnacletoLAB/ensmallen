@@ -91,7 +91,7 @@ def BacteroidetesF0058(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidetesF0058",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

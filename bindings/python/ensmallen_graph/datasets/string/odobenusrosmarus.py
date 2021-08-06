@@ -91,7 +91,7 @@ def OdobenusRosmarus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OdobenusRosmarus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

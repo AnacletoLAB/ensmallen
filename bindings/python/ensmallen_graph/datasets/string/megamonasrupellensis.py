@@ -91,7 +91,7 @@ def MegamonasRupellensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MegamonasRupellensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

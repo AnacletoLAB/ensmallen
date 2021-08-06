@@ -91,7 +91,7 @@ def StrongyloidesRatti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StrongyloidesRatti",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def TerriglobusSaanensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TerriglobusSaanensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

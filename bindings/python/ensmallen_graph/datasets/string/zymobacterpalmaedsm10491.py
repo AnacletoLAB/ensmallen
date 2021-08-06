@@ -88,7 +88,7 @@ def ZymobacterPalmaeDsm10491(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZymobacterPalmaeDsm10491",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

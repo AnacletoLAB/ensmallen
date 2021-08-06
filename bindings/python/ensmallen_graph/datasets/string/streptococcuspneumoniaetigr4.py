@@ -91,7 +91,7 @@ def StreptococcusPneumoniaeTigr4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusPneumoniaeTigr4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

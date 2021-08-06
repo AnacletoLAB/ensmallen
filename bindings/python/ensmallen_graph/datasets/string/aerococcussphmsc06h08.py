@@ -88,7 +88,7 @@ def AerococcusSpHmsc06h08(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AerococcusSpHmsc06h08",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

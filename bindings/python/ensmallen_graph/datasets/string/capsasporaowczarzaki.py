@@ -91,7 +91,7 @@ def CapsasporaOwczarzaki(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CapsasporaOwczarzaki",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

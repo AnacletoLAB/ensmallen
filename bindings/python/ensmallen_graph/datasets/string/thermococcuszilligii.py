@@ -91,7 +91,7 @@ def ThermococcusZilligii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermococcusZilligii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

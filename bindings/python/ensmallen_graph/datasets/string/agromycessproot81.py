@@ -88,7 +88,7 @@ def AgromycesSpRoot81(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AgromycesSpRoot81",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

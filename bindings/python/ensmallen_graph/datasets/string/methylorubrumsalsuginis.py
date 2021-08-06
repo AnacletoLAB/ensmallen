@@ -88,7 +88,7 @@ def MethylorubrumSalsuginis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylorubrumSalsuginis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

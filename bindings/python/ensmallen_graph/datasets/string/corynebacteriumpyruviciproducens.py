@@ -91,7 +91,7 @@ def CorynebacteriumPyruviciproducens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumPyruviciproducens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

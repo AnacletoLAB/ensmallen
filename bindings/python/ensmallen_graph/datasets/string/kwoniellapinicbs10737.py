@@ -88,7 +88,7 @@ def KwoniellaPiniCbs10737(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KwoniellaPiniCbs10737",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

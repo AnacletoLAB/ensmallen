@@ -88,7 +88,7 @@ def BoseaSpRoot483d1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BoseaSpRoot483d1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

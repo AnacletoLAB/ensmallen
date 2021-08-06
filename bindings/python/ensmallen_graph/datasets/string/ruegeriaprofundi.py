@@ -88,7 +88,7 @@ def RuegeriaProfundi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuegeriaProfundi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

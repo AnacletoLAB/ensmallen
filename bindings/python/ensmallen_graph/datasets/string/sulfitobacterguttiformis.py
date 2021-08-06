@@ -91,7 +91,7 @@ def SulfitobacterGuttiformis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfitobacterGuttiformis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

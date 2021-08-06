@@ -91,7 +91,7 @@ def HafniaAlvei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HafniaAlvei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

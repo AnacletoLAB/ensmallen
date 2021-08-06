@@ -91,7 +91,7 @@ def PunctulariaStrigosozonata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PunctulariaStrigosozonata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

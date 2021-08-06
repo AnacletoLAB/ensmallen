@@ -91,7 +91,7 @@ def VeillonellaDispar(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VeillonellaDispar",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

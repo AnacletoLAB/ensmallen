@@ -88,7 +88,7 @@ def SalviaSplendens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalviaSplendens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

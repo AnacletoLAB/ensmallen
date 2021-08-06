@@ -91,7 +91,7 @@ def AmycolatopsisJejuensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmycolatopsisJejuensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

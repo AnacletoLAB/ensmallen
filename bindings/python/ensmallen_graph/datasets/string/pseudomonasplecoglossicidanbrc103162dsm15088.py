@@ -88,7 +88,7 @@ def PseudomonasPlecoglossicidaNbrc103162Dsm15088(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasPlecoglossicidaNbrc103162Dsm15088",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

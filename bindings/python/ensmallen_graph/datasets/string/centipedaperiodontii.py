@@ -91,7 +91,7 @@ def CentipedaPeriodontii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CentipedaPeriodontii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

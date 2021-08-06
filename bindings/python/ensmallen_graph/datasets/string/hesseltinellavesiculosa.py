@@ -88,7 +88,7 @@ def HesseltinellaVesiculosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HesseltinellaVesiculosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

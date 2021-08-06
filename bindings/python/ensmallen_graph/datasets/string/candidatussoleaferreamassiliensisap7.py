@@ -88,7 +88,7 @@ def CandidatusSoleaferreaMassiliensisAp7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusSoleaferreaMassiliensisAp7",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

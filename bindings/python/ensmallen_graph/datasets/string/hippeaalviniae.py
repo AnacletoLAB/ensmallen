@@ -91,7 +91,7 @@ def HippeaAlviniae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HippeaAlviniae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

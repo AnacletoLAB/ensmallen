@@ -91,7 +91,7 @@ def SphingobacteriumSpAccc05744(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingobacteriumSpAccc05744",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

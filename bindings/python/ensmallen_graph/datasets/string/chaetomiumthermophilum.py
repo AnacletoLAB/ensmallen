@@ -91,7 +91,7 @@ def ChaetomiumThermophilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChaetomiumThermophilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ThermotogaPetrophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermotogaPetrophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

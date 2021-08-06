@@ -88,7 +88,7 @@ def AcidiplasmaSpMba1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidiplasmaSpMba1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

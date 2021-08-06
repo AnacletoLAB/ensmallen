@@ -88,7 +88,7 @@ def ArcticibacterEurypsychrophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArcticibacterEurypsychrophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

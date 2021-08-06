@@ -78,7 +78,7 @@ def CfinderGoogle(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CfinderGoogle",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def FomitiporiaMediterranea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FomitiporiaMediterranea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

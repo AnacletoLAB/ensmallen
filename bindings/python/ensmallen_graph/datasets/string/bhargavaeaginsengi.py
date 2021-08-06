@@ -88,7 +88,7 @@ def BhargavaeaGinsengi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BhargavaeaGinsengi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

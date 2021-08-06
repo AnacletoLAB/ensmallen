@@ -91,7 +91,7 @@ def OryzaNivara(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OryzaNivara",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

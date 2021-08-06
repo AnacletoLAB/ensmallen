@@ -88,7 +88,7 @@ def AnaerobacillusAlkalidiazotrophicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerobacillusAlkalidiazotrophicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

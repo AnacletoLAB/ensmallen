@@ -88,7 +88,7 @@ def HydrogenoanaerobacteriumSaccharovorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HydrogenoanaerobacteriumSaccharovorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

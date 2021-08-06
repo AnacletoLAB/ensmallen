@@ -91,7 +91,7 @@ def BacteriovoraxMarinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteriovoraxMarinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

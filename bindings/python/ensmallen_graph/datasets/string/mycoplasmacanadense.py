@@ -88,7 +88,7 @@ def MycoplasmaCanadense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycoplasmaCanadense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

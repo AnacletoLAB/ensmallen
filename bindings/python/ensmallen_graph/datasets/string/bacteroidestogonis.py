@@ -88,7 +88,7 @@ def BacteroidesTogonis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesTogonis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

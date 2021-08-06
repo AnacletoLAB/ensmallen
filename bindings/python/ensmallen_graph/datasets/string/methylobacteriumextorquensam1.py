@@ -91,7 +91,7 @@ def MethylobacteriumExtorquensAm1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylobacteriumExtorquensAm1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

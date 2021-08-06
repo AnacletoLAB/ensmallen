@@ -91,7 +91,7 @@ def ClostridiumHylemonae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumHylemonae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

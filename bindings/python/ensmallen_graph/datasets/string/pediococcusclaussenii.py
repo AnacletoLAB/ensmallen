@@ -91,7 +91,7 @@ def PediococcusClaussenii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PediococcusClaussenii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

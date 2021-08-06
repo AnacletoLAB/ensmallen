@@ -88,7 +88,7 @@ def HelcobacillusMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelcobacillusMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

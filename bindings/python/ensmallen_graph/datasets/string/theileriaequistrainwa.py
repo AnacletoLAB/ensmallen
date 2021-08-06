@@ -88,7 +88,7 @@ def TheileriaEquiStrainWa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TheileriaEquiStrainWa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

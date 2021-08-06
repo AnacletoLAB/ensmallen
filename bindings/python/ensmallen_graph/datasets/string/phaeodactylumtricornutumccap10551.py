@@ -88,7 +88,7 @@ def PhaeodactylumTricornutumCcap10551(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhaeodactylumTricornutumCcap10551",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

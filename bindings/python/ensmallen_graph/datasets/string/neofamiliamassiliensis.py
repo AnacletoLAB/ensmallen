@@ -88,7 +88,7 @@ def NeofamiliaMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeofamiliaMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def DeinococcusReticulitermitis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DeinococcusReticulitermitis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

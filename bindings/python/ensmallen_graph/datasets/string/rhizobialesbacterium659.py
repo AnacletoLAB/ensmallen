@@ -88,7 +88,7 @@ def RhizobialesBacterium659(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizobialesBacterium659",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def TreponemaSpCetp13(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TreponemaSpCetp13",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

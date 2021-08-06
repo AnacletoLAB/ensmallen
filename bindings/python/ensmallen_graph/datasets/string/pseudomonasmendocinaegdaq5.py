@@ -91,7 +91,7 @@ def PseudomonasMendocinaEgdaq5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasMendocinaEgdaq5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

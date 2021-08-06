@@ -88,7 +88,7 @@ def RickettsiaAmblyommatisStrGat30v(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RickettsiaAmblyommatisStrGat30v",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ChryseobacteriumKoreenseCcug49689(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChryseobacteriumKoreenseCcug49689",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

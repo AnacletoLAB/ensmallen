@@ -88,7 +88,7 @@ def DesulfobulbaceaeBacteriumBrhC16a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfobulbaceaeBacteriumBrhC16a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

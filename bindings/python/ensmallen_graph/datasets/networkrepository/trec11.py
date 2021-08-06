@@ -78,7 +78,7 @@ def Trec11(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Trec11",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

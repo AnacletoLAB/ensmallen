@@ -88,7 +88,7 @@ def CeraceosorusGuamensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CeraceosorusGuamensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

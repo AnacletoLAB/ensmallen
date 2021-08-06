@@ -91,7 +91,7 @@ def MethanoculleusMarisnigri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanoculleusMarisnigri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

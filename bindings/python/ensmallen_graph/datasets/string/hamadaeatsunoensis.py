@@ -91,7 +91,7 @@ def HamadaeaTsunoensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HamadaeaTsunoensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

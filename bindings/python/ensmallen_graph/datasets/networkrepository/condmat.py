@@ -78,7 +78,7 @@ def CondMat(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CondMat",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

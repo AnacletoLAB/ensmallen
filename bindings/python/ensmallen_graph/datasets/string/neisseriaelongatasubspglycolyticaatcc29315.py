@@ -88,7 +88,7 @@ def NeisseriaElongataSubspGlycolyticaAtcc29315(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeisseriaElongataSubspGlycolyticaAtcc29315",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

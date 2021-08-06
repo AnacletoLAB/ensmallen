@@ -88,7 +88,7 @@ def MalasseziaRestrictaCbs7877(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MalasseziaRestrictaCbs7877",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

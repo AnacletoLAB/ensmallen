@@ -91,7 +91,7 @@ def ClostridiumPerfringensAtcc13124(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumPerfringensAtcc13124",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def SediminibacterSpHeli10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SediminibacterSpHeli10",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

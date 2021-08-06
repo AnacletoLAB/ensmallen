@@ -88,7 +88,7 @@ def CandidaInconspicua(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidaInconspicua",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

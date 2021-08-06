@@ -88,7 +88,7 @@ def HalococcusSaccharolyticusDsm5350(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalococcusSaccharolyticusDsm5350",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

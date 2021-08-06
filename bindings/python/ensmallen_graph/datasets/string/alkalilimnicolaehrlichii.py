@@ -91,7 +91,7 @@ def AlkalilimnicolaEhrlichii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlkalilimnicolaEhrlichii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

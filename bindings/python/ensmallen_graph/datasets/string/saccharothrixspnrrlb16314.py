@@ -91,7 +91,7 @@ def SaccharothrixSpNrrlb16314(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SaccharothrixSpNrrlb16314",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

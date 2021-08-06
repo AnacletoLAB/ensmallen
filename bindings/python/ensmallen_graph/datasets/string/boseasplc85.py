@@ -91,7 +91,7 @@ def BoseaSpLc85(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BoseaSpLc85",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

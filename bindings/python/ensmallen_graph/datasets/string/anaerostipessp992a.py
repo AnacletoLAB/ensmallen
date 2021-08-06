@@ -88,7 +88,7 @@ def AnaerostipesSp992a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerostipesSp992a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

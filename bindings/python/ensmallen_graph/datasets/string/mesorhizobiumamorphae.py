@@ -91,7 +91,7 @@ def MesorhizobiumAmorphae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MesorhizobiumAmorphae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

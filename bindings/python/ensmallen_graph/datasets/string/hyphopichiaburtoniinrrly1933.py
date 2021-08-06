@@ -88,7 +88,7 @@ def HyphopichiaBurtoniiNrrlY1933(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HyphopichiaBurtoniiNrrlY1933",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

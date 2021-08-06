@@ -88,7 +88,7 @@ def PseudoxanthomonasDokdonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoxanthomonasDokdonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

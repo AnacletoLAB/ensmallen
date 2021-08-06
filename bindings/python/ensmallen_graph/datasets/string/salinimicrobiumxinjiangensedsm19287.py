@@ -88,7 +88,7 @@ def SalinimicrobiumXinjiangenseDsm19287(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinimicrobiumXinjiangenseDsm19287",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

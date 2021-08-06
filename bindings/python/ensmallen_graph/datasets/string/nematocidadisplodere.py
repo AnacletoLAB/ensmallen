@@ -88,7 +88,7 @@ def NematocidaDisplodere(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NematocidaDisplodere",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def Connectus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Connectus",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def NonomuraeaMaritima(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NonomuraeaMaritima",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

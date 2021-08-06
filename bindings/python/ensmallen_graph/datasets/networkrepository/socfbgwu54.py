@@ -120,7 +120,7 @@ def SocfbGwu54(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbGwu54",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

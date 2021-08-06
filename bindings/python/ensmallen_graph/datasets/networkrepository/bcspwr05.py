@@ -78,7 +78,7 @@ def Bcspwr05(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Bcspwr05",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

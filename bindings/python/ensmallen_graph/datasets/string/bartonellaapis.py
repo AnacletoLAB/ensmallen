@@ -88,7 +88,7 @@ def BartonellaApis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BartonellaApis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

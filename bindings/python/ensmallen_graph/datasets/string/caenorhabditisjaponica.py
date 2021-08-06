@@ -91,7 +91,7 @@ def CaenorhabditisJaponica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaenorhabditisJaponica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

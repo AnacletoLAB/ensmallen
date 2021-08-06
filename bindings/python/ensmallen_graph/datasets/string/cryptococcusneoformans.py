@@ -91,7 +91,7 @@ def CryptococcusNeoformans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CryptococcusNeoformans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

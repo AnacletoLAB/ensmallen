@@ -91,7 +91,7 @@ def MycobacteriumIranicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumIranicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

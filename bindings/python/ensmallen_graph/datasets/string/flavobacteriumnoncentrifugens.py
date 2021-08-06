@@ -88,7 +88,7 @@ def FlavobacteriumNoncentrifugens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumNoncentrifugens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

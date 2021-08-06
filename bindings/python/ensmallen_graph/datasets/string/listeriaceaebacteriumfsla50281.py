@@ -91,7 +91,7 @@ def ListeriaceaeBacteriumFsla50281(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ListeriaceaeBacteriumFsla50281",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

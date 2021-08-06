@@ -88,7 +88,7 @@ def WeissellaJogaejeotgali(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WeissellaJogaejeotgali",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

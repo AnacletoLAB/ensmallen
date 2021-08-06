@@ -88,7 +88,7 @@ def RoseospirillumParvum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseospirillumParvum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def AquimarinaMuelleri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AquimarinaMuelleri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

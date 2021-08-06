@@ -88,7 +88,7 @@ def ThermusFiliformis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermusFiliformis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PseudanabaenaSpPcc7367(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudanabaenaSpPcc7367",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

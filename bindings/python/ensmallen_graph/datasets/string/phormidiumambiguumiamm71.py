@@ -88,7 +88,7 @@ def PhormidiumAmbiguumIamM71(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhormidiumAmbiguumIamM71",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

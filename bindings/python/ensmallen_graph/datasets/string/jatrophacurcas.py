@@ -88,7 +88,7 @@ def JatrophaCurcas(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JatrophaCurcas",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

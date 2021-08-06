@@ -88,7 +88,7 @@ def CaenimonasSpSl110(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaenimonasSpSl110",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

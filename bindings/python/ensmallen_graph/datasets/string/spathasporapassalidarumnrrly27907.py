@@ -88,7 +88,7 @@ def SpathasporaPassalidarumNrrlY27907(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpathasporaPassalidarumNrrlY27907",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

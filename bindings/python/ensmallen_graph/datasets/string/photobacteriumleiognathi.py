@@ -88,7 +88,7 @@ def PhotobacteriumLeiognathi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhotobacteriumLeiognathi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

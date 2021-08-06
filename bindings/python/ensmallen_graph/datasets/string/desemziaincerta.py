@@ -88,7 +88,7 @@ def DesemziaIncerta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesemziaIncerta",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

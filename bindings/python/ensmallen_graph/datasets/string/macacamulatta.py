@@ -91,7 +91,7 @@ def MacacaMulatta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MacacaMulatta",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

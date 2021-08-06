@@ -88,7 +88,7 @@ def HymenobacterLapidarius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HymenobacterLapidarius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

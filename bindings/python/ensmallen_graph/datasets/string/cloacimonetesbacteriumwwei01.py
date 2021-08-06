@@ -88,7 +88,7 @@ def CloacimonetesBacteriumWwei01(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CloacimonetesBacteriumWwei01",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

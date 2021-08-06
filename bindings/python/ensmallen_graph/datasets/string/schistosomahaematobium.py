@@ -88,7 +88,7 @@ def SchistosomaHaematobium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SchistosomaHaematobium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

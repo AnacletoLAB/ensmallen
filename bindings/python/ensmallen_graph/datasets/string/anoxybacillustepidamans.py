@@ -91,7 +91,7 @@ def AnoxybacillusTepidamans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnoxybacillusTepidamans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

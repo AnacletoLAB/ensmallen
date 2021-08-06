@@ -88,7 +88,7 @@ def TerrimicrobiumSacchariphilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TerrimicrobiumSacchariphilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

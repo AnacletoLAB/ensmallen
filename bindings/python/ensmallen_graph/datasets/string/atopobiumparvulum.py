@@ -91,7 +91,7 @@ def AtopobiumParvulum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AtopobiumParvulum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

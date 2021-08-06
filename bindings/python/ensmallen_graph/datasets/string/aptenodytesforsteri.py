@@ -88,7 +88,7 @@ def AptenodytesForsteri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AptenodytesForsteri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

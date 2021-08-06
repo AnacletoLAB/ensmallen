@@ -91,7 +91,7 @@ def ClostridiumBotulinumD1873(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumBotulinumD1873",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

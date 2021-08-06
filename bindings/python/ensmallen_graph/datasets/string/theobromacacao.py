@@ -91,7 +91,7 @@ def TheobromaCacao(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TheobromaCacao",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

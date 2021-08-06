@@ -88,7 +88,7 @@ def ActinobacteriumScgcAaa027J17(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinobacteriumScgcAaa027J17",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

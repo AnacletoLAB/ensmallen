@@ -91,7 +91,7 @@ def MethanocaldococcusSpFs40622(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanocaldococcusSpFs40622",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

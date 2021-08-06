@@ -88,7 +88,7 @@ def MaribacterUlvicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MaribacterUlvicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

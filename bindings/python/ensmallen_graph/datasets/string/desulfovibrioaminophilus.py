@@ -91,7 +91,7 @@ def DesulfovibrioAminophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioAminophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

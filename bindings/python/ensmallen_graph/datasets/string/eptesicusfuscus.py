@@ -91,7 +91,7 @@ def EptesicusFuscus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EptesicusFuscus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

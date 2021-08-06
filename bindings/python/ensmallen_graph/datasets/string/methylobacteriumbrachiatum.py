@@ -88,7 +88,7 @@ def MethylobacteriumBrachiatum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylobacteriumBrachiatum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

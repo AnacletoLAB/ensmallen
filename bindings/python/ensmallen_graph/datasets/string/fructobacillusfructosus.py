@@ -91,7 +91,7 @@ def FructobacillusFructosus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FructobacillusFructosus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

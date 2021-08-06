@@ -88,7 +88,7 @@ def ThaueraButanivoransNbrc103042(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThaueraButanivoransNbrc103042",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ZhouiaAmylolytica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZhouiaAmylolytica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

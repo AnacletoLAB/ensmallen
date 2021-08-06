@@ -88,7 +88,7 @@ def FlavobacteriumCauenseR2a7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumCauenseR2a7",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

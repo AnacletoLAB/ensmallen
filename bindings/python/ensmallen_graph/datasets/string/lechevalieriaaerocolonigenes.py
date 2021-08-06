@@ -91,7 +91,7 @@ def LechevalieriaAerocolonigenes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LechevalieriaAerocolonigenes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

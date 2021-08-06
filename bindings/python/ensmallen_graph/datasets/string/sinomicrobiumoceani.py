@@ -88,7 +88,7 @@ def SinomicrobiumOceani(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SinomicrobiumOceani",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

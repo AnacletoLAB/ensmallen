@@ -91,7 +91,7 @@ def RhodobacterSphaeroidesAtcc17025(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodobacterSphaeroidesAtcc17025",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

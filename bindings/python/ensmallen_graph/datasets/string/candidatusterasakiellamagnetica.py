@@ -88,7 +88,7 @@ def CandidatusTerasakiellaMagnetica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusTerasakiellaMagnetica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

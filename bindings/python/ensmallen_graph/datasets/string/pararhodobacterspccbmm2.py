@@ -88,7 +88,7 @@ def PararhodobacterSpCcbMm2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PararhodobacterSpCcbMm2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -63,7 +63,7 @@ def KGMicrobe(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KGMicrobe",
-        dataset="kghub",
+        repository="kghub",
         version=version,
         directed=directed,
         preprocess=preprocess,

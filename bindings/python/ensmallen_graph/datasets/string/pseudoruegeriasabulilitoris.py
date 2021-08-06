@@ -88,7 +88,7 @@ def PseudoruegeriaSabulilitoris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoruegeriaSabulilitoris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

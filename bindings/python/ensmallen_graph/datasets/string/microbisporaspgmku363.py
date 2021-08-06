@@ -88,7 +88,7 @@ def MicrobisporaSpGmku363(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobisporaSpGmku363",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

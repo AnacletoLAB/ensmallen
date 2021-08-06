@@ -91,7 +91,7 @@ def PolycyclovoransAlgicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PolycyclovoransAlgicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

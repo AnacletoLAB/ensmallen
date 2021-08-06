@@ -91,7 +91,7 @@ def GeothrixFermentans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeothrixFermentans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

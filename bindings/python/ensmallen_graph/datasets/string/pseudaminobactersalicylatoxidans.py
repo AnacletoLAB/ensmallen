@@ -91,7 +91,7 @@ def PseudaminobacterSalicylatoxidans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudaminobacterSalicylatoxidans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

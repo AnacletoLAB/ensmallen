@@ -78,7 +78,7 @@ def NR144(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NR144",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

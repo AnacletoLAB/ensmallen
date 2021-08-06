@@ -88,7 +88,7 @@ def LysinibacillusParviboronicapiensJcm18861(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LysinibacillusParviboronicapiensJcm18861",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

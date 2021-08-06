@@ -88,7 +88,7 @@ def XenorhabdusGriffiniae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XenorhabdusGriffiniae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AkkermansiaSpCag344(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AkkermansiaSpCag344",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

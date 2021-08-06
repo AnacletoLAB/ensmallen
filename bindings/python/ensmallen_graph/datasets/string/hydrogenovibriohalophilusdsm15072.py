@@ -88,7 +88,7 @@ def HydrogenovibrioHalophilusDsm15072(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HydrogenovibrioHalophilusDsm15072",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

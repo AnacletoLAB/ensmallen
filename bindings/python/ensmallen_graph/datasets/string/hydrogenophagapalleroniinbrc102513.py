@@ -88,7 +88,7 @@ def HydrogenophagaPalleroniiNbrc102513(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HydrogenophagaPalleroniiNbrc102513",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

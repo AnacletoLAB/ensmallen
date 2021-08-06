@@ -88,7 +88,7 @@ def LeifsoniaSpRoot112d2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeifsoniaSpRoot112d2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def Dblp2010(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Dblp2010",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

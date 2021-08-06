@@ -91,7 +91,7 @@ def ZobelliaUliginosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZobelliaUliginosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

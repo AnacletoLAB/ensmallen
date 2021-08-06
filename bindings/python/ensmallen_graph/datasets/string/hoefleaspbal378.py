@@ -91,7 +91,7 @@ def HoefleaSpBal378(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HoefleaSpBal378",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

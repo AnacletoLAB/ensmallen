@@ -91,7 +91,7 @@ def CladophialophoraCarrionii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CladophialophoraCarrionii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

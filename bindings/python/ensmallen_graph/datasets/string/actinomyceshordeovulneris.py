@@ -88,7 +88,7 @@ def ActinomycesHordeovulneris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomycesHordeovulneris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

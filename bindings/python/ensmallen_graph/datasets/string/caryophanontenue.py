@@ -88,7 +88,7 @@ def CaryophanonTenue(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaryophanonTenue",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

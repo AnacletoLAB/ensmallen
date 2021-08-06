@@ -91,7 +91,7 @@ def ChlorellaVariabilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlorellaVariabilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

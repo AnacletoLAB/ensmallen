@@ -88,7 +88,7 @@ def FurculomycesBoomerangus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FurculomycesBoomerangus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

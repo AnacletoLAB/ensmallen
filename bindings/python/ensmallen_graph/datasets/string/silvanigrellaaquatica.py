@@ -88,7 +88,7 @@ def SilvanigrellaAquatica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SilvanigrellaAquatica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

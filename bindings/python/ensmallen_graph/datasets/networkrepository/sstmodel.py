@@ -78,7 +78,7 @@ def Sstmodel(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Sstmodel",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

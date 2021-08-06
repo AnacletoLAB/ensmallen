@@ -88,7 +88,7 @@ def CandidateDivisionKsb1Bacterium448487(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidateDivisionKsb1Bacterium448487",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

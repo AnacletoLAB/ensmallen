@@ -88,7 +88,7 @@ def DevosiaCrocina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DevosiaCrocina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def DysgonomonasSpBgc7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DysgonomonasSpBgc7",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AspergillusSclerotiicarbonariusCbs121057(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AspergillusSclerotiicarbonariusCbs121057",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

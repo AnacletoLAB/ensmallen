@@ -88,7 +88,7 @@ def AlphaproteobacteriaBacteriumGwf25820(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlphaproteobacteriaBacteriumGwf25820",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

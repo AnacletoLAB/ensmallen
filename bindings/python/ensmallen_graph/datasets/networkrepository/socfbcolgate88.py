@@ -120,7 +120,7 @@ def SocfbColgate88(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbColgate88",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

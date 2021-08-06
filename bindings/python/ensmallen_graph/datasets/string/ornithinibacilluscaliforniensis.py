@@ -88,7 +88,7 @@ def OrnithinibacillusCaliforniensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OrnithinibacillusCaliforniensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

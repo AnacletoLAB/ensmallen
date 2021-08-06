@@ -88,7 +88,7 @@ def DesulfonatronumLacustreDsm10312(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfonatronumLacustreDsm10312",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

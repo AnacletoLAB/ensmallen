@@ -88,7 +88,7 @@ def MalusBaccata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MalusBaccata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

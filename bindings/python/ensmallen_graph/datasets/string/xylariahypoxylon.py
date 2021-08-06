@@ -88,7 +88,7 @@ def XylariaHypoxylon(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XylariaHypoxylon",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

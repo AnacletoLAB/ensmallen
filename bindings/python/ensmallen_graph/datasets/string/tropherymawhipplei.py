@@ -91,7 +91,7 @@ def TropherymaWhipplei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TropherymaWhipplei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

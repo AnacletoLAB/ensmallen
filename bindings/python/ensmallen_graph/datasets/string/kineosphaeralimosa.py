@@ -91,7 +91,7 @@ def KineosphaeraLimosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KineosphaeraLimosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

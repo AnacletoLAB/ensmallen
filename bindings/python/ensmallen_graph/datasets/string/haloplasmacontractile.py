@@ -91,7 +91,7 @@ def HaloplasmaContractile(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaloplasmaContractile",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

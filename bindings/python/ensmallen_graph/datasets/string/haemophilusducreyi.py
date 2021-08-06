@@ -91,7 +91,7 @@ def HaemophilusDucreyi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaemophilusDucreyi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

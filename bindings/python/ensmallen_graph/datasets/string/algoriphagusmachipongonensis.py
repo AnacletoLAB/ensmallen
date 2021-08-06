@@ -91,7 +91,7 @@ def AlgoriphagusMachipongonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlgoriphagusMachipongonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ErysipelotrichaceaeBacteriumNk3d112(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErysipelotrichaceaeBacteriumNk3d112",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

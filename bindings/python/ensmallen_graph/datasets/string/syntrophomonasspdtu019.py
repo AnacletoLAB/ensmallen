@@ -88,7 +88,7 @@ def SyntrophomonasSpDtu019(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SyntrophomonasSpDtu019",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

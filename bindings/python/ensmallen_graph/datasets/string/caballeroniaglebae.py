@@ -88,7 +88,7 @@ def CaballeroniaGlebae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaballeroniaGlebae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

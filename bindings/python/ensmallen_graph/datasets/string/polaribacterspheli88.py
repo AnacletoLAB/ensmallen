@@ -91,7 +91,7 @@ def PolaribacterSpHeli88(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PolaribacterSpHeli88",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AstatotilapiaCalliptera(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AstatotilapiaCalliptera",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

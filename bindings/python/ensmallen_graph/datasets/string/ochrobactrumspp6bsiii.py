@@ -88,7 +88,7 @@ def OchrobactrumSpP6bsIii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OchrobactrumSpP6bsIii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

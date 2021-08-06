@@ -88,7 +88,7 @@ def CandidatusUzinuraDiaspidicolaStrAsner(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusUzinuraDiaspidicolaStrAsner",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

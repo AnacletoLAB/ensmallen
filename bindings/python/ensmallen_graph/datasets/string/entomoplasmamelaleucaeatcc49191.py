@@ -88,7 +88,7 @@ def EntomoplasmaMelaleucaeAtcc49191(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EntomoplasmaMelaleucaeAtcc49191",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

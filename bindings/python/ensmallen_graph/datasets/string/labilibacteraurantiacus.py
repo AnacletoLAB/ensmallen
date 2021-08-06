@@ -88,7 +88,7 @@ def LabilibacterAurantiacus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LabilibacterAurantiacus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

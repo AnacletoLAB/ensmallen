@@ -88,7 +88,7 @@ def PeptoniphilusLacrimalisDsm7455(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeptoniphilusLacrimalisDsm7455",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

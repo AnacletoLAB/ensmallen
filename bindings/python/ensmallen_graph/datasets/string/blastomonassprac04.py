@@ -88,7 +88,7 @@ def BlastomonasSpRac04(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlastomonasSpRac04",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AureobasidiumNamibiaeCbs14797(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AureobasidiumNamibiaeCbs14797",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

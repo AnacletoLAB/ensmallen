@@ -88,7 +88,7 @@ def RhinolophusFerrumequinum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhinolophusFerrumequinum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

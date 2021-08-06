@@ -91,7 +91,7 @@ def BorreliaValaisianaVs116(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BorreliaValaisianaVs116",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

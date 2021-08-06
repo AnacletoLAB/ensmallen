@@ -88,7 +88,7 @@ def TissierellaPraeacutaDsm18095(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TissierellaPraeacutaDsm18095",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

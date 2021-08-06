@@ -91,7 +91,7 @@ def ThermotogaHypogea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermotogaHypogea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

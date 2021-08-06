@@ -88,7 +88,7 @@ def MethanohalophilusMahiiDsm5219(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanohalophilusMahiiDsm5219",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

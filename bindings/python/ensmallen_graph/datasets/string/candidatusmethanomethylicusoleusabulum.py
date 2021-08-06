@@ -88,7 +88,7 @@ def CandidatusMethanomethylicusOleusabulum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusMethanomethylicusOleusabulum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

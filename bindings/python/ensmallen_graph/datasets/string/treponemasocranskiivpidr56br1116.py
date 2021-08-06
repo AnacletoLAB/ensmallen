@@ -91,7 +91,7 @@ def TreponemaSocranskiiVpidr56br1116(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TreponemaSocranskiiVpidr56br1116",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

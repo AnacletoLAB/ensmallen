@@ -88,7 +88,7 @@ def HelicobacterHimalayensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HelicobacterHimalayensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

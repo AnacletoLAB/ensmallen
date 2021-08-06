@@ -88,7 +88,7 @@ def DietziaTimorensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DietziaTimorensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

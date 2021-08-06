@@ -91,7 +91,7 @@ def TerribacillusAidingensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TerribacillusAidingensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

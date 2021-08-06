@@ -88,7 +88,7 @@ def MicrobotryumSaponariae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobotryumSaponariae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

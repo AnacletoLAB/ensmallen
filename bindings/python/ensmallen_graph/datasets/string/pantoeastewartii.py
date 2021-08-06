@@ -91,7 +91,7 @@ def PantoeaStewartii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PantoeaStewartii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

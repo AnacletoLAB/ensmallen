@@ -88,7 +88,7 @@ def LactococcusPlantarumNbrc100936(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactococcusPlantarumNbrc100936",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

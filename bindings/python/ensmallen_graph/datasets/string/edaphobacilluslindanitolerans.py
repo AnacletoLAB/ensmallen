@@ -88,7 +88,7 @@ def EdaphobacillusLindanitolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EdaphobacillusLindanitolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

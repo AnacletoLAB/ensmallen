@@ -91,7 +91,7 @@ def EhrlichiaSpHf(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EhrlichiaSpHf",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

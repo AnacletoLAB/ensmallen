@@ -91,7 +91,7 @@ def LoktanellaCinnabarina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LoktanellaCinnabarina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

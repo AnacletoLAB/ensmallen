@@ -88,7 +88,7 @@ def MycobacteriumAlsense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumAlsense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def SolimonasSoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SolimonasSoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

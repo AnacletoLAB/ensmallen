@@ -88,7 +88,7 @@ def DerxiaLacustris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DerxiaLacustris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

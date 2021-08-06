@@ -88,7 +88,7 @@ def CampylobacterHyointestinalisSubspHyointestinalisLmg9260(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterHyointestinalisSubspHyointestinalisLmg9260",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

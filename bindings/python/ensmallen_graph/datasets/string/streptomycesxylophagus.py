@@ -91,7 +91,7 @@ def StreptomycesXylophagus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesXylophagus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

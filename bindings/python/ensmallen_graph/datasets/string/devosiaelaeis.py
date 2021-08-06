@@ -88,7 +88,7 @@ def DevosiaElaeis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DevosiaElaeis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

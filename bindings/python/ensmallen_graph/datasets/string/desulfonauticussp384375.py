@@ -88,7 +88,7 @@ def DesulfonauticusSp384375(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfonauticusSp384375",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def NitratiruptorTergarcusDsm16512(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitratiruptorTergarcusDsm16512",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

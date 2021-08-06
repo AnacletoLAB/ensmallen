@@ -88,7 +88,7 @@ def NatrinemaSalaciae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NatrinemaSalaciae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

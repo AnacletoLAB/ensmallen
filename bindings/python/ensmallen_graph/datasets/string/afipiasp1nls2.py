@@ -91,7 +91,7 @@ def AfipiaSp1nls2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AfipiaSp1nls2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

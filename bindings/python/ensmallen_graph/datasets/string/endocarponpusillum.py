@@ -91,7 +91,7 @@ def EndocarponPusillum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EndocarponPusillum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

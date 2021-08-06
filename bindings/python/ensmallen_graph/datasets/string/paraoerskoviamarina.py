@@ -91,7 +91,7 @@ def ParaoerskoviaMarina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParaoerskoviaMarina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

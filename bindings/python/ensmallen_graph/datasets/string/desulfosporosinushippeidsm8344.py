@@ -88,7 +88,7 @@ def DesulfosporosinusHippeiDsm8344(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfosporosinusHippeiDsm8344",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

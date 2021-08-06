@@ -91,7 +91,7 @@ def MethyloteneraSp73s(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethyloteneraSp73s",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

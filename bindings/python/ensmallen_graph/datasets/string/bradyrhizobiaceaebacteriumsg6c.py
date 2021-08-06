@@ -91,7 +91,7 @@ def BradyrhizobiaceaeBacteriumSg6c(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BradyrhizobiaceaeBacteriumSg6c",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

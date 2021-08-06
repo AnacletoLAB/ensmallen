@@ -78,7 +78,7 @@ def Auto(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Auto",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

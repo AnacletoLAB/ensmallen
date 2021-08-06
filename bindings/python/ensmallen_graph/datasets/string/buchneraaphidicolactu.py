@@ -88,7 +88,7 @@ def BuchneraAphidicolaCtu(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BuchneraAphidicolaCtu",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ChryseobacteriumUreilyticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChryseobacteriumUreilyticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

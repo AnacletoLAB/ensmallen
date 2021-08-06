@@ -91,7 +91,7 @@ def BacillusAmyloliquefaciens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusAmyloliquefaciens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

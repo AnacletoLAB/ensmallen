@@ -78,7 +78,7 @@ def G3rmt3m3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="G3rmt3m3",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

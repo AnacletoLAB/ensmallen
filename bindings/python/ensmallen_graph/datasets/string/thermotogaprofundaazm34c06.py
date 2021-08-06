@@ -88,7 +88,7 @@ def ThermotogaProfundaAzm34c06(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermotogaProfundaAzm34c06",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CaulobacteralesBacteriumRifoxyb1Full6716(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaulobacteralesBacteriumRifoxyb1Full6716",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

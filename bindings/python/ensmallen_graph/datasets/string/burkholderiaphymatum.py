@@ -91,7 +91,7 @@ def BurkholderiaPhymatum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BurkholderiaPhymatum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

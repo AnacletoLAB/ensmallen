@@ -88,7 +88,7 @@ def WeissellaBombi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WeissellaBombi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

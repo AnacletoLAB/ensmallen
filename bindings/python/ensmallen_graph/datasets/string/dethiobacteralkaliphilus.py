@@ -91,7 +91,7 @@ def DethiobacterAlkaliphilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DethiobacterAlkaliphilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

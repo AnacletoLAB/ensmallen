@@ -88,7 +88,7 @@ def TanticharoeniaSakaeratensisNbrc103193(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TanticharoeniaSakaeratensisNbrc103193",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

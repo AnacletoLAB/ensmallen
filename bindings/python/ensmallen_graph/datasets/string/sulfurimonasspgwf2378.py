@@ -88,7 +88,7 @@ def SulfurimonasSpGwf2378(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfurimonasSpGwf2378",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

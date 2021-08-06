@@ -88,7 +88,7 @@ def FervidobacteriumGondwanenseDsm13020(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FervidobacteriumGondwanenseDsm13020",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CandidatusNitrosotenuisChungbukensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusNitrosotenuisChungbukensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

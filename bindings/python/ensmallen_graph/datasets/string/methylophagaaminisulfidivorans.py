@@ -91,7 +91,7 @@ def MethylophagaAminisulfidivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylophagaAminisulfidivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

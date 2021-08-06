@@ -91,7 +91,7 @@ def EmpedobacterBrevis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EmpedobacterBrevis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

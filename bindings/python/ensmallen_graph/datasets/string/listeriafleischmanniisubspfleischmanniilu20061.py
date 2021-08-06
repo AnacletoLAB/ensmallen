@@ -88,7 +88,7 @@ def ListeriaFleischmanniiSubspFleischmanniiLu20061(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ListeriaFleischmanniiSubspFleischmanniiLu20061",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

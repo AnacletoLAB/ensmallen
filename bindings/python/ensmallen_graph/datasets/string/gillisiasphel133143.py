@@ -88,7 +88,7 @@ def GillisiaSpHel133143(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GillisiaSpHel133143",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

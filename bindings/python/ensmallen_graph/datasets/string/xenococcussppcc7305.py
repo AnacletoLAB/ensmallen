@@ -91,7 +91,7 @@ def XenococcusSpPcc7305(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XenococcusSpPcc7305",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PsychrobacterSpDabAl43b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PsychrobacterSpDabAl43b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

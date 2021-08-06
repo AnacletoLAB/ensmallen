@@ -88,7 +88,7 @@ def EisenibacterElegansDsm3317(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EisenibacterElegansDsm3317",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

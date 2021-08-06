@@ -78,7 +78,7 @@ def Rail2586(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Rail2586",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

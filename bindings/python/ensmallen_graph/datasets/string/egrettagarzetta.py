@@ -88,7 +88,7 @@ def EgrettaGarzetta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EgrettaGarzetta",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

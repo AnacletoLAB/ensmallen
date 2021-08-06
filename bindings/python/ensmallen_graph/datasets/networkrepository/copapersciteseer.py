@@ -96,7 +96,7 @@ def CoPapersCiteseer(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CoPapersCiteseer",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def HyunsoonleellaJejuensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HyunsoonleellaJejuensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

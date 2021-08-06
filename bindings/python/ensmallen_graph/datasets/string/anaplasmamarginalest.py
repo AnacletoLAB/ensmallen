@@ -88,7 +88,7 @@ def AnaplasmaMarginaleSt(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaplasmaMarginaleSt",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

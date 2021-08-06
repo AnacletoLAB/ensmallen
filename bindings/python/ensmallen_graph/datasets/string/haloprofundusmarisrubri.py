@@ -88,7 +88,7 @@ def HaloprofundusMarisrubri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaloprofundusMarisrubri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

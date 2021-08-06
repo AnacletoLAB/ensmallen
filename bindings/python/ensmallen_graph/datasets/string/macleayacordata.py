@@ -88,7 +88,7 @@ def MacleayaCordata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MacleayaCordata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

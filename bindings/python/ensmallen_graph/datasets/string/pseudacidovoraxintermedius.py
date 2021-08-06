@@ -88,7 +88,7 @@ def PseudacidovoraxIntermedius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudacidovoraxIntermedius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

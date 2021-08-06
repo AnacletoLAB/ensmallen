@@ -88,7 +88,7 @@ def SediminicolaSpYik13(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SediminicolaSpYik13",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

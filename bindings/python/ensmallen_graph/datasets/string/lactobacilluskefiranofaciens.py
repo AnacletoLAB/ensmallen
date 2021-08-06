@@ -91,7 +91,7 @@ def LactobacillusKefiranofaciens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusKefiranofaciens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

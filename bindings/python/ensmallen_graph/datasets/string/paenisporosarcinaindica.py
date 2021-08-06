@@ -88,7 +88,7 @@ def PaenisporosarcinaIndica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenisporosarcinaIndica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

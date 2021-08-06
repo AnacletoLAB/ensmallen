@@ -91,7 +91,7 @@ def EchinopsTelfairi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EchinopsTelfairi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

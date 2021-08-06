@@ -88,7 +88,7 @@ def PavoCristatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PavoCristatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

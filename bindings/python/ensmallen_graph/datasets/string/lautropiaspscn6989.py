@@ -88,7 +88,7 @@ def LautropiaSpScn6989(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LautropiaSpScn6989",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

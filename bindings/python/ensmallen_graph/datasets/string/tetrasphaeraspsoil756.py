@@ -88,7 +88,7 @@ def TetrasphaeraSpSoil756(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TetrasphaeraSpSoil756",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

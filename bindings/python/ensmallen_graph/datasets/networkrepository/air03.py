@@ -78,7 +78,7 @@ def Air03(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Air03",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

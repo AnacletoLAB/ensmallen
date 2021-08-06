@@ -88,7 +88,7 @@ def BacillusButanolivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusButanolivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

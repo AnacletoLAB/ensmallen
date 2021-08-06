@@ -91,7 +91,7 @@ def LactococcusGarvieaeDcc43(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactococcusGarvieaeDcc43",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

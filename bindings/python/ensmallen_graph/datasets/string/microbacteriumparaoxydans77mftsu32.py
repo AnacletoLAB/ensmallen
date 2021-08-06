@@ -91,7 +91,7 @@ def MicrobacteriumParaoxydans77mftsu32(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriumParaoxydans77mftsu32",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CruoricaptorIgnavus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CruoricaptorIgnavus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

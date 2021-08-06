@@ -91,7 +91,7 @@ def SphingobiumHerbicidovorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingobiumHerbicidovorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

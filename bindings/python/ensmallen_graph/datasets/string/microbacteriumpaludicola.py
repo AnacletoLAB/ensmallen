@@ -88,7 +88,7 @@ def MicrobacteriumPaludicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriumPaludicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

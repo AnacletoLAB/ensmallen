@@ -88,7 +88,7 @@ def LysobacterSpongiicolaDsm21749(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LysobacterSpongiicolaDsm21749",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

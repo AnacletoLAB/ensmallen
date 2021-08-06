@@ -88,7 +88,7 @@ def TilletiopsisWashingtonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TilletiopsisWashingtonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

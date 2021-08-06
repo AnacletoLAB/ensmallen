@@ -78,7 +78,7 @@ def Ex1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Ex1",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

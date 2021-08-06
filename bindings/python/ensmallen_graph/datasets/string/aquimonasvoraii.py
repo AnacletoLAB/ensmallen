@@ -88,7 +88,7 @@ def AquimonasVoraii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AquimonasVoraii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

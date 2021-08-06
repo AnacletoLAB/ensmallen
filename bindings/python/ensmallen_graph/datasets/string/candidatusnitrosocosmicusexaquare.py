@@ -88,7 +88,7 @@ def CandidatusNitrosocosmicusExaquare(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusNitrosocosmicusExaquare",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

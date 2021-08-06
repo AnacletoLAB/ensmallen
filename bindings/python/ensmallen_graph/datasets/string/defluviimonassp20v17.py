@@ -91,7 +91,7 @@ def DefluviimonasSp20v17(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DefluviimonasSp20v17",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

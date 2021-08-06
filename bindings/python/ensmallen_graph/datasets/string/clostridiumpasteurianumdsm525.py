@@ -91,7 +91,7 @@ def ClostridiumPasteurianumDsm525(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumPasteurianumDsm525",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

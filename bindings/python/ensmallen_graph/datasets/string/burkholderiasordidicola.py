@@ -91,7 +91,7 @@ def BurkholderiaSordidicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BurkholderiaSordidicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

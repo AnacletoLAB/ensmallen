@@ -91,7 +91,7 @@ def ClostridiumPapyrosolvens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumPapyrosolvens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def LinumUsitatissimum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LinumUsitatissimum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

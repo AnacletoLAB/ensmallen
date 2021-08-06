@@ -88,7 +88,7 @@ def CosenzaeaMyxofaciensAtcc19692(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CosenzaeaMyxofaciensAtcc19692",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def AquimarinaMegaterium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AquimarinaMegaterium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

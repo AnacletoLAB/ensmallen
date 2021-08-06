@@ -88,7 +88,7 @@ def LactobacillusPantherisDsm15945Jcm12539Nbrc106106(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusPantherisDsm15945Jcm12539Nbrc106106",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

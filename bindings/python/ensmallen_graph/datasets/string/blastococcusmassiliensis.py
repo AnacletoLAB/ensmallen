@@ -91,7 +91,7 @@ def BlastococcusMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlastococcusMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

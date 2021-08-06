@@ -88,7 +88,7 @@ def PaeniglutamicibacterAntarcticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaeniglutamicibacterAntarcticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

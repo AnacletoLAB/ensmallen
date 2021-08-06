@@ -88,7 +88,7 @@ def MitsuariaChitosanitabidaAtccBaa476Nbrc102408(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MitsuariaChitosanitabidaAtccBaa476Nbrc102408",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

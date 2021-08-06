@@ -88,7 +88,7 @@ def SinomonasAtrocyanea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SinomonasAtrocyanea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

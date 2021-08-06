@@ -88,7 +88,7 @@ def HalieaceaeBacteriumImcc3088(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalieaceaeBacteriumImcc3088",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

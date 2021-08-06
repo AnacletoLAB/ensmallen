@@ -88,7 +88,7 @@ def ChlamydiaeBacteriumRifcsphigho212Full278(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlamydiaeBacteriumRifcsphigho212Full278",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def Mri2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Mri2",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AmphiprionPercula(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmphiprionPercula",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def NatronolimnobiusInnermongolicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NatronolimnobiusInnermongolicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

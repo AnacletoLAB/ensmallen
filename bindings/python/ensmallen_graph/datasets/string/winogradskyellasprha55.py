@@ -88,7 +88,7 @@ def WinogradskyellaSpRha55(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WinogradskyellaSpRha55",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

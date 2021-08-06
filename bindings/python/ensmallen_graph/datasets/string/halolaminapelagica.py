@@ -88,7 +88,7 @@ def HalolaminaPelagica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalolaminaPelagica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

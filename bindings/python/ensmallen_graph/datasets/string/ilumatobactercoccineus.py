@@ -91,7 +91,7 @@ def IlumatobacterCoccineus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IlumatobacterCoccineus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

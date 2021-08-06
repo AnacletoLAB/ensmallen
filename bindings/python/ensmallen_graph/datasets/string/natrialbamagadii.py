@@ -91,7 +91,7 @@ def NatrialbaMagadii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NatrialbaMagadii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

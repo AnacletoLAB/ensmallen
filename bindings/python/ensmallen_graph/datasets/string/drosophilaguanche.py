@@ -88,7 +88,7 @@ def DrosophilaGuanche(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DrosophilaGuanche",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def DesulfonatronumThioautotrophicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfonatronumThioautotrophicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

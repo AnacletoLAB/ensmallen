@@ -88,7 +88,7 @@ def AlgoriphagusResistens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlgoriphagusResistens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

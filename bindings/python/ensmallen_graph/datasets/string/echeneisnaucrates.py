@@ -88,7 +88,7 @@ def EcheneisNaucrates(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EcheneisNaucrates",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

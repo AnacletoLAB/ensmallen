@@ -91,7 +91,7 @@ def LactobacillusEquicursoris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusEquicursoris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

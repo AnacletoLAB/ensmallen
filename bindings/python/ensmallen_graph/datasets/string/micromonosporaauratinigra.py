@@ -88,7 +88,7 @@ def MicromonosporaAuratinigra(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicromonosporaAuratinigra",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

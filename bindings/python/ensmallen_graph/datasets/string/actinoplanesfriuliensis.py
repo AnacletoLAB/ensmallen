@@ -91,7 +91,7 @@ def ActinoplanesFriuliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinoplanesFriuliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

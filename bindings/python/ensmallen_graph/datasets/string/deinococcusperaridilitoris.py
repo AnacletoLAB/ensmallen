@@ -91,7 +91,7 @@ def DeinococcusPeraridilitoris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DeinococcusPeraridilitoris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

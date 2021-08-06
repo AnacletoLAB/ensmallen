@@ -88,7 +88,7 @@ def OleibacterMarinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OleibacterMarinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

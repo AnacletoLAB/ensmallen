@@ -88,7 +88,7 @@ def PelomonasSpRoot1217(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PelomonasSpRoot1217",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

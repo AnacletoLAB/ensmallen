@@ -91,7 +91,7 @@ def OryzaBrachyantha(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OryzaBrachyantha",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

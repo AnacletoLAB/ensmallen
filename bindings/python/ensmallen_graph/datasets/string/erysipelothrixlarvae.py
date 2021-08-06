@@ -88,7 +88,7 @@ def ErysipelothrixLarvae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErysipelothrixLarvae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

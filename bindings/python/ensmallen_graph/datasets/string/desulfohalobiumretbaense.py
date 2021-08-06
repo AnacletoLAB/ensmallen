@@ -91,7 +91,7 @@ def DesulfohalobiumRetbaense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfohalobiumRetbaense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

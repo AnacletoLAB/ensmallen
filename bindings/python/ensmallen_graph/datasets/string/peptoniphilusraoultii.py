@@ -88,7 +88,7 @@ def PeptoniphilusRaoultii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeptoniphilusRaoultii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

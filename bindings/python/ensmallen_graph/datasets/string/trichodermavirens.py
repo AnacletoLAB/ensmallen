@@ -91,7 +91,7 @@ def TrichodermaVirens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichodermaVirens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

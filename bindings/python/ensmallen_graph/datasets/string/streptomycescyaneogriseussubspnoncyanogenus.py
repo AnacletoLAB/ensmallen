@@ -88,7 +88,7 @@ def StreptomycesCyaneogriseusSubspNoncyanogenus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesCyaneogriseusSubspNoncyanogenus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

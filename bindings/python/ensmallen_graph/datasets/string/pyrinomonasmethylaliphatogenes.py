@@ -88,7 +88,7 @@ def PyrinomonasMethylaliphatogenes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PyrinomonasMethylaliphatogenes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

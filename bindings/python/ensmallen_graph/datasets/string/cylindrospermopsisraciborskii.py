@@ -91,7 +91,7 @@ def CylindrospermopsisRaciborskii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CylindrospermopsisRaciborskii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

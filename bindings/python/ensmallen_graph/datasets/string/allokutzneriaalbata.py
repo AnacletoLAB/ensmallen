@@ -91,7 +91,7 @@ def AllokutzneriaAlbata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AllokutzneriaAlbata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

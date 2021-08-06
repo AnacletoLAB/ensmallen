@@ -88,7 +88,7 @@ def ExophialaDermatitidisNihUt8656(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ExophialaDermatitidisNihUt8656",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

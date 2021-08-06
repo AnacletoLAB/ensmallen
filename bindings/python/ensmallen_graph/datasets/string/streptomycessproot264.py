@@ -88,7 +88,7 @@ def StreptomycesSpRoot264(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesSpRoot264",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

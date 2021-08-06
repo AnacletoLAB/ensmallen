@@ -91,7 +91,7 @@ def MicrocoleusVaginatus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrocoleusVaginatus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

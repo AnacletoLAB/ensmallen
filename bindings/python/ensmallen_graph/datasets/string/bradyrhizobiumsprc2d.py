@@ -88,7 +88,7 @@ def BradyrhizobiumSpRc2d(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BradyrhizobiumSpRc2d",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

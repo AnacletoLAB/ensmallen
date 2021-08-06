@@ -91,7 +91,7 @@ def CapsellaRubella(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CapsellaRubella",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

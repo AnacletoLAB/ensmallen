@@ -91,7 +91,7 @@ def TreponemaLecithinolyticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TreponemaLecithinolyticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

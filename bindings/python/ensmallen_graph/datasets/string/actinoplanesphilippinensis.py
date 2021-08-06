@@ -88,7 +88,7 @@ def ActinoplanesPhilippinensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinoplanesPhilippinensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

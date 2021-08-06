@@ -88,7 +88,7 @@ def TrinickiaSymbiotica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrinickiaSymbiotica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

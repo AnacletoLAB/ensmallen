@@ -88,7 +88,7 @@ def AcetothermiaBacterium6432(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcetothermiaBacterium6432",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

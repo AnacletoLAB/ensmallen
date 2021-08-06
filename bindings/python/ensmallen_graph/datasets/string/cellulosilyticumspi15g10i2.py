@@ -88,7 +88,7 @@ def CellulosilyticumSpI15g10i2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CellulosilyticumSpI15g10i2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

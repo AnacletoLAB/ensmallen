@@ -88,7 +88,7 @@ def MuribaculumIntestinale(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MuribaculumIntestinale",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

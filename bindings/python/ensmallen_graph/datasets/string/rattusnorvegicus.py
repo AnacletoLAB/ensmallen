@@ -91,7 +91,7 @@ def RattusNorvegicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RattusNorvegicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

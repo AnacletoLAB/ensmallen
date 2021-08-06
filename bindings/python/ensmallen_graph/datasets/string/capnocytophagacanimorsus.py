@@ -91,7 +91,7 @@ def CapnocytophagaCanimorsus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CapnocytophagaCanimorsus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

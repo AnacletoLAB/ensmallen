@@ -88,7 +88,7 @@ def TateyamariaSpAngS1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TateyamariaSpAngS1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

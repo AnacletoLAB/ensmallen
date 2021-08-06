@@ -91,7 +91,7 @@ def HalalkalicoccusJeotgali(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalalkalicoccusJeotgali",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

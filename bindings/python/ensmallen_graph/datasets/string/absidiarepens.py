@@ -88,7 +88,7 @@ def AbsidiaRepens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AbsidiaRepens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

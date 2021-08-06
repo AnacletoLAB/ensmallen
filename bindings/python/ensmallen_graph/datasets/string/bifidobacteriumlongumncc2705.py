@@ -88,7 +88,7 @@ def BifidobacteriumLongumNcc2705(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BifidobacteriumLongumNcc2705",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

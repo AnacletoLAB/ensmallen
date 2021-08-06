@@ -88,7 +88,7 @@ def SfhhConfSensor(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SfhhConfSensor",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

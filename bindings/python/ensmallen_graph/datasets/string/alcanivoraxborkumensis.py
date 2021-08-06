@@ -91,7 +91,7 @@ def AlcanivoraxBorkumensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlcanivoraxBorkumensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

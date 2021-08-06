@@ -91,7 +91,7 @@ def AcholeplasmaLaidlawii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcholeplasmaLaidlawii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

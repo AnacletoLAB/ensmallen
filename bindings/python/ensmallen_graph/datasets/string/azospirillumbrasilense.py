@@ -88,7 +88,7 @@ def AzospirillumBrasilense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AzospirillumBrasilense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

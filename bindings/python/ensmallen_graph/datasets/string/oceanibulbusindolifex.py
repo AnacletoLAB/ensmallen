@@ -91,7 +91,7 @@ def OceanibulbusIndolifex(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OceanibulbusIndolifex",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

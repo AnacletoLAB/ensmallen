@@ -88,7 +88,7 @@ def ThermoactinomycesSpAs95(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermoactinomycesSpAs95",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

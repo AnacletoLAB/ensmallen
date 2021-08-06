@@ -88,7 +88,7 @@ def EmergomycesPasteurianusEp9510(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EmergomycesPasteurianusEp9510",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

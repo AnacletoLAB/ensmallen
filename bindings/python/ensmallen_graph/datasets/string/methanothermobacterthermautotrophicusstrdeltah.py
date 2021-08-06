@@ -88,7 +88,7 @@ def MethanothermobacterThermautotrophicusStrDeltaH(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanothermobacterThermautotrophicusStrDeltaH",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

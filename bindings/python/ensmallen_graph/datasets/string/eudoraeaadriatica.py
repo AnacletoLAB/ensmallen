@@ -91,7 +91,7 @@ def EudoraeaAdriatica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EudoraeaAdriatica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

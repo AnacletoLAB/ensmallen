@@ -88,7 +88,7 @@ def StreptomycesTurgidiscabies(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesTurgidiscabies",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

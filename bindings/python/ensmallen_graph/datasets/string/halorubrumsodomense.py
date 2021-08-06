@@ -88,7 +88,7 @@ def HalorubrumSodomense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalorubrumSodomense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CandidatusStoquefichusSpKle1796(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusStoquefichusSpKle1796",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

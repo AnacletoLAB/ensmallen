@@ -88,7 +88,7 @@ def SalinivibrioSpEs052(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinivibrioSpEs052",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

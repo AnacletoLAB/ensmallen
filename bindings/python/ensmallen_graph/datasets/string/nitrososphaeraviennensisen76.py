@@ -88,7 +88,7 @@ def NitrososphaeraViennensisEn76(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrososphaeraViennensisEn76",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

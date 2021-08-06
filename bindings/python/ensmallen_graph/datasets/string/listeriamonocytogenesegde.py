@@ -91,7 +91,7 @@ def ListeriaMonocytogenesEgde(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ListeriaMonocytogenesEgde",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

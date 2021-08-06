@@ -88,7 +88,7 @@ def SkermaniaPiniformisNbrc15059(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SkermaniaPiniformisNbrc15059",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

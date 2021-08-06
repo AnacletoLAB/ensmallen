@@ -88,7 +88,7 @@ def AspergillusTerreusNih2624(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AspergillusTerreusNih2624",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def LeersiaPerrieri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeersiaPerrieri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

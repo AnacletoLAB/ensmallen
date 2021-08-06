@@ -91,7 +91,7 @@ def LeuconostocGasicomitatum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeuconostocGasicomitatum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

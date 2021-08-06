@@ -88,7 +88,7 @@ def OttowiaThiooxydansDsm14619(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OttowiaThiooxydansDsm14619",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

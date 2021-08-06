@@ -91,7 +91,7 @@ def ThiothrixFlexilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThiothrixFlexilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

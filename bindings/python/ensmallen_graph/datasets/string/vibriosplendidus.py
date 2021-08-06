@@ -91,7 +91,7 @@ def VibrioSplendidus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioSplendidus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

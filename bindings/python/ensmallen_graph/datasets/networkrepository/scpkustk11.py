@@ -92,7 +92,7 @@ def ScPkustk11(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ScPkustk11",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

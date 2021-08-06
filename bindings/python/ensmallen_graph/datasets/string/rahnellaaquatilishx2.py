@@ -91,7 +91,7 @@ def RahnellaAquatilisHx2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RahnellaAquatilisHx2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

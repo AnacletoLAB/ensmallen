@@ -88,7 +88,7 @@ def MoritellaSpPe36(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MoritellaSpPe36",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

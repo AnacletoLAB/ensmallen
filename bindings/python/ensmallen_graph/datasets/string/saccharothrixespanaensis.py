@@ -91,7 +91,7 @@ def SaccharothrixEspanaensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SaccharothrixEspanaensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

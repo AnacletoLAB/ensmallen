@@ -88,7 +88,7 @@ def KomagataeibacterOboediens174bp2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KomagataeibacterOboediens174bp2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

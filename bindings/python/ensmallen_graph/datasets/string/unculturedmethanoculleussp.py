@@ -88,7 +88,7 @@ def UnculturedMethanoculleusSp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UnculturedMethanoculleusSp",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

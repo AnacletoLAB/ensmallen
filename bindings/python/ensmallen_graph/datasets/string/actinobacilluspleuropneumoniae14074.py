@@ -91,7 +91,7 @@ def ActinobacillusPleuropneumoniae14074(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinobacillusPleuropneumoniae14074",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

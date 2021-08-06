@@ -88,7 +88,7 @@ def AcidaminobacterHydrogenoformansDsm2784(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidaminobacterHydrogenoformansDsm2784",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

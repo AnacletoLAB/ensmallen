@@ -88,7 +88,7 @@ def BermanellaMarisrubri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BermanellaMarisrubri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

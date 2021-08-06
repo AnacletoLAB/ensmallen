@@ -91,7 +91,7 @@ def BacteroidesXylanisolvens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesXylanisolvens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

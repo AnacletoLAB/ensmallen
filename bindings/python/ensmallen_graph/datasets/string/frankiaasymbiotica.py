@@ -88,7 +88,7 @@ def FrankiaAsymbiotica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FrankiaAsymbiotica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

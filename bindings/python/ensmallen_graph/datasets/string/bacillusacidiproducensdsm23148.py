@@ -88,7 +88,7 @@ def BacillusAcidiproducensDsm23148(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusAcidiproducensDsm23148",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

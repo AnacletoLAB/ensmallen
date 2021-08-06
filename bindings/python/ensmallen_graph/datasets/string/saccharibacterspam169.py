@@ -91,7 +91,7 @@ def SaccharibacterSpAm169(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SaccharibacterSpAm169",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

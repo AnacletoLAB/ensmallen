@@ -78,7 +78,7 @@ def Se(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Se",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AcidocellaAminolytica101Dsm11237(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidocellaAminolytica101Dsm11237",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

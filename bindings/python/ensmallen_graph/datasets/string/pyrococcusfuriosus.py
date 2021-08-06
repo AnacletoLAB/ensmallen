@@ -91,7 +91,7 @@ def PyrococcusFuriosus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PyrococcusFuriosus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

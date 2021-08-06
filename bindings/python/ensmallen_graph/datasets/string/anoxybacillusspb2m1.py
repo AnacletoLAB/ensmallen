@@ -88,7 +88,7 @@ def AnoxybacillusSpB2m1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnoxybacillusSpB2m1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

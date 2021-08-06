@@ -88,7 +88,7 @@ def SunxiuqiniaDokdonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SunxiuqiniaDokdonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def RappaportIsraeli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RappaportIsraeli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

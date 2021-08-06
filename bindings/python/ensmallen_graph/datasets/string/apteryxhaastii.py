@@ -88,7 +88,7 @@ def ApteryxHaastii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ApteryxHaastii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

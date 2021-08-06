@@ -88,7 +88,7 @@ def HandroanthusImpetiginosus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HandroanthusImpetiginosus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

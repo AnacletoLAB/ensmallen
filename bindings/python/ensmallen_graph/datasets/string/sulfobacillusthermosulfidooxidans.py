@@ -88,7 +88,7 @@ def SulfobacillusThermosulfidooxidans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfobacillusThermosulfidooxidans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

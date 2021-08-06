@@ -88,7 +88,7 @@ def CorynebacteriumPseudotuberculosisC231(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumPseudotuberculosisC231",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def TuberBorchii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TuberBorchii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

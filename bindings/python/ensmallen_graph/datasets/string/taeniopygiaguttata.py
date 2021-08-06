@@ -88,7 +88,7 @@ def TaeniopygiaGuttata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TaeniopygiaGuttata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

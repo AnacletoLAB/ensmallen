@@ -88,7 +88,7 @@ def LuteipulveratusHalotolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LuteipulveratusHalotolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

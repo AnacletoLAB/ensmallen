@@ -88,7 +88,7 @@ def MethanobacteriumFormicicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanobacteriumFormicicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

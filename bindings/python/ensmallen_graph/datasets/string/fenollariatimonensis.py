@@ -88,7 +88,7 @@ def FenollariaTimonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FenollariaTimonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

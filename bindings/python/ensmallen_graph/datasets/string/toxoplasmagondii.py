@@ -91,7 +91,7 @@ def ToxoplasmaGondii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ToxoplasmaGondii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

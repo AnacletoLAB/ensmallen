@@ -91,7 +91,7 @@ def ChloroherpetonThalassium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChloroherpetonThalassium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

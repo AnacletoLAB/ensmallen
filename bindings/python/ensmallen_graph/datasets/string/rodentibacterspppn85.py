@@ -88,7 +88,7 @@ def RodentibacterSpPpn85(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RodentibacterSpPpn85",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

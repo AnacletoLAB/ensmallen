@@ -88,7 +88,7 @@ def NeptunicoccusSediminis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeptunicoccusSediminis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ShimiaHaliotis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ShimiaHaliotis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

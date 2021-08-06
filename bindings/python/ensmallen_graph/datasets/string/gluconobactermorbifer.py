@@ -91,7 +91,7 @@ def GluconobacterMorbifer(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GluconobacterMorbifer",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

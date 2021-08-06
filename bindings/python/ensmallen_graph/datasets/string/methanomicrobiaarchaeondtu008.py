@@ -88,7 +88,7 @@ def MethanomicrobiaArchaeonDtu008(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanomicrobiaArchaeonDtu008",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def MethylacidiphilumInfernorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylacidiphilumInfernorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

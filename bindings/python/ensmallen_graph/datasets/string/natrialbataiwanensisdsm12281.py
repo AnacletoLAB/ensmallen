@@ -88,7 +88,7 @@ def NatrialbaTaiwanensisDsm12281(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NatrialbaTaiwanensisDsm12281",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

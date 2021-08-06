@@ -91,7 +91,7 @@ def TupaiaChinensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TupaiaChinensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

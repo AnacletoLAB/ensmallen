@@ -91,7 +91,7 @@ def BordetellaPertussis18323(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BordetellaPertussis18323",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

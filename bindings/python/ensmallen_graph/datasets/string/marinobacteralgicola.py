@@ -91,7 +91,7 @@ def MarinobacterAlgicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinobacterAlgicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

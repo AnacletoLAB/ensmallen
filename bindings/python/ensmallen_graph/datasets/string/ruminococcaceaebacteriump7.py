@@ -88,7 +88,7 @@ def RuminococcaceaeBacteriumP7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminococcaceaeBacteriumP7",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

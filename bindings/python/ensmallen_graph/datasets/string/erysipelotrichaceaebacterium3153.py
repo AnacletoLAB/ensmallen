@@ -91,7 +91,7 @@ def ErysipelotrichaceaeBacterium3153(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErysipelotrichaceaeBacterium3153",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

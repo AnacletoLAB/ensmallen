@@ -88,7 +88,7 @@ def BlautiaSpCag257(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlautiaSpCag257",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

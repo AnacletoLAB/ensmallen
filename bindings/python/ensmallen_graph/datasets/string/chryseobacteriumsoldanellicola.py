@@ -88,7 +88,7 @@ def ChryseobacteriumSoldanellicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChryseobacteriumSoldanellicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

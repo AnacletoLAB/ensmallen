@@ -91,7 +91,7 @@ def HydrogenobaculumSpY04aas1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HydrogenobaculumSpY04aas1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

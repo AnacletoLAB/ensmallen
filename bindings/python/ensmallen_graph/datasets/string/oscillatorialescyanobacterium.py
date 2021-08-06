@@ -91,7 +91,7 @@ def OscillatorialesCyanobacterium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OscillatorialesCyanobacterium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

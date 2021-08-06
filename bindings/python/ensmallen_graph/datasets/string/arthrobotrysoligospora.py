@@ -91,7 +91,7 @@ def ArthrobotrysOligospora(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArthrobotrysOligospora",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

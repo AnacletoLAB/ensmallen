@@ -78,7 +78,7 @@ def Us04(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Us04",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def NocardioidesAlpinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardioidesAlpinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

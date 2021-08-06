@@ -91,7 +91,7 @@ def DesulfovibrioHydrothermalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioHydrothermalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

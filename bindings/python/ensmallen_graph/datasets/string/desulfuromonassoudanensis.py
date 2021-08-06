@@ -88,7 +88,7 @@ def DesulfuromonasSoudanensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfuromonasSoudanensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

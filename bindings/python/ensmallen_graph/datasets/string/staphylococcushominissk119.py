@@ -91,7 +91,7 @@ def StaphylococcusHominisSk119(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StaphylococcusHominisSk119",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

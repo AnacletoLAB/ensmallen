@@ -91,7 +91,7 @@ def MicrobulbiferAgarilyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobulbiferAgarilyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def BarnesiellaViscericola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BarnesiellaViscericola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

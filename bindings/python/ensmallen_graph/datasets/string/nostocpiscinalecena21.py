@@ -88,7 +88,7 @@ def NostocPiscinaleCena21(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NostocPiscinaleCena21",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PorphyromonasLevii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PorphyromonasLevii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

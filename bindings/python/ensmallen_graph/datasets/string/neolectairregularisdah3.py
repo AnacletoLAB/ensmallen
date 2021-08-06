@@ -88,7 +88,7 @@ def NeolectaIrregularisDah3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeolectaIrregularisDah3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

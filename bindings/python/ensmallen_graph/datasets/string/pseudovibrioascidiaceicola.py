@@ -88,7 +88,7 @@ def PseudovibrioAscidiaceicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudovibrioAscidiaceicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

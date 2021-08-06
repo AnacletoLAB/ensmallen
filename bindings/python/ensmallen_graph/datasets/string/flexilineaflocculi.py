@@ -88,7 +88,7 @@ def FlexilineaFlocculi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlexilineaFlocculi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

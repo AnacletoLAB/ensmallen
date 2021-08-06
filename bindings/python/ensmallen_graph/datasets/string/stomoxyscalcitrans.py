@@ -88,7 +88,7 @@ def StomoxysCalcitrans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StomoxysCalcitrans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

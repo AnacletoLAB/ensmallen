@@ -91,7 +91,7 @@ def SolobacteriumMooreiDsm22971(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SolobacteriumMooreiDsm22971",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ChlamydomonasReinhardtii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlamydomonasReinhardtii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PenicilliumCoprophilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PenicilliumCoprophilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

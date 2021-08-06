@@ -88,7 +88,7 @@ def DanionellaTranslucida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DanionellaTranslucida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

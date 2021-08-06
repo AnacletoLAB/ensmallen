@@ -88,7 +88,7 @@ def OrnithinibacillusContaminans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OrnithinibacillusContaminans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

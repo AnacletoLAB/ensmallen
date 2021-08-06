@@ -91,7 +91,7 @@ def CampylobacterShowaeCsunswcd(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterShowaeCsunswcd",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

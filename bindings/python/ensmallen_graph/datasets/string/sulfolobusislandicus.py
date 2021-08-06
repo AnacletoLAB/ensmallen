@@ -91,7 +91,7 @@ def SulfolobusIslandicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfolobusIslandicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

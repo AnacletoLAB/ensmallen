@@ -91,7 +91,7 @@ def LachnospiraceaeBacteriumF0431(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LachnospiraceaeBacteriumF0431",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

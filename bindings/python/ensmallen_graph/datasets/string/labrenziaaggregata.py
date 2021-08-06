@@ -91,7 +91,7 @@ def LabrenziaAggregata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LabrenziaAggregata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

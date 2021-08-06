@@ -91,7 +91,7 @@ def MethanospirillumHungatei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanospirillumHungatei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

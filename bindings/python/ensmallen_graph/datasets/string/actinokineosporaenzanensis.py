@@ -91,7 +91,7 @@ def ActinokineosporaEnzanensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinokineosporaEnzanensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

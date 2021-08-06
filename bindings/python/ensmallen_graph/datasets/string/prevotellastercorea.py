@@ -91,7 +91,7 @@ def PrevotellaStercorea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaStercorea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

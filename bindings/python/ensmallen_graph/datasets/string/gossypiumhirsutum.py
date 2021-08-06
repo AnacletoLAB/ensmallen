@@ -88,7 +88,7 @@ def GossypiumHirsutum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GossypiumHirsutum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

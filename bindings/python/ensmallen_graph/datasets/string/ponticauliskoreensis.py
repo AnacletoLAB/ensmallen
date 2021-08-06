@@ -91,7 +91,7 @@ def PonticaulisKoreensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PonticaulisKoreensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

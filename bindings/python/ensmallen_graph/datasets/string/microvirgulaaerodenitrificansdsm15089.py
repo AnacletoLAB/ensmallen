@@ -88,7 +88,7 @@ def MicrovirgulaAerodenitrificansDsm15089(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrovirgulaAerodenitrificansDsm15089",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

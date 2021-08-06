@@ -88,7 +88,7 @@ def GonapodyaProliferaJel478(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GonapodyaProliferaJel478",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

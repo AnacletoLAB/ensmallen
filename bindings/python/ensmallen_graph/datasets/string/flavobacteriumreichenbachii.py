@@ -91,7 +91,7 @@ def FlavobacteriumReichenbachii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumReichenbachii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

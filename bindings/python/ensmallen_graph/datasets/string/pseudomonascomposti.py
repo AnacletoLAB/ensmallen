@@ -88,7 +88,7 @@ def PseudomonasComposti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasComposti",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

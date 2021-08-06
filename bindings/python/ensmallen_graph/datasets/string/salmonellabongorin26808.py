@@ -91,7 +91,7 @@ def SalmonellaBongoriN26808(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalmonellaBongoriN26808",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

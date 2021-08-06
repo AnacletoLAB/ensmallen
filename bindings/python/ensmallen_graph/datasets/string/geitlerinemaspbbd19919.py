@@ -88,7 +88,7 @@ def GeitlerinemaSpBbd19919(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeitlerinemaSpBbd19919",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def NeisseriaFlavescensNrl30031h210(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeisseriaFlavescensNrl30031h210",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

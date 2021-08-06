@@ -88,7 +88,7 @@ def EnteractinococcusHelveticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnteractinococcusHelveticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

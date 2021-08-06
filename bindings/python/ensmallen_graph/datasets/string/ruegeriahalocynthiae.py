@@ -91,7 +91,7 @@ def RuegeriaHalocynthiae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuegeriaHalocynthiae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

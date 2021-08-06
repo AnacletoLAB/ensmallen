@@ -91,7 +91,7 @@ def AchromobacterArsenitoxydans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AchromobacterArsenitoxydans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

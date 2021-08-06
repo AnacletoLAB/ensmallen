@@ -88,7 +88,7 @@ def AspergillusAculeatusAtcc16872(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AspergillusAculeatusAtcc16872",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

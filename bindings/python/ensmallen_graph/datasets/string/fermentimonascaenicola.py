@@ -88,7 +88,7 @@ def FermentimonasCaenicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FermentimonasCaenicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

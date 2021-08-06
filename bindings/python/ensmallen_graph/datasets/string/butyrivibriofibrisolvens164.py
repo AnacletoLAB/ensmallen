@@ -88,7 +88,7 @@ def ButyrivibrioFibrisolvens164(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ButyrivibrioFibrisolvens164",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

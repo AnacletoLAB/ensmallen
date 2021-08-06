@@ -88,7 +88,7 @@ def ThermococcusSpJdfr02(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermococcusSpJdfr02",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

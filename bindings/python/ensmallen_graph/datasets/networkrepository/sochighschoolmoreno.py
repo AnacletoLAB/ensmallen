@@ -78,7 +78,7 @@ def SocHighschoolMoreno(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocHighschoolMoreno",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

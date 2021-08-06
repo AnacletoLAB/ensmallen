@@ -88,7 +88,7 @@ def FlavobacteriumPectinovorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumPectinovorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

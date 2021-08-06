@@ -88,7 +88,7 @@ def DesulfobulbaceaeBacteriumDb1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfobulbaceaeBacteriumDb1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

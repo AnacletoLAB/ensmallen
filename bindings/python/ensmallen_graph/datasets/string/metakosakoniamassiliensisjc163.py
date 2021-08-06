@@ -88,7 +88,7 @@ def MetakosakoniaMassiliensisJc163(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MetakosakoniaMassiliensisJc163",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

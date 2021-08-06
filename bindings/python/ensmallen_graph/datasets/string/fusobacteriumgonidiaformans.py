@@ -91,7 +91,7 @@ def FusobacteriumGonidiaformans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FusobacteriumGonidiaformans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

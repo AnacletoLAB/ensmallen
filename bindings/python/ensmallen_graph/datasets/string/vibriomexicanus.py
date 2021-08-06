@@ -88,7 +88,7 @@ def VibrioMexicanus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioMexicanus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

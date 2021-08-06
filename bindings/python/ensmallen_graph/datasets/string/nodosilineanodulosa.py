@@ -91,7 +91,7 @@ def NodosilineaNodulosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NodosilineaNodulosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

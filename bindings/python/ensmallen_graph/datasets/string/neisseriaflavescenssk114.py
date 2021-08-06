@@ -91,7 +91,7 @@ def NeisseriaFlavescensSk114(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeisseriaFlavescensSk114",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MustelaPutoriusFuro(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MustelaPutoriusFuro",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

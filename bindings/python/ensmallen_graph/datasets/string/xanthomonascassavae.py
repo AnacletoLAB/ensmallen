@@ -91,7 +91,7 @@ def XanthomonasCassavae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XanthomonasCassavae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

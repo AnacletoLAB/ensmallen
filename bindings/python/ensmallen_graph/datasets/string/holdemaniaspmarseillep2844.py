@@ -88,7 +88,7 @@ def HoldemaniaSpMarseilleP2844(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HoldemaniaSpMarseilleP2844",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

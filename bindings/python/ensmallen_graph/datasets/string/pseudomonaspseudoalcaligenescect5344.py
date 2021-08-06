@@ -91,7 +91,7 @@ def PseudomonasPseudoalcaligenesCect5344(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasPseudoalcaligenesCect5344",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

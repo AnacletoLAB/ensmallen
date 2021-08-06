@@ -91,7 +91,7 @@ def MoranellaEndobia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MoranellaEndobia",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

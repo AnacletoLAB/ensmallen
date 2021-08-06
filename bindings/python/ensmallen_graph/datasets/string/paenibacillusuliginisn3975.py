@@ -88,7 +88,7 @@ def PaenibacillusUliginisN3975(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillusUliginisN3975",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

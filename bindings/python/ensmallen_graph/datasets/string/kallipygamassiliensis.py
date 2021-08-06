@@ -91,7 +91,7 @@ def KallipygaMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KallipygaMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

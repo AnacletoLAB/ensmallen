@@ -91,7 +91,7 @@ def CorynebacteriumJeikeium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumJeikeium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

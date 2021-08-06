@@ -88,7 +88,7 @@ def LuteipulveratusMongoliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LuteipulveratusMongoliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

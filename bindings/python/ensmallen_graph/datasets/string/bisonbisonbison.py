@@ -88,7 +88,7 @@ def BisonBisonBison(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BisonBisonBison",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

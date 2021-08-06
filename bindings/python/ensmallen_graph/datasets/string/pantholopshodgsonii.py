@@ -91,7 +91,7 @@ def PantholopsHodgsonii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PantholopsHodgsonii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

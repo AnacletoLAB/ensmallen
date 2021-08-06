@@ -91,7 +91,7 @@ def DickeyaSp2b12(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DickeyaSp2b12",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

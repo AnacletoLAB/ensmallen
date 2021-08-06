@@ -88,7 +88,7 @@ def RaphidocelisSubcapitata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RaphidocelisSubcapitata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

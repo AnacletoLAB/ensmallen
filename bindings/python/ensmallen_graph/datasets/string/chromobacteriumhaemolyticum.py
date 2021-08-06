@@ -88,7 +88,7 @@ def ChromobacteriumHaemolyticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChromobacteriumHaemolyticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

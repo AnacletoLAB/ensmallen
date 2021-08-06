@@ -91,7 +91,7 @@ def EndosymbiontOfTevnia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EndosymbiontOfTevnia",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

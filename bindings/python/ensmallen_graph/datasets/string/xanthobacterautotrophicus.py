@@ -91,7 +91,7 @@ def XanthobacterAutotrophicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XanthobacterAutotrophicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

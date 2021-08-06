@@ -91,7 +91,7 @@ def RoseiflexusSpRs1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseiflexusSpRs1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

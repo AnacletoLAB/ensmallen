@@ -88,7 +88,7 @@ def PsilocybeCyanescens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PsilocybeCyanescens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

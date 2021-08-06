@@ -88,7 +88,7 @@ def SpinaciaOleracea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpinaciaOleracea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AnaerosporomusaSubterranea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerosporomusaSubterranea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

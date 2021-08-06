@@ -88,7 +88,7 @@ def FormosaHaliotis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FormosaHaliotis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

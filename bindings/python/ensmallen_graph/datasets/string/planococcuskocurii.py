@@ -88,7 +88,7 @@ def PlanococcusKocurii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlanococcusKocurii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

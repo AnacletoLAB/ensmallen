@@ -91,7 +91,7 @@ def ListeriaSeeligeri12b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ListeriaSeeligeri12b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

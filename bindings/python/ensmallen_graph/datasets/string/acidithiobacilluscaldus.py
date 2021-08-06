@@ -91,7 +91,7 @@ def AcidithiobacillusCaldus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidithiobacillusCaldus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

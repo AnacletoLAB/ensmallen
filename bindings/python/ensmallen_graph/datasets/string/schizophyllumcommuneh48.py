@@ -88,7 +88,7 @@ def SchizophyllumCommuneH48(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SchizophyllumCommuneH48",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

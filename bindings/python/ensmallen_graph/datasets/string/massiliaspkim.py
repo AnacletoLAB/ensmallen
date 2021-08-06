@@ -88,7 +88,7 @@ def MassiliaSpKim(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MassiliaSpKim",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

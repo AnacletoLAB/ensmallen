@@ -88,7 +88,7 @@ def VibrioSpUcdFrssp1630(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioSpUcdFrssp1630",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

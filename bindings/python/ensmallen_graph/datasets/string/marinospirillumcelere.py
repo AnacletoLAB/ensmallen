@@ -88,7 +88,7 @@ def MarinospirillumCelere(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinospirillumCelere",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

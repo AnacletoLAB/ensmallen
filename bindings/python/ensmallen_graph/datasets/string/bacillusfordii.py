@@ -91,7 +91,7 @@ def BacillusFordii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusFordii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

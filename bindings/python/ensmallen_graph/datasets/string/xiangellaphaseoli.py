@@ -88,7 +88,7 @@ def XiangellaPhaseoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XiangellaPhaseoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

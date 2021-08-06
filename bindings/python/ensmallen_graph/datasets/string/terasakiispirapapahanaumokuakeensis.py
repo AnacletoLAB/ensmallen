@@ -88,7 +88,7 @@ def TerasakiispiraPapahanaumokuakeensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TerasakiispiraPapahanaumokuakeensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

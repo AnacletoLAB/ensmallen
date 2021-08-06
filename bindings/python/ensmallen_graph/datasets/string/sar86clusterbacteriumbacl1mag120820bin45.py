@@ -88,7 +88,7 @@ def Sar86ClusterBacteriumBacl1Mag120820Bin45(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Sar86ClusterBacteriumBacl1Mag120820Bin45",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ChlamydophilaCaviae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlamydophilaCaviae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

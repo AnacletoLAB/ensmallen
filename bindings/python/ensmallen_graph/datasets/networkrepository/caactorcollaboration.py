@@ -78,7 +78,7 @@ def CaActorCollaboration(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaActorCollaboration",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

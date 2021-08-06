@@ -88,7 +88,7 @@ def AcidibacillusFerrooxidans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidibacillusFerrooxidans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

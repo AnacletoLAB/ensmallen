@@ -91,7 +91,7 @@ def AminomonasPaucivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AminomonasPaucivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

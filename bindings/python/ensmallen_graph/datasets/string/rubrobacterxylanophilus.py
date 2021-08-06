@@ -91,7 +91,7 @@ def RubrobacterXylanophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RubrobacterXylanophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

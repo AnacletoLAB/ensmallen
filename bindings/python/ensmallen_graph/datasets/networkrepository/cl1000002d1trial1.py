@@ -78,7 +78,7 @@ def Cl1000002d1Trial1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Cl1000002d1Trial1",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PseudomonasJaponicaNbrc103040Dsm22348(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasJaponicaNbrc103040Dsm22348",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

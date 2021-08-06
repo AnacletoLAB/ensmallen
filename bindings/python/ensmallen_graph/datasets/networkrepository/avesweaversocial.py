@@ -78,7 +78,7 @@ def AvesWeaverSocial(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AvesWeaverSocial",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

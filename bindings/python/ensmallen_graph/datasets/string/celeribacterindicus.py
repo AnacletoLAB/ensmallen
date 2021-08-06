@@ -88,7 +88,7 @@ def CeleribacterIndicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CeleribacterIndicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

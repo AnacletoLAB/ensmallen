@@ -91,7 +91,7 @@ def AquifexAeolicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AquifexAeolicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

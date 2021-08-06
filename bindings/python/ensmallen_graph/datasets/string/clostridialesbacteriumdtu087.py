@@ -88,7 +88,7 @@ def ClostridialesBacteriumDtu087(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridialesBacteriumDtu087",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

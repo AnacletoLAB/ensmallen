@@ -91,7 +91,7 @@ def MagnetococcusMarinus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MagnetococcusMarinus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

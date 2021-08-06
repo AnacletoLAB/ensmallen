@@ -88,7 +88,7 @@ def FilomicrobiumInsigne(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FilomicrobiumInsigne",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def SaccharopolysporaErythraea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SaccharopolysporaErythraea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

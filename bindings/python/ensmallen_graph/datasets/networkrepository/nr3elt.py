@@ -78,7 +78,7 @@ def NR3elt(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NR3elt",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

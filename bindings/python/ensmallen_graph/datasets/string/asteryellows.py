@@ -88,7 +88,7 @@ def AsterYellows(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AsterYellows",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

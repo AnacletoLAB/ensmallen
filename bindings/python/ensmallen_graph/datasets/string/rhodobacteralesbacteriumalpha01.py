@@ -88,7 +88,7 @@ def RhodobacteralesBacteriumAlpha01(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodobacteralesBacteriumAlpha01",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def SpiroplasmaTaiwanense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpiroplasmaTaiwanense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MethanosarcinaSpWwm596(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanosarcinaSpWwm596",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

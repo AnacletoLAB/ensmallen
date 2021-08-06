@@ -88,7 +88,7 @@ def NocardiaOtitidiscaviarumIfm11049(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardiaOtitidiscaviarumIfm11049",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

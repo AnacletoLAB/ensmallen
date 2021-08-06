@@ -91,7 +91,7 @@ def BrucellaMelitensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrucellaMelitensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

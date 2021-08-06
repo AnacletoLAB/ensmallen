@@ -91,7 +91,7 @@ def SulfitobacterSpNb77(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfitobacterSpNb77",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

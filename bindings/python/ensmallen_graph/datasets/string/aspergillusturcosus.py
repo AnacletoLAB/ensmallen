@@ -88,7 +88,7 @@ def AspergillusTurcosus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AspergillusTurcosus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

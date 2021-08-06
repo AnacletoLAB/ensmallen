@@ -88,7 +88,7 @@ def LitorimicrobiumTaeanense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LitorimicrobiumTaeanense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

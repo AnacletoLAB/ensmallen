@@ -88,7 +88,7 @@ def IsobaculumMelis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IsobaculumMelis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

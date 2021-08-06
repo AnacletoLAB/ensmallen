@@ -91,7 +91,7 @@ def CaricaPapaya(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaricaPapaya",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

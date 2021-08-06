@@ -91,7 +91,7 @@ def LacticigeniumNaphtae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LacticigeniumNaphtae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

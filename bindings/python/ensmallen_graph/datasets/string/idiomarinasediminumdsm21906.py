@@ -88,7 +88,7 @@ def IdiomarinaSediminumDsm21906(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IdiomarinaSediminumDsm21906",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

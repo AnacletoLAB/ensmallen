@@ -91,7 +91,7 @@ def DesulfocurvusVexinensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfocurvusVexinensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

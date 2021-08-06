@@ -88,7 +88,7 @@ def BacteroidesPropionicifaciensDsm19291Jcm14649(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesPropionicifaciensDsm19291Jcm14649",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

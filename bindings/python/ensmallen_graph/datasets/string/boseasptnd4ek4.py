@@ -88,7 +88,7 @@ def BoseaSpTnd4ek4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BoseaSpTnd4ek4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

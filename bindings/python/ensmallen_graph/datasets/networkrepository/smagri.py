@@ -78,7 +78,7 @@ def Smagri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Smagri",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

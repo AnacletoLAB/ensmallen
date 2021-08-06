@@ -88,7 +88,7 @@ def MethylovorusSpMm2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylovorusSpMm2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

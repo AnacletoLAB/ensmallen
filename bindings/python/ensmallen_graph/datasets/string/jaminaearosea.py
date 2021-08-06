@@ -88,7 +88,7 @@ def JaminaeaRosea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JaminaeaRosea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

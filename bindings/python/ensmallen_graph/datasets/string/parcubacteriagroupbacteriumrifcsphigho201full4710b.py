@@ -88,7 +88,7 @@ def ParcubacteriaGroupBacteriumRifcsphigho201Full4710b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParcubacteriaGroupBacteriumRifcsphigho201Full4710b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

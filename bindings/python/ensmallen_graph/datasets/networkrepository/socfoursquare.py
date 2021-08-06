@@ -92,7 +92,7 @@ def SocFoursquare(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocFoursquare",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

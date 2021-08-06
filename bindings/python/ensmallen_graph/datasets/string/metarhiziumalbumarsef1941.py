@@ -88,7 +88,7 @@ def MetarhiziumAlbumArsef1941(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MetarhiziumAlbumArsef1941",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

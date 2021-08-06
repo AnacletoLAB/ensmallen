@@ -91,7 +91,7 @@ def CoxiellaBurnetii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CoxiellaBurnetii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

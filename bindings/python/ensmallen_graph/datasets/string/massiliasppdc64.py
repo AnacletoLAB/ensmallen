@@ -88,7 +88,7 @@ def MassiliaSpPdc64(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MassiliaSpPdc64",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

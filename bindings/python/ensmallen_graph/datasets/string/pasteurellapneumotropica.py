@@ -91,7 +91,7 @@ def PasteurellaPneumotropica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PasteurellaPneumotropica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

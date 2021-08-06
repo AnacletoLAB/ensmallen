@@ -88,7 +88,7 @@ def ThermomonasHydrothermalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermomonasHydrothermalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

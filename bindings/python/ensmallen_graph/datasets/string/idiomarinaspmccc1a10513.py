@@ -91,7 +91,7 @@ def IdiomarinaSpMccc1a10513(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IdiomarinaSpMccc1a10513",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

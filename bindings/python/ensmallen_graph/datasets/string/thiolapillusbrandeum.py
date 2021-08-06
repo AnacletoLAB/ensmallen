@@ -88,7 +88,7 @@ def ThiolapillusBrandeum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThiolapillusBrandeum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

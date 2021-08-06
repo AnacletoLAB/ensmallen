@@ -91,7 +91,7 @@ def CollinsellaStercoris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CollinsellaStercoris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

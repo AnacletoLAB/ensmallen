@@ -88,7 +88,7 @@ def ChlamydiaeBacteriumGwa25015(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlamydiaeBacteriumGwa25015",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

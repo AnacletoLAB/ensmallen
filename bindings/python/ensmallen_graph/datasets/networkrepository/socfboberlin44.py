@@ -120,7 +120,7 @@ def SocfbOberlin44(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbOberlin44",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

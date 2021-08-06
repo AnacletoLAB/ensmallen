@@ -91,7 +91,7 @@ def PoeciliaReticulata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PoeciliaReticulata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def SelaginellaMoellendorffii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SelaginellaMoellendorffii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

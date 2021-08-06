@@ -88,7 +88,7 @@ def ThalassospiraLucentensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThalassospiraLucentensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def GemmobacterNectariphilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GemmobacterNectariphilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

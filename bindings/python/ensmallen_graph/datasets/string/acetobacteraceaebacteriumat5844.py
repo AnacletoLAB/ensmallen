@@ -91,7 +91,7 @@ def AcetobacteraceaeBacteriumAt5844(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcetobacteraceaeBacteriumAt5844",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

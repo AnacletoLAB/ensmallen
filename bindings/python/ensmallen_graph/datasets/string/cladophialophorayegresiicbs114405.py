@@ -88,7 +88,7 @@ def CladophialophoraYegresiiCbs114405(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CladophialophoraYegresiiCbs114405",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

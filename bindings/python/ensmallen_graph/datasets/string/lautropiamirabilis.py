@@ -91,7 +91,7 @@ def LautropiaMirabilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LautropiaMirabilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

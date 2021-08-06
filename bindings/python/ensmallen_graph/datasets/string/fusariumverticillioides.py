@@ -91,7 +91,7 @@ def FusariumVerticillioides(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FusariumVerticillioides",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def AggregatibacterSegnis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AggregatibacterSegnis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

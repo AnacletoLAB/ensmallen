@@ -88,7 +88,7 @@ def AnophelesSinensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnophelesSinensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

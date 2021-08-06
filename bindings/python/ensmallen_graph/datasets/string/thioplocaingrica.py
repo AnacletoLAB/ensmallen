@@ -88,7 +88,7 @@ def ThioplocaIngrica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThioplocaIngrica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

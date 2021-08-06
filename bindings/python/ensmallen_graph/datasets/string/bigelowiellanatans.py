@@ -91,7 +91,7 @@ def BigelowiellaNatans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BigelowiellaNatans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

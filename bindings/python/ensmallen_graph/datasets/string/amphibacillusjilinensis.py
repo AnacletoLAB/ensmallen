@@ -91,7 +91,7 @@ def AmphibacillusJilinensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmphibacillusJilinensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

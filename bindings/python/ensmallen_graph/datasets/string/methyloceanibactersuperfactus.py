@@ -88,7 +88,7 @@ def MethyloceanibacterSuperfactus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethyloceanibacterSuperfactus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

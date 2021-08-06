@@ -88,7 +88,7 @@ def LactobacillusMellifer(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusMellifer",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

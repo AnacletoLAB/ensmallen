@@ -88,7 +88,7 @@ def SpiroplasmaHelicoides(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpiroplasmaHelicoides",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

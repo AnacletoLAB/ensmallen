@@ -88,7 +88,7 @@ def FlavobacteriaBacteriumRifcsplowo212Full3511(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriaBacteriumRifcsplowo212Full3511",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

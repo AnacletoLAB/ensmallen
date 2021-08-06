@@ -91,7 +91,7 @@ def HaliangiumOchraceum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaliangiumOchraceum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

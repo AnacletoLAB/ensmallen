@@ -88,7 +88,7 @@ def PaenibacillusPinihumiDsm23905Jcm16419(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillusPinihumiDsm23905Jcm16419",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

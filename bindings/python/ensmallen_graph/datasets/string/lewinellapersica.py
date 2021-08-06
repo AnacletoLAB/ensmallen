@@ -91,7 +91,7 @@ def LewinellaPersica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LewinellaPersica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

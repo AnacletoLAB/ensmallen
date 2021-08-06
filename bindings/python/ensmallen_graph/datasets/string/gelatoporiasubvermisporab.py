@@ -88,7 +88,7 @@ def GelatoporiaSubvermisporaB(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GelatoporiaSubvermisporaB",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

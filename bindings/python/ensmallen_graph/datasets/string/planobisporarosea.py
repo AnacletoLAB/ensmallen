@@ -88,7 +88,7 @@ def PlanobisporaRosea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlanobisporaRosea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

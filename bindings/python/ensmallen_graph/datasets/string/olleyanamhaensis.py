@@ -88,7 +88,7 @@ def OlleyaNamhaensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OlleyaNamhaensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

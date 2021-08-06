@@ -91,7 +91,7 @@ def TuberibacillusCalidus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TuberibacillusCalidus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

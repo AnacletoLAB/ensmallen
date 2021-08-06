@@ -88,7 +88,7 @@ def PeptoniphilusUrinimassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeptoniphilusUrinimassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

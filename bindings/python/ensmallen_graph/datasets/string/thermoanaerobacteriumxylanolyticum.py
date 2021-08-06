@@ -91,7 +91,7 @@ def ThermoanaerobacteriumXylanolyticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermoanaerobacteriumXylanolyticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

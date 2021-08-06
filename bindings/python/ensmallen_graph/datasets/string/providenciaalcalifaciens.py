@@ -88,7 +88,7 @@ def ProvidenciaAlcalifaciens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProvidenciaAlcalifaciens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def DesulfurococcusKamchatkensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfurococcusKamchatkensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

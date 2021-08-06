@@ -91,7 +91,7 @@ def KitasatosporaMediocidica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KitasatosporaMediocidica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

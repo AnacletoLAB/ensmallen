@@ -91,7 +91,7 @@ def JejuiaPallidilutea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JejuiaPallidilutea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

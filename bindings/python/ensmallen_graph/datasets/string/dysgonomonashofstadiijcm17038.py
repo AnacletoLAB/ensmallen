@@ -88,7 +88,7 @@ def DysgonomonasHofstadiiJcm17038(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DysgonomonasHofstadiiJcm17038",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

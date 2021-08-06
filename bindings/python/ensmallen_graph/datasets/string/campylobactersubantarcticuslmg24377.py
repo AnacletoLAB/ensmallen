@@ -88,7 +88,7 @@ def CampylobacterSubantarcticusLmg24377(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterSubantarcticusLmg24377",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

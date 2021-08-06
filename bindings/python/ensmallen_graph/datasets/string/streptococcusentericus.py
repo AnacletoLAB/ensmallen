@@ -91,7 +91,7 @@ def StreptococcusEntericus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusEntericus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

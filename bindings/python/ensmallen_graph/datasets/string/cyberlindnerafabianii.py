@@ -88,7 +88,7 @@ def CyberlindneraFabianii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CyberlindneraFabianii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

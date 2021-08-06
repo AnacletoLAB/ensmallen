@@ -91,7 +91,7 @@ def AtopococcusTabaci(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AtopococcusTabaci",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

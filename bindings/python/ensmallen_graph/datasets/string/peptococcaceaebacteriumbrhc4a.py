@@ -88,7 +88,7 @@ def PeptococcaceaeBacteriumBrhC4a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeptococcaceaeBacteriumBrhC4a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

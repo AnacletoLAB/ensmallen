@@ -91,7 +91,7 @@ def MethanobrevibacterSmithiiAtcc35061(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanobrevibacterSmithiiAtcc35061",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

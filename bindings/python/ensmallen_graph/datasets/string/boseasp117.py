@@ -91,7 +91,7 @@ def BoseaSp117(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BoseaSp117",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

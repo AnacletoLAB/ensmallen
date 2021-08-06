@@ -91,7 +91,7 @@ def HyaloperonosporaArabidopsidis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HyaloperonosporaArabidopsidis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def StreptococcusSobrinusDsm20742Atcc33478(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusSobrinusDsm20742Atcc33478",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

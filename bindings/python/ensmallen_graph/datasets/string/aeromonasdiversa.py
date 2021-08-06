@@ -91,7 +91,7 @@ def AeromonasDiversa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AeromonasDiversa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

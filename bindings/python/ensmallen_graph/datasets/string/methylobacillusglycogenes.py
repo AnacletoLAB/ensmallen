@@ -91,7 +91,7 @@ def MethylobacillusGlycogenes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylobacillusGlycogenes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

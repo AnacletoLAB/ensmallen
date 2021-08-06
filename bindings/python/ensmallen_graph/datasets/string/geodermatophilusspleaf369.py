@@ -88,7 +88,7 @@ def GeodermatophilusSpLeaf369(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeodermatophilusSpLeaf369",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def TigriopusCalifornicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TigriopusCalifornicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

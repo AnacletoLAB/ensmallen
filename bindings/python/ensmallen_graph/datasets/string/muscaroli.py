@@ -88,7 +88,7 @@ def MusCaroli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MusCaroli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

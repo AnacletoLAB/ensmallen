@@ -88,7 +88,7 @@ def AmycolatopsisSaalfeldensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmycolatopsisSaalfeldensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

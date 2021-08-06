@@ -91,7 +91,7 @@ def ArabisAlpina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArabisAlpina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

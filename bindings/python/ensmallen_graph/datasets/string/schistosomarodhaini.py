@@ -88,7 +88,7 @@ def SchistosomaRodhaini(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SchistosomaRodhaini",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

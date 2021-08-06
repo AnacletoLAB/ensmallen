@@ -84,7 +84,7 @@ def MashupPPI(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MashupPPI",
-        dataset="yue",
+        repository="yue",
         version=version,
         directed=directed,
         preprocess=preprocess,

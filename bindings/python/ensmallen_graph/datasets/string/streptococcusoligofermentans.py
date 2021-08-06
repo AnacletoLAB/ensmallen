@@ -91,7 +91,7 @@ def StreptococcusOligofermentans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusOligofermentans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

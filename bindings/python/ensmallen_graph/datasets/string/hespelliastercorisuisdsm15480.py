@@ -88,7 +88,7 @@ def HespelliaStercorisuisDsm15480(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HespelliaStercorisuisDsm15480",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

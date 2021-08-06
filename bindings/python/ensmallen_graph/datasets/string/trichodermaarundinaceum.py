@@ -88,7 +88,7 @@ def TrichodermaArundinaceum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichodermaArundinaceum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

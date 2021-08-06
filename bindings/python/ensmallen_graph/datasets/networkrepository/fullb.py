@@ -78,7 +78,7 @@ def Fullb(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Fullb",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

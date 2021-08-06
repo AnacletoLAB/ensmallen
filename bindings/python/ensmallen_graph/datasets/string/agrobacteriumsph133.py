@@ -91,7 +91,7 @@ def AgrobacteriumSpH133(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AgrobacteriumSpH133",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

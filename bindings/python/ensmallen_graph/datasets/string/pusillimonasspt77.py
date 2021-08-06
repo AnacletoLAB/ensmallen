@@ -91,7 +91,7 @@ def PusillimonasSpT77(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PusillimonasSpT77",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

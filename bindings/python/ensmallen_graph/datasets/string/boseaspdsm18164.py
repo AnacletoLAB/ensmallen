@@ -88,7 +88,7 @@ def BoseaSpDsm18164(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BoseaSpDsm18164",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

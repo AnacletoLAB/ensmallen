@@ -91,7 +91,7 @@ def RuminococcaceaeBacteriumAe2021(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminococcaceaeBacteriumAe2021",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

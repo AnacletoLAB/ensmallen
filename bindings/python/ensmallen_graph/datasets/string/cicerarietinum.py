@@ -91,7 +91,7 @@ def CicerArietinum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CicerArietinum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

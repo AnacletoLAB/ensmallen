@@ -88,7 +88,7 @@ def AllofrancisellaGuangzhouensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AllofrancisellaGuangzhouensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -120,7 +120,7 @@ def SocfbVassar85(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbVassar85",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ArchaeoglobusVeneficus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArchaeoglobusVeneficus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

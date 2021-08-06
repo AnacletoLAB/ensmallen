@@ -91,7 +91,7 @@ def CorynebacteriumSputi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumSputi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

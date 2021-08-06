@@ -88,7 +88,7 @@ def CordycepsSpRao2017(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CordycepsSpRao2017",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SerinicoccusSpJlt9(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SerinicoccusSpJlt9",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

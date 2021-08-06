@@ -91,7 +91,7 @@ def SaccoglossusKowalevskii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SaccoglossusKowalevskii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

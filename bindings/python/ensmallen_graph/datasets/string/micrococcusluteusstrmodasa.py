@@ -88,7 +88,7 @@ def MicrococcusLuteusStrModasa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrococcusLuteusStrModasa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

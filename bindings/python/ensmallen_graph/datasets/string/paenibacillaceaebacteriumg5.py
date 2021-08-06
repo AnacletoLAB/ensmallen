@@ -91,7 +91,7 @@ def PaenibacillaceaeBacteriumG5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillaceaeBacteriumG5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PanicumHalliiVarHallii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PanicumHalliiVarHallii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

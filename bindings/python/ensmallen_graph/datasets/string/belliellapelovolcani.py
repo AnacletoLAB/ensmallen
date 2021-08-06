@@ -88,7 +88,7 @@ def BelliellaPelovolcani(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BelliellaPelovolcani",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PaludisphaeraBorealis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaludisphaeraBorealis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

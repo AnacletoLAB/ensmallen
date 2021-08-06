@@ -88,7 +88,7 @@ def NocardioidesPsychrotolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardioidesPsychrotolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

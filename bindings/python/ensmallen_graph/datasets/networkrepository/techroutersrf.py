@@ -98,7 +98,7 @@ def TechRoutersRf(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TechRoutersRf",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

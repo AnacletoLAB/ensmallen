@@ -91,7 +91,7 @@ def CampylobacterCuniculorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CampylobacterCuniculorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

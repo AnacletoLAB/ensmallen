@@ -91,7 +91,7 @@ def BipolarisZeicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BipolarisZeicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

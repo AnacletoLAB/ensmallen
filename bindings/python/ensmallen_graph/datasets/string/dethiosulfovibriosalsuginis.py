@@ -88,7 +88,7 @@ def DethiosulfovibrioSalsuginis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DethiosulfovibrioSalsuginis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

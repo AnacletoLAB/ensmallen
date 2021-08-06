@@ -88,7 +88,7 @@ def UnculturedTermiteGroup1BacteriumPhylotypeRsD17(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UnculturedTermiteGroup1BacteriumPhylotypeRsD17",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CandidateDivisionNc10BacteriumCsp15(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidateDivisionNc10BacteriumCsp15",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def MucilaginibacterPaludis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MucilaginibacterPaludis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

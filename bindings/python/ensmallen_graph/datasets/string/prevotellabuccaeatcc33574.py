@@ -91,7 +91,7 @@ def PrevotellaBuccaeAtcc33574(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaBuccaeAtcc33574",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def DesulfococcusOleovorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfococcusOleovorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

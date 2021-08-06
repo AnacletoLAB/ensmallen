@@ -88,7 +88,7 @@ def HippocampusComes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HippocampusComes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def HamiltonellaDefensa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HamiltonellaDefensa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

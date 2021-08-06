@@ -91,7 +91,7 @@ def OceanimonasSmirnovii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OceanimonasSmirnovii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

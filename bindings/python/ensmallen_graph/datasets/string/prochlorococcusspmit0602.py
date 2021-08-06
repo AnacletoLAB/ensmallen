@@ -91,7 +91,7 @@ def ProchlorococcusSpMit0602(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProchlorococcusSpMit0602",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

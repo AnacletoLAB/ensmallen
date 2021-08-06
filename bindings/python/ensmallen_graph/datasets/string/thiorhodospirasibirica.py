@@ -91,7 +91,7 @@ def ThiorhodospiraSibirica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThiorhodospiraSibirica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

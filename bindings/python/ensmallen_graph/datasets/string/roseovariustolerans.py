@@ -88,7 +88,7 @@ def RoseovariusTolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseovariusTolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

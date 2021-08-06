@@ -91,7 +91,7 @@ def StreptomycesFulvissimus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesFulvissimus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def WilliamsiaSterculiae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WilliamsiaSterculiae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

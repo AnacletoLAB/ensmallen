@@ -88,7 +88,7 @@ def MolaMola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MolaMola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

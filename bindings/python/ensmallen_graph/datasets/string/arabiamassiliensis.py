@@ -88,7 +88,7 @@ def ArabiaMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArabiaMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

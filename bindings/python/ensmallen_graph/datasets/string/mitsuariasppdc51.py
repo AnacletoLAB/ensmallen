@@ -88,7 +88,7 @@ def MitsuariaSpPdc51(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MitsuariaSpPdc51",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

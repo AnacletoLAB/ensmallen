@@ -88,7 +88,7 @@ def EctothiorhodospiraMarina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EctothiorhodospiraMarina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

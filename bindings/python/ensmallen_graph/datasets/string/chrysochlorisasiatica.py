@@ -91,7 +91,7 @@ def ChrysochlorisAsiatica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChrysochlorisAsiatica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def KandleriaVitulina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KandleriaVitulina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ClostridiumStercorarium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumStercorarium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

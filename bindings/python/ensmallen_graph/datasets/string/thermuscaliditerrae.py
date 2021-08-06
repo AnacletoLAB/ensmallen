@@ -91,7 +91,7 @@ def ThermusCaliditerrae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermusCaliditerrae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

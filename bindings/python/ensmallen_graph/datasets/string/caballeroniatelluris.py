@@ -88,7 +88,7 @@ def CaballeroniaTelluris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaballeroniaTelluris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

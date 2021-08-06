@@ -88,7 +88,7 @@ def ChroogloeocystisSiderophila52SC1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChroogloeocystisSiderophila52SC1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

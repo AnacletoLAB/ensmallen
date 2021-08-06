@@ -91,7 +91,7 @@ def StreptobacillusMoniliformis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptobacillusMoniliformis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

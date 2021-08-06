@@ -88,7 +88,7 @@ def PenicilliumPolonicum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PenicilliumPolonicum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

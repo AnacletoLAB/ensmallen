@@ -91,7 +91,7 @@ def PelobacterCarbinolicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PelobacterCarbinolicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MethylobacteriumSpLeaf86(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylobacteriumSpLeaf86",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

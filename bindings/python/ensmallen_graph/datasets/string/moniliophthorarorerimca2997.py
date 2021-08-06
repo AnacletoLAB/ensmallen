@@ -88,7 +88,7 @@ def MoniliophthoraRoreriMca2997(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MoniliophthoraRoreriMca2997",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

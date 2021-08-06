@@ -91,7 +91,7 @@ def ClostridialesGenomosp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridialesGenomosp",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def SalinisphaeraShabanensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinisphaeraShabanensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

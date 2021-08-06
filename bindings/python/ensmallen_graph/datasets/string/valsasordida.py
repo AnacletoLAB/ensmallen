@@ -88,7 +88,7 @@ def ValsaSordida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ValsaSordida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

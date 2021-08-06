@@ -88,7 +88,7 @@ def StreptococcusHyovaginalisDsm12219(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusHyovaginalisDsm12219",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

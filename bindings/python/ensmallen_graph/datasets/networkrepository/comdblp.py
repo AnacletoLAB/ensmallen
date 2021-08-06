@@ -78,7 +78,7 @@ def ComDblp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ComDblp",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

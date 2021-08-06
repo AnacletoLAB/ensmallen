@@ -88,7 +88,7 @@ def EdhazardiaAedisUsnm41457(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EdhazardiaAedisUsnm41457",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def LysobacterGummosus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LysobacterGummosus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

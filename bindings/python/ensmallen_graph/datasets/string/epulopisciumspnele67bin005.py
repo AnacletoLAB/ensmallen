@@ -88,7 +88,7 @@ def EpulopisciumSpNele67Bin005(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EpulopisciumSpNele67Bin005",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

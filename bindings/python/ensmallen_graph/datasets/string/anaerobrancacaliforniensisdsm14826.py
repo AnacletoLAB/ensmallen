@@ -88,7 +88,7 @@ def AnaerobrancaCaliforniensisDsm14826(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerobrancaCaliforniensisDsm14826",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def StaphylococcusCohnii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StaphylococcusCohnii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

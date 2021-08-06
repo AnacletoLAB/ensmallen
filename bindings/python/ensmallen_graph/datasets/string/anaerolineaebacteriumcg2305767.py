@@ -88,7 +88,7 @@ def AnaerolineaeBacteriumCg2305767(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerolineaeBacteriumCg2305767",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

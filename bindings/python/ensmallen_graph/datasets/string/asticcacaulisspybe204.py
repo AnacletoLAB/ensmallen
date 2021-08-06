@@ -88,7 +88,7 @@ def AsticcacaulisSpYbe204(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AsticcacaulisSpYbe204",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

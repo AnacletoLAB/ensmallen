@@ -91,7 +91,7 @@ def WeissellaKoreensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WeissellaKoreensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

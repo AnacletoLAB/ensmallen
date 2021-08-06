@@ -91,7 +91,7 @@ def SerratiaSpH1n(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SerratiaSpH1n",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

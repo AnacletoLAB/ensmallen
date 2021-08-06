@@ -91,7 +91,7 @@ def HaladaptatusCibarius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaladaptatusCibarius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

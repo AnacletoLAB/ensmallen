@@ -91,7 +91,7 @@ def PseudogulbenkianiaSpNh8b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudogulbenkianiaSpNh8b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

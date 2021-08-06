@@ -88,7 +88,7 @@ def VibrioSpMebic08052(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioSpMebic08052",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

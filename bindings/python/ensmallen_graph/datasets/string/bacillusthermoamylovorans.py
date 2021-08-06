@@ -91,7 +91,7 @@ def BacillusThermoamylovorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusThermoamylovorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

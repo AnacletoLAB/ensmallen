@@ -88,7 +88,7 @@ def MillionellaMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MillionellaMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

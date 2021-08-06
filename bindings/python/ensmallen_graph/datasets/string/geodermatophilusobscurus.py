@@ -91,7 +91,7 @@ def GeodermatophilusObscurus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeodermatophilusObscurus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

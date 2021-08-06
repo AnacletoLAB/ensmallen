@@ -88,7 +88,7 @@ def PedobacterCryoconitis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PedobacterCryoconitis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

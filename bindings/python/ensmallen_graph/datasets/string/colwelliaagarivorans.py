@@ -88,7 +88,7 @@ def ColwelliaAgarivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ColwelliaAgarivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

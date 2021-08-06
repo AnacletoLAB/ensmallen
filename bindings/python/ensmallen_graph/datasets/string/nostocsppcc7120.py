@@ -91,7 +91,7 @@ def NostocSpPcc7120(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NostocSpPcc7120",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

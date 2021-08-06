@@ -88,7 +88,7 @@ def ClostridiumNiameyense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumNiameyense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CandidatusCarsonellaRuddiiPcIsolateNhv(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusCarsonellaRuddiiPcIsolateNhv",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

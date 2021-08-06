@@ -88,7 +88,7 @@ def AuricoccusIndicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AuricoccusIndicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

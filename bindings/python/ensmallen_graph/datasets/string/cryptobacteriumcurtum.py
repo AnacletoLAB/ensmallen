@@ -91,7 +91,7 @@ def CryptobacteriumCurtum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CryptobacteriumCurtum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

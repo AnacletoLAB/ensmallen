@@ -88,7 +88,7 @@ def IzhakiellaCapsodis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IzhakiellaCapsodis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

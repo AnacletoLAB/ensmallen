@@ -91,7 +91,7 @@ def PeptoniphilusSpChdc(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeptoniphilusSpChdc",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

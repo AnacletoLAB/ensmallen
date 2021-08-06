@@ -88,7 +88,7 @@ def ActinomycesGlycerinitolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomycesGlycerinitolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

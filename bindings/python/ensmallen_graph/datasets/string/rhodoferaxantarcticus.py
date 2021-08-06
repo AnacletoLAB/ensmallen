@@ -88,7 +88,7 @@ def RhodoferaxAntarcticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodoferaxAntarcticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

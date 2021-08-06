@@ -88,7 +88,7 @@ def AlistipesTimonensisJc136(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlistipesTimonensisJc136",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

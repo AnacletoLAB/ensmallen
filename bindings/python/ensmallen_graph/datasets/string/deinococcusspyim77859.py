@@ -91,7 +91,7 @@ def DeinococcusSpYim77859(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DeinococcusSpYim77859",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

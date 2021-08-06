@@ -88,7 +88,7 @@ def ChlamydiaSp2742308(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlamydiaSp2742308",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ActinopolymorphaAlba(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinopolymorphaAlba",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

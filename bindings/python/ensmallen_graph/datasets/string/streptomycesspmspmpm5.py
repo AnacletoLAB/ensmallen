@@ -91,7 +91,7 @@ def StreptomycesSpMspmpm5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesSpMspmpm5",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

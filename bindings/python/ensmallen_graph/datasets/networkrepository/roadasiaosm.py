@@ -78,7 +78,7 @@ def RoadAsiaOsm(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoadAsiaOsm",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

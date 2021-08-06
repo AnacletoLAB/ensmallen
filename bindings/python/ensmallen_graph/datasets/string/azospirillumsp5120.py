@@ -88,7 +88,7 @@ def AzospirillumSp5120(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AzospirillumSp5120",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

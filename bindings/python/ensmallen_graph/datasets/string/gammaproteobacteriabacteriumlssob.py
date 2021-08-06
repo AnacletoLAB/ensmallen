@@ -88,7 +88,7 @@ def GammaproteobacteriaBacteriumLsSob(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GammaproteobacteriaBacteriumLsSob",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

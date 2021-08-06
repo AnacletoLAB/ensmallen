@@ -91,7 +91,7 @@ def NeorickettsiaRisticii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeorickettsiaRisticii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

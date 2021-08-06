@@ -91,7 +91,7 @@ def TrichophytonEquinum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichophytonEquinum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

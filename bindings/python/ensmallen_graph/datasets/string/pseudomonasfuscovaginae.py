@@ -88,7 +88,7 @@ def PseudomonasFuscovaginae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasFuscovaginae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

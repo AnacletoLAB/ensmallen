@@ -91,7 +91,7 @@ def BabelaMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BabelaMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

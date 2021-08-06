@@ -88,7 +88,7 @@ def HabropodaLaboriosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HabropodaLaboriosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

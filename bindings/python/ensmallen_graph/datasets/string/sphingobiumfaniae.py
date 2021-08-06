@@ -88,7 +88,7 @@ def SphingobiumFaniae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingobiumFaniae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

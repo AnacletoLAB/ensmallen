@@ -88,7 +88,7 @@ def MethylomicrobiumAlcaliphilum20z(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylomicrobiumAlcaliphilum20z",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

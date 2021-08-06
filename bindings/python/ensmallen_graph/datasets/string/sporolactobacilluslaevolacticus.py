@@ -91,7 +91,7 @@ def SporolactobacillusLaevolacticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SporolactobacillusLaevolacticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

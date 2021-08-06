@@ -88,7 +88,7 @@ def UrocitellusParryii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UrocitellusParryii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

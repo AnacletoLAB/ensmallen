@@ -88,7 +88,7 @@ def CeleribacterNeptunius(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CeleribacterNeptunius",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

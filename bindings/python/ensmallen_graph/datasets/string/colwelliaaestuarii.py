@@ -88,7 +88,7 @@ def ColwelliaAestuarii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ColwelliaAestuarii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

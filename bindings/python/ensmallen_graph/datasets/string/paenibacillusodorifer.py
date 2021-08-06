@@ -91,7 +91,7 @@ def PaenibacillusOdorifer(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillusOdorifer",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

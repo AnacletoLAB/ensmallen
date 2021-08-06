@@ -88,7 +88,7 @@ def CoccidioidesImmitisRmscc2394(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CoccidioidesImmitisRmscc2394",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

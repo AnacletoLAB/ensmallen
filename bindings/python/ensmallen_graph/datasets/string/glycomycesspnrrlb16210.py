@@ -91,7 +91,7 @@ def GlycomycesSpNrrlb16210(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GlycomycesSpNrrlb16210",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

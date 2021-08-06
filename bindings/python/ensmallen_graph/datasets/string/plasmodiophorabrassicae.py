@@ -88,7 +88,7 @@ def PlasmodiophoraBrassicae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlasmodiophoraBrassicae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

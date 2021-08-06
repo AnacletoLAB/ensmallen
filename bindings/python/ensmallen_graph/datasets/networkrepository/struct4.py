@@ -78,7 +78,7 @@ def Struct4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Struct4",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

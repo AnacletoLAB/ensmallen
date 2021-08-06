@@ -88,7 +88,7 @@ def BrugiaPahangi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrugiaPahangi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

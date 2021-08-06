@@ -88,7 +88,7 @@ def TranquillimonasAlkanivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TranquillimonasAlkanivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

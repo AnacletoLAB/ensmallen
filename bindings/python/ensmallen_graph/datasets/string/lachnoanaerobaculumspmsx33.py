@@ -91,7 +91,7 @@ def LachnoanaerobaculumSpMsx33(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LachnoanaerobaculumSpMsx33",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def OpitutusSpGas368(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OpitutusSpGas368",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

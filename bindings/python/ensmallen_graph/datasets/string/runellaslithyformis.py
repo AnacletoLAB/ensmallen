@@ -91,7 +91,7 @@ def RunellaSlithyformis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RunellaSlithyformis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

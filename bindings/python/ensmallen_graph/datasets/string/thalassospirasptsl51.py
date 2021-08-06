@@ -88,7 +88,7 @@ def ThalassospiraSpTsl51(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThalassospiraSpTsl51",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def TimonellaSenegalensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TimonellaSenegalensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

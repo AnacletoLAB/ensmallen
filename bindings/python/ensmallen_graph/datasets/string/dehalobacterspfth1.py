@@ -91,7 +91,7 @@ def DehalobacterSpFth1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DehalobacterSpFth1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

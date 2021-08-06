@@ -78,7 +78,7 @@ def Dixmaanl(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Dixmaanl",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

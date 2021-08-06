@@ -88,7 +88,7 @@ def MethyloceanibacterCaenitepidi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethyloceanibacterCaenitepidi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

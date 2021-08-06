@@ -91,7 +91,7 @@ def FodinicurvataSediminis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FodinicurvataSediminis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

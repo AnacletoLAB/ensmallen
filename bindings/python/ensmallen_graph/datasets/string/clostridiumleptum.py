@@ -91,7 +91,7 @@ def ClostridiumLeptum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumLeptum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

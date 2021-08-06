@@ -88,7 +88,7 @@ def AcidaminococcusSpCag542(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidaminococcusSpCag542",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

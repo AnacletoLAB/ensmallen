@@ -88,7 +88,7 @@ def PenaeusVannamei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PenaeusVannamei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

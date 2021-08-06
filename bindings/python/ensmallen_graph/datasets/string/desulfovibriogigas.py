@@ -91,7 +91,7 @@ def DesulfovibrioGigas(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioGigas",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

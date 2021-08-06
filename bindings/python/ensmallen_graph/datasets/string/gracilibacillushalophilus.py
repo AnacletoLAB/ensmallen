@@ -91,7 +91,7 @@ def GracilibacillusHalophilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GracilibacillusHalophilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

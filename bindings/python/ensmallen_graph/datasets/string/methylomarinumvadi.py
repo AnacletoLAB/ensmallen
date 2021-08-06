@@ -88,7 +88,7 @@ def MethylomarinumVadi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylomarinumVadi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

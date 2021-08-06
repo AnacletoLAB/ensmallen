@@ -91,7 +91,7 @@ def RheinheimeraBaltica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RheinheimeraBaltica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

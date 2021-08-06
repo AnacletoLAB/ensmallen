@@ -88,7 +88,7 @@ def ChromatiaceaeBacterium2141tStbd0c01a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChromatiaceaeBacterium2141tStbd0c01a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

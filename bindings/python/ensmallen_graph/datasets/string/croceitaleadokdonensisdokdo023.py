@@ -88,7 +88,7 @@ def CroceitaleaDokdonensisDokdo023(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CroceitaleaDokdonensisDokdo023",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

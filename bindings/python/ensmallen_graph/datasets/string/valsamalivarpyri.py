@@ -88,7 +88,7 @@ def ValsaMaliVarPyri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ValsaMaliVarPyri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

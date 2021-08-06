@@ -88,7 +88,7 @@ def VibrioFluvialis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioFluvialis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

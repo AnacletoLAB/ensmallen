@@ -88,7 +88,7 @@ def BradyrhizobiumPaxllaeri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BradyrhizobiumPaxllaeri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

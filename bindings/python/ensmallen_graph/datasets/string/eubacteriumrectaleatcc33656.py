@@ -88,7 +88,7 @@ def EubacteriumRectaleAtcc33656(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EubacteriumRectaleAtcc33656",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

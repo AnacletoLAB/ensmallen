@@ -91,7 +91,7 @@ def PectobacteriumWasabiae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PectobacteriumWasabiae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

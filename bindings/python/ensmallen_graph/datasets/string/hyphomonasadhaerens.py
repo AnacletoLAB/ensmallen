@@ -91,7 +91,7 @@ def HyphomonasAdhaerens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HyphomonasAdhaerens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

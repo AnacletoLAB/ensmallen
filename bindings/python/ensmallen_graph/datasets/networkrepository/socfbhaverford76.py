@@ -120,7 +120,7 @@ def SocfbHaverford76(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbHaverford76",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

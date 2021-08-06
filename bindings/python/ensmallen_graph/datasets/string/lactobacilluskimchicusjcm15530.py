@@ -88,7 +88,7 @@ def LactobacillusKimchicusJcm15530(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusKimchicusJcm15530",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

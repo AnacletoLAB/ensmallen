@@ -90,7 +90,7 @@ def SocHamsterster(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocHamsterster",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

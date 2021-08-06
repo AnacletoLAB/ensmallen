@@ -91,7 +91,7 @@ def DesulfotomaculumAlkaliphilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfotomaculumAlkaliphilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

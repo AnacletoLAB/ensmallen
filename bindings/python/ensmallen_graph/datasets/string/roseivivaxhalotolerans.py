@@ -88,7 +88,7 @@ def RoseivivaxHalotolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseivivaxHalotolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

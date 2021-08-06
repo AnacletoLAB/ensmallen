@@ -88,7 +88,7 @@ def NiabellaGinsenosidivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NiabellaGinsenosidivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

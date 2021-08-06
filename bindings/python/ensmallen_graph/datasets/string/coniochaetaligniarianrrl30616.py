@@ -88,7 +88,7 @@ def ConiochaetaLigniariaNrrl30616(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ConiochaetaLigniariaNrrl30616",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

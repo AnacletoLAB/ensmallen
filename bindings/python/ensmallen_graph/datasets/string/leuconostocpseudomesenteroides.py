@@ -91,7 +91,7 @@ def LeuconostocPseudomesenteroides(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeuconostocPseudomesenteroides",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

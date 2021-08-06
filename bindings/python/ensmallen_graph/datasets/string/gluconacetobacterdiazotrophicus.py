@@ -91,7 +91,7 @@ def GluconacetobacterDiazotrophicus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GluconacetobacterDiazotrophicus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

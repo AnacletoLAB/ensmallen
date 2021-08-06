@@ -88,7 +88,7 @@ def MuricaudaZhangzhouensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MuricaudaZhangzhouensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

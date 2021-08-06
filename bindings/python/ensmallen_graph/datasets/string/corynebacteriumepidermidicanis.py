@@ -88,7 +88,7 @@ def CorynebacteriumEpidermidicanis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumEpidermidicanis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

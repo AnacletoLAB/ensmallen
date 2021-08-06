@@ -91,7 +91,7 @@ def MonodelphisDomestica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MonodelphisDomestica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

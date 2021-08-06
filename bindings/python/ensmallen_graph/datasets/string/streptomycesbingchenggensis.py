@@ -91,7 +91,7 @@ def StreptomycesBingchenggensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesBingchenggensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def RalstoniaInsidiosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RalstoniaInsidiosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

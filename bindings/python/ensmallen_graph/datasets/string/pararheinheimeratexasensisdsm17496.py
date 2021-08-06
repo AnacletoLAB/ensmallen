@@ -88,7 +88,7 @@ def PararheinheimeraTexasensisDsm17496(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PararheinheimeraTexasensisDsm17496",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

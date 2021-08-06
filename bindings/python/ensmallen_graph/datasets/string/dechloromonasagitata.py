@@ -91,7 +91,7 @@ def DechloromonasAgitata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DechloromonasAgitata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

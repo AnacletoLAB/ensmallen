@@ -91,7 +91,7 @@ def ColeofasciculusChthonoplastes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ColeofasciculusChthonoplastes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

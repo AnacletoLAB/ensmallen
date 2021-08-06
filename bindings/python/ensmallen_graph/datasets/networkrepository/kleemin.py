@@ -78,7 +78,7 @@ def Kleemin(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Kleemin",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

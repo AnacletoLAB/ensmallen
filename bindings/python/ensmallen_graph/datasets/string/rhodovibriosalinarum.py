@@ -91,7 +91,7 @@ def RhodovibrioSalinarum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodovibrioSalinarum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

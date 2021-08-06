@@ -88,7 +88,7 @@ def AlkalibacterSaccharofermentansDsm14828(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlkalibacterSaccharofermentansDsm14828",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PromicromonosporaKroppenstedtii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PromicromonosporaKroppenstedtii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

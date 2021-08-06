@@ -88,7 +88,7 @@ def ChryseolineaSerpens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChryseolineaSerpens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

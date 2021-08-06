@@ -91,7 +91,7 @@ def RhodovulumSpNi22(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodovulumSpNi22",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def KordiimonasLipolytica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KordiimonasLipolytica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

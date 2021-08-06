@@ -88,7 +88,7 @@ def TepidibacterThalassicusDsm15285(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TepidibacterThalassicusDsm15285",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

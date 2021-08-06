@@ -88,7 +88,7 @@ def MicrobacteriumSpGcs4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriumSpGcs4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

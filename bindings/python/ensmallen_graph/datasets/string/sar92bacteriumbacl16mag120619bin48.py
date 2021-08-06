@@ -88,7 +88,7 @@ def Sar92BacteriumBacl16Mag120619Bin48(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Sar92BacteriumBacl16Mag120619Bin48",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

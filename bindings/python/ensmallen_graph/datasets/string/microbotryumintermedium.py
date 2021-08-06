@@ -88,7 +88,7 @@ def MicrobotryumIntermedium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobotryumIntermedium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

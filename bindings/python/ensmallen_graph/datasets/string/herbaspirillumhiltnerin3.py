@@ -88,7 +88,7 @@ def HerbaspirillumHiltneriN3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HerbaspirillumHiltneriN3",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

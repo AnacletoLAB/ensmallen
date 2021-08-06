@@ -88,7 +88,7 @@ def BlochmanniaEndosymbiontOfCamponotusColobopsisObliquus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlochmanniaEndosymbiontOfCamponotusColobopsisObliquus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

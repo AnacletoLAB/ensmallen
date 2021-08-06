@@ -88,7 +88,7 @@ def PediococcusDamnosus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PediococcusDamnosus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

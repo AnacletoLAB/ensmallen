@@ -88,7 +88,7 @@ def DesulfovibrioGilichinskyi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioGilichinskyi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

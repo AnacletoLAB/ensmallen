@@ -88,7 +88,7 @@ def PonticoccusMarisrubri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PonticoccusMarisrubri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

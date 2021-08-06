@@ -91,7 +91,7 @@ def BorreliaCoriaceae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BorreliaCoriaceae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

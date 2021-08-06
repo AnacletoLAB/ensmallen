@@ -88,7 +88,7 @@ def LegionellaSteigerwaltii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LegionellaSteigerwaltii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

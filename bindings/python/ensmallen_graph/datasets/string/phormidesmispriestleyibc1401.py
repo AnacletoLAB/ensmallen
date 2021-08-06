@@ -88,7 +88,7 @@ def PhormidesmisPriestleyiBc1401(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhormidesmisPriestleyiBc1401",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

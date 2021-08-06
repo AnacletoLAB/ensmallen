@@ -91,7 +91,7 @@ def BacteroidesFinegoldii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesFinegoldii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def TalaromycesMarneffei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TalaromycesMarneffei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

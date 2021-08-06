@@ -88,7 +88,7 @@ def TaphrinaDeformansPycc5710(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TaphrinaDeformansPycc5710",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

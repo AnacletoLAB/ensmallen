@@ -88,7 +88,7 @@ def HalopenitusMalekzadehii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalopenitusMalekzadehii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

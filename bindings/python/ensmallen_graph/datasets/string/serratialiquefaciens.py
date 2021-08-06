@@ -88,7 +88,7 @@ def SerratiaLiquefaciens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SerratiaLiquefaciens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

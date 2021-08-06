@@ -88,7 +88,7 @@ def DiversisporaEpigaea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DiversisporaEpigaea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

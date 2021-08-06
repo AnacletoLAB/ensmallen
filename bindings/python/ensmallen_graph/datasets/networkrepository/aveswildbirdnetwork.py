@@ -78,7 +78,7 @@ def AvesWildbirdNetwork(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AvesWildbirdNetwork",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

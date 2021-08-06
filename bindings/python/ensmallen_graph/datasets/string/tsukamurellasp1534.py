@@ -91,7 +91,7 @@ def TsukamurellaSp1534(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TsukamurellaSp1534",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

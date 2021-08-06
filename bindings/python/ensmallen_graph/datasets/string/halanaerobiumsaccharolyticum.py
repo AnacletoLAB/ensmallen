@@ -91,7 +91,7 @@ def HalanaerobiumSaccharolyticum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalanaerobiumSaccharolyticum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

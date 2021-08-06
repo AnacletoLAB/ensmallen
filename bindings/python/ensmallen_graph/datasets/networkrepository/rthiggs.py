@@ -96,7 +96,7 @@ def RtHiggs(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RtHiggs",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

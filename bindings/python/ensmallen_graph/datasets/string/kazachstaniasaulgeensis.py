@@ -88,7 +88,7 @@ def KazachstaniaSaulgeensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KazachstaniaSaulgeensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def SalipigerProfundus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalipigerProfundus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

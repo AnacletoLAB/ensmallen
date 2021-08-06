@@ -91,7 +91,7 @@ def EubacteriumNodatum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EubacteriumNodatum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

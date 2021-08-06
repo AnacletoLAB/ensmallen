@@ -91,7 +91,7 @@ def SphingomonasElodea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingomonasElodea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

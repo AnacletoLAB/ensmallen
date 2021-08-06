@@ -88,7 +88,7 @@ def OceanisphaeraPsychrotolerans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OceanisphaeraPsychrotolerans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

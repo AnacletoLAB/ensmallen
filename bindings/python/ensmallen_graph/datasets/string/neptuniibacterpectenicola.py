@@ -88,7 +88,7 @@ def NeptuniibacterPectenicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeptuniibacterPectenicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

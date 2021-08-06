@@ -91,7 +91,7 @@ def CoprinopsisCinerea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CoprinopsisCinerea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

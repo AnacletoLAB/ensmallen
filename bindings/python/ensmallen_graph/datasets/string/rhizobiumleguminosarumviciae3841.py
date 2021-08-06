@@ -88,7 +88,7 @@ def RhizobiumLeguminosarumViciae3841(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizobiumLeguminosarumViciae3841",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PantheraPardus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PantheraPardus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

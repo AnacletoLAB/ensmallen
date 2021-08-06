@@ -91,7 +91,7 @@ def ActinobaculumUrinale(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinobaculumUrinale",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

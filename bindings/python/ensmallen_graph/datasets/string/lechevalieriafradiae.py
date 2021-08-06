@@ -88,7 +88,7 @@ def LechevalieriaFradiae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LechevalieriaFradiae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

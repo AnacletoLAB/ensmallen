@@ -91,7 +91,7 @@ def MuscaDomestica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MuscaDomestica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

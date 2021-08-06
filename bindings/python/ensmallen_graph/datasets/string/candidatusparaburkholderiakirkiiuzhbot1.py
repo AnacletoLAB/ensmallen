@@ -88,7 +88,7 @@ def CandidatusParaburkholderiaKirkiiUzhbot1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusParaburkholderiaKirkiiUzhbot1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

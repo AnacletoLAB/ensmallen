@@ -91,7 +91,7 @@ def NeosartoryaFischeri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeosartoryaFischeri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

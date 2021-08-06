@@ -88,7 +88,7 @@ def BacillusGlycinifermentans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusGlycinifermentans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

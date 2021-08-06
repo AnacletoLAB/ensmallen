@@ -88,7 +88,7 @@ def DysgonomonasMacrotermitis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DysgonomonasMacrotermitis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

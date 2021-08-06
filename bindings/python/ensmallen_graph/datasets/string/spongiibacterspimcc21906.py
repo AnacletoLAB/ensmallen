@@ -88,7 +88,7 @@ def SpongiibacterSpImcc21906(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpongiibacterSpImcc21906",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def ArsenicicoccusSpOralTaxon190(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArsenicicoccusSpOralTaxon190",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

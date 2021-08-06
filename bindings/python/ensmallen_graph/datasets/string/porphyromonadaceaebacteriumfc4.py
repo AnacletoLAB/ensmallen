@@ -88,7 +88,7 @@ def PorphyromonadaceaeBacteriumFc4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PorphyromonadaceaeBacteriumFc4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

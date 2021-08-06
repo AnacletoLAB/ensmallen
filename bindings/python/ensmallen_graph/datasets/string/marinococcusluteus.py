@@ -88,7 +88,7 @@ def MarinococcusLuteus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinococcusLuteus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

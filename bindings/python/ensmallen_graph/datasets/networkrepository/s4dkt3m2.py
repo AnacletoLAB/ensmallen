@@ -78,7 +78,7 @@ def S4dkt3m2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="S4dkt3m2",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

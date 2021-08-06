@@ -91,7 +91,7 @@ def CladophialophoraYegresii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CladophialophoraYegresii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

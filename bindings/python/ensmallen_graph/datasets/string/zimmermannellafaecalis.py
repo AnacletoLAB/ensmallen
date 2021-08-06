@@ -91,7 +91,7 @@ def ZimmermannellaFaecalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZimmermannellaFaecalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

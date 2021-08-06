@@ -88,7 +88,7 @@ def FerrovumSpPnJ185(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FerrovumSpPnJ185",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PhytoplasmaSpVc33(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhytoplasmaSpVc33",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def BifidobacteriumPseudolongumPv82(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BifidobacteriumPseudolongumPv82",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

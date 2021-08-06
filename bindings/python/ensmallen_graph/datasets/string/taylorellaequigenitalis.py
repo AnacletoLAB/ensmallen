@@ -91,7 +91,7 @@ def TaylorellaEquigenitalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TaylorellaEquigenitalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

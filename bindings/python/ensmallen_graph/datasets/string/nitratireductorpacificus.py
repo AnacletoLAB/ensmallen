@@ -91,7 +91,7 @@ def NitratireductorPacificus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitratireductorPacificus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

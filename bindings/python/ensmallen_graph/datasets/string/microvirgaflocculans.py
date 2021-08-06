@@ -91,7 +91,7 @@ def MicrovirgaFlocculans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrovirgaFlocculans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

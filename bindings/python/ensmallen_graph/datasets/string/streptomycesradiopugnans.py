@@ -88,7 +88,7 @@ def StreptomycesRadiopugnans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesRadiopugnans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

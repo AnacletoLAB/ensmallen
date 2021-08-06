@@ -78,7 +78,7 @@ def Foldoc(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Foldoc",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

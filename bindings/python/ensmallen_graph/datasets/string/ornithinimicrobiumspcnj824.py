@@ -88,7 +88,7 @@ def OrnithinimicrobiumSpCnj824(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OrnithinimicrobiumSpCnj824",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

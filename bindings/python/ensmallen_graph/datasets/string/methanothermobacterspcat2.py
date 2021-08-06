@@ -88,7 +88,7 @@ def MethanothermobacterSpCat2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanothermobacterSpCat2",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

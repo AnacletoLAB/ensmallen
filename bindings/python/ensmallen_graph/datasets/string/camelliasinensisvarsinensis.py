@@ -88,7 +88,7 @@ def CamelliaSinensisVarSinensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CamelliaSinensisVarSinensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

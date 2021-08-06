@@ -91,7 +91,7 @@ def BacillusMegateriumMsp201(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusMegateriumMsp201",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

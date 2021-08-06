@@ -91,7 +91,7 @@ def MarinobacterHydrocarbonoclasticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinobacterHydrocarbonoclasticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

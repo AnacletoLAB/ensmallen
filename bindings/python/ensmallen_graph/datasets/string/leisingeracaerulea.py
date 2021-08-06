@@ -91,7 +91,7 @@ def LeisingeraCaerulea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeisingeraCaerulea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

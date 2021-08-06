@@ -91,7 +91,7 @@ def CronobacterCondimenti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CronobacterCondimenti",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

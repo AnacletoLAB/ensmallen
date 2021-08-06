@@ -91,7 +91,7 @@ def LarimichthysCrocea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LarimichthysCrocea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

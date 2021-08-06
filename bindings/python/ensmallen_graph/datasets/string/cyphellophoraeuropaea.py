@@ -91,7 +91,7 @@ def CyphellophoraEuropaea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CyphellophoraEuropaea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

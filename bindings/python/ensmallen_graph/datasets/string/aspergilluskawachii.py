@@ -91,7 +91,7 @@ def AspergillusKawachii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AspergillusKawachii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

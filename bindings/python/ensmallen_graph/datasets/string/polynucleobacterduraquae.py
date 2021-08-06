@@ -88,7 +88,7 @@ def PolynucleobacterDuraquae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PolynucleobacterDuraquae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

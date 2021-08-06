@@ -91,7 +91,7 @@ def NautiliaProfundicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NautiliaProfundicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

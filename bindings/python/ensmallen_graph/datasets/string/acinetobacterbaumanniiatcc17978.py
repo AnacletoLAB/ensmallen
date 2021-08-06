@@ -88,7 +88,7 @@ def AcinetobacterBaumanniiAtcc17978(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcinetobacterBaumanniiAtcc17978",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

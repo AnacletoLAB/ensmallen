@@ -88,7 +88,7 @@ def ClostridiumHydrogeniformansDsm21757(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumHydrogeniformansDsm21757",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

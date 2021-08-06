@@ -88,7 +88,7 @@ def HaloarculaRubripromontorii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HaloarculaRubripromontorii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

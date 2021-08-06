@@ -91,7 +91,7 @@ def BurkholderiaMultivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BurkholderiaMultivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def DrosophilaPseudoobscura(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DrosophilaPseudoobscura",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

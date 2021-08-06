@@ -91,7 +91,7 @@ def FlavobacteriaceaeBacteriumHqm9(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriaceaeBacteriumHqm9",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

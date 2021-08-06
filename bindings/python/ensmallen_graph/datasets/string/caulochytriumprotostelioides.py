@@ -88,7 +88,7 @@ def CaulochytriumProtostelioides(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaulochytriumProtostelioides",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

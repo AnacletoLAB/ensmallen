@@ -91,7 +91,7 @@ def AcinetobacterSoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcinetobacterSoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

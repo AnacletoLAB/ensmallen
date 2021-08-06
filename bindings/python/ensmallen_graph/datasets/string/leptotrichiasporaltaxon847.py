@@ -88,7 +88,7 @@ def LeptotrichiaSpOralTaxon847(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptotrichiaSpOralTaxon847",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

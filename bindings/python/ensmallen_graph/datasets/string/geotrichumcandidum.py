@@ -88,7 +88,7 @@ def GeotrichumCandidum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeotrichumCandidum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

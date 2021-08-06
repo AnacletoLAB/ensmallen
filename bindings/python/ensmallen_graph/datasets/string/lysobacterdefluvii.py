@@ -91,7 +91,7 @@ def LysobacterDefluvii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LysobacterDefluvii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

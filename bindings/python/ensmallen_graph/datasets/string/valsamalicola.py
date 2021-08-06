@@ -88,7 +88,7 @@ def ValsaMalicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ValsaMalicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

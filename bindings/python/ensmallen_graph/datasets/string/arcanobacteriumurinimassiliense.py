@@ -88,7 +88,7 @@ def ArcanobacteriumUrinimassiliense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArcanobacteriumUrinimassiliense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def GeobacterToluenoxydansJcm15764(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeobacterToluenoxydansJcm15764",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

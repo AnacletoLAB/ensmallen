@@ -91,7 +91,7 @@ def AmycolatopsisMediterranei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmycolatopsisMediterranei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

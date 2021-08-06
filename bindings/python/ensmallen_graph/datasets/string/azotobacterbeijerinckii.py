@@ -88,7 +88,7 @@ def AzotobacterBeijerinckii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AzotobacterBeijerinckii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

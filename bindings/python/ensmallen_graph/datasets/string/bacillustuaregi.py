@@ -88,7 +88,7 @@ def BacillusTuaregi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusTuaregi",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

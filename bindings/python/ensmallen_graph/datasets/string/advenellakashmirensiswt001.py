@@ -88,7 +88,7 @@ def AdvenellaKashmirensisWt001(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AdvenellaKashmirensisWt001",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

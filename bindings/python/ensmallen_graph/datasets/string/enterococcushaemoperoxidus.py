@@ -91,7 +91,7 @@ def EnterococcusHaemoperoxidus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterococcusHaemoperoxidus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

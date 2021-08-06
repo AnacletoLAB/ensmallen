@@ -88,7 +88,7 @@ def PhenylobacteriumSpRifcsphigho201Full6931(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhenylobacteriumSpRifcsphigho201Full6931",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

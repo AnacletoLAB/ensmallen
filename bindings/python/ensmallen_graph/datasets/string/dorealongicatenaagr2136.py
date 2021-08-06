@@ -91,7 +91,7 @@ def DoreaLongicatenaAgr2136(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DoreaLongicatenaAgr2136",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def MesocestoidesCorti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MesocestoidesCorti",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

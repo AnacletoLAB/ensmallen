@@ -91,7 +91,7 @@ def PorphyromonasSpCot290oh860(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PorphyromonasSpCot290oh860",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

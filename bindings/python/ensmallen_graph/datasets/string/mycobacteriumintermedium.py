@@ -88,7 +88,7 @@ def MycobacteriumIntermedium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MycobacteriumIntermedium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

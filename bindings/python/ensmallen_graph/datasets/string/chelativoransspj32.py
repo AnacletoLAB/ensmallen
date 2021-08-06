@@ -91,7 +91,7 @@ def ChelativoransSpJ32(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChelativoransSpJ32",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

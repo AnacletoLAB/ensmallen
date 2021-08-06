@@ -88,7 +88,7 @@ def InfectDublin(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="InfectDublin",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

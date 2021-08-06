@@ -88,7 +88,7 @@ def PantoeaSeptica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PantoeaSeptica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

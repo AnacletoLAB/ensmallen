@@ -94,7 +94,7 @@ def AffOrkutUser2groups(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AffOrkutUser2groups",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

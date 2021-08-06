@@ -88,7 +88,7 @@ def CandidatusMethylopumilusTuricensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusMethylopumilusTuricensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -104,7 +104,7 @@ def CaMathscinet(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaMathscinet",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

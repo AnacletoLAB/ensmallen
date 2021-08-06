@@ -91,7 +91,7 @@ def SphingobiumXenophagum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingobiumXenophagum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

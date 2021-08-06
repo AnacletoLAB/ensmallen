@@ -88,7 +88,7 @@ def MarivitaHallyeonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarivitaHallyeonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

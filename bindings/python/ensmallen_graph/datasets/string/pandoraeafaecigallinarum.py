@@ -88,7 +88,7 @@ def PandoraeaFaecigallinarum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PandoraeaFaecigallinarum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

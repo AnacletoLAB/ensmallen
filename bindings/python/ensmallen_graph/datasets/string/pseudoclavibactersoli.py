@@ -91,7 +91,7 @@ def PseudoclavibacterSoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoclavibacterSoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

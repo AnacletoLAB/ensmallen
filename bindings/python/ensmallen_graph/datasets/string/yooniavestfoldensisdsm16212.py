@@ -88,7 +88,7 @@ def YooniaVestfoldensisDsm16212(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="YooniaVestfoldensisDsm16212",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

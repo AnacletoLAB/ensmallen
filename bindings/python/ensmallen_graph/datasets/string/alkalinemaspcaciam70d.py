@@ -88,7 +88,7 @@ def AlkalinemaSpCaciam70d(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlkalinemaSpCaciam70d",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ProvidenciaRustigianii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProvidenciaRustigianii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

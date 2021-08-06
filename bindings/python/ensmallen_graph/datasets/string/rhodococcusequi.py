@@ -91,7 +91,7 @@ def RhodococcusEqui(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodococcusEqui",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

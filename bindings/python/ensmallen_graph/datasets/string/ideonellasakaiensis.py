@@ -88,7 +88,7 @@ def IdeonellaSakaiensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IdeonellaSakaiensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

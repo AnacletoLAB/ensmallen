@@ -91,7 +91,7 @@ def LysinibacillusSpBf4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LysinibacillusSpBf4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

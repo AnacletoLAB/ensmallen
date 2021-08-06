@@ -88,7 +88,7 @@ def SalinibacteriumSpPamc21357(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinibacteriumSpPamc21357",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

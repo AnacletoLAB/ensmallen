@@ -91,7 +91,7 @@ def ThiocapsaMarina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThiocapsaMarina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

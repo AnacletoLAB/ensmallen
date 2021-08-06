@@ -88,7 +88,7 @@ def PsychrobacterUrativorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PsychrobacterUrativorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

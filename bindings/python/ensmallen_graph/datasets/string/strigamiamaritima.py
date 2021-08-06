@@ -91,7 +91,7 @@ def StrigamiaMaritima(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StrigamiaMaritima",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

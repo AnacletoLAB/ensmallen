@@ -88,7 +88,7 @@ def MaricaulisSpW15(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MaricaulisSpW15",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

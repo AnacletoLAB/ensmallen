@@ -88,7 +88,7 @@ def WolbachiaSpDme(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WolbachiaSpDme",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PoseidonocellaPacifica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PoseidonocellaPacifica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

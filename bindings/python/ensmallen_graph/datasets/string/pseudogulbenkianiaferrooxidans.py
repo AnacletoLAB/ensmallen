@@ -91,7 +91,7 @@ def PseudogulbenkianiaFerrooxidans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudogulbenkianiaFerrooxidans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

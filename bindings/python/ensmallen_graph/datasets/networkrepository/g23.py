@@ -78,7 +78,7 @@ def G23(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="G23",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

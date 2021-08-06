@@ -88,7 +88,7 @@ def ParaburkholderiaMonticola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParaburkholderiaMonticola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

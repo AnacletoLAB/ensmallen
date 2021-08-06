@@ -91,7 +91,7 @@ def ThiorhodococcusDrewsii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThiorhodococcusDrewsii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

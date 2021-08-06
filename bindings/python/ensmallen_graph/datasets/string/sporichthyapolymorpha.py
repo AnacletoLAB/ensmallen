@@ -91,7 +91,7 @@ def SporichthyaPolymorpha(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SporichthyaPolymorpha",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

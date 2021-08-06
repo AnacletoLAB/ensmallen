@@ -88,7 +88,7 @@ def KazachstaniaAfricanaCbs2517(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KazachstaniaAfricanaCbs2517",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

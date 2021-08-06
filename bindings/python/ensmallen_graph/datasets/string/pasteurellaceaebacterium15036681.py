@@ -88,7 +88,7 @@ def PasteurellaceaeBacterium15036681(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PasteurellaceaeBacterium15036681",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

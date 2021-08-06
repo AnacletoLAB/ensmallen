@@ -88,7 +88,7 @@ def VeillonellaceaeBacteriumKa00182(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VeillonellaceaeBacteriumKa00182",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

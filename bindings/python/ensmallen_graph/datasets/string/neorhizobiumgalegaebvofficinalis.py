@@ -88,7 +88,7 @@ def NeorhizobiumGalegaeBvOfficinalis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeorhizobiumGalegaeBvOfficinalis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

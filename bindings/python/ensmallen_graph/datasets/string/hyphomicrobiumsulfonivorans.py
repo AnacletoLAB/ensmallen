@@ -88,7 +88,7 @@ def HyphomicrobiumSulfonivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HyphomicrobiumSulfonivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

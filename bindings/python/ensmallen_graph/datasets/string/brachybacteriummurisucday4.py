@@ -88,7 +88,7 @@ def BrachybacteriumMurisUcdAy4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrachybacteriumMurisUcdAy4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

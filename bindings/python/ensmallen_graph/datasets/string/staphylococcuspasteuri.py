@@ -88,7 +88,7 @@ def StaphylococcusPasteuri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StaphylococcusPasteuri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

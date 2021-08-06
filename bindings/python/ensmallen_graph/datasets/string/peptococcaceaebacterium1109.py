@@ -88,7 +88,7 @@ def PeptococcaceaeBacterium1109(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PeptococcaceaeBacterium1109",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

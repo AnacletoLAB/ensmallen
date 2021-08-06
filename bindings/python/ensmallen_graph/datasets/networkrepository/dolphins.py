@@ -78,7 +78,7 @@ def Dolphins(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Dolphins",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

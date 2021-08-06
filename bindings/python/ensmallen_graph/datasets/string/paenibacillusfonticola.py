@@ -91,7 +91,7 @@ def PaenibacillusFonticola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillusFonticola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def StreptococcusIniae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusIniae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

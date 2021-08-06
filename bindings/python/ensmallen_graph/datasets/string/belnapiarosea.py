@@ -88,7 +88,7 @@ def BelnapiaRosea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BelnapiaRosea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PseudoalteromonasAgarivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoalteromonasAgarivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

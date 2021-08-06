@@ -91,7 +91,7 @@ def ParvularculaOceani(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParvularculaOceani",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ThermusSpYim77409(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermusSpYim77409",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

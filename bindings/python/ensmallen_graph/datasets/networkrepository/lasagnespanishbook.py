@@ -78,7 +78,7 @@ def LasagneSpanishbook(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LasagneSpanishbook",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def RhodobacterVinaykumarii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodobacterVinaykumarii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

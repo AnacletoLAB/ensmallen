@@ -88,7 +88,7 @@ def SporolactobacillusTerraeHkm1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SporolactobacillusTerraeHkm1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

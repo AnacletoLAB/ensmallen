@@ -91,7 +91,7 @@ def PantoeaSpA4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PantoeaSpA4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

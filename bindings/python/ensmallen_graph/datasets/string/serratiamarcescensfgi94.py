@@ -91,7 +91,7 @@ def SerratiaMarcescensFgi94(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SerratiaMarcescensFgi94",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

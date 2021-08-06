@@ -88,7 +88,7 @@ def LactobacillusSenmaizukeiDsm21775Nbrc103853(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusSenmaizukeiDsm21775Nbrc103853",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

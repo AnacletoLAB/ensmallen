@@ -91,7 +91,7 @@ def GeobacillusThermodenitrificans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeobacillusThermodenitrificans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

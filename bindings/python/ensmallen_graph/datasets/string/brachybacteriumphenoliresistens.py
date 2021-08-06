@@ -91,7 +91,7 @@ def BrachybacteriumPhenoliresistens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrachybacteriumPhenoliresistens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

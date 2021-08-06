@@ -88,7 +88,7 @@ def NostocSpNies3756(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NostocSpNies3756",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

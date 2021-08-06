@@ -88,7 +88,7 @@ def RhynchosporiumCommune(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhynchosporiumCommune",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

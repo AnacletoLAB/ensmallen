@@ -91,7 +91,7 @@ def SalinicoccusCarnicancri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinicoccusCarnicancri",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

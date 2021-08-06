@@ -91,7 +91,7 @@ def MicavibrioAeruginosavorusArl13(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicavibrioAeruginosavorusArl13",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PandoraeaApista(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PandoraeaApista",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PseudomonasSp20bn(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasSp20bn",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

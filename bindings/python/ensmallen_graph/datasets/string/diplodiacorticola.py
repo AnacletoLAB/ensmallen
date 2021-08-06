@@ -88,7 +88,7 @@ def DiplodiaCorticola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DiplodiaCorticola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

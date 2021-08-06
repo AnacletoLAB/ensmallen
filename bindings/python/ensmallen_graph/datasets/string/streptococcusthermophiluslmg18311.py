@@ -91,7 +91,7 @@ def StreptococcusThermophilusLmg18311(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusThermophilusLmg18311",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def CycloclasticusSpSymbiontOfPoeciloscleridaSpN(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CycloclasticusSpSymbiontOfPoeciloscleridaSpN",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -88,7 +88,7 @@ def PrevotellaSaccharolyticaF0055(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaSaccharolyticaF0055",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

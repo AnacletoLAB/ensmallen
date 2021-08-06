@@ -78,7 +78,7 @@ def Pkustk10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Pkustk10",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

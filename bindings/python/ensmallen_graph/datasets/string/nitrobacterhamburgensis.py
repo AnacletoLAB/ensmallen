@@ -91,7 +91,7 @@ def NitrobacterHamburgensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrobacterHamburgensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

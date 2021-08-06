@@ -88,7 +88,7 @@ def ClostridiumFimetarium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumFimetarium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

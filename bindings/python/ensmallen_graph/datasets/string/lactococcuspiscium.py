@@ -88,7 +88,7 @@ def LactococcusPiscium(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactococcusPiscium",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

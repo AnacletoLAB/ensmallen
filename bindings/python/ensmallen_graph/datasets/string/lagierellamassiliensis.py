@@ -88,7 +88,7 @@ def LagierellaMassiliensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LagierellaMassiliensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

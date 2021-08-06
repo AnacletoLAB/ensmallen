@@ -91,7 +91,7 @@ def DesulfocapsaSulfexigens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfocapsaSulfexigens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

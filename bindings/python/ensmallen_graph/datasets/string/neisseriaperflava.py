@@ -88,7 +88,7 @@ def NeisseriaPerflava(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeisseriaPerflava",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

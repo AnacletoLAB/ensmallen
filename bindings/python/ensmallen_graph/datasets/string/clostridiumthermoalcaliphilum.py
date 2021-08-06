@@ -88,7 +88,7 @@ def ClostridiumThermoalcaliphilum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumThermoalcaliphilum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

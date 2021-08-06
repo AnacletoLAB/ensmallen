@@ -88,7 +88,7 @@ def RoseomonasMucosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoseomonasMucosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

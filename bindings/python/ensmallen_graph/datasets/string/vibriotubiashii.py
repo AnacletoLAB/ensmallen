@@ -91,7 +91,7 @@ def VibrioTubiashii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioTubiashii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

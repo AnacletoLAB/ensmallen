@@ -88,7 +88,7 @@ def GordoniaSpQh12(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GordoniaSpQh12",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

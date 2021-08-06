@@ -88,7 +88,7 @@ def PhaeobacterPorticola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhaeobacterPorticola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

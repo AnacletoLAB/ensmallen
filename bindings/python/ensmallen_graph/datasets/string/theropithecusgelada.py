@@ -88,7 +88,7 @@ def TheropithecusGelada(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TheropithecusGelada",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

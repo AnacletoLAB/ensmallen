@@ -88,7 +88,7 @@ def StreptococcusOralis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusOralis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

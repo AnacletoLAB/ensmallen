@@ -91,7 +91,7 @@ def NiabellaSoli(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NiabellaSoli",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

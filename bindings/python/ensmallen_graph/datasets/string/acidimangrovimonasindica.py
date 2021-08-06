@@ -88,7 +88,7 @@ def AcidimangrovimonasIndica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidimangrovimonasIndica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def HalapricumSalinum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HalapricumSalinum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

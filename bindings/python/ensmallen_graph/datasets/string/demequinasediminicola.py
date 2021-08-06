@@ -88,7 +88,7 @@ def DemequinaSediminicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DemequinaSediminicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

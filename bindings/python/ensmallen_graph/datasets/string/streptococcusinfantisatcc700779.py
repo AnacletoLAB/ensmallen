@@ -91,7 +91,7 @@ def StreptococcusInfantisAtcc700779(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusInfantisAtcc700779",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

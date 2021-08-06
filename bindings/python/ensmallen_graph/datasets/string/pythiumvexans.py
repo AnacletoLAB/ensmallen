@@ -91,7 +91,7 @@ def PythiumVexans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PythiumVexans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

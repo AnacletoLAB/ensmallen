@@ -91,7 +91,7 @@ def StreptococcusDysgalactiaeEquisimilis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusDysgalactiaeEquisimilis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

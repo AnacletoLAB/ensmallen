@@ -88,7 +88,7 @@ def RheinheimeraNanhaiensisE4078(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RheinheimeraNanhaiensisE4078",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

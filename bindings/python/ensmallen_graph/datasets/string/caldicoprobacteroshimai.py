@@ -91,7 +91,7 @@ def CaldicoprobacterOshimai(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaldicoprobacterOshimai",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def BurkholderiaSpYi23(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BurkholderiaSpYi23",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

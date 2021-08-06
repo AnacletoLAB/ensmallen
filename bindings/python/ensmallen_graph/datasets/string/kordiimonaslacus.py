@@ -88,7 +88,7 @@ def KordiimonasLacus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KordiimonasLacus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

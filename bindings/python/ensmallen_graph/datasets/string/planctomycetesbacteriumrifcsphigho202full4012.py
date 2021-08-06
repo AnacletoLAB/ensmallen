@@ -88,7 +88,7 @@ def PlanctomycetesBacteriumRifcsphigho202Full4012(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PlanctomycetesBacteriumRifcsphigho202Full4012",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def Github(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Github",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

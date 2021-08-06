@@ -91,7 +91,7 @@ def SulfuricurvumKujiense(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfuricurvumKujiense",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

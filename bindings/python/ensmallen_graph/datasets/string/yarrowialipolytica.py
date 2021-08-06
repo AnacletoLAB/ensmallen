@@ -91,7 +91,7 @@ def YarrowiaLipolytica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="YarrowiaLipolytica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

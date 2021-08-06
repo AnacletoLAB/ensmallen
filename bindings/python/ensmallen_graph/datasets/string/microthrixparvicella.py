@@ -91,7 +91,7 @@ def MicrothrixParvicella(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrothrixParvicella",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

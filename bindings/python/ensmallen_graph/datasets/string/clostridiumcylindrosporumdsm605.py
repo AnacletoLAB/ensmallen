@@ -88,7 +88,7 @@ def ClostridiumCylindrosporumDsm605(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumCylindrosporumDsm605",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

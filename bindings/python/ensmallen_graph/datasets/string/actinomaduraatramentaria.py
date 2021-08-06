@@ -91,7 +91,7 @@ def ActinomaduraAtramentaria(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomaduraAtramentaria",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def PrevotellaSpF0295(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrevotellaSpF0295",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

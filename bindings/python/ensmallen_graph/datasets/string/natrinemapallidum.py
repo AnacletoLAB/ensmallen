@@ -91,7 +91,7 @@ def NatrinemaPallidum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NatrinemaPallidum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

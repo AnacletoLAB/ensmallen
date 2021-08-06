@@ -88,7 +88,7 @@ def AmanitaThiersiiSkay4041(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmanitaThiersiiSkay4041",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def ChaetomiumGlobosum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChaetomiumGlobosum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

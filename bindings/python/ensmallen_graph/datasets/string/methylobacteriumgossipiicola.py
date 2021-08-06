@@ -88,7 +88,7 @@ def MethylobacteriumGossipiicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethylobacteriumGossipiicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def HoefleaPhototrophica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HoefleaPhototrophica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -91,7 +91,7 @@ def DesulfovibrioFructosivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioFructosivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

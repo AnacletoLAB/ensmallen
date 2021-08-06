@@ -88,7 +88,7 @@ def TamlanaAgarivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TamlanaAgarivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

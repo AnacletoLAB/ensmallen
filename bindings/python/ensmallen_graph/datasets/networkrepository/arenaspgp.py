@@ -78,7 +78,7 @@ def ArenasPgp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArenasPgp",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

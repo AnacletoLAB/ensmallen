@@ -88,7 +88,7 @@ def AurantimonasSpLeaf443(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AurantimonasSpLeaf443",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

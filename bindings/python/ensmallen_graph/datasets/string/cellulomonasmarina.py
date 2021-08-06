@@ -88,7 +88,7 @@ def CellulomonasMarina(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CellulomonasMarina",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

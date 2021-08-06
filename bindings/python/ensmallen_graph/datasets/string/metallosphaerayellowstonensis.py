@@ -91,7 +91,7 @@ def MetallosphaeraYellowstonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MetallosphaeraYellowstonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

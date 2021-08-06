@@ -88,7 +88,7 @@ def MoritellaViscosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MoritellaViscosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

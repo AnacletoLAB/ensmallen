@@ -88,7 +88,7 @@ def GilvimarinusAgarilyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GilvimarinusAgarilyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

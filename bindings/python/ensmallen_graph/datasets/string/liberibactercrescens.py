@@ -91,7 +91,7 @@ def LiberibacterCrescens(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LiberibacterCrescens",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

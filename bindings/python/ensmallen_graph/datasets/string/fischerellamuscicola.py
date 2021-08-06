@@ -91,7 +91,7 @@ def FischerellaMuscicola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FischerellaMuscicola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

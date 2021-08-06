@@ -91,7 +91,7 @@ def TrichodermaReesei(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichodermaReesei",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

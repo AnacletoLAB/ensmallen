@@ -91,7 +91,7 @@ def BacteroidesMassiliensisB84634(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacteroidesMassiliensisB84634",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

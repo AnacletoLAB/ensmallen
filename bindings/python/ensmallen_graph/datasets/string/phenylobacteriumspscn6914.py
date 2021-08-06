@@ -88,7 +88,7 @@ def PhenylobacteriumSpScn6914(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhenylobacteriumSpScn6914",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

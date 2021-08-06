@@ -88,7 +88,7 @@ def AlternariaAlternata(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlternariaAlternata",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

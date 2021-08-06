@@ -88,7 +88,7 @@ def MusSpicilegus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MusSpicilegus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

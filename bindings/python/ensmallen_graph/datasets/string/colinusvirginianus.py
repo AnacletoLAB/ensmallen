@@ -88,7 +88,7 @@ def ColinusVirginianus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ColinusVirginianus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

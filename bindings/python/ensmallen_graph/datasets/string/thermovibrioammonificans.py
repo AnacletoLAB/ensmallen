@@ -91,7 +91,7 @@ def ThermovibrioAmmonificans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermovibrioAmmonificans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,
