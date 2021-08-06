@@ -509,36 +509,47 @@ impl Graph {
                     let thread_id = rayon::current_thread_index().expect("current_thread_id not called from a rayon thread. This should not be possible because this is in a Rayon Thread Pool.");
                     let parents = thread_safe_parents.value.get();
                     let stacks_number = shared_stacks.len();
+                    let mut next_src: Option<NodeT> = None;
                     let adjusted_thread_id = thread_counter.fetch_add(1, Ordering::SeqCst);
                     let thread_id_range = thread_id..(stacks_number + thread_id);
                     'outer: loop {
-                        let src = 'inner: loop {
-                            for mut stack in thread_id_range.clone()
-                                .map(|id| shared_stacks[id % stacks_number].lock().expect("The lock is poisoned from the panic of another thread"))
-                            {
-                                if let Some(src) = stack.pop() {
-                                    working_threads[adjusted_thread_id]
-                                            .store(true, Ordering::SeqCst);
-                                    break 'inner src;
+                        let src = if let Some(src) = next_src {
+                            src
+                        } else {
+                            'inner: loop {
+                                for mut stack in thread_id_range.clone()
+                                    .map(|id| shared_stacks[id % stacks_number].lock().expect("The lock is poisoned from the panic of another thread"))
+                                {
+                                    if let Some(src) = stack.pop() {
+                                        working_threads[adjusted_thread_id]
+                                                .store(true, Ordering::SeqCst);
+                                        break 'inner src;
+                                    }
                                 }
-                            }
 
-                            if completed.load(Ordering::SeqCst) {
-                                break 'outer;
-                            }
+                                if completed.load(Ordering::SeqCst) {
+                                    break 'outer;
+                                }
 
-                            working_threads[adjusted_thread_id]
-                                            .store(false, Ordering::SeqCst);
+                                working_threads[adjusted_thread_id]
+                                                .store(false, Ordering::SeqCst);
+                            }
                         };
+                        next_src = None;
                         unsafe{self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)}
                             .for_each(|dst| unsafe {
                                 if (*parents)[dst as usize] == NOT_PRESENT {
                                     (*parents)[dst as usize] = src;
-                                    // We set that the thread zero will be now start to work
-                                    shared_stacks[rand_u64(dst as u64) as usize % stacks_number]
+                                    if next_src.is_none() {
+                                        next_src = Some(dst);
+                                    } else {
+                                        shared_stacks[rand_u64(dst as u64) as usize % stacks_number]
                                         .lock()
-                                        .expect("The lock is poisoned from the panic of another thread")
-                                        .push(dst);
+                                        .expect(
+                                            "The lock is poisoned from the panic of another thread",
+                                        )
+                                        .push(dst)
+                                    };
                                 }
                             });
                     }
@@ -755,7 +766,6 @@ impl Graph {
 
                                 // If we have not found any work, this thread goes to sleep.
                                 working_threads[adjusted_thread_id].store(false, Ordering::SeqCst);
-                                std::thread::sleep(std::time::Duration::from_millis(1));
                             }
                         };
                         next_src = None;
