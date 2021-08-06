@@ -7,14 +7,14 @@ from downloaders import BaseDownloader
 from environments_utils import is_windows
 from userinput.utils import set_validator, closest
 from ..ensmallen_graph import EnsmallenGraph, edge_list_utils
-
+from .get_dataset import validate_graph_version
 
 class AutomaticallyRetrievedGraph:
     def __init__(
         self,
         graph_name: str,
         version: str,
-        dataset: str,
+        repository: str,
         directed: bool = False,
         preprocess: bool = True,
         verbose: int = 2,
@@ -32,8 +32,8 @@ class AutomaticallyRetrievedGraph:
             The name of the graph to be retrieved and loaded.
         version: str,
             The version of the graph to be retrieved.
-        dataset: str,
-            Name of the dataset to load data from.
+        repository: str,
+            Name of the repository to load data from.
         directed: bool = False,
             Whether to load the graph as directed or undirected.
             By default false.
@@ -63,22 +63,14 @@ class AutomaticallyRetrievedGraph:
             is Windows, which does not provide the sort command.
         """
         try:
+            
+            validate_graph_version(graph_name, repository, version)
+
             all_versions = compress_json.local_load(os.path.join(
-                dataset,
+                repository,
                 "{}.json.gz".format(graph_name)
             ))
 
-            if not set_validator(all_versions)(version):
-                raise ValueError((
-                    "The provided version `{}` is not within the set "
-                    "of supported versions, {}.\n"
-                    "Did you mean `{}`?"
-                ).format(
-                    version,
-                    ", ".join(all_versions),
-                    closest(version, all_versions)
-                ))
-                
             self._graph = all_versions[version]
         except FileNotFoundError:
             raise ValueError(

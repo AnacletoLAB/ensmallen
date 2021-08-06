@@ -3,6 +3,7 @@ from typing import Optional, Any, Callable, List
 from ensmallen_graph import EnsmallenGraph
 from ensmallen_graph import datasets
 from glob import glob
+import compress_json
 from userinput.utils import set_validator, closest
 import os
 
@@ -55,12 +56,8 @@ def get_available_graphs_from_repository(repository: str) -> List[str]:
         ))
     ]
 
-
-def get_dataset(
-    graph_name: str,
-    repository: str,
-) -> Callable[[Any], EnsmallenGraph]:
-    """Return the graph curresponding to the given graph name, repository and version.
+def get_available_versions_from_graph_and_repository(graph_name:str, repository: str) -> List[str]:
+    """Return list of available graphs from the given repositories.
 
     Parameters
     ----------------------
@@ -73,6 +70,68 @@ def get_dataset(
     ----------------------
     ValueError,
         If the given repository is not available.
+    """
+    return list(compress_json.local_load(os.path.join(
+        repository,
+        "{}.json.gz".format(graph_name)
+    )).keys())
+    
+def validate_graph_version(
+    graph_name:str,
+    repository: str,
+    version: str
+):
+    """Validates given triple.
+
+    Parameters
+    ----------------------
+    graph_name: str,
+        The name of the graph to retrieve.
+    repository: str,
+        The name of the repository to retrieve the graph from.
+    version: str,
+        The version to check for.
+
+    Raises
+    ----------------------
+    ValueError,
+        If the given repository is not available.
+    """
+    all_versions = get_available_versions_from_graph_and_repository(graph_name, repository)
+    if not set_validator(all_versions)(version):
+        raise ValueError((
+            "The provided version `{}` is not within the set "
+            "of supported versions of the graph `{}` and repository `{}`, {}.\n"
+            "Did you mean `{}`?"
+        ).format(
+            repository,
+            graph_name,
+            repository,
+            ", ".join(all_versions),
+            closest(version, all_versions)
+        ))
+
+def get_dataset(
+    graph_name: str,
+    repository: str,
+    version: Optional[str] = None
+) -> Callable[[Any], EnsmallenGraph]:
+    """Return the graph curresponding to the given graph name, repository and version.
+
+    Parameters
+    ----------------------
+    graph_name: str,
+        The name of the graph to retrieve.
+    repository: str,
+        The name of the repository to retrieve the graph from.
+    version: Option[str],
+        The version of the graph to retrieve.
+        Note that this will ONLY check that the version is available.
+
+    Raises
+    ----------------------
+    ValueError,
+        If the given repository is not available.
     ValueError,
         If the given graph is not available.
     """
@@ -80,7 +139,6 @@ def get_dataset(
     graph_names = get_available_graphs_from_repository(repository)
 
     if not set_validator(graph_names)(graph_name):
-
         # We check if the given graph is from another repository
         other_repository = None
         for candidate_repository in get_available_repository():
