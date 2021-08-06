@@ -127,7 +127,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         It is returned None because the path that is automatically
         used by downloader is sufficiently precise.
         """
-        return self._data[graph_name][version].get("paths", [])
+        return self._data[graph_name][version].get("paths")
 
     def get_graph_list(self) -> List[str]:
         """Return list of graph names."""

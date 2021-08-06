@@ -42593,7 +42593,7 @@ pub fn get_node_source_html_url_from_node_name(node_name: &str) -> String {
             node_name,
             get_node_repository_from_node_name(node_name).unwrap(),
         ),
-        Err(_) => node_name.to_string(),
+        Err(_) => sanitize_str(&DEFAULT, node_name).unwrap(),
     }
 }
 
