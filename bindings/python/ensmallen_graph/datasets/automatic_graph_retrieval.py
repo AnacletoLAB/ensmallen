@@ -250,7 +250,7 @@ class AutomaticallyRetrievedGraph:
             # we compute the target node types column
             target_node_type_list_path = None
             if any(
-                column in arguments
+                arguments.get(column) is not None
                 for column in (
                     "node_list_node_types_column_number",
                     "node_list_node_types_column",
@@ -262,7 +262,7 @@ class AutomaticallyRetrievedGraph:
             # we compute the target edge types column
             target_edge_type_list_path = None
             if any(
-                column in arguments
+                arguments.get(column) is not None
                 for column in (
                     "edge_list_edge_types_column_number",
                     "edge_list_edge_types_column",
