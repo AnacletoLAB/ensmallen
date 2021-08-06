@@ -449,7 +449,7 @@ class AutomaticallyRetrievedGraph:
                     "node_type_list_is_correct": True,
                 }
             else:
-                node_types_arguments = None
+                node_types_arguments = {}
             # If the edge types are provided
             has_edge_types = metadata["edge_types_number"] is not None
             if has_edge_types:
@@ -459,7 +459,7 @@ class AutomaticallyRetrievedGraph:
                     "edge_type_list_is_correct": True,
                 }
             else:
-                edge_types_arguments = None
+                edge_types_arguments = {}
             # If the node files are provided
             has_node_file = node_path is not None
             if has_node_file:
@@ -473,7 +473,7 @@ class AutomaticallyRetrievedGraph:
                     "skip_node_types_if_unavailable": True if has_node_types else None,
                 }
             else:
-                nodes_arguments = None
+                nodes_arguments = {}
             # Load the graph
             return EnsmallenGraph.from_csv(**{
                 **metadata,
