@@ -48,8 +48,8 @@ class PheKnowLatorKGGraphrepository(GraphRepository):
                     "arguments": {
                         "edge_path": "edge_list.tsv",
                         "name": graph_name,
-                        "source_column": "subject",
-                        "destination_column": "object",
+                        "sources_column": "subject",
+                        "destinations_column": "object",
                         "edge_list_edge_types_column": "predicate"
                     }
                 }
