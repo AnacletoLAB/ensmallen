@@ -96,7 +96,7 @@ class StringGraphRepository(GraphRepository):
                                 version=version
                             ),
                             "name": graph_name,
-                            "nodes_column": "protein_external_id",
+                            "nodes_column_number": 0,
                             **parameters_per_type_of_graph[type_of_graph]
                         }
                     }
