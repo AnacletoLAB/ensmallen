@@ -440,25 +440,46 @@ class AutomaticallyRetrievedGraph:
                 )
             # Load the stored metadata
             metadata = self.get_preprocessed_metadata()
+            # If the node types are provided
+            has_node_types = metadata["node_types_number"] is not None
+            if has_node_types:
+                node_types_arguments = {
+                    "node_type_path": target_node_type_list_path,
+                    "node_types_column_number": 0,
+                    "node_type_list_is_correct": True,
+                }
+            else:
+                node_types_arguments = None
+            # If the edge types are provided
+            has_edge_types = metadata["edge_types_number"] is not None
+            if has_edge_types:
+                edge_types_arguments = {
+                    "edge_type_path": target_edge_type_list_path,
+                    "edge_types_column_number": 0,
+                    "edge_type_list_is_correct": True,
+                }
+            else:
+                edge_types_arguments = None
+            # If the node files are provided
+            has_node_file = node_path is not None
+            if has_node_file:
+                nodes_arguments = {
+                    "node_path": target_node_path,
+                    "node_list_is_correct": True,
+                    "node_types_separator": "|" if has_node_types else None,
+                    "nodes_column_number": 0,
+                    "node_list_node_types_column_number": 1 if has_node_types else None,
+                    "node_list_numeric_node_type_ids": True if has_node_types else None,
+                    "skip_node_types_if_unavailable": True if has_node_types else None,
+                }
+            else:
+                nodes_arguments = None
             # Load the graph
             return EnsmallenGraph.from_csv(**{
                 **metadata,
-                "node_type_path": target_node_type_list_path,
-                "node_types_column_number": 0,
-                "node_type_list_is_correct": True,
-
-                "node_path": target_node_path,
-                "node_list_is_correct": True,
-                "node_types_separator": "|",
-                "nodes_column_number": 0,
-                "node_list_node_types_column_number": None if metadata["node_types_number"] is None else 1,
-                "nodes_number": metadata["nodes_number"],
-                "node_list_numeric_node_type_ids": True,
-                "skip_node_types_if_unavailable": True,
-
-                "edge_type_path": target_edge_type_list_path,
-                "edge_types_column_number": 0,
-                "edge_type_list_is_correct": True,
+                **node_types_arguments,
+                **nodes_arguments,
+                **edge_types_arguments,
 
                 "edge_path": target_edge_path,
                 "edge_list_header": False,
@@ -475,6 +496,7 @@ class AutomaticallyRetrievedGraph:
                 "edge_list_is_sorted": True,
                 "edge_list_is_correct": True,
                 "edges_number": metadata["edges_number"],
+                "nodes_number": metadata["nodes_number"],
                 "verbose": self._verbose > 0,
                 "directed": self._directed,
                 "name": self._name,
