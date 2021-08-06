@@ -177,7 +177,7 @@ pub fn build_optimal_lists_files(
         }
 
         info!("Converting the node list node type names to numeric node type IDs.");
-        node_types_number = Some(convert_node_list_node_types_to_numeric(
+        node_types_number = convert_node_list_node_types_to_numeric(
             original_node_type_path,
             original_node_type_list_separator,
             original_node_types_column_number,
@@ -222,7 +222,7 @@ pub fn build_optimal_lists_files(
             target_node_list_node_types_column_number,
             target_node_list_node_types_column,
             nodes_number,
-        )? as NodeTypeT);
+        )?;
         // Now we need to update the node list parameters
         // that should be used in the next step.
         // We do not update again the node types as it

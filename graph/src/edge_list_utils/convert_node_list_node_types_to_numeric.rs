@@ -51,7 +51,7 @@ pub fn convert_node_list_node_types_to_numeric(
     target_node_list_node_types_column_number: Option<usize>,
     target_node_list_node_types_column: Option<String>,
     nodes_number: Option<NodeT>,
-) -> Result<NodeTypeT> {
+) -> Result<Option<NodeTypeT>> {
     let mut node_types: Vocabulary<NodeTypeT> =
         if let Some(original_node_type_path) = original_node_type_path {
             let node_type_file_reader = TypeFileReader::new(Some(original_node_type_path))?
@@ -90,7 +90,7 @@ pub fn convert_node_list_node_types_to_numeric(
         .set_nodes_column(original_nodes_column.clone())?
         .set_minimum_node_id(original_minimum_node_id)
         .set_skip_node_types_if_unavailable(original_skip_node_types_if_unavailable)?
-        .set_node_types_column_number(original_node_list_node_types_column_number)?
+        .set_node_types_column_number(original_node_list_node_types_column_number.clone())?
         .set_node_types_column(original_node_list_node_types_column.clone())?
         .set_node_types_separator(original_node_types_separator)?
         .set_default_node_type(default_node_type)
@@ -107,7 +107,7 @@ pub fn convert_node_list_node_types_to_numeric(
         )?
         .set_header(target_node_list_header.or(Some(nodes_reader.has_header()?)))
         .set_node_types_column(
-            target_node_list_node_types_column.or(original_node_list_node_types_column),
+            target_node_list_node_types_column.or(original_node_list_node_types_column.clone()),
         )
         .set_node_types_column_number(
             target_node_list_node_types_column_number
@@ -165,5 +165,10 @@ pub fn convert_node_list_node_types_to_numeric(
         )?;
     }
 
-    Ok(node_types.len() as NodeTypeT)
+
+    Ok(if original_node_list_node_types_column.is_some() || original_node_list_node_types_column_number.is_some() {
+        Some(node_types.len() as NodeTypeT)
+    } else {
+        None
+    })
 }
