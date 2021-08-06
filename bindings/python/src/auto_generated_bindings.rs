@@ -5,10 +5,16 @@ use pyo3::{wrap_pyfunction, wrap_pymodule};
 fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_class::<EnsmallenGraph>()?;
     m.add_wrapped(wrap_pymodule!(preprocessing))?;
-    m.add_wrapped(wrap_pymodule!(edge_list_utils))?;
     m.add_wrapped(wrap_pymodule!(constructors))?;
+    m.add_wrapped(wrap_pymodule!(edge_list_utils))?;
 
     env_logger::init();
+    Ok(())
+}
+
+#[pymodule]
+fn constructors(_py: Python, m: &PyModule) -> PyResult<()> {
+    m.add_wrapped(wrap_pyfunction!(build_empty_graph))?;
     Ok(())
 }
 
@@ -32,10 +38,18 @@ fn edge_list_utils(_py: Python, m: &PyModule) -> PyResult<()> {
     Ok(())
 }
 
-#[pymodule]
-fn constructors(_py: Python, m: &PyModule) -> PyResult<()> {
-    m.add_wrapped(wrap_pyfunction!(build_empty_graph))?;
-    Ok(())
+#[pyfunction]
+#[automatically_generated_binding]
+#[text_signature = "(directed, name)"]
+/// Return new graph object built from string iterators.
+///
+/// Parameters
+/// ----------
+///
+pub fn build_empty_graph(directed: bool, name: String) -> PyResult<EnsmallenGraph> {
+    Ok(EnsmallenGraph {
+        graph: pe!(graph::build_empty_graph(directed, name))?,
+    })
 }
 
 #[pyfunction]
@@ -1543,7 +1557,7 @@ pub fn convert_node_list_node_types_to_numeric(
     target_node_list_node_types_column_number: Option<usize>,
     target_node_list_node_types_column: Option<String>,
     nodes_number: Option<NodeT>,
-) -> PyResult<NodeTypeT> {
+) -> PyResult<Option<NodeTypeT>> {
     pe!(graph::convert_node_list_node_types_to_numeric(
         original_node_type_path,
         original_node_type_list_separator,
@@ -1710,20 +1724,6 @@ pub fn sort_numeric_edge_list_inplace(
         rows_to_skip,
         skip_edge_types_if_unavailable
     ))
-}
-
-#[pyfunction]
-#[automatically_generated_binding]
-#[text_signature = "(directed, name)"]
-/// Return new graph object built from string iterators.
-///
-/// Parameters
-/// ----------
-///
-pub fn build_empty_graph(directed: bool, name: String) -> PyResult<EnsmallenGraph> {
-    Ok(EnsmallenGraph {
-        graph: pe!(graph::build_empty_graph(directed, name))?,
-    })
 }
 
 #[pymethods]
