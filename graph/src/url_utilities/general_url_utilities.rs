@@ -1,4 +1,6 @@
 use super::*;
+use sanitize_html::sanitize_str;
+use sanitize_html::rules::predefined::DEFAULT;
 use itertools::Itertools;
 
 /// Returns whether the given node name is valid according to given seeds.
@@ -179,7 +181,7 @@ fn get_url_formatted(url: &str, content: &str, repository: &str) -> String {
     format!(
         "<a href='{url}' target='_blank' title='Go to {repository} to get more informations about {content}'>{content}</a>",
         url = url,
-        content = content,
+        content = sanitize_str(&DEFAULT, content).unwrap(),
         repository=repository
     )
 }
