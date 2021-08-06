@@ -27,7 +27,7 @@ class PheKnowLatorKGGraphrepository(GraphRepository):
         graph_name = "PheKnowLator"
         stored_graph_name = graph_name
         mined_data = {
-            stored_graph_name:{}
+            stored_graph_name: {}
         }
 
         for version, version_data in all_metadata.items():
@@ -46,7 +46,7 @@ class PheKnowLatorKGGraphrepository(GraphRepository):
                         "edge_list.tsv"
                     ],
                     "arguments": {
-                        "edge_list_path": "edge_list.tsv",
+                        "edge_path": "edge_list.tsv",
                         "name": graph_name,
                         "source_column": "subject",
                         "destination_column": "object",
