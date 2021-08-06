@@ -5,16 +5,10 @@ use pyo3::{wrap_pyfunction, wrap_pymodule};
 fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_class::<EnsmallenGraph>()?;
     m.add_wrapped(wrap_pymodule!(preprocessing))?;
-    m.add_wrapped(wrap_pymodule!(constructors))?;
     m.add_wrapped(wrap_pymodule!(edge_list_utils))?;
+    m.add_wrapped(wrap_pymodule!(constructors))?;
 
     env_logger::init();
-    Ok(())
-}
-
-#[pymodule]
-fn constructors(_py: Python, m: &PyModule) -> PyResult<()> {
-    m.add_wrapped(wrap_pyfunction!(build_empty_graph))?;
     Ok(())
 }
 
@@ -38,18 +32,10 @@ fn edge_list_utils(_py: Python, m: &PyModule) -> PyResult<()> {
     Ok(())
 }
 
-#[pyfunction]
-#[automatically_generated_binding]
-#[text_signature = "(directed, name)"]
-/// Return new graph object built from string iterators.
-///
-/// Parameters
-/// ----------
-///
-pub fn build_empty_graph(directed: bool, name: String) -> PyResult<EnsmallenGraph> {
-    Ok(EnsmallenGraph {
-        graph: pe!(graph::build_empty_graph(directed, name))?,
-    })
+#[pymodule]
+fn constructors(_py: Python, m: &PyModule) -> PyResult<()> {
+    m.add_wrapped(wrap_pyfunction!(build_empty_graph))?;
+    Ok(())
 }
 
 #[pyfunction]
@@ -1726,6 +1712,20 @@ pub fn sort_numeric_edge_list_inplace(
     ))
 }
 
+#[pyfunction]
+#[automatically_generated_binding]
+#[text_signature = "(directed, name)"]
+/// Return new graph object built from string iterators.
+///
+/// Parameters
+/// ----------
+///
+pub fn build_empty_graph(directed: bool, name: String) -> PyResult<EnsmallenGraph> {
+    Ok(EnsmallenGraph {
+        graph: pe!(graph::build_empty_graph(directed, name))?,
+    })
+}
+
 #[pymethods]
 impl EnsmallenGraph {
     #[automatically_generated_binding]
@@ -1810,8 +1810,9 @@ impl EnsmallenGraph {
     /// Safety
     /// ------
     /// If the given node ID does not exists in the graph this method will panic.
-    pub unsafe fn is_unchecked_disconnected_from_node_id(&self, node_id: NodeT) -> bool {
-        self.graph.is_unchecked_disconnected_from_node_id(node_id)
+    pub unsafe fn is_unchecked_disconnected_node_from_node_id(&self, node_id: NodeT) -> bool {
+        self.graph
+            .is_unchecked_disconnected_node_from_node_id(node_id)
     }
 
     #[automatically_generated_binding]
