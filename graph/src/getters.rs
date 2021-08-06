@@ -701,7 +701,7 @@ impl Graph {
                                 return None;
                             }
                         }
-                        (*state).insert(dst);
+                        let _ = (*state).insert(dst);
                         Some(*state)
                     })
                     .count() as EdgeT

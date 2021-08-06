@@ -107,15 +107,6 @@ impl Graph {
             }
         }
 
-        dbg!(
-            self.get_nodes_number(),
-            self.get_edges_number(),
-            self.get_singleton_nodes_number(),
-            self.get_singleton_nodes_with_selfloops_number(),
-            self.has_singleton_nodes(),
-            self.has_singleton_nodes_with_selfloops(),
-        );
-
         let verbose = verbose.unwrap_or(true);
         let pb = get_loading_bar(
             verbose,

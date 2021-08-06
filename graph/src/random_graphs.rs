@@ -744,8 +744,8 @@ impl Graph {
         let chain_node_type = chain_node_type.unwrap_or("chain");
         let node_types_vocabulary: Vocabulary<NodeTypeT> = Vocabulary::from_reverse_map(vec![
             left_clique_node_type.to_owned(),
-            right_clique_node_type.to_owned(),
             chain_node_type.to_owned(),
+            right_clique_node_type.to_owned(),
         ])?;
         let mut node_type_ids: Vec<Option<Vec<NodeTypeT>>> = [
             left_clique_nodes_number,
@@ -772,8 +772,8 @@ impl Graph {
         let chain_edge_type = chain_edge_type.unwrap_or("chain");
         let edge_types_vocabulary: Vocabulary<EdgeTypeT> = Vocabulary::from_reverse_map(vec![
             left_clique_edge_type.to_owned(),
-            right_clique_edge_type.to_owned(),
             chain_edge_type.to_owned(),
+            right_clique_edge_type.to_owned(),
         ])?;
         let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + nodes_number));
         let name = name.unwrap_or("Barbell");
