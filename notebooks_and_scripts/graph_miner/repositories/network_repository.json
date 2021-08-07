@@ -30126,7 +30126,7 @@
                 "directed": false,
                 "edge_list_header": false,
                 "name": "bn-mouse_retina_1",
-                "edge_path": "bn-mouse_retina_1/bn-mouse_retina_1.edges",
+                "edge_path": "bn-mouse_retina_1/bn/bn-mouse_retina_1.edges",
                 "edge_list_separator": " ",
                 "sources_column_number": 0,
                 "destinations_column_number": 1
