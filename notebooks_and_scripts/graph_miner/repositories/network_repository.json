@@ -30146,7 +30146,7 @@
                 "directed": false,
                 "edge_list_header": false,
                 "name": "bn-macaque-rhesus_brain_1",
-                "edge_path": "bn-macaque-rhesus_brain_1/bn-macaque-rhesus_brain_1.edges",
+                "edge_path": "bn-macaque-rhesus_brain_1/bn/bn-macaque-rhesus_brain_1.edges",
                 "edge_list_separator": " ",
                 "sources_column_number": 0,
                 "destinations_column_number": 1
