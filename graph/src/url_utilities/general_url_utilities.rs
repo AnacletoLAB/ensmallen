@@ -1013,8 +1013,8 @@ pub fn get_node_source_url_from_node_name(node_name: &str) -> Result<String> {
         return Ok(format_website_url_from_node_name(node_name));
     }
 
-    if is_valid_angular_link_node_name(node_name) {
-        return Ok(format_angular_link_url_from_node_name(node_name));
+    if is_valid_angular_link(node_name) {
+        return Ok(format_angular_link_url_from_object(node_name));
     }
 
     if may_be_string_node_name(node_name) {
@@ -42562,6 +42562,9 @@ pub fn get_node_type_source_url_from_node_type_name(node_type_name: &str) -> Res
     if is_valid_biolink_from_object(node_type_name) {
         return Ok(unsafe { format_biolink_from_object(node_type_name) });
     }
+    if is_valid_angular_link(node_type_name) {
+        return Ok(format_angular_link_url_from_object(node_type_name));
+    }
     Err(format!(
         concat!(
             "There is no known url with a pattern for the provided node type {:?}.\n",
@@ -42614,6 +42617,9 @@ pub fn get_edge_type_repository_from_edge_type_name(edge_type_name: &str) -> Res
 pub fn get_edge_type_source_url_from_edge_type_name(edge_type_name: &str) -> Result<String> {
     if is_valid_biolink_from_object(edge_type_name) {
         return Ok(unsafe { format_biolink_from_object(edge_type_name) });
+    }
+    if is_valid_angular_link(edge_type_name) {
+        return Ok(format_angular_link_url_from_object(edge_type_name));
     }
     Err(format!(
         concat!(
