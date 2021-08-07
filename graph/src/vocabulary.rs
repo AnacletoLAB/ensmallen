@@ -162,7 +162,7 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
                         None
                     };
 
-                    *last_object = Some(object.to_string());
+                    let _ = *last_object.insert(object.to_string());
 
                     result
                 })

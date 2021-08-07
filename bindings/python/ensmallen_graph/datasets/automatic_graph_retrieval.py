@@ -303,7 +303,7 @@ class AutomaticallyRetrievedGraph:
                     target_node_type_list_node_types_column_number=0,
                     original_node_path=node_path,
                     original_node_list_header=arguments.get(
-                        "node_header"
+                        "node_list_header"
                     ),
                     node_list_rows_to_skip=arguments.get(
                         "node_list_rows_to_skip"
@@ -412,8 +412,12 @@ class AutomaticallyRetrievedGraph:
                     original_edge_list_numeric_node_ids=arguments.get(
                         "edge_list_numeric_node_ids"
                     ),
-                    skip_weights_if_unavailable=True,
-                    skip_edge_types_if_unavailable=True,
+                    skip_weights_if_unavailable=arguments.get(
+                        "skip_weights_if_unavailable"
+                    ),
+                    skip_edge_types_if_unavailable=arguments.get(
+                        "skip_edge_types_if_unavailable"
+                    ),
                     edge_list_comment_symbol=arguments.get(
                         "edge_list_comment_symbol"
                     ),

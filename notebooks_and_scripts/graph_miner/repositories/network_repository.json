@@ -45,7 +45,6 @@
                 "edge_path": "opsahl-southernwomen/opsahl-southernwomen.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -203,7 +202,6 @@
                 "name": "CL-1000-2d1-trial1",
                 "edge_path": "CL-1000-2d1-trial1/CL-1000-2d1-trial1.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -357,7 +355,6 @@
                 "edge_path": "zhishi-zhwiki-internallink/zhishi-zhwiki-internallink.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -381,7 +378,6 @@
                 "name": "SW-1000-3-0d2-trial3",
                 "edge_path": "SW-1000-3-0d2-trial3/SW-1000-3-0d2-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -664,7 +660,6 @@
                 "name": "SW-1000-3-0d1-trial2",
                 "edge_path": "SW-1000-3-0d1-trial2/SW-1000-3-0d1-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -688,7 +683,6 @@
                 "name": "SW-1000-4-0d3-trial3",
                 "edge_path": "SW-1000-4-0d3-trial3/SW-1000-4-0d3-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -712,7 +706,6 @@
                 "name": "CL-10000-1d8-trial1",
                 "edge_path": "CL-10000-1d8-trial1/CL-10000-1d8-trial1.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -791,7 +784,6 @@
                 "name": "bio-SC-HT",
                 "edge_path": "bio-SC-HT/bio-SC-HT.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -818,7 +810,6 @@
                 "edge_path": "inf-euroroad/inf-euroroad.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -842,7 +833,6 @@
                 "name": "CL-100000-1d7-trial1",
                 "edge_path": "CL-100000-1d7-trial1/CL-100000-1d7-trial1.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -943,7 +933,6 @@
                 "name": "SW-10000-5-0d3-trial2",
                 "edge_path": "SW-10000-5-0d3-trial2/SW-10000-5-0d3-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -1046,7 +1035,6 @@
                 "edge_path": "dbpedia-team/dbpedia-team.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -1197,7 +1185,6 @@
                 "name": "SW-100-4-0d1-trial2",
                 "edge_path": "SW-100-4-0d1-trial2/SW-100-4-0d1-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -1247,7 +1234,6 @@
                 "name": "SW-10000-6-0d1-trial2",
                 "edge_path": "SW-10000-6-0d1-trial2/SW-10000-6-0d1-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -1296,7 +1282,6 @@
                 "name": "SW-100-4-0d2-trial3",
                 "edge_path": "SW-100-4-0d2-trial3/SW-100-4-0d2-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -1322,7 +1307,6 @@
                 "name": "eco-stmarks",
                 "edge_path": "eco-stmarks/eco-stmarks.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -1347,7 +1331,6 @@
                 "name": "SW-10000-6-0d2-trial3",
                 "edge_path": "SW-10000-6-0d2-trial3/SW-10000-6-0d2-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -1372,7 +1355,6 @@
                 "edge_path": "patentcite/patentcite.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -1524,7 +1506,6 @@
                 "name": "CL-1000-1d9-trial1",
                 "edge_path": "CL-1000-1d9-trial1/CL-1000-1d9-trial1.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -1549,7 +1530,6 @@
                 "edge_path": "actor-collaboration/actor-collaboration.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -1600,7 +1580,6 @@
                 "edge_list_edge_types_column_number": 2,
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -1960,7 +1939,6 @@
                 "name": "CL-10000-2d0-trial1",
                 "edge_path": "CL-10000-2d0-trial1/CL-10000-2d0-trial1.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -2037,7 +2015,6 @@
                 "edge_list_edge_types_column_number": 2,
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -2087,7 +2064,6 @@
                 "name": "SW-100-3-0d3-trial3",
                 "edge_path": "SW-100-3-0d3-trial3/SW-100-3-0d3-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -2163,7 +2139,6 @@
                 "edge_path": "foodweb-baydry/foodweb-baydry.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -2215,7 +2190,6 @@
                 "name": "CL-100000-1d9-trial3",
                 "edge_path": "CL-100000-1d9-trial3/CL-100000-1d9-trial3.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -2315,7 +2289,6 @@
                 "name": "SW-100-5-0d1-trial1",
                 "edge_path": "SW-100-5-0d1-trial1/SW-100-5-0d1-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -2340,7 +2313,6 @@
                 "name": "bio-SC-TS",
                 "edge_path": "bio-SC-TS/bio-SC-TS.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -2390,7 +2362,6 @@
                 "name": "SW-1000-6-0d2-trial1",
                 "edge_path": "SW-1000-6-0d2-trial1/SW-1000-6-0d2-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -2415,7 +2386,6 @@
                 "edge_path": "dbpedia-recordlabel/dbpedia-recordlabel.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -2490,7 +2460,6 @@
                 "name": "CL-1000000-2d0-trial1",
                 "edge_path": "CL-1000000-2d0-trial1/CL-1000000-2d0-trial1.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -2876,7 +2845,6 @@
                 "edge_path": "tech-arenas-meta/tech-arenas-meta.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -2951,7 +2919,6 @@
                 "edge_path": "aff-flickr-user-groups/aff-flickr-user-groups.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "default_weight": 1.0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
@@ -3055,7 +3022,6 @@
                 "name": "CL-1000000-1d8-trial1",
                 "edge_path": "CL-1000000-1d8-trial1/CL-1000000-1d8-trial1.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -3186,7 +3152,6 @@
                 "name": "SW-10000-3-0d2-trial1",
                 "edge_path": "SW-10000-3-0d2-trial1/SW-10000-3-0d2-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -3497,7 +3462,6 @@
                 "name": "CL-100000-2d1-trial3",
                 "edge_path": "CL-100000-2d1-trial3/CL-100000-2d1-trial3.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -3572,7 +3536,6 @@
                 "name": "bio-CE-GT",
                 "edge_path": "bio-CE-GT/bio-CE-GT.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -3598,7 +3561,6 @@
                 "edge_path": "actor-movie/actor-movie.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -3624,7 +3586,6 @@
                 "edge_path": "misc-jung-code-dep/misc-jung-code-dep.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "default_weight": 1.0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
@@ -3907,7 +3868,6 @@
                 "edge_path": "aff-github-user2project/aff-github-user2project.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "default_weight": 1.0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
@@ -3962,7 +3922,6 @@
                 "edge_path": "copresence-Thiers13/copresence-Thiers13.edges",
                 "edge_list_edge_types_column_number": 2,
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -4036,7 +3995,6 @@
                 "name": "SW-10000-4-0d3-trial1",
                 "edge_path": "SW-10000-4-0d3-trial1/SW-10000-4-0d3-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -4087,7 +4045,6 @@
                 "name": "SW-100-6-0d3-trial1",
                 "edge_path": "SW-100-6-0d3-trial1/SW-100-6-0d3-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -4111,7 +4068,6 @@
                 "name": "CL-1000-1d7-trial3",
                 "edge_path": "CL-1000-1d7-trial3/CL-1000-1d7-trial3.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -4137,7 +4093,6 @@
                 "edge_path": "aff-amazon-copurchases/aff-amazon-copurchases.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "default_weight": 1.0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
@@ -4164,7 +4119,6 @@
                 "name": "ca-MathSciNet-dir",
                 "edge_path": "ca-MathSciNet-dir/ca-MathSciNet-dir.txt",
                 "edge_list_separator": "\t",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -4264,7 +4218,6 @@
                 "name": "SW-1000-6-0d1-trial1",
                 "edge_path": "SW-1000-6-0d1-trial1/SW-1000-6-0d1-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -4314,7 +4267,6 @@
                 "edge_path": "dblp-cite/dblp-cite.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -4338,7 +4290,6 @@
                 "name": "CL-100000-1d9-trial2",
                 "edge_path": "CL-100000-1d9-trial2/CL-100000-1d9-trial2.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -4362,7 +4313,6 @@
                 "name": "SW-100-5-0d2-trial1",
                 "edge_path": "SW-100-5-0d2-trial1/SW-100-5-0d2-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -4491,7 +4441,6 @@
                 "name": "bio-CE-CX",
                 "edge_path": "bio-CE-CX/bio-CE-CX.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -4646,7 +4595,6 @@
                 "edge_list_edge_types_column_number": 2,
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -4671,7 +4619,6 @@
                 "edge_path": "maayan-figeys/maayan-figeys.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -4875,7 +4822,6 @@
                 "edge_path": "arenas-meta/arenas-meta.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -4979,7 +4925,6 @@
                 "edge_path": "aves-sparrow-social/aves-sparrow-social.edges",
                 "edge_list_edge_types_column_number": 3,
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -5058,7 +5003,6 @@
                 "name": "web-EPA",
                 "edge_path": "web-EPA/web-EPA.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -5212,7 +5156,6 @@
                 "edge_path": "zhishi-baidu-internallink/zhishi-baidu-internallink.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -5262,7 +5205,6 @@
                 "edge_path": "aves-weaver-social/aves-weaver-social.edges",
                 "edge_list_edge_types_column_number": 2,
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -5287,7 +5229,6 @@
                 "edge_path": "dbpedia-country/dbpedia-country.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -5338,7 +5279,6 @@
                 "edge_path": "bio-human-gene1/bio-human-gene1.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -5363,7 +5303,6 @@
                 "name": "CL-100000-2d1-trial2",
                 "edge_path": "CL-100000-2d1-trial2/CL-100000-2d1-trial2.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -5388,7 +5327,6 @@
                 "edge_path": "zhishi-hudong-internallink/zhishi-hudong-internallink.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -5438,7 +5376,6 @@
                 "name": "bio-CE-PG",
                 "edge_path": "bio-CE-PG/bio-CE-PG.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -5514,7 +5451,6 @@
                 "name": "SW-10000-3-0d1-trial1",
                 "edge_path": "SW-10000-3-0d1-trial1/SW-10000-3-0d1-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -5671,7 +5607,6 @@
                 "edge_path": "youtube-groupmemberships/youtube-groupmemberships.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -5797,7 +5732,6 @@
                 "name": "bio-HS-CX",
                 "edge_path": "bio-HS-CX/bio-HS-CX.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -5825,7 +5759,6 @@
                 "edge_path": "eco-foodweb-baywet/eco-foodweb-baywet.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -5981,7 +5914,6 @@
                 "name": "CL-1000-1d7-trial2",
                 "edge_path": "CL-1000-1d7-trial2/CL-1000-1d7-trial2.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -6006,7 +5938,6 @@
                 "name": "soc-google-plus",
                 "edge_path": "soc-google-plus/soc-google-plus.txt",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -6108,7 +6039,6 @@
                 "edge_path": "maayan-faa/maayan-faa.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -6157,7 +6087,6 @@
                 "name": "SW-1000-5-0d3-trial1",
                 "edge_path": "SW-1000-5-0d3-trial1/SW-1000-5-0d3-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -6181,7 +6110,6 @@
                 "name": "ca-aminer",
                 "edge_path": "ca-aminer/ca-aminer.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -6232,7 +6160,6 @@
                 "name": "SW-1000-3-0d2-trial2",
                 "edge_path": "SW-1000-3-0d2-trial2/SW-1000-3-0d2-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -6257,7 +6184,6 @@
                 "edge_path": "zhishi-baidu-relatedpages/zhishi-baidu-relatedpages.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -6331,7 +6257,6 @@
                 "name": "SW-1000-3-0d1-trial3",
                 "edge_path": "SW-1000-3-0d1-trial3/SW-1000-3-0d1-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -6381,7 +6306,6 @@
                 "edge_path": "reactome/reactome.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -6406,7 +6330,6 @@
                 "edge_path": "github/github.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -6458,7 +6381,6 @@
                 "edge_path": "zhishi-hudong-relatedpages/zhishi-hudong-relatedpages.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -6694,7 +6616,6 @@
                 "edge_path": "soc-sign-bitcoinotc/soc-sign-bitcoinotc.edges",
                 "edge_list_edge_types_column_number": 2,
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 3
@@ -6772,7 +6693,6 @@
                 "name": "SW-10000-5-0d3-trial3",
                 "edge_path": "SW-10000-5-0d3-trial3/SW-10000-5-0d3-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -7079,7 +6999,6 @@
                 "edge_path": "bio-grid-worm/bio-grid-worm.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -7103,7 +7022,6 @@
                 "name": "SW-1000-4-0d3-trial2",
                 "edge_path": "SW-1000-4-0d3-trial2/SW-1000-4-0d3-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -7285,7 +7203,6 @@
                 "name": "SW-10000-6-0d1-trial3",
                 "edge_path": "SW-10000-6-0d1-trial3/SW-10000-6-0d1-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -7333,7 +7250,6 @@
                 "name": "SW-100-4-0d1-trial3",
                 "edge_path": "SW-100-4-0d1-trial3/SW-100-4-0d1-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -7433,7 +7349,6 @@
                 "name": "SW-10000-6-0d2-trial2",
                 "edge_path": "SW-10000-6-0d2-trial2/SW-10000-6-0d2-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -7483,7 +7398,6 @@
                 "name": "soc-academia",
                 "edge_path": "soc-academia/soc-academia.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -7507,7 +7421,6 @@
                 "name": "SW-100-4-0d2-trial2",
                 "edge_path": "SW-100-4-0d2-trial2/SW-100-4-0d2-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -7556,7 +7469,6 @@
                 "name": "SW-100-3-0d3-trial2",
                 "edge_path": "SW-100-3-0d3-trial2/SW-100-3-0d3-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -7661,7 +7573,6 @@
                 "edge_path": "wordnet-words/wordnet-words.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -7713,7 +7624,6 @@
                 "edge_path": "ego-gplus/ego-gplus.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -7816,7 +7726,6 @@
                 "name": "bio-WormNet-v3",
                 "edge_path": "bio-WormNet-v3/bio-WormNet-v3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "default_weight": 1.0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
@@ -8023,7 +7932,6 @@
                 "edge_path": "tech-as-caida20071105/tech-as-caida20071105.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -8049,7 +7957,6 @@
                 "edge_path": "web-BerkStan-dir/web-BerkStan-dir.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "default_weight": 1.0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
@@ -8076,7 +7983,6 @@
                 "edge_path": "soc-pokec-relationships/soc-pokec-relationships.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -8102,7 +8008,6 @@
                 "edge_path": "soc-advogato/soc-advogato.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -8363,7 +8268,6 @@
                 "name": "eco-everglades",
                 "edge_path": "eco-everglades/eco-everglades.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -8391,7 +8295,6 @@
                 "edge_path": "socfb-konect/socfb-konect.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -8416,7 +8319,6 @@
                 "edge_path": "youtube-links/youtube-links.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -8465,7 +8367,6 @@
                 "name": "email-univ",
                 "edge_path": "email-univ/email-univ.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -8490,7 +8391,6 @@
                 "edge_path": "as-caida20071105/as-caida20071105.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -8514,7 +8414,6 @@
                 "name": "CL-1000000-2d0-trial2",
                 "edge_path": "CL-1000000-2d0-trial2/CL-1000000-2d0-trial2.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -8538,7 +8437,6 @@
                 "name": "SW-1000-6-0d1-trial3",
                 "edge_path": "SW-1000-6-0d1-trial3/SW-1000-6-0d1-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -8612,7 +8510,6 @@
                 "name": "SW-1000-6-0d2-trial2",
                 "edge_path": "SW-1000-6-0d2-trial2/SW-1000-6-0d2-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -8637,7 +8534,6 @@
                 "edge_path": "petster-carnivore/petster-carnivore.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -8712,7 +8608,6 @@
                 "name": "SW-100-5-0d1-trial2",
                 "edge_path": "SW-100-5-0d1-trial2/SW-100-5-0d1-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -8737,7 +8632,6 @@
                 "edge_path": "dbpedia-occupation/dbpedia-occupation.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -8867,7 +8761,6 @@
                 "name": "SW-100-5-0d2-trial3",
                 "edge_path": "SW-100-5-0d2-trial3/SW-100-5-0d2-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -8944,7 +8837,6 @@
                 "name": "SW-10000-4-0d3-trial2",
                 "edge_path": "SW-10000-4-0d3-trial2/SW-10000-4-0d3-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -8995,7 +8887,6 @@
                 "name": "SW-100-6-0d3-trial2",
                 "edge_path": "SW-100-6-0d3-trial2/SW-100-6-0d3-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -9230,7 +9121,6 @@
                 "edge_path": "trec-wt10g/trec-wt10g.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -9281,7 +9171,6 @@
                 "name": "SW-1000-5-0d3-trial3",
                 "edge_path": "SW-1000-5-0d3-trial3/SW-1000-5-0d3-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -9360,7 +9249,6 @@
                 "edge_path": "eco-foodweb-baydry/eco-foodweb-baydry.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -9438,7 +9326,6 @@
                 "edge_path": "advogato/advogato.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -9570,7 +9457,6 @@
                 "edge_path": "road-italy-osm/road-italy-osm.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -9595,7 +9481,6 @@
                 "edge_path": "bio-grid-fruitfly/bio-grid-fruitfly.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -9646,7 +9531,6 @@
                 "name": "SW-10000-3-0d2-trial2",
                 "edge_path": "SW-10000-3-0d2-trial2/SW-10000-3-0d2-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -9722,7 +9606,6 @@
                 "edge_path": "opsahl-usairport/opsahl-usairport.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -9775,7 +9658,6 @@
                 "edge_path": "soc-gplus/soc-gplus.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "default_weight": 1.0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
@@ -9852,7 +9734,6 @@
                 "name": "CL-1000000-1d8-trial2",
                 "edge_path": "CL-1000000-1d8-trial2/CL-1000000-1d8-trial2.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -9878,7 +9759,6 @@
                 "edge_path": "tech-pgp/tech-pgp.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -9902,7 +9782,6 @@
                 "name": "SW-10000-3-0d1-trial3",
                 "edge_path": "SW-10000-3-0d1-trial3/SW-10000-3-0d1-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -9928,7 +9807,6 @@
                 "edge_path": "copresence-InVS15/copresence-InVS15.edges",
                 "edge_list_edge_types_column_number": 2,
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -9980,7 +9858,6 @@
                 "edge_path": "web-google-dir/web-google-dir.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "default_weight": 1.0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
@@ -10083,7 +9960,6 @@
                 "name": "SW-10000-5-0d3-trial1",
                 "edge_path": "SW-10000-5-0d3-trial1/SW-10000-5-0d3-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -10262,7 +10138,6 @@
                 "name": "CL-100000-1d7-trial2",
                 "edge_path": "CL-100000-1d7-trial2/CL-100000-1d7-trial2.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -10287,7 +10162,6 @@
                 "name": "bio-DM-HT",
                 "edge_path": "bio-DM-HT/bio-DM-HT.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -10339,7 +10213,6 @@
                 "name": "email-EU",
                 "edge_path": "email-EU/email-EU.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -10365,7 +10238,6 @@
                 "name": "eco-florida",
                 "edge_path": "eco-florida/eco-florida.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -10416,7 +10288,6 @@
                 "name": "CL-10000-1d8-trial2",
                 "edge_path": "CL-10000-1d8-trial2/CL-10000-1d8-trial2.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -10441,7 +10312,6 @@
                 "edge_path": "dbpedia-genre/dbpedia-genre.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -10515,7 +10385,6 @@
                 "name": "SW-1000-3-0d1-trial1",
                 "edge_path": "SW-1000-3-0d1-trial1/SW-1000-3-0d1-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -10693,7 +10562,6 @@
                 "name": "CL-1000-2d1-trial2",
                 "edge_path": "CL-1000-2d1-trial2/CL-1000-2d1-trial2.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -10797,7 +10665,6 @@
                 "edge_path": "soc-twitter-mpi-sws/soc-twitter-mpi-sws.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -10823,7 +10690,6 @@
                 "edge_path": "soc-twitter-follows-mun/soc-twitter-follows-mun.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -10874,7 +10740,6 @@
                 "name": "CL-10000-2d0-trial2",
                 "edge_path": "CL-10000-2d0-trial2/CL-10000-2d0-trial2.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -10949,7 +10814,6 @@
                 "edge_path": "aff-wiki-wordbypage/aff-wiki-wordbypage.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -10975,7 +10839,6 @@
                 "edge_path": "as20000102/as20000102.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -11431,7 +11294,6 @@
                 "name": "bio-yeast-protein-inter",
                 "edge_path": "bio-yeast-protein-inter/bio-yeast-protein-inter.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -11455,7 +11317,6 @@
                 "name": "soc-firm-hi-tech",
                 "edge_path": "soc-firm-hi-tech/soc-firm-hi-tech.txt",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -11557,7 +11418,6 @@
                 "name": "CL-1000-1d9-trial2",
                 "edge_path": "CL-1000-1d9-trial2/CL-1000-1d9-trial2.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -11683,7 +11543,6 @@
                 "edge_path": "road-euroroad/road-euroroad.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -11760,7 +11619,6 @@
                 "edge_path": "opsahl-powergrid/opsahl-powergrid.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -11811,7 +11669,6 @@
                 "name": "SW-100-4-0d1-trial1",
                 "edge_path": "SW-100-4-0d1-trial1/SW-100-4-0d1-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -11887,7 +11744,6 @@
                 "name": "SW-10000-6-0d1-trial1",
                 "edge_path": "SW-10000-6-0d1-trial1/SW-10000-6-0d1-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -11964,7 +11820,6 @@
                 "name": "CL-100000-1d7-trial3",
                 "edge_path": "CL-100000-1d7-trial3/CL-100000-1d7-trial3.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -11989,7 +11844,6 @@
                 "edge_path": "ca-actor-collaboration/ca-actor-collaboration.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -12040,7 +11894,6 @@
                 "name": "CL-10000-1d8-trial3",
                 "edge_path": "CL-10000-1d8-trial3/CL-10000-1d8-trial3.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -12064,7 +11917,6 @@
                 "name": "SW-1000-4-0d3-trial1",
                 "edge_path": "SW-1000-4-0d3-trial1/SW-1000-4-0d3-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -12115,7 +11967,6 @@
                 "edge_path": "cit-patent/cit-patent.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -12140,7 +11991,6 @@
                 "name": "bio-HS-LC",
                 "edge_path": "bio-HS-LC/bio-HS-LC.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -12217,7 +12067,6 @@
                 "edge_path": "dbpedia-location/dbpedia-location.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -12394,7 +12243,6 @@
                 "name": "CL-1000-2d1-trial3",
                 "edge_path": "CL-1000-2d1-trial3/CL-1000-2d1-trial3.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -12474,7 +12322,6 @@
                 "edge_list_edge_types_column_number": 2,
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -12552,7 +12399,6 @@
                 "edge_path": "orkut-links/orkut-links.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -12627,7 +12473,6 @@
                 "name": "SW-1000-3-0d2-trial1",
                 "edge_path": "SW-1000-3-0d2-trial1/SW-1000-3-0d2-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -12653,7 +12498,6 @@
                 "edge_path": "soc-dogster/soc-dogster.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -12965,7 +12809,6 @@
                 "name": "bio-CE-LC",
                 "edge_path": "bio-CE-LC/bio-CE-LC.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -12990,7 +12833,6 @@
                 "name": "SW-100-3-0d3-trial1",
                 "edge_path": "SW-100-3-0d3-trial1/SW-100-3-0d3-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -13089,7 +12931,6 @@
                 "name": "CL-10000-2d0-trial3",
                 "edge_path": "CL-10000-2d0-trial3/CL-10000-2d0-trial3.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -13193,7 +13034,6 @@
                 "edge_path": "petster-friendships-dog/petster-friendships-dog.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -13217,7 +13057,6 @@
                 "name": "SW-10000-6-0d2-trial1",
                 "edge_path": "SW-10000-6-0d2-trial1/SW-10000-6-0d2-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -13242,7 +13081,6 @@
                 "edge_path": "bio-grid-fission-yeast/bio-grid-fission-yeast.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -13266,7 +13104,6 @@
                 "name": "SW-100-4-0d2-trial1",
                 "edge_path": "SW-100-4-0d2-trial1/SW-100-4-0d2-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -13316,7 +13153,6 @@
                 "edge_path": "com-youtube/com-youtube.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -13341,7 +13177,6 @@
                 "edge_path": "petster-friendships-cat/petster-friendships-cat.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -13495,7 +13330,6 @@
                 "name": "CL-1000-1d9-trial3",
                 "edge_path": "CL-1000-1d9-trial3/CL-1000-1d9-trial3.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -13596,7 +13430,6 @@
                 "edge_path": "arenas-pgp/arenas-pgp.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -13731,7 +13564,6 @@
                 "edge_path": "foodweb-baywet/foodweb-baywet.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -13831,7 +13663,6 @@
                 "edge_path": "bio-grid-human/bio-grid-human.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -13907,7 +13738,6 @@
                 "name": "bio-SC-CC",
                 "edge_path": "bio-SC-CC/bio-SC-CC.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -14063,7 +13893,6 @@
                 "edge_path": "com-amazon/com-amazon.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -14166,7 +13995,6 @@
                 "edge_list_edge_types_column_number": 2,
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -14218,7 +14046,6 @@
                 "name": "SW-100-5-0d1-trial3",
                 "edge_path": "SW-100-5-0d1-trial3/SW-100-5-0d1-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -14294,7 +14121,6 @@
                 "name": "CL-100000-1d9-trial1",
                 "edge_path": "CL-100000-1d9-trial1/CL-100000-1d9-trial1.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -14318,7 +14144,6 @@
                 "name": "SW-100-5-0d2-trial2",
                 "edge_path": "SW-100-5-0d2-trial2/SW-100-5-0d2-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -14393,7 +14218,6 @@
                 "name": "SW-1000-6-0d1-trial2",
                 "edge_path": "SW-1000-6-0d1-trial2/SW-1000-6-0d1-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -14417,7 +14241,6 @@
                 "name": "CL-1000000-2d0-trial3",
                 "edge_path": "CL-1000000-2d0-trial3/CL-1000000-2d0-trial3.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -14572,7 +14395,6 @@
                 "name": "SW-1000-6-0d2-trial3",
                 "edge_path": "SW-1000-6-0d2-trial3/SW-1000-6-0d2-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -14647,7 +14469,6 @@
                 "name": "SW-1000-5-0d3-trial2",
                 "edge_path": "SW-1000-5-0d3-trial2/SW-1000-5-0d3-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -14724,7 +14545,6 @@
                 "edge_path": "dblp-author/dblp-author.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -14773,7 +14593,6 @@
                 "name": "CL-1000-1d7-trial1",
                 "edge_path": "CL-1000-1d7-trial1/CL-1000-1d7-trial1.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -14797,7 +14616,6 @@
                 "name": "SW-100-6-0d3-trial3",
                 "edge_path": "SW-100-6-0d3-trial3/SW-100-6-0d3-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -14821,7 +14639,6 @@
                 "name": "SW-10000-4-0d3-trial3",
                 "edge_path": "SW-10000-4-0d3-trial3/SW-10000-4-0d3-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -14847,7 +14664,6 @@
                 "edge_path": "inf-openflights/inf-openflights.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "default_weight": 1.0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
@@ -14951,7 +14767,6 @@
                 "name": "SW-10000-3-0d2-trial3",
                 "edge_path": "SW-10000-3-0d2-trial3/SW-10000-3-0d2-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -14976,7 +14791,6 @@
                 "edge_path": "twitter/twitter.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -15027,7 +14841,6 @@
                 "name": "CL-1000000-1d8-trial3",
                 "edge_path": "CL-1000000-1d8-trial3/CL-1000000-1d8-trial3.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -15051,7 +14864,6 @@
                 "name": "SW-10000-3-0d1-trial2",
                 "edge_path": "SW-10000-3-0d1-trial2/SW-10000-3-0d1-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -15181,7 +14993,6 @@
                 "edge_path": "bio-human-gene2/bio-human-gene2.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -15232,7 +15043,6 @@
                 "name": "CL-100000-2d1-trial1",
                 "edge_path": "CL-100000-2d1-trial1/CL-100000-2d1-trial1.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -15414,7 +15224,6 @@
                 "edge_path": "socfb-nips-ego/socfb-nips-ego.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -15464,7 +15273,6 @@
                 "edge_path": "tech-arenas-jazz/tech-arenas-jazz.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -15488,7 +15296,6 @@
                 "name": "CL-1000-1d8-trial3",
                 "edge_path": "CL-1000-1d8-trial3/CL-1000-1d8-trial3.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -15565,7 +15372,6 @@
                 "name": "SW-100-4-0d3-trial1",
                 "edge_path": "SW-100-4-0d3-trial1/SW-100-4-0d3-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -15639,7 +15445,6 @@
                 "name": "SW-10000-6-0d3-trial1",
                 "edge_path": "SW-10000-6-0d3-trial1/SW-10000-6-0d3-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -15716,7 +15521,6 @@
                 "edge_path": "petster-friendships-hamster/petster-friendships-hamster.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -15767,7 +15571,6 @@
                 "name": "CL-10000-2d1-trial3",
                 "edge_path": "CL-10000-2d1-trial3/CL-10000-2d1-trial3.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -15816,7 +15619,6 @@
                 "name": "SW-100-3-0d2-trial1",
                 "edge_path": "SW-100-3-0d2-trial1/SW-100-3-0d2-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -16052,7 +15854,6 @@
                 "name": "CL-1000000-1d7-trial1",
                 "edge_path": "CL-1000000-1d7-trial1/CL-1000000-1d7-trial1.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -16410,7 +16211,6 @@
                 "name": "SW-1000-3-0d3-trial1",
                 "edge_path": "SW-1000-3-0d3-trial1/SW-1000-3-0d3-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -16435,7 +16235,6 @@
                 "edge_path": "maayan-Stelzl/maayan-Stelzl.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -16511,7 +16310,6 @@
                 "name": "CL-1000-2d0-trial3",
                 "edge_path": "CL-1000-2d0-trial3/CL-1000-2d0-trial3.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -16665,7 +16463,6 @@
                 "edge_path": "aff-wiki-en-article-cat/aff-wiki-en-article-cat.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -16715,7 +16512,6 @@
                 "name": "SW-10000-5-0d1-trial1",
                 "edge_path": "SW-10000-5-0d1-trial1/SW-10000-5-0d1-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -16967,7 +16763,6 @@
                 "name": "CL-10000-1d9-trial3",
                 "edge_path": "CL-10000-1d9-trial3/CL-10000-1d9-trial3.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -16991,7 +16786,6 @@
                 "name": "SW-1000-4-0d2-trial1",
                 "edge_path": "SW-1000-4-0d2-trial1/SW-1000-4-0d2-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -17042,7 +16836,6 @@
                 "edge_path": "ucidata-zachary/ucidata-zachary.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -17066,7 +16859,6 @@
                 "name": "CL-100000-2d0-trial1",
                 "edge_path": "CL-100000-2d0-trial1/CL-100000-2d0-trial1.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -17091,7 +16883,6 @@
                 "edge_path": "soc-physicians/soc-physicians.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -17320,7 +17111,6 @@
                 "edge_path": "soc-loc-brightkite/soc-loc-brightkite.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -17396,7 +17186,6 @@
                 "name": "SW-10000-3-0d3-trial3",
                 "edge_path": "SW-10000-3-0d3-trial3/SW-10000-3-0d3-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -17421,7 +17210,6 @@
                 "name": "soc-themarker",
                 "edge_path": "soc-themarker/soc-themarker.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -17523,7 +17311,6 @@
                 "edge_path": "maayan-vidal/maayan-vidal.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -17577,7 +17364,6 @@
                 "edge_list_edge_types_column_number": 2,
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -17601,7 +17387,6 @@
                 "name": "CL-1000000-1d9-trial3",
                 "edge_path": "CL-1000000-1d9-trial3/CL-1000000-1d9-trial3.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -17703,7 +17488,6 @@
                 "name": "SW-10000-4-0d2-trial3",
                 "edge_path": "SW-10000-4-0d2-trial3/SW-10000-4-0d2-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -17752,7 +17536,6 @@
                 "name": "SW-100-6-0d2-trial3",
                 "edge_path": "SW-100-6-0d2-trial3/SW-100-6-0d2-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -17830,7 +17613,6 @@
                 "edge_path": "SFHH-conf-sensor/SFHH-conf-sensor.edges",
                 "edge_list_edge_types_column_number": 2,
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -17854,7 +17636,6 @@
                 "name": "SW-10000-4-0d1-trial2",
                 "edge_path": "SW-10000-4-0d1-trial2/SW-10000-4-0d1-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -17931,7 +17712,6 @@
                 "name": "SW-100-6-0d1-trial2",
                 "edge_path": "SW-100-6-0d1-trial2/SW-100-6-0d1-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -18061,7 +17841,6 @@
                 "name": "SW-1000-5-0d2-trial2",
                 "edge_path": "SW-1000-5-0d2-trial2/SW-1000-5-0d2-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -18111,7 +17890,6 @@
                 "name": "SW-1000-5-0d1-trial3",
                 "edge_path": "SW-1000-5-0d1-trial3/SW-1000-5-0d1-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -18136,7 +17914,6 @@
                 "edge_path": "flickr-groupmemberships/flickr-groupmemberships.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -18160,7 +17937,6 @@
                 "name": "CL-1000000-2d1-trial3",
                 "edge_path": "CL-1000000-2d1-trial3/CL-1000000-2d1-trial3.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -18263,7 +18039,6 @@
                 "name": "infect-dublin",
                 "edge_path": "infect-dublin/infect-dublin.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -18287,7 +18062,6 @@
                 "name": "SW-1000-6-0d3-trial3",
                 "edge_path": "SW-1000-6-0d3-trial3/SW-1000-6-0d3-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -18442,7 +18216,6 @@
                 "name": "CL-10000-1d7-trial1",
                 "edge_path": "CL-10000-1d7-trial1/CL-10000-1d7-trial1.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -18623,7 +18396,6 @@
                 "edge_path": "web-hudong/web-hudong.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -18647,7 +18419,6 @@
                 "name": "CL-100000-1d8-trial1",
                 "edge_path": "CL-100000-1d8-trial1/CL-100000-1d8-trial1.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -18671,7 +18442,6 @@
                 "name": "SW-100-5-0d3-trial2",
                 "edge_path": "SW-100-5-0d3-trial2/SW-100-5-0d3-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -18722,7 +18492,6 @@
                 "edge_path": "dbpedia-producer/dbpedia-producer.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -18748,7 +18517,6 @@
                 "edge_path": "soc-hamsterster/soc-hamsterster.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -18877,7 +18645,6 @@
                 "name": "fb-messages",
                 "edge_path": "fb-messages/fb-messages.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -18930,7 +18697,6 @@
                 "name": "soc-anybeat",
                 "edge_path": "soc-anybeat/soc-anybeat.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -19032,7 +18798,6 @@
                 "name": "rt-higgs",
                 "edge_path": "rt-higgs/rt-higgs.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -19082,7 +18847,6 @@
                 "name": "SW-10000-3-0d3-trial2",
                 "edge_path": "SW-10000-3-0d3-trial2/SW-10000-3-0d3-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -19132,7 +18896,6 @@
                 "edge_list_edge_types_column_number": 2,
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -19237,7 +19000,6 @@
                 "name": "CL-1000000-1d9-trial2",
                 "edge_path": "CL-1000000-1d9-trial2/CL-1000000-1d9-trial2.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -19261,7 +19023,6 @@
                 "name": "contiguous-usa",
                 "edge_path": "contiguous-usa/contiguous-usa.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -19335,7 +19096,6 @@
                 "name": "bio-CE-GN",
                 "edge_path": "bio-CE-GN/bio-CE-GN.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -19518,7 +19278,6 @@
                 "name": "SW-1000-5-0d2-trial3",
                 "edge_path": "SW-1000-5-0d2-trial3/SW-1000-5-0d2-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -19670,7 +19429,6 @@
                 "edge_path": "flickrEdges/flickrEdges.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -19694,7 +19452,6 @@
                 "name": "SW-1000-5-0d1-trial2",
                 "edge_path": "SW-1000-5-0d1-trial2/SW-1000-5-0d1-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -19744,7 +19501,6 @@
                 "edge_path": "linux/linux.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -19768,7 +19524,6 @@
                 "name": "SW-100-6-0d2-trial2",
                 "edge_path": "SW-100-6-0d2-trial2/SW-100-6-0d2-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -19817,7 +19572,6 @@
                 "name": "SW-10000-4-0d2-trial2",
                 "edge_path": "SW-10000-4-0d2-trial2/SW-10000-4-0d2-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -19841,7 +19595,6 @@
                 "name": "SW-100-6-0d1-trial3",
                 "edge_path": "SW-100-6-0d1-trial3/SW-100-6-0d1-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -19921,7 +19674,6 @@
                 "edge_path": "aff-orkut-user2groups/aff-orkut-user2groups.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "default_weight": 1.0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
@@ -19947,7 +19699,6 @@
                 "name": "SW-10000-4-0d1-trial3",
                 "edge_path": "SW-10000-4-0d1-trial3/SW-10000-4-0d1-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -19972,7 +19723,6 @@
                 "edge_path": "livejournal-groupmemberships/livejournal-groupmemberships.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -20076,7 +19826,6 @@
                 "name": "bio-DM-CX",
                 "edge_path": "bio-DM-CX/bio-DM-CX.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -20101,7 +19850,6 @@
                 "name": "SW-100-5-0d3-trial3",
                 "edge_path": "SW-100-5-0d3-trial3/SW-100-5-0d3-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -20179,7 +19927,6 @@
                 "edge_path": "wiki-en-cat/wiki-en-cat.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -20229,7 +19976,6 @@
                 "name": "CL-1000000-2d1-trial2",
                 "edge_path": "CL-1000000-2d1-trial2/CL-1000000-2d1-trial2.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -20255,7 +20001,6 @@
                 "edge_path": "web-wiki-ch-internal/web-wiki-ch-internal.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -20383,7 +20128,6 @@
                 "name": "SW-1000-6-0d3-trial2",
                 "edge_path": "SW-1000-6-0d3-trial2/SW-1000-6-0d3-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -20638,7 +20382,6 @@
                 "edge_path": "ca-IMDB/ca-IMDB.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -20716,7 +20459,6 @@
                 "edge_path": "inf-contiguous-usa/inf-contiguous-usa.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -20766,7 +20508,6 @@
                 "edge_path": "arenas-jazz/arenas-jazz.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -21153,7 +20894,6 @@
                 "name": "CL-1000-1d8-trial2",
                 "edge_path": "CL-1000-1d8-trial2/CL-1000-1d8-trial2.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -21414,7 +21154,6 @@
                 "name": "bio-SC-LC",
                 "edge_path": "bio-SC-LC/bio-SC-LC.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -21464,7 +21203,6 @@
                 "name": "CL-10000-2d1-trial2",
                 "edge_path": "CL-10000-2d1-trial2/CL-10000-2d1-trial2.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -21514,7 +21252,6 @@
                 "name": "SW-100-3-0d1-trial1",
                 "edge_path": "SW-100-3-0d1-trial1/SW-100-3-0d1-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -21716,7 +21453,6 @@
                 "name": "CL-1000-2d0-trial2",
                 "edge_path": "CL-1000-2d0-trial2/CL-1000-2d0-trial2.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -21794,7 +21530,6 @@
                 "edge_path": "tech-as-skitter/tech-as-skitter.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -21846,7 +21581,6 @@
                 "edge_path": "cit-DBLP/cit-DBLP.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "default_weight": 1.0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
@@ -21873,7 +21607,6 @@
                 "edge_path": "wiki-Talk/wiki-Talk.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -21950,7 +21683,6 @@
                 "edge_path": "aff-dbpedia-users2country/aff-dbpedia-users2country.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "default_weight": 1.0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
@@ -22056,7 +21788,6 @@
                 "edge_path": "dbpedia-all/dbpedia-all.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -22208,7 +21939,6 @@
                 "edge_path": "soc-livejournal07/soc-livejournal07.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": "\t",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -22259,7 +21989,6 @@
                 "name": "SW-1000-4-0d1-trial1",
                 "edge_path": "SW-1000-4-0d1-trial1/SW-1000-4-0d1-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -22384,7 +22113,6 @@
                 "name": "CL-10000-1d9-trial2",
                 "edge_path": "CL-10000-1d9-trial2/CL-10000-1d9-trial2.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -22462,7 +22190,6 @@
                 "edge_path": "dbpedia-starring/dbpedia-starring.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -22486,7 +22213,6 @@
                 "name": "SW-10000-5-0d2-trial1",
                 "edge_path": "SW-10000-5-0d2-trial1/SW-10000-5-0d2-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -22563,7 +22289,6 @@
                 "edge_path": "web-baidu-baike/web-baidu-baike.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -22613,7 +22338,6 @@
                 "name": "web-ClueWeb09",
                 "edge_path": "web-ClueWeb09/web-ClueWeb09.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -22638,7 +22362,6 @@
                 "name": "web-cc12-PayLevelDomain",
                 "edge_path": "web-cc12-PayLevelDomain/web-cc12-PayLevelDomain.edges",
                 "edge_list_separator": "\t",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -22716,7 +22439,6 @@
                 "edge_path": "citeulike-ui/citeulike-ui.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 3
@@ -22742,7 +22464,6 @@
                 "edge_path": "citeulike-ti/citeulike-ti.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 3
@@ -22793,7 +22514,6 @@
                 "name": "bio-SC-GT",
                 "edge_path": "bio-SC-GT/bio-SC-GT.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -22818,7 +22538,6 @@
                 "name": "SW-1000-5-0d2-trial1",
                 "edge_path": "SW-1000-5-0d2-trial1/SW-1000-5-0d2-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -22870,7 +22589,6 @@
                 "edge_path": "copresence-LyonSchool/copresence-LyonSchool.edges",
                 "edge_list_edge_types_column_number": 2,
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -22920,7 +22638,6 @@
                 "name": "SW-10000-4-0d1-trial1",
                 "edge_path": "SW-10000-4-0d1-trial1/SW-10000-4-0d1-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -22972,7 +22689,6 @@
                 "name": "SW-100-6-0d1-trial1",
                 "edge_path": "SW-100-6-0d1-trial1/SW-100-6-0d1-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -23131,7 +22847,6 @@
                 "edge_path": "primary-school-proximity/primary-school-proximity.edges",
                 "edge_list_edge_types_column_number": 2,
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -23312,7 +23027,6 @@
                 "edge_path": "opsahl-openflights/opsahl-openflights.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -23362,7 +23076,6 @@
                 "edge_path": "friendster/friendster.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -23387,7 +23100,6 @@
                 "edge_path": "livejournal-links/livejournal-links.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -23413,7 +23125,6 @@
                 "edge_path": "soc-catster/soc-catster.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -23462,7 +23173,6 @@
                 "name": "CL-100000-2d0-trial2",
                 "edge_path": "CL-100000-2d0-trial2/CL-100000-2d0-trial2.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -23719,7 +23429,6 @@
                 "edge_path": "bio-grid-yeast/bio-grid-yeast.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -23744,7 +23453,6 @@
                 "edge_path": "tech-ip/tech-ip.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -23875,7 +23583,6 @@
                 "name": "infect-hyper",
                 "edge_path": "infect-hyper/infect-hyper.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -23899,7 +23606,6 @@
                 "name": "CL-100000-1d8-trial2",
                 "edge_path": "CL-100000-1d8-trial2/CL-100000-1d8-trial2.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -23923,7 +23629,6 @@
                 "name": "SW-100-5-0d3-trial1",
                 "edge_path": "SW-100-5-0d3-trial1/SW-100-5-0d3-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -23975,7 +23680,6 @@
                 "edge_path": "copresence-LH10/copresence-LH10.edges",
                 "edge_list_edge_types_column_number": 2,
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -24024,7 +23728,6 @@
                 "name": "CL-10000-1d7-trial2",
                 "edge_path": "CL-10000-1d7-trial2/CL-10000-1d7-trial2.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -24180,7 +23883,6 @@
                 "edge_path": "ca-opsahl-collaboration/ca-opsahl-collaboration.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -24259,7 +23961,6 @@
                 "edge_list_edge_types_column_number": 2,
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -24284,7 +23985,6 @@
                 "edge_path": "email-dnc-corecipient/email-dnc-corecipient.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -24384,7 +24084,6 @@
                 "name": "CL-1000000-1d7-trial2",
                 "edge_path": "CL-1000000-1d7-trial2/CL-1000000-1d7-trial2.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -24409,7 +24108,6 @@
                 "name": "bio-HS-HT",
                 "edge_path": "bio-HS-HT/bio-HS-HT.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -24512,7 +24210,6 @@
                 "name": "SW-100-3-0d1-trial3",
                 "edge_path": "SW-100-3-0d1-trial3/SW-100-3-0d1-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -24565,7 +24262,6 @@
                 "edge_path": "com-dblp/com-dblp.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -24589,7 +24285,6 @@
                 "name": "SW-100-3-0d2-trial2",
                 "edge_path": "SW-100-3-0d2-trial2/SW-100-3-0d2-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -24744,7 +24439,6 @@
                 "edge_path": "ego-facebook/ego-facebook.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -24795,7 +24489,6 @@
                 "name": "SW-100-4-0d3-trial2",
                 "edge_path": "SW-100-4-0d3-trial2/SW-100-4-0d3-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -24821,7 +24514,6 @@
                 "edge_path": "web-baidu-baike-related/web-baidu-baike-related.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -24847,7 +24539,6 @@
                 "edge_path": "soc-orkut-dir/soc-orkut-dir.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": "\t",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -24871,7 +24562,6 @@
                 "name": "SW-10000-6-0d3-trial2",
                 "edge_path": "SW-10000-6-0d3-trial2/SW-10000-6-0d3-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -24922,7 +24612,6 @@
                 "edge_path": "flickr-links/flickr-links.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -24947,7 +24636,6 @@
                 "edge_path": "bio-grid-plant/bio-grid-plant.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -25025,7 +24713,6 @@
                 "edge_path": "cit-HepTh2007/cit-HepTh2007.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "default_weight": 1.0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
@@ -25130,7 +24817,6 @@
                 "name": "bio-WormNet-v3-benchmark",
                 "edge_path": "bio-WormNet-v3-benchmark/bio-WormNet-v3-benchmark.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -25234,7 +24920,6 @@
                 "name": "SW-1000-4-0d2-trial2",
                 "edge_path": "SW-1000-4-0d2-trial2/SW-1000-4-0d2-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -25337,7 +25022,6 @@
                 "name": "bio-CE-HT",
                 "edge_path": "bio-CE-HT/bio-CE-HT.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -25491,7 +25175,6 @@
                 "name": "SW-1000-4-0d1-trial3",
                 "edge_path": "SW-1000-4-0d1-trial3/SW-1000-4-0d1-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -25668,7 +25351,6 @@
                 "edge_path": "orkut-groupmemberships/orkut-groupmemberships.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -25692,7 +25374,6 @@
                 "name": "SW-10000-5-0d2-trial3",
                 "edge_path": "SW-10000-5-0d2-trial3/SW-10000-5-0d2-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -25793,7 +25474,6 @@
                 "name": "SW-10000-5-0d1-trial2",
                 "edge_path": "SW-10000-5-0d1-trial2/SW-10000-5-0d1-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -26081,7 +25761,6 @@
                 "name": "bio-DR-CX",
                 "edge_path": "bio-DR-CX/bio-DR-CX.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -26107,7 +25786,6 @@
                 "edge_path": "ip-trace/ip-trace.edges",
                 "edge_list_edge_types_column_number": 2,
                 "edge_list_separator": "\t",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -26209,7 +25887,6 @@
                 "name": "soc-twitter-higgs",
                 "edge_path": "soc-twitter-higgs/soc-twitter-higgs.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -26233,7 +25910,6 @@
                 "name": "SW-1000-3-0d3-trial2",
                 "edge_path": "SW-1000-3-0d3-trial2/SW-1000-3-0d3-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -26310,7 +25986,6 @@
                 "edge_path": "cfinder-google/cfinder-google.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -26415,7 +26090,6 @@
                 "edge_path": "bio-mouse-gene/bio-mouse-gene.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -26440,7 +26114,6 @@
                 "name": "SW-100-3-0d1-trial2",
                 "edge_path": "SW-100-3-0d1-trial2/SW-100-3-0d1-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -26541,7 +26214,6 @@
                 "name": "SW-100-3-0d2-trial3",
                 "edge_path": "SW-100-3-0d2-trial3/SW-100-3-0d2-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -26567,7 +26239,6 @@
                 "edge_path": "copresence-InVS13/copresence-InVS13.edges",
                 "edge_list_edge_types_column_number": 2,
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -26591,7 +26262,6 @@
                 "name": "CL-10000-2d1-trial1",
                 "edge_path": "CL-10000-2d1-trial1/CL-10000-2d1-trial1.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -26643,7 +26313,6 @@
                 "name": "bio-DM-LC",
                 "edge_path": "bio-DM-LC/bio-DM-LC.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -26721,7 +26390,6 @@
                 "edge_path": "citeulike-ut/citeulike-ut.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 3
@@ -26746,7 +26414,6 @@
                 "name": "CL-1000000-1d7-trial3",
                 "edge_path": "CL-1000000-1d7-trial3/CL-1000000-1d7-trial3.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -26823,7 +26490,6 @@
                 "edge_path": "dbpedia-writer/dbpedia-writer.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -26898,7 +26564,6 @@
                 "name": "CL-1000-1d8-trial1",
                 "edge_path": "CL-1000-1d8-trial1/CL-1000-1d8-trial1.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -26949,7 +26614,6 @@
                 "edge_path": "hospital-ward-proximity/hospital-ward-proximity.edges",
                 "edge_list_edge_types_column_number": 2,
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -27051,7 +26715,6 @@
                 "edge_path": "maayan-pdzbase/maayan-pdzbase.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -27076,7 +26739,6 @@
                 "edge_path": "maayan-foodweb/maayan-foodweb.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -27100,7 +26762,6 @@
                 "name": "SW-10000-6-0d3-trial3",
                 "edge_path": "SW-10000-6-0d3-trial3/SW-10000-6-0d3-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -27151,7 +26812,6 @@
                 "name": "SW-100-4-0d3-trial3",
                 "edge_path": "SW-100-4-0d3-trial3/SW-100-4-0d3-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -27283,7 +26943,6 @@
                 "name": "SW-10000-5-0d2-trial2",
                 "edge_path": "SW-10000-5-0d2-trial2/SW-10000-5-0d2-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -27410,7 +27069,6 @@
                 "name": "SW-10000-5-0d1-trial3",
                 "edge_path": "SW-10000-5-0d1-trial3/SW-10000-5-0d1-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -27567,7 +27225,6 @@
                 "name": "SW-1000-4-0d2-trial3",
                 "edge_path": "SW-1000-4-0d2-trial3/SW-1000-4-0d2-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -27591,7 +27248,6 @@
                 "name": "CL-10000-1d9-trial1",
                 "edge_path": "CL-10000-1d9-trial1/CL-10000-1d9-trial1.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -27641,7 +27297,6 @@
                 "edge_path": "aves-wildbird-network/aves-wildbird-network.edges",
                 "edge_list_edge_types_column_number": 3,
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -27666,7 +27321,6 @@
                 "name": "SW-1000-4-0d1-trial2",
                 "edge_path": "SW-1000-4-0d1-trial2/SW-1000-4-0d1-trial2.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -27741,7 +27395,6 @@
                 "name": "SW-1000-3-0d3-trial3",
                 "edge_path": "SW-1000-3-0d3-trial3/SW-1000-3-0d3-trial3.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -27767,7 +27420,6 @@
                 "edge_list_edge_types_column_number": 2,
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -27868,7 +27520,6 @@
                 "edge_path": "copresence-SFHH/copresence-SFHH.edges",
                 "edge_list_edge_types_column_number": 2,
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -27893,7 +27544,6 @@
                 "edge_path": "dbpedia-link/dbpedia-link.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -28206,7 +27856,6 @@
                 "edge_path": "tech-arenas-pgp/tech-arenas-pgp.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -28231,7 +27880,6 @@
                 "name": "bio-celegans-dir",
                 "edge_path": "bio-celegans-dir/bio-celegans-dir.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -28255,7 +27903,6 @@
                 "name": "CL-1000-2d0-trial1",
                 "edge_path": "CL-1000-2d0-trial1/CL-1000-2d0-trial1.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -28488,7 +28135,6 @@
                 "name": "SW-100-6-0d2-trial1",
                 "edge_path": "SW-100-6-0d2-trial1/SW-100-6-0d2-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -28512,7 +28158,6 @@
                 "name": "SW-10000-4-0d2-trial1",
                 "edge_path": "SW-10000-4-0d2-trial1/SW-10000-4-0d2-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -28537,7 +28182,6 @@
                 "edge_path": "gottron-excellent/gottron-excellent.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -28562,7 +28206,6 @@
                 "name": "SW-1000-5-0d1-trial1",
                 "edge_path": "SW-1000-5-0d1-trial1/SW-1000-5-0d1-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -28695,7 +28338,6 @@
                 "name": "eco-mangwet",
                 "edge_path": "eco-mangwet/eco-mangwet.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -28800,7 +28442,6 @@
                 "edge_path": "soc-livejournal-user-groups/soc-livejournal-user-groups.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "default_weight": 1.0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
@@ -28829,7 +28470,6 @@
                 "edge_list_edge_types_column_number": 2,
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -28903,7 +28543,6 @@
                 "name": "CL-100000-2d0-trial3",
                 "edge_path": "CL-100000-2d0-trial3/CL-100000-2d0-trial3.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -28928,7 +28567,6 @@
                 "edge_path": "petster-hamster/petster-hamster.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -28955,7 +28593,6 @@
                 "edge_list_edge_types_column_number": 2,
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -29031,7 +28668,6 @@
                 "name": "CL-1000000-1d9-trial1",
                 "edge_path": "CL-1000000-1d9-trial1/CL-1000000-1d9-trial1.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -29133,7 +28769,6 @@
                 "name": "SW-10000-3-0d3-trial1",
                 "edge_path": "SW-10000-3-0d3-trial1/SW-10000-3-0d3-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -29184,7 +28819,6 @@
                 "edge_path": "web-NotreDame/web-NotreDame.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "default_weight": 1.0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
@@ -29237,7 +28871,6 @@
                 "edge_path": "IMDB/imdb.edges",
                 "edge_list_edge_types_column_number": 3,
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -29252,18 +28885,12 @@
             "arguments": {
                 "directed": false,
                 "edge_list_header": false,
-                "node_list_header": false,
                 "name": "IMDB",
                 "edge_path": "IMDB/IMDB.edges",
                 "edge_list_comment_symbol": "%",
-                "edge_list_edge_types_column_number": 3,
-                "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
+                "edge_list_separator": " ",
                 "sources_column_number": 0,
-                "destinations_column_number": 1,
-                "node_path": "IMDB/IMDB.node_labels",
-                "nodes_column_number": 0,
-                "node_list_node_types_column_number": 1
+                "destinations_column_number": 1
             }
         }
     },
@@ -29338,7 +28965,6 @@
                 "edge_path": "lasagne-spanishbook/lasagne-spanishbook.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -29808,7 +29434,6 @@
                 "name": "web-ClueWeb09-50m",
                 "edge_path": "web-ClueWeb09-50m/web-ClueWeb09-50m.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -29857,7 +29482,6 @@
                 "name": "SW-1000-6-0d3-trial1",
                 "edge_path": "SW-1000-6-0d3-trial1/SW-1000-6-0d3-trial1.edges",
                 "edge_list_separator": " ",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -29934,7 +29558,6 @@
                 "edge_path": "ego-twitter/ego-twitter.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -29984,7 +29607,6 @@
                 "edge_path": "bio-grid-mouse/bio-grid-mouse.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -30008,7 +29630,6 @@
                 "name": "CL-1000000-2d1-trial1",
                 "edge_path": "CL-1000000-2d1-trial1/CL-1000000-2d1-trial1.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -30215,7 +29836,6 @@
                 "name": "CL-100000-1d8-trial3",
                 "edge_path": "CL-100000-1d8-trial3/CL-100000-1d8-trial3.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -30268,7 +29888,6 @@
                 "edge_path": "soc-flickr-und/soc-flickr-und.edges",
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": "\t",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -30321,7 +29940,6 @@
                 "edge_list_edge_types_column_number": 2,
                 "edge_list_comment_symbol": "%",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -30345,7 +29963,6 @@
                 "name": "CL-10000-1d7-trial3",
                 "edge_path": "CL-10000-1d7-trial3/CL-10000-1d7-trial3.edges",
                 "edge_list_separator": ",",
-                "edge_list_rows_to_skip": 0,
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }

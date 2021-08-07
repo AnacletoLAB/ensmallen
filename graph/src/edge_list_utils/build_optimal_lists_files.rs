@@ -171,7 +171,8 @@ pub fn build_optimal_lists_files(
         if target_node_path.is_none() {
             return Err(concat!(
                 "When providing the original node path that must be ",
-                "parsed to produce the op"
+                "parsed to produce the optimized node list, also the ",
+                "target node path must be provided."
             )
             .to_string());
         }
