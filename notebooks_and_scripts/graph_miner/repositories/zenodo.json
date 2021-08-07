@@ -8,7 +8,7 @@
                 "giant-tn.tar.gz"
             ],
             "arguments": {
-                "edge_path": "Supervised-learning is an accurate method for network-based gene classification - Data/networks/GIANT-TN.edg",
+                "edge_path": "giant-tn/Supervised-learning is an accurate method for network-based gene classification - Data/networks/GIANT-TN.edg",
                 "edge_list_separator": "\t",
                 "name": "GIANT-TN",
                 "sources_column_number": 0,
