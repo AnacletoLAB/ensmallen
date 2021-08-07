@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph bn-fly-drosophila-medulla-1.
+This file offers the methods to automatically retrieve the graph bn-fly-drosophila_medulla_1.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -45,7 +45,7 @@ def BNFlyDrosophilaMedulla(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the bn-fly-drosophila-medulla-1 graph.
+    """Return new instance of the bn-fly-drosophila_medulla_1 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -72,7 +72,7 @@ def BNFlyDrosophilaMedulla(
 
     Returns
     -----------------------
-    Instace of bn-fly-drosophila-medulla-1 graph.
+    Instace of bn-fly-drosophila_medulla_1 graph.
 
 	References
 	---------------------
