@@ -5,7 +5,7 @@
                 "https://zenodo.org/record/3352348/files/Supervised-learning%20is%20an%20accurate%20method%20for%20network-based%20gene%20classification%20-%20Data.tar.gz"
             ],
             "arguments": {
-                "edge_file": "Supervised-learning is an accurate method for network-based gene classification - Data/networks/GIANT-TN.edg",
+                "edge_path": "Supervised-learning is an accurate method for network-based gene classification - Data/networks/GIANT-TN.edg",
                 "edge_list_separator": "\t",
                 "name": "GIANT-TN",
                 "sources_column_number": 0,
