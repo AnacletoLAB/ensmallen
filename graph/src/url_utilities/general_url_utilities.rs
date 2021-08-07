@@ -42609,7 +42609,7 @@ pub fn get_node_source_html_url_from_node_name(node_name: &str) -> String {
 pub fn get_node_type_source_html_url_from_node_type_name(node_type_name: &str) -> String {
     match get_node_type_source_url_from_node_type_name(node_type_name) {
         Ok(url) => get_url_formatted(url.as_str(), node_type_name, "BioLink"),
-        Err(_) => node_type_name.to_string(),
+        Err(_) => escape(node_type_name).to_string(),
     }
 }
 
@@ -42626,6 +42626,6 @@ pub fn get_node_type_source_html_url_from_node_type_name(node_type_name: &str) -
 pub fn get_edge_type_source_html_url_from_edge_type_name(edge_type_name: &str) -> String {
     match get_edge_type_source_url_from_edge_type_name(edge_type_name) {
         Ok(url) => get_url_formatted(url.as_str(), edge_type_name, "BioLink"),
-        Err(_) => edge_type_name.to_string(),
+        Err(_) => escape(edge_type_name).to_string(),
     }
 }
