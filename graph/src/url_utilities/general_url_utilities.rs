@@ -1,6 +1,5 @@
 use super::*;
-use sanitize_html::sanitize_str;
-use sanitize_html::rules::predefined::DEFAULT;
+use v_htmlescape::escape;
 use itertools::Itertools;
 
 /// Returns whether the given node name is valid according to given seeds.
@@ -181,7 +180,7 @@ fn get_url_formatted(url: &str, content: &str, repository: &str) -> String {
     format!(
         "<a href='{url}' target='_blank' title='Go to {repository} to get more informations about {content}'>{content}</a>",
         url = url,
-        content = sanitize_str(&DEFAULT, content).unwrap(),
+        content = escape(content).to_string(),
         repository=repository
     )
 }
@@ -42593,7 +42592,7 @@ pub fn get_node_source_html_url_from_node_name(node_name: &str) -> String {
             node_name,
             get_node_repository_from_node_name(node_name).unwrap(),
         ),
-        Err(_) => sanitize_str(&DEFAULT, node_name).unwrap(),
+        Err(_) => escape(node_name).to_string()
     }
 }
 

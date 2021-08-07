@@ -38,7 +38,7 @@ num_cpus = "1.13.0"
 iter-set = "2.0.1"
 atomic_float = "0.1.0"
 num-traits = "0.2.14"
-sanitize_html = "0.7.0"
+v_htmlescape = "0.13.1"
 linked_hash_set = "0.1.4"
 indicatif = {version="0.16.0", features = ["rayon"]}
 arbitrary = { version = "0.4.5", features = ["derive"] }
