@@ -1,6 +1,6 @@
 use super::*;
-use v_htmlescape::escape;
 use itertools::Itertools;
+use v_htmlescape::escape;
 
 /// Returns whether the given node name is valid according to given seeds.
 ///
@@ -176,12 +176,12 @@ pub(crate) fn format_url_from_node_name(
 }
 
 /// Returns built url for given element
-fn get_url_formatted(url: &str, content: &str, repository: &str) -> String {
+fn get_url_formatted(url: &str, content: &str, repository: Option<&str>) -> String {
     format!(
         "<a href='{url}' target='_blank' title='Go to {repository} to get more informations about {content}'>{content}</a>",
         url = url,
         content = escape(content).to_string(),
-        repository=repository
+        repository=repository.unwrap_or("website")
     )
 }
 
@@ -21424,6 +21424,8 @@ pub fn get_node_source_url_from_node_name(node_name: &str) -> Result<String> {
 ///
 /// # Raises
 /// * If there is no known url source for the given node name.
+///
+/// TODO: update the list of supported repositories.
 pub fn get_node_repository_from_node_name(node_name: &str) -> Result<&str> {
     if is_valid_flybase_node_name(node_name) {
         return Ok("FlyBase");
@@ -22143,14 +22145,6 @@ pub fn get_node_repository_from_node_name(node_name: &str) -> Result<&str> {
 
     if is_valid_cord_pubmed_central_node_name(node_name) {
         return Ok("CORD Pubmed Central");
-    }
-
-    if is_valid_website_node_name(node_name) {
-        return Ok("Website");
-    }
-
-    if is_valid_angular_link_node_name(node_name) {
-        return Ok("Angular link");
     }
 
     if may_be_string_node_name(node_name) {
@@ -42517,11 +42511,39 @@ pub fn get_node_repository_from_node_name(node_name: &str) -> Result<&str> {
 
     Err(format!(
         concat!(
-            "There is no known url with a pattern for the provided node name {:?}.\n",
+            "There is no known repository with a pattern for the provided node name {:?}.\n",
             "If you believe there should be one, please do open a pull request to ",
             "add it to the library!"
         ),
         node_name
+    ))
+}
+
+/// Returns name of the graph repository from the given node type name.
+///
+/// # Implementative details
+/// Currently we have support for retrieving the repositories for:
+/// * [BioLink](https://biolink.github.io/biolink-model/)
+/// * Angular links
+///
+/// # Arguments
+/// * `node_type_name`: &str - Node type name to query for.
+///
+/// # Raises
+/// * If there is no known repository source for the given node type name.
+///
+pub fn get_node_type_repository_from_node_type_name(node_type_name: &str) -> Result<&str> {
+    if is_valid_biolink_from_object(node_type_name) {
+        return Ok("BioLink");
+    }
+
+    Err(format!(
+        concat!(
+            "There is no known repository with a pattern for the provided node type name {:?}.\n",
+            "If you believe there should be one, please do open a pull request to ",
+            "add it to the library!"
+        ),
+        node_type_name
     ))
 }
 
@@ -42547,6 +42569,34 @@ pub fn get_node_type_source_url_from_node_type_name(node_type_name: &str) -> Res
             "add it to the library!"
         ),
         node_type_name
+    ))
+}
+
+/// Returns name of the graph repository from the given edge type name.
+///
+/// # Implementative details
+/// Currently we have support for retrieving the repositories for:
+/// * [BioLink](https://biolink.github.io/biolink-model/)
+/// * Angular links
+///
+/// # Arguments
+/// * `edge_type_name`: &str - edge type name to query for.
+///
+/// # Raises
+/// * If there is no known repository source for the given edge type name.
+///
+pub fn get_edge_type_repository_from_edge_type_name(edge_type_name: &str) -> Result<&str> {
+    if is_valid_biolink_from_object(edge_type_name) {
+        return Ok("BioLink");
+    }
+
+    Err(format!(
+        concat!(
+            "There is no known repository with a pattern for the provided edge type name {:?}.\n",
+            "If you believe there should be one, please do open a pull request to ",
+            "add it to the library!"
+        ),
+        edge_type_name
     ))
 }
 
@@ -42590,9 +42640,9 @@ pub fn get_node_source_html_url_from_node_name(node_name: &str) -> String {
         Ok(url) => get_url_formatted(
             url.as_str(),
             node_name,
-            get_node_repository_from_node_name(node_name).unwrap(),
+            get_node_repository_from_node_name(node_name).ok(),
         ),
-        Err(_) => escape(node_name).to_string()
+        Err(_) => escape(node_name).to_string(),
     }
 }
 
@@ -42608,7 +42658,7 @@ pub fn get_node_source_html_url_from_node_name(node_name: &str) -> String {
 /// * `node_type_name`: &str - Node name to query for.
 pub fn get_node_type_source_html_url_from_node_type_name(node_type_name: &str) -> String {
     match get_node_type_source_url_from_node_type_name(node_type_name) {
-        Ok(url) => get_url_formatted(url.as_str(), node_type_name, "BioLink"),
+        Ok(url) => get_url_formatted(url.as_str(), node_type_name, get_node_type_repository_from_node_type_name(node_type_name).ok()),
         Err(_) => escape(node_type_name).to_string(),
     }
 }
@@ -42625,7 +42675,11 @@ pub fn get_node_type_source_html_url_from_node_type_name(node_type_name: &str) -
 /// * `edge_type_name`: &str - edge name to query for.
 pub fn get_edge_type_source_html_url_from_edge_type_name(edge_type_name: &str) -> String {
     match get_edge_type_source_url_from_edge_type_name(edge_type_name) {
-        Ok(url) => get_url_formatted(url.as_str(), edge_type_name, "BioLink"),
+        Ok(url) => get_url_formatted(
+            url.as_str(),
+            edge_type_name,
+            get_edge_type_repository_from_edge_type_name(edge_type_name).ok(),
+        ),
         Err(_) => escape(edge_type_name).to_string(),
     }
 }
