@@ -30105,8 +30105,8 @@
             "arguments": {
                 "directed": false,
                 "edge_list_header": false,
-                "name": "bn-fly-drosophila-medulla-1",
-                "edge_path": "bn-fly-drosophila-medulla-1/bn-fly-drosophila-medulla-1.edges",
+                "name": "bn-fly-drosophila_medulla_1",
+                "edge_path": "bn-fly-drosophila_medulla_1/bn/bn-fly-drosophila_medulla_1.edges",
                 "edge_list_separator": " ",
                 "sources_column_number": 0,
                 "destinations_column_number": 1
