@@ -110,26 +110,21 @@ class ZenodoGraphRepository(GraphRepository):
             ).read()
         ]
 
-    def get_graph_paths(self, graph_name: str, urls: List[str]) -> List[str]:
+    def get_graph_paths(self, graph_name: str, version: str) -> List[str]:
         """Return url for the given graph.
 
         Parameters
         -----------------------
         graph_name: str,
-            Name of graph to retrievel URLs for.
-        urls: List[str],
-            Urls from where to download the graphs.
+            Name of graph to retrievel paths for.
+        version: str,
+            Version to retrieve this information for.
 
         Returns
         -----------------------
         The paths where to store the downloaded graphs.
-
-        Implementative details
-        -----------------------
-        It is returned None because the path that is automatically
-        used by downloader is sufficiently precise.
         """
-        return None
+        return self._data[graph_name][version].get("paths")
 
     def get_graph_list(self) -> List[str]:
         """Return list of graph names."""
