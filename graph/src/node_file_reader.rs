@@ -660,7 +660,20 @@ impl NodeFileReader {
                 .iter()
                 .all(|val| val.is_none())
             {
-                return Err("Neither nodes ID column or node types column were given!".to_string());
+                return Err(format!(
+                    concat!(
+                        "Neither node names column nor node types column was provided ",
+                        "therefore it is not clear what to load from the provided node ",
+                        "list file.\n",
+                        "Either do not provide this node list file or alternatively ",
+                        "do provide the node names column and/or the node types column.\n",
+                        "Note that if the node names column is not provided but the ",
+                        "node types column is provided, the node names used will be the ",
+                        "lines number.\n",
+                        "The file path is {:?}."
+                    ),
+                    self.reader.as_ref().map(|reader| reader.path.clone())
+                ));
             }
 
             let columns_and_names = [

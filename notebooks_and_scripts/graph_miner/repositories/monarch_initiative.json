@@ -1,9 +1,9 @@
 {
     "Monarch": {
-        "202103": {
+        "202012": {
             "urls": [
-                "https://archive.monarchinitiative.org/202103/kgx/sri-reference-kg_nodes.tsv",
-                "https://archive.monarchinitiative.org/202103/kgx/sri-reference-kg_edges.tsv"
+                "https://archive.monarchinitiative.org/202012/kgx/sri-reference-kg_nodes.tsv.gz",
+                "https://archive.monarchinitiative.org/202012/kgx/sri-reference-kg_edges.tsv.gz"
             ],
             "arguments": {
                 "edge_path": "sri-reference-kg_edges.tsv",
@@ -17,10 +17,10 @@
                 "name": "Monarch"
             }
         },
-        "202012": {
+        "202103": {
             "urls": [
-                "https://archive.monarchinitiative.org/202012/kgx/sri-reference-kg_nodes.tsv.gz",
-                "https://archive.monarchinitiative.org/202012/kgx/sri-reference-kg_edges.tsv.gz"
+                "https://archive.monarchinitiative.org/202103/kgx/sri-reference-kg_nodes.tsv",
+                "https://archive.monarchinitiative.org/202103/kgx/sri-reference-kg_edges.tsv"
             ],
             "arguments": {
                 "edge_path": "sri-reference-kg_edges.tsv",
