@@ -99,6 +99,9 @@ pub(crate) fn parse_types<TypeT: ToFromUsize>(
         }
         (None, Some(ntn), false, None) => Ok(Some(Vocabulary::with_capacity(TypeT::to_usize(ntn)))),
         (None, None, false, None) => Ok(Some(Vocabulary::new())),
-        _ => unreachable!("All other cases must be explictily handled."),
+        all_others => unreachable!(
+            "All other cases must be explictily handled. Specifically, this case was composed of: {:?}.",
+            all_others
+        ),
     }
 }
