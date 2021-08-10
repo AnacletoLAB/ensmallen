@@ -51,13 +51,8 @@ test_meta_test:
 	$(MAKE) -C "./fuzzing/stupid_fuzzer" test_meta_test
 
 
-
-
-hfuzz_from_csv:
-	$(MAKE) -C "./fuzzing" hfuzz_from_csv
-
-hfuzz_from_vec:
-	$(MAKE) -C "./fuzzing" hfuzz_from_vec
+hfuzz_from_string:
+	$(MAKE) -C "./fuzzing" hfuzz_from_string
 
 hfuzz_meta_test:
 	$(MAKE) -C "./fuzzing" hfuzz_meta_test
