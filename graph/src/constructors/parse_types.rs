@@ -56,7 +56,7 @@ pub(crate) fn parse_types<TypeT: ToFromUsize>(
             }
             Ok(Some(types_vocabulary))
         },
-        (Some(nti), None, true, _) => {
+        (Some(nti), types_number, true, _) => {
             let (min, max) = nti
                 .map(|line| match line {
                     Ok((line_number, type_name)) => match type_name.parse::<TypeT>() {
@@ -85,6 +85,25 @@ pub(crate) fn parse_types<TypeT: ToFromUsize>(
                         (Err(e1), Err(_)) => Err(e1),
                     },
                 )?;
+            if let Some(types_number) = types_number{
+                if types_number != max - min{
+                    return Err(
+                        format!(
+                            concat!(
+                                "The provided types number `{}` does not match ",
+                                "the number of types computed by reading the provided ",
+                                "type list iterator, which yielded `{}` types from the ",
+                                "subtraction of the minimum and maximum values, which were ",
+                                "respectively `{}` and `{}`."
+                            ),
+                            types_number,
+                            max - min,
+                            min,
+                            max
+                        )
+                    );
+                }
+            }
             let minimum_node_ids = minimum_type_id.unwrap_or(min);
 
             if min < minimum_node_ids {
