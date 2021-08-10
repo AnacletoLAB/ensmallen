@@ -27,11 +27,11 @@ pub enum ItersWrapper<Item, I: Iterator<Item = Item>, P: ParallelIterator<Item =
 impl<Item, I: Iterator<Item = Item>, P: ParallelIterator<Item = Item>> fmt::Debug for ItersWrapper<Item, I, P> {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("ItersWrapper")
-            .field("is_parallel", match &self {
-                ItersWrapper::Parallel(_) => true,
-                ItersWrapper::Sequential(_) => false,
+            .field("iter_type", &match &self {
+                ItersWrapper::Parallel(_) => "Parallel",
+                ItersWrapper::Sequential(_) => "Sequential",
             })
-            .field("iter_type", std::any::type_name::<Item>().to_string())
+            .field("items_type", &std::any::type_name::<Item>())
             .finish()
     }
 }
