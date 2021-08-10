@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActorMovie.
+This file offers the methods to automatically retrieve the graph actor-movie.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def ActorMovie(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActorMovie graph.
+    """Return new instance of the actor-movie graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def ActorMovie(
 
     Returns
     -----------------------
-    Instace of ActorMovie graph.
+    Instace of actor-movie graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def ActorMovie(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActorMovie",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FbCmuCarnegie49.
+This file offers the methods to automatically retrieve the graph fb-CMU-Carnegie49.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def FbCmuCarnegie49(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FbCmuCarnegie49 graph.
+    """Return new instance of the fb-CMU-Carnegie49 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def FbCmuCarnegie49(
 
     Returns
     -----------------------
-    Instace of FbCmuCarnegie49 graph.
+    Instace of fb-CMU-Carnegie49 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def FbCmuCarnegie49(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FbCmuCarnegie49",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

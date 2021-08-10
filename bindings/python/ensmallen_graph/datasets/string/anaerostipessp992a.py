@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerostipesSp992a.
+This file offers the methods to automatically retrieve the graph Anaerostipes sp. 992a.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def AnaerostipesSp992a(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerostipesSp992a graph.
+    """Return new instance of the Anaerostipes sp. 992a graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def AnaerostipesSp992a(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of AnaerostipesSp992a graph.
+    Instace of Anaerostipes sp. 992a graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def AnaerostipesSp992a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaerostipesSp992a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TechP2pGnutella.
+This file offers the methods to automatically retrieve the graph tech-p2p-gnutella.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -43,7 +43,7 @@ def TechP2pGnutella(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TechP2pGnutella graph.
+    """Return new instance of the tech-p2p-gnutella graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -70,7 +70,7 @@ def TechP2pGnutella(
 
     Returns
     -----------------------
-    Instace of TechP2pGnutella graph.
+    Instace of tech-p2p-gnutella graph.
 
 	References
 	---------------------
@@ -98,7 +98,7 @@ def TechP2pGnutella(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TechP2pGnutella",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

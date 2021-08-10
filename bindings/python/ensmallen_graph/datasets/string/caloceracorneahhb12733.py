@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaloceraCorneaHhb12733.
+This file offers the methods to automatically retrieve the graph Calocera cornea HHB12733.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CaloceraCorneaHhb12733(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaloceraCorneaHhb12733 graph.
+    """Return new instance of the Calocera cornea HHB12733 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CaloceraCorneaHhb12733(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CaloceraCorneaHhb12733 graph.
+    Instace of Calocera cornea HHB12733 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CaloceraCorneaHhb12733(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaloceraCorneaHhb12733",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

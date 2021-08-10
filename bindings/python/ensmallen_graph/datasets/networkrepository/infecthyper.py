@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph InfectHyper.
+This file offers the methods to automatically retrieve the graph infect-hyper.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -38,7 +38,7 @@ def InfectHyper(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the InfectHyper graph.
+    """Return new instance of the infect-hyper graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -65,7 +65,7 @@ def InfectHyper(
 
     Returns
     -----------------------
-    Instace of InfectHyper graph.
+    Instace of infect-hyper graph.
 
 	References
 	---------------------
@@ -88,7 +88,7 @@ def InfectHyper(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="InfectHyper",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

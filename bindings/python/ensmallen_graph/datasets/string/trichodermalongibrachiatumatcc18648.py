@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichodermaLongibrachiatumAtcc18648.
+This file offers the methods to automatically retrieve the graph Trichoderma longibrachiatum ATCC 18648.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def TrichodermaLongibrachiatumAtcc18648(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichodermaLongibrachiatumAtcc18648 graph.
+    """Return new instance of the Trichoderma longibrachiatum ATCC 18648 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def TrichodermaLongibrachiatumAtcc18648(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of TrichodermaLongibrachiatumAtcc18648 graph.
+    Instace of Trichoderma longibrachiatum ATCC 18648 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def TrichodermaLongibrachiatumAtcc18648(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrichodermaLongibrachiatumAtcc18648",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

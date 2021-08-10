@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocPhysicians.
+This file offers the methods to automatically retrieve the graph soc-physicians.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def SocPhysicians(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocPhysicians graph.
+    """Return new instance of the soc-physicians graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def SocPhysicians(
 
     Returns
     -----------------------
-    Instace of SocPhysicians graph.
+    Instace of soc-physicians graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def SocPhysicians(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocPhysicians",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

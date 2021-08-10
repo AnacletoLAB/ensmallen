@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MiscJungCodeDep.
+This file offers the methods to automatically retrieve the graph misc-jung-code-dep.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -43,7 +43,7 @@ def MiscJungCodeDep(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MiscJungCodeDep graph.
+    """Return new instance of the misc-jung-code-dep graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -70,7 +70,7 @@ def MiscJungCodeDep(
 
     Returns
     -----------------------
-    Instace of MiscJungCodeDep graph.
+    Instace of misc-jung-code-dep graph.
 
 	References
 	---------------------
@@ -98,7 +98,7 @@ def MiscJungCodeDep(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MiscJungCodeDep",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

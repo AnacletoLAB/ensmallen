@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PetsterCarnivore.
+This file offers the methods to automatically retrieve the graph petster-carnivore.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def PetsterCarnivore(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PetsterCarnivore graph.
+    """Return new instance of the petster-carnivore graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def PetsterCarnivore(
 
     Returns
     -----------------------
-    Instace of PetsterCarnivore graph.
+    Instace of petster-carnivore graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def PetsterCarnivore(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PetsterCarnivore",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

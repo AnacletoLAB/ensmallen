@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WebNotredame.
+This file offers the methods to automatically retrieve the graph web-NotreDame.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def WebNotredame(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WebNotredame graph.
+    """Return new instance of the web-NotreDame graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def WebNotredame(
 
     Returns
     -----------------------
-    Instace of WebNotredame graph.
+    Instace of web-NotreDame graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def WebNotredame(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebNotredame",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph M14b.
+This file offers the methods to automatically retrieve the graph m14b.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def M14b(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the M14b graph.
+    """Return new instance of the m14b graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def M14b(
 
     Returns
     -----------------------
-    Instace of M14b graph.
+    Instace of m14b graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def M14b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="M14b",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

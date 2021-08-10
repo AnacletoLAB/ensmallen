@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSp166amftsu.
+This file offers the methods to automatically retrieve the graph Bacillus sp. 166amftsu.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def BacillusSp166amftsu(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSp166amftsu graph.
+    """Return new instance of the Bacillus sp. 166amftsu graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def BacillusSp166amftsu(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of BacillusSp166amftsu graph.
+    Instace of Bacillus sp. 166amftsu graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def BacillusSp166amftsu(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusSp166amftsu",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbNyu9.
+This file offers the methods to automatically retrieve the graph socfb-NYU9.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbNyu9(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbNyu9 graph.
+    """Return new instance of the socfb-NYU9 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbNyu9(
 
     Returns
     -----------------------
-    Instace of SocfbNyu9 graph.
+    Instace of socfb-NYU9 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbNyu9(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbNyu9",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

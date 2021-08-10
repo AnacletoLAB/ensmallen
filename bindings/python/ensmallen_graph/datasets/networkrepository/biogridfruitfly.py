@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BioGridFruitfly.
+This file offers the methods to automatically retrieve the graph bio-grid-fruitfly.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def BioGridFruitfly(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BioGridFruitfly graph.
+    """Return new instance of the bio-grid-fruitfly graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def BioGridFruitfly(
 
     Returns
     -----------------------
-    Instace of BioGridFruitfly graph.
+    Instace of bio-grid-fruitfly graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def BioGridFruitfly(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BioGridFruitfly",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

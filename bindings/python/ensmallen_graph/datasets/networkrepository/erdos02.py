@@ -78,7 +78,7 @@ def Erdos02(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Erdos02",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OlsenellaScatoligenes.
+This file offers the methods to automatically retrieve the graph Olsenella scatoligenes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def OlsenellaScatoligenes(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OlsenellaScatoligenes graph.
+    """Return new instance of the Olsenella scatoligenes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def OlsenellaScatoligenes(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of OlsenellaScatoligenes graph.
+    Instace of Olsenella scatoligenes graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def OlsenellaScatoligenes(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OlsenellaScatoligenes",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

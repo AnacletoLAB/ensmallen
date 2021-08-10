@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobisporaRosea.
+This file offers the methods to automatically retrieve the graph Microbispora rosea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def MicrobisporaRosea(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobisporaRosea graph.
+    """Return new instance of the Microbispora rosea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def MicrobisporaRosea(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of MicrobisporaRosea graph.
+    Instace of Microbispora rosea graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def MicrobisporaRosea(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobisporaRosea",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

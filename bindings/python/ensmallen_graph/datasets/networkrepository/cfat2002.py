@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CFat2002.
+This file offers the methods to automatically retrieve the graph c-fat200-2.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def CFat2002(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CFat2002 graph.
+    """Return new instance of the c-fat200-2 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def CFat2002(
 
     Returns
     -----------------------
-    Instace of CFat2002 graph.
+    Instace of c-fat200-2 graph.
 
 	References
 	---------------------
@@ -104,7 +104,7 @@ def CFat2002(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CFat2002",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

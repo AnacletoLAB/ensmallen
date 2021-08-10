@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermoanaerobacterSpA7a.
+This file offers the methods to automatically retrieve the graph Thermoanaerobacter sp. A7A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def ThermoanaerobacterSpA7a(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermoanaerobacterSpA7a graph.
+    """Return new instance of the Thermoanaerobacter sp. A7A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def ThermoanaerobacterSpA7a(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of ThermoanaerobacterSpA7a graph.
+    Instace of Thermoanaerobacter sp. A7A graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def ThermoanaerobacterSpA7a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermoanaerobacterSpA7a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

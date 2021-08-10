@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocTwitter2010.
+This file offers the methods to automatically retrieve the graph soc-twitter-2010.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -43,7 +43,7 @@ def SocTwitter2010(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocTwitter2010 graph.
+    """Return new instance of the soc-twitter-2010 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -70,7 +70,7 @@ def SocTwitter2010(
 
     Returns
     -----------------------
-    Instace of SocTwitter2010 graph.
+    Instace of soc-twitter-2010 graph.
 
 	References
 	---------------------
@@ -98,7 +98,7 @@ def SocTwitter2010(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocTwitter2010",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

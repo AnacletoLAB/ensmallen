@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidateDivisionWs6BacteriumGw2011Gwf23915.
+This file offers the methods to automatically retrieve the graph candidate division WS6 bacterium GW2011_GWF2_39_15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CandidateDivisionWs6BacteriumGw2011Gwf23915(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidateDivisionWs6BacteriumGw2011Gwf23915 graph.
+    """Return new instance of the candidate division WS6 bacterium GW2011_GWF2_39_15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CandidateDivisionWs6BacteriumGw2011Gwf23915(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CandidateDivisionWs6BacteriumGw2011Gwf23915 graph.
+    Instace of candidate division WS6 bacterium GW2011_GWF2_39_15 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CandidateDivisionWs6BacteriumGw2011Gwf23915(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidateDivisionWs6BacteriumGw2011Gwf23915",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

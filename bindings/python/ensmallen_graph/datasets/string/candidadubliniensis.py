@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidaDubliniensis.
+This file offers the methods to automatically retrieve the graph Candida dubliniensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CandidaDubliniensis(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidaDubliniensis graph.
+    """Return new instance of the Candida dubliniensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def CandidaDubliniensis(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CandidaDubliniensis graph.
+    Instace of Candida dubliniensis graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def CandidaDubliniensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidaDubliniensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

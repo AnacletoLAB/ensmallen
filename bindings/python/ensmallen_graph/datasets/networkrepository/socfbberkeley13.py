@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbBerkeley13.
+This file offers the methods to automatically retrieve the graph socfb-Berkeley13.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbBerkeley13(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbBerkeley13 graph.
+    """Return new instance of the socfb-Berkeley13 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbBerkeley13(
 
     Returns
     -----------------------
-    Instace of SocfbBerkeley13 graph.
+    Instace of socfb-Berkeley13 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbBerkeley13(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbBerkeley13",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

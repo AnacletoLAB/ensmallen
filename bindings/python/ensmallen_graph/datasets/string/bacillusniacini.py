@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusNiacini.
+This file offers the methods to automatically retrieve the graph Bacillus niacini.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def BacillusNiacini(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusNiacini graph.
+    """Return new instance of the Bacillus niacini graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def BacillusNiacini(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of BacillusNiacini graph.
+    Instace of Bacillus niacini graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def BacillusNiacini(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusNiacini",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

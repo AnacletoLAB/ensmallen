@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SedimenticolaSelenatireducensDsm17993.
+This file offers the methods to automatically retrieve the graph Sedimenticola selenatireducens DSM 17993.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def SedimenticolaSelenatireducensDsm17993(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SedimenticolaSelenatireducensDsm17993 graph.
+    """Return new instance of the Sedimenticola selenatireducens DSM 17993 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def SedimenticolaSelenatireducensDsm17993(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of SedimenticolaSelenatireducensDsm17993 graph.
+    Instace of Sedimenticola selenatireducens DSM 17993 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def SedimenticolaSelenatireducensDsm17993(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SedimenticolaSelenatireducensDsm17993",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

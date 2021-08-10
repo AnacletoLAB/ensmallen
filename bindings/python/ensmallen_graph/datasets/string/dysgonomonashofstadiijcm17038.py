@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DysgonomonasHofstadiiJcm17038.
+This file offers the methods to automatically retrieve the graph Dysgonomonas hofstadii JCM 17038.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def DysgonomonasHofstadiiJcm17038(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DysgonomonasHofstadiiJcm17038 graph.
+    """Return new instance of the Dysgonomonas hofstadii JCM 17038 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def DysgonomonasHofstadiiJcm17038(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of DysgonomonasHofstadiiJcm17038 graph.
+    Instace of Dysgonomonas hofstadii JCM 17038 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def DysgonomonasHofstadiiJcm17038(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DysgonomonasHofstadiiJcm17038",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

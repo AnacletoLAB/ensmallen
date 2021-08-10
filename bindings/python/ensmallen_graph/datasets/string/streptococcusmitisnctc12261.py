@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusMitisNctc12261.
+This file offers the methods to automatically retrieve the graph Streptococcus mitis NCTC 12261.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def StreptococcusMitisNctc12261(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusMitisNctc12261 graph.
+    """Return new instance of the Streptococcus mitis NCTC 12261 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def StreptococcusMitisNctc12261(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of StreptococcusMitisNctc12261 graph.
+    Instace of Streptococcus mitis NCTC 12261 graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def StreptococcusMitisNctc12261(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusMitisNctc12261",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

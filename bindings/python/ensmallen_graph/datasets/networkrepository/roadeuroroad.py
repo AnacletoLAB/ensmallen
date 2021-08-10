@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoadEuroroad.
+This file offers the methods to automatically retrieve the graph road-euroroad.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def RoadEuroroad(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoadEuroroad graph.
+    """Return new instance of the road-euroroad graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def RoadEuroroad(
 
     Returns
     -----------------------
-    Instace of RoadEuroroad graph.
+    Instace of road-euroroad graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def RoadEuroroad(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoadEuroroad",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

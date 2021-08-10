@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SyntrophaceaeBacteriumCg2305814.
+This file offers the methods to automatically retrieve the graph Syntrophaceae bacterium CG2_30_58_14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def SyntrophaceaeBacteriumCg2305814(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SyntrophaceaeBacteriumCg2305814 graph.
+    """Return new instance of the Syntrophaceae bacterium CG2_30_58_14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def SyntrophaceaeBacteriumCg2305814(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of SyntrophaceaeBacteriumCg2305814 graph.
+    Instace of Syntrophaceae bacterium CG2_30_58_14 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def SyntrophaceaeBacteriumCg2305814(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SyntrophaceaeBacteriumCg2305814",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

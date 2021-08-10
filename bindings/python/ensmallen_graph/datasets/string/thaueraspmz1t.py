@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThaueraSpMz1t.
+This file offers the methods to automatically retrieve the graph Thauera sp. MZ1T.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def ThaueraSpMz1t(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThaueraSpMz1t graph.
+    """Return new instance of the Thauera sp. MZ1T graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def ThaueraSpMz1t(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of ThaueraSpMz1t graph.
+    Instace of Thauera sp. MZ1T graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def ThaueraSpMz1t(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThaueraSpMz1t",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

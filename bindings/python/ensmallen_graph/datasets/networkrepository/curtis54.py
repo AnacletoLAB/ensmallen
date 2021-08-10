@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Curtis54.
+This file offers the methods to automatically retrieve the graph curtis54.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Curtis54(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Curtis54 graph.
+    """Return new instance of the curtis54 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Curtis54(
 
     Returns
     -----------------------
-    Instace of Curtis54 graph.
+    Instace of curtis54 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Curtis54(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Curtis54",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

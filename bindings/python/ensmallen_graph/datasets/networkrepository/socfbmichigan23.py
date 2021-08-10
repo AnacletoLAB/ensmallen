@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbMichigan23.
+This file offers the methods to automatically retrieve the graph socfb-Michigan23.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbMichigan23(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbMichigan23 graph.
+    """Return new instance of the socfb-Michigan23 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbMichigan23(
 
     Returns
     -----------------------
-    Instace of SocfbMichigan23 graph.
+    Instace of socfb-Michigan23 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbMichigan23(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbMichigan23",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

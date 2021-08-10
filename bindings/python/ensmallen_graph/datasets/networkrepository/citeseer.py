@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Citeseer.
+This file offers the methods to automatically retrieve the graph citeseer.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Citeseer(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Citeseer graph.
+    """Return new instance of the citeseer graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Citeseer(
 
     Returns
     -----------------------
-    Instace of Citeseer graph.
+    Instace of citeseer graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Citeseer(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Citeseer",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

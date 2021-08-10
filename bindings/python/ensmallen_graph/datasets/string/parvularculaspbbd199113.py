@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParvularculaSpBbd199113.
+This file offers the methods to automatically retrieve the graph Parvularcula sp. BBD 1991-13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def ParvularculaSpBbd199113(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParvularculaSpBbd199113 graph.
+    """Return new instance of the Parvularcula sp. BBD 1991-13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def ParvularculaSpBbd199113(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of ParvularculaSpBbd199113 graph.
+    Instace of Parvularcula sp. BBD 1991-13 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def ParvularculaSpBbd199113(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParvularculaSpBbd199113",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

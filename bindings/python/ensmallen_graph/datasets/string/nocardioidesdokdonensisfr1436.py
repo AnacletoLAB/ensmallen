@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardioidesDokdonensisFr1436.
+This file offers the methods to automatically retrieve the graph Nocardioides dokdonensis FR1436.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def NocardioidesDokdonensisFr1436(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardioidesDokdonensisFr1436 graph.
+    """Return new instance of the Nocardioides dokdonensis FR1436 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def NocardioidesDokdonensisFr1436(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of NocardioidesDokdonensisFr1436 graph.
+    Instace of Nocardioides dokdonensis FR1436 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def NocardioidesDokdonensisFr1436(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardioidesDokdonensisFr1436",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

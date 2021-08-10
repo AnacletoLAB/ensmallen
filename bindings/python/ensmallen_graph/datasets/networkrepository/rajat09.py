@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Rajat09.
+This file offers the methods to automatically retrieve the graph rajat09.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Rajat09(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Rajat09 graph.
+    """Return new instance of the rajat09 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Rajat09(
 
     Returns
     -----------------------
-    Instace of Rajat09 graph.
+    Instace of rajat09 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Rajat09(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Rajat09",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

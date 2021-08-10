@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Fa.
+This file offers the methods to automatically retrieve the graph FA.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Fa(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Fa graph.
+    """Return new instance of the FA graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Fa(
 
     Returns
     -----------------------
-    Instace of Fa graph.
+    Instace of FA graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Fa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Fa",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

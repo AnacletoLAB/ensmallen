@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BuchneraAphidicolaCtu.
+This file offers the methods to automatically retrieve the graph Buchnera aphidicola Ctu.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def BuchneraAphidicolaCtu(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.0",
+    version: str = "links.v11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BuchneraAphidicolaCtu graph.
+    """Return new instance of the Buchnera aphidicola Ctu graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def BuchneraAphidicolaCtu(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.0",
+    version: str = "links.v11.0",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
+			- homology.v11.0
+			- physical.links.v11.0
+			- links.v11.0
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of BuchneraAphidicolaCtu graph.
+    Instace of Buchnera aphidicola Ctu graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def BuchneraAphidicolaCtu(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BuchneraAphidicolaCtu",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

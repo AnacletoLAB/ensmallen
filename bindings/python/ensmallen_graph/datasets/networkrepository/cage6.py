@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Cage6.
+This file offers the methods to automatically retrieve the graph cage6.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Cage6(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Cage6 graph.
+    """Return new instance of the cage6 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Cage6(
 
     Returns
     -----------------------
-    Instace of Cage6 graph.
+    Instace of cage6 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Cage6(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Cage6",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

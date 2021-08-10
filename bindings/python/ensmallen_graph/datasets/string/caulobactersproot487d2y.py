@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaulobacterSpRoot487d2y.
+This file offers the methods to automatically retrieve the graph Caulobacter sp. Root487D2Y.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CaulobacterSpRoot487d2y(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaulobacterSpRoot487d2y graph.
+    """Return new instance of the Caulobacter sp. Root487D2Y graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CaulobacterSpRoot487d2y(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CaulobacterSpRoot487d2y graph.
+    Instace of Caulobacter sp. Root487D2Y graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CaulobacterSpRoot487d2y(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaulobacterSpRoot487d2y",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

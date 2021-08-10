@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Bas1lp.
+This file offers the methods to automatically retrieve the graph bas1lp.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Bas1lp(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Bas1lp graph.
+    """Return new instance of the bas1lp graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Bas1lp(
 
     Returns
     -----------------------
-    Instace of Bas1lp graph.
+    Instace of bas1lp graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Bas1lp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Bas1lp",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

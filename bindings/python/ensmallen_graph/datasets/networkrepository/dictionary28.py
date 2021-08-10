@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Dictionary28.
+This file offers the methods to automatically retrieve the graph dictionary28.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Dictionary28(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Dictionary28 graph.
+    """Return new instance of the dictionary28 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Dictionary28(
 
     Returns
     -----------------------
-    Instace of Dictionary28 graph.
+    Instace of dictionary28 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Dictionary28(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Dictionary28",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

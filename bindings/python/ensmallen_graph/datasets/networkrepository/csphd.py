@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Csphd.
+This file offers the methods to automatically retrieve the graph CSphd.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Csphd(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Csphd graph.
+    """Return new instance of the CSphd graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Csphd(
 
     Returns
     -----------------------
-    Instace of Csphd graph.
+    Instace of CSphd graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Csphd(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Csphd",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

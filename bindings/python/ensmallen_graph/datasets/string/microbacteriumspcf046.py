@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumSpCf046.
+This file offers the methods to automatically retrieve the graph Microbacterium sp. cf046.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def MicrobacteriumSpCf046(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumSpCf046 graph.
+    """Return new instance of the Microbacterium sp. cf046 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def MicrobacteriumSpCf046(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of MicrobacteriumSpCf046 graph.
+    Instace of Microbacterium sp. cf046 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def MicrobacteriumSpCf046(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriumSpCf046",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

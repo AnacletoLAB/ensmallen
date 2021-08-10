@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaminicellaSporogenesDsm14501.
+This file offers the methods to automatically retrieve the graph Caminicella sporogenes DSM 14501.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CaminicellaSporogenesDsm14501(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaminicellaSporogenesDsm14501 graph.
+    """Return new instance of the Caminicella sporogenes DSM 14501 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CaminicellaSporogenesDsm14501(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CaminicellaSporogenesDsm14501 graph.
+    Instace of Caminicella sporogenes DSM 14501 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CaminicellaSporogenesDsm14501(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaminicellaSporogenesDsm14501",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

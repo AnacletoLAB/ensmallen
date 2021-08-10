@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSoliNbrc102451.
+This file offers the methods to automatically retrieve the graph Bacillus soli NBRC 102451.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def BacillusSoliNbrc102451(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSoliNbrc102451 graph.
+    """Return new instance of the Bacillus soli NBRC 102451 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def BacillusSoliNbrc102451(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of BacillusSoliNbrc102451 graph.
+    Instace of Bacillus soli NBRC 102451 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def BacillusSoliNbrc102451(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusSoliNbrc102451",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

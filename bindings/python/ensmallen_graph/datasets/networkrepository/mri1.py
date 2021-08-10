@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Mri1.
+This file offers the methods to automatically retrieve the graph mri1.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Mri1(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Mri1 graph.
+    """Return new instance of the mri1 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Mri1(
 
     Returns
     -----------------------
-    Instace of Mri1 graph.
+    Instace of mri1 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Mri1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Mri1",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

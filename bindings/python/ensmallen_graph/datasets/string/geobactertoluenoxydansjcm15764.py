@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeobacterToluenoxydansJcm15764.
+This file offers the methods to automatically retrieve the graph Geobacter toluenoxydans JCM 15764.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def GeobacterToluenoxydansJcm15764(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeobacterToluenoxydansJcm15764 graph.
+    """Return new instance of the Geobacter toluenoxydans JCM 15764 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def GeobacterToluenoxydansJcm15764(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of GeobacterToluenoxydansJcm15764 graph.
+    Instace of Geobacter toluenoxydans JCM 15764 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def GeobacterToluenoxydansJcm15764(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GeobacterToluenoxydansJcm15764",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

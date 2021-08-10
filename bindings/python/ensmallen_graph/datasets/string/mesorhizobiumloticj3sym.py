@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesorhizobiumLotiCj3sym.
+This file offers the methods to automatically retrieve the graph Mesorhizobium loti CJ3sym.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def MesorhizobiumLotiCj3sym(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesorhizobiumLotiCj3sym graph.
+    """Return new instance of the Mesorhizobium loti CJ3sym graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def MesorhizobiumLotiCj3sym(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of MesorhizobiumLotiCj3sym graph.
+    Instace of Mesorhizobium loti CJ3sym graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def MesorhizobiumLotiCj3sym(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MesorhizobiumLotiCj3sym",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

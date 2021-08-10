@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KlebsiellaSpRitPiD.
+This file offers the methods to automatically retrieve the graph Klebsiella sp. RIT-PI-d.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def KlebsiellaSpRitPiD(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KlebsiellaSpRitPiD graph.
+    """Return new instance of the Klebsiella sp. RIT-PI-d graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def KlebsiellaSpRitPiD(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of KlebsiellaSpRitPiD graph.
+    Instace of Klebsiella sp. RIT-PI-d graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def KlebsiellaSpRitPiD(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KlebsiellaSpRitPiD",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

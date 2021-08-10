@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbVanderbilt48.
+This file offers the methods to automatically retrieve the graph socfb-Vanderbilt48.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbVanderbilt48(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbVanderbilt48 graph.
+    """Return new instance of the socfb-Vanderbilt48 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbVanderbilt48(
 
     Returns
     -----------------------
-    Instace of SocfbVanderbilt48 graph.
+    Instace of socfb-Vanderbilt48 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbVanderbilt48(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbVanderbilt48",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhormidiumTenueNies30.
+This file offers the methods to automatically retrieve the graph Phormidium tenue NIES-30.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def PhormidiumTenueNies30(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhormidiumTenueNies30 graph.
+    """Return new instance of the Phormidium tenue NIES-30 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def PhormidiumTenueNies30(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of PhormidiumTenueNies30 graph.
+    Instace of Phormidium tenue NIES-30 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def PhormidiumTenueNies30(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhormidiumTenueNies30",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

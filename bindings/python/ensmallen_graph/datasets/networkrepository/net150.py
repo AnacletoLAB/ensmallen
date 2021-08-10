@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Net150.
+This file offers the methods to automatically retrieve the graph net150.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Net150(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Net150 graph.
+    """Return new instance of the net150 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Net150(
 
     Returns
     -----------------------
-    Instace of Net150 graph.
+    Instace of net150 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Net150(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Net150",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

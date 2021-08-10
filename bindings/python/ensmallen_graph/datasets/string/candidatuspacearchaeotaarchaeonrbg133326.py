@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPacearchaeotaArchaeonRbg133326.
+This file offers the methods to automatically retrieve the graph Candidatus Pacearchaeota archaeon RBG_13_33_26.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CandidatusPacearchaeotaArchaeonRbg133326(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPacearchaeotaArchaeonRbg133326 graph.
+    """Return new instance of the Candidatus Pacearchaeota archaeon RBG_13_33_26 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CandidatusPacearchaeotaArchaeonRbg133326(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CandidatusPacearchaeotaArchaeonRbg133326 graph.
+    Instace of Candidatus Pacearchaeota archaeon RBG_13_33_26 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CandidatusPacearchaeotaArchaeonRbg133326(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusPacearchaeotaArchaeonRbg133326",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

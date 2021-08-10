@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Caidarouterlevel.
+This file offers the methods to automatically retrieve the graph caidaRouterLevel.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Caidarouterlevel(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Caidarouterlevel graph.
+    """Return new instance of the caidaRouterLevel graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Caidarouterlevel(
 
     Returns
     -----------------------
-    Instace of Caidarouterlevel graph.
+    Instace of caidaRouterLevel graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Caidarouterlevel(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Caidarouterlevel",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

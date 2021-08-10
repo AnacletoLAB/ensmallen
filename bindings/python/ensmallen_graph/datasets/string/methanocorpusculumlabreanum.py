@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanocorpusculumLabreanum.
+This file offers the methods to automatically retrieve the graph Methanocorpusculum labreanum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def MethanocorpusculumLabreanum(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanocorpusculumLabreanum graph.
+    """Return new instance of the Methanocorpusculum labreanum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def MethanocorpusculumLabreanum(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of MethanocorpusculumLabreanum graph.
+    Instace of Methanocorpusculum labreanum graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def MethanocorpusculumLabreanum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanocorpusculumLabreanum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CitrobacterKoseriAtccBaa895.
+This file offers the methods to automatically retrieve the graph Citrobacter koseri ATCC BAA-895.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CitrobacterKoseriAtccBaa895(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CitrobacterKoseriAtccBaa895 graph.
+    """Return new instance of the Citrobacter koseri ATCC BAA-895 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CitrobacterKoseriAtccBaa895(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CitrobacterKoseriAtccBaa895 graph.
+    Instace of Citrobacter koseri ATCC BAA-895 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CitrobacterKoseriAtccBaa895(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CitrobacterKoseriAtccBaa895",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

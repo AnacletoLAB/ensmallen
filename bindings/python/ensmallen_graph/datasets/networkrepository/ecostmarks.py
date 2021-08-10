@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EcoStmarks.
+This file offers the methods to automatically retrieve the graph eco-stmarks.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -53,7 +53,7 @@ def EcoStmarks(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EcoStmarks graph.
+    """Return new instance of the eco-stmarks graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -80,7 +80,7 @@ def EcoStmarks(
 
     Returns
     -----------------------
-    Instace of EcoStmarks graph.
+    Instace of eco-stmarks graph.
 
 	References
 	---------------------
@@ -118,7 +118,7 @@ def EcoStmarks(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EcoStmarks",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

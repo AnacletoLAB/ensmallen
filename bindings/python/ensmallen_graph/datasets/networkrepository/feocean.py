@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FeOcean.
+This file offers the methods to automatically retrieve the graph fe-ocean.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def FeOcean(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FeOcean graph.
+    """Return new instance of the fe-ocean graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def FeOcean(
 
     Returns
     -----------------------
-    Instace of FeOcean graph.
+    Instace of fe-ocean graph.
 
 	References
 	---------------------
@@ -92,7 +92,7 @@ def FeOcean(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FeOcean",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

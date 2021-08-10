@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumCauenseR2a7.
+This file offers the methods to automatically retrieve the graph Flavobacterium cauense R2A-7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def FlavobacteriumCauenseR2a7(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumCauenseR2a7 graph.
+    """Return new instance of the Flavobacterium cauense R2A-7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def FlavobacteriumCauenseR2a7(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of FlavobacteriumCauenseR2a7 graph.
+    Instace of Flavobacterium cauense R2A-7 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def FlavobacteriumCauenseR2a7(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriumCauenseR2a7",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

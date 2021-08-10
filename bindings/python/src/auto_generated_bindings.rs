@@ -1557,7 +1557,7 @@ pub fn convert_node_list_node_types_to_numeric(
     target_node_list_node_types_column_number: Option<usize>,
     target_node_list_node_types_column: Option<String>,
     nodes_number: Option<NodeT>,
-) -> PyResult<NodeTypeT> {
+) -> PyResult<Option<NodeTypeT>> {
     pe!(graph::convert_node_list_node_types_to_numeric(
         original_node_type_path,
         original_node_type_list_separator,
@@ -1810,8 +1810,9 @@ impl EnsmallenGraph {
     /// Safety
     /// ------
     /// If the given node ID does not exists in the graph this method will panic.
-    pub unsafe fn is_unchecked_disconnected_from_node_id(&self, node_id: NodeT) -> bool {
-        self.graph.is_unchecked_disconnected_from_node_id(node_id)
+    pub unsafe fn is_unchecked_disconnected_node_from_node_id(&self, node_id: NodeT) -> bool {
+        self.graph
+            .is_unchecked_disconnected_node_from_node_id(node_id)
     }
 
     #[automatically_generated_binding]

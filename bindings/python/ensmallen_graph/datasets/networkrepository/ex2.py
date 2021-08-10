@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Ex2.
+This file offers the methods to automatically retrieve the graph EX2.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Ex2(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Ex2 graph.
+    """Return new instance of the EX2 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Ex2(
 
     Returns
     -----------------------
-    Instace of Ex2 graph.
+    Instace of EX2 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Ex2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Ex2",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

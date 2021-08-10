@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LimnobacterSpMed105.
+This file offers the methods to automatically retrieve the graph Limnobacter sp. MED105.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def LimnobacterSpMed105(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LimnobacterSpMed105 graph.
+    """Return new instance of the Limnobacter sp. MED105 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def LimnobacterSpMed105(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of LimnobacterSpMed105 graph.
+    Instace of Limnobacter sp. MED105 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def LimnobacterSpMed105(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LimnobacterSpMed105",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

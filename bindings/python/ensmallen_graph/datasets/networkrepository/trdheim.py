@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Trdheim.
+This file offers the methods to automatically retrieve the graph trdheim.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Trdheim(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Trdheim graph.
+    """Return new instance of the trdheim graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Trdheim(
 
     Returns
     -----------------------
-    Instace of Trdheim graph.
+    Instace of trdheim graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Trdheim(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Trdheim",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

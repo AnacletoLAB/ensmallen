@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnoxybacillusSuryakundensis.
+This file offers the methods to automatically retrieve the graph Anoxybacillus suryakundensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def AnoxybacillusSuryakundensis(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnoxybacillusSuryakundensis graph.
+    """Return new instance of the Anoxybacillus suryakundensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def AnoxybacillusSuryakundensis(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of AnoxybacillusSuryakundensis graph.
+    Instace of Anoxybacillus suryakundensis graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def AnoxybacillusSuryakundensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnoxybacillusSuryakundensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

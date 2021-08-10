@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbTrinity100.
+This file offers the methods to automatically retrieve the graph socfb-Trinity100.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbTrinity100(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbTrinity100 graph.
+    """Return new instance of the socfb-Trinity100 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbTrinity100(
 
     Returns
     -----------------------
-    Instace of SocfbTrinity100 graph.
+    Instace of socfb-Trinity100 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbTrinity100(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbTrinity100",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

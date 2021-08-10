@@ -60,7 +60,7 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         None,
         None,
         None,
-        None,  
+        None,
         None,
         None,
         None,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusOeniDsm19972.
+This file offers the methods to automatically retrieve the graph Lactobacillus oeni DSM 19972.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def LactobacillusOeniDsm19972(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusOeniDsm19972 graph.
+    """Return new instance of the Lactobacillus oeni DSM 19972 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def LactobacillusOeniDsm19972(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of LactobacillusOeniDsm19972 graph.
+    Instace of Lactobacillus oeni DSM 19972 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def LactobacillusOeniDsm19972(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusOeniDsm19972",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

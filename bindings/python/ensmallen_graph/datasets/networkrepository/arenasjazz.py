@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArenasJazz.
+This file offers the methods to automatically retrieve the graph arenas-jazz.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def ArenasJazz(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArenasJazz graph.
+    """Return new instance of the arenas-jazz graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def ArenasJazz(
 
     Returns
     -----------------------
-    Instace of ArenasJazz graph.
+    Instace of arenas-jazz graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def ArenasJazz(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArenasJazz",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

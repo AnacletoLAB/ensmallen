@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RtRetweet.
+This file offers the methods to automatically retrieve the graph rt-retweet.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -48,7 +48,7 @@ def RtRetweet(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RtRetweet graph.
+    """Return new instance of the rt-retweet graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -75,7 +75,7 @@ def RtRetweet(
 
     Returns
     -----------------------
-    Instace of RtRetweet graph.
+    Instace of rt-retweet graph.
 
 	References
 	---------------------
@@ -108,7 +108,7 @@ def RtRetweet(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RtRetweet",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

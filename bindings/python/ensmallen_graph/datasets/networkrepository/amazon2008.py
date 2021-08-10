@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Amazon2008.
+This file offers the methods to automatically retrieve the graph amazon-2008.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Amazon2008(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Amazon2008 graph.
+    """Return new instance of the amazon-2008 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Amazon2008(
 
     Returns
     -----------------------
-    Instace of Amazon2008 graph.
+    Instace of amazon-2008 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Amazon2008(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Amazon2008",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

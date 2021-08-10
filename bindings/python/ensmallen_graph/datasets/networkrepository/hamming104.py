@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Hamming104.
+This file offers the methods to automatically retrieve the graph hamming10-4.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def Hamming104(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Hamming104 graph.
+    """Return new instance of the hamming10-4 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def Hamming104(
 
     Returns
     -----------------------
-    Instace of Hamming104 graph.
+    Instace of hamming10-4 graph.
 
 	References
 	---------------------
@@ -104,7 +104,7 @@ def Hamming104(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Hamming104",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

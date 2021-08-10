@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MoesziomycesAntarcticusT34.
+This file offers the methods to automatically retrieve the graph Moesziomyces antarcticus T-34.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def MoesziomycesAntarcticusT34(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MoesziomycesAntarcticusT34 graph.
+    """Return new instance of the Moesziomyces antarcticus T-34 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def MoesziomycesAntarcticusT34(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of MoesziomycesAntarcticusT34 graph.
+    Instace of Moesziomyces antarcticus T-34 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def MoesziomycesAntarcticusT34(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MoesziomycesAntarcticusT34",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

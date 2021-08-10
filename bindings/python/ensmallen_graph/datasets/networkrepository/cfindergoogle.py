@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CfinderGoogle.
+This file offers the methods to automatically retrieve the graph cfinder-google.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def CfinderGoogle(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CfinderGoogle graph.
+    """Return new instance of the cfinder-google graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def CfinderGoogle(
 
     Returns
     -----------------------
-    Instace of CfinderGoogle graph.
+    Instace of cfinder-google graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def CfinderGoogle(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CfinderGoogle",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

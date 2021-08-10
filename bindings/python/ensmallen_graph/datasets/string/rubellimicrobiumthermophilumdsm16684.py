@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RubellimicrobiumThermophilumDsm16684.
+This file offers the methods to automatically retrieve the graph Rubellimicrobium thermophilum DSM 16684.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def RubellimicrobiumThermophilumDsm16684(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RubellimicrobiumThermophilumDsm16684 graph.
+    """Return new instance of the Rubellimicrobium thermophilum DSM 16684 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def RubellimicrobiumThermophilumDsm16684(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of RubellimicrobiumThermophilumDsm16684 graph.
+    Instace of Rubellimicrobium thermophilum DSM 16684 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def RubellimicrobiumThermophilumDsm16684(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RubellimicrobiumThermophilumDsm16684",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

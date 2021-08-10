@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BioCelegansDir.
+This file offers the methods to automatically retrieve the graph bio-celegans-dir.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -42,7 +42,7 @@ def BioCelegansDir(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BioCelegansDir graph.
+    """Return new instance of the bio-celegans-dir graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -69,7 +69,7 @@ def BioCelegansDir(
 
     Returns
     -----------------------
-    Instace of BioCelegansDir graph.
+    Instace of bio-celegans-dir graph.
 
 	References
 	---------------------
@@ -96,7 +96,7 @@ def BioCelegansDir(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BioCelegansDir",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

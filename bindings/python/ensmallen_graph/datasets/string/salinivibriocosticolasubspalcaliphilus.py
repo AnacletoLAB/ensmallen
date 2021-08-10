@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinivibrioCosticolaSubspAlcaliphilus.
+This file offers the methods to automatically retrieve the graph Salinivibrio costicola subsp. alcaliphilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def SalinivibrioCosticolaSubspAlcaliphilus(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinivibrioCosticolaSubspAlcaliphilus graph.
+    """Return new instance of the Salinivibrio costicola subsp. alcaliphilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def SalinivibrioCosticolaSubspAlcaliphilus(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of SalinivibrioCosticolaSubspAlcaliphilus graph.
+    Instace of Salinivibrio costicola subsp. alcaliphilus graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def SalinivibrioCosticolaSubspAlcaliphilus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SalinivibrioCosticolaSubspAlcaliphilus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

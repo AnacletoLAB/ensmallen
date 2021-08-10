@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SfhhConfSensor.
+This file offers the methods to automatically retrieve the graph SFHH-conf-sensor.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -38,7 +38,7 @@ def SfhhConfSensor(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SfhhConfSensor graph.
+    """Return new instance of the SFHH-conf-sensor graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -65,7 +65,7 @@ def SfhhConfSensor(
 
     Returns
     -----------------------
-    Instace of SfhhConfSensor graph.
+    Instace of SFHH-conf-sensor graph.
 
 	References
 	---------------------
@@ -88,7 +88,7 @@ def SfhhConfSensor(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SfhhConfSensor",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

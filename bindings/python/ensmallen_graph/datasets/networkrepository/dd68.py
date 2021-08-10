@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Dd68.
+This file offers the methods to automatically retrieve the graph DD68.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Dd68(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Dd68 graph.
+    """Return new instance of the DD68 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Dd68(
 
     Returns
     -----------------------
-    Instace of Dd68 graph.
+    Instace of DD68 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Dd68(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Dd68",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

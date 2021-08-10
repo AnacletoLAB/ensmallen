@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SchizosaccharomycesPombe972h.
+This file offers the methods to automatically retrieve the graph Schizosaccharomyces pombe 972h-.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def SchizosaccharomycesPombe972h(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SchizosaccharomycesPombe972h graph.
+    """Return new instance of the Schizosaccharomyces pombe 972h- graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def SchizosaccharomycesPombe972h(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of SchizosaccharomycesPombe972h graph.
+    Instace of Schizosaccharomyces pombe 972h- graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def SchizosaccharomycesPombe972h(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SchizosaccharomycesPombe972h",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

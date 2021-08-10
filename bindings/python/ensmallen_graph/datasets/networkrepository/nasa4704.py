@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Nasa4704.
+This file offers the methods to automatically retrieve the graph nasa4704.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Nasa4704(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Nasa4704 graph.
+    """Return new instance of the nasa4704 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Nasa4704(
 
     Returns
     -----------------------
-    Instace of Nasa4704 graph.
+    Instace of nasa4704 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Nasa4704(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Nasa4704",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

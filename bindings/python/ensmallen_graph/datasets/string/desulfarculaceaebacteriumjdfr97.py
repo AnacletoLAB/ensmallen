@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfarculaceaeBacteriumJdfr97.
+This file offers the methods to automatically retrieve the graph Desulfarculaceae bacterium JdFR-97.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def DesulfarculaceaeBacteriumJdfr97(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfarculaceaeBacteriumJdfr97 graph.
+    """Return new instance of the Desulfarculaceae bacterium JdFR-97 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def DesulfarculaceaeBacteriumJdfr97(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of DesulfarculaceaeBacteriumJdfr97 graph.
+    Instace of Desulfarculaceae bacterium JdFR-97 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def DesulfarculaceaeBacteriumJdfr97(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfarculaceaeBacteriumJdfr97",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

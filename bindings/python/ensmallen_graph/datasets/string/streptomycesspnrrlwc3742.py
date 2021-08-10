@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpNrrlwc3742.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. NRRLWC3742.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def StreptomycesSpNrrlwc3742(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpNrrlwc3742 graph.
+    """Return new instance of the Streptomyces sp. NRRLWC3742 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def StreptomycesSpNrrlwc3742(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of StreptomycesSpNrrlwc3742 graph.
+    Instace of Streptomyces sp. NRRLWC3742 graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def StreptomycesSpNrrlwc3742(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesSpNrrlwc3742",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

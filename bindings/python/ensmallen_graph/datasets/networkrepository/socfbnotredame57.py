@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbNotredame57.
+This file offers the methods to automatically retrieve the graph socfb-NotreDame57.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbNotredame57(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbNotredame57 graph.
+    """Return new instance of the socfb-NotreDame57 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbNotredame57(
 
     Returns
     -----------------------
-    Instace of SocfbNotredame57 graph.
+    Instace of socfb-NotreDame57 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbNotredame57(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbNotredame57",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbTennessee95.
+This file offers the methods to automatically retrieve the graph socfb-Tennessee95.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbTennessee95(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbTennessee95 graph.
+    """Return new instance of the socfb-Tennessee95 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbTennessee95(
 
     Returns
     -----------------------
-    Instace of SocfbTennessee95 graph.
+    Instace of socfb-Tennessee95 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbTennessee95(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbTennessee95",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

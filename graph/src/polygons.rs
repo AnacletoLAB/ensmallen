@@ -249,7 +249,7 @@ impl Graph {
     /// Returns total number of triads in the graph without taking into account weights.
     pub fn get_triads_number(&self) -> EdgeT {
         self.par_iter_node_degrees()
-            .map(|degree| (degree * degree.saturating_sub(1)) as EdgeT)
+            .map(|degree| (degree as EdgeT) * (degree.saturating_sub(1) as EdgeT))
             .sum()
     }
 
@@ -549,7 +549,7 @@ impl Graph {
                 if degree < 2 {
                     0.0
                 } else {
-                    triangles_number as f64 / (degree * (degree - 1)) as f64
+                    triangles_number as f64 / ((degree as EdgeT) * (degree as EdgeT - 1)) as f64
                 }
             })
     }

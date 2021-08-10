@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcusObeumAtcc29174.
+This file offers the methods to automatically retrieve the graph Ruminococcus obeum ATCC29174.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def RuminococcusObeumAtcc29174(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcusObeumAtcc29174 graph.
+    """Return new instance of the Ruminococcus obeum ATCC29174 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def RuminococcusObeumAtcc29174(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of RuminococcusObeumAtcc29174 graph.
+    Instace of Ruminococcus obeum ATCC29174 graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def RuminococcusObeumAtcc29174(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminococcusObeumAtcc29174",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

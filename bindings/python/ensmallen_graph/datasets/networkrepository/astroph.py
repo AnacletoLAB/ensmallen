@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AstroPh.
+This file offers the methods to automatically retrieve the graph astro-ph.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def AstroPh(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AstroPh graph.
+    """Return new instance of the astro-ph graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def AstroPh(
 
     Returns
     -----------------------
-    Instace of AstroPh graph.
+    Instace of astro-ph graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def AstroPh(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AstroPh",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

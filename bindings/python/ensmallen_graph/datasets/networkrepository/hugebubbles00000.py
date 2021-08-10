@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Hugebubbles00000.
+This file offers the methods to automatically retrieve the graph hugebubbles-00000.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Hugebubbles00000(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Hugebubbles00000 graph.
+    """Return new instance of the hugebubbles-00000 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Hugebubbles00000(
 
     Returns
     -----------------------
-    Instace of Hugebubbles00000 graph.
+    Instace of hugebubbles-00000 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Hugebubbles00000(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Hugebubbles00000",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

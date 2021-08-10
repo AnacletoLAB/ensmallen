@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BioScTs.
+This file offers the methods to automatically retrieve the graph bio-SC-TS.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -44,7 +44,7 @@ def BioScTs(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BioScTs graph.
+    """Return new instance of the bio-SC-TS graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -71,7 +71,7 @@ def BioScTs(
 
     Returns
     -----------------------
-    Instace of BioScTs graph.
+    Instace of bio-SC-TS graph.
 
 	References
 	---------------------
@@ -100,7 +100,7 @@ def BioScTs(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BioScTs",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

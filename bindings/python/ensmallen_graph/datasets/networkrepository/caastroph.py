@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaAstroph.
+This file offers the methods to automatically retrieve the graph ca-AstroPh.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def CaAstroph(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaAstroph graph.
+    """Return new instance of the ca-AstroPh graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def CaAstroph(
 
     Returns
     -----------------------
-    Instace of CaAstroph graph.
+    Instace of ca-AstroPh graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def CaAstroph(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaAstroph",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

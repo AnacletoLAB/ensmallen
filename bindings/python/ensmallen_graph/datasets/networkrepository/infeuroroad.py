@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph InfEuroroad.
+This file offers the methods to automatically retrieve the graph inf-euroroad.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def InfEuroroad(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the InfEuroroad graph.
+    """Return new instance of the inf-euroroad graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def InfEuroroad(
 
     Returns
     -----------------------
-    Instace of InfEuroroad graph.
+    Instace of inf-euroroad graph.
 
 	References
 	---------------------
@@ -92,7 +92,7 @@ def InfEuroroad(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="InfEuroroad",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

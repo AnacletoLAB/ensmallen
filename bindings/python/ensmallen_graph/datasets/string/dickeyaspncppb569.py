@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DickeyaSpNcppb569.
+This file offers the methods to automatically retrieve the graph Dickeya sp. NCPPB569.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def DickeyaSpNcppb569(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DickeyaSpNcppb569 graph.
+    """Return new instance of the Dickeya sp. NCPPB569 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def DickeyaSpNcppb569(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of DickeyaSpNcppb569 graph.
+    Instace of Dickeya sp. NCPPB569 graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def DickeyaSpNcppb569(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DickeyaSpNcppb569",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

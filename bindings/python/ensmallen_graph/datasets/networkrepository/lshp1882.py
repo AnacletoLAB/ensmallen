@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Lshp1882.
+This file offers the methods to automatically retrieve the graph lshp1882.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Lshp1882(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Lshp1882 graph.
+    """Return new instance of the lshp1882 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Lshp1882(
 
     Returns
     -----------------------
-    Instace of Lshp1882 graph.
+    Instace of lshp1882 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Lshp1882(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Lshp1882",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

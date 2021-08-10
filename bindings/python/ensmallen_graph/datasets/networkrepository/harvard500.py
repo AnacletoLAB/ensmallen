@@ -78,7 +78,7 @@ def Harvard500(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Harvard500",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LasagneSpanishbook.
+This file offers the methods to automatically retrieve the graph lasagne-spanishbook.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def LasagneSpanishbook(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LasagneSpanishbook graph.
+    """Return new instance of the lasagne-spanishbook graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def LasagneSpanishbook(
 
     Returns
     -----------------------
-    Instace of LasagneSpanishbook graph.
+    Instace of lasagne-spanishbook graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def LasagneSpanishbook(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LasagneSpanishbook",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavisolibacterGinsengisoliDsm18119.
+This file offers the methods to automatically retrieve the graph Flavisolibacter ginsengisoli DSM 18119.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def FlavisolibacterGinsengisoliDsm18119(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavisolibacterGinsengisoliDsm18119 graph.
+    """Return new instance of the Flavisolibacter ginsengisoli DSM 18119 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def FlavisolibacterGinsengisoliDsm18119(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of FlavisolibacterGinsengisoliDsm18119 graph.
+    Instace of Flavisolibacter ginsengisoli DSM 18119 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def FlavisolibacterGinsengisoliDsm18119(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavisolibacterGinsengisoliDsm18119",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

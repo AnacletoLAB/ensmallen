@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArenasMeta.
+This file offers the methods to automatically retrieve the graph arenas-meta.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def ArenasMeta(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArenasMeta graph.
+    """Return new instance of the arenas-meta graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def ArenasMeta(
 
     Returns
     -----------------------
-    Instace of ArenasMeta graph.
+    Instace of arenas-meta graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def ArenasMeta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArenasMeta",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

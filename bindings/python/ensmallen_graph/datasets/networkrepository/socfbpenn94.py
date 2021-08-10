@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbPenn94.
+This file offers the methods to automatically retrieve the graph socfb-Penn94.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbPenn94(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbPenn94 graph.
+    """Return new instance of the socfb-Penn94 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbPenn94(
 
     Returns
     -----------------------
-    Instace of SocfbPenn94 graph.
+    Instace of socfb-Penn94 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbPenn94(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbPenn94",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

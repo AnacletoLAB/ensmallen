@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LabrusBergylta.
+This file offers the methods to automatically retrieve the graph Labrus bergylta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def LabrusBergylta(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LabrusBergylta graph.
+    """Return new instance of the Labrus bergylta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def LabrusBergylta(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of LabrusBergylta graph.
+    Instace of Labrus bergylta graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def LabrusBergylta(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LabrusBergylta",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BioCeGt.
+This file offers the methods to automatically retrieve the graph bio-CE-GT.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -44,7 +44,7 @@ def BioCeGt(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BioCeGt graph.
+    """Return new instance of the bio-CE-GT graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -71,7 +71,7 @@ def BioCeGt(
 
     Returns
     -----------------------
-    Instace of BioCeGt graph.
+    Instace of bio-CE-GT graph.
 
 	References
 	---------------------
@@ -100,7 +100,7 @@ def BioCeGt(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BioCeGt",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

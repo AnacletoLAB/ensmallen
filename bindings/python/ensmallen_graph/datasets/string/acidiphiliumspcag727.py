@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidiphiliumSpCag727.
+This file offers the methods to automatically retrieve the graph Acidiphilium sp. CAG:727.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def AcidiphiliumSpCag727(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidiphiliumSpCag727 graph.
+    """Return new instance of the Acidiphilium sp. CAG:727 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def AcidiphiliumSpCag727(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of AcidiphiliumSpCag727 graph.
+    Instace of Acidiphilium sp. CAG:727 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def AcidiphiliumSpCag727(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidiphiliumSpCag727",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

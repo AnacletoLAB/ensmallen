@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrospiraeBacteriumCg10244142.
+This file offers the methods to automatically retrieve the graph Nitrospirae bacterium CG1_02_44_142.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def NitrospiraeBacteriumCg10244142(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrospiraeBacteriumCg10244142 graph.
+    """Return new instance of the Nitrospirae bacterium CG1_02_44_142 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def NitrospiraeBacteriumCg10244142(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of NitrospiraeBacteriumCg10244142 graph.
+    Instace of Nitrospirae bacterium CG1_02_44_142 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def NitrospiraeBacteriumCg10244142(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrospiraeBacteriumCg10244142",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

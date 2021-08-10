@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbMu78.
+This file offers the methods to automatically retrieve the graph socfb-MU78.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbMu78(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbMu78 graph.
+    """Return new instance of the socfb-MU78 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbMu78(
 
     Returns
     -----------------------
-    Instace of SocfbMu78 graph.
+    Instace of socfb-MU78 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbMu78(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbMu78",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

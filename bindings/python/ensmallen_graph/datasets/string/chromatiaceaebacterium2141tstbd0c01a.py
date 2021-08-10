@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChromatiaceaeBacterium2141tStbd0c01a.
+This file offers the methods to automatically retrieve the graph Chromatiaceae bacterium 2141T.STBD.0c.01a.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def ChromatiaceaeBacterium2141tStbd0c01a(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChromatiaceaeBacterium2141tStbd0c01a graph.
+    """Return new instance of the Chromatiaceae bacterium 2141T.STBD.0c.01a graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def ChromatiaceaeBacterium2141tStbd0c01a(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of ChromatiaceaeBacterium2141tStbd0c01a graph.
+    Instace of Chromatiaceae bacterium 2141T.STBD.0c.01a graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def ChromatiaceaeBacterium2141tStbd0c01a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChromatiaceaeBacterium2141tStbd0c01a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

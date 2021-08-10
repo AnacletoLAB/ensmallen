@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Rgg010.
+This file offers the methods to automatically retrieve the graph rgg010.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Rgg010(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Rgg010 graph.
+    """Return new instance of the rgg010 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Rgg010(
 
     Returns
     -----------------------
-    Instace of Rgg010 graph.
+    Instace of rgg010 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Rgg010(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Rgg010",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

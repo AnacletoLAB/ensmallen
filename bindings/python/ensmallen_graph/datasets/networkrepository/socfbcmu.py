@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbCmu.
+This file offers the methods to automatically retrieve the graph socfb-CMU.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbCmu(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbCmu graph.
+    """Return new instance of the socfb-CMU graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbCmu(
 
     Returns
     -----------------------
-    Instace of SocfbCmu graph.
+    Instace of socfb-CMU graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbCmu(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbCmu",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

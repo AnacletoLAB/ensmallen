@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TechRoutersRf.
+This file offers the methods to automatically retrieve the graph tech-routers-rf.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -43,7 +43,7 @@ def TechRoutersRf(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TechRoutersRf graph.
+    """Return new instance of the tech-routers-rf graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -70,7 +70,7 @@ def TechRoutersRf(
 
     Returns
     -----------------------
-    Instace of TechRoutersRf graph.
+    Instace of tech-routers-rf graph.
 
 	References
 	---------------------
@@ -98,7 +98,7 @@ def TechRoutersRf(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TechRoutersRf",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

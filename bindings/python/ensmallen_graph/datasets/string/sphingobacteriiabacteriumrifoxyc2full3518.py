@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobacteriiaBacteriumRifoxyc2Full3518.
+This file offers the methods to automatically retrieve the graph Sphingobacteriia bacterium RIFOXYC2_FULL_35_18.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def SphingobacteriiaBacteriumRifoxyc2Full3518(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobacteriiaBacteriumRifoxyc2Full3518 graph.
+    """Return new instance of the Sphingobacteriia bacterium RIFOXYC2_FULL_35_18 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def SphingobacteriiaBacteriumRifoxyc2Full3518(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of SphingobacteriiaBacteriumRifoxyc2Full3518 graph.
+    Instace of Sphingobacteriia bacterium RIFOXYC2_FULL_35_18 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def SphingobacteriiaBacteriumRifoxyc2Full3518(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingobacteriiaBacteriumRifoxyc2Full3518",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

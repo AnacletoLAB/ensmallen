@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMycoplasmaHaemolamaeStrPurdue.
+This file offers the methods to automatically retrieve the graph Candidatus Mycoplasma haemolamae str. Purdue.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CandidatusMycoplasmaHaemolamaeStrPurdue(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMycoplasmaHaemolamaeStrPurdue graph.
+    """Return new instance of the Candidatus Mycoplasma haemolamae str. Purdue graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CandidatusMycoplasmaHaemolamaeStrPurdue(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CandidatusMycoplasmaHaemolamaeStrPurdue graph.
+    Instace of Candidatus Mycoplasma haemolamae str. Purdue graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CandidatusMycoplasmaHaemolamaeStrPurdue(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusMycoplasmaHaemolamaeStrPurdue",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

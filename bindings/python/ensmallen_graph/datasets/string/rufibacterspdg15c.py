@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RufibacterSpDg15c.
+This file offers the methods to automatically retrieve the graph Rufibacter sp. DG15C.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def RufibacterSpDg15c(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RufibacterSpDg15c graph.
+    """Return new instance of the Rufibacter sp. DG15C graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def RufibacterSpDg15c(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of RufibacterSpDg15c graph.
+    Instace of Rufibacter sp. DG15C graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def RufibacterSpDg15c(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RufibacterSpDg15c",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

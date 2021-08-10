@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoadChesapeake.
+This file offers the methods to automatically retrieve the graph road-chesapeake.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def RoadChesapeake(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoadChesapeake graph.
+    """Return new instance of the road-chesapeake graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def RoadChesapeake(
 
     Returns
     -----------------------
-    Instace of RoadChesapeake graph.
+    Instace of road-chesapeake graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def RoadChesapeake(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoadChesapeake",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

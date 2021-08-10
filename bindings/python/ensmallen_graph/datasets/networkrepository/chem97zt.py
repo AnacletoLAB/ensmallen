@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Chem97zt.
+This file offers the methods to automatically retrieve the graph Chem97Zt.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Chem97zt(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Chem97zt graph.
+    """Return new instance of the Chem97Zt graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Chem97zt(
 
     Returns
     -----------------------
-    Instace of Chem97zt graph.
+    Instace of Chem97Zt graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Chem97zt(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Chem97zt",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

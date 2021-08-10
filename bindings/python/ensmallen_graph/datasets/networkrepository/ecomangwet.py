@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EcoMangwet.
+This file offers the methods to automatically retrieve the graph eco-mangwet.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -53,7 +53,7 @@ def EcoMangwet(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EcoMangwet graph.
+    """Return new instance of the eco-mangwet graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -80,7 +80,7 @@ def EcoMangwet(
 
     Returns
     -----------------------
-    Instace of EcoMangwet graph.
+    Instace of eco-mangwet graph.
 
 	References
 	---------------------
@@ -118,7 +118,7 @@ def EcoMangwet(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EcoMangwet",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

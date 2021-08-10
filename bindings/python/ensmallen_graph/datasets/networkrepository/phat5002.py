@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PHat5002.
+This file offers the methods to automatically retrieve the graph p-hat500-2.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def PHat5002(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PHat5002 graph.
+    """Return new instance of the p-hat500-2 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def PHat5002(
 
     Returns
     -----------------------
-    Instace of PHat5002 graph.
+    Instace of p-hat500-2 graph.
 
 	References
 	---------------------
@@ -104,7 +104,7 @@ def PHat5002(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PHat5002",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

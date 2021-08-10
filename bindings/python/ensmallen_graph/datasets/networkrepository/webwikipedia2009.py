@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WebWikipedia2009.
+This file offers the methods to automatically retrieve the graph web-wikipedia2009.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -48,7 +48,7 @@ def WebWikipedia2009(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WebWikipedia2009 graph.
+    """Return new instance of the web-wikipedia2009 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -75,7 +75,7 @@ def WebWikipedia2009(
 
     Returns
     -----------------------
-    Instace of WebWikipedia2009 graph.
+    Instace of web-wikipedia2009 graph.
 
 	References
 	---------------------
@@ -108,7 +108,7 @@ def WebWikipedia2009(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebWikipedia2009",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

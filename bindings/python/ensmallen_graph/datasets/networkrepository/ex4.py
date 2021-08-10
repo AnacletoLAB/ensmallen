@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Ex4.
+This file offers the methods to automatically retrieve the graph EX4.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Ex4(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Ex4 graph.
+    """Return new instance of the EX4 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Ex4(
 
     Returns
     -----------------------
-    Instace of Ex4 graph.
+    Instace of EX4 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Ex4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Ex4",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MaayanStelzl.
+This file offers the methods to automatically retrieve the graph maayan-Stelzl.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def MaayanStelzl(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MaayanStelzl graph.
+    """Return new instance of the maayan-Stelzl graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def MaayanStelzl(
 
     Returns
     -----------------------
-    Instace of MaayanStelzl graph.
+    Instace of maayan-Stelzl graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def MaayanStelzl(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MaayanStelzl",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

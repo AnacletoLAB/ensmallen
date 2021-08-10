@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorphyromonasSpCot290Oh3588.
+This file offers the methods to automatically retrieve the graph Porphyromonas sp. COT-290 OH3588.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def PorphyromonasSpCot290Oh3588(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorphyromonasSpCot290Oh3588 graph.
+    """Return new instance of the Porphyromonas sp. COT-290 OH3588 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def PorphyromonasSpCot290Oh3588(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of PorphyromonasSpCot290Oh3588 graph.
+    Instace of Porphyromonas sp. COT-290 OH3588 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def PorphyromonasSpCot290Oh3588(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PorphyromonasSpCot290Oh3588",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

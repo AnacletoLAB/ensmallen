@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasPlecoglossicidaNbrc103162Dsm15088.
+This file offers the methods to automatically retrieve the graph Pseudomonas plecoglossicida NBRC 103162 DSM 15088.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def PseudomonasPlecoglossicidaNbrc103162Dsm15088(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasPlecoglossicidaNbrc103162Dsm15088 graph.
+    """Return new instance of the Pseudomonas plecoglossicida NBRC 103162 DSM 15088 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def PseudomonasPlecoglossicidaNbrc103162Dsm15088(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of PseudomonasPlecoglossicidaNbrc103162Dsm15088 graph.
+    Instace of Pseudomonas plecoglossicida NBRC 103162 DSM 15088 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def PseudomonasPlecoglossicidaNbrc103162Dsm15088(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudomonasPlecoglossicidaNbrc103162Dsm15088",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

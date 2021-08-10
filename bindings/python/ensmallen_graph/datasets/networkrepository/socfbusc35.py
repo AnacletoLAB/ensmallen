@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbUsc35.
+This file offers the methods to automatically retrieve the graph socfb-USC35.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbUsc35(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbUsc35 graph.
+    """Return new instance of the socfb-USC35 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbUsc35(
 
     Returns
     -----------------------
-    Instace of SocfbUsc35 graph.
+    Instace of socfb-USC35 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbUsc35(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbUsc35",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusEllipticusCbs70779.
+This file offers the methods to automatically retrieve the graph Aspergillus ellipticus CBS 707.79.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def AspergillusEllipticusCbs70779(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusEllipticusCbs70779 graph.
+    """Return new instance of the Aspergillus ellipticus CBS 707.79 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def AspergillusEllipticusCbs70779(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of AspergillusEllipticusCbs70779 graph.
+    Instace of Aspergillus ellipticus CBS 707.79 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def AspergillusEllipticusCbs70779(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AspergillusEllipticusCbs70779",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

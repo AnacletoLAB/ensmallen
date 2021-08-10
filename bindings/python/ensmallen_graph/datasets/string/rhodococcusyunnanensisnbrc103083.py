@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodococcusYunnanensisNbrc103083.
+This file offers the methods to automatically retrieve the graph Rhodococcus yunnanensis NBRC 103083.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def RhodococcusYunnanensisNbrc103083(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodococcusYunnanensisNbrc103083 graph.
+    """Return new instance of the Rhodococcus yunnanensis NBRC 103083 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def RhodococcusYunnanensisNbrc103083(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of RhodococcusYunnanensisNbrc103083 graph.
+    Instace of Rhodococcus yunnanensis NBRC 103083 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def RhodococcusYunnanensisNbrc103083(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodococcusYunnanensisNbrc103083",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def Roget(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Roget",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

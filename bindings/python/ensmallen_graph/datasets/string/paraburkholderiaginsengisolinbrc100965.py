@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParaburkholderiaGinsengisoliNbrc100965.
+This file offers the methods to automatically retrieve the graph Paraburkholderia ginsengisoli NBRC 100965.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def ParaburkholderiaGinsengisoliNbrc100965(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParaburkholderiaGinsengisoliNbrc100965 graph.
+    """Return new instance of the Paraburkholderia ginsengisoli NBRC 100965 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def ParaburkholderiaGinsengisoliNbrc100965(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of ParaburkholderiaGinsengisoliNbrc100965 graph.
+    Instace of Paraburkholderia ginsengisoli NBRC 100965 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def ParaburkholderiaGinsengisoliNbrc100965(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParaburkholderiaGinsengisoliNbrc100965",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

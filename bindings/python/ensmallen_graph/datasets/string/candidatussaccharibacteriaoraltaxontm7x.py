@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusSaccharibacteriaOralTaxonTm7x.
+This file offers the methods to automatically retrieve the graph Candidatus Saccharibacteria oral taxon TM7x.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CandidatusSaccharibacteriaOralTaxonTm7x(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusSaccharibacteriaOralTaxonTm7x graph.
+    """Return new instance of the Candidatus Saccharibacteria oral taxon TM7x graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CandidatusSaccharibacteriaOralTaxonTm7x(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CandidatusSaccharibacteriaOralTaxonTm7x graph.
+    Instace of Candidatus Saccharibacteria oral taxon TM7x graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CandidatusSaccharibacteriaOralTaxonTm7x(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusSaccharibacteriaOralTaxonTm7x",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

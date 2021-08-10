@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UstilagoHordeiUh48574.
+This file offers the methods to automatically retrieve the graph Ustilago hordei Uh4857-4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def UstilagoHordeiUh48574(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UstilagoHordeiUh48574 graph.
+    """Return new instance of the Ustilago hordei Uh4857-4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def UstilagoHordeiUh48574(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of UstilagoHordeiUh48574 graph.
+    Instace of Ustilago hordei Uh4857-4 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def UstilagoHordeiUh48574(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="UstilagoHordeiUh48574",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

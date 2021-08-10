@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocPokec.
+This file offers the methods to automatically retrieve the graph soc-pokec.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -38,7 +38,7 @@ def SocPokec(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocPokec graph.
+    """Return new instance of the soc-pokec graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -65,7 +65,7 @@ def SocPokec(
 
     Returns
     -----------------------
-    Instace of SocPokec graph.
+    Instace of soc-pokec graph.
 
 	References
 	---------------------
@@ -88,7 +88,7 @@ def SocPokec(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocPokec",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

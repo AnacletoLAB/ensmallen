@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WebEpa.
+This file offers the methods to automatically retrieve the graph web-EPA.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -41,7 +41,7 @@ def WebEpa(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WebEpa graph.
+    """Return new instance of the web-EPA graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -68,7 +68,7 @@ def WebEpa(
 
     Returns
     -----------------------
-    Instace of WebEpa graph.
+    Instace of web-EPA graph.
 
 	References
 	---------------------
@@ -94,7 +94,7 @@ def WebEpa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebEpa",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

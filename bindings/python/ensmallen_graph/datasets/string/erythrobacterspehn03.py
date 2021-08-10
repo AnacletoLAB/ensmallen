@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErythrobacterSpEhn03.
+This file offers the methods to automatically retrieve the graph Erythrobacter sp. EhN03.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def ErythrobacterSpEhn03(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErythrobacterSpEhn03 graph.
+    """Return new instance of the Erythrobacter sp. EhN03 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def ErythrobacterSpEhn03(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of ErythrobacterSpEhn03 graph.
+    Instace of Erythrobacter sp. EhN03 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def ErythrobacterSpEhn03(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErythrobacterSpEhn03",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

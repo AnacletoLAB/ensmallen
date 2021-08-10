@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocSlashdot0902.
+This file offers the methods to automatically retrieve the graph soc-Slashdot0902.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def SocSlashdot0902(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocSlashdot0902 graph.
+    """Return new instance of the soc-Slashdot0902 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def SocSlashdot0902(
 
     Returns
     -----------------------
-    Instace of SocSlashdot0902 graph.
+    Instace of soc-Slashdot0902 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def SocSlashdot0902(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocSlashdot0902",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

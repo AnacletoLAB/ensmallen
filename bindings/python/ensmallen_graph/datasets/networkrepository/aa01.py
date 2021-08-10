@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Aa01.
+This file offers the methods to automatically retrieve the graph aa01.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Aa01(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Aa01 graph.
+    """Return new instance of the aa01 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Aa01(
 
     Returns
     -----------------------
-    Instace of Aa01 graph.
+    Instace of aa01 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Aa01(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Aa01",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

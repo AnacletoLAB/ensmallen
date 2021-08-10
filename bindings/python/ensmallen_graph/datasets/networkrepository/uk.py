@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Uk.
+This file offers the methods to automatically retrieve the graph uk.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Uk(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Uk graph.
+    """Return new instance of the uk graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Uk(
 
     Returns
     -----------------------
-    Instace of Uk graph.
+    Instace of uk graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Uk(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Uk",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

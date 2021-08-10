@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GaetbulibacterSaemankumensisDsm17032.
+This file offers the methods to automatically retrieve the graph Gaetbulibacter saemankumensis DSM 17032.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def GaetbulibacterSaemankumensisDsm17032(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GaetbulibacterSaemankumensisDsm17032 graph.
+    """Return new instance of the Gaetbulibacter saemankumensis DSM 17032 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def GaetbulibacterSaemankumensisDsm17032(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of GaetbulibacterSaemankumensisDsm17032 graph.
+    Instace of Gaetbulibacter saemankumensis DSM 17032 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def GaetbulibacterSaemankumensisDsm17032(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GaetbulibacterSaemankumensisDsm17032",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

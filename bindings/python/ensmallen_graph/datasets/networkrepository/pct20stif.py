@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Pct20stif.
+This file offers the methods to automatically retrieve the graph pct20stif.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Pct20stif(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Pct20stif graph.
+    """Return new instance of the pct20stif graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Pct20stif(
 
     Returns
     -----------------------
-    Instace of Pct20stif graph.
+    Instace of pct20stif graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Pct20stif(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Pct20stif",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

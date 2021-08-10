@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KordiimonasLacus.
+This file offers the methods to automatically retrieve the graph Kordiimonas lacus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def KordiimonasLacus(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KordiimonasLacus graph.
+    """Return new instance of the Kordiimonas lacus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def KordiimonasLacus(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of KordiimonasLacus graph.
+    Instace of Kordiimonas lacus graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def KordiimonasLacus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KordiimonasLacus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

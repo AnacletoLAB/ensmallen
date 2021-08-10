@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfuritaleaHydrogenivoransSk43h.
+This file offers the methods to automatically retrieve the graph Sulfuritalea hydrogenivorans sk43H.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def SulfuritaleaHydrogenivoransSk43h(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfuritaleaHydrogenivoransSk43h graph.
+    """Return new instance of the Sulfuritalea hydrogenivorans sk43H graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def SulfuritaleaHydrogenivoransSk43h(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of SulfuritaleaHydrogenivoransSk43h graph.
+    Instace of Sulfuritalea hydrogenivorans sk43H graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def SulfuritaleaHydrogenivoransSk43h(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfuritaleaHydrogenivoransSk43h",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

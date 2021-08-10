@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OscillibacterSp5720.
+This file offers the methods to automatically retrieve the graph Oscillibacter sp. 57_20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def OscillibacterSp5720(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OscillibacterSp5720 graph.
+    """Return new instance of the Oscillibacter sp. 57_20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def OscillibacterSp5720(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of OscillibacterSp5720 graph.
+    Instace of Oscillibacter sp. 57_20 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def OscillibacterSp5720(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OscillibacterSp5720",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

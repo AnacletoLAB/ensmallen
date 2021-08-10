@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbHoward90.
+This file offers the methods to automatically retrieve the graph socfb-Howard90.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbHoward90(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbHoward90 graph.
+    """Return new instance of the socfb-Howard90 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbHoward90(
 
     Returns
     -----------------------
-    Instace of SocfbHoward90 graph.
+    Instace of socfb-Howard90 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbHoward90(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbHoward90",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

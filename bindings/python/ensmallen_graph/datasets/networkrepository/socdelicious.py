@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocDelicious.
+This file offers the methods to automatically retrieve the graph soc-delicious.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def SocDelicious(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocDelicious graph.
+    """Return new instance of the soc-delicious graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def SocDelicious(
 
     Returns
     -----------------------
-    Instace of SocDelicious graph.
+    Instace of soc-delicious graph.
 
 	References
 	---------------------
@@ -92,7 +92,7 @@ def SocDelicious(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocDelicious",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VeillonellaSpDnf00869.
+This file offers the methods to automatically retrieve the graph Veillonella sp. DNF00869.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def VeillonellaSpDnf00869(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VeillonellaSpDnf00869 graph.
+    """Return new instance of the Veillonella sp. DNF00869 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def VeillonellaSpDnf00869(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of VeillonellaSpDnf00869 graph.
+    Instace of Veillonella sp. DNF00869 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def VeillonellaSpDnf00869(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VeillonellaSpDnf00869",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

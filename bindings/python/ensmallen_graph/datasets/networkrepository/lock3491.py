@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Lock3491.
+This file offers the methods to automatically retrieve the graph lock3491.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Lock3491(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Lock3491 graph.
+    """Return new instance of the lock3491 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Lock3491(
 
     Returns
     -----------------------
-    Instace of Lock3491 graph.
+    Instace of lock3491 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Lock3491(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Lock3491",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

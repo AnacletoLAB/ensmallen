@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocFriendster.
+This file offers the methods to automatically retrieve the graph soc-friendster.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -38,7 +38,7 @@ def SocFriendster(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocFriendster graph.
+    """Return new instance of the soc-friendster graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -65,7 +65,7 @@ def SocFriendster(
 
     Returns
     -----------------------
-    Instace of SocFriendster graph.
+    Instace of soc-friendster graph.
 
 	References
 	---------------------
@@ -88,7 +88,7 @@ def SocFriendster(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocFriendster",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

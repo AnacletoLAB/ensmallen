@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LipomycesStarkeyiNrrlY11557.
+This file offers the methods to automatically retrieve the graph Lipomyces starkeyi NRRL Y-11557.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def LipomycesStarkeyiNrrlY11557(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LipomycesStarkeyiNrrlY11557 graph.
+    """Return new instance of the Lipomyces starkeyi NRRL Y-11557 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def LipomycesStarkeyiNrrlY11557(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of LipomycesStarkeyiNrrlY11557 graph.
+    Instace of Lipomyces starkeyi NRRL Y-11557 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def LipomycesStarkeyiNrrlY11557(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LipomycesStarkeyiNrrlY11557",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

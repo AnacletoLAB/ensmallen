@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlautiaSpMarseilleP3201t.
+This file offers the methods to automatically retrieve the graph Blautia sp. Marseille-P3201T.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def BlautiaSpMarseilleP3201t(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlautiaSpMarseilleP3201t graph.
+    """Return new instance of the Blautia sp. Marseille-P3201T graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def BlautiaSpMarseilleP3201t(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of BlautiaSpMarseilleP3201t graph.
+    Instace of Blautia sp. Marseille-P3201T graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def BlautiaSpMarseilleP3201t(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlautiaSpMarseilleP3201t",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAmesbacteriaBacteriumGw2011Gwa24711b.
+This file offers the methods to automatically retrieve the graph Candidatus Amesbacteria bacterium GW2011_GWA2_47_11b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CandidatusAmesbacteriaBacteriumGw2011Gwa24711b(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAmesbacteriaBacteriumGw2011Gwa24711b graph.
+    """Return new instance of the Candidatus Amesbacteria bacterium GW2011_GWA2_47_11b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CandidatusAmesbacteriaBacteriumGw2011Gwa24711b(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CandidatusAmesbacteriaBacteriumGw2011Gwa24711b graph.
+    Instace of Candidatus Amesbacteria bacterium GW2011_GWA2_47_11b graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CandidatusAmesbacteriaBacteriumGw2011Gwa24711b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusAmesbacteriaBacteriumGw2011Gwa24711b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

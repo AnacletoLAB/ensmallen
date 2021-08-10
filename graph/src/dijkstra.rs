@@ -710,7 +710,7 @@ impl Graph {
             None
         };
 
-        if self.is_unchecked_disconnected_from_node_id(src_node_id) {
+        if self.is_unchecked_disconnected_node_from_node_id(src_node_id) {
             if use_edge_weights_as_probabilities {
                 return ShortestPathsDjkstra::new(
                     vec![0.0; nodes_number],
@@ -1176,7 +1176,7 @@ impl Graph {
         }
 
         let most_central_node_id = unsafe { self.get_unchecked_most_central_node_id() };
-        if unsafe { self.is_unchecked_disconnected_from_node_id(most_central_node_id) } {
+        if unsafe { self.is_unchecked_disconnected_node_from_node_id(most_central_node_id) } {
             return Ok(0.0);
         }
 

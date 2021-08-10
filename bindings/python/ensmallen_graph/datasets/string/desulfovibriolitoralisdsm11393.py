@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioLitoralisDsm11393.
+This file offers the methods to automatically retrieve the graph Desulfovibrio litoralis DSM 11393.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def DesulfovibrioLitoralisDsm11393(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioLitoralisDsm11393 graph.
+    """Return new instance of the Desulfovibrio litoralis DSM 11393 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def DesulfovibrioLitoralisDsm11393(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of DesulfovibrioLitoralisDsm11393 graph.
+    Instace of Desulfovibrio litoralis DSM 11393 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def DesulfovibrioLitoralisDsm11393(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfovibrioLitoralisDsm11393",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

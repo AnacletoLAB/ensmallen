@@ -1,7 +1,4 @@
-use super::*;
-
-#[automatically_generated_function]
-/// Returns whether the given node name respects the Gene Ontology Relations nodes pattern.
+/// Returns whether the given node name respects the Website nodes pattern.
 ///
 /// # Arguments
 /// * `node_name`: &str - Node name to check pattern with.
@@ -22,16 +19,11 @@ pub fn is_valid_website_node_name(node_name: &str) -> bool {
         && validator::validate_url(node_name)
 }
 
-#[automatically_generated_function]
-/// Returns URL from given Gene Ontology Relations node name.
+/// Returns URL from given website node name.
 ///
 /// # Arguments
 /// * `node_name`: &str - Node name to check pattern with.
 ///
-/// # Safety
-/// This method assumes that the provided node name is a Gene Ontology Relations node name and
-/// may cause a panic if the aforementioned assumption is not true.
-///
-pub(crate) unsafe fn format_website_url_from_node_name(node_name: &str) -> String {
+pub(crate) fn format_website_url_from_node_name(node_name: &str) -> String {
     node_name.to_string()
 }

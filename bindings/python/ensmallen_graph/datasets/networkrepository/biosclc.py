@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BioScLc.
+This file offers the methods to automatically retrieve the graph bio-SC-LC.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -44,7 +44,7 @@ def BioScLc(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BioScLc graph.
+    """Return new instance of the bio-SC-LC graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -71,7 +71,7 @@ def BioScLc(
 
     Returns
     -----------------------
-    Instace of BioScLc graph.
+    Instace of bio-SC-LC graph.
 
 	References
 	---------------------
@@ -100,7 +100,7 @@ def BioScLc(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BioScLc",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

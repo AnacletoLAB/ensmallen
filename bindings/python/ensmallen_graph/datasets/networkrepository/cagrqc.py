@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaGrqc.
+This file offers the methods to automatically retrieve the graph ca-GrQc.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def CaGrqc(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaGrqc graph.
+    """Return new instance of the ca-GrQc graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def CaGrqc(
 
     Returns
     -----------------------
-    Instace of CaGrqc graph.
+    Instace of ca-GrQc graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def CaGrqc(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaGrqc",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

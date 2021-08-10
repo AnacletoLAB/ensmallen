@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocTwitterFollowsMun.
+This file offers the methods to automatically retrieve the graph soc-twitter-follows-mun.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -42,7 +42,7 @@ def SocTwitterFollowsMun(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocTwitterFollowsMun graph.
+    """Return new instance of the soc-twitter-follows-mun graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -69,7 +69,7 @@ def SocTwitterFollowsMun(
 
     Returns
     -----------------------
-    Instace of SocTwitterFollowsMun graph.
+    Instace of soc-twitter-follows-mun graph.
 
 	References
 	---------------------
@@ -96,7 +96,7 @@ def SocTwitterFollowsMun(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocTwitterFollowsMun",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

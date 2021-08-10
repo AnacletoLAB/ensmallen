@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbJmu79.
+This file offers the methods to automatically retrieve the graph socfb-JMU79.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbJmu79(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbJmu79 graph.
+    """Return new instance of the socfb-JMU79 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbJmu79(
 
     Returns
     -----------------------
-    Instace of SocfbJmu79 graph.
+    Instace of socfb-JMU79 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbJmu79(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbJmu79",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

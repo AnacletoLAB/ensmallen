@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocFlickrAsu.
+This file offers the methods to automatically retrieve the graph soc-Flickr-ASU.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def SocFlickrAsu(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocFlickrAsu graph.
+    """Return new instance of the soc-Flickr-ASU graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def SocFlickrAsu(
 
     Returns
     -----------------------
-    Instace of SocFlickrAsu graph.
+    Instace of soc-Flickr-ASU graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def SocFlickrAsu(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocFlickrAsu",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AllomycesMacrogynusAtcc38327.
+This file offers the methods to automatically retrieve the graph Allomyces macrogynus ATCC 38327.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def AllomycesMacrogynusAtcc38327(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AllomycesMacrogynusAtcc38327 graph.
+    """Return new instance of the Allomyces macrogynus ATCC 38327 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def AllomycesMacrogynusAtcc38327(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of AllomycesMacrogynusAtcc38327 graph.
+    Instace of Allomyces macrogynus ATCC 38327 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def AllomycesMacrogynusAtcc38327(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AllomycesMacrogynusAtcc38327",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

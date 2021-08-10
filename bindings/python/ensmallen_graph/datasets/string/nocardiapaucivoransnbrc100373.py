@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaPaucivoransNbrc100373.
+This file offers the methods to automatically retrieve the graph Nocardia paucivorans NBRC 100373.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def NocardiaPaucivoransNbrc100373(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaPaucivoransNbrc100373 graph.
+    """Return new instance of the Nocardia paucivorans NBRC 100373 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def NocardiaPaucivoransNbrc100373(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of NocardiaPaucivoransNbrc100373 graph.
+    Instace of Nocardia paucivorans NBRC 100373 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def NocardiaPaucivoransNbrc100373(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardiaPaucivoransNbrc100373",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

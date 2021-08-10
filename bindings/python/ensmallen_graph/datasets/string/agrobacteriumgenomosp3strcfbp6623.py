@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgrobacteriumGenomosp3StrCfbp6623.
+This file offers the methods to automatically retrieve the graph Agrobacterium genomosp. 3 str. CFBP 6623.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def AgrobacteriumGenomosp3StrCfbp6623(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgrobacteriumGenomosp3StrCfbp6623 graph.
+    """Return new instance of the Agrobacterium genomosp. 3 str. CFBP 6623 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def AgrobacteriumGenomosp3StrCfbp6623(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of AgrobacteriumGenomosp3StrCfbp6623 graph.
+    Instace of Agrobacterium genomosp. 3 str. CFBP 6623 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def AgrobacteriumGenomosp3StrCfbp6623(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AgrobacteriumGenomosp3StrCfbp6623",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumLeguminosarumGb30.
+This file offers the methods to automatically retrieve the graph Rhizobium leguminosarum GB30.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def RhizobiumLeguminosarumGb30(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.0",
+    version: str = "links.v11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumLeguminosarumGb30 graph.
+    """Return new instance of the Rhizobium leguminosarum GB30 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def RhizobiumLeguminosarumGb30(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.0",
+    version: str = "links.v11.0",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
+			- homology.v11.0
+			- physical.links.v11.0
+			- links.v11.0
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of RhizobiumLeguminosarumGb30 graph.
+    Instace of Rhizobium leguminosarum GB30 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def RhizobiumLeguminosarumGb30(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizobiumLeguminosarumGb30",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GottronExcellent.
+This file offers the methods to automatically retrieve the graph gottron-excellent.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def GottronExcellent(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GottronExcellent graph.
+    """Return new instance of the gottron-excellent graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def GottronExcellent(
 
     Returns
     -----------------------
-    Instace of GottronExcellent graph.
+    Instace of gottron-excellent graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def GottronExcellent(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GottronExcellent",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

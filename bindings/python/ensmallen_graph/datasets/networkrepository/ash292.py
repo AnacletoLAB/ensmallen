@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Ash292.
+This file offers the methods to automatically retrieve the graph ash292.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Ash292(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Ash292 graph.
+    """Return new instance of the ash292 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Ash292(
 
     Returns
     -----------------------
-    Instace of Ash292 graph.
+    Instace of ash292 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Ash292(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Ash292",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

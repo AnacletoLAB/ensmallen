@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FbMessages.
+This file offers the methods to automatically retrieve the graph fb-messages.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -44,7 +44,7 @@ def FbMessages(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FbMessages graph.
+    """Return new instance of the fb-messages graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -71,7 +71,7 @@ def FbMessages(
 
     Returns
     -----------------------
-    Instace of FbMessages graph.
+    Instace of fb-messages graph.
 
 	References
 	---------------------
@@ -100,7 +100,7 @@ def FbMessages(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FbMessages",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

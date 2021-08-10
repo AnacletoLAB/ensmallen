@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TuberMagnatum.
+This file offers the methods to automatically retrieve the graph Tuber magnatum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def TuberMagnatum(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TuberMagnatum graph.
+    """Return new instance of the Tuber magnatum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def TuberMagnatum(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of TuberMagnatum graph.
+    Instace of Tuber magnatum graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def TuberMagnatum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TuberMagnatum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WebHudong.
+This file offers the methods to automatically retrieve the graph web-hudong.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -41,7 +41,7 @@ def WebHudong(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WebHudong graph.
+    """Return new instance of the web-hudong graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -68,7 +68,7 @@ def WebHudong(
 
     Returns
     -----------------------
-    Instace of WebHudong graph.
+    Instace of web-hudong graph.
 
 	References
 	---------------------
@@ -94,7 +94,7 @@ def WebHudong(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebHudong",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

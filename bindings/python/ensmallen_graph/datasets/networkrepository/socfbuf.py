@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbUf.
+This file offers the methods to automatically retrieve the graph socfb-UF.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbUf(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbUf graph.
+    """Return new instance of the socfb-UF graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbUf(
 
     Returns
     -----------------------
-    Instace of SocfbUf graph.
+    Instace of socfb-UF graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbUf(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbUf",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

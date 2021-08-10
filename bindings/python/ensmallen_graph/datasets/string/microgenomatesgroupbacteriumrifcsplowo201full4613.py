@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrogenomatesGroupBacteriumRifcsplowo201Full4613.
+This file offers the methods to automatically retrieve the graph Microgenomates group bacterium RIFCSPLOWO2_01_FULL_46_13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def MicrogenomatesGroupBacteriumRifcsplowo201Full4613(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrogenomatesGroupBacteriumRifcsplowo201Full4613 graph.
+    """Return new instance of the Microgenomates group bacterium RIFCSPLOWO2_01_FULL_46_13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def MicrogenomatesGroupBacteriumRifcsplowo201Full4613(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of MicrogenomatesGroupBacteriumRifcsplowo201Full4613 graph.
+    Instace of Microgenomates group bacterium RIFCSPLOWO2_01_FULL_46_13 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def MicrogenomatesGroupBacteriumRifcsplowo201Full4613(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrogenomatesGroupBacteriumRifcsplowo201Full4613",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

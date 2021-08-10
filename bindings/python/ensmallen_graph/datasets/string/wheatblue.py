@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WheatBlue.
+This file offers the methods to automatically retrieve the graph Wheat blue.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def WheatBlue(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WheatBlue graph.
+    """Return new instance of the Wheat blue graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def WheatBlue(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of WheatBlue graph.
+    Instace of Wheat blue graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def WheatBlue(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WheatBlue",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

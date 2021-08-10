@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Sphere2.
+This file offers the methods to automatically retrieve the graph sphere2.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Sphere2(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Sphere2 graph.
+    """Return new instance of the sphere2 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Sphere2(
 
     Returns
     -----------------------
-    Instace of Sphere2 graph.
+    Instace of sphere2 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Sphere2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Sphere2",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

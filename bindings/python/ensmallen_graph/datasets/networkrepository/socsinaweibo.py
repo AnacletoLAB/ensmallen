@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocSinaweibo.
+This file offers the methods to automatically retrieve the graph soc-sinaweibo.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -42,7 +42,7 @@ def SocSinaweibo(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocSinaweibo graph.
+    """Return new instance of the soc-sinaweibo graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -69,7 +69,7 @@ def SocSinaweibo(
 
     Returns
     -----------------------
-    Instace of SocSinaweibo graph.
+    Instace of soc-sinaweibo graph.
 
 	References
 	---------------------
@@ -96,7 +96,7 @@ def SocSinaweibo(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocSinaweibo",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

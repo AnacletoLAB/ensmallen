@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Ex6.
+This file offers the methods to automatically retrieve the graph EX6.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Ex6(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Ex6 graph.
+    """Return new instance of the EX6 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Ex6(
 
     Returns
     -----------------------
-    Instace of Ex6 graph.
+    Instace of EX6 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Ex6(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Ex6",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

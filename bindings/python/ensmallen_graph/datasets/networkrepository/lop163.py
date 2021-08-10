@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Lop163.
+This file offers the methods to automatically retrieve the graph lop163.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Lop163(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Lop163 graph.
+    """Return new instance of the lop163 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Lop163(
 
     Returns
     -----------------------
-    Instace of Lop163 graph.
+    Instace of lop163 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Lop163(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Lop163",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

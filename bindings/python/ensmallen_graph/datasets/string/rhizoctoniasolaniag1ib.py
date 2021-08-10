@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizoctoniaSolaniAg1Ib.
+This file offers the methods to automatically retrieve the graph Rhizoctonia solani AG-1 IB.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def RhizoctoniaSolaniAg1Ib(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizoctoniaSolaniAg1Ib graph.
+    """Return new instance of the Rhizoctonia solani AG-1 IB graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def RhizoctoniaSolaniAg1Ib(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of RhizoctoniaSolaniAg1Ib graph.
+    Instace of Rhizoctonia solani AG-1 IB graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def RhizoctoniaSolaniAg1Ib(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizoctoniaSolaniAg1Ib",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

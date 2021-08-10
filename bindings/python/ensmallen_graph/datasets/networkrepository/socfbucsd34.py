@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbUcsd34.
+This file offers the methods to automatically retrieve the graph socfb-UCSD34.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbUcsd34(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbUcsd34 graph.
+    """Return new instance of the socfb-UCSD34 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbUcsd34(
 
     Returns
     -----------------------
-    Instace of SocfbUcsd34 graph.
+    Instace of socfb-UCSD34 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbUcsd34(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbUcsd34",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

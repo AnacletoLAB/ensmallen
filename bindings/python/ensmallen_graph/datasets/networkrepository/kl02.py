@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Kl02.
+This file offers the methods to automatically retrieve the graph kl02.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Kl02(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Kl02 graph.
+    """Return new instance of the kl02 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Kl02(
 
     Returns
     -----------------------
-    Instace of Kl02 graph.
+    Instace of kl02 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Kl02(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Kl02",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorphyromonasSpHmsc065f10.
+This file offers the methods to automatically retrieve the graph Porphyromonas sp. HMSC065F10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def PorphyromonasSpHmsc065f10(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorphyromonasSpHmsc065f10 graph.
+    """Return new instance of the Porphyromonas sp. HMSC065F10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def PorphyromonasSpHmsc065f10(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of PorphyromonasSpHmsc065f10 graph.
+    Instace of Porphyromonas sp. HMSC065F10 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def PorphyromonasSpHmsc065f10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PorphyromonasSpHmsc065f10",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

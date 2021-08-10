@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PHat10003.
+This file offers the methods to automatically retrieve the graph p-hat1000-3.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def PHat10003(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PHat10003 graph.
+    """Return new instance of the p-hat1000-3 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def PHat10003(
 
     Returns
     -----------------------
-    Instace of PHat10003 graph.
+    Instace of p-hat1000-3 graph.
 
 	References
 	---------------------
@@ -104,7 +104,7 @@ def PHat10003(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PHat10003",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

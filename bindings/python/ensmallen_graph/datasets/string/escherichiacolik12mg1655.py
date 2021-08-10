@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EscherichiaColiK12Mg1655.
+This file offers the methods to automatically retrieve the graph Escherichia coli K12 MG1655.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def EscherichiaColiK12Mg1655(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.0",
+    version: str = "links.v11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EscherichiaColiK12Mg1655 graph.
+    """Return new instance of the Escherichia coli K12 MG1655 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def EscherichiaColiK12Mg1655(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.0",
+    version: str = "links.v11.0",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
+			- homology.v11.0
+			- physical.links.v11.0
+			- links.v11.0
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of EscherichiaColiK12Mg1655 graph.
+    Instace of Escherichia coli K12 MG1655 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def EscherichiaColiK12Mg1655(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EscherichiaColiK12Mg1655",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

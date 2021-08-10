@@ -84,7 +84,7 @@ def ClinTermCOOC(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClinTermCOOC",
-        dataset="yue",
+        repository="yue",
         version=version,
         directed=directed,
         preprocess=preprocess,

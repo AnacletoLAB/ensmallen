@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbOklahoma97.
+This file offers the methods to automatically retrieve the graph socfb-Oklahoma97.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbOklahoma97(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbOklahoma97 graph.
+    """Return new instance of the socfb-Oklahoma97 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbOklahoma97(
 
     Returns
     -----------------------
-    Instace of SocfbOklahoma97 graph.
+    Instace of socfb-Oklahoma97 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbOklahoma97(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbOklahoma97",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

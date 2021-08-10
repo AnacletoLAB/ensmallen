@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbCornell5.
+This file offers the methods to automatically retrieve the graph socfb-Cornell5.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbCornell5(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbCornell5 graph.
+    """Return new instance of the socfb-Cornell5 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbCornell5(
 
     Returns
     -----------------------
-    Instace of SocfbCornell5 graph.
+    Instace of socfb-Cornell5 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbCornell5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbCornell5",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

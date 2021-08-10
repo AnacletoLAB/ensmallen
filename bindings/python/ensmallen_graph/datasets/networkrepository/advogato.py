@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Advogato.
+This file offers the methods to automatically retrieve the graph advogato.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Advogato(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Advogato graph.
+    """Return new instance of the advogato graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Advogato(
 
     Returns
     -----------------------
-    Instace of Advogato graph.
+    Instace of advogato graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Advogato(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Advogato",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

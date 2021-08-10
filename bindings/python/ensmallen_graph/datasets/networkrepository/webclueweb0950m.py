@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WebClueweb0950m.
+This file offers the methods to automatically retrieve the graph web-ClueWeb09-50m.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def WebClueweb0950m(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WebClueweb0950m graph.
+    """Return new instance of the web-ClueWeb09-50m graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def WebClueweb0950m(
 
     Returns
     -----------------------
-    Instace of WebClueweb0950m graph.
+    Instace of web-ClueWeb09-50m graph.
 
 	References
 	---------------------
@@ -92,7 +92,7 @@ def WebClueweb0950m(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebClueweb0950m",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

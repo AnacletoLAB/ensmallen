@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusDaviesbacteriaBacteriumRifcsplowo201Full3912.
+This file offers the methods to automatically retrieve the graph Candidatus Daviesbacteria bacterium RIFCSPLOWO2_01_FULL_39_12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CandidatusDaviesbacteriaBacteriumRifcsplowo201Full3912(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusDaviesbacteriaBacteriumRifcsplowo201Full3912 graph.
+    """Return new instance of the Candidatus Daviesbacteria bacterium RIFCSPLOWO2_01_FULL_39_12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CandidatusDaviesbacteriaBacteriumRifcsplowo201Full3912(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CandidatusDaviesbacteriaBacteriumRifcsplowo201Full3912 graph.
+    Instace of Candidatus Daviesbacteria bacterium RIFCSPLOWO2_01_FULL_39_12 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CandidatusDaviesbacteriaBacteriumRifcsplowo201Full3912(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusDaviesbacteriaBacteriumRifcsplowo201Full3912",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

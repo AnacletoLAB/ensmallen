@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocLivejournalUserGroups.
+This file offers the methods to automatically retrieve the graph soc-livejournal-user-groups.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def SocLivejournalUserGroups(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocLivejournalUserGroups graph.
+    """Return new instance of the soc-livejournal-user-groups graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def SocLivejournalUserGroups(
 
     Returns
     -----------------------
-    Instace of SocLivejournalUserGroups graph.
+    Instace of soc-livejournal-user-groups graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def SocLivejournalUserGroups(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocLivejournalUserGroups",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhyllobacteriumSpOv277.
+This file offers the methods to automatically retrieve the graph Phyllobacterium sp. OV277.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def PhyllobacteriumSpOv277(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhyllobacteriumSpOv277 graph.
+    """Return new instance of the Phyllobacterium sp. OV277 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def PhyllobacteriumSpOv277(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of PhyllobacteriumSpOv277 graph.
+    Instace of Phyllobacterium sp. OV277 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def PhyllobacteriumSpOv277(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhyllobacteriumSpOv277",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

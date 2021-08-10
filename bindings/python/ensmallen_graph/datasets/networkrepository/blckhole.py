@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Blckhole.
+This file offers the methods to automatically retrieve the graph blckhole.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Blckhole(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Blckhole graph.
+    """Return new instance of the blckhole graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Blckhole(
 
     Returns
     -----------------------
-    Instace of Blckhole graph.
+    Instace of blckhole graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Blckhole(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Blckhole",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

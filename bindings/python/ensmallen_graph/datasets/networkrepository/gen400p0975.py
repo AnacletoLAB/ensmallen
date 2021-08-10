@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Gen400P0975.
+This file offers the methods to automatically retrieve the graph gen400-p0-9-75.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def Gen400P0975(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Gen400P0975 graph.
+    """Return new instance of the gen400-p0-9-75 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def Gen400P0975(
 
     Returns
     -----------------------
-    Instace of Gen400P0975 graph.
+    Instace of gen400-p0-9-75 graph.
 
 	References
 	---------------------
@@ -104,7 +104,7 @@ def Gen400P0975(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Gen400P0975",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

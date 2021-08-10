@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriaBacteriumMs0243c.
+This file offers the methods to automatically retrieve the graph Flavobacteria bacterium MS024-3C.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def FlavobacteriaBacteriumMs0243c(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriaBacteriumMs0243c graph.
+    """Return new instance of the Flavobacteria bacterium MS024-3C graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def FlavobacteriaBacteriumMs0243c(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of FlavobacteriaBacteriumMs0243c graph.
+    Instace of Flavobacteria bacterium MS024-3C graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def FlavobacteriaBacteriumMs0243c(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FlavobacteriaBacteriumMs0243c",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

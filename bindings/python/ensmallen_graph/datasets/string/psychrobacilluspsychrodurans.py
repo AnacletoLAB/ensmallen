@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychrobacillusPsychrodurans.
+This file offers the methods to automatically retrieve the graph Psychrobacillus psychrodurans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def PsychrobacillusPsychrodurans(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychrobacillusPsychrodurans graph.
+    """Return new instance of the Psychrobacillus psychrodurans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def PsychrobacillusPsychrodurans(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of PsychrobacillusPsychrodurans graph.
+    Instace of Psychrobacillus psychrodurans graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def PsychrobacillusPsychrodurans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PsychrobacillusPsychrodurans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

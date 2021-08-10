@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeokomagataeaThailandicaNbrc106555.
+This file offers the methods to automatically retrieve the graph Neokomagataea thailandica NBRC 106555.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def NeokomagataeaThailandicaNbrc106555(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeokomagataeaThailandicaNbrc106555 graph.
+    """Return new instance of the Neokomagataea thailandica NBRC 106555 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def NeokomagataeaThailandicaNbrc106555(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of NeokomagataeaThailandicaNbrc106555 graph.
+    Instace of Neokomagataea thailandica NBRC 106555 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def NeokomagataeaThailandicaNbrc106555(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NeokomagataeaThailandicaNbrc106555",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

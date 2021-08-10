@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgromycesSpLeaf222.
+This file offers the methods to automatically retrieve the graph Agromyces sp. Leaf222.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def AgromycesSpLeaf222(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgromycesSpLeaf222 graph.
+    """Return new instance of the Agromyces sp. Leaf222 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def AgromycesSpLeaf222(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of AgromycesSpLeaf222 graph.
+    Instace of Agromyces sp. Leaf222 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def AgromycesSpLeaf222(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AgromycesSpLeaf222",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbWilliams40.
+This file offers the methods to automatically retrieve the graph socfb-Williams40.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbWilliams40(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbWilliams40 graph.
+    """Return new instance of the socfb-Williams40 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbWilliams40(
 
     Returns
     -----------------------
-    Instace of SocfbWilliams40 graph.
+    Instace of socfb-Williams40 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbWilliams40(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbWilliams40",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

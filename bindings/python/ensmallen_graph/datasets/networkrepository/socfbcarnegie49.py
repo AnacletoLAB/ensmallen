@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbCarnegie49.
+This file offers the methods to automatically retrieve the graph socfb-Carnegie49.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbCarnegie49(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbCarnegie49 graph.
+    """Return new instance of the socfb-Carnegie49 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbCarnegie49(
 
     Returns
     -----------------------
-    Instace of SocfbCarnegie49 graph.
+    Instace of socfb-Carnegie49 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbCarnegie49(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbCarnegie49",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

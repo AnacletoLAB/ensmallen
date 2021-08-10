@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ScLdoor.
+This file offers the methods to automatically retrieve the graph sc-ldoor.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def ScLdoor(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ScLdoor graph.
+    """Return new instance of the sc-ldoor graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def ScLdoor(
 
     Returns
     -----------------------
-    Instace of ScLdoor graph.
+    Instace of sc-ldoor graph.
 
 	References
 	---------------------
@@ -92,7 +92,7 @@ def ScLdoor(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ScLdoor",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

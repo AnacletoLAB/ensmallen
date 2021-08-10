@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DyadobacterCrusticolaDsm16708.
+This file offers the methods to automatically retrieve the graph Dyadobacter crusticola DSM 16708.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def DyadobacterCrusticolaDsm16708(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DyadobacterCrusticolaDsm16708 graph.
+    """Return new instance of the Dyadobacter crusticola DSM 16708 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def DyadobacterCrusticolaDsm16708(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of DyadobacterCrusticolaDsm16708 graph.
+    Instace of Dyadobacter crusticola DSM 16708 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def DyadobacterCrusticolaDsm16708(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DyadobacterCrusticolaDsm16708",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

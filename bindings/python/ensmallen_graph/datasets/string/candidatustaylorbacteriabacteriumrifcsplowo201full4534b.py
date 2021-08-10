@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusTaylorbacteriaBacteriumRifcsplowo201Full4534b.
+This file offers the methods to automatically retrieve the graph Candidatus Taylorbacteria bacterium RIFCSPLOWO2_01_FULL_45_34b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CandidatusTaylorbacteriaBacteriumRifcsplowo201Full4534b(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusTaylorbacteriaBacteriumRifcsplowo201Full4534b graph.
+    """Return new instance of the Candidatus Taylorbacteria bacterium RIFCSPLOWO2_01_FULL_45_34b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CandidatusTaylorbacteriaBacteriumRifcsplowo201Full4534b(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CandidatusTaylorbacteriaBacteriumRifcsplowo201Full4534b graph.
+    Instace of Candidatus Taylorbacteria bacterium RIFCSPLOWO2_01_FULL_45_34b graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CandidatusTaylorbacteriaBacteriumRifcsplowo201Full4534b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusTaylorbacteriaBacteriumRifcsplowo201Full4534b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbReed98.
+This file offers the methods to automatically retrieve the graph socfb-Reed98.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbReed98(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbReed98 graph.
+    """Return new instance of the socfb-Reed98 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbReed98(
 
     Returns
     -----------------------
-    Instace of SocfbReed98 graph.
+    Instace of socfb-Reed98 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbReed98(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbReed98",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

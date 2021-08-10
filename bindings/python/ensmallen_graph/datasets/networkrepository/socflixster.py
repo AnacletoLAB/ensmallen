@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocFlixster.
+This file offers the methods to automatically retrieve the graph soc-flixster.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def SocFlixster(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocFlixster graph.
+    """Return new instance of the soc-flixster graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def SocFlixster(
 
     Returns
     -----------------------
-    Instace of SocFlixster graph.
+    Instace of soc-flixster graph.
 
 	References
 	---------------------
@@ -92,7 +92,7 @@ def SocFlixster(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocFlixster",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

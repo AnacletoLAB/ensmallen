@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbMississippi66.
+This file offers the methods to automatically retrieve the graph socfb-Mississippi66.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbMississippi66(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbMississippi66 graph.
+    """Return new instance of the socfb-Mississippi66 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbMississippi66(
 
     Returns
     -----------------------
-    Instace of SocfbMississippi66 graph.
+    Instace of socfb-Mississippi66 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbMississippi66(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbMississippi66",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,10 +1,9 @@
+use std::cell::UnsafeCell;
+use std::fmt::Debug;
 use std::fmt::Display;
 use std::hash::Hash;
 use std::ops::{Add, AddAssign, Sub};
-use std::fmt::Debug;
 use std::str::FromStr;
-use std::cell::UnsafeCell;
-
 
 // Types used to represent edges, nodes and their types.
 /// Type used to index the Nodes.
@@ -43,8 +42,19 @@ pub type Result<T> = std::result::Result<T, String>;
 /// and it has no effects on performance because it's optimized away during
 /// compilaton.
 pub trait ToFromUsize:
-    Clone + Display + Ord + Copy + AddAssign + Add + Sub<Output=Self> + Hash
-    + FromStr + Sync + Send + Debug + Add<Output=Self>
+    Clone
+    + Display
+    + Ord
+    + Copy
+    + AddAssign
+    + Add
+    + Sub<Output = Self>
+    + Hash
+    + FromStr
+    + Sync
+    + Send
+    + Debug
+    + Add<Output = Self>
 {
     /// create the type from a usize
     fn from_usize(v: usize) -> Self;
@@ -86,8 +96,6 @@ macro_rules! macro_impl_to_from_usize {
 }
 
 macro_impl_to_from_usize!(u8 u16 u32 u64 usize);
-
-
 
 pub(crate) struct ThreadDataRaceAware<T> {
     pub(crate) value: UnsafeCell<T>,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaplasmaMarginaleFlorida.
+This file offers the methods to automatically retrieve the graph Anaplasma marginale Florida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def AnaplasmaMarginaleFlorida(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaplasmaMarginaleFlorida graph.
+    """Return new instance of the Anaplasma marginale Florida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def AnaplasmaMarginaleFlorida(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of AnaplasmaMarginaleFlorida graph.
+    Instace of Anaplasma marginale Florida graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def AnaplasmaMarginaleFlorida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaplasmaMarginaleFlorida",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

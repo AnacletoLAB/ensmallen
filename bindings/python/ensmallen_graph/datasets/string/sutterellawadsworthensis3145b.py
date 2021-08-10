@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SutterellaWadsworthensis3145b.
+This file offers the methods to automatically retrieve the graph Sutterella wadsworthensis 3145B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def SutterellaWadsworthensis3145b(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SutterellaWadsworthensis3145b graph.
+    """Return new instance of the Sutterella wadsworthensis 3145B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def SutterellaWadsworthensis3145b(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of SutterellaWadsworthensis3145b graph.
+    Instace of Sutterella wadsworthensis 3145B graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def SutterellaWadsworthensis3145b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SutterellaWadsworthensis3145b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

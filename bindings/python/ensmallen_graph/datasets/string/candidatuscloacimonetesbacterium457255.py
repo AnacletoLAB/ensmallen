@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusCloacimonetesBacterium457255.
+This file offers the methods to automatically retrieve the graph Candidatus Cloacimonetes bacterium 4572_55.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CandidatusCloacimonetesBacterium457255(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusCloacimonetesBacterium457255 graph.
+    """Return new instance of the Candidatus Cloacimonetes bacterium 4572_55 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CandidatusCloacimonetesBacterium457255(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CandidatusCloacimonetesBacterium457255 graph.
+    Instace of Candidatus Cloacimonetes bacterium 4572_55 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CandidatusCloacimonetesBacterium457255(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusCloacimonetesBacterium457255",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

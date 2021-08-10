@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioAlginolyticus40b.
+This file offers the methods to automatically retrieve the graph Vibrio alginolyticus 40B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def VibrioAlginolyticus40b(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioAlginolyticus40b graph.
+    """Return new instance of the Vibrio alginolyticus 40B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def VibrioAlginolyticus40b(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of VibrioAlginolyticus40b graph.
+    Instace of Vibrio alginolyticus 40B graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def VibrioAlginolyticus40b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="VibrioAlginolyticus40b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

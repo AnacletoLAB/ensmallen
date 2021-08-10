@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpirochaetesBacteriumGwb13613.
+This file offers the methods to automatically retrieve the graph Spirochaetes bacterium GWB1_36_13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def SpirochaetesBacteriumGwb13613(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpirochaetesBacteriumGwb13613 graph.
+    """Return new instance of the Spirochaetes bacterium GWB1_36_13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def SpirochaetesBacteriumGwb13613(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of SpirochaetesBacteriumGwb13613 graph.
+    Instace of Spirochaetes bacterium GWB1_36_13 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def SpirochaetesBacteriumGwb13613(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SpirochaetesBacteriumGwb13613",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

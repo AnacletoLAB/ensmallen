@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Power.
+This file offers the methods to automatically retrieve the graph power.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Power(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Power graph.
+    """Return new instance of the power graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Power(
 
     Returns
     -----------------------
-    Instace of Power graph.
+    Instace of power graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Power(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Power",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

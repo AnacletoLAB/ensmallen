@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TenacibaculumSp47agom205m.
+This file offers the methods to automatically retrieve the graph Tenacibaculum sp. 47AGOM205m.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def TenacibaculumSp47agom205m(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TenacibaculumSp47agom205m graph.
+    """Return new instance of the Tenacibaculum sp. 47AGOM205m graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def TenacibaculumSp47agom205m(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of TenacibaculumSp47agom205m graph.
+    Instace of Tenacibaculum sp. 47AGOM205m graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def TenacibaculumSp47agom205m(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TenacibaculumSp47agom205m",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

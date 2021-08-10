@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Internet.
+This file offers the methods to automatically retrieve the graph internet.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Internet(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Internet graph.
+    """Return new instance of the internet graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Internet(
 
     Returns
     -----------------------
-    Instace of Internet graph.
+    Instace of internet graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Internet(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Internet",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

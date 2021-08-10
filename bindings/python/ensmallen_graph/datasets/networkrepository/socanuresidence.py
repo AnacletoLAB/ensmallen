@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocAnuResidence.
+This file offers the methods to automatically retrieve the graph soc-ANU-residence.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def SocAnuResidence(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocAnuResidence graph.
+    """Return new instance of the soc-ANU-residence graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def SocAnuResidence(
 
     Returns
     -----------------------
-    Instace of SocAnuResidence graph.
+    Instace of soc-ANU-residence graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def SocAnuResidence(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocAnuResidence",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

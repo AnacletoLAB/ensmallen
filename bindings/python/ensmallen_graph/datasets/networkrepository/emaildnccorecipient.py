@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EmailDncCorecipient.
+This file offers the methods to automatically retrieve the graph email-dnc-corecipient.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def EmailDncCorecipient(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EmailDncCorecipient graph.
+    """Return new instance of the email-dnc-corecipient graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def EmailDncCorecipient(
 
     Returns
     -----------------------
-    Instace of EmailDncCorecipient graph.
+    Instace of email-dnc-corecipient graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def EmailDncCorecipient(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EmailDncCorecipient",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

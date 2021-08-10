@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ZhishiBaiduInternallink.
+This file offers the methods to automatically retrieve the graph zhishi-baidu-internallink.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def ZhishiBaiduInternallink(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ZhishiBaiduInternallink graph.
+    """Return new instance of the zhishi-baidu-internallink graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def ZhishiBaiduInternallink(
 
     Returns
     -----------------------
-    Instace of ZhishiBaiduInternallink graph.
+    Instace of zhishi-baidu-internallink graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def ZhishiBaiduInternallink(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZhishiBaiduInternallink",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

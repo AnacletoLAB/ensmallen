@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BorreliellaGarinii.
+This file offers the methods to automatically retrieve the graph Borreliella garinii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def BorreliellaGarinii(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BorreliellaGarinii graph.
+    """Return new instance of the Borreliella garinii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def BorreliellaGarinii(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of BorreliellaGarinii graph.
+    Instace of Borreliella garinii graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def BorreliellaGarinii(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BorreliellaGarinii",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocLivemocha.
+This file offers the methods to automatically retrieve the graph soc-LiveMocha.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def SocLivemocha(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocLivemocha graph.
+    """Return new instance of the soc-LiveMocha graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def SocLivemocha(
 
     Returns
     -----------------------
-    Instace of SocLivemocha graph.
+    Instace of soc-LiveMocha graph.
 
 	References
 	---------------------
@@ -92,7 +92,7 @@ def SocLivemocha(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocLivemocha",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

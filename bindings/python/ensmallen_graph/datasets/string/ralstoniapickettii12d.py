@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RalstoniaPickettii12d.
+This file offers the methods to automatically retrieve the graph Ralstonia pickettii 12D.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def RalstoniaPickettii12d(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RalstoniaPickettii12d graph.
+    """Return new instance of the Ralstonia pickettii 12D graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def RalstoniaPickettii12d(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of RalstoniaPickettii12d graph.
+    Instace of Ralstonia pickettii 12D graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def RalstoniaPickettii12d(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RalstoniaPickettii12d",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

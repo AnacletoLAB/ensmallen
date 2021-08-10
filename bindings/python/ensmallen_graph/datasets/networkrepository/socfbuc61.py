@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbUc61.
+This file offers the methods to automatically retrieve the graph socfb-UC61.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbUc61(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbUc61 graph.
+    """Return new instance of the socfb-UC61 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbUc61(
 
     Returns
     -----------------------
-    Instace of SocfbUc61 graph.
+    Instace of socfb-UC61 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbUc61(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbUc61",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

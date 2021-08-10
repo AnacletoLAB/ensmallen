@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Cage11.
+This file offers the methods to automatically retrieve the graph cage11.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Cage11(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Cage11 graph.
+    """Return new instance of the cage11 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Cage11(
 
     Returns
     -----------------------
-    Instace of Cage11 graph.
+    Instace of cage11 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Cage11(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Cage11",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidateDivisionWor1BacteriumRifoxyb2Full3713.
+This file offers the methods to automatically retrieve the graph candidate division WOR-1 bacterium RIFOXYB2_FULL_37_13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CandidateDivisionWor1BacteriumRifoxyb2Full3713(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidateDivisionWor1BacteriumRifoxyb2Full3713 graph.
+    """Return new instance of the candidate division WOR-1 bacterium RIFOXYB2_FULL_37_13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CandidateDivisionWor1BacteriumRifoxyb2Full3713(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CandidateDivisionWor1BacteriumRifoxyb2Full3713 graph.
+    Instace of candidate division WOR-1 bacterium RIFOXYB2_FULL_37_13 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CandidateDivisionWor1BacteriumRifoxyb2Full3713(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidateDivisionWor1BacteriumRifoxyb2Full3713",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AttaColombica.
+This file offers the methods to automatically retrieve the graph Atta colombica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def AttaColombica(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AttaColombica graph.
+    """Return new instance of the Atta colombica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def AttaColombica(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of AttaColombica graph.
+    Instace of Atta colombica graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def AttaColombica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AttaColombica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

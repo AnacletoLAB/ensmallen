@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SmittiumMucronatum.
+This file offers the methods to automatically retrieve the graph Smittium mucronatum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def SmittiumMucronatum(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SmittiumMucronatum graph.
+    """Return new instance of the Smittium mucronatum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def SmittiumMucronatum(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of SmittiumMucronatum graph.
+    Instace of Smittium mucronatum graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def SmittiumMucronatum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SmittiumMucronatum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

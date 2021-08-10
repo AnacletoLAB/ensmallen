@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActorCollaboration.
+This file offers the methods to automatically retrieve the graph actor-collaboration.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def ActorCollaboration(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActorCollaboration graph.
+    """Return new instance of the actor-collaboration graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def ActorCollaboration(
 
     Returns
     -----------------------
-    Instace of ActorCollaboration graph.
+    Instace of actor-collaboration graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def ActorCollaboration(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActorCollaboration",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

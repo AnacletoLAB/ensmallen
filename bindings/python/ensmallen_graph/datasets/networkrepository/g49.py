@@ -78,7 +78,7 @@ def G49(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="G49",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

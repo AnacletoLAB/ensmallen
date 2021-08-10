@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JaapiaArgillaceaMucl33604.
+This file offers the methods to automatically retrieve the graph Jaapia argillacea MUCL 33604.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def JaapiaArgillaceaMucl33604(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JaapiaArgillaceaMucl33604 graph.
+    """Return new instance of the Jaapia argillacea MUCL 33604 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def JaapiaArgillaceaMucl33604(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of JaapiaArgillaceaMucl33604 graph.
+    Instace of Jaapia argillacea MUCL 33604 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def JaapiaArgillaceaMucl33604(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JaapiaArgillaceaMucl33604",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

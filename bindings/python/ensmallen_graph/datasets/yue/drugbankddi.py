@@ -84,7 +84,7 @@ def DrugBankDDI(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DrugBankDDI",
-        dataset="yue",
+        repository="yue",
         version=version,
         directed=directed,
         preprocess=preprocess,

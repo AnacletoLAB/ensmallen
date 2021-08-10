@@ -5,6 +5,8 @@ from .kg_hub_graph_repository import KGHubGraphRepository
 from .yue_graph_repository import YueGraphRepository
 from .linqs_graph_repository import LINQSGraphRepository
 from .monarch_initiative_graph_repository import MonarchInitiativeGraphRepository
+from .zenodo_graph_repository import ZenodoGraphRepository
+from .pheknowlatorkg_graph_repository import PheKnowLatorKGGraphrepository
 
 __all__ = [
     "StringGraphRepository",
@@ -12,5 +14,7 @@ __all__ = [
     "KGHubGraphRepository",
     "YueGraphRepository",
     "LINQSGraphRepository",
-    "MonarchInitiativeGraphRepository"
+    "MonarchInitiativeGraphRepository",
+    "ZenodoGraphRepository",
+    "PheKnowLatorKGGraphrepository"
 ]

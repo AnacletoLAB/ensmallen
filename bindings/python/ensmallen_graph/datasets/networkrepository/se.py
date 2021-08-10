@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Se.
+This file offers the methods to automatically retrieve the graph se.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Se(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Se graph.
+    """Return new instance of the se graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Se(
 
     Returns
     -----------------------
-    Instace of Se graph.
+    Instace of se graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Se(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Se",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

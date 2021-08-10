@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumClostridioforme2149faa.
+This file offers the methods to automatically retrieve the graph Clostridium clostridioforme 2149FAA.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def ClostridiumClostridioforme2149faa(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumClostridioforme2149faa graph.
+    """Return new instance of the Clostridium clostridioforme 2149FAA graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def ClostridiumClostridioforme2149faa(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of ClostridiumClostridioforme2149faa graph.
+    Instace of Clostridium clostridioforme 2149FAA graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def ClostridiumClostridioforme2149faa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumClostridioforme2149faa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

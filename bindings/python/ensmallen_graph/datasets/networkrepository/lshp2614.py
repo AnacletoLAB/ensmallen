@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Lshp2614.
+This file offers the methods to automatically retrieve the graph lshp2614.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Lshp2614(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Lshp2614 graph.
+    """Return new instance of the lshp2614 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Lshp2614(
 
     Returns
     -----------------------
-    Instace of Lshp2614 graph.
+    Instace of lshp2614 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Lshp2614(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Lshp2614",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

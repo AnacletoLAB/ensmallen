@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThaumarchaeotaSpScgcAb629i23.
+This file offers the methods to automatically retrieve the graph Thaumarchaeota sp. SCGC AB629I23.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def ThaumarchaeotaSpScgcAb629i23(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.0",
+    version: str = "links.v11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThaumarchaeotaSpScgcAb629i23 graph.
+    """Return new instance of the Thaumarchaeota sp. SCGC AB629I23 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def ThaumarchaeotaSpScgcAb629i23(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.0",
+    version: str = "links.v11.0",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
+			- homology.v11.0
+			- physical.links.v11.0
+			- links.v11.0
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of ThaumarchaeotaSpScgcAb629i23 graph.
+    Instace of Thaumarchaeota sp. SCGC AB629I23 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def ThaumarchaeotaSpScgcAb629i23(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThaumarchaeotaSpScgcAb629i23",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

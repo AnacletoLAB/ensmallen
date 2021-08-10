@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DblpCite.
+This file offers the methods to automatically retrieve the graph dblp-cite.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def DblpCite(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DblpCite graph.
+    """Return new instance of the dblp-cite graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def DblpCite(
 
     Returns
     -----------------------
-    Instace of DblpCite graph.
+    Instace of dblp-cite graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def DblpCite(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DblpCite",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

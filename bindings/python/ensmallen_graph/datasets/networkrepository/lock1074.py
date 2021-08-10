@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Lock1074.
+This file offers the methods to automatically retrieve the graph lock1074.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Lock1074(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Lock1074 graph.
+    """Return new instance of the lock1074 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Lock1074(
 
     Returns
     -----------------------
-    Instace of Lock1074 graph.
+    Instace of lock1074 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Lock1074(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Lock1074",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

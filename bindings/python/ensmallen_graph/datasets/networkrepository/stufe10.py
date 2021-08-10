@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Stufe10.
+This file offers the methods to automatically retrieve the graph stufe-10.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Stufe10(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Stufe10 graph.
+    """Return new instance of the stufe-10 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Stufe10(
 
     Returns
     -----------------------
-    Instace of Stufe10 graph.
+    Instace of stufe-10 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Stufe10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Stufe10",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

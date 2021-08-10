@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Rajat10.
+This file offers the methods to automatically retrieve the graph rajat10.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Rajat10(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Rajat10 graph.
+    """Return new instance of the rajat10 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Rajat10(
 
     Returns
     -----------------------
-    Instace of Rajat10 graph.
+    Instace of rajat10 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Rajat10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Rajat10",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

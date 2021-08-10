@@ -42,15 +42,26 @@ fn test_components_size() {
             biggest
         );
 
-        assert!(
-            !(smallest == 1 && (!g.has_singleton_nodes()) && (!g.has_selfloops())),
-            "singletons: {} selfloops: {} smallest: {} biggest: {}, components: {:?}",
-            g.has_singleton_nodes(),
-            g.has_selfloops(),
-            smallest,
-            biggest,
-            components
-        );
+        if g.has_disconnected_nodes() {
+            assert!(smallest == 1);
+        }
+        if smallest == 1 {
+            assert!(
+                g.has_disconnected_nodes(),
+                concat!(
+                    "For the minimum connected component to have a single node, the graph ",
+                    "must contain disconnected nodes.\n",
+                    "The node degrees of this graph is {:?}.\n",
+                    "The directed flag of this graph is {:?}.\n",
+                    "The edge list of this graph is {:?}.\n",
+                    "The component node components are: {:?}.\n"
+                ),
+                g.get_node_degrees(),
+                g.is_directed(),
+                g.get_edge_node_ids(true),
+                components
+            );
+        }
     }
 
     let (components, number_of_components, smallest, biggest) =

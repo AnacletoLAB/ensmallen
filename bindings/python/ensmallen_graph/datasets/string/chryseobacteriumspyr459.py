@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumSpYr459.
+This file offers the methods to automatically retrieve the graph Chryseobacterium sp. YR459.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def ChryseobacteriumSpYr459(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumSpYr459 graph.
+    """Return new instance of the Chryseobacterium sp. YR459 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def ChryseobacteriumSpYr459(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumSpYr459 graph.
+    Instace of Chryseobacterium sp. YR459 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def ChryseobacteriumSpYr459(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChryseobacteriumSpYr459",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

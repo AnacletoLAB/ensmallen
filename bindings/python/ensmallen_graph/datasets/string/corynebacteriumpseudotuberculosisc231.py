@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumPseudotuberculosisC231.
+This file offers the methods to automatically retrieve the graph Corynebacterium pseudotuberculosis C231.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CorynebacteriumPseudotuberculosisC231(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumPseudotuberculosisC231 graph.
+    """Return new instance of the Corynebacterium pseudotuberculosis C231 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CorynebacteriumPseudotuberculosisC231(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CorynebacteriumPseudotuberculosisC231 graph.
+    Instace of Corynebacterium pseudotuberculosis C231 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CorynebacteriumPseudotuberculosisC231(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CorynebacteriumPseudotuberculosisC231",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

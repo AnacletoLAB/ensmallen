@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EcoFlorida.
+This file offers the methods to automatically retrieve the graph eco-florida.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -53,7 +53,7 @@ def EcoFlorida(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EcoFlorida graph.
+    """Return new instance of the eco-florida graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -80,7 +80,7 @@ def EcoFlorida(
 
     Returns
     -----------------------
-    Instace of EcoFlorida graph.
+    Instace of eco-florida graph.
 
 	References
 	---------------------
@@ -118,7 +118,7 @@ def EcoFlorida(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EcoFlorida",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

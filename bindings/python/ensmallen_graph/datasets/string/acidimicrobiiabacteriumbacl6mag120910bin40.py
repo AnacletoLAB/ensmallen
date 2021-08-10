@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidimicrobiiaBacteriumBacl6Mag120910Bin40.
+This file offers the methods to automatically retrieve the graph Acidimicrobiia bacterium BACL6 MAG-120910-bin40.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def AcidimicrobiiaBacteriumBacl6Mag120910Bin40(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidimicrobiiaBacteriumBacl6Mag120910Bin40 graph.
+    """Return new instance of the Acidimicrobiia bacterium BACL6 MAG-120910-bin40 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def AcidimicrobiiaBacteriumBacl6Mag120910Bin40(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of AcidimicrobiiaBacteriumBacl6Mag120910Bin40 graph.
+    Instace of Acidimicrobiia bacterium BACL6 MAG-120910-bin40 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def AcidimicrobiiaBacteriumBacl6Mag120910Bin40(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcidimicrobiiaBacteriumBacl6Mag120910Bin40",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

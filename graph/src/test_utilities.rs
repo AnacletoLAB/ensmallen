@@ -1469,8 +1469,32 @@ pub fn test_edge_holdouts(graph: &Graph, verbose: Option<bool>) -> Result<()> {
         let (train_total, train_min_comp, train_max_comp) =
             train.get_connected_components_number(verbose);
         if original_total == 1 {
-            assert!(original_min_comp == original_max_comp);
-            assert_eq!(original_min_comp, graph.get_nodes_number());
+            assert_eq!(
+                original_min_comp,
+                original_max_comp,
+                concat!(
+                    "When the number of components is only one, ",
+                    "the minimum component size should be equal ",
+                    "to the maximum component size.\n",
+                    "The minimum component size was: {}.\n",
+                    "The maximum component size was: {}.\n",
+                ),
+                original_min_comp,
+                original_max_comp
+            );
+            assert_eq!(
+                original_min_comp,
+                graph.get_nodes_number(),
+                concat!(
+                    "When the number of components is only one, ",
+                    "the minimum component size should be equal ",
+                    "to the number of nodes of the graph.\n",
+                    "The minimum component size was: {}.\n",
+                    "The number of nodes of the graph was: {}.\n",
+                ),
+                original_min_comp,
+                graph.get_nodes_number(),
+            );
         }
         if original_total == 2 {
             assert!(original_min_comp <= original_max_comp);
@@ -1681,7 +1705,13 @@ pub fn test_kfold(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
 
     if let Ok(edge_t) = graph.get_edge_type_name_from_edge_type_id(0) {
         for i in 0..k {
-            let (train, test) = graph.get_edge_prediction_kfold(k, i, Some(vec![Some(edge_t.clone())]), None, None)?;
+            let (train, test) = graph.get_edge_prediction_kfold(
+                k,
+                i,
+                Some(vec![Some(edge_t.clone())]),
+                None,
+                None,
+            )?;
             default_holdout_test_suite(graph, &train, &test)?;
         }
     }

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Pgpgiantcompo.
+This file offers the methods to automatically retrieve the graph PGPgiantcompo.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Pgpgiantcompo(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Pgpgiantcompo graph.
+    """Return new instance of the PGPgiantcompo graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Pgpgiantcompo(
 
     Returns
     -----------------------
-    Instace of Pgpgiantcompo graph.
+    Instace of PGPgiantcompo graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Pgpgiantcompo(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Pgpgiantcompo",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

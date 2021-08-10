@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusDakarensis.
+This file offers the methods to automatically retrieve the graph Bacillus dakarensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def BacillusDakarensis(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusDakarensis graph.
+    """Return new instance of the Bacillus dakarensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def BacillusDakarensis(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of BacillusDakarensis graph.
+    Instace of Bacillus dakarensis graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def BacillusDakarensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusDakarensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfurimonasSpRifoxyd12Full3339.
+This file offers the methods to automatically retrieve the graph Sulfurimonas sp. RIFOXYD12_FULL_33_39.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def SulfurimonasSpRifoxyd12Full3339(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfurimonasSpRifoxyd12Full3339 graph.
+    """Return new instance of the Sulfurimonas sp. RIFOXYD12_FULL_33_39 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def SulfurimonasSpRifoxyd12Full3339(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of SulfurimonasSpRifoxyd12Full3339 graph.
+    Instace of Sulfurimonas sp. RIFOXYD12_FULL_33_39 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def SulfurimonasSpRifoxyd12Full3339(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfurimonasSpRifoxyd12Full3339",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

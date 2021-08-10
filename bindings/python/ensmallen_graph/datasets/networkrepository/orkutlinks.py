@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OrkutLinks.
+This file offers the methods to automatically retrieve the graph orkut-links.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def OrkutLinks(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OrkutLinks graph.
+    """Return new instance of the orkut-links graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def OrkutLinks(
 
     Returns
     -----------------------
-    Instace of OrkutLinks graph.
+    Instace of orkut-links graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def OrkutLinks(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OrkutLinks",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ComAmazon.
+This file offers the methods to automatically retrieve the graph com-amazon.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def ComAmazon(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ComAmazon graph.
+    """Return new instance of the com-amazon graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def ComAmazon(
 
     Returns
     -----------------------
-    Instace of ComAmazon graph.
+    Instace of com-amazon graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def ComAmazon(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ComAmazon",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

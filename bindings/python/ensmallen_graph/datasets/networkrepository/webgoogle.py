@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WebGoogle.
+This file offers the methods to automatically retrieve the graph web-google.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -44,7 +44,7 @@ def WebGoogle(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WebGoogle graph.
+    """Return new instance of the web-google graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -71,7 +71,7 @@ def WebGoogle(
 
     Returns
     -----------------------
-    Instace of WebGoogle graph.
+    Instace of web-google graph.
 
 	References
 	---------------------
@@ -100,7 +100,7 @@ def WebGoogle(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebGoogle",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

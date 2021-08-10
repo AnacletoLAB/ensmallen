@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NostocSpMbr210.
+This file offers the methods to automatically retrieve the graph Nostoc sp. MBR 210.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def NostocSpMbr210(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NostocSpMbr210 graph.
+    """Return new instance of the Nostoc sp. MBR 210 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def NostocSpMbr210(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of NostocSpMbr210 graph.
+    Instace of Nostoc sp. MBR 210 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def NostocSpMbr210(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NostocSpMbr210",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

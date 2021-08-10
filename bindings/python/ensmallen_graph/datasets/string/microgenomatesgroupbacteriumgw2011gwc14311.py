@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrogenomatesGroupBacteriumGw2011Gwc14311.
+This file offers the methods to automatically retrieve the graph Microgenomates group bacterium GW2011_GWC1_43_11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def MicrogenomatesGroupBacteriumGw2011Gwc14311(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrogenomatesGroupBacteriumGw2011Gwc14311 graph.
+    """Return new instance of the Microgenomates group bacterium GW2011_GWC1_43_11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def MicrogenomatesGroupBacteriumGw2011Gwc14311(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of MicrogenomatesGroupBacteriumGw2011Gwc14311 graph.
+    Instace of Microgenomates group bacterium GW2011_GWC1_43_11 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def MicrogenomatesGroupBacteriumGw2011Gwc14311(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrogenomatesGroupBacteriumGw2011Gwc14311",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

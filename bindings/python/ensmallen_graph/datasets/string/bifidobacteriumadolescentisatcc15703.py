@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BifidobacteriumAdolescentisAtcc15703.
+This file offers the methods to automatically retrieve the graph Bifidobacterium adolescentis ATCC 15703.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def BifidobacteriumAdolescentisAtcc15703(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BifidobacteriumAdolescentisAtcc15703 graph.
+    """Return new instance of the Bifidobacterium adolescentis ATCC 15703 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def BifidobacteriumAdolescentisAtcc15703(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of BifidobacteriumAdolescentisAtcc15703 graph.
+    Instace of Bifidobacterium adolescentis ATCC 15703 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def BifidobacteriumAdolescentisAtcc15703(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BifidobacteriumAdolescentisAtcc15703",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

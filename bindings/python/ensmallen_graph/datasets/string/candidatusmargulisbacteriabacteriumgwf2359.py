@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMargulisbacteriaBacteriumGwf2359.
+This file offers the methods to automatically retrieve the graph Candidatus Margulisbacteria bacterium GWF2_35_9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CandidatusMargulisbacteriaBacteriumGwf2359(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMargulisbacteriaBacteriumGwf2359 graph.
+    """Return new instance of the Candidatus Margulisbacteria bacterium GWF2_35_9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CandidatusMargulisbacteriaBacteriumGwf2359(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CandidatusMargulisbacteriaBacteriumGwf2359 graph.
+    Instace of Candidatus Margulisbacteria bacterium GWF2_35_9 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CandidatusMargulisbacteriaBacteriumGwf2359(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusMargulisbacteriaBacteriumGwf2359",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

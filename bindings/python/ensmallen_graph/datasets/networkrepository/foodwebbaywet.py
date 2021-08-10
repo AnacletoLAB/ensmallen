@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FoodwebBaywet.
+This file offers the methods to automatically retrieve the graph foodweb-baywet.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def FoodwebBaywet(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FoodwebBaywet graph.
+    """Return new instance of the foodweb-baywet graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def FoodwebBaywet(
 
     Returns
     -----------------------
-    Instace of FoodwebBaywet graph.
+    Instace of foodweb-baywet graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def FoodwebBaywet(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FoodwebBaywet",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

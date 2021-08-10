@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Sls.
+This file offers the methods to automatically retrieve the graph sls.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Sls(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Sls graph.
+    """Return new instance of the sls graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Sls(
 
     Returns
     -----------------------
-    Instace of Sls graph.
+    Instace of sls graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Sls(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Sls",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

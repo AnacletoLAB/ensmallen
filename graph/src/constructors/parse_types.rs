@@ -1,9 +1,7 @@
 use super::*;
 use rayon::iter::ParallelIterator;
 
-pub(crate) fn parse_types<
-    TypeT: ToFromUsize,
->(
+pub(crate) fn parse_types<TypeT: ToFromUsize>(
     types_iterator: Option<
         ItersWrapper<
             Result<(usize, String)>,

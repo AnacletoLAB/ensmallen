@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Pfinan512.
+This file offers the methods to automatically retrieve the graph pfinan512.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Pfinan512(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Pfinan512 graph.
+    """Return new instance of the pfinan512 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Pfinan512(
 
     Returns
     -----------------------
-    Instace of Pfinan512 graph.
+    Instace of pfinan512 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Pfinan512(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Pfinan512",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

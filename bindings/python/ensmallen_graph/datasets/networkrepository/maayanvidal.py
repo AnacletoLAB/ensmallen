@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MaayanVidal.
+This file offers the methods to automatically retrieve the graph maayan-vidal.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def MaayanVidal(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MaayanVidal graph.
+    """Return new instance of the maayan-vidal graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def MaayanVidal(
 
     Returns
     -----------------------
-    Instace of MaayanVidal graph.
+    Instace of maayan-vidal graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def MaayanVidal(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MaayanVidal",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

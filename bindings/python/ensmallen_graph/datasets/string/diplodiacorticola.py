@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DiplodiaCorticola.
+This file offers the methods to automatically retrieve the graph Diplodia corticola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def DiplodiaCorticola(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DiplodiaCorticola graph.
+    """Return new instance of the Diplodia corticola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def DiplodiaCorticola(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of DiplodiaCorticola graph.
+    Instace of Diplodia corticola graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def DiplodiaCorticola(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DiplodiaCorticola",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

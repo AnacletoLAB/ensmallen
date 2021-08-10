@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusRoizmanbacteriaBacteriumGw2011Gwa23519.
+This file offers the methods to automatically retrieve the graph Candidatus Roizmanbacteria bacterium GW2011_GWA2_35_19.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CandidatusRoizmanbacteriaBacteriumGw2011Gwa23519(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusRoizmanbacteriaBacteriumGw2011Gwa23519 graph.
+    """Return new instance of the Candidatus Roizmanbacteria bacterium GW2011_GWA2_35_19 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CandidatusRoizmanbacteriaBacteriumGw2011Gwa23519(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CandidatusRoizmanbacteriaBacteriumGw2011Gwa23519 graph.
+    Instace of Candidatus Roizmanbacteria bacterium GW2011_GWA2_35_19 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CandidatusRoizmanbacteriaBacteriumGw2011Gwa23519(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusRoizmanbacteriaBacteriumGw2011Gwa23519",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

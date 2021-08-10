@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FacklamiaHominisCcug36813.
+This file offers the methods to automatically retrieve the graph Facklamia hominis CCUG 36813.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def FacklamiaHominisCcug36813(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FacklamiaHominisCcug36813 graph.
+    """Return new instance of the Facklamia hominis CCUG 36813 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def FacklamiaHominisCcug36813(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of FacklamiaHominisCcug36813 graph.
+    Instace of Facklamia hominis CCUG 36813 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def FacklamiaHominisCcug36813(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FacklamiaHominisCcug36813",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

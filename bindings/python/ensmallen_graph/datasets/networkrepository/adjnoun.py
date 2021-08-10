@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Adjnoun.
+This file offers the methods to automatically retrieve the graph adjnoun.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Adjnoun(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Adjnoun graph.
+    """Return new instance of the adjnoun graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Adjnoun(
 
     Returns
     -----------------------
-    Instace of Adjnoun graph.
+    Instace of adjnoun graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Adjnoun(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Adjnoun",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

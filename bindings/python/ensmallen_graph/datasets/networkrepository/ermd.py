@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErMd.
+This file offers the methods to automatically retrieve the graph ER-MD.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def ErMd(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErMd graph.
+    """Return new instance of the ER-MD graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def ErMd(
 
     Returns
     -----------------------
-    Instace of ErMd graph.
+    Instace of ER-MD graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def ErMd(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ErMd",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

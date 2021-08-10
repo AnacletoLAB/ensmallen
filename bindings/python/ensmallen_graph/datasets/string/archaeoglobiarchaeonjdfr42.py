@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArchaeoglobiArchaeonJdfr42.
+This file offers the methods to automatically retrieve the graph Archaeoglobi archaeon JdFR-42.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def ArchaeoglobiArchaeonJdfr42(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArchaeoglobiArchaeonJdfr42 graph.
+    """Return new instance of the Archaeoglobi archaeon JdFR-42 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def ArchaeoglobiArchaeonJdfr42(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of ArchaeoglobiArchaeonJdfr42 graph.
+    Instace of Archaeoglobi archaeon JdFR-42 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def ArchaeoglobiArchaeonJdfr42(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArchaeoglobiArchaeonJdfr42",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

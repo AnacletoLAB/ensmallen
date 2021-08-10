@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlamydiaPsittaci6bc.
+This file offers the methods to automatically retrieve the graph Chlamydia psittaci 6BC.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def ChlamydiaPsittaci6bc(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlamydiaPsittaci6bc graph.
+    """Return new instance of the Chlamydia psittaci 6BC graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def ChlamydiaPsittaci6bc(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of ChlamydiaPsittaci6bc graph.
+    Instace of Chlamydia psittaci 6BC graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def ChlamydiaPsittaci6bc(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChlamydiaPsittaci6bc",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

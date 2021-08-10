@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AffWikiWordbypage.
+This file offers the methods to automatically retrieve the graph aff-wiki-wordbypage.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def AffWikiWordbypage(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AffWikiWordbypage graph.
+    """Return new instance of the aff-wiki-wordbypage graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def AffWikiWordbypage(
 
     Returns
     -----------------------
-    Instace of AffWikiWordbypage graph.
+    Instace of aff-wiki-wordbypage graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def AffWikiWordbypage(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AffWikiWordbypage",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -78,7 +78,7 @@ def Journals(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Journals",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

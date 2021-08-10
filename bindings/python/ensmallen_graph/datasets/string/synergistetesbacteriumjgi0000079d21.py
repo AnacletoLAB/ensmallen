@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SynergistetesBacteriumJgi0000079D21.
+This file offers the methods to automatically retrieve the graph Synergistetes bacterium JGI 0000079-D21.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def SynergistetesBacteriumJgi0000079D21(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SynergistetesBacteriumJgi0000079D21 graph.
+    """Return new instance of the Synergistetes bacterium JGI 0000079-D21 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def SynergistetesBacteriumJgi0000079D21(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of SynergistetesBacteriumJgi0000079D21 graph.
+    Instace of Synergistetes bacterium JGI 0000079-D21 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def SynergistetesBacteriumJgi0000079D21(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SynergistetesBacteriumJgi0000079D21",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

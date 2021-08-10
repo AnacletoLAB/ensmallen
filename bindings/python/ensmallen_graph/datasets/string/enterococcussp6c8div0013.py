@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusSp6c8Div0013.
+This file offers the methods to automatically retrieve the graph Enterococcus sp. 6C8_DIV0013.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def EnterococcusSp6c8Div0013(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusSp6c8Div0013 graph.
+    """Return new instance of the Enterococcus sp. 6C8_DIV0013 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def EnterococcusSp6c8Div0013(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of EnterococcusSp6c8Div0013 graph.
+    Instace of Enterococcus sp. 6C8_DIV0013 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def EnterococcusSp6c8Div0013(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterococcusSp6c8Div0013",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

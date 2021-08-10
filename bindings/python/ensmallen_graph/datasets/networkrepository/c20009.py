@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph C20009.
+This file offers the methods to automatically retrieve the graph C2000-9.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def C20009(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the C20009 graph.
+    """Return new instance of the C2000-9 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def C20009(
 
     Returns
     -----------------------
-    Instace of C20009 graph.
+    Instace of C2000-9 graph.
 
 	References
 	---------------------
@@ -104,7 +104,7 @@ def C20009(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="C20009",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

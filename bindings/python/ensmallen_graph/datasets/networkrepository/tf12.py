@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Tf12.
+This file offers the methods to automatically retrieve the graph TF12.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Tf12(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Tf12 graph.
+    """Return new instance of the TF12 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Tf12(
 
     Returns
     -----------------------
-    Instace of Tf12 graph.
+    Instace of TF12 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Tf12(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Tf12",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

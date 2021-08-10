@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrecWt10g.
+This file offers the methods to automatically retrieve the graph trec-wt10g.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def TrecWt10g(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrecWt10g graph.
+    """Return new instance of the trec-wt10g graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def TrecWt10g(
 
     Returns
     -----------------------
-    Instace of TrecWt10g graph.
+    Instace of trec-wt10g graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def TrecWt10g(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TrecWt10g",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

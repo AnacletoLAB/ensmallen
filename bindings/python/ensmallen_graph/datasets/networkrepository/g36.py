@@ -78,7 +78,7 @@ def G36(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="G36",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

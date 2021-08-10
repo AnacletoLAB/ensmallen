@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Bcsstk33.
+This file offers the methods to automatically retrieve the graph bcsstk33.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Bcsstk33(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Bcsstk33 graph.
+    """Return new instance of the bcsstk33 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Bcsstk33(
 
     Returns
     -----------------------
-    Instace of Bcsstk33 graph.
+    Instace of bcsstk33 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Bcsstk33(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Bcsstk33",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

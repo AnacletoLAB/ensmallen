@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Cegb3306.
+This file offers the methods to automatically retrieve the graph cegb3306.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Cegb3306(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Cegb3306 graph.
+    """Return new instance of the cegb3306 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Cegb3306(
 
     Returns
     -----------------------
-    Instace of Cegb3306 graph.
+    Instace of cegb3306 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Cegb3306(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Cegb3306",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

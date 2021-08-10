@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EmergomycesPasteurianusEp9510.
+This file offers the methods to automatically retrieve the graph Emergomyces pasteurianus Ep9510.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def EmergomycesPasteurianusEp9510(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EmergomycesPasteurianusEp9510 graph.
+    """Return new instance of the Emergomyces pasteurianus Ep9510 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def EmergomycesPasteurianusEp9510(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of EmergomycesPasteurianusEp9510 graph.
+    Instace of Emergomyces pasteurianus Ep9510 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def EmergomycesPasteurianusEp9510(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EmergomycesPasteurianusEp9510",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

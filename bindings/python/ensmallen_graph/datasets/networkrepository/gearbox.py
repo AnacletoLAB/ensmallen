@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Gearbox.
+This file offers the methods to automatically retrieve the graph gearbox.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Gearbox(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Gearbox graph.
+    """Return new instance of the gearbox graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Gearbox(
 
     Returns
     -----------------------
-    Instace of Gearbox graph.
+    Instace of gearbox graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Gearbox(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Gearbox",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

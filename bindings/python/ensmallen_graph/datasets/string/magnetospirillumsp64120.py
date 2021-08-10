@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MagnetospirillumSp64120.
+This file offers the methods to automatically retrieve the graph Magnetospirillum sp. 64-120.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def MagnetospirillumSp64120(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MagnetospirillumSp64120 graph.
+    """Return new instance of the Magnetospirillum sp. 64-120 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def MagnetospirillumSp64120(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of MagnetospirillumSp64120 graph.
+    Instace of Magnetospirillum sp. 64-120 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def MagnetospirillumSp64120(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MagnetospirillumSp64120",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

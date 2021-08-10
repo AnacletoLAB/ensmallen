@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Air03.
+This file offers the methods to automatically retrieve the graph air03.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Air03(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Air03 graph.
+    """Return new instance of the air03 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Air03(
 
     Returns
     -----------------------
-    Instace of Air03 graph.
+    Instace of air03 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Air03(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Air03",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

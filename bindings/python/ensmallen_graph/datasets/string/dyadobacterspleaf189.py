@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DyadobacterSpLeaf189.
+This file offers the methods to automatically retrieve the graph Dyadobacter sp. Leaf189.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def DyadobacterSpLeaf189(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DyadobacterSpLeaf189 graph.
+    """Return new instance of the Dyadobacter sp. Leaf189 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def DyadobacterSpLeaf189(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of DyadobacterSpLeaf189 graph.
+    Instace of Dyadobacter sp. Leaf189 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def DyadobacterSpLeaf189(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DyadobacterSpLeaf189",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

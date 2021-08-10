@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SordariaMacrosporaKHell.
+This file offers the methods to automatically retrieve the graph Sordaria macrospora k-hell.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def SordariaMacrosporaKHell(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SordariaMacrosporaKHell graph.
+    """Return new instance of the Sordaria macrospora k-hell graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def SordariaMacrosporaKHell(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of SordariaMacrosporaKHell graph.
+    Instace of Sordaria macrospora k-hell graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def SordariaMacrosporaKHell(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SordariaMacrosporaKHell",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WebWebbase2001All.
+This file offers the methods to automatically retrieve the graph web-webbase-2001-all.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -50,7 +50,7 @@ def WebWebbase2001All(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WebWebbase2001All graph.
+    """Return new instance of the web-webbase-2001-all graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -77,7 +77,7 @@ def WebWebbase2001All(
 
     Returns
     -----------------------
-    Instace of WebWebbase2001All graph.
+    Instace of web-webbase-2001-all graph.
 
 	References
 	---------------------
@@ -112,7 +112,7 @@ def WebWebbase2001All(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebWebbase2001All",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

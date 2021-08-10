@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParasporobacteriumPaucivoransDsm15970.
+This file offers the methods to automatically retrieve the graph Parasporobacterium paucivorans DSM 15970.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def ParasporobacteriumPaucivoransDsm15970(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParasporobacteriumPaucivoransDsm15970 graph.
+    """Return new instance of the Parasporobacterium paucivorans DSM 15970 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def ParasporobacteriumPaucivoransDsm15970(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of ParasporobacteriumPaucivoransDsm15970 graph.
+    Instace of Parasporobacterium paucivorans DSM 15970 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def ParasporobacteriumPaucivoransDsm15970(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParasporobacteriumPaucivoransDsm15970",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomaduraMacraNbrc14102.
+This file offers the methods to automatically retrieve the graph Actinomadura macra NBRC 14102.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def ActinomaduraMacraNbrc14102(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomaduraMacraNbrc14102 graph.
+    """Return new instance of the Actinomadura macra NBRC 14102 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def ActinomaduraMacraNbrc14102(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of ActinomaduraMacraNbrc14102 graph.
+    Instace of Actinomadura macra NBRC 14102 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def ActinomaduraMacraNbrc14102(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ActinomaduraMacraNbrc14102",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

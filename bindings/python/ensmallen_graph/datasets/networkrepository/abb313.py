@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Abb313.
+This file offers the methods to automatically retrieve the graph abb313.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Abb313(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Abb313 graph.
+    """Return new instance of the abb313 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Abb313(
 
     Returns
     -----------------------
-    Instace of Abb313 graph.
+    Instace of abb313 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Abb313(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Abb313",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

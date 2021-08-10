@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph YoutubeLinks.
+This file offers the methods to automatically retrieve the graph youtube-links.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def YoutubeLinks(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the YoutubeLinks graph.
+    """Return new instance of the youtube-links graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def YoutubeLinks(
 
     Returns
     -----------------------
-    Instace of YoutubeLinks graph.
+    Instace of youtube-links graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def YoutubeLinks(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="YoutubeLinks",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

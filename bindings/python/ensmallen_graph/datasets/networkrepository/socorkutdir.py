@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocOrkutDir.
+This file offers the methods to automatically retrieve the graph soc-orkut-dir.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -41,7 +41,7 @@ def SocOrkutDir(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocOrkutDir graph.
+    """Return new instance of the soc-orkut-dir graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -68,7 +68,7 @@ def SocOrkutDir(
 
     Returns
     -----------------------
-    Instace of SocOrkutDir graph.
+    Instace of soc-orkut-dir graph.
 
 	References
 	---------------------
@@ -94,7 +94,7 @@ def SocOrkutDir(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocOrkutDir",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

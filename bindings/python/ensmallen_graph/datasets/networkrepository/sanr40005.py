@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Sanr40005.
+This file offers the methods to automatically retrieve the graph sanr400-0-5.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def Sanr40005(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Sanr40005 graph.
+    """Return new instance of the sanr400-0-5 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def Sanr40005(
 
     Returns
     -----------------------
-    Instace of Sanr40005 graph.
+    Instace of sanr400-0-5 graph.
 
 	References
 	---------------------
@@ -104,7 +104,7 @@ def Sanr40005(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Sanr40005",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

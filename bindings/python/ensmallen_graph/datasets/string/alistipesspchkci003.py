@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlistipesSpChkci003.
+This file offers the methods to automatically retrieve the graph Alistipes sp. CHKCI003.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def AlistipesSpChkci003(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlistipesSpChkci003 graph.
+    """Return new instance of the Alistipes sp. CHKCI003 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def AlistipesSpChkci003(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of AlistipesSpChkci003 graph.
+    Instace of Alistipes sp. CHKCI003 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def AlistipesSpChkci003(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlistipesSpChkci003",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DubosiellaNewyorkensis.
+This file offers the methods to automatically retrieve the graph Dubosiella newyorkensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def DubosiellaNewyorkensis(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DubosiellaNewyorkensis graph.
+    """Return new instance of the Dubosiella newyorkensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def DubosiellaNewyorkensis(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of DubosiellaNewyorkensis graph.
+    Instace of Dubosiella newyorkensis graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def DubosiellaNewyorkensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DubosiellaNewyorkensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

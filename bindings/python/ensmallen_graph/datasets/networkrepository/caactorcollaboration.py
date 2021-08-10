@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaActorCollaboration.
+This file offers the methods to automatically retrieve the graph ca-actor-collaboration.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def CaActorCollaboration(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaActorCollaboration graph.
+    """Return new instance of the ca-actor-collaboration graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def CaActorCollaboration(
 
     Returns
     -----------------------
-    Instace of CaActorCollaboration graph.
+    Instace of ca-actor-collaboration graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def CaActorCollaboration(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaActorCollaboration",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

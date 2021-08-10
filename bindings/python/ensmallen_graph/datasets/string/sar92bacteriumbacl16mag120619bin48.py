@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Sar92BacteriumBacl16Mag120619Bin48.
+This file offers the methods to automatically retrieve the graph SAR92 bacterium BACL16 MAG-120619-bin48.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def Sar92BacteriumBacl16Mag120619Bin48(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Sar92BacteriumBacl16Mag120619Bin48 graph.
+    """Return new instance of the SAR92 bacterium BACL16 MAG-120619-bin48 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def Sar92BacteriumBacl16Mag120619Bin48(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of Sar92BacteriumBacl16Mag120619Bin48 graph.
+    Instace of SAR92 bacterium BACL16 MAG-120619-bin48 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def Sar92BacteriumBacl16Mag120619Bin48(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Sar92BacteriumBacl16Mag120619Bin48",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

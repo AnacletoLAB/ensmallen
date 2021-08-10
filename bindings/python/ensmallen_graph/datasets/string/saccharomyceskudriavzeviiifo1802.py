@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaccharomycesKudriavzeviiIfo1802.
+This file offers the methods to automatically retrieve the graph Saccharomyces kudriavzevii IFO 1802.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def SaccharomycesKudriavzeviiIfo1802(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaccharomycesKudriavzeviiIfo1802 graph.
+    """Return new instance of the Saccharomyces kudriavzevii IFO 1802 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def SaccharomycesKudriavzeviiIfo1802(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of SaccharomycesKudriavzeviiIfo1802 graph.
+    Instace of Saccharomyces kudriavzevii IFO 1802 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def SaccharomycesKudriavzeviiIfo1802(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SaccharomycesKudriavzeviiIfo1802",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

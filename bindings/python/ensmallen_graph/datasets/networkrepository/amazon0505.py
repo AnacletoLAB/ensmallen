@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Amazon0505.
+This file offers the methods to automatically retrieve the graph amazon0505.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Amazon0505(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Amazon0505 graph.
+    """Return new instance of the amazon0505 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Amazon0505(
 
     Returns
     -----------------------
-    Instace of Amazon0505 graph.
+    Instace of amazon0505 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Amazon0505(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Amazon0505",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

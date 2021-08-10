@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Shock9.
+This file offers the methods to automatically retrieve the graph shock-9.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Shock9(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Shock9 graph.
+    """Return new instance of the shock-9 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Shock9(
 
     Returns
     -----------------------
-    Instace of Shock9 graph.
+    Instace of shock-9 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Shock9(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Shock9",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

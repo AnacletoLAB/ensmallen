@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevibacillusLaterosporusDsm25.
+This file offers the methods to automatically retrieve the graph Brevibacillus laterosporus DSM25.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def BrevibacillusLaterosporusDsm25(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevibacillusLaterosporusDsm25 graph.
+    """Return new instance of the Brevibacillus laterosporus DSM25 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def BrevibacillusLaterosporusDsm25(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of BrevibacillusLaterosporusDsm25 graph.
+    Instace of Brevibacillus laterosporus DSM25 graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def BrevibacillusLaterosporusDsm25(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BrevibacillusLaterosporusDsm25",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Rw496.
+This file offers the methods to automatically retrieve the graph rw496.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Rw496(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Rw496 graph.
+    """Return new instance of the rw496 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Rw496(
 
     Returns
     -----------------------
-    Instace of Rw496 graph.
+    Instace of rw496 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Rw496(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Rw496",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ZhishiZhwikiInternallink.
+This file offers the methods to automatically retrieve the graph zhishi-zhwiki-internallink.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def ZhishiZhwikiInternallink(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ZhishiZhwikiInternallink graph.
+    """Return new instance of the zhishi-zhwiki-internallink graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def ZhishiZhwikiInternallink(
 
     Returns
     -----------------------
-    Instace of ZhishiZhwikiInternallink graph.
+    Instace of zhishi-zhwiki-internallink graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def ZhishiZhwikiInternallink(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ZhishiZhwikiInternallink",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -84,7 +84,7 @@ def StringPPI(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StringPPI",
-        dataset="yue",
+        repository="yue",
         version=version,
         directed=directed,
         preprocess=preprocess,

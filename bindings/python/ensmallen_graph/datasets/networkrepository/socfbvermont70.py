@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbVermont70.
+This file offers the methods to automatically retrieve the graph socfb-Vermont70.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbVermont70(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbVermont70 graph.
+    """Return new instance of the socfb-Vermont70 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbVermont70(
 
     Returns
     -----------------------
-    Instace of SocfbVermont70 graph.
+    Instace of socfb-Vermont70 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbVermont70(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbVermont70",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

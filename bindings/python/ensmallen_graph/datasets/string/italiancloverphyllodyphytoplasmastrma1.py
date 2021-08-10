@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ItalianCloverPhyllodyPhytoplasmaStrMa1.
+This file offers the methods to automatically retrieve the graph Italian clover phyllody phytoplasma str. MA1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def ItalianCloverPhyllodyPhytoplasmaStrMa1(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ItalianCloverPhyllodyPhytoplasmaStrMa1 graph.
+    """Return new instance of the Italian clover phyllody phytoplasma str. MA1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def ItalianCloverPhyllodyPhytoplasmaStrMa1(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of ItalianCloverPhyllodyPhytoplasmaStrMa1 graph.
+    Instace of Italian clover phyllody phytoplasma str. MA1 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def ItalianCloverPhyllodyPhytoplasmaStrMa1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ItalianCloverPhyllodyPhytoplasmaStrMa1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

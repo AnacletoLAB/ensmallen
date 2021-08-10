@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocDogster.
+This file offers the methods to automatically retrieve the graph soc-dogster.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -39,7 +39,7 @@ def SocDogster(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocDogster graph.
+    """Return new instance of the soc-dogster graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -66,7 +66,7 @@ def SocDogster(
 
     Returns
     -----------------------
-    Instace of SocDogster graph.
+    Instace of soc-dogster graph.
 
 	References
 	---------------------
@@ -90,7 +90,7 @@ def SocDogster(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocDogster",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

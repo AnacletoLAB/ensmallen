@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodobacteralesBacteriumY4i.
+This file offers the methods to automatically retrieve the graph Rhodobacterales bacterium Y4I.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def RhodobacteralesBacteriumY4i(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodobacteralesBacteriumY4i graph.
+    """Return new instance of the Rhodobacterales bacterium Y4I graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def RhodobacteralesBacteriumY4i(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of RhodobacteralesBacteriumY4i graph.
+    Instace of Rhodobacterales bacterium Y4I graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def RhodobacteralesBacteriumY4i(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodobacteralesBacteriumY4i",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

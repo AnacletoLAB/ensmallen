@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MonosporascusSpMc138b.
+This file offers the methods to automatically retrieve the graph Monosporascus sp. MC13-8B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def MonosporascusSpMc138b(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MonosporascusSpMc138b graph.
+    """Return new instance of the Monosporascus sp. MC13-8B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def MonosporascusSpMc138b(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of MonosporascusSpMc138b graph.
+    Instace of Monosporascus sp. MC13-8B graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def MonosporascusSpMc138b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MonosporascusSpMc138b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

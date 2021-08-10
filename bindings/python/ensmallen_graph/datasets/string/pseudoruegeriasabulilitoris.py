@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoruegeriaSabulilitoris.
+This file offers the methods to automatically retrieve the graph Pseudoruegeria sabulilitoris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def PseudoruegeriaSabulilitoris(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoruegeriaSabulilitoris graph.
+    """Return new instance of the Pseudoruegeria sabulilitoris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def PseudoruegeriaSabulilitoris(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of PseudoruegeriaSabulilitoris graph.
+    Instace of Pseudoruegeria sabulilitoris graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def PseudoruegeriaSabulilitoris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoruegeriaSabulilitoris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

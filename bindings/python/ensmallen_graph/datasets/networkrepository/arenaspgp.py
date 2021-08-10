@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArenasPgp.
+This file offers the methods to automatically retrieve the graph arenas-pgp.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def ArenasPgp(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArenasPgp graph.
+    """Return new instance of the arenas-pgp graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def ArenasPgp(
 
     Returns
     -----------------------
-    Instace of ArenasPgp graph.
+    Instace of arenas-pgp graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def ArenasPgp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArenasPgp",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonasCampestrisPvCampestrisStrAtcc33913.
+This file offers the methods to automatically retrieve the graph Xanthomonas campestris pv. campestris str. ATCC 33913.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def XanthomonasCampestrisPvCampestrisStrAtcc33913(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonasCampestrisPvCampestrisStrAtcc33913 graph.
+    """Return new instance of the Xanthomonas campestris pv. campestris str. ATCC 33913 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def XanthomonasCampestrisPvCampestrisStrAtcc33913(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of XanthomonasCampestrisPvCampestrisStrAtcc33913 graph.
+    Instace of Xanthomonas campestris pv. campestris str. ATCC 33913 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def XanthomonasCampestrisPvCampestrisStrAtcc33913(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XanthomonasCampestrisPvCampestrisStrAtcc33913",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

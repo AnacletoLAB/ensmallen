@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Auto.
+This file offers the methods to automatically retrieve the graph auto.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Auto(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Auto graph.
+    """Return new instance of the auto graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Auto(
 
     Returns
     -----------------------
-    Instace of Auto graph.
+    Instace of auto graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Auto(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Auto",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

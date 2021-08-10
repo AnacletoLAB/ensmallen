@@ -13,21 +13,23 @@ class NetworkRepositoryGraphRepository(GraphRepository):
     def __init__(self):
         """Create new String Graph Repository object."""
         super().__init__()
-        self._data = compress_json.local_load("network_repository.json.gz")
+        self._data = compress_json.local_load("network_repository.json")
 
-    def build_stored_graph_name(self, partial_graph_name: str) -> str:
+    def build_stored_graph_name(self, graph_name: str) -> str:
         """Return built graph name.
 
         Parameters
         -----------------------
-        partial_graph_name: str,
-            Partial graph name to be built.
+        graph_name: str,
+            Initial graph name to be built.
 
         Returns
         -----------------------
         Complete name of the graph.
         """
-        return partial_graph_name
+        if graph_name[0].isdigit():
+            return "NR{}".format(graph_name)
+        return graph_name
 
     def get_formatted_repository_name(self) -> str:
         """Return formatted repository name."""
@@ -125,7 +127,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         It is returned None because the path that is automatically
         used by downloader is sufficiently precise.
         """
-        return self._data[graph_name][version]["paths"]
+        return self._data[graph_name][version].get("paths")
 
     def get_graph_list(self) -> List[str]:
         """Return list of graph names."""

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptospiraBiflexaSerovarPatocStrainPatoc1Paris.
+This file offers the methods to automatically retrieve the graph Leptospira biflexa serovar Patoc strain Patoc 1 (Paris).
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def LeptospiraBiflexaSerovarPatocStrainPatoc1Paris(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptospiraBiflexaSerovarPatocStrainPatoc1Paris graph.
+    """Return new instance of the Leptospira biflexa serovar Patoc strain Patoc 1 (Paris) graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def LeptospiraBiflexaSerovarPatocStrainPatoc1Paris(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of LeptospiraBiflexaSerovarPatocStrainPatoc1Paris graph.
+    Instace of Leptospira biflexa serovar Patoc strain Patoc 1 (Paris) graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def LeptospiraBiflexaSerovarPatocStrainPatoc1Paris(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeptospiraBiflexaSerovarPatocStrainPatoc1Paris",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

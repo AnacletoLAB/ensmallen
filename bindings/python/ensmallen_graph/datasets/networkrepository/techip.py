@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TechIp.
+This file offers the methods to automatically retrieve the graph tech-ip.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def TechIp(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TechIp graph.
+    """Return new instance of the tech-ip graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def TechIp(
 
     Returns
     -----------------------
-    Instace of TechIp graph.
+    Instace of tech-ip graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def TechIp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TechIp",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

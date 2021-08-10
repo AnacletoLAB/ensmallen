@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OpsahlUsairport.
+This file offers the methods to automatically retrieve the graph opsahl-usairport.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def OpsahlUsairport(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OpsahlUsairport graph.
+    """Return new instance of the opsahl-usairport graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def OpsahlUsairport(
 
     Returns
     -----------------------
-    Instace of OpsahlUsairport graph.
+    Instace of opsahl-usairport graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def OpsahlUsairport(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OpsahlUsairport",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

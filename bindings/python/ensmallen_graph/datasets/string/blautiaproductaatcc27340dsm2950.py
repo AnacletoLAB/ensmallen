@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlautiaProductaAtcc27340Dsm2950.
+This file offers the methods to automatically retrieve the graph Blautia producta ATCC 27340 DSM 2950.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def BlautiaProductaAtcc27340Dsm2950(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlautiaProductaAtcc27340Dsm2950 graph.
+    """Return new instance of the Blautia producta ATCC 27340 DSM 2950 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def BlautiaProductaAtcc27340Dsm2950(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of BlautiaProductaAtcc27340Dsm2950 graph.
+    Instace of Blautia producta ATCC 27340 DSM 2950 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def BlautiaProductaAtcc27340Dsm2950(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BlautiaProductaAtcc27340Dsm2950",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Tf13.
+This file offers the methods to automatically retrieve the graph TF13.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Tf13(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Tf13 graph.
+    """Return new instance of the TF13 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Tf13(
 
     Returns
     -----------------------
-    Instace of Tf13 graph.
+    Instace of TF13 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Tf13(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Tf13",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

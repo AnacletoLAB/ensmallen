@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocBlogcatalog.
+This file offers the methods to automatically retrieve the graph soc-BlogCatalog.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def SocBlogcatalog(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocBlogcatalog graph.
+    """Return new instance of the soc-BlogCatalog graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def SocBlogcatalog(
 
     Returns
     -----------------------
-    Instace of SocBlogcatalog graph.
+    Instace of soc-BlogCatalog graph.
 
 	References
 	---------------------
@@ -92,7 +92,7 @@ def SocBlogcatalog(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocBlogcatalog",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

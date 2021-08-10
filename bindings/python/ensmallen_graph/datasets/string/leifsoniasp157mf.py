@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeifsoniaSp157mf.
+This file offers the methods to automatically retrieve the graph Leifsonia sp. 157MF.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def LeifsoniaSp157mf(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeifsoniaSp157mf graph.
+    """Return new instance of the Leifsonia sp. 157MF graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def LeifsoniaSp157mf(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of LeifsoniaSp157mf graph.
+    Instace of Leifsonia sp. 157MF graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def LeifsoniaSp157mf(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LeifsoniaSp157mf",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

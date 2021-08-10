@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbAmerican75.
+This file offers the methods to automatically retrieve the graph socfb-American75.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbAmerican75(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbAmerican75 graph.
+    """Return new instance of the socfb-American75 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbAmerican75(
 
     Returns
     -----------------------
-    Instace of SocfbAmerican75 graph.
+    Instace of socfb-American75 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbAmerican75(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbAmerican75",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

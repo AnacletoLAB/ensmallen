@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Appu.
+This file offers the methods to automatically retrieve the graph appu.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Appu(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Appu graph.
+    """Return new instance of the appu graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Appu(
 
     Returns
     -----------------------
-    Instace of Appu graph.
+    Instace of appu graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Appu(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Appu",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

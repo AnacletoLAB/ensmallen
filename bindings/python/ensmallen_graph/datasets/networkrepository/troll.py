@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Troll.
+This file offers the methods to automatically retrieve the graph troll.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Troll(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Troll graph.
+    """Return new instance of the troll graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Troll(
 
     Returns
     -----------------------
-    Instace of Troll graph.
+    Instace of troll graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Troll(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Troll",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

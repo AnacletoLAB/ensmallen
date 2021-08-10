@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Enzymes118.
+This file offers the methods to automatically retrieve the graph ENZYMES118.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Enzymes118(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Enzymes118 graph.
+    """Return new instance of the ENZYMES118 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Enzymes118(
 
     Returns
     -----------------------
-    Instace of Enzymes118 graph.
+    Instace of ENZYMES118 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Enzymes118(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Enzymes118",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

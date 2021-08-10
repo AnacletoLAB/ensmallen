@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Ig511.
+This file offers the methods to automatically retrieve the graph IG5-11.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Ig511(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Ig511 graph.
+    """Return new instance of the IG5-11 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Ig511(
 
     Returns
     -----------------------
-    Instace of Ig511 graph.
+    Instace of IG5-11 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Ig511(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Ig511",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

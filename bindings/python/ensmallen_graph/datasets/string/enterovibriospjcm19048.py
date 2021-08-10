@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterovibrioSpJcm19048.
+This file offers the methods to automatically retrieve the graph Enterovibrio sp. JCM 19048.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def EnterovibrioSpJcm19048(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterovibrioSpJcm19048 graph.
+    """Return new instance of the Enterovibrio sp. JCM 19048 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def EnterovibrioSpJcm19048(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of EnterovibrioSpJcm19048 graph.
+    Instace of Enterovibrio sp. JCM 19048 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def EnterovibrioSpJcm19048(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterovibrioSpJcm19048",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

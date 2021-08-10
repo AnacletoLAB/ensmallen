@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LoxodontaAfricana.
+This file offers the methods to automatically retrieve the graph Loxodonta africana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def LoxodontaAfricana(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LoxodontaAfricana graph.
+    """Return new instance of the Loxodonta africana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def LoxodontaAfricana(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of LoxodontaAfricana graph.
+    Instace of Loxodonta africana graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def LoxodontaAfricana(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LoxodontaAfricana",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

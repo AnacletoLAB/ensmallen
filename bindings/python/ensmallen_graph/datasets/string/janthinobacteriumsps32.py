@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JanthinobacteriumSpS32.
+This file offers the methods to automatically retrieve the graph Janthinobacterium sp. S3-2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def JanthinobacteriumSpS32(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JanthinobacteriumSpS32 graph.
+    """Return new instance of the Janthinobacterium sp. S3-2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def JanthinobacteriumSpS32(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of JanthinobacteriumSpS32 graph.
+    Instace of Janthinobacterium sp. S3-2 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def JanthinobacteriumSpS32(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="JanthinobacteriumSpS32",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

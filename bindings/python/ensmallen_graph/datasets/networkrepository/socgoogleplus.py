@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocGooglePlus.
+This file offers the methods to automatically retrieve the graph soc-google-plus.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -44,7 +44,7 @@ def SocGooglePlus(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocGooglePlus graph.
+    """Return new instance of the soc-google-plus graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -71,7 +71,7 @@ def SocGooglePlus(
 
     Returns
     -----------------------
-    Instace of SocGooglePlus graph.
+    Instace of soc-google-plus graph.
 
 	References
 	---------------------
@@ -100,7 +100,7 @@ def SocGooglePlus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocGooglePlus",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

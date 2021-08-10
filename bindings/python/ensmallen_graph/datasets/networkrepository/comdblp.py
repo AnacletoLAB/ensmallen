@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ComDblp.
+This file offers the methods to automatically retrieve the graph com-dblp.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def ComDblp(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ComDblp graph.
+    """Return new instance of the com-dblp graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def ComDblp(
 
     Returns
     -----------------------
-    Instace of ComDblp graph.
+    Instace of com-dblp graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def ComDblp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ComDblp",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

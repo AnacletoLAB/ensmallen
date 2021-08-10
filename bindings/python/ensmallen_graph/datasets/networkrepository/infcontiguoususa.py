@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph InfContiguousUsa.
+This file offers the methods to automatically retrieve the graph inf-contiguous-usa.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def InfContiguousUsa(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the InfContiguousUsa graph.
+    """Return new instance of the inf-contiguous-usa graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def InfContiguousUsa(
 
     Returns
     -----------------------
-    Instace of InfContiguousUsa graph.
+    Instace of inf-contiguous-usa graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def InfContiguousUsa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="InfContiguousUsa",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

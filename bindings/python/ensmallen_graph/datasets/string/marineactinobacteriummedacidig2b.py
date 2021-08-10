@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarineActinobacteriumMedacidiG2b.
+This file offers the methods to automatically retrieve the graph marine actinobacterium MedAcidi-G2B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def MarineActinobacteriumMedacidiG2b(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarineActinobacteriumMedacidiG2b graph.
+    """Return new instance of the marine actinobacterium MedAcidi-G2B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def MarineActinobacteriumMedacidiG2b(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of MarineActinobacteriumMedacidiG2b graph.
+    Instace of marine actinobacterium MedAcidi-G2B graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def MarineActinobacteriumMedacidiG2b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarineActinobacteriumMedacidiG2b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

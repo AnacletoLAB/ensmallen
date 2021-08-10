@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaHepth.
+This file offers the methods to automatically retrieve the graph ca-HepTh.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def CaHepth(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaHepth graph.
+    """Return new instance of the ca-HepTh graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def CaHepth(
 
     Returns
     -----------------------
-    Instace of CaHepth graph.
+    Instace of ca-HepTh graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def CaHepth(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaHepth",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

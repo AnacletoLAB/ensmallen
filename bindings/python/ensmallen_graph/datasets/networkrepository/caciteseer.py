@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaCiteseer.
+This file offers the methods to automatically retrieve the graph ca-citeseer.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -49,7 +49,7 @@ def CaCiteseer(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaCiteseer graph.
+    """Return new instance of the ca-citeseer graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -76,7 +76,7 @@ def CaCiteseer(
 
     Returns
     -----------------------
-    Instace of CaCiteseer graph.
+    Instace of ca-citeseer graph.
 
 	References
 	---------------------
@@ -110,7 +110,7 @@ def CaCiteseer(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaCiteseer",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

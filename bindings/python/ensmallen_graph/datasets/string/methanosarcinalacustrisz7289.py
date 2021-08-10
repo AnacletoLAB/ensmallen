@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanosarcinaLacustrisZ7289.
+This file offers the methods to automatically retrieve the graph Methanosarcina lacustris Z-7289.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def MethanosarcinaLacustrisZ7289(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanosarcinaLacustrisZ7289 graph.
+    """Return new instance of the Methanosarcina lacustris Z-7289 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def MethanosarcinaLacustrisZ7289(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of MethanosarcinaLacustrisZ7289 graph.
+    Instace of Methanosarcina lacustris Z-7289 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def MethanosarcinaLacustrisZ7289(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethanosarcinaLacustrisZ7289",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

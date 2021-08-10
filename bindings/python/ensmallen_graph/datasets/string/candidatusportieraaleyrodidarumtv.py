@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPortieraAleyrodidarumTv.
+This file offers the methods to automatically retrieve the graph Candidatus Portiera aleyrodidarum TV.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CandidatusPortieraAleyrodidarumTv(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPortieraAleyrodidarumTv graph.
+    """Return new instance of the Candidatus Portiera aleyrodidarum TV graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CandidatusPortieraAleyrodidarumTv(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CandidatusPortieraAleyrodidarumTv graph.
+    Instace of Candidatus Portiera aleyrodidarum TV graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CandidatusPortieraAleyrodidarumTv(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusPortieraAleyrodidarumTv",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

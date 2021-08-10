@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderialesBacteriumYl45.
+This file offers the methods to automatically retrieve the graph Burkholderiales bacterium YL45.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def BurkholderialesBacteriumYl45(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderialesBacteriumYl45 graph.
+    """Return new instance of the Burkholderiales bacterium YL45 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def BurkholderialesBacteriumYl45(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of BurkholderialesBacteriumYl45 graph.
+    Instace of Burkholderiales bacterium YL45 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def BurkholderialesBacteriumYl45(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BurkholderialesBacteriumYl45",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

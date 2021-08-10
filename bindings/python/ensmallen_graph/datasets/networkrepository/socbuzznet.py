@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocBuzznet.
+This file offers the methods to automatically retrieve the graph soc-buzznet.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -42,7 +42,7 @@ def SocBuzznet(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocBuzznet graph.
+    """Return new instance of the soc-buzznet graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -69,7 +69,7 @@ def SocBuzznet(
 
     Returns
     -----------------------
-    Instace of SocBuzznet graph.
+    Instace of soc-buzznet graph.
 
 	References
 	---------------------
@@ -96,7 +96,7 @@ def SocBuzznet(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocBuzznet",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

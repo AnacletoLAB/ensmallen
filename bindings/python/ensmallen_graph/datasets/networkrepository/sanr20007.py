@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Sanr20007.
+This file offers the methods to automatically retrieve the graph sanr200-0-7.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def Sanr20007(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Sanr20007 graph.
+    """Return new instance of the sanr200-0-7 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def Sanr20007(
 
     Returns
     -----------------------
-    Instace of Sanr20007 graph.
+    Instace of sanr200-0-7 graph.
 
 	References
 	---------------------
@@ -104,7 +104,7 @@ def Sanr20007(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Sanr20007",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

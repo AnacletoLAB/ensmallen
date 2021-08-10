@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Pkustk12.
+This file offers the methods to automatically retrieve the graph pkustk12.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Pkustk12(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Pkustk12 graph.
+    """Return new instance of the pkustk12 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Pkustk12(
 
     Returns
     -----------------------
-    Instace of Pkustk12 graph.
+    Instace of pkustk12 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Pkustk12(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Pkustk12",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

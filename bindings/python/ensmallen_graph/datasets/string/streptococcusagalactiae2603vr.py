@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusAgalactiae2603vR.
+This file offers the methods to automatically retrieve the graph Streptococcus agalactiae 2603V/R.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def StreptococcusAgalactiae2603vR(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusAgalactiae2603vR graph.
+    """Return new instance of the Streptococcus agalactiae 2603V/R graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def StreptococcusAgalactiae2603vR(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of StreptococcusAgalactiae2603vR graph.
+    Instace of Streptococcus agalactiae 2603V/R graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def StreptococcusAgalactiae2603vR(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptococcusAgalactiae2603vR",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

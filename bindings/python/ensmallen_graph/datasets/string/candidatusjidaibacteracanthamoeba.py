@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusJidaibacterAcanthamoeba.
+This file offers the methods to automatically retrieve the graph Candidatus Jidaibacter acanthamoeba.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CandidatusJidaibacterAcanthamoeba(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusJidaibacterAcanthamoeba graph.
+    """Return new instance of the Candidatus Jidaibacter acanthamoeba graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CandidatusJidaibacterAcanthamoeba(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CandidatusJidaibacterAcanthamoeba graph.
+    Instace of Candidatus Jidaibacter acanthamoeba graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CandidatusJidaibacterAcanthamoeba(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusJidaibacterAcanthamoeba",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

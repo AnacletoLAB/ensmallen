@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Dbpedia.
+This file offers the methods to automatically retrieve the graph dbpedia.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Dbpedia(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Dbpedia graph.
+    """Return new instance of the dbpedia graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Dbpedia(
 
     Returns
     -----------------------
-    Instace of Dbpedia graph.
+    Instace of dbpedia graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Dbpedia(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Dbpedia",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

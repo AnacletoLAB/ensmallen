@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusNealsonbacteriaBacteriumRbg134211.
+This file offers the methods to automatically retrieve the graph Candidatus Nealsonbacteria bacterium RBG_13_42_11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CandidatusNealsonbacteriaBacteriumRbg134211(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusNealsonbacteriaBacteriumRbg134211 graph.
+    """Return new instance of the Candidatus Nealsonbacteria bacterium RBG_13_42_11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CandidatusNealsonbacteriaBacteriumRbg134211(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CandidatusNealsonbacteriaBacteriumRbg134211 graph.
+    Instace of Candidatus Nealsonbacteria bacterium RBG_13_42_11 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CandidatusNealsonbacteriaBacteriumRbg134211(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusNealsonbacteriaBacteriumRbg134211",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

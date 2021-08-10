@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinitogaPiezophila.
+This file offers the methods to automatically retrieve the graph Marinitoga piezophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def MarinitogaPiezophila(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinitogaPiezophila graph.
+    """Return new instance of the Marinitoga piezophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def MarinitogaPiezophila(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of MarinitogaPiezophila graph.
+    Instace of Marinitoga piezophila graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def MarinitogaPiezophila(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinitogaPiezophila",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

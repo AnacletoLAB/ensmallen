@@ -48,6 +48,7 @@ class KGHubGraphRepository(GraphRepository):
                     "arguments": {
                         "edge_path": "{}/merged-kg_edges.tsv".format(graph_name),
                         "node_path": "{}/merged-kg_nodes.tsv".format(graph_name),
+                        "name": graph_name,
                         "sources_column": "subject",
                         "destinations_column": "object",
                         "edge_list_edge_types_column": "predicate",

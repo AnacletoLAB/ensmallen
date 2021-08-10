@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WebPolblogs.
+This file offers the methods to automatically retrieve the graph web-polblogs.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -42,7 +42,7 @@ def WebPolblogs(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WebPolblogs graph.
+    """Return new instance of the web-polblogs graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -69,7 +69,7 @@ def WebPolblogs(
 
     Returns
     -----------------------
-    Instace of WebPolblogs graph.
+    Instace of web-polblogs graph.
 
 	References
 	---------------------
@@ -96,7 +96,7 @@ def WebPolblogs(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebPolblogs",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

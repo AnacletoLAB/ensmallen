@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfobacteraceaeBacteriumCg2305140.
+This file offers the methods to automatically retrieve the graph Desulfobacteraceae bacterium CG2_30_51_40.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def DesulfobacteraceaeBacteriumCg2305140(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfobacteraceaeBacteriumCg2305140 graph.
+    """Return new instance of the Desulfobacteraceae bacterium CG2_30_51_40 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def DesulfobacteraceaeBacteriumCg2305140(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of DesulfobacteraceaeBacteriumCg2305140 graph.
+    Instace of Desulfobacteraceae bacterium CG2_30_51_40 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def DesulfobacteraceaeBacteriumCg2305140(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfobacteraceaeBacteriumCg2305140",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

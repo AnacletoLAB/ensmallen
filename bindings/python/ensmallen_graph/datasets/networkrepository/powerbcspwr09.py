@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PowerBcspwr09.
+This file offers the methods to automatically retrieve the graph power-bcspwr09.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def PowerBcspwr09(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PowerBcspwr09 graph.
+    """Return new instance of the power-bcspwr09 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def PowerBcspwr09(
 
     Returns
     -----------------------
-    Instace of PowerBcspwr09 graph.
+    Instace of power-bcspwr09 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def PowerBcspwr09(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PowerBcspwr09",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

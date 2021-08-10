@@ -54,7 +54,7 @@ def {graph_method_name}(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="{graph_method_name}",
-        dataset="{repository_package_name}",
+        repository="{repository_package_name}",
         version=version,
         directed=directed,
         preprocess=preprocess,

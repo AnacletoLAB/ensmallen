@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbUchicago30.
+This file offers the methods to automatically retrieve the graph socfb-UChicago30.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbUchicago30(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbUchicago30 graph.
+    """Return new instance of the socfb-UChicago30 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbUchicago30(
 
     Returns
     -----------------------
-    Instace of SocfbUchicago30 graph.
+    Instace of socfb-UChicago30 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbUchicago30(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbUchicago30",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

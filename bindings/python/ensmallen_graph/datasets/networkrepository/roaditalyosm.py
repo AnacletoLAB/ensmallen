@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoadItalyOsm.
+This file offers the methods to automatically retrieve the graph road-italy-osm.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def RoadItalyOsm(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoadItalyOsm graph.
+    """Return new instance of the road-italy-osm graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def RoadItalyOsm(
 
     Returns
     -----------------------
-    Instace of RoadItalyOsm graph.
+    Instace of road-italy-osm graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def RoadItalyOsm(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoadItalyOsm",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

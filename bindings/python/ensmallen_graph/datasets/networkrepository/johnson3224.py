@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Johnson3224.
+This file offers the methods to automatically retrieve the graph johnson32-2-4.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def Johnson3224(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Johnson3224 graph.
+    """Return new instance of the johnson32-2-4 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def Johnson3224(
 
     Returns
     -----------------------
-    Instace of Johnson3224 graph.
+    Instace of johnson32-2-4 graph.
 
 	References
 	---------------------
@@ -104,7 +104,7 @@ def Johnson3224(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Johnson3224",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

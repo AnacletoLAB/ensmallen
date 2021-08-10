@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Uspowergrid.
+This file offers the methods to automatically retrieve the graph USpowerGrid.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Uspowergrid(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Uspowergrid graph.
+    """Return new instance of the USpowerGrid graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Uspowergrid(
 
     Returns
     -----------------------
-    Instace of Uspowergrid graph.
+    Instace of USpowerGrid graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Uspowergrid(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Uspowergrid",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

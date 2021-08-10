@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Crew1.
+This file offers the methods to automatically retrieve the graph crew1.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Crew1(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Crew1 graph.
+    """Return new instance of the crew1 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Crew1(
 
     Returns
     -----------------------
-    Instace of Crew1 graph.
+    Instace of crew1 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Crew1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Crew1",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

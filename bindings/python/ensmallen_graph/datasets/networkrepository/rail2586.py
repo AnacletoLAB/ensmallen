@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Rail2586.
+This file offers the methods to automatically retrieve the graph rail2586.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Rail2586(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Rail2586 graph.
+    """Return new instance of the rail2586 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Rail2586(
 
     Returns
     -----------------------
-    Instace of Rail2586 graph.
+    Instace of rail2586 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Rail2586(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Rail2586",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NevskiaRamosa.
+This file offers the methods to automatically retrieve the graph Nevskia ramosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def NevskiaRamosa(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NevskiaRamosa graph.
+    """Return new instance of the Nevskia ramosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def NevskiaRamosa(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of NevskiaRamosa graph.
+    Instace of Nevskia ramosa graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def NevskiaRamosa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NevskiaRamosa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

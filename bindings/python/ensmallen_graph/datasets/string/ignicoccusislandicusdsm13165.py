@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IgnicoccusIslandicusDsm13165.
+This file offers the methods to automatically retrieve the graph Ignicoccus islandicus DSM 13165.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def IgnicoccusIslandicusDsm13165(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IgnicoccusIslandicusDsm13165 graph.
+    """Return new instance of the Ignicoccus islandicus DSM 13165 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def IgnicoccusIslandicusDsm13165(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of IgnicoccusIslandicusDsm13165 graph.
+    Instace of Ignicoccus islandicus DSM 13165 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def IgnicoccusIslandicusDsm13165(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IgnicoccusIslandicusDsm13165",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

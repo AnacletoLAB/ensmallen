@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Ash958.
+This file offers the methods to automatically retrieve the graph ash958.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Ash958(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Ash958 graph.
+    """Return new instance of the ash958 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Ash958(
 
     Returns
     -----------------------
-    Instace of Ash958 graph.
+    Instace of ash958 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Ash958(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Ash958",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

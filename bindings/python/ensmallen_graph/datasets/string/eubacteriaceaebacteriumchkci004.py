@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriaceaeBacteriumChkci004.
+This file offers the methods to automatically retrieve the graph Eubacteriaceae bacterium CHKCI004.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def EubacteriaceaeBacteriumChkci004(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriaceaeBacteriumChkci004 graph.
+    """Return new instance of the Eubacteriaceae bacterium CHKCI004 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def EubacteriaceaeBacteriumChkci004(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of EubacteriaceaeBacteriumChkci004 graph.
+    Instace of Eubacteriaceae bacterium CHKCI004 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def EubacteriaceaeBacteriumChkci004(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EubacteriaceaeBacteriumChkci004",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

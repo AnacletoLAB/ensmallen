@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethyloteneraSpRifcsplowo202Full4514.
+This file offers the methods to automatically retrieve the graph Methylotenera sp. RIFCSPLOWO2_02_FULL_45_14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def MethyloteneraSpRifcsplowo202Full4514(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethyloteneraSpRifcsplowo202Full4514 graph.
+    """Return new instance of the Methylotenera sp. RIFCSPLOWO2_02_FULL_45_14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def MethyloteneraSpRifcsplowo202Full4514(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of MethyloteneraSpRifcsplowo202Full4514 graph.
+    Instace of Methylotenera sp. RIFCSPLOWO2_02_FULL_45_14 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def MethyloteneraSpRifcsplowo202Full4514(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethyloteneraSpRifcsplowo202Full4514",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

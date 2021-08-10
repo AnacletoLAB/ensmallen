@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfitobacterSpAm1D1.
+This file offers the methods to automatically retrieve the graph Sulfitobacter sp. AM1-D1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def SulfitobacterSpAm1D1(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfitobacterSpAm1D1 graph.
+    """Return new instance of the Sulfitobacter sp. AM1-D1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def SulfitobacterSpAm1D1(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of SulfitobacterSpAm1D1 graph.
+    Instace of Sulfitobacter sp. AM1-D1 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def SulfitobacterSpAm1D1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SulfitobacterSpAm1D1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

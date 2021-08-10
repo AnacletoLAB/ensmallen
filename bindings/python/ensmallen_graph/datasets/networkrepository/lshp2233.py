@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Lshp2233.
+This file offers the methods to automatically retrieve the graph lshp2233.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Lshp2233(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Lshp2233 graph.
+    """Return new instance of the lshp2233 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Lshp2233(
 
     Returns
     -----------------------
-    Instace of Lshp2233 graph.
+    Instace of lshp2233 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Lshp2233(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Lshp2233",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

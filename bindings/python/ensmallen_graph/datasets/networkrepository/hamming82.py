@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Hamming82.
+This file offers the methods to automatically retrieve the graph hamming8-2.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def Hamming82(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Hamming82 graph.
+    """Return new instance of the hamming8-2 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def Hamming82(
 
     Returns
     -----------------------
-    Instace of Hamming82 graph.
+    Instace of hamming8-2 graph.
 
 	References
 	---------------------
@@ -104,7 +104,7 @@ def Hamming82(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Hamming82",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

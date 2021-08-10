@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrospiraeBacteriumCg2305367.
+This file offers the methods to automatically retrieve the graph Nitrospirae bacterium CG2_30_53_67.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def NitrospiraeBacteriumCg2305367(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrospiraeBacteriumCg2305367 graph.
+    """Return new instance of the Nitrospirae bacterium CG2_30_53_67 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def NitrospiraeBacteriumCg2305367(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of NitrospiraeBacteriumCg2305367 graph.
+    Instace of Nitrospirae bacterium CG2_30_53_67 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def NitrospiraeBacteriumCg2305367(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NitrospiraeBacteriumCg2305367",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

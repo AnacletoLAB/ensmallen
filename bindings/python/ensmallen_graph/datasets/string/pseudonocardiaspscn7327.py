@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudonocardiaSpScn7327.
+This file offers the methods to automatically retrieve the graph Pseudonocardia sp. SCN 73-27.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def PseudonocardiaSpScn7327(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudonocardiaSpScn7327 graph.
+    """Return new instance of the Pseudonocardia sp. SCN 73-27 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def PseudonocardiaSpScn7327(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of PseudonocardiaSpScn7327 graph.
+    Instace of Pseudonocardia sp. SCN 73-27 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def PseudonocardiaSpScn7327(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudonocardiaSpScn7327",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

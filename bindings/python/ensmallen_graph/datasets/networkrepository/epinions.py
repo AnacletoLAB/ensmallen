@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Epinions.
+This file offers the methods to automatically retrieve the graph epinions.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Epinions(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Epinions graph.
+    """Return new instance of the epinions graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Epinions(
 
     Returns
     -----------------------
-    Instace of Epinions graph.
+    Instace of epinions graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Epinions(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Epinions",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

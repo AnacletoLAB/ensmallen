@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FukomysDamarensis.
+This file offers the methods to automatically retrieve the graph Fukomys damarensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def FukomysDamarensis(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FukomysDamarensis graph.
+    """Return new instance of the Fukomys damarensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def FukomysDamarensis(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of FukomysDamarensis graph.
+    Instace of Fukomys damarensis graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def FukomysDamarensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="FukomysDamarensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

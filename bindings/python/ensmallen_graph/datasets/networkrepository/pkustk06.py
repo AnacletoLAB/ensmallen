@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Pkustk06.
+This file offers the methods to automatically retrieve the graph pkustk06.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Pkustk06(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Pkustk06 graph.
+    """Return new instance of the pkustk06 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Pkustk06(
 
     Returns
     -----------------------
-    Instace of Pkustk06 graph.
+    Instace of pkustk06 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Pkustk06(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Pkustk06",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

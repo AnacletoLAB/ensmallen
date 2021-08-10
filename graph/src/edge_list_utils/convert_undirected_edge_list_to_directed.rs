@@ -137,7 +137,9 @@ pub fn convert_undirected_edge_list_to_directed(
     };
     let mut new_edges_number = 0;
     file_writer.dump_iterator(
-        edges_number,
+        // We do not care to be exact here: if the graph does not contain
+        // selfloops the value will be correct.
+        edges_number.map(|edges_number| edges_number * 2),
         lines_iterator
             // Removing eventual errors.
             .filter_map(|line| line.ok())

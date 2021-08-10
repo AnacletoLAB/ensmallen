@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OrkutGroupmemberships.
+This file offers the methods to automatically retrieve the graph orkut-groupmemberships.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def OrkutGroupmemberships(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OrkutGroupmemberships graph.
+    """Return new instance of the orkut-groupmemberships graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def OrkutGroupmemberships(
 
     Returns
     -----------------------
-    Instace of OrkutGroupmemberships graph.
+    Instace of orkut-groupmemberships graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def OrkutGroupmemberships(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="OrkutGroupmemberships",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

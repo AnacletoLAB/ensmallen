@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Patentcite.
+This file offers the methods to automatically retrieve the graph patentcite.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Patentcite(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Patentcite graph.
+    """Return new instance of the patentcite graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Patentcite(
 
     Returns
     -----------------------
-    Instace of Patentcite graph.
+    Instace of patentcite graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Patentcite(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Patentcite",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

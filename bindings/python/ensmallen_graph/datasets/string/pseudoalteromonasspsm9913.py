@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoalteromonasSpSm9913.
+This file offers the methods to automatically retrieve the graph Pseudoalteromonas sp. SM9913.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def PseudoalteromonasSpSm9913(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoalteromonasSpSm9913 graph.
+    """Return new instance of the Pseudoalteromonas sp. SM9913 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def PseudoalteromonasSpSm9913(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of PseudoalteromonasSpSm9913 graph.
+    Instace of Pseudoalteromonas sp. SM9913 graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def PseudoalteromonasSpSm9913(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PseudoalteromonasSpSm9913",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

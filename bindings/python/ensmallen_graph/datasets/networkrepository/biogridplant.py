@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BioGridPlant.
+This file offers the methods to automatically retrieve the graph bio-grid-plant.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def BioGridPlant(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BioGridPlant graph.
+    """Return new instance of the bio-grid-plant graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def BioGridPlant(
 
     Returns
     -----------------------
-    Instace of BioGridPlant graph.
+    Instace of bio-grid-plant graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def BioGridPlant(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BioGridPlant",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

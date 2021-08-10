@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocDigg.
+This file offers the methods to automatically retrieve the graph soc-digg.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def SocDigg(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocDigg graph.
+    """Return new instance of the soc-digg graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def SocDigg(
 
     Returns
     -----------------------
-    Instace of SocDigg graph.
+    Instace of soc-digg graph.
 
 	References
 	---------------------
@@ -92,7 +92,7 @@ def SocDigg(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocDigg",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

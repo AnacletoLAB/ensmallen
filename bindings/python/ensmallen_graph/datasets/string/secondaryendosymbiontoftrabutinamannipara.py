@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SecondaryEndosymbiontOfTrabutinaMannipara.
+This file offers the methods to automatically retrieve the graph secondary endosymbiont of Trabutina mannipara.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def SecondaryEndosymbiontOfTrabutinaMannipara(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SecondaryEndosymbiontOfTrabutinaMannipara graph.
+    """Return new instance of the secondary endosymbiont of Trabutina mannipara graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def SecondaryEndosymbiontOfTrabutinaMannipara(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of SecondaryEndosymbiontOfTrabutinaMannipara graph.
+    Instace of secondary endosymbiont of Trabutina mannipara graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def SecondaryEndosymbiontOfTrabutinaMannipara(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SecondaryEndosymbiontOfTrabutinaMannipara",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoadLuxembourgOsm.
+This file offers the methods to automatically retrieve the graph road-luxembourg-osm.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def RoadLuxembourgOsm(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoadLuxembourgOsm graph.
+    """Return new instance of the road-luxembourg-osm graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def RoadLuxembourgOsm(
 
     Returns
     -----------------------
-    Instace of RoadLuxembourgOsm graph.
+    Instace of road-luxembourg-osm graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def RoadLuxembourgOsm(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoadLuxembourgOsm",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

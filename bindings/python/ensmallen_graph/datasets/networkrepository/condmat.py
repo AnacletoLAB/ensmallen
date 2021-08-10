@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CondMat.
+This file offers the methods to automatically retrieve the graph cond-mat.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def CondMat(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CondMat graph.
+    """Return new instance of the cond-mat graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def CondMat(
 
     Returns
     -----------------------
-    Instace of CondMat graph.
+    Instace of cond-mat graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def CondMat(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CondMat",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

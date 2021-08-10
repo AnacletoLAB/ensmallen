@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SlackiaExigua.
+This file offers the methods to automatically retrieve the graph Slackia exigua.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def SlackiaExigua(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SlackiaExigua graph.
+    """Return new instance of the Slackia exigua graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def SlackiaExigua(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of SlackiaExigua graph.
+    Instace of Slackia exigua graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def SlackiaExigua(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SlackiaExigua",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

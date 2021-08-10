@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChitinophagaceaeBacteriumPmp191f.
+This file offers the methods to automatically retrieve the graph Chitinophagaceae bacterium PMP191F.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def ChitinophagaceaeBacteriumPmp191f(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChitinophagaceaeBacteriumPmp191f graph.
+    """Return new instance of the Chitinophagaceae bacterium PMP191F graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def ChitinophagaceaeBacteriumPmp191f(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of ChitinophagaceaeBacteriumPmp191f graph.
+    Instace of Chitinophagaceae bacterium PMP191F graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def ChitinophagaceaeBacteriumPmp191f(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ChitinophagaceaeBacteriumPmp191f",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

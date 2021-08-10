@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhycomycesBlakesleeanusNrrl1555.
+This file offers the methods to automatically retrieve the graph Phycomyces blakesleeanus NRRL 1555(-).
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def PhycomycesBlakesleeanusNrrl1555(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhycomycesBlakesleeanusNrrl1555 graph.
+    """Return new instance of the Phycomyces blakesleeanus NRRL 1555(-) graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def PhycomycesBlakesleeanusNrrl1555(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of PhycomycesBlakesleeanusNrrl1555 graph.
+    Instace of Phycomyces blakesleeanus NRRL 1555(-) graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def PhycomycesBlakesleeanusNrrl1555(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhycomycesBlakesleeanusNrrl1555",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

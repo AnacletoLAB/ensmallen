@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Net100.
+This file offers the methods to automatically retrieve the graph net100.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Net100(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Net100 graph.
+    """Return new instance of the net100 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Net100(
 
     Returns
     -----------------------
-    Instace of Net100 graph.
+    Instace of net100 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Net100(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Net100",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

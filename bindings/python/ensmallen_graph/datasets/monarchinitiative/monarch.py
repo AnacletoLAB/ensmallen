@@ -87,7 +87,7 @@ def Monarch(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Monarch",
-        dataset="monarchinitiative",
+        repository="monarchinitiative",
         version=version,
         directed=directed,
         preprocess=preprocess,

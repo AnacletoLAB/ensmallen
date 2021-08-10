@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Actor.
+This file offers the methods to automatically retrieve the graph actor.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Actor(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Actor graph.
+    """Return new instance of the actor graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Actor(
 
     Returns
     -----------------------
-    Instace of Actor graph.
+    Instace of actor graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Actor(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Actor",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

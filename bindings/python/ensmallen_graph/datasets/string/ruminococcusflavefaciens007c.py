@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcusFlavefaciens007c.
+This file offers the methods to automatically retrieve the graph Ruminococcus flavefaciens 007c.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def RuminococcusFlavefaciens007c(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcusFlavefaciens007c graph.
+    """Return new instance of the Ruminococcus flavefaciens 007c graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def RuminococcusFlavefaciens007c(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of RuminococcusFlavefaciens007c graph.
+    Instace of Ruminococcus flavefaciens 007c graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def RuminococcusFlavefaciens007c(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminococcusFlavefaciens007c",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

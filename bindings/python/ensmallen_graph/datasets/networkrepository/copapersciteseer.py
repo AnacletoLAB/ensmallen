@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoPapersCiteseer.
+This file offers the methods to automatically retrieve the graph co-papers-citeseer.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -42,7 +42,7 @@ def CoPapersCiteseer(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoPapersCiteseer graph.
+    """Return new instance of the co-papers-citeseer graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -69,7 +69,7 @@ def CoPapersCiteseer(
 
     Returns
     -----------------------
-    Instace of CoPapersCiteseer graph.
+    Instace of co-papers-citeseer graph.
 
 	References
 	---------------------
@@ -96,7 +96,7 @@ def CoPapersCiteseer(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CoPapersCiteseer",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

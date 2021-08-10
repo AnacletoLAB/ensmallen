@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaldimonasTaiwanensisNbrc104434.
+This file offers the methods to automatically retrieve the graph Caldimonas taiwanensis NBRC 104434.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CaldimonasTaiwanensisNbrc104434(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaldimonasTaiwanensisNbrc104434 graph.
+    """Return new instance of the Caldimonas taiwanensis NBRC 104434 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CaldimonasTaiwanensisNbrc104434(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CaldimonasTaiwanensisNbrc104434 graph.
+    Instace of Caldimonas taiwanensis NBRC 104434 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CaldimonasTaiwanensisNbrc104434(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CaldimonasTaiwanensisNbrc104434",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

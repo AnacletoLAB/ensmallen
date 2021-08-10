@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethermicoccusShengliensisDsm18856.
+This file offers the methods to automatically retrieve the graph Methermicoccus shengliensis DSM 18856.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def MethermicoccusShengliensisDsm18856(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethermicoccusShengliensisDsm18856 graph.
+    """Return new instance of the Methermicoccus shengliensis DSM 18856 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def MethermicoccusShengliensisDsm18856(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of MethermicoccusShengliensisDsm18856 graph.
+    Instace of Methermicoccus shengliensis DSM 18856 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def MethermicoccusShengliensisDsm18856(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MethermicoccusShengliensisDsm18856",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

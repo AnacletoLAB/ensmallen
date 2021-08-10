@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThioalkalivibrioSpK90mix.
+This file offers the methods to automatically retrieve the graph Thioalkalivibrio sp. K90mix.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def ThioalkalivibrioSpK90mix(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThioalkalivibrioSpK90mix graph.
+    """Return new instance of the Thioalkalivibrio sp. K90mix graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def ThioalkalivibrioSpK90mix(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of ThioalkalivibrioSpK90mix graph.
+    Instace of Thioalkalivibrio sp. K90mix graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def ThioalkalivibrioSpK90mix(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThioalkalivibrioSpK90mix",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

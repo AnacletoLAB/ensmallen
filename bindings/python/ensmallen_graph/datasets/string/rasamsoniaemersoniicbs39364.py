@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RasamsoniaEmersoniiCbs39364.
+This file offers the methods to automatically retrieve the graph Rasamsonia emersonii CBS 393.64.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def RasamsoniaEmersoniiCbs39364(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RasamsoniaEmersoniiCbs39364 graph.
+    """Return new instance of the Rasamsonia emersonii CBS 393.64 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def RasamsoniaEmersoniiCbs39364(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of RasamsoniaEmersoniiCbs39364 graph.
+    Instace of Rasamsonia emersonii CBS 393.64 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def RasamsoniaEmersoniiCbs39364(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RasamsoniaEmersoniiCbs39364",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

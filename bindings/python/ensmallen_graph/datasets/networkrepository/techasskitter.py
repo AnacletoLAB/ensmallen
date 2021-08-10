@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TechAsSkitter.
+This file offers the methods to automatically retrieve the graph tech-as-skitter.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -39,7 +39,7 @@ def TechAsSkitter(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TechAsSkitter graph.
+    """Return new instance of the tech-as-skitter graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -66,7 +66,7 @@ def TechAsSkitter(
 
     Returns
     -----------------------
-    Instace of TechAsSkitter graph.
+    Instace of tech-as-skitter graph.
 
 	References
 	---------------------
@@ -90,7 +90,7 @@ def TechAsSkitter(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TechAsSkitter",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

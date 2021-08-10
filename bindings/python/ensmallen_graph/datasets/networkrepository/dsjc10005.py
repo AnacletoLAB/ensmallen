@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Dsjc10005.
+This file offers the methods to automatically retrieve the graph DSJC1000-5.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def Dsjc10005(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Dsjc10005 graph.
+    """Return new instance of the DSJC1000-5 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def Dsjc10005(
 
     Returns
     -----------------------
-    Instace of Dsjc10005 graph.
+    Instace of DSJC1000-5 graph.
 
 	References
 	---------------------
@@ -104,7 +104,7 @@ def Dsjc10005(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Dsjc10005",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

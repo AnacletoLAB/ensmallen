@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhyllobacteriumSpUnc302mfcol52.
+This file offers the methods to automatically retrieve the graph Phyllobacterium sp. UNC302MFCol52.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def PhyllobacteriumSpUnc302mfcol52(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhyllobacteriumSpUnc302mfcol52 graph.
+    """Return new instance of the Phyllobacterium sp. UNC302MFCol52 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def PhyllobacteriumSpUnc302mfcol52(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of PhyllobacteriumSpUnc302mfcol52 graph.
+    Instace of Phyllobacterium sp. UNC302MFCol52 graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def PhyllobacteriumSpUnc302mfcol52(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PhyllobacteriumSpUnc302mfcol52",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

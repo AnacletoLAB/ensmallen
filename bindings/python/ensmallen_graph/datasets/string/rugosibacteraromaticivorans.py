@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RugosibacterAromaticivorans.
+This file offers the methods to automatically retrieve the graph Rugosibacter aromaticivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def RugosibacterAromaticivorans(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RugosibacterAromaticivorans graph.
+    """Return new instance of the Rugosibacter aromaticivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def RugosibacterAromaticivorans(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of RugosibacterAromaticivorans graph.
+    Instace of Rugosibacter aromaticivorans graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def RugosibacterAromaticivorans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RugosibacterAromaticivorans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

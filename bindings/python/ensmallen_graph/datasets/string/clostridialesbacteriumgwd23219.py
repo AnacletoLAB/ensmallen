@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridialesBacteriumGwd23219.
+This file offers the methods to automatically retrieve the graph Clostridiales bacterium GWD2_32_19.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def ClostridialesBacteriumGwd23219(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridialesBacteriumGwd23219 graph.
+    """Return new instance of the Clostridiales bacterium GWD2_32_19 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def ClostridialesBacteriumGwd23219(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of ClostridialesBacteriumGwd23219 graph.
+    Instace of Clostridiales bacterium GWD2_32_19 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def ClostridialesBacteriumGwd23219(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridialesBacteriumGwd23219",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

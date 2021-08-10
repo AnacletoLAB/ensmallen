@@ -78,7 +78,7 @@ def G61(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="G61",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

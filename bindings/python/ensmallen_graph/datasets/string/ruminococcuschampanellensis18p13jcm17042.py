@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcusChampanellensis18p13Jcm17042.
+This file offers the methods to automatically retrieve the graph Ruminococcus champanellensis 18P13 JCM 17042.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def RuminococcusChampanellensis18p13Jcm17042(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcusChampanellensis18p13Jcm17042 graph.
+    """Return new instance of the Ruminococcus champanellensis 18P13 JCM 17042 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def RuminococcusChampanellensis18p13Jcm17042(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of RuminococcusChampanellensis18p13Jcm17042 graph.
+    Instace of Ruminococcus champanellensis 18P13 JCM 17042 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def RuminococcusChampanellensis18p13Jcm17042(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RuminococcusChampanellensis18p13Jcm17042",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

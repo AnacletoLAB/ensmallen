@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EcoFoodwebBaydry.
+This file offers the methods to automatically retrieve the graph eco-foodweb-baydry.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -53,7 +53,7 @@ def EcoFoodwebBaydry(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EcoFoodwebBaydry graph.
+    """Return new instance of the eco-foodweb-baydry graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -80,7 +80,7 @@ def EcoFoodwebBaydry(
 
     Returns
     -----------------------
-    Instace of EcoFoodwebBaydry graph.
+    Instace of eco-foodweb-baydry graph.
 
 	References
 	---------------------
@@ -118,7 +118,7 @@ def EcoFoodwebBaydry(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EcoFoodwebBaydry",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

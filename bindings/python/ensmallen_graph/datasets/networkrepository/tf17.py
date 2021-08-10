@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Tf17.
+This file offers the methods to automatically retrieve the graph TF17.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Tf17(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Tf17 graph.
+    """Return new instance of the TF17 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Tf17(
 
     Returns
     -----------------------
-    Instace of Tf17 graph.
+    Instace of TF17 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Tf17(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Tf17",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

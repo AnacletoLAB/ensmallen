@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbPepperdine86.
+This file offers the methods to automatically retrieve the graph socfb-Pepperdine86.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbPepperdine86(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbPepperdine86 graph.
+    """Return new instance of the socfb-Pepperdine86 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbPepperdine86(
 
     Returns
     -----------------------
-    Instace of SocfbPepperdine86 graph.
+    Instace of socfb-Pepperdine86 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbPepperdine86(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbPepperdine86",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

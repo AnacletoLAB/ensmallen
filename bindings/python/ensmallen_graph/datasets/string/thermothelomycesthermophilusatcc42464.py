@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermothelomycesThermophilusAtcc42464.
+This file offers the methods to automatically retrieve the graph Thermothelomyces thermophilus ATCC 42464.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def ThermothelomycesThermophilusAtcc42464(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermothelomycesThermophilusAtcc42464 graph.
+    """Return new instance of the Thermothelomyces thermophilus ATCC 42464 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def ThermothelomycesThermophilusAtcc42464(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of ThermothelomycesThermophilusAtcc42464 graph.
+    Instace of Thermothelomyces thermophilus ATCC 42464 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def ThermothelomycesThermophilusAtcc42464(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermothelomycesThermophilusAtcc42464",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

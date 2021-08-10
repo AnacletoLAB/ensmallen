@@ -78,7 +78,7 @@ def Kohonen(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Kohonen",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

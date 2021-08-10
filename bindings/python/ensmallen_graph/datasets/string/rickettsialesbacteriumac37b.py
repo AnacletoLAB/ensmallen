@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RickettsialesBacteriumAc37b.
+This file offers the methods to automatically retrieve the graph Rickettsiales bacterium Ac37b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def RickettsialesBacteriumAc37b(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RickettsialesBacteriumAc37b graph.
+    """Return new instance of the Rickettsiales bacterium Ac37b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def RickettsialesBacteriumAc37b(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of RickettsialesBacteriumAc37b graph.
+    Instace of Rickettsiales bacterium Ac37b graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def RickettsialesBacteriumAc37b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RickettsialesBacteriumAc37b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

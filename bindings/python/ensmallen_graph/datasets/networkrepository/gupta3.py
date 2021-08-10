@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Gupta3.
+This file offers the methods to automatically retrieve the graph gupta3.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Gupta3(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Gupta3 graph.
+    """Return new instance of the gupta3 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Gupta3(
 
     Returns
     -----------------------
-    Instace of Gupta3 graph.
+    Instace of gupta3 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Gupta3(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Gupta3",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

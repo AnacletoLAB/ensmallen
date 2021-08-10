@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterLwoffiiNctc5866.
+This file offers the methods to automatically retrieve the graph Acinetobacter lwoffii NCTC 5866.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def AcinetobacterLwoffiiNctc5866(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterLwoffiiNctc5866 graph.
+    """Return new instance of the Acinetobacter lwoffii NCTC 5866 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def AcinetobacterLwoffiiNctc5866(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of AcinetobacterLwoffiiNctc5866 graph.
+    Instace of Acinetobacter lwoffii NCTC 5866 graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def AcinetobacterLwoffiiNctc5866(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AcinetobacterLwoffiiNctc5866",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

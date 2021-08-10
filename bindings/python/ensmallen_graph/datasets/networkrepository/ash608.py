@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Ash608.
+This file offers the methods to automatically retrieve the graph ash608.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Ash608(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Ash608 graph.
+    """Return new instance of the ash608 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Ash608(
 
     Returns
     -----------------------
-    Instace of Ash608 graph.
+    Instace of ash608 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Ash608(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Ash608",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

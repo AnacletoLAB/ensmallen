@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocLjournal2008.
+This file offers the methods to automatically retrieve the graph soc-ljournal-2008.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def SocLjournal2008(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocLjournal2008 graph.
+    """Return new instance of the soc-ljournal-2008 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def SocLjournal2008(
 
     Returns
     -----------------------
-    Instace of SocLjournal2008 graph.
+    Instace of soc-ljournal-2008 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def SocLjournal2008(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocLjournal2008",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

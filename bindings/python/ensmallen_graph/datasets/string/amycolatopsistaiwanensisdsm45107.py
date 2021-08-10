@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmycolatopsisTaiwanensisDsm45107.
+This file offers the methods to automatically retrieve the graph Amycolatopsis taiwanensis DSM 45107.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def AmycolatopsisTaiwanensisDsm45107(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmycolatopsisTaiwanensisDsm45107 graph.
+    """Return new instance of the Amycolatopsis taiwanensis DSM 45107 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def AmycolatopsisTaiwanensisDsm45107(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of AmycolatopsisTaiwanensisDsm45107 graph.
+    Instace of Amycolatopsis taiwanensis DSM 45107 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def AmycolatopsisTaiwanensisDsm45107(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmycolatopsisTaiwanensisDsm45107",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

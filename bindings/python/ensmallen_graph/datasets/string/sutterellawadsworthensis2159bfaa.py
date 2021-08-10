@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SutterellaWadsworthensis2159bfaa.
+This file offers the methods to automatically retrieve the graph Sutterella wadsworthensis 2159BFAA.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def SutterellaWadsworthensis2159bfaa(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SutterellaWadsworthensis2159bfaa graph.
+    """Return new instance of the Sutterella wadsworthensis 2159BFAA graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def SutterellaWadsworthensis2159bfaa(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of SutterellaWadsworthensis2159bfaa graph.
+    Instace of Sutterella wadsworthensis 2159BFAA graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def SutterellaWadsworthensis2159bfaa(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SutterellaWadsworthensis2159bfaa",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

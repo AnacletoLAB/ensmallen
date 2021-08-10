@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph YahooMsg.
+This file offers the methods to automatically retrieve the graph yahoo-msg.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def YahooMsg(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the YahooMsg graph.
+    """Return new instance of the yahoo-msg graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def YahooMsg(
 
     Returns
     -----------------------
-    Instace of YahooMsg graph.
+    Instace of yahoo-msg graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def YahooMsg(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="YahooMsg",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

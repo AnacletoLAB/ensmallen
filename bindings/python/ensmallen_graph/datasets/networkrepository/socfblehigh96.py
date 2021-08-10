@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbLehigh96.
+This file offers the methods to automatically retrieve the graph socfb-Lehigh96.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbLehigh96(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbLehigh96 graph.
+    """Return new instance of the socfb-Lehigh96 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbLehigh96(
 
     Returns
     -----------------------
-    Instace of SocfbLehigh96 graph.
+    Instace of socfb-Lehigh96 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbLehigh96(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbLehigh96",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

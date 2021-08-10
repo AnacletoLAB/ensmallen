@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbSmith60.
+This file offers the methods to automatically retrieve the graph socfb-Smith60.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbSmith60(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbSmith60 graph.
+    """Return new instance of the socfb-Smith60 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbSmith60(
 
     Returns
     -----------------------
-    Instace of SocfbSmith60 graph.
+    Instace of socfb-Smith60 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbSmith60(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbSmith60",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

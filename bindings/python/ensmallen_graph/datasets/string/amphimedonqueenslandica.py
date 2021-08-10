@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmphimedonQueenslandica.
+This file offers the methods to automatically retrieve the graph Amphimedon queenslandica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def AmphimedonQueenslandica(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmphimedonQueenslandica graph.
+    """Return new instance of the Amphimedon queenslandica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def AmphimedonQueenslandica(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of AmphimedonQueenslandica graph.
+    Instace of Amphimedon queenslandica graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def AmphimedonQueenslandica(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AmphimedonQueenslandica",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

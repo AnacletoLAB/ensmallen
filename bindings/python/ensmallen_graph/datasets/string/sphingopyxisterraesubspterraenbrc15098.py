@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingopyxisTerraeSubspTerraeNbrc15098.
+This file offers the methods to automatically retrieve the graph Sphingopyxis terrae subsp. terrae NBRC 15098.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def SphingopyxisTerraeSubspTerraeNbrc15098(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingopyxisTerraeSubspTerraeNbrc15098 graph.
+    """Return new instance of the Sphingopyxis terrae subsp. terrae NBRC 15098 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def SphingopyxisTerraeSubspTerraeNbrc15098(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of SphingopyxisTerraeSubspTerraeNbrc15098 graph.
+    Instace of Sphingopyxis terrae subsp. terrae NBRC 15098 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def SphingopyxisTerraeSubspTerraeNbrc15098(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingopyxisTerraeSubspTerraeNbrc15098",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

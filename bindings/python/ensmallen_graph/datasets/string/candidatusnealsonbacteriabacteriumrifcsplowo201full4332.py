@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusNealsonbacteriaBacteriumRifcsplowo201Full4332.
+This file offers the methods to automatically retrieve the graph Candidatus Nealsonbacteria bacterium RIFCSPLOWO2_01_FULL_43_32.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CandidatusNealsonbacteriaBacteriumRifcsplowo201Full4332(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusNealsonbacteriaBacteriumRifcsplowo201Full4332 graph.
+    """Return new instance of the Candidatus Nealsonbacteria bacterium RIFCSPLOWO2_01_FULL_43_32 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CandidatusNealsonbacteriaBacteriumRifcsplowo201Full4332(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CandidatusNealsonbacteriaBacteriumRifcsplowo201Full4332 graph.
+    Instace of Candidatus Nealsonbacteria bacterium RIFCSPLOWO2_01_FULL_43_32 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CandidatusNealsonbacteriaBacteriumRifcsplowo201Full4332(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusNealsonbacteriaBacteriumRifcsplowo201Full4332",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

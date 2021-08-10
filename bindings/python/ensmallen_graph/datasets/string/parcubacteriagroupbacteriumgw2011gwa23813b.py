@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParcubacteriaGroupBacteriumGw2011Gwa23813b.
+This file offers the methods to automatically retrieve the graph Parcubacteria group bacterium GW2011_GWA2_38_13b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def ParcubacteriaGroupBacteriumGw2011Gwa23813b(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParcubacteriaGroupBacteriumGw2011Gwa23813b graph.
+    """Return new instance of the Parcubacteria group bacterium GW2011_GWA2_38_13b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def ParcubacteriaGroupBacteriumGw2011Gwa23813b(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of ParcubacteriaGroupBacteriumGw2011Gwa23813b graph.
+    Instace of Parcubacteria group bacterium GW2011_GWA2_38_13b graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def ParcubacteriaGroupBacteriumGw2011Gwa23813b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ParcubacteriaGroupBacteriumGw2011Gwa23813b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

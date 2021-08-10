@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WebStanford.
+This file offers the methods to automatically retrieve the graph web-Stanford.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def WebStanford(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WebStanford graph.
+    """Return new instance of the web-Stanford graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def WebStanford(
 
     Returns
     -----------------------
-    Instace of WebStanford graph.
+    Instace of web-Stanford graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def WebStanford(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebStanford",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

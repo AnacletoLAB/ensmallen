@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Usair97.
+This file offers the methods to automatically retrieve the graph USAir97.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Usair97(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Usair97 graph.
+    """Return new instance of the USAir97 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Usair97(
 
     Returns
     -----------------------
-    Instace of Usair97 graph.
+    Instace of USAir97 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Usair97(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Usair97",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

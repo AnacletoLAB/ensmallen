@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterobacterSpKpr6.
+This file offers the methods to automatically retrieve the graph Enterobacter sp. kpr-6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def EnterobacterSpKpr6(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterobacterSpKpr6 graph.
+    """Return new instance of the Enterobacter sp. kpr-6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def EnterobacterSpKpr6(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of EnterobacterSpKpr6 graph.
+    Instace of Enterobacter sp. kpr-6 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def EnterobacterSpKpr6(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EnterobacterSpKpr6",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

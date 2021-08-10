@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobacteriumSpCfcc11742.
+This file offers the methods to automatically retrieve the graph Sphingobacterium sp. CFCC 11742.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def SphingobacteriumSpCfcc11742(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobacteriumSpCfcc11742 graph.
+    """Return new instance of the Sphingobacterium sp. CFCC 11742 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def SphingobacteriumSpCfcc11742(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of SphingobacteriumSpCfcc11742 graph.
+    Instace of Sphingobacterium sp. CFCC 11742 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def SphingobacteriumSpCfcc11742(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SphingobacteriumSpCfcc11742",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

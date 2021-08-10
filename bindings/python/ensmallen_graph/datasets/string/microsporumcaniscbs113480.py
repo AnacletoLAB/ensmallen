@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrosporumCanisCbs113480.
+This file offers the methods to automatically retrieve the graph Microsporum canis CBS 113480.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def MicrosporumCanisCbs113480(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrosporumCanisCbs113480 graph.
+    """Return new instance of the Microsporum canis CBS 113480 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def MicrosporumCanisCbs113480(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of MicrosporumCanisCbs113480 graph.
+    Instace of Microsporum canis CBS 113480 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def MicrosporumCanisCbs113480(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrosporumCanisCbs113480",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArcanobacteriumSpS3pf19.
+This file offers the methods to automatically retrieve the graph Arcanobacterium sp. S3PF19.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def ArcanobacteriumSpS3pf19(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArcanobacteriumSpS3pf19 graph.
+    """Return new instance of the Arcanobacterium sp. S3PF19 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def ArcanobacteriumSpS3pf19(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of ArcanobacteriumSpS3pf19 graph.
+    Instace of Arcanobacterium sp. S3PF19 graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def ArcanobacteriumSpS3pf19(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ArcanobacteriumSpS3pf19",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

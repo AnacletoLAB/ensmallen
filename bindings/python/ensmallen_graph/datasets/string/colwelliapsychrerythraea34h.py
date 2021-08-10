@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ColwelliaPsychrerythraea34h.
+This file offers the methods to automatically retrieve the graph Colwellia psychrerythraea 34H.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def ColwelliaPsychrerythraea34h(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ColwelliaPsychrerythraea34h graph.
+    """Return new instance of the Colwellia psychrerythraea 34H graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def ColwelliaPsychrerythraea34h(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of ColwelliaPsychrerythraea34h graph.
+    Instace of Colwellia psychrerythraea 34H graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def ColwelliaPsychrerythraea34h(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ColwelliaPsychrerythraea34h",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

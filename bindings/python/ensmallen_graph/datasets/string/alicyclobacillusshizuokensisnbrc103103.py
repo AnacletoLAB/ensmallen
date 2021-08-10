@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlicyclobacillusShizuokensisNbrc103103.
+This file offers the methods to automatically retrieve the graph Alicyclobacillus shizuokensis NBRC 103103.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def AlicyclobacillusShizuokensisNbrc103103(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlicyclobacillusShizuokensisNbrc103103 graph.
+    """Return new instance of the Alicyclobacillus shizuokensis NBRC 103103 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def AlicyclobacillusShizuokensisNbrc103103(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of AlicyclobacillusShizuokensisNbrc103103 graph.
+    Instace of Alicyclobacillus shizuokensis NBRC 103103 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def AlicyclobacillusShizuokensisNbrc103103(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlicyclobacillusShizuokensisNbrc103103",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

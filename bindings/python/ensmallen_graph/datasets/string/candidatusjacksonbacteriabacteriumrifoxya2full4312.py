@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusJacksonbacteriaBacteriumRifoxya2Full4312.
+This file offers the methods to automatically retrieve the graph Candidatus Jacksonbacteria bacterium RIFOXYA2_FULL_43_12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CandidatusJacksonbacteriaBacteriumRifoxya2Full4312(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusJacksonbacteriaBacteriumRifoxya2Full4312 graph.
+    """Return new instance of the Candidatus Jacksonbacteria bacterium RIFOXYA2_FULL_43_12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CandidatusJacksonbacteriaBacteriumRifoxya2Full4312(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CandidatusJacksonbacteriaBacteriumRifoxya2Full4312 graph.
+    Instace of Candidatus Jacksonbacteria bacterium RIFOXYA2_FULL_43_12 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CandidatusJacksonbacteriaBacteriumRifoxya2Full4312(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusJacksonbacteriaBacteriumRifoxya2Full4312",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

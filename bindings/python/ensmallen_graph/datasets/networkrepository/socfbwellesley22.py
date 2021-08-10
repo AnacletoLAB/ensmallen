@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbWellesley22.
+This file offers the methods to automatically retrieve the graph socfb-Wellesley22.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbWellesley22(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbWellesley22 graph.
+    """Return new instance of the socfb-Wellesley22 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbWellesley22(
 
     Returns
     -----------------------
-    Instace of SocfbWellesley22 graph.
+    Instace of socfb-Wellesley22 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbWellesley22(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbWellesley22",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

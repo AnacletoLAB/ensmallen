@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgreiaPratensis.
+This file offers the methods to automatically retrieve the graph Agreia pratensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def AgreiaPratensis(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgreiaPratensis graph.
+    """Return new instance of the Agreia pratensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def AgreiaPratensis(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of AgreiaPratensis graph.
+    Instace of Agreia pratensis graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def AgreiaPratensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AgreiaPratensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

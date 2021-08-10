@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbUconn.
+This file offers the methods to automatically retrieve the graph socfb-UConn.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbUconn(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbUconn graph.
+    """Return new instance of the socfb-UConn graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbUconn(
 
     Returns
     -----------------------
-    Instace of SocfbUconn graph.
+    Instace of socfb-UConn graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbUconn(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbUconn",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

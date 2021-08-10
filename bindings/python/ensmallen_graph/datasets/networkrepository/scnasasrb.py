@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ScNasasrb.
+This file offers the methods to automatically retrieve the graph sc-nasasrb.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def ScNasasrb(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ScNasasrb graph.
+    """Return new instance of the sc-nasasrb graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def ScNasasrb(
 
     Returns
     -----------------------
-    Instace of ScNasasrb graph.
+    Instace of sc-nasasrb graph.
 
 	References
 	---------------------
@@ -92,7 +92,7 @@ def ScNasasrb(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ScNasasrb",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

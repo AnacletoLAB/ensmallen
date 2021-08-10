@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbTufts18.
+This file offers the methods to automatically retrieve the graph socfb-Tufts18.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbTufts18(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbTufts18 graph.
+    """Return new instance of the socfb-Tufts18 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbTufts18(
 
     Returns
     -----------------------
-    Instace of SocfbTufts18 graph.
+    Instace of socfb-Tufts18 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbTufts18(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbTufts18",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

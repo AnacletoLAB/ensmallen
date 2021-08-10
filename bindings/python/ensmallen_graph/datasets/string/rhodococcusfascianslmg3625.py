@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodococcusFasciansLmg3625.
+This file offers the methods to automatically retrieve the graph Rhodococcus fascians LMG 3625.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def RhodococcusFasciansLmg3625(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodococcusFasciansLmg3625 graph.
+    """Return new instance of the Rhodococcus fascians LMG 3625 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def RhodococcusFasciansLmg3625(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of RhodococcusFasciansLmg3625 graph.
+    Instace of Rhodococcus fascians LMG 3625 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def RhodococcusFasciansLmg3625(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhodococcusFasciansLmg3625",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

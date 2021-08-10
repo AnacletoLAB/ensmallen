@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Barth.
+This file offers the methods to automatically retrieve the graph barth.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Barth(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Barth graph.
+    """Return new instance of the barth graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Barth(
 
     Returns
     -----------------------
-    Instace of Barth graph.
+    Instace of barth graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Barth(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Barth",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

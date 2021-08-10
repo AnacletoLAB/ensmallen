@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TechArenasPgp.
+This file offers the methods to automatically retrieve the graph tech-arenas-pgp.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def TechArenasPgp(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TechArenasPgp graph.
+    """Return new instance of the tech-arenas-pgp graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def TechArenasPgp(
 
     Returns
     -----------------------
-    Instace of TechArenasPgp graph.
+    Instace of tech-arenas-pgp graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def TechArenasPgp(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TechArenasPgp",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

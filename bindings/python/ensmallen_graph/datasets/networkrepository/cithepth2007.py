@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CitHepth2007.
+This file offers the methods to automatically retrieve the graph cit-HepTh2007.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def CitHepth2007(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CitHepth2007 graph.
+    """Return new instance of the cit-HepTh2007 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def CitHepth2007(
 
     Returns
     -----------------------
-    Instace of CitHepth2007 graph.
+    Instace of cit-HepTh2007 graph.
 
 	References
 	---------------------
@@ -92,7 +92,7 @@ def CitHepth2007(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CitHepth2007",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

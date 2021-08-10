@@ -78,7 +78,7 @@ def Alemdar(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Alemdar",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

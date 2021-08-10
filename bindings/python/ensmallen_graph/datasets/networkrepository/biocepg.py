@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BioCePg.
+This file offers the methods to automatically retrieve the graph bio-CE-PG.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -44,7 +44,7 @@ def BioCePg(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BioCePg graph.
+    """Return new instance of the bio-CE-PG graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -71,7 +71,7 @@ def BioCePg(
 
     Returns
     -----------------------
-    Instace of BioCePg graph.
+    Instace of bio-CE-PG graph.
 
 	References
 	---------------------
@@ -100,7 +100,7 @@ def BioCePg(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BioCePg",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

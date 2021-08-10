@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Ash219.
+This file offers the methods to automatically retrieve the graph ash219.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Ash219(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Ash219 graph.
+    """Return new instance of the ash219 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Ash219(
 
     Returns
     -----------------------
-    Instace of Ash219 graph.
+    Instace of ash219 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Ash219(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Ash219",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

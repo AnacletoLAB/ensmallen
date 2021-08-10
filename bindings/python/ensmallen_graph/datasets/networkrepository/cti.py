@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Cti.
+This file offers the methods to automatically retrieve the graph cti.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Cti(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Cti graph.
+    """Return new instance of the cti graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Cti(
 
     Returns
     -----------------------
-    Instace of Cti graph.
+    Instace of cti graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Cti(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Cti",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

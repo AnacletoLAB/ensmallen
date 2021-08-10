@@ -216,7 +216,8 @@ pub(crate) fn parse_nodes(
                     })
                     .reduce(
                         || Ok((NodeT::MAX, 0 as NodeT, 0)),
-                        |line1: Result<(NodeT, NodeT, NodeT)>, line2: Result<(NodeT, NodeT, NodeT)>| match (
+                        |line1: Result<(NodeT, NodeT, NodeT)>,
+                         line2: Result<(NodeT, NodeT, NodeT)>| match (
                             line1, line2,
                         ) {
                             (Ok((min1, max1, count1)), Ok((min2, max2, count2))) => {
@@ -226,15 +227,15 @@ pub(crate) fn parse_nodes(
                             (_, Err(e)) => Err(e),
                         },
                     )?;
-                
-                    if let Some(nn) = maybe_nodes_number {
-                        if nn != actual_nodes_number {
-                            return Err(format!(
+
+                if let Some(nn) = maybe_nodes_number {
+                    if nn != actual_nodes_number {
+                        return Err(format!(
                                 "The given nodes number '{}' is different from the actual nodes number '{}'.",
                                 nn, actual_nodes_number,
                             ));
-                        }
                     }
+                }
 
                 (min, max, None)
             };

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Ig56.
+This file offers the methods to automatically retrieve the graph IG5-6.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Ig56(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Ig56 graph.
+    """Return new instance of the IG5-6 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Ig56(
 
     Returns
     -----------------------
-    Instace of Ig56 graph.
+    Instace of IG5-6 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Ig56(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Ig56",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

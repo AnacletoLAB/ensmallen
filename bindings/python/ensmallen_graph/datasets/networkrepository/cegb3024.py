@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Cegb3024.
+This file offers the methods to automatically retrieve the graph cegb3024.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Cegb3024(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Cegb3024 graph.
+    """Return new instance of the cegb3024 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Cegb3024(
 
     Returns
     -----------------------
-    Instace of Cegb3024 graph.
+    Instace of cegb3024 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Cegb3024(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Cegb3024",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

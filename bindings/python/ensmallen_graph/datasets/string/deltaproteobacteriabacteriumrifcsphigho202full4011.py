@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeltaproteobacteriaBacteriumRifcsphigho202Full4011.
+This file offers the methods to automatically retrieve the graph Deltaproteobacteria bacterium RIFCSPHIGHO2_02_FULL_40_11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def DeltaproteobacteriaBacteriumRifcsphigho202Full4011(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeltaproteobacteriaBacteriumRifcsphigho202Full4011 graph.
+    """Return new instance of the Deltaproteobacteria bacterium RIFCSPHIGHO2_02_FULL_40_11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def DeltaproteobacteriaBacteriumRifcsphigho202Full4011(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of DeltaproteobacteriaBacteriumRifcsphigho202Full4011 graph.
+    Instace of Deltaproteobacteria bacterium RIFCSPHIGHO2_02_FULL_40_11 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def DeltaproteobacteriaBacteriumRifcsphigho202Full4011(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DeltaproteobacteriaBacteriumRifcsphigho202Full4011",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaeromyxobacterSpFw1095.
+This file offers the methods to automatically retrieve the graph Anaeromyxobacter sp. Fw1095.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def AnaeromyxobacterSpFw1095(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaeromyxobacterSpFw1095 graph.
+    """Return new instance of the Anaeromyxobacter sp. Fw1095 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def AnaeromyxobacterSpFw1095(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of AnaeromyxobacterSpFw1095 graph.
+    Instace of Anaeromyxobacter sp. Fw1095 graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def AnaeromyxobacterSpFw1095(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AnaeromyxobacterSpFw1095",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

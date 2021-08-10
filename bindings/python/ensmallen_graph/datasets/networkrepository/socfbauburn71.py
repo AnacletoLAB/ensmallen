@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbAuburn71.
+This file offers the methods to automatically retrieve the graph socfb-Auburn71.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbAuburn71(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbAuburn71 graph.
+    """Return new instance of the socfb-Auburn71 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbAuburn71(
 
     Returns
     -----------------------
-    Instace of SocfbAuburn71 graph.
+    Instace of socfb-Auburn71 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbAuburn71(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbAuburn71",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

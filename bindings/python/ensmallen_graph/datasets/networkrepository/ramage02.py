@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Ramage02.
+This file offers the methods to automatically retrieve the graph ramage02.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Ramage02(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Ramage02 graph.
+    """Return new instance of the ramage02 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Ramage02(
 
     Returns
     -----------------------
-    Instace of Ramage02 graph.
+    Instace of ramage02 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Ramage02(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Ramage02",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

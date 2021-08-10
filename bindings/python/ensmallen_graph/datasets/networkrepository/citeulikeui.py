@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CiteulikeUi.
+This file offers the methods to automatically retrieve the graph citeulike-ui.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def CiteulikeUi(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CiteulikeUi graph.
+    """Return new instance of the citeulike-ui graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def CiteulikeUi(
 
     Returns
     -----------------------
-    Instace of CiteulikeUi graph.
+    Instace of citeulike-ui graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def CiteulikeUi(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CiteulikeUi",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

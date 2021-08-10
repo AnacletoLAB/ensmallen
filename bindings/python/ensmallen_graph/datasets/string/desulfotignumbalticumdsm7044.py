@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfotignumBalticumDsm7044.
+This file offers the methods to automatically retrieve the graph Desulfotignum balticum DSM 7044.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def DesulfotignumBalticumDsm7044(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfotignumBalticumDsm7044 graph.
+    """Return new instance of the Desulfotignum balticum DSM 7044 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def DesulfotignumBalticumDsm7044(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of DesulfotignumBalticumDsm7044 graph.
+    Instace of Desulfotignum balticum DSM 7044 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def DesulfotignumBalticumDsm7044(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DesulfotignumBalticumDsm7044",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

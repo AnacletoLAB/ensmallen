@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AeromonasSalmonicidaSubspMasoucidaNbrc13784.
+This file offers the methods to automatically retrieve the graph Aeromonas salmonicida subsp. masoucida NBRC 13784.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def AeromonasSalmonicidaSubspMasoucidaNbrc13784(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AeromonasSalmonicidaSubspMasoucidaNbrc13784 graph.
+    """Return new instance of the Aeromonas salmonicida subsp. masoucida NBRC 13784 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def AeromonasSalmonicidaSubspMasoucidaNbrc13784(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of AeromonasSalmonicidaSubspMasoucidaNbrc13784 graph.
+    Instace of Aeromonas salmonicida subsp. masoucida NBRC 13784 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def AeromonasSalmonicidaSubspMasoucidaNbrc13784(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AeromonasSalmonicidaSubspMasoucidaNbrc13784",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

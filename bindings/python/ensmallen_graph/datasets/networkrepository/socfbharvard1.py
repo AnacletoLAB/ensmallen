@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbHarvard1.
+This file offers the methods to automatically retrieve the graph socfb-Harvard1.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbHarvard1(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbHarvard1 graph.
+    """Return new instance of the socfb-Harvard1 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbHarvard1(
 
     Returns
     -----------------------
-    Instace of SocfbHarvard1 graph.
+    Instace of socfb-Harvard1 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbHarvard1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbHarvard1",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

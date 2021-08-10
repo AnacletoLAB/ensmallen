@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridialesBacteriumFirm07.
+This file offers the methods to automatically retrieve the graph Clostridiales bacterium Firm_07.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def ClostridialesBacteriumFirm07(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridialesBacteriumFirm07 graph.
+    """Return new instance of the Clostridiales bacterium Firm_07 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def ClostridialesBacteriumFirm07(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of ClostridialesBacteriumFirm07 graph.
+    Instace of Clostridiales bacterium Firm_07 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def ClostridialesBacteriumFirm07(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridialesBacteriumFirm07",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

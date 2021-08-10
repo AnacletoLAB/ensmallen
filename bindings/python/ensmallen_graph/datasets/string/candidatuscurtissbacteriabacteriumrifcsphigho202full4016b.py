@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusCurtissbacteriaBacteriumRifcsphigho202Full4016b.
+This file offers the methods to automatically retrieve the graph Candidatus Curtissbacteria bacterium RIFCSPHIGHO2_02_FULL_40_16b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CandidatusCurtissbacteriaBacteriumRifcsphigho202Full4016b(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusCurtissbacteriaBacteriumRifcsphigho202Full4016b graph.
+    """Return new instance of the Candidatus Curtissbacteria bacterium RIFCSPHIGHO2_02_FULL_40_16b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CandidatusCurtissbacteriaBacteriumRifcsphigho202Full4016b(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CandidatusCurtissbacteriaBacteriumRifcsphigho202Full4016b graph.
+    Instace of Candidatus Curtissbacteria bacterium RIFCSPHIGHO2_02_FULL_40_16b graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CandidatusCurtissbacteriaBacteriumRifcsphigho202Full4016b(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusCurtissbacteriaBacteriumRifcsphigho202Full4016b",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

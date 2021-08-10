@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinimicrobiaBacteriumJgi0000039D08.
+This file offers the methods to automatically retrieve the graph Marinimicrobia bacterium JGI 0000039-D08.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def MarinimicrobiaBacteriumJgi0000039D08(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinimicrobiaBacteriumJgi0000039D08 graph.
+    """Return new instance of the Marinimicrobia bacterium JGI 0000039-D08 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def MarinimicrobiaBacteriumJgi0000039D08(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of MarinimicrobiaBacteriumJgi0000039D08 graph.
+    Instace of Marinimicrobia bacterium JGI 0000039-D08 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def MarinimicrobiaBacteriumJgi0000039D08(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MarinimicrobiaBacteriumJgi0000039D08",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

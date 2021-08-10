@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DbpediaGenre.
+This file offers the methods to automatically retrieve the graph dbpedia-genre.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def DbpediaGenre(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DbpediaGenre graph.
+    """Return new instance of the dbpedia-genre graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def DbpediaGenre(
 
     Returns
     -----------------------
-    Instace of DbpediaGenre graph.
+    Instace of dbpedia-genre graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def DbpediaGenre(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DbpediaGenre",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

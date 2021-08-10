@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TechInternetAs.
+This file offers the methods to automatically retrieve the graph tech-internet-as.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -41,7 +41,7 @@ def TechInternetAs(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TechInternetAs graph.
+    """Return new instance of the tech-internet-as graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -68,7 +68,7 @@ def TechInternetAs(
 
     Returns
     -----------------------
-    Instace of TechInternetAs graph.
+    Instace of tech-internet-as graph.
 
 	References
 	---------------------
@@ -94,7 +94,7 @@ def TechInternetAs(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TechInternetAs",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

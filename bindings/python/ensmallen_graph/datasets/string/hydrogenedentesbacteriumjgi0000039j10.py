@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydrogenedentesBacteriumJgi0000039J10.
+This file offers the methods to automatically retrieve the graph Hydrogenedentes bacterium JGI 0000039-J10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def HydrogenedentesBacteriumJgi0000039J10(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydrogenedentesBacteriumJgi0000039J10 graph.
+    """Return new instance of the Hydrogenedentes bacterium JGI 0000039-J10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def HydrogenedentesBacteriumJgi0000039J10(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of HydrogenedentesBacteriumJgi0000039J10 graph.
+    Instace of Hydrogenedentes bacterium JGI 0000039-J10 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def HydrogenedentesBacteriumJgi0000039J10(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HydrogenedentesBacteriumJgi0000039J10",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

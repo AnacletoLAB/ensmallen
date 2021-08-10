@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WikiTalk.
+This file offers the methods to automatically retrieve the graph wiki-Talk.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def WikiTalk(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WikiTalk graph.
+    """Return new instance of the wiki-Talk graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def WikiTalk(
 
     Returns
     -----------------------
-    Instace of WikiTalk graph.
+    Instace of wiki-Talk graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def WikiTalk(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WikiTalk",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

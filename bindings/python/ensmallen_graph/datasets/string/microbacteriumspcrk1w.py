@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumSpCrK1w.
+This file offers the methods to automatically retrieve the graph Microbacterium sp. Cr-K1W.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def MicrobacteriumSpCrK1w(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumSpCrK1w graph.
+    """Return new instance of the Microbacterium sp. Cr-K1W graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def MicrobacteriumSpCrK1w(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of MicrobacteriumSpCrK1w graph.
+    Instace of Microbacterium sp. Cr-K1W graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def MicrobacteriumSpCrK1w(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MicrobacteriumSpCrK1w",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

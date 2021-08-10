@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph As735.
+This file offers the methods to automatically retrieve the graph as-735.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def As735(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the As735 graph.
+    """Return new instance of the as-735 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def As735(
 
     Returns
     -----------------------
-    Instace of As735 graph.
+    Instace of as-735 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def As735(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="As735",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

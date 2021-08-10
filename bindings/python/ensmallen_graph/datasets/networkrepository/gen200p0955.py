@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Gen200P0955.
+This file offers the methods to automatically retrieve the graph gen200-p0-9-55.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def Gen200P0955(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Gen200P0955 graph.
+    """Return new instance of the gen200-p0-9-55 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def Gen200P0955(
 
     Returns
     -----------------------
-    Instace of Gen200P0955 graph.
+    Instace of gen200-p0-9-55 graph.
 
 	References
 	---------------------
@@ -104,7 +104,7 @@ def Gen200P0955(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Gen200P0955",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

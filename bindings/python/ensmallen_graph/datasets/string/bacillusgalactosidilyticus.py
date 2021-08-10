@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusGalactosidilyticus.
+This file offers the methods to automatically retrieve the graph Bacillus galactosidilyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def BacillusGalactosidilyticus(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusGalactosidilyticus graph.
+    """Return new instance of the Bacillus galactosidilyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def BacillusGalactosidilyticus(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of BacillusGalactosidilyticus graph.
+    Instace of Bacillus galactosidilyticus graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def BacillusGalactosidilyticus(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BacillusGalactosidilyticus",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

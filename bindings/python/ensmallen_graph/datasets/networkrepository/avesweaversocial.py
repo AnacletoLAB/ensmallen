@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AvesWeaverSocial.
+This file offers the methods to automatically retrieve the graph aves-weaver-social.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def AvesWeaverSocial(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AvesWeaverSocial graph.
+    """Return new instance of the aves-weaver-social graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def AvesWeaverSocial(
 
     Returns
     -----------------------
-    Instace of AvesWeaverSocial graph.
+    Instace of aves-weaver-social graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def AvesWeaverSocial(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AvesWeaverSocial",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Net75.
+This file offers the methods to automatically retrieve the graph net75.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Net75(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Net75 graph.
+    """Return new instance of the net75 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Net75(
 
     Returns
     -----------------------
-    Instace of Net75 graph.
+    Instace of net75 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Net75(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Net75",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

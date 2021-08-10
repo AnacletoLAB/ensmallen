@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAquilunaSpUbMaderosw2red.
+This file offers the methods to automatically retrieve the graph Candidatus Aquiluna sp. UB-MaderosW2red.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CandidatusAquilunaSpUbMaderosw2red(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAquilunaSpUbMaderosw2red graph.
+    """Return new instance of the Candidatus Aquiluna sp. UB-MaderosW2red graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CandidatusAquilunaSpUbMaderosw2red(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CandidatusAquilunaSpUbMaderosw2red graph.
+    Instace of Candidatus Aquiluna sp. UB-MaderosW2red graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CandidatusAquilunaSpUbMaderosw2red(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusAquilunaSpUbMaderosw2red",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

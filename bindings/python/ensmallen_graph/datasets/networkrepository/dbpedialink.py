@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DbpediaLink.
+This file offers the methods to automatically retrieve the graph dbpedia-link.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def DbpediaLink(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DbpediaLink graph.
+    """Return new instance of the dbpedia-link graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def DbpediaLink(
 
     Returns
     -----------------------
-    Instace of DbpediaLink graph.
+    Instace of dbpedia-link graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def DbpediaLink(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DbpediaLink",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

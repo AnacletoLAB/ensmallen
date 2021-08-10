@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MannA45.
+This file offers the methods to automatically retrieve the graph MANN-a45.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def MannA45(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MannA45 graph.
+    """Return new instance of the MANN-a45 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def MannA45(
 
     Returns
     -----------------------
-    Instace of MannA45 graph.
+    Instace of MANN-a45 graph.
 
 	References
 	---------------------
@@ -104,7 +104,7 @@ def MannA45(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MannA45",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

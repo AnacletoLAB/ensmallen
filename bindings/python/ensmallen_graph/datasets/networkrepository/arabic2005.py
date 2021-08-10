@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Arabic2005.
+This file offers the methods to automatically retrieve the graph arabic-2005.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Arabic2005(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Arabic2005 graph.
+    """Return new instance of the arabic-2005 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Arabic2005(
 
     Returns
     -----------------------
-    Instace of Arabic2005 graph.
+    Instace of arabic-2005 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Arabic2005(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Arabic2005",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

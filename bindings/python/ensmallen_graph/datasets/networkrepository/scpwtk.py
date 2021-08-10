@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ScPwtk.
+This file offers the methods to automatically retrieve the graph sc-pwtk.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def ScPwtk(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ScPwtk graph.
+    """Return new instance of the sc-pwtk graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def ScPwtk(
 
     Returns
     -----------------------
-    Instace of ScPwtk graph.
+    Instace of sc-pwtk graph.
 
 	References
 	---------------------
@@ -92,7 +92,7 @@ def ScPwtk(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ScPwtk",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

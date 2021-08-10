@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiopsisAlkaliphilaYim80379.
+This file offers the methods to automatically retrieve the graph Nocardiopsis alkaliphila YIM 80379.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def NocardiopsisAlkaliphilaYim80379(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiopsisAlkaliphilaYim80379 graph.
+    """Return new instance of the Nocardiopsis alkaliphila YIM 80379 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def NocardiopsisAlkaliphilaYim80379(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of NocardiopsisAlkaliphilaYim80379 graph.
+    Instace of Nocardiopsis alkaliphila YIM 80379 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def NocardiopsisAlkaliphilaYim80379(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardiopsisAlkaliphilaYim80379",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

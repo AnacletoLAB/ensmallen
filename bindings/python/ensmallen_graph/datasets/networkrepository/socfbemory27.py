@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbEmory27.
+This file offers the methods to automatically retrieve the graph socfb-Emory27.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbEmory27(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbEmory27 graph.
+    """Return new instance of the socfb-Emory27 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbEmory27(
 
     Returns
     -----------------------
-    Instace of SocfbEmory27 graph.
+    Instace of socfb-Emory27 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbEmory27(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbEmory27",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

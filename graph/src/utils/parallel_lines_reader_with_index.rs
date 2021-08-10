@@ -172,7 +172,7 @@ impl<'a> Iterator for ParalellLinesProducerWithIndex<'a> {
                 return Some((
                     self.line_count - 1,
                     match result_bytes_read {
-                        Ok(_) => Ok(unsafe{String::from_utf8_unchecked(line)}),
+                        Ok(_) => Ok(unsafe { String::from_utf8_unchecked(line) }),
                         Err(error) => Err(error.to_string()),
                     },
                 ));

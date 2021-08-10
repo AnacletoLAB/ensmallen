@@ -108,7 +108,7 @@ def CiteSeer(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CiteSeer",
-        dataset="linqs",
+        repository="linqs",
         version=version,
         directed=directed,
         preprocess=preprocess,

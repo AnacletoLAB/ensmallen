@@ -1,7 +1,8 @@
 use crate::{
     convert_edge_list_to_numeric, convert_node_list_node_types_to_numeric,
-    densify_sparse_numeric_edge_list, get_minmax_node_from_numeric_edge_list, is_numeric_edge_list, get_rows_number,
-    sort_numeric_edge_list_inplace, EdgeT, EdgeTypeT, NodeT, NodeTypeT, Result, WeightT,
+    densify_sparse_numeric_edge_list, get_minmax_node_from_numeric_edge_list, get_rows_number,
+    is_numeric_edge_list, sort_numeric_edge_list_inplace, EdgeT, EdgeTypeT, NodeT, NodeTypeT,
+    Result, WeightT,
 };
 use log::info;
 
@@ -170,13 +171,14 @@ pub fn build_optimal_lists_files(
         if target_node_path.is_none() {
             return Err(concat!(
                 "When providing the original node path that must be ",
-                "parsed to produce the op"
+                "parsed to produce the optimized node list, also the ",
+                "target node path must be provided."
             )
             .to_string());
         }
 
         info!("Converting the node list node type names to numeric node type IDs.");
-        node_types_number = Some(convert_node_list_node_types_to_numeric(
+        node_types_number = convert_node_list_node_types_to_numeric(
             original_node_type_path,
             original_node_type_list_separator,
             original_node_types_column_number,
@@ -221,7 +223,7 @@ pub fn build_optimal_lists_files(
             target_node_list_node_types_column_number,
             target_node_list_node_types_column,
             nodes_number,
-        )? as NodeTypeT);
+        )?;
         // Now we need to update the node list parameters
         // that should be used in the next step.
         // We do not update again the node types as it

@@ -13,7 +13,8 @@
                 "destinations_column_number": 1,
                 "edge_header": false,
                 "nodes_column": "STRING_id",
-                "numeric_edge_node_ids": true
+                "numeric_edge_node_ids": true,
+                "name": "StringPPI"
             }
         }
     },
@@ -34,7 +35,8 @@
                 "node_rows_to_skip": 1,
                 "nodes_column_number": 1,
                 "node_types_column_number": 3,
-                "numeric_edge_node_ids": true
+                "numeric_edge_node_ids": true,
+                "name": "CTDDDA"
             }
         }
     },
@@ -52,7 +54,8 @@
                 "destinations_column_number": 1,
                 "edge_header": false,
                 "nodes_column": "DrugBank_id",
-                "numeric_edge_node_ids": true
+                "numeric_edge_node_ids": true,
+                "name": "DrugBankDDI"
             }
         }
     },
@@ -73,7 +76,8 @@
                 "node_rows_to_skip": 1,
                 "nodes_column_number": 1,
                 "node_types_column_number": 2,
-                "numeric_edge_node_ids": true
+                "numeric_edge_node_ids": true,
+                "name": "NDFRTDDA"
             }
         }
     },
@@ -87,7 +91,8 @@
                 "edge_path": "Mashup_PPI.edgelist",
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
-                "weights_column_number": 2
+                "weights_column_number": 2,
+                "name": "MashupPPI"
             }
         }
     },
@@ -100,7 +105,8 @@
             "arguments": {
                 "edge_path": "node2vec_PPI.edgelist",
                 "sources_column_number": 0,
-                "destinations_column_number": 1
+                "destinations_column_number": 1,
+                "name": "node2vecPPI"
             }
         }
     },
@@ -119,7 +125,8 @@
                 "destinations_column_number": 1,
                 "node_header": true,
                 "numeric_edge_node_ids": true,
-                "nodes_column": "term_id"
+                "nodes_column": "term_id",
+                "name": "ClinTermCOOC"
             }
         }
     }

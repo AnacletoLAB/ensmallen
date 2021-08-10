@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CyanobacteriumSpPcc7702.
+This file offers the methods to automatically retrieve the graph Cyanobacterium sp. PCC7702.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CyanobacteriumSpPcc7702(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.0",
+    version: str = "links.v11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CyanobacteriumSpPcc7702 graph.
+    """Return new instance of the Cyanobacterium sp. PCC7702 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CyanobacteriumSpPcc7702(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.0",
+    version: str = "links.v11.0",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
+			- homology.v11.0
+			- physical.links.v11.0
+			- links.v11.0
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CyanobacteriumSpPcc7702 graph.
+    Instace of Cyanobacterium sp. PCC7702 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CyanobacteriumSpPcc7702(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CyanobacteriumSpPcc7702",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

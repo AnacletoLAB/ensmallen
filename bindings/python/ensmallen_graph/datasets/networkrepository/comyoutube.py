@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ComYoutube.
+This file offers the methods to automatically retrieve the graph com-youtube.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def ComYoutube(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ComYoutube graph.
+    """Return new instance of the com-youtube graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def ComYoutube(
 
     Returns
     -----------------------
-    Instace of ComYoutube graph.
+    Instace of com-youtube graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def ComYoutube(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ComYoutube",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

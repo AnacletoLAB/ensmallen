@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermococcusLitoralisDsm5473.
+This file offers the methods to automatically retrieve the graph Thermococcus litoralis DSM 5473.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def ThermococcusLitoralisDsm5473(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermococcusLitoralisDsm5473 graph.
+    """Return new instance of the Thermococcus litoralis DSM 5473 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def ThermococcusLitoralisDsm5473(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of ThermococcusLitoralisDsm5473 graph.
+    Instace of Thermococcus litoralis DSM 5473 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def ThermococcusLitoralisDsm5473(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermococcusLitoralisDsm5473",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

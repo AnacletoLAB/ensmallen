@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocFoursquare.
+This file offers the methods to automatically retrieve the graph soc-FourSquare.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def SocFoursquare(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocFoursquare graph.
+    """Return new instance of the soc-FourSquare graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def SocFoursquare(
 
     Returns
     -----------------------
-    Instace of SocFoursquare graph.
+    Instace of soc-FourSquare graph.
 
 	References
 	---------------------
@@ -92,7 +92,7 @@ def SocFoursquare(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocFoursquare",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

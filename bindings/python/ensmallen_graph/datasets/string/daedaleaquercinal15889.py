@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DaedaleaQuercinaL15889.
+This file offers the methods to automatically retrieve the graph Daedalea quercina L-15889.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def DaedaleaQuercinaL15889(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DaedaleaQuercinaL15889 graph.
+    """Return new instance of the Daedalea quercina L-15889 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def DaedaleaQuercinaL15889(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of DaedaleaQuercinaL15889 graph.
+    Instace of Daedalea quercina L-15889 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def DaedaleaQuercinaL15889(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="DaedaleaQuercinaL15889",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbWilliam77.
+This file offers the methods to automatically retrieve the graph socfb-William77.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbWilliam77(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbWilliam77 graph.
+    """Return new instance of the socfb-William77 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbWilliam77(
 
     Returns
     -----------------------
-    Instace of SocfbWilliam77 graph.
+    Instace of socfb-William77 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbWilliam77(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbWilliam77",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocFlickr.
+This file offers the methods to automatically retrieve the graph soc-flickr.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -47,7 +47,7 @@ def SocFlickr(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocFlickr graph.
+    """Return new instance of the soc-flickr graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -74,7 +74,7 @@ def SocFlickr(
 
     Returns
     -----------------------
-    Instace of SocFlickr graph.
+    Instace of soc-flickr graph.
 
 	References
 	---------------------
@@ -106,7 +106,7 @@ def SocFlickr(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocFlickr",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

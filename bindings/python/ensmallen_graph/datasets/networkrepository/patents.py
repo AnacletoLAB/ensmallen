@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Patents.
+This file offers the methods to automatically retrieve the graph patents.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Patents(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Patents graph.
+    """Return new instance of the patents graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Patents(
 
     Returns
     -----------------------
-    Instace of Patents graph.
+    Instace of patents graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Patents(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Patents",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

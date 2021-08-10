@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TechAs735.
+This file offers the methods to automatically retrieve the graph tech-as-735.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def TechAs735(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TechAs735 graph.
+    """Return new instance of the tech-as-735 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def TechAs735(
 
     Returns
     -----------------------
-    Instace of TechAs735 graph.
+    Instace of tech-as-735 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def TechAs735(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TechAs735",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

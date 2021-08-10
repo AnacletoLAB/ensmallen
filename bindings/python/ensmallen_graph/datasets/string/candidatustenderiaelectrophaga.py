@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusTenderiaElectrophaga.
+This file offers the methods to automatically retrieve the graph Candidatus Tenderia electrophaga.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CandidatusTenderiaElectrophaga(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusTenderiaElectrophaga graph.
+    """Return new instance of the Candidatus Tenderia electrophaga graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CandidatusTenderiaElectrophaga(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CandidatusTenderiaElectrophaga graph.
+    Instace of Candidatus Tenderia electrophaga graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CandidatusTenderiaElectrophaga(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusTenderiaElectrophaga",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

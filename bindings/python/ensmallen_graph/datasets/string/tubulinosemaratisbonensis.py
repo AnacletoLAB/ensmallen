@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TubulinosemaRatisbonensis.
+This file offers the methods to automatically retrieve the graph Tubulinosema ratisbonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def TubulinosemaRatisbonensis(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TubulinosemaRatisbonensis graph.
+    """Return new instance of the Tubulinosema ratisbonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def TubulinosemaRatisbonensis(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of TubulinosemaRatisbonensis graph.
+    Instace of Tubulinosema ratisbonensis graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def TubulinosemaRatisbonensis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TubulinosemaRatisbonensis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

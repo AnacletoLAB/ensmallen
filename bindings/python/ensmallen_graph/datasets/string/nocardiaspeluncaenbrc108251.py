@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaSpeluncaeNbrc108251.
+This file offers the methods to automatically retrieve the graph Nocardia speluncae NBRC 108251.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def NocardiaSpeluncaeNbrc108251(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaSpeluncaeNbrc108251 graph.
+    """Return new instance of the Nocardia speluncae NBRC 108251 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def NocardiaSpeluncaeNbrc108251(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of NocardiaSpeluncaeNbrc108251 graph.
+    Instace of Nocardia speluncae NBRC 108251 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def NocardiaSpeluncaeNbrc108251(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="NocardiaSpeluncaeNbrc108251",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

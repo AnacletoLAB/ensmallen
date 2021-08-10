@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlphaproteobacteriaBacteriumCg1024617.
+This file offers the methods to automatically retrieve the graph Alphaproteobacteria bacterium CG1_02_46_17.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def AlphaproteobacteriaBacteriumCg1024617(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlphaproteobacteriaBacteriumCg1024617 graph.
+    """Return new instance of the Alphaproteobacteria bacterium CG1_02_46_17 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def AlphaproteobacteriaBacteriumCg1024617(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of AlphaproteobacteriaBacteriumCg1024617 graph.
+    Instace of Alphaproteobacteria bacterium CG1_02_46_17 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def AlphaproteobacteriaBacteriumCg1024617(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AlphaproteobacteriaBacteriumCg1024617",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

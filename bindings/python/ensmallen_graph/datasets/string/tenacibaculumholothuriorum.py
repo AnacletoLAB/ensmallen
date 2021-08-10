@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TenacibaculumHolothuriorum.
+This file offers the methods to automatically retrieve the graph Tenacibaculum holothuriorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def TenacibaculumHolothuriorum(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TenacibaculumHolothuriorum graph.
+    """Return new instance of the Tenacibaculum holothuriorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def TenacibaculumHolothuriorum(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of TenacibaculumHolothuriorum graph.
+    Instace of Tenacibaculum holothuriorum graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def TenacibaculumHolothuriorum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TenacibaculumHolothuriorum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

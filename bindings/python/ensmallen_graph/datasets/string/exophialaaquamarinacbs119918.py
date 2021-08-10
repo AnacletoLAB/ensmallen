@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ExophialaAquamarinaCbs119918.
+This file offers the methods to automatically retrieve the graph Exophiala aquamarina CBS 119918.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def ExophialaAquamarinaCbs119918(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ExophialaAquamarinaCbs119918 graph.
+    """Return new instance of the Exophiala aquamarina CBS 119918 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def ExophialaAquamarinaCbs119918(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of ExophialaAquamarinaCbs119918 graph.
+    Instace of Exophiala aquamarina CBS 119918 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def ExophialaAquamarinaCbs119918(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ExophialaAquamarinaCbs119918",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

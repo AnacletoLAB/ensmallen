@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusEquiDsm15833Jcm10991.
+This file offers the methods to automatically retrieve the graph Lactobacillus equi DSM 15833 JCM 10991.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def LactobacillusEquiDsm15833Jcm10991(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusEquiDsm15833Jcm10991 graph.
+    """Return new instance of the Lactobacillus equi DSM 15833 JCM 10991 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def LactobacillusEquiDsm15833Jcm10991(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of LactobacillusEquiDsm15833Jcm10991 graph.
+    Instace of Lactobacillus equi DSM 15833 JCM 10991 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def LactobacillusEquiDsm15833Jcm10991(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LactobacillusEquiDsm15833Jcm10991",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CurtobacteriumAmmoniigenesNbrc101786.
+This file offers the methods to automatically retrieve the graph Curtobacterium ammoniigenes NBRC 101786.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CurtobacteriumAmmoniigenesNbrc101786(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CurtobacteriumAmmoniigenesNbrc101786 graph.
+    """Return new instance of the Curtobacterium ammoniigenes NBRC 101786 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CurtobacteriumAmmoniigenesNbrc101786(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CurtobacteriumAmmoniigenesNbrc101786 graph.
+    Instace of Curtobacterium ammoniigenes NBRC 101786 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CurtobacteriumAmmoniigenesNbrc101786(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CurtobacteriumAmmoniigenesNbrc101786",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocSlashdotZoo.
+This file offers the methods to automatically retrieve the graph soc-slashdot-zoo.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def SocSlashdotZoo(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocSlashdotZoo graph.
+    """Return new instance of the soc-slashdot-zoo graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def SocSlashdotZoo(
 
     Returns
     -----------------------
-    Instace of SocSlashdotZoo graph.
+    Instace of soc-slashdot-zoo graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def SocSlashdotZoo(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocSlashdotZoo",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

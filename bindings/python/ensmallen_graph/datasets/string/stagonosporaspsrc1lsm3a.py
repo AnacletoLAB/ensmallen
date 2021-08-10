@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StagonosporaSpSrc1lsm3a.
+This file offers the methods to automatically retrieve the graph Stagonospora sp. SRC1lsM3a.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def StagonosporaSpSrc1lsm3a(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StagonosporaSpSrc1lsm3a graph.
+    """Return new instance of the Stagonospora sp. SRC1lsM3a graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def StagonosporaSpSrc1lsm3a(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of StagonosporaSpSrc1lsm3a graph.
+    Instace of Stagonospora sp. SRC1lsM3a graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def StagonosporaSpSrc1lsm3a(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StagonosporaSpSrc1lsm3a",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

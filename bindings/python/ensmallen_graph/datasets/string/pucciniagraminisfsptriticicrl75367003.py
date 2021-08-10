@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PucciniaGraminisFSpTriticiCrl75367003.
+This file offers the methods to automatically retrieve the graph Puccinia graminis f. sp. tritici CRL 75-36-700-3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def PucciniaGraminisFSpTriticiCrl75367003(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PucciniaGraminisFSpTriticiCrl75367003 graph.
+    """Return new instance of the Puccinia graminis f. sp. tritici CRL 75-36-700-3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def PucciniaGraminisFSpTriticiCrl75367003(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of PucciniaGraminisFSpTriticiCrl75367003 graph.
+    Instace of Puccinia graminis f. sp. tritici CRL 75-36-700-3 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def PucciniaGraminisFSpTriticiCrl75367003(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PucciniaGraminisFSpTriticiCrl75367003",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

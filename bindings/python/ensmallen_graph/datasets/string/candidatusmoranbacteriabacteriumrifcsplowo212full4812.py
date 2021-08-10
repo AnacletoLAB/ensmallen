@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMoranbacteriaBacteriumRifcsplowo212Full4812.
+This file offers the methods to automatically retrieve the graph Candidatus Moranbacteria bacterium RIFCSPLOWO2_12_FULL_48_12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CandidatusMoranbacteriaBacteriumRifcsplowo212Full4812(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMoranbacteriaBacteriumRifcsplowo212Full4812 graph.
+    """Return new instance of the Candidatus Moranbacteria bacterium RIFCSPLOWO2_12_FULL_48_12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CandidatusMoranbacteriaBacteriumRifcsplowo212Full4812(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CandidatusMoranbacteriaBacteriumRifcsplowo212Full4812 graph.
+    Instace of Candidatus Moranbacteria bacterium RIFCSPLOWO2_12_FULL_48_12 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CandidatusMoranbacteriaBacteriumRifcsplowo212Full4812(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CandidatusMoranbacteriaBacteriumRifcsplowo212Full4812",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AffWikiEnArticleCat.
+This file offers the methods to automatically retrieve the graph aff-wiki-en-article-cat.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def AffWikiEnArticleCat(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AffWikiEnArticleCat graph.
+    """Return new instance of the aff-wiki-en-article-cat graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def AffWikiEnArticleCat(
 
     Returns
     -----------------------
-    Instace of AffWikiEnArticleCat graph.
+    Instace of aff-wiki-en-article-cat graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def AffWikiEnArticleCat(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AffWikiEnArticleCat",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

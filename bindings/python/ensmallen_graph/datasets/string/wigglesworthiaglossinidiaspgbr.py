@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WigglesworthiaGlossinidiaSpGbr.
+This file offers the methods to automatically retrieve the graph Wigglesworthia glossinidia sp. Gbr.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def WigglesworthiaGlossinidiaSpGbr(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.0",
+    version: str = "links.v11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WigglesworthiaGlossinidiaSpGbr graph.
+    """Return new instance of the Wigglesworthia glossinidia sp. Gbr graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def WigglesworthiaGlossinidiaSpGbr(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.0",
+    version: str = "links.v11.0",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
+			- homology.v11.0
+			- physical.links.v11.0
+			- links.v11.0
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of WigglesworthiaGlossinidiaSpGbr graph.
+    Instace of Wigglesworthia glossinidia sp. Gbr graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def WigglesworthiaGlossinidiaSpGbr(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WigglesworthiaGlossinidiaSpGbr",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

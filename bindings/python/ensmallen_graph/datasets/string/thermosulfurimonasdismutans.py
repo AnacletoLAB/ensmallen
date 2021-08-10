@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermosulfurimonasDismutans.
+This file offers the methods to automatically retrieve the graph Thermosulfurimonas dismutans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def ThermosulfurimonasDismutans(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermosulfurimonasDismutans graph.
+    """Return new instance of the Thermosulfurimonas dismutans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def ThermosulfurimonasDismutans(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of ThermosulfurimonasDismutans graph.
+    Instace of Thermosulfurimonas dismutans graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def ThermosulfurimonasDismutans(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ThermosulfurimonasDismutans",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AsSkitter.
+This file offers the methods to automatically retrieve the graph as-skitter.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def AsSkitter(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AsSkitter graph.
+    """Return new instance of the as-skitter graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def AsSkitter(
 
     Returns
     -----------------------
-    Instace of AsSkitter graph.
+    Instace of as-skitter graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def AsSkitter(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AsSkitter",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

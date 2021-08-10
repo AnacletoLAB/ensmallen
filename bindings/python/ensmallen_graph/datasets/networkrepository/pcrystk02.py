@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Pcrystk02.
+This file offers the methods to automatically retrieve the graph pcrystk02.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Pcrystk02(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Pcrystk02 graph.
+    """Return new instance of the pcrystk02 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Pcrystk02(
 
     Returns
     -----------------------
-    Instace of Pcrystk02 graph.
+    Instace of pcrystk02 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Pcrystk02(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Pcrystk02",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

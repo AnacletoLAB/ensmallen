@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CladophialophoraYegresiiCbs114405.
+This file offers the methods to automatically retrieve the graph Cladophialophora yegresii CBS 114405.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def CladophialophoraYegresiiCbs114405(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CladophialophoraYegresiiCbs114405 graph.
+    """Return new instance of the Cladophialophora yegresii CBS 114405 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def CladophialophoraYegresiiCbs114405(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of CladophialophoraYegresiiCbs114405 graph.
+    Instace of Cladophialophora yegresii CBS 114405 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def CladophialophoraYegresiiCbs114405(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CladophialophoraYegresiiCbs114405",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

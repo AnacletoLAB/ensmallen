@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProteinsAll.
+This file offers the methods to automatically retrieve the graph proteins-all.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def ProteinsAll(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProteinsAll graph.
+    """Return new instance of the proteins-all graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def ProteinsAll(
 
     Returns
     -----------------------
-    Instace of ProteinsAll graph.
+    Instace of proteins-all graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def ProteinsAll(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProteinsAll",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

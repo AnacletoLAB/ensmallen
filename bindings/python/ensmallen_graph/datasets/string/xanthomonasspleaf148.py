@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonasSpLeaf148.
+This file offers the methods to automatically retrieve the graph Xanthomonas sp. Leaf148.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def XanthomonasSpLeaf148(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonasSpLeaf148 graph.
+    """Return new instance of the Xanthomonas sp. Leaf148 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def XanthomonasSpLeaf148(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of XanthomonasSpLeaf148 graph.
+    Instace of Xanthomonas sp. Leaf148 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def XanthomonasSpLeaf148(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="XanthomonasSpLeaf148",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

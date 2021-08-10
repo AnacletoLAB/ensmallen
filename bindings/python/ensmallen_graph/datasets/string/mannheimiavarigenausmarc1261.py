@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MannheimiaVarigenaUsmarc1261.
+This file offers the methods to automatically retrieve the graph Mannheimia varigena USMARC1261.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def MannheimiaVarigenaUsmarc1261(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.0",
+    version: str = "links.v11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MannheimiaVarigenaUsmarc1261 graph.
+    """Return new instance of the Mannheimia varigena USMARC1261 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def MannheimiaVarigenaUsmarc1261(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.0",
+    version: str = "links.v11.0",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
+			- homology.v11.0
+			- physical.links.v11.0
+			- links.v11.0
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of MannheimiaVarigenaUsmarc1261 graph.
+    Instace of Mannheimia varigena USMARC1261 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def MannheimiaVarigenaUsmarc1261(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MannheimiaVarigenaUsmarc1261",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AsaiaAstilbisJcm15831.
+This file offers the methods to automatically retrieve the graph Asaia astilbis JCM 15831.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def AsaiaAstilbisJcm15831(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AsaiaAstilbisJcm15831 graph.
+    """Return new instance of the Asaia astilbis JCM 15831 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def AsaiaAstilbisJcm15831(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of AsaiaAstilbisJcm15831 graph.
+    Instace of Asaia astilbis JCM 15831 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def AsaiaAstilbisJcm15831(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AsaiaAstilbisJcm15831",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

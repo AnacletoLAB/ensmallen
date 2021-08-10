@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WebEdu.
+This file offers the methods to automatically retrieve the graph web-edu.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -42,7 +42,7 @@ def WebEdu(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WebEdu graph.
+    """Return new instance of the web-edu graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -69,7 +69,7 @@ def WebEdu(
 
     Returns
     -----------------------
-    Instace of WebEdu graph.
+    Instace of web-edu graph.
 
 	References
 	---------------------
@@ -96,7 +96,7 @@ def WebEdu(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebEdu",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

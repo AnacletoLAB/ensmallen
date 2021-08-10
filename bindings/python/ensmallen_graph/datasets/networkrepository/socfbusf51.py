@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbUsf51.
+This file offers the methods to automatically retrieve the graph socfb-USF51.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbUsf51(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbUsf51 graph.
+    """Return new instance of the socfb-USF51 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbUsf51(
 
     Returns
     -----------------------
-    Instace of SocfbUsf51 graph.
+    Instace of socfb-USF51 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbUsf51(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbUsf51",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

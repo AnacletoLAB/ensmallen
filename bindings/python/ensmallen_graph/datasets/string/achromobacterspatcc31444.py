@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AchromobacterSpAtcc31444.
+This file offers the methods to automatically retrieve the graph Achromobacter sp. ATCC31444.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def AchromobacterSpAtcc31444(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AchromobacterSpAtcc31444 graph.
+    """Return new instance of the Achromobacter sp. ATCC31444 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def AchromobacterSpAtcc31444(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of AchromobacterSpAtcc31444 graph.
+    Instace of Achromobacter sp. ATCC31444 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def AchromobacterSpAtcc31444(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="AchromobacterSpAtcc31444",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

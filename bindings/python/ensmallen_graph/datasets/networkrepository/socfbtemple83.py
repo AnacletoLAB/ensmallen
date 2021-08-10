@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbTemple83.
+This file offers the methods to automatically retrieve the graph socfb-Temple83.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbTemple83(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbTemple83 graph.
+    """Return new instance of the socfb-Temple83 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbTemple83(
 
     Returns
     -----------------------
-    Instace of SocfbTemple83 graph.
+    Instace of socfb-Temple83 graph.
 
 	References
 	---------------------
@@ -120,7 +120,7 @@ def SocfbTemple83(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocfbTemple83",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

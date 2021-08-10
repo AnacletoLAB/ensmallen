@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TechWhois.
+This file offers the methods to automatically retrieve the graph tech-WHOIS.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -49,7 +49,7 @@ def TechWhois(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TechWhois graph.
+    """Return new instance of the tech-WHOIS graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -76,7 +76,7 @@ def TechWhois(
 
     Returns
     -----------------------
-    Instace of TechWhois graph.
+    Instace of tech-WHOIS graph.
 
 	References
 	---------------------
@@ -110,7 +110,7 @@ def TechWhois(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="TechWhois",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HolosporaElegansE1.
+This file offers the methods to automatically retrieve the graph Holospora elegans E1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def HolosporaElegansE1(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HolosporaElegansE1 graph.
+    """Return new instance of the Holospora elegans E1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def HolosporaElegansE1(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of HolosporaElegansE1 graph.
+    Instace of Holospora elegans E1 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def HolosporaElegansE1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="HolosporaElegansE1",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

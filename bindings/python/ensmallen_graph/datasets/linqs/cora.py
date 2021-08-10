@@ -108,7 +108,7 @@ def Cora(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Cora",
-        dataset="linqs",
+        repository="linqs",
         version=version,
         directed=directed,
         preprocess=preprocess,

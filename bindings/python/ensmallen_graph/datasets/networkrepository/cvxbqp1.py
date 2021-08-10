@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Cvxbqp1.
+This file offers the methods to automatically retrieve the graph cvxbqp1.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Cvxbqp1(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Cvxbqp1 graph.
+    """Return new instance of the cvxbqp1 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Cvxbqp1(
 
     Returns
     -----------------------
-    Instace of Cvxbqp1 graph.
+    Instace of cvxbqp1 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Cvxbqp1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Cvxbqp1",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

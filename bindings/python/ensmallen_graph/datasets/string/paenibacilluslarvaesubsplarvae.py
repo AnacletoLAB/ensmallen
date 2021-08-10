@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusLarvaeSubspLarvae.
+This file offers the methods to automatically retrieve the graph Paenibacillus larvae subsp. larvae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def PaenibacillusLarvaeSubspLarvae(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusLarvaeSubspLarvae graph.
+    """Return new instance of the Paenibacillus larvae subsp. larvae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def PaenibacillusLarvaeSubspLarvae(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of PaenibacillusLarvaeSubspLarvae graph.
+    Instace of Paenibacillus larvae subsp. larvae graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def PaenibacillusLarvaeSubspLarvae(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PaenibacillusLarvaeSubspLarvae",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

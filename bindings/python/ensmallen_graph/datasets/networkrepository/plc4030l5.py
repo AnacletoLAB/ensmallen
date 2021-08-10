@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Plc4030L5.
+This file offers the methods to automatically retrieve the graph PLC-40-30-L5.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Plc4030L5(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Plc4030L5 graph.
+    """Return new instance of the PLC-40-30-L5 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Plc4030L5(
 
     Returns
     -----------------------
-    Instace of Plc4030L5 graph.
+    Instace of PLC-40-30-L5 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Plc4030L5(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Plc4030L5",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

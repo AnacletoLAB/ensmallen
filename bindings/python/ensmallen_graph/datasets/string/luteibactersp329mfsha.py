@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LuteibacterSp329mfsha.
+This file offers the methods to automatically retrieve the graph Luteibacter sp. 329MFSha.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def LuteibacterSp329mfsha(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LuteibacterSp329mfsha graph.
+    """Return new instance of the Luteibacter sp. 329MFSha graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def LuteibacterSp329mfsha(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of LuteibacterSp329mfsha graph.
+    Instace of Luteibacter sp. 329MFSha graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def LuteibacterSp329mfsha(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LuteibacterSp329mfsha",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

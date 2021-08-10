@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Ukerbe1.
+This file offers the methods to automatically retrieve the graph ukerbe1.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Ukerbe1(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Ukerbe1 graph.
+    """Return new instance of the ukerbe1 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Ukerbe1(
 
     Returns
     -----------------------
-    Instace of Ukerbe1 graph.
+    Instace of ukerbe1 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Ukerbe1(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Ukerbe1",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

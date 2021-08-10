@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EmailEuall.
+This file offers the methods to automatically retrieve the graph email-EuAll.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def EmailEuall(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EmailEuall graph.
+    """Return new instance of the email-EuAll graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def EmailEuall(
 
     Returns
     -----------------------
-    Instace of EmailEuall graph.
+    Instace of email-EuAll graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def EmailEuall(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="EmailEuall",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

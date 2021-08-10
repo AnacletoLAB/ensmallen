@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocSlashdotTrustAll.
+This file offers the methods to automatically retrieve the graph soc-slashdot-trust-all.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -44,7 +44,7 @@ def SocSlashdotTrustAll(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocSlashdotTrustAll graph.
+    """Return new instance of the soc-slashdot-trust-all graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -71,7 +71,7 @@ def SocSlashdotTrustAll(
 
     Returns
     -----------------------
-    Instace of SocSlashdotTrustAll graph.
+    Instace of soc-slashdot-trust-all graph.
 
 	References
 	---------------------
@@ -100,7 +100,7 @@ def SocSlashdotTrustAll(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocSlashdotTrustAll",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

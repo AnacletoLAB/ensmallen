@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoadGreatBritainOsm.
+This file offers the methods to automatically retrieve the graph road-great-britain-osm.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def RoadGreatBritainOsm(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoadGreatBritainOsm graph.
+    """Return new instance of the road-great-britain-osm graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def RoadGreatBritainOsm(
 
     Returns
     -----------------------
-    Instace of RoadGreatBritainOsm graph.
+    Instace of road-great-britain-osm graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def RoadGreatBritainOsm(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RoadGreatBritainOsm",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

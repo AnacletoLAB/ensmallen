@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocTwitterHiggs.
+This file offers the methods to automatically retrieve the graph soc-twitter-higgs.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -42,7 +42,7 @@ def SocTwitterHiggs(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocTwitterHiggs graph.
+    """Return new instance of the soc-twitter-higgs graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -69,7 +69,7 @@ def SocTwitterHiggs(
 
     Returns
     -----------------------
-    Instace of SocTwitterHiggs graph.
+    Instace of soc-twitter-higgs graph.
 
 	References
 	---------------------
@@ -96,7 +96,7 @@ def SocTwitterHiggs(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocTwitterHiggs",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

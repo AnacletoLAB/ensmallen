@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KibdelosporangiumSpMj126Nf4.
+This file offers the methods to automatically retrieve the graph Kibdelosporangium sp. MJ126-NF4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def KibdelosporangiumSpMj126Nf4(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KibdelosporangiumSpMj126Nf4 graph.
+    """Return new instance of the Kibdelosporangium sp. MJ126-NF4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def KibdelosporangiumSpMj126Nf4(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of KibdelosporangiumSpMj126Nf4 graph.
+    Instace of Kibdelosporangium sp. MJ126-NF4 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def KibdelosporangiumSpMj126Nf4(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KibdelosporangiumSpMj126Nf4",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IntrasporangiumFlavum.
+This file offers the methods to automatically retrieve the graph Intrasporangium flavum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def IntrasporangiumFlavum(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IntrasporangiumFlavum graph.
+    """Return new instance of the Intrasporangium flavum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def IntrasporangiumFlavum(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of IntrasporangiumFlavum graph.
+    Instace of Intrasporangium flavum graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def IntrasporangiumFlavum(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="IntrasporangiumFlavum",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

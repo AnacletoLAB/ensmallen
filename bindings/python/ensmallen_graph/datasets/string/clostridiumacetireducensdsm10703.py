@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumAcetireducensDsm10703.
+This file offers the methods to automatically retrieve the graph Clostridium acetireducens DSM 10703.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def ClostridiumAcetireducensDsm10703(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumAcetireducensDsm10703 graph.
+    """Return new instance of the Clostridium acetireducens DSM 10703 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def ClostridiumAcetireducensDsm10703(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of ClostridiumAcetireducensDsm10703 graph.
+    Instace of Clostridium acetireducens DSM 10703 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def ClostridiumAcetireducensDsm10703(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ClostridiumAcetireducensDsm10703",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

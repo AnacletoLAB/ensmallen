@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph C20005.
+This file offers the methods to automatically retrieve the graph C2000-5.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def C20005(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the C20005 graph.
+    """Return new instance of the C2000-5 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def C20005(
 
     Returns
     -----------------------
-    Instace of C20005 graph.
+    Instace of C2000-5 graph.
 
 	References
 	---------------------
@@ -104,7 +104,7 @@ def C20005(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="C20005",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

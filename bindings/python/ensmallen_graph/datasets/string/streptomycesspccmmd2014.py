@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpCcmMd2014.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. CCM_MD2014.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def StreptomycesSpCcmMd2014(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpCcmMd2014 graph.
+    """Return new instance of the Streptomyces sp. CCM_MD2014 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,16 +56,18 @@ def StreptomycesSpCcmMd2014(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of StreptomycesSpCcmMd2014 graph.
+    Instace of Streptomyces sp. CCM_MD2014 graph.
 
 	References
 	---------------------
@@ -86,7 +88,7 @@ def StreptomycesSpCcmMd2014(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="StreptomycesSpCcmMd2014",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

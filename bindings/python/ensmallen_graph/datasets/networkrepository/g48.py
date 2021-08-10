@@ -78,7 +78,7 @@ def G48(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="G48",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

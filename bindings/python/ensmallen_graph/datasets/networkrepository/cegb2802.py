@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Cegb2802.
+This file offers the methods to automatically retrieve the graph cegb2802.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Cegb2802(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Cegb2802 graph.
+    """Return new instance of the cegb2802 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Cegb2802(
 
     Returns
     -----------------------
-    Instace of Cegb2802 graph.
+    Instace of cegb2802 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Cegb2802(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Cegb2802",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CopresenceInvs15.
+This file offers the methods to automatically retrieve the graph copresence-InVS15.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -38,7 +38,7 @@ def CopresenceInvs15(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CopresenceInvs15 graph.
+    """Return new instance of the copresence-InVS15 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -65,7 +65,7 @@ def CopresenceInvs15(
 
     Returns
     -----------------------
-    Instace of CopresenceInvs15 graph.
+    Instace of copresence-InVS15 graph.
 
 	References
 	---------------------
@@ -88,7 +88,7 @@ def CopresenceInvs15(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CopresenceInvs15",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Hugetric00020.
+This file offers the methods to automatically retrieve the graph hugetric-00020.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Hugetric00020(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Hugetric00020 graph.
+    """Return new instance of the hugetric-00020 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Hugetric00020(
 
     Returns
     -----------------------
-    Instace of Hugetric00020 graph.
+    Instace of hugetric-00020 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Hugetric00020(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Hugetric00020",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

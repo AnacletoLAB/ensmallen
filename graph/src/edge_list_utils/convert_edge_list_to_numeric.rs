@@ -273,7 +273,15 @@ pub fn convert_edge_list_to_numeric(
         ItersWrapper::Sequential(i) => i,
     };
     file_writer.dump_iterator(
-        edges_number,
+        // We do not care to be exact here: if the graph does not contain
+        // selfloops the value will be correct.
+        edges_number.map(|edges_number| {
+            if directed {
+                edges_number
+            } else {
+                edges_number * 2
+            }
+        }),
         lines_iterator
             // Removing eventual errors.
             .filter_map(|line| line.ok())
@@ -609,7 +617,15 @@ pub fn densify_sparse_numeric_edge_list(
         nodes[numeric_node_name]
     };
     file_writer.dump_iterator(
-        edges_number,
+        // We do not care to be exact here: if the graph does not contain
+        // selfloops the value will be correct.
+        edges_number.map(|edges_number| {
+            if directed {
+                edges_number
+            } else {
+                edges_number * 2
+            }
+        }),
         lines_iterator
             // Removing eventual errors.
             .filter_map(|line| line.ok())

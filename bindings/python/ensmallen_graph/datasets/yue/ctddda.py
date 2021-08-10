@@ -84,7 +84,7 @@ def CTDDDA(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CTDDDA",
-        dataset="yue",
+        repository="yue",
         version=version,
         directed=directed,
         preprocess=preprocess,

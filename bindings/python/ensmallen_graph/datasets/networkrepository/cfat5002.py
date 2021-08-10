@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CFat5002.
+This file offers the methods to automatically retrieve the graph c-fat500-2.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def CFat5002(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CFat5002 graph.
+    """Return new instance of the c-fat500-2 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def CFat5002(
 
     Returns
     -----------------------
-    Instace of CFat5002 graph.
+    Instace of c-fat500-2 graph.
 
 	References
 	---------------------
@@ -104,7 +104,7 @@ def CFat5002(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="CFat5002",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocHamsterster.
+This file offers the methods to automatically retrieve the graph soc-hamsterster.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -39,7 +39,7 @@ def SocHamsterster(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocHamsterster graph.
+    """Return new instance of the soc-hamsterster graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -66,7 +66,7 @@ def SocHamsterster(
 
     Returns
     -----------------------
-    Instace of SocHamsterster graph.
+    Instace of soc-hamsterster graph.
 
 	References
 	---------------------
@@ -90,7 +90,7 @@ def SocHamsterster(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocHamsterster",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

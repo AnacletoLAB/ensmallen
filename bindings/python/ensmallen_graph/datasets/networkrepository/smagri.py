@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Smagri.
+This file offers the methods to automatically retrieve the graph SmaGri.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Smagri(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Smagri graph.
+    """Return new instance of the SmaGri graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Smagri(
 
     Returns
     -----------------------
-    Instace of Smagri graph.
+    Instace of SmaGri graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Smagri(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Smagri",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

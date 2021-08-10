@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WebCc12Payleveldomain.
+This file offers the methods to automatically retrieve the graph web-cc12-PayLevelDomain.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -41,7 +41,7 @@ def WebCc12Payleveldomain(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WebCc12Payleveldomain graph.
+    """Return new instance of the web-cc12-PayLevelDomain graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -68,7 +68,7 @@ def WebCc12Payleveldomain(
 
     Returns
     -----------------------
-    Instace of WebCc12Payleveldomain graph.
+    Instace of web-cc12-PayLevelDomain graph.
 
 	References
 	---------------------
@@ -94,7 +94,7 @@ def WebCc12Payleveldomain(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="WebCc12Payleveldomain",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

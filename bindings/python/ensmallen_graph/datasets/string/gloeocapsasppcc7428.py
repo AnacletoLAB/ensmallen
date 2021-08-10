@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GloeocapsaSpPcc7428.
+This file offers the methods to automatically retrieve the graph Gloeocapsa sp. PCC7428.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def GloeocapsaSpPcc7428(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GloeocapsaSpPcc7428 graph.
+    """Return new instance of the Gloeocapsa sp. PCC7428 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def GloeocapsaSpPcc7428(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of GloeocapsaSpPcc7428 graph.
+    Instace of Gloeocapsa sp. PCC7428 graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def GloeocapsaSpPcc7428(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="GloeocapsaSpPcc7428",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

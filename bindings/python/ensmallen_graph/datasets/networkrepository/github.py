@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Github.
+This file offers the methods to automatically retrieve the graph github.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Github(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Github graph.
+    """Return new instance of the github graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Github(
 
     Returns
     -----------------------
-    Instace of Github graph.
+    Instace of github graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Github(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Github",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

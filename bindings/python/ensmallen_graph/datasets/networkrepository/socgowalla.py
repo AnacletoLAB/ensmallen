@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocGowalla.
+This file offers the methods to automatically retrieve the graph soc-gowalla.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -42,7 +42,7 @@ def SocGowalla(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocGowalla graph.
+    """Return new instance of the soc-gowalla graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -69,7 +69,7 @@ def SocGowalla(
 
     Returns
     -----------------------
-    Instace of SocGowalla graph.
+    Instace of soc-gowalla graph.
 
 	References
 	---------------------
@@ -96,7 +96,7 @@ def SocGowalla(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="SocGowalla",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,

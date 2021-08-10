@@ -84,7 +84,7 @@ def node2vecPPI(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="node2vecPPI",
-        dataset="yue",
+        repository="yue",
         version=version,
         directed=directed,
         preprocess=preprocess,

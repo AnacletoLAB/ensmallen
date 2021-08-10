@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RicheliaIntracellularis.
+This file offers the methods to automatically retrieve the graph Richelia intracellularis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -33,10 +33,10 @@ def RicheliaIntracellularis(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RicheliaIntracellularis graph.
+    """Return new instance of the Richelia intracellularis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -56,17 +56,21 @@ def RicheliaIntracellularis(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
-			- 11.5
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of RicheliaIntracellularis graph.
+    Instace of Richelia intracellularis graph.
 
 	References
 	---------------------
@@ -87,7 +91,7 @@ def RicheliaIntracellularis(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RicheliaIntracellularis",
-        dataset="string",
+        repository="string",
         version=version,
         directed=directed,
         preprocess=preprocess,

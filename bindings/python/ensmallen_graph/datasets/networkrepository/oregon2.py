@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Oregon2.
+This file offers the methods to automatically retrieve the graph Oregon-2.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Oregon2(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Oregon2 graph.
+    """Return new instance of the Oregon-2 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Oregon2(
 
     Returns
     -----------------------
-    Instace of Oregon2 graph.
+    Instace of Oregon-2 graph.
 
 	References
 	---------------------
@@ -78,7 +78,7 @@ def Oregon2(
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Oregon2",
-        dataset="networkrepository",
+        repository="networkrepository",
         version=version,
         directed=directed,
         preprocess=preprocess,
