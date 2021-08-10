@@ -108,7 +108,7 @@ impl NodeTypeParser {
         ))
     }
 
-    pub fn to_numeric<N>(
+    pub fn to_numeric<N: std::fmt::Debug + Clone>(
         &mut self,
         value: Result<(usize, (N, Option<Vec<String>>))>,
     ) -> Result<(usize, (N, Option<Vec<NodeTypeT>>))> {
@@ -142,7 +142,7 @@ impl NodeTypeParser {
                     Ok(node_type_id)
                 })
                 .collect::<Result<Vec<NodeTypeT>>>()?;
-            if ids.is_empty() {
+            if node_type_ids.is_empty() {
                 return Err(format!(
                     concat!(
                         "The node {:?} has an empty node types list, which ",
@@ -153,7 +153,7 @@ impl NodeTypeParser {
                     node_name.clone()
                 ));
             }
-            Ok(Some(ids))
+            Ok(Some(node_type_ids))
         })?;
         Ok((line_number, (node_name, node_type_ids)))
     }
