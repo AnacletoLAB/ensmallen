@@ -42,11 +42,11 @@ hfuzz_meta_test:
 	RAYON_NUM_THREADS=2 HFUZZ_INPUT="../$(CORPUS_FOLDER)/meta_test/" HFUZZ_RUN_ARGS="-t $(TIMEOUT) --threads $(THREADS)  --tmout_sigvtalrm --rlimit_rss $(MAX_RAM) --max_file_size $(MAX_LEN) -P" cargo hfuzz run meta_test; \
 	)
 
-hfuzz_from_string:
+hfuzz_from_strings:
 	rm -rfd ./unit_tests/*
-	mkdir -p corpus/from_string
+	mkdir -p corpus/from_strings
 	(\
 	cd honggfuzz;\
 	cargo update;\
-	RAYON_NUM_THREADS=2 HFUZZ_INPUT="../$(CORPUS_FOLDER)/from_string/" HFUZZ_RUN_ARGS="-t $(TIMEOUT) --threads $(THREADS)  --tmout_sigvtalrm --rlimit_rss $(MAX_RAM) --max_file_size $(MAX_LEN) -P" cargo hfuzz run from_string; \
+	RAYON_NUM_THREADS=2 HFUZZ_INPUT="../$(CORPUS_FOLDER)/from_strings/" HFUZZ_RUN_ARGS="-t $(TIMEOUT) --threads $(THREADS)  --tmout_sigvtalrm --rlimit_rss $(MAX_RAM) --max_file_size $(MAX_LEN) -P" cargo hfuzz run from_strings; \
 	)
