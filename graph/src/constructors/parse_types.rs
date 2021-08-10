@@ -34,10 +34,28 @@ pub(crate) fn parse_types<TypeT: ToFromUsize>(
     ) {
         // If the types (either node types or edge types) are not numeric,
         // we collect them.
-        (Some(nti), _, false, None) => Ok(Some(Vocabulary::from_reverse_map(
-            nti.map(|line| line.map(|(_, type_name)| type_name))
-                .collect::<Result<Vec<String>>>()?,
-        )?)),
+        (Some(nti), types_number, false, _) => {
+            let types_vocabulary = Vocabulary::from_reverse_map(
+                nti.map(|line| line.map(|(_, type_name)| type_name))
+                    .collect::<Result<Vec<String>>>()?,
+            )?;
+            if let Some(types_number) = types_number{
+                if TypeT::to_usize(types_number) != types_vocabulary.len(){
+                    return Err(
+                        format!(
+                            concat!(
+                                "The provided types number `{}` does not match ",
+                                "the number of types computed by reading the provided ",
+                                "type list iterator, which yielded `{}` types."
+                            ),
+                            types_number,
+                            types_vocabulary.len()
+                        )
+                    );
+                }
+            }
+            Ok(Some(types_vocabulary))
+        },
         (Some(nti), None, true, _) => {
             let (min, max) = nti
                 .map(|line| match line {
