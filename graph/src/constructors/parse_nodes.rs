@@ -196,7 +196,7 @@ pub(crate) fn parse_nodes(
                 // Alternatively we can focus exclusively on the
                 // node IDs, which being numeric boil down to collecting
                 // the minimum and the maximum value.
-                let (min, max, actual_nodes_number): (NodeT, NodeT, NodeT) = ni
+                let (mut min, mut max, actual_nodes_number): (NodeT, NodeT, NodeT) = ni
                     .map(|line| match line {
                         Ok((line_number, (node_name, _))) => match node_name.parse::<NodeT>() {
                             Ok(node_id) => Ok(node_id),
@@ -229,8 +229,13 @@ pub(crate) fn parse_nodes(
                         },
                     )?;
 
+                if actual_nodes_number == 0 {
+                    min=0;
+                    max=0;
+                }
+
                 if let Some(nn) = maybe_nodes_number {
-                    if nn != actual_nodes_number {
+                    if nn != max-min {
                         return Err(format!(
                                 "The given nodes number '{}' is different from the actual nodes number '{}'.",
                                 nn, actual_nodes_number,

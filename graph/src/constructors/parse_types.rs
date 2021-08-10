@@ -56,8 +56,8 @@ pub(crate) fn parse_types<TypeT: ToFromUsize>(
             }
             Ok(Some(types_vocabulary))
         },
-        (Some(nti), types_number, true, _) => {
-            let (min, max) = nti
+        (Some(nti), maybe_types_number, true, _) => {
+            let (mut min, mut max, actual_types_number) = nti
                 .map(|line| match line {
                     Ok((line_number, type_name)) => match type_name.parse::<TypeT>() {
                         Ok(type_id) => Ok(type_id),
@@ -73,19 +73,23 @@ pub(crate) fn parse_types<TypeT: ToFromUsize>(
                     },
                     Err(e) => Err(e),
                 })
-                .map(|maybe_type_id| maybe_type_id.map(|type_id| (type_id, type_id)))
+                .map(|maybe_type_id| maybe_type_id.map(|type_id| (type_id, type_id, 1)))
                 .reduce(
-                    || Ok((TypeT::get_max(), TypeT::from_usize(0))),
+                    || Ok((TypeT::get_max(), TypeT::from_usize(0), 0)),
                     |v1, v2| match (v1, v2) {
-                        (Ok((min1, max1)), Ok((min2, max2))) => {
-                            Ok((min1.min(min2), max1.max(max2)))
+                        (Ok((min1, max1, total1)), Ok((min2, max2, total2))) => {
+                            Ok((min1.min(min2), max1.max(max2), total1 + total2))
                         }
-                        (Ok((min1, max1)), Err(_)) => Ok((min1, max1)),
-                        (Err(_), Ok((min2, max2))) => Ok((min2, max2)),
+                        (Ok((min1, max1, total1)), Err(_)) => Ok((min1, max1, total1)),
+                        (Err(_), Ok((min2, max2, total2))) => Ok((min2, max2, total2)),
                         (Err(e1), Err(_)) => Err(e1),
                     },
                 )?;
-            if let Some(types_number) = types_number{
+            if actual_types_number == 0{
+                min=TypeT::from_usize(0);
+                max=TypeT::from_usize(0);
+            }
+            if let Some(types_number) = maybe_types_number{
                 if types_number != max - min{
                     return Err(
                         format!(
