@@ -104,9 +104,10 @@ pub(crate) fn parse_nodes(
                         (*node_names.value.get())[line_number] = node_name;
                         (*node_types_ids.value.get())[line_number] = node_type_ids;
                     });
+                    let node_type_ids = node_types_ids.value.into_inner();
                     (
                         node_names.value.into_inner(),
-                        Some(node_types_ids.value.into_inner()),
+                        optionify!(node_type_ids),
                     )
                 } else {
                     let node_names = ThreadDataRaceAware {
@@ -162,7 +163,7 @@ pub(crate) fn parse_nodes(
                         }
                     };
 
-                    (node_names, Some(node_types_ids))
+                    (node_names, optionify!(node_types_ids))
                 } else {
                     (
                         ni.map(|x| x.map(|(_, (name, _))| name))
@@ -185,7 +186,7 @@ pub(crate) fn parse_nodes(
         // and the node IDs are expected to be numeric.
         (Some(ni), maybe_nodes_number, true, _, _) => {
             // In case the node types are expected to exist.
-            let (min, max, node_types_ids) = if has_node_types {
+            let (min, max) = if has_node_types {
                 return Err(concat!(
                     "This case is not supported. You cannot have a nodes iterator of numeric node ids with node types.",
                     " This would require to sort the csv and thus it requires a higher memory peak.",
@@ -237,7 +238,7 @@ pub(crate) fn parse_nodes(
                     }
                 }
 
-                (min, max, None)
+                (min, max)
             };
             let minimum_node_ids = minimum_node_ids.unwrap_or(min);
 
@@ -258,7 +259,7 @@ pub(crate) fn parse_nodes(
 
             Ok((
                 Vocabulary::from_range(min.min(minimum_node_ids)..max),
-                node_types_ids,
+                None,
                 Some(node_type_vocabulary),
             ))
         }
