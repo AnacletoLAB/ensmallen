@@ -11,25 +11,31 @@ impl NodeTypeParser {
         Ok((line_number, (node_name, None)))
     }
 
-    pub fn parse_strings<N>(
+    pub fn parse_strings<N: std::fmt::Debug + Clone>(
         &mut self,
         value: Result<(usize, (N, Option<Vec<String>>))>,
     ) -> Result<(usize, (N, Option<Vec<NodeTypeT>>))> {
         let (line_number, (node_name, node_type_names)) = value?;
         let vocabulary = self.get_mutable_write();
-        Ok((
-            line_number,
-            (
-                node_name,
-                node_type_names.map_or(Ok::<_, String>(None), |ntns| {
-                    Ok(Some(
-                        ntns.into_iter()
-                            .map(|ntn| Ok(vocabulary.0.insert(ntn)?.0))
-                            .collect::<Result<Vec<NodeTypeT>>>()?,
-                    ))
-                })?,
-            ),
-        ))
+        let node_type_ids = node_type_names.map_or(Ok::<_, String>(None), |ntns| {
+            let node_type_ids = ntns
+                .into_iter()
+                .map(|ntn| Ok(vocabulary.0.insert(ntn)?.0))
+                .collect::<Result<Vec<NodeTypeT>>>()?;
+            if node_type_ids.is_empty() {
+                return Err(format!(
+                    concat!(
+                        "The node {:?} has an empty node types list, which ",
+                        "should be provided as an unknown field. If you are getting ",
+                        "this error from reading a file, it should be provided as ",
+                        "an empty field."
+                    ),
+                    node_name.clone()
+                ));
+            }
+            Ok(Some(node_type_ids))
+        })?;
+        Ok((line_number, (node_name, node_type_ids)))
     }
 
     pub fn parse_strings_unchecked<N>(
@@ -57,8 +63,8 @@ impl NodeTypeParser {
     ) -> Result<(usize, (N, Option<Vec<NodeTypeT>>))> {
         let (line_number, (node_name, node_type_names)) = value?;
         let vocabulary = self.get_immutable();
-        let node_ids = node_type_names.map_or(Ok::<_, String>(None), |ntns| {
-            let ids = ntns
+        let node_type_ids = node_type_names.map_or(Ok::<_, String>(None), |ntns| {
+            let node_type_ids = ntns
                 .into_iter()
                 .map(|node_type_name| match vocabulary.get(&node_type_name) {
                     Some(node_type_id) => Ok(node_type_id),
@@ -73,7 +79,7 @@ impl NodeTypeParser {
                     )),
                 })
                 .collect::<Result<Vec<NodeTypeT>>>()?;
-            if ids.is_empty() {
+            if node_type_ids.is_empty() {
                 return Err(format!(
                     concat!(
                         "The node {:?} has an empty node types list, which ",
@@ -84,9 +90,9 @@ impl NodeTypeParser {
                     node_name.clone()
                 ));
             }
-            Ok(Some(ids))
+            Ok(Some(node_type_ids))
         })?;
-        Ok((line_number, (node_name, node_ids)))
+        Ok((line_number, (node_name, node_type_ids)))
     }
 
     pub fn get_unchecked<N>(
