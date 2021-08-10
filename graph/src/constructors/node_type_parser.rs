@@ -86,13 +86,7 @@ impl NodeTypeParser {
             }
             Ok(Some(ids))
         })?;
-        Ok((
-            line_number,
-            (
-                node_name,
-                node_ids
-            ),
-        ))
+        Ok((line_number, (node_name, node_ids)))
     }
 
     pub fn get_unchecked<N>(
@@ -121,34 +115,45 @@ impl NodeTypeParser {
         let (line_number, (node_name, node_type_names)) = value?;
         let vocabulary = self.get_immutable();
         let node_type_ids = node_type_names.map_or(Ok::<_, String>(None), |ntns| {
-            Ok(Some(
-                ntns.into_iter()
-                    .map(|node_type_name| {
-                        let node_type_id = match node_type_name.parse::<NodeTypeT>() {
-                            Ok(node_type_id) => Ok(node_type_id),
-                            Err(_) => Err(format!(
-                                concat!(
-                                    "The given node type name {:?} ",
-                                    "cannot be parsed to an integer value."
-                                ),
-                                node_type_name
-                            )),
-                        }?;
-                        if vocabulary.len() as NodeTypeT <= node_type_id {
-                            return Err(format!(
-                                concat!(
-                                    "The given node type name {:?} ",
-                                    "has a value greater than the number ",
-                                    "of provided node types {}."
-                                ),
-                                node_type_name,
-                                vocabulary.len()
-                            ));
-                        }
-                        Ok(node_type_id)
-                    })
-                    .collect::<Result<Vec<NodeTypeT>>>()?,
-            ))
+            let node_type_ids = ntns
+                .into_iter()
+                .map(|node_type_name| {
+                    let node_type_id = match node_type_name.parse::<NodeTypeT>() {
+                        Ok(node_type_id) => Ok(node_type_id),
+                        Err(_) => Err(format!(
+                            concat!(
+                                "The given node type name {:?} ",
+                                "cannot be parsed to an integer value."
+                            ),
+                            node_type_name
+                        )),
+                    }?;
+                    if vocabulary.len() as NodeTypeT <= node_type_id {
+                        return Err(format!(
+                            concat!(
+                                "The given node type name {:?} ",
+                                "has a value greater than the number ",
+                                "of provided node types {}."
+                            ),
+                            node_type_name,
+                            vocabulary.len()
+                        ));
+                    }
+                    Ok(node_type_id)
+                })
+                .collect::<Result<Vec<NodeTypeT>>>()?;
+            if ids.is_empty() {
+                return Err(format!(
+                    concat!(
+                        "The node {:?} has an empty node types list, which ",
+                        "should be provided as an unknown field. If you are getting ",
+                        "this error from reading a file, it should be provided as ",
+                        "an empty field."
+                    ),
+                    node_name.clone()
+                ));
+            }
+            Ok(Some(ids))
         })?;
         Ok((line_number, (node_name, node_type_ids)))
     }
