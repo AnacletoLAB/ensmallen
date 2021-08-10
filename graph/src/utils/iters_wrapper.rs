@@ -1,4 +1,5 @@
 use super::*;
+use std::fmt;
 use rayon::prelude::*;
 use std::iter::FromIterator;
 
@@ -20,6 +21,19 @@ use std::iter::FromIterator;
 pub enum ItersWrapper<Item, I: Iterator<Item = Item>, P: ParallelIterator<Item = Item>> {
     Sequential(I),
     Parallel(P),
+}
+
+
+impl<Item, I: Iterator<Item = Item>, P: ParallelIterator<Item = Item>> fmt::Debug for ItersWrapper<Item, I, P> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.debug_struct("ItersWrapper")
+            .field("is_parallel", match &self {
+                ItersWrapper::Parallel(_) => true,
+                ItersWrapper::Sequential(_) => false,
+            })
+            .field("iter_type", std::any::type_name::<Item>())
+            .finish()
+    }
 }
 
 impl<Item, I, P> ItersWrapper<Item, I, P>
