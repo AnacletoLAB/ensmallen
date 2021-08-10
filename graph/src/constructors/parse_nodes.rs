@@ -270,7 +270,18 @@ pub(crate) fn parse_nodes(
         }
         (None, Some(ntn), true, None, _) => Ok((Vocabulary::from_range(0..ntn), None, None)),
         (None, Some(ntn), true, Some(min_val), _) => {
-            Ok((Vocabulary::from_range(min_val..min_val + ntn), None, None))
+            let max = match min_val.checked_add(ntn){
+                Some(max) => Ok(max),
+                None => Err(format!(
+                    concat!(
+                        "To compute the maximum node type, it is needed to sum ",
+                        "the minimum node type ID `{}` to the provided number of node types `{}`, ",
+                        "but this would lead to an overflow, that is a value higher than the maximum U32."
+                    ),
+                    min_val, ntn
+                ))
+            }?;
+            Ok((Vocabulary::from_range(min_val..max), None, None))
         }
         (None, None, true, _, _) => {
             let min = minimum_node_ids.unwrap_or(0);
