@@ -31,7 +31,7 @@ impl<Item, I: Iterator<Item = Item>, P: ParallelIterator<Item = Item>> fmt::Debu
                 ItersWrapper::Parallel(_) => true,
                 ItersWrapper::Sequential(_) => false,
             })
-            .field("iter_type", std::any::type_name::<Item>())
+            .field("iter_type", std::any::type_name::<Item>().to_string())
             .finish()
     }
 }
