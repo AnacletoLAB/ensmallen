@@ -51,34 +51,46 @@ impl NodeTypeParser {
         ))
     }
 
-    pub fn get<N>(
+    pub fn get<N: std::fmt::Debug + Clone>(
         &mut self,
         value: Result<(usize, (N, Option<Vec<String>>))>,
     ) -> Result<(usize, (N, Option<Vec<NodeTypeT>>))> {
         let (line_number, (node_name, node_type_names)) = value?;
         let vocabulary = self.get_immutable();
+        let node_ids = node_type_names.map_or(Ok::<_, String>(None), |ntns| {
+            let ids = ntns
+                .into_iter()
+                .map(|node_type_name| match vocabulary.get(&node_type_name) {
+                    Some(node_type_id) => Ok(node_type_id),
+                    None => Err(format!(
+                        concat!(
+                            "Found an unknown node type while reading the node list.\n",
+                            "Specifically the unknown node type is {:?}.\n",
+                            "The list of the known node types is {:#4?}"
+                        ),
+                        node_type_name,
+                        vocabulary.keys()
+                    )),
+                })
+                .collect::<Result<Vec<NodeTypeT>>>()?;
+            if ids.is_empty() {
+                return Err(format!(
+                    concat!(
+                        "The node {:?} has an empty node types list, which ",
+                        "should be provided as an unknown field. If you are getting ",
+                        "this error from reading a file, it should be provided as ",
+                        "an empty field."
+                    ),
+                    node_name.clone()
+                ));
+            }
+            Ok(Some(ids))
+        })?;
         Ok((
             line_number,
             (
                 node_name,
-                node_type_names.map_or(Ok::<_, String>(None), |ntns| {
-                    Ok(Some(
-                        ntns.into_iter()
-                            .map(|node_type_name| match vocabulary.get(&node_type_name) {
-                                Some(node_type_id) => Ok(node_type_id),
-                                None => Err(format!(
-                                    concat!(
-                                        "Found an unknown node type while reading the node list.\n",
-                                        "Specifically the unknown node type is {:?}.\n",
-                                        "The list of the known node types is {:#4?}"
-                                    ),
-                                    node_type_name,
-                                    vocabulary.keys()
-                                )),
-                            })
-                            .collect::<Result<Vec<NodeTypeT>>>()?,
-                    ))
-                })?,
+                node_ids
             ),
         ))
     }
