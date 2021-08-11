@@ -1470,8 +1470,7 @@ pub fn test_edge_holdouts(graph: &Graph, verbose: Option<bool>) -> Result<()> {
             train.get_connected_components_number(verbose);
         if original_total == 1 {
             assert_eq!(
-                original_min_comp,
-                original_max_comp,
+                original_min_comp, original_max_comp,
                 concat!(
                     "When the number of components is only one, ",
                     "the minimum component size should be equal ",
@@ -1479,8 +1478,7 @@ pub fn test_edge_holdouts(graph: &Graph, verbose: Option<bool>) -> Result<()> {
                     "The minimum component size was: {}.\n",
                     "The maximum component size was: {}.\n",
                 ),
-                original_min_comp,
-                original_max_comp
+                original_min_comp, original_max_comp
             );
             assert_eq!(
                 original_min_comp,
@@ -2034,7 +2032,11 @@ pub fn test_graph_filter(graph: &Graph, _verbose: Option<bool>) -> Result<()> {
             None,
             None,
         );
-        assert!(graph_without_given_name_result.is_ok());
+        assert!(
+            graph_without_given_name_result.is_ok(),
+            "Expected the filter operation to execute successfully, but raised error {:?}.",
+            graph_without_given_name_result
+        );
         let graph_without_given_id = graph_without_given_name_result.unwrap();
         assert_eq!(
             graph_without_given_id.has_nodes(),
