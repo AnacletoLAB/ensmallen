@@ -78,6 +78,7 @@ macro_rules! parse_unsorted_string_edge_list {
         $node_method:expr,
         $edge_types_vocabulary:expr,
         $edge_types_method:expr,
+        $edge_weights_method:expr,
         ($($workaround:ident),*),
         ($($input_tuple:ident),*),
         ($($results:ident),*),
@@ -96,12 +97,12 @@ macro_rules! parse_unsorted_string_edge_list {
         // the user has specified that the edge list is already complete
         // hence there is no need to create the inverse edges.
         let mut unsorted_edge_list = if $directed || $complete {
-            $ei.method_caller($edge_types_method, $edge_types_method, &mut edge_type_parser).method_caller($node_method, $node_method, &mut node_parser).map(|line| match line {
+            $ei.map($edge_weights_method).method_caller($edge_types_method, $edge_types_method, &mut edge_type_parser).method_caller($node_method, $node_method, &mut node_parser).map(|line| match line {
                 Ok((_, (src, dst, $($workaround,)*))) => { Ok((src, dst, $($input_tuple,)*)) },
                 Err(e) => Err(e)
             }).collect::<Result<Vec<_>>>()
         } else {
-            $ei.method_caller($edge_types_method, $edge_types_method, &mut edge_type_parser).method_caller($node_method, $node_method, &mut node_parser).flat_map(|line| match line {
+            $ei.map($edge_weights_method).method_caller($edge_types_method, $edge_types_method, &mut edge_type_parser).method_caller($node_method, $node_method, &mut node_parser).flat_map(|line| match line {
                 Ok((_, (src, dst, $($workaround,)*))) => {
                     if unlikely(src == dst) {
                         vec![Ok((src, dst, $($input_tuple,)*))]
@@ -449,6 +450,17 @@ pub(crate) fn parse_string_edges(
         (true, _, true, true) => EdgeTypeParser::to_numeric_unchecked,
         (true, _, false, true) => EdgeTypeParser::to_numeric,
     };
+
+    let edge_weights_method = match (
+        has_edge_weights,
+        correct
+    ) {
+        // When the user does not assert that the edge list is
+        // correct and there are edge weights we need to validate them.
+        (true, false) => EdgeWeightParser::validate,
+        _ => EdgeWeightParser::ignore
+    };
+
     let node_method = match (nodes.is_empty(), correct, numeric_edge_list_node_ids) {
         (true, true, false) => EdgeNodeNamesParser::parse_strings_unchecked,
         (true, false, false) => EdgeNodeNamesParser::parse_strings,
@@ -585,6 +597,7 @@ pub(crate) fn parse_string_edges(
                 node_method,
                 edge_types_vocabulary,
                 edge_types_method,
+                edge_weights_method,
                 (edge_type, weight),
                 (edge_type, weight),
                 (edge_types, weights),
@@ -611,6 +624,7 @@ pub(crate) fn parse_string_edges(
                 node_method,
                 edge_types_vocabulary,
                 edge_types_method,
+                edge_weights_method,
                 (edge_type, _weight),
                 (edge_type),
                 (edge_types),
@@ -637,6 +651,7 @@ pub(crate) fn parse_string_edges(
                 node_method,
                 edge_types_vocabulary,
                 edge_types_method,
+                edge_weights_method,
                 (_edge_type, weight),
                 (weight),
                 (weights),
@@ -663,6 +678,7 @@ pub(crate) fn parse_string_edges(
                 node_method,
                 edge_types_vocabulary,
                 edge_types_method,
+                edge_weights_method,
                 (_edge_type, _weight),
                 (),
                 (),
