@@ -457,8 +457,8 @@ pub(crate) fn parse_string_edges(
     ) {
         // When the user does not assert that the edge list is
         // correct and there are edge weights we need to validate them.
-        (true, false) => EdgeWeightParser::validate,
-        _ => EdgeWeightParser::ignore
+        (true, false) => EdgeWeightValidator::validate,
+        _ => EdgeWeightValidator::ignore
     };
 
     let node_method = match (nodes.is_empty(), correct, numeric_edge_list_node_ids) {

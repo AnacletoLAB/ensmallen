@@ -2,7 +2,7 @@ use super::*;
 use num_traits::Zero;
 
 #[allow(non_snake_case)]
-pub(crate) mod EdgeWeightParser {
+pub(crate) mod EdgeWeightValidator {
 
     use super::*;
 
