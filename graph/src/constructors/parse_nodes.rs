@@ -104,9 +104,10 @@ pub(crate) fn parse_nodes(
                         (*node_names.value.get())[line_number] = node_name;
                         (*node_types_ids.value.get())[line_number] = node_type_ids;
                     });
+                    let node_type_ids = node_types_ids.value.into_inner();
                     (
                         node_names.value.into_inner(),
-                        Some(node_types_ids.value.into_inner()),
+                        optionify!(node_type_ids),
                     )
                 } else {
                     let node_names = ThreadDataRaceAware {
@@ -162,7 +163,7 @@ pub(crate) fn parse_nodes(
                         }
                     };
 
-                    (node_names, Some(node_types_ids))
+                    (node_names, optionify!(node_types_ids))
                 } else {
                     (
                         ni.map(|x| x.map(|(_, (name, _))| name))
@@ -185,7 +186,7 @@ pub(crate) fn parse_nodes(
         // and the node IDs are expected to be numeric.
         (Some(ni), maybe_nodes_number, true, _, _) => {
             // In case the node types are expected to exist.
-            let (min, max, node_types_ids) = if has_node_types {
+            let (min, max) = if has_node_types {
                 return Err(concat!(
                     "This case is not supported. You cannot have a nodes iterator of numeric node ids with node types.",
                     " This would require to sort the csv and thus it requires a higher memory peak.",
@@ -195,7 +196,7 @@ pub(crate) fn parse_nodes(
                 // Alternatively we can focus exclusively on the
                 // node IDs, which being numeric boil down to collecting
                 // the minimum and the maximum value.
-                let (min, max, actual_nodes_number): (NodeT, NodeT, NodeT) = ni
+                let (mut min, mut max, actual_nodes_number): (NodeT, NodeT, NodeT) = ni
                     .map(|line| match line {
                         Ok((line_number, (node_name, _))) => match node_name.parse::<NodeT>() {
                             Ok(node_id) => Ok(node_id),
@@ -228,8 +229,13 @@ pub(crate) fn parse_nodes(
                         },
                     )?;
 
+                if actual_nodes_number == 0 {
+                    min=0;
+                    max=0;
+                }
+
                 if let Some(nn) = maybe_nodes_number {
-                    if nn != actual_nodes_number {
+                    if nn != max-min {
                         return Err(format!(
                                 "The given nodes number '{}' is different from the actual nodes number '{}'.",
                                 nn, actual_nodes_number,
@@ -237,7 +243,7 @@ pub(crate) fn parse_nodes(
                     }
                 }
 
-                (min, max, None)
+                (min, max)
             };
             let minimum_node_ids = minimum_node_ids.unwrap_or(min);
 
@@ -258,13 +264,24 @@ pub(crate) fn parse_nodes(
 
             Ok((
                 Vocabulary::from_range(min.min(minimum_node_ids)..max),
-                node_types_ids,
+                None,
                 Some(node_type_vocabulary),
             ))
         }
         (None, Some(ntn), true, None, _) => Ok((Vocabulary::from_range(0..ntn), None, None)),
         (None, Some(ntn), true, Some(min_val), _) => {
-            Ok((Vocabulary::from_range(min_val..min_val + ntn), None, None))
+            let max = match min_val.checked_add(ntn){
+                Some(max) => Ok(max),
+                None => Err(format!(
+                    concat!(
+                        "To compute the maximum node type, it is needed to sum ",
+                        "the minimum node type ID `{}` to the provided number of node types `{}`, ",
+                        "but this would lead to an overflow, that is a value higher than the maximum U32."
+                    ),
+                    min_val, ntn
+                ))
+            }?;
+            Ok((Vocabulary::from_range(min_val..max), None, None))
         }
         (None, None, true, _, _) => {
             let min = minimum_node_ids.unwrap_or(0);

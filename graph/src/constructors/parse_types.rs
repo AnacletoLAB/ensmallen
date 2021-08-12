@@ -34,12 +34,30 @@ pub(crate) fn parse_types<TypeT: ToFromUsize>(
     ) {
         // If the types (either node types or edge types) are not numeric,
         // we collect them.
-        (Some(nti), _, false, None) => Ok(Some(Vocabulary::from_reverse_map(
-            nti.map(|line| line.map(|(_, type_name)| type_name))
-                .collect::<Result<Vec<String>>>()?,
-        )?)),
-        (Some(nti), None, true, _) => {
-            let (min, max) = nti
+        (Some(nti), types_number, false, _) => {
+            let types_vocabulary = Vocabulary::from_reverse_map(
+                nti.map(|line| line.map(|(_, type_name)| type_name))
+                    .collect::<Result<Vec<String>>>()?,
+            )?;
+            if let Some(types_number) = types_number{
+                if TypeT::to_usize(types_number) != types_vocabulary.len(){
+                    return Err(
+                        format!(
+                            concat!(
+                                "The provided types number `{}` does not match ",
+                                "the number of types computed by reading the provided ",
+                                "type list iterator, which yielded `{}` types."
+                            ),
+                            types_number,
+                            types_vocabulary.len()
+                        )
+                    );
+                }
+            }
+            Ok(Some(types_vocabulary))
+        },
+        (Some(nti), maybe_types_number, true, _) => {
+            let (mut min, mut max, actual_types_number) = nti
                 .map(|line| match line {
                     Ok((line_number, type_name)) => match type_name.parse::<TypeT>() {
                         Ok(type_id) => Ok(type_id),
@@ -55,18 +73,41 @@ pub(crate) fn parse_types<TypeT: ToFromUsize>(
                     },
                     Err(e) => Err(e),
                 })
-                .map(|maybe_type_id| maybe_type_id.map(|type_id| (type_id, type_id)))
+                .map(|maybe_type_id| maybe_type_id.map(|type_id| (type_id, type_id, 1)))
                 .reduce(
-                    || Ok((TypeT::get_max(), TypeT::from_usize(0))),
+                    || Ok((TypeT::get_max(), TypeT::from_usize(0), 0)),
                     |v1, v2| match (v1, v2) {
-                        (Ok((min1, max1)), Ok((min2, max2))) => {
-                            Ok((min1.min(min2), max1.max(max2)))
+                        (Ok((min1, max1, total1)), Ok((min2, max2, total2))) => {
+                            Ok((min1.min(min2), max1.max(max2), total1 + total2))
                         }
-                        (Ok((min1, max1)), Err(_)) => Ok((min1, max1)),
-                        (Err(_), Ok((min2, max2))) => Ok((min2, max2)),
+                        (Ok((min1, max1, total1)), Err(_)) => Ok((min1, max1, total1)),
+                        (Err(_), Ok((min2, max2, total2))) => Ok((min2, max2, total2)),
                         (Err(e1), Err(_)) => Err(e1),
                     },
                 )?;
+            if actual_types_number == 0{
+                min=TypeT::from_usize(0);
+                max=TypeT::from_usize(0);
+            }
+            if let Some(types_number) = maybe_types_number{
+                if types_number != max - min{
+                    return Err(
+                        format!(
+                            concat!(
+                                "The provided types number `{}` does not match ",
+                                "the number of types computed by reading the provided ",
+                                "type list iterator, which yielded `{}` types from the ",
+                                "subtraction of the minimum and maximum values, which were ",
+                                "respectively `{}` and `{}`."
+                            ),
+                            types_number,
+                            max - min,
+                            min,
+                            max
+                        )
+                    );
+                }
+            }
             let minimum_node_ids = minimum_type_id.unwrap_or(min);
 
             if min < minimum_node_ids {

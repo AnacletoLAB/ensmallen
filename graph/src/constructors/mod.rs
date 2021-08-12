@@ -15,6 +15,9 @@ use edge_node_names_parser::*;
 mod edge_type_parser;
 use edge_type_parser::*;
 
+mod edge_weight_validator;
+use edge_weight_validator::*;
+
 mod node_type_parser;
 use node_type_parser::*;
 

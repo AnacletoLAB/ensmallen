@@ -144,6 +144,10 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
             .map(|(i, x)| (x, IndexT::from_usize(i)))
             .collect::<HashMap<String, IndexT>>();
 
+        if map.contains_key("") {
+            return Err("The vocabulary cannot contain an empty term.".to_string());
+        }
+
         if map.len() != reverse_map.len() {
             let reverse_map_length = reverse_map.len();
             let map_length = map.len();

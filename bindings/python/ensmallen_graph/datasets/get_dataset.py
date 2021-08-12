@@ -6,10 +6,14 @@ from glob import glob
 import compress_json
 from userinput.utils import set_validator, closest
 import os
+import pandas as pd
 
 
-def get_available_repository() -> List[str]:
+def get_available_repositories() -> List[str]:
     """Return list of available repositories."""
+    black_list = {
+        "__pycache__"
+    }
     return [
         directory_candidate.split(os.sep)[-1]
         for directory_candidate in glob(
@@ -18,7 +22,7 @@ def get_available_repository() -> List[str]:
                 "*"
             )
         )
-        if os.path.isdir(directory_candidate)
+        if os.path.isdir(directory_candidate) and directory_candidate.split(os.sep)[-1] not in black_list
     ]
 
 
@@ -35,7 +39,7 @@ def get_available_graphs_from_repository(repository: str) -> List[str]:
     ValueError,
         If the given repository is not available.
     """
-    repositories = get_available_repository()
+    repositories = get_available_repositories()
     if not set_validator(repositories)(repository):
         raise ValueError((
             "The provided repository `{}` is not within the set "
@@ -56,7 +60,8 @@ def get_available_graphs_from_repository(repository: str) -> List[str]:
         ))
     ]
 
-def get_available_versions_from_graph_and_repository(graph_name:str, repository: str) -> List[str]:
+
+def get_available_versions_from_graph_and_repository(graph_name: str, repository: str) -> List[str]:
     """Return list of available graphs from the given repositories.
 
     Parameters
@@ -75,9 +80,24 @@ def get_available_versions_from_graph_and_repository(graph_name:str, repository:
         repository,
         "{}.json.gz".format(graph_name)
     )).keys())
-    
+
+
+def get_all_available_graphs_dataframe() -> pd.DataFrame:
+    """Return pandas dataframe with all the available graphs.,"""
+    return pd.DataFrame([
+        dict(
+            repository=repository,
+            graph_name=graph_name,
+            version=version
+        )
+        for repository in get_available_repositories()
+        for graph_name in get_available_graphs_from_repository(repository)
+        for version in get_available_versions_from_graph_and_repository(graph_name, repository)
+    ])
+
+
 def validate_graph_version(
-    graph_name:str,
+    graph_name: str,
     repository: str,
     version: str
 ):
@@ -97,7 +117,8 @@ def validate_graph_version(
     ValueError,
         If the given repository is not available.
     """
-    all_versions = get_available_versions_from_graph_and_repository(graph_name, repository)
+    all_versions = get_available_versions_from_graph_and_repository(
+        graph_name, repository)
     if not set_validator(all_versions)(version):
         raise ValueError((
             "The provided version `{}` is not within the set "
@@ -110,6 +131,7 @@ def validate_graph_version(
             ", ".join(all_versions),
             closest(version, all_versions)
         ))
+
 
 def get_dataset(
     graph_name: str,
@@ -141,7 +163,7 @@ def get_dataset(
     if not set_validator(graph_names)(graph_name):
         # We check if the given graph is from another repository
         other_repository = None
-        for candidate_repository in get_available_repository():
+        for candidate_repository in get_available_repositories():
             if graph_name in get_available_graphs_from_repository(
                 candidate_repository
             ):

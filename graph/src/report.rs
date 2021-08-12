@@ -435,6 +435,7 @@ impl Graph {
         let node_type = if self.has_node_types() {
             match self.get_unchecked_node_type_names_from_node_id(node_id) {
                 Some(node_type_names) => match node_type_names.len() {
+                    0 => unreachable!("A node cannot have an empty list of node types, as that case should be None."),
                     1 => Some(format!(
                         "node type {}",
                         get_node_type_source_html_url_from_node_type_name(

@@ -55,13 +55,14 @@ impl EdgeTypeParser {
     ) -> Result<(usize, (T, T, Option<EdgeTypeT>, W))> {
         let (line_number, (src, dst, edge_type_name, weight)) = value?;
         let vocabulary = self.get_immutable();
-        let edge_type_name = { &edge_type_name.unwrap() };
         Ok((
             line_number,
             (
                 src,
                 dst,
-                Some(match vocabulary.get(&edge_type_name) {
+                edge_type_name.map_or(Ok::<_, String>(None), |edge_type_name| Ok(Some(match vocabulary
+                    .get(&edge_type_name)
+                {
                     Some(et) => Ok(et),
                     None => Err(format!(
                         concat!(
@@ -72,7 +73,7 @@ impl EdgeTypeParser {
                         edge_type_name,
                         vocabulary.keys()
                     )),
-                }?),
+                }?)))?,
                 weight,
             ),
         ))
