@@ -2034,8 +2034,12 @@ pub fn test_graph_filter(graph: &Graph, _verbose: Option<bool>) -> Result<()> {
         );
         assert!(
             graph_without_given_name_result.is_ok(),
-            "Expected the filter operation to execute successfully, but raised error {:?}.",
-            graph_without_given_name_result
+            concat!(
+                "Expected the filter operation to execute successfully, but raised error {:?}.\n",
+                "The graph report is: {:?}."
+            ),
+            graph_without_given_name_result,
+            graph.textual_report()
         );
         let graph_without_given_id = graph_without_given_name_result.unwrap();
         assert_eq!(
