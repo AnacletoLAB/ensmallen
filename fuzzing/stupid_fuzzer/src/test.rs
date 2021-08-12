@@ -19,7 +19,7 @@ use clap::{AppSettings, Clap};
 #[clap(setting = AppSettings::ColoredHelp)]
 struct Opts {
     /// Which harness to use to read the corpus files and run the tests
-    #[clap(possible_values(&["from_csv", "from_vec", "meta_test"]))]
+    #[clap(possible_values(&["from_strings", "meta_test"]))]
     harness_name: String,
 
     /// Path to the folder or file to test.
@@ -66,9 +66,7 @@ fn main() {
 
     // Dispatch the right function
     let test_file_function: fn(String, u64, bool) = match opts.harness_name.as_str() {
-        "from_csv" => define_harness!(FromCsvHarnessParams, from_csv_harness),
-        "from_vec" => define_harness!(FromVecHarnessParams, from_vec_harness),
-        "meta_test" => define_harness!(MetaParams, meta_test_harness),
+        "from_strings" => define_harness!(FromStringsParameters, build_graph_from_strings_harness),
         _ => unreachable!("The given harness name is not one of the supported one, this should not happens since the argument parsing should check the validity."),
     };
 
