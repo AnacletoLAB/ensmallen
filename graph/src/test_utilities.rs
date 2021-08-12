@@ -362,7 +362,16 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
     );
     assert_eq!(
         singleton_nodes.len(),
-        graph.get_singleton_nodes_number() as usize
+        graph.get_singleton_nodes_number() as usize,
+        concat!(
+            "The computed number of singleton nodes in this graph ",
+            "is {}, but the number of singletons that have been computed ",
+            "during the execution of the constructor are {}.\n",
+            "The report of this graph is: {:?}."
+        ),
+        singleton_nodes.len(),
+        graph.get_singleton_nodes_number() as usize,
+        graph.textual_report()
     );
 
     assert!(unsafe {
