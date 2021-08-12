@@ -324,8 +324,6 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
         .flatten()
         .unique()
         .collect::<HashSet<NodeT>>();
-        println!("{:?}", graph.textual_report());
-    println!("not_singleton_nodes: {:?}", not_singleton_nodes);
     // Collect the set of singleton nodes, i.e. nodes not in the previous set.
     let singleton_nodes = graph
         .iter_node_ids()
@@ -516,7 +514,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
 
     // Test that the weights do not contain zeros.
     if graph.has_edge_weights() {
-        for w in graph.iter_edge_weights().unwrap(){
+        for w in graph.iter_edge_weights().unwrap() {
             assert!(!w.is_zero(), "The graph cannot contain a zero weight. ");
             assert!(
                 !w.is_infinite(),
