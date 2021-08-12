@@ -324,6 +324,8 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
         .flatten()
         .unique()
         .collect::<HashSet<NodeT>>();
+        println!("{:?}", graph.textual_report());
+    println!("not_singleton_nodes: {:?}", not_singleton_nodes);
     // Collect the set of singleton nodes, i.e. nodes not in the previous set.
     let singleton_nodes = graph
         .iter_node_ids()
@@ -520,7 +522,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
                 !w.is_infinite(),
                 "The graph cannot contain an infinite weight. "
             );
-            assert!(!w.is_nan(), "The graph cannot contain a nan weight. ");
+            assert!(!w.is_nan(), "The graph cannot contain a NaN weight. ");
         }
         // If the graph is undirected, the edge weights must be symmetrical
         if !graph.is_directed() {
