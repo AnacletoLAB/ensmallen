@@ -382,7 +382,7 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
     pub fn unchecked_translate(&self, id: IndexT) -> String {
         match self {
             Vocabulary::String { reverse_map, .. } => reverse_map[IndexT::to_usize(id)].clone(),
-            Vocabulary::Numeric { .. } => format!("{}", id),
+            Vocabulary::Numeric { range, .. } => format!("{}", range.start + IndexT::to_usize(id)),
         }
     }
 
@@ -398,6 +398,7 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
                 None => Err("The requested ID is not available in current dictionary.".to_string()),
             },
             Vocabulary::Numeric { range, .. } => {
+                let id = IndexT::from_usize(range.start) + id;
                 if range.contains(&IndexT::to_usize(id)) {
                     Ok(format!("{}", id))
                 } else {
@@ -425,7 +426,7 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
                 }
                 let id = id.unwrap();
                 if range.contains(&id) {
-                    Some(IndexT::from_usize(id))
+                    Some(IndexT::from_usize(id - range.start))
                 } else {
                     None
                 }

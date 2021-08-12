@@ -362,7 +362,16 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
     );
     assert_eq!(
         singleton_nodes.len(),
-        graph.get_singleton_nodes_number() as usize
+        graph.get_singleton_nodes_number() as usize,
+        concat!(
+            "The computed number of singleton nodes in this graph ",
+            "is {}, but the number of singletons that have been computed ",
+            "during the execution of the constructor are {}.\n",
+            "The report of this graph is: {:?}."
+        ),
+        singleton_nodes.len(),
+        graph.get_singleton_nodes_number() as usize,
+        graph.textual_report()
     );
 
     assert!(unsafe {
@@ -505,14 +514,14 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
 
     // Test that the weights do not contain zeros.
     if graph.has_edge_weights() {
-        graph.iter_edge_weights().unwrap().for_each(|w| {
+        for w in graph.iter_edge_weights().unwrap() {
             assert!(!w.is_zero(), "The graph cannot contain a zero weight. ");
             assert!(
                 !w.is_infinite(),
                 "The graph cannot contain an infinite weight. "
             );
-            assert!(!w.is_nan(), "The graph cannot contain a nan weight. ");
-        });
+            assert!(!w.is_nan(), "The graph cannot contain a NaN weight. ");
+        }
         // If the graph is undirected, the edge weights must be symmetrical
         if !graph.is_directed() {
             graph
