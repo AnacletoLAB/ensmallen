@@ -337,11 +337,13 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
                 "This graph has nodes (nodes number: {}) but ",
                 "has no edges (edges number: {}), therefore it ",
                 "should have singletons, but this does not seem ",
-                "to be the case (singletons number {})."
+                "to be the case (singletons number {}).\n",
+                "The graph report is {:?}."
             ),
             graph.get_nodes_number(),
             graph.get_edges_number(),
-            graph.get_singleton_nodes_number()
+            graph.get_singleton_nodes_number(),
+            graph.textual_report()
         );
     }
 
