@@ -2373,11 +2373,13 @@ macro_rules! test_mut_graph {
     ($graph:expr, $func:ident, $verbose:expr) => {{
         println!("Testing the graph transformation: {}", stringify!($func));
         let mut transformed_graph = $graph.$func();
+        println!("{:?}", transformed_graph.textual_report());
         let _ = _default_test_suite(&mut transformed_graph, $verbose);
     }};
     ($graph:expr, $func:ident, $verbose:expr, result) => {{
         println!("Testing the graph transformation: {}", stringify!($func));
         let mut transformed_graph = $graph.$func()?;
+        println!("{:?}", transformed_graph.textual_report());
         let _ = _default_test_suite(&mut transformed_graph, $verbose);
     }};
 }

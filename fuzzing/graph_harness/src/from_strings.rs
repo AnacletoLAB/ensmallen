@@ -140,8 +140,6 @@ pub fn build_graph_from_strings_harness(data: FromStringsParameters) -> Result<(
         );
     }
 
-    println!("{:?}", graph.textual_report());
-
     // We ignore this error because we execute only the fuzzing to find
     // the panic situations that are NOT just errors, but unhandled errors.
     let _ = graph::test_utilities::default_test_suite(&mut graph, None);
