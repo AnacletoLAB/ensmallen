@@ -515,12 +515,12 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
     // Test that the weights do not contain zeros.
     if graph.has_edge_weights() {
         for w in graph.iter_edge_weights().unwrap() {
-            assert!(!w.is_zero(), "The graph cannot contain a zero weight. ");
+            assert!(!w.is_zero(), "The graph cannot contain a zero weight.");
             assert!(
                 !w.is_infinite(),
-                "The graph cannot contain an infinite weight. "
+                "The graph cannot contain an infinite weight."
             );
-            assert!(!w.is_nan(), "The graph cannot contain a NaN weight. ");
+            assert!(!w.is_nan(), "The graph cannot contain a NaN weight.");
         }
         // If the graph is undirected, the edge weights must be symmetrical
         if !graph.is_directed() {
@@ -2416,7 +2416,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<()
     test_mut_graph!(graph, to_bidiagonal, verbose);
     test_mut_graph!(graph, to_arrowhead, verbose);
     test_mut_graph!(graph, to_transposed, verbose);
-    // We skip very heavy operations on graphs with more than 500
+    // We skip very heavy operations on graphs with more than 20
     // nodes because it would take way too much time.
     if graph.get_nodes_number() > 20 {
         return Ok(());
