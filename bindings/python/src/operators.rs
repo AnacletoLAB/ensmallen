@@ -135,7 +135,7 @@ impl PyObjectProtocol for EnsmallenGraph {
             doc_scores
                 .iter()
                 .map(|(method_id, _)| { format!("* '{}'", METHODS_NAMES[*method_id].to_string()) })
-                .take(3)
+                .take(10)
                 .collect::<Vec<String>>()
                 .join("\n"),
         )))
