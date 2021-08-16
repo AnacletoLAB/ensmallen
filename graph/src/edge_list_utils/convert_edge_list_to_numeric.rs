@@ -217,7 +217,7 @@ pub fn convert_edge_list_to_numeric(
                 .set_csv_is_correct(edge_type_list_is_correct)?
                 .set_types_number(edge_types_number)
                 .set_parallel(load_edge_type_list_in_parallel)?;
-            let edge_types_vocabulary = parse_types(
+            let mut edge_types_vocabulary = parse_types(
                 edge_type_file_reader.read_lines().transpose()?,
                 edge_types_number,
                 Some(edge_type_file_reader.has_numeric_type_ids()),
