@@ -75,6 +75,7 @@ pub fn convert_node_list_node_types_to_numeric(
                 true,
             )?
             .unwrap();
+            node_types_vocabulary.build()?;
             node_types_vocabulary
         } else {
             Vocabulary::new()

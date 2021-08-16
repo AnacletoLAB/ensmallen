@@ -225,6 +225,7 @@ pub fn convert_edge_list_to_numeric(
                 true,
             )?
             .unwrap();
+            edge_types_vocabulary.build()?;
             edge_types_vocabulary
         } else {
             Vocabulary::new()
