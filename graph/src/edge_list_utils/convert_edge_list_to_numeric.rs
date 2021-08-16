@@ -161,6 +161,16 @@ pub fn convert_edge_list_to_numeric(
         .to_string());
     }
 
+    if nodes_number.is_none() && original_load_node_list_in_parallel.clone().unwrap_or(false){
+        return Err(concat!(
+            "Since the nodes number was not provided but the node list is requested to be loaded ",
+            "in parallel, this may cause the edge list node IDs to be mis-aligned to the desired ",
+            "node IDs.\n",
+            "This is likely a mis-configuration in the edge list preprocessing pipeline ",
+            "and should be reported to the Ensmallen repository. Thanks!"
+        ).to_string());
+    }
+
     let name = name.unwrap_or("Graph".to_owned());
     let mut nodes: Vocabulary<NodeT> = if let Some(original_node_path) = &original_node_path {
         let node_file_reader = NodeFileReader::new(Some(original_node_path.to_string()))?
@@ -176,7 +186,7 @@ pub fn convert_edge_list_to_numeric(
             .set_csv_is_correct(node_list_is_correct)?
             .set_nodes_number(nodes_number)
             .set_parallel(original_load_node_list_in_parallel)?;
-        let (nodes, _) = parse_nodes(
+        let (mut nodes, _) = parse_nodes(
             node_file_reader.read_lines().transpose()?,
             node_file_reader.nodes_number.clone(),
             None,
@@ -186,6 +196,7 @@ pub fn convert_edge_list_to_numeric(
             node_file_reader.get_minimum_node_id(),
             None,
         )?;
+        nodes.build()?;
         nodes
     } else {
         Vocabulary::new()

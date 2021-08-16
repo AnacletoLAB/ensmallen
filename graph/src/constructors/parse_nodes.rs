@@ -67,7 +67,7 @@ pub(crate) fn parse_nodes(
     > = nodes_iterator
         .map(|ni| ni.method_caller(node_types_method, node_types_method, &mut node_type_parser));
 
-    let (nodes_vocabulary, node_types_ids, node_types_vocabulary) = match (
+    let (mut nodes_vocabulary, node_types_ids, node_types_vocabulary) = match (
         nodes_iterator,
         nodes_number,
         numeric_node_ids,
