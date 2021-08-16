@@ -342,10 +342,10 @@ pub fn convert_edge_list_to_numeric(
     )?;
 
     if original_node_path.is_none() {
-        if nodes.is_empty(){
-            nodes.build()?;
-        }
         if let Some(target_node_path) = target_node_path {
+            if nodes.is_empty(){
+                nodes.build()?;
+            }    
             let node_file_writer = NodeFileWriter::new(target_node_path)
                 .set_separator(target_node_list_separator)?
                 .set_header(target_node_list_header)
