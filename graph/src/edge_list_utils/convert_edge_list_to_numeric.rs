@@ -200,7 +200,6 @@ pub fn convert_edge_list_to_numeric(
             node_file_reader.get_minimum_node_id(),
             None,
         )?;
-        nodes.build()?;
         nodes
     } else {
         Vocabulary::new()
@@ -229,7 +228,6 @@ pub fn convert_edge_list_to_numeric(
                 true,
             )?
             .unwrap();
-            edge_types_vocabulary.build()?;
             edge_types_vocabulary
         } else {
             Vocabulary::new()
@@ -347,9 +345,7 @@ pub fn convert_edge_list_to_numeric(
 
     if original_node_path.is_none() {
         if let Some(target_node_path) = target_node_path {
-            if nodes.is_empty() {
-                nodes.build()?;
-            }
+            nodes.build()?;
             let node_file_writer = NodeFileWriter::new(target_node_path)
                 .set_separator(target_node_list_separator)?
                 .set_header(target_node_list_header)
@@ -367,9 +363,7 @@ pub fn convert_edge_list_to_numeric(
     }
 
     if let Some(target_edge_type_list_path) = target_edge_type_list_path {
-        if edge_types.is_empty() {
-            edge_types.build()?;
-        }
+        edge_types.build()?;
         let edge_type_writer = TypeFileWriter::new(target_edge_type_list_path)
             .set_separator(target_edge_type_list_separator)?
             .set_header(target_edge_type_list_header)
@@ -558,7 +552,6 @@ pub fn densify_sparse_numeric_edge_list(
                 true,
             )?
             .unwrap();
-            edge_types_vocabulary.build()?;
             edge_types_vocabulary
         } else {
             Vocabulary::new()

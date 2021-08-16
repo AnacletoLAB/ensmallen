@@ -75,7 +75,6 @@ pub fn convert_node_list_node_types_to_numeric(
                 true,
             )?
             .unwrap();
-            node_types_vocabulary.build()?;
             node_types_vocabulary
         } else {
             Vocabulary::new()
@@ -152,9 +151,7 @@ pub fn convert_node_list_node_types_to_numeric(
     )?;
 
     if let Some(target_node_type_list_path) = target_node_type_list_path {
-        if node_types.is_empty(){
-            node_types.build()?;
-        }
+        node_types.build()?;
         let node_type_writer = TypeFileWriter::new(target_node_type_list_path)
             .set_separator(target_node_type_list_separator)?
             .set_header(target_node_type_list_header)
