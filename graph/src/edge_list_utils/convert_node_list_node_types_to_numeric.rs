@@ -51,7 +51,7 @@ pub fn convert_node_list_node_types_to_numeric(
     target_node_list_node_types_column_number: Option<usize>,
     target_node_list_node_types_column: Option<String>,
     nodes_number: Option<NodeT>,
-) -> Result<Option<NodeTypeT>> {
+) -> Result<(NodeT, Option<NodeTypeT>)> {
     let mut node_types: Vocabulary<NodeTypeT> =
         if let Some(original_node_type_path) = original_node_type_path {
             let node_type_file_reader = TypeFileReader::new(Some(original_node_type_path))?
@@ -126,10 +126,13 @@ pub fn convert_node_list_node_types_to_numeric(
         ItersWrapper::Sequential(i) => i,
     };
 
+    let mut new_nodes_number = 0;
+
     nodes_writer.dump_iterator(
         nodes_number.map(|nodes_number| nodes_number as usize),
         lines_iterator.filter_map(|line| line.ok()).enumerate().map(
             |(line_number, (_, (node_name, maybe_node_type_names)))| {
+                new_nodes_number += 1;
                 (
                     line_number as NodeT,
                     node_name,
@@ -166,10 +169,14 @@ pub fn convert_node_list_node_types_to_numeric(
         )?;
     }
 
-
-    Ok(if original_node_list_node_types_column.is_some() || original_node_list_node_types_column_number.is_some() {
-        Some(node_types.len() as NodeTypeT)
-    } else {
-        None
-    })
+    Ok((
+        new_nodes_number,
+        if original_node_list_node_types_column.is_some()
+            || original_node_list_node_types_column_number.is_some()
+        {
+            Some(node_types.len() as NodeTypeT)
+        } else {
+            None
+        },
+    ))
 }

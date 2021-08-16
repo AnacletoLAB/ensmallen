@@ -42,7 +42,7 @@ pub fn build_optimal_lists_files(
     original_node_types_separator: Option<String>,
     original_node_list_node_types_column_number: Option<usize>,
     original_node_list_node_types_column: Option<String>,
-    nodes_number: Option<NodeT>,
+    mut nodes_number: Option<NodeT>,
     original_minimum_node_id: Option<NodeT>,
     original_numeric_node_ids: Option<bool>,
     original_node_list_numeric_node_type_ids: Option<bool>,
@@ -178,7 +178,7 @@ pub fn build_optimal_lists_files(
         }
 
         info!("Converting the node list node type names to numeric node type IDs.");
-        node_types_number = convert_node_list_node_types_to_numeric(
+        let (new_nodes_number, new_node_types_number) = convert_node_list_node_types_to_numeric(
             original_node_type_path,
             original_node_type_list_separator,
             original_node_types_column_number,
@@ -228,6 +228,8 @@ pub fn build_optimal_lists_files(
         // that should be used in the next step.
         // We do not update again the node types as it
         // is not needed after this step.
+        node_types_number = new_node_types_number;
+        nodes_number = Some(new_nodes_number);
         *original_node_path = target_node_path.clone().unwrap();
         original_node_list_separator = target_node_list_separator;
         target_node_list_separator = None;

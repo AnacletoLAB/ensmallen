@@ -9,6 +9,7 @@ from userinput.utils import set_validator, closest
 from ..ensmallen_graph import EnsmallenGraph, edge_list_utils
 from .get_dataset import validate_graph_version
 
+
 class AutomaticallyRetrievedGraph:
     def __init__(
         self,
@@ -63,7 +64,7 @@ class AutomaticallyRetrievedGraph:
             is Windows, which does not provide the sort command.
         """
         try:
-            
+
             validate_graph_version(graph_name, repository, version)
 
             all_versions = compress_json.local_load(os.path.join(
@@ -343,7 +344,10 @@ class AutomaticallyRetrievedGraph:
                     # original_numeric_node_ids,
                     # original_node_list_numeric_node_type_ids,
                     original_skip_node_types_if_unavailable=True,
-                    original_load_node_list_in_parallel=True,
+                    # It make sense to load the node list in parallel only when
+                    # you have to preprocess the node types, since otherwise the nodes number
+                    # would be unknown.
+                    original_load_node_list_in_parallel=target_node_type_list_path is not None,
                     maximum_node_id=graph_arguments.get(
                         "maximum_node_id"
                     ),
