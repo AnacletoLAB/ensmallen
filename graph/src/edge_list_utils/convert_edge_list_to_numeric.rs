@@ -161,14 +161,18 @@ pub fn convert_edge_list_to_numeric(
         .to_string());
     }
 
-    if nodes_number.is_none() && original_load_node_list_in_parallel.clone().unwrap_or(false){
+    if original_node_path.is_some()
+        && nodes_number.is_none()
+        && original_load_node_list_in_parallel.clone().unwrap_or(false)
+    {
         return Err(concat!(
             "Since the nodes number was not provided but the node list is requested to be loaded ",
             "in parallel, this may cause the edge list node IDs to be mis-aligned to the desired ",
             "node IDs.\n",
             "This is likely a mis-configuration in the edge list preprocessing pipeline ",
             "and should be reported to the Ensmallen repository. Thanks!"
-        ).to_string());
+        )
+        .to_string());
     }
 
     let name = name.unwrap_or("Graph".to_owned());
@@ -343,9 +347,9 @@ pub fn convert_edge_list_to_numeric(
 
     if original_node_path.is_none() {
         if let Some(target_node_path) = target_node_path {
-            if nodes.is_empty(){
+            if nodes.is_empty() {
                 nodes.build()?;
-            }    
+            }
             let node_file_writer = NodeFileWriter::new(target_node_path)
                 .set_separator(target_node_list_separator)?
                 .set_header(target_node_list_header)
@@ -363,7 +367,7 @@ pub fn convert_edge_list_to_numeric(
     }
 
     if let Some(target_edge_type_list_path) = target_edge_type_list_path {
-        if edge_types.is_empty(){
+        if edge_types.is_empty() {
             edge_types.build()?;
         }
         let edge_type_writer = TypeFileWriter::new(target_edge_type_list_path)
@@ -546,7 +550,7 @@ pub fn densify_sparse_numeric_edge_list(
                 .set_numeric_type_ids(original_numeric_edge_type_ids)
                 .set_types_number(edge_types_number)
                 .set_parallel(load_edge_type_list_in_parallel)?;
-            let edge_types_vocabulary = parse_types(
+            let mut edge_types_vocabulary = parse_types(
                 edge_type_file_reader.read_lines().transpose()?,
                 edge_types_number,
                 Some(edge_type_file_reader.has_numeric_type_ids()),
@@ -554,6 +558,7 @@ pub fn densify_sparse_numeric_edge_list(
                 true,
             )?
             .unwrap();
+            edge_types_vocabulary.build()?;
             edge_types_vocabulary
         } else {
             Vocabulary::new()
@@ -695,7 +700,7 @@ pub fn densify_sparse_numeric_edge_list(
     }
 
     if let Some(target_edge_type_list_path) = target_edge_type_list_path {
-        if edge_types.is_empty(){
+        if edge_types.is_empty() {
             edge_types.build()?;
         }
         let edge_type_writer = TypeFileWriter::new(target_edge_type_list_path)
