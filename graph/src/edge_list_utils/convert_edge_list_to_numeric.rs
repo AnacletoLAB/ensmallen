@@ -190,7 +190,7 @@ pub fn convert_edge_list_to_numeric(
             .set_csv_is_correct(node_list_is_correct)?
             .set_nodes_number(nodes_number)
             .set_parallel(original_load_node_list_in_parallel)?;
-        let (mut nodes, _) = parse_nodes(
+        let (nodes, _) = parse_nodes(
             node_file_reader.read_lines().transpose()?,
             node_file_reader.nodes_number.clone(),
             None,
@@ -220,7 +220,7 @@ pub fn convert_edge_list_to_numeric(
                 .set_csv_is_correct(edge_type_list_is_correct)?
                 .set_types_number(edge_types_number)
                 .set_parallel(load_edge_type_list_in_parallel)?;
-            let mut edge_types_vocabulary = parse_types(
+            let edge_types_vocabulary = parse_types(
                 edge_type_file_reader.read_lines().transpose()?,
                 edge_types_number,
                 Some(edge_type_file_reader.has_numeric_type_ids()),
@@ -544,7 +544,7 @@ pub fn densify_sparse_numeric_edge_list(
                 .set_numeric_type_ids(original_numeric_edge_type_ids)
                 .set_types_number(edge_types_number)
                 .set_parallel(load_edge_type_list_in_parallel)?;
-            let mut edge_types_vocabulary = parse_types(
+            let edge_types_vocabulary = parse_types(
                 edge_type_file_reader.read_lines().transpose()?,
                 edge_types_number,
                 Some(edge_type_file_reader.has_numeric_type_ids()),

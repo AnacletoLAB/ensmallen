@@ -67,7 +67,7 @@ pub fn convert_node_list_node_types_to_numeric(
                 .set_csv_is_correct(original_node_type_list_is_correct)?
                 .set_types_number(node_types_number)
                 .set_parallel(original_load_node_type_list_in_parallel)?;
-            let mut node_types_vocabulary = parse_types(
+            let node_types_vocabulary = parse_types(
                 node_type_file_reader.read_lines().transpose()?,
                 node_types_number,
                 Some(node_type_file_reader.has_numeric_type_ids()),
