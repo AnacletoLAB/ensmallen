@@ -72,6 +72,7 @@ pub fn convert_node_list_node_types_to_numeric(
                 Some(node_type_file_reader.has_numeric_type_ids()),
                 node_type_file_reader.get_minimum_type_id(),
                 true,
+                original_node_type_list_is_correct
             )?
             .unwrap();
             node_types_vocabulary

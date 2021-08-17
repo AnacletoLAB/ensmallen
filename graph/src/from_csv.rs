@@ -49,6 +49,11 @@ impl Graph {
             node_file_reader
                 .as_ref()
                 .map_or(false, |nfr| nfr.has_node_types()),
+            node_type_file_reader.as_ref().map(|ntfr| {
+                ntfr.reader
+                    .as_ref()
+                    .map_or(true, |reader| reader.csv_is_correct)
+            }),
             node_file_reader
                 .as_ref()
                 .map_or(Ok::<_, String>(None), |nfr| {
@@ -88,6 +93,11 @@ impl Graph {
             edge_file_reader
                 .as_ref()
                 .map_or(false, |nfr| nfr.has_edge_types()),
+            edge_type_file_reader.as_ref().map(|etfr| {
+                etfr.reader
+                    .as_ref()
+                    .map_or(true, |reader| reader.csv_is_correct)
+            }),
             edge_file_reader
                 .as_ref()
                 .map_or(Ok::<_, String>(None), |efr| Ok(Some(efr.read_lines()?)))?,

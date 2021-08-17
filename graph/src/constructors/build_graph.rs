@@ -47,6 +47,7 @@ pub fn build_graph_from_strings<S: Into<String>>(
     numeric_node_type_ids: Option<bool>,
     minimum_node_type_id: Option<NodeTypeT>,
     has_node_types: bool,
+    node_types_list_is_correct: Option<bool>,
     nodes_iterator: Option<
         ItersWrapper<
             Result<(usize, (String, Option<Vec<String>>))>,
@@ -70,6 +71,7 @@ pub fn build_graph_from_strings<S: Into<String>>(
     numeric_edge_type_ids: Option<bool>,
     minimum_edge_type_id: Option<EdgeTypeT>,
     has_edge_types: bool,
+    edge_types_list_is_correct: Option<bool>,
     edges_iterator: Option<
         ItersWrapper<
             Result<(usize, StringQuadruple)>,
@@ -98,6 +100,7 @@ pub fn build_graph_from_strings<S: Into<String>>(
         numeric_node_type_ids,
         minimum_node_type_id,
         has_node_types,
+        node_types_list_is_correct
     )?;
     let nodes_iterator_was_provided = nodes_iterator.is_some();
     let (nodes, node_types) = parse_nodes(
@@ -129,6 +132,7 @@ pub fn build_graph_from_strings<S: Into<String>>(
         numeric_edge_type_ids,
         minimum_edge_type_id,
         has_edge_types,
+        edge_types_list_is_correct
     )?;
     let (nodes, edges, edge_types, weights, has_selfloops) = parse_string_edges(
         edges_iterator,
@@ -226,6 +230,7 @@ pub fn build_graph_from_strings_without_type_iterators<S: Into<String>>(
         None,
         None,
         has_node_types,
+        None,
         nodes_iterator,
         nodes_number,
         node_list_is_correct,
@@ -237,6 +242,7 @@ pub fn build_graph_from_strings_without_type_iterators<S: Into<String>>(
         None,
         None,
         has_edge_types,
+        None,
         edges_iterator,
         has_edge_weights,
         directed,
