@@ -13,7 +13,7 @@ pub(crate) fn parse_types<TypeT: ToFromUsize>(
     numeric_type_ids: Option<bool>,
     minimum_type_id: Option<TypeT>,
     has_types: bool,
-    type_list_is_correct: Option<bool>
+    type_list_is_correct: Option<bool>,
 ) -> Result<Option<Vocabulary<TypeT>>> {
     let numeric_type_ids = numeric_type_ids.unwrap_or(false);
     let type_list_is_correct = type_list_is_correct.unwrap_or(false);
