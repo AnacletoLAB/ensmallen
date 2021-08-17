@@ -128,7 +128,7 @@ pub fn build_graph_from_strings_harness(data: FromStringsParameters) -> Result<(
         name,
     )?;
 
-    dbg!(graph);
+    dbg!(graph.clone());
 
     let threshold = 1000;
     if graph.get_nodes_number() > threshold {
