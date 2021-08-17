@@ -57,8 +57,6 @@ pub fn build_graph_from_strings_harness(data: FromStringsParameters) -> Result<(
         handle_panics_from_strings(info, data_copy.clone());
     }));
 
-    println!("{:#4?}", data);
-
     let FromStringsParameters {
         node_types_number,
         numeric_node_type_ids,
@@ -111,7 +109,21 @@ pub fn build_graph_from_strings_harness(data: FromStringsParameters) -> Result<(
         minimum_edge_type_id,
         has_edge_types,
         None,
-        to_iter_wrapper!(edges_iterator_is_parallel, edges_iterator),
+        to_iter_wrapper!(
+            edges_iterator_is_parallel,
+            edges_iterator
+                .into_iter()
+                .map(|line| match line {
+                    Ok((line_number, (src, dst, edge_type, weight))) => {
+                        src.truncate(3);
+                        dst.truncate(3);
+                        edge_type.as_ref().map(|edge_type| edge_type.truncate(3));
+                        Ok((line_number, (src, dst, edge_type, weight)))
+                    }
+                    Err(e) => Err(e),
+                })
+                .collect::<Vec<_>>()
+        ),
         has_edge_weights,
         directed,
         Some(false),
