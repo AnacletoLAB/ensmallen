@@ -57,6 +57,8 @@ pub fn build_graph_from_strings_harness(data: FromStringsParameters) -> Result<(
         handle_panics_from_strings(info, data_copy.clone());
     }));
 
+    println!("{:#4?}", data);
+
     let FromStringsParameters {
         node_types_number,
         numeric_node_type_ids,
