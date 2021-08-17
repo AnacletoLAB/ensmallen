@@ -140,3 +140,6 @@ pub use visualizations::*;
 
 mod memory;
 pub use memory::*;
+
+mod louvain;
+pub use louvain::*;
