@@ -33,7 +33,7 @@ def Monarch(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/monarchinitiative",
-    version: str = "202012",
+    version: str = "202103",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
     """Return new instance of the Monarch graph.
@@ -56,11 +56,11 @@ def Monarch(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "202012",
+    version: str = "202103",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 202103
 			- 202012
+			- 202103
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 

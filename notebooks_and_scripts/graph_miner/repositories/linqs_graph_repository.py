@@ -173,7 +173,9 @@ class LINQSGraphRepository(GraphRepository):
             "name":graph_name,
             "edge_list_separator": "\t",
             "node_list_separator": "\t",
-            "skip_weights_if_unavailable": True
+            "skip_weights_if_unavailable": True,
+            "node_list_is_correct": True,
+            "edge_list_is_correct": True,
         }
 
     def get_graph_versions(

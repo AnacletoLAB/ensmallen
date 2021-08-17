@@ -97,6 +97,8 @@ class StringGraphRepository(GraphRepository):
                             ),
                             "name": graph_name,
                             "nodes_column_number": 0,
+                            "node_list_is_correct": True,
+                            "edge_list_is_correct": True,
                             **parameters_per_type_of_graph[type_of_graph]
                         }
                     }

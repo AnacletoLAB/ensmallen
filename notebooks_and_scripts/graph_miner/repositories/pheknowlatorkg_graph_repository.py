@@ -50,7 +50,9 @@ class PheKnowLatorKGGraphrepository(GraphRepository):
                         "name": graph_name,
                         "sources_column": "subject",
                         "destinations_column": "object",
-                        "edge_list_edge_types_column": "predicate"
+                        "edge_list_edge_types_column": "predicate",
+                        "node_list_is_correct": True,
+                        "edge_list_is_correct": True,
                     }
                 }
 

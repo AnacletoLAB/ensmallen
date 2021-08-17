@@ -33,7 +33,7 @@ pub fn build_optimal_lists_files(
     mut original_node_list_separator: Option<String>,
     mut original_node_list_header: Option<bool>,
     node_list_rows_to_skip: Option<usize>,
-    node_list_is_correct: Option<bool>,
+    mut node_list_is_correct: Option<bool>,
     node_list_max_rows_number: Option<usize>,
     node_list_comment_symbol: Option<String>,
     default_node_type: Option<String>,
@@ -47,7 +47,7 @@ pub fn build_optimal_lists_files(
     original_numeric_node_ids: Option<bool>,
     original_node_list_numeric_node_type_ids: Option<bool>,
     original_skip_node_types_if_unavailable: Option<bool>,
-    original_load_node_list_in_parallel: Option<bool>,
+    mut original_load_node_list_in_parallel: Option<bool>,
     mut maximum_node_id: Option<EdgeT>,
 
     target_node_path: Option<String>,
@@ -201,7 +201,6 @@ pub fn build_optimal_lists_files(
             original_node_list_separator,
             original_node_list_header,
             node_list_rows_to_skip,
-            node_list_is_correct,
             node_list_max_rows_number,
             node_list_comment_symbol.clone(),
             default_node_type,
@@ -229,13 +228,18 @@ pub fn build_optimal_lists_files(
         // We do not update again the node types as it
         // is not needed after this step.
         node_types_number = new_node_types_number;
-        nodes_number = Some(new_nodes_number);
         *original_node_path = target_node_path.clone().unwrap();
         original_node_list_separator = target_node_list_separator;
         target_node_list_separator = None;
         original_node_list_header = target_node_list_header;
         original_nodes_column_number = target_nodes_column_number;
         original_nodes_column = None;
+        // Now we know the number of nodes
+        nodes_number = Some(new_nodes_number);
+        // And that the node list is correct
+        node_list_is_correct = Some(true);
+        // therefore we can now load this in parallel.
+        original_load_node_list_in_parallel = Some(true);
     }
 
     // We check if the edge list has numeric node IDs

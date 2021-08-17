@@ -162,12 +162,13 @@ pub fn convert_edge_list_to_numeric(
     }
 
     if original_node_path.is_some()
-        && nodes_number.is_none()
+        && (!node_list_is_correct.clone().unwrap_or(false) || nodes_number.is_none())
         && original_load_node_list_in_parallel.clone().unwrap_or(false)
     {
         return Err(concat!(
             "Since the nodes number was not provided but the node list is requested to be loaded ",
-            "in parallel, this may cause the edge list node IDs to be mis-aligned to the desired ",
+            "in parallel and it is not provided the information whether it is correct.\n",
+            "This may cause the edge list node IDs to be mis-aligned to the desired ",
             "node IDs.\n",
             "This is likely a mis-configuration in the edge list preprocessing pipeline ",
             "and should be reported to the Ensmallen repository. Thanks!"

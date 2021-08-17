@@ -54,7 +54,9 @@ class KGHubGraphRepository(GraphRepository):
                         "edge_list_edge_types_column": "predicate",
                         "nodes_column": "id",
                         "node_list_node_types_column": "category",
-                        "node_types_separator": "|"
+                        "node_types_separator": "|",
+                        "node_list_is_correct": True,
+                        "edge_list_is_correct": True,
                     }
                 }
         return mined_data

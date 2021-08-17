@@ -28,7 +28,6 @@ pub fn convert_node_list_node_types_to_numeric(
     original_node_list_separator: Option<String>,
     original_node_list_header: Option<bool>,
     node_list_rows_to_skip: Option<usize>,
-    node_list_is_correct: Option<bool>,
     node_list_max_rows_number: Option<usize>,
     node_list_comment_symbol: Option<String>,
     default_node_type: Option<String>,
@@ -96,7 +95,6 @@ pub fn convert_node_list_node_types_to_numeric(
         .set_default_node_type(default_node_type)
         .set_numeric_node_ids(original_numeric_node_ids)
         .set_numeric_node_type_ids(original_node_list_numeric_node_type_ids)?
-        .set_csv_is_correct(node_list_is_correct)?
         .set_nodes_number(nodes_number)
         .set_parallel(Some(false))?;
 
