@@ -111,18 +111,21 @@ pub fn build_graph_from_strings_harness(data: FromStringsParameters) -> Result<(
         None,
         to_iter_wrapper!(
             edges_iterator_is_parallel,
-            edges_iterator
+            edges_iterator.map(|edges_iterator| edges_iterator
                 .into_iter()
                 .map(|line| match line {
-                    Ok((line_number, (src, dst, edge_type, weight))) => {
+                    Ok((line_number, (mut src, mut dst, mut edge_type, weight))) => {
                         src.truncate(3);
                         dst.truncate(3);
-                        edge_type.as_ref().map(|edge_type| edge_type.truncate(3));
+                        edge_type = edge_type.map(|mut edge_type| {
+                            edge_type.truncate(3);
+                            edge_type
+                        });
                         Ok((line_number, (src, dst, edge_type, weight)))
                     }
                     Err(e) => Err(e),
                 })
-                .collect::<Vec<_>>()
+                .collect::<Vec<_>>())
         ),
         has_edge_weights,
         directed,
