@@ -128,6 +128,8 @@ pub fn build_graph_from_strings_harness(data: FromStringsParameters) -> Result<(
         name,
     )?;
 
+    dbg!(graph);
+
     let threshold = 1000;
     if graph.get_nodes_number() > threshold {
         panic!(
@@ -141,8 +143,6 @@ pub fn build_graph_from_strings_harness(data: FromStringsParameters) -> Result<(
             graph.textual_report()
         );
     }
-
-    println!("{:?}", graph.textual_report());
 
     // We ignore this error because we execute only the fuzzing to find
     // the panic situations that are NOT just errors, but unhandled errors.
