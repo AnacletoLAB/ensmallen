@@ -117,7 +117,7 @@ pub fn build_graph_from_strings_harness(data: FromStringsParameters) -> Result<(
                     Ok((line_number, (mut node_name, mut node_types))) => {
                         node_name.truncate(3);
                         node_types = node_types.map(|mut node_types| {
-                            node_types.for_each(|node_type|{
+                            node_types.iter_mut().for_each(|mut node_type|{
                                 node_type.truncate(3);
                             });
                             node_types
