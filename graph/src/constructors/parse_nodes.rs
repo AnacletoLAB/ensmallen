@@ -105,10 +105,7 @@ pub(crate) fn parse_nodes(
                         (*node_types_ids.value.get())[line_number] = node_type_ids;
                     });
                     let node_type_ids = node_types_ids.value.into_inner();
-                    (
-                        node_names.value.into_inner(),
-                        optionify!(node_type_ids),
-                    )
+                    (node_names.value.into_inner(), optionify!(node_type_ids))
                 } else {
                     let node_names = ThreadDataRaceAware {
                         value: std::cell::UnsafeCell::new(vec![
@@ -230,12 +227,12 @@ pub(crate) fn parse_nodes(
                     )?;
 
                 if actual_nodes_number == 0 {
-                    min=0;
-                    max=0;
+                    min = 0;
+                    max = 0;
                 }
 
                 if let Some(nn) = maybe_nodes_number {
-                    if nn != max-min {
+                    if nn != max - min {
                         return Err(format!(
                                 "The given nodes number '{}' is different from the actual nodes number '{}'.",
                                 nn, actual_nodes_number,
@@ -263,7 +260,7 @@ pub(crate) fn parse_nodes(
             }
 
             Ok((
-                Vocabulary::from_range(min.min(minimum_node_ids)..max),
+                Vocabulary::from_range(min.min(minimum_node_ids)..(max + 1)),
                 None,
                 Some(node_type_vocabulary),
             ))
