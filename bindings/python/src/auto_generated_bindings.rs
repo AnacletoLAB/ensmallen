@@ -8410,11 +8410,11 @@ impl EnsmallenGraph {
     /// node_id: int,
     ///     node whose node type is to be returned.
     ///
-    pub fn get_node_type_id_from_node_id(
+    pub fn get_node_type_ids_from_node_id(
         &self,
         node_id: NodeT,
     ) -> PyResult<Option<Vec<NodeTypeT>>> {
-        pe!(self.graph.get_node_type_id_from_node_id(node_id))
+        pe!(self.graph.get_node_type_ids_from_node_id(node_id))
     }
 
     #[automatically_generated_binding]
@@ -8776,11 +8776,11 @@ impl EnsmallenGraph {
     /// node_name: str,
     ///     Name of the node.
     ///
-    pub fn get_node_type_id_from_node_name(
+    pub fn get_node_type_ids_from_node_name(
         &self,
         node_name: &str,
     ) -> PyResult<Option<Vec<NodeTypeT>>> {
-        pe!(self.graph.get_node_type_id_from_node_name(node_name))
+        pe!(self.graph.get_node_type_ids_from_node_name(node_name))
     }
 
     #[automatically_generated_binding]

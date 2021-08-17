@@ -43,6 +43,14 @@ impl Graph {
     /// * Not unique
     /// * Not available for each of the node IDs of the graph.
     pub unsafe fn remap_unchecked_from_node_ids(&self, node_ids: Vec<NodeT>) -> Graph {
+        let new_node_types = self.node_types.as_ref().map(|node_types| {
+            let remapped_node_ids = node_ids.iter()
+                .map(|node_id| {
+                    node_types.ids[*node_id as usize].clone()
+                })
+                .collect::<Vec<_>>();
+            NodeTypeVocabulary::from_structs(remapped_node_ids, node_types.vocabulary.clone())
+        });
         let new_nodes_vocabulary: Vocabulary<NodeT> = Vocabulary::from_reverse_map(
             node_ids
                 .into_par_iter()
@@ -70,7 +78,7 @@ impl Graph {
                     }),
             ),
             new_nodes_vocabulary,
-            self.node_types.clone(),
+            new_node_types,
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
             self.has_edge_weights(),
             self.is_directed(),

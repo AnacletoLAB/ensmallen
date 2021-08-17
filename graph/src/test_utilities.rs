@@ -883,11 +883,11 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
 
     assert_eq!(
         graph.has_node_types(),
-        graph.get_node_type_id_from_node_id(0).is_ok()
+        graph.get_node_type_ids_from_node_id(0).is_ok()
     );
 
     assert!(
-        graph.get_node_type_id_from_node_id(graph.get_nodes_number() + 1).is_err(),
+        graph.get_node_type_ids_from_node_id(graph.get_nodes_number() + 1).is_err(),
         "Given graph does not raise an exception when a node's node type greater than the number of available nodes is requested."
     );
 
@@ -903,7 +903,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
 
     // Evaluate get_node_type
     assert_eq!(
-        graph.get_node_type_id_from_node_id(0).is_ok(),
+        graph.get_node_type_ids_from_node_id(0).is_ok(),
         graph.has_node_types()
     );
 
@@ -1352,11 +1352,62 @@ pub fn test_selfloops(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
 
 pub fn test_sorting(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
     let sorted_increasing = graph.sort_by_increasing_outbound_node_degree();
+    // The sorted graph is now sorted.
     assert!(sorted_increasing.has_nodes_sorted_by_increasing_outbound_node_degree());
+    // The sorted graph has the same node types as the original graph
+    if graph.has_node_types(){
+        for node_name in sorted_increasing.iter_node_names(){
+            assert_eq!(
+                graph.get_node_type_ids_from_node_name(node_name.as_str()),
+                sorted_increasing.get_node_type_ids_from_node_name(node_name.as_str()),
+                concat!(
+                    "We expected the graph unsorted and sorted by increasing ",
+                    "node degree to have the same node types, but we have found ",
+                    "a node, namely `{}`, to have a different node type in the two ",
+                    "versions of this graph."
+                ),
+                node_name
+            );
+        }
+    }
     let sorted_decreasing = graph.sort_by_decreasing_outbound_node_degree();
+    // The sorted graph is now sorted.
     assert!(sorted_decreasing.has_nodes_sorted_by_decreasing_outbound_node_degree());
+    // The sorted graph has the same node types as the original graph
+    if graph.has_node_types(){
+        for node_name in sorted_decreasing.iter_node_names(){
+            assert_eq!(
+                graph.get_node_type_ids_from_node_name(node_name.as_str()),
+                sorted_decreasing.get_node_type_ids_from_node_name(node_name.as_str()),
+                concat!(
+                    "We expected the graph unsorted and sorted by decreasing ",
+                    "node degree to have the same node types, but we have found ",
+                    "a node, namely `{}`, to have a different node type in the two ",
+                    "versions of this graph."
+                ),
+                node_name
+            );
+        }
+    }
     let sorted_lexicographical = graph.sort_by_node_lexicographic_order();
+    // The sorted graph is now sorted.
     assert!(sorted_lexicographical.has_nodes_sorted_by_lexicographic_order());
+    // The sorted graph has the same node types as the original graph
+    if graph.has_node_types(){
+        for node_name in sorted_lexicographical.iter_node_names(){
+            assert_eq!(
+                graph.get_node_type_ids_from_node_name(node_name.as_str()),
+                sorted_lexicographical.get_node_type_ids_from_node_name(node_name.as_str()),
+                concat!(
+                    "We expected the graph unsorted and sorted by lexicographical ",
+                    "node degree to have the same node types, but we have found ",
+                    "a node, namely `{}`, to have a different node type in the two ",
+                    "versions of this graph."
+                ),
+                node_name
+            );
+        }
+    }
 
     Ok(())
 }

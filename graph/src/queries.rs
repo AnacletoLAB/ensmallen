@@ -783,10 +783,10 @@ impl Graph {
     /// # Example
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The node type id of node {} is {:?}", 0, graph.get_node_type_id_from_node_id(0));
+    /// println!("The node type id of node {} is {:?}", 0, graph.get_node_type_ids_from_node_id(0));
     /// ```
     ///
-    pub fn get_node_type_id_from_node_id(&self, node_id: NodeT) -> Result<Option<Vec<NodeTypeT>>> {
+    pub fn get_node_type_ids_from_node_id(&self, node_id: NodeT) -> Result<Option<Vec<NodeTypeT>>> {
         self.must_have_node_types()?;
         self.validate_node_id(node_id)
             .map(|node_id| unsafe { self.get_unchecked_node_type_id_from_node_id(node_id) })
@@ -868,7 +868,7 @@ impl Graph {
     pub fn get_node_type_names_from_node_id(&self, node_id: NodeT) -> Result<Option<Vec<String>>> {
         self.must_have_node_types()?;
         Ok(self
-            .get_node_type_id_from_node_id(node_id)?
+            .get_node_type_ids_from_node_id(node_id)?
             .map(|node_type_ids| unsafe {
                 self.get_unchecked_node_type_names_from_node_type_ids(node_type_ids)
             }))
@@ -1152,13 +1152,13 @@ impl Graph {
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// let node_name = "ENSP00000000233";
-    /// println!("The node type ID of node {} is {:?}.", node_name, graph.get_node_type_id_from_node_name(node_name).unwrap());
+    /// println!("The node type ID of node {} is {:?}.", node_name, graph.get_node_type_ids_from_node_name(node_name).unwrap());
     /// ```
-    pub fn get_node_type_id_from_node_name(
+    pub fn get_node_type_ids_from_node_name(
         &self,
         node_name: &str,
     ) -> Result<Option<Vec<NodeTypeT>>> {
-        self.get_node_type_id_from_node_id(self.get_node_id_from_node_name(node_name)?)
+        self.get_node_type_ids_from_node_id(self.get_node_id_from_node_name(node_name)?)
     }
 
     /// Return node type name for the given node name if available.
