@@ -91,19 +91,61 @@ pub fn build_graph_from_strings_harness(data: FromStringsParameters) -> Result<(
     } = data;
 
     let mut graph = graph::build_graph_from_strings(
-        to_iter_wrapper!(node_types_iterator_is_parallel, node_types_iterator),
+        to_iter_wrapper!(
+            node_types_iterator_is_parallel,
+            node_types_iterator.map(|node_types_iterator| node_types_iterator
+                .into_iter()
+                .map(|line| match line {
+                    Ok((line_number, mut type_name)) => {
+                        type_name.truncate(3);
+                        Ok((line_number, type_name))
+                    }
+                    Err(e) => Err(e),
+                })
+                .collect::<Vec<_>>())
+        ),
         node_types_number.map(|x| x as NodeTypeT),
         numeric_node_type_ids,
         minimum_node_type_id,
         has_node_types,
         None,
-        to_iter_wrapper!(nodes_iterator_is_parallel, nodes_iterator),
+        to_iter_wrapper!(
+            nodes_iterator_is_parallel,
+            nodes_iterator.map(|nodes_iterator| nodes_iterator
+                .into_iter()
+                .map(|line| match line {
+                    Ok((line_number, (mut node_name, mut node_types))) => {
+                        node_name.truncate(3);
+                        node_types = node_types.map(|mut node_types| {
+                            node_types.for_each(|node_type|{
+                                node_type.truncate(3);
+                            });
+                            node_types
+                        });
+                        Ok((line_number, (node_name, node_types)))
+                    }
+                    Err(e) => Err(e),
+                })
+                .collect::<Vec<_>>())
+        ),
         nodes_number.map(|x| x as NodeT),
         false,
         numeric_node_ids,
         numeric_node_list_node_type_ids,
         minimum_node_ids,
-        to_iter_wrapper!(edge_types_iterator_is_parallel, edge_types_iterator),
+        to_iter_wrapper!(
+            edge_types_iterator_is_parallel,
+            edge_types_iterator.map(|edge_types_iterator| edge_types_iterator
+                .into_iter()
+                .map(|line| match line {
+                    Ok((line_number, mut type_name)) => {
+                        type_name.truncate(3);
+                        Ok((line_number, type_name))
+                    }
+                    Err(e) => Err(e),
+                })
+                .collect::<Vec<_>>())
+        ),
         edge_types_number.map(|x| x as EdgeTypeT),
         numeric_edge_type_ids,
         minimum_edge_type_id,
