@@ -142,7 +142,7 @@ pub(crate) fn parse_types<TypeT: ToFromUsize>(
                 ));
             }
 
-            Ok(Some(Vocabulary::from_range(minimum_node_ids..(max+1))))
+            Ok(Some(Vocabulary::from_range(minimum_node_ids..TypeT::from_usize(TypeT::to_usize(max)+1))))
         }
         (None, Some(ntn), true, None, _) => {
             Ok(Some(Vocabulary::from_range(TypeT::from_usize(0)..ntn)))
