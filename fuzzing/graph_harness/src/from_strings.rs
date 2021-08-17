@@ -51,6 +51,13 @@ macro_rules! to_iter_wrapper {
     }};
 }
 
+fn truncate(s: &str, max_chars: usize) -> &str {
+    match s.char_indices().nth(max_chars) {
+        None => s,
+        Some((idx, _)) => &s[..idx],
+    }
+}
+
 pub fn build_graph_from_strings_harness(data: FromStringsParameters) -> Result<()> {
     let data_copy = data.clone();
     std::panic::set_hook(Box::new(move |info| {
@@ -96,9 +103,8 @@ pub fn build_graph_from_strings_harness(data: FromStringsParameters) -> Result<(
             node_types_iterator.map(|node_types_iterator| node_types_iterator
                 .into_iter()
                 .map(|line| match line {
-                    Ok((line_number, mut type_name)) => {
-                        type_name.truncate(3);
-                        Ok((line_number, type_name))
+                    Ok((line_number, type_name)) => {
+                        Ok((line_number, truncate(type_name.as_str(), 3).to_string()))
                     }
                     Err(e) => Err(e),
                 })
@@ -114,15 +120,21 @@ pub fn build_graph_from_strings_harness(data: FromStringsParameters) -> Result<(
             nodes_iterator.map(|nodes_iterator| nodes_iterator
                 .into_iter()
                 .map(|line| match line {
-                    Ok((line_number, (mut node_name, mut node_types))) => {
-                        node_name.truncate(3);
-                        node_types = node_types.map(|mut node_types| {
-                            node_types.iter_mut().for_each(|node_type|{
-                                node_type.truncate(3);
-                            });
-                            node_types
-                        });
-                        Ok((line_number, (node_name, node_types)))
+                    Ok((line_number, (node_name, node_types))) => {
+                        Ok((
+                            line_number,
+                            (
+                                truncate(node_name.as_str(), 3).to_string(),
+                                node_types.map(|node_types| {
+                                    node_types
+                                        .into_iter()
+                                        .map(|node_type| {
+                                            truncate(node_type.as_str(), 3).to_string()
+                                        })
+                                        .collect::<Vec<_>>()
+                                }),
+                            ),
+                        ))
                     }
                     Err(e) => Err(e),
                 })
@@ -138,9 +150,8 @@ pub fn build_graph_from_strings_harness(data: FromStringsParameters) -> Result<(
             edge_types_iterator.map(|edge_types_iterator| edge_types_iterator
                 .into_iter()
                 .map(|line| match line {
-                    Ok((line_number, mut type_name)) => {
-                        type_name.truncate(3);
-                        Ok((line_number, type_name))
+                    Ok((line_number, type_name)) => {
+                        Ok((line_number, truncate(type_name.as_str(), 3).to_string()))
                     }
                     Err(e) => Err(e),
                 })
@@ -156,14 +167,17 @@ pub fn build_graph_from_strings_harness(data: FromStringsParameters) -> Result<(
             edges_iterator.map(|edges_iterator| edges_iterator
                 .into_iter()
                 .map(|line| match line {
-                    Ok((line_number, (mut src, mut dst, mut edge_type, weight))) => {
-                        src.truncate(3);
-                        dst.truncate(3);
-                        edge_type = edge_type.map(|mut edge_type| {
-                            edge_type.truncate(3);
-                            edge_type
-                        });
-                        Ok((line_number, (src, dst, edge_type, weight)))
+                    Ok((line_number, (src, dst, edge_type, weight))) => {
+                        Ok((
+                            line_number,
+                            (
+                                truncate(src.as_str(), 3).to_string(),
+                                truncate(dst.as_str(), 3).to_string(),
+                                edge_type
+                                    .map(|edge_type| truncate(edge_type.as_str(), 3).to_string()),
+                                weight,
+                            ),
+                        ))
                     }
                     Err(e) => Err(e),
                 })
