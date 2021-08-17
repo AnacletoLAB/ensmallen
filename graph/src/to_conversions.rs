@@ -287,7 +287,7 @@ impl Graph {
             Some(true),
             Some(false),
             Some(false),
-            Some((self.get_nodes_number() as EdgeT).pow(2) - self.get_directed_edges_number()),
+            Some((self.get_nodes_number() as EdgeT).pow(2) - self.get_unique_directed_edges_number()),
             true,
             true,
             self.get_name(),
