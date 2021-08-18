@@ -25,6 +25,39 @@ impl Graph {
         min_edge_id as usize..max_edge_id as usize
     }
 
+    /// Returns range of the edge ids of edges inbound to the given destination node.
+    ///
+    /// # Arguments
+    ///
+    /// * `dst`: NodeT - Source node of the edge.
+    ///
+    /// # Safety
+    /// If the given node ID does not exist in the graph the method will panic.
+    ///
+    /// TODO: refactor this to be faster for directed graphs when
+    /// the support datastructure is implemented.
+    pub unsafe fn iter_unchecked_edge_ids_from_destination_node_id(
+        &self,
+        dst: NodeT,
+    ) -> Box<dyn Iterator<Item = EdgeT> + Send + '_> {
+        if self.is_directed() {
+            Box::new(self.iter_directed_edge_node_ids().filter_map(
+                move |(edge_id, _, this_dst)| {
+                    if this_dst == dst {
+                        Some(edge_id)
+                    } else {
+                        None
+                    }
+                },
+            ))
+        } else {
+            Box::new(
+                self.iter_unchecked_edge_ids_from_source_node_id(dst)
+                    .map(|edge_id| edge_id as EdgeT),
+            )
+        }
+    }
+
     /// Returns iterator over the edge weights that have given node ID as source.
     ///
     /// This method assumes that the given source node ID exists in the graph.
@@ -46,6 +79,30 @@ impl Graph {
                 weights[self.iter_unchecked_edge_ids_from_source_node_id(source_node_id)]
                     .iter()
                     .cloned()
+            })
+            .unwrap()
+    }
+
+    /// Returns iterator over the edge weights that have given node ID as destination.
+    ///
+    /// This method assumes that the given destination node ID exists in the graph.
+    /// Additionally it assumes that the graph has weights.
+    /// If either one of the above assumptions are not true, it will panic.
+    ///
+    /// # Arguments
+    /// * `destination_node_id`: NodeT - The destination node whose weights are to be returned.
+    ///
+    /// # Safety
+    /// If the given node ID does not exist in the graph the method will panic.
+    pub unsafe fn iter_unchecked_edge_weights_from_destination_node_id(
+        &self,
+        destination_node_id: NodeT,
+    ) -> impl Iterator<Item = WeightT> + '_ {
+        self.weights
+            .as_ref()
+            .map(move |weights| {
+                self.iter_unchecked_edge_ids_from_destination_node_id(destination_node_id)
+                    .map(move |edge_id| weights[edge_id as usize])
             })
             .unwrap()
     }
@@ -107,6 +164,37 @@ impl Graph {
                     .iter_in_range(self.encode_edge(src, 0)..self.encode_edge(src + 1, 0))
                     .map(move |edge| self.decode_edge(edge).1),
             ),
+        }
+    }
+
+    /// Return iterator over sources of the given destination node.
+    ///
+    /// # Arguments
+    /// * `dst`: NodeT - The node whose neighbours are to be retrieved.
+    ///
+    /// # Safety
+    /// If the given node ID does not exist in the graph the method will panic.
+    ///
+    /// TODO! make this faster for directed graphs!
+    pub unsafe fn iter_unchecked_neighbour_node_ids_from_destination_node_id(
+        &self,
+        dst: NodeT,
+    ) -> Box<dyn Iterator<Item = NodeT> + Send + '_> {
+        if self.is_directed() {
+            Box::new(
+                self.iter_directed_edge_node_ids()
+                    .filter_map(
+                        move |(_, src, this_dst)| {
+                            if this_dst == dst {
+                                Some(src)
+                            } else {
+                                None
+                            }
+                        },
+                    ),
+            )
+        } else {
+            self.iter_unchecked_neighbour_node_ids_from_source_node_id(dst)
         }
     }
 

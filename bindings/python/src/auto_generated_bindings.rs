@@ -5315,6 +5315,18 @@ impl EnsmallenGraph {
 
     #[automatically_generated_binding]
     #[text_signature = "($, self)"]
+    /// Return the weighted indegree (total weighted inbound edge weights) for each node.
+    pub fn get_weighted_node_indegrees(&self) -> PyResult<Py<PyArray1<f64>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self.graph.get_weighted_node_indegrees())?,
+            f64
+        ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self)"]
     /// Return the node types of the graph nodes.
     pub fn get_node_type_ids(&self) -> PyResult<Vec<Option<Vec<NodeTypeT>>>> {
         pe!(self.graph.get_node_type_ids())
@@ -6086,6 +6098,14 @@ impl EnsmallenGraph {
     pub fn get_node_degrees(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
         to_ndarray_1d!(gil, self.graph.get_node_degrees(), NodeT)
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self)"]
+    /// Return the indegree for each node.
+    pub fn get_node_indegrees(&self) -> Py<PyArray1<NodeT>> {
+        let gil = pyo3::Python::acquire_gil();
+        to_ndarray_1d!(gil, self.graph.get_node_indegrees(), NodeT)
     }
 
     #[automatically_generated_binding]
@@ -9565,6 +9585,22 @@ impl EnsmallenGraph {
     /// Print the current graph in a format compatible with Graphviz dot's format
     pub fn to_dot(&self, use_node_names: Option<bool>) -> String {
         self.graph.to_dot(use_node_names)
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self, recursion_minimum_improvement, first_phase_minimum_improvement, default_weight)"]
+    /// Returns vector of vectors of communities for each layer of hierarchy.
+    pub fn louvain(
+        &self,
+        recursion_minimum_improvement: Option<f64>,
+        first_phase_minimum_improvement: Option<f64>,
+        default_weight: Option<WeightT>,
+    ) -> PyResult<Vec<Vec<NodeT>>> {
+        pe!(self.graph.louvain(
+            recursion_minimum_improvement,
+            first_phase_minimum_improvement,
+            default_weight
+        ))
     }
 
     #[automatically_generated_binding]

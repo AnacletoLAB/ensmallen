@@ -593,7 +593,7 @@ impl Graph {
     /// Return iterator on the edges of the graph.
     pub fn iter_directed_edge_node_ids(
         &self,
-    ) -> Box<dyn Iterator<Item = (EdgeT, NodeT, NodeT)> + '_> {
+    ) -> Box<dyn Iterator<Item = (EdgeT, NodeT, NodeT)> + Send + '_> {
         if self.sources.is_some() && self.destinations.is_some() {
             return Box::new(
                 (0..self.get_directed_edges_number()).filter_map(move |edge_id| {
