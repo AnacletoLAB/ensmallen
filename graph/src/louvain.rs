@@ -188,10 +188,10 @@ impl Graph {
                 let result =
                     unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(src) }
                         .map(|dst| communities[dst as usize])
-                        .filter(|neighbour_community_id| {
-                            !parsed_communities.contains(neighbour_community_id)
-                        })
-                        .map(|neighbour_community_id| {
+                        .filter_map(|neighbour_community_id| {
+                            if parsed_communities.contains(neighbour_community_id){
+                                return None;
+                            }
                             parsed_communities.insert(neighbour_community_id);
                             let node_to_community_weighted_degree: f64 =
                                 get_node_to_community_weighted_degree(
@@ -206,11 +206,11 @@ impl Graph {
                                 - indegree
                                     * communities_indegrees[neighbour_community_id as usize])
                                 / louvain_denominator;
-                            (
+                            Some((
                                 neighbour_community_id,
                                 node_to_community_weighted_degree,
                                 modularity_variation,
-                            )
+                            ))
                         })
                         .max_by(
                             |(_, _, modularity_variation1), (_, _, modularity_variation2)| {
