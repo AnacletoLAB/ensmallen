@@ -380,7 +380,7 @@ impl Graph {
             );
             if total_change_per_iter <= first_phase_minimum_improvement {
                 patience_counter += 1;
-                if patience_counter > patience{
+                if patience_counter > patience || total_change_per_iter <= f64::EPSILON{
                     break;
                 }
             } else {

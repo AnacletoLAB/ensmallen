@@ -1,6 +1,6 @@
 extern crate graph;
 
-use graph::{test_utilities::*, utils::get_loading_bar};
+use graph::test_utilities::*;
 
 #[test]
 fn test_cora_louvain() -> Result<(), String> {
@@ -25,7 +25,10 @@ fn test_cora_louvain() -> Result<(), String> {
             None,
         )
         .unwrap();
-    let result = cora.louvain_community_detection(None, None, None).unwrap();
-    let result = cora_with_no_words.louvain_community_detection(None, None, None).unwrap();
+    cora.louvain_community_detection(None, None, None, None)
+        .unwrap();
+    cora_with_no_words
+        .louvain_community_detection(None, None, None, None)
+        .unwrap();
     Ok(())
 }
