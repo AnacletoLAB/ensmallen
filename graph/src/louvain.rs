@@ -25,6 +25,7 @@ impl Graph {
     /// * `recursion_minimum_improvement`: Option<f64> - The minimum improvement to warrant another resursion round. By default, zero.
     /// * `first_phase_minimum_improvement`: Option<f64> - The minimum improvement to warrant another first phase iteration. By default, `0.00001` (not zero because of numerical instability).
     /// * `default_weight`: Option<WeightT> - The default weight to use if the graph is not weighted. By default, one.
+    /// * `patience`: Option<usize> - How many iterations of the first phase to wait for before stopping. By default, `5`.
     ///
     /// # Raises
     /// * If the `default_weight` has been provided but the graph is already weighted.
@@ -39,6 +40,7 @@ impl Graph {
         recursion_minimum_improvement: Option<f64>,
         first_phase_minimum_improvement: Option<f64>,
         default_weight: Option<WeightT>,
+        patience: Option<usize>,
     ) -> Result<Vec<Vec<NodeT>>> {
         if default_weight.is_some() && self.has_edge_weights() {
             return Err(concat!(
@@ -49,8 +51,10 @@ impl Graph {
         }
         let mut communities: Vec<NodeT> = self.get_node_ids();
         let recursion_minimum_improvement: f64 = recursion_minimum_improvement.unwrap_or(0.0);
-        let first_phase_minimum_improvement: f64 = first_phase_minimum_improvement.unwrap_or(0.00001);
+        let first_phase_minimum_improvement: f64 =
+            first_phase_minimum_improvement.unwrap_or(0.00001);
         let default_weight: WeightT = default_weight.unwrap_or(1.0);
+        let patience: usize = patience.unwrap_or(5);
         if recursion_minimum_improvement.is_nan() || recursion_minimum_improvement.is_infinite() {
             return Err(concat!(
                 "The provided parameter `recursion_minimum_improvement` is an illegal value, i.e. ",
@@ -165,6 +169,7 @@ impl Graph {
         let mut total_modularity_change: f64 = 0.0;
         info!("Started Louvian phase one loop.");
         let mut loops_number: usize = 0;
+        let mut patience_counter: usize = 0;
         // Execute the first phase until convergence
         loop {
             info!("Started Louvian phase one loop #{}.", loops_number);
@@ -374,7 +379,12 @@ impl Graph {
                 loops_number, total_change_per_iter
             );
             if total_change_per_iter <= first_phase_minimum_improvement {
-                break;
+                patience_counter += 1;
+                if patience_counter > patience{
+                    break;
+                }
+            } else {
+                patience_counter = 0;
             }
         }
 
@@ -478,6 +488,7 @@ impl Graph {
                     Some(recursion_minimum_improvement),
                     Some(first_phase_minimum_improvement),
                     None,
+                    Some(patience)
                 )
                 .unwrap(),
         );
