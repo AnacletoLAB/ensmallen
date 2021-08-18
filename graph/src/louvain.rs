@@ -1,6 +1,6 @@
 use super::*;
 use log::info;
-use num_traits::Zero;
+use num_traits::{Pow, Zero};
 use rayon::iter::{IntoParallelIterator, ParallelIterator};
 
 impl Graph {
@@ -92,6 +92,8 @@ impl Graph {
                 (default_weight as f64) * (self.get_directed_edges_number() as f64)
             });
 
+        let louvain_denominator = 2.0 * total_edge_weights.pow(2);
+
         // Define method to compute in stream the total edge weight from
         // a given node to a given node community
         let get_node_to_community_weighted_outdegree = if self.has_edge_weights() {
@@ -158,17 +160,18 @@ impl Graph {
                         .map(|dst| communities[dst as usize])
                         .filter(|&neighbour_community_id| node_community != neighbour_community_id)
                         .map(|neighbour_community_id| {
-                            let node_to_community_weighted_degree =
+                            let node_to_community_weighted_degree: f64 =
                                 get_node_to_community_weighted_outdegree(
                                     self,
                                     src,
                                     neighbour_community_id,
                                     &communities,
                                 );
-                            let modularity_variation = total_edge_weights
+                            let modularity_variation: f64 = (total_edge_weights
                                 * node_to_community_weighted_degree
                                 - node_indegrees[src as usize]
-                                    * communities_indegrees[neighbour_community_id as usize];
+                                    * communities_indegrees[neighbour_community_id as usize])
+                                / louvain_denominator;
                             (
                                 neighbour_community_id,
                                 node_to_community_weighted_degree,
@@ -201,20 +204,27 @@ impl Graph {
                         communities_weights[neighbour_community_id as usize] +=
                             node_to_community_weighted_degree;
                         // Remove the edge weights from this node to the the previous community.
-                        communities_weights[node_community as usize] -=
-                            get_node_to_community_weighted_outdegree(
-                                self,
-                                src,
-                                node_community,
-                                &communities,
-                            );
+                        let node_to_previous_community_weighted_outdegree = get_node_to_community_weighted_outdegree(
+                            self,
+                            src,
+                            node_community,
+                            &communities,
+                        );
+                        communities_weights[node_community as usize] -= node_to_previous_community_weighted_outdegree;
+                        // Update the indegree of the original community,
+                        // that is we need to subtract the indegree of the node
+                        communities_indegrees[node_community as usize] -= node_indegrees[src as usize];
+                        // and then we need to re-add the eventual new indegree
+                        communities_indegrees[node_community as usize] += node_to_previous_community_weighted_outdegree;
                         // Update the indegree of the community, that is
                         // we need to remove the edge weights added with this new node
                         // and add the indegree of the node
-                        communities_indegrees[neighbour_community_id as usize] -=
-                            node_to_community_weighted_degree;
                         // Removing the eventual edge weights
                         // of the edges inbound to this node that are already part of this community.
+                        communities_indegrees[neighbour_community_id as usize] -=
+                            node_to_community_weighted_degree;
+                        // And adding the additional indegre of the new node, excluding
+                        // the edge weights from edges that are part of this community.
                         communities_indegrees[neighbour_community_id as usize] +=
                             get_node_to_community_weighted_indegree(
                                 self,
