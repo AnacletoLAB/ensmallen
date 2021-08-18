@@ -119,7 +119,7 @@ impl Graph {
             }
         };
         // Define method to compute in stream the total weighted indegree
-        // of a given node, excluding edges coming from a given community
+        // of a given node, including exclusively edges coming from a given community
         let get_node_to_community_weighted_indegree = if self.has_edge_weights() {
             |graph: &Graph, node_id: NodeT, community_id: NodeT, communities: &[NodeT]| unsafe {
                 graph
@@ -154,11 +154,13 @@ impl Graph {
             let mut total_change_per_iter: f64 = 0.0;
             self.iter_node_ids().for_each(|src| {
                 // We get the best neighbour.
-                let node_community = communities[src as usize];
+                let current_node_community = communities[src as usize];
                 let result =
                     unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(src) }
                         .map(|dst| communities[dst as usize])
-                        .filter(|&neighbour_community_id| node_community != neighbour_community_id)
+                        .filter(|&neighbour_community_id| {
+                            current_node_community != neighbour_community_id
+                        })
                         .map(|neighbour_community_id| {
                             let node_to_community_weighted_degree: f64 =
                                 get_node_to_community_weighted_outdegree(
@@ -196,43 +198,134 @@ impl Graph {
                 {
                     // If this is improving the current bound
                     if modularity_variation > 0.0 {
+                        // When we need to change the community of a node, a lot of things
+                        // need to happen:
+                        //
+                        // - We need to update the previous community weight
+                        //      - Subtract the edges from the `src` node to the other nodes in the community
+                        //      - Subtract the edges from the nodes in the community to the `src` node
+                        //          - This second step in an undirected graph simply means to subtract again the
+                        //            value computed at the previous step, while in a directed graph it requires
+                        //            to compute the instar of the src edge and filter for the source nodes that
+                        //            come from the `current_node_community` community.
+                        // - We need to update the previous community weighted indegree
+                        //      - Subtract the weighted indegree of the `src` node.
+                        //      - Add the total edge weights of the edges from the `src` node to any of the edges of the community (precomputed in previous step)
+                        // - We need to update the new community weight
+                        //      - Add the node to community weighted degree, precomputed when searching for best community.
+                        //      - Add the community to the node weighted degree
+                        //          - This second step in an undirected graph simply means to add again the
+                        //            value computed at the previous step, while in a directed graph it requires
+                        //            to compute the instar of the src edge and filter for the source nodes that
+                        //            come from the `neighbour_community_id` community.
+                        // - We need to update the new community weighted indegree
+                        //      - Subtract the node to the community weighted degree, computed at the previous step.
+                        //      - Add the node indegree, subtracting the edge weights from edges in the community.
+                        //          - This second step, when in an undirected graph, simply requires to subtract to the
+                        //            indegree of the `src` the node to the community weighted degree, while in a
+                        //            directed graph it requires to compute the indegree filtering nodes from the
+                        //            comunity `neighbour_community_id`.
+                        // - Lastly, we need to change the community of the node.
+
                         // Assign to the community of the best neighbor
                         // since this improves modularity
                         total_change_per_iter += modularity_variation;
-                        // Add the total edge weight from the considered source node
-                        // to the new community.
-                        communities_weights[neighbour_community_id as usize] +=
-                            node_to_community_weighted_degree;
-                        // Remove the edge weights from this node to the the previous community.
-                        let node_to_previous_community_weighted_outdegree = get_node_to_community_weighted_outdegree(
-                            self,
-                            src,
-                            node_community,
-                            &communities,
-                        );
-                        communities_weights[node_community as usize] -= node_to_previous_community_weighted_outdegree;
-                        // Update the indegree of the original community,
-                        // that is we need to subtract the indegree of the node
-                        communities_indegrees[node_community as usize] -= node_indegrees[src as usize];
-                        // and then we need to re-add the eventual new indegree
-                        communities_indegrees[node_community as usize] += node_to_previous_community_weighted_outdegree;
-                        // Update the indegree of the community, that is
-                        // we need to remove the edge weights added with this new node
-                        // and add the indegree of the node
-                        // Removing the eventual edge weights
-                        // of the edges inbound to this node that are already part of this community.
-                        communities_indegrees[neighbour_community_id as usize] -=
-                            node_to_community_weighted_degree;
-                        // And adding the additional indegre of the new node, excluding
-                        // the edge weights from edges that are part of this community.
-                        communities_indegrees[neighbour_community_id as usize] +=
+
+                        // #############################################
+                        // Updating the previous community values.
+                        // #############################################
+                        //
+                        // Updating the previous community weights
+                        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                        // Compute the nodes from the `src` node to the nodes of the
+                        // current community of the node.
+                        let node_to_previous_community_weighted_outdegree =
+                            get_node_to_community_weighted_outdegree(
+                                self,
+                                src,
+                                current_node_community,
+                                &communities,
+                            );
+
+                        // If this is a directed graph
+                        let previous_community_to_node_weighted_outdegree = if self.is_directed() {
+                            // We need to compute the indegree from the nodes
+                            // in the community to this node.
                             get_node_to_community_weighted_indegree(
                                 self,
                                 src,
-                                node_community,
+                                current_node_community,
                                 &communities,
-                            );
-                        // We update the community of this node.
+                            )
+                        } else {
+                            // Else if the graph is undirected, simply use again
+                            // the previously weighted outdegree.
+                            node_to_previous_community_weighted_outdegree
+                        };
+                        // We subtract the two values from the community weight.
+                        communities_weights[current_node_community as usize] -=
+                            node_to_previous_community_weighted_outdegree
+                                + previous_community_to_node_weighted_outdegree;
+                        //
+                        // Updating the previous community weighted indegree
+                        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                        // Now we proceed to update the indegree of the current community
+                        // of the `src` node.
+                        communities_indegrees[current_node_community as usize] -= node_indegrees
+                            [src as usize]
+                            - node_to_previous_community_weighted_outdegree;
+
+                        // #############################################
+                        // Updating the new community values.
+                        // #############################################
+                        //
+                        // Updating the new community weight
+                        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                        // We need to add the edge weights of the edges from
+                        // the `src` node to the nodes in the community `neighbour_community_id`, value which
+                        // is precomputed in the variable `node_to_community_weighted_degree`,
+                        // and then also add the edge weights of the edges from
+                        // the nodes in the community `neighbour_community_id`, which in an undirected
+                        // graph is equal to the previous value `node_to_community_weighted_degree`,
+                        // while in a directed graph requires to compute the indegree of the nodes
+                        // from the community `neighbour_community_id` to the node `src`.
+                        //
+                        // To compute this second edge weight, therefore, we start by
+                        // checking whether the graph is directed.
+                        let new_community_to_node_weighted_degree = if self.is_directed() {
+                            // We need to compute the indegree from the nodes
+                            // in the community to this node.
+                            get_node_to_community_weighted_indegree(
+                                self,
+                                src,
+                                neighbour_community_id,
+                                &communities,
+                            )
+                        } else {
+                            // As aforementioned, if the graph is undirected
+                            // then the communty to node weighted degree is equal
+                            // to the precomputed value.
+                            node_to_community_weighted_degree
+                        };
+                        // We add the two values from the community weight.
+                        communities_weights[neighbour_community_id as usize] +=
+                            node_to_community_weighted_degree
+                                + new_community_to_node_weighted_degree;
+                        // 
+                        // Updating the new community indegree
+                        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                        // Now we proceed to update the new community indegree.
+                        // This means subtracting the `node_to_community_weighted_degree`
+                        // to the indegree of the community, which previously was summed to it,
+                        // and add the indegree of the node.
+                        // Additionally, we also need to subtract the `new_community_to_node_weighted_degree`
+                        // to the indegree to avoid adding the edges that are now part of the community.
+                        communities_indegrees[neighbour_community_id as usize] += node_indegrees
+                            [src as usize]
+                            - node_to_community_weighted_degree
+                            - new_community_to_node_weighted_degree;
+                        
+                        // Finally, we update the community of this node.
                         communities[src as usize] = neighbour_community_id;
                     }
                 }
