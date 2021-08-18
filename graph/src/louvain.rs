@@ -189,7 +189,7 @@ impl Graph {
                     unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(src) }
                         .map(|dst| communities[dst as usize])
                         .filter_map(|neighbour_community_id| {
-                            if parsed_communities.contains(neighbour_community_id){
+                            if parsed_communities.contains(&neighbour_community_id){
                                 return None;
                             }
                             parsed_communities.insert(neighbour_community_id);
