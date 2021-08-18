@@ -1,5 +1,6 @@
 use super::*;
 use num_traits::Zero;
+use log::info;
 use rayon::iter::{IntoParallelIterator, ParallelIterator};
 
 impl Graph {
@@ -20,18 +21,57 @@ impl Graph {
     /// varying from 0 to the maximum number of communities identified at the second
     /// layer, and so on and so forth.
     ///
+    /// # Arguments
+    /// * `recursion_minimum_improvement`: Option<f64> - The minimum improvement to warrant another resursion round. By default, zero.
+    /// * `first_phase_minimum_improvement`: Option<f64> - The minimum improvement to warrant another first phase iteration. By default, zero.
+    /// * `default_weight`: Option<WeightT> - The default weight to use if the graph is not weighted. By default, one.
+    ///
+    /// # Raises
+    /// * If the `default_weight` has been provided but the graph is already weighted.
+    /// * If the `default_weight` has an invalid value, i.e. zero, NaN or infinity.
+    /// * If the `recursion_minimum_improvement` has an invalid value, i.e. NaN or infinity.
+    /// * If the `first_phase_minimum_improvement` has an invalid value, i.e. NaN or infinity.
+    ///
     /// # References
     /// [Blondel et al paper](https://iopscience.iop.org/article/10.1088/1742-5468/2008/10/P10008/pdf?casa_token=YoBiFS-4w5EAAAAA:BaHtIrzOvzMsQol_XR7wFGqZWun5_GDn2O86KU9x5bVUN859DGred8dgV7iqxKmjrLOCTR62uccXUQ)
-    pub fn louvain(
+    pub fn louvain_community_detection(
         &self,
         recursion_minimum_improvement: Option<f64>,
         first_phase_minimum_improvement: Option<f64>,
         default_weight: Option<WeightT>,
     ) -> Result<Vec<Vec<NodeT>>> {
+        if default_weight.is_some() && self.has_edge_weights() {
+            return Err(concat!(
+                "It does not make sense to provide the default weight when ",
+                "the graph is already weighted."
+            )
+            .to_string());
+        }
         let mut communities: Vec<NodeT> = self.get_node_ids();
         let recursion_minimum_improvement: f64 = recursion_minimum_improvement.unwrap_or(0.0);
         let first_phase_minimum_improvement: f64 = first_phase_minimum_improvement.unwrap_or(0.0);
         let default_weight: WeightT = default_weight.unwrap_or(1.0);
+        if recursion_minimum_improvement.is_nan() || recursion_minimum_improvement.is_infinite() {
+            return Err(concat!(
+                "The provided parameter `recursion_minimum_improvement` is an illegal value, i.e. ",
+                "either NaN or infinity."
+            )
+            .to_string());
+        }
+        if first_phase_minimum_improvement.is_nan() || first_phase_minimum_improvement.is_infinite()
+        {
+            return Err(concat!(
+                "The provided parameter `first_phase_minimum_improvement` is an illegal value, i.e. ",
+                "either NaN or infinity."
+            ).to_string());
+        }
+        if default_weight.is_zero() || default_weight.is_nan() || default_weight.is_infinite() {
+            return Err(concat!(
+                "The provided parameter `default_weight` is an illegal value, i.e. ",
+                "either zero, NaN or infinity."
+            )
+            .to_string());
+        }
         // Vector of the weights of the edges contained within each community.
         let mut communities_weights: Vec<f64> = vec![0.0; self.get_nodes_number() as usize];
         // Vector of the weighted indegrees of the communities, which when the procedure begins
@@ -103,10 +143,13 @@ impl Graph {
         // The overall recursion is regulated by the total
         // change of modularity of the iteration.
         let mut total_modularity_change: f64 = 0.0;
+        info!("Started Louvian phase one loop.");
+        let mut loops_number: usize = 0;
         // Execute the first phase until convergence
         loop {
+            info!(format!("Started Louvian phase one loop #{}.", loops_number));
+            loops_number +=1;
             let mut total_change_per_iter: f64 = 0.0;
-
             self.iter_node_ids().for_each(|src| {
                 // We get the best neighbour.
                 let node_community = communities[src as usize];
@@ -153,7 +196,6 @@ impl Graph {
                         // Assign to the community of the best neighbor
                         // since this improves modularity
                         total_change_per_iter += modularity_variation;
-                        total_modularity_change += modularity_variation;
                         // Add the total edge weight from the considered source node
                         // to the new community.
                         communities_weights[neighbour_community_id as usize] +=
@@ -186,15 +228,26 @@ impl Graph {
                 }
             });
 
+            total_modularity_change += total_change_per_iter;
+            info!(format!(
+                "The modularity change in loop #{} is {}.",
+                loops_number,
+                total_change_per_iter
+            ));
             if total_change_per_iter < first_phase_minimum_improvement {
                 break;
             }
         }
 
-        if total_modularity_change <= recursion_minimum_improvement{
+        info!(format!(
+            "The total modularity change is {}.",
+            total_modularity_change
+        ));
+        if total_modularity_change <= recursion_minimum_improvement {
             return Ok(vec![]);
         }
 
+        info!("Started remapping of communities to dense range.");
         // Compactify the communities node IDs.
         let mut communities_remapping = vec![NOT_PRESENT; self.get_nodes_number() as usize];
         // We create the vector of vectors of the nodes per each community
@@ -218,6 +271,7 @@ impl Graph {
             });
         // Get the number of communities
         let communities_number = node_ids_per_community.len() as NodeT;
+        info!("Creating graph for the next recursive iteration.");
         // Create the new graph and re-iterate the procedure.
         let graph = build_graph_from_integers(
             Some(
@@ -273,15 +327,21 @@ impl Graph {
             true,
             true,
             self.get_name(),
-        )?;
+        )
+        .unwrap();
         // Append the obtained community to the result vector.
         let mut all_communities: Vec<Vec<NodeT>> = vec![communities];
         // Recursion step.
-        all_communities.extend(graph.louvain(
-            Some(recursion_minimum_improvement),
-            Some(first_phase_minimum_improvement),
-            Some(default_weight),
-        )?);
+        all_communities.extend(
+            graph
+                .louvain_community_detection(
+                    Some(recursion_minimum_improvement),
+                    Some(first_phase_minimum_improvement),
+                    None,
+                )
+                .unwrap(),
+        );
+        info!("Returning computed communities.");
         // Return the obtained graph.
         Ok(all_communities)
     }

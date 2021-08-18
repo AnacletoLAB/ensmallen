@@ -9590,13 +9590,35 @@ impl EnsmallenGraph {
     #[automatically_generated_binding]
     #[text_signature = "($, self, recursion_minimum_improvement, first_phase_minimum_improvement, default_weight)"]
     /// Returns vector of vectors of communities for each layer of hierarchy.
-    pub fn louvain(
+    ///
+    /// Parameters
+    /// ----------
+    /// recursion_minimum_improvement: Optional[float],
+    ///     The minimum improvement to warrant another resursion round. By default, zero.
+    /// first_phase_minimum_improvement: Optional[float],
+    ///     The minimum improvement to warrant another first phase iteration. By default, zero.
+    /// default_weight: Optional[float],
+    ///     The default weight to use if the graph is not weighted. By default, one.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the `default_weight` has been provided but the graph is already weighted.
+    /// ValueError
+    ///     If the `default_weight` has an invalid value, i.e. zero, NaN or infinity.
+    /// ValueError
+    ///     If the `recursion_minimum_improvement` has an invalid value, i.e. NaN or infinity.
+    /// ValueError
+    ///     If the `first_phase_minimum_improvement` has an invalid value, i.e. NaN or infinity.
+    ///
+    pub fn louvain_community_detection(
         &self,
         recursion_minimum_improvement: Option<f64>,
         first_phase_minimum_improvement: Option<f64>,
         default_weight: Option<WeightT>,
     ) -> PyResult<Vec<Vec<NodeT>>> {
-        pe!(self.graph.louvain(
+        pe!(self.graph.louvain_community_detection(
             recursion_minimum_improvement,
             first_phase_minimum_improvement,
             default_weight
