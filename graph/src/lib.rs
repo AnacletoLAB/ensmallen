@@ -140,3 +140,9 @@ pub use visualizations::*;
 
 mod memory;
 pub use memory::*;
+
+mod nodes_sampling;
+pub use nodes_sampling::*;
+
+mod subgraphs;
+pub use subgraphs::*;
