@@ -367,22 +367,6 @@ impl Graph {
                     }
                 }
             });
-            let total_communities_indegrees = communities_indegrees.iter().cloned().sum::<f64>();
-            let total_communities_weights = communities_weights.iter().cloned().sum::<f64>();
-            let sum = total_communities_indegrees + total_communities_weights;
-            assert!(
-                sum >= total_edge_weights - f64::EPSILON,
-                concat!(
-                    "Expected the sum of the community indegrees ({}) to the communities weights ({}) ",
-                    "to match the total edge weights ({}) minus an f64 epsilon, but is {}, so there is ",
-                    "a difference of {}."
-                ),
-                total_communities_indegrees,
-                total_communities_weights,
-                total_edge_weights,
-                sum,
-                total_edge_weights - sum
-            );
 
             total_modularity_change += total_change_per_iter;
             info!(
