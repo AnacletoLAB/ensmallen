@@ -230,9 +230,9 @@ impl Graph {
                             &communities,
                             default_weight,
                         );
-                    let removing_node_modularity_variation: f64 = (total_edge_weights
-                        * node_to_previous_community_weighted_outdegree
-                        - indegree * communities_indegrees[current_node_community as usize])
+                    let removing_node_modularity_variation: f64 = (indegree
+                        * communities_indegrees[current_node_community as usize]
+                        - total_edge_weights * node_to_previous_community_weighted_outdegree)
                         / louvain_denominator;
 
                     let modularity_variation =
