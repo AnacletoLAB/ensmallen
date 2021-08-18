@@ -1,6 +1,6 @@
 use super::*;
-use num_traits::Zero;
 use log::info;
+use num_traits::Zero;
 use rayon::iter::{IntoParallelIterator, ParallelIterator};
 
 impl Graph {
@@ -147,8 +147,8 @@ impl Graph {
         let mut loops_number: usize = 0;
         // Execute the first phase until convergence
         loop {
-            info!(format!("Started Louvian phase one loop #{}.", loops_number));
-            loops_number +=1;
+            info!("Started Louvian phase one loop #{}.", loops_number);
+            loops_number += 1;
             let mut total_change_per_iter: f64 = 0.0;
             self.iter_node_ids().for_each(|src| {
                 // We get the best neighbour.
@@ -229,20 +229,19 @@ impl Graph {
             });
 
             total_modularity_change += total_change_per_iter;
-            info!(format!(
+            info!(
                 "The modularity change in loop #{} is {}.",
-                loops_number,
-                total_change_per_iter
-            ));
+                loops_number, total_change_per_iter
+            );
             if total_change_per_iter < first_phase_minimum_improvement {
                 break;
             }
         }
 
-        info!(format!(
+        info!(
             "The total modularity change is {}.",
             total_modularity_change
-        ));
+        );
         if total_modularity_change <= recursion_minimum_improvement {
             return Ok(vec![]);
         }
