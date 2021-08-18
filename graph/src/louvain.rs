@@ -23,7 +23,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `recursion_minimum_improvement`: Option<f64> - The minimum improvement to warrant another resursion round. By default, zero.
-    /// * `first_phase_minimum_improvement`: Option<f64> - The minimum improvement to warrant another first phase iteration. By default, zero.
+    /// * `first_phase_minimum_improvement`: Option<f64> - The minimum improvement to warrant another first phase iteration. By default, `0.00001` (not zero because of numerical instability).
     /// * `default_weight`: Option<WeightT> - The default weight to use if the graph is not weighted. By default, one.
     ///
     /// # Raises
@@ -49,7 +49,7 @@ impl Graph {
         }
         let mut communities: Vec<NodeT> = self.get_node_ids();
         let recursion_minimum_improvement: f64 = recursion_minimum_improvement.unwrap_or(0.0);
-        let first_phase_minimum_improvement: f64 = first_phase_minimum_improvement.unwrap_or(0.0);
+        let first_phase_minimum_improvement: f64 = first_phase_minimum_improvement.unwrap_or(0.00001);
         let default_weight: WeightT = default_weight.unwrap_or(1.0);
         if recursion_minimum_improvement.is_nan() || recursion_minimum_improvement.is_infinite() {
             return Err(concat!(
@@ -469,6 +469,7 @@ impl Graph {
             self.get_name(),
         )
         .unwrap();
+        info!("Internal graph report: {:?}", graph.textual_report());
         // Append the obtained community to the result vector.
         let mut all_communities: Vec<Vec<NodeT>> = vec![communities];
         // Recursion step.
