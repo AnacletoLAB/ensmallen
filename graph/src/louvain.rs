@@ -97,7 +97,11 @@ impl Graph {
         // Define method to compute in stream the total edge weight from
         // a given node to a given node community
         let get_node_to_community_weighted_degree = if self.has_edge_weights() {
-            |graph: &Graph, node_id: NodeT, community_id: NodeT, communities: &[NodeT]| unsafe {
+            |graph: &Graph,
+             node_id: NodeT,
+             community_id: NodeT,
+             communities: &[NodeT],
+             _: WeightT| unsafe {
                 graph
                     .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                     .zip(graph.iter_unchecked_edge_weights_from_source_node_id(node_id))
@@ -111,17 +115,26 @@ impl Graph {
                     .sum::<f64>()
             }
         } else {
-            |graph: &Graph, node_id: NodeT, community_id: NodeT, communities: &[NodeT]| unsafe {
-                graph
-                    .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                    .filter(|&dst| communities[dst as usize] == community_id)
-                    .count() as f64
+            |graph: &Graph,
+             node_id: NodeT,
+             community_id: NodeT,
+             communities: &[NodeT],
+             default_weight: WeightT| unsafe {
+                default_weight as f64
+                    * graph
+                        .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                        .filter(|&dst| communities[dst as usize] == community_id)
+                        .count() as f64
             }
         };
         // Define method to compute in stream the total weighted indegree
         // of a given node, including exclusively edges coming from a given community
         let get_community_to_node_weighted_degree = if self.has_edge_weights() {
-            |graph: &Graph, node_id: NodeT, community_id: NodeT, communities: &[NodeT]| unsafe {
+            |graph: &Graph,
+             node_id: NodeT,
+             community_id: NodeT,
+             communities: &[NodeT],
+             _: WeightT| unsafe {
                 graph
                     .iter_unchecked_neighbour_node_ids_from_destination_node_id(node_id)
                     .zip(graph.iter_unchecked_edge_weights_from_destination_node_id(node_id))
@@ -135,11 +148,16 @@ impl Graph {
                     .sum::<f64>()
             }
         } else {
-            |graph: &Graph, node_id: NodeT, community_id: NodeT, communities: &[NodeT]| unsafe {
-                graph
-                    .iter_unchecked_neighbour_node_ids_from_destination_node_id(node_id)
-                    .filter(|&src| communities[src as usize] == community_id)
-                    .count() as f64
+            |graph: &Graph,
+             node_id: NodeT,
+             community_id: NodeT,
+             communities: &[NodeT],
+             default_weight: WeightT| unsafe {
+                default_weight as f64
+                    * graph
+                        .iter_unchecked_neighbour_node_ids_from_destination_node_id(node_id)
+                        .filter(|&src| communities[src as usize] == community_id)
+                        .count() as f64
             }
         };
         // The overall recursion is regulated by the total
@@ -153,8 +171,11 @@ impl Graph {
             loops_number += 1;
             let mut total_change_per_iter: f64 = 0.0;
             self.iter_node_ids().for_each(|src| {
-                // We get the best neighbour.
+                // We retrieve the current node component.
                 let current_node_community = communities[src as usize];
+                // We retrieve the current node indegree.
+                let indegree = node_indegrees[src as usize];
+                // We search for the best neighbour.
                 let result =
                     unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(src) }
                         .map(|dst| communities[dst as usize])
@@ -168,10 +189,11 @@ impl Graph {
                                     src,
                                     neighbour_community_id,
                                     &communities,
+                                    default_weight,
                                 );
                             let modularity_variation: f64 = (total_edge_weights
                                 * node_to_community_weighted_degree
-                                - node_indegrees[src as usize]
+                                - indegree
                                     * communities_indegrees[neighbour_community_id as usize])
                                 / louvain_denominator;
                             (
@@ -193,9 +215,28 @@ impl Graph {
                 if let Some((
                     neighbour_community_id,
                     node_to_community_weighted_degree,
-                    modularity_variation,
+                    adding_node_modularity_variation,
                 )) = result
                 {
+                    // If we have found at least a new candidate
+                    // community to move this node towards, we
+                    // can compute the modularity change derived from moving
+                    // this node outside from its current component.
+                    let node_to_previous_community_weighted_outdegree =
+                        get_node_to_community_weighted_degree(
+                            self,
+                            src,
+                            current_node_community,
+                            &communities,
+                            default_weight,
+                        );
+                    let removing_node_modularity_variation: f64 = (total_edge_weights
+                        * node_to_previous_community_weighted_outdegree
+                        - indegree * communities_indegrees[current_node_community as usize])
+                        / louvain_denominator;
+
+                    let modularity_variation =
+                        adding_node_modularity_variation + removing_node_modularity_variation;
                     // If this is improving the current bound
                     if modularity_variation > 0.0 {
                         // When we need to change the community of a node, a lot of things
@@ -237,16 +278,6 @@ impl Graph {
                         //
                         // Updating the previous community weights
                         // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                        // Compute the nodes from the `src` node to the nodes of the
-                        // current community of the node.
-                        let node_to_previous_community_weighted_outdegree =
-                            get_node_to_community_weighted_degree(
-                                self,
-                                src,
-                                current_node_community,
-                                &communities,
-                            );
-
                         // If this is a directed graph
                         let previous_community_to_node_weighted_outdegree = if self.is_directed() {
                             // We need to compute the indegree from the nodes
@@ -256,16 +287,20 @@ impl Graph {
                                 src,
                                 current_node_community,
                                 &communities,
+                                default_weight,
                             )
                         } else {
                             // Else if the graph is undirected, simply use again
                             // the previously weighted outdegree.
                             node_to_previous_community_weighted_outdegree
                         };
-                        // We subtract the two values from the community weight.
-                        communities_weights[current_node_community as usize] -=
+                        // We compute the previous community edge weight variation
+                        let previous_community_edge_weight_variation =
                             node_to_previous_community_weighted_outdegree
                                 + previous_community_to_node_weighted_outdegree;
+                        // We subtract the two values from the community weight.
+                        communities_weights[current_node_community as usize] -=
+                            previous_community_edge_weight_variation;
                         //
                         // Updating the previous community weighted indegree
                         // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -274,9 +309,7 @@ impl Graph {
                         // We need to remove from the community indegree the `src` indegree,
                         // to which we need to remove the edges from the community to the node.
                         communities_indegrees[current_node_community as usize] -=
-                            node_indegrees[src as usize]
-                            - node_to_previous_community_weighted_outdegree
-                            - previous_community_to_node_weighted_outdegree;
+                            indegree - previous_community_edge_weight_variation;
 
                         // #############################################
                         // Updating the new community values.
@@ -303,6 +336,7 @@ impl Graph {
                                 src,
                                 neighbour_community_id,
                                 &communities,
+                                default_weight,
                             )
                         } else {
                             // As aforementioned, if the graph is undirected
@@ -310,10 +344,12 @@ impl Graph {
                             // to the precomputed value.
                             node_to_community_weighted_degree
                         };
+                        // We compute the new community edge weight variation
+                        let new_community_edge_weight_variation = node_to_community_weighted_degree
+                            + new_community_to_node_weighted_degree;
                         // We add the two values from the community weight.
                         communities_weights[neighbour_community_id as usize] +=
-                            node_to_community_weighted_degree
-                                + new_community_to_node_weighted_degree;
+                            new_community_edge_weight_variation;
                         //
                         // Updating the new community indegree
                         // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -323,10 +359,8 @@ impl Graph {
                         // and add the indegree of the node.
                         // Additionally, we also need to subtract the `new_community_to_node_weighted_degree`
                         // to the indegree to avoid adding the edges that are now part of the community.
-                        communities_indegrees[neighbour_community_id as usize] += node_indegrees
-                            [src as usize]
-                            - node_to_community_weighted_degree
-                            - new_community_to_node_weighted_degree;
+                        communities_indegrees[neighbour_community_id as usize] +=
+                            indegree - new_community_edge_weight_variation;
 
                         // Finally, we update the community of this node.
                         communities[src as usize] = neighbour_community_id;
@@ -418,6 +452,7 @@ impl Graph {
                                                 node_id,
                                                 dst_community,
                                                 &communities,
+                                                default_weight,
                                             )
                                         })
                                         .sum::<f64>()
