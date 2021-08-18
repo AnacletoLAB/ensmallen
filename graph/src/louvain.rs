@@ -2,6 +2,7 @@ use super::*;
 use log::info;
 use num_traits::{Pow, Zero};
 use rayon::iter::{IntoParallelIterator, ParallelIterator};
+use std::collections::HashSet;
 
 impl Graph {
     #[no_numpy_binding]
@@ -180,14 +181,18 @@ impl Graph {
                 let current_node_community = communities[src as usize];
                 // We retrieve the current node indegree.
                 let indegree = node_indegrees[src as usize];
+                // Create set of the parsed communities.
+                let mut parsed_communities = HashSet::new();
+                parsed_communities.insert(current_node_community);
                 // We search for the best neighbour.
                 let result =
                     unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(src) }
                         .map(|dst| communities[dst as usize])
-                        .filter(|&neighbour_community_id| {
-                            current_node_community != neighbour_community_id
+                        .filter(|neighbour_community_id| {
+                            !parsed_communities.contains(neighbour_community_id)
                         })
                         .map(|neighbour_community_id| {
+                            parsed_communities.insert(neighbour_community_id);
                             let node_to_community_weighted_degree: f64 =
                                 get_node_to_community_weighted_degree(
                                     self,
@@ -380,7 +385,7 @@ impl Graph {
             );
             if total_change_per_iter <= first_phase_minimum_improvement {
                 patience_counter += 1;
-                if patience_counter > patience || total_change_per_iter <= f64::EPSILON{
+                if patience_counter > patience || total_change_per_iter <= f64::EPSILON {
                     break;
                 }
             } else {
@@ -488,7 +493,7 @@ impl Graph {
                     Some(recursion_minimum_improvement),
                     Some(first_phase_minimum_improvement),
                     None,
-                    Some(patience)
+                    Some(patience),
                 )
                 .unwrap(),
         );
