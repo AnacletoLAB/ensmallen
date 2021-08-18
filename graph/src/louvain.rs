@@ -389,7 +389,7 @@ impl Graph {
                 "The modularity change in loop #{} is {}.",
                 loops_number, total_change_per_iter
             );
-            if total_change_per_iter < first_phase_minimum_improvement {
+            if total_change_per_iter <= first_phase_minimum_improvement {
                 break;
             }
         }
