@@ -469,7 +469,6 @@ impl Graph {
             self.get_name(),
         )
         .unwrap();
-        info!("Internal graph report: {:?}", graph.textual_report());
         // Append the obtained community to the result vector.
         let mut all_communities: Vec<Vec<NodeT>> = vec![communities];
         // Recursion step.
