@@ -12,10 +12,10 @@ impl Graph {
     ///
     /// # Arguments
     /// * `nodes`: Vec<NodeT> - The subsampled nodes.
-    pub unsafe fn par_iter_subsampled_binary_adjacency_matrix(
-        &self,
-        nodes: Vec<NodeT>,
-    ) -> impl ParallelIterator<Item = (NodeT, usize, NodeT, usize)> + '_ {
+    pub unsafe fn par_iter_subsampled_binary_adjacency_matrix<'a>(
+        &'a self,
+        nodes: &'a [NodeT],
+    ) -> impl ParallelIterator<Item = (NodeT, usize, NodeT, usize)> + 'a {
         let nodes_number = nodes.len();
         (0..nodes_number)
             .into_par_iter()
@@ -52,10 +52,10 @@ impl Graph {
     /// # Raises
     /// * If the graph is a multigraph.
     /// * If the
-    pub unsafe fn par_iter_subsampled_weighted_adjacency_matrix(
-        &self,
-        nodes: Vec<NodeT>,
-    ) -> Result<impl ParallelIterator<Item = (NodeT, usize, NodeT, usize, WeightT)> + '_> {
+    pub unsafe fn par_iter_subsampled_weighted_adjacency_matrix<'a>(
+        &'a self,
+        nodes: &'a [NodeT],
+    ) -> Result<impl ParallelIterator<Item = (NodeT, usize, NodeT, usize, WeightT)> + 'a> {
         self.must_not_be_multigraph()?;
         self.must_have_edge_weights()?;
         Ok(self.par_iter_subsampled_binary_adjacency_matrix(nodes).map(
@@ -79,10 +79,10 @@ impl Graph {
     ///
     /// # Arguments
     /// * `nodes`: Vec<NodeT> - The subsampled nodes.
-    pub unsafe fn par_iter_subsampled_symmetric_laplacian_adjacency_matrix(
-        &self,
-        nodes: Vec<NodeT>,
-    ) -> impl ParallelIterator<Item = (NodeT, usize, NodeT, usize, WeightT)> + '_ {
+    pub unsafe fn par_iter_subsampled_symmetric_laplacian_adjacency_matrix<'a>(
+        &'a self,
+        nodes: &'a [NodeT],
+    ) -> impl ParallelIterator<Item = (NodeT, usize, NodeT, usize, WeightT)> + 'a {
         let degrees = nodes
             .iter()
             .map(|&node_id| self.get_unchecked_node_degree_from_node_id(node_id))
@@ -127,16 +127,17 @@ impl Graph {
     ///
     /// # Arguments
     /// * `nodes`: Vec<NodeT> - The subsampled nodes.
+    /// * `metric`: &str - The metric to use to compute the adjacency matrix.
     ///
     /// # Raises
     /// * If the given metric is not supported.
     /// * If The metric requires the graph to be connected but the graph is not.
     /// * If the metric requires the graph to be weighted but the graph is not.
-    pub unsafe fn par_iter_subsampled_edge_metric_matrix(
-        &self,
-        nodes: Vec<NodeT>,
+    pub unsafe fn par_iter_subsampled_edge_metric_matrix<'a>(
+        &'a self,
+        nodes: &'a [NodeT],
         metric: &str,
-    ) -> Result<impl ParallelIterator<Item = (NodeT, usize, NodeT, usize, WeightT)> + '_> {
+    ) -> Result<impl ParallelIterator<Item = (NodeT, usize, NodeT, usize, WeightT)> + 'a> {
         let nodes_number = nodes.len();
         let edge_metric: Result<fn(&Graph, NodeT, NodeT) -> f64> = match metric {
             "unweighted_shortest_path" => {
@@ -239,6 +240,51 @@ impl Graph {
             }))
     }
 
-    
-
+    /// Return subsampled nodes according to the given method and parameters.
+    ///
+    /// # Arguments
+    /// * `nodes_to_sample_number`: Node - The number of nodes to sample.
+    /// * `random_state`: u64 - The random state to reproduce the sampling.
+    /// * `root_node`: Option<NodeT> - The (optional) root node to use to sample. In not provided, a random one is sampled.
+    /// * `node_sampling_method`: &str - The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
+    /// * `metric`: &str - The metric to use to compute the adjacency matrix.
+    ///
+    /// # Raises
+    /// * If the given node sampling method is not supported.
+    pub fn get_subgraphs<G, P, F>(
+        &self,
+        nodes_to_sample_number: NodeT,
+        random_state: u64,
+        root_node: Option<NodeT>,
+        node_sampling_method: &str,
+        metrics: &[&str],
+        create_subgraph: F,
+    ) -> Result<Vec<G>>
+    where
+        P: ParallelIterator<Item = (NodeT, usize, NodeT, usize, WeightT)>,
+        F: Fn(usize, P) -> Result<G>
+    {
+        let nodes = self.get_subsampled_nodes(
+            nodes_to_sample_number,
+            random_state,
+            root_node,
+            node_sampling_method,
+        )?;
+        metrics
+            .into_iter()
+            .map(|&metric| {
+                if metric == "laplacian" {
+                    create_subgraph(
+                        nodes.len(),
+                        self.par_iter_subsampled_weighted_adjacency_matrix(&nodes)?,
+                    )
+                } else {
+                    create_subgraph(
+                        nodes.len(),
+                        self.par_iter_subsampled_edge_metric_matrix(&nodes, metric)?,
+                    )
+                }
+            })
+            .collect::<Result<Vec<G>>>()
+    }
 }
