@@ -2,7 +2,6 @@ use super::*;
 use log::info;
 use num_traits::{Pow, Zero};
 use rayon::iter::{IntoParallelIterator, ParallelIterator};
-use std::collections::HashSet;
 
 impl Graph {
     #[no_numpy_binding]
@@ -181,18 +180,14 @@ impl Graph {
                 let current_node_community = communities[src as usize];
                 // We retrieve the current node indegree.
                 let indegree = node_indegrees[src as usize];
-                // Create set of the parsed communities.
-                let mut parsed_communities = HashSet::new();
-                parsed_communities.insert(current_node_community);
                 // We search for the best neighbour.
                 let result =
                     unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(src) }
                         .map(|dst| communities[dst as usize])
-                        .filter_map(|neighbour_community_id| {
-                            if parsed_communities.contains(&neighbour_community_id){
-                                return None;
-                            }
-                            parsed_communities.insert(neighbour_community_id);
+                        .filter(|&neighbour_community_id| {
+                            neighbour_community_id != current_node_community
+                        })
+                        .map(|neighbour_community_id| {
                             let node_to_community_weighted_degree: f64 =
                                 get_node_to_community_weighted_degree(
                                     self,
@@ -206,11 +201,11 @@ impl Graph {
                                 - indegree
                                     * communities_indegrees[neighbour_community_id as usize])
                                 / louvain_denominator;
-                            Some((
+                            (
                                 neighbour_community_id,
                                 node_to_community_weighted_degree,
                                 modularity_variation,
-                            ))
+                            )
                         })
                         .max_by(
                             |(_, _, modularity_variation1), (_, _, modularity_variation2)| {
@@ -431,43 +426,47 @@ impl Graph {
             Some(
                 (0..communities_number)
                     .into_par_iter()
-                    .flat_map(|src_community| {
-                        (0..communities_number)
-                            .flat_map(|dst_community| {
-                                // If this is an undirected graph, we can
-                                // compute only the upper triangolar adjacency matrix
-                                // and avoid computing twice the edge weight.
-                                if !self.is_directed() && dst_community > src_community {
-                                    return vec![];
-                                }
-                                let edge_weight = if dst_community == src_community {
-                                    remapped_communities_weights[src_community as usize]
-                                } else {
-                                    node_ids_per_community[src_community as usize]
-                                        .iter()
-                                        .map(|&node_id| {
-                                            get_node_to_community_weighted_degree(
-                                                self,
-                                                node_id,
-                                                dst_community,
-                                                &communities,
-                                                default_weight,
-                                            )
-                                        })
-                                        .sum::<f64>()
-                                } as WeightT;
-                                if edge_weight.is_zero() {
-                                    vec![]
-                                } else if self.is_directed() || src_community == dst_community {
-                                    vec![(0, (src_community, dst_community, None, edge_weight))]
-                                } else {
-                                    vec![
-                                        (0, (src_community, dst_community, None, edge_weight)),
-                                        (0, (dst_community, src_community, None, edge_weight)),
-                                    ]
-                                }
-                            })
-                            .collect::<Vec<_>>()
+                    .flat_map_iter(move |src_community| {
+                        (0..communities_number).map(move |dst_community| (src_community, dst_community))
+                    })
+                    // If this is an undirected graph, we can
+                    // compute only the upper triangolar adjacency matrix
+                    // and avoid computing twice the edge weight.
+                    .filter(|&(src_community, dst_community)| {
+                        self.is_directed() || dst_community <= src_community
+                    })
+                    .map(|(src_community, dst_community)| {
+                        (
+                            src_community,
+                            dst_community,
+                            if dst_community == src_community {
+                                remapped_communities_weights[src_community as usize]
+                            } else {
+                                node_ids_per_community[src_community as usize]
+                                    .iter()
+                                    .map(|&node_id| {
+                                        get_node_to_community_weighted_degree(
+                                            self,
+                                            node_id,
+                                            dst_community,
+                                            &communities,
+                                            default_weight,
+                                        )
+                                    })
+                                    .sum::<f64>()
+                            } as WeightT,
+                        )
+                    })
+                    .filter(|&(_, _, edge_weight)| !edge_weight.is_zero())
+                    .flat_map(|(src_community, dst_community, edge_weight)| {
+                        if self.is_directed() || src_community == dst_community {
+                            vec![(0, (src_community, dst_community, None, edge_weight))]
+                        } else {
+                            vec![
+                                (0, (src_community, dst_community, None, edge_weight)),
+                                (0, (dst_community, src_community, None, edge_weight)),
+                            ]
+                        }
                     }),
             ),
             Vocabulary::from_range(0..communities_number),
