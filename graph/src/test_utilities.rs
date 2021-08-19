@@ -1085,12 +1085,12 @@ pub fn test_bfs(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
             graph.iter_node_ids().for_each(|src_node_id| {
                 graph.iter_node_ids().for_each(|dst_node_id| unsafe {
                     // Check that the obtained results are simmetric
-                    let src_to_dst = graph.get_unchecked_minimum_path_node_ids_from_node_ids(
+                    let src_to_dst = graph.get_unchecked_shortest_path_node_ids_from_node_ids(
                         src_node_id,
                         dst_node_id,
                         maximal_depth,
                     );
-                    let dst_to_src = graph.get_unchecked_minimum_path_node_ids_from_node_ids(
+                    let dst_to_src = graph.get_unchecked_shortest_path_node_ids_from_node_ids(
                         dst_node_id,
                         src_node_id,
                         maximal_depth,
@@ -1164,14 +1164,14 @@ pub fn test_dijkstra(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
                 graph.iter_node_ids().for_each(|dst_node_id| unsafe {
                     // Check that the obtained results are simmetric
                     let (src_to_dst_distance, src_to_dst) = graph
-                        .get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
+                        .get_unchecked_weighted_shortest_path_node_ids_from_node_ids(
                             src_node_id,
                             dst_node_id,
                             Some(use_edge_weights_as_probabilities),
                             None,
                         );
                     let (dst_to_src_distance, dst_to_src) = graph
-                        .get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
+                        .get_unchecked_weighted_shortest_path_node_ids_from_node_ids(
                             dst_node_id,
                             src_node_id,
                             Some(use_edge_weights_as_probabilities),

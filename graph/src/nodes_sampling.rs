@@ -96,4 +96,40 @@ impl Graph {
                 .collect(),
         )
     }
+
+    /// Return subsampled nodes according to the given method and parameters.
+    ///
+    /// # Arguments
+    /// * `nodes_to_sample_number`: Node - The number of nodes to sample.
+    /// * `random_state`: u64 - The random state to reproduce the sampling.
+    /// * `root_node`: Option<NodeT> - The (optional) root node to use to sample. In not provided, a random one is sampled.
+    /// * `node_sampling_method`: &str - The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
+    ///
+    /// # Raises
+    /// * If the given node sampling method is not supported.
+    pub fn get_subsampled_nodes(
+        &self,
+        nodes_to_sample_number: NodeT,
+        random_state: u64,
+        root_node: Option<NodeT>,
+        node_sampling_method: &str,
+    ) -> Result<Vec<NodeT>> {
+        let random_state = splitmix64(random_state);
+        let root_node =
+            root_node.unwrap_or(splitmix64(random_state) as NodeT % self.get_nodes_number());
+        match node_sampling_method {
+            "random_nodes" => self.get_random_nodes(nodes_to_sample_number, random_state),
+            "breath_first_search" => self.get_breath_first_search_random_nodes(nodes_to_sample_number, root_node),
+            "uniform_random_walk" => self.get_uniform_random_walk_random_nodes(root_node, random_state, nodes_to_sample_number as u64),
+            node_sampling_method => Err(format!(
+                concat!(
+                    "The provided node sampling method {} is not supported. The supported methods are:\n",
+                    "* random_nodes\n",
+                    "* breath_first_search\n",
+                    "* uniform_random_walk\n"
+                ),
+                node_sampling_method
+            ))
+        }
+    }
 }

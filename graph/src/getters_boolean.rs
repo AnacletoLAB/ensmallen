@@ -201,6 +201,7 @@ impl Graph {
         self.get_singleton_nodes_with_selfloops_number() > 0
     }
 
+    #[cache_property(is_connected)]
     /// Returns whether the graph is connected.
     ///
     /// # Arguments
