@@ -5,7 +5,7 @@ use types::ThreadDataRaceAware;
 #[pymethods]
 impl EnsmallenGraph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, nodes_to_sample_number, random_state, root_node, node_sampling_method, metric)"]
+    #[text_signature = "($self, nodes_to_sample_number, random_state, root_node, node_sampling_method, metrics)"]
     /// Return subsampled nodes according to the given method and parameters.
     ///
     /// Parameters
@@ -14,7 +14,7 @@ impl EnsmallenGraph {
     /// random_state: int - The random state to reproduce the sampling.
     /// root_node: Optional[int] - The (optional) root node to use to sample. In not provided, a random one is sampled.
     /// node_sampling_method: str - The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
-    /// metric: List[str] - The metric to use to compute the adjacency matrix.
+    /// metrics: List[str] - The metric to use to compute the adjacency matrix.
     ///
     /// Raises
     /// --------------------
