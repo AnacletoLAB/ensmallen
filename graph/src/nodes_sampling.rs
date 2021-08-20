@@ -60,10 +60,10 @@ impl Graph {
                     if sampled_nodes.contains(&dst) {
                         return;
                     }
-                    sampled_nodes.insert(dst);
                     if sampled_nodes.len() == nodes_to_sample_number {
                         return;
                     }
+                    sampled_nodes.insert(dst);
                     stack.push(dst);
                 },
             );
