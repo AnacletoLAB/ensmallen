@@ -100,7 +100,7 @@ impl Graph {
     /// Return subsampled nodes according to the given method and parameters.
     ///
     /// # Arguments
-    /// * `nodes_to_sample_number`: Node - The number of nodes to sample.
+    /// * `nodes_to_sample_number`: NodeT - The number of nodes to sample.
     /// * `random_state`: u64 - The random state to reproduce the sampling.
     /// * `root_node`: Option<NodeT> - The (optional) root node to use to sample. In not provided, a random one is sampled.
     /// * `node_sampling_method`: &str - The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.

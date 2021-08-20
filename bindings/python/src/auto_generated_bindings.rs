@@ -2790,6 +2790,19 @@ impl EnsmallenGraph {
 
     #[automatically_generated_binding]
     #[text_signature = "($, self)"]
+    /// Raises an error if the graph is not connected.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph is not connected.
+    ///
+    pub fn must_be_connected(&self) -> PyResult<()> {
+        pe!(self.graph.must_be_connected())
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self)"]
     /// Return total edge weights, if graph has weights.
     ///
     /// Raises
@@ -4258,7 +4271,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If there is no path between the two given nodes.
     ///
-    pub unsafe fn get_unchecked_minimum_path_node_ids_from_node_ids(
+    pub unsafe fn get_unchecked_shortest_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
@@ -4269,7 +4282,7 @@ impl EnsmallenGraph {
             gil,
             pe!(self
                 .graph
-                .get_unchecked_minimum_path_node_ids_from_node_ids(
+                .get_unchecked_shortest_path_node_ids_from_node_ids(
                     src_node_id,
                     dst_node_id,
                     maximal_depth
@@ -4295,7 +4308,7 @@ impl EnsmallenGraph {
     /// Safety
     /// ------
     /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_minimum_path_node_names_from_node_ids(
+    pub unsafe fn get_unchecked_shortest_path_node_names_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
@@ -4303,7 +4316,7 @@ impl EnsmallenGraph {
     ) -> PyResult<Vec<String>> {
         pe!(self
             .graph
-            .get_unchecked_minimum_path_node_names_from_node_ids(
+            .get_unchecked_shortest_path_node_names_from_node_ids(
                 src_node_id,
                 dst_node_id,
                 maximal_depth
@@ -4329,7 +4342,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If any of the given node IDs do not exist in the current graph.
     ///
-    pub fn get_minimum_path_node_ids_from_node_ids(
+    pub fn get_shortest_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
@@ -4338,7 +4351,7 @@ impl EnsmallenGraph {
         let gil = pyo3::Python::acquire_gil();
         Ok(to_ndarray_1d!(
             gil,
-            pe!(self.graph.get_minimum_path_node_ids_from_node_ids(
+            pe!(self.graph.get_shortest_path_node_ids_from_node_ids(
                 src_node_id,
                 dst_node_id,
                 maximal_depth
@@ -4366,7 +4379,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If any of the given node names do not exist in the current graph.
     ///
-    pub fn get_minimum_path_node_ids_from_node_names(
+    pub fn get_shortest_path_node_ids_from_node_names(
         &self,
         src_node_name: &str,
         dst_node_name: &str,
@@ -4375,7 +4388,7 @@ impl EnsmallenGraph {
         let gil = pyo3::Python::acquire_gil();
         Ok(to_ndarray_1d!(
             gil,
-            pe!(self.graph.get_minimum_path_node_ids_from_node_names(
+            pe!(self.graph.get_shortest_path_node_ids_from_node_names(
                 src_node_name,
                 dst_node_name,
                 maximal_depth
@@ -4403,13 +4416,13 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If any of the given node names do not exist in the current graph.
     ///
-    pub fn get_minimum_path_node_names_from_node_names(
+    pub fn get_shortest_path_node_names_from_node_names(
         &self,
         src_node_name: &str,
         dst_node_name: &str,
         maximal_depth: Option<NodeT>,
     ) -> PyResult<Vec<String>> {
-        pe!(self.graph.get_minimum_path_node_names_from_node_names(
+        pe!(self.graph.get_shortest_path_node_names_from_node_names(
             src_node_name,
             dst_node_name,
             maximal_depth
@@ -4681,7 +4694,7 @@ impl EnsmallenGraph {
     /// Safety
     /// ------
     /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
+    pub unsafe fn get_unchecked_weighted_shortest_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
@@ -4689,7 +4702,7 @@ impl EnsmallenGraph {
         maximal_depth: Option<NodeT>,
     ) -> (f64, Vec<NodeT>) {
         self.graph
-            .get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
+            .get_unchecked_weighted_shortest_path_node_ids_from_node_ids(
                 src_node_id,
                 dst_node_id,
                 use_edge_weights_as_probabilities,
@@ -4718,7 +4731,7 @@ impl EnsmallenGraph {
     /// Safety
     /// ------
     /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_weighted_minimum_path_node_names_from_node_ids(
+    pub unsafe fn get_unchecked_weighted_shortest_path_node_names_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
@@ -4726,7 +4739,7 @@ impl EnsmallenGraph {
         maximal_depth: Option<NodeT>,
     ) -> (f64, Vec<String>) {
         self.graph
-            .get_unchecked_weighted_minimum_path_node_names_from_node_ids(
+            .get_unchecked_weighted_shortest_path_node_names_from_node_ids(
                 src_node_id,
                 dst_node_id,
                 use_edge_weights_as_probabilities,
@@ -4757,19 +4770,21 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If any of the given node IDs do not exist in the current graph.
     ///
-    pub fn get_weighted_minimum_path_node_ids_from_node_ids(
+    pub fn get_weighted_shortest_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
     ) -> PyResult<(f64, Vec<NodeT>)> {
-        pe!(self.graph.get_weighted_minimum_path_node_ids_from_node_ids(
-            src_node_id,
-            dst_node_id,
-            use_edge_weights_as_probabilities,
-            maximal_depth
-        ))
+        pe!(self
+            .graph
+            .get_weighted_shortest_path_node_ids_from_node_ids(
+                src_node_id,
+                dst_node_id,
+                use_edge_weights_as_probabilities,
+                maximal_depth
+            ))
     }
 
     #[automatically_generated_binding]
@@ -4793,7 +4808,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If any of the given node names do not exist in the current graph.
     ///
-    pub fn get_weighted_minimum_path_node_ids_from_node_names(
+    pub fn get_weighted_shortest_path_node_ids_from_node_names(
         &self,
         src_node_name: &str,
         dst_node_name: &str,
@@ -4802,7 +4817,7 @@ impl EnsmallenGraph {
     ) -> PyResult<(f64, Vec<NodeT>)> {
         pe!(self
             .graph
-            .get_weighted_minimum_path_node_ids_from_node_names(
+            .get_weighted_shortest_path_node_ids_from_node_names(
                 src_node_name,
                 dst_node_name,
                 use_edge_weights_as_probabilities,
@@ -4831,7 +4846,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If any of the given node names do not exist in the current graph.
     ///
-    pub fn get_weighted_minimum_path_node_names_from_node_names(
+    pub fn get_weighted_shortest_path_node_names_from_node_names(
         &self,
         src_node_name: &str,
         dst_node_name: &str,
@@ -4840,7 +4855,7 @@ impl EnsmallenGraph {
     ) -> PyResult<(f64, Vec<String>)> {
         pe!(self
             .graph
-            .get_weighted_minimum_path_node_names_from_node_names(
+            .get_weighted_shortest_path_node_names_from_node_names(
                 src_node_name,
                 dst_node_name,
                 use_edge_weights_as_probabilities,
@@ -7148,6 +7163,142 @@ impl EnsmallenGraph {
     /// Returns 2-approximated verted cover set using greedy algorithm.
     pub fn approximated_vertex_cover_set(&self) -> HashSet<NodeT> {
         self.graph.approximated_vertex_cover_set()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self, nodes_to_sample_number, random_state)"]
+    /// Return random unique sorted numbers.
+    ///
+    /// Parameters
+    /// ----------
+    /// nodes_to_sample_number: int,
+    ///     The number of nodes to sample.
+    /// random_state: int,
+    ///     The random state to use to reproduce the sampling.
+    ///
+    pub fn get_random_nodes(
+        &self,
+        nodes_to_sample_number: NodeT,
+        random_state: u64,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self
+                .graph
+                .get_random_nodes(nodes_to_sample_number, random_state))?,
+            NodeT
+        ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self, nodes_to_sample_number, root_node)"]
+    /// Return nodes sampled from the neighbourhood of given root nodes.
+    ///
+    /// Parameters
+    /// ----------
+    /// nodes_to_sample_number: int,
+    ///     The number of nodes to sample.
+    /// root_node: int,
+    ///     The root node from .
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the number of requested nodes is higher than the number of nodes in the graph.
+    /// ValueError
+    ///     If the given root node does not exist in the curret graph instance.
+    ///
+    pub fn get_breath_first_search_random_nodes(
+        &self,
+        nodes_to_sample_number: NodeT,
+        root_node: NodeT,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self
+                .graph
+                .get_breath_first_search_random_nodes(nodes_to_sample_number, root_node))?,
+            NodeT
+        ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self, node, random_state, walk_length)"]
+    /// Returns unique nodes sampled from uniform random walk.
+    ///
+    /// Parameters
+    /// ----------
+    /// node: int,
+    ///     Node from where to start the random walks.
+    /// random_state: int,
+    ///     the random_state to use for extracting the nodes and edges.
+    /// walk_length: int,
+    ///     Length of the random walk.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given node does not exist in the current slack.
+    ///
+    pub fn get_uniform_random_walk_random_nodes(
+        &self,
+        node: NodeT,
+        random_state: u64,
+        walk_length: u64,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self
+                .graph
+                .get_uniform_random_walk_random_nodes(node, random_state, walk_length))?,
+            NodeT
+        ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self, nodes_to_sample_number, random_state, root_node, node_sampling_method)"]
+    /// Return subsampled nodes according to the given method and parameters.
+    ///
+    /// Parameters
+    /// ----------
+    /// nodes_to_sample_number: int,
+    ///     The number of nodes to sample.
+    /// random_state: int,
+    ///     The random state to reproduce the sampling.
+    /// root_node: Optional[int],
+    ///     The (optional) root node to use to sample. In not provided, a random one is sampled.
+    /// node_sampling_method: str,
+    ///     The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given node sampling method is not supported.
+    ///
+    pub fn get_subsampled_nodes(
+        &self,
+        nodes_to_sample_number: NodeT,
+        random_state: u64,
+        root_node: Option<NodeT>,
+        node_sampling_method: &str,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self.graph.get_subsampled_nodes(
+                nodes_to_sample_number,
+                random_state,
+                root_node,
+                node_sampling_method
+            ))?,
+            NodeT
+        ))
     }
 
     #[automatically_generated_binding]

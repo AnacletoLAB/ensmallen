@@ -13,6 +13,7 @@ mod edge_file_writer;
 mod hash;
 mod node_file_writer;
 mod preprocessing;
+mod subgraphs;
 mod trees;
 mod utilities;
 pub(crate) use crate::preprocessing::*;
