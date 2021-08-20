@@ -7,7 +7,8 @@ from .repositories import (
     LINQSGraphRepository,
     MonarchInitiativeGraphRepository,
     ZenodoGraphRepository,
-    PheKnowLatorKGGraphrepository
+    PheKnowLatorKGGraphrepository,
+    JAXGraphRepository
 )
 
 __all__ = [
@@ -18,5 +19,6 @@ __all__ = [
     "LINQSGraphRepository",
     "MonarchInitiativeGraphRepository",
     "ZenodoGraphRepository",
-    "PheKnowLatorKGGraphrepository"
+    "PheKnowLatorKGGraphrepository",
+    "JAXGraphRepository"
 ]

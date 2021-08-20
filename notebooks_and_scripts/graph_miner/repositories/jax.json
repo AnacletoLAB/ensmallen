@@ -1,0 +1,21 @@
+{
+    "Isopret": {
+        "latest": {
+            "urls": [
+                "https://github.com/karleg/temp_isopret/blob/master/GO_MF.txt.gz?raw=true"
+            ],
+            "paths": [
+                "isopret.tsv.gz"
+            ],
+            "arguments": {
+                "directed": false,
+                "edge_list_header": false,
+                "name": "Isopret",
+                "edge_path": "isopret.tsv",
+                "sources_column_number": 0,
+                "destinations_column_number": 1,
+                "weights_column_number": 2
+            }
+        }
+    }
+}
