@@ -1,4 +1,5 @@
 use rayon::prelude::*;
+use itertools::Itertools;
 
 use super::*;
 
@@ -113,6 +114,22 @@ impl Graph {
             )
     }
 
+    /// Return list of the supported edge weighting methods.
+    pub fn get_edge_weighting_methods(&self) -> Vec<&str> {
+        vec![
+            "unweighted_shortest_path",
+            "probabilistic_weighted_shortest_path",
+            "preferential_attachment",
+            "weighted_preferential_attachment",
+            "jaccard_coefficient",
+            "adamic_adar_index",
+            "resource_allocation_index",
+            "weighted_resource_allocation_index",
+            "weights",
+            "laplacian"
+        ]
+    }
+
     /// Returns iterator over subsampled binary adjacency matrix on the provided nodes.
     ///
     /// # Safety
@@ -121,19 +138,19 @@ impl Graph {
     ///
     /// # Arguments
     /// * `nodes`: Vec<NodeT> - The subsampled nodes.
-    /// * `metric`: &str - The metric to use to compute the adjacency matrix.
+    /// * `edge_weighting_method`: &str - The edge_weighting_method to use to compute the adjacency matrix.
     ///
     /// # Raises
-    /// * If the given metric is not supported.
-    /// * If The metric requires the graph to be connected but the graph is not.
-    /// * If the metric requires the graph to be weighted but the graph is not.
+    /// * If the given edge_weighting_method is not supported.
+    /// * If The edge_weighting_method requires the graph to be connected but the graph is not.
+    /// * If the edge_weighting_method requires the graph to be weighted but the graph is not.
     pub unsafe fn par_iter_subsampled_edge_metric_matrix<'a>(
         &'a self,
         nodes: &'a [NodeT],
-        metric: &str,
+        edge_weighting_method: &str,
     ) -> Result<impl ParallelIterator<Item = (NodeT, usize, NodeT, usize, WeightT)> + 'a> {
         let nodes_number = nodes.len();
-        let edge_metric: Result<fn(&Graph, NodeT, NodeT) -> f64> = match metric {
+        let edge_weighting_method: Result<fn(&Graph, NodeT, NodeT) -> f64> = match edge_weighting_method {
             "unweighted_shortest_path" => {
                 self.must_be_connected()?;
                 // We make sure that the diameter is precomputed.
@@ -196,24 +213,16 @@ impl Graph {
                     graph.get_unchecked_weighted_resource_allocation_index_from_node_ids(src, dst)
                 })
             }
-            metric => Err(format!(
+            edge_weighting_method => Err(format!(
                 concat!(
-                    "The provided metric {} is not currenly supported. The supported metrics are:\n",
-                    "* unweighted_shortest_path\n",
-                    "* probabilistic_weighted_shortest_path\n",
-                    "* preferential_attachment\n",
-                    "* weighted_preferential_attachment\n",
-                    "* jaccard_coefficient\n",
-                    "* adamic_adar_index\n",
-                    "* resource_allocation_index\n",
-                    "* weighted_resource_allocation_index\n",
-                    "* weights\n",
-                    "* laplacian\n"
+                    "The provided edge weighting method {} is not currenly supported. The supported edge weighting methods are:\n",
+                    "{}"
                 ),
-                metric
+                edge_weighting_method,
+                self.get_edge_weighting_methods().into_iter().map(|edge_sampling_schema| format!("* {}", edge_sampling_schema)).join("\n")
             )),
         };
-        let edge_metric = edge_metric?;
+        let edge_weighting_method = edge_weighting_method?;
         Ok((0..nodes_number)
             .into_par_iter()
             .flat_map_iter(move |src| (0..nodes_number).map(move |dst| (src, dst)))
@@ -221,7 +230,7 @@ impl Graph {
             .map(move |(src, dst)| {
                 let src_node_id = nodes[src];
                 let dst_node_id = nodes[dst];
-                let weight = edge_metric(self, src_node_id, dst_node_id) as WeightT;
+                let weight = edge_weighting_method(self, src_node_id, dst_node_id) as WeightT;
                 (src_node_id, src, dst_node_id, dst, weight)
             }))
     }

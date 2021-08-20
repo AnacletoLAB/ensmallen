@@ -1073,7 +1073,7 @@ pub fn test_bfs(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
     // If the graph is empty the other tests on BFS make little sense
     if !graph.has_nodes() {
         assert!(graph
-            .get_breath_first_search_from_node_ids(0, None, None, None)
+            .get_breadth_first_search_from_node_ids(0, None, None, None)
             .is_err());
         return Ok(());
     }

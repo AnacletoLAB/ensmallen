@@ -9,57 +9,59 @@ use vec_rand::splitmix64;
 #[pymethods]
 impl EnsmallenGraph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, nodes_to_sample_number, random_state, root_node, node_sampling_method, metrics, add_selfloops_where_missing)"]
+    #[text_signature = "($self, number_of_nodes_to_sample, random_state, root_node, node_sampling_method, edge_weighting_methods, add_selfloops_where_missing)"]
     /// Return subsampled nodes according to the given method and parameters.
     ///
     /// Parameters
     /// --------------------
-    /// nodes_to_sample_number: int - The number of nodes to sample.
+    /// number_of_nodes_to_sample: int - The number of nodes to sample.
     /// random_state: int - The random state to reproduce the sampling.
     /// root_node: Optional[int] - The (optional) root node to use to sample. In not provided, a random one is sampled.
     /// node_sampling_method: str - The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
-    /// metrics: List[str] - The metric to use to compute the adjacency matrix.
-    /// add_selfloops_where_missing: Optional[bool] - Whether to add selfloops where they are missing. This parameter only applies to laplacian metric. By default, true.
+    /// edge_weighting_methods: List[str] - The edge weighting methods to use to compute the adjacency matrix.
+    /// add_selfloops_where_missing: Optional[bool] - Whether to add selfloops where they are missing. This parameter only applies to laplacian edge weighting method. By default, true.
     ///
     /// Raises
     /// --------------------
     /// ValueError,
     ///     If the given node sampling method is not supported.
     /// ValueError,
-    ///     If any of the given subgraph metric is not supported.
+    ///     If any of the given subgraph edge weighting method is not supported.
     /// ValueError,
-    ///     If the list of requested metrics is empty.
+    ///     If the list of requested edge weighting methods is empty.
     /// ValueError,
-    ///     If the `add_selfloops_where_missing` parameter is provided, but the metric is not laplacian.
+    ///     If the `add_selfloops_where_missing` parameter is provided, but the edge weighting method is not laplacian.
     ///
     /// Returns
     /// --------------------
     /// Tuple with the sampled nodes and the computed kernels.
     pub fn get_subgraphs(
         &self,
-        nodes_to_sample_number: NodeT,
+        number_of_nodes_to_sample: NodeT,
         random_state: u64,
         root_node: Option<NodeT>,
         node_sampling_method: &str,
-        metrics: Vec<&str>,
+        edge_weighting_methods: Vec<&str>,
         add_selfloops_where_missing: Option<bool>,
     ) -> PyResult<(Py<PyArray1<NodeT>>, Vec<Py<PyArray2<WeightT>>>)> {
-        // Check if the list of requested metrics is empty.
-        if metrics.is_empty() {
+        // Check if the list of requested edge weighting methods is empty.
+        if edge_weighting_methods.is_empty() {
             return pe!(Err(concat!(
-                "The provided metric list to be used to ",
+                "The provided edge weighting methods list to be used to ",
                 "compute the subgraph kernels is empty."
             )));
         }
         // Check if an illegal parametrization was provided.
         if add_selfloops_where_missing.is_some()
-            && metrics.iter().all(|&metric| metric != "laplacian")
+            && edge_weighting_methods
+                .iter()
+                .all(|&edge_weighting_method| edge_weighting_method != "laplacian")
         {
             return pe!(Err(concat!(
                 "The parameter add_selfloops_where_missing was provided ",
                 "with a non-None value ",
                 "but this only makes sense when used with the ",
-                "`laplacian` metric, and none of the requested metrics were `laplacian`."
+                "`laplacian` edge weighting method, and none of the requested edge weighting methods were `laplacian`."
             )
             .to_string()));
         }
@@ -67,7 +69,7 @@ impl EnsmallenGraph {
         // We cannot directly allocate this into a
         // numpy array because
         let nodes = pe!(self.graph.get_subsampled_nodes(
-            nodes_to_sample_number,
+            number_of_nodes_to_sample,
             random_state,
             root_node,
             node_sampling_method,
@@ -86,20 +88,21 @@ impl EnsmallenGraph {
         let is_undirected = !self.graph.is_directed();
 
         // Compute the required kernels.
-        let kernels = pe!(metrics
+        let kernels = pe!(edge_weighting_methods
             .into_iter()
-            .map(|metric| unsafe {
+            .map(|edge_weighting_method| unsafe {
                 // We create the kernel that we will populate
                 // with this particular iteration.
                 let kernel = ThreadDataRaceAware {
-                    // If the metric for the kernel is either weights
-                    // or laplacian, that is metrics that are not fully defined for all
+                    // If the edge weighting method for the kernel is either weights
+                    // or laplacian, that is edge weighting methods that are not fully defined for all
                     // of the edges of the graph, we need to set the remaining values
                     // to zeros, so we initialize the vector as a matrix of zeros.
-                    t: if metric == "weights" || metric == "laplacian" {
+                    t: if edge_weighting_method == "weights" || edge_weighting_method == "laplacian"
+                    {
                         PyArray2::zeros(gil.python(), [nodes_number, nodes_number], false)
                     } else {
-                        // The same consideration does not apply to metrics that are fully
+                        // The same consideration does not apply to edge weighting methods that are fully
                         // defined for all the possible tuple of nodes that may be taken
                         // into consideration: in this case all the values will be provided
                         // by the iterator, and therefore there is no need to set beforehand
@@ -116,15 +119,15 @@ impl EnsmallenGraph {
                         *kernel.t.uget_mut([j, i]) = value;
                     }
                 };
-                // If the required metric are the weights, we extract the weights
+                // If the required edge weighting method are the weights, we extract the weights
                 // iterator and populate the kernel using the weights.
-                if metric == "weights" {
+                if edge_weighting_method == "weights" {
                     self.graph
                         .par_iter_subsampled_weighted_adjacency_matrix(&nodes)?
                         .for_each(build_kernel);
-                // Similarly, if the required metric is the laplacian
+                // Similarly, if the required edge weighting method is the laplacian
                 // we populate the kernel with the laplacian.
-                } else if metric == "laplacian" {
+                } else if edge_weighting_method == "laplacian" {
                     self.graph
                         .par_iter_subsampled_symmetric_laplacian_adjacency_matrix(
                             &nodes,
@@ -132,10 +135,10 @@ impl EnsmallenGraph {
                         )
                         .for_each(build_kernel);
                 } else {
-                    // Finally, all other metrics that are defined for all
+                    // Finally, all other edge weighting methods that are defined for all
                     // the node tuples are handled by this auto-dispatching method
                     self.graph
-                        .par_iter_subsampled_edge_metric_matrix(&nodes, metric)?
+                        .par_iter_subsampled_edge_metric_matrix(&nodes, edge_weighting_method)?
                         .for_each(build_kernel);
                 }
                 // Once the kernel is ready, we extract it from the unsafe cell
@@ -160,37 +163,37 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, nodes_to_sample_number, random_state, node_sampling_method, metrics, add_selfloops_where_missing)"]
+    #[text_signature = "($self, number_of_nodes_to_sample, random_state, node_sampling_method, edge_weighting_methods, add_selfloops_where_missing)"]
     /// Return subsampled nodes according to the given method and parameters.
     ///
     /// Parameters
     /// --------------------
-    /// nodes_to_sample_number: int - The number of nodes to sample.
+    /// number_of_nodes_to_sample: int - The number of nodes to sample.
     /// random_state: int - The random state to reproduce the sampling.
     /// node_sampling_method: str - The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
-    /// metrics: List[str] - The metric to use to compute the adjacency matrix.
-    /// add_selfloops_where_missing: Optional[bool] - Whether to add selfloops where they are missing. This parameter only applies to laplacian metric. By default, true.
+    /// edge_weighting_methods: List[str] - The edge weighting methods to use to compute the adjacency matrix.
+    /// add_selfloops_where_missing: Optional[bool] - Whether to add selfloops where they are missing. This parameter only applies to laplacian edge weighting method. By default, true.
     ///
     /// Raises
     /// --------------------
     /// ValueError,
     ///     If the given node sampling method is not supported.
     /// ValueError,
-    ///     If any of the given subgraph metric is not supported.
+    ///     If any of the given subgraph edge weighting method is not supported.
     /// ValueError,
-    ///     If the list of requested metrics is empty.
+    ///     If the list of requested edge weighting methods is empty.
     /// ValueError,
-    ///     If the `add_selfloops_where_missing` parameter is provided, but the metric is not laplacian.
+    ///     If the `add_selfloops_where_missing` parameter is provided, but the edge weighting method is not laplacian.
     ///
     /// Returns
     /// --------------------
     /// Tuple with the sampled nodes and the computed kernels.
     pub fn get_edge_prediction_subgraphs(
         &self,
-        nodes_to_sample_number: NodeT,
+        number_of_nodes_to_sample: NodeT,
         random_state: u64,
         node_sampling_method: &str,
-        metrics: Vec<&str>,
+        edge_weighting_methods: Vec<&str>,
         add_selfloops_where_missing: Option<bool>,
     ) -> PyResult<(
         Py<PyArray1<NodeT>>,
@@ -199,22 +202,24 @@ impl EnsmallenGraph {
         Vec<Py<PyArray2<WeightT>>>,
         Py<PyArray1<bool>>,
     )> {
-        // Check if the list of requested metrics is empty.
-        if metrics.is_empty() {
+        // Check if the list of requested edge weighting methods is empty.
+        if edge_weighting_methods.is_empty() {
             return pe!(Err(concat!(
-                "The provided metric list to be used to ",
+                "The provided edge weighting method list to be used to ",
                 "compute the subgraph kernels is empty."
             )));
         }
         // Check if an illegal parametrization was provided.
         if add_selfloops_where_missing.is_some()
-            && metrics.iter().all(|&metric| metric != "laplacian")
+            && edge_weighting_methods
+                .iter()
+                .all(|&edge_weighting_method| edge_weighting_method != "laplacian")
         {
             return pe!(Err(concat!(
                 "The parameter add_selfloops_where_missing was provided ",
                 "with a non-None value ",
                 "but this only makes sense when used with the ",
-                "`laplacian` metric, and none of the requested metrics were `laplacian`."
+                "`laplacian` edge weighting method, and none of the requested edge weighting methods were `laplacian`."
             )
             .to_string()));
         }
@@ -222,7 +227,7 @@ impl EnsmallenGraph {
         // We cannot directly allocate this into a
         // numpy array because
         let source_nodes = pe!(self.graph.get_subsampled_nodes(
-            nodes_to_sample_number,
+            number_of_nodes_to_sample,
             random_state,
             None,
             node_sampling_method,
@@ -250,16 +255,16 @@ impl EnsmallenGraph {
         let is_undirected = !self.graph.is_directed();
 
         // Compute the required kernels.
-        let (source_kernels, destination_kernels) = pe!(metrics
+        let (source_kernels, destination_kernels) = pe!(edge_weighting_methods
             .into_iter()
-            .map(|metric| unsafe {
+            .map(|edge_weighting_method| unsafe {
                 // We create the kernel that we will populate
                 // with this particular iteration.
-                let (source_kernel, destination_kernel) = if metric == "weights"
-                    || metric == "laplacian"
+                let (source_kernel, destination_kernel) = if edge_weighting_method == "weights"
+                    || edge_weighting_method == "laplacian"
                 {
-                    // If the metric for the kernel is either weights
-                    // or laplacian, that is metrics that are not fully defined for all
+                    // If the edge weighting method for the kernel is either weights
+                    // or laplacian, that is edge weighting methods that are not fully defined for all
                     // of the edges of the graph, we need to set the remaining values
                     // to zeros, so we initialize the vector as a matrix of zeros.
                     (
@@ -271,7 +276,7 @@ impl EnsmallenGraph {
                         },
                     )
                 } else {
-                    // The same consideration does not apply to metrics that are fully
+                    // The same consideration does not apply to edge weighting methods that are fully
                     // defined for all the possible tuple of nodes that may be taken
                     // into consideration: in this case all the values will be provided
                     // by the iterator, and therefore there is no need to set beforehand
@@ -298,15 +303,15 @@ impl EnsmallenGraph {
                         *destination_kernel.t.uget_mut([remapped_j, remapped_i]) = value;
                     }
                 };
-                // If the required metric are the weights, we extract the weights
+                // If the required edge weighting method are the weights, we extract the weights
                 // iterator and populate the kernel using the weights.
-                if metric == "weights" {
+                if edge_weighting_method == "weights" {
                     self.graph
                         .par_iter_subsampled_weighted_adjacency_matrix(&source_nodes)?
                         .for_each(build_kernel);
-                // Similarly, if the required metric is the laplacian
+                // Similarly, if the required edge weighting method is the laplacian
                 // we populate the kernel with the laplacian.
-                } else if metric == "laplacian" {
+                } else if edge_weighting_method == "laplacian" {
                     self.graph
                         .par_iter_subsampled_symmetric_laplacian_adjacency_matrix(
                             &source_nodes,
@@ -314,10 +319,13 @@ impl EnsmallenGraph {
                         )
                         .for_each(build_kernel);
                 } else {
-                    // Finally, all other metrics that are defined for all
+                    // Finally, all other edge weighting methods that are defined for all
                     // the node tuples are handled by this auto-dispatching method
                     self.graph
-                        .par_iter_subsampled_edge_metric_matrix(&source_nodes, metric)?
+                        .par_iter_subsampled_edge_metric_matrix(
+                            &source_nodes,
+                            edge_weighting_method,
+                        )?
                         .for_each(build_kernel);
                 }
                 // Once the kernel is ready, we extract it from the unsafe cell
@@ -375,41 +383,41 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, nodes_to_sample_number, random_state, source_root_node, destination_root_node, node_sampling_method, metrics, add_selfloops_where_missing)"]
+    #[text_signature = "($self, number_of_nodes_to_sample, random_state, source_root_node, destination_root_node, node_sampling_method, edge_weighting_methods, add_selfloops_where_missing)"]
     /// Return subsampled nodes according to the given method and parameters.
     ///
     /// Parameters
     /// --------------------
-    /// nodes_to_sample_number: int - The number of nodes to sample.
+    /// number_of_nodes_to_sample: int - The number of nodes to sample.
     /// random_state: int - The random state to reproduce the sampling.
     /// source_root_node: int - The source root node to use to sample. In not provided, a random one is sampled.
     /// destination_root_node: int - The destination root node to use to sample. In not provided, a random one is sampled.
     /// node_sampling_method: str - The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
-    /// metrics: List[str] - The metric to use to compute the adjacency matrix.
-    /// add_selfloops_where_missing: Optional[bool] - Whether to add selfloops where they are missing. This parameter only applies to laplacian metric. By default, true.
+    /// edge_weighting_methods: List[str] - The edge weighting methods to use to compute the adjacency matrix.
+    /// add_selfloops_where_missing: Optional[bool] - Whether to add selfloops where they are missing. This parameter only applies to laplacian edge weighting method. By default, true.
     ///
     /// Raises
     /// --------------------
     /// ValueError,
     ///     If the given node sampling method is not supported.
     /// ValueError,
-    ///     If any of the given subgraph metric is not supported.
+    ///     If any of the given subgraph edge weighting method is not supported.
     /// ValueError,
-    ///     If the list of requested metrics is empty.
+    ///     If the list of requested edge weighting methods is empty.
     /// ValueError,
-    ///     If the `add_selfloops_where_missing` parameter is provided, but the metric is not laplacian.
+    ///     If the `add_selfloops_where_missing` parameter is provided, but the edge weighting method is not laplacian.
     ///
     /// Returns
     /// --------------------
     /// Tuple with the sampled nodes and the computed kernels.
     pub fn get_edge_prediction_subgraphs_from_node_ids(
         &self,
-        nodes_to_sample_number: NodeT,
+        number_of_nodes_to_sample: NodeT,
         random_state: u64,
         source_root_node: NodeT,
         destination_root_node: NodeT,
         node_sampling_method: &str,
-        metrics: Vec<&str>,
+        edge_weighting_methods: Vec<&str>,
         add_selfloops_where_missing: Option<bool>,
     ) -> PyResult<(
         Py<PyArray1<NodeT>>,
@@ -419,19 +427,19 @@ impl EnsmallenGraph {
         bool,
     )> {
         let (src_nodes, src_kernels) = self.get_subgraphs(
-            nodes_to_sample_number,
+            number_of_nodes_to_sample,
             random_state,
             Some(source_root_node),
             node_sampling_method,
-            metrics.clone(),
+            edge_weighting_methods.clone(),
             add_selfloops_where_missing,
         )?;
         let (dst_nodes, dst_kernels) = self.get_subgraphs(
-            nodes_to_sample_number,
+            number_of_nodes_to_sample,
             random_state,
             Some(destination_root_node),
             node_sampling_method,
-            metrics,
+            edge_weighting_methods,
             add_selfloops_where_missing,
         )?;
 

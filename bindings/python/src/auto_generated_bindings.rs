@@ -7166,19 +7166,19 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, nodes_to_sample_number, random_state)"]
+    #[text_signature = "($, self, number_of_nodes_to_sample, random_state)"]
     /// Return random unique sorted numbers.
     ///
     /// Parameters
     /// ----------
-    /// nodes_to_sample_number: int,
+    /// number_of_nodes_to_sample: int,
     ///     The number of nodes to sample.
     /// random_state: int,
     ///     The random state to use to reproduce the sampling.
     ///
     pub fn get_random_nodes(
         &self,
-        nodes_to_sample_number: NodeT,
+        number_of_nodes_to_sample: NodeT,
         random_state: u64,
     ) -> PyResult<Py<PyArray1<NodeT>>> {
         let gil = pyo3::Python::acquire_gil();
@@ -7186,18 +7186,18 @@ impl EnsmallenGraph {
             gil,
             pe!(self
                 .graph
-                .get_random_nodes(nodes_to_sample_number, random_state))?,
+                .get_random_nodes(number_of_nodes_to_sample, random_state))?,
             NodeT
         ))
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, nodes_to_sample_number, root_node)"]
+    #[text_signature = "($, self, number_of_nodes_to_sample, root_node)"]
     /// Return nodes sampled from the neighbourhood of given root nodes.
     ///
     /// Parameters
     /// ----------
-    /// nodes_to_sample_number: int,
+    /// number_of_nodes_to_sample: int,
     ///     The number of nodes to sample.
     /// root_node: int,
     ///     The root node from .
@@ -7210,9 +7210,9 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the given root node does not exist in the curret graph instance.
     ///
-    pub fn get_breath_first_search_random_nodes(
+    pub fn get_breadth_first_search_random_nodes(
         &self,
-        nodes_to_sample_number: NodeT,
+        number_of_nodes_to_sample: NodeT,
         root_node: NodeT,
     ) -> PyResult<Py<PyArray1<NodeT>>> {
         let gil = pyo3::Python::acquire_gil();
@@ -7220,7 +7220,7 @@ impl EnsmallenGraph {
             gil,
             pe!(self
                 .graph
-                .get_breath_first_search_random_nodes(nodes_to_sample_number, root_node))?,
+                .get_breadth_first_search_random_nodes(number_of_nodes_to_sample, root_node))?,
             NodeT
         ))
     }
@@ -7261,12 +7261,19 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, nodes_to_sample_number, random_state, root_node, node_sampling_method)"]
+    #[text_signature = "($, self)"]
+    /// Return list of the supported node sampling methods
+    pub fn get_node_sampling_methods(&self) -> Vec<&str> {
+        self.graph.get_node_sampling_methods()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self, number_of_nodes_to_sample, random_state, root_node, node_sampling_method)"]
     /// Return subsampled nodes according to the given method and parameters.
     ///
     /// Parameters
     /// ----------
-    /// nodes_to_sample_number: int,
+    /// number_of_nodes_to_sample: int,
     ///     The number of nodes to sample.
     /// random_state: int,
     ///     The random state to reproduce the sampling.
@@ -7283,7 +7290,7 @@ impl EnsmallenGraph {
     ///
     pub fn get_subsampled_nodes(
         &self,
-        nodes_to_sample_number: NodeT,
+        number_of_nodes_to_sample: NodeT,
         random_state: u64,
         root_node: Option<NodeT>,
         node_sampling_method: &str,
@@ -7292,7 +7299,7 @@ impl EnsmallenGraph {
         Ok(to_ndarray_1d!(
             gil,
             pe!(self.graph.get_subsampled_nodes(
-                nodes_to_sample_number,
+                number_of_nodes_to_sample,
                 random_state,
                 root_node,
                 node_sampling_method
@@ -9364,6 +9371,13 @@ impl EnsmallenGraph {
     ) -> Vec<String> {
         self.graph
             .get_unchecked_node_type_names_from_node_type_ids(node_type_ids)
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self)"]
+    /// Return list of the supported edge weighting methods
+    pub fn get_edge_weighting_methods(&self) -> Vec<&str> {
+        self.graph.get_edge_weighting_methods()
     }
 
     #[automatically_generated_binding]

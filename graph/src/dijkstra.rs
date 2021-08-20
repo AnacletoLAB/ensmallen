@@ -172,7 +172,7 @@ impl Graph {
     /// If any of the given node IDs does not exist in the graph the method will panic.
     ///
     /// TODO! Explore chains accelerations!
-    pub unsafe fn get_unchecked_breath_first_search_from_node_ids(
+    pub unsafe fn get_unchecked_breadth_first_search_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: Option<NodeT>,
@@ -271,7 +271,7 @@ impl Graph {
         if src_node_id == dst_node_id {
             return Err("The minimum path on a selfloop is not defined.".to_string());
         }
-        let bfs = self.get_unchecked_breath_first_search_from_node_ids(
+        let bfs = self.get_unchecked_breadth_first_search_from_node_ids(
             src_node_id,
             Some(dst_node_id),
             None,
@@ -557,7 +557,7 @@ impl Graph {
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
     pub unsafe fn get_unchecked_eccentricity_from_node_id(&self, node_id: NodeT) -> NodeT {
-        self.get_unchecked_breath_first_search_from_node_ids(node_id, None, None, None)
+        self.get_unchecked_breadth_first_search_from_node_ids(node_id, None, None, None)
             .get_eccentricity()
     }
 
@@ -733,7 +733,7 @@ impl Graph {
         }
 
         let bfs: Option<ShortestPathsResultBFS> = maximal_depth.map(|md| {
-            self.get_unchecked_breath_first_search_from_node_ids(
+            self.get_unchecked_breadth_first_search_from_node_ids(
                 src_node_id,
                 maybe_dst_node_id,
                 None,
@@ -1031,7 +1031,7 @@ impl Graph {
     /// # Raises
     /// * If the given source node ID does not exist in the current graph.
     /// * If the given optional destination node ID does not exist in the current graph.
-    pub fn get_breath_first_search_from_node_ids(
+    pub fn get_breadth_first_search_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: Option<NodeT>,
@@ -1041,7 +1041,7 @@ impl Graph {
         // Check if the given root exists in the graph
         self.validate_node_id(src_node_id)?;
         unsafe {
-            Ok(self.get_unchecked_breath_first_search_from_node_ids(
+            Ok(self.get_unchecked_breadth_first_search_from_node_ids(
                 src_node_id,
                 dst_node_id,
                 compute_predecessors,
@@ -1119,7 +1119,7 @@ impl Graph {
     fn get_four_sweep(&self) -> Result<(NodeT, NodeT)> {
         let most_central_node_id = unsafe { self.get_unchecked_most_central_node_id() };
         let first_candidate_most_eccentric_node_id = unsafe {
-            self.get_unchecked_breath_first_search_from_node_ids(
+            self.get_unchecked_breadth_first_search_from_node_ids(
                 most_central_node_id,
                 None,
                 None,
@@ -1129,7 +1129,7 @@ impl Graph {
         };
 
         let bfs1 = unsafe {
-            self.get_unchecked_breath_first_search_from_node_ids(
+            self.get_unchecked_breadth_first_search_from_node_ids(
                 first_candidate_most_eccentric_node_id,
                 None,
                 Some(true),
@@ -1138,7 +1138,7 @@ impl Graph {
         };
 
         let second_candidate_most_eccentric_node_id = unsafe {
-            self.get_unchecked_breath_first_search_from_node_ids(
+            self.get_unchecked_breadth_first_search_from_node_ids(
                 bfs1.get_median_point(bfs1.get_most_distant_node())?,
                 None,
                 Some(true),
@@ -1147,7 +1147,7 @@ impl Graph {
             .get_most_distant_node()
         };
         let bfs2 = unsafe {
-            self.get_unchecked_breath_first_search_from_node_ids(
+            self.get_unchecked_breadth_first_search_from_node_ids(
                 second_candidate_most_eccentric_node_id,
                 None,
                 Some(true),
@@ -1185,7 +1185,7 @@ impl Graph {
         // find the distances of all the nodes from the node with low eccentricty,
         // and thus with high centrality
         let bfs = unsafe {
-            self.get_unchecked_breath_first_search_from_node_ids(
+            self.get_unchecked_breadth_first_search_from_node_ids(
                 low_eccentricity_node,
                 None,
                 None,
@@ -1429,7 +1429,7 @@ impl Graph {
     /// * If the weights are to be used and the graph does not have weights.
     /// * If the given source node name does not exist in the current graph.
     /// * If the given optional destination node name does not exist in the current graph.
-    pub fn get_breath_first_search_from_node_names(
+    pub fn get_breadth_first_search_from_node_names(
         &self,
         src_node_name: &str,
         dst_node_name: Option<&str>,
@@ -1437,7 +1437,7 @@ impl Graph {
         maximal_depth: Option<NodeT>,
     ) -> Result<ShortestPathsResultBFS> {
         unsafe {
-            Ok(self.get_unchecked_breath_first_search_from_node_ids(
+            Ok(self.get_unchecked_breadth_first_search_from_node_ids(
                 self.get_node_id_from_node_name(src_node_name)?,
                 dst_node_name.map_or(Ok::<_, String>(None), |dst_node_name| {
                     Ok(Some(self.get_node_id_from_node_name(dst_node_name)?))

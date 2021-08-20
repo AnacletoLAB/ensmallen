@@ -8,17 +8,17 @@ impl Graph {
     /// Return random unique sorted numbers.
     ///
     /// # Arguments
-    /// * `nodes_to_sample_number`: NodeT - The number of nodes to sample.
+    /// * `number_of_nodes_to_sample`: NodeT - The number of nodes to sample.
     /// * `random_state`: u64 - The random state to use to reproduce the sampling.
     pub fn get_random_nodes(
         &self,
-        nodes_to_sample_number: NodeT,
+        number_of_nodes_to_sample: NodeT,
         random_state: u64,
     ) -> Result<Vec<NodeT>> {
         sorted_unique_sub_sampling(
             0,
             self.get_nodes_number() as u64,
-            nodes_to_sample_number as u64,
+            number_of_nodes_to_sample as u64,
             random_state,
         )
         .map(|result| result.into_iter().map(|node_id| node_id as NodeT).collect())
@@ -27,30 +27,30 @@ impl Graph {
     /// Return nodes sampled from the neighbourhood of given root nodes.
     ///
     /// # Arguments
-    /// * `nodes_to_sample_number`: NodeT - The number of nodes to sample.
+    /// * `number_of_nodes_to_sample`: NodeT - The number of nodes to sample.
     /// * `root_node`: NodeT - The root node from .
     ///
     /// # Raises
     /// * If the number of requested nodes is higher than the number of nodes in the graph.
     /// * If the given root node does not exist in the curret graph instance.
-    pub fn get_breath_first_search_random_nodes(
+    pub fn get_breadth_first_search_random_nodes(
         &self,
-        nodes_to_sample_number: NodeT,
+        number_of_nodes_to_sample: NodeT,
         root_node: NodeT,
     ) -> Result<Vec<NodeT>> {
-        if nodes_to_sample_number > self.get_nodes_number() {
+        if number_of_nodes_to_sample > self.get_nodes_number() {
             return Err(format!(
                 concat!(
                     "The requested number of nodes to sample `{}` is ",
                     "higher than the number of nodes `{}` that exist in the ",
                     "current graph instance."
                 ),
-                nodes_to_sample_number,
+                number_of_nodes_to_sample,
                 self.get_nodes_number()
             ));
         }
         self.validate_node_id(root_node)?;
-        let nodes_to_sample_number = nodes_to_sample_number as usize;
+        let number_of_nodes_to_sample = number_of_nodes_to_sample as usize;
         let mut stack = vec![root_node];
         let mut sampled_nodes = HashSet::new();
         sampled_nodes.insert(root_node);
@@ -60,14 +60,14 @@ impl Graph {
                     if sampled_nodes.contains(&dst) {
                         return;
                     }
-                    if sampled_nodes.len() == nodes_to_sample_number {
+                    if sampled_nodes.len() == number_of_nodes_to_sample {
                         return;
                     }
                     sampled_nodes.insert(dst);
                     stack.push(dst);
                 },
             );
-            if sampled_nodes.len() == nodes_to_sample_number {
+            if sampled_nodes.len() == number_of_nodes_to_sample {
                 break;
             }
         }
@@ -97,10 +97,15 @@ impl Graph {
         )
     }
 
+    /// Return list of the supported node sampling methods.
+    pub fn get_node_sampling_methods(&self) -> Vec<&str> {
+        vec!["random_nodes", "breadth_first_search", "uniform_random_walk"]
+    }
+
     /// Return subsampled nodes according to the given method and parameters.
     ///
     /// # Arguments
-    /// * `nodes_to_sample_number`: NodeT - The number of nodes to sample.
+    /// * `number_of_nodes_to_sample`: NodeT - The number of nodes to sample.
     /// * `random_state`: u64 - The random state to reproduce the sampling.
     /// * `root_node`: Option<NodeT> - The (optional) root node to use to sample. In not provided, a random one is sampled.
     /// * `node_sampling_method`: &str - The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
@@ -109,7 +114,7 @@ impl Graph {
     /// * If the given node sampling method is not supported.
     pub fn get_subsampled_nodes(
         &self,
-        nodes_to_sample_number: NodeT,
+        number_of_nodes_to_sample: NodeT,
         random_state: u64,
         root_node: Option<NodeT>,
         node_sampling_method: &str,
@@ -118,17 +123,16 @@ impl Graph {
         let root_node =
             root_node.unwrap_or(splitmix64(random_state) as NodeT % self.get_nodes_number());
         match node_sampling_method {
-            "random_nodes" => self.get_random_nodes(nodes_to_sample_number, random_state),
-            "breath_first_search" => self.get_breath_first_search_random_nodes(nodes_to_sample_number, root_node),
-            "uniform_random_walk" => self.get_uniform_random_walk_random_nodes(root_node, random_state, nodes_to_sample_number as u64),
+            "random_nodes" => self.get_random_nodes(number_of_nodes_to_sample, random_state),
+            "breadth_first_search" => self.get_breadth_first_search_random_nodes(number_of_nodes_to_sample, root_node),
+            "uniform_random_walk" => self.get_uniform_random_walk_random_nodes(root_node, random_state, number_of_nodes_to_sample as u64),
             node_sampling_method => Err(format!(
                 concat!(
                     "The provided node sampling method {} is not supported. The supported methods are:\n",
-                    "* random_nodes\n",
-                    "* breath_first_search\n",
-                    "* uniform_random_walk\n"
+                    "{}"
                 ),
-                node_sampling_method
+                node_sampling_method,
+                self.get_node_sampling_methods().into_iter().map(|node_sampling_schema| format!("* {}", node_sampling_schema)).join("\n")
             ))
         }
     }
