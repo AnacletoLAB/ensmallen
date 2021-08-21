@@ -144,7 +144,7 @@ impl Graph {
 
         let nodes_number = self.get_nodes_number() as usize;
         let mut tree = HashSet::with_capacity(self.get_nodes_number() as usize);
-        let mut components = vec![NOT_PRESENT; nodes_number];
+        let mut components = vec![NODE_NOT_PRESENT; nodes_number];
         let mut component_sizes: Vec<NodeT> = Vec::new();
         let mut components_remapping: Vec<NodeT> = Vec::new();
         let mut max_component_size: NodeT = 0;
@@ -190,7 +190,7 @@ impl Graph {
             }
             let src_component = components[src as usize];
             let dst_component = components[dst as usize];
-            match (src_component == NOT_PRESENT, dst_component == NOT_PRESENT) {
+            match (src_component == NODE_NOT_PRESENT, dst_component == NODE_NOT_PRESENT) {
                 // If neither nodes have a component, they must be inserted
                 // both in the components vector and in the tree.
                 // The edge must be added to the three.
@@ -252,7 +252,7 @@ impl Graph {
                 }
                 // If only one node has a component, the second node must be added.
                 _ => {
-                    let (component_id, not_inserted_node) = match src_component == NOT_PRESENT {
+                    let (component_id, not_inserted_node) = match src_component == NODE_NOT_PRESENT {
                         true => (components_remapping[dst_component as usize], src),
                         false => (components_remapping[src_component as usize], dst),
                     };
@@ -428,7 +428,7 @@ impl Graph {
         self.must_be_undirected()?;
         let verbose = verbose.unwrap_or(false);
         let nodes_number = self.get_nodes_number() as usize;
-        let mut parents = vec![NOT_PRESENT; nodes_number];
+        let mut parents = vec![NODE_NOT_PRESENT; nodes_number];
         let (cpu_number, pool) = get_thread_pool()?;
         let shared_stacks: Arc<Vec<Mutex<Vec<NodeT>>>> = Arc::from(
             (0..std::cmp::max(cpu_number - 1, 1))
@@ -458,7 +458,7 @@ impl Graph {
                 let parents = thread_safe_parents.value.get();
                 (0..nodes_number).progress_with(pb).for_each(|src| unsafe {
                     // If the node has already been explored we skip ahead.
-                    if (*parents)[src] != NOT_PRESENT {
+                    if (*parents)[src] != NODE_NOT_PRESENT {
                         return;
                     }
 
@@ -469,11 +469,11 @@ impl Graph {
                         return;
                     }
                     loop {
-                        if (*parents)[src] != NOT_PRESENT {
+                        if (*parents)[src] != NODE_NOT_PRESENT {
                             break;
                         }
                         if active_nodes_number.load(Ordering::SeqCst) == 0 {
-                            if (*parents)[src] != NOT_PRESENT {
+                            if (*parents)[src] != NODE_NOT_PRESENT {
                                 break;
                             }
                             (*parents)[src] = src as NodeT;
@@ -508,7 +508,7 @@ impl Graph {
                     let parents = thread_safe_parents.value.get();
                     unsafe{self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)}
                         .for_each(|dst| unsafe {
-                            if (*parents)[dst as usize] == NOT_PRESENT {
+                            if (*parents)[dst as usize] == NODE_NOT_PRESENT {
                                 (*parents)[dst as usize] = src;
                                 total_inserted_edges.fetch_add(1, Ordering::SeqCst);
                                 active_nodes_number.fetch_add(1, Ordering::SeqCst);
@@ -579,7 +579,7 @@ impl Graph {
 
         let components = self
             .iter_node_ids()
-            .map(|_| AtomicU32::new(NOT_PRESENT))
+            .map(|_| AtomicU32::new(NODE_NOT_PRESENT))
             .collect::<Vec<_>>();
         let mut min_component_size: NodeT = NodeT::MAX;
         let mut max_component_size: NodeT = 0;
@@ -629,7 +629,7 @@ impl Graph {
                     .progress_with(pb)
                     .for_each(|src| {
                         // If the node has already been explored we skip ahead.
-                        if components[src as usize].load(Ordering::Relaxed) != NOT_PRESENT {
+                        if components[src as usize].load(Ordering::Relaxed) != NODE_NOT_PRESENT {
                             return;
                         }
 
@@ -652,7 +652,7 @@ impl Graph {
                         loop {
                             // if the node has been now mapped to a component by anyone of the
                             // parallel threads, move on to the next node.
-                            if components[src as usize].load(Ordering::Relaxed) != NOT_PRESENT {
+                            if components[src as usize].load(Ordering::Relaxed) != NODE_NOT_PRESENT {
                                 break;
                             }
                             // Otherwise, Check if the parallel threads are finished
@@ -667,7 +667,7 @@ impl Graph {
                                 // presence check above and the active nodes numbers check
                                 // the src node will never increase the component size and thus
                                 // leading to wrong results.
-                                if components[src as usize].load(Ordering::Relaxed) != NOT_PRESENT {
+                                if components[src as usize].load(Ordering::Relaxed) != NODE_NOT_PRESENT {
                                     break;
                                 }
                                 let ccs =
@@ -719,7 +719,7 @@ impl Graph {
                     unsafe{self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)}
                         .for_each(|dst| {
                             if components[dst as usize].swap(src_component, Ordering::SeqCst)
-                                == NOT_PRESENT
+                                == NODE_NOT_PRESENT
                             {
                                 active_nodes_number.fetch_add(1, Ordering::SeqCst);
                                 current_component_size.fetch_add(1, Ordering::SeqCst);

@@ -32,7 +32,7 @@ impl ShortestPathsResultBFS {
     }
 
     pub(crate) fn has_path_to_node_id(&self, node_id: NodeT) -> bool {
-        self.get_distance_from_node_id(node_id) != NOT_PRESENT
+        self.get_distance_from_node_id(node_id) != NODE_NOT_PRESENT
     }
 
     pub(crate) fn get_distance_from_node_id(&self, node_id: NodeT) -> NodeT {
@@ -103,7 +103,7 @@ impl ShortestPathsResultBFS {
     pub(crate) fn into_iter_finite_distances(self) -> impl Iterator<Item = NodeT> {
         self.distances
             .into_iter()
-            .filter(|&distance| distance != NOT_PRESENT)
+            .filter(|&distance| distance != NODE_NOT_PRESENT)
     }
 
     pub(crate) fn into_par_iter_node_ids_and_finite_distances(
@@ -113,7 +113,7 @@ impl ShortestPathsResultBFS {
             .into_par_iter()
             .enumerate()
             .filter_map(|(node_id, distance)| {
-                if distance != NOT_PRESENT {
+                if distance != NODE_NOT_PRESENT {
                     Some((node_id as NodeT, distance))
                 } else {
                     None
@@ -185,14 +185,14 @@ impl Graph {
         let mut found_destination = false;
 
         let mut predecessors: Option<Vec<NodeT>> = if compute_predecessors {
-            let mut predecessors = vec![NOT_PRESENT; nodes_number];
+            let mut predecessors = vec![NODE_NOT_PRESENT; nodes_number];
             predecessors[src_node_id as usize] = src_node_id;
             Some(predecessors)
         } else {
             None
         };
 
-        let mut distances: Vec<NodeT> = vec![NOT_PRESENT; nodes_number];
+        let mut distances: Vec<NodeT> = vec![NODE_NOT_PRESENT; nodes_number];
         distances[src_node_id as usize] = 0;
         let mut eccentricity = 0;
         let mut most_distant_node = src_node_id;
@@ -1308,7 +1308,7 @@ impl Graph {
             .par_iter_node_ids()
             .progress_with(pb)
             .map(|node_id| unsafe { self.get_unchecked_eccentricity_from_node_id(node_id) })
-            .filter(|&distance| !ignore_infinity || distance != NOT_PRESENT)
+            .filter(|&distance| !ignore_infinity || distance != NODE_NOT_PRESENT)
             .max()
             .unwrap_or(0) as f64)
     }

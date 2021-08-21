@@ -3,7 +3,7 @@ use std::intrinsics::unlikely;
 use crate::{
     parse_nodes, parse_types, utils::ItersWrapper, EdgeFileReader, EdgeFileWriter, EdgeT,
     EdgeTypeT, NodeFileReader, NodeFileWriter, NodeT, Result, TypeFileReader, TypeFileWriter,
-    Vocabulary, WeightT, NOT_PRESENT,
+    Vocabulary, WeightT, NODE_NOT_PRESENT,
 };
 
 /// Create a new edge list starting from given one with node IDs densified.
@@ -526,7 +526,7 @@ pub fn densify_sparse_numeric_edge_list(
 
     let name = name.unwrap_or("Graph".to_owned());
     let mut nodes: Vec<NodeT> = if let Some(maximum_node_id) = maximum_node_id {
-        vec![NOT_PRESENT; maximum_node_id as usize]
+        vec![NODE_NOT_PRESENT; maximum_node_id as usize]
     } else {
         Vec::new()
     };
@@ -622,11 +622,11 @@ pub fn densify_sparse_numeric_edge_list(
         // that this branch should not be visited often during the
         // execution of this script, except for pathological cases.
         if unlikely(nodes.len() <= numeric_node_name) {
-            nodes.extend((nodes.len()..=numeric_node_name).map(|_| NOT_PRESENT));
+            nodes.extend((nodes.len()..=numeric_node_name).map(|_| NODE_NOT_PRESENT));
         }
         // If the ID for the current source node was not already provided
         // we assign to it the current number of inserted nodes
-        if nodes[numeric_node_name] == NOT_PRESENT {
+        if nodes[numeric_node_name] == NODE_NOT_PRESENT {
             nodes[numeric_node_name] = inserted_nodes;
             inserted_nodes += 1;
         };
@@ -688,7 +688,7 @@ pub fn densify_sparse_numeric_edge_list(
             nodes
                 .into_iter()
                 .enumerate()
-                .filter(|&(_, numeric_node_name)| numeric_node_name != NOT_PRESENT)
+                .filter(|&(_, numeric_node_name)| numeric_node_name != NODE_NOT_PRESENT)
                 .map(|(numeric_node_name, node_id)| {
                     (node_id, numeric_node_name.to_string(), None, None)
                 }),

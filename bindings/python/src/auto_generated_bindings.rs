@@ -9620,7 +9620,7 @@ impl EnsmallenGraph {
         first_phase_minimum_improvement: Option<f64>,
         default_weight: Option<WeightT>,
         patience: Option<usize>,
-    ) -> PyResult<Vec<Vec<NodeT>>> {
+    ) -> PyResult<Vec<Vec<usize>>> {
         pe!(self.graph.louvain_community_detection(
             recursion_minimum_improvement,
             first_phase_minimum_improvement,
