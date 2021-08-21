@@ -81,7 +81,17 @@ impl Graph {
         // We initialize the communities as the ids of the nodes.
         let mut communities = (0..self.get_nodes_number() as usize).collect::<Vec<usize>>();
         // Vector of the weights of the edges contained within each community.
-        let mut communities_weights: Vec<f64> = vec![0.0; self.get_nodes_number() as usize];
+        let mut communities_weights: Vec<f64> = self
+            .par_iter_node_ids()
+            .map(|node_id| unsafe {
+                if let Ok(edge_id) = self.get_edge_id_from_node_ids(node_id, node_id) {
+                    self.get_unchecked_edge_weight_from_edge_id(edge_id)
+                        .unwrap_or(default_weight) as f64
+                } else {
+                    0.0
+                }
+            })
+            .collect();
         // We initialize the community vectors.
         let mut node_ids_per_community: Vec<Vec<NodeT>> = self
             .par_iter_node_ids()
