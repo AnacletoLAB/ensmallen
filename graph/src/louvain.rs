@@ -1,7 +1,7 @@
 use super::*;
 use log::info;
 use num_traits::{Pow, Zero};
-use rayon::iter::{IntoParallelIterator, ParallelIterator};
+use rayon::prelude::*;
 
 impl Graph {
     #[no_numpy_binding]
@@ -82,8 +82,8 @@ impl Graph {
         // is equal to the weighted indegree.
         let node_indegrees: Vec<f64> = self.get_weighted_node_indegrees().unwrap_or_else(|_| {
             self.get_node_indegrees()
-                .into_iter()
-                .map(|indegree| indegree as f64)
+                .into_par_iter()
+                .map(|indegree| (default_weight as f64) * indegree as f64)
                 .collect::<Vec<_>>()
         });
         let mut communities_indegrees = node_indegrees.clone();
@@ -427,7 +427,8 @@ impl Graph {
                 (0..communities_number)
                     .into_par_iter()
                     .flat_map_iter(move |src_community| {
-                        (0..communities_number).map(move |dst_community| (src_community, dst_community))
+                        (0..communities_number)
+                            .map(move |dst_community| (src_community, dst_community))
                     })
                     // If this is an undirected graph, we can
                     // compute only the upper triangolar adjacency matrix
@@ -499,5 +500,117 @@ impl Graph {
         info!("Returning computed communities.");
         // Return the obtained graph.
         Ok(all_communities)
+    }
+
+    /// Returns the modularity of the graph from the given memberships.
+    ///
+    /// # Arguments
+    /// * `node_community_memberships`: &[NodeT], The memberships assigned to each node of the graph.
+    /// * `default_weight`: Option<WeightT> - The default weight to use if the graph is not weighted. By default, one.
+    ///
+    /// # Raises
+    /// * If the `default_weight` has been provided but the graph is already weighted.
+    /// * If the `default_weight` has an invalid value, i.e. zero, NaN or infinity.
+    /// * If the number of provided memberships does not match the number of nodes of the graph.
+    /// * If the memberships are not a dense range from 0 to `max(memberships)`.
+    ///
+    /// # References
+    /// The formula implementation is as defined from [Community structure in directed networks](https://arxiv.org/pdf/0709.4500.pdf),
+    /// by E. A. Leicht and M. E. J. Newman.
+    pub fn get_modularity_from_node_community_memberships(
+        &self,
+        node_community_memberships: &[NodeT],
+        default_weight: Option<WeightT>,
+    ) -> Result<f64> {
+        // If the current graph instance has no edges, surely the
+        // modularity is zero.
+        if !self.has_edges() {
+            return Ok(0.0);
+        }
+        // Otherwise we check if the provided node colors are compatible with the current
+        // graph instance.
+        if node_community_memberships.len() != self.get_nodes_number() as usize {
+            return Err(format!(
+                concat!(
+                    "The graph contains {} nodes, while the provided node community memberships ",
+                    "where {}. You need to provide the node community memberships for each node."
+                ),
+                node_community_memberships.len(),
+                self.get_nodes_number()
+            ));
+        }
+        // If the graph has edge weights and a default weight has
+        // been provided that value will not be considered.
+        if default_weight.is_some() && self.has_edge_weights() {
+            return Err(concat!(
+                "It does not make sense to provide the default weight when ",
+                "the graph is already weighted."
+            )
+            .to_string());
+        }
+        // Handle the defaults if the value has not been provided.
+        let default_weight = default_weight.unwrap_or(1.0);
+        // We check that the default weight parameter has a valida parameter.
+        if default_weight.is_zero() || default_weight.is_nan() || default_weight.is_infinite() {
+            return Err(concat!(
+                "The provided parameter `default_weight` is an illegal value, i.e. ",
+                "either zero, NaN or infinity."
+            )
+            .to_string());
+        }
+        // We compute the edge weights
+        // Total edge weights, i.e. the weights of all the edges in the graph.
+        let total_edge_weights: f64 = self
+            .get_total_edge_weights()
+            // If the graph does not start as a weighted graph, we use the default weight
+            // that was provided by the user.
+            .unwrap_or_else(|_| {
+                (default_weight as f64) * (self.get_directed_edges_number() as f64)
+            });
+        // Compute the weighted node outdegrees
+        let weighted_node_outdegrees: Vec<f64> =
+            self.get_weighted_node_degrees().unwrap_or_else(|_| {
+                self.par_iter_node_degrees()
+                    .map(|degree| (default_weight as f64) * degree as f64)
+                    .collect::<Vec<_>>()
+            });
+        // Compute the weighted node indegrees
+        let weighted_node_indegrees = if self.is_directed() {
+            Some(self.get_weighted_node_indegrees().unwrap_or_else(|_| {
+                self.get_node_indegrees()
+                    .into_par_iter()
+                    .map(|indegree| (default_weight as f64) * indegree as f64)
+                    .collect::<Vec<_>>()
+            }))
+        } else {
+            None
+        };
+
+        let compute_modularity = |src, dst, edge_weight| {
+            edge_weight as f64
+                - weighted_node_indegrees.as_ref().map_or_else(
+                    || weighted_node_outdegrees[src as usize],
+                    |weighted_node_indegrees| weighted_node_indegrees[src as usize],
+                ) * weighted_node_outdegrees[dst as usize]
+                    / total_edge_weights
+        };
+
+        let have_same_community = |src: &NodeT, dst: &NodeT| -> bool {
+            node_community_memberships[*src as usize] == node_community_memberships[*dst as usize]
+        };
+
+        // Then we actually compute the modularity.
+        Ok(if self.has_edge_weights() {
+            self.par_iter_directed_edge_node_ids()
+                .zip(self.par_iter_edge_weights().unwrap())
+                .filter(|((_, src, dst), _)| have_same_community(src, dst))
+                .map(|((_, src, dst), edge_weight)| compute_modularity(src, dst, edge_weight))
+                .sum::<f64>()
+        } else {
+            self.par_iter_directed_edge_node_ids()
+                .filter(|(_, src, dst)| have_same_community(src, dst))
+                .map(|(_, src, dst)| compute_modularity(src, dst, default_weight))
+                .sum::<f64>()
+        } / total_edge_weights)
     }
 }

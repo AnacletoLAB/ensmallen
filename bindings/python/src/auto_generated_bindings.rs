@@ -9630,6 +9630,38 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
+    #[text_signature = "($, self, node_community_memberships, default_weight)"]
+    /// Returns the modularity of the graph from the given memberships.
+    ///
+    /// Parameters
+    /// ----------
+    /// default_weight: Optional[float],
+    ///     The default weight to use if the graph is not weighted. By default, one.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the `default_weight` has been provided but the graph is already weighted.
+    /// ValueError
+    ///     If the `default_weight` has an invalid value, i.e. zero, NaN or infinity.
+    /// ValueError
+    ///     If the number of provided memberships does not match the number of nodes of the graph.
+    /// ValueError
+    ///     If the memberships are not a dense range from 0 to `max(memberships)`.
+    ///
+    pub fn get_modularity_from_node_community_memberships(
+        &self,
+        node_community_memberships: [NodeT],
+        default_weight: Option<WeightT>,
+    ) -> PyResult<f64> {
+        pe!(self.graph.get_modularity_from_node_community_memberships(
+            node_community_memberships,
+            default_weight
+        ))
+    }
+
+    #[automatically_generated_binding]
     #[text_signature = "($, self)"]
     /// Returns the minumum unweighted preferential attachment score.
     ///
