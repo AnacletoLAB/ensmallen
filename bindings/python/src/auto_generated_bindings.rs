@@ -9652,11 +9652,11 @@ impl EnsmallenGraph {
     ///
     pub fn get_modularity_from_node_community_memberships(
         &self,
-        node_community_memberships: [NodeT],
+        node_community_memberships: Vec<NodeT>,
         default_weight: Option<WeightT>,
     ) -> PyResult<f64> {
         pe!(self.graph.get_modularity_from_node_community_memberships(
-            node_community_memberships,
+            &node_community_memberships,
             default_weight
         ))
     }
