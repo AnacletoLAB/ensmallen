@@ -454,8 +454,8 @@ impl Graph {
                 .filter(|(_, src, dst)| have_same_community(src, dst))
                 .map(|(_, src, dst)| compute_modularity(src, dst, 1.0))
                 .sum::<f64>()
-        } / factor
-            * total_edge_weights)
+        } / (factor
+            * total_edge_weights))
     }
 
     /// Returns the directed modularity of the graph from the given memberships.
