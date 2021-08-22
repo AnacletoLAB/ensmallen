@@ -25,10 +25,10 @@ fn test_cora_louvain() -> Result<(), String> {
             None,
         )
         .unwrap();
-    cora.louvain_community_detection(None, None, None, None)
+    cora.get_undirected_louvain_community_detection(None, None, None, None)
         .unwrap();
     cora_with_no_words
-        .louvain_community_detection(None, None, None, None)
+        .get_undirected_louvain_community_detection(None, None, None, None)
         .unwrap();
     Ok(())
 }

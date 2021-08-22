@@ -9588,8 +9588,8 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, recursion_minimum_improvement, first_phase_minimum_improvement, default_weight, patience)"]
-    /// Returns vector of vectors of communities for each layer of hierarchy.
+    #[text_signature = "($, self, recursion_minimum_improvement, first_phase_minimum_improvement, patience, random_state)"]
+    /// Returns vector of vectors of communities for each layer of hierarchy minimizing undirected modularity.
     ///
     /// Parameters
     /// ----------
@@ -9597,68 +9597,78 @@ impl EnsmallenGraph {
     ///     The minimum improvement to warrant another resursion round. By default, zero.
     /// first_phase_minimum_improvement: Optional[float],
     ///     The minimum improvement to warrant another first phase iteration. By default, `0.00001` (not zero because of numerical instability).
-    /// default_weight: Optional[float],
-    ///     The default weight to use if the graph is not weighted. By default, one.
     /// patience: Optional[int],
     ///     How many iterations of the first phase to wait for before stopping. By default, `5`.
+    /// random_state: Optional[int],
+    ///     The random state to use to reproduce this modularity computation. By default, 42.
     ///
     ///
     /// Raises
     /// -------
     /// ValueError
-    ///     If the `default_weight` has been provided but the graph is already weighted.
-    /// ValueError
-    ///     If the `default_weight` has an invalid value, i.e. zero, NaN or infinity.
+    ///     If the graph is not directed.
     /// ValueError
     ///     If the `recursion_minimum_improvement` has an invalid value, i.e. NaN or infinity.
     /// ValueError
     ///     If the `first_phase_minimum_improvement` has an invalid value, i.e. NaN or infinity.
     ///
-    pub fn louvain_community_detection(
+    pub fn get_undirected_louvain_community_detection(
         &self,
         recursion_minimum_improvement: Option<f64>,
         first_phase_minimum_improvement: Option<f64>,
-        default_weight: Option<WeightT>,
         patience: Option<usize>,
+        random_state: Option<u64>,
     ) -> PyResult<Vec<Vec<usize>>> {
-        pe!(self.graph.louvain_community_detection(
+        pe!(self.graph.get_undirected_louvain_community_detection(
             recursion_minimum_improvement,
             first_phase_minimum_improvement,
-            default_weight,
-            patience
+            patience,
+            random_state
         ))
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_community_memberships, default_weight)"]
-    /// Returns the modularity of the graph from the given memberships.
+    #[text_signature = "($, self, node_community_memberships)"]
+    /// Returns the directed modularity of the graph from the given memberships.
     ///
     /// Parameters
     /// ----------
-    /// default_weight: Optional[float],
-    ///     The default weight to use if the graph is not weighted. By default, one.
     ///
     ///
     /// Raises
     /// -------
     /// ValueError
-    ///     If the `default_weight` has been provided but the graph is already weighted.
-    /// ValueError
-    ///     If the `default_weight` has an invalid value, i.e. zero, NaN or infinity.
+    ///     If the number of provided memberships does not match the number of nodes of the graph.
+    ///
+    pub fn get_directed_modularity_from_node_community_memberships(
+        &self,
+        node_community_memberships: [NodeT],
+    ) -> PyResult<f64> {
+        pe!(self
+            .graph
+            .get_directed_modularity_from_node_community_memberships(node_community_memberships))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self, node_community_memberships)"]
+    /// Returns the undirected modularity of the graph from the given memberships.
+    ///
+    /// Parameters
+    /// ----------
+    ///
+    ///
+    /// Raises
+    /// -------
     /// ValueError
     ///     If the number of provided memberships does not match the number of nodes of the graph.
-    /// ValueError
-    ///     If the memberships are not a dense range from 0 to `max(memberships)`.
     ///
-    pub fn get_modularity_from_node_community_memberships(
+    pub fn get_undirected_modularity_from_node_community_memberships(
         &self,
-        node_community_memberships: Vec<NodeT>,
-        default_weight: Option<WeightT>,
+        node_community_memberships: [NodeT],
     ) -> PyResult<f64> {
-        pe!(self.graph.get_modularity_from_node_community_memberships(
-            &node_community_memberships,
-            default_weight
-        ))
+        pe!(self
+            .graph
+            .get_undirected_modularity_from_node_community_memberships(node_community_memberships))
     }
 
     #[automatically_generated_binding]
