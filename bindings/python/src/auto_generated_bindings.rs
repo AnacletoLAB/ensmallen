@@ -9642,11 +9642,11 @@ impl EnsmallenGraph {
     ///
     pub fn get_directed_modularity_from_node_community_memberships(
         &self,
-        node_community_memberships: [NodeT],
+        node_community_memberships: Vec<NodeT>,
     ) -> PyResult<f64> {
         pe!(self
             .graph
-            .get_directed_modularity_from_node_community_memberships(node_community_memberships))
+            .get_directed_modularity_from_node_community_memberships(&node_community_memberships))
     }
 
     #[automatically_generated_binding]
@@ -9664,11 +9664,11 @@ impl EnsmallenGraph {
     ///
     pub fn get_undirected_modularity_from_node_community_memberships(
         &self,
-        node_community_memberships: [NodeT],
+        node_community_memberships: Vec<NodeT>,
     ) -> PyResult<f64> {
         pe!(self
             .graph
-            .get_undirected_modularity_from_node_community_memberships(node_community_memberships))
+            .get_undirected_modularity_from_node_community_memberships(&node_community_memberships))
     }
 
     #[automatically_generated_binding]
