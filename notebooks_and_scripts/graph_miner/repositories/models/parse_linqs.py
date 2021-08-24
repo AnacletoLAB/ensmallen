@@ -20,7 +20,7 @@ def get_words_data(graph: EnsmallenGraph) -> pd.DataFrame:
     Pandas DataFrame with words features as columns and nodes as rows.
     """
     word_node_type = graph.get_unique_node_type_names().index("Word")
-    weights = graph.get_weights() if graph.has_edge_weights() else None
+    weights = graph.get_edge_weights() if graph.has_edge_weights() else None
     return pd.DataFrame({
         node_name: {
             graph.get_node_name(source): weights[graph.get_edge_id_with_type_from_node_ids(source, node_id)] if graph.has_edge_weights() else 1
