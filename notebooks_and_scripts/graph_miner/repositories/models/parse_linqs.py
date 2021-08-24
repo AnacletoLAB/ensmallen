@@ -3,13 +3,14 @@ import re
 import os
 import pandas as pd
 import numpy as np
+from typing import Tuple
 from ensmallen_graph import EnsmallenGraph
 from tqdm.auto import tqdm
 
 
-def get_words_data(graph: EnsmallenGraph) -> pd.DataFrame:
+def get_words_data(graph: EnsmallenGraph) -> Tuple[EnsmallenGraph, pd.DataFrame]:
     """Return dataframe with words features.
-    
+
     Parameters
     --------------------
     graph: EnsmallenGraph,
@@ -17,18 +18,28 @@ def get_words_data(graph: EnsmallenGraph) -> pd.DataFrame:
 
     Returns
     --------------------
-    Pandas DataFrame with words features as columns and nodes as rows.
+    Tuple containing:
+        - Provided graph without the Word nodes.
+        - Pandas DataFrame with words features as columns and nodes as rows.
     """
-    word_node_type = graph.get_unique_node_type_names().index("Word")
-    weights = graph.get_edge_weights() if graph.has_edge_weights() else None
-    return pd.DataFrame({
+    word_node_type = graph.get_node_type_id_from_node_type_name("Word")
+    # Extracting node features
+    node_features = pd.DataFrame({
         node_name: {
-            graph.get_node_name(source): weights[graph.get_edge_id_with_type_from_node_ids(source, node_id)] if graph.has_edge_weights() else 1
-            for source in graph.get_filtered_neighbours(node_id)
+            graph.get_node_name_from_node_id(dst): graph.get_edge_weight_from_node_ids(src, dst) if graph.has_edge_weights() else 1.0
+            for dst in graph.get_neighbour_node_ids_from_node_id(src)
         }
-        for node_id, node_name in enumerate(tqdm(graph.get_node_names(), desc="Extracting words features"))
-        if graph.get_node_type(node_id) == word_node_type
-    }).fillna(0)
+        for src, node_name in enumerate(tqdm(graph.get_node_names(), desc="Extracting words features"))
+        if word_node_type in graph.get_node_type_ids_from_node_id(src)
+    }).fillna(0.0)
+    # Filtering graph
+    filtered_graph = graph.filter_from_names(
+        node_type_name_to_filter=["Word"]
+    ).remove_edge_weights()
+    # Aligning node features with filtered graph node names.
+    node_features = node_features.loc[filtered_graph.get_node_names()]
+    # Returning elaborared graph and node features.
+    return (filtered_graph, node_features)
 
 
 def parse_linqs_pubmed_incidence_matrix(
