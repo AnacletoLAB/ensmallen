@@ -20,6 +20,7 @@ impl EnsmallenGraph {
     /// node_sampling_method: str - The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
     /// edge_weighting_methods: List[str] - The edge weighting methods to use to compute the adjacency matrix.
     /// add_selfloops_where_missing: Optional[bool] - Whether to add selfloops where they are missing. This parameter only applies to laplacian edge weighting method. By default, true.
+    /// unique: Optional[bool] - Whether to make the sampled nodes unique.
     ///
     /// Raises
     /// --------------------
@@ -43,6 +44,7 @@ impl EnsmallenGraph {
         node_sampling_method: &str,
         edge_weighting_methods: Vec<&str>,
         add_selfloops_where_missing: Option<bool>,
+        unique: Option<bool>,
     ) -> PyResult<(Py<PyArray1<NodeT>>, Vec<Py<PyArray2<WeightT>>>)> {
         // Check if the list of requested edge weighting methods is empty.
         if edge_weighting_methods.is_empty() {
@@ -73,6 +75,7 @@ impl EnsmallenGraph {
             random_state,
             root_node,
             node_sampling_method,
+            unique
         ))?;
 
         // Some of the sampling mechanism are not guaranteed
@@ -123,7 +126,7 @@ impl EnsmallenGraph {
                 // iterator and populate the kernel using the weights.
                 if edge_weighting_method == "weights" {
                     self.graph
-                        .par_iter_subsampled_weighted_adjacency_matrix(&nodes)?
+                        .par_iter_subsampled_weighted_adjacency_matrix(&nodes, Some(false))?
                         .for_each(build_kernel);
                 // Similarly, if the required edge weighting method is the laplacian
                 // we populate the kernel with the laplacian.
@@ -132,6 +135,7 @@ impl EnsmallenGraph {
                         .par_iter_subsampled_symmetric_laplacian_adjacency_matrix(
                             &nodes,
                             add_selfloops_where_missing,
+                            Some(false),
                         )
                         .for_each(build_kernel);
                 } else {
@@ -160,6 +164,143 @@ impl EnsmallenGraph {
 
         // And return the sampled nodes and kernel
         Ok((numpy_nodes.t.to_owned(), kernels))
+    }
+
+    #[args(py_kwargs = "**")]
+    #[text_signature = "($self, number_of_nodes_to_sample, random_state, root_node, node_sampling_method, edge_weighting_methods, add_selfloops_where_missing)"]
+    /// Return subsampled nodes according to the given method and parameters.
+    ///
+    /// Parameters
+    /// --------------------
+    /// number_of_nodes_to_sample: int - The number of nodes to sample.
+    /// random_state: int - The random state to reproduce the sampling.
+    /// root_node: Optional[int] - The (optional) root node to use to sample. In not provided, a random one is sampled.
+    /// node_sampling_method: str - The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
+    /// edge_weighting_methods: List[str] - The edge weighting methods to use to compute the adjacency matrix.
+    /// add_selfloops_where_missing: Optional[bool] - Whether to add selfloops where they are missing. This parameter only applies to laplacian edge weighting method. By default, true.
+    ///
+    /// Raises
+    /// --------------------
+    /// ValueError,
+    ///     If the given node sampling method is not supported.
+    /// ValueError,
+    ///     If any of the given subgraph edge weighting method is not supported.
+    /// ValueError,
+    ///     If the list of requested edge weighting methods is empty.
+    /// ValueError,
+    ///     If the `add_selfloops_where_missing` parameter is provided, but the edge weighting method is not laplacian.
+    ///
+    /// Returns
+    /// --------------------
+    /// Tuple with the sampled nodes and the computed kernels.
+    pub fn get_sparse_subgraphs(
+        &self,
+        number_of_nodes_to_sample: NodeT,
+        random_state: u64,
+        root_node: Option<NodeT>,
+        node_sampling_method: &str,
+        edge_weighting_methods: Vec<&str>,
+        add_selfloops_where_missing: Option<bool>,
+        unique: Option<bool>,
+    ) -> PyResult<(
+        Py<PyArray1<NodeT>>,
+        Vec<(Py<PyArray2<usize>>, Py<PyArray1<WeightT>>)>,
+    )> {
+        // Check if the list of requested edge weighting methods is empty.
+        if edge_weighting_methods.is_empty() {
+            return pe!(Err(concat!(
+                "The provided edge weighting methods list to be used to ",
+                "compute the subgraph kernels is empty."
+            )));
+        }
+        // Check if an illegal parametrization was provided.
+        if add_selfloops_where_missing.is_some()
+            && edge_weighting_methods
+                .iter()
+                .all(|&edge_weighting_method| edge_weighting_method != "laplacian")
+        {
+            return pe!(Err(concat!(
+                "The parameter add_selfloops_where_missing was provided ",
+                "with a non-None value ",
+                "but this only makes sense when used with the ",
+                "`laplacian` edge weighting method, and none of the requested edge weighting methods were `laplacian`."
+            )
+            .to_string()));
+        }
+        // We sample the nodes.
+        // We cannot directly allocate this into a
+        // numpy array because
+        let nodes = pe!(self.graph.get_subsampled_nodes(
+            number_of_nodes_to_sample,
+            random_state,
+            root_node,
+            node_sampling_method,
+            unique
+        ))?;
+
+        // Some of the sampling mechanism are not guaranteed
+        // to actually return the requested number of nodes.
+        // For instance, sampling of BFS nodes from a component
+        // that does not contain the requested number of nodes.
+        let nodes_number = nodes.len();
+
+        // Acquire the python gil.
+        let gil = pyo3::Python::acquire_gil();
+
+        // Compute the required kernels.
+        let sparse_kernels = pe!(edge_weighting_methods
+            .into_iter()
+            .map(|edge_weighting_method| unsafe {
+                // If the required edge weighting method are the weights, we extract the weights
+                // iterator and populate the kernel using the weights.
+                let (edge_node_ids, weights): (Vec<Vec<usize>>, Vec<WeightT>) =
+                    if edge_weighting_method == "weights" {
+                        self.graph
+                            .par_iter_subsampled_weighted_adjacency_matrix(&nodes, Some(true))?
+                            .map(|(_, src, _, dst, weight)| (vec![src, dst], weight))
+                            .unzip()
+                    // Similarly, if the required edge weighting method is the laplacian
+                    // we populate the kernel with the laplacian.
+                    } else if edge_weighting_method == "laplacian" {
+                        self.graph
+                            .par_iter_subsampled_symmetric_laplacian_adjacency_matrix(
+                                &nodes,
+                                add_selfloops_where_missing,
+                                Some(true),
+                            )
+                            .map(|(_, src, _, dst, weight)| (vec![src, dst], weight))
+                            .unzip()
+                    } else {
+                        return Err(format!(
+                            concat!(
+                                "The provided edge weighting method {} is ",
+                                "not supported."
+                            ),
+                            edge_weighting_method
+                        ));
+                    };
+                // Once the kernel is ready, we extract it from the unsafe cell
+                // and return it.
+                Ok((
+                    to_ndarray_2d!(gil, edge_node_ids, usize),
+                    to_ndarray_1d!(gil, weights, WeightT),
+                ))
+            })
+            .collect::<Result<Vec<(Py<PyArray2<usize>>, Py<PyArray1<WeightT>>)>>>())?;
+
+        // We now convert the provided nodes into a numpy vector.
+        let numpy_nodes = ThreadDataRaceAware {
+            t: PyArray1::new(gil.python(), [nodes_number], false),
+        };
+
+        // We consume the original vector to populate the numpy one.
+        nodes
+            .into_par_iter()
+            .enumerate()
+            .for_each(|(i, node_id)| unsafe { *numpy_nodes.t.uget_mut([i]) = node_id });
+
+        // And return the sampled nodes and kernel
+        Ok((numpy_nodes.t.to_owned(), sparse_kernels))
     }
 
     #[args(py_kwargs = "**")]
@@ -231,6 +372,7 @@ impl EnsmallenGraph {
             random_state,
             None,
             node_sampling_method,
+            Some(false)
         ))?;
 
         // Some of the sampling mechanism are not guaranteed
@@ -307,7 +449,7 @@ impl EnsmallenGraph {
                 // iterator and populate the kernel using the weights.
                 if edge_weighting_method == "weights" {
                     self.graph
-                        .par_iter_subsampled_weighted_adjacency_matrix(&source_nodes)?
+                        .par_iter_subsampled_weighted_adjacency_matrix(&source_nodes, Some(false))?
                         .for_each(build_kernel);
                 // Similarly, if the required edge weighting method is the laplacian
                 // we populate the kernel with the laplacian.
@@ -316,6 +458,7 @@ impl EnsmallenGraph {
                         .par_iter_subsampled_symmetric_laplacian_adjacency_matrix(
                             &source_nodes,
                             add_selfloops_where_missing,
+                            Some(false),
                         )
                         .for_each(build_kernel);
                 } else {
@@ -419,6 +562,7 @@ impl EnsmallenGraph {
         node_sampling_method: &str,
         edge_weighting_methods: Vec<&str>,
         add_selfloops_where_missing: Option<bool>,
+        unique: Option<bool>,
     ) -> PyResult<(
         Py<PyArray1<NodeT>>,
         Vec<Py<PyArray2<WeightT>>>,
@@ -433,6 +577,7 @@ impl EnsmallenGraph {
             node_sampling_method,
             edge_weighting_methods.clone(),
             add_selfloops_where_missing,
+            unique,
         )?;
         let (dst_nodes, dst_kernels) = self.get_subgraphs(
             number_of_nodes_to_sample,
@@ -441,6 +586,7 @@ impl EnsmallenGraph {
             node_sampling_method,
             edge_weighting_methods,
             add_selfloops_where_missing,
+            unique,
         )?;
 
         Ok((

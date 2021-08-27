@@ -7226,7 +7226,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node, random_state, walk_length)"]
+    #[text_signature = "($, self, node, random_state, walk_length, unique)"]
     /// Returns unique nodes sampled from uniform random walk.
     ///
     /// Parameters
@@ -7237,6 +7237,8 @@ impl EnsmallenGraph {
     ///     the random_state to use for extracting the nodes and edges.
     /// walk_length: int,
     ///     Length of the random walk.
+    /// unique: Optional[bool],
+    ///     Whether to make the sampled nodes unique.
     ///
     ///
     /// Raises
@@ -7249,13 +7251,17 @@ impl EnsmallenGraph {
         node: NodeT,
         random_state: u64,
         walk_length: u64,
+        unique: Option<bool>,
     ) -> PyResult<Py<PyArray1<NodeT>>> {
         let gil = pyo3::Python::acquire_gil();
         Ok(to_ndarray_1d!(
             gil,
-            pe!(self
-                .graph
-                .get_uniform_random_walk_random_nodes(node, random_state, walk_length))?,
+            pe!(self.graph.get_uniform_random_walk_random_nodes(
+                node,
+                random_state,
+                walk_length,
+                unique
+            ))?,
             NodeT
         ))
     }
@@ -7268,7 +7274,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, number_of_nodes_to_sample, random_state, root_node, node_sampling_method)"]
+    #[text_signature = "($, self, number_of_nodes_to_sample, random_state, root_node, node_sampling_method, unique)"]
     /// Return subsampled nodes according to the given method and parameters.
     ///
     /// Parameters
@@ -7281,6 +7287,8 @@ impl EnsmallenGraph {
     ///     The (optional) root node to use to sample. In not provided, a random one is sampled.
     /// node_sampling_method: str,
     ///     The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
+    /// unique: Optional[bool],
+    ///     Whether to make the sampled nodes unique.
     ///
     ///
     /// Raises
@@ -7294,6 +7302,7 @@ impl EnsmallenGraph {
         random_state: u64,
         root_node: Option<NodeT>,
         node_sampling_method: &str,
+        unique: Option<bool>,
     ) -> PyResult<Py<PyArray1<NodeT>>> {
         let gil = pyo3::Python::acquire_gil();
         Ok(to_ndarray_1d!(
@@ -7302,7 +7311,8 @@ impl EnsmallenGraph {
                 number_of_nodes_to_sample,
                 random_state,
                 root_node,
-                node_sampling_method
+                node_sampling_method,
+                unique
             ))?,
             NodeT
         ))
@@ -9371,6 +9381,13 @@ impl EnsmallenGraph {
     ) -> Vec<String> {
         self.graph
             .get_unchecked_node_type_names_from_node_type_ids(node_type_ids)
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self)"]
+    /// Return list of the supported sparse edge weighting methods
+    pub fn get_sparse_edge_weighting_methods(&self) -> Vec<&str> {
+        self.graph.get_sparse_edge_weighting_methods()
     }
 
     #[automatically_generated_binding]

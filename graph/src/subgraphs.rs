@@ -14,19 +14,22 @@ impl Graph {
     /// # Arguments
     /// * `nodes`: Vec<NodeT> - The subsampled nodes.
     /// * `add_selfloops_where_missing`: Option<bool> - Whether to add selfloops where they are missing. By default, true.
+    /// * `complete`: Option<bool> - Whether to return the complete edge list in undirected graphs.
     pub unsafe fn par_iter_subsampled_binary_adjacency_matrix<'a>(
         &'a self,
         nodes: &'a [NodeT],
         add_selfloops_where_missing: Option<bool>,
+        complete: Option<bool>,
     ) -> impl ParallelIterator<Item = (NodeT, usize, NodeT, usize)> + 'a {
         let nodes_number = nodes.len();
+        let complete = complete.unwrap_or(false);
         let add_selfloops_where_missing = add_selfloops_where_missing.unwrap_or(true);
         (0..nodes_number)
             .into_par_iter()
             .flat_map_iter(move |src| (0..nodes_number).map(move |dst| (src, dst)))
             .map(move |(src, dst)| (nodes[src], src, nodes[dst], dst))
             .filter(move |&(src_node_id, src, dst_node_id, dst)| {
-                (self.is_directed() || src <= dst)
+                (self.is_directed() || complete || src <= dst)
                     && (add_selfloops_where_missing && src == dst
                         || self.has_edge_from_node_ids(src_node_id, dst_node_id))
             })
@@ -41,6 +44,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `nodes`: Vec<NodeT> - The subsampled nodes.
+    /// * `complete`: Option<bool> - Whether to return the complete edge list in undirected graphs.
     ///
     /// # Raises
     /// * If the graph is a multigraph.
@@ -48,11 +52,12 @@ impl Graph {
     pub unsafe fn par_iter_subsampled_weighted_adjacency_matrix<'a>(
         &'a self,
         nodes: &'a [NodeT],
+        complete: Option<bool>,
     ) -> Result<impl ParallelIterator<Item = (NodeT, usize, NodeT, usize, WeightT)> + 'a> {
         self.must_not_be_multigraph()?;
         self.must_have_edge_weights()?;
         Ok(self
-            .par_iter_subsampled_binary_adjacency_matrix(nodes, Some(false))
+            .par_iter_subsampled_binary_adjacency_matrix(nodes, Some(false), complete)
             .map(move |(src_node_id, src, dst_node_id, dst)| {
                 (
                     src_node_id,
@@ -73,11 +78,14 @@ impl Graph {
     /// # Arguments
     /// * `nodes`: Vec<NodeT> - The subsampled nodes.
     /// * `add_selfloops_where_missing`: Option<bool> - Whether to add selfloops where they are missing. By default, true.
+    /// * `complete`: Option<bool> - Whether to return the complete edge list in undirected graphs.
     pub unsafe fn par_iter_subsampled_symmetric_laplacian_adjacency_matrix<'a>(
         &'a self,
         nodes: &'a [NodeT],
         add_selfloops_where_missing: Option<bool>,
+        complete: Option<bool>,
     ) -> impl ParallelIterator<Item = (NodeT, usize, NodeT, usize, WeightT)> + 'a {
+        let complete = complete.unwrap_or(false);
         let degrees = nodes
             .par_iter()
             .map(|&node_id| self.get_unchecked_node_degree_from_node_id(node_id) as f64)
@@ -92,7 +100,7 @@ impl Graph {
                 move |&(src_node_id, src_degree, src, dst_node_id, dst_degree, dst)| {
                     src_degree > 0.0
                         && dst_degree > 0.0
-                        && (self.is_directed() || src <= dst)
+                        && (self.is_directed() || complete || src <= dst)
                         && (add_selfloops_where_missing && src == dst
                             || self.has_edge_from_node_ids(src_node_id, dst_node_id))
                 },
@@ -112,6 +120,11 @@ impl Graph {
                     }
                 },
             )
+    }
+
+    /// Return list of the supported sparse edge weighting methods.
+    pub fn get_sparse_edge_weighting_methods(&self) -> Vec<&str> {
+        vec!["weights", "laplacian"]
     }
 
     /// Return list of the supported edge weighting methods.
