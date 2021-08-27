@@ -90,8 +90,8 @@ impl Graph {
             .map(move |(src, dst)| (nodes[src], degrees[src], src, nodes[dst], degrees[dst], dst))
             .filter(
                 move |&(src_node_id, src_degree, src, dst_node_id, dst_degree, dst)| {
-                    src_degree > 0
-                        && dst_degree > 0
+                    src_degree > 0.0
+                        && dst_degree > 0.0
                         && (self.is_directed() || src <= dst)
                         && (add_selfloops_where_missing && src == dst
                             || self.has_edge_from_node_ids(src_node_id, dst_node_id))
