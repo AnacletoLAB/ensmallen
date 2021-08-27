@@ -79,7 +79,7 @@ impl Graph {
         add_selfloops_where_missing: Option<bool>,
     ) -> impl ParallelIterator<Item = (NodeT, usize, NodeT, usize, WeightT)> + 'a {
         let degrees = nodes
-            .iter()
+            .par_iter()
             .map(|&node_id| self.get_unchecked_node_degree_from_node_id(node_id) as f64)
             .collect::<Vec<_>>();
         let nodes_number = nodes.len();
