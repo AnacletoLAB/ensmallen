@@ -1,5 +1,5 @@
-use rayon::prelude::*;
 use itertools::Itertools;
+use rayon::prelude::*;
 
 use super::*;
 
@@ -80,7 +80,7 @@ impl Graph {
     ) -> impl ParallelIterator<Item = (NodeT, usize, NodeT, usize, WeightT)> + 'a {
         let degrees = nodes
             .iter()
-            .map(|&node_id| self.get_unchecked_node_degree_from_node_id(node_id))
+            .map(|&node_id| self.get_unchecked_node_degree_from_node_id(node_id) as f64)
             .collect::<Vec<_>>();
         let nodes_number = nodes.len();
         let add_selfloops_where_missing = add_selfloops_where_missing.unwrap_or(true);
@@ -107,7 +107,7 @@ impl Graph {
                             src,
                             dst_node_id,
                             dst,
-                            (1.0 / ((src_degree * dst_degree) as f64).sqrt()) as WeightT,
+                            (1.0 / (src_degree * dst_degree).sqrt()) as WeightT,
                         )
                     }
                 },
@@ -126,7 +126,7 @@ impl Graph {
             "resource_allocation_index",
             "weighted_resource_allocation_index",
             "weights",
-            "laplacian"
+            "laplacian",
         ]
     }
 

@@ -125,8 +125,8 @@ impl Graph {
         self.must_be_undirected()?;
         Ok(self.get_transformed_graph(
             |graph, src, dst| unsafe {
-                (1.0 / ((graph.get_unchecked_node_degree_from_node_id(src)
-                    * graph.get_unchecked_node_degree_from_node_id(dst))
+                (1.0 / ((graph.get_unchecked_node_degree_from_node_id(src) as f64
+                    * graph.get_unchecked_node_degree_from_node_id(dst) as f64)
                     as f64)
                     .sqrt()) as WeightT
             },
