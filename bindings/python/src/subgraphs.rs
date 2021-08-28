@@ -9,7 +9,7 @@ use vec_rand::splitmix64;
 #[pymethods]
 impl EnsmallenGraph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, number_of_nodes_to_sample, random_state, root_node, node_sampling_method, edge_weighting_methods, add_selfloops_where_missing, unique)"]
+    #[text_signature = "($self, number_of_nodes_to_sample, random_state, root_node, node_sampling_method, edge_weighting_methods, add_selfloops_where_missing)"]
     /// Return subsampled nodes according to the given method and parameters.
     ///
     /// Parameters
@@ -20,7 +20,6 @@ impl EnsmallenGraph {
     /// node_sampling_method: str - The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
     /// edge_weighting_methods: List[str] - The edge weighting methods to use to compute the adjacency matrix.
     /// add_selfloops_where_missing: Optional[bool] - Whether to add selfloops where they are missing. This parameter only applies to laplacian edge weighting method. By default, true.
-    /// unique: Optional[bool] - Whether to make the sampled nodes unique.
     ///
     /// Raises
     /// --------------------
@@ -44,7 +43,6 @@ impl EnsmallenGraph {
         node_sampling_method: &str,
         edge_weighting_methods: Vec<&str>,
         add_selfloops_where_missing: Option<bool>,
-        unique: Option<bool>,
     ) -> PyResult<(Py<PyArray1<NodeT>>, Vec<Py<PyArray2<WeightT>>>)> {
         // Check if the list of requested edge weighting methods is empty.
         if edge_weighting_methods.is_empty() {
@@ -75,7 +73,7 @@ impl EnsmallenGraph {
             random_state,
             root_node,
             node_sampling_method,
-            unique
+            Some(false)
         ))?;
 
         // Some of the sampling mechanism are not guaranteed
@@ -116,7 +114,7 @@ impl EnsmallenGraph {
                 // In order to avoid repeating the same logic,
                 // even though arguably small, we define a function
                 // that captures the kernel.
-                let build_kernel = |(_, i, _, j, value)| {
+                let build_kernel = |(i, j, value)| {
                     *kernel.t.uget_mut([i, j]) = value;
                     if is_undirected && i != j {
                         *kernel.t.uget_mut([j, i]) = value;
@@ -127,6 +125,7 @@ impl EnsmallenGraph {
                 if edge_weighting_method == "weights" {
                     self.graph
                         .par_iter_subsampled_weighted_adjacency_matrix(&nodes, Some(false))?
+                        .map(|(_, i, _, j, weight)| (i, j, weight))
                         .for_each(build_kernel);
                 // Similarly, if the required edge weighting method is the laplacian
                 // we populate the kernel with the laplacian.
@@ -143,6 +142,7 @@ impl EnsmallenGraph {
                     // the node tuples are handled by this auto-dispatching method
                     self.graph
                         .par_iter_subsampled_edge_metric_matrix(&nodes, edge_weighting_method)?
+                        .map(|(_, i, _, j, weight)| (i, j, weight))
                         .for_each(build_kernel);
                 }
                 // Once the kernel is ready, we extract it from the unsafe cell
@@ -201,7 +201,6 @@ impl EnsmallenGraph {
         node_sampling_method: &str,
         edge_weighting_methods: Vec<&str>,
         add_selfloops_where_missing: Option<bool>,
-        unique: Option<bool>,
     ) -> PyResult<(
         Py<PyArray1<NodeT>>,
         Vec<(Py<PyArray2<usize>>, Py<PyArray1<WeightT>>)>,
@@ -235,7 +234,7 @@ impl EnsmallenGraph {
             random_state,
             root_node,
             node_sampling_method,
-            unique
+            Some(false)
         ))?;
 
         // Some of the sampling mechanism are not guaranteed
@@ -268,7 +267,7 @@ impl EnsmallenGraph {
                                 add_selfloops_where_missing,
                                 Some(true),
                             )
-                            .map(|(_, src, _, dst, weight)| (vec![src, dst], weight))
+                            .map(|(src, dst, weight)| (vec![src, dst], weight))
                             .unzip()
                     } else {
                         return Err(format!(
@@ -435,7 +434,7 @@ impl EnsmallenGraph {
                 // In order to avoid repeating the same logic,
                 // even though arguably small, we define a function
                 // that captures the kernel.
-                let build_kernel = |(_, i, _, j, value)| {
+                let build_kernel = |(i, j, value)| {
                     let remapped_i = remapping[i];
                     let remapped_j = remapping[j];
                     *source_kernel.t.uget_mut([i, j]) = value;
@@ -450,6 +449,7 @@ impl EnsmallenGraph {
                 if edge_weighting_method == "weights" {
                     self.graph
                         .par_iter_subsampled_weighted_adjacency_matrix(&source_nodes, Some(false))?
+                        .map(|(_, i, _, j, weight)| (i, j, weight))
                         .for_each(build_kernel);
                 // Similarly, if the required edge weighting method is the laplacian
                 // we populate the kernel with the laplacian.
@@ -469,6 +469,7 @@ impl EnsmallenGraph {
                             &source_nodes,
                             edge_weighting_method,
                         )?
+                        .map(|(_, i, _, j, weight)| (i, j, weight))
                         .for_each(build_kernel);
                 }
                 // Once the kernel is ready, we extract it from the unsafe cell
@@ -562,7 +563,6 @@ impl EnsmallenGraph {
         node_sampling_method: &str,
         edge_weighting_methods: Vec<&str>,
         add_selfloops_where_missing: Option<bool>,
-        unique: Option<bool>,
     ) -> PyResult<(
         Py<PyArray1<NodeT>>,
         Vec<Py<PyArray2<WeightT>>>,
@@ -577,7 +577,6 @@ impl EnsmallenGraph {
             node_sampling_method,
             edge_weighting_methods.clone(),
             add_selfloops_where_missing,
-            unique,
         )?;
         let (dst_nodes, dst_kernels) = self.get_subgraphs(
             number_of_nodes_to_sample,
@@ -586,7 +585,6 @@ impl EnsmallenGraph {
             node_sampling_method,
             edge_weighting_methods,
             add_selfloops_where_missing,
-            unique,
         )?;
 
         Ok((

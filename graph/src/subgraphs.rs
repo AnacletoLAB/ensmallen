@@ -1,5 +1,6 @@
 use itertools::Itertools;
 use rayon::prelude::*;
+use std::collections::HashMap;
 
 use super::*;
 
@@ -84,44 +85,74 @@ impl Graph {
         nodes: &'a [NodeT],
         add_selfloops_where_missing: Option<bool>,
         complete: Option<bool>,
-    ) -> impl ParallelIterator<Item = (NodeT, usize, NodeT, usize, WeightT)> + 'a {
+    ) -> impl ParallelIterator<Item = (usize, usize, WeightT)> + 'a {
         let complete = complete.unwrap_or(false);
         let degrees = nodes
             .par_iter()
             .map(|&node_id| self.get_unchecked_node_degree_from_node_id(node_id) as f64)
             .collect::<Vec<_>>();
-        let nodes_number = nodes.len();
+        let nodes_number_usize = nodes.len();
+        let nodes_number_float = nodes_number_usize as f64;
+        let nodes_map: HashMap<NodeT, usize> = nodes
+            .iter()
+            .cloned()
+            .enumerate()
+            .map(|(i, node_id)| (node_id, i))
+            .collect();
         let add_selfloops_where_missing = add_selfloops_where_missing.unwrap_or(true);
-        (0..nodes_number)
+        (0..nodes_number_usize)
             .into_par_iter()
-            .flat_map(move |src| (0..nodes_number).into_par_iter().map(move |dst| (src, dst)))
-            .map(move |(src, dst)| (nodes[src], degrees[src], src, nodes[dst], degrees[dst], dst))
-            .filter(
-                move |&(src_node_id, src_degree, src, dst_node_id, dst_degree, dst)| {
-                    src_degree > 0.0
-                        && dst_degree > 0.0
-                        && (self.is_directed() || src <= dst)
-                        && (add_selfloops_where_missing && src == dst
-                            || self.has_edge_from_node_ids(src_node_id, dst_node_id))
-                },
-            )
-            .flat_map(
-                move |(src_node_id, src_degree, src, dst_node_id, dst_degree, dst)| {
-                    if src_node_id == dst_node_id {
-                        vec![(src_node_id, src, dst_node_id, dst, 1.0)]
+            .flat_map(move |src| {
+                let src_degree = degrees[src];
+                let src_node_id = nodes[src];
+                let mut result: Vec<(usize, usize, WeightT)> = if src_degree > nodes_number_float {
+                    let starting_index = if self.is_directed() { 0 } else { src };
+                    (starting_index..nodes_number_usize)
+                        .into_par_iter()
+                        .filter(|&dst| {
+                            !(add_selfloops_where_missing && src == dst)
+                                && self.has_edge_from_node_ids(src_node_id, nodes[dst])
+                        })
+                        .map(|dst| {
+                            (
+                                src,
+                                dst,
+                                (1.0 / (src_degree * degrees[dst]).sqrt()) as WeightT,
+                            )
+                        })
+                        .collect()
+                } else {
+                    self.par_iter_unchecked_neighbour_node_ids_from_source_node_id(src_node_id)
+                        .filter_map(|dst_node_id| {
+                            if add_selfloops_where_missing && src_node_id == dst_node_id {
+                                return None;
+                            }
+                            nodes_map.get(&dst_node_id).map(|&dst| {
+                                (
+                                    src,
+                                    dst,
+                                    (1.0 / (src_degree * degrees[dst]).sqrt()) as WeightT,
+                                )
+                            })
+                        })
+                        .collect()
+                };
+                if add_selfloops_where_missing {
+                    result.push((src, src, 1.0));
+                }
+                result
+            })
+            .flat_map(move |(src, dst, weight)| {
+                if src == dst {
+                    vec![(src, dst, weight)]
+                } else {
+                    if complete && !self.is_directed() {
+                        vec![(src, dst, weight), (dst, src, weight)]
                     } else {
-                        let weight = (1.0 / (src_degree * dst_degree).sqrt()) as WeightT;
-                        if complete && !self.is_directed() {
-                            vec![
-                                (src_node_id, src, dst_node_id, dst, weight),
-                                (dst_node_id, dst, src_node_id, src, weight),
-                            ]
-                        } else {
-                            vec![(src_node_id, src, dst_node_id, dst, weight)]
-                        }
+                        vec![(src, dst, weight)]
                     }
-                },
-            )
+                }
+            })
     }
 
     /// Return list of the supported sparse edge weighting methods.
