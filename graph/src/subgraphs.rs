@@ -26,7 +26,7 @@ impl Graph {
         let add_selfloops_where_missing = add_selfloops_where_missing.unwrap_or(true);
         (0..nodes_number)
             .into_par_iter()
-            .flat_map_iter(move |src| (0..nodes_number).map(move |dst| (src, dst)))
+            .flat_map(move |src| (0..nodes_number).into_par_iter().map(move |dst| (src, dst)))
             .map(move |(src, dst)| (nodes[src], src, nodes[dst], dst))
             .filter(move |&(src_node_id, src, dst_node_id, dst)| {
                 (self.is_directed() || complete || src <= dst)
@@ -100,23 +100,25 @@ impl Graph {
                 move |&(src_node_id, src_degree, src, dst_node_id, dst_degree, dst)| {
                     src_degree > 0.0
                         && dst_degree > 0.0
-                        && (self.is_directed() || complete || src <= dst)
+                        && (self.is_directed() || src <= dst)
                         && (add_selfloops_where_missing && src == dst
                             || self.has_edge_from_node_ids(src_node_id, dst_node_id))
                 },
             )
-            .map(
+            .flat_map(
                 move |(src_node_id, src_degree, src, dst_node_id, dst_degree, dst)| {
                     if src_node_id == dst_node_id {
-                        (src_node_id, src, dst_node_id, dst, 1.0)
+                        vec![(src_node_id, src, dst_node_id, dst, 1.0)]
                     } else {
-                        (
-                            src_node_id,
-                            src,
-                            dst_node_id,
-                            dst,
-                            (1.0 / (src_degree * dst_degree).sqrt()) as WeightT,
-                        )
+                        let weight = (1.0 / (src_degree * dst_degree).sqrt()) as WeightT;
+                        if complete && !self.is_directed() {
+                            vec![
+                                (src_node_id, src, dst_node_id, dst, weight),
+                                (dst_node_id, dst, src_node_id, src, weight),
+                            ]
+                        } else {
+                            vec![(src_node_id, src, dst_node_id, dst, weight)]
+                        }
                     }
                 },
             )
@@ -238,7 +240,7 @@ impl Graph {
         let edge_weighting_method = edge_weighting_method?;
         Ok((0..nodes_number)
             .into_par_iter()
-            .flat_map_iter(move |src| (0..nodes_number).map(move |dst| (src, dst)))
+            .flat_map(move |src| (0..nodes_number).into_par_iter().map(move |dst| (src, dst)))
             .filter(move |(src, dst)| self.is_directed() || src <= dst)
             .map(move |(src, dst)| {
                 let src_node_id = nodes[src];
