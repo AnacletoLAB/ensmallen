@@ -94,7 +94,7 @@ impl Graph {
         let add_selfloops_where_missing = add_selfloops_where_missing.unwrap_or(true);
         (0..nodes_number)
             .into_par_iter()
-            .flat_map_iter(move |src| (0..nodes_number).map(move |dst| (src, dst)))
+            .flat_map(move |src| (0..nodes_number).into_par_iter().map(move |dst| (src, dst)))
             .map(move |(src, dst)| (nodes[src], degrees[src], src, nodes[dst], degrees[dst], dst))
             .filter(
                 move |&(src_node_id, src_degree, src, dst_node_id, dst_degree, dst)| {

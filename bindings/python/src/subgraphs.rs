@@ -9,7 +9,7 @@ use vec_rand::splitmix64;
 #[pymethods]
 impl EnsmallenGraph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, number_of_nodes_to_sample, random_state, root_node, node_sampling_method, edge_weighting_methods, add_selfloops_where_missing)"]
+    #[text_signature = "($self, number_of_nodes_to_sample, random_state, root_node, node_sampling_method, edge_weighting_methods, add_selfloops_where_missing, unique)"]
     /// Return subsampled nodes according to the given method and parameters.
     ///
     /// Parameters
