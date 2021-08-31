@@ -10,6 +10,7 @@ rust_parser = {path = "./rust_parser" }
 graph = {path = "../graph" }
 regex = "1.5.4"
 lazy_static = "1.4.0"
+walkdir = "2"
 
 [lib]
 name = "libcodeanalysis"

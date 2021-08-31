@@ -1,3 +1,5 @@
+use crate::constructors::build_graph_from_integers;
+
 use super::*;
 use counter::Counter;
 use indicatif::ParallelProgressIterator;
@@ -30,7 +32,7 @@ fn kfold(
     k_index: usize,
     mut indices: Vec<u64>,
     random_state: u64,
-) -> Result<RoaringTreemap, String> {
+) -> Result<RoaringTreemap> {
     if k >= indices.len() {
         return Err(format!(
             concat!(
@@ -39,7 +41,8 @@ fn kfold(
                 "This may be caused by an impossible stratified ",
                 "k-fold."
             ),
-            k, indices.len()
+            k,
+            indices.len()
         ));
     }
     if k <= 1 {
@@ -103,7 +106,7 @@ impl Graph {
         seed_graph: Option<&Graph>,
         only_from_same_component: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         if negatives_number == 0 {
             return Err(String::from("The number of negatives cannot be zero."));
         }
@@ -277,7 +280,7 @@ impl Graph {
                 negative_edges_hashset.insert(*edge_id);
             }
 
-            if sampling_round > 50000 {
+            if sampling_round > 100000 {
                 panic!("Deadlock in sampling negatives!");
             }
 
@@ -287,28 +290,23 @@ impl Graph {
 
         pb1.finish();
 
-        Graph::from_integer_unsorted(
-            negative_edges_hashset.into_par_iter().flat_map(|edge| {
+        build_graph_from_integers(
+            Some(negative_edges_hashset.into_par_iter().map(|edge| {
                 let (src, dst) = self.decode_edge(edge);
-                if !self.is_directed() && src != dst {
-                    vec![Ok((src, dst, None, None)), Ok((dst, src, None, None))]
-                } else {
-                    vec![Ok((src, dst, None, None))]
-                }
-            }),
+                (0, (src, dst, None, WeightT::NAN))
+            })),
             self.nodes.clone(),
             self.node_types.clone(),
             None,
-            self.directed,
-            format!("Negative {}", self.name.clone()),
             false,
-            false,
-            false,
-            false,
+            self.is_directed(),
+            Some(false),
+            Some(false),
+            Some(false),
+            None,
             true,
             self.has_selfloops(),
-            true,
-            verbose,
+            format!("Negative {}", self.get_name()),
         )
     }
 
@@ -323,7 +321,7 @@ impl Graph {
         &self,
         train_size: f64,
         total_elements: usize,
-    ) -> Result<(usize, usize), String> {
+    ) -> Result<(usize, usize)> {
         if train_size <= 0.0 || train_size >= 1.0 {
             return Err(String::from("Train rate must be strictly between 0 and 1."));
         }
@@ -371,9 +369,7 @@ impl Graph {
         include_all_edge_types: bool,
         user_condition_for_validation_edges: impl Fn(EdgeT, NodeT, NodeT, Option<EdgeTypeT>) -> bool,
         verbose: Option<bool>,
-        train_graph_might_contain_singletons: bool,
-        train_graph_might_contain_singletons_with_selfloops: bool,
-    ) -> Result<(Graph, Graph), String> {
+    ) -> Result<(Graph, Graph)> {
         let verbose = verbose.unwrap_or(false);
         let random_state = random_state.unwrap_or(0xbadf00d);
         let validation_edges_pb = get_loading_bar(
@@ -447,69 +443,71 @@ impl Graph {
                 actual_validation_edges_number=actual_validation_edges_number,
             ));
         }
+        let validation_edge_ids = (0..self.get_directed_edges_number())
+            .into_par_iter()
+            .filter(|edge_id| valid_edges_bitmap.contains(*edge_id))
+            .collect::<Vec<_>>();
 
-        // Creating the loading bar for the building of both the training and validation.
-        let pb_valid = get_loading_bar(
-            verbose,
-            "Building the validation graph",
-            valid_edges_bitmap.len() as usize,
-        );
-        let pb_train = get_loading_bar(
-            verbose,
-            "Building the train graph",
-            (self.get_directed_edges_number() - valid_edges_bitmap.len()) as usize,
-        );
+        let train_edge_ids = (0..self.get_directed_edges_number())
+            .into_par_iter()
+            .filter(|edge_id| !valid_edges_bitmap.contains(*edge_id))
+            .collect::<Vec<_>>();
+
+        let train_edges_number = train_edge_ids.len();
+        let validation_edges_number = validation_edge_ids.len();
 
         Ok((
-            Graph::from_integer_sorted(
-                (0..self.get_directed_edges_number())
-                    .filter(|edge_id| !valid_edges_bitmap.contains(*edge_id))
-                    .progress_with(pb_train)
-                    .map(|edge_id| unsafe {
-                        Ok(self
+            build_graph_from_integers(
+                Some(
+                    train_edge_ids
+                        .into_par_iter()
+                        .enumerate()
+                        .map(|(i, edge_id)| unsafe {
+                            let (src, dst, edge_type, weight) = self
                             .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(
                                 edge_id,
-                            ))
-                    }),
-                self.get_directed_edges_number() as usize - valid_edges_bitmap.len() as usize,
+                            );
+                            (i, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN)))
+                        }),
+                ),
                 self.nodes.clone(),
                 self.node_types.clone(),
                 self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-                self.directed,
-                true,
-                format!("{} training", self.name.clone()),
-                true,
-                self.has_edge_types(),
                 self.has_edge_weights(),
-                false,
-                train_graph_might_contain_singletons,
-                train_graph_might_contain_singletons_with_selfloops,
-                true,
-            )?,
-            Graph::from_integer_sorted(
-                valid_edges_bitmap
-                    .iter()
-                    .progress_with(pb_valid)
-                    .map(|edge_id| unsafe {
-                        Ok(self
-                            .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(
-                                edge_id,
-                            ))
-                    }),
-                valid_edges_bitmap.len() as usize,
-                self.nodes.clone(),
-                self.node_types.clone(),
-                self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-                self.directed,
-                true,
-                format!("{} testing", self.name.clone()),
-                true,
-                self.has_edge_types(),
-                self.has_edge_weights(),
-                false,
+                self.is_directed(),
+                Some(true),
+                Some(false),
+                Some(true),
+                Some(train_edges_number as EdgeT),
                 true,
                 self.has_selfloops(),
+                format!("{} train", self.get_name()),
+            )?,
+            build_graph_from_integers(
+                Some(
+                    validation_edge_ids
+                        .into_par_iter()
+                        .enumerate()
+                        .map(|(i, edge_id)| unsafe {
+                            let (src, dst, edge_type, weight) = self
+                            .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(
+                                edge_id,
+                            );
+                            (i, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN)))
+                        }),
+                ),
+                self.nodes.clone(),
+                self.node_types.clone(),
+                self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+                self.has_edge_weights(),
+                self.is_directed(),
+                Some(true),
+                Some(false),
+                Some(true),
+                Some(validation_edges_number as EdgeT),
                 true,
+                self.has_selfloops(),
+                format!("{} test", self.get_name()),
             )?,
         ))
     }
@@ -539,14 +537,14 @@ impl Graph {
     /// * If the edge types have been specified but the graph does not have edge types.
     /// * If the required training size is not a real value between 0 and 1.
     /// * If the current graph does not allow for the creation of a spanning tree for the requested training size.
-    pub fn get_connected_holdout(
+    pub fn connected_holdout(
         &self,
         train_size: f64,
         random_state: Option<EdgeT>,
         edge_types: Option<Vec<Option<String>>>,
         include_all_edge_types: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<(Graph, Graph), String> {
+    ) -> Result<(Graph, Graph)> {
         let include_all_edge_types = include_all_edge_types.unwrap_or(false);
         // If the user has requested to restrict the connected holdout to a
         // limited set of edge types, the graph must have edge types.
@@ -609,7 +607,8 @@ impl Graph {
             include_all_edge_types,
             |_, src, dst, edge_type| {
                 let is_in_tree = tree.contains(&(src, dst));
-                let singleton_selfloop = self.is_singleton_with_selfloops_from_node_id(src);
+                let singleton_selfloop =
+                    unsafe { self.is_unchecked_singleton_with_selfloops_from_node_id(src) };
                 let correct_edge_type = edge_type_ids
                     .as_ref()
                     .map_or(true, |etis| etis.contains(&edge_type));
@@ -619,8 +618,6 @@ impl Graph {
                 !is_in_tree && !singleton_selfloop && correct_edge_type
             },
             verbose,
-            self.has_singleton_nodes(),
-            self.has_singleton_nodes_with_selfloops(),
         )
     }
 
@@ -628,7 +625,7 @@ impl Graph {
     ///
     /// The holdouts returned are a tuple of graphs. In neither holdouts the
     /// graph connectivity is necessarily preserved. To maintain that, use
-    /// the method `get_connected_holdout`.
+    /// the method `connected_holdout`.
     ///
     /// # Arguments
     ///
@@ -651,7 +648,7 @@ impl Graph {
         edge_types: Option<Vec<Option<String>>>,
         min_number_overlaps: Option<EdgeT>,
         verbose: Option<bool>,
-    ) -> Result<(Graph, Graph), String> {
+    ) -> Result<(Graph, Graph)> {
         let include_all_edge_types = include_all_edge_types.unwrap_or(false);
         // If the user has requested to restrict the connected holdout to a
         // limited set of edge types, the graph must have edge types.
@@ -659,7 +656,7 @@ impl Graph {
             self.must_have_edge_types()?;
         }
         let total_edges_number = if include_all_edge_types {
-            self.unique_edges_number
+            self.get_unique_edges_number()
         } else {
             self.get_directed_edges_number()
         };
@@ -701,10 +698,6 @@ impl Graph {
                 true
             },
             verbose,
-            // Singletons may be generated during the holdouts process
-            true,
-            // Singletons with selfloops may be generated during the holdouts process only when there are selfloops in the graph
-            self.has_selfloops(),
         )
     }
 
@@ -719,19 +712,19 @@ impl Graph {
     /// This example create an 80-20 split of the nodes in the graph
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    ///   let (train, test) = graph.get_node_label_random_holdout(0.8, Some(true), None).unwrap();
+    ///   let (train, test) = graph.node_label_holdout(0.8, Some(true), None).unwrap();
     /// ```
     ///
     /// # Raises
     /// * If the graph does not have node types.
     /// * If stratification is requested but the graph has a single node type.
     /// * If stratification is requested but the graph has a multilabel node types.
-    pub fn get_node_label_random_holdout(
+    pub fn node_label_holdout(
         &self,
         train_size: f64,
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
-    ) -> Result<(Graph, Graph), String> {
+    ) -> Result<(Graph, Graph)> {
         self.must_have_node_types()?;
         let random_state = random_state.unwrap_or(0xbadf00d);
         let use_stratification = use_stratification.unwrap_or(false);
@@ -817,12 +810,399 @@ impl Graph {
         let mut test_graph = self.clone();
 
         // Replace the node_types with the one computes above
-        train_graph.node_types = NodeTypeVocabulary::from_structs(
-            train_node_types,
+        train_graph.node_types = NodeTypeVocabulary::from_option_structs(
+            Some(train_node_types),
             self.node_types.as_ref().map(|ntv| ntv.vocabulary.clone()),
         );
-        test_graph.node_types = NodeTypeVocabulary::from_structs(
-            test_node_types,
+        test_graph.node_types = NodeTypeVocabulary::from_option_structs(
+            Some(test_node_types),
+            self.node_types.as_ref().map(|ntv| ntv.vocabulary.clone()),
+        );
+
+        Ok((train_graph, test_graph))
+    }
+
+    /// Returns edge-label holdout for training ML algorithms on the graph edge labels.
+    /// This is commonly used for edge type prediction tasks.
+    ///
+    /// This method returns two graphs, the train and the test one.
+    /// The edges of the graph will be splitted in the train and test graphs according
+    /// to the `train_size` argument.
+    ///
+    /// If stratification is enabled, the train and test will have the same ratios of
+    /// edge types.
+    ///
+    /// # Arguments
+    /// * `train_size`: f64 - rate target to reserve for training,
+    /// * `use_stratification`: Option<bool> - Whether to use edge-label stratification,
+    /// * `random_state`: Option<EdgeT> - The random_state to use for the holdout,
+    ///
+    /// # Example
+    /// This example creates an 80-20 split of the edges mantaining the edge label ratios
+    /// in train and test.
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    ///   let (train, test) = graph.edge_label_holdout(0.8, Some(true), None).unwrap();
+    /// ```
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    /// * If stratification is required but the graph has singleton edge types.
+    pub fn edge_label_holdout(
+        &self,
+        train_size: f64,
+        use_stratification: Option<bool>,
+        random_state: Option<EdgeT>,
+    ) -> Result<(Graph, Graph)> {
+        if self.get_known_edge_types_number()? < 2 {
+            return Err("It is not possible to create a edge label holdout when the number of edges with known edge type is less than two.".to_string());
+        }
+        let use_stratification = use_stratification.unwrap_or(false);
+        let random_state = random_state.unwrap_or(0xbadf00d);
+        if use_stratification && self.has_singleton_edge_types()? {
+            return Err("It is impossible to create a stratified holdout when the graph has edge types with cardinality one.".to_string());
+        }
+
+        // Compute the vectors with the indices of the edges which edge type matches
+        // therefore the expected shape is:
+        // (edge_types_number, number of edges of that edge type)
+        let edge_sets: Vec<Vec<EdgeT>> = self
+            .edge_types
+            .as_ref()
+            .map(|nts| {
+                if use_stratification {
+                    // Initialize the vectors for each edge type
+                    let mut edge_sets: Vec<Vec<EdgeT>> =
+                        vec![Vec::new(); self.get_edge_types_number().unwrap() as usize];
+                    // itering over the indices and adding each edge to the
+                    // vector of the corresponding edge type.
+                    nts.ids.iter().enumerate().for_each(|(edge_id, edge_type)| {
+                        // if the edge has a edge_type
+                        if let Some(et) = edge_type {
+                            // Get the index of the correct edge type vector.
+                            edge_sets[*et as usize].push(edge_id as EdgeT);
+                        };
+                    });
+
+                    edge_sets
+                } else {
+                    // just compute a vector with a single vector of the indices
+                    //  of the edges with edge
+                    vec![nts
+                        .ids
+                        .iter()
+                        .enumerate()
+                        .filter_map(|(edge_id, edge_type)| {
+                            edge_type.as_ref().map(|_| edge_id as EdgeT)
+                        })
+                        .collect()]
+                }
+            })
+            .unwrap();
+
+        // initialize the seed for a re-producible shuffle
+        let mut rnd = SmallRng::seed_from_u64(splitmix64(random_state as u64));
+
+        // Allocate the vectors for the edges of each
+        let mut train_edge_types = vec![None; self.get_directed_edges_number() as usize];
+        let mut test_edge_types = vec![None; self.get_directed_edges_number() as usize];
+
+        for mut edge_set in edge_sets {
+            // Shuffle in a reproducible way the edges of the current edge_type
+            edge_set.shuffle(&mut rnd);
+            // Compute how many of these edges belongs to the training set
+            let (train_size, _) = self.get_holdouts_elements_number(train_size, edge_set.len())?;
+            // add the edges to the relative vectors
+            edge_set[..train_size].iter().for_each(|edge_id| {
+                train_edge_types[*edge_id as usize] =
+                    unsafe { self.get_unchecked_edge_type_id_from_edge_id(*edge_id) }
+            });
+            edge_set[train_size..].iter().for_each(|edge_id| {
+                test_edge_types[*edge_id as usize] =
+                    unsafe { self.get_unchecked_edge_type_id_from_edge_id(*edge_id) }
+            });
+        }
+
+        // Clone the current graph
+        // here we could manually initialize the clones so that we don't waste
+        // time and memory cloning the edge_types which will be immediately
+        // overwrite. We argue that this should not be impactfull so we prefer
+        // to prioritze the simplicity of the code
+        let mut train_graph = self.clone();
+        let mut test_graph = self.clone();
+
+        // Replace the edge_types with the one computes above
+        train_graph.edge_types = Some(EdgeTypeVocabulary::from_structs(
+            train_edge_types,
+            self.edge_types
+                .as_ref()
+                .map(|etv| etv.vocabulary.clone())
+                .unwrap(),
+        ));
+        test_graph.edge_types = Some(EdgeTypeVocabulary::from_structs(
+            test_edge_types,
+            self.edge_types
+                .as_ref()
+                .map(|etv| etv.vocabulary.clone())
+                .unwrap(),
+        ));
+
+        Ok((train_graph, test_graph))
+    }
+
+    /// Returns subgraph with given number of nodes.
+    ///
+    /// **This method creates a subset of the graph starting from a random node
+    /// sampled using given random_state and includes all neighbouring nodes until
+    /// the required number of nodes is reached**. All the edges connecting any
+    /// of the selected nodes are then inserted into this graph.
+    ///
+    /// This is meant to execute distributed node embeddings.
+    /// It may also sample singleton nodes.
+    ///
+    /// # Arguments
+    /// * `nodes_number`: NodeT - Number of nodes to extract.
+    /// * `random_state`: Option<usize> - Random random_state to use.
+    /// * `verbose`: Option<bool> - Whether to show the loading bar.
+    ///
+    /// # Example
+    /// this generates a random subgraph with 1000 nodes.
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    ///   let random_graph = graph.random_subgraph(1000, Some(0xbad5eed), Some(true)).unwrap();
+    /// ```
+    ///
+    /// # Raises
+    /// * If the requested number of nodes is one or less.
+    /// * If the graph has less than the requested number of nodes.
+    pub fn get_random_subgraph(
+        &self,
+        nodes_number: NodeT,
+        random_state: Option<usize>,
+        verbose: Option<bool>,
+    ) -> Result<Graph> {
+        if nodes_number <= 1 {
+            return Err(String::from("Required nodes number must be more than 1."));
+        }
+        let verbose = verbose.unwrap_or(false);
+        let random_state = random_state.unwrap_or(0xbadf00d);
+        let connected_nodes_number = self.get_connected_nodes_number();
+        if nodes_number > connected_nodes_number {
+            return Err(format!(
+                concat!(
+                    "Required number of nodes ({}) is more than available ",
+                    "number of nodes ({}) that have edges in current graph."
+                ),
+                nodes_number, connected_nodes_number
+            ));
+        }
+
+        // Creating the loading bars
+        let pb1 = get_loading_bar(verbose, "Sampling nodes subset", nodes_number as usize);
+        let pb2 = get_loading_bar(
+            verbose,
+            "Computing subgraph edges",
+            self.get_directed_edges_number() as usize,
+        );
+
+        // Creating the random number generator
+        let mut rnd = SmallRng::seed_from_u64(splitmix64(random_state as u64) as u64);
+
+        // Nodes indices
+        let mut nodes: Vec<NodeT> = (0..self.get_nodes_number()).collect();
+
+        // Shuffling the components using the given random_state.
+        nodes.shuffle(&mut rnd);
+
+        // Initializing stack and set of nodes
+        let mut unique_nodes = RoaringBitmap::new();
+        let mut stack: Vec<NodeT> = Vec::new();
+
+        // We iterate on the components
+        'outer: for node in nodes.iter() {
+            // If the current node is a trap there is no need to continue with the current loop.
+            if self.is_trap_node_from_node_id(*node).unwrap() {
+                continue;
+            }
+            stack.push(*node);
+            while !stack.is_empty() {
+                let src = stack.pop().unwrap();
+                for dst in
+                    unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(src) }
+                {
+                    if !unique_nodes.contains(dst) && src != dst {
+                        stack.push(dst);
+                    }
+
+                    unique_nodes.insert(*node);
+                    unique_nodes.insert(dst);
+                    pb1.inc(2);
+
+                    // If we reach the desired number of unique nodes we can stop the iteration.
+                    if unique_nodes.len() as NodeT >= nodes_number {
+                        break 'outer;
+                    }
+                }
+            }
+        }
+
+        pb1.finish();
+
+        let selected_edge_ids = self
+            .par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
+            .progress_with(pb2)
+            .filter(|&(_, src, dst, _, _)| unique_nodes.contains(src) && unique_nodes.contains(dst))
+            .map(|(edge_id, _, _, _, _)| edge_id)
+            .collect::<Vec<_>>();
+
+        let selected_edges_number = selected_edge_ids.len() as EdgeT;
+
+        let pb3 = get_loading_bar(verbose, "Building subgraph", selected_edge_ids.len());
+
+        build_graph_from_integers(
+            Some(
+                selected_edge_ids
+                    .into_par_iter()
+                    .enumerate()
+                    .map(|(i, edge_id)| unsafe {
+                        let (src, dst, edge_type, weight) = self
+                            .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(
+                                edge_id,
+                            );
+                        (i, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN)))
+                    })
+                    .progress_with(pb3),
+            ),
+            self.nodes.clone(),
+            self.node_types.clone(),
+            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+            self.has_edge_weights(),
+            self.is_directed(),
+            Some(true),
+            Some(false),
+            Some(true),
+            Some(selected_edges_number),
+            true,
+            self.has_selfloops(),
+            format!("{} subgraph", self.get_name()),
+        )
+    }
+
+    /// Returns node-label holdout for training ML algorithms on the graph node labels.
+    ///
+    /// # Arguments
+    /// * `train_size`: f64 - rate target to reserve for training,
+    /// * `use_stratification`: Option<bool> - Whether to use node-label stratification,
+    /// * `random_state`: Option<EdgeT> - The random_state to use for the holdout,
+    ///
+    /// # Example
+    /// This example create an 80-20 split of the nodes in the graph
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    ///   let (train, test) = graph.get_node_label_random_holdout(0.8, Some(true), None).unwrap();
+    /// ```
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    /// * If stratification is requested but the graph has a single node type.
+    /// * If stratification is requested but the graph has a multilabel node types.
+    pub fn get_node_label_random_holdout(
+        &self,
+        train_size: f64,
+        use_stratification: Option<bool>,
+        random_state: Option<EdgeT>,
+    ) -> Result<(Graph, Graph)> {
+        self.must_have_node_types()?;
+        let random_state = random_state.unwrap_or(0xbadf00d);
+        let use_stratification = use_stratification.unwrap_or(false);
+        if use_stratification {
+            if self.has_multilabel_node_types()? {
+                return Err("It is impossible to create a stratified holdout when the graph has multi-label node types.".to_string());
+            }
+            if self.has_singleton_node_types()? {
+                return Err("It is impossible to create a stratified holdout when the graph has node types with cardinality one.".to_string());
+            }
+        }
+
+        if self.get_known_node_types_number()? < 2 {
+            return Err("It is not possible to create a node label holdout when the number of nodes with known node type is less than two.".to_string());
+        }
+
+        // Compute the vectors with the indices of the nodes which node type matches
+        // therefore the expected shape is:
+        // (node_types_number, number of nodes of that node type)
+        let node_sets: Vec<Vec<NodeT>> = self
+            .node_types
+            .as_ref()
+            .map(|nts| {
+                if use_stratification {
+                    // Initialize the vectors for each node type
+                    let mut node_sets: Vec<Vec<NodeT>> =
+                        vec![Vec::new(); self.get_node_types_number().unwrap() as usize];
+                    // itering over the indices and adding each node to the
+                    // vector of the corresponding node type.
+                    nts.ids.iter().enumerate().for_each(|(node_id, node_type)| {
+                        // if the node has a node_type
+                        if let Some(nt) = node_type {
+                            // Get the index of the correct node type vector.
+                            node_sets[nt[0] as usize].push(node_id as NodeT);
+                        };
+                    });
+
+                    node_sets
+                } else {
+                    // just compute a vector with a single vector of the indices
+                    //  of the nodes with node
+                    vec![nts
+                        .ids
+                        .iter()
+                        .enumerate()
+                        .filter_map(|(node_id, node_type)| {
+                            node_type.as_ref().map(|_| node_id as NodeT)
+                        })
+                        .collect()]
+                }
+            })
+            .unwrap();
+
+        // initialize the seed for a re-producible shuffle
+        let mut rnd = SmallRng::seed_from_u64(splitmix64(random_state as u64));
+
+        // Allocate the vectors for the nodes of each
+        let mut train_node_types = vec![None; self.get_nodes_number() as usize];
+        let mut test_node_types = vec![None; self.get_nodes_number() as usize];
+
+        for mut node_set in node_sets {
+            // Shuffle in a reproducible way the nodes of the current node_type
+            node_set.shuffle(&mut rnd);
+            // Compute how many of these nodes belongs to the training set
+            let (train_size, _) = self.get_holdouts_elements_number(train_size, node_set.len())?;
+            // add the nodes to the relative vectors
+            node_set[..train_size].iter().for_each(|node_id| unsafe {
+                train_node_types[*node_id as usize] =
+                    self.get_unchecked_node_type_id_from_node_id(*node_id)
+            });
+            node_set[train_size..].iter().for_each(|node_id| unsafe {
+                test_node_types[*node_id as usize] =
+                    self.get_unchecked_node_type_id_from_node_id(*node_id)
+            });
+        }
+
+        // Clone the current graph
+        // here we could manually initialize the clones so that we don't waste
+        // time and memory cloning the node_types which will be immediately
+        // overwrite. We argue that this should not be impactfull so we prefer
+        // to prioritze the simplicity of the code
+        let mut train_graph = self.clone();
+        let mut test_graph = self.clone();
+
+        // Replace the node_types with the one computes above
+        train_graph.node_types = NodeTypeVocabulary::from_option_structs(
+            Some(train_node_types),
+            self.node_types.as_ref().map(|ntv| ntv.vocabulary.clone()),
+        );
+        test_graph.node_types = NodeTypeVocabulary::from_option_structs(
+            Some(test_node_types),
             self.node_types.as_ref().map(|ntv| ntv.vocabulary.clone()),
         );
 
@@ -854,7 +1234,7 @@ impl Graph {
         k_index: usize,
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
-    ) -> Result<(Graph, Graph), String> {
+    ) -> Result<(Graph, Graph)> {
         self.must_have_node_types()?;
         let random_state = random_state.unwrap_or(0xbadf00d);
         let use_stratification = use_stratification.unwrap_or(false);
@@ -916,12 +1296,12 @@ impl Graph {
             // Shuffle in a reproducible way the nodes of the current node_type
             let validation_chunk = kfold(k, k_index, node_set, random_state)?;
             // Iterate of node ids
-            for node_id in 0..self.get_nodes_number(){
-                let node_type = unsafe{self.get_unchecked_node_type_id_from_node_id(node_id)};
-                if validation_chunk.contains(node_id as u64){
+            for node_id in 0..self.get_nodes_number() {
+                let node_type = unsafe { self.get_unchecked_node_type_id_from_node_id(node_id) };
+                if validation_chunk.contains(node_id as u64) {
                     test_node_types[node_id as usize] = node_type;
                 } else {
-                    train_node_types[node_id as usize] =node_type;
+                    train_node_types[node_id as usize] = node_type;
                 }
             }
         }
@@ -935,12 +1315,12 @@ impl Graph {
         let mut test_graph = self.clone();
 
         // Replace the node_types with the one computes above
-        train_graph.node_types = NodeTypeVocabulary::from_structs(
-            train_node_types,
+        train_graph.node_types = NodeTypeVocabulary::from_option_structs(
+            Some(train_node_types),
             self.node_types.as_ref().map(|ntv| ntv.vocabulary.clone()),
         );
-        test_graph.node_types = NodeTypeVocabulary::from_structs(
-            test_node_types,
+        test_graph.node_types = NodeTypeVocabulary::from_option_structs(
+            Some(test_node_types),
             self.node_types.as_ref().map(|ntv| ntv.vocabulary.clone()),
         );
 
@@ -978,7 +1358,7 @@ impl Graph {
         train_size: f64,
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
-    ) -> Result<(Graph, Graph), String> {
+    ) -> Result<(Graph, Graph)> {
         if self.get_known_edge_types_number()? < 2 {
             return Err("It is not possible to create a edge label holdout when the number of edges with known edge type is less than two.".to_string());
         }
@@ -1108,7 +1488,7 @@ impl Graph {
         k_index: usize,
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
-    ) -> Result<(Graph, Graph), String> {
+    ) -> Result<(Graph, Graph)> {
         if self.get_known_edge_types_number()? < 2 {
             return Err("It is not possible to create a edge label holdout when the number of edges with known edge type is less than two.".to_string());
         }
@@ -1163,12 +1543,12 @@ impl Graph {
             // Shuffle in a reproducible way the edges of the current edge_type
             let validation_chunk = kfold(k, k_index, edge_set, random_state)?;
             // Iterate of edge ids
-            for edge_id in 0..self.get_edges_number(){
-                let edge_type = unsafe{self.get_unchecked_edge_type_id_from_edge_id(edge_id)};
-                if validation_chunk.contains(edge_id as u64){
+            for edge_id in 0..self.get_edges_number() {
+                let edge_type = unsafe { self.get_unchecked_edge_type_id_from_edge_id(edge_id) };
+                if validation_chunk.contains(edge_id as u64) {
                     test_edge_types[edge_id as usize] = edge_type;
                 } else {
-                    train_edge_types[edge_id as usize] =edge_type;
+                    train_edge_types[edge_id as usize] = edge_type;
                 }
             }
         }
@@ -1198,148 +1578,6 @@ impl Graph {
         ));
 
         Ok((train_graph, test_graph))
-    }
-
-    /// Returns subgraph with given number of nodes.
-    ///
-    /// **This method creates a subset of the graph starting from a random node
-    /// sampled using given random_state and includes all neighbouring nodes until
-    /// the required number of nodes is reached**. All the edges connecting any
-    /// of the selected nodes are then inserted into this graph.
-    ///
-    /// This is meant to execute distributed node embeddings.
-    /// It may also sample singleton nodes.
-    ///
-    /// # Arguments
-    /// * `nodes_number`: NodeT - Number of nodes to extract.
-    /// * `random_state`: Option<usize> - Random random_state to use.
-    /// * `verbose`: Option<bool> - Whether to show the loading bar.
-    ///
-    /// # Example
-    /// this generates a random subgraph with 1000 nodes.
-    /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    ///   let random_graph = graph.get_random_subgraph(1000, Some(0xbad5eed), Some(true)).unwrap();
-    /// ```
-    ///
-    /// # Raises
-    /// * If the requested number of nodes is one or less.
-    /// * If the graph has less than the requested number of nodes.
-    pub fn get_random_subgraph(
-        &self,
-        nodes_number: NodeT,
-        random_state: Option<usize>,
-        verbose: Option<bool>,
-    ) -> Result<Graph, String> {
-        if nodes_number <= 1 {
-            return Err(String::from("Required nodes number must be more than 1."));
-        }
-        let verbose = verbose.unwrap_or(false);
-        let random_state = random_state.unwrap_or(0xbadf00d);
-        let connected_nodes_number = self.get_connected_nodes_number();
-        if nodes_number > connected_nodes_number {
-            return Err(format!(
-                concat!(
-                    "Required number of nodes ({}) is more than available ",
-                    "number of nodes ({}) that have edges in current graph."
-                ),
-                nodes_number, connected_nodes_number
-            ));
-        }
-
-        // Creating the loading bars
-        let pb1 = get_loading_bar(verbose, "Sampling nodes subset", nodes_number as usize);
-        let pb2 = get_loading_bar(verbose, "Computing subgraph edges", nodes_number as usize);
-        let pb3 = get_loading_bar(
-            verbose,
-            "Building subgraph",
-            self.get_directed_edges_number() as usize,
-        );
-
-        // Creating the random number generator
-        let mut rnd = SmallRng::seed_from_u64(splitmix64(random_state as u64) as u64);
-
-        // Nodes indices
-        let mut nodes: Vec<NodeT> = (0..self.get_nodes_number()).collect();
-
-        // Shuffling the components using the given random_state.
-        nodes.shuffle(&mut rnd);
-
-        // Initializing stack and set of nodes
-        let mut unique_nodes = RoaringBitmap::new();
-        let mut stack: Vec<NodeT> = Vec::new();
-
-        // We iterate on the components
-        'outer: for node in nodes.iter() {
-            // If the current node is a trap there is no need to continue with the current loop.
-            if self.is_trap_node_from_node_id(*node).unwrap() {
-                continue;
-            }
-            stack.push(*node);
-            while !stack.is_empty() {
-                let src = stack.pop().unwrap();
-                for dst in
-                    unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(src) }
-                {
-                    if !unique_nodes.contains(dst) && src != dst {
-                        stack.push(dst);
-                    }
-
-                    unique_nodes.insert(*node);
-                    unique_nodes.insert(dst);
-                    pb1.inc(2);
-
-                    // If we reach the desired number of unique nodes we can stop the iteration.
-                    if unique_nodes.len() as NodeT >= nodes_number {
-                        break 'outer;
-                    }
-                }
-            }
-        }
-
-        pb1.finish();
-
-        let edges_bitmap: RoaringTreemap = unique_nodes
-            .iter()
-            .progress_with(pb2)
-            .flat_map(|src| unsafe {
-                let (min_edge_id, max_edge_id) =
-                    self.get_unchecked_minmax_edge_ids_from_source_node_id(src);
-                (min_edge_id..max_edge_id)
-                    .filter(|edge_id| {
-                        unique_nodes
-                            .contains(self.get_unchecked_destination_node_id_from_edge_id(*edge_id))
-                    })
-                    .collect::<Vec<EdgeT>>()
-            })
-            .collect();
-
-        Graph::from_integer_sorted(
-            edges_bitmap
-                .iter()
-                .progress_with(pb3)
-                .map(|edge_id| unsafe {
-                    Ok(
-                        self.get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(
-                            edge_id,
-                        ),
-                    )
-                }),
-            edges_bitmap.len() as usize,
-            self.nodes.clone(),
-            self.node_types.clone(),
-            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-            self.directed,
-            true,
-            format!("{} subgraph", self.name.clone()),
-            false,
-            self.has_edge_types(),
-            self.has_edge_weights(),
-            false,
-            true,
-            self.has_selfloops(),
-            true,
-        )
     }
 
     /// Returns train and test graph following kfold validation scheme.
@@ -1377,7 +1615,7 @@ impl Graph {
         edge_types: Option<Vec<Option<String>>>,
         random_state: Option<EdgeT>,
         verbose: Option<bool>,
-    ) -> Result<(Graph, Graph), String> {
+    ) -> Result<(Graph, Graph)> {
         let random_state = random_state.unwrap_or(0xbadf00d);
 
         // If edge types is not None, to compute the chunks only use the edges
@@ -1408,12 +1646,7 @@ impl Graph {
                 .collect::<Vec<EdgeT>>()
         };
 
-        let chunk = kfold(
-            k,
-            k_index,
-            indices,
-            random_state
-        )?;
+        let chunk = kfold(k, k_index, indices, random_state)?;
 
         // Create the two graphs
         self.get_edge_holdout(
@@ -1422,8 +1655,6 @@ impl Graph {
             false,
             |edge_id, _, _, _| chunk.contains(edge_id),
             verbose,
-            true,
-            self.has_selfloops(),
         )
     }
 }

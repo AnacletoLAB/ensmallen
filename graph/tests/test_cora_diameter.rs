@@ -1,6 +1,6 @@
 extern crate graph;
 
-use graph::test_utilities::*;
+use graph::{test_utilities::*, utils::get_loading_bar};
 
 #[test]
 fn test_cora_diameter() -> Result<(), String> {
@@ -23,18 +23,19 @@ fn test_cora_diameter() -> Result<(), String> {
             None,
             None,
             None,
-            None,
         )
         .unwrap();
+    assert_eq!(cora.get_diameter(Some(false), None).unwrap(), f64::INFINITY);
+    assert_eq!(cora.get_diameter_naive(Some(true), None).unwrap(), 6.0);
+    // THIS IS NOT DETERMINISTIC
+    let n = 100;
+    let pb = get_loading_bar(true, "Executing diameter test", n);
+    for _ in 0..n {
+        pb.inc(1);
+        assert_eq!(cora.get_diameter(Some(true), None).unwrap(), 6.0);
+    }
     assert_eq!(
-        cora.get_diameter(Some(false), None).unwrap(),
-        f64::INFINITY
-    );
-    assert_eq!(cora.get_diameter(Some(true), None).unwrap(), 6.0);
-    assert_eq!(
-        cora_with_no_words
-            .get_diameter(Some(true), None)
-            .unwrap(),
+        cora_with_no_words.get_diameter(Some(true), None).unwrap(),
         19.0
     );
     Ok(())

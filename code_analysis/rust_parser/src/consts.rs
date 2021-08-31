@@ -49,11 +49,11 @@ impl Parse for Const {
         assert_eq!(data[0], b'=', "Const statement without equal sign");
         data = skip_whitespace(&data[1..]);
 
-        while data[0] != b';' {
+        while !data.starts_with(b";\n") {
             result.value.push(next_char!(data) as char);
         }
 
-        data = skip_whitespace(&data[1..]);
+        data = skip_whitespace(&data[2..]);
 
         (data, result)
     }

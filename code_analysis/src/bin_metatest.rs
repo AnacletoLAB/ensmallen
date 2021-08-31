@@ -1,13 +1,12 @@
 use rust_parser::*;
 use libcodeanalysis::*;
-use std::collections::HashSet;
 
-const METHODS_BLACKLIST: &'static [&'static str] = &[
+const METHODS_BLACKLIST: &[&str] = &[
     "eq",
     "hash",
 ];
 
-const TYPES_BLACKLIST: &'static [&'static str] = &[
+const TYPES_BLACKLIST: &[&str] = &[
     "Fn", 
     "NodeFileReader", 
     "EdgeFileReader", 
@@ -23,17 +22,17 @@ const TYPES_BLACKLIST: &'static [&'static str] = &[
     "[String]",
 ];
 
-fn build(method_id: usize, method: Function) -> Option<(String, String, String, String, String)> {
-    let struct_name = method.name.split("_").map(|x| {
+fn build(method_id: usize, method: &Function) -> Option<(String, String, String, String, String)> {
+    let struct_name = method.name.split('_').map(|x| {
         let mut x = x.to_string();
         x.get_mut(0..1).map(|s| {s.make_ascii_uppercase(); &*s});
         x
     }).collect::<Vec<_>>().join("");
 
-    let struct_field_name = method.name.split("_").collect::<Vec<_>>().join("");
+    let struct_field_name = method.name.split('_').collect::<Vec<_>>().join("");
 
     let fuzz_types = method.attributes.iter()
-        .filter_map(|attr| attr.parse_fuzz_type())
+        .filter_map(Attribute::parse_fuzz_type)
         .collect::<Vec<_>>();
     
     let mut fields = Vec::new();
@@ -47,43 +46,40 @@ fn build(method_id: usize, method: Function) -> Option<(String, String, String, 
             }
         }
 
-        match fuzz_types.iter().find(|x| x.0 == arg.name) {
-            Some((fuzz_name, fuzz_type)) => {
-                match (fuzz_type, arg.arg_type) {
-                    (x, y) if x == "Option<_>" && y == "Option<_>" => {
-                        // Extract the value inside the option
-                        let prim_type = match y {
-                            Type::SimpleType{
-                                generics,
-                                ..
-                            } => {
-                                match &generics[0] {
-                                    GenericValue::Type(result) => result.clone(),
-                                    _ => unreachable!("An option should only have a type as generics"),
-                                }
+        if let Some((_fuzz_name, fuzz_type)) = fuzz_types.iter().find(|x| x.0 == arg.name) {
+            match (fuzz_type, arg.arg_type) {
+                (x, y) if x == "Option<_>" && y == "Option<_>" => {
+                    // Extract the value inside the option
+                    let prim_type = match y {
+                        Type::SimpleType{
+                            generics,
+                            ..
+                        } => {
+                            match &generics[0] {
+                                GenericValue::Type(result) => result.clone(),
+                                _ => unreachable!("An option should only have a type as generics"),
                             }
-                            _ => unreachable!("The if should already have checked this."),
-                        };
+                        }
+                        _ => unreachable!("The if should already have checked this."),
+                    };
 
-                        arg_names.push(arg.name.clone());
-                        fields.push((arg.name.clone(), fuzz_type.to_string()));
-                        call_args.push(format!("data.{}.{}.map(|x| x as {})", struct_field_name, arg.name, prim_type));
-                    }
-                    (x, y) if x == "Primitive" && y == "Primitive" => {
-                        arg_names.push(arg.name.clone());
-                        fields.push((arg.name.clone(), x.to_string()));
-                        call_args.push(format!("(data.{}.{} as {})", struct_field_name, arg.name, y));
-                    }
-                    (x, y) => {
-                        panic!(
-                            "The fuzz type attribute was called with not-supported types: {} and {}", 
-                            x, y
-                        )
-                    },
+                    arg_names.push(arg.name.clone());
+                    fields.push((arg.name.clone(), fuzz_type.to_string()));
+                    call_args.push(format!("data.{}.{}.map(|x| x as {})", struct_field_name, arg.name, prim_type));
                 }
-                continue;
+                (x, y) if x == "Primitive" && y == "Primitive" => {
+                    arg_names.push(arg.name.clone());
+                    fields.push((arg.name.clone(), x.to_string()));
+                    call_args.push(format!("(data.{}.{} as {})", struct_field_name, arg.name, y));
+                }
+                (x, y) => {
+                    panic!(
+                        "The fuzz type attribute was called with not-supported types: {} and {}", 
+                        x, y
+                    );
+                },
             }
-            None => {}
+            continue;
         };
 
 
@@ -113,7 +109,9 @@ fn build(method_id: usize, method: Function) -> Option<(String, String, String, 
         }
     }
 
-    let (struct_string, field_string) = if fields.len() > 0 {
+    let (struct_string, field_string) = if fields.is_empty() {
+        (String::new(), String::new())
+    } else {
         (format!(
 r#"
 #[derive(Arbitrary, Debug, Clone)]
@@ -128,8 +126,6 @@ pub struct {struct_name} {{
         ), 
         format!("    pub {} : {},", struct_field_name, struct_name)
     )
-    } else {
-        (String::new(), String::new())
     };
 
     let mut method_call = format!(
@@ -186,7 +182,7 @@ pub struct {struct_name} {{
             "#,
                 method_call)
             }
-            x @ _ => {
+            _ => {
                 format!("let _ = {};", method_call)
             }
         };
@@ -262,8 +258,8 @@ fn main() {
                     continue
                 }
 
-                if let Some((struct_string, struct_field, method_call, method_calls_without_handling, trace_call)) = build(counter, method) {
-                    if struct_string != "" {
+                if let Some((struct_string, struct_field, method_call, method_calls_without_handling, trace_call)) = build(counter, &method) {
+                    if !struct_string.is_empty() {
                         structs.push(struct_string);
                     }
                     calls.push(method_call);
@@ -454,5 +450,5 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {{
         meta_struct=meta_struct,
     );
 
-    std::fs::write("../fuzzing/graph_harness/src/meta_test.rs", result);
+    std::fs::write("../fuzzing/graph_harness/src/meta_test.rs", result).unwrap();
 }

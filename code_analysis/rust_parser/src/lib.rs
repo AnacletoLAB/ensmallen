@@ -45,6 +45,9 @@ pub use externs::*;
 mod macros;
 pub use macros::*;
 
+mod macro_call;
+pub use macro_call::*;
+
 mod structs;
 pub use structs::*;
 

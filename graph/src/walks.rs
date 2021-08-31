@@ -633,7 +633,7 @@ impl Graph {
         &'a self,
         quantity: NodeT,
         parameters: &'a WalksParameters,
-    ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a, String> {
+    ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a> {
         self.must_have_edges()?;
         let factor = 0xDEAD;
         let random_state = splitmix64(parameters.random_state.wrapping_mul(factor) as u64);
@@ -669,7 +669,7 @@ impl Graph {
     pub fn iter_complete_walks<'a>(
         &'a self,
         parameters: &'a WalksParameters,
-    ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a, String> {
+    ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a> {
         self.must_have_edges()?;
         let factor = 0xDEAD;
         let random_state = splitmix64(parameters.random_state.wrapping_mul(factor) as u64);
@@ -704,7 +704,7 @@ impl Graph {
         quantity: NodeT,
         to_node: impl Fn(NodeT) -> (u64, NodeT) + Sync + Send + 'a,
         parameters: &'a WalksParameters,
-    ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a, String> {
+    ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a> {
         self.must_be_undirected()?;
         if self.has_edge_weights() {
             self.must_have_positive_edge_weights()?;

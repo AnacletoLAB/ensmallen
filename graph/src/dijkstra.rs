@@ -1,5 +1,6 @@
 use super::*;
 use indicatif::ParallelProgressIterator;
+use indicatif::ProgressIterator;
 use num_traits::Zero;
 use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
@@ -60,7 +61,7 @@ impl ShortestPathsResultBFS {
         &self,
         mut dst_node_id: NodeT,
         k: NodeT,
-    ) -> Result<NodeT, String> {
+    ) -> Result<NodeT> {
         if !self.has_path_to_node_id(dst_node_id) {
             return Err("There is no path to the given destination node.".to_string());
         }
@@ -83,7 +84,7 @@ impl ShortestPathsResultBFS {
         Err("Predecessors were not requested and therefore not computed.".to_string())
     }
 
-    pub(crate) fn get_median_point(&self, dst_node_id: NodeT) -> Result<NodeT, String> {
+    pub(crate) fn get_median_point(&self, dst_node_id: NodeT) -> Result<NodeT> {
         if !self.has_path_to_node_id(dst_node_id) {
             return Err("There is no path to the given destination node.".to_string());
         }
@@ -169,6 +170,8 @@ impl Graph {
     ///
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
+    ///
+    /// TODO! Explore chains accelerations!
     pub unsafe fn get_unchecked_breath_first_search_from_node_ids(
         &self,
         src_node_id: NodeT,
@@ -214,32 +217,31 @@ impl Graph {
             }
 
             // explore the neighbourhood of the current node
-            nodes_to_explore.extend(
-                self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                    .filter_map(|neighbour_node_id| {
-                        // If the node was not previously visited
-                        if !found_destination
-                            && distances[neighbour_node_id as usize] == NOT_PRESENT
-                        {
-                            // Set it's distance
-                            distances[neighbour_node_id as usize] = new_neighbour_distance;
+            self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                .for_each(|neighbour_node_id| {
+                    if found_destination {
+                        return;
+                    }
+                    // If the node was not previously visited
+                    if distances[neighbour_node_id as usize] > new_neighbour_distance {
+                        // Set it's distance
+                        distances[neighbour_node_id as usize] = new_neighbour_distance;
 
-                            // and set its parent if we are asked to
-                            if let Some(predecessors) = predecessors.as_mut() {
-                                predecessors[neighbour_node_id as usize] = node_id;
-                            }
-
-                            if let Some(dst_node_id) = dst_node_id {
-                                if neighbour_node_id == dst_node_id {
-                                    found_destination = true;
-                                }
-                            }
-                            Some((neighbour_node_id, new_neighbour_distance))
-                        } else {
-                            None
+                        // and set its parent if we are asked to
+                        if let Some(predecessors) = predecessors.as_mut() {
+                            predecessors[neighbour_node_id as usize] = node_id;
                         }
-                    }),
-            );
+
+                        if let Some(dst_node_id) = dst_node_id {
+                            if neighbour_node_id == dst_node_id {
+                                found_destination = true;
+                            }
+                        }
+
+                        // add the node to the nodes to explore
+                        nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
+                    }
+                });
             if found_destination {
                 break;
             }
@@ -265,7 +267,7 @@ impl Graph {
         src_node_id: NodeT,
         dst_node_id: NodeT,
         maximal_depth: Option<NodeT>,
-    ) -> Result<Vec<NodeT>, String> {
+    ) -> Result<Vec<NodeT>> {
         if src_node_id == dst_node_id {
             return Err("The minimum path on a selfloop is not defined.".to_string());
         }
@@ -308,7 +310,7 @@ impl Graph {
         src_node_id: NodeT,
         dst_node_id: NodeT,
         maximal_depth: Option<NodeT>,
-    ) -> Result<Vec<String>, String> {
+    ) -> Result<Vec<String>> {
         Ok(self
             .get_unchecked_minimum_path_node_ids_from_node_ids(
                 src_node_id,
@@ -334,7 +336,7 @@ impl Graph {
         src_node_id: NodeT,
         dst_node_id: NodeT,
         maximal_depth: Option<NodeT>,
-    ) -> Result<Vec<NodeT>, String> {
+    ) -> Result<Vec<NodeT>> {
         Ok(unsafe {
             self.get_unchecked_minimum_path_node_ids_from_node_ids(
                 self.validate_node_id(src_node_id)?,
@@ -358,7 +360,7 @@ impl Graph {
         src_node_name: &str,
         dst_node_name: &str,
         maximal_depth: Option<NodeT>,
-    ) -> Result<Vec<NodeT>, String> {
+    ) -> Result<Vec<NodeT>> {
         Ok(unsafe {
             self.get_unchecked_minimum_path_node_ids_from_node_ids(
                 self.get_node_id_from_node_name(src_node_name)?,
@@ -382,7 +384,7 @@ impl Graph {
         src_node_name: &str,
         dst_node_name: &str,
         maximal_depth: Option<NodeT>,
-    ) -> Result<Vec<String>, String> {
+    ) -> Result<Vec<String>> {
         Ok(unsafe {
             self.get_unchecked_minimum_path_node_names_from_node_ids(
                 self.get_node_id_from_node_name(src_node_name)?,
@@ -399,8 +401,6 @@ impl Graph {
     /// * `src_node_id`: NodeT - Source node ID.
     /// * `dst_node_id`: NodeT - Destination node ID.
     /// * `k`: usize - Number of paths to find.
-    /// * `max_path_length`: Option<usize> - Maximum length of the paths. By default None.
-    /// * `verbose`: Option<bool> - Whether to show a tentative loading bar. By default true.
     ///
     /// # Implementative details
     /// This method is not converted to a numpy array because it would have
@@ -408,168 +408,46 @@ impl Graph {
     ///
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
-    ///
-    /// TODO! take a look at https://github.com/Murali-group/PathLinker/blob/master/ksp_Astar.py
     pub unsafe fn get_unchecked_k_shortest_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
         k: usize,
-        max_path_length: Option<NodeT>,
-        verbose: Option<bool>,
-    ) -> Result<Vec<Vec<NodeT>>, String> {
+    ) -> Vec<Vec<NodeT>> {
         let nodes_number = self.get_nodes_number() as usize;
-        if nodes_number < 2 {
-            panic!("It is impossible to execute this method on a graph with less than 2 nodes.");
-        }
         let mut counts = vec![0; nodes_number];
-        let verbose = verbose.unwrap_or(true);
-        let mut total_nodes_to_exclude = 2;
-        let srd_bfs = self.get_unchecked_breath_first_search_from_node_ids(
-            src_node_id,
-            None,
-            None,
-            max_path_length,
-        );
-        if !srd_bfs.has_path_to_node_id(dst_node_id) {
-            return Err(concat!(
-                "There is no path between the given source node id ",
-                "and destination node with the provided parametrization ",
-                "in the current graph."
-            )
-            .to_string());
-        }
-        let src_distances = srd_bfs.into_distances();
-        let max_path_length = max_path_length.unwrap_or(NodeT::MAX);
+        let mut paths = Vec::new();
 
-        // If the graph is undirected
-        // TODO! update this for directed graph using the in-star
-        if !self.is_directed() && max_path_length != NodeT::MAX {
-            let dst_distances = self
-                .get_unchecked_breath_first_search_from_node_ids(
-                    dst_node_id,
-                    None,
-                    None,
-                    Some(max_path_length),
-                )
-                .into_distances();
-            src_distances
-                .into_iter()
-                .zip(dst_distances.into_iter())
-                .enumerate()
-                .for_each(|(node_id, (dst1, dst2))| {
-                    if dst1.saturating_add(dst2) > max_path_length {
-                        total_nodes_to_exclude += 1;
-                        counts[node_id] = k;
-                    }
-                });
-        }
+        let mut nodes_to_explore = VecDeque::with_capacity(nodes_number);
+        nodes_to_explore.push_back(vec![src_node_id]);
 
-        // We do not want to have multiple paths re-passing through the source.
-        counts[src_node_id as usize] = k;
-        counts[dst_node_id as usize] = k;
-        // In the stub graph the tuple contains:
-        // - The position in the vector of the parent node (usize::MAX when node is root)
-        // - The node itself.
-        let mut stub_graph: Vec<(usize, NodeT)> = Vec::with_capacity(nodes_number);
-        stub_graph.push((usize::MAX, src_node_id));
+        while let Some(path) = nodes_to_explore.pop_front() {
+            // If we have found all the required paths we can exit
+            if counts[dst_node_id as usize] >= k {
+                break;
+            }
+            let node_id = *path.last().unwrap();
+            counts[node_id as usize] += 1;
 
-        // In the nodes_to_explore deque the tuples contain:
-        // - The position of the node ID of the tuple in the stub graph
-        // - The node itself.
-        // - The current depth
-        let mut nodes_to_explore: VecDeque<(usize, NodeT, NodeT)> =
-            VecDeque::with_capacity(nodes_number);
-        nodes_to_explore.push_back((0, src_node_id, 0));
-        let mut reconstruction_positions: Vec<usize> = Vec::with_capacity(k);
-
-        // Get the loading bar
-        let pb = get_loading_bar(
-            verbose,
-            "Computing k shortest paths",
-            k * (nodes_number - total_nodes_to_exclude),
-        );
-
-        while let Some((node_position, node_id, depth)) = nodes_to_explore.pop_front() {
-            // If the current path has reached a depth greater than the maximum allowed
-            // we skip it and proceed to the next path.
-            if depth >= max_path_length {
+            if node_id == dst_node_id {
+                paths.push(path);
                 continue;
             }
-            let mut path = Vec::with_capacity(depth as usize);
-            path.push(node_id);
-            let mut position = node_position;
-            // We start to populate the output.
-            while stub_graph[position].0 != usize::MAX {
-                path.push(stub_graph[position].1);
-                position = stub_graph[position].0;
-            }
-            let mut found_destination = false;
-            let new_nodes = self
-                .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                .filter(|&neighbour_node_id| {
-                    // If the neighbour is the destination
-                    // we can just add all of these paths
-                    // immediately and avoid pushing them onto
-                    // the queue.
-                    if neighbour_node_id == dst_node_id {
-                        found_destination = true;
-                        return false;
-                    }
-                    // If the neighbours has already been used all the possible times,
-                    // it does not make sense to be explored further.
-                    if counts[neighbour_node_id as usize] >= k
-                            // We do not want selfloops
-                            || path.contains(&neighbour_node_id)
-                    {
-                        return false;
-                    }
-                    true
-                })
-                .collect::<Vec<NodeT>>();
-            pb.inc(new_nodes.len() as u64);
-            // If the neighbour is the destination
-            // we can just add all of these paths
-            // immediately and avoid pushing them onto
-            // the queue.
-            if found_destination {
-                // Reconstruct the path found starting from
-                // the stub graph.
-                reconstruction_positions.push(node_position);
-                // The check to finish is needed only when
-                // we push a new value to the vector.
-                if reconstruction_positions.len() == k {
-                    break;
-                }
+
+            // If the number of identified paths to
+            // node ID is greater than k, we can continue.
+            if counts[node_id as usize] > k {
+                continue;
             }
 
-            // The current graph size is the size of the stub graph
-            let current_graph_size = stub_graph.len();
-            stub_graph.extend(new_nodes.iter().cloned().map(|neighbour_node_id| {
-                counts[neighbour_node_id as usize] += 1;
-                (node_position, neighbour_node_id)
-            }));
-            nodes_to_explore.extend(new_nodes.into_iter().enumerate().map(
-                |(offset, neighbour_node_id)| {
-                    (current_graph_size + offset, neighbour_node_id, depth + 1)
-                },
-            ));
+            self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                .for_each(|neighbour_node_id| {
+                    let mut new_path = path.clone();
+                    new_path.push(neighbour_node_id);
+                    nodes_to_explore.push_back(new_path);
+                });
         }
-        Ok(reconstruction_positions
-            .into_par_iter()
-            .map(|mut position| {
-                let mut path = vec![dst_node_id];
-                // We start to populate the output.
-                while stub_graph[position].0 != usize::MAX {
-                    path.push(stub_graph[position].1);
-                    position = stub_graph[position].0;
-                }
-                // Add the source node
-                path.push(src_node_id);
-                // Reverse the path.
-                path.into_iter().rev().collect()
-            })
-            .collect())
+        paths
     }
 
     #[fuzz_type(k: u8)]
@@ -579,9 +457,8 @@ impl Graph {
     /// # Arguments
     /// * `src_node_id`: NodeT - Source node ID.
     /// * `dst_node_id`: NodeT - Destination node ID.
+    /// * `maximal_depth`: Option<NodeT> - The maximal depth to execute the BFS for.
     /// * `k`: usize - Number of paths to find.
-    /// * `max_path_length`: Option<usize> - Maximum length of the paths. By default None.
-    /// * `verbose`: Option<bool> - Whether to show a tentative loading bar. By default true.
     ///
     /// # Implementative details
     /// This method is not converted to a numpy array because it would have
@@ -594,18 +471,14 @@ impl Graph {
         src_node_id: NodeT,
         dst_node_id: NodeT,
         k: usize,
-        max_path_length: Option<NodeT>,
-        verbose: Option<bool>,
-    ) -> Result<Vec<Vec<NodeT>>, String> {
-        unsafe {
+    ) -> Result<Vec<Vec<NodeT>>> {
+        Ok(unsafe {
             self.get_unchecked_k_shortest_path_node_ids_from_node_ids(
                 self.validate_node_id(src_node_id)?,
                 self.validate_node_id(dst_node_id)?,
                 k,
-                max_path_length,
-                verbose,
             )
-        }
+        })
     }
 
     #[fuzz_type(k: u8)]
@@ -616,8 +489,6 @@ impl Graph {
     /// * `src_node_name`: &str - Source node name.
     /// * `dst_node_name`: &str - Destination node name.
     /// * `k`: usize - Number of paths to find.
-    /// * `max_path_length`: Option<usize> - Maximum length of the paths. By default None.
-    /// * `verbose`: Option<bool> - Whether to show a tentative loading bar. By default true.
     ///
     /// # Implementative details
     /// This method is not converted to a numpy array because it would have
@@ -630,18 +501,14 @@ impl Graph {
         src_node_name: &str,
         dst_node_name: &str,
         k: usize,
-        max_path_length: Option<NodeT>,
-        verbose: Option<bool>,
-    ) -> Result<Vec<Vec<NodeT>>, String> {
-        unsafe {
+    ) -> Result<Vec<Vec<NodeT>>> {
+        Ok(unsafe {
             self.get_unchecked_k_shortest_path_node_ids_from_node_ids(
                 self.get_node_id_from_node_name(src_node_name)?,
                 self.get_node_id_from_node_name(dst_node_name)?,
                 k,
-                max_path_length,
-                verbose,
             )
-        }
+        })
     }
 
     #[fuzz_type(k: u8)]
@@ -652,8 +519,6 @@ impl Graph {
     /// * `src_node_name`: &str - Source node name.
     /// * `dst_node_name`: &str - Destination node name.
     /// * `k`: usize - Number of paths to find.
-    /// * `max_path_length`: Option<usize> - Maximum length of the paths. By default None.
-    /// * `verbose`: Option<bool> - Whether to show a tentative loading bar. By default true.
     ///
     /// # Implementative details
     /// This method is not converted to a numpy array because it would have
@@ -666,28 +531,20 @@ impl Graph {
         src_node_name: &str,
         dst_node_name: &str,
         k: usize,
-        max_path_length: Option<NodeT>,
-        verbose: Option<bool>,
-    ) -> Result<Vec<Vec<String>>, String> {
-        self.get_k_shortest_path_node_ids_from_node_names(
-            src_node_name,
-            dst_node_name,
-            k,
-            max_path_length,
-            verbose,
-        )
-        .map(|paths| {
-            paths
-                .into_iter()
-                .map(|path| {
-                    path.into_iter()
-                        .map(|node_id| unsafe {
-                            self.get_unchecked_node_name_from_node_id(node_id)
-                        })
-                        .collect()
-                })
-                .collect()
-        })
+    ) -> Result<Vec<Vec<String>>> {
+        self.get_k_shortest_path_node_ids_from_node_names(src_node_name, dst_node_name, k)
+            .map(|paths| {
+                paths
+                    .into_iter()
+                    .map(|path| {
+                        path.into_iter()
+                            .map(|node_id| unsafe {
+                                self.get_unchecked_node_name_from_node_id(node_id)
+                            })
+                            .collect()
+                    })
+                    .collect()
+            })
     }
 
     /// Returns unweighted eccentricity of the given node.
@@ -739,7 +596,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the given node ID does not exist in the graph.
-    pub fn get_eccentricity_from_node_id(&self, node_id: NodeT) -> Result<NodeT, String> {
+    pub fn get_eccentricity_from_node_id(&self, node_id: NodeT) -> Result<NodeT> {
         self.validate_node_id(node_id)
             .map(|node_id| unsafe { self.get_unchecked_eccentricity_from_node_id(node_id) })
     }
@@ -758,7 +615,7 @@ impl Graph {
         &self,
         node_id: NodeT,
         use_edge_weights_as_probabilities: Option<bool>,
-    ) -> Result<f64, String> {
+    ) -> Result<f64> {
         if let Some(uewap) = use_edge_weights_as_probabilities {
             if uewap {
                 self.must_have_edge_weights_representing_probabilities()?;
@@ -780,7 +637,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the given node name does not exist in the current graph instance.
-    pub fn get_eccentricity_from_node_name(&self, node_name: &str) -> Result<NodeT, String> {
+    pub fn get_eccentricity_from_node_name(&self, node_name: &str) -> Result<NodeT> {
         self.get_node_id_from_node_name(node_name)
             .map(|node_id| unsafe { self.get_unchecked_eccentricity_from_node_id(node_id) })
     }
@@ -799,7 +656,7 @@ impl Graph {
         &self,
         node_name: &str,
         use_edge_weights_as_probabilities: Option<bool>,
-    ) -> Result<f64, String> {
+    ) -> Result<f64> {
         if let Some(uewap) = use_edge_weights_as_probabilities {
             if uewap {
                 self.must_have_edge_weights_representing_probabilities()?;
@@ -853,7 +710,7 @@ impl Graph {
             None
         };
 
-        if self.is_unchecked_disconnected_from_node_id(src_node_id) {
+        if self.is_unchecked_disconnected_node_from_node_id(src_node_id) {
             if use_edge_weights_as_probabilities {
                 return ShortestPathsDjkstra::new(
                     vec![0.0; nodes_number],
@@ -904,7 +761,7 @@ impl Graph {
             // If the closest node is the optional destination node, we have
             // completed what the user has required.
             if maybe_dst_node_id.map_or(false, |dst| dst == closest_node_id as NodeT) {
-                dst_node_distance.insert(if use_edge_weights_as_probabilities {
+                let _ = dst_node_distance.insert(if use_edge_weights_as_probabilities {
                     (-nodes_to_explore[closest_node_id]).exp()
                 } else {
                     nodes_to_explore[closest_node_id]
@@ -1080,7 +937,7 @@ impl Graph {
         dst_node_id: NodeT,
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
-    ) -> Result<(f64, Vec<NodeT>), String> {
+    ) -> Result<(f64, Vec<NodeT>)> {
         self.must_have_positive_edge_weights()?;
         if let Some(uewp) = use_edge_weights_as_probabilities {
             if uewp {
@@ -1113,7 +970,7 @@ impl Graph {
         dst_node_name: &str,
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
-    ) -> Result<(f64, Vec<NodeT>), String> {
+    ) -> Result<(f64, Vec<NodeT>)> {
         self.must_have_positive_edge_weights()?;
         if let Some(uewp) = use_edge_weights_as_probabilities {
             if uewp {
@@ -1146,7 +1003,7 @@ impl Graph {
         dst_node_name: &str,
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
-    ) -> Result<(f64, Vec<String>), String> {
+    ) -> Result<(f64, Vec<String>)> {
         self.must_have_positive_edge_weights()?;
         if let Some(uewp) = use_edge_weights_as_probabilities {
             if uewp {
@@ -1180,7 +1037,7 @@ impl Graph {
         dst_node_id: Option<NodeT>,
         compute_predecessors: Option<bool>,
         maximal_depth: Option<NodeT>,
-    ) -> Result<ShortestPathsResultBFS, String> {
+    ) -> Result<ShortestPathsResultBFS> {
         // Check if the given root exists in the graph
         self.validate_node_id(src_node_id)?;
         unsafe {
@@ -1218,7 +1075,7 @@ impl Graph {
         compute_predecessors: Option<bool>,
         maximal_depth: Option<NodeT>,
         use_edge_weights_as_probabilities: Option<bool>,
-    ) -> Result<ShortestPathsDjkstra, String> {
+    ) -> Result<ShortestPathsDjkstra> {
         // Check if the given root exists in the graph
         self.validate_node_id(src_node_id)?;
         self.must_have_positive_edge_weights()?;
@@ -1259,7 +1116,7 @@ impl Graph {
     ///     of the diameter lowerbound.
     ///
     /// This basically creates a "cross" that spans the graph.
-    fn get_four_sweep(&self) -> Result<(NodeT, NodeT), String> {
+    fn get_four_sweep(&self) -> Result<(NodeT, NodeT)> {
         let most_central_node_id = unsafe { self.get_unchecked_most_central_node_id() };
         let first_candidate_most_eccentric_node_id = unsafe {
             self.get_unchecked_breath_first_search_from_node_ids(
@@ -1311,7 +1168,7 @@ impl Graph {
     ///
     /// # Referencences
     /// This method is based on the algorithm described in ["On computing the diameter of real-world undirected graphs" by Crescenzi et al](https://who.rocq.inria.fr/Laurent.Viennot/road/papers/ifub.pdf).
-    fn get_ifub(&self, verbose: Option<bool>) -> Result<f64, String> {
+    fn get_ifub(&self, verbose: Option<bool>) -> Result<f64> {
         if self.is_directed() {
             panic!(
                 "This method is not defined YET for directed graphs! We will add it in the future!"
@@ -1319,7 +1176,7 @@ impl Graph {
         }
 
         let most_central_node_id = unsafe { self.get_unchecked_most_central_node_id() };
-        if unsafe { self.is_unchecked_disconnected_from_node_id(most_central_node_id) } {
+        if unsafe { self.is_unchecked_disconnected_node_from_node_id(most_central_node_id) } {
             return Ok(0.0);
         }
 
@@ -1352,34 +1209,62 @@ impl Graph {
             .filter(|&(_, distance)| tentative_diameter < distance * 2)
             .collect::<Vec<(NodeT, NodeT)>>();
 
+        // If all the test cases are empty, it means
+        // that our tentative diameter is already the actual diameter.
+        if node_ids_and_distances.is_empty() {
+            return Ok(tentative_diameter as f64);
+        }
+
         // sort the nodes by distance, so that we will start checking from the
         // most distant ones which are the most probable to be an extreme of the
         // diameter.
         // Since this vector is generally expected to be quite small,
         // we proceed with a non-parallell approach to avoid spinning up
         // threads for no good reason.
-        node_ids_and_distances.sort_by(|(a, _), &(b, _)| b.cmp(a));
+        node_ids_and_distances.sort_by(|(_, a), &(_, b)| b.cmp(a));
+
+        // Fold it into groups
+        let mut current_distance = node_ids_and_distances[0].1;
+        let mut distance_groups: Vec<(NodeT, Vec<NodeT>)> = vec![(current_distance, Vec::new())];
+        for (node_id, distance) in node_ids_and_distances {
+            if current_distance == distance {
+                distance_groups.last_mut().unwrap().1.push(node_id);
+            } else {
+                current_distance = distance;
+                distance_groups.push((distance, vec![node_id]));
+            }
+        }
 
         // Put tentative diameter into an AtomicU32
         let tentative_diameter = AtomicU32::new(tentative_diameter);
 
         let pb = get_loading_bar(
-            verbose.unwrap_or(true) && node_ids_and_distances.len() > 1,
-            "Computing diameter",
-            node_ids_and_distances.len(),
+            verbose.unwrap_or(true) && distance_groups.len() > 1,
+            "Computing diameter groups",
+            distance_groups.len(),
         );
 
         // for each possible node of the outer crown compute the maximum path
         // from there, this way we can find the exact diameter
-        node_ids_and_distances
-            .into_par_iter()
+        distance_groups
+            .into_iter()
             .progress_with(pb)
-            .for_each(|(distance, node_id)| unsafe {
+            .for_each(|(distance, node_ids)| unsafe {
                 // If we have not yet reached the bound
                 if tentative_diameter.load(Ordering::Relaxed) < distance * 2 {
+                    let pb2 = get_loading_bar(
+                        verbose.unwrap_or(true) && node_ids.len() > 1,
+                        &format!("Computing diameter of nodes at distance {}", distance),
+                        node_ids.len(),
+                    );
                     // We compute the new candidate diameter.
                     tentative_diameter.fetch_max(
-                        self.get_unchecked_eccentricity_from_node_id(node_id),
+                        node_ids
+                            .into_par_iter()
+                            .progress_with(pb2)
+                            .map(|node_id| self.get_unchecked_eccentricity_from_node_id(node_id))
+                            .max()
+                            .unwrap(),
                         Ordering::Relaxed,
                     );
                 }
@@ -1405,7 +1290,7 @@ impl Graph {
         &self,
         ignore_infinity: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<f64, String> {
+    ) -> Result<f64> {
         self.must_have_nodes()?;
         let ignore_infinity = ignore_infinity.unwrap_or(false);
         let verbose = verbose.unwrap_or(true);
@@ -1444,7 +1329,7 @@ impl Graph {
         &self,
         ignore_infinity: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<f64, String> {
+    ) -> Result<f64> {
         self.must_have_nodes()?;
         let ignore_infinity = ignore_infinity.unwrap_or(false);
         let verbose = verbose.unwrap_or(true);
@@ -1486,7 +1371,7 @@ impl Graph {
         ignore_infinity: Option<bool>,
         use_edge_weights_as_probabilities: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<f64, String> {
+    ) -> Result<f64> {
         self.must_have_nodes()?;
         self.must_have_positive_edge_weights()?;
         let use_edge_weights_as_probabilities = use_edge_weights_as_probabilities.unwrap_or(false);
@@ -1549,7 +1434,7 @@ impl Graph {
         dst_node_name: Option<&str>,
         compute_predecessors: Option<bool>,
         maximal_depth: Option<NodeT>,
-    ) -> Result<ShortestPathsResultBFS, String> {
+    ) -> Result<ShortestPathsResultBFS> {
         unsafe {
             Ok(self.get_unchecked_breath_first_search_from_node_ids(
                 self.get_node_id_from_node_name(src_node_name)?,
@@ -1585,7 +1470,7 @@ impl Graph {
         compute_predecessors: Option<bool>,
         maximal_depth: Option<NodeT>,
         use_edge_weights_as_probabilities: Option<bool>,
-    ) -> Result<ShortestPathsDjkstra, String> {
+    ) -> Result<ShortestPathsDjkstra> {
         self.get_dijkstra_from_node_ids(
             self.get_node_id_from_node_name(src_node_name)?,
             maybe_dst_node_name.map_or(Ok::<_, String>(None), |dst_node_name| {
@@ -1596,7 +1481,7 @@ impl Graph {
                     dst_node_names
                         .into_iter()
                         .map(|node_name| self.get_node_id_from_node_name(node_name))
-                        .collect::<Result<_, _>>()?,
+                        .collect::<Result<_>>()?,
                 ))
             })?,
             compute_predecessors,

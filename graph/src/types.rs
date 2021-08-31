@@ -1,6 +1,9 @@
+use std::cell::UnsafeCell;
+use std::fmt::Debug;
 use std::fmt::Display;
 use std::hash::Hash;
-use std::ops::AddAssign;
+use std::ops::{Add, AddAssign, Sub};
+use std::str::FromStr;
 
 // Types used to represent edges, nodes and their types.
 /// Type used to index the Nodes.
@@ -27,20 +30,40 @@ pub type Triple = (NodeT, NodeT, Option<EdgeTypeT>);
 /// Quadruple of edge data
 pub type Quadruple = (NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>);
 /// Quadrule of string edge data
-pub type StringQuadruple = (String, String, Option<String>, Option<WeightT>);
+pub type StringQuadruple = (String, String, Option<String>, WeightT);
 /// Symbol reserved to unmapped nodes for algoritms such as connected components.
 pub const NOT_PRESENT: NodeT = NodeT::MAX;
+
+pub type Result<T> = std::result::Result<T, String>;
 
 /// Trait used for the Vocabulary class.
 /// It represent an unsigned integer that can be converted to and from usize.
 /// This allows us to save memory using indicies of smaller size than u64
 /// and it has no effects on performance because it's optimized away during
 /// compilaton.
-pub trait ToFromUsize: Clone + Display + Ord + Copy + AddAssign + Hash {
+pub trait ToFromUsize:
+    Clone
+    + Display
+    + Ord
+    + Copy
+    + AddAssign
+    + Add
+    + Sub<Output = Self>
+    + Hash
+    + FromStr
+    + Sync
+    + Send
+    + Debug
+    + Add<Output = Self>
+{
     /// create the type from a usize
     fn from_usize(v: usize) -> Self;
     /// create an usize from the type
     fn to_usize(v: Self) -> usize;
+    /// Retrun the maximum encodable number
+    fn get_max() -> Self;
+
+    fn checked_add(self, rhs: Self) -> Option<Self>;
 }
 
 /// Automatically implement the methods needed to convert from and to usize
@@ -57,14 +80,22 @@ macro_rules! macro_impl_to_from_usize {
                 fn to_usize(v: $ty) -> usize {
                     v as usize
                 }
+
+                #[inline(always)]
+                fn get_max() -> $ty {
+                    (0 as $ty).wrapping_sub(1)
+                }
+
+                #[inline(always)]
+                fn checked_add(self, rhs: $ty) -> Option<$ty> {
+                    self.checked_add(rhs)
+                }
             }
         )*
     }
 }
 
 macro_impl_to_from_usize!(u8 u16 u32 u64 usize);
-
-use std::cell::UnsafeCell;
 
 pub(crate) struct ThreadDataRaceAware<T> {
     pub(crate) value: UnsafeCell<T>,

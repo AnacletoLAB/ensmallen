@@ -1,5 +1,8 @@
+use crate::constructors::build_graph_from_integers;
+use crate::constructors::build_graph_from_strings_without_type_iterators;
+
 use super::*;
-use indicatif::ProgressIterator;
+use rayon::iter::ParallelIterator;
 
 impl Graph {
     /// Returns a **NEW** Graph that does not have the required attributes.
@@ -58,8 +61,7 @@ impl Graph {
         filter_singleton_nodes_with_selfloop: Option<bool>,
         filter_selfloops: Option<bool>,
         filter_parallel_edges: Option<bool>,
-        verbose: Option<bool>,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         if !self.is_directed() && (edge_ids_to_keep.is_some() || edge_ids_to_filter.is_some()) {
             return Err(concat!(
                 "It is not possible to filter by edge ids on an undirected ",
@@ -75,26 +77,6 @@ impl Graph {
             filter_singleton_nodes_with_selfloop.unwrap_or(false);
         let filter_selfloops = filter_selfloops.unwrap_or(false);
         let filter_parallel_edges = filter_parallel_edges.unwrap_or(false);
-        let verbose = verbose.unwrap_or(true);
-        let pb_edges = get_loading_bar(
-            verbose,
-            format!(
-                "Building edges of graph {} without required attributes",
-                self.name
-            )
-            .as_ref(),
-            self.get_directed_edges_number() as usize,
-        );
-
-        let pb_nodes = get_loading_bar(
-            verbose,
-            format!(
-                "Building nodes of graph {} without required attributes",
-                self.name
-            )
-            .as_ref(),
-            self.get_nodes_number() as usize,
-        );
 
         let has_node_filters = self.has_nodes()
             && [
@@ -129,32 +111,35 @@ impl Graph {
         let min_edge_weight = min_edge_weight.unwrap_or(WeightT::NEG_INFINITY);
         let max_edge_weight = max_edge_weight.unwrap_or(WeightT::INFINITY);
 
-        let mut last_edge: Option<(NodeT, NodeT)> = None;
-
-        let mut edge_filter = |(edge_id, src, dst, edge_type_id, weight): &(
+        let edge_filter = |(edge_id, src, dst, edge_type_id, weight): &(
             EdgeT,
             NodeT,
             NodeT,
             Option<EdgeTypeT>,
             Option<WeightT>,
         )| {
-            let result = edge_ids_to_keep.as_ref().map_or(true, |edge_ids| edge_ids.contains(edge_id)) &&
+            edge_ids_to_keep.as_ref().map_or(true, |edge_ids| edge_ids.contains(edge_id)) &&
             edge_ids_to_filter.as_ref().map_or(true, |edge_ids| !edge_ids.contains(edge_id)) &&
             // If parallel edges need to be filtered out.
-            (!filter_parallel_edges || last_edge.as_ref().map_or(true, |(last_src, last_dst)| *last_dst!=*dst || *last_src!=*src)) &&
+            (!filter_parallel_edges || {
+                if *edge_id == 0 {
+                    true
+                } else {
+                    let (last_src, last_dst) = unsafe {self.get_unchecked_node_ids_from_edge_id(edge_id-1)};
+                    last_src != *src || last_dst != *dst
+                }
+            }) &&
             // If selfloops need to be filtered out.
             (!filter_selfloops || src != dst) &&
             // If singleton nodes with selfloops need to be filtered out
-            (!filter_singleton_nodes_with_selfloop || src != dst || !self.is_singleton_with_selfloops_from_node_id(*src)) &&
+            (!filter_singleton_nodes_with_selfloop || src != dst || unsafe{!self.is_unchecked_singleton_with_selfloops_from_node_id(*src)}) &&
             // If the allow edge types set was provided
             edge_node_ids_to_keep.as_ref().map_or(true, |edge_node_ids| edge_node_ids.contains(&(*src, *dst)) || !self.is_directed() && edge_node_ids.contains(&(*dst, *src))) &&
             // If the deny edge types set was provided
             !edge_node_ids_to_filter.as_ref().map_or(false, |edge_node_ids| edge_node_ids.contains(&(*src, *dst)) || !self.is_directed() && edge_node_ids.contains(&(*dst, *src))) &&
             edge_type_ids_to_keep.as_ref().map_or(true, |ntitk| ntitk.contains(edge_type_id)) &&
             edge_type_ids_to_filter.as_ref().map_or(true, |ntitf| !ntitf.contains(edge_type_id)) &&
-            weight.map_or(true, |weight| weight >= min_edge_weight && weight <= max_edge_weight);
-            last_edge.replace((*src, *dst));
-            result
+            weight.map_or(true, |weight| weight >= min_edge_weight && weight <= max_edge_weight)
         };
 
         let node_filter = |(node_id, _, node_type_ids, _): &(
@@ -194,9 +179,9 @@ impl Graph {
                 && !(filter_singleton_nodes && unsafe{self.is_unchecked_singleton_from_node_id(*node_id)})
                 && !(filter_singleton_nodes
                     && filter_selfloops
-                    && self.is_singleton_with_selfloops_from_node_id(*node_id)) &&
+                    && unsafe{self.is_unchecked_singleton_with_selfloops_from_node_id(*node_id)}) &&
                 // If singleton nodes with selfloops need to be filtered out
-                (!filter_singleton_nodes_with_selfloop || !self.is_singleton_with_selfloops_from_node_id(*node_id))
+                (!filter_singleton_nodes_with_selfloop || unsafe{!self.is_unchecked_singleton_with_selfloops_from_node_id(*node_id)})
         };
 
         let mut edges_number = self.get_directed_edges_number();
@@ -204,40 +189,61 @@ impl Graph {
         if filter_parallel_edges {
             edges_number -= self.get_parallel_edges_number();
             if filter_selfloops {
-                edges_number -= self.get_unique_selfloop_number() as EdgeT;
+                edges_number -= self.get_unique_selfloops_number() as EdgeT;
             }
         } else if filter_selfloops {
-            edges_number -= self.get_selfloop_number();
+            edges_number -= self.get_selfloops_number();
         }
 
         match (has_node_filters, has_edge_filters) {
             (false, false) => Ok(self.clone()),
-            (false, true) => Graph::from_integer_sorted(
-                self.iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
-                    .progress_with(pb_edges)
-                    .filter(edge_filter)
-                    .map(|(_, src, dst, edge_type, weight)| Ok((src, dst, edge_type, weight))),
-                edges_number as usize,
+            (false, true) => build_graph_from_integers(
+                Some(
+                    self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
+                        .filter(edge_filter)
+                        .map(|(_, src, dst, edge_type, weight)| {
+                            // We use 0 as index because this edge list
+                            // is filtered and therefore there will be gaps
+                            // in between the various edges and we cannot build
+                            // an Elias-Fano object in parallell with gaps.
+                            (0, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN)))
+                        }),
+                ),
                 self.nodes.clone(),
                 self.node_types.clone(),
                 self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-                self.directed,
-                true,
-                self.get_name(),
-                false,
-                self.has_edge_types(),
                 self.has_edge_weights(),
-                false,
+                self.is_directed(),
+                Some(true),
+                Some(false),
+                Some(false),
+                Some(edges_number),
                 true,
-                self.has_selfloops() && !filter_selfloops,
-                true,
+                self.has_selfloops(),
+                self.get_name(),
             ),
             (true, _) => {
-                Graph::from_string_unsorted(
-                    self.iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
-                        .progress_with(pb_edges)
+                let nodes_iterator: ItersWrapper<_, std::iter::Empty<_>, _> =
+                    ItersWrapper::Parallel(
+                        self.par_iter_node_names_and_node_type_names()
+                            .filter(node_filter)
+                            .map(|(_, node_name, _, node_types)| {
+                                Ok((0 as usize, (node_name, node_types)))
+                            }),
+                    );
+                let edges_iterator: ItersWrapper<_, std::iter::Empty<_>, _> = ItersWrapper::Parallel(
+                    self.par_iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
                         .filter(
-                            |(edge_id, src, src_name, dst, dst_name, edge_type, _, weight)| unsafe {
+                            |(
+                                edge_id,
+                                src,
+                                src_name,
+                                dst,
+                                dst_name,
+                                edge_type,
+                                _,
+                                weight,
+                            )| unsafe {
                                 edge_filter(&(*edge_id, *src, *dst, *edge_type, *weight))
                                     && node_filter(&(
                                         *src,
@@ -254,37 +260,47 @@ impl Graph {
                             },
                         )
                         .map(|(_, _, src_name, _, dst_name, _, edge_type_name, weight)| {
-                            Ok((src_name, dst_name, edge_type_name, weight))
+                            Ok((
+                                0 as usize,
+                                (
+                                    src_name,
+                                    dst_name,
+                                    edge_type_name,
+                                    weight.unwrap_or(WeightT::NAN),
+                                ),
+                            ))
                         }),
-                    Some(
-                        self.iter_node_names_and_node_type_names()
-                            .progress_with(pb_nodes)
-                            .filter(node_filter)
-                            .map(|(_, node_name, _, node_types)| Ok((node_name, node_types))),
-                    ),
-                    self.is_directed(),
-                    true,
-                    self.get_name(),
-                    false,
-                    true,
-                    false,
-                    true,
-                    // TODO: UPDATE THE FOLLOWING FOUR BOOLEANS
-                    false,
-                    false,
-                    false,
-                    false,
+                );
+                build_graph_from_strings_without_type_iterators(
                     self.has_node_types(),
-                    self.has_edge_types(),
-                    self.has_edge_weights(),
+                    Some(nodes_iterator),
+                    // The number of nodes is unknown because of the filter
+                    // it may be possible, in some cases, to get this value by
+                    // further expanding this filtering method.
+                    None,
+                    true,
                     false,
-                    // TODO: Almost any edge filtering procedure may produce singletons.
-                    // Consider refining the following for the subset that do not
-                    // which should basically be only those that remove singletons.
+                    false,
+                    None,
+                    self.has_edge_types(),
+                    Some(edges_iterator),
+                    self.has_edge_weights(),
+                    self.is_directed(),
+                    Some(true),
+                    Some(true),
+                    Some(false),
+                    Some(false),
+                    // The number of edges is unknown because of the filter
+                    // it may be possible, in some cases, to get this value by
+                    // further expanding this filtering method.
+                    None,
+                    None,
+                    None,
+                    None,
+                    None,
                     true,
-                    self.has_selfloops() && !filter_selfloops,
-                    true,
-                    verbose,
+                    self.has_selfloops(),
+                    self.get_name(),
                 )
             }
         }
@@ -342,8 +358,7 @@ impl Graph {
         filter_singleton_nodes_with_selfloop: Option<bool>,
         filter_selfloops: Option<bool>,
         filter_parallel_edges: Option<bool>,
-        verbose: Option<bool>,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         self.filter_from_ids(
             node_names_to_keep.map_or(Ok::<_, String>(None), |nntk| {
                 Ok(Some(self.get_node_ids_from_node_names(nntk)?))
@@ -387,7 +402,6 @@ impl Graph {
             filter_singleton_nodes_with_selfloop,
             filter_selfloops,
             filter_parallel_edges,
-            verbose,
         )
     }
 
@@ -396,9 +410,7 @@ impl Graph {
     /// Note that this method will remove ALL nodes labeled with unknown node
     /// type!
     ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
-    pub fn drop_unknown_node_types(&self, verbose: Option<bool>) -> Graph {
+    pub fn drop_unknown_node_types(&self) -> Graph {
         self.filter_from_ids(
             None,
             None,
@@ -418,7 +430,6 @@ impl Graph {
             None,
             None,
             None,
-            verbose,
         )
         .unwrap()
     }
@@ -428,9 +439,7 @@ impl Graph {
     /// Note that this method will remove ALL edges labeled with unknown edge
     /// type!
     ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
-    pub fn drop_unknown_edge_types(&self, verbose: Option<bool>) -> Graph {
+    pub fn drop_unknown_edge_types(&self) -> Graph {
         self.filter_from_ids(
             None,
             None,
@@ -450,7 +459,6 @@ impl Graph {
             None,
             None,
             None,
-            verbose,
         )
         .unwrap()
     }
@@ -459,9 +467,7 @@ impl Graph {
     ///
     /// A node is singleton when does not have neither incoming or outgoing edges.
     ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
-    pub fn drop_singleton_nodes(&self, verbose: Option<bool>) -> Graph {
+    pub fn drop_singleton_nodes(&self) -> Graph {
         self.filter_from_ids(
             None,
             None,
@@ -481,7 +487,6 @@ impl Graph {
             None,
             None,
             None,
-            verbose,
         )
         .unwrap()
     }
@@ -490,9 +495,7 @@ impl Graph {
     ///
     /// A node is singleton with selfloop when does not have neither incoming or outgoing edges.
     ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
-    pub fn drop_singleton_nodes_with_selfloops(&self, verbose: Option<bool>) -> Graph {
+    pub fn drop_singleton_nodes_with_selfloops(&self) -> Graph {
         self.filter_from_ids(
             None,
             None,
@@ -512,7 +515,6 @@ impl Graph {
             Some(true),
             None,
             None,
-            verbose,
         )
         .unwrap()
     }
@@ -521,9 +523,7 @@ impl Graph {
     ///
     /// A disconnected node is a node with no connection to any other node.
     ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
-    pub fn drop_disconnected_nodes(&self, verbose: Option<bool>) -> Graph {
+    pub fn drop_disconnected_nodes(&self) -> Graph {
         self.filter_from_ids(
             None,
             None,
@@ -543,16 +543,13 @@ impl Graph {
             Some(true),
             None,
             None,
-            verbose,
         )
         .unwrap()
     }
 
     /// Returns new graph without selfloops.
     ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
-    pub fn drop_selfloops(&self, verbose: Option<bool>) -> Graph {
+    pub fn drop_selfloops(&self) -> Graph {
         self.filter_from_ids(
             None,
             None,
@@ -572,16 +569,12 @@ impl Graph {
             None,
             Some(true),
             None,
-            verbose,
         )
         .unwrap()
     }
 
     /// Returns new graph without parallel edges.
-    ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
-    pub fn drop_parallel_edges(&self, verbose: Option<bool>) -> Graph {
+    pub fn drop_parallel_edges(&self) -> Graph {
         self.filter_from_ids(
             None,
             None,
@@ -601,7 +594,6 @@ impl Graph {
             None,
             None,
             Some(true),
-            verbose,
         )
         .unwrap()
     }

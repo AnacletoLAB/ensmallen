@@ -4,28 +4,11 @@ This file offers the methods to automatically retrieve the graph Liberibacter so
 The graph is automatically retrieved from the STRING repository. 
 
 
-
-Report
----------------------
-At the time of rendering these methods (please see datetime below), the graph
-had the following characteristics:
-
-Datetime: 2021-02-02 21:27:04.819844
-
-The undirected graph Liberibacter solanacearum has 1160 nodes and 63925
-weighted edges, of which none are self-loops. The graph is dense as it
-has a density of 0.09510 and has 23 connected components, where the component
-with most nodes has 1095 nodes and the component with the least nodes has
-2 nodes. The graph median node degree is 99, the mean node degree is 110.22,
-and the node degree mode is 2. The top 5 most central nodes are 658172.CKC_01960
-(degree 449), 658172.CKC_02560 (degree 446), 658172.CKC_02105 (degree 435),
-658172.CKC_04730 (degree 431) and 658172.CKC_04505 (degree 414).
-
-
 References
 ---------------------
 Please cite the following if you use the data:
 
+```latex
 @article{szklarczyk2019string,
     title={STRING v11: protein--protein association networks with increased coverage, supporting functional discovery in genome-wide experimental datasets},
     author={Szklarczyk, Damian and Gable, Annika L and Lyon, David and Junge, Alexander and Wyder, Stefan and Huerta-Cepas, Jaime and Simonovic, Milan and Doncheva, Nadezhda T and Morris, John H and Bork, Peer and others},
@@ -36,43 +19,7 @@ Please cite the following if you use the data:
     year={2019},
     publisher={Oxford University Press}
 }
-
-
-Usage example
-----------------------
-The usage of this graph is relatively straightforward:
-
-.. code:: python
-
-    # First import the function to retrieve the graph from the datasets
-    from ensmallen_graph.datasets.string import LiberibacterSolanacearum
-
-    # Then load the graph
-    graph = LiberibacterSolanacearum()
-
-    # Finally, you can do anything with it, for instance, compute its report:
-    print(graph)
-
-    # If you need to run a link prediction task with validation,
-    # you can split the graph using a connected holdout as follows:
-    train_graph, validation_graph = graph.connected_holdout(
-        # You can use an 80/20 split the holdout, for example.
-        train_size=0.8,
-        # The random state is used to reproduce the holdout.
-        random_state=42,
-        # Whether to show a loading bar.
-        verbose=True
-    )
-
-    # Remember that, if you need, you can enable the memory-time trade-offs:
-    train_graph.enable(
-        vector_sources=True,
-        vector_destinations=True,
-        vector_outbounds=True
-    )
-
-    # Consider using the methods made available in the Embiggen package
-    # to run graph embedding or link prediction tasks.
+```
 """
 from typing import Dict
 
@@ -82,26 +29,42 @@ from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 def LiberibacterSolanacearum(
     directed: bool = False,
+    preprocess: bool = True,
     verbose: int = 2,
+    cache: bool = True,
     cache_path: str = "graphs/string",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
     """Return new instance of the Liberibacter solanacearum graph.
 
-    The graph is automatically retrieved from the STRING repository. 
-
-	
+    The graph is automatically retrieved from the STRING repository.	
 
     Parameters
     -------------------
     directed: bool = False,
-        Whether to load the graph as directed or undirected.
+        Wether to load the graph as directed or undirected.
         By default false.
+    preprocess: bool = True,
+        Whether to preprocess the graph to be loaded in 
+        optimal time and memory.
     verbose: int = 2,
-        Whether to show loading bars during the retrieval and building
+        Wether to show loading bars during the retrieval and building
         of the graph.
+    cache: bool = True,
+        Whether to use cache, i.e. download files only once
+        and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
+    version: str = "links.v11.5",
+        The version of the graph to retrieve.		
+	The available versions are:
+			- homology.v11.0
+			- homology.v11.5
+			- physical.links.v11.0
+			- physical.links.v11.5
+			- links.v11.0
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
@@ -109,27 +72,11 @@ def LiberibacterSolanacearum(
     -----------------------
     Instace of Liberibacter solanacearum graph.
 
-	Report
-	---------------------
-	At the time of rendering these methods (please see datetime below), the graph
-	had the following characteristics:
-	
-	Datetime: 2021-02-02 21:27:04.819844
-	
-	The undirected graph Liberibacter solanacearum has 1160 nodes and 63925
-	weighted edges, of which none are self-loops. The graph is dense as it
-	has a density of 0.09510 and has 23 connected components, where the component
-	with most nodes has 1095 nodes and the component with the least nodes has
-	2 nodes. The graph median node degree is 99, the mean node degree is 110.22,
-	and the node degree mode is 2. The top 5 most central nodes are 658172.CKC_01960
-	(degree 449), 658172.CKC_02560 (degree 446), 658172.CKC_02105 (degree 435),
-	658172.CKC_04730 (degree 431) and 658172.CKC_04505 (degree 414).
-	
-
 	References
 	---------------------
 	Please cite the following if you use the data:
 	
+	```latex
 	@article{szklarczyk2019string,
 	    title={STRING v11: protein--protein association networks with increased coverage, supporting functional discovery in genome-wide experimental datasets},
 	    author={Szklarczyk, Damian and Gable, Annika L and Lyon, David and Junge, Alexander and Wyder, Stefan and Huerta-Cepas, Jaime and Simonovic, Milan and Doncheva, Nadezhda T and Morris, John H and Bork, Peer and others},
@@ -140,49 +87,16 @@ def LiberibacterSolanacearum(
 	    year={2019},
 	    publisher={Oxford University Press}
 	}
-	
-
-	Usage example
-	----------------------
-	The usage of this graph is relatively straightforward:
-	
-	.. code:: python
-	
-	    # First import the function to retrieve the graph from the datasets
-	    from ensmallen_graph.datasets.string import LiberibacterSolanacearum
-	
-	    # Then load the graph
-	    graph = LiberibacterSolanacearum()
-	
-	    # Finally, you can do anything with it, for instance, compute its report:
-	    print(graph)
-	
-	    # If you need to run a link prediction task with validation,
-	    # you can split the graph using a connected holdout as follows:
-	    train_graph, validation_graph = graph.connected_holdout(
-	        # You can use an 80/20 split the holdout, for example.
-	        train_size=0.8,
-	        # The random state is used to reproduce the holdout.
-	        random_state=42,
-	        # Whether to show a loading bar.
-	        verbose=True
-	    )
-	
-	    # Remember that, if you need, you can enable the memory-time trade-offs:
-	    train_graph.enable(
-	        vector_sources=True,
-	        vector_destinations=True,
-	        vector_outbounds=True
-	    )
-	
-	    # Consider using the methods made available in the Embiggen package
-	    # to run graph embedding or link prediction tasks.
+	```
     """
     return AutomaticallyRetrievedGraph(
         graph_name="LiberibacterSolanacearum",
-        dataset="string",
+        repository="string",
+        version=version,
         directed=directed,
+        preprocess=preprocess,
         verbose=verbose,
+        cache=cache,
         cache_path=cache_path,
         additional_graph_kwargs=additional_graph_kwargs
     )()

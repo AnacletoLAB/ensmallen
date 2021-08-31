@@ -424,7 +424,7 @@ impl Graph {
     pub fn spanning_arborescence(
         &self,
         verbose: Option<bool>,
-    ) -> Result<(usize, impl Iterator<Item = (NodeT, NodeT)> + '_), String> {
+    ) -> Result<(usize, impl Iterator<Item = (NodeT, NodeT)> + '_)> {
         self.must_be_undirected()?;
         let verbose = verbose.unwrap_or(false);
         let nodes_number = self.get_nodes_number() as usize;
@@ -555,61 +555,14 @@ impl Graph {
     ///
     /// * `verbose`: Option<bool> - Whether to show a loading bar or not.
     ///
-    /// # Example
-    /// ```rust
-    ///  # #![feature(impl_trait_in_bindings)]
-    ///  # use graph::Graph;
-    ///  // Graph is a weightless graph with the edges
-    ///  // [(0, 1), (1, 4), (2, 3)]
-    ///  # let edge: Vec<Result<(String, String, Option<String>, Option<f32>), String>> = vec![
-    ///  #        Ok(("0".to_string(), "1".to_string(), None, None)),
-    ///  #        Ok(("1".to_string(), "4".to_string(), None, None)),
-    ///  #        Ok(("2".to_string(), "3".to_string(), None, None)),
-    ///  #     ];
-    ///  #
-    ///  # let nodes = None.map(|x: Vec<Result<(String, Option<Vec<String>>), String>>| x.into_iter());
-    ///  #
-    ///  # let graph = Graph::from_string_unsorted(
-    ///  #     edge.into_iter(),
-    ///  #     nodes,      // nodes
-    ///  #     false,     // directed
-    ///  #     false,      // directe edge list
-    ///  #     "test graph",// name
-    ///  #     false,     // ignore_duplicated_nodes
-    ///  #     true,     // node_list_is_correct
-    ///  #     false,     // ignore_duplicated_nodes
-    ///  #     true,     // node_list_is_correct
-    ///  #     false,     // numeric_edge_types_ids
-    ///  #     false,     // numeric_node_ids
-    ///  #     false,     // numeric_edge_node_ids
-    ///  #     false,     // numeric_node_types_ids
-    ///  #     false,     // has_node_types
-    ///  #     false,     // has_edge_types
-    ///  #     false,     // has_edge_weights
-    ///  #     false,    // maybe_contains_invalid_weights
-    ///  #     true,    // maybe_has_singleton
-    ///  #     true,    // maybe_has_singleton_with_selfloops
-    ///  #     true,    // maybe_has_node_traps
-    ///  #     false,     // verbose
-    ///  # ).unwrap();
-    /// let (components, number_of_components, smallest, biggest) =
-    ///     graph.connected_components(None).unwrap();
-    ///
-    /// //   nodes names:       0  1  4  2  3
-    /// assert_eq!(components, [0, 0, 0, 1, 1].to_vec());
-    ///
-    /// assert_eq!(number_of_components, 2);
-    /// assert_eq!(smallest, 2); // the size of the smallest component
-    /// assert_eq!(biggest, 3);  // the size of the biggest component
-    /// ```
-    ///
     /// # Raises
     /// * If the given graph is directed.
     /// * If the system configuration does not allow for the creation of the thread pool.
     pub fn connected_components(
         &self,
         verbose: Option<bool>,
-    ) -> Result<(Vec<NodeT>, NodeT, NodeT, NodeT), String> {
+    ) -> Result<(Vec<NodeT>, NodeT, NodeT, NodeT)> {
+        // TODO! refactor atomics
         self.must_be_undirected()?;
         if !self.has_nodes() {
             return Ok((Vec::new(), 0, 0, 0));
@@ -682,8 +635,8 @@ impl Graph {
 
                         // find the first not explored node (this is guardanteed to be in a new component)
                         if self.has_disconnected_nodes()
-                            && (unsafe{self.is_unchecked_singleton_from_node_id(src)}
-                                || self.is_singleton_with_selfloops_from_node_id(src))
+                            && (unsafe{self.is_unchecked_singleton_from_node_id(src)
+                                || self.is_unchecked_singleton_with_selfloops_from_node_id(src)})
                         {
                             // We set singletons as self-loops for now.
                             unsafe {

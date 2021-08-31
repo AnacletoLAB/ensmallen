@@ -1,1 +1,0 @@
-from .load_graphs import load_hpo, load_pathway

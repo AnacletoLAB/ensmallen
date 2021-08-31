@@ -1,6 +1,7 @@
 use super::*;
 #[derive(Debug, Clone, PartialEq)]
 pub struct Module {
+    pub file_path: String,
     pub doc: String,
     pub file: String,
     pub name: String,
@@ -13,12 +14,17 @@ pub struct Module {
     pub statics: Vec<Static>,
     pub impls: Vec<Impl>,
     pub macros: Vec<Macro>,
+    pub macro_calls: Vec<MacroCall>,
     pub functions: Vec<Function>,
     pub externs: Vec<Extern>,
     pub mods: Vec<Module>,
 }
 
 impl Module {
+    pub fn iter_on_functions_and_methods(&self) -> impl Iterator<Item=&Function> {
+        self.functions.iter().chain(self.impls.iter().flat_map(|imp| imp.methods.iter()))
+    }
+
     pub fn get_function_names(&self) -> Vec<String> {
         let mut result = Vec::new();
 
@@ -34,11 +40,27 @@ impl Module {
 
         result
     }
+
+    /// Set the source file path for info.
+    pub fn set_path(&mut self, path: String) {
+        self.file_path = path.to_string();
+
+        for function in &mut self.functions {
+            function.file_path = path.to_string();
+        }
+
+        for imp in &mut self.impls {
+            for method in &mut imp.methods {
+                method.file_path = path.to_string();
+            }
+        }
+    }
 }
 
 impl Default for Module {
     fn default() -> Self {
         Module{
+            file_path: String::new(),
             doc: String::new(),
             file: String::new(),
             name: String::new(),
@@ -51,27 +73,12 @@ impl Default for Module {
             statics: Vec::new(),
             impls: Vec::new(),
             macros: Vec::new(),
+            macro_calls: Vec::new(),
             functions: Vec::new(),
             externs: Vec::new(),
             mods: Vec::new(),
         }
     }
-}
-
-/// standard parsing of statements
-macro_rules! maybe_parse {
-    ($data:expr, $doc:ident, $attrs:expr, $type:ty, $res_vector:expr) => {
-        if <$type>::can_parse($data) {
-            let (tmp_data, mut val) = <$type>::parse(skip_whitespace($data));
-            $data = skip_whitespace(tmp_data);
-            val.doc = $doc;
-            $doc = String::new();
-            val.attributes = $attrs;
-            $attrs = Vec::new();
-            $res_vector.push(val);
-            continue;
-        }
-    };
 }
 
 impl Parse for Module {
@@ -112,6 +119,8 @@ impl Parse for Module {
                 continue;
             }
 
+            maybe_parse!(data, doc, attrs, Macro,           result.macros);
+            maybe_parse!(data, doc, attrs, MacroCall,       result.macro_calls);
             maybe_parse!(data, doc, attrs, Function,        result.functions);
             maybe_parse!(data, doc, attrs, Struct,          result.structs);
             maybe_parse!(data, doc, attrs, Enum,            result.enums);
@@ -122,7 +131,6 @@ impl Parse for Module {
             maybe_parse!(data, doc, attrs, Impl,            result.impls);
             maybe_parse!(data, doc, attrs, Extern,          result.externs);
             maybe_parse!(data, doc, attrs, Use,             result.uses);
-            maybe_parse!(data, doc, attrs, Macro,           result.macros);
 
             panic!("Cannot parse the following module line: {}", &String::from_utf8(data.to_vec()).unwrap()[..50]);
         }

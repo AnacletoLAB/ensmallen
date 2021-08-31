@@ -1,0 +1,107 @@
+FromStringsParameters {
+    node_types_number: None,
+    numeric_node_type_ids: None,
+    minimum_node_type_id: Some(
+           0,
+    ),
+    has_node_types: false,
+    nodes_number: None,
+    numeric_node_ids: false,
+    numeric_node_list_node_type_ids: false,
+    minimum_node_ids: None,
+    edge_types_number: None,
+    numeric_edge_type_ids: Some(
+        false,
+    ),
+    minimum_edge_type_id: None,
+    has_edge_types: true,
+    has_edge_weights: false,
+    directed: false,
+    correct: Some(
+        true,
+    ),
+    complete: Some(
+        true,
+    ),
+    duplicates: None,
+    sorted: None,
+    edges_number: None,
+    numeric_edge_list_node_ids: Some(
+        false,
+    ),
+    numeric_edge_list_edge_type_ids: None,
+    skip_node_types_if_unavailable: Some(
+        true,
+    ),
+    skip_edge_types_if_unavailable: Some(
+        true,
+    ),
+    may_have_singletons: true,
+    may_have_singleton_with_selfloops: true,
+    name: "",
+    edges_iterator_is_parallel: true,
+    edge_types_iterator_is_parallel: false,
+    nodes_iterator_is_parallel: true,
+    node_types_iterator_is_parallel: false,
+    edges_iterator: Some(
+        [
+            Ok(
+                (
+                    8127804646157713468,
+                    (
+                        "\u{13}",
+                        "",
+                        Some(
+                            "P",
+                        ),
+                        -0.0000000000000000000000000000000000014669965,
+                    ),
+                ),
+            ),
+            Ok(
+                (
+                    17078079900036386625,
+                    (
+                        "s",
+                        "",
+                        Some(
+                            "-",
+                        ),
+                        -0.00000000000000000000003525685,
+                    ),
+                ),
+            ),
+            Ok(
+                (
+                    1765472182709885795,
+                    (
+                        "]",
+                        "",
+                        Some(
+                            "",
+                        ),
+                        -0.00000000000010945568,
+                    ),
+                ),
+            ),
+        ],
+    ),
+    edge_types_iterator: Some(
+        [
+            Ok(
+                (
+                    5859547384119413373,
+                    "QQQQQQQQQQQQQQ",
+                ),
+            ),
+            Ok(
+                (
+                    3612722608661934131,
+                    "",
+                ),
+            ),
+        ],
+    ),
+    nodes_iterator: None,
+    node_types_iterator: None,
+}

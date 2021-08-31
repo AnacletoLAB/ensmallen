@@ -1,5 +1,5 @@
 [package]
-name = "from_csv"
+name = "honggfuzz_harness"
 version = "0.1.0"
 authors = ["Tommaso Fontana <tommaso.fontana.96@gmail.com>"]
 edition = "2018"
@@ -12,22 +12,13 @@ honggfuzz = "=0.5.52"
 [dependencies.graph_harness]
 path = "../graph_harness"
 
+[[bin]]
+name = "from_strings"
+path = "src/from_strings.rs"
+
 [profile.release]
 opt-level = 3
-#codgen-units=1
-#lto = "fat"
-overflow-checks = false     # Disable integer overflow checks.
-debug = false             # Include debug info.
-debug-assertions = false  # Enables debug assertions.
-
-[[bin]]
-name = "from_csv"
-path = "src/from_csv.rs"
-
-[[bin]]
-name = "from_vec"
-path = "src/from_vec.rs"
-
-[[bin]]
-name = "meta_test"
-path = "src/meta_test.rs"
+lto = "fat"
+overflow-checks = true   # Disable integer overflow checks.
+debug = true            # Include debug info.
+debug-assertions = true  # Enables debug assertions.

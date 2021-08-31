@@ -50,7 +50,7 @@ impl WalkWeights {
     /// * `weight`: Option<WeightT> - Value of the weight.
     ///
     /// TODO: is this a duplicate?
-    fn validate_weight(weight_name: &str, weight: WeightT) -> Result<WeightT, String> {
+    fn validate_weight(weight_name: &str, weight: WeightT) -> Result<WeightT> {
         if weight <= 0.0 || !weight.is_finite() {
             Err(format!(
                 concat!(
@@ -108,7 +108,7 @@ impl SingleWalkParameters {
     /// # use graph::walks_parameters::SingleWalkParameters;
     /// assert!(SingleWalkParameters::new(0).is_err());
     /// ```
-    pub fn new(walk_length: u64) -> Result<SingleWalkParameters, String> {
+    pub fn new(walk_length: u64) -> Result<SingleWalkParameters> {
         if walk_length == 0 {
             return Err(String::from("The provided lenght for the walk is zero!"));
         }
@@ -144,7 +144,7 @@ impl WalksParameters {
     ///
     /// * `walk_length`: NodeT - Maximal walk_length of the walk.
     ///
-    pub fn new(walk_length: u64) -> Result<WalksParameters, String> {
+    pub fn new(walk_length: u64) -> Result<WalksParameters> {
         Ok(WalksParameters {
             single_walk_parameters: SingleWalkParameters::new(walk_length)?,
             iterations: 1,
@@ -175,7 +175,7 @@ impl WalksParameters {
     /// # use graph::walks_parameters::WalksParameters;
     /// assert!(WalksParameters::new(32).unwrap().set_iterations(None).is_ok());
     /// ```
-    pub fn set_iterations(mut self, iterations: Option<NodeT>) -> Result<WalksParameters, String> {
+    pub fn set_iterations(mut self, iterations: Option<NodeT>) -> Result<WalksParameters> {
         if let Some(it) = iterations {
             if it == 0 {
                 return Err(String::from(
@@ -226,10 +226,7 @@ impl WalksParameters {
     /// # use graph::walks_parameters::WalksParameters;
     /// assert!(WalksParameters::new(32).unwrap().set_max_neighbours(None).is_ok());
     /// ```
-    pub fn set_max_neighbours(
-        mut self,
-        max_neighbours: Option<NodeT>,
-    ) -> Result<WalksParameters, String> {
+    pub fn set_max_neighbours(mut self, max_neighbours: Option<NodeT>) -> Result<WalksParameters> {
         if let Some(mn) = max_neighbours {
             if mn == 0 {
                 return Err(String::from(
@@ -295,10 +292,7 @@ impl WalksParameters {
     /// # use graph::walks_parameters::WalksParameters;
     /// assert!(WalksParameters::new(32).unwrap().set_return_weight(None).unwrap().is_first_order_walk());
     /// ```
-    pub fn set_return_weight(
-        mut self,
-        return_weight: Option<WeightT>,
-    ) -> Result<WalksParameters, String> {
+    pub fn set_return_weight(mut self, return_weight: Option<WeightT>) -> Result<WalksParameters> {
         if let Some(rw) = return_weight {
             self.single_walk_parameters.weights.return_weight =
                 WalkWeights::validate_weight("return_weight", rw)?;
@@ -333,7 +327,7 @@ impl WalksParameters {
     pub fn set_explore_weight(
         mut self,
         explore_weight: Option<WeightT>,
-    ) -> Result<WalksParameters, String> {
+    ) -> Result<WalksParameters> {
         if let Some(ew) = explore_weight {
             self.single_walk_parameters.weights.explore_weight =
                 WalkWeights::validate_weight("explore_weight", ew)?;
@@ -368,7 +362,7 @@ impl WalksParameters {
     pub fn set_change_node_type_weight(
         mut self,
         change_node_type_weight: Option<WeightT>,
-    ) -> Result<WalksParameters, String> {
+    ) -> Result<WalksParameters> {
         if let Some(cntw) = change_node_type_weight {
             self.single_walk_parameters.weights.change_node_type_weight =
                 WalkWeights::validate_weight("change_node_type_weight", cntw)?;
@@ -401,7 +395,7 @@ impl WalksParameters {
     pub fn set_change_edge_type_weight(
         mut self,
         change_edge_type_weight: Option<WeightT>,
-    ) -> Result<WalksParameters, String> {
+    ) -> Result<WalksParameters> {
         if let Some(cetw) = change_edge_type_weight {
             self.single_walk_parameters.weights.change_edge_type_weight =
                 WalkWeights::validate_weight("change_edge_type_weight", cetw)?;
@@ -434,7 +428,7 @@ impl WalksParameters {
     /// assert!(parameters.set_dense_node_mapping(Some(ppi.get_dense_nodes_mapping())).validate(&cora).is_err());
     /// ```
     ///
-    pub fn validate(&self, graph: &Graph) -> Result<(), String> {
+    pub fn validate(&self, graph: &Graph) -> Result<()> {
         if let Some(dense_node_mapping) = &self.dense_node_mapping {
             if !graph
                 .iter_unique_source_node_ids()

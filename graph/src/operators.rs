@@ -1,5 +1,9 @@
 use rayon::iter::{IntoParallelIterator, ParallelIterator};
 
+use crate::constructors::{
+    build_graph_from_integers, build_graph_from_strings_without_type_iterators,
+};
+
 use super::*;
 use std::ops;
 
@@ -14,103 +18,109 @@ fn build_operator_graph_name(main: &Graph, other: &Graph, operator: String) -> S
 /// require a reverse mapping step.
 ///
 /// # Arguments
-///
 /// * `main`: &Graph - The current graph instance.
 /// * `other`: &Graph - The other graph.
 /// * `operator`: String - The operator used.
 /// * `graphs`: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
-/// * `might_contain_singletons`: bool - Whether we expect the graph to have singletons.
-/// * `might_contain_singletons_with_selfloops`: bool - Whether we expect the graph to have singletons with self-loops.
-/// * `might_contain_trap_nodes`: bool - Whether we expect the graph to have trap nodes.
 fn generic_string_operator(
     main: &Graph,
     other: &Graph,
     operator: String,
     graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)>,
-    might_contain_singletons: bool,
-    might_contain_singletons_with_selfloops: bool,
-    might_contain_trap_nodes: bool,
-) -> Result<Graph, String> {
+) -> Result<Graph> {
     // one: left hand side of the operator
     // deny_graph: right hand edges "deny list"
     // must_have_graph: right hand edges "must have list
-    let edges_iterator = graphs
-        .iter()
-        .flat_map(|(one, deny_graph, must_have_graph)| {
-            one.iter_edge_node_names_and_edge_type_name_and_edge_weight(main.directed)
-                .filter(move |(_, _, src_name, _, dst_name, _, edge_type_name, _)| {
-                    // If the secondary graph is given
-                    // we filter out the edges that were previously added to avoid
-                    // introducing duplicates.
-                    // TODO: handle None type edge types and avoid duplicating those!
-                    if let Some(dg) = deny_graph {
-                        if dg.has_edge_from_node_names_and_edge_type_name(
-                            src_name,
-                            dst_name,
-                            edge_type_name.as_deref(),
-                        ) {
-                            return false;
+    let edges_iterator: ItersWrapper<_, std::iter::Empty<_>, _> =
+        ItersWrapper::Parallel(graphs.into_par_iter().flat_map_iter(
+            |(one, deny_graph, must_have_graph)| {
+                one.iter_edge_node_names_and_edge_type_name_and_edge_weight(main.directed)
+                    .filter(move |(_, _, src_name, _, dst_name, _, edge_type_name, _)| {
+                        // If the secondary graph is given
+                        // we filter out the edges that were previously added to avoid
+                        // introducing duplicates.
+                        // TODO: handle None type edge types and avoid duplicating those!
+                        if let Some(dg) = deny_graph {
+                            if dg.has_edge_from_node_names_and_edge_type_name(
+                                src_name,
+                                dst_name,
+                                edge_type_name.as_deref(),
+                            ) {
+                                return false;
+                            }
                         }
-                    }
-                    if let Some(mhg) = must_have_graph {
-                        if !mhg.has_edge_from_node_names_and_edge_type_name(
-                            src_name,
-                            dst_name,
-                            edge_type_name.as_deref(),
-                        ) {
-                            return false;
+                        if let Some(mhg) = must_have_graph {
+                            if !mhg.has_edge_from_node_names_and_edge_type_name(
+                                src_name,
+                                dst_name,
+                                edge_type_name.as_deref(),
+                            ) {
+                                return false;
+                            }
                         }
-                    }
-                    true
-                })
-                .map(|(_, _, src_name, _, dst_name, _, edge_type_name, weight)| {
-                    Ok((src_name, dst_name, edge_type_name, weight))
-                })
-        });
-
-    // Chaining node types in a way that merges the information between
-    // two node type sets where one of the two has some unknown node types
-    let nodes_iterator = main
-        .iter_node_names_and_node_type_names()
-        .map(|(_, node_name, _, node_type_names)| {
-            let node_type_names = match node_type_names {
-                Some(ntns) => Some(ntns),
-                None => other
-                    .get_node_id_from_node_name(&node_name)
-                    .ok()
-                    .and_then(|node_id| other.get_node_type_names_from_node_id(node_id).unwrap()),
-            };
-            Ok((node_name, node_type_names))
-        })
-        .chain(other.iter_node_names_and_node_type_names().filter_map(
-            |(_, node_name, _, node_type_names)| match main.has_node_name(&node_name) {
-                true => None,
-                false => Some(Ok((node_name, node_type_names))),
+                        true
+                    })
+                    .map(|(_, _, src_name, _, dst_name, _, edge_type_name, weight)| {
+                        Ok((
+                            0,
+                            (
+                                src_name,
+                                dst_name,
+                                edge_type_name,
+                                weight.unwrap_or(WeightT::NAN),
+                            ),
+                        ))
+                    })
             },
         ));
 
-    Graph::from_string_unsorted(
-        edges_iterator,
-        Some(nodes_iterator),
-        main.directed,
-        false,
-        build_operator_graph_name(main, other, operator),
-        true,
-        true,
-        false,
-        true,
-        false,
-        false,
-        false,
-        false,
+    // Chaining node types in a way that merges the information between
+    // two node type sets where one of the two has some unknown node types
+    let nodes_iterator: ItersWrapper<_, std::iter::Empty<_>, _> =
+        ItersWrapper::Parallel(
+            main.par_iter_node_names_and_node_type_names()
+                .map(|(_, node_name, _, node_type_names)| {
+                    let node_type_names =
+                        match node_type_names {
+                            Some(ntns) => Some(ntns),
+                            None => other.get_node_id_from_node_name(&node_name).ok().and_then(
+                                |node_id| other.get_node_type_names_from_node_id(node_id).unwrap(),
+                            ),
+                        };
+                    Ok((0, (node_name, node_type_names)))
+                })
+                .chain(other.par_iter_node_names_and_node_type_names().filter_map(
+                    |(_, node_name, _, node_type_names)| match main.has_node_name(&node_name) {
+                        true => None,
+                        false => Some(Ok((0, (node_name, node_type_names)))),
+                    },
+                )),
+        );
+
+    build_graph_from_strings_without_type_iterators(
         main.has_node_types(),
+        Some(nodes_iterator),
+        None,
+        true,
+        false,
+        false,
+        None,
         main.has_edge_types(),
+        Some(edges_iterator),
         main.has_edge_weights(),
-        false,
-        might_contain_singletons,
-        might_contain_singletons_with_selfloops,
-        might_contain_trap_nodes,
-        false,
+        main.is_directed(),
+        Some(true),
+        Some(true),
+        Some(false),
+        Some(false),
+        None,
+        None,
+        None,
+        None,
+        None,
+        true,
+        main.has_selfloops() || other.has_selfloops(),
+        build_operator_graph_name(main, other, operator),
     )
 }
 
@@ -126,44 +136,41 @@ fn generic_string_operator(
 /// * `other`: &Graph - The other graph.
 /// * `operator`: String - The operator used.
 /// * `graphs`: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
-/// * `might_contain_singletons`: bool - Whether we expect the graph to have singletons.
-/// * `might_contain_singletons_with_selfloops`: bool - Whether we expect the graph to have singletons with self-loops.
-/// * `might_contain_trap_nodes`: bool - Whether we expect the graph to have trap nodes.
 fn generic_integer_operator(
     main: &Graph,
     other: &Graph,
     operator: String,
     graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)>,
-    might_contain_singletons: bool,
-    might_contain_singletons_with_selfloops: bool,
-    might_contain_trap_nodes: bool,
 ) -> Graph {
     // one: left hand side of the operator
     // deny_graph: right hand edges "deny list"
     // must_have_graph: right hand edges "must have list
-    let edges_iterator = graphs
-        .into_par_iter()
-        .flat_map(|(one, deny_graph, must_have_graph)| {
-            one.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
-                .filter(move |(_, src, dst, edge_type, _)| {
-                    // If the secondary graph is given
-                    // we filter out the edges that were previously added to avoid
-                    // introducing duplicates.
-                    if let Some(dg) = deny_graph {
-                        if dg.has_edge_from_node_ids_and_edge_type_id(*src, *dst, *edge_type) {
-                            return false;
+    let edges_iterator =
+        graphs
+            .into_par_iter()
+            .flat_map_iter(|(one, deny_graph, must_have_graph)| {
+                one.iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
+                    .filter(move |(_, src, dst, edge_type, _)| {
+                        // If the secondary graph is given
+                        // we filter out the edges that were previously added to avoid
+                        // introducing duplicates.
+                        if let Some(dg) = deny_graph {
+                            if dg.has_edge_from_node_ids_and_edge_type_id(*src, *dst, *edge_type) {
+                                return false;
+                            }
                         }
-                    }
-                    if let Some(mhg) = must_have_graph {
-                        if !mhg.has_edge_from_node_ids_and_edge_type_id(*src, *dst, *edge_type) {
-                            return false;
+                        if let Some(mhg) = must_have_graph {
+                            if !mhg.has_edge_from_node_ids_and_edge_type_id(*src, *dst, *edge_type)
+                            {
+                                return false;
+                            }
                         }
-                    }
-                    true
-                })
-                .map(|(_, src, dst, edge_type, weight)| Ok((src, dst, edge_type, weight)))
-                .collect::<Vec<_>>()
-        });
+                        true
+                    })
+                    .map(|(_, src, dst, edge_type, weight)| {
+                        (0, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN)))
+                    })
+            });
 
     let node_types = match (&main.node_types, &other.node_types) {
         (Some(mnts), Some(onts)) => Some(match mnts == onts {
@@ -178,8 +185,7 @@ fn generic_integer_operator(
                             *mid = oid.clone();
                         }
                     });
-                NodeTypeVocabulary::from_structs(main_node_types, Some(mnts.vocabulary.clone()))
-                    .unwrap()
+                NodeTypeVocabulary::from_structs(main_node_types, mnts.vocabulary.clone())
             }
         }),
         (Some(mnts), _) => Some(mnts.clone()),
@@ -187,21 +193,20 @@ fn generic_integer_operator(
         _ => None,
     };
 
-    Graph::from_integer_unsorted(
-        edges_iterator,
+    build_graph_from_integers(
+        Some(edges_iterator),
         main.nodes.clone(),
         node_types,
         main.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-        main.directed,
-        build_operator_graph_name(main, other, operator),
-        false,
-        main.has_edge_types(),
         main.has_edge_weights(),
-        false,
-        might_contain_singletons,
-        might_contain_singletons_with_selfloops,
-        might_contain_trap_nodes,
-        false,
+        main.is_directed(),
+        Some(true),
+        Some(false),
+        Some(false),
+        None,
+        true,
+        main.has_selfloops() || other.has_selfloops(),
+        build_operator_graph_name(main, other, operator),
     )
     .unwrap()
 }
@@ -218,7 +223,7 @@ impl<'a, 'b> Graph {
     /// * If one of the two graphs has edge weights and the other does not.
     /// * If one of the two graphs has node types and the other does not.
     /// * If one of the two graphs has edge types and the other does not.
-    pub(crate) fn validate_operator_terms(&self, other: &'b Graph) -> Result<(), String> {
+    pub(crate) fn validate_operator_terms(&self, other: &'b Graph) -> Result<()> {
         if self.directed != other.directed {
             return Err(String::from(
                 "The graphs must either be both directed or undirected.",
@@ -259,7 +264,7 @@ impl Graph {
     /// * If one of the two graphs has edge weights and the other does not.
     /// * If one of the two graphs has node types and the other does not.
     /// * If one of the two graphs has edge types and the other does not.
-    pub(crate) fn is_compatible(&self, other: &Graph) -> Result<bool, String> {
+    pub(crate) fn is_compatible(&self, other: &Graph) -> Result<bool> {
         self.validate_operator_terms(other)?;
         if self.nodes != other.nodes {
             return Ok(false);
@@ -288,43 +293,21 @@ impl Graph {
     /// * `other`: &Graph - The other graph.
     /// * `operator`: String - The operator used.
     /// * `graphs`: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
-    /// * `might_contain_singletons`: bool - Whether we expect the graph to have singletons.
-    /// * `might_contain_singletons_with_selfloops`: bool - Whether we expect the graph to have singletons with self-loops.
-    /// * `might_contain_trap_nodes`: bool - Whether we expect the graph to have trap nodes.
     pub(crate) fn generic_operator(
         &self,
         other: &Graph,
         operator: String,
         graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)>,
-        might_contain_singletons: bool,
-        might_contain_singletons_with_selfloops: bool,
-        might_contain_trap_nodes: bool,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         match self.is_compatible(other)? {
-            true => Ok(generic_integer_operator(
-                self,
-                other,
-                operator,
-                graphs,
-                might_contain_singletons,
-                might_contain_singletons_with_selfloops,
-                might_contain_trap_nodes,
-            )),
-            false => generic_string_operator(
-                self,
-                other,
-                operator,
-                graphs,
-                might_contain_singletons,
-                might_contain_singletons_with_selfloops,
-                might_contain_trap_nodes,
-            ),
+            true => Ok(generic_integer_operator(self, other, operator, graphs)),
+            false => generic_string_operator(self, other, operator, graphs),
         }
     }
 }
 
 impl<'a, 'b> ops::BitOr<&'b Graph> for &'a Graph {
-    type Output = Result<Graph, String>;
+    type Output = Result<Graph>;
     /// Return graph composed of the two graphs.
     ///
     /// The two graphs must have the same nodes, node types and edge types.
@@ -333,23 +316,17 @@ impl<'a, 'b> ops::BitOr<&'b Graph> for &'a Graph {
     ///
     /// * `other`: &Graph - Graph to be summed.
     ///
-    fn bitor(self, other: &'b Graph) -> Result<Graph, String> {
+    fn bitor(self, other: &'b Graph) -> Result<Graph> {
         self.generic_operator(
             other,
             "|".to_owned(),
             vec![(self, None, None), (other, Some(self), None)],
-            // TODO: it is possible to make the following more precise!
-            self.has_singleton_nodes() || other.has_singleton_nodes(),
-            // TODO: it is possible to make the following more precise!
-            self.has_singleton_nodes_with_selfloops() || other.has_singleton_nodes_with_selfloops(),
-            // TODO: it is possible to make the following more precise!
-            self.has_trap_nodes() || other.has_trap_nodes(),
         )
     }
 }
 
 impl<'a, 'b> ops::BitXor<&'b Graph> for &'a Graph {
-    type Output = Result<Graph, String>;
+    type Output = Result<Graph>;
     /// Return graph composed of the two graphs.
     ///
     /// The two graphs must have the same nodes, node types and edge types.
@@ -358,21 +335,17 @@ impl<'a, 'b> ops::BitXor<&'b Graph> for &'a Graph {
     ///
     /// * `other`: &Graph - Graph to be summed.
     ///
-    fn bitxor(self, other: &'b Graph) -> Result<Graph, String> {
+    fn bitxor(self, other: &'b Graph) -> Result<Graph> {
         self.generic_operator(
             self,
             "^".to_owned(),
             vec![(self, Some(other), None), (other, Some(self), None)],
-            true,
-            // TODO: it is possible to make the following more precise!
-            self.has_selfloops() || other.has_selfloops(),
-            true,
         )
     }
 }
 
 impl<'a, 'b> ops::Sub<&'b Graph> for &'a Graph {
-    type Output = Result<Graph, String>;
+    type Output = Result<Graph>;
     /// Return subtraction for graphs objects.
     ///
     /// The two graphs must have the same nodes, node types and edge types.
@@ -381,20 +354,13 @@ impl<'a, 'b> ops::Sub<&'b Graph> for &'a Graph {
     ///
     /// * `other`: &Graph - Graph to be subtracted.
     ///
-    fn sub(self, other: &'b Graph) -> Result<Graph, String> {
-        self.generic_operator(
-            other,
-            "-".to_owned(),
-            vec![(self, Some(other), None)],
-            true,
-            self.has_selfloops(),
-            true,
-        )
+    fn sub(self, other: &'b Graph) -> Result<Graph> {
+        self.generic_operator(other, "-".to_owned(), vec![(self, Some(other), None)])
     }
 }
 
 impl<'a, 'b> ops::BitAnd<&'b Graph> for &'a Graph {
-    type Output = Result<Graph, String>;
+    type Output = Result<Graph>;
     /// Return graph obtained from the intersection of the two graph.
     ///
     /// The two graphs must have the same nodes, node types and edge types.
@@ -403,14 +369,7 @@ impl<'a, 'b> ops::BitAnd<&'b Graph> for &'a Graph {
     ///
     /// * `other`: &Graph - Graph to be subtracted.
     ///
-    fn bitand(self, other: &'b Graph) -> Result<Graph, String> {
-        self.generic_operator(
-            other,
-            "&".to_owned(),
-            vec![(self, None, Some(other))],
-            true,
-            self.has_selfloops() && other.has_selfloops(),
-            true,
-        )
+    fn bitand(self, other: &'b Graph) -> Result<Graph> {
+        self.generic_operator(other, "&".to_owned(), vec![(self, None, Some(other))])
     }
 }

@@ -1,0 +1,74 @@
+FromStringsParameters {
+    node_types_number: Some(
+        12394,
+    ),
+    numeric_node_type_ids: None,
+    minimum_node_type_id: Some(
+        25135,
+    ),
+    has_node_types: false,
+    nodes_number: Some(
+        576224793,
+    ),
+    numeric_node_ids: true,
+    numeric_node_list_node_type_ids: true,
+    minimum_node_ids: None,
+    edge_types_number: None,
+    numeric_edge_type_ids: None,
+    minimum_edge_type_id: None,
+    has_edge_types: false,
+    has_edge_weights: false,
+    directed: true,
+    correct: Some(
+        true,
+    ),
+    complete: None,
+    duplicates: None,
+    sorted: Some(
+        true,
+    ),
+    edges_number: None,
+    numeric_edge_list_node_ids: Some(
+        true,
+    ),
+    numeric_edge_list_edge_type_ids: None,
+    skip_node_types_if_unavailable: Some(
+        true,
+    ),
+    skip_edge_types_if_unavailable: Some(
+        false,
+    ),
+    may_have_singletons: false,
+    may_have_singleton_with_selfloops: true,
+    name: "",
+    edges_iterator_is_parallel: true,
+    edge_types_iterator_is_parallel: false,
+    nodes_iterator_is_parallel: false,
+    node_types_iterator_is_parallel: true,
+    edges_iterator: Some(
+        [],
+    ),
+    edge_types_iterator: None,
+    nodes_iterator: Some(
+        [
+            Err(
+                "iH[",
+            ),
+            Ok(
+                (
+                    13470551260509461339,
+                    (
+                        "\u{4}f[",
+                        None,
+                    ),
+                ),
+            ),
+            Err(
+                "",
+            ),
+        ],
+    ),
+    node_types_iterator: Some(
+        [],
+    ),
+}

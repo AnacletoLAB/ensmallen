@@ -1,19 +1,5 @@
 //! Ensmallen its an efficient graph manipulation library.
 //!
-//! # Example:
-//!
-//! ```rust
-//! use graph::{EdgeFileReader, Graph};
-//! let edges_reader = EdgeFileReader::new("tests/data/test_components.csv",).unwrap()
-//!     .set_separator(Some(",")).unwrap()
-//!     .set_verbose(Some(false))
-//!     .set_numeric_node_ids(Some(true))
-//!     .set_header(Some(false));
-//!  
-//! let g = Graph::from_sorted_csv(edges_reader, None, false, false, 6, 6, "Graph").unwrap();
-//!
-//!
-//! ```
 //! # Definitions
 //! * `edge`: an arch between to nodes
 //! * `selfloop`: An edge which source and destination are equal
@@ -24,15 +10,17 @@
 #![warn(unused_macros)]
 #![feature(is_sorted)]
 #![feature(map_first_last)]
+#![feature(core_intrinsics)]
 #![type_length_limit = "3764086"]
+#![feature(exclusive_range_pattern)]
 #![feature(option_result_unwrap_unchecked)]
 
 mod vocabulary;
-pub use self::vocabulary::Vocabulary;
+pub use self::vocabulary::*;
 mod node_type_vocabulary;
-pub use self::node_type_vocabulary::NodeTypeVocabulary;
+pub use self::node_type_vocabulary::*;
 mod edge_type_vocabulary;
-pub use self::edge_type_vocabulary::EdgeTypeVocabulary;
+pub use self::edge_type_vocabulary::*;
 
 mod csv_file_writer;
 pub(crate) use self::csv_file_writer::compose_lines;
@@ -47,12 +35,16 @@ mod edge_file_reader;
 pub use self::edge_file_reader::EdgeFileReader;
 mod edge_file_writer;
 pub use self::edge_file_writer::EdgeFileWriter;
+mod type_file_reader;
+pub use self::type_file_reader::TypeFileReader;
+mod type_file_writer;
+pub use self::type_file_writer::TypeFileWriter;
 mod compression;
 mod from_csv;
 pub(crate) use self::compression::*;
 
-mod validators;
-pub use self::validators::*;
+mod parameters_validators;
+pub use self::parameters_validators::*;
 mod getters_boolean;
 pub use self::getters_boolean::*;
 mod replace;
@@ -62,13 +54,15 @@ mod dijkstra;
 pub use self::dijkstra::*;
 
 mod constructors;
+pub use constructors::*;
 
 pub mod utils;
-pub(crate) use self::utils::*;
+pub use self::utils::*;
 
 mod bitmaps;
 mod centrality;
 mod dense;
+mod edge_list_utils;
 mod edge_lists;
 mod edge_metrics;
 mod filters;
@@ -83,22 +77,24 @@ mod modifiers;
 mod operators;
 mod polygons;
 mod preprocessing;
+mod random_graphs;
 mod remap;
 mod remove;
 mod selfloops;
 mod setters;
+mod sort;
 mod tarjan;
-mod url_utilities;
 mod tfidf;
 mod thickeners;
 mod to_conversions;
 mod transitivity;
 mod trees;
 mod types;
-mod sort;
+mod url_utilities;
 mod vertex_cover;
 mod walks;
 pub mod walks_parameters;
+pub use edge_list_utils::*;
 
 mod report;
 pub use self::report::*;
@@ -133,5 +129,14 @@ use vec_rand::splitmix64;
 
 use tags::*;
 
+mod cache;
+use cache::*;
+
+mod getters_cached;
+pub use getters_cached::*;
+
 mod visualizations;
 pub use visualizations::*;
+
+mod memory;
+pub use memory::*;

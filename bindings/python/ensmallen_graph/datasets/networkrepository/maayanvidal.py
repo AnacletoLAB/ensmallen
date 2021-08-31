@@ -4,28 +4,11 @@ This file offers the methods to automatically retrieve the graph maayan-vidal.
 The graph is automatically retrieved from the NetworkRepository repository. 
 
 
-
-Report
----------------------
-At the time of rendering these methods (please see datetime below), the graph
-had the following characteristics:
-
-Datetime: 2021-02-06 08:14:09.087915
-
-The undirected graph maayan-vidal has 3133 nodes, of which 110 are singletons
-(all have self-loops), and 6726 unweighted edges, of which 577 are self-loops.
-The graph is sparse as it has a density of 0.00131 and has 210 connected
-components, where the component with most nodes has 2783 nodes and the
-component with the least nodes has a single node. The graph median node
-degree is 2, the mean node degree is 4.11, and the node degree mode is
-1. The top 5 most central nodes are 15 (degree 129), 182 (degree 97), 271
-(degree 96), 175 (degree 91) and 631 (degree 77).
-
-
 References
 ---------------------
 Please cite the following if you use the data:
 
+```latex
 @inproceedings{nr,
     title = {The Network Data Repository with Interactive Graph Analytics and Visualization},
     author={Ryan A. Rossi and Nesreen K. Ahmed},
@@ -33,43 +16,7 @@ Please cite the following if you use the data:
     url={http://networkrepository.com},
     year={2015}
 }
-
-
-Usage example
-----------------------
-The usage of this graph is relatively straightforward:
-
-.. code:: python
-
-    # First import the function to retrieve the graph from the datasets
-    from ensmallen_graph.datasets.networkrepository import MaayanVidal
-
-    # Then load the graph
-    graph = MaayanVidal()
-
-    # Finally, you can do anything with it, for instance, compute its report:
-    print(graph)
-
-    # If you need to run a link prediction task with validation,
-    # you can split the graph using a connected holdout as follows:
-    train_graph, validation_graph = graph.connected_holdout(
-        # You can use an 80/20 split the holdout, for example.
-        train_size=0.8,
-        # The random state is used to reproduce the holdout.
-        random_state=42,
-        # Wether to show a loading bar.
-        verbose=True
-    )
-
-    # Remember that, if you need, you can enable the memory-time trade-offs:
-    train_graph.enable(
-        vector_sources=True,
-        vector_destinations=True,
-        vector_outbounds=True
-    )
-
-    # Consider using the methods made available in the Embiggen package
-    # to run graph embedding or link prediction tasks.
+```
 """
 from typing import Dict
 
@@ -79,26 +26,35 @@ from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 def MaayanVidal(
     directed: bool = False,
+    preprocess: bool = True,
     verbose: int = 2,
+    cache: bool = True,
     cache_path: str = "graphs/networkrepository",
+    version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
     """Return new instance of the maayan-vidal graph.
 
-    The graph is automatically retrieved from the NetworkRepository repository. 
-
-	
+    The graph is automatically retrieved from the NetworkRepository repository.	
 
     Parameters
     -------------------
     directed: bool = False,
         Wether to load the graph as directed or undirected.
         By default false.
+    preprocess: bool = True,
+        Whether to preprocess the graph to be loaded in 
+        optimal time and memory.
     verbose: int = 2,
         Wether to show loading bars during the retrieval and building
         of the graph.
+    cache: bool = True,
+        Whether to use cache, i.e. download files only once
+        and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
+    version: str = "latest",
+        The version of the graph to retrieve.	
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
@@ -106,27 +62,11 @@ def MaayanVidal(
     -----------------------
     Instace of maayan-vidal graph.
 
-	Report
-	---------------------
-	At the time of rendering these methods (please see datetime below), the graph
-	had the following characteristics:
-	
-	Datetime: 2021-02-06 08:14:09.087915
-	
-	The undirected graph maayan-vidal has 3133 nodes, of which 110 are singletons
-	(all have self-loops), and 6726 unweighted edges, of which 577 are self-loops.
-	The graph is sparse as it has a density of 0.00131 and has 210 connected
-	components, where the component with most nodes has 2783 nodes and the
-	component with the least nodes has a single node. The graph median node
-	degree is 2, the mean node degree is 4.11, and the node degree mode is
-	1. The top 5 most central nodes are 15 (degree 129), 182 (degree 97), 271
-	(degree 96), 175 (degree 91) and 631 (degree 77).
-	
-
 	References
 	---------------------
 	Please cite the following if you use the data:
 	
+	```latex
 	@inproceedings{nr,
 	    title = {The Network Data Repository with Interactive Graph Analytics and Visualization},
 	    author={Ryan A. Rossi and Nesreen K. Ahmed},
@@ -134,49 +74,16 @@ def MaayanVidal(
 	    url={http://networkrepository.com},
 	    year={2015}
 	}
-	
-
-	Usage example
-	----------------------
-	The usage of this graph is relatively straightforward:
-	
-	.. code:: python
-	
-	    # First import the function to retrieve the graph from the datasets
-	    from ensmallen_graph.datasets.networkrepository import MaayanVidal
-	
-	    # Then load the graph
-	    graph = MaayanVidal()
-	
-	    # Finally, you can do anything with it, for instance, compute its report:
-	    print(graph)
-	
-	    # If you need to run a link prediction task with validation,
-	    # you can split the graph using a connected holdout as follows:
-	    train_graph, validation_graph = graph.connected_holdout(
-	        # You can use an 80/20 split the holdout, for example.
-	        train_size=0.8,
-	        # The random state is used to reproduce the holdout.
-	        random_state=42,
-	        # Wether to show a loading bar.
-	        verbose=True
-	    )
-	
-	    # Remember that, if you need, you can enable the memory-time trade-offs:
-	    train_graph.enable(
-	        vector_sources=True,
-	        vector_destinations=True,
-	        vector_outbounds=True
-	    )
-	
-	    # Consider using the methods made available in the Embiggen package
-	    # to run graph embedding or link prediction tasks.
+	```
     """
     return AutomaticallyRetrievedGraph(
         graph_name="MaayanVidal",
-        dataset="networkrepository",
+        repository="networkrepository",
+        version=version,
         directed=directed,
+        preprocess=preprocess,
         verbose=verbose,
+        cache=cache,
         cache_path=cache_path,
         additional_graph_kwargs=additional_graph_kwargs
     )()

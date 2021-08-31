@@ -4,29 +4,11 @@ This file offers the methods to automatically retrieve the graph Rhizobium legum
 The graph is automatically retrieved from the STRING repository. 
 
 
-
-Report
----------------------
-At the time of rendering these methods (please see datetime below), the graph
-had the following characteristics:
-
-Datetime: 2021-02-02 22:14:43.682742
-
-The undirected graph Rhizobium leguminosarum GB30 has 6752 nodes and 970375
-weighted edges, of which none are self-loops. The graph is dense as it
-has a density of 0.04258 and has 26 connected components, where the component
-with most nodes has 6681 nodes and the component with the least nodes has
-2 nodes. The graph median node degree is 236, the mean node degree is 287.43,
-and the node degree mode is 2. The top 5 most central nodes are 1041142.ATTP01000002_gene3704
-(degree 2779), 1041142.ATTP01000008_gene6392 (degree 2448), 1041142.ATTP01000001_gene2037
-(degree 2438), 1041142.ATTP01000030_gene4018 (degree 2384) and 1041142.ATTP01000001_gene1993
-(degree 2345).
-
-
 References
 ---------------------
 Please cite the following if you use the data:
 
+```latex
 @article{szklarczyk2019string,
     title={STRING v11: protein--protein association networks with increased coverage, supporting functional discovery in genome-wide experimental datasets},
     author={Szklarczyk, Damian and Gable, Annika L and Lyon, David and Junge, Alexander and Wyder, Stefan and Huerta-Cepas, Jaime and Simonovic, Milan and Doncheva, Nadezhda T and Morris, John H and Bork, Peer and others},
@@ -37,43 +19,7 @@ Please cite the following if you use the data:
     year={2019},
     publisher={Oxford University Press}
 }
-
-
-Usage example
-----------------------
-The usage of this graph is relatively straightforward:
-
-.. code:: python
-
-    # First import the function to retrieve the graph from the datasets
-    from ensmallen_graph.datasets.string import RhizobiumLeguminosarumGb30
-
-    # Then load the graph
-    graph = RhizobiumLeguminosarumGb30()
-
-    # Finally, you can do anything with it, for instance, compute its report:
-    print(graph)
-
-    # If you need to run a link prediction task with validation,
-    # you can split the graph using a connected holdout as follows:
-    train_graph, validation_graph = graph.connected_holdout(
-        # You can use an 80/20 split the holdout, for example.
-        train_size=0.8,
-        # The random state is used to reproduce the holdout.
-        random_state=42,
-        # Wether to show a loading bar.
-        verbose=True
-    )
-
-    # Remember that, if you need, you can enable the memory-time trade-offs:
-    train_graph.enable(
-        vector_sources=True,
-        vector_destinations=True,
-        vector_outbounds=True
-    )
-
-    # Consider using the methods made available in the Embiggen package
-    # to run graph embedding or link prediction tasks.
+```
 """
 from typing import Dict
 
@@ -83,26 +29,39 @@ from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 def RhizobiumLeguminosarumGb30(
     directed: bool = False,
+    preprocess: bool = True,
     verbose: int = 2,
+    cache: bool = True,
     cache_path: str = "graphs/string",
+    version: str = "links.v11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
     """Return new instance of the Rhizobium leguminosarum GB30 graph.
 
-    The graph is automatically retrieved from the STRING repository. 
-
-	
+    The graph is automatically retrieved from the STRING repository.	
 
     Parameters
     -------------------
     directed: bool = False,
         Wether to load the graph as directed or undirected.
         By default false.
+    preprocess: bool = True,
+        Whether to preprocess the graph to be loaded in 
+        optimal time and memory.
     verbose: int = 2,
         Wether to show loading bars during the retrieval and building
         of the graph.
+    cache: bool = True,
+        Whether to use cache, i.e. download files only once
+        and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
+    version: str = "links.v11.0",
+        The version of the graph to retrieve.		
+	The available versions are:
+			- homology.v11.0
+			- physical.links.v11.0
+			- links.v11.0
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
@@ -110,28 +69,11 @@ def RhizobiumLeguminosarumGb30(
     -----------------------
     Instace of Rhizobium leguminosarum GB30 graph.
 
-	Report
-	---------------------
-	At the time of rendering these methods (please see datetime below), the graph
-	had the following characteristics:
-	
-	Datetime: 2021-02-02 22:14:43.682742
-	
-	The undirected graph Rhizobium leguminosarum GB30 has 6752 nodes and 970375
-	weighted edges, of which none are self-loops. The graph is dense as it
-	has a density of 0.04258 and has 26 connected components, where the component
-	with most nodes has 6681 nodes and the component with the least nodes has
-	2 nodes. The graph median node degree is 236, the mean node degree is 287.43,
-	and the node degree mode is 2. The top 5 most central nodes are 1041142.ATTP01000002_gene3704
-	(degree 2779), 1041142.ATTP01000008_gene6392 (degree 2448), 1041142.ATTP01000001_gene2037
-	(degree 2438), 1041142.ATTP01000030_gene4018 (degree 2384) and 1041142.ATTP01000001_gene1993
-	(degree 2345).
-	
-
 	References
 	---------------------
 	Please cite the following if you use the data:
 	
+	```latex
 	@article{szklarczyk2019string,
 	    title={STRING v11: protein--protein association networks with increased coverage, supporting functional discovery in genome-wide experimental datasets},
 	    author={Szklarczyk, Damian and Gable, Annika L and Lyon, David and Junge, Alexander and Wyder, Stefan and Huerta-Cepas, Jaime and Simonovic, Milan and Doncheva, Nadezhda T and Morris, John H and Bork, Peer and others},
@@ -142,49 +84,16 @@ def RhizobiumLeguminosarumGb30(
 	    year={2019},
 	    publisher={Oxford University Press}
 	}
-	
-
-	Usage example
-	----------------------
-	The usage of this graph is relatively straightforward:
-	
-	.. code:: python
-	
-	    # First import the function to retrieve the graph from the datasets
-	    from ensmallen_graph.datasets.string import RhizobiumLeguminosarumGb30
-	
-	    # Then load the graph
-	    graph = RhizobiumLeguminosarumGb30()
-	
-	    # Finally, you can do anything with it, for instance, compute its report:
-	    print(graph)
-	
-	    # If you need to run a link prediction task with validation,
-	    # you can split the graph using a connected holdout as follows:
-	    train_graph, validation_graph = graph.connected_holdout(
-	        # You can use an 80/20 split the holdout, for example.
-	        train_size=0.8,
-	        # The random state is used to reproduce the holdout.
-	        random_state=42,
-	        # Wether to show a loading bar.
-	        verbose=True
-	    )
-	
-	    # Remember that, if you need, you can enable the memory-time trade-offs:
-	    train_graph.enable(
-	        vector_sources=True,
-	        vector_destinations=True,
-	        vector_outbounds=True
-	    )
-	
-	    # Consider using the methods made available in the Embiggen package
-	    # to run graph embedding or link prediction tasks.
+	```
     """
     return AutomaticallyRetrievedGraph(
         graph_name="RhizobiumLeguminosarumGb30",
-        dataset="string",
+        repository="string",
+        version=version,
         directed=directed,
+        preprocess=preprocess,
         verbose=verbose,
+        cache=cache,
         cache_path=cache_path,
         additional_graph_kwargs=additional_graph_kwargs
     )()

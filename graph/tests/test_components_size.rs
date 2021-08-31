@@ -1,5 +1,5 @@
 extern crate graph;
-use graph::{EdgeFileReader, Graph};
+use graph::{utils::get_loading_bar, EdgeFileReader, Graph};
 use std::collections::HashMap;
 
 #[test]
@@ -9,25 +9,30 @@ fn test_components_size() {
     let graph_name = "ComponentSizeTest".to_owned();
     let edges_reader = EdgeFileReader::new("tests/data/test_components.csv")
         .unwrap()
-        .set_separator(Some(","))
+        .set_header(Some(false))
+        .unwrap()
+        .set_separator(Some(",".to_string()))
         .unwrap()
         .set_verbose(Some(false))
-        .set_numeric_node_ids(Some(true))
-        .set_header(Some(false));
+        .set_numeric_node_ids(Some(true));
 
-    let g = Graph::from_sorted_csv(
-        edges_reader,
+    let g = Graph::from_file_readers(
+        Some(edges_reader),
         None,
+        None,
+        None,
+        true,
+        true,
         false,
-        false,
-        6,
-        6,
         graph_name.clone(),
     )
     .unwrap();
 
     // THIS IS NOT DETERMINISTIC
-    for _ in 0..10_000 {
+    let n = 10_000;
+    let pb = get_loading_bar(true, "Executing connected components test", n);
+    for _ in 0..n {
+        pb.inc(1);
         let (components, _components_number, smallest, biggest) =
             g.connected_components(None).unwrap();
         assert!(
@@ -37,15 +42,26 @@ fn test_components_size() {
             biggest
         );
 
-        assert!(
-            !(smallest == 1 && (!g.has_singleton_nodes()) && (!g.has_selfloops())),
-            "singletons: {} selfloops: {} smallest: {} biggest: {}, components: {:?}",
-            g.has_singleton_nodes(),
-            g.has_selfloops(),
-            smallest,
-            biggest,
-            components
-        );
+        if g.has_disconnected_nodes() {
+            assert!(smallest == 1);
+        }
+        if smallest == 1 {
+            assert!(
+                g.has_disconnected_nodes(),
+                concat!(
+                    "For the minimum connected component to have a single node, the graph ",
+                    "must contain disconnected nodes.\n",
+                    "The node degrees of this graph is {:?}.\n",
+                    "The directed flag of this graph is {:?}.\n",
+                    "The edge list of this graph is {:?}.\n",
+                    "The component node components are: {:?}.\n"
+                ),
+                g.get_node_degrees(),
+                g.is_directed(),
+                g.get_edge_node_ids(true),
+                components
+            );
+        }
     }
 
     let (components, number_of_components, smallest, biggest) =

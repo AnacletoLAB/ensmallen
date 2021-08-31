@@ -25,7 +25,7 @@ impl Parse for Enum {
 
         let enum_type = parse!(data, Type);
 
-        let (mut data, mut body) = get_next_matching(data, b'{', b'}');
+        let (data, body) = get_next_matching(data, b'{', b'}');
 
         (
             data,

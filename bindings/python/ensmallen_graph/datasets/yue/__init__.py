@@ -1,14 +1,14 @@
 """This sub-module offers methods to automatically retrieve the graphs from Yue repository."""
 
-from .stringppi import StringPPI
+from .node2vecppi import node2vecPPI
 from .ctddda import CTDDDA
 from .drugbankddi import DrugBankDDI
-from .ndfrtdda import NDFRTDDA
 from .mashupppi import MashupPPI
-from .node2vecppi import node2vecPPI
+from .ndfrtdda import NDFRTDDA
 from .clintermcooc import ClinTermCOOC
+from .stringppi import StringPPI
 
 __all__ = [
-	"StringPPI", "CTDDDA", "DrugBankDDI", "NDFRTDDA", "MashupPPI", "node2vecPPI",
-	"ClinTermCOOC",
+	"node2vecPPI", "CTDDDA", "DrugBankDDI", "MashupPPI", "NDFRTDDA", "ClinTermCOOC",
+	"StringPPI",
 ]

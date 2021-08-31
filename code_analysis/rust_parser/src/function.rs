@@ -11,8 +11,27 @@ pub struct Function{
     pub return_type: Option<Type>,
     pub body: String,
     pub is_unsafe: bool,
+    pub class: Option<Type>,
+    pub file_path: String,
 }
 
+impl Default for Function{
+    fn default() -> Self {
+        Function {
+            doc: String::new(),
+            attributes: Vec::new(),
+            name: String::new(),
+            visibility: Visibility::Private,
+            generics: Generics::default(),
+            args: Args::default(),
+            return_type: None,
+            body: String::new(),
+            is_unsafe: false,
+            class: None,
+            file_path: String::new(),
+        }
+    }
+}
 
 impl Function {
     /// Returns if the current function has any arguments
@@ -25,10 +44,45 @@ impl Function {
             }
         })
     }
+
+    pub fn get_self_modifiers(&self) -> Option<TypeModifiers> {
+        match self.args.0.get(0) {
+            Some(arg) => Some(arg.arg_modifier.clone()),
+            None => None,
+        }
+    }
+
+    pub fn iter_args(&self) -> impl Iterator<Item=&Arg> {
+        self.args.0.iter()
+    }
     
     /// Return if the current function is unsafe
     pub fn is_unsafe(&self) -> bool {
         self.is_unsafe
+    }
+
+    /// Return if this function is a method of a class
+    pub fn is_method(&self) -> bool {
+        self.class.is_some()
+    }
+
+    /// Return if it's a static function / method meaning that it does not
+    /// requires self
+    pub fn is_static(&self) -> bool {
+        match self.args.0.get(0) {
+            Some(arg) => {
+                match arg.arg_type {
+                    Type::SelfType => false,
+                    _ => true,
+                }
+            },
+            None => true,
+        }
+    }
+
+    /// Set this function as a method of the given class
+    pub fn set_class(&mut self, class: Type){
+        self.class = Some(class);
     }
 
     /// Returns if the current function returns a result
@@ -36,9 +90,7 @@ impl Function {
         match &self.return_type {
             Some(Type::SimpleType{
                 name,
-                modifiers,
-                generics,
-                traits,
+                ..
             }) => {
                 name == "Result"
             }
@@ -111,6 +163,8 @@ impl Parse for Function {
                 return_type: return_type,
                 body: String::from_utf8(body_content.to_vec()).unwrap(),
                 is_unsafe: is_unsafe,
+                class: None,
+                file_path: String::new(),
             }
         )
     }

@@ -1,3 +1,5 @@
+use crate::constructors::build_graph_from_integers;
+
 use super::*;
 use rayon::iter::ParallelIterator;
 
@@ -8,7 +10,6 @@ impl Graph {
     /// # Arguments
     /// `edge_type_name`: Option<&str> - The edge type to use for the selfloops.
     /// `weight`: Option<WeightT> - The weight to use for the new selfloops edges.
-    /// `verbose`: Option<bool> - Whether to show loading bars while building the graph.
     ///
     /// # Raises
     /// * If the edge type for the new singletons is provided but the graph does not have edge types.
@@ -18,9 +19,7 @@ impl Graph {
         &self,
         edge_type_name: Option<&str>,
         weight: Option<WeightT>,
-        verbose: Option<bool>,
-    ) -> Result<Graph, String> {
-        let verbose = verbose.unwrap_or(true);
+    ) -> Result<Graph> {
         let edge_type_id = if edge_type_name.is_some() {
             self.get_edge_type_id_from_edge_type_name(edge_type_name)?
         } else {
@@ -33,27 +32,34 @@ impl Graph {
             )
             .to_string());
         }
-        Graph::from_integer_unsorted(
-            self.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
-                .map(|(_, src, dst, edge_type_id, weight)| Ok((src, dst, edge_type_id, weight)))
-                .chain(
-                    self.par_iter_node_ids()
-                        .filter(|&node_id| !self.has_selfloop_from_node_id(node_id))
-                        .map(|node_id| Ok((node_id, node_id, edge_type_id, weight))),
-                ),
+        let weight = weight.unwrap_or(WeightT::NAN);
+        let total_edges_number = self.get_directed_edges_number() - self.get_selfloops_number()
+            + self.get_nodes_number() as EdgeT;
+
+        build_graph_from_integers(
+            Some(
+                self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
+                    .map(|(_, src, dst, edge_type_id, weight)| {
+                        (0, (src, dst, edge_type_id, weight.unwrap_or(WeightT::NAN)))
+                    })
+                    .chain(
+                        self.par_iter_node_ids()
+                            .filter(|&node_id| !self.has_selfloop_from_node_id(node_id))
+                            .map(|node_id| (0, (node_id, node_id, edge_type_id, weight))),
+                    ),
+            ),
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-            self.is_directed(),
-            self.get_name(),
-            true,
-            self.has_edge_types(),
             self.has_edge_weights(),
-            false,
+            self.is_directed(),
+            Some(true),
+            Some(false),
+            Some(false),
+            Some(total_edges_number),
             false,
             self.has_singleton_nodes_with_selfloops() || self.has_singleton_nodes(),
-            self.has_trap_nodes(),
-            verbose,
+            self.get_name(),
         )
     }
 }

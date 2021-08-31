@@ -1,0 +1,123 @@
+FromStringsParameters {
+    node_types_number: None,
+    numeric_node_type_ids: None,
+    minimum_node_type_id: None,
+    has_node_types: true,
+    nodes_number: Some(
+        3270036432,
+    ),
+    numeric_node_ids: true,
+    numeric_node_list_node_type_ids: false,
+    minimum_node_ids: Some(
+        1869602560,
+    ),
+    edge_types_number: Some(
+        28527,
+    ),
+    numeric_edge_type_ids: Some(
+        true,
+    ),
+    minimum_edge_type_id: Some(
+        28527,
+    ),
+    has_edge_types: true,
+    has_edge_weights: true,
+    directed: true,
+    correct: Some(
+        true,
+    ),
+    complete: Some(
+        true,
+    ),
+    duplicates: Some(
+        true,
+    ),
+    sorted: Some(
+        true,
+    ),
+    edges_number: Some(
+        8029759185026510703,
+    ),
+    numeric_edge_list_node_ids: Some(
+        true,
+    ),
+    numeric_edge_list_edge_type_ids: Some(
+        true,
+    ),
+    skip_node_types_if_unavailable: Some(
+        true,
+    ),
+    skip_edge_types_if_unavailable: Some(
+        true,
+    ),
+    may_have_singletons: true,
+    may_have_singleton_with_selfloops: true,
+    name: "ooooooo",
+    edges_iterator_is_parallel: true,
+    edge_types_iterator_is_parallel: true,
+    nodes_iterator_is_parallel: true,
+    node_types_iterator_is_parallel: true,
+    edges_iterator: Some(
+        [
+            Ok(
+                (
+                    3474588901785431919,
+                    (
+                        "5ooooooo",
+                        "",
+                        Some(
+                            "Co",
+                        ),
+                        0.000000000000000000000000000000000006254714,
+                    ),
+                ),
+            ),
+            Ok(
+                (
+                    361700864190385413,
+                    (
+                        "",
+                        "",
+                        Some(
+                            "",
+                        ),
+                        -0.000000000006296854,
+                    ),
+                ),
+            ),
+        ],
+    ),
+    edge_types_iterator: Some(
+        [],
+    ),
+    nodes_iterator: Some(
+        [
+            Err(
+                "",
+            ),
+            Ok(
+                (
+                    17142261548463438980,
+                    (
+                        "",
+                        None,
+                    ),
+                ),
+            ),
+            Ok(
+                (
+                    3828933911427881755,
+                    (
+                        "_\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}",
+                        Some(
+                            [
+                                "\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b}\u{1b} \u{0}",
+                            ],
+                        ),
+                    ),
+                ),
+            ),
+        ],
+    ),
+    node_types_iterator: None,
+}

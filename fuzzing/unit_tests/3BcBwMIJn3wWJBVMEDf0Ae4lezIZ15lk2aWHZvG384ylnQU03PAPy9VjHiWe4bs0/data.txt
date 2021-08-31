@@ -1,0 +1,58 @@
+FromStringsParameters {
+    node_types_number: Some(
+          91,
+    ),
+    numeric_node_type_ids: Some(
+        true,
+    ),
+    minimum_node_type_id: Some(
+        65535,
+    ),
+    has_node_types: true,
+    nodes_number: None,
+    numeric_node_ids: false,
+    numeric_node_list_node_type_ids: false,
+    minimum_node_ids: None,
+    edge_types_number: None,
+    numeric_edge_type_ids: None,
+    minimum_edge_type_id: None,
+    has_edge_types: true,
+    has_edge_weights: true,
+    directed: true,
+    correct: None,
+    complete: None,
+    duplicates: Some(
+        false,
+    ),
+    sorted: None,
+    edges_number: Some(
+        15878385359157680987,
+    ),
+    numeric_edge_list_node_ids: None,
+    numeric_edge_list_edge_type_ids: Some(
+        false,
+    ),
+    skip_node_types_if_unavailable: None,
+    skip_edge_types_if_unavailable: Some(
+        true,
+    ),
+    may_have_singletons: true,
+    may_have_singleton_with_selfloops: false,
+    name: "",
+    edges_iterator_is_parallel: true,
+    edge_types_iterator_is_parallel: false,
+    nodes_iterator_is_parallel: true,
+    node_types_iterator_is_parallel: false,
+    edges_iterator: Some(
+        [
+            Err(
+                "\u{b}",
+            ),
+        ],
+    ),
+    edge_types_iterator: None,
+    nodes_iterator: None,
+    node_types_iterator: Some(
+        [],
+    ),
+}
