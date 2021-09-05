@@ -1706,7 +1706,7 @@ pub fn sort_numeric_edge_list_inplace(
 #[pymethods]
 impl EnsmallenGraph {
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns unweighted laplacian transformation of the graph
     pub fn get_laplacian_transformed_graph(&self) -> EnsmallenGraph {
         EnsmallenGraph {
@@ -1715,7 +1715,14 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
+    /// Returns number of edges in the laplacian COO matrix representation of the graph
+    pub fn get_laplacian_coo_matrix_edges_number(&self) -> EdgeT {
+        self.graph.get_laplacian_coo_matrix_edges_number()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
     /// Returns unweighted random walk normalized laplacian transformation of the graph
     pub fn get_random_walk_normalized_laplacian_transformed_graph(&self) -> EnsmallenGraph {
         EnsmallenGraph {
@@ -1726,7 +1733,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns unweighted symmetric normalized laplacian transformation of the graph.
     ///
     /// Raises
@@ -1743,7 +1750,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns unweighted symmetric normalized transformation of the graph.
     ///
     /// Raises
@@ -1758,7 +1765,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Returns boolean representing if given node is not a singleton nor a singleton with selfloop.
     ///
     /// Parameters
@@ -1775,7 +1782,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Returns boolean representing if given node is a singleton or a singleton with selfloop.
     ///
     /// Parameters
@@ -1793,7 +1800,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Returns boolean representing if given node is a singleton.
     ///
     /// Parameters
@@ -1810,7 +1817,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Returns boolean representing if given node is a singleton.
     ///
     /// Parameters
@@ -1823,7 +1830,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Returns boolean representing if given node is a singleton with self-loops.
     ///
     /// Parameters
@@ -1840,7 +1847,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Returns boolean representing if given node is a singleton with self-loops.
     ///
     /// Parameters
@@ -1853,7 +1860,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_name)"]
+    #[text_signature = "($self, node_name)"]
     /// Returns boolean representing if given node is a singleton.
     ///
     /// Nota that this method will raise a panic if caled with unproper
@@ -1873,7 +1880,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_name)"]
+    #[text_signature = "($self, node_name)"]
     /// Returns boolean representing if given node is a singleton.
     ///
     /// Parameters
@@ -1886,7 +1893,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_name)"]
+    #[text_signature = "($self, node_name)"]
     /// Returns whether the graph has the given node name.
     ///
     /// Parameters
@@ -1899,7 +1906,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_type_id)"]
+    #[text_signature = "($self, node_type_id)"]
     /// Returns whether the graph has the given node type id.
     ///
     /// Parameters
@@ -1912,7 +1919,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_type_name)"]
+    #[text_signature = "($self, node_type_name)"]
     /// Returns whether the graph has the given node type name.
     ///
     /// Parameters
@@ -1925,7 +1932,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_type_id)"]
+    #[text_signature = "($self, edge_type_id)"]
     /// Returns whether the graph has the given edge type id.
     ///
     /// Parameters
@@ -1938,7 +1945,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_type_name)"]
+    #[text_signature = "($self, edge_type_name)"]
     /// Returns whether the graph has the given edge type name.
     ///
     /// Parameters
@@ -1951,7 +1958,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src, dst)"]
+    #[text_signature = "($self, src, dst)"]
     /// Returns whether edge passing between given node ids exists.
     ///
     /// Parameters
@@ -1966,7 +1973,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Returns whether the given node ID has a selfloop.
     ///
     /// Parameters
@@ -1979,7 +1986,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src, dst, edge_type)"]
+    #[text_signature = "($self, src, dst, edge_type)"]
     /// Returns whether edge with the given type passing between given nodes exists.
     ///
     /// Parameters
@@ -2002,7 +2009,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Returns boolean representing if given node is a trap.
     ///
     /// If the provided node_id is higher than the number of nodes in the graph,
@@ -2022,7 +2029,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Returns boolean representing if given node is a trap.
     ///
     /// Parameters
@@ -2035,7 +2042,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_name, node_type_name)"]
+    #[text_signature = "($self, node_name, node_type_name)"]
     /// Returns whether the given node name and node type name exist in current graph.
     ///
     /// Parameters
@@ -2055,7 +2062,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src_name, dst_name)"]
+    #[text_signature = "($self, src_name, dst_name)"]
     /// Returns whether if edge passing between given nodes exists.
     ///
     /// Parameters
@@ -2070,7 +2077,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src_name, dst_name, edge_type_name)"]
+    #[text_signature = "($self, src_name, dst_name, edge_type_name)"]
     /// Returns whether if edge with type passing between given nodes exists.
     ///
     /// Parameters
@@ -2093,7 +2100,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns list of nodes of the various strongly connected components.
     ///
     /// This is an implementation of Tarjan algorithm.
@@ -2102,7 +2109,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns graph with node IDs sorted by increasing outbound node degree
     pub fn sort_by_increasing_outbound_node_degree(&self) -> EnsmallenGraph {
         EnsmallenGraph {
@@ -2111,7 +2118,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns graph with node IDs sorted by decreasing outbound node degree
     pub fn sort_by_decreasing_outbound_node_degree(&self) -> EnsmallenGraph {
         EnsmallenGraph {
@@ -2120,7 +2127,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns graph with node IDs sorted by lexicographic order
     pub fn sort_by_node_lexicographic_order(&self) -> EnsmallenGraph {
         EnsmallenGraph {
@@ -2129,7 +2136,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns binary dense adjacency matrix.
     ///
     /// Beware of using this method on big graphs!
@@ -2140,7 +2147,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, weight)"]
+    #[text_signature = "($self, weight)"]
     /// Returns binary weighted adjacency matrix.
     ///
     /// Beware of using this method on big graphs!
@@ -2170,7 +2177,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_names, node_types, edge_types, minimum_component_size, top_k_components, verbose)"]
+    #[text_signature = "($self, node_names, node_types, edge_types, minimum_component_size, top_k_components, verbose)"]
     /// remove all the components that are not connected to interesting
     /// nodes and edges.
     ///
@@ -2211,7 +2218,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, other)"]
+    #[text_signature = "($self, other)"]
     /// Return whether given graph has any edge overlapping with current graph.
     ///
     /// Parameters
@@ -2236,7 +2243,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, other)"]
+    #[text_signature = "($self, other)"]
     /// Return true if given graph edges are all contained within current graph.
     ///
     /// Parameters
@@ -2261,7 +2268,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, removed_existing_edges, first_nodes_set, second_nodes_set, first_node_types_set, second_node_types_set)"]
+    #[text_signature = "($self, removed_existing_edges, first_nodes_set, second_nodes_set, first_node_types_set, second_node_types_set)"]
     /// Return vector of tuple of Node IDs that form the edges of the required bipartite graph.
     ///
     /// Parameters
@@ -2300,7 +2307,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, removed_existing_edges, first_nodes_set, second_nodes_set, first_node_types_set, second_node_types_set)"]
+    #[text_signature = "($self, removed_existing_edges, first_nodes_set, second_nodes_set, first_node_types_set, second_node_types_set)"]
     /// Return vector of tuple of Node IDs that form the edges of the required bipartite graph.
     ///
     /// Parameters
@@ -2334,7 +2341,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, central_node, removed_existing_edges, star_points_nodes_set, star_points_node_types_set)"]
+    #[text_signature = "($self, central_node, removed_existing_edges, star_points_nodes_set, star_points_node_types_set)"]
     /// Return vector of tuple of Node IDs that form the edges of the required star.
     ///
     /// Parameters
@@ -2369,7 +2376,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, central_node, removed_existing_edges, star_points_nodes_set, star_points_node_types_set)"]
+    #[text_signature = "($self, central_node, removed_existing_edges, star_points_nodes_set, star_points_node_types_set)"]
     /// Return vector of tuple of Node names that form the edges of the required star.
     ///
     /// Parameters
@@ -2399,7 +2406,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, directed, allow_selfloops, removed_existing_edges, allow_node_type_set, allow_node_set)"]
+    #[text_signature = "($self, directed, allow_selfloops, removed_existing_edges, allow_node_type_set, allow_node_set)"]
     /// Return vector of tuple of Node IDs that form the edges of the required clique.
     ///
     /// Parameters
@@ -2438,7 +2445,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, directed, allow_selfloops, removed_existing_edges, allow_node_type_set, allow_node_set)"]
+    #[text_signature = "($self, directed, allow_selfloops, removed_existing_edges, allow_node_type_set, allow_node_set)"]
     /// Return vector of tuple of Node names that form the edges of the required clique.
     ///
     /// Parameters
@@ -2472,7 +2479,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src, dst)"]
+    #[text_signature = "($self, src, dst)"]
     /// Return edge value corresponding to given node IDs.
     ///
     /// Parameters
@@ -2487,7 +2494,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge)"]
+    #[text_signature = "($self, edge)"]
     /// Returns source and destination nodes corresponding to given edge ID.
     ///
     /// Parameters
@@ -2500,14 +2507,14 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return maximum encodable edge number
     pub fn get_max_encodable_edge_number(&self) -> EdgeT {
         self.graph.get_max_encodable_edge_number()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Validates provided node ID.
     ///
     /// Parameters
@@ -2526,7 +2533,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_ids)"]
+    #[text_signature = "($self, node_ids)"]
     /// Validates all provided node IDs.
     ///
     /// Parameters
@@ -2550,7 +2557,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_id)"]
+    #[text_signature = "($self, edge_id)"]
     /// Validates provided edge ID.
     ///
     /// Parameters
@@ -2569,7 +2576,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_ids)"]
+    #[text_signature = "($self, edge_ids)"]
     /// Validates provided edge IDs.
     ///
     /// Parameters
@@ -2593,7 +2600,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Raises an error if the graph contains unknown node types.
     ///
     /// Raises
@@ -2608,7 +2615,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Raises an error if the graph contains unknown edge types.
     ///
     /// Raises
@@ -2623,7 +2630,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_type_id)"]
+    #[text_signature = "($self, node_type_id)"]
     /// Validates provided node type ID.
     ///
     /// Parameters
@@ -2645,7 +2652,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_type_ids)"]
+    #[text_signature = "($self, node_type_ids)"]
     /// Validates provided node type IDs.
     ///
     /// Parameters
@@ -2667,7 +2674,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_type_id)"]
+    #[text_signature = "($self, edge_type_id)"]
     /// Validates provided edge type ID.
     ///
     /// Parameters
@@ -2689,7 +2696,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_type_ids)"]
+    #[text_signature = "($self, edge_type_ids)"]
     /// Validates provided edge type IDs.
     ///
     /// Parameters
@@ -2711,7 +2718,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Raises an error if the graph does not have edge types.
     ///
     /// Raises
@@ -2724,7 +2731,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Raises an error if the graph does not have edge types.
     ///
     /// Raises
@@ -2737,7 +2744,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Raises an error if the graph does not have edge types.
     ///
     /// Raises
@@ -2750,7 +2757,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Raises an error if the graph contains zero weighted degree.
     ///
     /// Raises
@@ -2763,7 +2770,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Raises an error if the graph has a maximal weighted
     ///
     /// Raises
@@ -2776,7 +2783,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Raises an error if the graph does not have any node.
     ///
     /// Raises
@@ -2789,7 +2796,20 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
+    /// Raises an error if the graph is not connected.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph is not connected.
+    ///
+    pub fn must_be_connected(&self) -> PyResult<()> {
+        pe!(self.graph.must_be_connected())
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
     /// Return total edge weights, if graph has weights.
     ///
     /// Raises
@@ -2802,7 +2822,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the minimum weight, if graph has weights.
     ///
     /// Raises
@@ -2815,7 +2835,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the maximum weight, if graph has weights.
     ///
     /// Raises
@@ -2828,7 +2848,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the maximum node degree.
     ///
     /// Safety
@@ -2841,7 +2861,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the minimum node degree.
     ///
     /// Safety
@@ -2854,42 +2874,42 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the maximum weighted node degree
     pub fn get_weighted_maximum_node_degree(&self) -> PyResult<f64> {
         pe!(self.graph.get_weighted_maximum_node_degree())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the minimum weighted node degree
     pub fn get_weighted_minimum_node_degree(&self) -> PyResult<f64> {
         pe!(self.graph.get_weighted_minimum_node_degree())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the number of weighted singleton nodes, i.e. nodes with weighted node degree equal to zero
     pub fn get_weighted_singleton_nodes_number(&self) -> PyResult<NodeT> {
         pe!(self.graph.get_weighted_singleton_nodes_number())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns number of self-loops, including also those in eventual multi-edges.
     pub fn get_selfloops_number(&self) -> EdgeT {
         self.graph.get_selfloops_number()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns number of unique self-loops, excluding those in eventual multi-edges.
     pub fn get_unique_selfloops_number(&self) -> NodeT {
         self.graph.get_unique_selfloops_number()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, features, neighbours_number, max_degree, distance_name, verbose)"]
+    #[text_signature = "($self, features, neighbours_number, max_degree, distance_name, verbose)"]
     /// Returns graph with edges added extracted from given node_features.
     ///
     /// This operation might distrupt the graph topology.
@@ -2940,7 +2960,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, name)"]
+    #[text_signature = "($self, name)"]
     /// Set the name of the graph.
     ///
     /// Parameters
@@ -2953,7 +2973,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_type)"]
+    #[text_signature = "($self, edge_type)"]
     /// Replace all edge types (if present) and set all the edge to edge_type.
     ///
     /// This happens INPLACE, that is edits the current graph instance.
@@ -2977,7 +2997,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_type)"]
+    #[text_signature = "($self, edge_type)"]
     /// Replace all edge types (if present) and set all the edge to edge_type.
     ///
     /// This DOES NOT happen inplace, but created a new instance of the graph.
@@ -2994,7 +3014,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_type)"]
+    #[text_signature = "($self, node_type)"]
     /// Replace all node types (if present) and set all the node to node_type.
     ///
     /// Parameters
@@ -3008,7 +3028,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_type)"]
+    #[text_signature = "($self, node_type)"]
     /// Replace all node types (if present) and set all the node to node_type.
     ///
     /// This DOES NOT happen inplace, but created a new instance of the graph.
@@ -3025,7 +3045,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_type_ids_to_remove)"]
+    #[text_signature = "($self, node_type_ids_to_remove)"]
     /// Remove given node type ID from all nodes.
     ///
     /// If any given node remains with no node type, that node is labeled
@@ -3055,7 +3075,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Remove singleton node types from all nodes.
     ///
     /// If any given node remains with no node type, that node is labeled
@@ -3072,7 +3092,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_type_ids_to_remove)"]
+    #[text_signature = "($self, edge_type_ids_to_remove)"]
     /// Remove given edge type ID from all edges.
     ///
     /// Parameters
@@ -3101,7 +3121,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Remove singleton edge types from all edges.
     ///
     /// If any given edge remains with no edge type, that edge is labeled
@@ -3118,7 +3138,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_type_name)"]
+    #[text_signature = "($self, node_type_name)"]
     /// Remove given node type name from all nodes.
     ///
     /// If any given node remains with no node type, that node is labeled
@@ -3143,7 +3163,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_type_id)"]
+    #[text_signature = "($self, node_type_id)"]
     /// Remove given node type ID from all nodes.
     ///
     /// If any given node remains with no node type, that node is labeled
@@ -3169,7 +3189,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Remove singleton node types from all nodes.
     ///
     /// If any given node remains with no node type, that node is labeled
@@ -3187,7 +3207,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_type_name)"]
+    #[text_signature = "($self, node_type_name)"]
     /// Remove given node type name from all nodes.
     ///
     /// If any given node remains with no node type, that node is labeled
@@ -3213,7 +3233,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_type_name)"]
+    #[text_signature = "($self, edge_type_name)"]
     /// Remove given edge type name from all edges.
     ///
     /// If any given edge remains with no edge type, that edge is labeled
@@ -3238,7 +3258,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_type_id)"]
+    #[text_signature = "($self, edge_type_id)"]
     /// Remove given edge type ID from all edges.
     ///
     /// If any given edge remains with no edge type, that edge is labeled
@@ -3264,7 +3284,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Remove singleton edge types from all edges.
     ///
     /// If any given edge remains with no edge type, that edge is labeled
@@ -3282,7 +3302,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_type_name)"]
+    #[text_signature = "($self, edge_type_name)"]
     /// Remove given edge type name from all edges.
     ///
     /// If any given edge remains with no edge type, that edge is labeled
@@ -3308,7 +3328,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Remove node types from the graph.
     ///
     /// Note that the modification happens inplace.
@@ -3324,7 +3344,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Remove node types from the graph.
     ///
     /// Note that the modification does not happen inplace.
@@ -3341,7 +3361,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Remove edge types from the graph.
     ///
     /// Note that the modification happens inplace.
@@ -3359,7 +3379,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Remove edge types from the graph.
     ///
     /// Note that the modification does not happen inplace.
@@ -3376,7 +3396,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Remove edge weights from the graph.
     ///
     /// Note that the modification happens inplace.
@@ -3392,7 +3412,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Remove edge weights from the graph.
     ///
     /// Note that the modification does not happen inplace.
@@ -3409,7 +3429,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns a string describing the memory usage of all the fields of all the
     /// structures used to store the current graph
     pub fn get_memory_stats(&self) -> String {
@@ -3417,21 +3437,21 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns how many bytes are currently used to store the given graph
     pub fn get_total_memory_used(&self) -> usize {
         self.graph.get_total_memory_used()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns how many bytes are currently used to store the nodes
     pub fn get_nodes_total_memory_requirement(&self) -> usize {
         self.graph.get_nodes_total_memory_requirement()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns human readable amount of how many bytes are currently used to store the nodes
     pub fn get_nodes_total_memory_requirement_human_readable(&self) -> String {
         self.graph
@@ -3439,14 +3459,14 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns how many bytes are currently used to store the edges
     pub fn get_edges_total_memory_requirement(&self) -> usize {
         self.graph.get_edges_total_memory_requirement()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns human readable amount of how many bytes are currently used to store the edges
     pub fn get_edges_total_memory_requirement_human_readable(&self) -> String {
         self.graph
@@ -3454,14 +3474,14 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns how many bytes are currently used to store the edge weights
     pub fn get_edge_weights_total_memory_requirements(&self) -> usize {
         self.graph.get_edge_weights_total_memory_requirements()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns human readable amount of how many bytes are currently used to store the edge weights
     pub fn get_edge_weights_total_memory_requirements_human_readable(&self) -> String {
         self.graph
@@ -3469,14 +3489,14 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns how many bytes are currently used to store the node types
     pub fn get_node_types_total_memory_requirements(&self) -> PyResult<usize> {
         pe!(self.graph.get_node_types_total_memory_requirements())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns human readable amount of how many bytes are currently used to store the node types
     pub fn get_node_types_total_memory_requirements_human_readable(&self) -> PyResult<String> {
         pe!(self
@@ -3485,14 +3505,14 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns how many bytes are currently used to store the edge types
     pub fn get_edge_types_total_memory_requirements(&self) -> PyResult<usize> {
         pe!(self.graph.get_edge_types_total_memory_requirements())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns human readable amount of how many bytes are currently used to store the edge types
     pub fn get_edge_types_total_memory_requirements_human_readable(&self) -> PyResult<String> {
         pe!(self
@@ -3501,7 +3521,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, normalize, low_centrality, verbose)"]
+    #[text_signature = "($self, normalize, low_centrality, verbose)"]
     /// Returns total number of triangles ignoring the weights.
     ///
     /// The method dispatches the fastest method according to the current
@@ -3529,21 +3549,21 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns total number of triads in the graph without taking into account weights
     pub fn get_triads_number(&self) -> EdgeT {
         self.graph.get_triads_number()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns total number of triads in the weighted graph
     pub fn get_weighted_triads_number(&self) -> PyResult<f64> {
         pe!(self.graph.get_weighted_triads_number())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, low_centrality, verbose)"]
+    #[text_signature = "($self, low_centrality, verbose)"]
     /// Returns transitivity of the graph without taking into account weights.
     ///
     /// Parameters
@@ -3558,7 +3578,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, normalize, low_centrality, verbose)"]
+    #[text_signature = "($self, normalize, low_centrality, verbose)"]
     /// Returns number of triangles in the graph without taking into account the weights.
     ///
     /// The method dispatches the fastest method according to the current
@@ -3591,7 +3611,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, low_centrality, verbose)"]
+    #[text_signature = "($self, low_centrality, verbose)"]
     /// Returns clustering coefficients for all nodes in the graph.
     ///
     /// Parameters
@@ -3616,7 +3636,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, low_centrality, verbose)"]
+    #[text_signature = "($self, low_centrality, verbose)"]
     /// Returns the graph clustering coefficient.
     ///
     /// Parameters
@@ -3636,7 +3656,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, low_centrality, verbose)"]
+    #[text_signature = "($self, low_centrality, verbose)"]
     /// Returns the graph average clustering coefficient.
     ///
     /// Parameters
@@ -3656,7 +3676,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, other)"]
+    #[text_signature = "($self, other)"]
     /// Return whether nodes are remappable to those of the given graph.
     ///
     /// Parameters
@@ -3669,7 +3689,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_ids)"]
+    #[text_signature = "($self, node_ids)"]
     /// Returns graph remapped using given node IDs ordering.
     ///
     /// Parameters
@@ -3690,7 +3710,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_ids)"]
+    #[text_signature = "($self, node_ids)"]
     /// Returns graph remapped using given node IDs ordering.
     ///
     /// Parameters
@@ -3713,7 +3733,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_names)"]
+    #[text_signature = "($self, node_names)"]
     /// Returns graph remapped using given node names ordering.
     ///
     /// Parameters
@@ -3736,7 +3756,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, other)"]
+    #[text_signature = "($self, other)"]
     /// Return graph remapped towards nodes of the given graph.
     ///
     /// Parameters
@@ -3751,7 +3771,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, negatives_number, random_state, seed_graph, only_from_same_component, verbose)"]
+    #[text_signature = "($self, negatives_number, random_state, seed_graph, only_from_same_component, verbose)"]
     /// Returns Graph with given amount of negative edges as positive edges.
     ///
     /// The graph generated may be used as a testing negatives partition to be
@@ -3791,7 +3811,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, train_size, random_state, edge_types, include_all_edge_types, verbose)"]
+    #[text_signature = "($self, train_size, random_state, edge_types, include_all_edge_types, verbose)"]
     /// Returns holdout for training ML algorithms on the graph structure.
     ///
     /// The holdouts returned are a tuple of graphs. The first one, which
@@ -3847,7 +3867,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, train_size, random_state, include_all_edge_types, edge_types, min_number_overlaps, verbose)"]
+    #[text_signature = "($self, train_size, random_state, include_all_edge_types, edge_types, min_number_overlaps, verbose)"]
     /// Returns random holdout for training ML algorithms on the graph edges.
     ///
     /// The holdouts returned are a tuple of graphs. In neither holdouts the
@@ -3900,7 +3920,75 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, train_size, use_stratification, random_state)"]
+    #[text_signature = "($self, train_size, use_stratification, random_state)"]
+    /// Returns node-label holdout indices for training ML algorithms on the graph node labels.
+    ///
+    /// Parameters
+    /// ----------
+    /// train_size: float,
+    ///     rate target to reserve for training,
+    /// use_stratification: Optional[bool],
+    ///     Whether to use node-label stratification,
+    /// random_state: Optional[int],
+    ///     The random_state to use for the holdout,
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have node types.
+    /// ValueError
+    ///     If stratification is requested but the graph has a single node type.
+    /// ValueError
+    ///     If stratification is requested but the graph has a multilabel node types.
+    ///
+    pub fn get_node_label_holdout_indices(
+        &self,
+        train_size: f64,
+        use_stratification: Option<bool>,
+        random_state: Option<EdgeT>,
+    ) -> PyResult<(Vec<NodeT>, Vec<NodeT>)> {
+        pe!(self
+            .graph
+            .get_node_label_holdout_indices(train_size, use_stratification, random_state))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, train_size, use_stratification, random_state)"]
+    /// Returns node-label holdout indices for training ML algorithms on the graph node labels.
+    ///
+    /// Parameters
+    /// ----------
+    /// train_size: float,
+    ///     rate target to reserve for training,
+    /// use_stratification: Optional[bool],
+    ///     Whether to use node-label stratification,
+    /// random_state: Optional[int],
+    ///     The random_state to use for the holdout,
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have node types.
+    /// ValueError
+    ///     If stratification is requested but the graph has a single node type.
+    /// ValueError
+    ///     If stratification is requested but the graph has a multilabel node types.
+    ///
+    pub fn get_node_label_holdout_labels(
+        &self,
+        train_size: f64,
+        use_stratification: Option<bool>,
+        random_state: Option<EdgeT>,
+    ) -> PyResult<(Vec<Option<Vec<NodeTypeT>>>, Vec<Option<Vec<NodeTypeT>>>)> {
+        pe!(self
+            .graph
+            .get_node_label_holdout_labels(train_size, use_stratification, random_state))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, train_size, use_stratification, random_state)"]
     /// Returns node-label holdout for training ML algorithms on the graph node labels.
     ///
     /// Parameters
@@ -3922,21 +4010,22 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If stratification is requested but the graph has a multilabel node types.
     ///
-    pub fn node_label_holdout(
+    pub fn get_node_label_holdout_graphs(
         &self,
         train_size: f64,
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
     ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
-        let (g1, g2) =
-            pe!(self
-                .graph
-                .node_label_holdout(train_size, use_stratification, random_state))?;
+        let (g1, g2) = pe!(self.graph.get_node_label_holdout_graphs(
+            train_size,
+            use_stratification,
+            random_state
+        ))?;
         Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, train_size, use_stratification, random_state)"]
+    #[text_signature = "($self, train_size, use_stratification, random_state)"]
     /// Returns edge-label holdout for training ML algorithms on the graph edge labels.
     /// This is commonly used for edge type prediction tasks.
     ///
@@ -3964,21 +4053,22 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If stratification is required but the graph has singleton edge types.
     ///
-    pub fn edge_label_holdout(
+    pub fn get_edge_label_holdout_graphs(
         &self,
         train_size: f64,
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
     ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
-        let (g1, g2) =
-            pe!(self
-                .graph
-                .edge_label_holdout(train_size, use_stratification, random_state))?;
+        let (g1, g2) = pe!(self.graph.get_edge_label_holdout_graphs(
+            train_size,
+            use_stratification,
+            random_state
+        ))?;
         Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, nodes_number, random_state, verbose)"]
+    #[text_signature = "($self, nodes_number, random_state, verbose)"]
     /// Returns subgraph with given number of nodes.
     ///
     /// **This method creates a subset of the graph starting from a random node
@@ -4020,7 +4110,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, train_size, use_stratification, random_state)"]
+    #[text_signature = "($self, train_size, use_stratification, random_state)"]
     /// Returns node-label holdout for training ML algorithms on the graph node labels.
     ///
     /// Parameters
@@ -4057,7 +4147,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, k, k_index, use_stratification, random_state)"]
+    #[text_signature = "($self, k, k_index, use_stratification, random_state)"]
     /// Returns node-label fold for training ML algorithms on the graph node labels.
     ///
     /// Parameters
@@ -4096,7 +4186,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, train_size, use_stratification, random_state)"]
+    #[text_signature = "($self, train_size, use_stratification, random_state)"]
     /// Returns edge-label holdout for training ML algorithms on the graph edge labels.
     /// This is commonly used for edge type prediction tasks.
     ///
@@ -4139,7 +4229,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, k, k_index, use_stratification, random_state)"]
+    #[text_signature = "($self, k, k_index, use_stratification, random_state)"]
     /// Returns edge-label kfold for training ML algorithms on the graph edge labels.
     /// This is commonly used for edge type prediction tasks.
     ///
@@ -4184,7 +4274,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, k, k_index, edge_types, random_state, verbose)"]
+    #[text_signature = "($self, k, k_index, edge_types, random_state, verbose)"]
     /// Returns train and test graph following kfold validation scheme.
     ///
     /// The edges are splitted into k chunks. The k_index-th chunk is used to build
@@ -4234,7 +4324,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src_node_id, dst_node_id, maximal_depth)"]
+    #[text_signature = "($self, src_node_id, dst_node_id, maximal_depth)"]
     /// Returns minimum path node IDs and distance from given node ids.
     ///
     /// Parameters
@@ -4258,7 +4348,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If there is no path between the two given nodes.
     ///
-    pub unsafe fn get_unchecked_minimum_path_node_ids_from_node_ids(
+    pub unsafe fn get_unchecked_shortest_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
@@ -4269,7 +4359,7 @@ impl EnsmallenGraph {
             gil,
             pe!(self
                 .graph
-                .get_unchecked_minimum_path_node_ids_from_node_ids(
+                .get_unchecked_shortest_path_node_ids_from_node_ids(
                     src_node_id,
                     dst_node_id,
                     maximal_depth
@@ -4279,7 +4369,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src_node_id, dst_node_id, maximal_depth)"]
+    #[text_signature = "($self, src_node_id, dst_node_id, maximal_depth)"]
     /// Returns minimum path node names from given node ids.
     ///
     /// Parameters
@@ -4295,7 +4385,7 @@ impl EnsmallenGraph {
     /// Safety
     /// ------
     /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_minimum_path_node_names_from_node_ids(
+    pub unsafe fn get_unchecked_shortest_path_node_names_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
@@ -4303,7 +4393,7 @@ impl EnsmallenGraph {
     ) -> PyResult<Vec<String>> {
         pe!(self
             .graph
-            .get_unchecked_minimum_path_node_names_from_node_ids(
+            .get_unchecked_shortest_path_node_names_from_node_ids(
                 src_node_id,
                 dst_node_id,
                 maximal_depth
@@ -4311,7 +4401,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src_node_id, dst_node_id, maximal_depth)"]
+    #[text_signature = "($self, src_node_id, dst_node_id, maximal_depth)"]
     /// Returns minimum path node names from given node ids.
     ///
     /// Parameters
@@ -4329,7 +4419,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If any of the given node IDs do not exist in the current graph.
     ///
-    pub fn get_minimum_path_node_ids_from_node_ids(
+    pub fn get_shortest_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
@@ -4338,7 +4428,7 @@ impl EnsmallenGraph {
         let gil = pyo3::Python::acquire_gil();
         Ok(to_ndarray_1d!(
             gil,
-            pe!(self.graph.get_minimum_path_node_ids_from_node_ids(
+            pe!(self.graph.get_shortest_path_node_ids_from_node_ids(
                 src_node_id,
                 dst_node_id,
                 maximal_depth
@@ -4348,7 +4438,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src_node_name, dst_node_name, maximal_depth)"]
+    #[text_signature = "($self, src_node_name, dst_node_name, maximal_depth)"]
     /// Returns minimum path node names from given node names.
     ///
     /// Parameters
@@ -4366,7 +4456,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If any of the given node names do not exist in the current graph.
     ///
-    pub fn get_minimum_path_node_ids_from_node_names(
+    pub fn get_shortest_path_node_ids_from_node_names(
         &self,
         src_node_name: &str,
         dst_node_name: &str,
@@ -4375,7 +4465,7 @@ impl EnsmallenGraph {
         let gil = pyo3::Python::acquire_gil();
         Ok(to_ndarray_1d!(
             gil,
-            pe!(self.graph.get_minimum_path_node_ids_from_node_names(
+            pe!(self.graph.get_shortest_path_node_ids_from_node_names(
                 src_node_name,
                 dst_node_name,
                 maximal_depth
@@ -4385,7 +4475,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src_node_name, dst_node_name, maximal_depth)"]
+    #[text_signature = "($self, src_node_name, dst_node_name, maximal_depth)"]
     /// Returns minimum path node names from given node names.
     ///
     /// Parameters
@@ -4403,13 +4493,13 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If any of the given node names do not exist in the current graph.
     ///
-    pub fn get_minimum_path_node_names_from_node_names(
+    pub fn get_shortest_path_node_names_from_node_names(
         &self,
         src_node_name: &str,
         dst_node_name: &str,
         maximal_depth: Option<NodeT>,
     ) -> PyResult<Vec<String>> {
-        pe!(self.graph.get_minimum_path_node_names_from_node_names(
+        pe!(self.graph.get_shortest_path_node_names_from_node_names(
             src_node_name,
             dst_node_name,
             maximal_depth
@@ -4417,7 +4507,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src_node_id, dst_node_id, k)"]
+    #[text_signature = "($self, src_node_id, dst_node_id, k)"]
     /// Return vector of the k minimum paths node IDs between given source node and destination node ID.
     ///
     /// Parameters
@@ -4444,7 +4534,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src_node_id, dst_node_id, k)"]
+    #[text_signature = "($self, src_node_id, dst_node_id, k)"]
     /// Return vector of the k minimum paths node IDs between given source node and destination node ID.
     ///
     /// Parameters
@@ -4476,7 +4566,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src_node_name, dst_node_name, k)"]
+    #[text_signature = "($self, src_node_name, dst_node_name, k)"]
     /// Return vector of the k minimum paths node IDs between given source node and destination node name.
     ///
     /// Parameters
@@ -4508,7 +4598,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src_node_name, dst_node_name, k)"]
+    #[text_signature = "($self, src_node_name, dst_node_name, k)"]
     /// Return vector of the k minimum paths node names between given source node and destination node name.
     ///
     /// Parameters
@@ -4540,7 +4630,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Returns unweighted eccentricity of the given node.
     ///
     /// This method will panic if the given node ID does not exists in the graph.
@@ -4559,7 +4649,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Returns unweighted eccentricity of the given node ID.
     ///
     /// Parameters
@@ -4580,7 +4670,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id, use_edge_weights_as_probabilities)"]
+    #[text_signature = "($self, node_id, use_edge_weights_as_probabilities)"]
     /// Returns weighted eccentricity of the given node ID.
     ///
     /// Parameters
@@ -4611,7 +4701,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_name)"]
+    #[text_signature = "($self, node_name)"]
     /// Returns unweighted eccentricity of the given node name.
     ///
     /// Parameters
@@ -4630,7 +4720,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_name, use_edge_weights_as_probabilities)"]
+    #[text_signature = "($self, node_name, use_edge_weights_as_probabilities)"]
     /// Returns weighted eccentricity of the given node name.
     ///
     /// Parameters
@@ -4661,7 +4751,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src_node_id, dst_node_id, use_edge_weights_as_probabilities, maximal_depth)"]
+    #[text_signature = "($self, src_node_id, dst_node_id, use_edge_weights_as_probabilities, maximal_depth)"]
     /// Returns minimum path node IDs and distance from given node ids.
     ///
     /// Parameters
@@ -4681,7 +4771,7 @@ impl EnsmallenGraph {
     /// Safety
     /// ------
     /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
+    pub unsafe fn get_unchecked_weighted_shortest_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
@@ -4689,7 +4779,7 @@ impl EnsmallenGraph {
         maximal_depth: Option<NodeT>,
     ) -> (f64, Vec<NodeT>) {
         self.graph
-            .get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
+            .get_unchecked_weighted_shortest_path_node_ids_from_node_ids(
                 src_node_id,
                 dst_node_id,
                 use_edge_weights_as_probabilities,
@@ -4698,7 +4788,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src_node_id, dst_node_id, use_edge_weights_as_probabilities, maximal_depth)"]
+    #[text_signature = "($self, src_node_id, dst_node_id, use_edge_weights_as_probabilities, maximal_depth)"]
     /// Returns minimum path node names from given node ids.
     ///
     /// Parameters
@@ -4718,7 +4808,7 @@ impl EnsmallenGraph {
     /// Safety
     /// ------
     /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_weighted_minimum_path_node_names_from_node_ids(
+    pub unsafe fn get_unchecked_weighted_shortest_path_node_names_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
@@ -4726,7 +4816,7 @@ impl EnsmallenGraph {
         maximal_depth: Option<NodeT>,
     ) -> (f64, Vec<String>) {
         self.graph
-            .get_unchecked_weighted_minimum_path_node_names_from_node_ids(
+            .get_unchecked_weighted_shortest_path_node_names_from_node_ids(
                 src_node_id,
                 dst_node_id,
                 use_edge_weights_as_probabilities,
@@ -4735,7 +4825,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src_node_id, dst_node_id, use_edge_weights_as_probabilities, maximal_depth)"]
+    #[text_signature = "($self, src_node_id, dst_node_id, use_edge_weights_as_probabilities, maximal_depth)"]
     /// Returns minimum path node names from given node ids.
     ///
     /// Parameters
@@ -4757,23 +4847,25 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If any of the given node IDs do not exist in the current graph.
     ///
-    pub fn get_weighted_minimum_path_node_ids_from_node_ids(
+    pub fn get_weighted_shortest_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
     ) -> PyResult<(f64, Vec<NodeT>)> {
-        pe!(self.graph.get_weighted_minimum_path_node_ids_from_node_ids(
-            src_node_id,
-            dst_node_id,
-            use_edge_weights_as_probabilities,
-            maximal_depth
-        ))
+        pe!(self
+            .graph
+            .get_weighted_shortest_path_node_ids_from_node_ids(
+                src_node_id,
+                dst_node_id,
+                use_edge_weights_as_probabilities,
+                maximal_depth
+            ))
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src_node_name, dst_node_name, use_edge_weights_as_probabilities, maximal_depth)"]
+    #[text_signature = "($self, src_node_name, dst_node_name, use_edge_weights_as_probabilities, maximal_depth)"]
     /// Returns minimum path node names from given node names.
     ///
     /// Parameters
@@ -4793,7 +4885,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If any of the given node names do not exist in the current graph.
     ///
-    pub fn get_weighted_minimum_path_node_ids_from_node_names(
+    pub fn get_weighted_shortest_path_node_ids_from_node_names(
         &self,
         src_node_name: &str,
         dst_node_name: &str,
@@ -4802,7 +4894,7 @@ impl EnsmallenGraph {
     ) -> PyResult<(f64, Vec<NodeT>)> {
         pe!(self
             .graph
-            .get_weighted_minimum_path_node_ids_from_node_names(
+            .get_weighted_shortest_path_node_ids_from_node_names(
                 src_node_name,
                 dst_node_name,
                 use_edge_weights_as_probabilities,
@@ -4811,7 +4903,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src_node_name, dst_node_name, use_edge_weights_as_probabilities, maximal_depth)"]
+    #[text_signature = "($self, src_node_name, dst_node_name, use_edge_weights_as_probabilities, maximal_depth)"]
     /// Returns minimum path node names from given node names.
     ///
     /// Parameters
@@ -4831,7 +4923,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If any of the given node names do not exist in the current graph.
     ///
-    pub fn get_weighted_minimum_path_node_names_from_node_names(
+    pub fn get_weighted_shortest_path_node_names_from_node_names(
         &self,
         src_node_name: &str,
         dst_node_name: &str,
@@ -4840,7 +4932,7 @@ impl EnsmallenGraph {
     ) -> PyResult<(f64, Vec<String>)> {
         pe!(self
             .graph
-            .get_weighted_minimum_path_node_names_from_node_names(
+            .get_weighted_shortest_path_node_names_from_node_names(
                 src_node_name,
                 dst_node_name,
                 use_edge_weights_as_probabilities,
@@ -4849,7 +4941,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, ignore_infinity, verbose)"]
+    #[text_signature = "($self, ignore_infinity, verbose)"]
     /// Returns diameter of the graph using naive method.
     ///
     /// Note that there exists the non-naive method for undirected graphs
@@ -4879,7 +4971,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, ignore_infinity, verbose)"]
+    #[text_signature = "($self, ignore_infinity, verbose)"]
     /// Returns diameter of the graph.
     ///
     /// Parameters
@@ -4904,7 +4996,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, ignore_infinity, use_edge_weights_as_probabilities, verbose)"]
+    #[text_signature = "($self, ignore_infinity, use_edge_weights_as_probabilities, verbose)"]
     /// Returns diameter of the graph using naive method.
     ///
     /// Note that there exists the non-naive method for undirected graphs
@@ -4947,7 +5039,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, verbose)"]
+    #[text_signature = "($self, verbose)"]
     /// Returns number a triple with (number of components, number of nodes of the smallest component, number of nodes of the biggest component )
     ///
     /// Parameters
@@ -4960,28 +5052,28 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns number of connected nodes in the graph.
     pub fn get_connected_nodes_number(&self) -> NodeT {
         self.graph.get_connected_nodes_number()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns number of singleton nodes with selfloops within the graph.
     pub fn get_singleton_nodes_with_selfloops_number(&self) -> NodeT {
         self.graph.get_singleton_nodes_with_selfloops_number()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns number of singleton nodes within the graph.
     pub fn get_singleton_nodes_number(&self) -> NodeT {
         self.graph.get_singleton_nodes_number()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns number of disconnected nodes within the graph.
     /// A Disconnected node is a node which is nor a singleton nor a singleton
     /// with selfloops.
@@ -4990,7 +5082,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns vector of singleton node IDs of the graph.
     pub fn get_singleton_node_ids(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -4998,14 +5090,14 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns vector of singleton node names of the graph.
     pub fn get_singleton_node_names(&self) -> Vec<String> {
         self.graph.get_singleton_node_names()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns vector of singleton_with_selfloops node IDs of the graph.
     pub fn get_singleton_with_selfloops_node_ids(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -5017,21 +5109,21 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns vector of singleton_with_selfloops node names of the graph.
     pub fn get_singleton_with_selfloops_node_names(&self) -> Vec<String> {
         self.graph.get_singleton_with_selfloops_node_names()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns density of the graph.
     pub fn get_density(&self) -> PyResult<f64> {
         pe!(self.graph.get_density())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns the traps rate of the graph.
     ///
     /// THIS IS EXPERIMENTAL AND MUST BE PROVEN!
@@ -5040,63 +5132,63 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns unweighted mean node degree of the graph.
     pub fn get_node_degrees_mean(&self) -> PyResult<f64> {
         pe!(self.graph.get_node_degrees_mean())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns weighted mean node degree of the graph.
     pub fn get_weighted_node_degrees_mean(&self) -> PyResult<f64> {
         pe!(self.graph.get_weighted_node_degrees_mean())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns number of undirected edges of the graph.
     pub fn get_undirected_edges_number(&self) -> EdgeT {
         self.graph.get_undirected_edges_number()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns number of undirected edges of the graph.
     pub fn get_unique_undirected_edges_number(&self) -> EdgeT {
         self.graph.get_unique_undirected_edges_number()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns number of edges of the graph.
     pub fn get_edges_number(&self) -> EdgeT {
         self.graph.get_edges_number()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns number of unique edges of the graph.
     pub fn get_unique_edges_number(&self) -> EdgeT {
         self.graph.get_unique_edges_number()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns unweighted median node degree of the graph
     pub fn get_node_degrees_median(&self) -> PyResult<NodeT> {
         pe!(self.graph.get_node_degrees_median())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns weighted median node degree of the graph
     pub fn get_weighted_node_degrees_median(&self) -> PyResult<f64> {
         pe!(self.graph.get_weighted_node_degrees_median())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns maximum node degree of the graph.
     ///
     /// Raises
@@ -5109,7 +5201,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns maximum node degree of the graph.
     ///
     /// Safety
@@ -5120,14 +5212,14 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns maximum node degree of the graph.
     pub fn get_most_central_node_id(&self) -> PyResult<NodeT> {
         pe!(self.graph.get_most_central_node_id())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns minimum node degree of the graph.
     ///
     /// Raises
@@ -5140,28 +5232,28 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns mode node degree of the graph.
     pub fn get_node_degrees_mode(&self) -> PyResult<NodeT> {
         pe!(self.graph.get_node_degrees_mode())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns rate of self-loops.
     pub fn get_selfloop_nodes_rate(&self) -> PyResult<f64> {
         pe!(self.graph.get_selfloop_nodes_rate())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return name of the graph.
     pub fn get_name(&self) -> String {
         self.graph.get_name()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the number of traps (nodes without any outgoing edges that are not singletons)
     /// This also includes nodes with only a self-loops, therefore singletons with
     /// only a self-loops are not considered traps because you could make a walk on them.
@@ -5170,7 +5262,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, directed)"]
+    #[text_signature = "($self, directed)"]
     /// Return vector of the non-unique source nodes.
     ///
     /// Parameters
@@ -5184,7 +5276,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return vector on the (non unique) directed source nodes of the graph
     pub fn get_directed_source_node_ids(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -5192,7 +5284,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, directed)"]
+    #[text_signature = "($self, directed)"]
     /// Return vector of the non-unique source nodes names.
     ///
     /// Parameters
@@ -5205,7 +5297,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, directed)"]
+    #[text_signature = "($self, directed)"]
     /// Return vector on the (non unique) destination nodes of the graph.
     ///
     /// Parameters
@@ -5219,7 +5311,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return vector on the (non unique) directed destination nodes of the graph
     pub fn get_directed_destination_node_ids(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -5227,7 +5319,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, directed)"]
+    #[text_signature = "($self, directed)"]
     /// Return vector of the non-unique destination nodes names.
     ///
     /// Parameters
@@ -5240,28 +5332,28 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return vector with the sorted nodes names
     pub fn get_node_names(&self) -> Vec<String> {
         self.graph.get_node_names()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return vector with the node URLs.
     pub fn get_node_urls(&self) -> Vec<Option<String>> {
         self.graph.get_node_urls()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return vector with the node predicted ontology.
     pub fn get_node_ontologies(&self) -> Vec<Option<String>> {
         self.graph.get_node_ontologies()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return vector with the sorted nodes Ids
     pub fn get_node_ids(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -5269,14 +5361,14 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the edge types of the edges
     pub fn get_edge_type_ids(&self) -> PyResult<Vec<Option<EdgeTypeT>>> {
         pe!(self.graph.get_edge_type_ids())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the unique edge type IDs of the graph edges.
     pub fn get_unique_edge_type_ids(&self) -> PyResult<Py<PyArray1<EdgeTypeT>>> {
         let gil = pyo3::Python::acquire_gil();
@@ -5288,21 +5380,21 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the edge types names
     pub fn get_edge_type_names(&self) -> PyResult<Vec<Option<String>>> {
         pe!(self.graph.get_edge_type_names())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the edge types names
     pub fn get_unique_edge_type_names(&self) -> PyResult<Vec<String>> {
         pe!(self.graph.get_unique_edge_type_names())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the weights of the graph edges.
     pub fn get_edge_weights(&self) -> PyResult<Py<PyArray1<WeightT>>> {
         let gil = pyo3::Python::acquire_gil();
@@ -5314,7 +5406,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the weighted indegree (total weighted inbound edge weights) for each node.
     pub fn get_weighted_node_indegrees(&self) -> PyResult<Py<PyArray1<f64>>> {
         let gil = pyo3::Python::acquire_gil();
@@ -5326,14 +5418,14 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the node types of the graph nodes.
     pub fn get_node_type_ids(&self) -> PyResult<Vec<Option<Vec<NodeTypeT>>>> {
         pe!(self.graph.get_node_type_ids())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns boolean mask of known node types.
     ///
     /// Raises
@@ -5351,7 +5443,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns boolean mask of unknown node types.
     ///
     /// Raises
@@ -5369,7 +5461,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns one-hot encoded node types.
     ///
     /// Raises
@@ -5387,7 +5479,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns one-hot encoded known node types.
     ///
     /// Raises
@@ -5405,7 +5497,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns one-hot encoded edge types.
     ///
     /// Raises
@@ -5423,7 +5515,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns one-hot encoded known edge types.
     ///
     /// Raises
@@ -5441,14 +5533,14 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the node types names.
     pub fn get_node_type_names(&self) -> PyResult<Vec<Option<Vec<String>>>> {
         pe!(self.graph.get_node_type_names())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the unique node type IDs of the graph nodes.
     pub fn get_unique_node_type_ids(&self) -> PyResult<Py<PyArray1<NodeTypeT>>> {
         let gil = pyo3::Python::acquire_gil();
@@ -5460,28 +5552,28 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the unique node types names.
     pub fn get_unique_node_type_names(&self) -> PyResult<Vec<String>> {
         pe!(self.graph.get_unique_node_type_names())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return number of the unique edges in the graph
     pub fn get_unique_directed_edges_number(&self) -> EdgeT {
         self.graph.get_unique_directed_edges_number()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the nodes mapping
     pub fn get_nodes_mapping(&self) -> HashMap<String, NodeT> {
         self.graph.get_nodes_mapping()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, directed)"]
+    #[text_signature = "($self, directed)"]
     /// Return vector with the sorted edge Ids.
     ///
     /// Parameters
@@ -5495,7 +5587,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return vector with the sorted directed edge Ids
     pub fn get_directed_edge_node_ids(&self) -> Py<PyArray2<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -5503,7 +5595,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, directed)"]
+    #[text_signature = "($self, directed)"]
     /// Return vector with the sorted edge names.
     ///
     /// Parameters
@@ -5516,14 +5608,14 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return vector with the sorted directed edge names
     pub fn get_directed_edge_node_names(&self) -> Vec<(String, String)> {
         self.graph.get_directed_edge_node_names()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns number of nodes with unknown node type.
     ///
     /// Raises
@@ -5536,7 +5628,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns the number of node with known node type.
     ///
     /// Raises
@@ -5549,7 +5641,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns rate of unknown node types over total nodes number.
     ///
     /// Raises
@@ -5562,7 +5654,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns rate of known node types over total nodes number.
     ///
     /// Raises
@@ -5575,7 +5667,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns minimum number of node types.
     ///
     /// Raises
@@ -5588,7 +5680,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns maximum number of node types.
     ///
     /// Raises
@@ -5601,7 +5693,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns number of maximum multilabel count.
     ///
     /// This value is the maximum number of multilabel counts
@@ -5611,7 +5703,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns number of singleton node types.
     ///
     /// Raises
@@ -5624,7 +5716,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns vector of singleton node types IDs.
     ///
     /// Raises
@@ -5642,7 +5734,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns vector of singleton node types names.
     ///
     /// Raises
@@ -5655,7 +5747,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns number of unknown edge types.
     ///
     /// Raises
@@ -5668,7 +5760,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns edge IDs of the edges with unknown edge types
     ///
     /// Raises
@@ -5686,7 +5778,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns edge IDs of the edges with known edge types
     ///
     /// Raises
@@ -5704,7 +5796,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, directed)"]
+    #[text_signature = "($self, directed)"]
     /// Returns edge node IDs of the edges with unknown edge types
     ///
     /// Parameters
@@ -5728,7 +5820,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, directed)"]
+    #[text_signature = "($self, directed)"]
     /// Returns edge node IDs of the edges with known edge types
     ///
     /// Parameters
@@ -5750,7 +5842,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, directed)"]
+    #[text_signature = "($self, directed)"]
     /// Returns edge node names of the edges with unknown edge types
     ///
     /// Parameters
@@ -5774,7 +5866,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, directed)"]
+    #[text_signature = "($self, directed)"]
     /// Returns edge node names of the edges with known edge types
     ///
     /// Parameters
@@ -5798,7 +5890,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns a boolean vector that for each node contains whether it has an
     /// unknown node type.
     ///
@@ -5817,7 +5909,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns a boolean vector that for each node contains whether it has an
     /// unknown edge type.
     ///
@@ -5836,7 +5928,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns node IDs of the nodes with unknown node types
     ///
     /// Raises
@@ -5854,7 +5946,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns node IDs of the nodes with known node types
     ///
     /// Raises
@@ -5872,7 +5964,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns node names of the nodes with unknown node types
     ///
     /// Raises
@@ -5885,7 +5977,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns node names of the nodes with known node types
     ///
     /// Raises
@@ -5898,7 +5990,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns a boolean vector that for each node contains whether it has an
     /// unknown node type.
     ///
@@ -5917,7 +6009,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns a boolean vector that for each node contains whether it has an
     /// known node type.
     ///
@@ -5936,7 +6028,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns the number of edge with known edge type.
     ///
     /// Raises
@@ -5949,7 +6041,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns rate of unknown edge types over total edges number.
     ///
     /// Raises
@@ -5962,7 +6054,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns rate of known edge types over total edges number.
     ///
     /// Raises
@@ -5975,7 +6067,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns minimum number of edge types.
     ///
     /// Raises
@@ -5988,7 +6080,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns number of singleton edge types.
     ///
     /// Raises
@@ -6001,7 +6093,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns vector of singleton edge types IDs.
     ///
     /// Raises
@@ -6019,7 +6111,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns vector of singleton edge types names.
     ///
     /// Raises
@@ -6032,14 +6124,14 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns number of nodes in the graph
     pub fn get_nodes_number(&self) -> NodeT {
         self.graph.get_nodes_number()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, verbose)"]
+    #[text_signature = "($self, verbose)"]
     /// Return a vector with the components each node belongs to.
     ///
     /// E.g. If we have two components `[0, 2, 3]` and `[1, 4, 5]` the result will look like
@@ -6060,14 +6152,14 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns number of directed edges in the graph
     pub fn get_directed_edges_number(&self) -> EdgeT {
         self.graph.get_directed_edges_number()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns number of edge types in the graph.
     ///
     /// Raises
@@ -6080,7 +6172,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns number of node types in the graph.
     ///
     /// Raises
@@ -6093,7 +6185,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns the unweighted degree of every node in the graph
     pub fn get_node_degrees(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -6101,7 +6193,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the indegree for each node.
     pub fn get_node_indegrees(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -6109,7 +6201,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns the weighted degree of every node in the graph
     pub fn get_weighted_node_degrees(&self) -> PyResult<Py<PyArray1<f64>>> {
         let gil = pyo3::Python::acquire_gil();
@@ -6121,7 +6213,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return set of nodes that are not singletons
     pub fn get_not_singletons_node_ids(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -6129,21 +6221,21 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return mapping from instance not trap nodes to dense nodes
     pub fn get_dense_nodes_mapping(&self) -> HashMap<NodeT, NodeT> {
         self.graph.get_dense_nodes_mapping()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return number of edges that have multigraph syblings
     pub fn get_parallel_edges_number(&self) -> EdgeT {
         self.graph.get_parallel_edges_number()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return vector with node cumulative_node_degrees, that is the comulative node degree
     pub fn get_cumulative_node_degrees(&self) -> Py<PyArray1<EdgeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -6151,14 +6243,14 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns number of the source nodes.
     pub fn get_unique_source_nodes_number(&self) -> NodeT {
         self.graph.get_unique_source_nodes_number()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns edge type IDs counts hashmap.
     ///
     /// Raises
@@ -6171,7 +6263,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns edge type names counts hashmap.
     ///
     /// Raises
@@ -6184,7 +6276,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns node type IDs counts hashmap.
     ///
     /// Raises
@@ -6197,7 +6289,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns node type names counts hashmap.
     ///
     /// Raises
@@ -6210,14 +6302,14 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Convert inplace the graph to directed.
     pub fn to_directed_inplace(&mut self) {
         self.graph.to_directed_inplace();
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return a new instance of the current graph as directed
     pub fn to_directed(&self) -> EnsmallenGraph {
         EnsmallenGraph {
@@ -6226,7 +6318,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the directed graph from the upper triangular adjacency matrix.
     pub fn to_upper_triangular(&self) -> EnsmallenGraph {
         EnsmallenGraph {
@@ -6235,7 +6327,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the directed graph from the lower triangular adjacency matrix.
     pub fn to_lower_triangular(&self) -> EnsmallenGraph {
         EnsmallenGraph {
@@ -6244,7 +6336,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the graph from the main diagonal adjacency matrix.
     pub fn to_main_diagonal(&self) -> EnsmallenGraph {
         EnsmallenGraph {
@@ -6253,7 +6345,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the graph from the anti-diagonal adjacency matrix.
     pub fn to_anti_diagonal(&self) -> EnsmallenGraph {
         EnsmallenGraph {
@@ -6262,7 +6354,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the graph from the bidiagonal adjacency matrix.
     pub fn to_bidiagonal(&self) -> EnsmallenGraph {
         EnsmallenGraph {
@@ -6271,7 +6363,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the graph from the arrowhead adjacency matrix.
     pub fn to_arrowhead(&self) -> EnsmallenGraph {
         EnsmallenGraph {
@@ -6280,7 +6372,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the graph from the transposed adjacency matrix.
     pub fn to_transposed(&self) -> EnsmallenGraph {
         EnsmallenGraph {
@@ -6289,7 +6381,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return the complementary graph.
     pub fn to_complementary(&self) -> EnsmallenGraph {
         EnsmallenGraph {
@@ -6298,7 +6390,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns report relative to the graph metrics
     ///
     /// The report includes the following metrics by default:
@@ -6343,7 +6435,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, other, verbose)"]
+    #[text_signature = "($self, other, verbose)"]
     /// Return rendered textual report about the graph overlaps.
     ///
     /// Parameters
@@ -6362,7 +6454,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Return human-readable html report of the given node.
     ///
     /// The report, by default, is rendered using html.
@@ -6377,7 +6469,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_name)"]
+    #[text_signature = "($self, node_name)"]
     /// Return human-readable html report of the given node.
     ///
     /// The report, by default, is rendered using html.
@@ -6392,7 +6484,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return html short textual report of the graph.
     ///
     /// TODO! Add reports on triangles
@@ -6753,7 +6845,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_name_mapping, node_type_name_mapping, edge_type_name_mapping)"]
+    #[text_signature = "($self, node_name_mapping, node_type_name_mapping, edge_type_name_mapping)"]
     /// Replace given node, node type and edge type names.
     ///
     /// Parameters
@@ -6787,7 +6879,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_ids_to_keep, node_ids_to_filter, node_type_ids_to_keep, node_type_ids_to_filter, node_type_id_to_keep, node_type_id_to_filter, edge_ids_to_keep, edge_ids_to_filter, edge_node_ids_to_keep, edge_node_ids_to_filter, edge_type_ids_to_keep, edge_type_ids_to_filter, min_edge_weight, max_edge_weight, filter_singleton_nodes, filter_singleton_nodes_with_selfloop, filter_selfloops, filter_parallel_edges)"]
+    #[text_signature = "($self, node_ids_to_keep, node_ids_to_filter, node_type_ids_to_keep, node_type_ids_to_filter, node_type_id_to_keep, node_type_id_to_filter, edge_ids_to_keep, edge_ids_to_filter, edge_node_ids_to_keep, edge_node_ids_to_filter, edge_type_ids_to_keep, edge_type_ids_to_filter, min_edge_weight, max_edge_weight, filter_singleton_nodes, filter_singleton_nodes_with_selfloop, filter_selfloops, filter_parallel_edges)"]
     /// Returns a **NEW** Graph that does not have the required attributes.
     ///
     /// Parameters
@@ -6877,7 +6969,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_names_to_keep, node_names_to_filter, node_type_names_to_keep, node_type_names_to_filter, node_type_name_to_keep, node_type_name_to_filter, edge_node_names_to_keep, edge_node_names_to_filter, edge_type_names_to_keep, edge_type_names_to_filter, min_edge_weight, max_edge_weight, filter_singleton_nodes, filter_singleton_nodes_with_selfloop, filter_selfloops, filter_parallel_edges)"]
+    #[text_signature = "($self, node_names_to_keep, node_names_to_filter, node_type_names_to_keep, node_type_names_to_filter, node_type_name_to_keep, node_type_name_to_filter, edge_node_names_to_keep, edge_node_names_to_filter, edge_type_names_to_keep, edge_type_names_to_filter, min_edge_weight, max_edge_weight, filter_singleton_nodes, filter_singleton_nodes_with_selfloop, filter_selfloops, filter_parallel_edges)"]
     /// Returns a **NEW** Graph that does not have the required attributes.
     ///
     /// Parameters
@@ -6959,7 +7051,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns new graph without unknown node types and relative nodes.
     ///
     /// Note that this method will remove ALL nodes labeled with unknown node
@@ -6971,7 +7063,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns new graph without unknown edge types and relative edges.
     ///
     /// Note that this method will remove ALL edges labeled with unknown edge
@@ -6983,7 +7075,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns new graph without singleton nodes.
     ///
     /// A node is singleton when does not have neither incoming or outgoing edges.
@@ -6994,7 +7086,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns new graph without singleton nodes with selfloops.
     ///
     /// A node is singleton with selfloop when does not have neither incoming or outgoing edges.
@@ -7005,7 +7097,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns new graph without disconnected nodes.
     ///
     /// A disconnected node is a node with no connection to any other node.
@@ -7016,7 +7108,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns new graph without selfloops.
     pub fn drop_selfloops(&self) -> EnsmallenGraph {
         EnsmallenGraph {
@@ -7025,7 +7117,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns new graph without parallel edges
     pub fn drop_parallel_edges(&self) -> EnsmallenGraph {
         EnsmallenGraph {
@@ -7034,7 +7126,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, random_state, undesired_edge_types, verbose)"]
+    #[text_signature = "($self, random_state, undesired_edge_types, verbose)"]
     /// Returns set of edges composing a spanning tree and connected components.
     ///
     /// The spanning tree is NOT minimal.
@@ -7071,7 +7163,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, verbose)"]
+    #[text_signature = "($self, verbose)"]
     /// Returns consistent spanning arborescence using Kruskal.
     ///
     /// The spanning tree is NOT minimal.
@@ -7096,7 +7188,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, verbose)"]
+    #[text_signature = "($self, verbose)"]
     /// Compute the connected components building in parallel a spanning tree using [bader's algorithm](https://www.sciencedirect.com/science/article/abs/pii/S0743731505000882).
     ///
     /// **This works only for undirected graphs.**
@@ -7131,7 +7223,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, vector_sources, vector_destinations, vector_cumulative_node_degrees)"]
+    #[text_signature = "($self, vector_sources, vector_destinations, vector_cumulative_node_degrees)"]
     /// Enable extra perks that buys you time as you accept to spend more memory.
     ///
     /// Parameters
@@ -7157,21 +7249,174 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Disable all extra perks, reducing memory impact but incresing time requirements
     pub fn disable_all(&mut self) {
         self.graph.disable_all();
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns 2-approximated verted cover set using greedy algorithm.
     pub fn approximated_vertex_cover_set(&self) -> HashSet<NodeT> {
         self.graph.approximated_vertex_cover_set()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, features, iterations, maximal_distance, k1, b, include_central_node, verbose)"]
+    #[text_signature = "($self, number_of_nodes_to_sample, random_state)"]
+    /// Return random unique sorted numbers.
+    ///
+    /// Parameters
+    /// ----------
+    /// number_of_nodes_to_sample: int,
+    ///     The number of nodes to sample.
+    /// random_state: int,
+    ///     The random state to use to reproduce the sampling.
+    ///
+    pub fn get_random_nodes(
+        &self,
+        number_of_nodes_to_sample: NodeT,
+        random_state: u64,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self
+                .graph
+                .get_random_nodes(number_of_nodes_to_sample, random_state))?,
+            NodeT
+        ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, number_of_nodes_to_sample, root_node)"]
+    /// Return nodes sampled from the neighbourhood of given root nodes.
+    ///
+    /// Parameters
+    /// ----------
+    /// number_of_nodes_to_sample: int,
+    ///     The number of nodes to sample.
+    /// root_node: int,
+    ///     The root node from .
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the number of requested nodes is higher than the number of nodes in the graph.
+    /// ValueError
+    ///     If the given root node does not exist in the curret graph instance.
+    ///
+    pub fn get_breadth_first_search_random_nodes(
+        &self,
+        number_of_nodes_to_sample: NodeT,
+        root_node: NodeT,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self
+                .graph
+                .get_breadth_first_search_random_nodes(number_of_nodes_to_sample, root_node))?,
+            NodeT
+        ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, node, random_state, walk_length, unique)"]
+    /// Returns unique nodes sampled from uniform random walk.
+    ///
+    /// Parameters
+    /// ----------
+    /// node: int,
+    ///     Node from where to start the random walks.
+    /// random_state: int,
+    ///     the random_state to use for extracting the nodes and edges.
+    /// walk_length: int,
+    ///     Length of the random walk.
+    /// unique: Optional[bool],
+    ///     Whether to make the sampled nodes unique.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given node does not exist in the current slack.
+    ///
+    pub fn get_uniform_random_walk_random_nodes(
+        &self,
+        node: NodeT,
+        random_state: u64,
+        walk_length: u64,
+        unique: Option<bool>,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self.graph.get_uniform_random_walk_random_nodes(
+                node,
+                random_state,
+                walk_length,
+                unique
+            ))?,
+            NodeT
+        ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return list of the supported node sampling methods
+    pub fn get_node_sampling_methods(&self) -> Vec<&str> {
+        self.graph.get_node_sampling_methods()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, number_of_nodes_to_sample, random_state, root_node, node_sampling_method, unique)"]
+    /// Return subsampled nodes according to the given method and parameters.
+    ///
+    /// Parameters
+    /// ----------
+    /// number_of_nodes_to_sample: int,
+    ///     The number of nodes to sample.
+    /// random_state: int,
+    ///     The random state to reproduce the sampling.
+    /// root_node: Optional[int],
+    ///     The (optional) root node to use to sample. In not provided, a random one is sampled.
+    /// node_sampling_method: str,
+    ///     The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
+    /// unique: Optional[bool],
+    ///     Whether to make the sampled nodes unique.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given node sampling method is not supported.
+    ///
+    pub fn get_subsampled_nodes(
+        &self,
+        number_of_nodes_to_sample: NodeT,
+        random_state: u64,
+        root_node: Option<NodeT>,
+        node_sampling_method: &str,
+        unique: Option<bool>,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self.graph.get_subsampled_nodes(
+                number_of_nodes_to_sample,
+                random_state,
+                root_node,
+                node_sampling_method,
+                unique
+            ))?,
+            NodeT
+        ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, features, iterations, maximal_distance, k1, b, include_central_node, verbose)"]
     /// Returns okapi node features propagation within given maximal distance.
     ///
     /// Parameters
@@ -7224,7 +7469,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, iterations, maximal_distance, k1, b, verbose)"]
+    #[text_signature = "($self, iterations, maximal_distance, k1, b, verbose)"]
     /// Returns okapi node label propagation within given maximal distance.
     ///
     /// Parameters
@@ -7269,7 +7514,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return if graph has name that is not the default one.
     ///
     /// TODO: use a default for the default graph name
@@ -7278,49 +7523,49 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return if the graph has any nodes.
     pub fn has_nodes(&self) -> bool {
         self.graph.has_nodes()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return if the graph has any edges.
     pub fn has_edges(&self) -> bool {
         self.graph.has_edges()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return whether the graph has trap nodes.
     pub fn has_trap_nodes(&self) -> bool {
         self.graph.has_trap_nodes()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns boolean representing if graph is directed.
     pub fn is_directed(&self) -> bool {
         self.graph.is_directed()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns boolean representing whether graph has weights.
     pub fn has_edge_weights(&self) -> bool {
         self.graph.has_edge_weights()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns whether graph has weights that can represent probabilities
     pub fn has_edge_weights_representing_probabilities(&self) -> PyResult<bool> {
         pe!(self.graph.has_edge_weights_representing_probabilities())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns whether a graph has one or more weighted singleton nodes.
     ///
     /// A weighted singleton node is a node whose weighted node degree is 0.
@@ -7335,7 +7580,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns whether the graph has constant weights.
     ///
     /// Raises
@@ -7348,7 +7593,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns boolean representing whether graph has negative weights.
     ///
     /// Raises
@@ -7361,21 +7606,21 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns boolean representing whether graph has edge types.
     pub fn has_edge_types(&self) -> bool {
         self.graph.has_edge_types()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns boolean representing if graph has self-loops.
     pub fn has_selfloops(&self) -> bool {
         self.graph.has_selfloops()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns boolean representing if nodes which are nor singletons nor
     /// singletons with selfloops.
     pub fn has_disconnected_nodes(&self) -> bool {
@@ -7383,21 +7628,21 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns boolean representing if graph has singletons.
     pub fn has_singleton_nodes(&self) -> bool {
         self.graph.has_singleton_nodes()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns boolean representing if graph has singletons
     pub fn has_singleton_nodes_with_selfloops(&self) -> bool {
         self.graph.has_singleton_nodes_with_selfloops()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, verbose)"]
+    #[text_signature = "($self, verbose)"]
     /// Returns whether the graph is connected.
     ///
     /// Parameters
@@ -7410,14 +7655,14 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns boolean representing if graph has node types
     pub fn has_node_types(&self) -> bool {
         self.graph.has_node_types()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns boolean representing if graph has multilabel node types.
     ///
     /// Raises
@@ -7430,7 +7675,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns whether there are unknown node types.
     ///
     /// Raises
@@ -7443,7 +7688,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns whether there are known node types.
     ///
     /// Raises
@@ -7456,7 +7701,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns whether there are unknown edge types.
     ///
     /// Raises
@@ -7469,7 +7714,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns whether there are known edge types.
     ///
     /// Raises
@@ -7482,7 +7727,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns whether the nodes have an homogenous node type.
     ///
     /// Raises
@@ -7495,7 +7740,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns whether the edges have an homogenous edge type.
     ///
     /// Raises
@@ -7508,7 +7753,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns whether there is at least singleton node type, that is a node type that only appears once.
     ///
     /// Raises
@@ -7521,14 +7766,14 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return whether the graph has any known node-related graph oddities
     pub fn has_node_oddities(&self) -> bool {
         self.graph.has_node_oddities()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return whether the graph has any known node type-related graph oddities.
     ///
     /// Raises
@@ -7541,7 +7786,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns whether there is at least singleton edge type, that is a edge type that only appears once.
     ///
     /// Raises
@@ -7554,7 +7799,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return whether the graph has any known edge type-related graph oddities.
     ///
     /// Raises
@@ -7567,14 +7812,14 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Return if there are multiple edges between two node
     pub fn is_multigraph(&self) -> bool {
         self.graph.is_multigraph()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns whether the node IDs are sorted by decreasing outbound node degree.
     pub fn has_nodes_sorted_by_decreasing_outbound_node_degree(&self) -> bool {
         self.graph
@@ -7582,14 +7827,14 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns whether the node IDs are sorted by decreasing outbound node degree.
     pub fn has_nodes_sorted_by_lexicographic_order(&self) -> bool {
         self.graph.has_nodes_sorted_by_lexicographic_order()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns whether the node IDs are sorted by increasing outbound node degree.
     pub fn has_nodes_sorted_by_increasing_outbound_node_degree(&self) -> bool {
         self.graph
@@ -7597,7 +7842,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, iterations, verbose)"]
+    #[text_signature = "($self, iterations, verbose)"]
     /// Returns graph to the i-th transitivity closure iteration.
     ///
     /// Parameters
@@ -7618,7 +7863,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, iterations, verbose)"]
+    #[text_signature = "($self, iterations, verbose)"]
     /// Returns graph with unweighted shortest paths computed up to the given depth.
     ///
     /// The returned graph will have no selfloops.
@@ -7641,7 +7886,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, iterations, use_edge_weights_as_probabilities, verbose)"]
+    #[text_signature = "($self, iterations, use_edge_weights_as_probabilities, verbose)"]
     /// Returns graph with weighted shortest paths computed up to the given depth.
     ///
     /// The returned graph will have no selfloops.
@@ -7681,7 +7926,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_id)"]
+    #[text_signature = "($self, edge_id)"]
     /// Returns option with the weight of the given edge id.
     ///
     /// This method will raise a panic if the given edge ID is higher than
@@ -7702,7 +7947,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src, dst)"]
+    #[text_signature = "($self, src, dst)"]
     /// Returns option with the weight of the given node ids.
     ///
     /// This method will raise a panic if the given node IDs are higher than
@@ -7728,7 +7973,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_name)"]
+    #[text_signature = "($self, node_name)"]
     /// Returns node id from given node name raising a panic if used unproperly.
     ///
     /// Parameters
@@ -7745,7 +7990,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_type_name)"]
+    #[text_signature = "($self, edge_type_name)"]
     /// Return edge type ID corresponding to the given edge type name.
     ///
     /// Parameters
@@ -7766,7 +8011,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_type_id)"]
+    #[text_signature = "($self, edge_type_id)"]
     /// Return edge type ID corresponding to the given edge type name
     /// raising panic if edge type ID does not exists in current graph.
     ///
@@ -7788,7 +8033,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_type)"]
+    #[text_signature = "($self, edge_type)"]
     /// Return number of edges of the given edge type without checks.
     ///
     /// Parameters
@@ -7809,7 +8054,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src, dst, edge_type)"]
+    #[text_signature = "($self, src, dst, edge_type)"]
     /// Return edge ID without any checks for given tuple of nodes and edge type.
     ///
     /// Parameters
@@ -7836,7 +8081,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src, dst)"]
+    #[text_signature = "($self, src, dst)"]
     /// Return range of outbound edges IDs for all the edges bewteen the given
     /// source and destination nodes.
     /// This operation is meaningfull only in a multigraph.
@@ -7862,7 +8107,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_id)"]
+    #[text_signature = "($self, edge_id)"]
     /// Returns node IDs corresponding to given edge ID.
     ///
     /// The method will panic if the given edge ID does not exists in the
@@ -7882,7 +8127,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_id)"]
+    #[text_signature = "($self, edge_id)"]
     /// Returns node names corresponding to given edge ID.
     ///
     /// Parameters
@@ -7899,7 +8144,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_id)"]
+    #[text_signature = "($self, edge_id)"]
     /// Returns the source of given edge id without making any boundary check.
     ///
     /// Parameters
@@ -7917,7 +8162,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_id)"]
+    #[text_signature = "($self, edge_id)"]
     /// Returns the destination of given edge id without making any boundary check.
     ///
     /// Parameters
@@ -7935,7 +8180,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_id)"]
+    #[text_signature = "($self, edge_id)"]
     /// Returns source node ID corresponding to given edge ID.
     ///
     /// Parameters
@@ -7954,7 +8199,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_id)"]
+    #[text_signature = "($self, edge_id)"]
     /// Returns destination node ID corresponding to given edge ID.
     ///
     /// Parameters
@@ -7973,7 +8218,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_id)"]
+    #[text_signature = "($self, edge_id)"]
     /// Returns source node name corresponding to given edge ID.
     ///
     /// Parameters
@@ -7991,7 +8236,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_id)"]
+    #[text_signature = "($self, edge_id)"]
     /// Returns destination node name corresponding to given edge ID.
     ///
     /// Parameters
@@ -8012,7 +8257,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_id)"]
+    #[text_signature = "($self, edge_id)"]
     /// Returns source node name corresponding to given edge ID.
     ///
     /// Parameters
@@ -8029,7 +8274,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_id)"]
+    #[text_signature = "($self, edge_id)"]
     /// Returns destination node name corresponding to given edge ID.
     ///
     /// Parameters
@@ -8046,7 +8291,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_id)"]
+    #[text_signature = "($self, edge_id)"]
     /// Returns node names corresponding to given edge ID.
     ///
     /// Parameters
@@ -8059,7 +8304,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_id)"]
+    #[text_signature = "($self, edge_id)"]
     /// Returns node names corresponding to given edge ID.
     ///
     /// Parameters
@@ -8072,7 +8317,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src, dst)"]
+    #[text_signature = "($self, src, dst)"]
     /// Returns edge ID corresponding to given source and destination node IDs.
     ///
     /// The method will panic if the given source and destination node IDs do
@@ -8094,7 +8339,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src, dst)"]
+    #[text_signature = "($self, src, dst)"]
     /// Returns edge ID corresponding to given source and destination node IDs.
     ///
     /// Parameters
@@ -8109,7 +8354,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, source_id)"]
+    #[text_signature = "($self, source_id)"]
     /// Returns edge ID corresponding to given source and destination node IDs.
     ///
     /// Parameters
@@ -8126,7 +8371,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_id)"]
+    #[text_signature = "($self, edge_id)"]
     /// Return the src, dst, edge type of a given edge ID.
     ///
     /// This method will raise a panic when an improper configuration is used.
@@ -8149,7 +8394,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_id)"]
+    #[text_signature = "($self, edge_id)"]
     /// Return the src, dst, edge type of a given edge ID.
     ///
     /// Parameters
@@ -8167,7 +8412,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_id)"]
+    #[text_signature = "($self, edge_id)"]
     /// Return the src, dst, edge type and weight of a given edge ID.
     ///
     /// This method will raise a panic when an improper configuration is used.
@@ -8190,7 +8435,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_id)"]
+    #[text_signature = "($self, edge_id)"]
     /// Return the src, dst, edge type and weight of a given edge ID.
     ///
     /// Parameters
@@ -8208,7 +8453,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, k)"]
+    #[text_signature = "($self, k)"]
     /// Return vector with unweighted top k central node Ids.
     ///
     /// If the k passed is bigger than the number of nodes this method will return
@@ -8237,7 +8482,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, k)"]
+    #[text_signature = "($self, k)"]
     /// Return vector with weighted top k central node Ids.
     ///
     /// If the k passed is bigger than the number of nodes this method will return
@@ -8266,7 +8511,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Returns the number of outbound neighbours of given node.
     ///
     /// Parameters
@@ -8283,7 +8528,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Returns the weighted sum of outbound neighbours of given node.
     ///
     /// The method will panic if the given node id is higher than the number of
@@ -8304,7 +8549,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Returns the number of outbound neighbours of given node ID.
     ///
     /// Parameters
@@ -8317,7 +8562,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Returns the comulative node degree up to the given node.
     ///
     /// Parameters
@@ -8338,7 +8583,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Returns the comulative node degree up to the given node.
     ///
     /// Parameters
@@ -8351,7 +8596,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Returns the weighted sum of outbound neighbours of given node ID.
     ///
     /// Parameters
@@ -8364,7 +8609,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_name)"]
+    #[text_signature = "($self, node_name)"]
     /// Returns the number of outbound neighbours of given node name.
     ///
     /// Parameters
@@ -8383,7 +8628,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, k)"]
+    #[text_signature = "($self, k)"]
     /// Return vector with top k central node names.
     ///
     /// Parameters
@@ -8396,7 +8641,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Returns option with vector of node types of given node.
     ///
     /// This method will panic if the given node ID is greater than
@@ -8422,7 +8667,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Returns node type of given node.
     ///
     /// Parameters
@@ -8438,7 +8683,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_id)"]
+    #[text_signature = "($self, edge_id)"]
     /// Returns edge type of given edge.
     ///
     /// This method will panic if the given edge ID is greater than
@@ -8463,7 +8708,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_id)"]
+    #[text_signature = "($self, edge_id)"]
     /// Returns edge type of given edge.
     ///
     /// Parameters
@@ -8476,7 +8721,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Returns result of option with the node type of the given node id.
     ///
     /// Parameters
@@ -8498,7 +8743,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Returns result of option with the node type of the given node id.
     ///
     /// Parameters
@@ -8520,7 +8765,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_name)"]
+    #[text_signature = "($self, node_name)"]
     /// Returns result of option with the node type of the given node name.
     ///
     /// Parameters
@@ -8536,7 +8781,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_id)"]
+    #[text_signature = "($self, edge_id)"]
     /// Returns option with the edge type of the given edge id.
     ///
     /// Parameters
@@ -8549,7 +8794,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_type_id)"]
+    #[text_signature = "($self, edge_type_id)"]
     /// Return edge type name of given edge type.
     ///
     /// Parameters
@@ -8567,7 +8812,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_id)"]
+    #[text_signature = "($self, edge_id)"]
     /// Returns weight of the given edge id.
     ///
     /// Parameters
@@ -8580,7 +8825,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src, dst)"]
+    #[text_signature = "($self, src, dst)"]
     /// Returns weight of the given node ids.
     ///
     /// Parameters
@@ -8595,7 +8840,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src, dst, edge_type)"]
+    #[text_signature = "($self, src, dst, edge_type)"]
     /// Returns weight of the given node ids and edge type.
     ///
     /// Parameters
@@ -8619,7 +8864,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src, dst, edge_type)"]
+    #[text_signature = "($self, src, dst, edge_type)"]
     /// Returns weight of the given node names and edge type.
     ///
     /// Parameters
@@ -8643,7 +8888,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src_name, dst_name)"]
+    #[text_signature = "($self, src_name, dst_name)"]
     /// Returns weight of the given node names.
     ///
     /// Parameters
@@ -8664,7 +8909,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Returns result with the node name.
     ///
     /// Parameters
@@ -8681,7 +8926,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Returns result with the node name.
     ///
     /// Parameters
@@ -8694,7 +8939,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_name)"]
+    #[text_signature = "($self, node_name)"]
     /// Returns result with the node ID.
     ///
     /// Parameters
@@ -8713,7 +8958,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_names)"]
+    #[text_signature = "($self, node_names)"]
     /// Returns result with the node IDs.
     ///
     /// Parameters
@@ -8740,7 +8985,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_node_names)"]
+    #[text_signature = "($self, edge_node_names)"]
     /// Returns result with the edge node IDs.
     ///
     /// Parameters
@@ -8764,7 +9009,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_node_ids)"]
+    #[text_signature = "($self, edge_node_ids)"]
     /// Returns result with the edge node names.
     ///
     /// Parameters
@@ -8788,7 +9033,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_name)"]
+    #[text_signature = "($self, node_name)"]
     /// Return node type ID for the given node name if available.
     ///
     /// Parameters
@@ -8804,7 +9049,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_name)"]
+    #[text_signature = "($self, node_name)"]
     /// Return node type name for the given node name if available.
     ///
     /// Parameters
@@ -8820,7 +9065,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_type_id)"]
+    #[text_signature = "($self, edge_type_id)"]
     /// Return number of edges with given edge type ID.
     ///
     /// If None is given as an edge type ID, the unknown edge type IDs
@@ -8839,7 +9084,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_type_name)"]
+    #[text_signature = "($self, edge_type_name)"]
     /// Return edge type ID curresponding to given edge type name.
     ///
     /// If None is given as an edge type ID, None is returned.
@@ -8859,7 +9104,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_type_name)"]
+    #[text_signature = "($self, edge_type_name)"]
     /// Return number of edges with given edge type name.
     ///
     /// If None is given as an edge type name, the unknown edge types
@@ -8880,7 +9125,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_type_name)"]
+    #[text_signature = "($self, node_type_name)"]
     /// Return node type ID curresponding to given node type name.
     ///
     /// If None is given as an node type ID, None is returned.
@@ -8900,7 +9145,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_type_id)"]
+    #[text_signature = "($self, node_type_id)"]
     /// Return number of nodes with given node type ID.
     ///
     /// If None is given as an node type ID, the unknown node types
@@ -8919,7 +9164,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_type_name)"]
+    #[text_signature = "($self, node_type_name)"]
     /// Return number of nodes with given node type name.
     ///
     /// If None is given as an node type name, the unknown node types
@@ -8940,7 +9185,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Return vector of destinations for the given source node ID.
     ///
     /// Parameters
@@ -8961,7 +9206,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_name)"]
+    #[text_signature = "($self, node_name)"]
     /// Return vector of destinations for the given source node name.
     ///
     /// Parameters
@@ -8982,7 +9227,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_name)"]
+    #[text_signature = "($self, node_name)"]
     /// Return vector of destination names for the given source node name.
     ///
     /// Parameters
@@ -9000,7 +9245,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src, dst)"]
+    #[text_signature = "($self, src, dst)"]
     /// Return range of outbound edges IDs for all the edges bewteen the given
     /// source and destination nodes.
     /// This operation is meaningfull only in a multigraph.
@@ -9021,7 +9266,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src, dst, edge_type)"]
+    #[text_signature = "($self, src, dst, edge_type)"]
     /// Return edge ID for given tuple of nodes and edge type.
     ///
     /// This method will return an error if the graph does not contain the
@@ -9048,7 +9293,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src_name, dst_name)"]
+    #[text_signature = "($self, src_name, dst_name)"]
     /// Return edge ID for given tuple of node names.
     ///
     /// This method will return an error if the graph does not contain the
@@ -9066,7 +9311,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src_name, dst_name, edge_type_name)"]
+    #[text_signature = "($self, src_name, dst_name, edge_type_name)"]
     /// Return edge ID for given tuple of node names and edge type name.
     ///
     /// This method will return an error if the graph does not contain the
@@ -9095,7 +9340,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_type_names)"]
+    #[text_signature = "($self, edge_type_names)"]
     /// Return translated edge types from string to internal edge ID.
     ///
     /// Parameters
@@ -9113,7 +9358,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_type_names)"]
+    #[text_signature = "($self, node_type_names)"]
     /// Return translated node types from string to internal node ID.
     ///
     /// Parameters
@@ -9131,7 +9376,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_type_names)"]
+    #[text_signature = "($self, node_type_names)"]
     /// Return translated node types from string to internal node ID.
     ///
     /// Parameters
@@ -9157,7 +9402,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src)"]
+    #[text_signature = "($self, src)"]
     /// Return range of outbound edges IDs which have as source the given Node.
     ///
     /// The method will panic if the given source node ID is higher than
@@ -9181,7 +9426,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, src)"]
+    #[text_signature = "($self, src)"]
     /// Return range of outbound edges IDs which have as source the given Node.
     ///
     /// Parameters
@@ -9194,7 +9439,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_type_id)"]
+    #[text_signature = "($self, node_type_id)"]
     /// Return node type name of given node type.
     ///
     /// There is no need for a unchecked version since we will have to map
@@ -9215,7 +9460,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_type_ids)"]
+    #[text_signature = "($self, node_type_ids)"]
     /// Return node type name of given node type.
     ///
     /// Parameters
@@ -9236,7 +9481,21 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, edge_type_name, weight)"]
+    #[text_signature = "($self)"]
+    /// Return list of the supported sparse edge weighting methods
+    pub fn get_sparse_edge_weighting_methods(&self) -> Vec<&str> {
+        self.graph.get_sparse_edge_weighting_methods()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return list of the supported edge weighting methods
+    pub fn get_edge_weighting_methods(&self) -> Vec<&str> {
+        self.graph.get_edge_weighting_methods()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, edge_type_name, weight)"]
     /// Returns new graph with added in missing self-loops with given edge type and weight.
     ///
     /// Parameters
@@ -9263,7 +9522,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns vector of unweighted degree centrality for all nodes
     pub fn get_degree_centrality(&self) -> PyResult<Py<PyArray1<f64>>> {
         let gil = pyo3::Python::acquire_gil();
@@ -9275,7 +9534,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns vector of weighted degree centrality for all nodes
     pub fn get_weighted_degree_centrality(&self) -> PyResult<Py<PyArray1<f64>>> {
         let gil = pyo3::Python::acquire_gil();
@@ -9287,7 +9546,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Return closeness centrality of the requested node.
     ///
     /// If the given node ID does not exist in the current graph the method
@@ -9310,7 +9569,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id, use_edge_weights_as_probabilities)"]
+    #[text_signature = "($self, node_id, use_edge_weights_as_probabilities)"]
     /// Return closeness centrality of the requested node.
     ///
     /// If the given node ID does not exist in the current graph the method
@@ -9340,7 +9599,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, verbose)"]
+    #[text_signature = "($self, verbose)"]
     /// Return closeness centrality for all nodes.
     ///
     /// Parameters
@@ -9354,7 +9613,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, use_edge_weights_as_probabilities, verbose)"]
+    #[text_signature = "($self, use_edge_weights_as_probabilities, verbose)"]
     /// Return closeness centrality for all nodes.
     ///
     /// Parameters
@@ -9390,7 +9649,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Return harmonic centrality of the requested node.
     ///
     /// If the given node ID does not exist in the current graph the method
@@ -9411,7 +9670,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_id, use_edge_weights_as_probabilities)"]
+    #[text_signature = "($self, node_id, use_edge_weights_as_probabilities)"]
     /// Return harmonic centrality of the requested node.
     ///
     /// If the given node ID does not exist in the current graph the method
@@ -9441,7 +9700,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, verbose)"]
+    #[text_signature = "($self, verbose)"]
     /// Return harmonic centrality for all nodes.
     ///
     /// Parameters
@@ -9455,7 +9714,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, use_edge_weights_as_probabilities, verbose)"]
+    #[text_signature = "($self, use_edge_weights_as_probabilities, verbose)"]
     /// Return harmonic centrality for all nodes.
     ///
     /// Parameters
@@ -9481,7 +9740,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, normalize, verbose)"]
+    #[text_signature = "($self, normalize, verbose)"]
     /// Returns vector of stress centrality for all nodes.
     ///
     /// Parameters
@@ -9505,7 +9764,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, normalize, verbose)"]
+    #[text_signature = "($self, normalize, verbose)"]
     /// Returns vector of betweenness centrality for all nodes.
     ///
     /// Parameters
@@ -9529,7 +9788,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, maximum_iterations_number, tollerance)"]
+    #[text_signature = "($self, maximum_iterations_number, tollerance)"]
     /// Returns vector with unweighted eigenvector centrality.
     ///
     /// Parameters
@@ -9555,7 +9814,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, maximum_iterations_number, tollerance)"]
+    #[text_signature = "($self, maximum_iterations_number, tollerance)"]
     /// Returns vector with unweighted eigenvector centrality.
     ///
     /// Parameters
@@ -9581,14 +9840,14 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, use_node_names)"]
+    #[text_signature = "($self, use_node_names)"]
     /// Print the current graph in a format compatible with Graphviz dot's format
     pub fn to_dot(&self, use_node_names: Option<bool>) -> String {
         self.graph.to_dot(use_node_names)
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, recursion_minimum_improvement, first_phase_minimum_improvement, patience, random_state)"]
+    #[text_signature = "($self, recursion_minimum_improvement, first_phase_minimum_improvement, patience, random_state)"]
     /// Returns vector of vectors of communities for each layer of hierarchy minimizing undirected modularity.
     ///
     /// Parameters
@@ -9628,7 +9887,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_community_memberships)"]
+    #[text_signature = "($self, node_community_memberships)"]
     /// Returns the directed modularity of the graph from the given memberships.
     ///
     /// Parameters
@@ -9642,15 +9901,15 @@ impl EnsmallenGraph {
     ///
     pub fn get_directed_modularity_from_node_community_memberships(
         &self,
-        node_community_memberships: Vec<NodeT>,
+        node_community_memberships: [NodeT],
     ) -> PyResult<f64> {
         pe!(self
             .graph
-            .get_directed_modularity_from_node_community_memberships(&node_community_memberships))
+            .get_directed_modularity_from_node_community_memberships(node_community_memberships))
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, node_community_memberships)"]
+    #[text_signature = "($self, node_community_memberships)"]
     /// Returns the undirected modularity of the graph from the given memberships.
     ///
     /// Parameters
@@ -9664,15 +9923,15 @@ impl EnsmallenGraph {
     ///
     pub fn get_undirected_modularity_from_node_community_memberships(
         &self,
-        node_community_memberships: Vec<NodeT>,
+        node_community_memberships: [NodeT],
     ) -> PyResult<f64> {
         pe!(self
             .graph
-            .get_undirected_modularity_from_node_community_memberships(&node_community_memberships))
+            .get_undirected_modularity_from_node_community_memberships(node_community_memberships))
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns the minumum unweighted preferential attachment score.
     ///
     /// Safety
@@ -9683,7 +9942,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns the maximum unweighted preferential attachment score.
     ///
     /// Safety
@@ -9694,7 +9953,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns the minumum weighted preferential attachment score.
     ///
     /// Safety
@@ -9706,7 +9965,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self)"]
+    #[text_signature = "($self)"]
     /// Returns the maximum weighted preferential attachment score.
     ///
     /// Safety
@@ -9718,7 +9977,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, source_node_id, destination_node_id, normalize)"]
+    #[text_signature = "($self, source_node_id, destination_node_id, normalize)"]
     /// Returns the unweighted preferential attachment from the given node IDs.
     ///
     /// Parameters
@@ -9750,7 +10009,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, source_node_id, destination_node_id, normalize)"]
+    #[text_signature = "($self, source_node_id, destination_node_id, normalize)"]
     /// Returns the unweighted preferential attachment from the given node IDs.
     ///
     /// Parameters
@@ -9782,7 +10041,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, first_node_name, second_node_name, normalize)"]
+    #[text_signature = "($self, first_node_name, second_node_name, normalize)"]
     /// Returns the unweighted preferential attachment from the given node names.
     ///
     /// Parameters
@@ -9814,7 +10073,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, source_node_id, destination_node_id, normalize)"]
+    #[text_signature = "($self, source_node_id, destination_node_id, normalize)"]
     /// Returns the weighted preferential attachment from the given node IDs.
     ///
     /// Parameters
@@ -9846,7 +10105,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, source_node_id, destination_node_id, normalize)"]
+    #[text_signature = "($self, source_node_id, destination_node_id, normalize)"]
     /// Returns the weighted preferential attachment from the given node IDs.
     ///
     /// Parameters
@@ -9880,7 +10139,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, first_node_name, second_node_name, normalize)"]
+    #[text_signature = "($self, first_node_name, second_node_name, normalize)"]
     /// Returns the weighted preferential attachment from the given node names.
     ///
     /// Parameters
@@ -9914,7 +10173,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, source_node_id, destination_node_id)"]
+    #[text_signature = "($self, source_node_id, destination_node_id)"]
     /// Returns the Jaccard index for the two given nodes from the given node IDs.
     ///
     /// Parameters
@@ -9939,7 +10198,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, source_node_id, destination_node_id)"]
+    #[text_signature = "($self, source_node_id, destination_node_id)"]
     /// Returns the Jaccard index for the two given nodes from the given node IDs.
     ///
     /// Parameters
@@ -9966,7 +10225,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, first_node_name, second_node_name)"]
+    #[text_signature = "($self, first_node_name, second_node_name)"]
     /// Returns the Jaccard index for the two given nodes from the given node names.
     ///
     /// Parameters
@@ -9993,7 +10252,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, source_node_id, destination_node_id)"]
+    #[text_signature = "($self, source_node_id, destination_node_id)"]
     /// Returns the Adamic/Adar Index for the given pair of nodes from the given node IDs.
     ///
     /// Parameters
@@ -10018,7 +10277,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, source_node_id, destination_node_id)"]
+    #[text_signature = "($self, source_node_id, destination_node_id)"]
     /// Returns the Adamic/Adar Index for the given pair of nodes from the given node IDs.
     ///
     /// Parameters
@@ -10045,7 +10304,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, first_node_name, second_node_name)"]
+    #[text_signature = "($self, first_node_name, second_node_name)"]
     /// Returns the Adamic/Adar Index for the given pair of nodes from the given node names.
     ///
     /// Parameters
@@ -10072,7 +10331,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, source_node_id, destination_node_id)"]
+    #[text_signature = "($self, source_node_id, destination_node_id)"]
     /// Returns the unweighted Resource Allocation Index for the given pair of nodes from the given node IDs.
     ///
     /// Parameters
@@ -10100,7 +10359,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, source_node_id, destination_node_id)"]
+    #[text_signature = "($self, source_node_id, destination_node_id)"]
     /// Returns the weighted Resource Allocation Index for the given pair of nodes from the given node IDs.
     ///
     /// Parameters
@@ -10128,7 +10387,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, source_node_id, destination_node_id)"]
+    #[text_signature = "($self, source_node_id, destination_node_id)"]
     /// Returns the unweighted Resource Allocation Index for the given pair of nodes from the given node IDs.
     ///
     /// Parameters
@@ -10155,7 +10414,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, first_node_name, second_node_name)"]
+    #[text_signature = "($self, first_node_name, second_node_name)"]
     /// Returns the unweighted Resource Allocation Index for the given pair of nodes from the given node names.
     ///
     /// Parameters
@@ -10182,7 +10441,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, source_node_id, destination_node_id)"]
+    #[text_signature = "($self, source_node_id, destination_node_id)"]
     /// Returns the weighted Resource Allocation Index for the given pair of nodes from the given node IDs.
     ///
     /// Parameters
@@ -10212,7 +10471,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, first_node_name, second_node_name)"]
+    #[text_signature = "($self, first_node_name, second_node_name)"]
     /// Returns the weighted Resource Allocation Index for the given pair of nodes from the given node names.
     ///
     /// Parameters
@@ -10242,7 +10501,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($, self, source_node_id, destination_node_id, normalize)"]
+    #[text_signature = "($self, source_node_id, destination_node_id, normalize)"]
     /// Returns all the implemented edge metrics for the two given node IDs.
     ///
     /// Specifically, the returned values are:

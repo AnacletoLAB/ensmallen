@@ -701,7 +701,7 @@ impl Graph {
         )
     }
 
-    /// Returns node-label holdout for training ML algorithms on the graph node labels.
+    /// Returns node-label holdout indices for training ML algorithms on the graph node labels.
     ///
     /// # Arguments
     /// * `train_size`: f64 - rate target to reserve for training,
@@ -712,19 +712,19 @@ impl Graph {
     /// This example create an 80-20 split of the nodes in the graph
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    ///   let (train, test) = graph.node_label_holdout(0.8, Some(true), None).unwrap();
+    ///   let (train, test) = graph.get_node_label_holdout_indices(0.8, Some(true), None).unwrap();
     /// ```
     ///
     /// # Raises
     /// * If the graph does not have node types.
     /// * If stratification is requested but the graph has a single node type.
     /// * If stratification is requested but the graph has a multilabel node types.
-    pub fn node_label_holdout(
+    pub fn get_node_label_holdout_indices(
         &self,
         train_size: f64,
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
-    ) -> Result<(Graph, Graph)> {
+    ) -> Result<(Vec<NodeT>, Vec<NodeT>)> {
         self.must_have_node_types()?;
         let random_state = random_state.unwrap_or(0xbadf00d);
         let use_stratification = use_stratification.unwrap_or(false);
@@ -761,7 +761,6 @@ impl Graph {
                             node_sets[nt[0] as usize].push(node_id as NodeT);
                         };
                     });
-
                     node_sets
                 } else {
                     // just compute a vector with a single vector of the indices
@@ -782,24 +781,96 @@ impl Graph {
         let mut rnd = SmallRng::seed_from_u64(splitmix64(random_state as u64));
 
         // Allocate the vectors for the nodes of each
-        let mut train_node_types = vec![None; self.get_nodes_number() as usize];
-        let mut test_node_types = vec![None; self.get_nodes_number() as usize];
+        let mut train_node_indices: Vec<NodeT> =
+            Vec::with_capacity(self.get_nodes_number() as usize);
+        let mut test_node_indices: Vec<NodeT> =
+            Vec::with_capacity(self.get_nodes_number() as usize);
 
         for mut node_set in node_sets {
             // Shuffle in a reproducible way the nodes of the current node_type
             node_set.shuffle(&mut rnd);
             // Compute how many of these nodes belongs to the training set
             let (train_size, _) = self.get_holdouts_elements_number(train_size, node_set.len())?;
-            // add the nodes to the relative vectors
-            node_set[..train_size].iter().for_each(|node_id| unsafe {
-                train_node_types[*node_id as usize] =
-                    self.get_unchecked_node_type_id_from_node_id(*node_id)
-            });
-            node_set[train_size..].iter().for_each(|node_id| unsafe {
-                test_node_types[*node_id as usize] =
-                    self.get_unchecked_node_type_id_from_node_id(*node_id)
-            });
+            // Extend the node indices
+            train_node_indices.extend(node_set[..train_size].iter().cloned());
+            test_node_indices.extend(node_set[train_size..].into_iter());
         }
+
+        Ok((train_node_indices, test_node_indices))
+    }
+
+    /// Returns node-label holdout indices for training ML algorithms on the graph node labels.
+    ///
+    /// # Arguments
+    /// * `train_size`: f64 - rate target to reserve for training,
+    /// * `use_stratification`: Option<bool> - Whether to use node-label stratification,
+    /// * `random_state`: Option<EdgeT> - The random_state to use for the holdout,
+    ///
+    /// # Example
+    /// This example create an 80-20 split of the nodes in the graph
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    ///   let (train, test) = graph.get_node_label_holdout_indices(0.8, Some(true), None).unwrap();
+    /// ```
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    /// * If stratification is requested but the graph has a single node type.
+    /// * If stratification is requested but the graph has a multilabel node types.
+    pub fn get_node_label_holdout_labels(
+        &self,
+        train_size: f64,
+        use_stratification: Option<bool>,
+        random_state: Option<EdgeT>,
+    ) -> Result<(Vec<Option<Vec<NodeTypeT>>>, Vec<Option<Vec<NodeTypeT>>>)> {
+        // Retrieve the train and test node indices
+        let (train_node_indices, test_node_indices) =
+            self.get_node_label_holdout_indices(train_size, use_stratification, random_state)?;
+
+        // Allocate the vectors for the nodes of each
+        // For the training node types
+        let mut train_node_types = vec![None; self.get_nodes_number() as usize];
+        train_node_indices.into_iter().for_each(|node_id| unsafe {
+            train_node_types[node_id as usize] =
+                self.get_unchecked_node_type_id_from_node_id(node_id)
+        });
+        // For the test node types
+        let mut test_node_types = vec![None; self.get_nodes_number() as usize];
+        test_node_indices.into_iter().for_each(|node_id| unsafe {
+            test_node_types[node_id as usize] =
+                self.get_unchecked_node_type_id_from_node_id(node_id)
+        });
+
+        Ok((train_node_types, test_node_types))
+    }
+
+    /// Returns node-label holdout for training ML algorithms on the graph node labels.
+    ///
+    /// # Arguments
+    /// * `train_size`: f64 - rate target to reserve for training,
+    /// * `use_stratification`: Option<bool> - Whether to use node-label stratification,
+    /// * `random_state`: Option<EdgeT> - The random_state to use for the holdout,
+    ///
+    /// # Example
+    /// This example create an 80-20 split of the nodes in the graph
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    ///   let (train, test) = graph.get_node_label_holdout_graphs(0.8, Some(true), None).unwrap();
+    /// ```
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    /// * If stratification is requested but the graph has a single node type.
+    /// * If stratification is requested but the graph has a multilabel node types.
+    pub fn get_node_label_holdout_graphs(
+        &self,
+        train_size: f64,
+        use_stratification: Option<bool>,
+        random_state: Option<EdgeT>,
+    ) -> Result<(Graph, Graph)> {
+        // Retrieve the node label holdouts indices.
+        let (train_node_types, test_node_types) =
+            self.get_node_label_holdout_labels(train_size, use_stratification, random_state)?;
 
         // Clone the current graph
         // here we could manually initialize the clones so that we don't waste
@@ -842,13 +913,13 @@ impl Graph {
     /// in train and test.
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    ///   let (train, test) = graph.edge_label_holdout(0.8, Some(true), None).unwrap();
+    ///   let (train, test) = graph.get_edge_label_holdout_graphs(0.8, Some(true), None).unwrap();
     /// ```
     ///
     /// # Raises
     /// * If the graph does not have edge types.
     /// * If stratification is required but the graph has singleton edge types.
-    pub fn edge_label_holdout(
+    pub fn get_edge_label_holdout_graphs(
         &self,
         train_size: f64,
         use_stratification: Option<bool>,

@@ -143,3 +143,8 @@ pub use memory::*;
 
 mod louvain;
 pub use louvain::*;
+mod nodes_sampling;
+pub use nodes_sampling::*;
+
+mod subgraphs;
+pub use subgraphs::*;

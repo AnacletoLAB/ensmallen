@@ -35,7 +35,11 @@ def get_words_data(graph: EnsmallenGraph) -> Tuple[EnsmallenGraph, pd.DataFrame]
     # Filtering graph
     filtered_graph = graph.filter_from_names(
         node_type_name_to_filter=["Word"]
+<<<<<<< HEAD
     ).remove_edge_weights()
+=======
+    ).remove_edge_weights().remove_edge_types()
+>>>>>>> origin/develop
     # Aligning node features with filtered graph node names.
     node_features = node_features.loc[filtered_graph.get_node_names()]
     # Returning elaborared graph and node features.

@@ -45,7 +45,7 @@ impl Graph {
                             None
                         } else {
                             Some(
-                                self.get_unchecked_breath_first_search_from_node_ids(
+                                self.get_unchecked_breadth_first_search_from_node_ids(
                                     src_node_id,
                                     None,
                                     None,
@@ -120,7 +120,7 @@ impl Graph {
                     .filter_map(|src_node_id| unsafe {
                         if self.is_unchecked_connected_from_node_id(src_node_id) {
                             Some(
-                                self.get_unchecked_breath_first_search_from_node_ids(
+                                self.get_unchecked_breadth_first_search_from_node_ids(
                                     src_node_id,
                                     None,
                                     None,
