@@ -57,7 +57,7 @@ impl ShortestPathsResultBFS {
     ///
     /// # Raises
     /// * If the predecessors vector was not requested.
-    pub(crate) fn get_kth_point_on_minimum_path(
+    pub(crate) fn get_kth_point_on_shortest_path(
         &self,
         mut dst_node_id: NodeT,
         k: NodeT,
@@ -89,7 +89,7 @@ impl ShortestPathsResultBFS {
             return Err("There is no path to the given destination node.".to_string());
         }
         let median_distance = self.get_node_distance(dst_node_id) / 2;
-        self.get_kth_point_on_minimum_path(dst_node_id, median_distance)
+        self.get_kth_point_on_shortest_path(dst_node_id, median_distance)
     }
 
     pub(crate) fn get_eccentricity(&self) -> NodeT {
@@ -172,7 +172,7 @@ impl Graph {
     /// If any of the given node IDs does not exist in the graph the method will panic.
     ///
     /// TODO! Explore chains accelerations!
-    pub unsafe fn get_unchecked_breath_first_search_from_node_ids(
+    pub unsafe fn get_unchecked_breadth_first_search_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: Option<NodeT>,
@@ -262,7 +262,7 @@ impl Graph {
     /// # Raises
     /// * If the given node is a selfloop.
     /// * If there is no path between the two given nodes.
-    pub unsafe fn get_unchecked_minimum_path_node_ids_from_node_ids(
+    pub unsafe fn get_unchecked_shortest_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
@@ -271,7 +271,7 @@ impl Graph {
         if src_node_id == dst_node_id {
             return Err("The minimum path on a selfloop is not defined.".to_string());
         }
-        let bfs = self.get_unchecked_breath_first_search_from_node_ids(
+        let bfs = self.get_unchecked_breadth_first_search_from_node_ids(
             src_node_id,
             Some(dst_node_id),
             None,
@@ -305,14 +305,14 @@ impl Graph {
     ///
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_minimum_path_node_names_from_node_ids(
+    pub unsafe fn get_unchecked_shortest_path_node_names_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
         maximal_depth: Option<NodeT>,
     ) -> Result<Vec<String>> {
         Ok(self
-            .get_unchecked_minimum_path_node_ids_from_node_ids(
+            .get_unchecked_shortest_path_node_ids_from_node_ids(
                 src_node_id,
                 dst_node_id,
                 maximal_depth,
@@ -331,14 +331,14 @@ impl Graph {
     ///
     /// # Raises
     /// * If any of the given node IDs do not exist in the current graph.
-    pub fn get_minimum_path_node_ids_from_node_ids(
+    pub fn get_shortest_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
         maximal_depth: Option<NodeT>,
     ) -> Result<Vec<NodeT>> {
         Ok(unsafe {
-            self.get_unchecked_minimum_path_node_ids_from_node_ids(
+            self.get_unchecked_shortest_path_node_ids_from_node_ids(
                 self.validate_node_id(src_node_id)?,
                 self.validate_node_id(dst_node_id)?,
                 maximal_depth,
@@ -355,14 +355,14 @@ impl Graph {
     ///
     /// # Raises
     /// * If any of the given node names do not exist in the current graph.
-    pub fn get_minimum_path_node_ids_from_node_names(
+    pub fn get_shortest_path_node_ids_from_node_names(
         &self,
         src_node_name: &str,
         dst_node_name: &str,
         maximal_depth: Option<NodeT>,
     ) -> Result<Vec<NodeT>> {
         Ok(unsafe {
-            self.get_unchecked_minimum_path_node_ids_from_node_ids(
+            self.get_unchecked_shortest_path_node_ids_from_node_ids(
                 self.get_node_id_from_node_name(src_node_name)?,
                 self.get_node_id_from_node_name(dst_node_name)?,
                 maximal_depth,
@@ -379,14 +379,14 @@ impl Graph {
     ///
     /// # Raises
     /// * If any of the given node names do not exist in the current graph.
-    pub fn get_minimum_path_node_names_from_node_names(
+    pub fn get_shortest_path_node_names_from_node_names(
         &self,
         src_node_name: &str,
         dst_node_name: &str,
         maximal_depth: Option<NodeT>,
     ) -> Result<Vec<String>> {
         Ok(unsafe {
-            self.get_unchecked_minimum_path_node_names_from_node_ids(
+            self.get_unchecked_shortest_path_node_names_from_node_ids(
                 self.get_node_id_from_node_name(src_node_name)?,
                 self.get_node_id_from_node_name(dst_node_name)?,
                 maximal_depth,
@@ -557,7 +557,7 @@ impl Graph {
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
     pub unsafe fn get_unchecked_eccentricity_from_node_id(&self, node_id: NodeT) -> NodeT {
-        self.get_unchecked_breath_first_search_from_node_ids(node_id, None, None, None)
+        self.get_unchecked_breadth_first_search_from_node_ids(node_id, None, None, None)
             .get_eccentricity()
     }
 
@@ -733,7 +733,7 @@ impl Graph {
         }
 
         let bfs: Option<ShortestPathsResultBFS> = maximal_depth.map(|md| {
-            self.get_unchecked_breath_first_search_from_node_ids(
+            self.get_unchecked_breadth_first_search_from_node_ids(
                 src_node_id,
                 maybe_dst_node_id,
                 None,
@@ -840,7 +840,7 @@ impl Graph {
     ///
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
+    pub unsafe fn get_unchecked_weighted_shortest_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
@@ -899,14 +899,14 @@ impl Graph {
     ///
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_weighted_minimum_path_node_names_from_node_ids(
+    pub unsafe fn get_unchecked_weighted_shortest_path_node_names_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
     ) -> (f64, Vec<String>) {
-        let (path_length, path) = self.get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
+        let (path_length, path) = self.get_unchecked_weighted_shortest_path_node_ids_from_node_ids(
             src_node_id,
             dst_node_id,
             use_edge_weights_as_probabilities,
@@ -931,7 +931,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If any of the given node IDs do not exist in the current graph.
-    pub fn get_weighted_minimum_path_node_ids_from_node_ids(
+    pub fn get_weighted_shortest_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
@@ -945,7 +945,7 @@ impl Graph {
             }
         }
         Ok(unsafe {
-            self.get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
+            self.get_unchecked_weighted_shortest_path_node_ids_from_node_ids(
                 self.validate_node_id(src_node_id)?,
                 self.validate_node_id(dst_node_id)?,
                 use_edge_weights_as_probabilities,
@@ -964,7 +964,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If any of the given node names do not exist in the current graph.
-    pub fn get_weighted_minimum_path_node_ids_from_node_names(
+    pub fn get_weighted_shortest_path_node_ids_from_node_names(
         &self,
         src_node_name: &str,
         dst_node_name: &str,
@@ -978,7 +978,7 @@ impl Graph {
             }
         }
         Ok(unsafe {
-            self.get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
+            self.get_unchecked_weighted_shortest_path_node_ids_from_node_ids(
                 self.get_node_id_from_node_name(src_node_name)?,
                 self.get_node_id_from_node_name(dst_node_name)?,
                 use_edge_weights_as_probabilities,
@@ -997,7 +997,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If any of the given node names do not exist in the current graph.
-    pub fn get_weighted_minimum_path_node_names_from_node_names(
+    pub fn get_weighted_shortest_path_node_names_from_node_names(
         &self,
         src_node_name: &str,
         dst_node_name: &str,
@@ -1011,7 +1011,7 @@ impl Graph {
             }
         }
         Ok(unsafe {
-            self.get_unchecked_weighted_minimum_path_node_names_from_node_ids(
+            self.get_unchecked_weighted_shortest_path_node_names_from_node_ids(
                 self.get_node_id_from_node_name(src_node_name)?,
                 self.get_node_id_from_node_name(dst_node_name)?,
                 use_edge_weights_as_probabilities,
@@ -1031,7 +1031,7 @@ impl Graph {
     /// # Raises
     /// * If the given source node ID does not exist in the current graph.
     /// * If the given optional destination node ID does not exist in the current graph.
-    pub fn get_breath_first_search_from_node_ids(
+    pub fn get_breadth_first_search_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: Option<NodeT>,
@@ -1041,7 +1041,7 @@ impl Graph {
         // Check if the given root exists in the graph
         self.validate_node_id(src_node_id)?;
         unsafe {
-            Ok(self.get_unchecked_breath_first_search_from_node_ids(
+            Ok(self.get_unchecked_breadth_first_search_from_node_ids(
                 src_node_id,
                 dst_node_id,
                 compute_predecessors,
@@ -1119,7 +1119,7 @@ impl Graph {
     fn get_four_sweep(&self) -> Result<(NodeT, NodeT)> {
         let most_central_node_id = unsafe { self.get_unchecked_most_central_node_id() };
         let first_candidate_most_eccentric_node_id = unsafe {
-            self.get_unchecked_breath_first_search_from_node_ids(
+            self.get_unchecked_breadth_first_search_from_node_ids(
                 most_central_node_id,
                 None,
                 None,
@@ -1129,7 +1129,7 @@ impl Graph {
         };
 
         let bfs1 = unsafe {
-            self.get_unchecked_breath_first_search_from_node_ids(
+            self.get_unchecked_breadth_first_search_from_node_ids(
                 first_candidate_most_eccentric_node_id,
                 None,
                 Some(true),
@@ -1138,7 +1138,7 @@ impl Graph {
         };
 
         let second_candidate_most_eccentric_node_id = unsafe {
-            self.get_unchecked_breath_first_search_from_node_ids(
+            self.get_unchecked_breadth_first_search_from_node_ids(
                 bfs1.get_median_point(bfs1.get_most_distant_node())?,
                 None,
                 Some(true),
@@ -1147,7 +1147,7 @@ impl Graph {
             .get_most_distant_node()
         };
         let bfs2 = unsafe {
-            self.get_unchecked_breath_first_search_from_node_ids(
+            self.get_unchecked_breadth_first_search_from_node_ids(
                 second_candidate_most_eccentric_node_id,
                 None,
                 Some(true),
@@ -1185,7 +1185,7 @@ impl Graph {
         // find the distances of all the nodes from the node with low eccentricty,
         // and thus with high centrality
         let bfs = unsafe {
-            self.get_unchecked_breath_first_search_from_node_ids(
+            self.get_unchecked_breadth_first_search_from_node_ids(
                 low_eccentricity_node,
                 None,
                 None,
@@ -1313,6 +1313,7 @@ impl Graph {
             .unwrap_or(0) as f64)
     }
 
+    #[cache_property(diameter)]
     /// Returns diameter of the graph.
     ///
     /// # Arguments
@@ -1428,7 +1429,7 @@ impl Graph {
     /// * If the weights are to be used and the graph does not have weights.
     /// * If the given source node name does not exist in the current graph.
     /// * If the given optional destination node name does not exist in the current graph.
-    pub fn get_breath_first_search_from_node_names(
+    pub fn get_breadth_first_search_from_node_names(
         &self,
         src_node_name: &str,
         dst_node_name: Option<&str>,
@@ -1436,7 +1437,7 @@ impl Graph {
         maximal_depth: Option<NodeT>,
     ) -> Result<ShortestPathsResultBFS> {
         unsafe {
-            Ok(self.get_unchecked_breath_first_search_from_node_ids(
+            Ok(self.get_unchecked_breadth_first_search_from_node_ids(
                 self.get_node_id_from_node_name(src_node_name)?,
                 dst_node_name.map_or(Ok::<_, String>(None), |dst_node_name| {
                     Ok(Some(self.get_node_id_from_node_name(dst_node_name)?))

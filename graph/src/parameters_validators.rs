@@ -533,4 +533,15 @@ impl Graph {
         }
         Ok(())
     }
+
+    /// Raises an error if the graph is not connected.
+    ///
+    /// # Raises
+    /// * If the graph is not connected.
+    pub fn must_be_connected(&self) -> Result<()> {
+        if !self.is_connected(None) {
+            return Err("The current graph instance is not connected.".to_string());
+        }
+        Ok(())
+    }
 }

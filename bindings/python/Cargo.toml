@@ -29,6 +29,8 @@ env_logger = "0.8.1"
 graph = { path = "../../graph" }
 tags = { path = "../../graph/tags" }
 numpy = "0.13.1"
+rand = {version="0.7", features = ["small_rng"] }
+vec_rand = { git = "https://github.com/zommiommy/vec_rand", branch = "master" }
 strsim = "0.10.0"
 markdown = "0.3"
 rayon = "1.5.0"

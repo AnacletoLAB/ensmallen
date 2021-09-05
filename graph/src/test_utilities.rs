@@ -1073,7 +1073,7 @@ pub fn test_bfs(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
     // If the graph is empty the other tests on BFS make little sense
     if !graph.has_nodes() {
         assert!(graph
-            .get_breath_first_search_from_node_ids(0, None, None, None)
+            .get_breadth_first_search_from_node_ids(0, None, None, None)
             .is_err());
         return Ok(());
     }
@@ -1085,12 +1085,12 @@ pub fn test_bfs(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
             graph.iter_node_ids().for_each(|src_node_id| {
                 graph.iter_node_ids().for_each(|dst_node_id| unsafe {
                     // Check that the obtained results are simmetric
-                    let src_to_dst = graph.get_unchecked_minimum_path_node_ids_from_node_ids(
+                    let src_to_dst = graph.get_unchecked_shortest_path_node_ids_from_node_ids(
                         src_node_id,
                         dst_node_id,
                         maximal_depth,
                     );
-                    let dst_to_src = graph.get_unchecked_minimum_path_node_ids_from_node_ids(
+                    let dst_to_src = graph.get_unchecked_shortest_path_node_ids_from_node_ids(
                         dst_node_id,
                         src_node_id,
                         maximal_depth,
@@ -1164,14 +1164,14 @@ pub fn test_dijkstra(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
                 graph.iter_node_ids().for_each(|dst_node_id| unsafe {
                     // Check that the obtained results are simmetric
                     let (src_to_dst_distance, src_to_dst) = graph
-                        .get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
+                        .get_unchecked_weighted_shortest_path_node_ids_from_node_ids(
                             src_node_id,
                             dst_node_id,
                             Some(use_edge_weights_as_probabilities),
                             None,
                         );
                     let (dst_to_src_distance, dst_to_src) = graph
-                        .get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
+                        .get_unchecked_weighted_shortest_path_node_ids_from_node_ids(
                             dst_node_id,
                             src_node_id,
                             Some(use_edge_weights_as_probabilities),
@@ -1982,12 +1982,12 @@ pub fn test_nodelabel_holdouts(graph: &mut Graph, _verbose: Option<bool>) -> Res
                 && (graph.has_multilabel_node_types()? || graph.has_singleton_node_types()?))
         {
             assert!(graph
-                .node_label_holdout(0.8, Some(use_stratification), Some(42))
+                .get_node_label_holdout_graphs(0.8, Some(use_stratification), Some(42))
                 .is_err());
             continue;
         }
 
-        let (train, test) = graph.node_label_holdout(0.8, Some(use_stratification), Some(42))?;
+        let (train, test) = graph.get_node_label_holdout_graphs(0.8, Some(use_stratification), Some(42))?;
         assert!(train.has_unknown_node_types()?);
         assert!(test.has_unknown_node_types()?);
         let remerged = &mut (&train | &test)?;
@@ -2023,11 +2023,11 @@ pub fn test_edgelabel_holdouts(graph: &mut Graph, _verbose: Option<bool>) -> Res
             || !graph.has_edge_types()
         {
             assert!(graph
-                .edge_label_holdout(0.8, Some(*use_stratification), None)
+                .get_edge_label_holdout_graphs(0.8, Some(*use_stratification), None)
                 .is_err());
             continue;
         }
-        let (train, test) = graph.edge_label_holdout(0.8, Some(*use_stratification), None)?;
+        let (train, test) = graph.get_edge_label_holdout_graphs(0.8, Some(*use_stratification), None)?;
         assert!(train.has_unknown_edge_types()?);
         assert!(test.has_unknown_edge_types()?);
         assert!(

@@ -11322,7 +11322,7 @@
         },
         "example": {
             "desc": "This example create an 80-20 split of the nodes in the graph\n",
-            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nlet (train, test) = graph.node_label_holdout(0.8, true, 0xbad5eed).unwrap();\n"
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nlet (train, test) = graph.get_node_label_holdout_graphs(0.8, true, 0xbad5eed).unwrap();\n"
         },
         "extra_headers": []
     },
@@ -11351,7 +11351,7 @@
         },
         "example": {
             "desc": "This example creates an 80-20 split of the edges mantaining the edge label ratios\nin train and test.\n",
-            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nlet (train, test) = graph.edge_label_holdout(0.8, true, 0xbad5eed).unwrap();\n"
+            "content": "```rust# let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);\nlet (train, test) = graph.get_edge_label_holdout_graphs(0.8, true, 0xbad5eed).unwrap();\n"
         },
         "extra_headers": [
             {
