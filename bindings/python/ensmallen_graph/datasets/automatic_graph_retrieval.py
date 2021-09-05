@@ -217,11 +217,12 @@ class AutomaticallyRetrievedGraph:
         if not self._cache and os.path.exists(root):
             shutil.rmtree(root)
 
-        # Download the necessary data
-        self._downloader.download(
-            self._graph["urls"],
-            paths
-        )
+        if not os.path.exists(root):
+            # Download the necessary data
+            self._downloader.download(
+                self._graph["urls"],
+                paths
+            )
 
         os.makedirs(
             root,

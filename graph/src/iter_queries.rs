@@ -110,6 +110,29 @@ impl Graph {
         }
     }
 
+    /// Return parallel iterator over NodeT of destinations of the given node src.
+    ///
+    /// # Arguments
+    /// * `src`: NodeT - The node whose neighbours are to be retrieved.
+    ///
+    /// # Safety
+    /// If the given node ID does not exist in the graph the method will panic.
+    /// For now, this iterator only works when the destinations are cached.
+    pub unsafe fn par_iter_unchecked_neighbour_node_ids_from_source_node_id(
+        &self,
+        src: NodeT,
+    ) -> impl IndexedParallelIterator<Item = NodeT> + Send + '_ {
+        match &self.destinations {
+            Some(dsts) => dsts[self.iter_unchecked_edge_ids_from_source_node_id(src)]
+                    .par_iter().cloned(),
+            None => panic!(concat!(
+                "The parallel iteration of neighbours ",
+                "without the cached destinations ",
+                "is not currently supported."
+            )),
+        }
+    }
+
     /// Return iterator over neighbours intersection.
     ///
     /// # Arguments

@@ -4810,12 +4810,12 @@ pub fn test_nodelabel_holdouts(graph: &mut Graph, _verbose: bool) -> Result<(), 
             || !graph.has_node_types()
         {
             assert!(graph
-                .node_label_holdout(0.8, *use_stratification, 42)
+                .get_node_label_holdout_graphs(0.8, *use_stratification, 42)
                 .is_err());
             continue;
         }
 
-        let (train, test) = graph.node_label_holdout(0.8, *use_stratification, 42)?;
+        let (train, test) = graph.get_node_label_holdout_graphs(0.8, *use_stratification, 42)?;
         let remerged = &mut (&train | &test)?;
         assert_eq!(remerged.node_types, graph.node_types);
         assert!(
@@ -4849,11 +4849,11 @@ pub fn test_edgelabel_holdouts(graph: &mut Graph, _verbose: bool) -> Result<(), 
             || !graph.has_edge_types()
         {
             assert!(graph
-                .edge_label_holdout(0.8, *use_stratification, 42)
+                .get_edge_label_holdout_graphs(0.8, *use_stratification, 42)
                 .is_err());
             continue;
         }
-        let (train, test) = graph.edge_label_holdout(0.8, *use_stratification, 42)?;
+        let (train, test) = graph.get_edge_label_holdout_graphs(0.8, *use_stratification, 42)?;
         assert!(
             train.edge_types.as_ref().map_or(false, |train_nts| {
                 test.edge_types.as_ref().map_or(false, |test_nts| {

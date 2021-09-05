@@ -829,7 +829,33 @@ impl Graph {
         result
     }
 
-    /// Returns single walk from given node.
+    /// Returns single walk iterator from given node.
+    ///
+    /// This method assumes that there are no traps in the graph.
+    ///
+    /// # Arguments
+    /// * `node`: NodeT - Node from where to start the random walks.
+    /// * `random_state`: usize - the random_state to use for extracting the nodes and edges.
+    /// * `walk_length`: u64 - Length of the random walk.
+    ///
+    /// # Safety
+    /// If a non-existing node ID is provided, this method may cause an out of bound.
+    pub(crate) unsafe fn iter_uniform_walk(
+        &self,
+        node: NodeT,
+        random_state: u64,
+        walk_length: u64,
+    ) -> impl Iterator<Item = NodeT> + '_ {
+        // We iterate one time before because we need to parse the initial node.
+        (0..1)
+            .map(move |_| node)
+            .chain((1..walk_length).scan(node, move |node, iteration| {
+                *node = self.extract_uniform_node(*node, random_state + iteration);
+                Some(*node)
+            }))
+    }
+
+    /// Returns single walk vector from given node.
     ///
     /// This method assumes that there are no traps in the graph.
     ///
@@ -841,13 +867,7 @@ impl Graph {
     /// # Safety
     /// If a non-existing node ID is provided, this method may cause an out of bound.
     unsafe fn uniform_walk(&self, node: NodeT, random_state: u64, walk_length: u64) -> Vec<NodeT> {
-        // We iterate one time before because we need to parse the initial node.
-        (0..1)
-            .map(move |_| node)
-            .chain((1..walk_length).scan(node, move |node, iteration| {
-                *node = self.extract_uniform_node(*node, random_state + iteration);
-                Some(*node)
-            }))
+        self.iter_uniform_walk(node, random_state, walk_length)
             .collect()
     }
 }

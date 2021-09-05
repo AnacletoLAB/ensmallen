@@ -1483,6 +1483,36 @@ pub fn get_selfloops_number_from_edge_list(
     ))
 }
 
+<<<<<<< HEAD
+#[pymethods]
+impl EnsmallenGraph {
+    #[automatically_generated_binding]
+    #[text_signature = "($, self)"]
+    /// Returns unweighted laplacian transformation of the graph
+    pub fn get_laplacian_transformed_graph(&self) -> EnsmallenGraph {
+        EnsmallenGraph {
+            graph: self.graph.get_laplacian_transformed_graph(),
+        }
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self)"]
+    /// Returns number of edges in the laplacian COO matrix representation of the graph
+    pub fn get_laplacian_coo_matrix_edges_number(&self) -> EdgeT {
+        self.graph.get_laplacian_coo_matrix_edges_number()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self)"]
+    /// Returns unweighted random walk normalized laplacian transformation of the graph
+    pub fn get_random_walk_normalized_laplacian_transformed_graph(&self) -> EnsmallenGraph {
+        EnsmallenGraph {
+            graph: self
+                .graph
+                .get_random_walk_normalized_laplacian_transformed_graph(),
+        }
+    }
+=======
 #[pyfunction]
 #[automatically_generated_binding]
 #[text_signature = "(path, separator, header, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, verbose, name)"]
@@ -1702,6 +1732,7 @@ pub fn sort_numeric_edge_list_inplace(
 pub fn get_rows_number(file_path: &str) -> PyResult<usize> {
     pe!(graph::get_rows_number(file_path))
 }
+>>>>>>> origin/develop
 
 #[pymethods]
 impl EnsmallenGraph {
@@ -2625,6 +2656,23 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
+<<<<<<< HEAD
+    #[text_signature = "($, self)"]
+    /// Raises an error if the graph is not connected.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph is not connected.
+    ///
+    pub fn must_be_connected(&self) -> PyResult<()> {
+        pe!(self.graph.must_be_connected())
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self)"]
+    /// Return total edge weights, if graph has weights.
+=======
     #[text_signature = "($self, first_node_name, second_node_name, normalize)"]
     /// Returns the unweighted preferential attachment from the given node names.
     ///
@@ -2637,6 +2685,7 @@ impl EnsmallenGraph {
     /// normalize: bool,
     ///     Whether to normalize by the square of maximum degree.
     ///
+>>>>>>> origin/develop
     ///
     /// Raises
     /// -------
@@ -3556,8 +3605,81 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
+<<<<<<< HEAD
+    #[text_signature = "($, self, train_size, use_stratification, random_state)"]
+    /// Returns node-label holdout indices for training ML algorithms on the graph node labels.
+    ///
+    /// Parameters
+    /// ----------
+    /// train_size: float,
+    ///     rate target to reserve for training,
+    /// use_stratification: Optional[bool],
+    ///     Whether to use node-label stratification,
+    /// random_state: Optional[int],
+    ///     The random_state to use for the holdout,
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have node types.
+    /// ValueError
+    ///     If stratification is requested but the graph has a single node type.
+    /// ValueError
+    ///     If stratification is requested but the graph has a multilabel node types.
+    ///
+    pub fn get_node_label_holdout_indices(
+        &self,
+        train_size: f64,
+        use_stratification: Option<bool>,
+        random_state: Option<EdgeT>,
+    ) -> PyResult<(Vec<NodeT>, Vec<NodeT>)> {
+        pe!(self
+            .graph
+            .get_node_label_holdout_indices(train_size, use_stratification, random_state))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self, train_size, use_stratification, random_state)"]
+    /// Returns node-label holdout indices for training ML algorithms on the graph node labels.
+    ///
+    /// Parameters
+    /// ----------
+    /// train_size: float,
+    ///     rate target to reserve for training,
+    /// use_stratification: Optional[bool],
+    ///     Whether to use node-label stratification,
+    /// random_state: Optional[int],
+    ///     The random_state to use for the holdout,
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have node types.
+    /// ValueError
+    ///     If stratification is requested but the graph has a single node type.
+    /// ValueError
+    ///     If stratification is requested but the graph has a multilabel node types.
+    ///
+    pub fn get_node_label_holdout_labels(
+        &self,
+        train_size: f64,
+        use_stratification: Option<bool>,
+        random_state: Option<EdgeT>,
+    ) -> PyResult<(Vec<Option<Vec<NodeTypeT>>>, Vec<Option<Vec<NodeTypeT>>>)> {
+        pe!(self
+            .graph
+            .get_node_label_holdout_labels(train_size, use_stratification, random_state))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self, train_size, use_stratification, random_state)"]
+    /// Returns node-label holdout for training ML algorithms on the graph node labels.
+=======
     #[text_signature = "($self, src_node_name, dst_node_name, k)"]
     /// Return vector of the k minimum paths node IDs between given source node and destination node name.
+>>>>>>> origin/develop
     ///
     /// Parameters
     /// ----------
@@ -3574,6 +3696,20 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If any of the given node names does not exist in the graph.
     ///
+<<<<<<< HEAD
+    pub fn get_node_label_holdout_graphs(
+        &self,
+        train_size: f64,
+        use_stratification: Option<bool>,
+        random_state: Option<EdgeT>,
+    ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
+        let (g1, g2) = pe!(self.graph.get_node_label_holdout_graphs(
+            train_size,
+            use_stratification,
+            random_state
+        ))?;
+        Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
+=======
     pub fn get_k_shortest_path_node_ids_from_node_names(
         &self,
         src_node_name: &str,
@@ -3585,6 +3721,7 @@ impl EnsmallenGraph {
             dst_node_name,
             k
         ))
+>>>>>>> origin/develop
     }
 
     #[automatically_generated_binding]
@@ -3606,6 +3743,20 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If any of the given node names does not exist in the graph.
     ///
+<<<<<<< HEAD
+    pub fn get_edge_label_holdout_graphs(
+        &self,
+        train_size: f64,
+        use_stratification: Option<bool>,
+        random_state: Option<EdgeT>,
+    ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
+        let (g1, g2) = pe!(self.graph.get_edge_label_holdout_graphs(
+            train_size,
+            use_stratification,
+            random_state
+        ))?;
+        Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
+=======
     pub fn get_k_shortest_path_node_names_from_node_names(
         &self,
         src_node_name: &str,
@@ -3617,6 +3768,7 @@ impl EnsmallenGraph {
             dst_node_name,
             k
         ))
+>>>>>>> origin/develop
     }
 
     #[automatically_generated_binding]
@@ -3761,12 +3913,39 @@ impl EnsmallenGraph {
     /// Safety
     /// ------
     /// If any of the given node IDs does not exist in the graph the method will panic.
+<<<<<<< HEAD
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given node is a selfloop.
+    /// ValueError
+    ///     If there is no path between the two given nodes.
+    ///
+    pub unsafe fn get_unchecked_shortest_path_node_ids_from_node_ids(
+=======
     pub unsafe fn get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
+>>>>>>> origin/develop
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
+<<<<<<< HEAD
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self
+                .graph
+                .get_unchecked_shortest_path_node_ids_from_node_ids(
+                    src_node_id,
+                    dst_node_id,
+                    maximal_depth
+                ))?,
+            NodeT
+        ))
+=======
     ) -> (f64, Vec<NodeT>) {
         self.graph
             .get_unchecked_weighted_minimum_path_node_ids_from_node_ids(
@@ -3775,6 +3954,7 @@ impl EnsmallenGraph {
                 use_edge_weights_as_probabilities,
                 maximal_depth,
             )
+>>>>>>> origin/develop
     }
 
     #[automatically_generated_binding]
@@ -3798,15 +3978,26 @@ impl EnsmallenGraph {
     /// Safety
     /// ------
     /// If any of the given node IDs does not exist in the graph the method will panic.
+<<<<<<< HEAD
+    pub unsafe fn get_unchecked_shortest_path_node_names_from_node_ids(
+=======
     pub unsafe fn get_unchecked_weighted_minimum_path_node_names_from_node_ids(
+>>>>>>> origin/develop
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
+<<<<<<< HEAD
+    ) -> PyResult<Vec<String>> {
+        pe!(self
+            .graph
+            .get_unchecked_shortest_path_node_names_from_node_ids(
+=======
     ) -> (f64, Vec<String>) {
         self.graph
             .get_unchecked_weighted_minimum_path_node_names_from_node_ids(
+>>>>>>> origin/develop
                 src_node_id,
                 dst_node_id,
                 use_edge_weights_as_probabilities,
@@ -3837,18 +4028,35 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If any of the given node IDs do not exist in the current graph.
     ///
+<<<<<<< HEAD
+    pub fn get_shortest_path_node_ids_from_node_ids(
+=======
     pub fn get_weighted_minimum_path_node_ids_from_node_ids(
+>>>>>>> origin/develop
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
+<<<<<<< HEAD
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self.graph.get_shortest_path_node_ids_from_node_ids(
+                src_node_id,
+                dst_node_id,
+                maximal_depth
+            ))?,
+            NodeT
+=======
     ) -> PyResult<(f64, Vec<NodeT>)> {
         pe!(self.graph.get_weighted_minimum_path_node_ids_from_node_ids(
             src_node_id,
             dst_node_id,
             use_edge_weights_as_probabilities,
             maximal_depth
+>>>>>>> origin/develop
         ))
     }
 
@@ -3873,16 +4081,28 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If any of the given node names do not exist in the current graph.
     ///
+<<<<<<< HEAD
+    pub fn get_shortest_path_node_ids_from_node_names(
+=======
     pub fn get_weighted_minimum_path_node_ids_from_node_names(
+>>>>>>> origin/develop
         &self,
         src_node_name: &str,
         dst_node_name: &str,
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
+<<<<<<< HEAD
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self.graph.get_shortest_path_node_ids_from_node_names(
+=======
     ) -> PyResult<(f64, Vec<NodeT>)> {
         pe!(self
             .graph
             .get_weighted_minimum_path_node_ids_from_node_names(
+>>>>>>> origin/develop
                 src_node_name,
                 dst_node_name,
                 use_edge_weights_as_probabilities,
@@ -3911,12 +4131,24 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If any of the given node names do not exist in the current graph.
     ///
+<<<<<<< HEAD
+    pub fn get_shortest_path_node_names_from_node_names(
+=======
     pub fn get_weighted_minimum_path_node_names_from_node_names(
+>>>>>>> origin/develop
         &self,
         src_node_name: &str,
         dst_node_name: &str,
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
+<<<<<<< HEAD
+    ) -> PyResult<Vec<String>> {
+        pe!(self.graph.get_shortest_path_node_names_from_node_names(
+            src_node_name,
+            dst_node_name,
+            maximal_depth
+        ))
+=======
     ) -> PyResult<(f64, Vec<String>)> {
         pe!(self
             .graph
@@ -3926,6 +4158,7 @@ impl EnsmallenGraph {
                 use_edge_weights_as_probabilities,
                 maximal_depth
             ))
+>>>>>>> origin/develop
     }
 
     #[automatically_generated_binding]
@@ -4209,6 +4442,25 @@ impl EnsmallenGraph {
     /// name: Optional[str],
     ///     Name of the graph. By default 'Chain'.
     ///
+<<<<<<< HEAD
+    /// Safety
+    /// ------
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_weighted_shortest_path_node_ids_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+        use_edge_weights_as_probabilities: Option<bool>,
+        maximal_depth: Option<NodeT>,
+    ) -> (f64, Vec<NodeT>) {
+        self.graph
+            .get_unchecked_weighted_shortest_path_node_ids_from_node_ids(
+                src_node_id,
+                dst_node_id,
+                use_edge_weights_as_probabilities,
+                maximal_depth,
+            )
+=======
     pub fn generate_random_spanning_tree(
         random_state: Option<u64>,
         minimum_node_id: Option<NodeT>,
@@ -4233,6 +4485,7 @@ impl EnsmallenGraph {
                 name
             ))?,
         })
+>>>>>>> origin/develop
     }
 
     #[staticmethod]
@@ -4259,6 +4512,25 @@ impl EnsmallenGraph {
     /// name: Optional[str],
     ///     Name of the graph. By default 'Circle'.
     ///
+<<<<<<< HEAD
+    /// Safety
+    /// ------
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_weighted_shortest_path_node_names_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+        use_edge_weights_as_probabilities: Option<bool>,
+        maximal_depth: Option<NodeT>,
+    ) -> (f64, Vec<String>) {
+        self.graph
+            .get_unchecked_weighted_shortest_path_node_names_from_node_ids(
+                src_node_id,
+                dst_node_id,
+                use_edge_weights_as_probabilities,
+                maximal_depth,
+            )
+=======
     pub fn generate_circle_graph(
         minimum_node_id: Option<NodeT>,
         nodes_number: Option<NodeT>,
@@ -4281,6 +4553,7 @@ impl EnsmallenGraph {
                 name
             ))?,
         })
+>>>>>>> origin/develop
     }
 
     #[staticmethod]
@@ -4307,6 +4580,23 @@ impl EnsmallenGraph {
     /// name: Optional[str],
     ///     Name of the graph. By default 'Chain'.
     ///
+<<<<<<< HEAD
+    pub fn get_weighted_shortest_path_node_ids_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+        use_edge_weights_as_probabilities: Option<bool>,
+        maximal_depth: Option<NodeT>,
+    ) -> PyResult<(f64, Vec<NodeT>)> {
+        pe!(self
+            .graph
+            .get_weighted_shortest_path_node_ids_from_node_ids(
+                src_node_id,
+                dst_node_id,
+                use_edge_weights_as_probabilities,
+                maximal_depth
+            ))
+=======
     pub fn generate_chain_graph(
         minimum_node_id: Option<NodeT>,
         nodes_number: Option<NodeT>,
@@ -4329,6 +4619,7 @@ impl EnsmallenGraph {
                 name
             ))?,
         })
+>>>>>>> origin/develop
     }
 
     #[staticmethod]
@@ -4355,6 +4646,23 @@ impl EnsmallenGraph {
     /// name: Optional[str],
     ///     Name of the graph. By default 'Complete'.
     ///
+<<<<<<< HEAD
+    pub fn get_weighted_shortest_path_node_ids_from_node_names(
+        &self,
+        src_node_name: &str,
+        dst_node_name: &str,
+        use_edge_weights_as_probabilities: Option<bool>,
+        maximal_depth: Option<NodeT>,
+    ) -> PyResult<(f64, Vec<NodeT>)> {
+        pe!(self
+            .graph
+            .get_weighted_shortest_path_node_ids_from_node_names(
+                src_node_name,
+                dst_node_name,
+                use_edge_weights_as_probabilities,
+                maximal_depth
+            ))
+=======
     pub fn generate_complete_graph(
         minimum_node_id: Option<NodeT>,
         nodes_number: Option<NodeT>,
@@ -4377,6 +4685,7 @@ impl EnsmallenGraph {
                 name
             ))?,
         })
+>>>>>>> origin/develop
     }
 
     #[staticmethod]
@@ -4425,6 +4734,23 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the edge weights are provided only for a subset.
     ///
+<<<<<<< HEAD
+    pub fn get_weighted_shortest_path_node_names_from_node_names(
+        &self,
+        src_node_name: &str,
+        dst_node_name: &str,
+        use_edge_weights_as_probabilities: Option<bool>,
+        maximal_depth: Option<NodeT>,
+    ) -> PyResult<(f64, Vec<String>)> {
+        pe!(self
+            .graph
+            .get_weighted_shortest_path_node_names_from_node_names(
+                src_node_name,
+                dst_node_name,
+                use_edge_weights_as_probabilities,
+                maximal_depth
+            ))
+=======
     pub fn generate_barbell_graph(
         minimum_node_id: Option<NodeT>,
         left_clique_nodes_number: Option<NodeT>,
@@ -4463,6 +4789,7 @@ impl EnsmallenGraph {
                 name
             ))?,
         })
+>>>>>>> origin/develop
     }
 
     #[automatically_generated_binding]
@@ -6874,11 +7201,169 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
+<<<<<<< HEAD
+    #[text_signature = "($, self, number_of_nodes_to_sample, random_state)"]
+    /// Return random unique sorted numbers.
+    ///
+    /// Parameters
+    /// ----------
+    /// number_of_nodes_to_sample: int,
+    ///     The number of nodes to sample.
+    /// random_state: int,
+    ///     The random state to use to reproduce the sampling.
+    ///
+    pub fn get_random_nodes(
+        &self,
+        number_of_nodes_to_sample: NodeT,
+        random_state: u64,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self
+                .graph
+                .get_random_nodes(number_of_nodes_to_sample, random_state))?,
+            NodeT
+        ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self, number_of_nodes_to_sample, root_node)"]
+    /// Return nodes sampled from the neighbourhood of given root nodes.
+    ///
+    /// Parameters
+    /// ----------
+    /// number_of_nodes_to_sample: int,
+    ///     The number of nodes to sample.
+    /// root_node: int,
+    ///     The root node from .
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the number of requested nodes is higher than the number of nodes in the graph.
+    /// ValueError
+    ///     If the given root node does not exist in the curret graph instance.
+    ///
+    pub fn get_breadth_first_search_random_nodes(
+        &self,
+        number_of_nodes_to_sample: NodeT,
+        root_node: NodeT,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self
+                .graph
+                .get_breadth_first_search_random_nodes(number_of_nodes_to_sample, root_node))?,
+            NodeT
+        ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self, node, random_state, walk_length, unique)"]
+    /// Returns unique nodes sampled from uniform random walk.
+    ///
+    /// Parameters
+    /// ----------
+    /// node: int,
+    ///     Node from where to start the random walks.
+    /// random_state: int,
+    ///     the random_state to use for extracting the nodes and edges.
+    /// walk_length: int,
+    ///     Length of the random walk.
+    /// unique: Optional[bool],
+    ///     Whether to make the sampled nodes unique.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given node does not exist in the current slack.
+    ///
+    pub fn get_uniform_random_walk_random_nodes(
+        &self,
+        node: NodeT,
+        random_state: u64,
+        walk_length: u64,
+        unique: Option<bool>,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self.graph.get_uniform_random_walk_random_nodes(
+                node,
+                random_state,
+                walk_length,
+                unique
+            ))?,
+            NodeT
+        ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self)"]
+    /// Return list of the supported node sampling methods
+    pub fn get_node_sampling_methods(&self) -> Vec<&str> {
+        self.graph.get_node_sampling_methods()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self, number_of_nodes_to_sample, random_state, root_node, node_sampling_method, unique)"]
+    /// Return subsampled nodes according to the given method and parameters.
+    ///
+    /// Parameters
+    /// ----------
+    /// number_of_nodes_to_sample: int,
+    ///     The number of nodes to sample.
+    /// random_state: int,
+    ///     The random state to reproduce the sampling.
+    /// root_node: Optional[int],
+    ///     The (optional) root node to use to sample. In not provided, a random one is sampled.
+    /// node_sampling_method: str,
+    ///     The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
+    /// unique: Optional[bool],
+    ///     Whether to make the sampled nodes unique.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given node sampling method is not supported.
+    ///
+    pub fn get_subsampled_nodes(
+        &self,
+        number_of_nodes_to_sample: NodeT,
+        random_state: u64,
+        root_node: Option<NodeT>,
+        node_sampling_method: &str,
+        unique: Option<bool>,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self.graph.get_subsampled_nodes(
+                number_of_nodes_to_sample,
+                random_state,
+                root_node,
+                node_sampling_method,
+                unique
+            ))?,
+            NodeT
+        ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self, features, iterations, maximal_distance, k1, b, include_central_node, verbose)"]
+    /// Returns okapi node features propagation within given maximal distance.
+=======
     #[text_signature = "($self, node_type_name)"]
     /// Remove given node type name from all nodes.
     ///
     /// If any given node remains with no node type, that node is labeled
     /// with node type None. Note that the modification DOES NOT happen inplace.
+>>>>>>> origin/develop
     ///
     /// Parameters
     /// ----------
@@ -8847,6 +9332,24 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
+<<<<<<< HEAD
+    #[text_signature = "($, self)"]
+    /// Return list of the supported sparse edge weighting methods
+    pub fn get_sparse_edge_weighting_methods(&self) -> Vec<&str> {
+        self.graph.get_sparse_edge_weighting_methods()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self)"]
+    /// Return list of the supported edge weighting methods
+    pub fn get_edge_weighting_methods(&self) -> Vec<&str> {
+        self.graph.get_edge_weighting_methods()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self, edge_type_name, weight)"]
+    /// Returns new graph with added in missing self-loops with given edge type and weight.
+=======
     #[text_signature = "($self)"]
     /// Returns number of nodes in the graph
     pub fn get_nodes_number(&self) -> NodeT {
@@ -8859,6 +9362,7 @@ impl EnsmallenGraph {
     ///
     /// E.g. If we have two components `[0, 2, 3]` and `[1, 4, 5]` the result will look like
     /// `[0, 1, 0, 0, 1, 1]`
+>>>>>>> origin/develop
     ///
     /// Parameters
     /// ----------
