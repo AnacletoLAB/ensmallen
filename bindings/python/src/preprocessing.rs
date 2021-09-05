@@ -514,7 +514,7 @@ impl EnsmallenGraph {
         let return_edge_metrics = return_edge_metrics.unwrap_or(false);
         let batch_size = batch_size.unwrap_or(1024);
 
-        let graph_to_avoid = graph_to_avoid.map(|ensmallen_graph| ensmallen_graph.graph);
+        let graph_to_avoid = graph_to_avoid.map(|ensmallen| ensmallen.graph);
         let par_iter = pe!(self.graph.get_edge_prediction_mini_batch(
             idx,
             Some(batch_size),

@@ -9,7 +9,7 @@ The graph is automatically retrieved from the {repository_name} repository.
 from typing import Dict
 {imports}
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
-from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
+from ...ensmallen import EnsmallenGraph  # pylint: disable=import-error
 
 
 def {graph_method_name}(

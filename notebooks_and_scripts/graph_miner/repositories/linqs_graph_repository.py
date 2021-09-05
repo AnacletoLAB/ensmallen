@@ -271,7 +271,7 @@ class LINQSGraphRepository(GraphRepository):
         shutil.copyfile(
             "graph_miner/repositories/models/parse_linqs.py",
             os.path.join(
-                "../bindings/python/ensmallen_graph/datasets",
+                "../bindings/python/ensmallen/datasets",
                 self.repository_package_name,
                 "parse_linqs.py"
             )

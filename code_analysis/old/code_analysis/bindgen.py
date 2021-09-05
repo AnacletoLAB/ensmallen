@@ -1,7 +1,7 @@
 import os
 import re
 import json
-from ensmallen_graph import EnsmallenGraph
+from ensmallen import EnsmallenGraph
 from .utils import build_path
 
 # TODO! aggiungere invalidazione del report su tutti i metodi con inplace

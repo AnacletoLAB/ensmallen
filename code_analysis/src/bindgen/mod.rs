@@ -83,7 +83,7 @@ pub fn gen_bindings(path: &str, init_path: &str) {
 use pyo3::{{wrap_pyfunction, wrap_pymodule}};
 
 #[pymodule]
-fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {{
+fn ensmallen(_py: Python, m: &PyModule) -> PyResult<()> {{
     m.add_class::<EnsmallenGraph>()?;
     m.add_wrapped(wrap_pymodule!(preprocessing))?;
     {function_modules_bindings_registration}
@@ -161,7 +161,7 @@ fn {module_name}(_py: Python, m: &PyModule) -> PyResult<()> {{
     elements.push("preprocessing".to_string());
 
     for module in elements.iter() {
-        lines.push(format!("from .ensmallen_graph import {} # pylint: disable=import-error", module));
+        lines.push(format!("from .ensmallen import {} # pylint: disable=import-error", module));
     }
 
     lines.push(format!(

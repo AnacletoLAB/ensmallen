@@ -2,7 +2,7 @@ use super::*;
 use pyo3::{wrap_pyfunction, wrap_pymodule};
 
 #[pymodule]
-fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
+fn ensmallen(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_class::<EnsmallenGraph>()?;
     m.add_wrapped(wrap_pymodule!(preprocessing))?;
     m.add_wrapped(wrap_pymodule!(edge_list_utils))?;

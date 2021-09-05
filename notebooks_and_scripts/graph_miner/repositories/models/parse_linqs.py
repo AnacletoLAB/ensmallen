@@ -4,7 +4,7 @@ import os
 import pandas as pd
 import numpy as np
 from typing import Tuple
-from ensmallen_graph import EnsmallenGraph
+from ensmallen import EnsmallenGraph
 from tqdm.auto import tqdm
 
 

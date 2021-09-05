@@ -11,7 +11,7 @@ macro_rules! dump {
 
 pub fn get_folder() -> String {
     // Find the root of the repository
-    let mut currdir = get_path("ensmallen_graph");
+    let mut currdir = get_path("ensmallen");
     // Build the path to the folder for the tests
     currdir.push("fuzzing");
     currdir.push("unit_tests");

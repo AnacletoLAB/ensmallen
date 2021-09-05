@@ -1,4 +1,4 @@
-from ensmallen_graph.datasets.linqs import Cora
+from ensmallen.datasets.linqs import Cora
 import pytest
 
 
