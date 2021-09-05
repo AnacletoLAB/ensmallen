@@ -1982,12 +1982,12 @@ pub fn test_nodelabel_holdouts(graph: &mut Graph, _verbose: Option<bool>) -> Res
                 && (graph.has_multilabel_node_types()? || graph.has_singleton_node_types()?))
         {
             assert!(graph
-                .node_label_holdout(0.8, Some(use_stratification), Some(42))
+                .get_node_label_holdout_graphs(0.8, Some(use_stratification), Some(42))
                 .is_err());
             continue;
         }
 
-        let (train, test) = graph.node_label_holdout(0.8, Some(use_stratification), Some(42))?;
+        let (train, test) = graph.get_node_label_holdout_graphs(0.8, Some(use_stratification), Some(42))?;
         assert!(train.has_unknown_node_types()?);
         assert!(test.has_unknown_node_types()?);
         let remerged = &mut (&train | &test)?;
@@ -2023,11 +2023,11 @@ pub fn test_edgelabel_holdouts(graph: &mut Graph, _verbose: Option<bool>) -> Res
             || !graph.has_edge_types()
         {
             assert!(graph
-                .edge_label_holdout(0.8, Some(*use_stratification), None)
+                .get_edge_label_holdout_graphs(0.8, Some(*use_stratification), None)
                 .is_err());
             continue;
         }
-        let (train, test) = graph.edge_label_holdout(0.8, Some(*use_stratification), None)?;
+        let (train, test) = graph.get_edge_label_holdout_graphs(0.8, Some(*use_stratification), None)?;
         assert!(train.has_unknown_edge_types()?);
         assert!(test.has_unknown_edge_types()?);
         assert!(

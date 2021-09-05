@@ -1716,6 +1716,13 @@ impl EnsmallenGraph {
 
     #[automatically_generated_binding]
     #[text_signature = "($, self)"]
+    /// Returns number of edges in the laplacian COO matrix representation of the graph
+    pub fn get_laplacian_coo_matrix_edges_number(&self) -> EdgeT {
+        self.graph.get_laplacian_coo_matrix_edges_number()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self)"]
     /// Returns unweighted random walk normalized laplacian transformation of the graph
     pub fn get_random_walk_normalized_laplacian_transformed_graph(&self) -> EnsmallenGraph {
         EnsmallenGraph {
@@ -3914,6 +3921,74 @@ impl EnsmallenGraph {
 
     #[automatically_generated_binding]
     #[text_signature = "($, self, train_size, use_stratification, random_state)"]
+    /// Returns node-label holdout indices for training ML algorithms on the graph node labels.
+    ///
+    /// Parameters
+    /// ----------
+    /// train_size: float,
+    ///     rate target to reserve for training,
+    /// use_stratification: Optional[bool],
+    ///     Whether to use node-label stratification,
+    /// random_state: Optional[int],
+    ///     The random_state to use for the holdout,
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have node types.
+    /// ValueError
+    ///     If stratification is requested but the graph has a single node type.
+    /// ValueError
+    ///     If stratification is requested but the graph has a multilabel node types.
+    ///
+    pub fn get_node_label_holdout_indices(
+        &self,
+        train_size: f64,
+        use_stratification: Option<bool>,
+        random_state: Option<EdgeT>,
+    ) -> PyResult<(Vec<NodeT>, Vec<NodeT>)> {
+        pe!(self
+            .graph
+            .get_node_label_holdout_indices(train_size, use_stratification, random_state))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self, train_size, use_stratification, random_state)"]
+    /// Returns node-label holdout indices for training ML algorithms on the graph node labels.
+    ///
+    /// Parameters
+    /// ----------
+    /// train_size: float,
+    ///     rate target to reserve for training,
+    /// use_stratification: Optional[bool],
+    ///     Whether to use node-label stratification,
+    /// random_state: Optional[int],
+    ///     The random_state to use for the holdout,
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have node types.
+    /// ValueError
+    ///     If stratification is requested but the graph has a single node type.
+    /// ValueError
+    ///     If stratification is requested but the graph has a multilabel node types.
+    ///
+    pub fn get_node_label_holdout_labels(
+        &self,
+        train_size: f64,
+        use_stratification: Option<bool>,
+        random_state: Option<EdgeT>,
+    ) -> PyResult<(Vec<Option<Vec<NodeTypeT>>>, Vec<Option<Vec<NodeTypeT>>>)> {
+        pe!(self
+            .graph
+            .get_node_label_holdout_labels(train_size, use_stratification, random_state))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self, train_size, use_stratification, random_state)"]
     /// Returns node-label holdout for training ML algorithms on the graph node labels.
     ///
     /// Parameters
@@ -3935,16 +4010,17 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If stratification is requested but the graph has a multilabel node types.
     ///
-    pub fn node_label_holdout(
+    pub fn get_node_label_holdout_graphs(
         &self,
         train_size: f64,
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
     ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
-        let (g1, g2) =
-            pe!(self
-                .graph
-                .node_label_holdout(train_size, use_stratification, random_state))?;
+        let (g1, g2) = pe!(self.graph.get_node_label_holdout_graphs(
+            train_size,
+            use_stratification,
+            random_state
+        ))?;
         Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
     }
 
@@ -3977,16 +4053,17 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If stratification is required but the graph has singleton edge types.
     ///
-    pub fn edge_label_holdout(
+    pub fn get_edge_label_holdout_graphs(
         &self,
         train_size: f64,
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
     ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
-        let (g1, g2) =
-            pe!(self
-                .graph
-                .edge_label_holdout(train_size, use_stratification, random_state))?;
+        let (g1, g2) = pe!(self.graph.get_edge_label_holdout_graphs(
+            train_size,
+            use_stratification,
+            random_state
+        ))?;
         Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
     }
 

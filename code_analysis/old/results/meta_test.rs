@@ -691,7 +691,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 	let _ = graph.connected_components(data.connected_components.verbose);
 	let _ = graph.connected_holdout(data.connected_holdout.random_state, data.connected_holdout.train_size, data.connected_holdout.edge_types, data.connected_holdout.include_all_edge_types, data.connected_holdout.verbose);
 	let _ = graph.degrees_product(data.degrees_product.one, data.degrees_product.two);
-	let _ = graph.edge_label_holdout(data.edge_label_holdout.train_size, data.edge_label_holdout.use_stratification, data.edge_label_holdout.random_state);
+	let _ = graph.get_edge_label_holdout_graphs(data..get_edge_label_holdout_graphs(.train_size, data..get_edge_label_holdout_graphs(.use_stratification, data..get_edge_label_holdout_graphs(.random_state);
 	let _ = graph.enable(data.enable.vector_sources, data.enable.vector_destinations, data.enable.vector_outbounds, data.enable.cache_size);
 	let _ = graph.filter(data.filter.node_names, data.filter.node_types, data.filter.edge_types, data.filter.min_weight, data.filter.max_weight, data.filter.verbose);
 	let _ = graph.get_bipartite_edge_names(data.get_bipartite_edge_names.removed_existing_edges, data.get_bipartite_edge_names.first_nodes_set, data.get_bipartite_edge_names.second_nodes_set, data.get_bipartite_edge_names.first_node_types_set, data.get_bipartite_edge_names.second_node_types_set);
@@ -750,7 +750,7 @@ pub fn meta_test(data: MetaParams) -> Result<(), String> {
 	let _ = graph.must_have_edge_types();
 	let _ = graph.must_have_node_types();
 	let _ = graph.must_have_edge_weights();
-	let _ = graph.node_label_holdout(data.node_label_holdout.train_size, data.node_label_holdout.use_stratification, data.node_label_holdout.random_state);
+	let _ = graph.get_node_label_holdout_graphs(data.get_node_label_holdout.train_size, data.get_node_label_holdout.use_stratification, data.get_node_label_holdout.random_state);
 	let _ = graph.par_iter_weights();
 	let _ = graph.random_holdout(data.random_holdout.random_state, data.random_holdout.train_size, data.random_holdout.include_all_edge_types, data.random_holdout.edge_types, data.random_holdout.min_number_overlaps, data.random_holdout.verbose);
 	let _ = graph.random_subgraph(data.random_subgraph.random_state, data.random_subgraph.nodes_number, data.random_subgraph.verbose);

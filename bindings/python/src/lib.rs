@@ -21,6 +21,7 @@ mod types;
 pub(crate) use crate::types::*;
 mod walks;
 pub(crate) use crate::types::EnsmallenGraph;
+mod laplacian;
 mod operators;
 
 // automatically generated files
