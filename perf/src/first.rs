@@ -7,7 +7,7 @@ pub fn first_order_walker(graph: &Graph) -> Result<WalksParameters, String> {
     Ok(WalksParameters::new(1_000)?
         .set_iterations(Some(50_000))?
         .set_random_state(Some(43))
-        .set_dense_node_mapping(Some(graph.get_dense_node_mapping())))
+        .set_dense_node_mapping(Some(graph.get_dense_nodes_mapping())))
 }
 
 fn main() {
@@ -21,8 +21,8 @@ fn main() {
         .set_header(Some(true));
     let mut graph = Graph::from_unsorted_csv(edges_reader, None, false, false, "Graph".to_owned()).unwrap();
 
-    graph.enable(true, true, true, None).unwrap();
+    graph.enable(Some(true), Some(true), Some(true)).unwrap();
 
     let walker = first_order_walker(&graph).unwrap();
-    let _ = graph.random_walks_iter(1, &walker).unwrap().collect::<Vec<Vec<NodeT>>>();
+    let _ = graph.iter_random_walks(1, &walker).unwrap().collect::<Vec<Vec<NodeT>>>();
 }   

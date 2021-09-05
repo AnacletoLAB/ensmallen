@@ -1,0 +1,94 @@
+FromStringsParameters {
+    node_types_number: Some(
+        30069,
+    ),
+    numeric_node_type_ids: Some(
+        true,
+    ),
+    minimum_node_type_id: Some(
+        30069,
+    ),
+    has_node_types: true,
+    nodes_number: Some(
+        1970632053,
+    ),
+    numeric_node_ids: true,
+    numeric_node_list_node_type_ids: true,
+    minimum_node_ids: Some(
+        1532713851,
+    ),
+    edge_types_number: Some(
+        23387,
+    ),
+    numeric_edge_type_ids: Some(
+        true,
+    ),
+    minimum_edge_type_id: Some(
+         768,
+    ),
+    has_edge_types: true,
+    has_edge_weights: false,
+    directed: true,
+    correct: None,
+    complete: Some(
+        true,
+    ),
+    duplicates: Some(
+        true,
+    ),
+    sorted: Some(
+        true,
+    ),
+    edges_number: None,
+    numeric_edge_list_node_ids: None,
+    numeric_edge_list_edge_type_ids: Some(
+        false,
+    ),
+    skip_node_types_if_unavailable: Some(
+        true,
+    ),
+    skip_edge_types_if_unavailable: Some(
+        true,
+    ),
+    may_have_singletons: true,
+    may_have_singleton_with_selfloops: true,
+    name: "",
+    edges_iterator_is_parallel: false,
+    edge_types_iterator_is_parallel: false,
+    nodes_iterator_is_parallel: false,
+    node_types_iterator_is_parallel: true,
+    edges_iterator: None,
+    edge_types_iterator: None,
+    nodes_iterator: Some(
+        [
+            Ok(
+                (
+                    25433195836824411,
+                    (
+                        "\u{3}",
+                        Some(
+                            [],
+                        ),
+                    ),
+                ),
+            ),
+            Ok(
+                (
+                    6582955865703930715,
+                    (
+                        "",
+                        Some(
+                            [
+                                "",
+                                "[[[",
+                            ],
+                        ),
+                    ),
+                ),
+            ),
+        ],
+    ),
+    node_types_iterator: Some(
+        [],
+    ),
+}

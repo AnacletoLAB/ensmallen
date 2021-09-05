@@ -1,0 +1,90 @@
+FromStringsParameters {
+    node_types_number: None,
+    numeric_node_type_ids: Some(
+        false,
+    ),
+    minimum_node_type_id: None,
+    has_node_types: true,
+    nodes_number: None,
+    numeric_node_ids: true,
+    numeric_node_list_node_type_ids: true,
+    minimum_node_ids: Some(
+        3669239735,
+    ),
+    edge_types_number: None,
+    numeric_edge_type_ids: Some(
+        true,
+    ),
+    minimum_edge_type_id: Some(
+        12933,
+    ),
+    has_edge_types: false,
+    has_edge_weights: true,
+    directed: true,
+    correct: None,
+    complete: Some(
+        true,
+    ),
+    duplicates: Some(
+        true,
+    ),
+    sorted: None,
+    edges_number: None,
+    numeric_edge_list_node_ids: Some(
+        false,
+    ),
+    numeric_edge_list_edge_type_ids: None,
+    skip_node_types_if_unavailable: None,
+    skip_edge_types_if_unavailable: None,
+    may_have_singletons: false,
+    may_have_singleton_with_selfloops: false,
+    name: "#\u{10}\u{1d} ",
+    edges_iterator_is_parallel: false,
+    edge_types_iterator_is_parallel: true,
+    nodes_iterator_is_parallel: false,
+    node_types_iterator_is_parallel: true,
+    edges_iterator: Some(
+        [
+            Ok(
+                (
+                    6474082585607107986,
+                    (
+                        "",
+                        "",
+                        Some(
+                            "",
+                        ),
+                        -63949916000000.0,
+                    ),
+                ),
+            ),
+            Ok(
+                (
+                    13530381991750445200,
+                    (
+                        "",
+                        "",
+                        None,
+                        -0.00000000000000000000000000017009711,
+                    ),
+                ),
+            ),
+            Ok(
+                (
+                    1085749954778296606,
+                    (
+                        "",
+                        "",
+                        None,
+                        -0.0000000000000000000000006705544,
+                    ),
+                ),
+            ),
+        ],
+    ),
+    edge_types_iterator: None,
+    nodes_iterator: Some(
+        [],
+    ),
+    node_types_iterator: None,
+}

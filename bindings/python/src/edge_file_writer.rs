@@ -66,9 +66,11 @@ impl EnsmallenGraph {
             ]
         ))?;
 
-        let writer = EdgeFileWriter::new(path)
+        let mut writer = pe!(EdgeFileWriter::new(path)
             .set_verbose(extract_value!(kwargs, "verbose", bool))
-            .set_separator(extract_value!(kwargs, "separator", String))
+            .set_separator(extract_value!(kwargs, "separator", String)))?;
+
+        writer = writer
             .set_header(extract_value!(kwargs, "header", bool))
             .set_directed(extract_value!(kwargs, "directed", bool))
             .set_sources_column_number(extract_value!(kwargs, "sources_column_number", usize))
@@ -84,6 +86,6 @@ impl EnsmallenGraph {
             .set_edge_types_column_number(extract_value!(kwargs, "edge_types_column_number", usize))
             .set_numeric_node_ids(extract_value!(kwargs, "numeric_node_ids", bool))
             .set_edge_types_column(extract_value!(kwargs, "edges_type_column", String));
-        pe!(writer.dump(&self.graph))
+        pe!(writer.dump_graph(&self.graph))
     }
 }

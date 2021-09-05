@@ -1,0 +1,4 @@
+file,"/Workspace/Shared/ensmallen/graph/src/test_utilities.rs"
+line,334
+col,9
+message,This graph has nodes (nodes number: 8754) but has no edges (edges number: 0), therefore it should have singletons, but this does not seem to be the case (singletons number 0).

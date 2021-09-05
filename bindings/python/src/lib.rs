@@ -1,42 +1,30 @@
+use numpy::{PyArray, PyArray1, PyArray2};
+use pyo3::exceptions::{PyAttributeError, PyTypeError, PyValueError};
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
-use pyo3::exceptions::PyValueError;
-use pyo3::exceptions::PyTypeError;
-use pyo3::{wrap_pymodule};
+use std::collections::{HashMap, HashSet};
+
+use graph::*;
+use tags::*;
+
 mod macros;
 pub(crate) use crate::macros::*;
 mod edge_file_writer;
-mod from_csv;
-mod getters;
-mod setters;
-mod edge_lists;
-mod filters;
-mod metrics;
+mod hash;
 mod node_file_writer;
 mod preprocessing;
-mod remap;
+mod subgraphs;
 mod trees;
-mod connected_components;
-mod tarjan;
-mod thread_safe;
-mod hash;
 mod utilities;
 pub(crate) use crate::preprocessing::*;
-pub(crate) use crate::utilities::*;
 mod types;
 pub(crate) use crate::types::*;
 mod walks;
 pub(crate) use crate::types::EnsmallenGraph;
-mod modifiers;
-
-mod remove;
-mod holdout;
+mod laplacian;
 mod operators;
 
-#[pymodule]
-fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
-    m.add_class::<EnsmallenGraph>()?;
-    m.add_wrapped(wrap_pymodule!(preprocessing))?;
-    env_logger::init();
-    Ok(())
-}
+// automatically generated files
+mod auto_generated_bindings;
+mod method_names_list;
+pub use method_names_list::*;

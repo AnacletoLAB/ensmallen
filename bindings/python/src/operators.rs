@@ -1,6 +1,8 @@
 use super::*;
 use pyo3::class::basic::PyObjectProtocol;
 use pyo3::class::number::PyNumberProtocol;
+use rayon::iter::{IndexedParallelIterator, IntoParallelRefIterator, ParallelIterator};
+use strsim::*;
 
 #[pyproto]
 impl PyNumberProtocol for EnsmallenGraph {
@@ -29,58 +31,120 @@ impl PyNumberProtocol for EnsmallenGraph {
     }
 }
 
+/// Returns the given method name separated in the component parts.
+///
+/// # Implementative details
+/// The methods contains terms such as:
+/// * `node_name`
+/// * `node_type_id`
+/// * `node_id`
+///
+/// Since these terms are functionally a single word, we do not split
+/// the terms composed by the words:
+/// * `id` or `ids`
+/// * `type` or `types`
+/// * `name` or `names`
+///
+/// # Arguments
+/// * `method_name`: &str - Name of the method to split.
+fn split_words(method_name: &str) -> Vec<String> {
+    let mut result: Vec<String> = Vec::new();
+    for word in method_name.split("_") {
+        match word {
+            "type" | "types" | "id" | "ids" | "name" | "names" => match result.last_mut() {
+                Some(last) => {
+                    last.push('_');
+                    last.extend(word.chars());
+                }
+                None => {
+                    result.push(word.to_string());
+                }
+            },
+            _ => {
+                result.push(word.to_string());
+            }
+        };
+    }
+
+    result.into_iter().filter(|x| !x.is_empty()).collect()
+}
+
 #[pyproto]
 impl PyObjectProtocol for EnsmallenGraph {
-    fn __str__(&'p self) -> PyResult<String> {
-        pe!(self.graph.textual_report(true))
+    fn __str__(&'p self) -> String {
+        self.graph.textual_report()
     }
-    fn __repr__(&'p self) -> PyResult<String> {
+    fn __repr__(&'p self) -> String {
         self.__str__()
     }
 
     fn __hash__(&'p self) -> PyResult<isize> {
         Ok(self.hash() as isize)
     }
-}
 
-#[pymethods]
-impl EnsmallenGraph {
-    fn _repr_html_(&self) -> PyResult<String> {
-        Ok(format!(
-            r#"<h4>{}</h4><p style="text-align: justify; text-justify: inter-word;">{}</p>"#,
-            self.graph.get_name(),
-            pe!(self.__repr__())?
-        ))
+    fn __getattr__(&self, name: String) -> PyResult<()> {
+        // split the query into tokens
+        let tokens = split_words(&name);
+
+        // compute the similarities between all the terms and tokens
+        let tokens_expanded = tokens
+            .iter()
+            .map(|token| {
+                let mut similarities = TERMS
+                    .iter()
+                    .map(move |term| (*term, jaro_winkler(token, term) as f64))
+                    .collect::<Vec<(&str, f64)>>();
+
+                similarities.sort_by(|(_, a), (_, b)| b.partial_cmp(a).unwrap());
+
+                similarities.into_iter().take(1)
+            })
+            .flatten()
+            .collect::<Vec<(&str, f64)>>();
+
+        // Compute the weighted ranking of each method ("document")
+        // where the conribution of each term is weighted by it's similarity
+        // with the query tokens
+        let mut doc_scores = TFIDF_FREQUENCIES
+            .par_iter()
+            .enumerate()
+            // for each document
+            .map(|(id, frequencies_doc)| {
+                (
+                    id,
+                    (jaro_winkler(&name, METHODS_NAMES[id]).exp() - 1.0)
+                        * frequencies_doc
+                            .iter()
+                            .map(|(term, weight)| {
+                                match tokens_expanded.iter().find(|(token, _)| token == term) {
+                                    Some((_, similarity)) => (similarity.exp() - 1.0) * weight,
+                                    None => 0.0,
+                                }
+                            })
+                            .sum::<f64>(),
+                )
+            })
+            .collect::<Vec<(usize, f64)>>();
+
+        // sort the scores in a decreasing order
+        doc_scores.sort_by(|(_, d1), (_, d2)| d2.partial_cmp(d1).unwrap());
+
+        Err(PyAttributeError::new_err(format!(
+            "The method '{}' does not exists, did you mean one of the following?\n{}",
+            &name,
+            doc_scores
+                .iter()
+                .map(|(method_id, _)| { format!("* '{}'", METHODS_NAMES[*method_id].to_string()) })
+                .take(10)
+                .collect::<Vec<String>>()
+                .join("\n"),
+        )))
     }
 }
 
 #[pymethods]
 impl EnsmallenGraph {
-    /// Return true if given graph has any edge overlapping with current graph.
-    ///
-    /// Parameters
-    /// ----------------------------
-    /// graph: EnsmallenGraph,
-    ///     The graph to check against.
-    ///
-    /// Returns
-    /// ----------------------------
-    /// Boolean representing if any overlapping edge was found.
-    pub fn overlaps(&self, graph: &EnsmallenGraph) -> PyResult<bool> {
-        pe!(self.graph.overlaps(&graph.graph))
-    }
-
-    /// Return true if given graph edges are all contained within current graph.
-    ///
-    /// Parameters
-    /// ----------------------------
-    /// graph: EnsmallenGraph,
-    ///     The graph to check against.
-    ///
-    /// Returns
-    /// ----------------------------
-    /// Boolean representing if graph contains completely the othe graph.
-    pub fn contains(&self, graph: &EnsmallenGraph) -> PyResult<bool> {
-        pe!(self.graph.contains(&graph.graph))
+    fn _repr_html_(&self) -> String {
+        self.__repr__()
     }
 }

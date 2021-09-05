@@ -1,5 +1,5 @@
 extern crate graph;
-use graph::{EdgeFileReader, Graph};
+use graph::{utils::get_loading_bar, EdgeFileReader, Graph};
 use std::collections::HashMap;
 
 #[test]
@@ -7,29 +7,34 @@ use std::collections::HashMap;
 /// singletons: false selfloops: false smallest: 1 biggest: 3, edges: [(0, 1), (2, 3), (4, 5)]
 fn test_components_size() {
     let graph_name = "ComponentSizeTest".to_owned();
-    let edges_reader = EdgeFileReader::new("tests/data/test_components.csv", graph_name.clone())
+    let edges_reader = EdgeFileReader::new("tests/data/test_components.csv")
         .unwrap()
-        .set_separator(Some(","))
+        .set_header(Some(false))
+        .unwrap()
+        .set_separator(Some(",".to_string()))
         .unwrap()
         .set_verbose(Some(false))
-        .set_numeric_node_ids(Some(true))
-        .set_header(Some(false));
+        .set_numeric_node_ids(Some(true));
 
-    let g = Graph::from_sorted_csv(
-        edges_reader,
+    let g = Graph::from_file_readers(
+        Some(edges_reader),
         None,
+        None,
+        None,
+        true,
+        true,
         false,
-        false,
-        6108,
-        242,
         graph_name.clone(),
     )
     .unwrap();
 
     // THIS IS NOT DETERMINISTIC
-    for _ in 0..10_000 {
+    let n = 10_000;
+    let pb = get_loading_bar(true, "Executing connected components test", n);
+    for _ in 0..n {
+        pb.inc(1);
         let (components, _components_number, smallest, biggest) =
-            g.connected_components(false).unwrap();
+            g.connected_components(None).unwrap();
         assert!(
             biggest >= smallest,
             "smallest: {} biggest: {}",
@@ -37,27 +42,37 @@ fn test_components_size() {
             biggest
         );
 
-        assert!(
-            !(smallest == 1 && (!g.has_singletons()) && (!g.has_selfloops())),
-            "singletons: {} selfloops: {} smallest: {} biggest: {}, edges: {:?}, components: {:?}",
-            g.has_singletons(),
-            g.has_selfloops(),
-            smallest,
-            biggest,
-            g.get_unique_edges_iter(false).collect::<Vec<(u32, u32)>>(),
-            components
-        );
+        if g.has_disconnected_nodes() {
+            assert!(smallest == 1);
+        }
+        if smallest == 1 {
+            assert!(
+                g.has_disconnected_nodes(),
+                concat!(
+                    "For the minimum connected component to have a single node, the graph ",
+                    "must contain disconnected nodes.\n",
+                    "The node degrees of this graph is {:?}.\n",
+                    "The directed flag of this graph is {:?}.\n",
+                    "The edge list of this graph is {:?}.\n",
+                    "The component node components are: {:?}.\n"
+                ),
+                g.get_node_degrees(),
+                g.is_directed(),
+                g.get_edge_node_ids(true),
+                components
+            );
+        }
     }
 
     let (components, number_of_components, smallest, biggest) =
-        g.connected_components(false).unwrap();
+        g.connected_components(None).unwrap();
 
     assert_eq!(components, [0, 0, 1, 1, 2, 2].to_vec());
     assert_eq!(number_of_components, 3);
     assert_eq!(smallest, 2); // the size of the smallest component
     assert_eq!(biggest, 2); // the size of the biggest component
 
-    let (number_of_components2, smallest2, biggest2) = g.connected_components_number(false);
+    let (number_of_components2, smallest2, biggest2) = g.get_connected_components_number(None);
     assert_eq!(number_of_components, number_of_components2, "There is a difference between the number of components returned by the connected_components method and the connected_components_number.");
     assert_eq!(smallest, smallest2, "There is a difference between the smallest returned by the connected_components method and the connected_components_number.");
     assert_eq!(biggest, biggest2, "There is a difference between the biggest returned by the connected_components method and the connected_components_number.");

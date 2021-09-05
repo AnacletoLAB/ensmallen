@@ -3,44 +3,42 @@ The module expose an harness that supports the `arbitrary` crate so it's really 
 
 More over, 3 fuzzers are already setted up, `afl`,`honggfuzz`, and `libFuzzer`.
 
-# AFL
-[American Fuzzy Lop](https://github.com/google/AFL) Is the most famous fuzzer.
-
-### Install AFL
+The quick and dirty installation is:
 ```bash
-cargo install afl
-```
-
-This may require `llvm` and `clang`. 
-
-On Ubuntu run:
-```bash
-sudo apt-get install llvm clang
-```
-On Arch run:
-```bash
-sudo pacman -S llvm clang
-```
-
-### Run AFL
-
-
-# libfuzzer
-[Libfuzzer](https://github.com/google/fuzzing/blob/master/tutorial/libFuzzerTutorial.md) it's the LLVMs fuzzer (https://llvm.org/docs/LibFuzzer.html).
-LibFuzzer is in-process, coverage-guided, evolutionary fuzzing engine.
-
-LibFuzzer is linked with the library under test, and feeds fuzzed inputs to the library via a specific fuzzing entrypoint (aka “target function”); the fuzzer then tracks which areas of the code are reached, and generates mutations on the corpus of input data in order to maximize the code coverage. The code coverage information for libFuzzer is provided by LLVM’s SanitizerCoverage instrumentation.
-
-### Install libfuzzer:
-```bash
+# Hongfuzz
+cargo install honggfuzz
+# Libfuzz
 cargo install cargo-fuzz
+# AFL
+# TODO!
+```
+Otherwise follow these sections which explains how to install and run all the fuzzers.
+
+
+The standard way to run the fuzzers is just to use one of the following commands:
+```bash
+# hongg fuzz
+make hfuzz_meta_test
+make hfuzz_from_vec
+make hfuzz_from_csv
+
+# libfuzz
+make libfuzz_meta_test
+make libfuzz_from_vec
+make libfuzz_from_csv
+
+# afl
+# TODO!
 ```
 
-### Run libfuzzer
+You can specify the number of threads to use as follows:
 ```bash
-cd fuzzing/graph_harness
-cargo fuzz run from_csv
+make THREADS=12 hfuzz_meta_test
 ```
+by default it uses half of the available cores.
+Always use at least 2 threads because otherwise the fuzzer will timeout because 
+algorithms such as the spanning tree needs at least 2 threads to work.
+
 
 # honggfuzz
 
@@ -105,3 +103,42 @@ In the same way we can pass additional arguments to the cargo version with:
 ```bash
 HFUZZ_RUN_ARGS="-n $(nproc) -t 30" cargo hfuzz run honggfuzz
 ```
+
+
+# libfuzzer
+[Libfuzzer](https://github.com/google/fuzzing/blob/master/tutorial/libFuzzerTutorial.md) it's the LLVMs fuzzer (https://llvm.org/docs/LibFuzzer.html).
+LibFuzzer is in-process, coverage-guided, evolutionary fuzzing engine.
+
+LibFuzzer is linked with the library under test, and feeds fuzzed inputs to the library via a specific fuzzing entrypoint (aka “target function”); the fuzzer then tracks which areas of the code are reached, and generates mutations on the corpus of input data in order to maximize the code coverage. The code coverage information for libFuzzer is provided by LLVM’s SanitizerCoverage instrumentation.
+
+### Install libfuzzer:
+```bash
+cargo install cargo-fuzz
+```
+
+### Run libfuzzer
+```bash
+cd fuzzing/graph_harness
+cargo fuzz run from_csv
+```
+
+# AFL
+[American Fuzzy Lop](https://github.com/google/AFL) Is the most famous fuzzer.
+
+### Install AFL
+```bash
+cargo install afl
+```
+
+This may require `llvm` and `clang`. 
+
+On Ubuntu run:
+```bash
+sudo apt-get install llvm clang
+```
+On Arch run:
+```bash
+sudo pacman -S llvm clang
+```
+
+### Run AFL

@@ -1,0 +1,54 @@
+FromStringsParameters {
+    node_types_number: None,
+    numeric_node_type_ids: None,
+    minimum_node_type_id: None,
+    has_node_types: true,
+    nodes_number: Some(
+        1526923263,
+    ),
+    numeric_node_ids: true,
+    numeric_node_list_node_type_ids: true,
+    minimum_node_ids: None,
+    edge_types_number: None,
+    numeric_edge_type_ids: None,
+    minimum_edge_type_id: None,
+    has_edge_types: false,
+    has_edge_weights: true,
+    directed: true,
+    correct: Some(
+        false,
+    ),
+    complete: None,
+    duplicates: None,
+    sorted: None,
+    edges_number: None,
+    numeric_edge_list_node_ids: None,
+    numeric_edge_list_edge_type_ids: None,
+    skip_node_types_if_unavailable: None,
+    skip_edge_types_if_unavailable: None,
+    may_have_singletons: true,
+    may_have_singleton_with_selfloops: false,
+    name: "",
+    edges_iterator_is_parallel: false,
+    edge_types_iterator_is_parallel: false,
+    nodes_iterator_is_parallel: false,
+    node_types_iterator_is_parallel: false,
+    edges_iterator: None,
+    edge_types_iterator: Some(
+        [],
+    ),
+    nodes_iterator: Some(
+        [
+            Ok(
+                (
+                    4702984358814514011,
+                    (
+                        "\u{2}[\u{2}[[[[[[[[[Z\u{0}\u{0}",
+                        None,
+                    ),
+                ),
+            ),
+        ],
+    ),
+    node_types_iterator: None,
+}

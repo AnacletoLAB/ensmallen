@@ -1,0 +1,73 @@
+FromStringsParameters {
+    node_types_number: None,
+    numeric_node_type_ids: None,
+    minimum_node_type_id: None,
+    has_node_types: false,
+    nodes_number: Some(
+        3267065599,
+    ),
+    numeric_node_ids: true,
+    numeric_node_list_node_type_ids: false,
+    minimum_node_ids: Some(
+        4294967295,
+    ),
+    edge_types_number: Some(
+        65535,
+    ),
+    numeric_edge_type_ids: Some(
+        true,
+    ),
+    minimum_edge_type_id: Some(
+        65535,
+    ),
+    has_edge_types: true,
+    has_edge_weights: true,
+    directed: true,
+    correct: None,
+    complete: None,
+    duplicates: None,
+    sorted: Some(
+        true,
+    ),
+    edges_number: None,
+    numeric_edge_list_node_ids: None,
+    numeric_edge_list_edge_type_ids: Some(
+        true,
+    ),
+    skip_node_types_if_unavailable: Some(
+        false,
+    ),
+    skip_edge_types_if_unavailable: Some(
+        true,
+    ),
+    may_have_singletons: true,
+    may_have_singleton_with_selfloops: false,
+    name: "",
+    edges_iterator_is_parallel: true,
+    edge_types_iterator_is_parallel: true,
+    nodes_iterator_is_parallel: true,
+    node_types_iterator_is_parallel: true,
+    edges_iterator: Some(
+        [
+            Ok(
+                (
+                    6582955730252837469,
+                    (
+                        "[[[[[[[[[[[[[[[",
+                        "",
+                        Some(
+                            "",
+                        ),
+                        61743466000000000.0,
+                    ),
+                ),
+            ),
+            Err(
+                "",
+            ),
+        ],
+    ),
+    edge_types_iterator: None,
+    nodes_iterator: None,
+    node_types_iterator: None,
+}

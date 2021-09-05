@@ -1,0 +1,4 @@
+#[derive(Arbitrary, Debug, Clone)]
+pub struct {struct_name} {{
+{fields}
+}}

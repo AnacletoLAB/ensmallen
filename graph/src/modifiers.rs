@@ -1,100 +1,42 @@
 use super::*;
-use rayon::iter::IntoParallelRefIterator;
-use rayon::iter::ParallelIterator;
-use std::collections::HashMap;
 
 impl Graph {
-    /// Replace all edge types (if present) and set all the edge to edge_type.
-    ///
-    /// # Arguments
-    /// - `edge_type`: String - The edge type to assing to all the edges.
-    pub fn set_all_edge_types<S: Into<String>>(mut self, edge_type: S) -> Graph {
-        let mut vocabulary = Vocabulary::default();
-        vocabulary.insert(edge_type.into()).unwrap();
-        vocabulary.build_reverse_mapping().unwrap();
-        let edge_types = EdgeTypeVocabulary::from_structs(
-            vec![Some(0); self.get_directed_edges_number() as usize],
-            vocabulary,
-        );
-        self.edge_types = Some(edge_types);
-        self
-    }
-
-    /// Replace all node types (if present) and set all the node to node_type.
-    ///
-    /// # Arguments
-    /// - `node_type`: String - The node type to assing to all the nodes.
-    pub fn set_all_node_types<S: Into<String>>(mut self, node_type: S) -> Graph {
-        let mut vocabulary = Vocabulary::default();
-        vocabulary.insert(node_type.into()).unwrap();
-        vocabulary.build_reverse_mapping().unwrap();
-        let node_types = NodeTypeVocabulary::from_structs(
-            vec![Some(vec![0]); self.get_nodes_number() as usize],
-            Some(vocabulary),
-        );
-        self.node_types = node_types;
-        self
-    }
-
     /// Enable extra perks that buys you time as you accept to spend more memory.
     ///
     /// # Arguments
-    /// * `vector_sources`: bool, wether to cache sources into a vector for faster walks.
-    /// * `vector_destinations`: bool, wether to cache destinations into a vector for faster walks.
-    /// * `vector_outbounds`: bool, wether to cache outbounds into a vector for faster walks.
-    /// * `cache_size`: Option<f64>, percentage of nodes destinations to cache. This cannot be used with the vector destinations.
+    /// * `vector_sources`: Option<bool> - Whether to cache sources into a vector for faster walks.
+    /// * `vector_destinations`: Option<bool> - Whether to cache destinations into a vector for faster walks.
+    /// * `vector_cumulative_node_degrees`: Option<bool> - Whether to cache cumulative_node_degrees into a vector for faster walks.
     pub fn enable(
         &mut self,
-        vector_sources: bool,
-        vector_destinations: bool,
-        vector_outbounds: bool,
-        cache_size: Option<f64>,
-    ) -> Result<(), String> {
+        vector_sources: Option<bool>,
+        vector_destinations: Option<bool>,
+        vector_cumulative_node_degrees: Option<bool>,
+    ) -> Result<()> {
+        let vector_sources = vector_sources.unwrap_or(false);
+        let vector_destinations = vector_destinations.unwrap_or(true);
+        let vector_cumulative_node_degrees = vector_cumulative_node_degrees.unwrap_or(true);
+
         if vector_destinations {
             if self.destinations.is_none() {
-                self.destinations = Some(self.get_destinations(true));
+                self.destinations = Some(self.get_directed_destination_node_ids());
             }
         } else {
             self.destinations = None;
         }
         if vector_sources {
             if self.sources.is_none() {
-                self.sources = Some(self.get_sources(true));
+                self.sources = Some(self.get_directed_source_node_ids());
             }
         } else {
             self.sources = None;
         }
-        if vector_outbounds {
-            if self.outbounds.is_none() {
-                self.outbounds = Some(self.get_outbounds());
+        if vector_cumulative_node_degrees {
+            if self.cumulative_node_degrees.is_none() {
+                self.cumulative_node_degrees = Some(self.get_cumulative_node_degrees());
             }
         } else {
-            self.outbounds = None;
-        }
-        if let Some(cs) = cache_size {
-            if vector_destinations {
-                return Err("You cannot use cache if you enable the destinations vector".to_owned());
-            }
-            if cs <= 0.0 || cs >= 1.0 {
-                return Err("Cache size must be between strictly 0 and 1, otherwise just enable the destinations vector.".to_owned());
-            }
-            let cached_nodes_number: NodeT = (self.get_nodes_number() as f64 * cs) as NodeT;
-            if cached_nodes_number == 0 || cached_nodes_number == self.get_nodes_number() {
-                return Err("Required cached nodes number cannot be 0 or all the nodes.".to_owned());
-            }
-            self.cached_destinations = Some(
-                self.get_top_k_central_nodes(cached_nodes_number)
-                    .par_iter()
-                    .map(|node_id| {
-                        (
-                            *node_id,
-                            self.get_neighbours_iter(*node_id).collect::<Vec<NodeT>>(),
-                        )
-                    })
-                    .collect::<HashMap<NodeT, Vec<NodeT>>>(),
-            );
-        } else {
-            self.cached_destinations = None;
+            self.cumulative_node_degrees = None;
         }
         Ok(())
     }
@@ -103,7 +45,6 @@ impl Graph {
     pub fn disable_all(&mut self) {
         self.destinations = None;
         self.sources = None;
-        self.outbounds = None;
-        self.cached_destinations = None;
+        self.cumulative_node_degrees = None;
     }
 }

@@ -1,0 +1,76 @@
+FromStringsParameters {
+    node_types_number: Some(
+        6495,
+    ),
+    numeric_node_type_ids: Some(
+        true,
+    ),
+    minimum_node_type_id: Some(
+        57825,
+    ),
+    has_node_types: true,
+    nodes_number: Some(
+        3237569425,
+    ),
+    numeric_node_ids: true,
+    numeric_node_list_node_type_ids: true,
+    minimum_node_ids: Some(
+        1374684448,
+    ),
+    edge_types_number: Some(
+        57726,
+    ),
+    numeric_edge_type_ids: None,
+    minimum_edge_type_id: Some(
+        34908,
+    ),
+    has_edge_types: true,
+    has_edge_weights: false,
+    directed: false,
+    correct: None,
+    complete: Some(
+        true,
+    ),
+    duplicates: Some(
+        false,
+    ),
+    sorted: Some(
+        false,
+    ),
+    edges_number: None,
+    numeric_edge_list_node_ids: Some(
+        false,
+    ),
+    numeric_edge_list_edge_type_ids: None,
+    skip_node_types_if_unavailable: Some(
+        false,
+    ),
+    skip_edge_types_if_unavailable: Some(
+        true,
+    ),
+    may_have_singletons: false,
+    may_have_singleton_with_selfloops: true,
+    name: "\u{7f}",
+    edges_iterator_is_parallel: true,
+    edge_types_iterator_is_parallel: false,
+    nodes_iterator_is_parallel: false,
+    node_types_iterator_is_parallel: true,
+    edges_iterator: None,
+    edge_types_iterator: Some(
+        [],
+    ),
+    nodes_iterator: None,
+    node_types_iterator: Some(
+        [
+            Ok(
+                (
+                    4022409714053432194,
+                    "",
+                ),
+            ),
+            Err(
+                "",
+            ),
+        ],
+    ),
+}

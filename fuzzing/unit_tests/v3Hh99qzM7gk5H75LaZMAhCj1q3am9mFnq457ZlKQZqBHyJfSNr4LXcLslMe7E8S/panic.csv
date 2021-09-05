@@ -1,0 +1,4 @@
+file,"/Workspace/Shared/ensmallen/graph/src/constructors/edge_type_parser.rs"
+line,58
+col,48
+message,called `Option::unwrap()` on a `None` value

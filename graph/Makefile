@@ -23,4 +23,7 @@ coverage:
 	)
 
 test:
+	cargo check
+	cargo clippy -- -W clippy::pedantic
+	(cd ../notebooks_and_scripts/code_analysis/metatest; cargo run --release --bin check)
 	cargo test

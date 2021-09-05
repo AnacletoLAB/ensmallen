@@ -10,7 +10,7 @@ pub fn second_order_walker(graph: &Graph) -> Result<WalksParameters, String> {
         .set_explore_weight(Some(2.0))?
         .set_change_edge_type_weight(Some(2.0))?
         .set_change_node_type_weight(Some(2.0))?
-        .set_dense_node_mapping(Some(graph.get_dense_node_mapping()))
+        .set_dense_node_mapping(Some(graph.get_dense_nodes_mapping()))
         .set_random_state(Some(43)))
 }
 
@@ -24,9 +24,9 @@ fn main() {
         .set_verbose(Some(false))
         .set_header(Some(true));
     let mut graph = Graph::from_unsorted_csv(edges_reader, None, false, false, "Graph".to_owned()).unwrap();
-
-    graph.enable(true, true, true, None).unwrap();
+    
+    graph.enable(Some(true), Some(true), Some(true)).unwrap();
 
     let walker = second_order_walker(&graph).unwrap();
-    let _ = graph.complete_walks_iter( &walker).unwrap().collect::<Vec<Vec<NodeT>>>();
+    let _ = graph.iter_complete_walks( &walker).unwrap().collect::<Vec<Vec<NodeT>>>();
 }   

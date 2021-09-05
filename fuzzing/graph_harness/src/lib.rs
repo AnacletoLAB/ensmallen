@@ -1,15 +1,13 @@
 #![feature(panic_info_message)]
+#![feature(thread_id_value)]
 extern crate graph;
 pub(crate) use graph::*;
 
-mod from_csv;
-pub use from_csv::*;
+#[macro_use]
+extern crate lazy_static;
 
-mod from_vec;
-pub use from_vec::*;
+mod from_strings;
+pub use from_strings::*;
 
-mod handle_panics;
-use handle_panics::*;
-
-mod mega_test;
-pub use mega_test::*;
+mod handle_panic;
+pub use handle_panic::*;

@@ -1,0 +1,24 @@
+[package]
+name = "honggfuzz_harness"
+version = "0.1.0"
+authors = ["Tommaso Fontana <tommaso.fontana.96@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+honggfuzz = "=0.5.52"
+
+[dependencies.graph_harness]
+path = "../graph_harness"
+
+[[bin]]
+name = "from_strings"
+path = "src/from_strings.rs"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+overflow-checks = true   # Disable integer overflow checks.
+debug = true            # Include debug info.
+debug-assertions = true  # Enables debug assertions.

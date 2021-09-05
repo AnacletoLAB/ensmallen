@@ -1,12 +1,4 @@
 use super::*;
-use graph::NodeT;
-use numpy::PyArray2;
-
-struct ThreadSafe<'a, T> {
-    t: &'a PyArray2<T>,
-}
-
-unsafe impl<'a, T> Sync for ThreadSafe<'a, T> {}
 
 #[pymethods]
 impl EnsmallenGraph {
@@ -34,9 +26,8 @@ impl EnsmallenGraph {
     /// by David A. Bader and Guojing Cong.
     fn spanning_arborescence(&self, verbose: Option<bool>) -> PyResult<Py<PyArray2<NodeT>>> {
         let py = pyo3::Python::acquire_gil();
-        let (edges_number, iter) =
-            pe!(self.graph.spanning_arborescence(verbose.unwrap_or(true)))?;
-        let array = ThreadSafe {
+        let (edges_number, iter) = pe!(self.graph.spanning_arborescence(verbose))?;
+        let array = ThreadDataRaceAware {
             t: PyArray2::new(py.python(), [edges_number, 2], false),
         };
         unsafe {

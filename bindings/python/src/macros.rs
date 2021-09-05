@@ -1,7 +1,6 @@
-extern crate edit_distance;
-use edit_distance::edit_distance;
 use pyo3::types::PyDict;
 use std::collections::HashSet;
+use strsim::levenshtein;
 
 #[macro_export]
 macro_rules! normalize_kwargs {
@@ -76,9 +75,10 @@ macro_rules! to_ndarray_1d {
 }
 
 #[macro_export]
-macro_rules! to_nparray_2d {
+macro_rules! to_ndarray_2d {
     ($gil: expr, $value: expr, $_type: ty) => {
-        PyArray::from_vec2($gil.python(), &$value).unwrap()
+        PyArray::from_vec2($gil.python(), &$value)
+            .unwrap()
             .cast::<$_type>(false)
             .unwrap()
             .to_owned()
@@ -96,7 +96,11 @@ pub fn build_walk_parameters_list<'a>(parameters: &[&'a str]) -> Vec<&'a str> {
         "iterations",
         "dense_node_mapping",
     ];
-    default.into_iter().chain(parameters.into_iter()).map(|x| *x).collect()
+    default
+        .into_iter()
+        .chain(parameters.into_iter())
+        .map(|x| *x)
+        .collect()
 }
 
 /// Validate given kwargs.
@@ -118,7 +122,7 @@ pub fn validate_kwargs(kwargs: &PyDict, columns: &[&str]) -> Result<(), String> 
     for k in &keys {
         let (distance, column) = columns
             .iter()
-            .map(|col| (edit_distance(k, col), col))
+            .map(|col| (levenshtein(k, col), col))
             .min_by_key(|x| x.0)
             .unwrap();
 

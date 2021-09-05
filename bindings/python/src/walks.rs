@@ -3,7 +3,7 @@ use graph::NodeT;
 use numpy::PyArray2;
 use rayon::iter::IndexedParallelIterator;
 use rayon::prelude::*;
-use thread_safe::ThreadSafe;
+use types::ThreadDataRaceAware;
 
 #[pymethods]
 impl EnsmallenGraph {
@@ -72,11 +72,14 @@ impl EnsmallenGraph {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        pe!(validate_kwargs(kwargs, build_walk_parameters_list(&[]).as_slice()))?;
+        pe!(validate_kwargs(
+            kwargs,
+            build_walk_parameters_list(&[]).as_slice()
+        ))?;
 
         let parameters = pe!(self.build_walk_parameters(walk_length, kwargs))?;
-        let iter = pe!(self.graph.random_walks_iter(quantity, &parameters))?;
-        let array = ThreadSafe {
+        let iter = pe!(self.graph.iter_random_walks(quantity, &parameters))?;
+        let array = ThreadDataRaceAware {
             t: PyArray2::new(
                 py.python(),
                 [
@@ -158,15 +161,18 @@ impl EnsmallenGraph {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        pe!(validate_kwargs(kwargs, build_walk_parameters_list(&[]).as_slice()))?;
+        pe!(validate_kwargs(
+            kwargs,
+            build_walk_parameters_list(&[]).as_slice()
+        ))?;
 
         let parameters = pe!(self.build_walk_parameters(walk_length, kwargs))?;
-        let iter = pe!(self.graph.complete_walks_iter(&parameters))?;
-        let array = ThreadSafe {
+        let iter = pe!(self.graph.iter_complete_walks(&parameters))?;
+        let array = ThreadDataRaceAware {
             t: PyArray2::new(
                 py.python(),
                 [
-                    self.graph.get_unique_sources_number() as usize
+                    self.graph.get_unique_source_nodes_number() as usize
                         * parameters.get_iterations() as usize,
                     walk_length as usize,
                 ],
