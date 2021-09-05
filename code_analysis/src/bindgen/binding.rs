@@ -39,7 +39,7 @@ impl From<Function> for  Binding {
         let mut args_signatures = if func.is_static() {
             vec![]
         } else {
-            vec!["$".to_string()]
+            vec!["$self".to_string()]
         };
 
         for arg in func.iter_args() {
@@ -95,8 +95,9 @@ impl From<Function> for  Binding {
                 args_names.push_str(&ac);
                 args_names.push_str(", ");
             }
-
-            args_signatures.push(arg.name.clone());
+            if !matches!(&arg.arg_type, Type::SelfType) {
+                args_signatures.push(arg.name.clone());
+            }
         }
 
         let text_signature = format!("#[text_signature = \"({})\"]", args_signatures.join(", "));
