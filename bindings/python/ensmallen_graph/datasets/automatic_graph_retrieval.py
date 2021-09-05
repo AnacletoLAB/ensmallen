@@ -456,6 +456,7 @@ class AutomaticallyRetrievedGraph:
                     "node_type_path": target_node_type_list_path,
                     "node_types_column_number": 0,
                     "node_type_list_is_correct": True,
+                    "node_type_list_separator": "\t"
                 }
             else:
                 node_types_arguments = {}
@@ -466,6 +467,7 @@ class AutomaticallyRetrievedGraph:
                     "edge_type_path": target_edge_type_list_path,
                     "edge_types_column_number": 0,
                     "edge_type_list_is_correct": True,
+                    "edge_type_list_separator": "\t"
                 }
             else:
                 edge_types_arguments = {}
@@ -474,6 +476,7 @@ class AutomaticallyRetrievedGraph:
                 **metadata,
                 **node_types_arguments,
                 "node_path": target_node_path,
+                "node_list_separator": "\t",
                 "node_types_separator": "|" if has_node_types else None,
                 "nodes_column_number": 0,
                 "node_list_node_types_column_number": 1 if has_node_types else None,
