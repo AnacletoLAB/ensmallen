@@ -56,6 +56,18 @@ impl From<Function> for  Binding {
                         Some(arg.name.to_string()),
                     )
                 },
+                x if x == "str" => {
+                    (
+                        format!("{}: String", arg.name),
+                        Some(format!("&{}", arg.name)),
+                    )
+                },
+                Type::SliceType(inner_type) => {
+                    (
+                        format!("{}: Vec<{}>", arg.name, inner_type),
+                        Some(format!("&{}", arg.name)),
+                    )
+                },
                 x if x == "Graph" => {
                     (
                         format!("{}: EnsmallenGraph", arg.name),
