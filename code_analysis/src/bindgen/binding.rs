@@ -118,7 +118,7 @@ impl From<Function> for  Binding {
         let mut body = format!(
             "{prefix}{name}({args_names})",
             prefix = match (func.is_method(), func.is_static()) {
-                (true, true) => "Graph::",
+                (true, true) => "graph::Graph::",
                 (true, false) => "self.graph.",
                 (false, true) => "graph::",
                 (false, false) => unreachable!("A function cannot accept self! It would be a method!"),

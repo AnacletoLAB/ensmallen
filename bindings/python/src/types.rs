@@ -1,11 +1,11 @@
-use graph::{Graph, NodeT};
+use graph::NodeT;
 use numpy::{PyArray1, PyArray2};
 use pyo3::prelude::*;
 
 #[pyclass]
 #[derive(Clone, Debug)]
 pub struct Graph {
-    pub(crate) graph: Graph,
+    pub(crate) graph: graph::Graph,
 }
 
 pub type PyContexts = Py<PyArray2<NodeT>>;
