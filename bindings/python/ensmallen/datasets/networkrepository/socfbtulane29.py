@@ -42,7 +42,7 @@ Please cite the following if you use the data:
 from typing import Dict
 
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
-from ...ensmallen import EnsmallenGraph  # pylint: disable=import-error
+from ...ensmallen import Graph  # pylint: disable=import-error
 
 
 def SocfbTulane29(
@@ -53,7 +53,7 @@ def SocfbTulane29(
     cache_path: str = "graphs/networkrepository",
     version: str = "latest",
     **additional_graph_kwargs: Dict
-) -> EnsmallenGraph:
+) -> Graph:
     """Return new instance of the socfb-Tulane29 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	

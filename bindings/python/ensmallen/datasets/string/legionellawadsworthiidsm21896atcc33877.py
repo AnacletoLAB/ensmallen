@@ -24,7 +24,7 @@ Please cite the following if you use the data:
 from typing import Dict
 
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
-from ...ensmallen import EnsmallenGraph  # pylint: disable=import-error
+from ...ensmallen import Graph  # pylint: disable=import-error
 
 
 def LegionellaWadsworthiiDsm21896Atcc33877(
@@ -35,7 +35,7 @@ def LegionellaWadsworthiiDsm21896Atcc33877(
     cache_path: str = "graphs/string",
     version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
-) -> EnsmallenGraph:
+) -> Graph:
     """Return new instance of the Legionella wadsworthii DSM 21896 ATCC 33877 graph.
 
     The graph is automatically retrieved from the STRING repository.	

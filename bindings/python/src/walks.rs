@@ -6,7 +6,7 @@ use rayon::prelude::*;
 use types::ThreadDataRaceAware;
 
 #[pymethods]
-impl EnsmallenGraph {
+impl Graph {
     #[args(py_kwargs = "**")]
     #[text_signature = "($self, walk_length, quantity, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, dense_node_mapping, max_neighbours)"]
     /// Return random walks done on the graph using Rust.

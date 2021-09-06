@@ -1,4 +1,4 @@
-# EnsmallenGraph
+# Graph
 [![Build Status on Travis](https://travis-ci.org/LucaCappelletti94/ensmallen.svg?branch=master)](https://travis-ci.org/github/LucaCappelletti94/ensmallen)
 
 Rust library to run node2vec-like weighted random walks on very big graphs.

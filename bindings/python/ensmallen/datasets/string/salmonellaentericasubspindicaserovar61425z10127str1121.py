@@ -24,7 +24,7 @@ Please cite the following if you use the data:
 from typing import Dict
 
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
-from ...ensmallen import EnsmallenGraph  # pylint: disable=import-error
+from ...ensmallen import Graph  # pylint: disable=import-error
 
 
 def SalmonellaEntericaSubspIndicaSerovar61425Z10127Str1121(
@@ -35,7 +35,7 @@ def SalmonellaEntericaSubspIndicaSerovar61425Z10127Str1121(
     cache_path: str = "graphs/string",
     version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
-) -> EnsmallenGraph:
+) -> Graph:
     """Return new instance of the Salmonella enterica subsp. indica serovar 6,14,25:z10:1,(2),7 str. 1121 graph.
 
     The graph is automatically retrieved from the STRING repository.	

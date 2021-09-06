@@ -9,7 +9,7 @@ The graph is automatically retrieved from the KGHub repository.
 from typing import Dict
 
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
-from ...ensmallen import EnsmallenGraph  # pylint: disable=import-error
+from ...ensmallen import Graph  # pylint: disable=import-error
 
 
 def KGMicrobe(
@@ -20,7 +20,7 @@ def KGMicrobe(
     cache_path: str = "graphs/kghub",
     version: str = "current",
     **additional_graph_kwargs: Dict
-) -> EnsmallenGraph:
+) -> Graph:
     """Return new instance of the kg-microbe graph.
 
     The graph is automatically retrieved from the KGHub repository.	

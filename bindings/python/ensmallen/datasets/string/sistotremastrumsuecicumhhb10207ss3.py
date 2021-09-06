@@ -24,7 +24,7 @@ Please cite the following if you use the data:
 from typing import Dict
 
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
-from ...ensmallen import EnsmallenGraph  # pylint: disable=import-error
+from ...ensmallen import Graph  # pylint: disable=import-error
 
 
 def SistotremastrumSuecicumHhb10207Ss3(
@@ -35,7 +35,7 @@ def SistotremastrumSuecicumHhb10207Ss3(
     cache_path: str = "graphs/string",
     version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
-) -> EnsmallenGraph:
+) -> Graph:
     """Return new instance of the Sistotremastrum suecicum HHB10207 ss-3 graph.
 
     The graph is automatically retrieved from the STRING repository.	

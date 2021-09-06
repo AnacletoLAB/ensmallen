@@ -7,7 +7,7 @@ import compress_json
 import datetime
 import shutil
 from glob import glob
-from ensmallen import EnsmallenGraph
+from ensmallen import Graph
 from tqdm.auto import tqdm
 from environments_utils import is_notebook
 from IPython.display import display

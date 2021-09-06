@@ -1,7 +1,7 @@
 import os
 import re
 import json
-from ensmallen import EnsmallenGraph
+from ensmallen import Graph
 from .utils import build_path
 
 # TODO! aggiungere invalidazione del report su tutti i metodi con inplace
@@ -29,7 +29,7 @@ def bindgen(args):
     filtered_functions = {}
     for file, vals in analysis.items():
         for function in vals["functions"]:
-            if function["name"] in dir(EnsmallenGraph):
+            if function["name"] in dir(Graph):
                 continue
 
             if function["name"] in BLACKLIST:
@@ -152,7 +152,7 @@ def bindgen(args):
                         result_type, _, _ = result_type.rpartition(",")
                         result_type += ">"
 
-                    result_type = result_type.replace("Graph", "EnsmallenGraph")
+                    result_type = result_type.replace("Graph", "Graph")
 
                     result += " -> %s "%result_type
 
@@ -166,12 +166,12 @@ def bindgen(args):
                     
                     if result_type.startswith("Result"):
                         if "Graph" in result_type:
-                            body = "\tOk(EnsmallenGraph{graph:pe!(%s)})"%body[1:]
+                            body = "\tOk(Graph{graph:pe!(%s)})"%body[1:]
                         else:
                             body = "\tpe!(%s)"%body[1:]
                     else:
                         if "Graph" in result_type:
-                            body = "\tEnsmallenGraph{graph:%s}"%body[1:]
+                            body = "\tGraph{graph:%s}"%body[1:]
                         else:
                             body = "\t%s"%body[1:]
 

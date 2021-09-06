@@ -84,7 +84,7 @@ use pyo3::{{wrap_pyfunction, wrap_pymodule}};
 
 #[pymodule]
 fn ensmallen(_py: Python, m: &PyModule) -> PyResult<()> {{
-    m.add_class::<EnsmallenGraph>()?;
+    m.add_class::<Graph>()?;
     m.add_wrapped(wrap_pymodule!(preprocessing))?;
     {function_modules_bindings_registration}
     {function_bindings_wrapping}
@@ -99,7 +99,7 @@ fn ensmallen(_py: Python, m: &PyModule) -> PyResult<()> {{
 {function_modules_bindings}
 
 #[pymethods]
-impl EnsmallenGraph {{
+impl Graph {{
 {method_bindings}
 }}"#,
     function_bindings_wrapping=function_bindings.iter()
@@ -157,7 +157,7 @@ fn {module_name}(_py: Python, m: &PyModule) -> PyResult<()> {{
     let mut lines = vec!["\"\"\"Module offering fast graph processing and graph datasets.\"\"\"".to_string()];
 
     let mut elements = functions_modules.keys().cloned().collect::<Vec<_>>();
-    elements.push("EnsmallenGraph".to_string());
+    elements.push("Graph".to_string());
     elements.push("preprocessing".to_string());
 
     for module in elements.iter() {

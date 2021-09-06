@@ -38,7 +38,7 @@ Please cite the following if you use the data:
 from typing import Dict
 
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
-from ...ensmallen import EnsmallenGraph  # pylint: disable=import-error
+from ...ensmallen import Graph  # pylint: disable=import-error
 
 
 def WebUk2002All(
@@ -49,7 +49,7 @@ def WebUk2002All(
     cache_path: str = "graphs/networkrepository",
     version: str = "latest",
     **additional_graph_kwargs: Dict
-) -> EnsmallenGraph:
+) -> Graph:
     """Return new instance of the web-uk-2002-all graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	

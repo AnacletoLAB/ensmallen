@@ -24,7 +24,7 @@ Please cite the following if you use the data:
 from typing import Dict
 
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
-from ...ensmallen import EnsmallenGraph  # pylint: disable=import-error
+from ...ensmallen import Graph  # pylint: disable=import-error
 
 
 def VerrucomicrobiaBacteriumCag3125820(
@@ -35,7 +35,7 @@ def VerrucomicrobiaBacteriumCag3125820(
     cache_path: str = "graphs/string",
     version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
-) -> EnsmallenGraph:
+) -> Graph:
     """Return new instance of the Verrucomicrobia bacterium CAG:312_58_20 graph.
 
     The graph is automatically retrieved from the STRING repository.	

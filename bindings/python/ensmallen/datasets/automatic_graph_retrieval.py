@@ -6,7 +6,7 @@ import compress_json
 from downloaders import BaseDownloader
 from environments_utils import is_windows
 from userinput.utils import set_validator, closest
-from ..ensmallen import EnsmallenGraph, edge_list_utils
+from ..ensmallen import Graph, edge_list_utils
 from .get_dataset import validate_graph_version
 
 
@@ -77,7 +77,7 @@ class AutomaticallyRetrievedGraph:
             raise ValueError(
                 (
                     "Requested graph `{}` is not currently available.\n"
-                    "Open an issue on the EnsmallenGraph repository to ask "
+                    "Open an issue on the Graph repository to ask "
                     "for this graph to be added."
                 ).format(graph_name)
             )
@@ -199,8 +199,8 @@ class AutomaticallyRetrievedGraph:
             self.get_preprocessed_graph_metadata_path()
         )
 
-    def __call__(self) -> EnsmallenGraph:
-        """Return EnsmallenGraph containing required graph."""
+    def __call__(self) -> Graph:
+        """Return Graph containing required graph."""
         paths = self._graph.get("paths", None)
         graph_arguments = {
             **self._graph["arguments"],
@@ -472,7 +472,7 @@ class AutomaticallyRetrievedGraph:
             else:
                 edge_types_arguments = {}
             # Load the graph
-            return EnsmallenGraph.from_csv(**{
+            return Graph.from_csv(**{
                 **metadata,
                 **node_types_arguments,
                 "node_path": target_node_path,
@@ -507,7 +507,7 @@ class AutomaticallyRetrievedGraph:
             })
 
         # Otherwise just load the graph.
-        return EnsmallenGraph.from_csv(**{
+        return Graph.from_csv(**{
             **{
                 key: os.path.join(self._cache_path, value)
                 if key.endswith("_path") else value

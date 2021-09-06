@@ -24,7 +24,7 @@ Please cite the following if you use the data:
 from typing import Dict
 
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
-from ...ensmallen import EnsmallenGraph  # pylint: disable=import-error
+from ...ensmallen import Graph  # pylint: disable=import-error
 
 
 def CandidatusNomurabacteriaBacteriumRifcsplowo201Full4217(
@@ -35,7 +35,7 @@ def CandidatusNomurabacteriaBacteriumRifcsplowo201Full4217(
     cache_path: str = "graphs/string",
     version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
-) -> EnsmallenGraph:
+) -> Graph:
     """Return new instance of the Candidatus Nomurabacteria bacterium RIFCSPLOWO2_01_FULL_42_17 graph.
 
     The graph is automatically retrieved from the STRING repository.	

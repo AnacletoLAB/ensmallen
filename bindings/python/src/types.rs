@@ -4,7 +4,7 @@ use pyo3::prelude::*;
 
 #[pyclass]
 #[derive(Clone, Debug)]
-pub struct EnsmallenGraph {
+pub struct Graph {
     pub(crate) graph: Graph,
 }
 
