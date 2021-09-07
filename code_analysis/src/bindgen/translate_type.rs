@@ -23,7 +23,7 @@ pub fn translate_type(value: &Type) -> String {
             generics,
             ..
         } => match name.as_str() {
-            "Graph" => "EnsmallenGraph".to_string(),
+            "Graph" => "Graph".to_string(),
             "NodeT" | "usize" | "EdgeT"
                 | "u64" | "NodeTypeT"
                 | "EdgeTypeT" => "int".to_string(),

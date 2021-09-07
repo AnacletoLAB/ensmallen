@@ -20,7 +20,7 @@ pub(crate) use crate::preprocessing::*;
 mod types;
 pub(crate) use crate::types::*;
 mod walks;
-pub(crate) use crate::types::EnsmallenGraph;
+pub(crate) use crate::types::Graph;
 mod laplacian;
 mod operators;
 

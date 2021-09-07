@@ -83,8 +83,8 @@ pub fn gen_bindings(path: &str, init_path: &str) {
 use pyo3::{{wrap_pyfunction, wrap_pymodule}};
 
 #[pymodule]
-fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {{
-    m.add_class::<EnsmallenGraph>()?;
+fn ensmallen(_py: Python, m: &PyModule) -> PyResult<()> {{
+    m.add_class::<Graph>()?;
     m.add_wrapped(wrap_pymodule!(preprocessing))?;
     {function_modules_bindings_registration}
     {function_bindings_wrapping}
@@ -99,7 +99,7 @@ fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {{
 {function_modules_bindings}
 
 #[pymethods]
-impl EnsmallenGraph {{
+impl Graph {{
 {method_bindings}
 }}"#,
     function_bindings_wrapping=function_bindings.iter()
@@ -154,16 +154,22 @@ fn {module_name}(_py: Python, m: &PyModule) -> PyResult<()> {{
     .expect("Cannot write the automatically generated bindings file");
 
 
-    let mut lines = vec!["\"\"\"Module offering fast graph processing and graph datasets.\"\"\"".to_string()];
+    let mut lines = vec![
+        "\"\"\"Module offering fast graph processing and graph datasets.\"\"\"".into(),
+    ];
 
     let mut elements = functions_modules.keys().cloned().collect::<Vec<_>>();
-    elements.push("EnsmallenGraph".to_string());
-    elements.push("preprocessing".to_string());
+    elements.push("Graph".into());
+    elements.push("preprocessing".into());
 
     for module in elements.iter() {
-        lines.push(format!("from .ensmallen_graph import {} # pylint: disable=import-error", module));
+        lines.push(format!("from .ensmallen import {} # pylint: disable=import-error", module));
     }
 
+    lines.push("from . import datasets".into());
+    elements.push("datasets".into());
+
+    // TODO: add datasets
     lines.push(format!(
         "__all__ = {:?}", elements
     ));

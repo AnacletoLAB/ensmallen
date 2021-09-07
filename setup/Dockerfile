@@ -33,19 +33,19 @@ RUN pip install --upgrade pip
 # Install ensmallen
 ################################################################################
 # (Future) Install form pypi
-#RUN pip install ensmallen_graph
+#RUN pip install ensmallen
 # Clone ensmallen
-RUN cd / && git clone https://github.com/AnacletoLAB/ensmallen_graph.git
+RUN cd / && git clone https://github.com/AnacletoLAB/ensmallen.git
 # Checkout the latest branch
-RUN cd /ensmallen_graph && git checkout transitivity
+RUN cd /ensmallen && git checkout transitivity
 # Update all the packages in all the crates
-RUN cd /ensmallen_graph && make update
+RUN cd /ensmallen && make update
 # Generate the bindings
-RUN cd /ensmallen_graph && make bindgen
+RUN cd /ensmallen && make bindgen
 # Build the bindings
-RUN cd /ensmallen_graph/bindings/python && maturin build --release --no-sdist
+RUN cd /ensmallen/bindings/python && maturin build --release --no-sdist
 # Install the bindings 
-RUN pip install /ensmallen_graph/bindings/python/target/wheels/ensmallen_graph-0.6.0-cp36-cp36m-manylinux_2_24_x86_64.whl
+RUN pip install /ensmallen/bindings/python/target/wheels/ensmallen-0.6.0-cp36-cp36m-manylinux_2_24_x86_64.whl
 
 ################################################################################
 # Install embiggen

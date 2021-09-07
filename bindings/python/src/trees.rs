@@ -1,7 +1,7 @@
 use super::*;
 
 #[pymethods]
-impl EnsmallenGraph {
+impl Graph {
     #[text_signature = "($self, verbose)"]
     /// Returns set of edges forming the spanning tree of given graph.
     ///

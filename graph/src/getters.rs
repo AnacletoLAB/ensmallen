@@ -1,7 +1,9 @@
 use super::*;
+use atomic_float::AtomicF64;
 use counter::Counter;
 use log::info;
 use rayon::prelude::*;
+use std::sync::atomic::{Ordering, AtomicU32};
 use std::collections::HashMap;
 
 /// # Getters
@@ -558,6 +560,36 @@ impl Graph {
     pub fn get_edge_weights(&self) -> Result<Vec<WeightT>> {
         self.must_have_edge_weights()?;
         Ok(self.weights.clone().unwrap())
+    }
+
+    /// Return the weighted indegree (total weighted inbound edge weights) for each node.
+    ///
+    /// # Example
+    /// To get the weighted indegree for each node you can use;
+    /// ```rust
+    /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);
+    /// # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false);
+    /// assert!(graph_with_weights.get_weighted_node_indegrees().is_ok());
+    /// assert!(graph_without_weights.get_weighted_node_indegrees().is_err());
+    /// println!("The graph weighted indegrees are {:?}.", graph_with_weights.get_weighted_node_indegrees());
+    /// ```
+    ///
+    /// TODO!: this method can be rewritten without Atomics
+    /// when the structure supporting the directed graphs
+    /// inbound edges structure is introduced.
+    pub fn get_weighted_node_indegrees(&self) -> Result<Vec<f64>> {
+        if !self.is_directed() {
+            return self.get_weighted_node_degrees();
+        }
+        let inbound_edge_weights = self
+            .iter_node_ids()
+            .map(|_| AtomicF64::new(0.0))
+            .collect::<Vec<_>>();
+        self.par_iter_directed_destination_node_ids()
+            .zip(self.par_iter_edge_weights()?).for_each(|(dst, weight)|{
+                inbound_edge_weights[dst as usize].fetch_add(weight as f64, Ordering::Relaxed);
+            });
+        Ok(unsafe { std::mem::transmute::<Vec<AtomicF64>, Vec<f64>>(inbound_edge_weights) })
     }
 
     /// Return the node types of the graph nodes.
@@ -1149,6 +1181,32 @@ impl Graph {
         self.par_iter_node_degrees()
             .collect_into_vec(&mut node_degrees);
         node_degrees
+    }
+
+    /// Return the indegree for each node.
+    ///
+    /// # Example
+    /// To get the indegree for each node you can use;
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(false, false, false, true, false, false);
+    /// println!("The graph indegrees are {:?}.", graph.get_weighted_node_indegrees());
+    /// ```
+    ///
+    /// TODO!: this method can be rewritten without Atomics
+    /// when the structure supporting the directed graphs
+    /// inbound edges structure is introduced.
+    pub fn get_node_indegrees(&self) -> Vec<NodeT> {
+        if !self.is_directed() {
+            return self.get_node_degrees();
+        }
+        let indegrees = self
+            .iter_node_ids()
+            .map(|_| AtomicU32::new(0))
+            .collect::<Vec<_>>();
+        self.par_iter_directed_destination_node_ids().for_each(|dst|{
+            indegrees[dst as usize].fetch_add(1, Ordering::Relaxed);
+        });
+        unsafe { std::mem::transmute::<Vec<AtomicU32>, Vec<NodeT>>(indegrees) }
     }
 
     /// Returns the weighted degree of every node in the graph.

@@ -1,9 +1,9 @@
-from ensmallen_graph import EnsmallenGraph  # pylint: disable=no-name-in-module
+from ensmallen import Graph  # pylint: disable=no-name-in-module
 from scipy.stats import pearsonr
 import numpy as np
 from tqdm.auto import tqdm
-from ensmallen_graph.datasets.linqs import Cora
-from ensmallen_graph.datasets.string import HomoSapiens
+from ensmallen.datasets.linqs import Cora
+from ensmallen.datasets.string import HomoSapiens
 
 
 def test_return_weight_behaviour_cora():

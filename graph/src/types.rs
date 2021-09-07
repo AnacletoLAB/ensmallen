@@ -32,7 +32,8 @@ pub type Quadruple = (NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>);
 /// Quadrule of string edge data
 pub type StringQuadruple = (String, String, Option<String>, WeightT);
 /// Symbol reserved to unmapped nodes for algoritms such as connected components.
-pub const NOT_PRESENT: NodeT = NodeT::MAX;
+pub const NODE_NOT_PRESENT: NodeT = NodeT::MAX;
+pub const INDEX_NOT_PRESENT: usize = usize::MAX;
 
 pub type Result<T> = std::result::Result<T, String>;
 

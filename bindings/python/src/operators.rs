@@ -5,27 +5,27 @@ use rayon::iter::{IndexedParallelIterator, IntoParallelRefIterator, ParallelIter
 use strsim::*;
 
 #[pyproto]
-impl PyNumberProtocol for EnsmallenGraph {
-    fn __or__(lhs: EnsmallenGraph, rhs: EnsmallenGraph) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+impl PyNumberProtocol for Graph {
+    fn __or__(lhs: Graph, rhs: Graph) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(&lhs.graph | &rhs.graph)?,
         })
     }
 
-    fn __sub__(lhs: EnsmallenGraph, rhs: EnsmallenGraph) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    fn __sub__(lhs: Graph, rhs: Graph) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(&lhs.graph - &rhs.graph)?,
         })
     }
 
-    fn __and__(lhs: EnsmallenGraph, rhs: EnsmallenGraph) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    fn __and__(lhs: Graph, rhs: Graph) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(&lhs.graph & &rhs.graph)?,
         })
     }
 
-    fn __xor__(lhs: EnsmallenGraph, rhs: EnsmallenGraph) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    fn __xor__(lhs: Graph, rhs: Graph) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(&lhs.graph ^ &rhs.graph)?,
         })
     }
@@ -70,7 +70,7 @@ fn split_words(method_name: &str) -> Vec<String> {
 }
 
 #[pyproto]
-impl PyObjectProtocol for EnsmallenGraph {
+impl PyObjectProtocol for Graph {
     fn __str__(&'p self) -> String {
         self.graph.textual_report()
     }
@@ -143,7 +143,7 @@ impl PyObjectProtocol for EnsmallenGraph {
 }
 
 #[pymethods]
-impl EnsmallenGraph {
+impl Graph {
     fn _repr_html_(&self) -> String {
         self.__repr__()
     }

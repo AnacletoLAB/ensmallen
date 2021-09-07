@@ -1,7 +1,7 @@
 import re
 import sys
 import json
-from ensmallen_graph import EnsmallenGraph
+from ensmallen import Graph
 from .utils import build_path
 
 # 

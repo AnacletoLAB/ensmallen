@@ -54,7 +54,7 @@ impl Graph {
                                 .into_distances()
                                 .into_iter()
                                 .enumerate()
-                                .filter(|&(_, distance)| distance != NOT_PRESENT)
+                                .filter(|&(_, distance)| distance != NODE_NOT_PRESENT)
                                 .map(move |(dst_node_id, _)| {
                                     (0, (src_node_id, dst_node_id as NodeT, None, WeightT::NAN))
                                 })
@@ -130,7 +130,7 @@ impl Graph {
                                 .into_iter()
                                 .enumerate()
                                 .filter(move |&(dst_node_id, distance)| {
-                                    distance != NOT_PRESENT && src_node_id != dst_node_id as NodeT
+                                    distance != NODE_NOT_PRESENT && src_node_id != dst_node_id as NodeT
                                 })
                                 .map(move |(dst_node_id, distance)| {
                                     (

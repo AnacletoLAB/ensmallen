@@ -31,6 +31,6 @@ coveralls.json
 default.profraw
 graphs
 .userinput.json
-bindings/python/ensmallen_graph/*.so
+bindings/python/ensmallen/*.so
 notebooks_and_scripts/downloads/*
 notebooks_and_scripts/cached_webpages/*

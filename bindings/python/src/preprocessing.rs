@@ -165,7 +165,7 @@ fn cooccurence_matrix(
 }
 
 #[pymethods]
-impl EnsmallenGraph {
+impl Graph {
     #[args(py_kwargs = "**")]
     #[text_signature = "($self, walk_length, *, window_size, iterations, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, max_neighbours, random_state, verbose)"]
     /// Return cooccurence matrix-based triples of words, contexts and frequencies.
@@ -472,7 +472,7 @@ impl EnsmallenGraph {
     ///     Number of attempts to execute to sample the negative edges.
     /// shuffle: Optional[bool],
     ///     Whether to shuffle the samples within the batch.
-    /// graph_to_avoid: Optional[EnsmallenGraph],
+    /// graph_to_avoid: Optional[Graph],
     ///     The graph whose edges are to be avoided during the generation of false negatives,
     ///
     /// Raises
@@ -498,7 +498,7 @@ impl EnsmallenGraph {
         avoid_false_negatives: Option<bool>,
         maximal_sampling_attempts: Option<usize>,
         shuffle: Option<bool>,
-        graph_to_avoid: Option<EnsmallenGraph>,
+        graph_to_avoid: Option<Graph>,
     ) -> PyResult<(
         Py<PyArray1<NodeT>>,
         Option<Py<PyArray2<NodeTypeT>>>,
@@ -514,7 +514,7 @@ impl EnsmallenGraph {
         let return_edge_metrics = return_edge_metrics.unwrap_or(false);
         let batch_size = batch_size.unwrap_or(1024);
 
-        let graph_to_avoid = graph_to_avoid.map(|ensmallen_graph| ensmallen_graph.graph);
+        let graph_to_avoid = graph_to_avoid.map(|ensmallen| ensmallen.graph);
         let par_iter = pe!(self.graph.get_edge_prediction_mini_batch(
             idx,
             Some(batch_size),

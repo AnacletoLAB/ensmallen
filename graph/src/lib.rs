@@ -141,6 +141,8 @@ pub use visualizations::*;
 mod memory;
 pub use memory::*;
 
+mod louvain;
+pub use louvain::*;
 mod nodes_sampling;
 pub use nodes_sampling::*;
 

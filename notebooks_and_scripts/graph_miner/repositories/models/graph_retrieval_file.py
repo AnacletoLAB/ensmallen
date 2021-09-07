@@ -9,7 +9,7 @@ The graph is automatically retrieved from the {repository_name} repository.
 from typing import Dict
 {imports}
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
-from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
+from ...ensmallen import Graph  # pylint: disable=import-error
 
 
 def {graph_method_name}(
@@ -20,7 +20,7 @@ def {graph_method_name}(
     cache_path: str = "graphs/{repository_package_name}",
     version: str = "{default_version}",
     **additional_graph_kwargs: Dict
-) -> EnsmallenGraph:
+) -> Graph:
     """Return new instance of the {graph_name} graph.
 
     The graph is automatically retrieved from the {repository_name} repository.{tabbed_description}

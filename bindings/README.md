@@ -9,7 +9,7 @@ intents and porposes an **alpha** version.
 To install the **latest (alpha) release**, run the following:
 
 ```bash
-pip install ensmallen_graph
+pip install ensmallen
 ```
 
 The pre-compiled wheels needs glibc >= 2.12.
@@ -19,4 +19,4 @@ To build it locally running the following command should be enough.
 make python
 ```
 
-See [this page](https://github.com/LucaCappelletti94/ensmallen_graph/blob/master/bindings/python/README.md) to compile the bindings yourself.
+See [this page](https://github.com/LucaCappelletti94/ensmallen/blob/master/bindings/python/README.md) to compile the bindings yourself.

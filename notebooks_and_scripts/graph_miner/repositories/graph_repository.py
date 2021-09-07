@@ -7,7 +7,7 @@ import compress_json
 import datetime
 import shutil
 from glob import glob
-from ensmallen_graph import EnsmallenGraph
+from ensmallen import Graph
 from tqdm.auto import tqdm
 from environments_utils import is_notebook
 from IPython.display import display
@@ -609,7 +609,7 @@ class GraphRepository:
         graph_method_names = []
         graph_file_names = []
         target_directory_path = os.path.join(
-            "../bindings/python/ensmallen_graph/datasets",
+            "../bindings/python/ensmallen/datasets",
             self.repository_package_name,
         )
         os.makedirs(target_directory_path, exist_ok=True)

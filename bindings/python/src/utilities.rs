@@ -3,7 +3,7 @@ use graph::{NodeT, Result, WalksParameters, WeightT};
 
 use std::collections::HashMap;
 
-impl EnsmallenGraph {
+impl Graph {
     pub(crate) fn build_walk_parameters(
         &self,
         walk_length: u64,
