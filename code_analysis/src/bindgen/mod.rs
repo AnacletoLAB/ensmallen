@@ -159,6 +159,7 @@ fn {module_name}(_py: Python, m: &PyModule) -> PyResult<()> {{
     let mut elements = functions_modules.keys().cloned().collect::<Vec<_>>();
     elements.push("Graph".to_string());
     elements.push("preprocessing".to_string());
+    elements.push("datasets".to_string());
 
     for module in elements.iter() {
         lines.push(format!("from .ensmallen import {} # pylint: disable=import-error", module));
