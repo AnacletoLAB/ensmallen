@@ -69,4 +69,44 @@ impl Graph {
             .collect_into_vec(&mut new_node_ids);
         unsafe { self.remap_unchecked_from_node_ids(new_node_ids) }
     }
+
+    /// Returns graph with node IDs sorted using a BFS
+    ///
+    /// # Arguments
+    /// * `root_node_id`: NodeT - Node ID of node to be used as root of BFS
+    ///
+    /// # Raises
+    /// * If the given root node ID does not exist in the graph
+    pub fn sort_by_bfs_topological_sorting(&self, root_node_id: NodeT) -> Results<Graph> {
+        self.validate_node_id(root_node_id)?;
+
+        let mut stack = vec![root_node_id];
+        let mut topological_remapping = vec![NOT_INSERTED; self.get_nodes_number() as usize];
+        topological_remapping[root_node_id] = 0;
+        let mut inserted_nodes_num = 1;
+
+        while inserted_nodes_num != self.get_nodes_number() {
+            if let Some(src) = stack.pop() {
+                unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(src) }.for_each(
+                    |dst| {
+                        if topological_remapping[dst as usize] == NOT_INSERTED
+                        {
+                            topological_remapping[dst as usize] = inserted_nodes_num;
+                            inserted_nodes_num += 1;
+                            stack.push(dst);
+                        }
+                    },
+                );
+            }
+            else {
+                // find new node to explore
+                let new_root_node = topological_remapping.iter().position(|&x| x == NOT_INSERTED).unwrap() as NodeT
+                topological_remapping[new_root_node as usize] = inserted_nodes_num;
+                inserted_nodes_num += 1;
+                stack.push(new_root_node);
+            }
+        }
+        Ok(unsafe { self.remap_unchecked_from_node_ids(topological_remapping) })
+    }
+
 }
