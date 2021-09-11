@@ -34,7 +34,6 @@ impl Graph {
                     && (add_selfloops_where_missing && src == dst
                         || self.has_edge_from_node_ids(src_node_id, dst_node_id))
             })
-            .map(move |(src_node_id, src, dst_node_id, dst)| (src_node_id, src, dst_node_id, dst))
     }
 
     /// Returns iterator over subsampled weighted adjacency matrix on the provided nodes.
@@ -86,7 +85,7 @@ impl Graph {
         add_selfloops_where_missing: Option<bool>,
         complete: Option<bool>,
     ) -> impl ParallelIterator<Item = (usize, usize, WeightT)> + 'a {
-        let complete = complete.unwrap_or(false);
+        let complete = complete.unwrap_or(false) || self.is_directed();
         let degrees = nodes
             .par_iter()
             .map(|&node_id| self.get_unchecked_node_degree_from_node_id(node_id) as f64)
@@ -127,13 +126,20 @@ impl Graph {
                             if add_selfloops_where_missing && src_node_id == dst_node_id {
                                 return None;
                             }
-                            nodes_map.get(&dst_node_id).map(|&dst| {
-                                (
-                                    src,
-                                    dst,
-                                    (1.0 / (src_degree * degrees[dst]).sqrt()) as WeightT,
-                                )
-                            })
+                            match nodes_map.get(&dst_node_id) {
+                                Some(&dst) => {
+                                    if src < dst {
+                                        Some((
+                                            src,
+                                            dst,
+                                            (1.0 / (src_degree * degrees[dst]).sqrt()) as WeightT,
+                                        ))
+                                    } else {
+                                        None
+                                    }
+                                }
+                                None => None,
+                            }
                         })
                         .collect()
                 };
@@ -146,7 +152,7 @@ impl Graph {
                 if src == dst {
                     vec![(src, dst, weight)]
                 } else {
-                    if complete && !self.is_directed() {
+                    if complete {
                         vec![(src, dst, weight), (dst, src, weight)]
                     } else {
                         vec![(src, dst, weight)]

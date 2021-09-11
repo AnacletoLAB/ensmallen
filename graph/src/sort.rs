@@ -2,6 +2,7 @@ use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
 use rayon::slice::ParallelSliceMut;
+use std::cell::UnsafeCell;
 
 use super::*;
 
@@ -70,6 +71,75 @@ impl Graph {
         unsafe { self.remap_unchecked_from_node_ids(new_node_ids) }
     }
 
+    /// Returns topological sorting map using breadth-first search from the given node.
+    ///
+    /// # Arguments
+    /// * `root_node_id`: NodeT - Node ID of node to be used as root of BFS
+    ///
+    /// # Raises
+    /// * If the given root node ID does not exist in the graph
+    pub fn get_bfs_topological_sorting_from_node_id(
+        &self,
+        root_node_id: NodeT,
+    ) -> Result<Vec<NodeT>> {
+        self.validate_node_id(root_node_id)?;
+        let mut stack = vec![root_node_id];
+        let mut topological_remapping = vec![NODE_NOT_PRESENT; self.get_nodes_number() as usize];
+        topological_remapping[root_node_id as usize] = 0;
+        let mut inserted_nodes_num = 1;
+
+        while inserted_nodes_num != self.get_nodes_number() {
+            if let Some(src) = stack.pop() {
+                unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(src) }
+                    .for_each(|dst| {
+                        if topological_remapping[dst as usize] == NODE_NOT_PRESENT {
+                            topological_remapping[dst as usize] = inserted_nodes_num;
+                            inserted_nodes_num += 1;
+                            stack.push(dst);
+                        }
+                    });
+            } else {
+                // find new node to explore
+                let new_root_node = topological_remapping
+                    .iter()
+                    .position(|&x| x == NODE_NOT_PRESENT)
+                    .unwrap() as NodeT;
+                topological_remapping[new_root_node as usize] = inserted_nodes_num;
+                inserted_nodes_num += 1;
+                stack.push(new_root_node);
+            }
+        }
+
+        Ok(topological_remapping)
+    }
+
+    /// Returns topological sorting reversed map using breadth-first search from the given node.
+    ///
+    /// # Arguments
+    /// * `root_node_id`: NodeT - Node ID of node to be used as root of BFS
+    ///
+    /// # Raises
+    /// * If the given root node ID does not exist in the graph
+    pub fn get_reversed_bfs_topological_sorting_from_node_id(
+        &self,
+        root_node_id: NodeT,
+    ) -> Result<Vec<NodeT>> {
+        let bfs_topological_sorting =
+            self.get_bfs_topological_sorting_from_node_id(root_node_id)?;
+        let reversed_bfs_topological_sorting = ThreadDataRaceAware {
+            value: UnsafeCell::new(vec![NODE_NOT_PRESENT; self.get_nodes_number() as usize]),
+        };
+
+        bfs_topological_sorting
+            .into_par_iter()
+            .enumerate()
+            .for_each(|(i, node_id)| unsafe {
+                (*reversed_bfs_topological_sorting.value.get())[node_id as usize] = i as NodeT;
+            });
+
+        Ok(reversed_bfs_topological_sorting.value.into_inner())
+    }
+
     /// Returns graph with node IDs sorted using a BFS
     ///
     /// # Arguments
@@ -77,36 +147,14 @@ impl Graph {
     ///
     /// # Raises
     /// * If the given root node ID does not exist in the graph
-    pub fn sort_by_bfs_topological_sorting(&self, root_node_id: NodeT) -> Results<Graph> {
-        self.validate_node_id(root_node_id)?;
-
-        let mut stack = vec![root_node_id];
-        let mut topological_remapping = vec![NOT_INSERTED; self.get_nodes_number() as usize];
-        topological_remapping[root_node_id] = 0;
-        let mut inserted_nodes_num = 1;
-
-        while inserted_nodes_num != self.get_nodes_number() {
-            if let Some(src) = stack.pop() {
-                unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(src) }.for_each(
-                    |dst| {
-                        if topological_remapping[dst as usize] == NOT_INSERTED
-                        {
-                            topological_remapping[dst as usize] = inserted_nodes_num;
-                            inserted_nodes_num += 1;
-                            stack.push(dst);
-                        }
-                    },
-                );
-            }
-            else {
-                // find new node to explore
-                let new_root_node = topological_remapping.iter().position(|&x| x == NOT_INSERTED).unwrap() as NodeT
-                topological_remapping[new_root_node as usize] = inserted_nodes_num;
-                inserted_nodes_num += 1;
-                stack.push(new_root_node);
-            }
-        }
-        Ok(unsafe { self.remap_unchecked_from_node_ids(topological_remapping) })
+    pub fn sort_by_bfs_topological_sorting_from_node_id(
+        &self,
+        root_node_id: NodeT,
+    ) -> Result<Graph> {
+        Ok(unsafe {
+            self.remap_unchecked_from_node_ids(
+                self.get_bfs_topological_sorting_from_node_id(root_node_id)?,
+            )
+        })
     }
-
 }

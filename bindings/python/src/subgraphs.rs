@@ -9,7 +9,7 @@ use vec_rand::splitmix64;
 #[pymethods]
 impl Graph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, number_of_nodes_to_sample, random_state, root_node, node_sampling_method, edge_weighting_methods, add_selfloops_where_missing)"]
+    #[text_signature = "($self, number_of_nodes_to_sample, random_state, root_node, node_sampling_method, edge_weighting_methods, add_selfloops_where_missing, unique)"]
     /// Return subsampled nodes according to the given method and parameters.
     ///
     /// Parameters
@@ -20,6 +20,7 @@ impl Graph {
     /// node_sampling_method: str - The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
     /// edge_weighting_methods: List[str] - The edge weighting methods to use to compute the adjacency matrix.
     /// add_selfloops_where_missing: Optional[bool] - Whether to add selfloops where they are missing. This parameter only applies to laplacian edge weighting method. By default, true.
+    /// unique: Optional[bool] = True - Whether to reduce the sampled nodes to a unique set.
     ///
     /// Raises
     /// --------------------
@@ -43,6 +44,7 @@ impl Graph {
         node_sampling_method: &str,
         edge_weighting_methods: Vec<&str>,
         add_selfloops_where_missing: Option<bool>,
+        unique: Option<bool>,
     ) -> PyResult<(Py<PyArray1<NodeT>>, Vec<Py<PyArray2<WeightT>>>)> {
         // Check if the list of requested edge weighting methods is empty.
         if edge_weighting_methods.is_empty() {
@@ -65,6 +67,9 @@ impl Graph {
             )
             .to_string()));
         }
+
+        let unique = unique.unwrap_or(true);
+
         // We sample the nodes.
         // We cannot directly allocate this into a
         // numpy array because
@@ -73,7 +78,7 @@ impl Graph {
             random_state,
             root_node,
             node_sampling_method,
-            Some(false)
+            Some(unique)
         ))?;
 
         // Some of the sampling mechanism are not guaranteed
@@ -167,7 +172,7 @@ impl Graph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, number_of_nodes_to_sample, random_state, root_node, node_sampling_method, edge_weighting_methods, add_selfloops_where_missing)"]
+    #[text_signature = "($self, number_of_nodes_to_sample, random_state, root_node, node_sampling_method, edge_weighting_methods, add_selfloops_where_missing, unique)"]
     /// Return subsampled nodes according to the given method and parameters.
     ///
     /// Parameters
@@ -178,6 +183,7 @@ impl Graph {
     /// node_sampling_method: str - The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
     /// edge_weighting_methods: List[str] - The edge weighting methods to use to compute the adjacency matrix.
     /// add_selfloops_where_missing: Optional[bool] - Whether to add selfloops where they are missing. This parameter only applies to laplacian edge weighting method. By default, true.
+    /// unique: Optional[bool] = True - Whether to reduce the sampled nodes to a unique set.
     ///
     /// Raises
     /// --------------------
@@ -201,6 +207,7 @@ impl Graph {
         node_sampling_method: &str,
         edge_weighting_methods: Vec<&str>,
         add_selfloops_where_missing: Option<bool>,
+        unique: Option<bool>,
     ) -> PyResult<(
         Py<PyArray1<NodeT>>,
         Vec<(Py<PyArray2<usize>>, Py<PyArray1<WeightT>>)>,
@@ -226,6 +233,9 @@ impl Graph {
             )
             .to_string()));
         }
+
+        let unique = unique.unwrap_or(true);
+
         // We sample the nodes.
         // We cannot directly allocate this into a
         // numpy array because
@@ -234,7 +244,7 @@ impl Graph {
             random_state,
             root_node,
             node_sampling_method,
-            Some(false)
+            Some(unique)
         ))?;
 
         // Some of the sampling mechanism are not guaranteed
@@ -252,12 +262,12 @@ impl Graph {
             .map(|edge_weighting_method| unsafe {
                 // If the required edge weighting method are the weights, we extract the weights
                 // iterator and populate the kernel using the weights.
-                let (edge_node_ids, weights): (Vec<Vec<usize>>, Vec<WeightT>) =
+                let mut edge_node_ids_and_weights: Vec<(usize, usize, WeightT)> =
                     if edge_weighting_method == "weights" {
                         self.graph
                             .par_iter_subsampled_weighted_adjacency_matrix(&nodes, Some(true))?
-                            .map(|(_, src, _, dst, weight)| (vec![src, dst], weight))
-                            .unzip()
+                            .map(|(_, src, _, dst, weight)| (src, dst, weight))
+                            .collect()
                     // Similarly, if the required edge weighting method is the laplacian
                     // we populate the kernel with the laplacian.
                     } else if edge_weighting_method == "laplacian" {
@@ -267,8 +277,7 @@ impl Graph {
                                 add_selfloops_where_missing,
                                 Some(true),
                             )
-                            .map(|(src, dst, weight)| (vec![src, dst], weight))
-                            .unzip()
+                            .collect()
                     } else {
                         return Err(format!(
                             concat!(
@@ -278,12 +287,31 @@ impl Graph {
                             edge_weighting_method
                         ));
                     };
+                edge_node_ids_and_weights.par_sort_unstable_by(
+                    |(src_a, dst_a, _), (src_b, dst_b, _)| (src_a, dst_a).cmp(&(src_b, dst_b)),
+                );
+
+                let edges_number = edge_node_ids_and_weights.len();
+
+                let edge_ids_vector = ThreadDataRaceAware {
+                    t: PyArray2::new(gil.python(), [edges_number, 2], false),
+                };
+                let weights = ThreadDataRaceAware {
+                    t: PyArray1::new(gil.python(), [edges_number], false),
+                };
+
+                edge_node_ids_and_weights
+                    .into_par_iter()
+                    .enumerate()
+                    .for_each(|(i, (src, dst, weight))| {
+                        *edge_ids_vector.t.uget_mut([i, 0]) = src;
+                        *edge_ids_vector.t.uget_mut([i, 1]) = dst;
+                        *weights.t.uget_mut([i]) = weight;
+                    });
+
                 // Once the kernel is ready, we extract it from the unsafe cell
                 // and return it.
-                Ok((
-                    to_ndarray_2d!(gil, edge_node_ids, usize),
-                    to_ndarray_1d!(gil, weights, WeightT),
-                ))
+                Ok((edge_ids_vector.t.to_owned(), weights.t.to_owned()))
             })
             .collect::<Result<Vec<(Py<PyArray2<usize>>, Py<PyArray1<WeightT>>)>>>())?;
 
@@ -527,7 +555,7 @@ impl Graph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, number_of_nodes_to_sample, random_state, source_root_node, destination_root_node, node_sampling_method, edge_weighting_methods, add_selfloops_where_missing)"]
+    #[text_signature = "($self, number_of_nodes_to_sample, random_state, source_root_node, destination_root_node, node_sampling_method, edge_weighting_methods, add_selfloops_where_missing, unique)"]
     /// Return subsampled nodes according to the given method and parameters.
     ///
     /// Parameters
@@ -539,6 +567,7 @@ impl Graph {
     /// node_sampling_method: str - The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
     /// edge_weighting_methods: List[str] - The edge weighting methods to use to compute the adjacency matrix.
     /// add_selfloops_where_missing: Optional[bool] - Whether to add selfloops where they are missing. This parameter only applies to laplacian edge weighting method. By default, true.
+    /// unique: Optional[bool] = True - Whether to reduce the sampled nodes to a unique set.
     ///
     /// Raises
     /// --------------------
@@ -563,6 +592,7 @@ impl Graph {
         node_sampling_method: &str,
         edge_weighting_methods: Vec<&str>,
         add_selfloops_where_missing: Option<bool>,
+        unique: Option<bool>,
     ) -> PyResult<(
         Py<PyArray1<NodeT>>,
         Vec<Py<PyArray2<WeightT>>>,
@@ -577,6 +607,7 @@ impl Graph {
             node_sampling_method,
             edge_weighting_methods.clone(),
             add_selfloops_where_missing,
+            unique,
         )?;
         let (dst_nodes, dst_kernels) = self.get_subgraphs(
             number_of_nodes_to_sample,
@@ -585,6 +616,7 @@ impl Graph {
             node_sampling_method,
             edge_weighting_methods,
             add_selfloops_where_missing,
+            unique,
         )?;
 
         Ok((
