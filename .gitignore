@@ -6,6 +6,10 @@ hfuzz_workspace
 hfuzz_target
 corpus
 
+
+# AVOID BINARIES THEY MAKE THE REPO SLOW
+**/*.so
+
 **/perf.data
 **/perf.data.old
 
