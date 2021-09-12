@@ -6269,6 +6269,22 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
+    #[text_signature = "($self, src)"]
+    pub fn get_unchecked_breadth_first_search_from_node_ids(
+        &self,
+        src: NodeT,
+    ) -> Py<PyArray1<NodeT>> {
+        let gil = pyo3::Python::acquire_gil();
+        to_ndarray_1d!(
+            gil,
+            unsafe{self.graph
+                .get_unchecked_breadth_first_search_from_node_ids(src, None, None, None)
+                .into_distances()},
+            NodeT
+        )
+    }
+
+    #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns the unweighted degree of every node in the graph
     pub fn get_node_degrees(&self) -> Py<PyArray1<NodeT>> {
