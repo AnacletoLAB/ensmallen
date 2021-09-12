@@ -13,11 +13,11 @@ impl Graph {
         let mut result = format!("{} G {{\n", graph_type);
 
         if self.has_node_types() {
-            result.extend("node [colorscheme=spectral11 style=filled ]".chars());
+            result.extend("node [colorscheme=set312 style=filled ]".chars());
         }
 
         if self.has_edge_types() {
-            result.extend("edge [colorscheme=spectral11]".chars());
+            result.extend("edge [colorscheme=set312]".chars());
         }
 
         // add the nodes info
