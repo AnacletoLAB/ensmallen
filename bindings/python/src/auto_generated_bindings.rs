@@ -9623,11 +9623,11 @@ impl Graph {
     /// Raises
     /// -------
     /// ValueError
-    ///     If the edge type for the new singletons is provided but the graph does not have edge types.
+    ///     If the edge type for the new selfloops is provided but the graph does not have edge types.
     /// ValueError
-    ///     If the edge weight for the new singletons is provided but the graph does not have edge weights.
+    ///     If the edge weight for the new selfloops is provided but the graph does not have edge weights.
     /// ValueError
-    ///     If the edge weight for the new singletons is NOT provided but the graph does have edge weights.
+    ///     If the edge weight for the new selfloops is NOT provided but the graph does have edge weights.
     ///
     pub fn add_selfloops(
         &self,
@@ -9958,10 +9958,10 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, use_node_names)"]
+    #[text_signature = "($self)"]
     /// Print the current graph in a format compatible with Graphviz dot's format
-    pub fn to_dot(&self, use_node_names: Option<bool>) -> String {
-        self.graph.to_dot(use_node_names)
+    pub fn to_dot(&self) -> String {
+        self.graph.to_dot()
     }
 
     #[automatically_generated_binding]

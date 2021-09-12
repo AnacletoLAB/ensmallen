@@ -172,6 +172,61 @@ impl Graph {
     }
 
     #[args(py_kwargs = "**")]
+    #[text_signature = "($self, node_ids, add_selfloops_where_missing, complete)"]
+    /// Return subsampled edges connected to the given node Ids.
+    ///
+    /// Parameters
+    /// --------------------
+    /// node_ids: Vec<NodeT>,
+    ///     List of nodes whose edges are to return.
+    /// add_selfloops_where_missing: Optional[bool],
+    ///     Whether to add selfloops where they are missing. This parameter only applies to laplacian edge weighting method. By default, true.
+    /// complete: Optional[bool] = True,
+    ///     Whether to return the edges in both directions (when dealing with an undirected graph).
+    ///
+    /// Returns
+    /// --------------------
+    /// Tuple with the sampled nodes and the computed kernels.
+    pub fn get_edge_ids_from_node_ids(
+        &self,
+        node_ids: Vec<NodeT>,
+        add_selfloops_where_missing: Option<bool>,
+        complete: Option<bool>,
+    ) -> PyResult<Py<PyArray2<NodeT>>> {
+        // Acquire the python gil.
+        let gil = pyo3::Python::acquire_gil();
+
+        // If the required edge weighting method are the weights, we extract the weights
+        // iterator and populate the kernel using the weights.
+        let mut edge_ids: Vec<(NodeT, NodeT)> = unsafe {
+            self.graph.par_iter_subsampled_binary_adjacency_matrix(
+                &node_ids,
+                add_selfloops_where_missing,
+                complete,
+            )
+        }
+        .map(|(src, _, dst, _)| (src, dst))
+        .collect();
+
+        edge_ids.par_sort_unstable();
+        let edges_number = edge_ids.len();
+
+        let edge_ids_vector = ThreadDataRaceAware {
+            t: PyArray2::new(gil.python(), [edges_number, 2], false),
+        };
+
+        edge_ids
+            .into_par_iter()
+            .enumerate()
+            .for_each(|(i, (src, dst))| unsafe {
+                *edge_ids_vector.t.uget_mut([i, 0]) = src;
+                *edge_ids_vector.t.uget_mut([i, 1]) = dst;
+            });
+
+        Ok(edge_ids_vector.t.to_owned())
+    }
+
+    #[args(py_kwargs = "**")]
     #[text_signature = "($self, number_of_nodes_to_sample, random_state, root_node, node_sampling_method, edge_weighting_methods, add_selfloops_where_missing, unique)"]
     /// Return subsampled nodes according to the given method and parameters.
     ///

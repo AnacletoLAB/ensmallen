@@ -1260,8 +1260,8 @@ pub fn test_transitivity(graph: &mut Graph, verbose: Option<bool>) -> Result<()>
                 "The to_dot of the first graph is: \n {}\n",
                 "The to_dot of the second graph is: \n {}\n",
             ),
-            four_iterations.to_dot(Some(false)),
-            two_times_two.to_dot(Some(false))
+            four_iterations.to_dot(),
+            two_times_two.to_dot()
         );
     }
     let mut transitive_closure = graph.get_transitive_closure(None, verbose);
