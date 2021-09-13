@@ -440,17 +440,17 @@ impl Graph {
         let minimum_node_id = minimum_node_id.unwrap_or(0);
         let include_selfloops = include_selfloops.unwrap_or(false);
         let directed = directed.unwrap_or(false);
-        let node_type = node_type.unwrap_or("connected");
+        let node_type = node_type.unwrap_or("tree");
         let node_types = NodeTypeVocabulary::from_structs(
             vec![Some(vec![0]); nodes_number as usize],
             Vocabulary::from_reverse_map(vec![node_type.to_owned()])?,
         );
 
-        let edge_type = edge_type.unwrap_or("connected");
+        let edge_type = edge_type.unwrap_or("tree");
         let edge_types_vocabulary: Vocabulary<EdgeTypeT> =
             Vocabulary::from_reverse_map(vec![edge_type.to_owned()])?;
         let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + nodes_number));
-        let name = name.unwrap_or("Connected");
+        let name = name.unwrap_or("Tree");
         let has_edge_weights = weight.is_some();
 
         // Get the generator the chain in the middle of the two cliques
