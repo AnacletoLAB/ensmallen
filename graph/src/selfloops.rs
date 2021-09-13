@@ -12,9 +12,9 @@ impl Graph {
     /// `weight`: Option<WeightT> - The weight to use for the new selfloops edges.
     ///
     /// # Raises
-    /// * If the edge type for the new singletons is provided but the graph does not have edge types.
-    /// * If the edge weight for the new singletons is provided but the graph does not have edge weights.
-    /// * If the edge weight for the new singletons is NOT provided but the graph does have edge weights.
+    /// * If the edge type for the new selfloops is provided but the graph does not have edge types.
+    /// * If the edge weight for the new selfloops is provided but the graph does not have edge weights.
+    /// * If the edge weight for the new selfloops is NOT provided but the graph does have edge weights.
     pub fn add_selfloops(
         &self,
         edge_type_name: Option<&str>,
