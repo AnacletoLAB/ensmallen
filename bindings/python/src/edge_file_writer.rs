@@ -3,7 +3,7 @@ use graph::EdgeFileWriter;
 use pyo3::types::PyDict;
 
 #[pymethods]
-impl EnsmallenGraph {
+impl Graph {
     #[args(py_kwargs = "**")]
     #[text_signature = "($self, path, *, verbose, separator, header, sources_column_number, sources_column, destinations_column_number, destinations_column, weights_column_number, weights_column, edge_types_column_number, edges_type_column, numeric_node_ids, directed)"]
     /// Write to disk the edges (and optionally the metadata) of the graph.

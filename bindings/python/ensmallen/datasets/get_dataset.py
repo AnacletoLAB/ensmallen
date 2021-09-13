@@ -1,6 +1,6 @@
 """Utility to automatically retrieve a graph by name and repository."""
 from typing import Optional, Any, Callable, List
-from ensmallen import EnsmallenGraph
+from ensmallen import Graph
 from ensmallen import datasets
 from glob import glob
 import compress_json
@@ -137,7 +137,7 @@ def get_dataset(
     graph_name: str,
     repository: str,
     version: Optional[str] = None
-) -> Callable[[Any], EnsmallenGraph]:
+) -> Callable[[Any], Graph]:
     """Return the graph curresponding to the given graph name, repository and version.
 
     Parameters

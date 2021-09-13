@@ -1,4 +1,4 @@
-from ensmallen import EnsmallenGraph  # pylint: disable=no-name-in-module
+from ensmallen import Graph  # pylint: disable=no-name-in-module
 from tqdm.auto import tqdm
 import numpy as np
 from ensmallen.datasets.linqs import Cora

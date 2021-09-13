@@ -24,7 +24,7 @@ Please cite the following if you use the data:
 from typing import Dict
 
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
-from ...ensmallen import EnsmallenGraph  # pylint: disable=import-error
+from ...ensmallen import Graph  # pylint: disable=import-error
 
 
 def CandidateDivisionWor1BacteriumRifoxya2Full3621(
@@ -35,7 +35,7 @@ def CandidateDivisionWor1BacteriumRifoxya2Full3621(
     cache_path: str = "graphs/string",
     version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
-) -> EnsmallenGraph:
+) -> Graph:
     """Return new instance of the candidate division WOR-1 bacterium RIFOXYA2_FULL_36_21 graph.
 
     The graph is automatically retrieved from the STRING repository.	

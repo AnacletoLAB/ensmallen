@@ -4,16 +4,16 @@ import os
 import pandas as pd
 import numpy as np
 from typing import Tuple
-from ensmallen import EnsmallenGraph
+from ensmallen import Graph
 from tqdm.auto import tqdm
 
 
-def get_words_data(graph: EnsmallenGraph) -> Tuple[EnsmallenGraph, pd.DataFrame]:
+def get_words_data(graph: Graph) -> Tuple[Graph, pd.DataFrame]:
     """Return dataframe with words features.
 
     Parameters
     --------------------
-    graph: EnsmallenGraph,
+    graph: Graph,
         Graph containing the words features to be extracted.
 
     Returns

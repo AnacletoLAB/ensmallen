@@ -70,25 +70,25 @@ impl From<Function> for  Binding {
                 },
                 x if x == "Graph" => {
                     (
-                        format!("{}: EnsmallenGraph", arg.name),
+                        format!("{}: Graph", arg.name),
                         Some(format!("{}.graph", arg.name)),
                     )
                 },
                 x if x == "&Graph" => {
                     (
-                        format!("{}: &EnsmallenGraph", arg.name),
+                        format!("{}: &Graph", arg.name),
                         Some(format!("&{}.graph", arg.name)),
                     )
                 },
                 x if x == "Option<Graph>" => {
                     (
-                        format!("{}: Option<EnsmallenGraph>", arg.name),
+                        format!("{}: Option<Graph>", arg.name),
                         Some(format!("{}.map(|sg| sg.graph)", arg.name)),
                     )
                 },
                 x if x == "Option<&Graph>" => {
                     (
-                        format!("{}: Option<&EnsmallenGraph>", arg.name),
+                        format!("{}: Option<&Graph>", arg.name),
                         Some(format!("{}.map(|sg| &sg.graph)", arg.name)),
                     )
                 },
@@ -118,7 +118,7 @@ impl From<Function> for  Binding {
         let mut body = format!(
             "{prefix}{name}({args_names})",
             prefix = match (func.is_method(), func.is_static()) {
-                (true, true) => "Graph::",
+                (true, true) => "graph::Graph::",
                 (true, false) => "self.graph.",
                 (false, true) => "graph::",
                 (false, false) => unreachable!("A function cannot accept self! It would be a method!"),
@@ -146,13 +146,13 @@ impl From<Function> for  Binding {
                                 "".to_string()
                             }
                             (true, false) => {
-                                body = format!("EnsmallenGraph{{graph: {}}}", body);
+                                body = format!("Graph{{graph: {}}}", body);
 
                                 if r_type == "&Graph" {
                                     body = format!("{}.to_owned()", body);
                                 }
 
-                                " -> EnsmallenGraph ".to_string()
+                                " -> Graph ".to_string()
                             }
                             _ => {
                                 panic!("Not implemented yet!");
@@ -169,18 +169,18 @@ impl From<Function> for  Binding {
                                 " -> PyResult<()> ".to_string()
                             }
                             (true, false) => {
-                                body = format!("Ok(EnsmallenGraph{{graph: pe!({})?}})", body);
+                                body = format!("Ok(Graph{{graph: pe!({})?}})", body);
 
                                 if r_type == "Result<&Graph>" {
                                     body = format!("Ok(pe!({})?.to_owned())", body);
                                 }
 
-                                " -> PyResult<EnsmallenGraph> ".to_string()
+                                " -> PyResult<Graph> ".to_string()
                             }
                             (false, false) => {
-                                body = format!("Ok(EnsmallenGraph{{graph: pe!({})?}})", body);
+                                body = format!("Ok(Graph{{graph: pe!({})?}})", body);
 
-                                " -> PyResult<EnsmallenGraph> ".to_string()
+                                " -> PyResult<Graph> ".to_string()
                             }
                             _ => {
                                 panic!("Not implemented yet!");
@@ -188,12 +188,12 @@ impl From<Function> for  Binding {
                         }
                     }
                     x if x == "(Graph, Graph)" => {
-                        body = format!("let (g1, g2) = {}; (EnsmallenGraph{{graph: g1}}, EnsmallenGraph{{graph: g2}})", body);
-                        " -> (EnsmallenGraph, EnsmallenGraph) ".to_string()
+                        body = format!("let (g1, g2) = {}; (Graph{{graph: g1}}, Graph{{graph: g2}})", body);
+                        " -> (Graph, Graph) ".to_string()
                     }
                     x if x == "Result<(Graph, Graph)>" => {
-                        body = format!("let (g1, g2) = pe!({})?; Ok((EnsmallenGraph{{graph: g1}}, EnsmallenGraph{{graph: g2}}))", body);
-                        " -> PyResult<(EnsmallenGraph, EnsmallenGraph)> ".to_string()
+                        body = format!("let (g1, g2) = pe!({})?; Ok((Graph{{graph: g1}}, Graph{{graph: g2}}))", body);
+                        " -> PyResult<(Graph, Graph)> ".to_string()
                     }
                     // TODO!: add also recursive numpy conversion for tuples and such
                     x if x == "Vec<Primitive>" => {

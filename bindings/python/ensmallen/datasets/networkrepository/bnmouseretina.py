@@ -33,7 +33,7 @@ Sebastian and Bazin, Pierre-Louis and Lewis, Lindsay B. and Oros-Peusquens, Ana-
 from typing import Dict
 
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
-from ...ensmallen import EnsmallenGraph  # pylint: disable=import-error
+from ...ensmallen import Graph  # pylint: disable=import-error
 
 
 def BNMouseRetina(
@@ -44,7 +44,7 @@ def BNMouseRetina(
     cache_path: str = "graphs/networkrepository",
     version: str = "latest",
     **additional_graph_kwargs: Dict
-) -> EnsmallenGraph:
+) -> Graph:
     """Return new instance of the bn-mouse_retina_1 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	

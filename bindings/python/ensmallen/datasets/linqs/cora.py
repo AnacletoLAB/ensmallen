@@ -36,7 +36,7 @@ Please cite the following if you use the data:
 from typing import Dict
 from .parse_linqs import parse_linqs_incidence_matrix
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
-from ...ensmallen import EnsmallenGraph  # pylint: disable=import-error
+from ...ensmallen import Graph  # pylint: disable=import-error
 
 
 def Cora(
@@ -47,7 +47,7 @@ def Cora(
     cache_path: str = "graphs/linqs",
     version: str = "latest",
     **additional_graph_kwargs: Dict
-) -> EnsmallenGraph:
+) -> Graph:
     """Return new instance of the Cora graph.
 
     The graph is automatically retrieved from the LINQS repository.	The Cora dataset consists of 2708 scientific publications classified into

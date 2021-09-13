@@ -3,7 +3,7 @@ use pyo3::{wrap_pyfunction, wrap_pymodule};
 
 #[pymodule]
 fn ensmallen(_py: Python, m: &PyModule) -> PyResult<()> {
-    m.add_class::<EnsmallenGraph>()?;
+    m.add_class::<Graph>()?;
     m.add_wrapped(wrap_pymodule!(preprocessing))?;
     m.add_wrapped(wrap_pymodule!(edge_list_utils))?;
 
@@ -1704,12 +1704,12 @@ pub fn sort_numeric_edge_list_inplace(
 }
 
 #[pymethods]
-impl EnsmallenGraph {
+impl Graph {
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns unweighted laplacian transformation of the graph
-    pub fn get_laplacian_transformed_graph(&self) -> EnsmallenGraph {
-        EnsmallenGraph {
+    pub fn get_laplacian_transformed_graph(&self) -> Graph {
+        Graph {
             graph: self.graph.get_laplacian_transformed_graph(),
         }
     }
@@ -1724,8 +1724,8 @@ impl EnsmallenGraph {
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns unweighted random walk normalized laplacian transformation of the graph
-    pub fn get_random_walk_normalized_laplacian_transformed_graph(&self) -> EnsmallenGraph {
-        EnsmallenGraph {
+    pub fn get_random_walk_normalized_laplacian_transformed_graph(&self) -> Graph {
+        Graph {
             graph: self
                 .graph
                 .get_random_walk_normalized_laplacian_transformed_graph(),
@@ -1741,8 +1741,8 @@ impl EnsmallenGraph {
     /// ValueError
     ///     The graph must be undirected, as we do not currently support this transformation for directed graphs.
     ///
-    pub fn get_symmetric_normalized_laplacian_transformed_graph(&self) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    pub fn get_symmetric_normalized_laplacian_transformed_graph(&self) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(self
                 .graph
                 .get_symmetric_normalized_laplacian_transformed_graph())?,
@@ -1758,8 +1758,8 @@ impl EnsmallenGraph {
     /// ValueError
     ///     The graph must be undirected, as we do not currently support this transformation for directed graphs.
     ///
-    pub fn get_symmetric_normalized_transformed_graph(&self) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    pub fn get_symmetric_normalized_transformed_graph(&self) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(self.graph.get_symmetric_normalized_transformed_graph())?,
         })
     }
@@ -2111,8 +2111,8 @@ impl EnsmallenGraph {
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns graph with node IDs sorted by increasing outbound node degree
-    pub fn sort_by_increasing_outbound_node_degree(&self) -> EnsmallenGraph {
-        EnsmallenGraph {
+    pub fn sort_by_increasing_outbound_node_degree(&self) -> Graph {
+        Graph {
             graph: self.graph.sort_by_increasing_outbound_node_degree(),
         }
     }
@@ -2120,8 +2120,8 @@ impl EnsmallenGraph {
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns graph with node IDs sorted by decreasing outbound node degree
-    pub fn sort_by_decreasing_outbound_node_degree(&self) -> EnsmallenGraph {
-        EnsmallenGraph {
+    pub fn sort_by_decreasing_outbound_node_degree(&self) -> Graph {
+        Graph {
             graph: self.graph.sort_by_decreasing_outbound_node_degree(),
         }
     }
@@ -2129,10 +2129,94 @@ impl EnsmallenGraph {
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns graph with node IDs sorted by lexicographic order
-    pub fn sort_by_node_lexicographic_order(&self) -> EnsmallenGraph {
-        EnsmallenGraph {
+    pub fn sort_by_node_lexicographic_order(&self) -> Graph {
+        Graph {
             graph: self.graph.sort_by_node_lexicographic_order(),
         }
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, root_node_id)"]
+    /// Returns topological sorting map using breadth-first search from the given node.
+    ///
+    /// Parameters
+    /// ----------
+    /// root_node_id: int,
+    ///     Node ID of node to be used as root of BFS
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given root node ID does not exist in the graph
+    ///
+    pub fn get_bfs_topological_sorting_from_node_id(
+        &self,
+        root_node_id: NodeT,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self
+                .graph
+                .get_bfs_topological_sorting_from_node_id(root_node_id))?,
+            NodeT
+        ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, root_node_id)"]
+    /// Returns topological sorting reversed map using breadth-first search from the given node.
+    ///
+    /// Parameters
+    /// ----------
+    /// root_node_id: int,
+    ///     Node ID of node to be used as root of BFS
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given root node ID does not exist in the graph
+    ///
+    pub fn get_reversed_bfs_topological_sorting_from_node_id(
+        &self,
+        root_node_id: NodeT,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self
+                .graph
+                .get_reversed_bfs_topological_sorting_from_node_id(root_node_id))?,
+            NodeT
+        ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, root_node_id)"]
+    /// Returns graph with node IDs sorted using a BFS
+    ///
+    /// Parameters
+    /// ----------
+    /// root_node_id: int,
+    ///     Node ID of node to be used as root of BFS
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given root node ID does not exist in the graph
+    ///
+    pub fn sort_by_bfs_topological_sorting_from_node_id(
+        &self,
+        root_node_id: NodeT,
+    ) -> PyResult<Graph> {
+        Ok(Graph {
+            graph: pe!(self
+                .graph
+                .sort_by_bfs_topological_sorting_from_node_id(root_node_id))?,
+        })
     }
 
     #[automatically_generated_binding]
@@ -2204,8 +2288,8 @@ impl EnsmallenGraph {
         minimum_component_size: Option<NodeT>,
         top_k_components: Option<NodeT>,
         verbose: Option<bool>,
-    ) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    ) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(self.graph.remove_components(
                 node_names,
                 node_types,
@@ -2223,7 +2307,7 @@ impl EnsmallenGraph {
     ///
     /// Parameters
     /// ----------
-    /// other: EnsmallenGraph,
+    /// other: Graph,
     ///     The graph to check against.
     ///
     ///
@@ -2238,7 +2322,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If one of the two graphs has edge types and the other does not.
     ///
-    pub fn overlaps(&self, other: &EnsmallenGraph) -> PyResult<bool> {
+    pub fn overlaps(&self, other: &Graph) -> PyResult<bool> {
         pe!(self.graph.overlaps(&other.graph))
     }
 
@@ -2248,7 +2332,7 @@ impl EnsmallenGraph {
     ///
     /// Parameters
     /// ----------
-    /// other: EnsmallenGraph,
+    /// other: Graph,
     ///     The graph to check against.
     ///
     ///
@@ -2263,7 +2347,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If one of the two graphs has edge types and the other does not.
     ///
-    pub fn contains(&self, other: &EnsmallenGraph) -> PyResult<bool> {
+    pub fn contains(&self, other: &Graph) -> PyResult<bool> {
         pe!(self.graph.contains(&other.graph))
     }
 
@@ -2947,8 +3031,8 @@ impl EnsmallenGraph {
         max_degree: Option<NodeT>,
         distance_name: Option<&str>,
         verbose: Option<bool>,
-    ) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    ) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(self.graph.generate_new_edges_from_node_features(
                 features,
                 neighbours_number,
@@ -3007,8 +3091,8 @@ impl EnsmallenGraph {
     /// edge_type: str,
     ///     The edge type to assing to all the edges.
     ///
-    pub fn set_all_edge_types(&self, edge_type: String) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    pub fn set_all_edge_types(&self, edge_type: String) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(self.graph.set_all_edge_types(edge_type))?,
         })
     }
@@ -3038,8 +3122,8 @@ impl EnsmallenGraph {
     /// node_type: str,
     ///     The node type to assing to all the nodes.
     ///
-    pub fn set_all_node_types(&self, node_type: String) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    pub fn set_all_node_types(&self, node_type: String) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(self.graph.set_all_node_types(node_type))?,
         })
     }
@@ -3182,8 +3266,8 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the given node type ID does not exists in the graph.
     ///
-    pub fn remove_node_type_id(&self, node_type_id: NodeTypeT) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    pub fn remove_node_type_id(&self, node_type_id: NodeTypeT) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(self.graph.remove_node_type_id(node_type_id))?,
         })
     }
@@ -3200,8 +3284,8 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the graph does not have node types.
     ///
-    pub fn remove_singleton_node_types(&self) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    pub fn remove_singleton_node_types(&self) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(self.graph.remove_singleton_node_types())?,
         })
     }
@@ -3226,8 +3310,8 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the given node type name does not exists in the graph.
     ///
-    pub fn remove_node_type_name(&self, node_type_name: &str) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    pub fn remove_node_type_name(&self, node_type_name: &str) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(self.graph.remove_node_type_name(node_type_name))?,
         })
     }
@@ -3277,8 +3361,8 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the given edge type ID does not exists in the graph.
     ///
-    pub fn remove_edge_type_id(&self, edge_type_id: EdgeTypeT) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    pub fn remove_edge_type_id(&self, edge_type_id: EdgeTypeT) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(self.graph.remove_edge_type_id(edge_type_id))?,
         })
     }
@@ -3295,8 +3379,8 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the graph does not have edge types.
     ///
-    pub fn remove_singleton_edge_types(&self) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    pub fn remove_singleton_edge_types(&self) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(self.graph.remove_singleton_edge_types())?,
         })
     }
@@ -3321,8 +3405,8 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the given edge type name does not exists in the graph.
     ///
-    pub fn remove_edge_type_name(&self, edge_type_name: &str) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    pub fn remove_edge_type_name(&self, edge_type_name: &str) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(self.graph.remove_edge_type_name(edge_type_name))?,
         })
     }
@@ -3354,8 +3438,8 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the graph does not have node types.
     ///
-    pub fn remove_node_types(&self) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    pub fn remove_node_types(&self) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(self.graph.remove_node_types())?,
         })
     }
@@ -3389,8 +3473,8 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the graph does not have edge types.
     ///
-    pub fn remove_edge_types(&self) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    pub fn remove_edge_types(&self) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(self.graph.remove_edge_types())?,
         })
     }
@@ -3422,8 +3506,8 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the graph does not have edge weights.
     ///
-    pub fn remove_edge_weights(&self) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    pub fn remove_edge_weights(&self) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(self.graph.remove_edge_weights())?,
         })
     }
@@ -3681,10 +3765,10 @@ impl EnsmallenGraph {
     ///
     /// Parameters
     /// ----------
-    /// other: EnsmallenGraph,
+    /// other: Graph,
     ///     graph towards remap the nodes to.
     ///
-    pub fn are_nodes_remappable(&self, other: &EnsmallenGraph) -> bool {
+    pub fn are_nodes_remappable(&self, other: &Graph) -> bool {
         self.graph.are_nodes_remappable(&other.graph)
     }
 
@@ -3703,8 +3787,8 @@ impl EnsmallenGraph {
     /// This method will cause a panic if the node IDs are either:
     ///  * Not unique
     ///  * Not available for each of the node IDs of the graph.
-    pub unsafe fn remap_unchecked_from_node_ids(&self, node_ids: Vec<NodeT>) -> EnsmallenGraph {
-        EnsmallenGraph {
+    pub unsafe fn remap_unchecked_from_node_ids(&self, node_ids: Vec<NodeT>) -> Graph {
+        Graph {
             graph: self.graph.remap_unchecked_from_node_ids(node_ids),
         }
     }
@@ -3726,8 +3810,8 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the given node IDs are not available for all the values in the graph.
     ///
-    pub fn remap_from_node_ids(&self, node_ids: Vec<NodeT>) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    pub fn remap_from_node_ids(&self, node_ids: Vec<NodeT>) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(self.graph.remap_from_node_ids(node_ids))?,
         })
     }
@@ -3749,8 +3833,8 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the given node names are not available for all the values in the graph.
     ///
-    pub fn remap_from_node_names(&self, node_names: Vec<&str>) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    pub fn remap_from_node_names(&self, node_names: Vec<&str>) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(self.graph.remap_from_node_names(node_names))?,
         })
     }
@@ -3761,11 +3845,11 @@ impl EnsmallenGraph {
     ///
     /// Parameters
     /// ----------
-    /// other: EnsmallenGraph,
+    /// other: Graph,
     ///     The graph to remap towards.
     ///
-    pub fn remap_from_graph(&self, other: &EnsmallenGraph) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    pub fn remap_from_graph(&self, other: &Graph) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(self.graph.remap_from_graph(&other.graph))?,
         })
     }
@@ -3784,7 +3868,7 @@ impl EnsmallenGraph {
     ///     Number of negatives edges to include.
     /// random_state: Optional[int],
     ///     random_state to use to reproduce negative edge set.
-    /// seed_graph: Optional[EnsmallenGraph],
+    /// seed_graph: Optional[Graph],
     ///     Optional graph to use to filter the negative edges. The negative edges generated when this variable is provided will always have a node within this graph.
     /// only_from_same_component: Optional[bool],
     ///     Whether to sample negative edges only from nodes that are from the same component.
@@ -3795,11 +3879,11 @@ impl EnsmallenGraph {
         &self,
         negatives_number: EdgeT,
         random_state: Option<EdgeT>,
-        seed_graph: Option<&EnsmallenGraph>,
+        seed_graph: Option<&Graph>,
         only_from_same_component: Option<bool>,
         verbose: Option<bool>,
-    ) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    ) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(self.graph.sample_negatives(
                 negatives_number,
                 random_state,
@@ -3855,7 +3939,7 @@ impl EnsmallenGraph {
         edge_types: Option<Vec<Option<String>>>,
         include_all_edge_types: Option<bool>,
         verbose: Option<bool>,
-    ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
+    ) -> PyResult<(Graph, Graph)> {
         let (g1, g2) = pe!(self.graph.connected_holdout(
             train_size,
             random_state,
@@ -3863,7 +3947,7 @@ impl EnsmallenGraph {
             include_all_edge_types,
             verbose
         ))?;
-        Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
+        Ok((Graph { graph: g1 }, Graph { graph: g2 }))
     }
 
     #[automatically_generated_binding]
@@ -3907,7 +3991,7 @@ impl EnsmallenGraph {
         edge_types: Option<Vec<Option<String>>>,
         min_number_overlaps: Option<EdgeT>,
         verbose: Option<bool>,
-    ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
+    ) -> PyResult<(Graph, Graph)> {
         let (g1, g2) = pe!(self.graph.random_holdout(
             train_size,
             random_state,
@@ -3916,7 +4000,7 @@ impl EnsmallenGraph {
             min_number_overlaps,
             verbose
         ))?;
-        Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
+        Ok((Graph { graph: g1 }, Graph { graph: g2 }))
     }
 
     #[automatically_generated_binding]
@@ -4015,13 +4099,13 @@ impl EnsmallenGraph {
         train_size: f64,
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
-    ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
+    ) -> PyResult<(Graph, Graph)> {
         let (g1, g2) = pe!(self.graph.get_node_label_holdout_graphs(
             train_size,
             use_stratification,
             random_state
         ))?;
-        Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
+        Ok((Graph { graph: g1 }, Graph { graph: g2 }))
     }
 
     #[automatically_generated_binding]
@@ -4058,13 +4142,13 @@ impl EnsmallenGraph {
         train_size: f64,
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
-    ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
+    ) -> PyResult<(Graph, Graph)> {
         let (g1, g2) = pe!(self.graph.get_edge_label_holdout_graphs(
             train_size,
             use_stratification,
             random_state
         ))?;
-        Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
+        Ok((Graph { graph: g1 }, Graph { graph: g2 }))
     }
 
     #[automatically_generated_binding]
@@ -4101,8 +4185,8 @@ impl EnsmallenGraph {
         nodes_number: NodeT,
         random_state: Option<usize>,
         verbose: Option<bool>,
-    ) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    ) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(self
                 .graph
                 .get_random_subgraph(nodes_number, random_state, verbose))?,
@@ -4137,13 +4221,13 @@ impl EnsmallenGraph {
         train_size: f64,
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
-    ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
+    ) -> PyResult<(Graph, Graph)> {
         let (g1, g2) = pe!(self.graph.get_node_label_random_holdout(
             train_size,
             use_stratification,
             random_state
         ))?;
-        Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
+        Ok((Graph { graph: g1 }, Graph { graph: g2 }))
     }
 
     #[automatically_generated_binding]
@@ -4177,12 +4261,12 @@ impl EnsmallenGraph {
         k_index: usize,
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
-    ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
+    ) -> PyResult<(Graph, Graph)> {
         let (g1, g2) =
             pe!(self
                 .graph
                 .get_node_label_kfold(k, k_index, use_stratification, random_state))?;
-        Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
+        Ok((Graph { graph: g1 }, Graph { graph: g2 }))
     }
 
     #[automatically_generated_binding]
@@ -4219,13 +4303,13 @@ impl EnsmallenGraph {
         train_size: f64,
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
-    ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
+    ) -> PyResult<(Graph, Graph)> {
         let (g1, g2) = pe!(self.graph.get_edge_label_random_holdout(
             train_size,
             use_stratification,
             random_state
         ))?;
-        Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
+        Ok((Graph { graph: g1 }, Graph { graph: g2 }))
     }
 
     #[automatically_generated_binding]
@@ -4265,12 +4349,12 @@ impl EnsmallenGraph {
         k_index: usize,
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
-    ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
+    ) -> PyResult<(Graph, Graph)> {
         let (g1, g2) =
             pe!(self
                 .graph
                 .get_edge_label_kfold(k, k_index, use_stratification, random_state))?;
-        Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
+        Ok((Graph { graph: g1 }, Graph { graph: g2 }))
     }
 
     #[automatically_generated_binding]
@@ -4312,7 +4396,7 @@ impl EnsmallenGraph {
         edge_types: Option<Vec<Option<String>>>,
         random_state: Option<EdgeT>,
         verbose: Option<bool>,
-    ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
+    ) -> PyResult<(Graph, Graph)> {
         let (g1, g2) = pe!(self.graph.get_edge_prediction_kfold(
             k,
             k_index,
@@ -4320,7 +4404,7 @@ impl EnsmallenGraph {
             random_state,
             verbose
         ))?;
-        Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
+        Ok((Graph { graph: g1 }, Graph { graph: g2 }))
     }
 
     #[automatically_generated_binding]
@@ -6185,6 +6269,22 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
+    #[text_signature = "($self, src)"]
+    pub fn get_unchecked_breadth_first_search_from_node_ids(
+        &self,
+        src: NodeT,
+    ) -> Py<PyArray1<NodeT>> {
+        let gil = pyo3::Python::acquire_gil();
+        to_ndarray_1d!(
+            gil,
+            unsafe{self.graph
+                .get_unchecked_breadth_first_search_from_node_ids(src, None, None, None)
+                .into_distances()},
+            NodeT
+        )
+    }
+
+    #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns the unweighted degree of every node in the graph
     pub fn get_node_degrees(&self) -> Py<PyArray1<NodeT>> {
@@ -6311,8 +6411,8 @@ impl EnsmallenGraph {
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Return a new instance of the current graph as directed
-    pub fn to_directed(&self) -> EnsmallenGraph {
-        EnsmallenGraph {
+    pub fn to_directed(&self) -> Graph {
+        Graph {
             graph: self.graph.to_directed(),
         }
     }
@@ -6320,8 +6420,8 @@ impl EnsmallenGraph {
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Return the directed graph from the upper triangular adjacency matrix.
-    pub fn to_upper_triangular(&self) -> EnsmallenGraph {
-        EnsmallenGraph {
+    pub fn to_upper_triangular(&self) -> Graph {
+        Graph {
             graph: self.graph.to_upper_triangular(),
         }
     }
@@ -6329,8 +6429,8 @@ impl EnsmallenGraph {
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Return the directed graph from the lower triangular adjacency matrix.
-    pub fn to_lower_triangular(&self) -> EnsmallenGraph {
-        EnsmallenGraph {
+    pub fn to_lower_triangular(&self) -> Graph {
+        Graph {
             graph: self.graph.to_lower_triangular(),
         }
     }
@@ -6338,8 +6438,8 @@ impl EnsmallenGraph {
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Return the graph from the main diagonal adjacency matrix.
-    pub fn to_main_diagonal(&self) -> EnsmallenGraph {
-        EnsmallenGraph {
+    pub fn to_main_diagonal(&self) -> Graph {
+        Graph {
             graph: self.graph.to_main_diagonal(),
         }
     }
@@ -6347,8 +6447,8 @@ impl EnsmallenGraph {
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Return the graph from the anti-diagonal adjacency matrix.
-    pub fn to_anti_diagonal(&self) -> EnsmallenGraph {
-        EnsmallenGraph {
+    pub fn to_anti_diagonal(&self) -> Graph {
+        Graph {
             graph: self.graph.to_anti_diagonal(),
         }
     }
@@ -6356,8 +6456,8 @@ impl EnsmallenGraph {
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Return the graph from the bidiagonal adjacency matrix.
-    pub fn to_bidiagonal(&self) -> EnsmallenGraph {
-        EnsmallenGraph {
+    pub fn to_bidiagonal(&self) -> Graph {
+        Graph {
             graph: self.graph.to_bidiagonal(),
         }
     }
@@ -6365,8 +6465,8 @@ impl EnsmallenGraph {
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Return the graph from the arrowhead adjacency matrix.
-    pub fn to_arrowhead(&self) -> EnsmallenGraph {
-        EnsmallenGraph {
+    pub fn to_arrowhead(&self) -> Graph {
+        Graph {
             graph: self.graph.to_arrowhead(),
         }
     }
@@ -6374,8 +6474,8 @@ impl EnsmallenGraph {
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Return the graph from the transposed adjacency matrix.
-    pub fn to_transposed(&self) -> EnsmallenGraph {
-        EnsmallenGraph {
+    pub fn to_transposed(&self) -> Graph {
+        Graph {
             graph: self.graph.to_transposed(),
         }
     }
@@ -6383,8 +6483,8 @@ impl EnsmallenGraph {
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Return the complementary graph.
-    pub fn to_complementary(&self) -> EnsmallenGraph {
-        EnsmallenGraph {
+    pub fn to_complementary(&self) -> Graph {
+        Graph {
             graph: self.graph.to_complementary(),
         }
     }
@@ -6440,16 +6540,12 @@ impl EnsmallenGraph {
     ///
     /// Parameters
     /// ----------
-    /// other: EnsmallenGraph,
+    /// other: Graph,
     ///     graph to create overlap report with.
     /// verbose: Optional[bool],
     ///     Whether to shor the loading bars.
     ///
-    pub fn overlap_textual_report(
-        &self,
-        other: &EnsmallenGraph,
-        verbose: Option<bool>,
-    ) -> PyResult<String> {
+    pub fn overlap_textual_report(&self, other: &Graph, verbose: Option<bool>) -> PyResult<String> {
         pe!(self.graph.overlap_textual_report(&other.graph, verbose))
     }
 
@@ -6540,9 +6636,9 @@ impl EnsmallenGraph {
         weight: Option<WeightT>,
         directed: Option<bool>,
         name: Option<&str>,
-    ) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
-            graph: pe!(Graph::generate_random_connected_graph(
+    ) -> PyResult<Graph> {
+        Ok(Graph {
+            graph: pe!(graph::Graph::generate_random_connected_graph(
                 random_state,
                 minimum_node_id,
                 minimum_node_sampling,
@@ -6598,9 +6694,9 @@ impl EnsmallenGraph {
         weight: Option<WeightT>,
         directed: Option<bool>,
         name: Option<&str>,
-    ) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
-            graph: pe!(Graph::generate_random_spanning_tree(
+    ) -> PyResult<Graph> {
+        Ok(Graph {
+            graph: pe!(graph::Graph::generate_random_spanning_tree(
                 random_state,
                 minimum_node_id,
                 nodes_number,
@@ -6647,9 +6743,9 @@ impl EnsmallenGraph {
         weight: Option<WeightT>,
         directed: Option<bool>,
         name: Option<&str>,
-    ) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
-            graph: pe!(Graph::generate_circle_graph(
+    ) -> PyResult<Graph> {
+        Ok(Graph {
+            graph: pe!(graph::Graph::generate_circle_graph(
                 minimum_node_id,
                 nodes_number,
                 include_selfloops,
@@ -6695,9 +6791,9 @@ impl EnsmallenGraph {
         weight: Option<WeightT>,
         directed: Option<bool>,
         name: Option<&str>,
-    ) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
-            graph: pe!(Graph::generate_chain_graph(
+    ) -> PyResult<Graph> {
+        Ok(Graph {
+            graph: pe!(graph::Graph::generate_chain_graph(
                 minimum_node_id,
                 nodes_number,
                 include_selfloops,
@@ -6743,9 +6839,9 @@ impl EnsmallenGraph {
         weight: Option<WeightT>,
         directed: Option<bool>,
         name: Option<&str>,
-    ) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
-            graph: pe!(Graph::generate_complete_graph(
+    ) -> PyResult<Graph> {
+        Ok(Graph {
+            graph: pe!(graph::Graph::generate_complete_graph(
                 minimum_node_id,
                 nodes_number,
                 include_selfloops,
@@ -6821,9 +6917,9 @@ impl EnsmallenGraph {
         chain_weight: Option<WeightT>,
         directed: Option<bool>,
         name: Option<&str>,
-    ) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
-            graph: pe!(Graph::generate_barbell_graph(
+    ) -> PyResult<Graph> {
+        Ok(Graph {
+            graph: pe!(graph::Graph::generate_barbell_graph(
                 minimum_node_id,
                 left_clique_nodes_number,
                 right_clique_nodes_number,
@@ -6868,8 +6964,8 @@ impl EnsmallenGraph {
         node_name_mapping: Option<HashMap<String, String>>,
         node_type_name_mapping: Option<HashMap<String, String>>,
         edge_type_name_mapping: Option<HashMap<String, String>>,
-    ) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    ) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(self.graph.replace(
                 node_name_mapping,
                 node_type_name_mapping,
@@ -6943,8 +7039,8 @@ impl EnsmallenGraph {
         filter_singleton_nodes_with_selfloop: Option<bool>,
         filter_selfloops: Option<bool>,
         filter_parallel_edges: Option<bool>,
-    ) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    ) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(self.graph.filter_from_ids(
                 node_ids_to_keep,
                 node_ids_to_filter,
@@ -7027,8 +7123,8 @@ impl EnsmallenGraph {
         filter_singleton_nodes_with_selfloop: Option<bool>,
         filter_selfloops: Option<bool>,
         filter_parallel_edges: Option<bool>,
-    ) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    ) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(self.graph.filter_from_names(
                 node_names_to_keep,
                 node_names_to_filter,
@@ -7056,8 +7152,8 @@ impl EnsmallenGraph {
     ///
     /// Note that this method will remove ALL nodes labeled with unknown node
     /// type!
-    pub fn drop_unknown_node_types(&self) -> EnsmallenGraph {
-        EnsmallenGraph {
+    pub fn drop_unknown_node_types(&self) -> Graph {
+        Graph {
             graph: self.graph.drop_unknown_node_types(),
         }
     }
@@ -7068,8 +7164,8 @@ impl EnsmallenGraph {
     ///
     /// Note that this method will remove ALL edges labeled with unknown edge
     /// type!
-    pub fn drop_unknown_edge_types(&self) -> EnsmallenGraph {
-        EnsmallenGraph {
+    pub fn drop_unknown_edge_types(&self) -> Graph {
+        Graph {
             graph: self.graph.drop_unknown_edge_types(),
         }
     }
@@ -7079,8 +7175,8 @@ impl EnsmallenGraph {
     /// Returns new graph without singleton nodes.
     ///
     /// A node is singleton when does not have neither incoming or outgoing edges.
-    pub fn drop_singleton_nodes(&self) -> EnsmallenGraph {
-        EnsmallenGraph {
+    pub fn drop_singleton_nodes(&self) -> Graph {
+        Graph {
             graph: self.graph.drop_singleton_nodes(),
         }
     }
@@ -7090,8 +7186,8 @@ impl EnsmallenGraph {
     /// Returns new graph without singleton nodes with selfloops.
     ///
     /// A node is singleton with selfloop when does not have neither incoming or outgoing edges.
-    pub fn drop_singleton_nodes_with_selfloops(&self) -> EnsmallenGraph {
-        EnsmallenGraph {
+    pub fn drop_singleton_nodes_with_selfloops(&self) -> Graph {
+        Graph {
             graph: self.graph.drop_singleton_nodes_with_selfloops(),
         }
     }
@@ -7101,8 +7197,8 @@ impl EnsmallenGraph {
     /// Returns new graph without disconnected nodes.
     ///
     /// A disconnected node is a node with no connection to any other node.
-    pub fn drop_disconnected_nodes(&self) -> EnsmallenGraph {
-        EnsmallenGraph {
+    pub fn drop_disconnected_nodes(&self) -> Graph {
+        Graph {
             graph: self.graph.drop_disconnected_nodes(),
         }
     }
@@ -7110,8 +7206,8 @@ impl EnsmallenGraph {
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns new graph without selfloops.
-    pub fn drop_selfloops(&self) -> EnsmallenGraph {
-        EnsmallenGraph {
+    pub fn drop_selfloops(&self) -> Graph {
+        Graph {
             graph: self.graph.drop_selfloops(),
         }
     }
@@ -7119,8 +7215,8 @@ impl EnsmallenGraph {
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns new graph without parallel edges
-    pub fn drop_parallel_edges(&self) -> EnsmallenGraph {
-        EnsmallenGraph {
+    pub fn drop_parallel_edges(&self) -> Graph {
+        Graph {
             graph: self.graph.drop_parallel_edges(),
         }
     }
@@ -7253,6 +7349,44 @@ impl EnsmallenGraph {
     /// Disable all extra perks, reducing memory impact but incresing time requirements
     pub fn disable_all(&mut self) {
         self.graph.disable_all();
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, other)"]
+    /// Return true if the graphs are compatible.
+    ///
+    /// Parameters
+    /// ----------
+    /// other: Graph,
+    ///     The other graph.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If a graph is directed and the other is undirected.
+    /// ValueError
+    ///     If one of the two graphs has edge weights and the other does not.
+    /// ValueError
+    ///     If one of the two graphs has node types and the other does not.
+    /// ValueError
+    ///     If one of the two graphs has edge types and the other does not.
+    ///
+    pub fn is_compatible(&self, other: &Graph) -> PyResult<bool> {
+        pe!(self.graph.is_compatible(&other.graph))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, other)"]
+    /// Return true if the graphs share the same adjacency matrix.
+    ///
+    /// Parameters
+    /// ----------
+    /// other: Graph,
+    ///     The other graph.
+    ///
+    pub fn has_same_adjacency_matrix(&self, other: &Graph) -> PyResult<bool> {
+        pe!(self.graph.has_same_adjacency_matrix(&other.graph))
     }
 
     #[automatically_generated_binding]
@@ -7856,8 +7990,8 @@ impl EnsmallenGraph {
         &self,
         iterations: Option<NodeT>,
         verbose: Option<bool>,
-    ) -> EnsmallenGraph {
-        EnsmallenGraph {
+    ) -> Graph {
+        Graph {
             graph: self.graph.get_transitive_closure(iterations, verbose),
         }
     }
@@ -7879,8 +8013,8 @@ impl EnsmallenGraph {
         &self,
         iterations: Option<NodeT>,
         verbose: Option<bool>,
-    ) -> EnsmallenGraph {
-        EnsmallenGraph {
+    ) -> Graph {
+        Graph {
             graph: self.graph.get_all_shortest_paths(iterations, verbose),
         }
     }
@@ -7915,8 +8049,8 @@ impl EnsmallenGraph {
         iterations: Option<NodeT>,
         use_edge_weights_as_probabilities: Option<bool>,
         verbose: Option<bool>,
-    ) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    ) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(self.graph.get_weighted_all_shortest_paths(
                 iterations,
                 use_edge_weights_as_probabilities,
@@ -9505,18 +9639,18 @@ impl EnsmallenGraph {
     /// Raises
     /// -------
     /// ValueError
-    ///     If the edge type for the new singletons is provided but the graph does not have edge types.
+    ///     If the edge type for the new selfloops is provided but the graph does not have edge types.
     /// ValueError
-    ///     If the edge weight for the new singletons is provided but the graph does not have edge weights.
+    ///     If the edge weight for the new selfloops is provided but the graph does not have edge weights.
     /// ValueError
-    ///     If the edge weight for the new singletons is NOT provided but the graph does have edge weights.
+    ///     If the edge weight for the new selfloops is NOT provided but the graph does have edge weights.
     ///
     pub fn add_selfloops(
         &self,
         edge_type_name: Option<&str>,
         weight: Option<WeightT>,
-    ) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
+    ) -> PyResult<Graph> {
+        Ok(Graph {
             graph: pe!(self.graph.add_selfloops(edge_type_name, weight))?,
         })
     }
@@ -9840,10 +9974,10 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, use_node_names)"]
+    #[text_signature = "($self)"]
     /// Print the current graph in a format compatible with Graphviz dot's format
-    pub fn to_dot(&self, use_node_names: Option<bool>) -> String {
-        self.graph.to_dot(use_node_names)
+    pub fn to_dot(&self) -> String {
+        self.graph.to_dot()
     }
 
     #[automatically_generated_binding]
@@ -10794,9 +10928,9 @@ impl EnsmallenGraph {
         may_have_singleton_with_selfloops: Option<bool>,
         directed: bool,
         name: Option<String>,
-    ) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
-            graph: pe!(Graph::from_csv(
+    ) -> PyResult<Graph> {
+        Ok(Graph {
+            graph: pe!(graph::Graph::from_csv(
                 node_type_path,
                 node_type_list_separator,
                 node_types_column_number,

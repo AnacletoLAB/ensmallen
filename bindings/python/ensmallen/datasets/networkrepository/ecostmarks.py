@@ -41,7 +41,7 @@ Carlos J and Bascompte, Jordi},
 from typing import Dict
 
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
-from ...ensmallen import EnsmallenGraph  # pylint: disable=import-error
+from ...ensmallen import Graph  # pylint: disable=import-error
 
 
 def EcoStmarks(
@@ -52,7 +52,7 @@ def EcoStmarks(
     cache_path: str = "graphs/networkrepository",
     version: str = "latest",
     **additional_graph_kwargs: Dict
-) -> EnsmallenGraph:
+) -> Graph:
     """Return new instance of the eco-stmarks graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	

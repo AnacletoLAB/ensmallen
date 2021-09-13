@@ -121,7 +121,7 @@ impl ShortestPathsResultBFS {
             })
     }
 
-    pub(crate) fn into_distances(self) -> Vec<NodeT> {
+    pub fn into_distances(self) -> Vec<NodeT> {
         self.distances
     }
 }

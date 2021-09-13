@@ -13,28 +13,27 @@ impl Graph {
     /// Additionally, the nodes are assumed to exist within this graph instance.
     ///
     /// # Arguments
-    /// * `nodes`: Vec<NodeT> - The subsampled nodes.
+    /// * `node_ids`: Vec<NodeT> - The subsampled nodes.
     /// * `add_selfloops_where_missing`: Option<bool> - Whether to add selfloops where they are missing. By default, true.
     /// * `complete`: Option<bool> - Whether to return the complete edge list in undirected graphs.
     pub unsafe fn par_iter_subsampled_binary_adjacency_matrix<'a>(
         &'a self,
-        nodes: &'a [NodeT],
+        node_ids: &'a [NodeT],
         add_selfloops_where_missing: Option<bool>,
         complete: Option<bool>,
     ) -> impl ParallelIterator<Item = (NodeT, usize, NodeT, usize)> + 'a {
-        let nodes_number = nodes.len();
+        let nodes_number = node_ids.len();
         let complete = complete.unwrap_or(false);
         let add_selfloops_where_missing = add_selfloops_where_missing.unwrap_or(true);
         (0..nodes_number)
             .into_par_iter()
             .flat_map(move |src| (0..nodes_number).into_par_iter().map(move |dst| (src, dst)))
-            .map(move |(src, dst)| (nodes[src], src, nodes[dst], dst))
+            .map(move |(src, dst)| (node_ids[src], src, node_ids[dst], dst))
             .filter(move |&(src_node_id, src, dst_node_id, dst)| {
                 (self.is_directed() || complete || src <= dst)
                     && (add_selfloops_where_missing && src == dst
                         || self.has_edge_from_node_ids(src_node_id, dst_node_id))
             })
-            .map(move |(src_node_id, src, dst_node_id, dst)| (src_node_id, src, dst_node_id, dst))
     }
 
     /// Returns iterator over subsampled weighted adjacency matrix on the provided nodes.
@@ -77,23 +76,23 @@ impl Graph {
     /// Additionally, the nodes are assumed to exist within this graph instance.
     ///
     /// # Arguments
-    /// * `nodes`: Vec<NodeT> - The subsampled nodes.
+    /// * `node_ids`: Vec<NodeT> - The subsampled nodes.
     /// * `add_selfloops_where_missing`: Option<bool> - Whether to add selfloops where they are missing. By default, true.
     /// * `complete`: Option<bool> - Whether to return the complete edge list in undirected graphs.
     pub unsafe fn par_iter_subsampled_symmetric_laplacian_adjacency_matrix<'a>(
         &'a self,
-        nodes: &'a [NodeT],
+        node_ids: &'a [NodeT],
         add_selfloops_where_missing: Option<bool>,
         complete: Option<bool>,
     ) -> impl ParallelIterator<Item = (usize, usize, WeightT)> + 'a {
-        let complete = complete.unwrap_or(false);
-        let degrees = nodes
+        let complete = complete.unwrap_or(false) || self.is_directed();
+        let degrees = node_ids
             .par_iter()
             .map(|&node_id| self.get_unchecked_node_degree_from_node_id(node_id) as f64)
             .collect::<Vec<_>>();
-        let nodes_number_usize = nodes.len();
+        let nodes_number_usize = node_ids.len();
         let nodes_number_float = nodes_number_usize as f64;
-        let nodes_map: HashMap<NodeT, usize> = nodes
+        let nodes_map: HashMap<NodeT, usize> = node_ids
             .iter()
             .cloned()
             .enumerate()
@@ -104,14 +103,14 @@ impl Graph {
             .into_par_iter()
             .flat_map(move |src| {
                 let src_degree = degrees[src];
-                let src_node_id = nodes[src];
+                let src_node_id = node_ids[src];
                 let mut result: Vec<(usize, usize, WeightT)> = if src_degree > nodes_number_float {
                     let starting_index = if self.is_directed() { 0 } else { src };
                     (starting_index..nodes_number_usize)
                         .into_par_iter()
                         .filter(|&dst| {
                             !(add_selfloops_where_missing && src == dst)
-                                && self.has_edge_from_node_ids(src_node_id, nodes[dst])
+                                && self.has_edge_from_node_ids(src_node_id, node_ids[dst])
                         })
                         .map(|dst| {
                             (
@@ -127,13 +126,20 @@ impl Graph {
                             if add_selfloops_where_missing && src_node_id == dst_node_id {
                                 return None;
                             }
-                            nodes_map.get(&dst_node_id).map(|&dst| {
-                                (
-                                    src,
-                                    dst,
-                                    (1.0 / (src_degree * degrees[dst]).sqrt()) as WeightT,
-                                )
-                            })
+                            match nodes_map.get(&dst_node_id) {
+                                Some(&dst) => {
+                                    if src < dst {
+                                        Some((
+                                            src,
+                                            dst,
+                                            (1.0 / (src_degree * degrees[dst]).sqrt()) as WeightT,
+                                        ))
+                                    } else {
+                                        None
+                                    }
+                                }
+                                None => None,
+                            }
                         })
                         .collect()
                 };
@@ -146,7 +152,7 @@ impl Graph {
                 if src == dst {
                     vec![(src, dst, weight)]
                 } else {
-                    if complete && !self.is_directed() {
+                    if complete {
                         vec![(src, dst, weight), (dst, src, weight)]
                     } else {
                         vec![(src, dst, weight)]
@@ -183,7 +189,7 @@ impl Graph {
     /// Additionally, the nodes are assumed to exist within this graph instance.
     ///
     /// # Arguments
-    /// * `nodes`: Vec<NodeT> - The subsampled nodes.
+    /// * `node_ids`: Vec<NodeT> - The subsampled nodes.
     /// * `edge_weighting_method`: &str - The edge_weighting_method to use to compute the adjacency matrix.
     ///
     /// # Raises
@@ -192,10 +198,10 @@ impl Graph {
     /// * If the edge_weighting_method requires the graph to be weighted but the graph is not.
     pub unsafe fn par_iter_subsampled_edge_metric_matrix<'a>(
         &'a self,
-        nodes: &'a [NodeT],
+        node_ids: &'a [NodeT],
         edge_weighting_method: &str,
     ) -> Result<impl ParallelIterator<Item = (NodeT, usize, NodeT, usize, WeightT)> + 'a> {
-        let nodes_number = nodes.len();
+        let nodes_number = node_ids.len();
         let edge_weighting_method: Result<fn(&Graph, NodeT, NodeT) -> f64> = match edge_weighting_method {
             "unweighted_shortest_path" => {
                 self.must_be_connected()?;
@@ -274,8 +280,8 @@ impl Graph {
             .flat_map(move |src| (0..nodes_number).into_par_iter().map(move |dst| (src, dst)))
             .filter(move |(src, dst)| self.is_directed() || src <= dst)
             .map(move |(src, dst)| {
-                let src_node_id = nodes[src];
-                let dst_node_id = nodes[dst];
+                let src_node_id = node_ids[src];
+                let dst_node_id = node_ids[dst];
                 let weight = edge_weighting_method(self, src_node_id, dst_node_id) as WeightT;
                 (src_node_id, src, dst_node_id, dst, weight)
             }))

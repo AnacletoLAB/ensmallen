@@ -37,7 +37,7 @@ M. Gervasio,         W. CohenDate = 	2003Short = 	Vertex type = Enron Employees 
 from typing import Dict
 
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
-from ...ensmallen import EnsmallenGraph  # pylint: disable=import-error
+from ...ensmallen import Graph  # pylint: disable=import-error
 
 
 def EmailEnron(
@@ -48,7 +48,7 @@ def EmailEnron(
     cache_path: str = "graphs/networkrepository",
     version: str = "latest",
     **additional_graph_kwargs: Dict
-) -> EnsmallenGraph:
+) -> Graph:
     """Return new instance of the email-enron graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	

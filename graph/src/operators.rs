@@ -1,5 +1,4 @@
-use rayon::iter::{IntoParallelIterator, ParallelIterator};
-
+use rayon::iter::{IntoParallelIterator, ParallelIterator, IndexedParallelIterator};
 use crate::constructors::{
     build_graph_from_integers, build_graph_from_strings_without_type_iterators,
 };
@@ -264,7 +263,7 @@ impl Graph {
     /// * If one of the two graphs has edge weights and the other does not.
     /// * If one of the two graphs has node types and the other does not.
     /// * If one of the two graphs has edge types and the other does not.
-    pub(crate) fn is_compatible(&self, other: &Graph) -> Result<bool> {
+    pub fn is_compatible(&self, other: &Graph) -> Result<bool> {
         self.validate_operator_terms(other)?;
         if self.nodes != other.nodes {
             return Ok(false);
@@ -280,6 +279,26 @@ impl Graph {
             }
         }
         Ok(true)
+    }
+
+    /// Return true if the graphs share the same adjacency matrix.
+    ///
+    /// # Arguments
+    /// * `other`: &Graph - The other graph.
+    pub fn has_same_adjacency_matrix(&self, other: &Graph) -> Result<bool> {
+        if self.nodes != other.nodes {
+            return Ok(false);
+        }
+        if self.get_directed_edges_number() != other.get_directed_edges_number() {
+            return Ok(false);
+        }
+        if self.get_selfloops_number() != other.get_selfloops_number() {
+            return Ok(false);
+        }
+        Ok(self
+            .par_iter_directed_edge_node_ids()
+            .zip(other.par_iter_directed_edge_node_ids())
+            .all(|(e1, e2)| e1 == e2))
     }
 
     /// Return graph composed of the two near-incompatible graphs.

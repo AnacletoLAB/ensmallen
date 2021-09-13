@@ -1,7 +1,7 @@
 use super::*;
 
 #[pymethods]
-impl EnsmallenGraph {
+impl Graph {
     #[args(py_kwargs = "**")]
     #[text_signature = "($self)"]
     /// Return tuple with edge node IDs and edge weights.
