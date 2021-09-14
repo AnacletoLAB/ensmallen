@@ -40,22 +40,36 @@ impl ShortestPathsResultBFS {
         }
     }
 
-    pub(crate) fn has_path_to_node_id(&self, node_id: NodeT) -> bool {
-        self.get_distance_from_node_id(node_id) != NODE_NOT_PRESENT
+    pub fn has_path_to_node_id(&self, node_id: NodeT) -> Result<bool> {
+        Ok(self.get_distance_from_node_id(node_id)? != NODE_NOT_PRESENT)
     }
 
-    pub(crate) fn get_distance_from_node_id(&self, node_id: NodeT) -> NodeT {
-        self.distances[node_id as usize]
+    fn validate_node_id(&self, node_id: NodeT) -> Result<NodeT> {
+        if node_id as usize >= self.distances.len() {
+            return Err(format!(
+                "The request node ID `{}` is higher than the available numbers of nodes `{}`.",
+                node_id,
+                self.distances.len()
+            ));
+        }
+        Ok(node_id)
     }
 
-    pub(crate) fn get_parent_from_node_id(&self, node_id: NodeT) -> Option<NodeT> {
-        self.predecessors
-            .as_ref()
-            .map(|predecessors| predecessors[node_id as usize])
+    pub fn get_distance_from_node_id(&self, node_id: NodeT) -> Result<NodeT> {
+        self.validate_node_id(node_id)
+            .map(|node_id| self.distances[node_id as usize])
     }
 
-    pub(crate) fn get_node_distance(&self, node_id: NodeT) -> NodeT {
-        self.distances[node_id as usize]
+    pub fn get_parent_from_node_id(&self, node_id: NodeT) -> Result<NodeT> {
+        self.validate_node_id(node_id)?;
+        match &self.predecessors {
+            Some(predecessors) => Ok(predecessors[node_id as usize]),
+            None => Err(concat!(
+                "Parent node was requested but the predecessors ",
+                "where not computed for this BFS run."
+            )
+            .to_string()),
+        }
     }
 
     /// Returns node at the `len - k` position on minimum path to given destination node.
@@ -66,12 +80,12 @@ impl ShortestPathsResultBFS {
     ///
     /// # Raises
     /// * If the predecessors vector was not requested.
-    pub(crate) fn get_kth_point_on_shortest_path(
+    pub fn get_kth_point_on_shortest_path(
         &self,
         mut dst_node_id: NodeT,
         k: NodeT,
     ) -> Result<NodeT> {
-        if !self.has_path_to_node_id(dst_node_id) {
+        if !self.has_path_to_node_id(dst_node_id)? {
             return Err("There is no path to the given destination node.".to_string());
         }
         if self.get_eccentricity() < k {
@@ -93,29 +107,29 @@ impl ShortestPathsResultBFS {
         Err("Predecessors were not requested and therefore not computed.".to_string())
     }
 
-    pub(crate) fn get_median_point(&self, dst_node_id: NodeT) -> Result<NodeT> {
-        if !self.has_path_to_node_id(dst_node_id) {
+    pub fn get_median_point(&self, dst_node_id: NodeT) -> Result<NodeT> {
+        if !self.has_path_to_node_id(dst_node_id)? {
             return Err("There is no path to the given destination node.".to_string());
         }
-        let median_distance = self.get_node_distance(dst_node_id) / 2;
+        let median_distance = self.get_distance_from_node_id(dst_node_id)? / 2;
         self.get_kth_point_on_shortest_path(dst_node_id, median_distance)
     }
 
-    pub(crate) fn get_eccentricity(&self) -> NodeT {
+    pub fn get_eccentricity(&self) -> NodeT {
         self.eccentricity
     }
 
-    pub(crate) fn get_most_distant_node(&self) -> NodeT {
+    pub fn get_most_distant_node(&self) -> NodeT {
         self.most_distant_node
     }
 
-    pub(crate) fn into_iter_finite_distances(self) -> impl Iterator<Item = NodeT> {
+    pub fn into_iter_finite_distances(self) -> impl Iterator<Item = NodeT> {
         self.distances
             .into_iter()
             .filter(|&distance| distance != NODE_NOT_PRESENT)
     }
 
-    pub(crate) fn into_par_iter_node_ids_and_finite_distances(
+    pub fn into_par_iter_node_ids_and_finite_distances(
         self,
     ) -> impl ParallelIterator<Item = (NodeT, NodeT)> {
         self.distances
@@ -143,6 +157,7 @@ impl ShortestPathsResultBFS {
 #[derive(Clone, Debug)]
 pub struct ShortestPathsDjkstra {
     pub(crate) distances: Vec<f64>,
+    most_distant_node: NodeT,
     pub(crate) predecessors: Option<Vec<Option<NodeT>>>,
     pub(crate) dst_node_distance: Option<f64>,
     pub(crate) eccentricity: f64,
@@ -179,6 +194,7 @@ impl Hash for ShortestPathsDjkstra {
 impl ShortestPathsDjkstra {
     pub(crate) fn new(
         distances: Vec<f64>,
+        most_distant_node: NodeT,
         predecessors: Option<Vec<Option<NodeT>>>,
         dst_node_distance: Option<f64>,
         eccentricity: f64,
@@ -187,12 +203,126 @@ impl ShortestPathsDjkstra {
     ) -> ShortestPathsDjkstra {
         ShortestPathsDjkstra {
             distances,
+            most_distant_node,
             predecessors,
             dst_node_distance,
             eccentricity,
             total_distance,
             total_harmonic_distance,
         }
+    }
+
+    pub fn has_path_to_node_id(&self, node_id: NodeT) -> Result<bool> {
+        Ok(self.get_distance_from_node_id(node_id)?.is_infinite())
+    }
+
+    fn validate_node_id(&self, node_id: NodeT) -> Result<NodeT> {
+        if node_id as usize >= self.distances.len() {
+            return Err(format!(
+                "The request node ID `{}` is higher than the available numbers of nodes `{}`.",
+                node_id,
+                self.distances.len()
+            ));
+        }
+        Ok(node_id)
+    }
+
+    pub fn get_distance_from_node_id(&self, node_id: NodeT) -> Result<f64> {
+        self.validate_node_id(node_id)
+            .map(|node_id| self.distances[node_id as usize])
+    }
+
+    pub fn get_parent_from_node_id(&self, node_id: NodeT) -> Result<Option<NodeT>> {
+        self.validate_node_id(node_id)?;
+        match &self.predecessors {
+            Some(predecessors) => Ok(predecessors[node_id as usize]),
+            None => Err(concat!(
+                "Parent node was requested but the predecessors ",
+                "where not computed for this Dijkstra run."
+            )
+            .to_string()),
+        }
+    }
+
+    /// Returns node at just before given distance on minimum path to given destination node.
+    ///
+    /// # Arguments
+    /// * `dst_node_id`: NodeT - The node to start computing predecessors from.
+    /// * `distance`: f64 - The distance to aim for.
+    ///
+    /// # Raises
+    /// * If the predecessors vector was not requested.
+    pub fn get_point_at_given_distance_on_shortest_path(
+        &self,
+        mut dst_node_id: NodeT,
+        distance: f64,
+    ) -> Result<NodeT> {
+        if !self.has_path_to_node_id(dst_node_id)? {
+            return Err("There is no path to the given destination node.".to_string());
+        }
+        if self.get_distance_from_node_id(dst_node_id)? < distance {
+            return Err(format!(
+                concat!(
+                    "The path to the requested node {} has distance {}, ",
+                    "but the requested distance is {}."
+                ),
+                dst_node_id,
+                self.get_eccentricity(),
+                distance
+            ));
+        }
+        if let Some(predecessors) = self.predecessors.as_ref() {
+            while self.get_distance_from_node_id(dst_node_id)? < distance {
+                if let Some(node_id) = predecessors[dst_node_id as usize] {
+                    dst_node_id = node_id;
+                } else {
+                    break;
+                }
+            }
+            return Ok(dst_node_id);
+        }
+        Err("Predecessors were not requested and therefore not computed.".to_string())
+    }
+
+    pub fn get_median_point(&self, dst_node_id: NodeT) -> Result<NodeT> {
+        if !self.has_path_to_node_id(dst_node_id)? {
+            return Err("There is no path to the given destination node.".to_string());
+        }
+        let median_distance = self.get_distance_from_node_id(dst_node_id)? / 2.0;
+        self.get_point_at_given_distance_on_shortest_path(dst_node_id, median_distance)
+    }
+
+    pub fn get_eccentricity(&self) -> f64 {
+        self.eccentricity
+    }
+
+    pub fn get_most_distant_node(&self) -> NodeT {
+        self.most_distant_node
+    }
+
+    pub fn into_iter_finite_distances(self) -> impl Iterator<Item = f64> {
+        self.distances
+            .into_iter()
+            .filter(|&distance| distance.is_finite())
+    }
+
+    pub fn into_par_iter_node_ids_and_finite_distances(
+        self,
+    ) -> impl ParallelIterator<Item = (NodeT, f64)> {
+        self.distances
+            .into_par_iter()
+            .enumerate()
+            .filter_map(|(node_id, distance)| {
+                if distance.is_finite() {
+                    Some((node_id as NodeT, distance))
+                } else {
+                    None
+                }
+            })
+    }
+
+    pub fn into_distances(self) -> Vec<f64> {
+        self.distances
     }
 }
 
@@ -319,13 +449,13 @@ impl Graph {
         );
 
         // If the distance is infinite, the destination node is not connected.
-        if !bfs.has_path_to_node_id(dst_node_id) {
+        if !bfs.has_path_to_node_id(dst_node_id)? {
             return Err(format!(
                 "There is no path starting from the given source node {} and reaching the given destination node {}.",
                 src_node_id, dst_node_id
             ));
         }
-        let path_length = bfs.get_distance_from_node_id(dst_node_id) as usize + 1;
+        let path_length = bfs.get_distance_from_node_id(dst_node_id)? as usize + 1;
         let mut path = vec![0; path_length];
 
         let mut parent_node_id = dst_node_id;
@@ -734,6 +864,7 @@ impl Graph {
     ) -> ShortestPathsDjkstra {
         let compute_predecessors = compute_predecessors.unwrap_or(true);
         let nodes_number = self.get_nodes_number() as usize;
+        let mut most_distant_node = src_node_id;
         let use_edge_weights_as_probabilities = use_edge_weights_as_probabilities.unwrap_or(false);
         let mut dst_node_distance = maybe_dst_node_id.map(|_| {
             if use_edge_weights_as_probabilities {
@@ -752,6 +883,7 @@ impl Graph {
             if use_edge_weights_as_probabilities {
                 return ShortestPathsDjkstra::new(
                     vec![0.0; nodes_number],
+                    most_distant_node,
                     predecessors,
                     dst_node_distance,
                     0.0,
@@ -761,6 +893,7 @@ impl Graph {
             } else {
                 return ShortestPathsDjkstra::new(
                     vec![f64::INFINITY; nodes_number],
+                    most_distant_node,
                     predecessors,
                     dst_node_distance,
                     f64::INFINITY,
@@ -787,7 +920,11 @@ impl Graph {
 
         while let Some(closest_node_id) = nodes_to_explore.pop() {
             // Update the distances metrics
-            eccentricity = eccentricity.max(nodes_to_explore[closest_node_id]);
+            let closest_node_id_distance = nodes_to_explore[closest_node_id];
+            if closest_node_id_distance > eccentricity {
+                eccentricity = closest_node_id_distance;
+                most_distant_node = closest_node_id as NodeT;
+            }
             total_distance += nodes_to_explore[closest_node_id];
             if nodes_to_explore[closest_node_id] > 0.0 {
                 total_harmonic_distance += if use_edge_weights_as_probabilities {
@@ -827,7 +964,7 @@ impl Graph {
                 .zip(self.iter_unchecked_edge_weights_from_source_node_id(closest_node_id as NodeT))
                 .for_each(|(neighbour_node_id, weight)| {
                     if let Some(bfs) = bfs.as_ref() {
-                        if !bfs.has_path_to_node_id(neighbour_node_id) {
+                        if !bfs.has_path_to_node_id(neighbour_node_id).unwrap() {
                             return;
                         }
                     }
@@ -859,6 +996,7 @@ impl Graph {
 
         ShortestPathsDjkstra {
             distances,
+            most_distant_node,
             predecessors,
             dst_node_distance,
             eccentricity,
@@ -872,7 +1010,6 @@ impl Graph {
     /// # Arguments
     /// * `src_node_id`: NodeT - Source node ID.
     /// * `dst_node_id`: NodeT - Destination node ID.
-    /// * `maximal_depth`: Option<NodeT> - The maximal depth to execute the BFS for.
     /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to treat the edge weights as probabilities.
     /// * `maximal_depth`: Option<NodeT> - The maximal number of iterations to execute Dijkstra for.
     ///
@@ -931,7 +1068,6 @@ impl Graph {
     /// # Arguments
     /// * `src_node_id`: NodeT - Source node ID.
     /// * `dst_node_id`: NodeT - Destination node ID.
-    /// * `maximal_depth`: Option<NodeT> - The maximal depth to execute the BFS for.
     /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to treat the edge weights as probabilities.
     /// * `maximal_depth`: Option<NodeT> - The maximal number of iterations to execute Dijkstra for.
     ///
@@ -963,7 +1099,6 @@ impl Graph {
     /// # Arguments
     /// * `src_node_id`: NodeT - Source node ID.
     /// * `dst_node_id`: NodeT - Destination node ID.
-    /// * `maximal_depth`: Option<NodeT> - The maximal depth to execute the BFS for.
     /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to treat the edge weights as probabilities.
     /// * `maximal_depth`: Option<NodeT> - The maximal number of iterations to execute Dijkstra for.
     ///
