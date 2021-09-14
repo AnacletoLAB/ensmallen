@@ -972,7 +972,6 @@ impl Graph {
     /// # Arguments
     /// * `src_node_id`: NodeT - Source node ID.
     /// * `dst_node_id`: NodeT - Destination node ID.
-    /// * `maximal_depth`: Option<NodeT> - The maximal depth to execute the BFS for.
     /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to treat the edge weights as probabilities.
     /// * `maximal_depth`: Option<NodeT> - The maximal number of iterations to execute Dijkstra for.
     ///
@@ -1031,7 +1030,6 @@ impl Graph {
     /// # Arguments
     /// * `src_node_id`: NodeT - Source node ID.
     /// * `dst_node_id`: NodeT - Destination node ID.
-    /// * `maximal_depth`: Option<NodeT> - The maximal depth to execute the BFS for.
     /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to treat the edge weights as probabilities.
     /// * `maximal_depth`: Option<NodeT> - The maximal number of iterations to execute Dijkstra for.
     ///
@@ -1063,7 +1061,6 @@ impl Graph {
     /// # Arguments
     /// * `src_node_id`: NodeT - Source node ID.
     /// * `dst_node_id`: NodeT - Destination node ID.
-    /// * `maximal_depth`: Option<NodeT> - The maximal depth to execute the BFS for.
     /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to treat the edge weights as probabilities.
     /// * `maximal_depth`: Option<NodeT> - The maximal number of iterations to execute Dijkstra for.
     ///
