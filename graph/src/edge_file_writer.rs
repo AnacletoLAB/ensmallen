@@ -3,6 +3,7 @@ use super::*;
 /// Structure that saves the reader specific to writing and reading a nodes csv file.
 ///
 /// # Attributes
+#[no_binding]
 pub struct EdgeFileWriter {
     pub(crate) writer: CSVFileWriter,
     pub(crate) edge_ids_column: Option<String>,

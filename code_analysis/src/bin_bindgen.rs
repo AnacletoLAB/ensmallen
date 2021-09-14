@@ -12,9 +12,6 @@ fn main() {
     // Generate the bindings
     gen_bindings("../bindings/python/src/auto_generated_bindings.rs", "../bindings/python/ensmallen/__init__.py");
 
-    // Generate the tfidf weights
-    tfidf_gen("../bindings/python/src/method_names_list.rs");
-
     // Format the files
     assert!(
         std::process::Command::new("cargo")

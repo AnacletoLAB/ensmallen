@@ -9,6 +9,7 @@ use std::{fs::File, io::prelude::*, io::BufWriter};
 /// * `verbose`: bool - If the progress bars and logging must be displayed.
 /// * separator: String - The separator to use, usually, this is "\t" for tsv and "," for csv.
 /// * header: bool - If the file (will / must) have the header with the titles of the columns.
+#[no_binding]
 pub struct CSVFileWriter {
     pub(crate) path: String,
     verbose: bool,

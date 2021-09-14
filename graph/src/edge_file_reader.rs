@@ -4,6 +4,7 @@ use rayon::iter::ParallelIterator;
 use super::*;
 /// Structure that saves the reader specific to writing and reading a nodes csv file.
 #[derive(Clone)]
+#[no_binding]
 pub struct EdgeFileReader {
     pub(crate) reader: CSVFileReader,
     pub(crate) edge_ids_column_number: Option<usize>,

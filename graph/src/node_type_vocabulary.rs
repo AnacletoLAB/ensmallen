@@ -3,6 +3,7 @@ use std::collections::hash_map::DefaultHasher;
 use std::hash::{Hash, Hasher};
 
 #[derive(Debug, Clone)]
+#[no_binding]
 pub struct NodeTypeVocabulary {
     /// This is the vector with the node types of each node
     /// Moreover, for the node x it's node type is ids[x]
@@ -22,6 +23,7 @@ pub struct NodeTypeVocabulary {
 }
 
 #[derive(Debug, Clone)]
+#[no_binding]
 pub struct NodeTypeVocabularyMemoryStats {
     pub ids: usize,
     pub vocabulary: VocabularyMemoryStats,

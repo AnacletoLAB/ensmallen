@@ -25,13 +25,13 @@ fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
 ///
 /// Arguments
 /// ---------
-/// documents: List[List[String]],
+/// documents: List[List[str]],
 ///     The documents to parse
 /// k1: Optional[float],
 ///     The default parameter for k1, tipically between 1.2 and 2.0.
 /// b: Optional[float],
 ///     The default parameter for b, tipically equal to 0.75.
-/// vocabulary_size: Optional[usize],
+/// vocabulary_size: Optional[int],
 ///     The expected vocabulary size.
 /// verbose: Optional[bool],
 ///     Whether to show a loading bar.
@@ -59,13 +59,13 @@ fn okapi_bm25_tfidf_int(
 ///
 /// Arguments
 /// ---------
-/// documents: List[List[String]],
+/// documents: List[List[str]],
 ///     The documents to parse
 /// k1: Optional[float],
 ///     The default parameter for k1, tipically between 1.2 and 2.0.
 /// b: Optional[float],
 ///     The default parameter for b, tipically equal to 0.75.
-/// vocabulary_size: Optional[usize],
+/// vocabulary_size: Optional[int],
 ///     The expected vocabulary size.
 /// verbose: Optional[bool],
 ///     Whether to show a loading bar.
@@ -464,7 +464,7 @@ impl Graph {
     ///     Whether to return the source and destination nodes node types.
     /// return_edge_types: Optional[bool],
     ///     Whether to return the edge types. The negative edges edge type will be samples at random.
-    /// return_edge_metrics: Option<bool>,
+    /// return_edge_metrics: Optional[bool],
     ///     Whether to return the edge metrics.
     /// avoid_false_negatives: Optional[bool],
     ///     Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.

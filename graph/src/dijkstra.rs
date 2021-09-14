@@ -8,12 +8,21 @@ use rayon::iter::ParallelIterator;
 use std::cmp::Ord;
 use std::collections::VecDeque;
 use std::sync::atomic::{AtomicU32, Ordering};
+use std::hash::{Hash, Hasher};
+use std::string::ToString;
 
+#[derive(Hash, Clone, Debug)]
 pub struct ShortestPathsResultBFS {
     distances: Vec<NodeT>,
     predecessors: Option<Vec<NodeT>>,
     eccentricity: NodeT,
     most_distant_node: NodeT,
+}
+
+impl ToString for ShortestPathsResultBFS {
+    fn to_string(&self) -> String {
+        format!("{:#4?}", self)
+    }
 }
 
 impl ShortestPathsResultBFS {
@@ -121,11 +130,17 @@ impl ShortestPathsResultBFS {
             })
     }
 
+    pub fn get_distances(&self) -> Vec<NodeT> {
+        self.distances.clone()
+    }
+
+    #[no_binding]
     pub fn into_distances(self) -> Vec<NodeT> {
         self.distances
     }
 }
 
+#[derive(Clone, Debug)]
 pub struct ShortestPathsDjkstra {
     pub(crate) distances: Vec<f64>,
     pub(crate) predecessors: Option<Vec<Option<NodeT>>>,
@@ -133,6 +148,32 @@ pub struct ShortestPathsDjkstra {
     pub(crate) eccentricity: f64,
     pub(crate) total_distance: f64,
     pub(crate) total_harmonic_distance: f64,
+}
+
+impl ToString for ShortestPathsDjkstra {
+    fn to_string(&self) -> String {
+        format!("{:#4?}", self)
+    }
+}
+
+impl Hash for ShortestPathsDjkstra {
+    fn hash<H: Hasher>(&self, state: &mut H) {
+        for d in &self.distances {
+            crate::hash::hash_f64(*d, state);
+        }
+        self.predecessors.hash(state);
+
+        if let Some(d) = self.dst_node_distance {
+            1.hash(state);
+            crate::hash::hash_f64(d, state);
+        } else {
+            0.hash(state);
+        }
+
+        crate::hash::hash_f64(self.eccentricity, state);
+        crate::hash::hash_f64(self.total_distance, state);
+        crate::hash::hash_f64(self.total_harmonic_distance, state);
+    }
 }
 
 impl ShortestPathsDjkstra {
@@ -156,7 +197,6 @@ impl ShortestPathsDjkstra {
 }
 
 impl Graph {
-    #[manual_binding]
     /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
     ///
     /// # Arguments
@@ -561,7 +601,6 @@ impl Graph {
             .get_eccentricity()
     }
 
-    #[manual_binding]
     /// Returns weighted eccentricity of the given node.
     ///
     /// This method will panic if the given node ID does not exists in the graph.
@@ -672,7 +711,6 @@ impl Graph {
             })
     }
 
-    #[manual_binding]
     /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
     ///
     /// # Arguments
@@ -1020,7 +1058,6 @@ impl Graph {
         })
     }
 
-    #[manual_binding]
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node ID and optional destination node ID.
     ///
     /// # Arguments
@@ -1050,7 +1087,6 @@ impl Graph {
         }
     }
 
-    #[manual_binding]
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node ID and optional destination node ID.
     ///
     /// # Arguments
@@ -1415,7 +1451,6 @@ impl Graph {
             .reduce(|| f64::NEG_INFINITY, f64::max))
     }
 
-    #[manual_binding]
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node name and optional destination node name.
     ///
     /// # Arguments
@@ -1448,7 +1483,6 @@ impl Graph {
         }
     }
 
-    #[manual_binding]
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node name and optional destination node name.
     ///
     /// # Arguments

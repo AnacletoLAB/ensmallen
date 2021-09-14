@@ -49,7 +49,12 @@ impl Module {
             function.file_path = path.to_string();
         }
 
+        for ztruct in &mut self.structs {
+            ztruct.file_path = path.to_string();
+        }
+
         for imp in &mut self.impls {
+            imp.file_path = path.to_string();
             for method in &mut imp.methods {
                 method.file_path = path.to_string();
             }

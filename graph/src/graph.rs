@@ -58,6 +58,13 @@ pub struct Graph {
     pub(crate) cache: ClonableUnsafeCell<PropertyCache>,
 }
 
+use std::string::ToString;
+impl ToString for Graph {
+    fn to_string(&self) -> String {
+        self.textual_report()
+    }
+}
+
 /// # Graph utility methods
 impl Graph {
     /// Return new instance of a Graph object.
