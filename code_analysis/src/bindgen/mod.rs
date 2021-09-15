@@ -264,7 +264,9 @@ impl GenBinding for BindingsModule {
                 && !func.name.starts_with("par_iter")
                 && func.visibility == Visibility::Public
                 && !func.attributes.iter().any(|x| x == "no_binding")
-                && !func.attributes.iter().any(|x| x == "manual_binding") {
+                && !func.attributes.iter().any(|x| x == "manual_binding")
+                && func.return_type.as_ref().map(|x| !x.to_string().contains("Iterator")).unwrap_or(false)
+                {
                 registrations.push(
                     format!("\tm.add_wrapped(wrap_pyfunction!({}))?;", func.name)
                 );
