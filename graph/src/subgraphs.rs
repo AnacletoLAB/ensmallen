@@ -1,6 +1,7 @@
 use itertools::Itertools;
 use rayon::prelude::*;
 use std::collections::HashMap;
+use std::sync::Arc;
 
 use super::*;
 
@@ -159,6 +160,77 @@ impl Graph {
                     }
                 }
             })
+    }
+
+    /// Returns iterator over subsampled symmetric laplacian adjacency matrix on the provided nodes.
+    ///
+    /// # Implementative details
+    /// This implementation works exclusively on undirected graphs where each node
+    /// has a selfloop. Additionally, the graph cannot be a multigraph.
+    ///
+    /// # Safety
+    /// The provided nodes are assumed to be unique.
+    /// Additionally, the nodes are assumed to exist within this graph instance.
+    ///
+    /// # Arguments
+    /// * `sorted_node_ids`: &[NodeT] - The sorted subsampled nodes.
+    ///
+    /// TODO: consider caching reciprocal_sqrt_degrees
+    pub unsafe fn par_iter_undirected_with_selfloops_subsampled_symmetric_laplacian_adjacency_matrix<
+        'a,
+    >(
+        &'a self,
+        sorted_node_ids: &'a [NodeT],
+    ) -> Result<impl ParallelIterator<Item = (usize, usize, WeightT)> + 'a> {
+        self.must_be_undirected()?;
+        self.must_contain_identity_matrix()?;
+        self.must_not_be_multigraph()?;
+        // Sort the nodes
+        // Computing the reciprocal_sqrt_degrees
+        let reciprocal_sqrt_degrees = Arc::new(
+            sorted_node_ids
+                .par_iter()
+                .map(|&node_id| {
+                    (1.0 / (self.get_unchecked_node_degree_from_node_id(node_id) as f64).sqrt())
+                        as WeightT
+                })
+                .collect::<Vec<_>>(),
+        );
+        // 
+        let nodes_number_usize = sorted_node_ids.len();
+        Ok((0..nodes_number_usize)
+            .into_par_iter()
+            .flat_map_iter(move |src| {
+                let src_node_id = sorted_node_ids[src];
+                let local_reciprocal_sqrt_degrees = reciprocal_sqrt_degrees.clone();
+                let mut dst = 0;
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(src_node_id)
+                    .take_while(move |_| dst < nodes_number_usize)
+                    .filter_map(move |dst_node_id| {
+                        if src_node_id == dst_node_id {
+                            return Some((src, src, 1.0));
+                        }
+                        while dst < nodes_number_usize {
+                            match dst_node_id.cmp(&sorted_node_ids[dst]) {
+                                std::cmp::Ordering::Equal => {
+                                    return Some((
+                                        src,
+                                        dst,
+                                        local_reciprocal_sqrt_degrees[src]
+                                            * local_reciprocal_sqrt_degrees[dst],
+                                    ));
+                                }
+                                std::cmp::Ordering::Less => {
+                                    return None;
+                                }
+                                std::cmp::Ordering::Greater => {
+                                    dst += 1;
+                                }
+                            }
+                        }
+                        None
+                    })
+            }))
     }
 
     /// Return list of the supported sparse edge weighting methods.

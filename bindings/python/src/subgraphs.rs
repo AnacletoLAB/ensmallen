@@ -386,6 +386,101 @@ impl Graph {
     }
 
     #[args(py_kwargs = "**")]
+    #[text_signature = "($self, number_of_nodes_to_sample, random_state, root_node, node_sampling_method)"]
+    /// Return subsampled nodes and edges using laplacian assuming undirected graph with selfloops.
+    ///
+    /// Parameters
+    /// --------------------
+    /// number_of_nodes_to_sample: int - The number of nodes to sample.
+    /// random_state: int - The random state to reproduce the sampling.
+    /// root_node: Optional[int] - The (optional) root node to use to sample. In not provided, a random one is sampled.
+    /// node_sampling_method: str - The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
+    ///
+    /// Raises
+    /// --------------------
+    /// TODO: Update
+    ///
+    /// Returns
+    /// --------------------
+    /// Tuple with the sampled nodes and the computed kernels.
+    pub fn get_sparse_undirected_laplacian_subgraphs(
+        &self,
+        number_of_nodes_to_sample: NodeT,
+        random_state: u64,
+        root_node: Option<NodeT>,
+        node_sampling_method: &str,
+    ) -> PyResult<(
+        Py<PyArray1<NodeT>>,
+        Vec<(Py<PyArray2<usize>>, Py<PyArray1<WeightT>>)>,
+    )> {
+        // We sample the nodes.
+        // We cannot directly allocate this into a
+        // numpy array because
+        let mut nodes = pe!(self.graph.get_subsampled_nodes(
+            number_of_nodes_to_sample,
+            random_state,
+            root_node,
+            node_sampling_method,
+            Some(true)
+        ))?;
+
+        nodes.par_sort_unstable();
+
+        // Some of the sampling mechanism are not guaranteed
+        // to actually return the requested number of nodes.
+        // For instance, sampling of BFS nodes from a component
+        // that does not contain the requested number of nodes.
+        let nodes_number = nodes.len();
+
+        // Acquire the python gil.
+        let gil = pyo3::Python::acquire_gil();
+
+        // Compute the required kernel.
+        let sorted_edge_node_ids_and_weights = pe!(unsafe {
+            self.graph
+                .par_iter_undirected_with_selfloops_subsampled_symmetric_laplacian_adjacency_matrix(
+                    &nodes,
+                )
+        })?
+        .collect::<Vec<_>>();
+
+        let edges_number = sorted_edge_node_ids_and_weights.len();
+
+        let edge_ids_vector = ThreadDataRaceAware {
+            t: PyArray2::new(gil.python(), [edges_number, 2], false),
+        };
+        let weights = ThreadDataRaceAware {
+            t: PyArray1::new(gil.python(), [edges_number], false),
+        };
+
+        sorted_edge_node_ids_and_weights
+            .into_par_iter()
+            .enumerate()
+            .for_each(|(i, (src, dst, weight))| unsafe {
+                *edge_ids_vector.t.uget_mut([i, 0]) = src;
+                *edge_ids_vector.t.uget_mut([i, 1]) = dst;
+                *weights.t.uget_mut([i]) = weight;
+            });
+
+        // We now convert the provided nodes into a numpy vector.
+        let numpy_nodes = ThreadDataRaceAware {
+            t: PyArray1::new(gil.python(), [nodes_number], false),
+        };
+
+        // We consume the original vector to populate the numpy one.
+        nodes
+            .into_par_iter()
+            .enumerate()
+            .for_each(|(i, node_id)| unsafe { *numpy_nodes.t.uget_mut([i]) = node_id });
+
+        // And return the sampled nodes and kernel
+        Ok((
+            numpy_nodes.t.to_owned(),
+            vec![(edge_ids_vector.t.to_owned(), weights.t.to_owned())],
+        ))
+    }
+
+    #[args(py_kwargs = "**")]
     #[text_signature = "($self, number_of_nodes_to_sample, random_state, node_sampling_method, edge_weighting_methods, add_selfloops_where_missing)"]
     /// Return subsampled nodes according to the given method and parameters.
     ///
