@@ -78,8 +78,9 @@ impl GenBinding for Class {
         format!(
 r#"
 #[pyclass]
+#[derive(Debug, Clone)]
 pub struct {struct_name} {{
-    inner: graph::{struct_name},
+    pub inner: graph::{struct_name},
 }}
 
 impl From<graph::{struct_name}> for {struct_name} {{
@@ -390,6 +391,14 @@ use pyo3::class::basic::PyObjectProtocol;
 use std::hash::{{Hash, Hasher}};
 use std::collections::hash_map::DefaultHasher;
 use strsim::*;
+use graph::{{
+    NodeT,
+    EdgeT,
+    WeightT,
+    NodeTypeT,
+    EdgeTypeT,
+    Result,
+}};
 
 /// Returns the given method name separated in the component parts.
 ///
