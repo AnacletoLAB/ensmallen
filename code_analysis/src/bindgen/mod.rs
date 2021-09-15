@@ -197,6 +197,7 @@ impl PyObjectProtocol for {struct_name} {{
                 && func.visibility == Visibility::Public
                 && !func.attributes.iter().any(|x| x == "no_binding")
                 && !func.attributes.iter().any(|x| x == "manual_binding")
+                && func.return_type.as_ref().map(|x| !x.to_string().contains("Iterator")).unwrap_or(false)
             })
             .map(GenBinding::gen_python_binding)
             .filter(|x| !x.is_empty())
@@ -305,6 +306,7 @@ fn {module_name}(_py: Python, m:&PyModule) -> PyResult<()> {{
         && func.visibility == Visibility::Public
         && !func.attributes.iter().any(|x| x == "no_binding")
         && !func.attributes.iter().any(|x| x == "manual_binding")
+        && func.return_type.as_ref().map(|x| x.to_string().contains("Iterator")).unwrap_or(false)
     }).map(GenBinding::gen_python_binding)
     .collect::<Vec<_>>(), "{}", "\n\n"),
     classes=format_vec!(
