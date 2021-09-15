@@ -123,12 +123,14 @@ impl ShortestPathsResultBFS {
         self.most_distant_node
     }
 
+    #[no_binding]
     pub fn into_iter_finite_distances(self) -> impl Iterator<Item = NodeT> {
         self.distances
             .into_iter()
             .filter(|&distance| distance != NODE_NOT_PRESENT)
     }
 
+    #[no_binding]
     pub fn into_par_iter_node_ids_and_finite_distances(
         self,
     ) -> impl ParallelIterator<Item = (NodeT, NodeT)> {
@@ -300,12 +302,14 @@ impl ShortestPathsDjkstra {
         self.most_distant_node
     }
 
+    #[no_binding]
     pub fn into_iter_finite_distances(self) -> impl Iterator<Item = f64> {
         self.distances
             .into_iter()
             .filter(|&distance| distance.is_finite())
     }
 
+    #[no_binding]
     pub fn into_par_iter_node_ids_and_finite_distances(
         self,
     ) -> impl ParallelIterator<Item = (NodeT, f64)> {
@@ -321,6 +325,7 @@ impl ShortestPathsDjkstra {
             })
     }
 
+    #[no_binding]
     pub fn into_distances(self) -> Vec<f64> {
         self.distances
     }
