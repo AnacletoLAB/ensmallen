@@ -102,6 +102,13 @@ pub const {struct_name_upper}_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
 {tfidf}
 ];
 
+#[pymethods]
+impl {struct_name} {{
+    fn _repr_html_(&self) -> String {{
+        self.__repr__()
+    }}
+}}
+            
 #[pyproto]
 impl PyObjectProtocol for {struct_name} {{
     fn __str__(&'p self) -> String {{
