@@ -2,17 +2,7 @@ use super::*;
 
 /// Pre-compute the TD-IDF weight for each term of each binding.
 /// Then write the compute weights in a file at the given path.
-pub fn tfidf_gen(file_path: &str) {
-
-    println!("Reading all the bindings names");
-    print_sep();
-    // Get the names of all the bdingins
-    let method_names = get_binding_names();
-
-    print_sep();
-    println!("Generating the TF-IDF weights for the name of the bindings at {}", file_path);
-    print_sep();
-
+pub fn tfidf_gen(method_names: &[&str]) -> (Vec<String>, Vec<Vec<(String, f64)>>) {
     let documents = method_names
         .iter()
         .map(|x| split_words(x))
@@ -29,47 +19,21 @@ pub fn tfidf_gen(file_path: &str) {
 
     for document in &documents {
         for term in document {
-            terms.insert(term);
+            terms.insert(term.clone());
         }
     }
 
-    let method_names_list = format!(
-        r#"pub const METHODS_NAMES: &[&str] = &[
-{}
-];
-
-pub const TERMS: &[&str] = &[
-{}
-];
-
-pub const TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
-{}
-];
-"#,
-        method_names
-            .iter()
-            .map(|x| format!("    \"{}\",", x))
-            .collect::<Vec<String>>()
-            .join("\n"),
-        terms
-            .iter()
-            .map(|x| format!("    \"{}\",", x))
-            .collect::<Vec<String>>()
-            .join("\n"),
-        tfidf
-            .iter()
-            .map(|vals| format!("&{:?},", vals.iter().collect::<Vec<(&&str, &f64)>>()))
-            .collect::<Vec<String>>()
-            .join("\n"),
-    );
-
-
-    // Write to file
-    fs::write(
-        file_path,
-        method_names_list,
+    (
+        terms.into_iter().collect::<Vec<_>>(), 
+        tfidf.into_iter()
+        .map(|vals| 
+            vals.into_iter()
+            .map(|(k, v)| 
+                (k.to_string(), v)
+            ).collect::<Vec<(String, f64)>>()
+        )
+        .collect::<Vec<Vec<(String, f64)>>>()
     )
-    .expect("Cannot write the method names list file");
 }
 
 
@@ -136,7 +100,7 @@ pub fn okapi_bm25_tfidf<T1: Eq + Hash + Send + Sync + Clone + Copy + Eq>(
     verbose: Option<bool>,
 ) -> Result<Vec<HashMap<T1, f64>>, String> {
     if documents.is_empty() {
-        return Err("The given documents set is empty!".to_string());
+        return Ok(Vec::new());
     }
     let verbose = verbose.unwrap_or(true);
     let k1 = k1.unwrap_or(1.5);

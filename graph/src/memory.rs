@@ -3,6 +3,7 @@ use bitvec::prelude::*;
 use elias_fano_rust::*;
 use num_traits::Pow;
 use std::mem::size_of;
+use tags::no_binding;
 
 fn to_human_readable_memory_requirement(bytes_number: usize) -> String {
     let (exponent, unit) = match bytes_number {
@@ -20,6 +21,7 @@ fn to_human_readable_memory_requirement(bytes_number: usize) -> String {
 }
 
 #[derive(Clone, Debug)]
+#[no_binding]
 pub struct GraphMemoryStats {
     pub edges: EliasFanoMemoryStats,
     pub weights: usize,

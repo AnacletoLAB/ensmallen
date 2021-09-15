@@ -11,6 +11,7 @@ use super::*;
 /// * node_types_column: String - The name of the nodes type column. This parameter is mutually exclusive with node_types_column_number.
 /// * node_types_column_number: usize - The rank of the column with the nodes types. This parameter is mutually exclusive with node_types_column.
 /// * node_types_separator: String - Separator to split the node types.
+#[no_binding]
 pub struct NodeFileWriter {
     pub(crate) writer: CSVFileWriter,
     pub(crate) node_ids_column: Option<String>,

@@ -18,6 +18,7 @@ impl PartialEq for EdgeTypeVocabulary {
 }
 
 #[derive(Debug, Clone)]
+#[no_binding]
 pub struct EdgeTypeVocabulary {
     pub ids: Vec<Option<EdgeTypeT>>,
     pub vocabulary: Vocabulary<EdgeTypeT>,
@@ -26,6 +27,7 @@ pub struct EdgeTypeVocabulary {
 }
 
 #[derive(Debug, Clone)]
+#[no_binding]
 pub struct EdgeTypeVocabularyMemoryStats {
     pub ids: usize,
     pub vocabulary: VocabularyMemoryStats,
