@@ -78,7 +78,7 @@ impl GenBinding for Class {
         format!(
 r#"
 #[pyclass]
-struct {struct_name} {{
+pub struct {struct_name} {{
     inner: graph::{struct_name},
 }}
 
