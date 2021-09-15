@@ -1,6 +1,5 @@
 use super::*;
 use pyo3::class::number::PyNumberProtocol;
-use rayon::iter::{IndexedParallelIterator, IntoParallelRefIterator, ParallelIterator};
 
 #[pyproto]
 impl PyNumberProtocol for Graph {
