@@ -28,7 +28,7 @@ pub fn translate_doc(doc: &str) -> String {
                             description,
                         }) => result.push_str(
                             &format!(
-                                "{name}: {arg_type},\n    {description}\n",
+                                "{name}: {arg_type}\n    {description}\n",
                                 name = name,
                                 arg_type = translate_type_str(arg_type),
                                 description = description,
