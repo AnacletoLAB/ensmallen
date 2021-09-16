@@ -1,5 +1,6 @@
 use super::*;
 use permutation::permutation;
+use rayon::prelude::*;
 
 /// # Queries
 /// The naming convention we follow is:
@@ -705,6 +706,50 @@ impl Graph {
         self.validate_node_id(node_id).map(|node_id| unsafe {
             self.get_unchecked_comulative_node_degree_from_node_id(node_id)
         })
+    }
+
+    /// Returns the reciprocal squared root node degree up to the given node.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - Integer ID of the node.
+    ///
+    /// # Safety
+    /// If the given node ID does not exist in the current graph the method will raise a panic.
+    pub unsafe fn get_unchecked_reciprocal_sqrt_degree_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> WeightT {
+        (1.0 / (self.get_unchecked_node_degree_from_node_id(node_id) as f64).sqrt()) as WeightT
+    }
+
+    /// Returns the reciprocal squared root node degree up to the given node.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - Integer ID of the node.
+    pub fn get_reciprocal_sqrt_degree_from_node_id(&self, node_id: NodeT) -> Result<WeightT> {
+        self.validate_node_id(node_id).map(|node_id| unsafe {
+            self.get_unchecked_reciprocal_sqrt_degree_from_node_id(node_id)
+        })
+    }
+
+    /// Return vector with reciprocal squared root degree of the provided nodes.
+    ///
+    /// # Arguments
+    /// * `node_ids`: &[NodeT] - The vector of node IDs whose reciprocal squared root degree is to be retrieved.
+    ///
+    /// # Safety
+    /// This method makes the assumption that the provided node IDs exist in the graph, that is
+    /// they are not higher than the number of nodes in the graph.
+    pub unsafe fn get_unchecked_reciprocal_sqrt_degrees_from_node_ids(&self, node_ids: &[NodeT]) -> Vec<WeightT> {
+        let mut reciprocal_sqrt_degrees = vec![0.0; node_ids.len()];
+        if let Some(cached_reciprocal_sqrt_degrees) = self.reciprocal_sqrt_degrees.as_ref() {
+            node_ids.par_iter().map(|&node_id| cached_reciprocal_sqrt_degrees[node_id as usize])
+                    .collect_into_vec(&mut reciprocal_sqrt_degrees);
+        } else {
+            node_ids.par_iter().map(|&node_id| self.get_unchecked_reciprocal_sqrt_degree_from_node_id(node_id))
+                    .collect_into_vec(&mut reciprocal_sqrt_degrees);
+        }
+        reciprocal_sqrt_degrees
     }
 
     /// Returns the weighted sum of outbound neighbours of given node ID.

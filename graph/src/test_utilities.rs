@@ -1355,8 +1355,8 @@ pub fn test_sorting(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
     // The sorted graph is now sorted.
     assert!(sorted_increasing.has_nodes_sorted_by_increasing_outbound_node_degree());
     // The sorted graph has the same node types as the original graph
-    if graph.has_node_types(){
-        for node_name in sorted_increasing.iter_node_names(){
+    if graph.has_node_types() {
+        for node_name in sorted_increasing.iter_node_names() {
             assert_eq!(
                 graph.get_node_type_ids_from_node_name(node_name.as_str()),
                 sorted_increasing.get_node_type_ids_from_node_name(node_name.as_str()),
@@ -1374,8 +1374,8 @@ pub fn test_sorting(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
     // The sorted graph is now sorted.
     assert!(sorted_decreasing.has_nodes_sorted_by_decreasing_outbound_node_degree());
     // The sorted graph has the same node types as the original graph
-    if graph.has_node_types(){
-        for node_name in sorted_decreasing.iter_node_names(){
+    if graph.has_node_types() {
+        for node_name in sorted_decreasing.iter_node_names() {
             assert_eq!(
                 graph.get_node_type_ids_from_node_name(node_name.as_str()),
                 sorted_decreasing.get_node_type_ids_from_node_name(node_name.as_str()),
@@ -1393,8 +1393,8 @@ pub fn test_sorting(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
     // The sorted graph is now sorted.
     assert!(sorted_lexicographical.has_nodes_sorted_by_lexicographic_order());
     // The sorted graph has the same node types as the original graph
-    if graph.has_node_types(){
-        for node_name in sorted_lexicographical.iter_node_names(){
+    if graph.has_node_types() {
+        for node_name in sorted_lexicographical.iter_node_names() {
             assert_eq!(
                 graph.get_node_type_ids_from_node_name(node_name.as_str()),
                 sorted_lexicographical.get_node_type_ids_from_node_name(node_name.as_str()),
@@ -1423,7 +1423,7 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: Option<bool>) -> Result<()
         warn!("Executing random walks tests.");
         for mode in 0..2 {
             if mode == 1 {
-                graph.enable(None, None, None)?;
+                graph.enable(None, None, None, None)?;
                 if let Some(cumulative_node_degrees) = &graph.cumulative_node_degrees {
                     assert_eq!(
                         cumulative_node_degrees.len(),
@@ -1987,7 +1987,8 @@ pub fn test_nodelabel_holdouts(graph: &mut Graph, _verbose: Option<bool>) -> Res
             continue;
         }
 
-        let (train, test) = graph.get_node_label_holdout_graphs(0.8, Some(use_stratification), Some(42))?;
+        let (train, test) =
+            graph.get_node_label_holdout_graphs(0.8, Some(use_stratification), Some(42))?;
         assert!(train.has_unknown_node_types()?);
         assert!(test.has_unknown_node_types()?);
         let remerged = &mut (&train | &test)?;
@@ -2027,7 +2028,8 @@ pub fn test_edgelabel_holdouts(graph: &mut Graph, _verbose: Option<bool>) -> Res
                 .is_err());
             continue;
         }
-        let (train, test) = graph.get_edge_label_holdout_graphs(0.8, Some(*use_stratification), None)?;
+        let (train, test) =
+            graph.get_edge_label_holdout_graphs(0.8, Some(*use_stratification), None)?;
         assert!(train.has_unknown_edge_types()?);
         assert!(test.has_unknown_edge_types()?);
         assert!(
@@ -2438,7 +2440,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<()
     warn!("Starting default test suite.");
     let _ = _default_test_suite(graph, verbose);
     warn!("Starting default test suite with speedups enabled.");
-    graph.enable(Some(true), Some(true), Some(true))?;
+    graph.enable(Some(true), Some(true), Some(true), Some(true))?;
     let _ = _default_test_suite(graph, verbose);
     warn!("Starting default test suite on transformed graphs.");
 

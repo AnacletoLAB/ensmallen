@@ -187,16 +187,9 @@ impl Graph {
         self.must_not_be_multigraph()?;
         // Sort the nodes
         // Computing the reciprocal_sqrt_degrees
-        let reciprocal_sqrt_degrees = Arc::new(
-            sorted_node_ids
-                .par_iter()
-                .map(|&node_id| {
-                    (1.0 / (self.get_unchecked_node_degree_from_node_id(node_id) as f64).sqrt())
-                        as WeightT
-                })
-                .collect::<Vec<_>>(),
-        );
-        // 
+        let reciprocal_sqrt_degrees =
+            Arc::new(self.get_unchecked_reciprocal_sqrt_degrees_from_node_ids(sorted_node_ids));
+        //
         let nodes_number_usize = sorted_node_ids.len();
         Ok((0..nodes_number_usize)
             .into_par_iter()

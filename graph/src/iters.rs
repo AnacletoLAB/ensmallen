@@ -169,6 +169,22 @@ impl Graph {
         })
     }
 
+    /// Return iterator on the unweighted reciprocal squared root node degrees of the graph.
+    pub fn iter_reciprocal_sqrt_degrees(&self) -> impl Iterator<Item = WeightT> + '_ {
+        self.iter_node_ids().map(move |node_id| unsafe {
+            self.get_unchecked_reciprocal_sqrt_degree_from_node_id(node_id)
+        })
+    }
+
+    /// Return parallel iterator on the unweighted reciprocal squared root node degrees of the graph.
+    pub fn par_iter_reciprocal_sqrt_degrees(
+        &self,
+    ) -> impl IndexedParallelIterator<Item = WeightT> + '_ {
+        self.par_iter_node_ids().map(move |node_id| unsafe {
+            self.get_unchecked_reciprocal_sqrt_degree_from_node_id(node_id)
+        })
+    }
+
     /// Return iterator on the weighted node degrees of the graph.
     ///
     /// Note that with weighted it is meant that if this graph instance
