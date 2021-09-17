@@ -27,13 +27,9 @@ class KGOBOGraphRepository(GraphRepository):
             root_url,
             "{graph_name}"
         )
-        node_url_placeholder = urljoin(
+        graph_url_placeholder = urljoin(
             root_url,
-            "{graph_name}/{version}/{graph_name}_nodes.tsv"
-        )
-        edge_url_placeholder = urljoin(
-            root_url,
-            "{graph_name}/{version}/{graph_name}_edges.tsv"
+            "{graph_name}/{version}/{graph_name}.tar.gz"
         )
 
         black_list_set = {"../"}
@@ -59,23 +55,15 @@ class KGOBOGraphRepository(GraphRepository):
             callable_graph_name = graph_name.upper()
             mined_data[callable_graph_name] = {}
             for version in versions:
-                node_url = node_url_placeholder.format(
-                    graph_name=graph_name,
-                    version=version
-                )
-                edge_url = edge_url_placeholder.format(
+                graph_url = graph_url_placeholder.format(
                     graph_name=graph_name,
                     version=version
                 )
                 mined_data[callable_graph_name][version] = {
-                    "urls": [node_url, edge_url],
-                    "paths": [
-                        "{}_nodes.tsv".format(graph_name),
-                        "{}_edges.tsv".format(graph_name)
-                    ],
+                    "urls": [graph_url],
                     "arguments": {
-                        "edge_path": "{}_edges.tsv".format(graph_name),
-                        "node_path": "{}_nodes.tsv".format(graph_name),
+                        "edge_path": "{graph_name}/{graph_name}_edges.tsv".format(graph_name=graph_name),
+                        "node_path": "{graph_name}/{graph_name}_nodes.tsv".format(graph_name=graph_name),
                         "name": callable_graph_name,
                         "sources_column": "subject",
                         "destinations_column": "object",
@@ -226,7 +214,7 @@ class KGOBOGraphRepository(GraphRepository):
         -----------------------
         The paths list from where to download the graph data.
         """
-        return self._data[graph_name][version]["paths"]
+        return None
 
     def get_graph_list(self) -> List[str]:
         """Return list of graph names."""
