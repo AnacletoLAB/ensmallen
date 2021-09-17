@@ -30,7 +30,7 @@ def PheKnowLator(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/pheknowlatorkg",
-    version: str = "v2.1.0-2021-8-01.subclass-relationsOnly-owlnets-purified",
+    version: str = "v2.1.0-2021-9-01.subclass-relationsOnly-owlnets-purified",
     **additional_graph_kwargs: Dict
 ) -> Graph:
     """Return new instance of the PheKnowLator graph.
@@ -53,7 +53,7 @@ def PheKnowLator(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "v2.1.0-2021-8-01.subclass-relationsOnly-owlnets-purified",
+    version: str = "v2.1.0-2021-9-01.subclass-relationsOnly-owlnets-purified",
         The version of the graph to retrieve.		
 	The available versions are:
 			- v2.0.0-2020-5-10.instance-inverseRelations-owl
@@ -136,6 +136,18 @@ def PheKnowLator(
 			- v2.1.0-2021-8-01.subclass-relationsOnly-owl
 			- v2.1.0-2021-8-01.subclass-relationsOnly-owlnets
 			- v2.1.0-2021-8-01.subclass-relationsOnly-owlnets-purified
+			- v2.1.0-2021-9-01.instance-inverseRelations-owl
+			- v2.1.0-2021-9-01.instance-inverseRelations-owlnets
+			- v2.1.0-2021-9-01.instance-inverseRelations-owlnets-purified
+			- v2.1.0-2021-9-01.instance-relationsOnly-owl
+			- v2.1.0-2021-9-01.instance-relationsOnly-owlnets
+			- v2.1.0-2021-9-01.instance-relationsOnly-owlnets-purified
+			- v2.1.0-2021-9-01.subclass-inverseRelations-owl
+			- v2.1.0-2021-9-01.subclass-inverseRelations-owlnets
+			- v2.1.0-2021-9-01.subclass-inverseRelations-owlnets-purified
+			- v2.1.0-2021-9-01.subclass-relationsOnly-owl
+			- v2.1.0-2021-9-01.subclass-relationsOnly-owlnets
+			- v2.1.0-2021-9-01.subclass-relationsOnly-owlnets-purified
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 

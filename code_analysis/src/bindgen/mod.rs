@@ -19,6 +19,16 @@ pub fn extract_module_name_from_path(path: &str) -> Option<String> {
     re.captures(path).map(|x| x.get(1).unwrap().as_str().to_string())
 }
 
+/// If we should emit a binding for the given function
+fn is_to_bind(func: &Function) -> bool {
+    !func.name.starts_with("iter")
+    && !func.name.starts_with("par_iter")
+    && func.visibility == Visibility::Public
+    && !func.attributes.iter().any(|x| x == "no_binding")
+    && !func.attributes.iter().any(|x| x == "manual_binding")
+    && func.return_type.as_ref().map(|x| !x.to_string().contains("Iterator")).unwrap_or(false)
+}
+
 macro_rules! format_vec {
     ($values:expr, $fmt_str:literal, $join_sep:literal) => {
         $values.iter()
@@ -52,8 +62,7 @@ impl Class {
         let mut result = Vec::new();
         for imp in &self.impls {
             for method in &imp.methods {
-                if method.visibility == Visibility::Public
-                && !method.attributes.iter().any(|x| x == "no_binding") {
+                if is_to_bind(method) {
                     result.push(method.name.as_str());
                 }
             }
@@ -69,8 +78,9 @@ impl GenBinding for Class {
         format!(
 r#"
 #[pyclass]
-struct {struct_name} {{
-    inner: graph::{struct_name},
+#[derive(Debug, Clone)]
+pub struct {struct_name} {{
+    pub inner: graph::{struct_name},
 }}
 
 impl From<graph::{struct_name}> for {struct_name} {{
@@ -191,13 +201,7 @@ impl PyObjectProtocol for {struct_name} {{
     methods=format_vec!(
         self.impls.iter()
         .flat_map(|imp| imp.methods.iter()
-            .filter(|func| {
-                !func.name.starts_with("iter")
-                && !func.name.starts_with("par_iter")
-                && func.visibility == Visibility::Public
-                && !func.attributes.iter().any(|x| x == "no_binding")
-                && !func.attributes.iter().any(|x| x == "manual_binding")
-            })
+            .filter(|func| is_to_bind(func))
             .map(GenBinding::gen_python_binding)
             .filter(|x| !x.is_empty())
         ).collect::<Vec<_>>(),
@@ -259,11 +263,7 @@ impl GenBinding for BindingsModule {
         }
 
         for func in &self.funcs {
-            if  !func.name.starts_with("iter")
-                && !func.name.starts_with("par_iter")
-                && func.visibility == Visibility::Public
-                && !func.attributes.iter().any(|x| x == "no_binding")
-                && !func.attributes.iter().any(|x| x == "manual_binding") {
+            if  is_to_bind(func) {
                 registrations.push(
                     format!("\tm.add_wrapped(wrap_pyfunction!({}))?;", func.name)
                 );
@@ -298,14 +298,8 @@ fn {module_name}(_py: Python, m:&PyModule) -> PyResult<()> {{
 "#, 
     module_name=self.module_name,
     registrations=registrations.join("\n"),
-    functions=format_vec!(self.funcs.iter().filter(|func| {
-        !func.name.starts_with("iter")
-        && !func.name.starts_with("par_iter")
-        && func.class.as_ref().map_or(true, |class| class == "Graph")
-        && func.visibility == Visibility::Public
-        && !func.attributes.iter().any(|x| x == "no_binding")
-        && !func.attributes.iter().any(|x| x == "manual_binding")
-    }).map(GenBinding::gen_python_binding)
+    functions=format_vec!(self.funcs.iter().filter(|func| is_to_bind(func))
+    .map(GenBinding::gen_python_binding)
     .collect::<Vec<_>>(), "{}", "\n\n"),
     classes=format_vec!(
         self.structs.values()
@@ -397,6 +391,14 @@ use pyo3::class::basic::PyObjectProtocol;
 use std::hash::{{Hash, Hasher}};
 use std::collections::hash_map::DefaultHasher;
 use strsim::*;
+use graph::{{
+    NodeT,
+    EdgeT,
+    WeightT,
+    NodeTypeT,
+    EdgeTypeT,
+    Result,
+}};
 
 /// Returns the given method name separated in the component parts.
 ///

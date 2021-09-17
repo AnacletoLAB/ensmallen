@@ -78,7 +78,7 @@ impl Graph {
         ))?;
 
         let parameters = pe!(self.build_walk_parameters(walk_length, kwargs))?;
-        let iter = pe!(self.graph.iter_random_walks(quantity, &parameters))?;
+        let iter = pe!(self.inner.iter_random_walks(quantity, &parameters))?;
         let array = ThreadDataRaceAware {
             t: PyArray2::new(
                 py.python(),
@@ -167,12 +167,12 @@ impl Graph {
         ))?;
 
         let parameters = pe!(self.build_walk_parameters(walk_length, kwargs))?;
-        let iter = pe!(self.graph.iter_complete_walks(&parameters))?;
+        let iter = pe!(self.inner.iter_complete_walks(&parameters))?;
         let array = ThreadDataRaceAware {
             t: PyArray2::new(
                 py.python(),
                 [
-                    self.graph.get_unique_source_nodes_number() as usize
+                    self.inner.get_unique_source_nodes_number() as usize
                         * parameters.get_iterations() as usize,
                     walk_length as usize,
                 ],

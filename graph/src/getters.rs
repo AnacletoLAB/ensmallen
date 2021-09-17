@@ -3,8 +3,8 @@ use atomic_float::AtomicF64;
 use counter::Counter;
 use log::info;
 use rayon::prelude::*;
-use std::sync::atomic::{Ordering, AtomicU32};
 use std::collections::HashMap;
+use std::sync::atomic::{AtomicU32, Ordering};
 
 /// # Getters
 /// The naming convention we follow is:
@@ -586,7 +586,8 @@ impl Graph {
             .map(|_| AtomicF64::new(0.0))
             .collect::<Vec<_>>();
         self.par_iter_directed_destination_node_ids()
-            .zip(self.par_iter_edge_weights()?).for_each(|(dst, weight)|{
+            .zip(self.par_iter_edge_weights()?)
+            .for_each(|(dst, weight)| {
                 inbound_edge_weights[dst as usize].fetch_add(weight as f64, Ordering::Relaxed);
             });
         Ok(unsafe { std::mem::transmute::<Vec<AtomicF64>, Vec<f64>>(inbound_edge_weights) })
@@ -1203,9 +1204,10 @@ impl Graph {
             .iter_node_ids()
             .map(|_| AtomicU32::new(0))
             .collect::<Vec<_>>();
-        self.par_iter_directed_destination_node_ids().for_each(|dst|{
-            indegrees[dst as usize].fetch_add(1, Ordering::Relaxed);
-        });
+        self.par_iter_directed_destination_node_ids()
+            .for_each(|dst| {
+                indegrees[dst as usize].fetch_add(1, Ordering::Relaxed);
+            });
         unsafe { std::mem::transmute::<Vec<AtomicU32>, Vec<NodeT>>(indegrees) }
     }
 
@@ -1246,6 +1248,19 @@ impl Graph {
                 cumulative_node_degrees
             },
             |cumulative_node_degrees| cumulative_node_degrees.clone(),
+        )
+    }
+
+    /// Return vector with
+    pub fn get_reciprocal_sqrt_degrees(&self) -> Vec<WeightT> {
+        self.reciprocal_sqrt_degrees.as_ref().map_or_else(
+            || {
+                let mut reciprocal_sqrt_degrees = vec![0.0; self.get_nodes_number() as usize];
+                self.par_iter_reciprocal_sqrt_degrees()
+                    .collect_into_vec(&mut reciprocal_sqrt_degrees);
+                reciprocal_sqrt_degrees
+            },
+            |reciprocal_sqrt_degrees| reciprocal_sqrt_degrees.clone(),
         )
     }
 
