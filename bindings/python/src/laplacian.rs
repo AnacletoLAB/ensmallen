@@ -9,11 +9,11 @@ impl Graph {
         // Acquire the python gil.
         let gil = pyo3::Python::acquire_gil();
         // Get the expected number of edges
-        let edges_number = self.graph.get_laplacian_coo_matrix_edges_number() as usize;
+        let edges_number = self.inner.get_laplacian_coo_matrix_edges_number() as usize;
         // Create the return vectors
         let edge_node_ids = PyArray2::new(gil.python(), [edges_number, 2], false);
         let edge_weights = PyArray1::new(gil.python(), [edges_number], false);
-        self.graph.iter_laplacian_coo_matrix().enumerate().for_each(
+        self.inner.iter_laplacian_coo_matrix().enumerate().for_each(
             |(i, (src, dst, edge_weight))| unsafe {
                 *edge_node_ids.uget_mut([i, 0]) = src;
                 *edge_node_ids.uget_mut([i, 1]) = dst;
@@ -32,11 +32,11 @@ impl Graph {
         // Acquire the python gil.
         let gil = pyo3::Python::acquire_gil();
         // Get the expected number of edges
-        let edges_number = self.graph.get_laplacian_coo_matrix_edges_number() as usize;
+        let edges_number = self.inner.get_laplacian_coo_matrix_edges_number() as usize;
         // Create the return vectors
         let edge_node_ids = PyArray2::new(gil.python(), [edges_number, 2], false);
         let edge_weights = PyArray1::new(gil.python(), [edges_number], false);
-        self.graph
+        self.inner
             .iter_random_walk_normalized_laplacian_coo_matrix()
             .enumerate()
             .for_each(|(i, (src, dst, edge_weight))| unsafe {
@@ -56,11 +56,11 @@ impl Graph {
         // Acquire the python gil.
         let gil = pyo3::Python::acquire_gil();
         // Get the expected number of edges
-        let edges_number = self.graph.get_laplacian_coo_matrix_edges_number() as usize;
+        let edges_number = self.inner.get_laplacian_coo_matrix_edges_number() as usize;
         // Create the return vectors
         let edge_node_ids = PyArray2::new(gil.python(), [edges_number, 2], false);
         let edge_weights = PyArray1::new(gil.python(), [edges_number], false);
-        self.graph
+        self.inner
             .iter_symmetric_normalized_laplacian_coo_matrix()
             .enumerate()
             .for_each(|(i, (src, dst, edge_weight))| unsafe {
@@ -80,11 +80,11 @@ impl Graph {
         // Acquire the python gil.
         let gil = pyo3::Python::acquire_gil();
         // Get the expected number of edges
-        let edges_number = self.graph.get_laplacian_coo_matrix_edges_number() as usize;
+        let edges_number = self.inner.get_laplacian_coo_matrix_edges_number() as usize;
         // Create the return vectors
         let edge_node_ids = PyArray2::new(gil.python(), [edges_number, 2], false);
         let edge_weights = PyArray1::new(gil.python(), [edges_number], false);
-        pe!(self.graph.iter_symmetric_normalized_coo_matrix())?
+        pe!(self.inner.iter_symmetric_normalized_coo_matrix())?
             .enumerate()
             .for_each(|(i, (src, dst, edge_weight))| unsafe {
                 *edge_node_ids.uget_mut([i, 0]) = src;

@@ -17,6 +17,7 @@ const TYPES_OF_SEPARATORS: &'static [char] = &['\t', ',', ';', ' '];
 
 /// Structure that saves the common parameters for reading csv files.
 #[derive(Clone)]
+#[no_binding]
 pub struct CSVFileReader {
     /// The of the file to read. E.g. "/tmp/test.csv"
     pub(crate) path: String,

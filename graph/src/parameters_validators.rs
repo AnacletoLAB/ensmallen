@@ -361,6 +361,35 @@ impl Graph {
         Ok(())
     }
 
+    /// Raises an error if the graph does not include the identity matrix.
+    ///
+    /// # Example
+    /// In order to validate a graph instance, you can use:
+    ///
+    /// ```rust
+    /// # let ppi = graph::test_utilities::load_ppi(false, true, false, false, false, false);
+    /// # let ppi_with_selfloops = ppi.add_selfloops(None, None);
+    /// assert!(ppi.must_contain_identity_matrix().is_err());
+    /// assert!(ppi_with_selfloops.must_contain_identity_matrix().is_ok());
+    /// ```
+    ///
+    /// # Raises
+    /// * If the graph is a multigraph.
+    pub fn must_contain_identity_matrix(&self) -> Result<()> {
+        if !self.contains_identity_matrix() {
+            return Err(format!(
+                concat!(
+                    "The graph must contain the identity matrix, that ",
+                    "is all the nodes must have a selfloop. The current ",
+                    "graph instance has {} nodes and only {} selfloops."
+                ),
+                self.get_nodes_number(),
+                self.get_unique_selfloops_number()
+            ));
+        }
+        Ok(())
+    }
+
     #[no_binding]
     /// Raises an error if the graph does not have weights.
     ///

@@ -55,7 +55,19 @@ pub struct Graph {
     pub(crate) connected_nodes_number: NodeT,
 
     // /////////////////////////////////////////////////////////////////////////
+    // Kernels Caching related attributes
+    // /////////////////////////////////////////////////////////////////////////
+    pub(crate) reciprocal_sqrt_degrees: Option<Vec<WeightT>>,
+
+    // /////////////////////////////////////////////////////////////////////////
     pub(crate) cache: ClonableUnsafeCell<PropertyCache>,
+}
+
+use std::string::ToString;
+impl ToString for Graph {
+    fn to_string(&self) -> String {
+        self.textual_report()
+    }
 }
 
 /// # Graph utility methods
@@ -103,6 +115,7 @@ impl Graph {
             unique_sources: None,
             connected_nodes: None,
             connected_nodes_number: nodes_number as NodeT,
+            reciprocal_sqrt_degrees: None
         };
         if may_have_singletons || may_have_singleton_with_selfloops {
             let connected_nodes =

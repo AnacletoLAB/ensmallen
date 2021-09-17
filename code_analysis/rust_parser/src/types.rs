@@ -53,6 +53,20 @@ impl Default for Type {
         Type::None
     }
 }
+impl Type {
+    /// Iff this is a simple type, return the name of it
+    /// otherwise panic
+    pub fn get_name(&self) -> String {
+        match self {
+            Type::SimpleType {
+                name,
+                ..
+            } => name.to_string(),
+            Type::None => "()".to_string(),
+            _ => unreachable!("A struct cannot have a type which is not simple"),
+        }
+    }
+}
 
 impl std::ops::Index<usize> for Type {
     type Output = Type;

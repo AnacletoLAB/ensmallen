@@ -1,6 +1,7 @@
 use super::*;
 
 /// Structure that saves the writer specific to writing and reading a types csv file.
+#[no_binding]
 pub struct TypeFileWriter {
     pub(crate) writer: CSVFileWriter,
     pub(crate) type_ids_column: Option<String>,

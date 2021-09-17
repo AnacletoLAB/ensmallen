@@ -7,6 +7,7 @@ pub struct Struct {
     pub attributes: Vec<Attribute>,
     pub fields: Vec<StructField>,
     pub struct_type: Type,
+    pub file_path: String,
 }
 
 impl CanParse for Struct {
@@ -70,6 +71,7 @@ impl Parse for Struct {
                 visibility,
                 doc: String::new(),
                 attributes: Vec::new(),
+                file_path: String::new(),
             }
         )
 
@@ -136,6 +138,7 @@ mod test {
         let (reminder, res) = Struct::parse(ptr);
         assert_eq!(reminder, "AAAA".as_bytes());
         assert_eq!(res, Struct{
+            file_path: String::new(),
             visibility: Visibility::Public,
             doc: String::new(),
             attributes: Vec::new(),

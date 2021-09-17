@@ -3,6 +3,7 @@ use std::collections::HashMap;
 
 #[derive(Clone, Debug, PartialEq)]
 /// Struct to wrap walk weights.
+#[no_binding]
 pub struct WalkWeights {
     pub return_weight: ParamsT,
     pub(crate) explore_weight: ParamsT,
@@ -12,6 +13,7 @@ pub struct WalkWeights {
 
 #[derive(Clone, Debug, PartialEq)]
 /// Struct to wrap parameters relative to a single walk.
+#[no_binding]
 pub struct SingleWalkParameters {
     pub(crate) walk_length: u64,
     pub(crate) weights: WalkWeights,
@@ -20,6 +22,7 @@ pub struct SingleWalkParameters {
 
 #[derive(Clone, Debug, PartialEq)]
 /// Struct to wrap parameters relative to a set of walks.
+#[no_binding]
 pub struct WalksParameters {
     pub(crate) single_walk_parameters: SingleWalkParameters,
     pub(crate) iterations: NodeT,

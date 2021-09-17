@@ -8,6 +8,7 @@ from .monarch_initiative_graph_repository import MonarchInitiativeGraphRepositor
 from .zenodo_graph_repository import ZenodoGraphRepository
 from .pheknowlatorkg_graph_repository import PheKnowLatorKGGraphrepository
 from .jax_repository import JAXGraphRepository
+from .kg_obo_graph_repository import KGOBOGraphRepository
 
 __all__ = [
     "StringGraphRepository",
@@ -18,5 +19,6 @@ __all__ = [
     "MonarchInitiativeGraphRepository",
     "ZenodoGraphRepository",
     "PheKnowLatorKGGraphrepository",
-    "JAXGraphRepository"
+    "JAXGraphRepository",
+    "KGOBOGraphRepository"
 ]

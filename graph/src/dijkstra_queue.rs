@@ -1,5 +1,8 @@
+use tags::*;
+
 #[derive(Debug)]
 /// Reference classic binary heap
+#[no_binding]
 pub struct DijkstraQueue {
     /// This is the actual heap, it contains the node_ids and are ordered based on
     /// self.distances[id]

@@ -10,7 +10,7 @@ use std::hash::{Hash, Hasher};
 /// first few bits of the mantissa.
 ///
 /// This should be an hash which is kinda robust to float erros.
-fn hash_float<H: Hasher>(x: f32, state: &mut H) {
+pub(crate) fn hash_f32<H: Hasher>(x: f32, state: &mut H) {
     // basically we are converting the float to a u32 and
     // clear out the lower bits of the mantissa.
     let mut hack = u32::from_le_bytes(x.to_le_bytes());
@@ -20,6 +20,25 @@ fn hash_float<H: Hasher>(x: f32, state: &mut H) {
     hack &= 0b11111111111111111111000000000000;
 
     state.write_u32(hack);
+}
+
+#[inline(always)]
+/// Hashing floats is usually a bad idea
+/// But we want to know if any weight changed significantly
+/// THUS we will hash only the order of magnitude and the
+/// first few bits of the mantissa.
+///
+/// This should be an hash which is kinda robust to float erros.
+pub(crate) fn hash_f64<H: Hasher>(x: f64, state: &mut H) {
+    // basically we are converting the float to a u32 and
+    // clear out the lower bits of the mantissa.
+    let mut hack = u64::from_le_bytes(x.to_le_bytes());
+
+    // Clear the lower bits of the mantissa
+    //        seeeeeeeeeeemmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+    hack &= 0b1111111111111111111100000000000000000000000000000000000000000000;
+
+    state.write_u64(hack);
 }
 
 impl Graph {
@@ -46,7 +65,7 @@ impl Hash for Graph {
 
         if let Some(ws) = &self.weights {
             for w in ws {
-                hash_float(*w, state);
+                hash_f32(*w, state);
             }
         }
 

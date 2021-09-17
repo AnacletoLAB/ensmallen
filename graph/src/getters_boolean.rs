@@ -374,6 +374,19 @@ impl Graph {
         self.nodes.is_sorted_by_lexicographic_order()
     }
 
+    /// Returns whether the graph contains the indentity matrix.
+    ///
+    /// # Implications
+    /// The implications of having a graph containing teh identity
+    /// matrix are that it is not required to add selfloops to the
+    /// computation of the edge lists for kernels, like for instance
+    /// the Laplacian kernel. This in turn, means that it is not necessary
+    /// to sort the edge list in order to have it sorted, but it can
+    /// be generated sorted in the first place.
+    pub fn contains_identity_matrix(&self) -> bool {
+        self.get_nodes_number() == self.get_unique_selfloops_number()
+    }
+
     #[cache_property(nodes_sorted_by_increasing_outbound_node_degree)]
     /// Returns whether the node IDs are sorted by increasing outbound node degree.
     ///

@@ -73,7 +73,7 @@ impl Graph {
         // We sample the nodes.
         // We cannot directly allocate this into a
         // numpy array because
-        let nodes = pe!(self.graph.get_subsampled_nodes(
+        let nodes = pe!(self.inner.get_subsampled_nodes(
             number_of_nodes_to_sample,
             random_state,
             root_node,
@@ -91,7 +91,7 @@ impl Graph {
         let gil = pyo3::Python::acquire_gil();
 
         // Store whether the graph is undirected
-        let is_undirected = !self.graph.is_directed();
+        let is_undirected = !self.inner.is_directed();
 
         // Compute the required kernels.
         let kernels = pe!(edge_weighting_methods
@@ -128,14 +128,14 @@ impl Graph {
                 // If the required edge weighting method are the weights, we extract the weights
                 // iterator and populate the kernel using the weights.
                 if edge_weighting_method == "weights" {
-                    self.graph
+                    self.inner
                         .par_iter_subsampled_weighted_adjacency_matrix(&nodes, Some(false))?
                         .map(|(_, i, _, j, weight)| (i, j, weight))
                         .for_each(build_kernel);
                 // Similarly, if the required edge weighting method is the laplacian
                 // we populate the kernel with the laplacian.
                 } else if edge_weighting_method == "laplacian" {
-                    self.graph
+                    self.inner
                         .par_iter_subsampled_symmetric_laplacian_adjacency_matrix(
                             &nodes,
                             add_selfloops_where_missing,
@@ -145,7 +145,7 @@ impl Graph {
                 } else {
                     // Finally, all other edge weighting methods that are defined for all
                     // the node tuples are handled by this auto-dispatching method
-                    self.graph
+                    self.inner
                         .par_iter_subsampled_edge_metric_matrix(&nodes, edge_weighting_method)?
                         .map(|(_, i, _, j, weight)| (i, j, weight))
                         .for_each(build_kernel);
@@ -199,7 +199,7 @@ impl Graph {
         // If the required edge weighting method are the weights, we extract the weights
         // iterator and populate the kernel using the weights.
         let mut edge_ids: Vec<(NodeT, NodeT)> = unsafe {
-            self.graph.par_iter_subsampled_binary_adjacency_matrix(
+            self.inner.par_iter_subsampled_binary_adjacency_matrix(
                 &node_ids,
                 add_selfloops_where_missing,
                 complete,
@@ -294,7 +294,7 @@ impl Graph {
         // We sample the nodes.
         // We cannot directly allocate this into a
         // numpy array because
-        let nodes = pe!(self.graph.get_subsampled_nodes(
+        let nodes = pe!(self.inner.get_subsampled_nodes(
             number_of_nodes_to_sample,
             random_state,
             root_node,
@@ -319,14 +319,14 @@ impl Graph {
                 // iterator and populate the kernel using the weights.
                 let mut edge_node_ids_and_weights: Vec<(usize, usize, WeightT)> =
                     if edge_weighting_method == "weights" {
-                        self.graph
+                        self.inner
                             .par_iter_subsampled_weighted_adjacency_matrix(&nodes, Some(true))?
                             .map(|(_, src, _, dst, weight)| (src, dst, weight))
                             .collect()
                     // Similarly, if the required edge weighting method is the laplacian
                     // we populate the kernel with the laplacian.
                     } else if edge_weighting_method == "laplacian" {
-                        self.graph
+                        self.inner
                             .par_iter_subsampled_symmetric_laplacian_adjacency_matrix(
                                 &nodes,
                                 add_selfloops_where_missing,
@@ -383,6 +383,101 @@ impl Graph {
 
         // And return the sampled nodes and kernel
         Ok((numpy_nodes.t.to_owned(), sparse_kernels))
+    }
+
+    #[args(py_kwargs = "**")]
+    #[text_signature = "($self, number_of_nodes_to_sample, random_state, root_node, node_sampling_method)"]
+    /// Return subsampled nodes and edges using laplacian assuming undirected graph with selfloops.
+    ///
+    /// Parameters
+    /// --------------------
+    /// number_of_nodes_to_sample: int - The number of nodes to sample.
+    /// random_state: int - The random state to reproduce the sampling.
+    /// root_node: Optional[int] - The (optional) root node to use to sample. In not provided, a random one is sampled.
+    /// node_sampling_method: str - The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
+    ///
+    /// Raises
+    /// --------------------
+    /// TODO: Update
+    ///
+    /// Returns
+    /// --------------------
+    /// Tuple with the sampled nodes and the computed kernels.
+    pub fn get_sparse_undirected_laplacian_subgraphs(
+        &self,
+        number_of_nodes_to_sample: NodeT,
+        random_state: u64,
+        root_node: Option<NodeT>,
+        node_sampling_method: &str,
+    ) -> PyResult<(
+        Py<PyArray1<NodeT>>,
+        Vec<(Py<PyArray2<usize>>, Py<PyArray1<WeightT>>)>,
+    )> {
+        // We sample the nodes.
+        // We cannot directly allocate this into a
+        // numpy array because
+        let mut nodes = pe!(self.inner.get_subsampled_nodes(
+            number_of_nodes_to_sample,
+            random_state,
+            root_node,
+            node_sampling_method,
+            Some(true)
+        ))?;
+
+        nodes.par_sort_unstable();
+
+        // Some of the sampling mechanism are not guaranteed
+        // to actually return the requested number of nodes.
+        // For instance, sampling of BFS nodes from a component
+        // that does not contain the requested number of nodes.
+        let nodes_number = nodes.len();
+
+        // Acquire the python gil.
+        let gil = pyo3::Python::acquire_gil();
+
+        // Compute the required kernel.
+        let sorted_edge_node_ids_and_weights = pe!(unsafe {
+            self.inner
+                .par_iter_undirected_with_selfloops_subsampled_symmetric_laplacian_adjacency_matrix(
+                    &nodes,
+                )
+        })?
+        .collect::<Vec<_>>();
+
+        let edges_number = sorted_edge_node_ids_and_weights.len();
+
+        let edge_ids_vector = ThreadDataRaceAware {
+            t: PyArray2::new(gil.python(), [edges_number, 2], false),
+        };
+        let weights = ThreadDataRaceAware {
+            t: PyArray1::new(gil.python(), [edges_number], false),
+        };
+
+        sorted_edge_node_ids_and_weights
+            .into_par_iter()
+            .enumerate()
+            .for_each(|(i, (src, dst, weight))| unsafe {
+                *edge_ids_vector.t.uget_mut([i, 0]) = src;
+                *edge_ids_vector.t.uget_mut([i, 1]) = dst;
+                *weights.t.uget_mut([i]) = weight;
+            });
+
+        // We now convert the provided nodes into a numpy vector.
+        let numpy_nodes = ThreadDataRaceAware {
+            t: PyArray1::new(gil.python(), [nodes_number], false),
+        };
+
+        // We consume the original vector to populate the numpy one.
+        nodes
+            .into_par_iter()
+            .enumerate()
+            .for_each(|(i, node_id)| unsafe { *numpy_nodes.t.uget_mut([i]) = node_id });
+
+        // And return the sampled nodes and kernel
+        Ok((
+            numpy_nodes.t.to_owned(),
+            vec![(edge_ids_vector.t.to_owned(), weights.t.to_owned())],
+        ))
     }
 
     #[args(py_kwargs = "**")]
@@ -449,7 +544,7 @@ impl Graph {
         // We sample the nodes.
         // We cannot directly allocate this into a
         // numpy array because
-        let source_nodes = pe!(self.graph.get_subsampled_nodes(
+        let source_nodes = pe!(self.inner.get_subsampled_nodes(
             number_of_nodes_to_sample,
             random_state,
             None,
@@ -476,7 +571,7 @@ impl Graph {
         let gil = pyo3::Python::acquire_gil();
 
         // Store whether the graph is undirected
-        let is_undirected = !self.graph.is_directed();
+        let is_undirected = !self.inner.is_directed();
 
         // Compute the required kernels.
         let (source_kernels, destination_kernels) = pe!(edge_weighting_methods
@@ -530,14 +625,14 @@ impl Graph {
                 // If the required edge weighting method are the weights, we extract the weights
                 // iterator and populate the kernel using the weights.
                 if edge_weighting_method == "weights" {
-                    self.graph
+                    self.inner
                         .par_iter_subsampled_weighted_adjacency_matrix(&source_nodes, Some(false))?
                         .map(|(_, i, _, j, weight)| (i, j, weight))
                         .for_each(build_kernel);
                 // Similarly, if the required edge weighting method is the laplacian
                 // we populate the kernel with the laplacian.
                 } else if edge_weighting_method == "laplacian" {
-                    self.graph
+                    self.inner
                         .par_iter_subsampled_symmetric_laplacian_adjacency_matrix(
                             &source_nodes,
                             add_selfloops_where_missing,
@@ -547,7 +642,7 @@ impl Graph {
                 } else {
                     // Finally, all other edge weighting methods that are defined for all
                     // the node tuples are handled by this auto-dispatching method
-                    self.graph
+                    self.inner
                         .par_iter_subsampled_edge_metric_matrix(
                             &source_nodes,
                             edge_weighting_method,
@@ -574,7 +669,7 @@ impl Graph {
             .zip(destination_nodes.par_iter())
             .enumerate()
             .for_each(|(i, (&src, &dst))| unsafe {
-                *numpy_labels.t.uget_mut([i]) = self.graph.has_edge_from_node_ids(src, dst);
+                *numpy_labels.t.uget_mut([i]) = self.inner.has_edge_from_node_ids(src, dst);
             });
 
         // We now convert the provided nodes into a numpy vector.
@@ -679,7 +774,7 @@ impl Graph {
             src_kernels,
             dst_nodes,
             dst_kernels,
-            self.graph
+            self.inner
                 .has_edge_from_node_ids(source_root_node, destination_root_node),
         ))
     }

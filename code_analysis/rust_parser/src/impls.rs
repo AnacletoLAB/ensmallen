@@ -10,6 +10,7 @@ pub struct Impl {
     pub methods: Vec<Function>,
     pub type_defs: Vec<TypeDefinition>,
     pub generics: Generics,
+    pub file_path: String,
 }
 
 impl CanParse for Impl {
@@ -114,6 +115,7 @@ impl Parse for Impl {
                 methods: methods,
                 type_defs: type_defs,
                 generics: generics,
+                file_path: String::new(),
             }
         )
         

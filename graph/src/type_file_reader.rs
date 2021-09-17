@@ -4,6 +4,7 @@ use super::*;
 /// Structure that saves the reader specific to read a types csv file.
 ///
 /// # Attributes
+#[no_binding]
 #[derive(Clone)]
 pub struct TypeFileReader<T: ToFromUsize + Sync> {
     pub(crate) reader: Option<CSVFileReader>,

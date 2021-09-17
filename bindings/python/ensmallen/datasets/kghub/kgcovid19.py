@@ -42,21 +42,21 @@ def KGCOVID19(
 
     Parameters
     -------------------
-    directed: bool = False,
+    directed: bool = False
         Wether to load the graph as directed or undirected.
         By default false.
-    preprocess: bool = True,
+    preprocess: bool = True
         Whether to preprocess the graph to be loaded in 
         optimal time and memory.
-    verbose: int = 2,
+    verbose: int = 2
         Wether to show loading bars during the retrieval and building
         of the graph.
-    cache: bool = True,
+    cache: bool = True
         Whether to use cache, i.e. download files only once
         and preprocess them only once.
-    cache_path: str = "graphs",
+    cache_path: str = "graphs"
         Where to store the downloaded graphs.
-    version: str = "current",
+    version: str = "current"
         The version of the graph to retrieve.		
 	The available versions are:
 			- 20200925
@@ -75,8 +75,10 @@ def KGCOVID19(
 			- 20210725
 			- 20210726
 			- 20210727
+			- 20210823
+			- 20210902
 			- current
-    additional_graph_kwargs: Dict,
+    additional_graph_kwargs: Dict
         Additional graph kwargs.
 
     Returns

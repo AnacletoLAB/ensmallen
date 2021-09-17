@@ -25,13 +25,13 @@ fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
 ///
 /// Arguments
 /// ---------
-/// documents: List[List[String]],
+/// documents: List[List[str]],
 ///     The documents to parse
 /// k1: Optional[float],
 ///     The default parameter for k1, tipically between 1.2 and 2.0.
 /// b: Optional[float],
 ///     The default parameter for b, tipically equal to 0.75.
-/// vocabulary_size: Optional[usize],
+/// vocabulary_size: Optional[int],
 ///     The expected vocabulary size.
 /// verbose: Optional[bool],
 ///     Whether to show a loading bar.
@@ -59,13 +59,13 @@ fn okapi_bm25_tfidf_int(
 ///
 /// Arguments
 /// ---------
-/// documents: List[List[String]],
+/// documents: List[List[str]],
 ///     The documents to parse
 /// k1: Optional[float],
 ///     The default parameter for k1, tipically between 1.2 and 2.0.
 /// b: Optional[float],
 ///     The default parameter for b, tipically equal to 0.75.
-/// vocabulary_size: Optional[usize],
+/// vocabulary_size: Optional[int],
 ///     The expected vocabulary size.
 /// verbose: Optional[bool],
 ///     Whether to show a loading bar.
@@ -235,7 +235,7 @@ impl Graph {
 
         let parameters = pe!(self.build_walk_parameters(walk_length, kwargs))?;
 
-        let (number_of_elements, iter) = pe!(self.graph.cooccurence_matrix(
+        let (number_of_elements, iter) = pe!(self.inner.cooccurence_matrix(
             &parameters,
             extract_value!(kwargs, "window_size", usize).unwrap_or(3),
             extract_value!(kwargs, "verbose", bool)
@@ -334,7 +334,7 @@ impl Graph {
         ))?;
         let parameters = pe!(self.build_walk_parameters(walk_length, kwargs))?;
 
-        let iter = pe!(self.graph.node2vec(&parameters, batch_size, window_size))?;
+        let iter = pe!(self.inner.node2vec(&parameters, batch_size, window_size))?;
 
         let elements_per_batch = (walk_length as usize - window_size * 2)
             * batch_size as usize
@@ -389,14 +389,14 @@ impl Graph {
     )> {
         let gil = pyo3::Python::acquire_gil();
 
-        let nodes_number = self.graph.get_nodes_number();
+        let nodes_number = self.inner.get_nodes_number();
         // Get the batch size
         let batch_size = batch_size.unwrap_or(1024).min(nodes_number);
         // Whether to include or not the edge weights
         let return_edge_weights = return_edge_weights.unwrap_or(false);
 
         // We retrieve the batch iterator.
-        let iter = pe!(self.graph.get_node_label_prediction_mini_batch(
+        let iter = pe!(self.inner.get_node_label_prediction_mini_batch(
             idx,
             Some(batch_size),
             include_central_node,
@@ -414,7 +414,7 @@ impl Graph {
                 gil.python(),
                 [
                     batch_size as usize,
-                    pe!(self.graph.get_node_types_number())? as usize,
+                    pe!(self.inner.get_node_types_number())? as usize,
                 ],
                 false,
             ),
@@ -464,7 +464,7 @@ impl Graph {
     ///     Whether to return the source and destination nodes node types.
     /// return_edge_types: Optional[bool],
     ///     Whether to return the edge types. The negative edges edge type will be samples at random.
-    /// return_edge_metrics: Option<bool>,
+    /// return_edge_metrics: Optional[bool],
     ///     Whether to return the edge metrics.
     /// avoid_false_negatives: Optional[bool],
     ///     Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
@@ -514,8 +514,8 @@ impl Graph {
         let return_edge_metrics = return_edge_metrics.unwrap_or(false);
         let batch_size = batch_size.unwrap_or(1024);
 
-        let graph_to_avoid = graph_to_avoid.map(|ensmallen| ensmallen.graph);
-        let par_iter = pe!(self.graph.get_edge_prediction_mini_batch(
+        let graph_to_avoid = graph_to_avoid.map(|ensmallen| ensmallen.inner);
+        let par_iter = pe!(self.inner.get_edge_prediction_mini_batch(
             idx,
             Some(batch_size),
             negative_samples_rate,
@@ -535,7 +535,7 @@ impl Graph {
             t: PyArray1::new(gil.python(), [batch_size], false),
         };
         let (src_node_type_ids, dst_node_type_ids) = if return_node_types {
-            let max_node_type_count = pe!(self.graph.get_maximum_multilabel_count())? as usize;
+            let max_node_type_count = pe!(self.inner.get_maximum_multilabel_count())? as usize;
             (
                 Some(ThreadDataRaceAware {
                     t: PyArray2::new(gil.python(), [batch_size, max_node_type_count], false),
@@ -649,7 +649,7 @@ impl Graph {
         };
 
         unsafe {
-            self.graph
+            self.inner
                 .par_iter_unchecked_edge_prediction_metrics(
                     source_node_ids,
                     destination_node_ids,
@@ -696,12 +696,12 @@ impl Graph {
         let batch_metrics = ThreadDataRaceAware {
             t: PyArray2::new(
                 gil.python(),
-                [self.graph.get_directed_edges_number() as usize, 4],
+                [self.inner.get_directed_edges_number() as usize, 4],
                 false,
             ),
         };
 
-        self.graph
+        self.inner
             .par_iter_edge_prediction_metrics(normalize, verbose)
             .enumerate()
             .for_each(|(i, metrics)| {
