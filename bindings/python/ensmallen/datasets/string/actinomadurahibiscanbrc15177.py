@@ -42,27 +42,27 @@ def ActinomaduraHibiscaNbrc15177(
 
     Parameters
     -------------------
-    directed: bool = False,
+    directed: bool = False
         Wether to load the graph as directed or undirected.
         By default false.
-    preprocess: bool = True,
+    preprocess: bool = True
         Whether to preprocess the graph to be loaded in 
         optimal time and memory.
-    verbose: int = 2,
+    verbose: int = 2
         Wether to show loading bars during the retrieval and building
         of the graph.
-    cache: bool = True,
+    cache: bool = True
         Whether to use cache, i.e. download files only once
         and preprocess them only once.
-    cache_path: str = "graphs",
+    cache_path: str = "graphs"
         Where to store the downloaded graphs.
-    version: str = "links.v11.5",
+    version: str = "links.v11.5"
         The version of the graph to retrieve.		
 	The available versions are:
 			- homology.v11.5
 			- physical.links.v11.5
 			- links.v11.5
-    additional_graph_kwargs: Dict,
+    additional_graph_kwargs: Dict
         Additional graph kwargs.
 
     Returns

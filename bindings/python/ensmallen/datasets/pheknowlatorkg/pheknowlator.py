@@ -39,21 +39,21 @@ def PheKnowLator(
 
     Parameters
     -------------------
-    directed: bool = False,
+    directed: bool = False
         Wether to load the graph as directed or undirected.
         By default false.
-    preprocess: bool = True,
+    preprocess: bool = True
         Whether to preprocess the graph to be loaded in 
         optimal time and memory.
-    verbose: int = 2,
+    verbose: int = 2
         Wether to show loading bars during the retrieval and building
         of the graph.
-    cache: bool = True,
+    cache: bool = True
         Whether to use cache, i.e. download files only once
         and preprocess them only once.
-    cache_path: str = "graphs",
+    cache_path: str = "graphs"
         Where to store the downloaded graphs.
-    version: str = "v2.1.0-2021-9-01.subclass-relationsOnly-owlnets-purified",
+    version: str = "v2.1.0-2021-9-01.subclass-relationsOnly-owlnets-purified"
         The version of the graph to retrieve.		
 	The available versions are:
 			- v2.0.0-2020-5-10.instance-inverseRelations-owl
@@ -148,7 +148,7 @@ def PheKnowLator(
 			- v2.1.0-2021-9-01.subclass-relationsOnly-owl
 			- v2.1.0-2021-9-01.subclass-relationsOnly-owlnets
 			- v2.1.0-2021-9-01.subclass-relationsOnly-owlnets-purified
-    additional_graph_kwargs: Dict,
+    additional_graph_kwargs: Dict
         Additional graph kwargs.
 
     Returns
