@@ -6,7 +6,6 @@ use std::fs::File;
 use std::io::{prelude::*, BufReader, SeekFrom};
 #[cfg(target_os = "linux")]
 use std::os::unix::io::AsRawFd;
-use std::sync::{Arc, Mutex};
 
 pub const READER_CAPACITY: usize = 1 << 17;
 
