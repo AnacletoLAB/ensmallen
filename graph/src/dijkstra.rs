@@ -90,11 +90,29 @@ impl ShortestPathsResultBFS {
     ///
     /// # Raises
     /// * If the predecessors vector was not requested.
-    pub fn get_kth_point_on_shortest_path(
+    pub unsafe fn get_unchecked_kth_point_on_shortest_path(
         &self,
         mut dst_node_id: NodeT,
         k: NodeT,
     ) -> Result<NodeT> {
+        if let Some(predecessors) = self.predecessors.as_ref() {
+            for _ in 0..k {
+                dst_node_id = predecessors[dst_node_id as usize];
+            }
+            return Ok(dst_node_id);
+        }
+        Err("Predecessors were not requested and therefore not computed.".to_string())
+    }
+
+    /// Returns node at the `len - k` position on minimum path to given destination node.
+    ///
+    /// # Arguments
+    /// * `dst_node_id`: NodeT - The node to start computing predecessors from.
+    /// * `k`: NodeT - Steps to go back.
+    ///
+    /// # Raises
+    /// * If the predecessors vector was not requested.
+    pub fn get_kth_point_on_shortest_path(&self, dst_node_id: NodeT, k: NodeT) -> Result<NodeT> {
         if !self.has_path_to_node_id(dst_node_id)? {
             return Err("There is no path to the given destination node.".to_string());
         }
@@ -108,13 +126,7 @@ impl ShortestPathsResultBFS {
                 k
             ));
         }
-        if let Some(predecessors) = self.predecessors.as_ref() {
-            for _ in 0..k {
-                dst_node_id = predecessors[dst_node_id as usize];
-            }
-            return Ok(dst_node_id);
-        }
-        Err("Predecessors were not requested and therefore not computed.".to_string())
+        unsafe { self.get_unchecked_kth_point_on_shortest_path(dst_node_id, k) }
     }
 
     pub fn get_median_point(&self, dst_node_id: NodeT) -> Result<NodeT> {
@@ -123,6 +135,13 @@ impl ShortestPathsResultBFS {
         }
         let median_distance = self.get_distance_from_node_id(dst_node_id)? / 2;
         self.get_kth_point_on_shortest_path(dst_node_id, median_distance)
+    }
+
+    pub fn get_median_point_to_most_distant_node(&self) -> Result<NodeT> {
+        let median_distance = self.eccentricity / 2;
+        unsafe {
+            self.get_unchecked_kth_point_on_shortest_path(self.most_distant_node, median_distance)
+        }
     }
 
     pub fn get_eccentricity(&self) -> NodeT {
@@ -1505,7 +1524,7 @@ impl Graph {
     ///     of the diameter lowerbound.
     ///
     /// This basically creates a "cross" that spans the graph.
-    fn get_four_sweep(&self) -> Result<(NodeT, NodeT)> {
+    fn get_four_sweep(&self) -> (NodeT, NodeT) {
         let most_central_node_id = unsafe { self.get_unchecked_most_central_node_id() };
         let first_candidate_most_eccentric_node_id = unsafe {
             self.get_unchecked_eccentricity_and_most_distant_node_id_from_node_id(
@@ -1522,7 +1541,7 @@ impl Graph {
 
         let second_candidate_most_eccentric_node_id = unsafe {
             self.get_unchecked_eccentricity_and_most_distant_node_id_from_node_id(
-                bfs1.get_median_point(bfs1.get_most_distant_node())?,
+                bfs1.get_median_point_to_most_distant_node().unwrap(),
             )
             .1
         };
@@ -1532,10 +1551,10 @@ impl Graph {
             )
         };
 
-        Ok((
+        (
             bfs1.get_eccentricity().max(bfs2.get_eccentricity()),
-            bfs2.get_median_point(bfs2.get_most_distant_node())?,
-        ))
+            bfs2.get_median_point_to_most_distant_node().unwrap(),
+        )
     }
 
     /// Returns diameter of an UNDIRECTED graph.
@@ -1555,7 +1574,7 @@ impl Graph {
         }
 
         // get the lowerbound of the diameter
-        let (mut tentative_diameter, low_eccentricity_node) = self.get_four_sweep()?;
+        let (mut tentative_diameter, low_eccentricity_node) = self.get_four_sweep();
         // find the distances of all the nodes from the node with low eccentricty,
         // and thus with high centrality
         let bfs = unsafe {
