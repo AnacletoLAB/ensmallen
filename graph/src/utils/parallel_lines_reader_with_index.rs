@@ -187,7 +187,7 @@ impl<'a> UnindexedProducer for ParalellLinesProducerWithIndex<'a> {
     /// Split the file in two approximately balanced streams
     fn split(mut self) -> (Self, Option<Self>) {
         // Check if it's reasonable to split the stream
-        if self.depth > self.maximal_depth {
+        if self.depth >= self.maximal_depth {
             return (self, None);
         }
 
