@@ -8,7 +8,7 @@ References
 ---------------------
 Please cite the following if you use the data:
 
-```latex
+```bib
 @article{mungall2017monarch,
   title={The Monarch Initiative: an integrative data and analytic platform connecting phenotypes to genotypes across species},
   author={Mungall, Christopher J and McMurry, Julie A and K{\"o}hler, Sebastian and Balhoff, James P and Borromeo, Charles and Brush, Matthew and Carbon, Seth and Conlin, Tom and Dunn, Nathan and Engelstad, Mark and others},
@@ -30,6 +30,7 @@ from ...ensmallen import Graph  # pylint: disable=import-error
 def Monarch(
     directed: bool = False,
     preprocess: bool = True,
+    load_nodes: bool = True,
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/monarchinitiative",
@@ -42,26 +43,29 @@ def Monarch(
 
     Parameters
     -------------------
-    directed: bool = False,
+    directed: bool = False
         Wether to load the graph as directed or undirected.
         By default false.
-    preprocess: bool = True,
+    preprocess: bool = True
         Whether to preprocess the graph to be loaded in 
         optimal time and memory.
+    load_nodes: bool = True,
+        Whether to load the nodes vocabulary or treat the nodes
+        simply as a numeric range.
     verbose: int = 2,
         Wether to show loading bars during the retrieval and building
         of the graph.
-    cache: bool = True,
+    cache: bool = True
         Whether to use cache, i.e. download files only once
         and preprocess them only once.
-    cache_path: str = "graphs",
+    cache_path: str = "graphs"
         Where to store the downloaded graphs.
-    version: str = "202103",
+    version: str = "202103"
         The version of the graph to retrieve.		
 	The available versions are:
 			- 202012
 			- 202103
-    additional_graph_kwargs: Dict,
+    additional_graph_kwargs: Dict
         Additional graph kwargs.
 
     Returns
@@ -72,7 +76,7 @@ def Monarch(
 	---------------------
 	Please cite the following if you use the data:
 	
-	```latex
+	```bib
 	@article{mungall2017monarch,
 	  title={The Monarch Initiative: an integrative data and analytic platform connecting phenotypes to genotypes across species},
 	  author={Mungall, Christopher J and McMurry, Julie A and K{\"o}hler, Sebastian and Balhoff, James P and Borromeo, Charles and Brush, Matthew and Carbon, Seth and Conlin, Tom and Dunn, Nathan and Engelstad, Mark and others},
@@ -91,6 +95,7 @@ def Monarch(
         version=version,
         directed=directed,
         preprocess=preprocess,
+        load_nodes=load_nodes,
         verbose=verbose,
         cache=cache,
         cache_path=cache_path,

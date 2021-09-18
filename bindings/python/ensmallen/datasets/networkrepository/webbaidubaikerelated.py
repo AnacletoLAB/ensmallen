@@ -8,7 +8,7 @@ References
 ---------------------
 Please cite the following if you use the data:
 
-```latex
+```bib
 @inproceedings{nr,
     title = {The Network Data Repository with Interactive Graph Analytics and Visualization},
     author={Ryan A. Rossi and Nesreen K. Ahmed},
@@ -35,6 +35,7 @@ from ...ensmallen import Graph  # pylint: disable=import-error
 def WebBaiduBaikeRelated(
     directed: bool = False,
     preprocess: bool = True,
+    load_nodes: bool = True,
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/networkrepository",
@@ -47,23 +48,26 @@ def WebBaiduBaikeRelated(
 
     Parameters
     -------------------
-    directed: bool = False,
+    directed: bool = False
         Wether to load the graph as directed or undirected.
         By default false.
-    preprocess: bool = True,
+    preprocess: bool = True
         Whether to preprocess the graph to be loaded in 
         optimal time and memory.
+    load_nodes: bool = True,
+        Whether to load the nodes vocabulary or treat the nodes
+        simply as a numeric range.
     verbose: int = 2,
         Wether to show loading bars during the retrieval and building
         of the graph.
-    cache: bool = True,
+    cache: bool = True
         Whether to use cache, i.e. download files only once
         and preprocess them only once.
-    cache_path: str = "graphs",
+    cache_path: str = "graphs"
         Where to store the downloaded graphs.
-    version: str = "latest",
+    version: str = "latest"
         The version of the graph to retrieve.	
-    additional_graph_kwargs: Dict,
+    additional_graph_kwargs: Dict
         Additional graph kwargs.
 
     Returns
@@ -74,7 +78,7 @@ def WebBaiduBaikeRelated(
 	---------------------
 	Please cite the following if you use the data:
 	
-	```latex
+	```bib
 	@inproceedings{nr,
 	    title = {The Network Data Repository with Interactive Graph Analytics and Visualization},
 	    author={Ryan A. Rossi and Nesreen K. Ahmed},
@@ -98,6 +102,7 @@ def WebBaiduBaikeRelated(
         version=version,
         directed=directed,
         preprocess=preprocess,
+        load_nodes=load_nodes,
         verbose=verbose,
         cache=cache,
         cache_path=cache_path,

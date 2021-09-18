@@ -1,13 +1,9 @@
 use super::*;
 use indicatif::ParallelProgressIterator;
-use indicatif::ProgressIterator;
 use num_traits::Zero;
-use rayon::iter::IndexedParallelIterator;
-use rayon::iter::IntoParallelIterator;
-use rayon::iter::ParallelIterator;
+use rayon::prelude::*;
 use std::cmp::Ord;
 use std::collections::VecDeque;
-use std::sync::atomic::{AtomicU32, Ordering};
 use std::hash::{Hash, Hasher};
 use std::string::ToString;
 
@@ -1339,12 +1335,9 @@ impl Graph {
 
     /// Returns diameter of an UNDIRECTED graph.
     ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show a loading bar.
-    ///
     /// # Referencences
     /// This method is based on the algorithm described in ["On computing the diameter of real-world undirected graphs" by Crescenzi et al](https://who.rocq.inria.fr/Laurent.Viennot/road/papers/ifub.pdf).
-    fn get_ifub(&self, verbose: Option<bool>) -> Result<f64> {
+    fn get_ifub(&self) -> Result<f64> {
         if self.is_directed() {
             panic!(
                 "This method is not defined YET for directed graphs! We will add it in the future!"
@@ -1357,7 +1350,7 @@ impl Graph {
         }
 
         // get the lowerbound of the diameter
-        let (tentative_diameter, low_eccentricity_node) = self.get_four_sweep()?;
+        let (mut tentative_diameter, low_eccentricity_node) = self.get_four_sweep()?;
         // find the distances of all the nodes from the node with low eccentricty,
         // and thus with high centrality
         let bfs = unsafe {
@@ -1394,59 +1387,35 @@ impl Graph {
         // sort the nodes by distance, so that we will start checking from the
         // most distant ones which are the most probable to be an extreme of the
         // diameter.
-        // Since this vector is generally expected to be quite small,
-        // we proceed with a non-parallell approach to avoid spinning up
-        // threads for no good reason.
-        node_ids_and_distances.sort_by(|(_, a), &(_, b)| b.cmp(a));
+        node_ids_and_distances.par_sort_unstable_by(|(_, a), &(_, b)| b.cmp(a));
 
-        // Fold it into groups
-        let mut current_distance = node_ids_and_distances[0].1;
-        let mut distance_groups: Vec<(NodeT, Vec<NodeT>)> = vec![(current_distance, Vec::new())];
-        for (node_id, distance) in node_ids_and_distances {
-            if current_distance == distance {
-                distance_groups.last_mut().unwrap().1.push(node_id);
-            } else {
-                current_distance = distance;
-                distance_groups.push((distance, vec![node_id]));
-            }
-        }
-
-        // Put tentative diameter into an AtomicU32
-        let tentative_diameter = AtomicU32::new(tentative_diameter);
-
-        let pb = get_loading_bar(
-            verbose.unwrap_or(true) && distance_groups.len() > 1,
-            "Computing diameter groups",
-            distance_groups.len(),
-        );
+        let mut i = 0;
+        let mut current_distance = node_ids_and_distances[i].1;
 
         // for each possible node of the outer crown compute the maximum path
         // from there, this way we can find the exact diameter
-        distance_groups
-            .into_iter()
-            .progress_with(pb)
-            .for_each(|(distance, node_ids)| unsafe {
-                // If we have not yet reached the bound
-                if tentative_diameter.load(Ordering::Relaxed) < distance * 2 {
-                    let pb2 = get_loading_bar(
-                        verbose.unwrap_or(true) && node_ids.len() > 1,
-                        &format!("Computing diameter of nodes at distance {}", distance),
-                        node_ids.len(),
-                    );
-                    // We compute the new candidate diameter.
-                    tentative_diameter.fetch_max(
-                        node_ids
-                            .into_par_iter()
-                            .progress_with(pb2)
-                            .map(|node_id| self.get_unchecked_eccentricity_from_node_id(node_id))
-                            .max()
-                            .unwrap(),
-                        Ordering::Relaxed,
-                    );
-                }
-            });
+        while tentative_diameter < current_distance * 2 {
+            let j = i + node_ids_and_distances[i..]
+                .iter()
+                .take_while(|&&(_, distance)| distance == current_distance)
+                .count();
+            tentative_diameter = tentative_diameter.max(
+                node_ids_and_distances[i..j]
+                    .par_iter()
+                    .map(|&(node_id, _)| unsafe {
+                        self.get_unchecked_eccentricity_from_node_id(node_id)
+                    })
+                    .max()
+                    .unwrap(),
+            );
+            if j == node_ids_and_distances.len(){
+                break;
+            }
+            i = j;
+            current_distance = node_ids_and_distances[i].1;
+        }
 
-        Ok(tentative_diameter.into_inner() as f64)
+        Ok(tentative_diameter as f64)
     }
 
     /// Returns diameter of the graph using naive method.
@@ -1518,7 +1487,7 @@ impl Graph {
         if self.is_directed() {
             self.get_diameter_naive(Some(true), Some(verbose))
         } else {
-            self.get_ifub(Some(verbose))
+            self.get_ifub()
         }
     }
 

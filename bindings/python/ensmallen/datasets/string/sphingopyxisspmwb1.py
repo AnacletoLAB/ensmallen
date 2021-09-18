@@ -8,7 +8,7 @@ References
 ---------------------
 Please cite the following if you use the data:
 
-```latex
+```bib
 @article{szklarczyk2019string,
     title={STRING v11: protein--protein association networks with increased coverage, supporting functional discovery in genome-wide experimental datasets},
     author={Szklarczyk, Damian and Gable, Annika L and Lyon, David and Junge, Alexander and Wyder, Stefan and Huerta-Cepas, Jaime and Simonovic, Milan and Doncheva, Nadezhda T and Morris, John H and Bork, Peer and others},
@@ -30,6 +30,7 @@ from ...ensmallen import Graph  # pylint: disable=import-error
 def SphingopyxisSpMwb1(
     directed: bool = False,
     preprocess: bool = True,
+    load_nodes: bool = True,
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
@@ -42,21 +43,24 @@ def SphingopyxisSpMwb1(
 
     Parameters
     -------------------
-    directed: bool = False,
+    directed: bool = False
         Wether to load the graph as directed or undirected.
         By default false.
-    preprocess: bool = True,
+    preprocess: bool = True
         Whether to preprocess the graph to be loaded in 
         optimal time and memory.
+    load_nodes: bool = True,
+        Whether to load the nodes vocabulary or treat the nodes
+        simply as a numeric range.
     verbose: int = 2,
         Wether to show loading bars during the retrieval and building
         of the graph.
-    cache: bool = True,
+    cache: bool = True
         Whether to use cache, i.e. download files only once
         and preprocess them only once.
-    cache_path: str = "graphs",
+    cache_path: str = "graphs"
         Where to store the downloaded graphs.
-    version: str = "links.v11.5",
+    version: str = "links.v11.5"
         The version of the graph to retrieve.		
 	The available versions are:
 			- homology.v11.0
@@ -65,7 +69,7 @@ def SphingopyxisSpMwb1(
 			- physical.links.v11.5
 			- links.v11.0
 			- links.v11.5
-    additional_graph_kwargs: Dict,
+    additional_graph_kwargs: Dict
         Additional graph kwargs.
 
     Returns
@@ -76,7 +80,7 @@ def SphingopyxisSpMwb1(
 	---------------------
 	Please cite the following if you use the data:
 	
-	```latex
+	```bib
 	@article{szklarczyk2019string,
 	    title={STRING v11: protein--protein association networks with increased coverage, supporting functional discovery in genome-wide experimental datasets},
 	    author={Szklarczyk, Damian and Gable, Annika L and Lyon, David and Junge, Alexander and Wyder, Stefan and Huerta-Cepas, Jaime and Simonovic, Milan and Doncheva, Nadezhda T and Morris, John H and Bork, Peer and others},
@@ -95,6 +99,7 @@ def SphingopyxisSpMwb1(
         version=version,
         directed=directed,
         preprocess=preprocess,
+        load_nodes=load_nodes,
         verbose=verbose,
         cache=cache,
         cache_path=cache_path,

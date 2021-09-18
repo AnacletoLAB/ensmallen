@@ -263,6 +263,9 @@ impl Graph {
     /// ```
     pub fn get_node_degrees_median(&self) -> Result<NodeT> {
         self.must_have_nodes()?;
+        if self.has_nodes_sorted_by_decreasing_outbound_node_degree() || self.has_nodes_sorted_by_increasing_outbound_node_degree(){
+            return Ok(unsafe{self.get_unchecked_node_degree_from_node_id(self.get_nodes_number() / 2)});
+        }
         let mut degrees = self.get_node_degrees();
         degrees.par_sort_unstable();
         Ok(degrees[(self.get_nodes_number() / 2) as usize])

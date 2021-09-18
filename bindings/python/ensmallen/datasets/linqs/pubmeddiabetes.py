@@ -12,7 +12,7 @@ References
 ---------------------
 Please cite the following if you use the data:
 
-```latex
+```bib
 @inproceedings{namata2012query,
   title={Query-driven active surveying for collective classification},
   author={Namata, Galileo and London, Ben and Getoor, Lise and Huang, Bert and EDU, UMD},
@@ -31,6 +31,7 @@ from ...ensmallen import Graph  # pylint: disable=import-error
 def PubMedDiabetes(
     directed: bool = False,
     preprocess: bool = True,
+    load_nodes: bool = True,
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/linqs",
@@ -47,23 +48,26 @@ def PubMedDiabetes(
 
     Parameters
     -------------------
-    directed: bool = False,
+    directed: bool = False
         Wether to load the graph as directed or undirected.
         By default false.
-    preprocess: bool = True,
+    preprocess: bool = True
         Whether to preprocess the graph to be loaded in 
         optimal time and memory.
+    load_nodes: bool = True,
+        Whether to load the nodes vocabulary or treat the nodes
+        simply as a numeric range.
     verbose: int = 2,
         Wether to show loading bars during the retrieval and building
         of the graph.
-    cache: bool = True,
+    cache: bool = True
         Whether to use cache, i.e. download files only once
         and preprocess them only once.
-    cache_path: str = "graphs",
+    cache_path: str = "graphs"
         Where to store the downloaded graphs.
-    version: str = "latest",
+    version: str = "latest"
         The version of the graph to retrieve.	
-    additional_graph_kwargs: Dict,
+    additional_graph_kwargs: Dict
         Additional graph kwargs.
 
     Returns
@@ -74,7 +78,7 @@ def PubMedDiabetes(
 	---------------------
 	Please cite the following if you use the data:
 	
-	```latex
+	```bib
 	@inproceedings{namata2012query,
 	  title={Query-driven active surveying for collective classification},
 	  author={Namata, Galileo and London, Ben and Getoor, Lise and Huang, Bert and EDU, UMD},
@@ -90,6 +94,7 @@ def PubMedDiabetes(
         version=version,
         directed=directed,
         preprocess=preprocess,
+        load_nodes=load_nodes,
         verbose=verbose,
         cache=cache,
         cache_path=cache_path,
