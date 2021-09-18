@@ -479,6 +479,7 @@ class AutomaticallyRetrievedGraph:
                     "node_list_node_types_column_number": 1 if has_node_types else None,
                     "node_list_numeric_node_type_ids": True if has_node_types else None,
                     "skip_node_types_if_unavailable": True if has_node_types else None,
+                    "node_list_is_correct": True,
                     **node_types_arguments
                 }
             else:
@@ -502,7 +503,6 @@ class AutomaticallyRetrievedGraph:
                 **metadata,
                 **nodes_arguments,
                 **edge_types_arguments,
-                "node_list_is_correct": True,
 
                 "edge_path": target_edge_path,
                 "edge_list_header": False,
