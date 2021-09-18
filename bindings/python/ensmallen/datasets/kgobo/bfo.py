@@ -1,10 +1,22 @@
 """
-This file offers the methods to automatically retrieve the graph bfo.
+This file offers the methods to automatically retrieve the graph BFO.
 
 The graph is automatically retrieved from the KGOBO repository. 
 
 
+References
+---------------------
+Please cite the following if you use the data:
 
+```bib
+@misc{kgobo,
+  title        = "KG-OBO",
+  year         = "2021",
+  author       = "{Reese, Justin and Caufield, Harry}",
+  howpublished = {\\url{https://github.com/Knowledge-Graph-Hub/kg-obo}},
+  note = {Online; accessed 14 September 2021}
+}
+```
 """
 from typing import Dict
 
@@ -21,38 +33,50 @@ def BFO(
     version: str = "2019-08-26",
     **additional_graph_kwargs: Dict
 ) -> Graph:
-    """Return new instance of the bfo graph.
+    """Return new instance of the BFO graph.
 
     The graph is automatically retrieved from the KGOBO repository.	
 
     Parameters
     -------------------
-    directed: bool = False,
+    directed: bool = False
         Wether to load the graph as directed or undirected.
         By default false.
-    preprocess: bool = True,
+    preprocess: bool = True
         Whether to preprocess the graph to be loaded in 
         optimal time and memory.
-    verbose: int = 2,
+    verbose: int = 2
         Wether to show loading bars during the retrieval and building
         of the graph.
-    cache: bool = True,
+    cache: bool = True
         Whether to use cache, i.e. download files only once
         and preprocess them only once.
-    cache_path: str = "graphs",
+    cache_path: str = "graphs"
         Where to store the downloaded graphs.
-    version: str = "2019-08-26",
+    version: str = "2019-08-26"
         The version of the graph to retrieve.		
 	The available versions are:
 			- 2019-08-26
-    additional_graph_kwargs: Dict,
+    additional_graph_kwargs: Dict
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of bfo graph.
+    Instace of BFO graph.
 
+	References
+	---------------------
+	Please cite the following if you use the data:
 	
+	```bib
+	@misc{kgobo,
+	  title        = "KG-OBO",
+	  year         = "2021",
+	  author       = "{Reese, Justin and Caufield, Harry}",
+	  howpublished = {\\url{https://github.com/Knowledge-Graph-Hub/kg-obo}},
+	  note = {Online; accessed 14 September 2021}
+	}
+	```
     """
     return AutomaticallyRetrievedGraph(
         graph_name="BFO",

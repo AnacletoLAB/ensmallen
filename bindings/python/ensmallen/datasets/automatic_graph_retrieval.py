@@ -95,6 +95,7 @@ class AutomaticallyRetrievedGraph:
             )
         self._directed = directed
         self._preprocess = preprocess
+        self._load_nodes = load_nodes
         self._name = graph_name
         self._version = version
         self._cache = cache
