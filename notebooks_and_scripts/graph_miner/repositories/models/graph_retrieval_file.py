@@ -15,6 +15,7 @@ from ...ensmallen import Graph  # pylint: disable=import-error
 def {graph_method_name}(
     directed: bool = False,
     preprocess: bool = True,
+    load_nodes: bool = True,
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/{repository_package_name}",
@@ -33,6 +34,9 @@ def {graph_method_name}(
     preprocess: bool = True,
         Whether to preprocess the graph to be loaded in 
         optimal time and memory.
+    load_nodes: bool = True,
+        Whether to load the nodes vocabulary or treat the nodes
+        simply as a numeric range.
     verbose: int = 2,
         Wether to show loading bars during the retrieval and building
         of the graph.
