@@ -280,6 +280,10 @@ class AutomaticallyRetrievedGraph:
                     graph_arguments["node_path"]
                 )
 
+            may_have_singletons = graph_arguments.get(
+                "may_have_singletons", True
+            ) and node_path is not None
+
             if not self.is_preprocessed():
                 (
                     node_types_number,
@@ -501,6 +505,7 @@ class AutomaticallyRetrievedGraph:
                 "edge_list_is_correct": True,
                 "edges_number": metadata["edges_number"],
                 "nodes_number": metadata["nodes_number"],
+                "may_have_singletons": may_have_singletons,
                 "verbose": self._verbose > 0,
                 "directed": self._directed,
                 "name": self._name,
