@@ -96,10 +96,10 @@ impl<'a> ParallelIterator for ParallelLinesWithIndex<'a> {
             path: self.path,
             file: reader,
             line_count: 0,
-            modulus: 0,
+            modulus_mask: 0,
+            depth: 0,
             remainder: 0,
-            max: self.max_producers,
-            prod_count: Arc::new(Mutex::new(1)),
+            maximal_depth: (self.max_producers as f64).log2().ceil() as usize,
             buffer_size: self.buffer_size,
             comment_symbol: self.comment_symbol,
         };
@@ -116,18 +116,18 @@ struct ParalellLinesProducerWithIndex<'a> {
     path: &'a str,
     file: BufReader<File>,
     line_count: usize,
-    modulus: usize,
+    modulus_mask: usize,
     remainder: usize,
-    max: usize,
-    prod_count: Arc<Mutex<usize>>,
+    maximal_depth: usize,
+    depth: usize,
     buffer_size: usize,
     comment_symbol: Option<String>,
 }
 
-impl<'a> Drop for ParalellLinesProducerWithIndex<'a> {
-    fn drop(&mut self) {
-        let mut count = self.prod_count.lock().unwrap();
-        *count -= 1;
+impl<'a> ParalellLinesProducerWithIndex<'a> {
+    #[inline]
+    fn get_modulus(&self) -> usize {
+        self.modulus_mask + 1
     }
 }
 
@@ -161,7 +161,8 @@ impl<'a> Iterator for ParalellLinesProducerWithIndex<'a> {
             self.line_count += 1;
 
             // check if we are at the line we want to return
-            if (self.line_count & self.modulus) == self.remainder {
+            if (self.line_count & self.modulus_mask) == self.remainder {
+                // Strip the new-line carachters at the end
                 if line.ends_with(&[b'\n']) {
                     line.pop();
                     if line.ends_with(&[b'\r']) {
@@ -181,33 +182,13 @@ impl<'a> Iterator for ParalellLinesProducerWithIndex<'a> {
     }
 }
 
-fn upper_power_of_two(mut v: usize) -> usize {
-    v -= 1;
-    v |= v >> 1;
-    v |= v >> 2;
-    v |= v >> 4;
-    v |= v >> 8;
-    v |= v >> 16;
-    v + 1
-}
-
 impl<'a> UnindexedProducer for ParalellLinesProducerWithIndex<'a> {
     type Item = IterType;
 
     /// Split the file in two approximately balanced streams
     fn split(mut self) -> (Self, Option<Self>) {
         // Check if it's reasonable to split the stream
-        let cond = {
-            let mut count = self.prod_count.lock().unwrap();
-            if *count > self.max || (self.modulus + 1) > upper_power_of_two(self.max) {
-                true
-            } else {
-                *count += 1;
-                false
-            }
-        };
-
-        if cond {
+        if self.depth > self.maximal_depth {
             return (self, None);
         }
 
@@ -232,21 +213,57 @@ impl<'a> UnindexedProducer for ParalellLinesProducerWithIndex<'a> {
             )))
             .expect("Could seek the new file to the position of the old one.");
 
-        // Create the child
+        // Since we only do binary splits, the modulus will always be a power of
+        // two. So when checking if the current line should be retrieved,
+        // we don't need to use the slower % but we can use the faster &. 
+        // In particular, if modulus is a power of two, it holds that:
+        // x % modulus == x & (modulus - 1)
+        // So what we call modulus_mask is (modulus - 1), and thus to get it back
+        // we can do modulus = (modulus_mask + 1).
+        // 
+        // Here we want to double the modulus, so we compute:
+        // new_modulus_mask = (2 * modulus) - 1 = (modulus_mask * 2) + 1
+        // which can be rewritten in terms of shift and or for faster
+        let new_modulus_mask = (self.modulus_mask << 1) | 1;
+
+        // We need to split in half, we need to return half the lines in 
+        // each child. Therefore we must double the modulus and we need to
+        // offset one of the two childs.
+        //
+        // It can be proven that the following two properties holds: 
+        // x mod n = (x mod 2*n) \cup (x + n mod 2*n)
+        // (x mod 2*n) \cap (x + n mod 2*n) = null
+        // |(x mod 2*n)| == |(x + n mod 2*n)
+        // So these are two perfect half-splits of the range.
+        //
+        // # Example:
+        // Suppose that we have mod: 4, rem: 1, we will sign with `_` the lines 
+        // to skip, and with `$` the lines to return:
+        //
+        // Line idx: 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15
+        // Father:   _  $  _  _  _  $  _  _  _  $  _  _  _  $  _  _
+        // Split1:   _  $  _  _  _  _  _  _  _  $  _  _  _  _  _  _
+        // Split2:   _  _  _  _  _  $  _  _  _  _  _  _  _  $  _  _
+        //
+        // So we get the two childs with:
+        // mod 8 = 2 * old_mod, rem 1 = old_rem
+        // mod 8 = 2 * old_mod, rem 5 = old_rem + old_modulus
+        //
         let new = ParalellLinesProducerWithIndex {
             path: self.path.clone(),
             line_count: self.line_count,
             file: new_file,
-            modulus: (self.modulus << 1) | 1,
-            remainder: self.modulus + self.remainder + 1,
-            max: self.max,
+            modulus_mask: new_modulus_mask,
+            remainder: self.get_modulus() + self.remainder,
             buffer_size: self.buffer_size,
-            prod_count: self.prod_count.clone(),
             comment_symbol: self.comment_symbol.clone(),
+            depth: self.depth + 1,
+            maximal_depth: self.maximal_depth,
         };
 
         // Update the father modulus so that the lines are equally splitted
-        self.modulus = (self.modulus << 1) | 1;
+        self.modulus_mask = new_modulus_mask;
+        self.depth += 1;
 
         // Returns the two new producers
         (self, Some(new))
