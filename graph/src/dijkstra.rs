@@ -398,22 +398,22 @@ impl Graph {
             most_distant_node = frontier[0];
             frontier = frontier
                 .into_par_iter()
-                .flat_map(|node_id| {
+                .flat_map_iter(|node_id| {
                     self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                        .filter_map(|neighbour_node_id| unsafe {
-                            if (*thread_shared_predecessors.value.get())[neighbour_node_id as usize]
-                                == NODE_NOT_PRESENT
-                            {
-                                // Set it's distance
-                                (*thread_shared_predecessors.value.get())
-                                    [neighbour_node_id as usize] = node_id;
-                                // add the node to the nodes to explore
-                                Some(neighbour_node_id)
-                            } else {
-                                None
-                            }
-                        })
-                        .collect::<Vec<NodeT>>()
+                        .map(move |neighbour_node_id| (neighbour_node_id, node_id))
+                })
+                .filter_map(|(neighbour_node_id, node_id)| unsafe {
+                    if (*thread_shared_predecessors.value.get())[neighbour_node_id as usize]
+                        == NODE_NOT_PRESENT
+                    {
+                        // Set it's distance
+                        (*thread_shared_predecessors.value.get())[neighbour_node_id as usize] =
+                            node_id;
+                        // add the node to the nodes to explore
+                        Some(neighbour_node_id)
+                    } else {
+                        None
+                    }
                 })
                 .collect::<Vec<NodeT>>();
         }
