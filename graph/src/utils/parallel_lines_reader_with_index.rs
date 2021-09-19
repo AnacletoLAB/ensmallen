@@ -129,47 +129,55 @@ impl<'a> ParalellLinesProducerWithIndex<'a> {
     fn get_modulus(&self) -> usize {
         self.modulus_mask + 1
     }
+}
 
-    /// TODO! Handle support for comment character.
-    fn read_until_k_delimiters(&mut self) -> Result<(Vec<u8>, usize), String> {
+impl<'a> Iterator for ParalellLinesProducerWithIndex<'a> {
+    type Item = IterType;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        // read a line
         let mut line_buffer = Vec::with_capacity(128);
         // In this counter we will sum the number of characters
         // that have been read for the buffered line.
         let mut line_number_of_characters_read = 0;
-        // And in this counter we will sum the number of
-        // delimiters that have actualy been read.
-        loop {
+        'outer: loop {
             let (line_is_finished, number_of_characters_read) = {
                 // We get the next batch of characters from the buffer.
                 let mut available = match self.file.fill_buf() {
                     Ok(n) => n,
                     Err(ref e) if e.kind() == ErrorKind::Interrupted => continue,
-                    Err(_) => return Err("Something went wrong reading the file".to_string()),
+                    Err(_) => return Some((
+                        self.line_count, 
+                        Err("Something went wrong reading the file".to_string())
+                    )),
                 };
                 let mut number_of_characters_read = 0;
                 let mut line_is_finished = false;
                 while let Some(pos) = memchr::memchr(b'\n', available) {
-                    // We increase the number of characters that have been found.
-                    self.line_count += 1;
+                    // update the count of how many bytes from the buffer we have parsed
+                    number_of_characters_read += pos + 1;
                     // We either have finished searching for the correct delimiter
                     // and we can finally start to grow our string from this delimiter
                     // or alternatively we need to parse the currently loaded characters
                     if (self.line_count & self.modulus_mask) != self.remainder {
                         available = &available[(pos + 1)..];
+                        // We increase the number of characters that have been found.
+                        self.line_count += 1;
                         continue;
                     }
                     // If we are now finally in the correct line, we can grow
                     // our line buffer.
                     line_is_finished = true;
-                    number_of_characters_read += pos + 1;
-                    // Note that we EXCLUDE the separator from the line, so we don't
-                    // need to check to remove it afterwards.
-                    line_buffer.extend_from_slice(&available[..pos]);
                     // We return a tuple containing a boolean
                     // that represents we are done with preparing
                     // this line of the file and the number of characters
                     // that have been read.
                     line_number_of_characters_read += pos + 1;
+                    // Note that we EXCLUDE the separator from the line, so we don't
+                    // need to check to remove it afterwards.
+                    line_buffer.extend_from_slice(&available[..pos]);
+                    // We increase the number of characters that have been found.
+                    self.line_count += 1;
                     break;
                 }
                 if !line_is_finished {
@@ -188,14 +196,6 @@ impl<'a> ParalellLinesProducerWithIndex<'a> {
                 // that represents we are not yet done with preparing
                 // this line of the file and the number of characters
                 // that have been read.
-                println!(
-                    "{:?}, {:?}, {}, {}, {}",
-                    unsafe { String::from_utf8_unchecked(available.to_vec()) },
-                    unsafe { String::from_utf8_unchecked(line_buffer.clone()) },
-                    self.line_count,
-                    self.modulus_mask,
-                    self.remainder
-                );
                 (line_is_finished, number_of_characters_read)
             };
             // We consume a number of characters from the file
@@ -204,30 +204,18 @@ impl<'a> ParalellLinesProducerWithIndex<'a> {
             // If either the line is finished or the number
             // of characters read is zero, we are done.
             if line_is_finished || number_of_characters_read == 0 {
-                return Ok((line_buffer, line_number_of_characters_read));
+                break 'outer;
             }
+        };
+
+        if line_number_of_characters_read == 0 {
+            None
+        } else {
+            Some((
+                self.line_count,
+                unsafe { Ok(String::from_utf8_unchecked(line_buffer)) }
+            ))
         }
-    }
-}
-
-impl<'a> Iterator for ParalellLinesProducerWithIndex<'a> {
-    type Item = IterType;
-
-    fn next(&mut self) -> Option<Self::Item> {
-        // read a line
-        let result_bytes_read = self.read_until_k_delimiters();
-        Some((
-            self.line_count - 1,
-            match result_bytes_read {
-                Ok((line, line_number_of_characters_read)) => {
-                    if line_number_of_characters_read == 0 {
-                        return None;
-                    }
-                    Ok(unsafe { String::from_utf8_unchecked(line) })
-                }
-                Err(error) => Err(error.to_string()),
-            },
-        ))
     }
 }
 
