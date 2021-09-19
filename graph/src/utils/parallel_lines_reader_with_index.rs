@@ -229,8 +229,6 @@ impl<'a> UnindexedProducer for ParalellLinesProducerWithIndex<'a> {
             return (self, None);
         }
 
-        println!("SPLITTING, {:4>} {:4>}", self.modulus_mask, self.remainder);
-
         let file =
             File::open(self.path.clone()).expect(&format!("Could not open the file {}", self.path));
 
