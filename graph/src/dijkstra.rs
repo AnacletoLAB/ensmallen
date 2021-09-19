@@ -417,6 +417,8 @@ impl Graph {
                 })
                 .collect::<Vec<NodeT>>();
         }
+        eccentricity -= 1;
+
         ShortestPathsResultBFS::new(
             None,
             Some(thread_shared_predecessors.value.into_inner()),
@@ -471,6 +473,7 @@ impl Graph {
                 })
                 .collect::<Vec<NodeT>>();
         }
+        eccentricity -= 1;
         ShortestPathsResultBFS::new(
             Some(thread_shared_distances.value.into_inner()),
             None,
@@ -520,6 +523,7 @@ impl Graph {
                 })
                 .collect::<Vec<NodeT>>();
         }
+        eccentricity -= 1;
         ShortestPathsResultBFS::new(Some(distances), None, eccentricity, most_distant_node)
     }
 
