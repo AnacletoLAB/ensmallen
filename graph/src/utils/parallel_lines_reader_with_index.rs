@@ -98,7 +98,7 @@ impl<'a> ParallelIterator for ParallelLinesWithIndex<'a> {
             modulus_mask: 0,
             depth: 0,
             remainder: 0,
-            maximal_depth: (self.max_producers as f64).log2().ceil() as usize,
+            maximal_depth: (self.max_producers as f64).log2().floor() as usize,
             buffer_size: self.buffer_size,
             comment_symbol: self.comment_symbol,
         };
@@ -187,7 +187,7 @@ impl<'a> UnindexedProducer for ParalellLinesProducerWithIndex<'a> {
     /// Split the file in two approximately balanced streams
     fn split(mut self) -> (Self, Option<Self>) {
         // Check if it's reasonable to split the stream
-        if self.depth >= self.maximal_depth {
+        if self.depth >= self.maximal_depth - 1 {
             return (self, None);
         }
 
