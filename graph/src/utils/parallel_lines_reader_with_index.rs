@@ -129,95 +129,83 @@ impl<'a> ParalellLinesProducerWithIndex<'a> {
     fn get_modulus(&self) -> usize {
         self.modulus_mask + 1
     }
-}
 
-fn read_until_k_delimiters<R: BufRead + ?Sized>(
-    file: &mut R,
-    delimiter_character: u8,
-    number_of_delimiters_to_find: usize,
-    line_buffer: &mut Vec<u8>,
-) -> Result<(usize, usize, usize), String> {
-    // In this counter we will sum the number of characters
-    // that have been read from the file.
-    let mut total_number_of_characters_read = 0;
-    // In this counter we will sum the number of characters
-    // that have been read for the buffered line.
-    let mut line_number_of_characters_read = 0;
-    // And in this counter we will sum the number of
-    // delimiters that have actualy been read.
-    let mut number_of_delimiters_read = 0;
-    // Start to loop until we have either finished
-    // the file or found the requested number of
-    // delimiters character.
-    loop {
-        let (line_is_finished, number_of_characters_read) = {
-            // We get the next batch of characters from the buffer.
-            let mut available = match file.fill_buf() {
-                Ok(n) => n,
-                Err(ref e) if e.kind() == ErrorKind::Interrupted => continue,
-                Err(_) => return Err("Something went wrong reading the file".to_string()),
-            };
-            let mut number_of_characters_read = 0;
-            let mut line_is_finished = false;
-            while !available.is_empty() {
-                // If we have found the character we were looking for
-                if let Some(first_delimiter_character_position) =
-                    memchr::memchr(delimiter_character, available)
-                {
+    /// TODO! Handle support for comment character.
+    fn read_until_k_delimiters(&mut self) -> Result<(Vec<u8>, usize), String> {
+        let mut line_buffer = Vec::with_capacity(128);
+        // In this counter we will sum the number of characters
+        // that have been read for the buffered line.
+        let mut line_number_of_characters_read = 0;
+        // And in this counter we will sum the number of
+        // delimiters that have actualy been read.
+        loop {
+            let (line_is_finished, number_of_characters_read) = {
+                // We get the next batch of characters from the buffer.
+                let mut available = match self.file.fill_buf() {
+                    Ok(n) => n,
+                    Err(ref e) if e.kind() == ErrorKind::Interrupted => continue,
+                    Err(_) => return Err("Something went wrong reading the file".to_string()),
+                };
+                let mut number_of_characters_read = 0;
+                let mut line_is_finished = false;
+                while let Some(pos) = memchr::memchr(b'\n', available) {
                     // We increase the number of characters that have been found.
-                    number_of_delimiters_read += 1;
+                    self.line_count += 1;
                     // We either have finished searching for the correct delimiter
                     // and we can finally start to grow our string from this delimiter
                     // or alternatively we need to parse the currently loaded characters
-                    if number_of_delimiters_read != number_of_delimiters_to_find {
-                        available = &available[(first_delimiter_character_position + 1)..];
+                    if (self.line_count & self.modulus_mask) != self.remainder {
+                        available = &available[(pos + 1)..];
                         continue;
                     }
                     // If we are now finally in the correct line, we can grow
                     // our line buffer.
                     line_is_finished = true;
-                    number_of_characters_read += first_delimiter_character_position + 1;
+                    number_of_characters_read += pos + 1;
                     // Note that we EXCLUDE the separator from the line, so we don't
                     // need to check to remove it afterwards.
-                    line_buffer.extend_from_slice(&available[..first_delimiter_character_position]);
+                    line_buffer.extend_from_slice(&available[..pos]);
                     // We return a tuple containing a boolean
                     // that represents we are done with preparing
                     // this line of the file and the number of characters
                     // that have been read.
-                    line_number_of_characters_read += first_delimiter_character_position + 1;
+                    line_number_of_characters_read += pos + 1;
                     break;
                 }
-                // Otherwise we can continue to read onward.
-                // We get the number of characters that have been read.
-                number_of_characters_read += available.len();
-                // If the number of delimiters that we need to find still is
-                // just one, that is the final delimiter, we need to store
-                // these characters into the string buffer.
-                if number_of_delimiters_to_find - number_of_delimiters_read == 1 {
-                    line_buffer.extend_from_slice(available);
-                    line_number_of_characters_read += available.len();
+                if !line_is_finished {
+                    // Otherwise we can continue to read onward.
+                    // We get the number of characters that have been read.
+                    number_of_characters_read += available.len();
+                    // If the number of delimiters that we need to find still is
+                    // just one, that is the final delimiter, we need to store
+                    // these characters into the string buffer.
+                    if (self.line_count & self.modulus_mask) == self.remainder {
+                        line_buffer.extend_from_slice(available);
+                        line_number_of_characters_read += available.len();
+                    }
                 }
                 // We return a tuple containing a boolean
                 // that represents we are not yet done with preparing
                 // this line of the file and the number of characters
                 // that have been read.
-                break;
+                println!(
+                    "{:?}, {:?}, {}, {}, {}",
+                    unsafe { String::from_utf8_unchecked(available.to_vec()) },
+                    unsafe { String::from_utf8_unchecked(line_buffer.clone()) },
+                    self.line_count,
+                    self.modulus_mask,
+                    self.remainder
+                );
+                (line_is_finished, number_of_characters_read)
+            };
+            // We consume a number of characters from the file
+            // equal to the number of characters we have read
+            self.file.consume(number_of_characters_read);
+            // If either the line is finished or the number
+            // of characters read is zero, we are done.
+            if line_is_finished || number_of_characters_read == 0 {
+                return Ok((line_buffer, line_number_of_characters_read));
             }
-            (line_is_finished, number_of_characters_read)
-        };
-        // We consume a number of characters from the file
-        // equal to the number of characters we have read
-        file.consume(number_of_characters_read);
-        // We increase the total number of characters that have been read.
-        total_number_of_characters_read += number_of_characters_read;
-        // If either the line is finished or the number
-        // of characters read is zero, we are done.
-        if line_is_finished || number_of_characters_read == 0 {
-            return Ok((
-                total_number_of_characters_read,
-                line_number_of_characters_read,
-                number_of_delimiters_read,
-            ));
         }
     }
 }
@@ -226,55 +214,20 @@ impl<'a> Iterator for ParalellLinesProducerWithIndex<'a> {
     type Item = IterType;
 
     fn next(&mut self) -> Option<Self::Item> {
-        let mut line = Vec::with_capacity(128);
-        // If this is the first time around that
-        // we are reading lines using this producer,
-        // we need to offset its buffer by reading
-        // a `remainder` number of lines.
-        let number_of_delimiters_to_find = if self.line_count == 0 {
-            self.remainder + 1
-        } else {
-            // Otherwise we want to skip the modulus.
-            self.get_modulus()
-        };
-
-        loop {
-            line.clear();
-
-            // read a line
-            let result_bytes_read = read_until_k_delimiters(
-                &mut self.file,
-                b'\n',
-                number_of_delimiters_to_find,
-                &mut line,
-            );
-
-            // check if it's ok, if we reached EOF, and if it's a comment
-            if let Ok((_, line_number_of_characters_read, number_of_delimiters_read)) =
-                result_bytes_read
-            {
-                // EOF
-                if line_number_of_characters_read == 0 {
-                    return None;
+        // read a line
+        let result_bytes_read = self.read_until_k_delimiters();
+        Some((
+            self.line_count - 1,
+            match result_bytes_read {
+                Ok((line, line_number_of_characters_read)) => {
+                    if line_number_of_characters_read == 0 {
+                        return None;
+                    }
+                    Ok(unsafe { String::from_utf8_unchecked(line) })
                 }
-                self.line_count += number_of_delimiters_read;
-                // Comment
-                // TODO! re-add support for comments!
-                // if let Some(cs) = self.comment_symbol.as_ref() {
-                //     if line.starts_with(cs.as_bytes()) {
-                //         continue;
-                //     }
-                // }
-            };
-
-            return Some((
-                self.line_count - 1,
-                match result_bytes_read {
-                    Ok(_) => Ok(unsafe { String::from_utf8_unchecked(line) }),
-                    Err(error) => Err(error.to_string()),
-                },
-            ));
-        }
+                Err(error) => Err(error.to_string()),
+            },
+        ))
     }
 }
 

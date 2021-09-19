@@ -28,6 +28,9 @@ fn test_components_size() {
     )
     .unwrap();
 
+    println!("{:?}", g.get_node_names());
+    println!("{:?}", g.get_edge_node_names(true));
+
     // THIS IS NOT DETERMINISTIC
     let n = 10_000;
     let pb = get_loading_bar(true, "Executing connected components test", n);
