@@ -232,7 +232,7 @@ impl<'a> Iterator for ParalellLinesProducerWithIndex<'a> {
         // we need to offset its buffer by reading
         // a `remainder` number of lines.
         let number_of_delimiters_to_find = if self.line_count == 0 {
-            self.remainder
+            self.remainder + 1
         } else {
             // Otherwise we want to skip the modulus.
             self.get_modulus()
