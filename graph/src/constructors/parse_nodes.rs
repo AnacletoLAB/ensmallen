@@ -195,7 +195,7 @@ pub(crate) fn parse_nodes(
                 // the minimum and the maximum value.
                 let (mut min, mut max, actual_nodes_number): (NodeT, NodeT, NodeT) = ni
                     .map(|line| match line {
-                        Ok((line_number, (node_name, _))) => match node_name.parse::<NodeT>() {
+                        Ok((line_number, (node_name, _))) => match atoi_radix10::parse::<NodeT>(node_name.as_bytes()) {
                             Ok(node_id) => Ok(node_id),
                             Err(_) => Err(format!(
                                 concat!(

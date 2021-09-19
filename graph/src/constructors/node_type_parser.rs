@@ -171,7 +171,9 @@ impl NodeTypeParser {
         let (line_number, (node_name, node_type_names)) = value?;
         let node_type_ids = node_type_names.map(|ntns| {
             ntns.into_iter()
-                .map(|node_type_name| node_type_name.parse::<NodeTypeT>().unwrap())
+                .map(|node_type_name| 
+                    atoi_radix10::parse::<NodeTypeT>(node_type_name.as_bytes()).unwrap()
+                )
                 .collect::<Vec<NodeTypeT>>()
         });
         Ok((line_number, (node_name, node_type_ids)))

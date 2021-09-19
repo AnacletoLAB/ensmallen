@@ -118,8 +118,8 @@ impl EdgeNodeNamesParser {
         Ok((
             line_number,
             (
-                src_name.parse::<NodeT>().unwrap(),
-                dst_name.parse::<NodeT>().unwrap(),
+                atoi_radix10::parse::<NodeT>(src_name.as_bytes()).unwrap(),
+                atoi_radix10::parse::<NodeT>(dst_name.as_bytes()).unwrap(),
                 edge_type_name,
                 weight,
             ),

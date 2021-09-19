@@ -47,6 +47,7 @@ roaring = { git = "https://github.com/zommiommy/roaring-rs", branch = "master" }
 vec_rand = { git = "https://github.com/zommiommy/vec_rand", branch = "master" }
 elias_fano_rust = { git = "https://github.com/zommiommy/elias_fano_rust"}
 tags = {path="./tags/"}
+atoi_radix10 = { git = "https://github.com/gilescope/atoi_radix10"}
 
 [target.'cfg(unix)'.dependencies]
 nix = "0.22.0"

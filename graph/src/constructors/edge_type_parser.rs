@@ -142,7 +142,9 @@ impl EdgeTypeParser {
             (
                 src,
                 dst,
-                edge_type_name.map(|edge_type_name| edge_type_name.parse::<EdgeTypeT>().unwrap()),
+                edge_type_name.map(|edge_type_name| 
+                    atoi_radix10::parse::<EdgeTypeT>(edge_type_name.as_bytes()
+                ).unwrap()),
                 weight,
             ),
         ))
