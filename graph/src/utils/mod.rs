@@ -200,3 +200,13 @@ pub fn parse_weight(weight: String) -> Result<WeightT> {
         .parse::<WeightT>()
         .map_err(|_| format!("Cannot parse weight {} as a float.", weight))
 }
+
+
+/// Convert a strig to integer ASSUMING IT IS CORRECT
+pub fn atoi_c(val: &str) -> u32 {
+    let mut result: u32 = 0;
+    for b in val.as_bytes() {
+        result = result * 10 + (*b - b'0') as u32;
+    }
+    result
+}
