@@ -187,7 +187,7 @@ impl<'a> UnindexedProducer for ParalellLinesProducerWithIndex<'a> {
     /// Split the file in two approximately balanced streams
     fn split(mut self) -> (Self, Option<Self>) {
         // Check if it's reasonable to split the stream
-        if self.depth >= self.maximal_depth - 1 {
+        if self.depth >= self.maximal_depth - 2 {
             return (self, None);
         }
 
@@ -214,29 +214,29 @@ impl<'a> UnindexedProducer for ParalellLinesProducerWithIndex<'a> {
 
         // Since we only do binary splits, the modulus will always be a power of
         // two. So when checking if the current line should be retrieved,
-        // we don't need to use the slower % but we can use the faster &. 
+        // we don't need to use the slower % but we can use the faster &.
         // In particular, if modulus is a power of two, it holds that:
         // x % modulus == x & (modulus - 1)
         // So what we call modulus_mask is (modulus - 1), and thus to get it back
         // we can do modulus = (modulus_mask + 1).
-        // 
+        //
         // Here we want to double the modulus, so we compute:
         // new_modulus_mask = (2 * modulus) - 1 = (modulus_mask * 2) + 1
         // which can be rewritten in terms of shift and or for faster
         let new_modulus_mask = (self.modulus_mask << 1) | 1;
 
-        // We need to split in half, we need to return half the lines in 
+        // We need to split in half, we need to return half the lines in
         // each child. Therefore we must double the modulus and we need to
         // offset one of the two childs.
         //
-        // It can be proven that the following two properties holds: 
+        // It can be proven that the following two properties holds:
         // x mod n = (x mod 2*n) \cup (x + n mod 2*n)
         // (x mod 2*n) \cap (x + n mod 2*n) = null
         // |(x mod 2*n)| == |(x + n mod 2*n)
         // So these are two perfect half-splits of the range.
         //
         // # Example:
-        // Suppose that we have mod: 4, rem: 1, we will sign with `_` the lines 
+        // Suppose that we have mod: 4, rem: 1, we will sign with `_` the lines
         // to skip, and with `$` the lines to return:
         //
         // Line idx: 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15
