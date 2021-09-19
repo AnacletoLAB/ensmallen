@@ -170,7 +170,7 @@ fn read_until_k_delimiters<R: BufRead + ?Sized>(
                     // and we can finally start to grow our string from this delimiter
                     // or alternatively we need to parse the currently loaded characters
                     if number_of_delimiters_read != number_of_delimiters_to_find {
-                        available = &available[first_delimiter_character_position..];
+                        available = &available[(first_delimiter_character_position + 1)..];
                         continue;
                     }
                     // If we are now finally in the correct line, we can grow
@@ -229,7 +229,7 @@ impl<'a> Iterator for ParalellLinesProducerWithIndex<'a> {
         let mut line = Vec::with_capacity(128);
         // If this is the first time around that
         // we are reading lines using this producer,
-        // we need to offset its buffer by reading 
+        // we need to offset its buffer by reading
         // a `remainder` number of lines.
         let number_of_delimiters_to_find = if self.line_count == 0 {
             self.remainder
@@ -243,22 +243,18 @@ impl<'a> Iterator for ParalellLinesProducerWithIndex<'a> {
 
             // read a line
             let result_bytes_read = read_until_k_delimiters(
-                &mut self.file, 
+                &mut self.file,
                 b'\n',
                 number_of_delimiters_to_find,
-                &mut line
+                &mut line,
             );
-            // self.file.read_until(b'\n', &mut line);
 
             // check if it's ok, if we reached EOF, and if it's a comment
-            if let Ok((
-                _,
-                line_number_of_characters_read,
-                number_of_delimiters_read,
-            )) = result_bytes_read
+            if let Ok((_, line_number_of_characters_read, number_of_delimiters_read)) =
+                result_bytes_read
             {
                 // EOF
-                if line_number_of_characters_read == 0  {
+                if line_number_of_characters_read == 0 {
                     return None;
                 }
                 self.line_count += number_of_delimiters_read;
