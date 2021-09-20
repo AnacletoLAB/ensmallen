@@ -962,6 +962,7 @@ impl Graph {
                 })
                 .collect::<Vec<NodeT>>();
         }
+        eccentricity -= 1;
         (eccentricity, most_distant_node)
     }
 
@@ -1614,33 +1615,25 @@ impl Graph {
         // diameter.
         node_ids_and_distances.par_sort_unstable_by(|(_, a), &(_, b)| b.cmp(a));
 
-        let mut i = 0;
-        let mut current_distance = node_ids_and_distances[i].1;
+        let mut current_distance = node_ids_and_distances[0].1;
 
-        // for each possible node of the outer crown compute the maximum path
-        // from there, this way we can find the exact diameter
-        while tentative_diameter < current_distance * 2 {
-            let j = i + node_ids_and_distances[i..]
-                .iter()
-                .take_while(|&&(_, distance)| distance == current_distance)
-                .count();
-            tentative_diameter = tentative_diameter.max(
-                node_ids_and_distances[i..j]
-                    .par_iter()
-                    .map(|&(node_id, _)| unsafe {
-                        self.get_unchecked_eccentricity_and_most_distant_node_id_from_node_id(
-                            node_id,
-                        )
-                        .0
-                    })
-                    .max()
-                    .unwrap(),
-            );
-            if j == node_ids_and_distances.len() {
-                break;
+        for (node_id, distance) in node_ids_and_distances {
+            // If the distance has changed, it means we have finished
+            // a distance block and therefore we can check if we have
+            // found the diameter inside this distances block.
+            if current_distance != distance {
+                current_distance = distance;
+                if tentative_diameter >= current_distance * 2 {
+                    break;
+                }
             }
-            i = j;
-            current_distance = node_ids_and_distances[i].1;
+            
+            // Alternatively, we compute for another node ID
+            // its eccentricity.
+            tentative_diameter = tentative_diameter.max(
+                unsafe{self.get_unchecked_eccentricity_and_most_distant_node_id_from_node_id(node_id)}
+                    .0,
+            );
         }
 
         Ok(tentative_diameter as f64)
@@ -1677,6 +1670,7 @@ impl Graph {
             "Computing diameter",
             self.get_nodes_number() as usize,
         );
+
         Ok(self
             .par_iter_node_ids()
             .progress_with(pb)

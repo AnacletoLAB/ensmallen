@@ -130,7 +130,7 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
     )
     .unwrap();
 
-    let _ = graph::test_utilities::default_test_suite(&mut g, Some(true));
+    let _ = graph::test_utilities::default_test_suite(&mut g, Some(false));
 
     let graph_name = "Macaque".to_owned();
     let edges_reader = EdgeFileReader::new("tests/data/sorted_macaque.tsv")
@@ -165,7 +165,7 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
     )
     .unwrap();
 
-    let _ = graph::test_utilities::default_test_suite(&mut g, Some(true));
+    let _ = graph::test_utilities::default_test_suite(&mut g, Some(false));
 
     let (_, nodes_number, _, edges_number) = build_optimal_lists_files(
         None,
@@ -293,7 +293,7 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
     )
     .unwrap();
 
-    let _ = graph::test_utilities::default_test_suite(&mut g, Some(true));
+    let _ = graph::test_utilities::default_test_suite(&mut g, Some(false));
 
     let graph_name = "Macaque".to_owned();
     let edges_reader = EdgeFileReader::new("tests/data/sorted_macaque.tsv")
@@ -328,7 +328,7 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
     )
     .unwrap();
 
-    let _ = graph::test_utilities::default_test_suite(&mut g, Some(true));
+    let _ = graph::test_utilities::default_test_suite(&mut g, Some(false));
 
     Ok(())
 }
