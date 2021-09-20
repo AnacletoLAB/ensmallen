@@ -1627,7 +1627,7 @@ impl Graph {
                 .count();
             tentative_diameter = tentative_diameter.max(
                 node_ids_and_distances[i..j]
-                    .par_iter()
+                    .iter()
                     .map(|&(node_id, _)| unsafe {
                         self.get_unchecked_eccentricity_and_most_distant_node_id_from_node_id(
                             node_id,
