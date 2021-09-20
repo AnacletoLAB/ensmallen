@@ -580,7 +580,7 @@ impl Graph {
             .enumerate()
             .collect_into_vec(&mut node_ids_and_degrees);
 
-        node_ids_and_degrees.sort_unstable_by(|(_, a), (_, b)| b.cmp(a).unwrap());
+        node_ids_and_degrees.sort_unstable_by(|(_, a), (_, b)| b.cmp(a));
         Ok(node_ids_and_degrees
             .into_iter()
             .take(k as usize)
