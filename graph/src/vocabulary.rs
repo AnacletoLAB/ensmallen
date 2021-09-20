@@ -5,6 +5,7 @@ use rayon::iter::{IndexedParallelIterator, IntoParallelIterator};
 use std::collections::hash_map::Entry;
 use std::collections::HashMap;
 use std::fmt::Debug;
+rayon::prelude::ParallelSliceMut;
 use std::ops::Range;
 
 #[derive(Debug, Clone, PartialEq)] // Arbitrary
@@ -152,7 +153,7 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
             let reverse_map_length = reverse_map.len();
             let map_length = map.len();
             let expected_duplicates_number = reverse_map.len() - map.len();
-            reverse_map.sort_unstable();
+            reverse_map.par_sort_unstable();
             let duplicates = reverse_map
                 .into_iter()
                 .scan(None, |last_object, object| {
