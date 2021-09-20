@@ -27,6 +27,7 @@ from ...ensmallen import Graph  # pylint: disable=import-error
 def CHIRO(
     directed: bool = False,
     preprocess: bool = True,
+    load_nodes: bool = True,
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/kgobo",
@@ -45,7 +46,10 @@ def CHIRO(
     preprocess: bool = True
         Whether to preprocess the graph to be loaded in 
         optimal time and memory.
-    verbose: int = 2
+    load_nodes: bool = True,
+        Whether to load the nodes vocabulary or treat the nodes
+        simply as a numeric range.
+    verbose: int = 2,
         Wether to show loading bars during the retrieval and building
         of the graph.
     cache: bool = True
@@ -84,6 +88,7 @@ def CHIRO(
         version=version,
         directed=directed,
         preprocess=preprocess,
+        load_nodes=load_nodes,
         verbose=verbose,
         cache=cache,
         cache_path=cache_path,

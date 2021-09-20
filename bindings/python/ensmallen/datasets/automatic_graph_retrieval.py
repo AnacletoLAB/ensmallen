@@ -18,6 +18,7 @@ class AutomaticallyRetrievedGraph:
         repository: str,
         directed: bool = False,
         preprocess: bool = True,
+        load_nodes: bool = True,
         verbose: int = 2,
         cache: bool = True,
         cache_path: str = "graphs",
@@ -41,6 +42,9 @@ class AutomaticallyRetrievedGraph:
         preprocess: bool = True,
             Whether to preprocess the node list and edge list
             to be loaded optimally in both time and memory.
+        load_nodes: bool = True,
+            Whether to load the nodes vocabulary or treat the nodes
+            simply as a numeric range.
         verbose: int = 2,
             Whether to show loading bars.
         cache: bool = True,
@@ -91,6 +95,7 @@ class AutomaticallyRetrievedGraph:
             )
         self._directed = directed
         self._preprocess = preprocess
+        self._load_nodes = load_nodes
         self._name = graph_name
         self._version = version
         self._cache = cache
@@ -280,6 +285,10 @@ class AutomaticallyRetrievedGraph:
                     graph_arguments["node_path"]
                 )
 
+            may_have_singletons = graph_arguments.get(
+                "may_have_singletons", True
+            ) and node_path is not None
+
             if not self.is_preprocessed():
                 (
                     node_types_number,
@@ -460,6 +469,24 @@ class AutomaticallyRetrievedGraph:
                 }
             else:
                 node_types_arguments = {}
+            # If the nodes are to be loaded
+            if self._load_nodes:
+                nodes_arguments = {
+                    "node_path": target_node_path,
+                    "node_list_separator": "\t",
+                    "nodes_column_number": 0,
+                    "node_types_separator": "|" if has_node_types else None,
+                    "node_list_node_types_column_number": 1 if has_node_types else None,
+                    "node_list_numeric_node_type_ids": True if has_node_types else None,
+                    "skip_node_types_if_unavailable": True if has_node_types else None,
+                    "node_list_is_correct": True,
+                    **node_types_arguments
+                }
+            else:
+                nodes_arguments = {
+                    "numeric_node_ids": True,
+                }
+                
             # If the edge types are provided
             has_edge_types = metadata["edge_types_number"] is not None
             if has_edge_types:
@@ -474,16 +501,8 @@ class AutomaticallyRetrievedGraph:
             # Load the graph
             return Graph.from_csv(**{
                 **metadata,
-                **node_types_arguments,
-                "node_path": target_node_path,
-                "node_list_separator": "\t",
-                "node_types_separator": "|" if has_node_types else None,
-                "nodes_column_number": 0,
-                "node_list_node_types_column_number": 1 if has_node_types else None,
-                "node_list_numeric_node_type_ids": True if has_node_types else None,
-                "skip_node_types_if_unavailable": True if has_node_types else None,
+                **nodes_arguments,
                 **edge_types_arguments,
-                "node_list_is_correct": True,
 
                 "edge_path": target_edge_path,
                 "edge_list_header": False,
@@ -501,6 +520,7 @@ class AutomaticallyRetrievedGraph:
                 "edge_list_is_correct": True,
                 "edges_number": metadata["edges_number"],
                 "nodes_number": metadata["nodes_number"],
+                "may_have_singletons": may_have_singletons,
                 "verbose": self._verbose > 0,
                 "directed": self._directed,
                 "name": self._name,

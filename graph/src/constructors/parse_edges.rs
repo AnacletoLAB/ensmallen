@@ -102,7 +102,7 @@ macro_rules! parse_unsorted_string_edge_list {
                 Err(e) => Err(e)
             }).collect::<Result<Vec<_>>>()
         } else {
-            $ei.map($edge_weights_method).method_caller($edge_types_method, $edge_types_method, &mut edge_type_parser).method_caller($node_method, $node_method, &mut node_parser).flat_map(|line| match line {
+            $ei.map($edge_weights_method).method_caller($edge_types_method, $edge_types_method, &mut edge_type_parser).method_caller($node_method, $node_method, &mut node_parser).flat_map_iter(|line| match line {
                 Ok((_, (src, dst, $($workaround,)*))) => {
                     if unlikely(src == dst) {
                         vec![Ok((src, dst, $($input_tuple,)*))]
@@ -244,7 +244,7 @@ macro_rules! parse_unsorted_integer_edge_list {
         let mut unsorted_edge_list = if $directed || $complete {
             $ei.map(|(_, (src, dst, $($workaround,)*))| (src, dst, $($input_tuple,)*)).collect::<Vec<_>>()
         } else {
-            $ei.flat_map(|(_, (src, dst, $($workaround,)*))| {
+            $ei.flat_map_iter(|(_, (src, dst, $($workaround,)*))| {
                 if src == dst {
                     vec![(src, dst, $($input_tuple,)*)]
                 } else {
@@ -451,14 +451,11 @@ pub(crate) fn parse_string_edges(
         (true, _, false, true) => EdgeTypeParser::to_numeric,
     };
 
-    let edge_weights_method = match (
-        has_edge_weights,
-        correct
-    ) {
+    let edge_weights_method = match (has_edge_weights, correct) {
         // When the user does not assert that the edge list is
         // correct and there are edge weights we need to validate them.
         (true, false) => EdgeWeightValidator::validate,
-        _ => EdgeWeightValidator::ignore
+        _ => EdgeWeightValidator::ignore,
     };
 
     let node_method = match (nodes.is_empty(), correct, numeric_edge_list_node_ids) {

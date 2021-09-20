@@ -37,6 +37,7 @@ keyed_priority_queue = "0.3.2"
 validator = "0.14.0"
 num_cpus = "1.13.0"
 iter-set = "2.0.1"
+memchr = "2.4.1"
 atomic_float = "0.1.0"
 num-traits = "0.2.14"
 v_htmlescape = "0.13.1"
@@ -45,8 +46,9 @@ indicatif = {version="0.16.0", features = ["rayon"]}
 arbitrary = { version = "0.4.5", features = ["derive"] }
 roaring = { git = "https://github.com/zommiommy/roaring-rs", branch = "master" }
 vec_rand = { git = "https://github.com/zommiommy/vec_rand", branch = "master" }
-elias_fano_rust = { git = "https://github.com/zommiommy/elias_fano_rust", branch = "develop"}
+elias_fano_rust = { git = "https://github.com/zommiommy/elias_fano_rust"}
 tags = {path="./tags/"}
+atoi_radix10 = { git = "https://github.com/gilescope/atoi_radix10"}
 
 [target.'cfg(unix)'.dependencies]
 nix = "0.22.0"

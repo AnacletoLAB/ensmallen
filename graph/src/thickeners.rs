@@ -134,9 +134,11 @@ impl Graph {
                                                 node_features,
                                             );
                                             // get the max distance in the currently cosest nodes
-                                            let (i, max_distance) = unsafe {
-                                                closest_nodes_distances.argmax().unwrap_unchecked()
-                                            };
+                                            let (i, max_distance) = closest_nodes_distances
+                                                .par_iter()
+                                                .cloned()
+                                                .argmax()
+                                                .unwrap();
                                             // update the closest nodes inserting the current node if needed
                                             if max_distance > distance {
                                                 if max_distance == f64::INFINITY {

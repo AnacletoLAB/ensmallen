@@ -1,6 +1,5 @@
 use super::*;
 use atomic_float::AtomicF64;
-use counter::Counter;
 use log::info;
 use rayon::prelude::*;
 use std::collections::HashMap;
@@ -263,6 +262,13 @@ impl Graph {
     /// ```
     pub fn get_node_degrees_median(&self) -> Result<NodeT> {
         self.must_have_nodes()?;
+        if self.has_nodes_sorted_by_decreasing_outbound_node_degree()
+            || self.has_nodes_sorted_by_increasing_outbound_node_degree()
+        {
+            return Ok(unsafe {
+                self.get_unchecked_node_degree_from_node_id(self.get_nodes_number() / 2)
+            });
+        }
         let mut degrees = self.get_node_degrees();
         degrees.par_sort_unstable();
         Ok(degrees[(self.get_nodes_number() / 2) as usize])
@@ -350,17 +356,15 @@ impl Graph {
     /// println!("The mode node degree of the graph is  {}", graph.get_node_degrees_mode().unwrap());
     /// ```
     pub fn get_node_degrees_mode(&self) -> Result<NodeT> {
-        if !self.has_nodes() {
-            return Err(
-                "The mode of the node degrees is not defined on an empty graph".to_string(),
-            );
-        }
-        let counter: Counter<NodeT, usize> = Counter::init(self.iter_node_degrees());
-        Ok(*counter
-            .iter()
-            .max_by_key(|&(_, count)| count)
-            .map(|(degree, _)| degree)
-            .unwrap())
+        let degree_counts = (0..(self.get_maximum_node_degree()? + 1))
+            .map(|_| AtomicU32::new(0))
+            .collect::<Vec<AtomicU32>>();
+        self.par_iter_node_degrees().for_each(|node_degree| {
+            degree_counts[node_degree as usize].fetch_add(1, Ordering::Relaxed);
+        });
+        let degree_counts =
+            unsafe { std::mem::transmute::<Vec<AtomicU32>, Vec<NodeT>>(degree_counts) };
+        Ok(degree_counts.into_par_iter().argmax().unwrap().0 as NodeT)
     }
 
     /// Returns rate of self-loops.

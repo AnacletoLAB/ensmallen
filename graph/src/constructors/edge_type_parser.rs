@@ -60,20 +60,20 @@ impl EdgeTypeParser {
             (
                 src,
                 dst,
-                edge_type_name.map_or(Ok::<_, String>(None), |edge_type_name| Ok(Some(match vocabulary
-                    .get(&edge_type_name)
-                {
-                    Some(et) => Ok(et),
-                    None => Err(format!(
-                        concat!(
-                            "Found an unknown edge type while reading the edge list.\n",
-                            "Specifically the unknown edge type is {:?}.\n",
-                            "The list of the known edge types is {:#4?}"
-                        ),
-                        edge_type_name,
-                        vocabulary.keys()
-                    )),
-                }?)))?,
+                edge_type_name.map_or(Ok::<_, String>(None), |edge_type_name| {
+                    Ok(Some(match vocabulary.get(&edge_type_name) {
+                        Some(et) => Ok(et),
+                        None => Err(format!(
+                            concat!(
+                                "Found an unknown edge type while reading the edge list.\n",
+                                "Specifically the unknown edge type is {:?}.\n",
+                                "The list of the known edge types is {:#4?}"
+                            ),
+                            edge_type_name,
+                            vocabulary.keys()
+                        )),
+                    }?))
+                })?,
                 weight,
             ),
         ))
@@ -142,7 +142,7 @@ impl EdgeTypeParser {
             (
                 src,
                 dst,
-                edge_type_name.map(|edge_type_name| edge_type_name.parse::<EdgeTypeT>().unwrap()),
+                edge_type_name.map(|edge_type_name| atoi_c(edge_type_name.as_str()) as EdgeTypeT),
                 weight,
             ),
         ))
