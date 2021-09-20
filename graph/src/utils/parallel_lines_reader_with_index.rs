@@ -146,10 +146,12 @@ impl<'a> Iterator for ParalellLinesProducerWithIndex<'a> {
                 let mut available = match self.file.fill_buf() {
                     Ok(n) => n,
                     Err(ref e) if e.kind() == ErrorKind::Interrupted => continue,
-                    Err(_) => return Some((
-                        self.line_count, 
-                        Err("Something went wrong reading the file".to_string())
-                    )),
+                    Err(_) => {
+                        return Some((
+                            self.line_count,
+                            Err("Something went wrong reading the file".to_string()),
+                        ))
+                    }
                 };
                 let mut number_of_characters_read = 0;
                 let mut line_is_finished = false;
@@ -206,15 +208,14 @@ impl<'a> Iterator for ParalellLinesProducerWithIndex<'a> {
             if line_is_finished || number_of_characters_read == 0 {
                 break 'outer;
             }
-        };
+        }
 
         if line_number_of_characters_read == 0 {
             None
         } else {
-            Some((
-                self.line_count,
-                unsafe { Ok(String::from_utf8_unchecked(line_buffer)) }
-            ))
+            Some((self.line_count - 1, unsafe {
+                Ok(String::from_utf8_unchecked(line_buffer))
+            }))
         }
     }
 }
