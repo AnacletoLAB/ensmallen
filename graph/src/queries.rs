@@ -1,5 +1,4 @@
 use super::*;
-use permutation::permutation;
 use rayon::prelude::*;
 
 /// # Queries
@@ -575,26 +574,18 @@ impl Graph {
         if !self.has_nodes() {
             return Err("The node degrees are not well defined in an empty graph.".to_string());
         }
-        let k = k.min(self.get_nodes_number());
-        let mut most_central_node_degrees = vec![0; k as usize];
-        let mut most_central_node_ids = vec![0; k as usize];
-        self.iter_node_ids().for_each(|node_id| unsafe {
-            let degree = self.get_unchecked_node_degree_from_node_id(node_id);
-            let (argmin, min_degree) = most_central_node_degrees
-                .iter_mut()
-                .enumerate()
-                .min_by(|(_, node_degree_one), (_, node_degree_two)| {
-                    (**node_degree_one).cmp(*node_degree_two)
-                })
-                .unwrap();
-            if *min_degree <= degree {
-                *min_degree = degree;
-                most_central_node_ids[argmin] = node_id;
-            }
-        });
-        let degree_permutation = permutation::sort_by(most_central_node_degrees, |a, b| b.cmp(a));
-        most_central_node_ids = degree_permutation.apply_slice(most_central_node_ids);
-        Ok(most_central_node_ids)
+        let mut node_ids_and_degrees = vec![(0, 0); self.get_nodes_number() as usize];
+
+        self.par_iter_node_degrees()
+            .enumerate()
+            .collect_into_vec(&mut node_ids_and_degrees);
+
+        node_ids_and_degrees.sort_unstable_by(|(_, a), (_, b)| a.partial_cmp(b).unwrap());
+        Ok(node_ids_and_degrees
+            .into_iter()
+            .take(k as usize)
+            .map(|(node_id, _)| node_id as NodeT)
+            .collect())
     }
 
     /// Return vector with weighted top k central node Ids.
@@ -740,14 +731,21 @@ impl Graph {
     /// # Safety
     /// This method makes the assumption that the provided node IDs exist in the graph, that is
     /// they are not higher than the number of nodes in the graph.
-    pub unsafe fn get_unchecked_reciprocal_sqrt_degrees_from_node_ids(&self, node_ids: &[NodeT]) -> Vec<WeightT> {
+    pub unsafe fn get_unchecked_reciprocal_sqrt_degrees_from_node_ids(
+        &self,
+        node_ids: &[NodeT],
+    ) -> Vec<WeightT> {
         let mut reciprocal_sqrt_degrees = vec![0.0; node_ids.len()];
         if let Some(cached_reciprocal_sqrt_degrees) = self.reciprocal_sqrt_degrees.as_ref() {
-            node_ids.par_iter().map(|&node_id| cached_reciprocal_sqrt_degrees[node_id as usize])
-                    .collect_into_vec(&mut reciprocal_sqrt_degrees);
+            node_ids
+                .par_iter()
+                .map(|&node_id| cached_reciprocal_sqrt_degrees[node_id as usize])
+                .collect_into_vec(&mut reciprocal_sqrt_degrees);
         } else {
-            node_ids.par_iter().map(|&node_id| self.get_unchecked_reciprocal_sqrt_degree_from_node_id(node_id))
-                    .collect_into_vec(&mut reciprocal_sqrt_degrees);
+            node_ids
+                .par_iter()
+                .map(|&node_id| self.get_unchecked_reciprocal_sqrt_degree_from_node_id(node_id))
+                .collect_into_vec(&mut reciprocal_sqrt_degrees);
         }
         reciprocal_sqrt_degrees
     }
