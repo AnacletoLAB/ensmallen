@@ -578,13 +578,14 @@ impl Graph {
 
         self.par_iter_node_degrees()
             .enumerate()
+            .map(|(node_id, node_degree)| (node_id as NodeT, node_degree))
             .collect_into_vec(&mut node_ids_and_degrees);
 
         node_ids_and_degrees.par_sort_unstable_by(|(_, a), (_, b)| b.cmp(a));
         Ok(node_ids_and_degrees
             .into_iter()
             .take(k as usize)
-            .map(|(node_id, _)| node_id as NodeT)
+            .map(|(node_id, _)| node_id)
             .collect())
     }
 
