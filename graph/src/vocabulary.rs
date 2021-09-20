@@ -5,7 +5,7 @@ use rayon::iter::{IndexedParallelIterator, IntoParallelIterator};
 use std::collections::hash_map::Entry;
 use std::collections::HashMap;
 use std::fmt::Debug;
-rayon::prelude::ParallelSliceMut;
+use rayon::prelude::ParallelSliceMut;
 use std::ops::Range;
 
 #[derive(Debug, Clone, PartialEq)] // Arbitrary
