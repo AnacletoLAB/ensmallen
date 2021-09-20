@@ -962,6 +962,7 @@ impl Graph {
                 })
                 .collect::<Vec<NodeT>>();
         }
+        eccentricity -= 1;
         (eccentricity, most_distant_node)
     }
 
