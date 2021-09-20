@@ -153,20 +153,23 @@ impl<'a> Iterator for ParalellLinesProducerWithIndex<'a> {
                         ))
                     }
                 };
+                let mut number_of_characters_read = 0;
+
                 // If this is a file with '\n\r' end of lines, it is not impossible
                 // that the read bits start with the carriage return symbol.
                 // We need to handle this use case as follows:
                 if !available.is_empty() && available[0] == b'\r' {
                     available = &available[1..];
+                    number_of_characters_read += 1;
                 }
                 if let Some(comment_symbol) = self.comment_symbol.as_deref() {
                     if available.starts_with(comment_symbol.as_bytes()) {
                         // We deincrease the number of characters that have been found.
                         let _ = self.line_count.saturating_sub(1);
+                        number_of_characters_read += comment_symbol.len();
                         available = &available[comment_symbol.len()..];
                     }
                 }
-                let mut number_of_characters_read = 0;
                 let mut line_is_finished = false;
                 while let Some(pos) = memchr::memchr(b'\n', available) {
                     // update the count of how many bytes from the buffer we have parsed
@@ -178,6 +181,7 @@ impl<'a> Iterator for ParalellLinesProducerWithIndex<'a> {
                         available = &available[(pos + 1)..];
                         if !available.is_empty() && available[0] == b'\r' {
                             available = &available[1..];
+                            number_of_characters_read += 1;
                         }
                         // We increase the number of characters that have been found.
                         self.line_count += 1;
@@ -185,6 +189,7 @@ impl<'a> Iterator for ParalellLinesProducerWithIndex<'a> {
                             if available.starts_with(comment_symbol.as_bytes()) {
                                 // We deincrease the number of characters that have been found.
                                 self.line_count -= 1;
+                                number_of_characters_read += comment_symbol.len();
                                 available = &available[comment_symbol.len()..];
                             }
                         }
@@ -249,7 +254,7 @@ impl<'a> UnindexedProducer for ParalellLinesProducerWithIndex<'a> {
     /// Split the file in two approximately balanced streams
     fn split(mut self) -> (Self, Option<Self>) {
         // Check if it's reasonable to split the stream
-        if self.depth >= self.maximal_depth {
+        if self.depth >= self.maximal_depth.saturating_sub(1) {
             return (self, None);
         }
 

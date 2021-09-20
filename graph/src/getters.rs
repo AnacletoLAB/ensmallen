@@ -356,8 +356,7 @@ impl Graph {
     /// println!("The mode node degree of the graph is  {}", graph.get_node_degrees_mode().unwrap());
     /// ```
     pub fn get_node_degrees_mode(&self) -> Result<NodeT> {
-        let degree_counts = self
-            .iter_node_ids()
+        let degree_counts = (0..(self.get_maximum_node_degree()? + 1))
             .map(|_| AtomicU32::new(0))
             .collect::<Vec<AtomicU32>>();
         self.par_iter_node_degrees().for_each(|node_degree| {
@@ -365,7 +364,7 @@ impl Graph {
         });
         let degree_counts =
             unsafe { std::mem::transmute::<Vec<AtomicU32>, Vec<NodeT>>(degree_counts) };
-        Ok(degree_counts.into_par_iter().max().unwrap())
+        Ok(degree_counts.into_par_iter().argmax().unwrap().0 as NodeT)
     }
 
     /// Returns rate of self-loops.
