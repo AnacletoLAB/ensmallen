@@ -210,3 +210,37 @@ pub fn atoi_c(val: &str) -> u32 {
     }
     result
 }
+
+pub trait ToAtomicVec<T> {
+    fn to_atomic(self: Self) -> Vec<T>;
+}
+pub trait RemoveAtomicVec<T> {
+    fn remove_atomic(self: Self) -> Vec<T>;
+}
+
+
+#[macro_export]
+/// Create a vector of atomic using a default value.
+/// the syntax is:
+/// `vec_atomic[AtomicTYPE; DEFAULT_VALUE; SIZE]`
+macro_rules! impl_to_atomic_vec {
+    ($atomic_type:ty, $normal_type:ty) => {
+        impl ToAtomicVec<$atomic_type> for Vec<$normal_type> {
+            fn to_atomic(self) -> Vec<$atomic_type> {
+                unsafe { std::mem::transmute::<Vec<$normal_type>, Vec<$atomic_type>>(self) }
+            }
+        }
+
+        impl RemoveAtomicVec<$normal_type> for Vec<$atomic_type> {
+            fn remove_atomic(self) -> Vec<$normal_type> {
+                unsafe { std::mem::transmute::<Vec<$atomic_type>, Vec<$normal_type>>(self) }
+            }
+        }
+    }
+}
+
+impl_to_atomic_vec!(std::sync::atomic::AtomicU8, u8);
+impl_to_atomic_vec!(std::sync::atomic::AtomicU16, u16);
+impl_to_atomic_vec!(std::sync::atomic::AtomicU32, u32);
+impl_to_atomic_vec!(std::sync::atomic::AtomicU64, u64);
+impl_to_atomic_vec!(std::sync::atomic::AtomicUsize, usize);
