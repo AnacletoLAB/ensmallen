@@ -12,7 +12,7 @@ References
 ---------------------
 Please cite the following if you use the data:
 
-```latex
+```bib
 @inproceedings{namata2012query,
   title={Query-driven active surveying for collective classification},
   author={Namata, Galileo and London, Ben and Getoor, Lise and Huang, Bert and EDU, UMD},
@@ -31,6 +31,7 @@ from ...ensmallen import Graph  # pylint: disable=import-error
 def PubMedDiabetes(
     directed: bool = False,
     preprocess: bool = True,
+    load_nodes: bool = True,
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/linqs",
@@ -53,7 +54,10 @@ def PubMedDiabetes(
     preprocess: bool = True
         Whether to preprocess the graph to be loaded in 
         optimal time and memory.
-    verbose: int = 2
+    load_nodes: bool = True,
+        Whether to load the nodes vocabulary or treat the nodes
+        simply as a numeric range.
+    verbose: int = 2,
         Wether to show loading bars during the retrieval and building
         of the graph.
     cache: bool = True
@@ -74,7 +78,7 @@ def PubMedDiabetes(
 	---------------------
 	Please cite the following if you use the data:
 	
-	```latex
+	```bib
 	@inproceedings{namata2012query,
 	  title={Query-driven active surveying for collective classification},
 	  author={Namata, Galileo and London, Ben and Getoor, Lise and Huang, Bert and EDU, UMD},
@@ -90,6 +94,7 @@ def PubMedDiabetes(
         version=version,
         directed=directed,
         preprocess=preprocess,
+        load_nodes=load_nodes,
         verbose=verbose,
         cache=cache,
         cache_path=cache_path,

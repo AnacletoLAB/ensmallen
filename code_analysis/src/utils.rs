@@ -17,7 +17,8 @@ const BLACKLIST: &[&str] = &[
     "iters_wrapper.rs",
     "parallel_lines_reader_with_index.rs",
     "url_utilities",
-    "constructors"
+    "constructors",
+    "argmax_argmin.rs"
 ];
 
 pub fn skip_file(path: &str) -> bool {

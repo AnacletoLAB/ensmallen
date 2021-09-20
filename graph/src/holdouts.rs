@@ -1040,7 +1040,7 @@ impl Graph {
     /// this generates a random subgraph with 1000 nodes.
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    ///   let random_graph = graph.random_subgraph(1000, Some(0xbad5eed), Some(true)).unwrap();
+    ///   let random_graph = graph.get_random_subgraph(1000, Some(0xbad5eed), Some(true)).unwrap();
     /// ```
     ///
     /// # Raises

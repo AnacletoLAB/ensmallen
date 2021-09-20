@@ -8,7 +8,7 @@ References
 ---------------------
 Please cite the following if you use the data:
 
-```latex
+```bib
 @article{yue2020graph,
   title={Graph embedding on biomedical networks: methods, applications and evaluations},
   author={Yue, Xiang and Wang, Zhen and Huang, Jingong and Parthasarathy, Srinivasan and Moosavinasab, Soheil and Huang, Yungui and Lin, Simon M and Zhang, Wen and Zhang, Ping and Sun, Huan},
@@ -30,6 +30,7 @@ from ...ensmallen import Graph  # pylint: disable=import-error
 def ClinTermCOOC(
     directed: bool = False,
     preprocess: bool = True,
+    load_nodes: bool = True,
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/yue",
@@ -48,7 +49,10 @@ def ClinTermCOOC(
     preprocess: bool = True
         Whether to preprocess the graph to be loaded in 
         optimal time and memory.
-    verbose: int = 2
+    load_nodes: bool = True,
+        Whether to load the nodes vocabulary or treat the nodes
+        simply as a numeric range.
+    verbose: int = 2,
         Wether to show loading bars during the retrieval and building
         of the graph.
     cache: bool = True
@@ -69,7 +73,7 @@ def ClinTermCOOC(
 	---------------------
 	Please cite the following if you use the data:
 	
-	```latex
+	```bib
 	@article{yue2020graph,
 	  title={Graph embedding on biomedical networks: methods, applications and evaluations},
 	  author={Yue, Xiang and Wang, Zhen and Huang, Jingong and Parthasarathy, Srinivasan and Moosavinasab, Soheil and Huang, Yungui and Lin, Simon M and Zhang, Wen and Zhang, Ping and Sun, Huan},
@@ -88,6 +92,7 @@ def ClinTermCOOC(
         version=version,
         directed=directed,
         preprocess=preprocess,
+        load_nodes=load_nodes,
         verbose=verbose,
         cache=cache,
         cache_path=cache_path,

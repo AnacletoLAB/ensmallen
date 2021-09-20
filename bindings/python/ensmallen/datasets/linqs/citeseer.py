@@ -12,7 +12,7 @@ References
 ---------------------
 Please cite the following if you use the data:
 
-```latex
+```bib
 @incollection{getoor2005link,
   title={Link-based classification},
   author={Getoor, Lise},
@@ -42,6 +42,7 @@ from ...ensmallen import Graph  # pylint: disable=import-error
 def CiteSeer(
     directed: bool = False,
     preprocess: bool = True,
+    load_nodes: bool = True,
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/linqs",
@@ -64,7 +65,10 @@ def CiteSeer(
     preprocess: bool = True
         Whether to preprocess the graph to be loaded in 
         optimal time and memory.
-    verbose: int = 2
+    load_nodes: bool = True,
+        Whether to load the nodes vocabulary or treat the nodes
+        simply as a numeric range.
+    verbose: int = 2,
         Wether to show loading bars during the retrieval and building
         of the graph.
     cache: bool = True
@@ -85,7 +89,7 @@ def CiteSeer(
 	---------------------
 	Please cite the following if you use the data:
 	
-	```latex
+	```bib
 	@incollection{getoor2005link,
 	  title={Link-based classification},
 	  author={Getoor, Lise},
@@ -112,6 +116,7 @@ def CiteSeer(
         version=version,
         directed=directed,
         preprocess=preprocess,
+        load_nodes=load_nodes,
         verbose=verbose,
         cache=cache,
         cache_path=cache_path,

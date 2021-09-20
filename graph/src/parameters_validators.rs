@@ -368,7 +368,7 @@ impl Graph {
     ///
     /// ```rust
     /// # let ppi = graph::test_utilities::load_ppi(false, true, false, false, false, false);
-    /// # let ppi_with_selfloops = ppi.add_selfloops(None, None);
+    /// # let ppi_with_selfloops = ppi.add_selfloops(None, None).unwrap();
     /// assert!(ppi.must_contain_identity_matrix().is_err());
     /// assert!(ppi_with_selfloops.must_contain_identity_matrix().is_ok());
     /// ```

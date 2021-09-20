@@ -8,7 +8,7 @@ References
 ---------------------
 Please cite the following if you use the data:
 
-```latex
+```bib
 @article{szklarczyk2019string,
     title={STRING v11: protein--protein association networks with increased coverage, supporting functional discovery in genome-wide experimental datasets},
     author={Szklarczyk, Damian and Gable, Annika L and Lyon, David and Junge, Alexander and Wyder, Stefan and Huerta-Cepas, Jaime and Simonovic, Milan and Doncheva, Nadezhda T and Morris, John H and Bork, Peer and others},
@@ -30,6 +30,7 @@ from ...ensmallen import Graph  # pylint: disable=import-error
 def HaloferacaceaeArchaeonB1Br10E2g22(
     directed: bool = False,
     preprocess: bool = True,
+    load_nodes: bool = True,
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
@@ -48,7 +49,10 @@ def HaloferacaceaeArchaeonB1Br10E2g22(
     preprocess: bool = True
         Whether to preprocess the graph to be loaded in 
         optimal time and memory.
-    verbose: int = 2
+    load_nodes: bool = True,
+        Whether to load the nodes vocabulary or treat the nodes
+        simply as a numeric range.
+    verbose: int = 2,
         Wether to show loading bars during the retrieval and building
         of the graph.
     cache: bool = True
@@ -73,7 +77,7 @@ def HaloferacaceaeArchaeonB1Br10E2g22(
 	---------------------
 	Please cite the following if you use the data:
 	
-	```latex
+	```bib
 	@article{szklarczyk2019string,
 	    title={STRING v11: protein--protein association networks with increased coverage, supporting functional discovery in genome-wide experimental datasets},
 	    author={Szklarczyk, Damian and Gable, Annika L and Lyon, David and Junge, Alexander and Wyder, Stefan and Huerta-Cepas, Jaime and Simonovic, Milan and Doncheva, Nadezhda T and Morris, John H and Bork, Peer and others},
@@ -92,6 +96,7 @@ def HaloferacaceaeArchaeonB1Br10E2g22(
         version=version,
         directed=directed,
         preprocess=preprocess,
+        load_nodes=load_nodes,
         verbose=verbose,
         cache=cache,
         cache_path=cache_path,
