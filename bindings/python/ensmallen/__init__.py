@@ -12,6 +12,8 @@ required_flags = (
     "sse4_2",
     "avx",
     "avx2",
+    "bmi1",
+    "bmi2",
     "popcnt"
 )
 
