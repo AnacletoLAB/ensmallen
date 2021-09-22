@@ -1,21 +1,9 @@
 """Module offering fast graph processing and graph datasets."""
-##########################################
-#
-###########################################
+
 import cpuinfo
 
-required_flags = (
-    "sse",
-    "sse2",
-    "ssse3",
-    "sse4_1",
-    "sse4_2",
-    "avx",
-    "avx2",
-    "bmi1",
-    "bmi2",
-    "popcnt"
-)
+required_flags = ("sse", "sse2", "ssse3", "sse4_1", "sse4_2",
+                  "avx", "avx2", "bmi1", "bmi2", "popcnt")
 
 flags = cpuinfo.get_cpu_info()["flags"]
 
@@ -35,8 +23,9 @@ if len(unavailable_flags) > 0:
         ).format(unavailable_flags)
     )
 
-from .ensmallen import edge_list_utils # pylint: disable=import-error
-from .ensmallen import Graph # pylint: disable=import-error
-from .ensmallen import preprocessing # pylint: disable=import-error
 from . import datasets
-__all__ = ["edge_list_utils", "Graph", "preprocessing", "datasets"] 
+from .ensmallen import preprocessing  # pylint: disable=import-error
+from .ensmallen import Graph  # pylint: disable=import-error
+from .ensmallen import edge_list_utils  # pylint: disable=import-error
+
+__all__ = ["edge_list_utils", "Graph", "preprocessing", "datasets"]
