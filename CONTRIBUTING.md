@@ -87,7 +87,7 @@ We built several utilities:
 - `bindgen` It analyze all the methods and functions in the core library and automatically create the 
 python bindings creating the file `auto_generated_bindings.rs`. Also this create the data we use for
 the TF-IDF raccomander system we have for the `__get_attr__` magic method, in particular
-it writes the file `method_name_list` with a list of all the methods, and the pre-computed TFIDF weights
+it pre-process and store, for each struct, a list of all the methods, and the pre-computed TFIDF weights
 of each term.
 - `metatest` It analyze all the methods of the `Graph` struct and create a fuzzing harness that 
 create a random graph and calls 10 random methods with random arguments.
