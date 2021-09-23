@@ -14,7 +14,16 @@ keywords = ["python", "rust", "graph", "random", "walk"]
 
 [package.metadata.maturin]
 requires-python = ">=3.6"
-requires-dist = ["toml~=0.10.0", "downloaders", "compress_json", "environments_utils", "userinput", "tqdm", "pandas"]
+requires-dist = [
+    "toml~=0.10.0",
+    "downloaders",
+    "compress_json",
+    "environments_utils",
+    "userinput",
+    "tqdm",
+    "pandas",
+    "py-cpuinfo"
+]
 
 [lib]
 name = "ensmallen"
