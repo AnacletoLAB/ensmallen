@@ -1,12 +1,12 @@
 """Utility to automatically retrieve a graph by name and repository."""
-from typing import Optional, Any, Callable, List
-from ensmallen import Graph
-from ensmallen import datasets
-from glob import glob
-import compress_json
-from userinput.utils import set_validator, closest
 import os
+from glob import glob
+from typing import Any, Callable, List, Optional
+
+import compress_json
 import pandas as pd
+from ensmallen import Graph, datasets
+from userinput.utils import closest, set_validator
 
 
 def get_available_repositories() -> List[str]:
@@ -185,5 +185,8 @@ def get_dataset(
             ),
             ", ".join(graph_names),
         ))
+
+    if version is not None:
+        validate_graph_version(graph_name, repository, version)
 
     return getattr(getattr(datasets, repository), graph_name)
