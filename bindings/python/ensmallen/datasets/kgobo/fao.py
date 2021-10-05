@@ -31,7 +31,7 @@ def FAO(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/kgobo",
-    version: str = "fao",
+    version: str = "2020-05-07",
     **additional_graph_kwargs: Dict
 ) -> Graph:
     """Return new instance of the FAO graph.
@@ -57,10 +57,10 @@ def FAO(
         and preprocess them only once.
     cache_path: str = "graphs"
         Where to store the downloaded graphs.
-    version: str = "fao"
+    version: str = "2020-05-07"
         The version of the graph to retrieve.		
 	The available versions are:
-			- fao
+			- 2020-05-07
     additional_graph_kwargs: Dict
         Additional graph kwargs.
 
