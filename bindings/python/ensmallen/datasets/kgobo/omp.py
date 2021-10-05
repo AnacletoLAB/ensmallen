@@ -31,7 +31,7 @@ def OMP(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/kgobo",
-    version: str = "2021-09-13",
+    version: str = "2021-10-01",
     **additional_graph_kwargs: Dict
 ) -> Graph:
     """Return new instance of the OMP graph.
@@ -57,10 +57,10 @@ def OMP(
         and preprocess them only once.
     cache_path: str = "graphs"
         Where to store the downloaded graphs.
-    version: str = "2021-09-13"
+    version: str = "2021-10-01"
         The version of the graph to retrieve.		
 	The available versions are:
-			- 2021-09-13
+			- 2021-10-01
     additional_graph_kwargs: Dict
         Additional graph kwargs.
 
