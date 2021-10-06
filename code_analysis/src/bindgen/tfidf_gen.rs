@@ -1,4 +1,4 @@
-use super::*;
+use std::collections::HashSet;
 
 /// Pre-compute the TD-IDF weight for each term of each binding.
 /// Then write the compute weights in a file at the given path.

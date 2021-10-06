@@ -1,9 +1,13 @@
 use super::*;
 use std::collections::HashMap;
 use regex::Regex;
+use std::fs;
 
 mod binding;
 pub use binding::*;
+
+mod pyigen;
+pub use pyigen::*;
 
 mod translate_doc;
 pub use translate_doc::*;
@@ -270,7 +274,7 @@ impl GenBinding for BindingsModule {
             }
         }
 
-        for (mods_name, mods) in self.modules.iter() {
+        for (mods_name, _mods) in self.modules.iter() {
             registrations.push(
                 format!("\tm.add_wrapped(wrap_pymodule!({}))?;", mods_name)
             );
@@ -373,11 +377,11 @@ fn group_data(modules: Vec<Module>) -> BindingsModule {
     bindings
 }
 
-pub fn gen_bindings(path: &str, init_path: &str) {
+pub fn gen_bindings(to_parse_path: &str, path: &str, init_path: &str) {
     print_sep();
     println!("Parsing the library source files");
     print_sep();
-    let data = group_data(get_library_sources());
+    let data = group_data(parse_crate(to_parse_path, DENY_LIST));
 
     print_sep();
     println!("Generating the bindings");

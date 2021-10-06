@@ -278,7 +278,8 @@ impl GenBinding for Function {
                             (false, true) => "#[pyfunction]",
                             (false, false) => unreachable!("it cant be both a function and take self as argument!"),
                         },
-                        doc = translate_doc(&self.doc),
+                        // TODO!: FIX THIS SHIT to allows proper translation of user types
+                        doc = translate_doc(&self.doc, &vec![]),
                         text_signature = text_signature,
                         name = &self.name,
                         return_type = return_type,

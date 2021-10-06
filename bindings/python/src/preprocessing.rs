@@ -106,7 +106,10 @@ fn okapi_bm25_tfidf_str(
 /// window_size: int,
 ///     Window size to consider for the sequences.
 ///
-fn word2vec(sequences: Vec<Vec<NodeT>>, window_size: usize) -> (PyContexts, PyWords) {
+fn word2vec(
+    sequences: Vec<Vec<NodeT>>,
+    window_size: usize,
+) -> (Py<PyArray2<NodeT>>, Py<PyArray1<NodeT>>) {
     let (contexts, words): (Vec<Vec<NodeT>>, Vec<NodeT>) =
         rust_word2vec(sequences.into_par_iter(), window_size).unzip();
     let gil = pyo3::Python::acquire_gil();
@@ -137,7 +140,7 @@ fn word2vec(sequences: Vec<Vec<NodeT>>, window_size: usize) -> (PyContexts, PyWo
 fn cooccurence_matrix(
     sequences: Vec<Vec<NodeT>>,
     py_kwargs: Option<&PyDict>,
-) -> PyResult<(PyWords, PyWords, PyFrequencies)> {
+) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>, Py<PyArray1<f64>>)> {
     let _ = ctrlc::set_handler(|| std::process::exit(2));
     let gil = pyo3::Python::acquire_gil();
     let kwargs = normalize_kwargs!(py_kwargs, gil.python());
@@ -224,7 +227,7 @@ impl Graph {
         &self,
         walk_length: u64,
         py_kwargs: Option<&PyDict>,
-    ) -> PyResult<(PyWords, PyWords, PyFrequencies)> {
+    ) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>, Py<PyArray1<f64>>)> {
         let gil = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, gil.python());
 
@@ -325,7 +328,7 @@ impl Graph {
         walk_length: u64,
         window_size: usize,
         py_kwargs: Option<&PyDict>,
-    ) -> PyResult<(PyContexts, PyWords)> {
+    ) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray1<NodeT>>)> {
         let gil = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, gil.python());
         pe!(validate_kwargs(
