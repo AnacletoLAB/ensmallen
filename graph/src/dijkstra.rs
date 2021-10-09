@@ -255,6 +255,9 @@ impl ShortestPathsResultBFS {
                 let mut node_id = node_id;
                 while predecessors[node_id as usize] != node_id {
                     node_id = predecessors[node_id as usize];
+                    if node_id == NODE_NOT_PRESENT {
+                        return false;
+                    }
                     if source_node_id == node_id {
                         return true;
                     }
