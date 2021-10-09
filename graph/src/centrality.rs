@@ -634,6 +634,7 @@ impl Graph {
         while running_sum < nodes_number * constant {
             // Sample random node.
             let sampled_node_id = self.get_random_node(random_state);
+            // Increasing the random state.
             random_state += 1;
             // If the sampled node is a disconnected ones, we need to skip it.
             if unsafe{self.is_unchecked_disconnected_node_from_node_id(sampled_node_id)}{
@@ -790,6 +791,8 @@ impl Graph {
         while running_sum < nodes_number * constant {
             // Sample random node.
             let sampled_node_id = self.get_random_node(random_state);
+            // Increasing the random state.
+            random_state += 1;
             // If the sampled node is a disconnected ones, we need to skip it.
             if unsafe{self.is_unchecked_disconnected_node_from_node_id(sampled_node_id)}{
                 continue;
