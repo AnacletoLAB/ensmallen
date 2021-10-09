@@ -631,7 +631,7 @@ impl Graph {
             ));
         }
         // Repeatedly sample the vertices.
-        while running_sum < number_of_sampled_nodes * constant {
+        while running_sum < nodes_number * constant {
             // Sample random node.
             let sampled_node_id = self.get_random_node(random_state);
             // If the sampled node is a disconnected ones, we need to skip it.
@@ -786,7 +786,7 @@ impl Graph {
             ));
         }
         // Repeatedly sample the vertices.
-        while running_sum < number_of_sampled_nodes * constant {
+        while running_sum < nodes_number * constant {
             // Sample random node.
             let sampled_node_id = self.get_random_node(random_state);
             // If the sampled node is a disconnected ones, we need to skip it.
