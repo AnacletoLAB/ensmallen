@@ -244,14 +244,14 @@ impl ShortestPathsResultBFS {
     ///
     /// # Returns
     /// List of successors of the given node.
-    pub fn par_iter_successors_from_node_id(
+    pub fn iter_successors_from_node_id(
         &self,
         source_node_id: NodeT,
-    ) -> Result<impl ParallelIterator<Item = NodeT> + '_> {
+    ) -> Result<impl Iterator<Item = NodeT> + '_> {
         self.validate_node_id(source_node_id)?;
         if let Some(predecessors) = self.predecessors.as_ref() {
             let nodes_number = predecessors.len() as NodeT;
-            return Ok((0..nodes_number).into_par_iter().filter(move |&node_id| {
+            return Ok((0..nodes_number).filter(move |&node_id| {
                 let mut node_id = node_id;
                 while predecessors[node_id as usize] != node_id {
                     node_id = predecessors[node_id as usize];
@@ -480,14 +480,14 @@ impl ShortestPathsDjkstra {
     ///
     /// # Returns
     /// List of successors of the given node.
-    pub fn par_iter_successors_from_node_id(
+    pub fn iter_successors_from_node_id(
         &self,
         source_node_id: NodeT,
-    ) -> Result<impl ParallelIterator<Item = NodeT> + '_> {
+    ) -> Result<impl Iterator<Item = NodeT> + '_> {
         self.validate_node_id(source_node_id)?;
         if let Some(predecessors) = self.predecessors.as_ref() {
             let nodes_number = predecessors.len() as NodeT;
-            return Ok((0..nodes_number).into_par_iter().filter(move |&node_id| {
+            return Ok((0..nodes_number).filter(move |&node_id| {
                 let mut node_id = node_id;
                 while predecessors[node_id as usize].map_or(false, |predecessor| predecessor != node_id)  {
                     node_id = predecessors[node_id as usize].unwrap();

@@ -582,7 +582,7 @@ impl Graph {
         let number_of_shortest_paths =
             sssp.get_number_of_shortest_paths_from_node_id(node_id)? as f64;
         Ok(sssp
-            .par_iter_successors_from_node_id(node_id)?
+            .iter_successors_from_node_id(node_id)?
             .map(|successor_node_id| {
                 (1.0 + self
                     .get_pair_dependency_from_node_id(successor_node_id, sssp)
@@ -613,7 +613,7 @@ impl Graph {
         let number_of_shortest_paths =
             sssp.get_number_of_shortest_paths_from_node_id(node_id)? as f64;
         Ok(sssp
-            .par_iter_successors_from_node_id(node_id)?
+            .iter_successors_from_node_id(node_id)?
             .map(|successor_node_id| {
                 (1.0 + self
                     .get_weighted_pair_dependency_from_node_id(successor_node_id, sssp)
