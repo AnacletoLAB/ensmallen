@@ -23,7 +23,7 @@ pub(crate) unsafe fn format_string_url_from_node_name(node_name: &str) -> String
 ///
 /// # Example
 /// To validate a node you can use:
-/// ```rust
+/// ```ignore
 /// # use graph::*;
 /// let this_library_node_name1 = "287.DR97_1";
 /// let this_library_node_name2 = "287.DR97_999";

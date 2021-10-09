@@ -564,6 +564,314 @@ impl Graph {
         centralities
     }
 
+    /// Returns the unweighted approximated betweenness centrality of the given node id.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - The node ID for which to compute the approximated betweenness centrality.
+    /// * `constant`: Option<f64> - The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
+    /// * `random_state`: Option<u64> - The random state to use for the sampling. By default 42.
+    ///
+    /// # Raises
+    /// * If the provided node ID does not exist in the current graph instance.
+    ///
+    /// # References
+    /// This method is an implementation of the [Approximating Betweenness Centrality](https://link.springer.com/chapter/10.1007/978-3-540-77004-6_10)
+    /// work by David Bader et al.
+    ///
+    /// The algorithm repeatedly samples a vertex \(v_i \in V\),
+    /// then performs single-source shortest paths from \(v_i\)
+    /// and maintain a running sum \(S\) of the dependency scores \(\delta_{v_i∗}(v)\).
+    /// Sample nodes until \(S\) is greater than cn for some constant \(c \geq 2\).
+    /// Let the total number of samples be \(k\).
+    /// The estimated betweenness centrality score of \(v\), \(BC(v)\) is given by \(\frac{nS}{k}\).
+    ///
+    /// # Example
+    /// In order to compute the approximated weighted betweenness centrality of the first node of the graph
+    /// Homo Sapiens from STRING PPI you can use the following:
+    ///
+    /// ```rust
+    /// let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// graph.get_approximated_betweenness_centrality_from_node_id(
+    ///     0,
+    ///     None,
+    ///     None   
+    /// );
+    /// ```
+    ///
+    /// # Returns
+    /// Float value with the approximated betweenness centrality of the provided node id.
+    pub fn get_approximated_betweenness_centrality_from_node_id(
+        &self,
+        node_id: NodeT,
+        constant: Option<f64>,
+        random_state: Option<u64>,
+    ) -> Result<f64> {
+        self.validate_node_id(node_id)?;
+        // The running sum, which in the paper is
+        // referred to as \(S\).
+        let mut running_sum: f64 = 0.0;
+        // The number of samples nodes considered, which in the paper
+        // is referred to as \(k\).
+        let mut number_of_sampled_nodes: f64 = 0.0;
+        // The number of the nodes in the graph, which in the paper
+        // is referred to as \(n\).
+        let nodes_number = self.get_nodes_number() as f64;
+        // The random state to use to sample the nodes.
+        let mut random_state = random_state.unwrap_or(42);
+        // The factor for the convergence of the approximated sampling for the considered node.
+        // In the paper it is referred to a \(c\), and must be at least \(2.0\).
+        let constant = constant.unwrap_or(2.0);
+        if constant < 2.0 {
+            return Err(format!(
+                concat!(
+                    "The constant parameter must be at least 2.0, but the provided ",
+                    "value for the parameter's value is {}."
+                ),
+                constant
+            ));
+        }
+        // Repeatedly sample the vertices.
+        while running_sum < number_of_sampled_nodes * constant {
+            // Sample random node.
+            let sampled_node_id = self.get_random_node(random_state);
+            // Increase the random state, using a wrapping add in order to avoid
+            // possible overflows when a very high random state is provided.
+            random_state = random_state.wrapping_add(1);
+            // Increase the number of sampled nodes.
+            number_of_sampled_nodes += 1.0;
+            // Compute the SSSP starting from the samples node.
+            let sssp = unsafe {
+                self.get_unchecked_breadth_first_search_predecessors_parallel_from_node_id(
+                    sampled_node_id,
+                )
+            };
+            // Get the number of shortest paths and the number of shortest paths passing through the
+            // given root node id.
+            let number_of_shortest_paths = sssp.get_number_of_shortest_paths()?;
+            let number_of_shortest_paths_passing_through_given_node_id =
+                sssp.get_number_of_shortest_paths_from_node_id(node_id)?;
+            // Compute the pair dependency.
+            let pair_dependency = number_of_shortest_paths_passing_through_given_node_id as f64
+                / number_of_shortest_paths as f64;
+            // Update the running sum.
+            running_sum += pair_dependency;
+        }
+        // Compute the approximated betweenness centrality from the considered samples
+        let approximated_betweenness_centrality =
+            nodes_number / number_of_sampled_nodes * running_sum;
+        // Return the computed betweenness centrality score
+        Ok(approximated_betweenness_centrality)
+    }
+
+    /// Returns the unweighted approximated betweenness centrality of the given node id.
+    ///
+    /// # Arguments
+    /// * `node_name`: &str - The node name for which to compute the approximated betweenness centrality.
+    /// * `constant`: Option<f64> - The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
+    /// * `random_state`: Option<u64> - The random state to use for the sampling. By default 42.
+    ///
+    /// # Raises
+    /// * If the provided node name does not exist in the current graph instance.
+    ///
+    /// # References
+    /// This method is an implementation of the [Approximating Betweenness Centrality](https://link.springer.com/chapter/10.1007/978-3-540-77004-6_10)
+    /// work by David Bader et al.
+    ///
+    /// The algorithm repeatedly samples a vertex \(v_i \in V\),
+    /// then performs single-source shortest paths from \(v_i\)
+    /// and maintain a running sum \(S\) of the dependency scores \(\delta_{v_i∗}(v)\).
+    /// Sample nodes until \(S\) is greater than cn for some constant \(c \geq 2\).
+    /// Let the total number of samples be \(k\).
+    /// The estimated betweenness centrality score of \(v\), \(BC(v)\) is given by \(\frac{nS}{k}\).
+    ///
+    /// # Example
+    /// In order to compute the approximated weighted betweenness centrality of the node `ENSG00000178607` of the graph
+    /// Homo Sapiens from STRING PPI you can use the following:
+    ///
+    /// ```rust
+    /// let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// graph.get_approximated_betweenness_centrality_from_node_name(
+    ///     "ENSG00000178607",
+    ///     None,
+    ///     None   
+    /// );
+    /// ```
+    ///
+    /// # Returns
+    /// Float value with the approximated betweenness centrality of the provided node id.
+    pub fn get_approximated_betweenness_centrality_from_node_name(
+        &self,
+        node_name: &str,
+        constant: Option<f64>,
+        random_state: Option<u64>,
+    ) -> Result<f64> {
+        self.get_approximated_betweenness_centrality_from_node_id(
+            self.get_node_id_from_node_name(node_name)?,
+            constant,
+            random_state,
+        )
+    }
+
+    /// Returns the weighted approximated betweenness centrality of the given node id.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - The node ID for which to compute the approximated betweenness centrality.
+    /// * `constant`: Option<f64> - The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
+    /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to consider the edge weights as probabilities.
+    /// * `random_state`: Option<u64> - The random state to use for the sampling. By default 42.
+    ///
+    /// # Raises
+    /// * If the provided node ID does not exist in the current graph instance.
+    ///
+    /// # References
+    /// This method is an implementation of the [Approximating Betweenness Centrality](https://link.springer.com/chapter/10.1007/978-3-540-77004-6_10)
+    /// work by David Bader et al.
+    ///
+    /// The algorithm repeatedly samples a vertex \(v_i \in V\),
+    /// then performs single-source shortest paths from \(v_i\)
+    /// and maintain a running sum \(S\) of the dependency scores \(\delta_{v_i∗}(v)\).
+    /// Sample nodes until \(S\) is greater than cn for some constant \(c \geq 2\).
+    /// Let the total number of samples be \(k\).
+    /// The estimated betweenness centrality score of \(v\), \(BC(v)\) is given by \(\frac{nS}{k}\).
+    ///
+    /// # Example
+    /// In order to compute the approximated weighted betweenness centrality of the first node of the graph
+    /// Homo Sapiens from STRING PPI you can use the following:
+    ///
+    /// ```rust
+    /// let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// graph.get_weighted_approximated_betweenness_centrality_from_node_id(
+    ///     0,
+    ///     None,
+    ///     None,
+    ///     None   
+    /// );
+    /// ```
+    ///
+    /// # Returns
+    /// Float value with the weighted approximated betweenness centrality of the provided node id.
+    pub fn get_weighted_approximated_betweenness_centrality_from_node_id(
+        &self,
+        node_id: NodeT,
+        constant: Option<f64>,
+        use_edge_weights_as_probabilities: Option<bool>,
+        random_state: Option<u64>,
+    ) -> Result<f64> {
+        self.validate_node_id(node_id)?;
+        // The running sum, which in the paper is
+        // referred to as \(S\).
+        let mut running_sum: f64 = 0.0;
+        // The number of samples nodes considered, which in the paper
+        // is referred to as \(k\).
+        let mut number_of_sampled_nodes: f64 = 0.0;
+        // The number of the nodes in the graph, which in the paper
+        // is referred to as \(n\).
+        let nodes_number = self.get_nodes_number() as f64;
+        // The random state to use to sample the nodes.
+        let mut random_state = random_state.unwrap_or(42);
+        // The factor for the convergence of the approximated sampling for the considered node.
+        // In the paper it is referred to a \(c\), and must be at least \(2.0\).
+        let constant = constant.unwrap_or(2.0);
+        if constant < 2.0 {
+            return Err(format!(
+                concat!(
+                    "The constant parameter must be at least 2.0, but the provided ",
+                    "value for the parameter's value is {}."
+                ),
+                constant
+            ));
+        }
+        // Repeatedly sample the vertices.
+        while running_sum < number_of_sampled_nodes * constant {
+            // Sample random node.
+            let sampled_node_id = self.get_random_node(random_state);
+            // Increase the random state, using a wrapping add in order to avoid
+            // possible overflows when a very high random state is provided.
+            random_state = random_state.wrapping_add(1);
+            // Increase the number of sampled nodes.
+            number_of_sampled_nodes += 1.0;
+            // Compute the SSSP starting from the samples node.
+            let sssp = unsafe {
+                self.get_unchecked_dijkstra_from_node_ids(
+                    sampled_node_id,
+                    None,
+                    None,
+                    Some(true),
+                    None,
+                    use_edge_weights_as_probabilities,
+                )
+            };
+            // Get the number of shortest paths and the number of shortest paths passing through the
+            // given root node id.
+            let number_of_shortest_paths = sssp.get_number_of_shortest_paths();
+            let number_of_shortest_paths_passing_through_given_node_id =
+                sssp.get_number_of_shortest_paths_from_node_id(node_id)?;
+            // Compute the pair dependency.
+            let pair_dependency = number_of_shortest_paths_passing_through_given_node_id as f64
+                / number_of_shortest_paths as f64;
+            // Update the running sum.
+            running_sum += pair_dependency;
+        }
+        // Compute the approximated betweenness centrality from the considered samples
+        let approximated_betweenness_centrality =
+            nodes_number / number_of_sampled_nodes * running_sum;
+        // Return the computed betweenness centrality score
+        Ok(approximated_betweenness_centrality)
+    }
+
+    /// Returns the weighted approximated betweenness centrality of the given node id.
+    ///
+    /// # Arguments
+    /// * `node_name`: &str - The node name for which to compute the approximated betweenness centrality.
+    /// * `constant`: Option<f64> - The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
+    /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to consider the edge weights as probabilities.
+    /// * `random_state`: Option<u64> - The random state to use for the sampling. By default 42.
+    ///
+    /// # Raises
+    /// * If the provided node name does not exist in the current graph instance.
+    ///
+    /// # References
+    /// This method is an implementation of the [Approximating Betweenness Centrality](https://link.springer.com/chapter/10.1007/978-3-540-77004-6_10)
+    /// work by David Bader et al.
+    ///
+    /// The algorithm repeatedly samples a vertex \(v_i \in V\),
+    /// then performs single-source shortest paths from \(v_i\)
+    /// and maintain a running sum \(S\) of the dependency scores \(\delta_{v_i∗}(v)\).
+    /// Sample nodes until \(S\) is greater than cn for some constant \(c \geq 2\).
+    /// Let the total number of samples be \(k\).
+    /// The estimated betweenness centrality score of \(v\), \(BC(v)\) is given by \(\frac{nS}{k}\).
+    ///
+    /// # Example
+    /// In order to compute the approximated weighted betweenness centrality of the node `ENSG00000178607` of the graph
+    /// Homo Sapiens from STRING PPI you can use the following:
+    ///
+    /// ```rust
+    /// let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// graph.get_weighted_approximated_betweenness_centrality_from_node_name(
+    ///     "ENSG00000178607",
+    ///     None,
+    ///     None,
+    ///     None   
+    /// );
+    /// ```
+    ///
+    /// # Returns
+    /// Float value with the weighted approximated betweenness centrality of the provided node id.
+    pub fn get_weighted_approximated_betweenness_centrality_from_node_name(
+        &self,
+        node_name: &str,
+        constant: Option<f64>,
+        use_edge_weights_as_probabilities: Option<bool>,
+        random_state: Option<u64>,
+    ) -> Result<f64> {
+        self.get_weighted_approximated_betweenness_centrality_from_node_id(
+            self.get_node_id_from_node_name(node_name)?,
+            constant,
+            use_edge_weights_as_probabilities,
+            random_state,
+        )
+    }
+
     #[fuzz_type(maximum_iterations_number: Option<u8>)]
     /// Returns vector with unweighted eigenvector centrality.
     ///

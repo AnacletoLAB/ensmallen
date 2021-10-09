@@ -7,7 +7,7 @@ use super::*;
 ///
 /// # Example
 /// To validate a node you can use:
-/// ```rust
+/// ```ignore
 /// # use graph::*;
 /// let cord_pubmed_central_node_name1 = "CORD:PMC7187825";
 /// let cord_pubmed_central_node_name2 = "CORD:PMC136939";

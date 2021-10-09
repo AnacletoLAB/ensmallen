@@ -177,6 +177,63 @@ impl ShortestPathsResultBFS {
             })
     }
 
+    /// Returns the number of shortest paths starting from the root node.
+    ///
+    /// # Raises
+    /// * If neither predecessors nor distances were computed for this BFS.
+    ///
+    /// # Returns
+    /// Number of shortest paths starting from the root node.
+    pub fn get_number_of_shortest_paths(&self) -> Result<NodeT> {
+        if let Some(predecessors) = self.predecessors.as_ref() {
+            return Ok(predecessors
+                .par_iter()
+                .filter(|&&predecessor| predecessor != NODE_NOT_PRESENT)
+                .count() as NodeT);
+        }
+        if let Some(distances) = self.distances.as_ref() {
+            return Ok(distances
+                .par_iter()
+                .filter(|&&distance| distance != NODE_NOT_PRESENT)
+                .count() as NodeT);
+        }
+        Err(concat!(
+            "Neither predecessors nor distances were computed (as it was requested) ",
+            "when creating this breath shortest paths object.\n",
+            "It is not possible to compute the number of shortest paths from the current ",
+            "root node when neither predecessors nor distances were computed."
+        )
+        .to_string())
+    }
+
+    /// Returns the number of shortest paths passing through the given node.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - The node id.
+    ///
+    /// # Raises
+    /// * If neither predecessors nor distances were computed for this BFS.
+    /// * If the given node ID does not exist in the current graph instance.
+    ///
+    /// # Returns
+    /// The number of nodes passing by the node ID.
+    pub fn get_number_of_shortest_paths_from_node_id(&self, node_id: NodeT) -> Result<NodeT> {
+        self.validate_node_id(node_id)?;
+        if let Some(predecessors) = self.predecessors.as_ref() {
+            return Ok(predecessors
+                .par_iter()
+                .filter(|&&predecessor| predecessor == node_id)
+                .count() as NodeT);
+        }
+        Err(concat!(
+            "The predecessors were computed (as it was requested) ",
+            "when creating this breath shortest paths object.\n",
+            "It is not possible to compute the number of shortest paths from the current ",
+            "root node passing to the given node ID when predecessors were not computed."
+        )
+        .to_string())
+    }
+
     pub fn get_distances(&self) -> Result<Vec<NodeT>> {
         match &self.distances {
             Some(distances) => Ok(distances.clone()),
@@ -338,6 +395,42 @@ impl ShortestPathsDjkstra {
 
     pub fn get_most_distant_node(&self) -> NodeT {
         self.most_distant_node
+    }
+
+    /// Returns the number of shortest paths starting from the root node.
+    pub fn get_number_of_shortest_paths(&self) -> NodeT {
+        self.distances
+            .par_iter()
+            .filter(|&distances| distances.is_finite())
+            .count() as NodeT
+    }
+
+    /// Returns the number of shortest paths passing through the given node.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - The node id.
+    ///
+    /// # Raises
+    /// * If neither predecessors nor distances were computed for this BFS.
+    /// * If the given node ID does not exist in the current graph instance.
+    ///
+    /// # Returns
+    /// The number of nodes passing by the node ID.
+    pub fn get_number_of_shortest_paths_from_node_id(&self, node_id: NodeT) -> Result<NodeT> {
+        self.validate_node_id(node_id)?;
+        if let Some(predecessors) = self.predecessors.as_ref() {
+            return Ok(predecessors
+                .par_iter()
+                .filter(|&&predecessor| predecessor.map_or(false, |pred| pred == node_id))
+                .count() as NodeT);
+        }
+        Err(concat!(
+            "The predecessors were computed (as it was requested) ",
+            "when creating this breath shortest paths object.\n",
+            "It is not possible to compute the number of shortest paths from the current ",
+            "root node passing to the given node ID when predecessors were not computed."
+        )
+        .to_string())
     }
 
     #[no_binding]
@@ -1627,12 +1720,14 @@ impl Graph {
                     break;
                 }
             }
-            
+
             // Alternatively, we compute for another node ID
             // its eccentricity.
             tentative_diameter = tentative_diameter.max(
-                unsafe{self.get_unchecked_eccentricity_and_most_distant_node_id_from_node_id(node_id)}
-                    .0,
+                unsafe {
+                    self.get_unchecked_eccentricity_and_most_distant_node_id_from_node_id(node_id)
+                }
+                .0,
             );
         }
 

@@ -7,7 +7,7 @@ use super::*;
 ///
 /// # Example
 /// To validate a node you can use:
-/// ```rust
+/// ```ignore
 /// # use graph::*;
 /// let zfin_node_name1 = "ZFIN:ZDB-GENE-130530-778";
 /// let zfin_node_name2 = "ZDB-GENE-101108-4";

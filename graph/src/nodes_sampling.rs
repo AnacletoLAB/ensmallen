@@ -2,9 +2,18 @@ use super::*;
 use itertools::Itertools;
 use std::collections::HashSet;
 use vec_rand::sorted_unique_sub_sampling;
+use vec_rand::splitmix64;
 
 /// # Nodes sampling
 impl Graph {
+    /// Return random number.
+    ///
+    /// # Arguments
+    /// * `random_state`: u64 - The random state to use to reproduce the sampling.
+    pub fn get_random_node(&self, random_state: u64) -> NodeT {
+        (splitmix64(random_state) % (self.get_nodes_number() as u64)) as NodeT
+    }
+
     /// Return random unique sorted numbers.
     ///
     /// # Arguments
