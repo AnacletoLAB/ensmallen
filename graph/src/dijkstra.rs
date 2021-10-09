@@ -493,6 +493,9 @@ impl ShortestPathsDjkstra {
             return Ok((0..nodes_number).into_par_iter().filter(move |&node_id| {
                 let mut node_id = node_id;
                 while predecessors[node_id as usize].map_or(false, |predecessor| predecessor != node_id)  {
+                    if predecessors[node_id as usize].is_none(){
+                        return false;
+                    }
                     node_id = predecessors[node_id as usize].unwrap();
                     if source_node_id == node_id {
                         return true;
