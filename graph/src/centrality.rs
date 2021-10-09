@@ -564,6 +564,37 @@ impl Graph {
         centralities
     }
 
+    #[no_binding]
+    /// Returns the unweighted pair dependency from the given node ID.
+    ///
+    /// # Arguments
+    /// `source_node_id`: NodeT - The source node ID for which to compute the approximated betweenness centrality.
+    /// `node_id`: NodeT - The node ID for which to compute the approximated betweenness centrality.
+    ///
+    /// # Returns
+    /// The pair dependency from the given graphs.
+    pub fn get_pair_dependency_from_node_id(
+        &self,
+        node_id: NodeT,
+        sssp: &ShortestPathsResultBFS,
+    ) -> Result<f64> {
+        self.validate_node_id(node_id)?;
+        let number_of_shortest_paths =
+            sssp.get_number_of_shortest_paths_from_node_id(node_id)? as f64;
+        Ok(sssp
+            .par_iter_successors_from_node_id(node_id)?
+            .map(|successor_node_id| {
+                (1.0 + self
+                    .get_pair_dependency_from_node_id(successor_node_id, sssp)
+                    .unwrap())
+                    * number_of_shortest_paths
+                    / sssp
+                        .get_number_of_shortest_paths_from_node_id(successor_node_id)
+                        .unwrap() as f64
+            })
+            .sum::<f64>())
+    }
+
     /// Returns the unweighted approximated betweenness centrality of the given node id.
     ///
     /// # Arguments
@@ -637,7 +668,7 @@ impl Graph {
             // Increasing the random state.
             random_state += 1;
             // If the sampled node is a disconnected ones, we need to skip it.
-            if unsafe{self.is_unchecked_disconnected_node_from_node_id(sampled_node_id)}{
+            if unsafe { self.is_unchecked_disconnected_node_from_node_id(sampled_node_id) } {
                 continue;
             }
             // Increase the random state, using a wrapping add in order to avoid
@@ -651,14 +682,8 @@ impl Graph {
                     sampled_node_id,
                 )
             };
-            // Get the number of shortest paths and the number of shortest paths passing through the
-            // given root node id.
-            let number_of_shortest_paths = sssp.get_number_of_shortest_paths()?;
-            let number_of_shortest_paths_passing_through_given_node_id =
-                sssp.get_number_of_shortest_paths_from_node_id(node_id)?;
             // Compute the pair dependency.
-            let pair_dependency = number_of_shortest_paths_passing_through_given_node_id as f64
-                / number_of_shortest_paths as f64;
+            let pair_dependency = self.get_pair_dependency_from_node_id(node_id, &sssp)?;
             // Update the running sum.
             running_sum += pair_dependency;
         }
@@ -794,7 +819,7 @@ impl Graph {
             // Increasing the random state.
             random_state += 1;
             // If the sampled node is a disconnected ones, we need to skip it.
-            if unsafe{self.is_unchecked_disconnected_node_from_node_id(sampled_node_id)}{
+            if unsafe { self.is_unchecked_disconnected_node_from_node_id(sampled_node_id) } {
                 continue;
             }
             // Increase the random state, using a wrapping add in order to avoid
