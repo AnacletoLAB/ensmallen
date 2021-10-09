@@ -470,6 +470,43 @@ impl ShortestPathsDjkstra {
         .to_string())
     }
 
+    /// Return list of successors of a given node.
+    ///
+    /// # Arguments
+    /// * `source_node_id`: NodeT - The node for which to return the successors.
+    ///
+    /// # Raises
+    /// * If the given node ID does not exist in the graph.
+    ///
+    /// # Returns
+    /// List of successors of the given node.
+    pub fn par_iter_successors_from_node_id(
+        &self,
+        source_node_id: NodeT,
+    ) -> Result<impl ParallelIterator<Item = NodeT> + '_> {
+        self.validate_node_id(source_node_id)?;
+        if let Some(predecessors) = self.predecessors.as_ref() {
+            let nodes_number = predecessors.len() as NodeT;
+            return Ok((0..nodes_number).into_par_iter().filter(move |&node_id| {
+                let mut node_id = node_id;
+                while predecessors[node_id as usize].map_or(false, |predecessor| predecessor != node_id)  {
+                    node_id = predecessors[node_id as usize].unwrap();
+                    if source_node_id == node_id {
+                        return true;
+                    }
+                }
+                false
+            }));
+        }
+        Err(concat!(
+            "The predecessors were computed (as it was requested) ",
+            "when creating this breath shortest paths object.\n",
+            "It is not possible to compute the number of shortest paths from the current ",
+            "root node passing to the given node ID when predecessors were not computed."
+        )
+        .to_string())
+    }
+
     #[no_binding]
     pub fn into_iter_finite_distances(self) -> impl Iterator<Item = f64> {
         self.distances
