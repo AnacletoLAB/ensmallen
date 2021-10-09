@@ -696,15 +696,13 @@ impl Graph {
         while running_sum < nodes_number * constant {
             // Sample random node.
             let sampled_node_id = self.get_random_node(random_state);
-            // Increasing the random state.
-            random_state += 1;
+            // Increase the random state, using a wrapping add in order to avoid
+            // possible overflows when a very high random state is provided.
+            random_state = random_state.wrapping_add(1);
             // If the sampled node is a disconnected ones, we need to skip it.
             if unsafe { self.is_unchecked_disconnected_node_from_node_id(sampled_node_id) } {
                 continue;
             }
-            // Increase the random state, using a wrapping add in order to avoid
-            // possible overflows when a very high random state is provided.
-            random_state = random_state.wrapping_add(1);
             // Increase the number of sampled nodes.
             number_of_sampled_nodes += 1.0;
             // Compute the SSSP starting from the samples node.
@@ -848,15 +846,13 @@ impl Graph {
         while running_sum < nodes_number * constant {
             // Sample random node.
             let sampled_node_id = self.get_random_node(random_state);
-            // Increasing the random state.
-            random_state += 1;
+            // Increase the random state, using a wrapping add in order to avoid
+            // possible overflows when a very high random state is provided.
+            random_state = random_state.wrapping_add(1);
             // If the sampled node is a disconnected ones, we need to skip it.
             if unsafe { self.is_unchecked_disconnected_node_from_node_id(sampled_node_id) } {
                 continue;
             }
-            // Increase the random state, using a wrapping add in order to avoid
-            // possible overflows when a very high random state is provided.
-            random_state = random_state.wrapping_add(1);
             // Increase the number of sampled nodes.
             number_of_sampled_nodes += 1.0;
             // Compute the SSSP starting from the samples node.
