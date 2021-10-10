@@ -3,6 +3,7 @@ use atomic_float::AtomicF64;
 use indicatif::ParallelProgressIterator;
 use itertools::Itertools;
 use num_traits::pow::Pow;
+use num_traits::Zero;
 use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelRefIterator;
 use rayon::iter::{IntoParallelRefMutIterator, ParallelIterator};
