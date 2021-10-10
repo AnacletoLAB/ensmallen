@@ -220,7 +220,12 @@ impl ShortestPathsResultBFS {
     pub fn get_number_of_shortest_paths_from_node_id(&self, node_id: NodeT) -> Result<NodeT> {
         self.validate_node_id(node_id)?;
         if let Some(predecessors) = self.predecessors.as_ref() {
-            return Ok(predecessors
+            if predecessors[node_id as usize] == NODE_NOT_PRESENT {
+                return Ok(0);
+            }
+            // There is also the path to the given node ID
+            // that has that node as a destinaton.
+            return Ok(1 + predecessors
                 .par_iter()
                 .filter(|&&predecessor| predecessor == node_id)
                 .count() as NodeT);
@@ -244,10 +249,7 @@ impl ShortestPathsResultBFS {
     ///
     /// # Returns
     /// List of successors of the given node.
-    pub fn get_successors_from_node_id(
-        &self,
-        source_node_id: NodeT,
-    ) -> Result<Vec<NodeT>> {
+    pub fn get_successors_from_node_id(&self, source_node_id: NodeT) -> Result<Vec<NodeT>> {
         self.validate_node_id(source_node_id)?;
         if let Some(predecessors) = self.predecessors.as_ref() {
             // If the node is not reacheable in the
@@ -258,36 +260,35 @@ impl ShortestPathsResultBFS {
             // Get the number of nodes in the graph.
             let nodes_number = predecessors.len() as NodeT;
             // We iterate over the nodes in the graph.
-            return Ok(
-                (0..nodes_number)
-                    // Convert to parallel iterator
-                    .into_par_iter()
-                    // Remove the nodes that do not have the
-                    // provided source node as predecessor
-                    .filter(move |&node_id| {
-                        // Otherwise we start to climb over the 
-                        // predecessors tree, starting from the current node.
-                        let mut node_id = node_id;
-                        while predecessors[node_id as usize] != node_id {
-                            // We retrieve the node predecessor
-                            // and climb up the predecessors ladder.
-                            node_id = predecessors[node_id as usize];
-                            // If the node is not reacheable in the
-                            // considered shortest paths, we can stop.
-                            if node_id == NODE_NOT_PRESENT {
-                                return false;
-                            }
-                            // If the node is equal to the source node ID
-                            // we have finished and found that this node
-                            // is indeed a successor of the source nodes
-                            // and we need to keep it.
-                            if source_node_id == node_id {
-                                return true;
-                            }
+            return Ok((0..nodes_number)
+                // Convert to parallel iterator
+                .into_par_iter()
+                // Remove the nodes that do not have the
+                // provided source node as predecessor
+                .filter(move |&node_id| {
+                    // Otherwise we start to climb over the
+                    // predecessors tree, starting from the current node.
+                    let mut node_id = node_id;
+                    while predecessors[node_id as usize] != node_id {
+                        // We retrieve the node predecessor
+                        // and climb up the predecessors ladder.
+                        node_id = predecessors[node_id as usize];
+                        // If the node is not reacheable in the
+                        // considered shortest paths, we can stop.
+                        if node_id == NODE_NOT_PRESENT {
+                            return false;
                         }
-                        false
-                    }).collect::<Vec<NodeT>>()
-            );
+                        // If the node is equal to the source node ID
+                        // we have finished and found that this node
+                        // is indeed a successor of the source nodes
+                        // and we need to keep it.
+                        if source_node_id == node_id {
+                            return true;
+                        }
+                    }
+                    false
+                })
+                .collect::<Vec<NodeT>>());
         }
         Err(concat!(
             "The predecessors were computed (as it was requested) ",
@@ -518,26 +519,28 @@ impl ShortestPathsDjkstra {
     ///
     /// # Returns
     /// List of successors of the given node.
-    pub fn get_successors_from_node_id(
-        &self,
-        source_node_id: NodeT,
-    ) -> Result<Vec<NodeT>> {
+    pub fn get_successors_from_node_id(&self, source_node_id: NodeT) -> Result<Vec<NodeT>> {
         self.validate_node_id(source_node_id)?;
         if let Some(predecessors) = self.predecessors.as_ref() {
             let nodes_number = predecessors.len() as NodeT;
-            return Ok((0..nodes_number).into_par_iter().filter(move |&node_id| {
-                let mut node_id = node_id;
-                while predecessors[node_id as usize].map_or(false, |predecessor| predecessor != node_id)  {
-                    if predecessors[node_id as usize].is_none(){
-                        return false;
+            return Ok((0..nodes_number)
+                .into_par_iter()
+                .filter(move |&node_id| {
+                    let mut node_id = node_id;
+                    while predecessors[node_id as usize]
+                        .map_or(false, |predecessor| predecessor != node_id)
+                    {
+                        if predecessors[node_id as usize].is_none() {
+                            return false;
+                        }
+                        node_id = predecessors[node_id as usize].unwrap();
+                        if source_node_id == node_id {
+                            return true;
+                        }
                     }
-                    node_id = predecessors[node_id as usize].unwrap();
-                    if source_node_id == node_id {
-                        return true;
-                    }
-                }
-                false
-            }).collect::<Vec<NodeT>>());
+                    false
+                })
+                .collect::<Vec<NodeT>>());
         }
         Err(concat!(
             "The predecessors were computed (as it was requested) ",

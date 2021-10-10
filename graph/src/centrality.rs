@@ -716,7 +716,6 @@ impl Graph {
             // Compute the pair dependency.
             let pair_dependency = self.get_pair_dependency_from_node_id(node_id, &sssp)?;
             // Update the running sum.
-            dbg!(running_sum, pair_dependency);
             running_sum += pair_dependency;
         }
         // Compute the approximated betweenness centrality from the considered samples
