@@ -695,7 +695,7 @@ impl Graph {
             ));
         }
         // Repeatedly sample the vertices.
-        while running_sum < nodes_number * constant {
+        while running_sum < nodes_number * constant && number_of_sampled_nodes < nodes_number {
             // Sample random node.
             let sampled_node_id = self.get_random_node(random_state);
             // Increase the random state, using a wrapping add in order to avoid
