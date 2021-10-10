@@ -265,11 +265,6 @@ impl ShortestPathsResultBFS {
                     // Remove the nodes that do not have the
                     // provided source node as predecessor
                     .filter(move |&node_id| {
-                        // If the node is not reacheable in the
-                        // considered shortest paths, we can stop.
-                        if node_id == NODE_NOT_PRESENT {
-                            return false;
-                        }
                         // Otherwise we start to climb over the 
                         // predecessors tree, starting from the current node.
                         let mut node_id = node_id;
@@ -277,6 +272,11 @@ impl ShortestPathsResultBFS {
                             // We retrieve the node predecessor
                             // and climb up the predecessors ladder.
                             node_id = predecessors[node_id as usize];
+                            // If the node is not reacheable in the
+                            // considered shortest paths, we can stop.
+                            if node_id == NODE_NOT_PRESENT {
+                                return false;
+                            }
                             // If the node is equal to the source node ID
                             // we have finished and found that this node
                             // is indeed a successor of the source nodes
@@ -303,6 +303,17 @@ impl ShortestPathsResultBFS {
             Some(distances) => Ok(distances.clone()),
             None => Err(concat!(
                 "Distance of node was requested but the distances ",
+                "where not computed for this BFS run."
+            )
+            .to_string()),
+        }
+    }
+
+    pub fn get_predecessors(&self) -> Result<Vec<NodeT>> {
+        match &self.predecessors {
+            Some(predecessors) => Ok(predecessors.clone()),
+            None => Err(concat!(
+                "Distance of node was requested but the predecessors ",
                 "where not computed for this BFS run."
             )
             .to_string()),
