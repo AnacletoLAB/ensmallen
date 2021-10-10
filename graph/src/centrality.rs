@@ -695,6 +695,32 @@ impl Graph {
             ));
         }
         // Repeatedly sample the vertices.
+        for neighbour_node_id in unsafe{self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)} {
+            if running_sum >= nodes_number * constant {
+                break;
+            }
+            // Increase the number of sampled nodes.
+            number_of_sampled_nodes += 1.0;
+            // Compute the SSSP starting from the samples node.
+            let sssp = unsafe {
+                self.get_unchecked_breadth_first_search_predecessors_parallel_from_node_id(
+                    neighbour_node_id,
+                )
+            };
+            // Compute the pair dependency.
+            let pair_dependency = self.get_pair_dependency_from_node_id(node_id, &sssp)?;
+            // Update the running sum.
+            running_sum += pair_dependency;
+        }
+        // If the running sum is still zero,
+        // it means that there are functionally no shortest paths
+        // unless we explicitly build them, therefore
+        // the approximated betweenness centrality can
+        // be considered zero.
+        if running_sum.is_zero() {
+            return Ok(0.0)
+        }
+        // Repeatedly sample the vertices.
         while running_sum < nodes_number * constant && number_of_sampled_nodes < nodes_number {
             // Sample random node.
             let sampled_node_id = self.get_random_node(random_state);
