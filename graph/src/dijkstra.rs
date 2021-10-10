@@ -250,20 +250,44 @@ impl ShortestPathsResultBFS {
     ) -> Result<Vec<NodeT>> {
         self.validate_node_id(source_node_id)?;
         if let Some(predecessors) = self.predecessors.as_ref() {
+            // If the node is not reacheable in the
+            // considered shortest paths, we can stop.
+            if predecessors[source_node_id as usize] == NODE_NOT_PRESENT {
+                return Ok(Vec::new());
+            }
+            // Get the number of nodes in the graph.
             let nodes_number = predecessors.len() as NodeT;
-            return Ok((0..nodes_number).into_par_iter().filter(move |&node_id| {
-                let mut node_id = node_id;
-                while predecessors[node_id as usize] != node_id {
-                    node_id = predecessors[node_id as usize];
-                    if node_id == NODE_NOT_PRESENT {
-                        return false;
-                    }
-                    if source_node_id == node_id {
-                        return true;
-                    }
-                }
-                false
-            }).collect::<Vec<NodeT>>());
+            // We iterate over the nodes in the graph.
+            return Ok(
+                (0..nodes_number)
+                    // Convert to parallel iterator
+                    .into_par_iter()
+                    // Remove the nodes that do not have the
+                    // provided source node as predecessor
+                    .filter(move |&node_id| {
+                        // If the node is not reacheable in the
+                        // considered shortest paths, we can stop.
+                        if node_id == NODE_NOT_PRESENT {
+                            return false;
+                        }
+                        // Otherwise we start to climb over the 
+                        // predecessors tree, starting from the current node.
+                        let mut node_id = node_id;
+                        while predecessors[node_id as usize] != node_id {
+                            // We retrieve the node predecessor
+                            // and climb up the predecessors ladder.
+                            node_id = predecessors[node_id as usize];
+                            // If the node is equal to the source node ID
+                            // we have finished and found that this node
+                            // is indeed a successor of the source nodes
+                            // and we need to keep it.
+                            if source_node_id == node_id {
+                                return true;
+                            }
+                        }
+                        false
+                    }).collect::<Vec<NodeT>>()
+            );
         }
         Err(concat!(
             "The predecessors were computed (as it was requested) ",
@@ -560,7 +584,7 @@ impl Graph {
         let thread_shared_predecessors = ThreadDataRaceAware {
             value: std::cell::UnsafeCell::new(vec![NODE_NOT_PRESENT; nodes_number]),
         };
-        (*thread_shared_predecessors.value.get())[src_node_id as usize] = 0;
+        (*thread_shared_predecessors.value.get())[src_node_id as usize] = src_node_id;
         let mut eccentricity = 0;
         let mut most_distant_node = src_node_id;
 
