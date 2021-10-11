@@ -685,8 +685,7 @@ impl Graph {
         let nodes_number = self.get_nodes_number() as f64;
         // The random state to use to sample the nodes.
         let mut random_state = random_state.unwrap_or(42);
-        let maximum_samples_number =
-            maximum_samples_number.unwrap_or(nodes_number / 20.0);
+        let maximum_samples_number = maximum_samples_number.unwrap_or(nodes_number / 20.0);
         // The factor for the convergence of the approximated sampling for the considered node.
         // In the paper it is referred to a \(c\), and must be at least \(2.0\).
         let constant = constant.unwrap_or(2.0);
@@ -700,24 +699,27 @@ impl Graph {
             ));
         }
         // Repeatedly sample the vertices.
-        for neighbour_node_id in
-            unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id) }
-        {
-            if running_sum >= nodes_number * constant || number_of_sampled_nodes > maximum_samples_number  {
-                break;
+        unsafe {
+            for neighbour_node_id in
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+            {
+                if running_sum >= nodes_number * constant
+                    || number_of_sampled_nodes > maximum_samples_number
+                {
+                    break;
+                }
+                // Increase the number of sampled nodes.
+                number_of_sampled_nodes += 1.0;
+                // Compute the SSSP starting from the samples node.
+                let sssp = self
+                    .get_unchecked_breadth_first_search_predecessors_parallel_from_node_id(
+                        neighbour_node_id,
+                    );
+                // Compute the pair dependency.
+                let pair_dependency = self.get_pair_dependency_from_node_id(node_id, &sssp)?;
+                // Update the running sum.
+                running_sum += pair_dependency;
             }
-            // Increase the number of sampled nodes.
-            number_of_sampled_nodes += 1.0;
-            // Compute the SSSP starting from the samples node.
-            let sssp = unsafe {
-                self.get_unchecked_breadth_first_search_predecessors_parallel_from_node_id(
-                    neighbour_node_id,
-                )
-            };
-            // Compute the pair dependency.
-            let pair_dependency = self.get_pair_dependency_from_node_id(node_id, &sssp)?;
-            // Update the running sum.
-            running_sum += pair_dependency;
         }
         // If the running sum is still zero,
         // it means that there are functionally no shortest paths
@@ -728,7 +730,9 @@ impl Graph {
             return Ok(0.0);
         }
         // Repeatedly sample the vertices.
-        while running_sum < nodes_number * constant && number_of_sampled_nodes < maximum_samples_number {
+        while running_sum < nodes_number * constant
+            && number_of_sampled_nodes < maximum_samples_number
+        {
             // Sample random node.
             let sampled_node_id = self.get_random_node(random_state);
             // Increase the random state, using a wrapping add in order to avoid
@@ -816,6 +820,7 @@ impl Graph {
     /// * `node_id`: NodeT - The node ID for which to compute the approximated betweenness centrality.
     /// * `constant`: Option<f64> - The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
     /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to consider the edge weights as probabilities.
+    /// * `maximum_samples_number`: Option<f64> - The maximum number of samples to sample. By default `nodes_number / 20`, as suggested in the paper.
     /// * `random_state`: Option<u64> - The random state to use for the sampling. By default 42.
     ///
     /// # Raises
@@ -853,6 +858,7 @@ impl Graph {
         node_id: NodeT,
         constant: Option<f64>,
         use_edge_weights_as_probabilities: Option<bool>,
+        maximum_samples_number: Option<f64>,
         random_state: Option<u64>,
     ) -> Result<f64> {
         self.validate_node_id(node_id)?;
@@ -865,6 +871,7 @@ impl Graph {
         // The number of the nodes in the graph, which in the paper
         // is referred to as \(n\).
         let nodes_number = self.get_nodes_number() as f64;
+        let maximum_samples_number = maximum_samples_number.unwrap_or(nodes_number / 20.0);
         // The random state to use to sample the nodes.
         let mut random_state = random_state.unwrap_or(42);
         // The factor for the convergence of the approximated sampling for the considered node.
@@ -880,7 +887,45 @@ impl Graph {
             ));
         }
         // Repeatedly sample the vertices.
-        while running_sum < nodes_number * constant {
+        unsafe {
+            for neighbour_node_id in
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+            {
+                if running_sum >= nodes_number * constant
+                    || number_of_sampled_nodes > maximum_samples_number
+                {
+                    break;
+                }
+                // Increase the number of sampled nodes.
+                number_of_sampled_nodes += 1.0;
+                // Compute the SSSP starting from the samples node.
+                let sssp = self.get_unchecked_dijkstra_from_node_ids(
+                    neighbour_node_id,
+                    None,
+                    None,
+                    Some(true),
+                    None,
+                    use_edge_weights_as_probabilities,
+                );
+                // Compute the pair dependency.
+                let pair_dependency =
+                    self.get_weighted_pair_dependency_from_node_id(node_id, &sssp)?;
+                // Update the running sum.
+                running_sum += pair_dependency;
+            }
+        }
+        // If the running sum is still zero,
+        // it means that there are functionally no shortest paths
+        // unless we explicitly build them, therefore
+        // the approximated betweenness centrality can
+        // be considered zero.
+        if running_sum.is_zero() {
+            return Ok(0.0);
+        }
+        // Repeatedly sample the vertices.
+        while running_sum < nodes_number * constant
+            && number_of_sampled_nodes < maximum_samples_number
+        {
             // Sample random node.
             let sampled_node_id = self.get_random_node(random_state);
             // Increase the random state, using a wrapping add in order to avoid
@@ -921,6 +966,7 @@ impl Graph {
     /// * `node_name`: &str - The node name for which to compute the approximated betweenness centrality.
     /// * `constant`: Option<f64> - The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
     /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to consider the edge weights as probabilities.
+    /// * `maximum_samples_number`: Option<f64> - The maximum number of samples to sample. By default `nodes_number / 20`, as suggested in the paper.
     /// * `random_state`: Option<u64> - The random state to use for the sampling. By default 42.
     ///
     /// # Raises
@@ -958,12 +1004,14 @@ impl Graph {
         node_name: &str,
         constant: Option<f64>,
         use_edge_weights_as_probabilities: Option<bool>,
+        maximum_samples_number: Option<f64>,
         random_state: Option<u64>,
     ) -> Result<f64> {
         self.get_weighted_approximated_betweenness_centrality_from_node_id(
             self.get_node_id_from_node_name(node_name)?,
             constant,
             use_edge_weights_as_probabilities,
+            maximum_samples_number,
             random_state,
         )
     }
