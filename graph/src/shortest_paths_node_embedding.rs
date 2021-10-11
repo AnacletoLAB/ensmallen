@@ -26,6 +26,7 @@ impl Graph {
     /// * `use_edge_weights`: Option<bool> - Whether to use the edge weights to compute the min paths. By default false.
     /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to use the probabilities. By default false.
     /// * `random_state`: Option<u64> - The random state to use to sample the central node. By default 42.
+    /// * `verbose`: Option<bool> - Whether to show the loading bar. By default true.
     ///
     /// # Raises
     /// * If the provided node centralities are not provided for all features.
@@ -51,6 +52,7 @@ impl Graph {
         use_edge_weights: Option<bool>,
         use_edge_weights_as_probabilities: Option<bool>,
         random_state: Option<u64>,
+        verbose: Option<bool>,
     ) -> Result<Vec<Vec<f64>>> {
         let number_of_nodes_to_sample_per_feature =
             number_of_nodes_to_sample_per_feature.unwrap_or(10);
@@ -82,6 +84,12 @@ impl Graph {
             validate_node_centralities.unwrap_or(true) && node_centralities.is_some();
         let random_state = random_state.unwrap_or(42);
         let mut node_centralities = node_centralities.unwrap_or(self.get_degree_centrality()?);
+        let verbose = verbose.unwrap_or(true);
+        let pb = get_loading_bar(
+            verbose,
+            "Computing node features",
+            maximum_number_of_features * number_of_nodes_to_sample_per_feature as usize,
+        );
 
         if (central_node_name.is_some() || central_node_id.is_some()) && maximal_depth.is_none() {
             return Err(
@@ -259,8 +267,8 @@ impl Graph {
                 .for_each(|(distance, node_feature)| {
                     node_feature[current_node_features_number] = match reduce_method {
                         "mean" => {
-                            node_feature[current_node_features_number] * i as f64
-                                + distance / (i as f64 + 1.0)
+                            (node_feature[current_node_features_number] * i as f64 + distance)
+                                / (i as f64 + 1.0)
                         }
                         "min" => {
                             if use_edge_weights_as_probabilities {
@@ -272,6 +280,7 @@ impl Graph {
                         _ => unreachable!("Only min and mean are supported!"),
                     }
                 });
+                pb.inc(1);
             }
         }
         Ok(node_embedding)
