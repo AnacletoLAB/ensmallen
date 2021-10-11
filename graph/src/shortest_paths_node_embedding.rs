@@ -119,7 +119,7 @@ impl Graph {
                 });
             } else {
                 unsafe {
-                    self.get_unchecked_breadth_first_search_predecessors_parallel_from_node_id(
+                    self.get_unchecked_breadth_first_search_distances_parallel_from_node_id(
                         central_node_id,
                     )
                 }
@@ -239,7 +239,7 @@ impl Graph {
                     .into_distances()
                 } else {
                     unsafe {
-                        self.get_unchecked_breadth_first_search_predecessors_parallel_from_node_id(
+                        self.get_unchecked_breadth_first_search_distances_parallel_from_node_id(
                             anchor_node_id,
                         )
                     }
