@@ -87,7 +87,7 @@ impl Graph {
         let verbose = verbose.unwrap_or(true);
         let pb = get_loading_bar(
             verbose,
-            "Computing node features",
+            "Computing shortest path node features",
             maximum_number_of_features * number_of_nodes_to_sample_per_feature as usize,
         );
 
@@ -201,18 +201,18 @@ impl Graph {
                     .zip(node_embedding.par_iter())
                     .map(|(&node_centrality, node_features)| {
                         node_centrality
-                            * if current_node_features_number > 0 {
-                                match reduce_method {
+                            * match reduce_method {
                                     "mean" => {
                                         node_features[0..current_node_features_number]
                                             .iter()
-                                            .sum::<f64>()
-                                            * number_of_nodes_to_sample_per_feature as f64
-                                            + if i > 0 {
+                                            .cloned()
+                                            .reduce(|a, b| a * b)
+                                            .unwrap_or(1.0)
+                                            * if i > 0 {
                                                 node_features[current_node_features_number]
                                                     * i as f64
                                             } else {
-                                                0.0
+                                                1.0
                                             }
                                     }
                                     "min" => {
@@ -241,9 +241,6 @@ impl Graph {
                                     }
                                     _ => unreachable!("Only min and mean are supported!"),
                                 }
-                            } else {
-                                1.0
-                            }
                     })
                     .argmax()
                     .unwrap()
