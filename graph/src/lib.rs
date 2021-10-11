@@ -93,6 +93,7 @@ mod trees;
 mod types;
 mod url_utilities;
 mod vertex_cover;
+mod shortest_paths_node_embedding;
 mod walks;
 pub mod walks_parameters;
 pub use edge_list_utils::*;
