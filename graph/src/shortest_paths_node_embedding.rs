@@ -205,7 +205,11 @@ impl Graph {
                                         .iter()
                                         .sum::<f64>()
                                         * number_of_nodes_to_sample_per_feature as f64
-                                        + node_features[current_node_features_number] * i as f64
+                                        + if i > 0 {
+                                            node_features[current_node_features_number] * i as f64
+                                        } else {
+                                            1.0
+                                        }
                                 }
                                 "min" => {
                                     if use_edge_weights_as_probabilities {
@@ -217,7 +221,12 @@ impl Graph {
                                                 .unwrap_or(0.0),
                                         )
                                     } else {
-                                        (node_features[current_node_features_number]).min(
+                                        (if i > 0 {
+                                            node_features[current_node_features_number]
+                                        } else {
+                                            1.0
+                                        })
+                                        .min(
                                             node_features[0..current_node_features_number]
                                                 .iter()
                                                 .cloned()
