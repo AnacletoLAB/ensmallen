@@ -202,45 +202,44 @@ impl Graph {
                     .map(|(&node_centrality, node_features)| {
                         node_centrality
                             * match reduce_method {
-                                    "mean" => {
-                                        node_features[0..current_node_features_number]
-                                            .iter()
-                                            .cloned()
-                                            .reduce(|a, b| a * b)
-                                            .unwrap_or(1.0)
-                                            * if i > 0 {
-                                                node_features[current_node_features_number]
-                                                    * i as f64
-                                            } else {
-                                                1.0
-                                            }
-                                    }
-                                    "min" => {
-                                        if use_edge_weights_as_probabilities {
-                                            (node_features[current_node_features_number]).max(
-                                                node_features[0..current_node_features_number]
-                                                    .iter()
-                                                    .cloned()
-                                                    .max_by(|a, b| a.partial_cmp(b).unwrap())
-                                                    .unwrap_or(0.0),
-                                            )
+                                "mean" => {
+                                    node_features[0..current_node_features_number]
+                                        .iter()
+                                        .cloned()
+                                        .reduce(|a, b| a * b)
+                                        .unwrap_or(1.0)
+                                        * if i > 0 {
+                                            node_features[current_node_features_number] * i as f64
                                         } else {
-                                            (if i > 0 {
-                                                node_features[current_node_features_number]
-                                            } else {
-                                                1.0
-                                            })
-                                            .min(
-                                                node_features[0..current_node_features_number]
-                                                    .iter()
-                                                    .cloned()
-                                                    .min_by(|a, b| a.partial_cmp(b).unwrap())
-                                                    .unwrap_or(f64::INFINITY),
-                                            )
+                                            1.0
                                         }
-                                    }
-                                    _ => unreachable!("Only min and mean are supported!"),
                                 }
+                                "min" => {
+                                    if use_edge_weights_as_probabilities {
+                                        (node_features[current_node_features_number]).max(
+                                            node_features[0..current_node_features_number]
+                                                .iter()
+                                                .cloned()
+                                                .max_by(|a, b| a.partial_cmp(b).unwrap())
+                                                .unwrap_or(0.0),
+                                        )
+                                    } else {
+                                        (if i > 0 {
+                                            node_features[current_node_features_number]
+                                        } else {
+                                            1.0
+                                        })
+                                        .min(
+                                            node_features[0..current_node_features_number]
+                                                .iter()
+                                                .cloned()
+                                                .min_by(|a, b| a.partial_cmp(b).unwrap())
+                                                .unwrap_or(f64::INFINITY),
+                                        )
+                                    }
+                                }
+                                _ => unreachable!("Only min and mean are supported!"),
+                            }
                     })
                     .argmax()
                     .unwrap()
@@ -280,19 +279,23 @@ impl Graph {
                 .into_par_iter()
                 .zip(node_embedding.par_iter_mut())
                 .for_each(|(distance, node_feature)| {
-                    node_feature[current_node_features_number] = match reduce_method {
-                        "mean" => {
-                            (node_feature[current_node_features_number] * i as f64 + distance)
-                                / (i as f64 + 1.0)
-                        }
-                        "min" => {
-                            if use_edge_weights_as_probabilities {
-                                (node_feature[current_node_features_number]).max(distance)
-                            } else {
-                                (node_feature[current_node_features_number]).min(distance)
+                    node_feature[current_node_features_number] = if i > 0 {
+                        match reduce_method {
+                            "mean" => {
+                                (node_feature[current_node_features_number] * i as f64 + distance)
+                                    / (i as f64 + 1.0)
                             }
+                            "min" => {
+                                if use_edge_weights_as_probabilities {
+                                    (node_feature[current_node_features_number]).max(distance)
+                                } else {
+                                    (node_feature[current_node_features_number]).min(distance)
+                                }
+                            }
+                            _ => unreachable!("Only min and mean are supported!"),
                         }
-                        _ => unreachable!("Only min and mean are supported!"),
+                    } else {
+                        distance
                     }
                 });
                 pb.inc(1);
