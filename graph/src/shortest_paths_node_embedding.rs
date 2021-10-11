@@ -212,7 +212,7 @@ impl Graph {
                                                 node_features[current_node_features_number]
                                                     * i as f64
                                             } else {
-                                                1.0
+                                                0.0
                                             }
                                     }
                                     "min" => {
