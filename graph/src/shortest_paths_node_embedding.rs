@@ -199,43 +199,48 @@ impl Graph {
                     .zip(node_embedding.par_iter())
                     .map(|(&node_centrality, node_features)| {
                         node_centrality
-                            * match reduce_method {
-                                "mean" => {
-                                    node_features[0..current_node_features_number]
-                                        .iter()
-                                        .sum::<f64>()
-                                        * number_of_nodes_to_sample_per_feature as f64
-                                        + if i > 0 {
-                                            node_features[current_node_features_number] * i as f64
-                                        } else {
-                                            1.0
-                                        }
-                                }
-                                "min" => {
-                                    if use_edge_weights_as_probabilities {
-                                        (node_features[current_node_features_number]).max(
-                                            node_features[0..current_node_features_number]
-                                                .iter()
-                                                .cloned()
-                                                .max_by(|a, b| a.partial_cmp(b).unwrap())
-                                                .unwrap_or(0.0),
-                                        )
-                                    } else {
-                                        (if i > 0 {
-                                            node_features[current_node_features_number]
-                                        } else {
-                                            1.0
-                                        })
-                                        .min(
-                                            node_features[0..current_node_features_number]
-                                                .iter()
-                                                .cloned()
-                                                .min_by(|a, b| a.partial_cmp(b).unwrap())
-                                                .unwrap_or(f64::INFINITY),
-                                        )
+                            * if current_node_features_number > 0 {
+                                match reduce_method {
+                                    "mean" => {
+                                        node_features[0..current_node_features_number]
+                                            .iter()
+                                            .sum::<f64>()
+                                            * number_of_nodes_to_sample_per_feature as f64
+                                            + if i > 0 {
+                                                node_features[current_node_features_number]
+                                                    * i as f64
+                                            } else {
+                                                1.0
+                                            }
                                     }
+                                    "min" => {
+                                        if use_edge_weights_as_probabilities {
+                                            (node_features[current_node_features_number]).max(
+                                                node_features[0..current_node_features_number]
+                                                    .iter()
+                                                    .cloned()
+                                                    .max_by(|a, b| a.partial_cmp(b).unwrap())
+                                                    .unwrap_or(0.0),
+                                            )
+                                        } else {
+                                            (if i > 0 {
+                                                node_features[current_node_features_number]
+                                            } else {
+                                                1.0
+                                            })
+                                            .min(
+                                                node_features[0..current_node_features_number]
+                                                    .iter()
+                                                    .cloned()
+                                                    .min_by(|a, b| a.partial_cmp(b).unwrap())
+                                                    .unwrap_or(f64::INFINITY),
+                                            )
+                                        }
+                                    }
+                                    _ => unreachable!("Only min and mean are supported!"),
                                 }
-                                _ => unreachable!("Only min and mean are supported!"),
+                            } else {
+                                1.0
                             }
                     })
                     .argmax()
