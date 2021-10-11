@@ -53,7 +53,7 @@ impl Graph {
         use_edge_weights_as_probabilities: Option<bool>,
         random_state: Option<u64>,
         verbose: Option<bool>,
-    ) -> Result<Vec<Vec<f64>>> {
+    ) -> Result<(Vec<Vec<f64>>, Vec<Vec<String>>)> {
         let number_of_nodes_to_sample_per_feature =
             number_of_nodes_to_sample_per_feature.unwrap_or(10);
         if number_of_nodes_to_sample_per_feature == 0 {
@@ -186,12 +186,14 @@ impl Graph {
         let diameter = self.get_diameter(Some(true), Some(false))? as f64;
 
         let mut node_embedding: Vec<Vec<f64>> = self.iter_node_ids().map(|_| Vec::new()).collect();
+        let mut anchor_names: Vec<Vec<String>> = Vec::new();
 
         for current_node_features_number in 0..maximum_number_of_features {
             // Extend the new node embedding feature
             node_embedding
                 .par_iter_mut()
                 .for_each(|node_features| node_features.push(0.0));
+            let mut this_feature_anchor_names = Vec::new();
             for i in 0..number_of_nodes_to_sample_per_feature {
                 // Getting the next anchor node ID
                 let anchor_node_id = node_centralities
@@ -246,6 +248,8 @@ impl Graph {
                     .argmax()
                     .unwrap()
                     .0 as NodeT;
+                this_feature_anchor_names
+                    .push(unsafe { self.get_unchecked_node_name_from_node_id(anchor_node_id) });
                 // Update the node features
                 if use_edge_weights {
                     unsafe {
@@ -296,7 +300,8 @@ impl Graph {
                 });
                 pb.inc(1);
             }
+            anchor_names.push(this_feature_anchor_names);
         }
-        Ok(node_embedding)
+        Ok((node_embedding, anchor_names))
     }
 }
