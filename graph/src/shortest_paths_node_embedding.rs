@@ -1,4 +1,5 @@
 use super::*;
+use num_traits::Zero;
 use rayon::prelude::*;
 
 /// # Sorting algorithms.
@@ -16,8 +17,9 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_centralities`: Option<Vec<f64>> - Vector with the importance of the nodes, used to properly sample the anchors. By default node degree centralities are used. Nodes with node centrality zero won't ever be sampled as an anchor, except for when all other nodes were already sampled.
+    /// * `adjust_by_central_node_distance`: Option<bool> - Whether to adjust the node eccentricity by the normalized distance to the most central node. By default true.
     /// * `number_of_nodes_to_sample_per_feature`: Option<NodeT> - Number of nodes to sample per feature. By default 10.
-    /// * `reduce_method`: Option<&str> - The reduce method to use when reducing the distances for a node feature. The parameter can either be "mean" or "min". By default "mean".
+    /// * `reduce_method`: Option<&str> - The reduce method to use when reducing the distances for a node feature. The parameter can either be "sum", "mean" or "min". By default "mean".
     /// * `maximum_number_of_features`: Option<usize> - Maximum number of node features to generate. By default 50.
     /// * `validate_node_centralities`: Option<bool> - Whether to validate the node centralities. By default true when the node centralities are provided.
     /// * `maximal_depth`: Option<NodeT> - The maximal depth to use if node features are to be focused in a local area of the graph.
@@ -42,6 +44,7 @@ impl Graph {
     pub fn get_shortest_paths_node_embedding(
         &self,
         node_centralities: Option<Vec<f64>>,
+        adjust_by_central_node_distance: Option<bool>,
         number_of_nodes_to_sample_per_feature: Option<NodeT>,
         reduce_method: Option<&str>,
         maximum_number_of_features: Option<usize>,
@@ -66,8 +69,8 @@ impl Graph {
             return Err("The maximum number of node features cannot be zero.".to_string());
         }
         let reduce_method = reduce_method.unwrap_or("mean");
-        if reduce_method != "mean" && reduce_method != "min" {
-            return Err("The reduce method must either be 'mean' or 'min'.".to_string());
+        if reduce_method != "mean" && reduce_method != "min" && reduce_method != "sum" {
+            return Err("The reduce method must either be 'sum', 'mean' or 'min'.".to_string());
         }
         let use_edge_weights = use_edge_weights.unwrap_or(false);
         if use_edge_weights {
@@ -84,6 +87,54 @@ impl Graph {
             validate_node_centralities.unwrap_or(true) && node_centralities.is_some();
         let random_state = random_state.unwrap_or(42);
         let mut node_centralities = node_centralities.unwrap_or(self.get_degree_centrality()?);
+        let adjust_by_central_node_distance = adjust_by_central_node_distance.unwrap_or(true);
+        let diameter = self.get_diameter(Some(true), Some(false))? as f64;
+
+        if adjust_by_central_node_distance {
+            let most_central_node_id = self.get_most_central_node_id()?;
+            if use_edge_weights {
+                unsafe {
+                    self.get_unchecked_dijkstra_from_node_ids(
+                        most_central_node_id,
+                        None,
+                        None,
+                        None,
+                        None,
+                        Some(use_edge_weights_as_probabilities),
+                    )
+                }
+                .into_distances()
+                .into_par_iter()
+                .zip(node_centralities.par_iter_mut())
+                .for_each(|(distance, node_centrality)| {
+                    if use_edge_weights_as_probabilities {
+                        // If we are considering the distances as probabilities,
+                        // we want to multiply by the probability of the opposite event.
+                        *node_centrality *= 1.0 - distance;
+                    } else if distance.is_finite() {
+                        // If we are treating the computed distances as "normal" distances,
+                        // we want to multiply by the distance.
+                        // TODO: divide by the weighted diameter!
+                        *node_centrality *= distance;
+                    }
+                });
+            } else {
+                unsafe {
+                    self.get_unchecked_breadth_first_search_distances_parallel_from_node_id(
+                        most_central_node_id,
+                    )
+                }
+                .into_distances()
+                .into_par_iter()
+                .zip(node_centralities.par_iter_mut())
+                .for_each(|(distance, node_centrality)| {
+                    if distance != NODE_NOT_PRESENT {
+                        *node_centrality *= distance as f64 / diameter;
+                    }
+                });
+            }
+        }
+
         let verbose = verbose.unwrap_or(true);
         let pb = get_loading_bar(
             verbose,
@@ -183,11 +234,10 @@ impl Graph {
             }
         }
 
-        let diameter = self.get_diameter(Some(true), Some(false))? as f64;
-
         let mut node_embedding: Vec<Vec<f64>> = self.iter_node_ids().map(|_| Vec::new()).collect();
         let mut anchor_names: Vec<Vec<String>> = Vec::new();
 
+        let mut early_stopped = false;
         for current_node_features_number in 0..maximum_number_of_features {
             // Extend the new node embedding feature
             node_embedding
@@ -196,56 +246,35 @@ impl Graph {
             let mut this_feature_anchor_names = Vec::new();
             for i in 0..number_of_nodes_to_sample_per_feature {
                 // Getting the next anchor node ID
-                let anchor_node_id = node_centralities
-                    .par_iter()
-                    .zip(node_embedding.par_iter())
-                    .map(|(&node_centrality, node_features)| {
-                        node_centrality
-                            * match reduce_method {
-                                "mean" => {
-                                    node_features[0..current_node_features_number]
-                                        .iter()
-                                        .cloned()
-                                        .reduce(|a, b| a * b)
-                                        .unwrap_or(1.0)
-                                        * if i > 0 {
-                                            node_features[current_node_features_number] * i as f64
-                                        } else {
-                                            1.0
-                                        }
-                                }
-                                "min" => {
-                                    if use_edge_weights_as_probabilities {
-                                        (node_features[current_node_features_number]).max(
-                                            node_features[0..current_node_features_number]
-                                                .iter()
-                                                .cloned()
-                                                .max_by(|a, b| a.partial_cmp(b).unwrap())
-                                                .unwrap_or(0.0),
-                                        )
-                                    } else {
-                                        (if i > 0 {
-                                            node_features[current_node_features_number]
-                                        } else {
-                                            1.0
-                                        })
-                                        .min(
-                                            node_features[0..current_node_features_number]
-                                                .iter()
-                                                .cloned()
-                                                .min_by(|a, b| a.partial_cmp(b).unwrap())
-                                                .unwrap_or(f64::INFINITY),
-                                        )
-                                    }
-                                }
-                                _ => unreachable!("Only min and mean are supported!"),
-                            }
-                    })
-                    .argmax()
-                    .unwrap()
-                    .0 as NodeT;
+                let (anchor_node_id, node_centrality) =
+                    node_centralities.par_iter().argmax().unwrap();
+                // If the next best candidate is zero, we can stop the procedure.
+                if node_centrality.is_zero() {
+                    // We set the flag that we have an early stopping.
+                    early_stopped = true;
+                    // If we are at the first new iteration, we need to remove
+                    // the feature that is currently entirely set to zero.
+                    if i == 0 {
+                        node_embedding
+                            .par_iter_mut()
+                            .for_each(|node_features| {node_features.pop();});
+                    }
+                    break;
+                }
+                let anchor_node_id = anchor_node_id as NodeT;
+                // Add the node name to the list of nodes used to build this
+                // node feature.
                 this_feature_anchor_names
                     .push(unsafe { self.get_unchecked_node_name_from_node_id(anchor_node_id) });
+                // Set centrality zero to the node and the neighbouring nodes
+                // so we do not re-sample nodes that would produce extremely similar features.
+                node_centralities[anchor_node_id as usize] = 0.0;
+                unsafe {
+                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(anchor_node_id)
+                        .for_each(|neighbour_node_id| {
+                            node_centralities[neighbour_node_id as usize] = 0.0;
+                        });
+                };
                 // Update the node features
                 if use_edge_weights {
                     unsafe {
@@ -281,6 +310,7 @@ impl Graph {
                 .for_each(|(distance, node_feature)| {
                     node_feature[current_node_features_number] = if i > 0 {
                         match reduce_method {
+                            "sum" => node_feature[current_node_features_number] + distance,
                             "mean" => {
                                 (node_feature[current_node_features_number] * i as f64 + distance)
                                     / (i as f64 + 1.0)
@@ -292,7 +322,7 @@ impl Graph {
                                     (node_feature[current_node_features_number]).min(distance)
                                 }
                             }
-                            _ => unreachable!("Only min and mean are supported!"),
+                            _ => unreachable!("Only sum, min and mean are supported!"),
                         }
                     } else {
                         distance
@@ -300,7 +330,13 @@ impl Graph {
                 });
                 pb.inc(1);
             }
-            anchor_names.push(this_feature_anchor_names);
+            // If the list of node names is not empty
+            if !this_feature_anchor_names.is_empty() {
+                anchor_names.push(this_feature_anchor_names);
+            }
+            if early_stopped {
+                break;
+            }
         }
         Ok((node_embedding, anchor_names))
     }
