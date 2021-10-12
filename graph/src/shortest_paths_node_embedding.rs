@@ -19,7 +19,7 @@ impl Graph {
     /// * `node_centralities`: Option<Vec<f64>> - Vector with the importance of the nodes, used to properly sample the anchors. By default node degree centralities are used. Nodes with node centrality zero won't ever be sampled as an anchor, except for when all other nodes were already sampled.
     /// * `adjust_by_central_node_distance`: Option<bool> - Whether to adjust the node eccentricity by the normalized distance to the most central node. By default true.
     /// * `number_of_nodes_to_sample_per_feature`: Option<NodeT> - Number of nodes to sample per feature. By default 10.
-    /// * `reduce_method`: Option<&str> - The reduce method to use when reducing the distances for a node feature. The parameter can either be "sum", "mean" or "min". By default "mean".
+    /// * `reduce_method`: Option<&str> - The reduce method to use when reducing the distances for a node feature. The parameter can either be "sum", "mean" or "min". By default "min".
     /// * `maximum_number_of_features`: Option<usize> - Maximum number of node features to generate. By default 50.
     /// * `validate_node_centralities`: Option<bool> - Whether to validate the node centralities. By default true when the node centralities are provided.
     /// * `maximal_depth`: Option<NodeT> - The maximal depth to use if node features are to be focused in a local area of the graph.
@@ -68,7 +68,7 @@ impl Graph {
         if maximum_number_of_features == 0 {
             return Err("The maximum number of node features cannot be zero.".to_string());
         }
-        let reduce_method = reduce_method.unwrap_or("mean");
+        let reduce_method = reduce_method.unwrap_or("min");
         if reduce_method != "mean" && reduce_method != "min" && reduce_method != "sum" {
             return Err("The reduce method must either be 'sum', 'mean' or 'min'.".to_string());
         }
@@ -317,9 +317,9 @@ impl Graph {
                             }
                             "min" => {
                                 if use_edge_weights_as_probabilities {
-                                    (node_feature[current_node_features_number]).max(distance)
+                                    node_feature[current_node_features_number].max(distance)
                                 } else {
-                                    (node_feature[current_node_features_number]).min(distance)
+                                    node_feature[current_node_features_number].min(distance)
                                 }
                             }
                             _ => unreachable!("Only sum, min and mean are supported!"),

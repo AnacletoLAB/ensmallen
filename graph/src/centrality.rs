@@ -516,6 +516,7 @@ impl Graph {
                     // Currently it is not parallel because the EliasFano implementation
                     // does not supporting a range of values in parallel, and currently
                     // it is not possible to Box a parallel iterator from Rayon.
+                    // TODO: add support for par_iter here!
                     unsafe {
                         self.iter_unchecked_neighbour_node_ids_from_source_node_id(current_node_id)
                     }

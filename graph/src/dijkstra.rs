@@ -610,6 +610,8 @@ impl Graph {
             frontier = frontier
                 .into_par_iter()
                 .flat_map_iter(|node_id| {
+                    // TODO!: The following line can be improved when the par iter is made
+                    // generally available also for the elias-fano graphs.
                     self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                         .map(move |neighbour_node_id| (neighbour_node_id, node_id))
                 })
@@ -1439,9 +1441,11 @@ impl Graph {
 
         let mut distances = nodes_to_explore.unwrap();
 
+        // If the edge weights are to be treated as probabilities
+        // we need to adjust the distances back using the exponentiation.
         if use_edge_weights_as_probabilities {
             distances
-                .iter_mut()
+                .par_iter_mut()
                 .for_each(|distance| *distance = (-*distance).exp());
             eccentricity = (-eccentricity).exp();
             total_distance = (-total_distance).exp();
@@ -1929,6 +1933,7 @@ impl Graph {
         }
     }
 
+    #[cache_property(weighted_diameter)]
     /// Returns diameter of the graph using naive method.
     ///
     /// Note that there exists the non-naive method for undirected graphs
