@@ -341,6 +341,7 @@ impl Graph {
         random_state: Option<u64>,
         verbose: Option<bool>,
     ) -> Result<(Vec<Vec<f32>>, Vec<Vec<String>>)> {
+        let validate_node_centralities = validate_node_centralities.unwrap_or(node_centralities.is_some());
         let node_centralities = node_centralities.unwrap_or(self.get_degree_centrality()?);
         let verbose = verbose.unwrap_or(true);
         let pb = get_loading_bar(
@@ -379,7 +380,7 @@ impl Graph {
                     adjust_by_central_node_distance,
                     number_of_nodes_to_sample_per_feature,
                     maximum_number_of_features_per_node_type,
-                    validate_node_centralities,
+                    Some(validate_node_centralities),
                     maximal_depth,
                     central_node_name,
                     central_node_id,
