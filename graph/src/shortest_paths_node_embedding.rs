@@ -257,11 +257,10 @@ impl Graph {
                 };
             }
 
-            // If the list of node names is not empty
-            if !this_feature_anchor_node_names.is_empty() {
-                anchor_node_names.push(this_feature_anchor_node_names);
-            } else {
+            if this_feature_anchor_node_names.is_empty() {
                 break;
+            } else {
+                anchor_node_names.push(this_feature_anchor_node_names);
             }
 
             // Compute the node features
