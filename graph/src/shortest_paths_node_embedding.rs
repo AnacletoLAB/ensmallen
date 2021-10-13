@@ -208,7 +208,7 @@ impl Graph {
             }
         }
 
-        let mut node_embedding: Vec<Vec<f32>> = self.iter_node_ids().map(|_| Vec::new()).collect();
+        let mut node_embedding: Vec<Vec<f32>> = self.par_iter_node_ids().map(|_| Vec::new()).collect();
         let mut anchor_node_names: Vec<Vec<String>> = Vec::new();
 
         for _ in 0..maximum_number_of_features {
@@ -341,7 +341,8 @@ impl Graph {
         random_state: Option<u64>,
         verbose: Option<bool>,
     ) -> Result<(Vec<Vec<f32>>, Vec<Vec<String>>)> {
-        let validate_node_centralities = validate_node_centralities.unwrap_or(node_centralities.is_some());
+        let validate_node_centralities =
+            validate_node_centralities.unwrap_or(node_centralities.is_some());
         let node_centralities = node_centralities.unwrap_or(self.get_degree_centrality()?);
         let verbose = verbose.unwrap_or(true);
         let pb = get_loading_bar(
