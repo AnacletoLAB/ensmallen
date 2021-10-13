@@ -1,5 +1,6 @@
 use super::*;
 use indicatif::ProgressIterator;
+use log::info;
 use num_traits::Zero;
 use rayon::prelude::*;
 
@@ -30,7 +31,6 @@ impl Graph {
     /// * If the use edge weights as probabilities is requested, but the graph does not have edge weights as probabilities (between 0 and 1).
     /// * If the use edge weights as probabilities is requested, but not the edge weights.
     ///
-    /// TODO: Add the early stopping
     /// TODO: Add parallelization for Dijkstra
     pub fn get_shortest_paths_node_embedding(
         &self,
@@ -72,12 +72,17 @@ impl Graph {
         let validate_node_centralities =
             validate_node_centralities.unwrap_or(true) && node_centralities.is_some();
         let random_state = random_state.unwrap_or(42);
+        if node_centralities.is_none() {
+            info!("Computing node degree centralities.");
+        }
         let mut node_centralities = node_centralities.unwrap_or(self.get_degree_centrality()?);
         let adjust_by_central_node_distance = adjust_by_central_node_distance.unwrap_or(true);
 
         if adjust_by_central_node_distance {
+            info!("Computing most central node ID.");
             let most_central_node_id = self.get_most_central_node_id()?;
             if use_edge_weights {
+                info!("Computing weighted min-paths using Dijkstra for weighting centralities.");
                 unsafe {
                     self.get_unchecked_dijkstra_from_node_id(
                         most_central_node_id,
@@ -103,6 +108,7 @@ impl Graph {
                     }
                 });
             } else {
+                info!("Computing min-paths using BFS for weighting centralities.");
                 unsafe {
                     self.get_unchecked_breadth_first_search_distances_parallel_from_node_id(
                         most_central_node_id,
@@ -142,6 +148,7 @@ impl Graph {
                 self.get_random_node(random_state)
             };
             if use_edge_weights {
+                info!("Computing weighted min-paths using Dijkstra for masking centralities.");
                 unsafe {
                     self.get_unchecked_dijkstra_from_node_id(
                         central_node_id,
@@ -161,6 +168,7 @@ impl Graph {
                     }
                 });
             } else {
+                info!("Computing min-paths using BFS for masking centralities.");
                 unsafe {
                     self.get_unchecked_breadth_first_search_distances_parallel_from_node_id(
                         central_node_id,
@@ -189,6 +197,7 @@ impl Graph {
             ));
         }
         if validate_node_centralities {
+            info!("Validating node centralities.");
             if node_centralities
                 .par_iter()
                 .any(|node_centrality| node_centrality.is_infinite())
@@ -208,14 +217,21 @@ impl Graph {
             }
         }
 
-        let mut node_embedding: Vec<Vec<f32>> = self.par_iter_node_ids().map(|_| Vec::new()).collect();
+        info!("Allocating node embedding vector.");
+        let mut node_embedding: Vec<Vec<f32>> =
+            self.par_iter_node_ids().map(|_| Vec::new()).collect();
         let mut anchor_node_names: Vec<Vec<String>> = Vec::new();
 
-        for _ in 0..maximum_number_of_features {
+        info!("Starting to compute node features.");
+        for feature_number in (0..maximum_number_of_features).progress_with(pb) {
             let mut this_feature_anchor_node_names = Vec::new();
             let mut this_feature_anchor_node_ids = Vec::new();
 
             // Sample the new anchor node IDs
+            info!(
+                "Sampling anchor node IDs for node feature #{}.",
+                feature_number
+            );
             for _ in 0..number_of_nodes_to_sample_per_feature {
                 // Getting the next anchor node ID
                 let (anchor_node_id, node_centrality) =
@@ -250,6 +266,10 @@ impl Graph {
 
             // Compute the node features
             if use_edge_weights {
+                info!(
+                    "Computing weghted distances using Dijkstra for node feature #{}.",
+                    feature_number
+                );
                 let result = unsafe {
                     self.get_unchecked_dijkstra_from_node_ids(
                         this_feature_anchor_node_ids,
@@ -269,6 +289,10 @@ impl Graph {
                         node_feature.push((distance / eccentricity) as f32);
                     })
             } else {
+                info!(
+                    "Computing distances using BFS for node feature #{}.",
+                    feature_number
+                );
                 let result = unsafe {
                     self.get_unchecked_breadth_first_search_distances_parallel_from_node_ids(
                         this_feature_anchor_node_ids,
@@ -287,7 +311,6 @@ impl Graph {
                         });
                     });
             }
-            pb.inc(1);
         }
         Ok((node_embedding, anchor_node_names))
     }
