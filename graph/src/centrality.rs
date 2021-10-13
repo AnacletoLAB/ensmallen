@@ -60,7 +60,7 @@ impl Graph {
     /// If the given node ID does not exist in the graph the method will panic.
     pub unsafe fn get_unchecked_closeness_centrality_from_node_id(&self, node_id: NodeT) -> f64 {
         1.0 / self
-            .get_unchecked_breadth_first_search_from_node_ids(node_id, None, None, None)
+            .get_unchecked_breadth_first_search_from_node_id(node_id, None, None, None)
             .into_iter_finite_distances()
             .sum::<NodeT>() as f64
     }
@@ -95,7 +95,7 @@ impl Graph {
         use_edge_weights_as_probabilities: bool,
     ) -> f64 {
         let total_distance = self
-            .get_unchecked_dijkstra_from_node_ids(
+            .get_unchecked_dijkstra_from_node_id(
                 node_id,
                 None,
                 None,
@@ -245,7 +245,7 @@ impl Graph {
     /// # Safety
     /// If the given node ID does not exist in the graph the method will panic.
     pub unsafe fn get_unchecked_harmonic_centrality_from_node_id(&self, node_id: NodeT) -> f64 {
-        self.get_unchecked_breadth_first_search_from_node_ids(node_id, None, None, None)
+        self.get_unchecked_breadth_first_search_from_node_id(node_id, None, None, None)
             .into_iter_finite_distances()
             .map(|distance| {
                 if distance != 0 {
@@ -276,7 +276,7 @@ impl Graph {
         node_id: NodeT,
         use_edge_weights_as_probabilities: bool,
     ) -> f64 {
-        self.get_unchecked_dijkstra_from_node_ids(
+        self.get_unchecked_dijkstra_from_node_id(
             node_id,
             None,
             None,
@@ -900,7 +900,7 @@ impl Graph {
                 // Increase the number of sampled nodes.
                 number_of_sampled_nodes += 1.0;
                 // Compute the SSSP starting from the samples node.
-                let sssp = self.get_unchecked_dijkstra_from_node_ids(
+                let sssp = self.get_unchecked_dijkstra_from_node_id(
                     neighbour_node_id,
                     None,
                     None,
@@ -940,7 +940,7 @@ impl Graph {
             number_of_sampled_nodes += 1.0;
             // Compute the SSSP starting from the samples node.
             let sssp = unsafe {
-                self.get_unchecked_dijkstra_from_node_ids(
+                self.get_unchecked_dijkstra_from_node_id(
                     sampled_node_id,
                     None,
                     None,

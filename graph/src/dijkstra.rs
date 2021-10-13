@@ -589,7 +589,6 @@ impl Graph {
     /// # Safety
     /// If any of the given node ID does not exist in the graph the method will panic.
     ///
-    /// TODO! Explore chains accelerations!
     pub unsafe fn get_unchecked_breadth_first_search_predecessors_parallel_from_node_id(
         &self,
         src_node_id: NodeT,
@@ -640,28 +639,30 @@ impl Graph {
         )
     }
 
-    /// Returns shortest path result for the BFS from given source node ID.
+    /// Returns shortest path result for the BFS from given source node IDs, treating the set of source nodes as an hyper-node.
     ///
     /// # Arguments
-    /// * `src_node_id`: NodeT - Root of the tree of minimum paths.
+    /// * `src_node_ids`: Vec<NodeT> - Roots of the tree of minimum paths.
     ///
     /// # Safety
-    /// If any of the given node ID does not exist in the graph the method will panic.
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    /// The provided list of node ids must be non-empty, or the method will panic.
     ///
-    /// TODO! Explore chains accelerations!
-    pub unsafe fn get_unchecked_breadth_first_search_distances_parallel_from_node_id(
+    pub unsafe fn get_unchecked_breadth_first_search_distances_parallel_from_node_ids(
         &self,
-        src_node_id: NodeT,
+        src_node_ids: Vec<NodeT>,
     ) -> ShortestPathsResultBFS {
         let nodes_number = self.get_nodes_number() as usize;
         let thread_shared_distances = ThreadDataRaceAware {
             value: std::cell::UnsafeCell::new(vec![NODE_NOT_PRESENT; nodes_number]),
         };
-        (*thread_shared_distances.value.get())[src_node_id as usize] = 0;
+        for src_node_id in src_node_ids.iter().cloned() {
+            (*thread_shared_distances.value.get())[src_node_id as usize] = 0;
+        }
         let mut eccentricity = 0;
-        let mut most_distant_node = src_node_id;
+        let mut most_distant_node = src_node_ids[0];
 
-        let mut frontier = vec![src_node_id];
+        let mut frontier = src_node_ids;
 
         while !frontier.is_empty() {
             eccentricity += 1;
@@ -693,6 +694,21 @@ impl Graph {
             eccentricity,
             most_distant_node,
         )
+    }
+
+    /// Returns shortest path result for the BFS from given source node ID.
+    ///
+    /// # Arguments
+    /// * `src_node_id`: NodeT - Root of the tree of minimum paths.
+    ///
+    /// # Safety
+    /// If any of the given node ID does not exist in the graph the method will panic.
+    ///
+    pub unsafe fn get_unchecked_breadth_first_search_distances_parallel_from_node_id(
+        &self,
+        src_node_id: NodeT,
+    ) -> ShortestPathsResultBFS {
+        self.get_unchecked_breadth_first_search_distances_parallel_from_node_ids(vec![src_node_id])
     }
 
     /// Returns shortest path result for the BFS from given source node ID.
@@ -740,10 +756,10 @@ impl Graph {
         ShortestPathsResultBFS::new(Some(distances), None, eccentricity, most_distant_node)
     }
 
-    /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
+    /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested, treating the set of source nodes as an hyper-node.
     ///
     /// # Arguments
-    /// * `src_node_id`: NodeT - Root of the tree of minimum paths.
+    /// * `src_node_ids`: Vec<NodeT> - Root of the tree of minimum paths.
     /// * `maybe_dst_node_id`: Option<NodeT> - Optional target destination. If provided, Dijkstra will stop upon reaching this node.
     /// * `compute_predecessors`: Option<bool> - Whether to compute the vector of predecessors.
     /// * `maximal_depth`: Option<NodeT> - The maximal depth to execute the DFS for.
@@ -754,7 +770,7 @@ impl Graph {
     /// TODO! Explore chains accelerations!
     pub unsafe fn get_unchecked_breadth_first_search_from_node_ids(
         &self,
-        src_node_id: NodeT,
+        src_node_ids: Vec<NodeT>,
         dst_node_id: Option<NodeT>,
         compute_predecessors: Option<bool>,
         maximal_depth: Option<NodeT>,
@@ -766,19 +782,25 @@ impl Graph {
 
         let mut predecessors: Option<Vec<NodeT>> = if compute_predecessors {
             let mut predecessors = vec![NODE_NOT_PRESENT; nodes_number];
-            predecessors[src_node_id as usize] = src_node_id;
+            for src_node_id in src_node_ids.iter().cloned() {
+                predecessors[src_node_id as usize] = src_node_id;
+            }
             Some(predecessors)
         } else {
             None
         };
 
         let mut distances: Vec<NodeT> = vec![NODE_NOT_PRESENT; nodes_number];
-        distances[src_node_id as usize] = 0;
+        for src_node_id in src_node_ids.iter().cloned() {
+            distances[src_node_id as usize] = 0;
+        }
         let mut eccentricity = 0;
-        let mut most_distant_node = src_node_id;
+        let mut most_distant_node = src_node_ids[0];
 
         let mut nodes_to_explore = VecDeque::with_capacity(nodes_number);
-        nodes_to_explore.push_back((src_node_id, 0));
+        for src_node_id in src_node_ids.iter().cloned() {
+            nodes_to_explore.push_back((src_node_id, 0));
+        }
 
         while let Some((node_id, depth)) = nodes_to_explore.pop_front() {
             // compute the distance of the childs of the current node
@@ -834,6 +856,33 @@ impl Graph {
         )
     }
 
+    /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
+    ///
+    /// # Arguments
+    /// * `src_node_id`: NodeT - Root of the tree of minimum paths.
+    /// * `maybe_dst_node_id`: Option<NodeT> - Optional target destination. If provided, Dijkstra will stop upon reaching this node.
+    /// * `compute_predecessors`: Option<bool> - Whether to compute the vector of predecessors.
+    /// * `maximal_depth`: Option<NodeT> - The maximal depth to execute the DFS for.
+    ///
+    /// # Safety
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    ///
+    /// TODO! Explore chains accelerations!
+    pub unsafe fn get_unchecked_breadth_first_search_from_node_id(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: Option<NodeT>,
+        compute_predecessors: Option<bool>,
+        maximal_depth: Option<NodeT>,
+    ) -> ShortestPathsResultBFS {
+        self.get_unchecked_breadth_first_search_from_node_ids(
+            vec![src_node_id],
+            dst_node_id,
+            compute_predecessors,
+            maximal_depth,
+        )
+    }
+
     /// Returns minimum path node IDs and distance from given node ids.
     ///
     /// # Arguments
@@ -857,7 +906,7 @@ impl Graph {
             return Err("The minimum path on a selfloop is not defined.".to_string());
         }
         let bfs = self.get_unchecked_breadth_first_search_from_node_ids(
-            src_node_id,
+            vec![src_node_id],
             Some(dst_node_id),
             None,
             maximal_depth,
@@ -1194,7 +1243,7 @@ impl Graph {
         node_id: NodeT,
         use_edge_weights_as_probabilities: Option<bool>,
     ) -> f64 {
-        self.get_unchecked_dijkstra_from_node_ids(
+        self.get_unchecked_dijkstra_from_node_id(
             node_id,
             None,
             None,
@@ -1296,10 +1345,10 @@ impl Graph {
             })
     }
 
-    /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
+    /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested, from the given root nodes (treated as an hyper-node).
     ///
     /// # Arguments
-    /// * `src_node_id`: NodeT - Root of the tree of minimum paths.
+    /// * `src_node_id`: Vec<NodeT> - Root of the tree of minimum paths.
     /// * `maybe_dst_node_id`: Option<NodeT> - Optional target destination. If provided, Dijkstra will stop upon reaching this node.
     /// * `maybe_dst_node_ids`: Option<Vec<NodeT>> - Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
     /// * `compute_predecessors`: bool - Whether to compute the vector of predecessors.
@@ -1310,7 +1359,7 @@ impl Graph {
     /// If any of the given node IDs does not exist in the graph the method will panic.
     pub unsafe fn get_unchecked_dijkstra_from_node_ids(
         &self,
-        src_node_id: NodeT,
+        src_node_ids: Vec<NodeT>,
         maybe_dst_node_id: Option<NodeT>,
         mut maybe_dst_node_ids: Option<Vec<NodeT>>,
         compute_predecessors: Option<bool>,
@@ -1319,7 +1368,7 @@ impl Graph {
     ) -> ShortestPathsDjkstra {
         let compute_predecessors = compute_predecessors.unwrap_or(true);
         let nodes_number = self.get_nodes_number() as usize;
-        let mut most_distant_node = src_node_id;
+        let mut most_distant_node = src_node_ids[0];
         let use_edge_weights_as_probabilities = use_edge_weights_as_probabilities.unwrap_or(false);
         let mut dst_node_distance = maybe_dst_node_id.map(|_| {
             if use_edge_weights_as_probabilities {
@@ -1334,7 +1383,11 @@ impl Graph {
             None
         };
 
-        if self.is_unchecked_disconnected_node_from_node_id(src_node_id) {
+        if src_node_ids
+            .iter()
+            .cloned()
+            .all(|src_node_id| self.is_unchecked_disconnected_node_from_node_id(src_node_id))
+        {
             if use_edge_weights_as_probabilities {
                 return ShortestPathsDjkstra::new(
                     vec![0.0; nodes_number],
@@ -1360,7 +1413,7 @@ impl Graph {
 
         let bfs: Option<ShortestPathsResultBFS> = maximal_depth.map(|md| {
             self.get_unchecked_breadth_first_search_from_node_ids(
-                src_node_id,
+                src_node_ids.clone(),
                 maybe_dst_node_id,
                 None,
                 Some(md),
@@ -1368,7 +1421,7 @@ impl Graph {
         });
 
         let mut nodes_to_explore: DijkstraQueue =
-            DijkstraQueue::with_capacity_from_root(nodes_number, src_node_id as usize);
+            DijkstraQueue::with_capacity_from_roots(nodes_number, src_node_ids);
         let mut eccentricity: f64 = 0.0;
         let mut total_distance: f64 = 0.0;
         let mut total_harmonic_distance: f64 = 0.0;
@@ -1462,6 +1515,37 @@ impl Graph {
         }
     }
 
+    /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
+    ///
+    /// # Arguments
+    /// * `src_node_id`: NodeT - Root of the tree of minimum paths.
+    /// * `maybe_dst_node_id`: Option<NodeT> - Optional target destination. If provided, Dijkstra will stop upon reaching this node.
+    /// * `maybe_dst_node_ids`: Option<Vec<NodeT>> - Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
+    /// * `compute_predecessors`: bool - Whether to compute the vector of predecessors.
+    /// * `maximal_depth`: Option<NodeT> - The maximal number of iterations to execute Dijkstra for.
+    /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to treat the edge weights as probabilities.
+    ///
+    /// # Safety
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_dijkstra_from_node_id(
+        &self,
+        src_node_id: NodeT,
+        maybe_dst_node_id: Option<NodeT>,
+        maybe_dst_node_ids: Option<Vec<NodeT>>,
+        compute_predecessors: Option<bool>,
+        maximal_depth: Option<NodeT>,
+        use_edge_weights_as_probabilities: Option<bool>,
+    ) -> ShortestPathsDjkstra {
+        self.get_unchecked_dijkstra_from_node_ids(
+            vec![src_node_id],
+            maybe_dst_node_id,
+            maybe_dst_node_ids,
+            compute_predecessors,
+            maximal_depth,
+            use_edge_weights_as_probabilities,
+        )
+    }
+
     /// Returns minimum path node IDs and distance from given node ids.
     ///
     /// # Arguments
@@ -1479,7 +1563,7 @@ impl Graph {
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
     ) -> (f64, Vec<NodeT>) {
-        let dijkstra = self.get_unchecked_dijkstra_from_node_ids(
+        let dijkstra = self.get_unchecked_dijkstra_from_node_id(
             src_node_id,
             Some(dst_node_id),
             None,
@@ -1671,7 +1755,7 @@ impl Graph {
         self.validate_node_id(src_node_id)?;
         unsafe {
             Ok(self.get_unchecked_breadth_first_search_from_node_ids(
-                src_node_id,
+                vec![src_node_id],
                 dst_node_id,
                 compute_predecessors,
                 maximal_depth,
@@ -1722,7 +1806,7 @@ impl Graph {
         })?;
 
         Ok(unsafe {
-            self.get_unchecked_dijkstra_from_node_ids(
+            self.get_unchecked_dijkstra_from_node_id(
                 src_node_id,
                 maybe_dst_node_id,
                 maybe_dst_node_ids,
@@ -2024,7 +2108,7 @@ impl Graph {
         maximal_depth: Option<NodeT>,
     ) -> Result<ShortestPathsResultBFS> {
         unsafe {
-            Ok(self.get_unchecked_breadth_first_search_from_node_ids(
+            Ok(self.get_unchecked_breadth_first_search_from_node_id(
                 self.get_node_id_from_node_name(src_node_name)?,
                 dst_node_name.map_or(Ok::<_, String>(None), |dst_node_name| {
                     Ok(Some(self.get_node_id_from_node_name(dst_node_name)?))
