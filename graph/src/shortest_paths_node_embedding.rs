@@ -135,7 +135,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             "Computing shortest path node features",
-            maximum_number_of_features * number_of_nodes_to_sample_per_feature as usize,
+            maximum_number_of_features
         );
 
         if (central_node_name.is_some() || central_node_id.is_some()) && maximal_depth.is_none() {
