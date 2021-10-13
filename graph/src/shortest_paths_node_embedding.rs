@@ -30,7 +30,6 @@ impl Graph {
     /// * If the use edge weights as probabilities is requested, but the graph does not have edge weights as probabilities (between 0 and 1).
     /// * If the use edge weights as probabilities is requested, but not the edge weights.
     ///
-    /// TODO: Add weighted diameter to normalize weighted paths!
     /// TODO: Add the early stopping
     /// TODO: Add parallelization for Dijkstra
     pub fn get_shortest_paths_node_embedding(
