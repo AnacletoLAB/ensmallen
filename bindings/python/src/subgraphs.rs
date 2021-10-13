@@ -13,28 +13,35 @@ impl Graph {
     /// Return subsampled nodes according to the given method and parameters.
     ///
     /// Parameters
-    /// --------------------
-    /// number_of_nodes_to_sample: int - The number of nodes to sample.
-    /// random_state: int - The random state to reproduce the sampling.
-    /// root_node: Optional[int] - The (optional) root node to use to sample. In not provided, a random one is sampled.
-    /// node_sampling_method: str - The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
-    /// edge_weighting_methods: List[str] - The edge weighting methods to use to compute the adjacency matrix.
-    /// add_selfloops_where_missing: Optional[bool] - Whether to add selfloops where they are missing. This parameter only applies to laplacian edge weighting method. By default, true.
-    /// unique: Optional[bool] = True - Whether to reduce the sampled nodes to a unique set.
+    /// ----------
+    /// number_of_nodes_to_sample: int
+    ///     the number of nodes to sample.
+    /// random_state: int
+    ///     The random state to reproduce the sampling.
+    /// root_node: Optional[int]
+    ///     The (optional) root node to use to sample. In not provided, a random one is sampled.
+    /// node_sampling_method: str
+    ///     The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
+    /// edge_weighting_methods: List[str]
+    ///     The edge weighting methods to use to compute the adjacency matrix.
+    /// add_selfloops_where_missing: Optional[bool]
+    ///     Whether to add selfloops where they are missing. This parameter only applies to laplacian edge weighting method. By default, true.
+    /// unique: Optional[bool] = True
+    ///     Whether to reduce the sampled nodes to a unique set.
     ///
     /// Raises
-    /// --------------------
-    /// ValueError,
+    /// ------
+    /// ValueError
     ///     If the given node sampling method is not supported.
-    /// ValueError,
+    /// ValueError
     ///     If any of the given subgraph edge weighting method is not supported.
-    /// ValueError,
+    /// ValueError
     ///     If the list of requested edge weighting methods is empty.
-    /// ValueError,
+    /// ValueError
     ///     If the `add_selfloops_where_missing` parameter is provided, but the edge weighting method is not laplacian.
     ///
     /// Returns
-    /// --------------------
+    /// -------
     /// Tuple with the sampled nodes and the computed kernels.
     pub fn get_subgraphs(
         &self,
@@ -177,11 +184,11 @@ impl Graph {
     ///
     /// Parameters
     /// --------------------
-    /// node_ids: Vec<NodeT>,
+    /// node_ids: Vec<NodeT>
     ///     List of nodes whose edges are to return.
-    /// add_selfloops_where_missing: Optional[bool],
+    /// add_selfloops_where_missing: Optional[bool]
     ///     Whether to add selfloops where they are missing. This parameter only applies to laplacian edge weighting method. By default, true.
-    /// complete: Optional[bool] = True,
+    /// complete: Optional[bool] = True
     ///     Whether to return the edges in both directions (when dealing with an undirected graph).
     ///
     /// Returns
@@ -232,23 +239,30 @@ impl Graph {
     ///
     /// Parameters
     /// --------------------
-    /// number_of_nodes_to_sample: int - The number of nodes to sample.
-    /// random_state: int - The random state to reproduce the sampling.
-    /// root_node: Optional[int] - The (optional) root node to use to sample. In not provided, a random one is sampled.
-    /// node_sampling_method: str - The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
-    /// edge_weighting_methods: List[str] - The edge weighting methods to use to compute the adjacency matrix.
-    /// add_selfloops_where_missing: Optional[bool] - Whether to add selfloops where they are missing. This parameter only applies to laplacian edge weighting method. By default, true.
-    /// unique: Optional[bool] = True - Whether to reduce the sampled nodes to a unique set.
+    /// number_of_nodes_to_sample: int
+    ///     The number of nodes to sample.
+    /// random_state: int
+    ///     The random state to reproduce the sampling.
+    /// root_node: Optional[int]
+    ///     The (optional) root node to use to sample. In not provided, a random one is sampled.
+    /// node_sampling_method: str
+    ///     The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
+    /// edge_weighting_methods: List[str]
+    ///     The edge weighting methods to use to compute the adjacency matrix.
+    /// add_selfloops_where_missing: Optional[bool]
+    ///     Whether to add selfloops where they are missing. This parameter only applies to laplacian edge weighting method. By default, true.
+    /// unique: Optional[bool] = True
+    ///     Whether to reduce the sampled nodes to a unique set.
     ///
     /// Raises
     /// --------------------
-    /// ValueError,
+    /// ValueError
     ///     If the given node sampling method is not supported.
-    /// ValueError,
+    /// ValueError
     ///     If any of the given subgraph edge weighting method is not supported.
-    /// ValueError,
+    /// ValueError
     ///     If the list of requested edge weighting methods is empty.
-    /// ValueError,
+    /// ValueError
     ///     If the `add_selfloops_where_missing` parameter is provided, but the edge weighting method is not laplacian.
     ///
     /// Returns
@@ -391,10 +405,14 @@ impl Graph {
     ///
     /// Parameters
     /// --------------------
-    /// number_of_nodes_to_sample: int - The number of nodes to sample.
-    /// random_state: int - The random state to reproduce the sampling.
-    /// root_node: Optional[int] - The (optional) root node to use to sample. In not provided, a random one is sampled.
-    /// node_sampling_method: str - The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
+    /// number_of_nodes_to_sample: int
+    ///     The number of nodes to sample.
+    /// random_state: int
+    ///     The random state to reproduce the sampling.
+    /// root_node: Optional[int]
+    ///     The (optional) root node to use to sample. In not provided, a random one is sampled.
+    /// node_sampling_method: str
+    ///     The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
     ///
     /// Raises
     /// --------------------
@@ -486,21 +504,26 @@ impl Graph {
     ///
     /// Parameters
     /// --------------------
-    /// number_of_nodes_to_sample: int - The number of nodes to sample.
-    /// random_state: int - The random state to reproduce the sampling.
-    /// node_sampling_method: str - The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
-    /// edge_weighting_methods: List[str] - The edge weighting methods to use to compute the adjacency matrix.
-    /// add_selfloops_where_missing: Optional[bool] - Whether to add selfloops where they are missing. This parameter only applies to laplacian edge weighting method. By default, true.
+    /// number_of_nodes_to_sample: int
+    ///     The number of nodes to sample.
+    /// random_state: int
+    ///     The random state to reproduce the sampling.
+    /// node_sampling_method: str
+    ///     The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
+    /// edge_weighting_methods: List[str]
+    ///     The edge weighting methods to use to compute the adjacency matrix.
+    /// add_selfloops_where_missing: Optional[bool]
+    ///     Whether to add selfloops where they are missing. This parameter only applies to laplacian edge weighting method. By default, true.
     ///
     /// Raises
     /// --------------------
-    /// ValueError,
+    /// ValueError
     ///     If the given node sampling method is not supported.
-    /// ValueError,
+    /// ValueError
     ///     If any of the given subgraph edge weighting method is not supported.
-    /// ValueError,
+    /// ValueError
     ///     If the list of requested edge weighting methods is empty.
-    /// ValueError,
+    /// ValueError
     ///     If the `add_selfloops_where_missing` parameter is provided, but the edge weighting method is not laplacian.
     ///
     /// Returns
@@ -709,29 +732,37 @@ impl Graph {
     /// Return subsampled nodes according to the given method and parameters.
     ///
     /// Parameters
-    /// --------------------
-    /// number_of_nodes_to_sample: int - The number of nodes to sample.
-    /// random_state: int - The random state to reproduce the sampling.
-    /// source_root_node: int - The source root node to use to sample. In not provided, a random one is sampled.
-    /// destination_root_node: int - The destination root node to use to sample. In not provided, a random one is sampled.
-    /// node_sampling_method: str - The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
-    /// edge_weighting_methods: List[str] - The edge weighting methods to use to compute the adjacency matrix.
-    /// add_selfloops_where_missing: Optional[bool] - Whether to add selfloops where they are missing. This parameter only applies to laplacian edge weighting method. By default, true.
-    /// unique: Optional[bool] = True - Whether to reduce the sampled nodes to a unique set.
+    /// ----------
+    /// number_of_nodes_to_sample: int
+    ///     The number of nodes to sample.
+    /// random_state: int
+    ///     The random state to reproduce the sampling.
+    /// source_root_node: int
+    ///     The source root node to use to sample. In not provided, a random one is sampled.
+    /// destination_root_node: int
+    ///     The destination root node to use to sample. In not provided, a random one is sampled.
+    /// node_sampling_method: str
+    ///     The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
+    /// edge_weighting_methods: List[str]
+    ///     The edge weighting methods to use to compute the adjacency matrix.
+    /// add_selfloops_where_missing: Optional[bool]
+    ///     Whether to add selfloops where they are missing. This parameter only applies to laplacian edge weighting method. By default, true.
+    /// unique: Optional[bool] = True
+    ///     Whether to reduce the sampled nodes to a unique set.
     ///
     /// Raises
-    /// --------------------
-    /// ValueError,
+    /// ------
+    /// ValueError
     ///     If the given node sampling method is not supported.
-    /// ValueError,
+    /// ValueError
     ///     If any of the given subgraph edge weighting method is not supported.
-    /// ValueError,
+    /// ValueError
     ///     If the list of requested edge weighting methods is empty.
-    /// ValueError,
+    /// ValueError
     ///     If the `add_selfloops_where_missing` parameter is provided, but the edge weighting method is not laplacian.
     ///
     /// Returns
-    /// --------------------
+    /// -------
     /// Tuple with the sampled nodes and the computed kernels.
     pub fn get_edge_prediction_subgraphs_from_node_ids(
         &self,

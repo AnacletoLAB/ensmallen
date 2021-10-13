@@ -27,8 +27,8 @@ name = "bindgen"
 path = "src/bin_bindgen.rs"
 
 [[bin]]
-name = "pyigen"
-path = "src/bin_pyigen.rs"
+name = "skeleton"
+path = "src/bin_skeleton.rs"
 
 [[bin]]
 name = "metatest"

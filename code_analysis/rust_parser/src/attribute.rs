@@ -1,7 +1,7 @@
 use super::*;
 
 #[derive(Debug, Clone)]
-pub struct Attribute(String);
+pub struct Attribute(pub String);
 
 impl CanParse for Attribute {
     fn can_parse(data: &[u8]) -> bool {

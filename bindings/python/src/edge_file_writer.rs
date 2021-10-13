@@ -9,38 +9,38 @@ impl Graph {
     /// Write to disk the edges (and optionally the metadata) of the graph.
     ///
     /// Parameters
-    /// ------------------------
-    /// path: str,
+    /// ----------
+    /// path: str
     ///     Path where to save the edges and their metadata.
-    /// verbose: bool = True,
+    /// verbose: bool = True
     ///     Wether to show a loading bar while writing to file.
-    /// separator: str = "\t",
+    /// separator: str = "\t"
     ///     What separator to use while writing out to file.
-    /// header: bool = True,
+    /// header: bool = True
     ///     Wether to write out the header of the file.
-    /// sources_column_number: int = 0,
-    ///     The column number where to write out the .
-    /// sources_column: str = "subject",
-    ///     The name of the column where to write out the .
-    /// destinations_column_number: int = 1,
-    ///     The column number where to write out the .
-    /// destinations_column: str = "object",
-    ///     The name of the column where to write out the .
-    /// edge_types_column_number: int = 2,
-    ///     The column number where to write out the .
-    /// edges_type_column: str = "label",
-    ///     The name of the column where to write out the .
-    /// weights_column_number: int = 3,
-    ///     The column number where to write out the .
-    /// weights_column: str = "weight",
-    ///     The name of the column where to write out the .
-    /// numeric_node_ids: bool = False,
+    /// sources_column_number: int = 0
+    ///     The column number where to write out the file.
+    /// sources_column: str = "subject"
+    ///     The name of the column where to write out the file.
+    /// destinations_column_number: int = 1
+    ///     The column number where to write out the file.
+    /// destinations_column: str = "object"
+    ///     The name of the column where to write out the file.
+    /// edge_types_column_number: int = 2
+    ///     The column number where to write out the file.
+    /// edges_type_column: str = "label"
+    ///     The name of the column where to write out the file.
+    /// weights_column_number: int = 3
+    ///     The column number where to write out the file.
+    /// weights_column: str = "weight"
+    ///     The name of the column where to write out the file.
+    /// numeric_node_ids: bool = False
     ///     whether to save the internal numeric Ids instead of the string names.
-    /// directed: bool = False,
+    /// directed: bool = False
     ///     whether to save graph as directed or undirected.
     ///
     /// Raises
-    /// ------------------------
+    /// ------
     /// TODO: update the set of exceptions
     ///
     fn dump_edges(&self, path: String, py_kwargs: Option<&PyDict>) -> PyResult<()> {

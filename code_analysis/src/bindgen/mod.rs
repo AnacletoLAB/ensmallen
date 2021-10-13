@@ -1,13 +1,14 @@
 use super::*;
 use std::collections::HashMap;
 use regex::Regex;
+use lazy_static::lazy_static;
 use std::fs;
 
 mod binding;
 pub use binding::*;
 
-mod pyigen;
-pub use pyigen::*;
+mod skeleton;
+pub use skeleton::*;
 
 mod translate_doc;
 pub use translate_doc::*;
@@ -19,8 +20,32 @@ mod tfidf_gen;
 pub use tfidf_gen::*;
 
 pub fn extract_module_name_from_path(path: &str) -> Option<String> {
-    let re = Regex::new(r"\.\./graph/src/(.+)/.+\.rs").unwrap();
-    re.captures(path).map(|x| x.get(1).unwrap().as_str().to_string())
+    lazy_static! {
+        static ref RE: Regex = Regex::new(r"\.\./graph/src/(.+)/.+\.rs").unwrap();
+    }       
+    RE.captures(path).map(|x| x.get(1).unwrap().as_str().to_string())
+}
+
+fn extract_module_name_from_func(func: &Function) -> Option<String> {
+    extract_module_name_from_path(func.file_path.as_str()).or_else(
+        || {
+            let module_attr = func.attributes.iter()
+                .find(|attr| attr.0.starts_with("module"));
+            module_attr.map(|module| {
+                module.0[7..module.0.len() - 1].to_string()
+            })
+     })
+}
+
+fn extract_module_name_from_struct(ztruct: &Struct) -> Option<String> {
+    extract_module_name_from_path(ztruct.file_path.as_str()).or_else(
+        || {
+            let module_attr = ztruct.attributes.iter()
+                .find(|attr| attr.0.starts_with("module"));
+            module_attr.map(|module| {
+                module.0[7..module.0.len() - 1].to_string()
+            })
+     })
 }
 
 /// If we should emit a binding for the given function
@@ -81,6 +106,7 @@ impl GenBinding for Class {
         let (terms, tfidf) = tfidf_gen(&methods_names);
         format!(
 r#"
+{struct_doc}
 #[pyclass]
 #[derive(Debug, Clone)]
 pub struct {struct_name} {{
@@ -200,6 +226,7 @@ impl PyObjectProtocol for {struct_name} {{
     }}
 }}
 "#, 
+    struct_doc=self.ztruct.doc.trim().split("\n").map(|x| format!("/// {}", x)).collect::<Vec<_>>().join("\n").trim(),
     struct_name=self.ztruct.struct_type.get_name(),
     struct_name_upper=self.ztruct.struct_type.get_name().to_uppercase(),
     methods=format_vec!(
@@ -304,6 +331,15 @@ fn {module_name}(_py: Python, m:&PyModule) -> PyResult<()> {{
     registrations=registrations.join("\n"),
     functions=format_vec!(self.funcs.iter().filter(|func| is_to_bind(func))
     .map(GenBinding::gen_python_binding)
+    .map(|x| format!(
+        "{module}\n{x}",
+        module=if self.module_name != "ensmallen" {
+            format!("#[module({})]", self.module_name)
+        } else {
+            "".into()
+        },
+        x=x,
+    ))
     .collect::<Vec<_>>(), "{}", "\n\n"),
     classes=format_vec!(
         self.structs.values()
@@ -338,13 +374,15 @@ impl Default for BindingsModule{
 fn group_data(modules: Vec<Module>) -> BindingsModule {
     let mut bindings = BindingsModule::default();
     bindings.module_name = "ensmallen".to_string();
+
+    let mut struct_modules_map = HashMap::new();
     
     // collect info about all the structs
     for module in &modules {
         for ztruct in &module.structs {
-            bindings.get_submodule(
-                extract_module_name_from_path(ztruct.file_path.as_str())
-            ).push_class(ztruct.clone());
+            let submodule = extract_module_name_from_struct(&ztruct);
+            struct_modules_map.insert(ztruct.struct_type.to_string(), submodule.clone());
+            bindings.get_submodule(submodule).push_class(ztruct.clone());
         }
     }
 
@@ -352,22 +390,26 @@ fn group_data(modules: Vec<Module>) -> BindingsModule {
     for module in &modules {
         for func in &module.functions {
             bindings.get_submodule(
-                extract_module_name_from_path(func.file_path.as_str())
+                extract_module_name_from_func(func)
             ).funcs.push(func.clone());
         }
     }
-
+    
     // For each struct, collect all its implementaitons
     for module in &modules {
         for imp in &module.impls {
             // find the correct submodule
-            let struct_ref = bindings.get_submodule(
-                extract_module_name_from_path(imp.file_path.as_str())
-            ) // get the related struct
-            .structs.get_mut(&imp.struct_name.get_name());
-            if let Some(struct_ref) = struct_ref {
-                // add it to the impls
-                struct_ref.impls.push(imp.clone());
+            if let Some(struct_module) = struct_modules_map.get(&imp.struct_name.get_name()) {
+                let struct_ref =  bindings.get_submodule(
+                    struct_module.clone()
+                ).structs.get_mut(&imp.struct_name.get_name());
+    
+                if let Some(struct_ref) = struct_ref {
+                    // add it to the impls
+                    struct_ref.impls.push(imp.clone());
+                } else {
+                    println!("Skipping impl for '{}' at '{}'.", imp.struct_name.get_name(), imp.file_path);
+                }
             } else {
                 println!("Skipping impl for '{}' at '{}'.", imp.struct_name.get_name(), imp.file_path);
             }
