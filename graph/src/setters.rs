@@ -488,4 +488,64 @@ impl Graph {
         graph.remove_inplace_edge_weights()?;
         Ok(graph)
     }
+
+    /// Divide edge weights in place.
+    ///
+    /// Note that the modification happens inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge weights.
+    ///
+    pub fn divide_edge_weights_inplace(&mut self, denominator: WeightT) -> Result<()> {
+        self.must_have_edge_weights()?;
+        if let Some(edge_weights) = &mut self.weights {
+            edge_weights.par_iter_mut().for_each(|edge_weight| {
+                *edge_weight /= denominator;
+            });
+        }
+        Ok(())
+    }
+
+    /// Divide edge weights.
+    ///
+    /// Note that the modification does not happen inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge weights.
+    ///
+    pub fn divide_edge_weights(&self, denominator: WeightT) -> Result<Graph> {
+        let mut graph = self.clone();
+        graph.divide_edge_weights_inplace(denominator)?;
+        Ok(graph)
+    }
+
+    /// Multiply edge weights in place.
+    ///
+    /// Note that the modification happens inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge weights.
+    ///
+    pub fn multiply_edge_weights_inplace(&mut self, denominator: WeightT) -> Result<()> {
+        self.must_have_edge_weights()?;
+        if let Some(edge_weights) = &mut self.weights {
+            edge_weights.par_iter_mut().for_each(|edge_weight| {
+                *edge_weight *= denominator;
+            });
+        }
+        Ok(())
+    }
+
+    /// Multiply edge weights.
+    ///
+    /// Note that the modification does not happen inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge weights.
+    ///
+    pub fn multiply_edge_weights(&self, denominator: WeightT) -> Result<Graph> {
+        let mut graph = self.clone();
+        graph.divide_edge_weights_inplace(denominator)?;
+        Ok(graph)
+    }
 }

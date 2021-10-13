@@ -7,7 +7,7 @@ use super::*;
 ///
 /// # Example
 /// To validate a node you can use:
-/// ```rust
+/// ```ignore
 /// # use graph::*;
 /// let rat_genome_database_node_name1 = "RGD:10059728";
 /// let rat_genome_database_node_name2 = "RGD:1564808";

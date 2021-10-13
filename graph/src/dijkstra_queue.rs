@@ -1,4 +1,5 @@
 use tags::*;
+use super::*;
 
 #[derive(Debug)]
 /// Reference classic binary heap
@@ -19,15 +20,17 @@ pub struct DijkstraQueue {
 impl DijkstraQueue {
     /// Initialize the queue with the given root, in this case the capacity
     /// should always be equal to the number of nodes in the graph.
-    pub fn with_capacity_from_root(capacity: usize, root_node_id: usize) -> Self {
+    pub fn with_capacity_from_roots(capacity: usize, root_node_ids: Vec<NodeT>) -> Self {
         let mut res = DijkstraQueue {
             heap: Vec::with_capacity(capacity),
             distances: vec![f64::INFINITY; capacity],
             map: vec![usize::MAX; capacity],
         };
-        res.heap.push(root_node_id);
-        res.map[root_node_id] = 0;
-        res.distances[root_node_id] = 0.0;
+        for root_node_id in root_node_ids {
+            res.heap.push(root_node_id as usize);
+            res.map[root_node_id as usize] = 0;
+            res.distances[root_node_id as usize] = 0.0;
+        }
         res
     }
 

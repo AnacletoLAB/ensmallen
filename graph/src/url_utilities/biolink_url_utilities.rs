@@ -7,7 +7,7 @@ use super::*;
 ///
 /// # Example
 /// To validate a node you can use:
-/// ```rust
+/// ```ignore
 /// # use graph::*;
 /// let biolink_node_name1 = "biolink:BehavioralOutcome";
 /// let biolink_node_name2 = "biolink:Book";

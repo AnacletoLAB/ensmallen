@@ -7,7 +7,7 @@ use super::*;
 ///
 /// # Example
 /// To validate a node you can use:
-/// ```rust
+/// ```ignore
 /// # use graph::*;
 /// let ncbi_mesh_node_name = "MESH:217";
 /// let not_ncbi_mesh_node_name = "PizzaQuattroStagioni";

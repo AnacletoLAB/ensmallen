@@ -8,7 +8,7 @@ use super::*;
 ///
 /// # Example
 /// To validate a node you can use:
-/// ```rust
+/// ```ignore
 /// # use graph::*;
 /// let this_library_node_name = "GENO:0000919";
 /// let not_this_library_node_name = "PizzaQuattroStagioni";
