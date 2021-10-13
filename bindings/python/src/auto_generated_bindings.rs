@@ -1,3 +1,5 @@
+#[allow(unused_braces)]
+#[allow(unused_variables)]
 use super::*;
 use graph::{EdgeT, EdgeTypeT, NodeT, NodeTypeT, Result, WeightT};
 use pyo3::class::basic::PyObjectProtocol;
@@ -47,66 +49,67 @@ fn split_words(method_name: &str) -> Vec<String> {
 
 #[pymodule]
 fn ensmallen(_py: Python, m: &PyModule) -> PyResult<()> {
-    m.add_class::<ShortestPathsResultBFS>()?;
-    m.add_class::<Graph>()?;
     m.add_class::<ShortestPathsDjkstra>()?;
-    m.add_wrapped(wrap_pymodule!(edge_list_utils))?;
+    m.add_class::<Graph>()?;
+    m.add_class::<ShortestPathsResultBFS>()?;
     m.add_wrapped(wrap_pymodule!(utils))?;
+    m.add_wrapped(wrap_pymodule!(edge_list_utils))?;
     m.add_wrapped(wrap_pymodule!(preprocessing))?;
     Ok(())
 }
 
+///
 #[pyclass]
 #[derive(Debug, Clone)]
-pub struct ShortestPathsResultBFS {
-    pub inner: graph::ShortestPathsResultBFS,
+pub struct ShortestPathsDjkstra {
+    pub inner: graph::ShortestPathsDjkstra,
 }
 
-impl From<graph::ShortestPathsResultBFS> for ShortestPathsResultBFS {
-    fn from(val: graph::ShortestPathsResultBFS) -> ShortestPathsResultBFS {
-        ShortestPathsResultBFS { inner: val }
+impl From<graph::ShortestPathsDjkstra> for ShortestPathsDjkstra {
+    fn from(val: graph::ShortestPathsDjkstra) -> ShortestPathsDjkstra {
+        ShortestPathsDjkstra { inner: val }
     }
 }
 
-impl From<ShortestPathsResultBFS> for graph::ShortestPathsResultBFS {
-    fn from(val: ShortestPathsResultBFS) -> graph::ShortestPathsResultBFS {
+impl From<ShortestPathsDjkstra> for graph::ShortestPathsDjkstra {
+    fn from(val: ShortestPathsDjkstra) -> graph::ShortestPathsDjkstra {
         val.inner
     }
 }
 
 #[pymethods]
-impl ShortestPathsResultBFS {
+impl ShortestPathsDjkstra {
     #[automatically_generated_binding]
     #[text_signature = "($self, node_id)"]
     ///
     pub fn has_path_to_node_id(&self, node_id: NodeT) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_path_to_node_id(node_id.into()))?.into())
+        Ok({ pe!({ self.inner.has_path_to_node_id(node_id.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self, node_id)"]
     ///
-    pub fn get_distance_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_distance_from_node_id(node_id.into()))?.into())
+    pub fn get_distance_from_node_id(&self, node_id: NodeT) -> PyResult<f64> {
+        Ok({ pe!({ self.inner.get_distance_from_node_id(node_id.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self, node_id)"]
     ///
-    pub fn get_parent_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_parent_from_node_id(node_id.into()))?.into())
+    pub fn get_parent_from_node_id(&self, node_id: NodeT) -> PyResult<Option<NodeT>> {
+        Ok({ pe!({ self.inner.get_parent_from_node_id(node_id.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, dst_node_id, k)"]
-    /// Returns node at the `len - k` position on minimum path to given destination node.
+    #[text_signature = "($self, dst_node_id, distance)"]
+    /// Returns node at just before given distance on minimum path to given destination node.
     ///
     /// Parameters
     /// ----------
     /// dst_node_id: int
     ///     The node to start computing predecessors from.
-    /// k: int
-    ///     Steps to go back.
+    /// distance: float
+    ///     The distance to aim for.
     ///
     ///
     /// Raises
@@ -114,59 +117,33 @@ impl ShortestPathsResultBFS {
     /// ValueError
     ///     If the predecessors vector was not requested.
     ///
-    pub unsafe fn get_unchecked_kth_point_on_shortest_path(
+    pub fn get_point_at_given_distance_on_shortest_path(
         &self,
         dst_node_id: NodeT,
-        k: NodeT,
+        distance: f64,
     ) -> PyResult<NodeT> {
-        Ok(pe!(self
-            .inner
-            .get_unchecked_kth_point_on_shortest_path(dst_node_id.into(), k.into()))?
-        .into())
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self, dst_node_id, k)"]
-    /// Returns node at the `len - k` position on minimum path to given destination node.
-    ///
-    /// Parameters
-    /// ----------
-    /// dst_node_id: int
-    ///     The node to start computing predecessors from.
-    /// k: int
-    ///     Steps to go back.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the predecessors vector was not requested.
-    ///
-    pub fn get_kth_point_on_shortest_path(&self, dst_node_id: NodeT, k: NodeT) -> PyResult<NodeT> {
-        Ok(pe!(self
-            .inner
-            .get_kth_point_on_shortest_path(dst_node_id.into(), k.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.get_point_at_given_distance_on_shortest_path(
+                    dst_node_id.into(),
+                    distance.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self, dst_node_id)"]
     ///
     pub fn get_median_point(&self, dst_node_id: NodeT) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_median_point(dst_node_id.into()))?.into())
+        Ok({ pe!({ self.inner.get_median_point(dst_node_id.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     ///
-    pub fn get_median_point_to_most_distant_node(&self) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_median_point_to_most_distant_node())?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    ///
-    pub fn get_eccentricity(&self) -> NodeT {
+    pub fn get_eccentricity(&self) -> f64 {
         self.inner.get_eccentricity().into()
     }
 
@@ -179,15 +156,9 @@ impl ShortestPathsResultBFS {
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
-    /// Returns the number of shortest paths starting from the root node.
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If neither predecessors nor distances were computed for this BFS.
-    ///
-    pub fn get_number_of_shortest_paths(&self) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_number_of_shortest_paths())?.into())
+    /// Returns the number of shortest paths starting from the root node
+    pub fn get_number_of_shortest_paths(&self) -> NodeT {
+        self.inner.get_number_of_shortest_paths().into()
     }
 
     #[automatically_generated_binding]
@@ -208,10 +179,13 @@ impl ShortestPathsResultBFS {
     ///     If the given node ID does not exist in the current graph instance.
     ///
     pub fn get_number_of_shortest_paths_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
-        Ok(pe!(self
-            .inner
-            .get_number_of_shortest_paths_from_node_id(node_id.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_number_of_shortest_paths_from_node_id(node_id.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -233,182 +207,135 @@ impl ShortestPathsResultBFS {
         &self,
         source_node_id: NodeT,
     ) -> PyResult<Py<PyArray1<NodeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self
-                .inner
-                .get_successors_from_node_id(source_node_id.into()))?,
-            NodeT
-        ))
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    ///
-    pub fn get_distances(&self) -> PyResult<Py<PyArray1<NodeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(gil, pe!(self.inner.get_distances())?, NodeT))
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    ///
-    pub fn get_predecessors(&self) -> PyResult<Py<PyArray1<NodeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_predecessors())?,
-            NodeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({
+                    self.inner
+                        .get_successors_from_node_id(source_node_id.into())
+                })?,
+                NodeT
+            )
+        })
     }
 }
 
-pub const SHORTESTPATHSRESULTBFS_METHODS_NAMES: &[&str] = &[
+pub const SHORTESTPATHSDJKSTRA_METHODS_NAMES: &[&str] = &[
     "has_path_to_node_id",
     "get_distance_from_node_id",
     "get_parent_from_node_id",
-    "get_unchecked_kth_point_on_shortest_path",
-    "get_kth_point_on_shortest_path",
+    "get_point_at_given_distance_on_shortest_path",
     "get_median_point",
-    "get_median_point_to_most_distant_node",
     "get_eccentricity",
     "get_most_distant_node",
     "get_number_of_shortest_paths",
     "get_number_of_shortest_paths_from_node_id",
     "get_successors_from_node_id",
-    "get_distances",
-    "get_predecessors",
 ];
 
-pub const SHORTESTPATHSRESULTBFS_TERMS: &[&str] = &[
-    "kth",
-    "to",
-    "node_id",
-    "path",
-    "distance",
-    "from",
+pub const SHORTESTPATHSDJKSTRA_TERMS: &[&str] = &[
     "on",
-    "node",
-    "has",
-    "eccentricity",
-    "point",
-    "paths",
-    "of",
+    "node_id",
+    "to",
+    "distance",
+    "at",
     "median",
-    "unchecked",
+    "eccentricity",
+    "node",
+    "paths",
+    "given",
+    "shortest",
+    "point",
+    "from",
+    "get",
+    "parent",
+    "most",
     "distant",
+    "path",
+    "of",
     "number",
     "successors",
-    "get",
-    "most",
-    "predecessors",
-    "distances",
-    "shortest",
-    "parent",
+    "has",
 ];
 
-pub const SHORTESTPATHSRESULTBFS_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
+pub const SHORTESTPATHSDJKSTRA_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
     &[
-        ("has", 0.8680945035391644),
-        ("to", 0.675508823380169),
-        ("path", 0.5486558787949157),
-        ("node_id", 0.3782535762712662),
+        ("path", 0.5698479003554675),
+        ("to", 0.7663192941116177),
+        ("node_id", 0.2665950694461328),
+        ("has", 0.7663192941116177),
     ],
     &[
-        ("from", 0.4539081647953158),
-        ("node_id", 0.3782535762712662),
-        ("distance", 0.8680945035391644),
-        ("get", 0.03972182605146727),
+        ("get", 0.05638595161225976),
+        ("distance", 0.5698479003554675),
+        ("node_id", 0.2665950694461328),
+        ("from", 0.3437761061623448),
     ],
     &[
-        ("from", 0.4539081647953158),
-        ("node_id", 0.3782535762712662),
-        ("get", 0.03972182605146727),
-        ("parent", 0.8680945035391644),
+        ("get", 0.05638595161225976),
+        ("from", 0.3437761061623448),
+        ("parent", 0.7663192941116177),
+        ("node_id", 0.2665950694461328),
     ],
     &[
-        ("point", 0.18492343211351403),
-        ("unchecked", 0.35366408327492577),
-        ("kth", 0.2752041486161685),
-        ("on", 0.2752041486161685),
-        ("shortest", 0.18492343211351403),
-        ("get", 0.016182780952102235),
-        ("path", 0.2235239108372588),
+        ("distance", 0.18520056761552695),
+        ("given", 0.24905377058627573),
+        ("get", 0.018325434273984424),
+        ("point", 0.18520056761552695),
+        ("on", 0.24905377058627573),
+        ("at", 0.24905377058627573),
+        ("shortest", 0.14314153803787533),
+        ("path", 0.18520056761552695),
     ],
     &[
-        ("kth", 0.3570641216037613),
-        ("get", 0.020996378487838627),
-        ("point", 0.23992924228644916),
-        ("on", 0.3570641216037613),
-        ("shortest", 0.23992924228644916),
-        ("path", 0.29001150339437226),
+        ("median", 1.1385315226801176),
+        ("get", 0.08377341382392879),
+        ("point", 0.8466311662424089),
     ],
     &[
-        ("get", 0.05920765965110459),
-        ("median", 1.0068846395477784),
-        ("point", 0.6765761498284854),
+        ("eccentricity", 1.811300149718369),
+        ("get", 0.13327588562897763),
     ],
     &[
-        ("node", 0.2752041486161685),
-        ("point", 0.18492343211351403),
-        ("get", 0.016182780952102235),
-        ("to", 0.2752041486161685),
-        ("most", 0.2752041486161685),
-        ("median", 0.2752041486161685),
-        ("distant", 0.2752041486161685),
+        ("most", 0.7663192941116177),
+        ("distant", 0.7663192941116177),
+        ("node", 0.7663192941116177),
+        ("get", 0.05638595161225976),
     ],
     &[
-        ("get", 0.09465377695327545),
-        ("eccentricity", 2.068596328021161),
+        ("shortest", 0.31373487789123355),
+        ("paths", 0.40591905230800424),
+        ("of", 0.40591905230800424),
+        ("get", 0.04016533539503435),
+        ("number", 0.40591905230800424),
     ],
     &[
-        ("node", 0.675508823380169),
-        ("get", 0.03972182605146727),
-        ("most", 0.675508823380169),
-        ("distant", 0.675508823380169),
+        ("node_id", 0.10915703630865278),
+        ("get", 0.023087161290059114),
+        ("from", 0.140758720633401),
+        ("shortest", 0.18033579595322874),
+        ("of", 0.23332354975184497),
+        ("paths", 0.23332354975184497),
+        ("number", 0.23332354975184497),
     ],
     &[
-        ("get", 0.02823189745278895),
-        ("number", 0.4801112568544316),
-        ("paths", 0.4801112568544316),
-        ("shortest", 0.3226107668081797),
-        ("of", 0.4801112568544316),
-    ],
-    &[
-        ("of", 0.2752041486161685),
-        ("number", 0.2752041486161685),
-        ("from", 0.18492343211351403),
-        ("paths", 0.2752041486161685),
-        ("node_id", 0.15410154511064045),
-        ("shortest", 0.18492343211351403),
-        ("get", 0.016182780952102235),
-    ],
-    &[
-        ("node_id", 0.3782535762712662),
-        ("successors", 0.8680945035391644),
-        ("get", 0.03972182605146727),
-        ("from", 0.4539081647953158),
-    ],
-    &[
-        ("distances", 2.068596328021161),
-        ("get", 0.09465377695327545),
-    ],
-    &[
-        ("get", 0.09465377695327545),
-        ("predecessors", 2.068596328021161),
+        ("from", 0.3437761061623448),
+        ("successors", 0.7663192941116177),
+        ("get", 0.05638595161225976),
+        ("node_id", 0.2665950694461328),
     ],
 ];
 
 #[pymethods]
-impl ShortestPathsResultBFS {
+impl ShortestPathsDjkstra {
     fn _repr_html_(&self) -> String {
         self.__repr__()
     }
 }
 
 #[pyproto]
-impl PyObjectProtocol for ShortestPathsResultBFS {
+impl PyObjectProtocol for ShortestPathsDjkstra {
     fn __str__(&'p self) -> String {
         self.inner.to_string()
     }
@@ -430,7 +357,7 @@ impl PyObjectProtocol for ShortestPathsResultBFS {
         let tokens_expanded = tokens
             .iter()
             .map(|token| {
-                let mut similarities = SHORTESTPATHSRESULTBFS_TERMS
+                let mut similarities = SHORTESTPATHSDJKSTRA_TERMS
                     .iter()
                     .map(move |term| (*term, jaro_winkler(token, term) as f64))
                     .collect::<Vec<(&str, f64)>>();
@@ -445,14 +372,14 @@ impl PyObjectProtocol for ShortestPathsResultBFS {
         // Compute the weighted ranking of each method ("document")
         // where the conribution of each term is weighted by it's similarity
         // with the query tokens
-        let mut doc_scores = SHORTESTPATHSRESULTBFS_TFIDF_FREQUENCIES
+        let mut doc_scores = SHORTESTPATHSDJKSTRA_TFIDF_FREQUENCIES
             .par_iter()
             .enumerate()
             // for each document
             .map(|(id, frequencies_doc)| {
                 (
                     id,
-                    (jaro_winkler(&name, SHORTESTPATHSRESULTBFS_METHODS_NAMES[id]).exp() - 1.0)
+                    (jaro_winkler(&name, SHORTESTPATHSDJKSTRA_METHODS_NAMES[id]).exp() - 1.0)
                         * frequencies_doc
                             .iter()
                             .map(|(term, weight)| {
@@ -477,7 +404,7 @@ impl PyObjectProtocol for ShortestPathsResultBFS {
                 .map(|(method_id, _)| {
                     format!(
                         "* '{}'",
-                        SHORTESTPATHSRESULTBFS_METHODS_NAMES[*method_id].to_string()
+                        SHORTESTPATHSDJKSTRA_METHODS_NAMES[*method_id].to_string()
                     )
                 })
                 .take(10)
@@ -487,6 +414,23 @@ impl PyObjectProtocol for ShortestPathsResultBFS {
     }
 }
 
+/// This is the main struct in Ensmallen, it allows to load and manipulate Graphs efficently.
+///  You are not supposed to directly instantiate this struct but instead you should use the
+///  static method `from_csv`, which allows to load the graph from an edge-list.
+///  
+///  To get information about a loaded graph, you can call the `textual_report` method which
+///  generates an human-readable HTML report.
+///  
+///  By default we use EliasFano to store the Adjacency Matrix, this allows to save memory but
+///  is slower than a CSR. For this reason you can use the `enable` method to enable optimizzations
+///  which speeds up the operations at the cost of more memory usage. You can check the memory usage
+///  in bytes using `get_total_memory_used` and you can get a detailed memory report of each data-structure
+///  inside Graph using `memory_stats`.
+///  
+///  You can pre-compute the memory needed (in bits) to store the adjacency matrix of a Graph with $|E|$ edges and $|V|$ nodes:
+///   $$2 |E| + |E| \\left\\lceil \\log_2 \\frac{|V|^2}{|E|} \\right\\rceil$$
+///  
+///  Most Graph properties are automatically cached to speed up.
 #[pyclass]
 #[derive(Debug, Clone)]
 pub struct Graph {
@@ -540,10 +484,13 @@ impl Graph {
     ///     The graph must be undirected, as we do not currently support this transformation for directed graphs.
     ///
     pub fn get_symmetric_normalized_laplacian_transformed_graph(&self) -> PyResult<Graph> {
-        Ok(pe!(self
-            .inner
-            .get_symmetric_normalized_laplacian_transformed_graph())?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_symmetric_normalized_laplacian_transformed_graph()
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -556,7 +503,7 @@ impl Graph {
     ///     The graph must be undirected, as we do not currently support this transformation for directed graphs.
     ///
     pub fn get_symmetric_normalized_transformed_graph(&self) -> PyResult<Graph> {
-        Ok(pe!(self.inner.get_symmetric_normalized_transformed_graph())?.into())
+        Ok({ pe!({ self.inner.get_symmetric_normalized_transformed_graph() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -626,7 +573,7 @@ impl Graph {
     ///     The node to be checked for.
     ///
     pub fn is_singleton_from_node_id(&self, node_id: NodeT) -> PyResult<bool> {
-        Ok(pe!(self.inner.is_singleton_from_node_id(node_id.into()))?.into())
+        Ok({ pe!({ self.inner.is_singleton_from_node_id(node_id.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -657,10 +604,13 @@ impl Graph {
     ///     The node to be checked for.
     ///
     pub fn is_singleton_with_selfloops_from_node_id(&self, node_id: NodeT) -> PyResult<bool> {
-        Ok(pe!(self
-            .inner
-            .is_singleton_with_selfloops_from_node_id(node_id.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .is_singleton_with_selfloops_from_node_id(node_id.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -695,7 +645,7 @@ impl Graph {
     ///     The node name to be checked for.
     ///
     pub fn is_singleton_from_node_name(&self, node_name: &str) -> PyResult<bool> {
-        Ok(pe!(self.inner.is_singleton_from_node_name(node_name.into()))?.into())
+        Ok({ pe!({ self.inner.is_singleton_from_node_name(node_name.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -849,7 +799,7 @@ impl Graph {
     ///     Integer ID of the node, if this is bigger that the number of nodes it will panic.
     ///
     pub fn is_trap_node_from_node_id(&self, node_id: NodeT) -> PyResult<bool> {
-        Ok(pe!(self.inner.is_trap_node_from_node_id(node_id.into()))?.into())
+        Ok({ pe!({ self.inner.is_trap_node_from_node_id(node_id.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -967,14 +917,17 @@ impl Graph {
         &self,
         root_node_id: NodeT,
     ) -> PyResult<Py<PyArray1<NodeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self
-                .inner
-                .get_bfs_topological_sorting_from_node_id(root_node_id.into()))?,
-            NodeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({
+                    self.inner
+                        .get_bfs_topological_sorting_from_node_id(root_node_id.into())
+                })?,
+                NodeT
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -996,14 +949,17 @@ impl Graph {
         &self,
         root_node_id: NodeT,
     ) -> PyResult<Py<PyArray1<NodeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self
-                .inner
-                .get_reversed_bfs_topological_sorting_from_node_id(root_node_id.into()))?,
-            NodeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({
+                    self.inner
+                        .get_reversed_bfs_topological_sorting_from_node_id(root_node_id.into())
+                })?,
+                NodeT
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -1025,10 +981,13 @@ impl Graph {
         &self,
         root_node_id: NodeT,
     ) -> PyResult<Graph> {
-        Ok(pe!(self
-            .inner
-            .sort_by_bfs_topological_sorting_from_node_id(root_node_id.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .sort_by_bfs_topological_sorting_from_node_id(root_node_id.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -1064,14 +1023,17 @@ impl Graph {
         &self,
         weight: Option<WeightT>,
     ) -> PyResult<Py<PyArray2<WeightT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_2d!(
-            gil,
-            pe!(self
-                .inner
-                .get_dense_weighted_adjacency_matrix(weight.into()))?,
-            WeightT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_2d!(
+                gil,
+                pe!({
+                    self.inner
+                        .get_dense_weighted_adjacency_matrix(weight.into())
+                })?,
+                WeightT
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -1103,15 +1065,19 @@ impl Graph {
         top_k_components: Option<NodeT>,
         verbose: Option<bool>,
     ) -> PyResult<Graph> {
-        Ok(pe!(self.inner.remove_components(
-            node_names.into(),
-            node_types.into(),
-            edge_types.into(),
-            minimum_component_size.into(),
-            top_k_components.into(),
-            verbose.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.remove_components(
+                    node_names.into(),
+                    node_types.into(),
+                    edge_types.into(),
+                    minimum_component_size.into(),
+                    top_k_components.into(),
+                    verbose.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -1136,7 +1102,7 @@ impl Graph {
     ///     If one of the two graphs has edge types and the other does not.
     ///
     pub fn overlaps(&self, other: &Graph) -> PyResult<bool> {
-        Ok(pe!(self.inner.overlaps(&other.inner))?.into())
+        Ok({ pe!({ self.inner.overlaps(&other.inner) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -1161,7 +1127,7 @@ impl Graph {
     ///     If one of the two graphs has edge types and the other does not.
     ///
     pub fn contains(&self, other: &Graph) -> PyResult<bool> {
-        Ok(pe!(self.inner.contains(&other.inner))?.into())
+        Ok({ pe!({ self.inner.contains(&other.inner) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -1189,18 +1155,22 @@ impl Graph {
         first_node_types_set: Option<HashSet<String>>,
         second_node_types_set: Option<HashSet<String>>,
     ) -> PyResult<Py<PyArray2<NodeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_2d!(
-            gil,
-            pe!(self.inner.get_bipartite_edges(
-                removed_existing_edges.into(),
-                first_nodes_set.into(),
-                second_nodes_set.into(),
-                first_node_types_set.into(),
-                second_node_types_set.into()
-            ))?,
-            NodeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_2d!(
+                gil,
+                pe!({
+                    self.inner.get_bipartite_edges(
+                        removed_existing_edges.into(),
+                        first_nodes_set.into(),
+                        second_nodes_set.into(),
+                        first_node_types_set.into(),
+                        second_node_types_set.into(),
+                    )
+                })?,
+                NodeT
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -1228,14 +1198,18 @@ impl Graph {
         first_node_types_set: Option<HashSet<String>>,
         second_node_types_set: Option<HashSet<String>>,
     ) -> PyResult<Vec<Vec<String>>> {
-        Ok(pe!(self.inner.get_bipartite_edge_names(
-            removed_existing_edges.into(),
-            first_nodes_set.into(),
-            second_nodes_set.into(),
-            first_node_types_set.into(),
-            second_node_types_set.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.get_bipartite_edge_names(
+                    removed_existing_edges.into(),
+                    first_nodes_set.into(),
+                    second_nodes_set.into(),
+                    first_node_types_set.into(),
+                    second_node_types_set.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -1260,17 +1234,21 @@ impl Graph {
         star_points_nodes_set: Option<HashSet<String>>,
         star_points_node_types_set: Option<HashSet<String>>,
     ) -> PyResult<Py<PyArray2<NodeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_2d!(
-            gil,
-            pe!(self.inner.get_star_edges(
-                central_node.into(),
-                removed_existing_edges.into(),
-                star_points_nodes_set.into(),
-                star_points_node_types_set.into()
-            ))?,
-            NodeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_2d!(
+                gil,
+                pe!({
+                    self.inner.get_star_edges(
+                        central_node.into(),
+                        removed_existing_edges.into(),
+                        star_points_nodes_set.into(),
+                        star_points_node_types_set.into(),
+                    )
+                })?,
+                NodeT
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -1295,13 +1273,17 @@ impl Graph {
         star_points_nodes_set: Option<HashSet<String>>,
         star_points_node_types_set: Option<HashSet<String>>,
     ) -> PyResult<Vec<Vec<String>>> {
-        Ok(pe!(self.inner.get_star_edge_names(
-            central_node.into(),
-            removed_existing_edges.into(),
-            star_points_nodes_set.into(),
-            star_points_node_types_set.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.get_star_edge_names(
+                    central_node.into(),
+                    removed_existing_edges.into(),
+                    star_points_nodes_set.into(),
+                    star_points_node_types_set.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -1404,7 +1386,8 @@ impl Graph {
     ///     The edge value to decode.
     ///
     pub fn decode_edge(&self, edge: u64) -> (NodeT, NodeT) {
-        self.inner.decode_edge(edge.into()).into()
+        let (subresult_0, subresult_1) = self.inner.decode_edge(edge.into());
+        ({ subresult_0.into() }, { subresult_1.into() })
     }
 
     #[automatically_generated_binding]
@@ -1430,7 +1413,7 @@ impl Graph {
     ///     If the given node ID does not exists in the graph.
     ///
     pub fn validate_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.validate_node_id(node_id.into()))?.into())
+        Ok({ pe!({ self.inner.validate_node_id(node_id.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -1449,12 +1432,14 @@ impl Graph {
     ///     If any of the given node ID does not exists in the graph.
     ///
     pub fn validate_node_ids(&self, node_ids: Vec<NodeT>) -> PyResult<Py<PyArray1<NodeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.validate_node_ids(node_ids.into()))?,
-            NodeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({ self.inner.validate_node_ids(node_ids.into()) })?,
+                NodeT
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -1473,7 +1458,7 @@ impl Graph {
     ///     If the given edge ID does not exists in the graph.
     ///
     pub fn validate_edge_id(&self, edge_id: EdgeT) -> PyResult<EdgeT> {
-        Ok(pe!(self.inner.validate_edge_id(edge_id.into()))?.into())
+        Ok({ pe!({ self.inner.validate_edge_id(edge_id.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -1492,12 +1477,14 @@ impl Graph {
     ///     If any of the given edge ID does not exists in the graph.
     ///
     pub fn validate_edge_ids(&self, edge_ids: Vec<EdgeT>) -> PyResult<Py<PyArray1<EdgeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.validate_edge_ids(edge_ids.into()))?,
-            EdgeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({ self.inner.validate_edge_ids(edge_ids.into()) })?,
+                EdgeT
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -1512,7 +1499,7 @@ impl Graph {
     ///     If the graph contains unknown node types.
     ///
     pub fn must_not_contain_unknown_node_types(&self) -> PyResult<()> {
-        Ok(pe!(self.inner.must_not_contain_unknown_node_types())?.into())
+        Ok({ pe!({ self.inner.must_not_contain_unknown_node_types() })? })
     }
 
     #[automatically_generated_binding]
@@ -1527,7 +1514,7 @@ impl Graph {
     ///     If the graph contains unknown edge types.
     ///
     pub fn must_not_contain_unknown_edge_types(&self) -> PyResult<()> {
-        Ok(pe!(self.inner.must_not_contain_unknown_edge_types())?.into())
+        Ok({ pe!({ self.inner.must_not_contain_unknown_edge_types() })? })
     }
 
     #[automatically_generated_binding]
@@ -1549,7 +1536,7 @@ impl Graph {
         &self,
         node_type_id: Option<NodeTypeT>,
     ) -> PyResult<Option<NodeTypeT>> {
-        Ok(pe!(self.inner.validate_node_type_id(node_type_id.into()))?.into())
+        Ok({ pe!({ self.inner.validate_node_type_id(node_type_id.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -1571,7 +1558,7 @@ impl Graph {
         &self,
         node_type_ids: Vec<Option<NodeTypeT>>,
     ) -> PyResult<Vec<Option<NodeTypeT>>> {
-        Ok(pe!(self.inner.validate_node_type_ids(node_type_ids.into()))?.into())
+        Ok({ pe!({ self.inner.validate_node_type_ids(node_type_ids.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -1593,7 +1580,7 @@ impl Graph {
         &self,
         edge_type_id: Option<EdgeTypeT>,
     ) -> PyResult<Option<EdgeTypeT>> {
-        Ok(pe!(self.inner.validate_edge_type_id(edge_type_id.into()))?.into())
+        Ok({ pe!({ self.inner.validate_edge_type_id(edge_type_id.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -1615,7 +1602,7 @@ impl Graph {
         &self,
         edge_type_ids: Vec<Option<EdgeTypeT>>,
     ) -> PyResult<Vec<Option<EdgeTypeT>>> {
-        Ok(pe!(self.inner.validate_edge_type_ids(edge_type_ids.into()))?.into())
+        Ok({ pe!({ self.inner.validate_edge_type_ids(edge_type_ids.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -1628,7 +1615,7 @@ impl Graph {
     ///     If the graph is directed.
     ///
     pub fn must_be_undirected(&self) -> PyResult<()> {
-        Ok(pe!(self.inner.must_be_undirected())?.into())
+        Ok({ pe!({ self.inner.must_be_undirected() })? })
     }
 
     #[automatically_generated_binding]
@@ -1641,7 +1628,7 @@ impl Graph {
     ///     If the graph is not a multigraph.
     ///
     pub fn must_be_multigraph(&self) -> PyResult<()> {
-        Ok(pe!(self.inner.must_be_multigraph())?.into())
+        Ok({ pe!({ self.inner.must_be_multigraph() })? })
     }
 
     #[automatically_generated_binding]
@@ -1654,7 +1641,7 @@ impl Graph {
     ///     If the graph is a multigraph.
     ///
     pub fn must_not_be_multigraph(&self) -> PyResult<()> {
-        Ok(pe!(self.inner.must_not_be_multigraph())?.into())
+        Ok({ pe!({ self.inner.must_not_be_multigraph() })? })
     }
 
     #[automatically_generated_binding]
@@ -1667,7 +1654,7 @@ impl Graph {
     ///     If the graph is a multigraph.
     ///
     pub fn must_contain_identity_matrix(&self) -> PyResult<()> {
-        Ok(pe!(self.inner.must_contain_identity_matrix())?.into())
+        Ok({ pe!({ self.inner.must_contain_identity_matrix() })? })
     }
 
     #[automatically_generated_binding]
@@ -1680,7 +1667,7 @@ impl Graph {
     ///     If the graph does not have edges.
     ///
     pub fn must_not_contain_weighted_singleton_nodes(&self) -> PyResult<()> {
-        Ok(pe!(self.inner.must_not_contain_weighted_singleton_nodes())?.into())
+        Ok({ pe!({ self.inner.must_not_contain_weighted_singleton_nodes() })? })
     }
 
     #[automatically_generated_binding]
@@ -1693,7 +1680,7 @@ impl Graph {
     ///     If the graph does not have edges.
     ///
     pub fn must_have_edges(&self) -> PyResult<()> {
-        Ok(pe!(self.inner.must_have_edges())?.into())
+        Ok({ pe!({ self.inner.must_have_edges() })? })
     }
 
     #[automatically_generated_binding]
@@ -1706,7 +1693,7 @@ impl Graph {
     ///     If the graph does not have nodes.
     ///
     pub fn must_have_nodes(&self) -> PyResult<()> {
-        Ok(pe!(self.inner.must_have_nodes())?.into())
+        Ok({ pe!({ self.inner.must_have_nodes() })? })
     }
 
     #[automatically_generated_binding]
@@ -1719,7 +1706,7 @@ impl Graph {
     ///     If the graph is not connected.
     ///
     pub fn must_be_connected(&self) -> PyResult<()> {
-        Ok(pe!(self.inner.must_be_connected())?.into())
+        Ok({ pe!({ self.inner.must_be_connected() })? })
     }
 
     #[automatically_generated_binding]
@@ -1732,7 +1719,7 @@ impl Graph {
     ///     If the graph does not contain edge weights.
     ///
     pub fn get_total_edge_weights(&self) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_total_edge_weights())?.into())
+        Ok({ pe!({ self.inner.get_total_edge_weights() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -1745,7 +1732,7 @@ impl Graph {
     ///     If the graph does not contain edge weights.
     ///
     pub fn get_mininum_edge_weight(&self) -> PyResult<WeightT> {
-        Ok(pe!(self.inner.get_mininum_edge_weight())?.into())
+        Ok({ pe!({ self.inner.get_mininum_edge_weight() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -1758,7 +1745,7 @@ impl Graph {
     ///     If the graph does not contain edge weights.
     ///
     pub fn get_maximum_edge_weight(&self) -> PyResult<WeightT> {
-        Ok(pe!(self.inner.get_maximum_edge_weight())?.into())
+        Ok({ pe!({ self.inner.get_maximum_edge_weight() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -1791,21 +1778,21 @@ impl Graph {
     #[text_signature = "($self)"]
     /// Return the maximum weighted node degree
     pub fn get_weighted_maximum_node_degree(&self) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_weighted_maximum_node_degree())?.into())
+        Ok({ pe!({ self.inner.get_weighted_maximum_node_degree() })?.into() })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Return the minimum weighted node degree
     pub fn get_weighted_minimum_node_degree(&self) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_weighted_minimum_node_degree())?.into())
+        Ok({ pe!({ self.inner.get_weighted_minimum_node_degree() })?.into() })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Return the number of weighted singleton nodes, i.e. nodes with weighted node degree equal to zero
     pub fn get_weighted_singleton_nodes_number(&self) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_weighted_singleton_nodes_number())?.into())
+        Ok({ pe!({ self.inner.get_weighted_singleton_nodes_number() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -1862,14 +1849,18 @@ impl Graph {
         distance_name: Option<&str>,
         verbose: Option<bool>,
     ) -> PyResult<Graph> {
-        Ok(pe!(self.inner.generate_new_edges_from_node_features(
-            features.into(),
-            neighbours_number.into(),
-            max_degree.into(),
-            distance_name.into(),
-            verbose.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.generate_new_edges_from_node_features(
+                    features.into(),
+                    neighbours_number.into(),
+                    max_degree.into(),
+                    distance_name.into(),
+                    verbose.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -1892,8 +1883,12 @@ impl Graph {
     ///     If the graph is a multigraph.
     ///
     pub fn set_inplace_all_edge_types(&mut self, edge_type: String) -> PyResult<()> {
-        pe!(self.inner.set_inplace_all_edge_types(edge_type))?;
-        Ok(())
+        Ok({
+            {
+                pe!({ self.inner.set_inplace_all_edge_types(edge_type) })?;
+                ()
+            }
+        })
     }
 
     #[automatically_generated_binding]
@@ -1908,7 +1903,7 @@ impl Graph {
     ///     The edge type to assing to all the edges.
     ///
     pub fn set_all_edge_types(&self, edge_type: String) -> PyResult<Graph> {
-        Ok(pe!(self.inner.set_all_edge_types(edge_type))?.into())
+        Ok({ pe!({ self.inner.set_all_edge_types(edge_type) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -1921,8 +1916,12 @@ impl Graph {
     ///     The node type to assing to all the nodes.
     ///
     pub fn set_inplace_all_node_types(&mut self, node_type: String) -> PyResult<()> {
-        pe!(self.inner.set_inplace_all_node_types(node_type))?;
-        Ok(())
+        Ok({
+            {
+                pe!({ self.inner.set_inplace_all_node_types(node_type) })?;
+                ()
+            }
+        })
     }
 
     #[automatically_generated_binding]
@@ -1937,7 +1936,7 @@ impl Graph {
     ///     The node type to assing to all the nodes.
     ///
     pub fn set_all_node_types(&self, node_type: String) -> PyResult<Graph> {
-        Ok(pe!(self.inner.set_all_node_types(node_type))?.into())
+        Ok({ pe!({ self.inner.set_all_node_types(node_type) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -1964,10 +1963,15 @@ impl Graph {
         &mut self,
         node_type_ids_to_remove: Vec<NodeTypeT>,
     ) -> PyResult<()> {
-        pe!(self
-            .inner
-            .remove_inplace_node_type_ids(node_type_ids_to_remove.into()))?;
-        Ok(())
+        Ok({
+            {
+                pe!({
+                    self.inner
+                        .remove_inplace_node_type_ids(node_type_ids_to_remove.into())
+                })?;
+                ()
+            }
+        })
     }
 
     #[automatically_generated_binding]
@@ -1983,8 +1987,12 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn remove_inplace_singleton_node_types(&mut self) -> PyResult<()> {
-        pe!(self.inner.remove_inplace_singleton_node_types())?;
-        Ok(())
+        Ok({
+            {
+                pe!({ self.inner.remove_inplace_singleton_node_types() })?;
+                ()
+            }
+        })
     }
 
     #[automatically_generated_binding]
@@ -2010,10 +2018,15 @@ impl Graph {
         &mut self,
         edge_type_ids_to_remove: Vec<EdgeTypeT>,
     ) -> PyResult<()> {
-        pe!(self
-            .inner
-            .remove_inplace_edge_type_ids(edge_type_ids_to_remove.into()))?;
-        Ok(())
+        Ok({
+            {
+                pe!({
+                    self.inner
+                        .remove_inplace_edge_type_ids(edge_type_ids_to_remove.into())
+                })?;
+                ()
+            }
+        })
     }
 
     #[automatically_generated_binding]
@@ -2029,8 +2042,12 @@ impl Graph {
     ///     If the graph does not have edge types.
     ///
     pub fn remove_inplace_singleton_edge_types(&mut self) -> PyResult<()> {
-        pe!(self.inner.remove_inplace_singleton_edge_types())?;
-        Ok(())
+        Ok({
+            {
+                pe!({ self.inner.remove_inplace_singleton_edge_types() })?;
+                ()
+            }
+        })
     }
 
     #[automatically_generated_binding]
@@ -2054,10 +2071,15 @@ impl Graph {
     ///     If the given node type name does not exists in the graph.
     ///
     pub fn remove_inplace_node_type_name(&mut self, node_type_name: &str) -> PyResult<()> {
-        pe!(self
-            .inner
-            .remove_inplace_node_type_name(node_type_name.into()))?;
-        Ok(())
+        Ok({
+            {
+                pe!({
+                    self.inner
+                        .remove_inplace_node_type_name(node_type_name.into())
+                })?;
+                ()
+            }
+        })
     }
 
     #[automatically_generated_binding]
@@ -2081,7 +2103,7 @@ impl Graph {
     ///     If the given node type ID does not exists in the graph.
     ///
     pub fn remove_node_type_id(&self, node_type_id: NodeTypeT) -> PyResult<Graph> {
-        Ok(pe!(self.inner.remove_node_type_id(node_type_id.into()))?.into())
+        Ok({ pe!({ self.inner.remove_node_type_id(node_type_id.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -2097,7 +2119,7 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn remove_singleton_node_types(&self) -> PyResult<Graph> {
-        Ok(pe!(self.inner.remove_singleton_node_types())?.into())
+        Ok({ pe!({ self.inner.remove_singleton_node_types() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -2121,7 +2143,7 @@ impl Graph {
     ///     If the given node type name does not exists in the graph.
     ///
     pub fn remove_node_type_name(&self, node_type_name: &str) -> PyResult<Graph> {
-        Ok(pe!(self.inner.remove_node_type_name(node_type_name.into()))?.into())
+        Ok({ pe!({ self.inner.remove_node_type_name(node_type_name.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -2145,10 +2167,15 @@ impl Graph {
     ///     If the given edge type name does not exists in the graph.
     ///
     pub fn remove_inplace_edge_type_name(&mut self, edge_type_name: &str) -> PyResult<()> {
-        pe!(self
-            .inner
-            .remove_inplace_edge_type_name(edge_type_name.into()))?;
-        Ok(())
+        Ok({
+            {
+                pe!({
+                    self.inner
+                        .remove_inplace_edge_type_name(edge_type_name.into())
+                })?;
+                ()
+            }
+        })
     }
 
     #[automatically_generated_binding]
@@ -2172,7 +2199,7 @@ impl Graph {
     ///     If the given edge type ID does not exists in the graph.
     ///
     pub fn remove_edge_type_id(&self, edge_type_id: EdgeTypeT) -> PyResult<Graph> {
-        Ok(pe!(self.inner.remove_edge_type_id(edge_type_id.into()))?.into())
+        Ok({ pe!({ self.inner.remove_edge_type_id(edge_type_id.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -2188,7 +2215,7 @@ impl Graph {
     ///     If the graph does not have edge types.
     ///
     pub fn remove_singleton_edge_types(&self) -> PyResult<Graph> {
-        Ok(pe!(self.inner.remove_singleton_edge_types())?.into())
+        Ok({ pe!({ self.inner.remove_singleton_edge_types() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -2212,7 +2239,7 @@ impl Graph {
     ///     If the given edge type name does not exists in the graph.
     ///
     pub fn remove_edge_type_name(&self, edge_type_name: &str) -> PyResult<Graph> {
-        Ok(pe!(self.inner.remove_edge_type_name(edge_type_name.into()))?.into())
+        Ok({ pe!({ self.inner.remove_edge_type_name(edge_type_name.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -2227,8 +2254,12 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn remove_inplace_node_types(&mut self) -> PyResult<()> {
-        pe!(self.inner.remove_inplace_node_types())?;
-        Ok(())
+        Ok({
+            {
+                pe!({ self.inner.remove_inplace_node_types() })?;
+                ()
+            }
+        })
     }
 
     #[automatically_generated_binding]
@@ -2243,7 +2274,7 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn remove_node_types(&self) -> PyResult<Graph> {
-        Ok(pe!(self.inner.remove_node_types())?.into())
+        Ok({ pe!({ self.inner.remove_node_types() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -2260,8 +2291,12 @@ impl Graph {
     ///     If the graph is a multigraph.
     ///
     pub fn remove_inplace_edge_types(&mut self) -> PyResult<()> {
-        pe!(self.inner.remove_inplace_edge_types())?;
-        Ok(())
+        Ok({
+            {
+                pe!({ self.inner.remove_inplace_edge_types() })?;
+                ()
+            }
+        })
     }
 
     #[automatically_generated_binding]
@@ -2276,7 +2311,7 @@ impl Graph {
     ///     If the graph does not have edge types.
     ///
     pub fn remove_edge_types(&self) -> PyResult<Graph> {
-        Ok(pe!(self.inner.remove_edge_types())?.into())
+        Ok({ pe!({ self.inner.remove_edge_types() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -2291,8 +2326,12 @@ impl Graph {
     ///     If the graph does not have edge weights.
     ///
     pub fn remove_inplace_edge_weights(&mut self) -> PyResult<()> {
-        pe!(self.inner.remove_inplace_edge_weights())?;
-        Ok(())
+        Ok({
+            {
+                pe!({ self.inner.remove_inplace_edge_weights() })?;
+                ()
+            }
+        })
     }
 
     #[automatically_generated_binding]
@@ -2307,7 +2346,7 @@ impl Graph {
     ///     If the graph does not have edge weights.
     ///
     pub fn remove_edge_weights(&self) -> PyResult<Graph> {
-        Ok(pe!(self.inner.remove_edge_weights())?.into())
+        Ok({ pe!({ self.inner.remove_edge_weights() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -2322,7 +2361,7 @@ impl Graph {
     ///     If the graph does not have edge weights.
     ///
     pub fn divide_edge_weights_inplace(&mut self, denominator: WeightT) -> PyResult<()> {
-        Ok(pe!(self.inner.divide_edge_weights_inplace(denominator.into()))?.into())
+        Ok({ pe!({ self.inner.divide_edge_weights_inplace(denominator.into()) })? })
     }
 
     #[automatically_generated_binding]
@@ -2337,7 +2376,7 @@ impl Graph {
     ///     If the graph does not have edge weights.
     ///
     pub fn divide_edge_weights(&self, denominator: WeightT) -> PyResult<Graph> {
-        Ok(pe!(self.inner.divide_edge_weights(denominator.into()))?.into())
+        Ok({ pe!({ self.inner.divide_edge_weights(denominator.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -2352,7 +2391,7 @@ impl Graph {
     ///     If the graph does not have edge weights.
     ///
     pub fn multiply_edge_weights_inplace(&mut self, denominator: WeightT) -> PyResult<()> {
-        Ok(pe!(self.inner.multiply_edge_weights_inplace(denominator.into()))?.into())
+        Ok({ pe!({ self.inner.multiply_edge_weights_inplace(denominator.into()) })? })
     }
 
     #[automatically_generated_binding]
@@ -2367,7 +2406,7 @@ impl Graph {
     ///     If the graph does not have edge weights.
     ///
     pub fn multiply_edge_weights(&self, denominator: WeightT) -> PyResult<Graph> {
-        Ok(pe!(self.inner.multiply_edge_weights(denominator.into()))?.into())
+        Ok({ pe!({ self.inner.multiply_edge_weights(denominator.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -2439,34 +2478,40 @@ impl Graph {
     #[text_signature = "($self)"]
     /// Returns how many bytes are currently used to store the node types
     pub fn get_node_types_total_memory_requirements(&self) -> PyResult<usize> {
-        Ok(pe!(self.inner.get_node_types_total_memory_requirements())?.into())
+        Ok({ pe!({ self.inner.get_node_types_total_memory_requirements() })?.into() })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns human readable amount of how many bytes are currently used to store the node types
     pub fn get_node_types_total_memory_requirements_human_readable(&self) -> PyResult<String> {
-        Ok(pe!(self
-            .inner
-            .get_node_types_total_memory_requirements_human_readable())?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_node_types_total_memory_requirements_human_readable()
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns how many bytes are currently used to store the edge types
     pub fn get_edge_types_total_memory_requirements(&self) -> PyResult<usize> {
-        Ok(pe!(self.inner.get_edge_types_total_memory_requirements())?.into())
+        Ok({ pe!({ self.inner.get_edge_types_total_memory_requirements() })?.into() })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns human readable amount of how many bytes are currently used to store the edge types
     pub fn get_edge_types_total_memory_requirements_human_readable(&self) -> PyResult<String> {
-        Ok(pe!(self
-            .inner
-            .get_edge_types_total_memory_requirements_human_readable())?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_edge_types_total_memory_requirements_human_readable()
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -2509,7 +2554,7 @@ impl Graph {
     #[text_signature = "($self)"]
     /// Returns total number of triads in the weighted graph
     pub fn get_weighted_triads_number(&self) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_weighted_triads_number())?.into())
+        Ok({ pe!({ self.inner.get_weighted_triads_number() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -2684,7 +2729,7 @@ impl Graph {
     ///     If the given node IDs are not available for all the values in the graph.
     ///
     pub fn remap_from_node_ids(&self, node_ids: Vec<NodeT>) -> PyResult<Graph> {
-        Ok(pe!(self.inner.remap_from_node_ids(node_ids.into()))?.into())
+        Ok({ pe!({ self.inner.remap_from_node_ids(node_ids.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -2705,7 +2750,7 @@ impl Graph {
     ///     If the given node names are not available for all the values in the graph.
     ///
     pub fn remap_from_node_names(&self, node_names: Vec<&str>) -> PyResult<Graph> {
-        Ok(pe!(self.inner.remap_from_node_names(node_names.into()))?.into())
+        Ok({ pe!({ self.inner.remap_from_node_names(node_names.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -2718,7 +2763,7 @@ impl Graph {
     ///     The graph to remap towards.
     ///
     pub fn remap_from_graph(&self, other: &Graph) -> PyResult<Graph> {
-        Ok(pe!(self.inner.remap_from_graph(&other.inner))?.into())
+        Ok({ pe!({ self.inner.remap_from_graph(&other.inner) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -2750,14 +2795,18 @@ impl Graph {
         only_from_same_component: Option<bool>,
         verbose: Option<bool>,
     ) -> PyResult<Graph> {
-        Ok(pe!(self.inner.sample_negatives(
-            negatives_number.into(),
-            random_state.into(),
-            seed_graph.map(|sg| &sg.inner),
-            only_from_same_component.into(),
-            verbose.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.sample_negatives(
+                    negatives_number.into(),
+                    random_state.into(),
+                    seed_graph.map(|sg| &sg.inner),
+                    only_from_same_component.into(),
+                    verbose.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -2806,14 +2855,19 @@ impl Graph {
         include_all_edge_types: Option<bool>,
         verbose: Option<bool>,
     ) -> PyResult<(Graph, Graph)> {
-        let (g1, g2) = pe!(self.inner.connected_holdout(
-            train_size.into(),
-            random_state.into(),
-            edge_types.into(),
-            include_all_edge_types.into(),
-            verbose.into()
-        ))?;
-        Ok((g1.into(), g2.into()))
+        Ok({
+            let (subresult_0, subresult_1) = pe!({
+                self.inner.connected_holdout(
+                    train_size.into(),
+                    random_state.into(),
+                    edge_types.into(),
+                    include_all_edge_types.into(),
+                    verbose.into(),
+                )
+            })?
+            .into();
+            ({ subresult_0.into() }, { subresult_1.into() })
+        })
     }
 
     #[automatically_generated_binding]
@@ -2858,15 +2912,20 @@ impl Graph {
         min_number_overlaps: Option<EdgeT>,
         verbose: Option<bool>,
     ) -> PyResult<(Graph, Graph)> {
-        let (g1, g2) = pe!(self.inner.random_holdout(
-            train_size.into(),
-            random_state.into(),
-            include_all_edge_types.into(),
-            edge_types.into(),
-            min_number_overlaps.into(),
-            verbose.into()
-        ))?;
-        Ok((g1.into(), g2.into()))
+        Ok({
+            let (subresult_0, subresult_1) = pe!({
+                self.inner.random_holdout(
+                    train_size.into(),
+                    random_state.into(),
+                    include_all_edge_types.into(),
+                    edge_types.into(),
+                    min_number_overlaps.into(),
+                    verbose.into(),
+                )
+            })?
+            .into();
+            ({ subresult_0.into() }, { subresult_1.into() })
+        })
     }
 
     #[automatically_generated_binding]
@@ -2897,13 +2956,27 @@ impl Graph {
         train_size: f64,
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
-    ) -> PyResult<(Vec<NodeT>, Vec<NodeT>)> {
-        Ok(pe!(self.inner.get_node_label_holdout_indices(
-            train_size.into(),
-            use_stratification.into(),
-            random_state.into()
-        ))?
-        .into())
+    ) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>)> {
+        Ok({
+            let (subresult_0, subresult_1) = pe!({
+                self.inner.get_node_label_holdout_indices(
+                    train_size.into(),
+                    use_stratification.into(),
+                    random_state.into(),
+                )
+            })?
+            .into();
+            (
+                {
+                    let gil = pyo3::Python::acquire_gil();
+                    to_ndarray_1d!(gil, subresult_0, NodeT)
+                },
+                {
+                    let gil = pyo3::Python::acquire_gil();
+                    to_ndarray_1d!(gil, subresult_1, NodeT)
+                },
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -2935,12 +3008,17 @@ impl Graph {
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
     ) -> PyResult<(Vec<Option<Vec<NodeTypeT>>>, Vec<Option<Vec<NodeTypeT>>>)> {
-        Ok(pe!(self.inner.get_node_label_holdout_labels(
-            train_size.into(),
-            use_stratification.into(),
-            random_state.into()
-        ))?
-        .into())
+        Ok({
+            let (subresult_0, subresult_1) = pe!({
+                self.inner.get_node_label_holdout_labels(
+                    train_size.into(),
+                    use_stratification.into(),
+                    random_state.into(),
+                )
+            })?
+            .into();
+            ({ subresult_0.into() }, { subresult_1.into() })
+        })
     }
 
     #[automatically_generated_binding]
@@ -2972,12 +3050,17 @@ impl Graph {
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
     ) -> PyResult<(Graph, Graph)> {
-        let (g1, g2) = pe!(self.inner.get_node_label_holdout_graphs(
-            train_size.into(),
-            use_stratification.into(),
-            random_state.into()
-        ))?;
-        Ok((g1.into(), g2.into()))
+        Ok({
+            let (subresult_0, subresult_1) = pe!({
+                self.inner.get_node_label_holdout_graphs(
+                    train_size.into(),
+                    use_stratification.into(),
+                    random_state.into(),
+                )
+            })?
+            .into();
+            ({ subresult_0.into() }, { subresult_1.into() })
+        })
     }
 
     #[automatically_generated_binding]
@@ -3015,12 +3098,17 @@ impl Graph {
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
     ) -> PyResult<(Graph, Graph)> {
-        let (g1, g2) = pe!(self.inner.get_edge_label_holdout_graphs(
-            train_size.into(),
-            use_stratification.into(),
-            random_state.into()
-        ))?;
-        Ok((g1.into(), g2.into()))
+        Ok({
+            let (subresult_0, subresult_1) = pe!({
+                self.inner.get_edge_label_holdout_graphs(
+                    train_size.into(),
+                    use_stratification.into(),
+                    random_state.into(),
+                )
+            })?
+            .into();
+            ({ subresult_0.into() }, { subresult_1.into() })
+        })
     }
 
     #[automatically_generated_binding]
@@ -3058,12 +3146,16 @@ impl Graph {
         random_state: Option<usize>,
         verbose: Option<bool>,
     ) -> PyResult<Graph> {
-        Ok(pe!(self.inner.get_random_subgraph(
-            nodes_number.into(),
-            random_state.into(),
-            verbose.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.get_random_subgraph(
+                    nodes_number.into(),
+                    random_state.into(),
+                    verbose.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -3095,12 +3187,17 @@ impl Graph {
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
     ) -> PyResult<(Graph, Graph)> {
-        let (g1, g2) = pe!(self.inner.get_node_label_random_holdout(
-            train_size.into(),
-            use_stratification.into(),
-            random_state.into()
-        ))?;
-        Ok((g1.into(), g2.into()))
+        Ok({
+            let (subresult_0, subresult_1) = pe!({
+                self.inner.get_node_label_random_holdout(
+                    train_size.into(),
+                    use_stratification.into(),
+                    random_state.into(),
+                )
+            })?
+            .into();
+            ({ subresult_0.into() }, { subresult_1.into() })
+        })
     }
 
     #[automatically_generated_binding]
@@ -3135,13 +3232,18 @@ impl Graph {
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
     ) -> PyResult<(Graph, Graph)> {
-        let (g1, g2) = pe!(self.inner.get_node_label_kfold(
-            k.into(),
-            k_index.into(),
-            use_stratification.into(),
-            random_state.into()
-        ))?;
-        Ok((g1.into(), g2.into()))
+        Ok({
+            let (subresult_0, subresult_1) = pe!({
+                self.inner.get_node_label_kfold(
+                    k.into(),
+                    k_index.into(),
+                    use_stratification.into(),
+                    random_state.into(),
+                )
+            })?
+            .into();
+            ({ subresult_0.into() }, { subresult_1.into() })
+        })
     }
 
     #[automatically_generated_binding]
@@ -3179,12 +3281,17 @@ impl Graph {
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
     ) -> PyResult<(Graph, Graph)> {
-        let (g1, g2) = pe!(self.inner.get_edge_label_random_holdout(
-            train_size.into(),
-            use_stratification.into(),
-            random_state.into()
-        ))?;
-        Ok((g1.into(), g2.into()))
+        Ok({
+            let (subresult_0, subresult_1) = pe!({
+                self.inner.get_edge_label_random_holdout(
+                    train_size.into(),
+                    use_stratification.into(),
+                    random_state.into(),
+                )
+            })?
+            .into();
+            ({ subresult_0.into() }, { subresult_1.into() })
+        })
     }
 
     #[automatically_generated_binding]
@@ -3225,13 +3332,18 @@ impl Graph {
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
     ) -> PyResult<(Graph, Graph)> {
-        let (g1, g2) = pe!(self.inner.get_edge_label_kfold(
-            k.into(),
-            k_index.into(),
-            use_stratification.into(),
-            random_state.into()
-        ))?;
-        Ok((g1.into(), g2.into()))
+        Ok({
+            let (subresult_0, subresult_1) = pe!({
+                self.inner.get_edge_label_kfold(
+                    k.into(),
+                    k_index.into(),
+                    use_stratification.into(),
+                    random_state.into(),
+                )
+            })?
+            .into();
+            ({ subresult_0.into() }, { subresult_1.into() })
+        })
     }
 
     #[automatically_generated_binding]
@@ -3274,14 +3386,19 @@ impl Graph {
         random_state: Option<EdgeT>,
         verbose: Option<bool>,
     ) -> PyResult<(Graph, Graph)> {
-        let (g1, g2) = pe!(self.inner.get_edge_prediction_kfold(
-            k.into(),
-            k_index.into(),
-            edge_types.into(),
-            random_state.into(),
-            verbose.into()
-        ))?;
-        Ok((g1.into(), g2.into()))
+        Ok({
+            let (subresult_0, subresult_1) = pe!({
+                self.inner.get_edge_prediction_kfold(
+                    k.into(),
+                    k_index.into(),
+                    edge_types.into(),
+                    random_state.into(),
+                    verbose.into(),
+                )
+            })?
+            .into();
+            ({ subresult_0.into() }, { subresult_1.into() })
+        })
     }
 
     #[automatically_generated_binding]
@@ -3488,18 +3605,21 @@ impl Graph {
         dst_node_id: NodeT,
         maximal_depth: Option<NodeT>,
     ) -> PyResult<Py<PyArray1<NodeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self
-                .inner
-                .get_unchecked_shortest_path_node_ids_from_node_ids(
-                    src_node_id.into(),
-                    dst_node_id.into(),
-                    maximal_depth.into()
-                ))?,
-            NodeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({
+                    self.inner
+                        .get_unchecked_shortest_path_node_ids_from_node_ids(
+                            src_node_id.into(),
+                            dst_node_id.into(),
+                            maximal_depth.into(),
+                        )
+                })?,
+                NodeT
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -3525,14 +3645,17 @@ impl Graph {
         dst_node_id: NodeT,
         maximal_depth: Option<NodeT>,
     ) -> PyResult<Vec<String>> {
-        Ok(pe!(self
-            .inner
-            .get_unchecked_shortest_path_node_names_from_node_ids(
-                src_node_id.into(),
-                dst_node_id.into(),
-                maximal_depth.into()
-            ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_unchecked_shortest_path_node_names_from_node_ids(
+                        src_node_id.into(),
+                        dst_node_id.into(),
+                        maximal_depth.into(),
+                    )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -3560,16 +3683,20 @@ impl Graph {
         dst_node_id: NodeT,
         maximal_depth: Option<NodeT>,
     ) -> PyResult<Py<PyArray1<NodeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_shortest_path_node_ids_from_node_ids(
-                src_node_id.into(),
-                dst_node_id.into(),
-                maximal_depth.into()
-            ))?,
-            NodeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({
+                    self.inner.get_shortest_path_node_ids_from_node_ids(
+                        src_node_id.into(),
+                        dst_node_id.into(),
+                        maximal_depth.into(),
+                    )
+                })?,
+                NodeT
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -3597,16 +3724,20 @@ impl Graph {
         dst_node_name: &str,
         maximal_depth: Option<NodeT>,
     ) -> PyResult<Py<PyArray1<NodeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_shortest_path_node_ids_from_node_names(
-                src_node_name.into(),
-                dst_node_name.into(),
-                maximal_depth.into()
-            ))?,
-            NodeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({
+                    self.inner.get_shortest_path_node_ids_from_node_names(
+                        src_node_name.into(),
+                        dst_node_name.into(),
+                        maximal_depth.into(),
+                    )
+                })?,
+                NodeT
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -3634,12 +3765,16 @@ impl Graph {
         dst_node_name: &str,
         maximal_depth: Option<NodeT>,
     ) -> PyResult<Vec<String>> {
-        Ok(pe!(self.inner.get_shortest_path_node_names_from_node_names(
-            src_node_name.into(),
-            dst_node_name.into(),
-            maximal_depth.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.get_shortest_path_node_names_from_node_names(
+                    src_node_name.into(),
+                    dst_node_name.into(),
+                    maximal_depth.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -3701,12 +3836,16 @@ impl Graph {
         dst_node_id: NodeT,
         k: usize,
     ) -> PyResult<Vec<Vec<NodeT>>> {
-        Ok(pe!(self.inner.get_k_shortest_path_node_ids_from_node_ids(
-            src_node_id.into(),
-            dst_node_id.into(),
-            k.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.get_k_shortest_path_node_ids_from_node_ids(
+                    src_node_id.into(),
+                    dst_node_id.into(),
+                    k.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -3734,12 +3873,16 @@ impl Graph {
         dst_node_name: &str,
         k: usize,
     ) -> PyResult<Vec<Vec<NodeT>>> {
-        Ok(pe!(self.inner.get_k_shortest_path_node_ids_from_node_names(
-            src_node_name.into(),
-            dst_node_name.into(),
-            k.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.get_k_shortest_path_node_ids_from_node_names(
+                    src_node_name.into(),
+                    dst_node_name.into(),
+                    k.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -3767,14 +3910,16 @@ impl Graph {
         dst_node_name: &str,
         k: usize,
     ) -> PyResult<Vec<Vec<String>>> {
-        Ok(
-            pe!(self.inner.get_k_shortest_path_node_names_from_node_names(
-                src_node_name.into(),
-                dst_node_name.into(),
-                k.into()
-            ))?
-            .into(),
-        )
+        Ok({
+            pe!({
+                self.inner.get_k_shortest_path_node_names_from_node_names(
+                    src_node_name.into(),
+                    dst_node_name.into(),
+                    k.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -3796,9 +3941,10 @@ impl Graph {
         &self,
         node_id: NodeT,
     ) -> (NodeT, NodeT) {
-        self.inner
-            .get_unchecked_eccentricity_and_most_distant_node_id_from_node_id(node_id.into())
-            .into()
+        let (subresult_0, subresult_1) = self
+            .inner
+            .get_unchecked_eccentricity_and_most_distant_node_id_from_node_id(node_id.into());
+        ({ subresult_0.into() }, { subresult_1.into() })
     }
 
     #[automatically_generated_binding]
@@ -3852,10 +3998,14 @@ impl Graph {
         &self,
         node_id: NodeT,
     ) -> PyResult<(NodeT, NodeT)> {
-        Ok(pe!(self
-            .inner
-            .get_eccentricity_and_most_distant_node_id_from_node_id(node_id.into()))?
-        .into())
+        Ok({
+            let (subresult_0, subresult_1) = pe!({
+                self.inner
+                    .get_eccentricity_and_most_distant_node_id_from_node_id(node_id.into())
+            })?
+            .into();
+            ({ subresult_0.into() }, { subresult_1.into() })
+        })
     }
 
     #[automatically_generated_binding]
@@ -3884,11 +4034,15 @@ impl Graph {
         node_id: NodeT,
         use_edge_weights_as_probabilities: Option<bool>,
     ) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_weighted_eccentricity_from_node_id(
-            node_id.into(),
-            use_edge_weights_as_probabilities.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.get_weighted_eccentricity_from_node_id(
+                    node_id.into(),
+                    use_edge_weights_as_probabilities.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -3907,7 +4061,7 @@ impl Graph {
     ///     If the given node name does not exist in the current graph instance.
     ///
     pub fn get_eccentricity_from_node_name(&self, node_name: &str) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_eccentricity_from_node_name(node_name.into()))?.into())
+        Ok({ pe!({ self.inner.get_eccentricity_from_node_name(node_name.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -3936,11 +4090,15 @@ impl Graph {
         node_name: &str,
         use_edge_weights_as_probabilities: Option<bool>,
     ) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_weighted_eccentricity_from_node_name(
-            node_name.into(),
-            use_edge_weights_as_probabilities.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.get_weighted_eccentricity_from_node_name(
+                    node_name.into(),
+                    use_edge_weights_as_probabilities.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -4056,15 +4214,19 @@ impl Graph {
         dst_node_id: NodeT,
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
-    ) -> (f64, Vec<NodeT>) {
-        self.inner
+    ) -> (f64, Py<PyArray1<NodeT>>) {
+        let (subresult_0, subresult_1) = self
+            .inner
             .get_unchecked_weighted_shortest_path_node_ids_from_node_ids(
                 src_node_id.into(),
                 dst_node_id.into(),
                 use_edge_weights_as_probabilities.into(),
                 maximal_depth.into(),
-            )
-            .into()
+            );
+        ({ subresult_0.into() }, {
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(gil, subresult_1, NodeT)
+        })
     }
 
     #[automatically_generated_binding]
@@ -4093,14 +4255,15 @@ impl Graph {
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
     ) -> (f64, Vec<String>) {
-        self.inner
+        let (subresult_0, subresult_1) = self
+            .inner
             .get_unchecked_weighted_shortest_path_node_names_from_node_ids(
                 src_node_id.into(),
                 dst_node_id.into(),
                 use_edge_weights_as_probabilities.into(),
                 maximal_depth.into(),
-            )
-            .into()
+            );
+        ({ subresult_0.into() }, { subresult_1.into() })
     }
 
     #[automatically_generated_binding]
@@ -4130,16 +4293,23 @@ impl Graph {
         dst_node_id: NodeT,
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
-    ) -> PyResult<(f64, Vec<NodeT>)> {
-        Ok(pe!(self
-            .inner
-            .get_weighted_shortest_path_node_ids_from_node_ids(
-                src_node_id.into(),
-                dst_node_id.into(),
-                use_edge_weights_as_probabilities.into(),
-                maximal_depth.into()
-            ))?
-        .into())
+    ) -> PyResult<(f64, Py<PyArray1<NodeT>>)> {
+        Ok({
+            let (subresult_0, subresult_1) = pe!({
+                self.inner
+                    .get_weighted_shortest_path_node_ids_from_node_ids(
+                        src_node_id.into(),
+                        dst_node_id.into(),
+                        use_edge_weights_as_probabilities.into(),
+                        maximal_depth.into(),
+                    )
+            })?
+            .into();
+            ({ subresult_0.into() }, {
+                let gil = pyo3::Python::acquire_gil();
+                to_ndarray_1d!(gil, subresult_1, NodeT)
+            })
+        })
     }
 
     #[automatically_generated_binding]
@@ -4169,16 +4339,23 @@ impl Graph {
         dst_node_name: &str,
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
-    ) -> PyResult<(f64, Vec<NodeT>)> {
-        Ok(pe!(self
-            .inner
-            .get_weighted_shortest_path_node_ids_from_node_names(
-                src_node_name.into(),
-                dst_node_name.into(),
-                use_edge_weights_as_probabilities.into(),
-                maximal_depth.into()
-            ))?
-        .into())
+    ) -> PyResult<(f64, Py<PyArray1<NodeT>>)> {
+        Ok({
+            let (subresult_0, subresult_1) = pe!({
+                self.inner
+                    .get_weighted_shortest_path_node_ids_from_node_names(
+                        src_node_name.into(),
+                        dst_node_name.into(),
+                        use_edge_weights_as_probabilities.into(),
+                        maximal_depth.into(),
+                    )
+            })?
+            .into();
+            ({ subresult_0.into() }, {
+                let gil = pyo3::Python::acquire_gil();
+                to_ndarray_1d!(gil, subresult_1, NodeT)
+            })
+        })
     }
 
     #[automatically_generated_binding]
@@ -4209,15 +4386,19 @@ impl Graph {
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
     ) -> PyResult<(f64, Vec<String>)> {
-        Ok(pe!(self
-            .inner
-            .get_weighted_shortest_path_node_names_from_node_names(
-                src_node_name.into(),
-                dst_node_name.into(),
-                use_edge_weights_as_probabilities.into(),
-                maximal_depth.into()
-            ))?
-        .into())
+        Ok({
+            let (subresult_0, subresult_1) = pe!({
+                self.inner
+                    .get_weighted_shortest_path_node_names_from_node_names(
+                        src_node_name.into(),
+                        dst_node_name.into(),
+                        use_edge_weights_as_probabilities.into(),
+                        maximal_depth.into(),
+                    )
+            })?
+            .into();
+            ({ subresult_0.into() }, { subresult_1.into() })
+        })
     }
 
     #[automatically_generated_binding]
@@ -4248,13 +4429,17 @@ impl Graph {
         compute_predecessors: Option<bool>,
         maximal_depth: Option<NodeT>,
     ) -> PyResult<ShortestPathsResultBFS> {
-        Ok(pe!(self.inner.get_breadth_first_search_from_node_ids(
-            src_node_id.into(),
-            dst_node_id.into(),
-            compute_predecessors.into(),
-            maximal_depth.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.get_breadth_first_search_from_node_ids(
+                    src_node_id.into(),
+                    dst_node_id.into(),
+                    compute_predecessors.into(),
+                    maximal_depth.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -4299,15 +4484,19 @@ impl Graph {
         maximal_depth: Option<NodeT>,
         use_edge_weights_as_probabilities: Option<bool>,
     ) -> PyResult<ShortestPathsDjkstra> {
-        Ok(pe!(self.inner.get_dijkstra_from_node_ids(
-            src_node_id.into(),
-            maybe_dst_node_id.into(),
-            maybe_dst_node_ids.into(),
-            compute_predecessors.into(),
-            maximal_depth.into(),
-            use_edge_weights_as_probabilities.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.get_dijkstra_from_node_ids(
+                    src_node_id.into(),
+                    maybe_dst_node_id.into(),
+                    maybe_dst_node_ids.into(),
+                    compute_predecessors.into(),
+                    maximal_depth.into(),
+                    use_edge_weights_as_probabilities.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -4337,10 +4526,13 @@ impl Graph {
         ignore_infinity: Option<bool>,
         verbose: Option<bool>,
     ) -> PyResult<f64> {
-        Ok(pe!(self
-            .inner
-            .get_diameter_naive(ignore_infinity.into(), verbose.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_diameter_naive(ignore_infinity.into(), verbose.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -4365,10 +4557,13 @@ impl Graph {
         ignore_infinity: Option<bool>,
         verbose: Option<bool>,
     ) -> PyResult<f64> {
-        Ok(pe!(self
-            .inner
-            .get_diameter(ignore_infinity.into(), verbose.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_diameter(ignore_infinity.into(), verbose.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -4407,12 +4602,16 @@ impl Graph {
         use_edge_weights_as_probabilities: Option<bool>,
         verbose: Option<bool>,
     ) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_weighted_diameter_naive(
-            ignore_infinity.into(),
-            use_edge_weights_as_probabilities.into(),
-            verbose.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.get_weighted_diameter_naive(
+                    ignore_infinity.into(),
+                    use_edge_weights_as_probabilities.into(),
+                    verbose.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -4447,13 +4646,17 @@ impl Graph {
         compute_predecessors: Option<bool>,
         maximal_depth: Option<NodeT>,
     ) -> PyResult<ShortestPathsResultBFS> {
-        Ok(pe!(self.inner.get_breadth_first_search_from_node_names(
-            src_node_name.into(),
-            dst_node_name.into(),
-            compute_predecessors.into(),
-            maximal_depth.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.get_breadth_first_search_from_node_names(
+                    src_node_name.into(),
+                    dst_node_name.into(),
+                    compute_predecessors.into(),
+                    maximal_depth.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -4494,15 +4697,19 @@ impl Graph {
         maximal_depth: Option<NodeT>,
         use_edge_weights_as_probabilities: Option<bool>,
     ) -> PyResult<ShortestPathsDjkstra> {
-        Ok(pe!(self.inner.get_dijkstra_from_node_names(
-            src_node_name.into(),
-            maybe_dst_node_name.into(),
-            maybe_dst_node_names.into(),
-            compute_predecessors.into(),
-            maximal_depth.into(),
-            use_edge_weights_as_probabilities.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.get_dijkstra_from_node_names(
+                    src_node_name.into(),
+                    maybe_dst_node_name.into(),
+                    maybe_dst_node_names.into(),
+                    compute_predecessors.into(),
+                    maximal_depth.into(),
+                    use_edge_weights_as_probabilities.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -4515,9 +4722,11 @@ impl Graph {
     ///     Whether to show a loading bar or not.
     ///
     pub fn get_connected_components_number(&self, verbose: Option<bool>) -> (NodeT, NodeT, NodeT) {
-        self.inner
-            .get_connected_components_number(verbose.into())
-            .into()
+        let (subresult_0, subresult_1, subresult_2) =
+            self.inner.get_connected_components_number(verbose.into());
+        ({ subresult_0.into() }, { subresult_1.into() }, {
+            subresult_2.into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -4590,7 +4799,7 @@ impl Graph {
     #[text_signature = "($self)"]
     /// Returns density of the graph.
     pub fn get_density(&self) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_density())?.into())
+        Ok({ pe!({ self.inner.get_density() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -4606,14 +4815,14 @@ impl Graph {
     #[text_signature = "($self)"]
     /// Returns unweighted mean node degree of the graph.
     pub fn get_node_degrees_mean(&self) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_node_degrees_mean())?.into())
+        Ok({ pe!({ self.inner.get_node_degrees_mean() })?.into() })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns weighted mean node degree of the graph.
     pub fn get_weighted_node_degrees_mean(&self) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_weighted_node_degrees_mean())?.into())
+        Ok({ pe!({ self.inner.get_weighted_node_degrees_mean() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -4648,14 +4857,14 @@ impl Graph {
     #[text_signature = "($self)"]
     /// Returns unweighted median node degree of the graph
     pub fn get_node_degrees_median(&self) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_node_degrees_median())?.into())
+        Ok({ pe!({ self.inner.get_node_degrees_median() })?.into() })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns weighted median node degree of the graph
     pub fn get_weighted_node_degrees_median(&self) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_weighted_node_degrees_median())?.into())
+        Ok({ pe!({ self.inner.get_weighted_node_degrees_median() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -4668,7 +4877,7 @@ impl Graph {
     ///     If the graph does not contain any node (is an empty graph).
     ///
     pub fn get_maximum_node_degree(&self) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_maximum_node_degree())?.into())
+        Ok({ pe!({ self.inner.get_maximum_node_degree() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -4686,7 +4895,7 @@ impl Graph {
     #[text_signature = "($self)"]
     /// Returns maximum node degree of the graph.
     pub fn get_most_central_node_id(&self) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_most_central_node_id())?.into())
+        Ok({ pe!({ self.inner.get_most_central_node_id() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -4699,21 +4908,21 @@ impl Graph {
     ///     If the graph does not contain any node (is an empty graph).
     ///
     pub fn get_minimum_node_degree(&self) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_minimum_node_degree())?.into())
+        Ok({ pe!({ self.inner.get_minimum_node_degree() })?.into() })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns mode node degree of the graph.
     pub fn get_node_degrees_mode(&self) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_node_degrees_mode())?.into())
+        Ok({ pe!({ self.inner.get_node_degrees_mode() })?.into() })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns rate of self-loops.
     pub fn get_selfloop_nodes_rate(&self) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_selfloop_nodes_rate())?.into())
+        Ok({ pe!({ self.inner.get_selfloop_nodes_rate() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -4839,64 +5048,62 @@ impl Graph {
     #[text_signature = "($self)"]
     /// Return the edge types of the edges
     pub fn get_edge_type_ids(&self) -> PyResult<Vec<Option<EdgeTypeT>>> {
-        Ok(pe!(self.inner.get_edge_type_ids())?.into())
+        Ok({ pe!({ self.inner.get_edge_type_ids() })?.into() })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Return the unique edge type IDs of the graph edges.
     pub fn get_unique_edge_type_ids(&self) -> PyResult<Py<PyArray1<EdgeTypeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_unique_edge_type_ids())?,
-            EdgeTypeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({ self.inner.get_unique_edge_type_ids() })?,
+                EdgeTypeT
+            )
+        })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Return the edge types names
     pub fn get_edge_type_names(&self) -> PyResult<Vec<Option<String>>> {
-        Ok(pe!(self.inner.get_edge_type_names())?.into())
+        Ok({ pe!({ self.inner.get_edge_type_names() })?.into() })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Return the edge types names
     pub fn get_unique_edge_type_names(&self) -> PyResult<Vec<String>> {
-        Ok(pe!(self.inner.get_unique_edge_type_names())?.into())
+        Ok({ pe!({ self.inner.get_unique_edge_type_names() })?.into() })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Return the weights of the graph edges.
     pub fn get_edge_weights(&self) -> PyResult<Py<PyArray1<WeightT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_edge_weights())?,
-            WeightT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(gil, pe!({ self.inner.get_edge_weights() })?, WeightT)
+        })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Return the weighted indegree (total weighted inbound edge weights) for each node.
     pub fn get_weighted_node_indegrees(&self) -> PyResult<Py<PyArray1<f64>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_weighted_node_indegrees())?,
-            f64
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(gil, pe!({ self.inner.get_weighted_node_indegrees() })?, f64)
+        })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Return the node types of the graph nodes.
     pub fn get_node_type_ids(&self) -> PyResult<Vec<Option<Vec<NodeTypeT>>>> {
-        Ok(pe!(self.inner.get_node_type_ids())?.into())
+        Ok({ pe!({ self.inner.get_node_type_ids() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -4909,12 +5116,10 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn get_known_node_types_mask(&self) -> PyResult<Py<PyArray1<bool>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_known_node_types_mask())?,
-            bool
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(gil, pe!({ self.inner.get_known_node_types_mask() })?, bool)
+        })
     }
 
     #[automatically_generated_binding]
@@ -4927,12 +5132,14 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn get_unknown_node_types_mask(&self) -> PyResult<Py<PyArray1<bool>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_unknown_node_types_mask())?,
-            bool
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({ self.inner.get_unknown_node_types_mask() })?,
+                bool
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -4945,12 +5152,14 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn get_one_hot_encoded_node_types(&self) -> PyResult<Py<PyArray2<bool>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_2d!(
-            gil,
-            pe!(self.inner.get_one_hot_encoded_node_types())?,
-            bool
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_2d!(
+                gil,
+                pe!({ self.inner.get_one_hot_encoded_node_types() })?,
+                bool
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -4963,12 +5172,14 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn get_one_hot_encoded_known_node_types(&self) -> PyResult<Py<PyArray2<bool>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_2d!(
-            gil,
-            pe!(self.inner.get_one_hot_encoded_known_node_types())?,
-            bool
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_2d!(
+                gil,
+                pe!({ self.inner.get_one_hot_encoded_known_node_types() })?,
+                bool
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -4981,12 +5192,14 @@ impl Graph {
     ///     If the graph does not have edge types.
     ///
     pub fn get_one_hot_encoded_edge_types(&self) -> PyResult<Py<PyArray2<bool>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_2d!(
-            gil,
-            pe!(self.inner.get_one_hot_encoded_edge_types())?,
-            bool
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_2d!(
+                gil,
+                pe!({ self.inner.get_one_hot_encoded_edge_types() })?,
+                bool
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -4999,38 +5212,42 @@ impl Graph {
     ///     If the graph does not have edge types.
     ///
     pub fn get_one_hot_encoded_known_edge_types(&self) -> PyResult<Py<PyArray2<bool>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_2d!(
-            gil,
-            pe!(self.inner.get_one_hot_encoded_known_edge_types())?,
-            bool
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_2d!(
+                gil,
+                pe!({ self.inner.get_one_hot_encoded_known_edge_types() })?,
+                bool
+            )
+        })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Return the node types names.
     pub fn get_node_type_names(&self) -> PyResult<Vec<Option<Vec<String>>>> {
-        Ok(pe!(self.inner.get_node_type_names())?.into())
+        Ok({ pe!({ self.inner.get_node_type_names() })?.into() })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Return the unique node type IDs of the graph nodes.
     pub fn get_unique_node_type_ids(&self) -> PyResult<Py<PyArray1<NodeTypeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_unique_node_type_ids())?,
-            NodeTypeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({ self.inner.get_unique_node_type_ids() })?,
+                NodeTypeT
+            )
+        })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Return the unique node types names.
     pub fn get_unique_node_type_names(&self) -> PyResult<Vec<String>> {
-        Ok(pe!(self.inner.get_unique_node_type_names())?.into())
+        Ok({ pe!({ self.inner.get_unique_node_type_names() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -5099,7 +5316,7 @@ impl Graph {
     ///     If there are no node types in the graph.
     ///
     pub fn get_unknown_node_types_number(&self) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_unknown_node_types_number())?.into())
+        Ok({ pe!({ self.inner.get_unknown_node_types_number() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -5112,7 +5329,7 @@ impl Graph {
     ///     If there are no node types in the graph.
     ///
     pub fn get_known_node_types_number(&self) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_known_node_types_number())?.into())
+        Ok({ pe!({ self.inner.get_known_node_types_number() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -5125,7 +5342,7 @@ impl Graph {
     ///     If there are no node types in the graph.
     ///
     pub fn get_unknown_node_types_rate(&self) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_unknown_node_types_rate())?.into())
+        Ok({ pe!({ self.inner.get_unknown_node_types_rate() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -5138,7 +5355,7 @@ impl Graph {
     ///     If there are no node types in the graph.
     ///
     pub fn get_known_node_types_rate(&self) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_known_node_types_rate())?.into())
+        Ok({ pe!({ self.inner.get_known_node_types_rate() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -5151,7 +5368,7 @@ impl Graph {
     ///     If there are no node types in the graph.
     ///
     pub fn get_minimum_node_types_number(&self) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_minimum_node_types_number())?.into())
+        Ok({ pe!({ self.inner.get_minimum_node_types_number() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -5164,7 +5381,7 @@ impl Graph {
     ///     If there are no node types in the graph.
     ///
     pub fn get_maximum_node_types_number(&self) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_maximum_node_types_number())?.into())
+        Ok({ pe!({ self.inner.get_maximum_node_types_number() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -5174,7 +5391,7 @@ impl Graph {
     /// This value is the maximum number of multilabel counts
     /// that appear in any given node in the graph
     pub fn get_maximum_multilabel_count(&self) -> PyResult<NodeTypeT> {
-        Ok(pe!(self.inner.get_maximum_multilabel_count())?.into())
+        Ok({ pe!({ self.inner.get_maximum_multilabel_count() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -5187,7 +5404,7 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn get_singleton_node_types_number(&self) -> PyResult<NodeTypeT> {
-        Ok(pe!(self.inner.get_singleton_node_types_number())?.into())
+        Ok({ pe!({ self.inner.get_singleton_node_types_number() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -5200,12 +5417,14 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn get_singleton_node_type_ids(&self) -> PyResult<Py<PyArray1<NodeTypeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_singleton_node_type_ids())?,
-            NodeTypeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({ self.inner.get_singleton_node_type_ids() })?,
+                NodeTypeT
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -5218,7 +5437,7 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn get_singleton_node_type_names(&self) -> PyResult<Vec<String>> {
-        Ok(pe!(self.inner.get_singleton_node_type_names())?.into())
+        Ok({ pe!({ self.inner.get_singleton_node_type_names() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -5231,7 +5450,7 @@ impl Graph {
     ///     If there are no edge types in the graph.
     ///
     pub fn get_unknown_edge_types_number(&self) -> PyResult<EdgeT> {
-        Ok(pe!(self.inner.get_unknown_edge_types_number())?.into())
+        Ok({ pe!({ self.inner.get_unknown_edge_types_number() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -5244,12 +5463,14 @@ impl Graph {
     ///     If there are no edge types in the graph.
     ///
     pub fn get_edge_ids_with_unknown_edge_types(&self) -> PyResult<Py<PyArray1<EdgeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_edge_ids_with_unknown_edge_types())?,
-            EdgeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({ self.inner.get_edge_ids_with_unknown_edge_types() })?,
+                EdgeT
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -5262,12 +5483,14 @@ impl Graph {
     ///     If there are no edge types in the graph.
     ///
     pub fn get_edge_ids_with_known_edge_types(&self) -> PyResult<Py<PyArray1<EdgeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_edge_ids_with_known_edge_types())?,
-            EdgeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({ self.inner.get_edge_ids_with_known_edge_types() })?,
+                EdgeT
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -5289,10 +5512,13 @@ impl Graph {
         &self,
         directed: bool,
     ) -> PyResult<Vec<(NodeT, NodeT)>> {
-        Ok(pe!(self
-            .inner
-            .get_edge_node_ids_with_unknown_edge_types(directed.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_edge_node_ids_with_unknown_edge_types(directed.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -5314,10 +5540,13 @@ impl Graph {
         &self,
         directed: bool,
     ) -> PyResult<Vec<(NodeT, NodeT)>> {
-        Ok(pe!(self
-            .inner
-            .get_edge_node_ids_with_known_edge_types(directed.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_edge_node_ids_with_known_edge_types(directed.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -5339,10 +5568,13 @@ impl Graph {
         &self,
         directed: bool,
     ) -> PyResult<Vec<(String, String)>> {
-        Ok(pe!(self
-            .inner
-            .get_edge_node_names_with_unknown_edge_types(directed.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_edge_node_names_with_unknown_edge_types(directed.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -5364,10 +5596,13 @@ impl Graph {
         &self,
         directed: bool,
     ) -> PyResult<Vec<(String, String)>> {
-        Ok(pe!(self
-            .inner
-            .get_edge_node_names_with_known_edge_types(directed.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_edge_node_names_with_known_edge_types(directed.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -5381,12 +5616,14 @@ impl Graph {
     ///     If there are no edge types in the graph.
     ///
     pub fn get_edge_ids_with_unknown_edge_types_mask(&self) -> PyResult<Py<PyArray1<bool>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_edge_ids_with_unknown_edge_types_mask())?,
-            bool
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({ self.inner.get_edge_ids_with_unknown_edge_types_mask() })?,
+                bool
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -5400,12 +5637,14 @@ impl Graph {
     ///     If there are no edge types in the graph.
     ///
     pub fn get_edge_ids_with_known_edge_types_mask(&self) -> PyResult<Py<PyArray1<bool>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_edge_ids_with_known_edge_types_mask())?,
-            bool
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({ self.inner.get_edge_ids_with_known_edge_types_mask() })?,
+                bool
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -5418,12 +5657,14 @@ impl Graph {
     ///     If there are no node types in the graph.
     ///
     pub fn get_node_ids_with_unknown_node_types(&self) -> PyResult<Py<PyArray1<NodeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_node_ids_with_unknown_node_types())?,
-            NodeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({ self.inner.get_node_ids_with_unknown_node_types() })?,
+                NodeT
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -5436,12 +5677,14 @@ impl Graph {
     ///     If there are no node types in the graph.
     ///
     pub fn get_node_ids_with_known_node_types(&self) -> PyResult<Py<PyArray1<NodeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_node_ids_with_known_node_types())?,
-            NodeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({ self.inner.get_node_ids_with_known_node_types() })?,
+                NodeT
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -5454,7 +5697,7 @@ impl Graph {
     ///     If there are no node types in the graph.
     ///
     pub fn get_node_names_with_unknown_node_types(&self) -> PyResult<Vec<String>> {
-        Ok(pe!(self.inner.get_node_names_with_unknown_node_types())?.into())
+        Ok({ pe!({ self.inner.get_node_names_with_unknown_node_types() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -5467,7 +5710,7 @@ impl Graph {
     ///     If there are no node types in the graph.
     ///
     pub fn get_node_names_with_known_node_types(&self) -> PyResult<Vec<String>> {
-        Ok(pe!(self.inner.get_node_names_with_known_node_types())?.into())
+        Ok({ pe!({ self.inner.get_node_names_with_known_node_types() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -5481,12 +5724,14 @@ impl Graph {
     ///     If there are no node types in the graph.
     ///
     pub fn get_node_ids_with_unknown_node_types_mask(&self) -> PyResult<Py<PyArray1<bool>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_node_ids_with_unknown_node_types_mask())?,
-            bool
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({ self.inner.get_node_ids_with_unknown_node_types_mask() })?,
+                bool
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -5500,12 +5745,14 @@ impl Graph {
     ///     If there are no node types in the graph.
     ///
     pub fn get_node_ids_with_known_node_types_mask(&self) -> PyResult<Py<PyArray1<bool>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_node_ids_with_known_node_types_mask())?,
-            bool
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({ self.inner.get_node_ids_with_known_node_types_mask() })?,
+                bool
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -5518,7 +5765,7 @@ impl Graph {
     ///     If there are no edge types in the graph.
     ///
     pub fn get_known_edge_types_number(&self) -> PyResult<EdgeT> {
-        Ok(pe!(self.inner.get_known_edge_types_number())?.into())
+        Ok({ pe!({ self.inner.get_known_edge_types_number() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -5531,7 +5778,7 @@ impl Graph {
     ///     If there are no edge types in the graph.
     ///
     pub fn get_unknown_edge_types_rate(&self) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_unknown_edge_types_rate())?.into())
+        Ok({ pe!({ self.inner.get_unknown_edge_types_rate() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -5544,7 +5791,7 @@ impl Graph {
     ///     If there are no edge types in the graph.
     ///
     pub fn get_known_edge_types_rate(&self) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_known_edge_types_rate())?.into())
+        Ok({ pe!({ self.inner.get_known_edge_types_rate() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -5557,7 +5804,7 @@ impl Graph {
     ///     If there are no edge types in the graph.
     ///
     pub fn get_minimum_edge_types_number(&self) -> PyResult<EdgeT> {
-        Ok(pe!(self.inner.get_minimum_edge_types_number())?.into())
+        Ok({ pe!({ self.inner.get_minimum_edge_types_number() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -5570,7 +5817,7 @@ impl Graph {
     ///     If the graph does not have edge types.
     ///
     pub fn get_singleton_edge_types_number(&self) -> PyResult<EdgeTypeT> {
-        Ok(pe!(self.inner.get_singleton_edge_types_number())?.into())
+        Ok({ pe!({ self.inner.get_singleton_edge_types_number() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -5583,12 +5830,14 @@ impl Graph {
     ///     If the graph does not have edge types.
     ///
     pub fn get_singleton_edge_type_ids(&self) -> PyResult<Py<PyArray1<EdgeTypeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_singleton_edge_type_ids())?,
-            EdgeTypeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({ self.inner.get_singleton_edge_type_ids() })?,
+                EdgeTypeT
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -5601,7 +5850,7 @@ impl Graph {
     ///     If the graph does not have edge types.
     ///
     pub fn get_singleton_edge_type_names(&self) -> PyResult<Vec<String>> {
-        Ok(pe!(self.inner.get_singleton_edge_type_names())?.into())
+        Ok({ pe!({ self.inner.get_singleton_edge_type_names() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -5649,7 +5898,7 @@ impl Graph {
     ///     If there are no edge types in the current graph.
     ///
     pub fn get_edge_types_number(&self) -> PyResult<EdgeTypeT> {
-        Ok(pe!(self.inner.get_edge_types_number())?.into())
+        Ok({ pe!({ self.inner.get_edge_types_number() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -5662,7 +5911,7 @@ impl Graph {
     ///     If there are no node types in the current graph.
     ///
     pub fn get_node_types_number(&self) -> PyResult<NodeTypeT> {
-        Ok(pe!(self.inner.get_node_types_number())?.into())
+        Ok({ pe!({ self.inner.get_node_types_number() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -5685,12 +5934,10 @@ impl Graph {
     #[text_signature = "($self)"]
     /// Returns the weighted degree of every node in the graph
     pub fn get_weighted_node_degrees(&self) -> PyResult<Py<PyArray1<f64>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_weighted_node_degrees())?,
-            f64
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(gil, pe!({ self.inner.get_weighted_node_degrees() })?, f64)
+        })
     }
 
     #[automatically_generated_binding]
@@ -5748,7 +5995,7 @@ impl Graph {
     ///     If there are no edge types in the current graph instance.
     ///
     pub fn get_edge_type_id_counts_hashmap(&self) -> PyResult<HashMap<EdgeTypeT, EdgeT>> {
-        Ok(pe!(self.inner.get_edge_type_id_counts_hashmap())?.into())
+        Ok({ pe!({ self.inner.get_edge_type_id_counts_hashmap() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -5761,7 +6008,7 @@ impl Graph {
     ///     If there are no edge types in the current graph instance.
     ///
     pub fn get_edge_type_names_counts_hashmap(&self) -> PyResult<HashMap<String, EdgeT>> {
-        Ok(pe!(self.inner.get_edge_type_names_counts_hashmap())?.into())
+        Ok({ pe!({ self.inner.get_edge_type_names_counts_hashmap() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -5774,7 +6021,7 @@ impl Graph {
     ///     If there are no node types in the current graph instance.
     ///
     pub fn get_node_type_id_counts_hashmap(&self) -> PyResult<HashMap<NodeTypeT, NodeT>> {
-        Ok(pe!(self.inner.get_node_type_id_counts_hashmap())?.into())
+        Ok({ pe!({ self.inner.get_node_type_id_counts_hashmap() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -5787,14 +6034,17 @@ impl Graph {
     ///     If there are no node types in the current graph instance.
     ///
     pub fn get_node_type_names_counts_hashmap(&self) -> PyResult<HashMap<String, NodeT>> {
-        Ok(pe!(self.inner.get_node_type_names_counts_hashmap())?.into())
+        Ok({ pe!({ self.inner.get_node_type_names_counts_hashmap() })?.into() })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Convert inplace the graph to directed.
     pub fn to_directed_inplace(&mut self) {
-        self.inner.to_directed_inplace();
+        {
+            self.inner.to_directed_inplace();
+            ()
+        }
     }
 
     #[automatically_generated_binding]
@@ -5917,10 +6167,13 @@ impl Graph {
     ///     Whether to shor the loading bars.
     ///
     pub fn overlap_textual_report(&self, other: &Graph, verbose: Option<bool>) -> PyResult<String> {
-        Ok(pe!(self
-            .inner
-            .overlap_textual_report(&other.inner, verbose.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .overlap_textual_report(&other.inner, verbose.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -5935,7 +6188,7 @@ impl Graph {
     ///     Whether to show a loading bar in graph operations.
     ///
     pub fn get_node_report_from_node_id(&self, node_id: NodeT) -> PyResult<String> {
-        Ok(pe!(self.inner.get_node_report_from_node_id(node_id.into()))?.into())
+        Ok({ pe!({ self.inner.get_node_report_from_node_id(node_id.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -5950,7 +6203,7 @@ impl Graph {
     ///     Whether to show a loading bar in graph operations.
     ///
     pub fn get_node_report_from_node_name(&self, node_name: &str) -> PyResult<String> {
-        Ok(pe!(self.inner.get_node_report_from_node_name(node_name.into()))?.into())
+        Ok({ pe!({ self.inner.get_node_report_from_node_name(node_name.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -6011,20 +6264,24 @@ impl Graph {
         directed: Option<bool>,
         name: Option<&str>,
     ) -> PyResult<Graph> {
-        Ok(pe!(graph::Graph::generate_random_connected_graph(
-            random_state.into(),
-            minimum_node_id.into(),
-            minimum_node_sampling.into(),
-            maximum_node_sampling.into(),
-            nodes_number.into(),
-            include_selfloops.into(),
-            node_type.into(),
-            edge_type.into(),
-            weight.into(),
-            directed.into(),
-            name.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                graph::Graph::generate_random_connected_graph(
+                    random_state.into(),
+                    minimum_node_id.into(),
+                    minimum_node_sampling.into(),
+                    maximum_node_sampling.into(),
+                    nodes_number.into(),
+                    include_selfloops.into(),
+                    node_type.into(),
+                    edge_type.into(),
+                    weight.into(),
+                    directed.into(),
+                    name.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[staticmethod]
@@ -6068,18 +6325,22 @@ impl Graph {
         directed: Option<bool>,
         name: Option<&str>,
     ) -> PyResult<Graph> {
-        Ok(pe!(graph::Graph::generate_random_spanning_tree(
-            random_state.into(),
-            minimum_node_id.into(),
-            nodes_number.into(),
-            include_selfloops.into(),
-            node_type.into(),
-            edge_type.into(),
-            weight.into(),
-            directed.into(),
-            name.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                graph::Graph::generate_random_spanning_tree(
+                    random_state.into(),
+                    minimum_node_id.into(),
+                    nodes_number.into(),
+                    include_selfloops.into(),
+                    node_type.into(),
+                    edge_type.into(),
+                    weight.into(),
+                    directed.into(),
+                    name.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[staticmethod]
@@ -6116,17 +6377,21 @@ impl Graph {
         directed: Option<bool>,
         name: Option<&str>,
     ) -> PyResult<Graph> {
-        Ok(pe!(graph::Graph::generate_circle_graph(
-            minimum_node_id.into(),
-            nodes_number.into(),
-            include_selfloops.into(),
-            node_type.into(),
-            edge_type.into(),
-            weight.into(),
-            directed.into(),
-            name.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                graph::Graph::generate_circle_graph(
+                    minimum_node_id.into(),
+                    nodes_number.into(),
+                    include_selfloops.into(),
+                    node_type.into(),
+                    edge_type.into(),
+                    weight.into(),
+                    directed.into(),
+                    name.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[staticmethod]
@@ -6163,17 +6428,21 @@ impl Graph {
         directed: Option<bool>,
         name: Option<&str>,
     ) -> PyResult<Graph> {
-        Ok(pe!(graph::Graph::generate_chain_graph(
-            minimum_node_id.into(),
-            nodes_number.into(),
-            include_selfloops.into(),
-            node_type.into(),
-            edge_type.into(),
-            weight.into(),
-            directed.into(),
-            name.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                graph::Graph::generate_chain_graph(
+                    minimum_node_id.into(),
+                    nodes_number.into(),
+                    include_selfloops.into(),
+                    node_type.into(),
+                    edge_type.into(),
+                    weight.into(),
+                    directed.into(),
+                    name.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[staticmethod]
@@ -6210,17 +6479,21 @@ impl Graph {
         directed: Option<bool>,
         name: Option<&str>,
     ) -> PyResult<Graph> {
-        Ok(pe!(graph::Graph::generate_complete_graph(
-            minimum_node_id.into(),
-            nodes_number.into(),
-            include_selfloops.into(),
-            node_type.into(),
-            edge_type.into(),
-            weight.into(),
-            directed.into(),
-            name.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                graph::Graph::generate_complete_graph(
+                    minimum_node_id.into(),
+                    nodes_number.into(),
+                    include_selfloops.into(),
+                    node_type.into(),
+                    edge_type.into(),
+                    weight.into(),
+                    directed.into(),
+                    name.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[staticmethod]
@@ -6287,25 +6560,29 @@ impl Graph {
         directed: Option<bool>,
         name: Option<&str>,
     ) -> PyResult<Graph> {
-        Ok(pe!(graph::Graph::generate_barbell_graph(
-            minimum_node_id.into(),
-            left_clique_nodes_number.into(),
-            right_clique_nodes_number.into(),
-            chain_nodes_number.into(),
-            include_selfloops.into(),
-            left_clique_node_type.into(),
-            right_clique_node_type.into(),
-            chain_node_type.into(),
-            left_clique_edge_type.into(),
-            right_clique_edge_type.into(),
-            chain_edge_type.into(),
-            left_clique_weight.into(),
-            right_clique_weight.into(),
-            chain_weight.into(),
-            directed.into(),
-            name.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                graph::Graph::generate_barbell_graph(
+                    minimum_node_id.into(),
+                    left_clique_nodes_number.into(),
+                    right_clique_nodes_number.into(),
+                    chain_nodes_number.into(),
+                    include_selfloops.into(),
+                    left_clique_node_type.into(),
+                    right_clique_node_type.into(),
+                    chain_node_type.into(),
+                    left_clique_edge_type.into(),
+                    right_clique_edge_type.into(),
+                    chain_edge_type.into(),
+                    left_clique_weight.into(),
+                    right_clique_weight.into(),
+                    chain_weight.into(),
+                    directed.into(),
+                    name.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -6333,12 +6610,16 @@ impl Graph {
         node_type_name_mapping: Option<HashMap<String, String>>,
         edge_type_name_mapping: Option<HashMap<String, String>>,
     ) -> PyResult<Graph> {
-        Ok(pe!(self.inner.replace(
-            node_name_mapping.into(),
-            node_type_name_mapping.into(),
-            edge_type_name_mapping.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.replace(
+                    node_name_mapping.into(),
+                    node_type_name_mapping.into(),
+                    edge_type_name_mapping.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -6407,27 +6688,31 @@ impl Graph {
         filter_selfloops: Option<bool>,
         filter_parallel_edges: Option<bool>,
     ) -> PyResult<Graph> {
-        Ok(pe!(self.inner.filter_from_ids(
-            node_ids_to_keep.into(),
-            node_ids_to_filter.into(),
-            node_type_ids_to_keep.into(),
-            node_type_ids_to_filter.into(),
-            node_type_id_to_keep.into(),
-            node_type_id_to_filter.into(),
-            edge_ids_to_keep.into(),
-            edge_ids_to_filter.into(),
-            edge_node_ids_to_keep.into(),
-            edge_node_ids_to_filter.into(),
-            edge_type_ids_to_keep.into(),
-            edge_type_ids_to_filter.into(),
-            min_edge_weight.into(),
-            max_edge_weight.into(),
-            filter_singleton_nodes.into(),
-            filter_singleton_nodes_with_selfloop.into(),
-            filter_selfloops.into(),
-            filter_parallel_edges.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.filter_from_ids(
+                    node_ids_to_keep.into(),
+                    node_ids_to_filter.into(),
+                    node_type_ids_to_keep.into(),
+                    node_type_ids_to_filter.into(),
+                    node_type_id_to_keep.into(),
+                    node_type_id_to_filter.into(),
+                    edge_ids_to_keep.into(),
+                    edge_ids_to_filter.into(),
+                    edge_node_ids_to_keep.into(),
+                    edge_node_ids_to_filter.into(),
+                    edge_type_ids_to_keep.into(),
+                    edge_type_ids_to_filter.into(),
+                    min_edge_weight.into(),
+                    max_edge_weight.into(),
+                    filter_singleton_nodes.into(),
+                    filter_singleton_nodes_with_selfloop.into(),
+                    filter_selfloops.into(),
+                    filter_parallel_edges.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -6490,25 +6775,29 @@ impl Graph {
         filter_selfloops: Option<bool>,
         filter_parallel_edges: Option<bool>,
     ) -> PyResult<Graph> {
-        Ok(pe!(self.inner.filter_from_names(
-            node_names_to_keep.into(),
-            node_names_to_filter.into(),
-            node_type_names_to_keep.into(),
-            node_type_names_to_filter.into(),
-            node_type_name_to_keep.into(),
-            node_type_name_to_filter.into(),
-            edge_node_names_to_keep.into(),
-            edge_node_names_to_filter.into(),
-            edge_type_names_to_keep.into(),
-            edge_type_names_to_filter.into(),
-            min_edge_weight.into(),
-            max_edge_weight.into(),
-            filter_singleton_nodes.into(),
-            filter_singleton_nodes_with_selfloop.into(),
-            filter_selfloops.into(),
-            filter_parallel_edges.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.filter_from_names(
+                    node_names_to_keep.into(),
+                    node_names_to_filter.into(),
+                    node_type_names_to_keep.into(),
+                    node_type_names_to_filter.into(),
+                    node_type_name_to_keep.into(),
+                    node_type_name_to_filter.into(),
+                    edge_node_names_to_keep.into(),
+                    edge_node_names_to_filter.into(),
+                    edge_type_names_to_keep.into(),
+                    edge_type_names_to_filter.into(),
+                    min_edge_weight.into(),
+                    max_edge_weight.into(),
+                    filter_singleton_nodes.into(),
+                    filter_singleton_nodes_with_selfloop.into(),
+                    filter_selfloops.into(),
+                    filter_parallel_edges.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -6604,14 +6893,29 @@ impl Graph {
         random_state: Option<EdgeT>,
         undesired_edge_types: Option<HashSet<Option<EdgeTypeT>>>,
         verbose: Option<bool>,
-    ) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
-        self.inner
-            .random_spanning_arborescence_kruskal(
+    ) -> (
+        HashSet<(NodeT, NodeT)>,
+        Py<PyArray1<NodeT>>,
+        NodeT,
+        NodeT,
+        NodeT,
+    ) {
+        let (subresult_0, subresult_1, subresult_2, subresult_3, subresult_4) =
+            self.inner.random_spanning_arborescence_kruskal(
                 random_state.into(),
                 undesired_edge_types.into(),
                 verbose.into(),
-            )
-            .into()
+            );
+        (
+            { subresult_0.into() },
+            {
+                let gil = pyo3::Python::acquire_gil();
+                to_ndarray_1d!(gil, subresult_1, NodeT)
+            },
+            { subresult_2.into() },
+            { subresult_3.into() },
+            { subresult_4.into() },
+        )
     }
 
     #[automatically_generated_binding]
@@ -6635,10 +6939,25 @@ impl Graph {
     pub fn spanning_arborescence_kruskal(
         &self,
         verbose: Option<bool>,
-    ) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
-        self.inner
-            .spanning_arborescence_kruskal(verbose.into())
-            .into()
+    ) -> (
+        HashSet<(NodeT, NodeT)>,
+        Py<PyArray1<NodeT>>,
+        NodeT,
+        NodeT,
+        NodeT,
+    ) {
+        let (subresult_0, subresult_1, subresult_2, subresult_3, subresult_4) =
+            self.inner.spanning_arborescence_kruskal(verbose.into());
+        (
+            { subresult_0.into() },
+            {
+                let gil = pyo3::Python::acquire_gil();
+                to_ndarray_1d!(gil, subresult_1, NodeT)
+            },
+            { subresult_2.into() },
+            { subresult_3.into() },
+            { subresult_4.into() },
+        )
     }
 
     #[automatically_generated_binding]
@@ -6672,8 +6991,20 @@ impl Graph {
     pub fn connected_components(
         &self,
         verbose: Option<bool>,
-    ) -> PyResult<(Vec<NodeT>, NodeT, NodeT, NodeT)> {
-        Ok(pe!(self.inner.connected_components(verbose.into()))?.into())
+    ) -> PyResult<(Py<PyArray1<NodeT>>, NodeT, NodeT, NodeT)> {
+        Ok({
+            let (subresult_0, subresult_1, subresult_2, subresult_3) =
+                pe!({ self.inner.connected_components(verbose.into()) })?.into();
+            (
+                {
+                    let gil = pyo3::Python::acquire_gil();
+                    to_ndarray_1d!(gil, subresult_0, NodeT)
+                },
+                { subresult_1.into() },
+                { subresult_2.into() },
+                { subresult_3.into() },
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -6698,13 +7029,16 @@ impl Graph {
         vector_cumulative_node_degrees: Option<bool>,
         vector_reciprocal_sqrt_degrees: Option<bool>,
     ) -> PyResult<()> {
-        Ok(pe!(self.inner.enable(
-            vector_sources.into(),
-            vector_destinations.into(),
-            vector_cumulative_node_degrees.into(),
-            vector_reciprocal_sqrt_degrees.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.enable(
+                    vector_sources.into(),
+                    vector_destinations.into(),
+                    vector_cumulative_node_degrees.into(),
+                    vector_reciprocal_sqrt_degrees.into(),
+                )
+            })?
+        })
     }
 
     #[automatically_generated_binding]
@@ -6729,7 +7063,7 @@ impl Graph {
     ///     If one of the two graphs has edge types and the other does not.
     ///
     pub fn is_compatible(&self, other: &Graph) -> PyResult<bool> {
-        Ok(pe!(self.inner.is_compatible(&other.inner))?.into())
+        Ok({ pe!({ self.inner.is_compatible(&other.inner) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -6742,7 +7076,7 @@ impl Graph {
     ///     The other graph.
     ///
     pub fn has_same_adjacency_matrix(&self, other: &Graph) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_same_adjacency_matrix(&other.inner))?.into())
+        Ok({ pe!({ self.inner.has_same_adjacency_matrix(&other.inner) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -6781,14 +7115,17 @@ impl Graph {
         number_of_nodes_to_sample: NodeT,
         random_state: u64,
     ) -> PyResult<Py<PyArray1<NodeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self
-                .inner
-                .get_random_nodes(number_of_nodes_to_sample.into(), random_state.into()))?,
-            NodeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({
+                    self.inner
+                        .get_random_nodes(number_of_nodes_to_sample.into(), random_state.into())
+                })?,
+                NodeT
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -6815,15 +7152,19 @@ impl Graph {
         number_of_nodes_to_sample: NodeT,
         root_node: NodeT,
     ) -> PyResult<Py<PyArray1<NodeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_breadth_first_search_random_nodes(
-                number_of_nodes_to_sample.into(),
-                root_node.into()
-            ))?,
-            NodeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({
+                    self.inner.get_breadth_first_search_random_nodes(
+                        number_of_nodes_to_sample.into(),
+                        root_node.into(),
+                    )
+                })?,
+                NodeT
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -6854,17 +7195,21 @@ impl Graph {
         walk_length: u64,
         unique: Option<bool>,
     ) -> PyResult<Py<PyArray1<NodeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_uniform_random_walk_random_nodes(
-                node.into(),
-                random_state.into(),
-                walk_length.into(),
-                unique.into()
-            ))?,
-            NodeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({
+                    self.inner.get_uniform_random_walk_random_nodes(
+                        node.into(),
+                        random_state.into(),
+                        walk_length.into(),
+                        unique.into(),
+                    )
+                })?,
+                NodeT
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -6905,18 +7250,22 @@ impl Graph {
         node_sampling_method: &str,
         unique: Option<bool>,
     ) -> PyResult<Py<PyArray1<NodeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_subsampled_nodes(
-                number_of_nodes_to_sample.into(),
-                random_state.into(),
-                root_node.into(),
-                node_sampling_method.into(),
-                unique.into()
-            ))?,
-            NodeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({
+                    self.inner.get_subsampled_nodes(
+                        number_of_nodes_to_sample.into(),
+                        random_state.into(),
+                        root_node.into(),
+                        node_sampling_method.into(),
+                        unique.into(),
+                    )
+                })?,
+                NodeT
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -6956,20 +7305,24 @@ impl Graph {
         include_central_node: Option<bool>,
         verbose: Option<bool>,
     ) -> PyResult<Py<PyArray2<f64>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_2d!(
-            gil,
-            pe!(self.inner.get_okapi_bm25_node_feature_propagation(
-                features.into(),
-                iterations.into(),
-                maximal_distance.into(),
-                k1.into(),
-                b.into(),
-                include_central_node.into(),
-                verbose.into()
-            ))?,
-            f64
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_2d!(
+                gil,
+                pe!({
+                    self.inner.get_okapi_bm25_node_feature_propagation(
+                        features.into(),
+                        iterations.into(),
+                        maximal_distance.into(),
+                        k1.into(),
+                        b.into(),
+                        include_central_node.into(),
+                        verbose.into(),
+                    )
+                })?,
+                f64
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -7003,18 +7356,22 @@ impl Graph {
         b: Option<f64>,
         verbose: Option<bool>,
     ) -> PyResult<Py<PyArray2<f64>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_2d!(
-            gil,
-            pe!(self.inner.get_okapi_bm25_node_label_propagation(
-                iterations.into(),
-                maximal_distance.into(),
-                k1.into(),
-                b.into(),
-                verbose.into()
-            ))?,
-            f64
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_2d!(
+                gil,
+                pe!({
+                    self.inner.get_okapi_bm25_node_label_propagation(
+                        iterations.into(),
+                        maximal_distance.into(),
+                        k1.into(),
+                        b.into(),
+                        verbose.into(),
+                    )
+                })?,
+                f64
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -7065,7 +7422,7 @@ impl Graph {
     #[text_signature = "($self)"]
     /// Returns whether graph has weights that can represent probabilities
     pub fn has_edge_weights_representing_probabilities(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_edge_weights_representing_probabilities())?.into())
+        Ok({ pe!({ self.inner.has_edge_weights_representing_probabilities() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -7080,7 +7437,7 @@ impl Graph {
     ///     If the graph does not contain edge weights.
     ///
     pub fn has_weighted_singleton_nodes(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_weighted_singleton_nodes())?.into())
+        Ok({ pe!({ self.inner.has_weighted_singleton_nodes() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -7093,7 +7450,7 @@ impl Graph {
     ///     If the graph does not contain edge weights.
     ///
     pub fn has_constant_edge_weights(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_constant_edge_weights())?.into())
+        Ok({ pe!({ self.inner.has_constant_edge_weights() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -7106,7 +7463,7 @@ impl Graph {
     ///     If the graph does not contain weights.
     ///
     pub fn has_negative_edge_weights(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_negative_edge_weights())?.into())
+        Ok({ pe!({ self.inner.has_negative_edge_weights() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -7175,7 +7532,7 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn has_multilabel_node_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_multilabel_node_types())?.into())
+        Ok({ pe!({ self.inner.has_multilabel_node_types() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -7188,7 +7545,7 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn has_unknown_node_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_unknown_node_types())?.into())
+        Ok({ pe!({ self.inner.has_unknown_node_types() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -7201,7 +7558,7 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn has_known_node_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_known_node_types())?.into())
+        Ok({ pe!({ self.inner.has_known_node_types() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -7214,7 +7571,7 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn has_unknown_edge_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_unknown_edge_types())?.into())
+        Ok({ pe!({ self.inner.has_unknown_edge_types() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -7227,7 +7584,7 @@ impl Graph {
     ///     If the graph does not have edge types.
     ///
     pub fn has_known_edge_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_known_edge_types())?.into())
+        Ok({ pe!({ self.inner.has_known_edge_types() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -7240,7 +7597,7 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn has_homogeneous_node_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_homogeneous_node_types())?.into())
+        Ok({ pe!({ self.inner.has_homogeneous_node_types() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -7253,7 +7610,7 @@ impl Graph {
     ///     If the graph does not have edge types.
     ///
     pub fn has_homogeneous_edge_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_homogeneous_edge_types())?.into())
+        Ok({ pe!({ self.inner.has_homogeneous_edge_types() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -7266,7 +7623,7 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn has_singleton_node_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_singleton_node_types())?.into())
+        Ok({ pe!({ self.inner.has_singleton_node_types() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -7286,7 +7643,7 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn has_node_types_oddities(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_node_types_oddities())?.into())
+        Ok({ pe!({ self.inner.has_node_types_oddities() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -7299,7 +7656,7 @@ impl Graph {
     ///     If the graph does not have edge types.
     ///
     pub fn has_singleton_edge_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_singleton_edge_types())?.into())
+        Ok({ pe!({ self.inner.has_singleton_edge_types() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -7312,7 +7669,7 @@ impl Graph {
     ///     If the graph does not have edge types.
     ///
     pub fn has_edge_types_oddities(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_edge_types_oddities())?.into())
+        Ok({ pe!({ self.inner.has_edge_types_oddities() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -7429,12 +7786,16 @@ impl Graph {
         use_edge_weights_as_probabilities: Option<bool>,
         verbose: Option<bool>,
     ) -> PyResult<Graph> {
-        Ok(pe!(self.inner.get_weighted_all_shortest_paths(
-            iterations.into(),
-            use_edge_weights_as_probabilities.into(),
-            verbose.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.get_weighted_all_shortest_paths(
+                    iterations.into(),
+                    use_edge_weights_as_probabilities.into(),
+                    verbose.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -7628,9 +7989,10 @@ impl Graph {
         src: NodeT,
         dst: NodeT,
     ) -> (EdgeT, EdgeT) {
-        self.inner
-            .get_unchecked_minmax_edge_ids_from_node_ids(src.into(), dst.into())
-            .into()
+        let (subresult_0, subresult_1) = self
+            .inner
+            .get_unchecked_minmax_edge_ids_from_node_ids(src.into(), dst.into());
+        ({ subresult_0.into() }, { subresult_1.into() })
     }
 
     #[automatically_generated_binding]
@@ -7650,9 +8012,10 @@ impl Graph {
     /// ------
     /// If the given edge ID does not exist in the current graph the method will raise a panic.
     pub unsafe fn get_unchecked_node_ids_from_edge_id(&self, edge_id: EdgeT) -> (NodeT, NodeT) {
-        self.inner
-            .get_unchecked_node_ids_from_edge_id(edge_id.into())
-            .into()
+        let (subresult_0, subresult_1) = self
+            .inner
+            .get_unchecked_node_ids_from_edge_id(edge_id.into());
+        ({ subresult_0.into() }, { subresult_1.into() })
     }
 
     #[automatically_generated_binding]
@@ -7669,9 +8032,10 @@ impl Graph {
     /// ------
     /// If the given edge ID does not exist in the current graph the method will raise a panic.
     pub unsafe fn get_unchecked_node_names_from_edge_id(&self, edge_id: EdgeT) -> (String, String) {
-        self.inner
-            .get_unchecked_node_names_from_edge_id(edge_id.into())
-            .into()
+        let (subresult_0, subresult_1) = self
+            .inner
+            .get_unchecked_node_names_from_edge_id(edge_id.into());
+        ({ subresult_0.into() }, { subresult_1.into() })
     }
 
     #[automatically_generated_binding]
@@ -7728,7 +8092,7 @@ impl Graph {
     ///     If the given edge ID does not exist in the current graph.
     ///
     pub fn get_source_node_id_from_edge_id(&self, edge_id: EdgeT) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_source_node_id_from_edge_id(edge_id.into()))?.into())
+        Ok({ pe!({ self.inner.get_source_node_id_from_edge_id(edge_id.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -7747,10 +8111,13 @@ impl Graph {
     ///     If the given edge ID does not exist in the current graph.
     ///
     pub fn get_destination_node_id_from_edge_id(&self, edge_id: EdgeT) -> PyResult<NodeT> {
-        Ok(pe!(self
-            .inner
-            .get_destination_node_id_from_edge_id(edge_id.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_destination_node_id_from_edge_id(edge_id.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -7808,7 +8175,7 @@ impl Graph {
     /// -------
     ///
     pub fn get_source_node_name_from_edge_id(&self, edge_id: EdgeT) -> PyResult<String> {
-        Ok(pe!(self.inner.get_source_node_name_from_edge_id(edge_id.into()))?.into())
+        Ok({ pe!({ self.inner.get_source_node_name_from_edge_id(edge_id.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -7825,10 +8192,13 @@ impl Graph {
     /// -------
     ///
     pub fn get_destination_node_name_from_edge_id(&self, edge_id: EdgeT) -> PyResult<String> {
-        Ok(pe!(self
-            .inner
-            .get_destination_node_name_from_edge_id(edge_id.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_destination_node_name_from_edge_id(edge_id.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -7841,7 +8211,11 @@ impl Graph {
     ///     The edge ID whose source and destination node IDs are to e retrieved.
     ///
     pub fn get_node_names_from_edge_id(&self, edge_id: EdgeT) -> PyResult<(String, String)> {
-        Ok(pe!(self.inner.get_node_names_from_edge_id(edge_id.into()))?.into())
+        Ok({
+            let (subresult_0, subresult_1) =
+                pe!({ self.inner.get_node_names_from_edge_id(edge_id.into()) })?.into();
+            ({ subresult_0.into() }, { subresult_1.into() })
+        })
     }
 
     #[automatically_generated_binding]
@@ -7854,7 +8228,11 @@ impl Graph {
     ///     The edge ID whose source and destination node IDs are to e retrieved.
     ///
     pub fn get_node_ids_from_edge_id(&self, edge_id: EdgeT) -> PyResult<(NodeT, NodeT)> {
-        Ok(pe!(self.inner.get_node_ids_from_edge_id(edge_id.into()))?.into())
+        Ok({
+            let (subresult_0, subresult_1) =
+                pe!({ self.inner.get_node_ids_from_edge_id(edge_id.into()) })?.into();
+            ({ subresult_0.into() }, { subresult_1.into() })
+        })
     }
 
     #[automatically_generated_binding]
@@ -7893,7 +8271,7 @@ impl Graph {
     ///     The destination node ID.
     ///
     pub fn get_edge_id_from_node_ids(&self, src: NodeT, dst: NodeT) -> PyResult<EdgeT> {
-        Ok(pe!(self.inner.get_edge_id_from_node_ids(src.into(), dst.into()))?.into())
+        Ok({ pe!({ self.inner.get_edge_id_from_node_ids(src.into(), dst.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -7934,9 +8312,12 @@ impl Graph {
         &self,
         edge_id: EdgeT,
     ) -> (NodeT, NodeT, Option<EdgeTypeT>) {
-        self.inner
-            .get_unchecked_node_ids_and_edge_type_id_from_edge_id(edge_id.into())
-            .into()
+        let (subresult_0, subresult_1, subresult_2) = self
+            .inner
+            .get_unchecked_node_ids_and_edge_type_id_from_edge_id(edge_id.into());
+        ({ subresult_0.into() }, { subresult_1.into() }, {
+            subresult_2.into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -7952,10 +8333,16 @@ impl Graph {
         &self,
         edge_id: EdgeT,
     ) -> PyResult<(NodeT, NodeT, Option<EdgeTypeT>)> {
-        Ok(pe!(self
-            .inner
-            .get_node_ids_and_edge_type_id_from_edge_id(edge_id.into()))?
-        .into())
+        Ok({
+            let (subresult_0, subresult_1, subresult_2) = pe!({
+                self.inner
+                    .get_node_ids_and_edge_type_id_from_edge_id(edge_id.into())
+            })?
+            .into();
+            ({ subresult_0.into() }, { subresult_1.into() }, {
+                subresult_2.into()
+            })
+        })
     }
 
     #[automatically_generated_binding]
@@ -7977,9 +8364,15 @@ impl Graph {
         &self,
         edge_id: EdgeT,
     ) -> (NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>) {
-        self.inner
-            .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id.into())
-            .into()
+        let (subresult_0, subresult_1, subresult_2, subresult_3) = self
+            .inner
+            .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id.into());
+        (
+            { subresult_0.into() },
+            { subresult_1.into() },
+            { subresult_2.into() },
+            { subresult_3.into() },
+        )
     }
 
     #[automatically_generated_binding]
@@ -7995,10 +8388,19 @@ impl Graph {
         &self,
         edge_id: EdgeT,
     ) -> PyResult<(NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>)> {
-        Ok(pe!(self
-            .inner
-            .get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id.into()))?
-        .into())
+        Ok({
+            let (subresult_0, subresult_1, subresult_2, subresult_3) = pe!({
+                self.inner
+                    .get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id.into())
+            })?
+            .into();
+            (
+                { subresult_0.into() },
+                { subresult_1.into() },
+                { subresult_2.into() },
+                { subresult_3.into() },
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -8022,12 +8424,14 @@ impl Graph {
     ///     If the graph has no nodes.
     ///
     pub fn get_top_k_central_node_ids(&self, k: NodeT) -> PyResult<Py<PyArray1<NodeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_top_k_central_node_ids(k.into()))?,
-            NodeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({ self.inner.get_top_k_central_node_ids(k.into()) })?,
+                NodeT
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -8051,12 +8455,14 @@ impl Graph {
     ///     If the given value k is zero.
     ///
     pub fn get_weighted_top_k_central_node_ids(&self, k: NodeT) -> PyResult<Py<PyArray1<NodeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_weighted_top_k_central_node_ids(k.into()))?,
-            NodeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({ self.inner.get_weighted_top_k_central_node_ids(k.into()) })?,
+                NodeT
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -8110,7 +8516,7 @@ impl Graph {
     ///     Integer ID of the node.
     ///
     pub fn get_node_degree_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_node_degree_from_node_id(node_id.into()))?.into())
+        Ok({ pe!({ self.inner.get_node_degree_from_node_id(node_id.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -8145,10 +8551,13 @@ impl Graph {
     ///     Integer ID of the node.
     ///
     pub fn get_comulative_node_degree_from_node_id(&self, node_id: NodeT) -> PyResult<EdgeT> {
-        Ok(pe!(self
-            .inner
-            .get_comulative_node_degree_from_node_id(node_id.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_comulative_node_degree_from_node_id(node_id.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -8183,10 +8592,13 @@ impl Graph {
     ///     Integer ID of the node.
     ///
     pub fn get_reciprocal_sqrt_degree_from_node_id(&self, node_id: NodeT) -> PyResult<WeightT> {
-        Ok(pe!(self
-            .inner
-            .get_reciprocal_sqrt_degree_from_node_id(node_id.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_reciprocal_sqrt_degree_from_node_id(node_id.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -8226,10 +8638,13 @@ impl Graph {
     ///     Integer ID of the node.
     ///
     pub fn get_weighted_node_degree_from_node_id(&self, node_id: NodeT) -> PyResult<f64> {
-        Ok(pe!(self
-            .inner
-            .get_weighted_node_degree_from_node_id(node_id.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_weighted_node_degree_from_node_id(node_id.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -8248,7 +8663,7 @@ impl Graph {
     ///     If the given node name does not exist in the graph.
     ///
     pub fn get_node_degree_from_node_name(&self, node_name: &str) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_node_degree_from_node_name(node_name.into()))?.into())
+        Ok({ pe!({ self.inner.get_node_degree_from_node_name(node_name.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -8261,7 +8676,7 @@ impl Graph {
     ///     Number of central nodes to extract.
     ///
     pub fn get_top_k_central_node_names(&self, k: NodeT) -> PyResult<Vec<String>> {
-        Ok(pe!(self.inner.get_top_k_central_node_names(k.into()))?.into())
+        Ok({ pe!({ self.inner.get_top_k_central_node_names(k.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -8305,7 +8720,7 @@ impl Graph {
         &self,
         node_id: NodeT,
     ) -> PyResult<Option<Vec<NodeTypeT>>> {
-        Ok(pe!(self.inner.get_node_type_ids_from_node_id(node_id.into()))?.into())
+        Ok({ pe!({ self.inner.get_node_type_ids_from_node_id(node_id.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -8345,7 +8760,7 @@ impl Graph {
     ///     edge whose edge type is to be returned.
     ///
     pub fn get_edge_type_id_from_edge_id(&self, edge_id: EdgeT) -> PyResult<Option<EdgeTypeT>> {
-        Ok(pe!(self.inner.get_edge_type_id_from_edge_id(edge_id.into()))?.into())
+        Ok({ pe!({ self.inner.get_edge_type_id_from_edge_id(edge_id.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -8390,7 +8805,7 @@ impl Graph {
         &self,
         node_id: NodeT,
     ) -> PyResult<Option<Vec<String>>> {
-        Ok(pe!(self.inner.get_node_type_names_from_node_id(node_id.into()))?.into())
+        Ok({ pe!({ self.inner.get_node_type_names_from_node_id(node_id.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -8406,10 +8821,13 @@ impl Graph {
         &self,
         node_name: &str,
     ) -> PyResult<Option<Vec<String>>> {
-        Ok(pe!(self
-            .inner
-            .get_node_type_names_from_node_name(node_name.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_node_type_names_from_node_name(node_name.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -8422,7 +8840,7 @@ impl Graph {
     ///     The edge ID whose edge type is to be returned.
     ///
     pub fn get_edge_type_name_from_edge_id(&self, edge_id: EdgeT) -> PyResult<Option<String>> {
-        Ok(pe!(self.inner.get_edge_type_name_from_edge_id(edge_id.into()))?.into())
+        Ok({ pe!({ self.inner.get_edge_type_name_from_edge_id(edge_id.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -8438,10 +8856,13 @@ impl Graph {
         &self,
         edge_type_id: EdgeTypeT,
     ) -> PyResult<String> {
-        Ok(pe!(self
-            .inner
-            .get_edge_type_name_from_edge_type_id(edge_type_id.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_edge_type_name_from_edge_type_id(edge_type_id.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -8454,7 +8875,7 @@ impl Graph {
     ///     The edge ID whose weight is to be returned.
     ///
     pub fn get_edge_weight_from_edge_id(&self, edge_id: EdgeT) -> PyResult<WeightT> {
-        Ok(pe!(self.inner.get_edge_weight_from_edge_id(edge_id.into()))?.into())
+        Ok({ pe!({ self.inner.get_edge_weight_from_edge_id(edge_id.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -8469,10 +8890,13 @@ impl Graph {
     ///     The node ID of the destination node.
     ///
     pub fn get_edge_weight_from_node_ids(&self, src: NodeT, dst: NodeT) -> PyResult<WeightT> {
-        Ok(pe!(self
-            .inner
-            .get_edge_weight_from_node_ids(src.into(), dst.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_edge_weight_from_node_ids(src.into(), dst.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -8494,14 +8918,16 @@ impl Graph {
         dst: NodeT,
         edge_type: Option<EdgeTypeT>,
     ) -> PyResult<WeightT> {
-        Ok(
-            pe!(self.inner.get_edge_weight_from_node_ids_and_edge_type_id(
-                src.into(),
-                dst.into(),
-                edge_type.into()
-            ))?
-            .into(),
-        )
+        Ok({
+            pe!({
+                self.inner.get_edge_weight_from_node_ids_and_edge_type_id(
+                    src.into(),
+                    dst.into(),
+                    edge_type.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -8523,14 +8949,17 @@ impl Graph {
         dst: &str,
         edge_type: Option<&str>,
     ) -> PyResult<WeightT> {
-        Ok(pe!(self
-            .inner
-            .get_edge_weight_from_node_names_and_edge_type_name(
-                src.into(),
-                dst.into(),
-                edge_type.into()
-            ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_edge_weight_from_node_names_and_edge_type_name(
+                        src.into(),
+                        dst.into(),
+                        edge_type.into(),
+                    )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -8549,10 +8978,13 @@ impl Graph {
         src_name: &str,
         dst_name: &str,
     ) -> PyResult<WeightT> {
-        Ok(pe!(self
-            .inner
-            .get_edge_weight_from_node_names(src_name.into(), dst_name.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_edge_weight_from_node_names(src_name.into(), dst_name.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -8584,7 +9016,7 @@ impl Graph {
     ///     The node ID whose name is to be returned.
     ///
     pub fn get_node_name_from_node_id(&self, node_id: NodeT) -> PyResult<String> {
-        Ok(pe!(self.inner.get_node_name_from_node_id(node_id.into()))?.into())
+        Ok({ pe!({ self.inner.get_node_name_from_node_id(node_id.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -8603,7 +9035,7 @@ impl Graph {
     ///     When the given node name does not exists in the current graph.
     ///
     pub fn get_node_id_from_node_name(&self, node_name: &str) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_node_id_from_node_name(node_name.into()))?.into())
+        Ok({ pe!({ self.inner.get_node_id_from_node_name(node_name.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -8625,12 +9057,14 @@ impl Graph {
         &self,
         node_names: Vec<&str>,
     ) -> PyResult<Py<PyArray1<NodeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_node_ids_from_node_names(node_names.into()))?,
-            NodeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({ self.inner.get_node_ids_from_node_names(node_names.into()) })?,
+                NodeT
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -8652,10 +9086,13 @@ impl Graph {
         &self,
         edge_node_names: Vec<(&str, &str)>,
     ) -> PyResult<Vec<(NodeT, NodeT)>> {
-        Ok(pe!(self
-            .inner
-            .get_edge_node_ids_from_edge_node_names(edge_node_names.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_edge_node_ids_from_edge_node_names(edge_node_names.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -8677,10 +9114,13 @@ impl Graph {
         &self,
         edge_node_ids: Vec<(NodeT, NodeT)>,
     ) -> PyResult<Vec<(String, String)>> {
-        Ok(pe!(self
-            .inner
-            .get_edge_node_names_from_edge_node_ids(edge_node_ids.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_edge_node_names_from_edge_node_ids(edge_node_ids.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -8696,10 +9136,13 @@ impl Graph {
         &self,
         node_name: &str,
     ) -> PyResult<Option<Vec<NodeTypeT>>> {
-        Ok(pe!(self
-            .inner
-            .get_node_type_ids_from_node_name(node_name.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_node_type_ids_from_node_name(node_name.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -8715,10 +9158,13 @@ impl Graph {
         &self,
         node_name: &str,
     ) -> PyResult<Option<Vec<String>>> {
-        Ok(pe!(self
-            .inner
-            .get_node_type_name_from_node_name(node_name.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_node_type_name_from_node_name(node_name.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -8737,10 +9183,13 @@ impl Graph {
         &self,
         edge_type_id: Option<EdgeTypeT>,
     ) -> PyResult<EdgeT> {
-        Ok(pe!(self
-            .inner
-            .get_edge_count_from_edge_type_id(edge_type_id.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_edge_count_from_edge_type_id(edge_type_id.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -8758,10 +9207,13 @@ impl Graph {
         &self,
         edge_type_name: Option<&str>,
     ) -> PyResult<Option<EdgeTypeT>> {
-        Ok(pe!(self
-            .inner
-            .get_edge_type_id_from_edge_type_name(edge_type_name.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_edge_type_id_from_edge_type_name(edge_type_name.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -8780,10 +9232,13 @@ impl Graph {
         &self,
         edge_type_name: Option<&str>,
     ) -> PyResult<EdgeT> {
-        Ok(pe!(self
-            .inner
-            .get_edge_count_from_edge_type_name(edge_type_name.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_edge_count_from_edge_type_name(edge_type_name.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -8801,10 +9256,13 @@ impl Graph {
         &self,
         node_type_name: &str,
     ) -> PyResult<NodeTypeT> {
-        Ok(pe!(self
-            .inner
-            .get_node_type_id_from_node_type_name(node_type_name.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_node_type_id_from_node_type_name(node_type_name.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -8823,10 +9281,13 @@ impl Graph {
         &self,
         node_type_id: Option<NodeTypeT>,
     ) -> PyResult<NodeT> {
-        Ok(pe!(self
-            .inner
-            .get_node_count_from_node_type_id(node_type_id.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_node_count_from_node_type_id(node_type_id.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -8845,10 +9306,13 @@ impl Graph {
         &self,
         node_type_name: Option<&str>,
     ) -> PyResult<NodeT> {
-        Ok(pe!(self
-            .inner
-            .get_node_count_from_node_type_name(node_type_name.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_node_count_from_node_type_name(node_type_name.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -8864,14 +9328,17 @@ impl Graph {
         &self,
         node_id: NodeT,
     ) -> PyResult<Py<PyArray1<NodeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self
-                .inner
-                .get_neighbour_node_ids_from_node_id(node_id.into()))?,
-            NodeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({
+                    self.inner
+                        .get_neighbour_node_ids_from_node_id(node_id.into())
+                })?,
+                NodeT
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -8887,14 +9354,17 @@ impl Graph {
         &self,
         node_name: &str,
     ) -> PyResult<Py<PyArray1<NodeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self
-                .inner
-                .get_neighbour_node_ids_from_node_name(node_name.into()))?,
-            NodeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({
+                    self.inner
+                        .get_neighbour_node_ids_from_node_name(node_name.into())
+                })?,
+                NodeT
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -8910,10 +9380,13 @@ impl Graph {
         &self,
         node_name: &str,
     ) -> PyResult<Vec<String>> {
-        Ok(pe!(self
-            .inner
-            .get_neighbour_node_names_from_node_name(node_name.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_neighbour_node_names_from_node_name(node_name.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -8934,10 +9407,14 @@ impl Graph {
         src: NodeT,
         dst: NodeT,
     ) -> PyResult<(EdgeT, EdgeT)> {
-        Ok(pe!(self
-            .inner
-            .get_minmax_edge_ids_from_node_ids(src.into(), dst.into()))?
-        .into())
+        Ok({
+            let (subresult_0, subresult_1) = pe!({
+                self.inner
+                    .get_minmax_edge_ids_from_node_ids(src.into(), dst.into())
+            })?
+            .into();
+            ({ subresult_0.into() }, { subresult_1.into() })
+        })
     }
 
     #[automatically_generated_binding]
@@ -8962,12 +9439,16 @@ impl Graph {
         dst: NodeT,
         edge_type: Option<EdgeTypeT>,
     ) -> PyResult<EdgeT> {
-        Ok(pe!(self.inner.get_edge_id_from_node_ids_and_edge_type_id(
-            src.into(),
-            dst.into(),
-            edge_type.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.get_edge_id_from_node_ids_and_edge_type_id(
+                    src.into(),
+                    dst.into(),
+                    edge_type.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -8985,10 +9466,13 @@ impl Graph {
     ///     Destination node name of the edge.
     ///
     pub fn get_edge_id_from_node_names(&self, src_name: &str, dst_name: &str) -> PyResult<EdgeT> {
-        Ok(pe!(self
-            .inner
-            .get_edge_id_from_node_names(src_name.into(), dst_name.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_edge_id_from_node_names(src_name.into(), dst_name.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -9013,14 +9497,16 @@ impl Graph {
         dst_name: &str,
         edge_type_name: Option<&str>,
     ) -> PyResult<EdgeT> {
-        Ok(
-            pe!(self.inner.get_edge_id_from_node_names_and_edge_type_name(
-                src_name.into(),
-                dst_name.into(),
-                edge_type_name.into()
-            ))?
-            .into(),
-        )
+        Ok({
+            pe!({
+                self.inner.get_edge_id_from_node_names_and_edge_type_name(
+                    src_name.into(),
+                    dst_name.into(),
+                    edge_type_name.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -9036,10 +9522,13 @@ impl Graph {
         &self,
         edge_type_names: Vec<Option<String>>,
     ) -> PyResult<Vec<Option<EdgeTypeT>>> {
-        Ok(pe!(self
-            .inner
-            .get_edge_type_ids_from_edge_type_names(edge_type_names.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_edge_type_ids_from_edge_type_names(edge_type_names.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -9055,10 +9544,13 @@ impl Graph {
         &self,
         node_type_names: Vec<Option<String>>,
     ) -> PyResult<Vec<Option<NodeTypeT>>> {
-        Ok(pe!(self
-            .inner
-            .get_node_type_ids_from_node_type_names(node_type_names.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_node_type_ids_from_node_type_names(node_type_names.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -9082,10 +9574,13 @@ impl Graph {
         &self,
         node_type_names: Vec<Option<Vec<&str>>>,
     ) -> PyResult<Vec<Option<Vec<NodeTypeT>>>> {
-        Ok(pe!(self
-            .inner
-            .get_multiple_node_type_ids_from_node_type_names(node_type_names.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_multiple_node_type_ids_from_node_type_names(node_type_names.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -9108,9 +9603,10 @@ impl Graph {
         &self,
         src: NodeT,
     ) -> (EdgeT, EdgeT) {
-        self.inner
-            .get_unchecked_minmax_edge_ids_from_source_node_id(src.into())
-            .into()
+        let (subresult_0, subresult_1) = self
+            .inner
+            .get_unchecked_minmax_edge_ids_from_source_node_id(src.into());
+        ({ subresult_0.into() }, { subresult_1.into() })
     }
 
     #[automatically_generated_binding]
@@ -9123,10 +9619,14 @@ impl Graph {
     ///     Node for which we need to compute the cumulative_node_degrees range.
     ///
     pub fn get_minmax_edge_ids_from_source_node_id(&self, src: NodeT) -> PyResult<(EdgeT, EdgeT)> {
-        Ok(pe!(self
-            .inner
-            .get_minmax_edge_ids_from_source_node_id(src.into()))?
-        .into())
+        Ok({
+            let (subresult_0, subresult_1) = pe!({
+                self.inner
+                    .get_minmax_edge_ids_from_source_node_id(src.into())
+            })?
+            .into();
+            ({ subresult_0.into() }, { subresult_1.into() })
+        })
     }
 
     #[automatically_generated_binding]
@@ -9145,10 +9645,13 @@ impl Graph {
         &self,
         node_type_id: NodeTypeT,
     ) -> PyResult<String> {
-        Ok(pe!(self
-            .inner
-            .get_node_type_name_from_node_type_id(node_type_id.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_node_type_name_from_node_type_id(node_type_id.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -9209,34 +9712,37 @@ impl Graph {
         edge_type_name: Option<&str>,
         weight: Option<WeightT>,
     ) -> PyResult<Graph> {
-        Ok(pe!(self
-            .inner
-            .add_selfloops(edge_type_name.into(), weight.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .add_selfloops(edge_type_name.into(), weight.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns vector of unweighted degree centrality for all nodes
     pub fn get_degree_centrality(&self) -> PyResult<Py<PyArray1<f64>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_degree_centrality())?,
-            f64
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(gil, pe!({ self.inner.get_degree_centrality() })?, f64)
+        })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Returns vector of weighted degree centrality for all nodes
     pub fn get_weighted_degree_centrality(&self) -> PyResult<Py<PyArray1<f64>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_weighted_degree_centrality())?,
-            f64
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({ self.inner.get_weighted_degree_centrality() })?,
+                f64
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -9338,15 +9844,19 @@ impl Graph {
         use_edge_weights_as_probabilities: Option<bool>,
         verbose: Option<bool>,
     ) -> PyResult<Py<PyArray1<f64>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_weighted_closeness_centrality(
-                use_edge_weights_as_probabilities.into(),
-                verbose.into()
-            ))?,
-            f64
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({
+                    self.inner.get_weighted_closeness_centrality(
+                        use_edge_weights_as_probabilities.into(),
+                        verbose.into(),
+                    )
+                })?,
+                f64
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -9432,15 +9942,19 @@ impl Graph {
         use_edge_weights_as_probabilities: Option<bool>,
         verbose: Option<bool>,
     ) -> PyResult<Py<PyArray1<f64>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_weighted_harmonic_centrality(
-                use_edge_weights_as_probabilities.into(),
-                verbose.into()
-            ))?,
-            f64
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({
+                    self.inner.get_weighted_harmonic_centrality(
+                        use_edge_weights_as_probabilities.into(),
+                        verbose.into(),
+                    )
+                })?,
+                f64
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -9521,15 +10035,18 @@ impl Graph {
         maximum_samples_number: Option<f64>,
         random_state: Option<u64>,
     ) -> PyResult<f64> {
-        Ok(pe!(self
-            .inner
-            .get_approximated_betweenness_centrality_from_node_id(
-                node_id.into(),
-                ant.into(),
-                maximum_samples_number.into(),
-                random_state.into()
-            ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_approximated_betweenness_centrality_from_node_id(
+                        node_id.into(),
+                        ant.into(),
+                        maximum_samples_number.into(),
+                        random_state.into(),
+                    )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -9560,15 +10077,18 @@ impl Graph {
         maximum_samples_number: Option<f64>,
         random_state: Option<u64>,
     ) -> PyResult<f64> {
-        Ok(pe!(self
-            .inner
-            .get_approximated_betweenness_centrality_from_node_name(
-                node_name.into(),
-                ant.into(),
-                maximum_samples_number.into(),
-                random_state.into()
-            ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_approximated_betweenness_centrality_from_node_name(
+                        node_name.into(),
+                        ant.into(),
+                        maximum_samples_number.into(),
+                        random_state.into(),
+                    )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -9602,16 +10122,19 @@ impl Graph {
         maximum_samples_number: Option<f64>,
         random_state: Option<u64>,
     ) -> PyResult<f64> {
-        Ok(pe!(self
-            .inner
-            .get_weighted_approximated_betweenness_centrality_from_node_id(
-                node_id.into(),
-                ant.into(),
-                use_edge_weights_as_probabilities.into(),
-                maximum_samples_number.into(),
-                random_state.into()
-            ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_weighted_approximated_betweenness_centrality_from_node_id(
+                        node_id.into(),
+                        ant.into(),
+                        use_edge_weights_as_probabilities.into(),
+                        maximum_samples_number.into(),
+                        random_state.into(),
+                    )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -9645,16 +10168,19 @@ impl Graph {
         maximum_samples_number: Option<f64>,
         random_state: Option<u64>,
     ) -> PyResult<f64> {
-        Ok(pe!(self
-            .inner
-            .get_weighted_approximated_betweenness_centrality_from_node_name(
-                node_name.into(),
-                ant.into(),
-                use_edge_weights_as_probabilities.into(),
-                maximum_samples_number.into(),
-                random_state.into()
-            ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_weighted_approximated_betweenness_centrality_from_node_name(
+                        node_name.into(),
+                        ant.into(),
+                        use_edge_weights_as_probabilities.into(),
+                        maximum_samples_number.into(),
+                        random_state.into(),
+                    )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -9673,14 +10199,19 @@ impl Graph {
         maximum_iterations_number: Option<usize>,
         tollerance: Option<f64>,
     ) -> PyResult<Py<PyArray1<f64>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self
-                .inner
-                .get_eigenvector_centrality(maximum_iterations_number.into(), tollerance.into()))?,
-            f64
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({
+                    self.inner.get_eigenvector_centrality(
+                        maximum_iterations_number.into(),
+                        tollerance.into(),
+                    )
+                })?,
+                f64
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -9699,15 +10230,19 @@ impl Graph {
         maximum_iterations_number: Option<usize>,
         tollerance: Option<f64>,
     ) -> PyResult<Py<PyArray1<f64>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.inner.get_weighted_eigenvector_centrality(
-                maximum_iterations_number.into(),
-                tollerance.into()
-            ))?,
-            f64
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({
+                    self.inner.get_weighted_eigenvector_centrality(
+                        maximum_iterations_number.into(),
+                        tollerance.into(),
+                    )
+                })?,
+                f64
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -9780,22 +10315,33 @@ impl Graph {
         use_edge_weights_as_probabilities: Option<bool>,
         random_state: Option<u64>,
         verbose: Option<bool>,
-    ) -> PyResult<(Vec<Vec<f64>>, Vec<Vec<String>>)> {
-        Ok(pe!(self.inner.get_shortest_paths_node_embedding(
-            node_centralities.into(),
-            adjust_by_central_node_distance.into(),
-            number_of_nodes_to_sample_per_feature.into(),
-            maximum_number_of_features.into(),
-            validate_node_centralities.into(),
-            maximal_depth.into(),
-            central_node_name.into(),
-            central_node_id.into(),
-            use_edge_weights.into(),
-            use_edge_weights_as_probabilities.into(),
-            random_state.into(),
-            verbose.into()
-        ))?
-        .into())
+    ) -> PyResult<(Py<PyArray2<f32>>, Vec<Vec<String>>)> {
+        Ok({
+            let (subresult_0, subresult_1) = pe!({
+                self.inner.get_shortest_paths_node_embedding(
+                    node_centralities.into(),
+                    adjust_by_central_node_distance.into(),
+                    number_of_nodes_to_sample_per_feature.into(),
+                    maximum_number_of_features.into(),
+                    validate_node_centralities.into(),
+                    maximal_depth.into(),
+                    central_node_name.into(),
+                    central_node_id.into(),
+                    use_edge_weights.into(),
+                    use_edge_weights_as_probabilities.into(),
+                    random_state.into(),
+                    verbose.into(),
+                )
+            })?
+            .into();
+            (
+                {
+                    let gil = pyo3::Python::acquire_gil();
+                    to_ndarray_2d!(gil, subresult_0, f32)
+                },
+                { subresult_1.into() },
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -9861,24 +10407,33 @@ impl Graph {
         use_edge_weights_as_probabilities: Option<bool>,
         random_state: Option<u64>,
         verbose: Option<bool>,
-    ) -> PyResult<(Vec<Vec<f64>>, Vec<Vec<String>>)> {
-        Ok(
-            pe!(self.inner.get_shortest_paths_node_embedding_per_node_type(
-                node_centralities.into(),
-                adjust_by_central_node_distance.into(),
-                number_of_nodes_to_sample_per_feature.into(),
-                maximum_number_of_features_per_node_type.into(),
-                validate_node_centralities.into(),
-                maximal_depth.into(),
-                central_node_name.into(),
-                central_node_id.into(),
-                use_edge_weights.into(),
-                use_edge_weights_as_probabilities.into(),
-                random_state.into(),
-                verbose.into()
-            ))?
-            .into(),
-        )
+    ) -> PyResult<(Py<PyArray2<f32>>, Vec<Vec<String>>)> {
+        Ok({
+            let (subresult_0, subresult_1) = pe!({
+                self.inner.get_shortest_paths_node_embedding_per_node_type(
+                    node_centralities.into(),
+                    adjust_by_central_node_distance.into(),
+                    number_of_nodes_to_sample_per_feature.into(),
+                    maximum_number_of_features_per_node_type.into(),
+                    validate_node_centralities.into(),
+                    maximal_depth.into(),
+                    central_node_name.into(),
+                    central_node_id.into(),
+                    use_edge_weights.into(),
+                    use_edge_weights_as_probabilities.into(),
+                    random_state.into(),
+                    verbose.into(),
+                )
+            })?
+            .into();
+            (
+                {
+                    let gil = pyo3::Python::acquire_gil();
+                    to_ndarray_2d!(gil, subresult_0, f32)
+                },
+                { subresult_1.into() },
+            )
+        })
     }
 
     #[automatically_generated_binding]
@@ -9913,13 +10468,17 @@ impl Graph {
         patience: Option<usize>,
         random_state: Option<u64>,
     ) -> PyResult<Vec<Vec<usize>>> {
-        Ok(pe!(self.inner.get_undirected_louvain_community_detection(
-            recursion_minimum_improvement.into(),
-            first_phase_minimum_improvement.into(),
-            patience.into(),
-            random_state.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.get_undirected_louvain_community_detection(
+                    recursion_minimum_improvement.into(),
+                    first_phase_minimum_improvement.into(),
+                    patience.into(),
+                    random_state.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -9939,10 +10498,15 @@ impl Graph {
         &self,
         node_community_memberships: Vec<NodeT>,
     ) -> PyResult<f64> {
-        Ok(pe!(self
-            .inner
-            .get_directed_modularity_from_node_community_memberships(&node_community_memberships))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_directed_modularity_from_node_community_memberships(
+                        &node_community_memberships,
+                    )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -9962,12 +10526,15 @@ impl Graph {
         &self,
         node_community_memberships: Vec<NodeT>,
     ) -> PyResult<f64> {
-        Ok(pe!(self
-            .inner
-            .get_undirected_modularity_from_node_community_memberships(
-                &node_community_memberships
-            ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_undirected_modularity_from_node_community_memberships(
+                        &node_community_memberships,
+                    )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10080,12 +10647,16 @@ impl Graph {
         destination_node_id: NodeT,
         normalize: bool,
     ) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_preferential_attachment_from_node_ids(
-            source_node_id.into(),
-            destination_node_id.into(),
-            normalize.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.get_preferential_attachment_from_node_ids(
+                    source_node_id.into(),
+                    destination_node_id.into(),
+                    normalize.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10113,12 +10684,16 @@ impl Graph {
         second_node_name: &str,
         normalize: bool,
     ) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_preferential_attachment_from_node_names(
-            first_node_name.into(),
-            second_node_name.into(),
-            normalize.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.get_preferential_attachment_from_node_names(
+                    first_node_name.into(),
+                    second_node_name.into(),
+                    normalize.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10179,14 +10754,17 @@ impl Graph {
         destination_node_id: NodeT,
         normalize: bool,
     ) -> PyResult<f64> {
-        Ok(pe!(self
-            .inner
-            .get_weighted_preferential_attachment_from_node_ids(
-                source_node_id.into(),
-                destination_node_id.into(),
-                normalize.into()
-            ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_weighted_preferential_attachment_from_node_ids(
+                        source_node_id.into(),
+                        destination_node_id.into(),
+                        normalize.into(),
+                    )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10214,14 +10792,17 @@ impl Graph {
         second_node_name: &str,
         normalize: bool,
     ) -> PyResult<f64> {
-        Ok(pe!(self
-            .inner
-            .get_weighted_preferential_attachment_from_node_names(
-                first_node_name.into(),
-                second_node_name.into(),
-                normalize.into()
-            ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_weighted_preferential_attachment_from_node_names(
+                        first_node_name.into(),
+                        second_node_name.into(),
+                        normalize.into(),
+                    )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10275,11 +10856,15 @@ impl Graph {
         source_node_id: NodeT,
         destination_node_id: NodeT,
     ) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_jaccard_coefficient_from_node_ids(
-            source_node_id.into(),
-            destination_node_id.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.get_jaccard_coefficient_from_node_ids(
+                    source_node_id.into(),
+                    destination_node_id.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10304,11 +10889,15 @@ impl Graph {
         first_node_name: &str,
         second_node_name: &str,
     ) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_jaccard_coefficient_from_node_names(
-            first_node_name.into(),
-            second_node_name.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.get_jaccard_coefficient_from_node_names(
+                    first_node_name.into(),
+                    second_node_name.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10362,11 +10951,15 @@ impl Graph {
         source_node_id: NodeT,
         destination_node_id: NodeT,
     ) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_adamic_adar_index_from_node_ids(
-            source_node_id.into(),
-            destination_node_id.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.get_adamic_adar_index_from_node_ids(
+                    source_node_id.into(),
+                    destination_node_id.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10391,11 +10984,15 @@ impl Graph {
         first_node_name: &str,
         second_node_name: &str,
     ) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_adamic_adar_index_from_node_names(
-            first_node_name.into(),
-            second_node_name.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.get_adamic_adar_index_from_node_names(
+                    first_node_name.into(),
+                    second_node_name.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10478,11 +11075,15 @@ impl Graph {
         source_node_id: NodeT,
         destination_node_id: NodeT,
     ) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_resource_allocation_index_from_node_ids(
-            source_node_id.into(),
-            destination_node_id.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner.get_resource_allocation_index_from_node_ids(
+                    source_node_id.into(),
+                    destination_node_id.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10507,13 +11108,15 @@ impl Graph {
         first_node_name: &str,
         second_node_name: &str,
     ) -> PyResult<f64> {
-        Ok(
-            pe!(self.inner.get_resource_allocation_index_from_node_names(
-                first_node_name.into(),
-                second_node_name.into()
-            ))?
-            .into(),
-        )
+        Ok({
+            pe!({
+                self.inner.get_resource_allocation_index_from_node_names(
+                    first_node_name.into(),
+                    second_node_name.into(),
+                )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10538,13 +11141,16 @@ impl Graph {
         source_node_id: NodeT,
         destination_node_id: NodeT,
     ) -> PyResult<f64> {
-        Ok(pe!(self
-            .inner
-            .get_weighted_resource_allocation_index_from_node_ids(
-                source_node_id.into(),
-                destination_node_id.into()
-            ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_weighted_resource_allocation_index_from_node_ids(
+                        source_node_id.into(),
+                        destination_node_id.into(),
+                    )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10569,13 +11175,16 @@ impl Graph {
         first_node_name: &str,
         second_node_name: &str,
     ) -> PyResult<f64> {
-        Ok(pe!(self
-            .inner
-            .get_weighted_resource_allocation_index_from_node_names(
-                first_node_name.into(),
-                second_node_name.into()
-            ))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_weighted_resource_allocation_index_from_node_names(
+                        first_node_name.into(),
+                        second_node_name.into(),
+                    )
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10873,93 +11482,97 @@ impl Graph {
         directed: bool,
         name: Option<String>,
     ) -> PyResult<Graph> {
-        Ok(pe!(graph::Graph::from_csv(
-            node_type_path.into(),
-            node_type_list_separator.into(),
-            node_types_column_number.into(),
-            node_types_column.into(),
-            node_types_ids_column_number.into(),
-            node_types_ids_column.into(),
-            node_types_number.into(),
-            numeric_node_type_ids.into(),
-            minimum_node_type_id.into(),
-            node_type_list_header.into(),
-            node_type_list_rows_to_skip.into(),
-            node_type_list_is_correct.into(),
-            node_type_list_max_rows_number.into(),
-            node_type_list_comment_symbol.into(),
-            load_node_type_list_in_parallel.into(),
-            node_path.into(),
-            node_list_separator.into(),
-            node_list_header.into(),
-            node_list_rows_to_skip.into(),
-            node_list_is_correct.into(),
-            node_list_max_rows_number.into(),
-            node_list_comment_symbol.into(),
-            default_node_type.into(),
-            nodes_column_number.into(),
-            nodes_column.into(),
-            node_types_separator.into(),
-            node_list_node_types_column_number.into(),
-            node_list_node_types_column.into(),
-            node_ids_column.into(),
-            node_ids_column_number.into(),
-            nodes_number.into(),
-            minimum_node_id.into(),
-            numeric_node_ids.into(),
-            node_list_numeric_node_type_ids.into(),
-            skip_node_types_if_unavailable.into(),
-            load_node_list_in_parallel.into(),
-            edge_type_path.into(),
-            edge_types_column_number.into(),
-            edge_types_column.into(),
-            edge_types_ids_column_number.into(),
-            edge_types_ids_column.into(),
-            edge_types_number.into(),
-            numeric_edge_type_ids.into(),
-            minimum_edge_type_id.into(),
-            edge_type_list_separator.into(),
-            edge_type_list_header.into(),
-            edge_type_list_rows_to_skip.into(),
-            edge_type_list_is_correct.into(),
-            edge_type_list_max_rows_number.into(),
-            edge_type_list_comment_symbol.into(),
-            load_edge_type_list_in_parallel.into(),
-            edge_path.into(),
-            edge_list_separator.into(),
-            edge_list_header.into(),
-            edge_list_rows_to_skip.into(),
-            sources_column_number.into(),
-            sources_column.into(),
-            destinations_column_number.into(),
-            destinations_column.into(),
-            edge_list_edge_types_column_number.into(),
-            edge_list_edge_types_column.into(),
-            default_edge_type.into(),
-            weights_column_number.into(),
-            weights_column.into(),
-            default_weight.into(),
-            edge_ids_column.into(),
-            edge_ids_column_number.into(),
-            edge_list_numeric_edge_type_ids.into(),
-            edge_list_numeric_node_ids.into(),
-            skip_weights_if_unavailable.into(),
-            skip_edge_types_if_unavailable.into(),
-            edge_list_is_complete.into(),
-            edge_list_may_contain_duplicates.into(),
-            edge_list_is_sorted.into(),
-            edge_list_is_correct.into(),
-            edge_list_max_rows_number.into(),
-            edge_list_comment_symbol.into(),
-            edges_number.into(),
-            load_edge_list_in_parallel.into(),
-            verbose.into(),
-            may_have_singletons.into(),
-            may_have_singleton_with_selfloops.into(),
-            directed.into(),
-            name.into()
-        ))?
-        .into())
+        Ok({
+            pe!({
+                graph::Graph::from_csv(
+                    node_type_path.into(),
+                    node_type_list_separator.into(),
+                    node_types_column_number.into(),
+                    node_types_column.into(),
+                    node_types_ids_column_number.into(),
+                    node_types_ids_column.into(),
+                    node_types_number.into(),
+                    numeric_node_type_ids.into(),
+                    minimum_node_type_id.into(),
+                    node_type_list_header.into(),
+                    node_type_list_rows_to_skip.into(),
+                    node_type_list_is_correct.into(),
+                    node_type_list_max_rows_number.into(),
+                    node_type_list_comment_symbol.into(),
+                    load_node_type_list_in_parallel.into(),
+                    node_path.into(),
+                    node_list_separator.into(),
+                    node_list_header.into(),
+                    node_list_rows_to_skip.into(),
+                    node_list_is_correct.into(),
+                    node_list_max_rows_number.into(),
+                    node_list_comment_symbol.into(),
+                    default_node_type.into(),
+                    nodes_column_number.into(),
+                    nodes_column.into(),
+                    node_types_separator.into(),
+                    node_list_node_types_column_number.into(),
+                    node_list_node_types_column.into(),
+                    node_ids_column.into(),
+                    node_ids_column_number.into(),
+                    nodes_number.into(),
+                    minimum_node_id.into(),
+                    numeric_node_ids.into(),
+                    node_list_numeric_node_type_ids.into(),
+                    skip_node_types_if_unavailable.into(),
+                    load_node_list_in_parallel.into(),
+                    edge_type_path.into(),
+                    edge_types_column_number.into(),
+                    edge_types_column.into(),
+                    edge_types_ids_column_number.into(),
+                    edge_types_ids_column.into(),
+                    edge_types_number.into(),
+                    numeric_edge_type_ids.into(),
+                    minimum_edge_type_id.into(),
+                    edge_type_list_separator.into(),
+                    edge_type_list_header.into(),
+                    edge_type_list_rows_to_skip.into(),
+                    edge_type_list_is_correct.into(),
+                    edge_type_list_max_rows_number.into(),
+                    edge_type_list_comment_symbol.into(),
+                    load_edge_type_list_in_parallel.into(),
+                    edge_path.into(),
+                    edge_list_separator.into(),
+                    edge_list_header.into(),
+                    edge_list_rows_to_skip.into(),
+                    sources_column_number.into(),
+                    sources_column.into(),
+                    destinations_column_number.into(),
+                    destinations_column.into(),
+                    edge_list_edge_types_column_number.into(),
+                    edge_list_edge_types_column.into(),
+                    default_edge_type.into(),
+                    weights_column_number.into(),
+                    weights_column.into(),
+                    default_weight.into(),
+                    edge_ids_column.into(),
+                    edge_ids_column_number.into(),
+                    edge_list_numeric_edge_type_ids.into(),
+                    edge_list_numeric_node_ids.into(),
+                    skip_weights_if_unavailable.into(),
+                    skip_edge_types_if_unavailable.into(),
+                    edge_list_is_complete.into(),
+                    edge_list_may_contain_duplicates.into(),
+                    edge_list_is_sorted.into(),
+                    edge_list_is_correct.into(),
+                    edge_list_max_rows_number.into(),
+                    edge_list_comment_symbol.into(),
+                    edges_number.into(),
+                    load_edge_list_in_parallel.into(),
+                    verbose.into(),
+                    may_have_singletons.into(),
+                    may_have_singleton_with_selfloops.into(),
+                    directed.into(),
+                    name.into(),
+                )
+            })?
+            .into()
+        })
     }
 }
 
@@ -11467,369 +12080,369 @@ pub const GRAPH_METHODS_NAMES: &[&str] = &[
 ];
 
 pub const GRAPH_TERMS: &[&str] = &[
-    "distances",
-    "bidiagonal",
-    "anti",
-    "sorting",
-    "normalized",
-    "has",
-    "distant",
-    "resource",
-    "kruskal",
-    "add",
-    "by",
-    "edge_ids",
-    "path",
-    "eccentricity",
-    "from_ids",
-    "per",
-    "centrality",
-    "star",
-    "from_names",
-    "features",
-    "sample",
-    "sqrt",
-    "mean",
-    "same",
-    "walk",
-    "generate",
     "edge",
     "number",
-    "remove",
-    "tree",
-    "sampling",
-    "filter",
-    "from",
-    "graphs",
-    "density",
-    "graph_name",
-    "overlap",
-    "first",
-    "enable",
-    "multiple",
-    "allocation",
-    "decreasing",
-    "closure",
-    "overlaps",
-    "validate",
-    "cumulative",
-    "arborescence",
-    "encode",
-    "indices",
-    "weighting",
-    "weights",
-    "adamic",
-    "are",
-    "triangular",
-    "edge_names",
-    "triads",
-    "edge_type_names",
-    "mask",
-    "topological",
-    "coefficient",
-    "divide",
-    "graph",
-    "lower",
-    "complete",
-    "bipartite",
-    "embedding",
-    "readable",
-    "node_type_ids",
-    "node_type_name",
-    "be",
-    "not",
-    "to",
-    "representing",
-    "average",
-    "lexicographic",
-    "betweenness",
-    "unique",
-    "stress",
-    "report",
-    "hot",
-    "weighted",
     "node_names",
-    "encoded",
-    "sort",
-    "node_type_id",
-    "spanning",
-    "components",
-    "laplacian",
-    "and",
+    "subsampled",
+    "coefficient",
+    "new",
+    "one",
+    "singleton",
+    "indegrees",
+    "csv",
+    "divide",
+    "are",
     "edge_type_ids",
-    "with",
-    "edge_id",
-    "set",
     "requirements",
-    "upper",
-    "bm25",
-    "node_id",
+    "count",
+    "not",
+    "nodes",
+    "must",
+    "rate",
+    "set",
+    "increasing",
+    "sampling",
+    "strongly",
+    "oddities",
+    "shortest",
+    "first",
+    "component_ids",
+    "total",
+    "remove",
+    "and",
+    "by",
+    "eigenvector",
+    "destination_names",
+    "same",
+    "decreasing",
+    "complete",
+    "adar",
+    "with",
+    "k",
+    "components",
+    "readable",
+    "remappable",
+    "path",
+    "source",
+    "propagation",
+    "textual",
+    "top",
+    "multigraph",
+    "closure",
+    "cumulative",
+    "tree",
+    "barbell",
+    "trap",
+    "weights",
+    "probabilities",
+    "centrality",
+    "laplacian",
+    "methods",
+    "constant",
     "requirement",
-    "kfold",
+    "overlap",
+    "minmax",
+    "node_type_name",
+    "embedding",
+    "labels",
+    "graph",
+    "adamic",
+    "reversed",
+    "reciprocal",
+    "random",
+    "parallel",
+    "cover",
+    "breadth",
+    "encode",
+    "distances",
+    "edge_types",
+    "negatives",
+    "of",
+    "minimum",
+    "identity",
+    "be",
+    "coo",
+    "median",
+    "is",
+    "encoded",
+    "node_type",
+    "weight",
+    "get_name",
+    "contain",
+    "degree",
+    "node_types",
+    "sort",
+    "inplace",
+    "multiply",
+    "from_ids",
+    "edge_ids",
+    "transposed",
+    "memory",
+    "transitivity",
+    "connected",
+    "edge_id",
     "dijkstra",
     "paths",
-    "probabilities",
-    "singleton",
-    "node_name",
-    "count",
-    "inplace",
-    "community",
-    "identity",
-    "closeness",
-    "is",
-    "selfloop",
-    "reciprocal",
-    "get_name",
-    "propagation",
-    "constant",
-    "contains",
-    "matrix",
-    "labels",
-    "unchecked",
-    "remap",
-    "search",
-    "most",
-    "transformed",
-    "disconnected",
-    "encodable",
-    "have",
-    "destination_names",
-    "destination",
-    "complementary",
-    "holdout",
-    "bfs",
-    "decode",
-    "node_types",
-    "source_names",
-    "singletons",
-    "neighbour",
-    "drop",
-    "random",
-    "median",
-    "prediction",
-    "transitive",
-    "vertex",
-    "top",
-    "node_ids",
-    "jaccard",
-    "degrees",
-    "of",
-    "predecessors",
-    "index",
-    "eigenvector",
-    "selfloops",
-    "degree",
-    "node",
-    "one",
-    "dot",
-    "attachment",
-    "modularity",
-    "clustering",
-    "subgraph",
-    "adjacency",
-    "chain",
-    "default",
-    "edges",
-    "preferential",
-    "diameter",
-    "barbell",
-    "memory",
-    "csv",
-    "naive",
     "memberships",
-    "oddities",
-    "human",
-    "directed",
-    "remappable",
-    "edge_type_id",
-    "connected",
-    "central",
-    "order",
-    "k",
-    "clique",
-    "urls",
-    "multilabel",
-    "textual",
-    "mapping",
-    "must",
-    "homogeneous",
-    "minimum",
-    "total",
-    "mode",
-    "ontologies",
-    "feature",
-    "sparse",
-    "edge_type_name",
-    "stats",
-    "circle",
-    "undirected",
-    "negative",
-    "transposed",
-    "metrics",
-    "comulative",
-    "strongly",
-    "okapi",
-    "louvain",
-    "edge_types",
-    "all",
-    "reversed",
-    "minmax",
-    "subsampled",
-    "max",
-    "weight",
-    "sequential",
-    "get",
-    "source",
-    "breadth",
-    "replace",
-    "multiply",
-    "compatible",
-    "new",
-    "unknown",
-    "transitivity",
-    "increasing",
-    "maximum",
-    "shortest",
-    "rate",
-    "known",
-    "parallel",
-    "used",
-    "node_type_names",
-    "component_ids",
-    "main",
-    "outbound",
-    "diagonal",
-    "hashmap",
-    "cover",
-    "triangles",
-    "counts",
-    "detection",
-    "adar",
-    "approximated",
-    "sorted",
-    "binary",
-    "nodes",
-    "contain",
-    "methods",
-    "arrowhead",
-    "uniform",
-    "coo",
-    "symmetric",
-    "indegrees",
-    "negatives",
-    "multigraph",
-    "dense",
     "label",
-    "node_type",
-    "mininum",
+    "node",
+    "unchecked",
+    "node_type_ids",
+    "average",
+    "detection",
+    "undirected",
+    "per",
+    "node_id",
+    "default",
+    "enable",
+    "topological",
+    "disconnected",
+    "clique",
+    "destination",
+    "add",
+    "subgraph",
+    "mask",
+    "homogeneous",
+    "node_type_names",
+    "source_names",
+    "multiple",
+    "okapi",
+    "node_type_id",
+    "report",
+    "chain",
+    "louvain",
+    "edge_type_id",
+    "upper",
+    "indices",
+    "distant",
+    "lower",
+    "main",
+    "comulative",
+    "transformed",
+    "triangles",
+    "most",
+    "bm25",
+    "sorting",
+    "features",
+    "bfs",
+    "human",
+    "predecessors",
+    "approximated",
+    "kfold",
+    "decode",
+    "singletons",
+    "unknown",
+    "sqrt",
+    "counts",
+    "attachment",
+    "encodable",
+    "jaccard",
+    "preferential",
+    "dot",
+    "unique",
+    "binary",
+    "transitive",
+    "triads",
+    "outbound",
+    "urls",
+    "bidiagonal",
+    "prediction",
+    "compatible",
+    "mode",
+    "max",
+    "uniform",
+    "sorted",
+    "weighted",
+    "matrix",
+    "eccentricity",
+    "ontologies",
+    "sample",
+    "used",
+    "holdout",
+    "stats",
+    "remap",
+    "bipartite",
+    "clustering",
+    "complementary",
+    "has",
+    "betweenness",
+    "metrics",
+    "arborescence",
+    "diagonal",
+    "get",
+    "selfloops",
+    "overlaps",
+    "edge_type_names",
+    "allocation",
+    "community",
+    "edge_type_name",
+    "validate",
+    "spanning",
+    "diameter",
+    "mean",
+    "resource",
+    "hot",
+    "hashmap",
+    "circle",
+    "node_ids",
+    "drop",
+    "from",
+    "selfloop",
+    "anti",
+    "neighbour",
+    "index",
     "harmonic",
-    "trap",
+    "generate",
+    "representing",
+    "dense",
+    "contains",
+    "walk",
+    "degrees",
+    "mapping",
+    "to",
+    "kruskal",
+    "filter",
+    "graph_name",
+    "density",
+    "edges",
+    "order",
+    "have",
+    "sequential",
+    "modularity",
+    "feature",
+    "naive",
+    "lexicographic",
+    "replace",
+    "stress",
+    "adjacency",
+    "from_names",
+    "known",
+    "node_name",
+    "sparse",
+    "symmetric",
+    "maximum",
+    "graphs",
+    "multilabel",
+    "directed",
+    "negative",
+    "central",
+    "closeness",
+    "weighting",
+    "normalized",
+    "star",
+    "triangular",
+    "vertex",
+    "edge_names",
+    "all",
+    "search",
+    "arrowhead",
+    "mininum",
 ];
 
 pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
     &[
         ("laplacian", 1.7789123571685375),
-        ("transformed", 1.7789123571685375),
-        ("graph", 1.4590695023829132),
         ("get", 0.14357082654403988),
+        ("graph", 1.4590695023829132),
+        ("transformed", 1.7789123571685375),
     ],
     &[
-        ("edges", 0.6694764621727416),
-        ("number", 0.5283062783760529),
         ("laplacian", 0.940532475292849),
-        ("matrix", 0.8671414957617172),
         ("coo", 1.159794913801382),
         ("get", 0.07590763216926308),
+        ("edges", 0.6694764621727416),
+        ("matrix", 0.8671414957617172),
+        ("number", 0.5283062783760529),
     ],
     &[
-        ("walk", 0.8153842893929308),
         ("transformed", 0.7249609883833487),
+        ("walk", 0.8153842893929308),
         ("graph", 0.5946152795583186),
-        ("get", 0.05850948636955273),
         ("normalized", 0.763622430626649),
         ("laplacian", 0.7249609883833487),
         ("random", 0.5559538373150182),
+        ("get", 0.05850948636955273),
     ],
     &[
-        ("transformed", 0.940532475292849),
         ("symmetric", 1.0578436858068714),
-        ("laplacian", 0.940532475292849),
-        ("get", 0.07590763216926308),
-        ("normalized", 0.9906901286757851),
         ("graph", 0.7714276901672522),
+        ("laplacian", 0.940532475292849),
+        ("transformed", 0.940532475292849),
+        ("normalized", 0.9906901286757851),
+        ("get", 0.07590763216926308),
     ],
     &[
         ("symmetric", 1.4222432011735033),
+        ("normalized", 1.3319569978849197),
         ("transformed", 1.2645213431962157),
         ("get", 0.10205582849186985),
         ("graph", 1.0371643771740207),
-        ("normalized", 1.3319569978849197),
     ],
     &[
-        ("is", 0.9505540095471235),
-        ("connected", 1.0371643771740207),
-        ("from", 0.29721367599610243),
-        ("node_id", 0.5808903720892693),
         ("unchecked", 0.5300302770966965),
+        ("node_id", 0.5808903720892693),
+        ("is", 0.9505540095471235),
+        ("from", 0.29721367599610243),
+        ("connected", 1.0371643771740207),
     ],
     &[
         ("is", 0.707008165824349),
-        ("unchecked", 0.39422876583314165),
         ("disconnected", 0.940532475292849),
-        ("node", 0.439123322060523),
-        ("from", 0.22106318400995545),
         ("node_id", 0.4320577604122954),
+        ("from", 0.22106318400995545),
+        ("unchecked", 0.39422876583314165),
+        ("node", 0.439123322060523),
     ],
     &[
-        ("unchecked", 0.5300302770966965),
-        ("singleton", 0.7423717564631218),
         ("is", 0.9505540095471235),
-        ("from", 0.29721367599610243),
+        ("singleton", 0.7423717564631218),
+        ("unchecked", 0.5300302770966965),
         ("node_id", 0.5808903720892693),
+        ("from", 0.29721367599610243),
     ],
     &[
-        ("singleton", 1.0443590361607995),
-        ("from", 0.41811637564974785),
-        ("is", 1.337227151473309),
         ("node_id", 0.8171891021292833),
+        ("singleton", 1.0443590361607995),
+        ("is", 1.337227151473309),
+        ("from", 0.41811637564974785),
     ],
     &[
         ("node_id", 0.33302945858373084),
-        ("is", 0.5449608090688494),
-        ("with", 0.4843637797004001),
-        ("selfloops", 0.5677932882658523),
-        ("unchecked", 0.30387092762379503),
-        ("from", 0.17039516293696008),
         ("singleton", 0.4256081284899882),
+        ("unchecked", 0.30387092762379503),
+        ("selfloops", 0.5677932882658523),
+        ("is", 0.5449608090688494),
+        ("from", 0.17039516293696008),
+        ("with", 0.4843637797004001),
     ],
     &[
-        ("selfloops", 0.7366300193038279),
-        ("singleton", 0.5521652516587192),
-        ("node_id", 0.4320577604122954),
         ("is", 0.707008165824349),
         ("from", 0.22106318400995545),
+        ("selfloops", 0.7366300193038279),
+        ("node_id", 0.4320577604122954),
+        ("singleton", 0.5521652516587192),
         ("with", 0.6283922472569299),
     ],
     &[
-        ("node_name", 0.8209895210833528),
         ("unchecked", 0.5300302770966965),
-        ("singleton", 0.7423717564631218),
         ("is", 0.9505540095471235),
         ("from", 0.29721367599610243),
+        ("singleton", 0.7423717564631218),
+        ("node_name", 0.8209895210833528),
     ],
     &[
-        ("singleton", 1.0443590361607995),
-        ("is", 1.337227151473309),
         ("node_name", 1.15495749598782),
+        ("is", 1.337227151473309),
+        ("singleton", 1.0443590361607995),
         ("from", 0.41811637564974785),
     ],
     &[
-        ("node_name", 2.750759523618287),
         ("has", 2.2180650388831844),
+        ("node_name", 2.750759523618287),
     ],
     &[
-        ("node_type_id", 3.6650412601441045),
         ("has", 2.2180650388831844),
+        ("node_type_id", 3.6650412601441045),
     ],
     &[
         ("node_type_name", 3.6650412601441045),
@@ -11844,148 +12457,148 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("has", 2.2180650388831844),
     ],
     &[
+        ("from", 0.41811637564974785),
         ("node_ids", 0.6948942660183045),
         ("edge", 0.8374163906146289),
         ("has", 0.9312958189369289),
-        ("from", 0.41811637564974785),
     ],
     &[
-        ("node_id", 0.8171891021292833),
         ("has", 0.9312958189369289),
         ("from", 0.41811637564974785),
+        ("node_id", 0.8171891021292833),
         ("selfloop", 2.000793437832782),
     ],
     &[
-        ("node_ids", 0.36739900167160566),
+        ("edge_type_id", 0.6378979138788173),
         ("has", 0.4923873614599018),
+        ("and", 0.6812199240392849),
         ("edge", 0.44275217243935305),
         ("from", 0.22106318400995545),
-        ("and", 0.6812199240392849),
-        ("edge_type_id", 0.6378979138788173),
+        ("node_ids", 0.36739900167160566),
     ],
     &[
-        ("node", 0.439123322060523),
-        ("from", 0.22106318400995545),
         ("unchecked", 0.39422876583314165),
         ("trap", 0.9004823625478179),
         ("node_id", 0.4320577604122954),
         ("is", 0.707008165824349),
+        ("node", 0.439123322060523),
+        ("from", 0.22106318400995545),
     ],
     &[
-        ("node", 0.5903898351493518),
-        ("is", 0.9505540095471235),
-        ("trap", 1.2106750128526111),
         ("from", 0.29721367599610243),
         ("node_id", 0.5808903720892693),
-    ],
-    &[
-        ("node_type_name", 1.5388356707169115),
-        ("and", 1.2884515661679565),
-        ("has", 0.9312958189369289),
-        ("node_name", 1.15495749598782),
-    ],
-    &[
-        ("node_names", 0.9312958189369289),
-        ("from", 0.41811637564974785),
-        ("edge", 0.8374163906146289),
-        ("has", 0.9312958189369289),
-    ],
-    &[
-        ("has", 0.4923873614599018),
-        ("edge", 0.44275217243935305),
-        ("and", 0.6812199240392849),
-        ("node_names", 0.4923873614599018),
-        ("edge_type_name", 0.7366300193038279),
-        ("from", 0.22106318400995545),
-    ],
-    &[
-        ("components", 2.651028890622632),
-        ("connected", 2.1743822221799456),
-        ("strongly", 3.2690522703400644),
-    ],
-    &[
-        ("increasing", 1.0578436858068714),
-        ("degree", 0.6283922472569299),
-        ("node", 0.439123322060523),
-        ("by", 0.8385812472983385),
-        ("outbound", 0.940532475292849),
-        ("sort", 0.940532475292849),
-    ],
-    &[
-        ("degree", 0.6283922472569299),
-        ("sort", 0.940532475292849),
-        ("node", 0.439123322060523),
-        ("decreasing", 1.0578436858068714),
-        ("outbound", 0.940532475292849),
-        ("by", 0.8385812472983385),
-    ],
-    &[
-        ("by", 1.1274505804626045),
-        ("order", 1.4222432011735033),
-        ("sort", 1.2645213431962157),
-        ("lexicographic", 1.4222432011735033),
+        ("is", 0.9505540095471235),
+        ("trap", 1.2106750128526111),
         ("node", 0.5903898351493518),
     ],
     &[
-        ("from", 0.22106318400995545),
-        ("node_id", 0.4320577604122954),
-        ("bfs", 0.9906901286757851),
-        ("topological", 0.9906901286757851),
-        ("get", 0.07590763216926308),
-        ("sorting", 0.9906901286757851),
+        ("node_name", 1.15495749598782),
+        ("and", 1.2884515661679565),
+        ("node_type_name", 1.5388356707169115),
+        ("has", 0.9312958189369289),
     ],
     &[
-        ("sorting", 0.763622430626649),
-        ("topological", 0.763622430626649),
-        ("from", 0.17039516293696008),
+        ("edge", 0.8374163906146289),
+        ("from", 0.41811637564974785),
+        ("node_names", 0.9312958189369289),
+        ("has", 0.9312958189369289),
+    ],
+    &[
+        ("from", 0.22106318400995545),
+        ("edge_type_name", 0.7366300193038279),
+        ("edge", 0.44275217243935305),
+        ("node_names", 0.4923873614599018),
+        ("and", 0.6812199240392849),
+        ("has", 0.4923873614599018),
+    ],
+    &[
+        ("strongly", 3.2690522703400644),
+        ("components", 2.651028890622632),
+        ("connected", 2.1743822221799456),
+    ],
+    &[
+        ("node", 0.439123322060523),
+        ("increasing", 1.0578436858068714),
+        ("sort", 0.940532475292849),
+        ("outbound", 0.940532475292849),
+        ("degree", 0.6283922472569299),
+        ("by", 0.8385812472983385),
+    ],
+    &[
+        ("sort", 0.940532475292849),
+        ("by", 0.8385812472983385),
+        ("node", 0.439123322060523),
+        ("outbound", 0.940532475292849),
+        ("decreasing", 1.0578436858068714),
+        ("degree", 0.6283922472569299),
+    ],
+    &[
+        ("node", 0.5903898351493518),
+        ("order", 1.4222432011735033),
+        ("by", 1.1274505804626045),
+        ("sort", 1.2645213431962157),
+        ("lexicographic", 1.4222432011735033),
+    ],
+    &[
+        ("bfs", 0.9906901286757851),
+        ("get", 0.07590763216926308),
+        ("sorting", 0.9906901286757851),
+        ("topological", 0.9906901286757851),
+        ("from", 0.22106318400995545),
+        ("node_id", 0.4320577604122954),
+    ],
+    &[
         ("node_id", 0.33302945858373084),
         ("bfs", 0.763622430626649),
+        ("from", 0.17039516293696008),
         ("get", 0.05850948636955273),
         ("reversed", 0.8939681394516793),
+        ("sorting", 0.763622430626649),
+        ("topological", 0.763622430626649),
     ],
     &[
         ("by", 0.6463771383246005),
         ("from", 0.17039516293696008),
-        ("node_id", 0.33302945858373084),
-        ("sort", 0.7249609883833487),
         ("topological", 0.763622430626649),
-        ("bfs", 0.763622430626649),
+        ("node_id", 0.33302945858373084),
         ("sorting", 0.763622430626649),
+        ("sort", 0.7249609883833487),
+        ("bfs", 0.763622430626649),
     ],
     &[
         ("dense", 1.3319569978849197),
         ("adjacency", 1.3319569978849197),
-        ("get", 0.10205582849186985),
         ("matrix", 1.1658490884329797),
+        ("get", 0.10205582849186985),
         ("binary", 1.5593139639071147),
     ],
     &[
         ("matrix", 1.1658490884329797),
+        ("dense", 1.3319569978849197),
         ("adjacency", 1.3319569978849197),
         ("weighted", 0.6749361017744177),
         ("get", 0.10205582849186985),
-        ("dense", 1.3319569978849197),
     ],
     &[
-        ("components", 4.236831333761234),
         ("remove", 2.918510909900582),
+        ("components", 4.236831333761234),
     ],
     &[("overlaps", 8.89820137317584)],
     &[("contains", 8.116009154411657)],
     &[
-        ("bipartite", 2.9816877635868573),
+        ("get", 0.21395680764432426),
         ("edges", 1.8870177154267387),
-        ("get", 0.21395680764432426),
-    ],
-    &[
-        ("edge_names", 2.7924056018973777),
-        ("get", 0.21395680764432426),
         ("bipartite", 2.9816877635868573),
     ],
     &[
         ("get", 0.21395680764432426),
-        ("star", 2.9816877635868573),
+        ("bipartite", 2.9816877635868573),
+        ("edge_names", 2.7924056018973777),
+    ],
+    &[
+        ("get", 0.21395680764432426),
         ("edges", 1.8870177154267387),
+        ("star", 2.9816877635868573),
     ],
     &[
         ("edge_names", 2.7924056018973777),
@@ -11993,31 +12606,31 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("star", 2.9816877635868573),
     ],
     &[
-        ("edges", 1.8870177154267387),
         ("clique", 2.9816877635868573),
         ("get", 0.21395680764432426),
+        ("edges", 1.8870177154267387),
     ],
     &[
-        ("get", 0.21395680764432426),
         ("clique", 2.9816877635868573),
+        ("get", 0.21395680764432426),
         ("edge_names", 2.7924056018973777),
     ],
-    &[("encode", 5.224546265667863), ("edge", 1.9944726275377456)],
+    &[("edge", 1.9944726275377456), ("encode", 5.224546265667863)],
     &[("edge", 1.9944726275377456), ("decode", 5.224546265667863)],
     &[
-        ("encodable", 1.5593139639071147),
+        ("number", 0.7102939901602773),
         ("get", 0.10205582849186985),
         ("max", 1.5593139639071147),
-        ("number", 0.7102939901602773),
         ("edge", 0.5952687296860529),
+        ("encodable", 1.5593139639071147),
     ],
     &[
-        ("validate", 3.6650412601441045),
         ("node_id", 1.946297342619186),
+        ("validate", 3.6650412601441045),
     ],
     &[
-        ("node_ids", 1.6550280220682243),
         ("validate", 3.6650412601441045),
+        ("node_ids", 1.6550280220682243),
     ],
     &[
         ("validate", 3.6650412601441045),
@@ -12029,33 +12642,33 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
     ],
     &[
         ("contain", 1.2645213431962157),
+        ("unknown", 0.8851824558602509),
+        ("not", 1.2106750128526111),
         ("node_types", 0.7102939901602773),
-        ("not", 1.2106750128526111),
         ("must", 1.0371643771740207),
-        ("unknown", 0.8851824558602509),
     ],
     &[
-        ("must", 1.0371643771740207),
-        ("contain", 1.2645213431962157),
+        ("unknown", 0.8851824558602509),
         ("edge_types", 0.7258538157938578),
+        ("contain", 1.2645213431962157),
+        ("must", 1.0371643771740207),
         ("not", 1.2106750128526111),
-        ("unknown", 0.8851824558602509),
     ],
     &[
+        ("validate", 3.6650412601441045),
         ("node_type_id", 3.6650412601441045),
-        ("validate", 3.6650412601441045),
     ],
     &[
+        ("validate", 3.6650412601441045),
         ("node_type_ids", 3.4750623665748477),
-        ("validate", 3.6650412601441045),
     ],
     &[
+        ("validate", 3.6650412601441045),
         ("edge_type_id", 2.87354869742396),
-        ("validate", 3.6650412601441045),
     ],
     &[
-        ("validate", 3.6650412601441045),
         ("edge_type_ids", 3.90622584180721),
+        ("validate", 3.6650412601441045),
     ],
     &[
         ("undirected", 2.53814176684021),
@@ -12063,122 +12676,122 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("be", 2.651028890622632),
     ],
     &[
-        ("must", 2.1743822221799456),
-        ("be", 2.651028890622632),
         ("multigraph", 2.7924056018973777),
+        ("be", 2.651028890622632),
+        ("must", 2.1743822221799456),
     ],
     &[
         ("be", 1.7789123571685375),
+        ("must", 1.4590695023829132),
         ("not", 1.7031620323900702),
         ("multigraph", 1.8737799686050267),
-        ("must", 1.4590695023829132),
     ],
     &[
         ("contain", 1.7789123571685375),
-        ("matrix", 1.6401014986152664),
         ("must", 1.4590695023829132),
+        ("matrix", 1.6401014986152664),
         ("identity", 2.000793437832782),
     ],
     &[
         ("contain", 0.940532475292849),
-        ("weighted", 0.5020075982757829),
-        ("singleton", 0.5521652516587192),
         ("not", 0.9004823625478179),
+        ("singleton", 0.5521652516587192),
         ("must", 0.7714276901672522),
         ("nodes", 0.5398794490441621),
+        ("weighted", 0.5020075982757829),
     ],
     &[
+        ("have", 2.9816877635868573),
         ("must", 2.1743822221799456),
         ("edges", 1.8870177154267387),
-        ("have", 2.9816877635868573),
     ],
     &[
         ("have", 2.9816877635868573),
-        ("must", 2.1743822221799456),
         ("nodes", 1.5217295037301775),
-    ],
-    &[
-        ("be", 2.651028890622632),
-        ("connected", 2.1743822221799456),
         ("must", 2.1743822221799456),
     ],
     &[
+        ("must", 2.1743822221799456),
+        ("connected", 2.1743822221799456),
+        ("be", 2.651028890622632),
+    ],
+    &[
+        ("edge", 0.8374163906146289),
         ("weights", 1.337227151473309),
-        ("edge", 0.8374163906146289),
+        ("get", 0.14357082654403988),
         ("total", 1.3932535860527993),
-        ("get", 0.14357082654403988),
     ],
     &[
-        ("edge", 0.8374163906146289),
         ("mininum", 2.193622823390651),
-        ("get", 0.14357082654403988),
         ("weight", 1.4247289539092662),
+        ("get", 0.14357082654403988),
+        ("edge", 0.8374163906146289),
     ],
     &[
         ("edge", 0.8374163906146289),
-        ("weight", 1.4247289539092662),
-        ("maximum", 1.5388356707169115),
         ("get", 0.14357082654403988),
+        ("maximum", 1.5388356707169115),
+        ("weight", 1.4247289539092662),
     ],
     &[
-        ("node", 0.5903898351493518),
-        ("unchecked", 0.5300302770966965),
         ("degree", 0.8448569607423773),
-        ("get", 0.10205582849186985),
         ("maximum", 1.0938653281325432),
+        ("get", 0.10205582849186985),
+        ("unchecked", 0.5300302770966965),
+        ("node", 0.5903898351493518),
     ],
     &[
-        ("node", 0.5903898351493518),
         ("degree", 0.8448569607423773),
-        ("minimum", 1.1274505804626045),
         ("unchecked", 0.5300302770966965),
         ("get", 0.10205582849186985),
+        ("node", 0.5903898351493518),
+        ("minimum", 1.1274505804626045),
     ],
     &[
         ("weighted", 0.6749361017744177),
-        ("degree", 0.8448569607423773),
-        ("get", 0.10205582849186985),
-        ("node", 0.5903898351493518),
         ("maximum", 1.0938653281325432),
+        ("get", 0.10205582849186985),
+        ("degree", 0.8448569607423773),
+        ("node", 0.5903898351493518),
     ],
     &[
-        ("degree", 0.8448569607423773),
         ("minimum", 1.1274505804626045),
+        ("get", 0.10205582849186985),
         ("weighted", 0.6749361017744177),
         ("node", 0.5903898351493518),
-        ("get", 0.10205582849186985),
+        ("degree", 0.8448569607423773),
     ],
     &[
         ("nodes", 0.7258538157938578),
         ("singleton", 0.7423717564631218),
         ("weighted", 0.6749361017744177),
-        ("number", 0.7102939901602773),
         ("get", 0.10205582849186985),
+        ("number", 0.7102939901602773),
     ],
     &[
         ("selfloops", 2.0762998771162176),
-        ("number", 1.4891088227827056),
         ("get", 0.21395680764432426),
+        ("number", 1.4891088227827056),
     ],
     &[
+        ("number", 0.999232447215879),
         ("selfloops", 1.3932535860527993),
         ("unique", 1.4590695023829132),
-        ("number", 0.999232447215879),
         ("get", 0.14357082654403988),
     ],
     &[
         ("edges", 0.6694764621727416),
+        ("from", 0.22106318400995545),
         ("generate", 0.8385812472983385),
+        ("new", 1.159794913801382),
         ("features", 1.159794913801382),
         ("node", 0.439123322060523),
-        ("from", 0.22106318400995545),
-        ("new", 1.159794913801382),
     ],
     &[
         ("set", 1.7031620323900702),
-        ("inplace", 1.337227151473309),
-        ("edge_types", 1.0211218097354557),
         ("all", 1.5860829716106686),
+        ("edge_types", 1.0211218097354557),
+        ("inplace", 1.337227151473309),
     ],
     &[
         ("edge_types", 1.5217295037301775),
@@ -12187,45 +12800,45 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
     ],
     &[
         ("all", 1.5860829716106686),
-        ("inplace", 1.337227151473309),
         ("set", 1.7031620323900702),
         ("node_types", 0.999232447215879),
+        ("inplace", 1.337227151473309),
     ],
     &[
-        ("set", 2.53814176684021),
         ("node_types", 1.4891088227827056),
         ("all", 2.3636643838694247),
+        ("set", 2.53814176684021),
     ],
     &[
-        ("inplace", 1.9928063333728845),
         ("remove", 1.826142258269988),
+        ("inplace", 1.9928063333728845),
         ("node_type_ids", 2.1743822221799456),
     ],
     &[
-        ("remove", 1.2253910323931527),
-        ("inplace", 1.337227151473309),
         ("singleton", 1.0443590361607995),
         ("node_types", 0.999232447215879),
+        ("inplace", 1.337227151473309),
+        ("remove", 1.2253910323931527),
     ],
     &[
-        ("edge_type_ids", 2.444165637987421),
         ("inplace", 1.9928063333728845),
         ("remove", 1.826142258269988),
+        ("edge_type_ids", 2.444165637987421),
     ],
     &[
         ("singleton", 1.0443590361607995),
-        ("edge_types", 1.0211218097354557),
-        ("remove", 1.2253910323931527),
         ("inplace", 1.337227151473309),
+        ("remove", 1.2253910323931527),
+        ("edge_types", 1.0211218097354557),
     ],
     &[
-        ("node_type_name", 2.293253967544781),
-        ("inplace", 1.9928063333728845),
         ("remove", 1.826142258269988),
+        ("inplace", 1.9928063333728845),
+        ("node_type_name", 2.293253967544781),
     ],
     &[
-        ("remove", 2.918510909900582),
         ("node_type_id", 3.6650412601441045),
+        ("remove", 2.918510909900582),
     ],
     &[
         ("node_types", 1.4891088227827056),
@@ -12233,8 +12846,8 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("remove", 1.826142258269988),
     ],
     &[
-        ("node_type_name", 3.6650412601441045),
         ("remove", 2.918510909900582),
+        ("node_type_name", 3.6650412601441045),
     ],
     &[
         ("remove", 1.826142258269988),
@@ -12247,172 +12860,172 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
     ],
     &[
         ("edge_types", 1.5217295037301775),
+        ("remove", 1.826142258269988),
         ("singleton", 1.5563588424625128),
-        ("remove", 1.826142258269988),
     ],
     &[
-        ("remove", 2.918510909900582),
         ("edge_type_name", 3.3183087550526498),
+        ("remove", 2.918510909900582),
     ],
     &[
-        ("remove", 1.826142258269988),
-        ("inplace", 1.9928063333728845),
         ("node_types", 1.4891088227827056),
-    ],
-    &[
-        ("remove", 2.918510909900582),
-        ("node_types", 2.3798695450143854),
-    ],
-    &[
-        ("edge_types", 1.5217295037301775),
         ("inplace", 1.9928063333728845),
         ("remove", 1.826142258269988),
     ],
     &[
+        ("node_types", 2.3798695450143854),
         ("remove", 2.918510909900582),
-        ("edge_types", 2.4320033877106138),
     ],
     &[
-        ("inplace", 1.337227151473309),
-        ("weights", 1.337227151473309),
-        ("remove", 1.2253910323931527),
-        ("edge", 0.8374163906146289),
-    ],
-    &[
-        ("edge", 1.2479620123241293),
-        ("weights", 1.9928063333728845),
+        ("inplace", 1.9928063333728845),
         ("remove", 1.826142258269988),
+        ("edge_types", 1.5217295037301775),
     ],
     &[
-        ("divide", 2.000793437832782),
-        ("weights", 1.337227151473309),
+        ("edge_types", 2.4320033877106138),
+        ("remove", 2.918510909900582),
+    ],
+    &[
         ("edge", 0.8374163906146289),
+        ("remove", 1.2253910323931527),
+        ("weights", 1.337227151473309),
         ("inplace", 1.337227151473309),
     ],
     &[
+        ("edge", 1.2479620123241293),
+        ("remove", 1.826142258269988),
         ("weights", 1.9928063333728845),
+    ],
+    &[
+        ("edge", 0.8374163906146289),
+        ("weights", 1.337227151473309),
+        ("inplace", 1.337227151473309),
+        ("divide", 2.000793437832782),
+    ],
+    &[
         ("divide", 2.9816877635868573),
+        ("weights", 1.9928063333728845),
         ("edge", 1.2479620123241293),
     ],
     &[
-        ("edge", 0.8374163906146289),
-        ("inplace", 1.337227151473309),
         ("multiply", 2.000793437832782),
         ("weights", 1.337227151473309),
+        ("edge", 0.8374163906146289),
+        ("inplace", 1.337227151473309),
     ],
     &[
+        ("weights", 1.9928063333728845),
         ("multiply", 2.9816877635868573),
         ("edge", 1.2479620123241293),
-        ("weights", 1.9928063333728845),
     ],
     &[
-        ("memory", 2.0762998771162176),
         ("stats", 3.2690522703400644),
+        ("memory", 2.0762998771162176),
         ("get", 0.21395680764432426),
     ],
     &[
+        ("memory", 1.3932535860527993),
         ("used", 2.193622823390651),
         ("get", 0.14357082654403988),
         ("total", 1.3932535860527993),
-        ("memory", 1.3932535860527993),
     ],
     &[
-        ("memory", 0.9903798177289932),
-        ("nodes", 0.7258538157938578),
         ("total", 0.9903798177289932),
-        ("requirement", 1.2645213431962157),
         ("get", 0.10205582849186985),
+        ("requirement", 1.2645213431962157),
+        ("nodes", 0.7258538157938578),
+        ("memory", 0.9903798177289932),
     ],
     &[
-        ("requirement", 0.7249609883833487),
-        ("memory", 0.5677932882658523),
-        ("total", 0.5677932882658523),
         ("readable", 0.6940904229502285),
-        ("human", 0.6940904229502285),
         ("get", 0.05850948636955273),
+        ("requirement", 0.7249609883833487),
         ("nodes", 0.4161382506915009),
+        ("memory", 0.5677932882658523),
+        ("human", 0.6940904229502285),
+        ("total", 0.5677932882658523),
     ],
     &[
         ("edges", 0.9000936144404096),
         ("total", 0.9903798177289932),
+        ("requirement", 1.2645213431962157),
         ("memory", 0.9903798177289932),
         ("get", 0.10205582849186985),
-        ("requirement", 1.2645213431962157),
     ],
     &[
-        ("total", 0.5677932882658523),
-        ("get", 0.05850948636955273),
-        ("readable", 0.6940904229502285),
         ("memory", 0.5677932882658523),
-        ("edges", 0.5160314294995705),
+        ("get", 0.05850948636955273),
         ("requirement", 0.7249609883833487),
+        ("edges", 0.5160314294995705),
+        ("total", 0.5677932882658523),
+        ("readable", 0.6940904229502285),
         ("human", 0.6940904229502285),
     ],
     &[
-        ("requirements", 0.8671414957617172),
-        ("weights", 0.707008165824349),
         ("total", 0.7366300193038279),
+        ("requirements", 0.8671414957617172),
         ("edge", 0.44275217243935305),
         ("get", 0.07590763216926308),
+        ("weights", 0.707008165824349),
         ("memory", 0.7366300193038279),
     ],
     &[
-        ("human", 0.5504664464651579),
         ("edge", 0.2706551790063265),
+        ("human", 0.5504664464651579),
         ("weights", 0.43219533091356),
-        ("total", 0.4503032218626117),
-        ("readable", 0.5504664464651579),
-        ("get", 0.046402468585362976),
         ("memory", 0.4503032218626117),
         ("requirements", 0.5300851161636013),
+        ("readable", 0.5504664464651579),
+        ("total", 0.4503032218626117),
+        ("get", 0.046402468585362976),
     ],
     &[
         ("total", 0.9903798177289932),
-        ("memory", 0.9903798177289932),
         ("node_types", 0.7102939901602773),
-        ("requirements", 1.1658490884329797),
         ("get", 0.10205582849186985),
+        ("memory", 0.9903798177289932),
+        ("requirements", 1.1658490884329797),
     ],
     &[
-        ("total", 0.5677932882658523),
+        ("get", 0.05850948636955273),
+        ("readable", 0.6940904229502285),
         ("node_types", 0.40721766850355545),
         ("memory", 0.5677932882658523),
-        ("get", 0.05850948636955273),
-        ("human", 0.6940904229502285),
-        ("readable", 0.6940904229502285),
         ("requirements", 0.6683913340045936),
+        ("human", 0.6940904229502285),
+        ("total", 0.5677932882658523),
     ],
     &[
+        ("memory", 0.9903798177289932),
+        ("get", 0.10205582849186985),
         ("edge_types", 0.7258538157938578),
         ("total", 0.9903798177289932),
         ("requirements", 1.1658490884329797),
-        ("get", 0.10205582849186985),
-        ("memory", 0.9903798177289932),
     ],
     &[
         ("edge_types", 0.4161382506915009),
+        ("requirements", 0.6683913340045936),
         ("get", 0.05850948636955273),
         ("readable", 0.6940904229502285),
-        ("human", 0.6940904229502285),
-        ("total", 0.5677932882658523),
-        ("requirements", 0.6683913340045936),
         ("memory", 0.5677932882658523),
+        ("total", 0.5677932882658523),
+        ("human", 0.6940904229502285),
     ],
     &[
-        ("of", 2.000793437832782),
-        ("number", 0.999232447215879),
         ("get", 0.14357082654403988),
         ("triangles", 2.000793437832782),
+        ("of", 2.000793437832782),
+        ("number", 0.999232447215879),
     ],
     &[
+        ("number", 1.4891088227827056),
         ("triads", 2.9816877635868573),
         ("get", 0.21395680764432426),
-        ("number", 1.4891088227827056),
     ],
     &[
+        ("weighted", 0.9494914247243103),
         ("get", 0.14357082654403988),
         ("number", 0.999232447215879),
-        ("weighted", 0.9494914247243103),
         ("triads", 2.000793437832782),
     ],
     &[
@@ -12420,40 +13033,40 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("transitivity", 5.224546265667863),
     ],
     &[
-        ("per", 0.9906901286757851),
         ("node", 0.439123322060523),
+        ("of", 1.0578436858068714),
+        ("per", 0.9906901286757851),
         ("number", 0.5283062783760529),
         ("get", 0.07590763216926308),
-        ("of", 1.0578436858068714),
         ("triangles", 1.0578436858068714),
     ],
     &[
-        ("get", 0.10205582849186985),
-        ("per", 1.3319569978849197),
-        ("coefficient", 1.1658490884329797),
         ("node", 0.5903898351493518),
+        ("coefficient", 1.1658490884329797),
+        ("per", 1.3319569978849197),
+        ("get", 0.10205582849186985),
         ("clustering", 1.3319569978849197),
     ],
     &[
-        ("get", 0.21395680764432426),
         ("clustering", 2.7924056018973777),
+        ("get", 0.21395680764432426),
         ("coefficient", 2.444165637987421),
     ],
     &[
         ("clustering", 1.8737799686050267),
-        ("average", 2.193622823390651),
-        ("coefficient", 1.6401014986152664),
         ("get", 0.14357082654403988),
+        ("coefficient", 1.6401014986152664),
+        ("average", 2.193622823390651),
     ],
     &[
-        ("are", 3.2690522703400644),
         ("nodes", 1.5217295037301775),
         ("remappable", 3.2690522703400644),
+        ("are", 3.2690522703400644),
     ],
     &[
-        ("unchecked", 0.7456397748238492),
-        ("from", 0.41811637564974785),
         ("node_ids", 0.6948942660183045),
+        ("from", 0.41811637564974785),
+        ("unchecked", 0.7456397748238492),
         ("remap", 1.7789123571685375),
     ],
     &[
@@ -12468,333 +13081,333 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
     ],
     &[
         ("remap", 2.651028890622632),
-        ("graph", 2.1743822221799456),
         ("from", 0.6230990453369991),
+        ("graph", 2.1743822221799456),
     ],
     &[
-        ("sample", 5.224546265667863),
         ("negatives", 5.224546265667863),
+        ("sample", 5.224546265667863),
     ],
     &[
-        ("holdout", 3.6650412601441045),
         ("connected", 3.4750623665748477),
+        ("holdout", 3.6650412601441045),
     ],
     &[
         ("holdout", 3.6650412601441045),
         ("random", 3.249116401854607),
     ],
     &[
-        ("node", 0.5903898351493518),
         ("holdout", 1.0938653281325432),
         ("indices", 1.5593139639071147),
-        ("label", 1.0640199524685519),
         ("get", 0.10205582849186985),
+        ("node", 0.5903898351493518),
+        ("label", 1.0640199524685519),
     ],
     &[
         ("node", 0.5903898351493518),
-        ("holdout", 1.0938653281325432),
         ("labels", 1.5593139639071147),
-        ("get", 0.10205582849186985),
-        ("label", 1.0640199524685519),
-    ],
-    &[
-        ("get", 0.10205582849186985),
-        ("label", 1.0640199524685519),
-        ("node", 0.5903898351493518),
-        ("graphs", 1.4222432011735033),
         ("holdout", 1.0938653281325432),
+        ("get", 0.10205582849186985),
+        ("label", 1.0640199524685519),
     ],
     &[
+        ("node", 0.5903898351493518),
+        ("holdout", 1.0938653281325432),
+        ("label", 1.0640199524685519),
         ("get", 0.10205582849186985),
+        ("graphs", 1.4222432011735033),
+    ],
+    &[
+        ("label", 1.0640199524685519),
         ("holdout", 1.0938653281325432),
         ("edge", 0.5952687296860529),
-        ("label", 1.0640199524685519),
+        ("get", 0.10205582849186985),
         ("graphs", 1.4222432011735033),
     ],
     &[
+        ("get", 0.21395680764432426),
         ("subgraph", 3.2690522703400644),
         ("random", 2.033005510905199),
-        ("get", 0.21395680764432426),
     ],
     &[
-        ("get", 0.10205582849186985),
         ("random", 0.9697287224853167),
-        ("holdout", 1.0938653281325432),
         ("node", 0.5903898351493518),
-        ("label", 1.0640199524685519),
-    ],
-    &[
-        ("node", 0.8305528245488146),
-        ("label", 1.4968495802023656),
-        ("kfold", 1.8737799686050267),
-        ("get", 0.14357082654403988),
-    ],
-    &[
         ("holdout", 1.0938653281325432),
         ("get", 0.10205582849186985),
-        ("edge", 0.5952687296860529),
         ("label", 1.0640199524685519),
-        ("random", 0.9697287224853167),
     ],
     &[
+        ("kfold", 1.8737799686050267),
+        ("get", 0.14357082654403988),
         ("label", 1.4968495802023656),
-        ("kfold", 1.8737799686050267),
-        ("get", 0.14357082654403988),
-        ("edge", 0.8374163906146289),
+        ("node", 0.8305528245488146),
     ],
     &[
+        ("edge", 0.5952687296860529),
+        ("holdout", 1.0938653281325432),
+        ("random", 0.9697287224853167),
+        ("label", 1.0640199524685519),
+        ("get", 0.10205582849186985),
+    ],
+    &[
+        ("edge", 0.8374163906146289),
+        ("label", 1.4968495802023656),
+        ("get", 0.14357082654403988),
+        ("kfold", 1.8737799686050267),
+    ],
+    &[
+        ("get", 0.14357082654403988),
+        ("edge", 0.8374163906146289),
+        ("kfold", 1.8737799686050267),
         ("prediction", 2.193622823390651),
-        ("edge", 0.8374163906146289),
-        ("kfold", 1.8737799686050267),
-        ("get", 0.14357082654403988),
     ],
     &[
-        ("node_id", 0.21436838219633006),
         ("first", 0.39265969414319546),
-        ("from", 0.10968199500493267),
-        ("get", 0.03766208547892098),
         ("search", 0.39265969414319546),
-        ("parallel", 0.4467804190613296),
         ("predecessors", 0.575440096513677),
-        ("breadth", 0.39265969414319546),
         ("unchecked", 0.19559927049166237),
+        ("node_id", 0.21436838219633006),
+        ("from", 0.10968199500493267),
+        ("breadth", 0.39265969414319546),
+        ("parallel", 0.4467804190613296),
+        ("get", 0.03766208547892098),
     ],
     &[
-        ("get", 0.03766208547892098),
+        ("parallel", 0.4467804190613296),
         ("search", 0.39265969414319546),
         ("breadth", 0.39265969414319546),
-        ("distances", 0.4915376127938159),
-        ("unchecked", 0.19559927049166237),
-        ("parallel", 0.4467804190613296),
-        ("from", 0.10968199500493267),
         ("first", 0.39265969414319546),
+        ("distances", 0.4915376127938159),
+        ("from", 0.10968199500493267),
+        ("unchecked", 0.19559927049166237),
         ("node_ids", 0.18228750140660027),
+        ("get", 0.03766208547892098),
     ],
     &[
+        ("node_id", 0.21436838219633006),
         ("from", 0.10968199500493267),
-        ("breadth", 0.39265969414319546),
         ("search", 0.39265969414319546),
-        ("first", 0.39265969414319546),
         ("distances", 0.4915376127938159),
-        ("get", 0.03766208547892098),
+        ("first", 0.39265969414319546),
         ("parallel", 0.4467804190613296),
-        ("node_id", 0.21436838219633006),
-        ("unchecked", 0.19559927049166237),
-    ],
-    &[
-        ("node_id", 0.21436838219633006),
         ("get", 0.03766208547892098),
-        ("from", 0.10968199500493267),
-        ("first", 0.39265969414319546),
         ("unchecked", 0.19559927049166237),
-        ("distances", 0.4915376127938159),
-        ("sequential", 0.575440096513677),
-        ("search", 0.39265969414319546),
         ("breadth", 0.39265969414319546),
     ],
     &[
-        ("search", 0.6100118124154992),
-        ("unchecked", 0.30387092762379503),
-        ("first", 0.6100118124154992),
-        ("get", 0.05850948636955273),
-        ("from", 0.17039516293696008),
-        ("node_ids", 0.2831905865876356),
-        ("breadth", 0.6100118124154992),
+        ("get", 0.03766208547892098),
+        ("breadth", 0.39265969414319546),
+        ("node_id", 0.21436838219633006),
+        ("sequential", 0.575440096513677),
+        ("distances", 0.4915376127938159),
+        ("search", 0.39265969414319546),
+        ("first", 0.39265969414319546),
+        ("from", 0.10968199500493267),
+        ("unchecked", 0.19559927049166237),
     ],
     &[
-        ("unchecked", 0.30387092762379503),
-        ("first", 0.6100118124154992),
-        ("get", 0.05850948636955273),
         ("breadth", 0.6100118124154992),
+        ("node_ids", 0.2831905865876356),
+        ("first", 0.6100118124154992),
+        ("from", 0.17039516293696008),
+        ("get", 0.05850948636955273),
         ("search", 0.6100118124154992),
+        ("unchecked", 0.30387092762379503),
+    ],
+    &[
         ("from", 0.17039516293696008),
         ("node_id", 0.33302945858373084),
+        ("unchecked", 0.30387092762379503),
+        ("search", 0.6100118124154992),
+        ("first", 0.6100118124154992),
+        ("get", 0.05850948636955273),
+        ("breadth", 0.6100118124154992),
     ],
     &[
-        ("shortest", 0.5074827337259671),
-        ("path", 0.5449608090688494),
-        ("unchecked", 0.30387092762379503),
         ("node_ids", 0.5335493347031549),
+        ("unchecked", 0.30387092762379503),
         ("from", 0.17039516293696008),
+        ("path", 0.5449608090688494),
         ("get", 0.05850948636955273),
+        ("shortest", 0.5074827337259671),
     ],
     &[
         ("unchecked", 0.30387092762379503),
-        ("path", 0.5449608090688494),
-        ("get", 0.05850948636955273),
         ("shortest", 0.5074827337259671),
         ("node_names", 0.3795314224745872),
-        ("from", 0.17039516293696008),
+        ("get", 0.05850948636955273),
         ("node_ids", 0.2831905865876356),
+        ("path", 0.5449608090688494),
+        ("from", 0.17039516293696008),
     ],
     &[
         ("from", 0.22106318400995545),
-        ("get", 0.07590763216926308),
         ("path", 0.707008165824349),
-        ("shortest", 0.6583857605690561),
         ("node_ids", 0.6804740524394602),
+        ("shortest", 0.6583857605690561),
+        ("get", 0.07590763216926308),
     ],
     &[
+        ("shortest", 0.6583857605690561),
+        ("path", 0.707008165824349),
         ("node_ids", 0.36739900167160566),
-        ("from", 0.22106318400995545),
-        ("get", 0.07590763216926308),
         ("node_names", 0.4923873614599018),
-        ("path", 0.707008165824349),
-        ("shortest", 0.6583857605690561),
+        ("get", 0.07590763216926308),
+        ("from", 0.22106318400995545),
     ],
     &[
-        ("node_names", 0.9119698793359229),
         ("from", 0.22106318400995545),
+        ("path", 0.707008165824349),
         ("shortest", 0.6583857605690561),
         ("get", 0.07590763216926308),
-        ("path", 0.707008165824349),
+        ("node_names", 0.9119698793359229),
     ],
     &[
         ("from", 0.1351363118339495),
         ("unchecked", 0.2409927355029017),
-        ("node_ids", 0.4282823766795113),
+        ("shortest", 0.4024723693624407),
+        ("path", 0.43219533091356),
         ("get", 0.046402468585362976),
         ("k", 0.5126261862215247),
-        ("path", 0.43219533091356),
-        ("shortest", 0.4024723693624407),
+        ("node_ids", 0.4282823766795113),
     ],
     &[
+        ("get", 0.05850948636955273),
+        ("path", 0.5449608090688494),
         ("k", 0.6463771383246005),
+        ("from", 0.17039516293696008),
         ("node_ids", 0.5335493347031549),
         ("shortest", 0.5074827337259671),
-        ("path", 0.5449608090688494),
-        ("get", 0.05850948636955273),
-        ("from", 0.17039516293696008),
     ],
     &[
-        ("from", 0.17039516293696008),
-        ("path", 0.5449608090688494),
-        ("get", 0.05850948636955273),
-        ("node_ids", 0.2831905865876356),
         ("node_names", 0.3795314224745872),
-        ("k", 0.6463771383246005),
+        ("get", 0.05850948636955273),
         ("shortest", 0.5074827337259671),
+        ("node_ids", 0.2831905865876356),
+        ("k", 0.6463771383246005),
+        ("path", 0.5449608090688494),
+        ("from", 0.17039516293696008),
     ],
     &[
         ("get", 0.05850948636955273),
-        ("shortest", 0.5074827337259671),
-        ("node_names", 0.7150616847837673),
-        ("k", 0.6463771383246005),
         ("from", 0.17039516293696008),
+        ("k", 0.6463771383246005),
+        ("node_names", 0.7150616847837673),
+        ("shortest", 0.5074827337259671),
         ("path", 0.5449608090688494),
     ],
     &[
-        ("distant", 0.5248563046908962),
         ("and", 0.3379918761252103),
-        ("from", 0.10968199500493267),
+        ("unchecked", 0.19559927049166237),
         ("get", 0.03766208547892098),
         ("most", 0.46665155357755767),
-        ("unchecked", 0.19559927049166237),
+        ("distant", 0.5248563046908962),
         ("eccentricity", 0.4302381223389204),
         ("node_id", 0.41240176169100834),
+        ("from", 0.10968199500493267),
     ],
     &[
-        ("eccentricity", 0.8671414957617172),
-        ("get", 0.07590763216926308),
-        ("node_id", 0.4320577604122954),
-        ("weighted", 0.5020075982757829),
-        ("unchecked", 0.39422876583314165),
         ("from", 0.22106318400995545),
+        ("get", 0.07590763216926308),
+        ("weighted", 0.5020075982757829),
+        ("eccentricity", 0.8671414957617172),
+        ("unchecked", 0.39422876583314165),
+        ("node_id", 0.4320577604122954),
     ],
     &[
-        ("get", 0.046402468585362976),
-        ("node_id", 0.5036560351288123),
-        ("eccentricity", 0.5300851161636013),
-        ("distant", 0.6466616991743593),
-        ("most", 0.5749491505804375),
         ("and", 0.416430933512323),
         ("from", 0.1351363118339495),
+        ("most", 0.5749491505804375),
+        ("get", 0.046402468585362976),
+        ("eccentricity", 0.5300851161636013),
+        ("distant", 0.6466616991743593),
+        ("node_id", 0.5036560351288123),
     ],
     &[
-        ("get", 0.10205582849186985),
-        ("node_id", 0.5808903720892693),
-        ("from", 0.29721367599610243),
-        ("eccentricity", 1.1658490884329797),
         ("weighted", 0.6749361017744177),
+        ("from", 0.29721367599610243),
+        ("node_id", 0.5808903720892693),
+        ("eccentricity", 1.1658490884329797),
+        ("get", 0.10205582849186985),
     ],
     &[
         ("node_name", 1.15495749598782),
-        ("eccentricity", 1.6401014986152664),
         ("get", 0.14357082654403988),
         ("from", 0.41811637564974785),
+        ("eccentricity", 1.6401014986152664),
     ],
     &[
-        ("from", 0.29721367599610243),
+        ("get", 0.10205582849186985),
         ("node_name", 0.8209895210833528),
         ("eccentricity", 1.1658490884329797),
         ("weighted", 0.6749361017744177),
-        ("get", 0.10205582849186985),
+        ("from", 0.29721367599610243),
     ],
     &[
         ("from", 0.29721367599610243),
-        ("unchecked", 0.5300302770966965),
-        ("dijkstra", 1.2645213431962157),
         ("node_ids", 0.4939583600641458),
-        ("get", 0.10205582849186985),
-    ],
-    &[
-        ("node_id", 0.5808903720892693),
-        ("from", 0.29721367599610243),
-        ("get", 0.10205582849186985),
         ("unchecked", 0.5300302770966965),
+        ("get", 0.10205582849186985),
         ("dijkstra", 1.2645213431962157),
     ],
     &[
+        ("unchecked", 0.5300302770966965),
+        ("dijkstra", 1.2645213431962157),
+        ("get", 0.10205582849186985),
+        ("from", 0.29721367599610243),
+        ("node_id", 0.5808903720892693),
+    ],
+    &[
+        ("unchecked", 0.2409927355029017),
         ("from", 0.1351363118339495),
+        ("weighted", 0.3068781246747678),
         ("node_ids", 0.4282823766795113),
-        ("weighted", 0.3068781246747678),
-        ("unchecked", 0.2409927355029017),
-        ("shortest", 0.4024723693624407),
         ("path", 0.43219533091356),
+        ("shortest", 0.4024723693624407),
         ("get", 0.046402468585362976),
     ],
     &[
-        ("path", 0.43219533091356),
-        ("shortest", 0.4024723693624407),
-        ("from", 0.1351363118339495),
+        ("get", 0.046402468585362976),
+        ("unchecked", 0.2409927355029017),
         ("node_ids", 0.22459165364749256),
+        ("shortest", 0.4024723693624407),
+        ("path", 0.43219533091356),
         ("node_names", 0.3009972570482127),
-        ("unchecked", 0.2409927355029017),
-        ("get", 0.046402468585362976),
         ("weighted", 0.3068781246747678),
+        ("from", 0.1351363118339495),
     ],
     &[
+        ("from", 0.17039516293696008),
         ("node_ids", 0.5335493347031549),
         ("get", 0.05850948636955273),
-        ("from", 0.17039516293696008),
         ("weighted", 0.38694668624668777),
         ("path", 0.5449608090688494),
         ("shortest", 0.5074827337259671),
     ],
     &[
-        ("shortest", 0.5074827337259671),
-        ("path", 0.5449608090688494),
         ("node_names", 0.3795314224745872),
-        ("from", 0.17039516293696008),
+        ("get", 0.05850948636955273),
         ("node_ids", 0.2831905865876356),
-        ("get", 0.05850948636955273),
-        ("weighted", 0.38694668624668777),
-    ],
-    &[
-        ("node_names", 0.7150616847837673),
-        ("get", 0.05850948636955273),
-        ("weighted", 0.38694668624668777),
         ("path", 0.5449608090688494),
-        ("shortest", 0.5074827337259671),
         ("from", 0.17039516293696008),
+        ("shortest", 0.5074827337259671),
+        ("weighted", 0.38694668624668777),
     ],
     &[
-        ("from", 0.22106318400995545),
+        ("shortest", 0.5074827337259671),
+        ("path", 0.5449608090688494),
+        ("get", 0.05850948636955273),
+        ("from", 0.17039516293696008),
+        ("node_names", 0.7150616847837673),
+        ("weighted", 0.38694668624668777),
+    ],
+    &[
         ("breadth", 0.7914024741778843),
-        ("node_ids", 0.36739900167160566),
         ("first", 0.7914024741778843),
-        ("get", 0.07590763216926308),
         ("search", 0.7914024741778843),
+        ("node_ids", 0.36739900167160566),
+        ("from", 0.22106318400995545),
+        ("get", 0.07590763216926308),
     ],
     &[
         ("node_ids", 0.6948942660183045),
@@ -12803,62 +13416,62 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("get", 0.14357082654403988),
     ],
     &[
+        ("naive", 2.9816877635868573),
         ("diameter", 2.7924056018973777),
         ("get", 0.21395680764432426),
-        ("naive", 2.9816877635868573),
     ],
-    &[("diameter", 4.462777298481476), ("get", 0.3419422964063188)],
+    &[("get", 0.3419422964063188), ("diameter", 4.462777298481476)],
     &[
-        ("diameter", 1.8737799686050267),
         ("weighted", 0.9494914247243103),
         ("naive", 2.000793437832782),
+        ("diameter", 1.8737799686050267),
         ("get", 0.14357082654403988),
     ],
     &[
+        ("node_names", 0.4923873614599018),
+        ("first", 0.7914024741778843),
+        ("search", 0.7914024741778843),
         ("from", 0.22106318400995545),
         ("get", 0.07590763216926308),
-        ("first", 0.7914024741778843),
         ("breadth", 0.7914024741778843),
-        ("node_names", 0.4923873614599018),
-        ("search", 0.7914024741778843),
     ],
     &[
-        ("dijkstra", 1.7789123571685375),
-        ("get", 0.14357082654403988),
         ("node_names", 0.9312958189369289),
         ("from", 0.41811637564974785),
+        ("dijkstra", 1.7789123571685375),
+        ("get", 0.14357082654403988),
     ],
     &[
-        ("get", 0.14357082654403988),
         ("number", 0.999232447215879),
         ("connected", 1.4590695023829132),
+        ("get", 0.14357082654403988),
         ("components", 1.7789123571685375),
     ],
     &[
-        ("nodes", 1.0211218097354557),
-        ("get", 0.14357082654403988),
-        ("connected", 1.4590695023829132),
         ("number", 0.999232447215879),
+        ("nodes", 1.0211218097354557),
+        ("connected", 1.4590695023829132),
+        ("get", 0.14357082654403988),
     ],
     &[
-        ("get", 0.07590763216926308),
         ("number", 0.5283062783760529),
-        ("singleton", 0.5521652516587192),
-        ("selfloops", 0.7366300193038279),
         ("nodes", 0.5398794490441621),
         ("with", 0.6283922472569299),
+        ("selfloops", 0.7366300193038279),
+        ("get", 0.07590763216926308),
+        ("singleton", 0.5521652516587192),
     ],
     &[
+        ("nodes", 1.0211218097354557),
         ("get", 0.14357082654403988),
-        ("singleton", 1.0443590361607995),
         ("number", 0.999232447215879),
-        ("nodes", 1.0211218097354557),
+        ("singleton", 1.0443590361607995),
     ],
     &[
-        ("get", 0.14357082654403988),
-        ("nodes", 1.0211218097354557),
         ("disconnected", 1.7789123571685375),
         ("number", 0.999232447215879),
+        ("get", 0.14357082654403988),
+        ("nodes", 1.0211218097354557),
     ],
     &[
         ("singleton", 1.5563588424625128),
@@ -12866,124 +13479,124 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("get", 0.21395680764432426),
     ],
     &[
-        ("get", 0.21395680764432426),
         ("singleton", 1.5563588424625128),
         ("node_names", 1.3878660810741414),
+        ("get", 0.21395680764432426),
     ],
     &[
+        ("singleton", 0.7423717564631218),
+        ("get", 0.10205582849186985),
+        ("with", 0.8448569607423773),
         ("selfloops", 0.9903798177289932),
         ("node_ids", 0.4939583600641458),
-        ("singleton", 0.7423717564631218),
-        ("with", 0.8448569607423773),
-        ("get", 0.10205582849186985),
     ],
     &[
+        ("singleton", 0.7423717564631218),
         ("get", 0.10205582849186985),
-        ("with", 0.8448569607423773),
         ("node_names", 0.6620019446880332),
         ("selfloops", 0.9903798177289932),
-        ("singleton", 0.7423717564631218),
+        ("with", 0.8448569607423773),
     ],
-    &[("get", 0.3419422964063188), ("density", 5.224546265667863)],
+    &[("density", 5.224546265667863), ("get", 0.3419422964063188)],
     &[
         ("rate", 1.6401014986152664),
-        ("get", 0.14357082654403988),
         ("nodes", 1.0211218097354557),
+        ("get", 0.14357082654403988),
         ("trap", 1.7031620323900702),
     ],
     &[
-        ("mean", 2.000793437832782),
-        ("degrees", 1.4590695023829132),
-        ("get", 0.14357082654403988),
         ("node", 0.8305528245488146),
+        ("degrees", 1.4590695023829132),
+        ("mean", 2.000793437832782),
+        ("get", 0.14357082654403988),
     ],
     &[
-        ("weighted", 0.6749361017744177),
-        ("get", 0.10205582849186985),
-        ("mean", 1.4222432011735033),
-        ("node", 0.5903898351493518),
         ("degrees", 1.0371643771740207),
+        ("mean", 1.4222432011735033),
+        ("weighted", 0.6749361017744177),
+        ("node", 0.5903898351493518),
+        ("get", 0.10205582849186985),
     ],
     &[
         ("edges", 1.2662401168250441),
+        ("number", 0.999232447215879),
         ("get", 0.14357082654403988),
         ("undirected", 1.7031620323900702),
-        ("number", 0.999232447215879),
     ],
     &[
-        ("get", 0.10205582849186985),
         ("edges", 0.9000936144404096),
-        ("undirected", 1.2106750128526111),
         ("unique", 1.0371643771740207),
+        ("get", 0.10205582849186985),
         ("number", 0.7102939901602773),
+        ("undirected", 1.2106750128526111),
     ],
     &[
+        ("get", 0.21395680764432426),
         ("number", 1.4891088227827056),
         ("edges", 1.8870177154267387),
-        ("get", 0.21395680764432426),
     ],
     &[
+        ("get", 0.14357082654403988),
         ("unique", 1.4590695023829132),
         ("number", 0.999232447215879),
-        ("get", 0.14357082654403988),
         ("edges", 1.2662401168250441),
     ],
     &[
-        ("node", 0.8305528245488146),
-        ("degrees", 1.4590695023829132),
         ("median", 2.000793437832782),
+        ("degrees", 1.4590695023829132),
         ("get", 0.14357082654403988),
+        ("node", 0.8305528245488146),
     ],
     &[
-        ("weighted", 0.6749361017744177),
         ("median", 1.4222432011735033),
-        ("degrees", 1.0371643771740207),
+        ("weighted", 0.6749361017744177),
         ("node", 0.5903898351493518),
         ("get", 0.10205582849186985),
+        ("degrees", 1.0371643771740207),
     ],
     &[
         ("get", 0.14357082654403988),
-        ("degree", 1.1885339030384874),
-        ("node", 0.8305528245488146),
         ("maximum", 1.5388356707169115),
+        ("node", 0.8305528245488146),
+        ("degree", 1.1885339030384874),
     ],
     &[
         ("node_id", 0.5808903720892693),
-        ("most", 1.2645213431962157),
-        ("get", 0.10205582849186985),
-        ("central", 1.2106750128526111),
         ("unchecked", 0.5300302770966965),
+        ("get", 0.10205582849186985),
+        ("most", 1.2645213431962157),
+        ("central", 1.2106750128526111),
     ],
     &[
         ("get", 0.14357082654403988),
+        ("most", 1.7789123571685375),
         ("central", 1.7031620323900702),
         ("node_id", 0.8171891021292833),
-        ("most", 1.7789123571685375),
     ],
     &[
-        ("degree", 1.1885339030384874),
-        ("node", 0.8305528245488146),
+        ("get", 0.14357082654403988),
         ("minimum", 1.5860829716106686),
-        ("get", 0.14357082654403988),
+        ("node", 0.8305528245488146),
+        ("degree", 1.1885339030384874),
     ],
     &[
-        ("get", 0.14357082654403988),
-        ("node", 0.8305528245488146),
-        ("mode", 2.193622823390651),
         ("degrees", 1.4590695023829132),
+        ("mode", 2.193622823390651),
+        ("node", 0.8305528245488146),
+        ("get", 0.14357082654403988),
     ],
     &[
         ("rate", 1.6401014986152664),
-        ("selfloop", 2.000793437832782),
         ("nodes", 1.0211218097354557),
+        ("selfloop", 2.000793437832782),
         ("get", 0.14357082654403988),
     ],
     &[("get_name", 8.89820137317584)],
     &[
-        ("get", 0.14357082654403988),
-        ("number", 0.999232447215879),
-        ("nodes", 1.0211218097354557),
         ("trap", 1.7031620323900702),
+        ("get", 0.14357082654403988),
+        ("nodes", 1.0211218097354557),
+        ("number", 0.999232447215879),
     ],
     &[
         ("get", 0.21395680764432426),
@@ -12992,46 +13605,46 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
     ],
     &[
         ("source", 1.4590695023829132),
+        ("node_ids", 0.6948942660183045),
         ("get", 0.14357082654403988),
         ("directed", 1.4590695023829132),
-        ("node_ids", 0.6948942660183045),
     ],
     &[
-        ("source_names", 5.224546265667863),
         ("get", 0.3419422964063188),
+        ("source_names", 5.224546265667863),
     ],
     &[
+        ("get", 0.21395680764432426),
         ("node_ids", 1.035568035557809),
         ("destination", 2.444165637987421),
-        ("get", 0.21395680764432426),
     ],
     &[
+        ("destination", 1.6401014986152664),
         ("get", 0.14357082654403988),
         ("node_ids", 0.6948942660183045),
-        ("destination", 1.6401014986152664),
         ("directed", 1.4590695023829132),
     ],
     &[
-        ("get", 0.3419422964063188),
         ("destination_names", 5.224546265667863),
+        ("get", 0.3419422964063188),
     ],
     &[
         ("node_names", 2.2180650388831844),
         ("get", 0.3419422964063188),
     ],
     &[
-        ("node", 1.237733564666296),
-        ("urls", 3.2690522703400644),
         ("get", 0.21395680764432426),
+        ("urls", 3.2690522703400644),
+        ("node", 1.237733564666296),
     ],
     &[
+        ("get", 0.21395680764432426),
         ("node", 1.237733564666296),
         ("ontologies", 3.2690522703400644),
-        ("get", 0.21395680764432426),
     ],
     &[
-        ("node_ids", 1.6550280220682243),
         ("get", 0.3419422964063188),
+        ("node_ids", 1.6550280220682243),
     ],
     &[
         ("get", 0.3419422964063188),
@@ -13039,343 +13652,343 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
     ],
     &[
         ("unique", 2.1743822221799456),
-        ("edge_type_ids", 2.444165637987421),
         ("get", 0.21395680764432426),
+        ("edge_type_ids", 2.444165637987421),
     ],
     &[
-        ("get", 0.3419422964063188),
         ("edge_type_names", 4.056416965245162),
+        ("get", 0.3419422964063188),
     ],
     &[
         ("unique", 2.1743822221799456),
-        ("edge_type_names", 2.53814176684021),
         ("get", 0.21395680764432426),
+        ("edge_type_names", 2.53814176684021),
     ],
     &[
-        ("weights", 1.9928063333728845),
         ("get", 0.21395680764432426),
         ("edge", 1.2479620123241293),
+        ("weights", 1.9928063333728845),
     ],
     &[
-        ("node", 0.8305528245488146),
+        ("indegrees", 2.000793437832782),
         ("weighted", 0.9494914247243103),
         ("get", 0.14357082654403988),
-        ("indegrees", 2.000793437832782),
+        ("node", 0.8305528245488146),
     ],
     &[
-        ("get", 0.3419422964063188),
         ("node_type_ids", 3.4750623665748477),
+        ("get", 0.3419422964063188),
     ],
     &[
-        ("get", 0.14357082654403988),
         ("mask", 1.6401014986152664),
-        ("known", 1.2884515661679565),
         ("node_types", 0.999232447215879),
+        ("known", 1.2884515661679565),
+        ("get", 0.14357082654403988),
     ],
     &[
+        ("node_types", 0.999232447215879),
+        ("get", 0.14357082654403988),
         ("unknown", 1.2452632907709282),
         ("mask", 1.6401014986152664),
-        ("node_types", 0.999232447215879),
-        ("get", 0.14357082654403988),
     ],
     &[
-        ("encoded", 1.2645213431962157),
-        ("node_types", 0.7102939901602773),
         ("hot", 1.2645213431962157),
-        ("get", 0.10205582849186985),
+        ("node_types", 0.7102939901602773),
         ("one", 1.2645213431962157),
+        ("encoded", 1.2645213431962157),
+        ("get", 0.10205582849186985),
     ],
     &[
-        ("one", 0.940532475292849),
         ("encoded", 0.940532475292849),
         ("hot", 0.940532475292849),
+        ("node_types", 0.5283062783760529),
         ("get", 0.07590763216926308),
         ("known", 0.6812199240392849),
-        ("node_types", 0.5283062783760529),
+        ("one", 0.940532475292849),
     ],
     &[
+        ("hot", 1.2645213431962157),
+        ("encoded", 1.2645213431962157),
         ("get", 0.10205582849186985),
         ("edge_types", 0.7258538157938578),
-        ("hot", 1.2645213431962157),
-        ("encoded", 1.2645213431962157),
         ("one", 1.2645213431962157),
     ],
     &[
-        ("one", 0.940532475292849),
         ("known", 0.6812199240392849),
         ("get", 0.07590763216926308),
-        ("encoded", 0.940532475292849),
+        ("one", 0.940532475292849),
         ("edge_types", 0.5398794490441621),
+        ("encoded", 0.940532475292849),
         ("hot", 0.940532475292849),
     ],
     &[
-        ("node_type_names", 3.4750623665748477),
         ("get", 0.3419422964063188),
+        ("node_type_names", 3.4750623665748477),
     ],
     &[
         ("unique", 2.1743822221799456),
-        ("get", 0.21395680764432426),
         ("node_type_ids", 2.1743822221799456),
+        ("get", 0.21395680764432426),
     ],
     &[
+        ("node_type_names", 2.1743822221799456),
         ("unique", 2.1743822221799456),
         ("get", 0.21395680764432426),
-        ("node_type_names", 2.1743822221799456),
     ],
     &[
-        ("directed", 1.0371643771740207),
         ("number", 0.7102939901602773),
         ("get", 0.10205582849186985),
         ("unique", 1.0371643771740207),
         ("edges", 0.9000936144404096),
+        ("directed", 1.0371643771740207),
     ],
     &[
-        ("get", 0.21395680764432426),
         ("mapping", 2.9816877635868573),
+        ("get", 0.21395680764432426),
         ("nodes", 1.5217295037301775),
     ],
     &[
-        ("edge", 1.2479620123241293),
-        ("get", 0.21395680764432426),
         ("node_ids", 1.035568035557809),
-    ],
-    &[
-        ("get", 0.14357082654403988),
-        ("edge", 0.8374163906146289),
-        ("node_ids", 0.6948942660183045),
-        ("directed", 1.4590695023829132),
-    ],
-    &[
-        ("node_names", 1.3878660810741414),
-        ("edge", 1.2479620123241293),
         ("get", 0.21395680764432426),
+        ("edge", 1.2479620123241293),
     ],
     &[
+        ("node_ids", 0.6948942660183045),
+        ("edge", 0.8374163906146289),
+        ("get", 0.14357082654403988),
+        ("directed", 1.4590695023829132),
+    ],
+    &[
+        ("get", 0.21395680764432426),
+        ("edge", 1.2479620123241293),
+        ("node_names", 1.3878660810741414),
+    ],
+    &[
+        ("get", 0.14357082654403988),
+        ("node_names", 0.9312958189369289),
         ("edge", 0.8374163906146289),
         ("directed", 1.4590695023829132),
-        ("node_names", 0.9312958189369289),
-        ("get", 0.14357082654403988),
     ],
     &[
+        ("get", 0.14357082654403988),
         ("node_types", 0.999232447215879),
         ("number", 0.999232447215879),
-        ("get", 0.14357082654403988),
         ("unknown", 1.2452632907709282),
     ],
     &[
-        ("get", 0.14357082654403988),
         ("number", 0.999232447215879),
-        ("known", 1.2884515661679565),
         ("node_types", 0.999232447215879),
+        ("get", 0.14357082654403988),
+        ("known", 1.2884515661679565),
     ],
     &[
         ("get", 0.14357082654403988),
-        ("rate", 1.6401014986152664),
-        ("node_types", 0.999232447215879),
         ("unknown", 1.2452632907709282),
+        ("node_types", 0.999232447215879),
+        ("rate", 1.6401014986152664),
     ],
     &[
         ("get", 0.14357082654403988),
-        ("node_types", 0.999232447215879),
-        ("rate", 1.6401014986152664),
         ("known", 1.2884515661679565),
+        ("rate", 1.6401014986152664),
+        ("node_types", 0.999232447215879),
     ],
     &[
+        ("number", 0.999232447215879),
         ("minimum", 1.5860829716106686),
-        ("number", 0.999232447215879),
-        ("get", 0.14357082654403988),
         ("node_types", 0.999232447215879),
+        ("get", 0.14357082654403988),
     ],
     &[
-        ("maximum", 1.5388356707169115),
-        ("node_types", 0.999232447215879),
-        ("number", 0.999232447215879),
         ("get", 0.14357082654403988),
+        ("number", 0.999232447215879),
+        ("node_types", 0.999232447215879),
+        ("maximum", 1.5388356707169115),
     ],
     &[
         ("count", 1.6401014986152664),
         ("maximum", 1.5388356707169115),
-        ("get", 0.14357082654403988),
         ("multilabel", 2.000793437832782),
+        ("get", 0.14357082654403988),
     ],
     &[
-        ("node_types", 0.999232447215879),
-        ("singleton", 1.0443590361607995),
         ("get", 0.14357082654403988),
+        ("singleton", 1.0443590361607995),
+        ("node_types", 0.999232447215879),
         ("number", 0.999232447215879),
     ],
     &[
-        ("singleton", 1.5563588424625128),
         ("node_type_ids", 2.1743822221799456),
         ("get", 0.21395680764432426),
-    ],
-    &[
-        ("node_type_names", 2.1743822221799456),
-        ("get", 0.21395680764432426),
         ("singleton", 1.5563588424625128),
     ],
     &[
+        ("singleton", 1.5563588424625128),
+        ("get", 0.21395680764432426),
+        ("node_type_names", 2.1743822221799456),
+    ],
+    &[
+        ("edge_types", 1.0211218097354557),
         ("get", 0.14357082654403988),
         ("unknown", 1.2452632907709282),
         ("number", 0.999232447215879),
-        ("edge_types", 1.0211218097354557),
     ],
     &[
-        ("edge_types", 0.7258538157938578),
         ("edge_ids", 1.0640199524685519),
-        ("with", 0.8448569607423773),
+        ("get", 0.10205582849186985),
         ("unknown", 0.8851824558602509),
-        ("get", 0.10205582849186985),
-    ],
-    &[
-        ("edge_ids", 1.0640199524685519),
-        ("get", 0.10205582849186985),
-        ("edge_types", 0.7258538157938578),
         ("with", 0.8448569607423773),
+        ("edge_types", 0.7258538157938578),
+    ],
+    &[
+        ("get", 0.10205582849186985),
         ("known", 0.9158823921417123),
+        ("with", 0.8448569607423773),
+        ("edge_ids", 1.0640199524685519),
+        ("edge_types", 0.7258538157938578),
+    ],
+    &[
+        ("get", 0.07590763216926308),
+        ("edge", 0.44275217243935305),
+        ("unknown", 0.6583857605690561),
+        ("edge_types", 0.5398794490441621),
+        ("node_ids", 0.36739900167160566),
+        ("with", 0.6283922472569299),
     ],
     &[
         ("edge_types", 0.5398794490441621),
-        ("unknown", 0.6583857605690561),
+        ("with", 0.6283922472569299),
         ("edge", 0.44275217243935305),
         ("node_ids", 0.36739900167160566),
         ("get", 0.07590763216926308),
-        ("with", 0.6283922472569299),
-    ],
-    &[
-        ("edge_types", 0.5398794490441621),
-        ("edge", 0.44275217243935305),
-        ("with", 0.6283922472569299),
         ("known", 0.6812199240392849),
-        ("get", 0.07590763216926308),
-        ("node_ids", 0.36739900167160566),
     ],
     &[
-        ("edge", 0.44275217243935305),
-        ("with", 0.6283922472569299),
-        ("get", 0.07590763216926308),
+        ("node_names", 0.4923873614599018),
         ("unknown", 0.6583857605690561),
+        ("with", 0.6283922472569299),
         ("edge_types", 0.5398794490441621),
-        ("node_names", 0.4923873614599018),
-    ],
-    &[
-        ("node_names", 0.4923873614599018),
         ("edge", 0.44275217243935305),
         ("get", 0.07590763216926308),
+    ],
+    &[
         ("edge_types", 0.5398794490441621),
         ("with", 0.6283922472569299),
+        ("node_names", 0.4923873614599018),
+        ("get", 0.07590763216926308),
+        ("edge", 0.44275217243935305),
         ("known", 0.6812199240392849),
     ],
     &[
         ("edge_ids", 0.7914024741778843),
         ("mask", 0.8671414957617172),
+        ("unknown", 0.6583857605690561),
         ("edge_types", 0.5398794490441621),
         ("with", 0.6283922472569299),
         ("get", 0.07590763216926308),
-        ("unknown", 0.6583857605690561),
     ],
     &[
         ("edge_types", 0.5398794490441621),
         ("get", 0.07590763216926308),
-        ("known", 0.6812199240392849),
         ("mask", 0.8671414957617172),
-        ("edge_ids", 0.7914024741778843),
         ("with", 0.6283922472569299),
+        ("known", 0.6812199240392849),
+        ("edge_ids", 0.7914024741778843),
+    ],
+    &[
+        ("with", 0.8448569607423773),
+        ("node_ids", 0.4939583600641458),
+        ("get", 0.10205582849186985),
+        ("node_types", 0.7102939901602773),
+        ("unknown", 0.8851824558602509),
     ],
     &[
         ("node_types", 0.7102939901602773),
         ("with", 0.8448569607423773),
         ("node_ids", 0.4939583600641458),
         ("get", 0.10205582849186985),
-        ("unknown", 0.8851824558602509),
-    ],
-    &[
-        ("node_types", 0.7102939901602773),
         ("known", 0.9158823921417123),
-        ("with", 0.8448569607423773),
-        ("node_ids", 0.4939583600641458),
-        ("get", 0.10205582849186985),
     ],
     &[
+        ("unknown", 0.8851824558602509),
+        ("with", 0.8448569607423773),
+        ("node_types", 0.7102939901602773),
+        ("get", 0.10205582849186985),
         ("node_names", 0.6620019446880332),
-        ("get", 0.10205582849186985),
-        ("unknown", 0.8851824558602509),
-        ("node_types", 0.7102939901602773),
-        ("with", 0.8448569607423773),
     ],
     &[
-        ("known", 0.9158823921417123),
-        ("with", 0.8448569607423773),
         ("get", 0.10205582849186985),
+        ("with", 0.8448569607423773),
+        ("known", 0.9158823921417123),
         ("node_names", 0.6620019446880332),
         ("node_types", 0.7102939901602773),
     ],
     &[
-        ("node_ids", 0.36739900167160566),
-        ("with", 0.6283922472569299),
+        ("node_types", 0.5283062783760529),
         ("get", 0.07590763216926308),
+        ("with", 0.6283922472569299),
+        ("node_ids", 0.36739900167160566),
         ("unknown", 0.6583857605690561),
-        ("node_types", 0.5283062783760529),
         ("mask", 0.8671414957617172),
     ],
     &[
-        ("get", 0.07590763216926308),
-        ("mask", 0.8671414957617172),
-        ("node_ids", 0.36739900167160566),
-        ("node_types", 0.5283062783760529),
         ("with", 0.6283922472569299),
+        ("get", 0.07590763216926308),
+        ("node_types", 0.5283062783760529),
+        ("node_ids", 0.36739900167160566),
+        ("mask", 0.8671414957617172),
         ("known", 0.6812199240392849),
     ],
     &[
-        ("known", 1.2884515661679565),
         ("number", 0.999232447215879),
-        ("get", 0.14357082654403988),
-        ("edge_types", 1.0211218097354557),
-    ],
-    &[
-        ("rate", 1.6401014986152664),
-        ("unknown", 1.2452632907709282),
-        ("edge_types", 1.0211218097354557),
-        ("get", 0.14357082654403988),
-    ],
-    &[
-        ("rate", 1.6401014986152664),
-        ("get", 0.14357082654403988),
         ("known", 1.2884515661679565),
         ("edge_types", 1.0211218097354557),
+        ("get", 0.14357082654403988),
+    ],
+    &[
+        ("unknown", 1.2452632907709282),
+        ("rate", 1.6401014986152664),
+        ("get", 0.14357082654403988),
+        ("edge_types", 1.0211218097354557),
+    ],
+    &[
+        ("get", 0.14357082654403988),
+        ("rate", 1.6401014986152664),
+        ("edge_types", 1.0211218097354557),
+        ("known", 1.2884515661679565),
     ],
     &[
         ("minimum", 1.5860829716106686),
-        ("edge_types", 1.0211218097354557),
         ("number", 0.999232447215879),
         ("get", 0.14357082654403988),
+        ("edge_types", 1.0211218097354557),
     ],
     &[
-        ("get", 0.14357082654403988),
-        ("singleton", 1.0443590361607995),
-        ("edge_types", 1.0211218097354557),
         ("number", 0.999232447215879),
+        ("get", 0.14357082654403988),
+        ("edge_types", 1.0211218097354557),
+        ("singleton", 1.0443590361607995),
     ],
     &[
         ("singleton", 1.5563588424625128),
-        ("get", 0.21395680764432426),
         ("edge_type_ids", 2.444165637987421),
+        ("get", 0.21395680764432426),
     ],
     &[
-        ("get", 0.21395680764432426),
         ("edge_type_names", 2.53814176684021),
         ("singleton", 1.5563588424625128),
+        ("get", 0.21395680764432426),
     ],
     &[
+        ("nodes", 1.5217295037301775),
         ("get", 0.21395680764432426),
         ("number", 1.4891088227827056),
-        ("nodes", 1.5217295037301775),
     ],
     &[
-        ("get", 0.14357082654403988),
-        ("connected", 1.4590695023829132),
         ("node", 0.8305528245488146),
         ("component_ids", 2.193622823390651),
+        ("connected", 1.4590695023829132),
+        ("get", 0.14357082654403988),
     ],
     &[
         ("number", 0.999232447215879),
@@ -13384,14 +13997,14 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("edges", 1.2662401168250441),
     ],
     &[
-        ("edge_types", 1.5217295037301775),
-        ("number", 1.4891088227827056),
         ("get", 0.21395680764432426),
+        ("number", 1.4891088227827056),
+        ("edge_types", 1.5217295037301775),
     ],
     &[
         ("number", 1.4891088227827056),
-        ("get", 0.21395680764432426),
         ("node_types", 1.4891088227827056),
+        ("get", 0.21395680764432426),
     ],
     &[
         ("node", 1.237733564666296),
@@ -13404,137 +14017,137 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("indegrees", 2.9816877635868573),
     ],
     &[
-        ("degrees", 1.4590695023829132),
-        ("get", 0.14357082654403988),
         ("weighted", 0.9494914247243103),
         ("node", 0.8305528245488146),
+        ("get", 0.14357082654403988),
+        ("degrees", 1.4590695023829132),
     ],
     &[
-        ("singletons", 2.193622823390651),
         ("node_ids", 0.6948942660183045),
-        ("get", 0.14357082654403988),
         ("not", 1.7031620323900702),
+        ("get", 0.14357082654403988),
+        ("singletons", 2.193622823390651),
     ],
     &[
         ("get", 0.14357082654403988),
-        ("dense", 1.8737799686050267),
         ("nodes", 1.0211218097354557),
+        ("dense", 1.8737799686050267),
         ("mapping", 2.000793437832782),
     ],
     &[
-        ("get", 0.14357082654403988),
-        ("number", 0.999232447215879),
-        ("edges", 1.2662401168250441),
         ("parallel", 1.7031620323900702),
+        ("edges", 1.2662401168250441),
+        ("number", 0.999232447215879),
+        ("get", 0.14357082654403988),
     ],
     &[
+        ("cumulative", 2.193622823390651),
+        ("degrees", 1.4590695023829132),
         ("get", 0.14357082654403988),
         ("node", 0.8305528245488146),
-        ("degrees", 1.4590695023829132),
-        ("cumulative", 2.193622823390651),
     ],
     &[
-        ("degrees", 1.4590695023829132),
-        ("reciprocal", 1.7789123571685375),
         ("sqrt", 1.7789123571685375),
+        ("reciprocal", 1.7789123571685375),
         ("get", 0.14357082654403988),
+        ("degrees", 1.4590695023829132),
     ],
     &[
         ("source", 1.0371643771740207),
-        ("nodes", 0.7258538157938578),
-        ("number", 0.7102939901602773),
-        ("get", 0.10205582849186985),
         ("unique", 1.0371643771740207),
+        ("get", 0.10205582849186985),
+        ("number", 0.7102939901602773),
+        ("nodes", 0.7258538157938578),
     ],
     &[
         ("counts", 1.7789123571685375),
+        ("get", 0.14357082654403988),
         ("edge_type_id", 1.2065128120724737),
         ("hashmap", 1.7789123571685375),
-        ("get", 0.14357082654403988),
     ],
     &[
-        ("counts", 1.7789123571685375),
         ("get", 0.14357082654403988),
         ("edge_type_names", 1.7031620323900702),
+        ("counts", 1.7789123571685375),
         ("hashmap", 1.7789123571685375),
     ],
     &[
         ("node_type_id", 1.5388356707169115),
-        ("hashmap", 1.7789123571685375),
         ("counts", 1.7789123571685375),
         ("get", 0.14357082654403988),
+        ("hashmap", 1.7789123571685375),
     ],
     &[
         ("get", 0.14357082654403988),
+        ("counts", 1.7789123571685375),
         ("hashmap", 1.7789123571685375),
         ("node_type_names", 1.4590695023829132),
-        ("counts", 1.7789123571685375),
     ],
     &[
-        ("to", 2.1232061281151604),
         ("inplace", 1.9928063333728845),
         ("directed", 2.1743822221799456),
+        ("to", 2.1232061281151604),
     ],
     &[("to", 3.393273563880107), ("directed", 3.4750623665748477)],
     &[
-        ("triangular", 2.9816877635868573),
         ("to", 2.1232061281151604),
+        ("triangular", 2.9816877635868573),
         ("upper", 3.2690522703400644),
     ],
     &[
-        ("lower", 3.2690522703400644),
-        ("triangular", 2.9816877635868573),
         ("to", 2.1232061281151604),
+        ("triangular", 2.9816877635868573),
+        ("lower", 3.2690522703400644),
     ],
     &[
-        ("to", 2.1232061281151604),
-        ("main", 3.2690522703400644),
         ("diagonal", 2.9816877635868573),
+        ("main", 3.2690522703400644),
+        ("to", 2.1232061281151604),
     ],
     &[
         ("anti", 3.2690522703400644),
-        ("diagonal", 2.9816877635868573),
         ("to", 2.1232061281151604),
+        ("diagonal", 2.9816877635868573),
     ],
-    &[("to", 3.393273563880107), ("bidiagonal", 5.224546265667863)],
-    &[("to", 3.393273563880107), ("arrowhead", 5.224546265667863)],
-    &[("to", 3.393273563880107), ("transposed", 5.224546265667863)],
+    &[("bidiagonal", 5.224546265667863), ("to", 3.393273563880107)],
+    &[("arrowhead", 5.224546265667863), ("to", 3.393273563880107)],
+    &[("transposed", 5.224546265667863), ("to", 3.393273563880107)],
     &[
         ("complementary", 5.224546265667863),
         ("to", 3.393273563880107),
     ],
     &[("report", 6.908698511774823)],
     &[
-        ("textual", 2.9816877635868573),
         ("report", 2.53814176684021),
+        ("textual", 2.9816877635868573),
         ("overlap", 3.2690522703400644),
     ],
     &[
-        ("report", 1.2106750128526111),
-        ("get", 0.10205582849186985),
-        ("node_id", 0.5808903720892693),
-        ("node", 0.5903898351493518),
         ("from", 0.29721367599610243),
+        ("get", 0.10205582849186985),
+        ("report", 1.2106750128526111),
+        ("node", 0.5903898351493518),
+        ("node_id", 0.5808903720892693),
     ],
     &[
+        ("node", 0.5903898351493518),
         ("from", 0.29721367599610243),
         ("node_name", 0.8209895210833528),
-        ("node", 0.5903898351493518),
         ("get", 0.10205582849186985),
         ("report", 1.2106750128526111),
     ],
     &[("textual", 4.76528497631357), ("report", 4.056416965245162)],
     &[
-        ("generate", 1.5860829716106686),
-        ("graph", 1.4590695023829132),
-        ("connected", 1.4590695023829132),
         ("random", 1.364201890946424),
+        ("graph", 1.4590695023829132),
+        ("generate", 1.5860829716106686),
+        ("connected", 1.4590695023829132),
     ],
     &[
         ("generate", 1.5860829716106686),
+        ("spanning", 1.8737799686050267),
         ("random", 1.364201890946424),
         ("tree", 2.193622823390651),
-        ("spanning", 1.8737799686050267),
     ],
     &[
         ("graph", 2.1743822221799456),
@@ -13542,18 +14155,18 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("circle", 3.2690522703400644),
     ],
     &[
-        ("generate", 2.3636643838694247),
         ("chain", 3.2690522703400644),
         ("graph", 2.1743822221799456),
+        ("generate", 2.3636643838694247),
     ],
     &[
+        ("graph", 2.1743822221799456),
+        ("generate", 2.3636643838694247),
         ("complete", 3.2690522703400644),
-        ("generate", 2.3636643838694247),
-        ("graph", 2.1743822221799456),
     ],
     &[
-        ("generate", 2.3636643838694247),
         ("graph", 2.1743822221799456),
+        ("generate", 2.3636643838694247),
         ("barbell", 3.2690522703400644),
     ],
     &[("replace", 8.89820137317584)],
@@ -13562,8 +14175,8 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("filter", 4.76528497631357),
     ],
     &[
-        ("filter", 4.76528497631357),
         ("from_names", 5.224546265667863),
+        ("filter", 4.76528497631357),
     ],
     &[
         ("unknown", 1.8557569443837287),
@@ -13571,21 +14184,21 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("drop", 2.3636643838694247),
     ],
     &[
-        ("edge_types", 1.5217295037301775),
         ("drop", 2.3636643838694247),
+        ("edge_types", 1.5217295037301775),
         ("unknown", 1.8557569443837287),
     ],
     &[
-        ("drop", 2.3636643838694247),
         ("nodes", 1.5217295037301775),
+        ("drop", 2.3636643838694247),
         ("singleton", 1.5563588424625128),
     ],
     &[
         ("with", 0.8448569607423773),
         ("drop", 1.1274505804626045),
         ("selfloops", 0.9903798177289932),
-        ("nodes", 0.7258538157938578),
         ("singleton", 0.7423717564631218),
+        ("nodes", 0.7258538157938578),
     ],
     &[
         ("nodes", 1.5217295037301775),
@@ -13597,15 +14210,15 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("drop", 3.7775700444069424),
     ],
     &[
-        ("parallel", 2.53814176684021),
-        ("edges", 1.8870177154267387),
         ("drop", 2.3636643838694247),
+        ("edges", 1.8870177154267387),
+        ("parallel", 2.53814176684021),
     ],
     &[
-        ("arborescence", 2.000793437832782),
         ("random", 1.364201890946424),
-        ("spanning", 1.8737799686050267),
         ("kruskal", 2.000793437832782),
+        ("spanning", 1.8737799686050267),
+        ("arborescence", 2.000793437832782),
     ],
     &[
         ("kruskal", 2.9816877635868573),
@@ -13618,8 +14231,8 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
     ],
     &[("enable", 8.89820137317584)],
     &[
-        ("compatible", 5.224546265667863),
         ("is", 3.1848707289527396),
+        ("compatible", 5.224546265667863),
     ],
     &[
         ("same", 2.193622823390651),
@@ -13628,41 +14241,41 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("adjacency", 1.8737799686050267),
     ],
     &[
-        ("set", 1.7031620323900702),
         ("vertex", 2.193622823390651),
-        ("approximated", 1.7031620323900702),
         ("cover", 2.193622823390651),
+        ("approximated", 1.7031620323900702),
+        ("set", 1.7031620323900702),
     ],
     &[
+        ("get", 0.21395680764432426),
         ("random", 2.033005510905199),
         ("node", 1.237733564666296),
-        ("get", 0.21395680764432426),
     ],
     &[
-        ("random", 2.033005510905199),
         ("get", 0.21395680764432426),
         ("nodes", 1.5217295037301775),
+        ("random", 2.033005510905199),
     ],
     &[
-        ("get", 0.07590763216926308),
-        ("random", 0.721270036784316),
         ("breadth", 0.7914024741778843),
+        ("nodes", 0.5398794490441621),
         ("search", 0.7914024741778843),
         ("first", 0.7914024741778843),
-        ("nodes", 0.5398794490441621),
+        ("get", 0.07590763216926308),
+        ("random", 0.721270036784316),
     ],
     &[
+        ("nodes", 0.5398794490441621),
+        ("random", 1.3358924292137344),
         ("uniform", 1.159794913801382),
         ("walk", 1.0578436858068714),
-        ("nodes", 0.5398794490441621),
         ("get", 0.07590763216926308),
-        ("random", 1.3358924292137344),
     ],
     &[
-        ("node", 0.8305528245488146),
-        ("sampling", 2.193622823390651),
         ("methods", 1.8737799686050267),
         ("get", 0.14357082654403988),
+        ("node", 0.8305528245488146),
+        ("sampling", 2.193622823390651),
     ],
     &[
         ("subsampled", 3.2690522703400644),
@@ -13670,62 +14283,62 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("nodes", 1.5217295037301775),
     ],
     &[
+        ("propagation", 1.0578436858068714),
+        ("feature", 1.159794913801382),
+        ("bm25", 1.0578436858068714),
         ("node", 0.439123322060523),
         ("okapi", 1.0578436858068714),
-        ("feature", 1.159794913801382),
-        ("propagation", 1.0578436858068714),
         ("get", 0.07590763216926308),
-        ("bm25", 1.0578436858068714),
     ],
     &[
-        ("propagation", 1.0578436858068714),
         ("okapi", 1.0578436858068714),
-        ("bm25", 1.0578436858068714),
-        ("node", 0.439123322060523),
         ("get", 0.07590763216926308),
+        ("propagation", 1.0578436858068714),
+        ("node", 0.439123322060523),
+        ("bm25", 1.0578436858068714),
         ("label", 0.7914024741778843),
     ],
     &[
-        ("default", 3.2690522703400644),
-        ("graph_name", 3.2690522703400644),
         ("has", 1.3878660810741414),
+        ("graph_name", 3.2690522703400644),
+        ("default", 3.2690522703400644),
     ],
     &[("nodes", 2.4320033877106138), ("has", 2.2180650388831844)],
-    &[("has", 2.2180650388831844), ("edges", 3.015801077220556)],
+    &[("edges", 3.015801077220556), ("has", 2.2180650388831844)],
     &[
         ("trap", 2.53814176684021),
-        ("has", 1.3878660810741414),
         ("nodes", 1.5217295037301775),
+        ("has", 1.3878660810741414),
     ],
     &[("is", 3.1848707289527396), ("directed", 3.4750623665748477)],
     &[
+        ("edge", 1.2479620123241293),
         ("weights", 1.9928063333728845),
         ("has", 1.3878660810741414),
-        ("edge", 1.2479620123241293),
     ],
     &[
+        ("weights", 0.9505540095471235),
+        ("representing", 1.5593139639071147),
+        ("probabilities", 1.5593139639071147),
         ("has", 0.6620019446880332),
         ("edge", 0.5952687296860529),
-        ("probabilities", 1.5593139639071147),
-        ("representing", 1.5593139639071147),
-        ("weights", 0.9505540095471235),
     ],
     &[
-        ("has", 0.9312958189369289),
-        ("weighted", 0.9494914247243103),
         ("nodes", 1.0211218097354557),
         ("singleton", 1.0443590361607995),
+        ("weighted", 0.9494914247243103),
+        ("has", 0.9312958189369289),
     ],
     &[
+        ("weights", 1.337227151473309),
         ("constant", 2.193622823390651),
-        ("edge", 0.8374163906146289),
-        ("weights", 1.337227151473309),
         ("has", 0.9312958189369289),
+        ("edge", 0.8374163906146289),
     ],
     &[
         ("has", 0.9312958189369289),
-        ("weights", 1.337227151473309),
         ("edge", 0.8374163906146289),
+        ("weights", 1.337227151473309),
         ("negative", 2.193622823390651),
     ],
     &[
@@ -13737,29 +14350,29 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("has", 2.2180650388831844),
     ],
     &[
-        ("has", 1.3878660810741414),
-        ("disconnected", 2.651028890622632),
         ("nodes", 1.5217295037301775),
+        ("disconnected", 2.651028890622632),
+        ("has", 1.3878660810741414),
     ],
     &[
-        ("has", 1.3878660810741414),
         ("singleton", 1.5563588424625128),
+        ("has", 1.3878660810741414),
         ("nodes", 1.5217295037301775),
     ],
     &[
         ("with", 0.8448569607423773),
+        ("singleton", 0.7423717564631218),
+        ("has", 0.6620019446880332),
         ("selfloops", 0.9903798177289932),
         ("nodes", 0.7258538157938578),
-        ("has", 0.6620019446880332),
-        ("singleton", 0.7423717564631218),
     ],
     &[
-        ("is", 3.1848707289527396),
         ("connected", 3.4750623665748477),
+        ("is", 3.1848707289527396),
     ],
     &[
-        ("has", 2.2180650388831844),
         ("node_types", 2.3798695450143854),
+        ("has", 2.2180650388831844),
     ],
     &[
         ("node_types", 1.4891088227827056),
@@ -13767,29 +14380,29 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("has", 1.3878660810741414),
     ],
     &[
+        ("has", 1.3878660810741414),
         ("node_types", 1.4891088227827056),
+        ("unknown", 1.8557569443837287),
+    ],
+    &[
+        ("known", 1.9201183871227774),
+        ("node_types", 1.4891088227827056),
+        ("has", 1.3878660810741414),
+    ],
+    &[
+        ("edge_types", 1.5217295037301775),
         ("unknown", 1.8557569443837287),
         ("has", 1.3878660810741414),
     ],
     &[
-        ("node_types", 1.4891088227827056),
         ("known", 1.9201183871227774),
         ("has", 1.3878660810741414),
-    ],
-    &[
-        ("edge_types", 1.5217295037301775),
-        ("unknown", 1.8557569443837287),
-        ("has", 1.3878660810741414),
-    ],
-    &[
-        ("has", 1.3878660810741414),
-        ("known", 1.9201183871227774),
         ("edge_types", 1.5217295037301775),
     ],
     &[
-        ("node_types", 1.4891088227827056),
+        ("has", 1.3878660810741414),
         ("homogeneous", 2.9816877635868573),
-        ("has", 1.3878660810741414),
+        ("node_types", 1.4891088227827056),
     ],
     &[
         ("homogeneous", 2.9816877635868573),
@@ -13797,51 +14410,51 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("has", 1.3878660810741414),
     ],
     &[
-        ("has", 1.3878660810741414),
         ("singleton", 1.5563588424625128),
         ("node_types", 1.4891088227827056),
+        ("has", 1.3878660810741414),
     ],
     &[
-        ("has", 1.3878660810741414),
-        ("oddities", 2.7924056018973777),
         ("node", 1.237733564666296),
+        ("has", 1.3878660810741414),
+        ("oddities", 2.7924056018973777),
     ],
     &[
+        ("has", 1.3878660810741414),
         ("node_types", 1.4891088227827056),
         ("oddities", 2.7924056018973777),
-        ("has", 1.3878660810741414),
     ],
     &[
+        ("has", 1.3878660810741414),
         ("edge_types", 1.5217295037301775),
         ("singleton", 1.5563588424625128),
-        ("has", 1.3878660810741414),
     ],
     &[
+        ("has", 1.3878660810741414),
         ("edge_types", 1.5217295037301775),
         ("oddities", 2.7924056018973777),
-        ("has", 1.3878660810741414),
     ],
     &[
-        ("multigraph", 4.462777298481476),
         ("is", 3.1848707289527396),
+        ("multigraph", 4.462777298481476),
     ],
     &[
-        ("by", 0.5126261862215247),
-        ("outbound", 0.5749491505804375),
-        ("decreasing", 0.6466616991743593),
-        ("sorted", 0.6056106120027536),
-        ("degree", 0.3841372821062982),
-        ("nodes", 0.3300292534259669),
-        ("has", 0.3009972570482127),
         ("node", 0.2684368564096058),
+        ("by", 0.5126261862215247),
+        ("degree", 0.3841372821062982),
+        ("has", 0.3009972570482127),
+        ("decreasing", 0.6466616991743593),
+        ("nodes", 0.3300292534259669),
+        ("outbound", 0.5749491505804375),
+        ("sorted", 0.6056106120027536),
     ],
     &[
-        ("sorted", 0.9906901286757851),
+        ("nodes", 0.5398794490441621),
+        ("by", 0.8385812472983385),
         ("order", 1.0578436858068714),
         ("has", 0.4923873614599018),
-        ("by", 0.8385812472983385),
+        ("sorted", 0.9906901286757851),
         ("lexicographic", 1.0578436858068714),
-        ("nodes", 0.5398794490441621),
     ],
     &[
         ("contains", 2.9816877635868573),
@@ -13849,399 +14462,399 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("matrix", 2.444165637987421),
     ],
     &[
-        ("outbound", 0.5749491505804375),
-        ("sorted", 0.6056106120027536),
-        ("increasing", 0.6466616991743593),
         ("by", 0.5126261862215247),
-        ("node", 0.2684368564096058),
         ("nodes", 0.3300292534259669),
-        ("has", 0.3009972570482127),
+        ("increasing", 0.6466616991743593),
         ("degree", 0.3841372821062982),
+        ("sorted", 0.6056106120027536),
+        ("outbound", 0.5749491505804375),
+        ("has", 0.3009972570482127),
+        ("node", 0.2684368564096058),
     ],
     &[
-        ("closure", 3.2690522703400644),
-        ("get", 0.21395680764432426),
         ("transitive", 3.2690522703400644),
+        ("get", 0.21395680764432426),
+        ("closure", 3.2690522703400644),
     ],
     &[
+        ("shortest", 1.2452632907709282),
         ("get", 0.14357082654403988),
         ("all", 1.5860829716106686),
         ("paths", 1.7789123571685375),
-        ("shortest", 1.2452632907709282),
     ],
     &[
-        ("all", 1.1274505804626045),
-        ("get", 0.10205582849186985),
         ("shortest", 0.8851824558602509),
+        ("get", 0.10205582849186985),
         ("weighted", 0.6749361017744177),
         ("paths", 1.2645213431962157),
+        ("all", 1.1274505804626045),
     ],
     &[
         ("unchecked", 0.39422876583314165),
-        ("get", 0.07590763216926308),
         ("edge", 0.44275217243935305),
         ("edge_id", 0.5721400356693512),
-        ("from", 0.22106318400995545),
         ("weight", 0.753271426915339),
-    ],
-    &[
-        ("unchecked", 0.39422876583314165),
-        ("weight", 0.753271426915339),
-        ("node_ids", 0.36739900167160566),
         ("from", 0.22106318400995545),
-        ("edge", 0.44275217243935305),
         ("get", 0.07590763216926308),
     ],
     &[
-        ("node_id", 0.5808903720892693),
-        ("get", 0.10205582849186985),
-        ("from", 0.29721367599610243),
+        ("edge", 0.44275217243935305),
+        ("unchecked", 0.39422876583314165),
+        ("from", 0.22106318400995545),
+        ("get", 0.07590763216926308),
+        ("node_ids", 0.36739900167160566),
+        ("weight", 0.753271426915339),
+    ],
+    &[
         ("unchecked", 0.5300302770966965),
         ("node_name", 0.8209895210833528),
-    ],
-    &[
-        ("edge_type_id", 0.8576370811958915),
-        ("edge_type_name", 0.9903798177289932),
-        ("unchecked", 0.5300302770966965),
-        ("get", 0.10205582849186985),
         ("from", 0.29721367599610243),
+        ("get", 0.10205582849186985),
+        ("node_id", 0.5808903720892693),
     ],
     &[
         ("unchecked", 0.5300302770966965),
         ("edge_type_id", 0.8576370811958915),
-        ("edge_type_name", 0.9903798177289932),
+        ("from", 0.29721367599610243),
         ("get", 0.10205582849186985),
+        ("edge_type_name", 0.9903798177289932),
+    ],
+    &[
+        ("edge_type_id", 0.8576370811958915),
+        ("get", 0.10205582849186985),
+        ("unchecked", 0.5300302770966965),
+        ("edge_type_name", 0.9903798177289932),
         ("from", 0.29721367599610243),
     ],
     &[
-        ("unchecked", 0.39422876583314165),
-        ("get", 0.07590763216926308),
-        ("edge", 0.44275217243935305),
-        ("from", 0.22106318400995545),
         ("count", 0.8671414957617172),
         ("edge_type_id", 0.6378979138788173),
+        ("get", 0.07590763216926308),
+        ("from", 0.22106318400995545),
+        ("edge", 0.44275217243935305),
+        ("unchecked", 0.39422876583314165),
     ],
     &[
         ("node_ids", 0.2831905865876356),
-        ("unchecked", 0.30387092762379503),
-        ("from", 0.17039516293696008),
-        ("get", 0.05850948636955273),
-        ("edge_id", 0.4410046613471687),
         ("and", 0.5250832718818981),
+        ("edge_id", 0.4410046613471687),
+        ("from", 0.17039516293696008),
         ("edge_type_id", 0.4916907329428179),
+        ("unchecked", 0.30387092762379503),
+        ("get", 0.05850948636955273),
     ],
     &[
+        ("get", 0.07590763216926308),
         ("unchecked", 0.39422876583314165),
         ("edge_ids", 0.7914024741778843),
-        ("get", 0.07590763216926308),
+        ("minmax", 0.940532475292849),
         ("from", 0.22106318400995545),
         ("node_ids", 0.36739900167160566),
-        ("minmax", 0.940532475292849),
     ],
     &[
-        ("get", 0.10205582849186985),
-        ("from", 0.29721367599610243),
-        ("edge_id", 0.7692273317576528),
         ("unchecked", 0.5300302770966965),
+        ("edge_id", 0.7692273317576528),
         ("node_ids", 0.4939583600641458),
+        ("from", 0.29721367599610243),
+        ("get", 0.10205582849186985),
     ],
     &[
-        ("unchecked", 0.5300302770966965),
-        ("edge_id", 0.7692273317576528),
         ("get", 0.10205582849186985),
         ("from", 0.29721367599610243),
+        ("unchecked", 0.5300302770966965),
+        ("edge_id", 0.7692273317576528),
         ("node_names", 0.6620019446880332),
     ],
     &[
+        ("node_id", 0.4320577604122954),
         ("edge_id", 0.5721400356693512),
-        ("get", 0.07590763216926308),
         ("source", 0.7714276901672522),
         ("from", 0.22106318400995545),
+        ("get", 0.07590763216926308),
         ("unchecked", 0.39422876583314165),
-        ("node_id", 0.4320577604122954),
     ],
     &[
         ("edge_id", 0.5721400356693512),
-        ("node_id", 0.4320577604122954),
-        ("get", 0.07590763216926308),
-        ("unchecked", 0.39422876583314165),
         ("destination", 0.8671414957617172),
+        ("unchecked", 0.39422876583314165),
+        ("get", 0.07590763216926308),
+        ("node_id", 0.4320577604122954),
         ("from", 0.22106318400995545),
     ],
     &[
-        ("source", 1.0371643771740207),
         ("get", 0.10205582849186985),
         ("edge_id", 0.7692273317576528),
         ("node_id", 0.5808903720892693),
         ("from", 0.29721367599610243),
+        ("source", 1.0371643771740207),
     ],
     &[
+        ("destination", 1.1658490884329797),
+        ("from", 0.29721367599610243),
         ("get", 0.10205582849186985),
         ("edge_id", 0.7692273317576528),
-        ("from", 0.29721367599610243),
-        ("destination", 1.1658490884329797),
         ("node_id", 0.5808903720892693),
     ],
     &[
-        ("unchecked", 0.39422876583314165),
-        ("from", 0.22106318400995545),
-        ("source", 0.7714276901672522),
-        ("node_name", 0.6106399948159666),
         ("get", 0.07590763216926308),
+        ("node_name", 0.6106399948159666),
+        ("from", 0.22106318400995545),
+        ("unchecked", 0.39422876583314165),
         ("edge_id", 0.5721400356693512),
+        ("source", 0.7714276901672522),
     ],
     &[
+        ("get", 0.07590763216926308),
         ("node_name", 0.6106399948159666),
         ("from", 0.22106318400995545),
         ("destination", 0.8671414957617172),
-        ("get", 0.07590763216926308),
         ("edge_id", 0.5721400356693512),
         ("unchecked", 0.39422876583314165),
     ],
     &[
         ("source", 1.0371643771740207),
-        ("from", 0.29721367599610243),
         ("node_name", 0.8209895210833528),
         ("edge_id", 0.7692273317576528),
         ("get", 0.10205582849186985),
+        ("from", 0.29721367599610243),
     ],
     &[
-        ("node_name", 0.8209895210833528),
         ("edge_id", 0.7692273317576528),
-        ("destination", 1.1658490884329797),
         ("get", 0.10205582849186985),
+        ("node_name", 0.8209895210833528),
         ("from", 0.29721367599610243),
+        ("destination", 1.1658490884329797),
     ],
     &[
         ("edge_id", 1.0821391139802519),
+        ("from", 0.41811637564974785),
         ("node_names", 0.9312958189369289),
         ("get", 0.14357082654403988),
-        ("from", 0.41811637564974785),
     ],
     &[
         ("from", 0.41811637564974785),
-        ("get", 0.14357082654403988),
-        ("edge_id", 1.0821391139802519),
         ("node_ids", 0.6948942660183045),
+        ("edge_id", 1.0821391139802519),
+        ("get", 0.14357082654403988),
     ],
     &[
-        ("node_ids", 0.4939583600641458),
         ("unchecked", 0.5300302770966965),
-        ("get", 0.10205582849186985),
-        ("from", 0.29721367599610243),
         ("edge_id", 0.7692273317576528),
+        ("get", 0.10205582849186985),
+        ("node_ids", 0.4939583600641458),
+        ("from", 0.29721367599610243),
     ],
     &[
+        ("node_ids", 0.6948942660183045),
+        ("from", 0.41811637564974785),
         ("get", 0.14357082654403988),
         ("edge_id", 1.0821391139802519),
-        ("from", 0.41811637564974785),
-        ("node_ids", 0.6948942660183045),
     ],
     &[
-        ("unchecked", 0.5300302770966965),
         ("get", 0.10205582849186985),
-        ("unique", 1.0371643771740207),
+        ("unchecked", 0.5300302770966965),
         ("node_id", 0.5808903720892693),
         ("source", 1.0371643771740207),
+        ("unique", 1.0371643771740207),
     ],
     &[
         ("from", 0.17039516293696008),
-        ("get", 0.05850948636955273),
-        ("edge_id", 0.4410046613471687),
-        ("unchecked", 0.30387092762379503),
         ("and", 0.5250832718818981),
+        ("edge_id", 0.4410046613471687),
+        ("get", 0.05850948636955273),
+        ("unchecked", 0.30387092762379503),
         ("node_ids", 0.2831905865876356),
         ("edge_type_id", 0.4916907329428179),
     ],
     &[
+        ("and", 0.6812199240392849),
         ("edge_id", 0.5721400356693512),
         ("node_ids", 0.36739900167160566),
-        ("and", 0.6812199240392849),
-        ("edge_type_id", 0.6378979138788173),
         ("from", 0.22106318400995545),
         ("get", 0.07590763216926308),
+        ("edge_type_id", 0.6378979138788173),
     ],
     &[
-        ("node_ids", 0.15080376694363323),
-        ("edge", 0.18173346994015993),
-        ("and", 0.5414877716316904),
         ("edge_type_id", 0.261833613865929),
+        ("edge", 0.18173346994015993),
         ("weight", 0.309190194292839),
-        ("from", 0.09073830013031113),
-        ("edge_id", 0.23484242528052315),
         ("get", 0.031157288993203264),
+        ("edge_id", 0.23484242528052315),
         ("unchecked", 0.16181639758051614),
+        ("and", 0.5414877716316904),
+        ("node_ids", 0.15080376694363323),
+        ("from", 0.09073830013031113),
     ],
     &[
-        ("get", 0.03766208547892098),
-        ("edge", 0.21967448710830675),
-        ("edge_id", 0.2838711512070762),
         ("and", 0.6502285632012019),
-        ("weight", 0.3737407169552301),
+        ("get", 0.03766208547892098),
         ("node_ids", 0.18228750140660027),
+        ("edge", 0.21967448710830675),
         ("from", 0.10968199500493267),
         ("edge_type_id", 0.3164973675605909),
+        ("weight", 0.3737407169552301),
+        ("edge_id", 0.2838711512070762),
     ],
     &[
-        ("get", 0.10205582849186985),
-        ("k", 1.1274505804626045),
-        ("node_ids", 0.4939583600641458),
         ("central", 1.2106750128526111),
+        ("get", 0.10205582849186985),
+        ("node_ids", 0.4939583600641458),
+        ("k", 1.1274505804626045),
         ("top", 1.3319569978849197),
     ],
     &[
-        ("k", 0.8385812472983385),
         ("central", 0.9004823625478179),
         ("get", 0.07590763216926308),
-        ("top", 0.9906901286757851),
+        ("k", 0.8385812472983385),
         ("node_ids", 0.36739900167160566),
         ("weighted", 0.5020075982757829),
+        ("top", 0.9906901286757851),
     ],
     &[
-        ("from", 0.22106318400995545),
-        ("get", 0.07590763216926308),
-        ("node", 0.439123322060523),
-        ("node_id", 0.4320577604122954),
-        ("degree", 0.6283922472569299),
         ("unchecked", 0.39422876583314165),
+        ("node", 0.439123322060523),
+        ("from", 0.22106318400995545),
+        ("degree", 0.6283922472569299),
+        ("node_id", 0.4320577604122954),
+        ("get", 0.07590763216926308),
     ],
     &[
-        ("from", 0.17039516293696008),
         ("degree", 0.4843637797004001),
-        ("get", 0.05850948636955273),
+        ("from", 0.17039516293696008),
         ("weighted", 0.38694668624668777),
-        ("unchecked", 0.30387092762379503),
-        ("node_id", 0.33302945858373084),
         ("node", 0.33847558265763666),
+        ("node_id", 0.33302945858373084),
+        ("unchecked", 0.30387092762379503),
+        ("get", 0.05850948636955273),
     ],
     &[
         ("degree", 0.8448569607423773),
-        ("from", 0.29721367599610243),
-        ("get", 0.10205582849186985),
         ("node", 0.5903898351493518),
+        ("get", 0.10205582849186985),
         ("node_id", 0.5808903720892693),
+        ("from", 0.29721367599610243),
     ],
     &[
-        ("degree", 0.4843637797004001),
-        ("node_id", 0.33302945858373084),
-        ("get", 0.05850948636955273),
-        ("from", 0.17039516293696008),
         ("unchecked", 0.30387092762379503),
         ("comulative", 0.8153842893929308),
         ("node", 0.33847558265763666),
+        ("degree", 0.4843637797004001),
+        ("node_id", 0.33302945858373084),
+        ("from", 0.17039516293696008),
+        ("get", 0.05850948636955273),
     ],
     &[
+        ("node", 0.439123322060523),
+        ("degree", 0.6283922472569299),
         ("node_id", 0.4320577604122954),
         ("from", 0.22106318400995545),
-        ("degree", 0.6283922472569299),
-        ("comulative", 1.0578436858068714),
-        ("node", 0.439123322060523),
         ("get", 0.07590763216926308),
+        ("comulative", 1.0578436858068714),
     ],
     &[
+        ("node_id", 0.33302945858373084),
+        ("unchecked", 0.30387092762379503),
+        ("sqrt", 0.7249609883833487),
         ("from", 0.17039516293696008),
         ("reciprocal", 0.7249609883833487),
-        ("unchecked", 0.30387092762379503),
-        ("degree", 0.4843637797004001),
-        ("sqrt", 0.7249609883833487),
         ("get", 0.05850948636955273),
-        ("node_id", 0.33302945858373084),
+        ("degree", 0.4843637797004001),
     ],
     &[
-        ("get", 0.07590763216926308),
-        ("sqrt", 0.940532475292849),
         ("degree", 0.6283922472569299),
-        ("node_id", 0.4320577604122954),
         ("from", 0.22106318400995545),
+        ("node_id", 0.4320577604122954),
+        ("sqrt", 0.940532475292849),
         ("reciprocal", 0.940532475292849),
+        ("get", 0.07590763216926308),
     ],
     &[
-        ("reciprocal", 0.7249609883833487),
+        ("unchecked", 0.30387092762379503),
+        ("get", 0.05850948636955273),
         ("node_ids", 0.2831905865876356),
         ("from", 0.17039516293696008),
         ("degrees", 0.5946152795583186),
-        ("get", 0.05850948636955273),
+        ("reciprocal", 0.7249609883833487),
         ("sqrt", 0.7249609883833487),
-        ("unchecked", 0.30387092762379503),
     ],
     &[
-        ("from", 0.22106318400995545),
-        ("node", 0.439123322060523),
         ("degree", 0.6283922472569299),
-        ("node_id", 0.4320577604122954),
-        ("weighted", 0.5020075982757829),
+        ("from", 0.22106318400995545),
         ("get", 0.07590763216926308),
+        ("node", 0.439123322060523),
+        ("weighted", 0.5020075982757829),
+        ("node_id", 0.4320577604122954),
     ],
     &[
-        ("degree", 0.8448569607423773),
-        ("from", 0.29721367599610243),
-        ("get", 0.10205582849186985),
-        ("node", 0.5903898351493518),
         ("node_name", 0.8209895210833528),
+        ("degree", 0.8448569607423773),
+        ("node", 0.5903898351493518),
+        ("get", 0.10205582849186985),
+        ("from", 0.29721367599610243),
     ],
     &[
-        ("node_names", 0.6620019446880332),
         ("k", 1.1274505804626045),
         ("central", 1.2106750128526111),
-        ("top", 1.3319569978849197),
         ("get", 0.10205582849186985),
+        ("node_names", 0.6620019446880332),
+        ("top", 1.3319569978849197),
     ],
     &[
+        ("node_id", 0.5808903720892693),
         ("get", 0.10205582849186985),
+        ("from", 0.29721367599610243),
         ("unchecked", 0.5300302770966965),
         ("node_type_id", 1.0938653281325432),
-        ("from", 0.29721367599610243),
-        ("node_id", 0.5808903720892693),
     ],
     &[
+        ("node_id", 0.8171891021292833),
         ("get", 0.14357082654403988),
         ("node_type_ids", 1.4590695023829132),
         ("from", 0.41811637564974785),
-        ("node_id", 0.8171891021292833),
     ],
     &[
-        ("from", 0.29721367599610243),
         ("get", 0.10205582849186985),
         ("unchecked", 0.5300302770966965),
-        ("edge_id", 0.7692273317576528),
         ("edge_type_id", 0.8576370811958915),
+        ("edge_id", 0.7692273317576528),
+        ("from", 0.29721367599610243),
     ],
     &[
-        ("from", 0.41811637564974785),
+        ("get", 0.14357082654403988),
         ("edge_type_id", 1.2065128120724737),
         ("edge_id", 1.0821391139802519),
-        ("get", 0.14357082654403988),
+        ("from", 0.41811637564974785),
     ],
     &[
-        ("node_id", 0.5808903720892693),
-        ("get", 0.10205582849186985),
-        ("unchecked", 0.5300302770966965),
-        ("from", 0.29721367599610243),
         ("node_type_names", 1.0371643771740207),
+        ("node_id", 0.5808903720892693),
+        ("unchecked", 0.5300302770966965),
+        ("get", 0.10205582849186985),
+        ("from", 0.29721367599610243),
     ],
     &[
+        ("node_type_names", 1.4590695023829132),
         ("get", 0.14357082654403988),
-        ("node_type_names", 1.4590695023829132),
-        ("node_id", 0.8171891021292833),
         ("from", 0.41811637564974785),
+        ("node_id", 0.8171891021292833),
     ],
     &[
-        ("from", 0.41811637564974785),
-        ("node_type_names", 1.4590695023829132),
         ("get", 0.14357082654403988),
         ("node_name", 1.15495749598782),
+        ("node_type_names", 1.4590695023829132),
+        ("from", 0.41811637564974785),
     ],
     &[
-        ("edge_type_name", 1.3932535860527993),
         ("edge_id", 1.0821391139802519),
-        ("from", 0.41811637564974785),
+        ("edge_type_name", 1.3932535860527993),
         ("get", 0.14357082654403988),
+        ("from", 0.41811637564974785),
     ],
     &[
-        ("from", 0.41811637564974785),
         ("get", 0.14357082654403988),
         ("edge_type_id", 1.2065128120724737),
         ("edge_type_name", 1.3932535860527993),
+        ("from", 0.41811637564974785),
     ],
     &[
         ("from", 0.29721367599610243),
@@ -14258,218 +14871,218 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("get", 0.10205582849186985),
     ],
     &[
+        ("get", 0.05850948636955273),
+        ("weight", 0.5806204597108094),
         ("node_ids", 0.2831905865876356),
-        ("from", 0.17039516293696008),
         ("edge", 0.34127269495991286),
+        ("from", 0.17039516293696008),
         ("and", 0.5250832718818981),
         ("edge_type_id", 0.4916907329428179),
-        ("get", 0.05850948636955273),
-        ("weight", 0.5806204597108094),
     ],
     &[
-        ("from", 0.17039516293696008),
-        ("edge_type_name", 0.5677932882658523),
-        ("and", 0.5250832718818981),
         ("get", 0.05850948636955273),
         ("edge", 0.34127269495991286),
         ("weight", 0.5806204597108094),
+        ("from", 0.17039516293696008),
         ("node_names", 0.3795314224745872),
+        ("and", 0.5250832718818981),
+        ("edge_type_name", 0.5677932882658523),
     ],
     &[
         ("get", 0.10205582849186985),
-        ("edge", 0.5952687296860529),
-        ("weight", 1.0127537555337793),
-        ("from", 0.29721367599610243),
         ("node_names", 0.6620019446880332),
+        ("from", 0.29721367599610243),
+        ("weight", 1.0127537555337793),
+        ("edge", 0.5952687296860529),
     ],
     &[
+        ("node_name", 0.8209895210833528),
         ("node_id", 0.5808903720892693),
         ("get", 0.10205582849186985),
         ("from", 0.29721367599610243),
         ("unchecked", 0.5300302770966965),
-        ("node_name", 0.8209895210833528),
     ],
     &[
+        ("node_name", 1.15495749598782),
+        ("from", 0.41811637564974785),
         ("node_id", 0.8171891021292833),
         ("get", 0.14357082654403988),
+    ],
+    &[
         ("node_name", 1.15495749598782),
+        ("node_id", 0.8171891021292833),
+        ("get", 0.14357082654403988),
         ("from", 0.41811637564974785),
     ],
     &[
-        ("from", 0.41811637564974785),
         ("get", 0.14357082654403988),
-        ("node_name", 1.15495749598782),
-        ("node_id", 0.8171891021292833),
-    ],
-    &[
-        ("get", 0.14357082654403988),
-        ("node_ids", 0.6948942660183045),
         ("from", 0.41811637564974785),
         ("node_names", 0.9312958189369289),
-    ],
-    &[
-        ("get", 0.07590763216926308),
-        ("node_names", 0.4923873614599018),
-        ("node_ids", 0.36739900167160566),
-        ("edge", 0.8200386055362158),
-        ("from", 0.22106318400995545),
+        ("node_ids", 0.6948942660183045),
     ],
     &[
         ("node_ids", 0.36739900167160566),
-        ("from", 0.22106318400995545),
-        ("node_names", 0.4923873614599018),
-        ("get", 0.07590763216926308),
         ("edge", 0.8200386055362158),
+        ("node_names", 0.4923873614599018),
+        ("from", 0.22106318400995545),
+        ("get", 0.07590763216926308),
     ],
     &[
-        ("node_name", 1.15495749598782),
-        ("get", 0.14357082654403988),
+        ("node_ids", 0.36739900167160566),
+        ("edge", 0.8200386055362158),
+        ("get", 0.07590763216926308),
+        ("from", 0.22106318400995545),
+        ("node_names", 0.4923873614599018),
+    ],
+    &[
         ("from", 0.41811637564974785),
+        ("get", 0.14357082654403988),
         ("node_type_ids", 1.4590695023829132),
-    ],
-    &[
-        ("node_type_name", 1.5388356707169115),
-        ("get", 0.14357082654403988),
         ("node_name", 1.15495749598782),
-        ("from", 0.41811637564974785),
     ],
     &[
-        ("count", 1.1658490884329797),
-        ("edge", 0.5952687296860529),
+        ("get", 0.14357082654403988),
+        ("from", 0.41811637564974785),
+        ("node_name", 1.15495749598782),
+        ("node_type_name", 1.5388356707169115),
+    ],
+    &[
         ("from", 0.29721367599610243),
         ("get", 0.10205582849186985),
+        ("edge", 0.5952687296860529),
+        ("count", 1.1658490884329797),
         ("edge_type_id", 0.8576370811958915),
     ],
     &[
-        ("edge_type_name", 1.3932535860527993),
-        ("edge_type_id", 1.2065128120724737),
         ("get", 0.14357082654403988),
         ("from", 0.41811637564974785),
+        ("edge_type_name", 1.3932535860527993),
+        ("edge_type_id", 1.2065128120724737),
     ],
     &[
-        ("edge_type_name", 0.9903798177289932),
-        ("from", 0.29721367599610243),
         ("edge", 0.5952687296860529),
-        ("get", 0.10205582849186985),
         ("count", 1.1658490884329797),
+        ("edge_type_name", 0.9903798177289932),
+        ("get", 0.10205582849186985),
+        ("from", 0.29721367599610243),
     ],
     &[
         ("get", 0.14357082654403988),
         ("node_type_name", 1.5388356707169115),
-        ("node_type_id", 1.5388356707169115),
         ("from", 0.41811637564974785),
+        ("node_type_id", 1.5388356707169115),
     ],
     &[
-        ("node", 0.5903898351493518),
         ("count", 1.1658490884329797),
-        ("from", 0.29721367599610243),
         ("get", 0.10205582849186985),
+        ("node", 0.5903898351493518),
         ("node_type_id", 1.0938653281325432),
+        ("from", 0.29721367599610243),
     ],
     &[
-        ("count", 1.1658490884329797),
         ("node_type_name", 1.0938653281325432),
-        ("get", 0.10205582849186985),
         ("from", 0.29721367599610243),
         ("node", 0.5903898351493518),
+        ("count", 1.1658490884329797),
+        ("get", 0.10205582849186985),
     ],
     &[
-        ("get", 0.10205582849186985),
-        ("node_id", 0.5808903720892693),
-        ("node_ids", 0.4939583600641458),
         ("from", 0.29721367599610243),
+        ("get", 0.10205582849186985),
         ("neighbour", 1.3319569978849197),
+        ("node_ids", 0.4939583600641458),
+        ("node_id", 0.5808903720892693),
     ],
     &[
+        ("node_ids", 0.4939583600641458),
         ("from", 0.29721367599610243),
         ("get", 0.10205582849186985),
-        ("node_ids", 0.4939583600641458),
         ("node_name", 0.8209895210833528),
         ("neighbour", 1.3319569978849197),
     ],
     &[
         ("node_names", 0.6620019446880332),
-        ("get", 0.10205582849186985),
         ("from", 0.29721367599610243),
-        ("neighbour", 1.3319569978849197),
         ("node_name", 0.8209895210833528),
+        ("neighbour", 1.3319569978849197),
+        ("get", 0.10205582849186985),
     ],
     &[
-        ("get", 0.10205582849186985),
-        ("from", 0.29721367599610243),
-        ("node_ids", 0.4939583600641458),
         ("minmax", 1.2645213431962157),
+        ("get", 0.10205582849186985),
+        ("node_ids", 0.4939583600641458),
+        ("from", 0.29721367599610243),
         ("edge_ids", 1.0640199524685519),
     ],
     &[
-        ("edge_type_id", 0.6378979138788173),
         ("edge_id", 0.5721400356693512),
-        ("get", 0.07590763216926308),
         ("from", 0.22106318400995545),
+        ("get", 0.07590763216926308),
         ("node_ids", 0.36739900167160566),
+        ("edge_type_id", 0.6378979138788173),
         ("and", 0.6812199240392849),
     ],
     &[
+        ("from", 0.41811637564974785),
+        ("node_names", 0.9312958189369289),
         ("edge_id", 1.0821391139802519),
         ("get", 0.14357082654403988),
-        ("node_names", 0.9312958189369289),
-        ("from", 0.41811637564974785),
     ],
     &[
-        ("edge_type_name", 0.7366300193038279),
-        ("edge_id", 0.5721400356693512),
-        ("from", 0.22106318400995545),
         ("and", 0.6812199240392849),
         ("get", 0.07590763216926308),
+        ("edge_type_name", 0.7366300193038279),
+        ("from", 0.22106318400995545),
+        ("edge_id", 0.5721400356693512),
         ("node_names", 0.4923873614599018),
     ],
     &[
-        ("get", 0.14357082654403988),
-        ("edge_type_ids", 1.6401014986152664),
         ("edge_type_names", 1.7031620323900702),
         ("from", 0.41811637564974785),
+        ("get", 0.14357082654403988),
+        ("edge_type_ids", 1.6401014986152664),
     ],
     &[
-        ("get", 0.14357082654403988),
         ("from", 0.41811637564974785),
         ("node_type_ids", 1.4590695023829132),
+        ("get", 0.14357082654403988),
         ("node_type_names", 1.4590695023829132),
     ],
     &[
-        ("multiple", 1.5593139639071147),
-        ("get", 0.10205582849186985),
-        ("node_type_ids", 1.0371643771740207),
         ("from", 0.29721367599610243),
         ("node_type_names", 1.0371643771740207),
+        ("get", 0.10205582849186985),
+        ("node_type_ids", 1.0371643771740207),
+        ("multiple", 1.5593139639071147),
     ],
     &[
-        ("source", 0.5946152795583186),
-        ("edge_ids", 0.6100118124154992),
-        ("node_id", 0.33302945858373084),
         ("from", 0.17039516293696008),
         ("get", 0.05850948636955273),
-        ("minmax", 0.7249609883833487),
         ("unchecked", 0.30387092762379503),
+        ("edge_ids", 0.6100118124154992),
+        ("node_id", 0.33302945858373084),
+        ("minmax", 0.7249609883833487),
+        ("source", 0.5946152795583186),
     ],
     &[
         ("node_id", 0.4320577604122954),
-        ("source", 0.7714276901672522),
-        ("minmax", 0.940532475292849),
         ("get", 0.07590763216926308),
         ("edge_ids", 0.7914024741778843),
+        ("source", 0.7714276901672522),
         ("from", 0.22106318400995545),
+        ("minmax", 0.940532475292849),
     ],
     &[
-        ("from", 0.41811637564974785),
         ("get", 0.14357082654403988),
-        ("node_type_name", 1.5388356707169115),
         ("node_type_id", 1.5388356707169115),
+        ("node_type_name", 1.5388356707169115),
+        ("from", 0.41811637564974785),
     ],
     &[
         ("node_type_names", 1.0371643771740207),
         ("unchecked", 0.5300302770966965),
-        ("get", 0.10205582849186985),
         ("from", 0.29721367599610243),
+        ("get", 0.10205582849186985),
         ("node_type_ids", 1.0371643771740207),
     ],
     &[
@@ -14480,86 +15093,86 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("sparse", 1.5593139639071147),
     ],
     &[
-        ("methods", 1.8737799686050267),
+        ("weighting", 2.000793437832782),
         ("edge", 0.8374163906146289),
         ("get", 0.14357082654403988),
-        ("weighting", 2.000793437832782),
+        ("methods", 1.8737799686050267),
     ],
     &[
-        ("selfloops", 3.3183087550526498),
         ("add", 5.224546265667863),
+        ("selfloops", 3.3183087550526498),
     ],
     &[
-        ("centrality", 1.8557569443837287),
-        ("get", 0.21395680764432426),
         ("degree", 1.7712158228270665),
+        ("get", 0.21395680764432426),
+        ("centrality", 1.8557569443837287),
     ],
     &[
         ("get", 0.14357082654403988),
+        ("degree", 1.1885339030384874),
         ("centrality", 1.2452632907709282),
         ("weighted", 0.9494914247243103),
-        ("degree", 1.1885339030384874),
     ],
     &[
         ("from", 0.22106318400995545),
-        ("unchecked", 0.39422876583314165),
-        ("centrality", 0.6583857605690561),
-        ("get", 0.07590763216926308),
         ("closeness", 0.940532475292849),
+        ("get", 0.07590763216926308),
         ("node_id", 0.4320577604122954),
+        ("centrality", 0.6583857605690561),
+        ("unchecked", 0.39422876583314165),
     ],
     &[
-        ("closeness", 0.7249609883833487),
-        ("get", 0.05850948636955273),
-        ("unchecked", 0.30387092762379503),
         ("node_id", 0.33302945858373084),
-        ("weighted", 0.38694668624668777),
         ("centrality", 0.5074827337259671),
+        ("weighted", 0.38694668624668777),
+        ("unchecked", 0.30387092762379503),
+        ("closeness", 0.7249609883833487),
         ("from", 0.17039516293696008),
+        ("get", 0.05850948636955273),
     ],
     &[
-        ("centrality", 1.8557569443837287),
         ("closeness", 2.651028890622632),
         ("get", 0.21395680764432426),
+        ("centrality", 1.8557569443837287),
     ],
     &[
-        ("get", 0.14357082654403988),
-        ("centrality", 1.2452632907709282),
-        ("closeness", 1.7789123571685375),
         ("weighted", 0.9494914247243103),
+        ("closeness", 1.7789123571685375),
+        ("centrality", 1.2452632907709282),
+        ("get", 0.14357082654403988),
     ],
     &[
+        ("get", 0.07590763216926308),
         ("from", 0.22106318400995545),
+        ("unchecked", 0.39422876583314165),
+        ("centrality", 0.6583857605690561),
         ("harmonic", 0.940532475292849),
         ("node_id", 0.4320577604122954),
-        ("centrality", 0.6583857605690561),
-        ("get", 0.07590763216926308),
-        ("unchecked", 0.39422876583314165),
     ],
     &[
-        ("get", 0.05850948636955273),
-        ("node_id", 0.33302945858373084),
-        ("harmonic", 0.7249609883833487),
-        ("unchecked", 0.30387092762379503),
-        ("centrality", 0.5074827337259671),
-        ("weighted", 0.38694668624668777),
         ("from", 0.17039516293696008),
+        ("get", 0.05850948636955273),
+        ("harmonic", 0.7249609883833487),
+        ("weighted", 0.38694668624668777),
+        ("unchecked", 0.30387092762379503),
+        ("node_id", 0.33302945858373084),
+        ("centrality", 0.5074827337259671),
     ],
     &[
         ("harmonic", 2.651028890622632),
-        ("centrality", 1.8557569443837287),
         ("get", 0.21395680764432426),
+        ("centrality", 1.8557569443837287),
     ],
     &[
-        ("harmonic", 1.7789123571685375),
-        ("get", 0.14357082654403988),
         ("centrality", 1.2452632907709282),
         ("weighted", 0.9494914247243103),
+        ("get", 0.14357082654403988),
+        ("harmonic", 1.7789123571685375),
     ],
     &[
+        ("centrality", 1.8557569443837287),
         ("get", 0.21395680764432426),
         ("stress", 3.2690522703400644),
-        ("centrality", 1.8557569443837287),
     ],
     &[
         ("centrality", 1.8557569443837287),
@@ -14567,277 +15180,277 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("get", 0.21395680764432426),
     ],
     &[
-        ("centrality", 0.6583857605690561),
+        ("get", 0.07590763216926308),
         ("from", 0.22106318400995545),
-        ("approximated", 0.9004823625478179),
         ("node_id", 0.4320577604122954),
         ("betweenness", 0.9004823625478179),
-        ("get", 0.07590763216926308),
-    ],
-    &[
-        ("from", 0.22106318400995545),
-        ("betweenness", 0.9004823625478179),
-        ("node_name", 0.6106399948159666),
-        ("get", 0.07590763216926308),
         ("centrality", 0.6583857605690561),
         ("approximated", 0.9004823625478179),
     ],
     &[
-        ("betweenness", 0.6940904229502285),
-        ("node_id", 0.33302945858373084),
-        ("weighted", 0.38694668624668777),
-        ("centrality", 0.5074827337259671),
-        ("from", 0.17039516293696008),
-        ("approximated", 0.6940904229502285),
-        ("get", 0.05850948636955273),
+        ("from", 0.22106318400995545),
+        ("centrality", 0.6583857605690561),
+        ("betweenness", 0.9004823625478179),
+        ("approximated", 0.9004823625478179),
+        ("get", 0.07590763216926308),
+        ("node_name", 0.6106399948159666),
     ],
     &[
-        ("from", 0.17039516293696008),
-        ("weighted", 0.38694668624668777),
         ("get", 0.05850948636955273),
+        ("from", 0.17039516293696008),
+        ("approximated", 0.6940904229502285),
+        ("weighted", 0.38694668624668777),
+        ("betweenness", 0.6940904229502285),
+        ("node_id", 0.33302945858373084),
+        ("centrality", 0.5074827337259671),
+    ],
+    &[
         ("approximated", 0.6940904229502285),
         ("betweenness", 0.6940904229502285),
+        ("from", 0.17039516293696008),
         ("centrality", 0.5074827337259671),
+        ("get", 0.05850948636955273),
+        ("weighted", 0.38694668624668777),
         ("node_name", 0.4706803707658769),
     ],
     &[
-        ("get", 0.21395680764432426),
         ("centrality", 1.8557569443837287),
+        ("get", 0.21395680764432426),
         ("eigenvector", 2.9816877635868573),
     ],
     &[
         ("eigenvector", 2.000793437832782),
-        ("centrality", 1.2452632907709282),
         ("get", 0.14357082654403988),
+        ("centrality", 1.2452632907709282),
         ("weighted", 0.9494914247243103),
     ],
-    &[("to", 3.393273563880107), ("dot", 5.224546265667863)],
+    &[("dot", 5.224546265667863), ("to", 3.393273563880107)],
     &[
+        ("get", 0.10205582849186985),
+        ("node", 0.5903898351493518),
+        ("shortest", 0.8851824558602509),
         ("embedding", 1.4222432011735033),
         ("paths", 1.2645213431962157),
-        ("get", 0.10205582849186985),
-        ("shortest", 0.8851824558602509),
-        ("node", 0.5903898351493518),
     ],
     &[
         ("node_type", 0.8939681394516793),
         ("paths", 0.7249609883833487),
         ("per", 0.763622430626649),
-        ("shortest", 0.5074827337259671),
-        ("get", 0.05850948636955273),
         ("embedding", 0.8153842893929308),
+        ("shortest", 0.5074827337259671),
         ("node", 0.33847558265763666),
+        ("get", 0.05850948636955273),
     ],
     &[
-        ("detection", 1.5593139639071147),
         ("louvain", 1.5593139639071147),
-        ("community", 1.3319569978849197),
         ("get", 0.10205582849186985),
         ("undirected", 1.2106750128526111),
+        ("detection", 1.5593139639071147),
+        ("community", 1.3319569978849197),
     ],
     &[
         ("get", 0.05850948636955273),
-        ("memberships", 0.8153842893929308),
+        ("from", 0.17039516293696008),
         ("directed", 0.5946152795583186),
         ("community", 0.763622430626649),
-        ("modularity", 0.8153842893929308),
         ("node", 0.33847558265763666),
-        ("from", 0.17039516293696008),
+        ("memberships", 0.8153842893929308),
+        ("modularity", 0.8153842893929308),
     ],
     &[
-        ("community", 0.763622430626649),
-        ("node", 0.33847558265763666),
-        ("modularity", 0.8153842893929308),
+        ("get", 0.05850948636955273),
         ("from", 0.17039516293696008),
+        ("node", 0.33847558265763666),
         ("undirected", 0.6940904229502285),
         ("memberships", 0.8153842893929308),
-        ("get", 0.05850948636955273),
+        ("community", 0.763622430626649),
+        ("modularity", 0.8153842893929308),
     ],
     &[
         ("get", 0.10205582849186985),
-        ("preferential", 1.0371643771740207),
+        ("unchecked", 0.5300302770966965),
         ("attachment", 1.0371643771740207),
         ("minimum", 1.1274505804626045),
-        ("unchecked", 0.5300302770966965),
+        ("preferential", 1.0371643771740207),
     ],
     &[
-        ("attachment", 1.0371643771740207),
-        ("unchecked", 0.5300302770966965),
-        ("get", 0.10205582849186985),
         ("maximum", 1.0938653281325432),
+        ("get", 0.10205582849186985),
+        ("unchecked", 0.5300302770966965),
         ("preferential", 1.0371643771740207),
+        ("attachment", 1.0371643771740207),
     ],
     &[
-        ("attachment", 0.7714276901672522),
-        ("weighted", 0.5020075982757829),
-        ("unchecked", 0.39422876583314165),
-        ("preferential", 0.7714276901672522),
-        ("get", 0.07590763216926308),
         ("minimum", 0.8385812472983385),
+        ("unchecked", 0.39422876583314165),
+        ("preferential", 0.7714276901672522),
+        ("attachment", 0.7714276901672522),
+        ("weighted", 0.5020075982757829),
+        ("get", 0.07590763216926308),
     ],
     &[
         ("weighted", 0.5020075982757829),
-        ("unchecked", 0.39422876583314165),
-        ("preferential", 0.7714276901672522),
+        ("attachment", 0.7714276901672522),
         ("maximum", 0.8136010279629453),
-        ("attachment", 0.7714276901672522),
         ("get", 0.07590763216926308),
+        ("unchecked", 0.39422876583314165),
+        ("preferential", 0.7714276901672522),
     ],
     &[
-        ("from", 0.22106318400995545),
-        ("get", 0.07590763216926308),
-        ("node_ids", 0.36739900167160566),
         ("preferential", 0.7714276901672522),
         ("attachment", 0.7714276901672522),
+        ("node_ids", 0.36739900167160566),
+        ("from", 0.22106318400995545),
         ("unchecked", 0.39422876583314165),
+        ("get", 0.07590763216926308),
     ],
     &[
+        ("get", 0.10205582849186985),
+        ("attachment", 1.0371643771740207),
         ("from", 0.29721367599610243),
+        ("preferential", 1.0371643771740207),
         ("node_ids", 0.4939583600641458),
-        ("get", 0.10205582849186985),
-        ("attachment", 1.0371643771740207),
-        ("preferential", 1.0371643771740207),
     ],
     &[
         ("attachment", 1.0371643771740207),
-        ("preferential", 1.0371643771740207),
-        ("from", 0.29721367599610243),
-        ("get", 0.10205582849186985),
         ("node_names", 0.6620019446880332),
+        ("preferential", 1.0371643771740207),
+        ("get", 0.10205582849186985),
+        ("from", 0.29721367599610243),
     ],
     &[
-        ("preferential", 0.5946152795583186),
         ("node_ids", 0.2831905865876356),
-        ("weighted", 0.38694668624668777),
-        ("attachment", 0.5946152795583186),
         ("from", 0.17039516293696008),
         ("get", 0.05850948636955273),
         ("unchecked", 0.30387092762379503),
+        ("preferential", 0.5946152795583186),
+        ("attachment", 0.5946152795583186),
+        ("weighted", 0.38694668624668777),
     ],
     &[
-        ("node_ids", 0.36739900167160566),
         ("weighted", 0.5020075982757829),
         ("attachment", 0.7714276901672522),
-        ("get", 0.07590763216926308),
         ("from", 0.22106318400995545),
         ("preferential", 0.7714276901672522),
+        ("node_ids", 0.36739900167160566),
+        ("get", 0.07590763216926308),
     ],
     &[
+        ("get", 0.07590763216926308),
+        ("weighted", 0.5020075982757829),
+        ("attachment", 0.7714276901672522),
+        ("preferential", 0.7714276901672522),
+        ("from", 0.22106318400995545),
         ("node_names", 0.4923873614599018),
-        ("weighted", 0.5020075982757829),
-        ("get", 0.07590763216926308),
-        ("preferential", 0.7714276901672522),
-        ("from", 0.22106318400995545),
-        ("attachment", 0.7714276901672522),
     ],
     &[
-        ("node_ids", 0.36739900167160566),
-        ("from", 0.22106318400995545),
-        ("get", 0.07590763216926308),
+        ("jaccard", 0.9906901286757851),
         ("coefficient", 0.8671414957617172),
         ("unchecked", 0.39422876583314165),
-        ("jaccard", 0.9906901286757851),
+        ("from", 0.22106318400995545),
+        ("get", 0.07590763216926308),
+        ("node_ids", 0.36739900167160566),
     ],
     &[
+        ("node_ids", 0.4939583600641458),
         ("jaccard", 1.3319569978849197),
-        ("from", 0.29721367599610243),
         ("coefficient", 1.1658490884329797),
         ("get", 0.10205582849186985),
-        ("node_ids", 0.4939583600641458),
+        ("from", 0.29721367599610243),
     ],
     &[
-        ("from", 0.29721367599610243),
-        ("get", 0.10205582849186985),
-        ("jaccard", 1.3319569978849197),
         ("node_names", 0.6620019446880332),
         ("coefficient", 1.1658490884329797),
+        ("get", 0.10205582849186985),
+        ("from", 0.29721367599610243),
+        ("jaccard", 1.3319569978849197),
     ],
     &[
         ("from", 0.17039516293696008),
-        ("index", 0.6100118124154992),
-        ("adar", 0.763622430626649),
+        ("node_ids", 0.2831905865876356),
+        ("get", 0.05850948636955273),
         ("adamic", 0.763622430626649),
-        ("node_ids", 0.2831905865876356),
+        ("adar", 0.763622430626649),
+        ("index", 0.6100118124154992),
         ("unchecked", 0.30387092762379503),
-        ("get", 0.05850948636955273),
     ],
     &[
-        ("adamic", 0.9906901286757851),
+        ("index", 0.7914024741778843),
+        ("adar", 0.9906901286757851),
         ("get", 0.07590763216926308),
         ("node_ids", 0.36739900167160566),
-        ("from", 0.22106318400995545),
-        ("index", 0.7914024741778843),
-        ("adar", 0.9906901286757851),
-    ],
-    &[
-        ("get", 0.07590763216926308),
-        ("index", 0.7914024741778843),
-        ("from", 0.22106318400995545),
-        ("node_names", 0.4923873614599018),
         ("adamic", 0.9906901286757851),
-        ("adar", 0.9906901286757851),
+        ("from", 0.22106318400995545),
     ],
     &[
-        ("unchecked", 0.30387092762379503),
-        ("from", 0.17039516293696008),
+        ("index", 0.7914024741778843),
+        ("get", 0.07590763216926308),
+        ("adamic", 0.9906901286757851),
+        ("from", 0.22106318400995545),
+        ("adar", 0.9906901286757851),
+        ("node_names", 0.4923873614599018),
+    ],
+    &[
         ("resource", 0.6683913340045936),
         ("index", 0.6100118124154992),
-        ("allocation", 0.6683913340045936),
         ("node_ids", 0.2831905865876356),
+        ("unchecked", 0.30387092762379503),
         ("get", 0.05850948636955273),
+        ("from", 0.17039516293696008),
+        ("allocation", 0.6683913340045936),
     ],
     &[
-        ("weighted", 0.3068781246747678),
-        ("index", 0.4837857195246289),
-        ("allocation", 0.5300851161636013),
         ("node_ids", 0.22459165364749256),
-        ("from", 0.1351363118339495),
         ("resource", 0.5300851161636013),
-        ("get", 0.046402468585362976),
         ("unchecked", 0.2409927355029017),
+        ("allocation", 0.5300851161636013),
+        ("index", 0.4837857195246289),
+        ("get", 0.046402468585362976),
+        ("from", 0.1351363118339495),
+        ("weighted", 0.3068781246747678),
     ],
     &[
+        ("get", 0.07590763216926308),
         ("node_ids", 0.36739900167160566),
-        ("index", 0.7914024741778843),
-        ("from", 0.22106318400995545),
         ("resource", 0.8671414957617172),
+        ("from", 0.22106318400995545),
         ("allocation", 0.8671414957617172),
-        ("get", 0.07590763216926308),
+        ("index", 0.7914024741778843),
     ],
     &[
-        ("get", 0.07590763216926308),
         ("allocation", 0.8671414957617172),
-        ("resource", 0.8671414957617172),
-        ("index", 0.7914024741778843),
-        ("from", 0.22106318400995545),
         ("node_names", 0.4923873614599018),
+        ("get", 0.07590763216926308),
+        ("from", 0.22106318400995545),
+        ("resource", 0.8671414957617172),
+        ("index", 0.7914024741778843),
     ],
     &[
-        ("from", 0.17039516293696008),
+        ("index", 0.6100118124154992),
         ("get", 0.05850948636955273),
+        ("resource", 0.6683913340045936),
         ("weighted", 0.38694668624668777),
+        ("from", 0.17039516293696008),
         ("allocation", 0.6683913340045936),
         ("node_ids", 0.2831905865876356),
-        ("resource", 0.6683913340045936),
-        ("index", 0.6100118124154992),
     ],
     &[
         ("from", 0.17039516293696008),
+        ("weighted", 0.38694668624668777),
+        ("index", 0.6100118124154992),
         ("allocation", 0.6683913340045936),
-        ("get", 0.05850948636955273),
-        ("resource", 0.6683913340045936),
         ("node_names", 0.3795314224745872),
-        ("weighted", 0.38694668624668777),
-        ("index", 0.6100118124154992),
+        ("get", 0.05850948636955273),
+        ("resource", 0.6683913340045936),
     ],
     &[
-        ("node_ids", 0.2831905865876356),
         ("all", 0.6463771383246005),
         ("unchecked", 0.30387092762379503),
-        ("get", 0.05850948636955273),
         ("edge", 0.34127269495991286),
         ("from", 0.17039516293696008),
         ("metrics", 0.8939681394516793),
+        ("get", 0.05850948636955273),
+        ("node_ids", 0.2831905865876356),
     ],
     &[("csv", 5.224546265667863), ("from", 0.9958267782968131)],
 ];
@@ -14926,57 +15539,58 @@ impl PyObjectProtocol for Graph {
     }
 }
 
+///
 #[pyclass]
 #[derive(Debug, Clone)]
-pub struct ShortestPathsDjkstra {
-    pub inner: graph::ShortestPathsDjkstra,
+pub struct ShortestPathsResultBFS {
+    pub inner: graph::ShortestPathsResultBFS,
 }
 
-impl From<graph::ShortestPathsDjkstra> for ShortestPathsDjkstra {
-    fn from(val: graph::ShortestPathsDjkstra) -> ShortestPathsDjkstra {
-        ShortestPathsDjkstra { inner: val }
+impl From<graph::ShortestPathsResultBFS> for ShortestPathsResultBFS {
+    fn from(val: graph::ShortestPathsResultBFS) -> ShortestPathsResultBFS {
+        ShortestPathsResultBFS { inner: val }
     }
 }
 
-impl From<ShortestPathsDjkstra> for graph::ShortestPathsDjkstra {
-    fn from(val: ShortestPathsDjkstra) -> graph::ShortestPathsDjkstra {
+impl From<ShortestPathsResultBFS> for graph::ShortestPathsResultBFS {
+    fn from(val: ShortestPathsResultBFS) -> graph::ShortestPathsResultBFS {
         val.inner
     }
 }
 
 #[pymethods]
-impl ShortestPathsDjkstra {
+impl ShortestPathsResultBFS {
     #[automatically_generated_binding]
     #[text_signature = "($self, node_id)"]
     ///
     pub fn has_path_to_node_id(&self, node_id: NodeT) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_path_to_node_id(node_id.into()))?.into())
+        Ok({ pe!({ self.inner.has_path_to_node_id(node_id.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self, node_id)"]
     ///
-    pub fn get_distance_from_node_id(&self, node_id: NodeT) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_distance_from_node_id(node_id.into()))?.into())
+    pub fn get_distance_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
+        Ok({ pe!({ self.inner.get_distance_from_node_id(node_id.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self, node_id)"]
     ///
-    pub fn get_parent_from_node_id(&self, node_id: NodeT) -> PyResult<Option<NodeT>> {
-        Ok(pe!(self.inner.get_parent_from_node_id(node_id.into()))?.into())
+    pub fn get_parent_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
+        Ok({ pe!({ self.inner.get_parent_from_node_id(node_id.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, dst_node_id, distance)"]
-    /// Returns node at just before given distance on minimum path to given destination node.
+    #[text_signature = "($self, dst_node_id, k)"]
+    /// Returns node at the `len - k` position on minimum path to given destination node.
     ///
     /// Parameters
     /// ----------
     /// dst_node_id: int
     ///     The node to start computing predecessors from.
-    /// distance: float
-    ///     The distance to aim for.
+    /// k: int
+    ///     Steps to go back.
     ///
     ///
     /// Raises
@@ -14984,28 +15598,65 @@ impl ShortestPathsDjkstra {
     /// ValueError
     ///     If the predecessors vector was not requested.
     ///
-    pub fn get_point_at_given_distance_on_shortest_path(
+    pub unsafe fn get_unchecked_kth_point_on_shortest_path(
         &self,
         dst_node_id: NodeT,
-        distance: f64,
+        k: NodeT,
     ) -> PyResult<NodeT> {
-        Ok(pe!(self
-            .inner
-            .get_point_at_given_distance_on_shortest_path(dst_node_id.into(), distance.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_unchecked_kth_point_on_shortest_path(dst_node_id.into(), k.into())
+            })?
+            .into()
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, dst_node_id, k)"]
+    /// Returns node at the `len - k` position on minimum path to given destination node.
+    ///
+    /// Parameters
+    /// ----------
+    /// dst_node_id: int
+    ///     The node to start computing predecessors from.
+    /// k: int
+    ///     Steps to go back.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the predecessors vector was not requested.
+    ///
+    pub fn get_kth_point_on_shortest_path(&self, dst_node_id: NodeT, k: NodeT) -> PyResult<NodeT> {
+        Ok({
+            pe!({
+                self.inner
+                    .get_kth_point_on_shortest_path(dst_node_id.into(), k.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self, dst_node_id)"]
     ///
     pub fn get_median_point(&self, dst_node_id: NodeT) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_median_point(dst_node_id.into()))?.into())
+        Ok({ pe!({ self.inner.get_median_point(dst_node_id.into()) })?.into() })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     ///
-    pub fn get_eccentricity(&self) -> f64 {
+    pub fn get_median_point_to_most_distant_node(&self) -> PyResult<NodeT> {
+        Ok({ pe!({ self.inner.get_median_point_to_most_distant_node() })?.into() })
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    ///
+    pub fn get_eccentricity(&self) -> NodeT {
         self.inner.get_eccentricity().into()
     }
 
@@ -15018,9 +15669,15 @@ impl ShortestPathsDjkstra {
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
-    /// Returns the number of shortest paths starting from the root node
-    pub fn get_number_of_shortest_paths(&self) -> NodeT {
-        self.inner.get_number_of_shortest_paths().into()
+    /// Returns the number of shortest paths starting from the root node.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If neither predecessors nor distances were computed for this BFS.
+    ///
+    pub fn get_number_of_shortest_paths(&self) -> PyResult<NodeT> {
+        Ok({ pe!({ self.inner.get_number_of_shortest_paths() })?.into() })
     }
 
     #[automatically_generated_binding]
@@ -15041,10 +15698,13 @@ impl ShortestPathsDjkstra {
     ///     If the given node ID does not exist in the current graph instance.
     ///
     pub fn get_number_of_shortest_paths_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
-        Ok(pe!(self
-            .inner
-            .get_number_of_shortest_paths_from_node_id(node_id.into()))?
-        .into())
+        Ok({
+            pe!({
+                self.inner
+                    .get_number_of_shortest_paths_from_node_id(node_id.into())
+            })?
+            .into()
+        })
     }
 
     #[automatically_generated_binding]
@@ -15066,132 +15726,185 @@ impl ShortestPathsDjkstra {
         &self,
         source_node_id: NodeT,
     ) -> PyResult<Py<PyArray1<NodeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self
-                .inner
-                .get_successors_from_node_id(source_node_id.into()))?,
-            NodeT
-        ))
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!({
+                    self.inner
+                        .get_successors_from_node_id(source_node_id.into())
+                })?,
+                NodeT
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    ///
+    pub fn get_distances(&self) -> PyResult<Py<PyArray1<NodeT>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(gil, pe!({ self.inner.get_distances() })?, NodeT)
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    ///
+    pub fn get_predecessors(&self) -> PyResult<Py<PyArray1<NodeT>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(gil, pe!({ self.inner.get_predecessors() })?, NodeT)
+        })
     }
 }
 
-pub const SHORTESTPATHSDJKSTRA_METHODS_NAMES: &[&str] = &[
+pub const SHORTESTPATHSRESULTBFS_METHODS_NAMES: &[&str] = &[
     "has_path_to_node_id",
     "get_distance_from_node_id",
     "get_parent_from_node_id",
-    "get_point_at_given_distance_on_shortest_path",
+    "get_unchecked_kth_point_on_shortest_path",
+    "get_kth_point_on_shortest_path",
     "get_median_point",
+    "get_median_point_to_most_distant_node",
     "get_eccentricity",
     "get_most_distant_node",
     "get_number_of_shortest_paths",
     "get_number_of_shortest_paths_from_node_id",
     "get_successors_from_node_id",
+    "get_distances",
+    "get_predecessors",
 ];
 
-pub const SHORTESTPATHSDJKSTRA_TERMS: &[&str] = &[
-    "at",
-    "node_id",
-    "eccentricity",
-    "node",
-    "paths",
-    "point",
-    "median",
-    "from",
-    "of",
-    "shortest",
-    "parent",
+pub const SHORTESTPATHSRESULTBFS_TERMS: &[&str] = &[
     "distance",
-    "most",
     "number",
+    "successors",
+    "kth",
+    "shortest",
+    "distances",
+    "on",
+    "paths",
+    "eccentricity",
+    "median",
+    "distant",
+    "parent",
+    "path",
+    "predecessors",
+    "of",
+    "unchecked",
+    "most",
+    "has",
+    "node_id",
+    "node",
+    "point",
+    "from",
     "get",
     "to",
-    "distant",
-    "successors",
-    "path",
-    "on",
-    "given",
-    "has",
 ];
 
-pub const SHORTESTPATHSDJKSTRA_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
+pub const SHORTESTPATHSRESULTBFS_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
     &[
-        ("has", 0.7663192941116177),
-        ("to", 0.7663192941116177),
-        ("path", 0.5698479003554675),
-        ("node_id", 0.2665950694461328),
+        ("node_id", 0.3782535762712662),
+        ("path", 0.5486558787949157),
+        ("to", 0.675508823380169),
+        ("has", 0.8680945035391644),
     ],
     &[
-        ("get", 0.05638595161225976),
-        ("node_id", 0.2665950694461328),
-        ("distance", 0.5698479003554675),
-        ("from", 0.3437761061623448),
+        ("node_id", 0.3782535762712662),
+        ("distance", 0.8680945035391644),
+        ("get", 0.03972182605146727),
+        ("from", 0.4539081647953158),
     ],
     &[
-        ("from", 0.3437761061623448),
-        ("node_id", 0.2665950694461328),
-        ("get", 0.05638595161225976),
-        ("parent", 0.7663192941116177),
+        ("node_id", 0.3782535762712662),
+        ("parent", 0.8680945035391644),
+        ("from", 0.4539081647953158),
+        ("get", 0.03972182605146727),
     ],
     &[
-        ("get", 0.018325434273984424),
-        ("at", 0.24905377058627573),
-        ("path", 0.18520056761552695),
-        ("given", 0.24905377058627573),
-        ("distance", 0.18520056761552695),
-        ("point", 0.18520056761552695),
-        ("shortest", 0.14314153803787533),
-        ("on", 0.24905377058627573),
+        ("unchecked", 0.35366408327492577),
+        ("get", 0.016182780952102235),
+        ("point", 0.18492343211351403),
+        ("path", 0.2235239108372588),
+        ("kth", 0.2752041486161685),
+        ("on", 0.2752041486161685),
+        ("shortest", 0.18492343211351403),
     ],
     &[
-        ("median", 1.1385315226801176),
-        ("get", 0.08377341382392879),
-        ("point", 0.8466311662424089),
+        ("point", 0.23992924228644916),
+        ("path", 0.29001150339437226),
+        ("get", 0.020996378487838627),
+        ("on", 0.3570641216037613),
+        ("shortest", 0.23992924228644916),
+        ("kth", 0.3570641216037613),
     ],
     &[
-        ("eccentricity", 1.811300149718369),
-        ("get", 0.13327588562897763),
+        ("point", 0.6765761498284854),
+        ("median", 1.0068846395477784),
+        ("get", 0.05920765965110459),
     ],
     &[
-        ("node", 0.7663192941116177),
-        ("most", 0.7663192941116177),
-        ("distant", 0.7663192941116177),
-        ("get", 0.05638595161225976),
+        ("node", 0.2752041486161685),
+        ("point", 0.18492343211351403),
+        ("distant", 0.2752041486161685),
+        ("median", 0.2752041486161685),
+        ("to", 0.2752041486161685),
+        ("get", 0.016182780952102235),
+        ("most", 0.2752041486161685),
     ],
     &[
-        ("of", 0.40591905230800424),
-        ("get", 0.04016533539503435),
-        ("number", 0.40591905230800424),
-        ("shortest", 0.31373487789123355),
-        ("paths", 0.40591905230800424),
+        ("get", 0.09465377695327545),
+        ("eccentricity", 2.068596328021161),
     ],
     &[
-        ("paths", 0.23332354975184497),
-        ("node_id", 0.10915703630865278),
-        ("from", 0.140758720633401),
-        ("number", 0.23332354975184497),
-        ("get", 0.023087161290059114),
-        ("shortest", 0.18033579595322874),
-        ("of", 0.23332354975184497),
+        ("node", 0.675508823380169),
+        ("get", 0.03972182605146727),
+        ("most", 0.675508823380169),
+        ("distant", 0.675508823380169),
     ],
     &[
-        ("node_id", 0.2665950694461328),
-        ("from", 0.3437761061623448),
-        ("successors", 0.7663192941116177),
-        ("get", 0.05638595161225976),
+        ("of", 0.4801112568544316),
+        ("number", 0.4801112568544316),
+        ("get", 0.02823189745278895),
+        ("paths", 0.4801112568544316),
+        ("shortest", 0.3226107668081797),
+    ],
+    &[
+        ("from", 0.18492343211351403),
+        ("paths", 0.2752041486161685),
+        ("get", 0.016182780952102235),
+        ("node_id", 0.15410154511064045),
+        ("of", 0.2752041486161685),
+        ("shortest", 0.18492343211351403),
+        ("number", 0.2752041486161685),
+    ],
+    &[
+        ("node_id", 0.3782535762712662),
+        ("get", 0.03972182605146727),
+        ("successors", 0.8680945035391644),
+        ("from", 0.4539081647953158),
+    ],
+    &[
+        ("get", 0.09465377695327545),
+        ("distances", 2.068596328021161),
+    ],
+    &[
+        ("predecessors", 2.068596328021161),
+        ("get", 0.09465377695327545),
     ],
 ];
 
 #[pymethods]
-impl ShortestPathsDjkstra {
+impl ShortestPathsResultBFS {
     fn _repr_html_(&self) -> String {
         self.__repr__()
     }
 }
 
 #[pyproto]
-impl PyObjectProtocol for ShortestPathsDjkstra {
+impl PyObjectProtocol for ShortestPathsResultBFS {
     fn __str__(&'p self) -> String {
         self.inner.to_string()
     }
@@ -15213,7 +15926,7 @@ impl PyObjectProtocol for ShortestPathsDjkstra {
         let tokens_expanded = tokens
             .iter()
             .map(|token| {
-                let mut similarities = SHORTESTPATHSDJKSTRA_TERMS
+                let mut similarities = SHORTESTPATHSRESULTBFS_TERMS
                     .iter()
                     .map(move |term| (*term, jaro_winkler(token, term) as f64))
                     .collect::<Vec<(&str, f64)>>();
@@ -15228,14 +15941,14 @@ impl PyObjectProtocol for ShortestPathsDjkstra {
         // Compute the weighted ranking of each method ("document")
         // where the conribution of each term is weighted by it's similarity
         // with the query tokens
-        let mut doc_scores = SHORTESTPATHSDJKSTRA_TFIDF_FREQUENCIES
+        let mut doc_scores = SHORTESTPATHSRESULTBFS_TFIDF_FREQUENCIES
             .par_iter()
             .enumerate()
             // for each document
             .map(|(id, frequencies_doc)| {
                 (
                     id,
-                    (jaro_winkler(&name, SHORTESTPATHSDJKSTRA_METHODS_NAMES[id]).exp() - 1.0)
+                    (jaro_winkler(&name, SHORTESTPATHSRESULTBFS_METHODS_NAMES[id]).exp() - 1.0)
                         * frequencies_doc
                             .iter()
                             .map(|(term, weight)| {
@@ -15260,7 +15973,7 @@ impl PyObjectProtocol for ShortestPathsDjkstra {
                 .map(|(method_id, _)| {
                     format!(
                         "* '{}'",
-                        SHORTESTPATHSDJKSTRA_METHODS_NAMES[*method_id].to_string()
+                        SHORTESTPATHSRESULTBFS_METHODS_NAMES[*method_id].to_string()
                     )
                 })
                 .take(10)
@@ -15268,6 +15981,11 @@ impl PyObjectProtocol for ShortestPathsDjkstra {
                 .join("\n"),
         )))
     }
+}
+
+#[pymodule]
+fn utils(_py: Python, m: &PyModule) -> PyResult<()> {
+    Ok(())
 }
 
 #[pymodule]
@@ -15290,6 +16008,7 @@ fn edge_list_utils(_py: Python, m: &PyModule) -> PyResult<()> {
     Ok(())
 }
 
+#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[text_signature = "(original_node_path, original_node_list_separator, original_node_list_header, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, original_nodes_column_number, original_nodes_column, nodes_number, original_minimum_node_id, original_numeric_node_ids, original_load_node_list_in_parallel, original_edge_type_path, original_edge_types_column_number, original_edge_types_column, edge_types_number, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_separator, original_edge_type_list_header, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, original_edge_path, original_edge_list_separator, original_edge_list_header, original_sources_column_number, original_sources_column, original_destinations_column_number, original_destinations_column, original_edge_list_edge_types_column, original_edge_list_edge_types_column_number, original_weights_column, original_weights_column_number, target_edge_path, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_types_column, target_edge_list_edge_types_column_number, target_weights_column, target_weights_column_number, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_header, target_edge_type_list_edge_types_column, target_edge_type_list_edge_types_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, directed, verbose, name)"]
@@ -15465,80 +16184,86 @@ pub fn convert_edge_list_to_numeric(
     verbose: Option<bool>,
     name: Option<String>,
 ) -> PyResult<(NodeT, Option<EdgeTypeT>)> {
-    Ok(pe!(graph::convert_edge_list_to_numeric(
-        original_node_path.into(),
-        original_node_list_separator.into(),
-        original_node_list_header.into(),
-        node_list_rows_to_skip.into(),
-        node_list_is_correct.into(),
-        node_list_max_rows_number.into(),
-        node_list_comment_symbol.into(),
-        original_nodes_column_number.into(),
-        original_nodes_column.into(),
-        nodes_number.into(),
-        original_minimum_node_id.into(),
-        original_numeric_node_ids.into(),
-        original_load_node_list_in_parallel.into(),
-        original_edge_type_path.into(),
-        original_edge_types_column_number.into(),
-        original_edge_types_column.into(),
-        edge_types_number.into(),
-        original_numeric_edge_type_ids.into(),
-        original_minimum_edge_type_id.into(),
-        original_edge_type_list_separator.into(),
-        original_edge_type_list_header.into(),
-        edge_type_list_rows_to_skip.into(),
-        edge_type_list_is_correct.into(),
-        edge_type_list_max_rows_number.into(),
-        edge_type_list_comment_symbol.into(),
-        load_edge_type_list_in_parallel.into(),
-        original_edge_path.into(),
-        original_edge_list_separator.into(),
-        original_edge_list_header.into(),
-        original_sources_column_number.into(),
-        original_sources_column.into(),
-        original_destinations_column_number.into(),
-        original_destinations_column.into(),
-        original_edge_list_edge_types_column.into(),
-        original_edge_list_edge_types_column_number.into(),
-        original_weights_column.into(),
-        original_weights_column_number.into(),
-        target_edge_path.into(),
-        target_edge_list_separator.into(),
-        target_edge_list_header.into(),
-        target_sources_column.into(),
-        target_sources_column_number.into(),
-        target_destinations_column.into(),
-        target_destinations_column_number.into(),
-        target_edge_list_edge_types_column.into(),
-        target_edge_list_edge_types_column_number.into(),
-        target_weights_column.into(),
-        target_weights_column_number.into(),
-        target_node_path.into(),
-        target_node_list_separator.into(),
-        target_node_list_header.into(),
-        target_nodes_column.into(),
-        target_nodes_column_number.into(),
-        target_edge_type_list_path.into(),
-        target_edge_type_list_separator.into(),
-        target_edge_type_list_header.into(),
-        target_edge_type_list_edge_types_column.into(),
-        target_edge_type_list_edge_types_column_number.into(),
-        comment_symbol.into(),
-        default_edge_type.into(),
-        default_weight.into(),
-        max_rows_number.into(),
-        rows_to_skip.into(),
-        edges_number.into(),
-        skip_edge_types_if_unavailable.into(),
-        skip_weights_if_unavailable.into(),
-        directed.into(),
-        verbose.into(),
-        name.into()
-    ))?
-    .into())
+    Ok({
+        let (subresult_0, subresult_1) = pe!({
+            graph::convert_edge_list_to_numeric(
+                original_node_path.into(),
+                original_node_list_separator.into(),
+                original_node_list_header.into(),
+                node_list_rows_to_skip.into(),
+                node_list_is_correct.into(),
+                node_list_max_rows_number.into(),
+                node_list_comment_symbol.into(),
+                original_nodes_column_number.into(),
+                original_nodes_column.into(),
+                nodes_number.into(),
+                original_minimum_node_id.into(),
+                original_numeric_node_ids.into(),
+                original_load_node_list_in_parallel.into(),
+                original_edge_type_path.into(),
+                original_edge_types_column_number.into(),
+                original_edge_types_column.into(),
+                edge_types_number.into(),
+                original_numeric_edge_type_ids.into(),
+                original_minimum_edge_type_id.into(),
+                original_edge_type_list_separator.into(),
+                original_edge_type_list_header.into(),
+                edge_type_list_rows_to_skip.into(),
+                edge_type_list_is_correct.into(),
+                edge_type_list_max_rows_number.into(),
+                edge_type_list_comment_symbol.into(),
+                load_edge_type_list_in_parallel.into(),
+                original_edge_path.into(),
+                original_edge_list_separator.into(),
+                original_edge_list_header.into(),
+                original_sources_column_number.into(),
+                original_sources_column.into(),
+                original_destinations_column_number.into(),
+                original_destinations_column.into(),
+                original_edge_list_edge_types_column.into(),
+                original_edge_list_edge_types_column_number.into(),
+                original_weights_column.into(),
+                original_weights_column_number.into(),
+                target_edge_path.into(),
+                target_edge_list_separator.into(),
+                target_edge_list_header.into(),
+                target_sources_column.into(),
+                target_sources_column_number.into(),
+                target_destinations_column.into(),
+                target_destinations_column_number.into(),
+                target_edge_list_edge_types_column.into(),
+                target_edge_list_edge_types_column_number.into(),
+                target_weights_column.into(),
+                target_weights_column_number.into(),
+                target_node_path.into(),
+                target_node_list_separator.into(),
+                target_node_list_header.into(),
+                target_nodes_column.into(),
+                target_nodes_column_number.into(),
+                target_edge_type_list_path.into(),
+                target_edge_type_list_separator.into(),
+                target_edge_type_list_header.into(),
+                target_edge_type_list_edge_types_column.into(),
+                target_edge_type_list_edge_types_column_number.into(),
+                comment_symbol.into(),
+                default_edge_type.into(),
+                default_weight.into(),
+                max_rows_number.into(),
+                rows_to_skip.into(),
+                edges_number.into(),
+                skip_edge_types_if_unavailable.into(),
+                skip_weights_if_unavailable.into(),
+                directed.into(),
+                verbose.into(),
+                name.into(),
+            )
+        })?
+        .into();
+        ({ subresult_0.into() }, { subresult_1.into() })
+    })
 }
 
+#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[text_signature = "(maximum_node_id, original_edge_path, original_edge_list_separator, original_edge_list_header, original_sources_column, original_sources_column_number, original_destinations_column, original_destinations_column_number, original_edge_list_edge_types_column, original_edge_list_edge_types_column_number, original_weights_column, original_weights_column_number, original_edge_type_path, original_edge_types_column_number, original_edge_types_column, edge_types_number, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_separator, original_edge_type_list_header, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, target_edge_path, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_types_column, target_edge_list_edge_types_column_number, target_weights_column, target_weights_column_number, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_header, target_edge_type_list_edge_types_column, target_edge_type_list_edge_types_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, directed, verbose, name)"]
@@ -15680,68 +16405,74 @@ pub fn densify_sparse_numeric_edge_list(
     verbose: Option<bool>,
     name: Option<String>,
 ) -> PyResult<(NodeT, Option<EdgeTypeT>)> {
-    Ok(pe!(graph::densify_sparse_numeric_edge_list(
-        maximum_node_id.into(),
-        original_edge_path.into(),
-        original_edge_list_separator.into(),
-        original_edge_list_header.into(),
-        original_sources_column.into(),
-        original_sources_column_number.into(),
-        original_destinations_column.into(),
-        original_destinations_column_number.into(),
-        original_edge_list_edge_types_column.into(),
-        original_edge_list_edge_types_column_number.into(),
-        original_weights_column.into(),
-        original_weights_column_number.into(),
-        original_edge_type_path.into(),
-        original_edge_types_column_number.into(),
-        original_edge_types_column.into(),
-        edge_types_number.into(),
-        original_numeric_edge_type_ids.into(),
-        original_minimum_edge_type_id.into(),
-        original_edge_type_list_separator.into(),
-        original_edge_type_list_header.into(),
-        edge_type_list_rows_to_skip.into(),
-        edge_type_list_is_correct.into(),
-        edge_type_list_max_rows_number.into(),
-        edge_type_list_comment_symbol.into(),
-        load_edge_type_list_in_parallel.into(),
-        target_edge_path.into(),
-        target_edge_list_separator.into(),
-        target_edge_list_header.into(),
-        target_sources_column.into(),
-        target_sources_column_number.into(),
-        target_destinations_column.into(),
-        target_destinations_column_number.into(),
-        target_edge_list_edge_types_column.into(),
-        target_edge_list_edge_types_column_number.into(),
-        target_weights_column.into(),
-        target_weights_column_number.into(),
-        target_node_path.into(),
-        target_node_list_separator.into(),
-        target_node_list_header.into(),
-        target_nodes_column.into(),
-        target_nodes_column_number.into(),
-        target_edge_type_list_path.into(),
-        target_edge_type_list_separator.into(),
-        target_edge_type_list_header.into(),
-        target_edge_type_list_edge_types_column.into(),
-        target_edge_type_list_edge_types_column_number.into(),
-        comment_symbol.into(),
-        default_edge_type.into(),
-        default_weight.into(),
-        max_rows_number.into(),
-        rows_to_skip.into(),
-        edges_number.into(),
-        skip_edge_types_if_unavailable.into(),
-        skip_weights_if_unavailable.into(),
-        directed.into(),
-        verbose.into(),
-        name.into()
-    ))?
-    .into())
+    Ok({
+        let (subresult_0, subresult_1) = pe!({
+            graph::densify_sparse_numeric_edge_list(
+                maximum_node_id.into(),
+                original_edge_path.into(),
+                original_edge_list_separator.into(),
+                original_edge_list_header.into(),
+                original_sources_column.into(),
+                original_sources_column_number.into(),
+                original_destinations_column.into(),
+                original_destinations_column_number.into(),
+                original_edge_list_edge_types_column.into(),
+                original_edge_list_edge_types_column_number.into(),
+                original_weights_column.into(),
+                original_weights_column_number.into(),
+                original_edge_type_path.into(),
+                original_edge_types_column_number.into(),
+                original_edge_types_column.into(),
+                edge_types_number.into(),
+                original_numeric_edge_type_ids.into(),
+                original_minimum_edge_type_id.into(),
+                original_edge_type_list_separator.into(),
+                original_edge_type_list_header.into(),
+                edge_type_list_rows_to_skip.into(),
+                edge_type_list_is_correct.into(),
+                edge_type_list_max_rows_number.into(),
+                edge_type_list_comment_symbol.into(),
+                load_edge_type_list_in_parallel.into(),
+                target_edge_path.into(),
+                target_edge_list_separator.into(),
+                target_edge_list_header.into(),
+                target_sources_column.into(),
+                target_sources_column_number.into(),
+                target_destinations_column.into(),
+                target_destinations_column_number.into(),
+                target_edge_list_edge_types_column.into(),
+                target_edge_list_edge_types_column_number.into(),
+                target_weights_column.into(),
+                target_weights_column_number.into(),
+                target_node_path.into(),
+                target_node_list_separator.into(),
+                target_node_list_header.into(),
+                target_nodes_column.into(),
+                target_nodes_column_number.into(),
+                target_edge_type_list_path.into(),
+                target_edge_type_list_separator.into(),
+                target_edge_type_list_header.into(),
+                target_edge_type_list_edge_types_column.into(),
+                target_edge_type_list_edge_types_column_number.into(),
+                comment_symbol.into(),
+                default_edge_type.into(),
+                default_weight.into(),
+                max_rows_number.into(),
+                rows_to_skip.into(),
+                edges_number.into(),
+                skip_edge_types_if_unavailable.into(),
+                skip_weights_if_unavailable.into(),
+                directed.into(),
+                verbose.into(),
+                name.into(),
+            )
+        })?
+        .into();
+        ({ subresult_0.into() }, { subresult_1.into() })
+    })
 }
 
+#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[text_signature = "(path, separator, header, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, verbose, name)"]
@@ -15794,25 +16525,30 @@ pub fn are_there_selfloops_in_edge_list(
     verbose: Option<bool>,
     name: Option<String>,
 ) -> PyResult<bool> {
-    Ok(pe!(graph::are_there_selfloops_in_edge_list(
-        path.into(),
-        separator.into(),
-        header.into(),
-        sources_column.into(),
-        sources_column_number.into(),
-        destinations_column.into(),
-        destinations_column_number.into(),
-        comment_symbol.into(),
-        max_rows_number.into(),
-        rows_to_skip.into(),
-        edges_number.into(),
-        load_edge_list_in_parallel.into(),
-        verbose.into(),
-        name.into()
-    ))?
-    .into())
+    Ok({
+        pe!({
+            graph::are_there_selfloops_in_edge_list(
+                path.into(),
+                separator.into(),
+                header.into(),
+                sources_column.into(),
+                sources_column_number.into(),
+                destinations_column.into(),
+                destinations_column_number.into(),
+                comment_symbol.into(),
+                max_rows_number.into(),
+                rows_to_skip.into(),
+                edges_number.into(),
+                load_edge_list_in_parallel.into(),
+                verbose.into(),
+                name.into(),
+            )
+        })?
+        .into()
+    })
 }
 
+#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[text_signature = "(file_path)"]
@@ -15830,9 +16566,10 @@ pub fn are_there_selfloops_in_edge_list(
 ///     If there are problems with opening the file.
 ///
 pub fn get_rows_number(file_path: &str) -> PyResult<usize> {
-    Ok(pe!(graph::get_rows_number(file_path.into()))?.into())
+    Ok({ pe!({ graph::get_rows_number(file_path.into()) })?.into() })
 }
 
+#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[text_signature = "(original_edge_path, original_edge_list_separator, original_edge_list_header, original_sources_column, original_sources_column_number, original_destinations_column, original_destinations_column_number, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_weights_column, original_weights_column_number, target_edge_path, target_edge_list_separator, target_edge_list_header, target_sources_column_number, target_sources_column, target_destinations_column_number, target_destinations_column, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_weights_column, target_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"]
@@ -15947,43 +16684,48 @@ pub fn convert_directed_edge_list_to_undirected(
     verbose: Option<bool>,
     name: Option<String>,
 ) -> PyResult<EdgeT> {
-    Ok(pe!(graph::convert_directed_edge_list_to_undirected(
-        original_edge_path.into(),
-        original_edge_list_separator.into(),
-        original_edge_list_header.into(),
-        original_sources_column.into(),
-        original_sources_column_number.into(),
-        original_destinations_column.into(),
-        original_destinations_column_number.into(),
-        original_edge_list_edge_type_column.into(),
-        original_edge_list_edge_type_column_number.into(),
-        original_weights_column.into(),
-        original_weights_column_number.into(),
-        target_edge_path.into(),
-        target_edge_list_separator.into(),
-        target_edge_list_header.into(),
-        target_sources_column_number.into(),
-        target_sources_column.into(),
-        target_destinations_column_number.into(),
-        target_destinations_column.into(),
-        target_edge_list_edge_type_column.into(),
-        target_edge_list_edge_type_column_number.into(),
-        target_weights_column.into(),
-        target_weights_column_number.into(),
-        comment_symbol.into(),
-        default_edge_type.into(),
-        default_weight.into(),
-        max_rows_number.into(),
-        rows_to_skip.into(),
-        edges_number.into(),
-        skip_edge_types_if_unavailable.into(),
-        skip_weights_if_unavailable.into(),
-        verbose.into(),
-        name.into()
-    ))?
-    .into())
+    Ok({
+        pe!({
+            graph::convert_directed_edge_list_to_undirected(
+                original_edge_path.into(),
+                original_edge_list_separator.into(),
+                original_edge_list_header.into(),
+                original_sources_column.into(),
+                original_sources_column_number.into(),
+                original_destinations_column.into(),
+                original_destinations_column_number.into(),
+                original_edge_list_edge_type_column.into(),
+                original_edge_list_edge_type_column_number.into(),
+                original_weights_column.into(),
+                original_weights_column_number.into(),
+                target_edge_path.into(),
+                target_edge_list_separator.into(),
+                target_edge_list_header.into(),
+                target_sources_column_number.into(),
+                target_sources_column.into(),
+                target_destinations_column_number.into(),
+                target_destinations_column.into(),
+                target_edge_list_edge_type_column.into(),
+                target_edge_list_edge_type_column_number.into(),
+                target_weights_column.into(),
+                target_weights_column_number.into(),
+                comment_symbol.into(),
+                default_edge_type.into(),
+                default_weight.into(),
+                max_rows_number.into(),
+                rows_to_skip.into(),
+                edges_number.into(),
+                skip_edge_types_if_unavailable.into(),
+                skip_weights_if_unavailable.into(),
+                verbose.into(),
+                name.into(),
+            )
+        })?
+        .into()
+    })
 }
 
+#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[text_signature = "(original_csv_path, original_csv_separator, original_csv_header, target_csv_path, target_csv_separator, target_csv_header, target_csv_ids_column, target_csv_ids_column_number, comment_symbol, max_rows_number, rows_to_skip, lines_number, verbose)"]
@@ -16039,24 +16781,29 @@ pub fn add_numeric_id_to_csv(
     lines_number: Option<usize>,
     verbose: Option<bool>,
 ) -> PyResult<usize> {
-    Ok(pe!(graph::add_numeric_id_to_csv(
-        original_csv_path.into(),
-        original_csv_separator.into(),
-        original_csv_header.into(),
-        target_csv_path.into(),
-        target_csv_separator.into(),
-        target_csv_header.into(),
-        target_csv_ids_column.into(),
-        target_csv_ids_column_number.into(),
-        comment_symbol.into(),
-        max_rows_number.into(),
-        rows_to_skip.into(),
-        lines_number.into(),
-        verbose.into()
-    ))?
-    .into())
+    Ok({
+        pe!({
+            graph::add_numeric_id_to_csv(
+                original_csv_path.into(),
+                original_csv_separator.into(),
+                original_csv_header.into(),
+                target_csv_path.into(),
+                target_csv_separator.into(),
+                target_csv_header.into(),
+                target_csv_ids_column.into(),
+                target_csv_ids_column_number.into(),
+                comment_symbol.into(),
+                max_rows_number.into(),
+                rows_to_skip.into(),
+                lines_number.into(),
+                verbose.into(),
+            )
+        })?
+        .into()
+    })
 }
 
+#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[text_signature = "(original_node_type_path, original_node_type_list_separator, original_node_types_column_number, original_node_types_column, original_numeric_node_type_ids, original_minimum_node_type_id, original_node_type_list_header, original_node_type_list_rows_to_skip, original_node_type_list_max_rows_number, original_node_type_list_comment_symbol, original_load_node_type_list_in_parallel, original_node_type_list_is_correct, node_types_number, target_node_type_list_path, target_node_type_list_separator, target_node_type_list_node_types_column_number, target_node_type_list_node_types_column, target_node_type_list_header, original_node_path, original_node_list_separator, original_node_list_header, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, original_nodes_column_number, original_nodes_column, original_node_types_separator, original_node_list_node_types_column_number, original_node_list_node_types_column, nodes_number, original_minimum_node_id, original_numeric_node_ids, original_node_list_numeric_node_type_ids, original_skip_node_types_if_unavailable, original_load_node_list_in_parallel, maximum_node_id, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_node_types_separator, target_node_list_node_types_column, target_node_list_node_types_column_number, original_edge_type_path, original_edge_type_list_separator, original_edge_types_column_number, original_edge_types_column, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_header, edge_type_list_rows_to_skip, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, edge_type_list_is_correct, edge_types_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_edge_types_column_number, target_edge_type_list_edge_types_column, target_edge_type_list_header, original_edge_path, original_edge_list_separator, original_edge_list_header, original_sources_column_number, original_sources_column, original_destinations_column_number, original_destinations_column, original_edge_list_edge_types_column_number, original_edge_list_edge_types_column, default_edge_type, original_weights_column_number, original_weights_column, default_weight, original_edge_list_numeric_node_ids, skip_weights_if_unavailable, skip_edge_types_if_unavailable, edge_list_comment_symbol, edge_list_max_rows_number, edge_list_rows_to_skip, load_edge_list_in_parallel, edges_number, target_edge_path, target_edge_list_separator, verbose, directed, name)"]
@@ -16153,101 +16900,112 @@ pub fn build_optimal_lists_files(
     directed: bool,
     name: Option<String>,
 ) -> PyResult<(Option<NodeTypeT>, NodeT, Option<EdgeTypeT>, EdgeT)> {
-    Ok(pe!(graph::build_optimal_lists_files(
-        original_node_type_path.into(),
-        original_node_type_list_separator.into(),
-        original_node_types_column_number.into(),
-        original_node_types_column.into(),
-        original_numeric_node_type_ids.into(),
-        original_minimum_node_type_id.into(),
-        original_node_type_list_header.into(),
-        original_node_type_list_rows_to_skip.into(),
-        original_node_type_list_max_rows_number.into(),
-        original_node_type_list_comment_symbol.into(),
-        original_load_node_type_list_in_parallel.into(),
-        original_node_type_list_is_correct.into(),
-        node_types_number.into(),
-        target_node_type_list_path.into(),
-        target_node_type_list_separator.into(),
-        target_node_type_list_node_types_column_number.into(),
-        target_node_type_list_node_types_column.into(),
-        target_node_type_list_header.into(),
-        original_node_path.into(),
-        original_node_list_separator.into(),
-        original_node_list_header.into(),
-        node_list_rows_to_skip.into(),
-        node_list_is_correct.into(),
-        node_list_max_rows_number.into(),
-        node_list_comment_symbol.into(),
-        default_node_type.into(),
-        original_nodes_column_number.into(),
-        original_nodes_column.into(),
-        original_node_types_separator.into(),
-        original_node_list_node_types_column_number.into(),
-        original_node_list_node_types_column.into(),
-        nodes_number.into(),
-        original_minimum_node_id.into(),
-        original_numeric_node_ids.into(),
-        original_node_list_numeric_node_type_ids.into(),
-        original_skip_node_types_if_unavailable.into(),
-        original_load_node_list_in_parallel.into(),
-        maximum_node_id.into(),
-        target_node_path.into(),
-        target_node_list_separator.into(),
-        target_node_list_header.into(),
-        target_nodes_column.into(),
-        target_nodes_column_number.into(),
-        target_node_types_separator.into(),
-        target_node_list_node_types_column.into(),
-        target_node_list_node_types_column_number.into(),
-        original_edge_type_path.into(),
-        original_edge_type_list_separator.into(),
-        original_edge_types_column_number.into(),
-        original_edge_types_column.into(),
-        original_numeric_edge_type_ids.into(),
-        original_minimum_edge_type_id.into(),
-        original_edge_type_list_header.into(),
-        edge_type_list_rows_to_skip.into(),
-        edge_type_list_max_rows_number.into(),
-        edge_type_list_comment_symbol.into(),
-        load_edge_type_list_in_parallel.into(),
-        edge_type_list_is_correct.into(),
-        edge_types_number.into(),
-        target_edge_type_list_path.into(),
-        target_edge_type_list_separator.into(),
-        target_edge_type_list_edge_types_column_number.into(),
-        target_edge_type_list_edge_types_column.into(),
-        target_edge_type_list_header.into(),
-        original_edge_path.into(),
-        original_edge_list_separator.into(),
-        original_edge_list_header.into(),
-        original_sources_column_number.into(),
-        original_sources_column.into(),
-        original_destinations_column_number.into(),
-        original_destinations_column.into(),
-        original_edge_list_edge_types_column_number.into(),
-        original_edge_list_edge_types_column.into(),
-        default_edge_type.into(),
-        original_weights_column_number.into(),
-        original_weights_column.into(),
-        default_weight.into(),
-        original_edge_list_numeric_node_ids.into(),
-        skip_weights_if_unavailable.into(),
-        skip_edge_types_if_unavailable.into(),
-        edge_list_comment_symbol.into(),
-        edge_list_max_rows_number.into(),
-        edge_list_rows_to_skip.into(),
-        load_edge_list_in_parallel.into(),
-        edges_number.into(),
-        target_edge_path.into(),
-        target_edge_list_separator.into(),
-        verbose.into(),
-        directed.into(),
-        name.into()
-    ))?
-    .into())
+    Ok({
+        let (subresult_0, subresult_1, subresult_2, subresult_3) = pe!({
+            graph::build_optimal_lists_files(
+                original_node_type_path.into(),
+                original_node_type_list_separator.into(),
+                original_node_types_column_number.into(),
+                original_node_types_column.into(),
+                original_numeric_node_type_ids.into(),
+                original_minimum_node_type_id.into(),
+                original_node_type_list_header.into(),
+                original_node_type_list_rows_to_skip.into(),
+                original_node_type_list_max_rows_number.into(),
+                original_node_type_list_comment_symbol.into(),
+                original_load_node_type_list_in_parallel.into(),
+                original_node_type_list_is_correct.into(),
+                node_types_number.into(),
+                target_node_type_list_path.into(),
+                target_node_type_list_separator.into(),
+                target_node_type_list_node_types_column_number.into(),
+                target_node_type_list_node_types_column.into(),
+                target_node_type_list_header.into(),
+                original_node_path.into(),
+                original_node_list_separator.into(),
+                original_node_list_header.into(),
+                node_list_rows_to_skip.into(),
+                node_list_is_correct.into(),
+                node_list_max_rows_number.into(),
+                node_list_comment_symbol.into(),
+                default_node_type.into(),
+                original_nodes_column_number.into(),
+                original_nodes_column.into(),
+                original_node_types_separator.into(),
+                original_node_list_node_types_column_number.into(),
+                original_node_list_node_types_column.into(),
+                nodes_number.into(),
+                original_minimum_node_id.into(),
+                original_numeric_node_ids.into(),
+                original_node_list_numeric_node_type_ids.into(),
+                original_skip_node_types_if_unavailable.into(),
+                original_load_node_list_in_parallel.into(),
+                maximum_node_id.into(),
+                target_node_path.into(),
+                target_node_list_separator.into(),
+                target_node_list_header.into(),
+                target_nodes_column.into(),
+                target_nodes_column_number.into(),
+                target_node_types_separator.into(),
+                target_node_list_node_types_column.into(),
+                target_node_list_node_types_column_number.into(),
+                original_edge_type_path.into(),
+                original_edge_type_list_separator.into(),
+                original_edge_types_column_number.into(),
+                original_edge_types_column.into(),
+                original_numeric_edge_type_ids.into(),
+                original_minimum_edge_type_id.into(),
+                original_edge_type_list_header.into(),
+                edge_type_list_rows_to_skip.into(),
+                edge_type_list_max_rows_number.into(),
+                edge_type_list_comment_symbol.into(),
+                load_edge_type_list_in_parallel.into(),
+                edge_type_list_is_correct.into(),
+                edge_types_number.into(),
+                target_edge_type_list_path.into(),
+                target_edge_type_list_separator.into(),
+                target_edge_type_list_edge_types_column_number.into(),
+                target_edge_type_list_edge_types_column.into(),
+                target_edge_type_list_header.into(),
+                original_edge_path.into(),
+                original_edge_list_separator.into(),
+                original_edge_list_header.into(),
+                original_sources_column_number.into(),
+                original_sources_column.into(),
+                original_destinations_column_number.into(),
+                original_destinations_column.into(),
+                original_edge_list_edge_types_column_number.into(),
+                original_edge_list_edge_types_column.into(),
+                default_edge_type.into(),
+                original_weights_column_number.into(),
+                original_weights_column.into(),
+                default_weight.into(),
+                original_edge_list_numeric_node_ids.into(),
+                skip_weights_if_unavailable.into(),
+                skip_edge_types_if_unavailable.into(),
+                edge_list_comment_symbol.into(),
+                edge_list_max_rows_number.into(),
+                edge_list_rows_to_skip.into(),
+                load_edge_list_in_parallel.into(),
+                edges_number.into(),
+                target_edge_path.into(),
+                target_edge_list_separator.into(),
+                verbose.into(),
+                directed.into(),
+                name.into(),
+            )
+        })?
+        .into();
+        (
+            { subresult_0.into() },
+            { subresult_1.into() },
+            { subresult_2.into() },
+            { subresult_3.into() },
+        )
+    })
 }
 
+#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[text_signature = "(original_edge_path, original_edge_list_separator, original_edge_list_header, original_edge_list_sources_column, original_edge_list_sources_column_number, original_edge_list_destinations_column, original_edge_list_destinations_column_number, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_edge_list_weights_column, original_edge_list_weights_column_number, target_edge_path, target_edge_list_separator, target_edge_list_header, target_edge_list_sources_column_number, target_edge_list_sources_column, target_edge_list_destinations_column_number, target_edge_list_destinations_column, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_edge_list_weights_column, target_edge_list_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"]
@@ -16354,43 +17112,47 @@ pub fn filter_duplicates_from_edge_list(
     verbose: Option<bool>,
     name: Option<String>,
 ) -> PyResult<()> {
-    Ok(pe!(graph::filter_duplicates_from_edge_list(
-        original_edge_path.into(),
-        original_edge_list_separator.into(),
-        original_edge_list_header.into(),
-        original_edge_list_sources_column.into(),
-        original_edge_list_sources_column_number.into(),
-        original_edge_list_destinations_column.into(),
-        original_edge_list_destinations_column_number.into(),
-        original_edge_list_edge_type_column.into(),
-        original_edge_list_edge_type_column_number.into(),
-        original_edge_list_weights_column.into(),
-        original_edge_list_weights_column_number.into(),
-        target_edge_path.into(),
-        target_edge_list_separator.into(),
-        target_edge_list_header.into(),
-        target_edge_list_sources_column_number.into(),
-        target_edge_list_sources_column.into(),
-        target_edge_list_destinations_column_number.into(),
-        target_edge_list_destinations_column.into(),
-        target_edge_list_edge_type_column.into(),
-        target_edge_list_edge_type_column_number.into(),
-        target_edge_list_weights_column.into(),
-        target_edge_list_weights_column_number.into(),
-        comment_symbol.into(),
-        default_edge_type.into(),
-        default_weight.into(),
-        max_rows_number.into(),
-        rows_to_skip.into(),
-        edges_number.into(),
-        skip_edge_types_if_unavailable.into(),
-        skip_weights_if_unavailable.into(),
-        verbose.into(),
-        name.into()
-    ))?
-    .into())
+    Ok({
+        pe!({
+            graph::filter_duplicates_from_edge_list(
+                original_edge_path.into(),
+                original_edge_list_separator.into(),
+                original_edge_list_header.into(),
+                original_edge_list_sources_column.into(),
+                original_edge_list_sources_column_number.into(),
+                original_edge_list_destinations_column.into(),
+                original_edge_list_destinations_column_number.into(),
+                original_edge_list_edge_type_column.into(),
+                original_edge_list_edge_type_column_number.into(),
+                original_edge_list_weights_column.into(),
+                original_edge_list_weights_column_number.into(),
+                target_edge_path.into(),
+                target_edge_list_separator.into(),
+                target_edge_list_header.into(),
+                target_edge_list_sources_column_number.into(),
+                target_edge_list_sources_column.into(),
+                target_edge_list_destinations_column_number.into(),
+                target_edge_list_destinations_column.into(),
+                target_edge_list_edge_type_column.into(),
+                target_edge_list_edge_type_column_number.into(),
+                target_edge_list_weights_column.into(),
+                target_edge_list_weights_column_number.into(),
+                comment_symbol.into(),
+                default_edge_type.into(),
+                default_weight.into(),
+                max_rows_number.into(),
+                rows_to_skip.into(),
+                edges_number.into(),
+                skip_edge_types_if_unavailable.into(),
+                skip_weights_if_unavailable.into(),
+                verbose.into(),
+                name.into(),
+            )
+        })?
+    })
 }
 
+#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[text_signature = "(original_edge_path, original_edge_list_separator, original_edge_list_header, original_sources_column, original_sources_column_number, original_destinations_column, original_destinations_column_number, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_weights_column, original_weights_column_number, target_edge_path, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_weights_column, target_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"]
@@ -16497,43 +17259,48 @@ pub fn convert_undirected_edge_list_to_directed(
     verbose: Option<bool>,
     name: Option<String>,
 ) -> PyResult<EdgeT> {
-    Ok(pe!(graph::convert_undirected_edge_list_to_directed(
-        original_edge_path.into(),
-        original_edge_list_separator.into(),
-        original_edge_list_header.into(),
-        original_sources_column.into(),
-        original_sources_column_number.into(),
-        original_destinations_column.into(),
-        original_destinations_column_number.into(),
-        original_edge_list_edge_type_column.into(),
-        original_edge_list_edge_type_column_number.into(),
-        original_weights_column.into(),
-        original_weights_column_number.into(),
-        target_edge_path.into(),
-        target_edge_list_separator.into(),
-        target_edge_list_header.into(),
-        target_sources_column.into(),
-        target_sources_column_number.into(),
-        target_destinations_column.into(),
-        target_destinations_column_number.into(),
-        target_edge_list_edge_type_column.into(),
-        target_edge_list_edge_type_column_number.into(),
-        target_weights_column.into(),
-        target_weights_column_number.into(),
-        comment_symbol.into(),
-        default_edge_type.into(),
-        default_weight.into(),
-        max_rows_number.into(),
-        rows_to_skip.into(),
-        edges_number.into(),
-        skip_edge_types_if_unavailable.into(),
-        skip_weights_if_unavailable.into(),
-        verbose.into(),
-        name.into()
-    ))?
-    .into())
+    Ok({
+        pe!({
+            graph::convert_undirected_edge_list_to_directed(
+                original_edge_path.into(),
+                original_edge_list_separator.into(),
+                original_edge_list_header.into(),
+                original_sources_column.into(),
+                original_sources_column_number.into(),
+                original_destinations_column.into(),
+                original_destinations_column_number.into(),
+                original_edge_list_edge_type_column.into(),
+                original_edge_list_edge_type_column_number.into(),
+                original_weights_column.into(),
+                original_weights_column_number.into(),
+                target_edge_path.into(),
+                target_edge_list_separator.into(),
+                target_edge_list_header.into(),
+                target_sources_column.into(),
+                target_sources_column_number.into(),
+                target_destinations_column.into(),
+                target_destinations_column_number.into(),
+                target_edge_list_edge_type_column.into(),
+                target_edge_list_edge_type_column_number.into(),
+                target_weights_column.into(),
+                target_weights_column_number.into(),
+                comment_symbol.into(),
+                default_edge_type.into(),
+                default_weight.into(),
+                max_rows_number.into(),
+                rows_to_skip.into(),
+                edges_number.into(),
+                skip_edge_types_if_unavailable.into(),
+                skip_weights_if_unavailable.into(),
+                verbose.into(),
+                name.into(),
+            )
+        })?
+        .into()
+    })
 }
 
+#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[text_signature = "(path, separator, header, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, verbose, name)"]
@@ -16596,25 +17363,33 @@ pub fn get_minmax_node_from_numeric_edge_list(
     verbose: Option<bool>,
     name: Option<String>,
 ) -> PyResult<(EdgeT, EdgeT, EdgeT)> {
-    Ok(pe!(graph::get_minmax_node_from_numeric_edge_list(
-        path.into(),
-        separator.into(),
-        header.into(),
-        sources_column.into(),
-        sources_column_number.into(),
-        destinations_column.into(),
-        destinations_column_number.into(),
-        comment_symbol.into(),
-        max_rows_number.into(),
-        rows_to_skip.into(),
-        edges_number.into(),
-        load_edge_list_in_parallel.into(),
-        verbose.into(),
-        name.into()
-    ))?
-    .into())
+    Ok({
+        let (subresult_0, subresult_1, subresult_2) = pe!({
+            graph::get_minmax_node_from_numeric_edge_list(
+                path.into(),
+                separator.into(),
+                header.into(),
+                sources_column.into(),
+                sources_column_number.into(),
+                destinations_column.into(),
+                destinations_column_number.into(),
+                comment_symbol.into(),
+                max_rows_number.into(),
+                rows_to_skip.into(),
+                edges_number.into(),
+                load_edge_list_in_parallel.into(),
+                verbose.into(),
+                name.into(),
+            )
+        })?
+        .into();
+        ({ subresult_0.into() }, { subresult_1.into() }, {
+            subresult_2.into()
+        })
+    })
 }
 
+#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[text_signature = "(path, separator, header, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, verbose, name)"]
@@ -16667,25 +17442,30 @@ pub fn get_selfloops_number_from_edge_list(
     verbose: Option<bool>,
     name: Option<String>,
 ) -> PyResult<EdgeT> {
-    Ok(pe!(graph::get_selfloops_number_from_edge_list(
-        path.into(),
-        separator.into(),
-        header.into(),
-        sources_column.into(),
-        sources_column_number.into(),
-        destinations_column.into(),
-        destinations_column_number.into(),
-        comment_symbol.into(),
-        max_rows_number.into(),
-        rows_to_skip.into(),
-        edges_number.into(),
-        load_edge_list_in_parallel.into(),
-        verbose.into(),
-        name.into()
-    ))?
-    .into())
+    Ok({
+        pe!({
+            graph::get_selfloops_number_from_edge_list(
+                path.into(),
+                separator.into(),
+                header.into(),
+                sources_column.into(),
+                sources_column_number.into(),
+                destinations_column.into(),
+                destinations_column_number.into(),
+                comment_symbol.into(),
+                max_rows_number.into(),
+                rows_to_skip.into(),
+                edges_number.into(),
+                load_edge_list_in_parallel.into(),
+                verbose.into(),
+                name.into(),
+            )
+        })?
+        .into()
+    })
 }
 
+#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[text_signature = "(path, separator, header, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, verbose, name)"]
@@ -16738,25 +17518,30 @@ pub fn is_numeric_edge_list(
     verbose: Option<bool>,
     name: Option<String>,
 ) -> PyResult<bool> {
-    Ok(pe!(graph::is_numeric_edge_list(
-        path.into(),
-        separator.into(),
-        header.into(),
-        sources_column.into(),
-        sources_column_number.into(),
-        destinations_column.into(),
-        destinations_column_number.into(),
-        comment_symbol.into(),
-        max_rows_number.into(),
-        rows_to_skip.into(),
-        edges_number.into(),
-        load_edge_list_in_parallel.into(),
-        verbose.into(),
-        name.into()
-    ))?
-    .into())
+    Ok({
+        pe!({
+            graph::is_numeric_edge_list(
+                path.into(),
+                separator.into(),
+                header.into(),
+                sources_column.into(),
+                sources_column_number.into(),
+                destinations_column.into(),
+                destinations_column_number.into(),
+                comment_symbol.into(),
+                max_rows_number.into(),
+                rows_to_skip.into(),
+                edges_number.into(),
+                load_edge_list_in_parallel.into(),
+                verbose.into(),
+                name.into(),
+            )
+        })?
+        .into()
+    })
 }
 
+#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[text_signature = "(original_node_type_path, original_node_type_list_separator, original_node_types_column_number, original_node_types_column, node_types_number, original_numeric_node_type_ids, original_minimum_node_type_id, original_node_type_list_header, original_node_type_list_rows_to_skip, original_node_type_list_is_correct, original_node_type_list_max_rows_number, original_node_type_list_comment_symbol, original_load_node_type_list_in_parallel, target_node_type_list_path, target_node_type_list_separator, target_node_type_list_header, target_node_type_list_node_types_column, target_node_type_list_node_types_column_number, original_node_path, original_node_list_separator, original_node_list_header, node_list_rows_to_skip, node_list_max_rows_number, node_list_comment_symbol, default_node_type, original_nodes_column_number, original_nodes_column, original_node_types_separator, original_node_list_node_types_column_number, original_node_list_node_types_column, original_minimum_node_id, original_numeric_node_ids, original_node_list_numeric_node_type_ids, original_skip_node_types_if_unavailable, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column_number, target_nodes_column, target_node_types_separator, target_node_list_node_types_column_number, target_node_list_node_types_column, nodes_number)"]
@@ -16806,54 +17591,60 @@ pub fn convert_node_list_node_types_to_numeric(
     target_node_list_node_types_column: Option<String>,
     nodes_number: Option<NodeT>,
 ) -> PyResult<(NodeT, Option<NodeTypeT>)> {
-    Ok(pe!(graph::convert_node_list_node_types_to_numeric(
-        original_node_type_path.into(),
-        original_node_type_list_separator.into(),
-        original_node_types_column_number.into(),
-        original_node_types_column.into(),
-        node_types_number.into(),
-        original_numeric_node_type_ids.into(),
-        original_minimum_node_type_id.into(),
-        original_node_type_list_header.into(),
-        original_node_type_list_rows_to_skip.into(),
-        original_node_type_list_is_correct.into(),
-        original_node_type_list_max_rows_number.into(),
-        original_node_type_list_comment_symbol.into(),
-        original_load_node_type_list_in_parallel.into(),
-        target_node_type_list_path.into(),
-        target_node_type_list_separator.into(),
-        target_node_type_list_header.into(),
-        target_node_type_list_node_types_column.into(),
-        target_node_type_list_node_types_column_number.into(),
-        original_node_path.into(),
-        original_node_list_separator.into(),
-        original_node_list_header.into(),
-        node_list_rows_to_skip.into(),
-        node_list_max_rows_number.into(),
-        node_list_comment_symbol.into(),
-        default_node_type.into(),
-        original_nodes_column_number.into(),
-        original_nodes_column.into(),
-        original_node_types_separator.into(),
-        original_node_list_node_types_column_number.into(),
-        original_node_list_node_types_column.into(),
-        original_minimum_node_id.into(),
-        original_numeric_node_ids.into(),
-        original_node_list_numeric_node_type_ids.into(),
-        original_skip_node_types_if_unavailable.into(),
-        target_node_path.into(),
-        target_node_list_separator.into(),
-        target_node_list_header.into(),
-        target_nodes_column_number.into(),
-        target_nodes_column.into(),
-        target_node_types_separator.into(),
-        target_node_list_node_types_column_number.into(),
-        target_node_list_node_types_column.into(),
-        nodes_number.into()
-    ))?
-    .into())
+    Ok({
+        let (subresult_0, subresult_1) = pe!({
+            graph::convert_node_list_node_types_to_numeric(
+                original_node_type_path.into(),
+                original_node_type_list_separator.into(),
+                original_node_types_column_number.into(),
+                original_node_types_column.into(),
+                node_types_number.into(),
+                original_numeric_node_type_ids.into(),
+                original_minimum_node_type_id.into(),
+                original_node_type_list_header.into(),
+                original_node_type_list_rows_to_skip.into(),
+                original_node_type_list_is_correct.into(),
+                original_node_type_list_max_rows_number.into(),
+                original_node_type_list_comment_symbol.into(),
+                original_load_node_type_list_in_parallel.into(),
+                target_node_type_list_path.into(),
+                target_node_type_list_separator.into(),
+                target_node_type_list_header.into(),
+                target_node_type_list_node_types_column.into(),
+                target_node_type_list_node_types_column_number.into(),
+                original_node_path.into(),
+                original_node_list_separator.into(),
+                original_node_list_header.into(),
+                node_list_rows_to_skip.into(),
+                node_list_max_rows_number.into(),
+                node_list_comment_symbol.into(),
+                default_node_type.into(),
+                original_nodes_column_number.into(),
+                original_nodes_column.into(),
+                original_node_types_separator.into(),
+                original_node_list_node_types_column_number.into(),
+                original_node_list_node_types_column.into(),
+                original_minimum_node_id.into(),
+                original_numeric_node_ids.into(),
+                original_node_list_numeric_node_type_ids.into(),
+                original_skip_node_types_if_unavailable.into(),
+                target_node_path.into(),
+                target_node_list_separator.into(),
+                target_node_list_header.into(),
+                target_nodes_column_number.into(),
+                target_nodes_column.into(),
+                target_node_types_separator.into(),
+                target_node_list_node_types_column_number.into(),
+                target_node_list_node_types_column.into(),
+                nodes_number.into(),
+            )
+        })?
+        .into();
+        ({ subresult_0.into() }, { subresult_1.into() })
+    })
 }
 
+#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[text_signature = "(path, target_path, separator, header, sources_column, sources_column_number, destinations_column, destinations_column_number, edge_types_column, edge_types_column_number, rows_to_skip, skip_edge_types_if_unavailable)"]
@@ -16900,23 +17691,27 @@ pub fn sort_numeric_edge_list(
     rows_to_skip: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
 ) -> PyResult<()> {
-    Ok(pe!(graph::sort_numeric_edge_list(
-        path.into(),
-        target_path.into(),
-        separator.into(),
-        header.into(),
-        sources_column.into(),
-        sources_column_number.into(),
-        destinations_column.into(),
-        destinations_column_number.into(),
-        edge_types_column.into(),
-        edge_types_column_number.into(),
-        rows_to_skip.into(),
-        skip_edge_types_if_unavailable.into()
-    ))?
-    .into())
+    Ok({
+        pe!({
+            graph::sort_numeric_edge_list(
+                path.into(),
+                target_path.into(),
+                separator.into(),
+                header.into(),
+                sources_column.into(),
+                sources_column_number.into(),
+                destinations_column.into(),
+                destinations_column_number.into(),
+                edge_types_column.into(),
+                edge_types_column_number.into(),
+                rows_to_skip.into(),
+                skip_edge_types_if_unavailable.into(),
+            )
+        })?
+    })
 }
 
+#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[text_signature = "(path, separator, header, sources_column, sources_column_number, destinations_column, destinations_column_number, edge_types_column, edge_types_column_number, rows_to_skip, skip_edge_types_if_unavailable)"]
@@ -16960,23 +17755,21 @@ pub fn sort_numeric_edge_list_inplace(
     rows_to_skip: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
 ) -> PyResult<()> {
-    Ok(pe!(graph::sort_numeric_edge_list_inplace(
-        path.into(),
-        separator.into(),
-        header.into(),
-        sources_column.into(),
-        sources_column_number.into(),
-        destinations_column.into(),
-        destinations_column_number.into(),
-        edge_types_column.into(),
-        edge_types_column_number.into(),
-        rows_to_skip.into(),
-        skip_edge_types_if_unavailable.into()
-    ))?
-    .into())
-}
-
-#[pymodule]
-fn utils(_py: Python, m: &PyModule) -> PyResult<()> {
-    Ok(())
+    Ok({
+        pe!({
+            graph::sort_numeric_edge_list_inplace(
+                path.into(),
+                separator.into(),
+                header.into(),
+                sources_column.into(),
+                sources_column_number.into(),
+                destinations_column.into(),
+                destinations_column_number.into(),
+                edge_types_column.into(),
+                edge_types_column_number.into(),
+                rows_to_skip.into(),
+                skip_edge_types_if_unavailable.into(),
+            )
+        })?
+    })
 }

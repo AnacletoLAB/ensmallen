@@ -26,6 +26,7 @@ create_tag!(
     ignore_regex_name
     no_unknown
     no_known
+    module
 );
 
 // TODO! improve error messages

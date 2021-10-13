@@ -26,5 +26,3 @@ mod walks;
 // automatically generated files
 mod auto_generated_bindings;
 pub use auto_generated_bindings::*;
-mod method_names_list;
-pub use method_names_list::*;

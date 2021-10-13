@@ -18,6 +18,7 @@ fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
     Ok(())
 }
 
+#[module(preprocessing)]
 #[pyfunction()]
 #[text_signature = "(documents, k1, b, vocabulary_size, verbose)"]
 /// Return vocabulary and TFIDF matrix of given documents.
@@ -27,13 +28,13 @@ fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
 /// ---------
 /// documents: List[List[str]],
 ///     The documents to parse
-/// k1: Optional[float],
+/// k1: Optional[float]
 ///     The default parameter for k1, tipically between 1.2 and 2.0.
-/// b: Optional[float],
+/// b: Optional[float]
 ///     The default parameter for b, tipically equal to 0.75.
-/// vocabulary_size: Optional[int],
+/// vocabulary_size: Optional[int]
 ///     The expected vocabulary size.
-/// verbose: Optional[bool],
+/// verbose: Optional[bool]
 ///     Whether to show a loading bar.
 ///
 fn okapi_bm25_tfidf_int(
@@ -52,6 +53,7 @@ fn okapi_bm25_tfidf_int(
     ))
 }
 
+#[module(preprocessing)]
 #[pyfunction()]
 #[text_signature = "(documents, k1, b, vocabulary_size, verbose)"]
 /// Return vocabulary and TFIDF matrix of given documents.
@@ -61,13 +63,13 @@ fn okapi_bm25_tfidf_int(
 /// ---------
 /// documents: List[List[str]],
 ///     The documents to parse
-/// k1: Optional[float],
+/// k1: Optional[float]
 ///     The default parameter for k1, tipically between 1.2 and 2.0.
-/// b: Optional[float],
+/// b: Optional[float]
 ///     The default parameter for b, tipically equal to 0.75.
-/// vocabulary_size: Optional[int],
+/// vocabulary_size: Optional[int]
 ///     The expected vocabulary size.
-/// verbose: Optional[bool],
+/// verbose: Optional[bool]
 ///     Whether to show a loading bar.
 ///
 fn okapi_bm25_tfidf_str(
@@ -86,6 +88,7 @@ fn okapi_bm25_tfidf_str(
     ))
 }
 
+#[module(preprocessing)]
 #[pyfunction(py_kwargs = "**")]
 #[text_signature = "(sequences, window_size)"]
 /// Return training batches for Word2Vec models.
@@ -101,12 +104,15 @@ fn okapi_bm25_tfidf_str(
 /// Arguments
 /// ---------
 ///
-/// sequences: List[List[int]],
+/// sequences: List[List[int]]
 ///     the sequence of sequences of integers to preprocess.
-/// window_size: int,
+/// window_size: int
 ///     Window size to consider for the sequences.
 ///
-fn word2vec(sequences: Vec<Vec<NodeT>>, window_size: usize) -> (PyContexts, PyWords) {
+fn word2vec(
+    sequences: Vec<Vec<NodeT>>,
+    window_size: usize,
+) -> (Py<PyArray2<NodeT>>, Py<PyArray1<NodeT>>) {
     let (contexts, words): (Vec<Vec<NodeT>>, Vec<NodeT>) =
         rust_word2vec(sequences.into_par_iter(), window_size).unzip();
     let gil = pyo3::Python::acquire_gil();
@@ -126,18 +132,18 @@ fn word2vec(sequences: Vec<Vec<NodeT>>, window_size: usize) -> (PyContexts, PyWo
 /// Arguments
 /// ---------
 ///
-/// sequences: List[List[int]],
+/// sequences: List[List[int]]
 ///     the sequence of sequences of integers to preprocess.
-/// window_size: int = 4,
+/// window_size: int = 4
 ///     Window size to consider for the sequences.
-/// verbose: bool = False,
+/// verbose: bool = False
 ///     whether to show the progress bars.
 ///     The default behaviour is false.
 ///     
 fn cooccurence_matrix(
     sequences: Vec<Vec<NodeT>>,
     py_kwargs: Option<&PyDict>,
-) -> PyResult<(PyWords, PyWords, PyFrequencies)> {
+) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>, Py<PyArray1<f64>>)> {
     let _ = ctrlc::set_handler(|| std::process::exit(2));
     let gil = pyo3::Python::acquire_gil();
     let kwargs = normalize_kwargs!(py_kwargs, gil.python());
@@ -172,20 +178,20 @@ impl Graph {
     ///
     /// Parameters
     /// ---------------------
-    /// walk_length: int,
+    /// walk_length: int
     ///     Maximal length of the random walk.
     ///     On graphs without traps, all walks have this length.
-    /// window_size: int = 4,
+    /// window_size: int = 4
     ///     Size of the window for local contexts.
-    /// iterations: int = 1,
+    /// iterations: int = 1
     ///     Number of cycles on the graphs to execute.
-    /// return_weight: float = 1.0,
+    /// return_weight: float = 1.0
     ///     Weight on the probability of returning to node coming from
     ///     Having this higher tends the walks to be
     ///     more like a Breadth-First Search.
     ///     Having this very high  (> 2) makes search very local.
     ///     Equal to the inverse of p in the Node2Vec paper.
-    /// explore_weight: float = 1.0,
+    /// explore_weight: float = 1.0
     ///     Weight on the probability of visiting a neighbor node
     ///     to the one we're coming from in the random walk
     ///     Having this higher tends the walks to be
@@ -193,27 +199,27 @@ impl Graph {
     ///     Having this very high makes search more outward.
     ///     Having this very low makes search very local.
     ///     Equal to the inverse of q in the Node2Vec paper.
-    /// change_node_type_weight: float = 1.0,
+    /// change_node_type_weight: float = 1.0
     ///     Weight on the probability of visiting a neighbor node of a
     ///     different type than the previous node. This only applies to
     ///     colored graphs, otherwise it has no impact.
-    /// change_edge_type_weight: float = 1.0,
+    /// change_edge_type_weight: float = 1.0
     ///     Weight on the probability of visiting a neighbor edge of a
     ///     different type than the previous edge. This only applies to
     ///     multigraphs, otherwise it has no impact.
-    /// dense_node_mapping: Dict[int, int] = None,
+    /// dense_node_mapping: Dict[int, int] = None
     ///     Mapping to use for converting sparse walk space into a dense space.
     ///     This object can be created using the method available from graph
     ///     called `get_dense_node_mapping` that returns a mapping from
     ///     the non trap nodes (those from where a walk could start) and
     ///     maps these nodes into a dense range of values.
-    /// max_neighbours: int = None,
+    /// max_neighbours: int = None
     ///     Maximum number of randomly sampled neighbours to consider.
     ///     If this parameter is used, the walks becomes probabilistic in nature
     ///     and becomes an approximation of an exact walk.
-    /// random_state: int = 42,
+    /// random_state: int = 42
     ///     random_state to use to reproduce the walks.
-    /// verbose: int = True,
+    /// verbose: int = True
     ///     whether to show or not the loading bar of the walks.
     ///
     /// Returns
@@ -224,7 +230,7 @@ impl Graph {
         &self,
         walk_length: u64,
         py_kwargs: Option<&PyDict>,
-    ) -> PyResult<(PyWords, PyWords, PyFrequencies)> {
+    ) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>, Py<PyArray1<f64>>)> {
         let gil = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, gil.python());
 
@@ -268,26 +274,26 @@ impl Graph {
     ///
     /// Parameters
     /// ---------------------
-    /// batch_size:
+    /// batch_size: int
     ///     Number of walks to include within this batch.
     ///     In some pathological cases, this might leed to an empty batch.
     ///     These cases include graphs with particularly high number of traps.
     ///     Consider using the method graph.report() to verify if this might
     ///     apply to your use case.
-    /// walk_length: int,
+    /// walk_length: int
     ///     Maximal length of the random walk.
     ///     On graphs without traps, all walks have this length.
-    /// window_size: int,
+    /// window_size: int
     ///     Size of the window for local contexts.
-    /// iterations: int = 1,
+    /// iterations: int = 1
     ///     Number of iterations for each node.
-    /// return_weight: float = 1.0,
+    /// return_weight: float = 1.0
     ///     Weight on the probability of returning to node coming from
     ///     Having this higher tends the walks to be
     ///     more like a Breadth-First Search.
     ///     Having this very high  (> 2) makes search very local.
     ///     Equal to the inverse of p in the Node2Vec paper.
-    /// explore_weight: float = 1.0,
+    /// explore_weight: float = 1.0
     ///     Weight on the probability of visiting a neighbor node
     ///     to the one we're coming from in the random walk
     ///     Having this higher tends the walks to be
@@ -295,25 +301,25 @@ impl Graph {
     ///     Having this very high makes search more outward.
     ///     Having this very low makes search very local.
     ///     Equal to the inverse of q in the Node2Vec paper.
-    /// change_node_type_weight: float = 1.0,
+    /// change_node_type_weight: float = 1.0
     ///     Weight on the probability of visiting a neighbor node of a
     ///     different type than the previous node. This only applies to
     ///     colored graphs, otherwise it has no impact.
-    /// change_edge_type_weight: float = 1.0,
+    /// change_edge_type_weight: float = 1.0
     ///     Weight on the probability of visiting a neighbor edge of a
     ///     different type than the previous edge. This only applies to
     ///     multigraphs, otherwise it has no impact.
-    /// dense_node_mapping: Dict[int, int],
+    /// dense_node_mapping: Dict[int, int]
     ///     Mapping to use for converting sparse walk space into a dense space.
     ///     This object can be created using the method available from graph
     ///     called `get_dense_node_mapping` that returns a mapping from
     ///     the non trap nodes (those from where a walk could start) and
     ///     maps these nodes into a dense range of values.
-    /// max_neighbours: int = None,
+    /// max_neighbours: int = None
     ///     Maximum number of randomly sampled neighbours to consider.
     ///     If this parameter is used, the walks becomes probabilistic in nature
     ///     and becomes an approximation of an exact walk.
-    /// random_state: int,
+    /// random_state: int
     ///     random_state to use to reproduce the walks.
     ///
     /// Returns
@@ -325,7 +331,7 @@ impl Graph {
         walk_length: u64,
         window_size: usize,
         py_kwargs: Option<&PyDict>,
-    ) -> PyResult<(PyContexts, PyWords)> {
+    ) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray1<NodeT>>)> {
         let gil = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, gil.python());
         pe!(validate_kwargs(
@@ -454,25 +460,25 @@ impl Graph {
     ///
     /// Parameters
     /// -------------
-    /// idx: int,
+    /// idx: int
     ///     The index of the batch to generate, behaves like a random random_state,
-    /// batch_size: Optional[int],
+    /// batch_size: Optional[int]
     ///     The maximal size of the batch to generate,
-    /// negative_samples: Optional[float],
+    /// negative_samples: Optional[float]
     ///     The component of netagetive samples to use.
-    /// return_node_types: Optional[bool],
+    /// return_node_types: Optional[bool]
     ///     Whether to return the source and destination nodes node types.
-    /// return_edge_types: Optional[bool],
+    /// return_edge_types: Optional[bool]
     ///     Whether to return the edge types. The negative edges edge type will be samples at random.
-    /// return_edge_metrics: Optional[bool],
+    /// return_edge_metrics: Optional[bool]
     ///     Whether to return the edge metrics.
-    /// avoid_false_negatives: Optional[bool],
+    /// avoid_false_negatives: Optional[bool]
     ///     Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
-    /// maximal_sampling_attempts: Optional[int],
+    /// maximal_sampling_attempts: Optional[int]
     ///     Number of attempts to execute to sample the negative edges.
-    /// shuffle: Optional[bool],
+    /// shuffle: Optional[bool]
     ///     Whether to shuffle the samples within the batch.
-    /// graph_to_avoid: Optional[Graph],
+    /// graph_to_avoid: Optional[Graph]
     ///     The graph whose edges are to be avoided during the generation of false negatives,
     ///
     /// Raises
@@ -622,18 +628,18 @@ impl Graph {
     /// - Normalized preferential attachment score
     ///
     /// Parameters
-    /// -----------------------------
-    /// source_node_ids: List[int],
+    /// ----------
+    /// source_node_ids: List[int]
     ///     List of source node IDs.
-    /// destination_node_ids: List[int],
+    /// destination_node_ids: List[int]
     ///     List of destination node IDs.
-    /// normalize: Optional[bool] = True,
+    /// normalize: Optional[bool] = True
     ///     Whether to normalize the metrics.
-    /// verbose: Optional[bool] = True,
+    /// verbose: Optional[bool] = True
     ///     Whether to show a loading bar.
     ///
     /// Returns
-    /// -----------------------------
+    /// -------
     /// 2D numpy array with metrics.
     fn get_unchecked_edge_prediction_metrics(
         &self,
@@ -677,14 +683,14 @@ impl Graph {
     /// - Normalized preferential attachment score
     ///
     /// Parameters
-    /// -----------------------------
-    /// normalize: Optional[bool] = True,
+    /// ----------
+    /// normalize: Optional[bool] = True
     ///     Whether to normalize the metrics.
-    /// verbose: Optional[bool] = True,
+    /// verbose: Optional[bool] = True
     ///     Whether to show a loading bar.
     ///
     /// Returns
-    /// -----------------------------
+    /// -------
     /// 2D numpy array with metrics.
     fn get_edge_prediction_metrics(
         &self,

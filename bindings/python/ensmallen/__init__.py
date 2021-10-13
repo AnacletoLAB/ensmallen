@@ -1,5 +1,6 @@
 """Module offering fast graph processing and graph datasets."""
 
+""" 
 import cpuinfo
 
 required_flags = ("sse", "sse2", "ssse3", "sse4_1", "sse4_2",
@@ -21,7 +22,7 @@ if len(unavailable_flags) > 0:
             "has been extensively designed to use SIMD instructions, so "
             "you would have a version slower than the one provided on Pypi."
         ).format(unavailable_flags)
-    )
+    ) """
 
 from .ensmallen import preprocessing  # pylint: disable=import-error
 from .ensmallen import Graph  # pylint: disable=import-error

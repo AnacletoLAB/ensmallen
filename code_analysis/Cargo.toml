@@ -27,5 +27,9 @@ name = "bindgen"
 path = "src/bin_bindgen.rs"
 
 [[bin]]
+name = "skeleton"
+path = "src/bin_skeleton.rs"
+
+[[bin]]
 name = "metatest"
 path = "src/bin_metatest.rs"

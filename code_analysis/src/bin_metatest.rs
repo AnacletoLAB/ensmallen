@@ -244,7 +244,7 @@ fn main() {
     let mut trace_calls = Vec::new();
     let mut structs = Vec::new();
     let mut fields = Vec::new();
-    for module in get_library_sources() {
+    for module in parse_crate("../src/graph", DENY_LIST) {
         for imp in module.impls {
             if imp.struct_name != "Graph" {
                 continue
