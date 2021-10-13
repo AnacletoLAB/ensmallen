@@ -7,15 +7,6 @@ use rayon::prelude::*;
 impl Graph {
     /// Return node embedding vector obtained from shortest-paths.
     ///
-    /// # Implementation details
-    /// Note that the algorithm requires the diameter of the graph, which on
-    /// large DIRECTED graphs is still not implemented as efficiently as it could
-    /// be because of limitations in the current data-structure (computation of indegree).
-    ///
-    /// Additionally, note that the diameter is computed out of the component containing
-    /// the most central node, which may not be the component containing the largest
-    /// diameter. This is generally an acceptable heuristic.
-    ///
     /// # Arguments
     /// * `node_centralities`: Option<Vec<f64>> - Vector with the importance of the nodes, used to properly sample the anchors. By default node degree centralities are used. Nodes with node centrality zero won't ever be sampled as an anchor, except for when all other nodes were already sampled.
     /// * `adjust_by_central_node_distance`: Option<bool> - Whether to adjust the node eccentricity by the normalized distance to the most central node. By default true.
@@ -56,7 +47,7 @@ impl Graph {
         use_edge_weights_as_probabilities: Option<bool>,
         random_state: Option<u64>,
         verbose: Option<bool>,
-    ) -> Result<(Vec<Vec<f64>>, Vec<Vec<String>>)> {
+    ) -> Result<(Vec<Vec<f32>>, Vec<Vec<String>>)> {
         let number_of_nodes_to_sample_per_feature =
             number_of_nodes_to_sample_per_feature.unwrap_or(10);
         if number_of_nodes_to_sample_per_feature == 0 {
@@ -84,7 +75,6 @@ impl Graph {
         let random_state = random_state.unwrap_or(42);
         let mut node_centralities = node_centralities.unwrap_or(self.get_degree_centrality()?);
         let adjust_by_central_node_distance = adjust_by_central_node_distance.unwrap_or(true);
-        let diameter = self.get_diameter(Some(true), Some(false))? as f64;
 
         if adjust_by_central_node_distance {
             let most_central_node_id = self.get_most_central_node_id()?;
@@ -110,7 +100,6 @@ impl Graph {
                     } else if distance.is_finite() {
                         // If we are treating the computed distances as "normal" distances,
                         // we want to multiply by the distance.
-                        // TODO: divide by the weighted diameter!
                         *node_centrality *= distance;
                     }
                 });
@@ -125,7 +114,7 @@ impl Graph {
                 .zip(node_centralities.par_iter_mut())
                 .for_each(|(distance, node_centrality)| {
                     if distance != NODE_NOT_PRESENT {
-                        *node_centrality *= distance as f64 / diameter;
+                        *node_centrality *= distance as f64;
                     }
                 });
             }
@@ -135,7 +124,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             "Computing shortest path node features",
-            maximum_number_of_features
+            maximum_number_of_features,
         );
 
         if (central_node_name.is_some() || central_node_id.is_some()) && maximal_depth.is_none() {
@@ -230,7 +219,7 @@ impl Graph {
             }
         }
 
-        let mut node_embedding: Vec<Vec<f64>> = self.iter_node_ids().map(|_| Vec::new()).collect();
+        let mut node_embedding: Vec<Vec<f32>> = self.iter_node_ids().map(|_| Vec::new()).collect();
         let mut anchor_node_names: Vec<Vec<String>> = Vec::new();
 
         for _ in 0..maximum_number_of_features {
@@ -272,7 +261,7 @@ impl Graph {
 
             // Compute the node features
             if use_edge_weights {
-                unsafe {
+                let distances = unsafe {
                     self.get_unchecked_dijkstra_from_node_ids(
                         this_feature_anchor_node_ids,
                         None,
@@ -282,28 +271,37 @@ impl Graph {
                         Some(use_edge_weights_as_probabilities),
                     )
                 }
-                .into_distances()
-                .into_par_iter()
-                .zip(node_embedding.par_iter_mut())
-                .for_each(|(distance, node_feature)| {
-                    node_feature.push(distance);
-                })
+                .into_distances();
+                let max_value = distances
+                    .par_iter()
+                    .filter(|distance| distance.is_finite())
+                    .cloned()
+                    .max_by(|&a, b| a.partial_cmp(b).unwrap())
+                    .unwrap_or(1.0);
+                distances
+                    .into_par_iter()
+                    .zip(node_embedding.par_iter_mut())
+                    .for_each(|(distance, node_feature)| {
+                        node_feature.push((distance / max_value) as f32);
+                    })
             } else {
-                unsafe {
+                let distances = unsafe {
                     self.get_unchecked_breadth_first_search_distances_parallel_from_node_ids(
                         this_feature_anchor_node_ids,
                     )
                 }
-                .into_distances()
-                .into_par_iter()
-                .zip(node_embedding.par_iter_mut())
-                .for_each(|(distance, node_feature)| {
-                    node_feature.push(if distance == NODE_NOT_PRESENT {
-                        1.0
-                    } else {
-                        distance as f64 / diameter
+                .into_distances();
+                let max_value = *distances.par_iter().max_by(|a, b| a.cmp(b)).unwrap() as f32;
+                distances
+                    .into_par_iter()
+                    .zip(node_embedding.par_iter_mut())
+                    .for_each(|(distance, node_feature)| {
+                        node_feature.push(if distance == NODE_NOT_PRESENT {
+                            1.0
+                        } else {
+                            distance as f32 / max_value
+                        });
                     });
-                });
             }
             pb.inc(1);
         }
@@ -358,7 +356,7 @@ impl Graph {
         use_edge_weights_as_probabilities: Option<bool>,
         random_state: Option<u64>,
         verbose: Option<bool>,
-    ) -> Result<(Vec<Vec<f64>>, Vec<Vec<String>>)> {
+    ) -> Result<(Vec<Vec<f32>>, Vec<Vec<String>>)> {
         let node_centralities = node_centralities.unwrap_or(self.get_degree_centrality()?);
         let verbose = verbose.unwrap_or(true);
         let pb = get_loading_bar(
@@ -366,7 +364,8 @@ impl Graph {
             "Obtaining paths embedding per node-type",
             self.get_node_types_number()? as usize,
         );
-        let mut node_embedding: Vec<Vec<f64>> = self.iter_node_ids().map(|_| Vec::new()).collect();
+        let mut node_embedding: Vec<Vec<f32>> =
+            self.par_iter_node_ids().map(|_| Vec::new()).collect();
         let mut anchor_node_names: Vec<Vec<String>> = Vec::new();
         for (node_type_id, node_type_name) in self
             .iter_unique_node_type_ids()?
@@ -377,9 +376,9 @@ impl Graph {
                 .get_shortest_paths_node_embedding(
                     Some(
                         node_centralities
-                            .iter()
+                            .par_iter()
                             .cloned()
-                            .zip(self.iter_node_ids_and_node_type_ids())
+                            .zip(self.par_iter_node_ids_and_node_type_ids())
                             .map(|(node_centrality, (_, node_type_ids))| {
                                 if let Some(node_type_ids) = node_type_ids {
                                     if node_type_ids
