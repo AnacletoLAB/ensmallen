@@ -227,8 +227,8 @@ impl PyObjectProtocol for {struct_name} {{
 }}
 "#, 
     struct_doc=self.ztruct.doc.trim().split("\n").map(|x| format!("/// {}", x)).collect::<Vec<_>>().join("\n").trim(),
-    struct_name=self.ztruct.struct_type.get_name(),
-    struct_name_upper=self.ztruct.struct_type.get_name().to_uppercase(),
+    struct_name=self.ztruct.struct_type.get_name().unwrap(),
+    struct_name_upper=self.ztruct.struct_type.get_name().unwrap().to_uppercase(),
     methods=format_vec!(
         self.impls.iter()
         .flat_map(|imp| imp.methods.iter()
@@ -257,7 +257,7 @@ struct BindingsModule {
 
 impl BindingsModule {
     fn push_class(&mut self, ztruct: Struct) {
-        self.structs.insert(ztruct.struct_type.get_name(), Class::new(ztruct));
+        self.structs.insert(ztruct.struct_type.get_name().unwrap(), Class::new(ztruct));
     }
 
     fn new(name: String) -> Self {
@@ -348,7 +348,7 @@ fn {module_name}(_py: Python, m:&PyModule) -> PyResult<()> {{
             && c.ztruct.visibility == Visibility::Public
         })
         .map(|c| {
-            println!("Generating struct: {}", c.ztruct.struct_type.get_name());
+            println!("Generating struct: {}", c.ztruct.struct_type.get_name().unwrap());
             c.gen_python_binding()
         }).collect::<Vec<_>>(), 
         "{}", "\n\n"
@@ -399,19 +399,19 @@ fn group_data(modules: Vec<Module>) -> BindingsModule {
     for module in &modules {
         for imp in &module.impls {
             // find the correct submodule
-            if let Some(struct_module) = struct_modules_map.get(&imp.struct_name.get_name()) {
+            if let Some(struct_module) = struct_modules_map.get(&imp.struct_name.get_name().unwrap()) {
                 let struct_ref =  bindings.get_submodule(
                     struct_module.clone()
-                ).structs.get_mut(&imp.struct_name.get_name());
+                ).structs.get_mut(&imp.struct_name.get_name().unwrap());
     
                 if let Some(struct_ref) = struct_ref {
                     // add it to the impls
                     struct_ref.impls.push(imp.clone());
                 } else {
-                    println!("Skipping impl for '{}' at '{}'.", imp.struct_name.get_name(), imp.file_path);
+                    println!("Skipping impl for '{}' at '{}'.", imp.struct_name.get_name().unwrap(), imp.file_path);
                 }
             } else {
-                println!("Skipping impl for '{}' at '{}'.", imp.struct_name.get_name(), imp.file_path);
+                println!("Skipping impl for '{}' at '{}'.", imp.struct_name.get_name().unwrap(), imp.file_path);
             }
         }
     }
@@ -430,7 +430,9 @@ pub fn gen_bindings(to_parse_path: &str, path: &str, init_path: &str) {
     print_sep();
 
     let file_content = format!(
-        r#"use super::*;
+        r#"#[allow(unused_braces)]
+#[allow(unused_variables)]     
+use super::*;
 use pyo3::{{wrap_pyfunction, wrap_pymodule}};
 use rayon::iter::{{IndexedParallelIterator, IntoParallelRefIterator, ParallelIterator}};
 use pyo3::class::basic::PyObjectProtocol;
