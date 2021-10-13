@@ -260,7 +260,7 @@ impl Graph {
 
             // Compute the node features
             if use_edge_weights {
-                let distances = unsafe {
+                let result = unsafe {
                     self.get_unchecked_dijkstra_from_node_ids(
                         this_feature_anchor_node_ids,
                         None,
@@ -269,36 +269,31 @@ impl Graph {
                         None,
                         Some(use_edge_weights_as_probabilities),
                     )
-                }
-                .into_distances();
-                let max_value = distances
-                    .par_iter()
-                    .filter(|distance| distance.is_finite())
-                    .cloned()
-                    .max_by(|&a, b| a.partial_cmp(b).unwrap())
-                    .unwrap_or(1.0);
-                distances
+                };
+                let eccentricity = result.get_eccentricity();
+                result
+                    .into_distances()
                     .into_par_iter()
                     .zip(node_embedding.par_iter_mut())
                     .for_each(|(distance, node_feature)| {
-                        node_feature.push((distance / max_value) as f32);
+                        node_feature.push((distance / eccentricity) as f32);
                     })
             } else {
-                let distances = unsafe {
+                let result = unsafe {
                     self.get_unchecked_breadth_first_search_distances_parallel_from_node_ids(
                         this_feature_anchor_node_ids,
                     )
-                }
-                .into_distances();
-                let max_value = *distances.par_iter().max_by(|a, b| a.cmp(b)).unwrap() as f32;
-                distances
+                };
+                let eccentricity = result.get_eccentricity() as f32;
+                result
+                    .into_distances()
                     .into_par_iter()
                     .zip(node_embedding.par_iter_mut())
                     .for_each(|(distance, node_feature)| {
                         node_feature.push(if distance == NODE_NOT_PRESENT {
                             1.0
                         } else {
-                            distance as f32 / max_value
+                            distance as f32 / eccentricity
                         });
                     });
             }
