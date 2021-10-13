@@ -206,16 +206,6 @@ impl Graph {
                     concat!("The provided node centralities contain a NaN value.").to_string(),
                 );
             }
-            if node_centralities
-                .par_iter()
-                .any(|&node_centrality| node_centrality < 0.0 || node_centrality > 1.0)
-            {
-                return Err(concat!(
-                    "The provided node centralities contain a value ",
-                    "that is not not normalized between zero and one."
-                )
-                .to_string());
-            }
         }
 
         let mut node_embedding: Vec<Vec<f32>> = self.iter_node_ids().map(|_| Vec::new()).collect();
