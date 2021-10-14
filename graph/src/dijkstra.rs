@@ -670,6 +670,8 @@ impl Graph {
             frontier = frontier
                 .into_par_iter()
                 .flat_map_iter(|node_id| {
+                    // TODO!: The following line can be improved when the par iter is made
+                    // generally available also for the elias-fano graphs.
                     self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                 })
                 .filter_map(|neighbour_node_id| unsafe {

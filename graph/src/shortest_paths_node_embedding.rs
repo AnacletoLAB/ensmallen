@@ -1,6 +1,6 @@
 use super::*;
 use indicatif::ProgressIterator;
-use log::info;
+use log::println;
 use num_traits::Zero;
 use rayon::prelude::*;
 
@@ -73,16 +73,16 @@ impl Graph {
             validate_node_centralities.unwrap_or(true) && node_centralities.is_some();
         let random_state = random_state.unwrap_or(42);
         if node_centralities.is_none() {
-            info!("Computing node degree centralities.");
+            println!("Computing node degree centralities.");
         }
         let mut node_centralities = node_centralities.unwrap_or(self.get_degree_centrality()?);
         let adjust_by_central_node_distance = adjust_by_central_node_distance.unwrap_or(true);
 
         if adjust_by_central_node_distance {
-            info!("Computing most central node ID.");
+            println!("Computing most central node ID.");
             let most_central_node_id = self.get_most_central_node_id()?;
             if use_edge_weights {
-                info!("Computing weighted min-paths using Dijkstra for weighting centralities.");
+                println!("Computing weighted min-paths using Dijkstra for weighting centralities.");
                 unsafe {
                     self.get_unchecked_dijkstra_from_node_id(
                         most_central_node_id,
@@ -108,7 +108,7 @@ impl Graph {
                     }
                 });
             } else {
-                info!("Computing min-paths using BFS for weighting centralities.");
+                println!("Computing min-paths using BFS for weighting centralities.");
                 unsafe {
                     self.get_unchecked_breadth_first_search_distances_parallel_from_node_id(
                         most_central_node_id,
@@ -148,7 +148,7 @@ impl Graph {
                 self.get_random_node(random_state)
             };
             if use_edge_weights {
-                info!("Computing weighted min-paths using Dijkstra for masking centralities.");
+                println!("Computing weighted min-paths using Dijkstra for masking centralities.");
                 unsafe {
                     self.get_unchecked_dijkstra_from_node_id(
                         central_node_id,
@@ -168,7 +168,7 @@ impl Graph {
                     }
                 });
             } else {
-                info!("Computing min-paths using BFS for masking centralities.");
+                println!("Computing min-paths using BFS for masking centralities.");
                 unsafe {
                     self.get_unchecked_breadth_first_search_distances_parallel_from_node_id(
                         central_node_id,
@@ -197,7 +197,7 @@ impl Graph {
             ));
         }
         if validate_node_centralities {
-            info!("Validating node centralities.");
+            println!("Validating node centralities.");
             if node_centralities
                 .par_iter()
                 .any(|node_centrality| node_centrality.is_infinite())
@@ -217,18 +217,18 @@ impl Graph {
             }
         }
 
-        info!("Allocating node embedding vector.");
+        println!("Allocating node embedding vector.");
         let mut node_embedding: Vec<Vec<f32>> =
             self.par_iter_node_ids().map(|_| Vec::new()).collect();
         let mut anchor_node_names: Vec<Vec<String>> = Vec::new();
 
-        info!("Starting to compute node features.");
+        println!("Starting to compute node features.");
         for feature_number in (0..maximum_number_of_features).progress_with(pb) {
             let mut this_feature_anchor_node_names = Vec::new();
             let mut this_feature_anchor_node_ids = Vec::new();
 
             // Sample the new anchor node IDs
-            info!(
+            println!(
                 "Sampling anchor node IDs for node feature #{}.",
                 feature_number
             );
@@ -236,7 +236,9 @@ impl Graph {
                 // Getting the next anchor node ID
                 let (anchor_node_id, node_centrality) =
                     node_centralities.par_iter().argmax().unwrap();
-                // If the next best candidate is zero, we can stop the procedure.
+                // If the next best candidate node centtrality is zero,
+                // we can stop the procedure as we have already explored
+                // all of the nodes of interest.
                 if node_centrality.is_zero() {
                     break;
                 }
@@ -265,7 +267,7 @@ impl Graph {
 
             // Compute the node features
             if use_edge_weights {
-                info!(
+                println!(
                     "Computing weghted distances using Dijkstra for node feature #{}.",
                     feature_number
                 );
@@ -288,7 +290,7 @@ impl Graph {
                         node_feature.push((distance / eccentricity) as f32);
                     })
             } else {
-                info!(
+                println!(
                     "Computing distances using BFS for node feature #{}.",
                     feature_number
                 );
