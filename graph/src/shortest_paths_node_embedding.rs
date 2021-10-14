@@ -87,7 +87,7 @@ impl Graph {
             let most_central_node_id = self.get_most_central_node_id()?;
             if use_edge_weights {
                 println!("Computing weighted min-paths using Dijkstra for weighting centralities.");
-                unsafe {
+                let result = unsafe {
                     self.get_unchecked_dijkstra_from_node_id(
                         most_central_node_id,
                         None,
@@ -96,38 +96,42 @@ impl Graph {
                         None,
                         Some(use_edge_weights_as_probabilities),
                     )
-                }
-                .into_distances()
-                .into_par_iter()
-                .zip(node_centralities.par_iter_mut())
-                .for_each(|(distance, node_centrality)| {
-                    if use_edge_weights_as_probabilities {
-                        // If we are considering the distances as probabilities,
-                        // we want to multiply by the probability of the opposite event.
-                        *node_centrality *= 1.0 - distance;
-                    } else if distance.is_finite() {
-                        // If we are treating the computed distances as "normal" distances,
-                        // we want to multiply by the distance.
-                        *node_centrality *= distance;
-                    }
-                });
+                };
+                let eccentricity = result.get_eccentricity();
+                result
+                    .into_distances()
+                    .into_par_iter()
+                    .zip(node_centralities.par_iter_mut())
+                    .for_each(|(distance, node_centrality)| {
+                        if use_edge_weights_as_probabilities {
+                            // If we are considering the distances as probabilities,
+                            // we want to multiply by the probability of the opposite event.
+                            *node_centrality *= 1.0 - distance;
+                        } else if distance.is_finite() {
+                            // If we are treating the computed distances as "normal" distances,
+                            // we want to multiply by the distance.
+                            *node_centrality *= distance / eccentricity;
+                        }
+                    });
             } else {
                 println!("Computing min-paths using BFS for weighting centralities.");
-                unsafe {
+                let result = unsafe {
                     self.get_unchecked_breadth_first_search_distances_parallel_from_node_id(
                         most_central_node_id,
                         None,
                         Some(random_state),
                     )
-                }
-                .into_distances()
-                .into_par_iter()
-                .zip(node_centralities.par_iter_mut())
-                .for_each(|(distance, node_centrality)| {
-                    if distance != NODE_NOT_PRESENT {
-                        *node_centrality *= distance as f64;
-                    }
-                });
+                };
+                let eccentricity = result.get_eccentricity() as f64;
+                result
+                    .into_distances()
+                    .into_par_iter()
+                    .zip(node_centralities.par_iter_mut())
+                    .for_each(|(distance, node_centrality)| {
+                        if distance != NODE_NOT_PRESENT {
+                            *node_centrality *= distance as f64 / eccentricity;
+                        }
+                    });
             }
         }
 
@@ -238,26 +242,33 @@ impl Graph {
                 feature_number
             );
 
-            let this_feature_anchor_node_ids = {
-                let mut node_ids_and_centrality = node_centralities
-                    .par_iter()
-                    .cloned()
-                    .enumerate()
-                    .filter(|&(_, node_centrality)| node_centrality > 0.0)
-                    .map(|(node_id, node_centrality)| (node_id as NodeT, node_centrality))
-                    .collect::<Vec<(NodeT, f64)>>();
+            let this_feature_anchor_node_ids: Vec<NodeT> = {
+                let mut node_ids = self
+                    .par_iter_node_ids()
+                    .zip(node_centralities.par_iter().cloned())
+                    .filter_map(|(node_id, node_centrality)| {
+                        if node_centrality > 0.0 {
+                            Some(node_id)
+                        } else {
+                            None
+                        }
+                    })
+                    .collect::<Vec<NodeT>>();
 
-                if node_ids_and_centrality.is_empty() {
+                if node_ids.is_empty() {
                     break;
                 }
 
-                node_ids_and_centrality
-                    .par_sort_unstable_by(|(_, a), (_, b)| b.partial_cmp(a).unwrap());
-                node_ids_and_centrality
-                    .into_iter()
-                    .take(number_of_nodes_to_sample_per_feature as usize)
-                    .map(|(node_id, _)| node_id)
-                    .collect::<Vec<NodeT>>()
+                node_ids.par_sort_unstable_by(|&a, &b| {
+                    node_centralities[b as usize]
+                        .partial_cmp(&node_centralities[a as usize])
+                        .unwrap()
+                });
+
+                node_ids[..node_ids
+                    .len()
+                    .min(number_of_nodes_to_sample_per_feature as usize)]
+                    .to_vec()
             };
 
             {
