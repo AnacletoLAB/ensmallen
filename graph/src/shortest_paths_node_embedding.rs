@@ -21,6 +21,7 @@ impl Graph {
     /// * `max_neighbours`: Option<u64> - Maximum number of neighbours to sample per node. By default, all of them.
     /// * `random_state`: Option<u64> - The random state to use to sample the central node. By default 42.
     /// * `return_sampled_node_names`: Option<bool> - Whether to return the name of the sampled nodes. By default true if the `number_of_nodes_to_sample_per_feature` parameter is less than 100.
+    /// * `transposed`: Option<bool> - Whether to return the data transposed. Note that this saves a LOT of memory on huge graphs.
     /// * `verbose`: Option<bool> - Whether to show the loading bar. By default true.
     ///
     /// # Details on the supported node centrality distributions
@@ -62,6 +63,7 @@ impl Graph {
         max_neighbours: Option<u64>,
         random_state: Option<u64>,
         return_sampled_node_names: Option<bool>,
+        transposed: Option<bool>,
         verbose: Option<bool>,
     ) -> Result<(Vec<Vec<f32>>, Option<Vec<Vec<String>>>)> {
         let number_of_nodes_to_sample_per_feature =
@@ -95,6 +97,7 @@ impl Graph {
             println!("Computing node degree centralities.");
             node_centralities_distribution = Some("exponential");
         }
+        let transposed = transposed.unwrap_or(false);
         let mut node_centralities = node_centralities.unwrap_or(self.get_degree_centrality()?);
         let adjust_by_central_node_distance = adjust_by_central_node_distance.unwrap_or(true);
 
@@ -246,8 +249,11 @@ impl Graph {
         }
 
         println!("Allocating node embedding vector.");
-        let mut node_embedding: Vec<Vec<f32>> =
-            self.par_iter_node_ids().map(|_| Vec::new()).collect();
+        let mut node_embedding: Vec<Vec<f32>> = if transposed {
+            Vec::new()
+        } else {
+            self.par_iter_node_ids().map(|_| Vec::new()).collect()
+        };
         let mut anchor_node_names: Vec<Vec<String>> = Vec::new();
 
         println!("Starting to compute node features.");
@@ -398,17 +404,33 @@ impl Graph {
                     )
                 };
                 let eccentricity = result.get_eccentricity() as f32;
-                result
-                    .into_distances()
-                    .into_par_iter()
-                    .zip(node_embedding.par_iter_mut())
-                    .for_each(|(distance, node_feature)| {
-                        node_feature.push(if distance == NODE_NOT_PRESENT {
-                            1.0
-                        } else {
-                            distance as f32 / eccentricity
+                if transposed {
+                    node_embedding.push(
+                        result
+                            .into_distances()
+                            .into_par_iter()
+                            .map(|distance| {
+                                if distance == NODE_NOT_PRESENT {
+                                    1.0
+                                } else {
+                                    distance as f32 / eccentricity
+                                }
+                            })
+                            .collect(),
+                    );
+                } else {
+                    result
+                        .into_distances()
+                        .into_par_iter()
+                        .zip(node_embedding.par_iter_mut())
+                        .for_each(|(distance, node_feature)| {
+                            node_feature.push(if distance == NODE_NOT_PRESENT {
+                                1.0
+                            } else {
+                                distance as f32 / eccentricity
+                            });
                         });
-                    });
+                }
             }
         }
         Ok((
@@ -447,6 +469,7 @@ impl Graph {
     /// * `max_neighbours`: Option<u64> - Maximum number of neighbours to sample per node. By default, all of them.
     /// * `random_state`: Option<u64> - The random state to use to sample the central node. By default 42.
     /// * `return_sampled_node_names`: Option<bool> - Whether to return the name of the sampled nodes. By default true if the `number_of_nodes_to_sample_per_feature` parameter is less than 100.
+    /// * `transposed`: Option<bool> - Whether to return the data transposed. Note that this saves a LOT of memory on huge graphs.
     /// * `verbose`: Option<bool> - Whether to show the loading bar. By default true.
     ///
     /// # Raises
@@ -474,6 +497,7 @@ impl Graph {
         max_neighbours: Option<u64>,
         random_state: Option<u64>,
         return_sampled_node_names: Option<bool>,
+        transposed: Option<bool>,
         verbose: Option<bool>,
     ) -> Result<(Vec<Vec<f32>>, Option<Vec<Vec<String>>>)> {
         let validate_node_centralities =
@@ -530,6 +554,7 @@ impl Graph {
                     max_neighbours,
                     random_state,
                     Some(return_sampled_node_names),
+                    transposed,
                     Some(verbose),
                 )?;
             if let Some(mut this_anchor_node_names) = this_anchor_node_names {
