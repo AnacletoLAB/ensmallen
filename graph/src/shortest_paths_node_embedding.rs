@@ -259,16 +259,20 @@ impl Graph {
                     break;
                 }
 
-                node_ids.par_sort_unstable_by(|&a, &b| {
-                    node_centralities[b as usize]
-                        .partial_cmp(&node_centralities[a as usize])
-                        .unwrap()
-                });
+                if node_ids.len() == number_of_nodes_to_sample_per_feature as usize {
+                    node_ids
+                } else {
+                    node_ids.par_sort_unstable_by(|&a, &b| {
+                        node_centralities[b as usize]
+                            .partial_cmp(&node_centralities[a as usize])
+                            .unwrap()
+                    });
 
-                node_ids[..node_ids
-                    .len()
-                    .min(number_of_nodes_to_sample_per_feature as usize)]
-                    .to_vec()
+                    node_ids[..node_ids
+                        .len()
+                        .min(number_of_nodes_to_sample_per_feature as usize)]
+                        .to_vec()
+                }
             };
 
             {
