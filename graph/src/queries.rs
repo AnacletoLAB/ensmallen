@@ -588,7 +588,7 @@ impl Graph {
 
         node_ids.par_sort_unstable_by(|&a, &b| unsafe {
             self.get_unchecked_node_degree_from_node_id(b)
-                .cmp(&self.get_unchecked_node_degree_from_node_id(b))
+                .cmp(&self.get_unchecked_node_degree_from_node_id(a))
         });
         Ok(node_ids.into_iter().take(k as usize).collect())
     }
