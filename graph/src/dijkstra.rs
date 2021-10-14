@@ -674,6 +674,7 @@ impl Graph {
             eccentricity += 1;
             random_state += 1;
             most_distant_node = frontier[0];
+            println!("The current frontier length {}.", frontier.len());
             frontier = frontier
                 .into_par_iter()
                 .flat_map_iter(|node_id| {

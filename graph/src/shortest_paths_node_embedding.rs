@@ -268,12 +268,16 @@ impl Graph {
                             .unwrap()
                     });
 
-                    node_ids[..node_ids
+                    let this_feature_anchor_node_ids = node_ids[..node_ids
                         .len()
                         .min(number_of_nodes_to_sample_per_feature as usize)]
-                        .to_vec()
+                        .to_vec();
+                    drop(node_ids);
+                    this_feature_anchor_node_ids
                 }
             };
+
+            println!("Setting neighbouring nodes node centralities to zero.");
 
             {
                 let thread_shared_node_centralities = ThreadDataRaceAware {
