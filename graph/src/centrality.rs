@@ -21,6 +21,16 @@ impl Graph {
             .map(move |degree| degree as f64 / max_degree))
     }
 
+    /// Returns parallel iterator over the unweighted degree centrality for all nodes.
+    pub fn par_iter_degree_centrality(&self) -> Result<impl IndexedParallelIterator<Item = f64> + '_> {
+        self.must_have_edges()?;
+
+        let max_degree = unsafe { self.get_unchecked_maximum_node_degree() as f64 };
+        Ok(self
+            .par_iter_node_degrees()
+            .map(move |degree| degree as f64 / max_degree))
+    }
+
     /// Returns iterator over the weighted degree centrality for all nodes.
     pub fn par_iter_weighted_degree_centrality(
         &self,
@@ -36,12 +46,18 @@ impl Graph {
 
     /// Returns vector of unweighted degree centrality for all nodes.
     pub fn get_degree_centrality(&self) -> Result<Vec<f64>> {
-        Ok(self.iter_degree_centrality()?.collect())
+        let mut degree_centralities = vec![0.0; self.get_nodes_number() as usize];
+        self.par_iter_degree_centrality()?
+            .collect_into_vec(&mut degree_centralities);
+        Ok(degree_centralities)
     }
 
     /// Returns vector of weighted degree centrality for all nodes.
     pub fn get_weighted_degree_centrality(&self) -> Result<Vec<f64>> {
-        Ok(self.par_iter_weighted_degree_centrality()?.collect())
+        let mut weighted_degree_centralities = vec![0.0; self.get_nodes_number() as usize];
+        self.par_iter_weighted_degree_centrality()?
+            .collect_into_vec(&mut weighted_degree_centralities);
+        Ok(weighted_degree_centralities)
     }
 
     /// Return closeness centrality of the requested node.

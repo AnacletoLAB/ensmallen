@@ -18,6 +18,7 @@ impl Graph {
     /// * `central_node_id`: Option<NodeT> - The node ID from where to start sampling the BFS mask for the maximal depth. Either the node name of the node ID can be provided at once.
     /// * `use_edge_weights`: Option<bool> - Whether to use the edge weights to compute the min paths. By default false.
     /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to use the probabilities. By default false.
+    /// * `max_neighbours`: Option<u64> - Maximum number of neighbours to sample per node. By default, all of them.
     /// * `random_state`: Option<u64> - The random state to use to sample the central node. By default 42.
     /// * `verbose`: Option<bool> - Whether to show the loading bar. By default true.
     ///
@@ -43,6 +44,7 @@ impl Graph {
         central_node_id: Option<NodeT>,
         use_edge_weights: Option<bool>,
         use_edge_weights_as_probabilities: Option<bool>,
+        max_neighbours: Option<u64>,
         random_state: Option<u64>,
         verbose: Option<bool>,
     ) -> Result<(Vec<Vec<f32>>, Vec<Vec<String>>)> {
@@ -111,6 +113,8 @@ impl Graph {
                 unsafe {
                     self.get_unchecked_breadth_first_search_distances_parallel_from_node_id(
                         most_central_node_id,
+                        None,
+                        Some(random_state),
                     )
                 }
                 .into_distances()
@@ -171,6 +175,8 @@ impl Graph {
                 unsafe {
                     self.get_unchecked_breadth_first_search_distances_parallel_from_node_id(
                         central_node_id,
+                        max_neighbours,
+                        Some(random_state),
                     )
                 }
                 .into_distances()
@@ -296,6 +302,8 @@ impl Graph {
                 let result = unsafe {
                     self.get_unchecked_breadth_first_search_distances_parallel_from_node_ids(
                         this_feature_anchor_node_ids,
+                        None,
+                        None,
                     )
                 };
                 let eccentricity = result.get_eccentricity() as f32;
@@ -337,6 +345,7 @@ impl Graph {
     /// * `central_node_id`: Option<NodeT> - The node ID from where to start sampling the BFS mask for the maximal depth. Either the node name of the node ID can be provided at once.
     /// * `use_edge_weights`: Option<bool> - Whether to use the edge weights to compute the min paths. By default false.
     /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to use the probabilities. By default false.
+    /// * `max_neighbours`: Option<u64> - Maximum number of neighbours to sample per node. By default, all of them.
     /// * `random_state`: Option<u64> - The random state to use to sample the central node. By default 42.
     /// * `verbose`: Option<bool> - Whether to show the loading bar. By default true.
     ///
@@ -361,6 +370,7 @@ impl Graph {
         central_node_id: Option<NodeT>,
         use_edge_weights: Option<bool>,
         use_edge_weights_as_probabilities: Option<bool>,
+        max_neighbours: Option<u64>,
         random_state: Option<u64>,
         verbose: Option<bool>,
     ) -> Result<(Vec<Vec<f32>>, Vec<Vec<String>>)> {
@@ -410,6 +420,7 @@ impl Graph {
                     central_node_id,
                     use_edge_weights,
                     use_edge_weights_as_probabilities,
+                    max_neighbours,
                     random_state,
                     Some(verbose),
                 )?;
