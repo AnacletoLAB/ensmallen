@@ -7,7 +7,8 @@ impl Graph {
     /// Return node embedding vector obtained from shortest-paths.
     ///
     /// # Arguments
-    /// * `node_centralities`: Option<Vec<f64>> - Vector with the importance of the nodes, used to properly sample the anchors. By default node degree centralities are used. Nodes with node centrality zero won't ever be sampled as an anchor, except for when all other nodes were already sampled.
+    /// * `node_centralities`: Option<Vec<f32>> - Vector with the importance of the nodes, used to properly sample the anchors. By default node degree centralities are used. Nodes with node centrality zero won't ever be sampled as an anchor, except for when all other nodes were already sampled.
+    /// * `node_centralities_distribution`: Option<&str> - Distribution expected out of the provided node centralities distribution. If no distribution is provided and no node centralities are provided, exponential is used as the default node centrality distribution as node degree centrality is employed as centrality.
     /// * `adjust_by_central_node_distance`: Option<bool> - Whether to adjust the node eccentricity by the normalized distance to the most central node. By default true.
     /// * `number_of_nodes_to_sample_per_feature`: Option<NodeT> - Number of nodes to sample per feature. By default 10.
     /// * `maximum_number_of_features`: Option<usize> - Maximum number of node features to generate. By default 50.
@@ -22,6 +23,19 @@ impl Graph {
     /// * `return_sampled_node_names`: Option<bool> - Whether to return the name of the sampled nodes. By default true if the `number_of_nodes_to_sample_per_feature` parameter is less than 100.
     /// * `verbose`: Option<bool> - Whether to show the loading bar. By default true.
     ///
+    /// # Details on the supported node centrality distributions
+    /// The node centrality distributions are used to find an optimal threshold that avoids
+    /// sorting nodes that include also non-useful nodes, that is nodes that we will never
+    /// be interested in sampling. We currently support the following node centrality distributions:
+    ///
+    /// ## Exponential
+    /// The most common distribution for node centralities is the exponential distribution.
+    /// Most likely, your node centralities will follow this distribution.
+    ///
+    /// ## Unknown
+    /// For now we do not have support for other distributions implemented, so if the distribution
+    /// is not expected to be one of the aforementioned distributions we will use zero as a threshold.
+    ///
     /// # Raises
     /// * If the provided node centralities are not provided for all features.
     /// * If the provided node centralities contain illegal values, like NaNs or infinities.
@@ -34,7 +48,8 @@ impl Graph {
     /// TODO: Add parallelization for Dijkstra
     pub fn get_shortest_paths_node_embedding(
         &self,
-        node_centralities: Option<Vec<f64>>,
+        node_centralities: Option<Vec<f32>>,
+        mut node_centralities_distribution: Option<&str>,
         adjust_by_central_node_distance: Option<bool>,
         number_of_nodes_to_sample_per_feature: Option<NodeT>,
         maximum_number_of_features: Option<usize>,
@@ -78,6 +93,7 @@ impl Graph {
         let random_state = random_state.unwrap_or(42);
         if node_centralities.is_none() {
             println!("Computing node degree centralities.");
+            node_centralities_distribution = Some("exponential");
         }
         let mut node_centralities = node_centralities.unwrap_or(self.get_degree_centrality()?);
         let adjust_by_central_node_distance = adjust_by_central_node_distance.unwrap_or(true);
@@ -97,7 +113,7 @@ impl Graph {
                         Some(use_edge_weights_as_probabilities),
                     )
                 };
-                let eccentricity = result.get_eccentricity();
+                let eccentricity = result.get_eccentricity() as f32;
                 result
                     .into_distances()
                     .into_par_iter()
@@ -106,11 +122,11 @@ impl Graph {
                         if use_edge_weights_as_probabilities {
                             // If we are considering the distances as probabilities,
                             // we want to multiply by the probability of the opposite event.
-                            *node_centrality *= 1.0 - distance;
+                            *node_centrality *= 1.0 - distance as f32;
                         } else if distance.is_finite() {
                             // If we are treating the computed distances as "normal" distances,
                             // we want to multiply by the distance.
-                            *node_centrality *= distance / eccentricity;
+                            *node_centrality *= distance as f32 / eccentricity;
                         }
                     });
             } else {
@@ -122,14 +138,14 @@ impl Graph {
                         Some(random_state),
                     )
                 };
-                let eccentricity = result.get_eccentricity() as f64;
+                let eccentricity = result.get_eccentricity() as f32;
                 result
                     .into_distances()
                     .into_par_iter()
                     .zip(node_centralities.par_iter_mut())
                     .for_each(|(distance, node_centrality)| {
                         if distance != NODE_NOT_PRESENT {
-                            *node_centrality *= distance as f64 / eccentricity;
+                            *node_centrality *= distance as f32 / eccentricity;
                         }
                     });
             }
@@ -183,7 +199,7 @@ impl Graph {
                     self.get_unchecked_breadth_first_search_distances_parallel_from_node_id(
                         central_node_id,
                         None,
-                        None
+                        None,
                     )
                 }
                 .into_distances()
@@ -243,11 +259,40 @@ impl Graph {
             );
 
             let this_feature_anchor_node_ids: Vec<NodeT> = {
+                let threshold =
+                    if let Some(node_centralities_distribution) = node_centralities_distribution {
+                        match node_centralities_distribution {
+                            "exponential" => {
+                                let total_nodes_centrality = node_centralities
+                                    .par_iter()
+                                    .cloned()
+                                    .map(|node_centrality| node_centrality as f64)
+                                    .sum::<f64>();
+                                let mean_nodes_centrality =
+                                    total_nodes_centrality / self.get_nodes_number() as f64;
+                                (mean_nodes_centrality
+                                    * (-(number_of_nodes_to_sample_per_feature as f64
+                                        / self.get_nodes_number() as f64)
+                                        .ln())) as f32
+                            }
+                            distribution => {
+                                return Err(format!(
+                                    concat!(
+                                "The supported distributions currently are only `exponential`. ",
+                                "You have provided as node centralities distribution {}."
+                            ),
+                                    distribution
+                                ));
+                            }
+                        }
+                    } else {
+                        0.0
+                    };
                 let mut node_ids = self
                     .par_iter_node_ids()
                     .zip(node_centralities.par_iter().cloned())
                     .filter_map(|(node_id, node_centrality)| {
-                        if node_centrality > 0.0 {
+                        if node_centrality > threshold {
                             Some(node_id)
                         } else {
                             None
@@ -388,7 +433,8 @@ impl Graph {
     /// diameter. This is generally an acceptable heuristic.
     ///
     /// # Arguments
-    /// * `node_centralities`: Option<Vec<f64>> - Vector with the importance of the nodes, used to properly sample the anchors. By default node degree centralities are used. Nodes with node centrality zero won't ever be sampled as an anchor, except for when all other nodes were already sampled.
+    /// * `node_centralities`: Option<Vec<f32>> - Vector with the importance of the nodes, used to properly sample the anchors. By default node degree centralities are used. Nodes with node centrality zero won't ever be sampled as an anchor, except for when all other nodes were already sampled.
+    /// * `node_centralities_distribution`: Option<&str> - Distribution expected out of the provided node centralities distribution. If no distribution is provided and no node centralities are provided, exponential is used as the default node centrality distribution as node degree centrality is employed as centrality.
     /// * `adjust_by_central_node_distance`: Option<bool> - Whether to adjust the node eccentricity by the normalized distance to the most central node. By default true.
     /// * `number_of_nodes_to_sample_per_feature`: Option<NodeT> - Number of nodes to sample per feature. By default 10.
     /// * `maximum_number_of_features_per_node_type`: Option<usize> - Maximum number of node features to generate. By default 50.
@@ -414,7 +460,8 @@ impl Graph {
     ///
     pub fn get_shortest_paths_node_embedding_per_node_type(
         &self,
-        node_centralities: Option<Vec<f64>>,
+        node_centralities: Option<Vec<f32>>,
+        node_centralities_distribution: Option<&str>,
         adjust_by_central_node_distance: Option<bool>,
         number_of_nodes_to_sample_per_feature: Option<NodeT>,
         maximum_number_of_features_per_node_type: Option<usize>,
@@ -468,8 +515,9 @@ impl Graph {
                                 }
                                 0.0
                             })
-                            .collect::<Vec<f64>>(),
+                            .collect::<Vec<f32>>(),
                     ),
+                    node_centralities_distribution,
                     adjust_by_central_node_distance,
                     Some(number_of_nodes_to_sample_per_feature),
                     maximum_number_of_features_per_node_type,

@@ -12,23 +12,23 @@ use std::sync::atomic::Ordering;
 
 impl Graph {
     /// Returns iterator over the unweighted degree centrality for all nodes.
-    pub fn iter_degree_centrality(&self) -> Result<impl Iterator<Item = f64> + '_> {
+    pub fn iter_degree_centrality(&self) -> Result<impl Iterator<Item = f32> + '_> {
         self.must_have_edges()?;
 
-        let max_degree = unsafe { self.get_unchecked_maximum_node_degree() as f64 };
+        let max_degree = unsafe { self.get_unchecked_maximum_node_degree() as f32 };
         Ok(self
             .iter_node_degrees()
-            .map(move |degree| degree as f64 / max_degree))
+            .map(move |degree| degree as f32 / max_degree))
     }
 
     /// Returns parallel iterator over the unweighted degree centrality for all nodes.
-    pub fn par_iter_degree_centrality(&self) -> Result<impl IndexedParallelIterator<Item = f64> + '_> {
+    pub fn par_iter_degree_centrality(&self) -> Result<impl IndexedParallelIterator<Item = f32> + '_> {
         self.must_have_edges()?;
 
-        let max_degree = unsafe { self.get_unchecked_maximum_node_degree() as f64 };
+        let max_degree = unsafe { self.get_unchecked_maximum_node_degree() as f32 };
         Ok(self
             .par_iter_node_degrees()
-            .map(move |degree| degree as f64 / max_degree))
+            .map(move |degree| degree as f32 / max_degree))
     }
 
     /// Returns iterator over the weighted degree centrality for all nodes.
@@ -45,7 +45,7 @@ impl Graph {
     }
 
     /// Returns vector of unweighted degree centrality for all nodes.
-    pub fn get_degree_centrality(&self) -> Result<Vec<f64>> {
+    pub fn get_degree_centrality(&self) -> Result<Vec<f32>> {
         let mut degree_centralities = vec![0.0; self.get_nodes_number() as usize];
         self.par_iter_degree_centrality()?
             .collect_into_vec(&mut degree_centralities);
