@@ -1,6 +1,5 @@
 use super::*;
 use indicatif::ProgressIterator;
-use log::println;
 use num_traits::Zero;
 use rayon::prelude::*;
 
