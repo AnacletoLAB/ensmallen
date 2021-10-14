@@ -182,8 +182,8 @@ impl Graph {
                 unsafe {
                     self.get_unchecked_breadth_first_search_distances_parallel_from_node_id(
                         central_node_id,
-                        max_neighbours,
-                        Some(random_state),
+                        None,
+                        None
                     )
                 }
                 .into_distances()
@@ -348,8 +348,8 @@ impl Graph {
                 let result = unsafe {
                     self.get_unchecked_breadth_first_search_distances_parallel_from_node_ids(
                         this_feature_anchor_node_ids,
-                        None,
-                        None,
+                        max_neighbours,
+                        Some(random_state),
                     )
                 };
                 let eccentricity = result.get_eccentricity() as f32;
