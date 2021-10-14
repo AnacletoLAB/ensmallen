@@ -1,6 +1,5 @@
 use super::*;
 use indicatif::ProgressIterator;
-use num_traits::Zero;
 use rayon::prelude::*;
 
 /// # Shortest path node embedding-based algorithms.
@@ -20,6 +19,7 @@ impl Graph {
     /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to use the probabilities. By default false.
     /// * `max_neighbours`: Option<u64> - Maximum number of neighbours to sample per node. By default, all of them.
     /// * `random_state`: Option<u64> - The random state to use to sample the central node. By default 42.
+    /// * `return_sampled_node_names`: Option<bool> - Whether to return the name of the sampled nodes. By default true if the `number_of_nodes_to_sample_per_feature` parameter is less than 100.
     /// * `verbose`: Option<bool> - Whether to show the loading bar. By default true.
     ///
     /// # Raises
@@ -46,10 +46,13 @@ impl Graph {
         use_edge_weights_as_probabilities: Option<bool>,
         max_neighbours: Option<u64>,
         random_state: Option<u64>,
+        return_sampled_node_names: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<(Vec<Vec<f32>>, Vec<Vec<String>>)> {
+    ) -> Result<(Vec<Vec<f32>>, Option<Vec<Vec<String>>>)> {
         let number_of_nodes_to_sample_per_feature =
             number_of_nodes_to_sample_per_feature.unwrap_or(10);
+        let return_sampled_node_names =
+            return_sampled_node_names.unwrap_or(number_of_nodes_to_sample_per_feature < 100);
         if number_of_nodes_to_sample_per_feature == 0 {
             return Err(
                 "The maximum number of nodes to sample per feature cannot be zero.".to_string(),
@@ -229,45 +232,69 @@ impl Graph {
 
         println!("Starting to compute node features.");
         for feature_number in (0..maximum_number_of_features).progress_with(pb) {
-            let mut this_feature_anchor_node_names = Vec::new();
-            let mut this_feature_anchor_node_ids = Vec::new();
-
             // Sample the new anchor node IDs
             println!(
                 "Sampling anchor node IDs for node feature #{}.",
                 feature_number
             );
-            for _ in 0..number_of_nodes_to_sample_per_feature {
-                // Getting the next anchor node ID
-                let (anchor_node_id, node_centrality) =
-                    node_centralities.par_iter().argmax().unwrap();
-                // If the next best candidate node centtrality is zero,
-                // we can stop the procedure as we have already explored
-                // all of the nodes of interest.
-                if node_centrality.is_zero() {
+
+            let this_feature_anchor_node_ids = {
+                let mut node_ids_and_centrality = node_centralities
+                    .par_iter()
+                    .cloned()
+                    .enumerate()
+                    .filter(|&(_, node_centrality)| node_centrality > 0.0)
+                    .map(|(node_id, node_centrality)| (node_id as NodeT, node_centrality))
+                    .collect::<Vec<(NodeT, f64)>>();
+
+                if node_ids_and_centrality.is_empty() {
                     break;
                 }
-                let anchor_node_id = anchor_node_id as NodeT;
-                // Add the node name to the list of nodes used to build this
-                // node feature.
-                this_feature_anchor_node_names
-                    .push(unsafe { self.get_unchecked_node_name_from_node_id(anchor_node_id) });
-                this_feature_anchor_node_ids.push(anchor_node_id);
-                // Set centrality zero to the node and the neighbouring nodes
-                // so we do not re-sample nodes that would produce extremely similar features.
-                node_centralities[anchor_node_id as usize] = 0.0;
-                unsafe {
-                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(anchor_node_id)
-                        .for_each(|neighbour_node_id| {
-                            node_centralities[neighbour_node_id as usize] = 0.0;
-                        });
-                };
-            }
 
-            if this_feature_anchor_node_names.is_empty() {
-                break;
-            } else {
-                anchor_node_names.push(this_feature_anchor_node_names);
+                node_ids_and_centrality
+                    .par_sort_unstable_by(|(_, a), (_, b)| b.partial_cmp(a).unwrap());
+                node_ids_and_centrality
+                    .into_iter()
+                    .take(number_of_nodes_to_sample_per_feature as usize)
+                    .map(|(node_id, _)| node_id)
+                    .collect::<Vec<NodeT>>()
+            };
+
+            {
+                let thread_shared_node_centralities = ThreadDataRaceAware {
+                    value: std::cell::UnsafeCell::new(&mut node_centralities),
+                };
+
+                // Update the centralities vector, setting sampled nodes centralities to zero.
+                this_feature_anchor_node_ids.par_iter().cloned().for_each(
+                    |anchor_node_id| unsafe {
+                        // Set centrality zero to the node and the neighbouring nodes
+                        // so we do not re-sample nodes that would produce extremely similar features.
+                        (*thread_shared_node_centralities.value.get())[anchor_node_id as usize] =
+                            0.0;
+                        // TODO! Update this when parallel iterator over neighbours is made available!
+                        self.iter_unchecked_neighbour_node_ids_from_source_node_id(anchor_node_id)
+                            .for_each(|neighbour_node_id| {
+                                (*thread_shared_node_centralities.value.get())
+                                    [neighbour_node_id as usize] = 0.0;
+                            });
+                    },
+                );
+            };
+
+            // If the node names are to be returned, we compute them.
+            if return_sampled_node_names {
+                println!("Retrieving the sampled node names");
+                let mut this_anchor_node_names =
+                    vec!["".to_string(); this_feature_anchor_node_ids.len()];
+                this_feature_anchor_node_ids
+                    .par_iter()
+                    .cloned()
+                    .map(|anchor_node_id| unsafe {
+                        self.get_unchecked_node_name_from_node_id(anchor_node_id)
+                    })
+                    .collect_into_vec(&mut this_anchor_node_names);
+                anchor_node_names.push(this_anchor_node_names);
             }
 
             // Compute the node features
@@ -320,7 +347,14 @@ impl Graph {
                     });
             }
         }
-        Ok((node_embedding, anchor_node_names))
+        Ok((
+            node_embedding,
+            if return_sampled_node_names {
+                Some(anchor_node_names)
+            } else {
+                None
+            },
+        ))
     }
 
     /// Return node embedding vector obtained from shortest-paths.
@@ -347,6 +381,7 @@ impl Graph {
     /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to use the probabilities. By default false.
     /// * `max_neighbours`: Option<u64> - Maximum number of neighbours to sample per node. By default, all of them.
     /// * `random_state`: Option<u64> - The random state to use to sample the central node. By default 42.
+    /// * `return_sampled_node_names`: Option<bool> - Whether to return the name of the sampled nodes. By default true if the `number_of_nodes_to_sample_per_feature` parameter is less than 100.
     /// * `verbose`: Option<bool> - Whether to show the loading bar. By default true.
     ///
     /// # Raises
@@ -372,12 +407,17 @@ impl Graph {
         use_edge_weights_as_probabilities: Option<bool>,
         max_neighbours: Option<u64>,
         random_state: Option<u64>,
+        return_sampled_node_names: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<(Vec<Vec<f32>>, Vec<Vec<String>>)> {
+    ) -> Result<(Vec<Vec<f32>>, Option<Vec<Vec<String>>>)> {
         let validate_node_centralities =
             validate_node_centralities.unwrap_or(node_centralities.is_some());
         let node_centralities = node_centralities.unwrap_or(self.get_degree_centrality()?);
         let verbose = verbose.unwrap_or(true);
+        let number_of_nodes_to_sample_per_feature =
+            number_of_nodes_to_sample_per_feature.unwrap_or(10);
+        let return_sampled_node_names =
+            return_sampled_node_names.unwrap_or(number_of_nodes_to_sample_per_feature < 100);
         let pb = get_loading_bar(
             verbose,
             "Obtaining paths embedding per node-type",
@@ -391,7 +431,7 @@ impl Graph {
             .zip(self.iter_unique_node_type_names()?)
             .progress_with(pb)
         {
-            let (this_node_embedding, mut this_anchor_node_names) = self
+            let (this_node_embedding, this_anchor_node_names) = self
                 .get_shortest_paths_node_embedding(
                     Some(
                         node_centralities
@@ -412,7 +452,7 @@ impl Graph {
                             .collect::<Vec<f64>>(),
                     ),
                     adjust_by_central_node_distance,
-                    number_of_nodes_to_sample_per_feature,
+                    Some(number_of_nodes_to_sample_per_feature),
                     maximum_number_of_features_per_node_type,
                     Some(validate_node_centralities),
                     maximal_depth,
@@ -422,12 +462,16 @@ impl Graph {
                     use_edge_weights_as_probabilities,
                     max_neighbours,
                     random_state,
+                    Some(return_sampled_node_names),
                     Some(verbose),
                 )?;
-            this_anchor_node_names
-                .iter_mut()
-                .for_each(|anchors| anchors.push(node_type_name.clone()));
-            anchor_node_names.extend(this_anchor_node_names);
+            if let Some(mut this_anchor_node_names) = this_anchor_node_names {
+                this_anchor_node_names
+                    .iter_mut()
+                    .for_each(|anchors| anchors.push(node_type_name.clone()));
+                anchor_node_names.extend(this_anchor_node_names);
+            }
+
             node_embedding
                 .par_iter_mut()
                 .zip(this_node_embedding.into_par_iter())
@@ -435,6 +479,13 @@ impl Graph {
                     node_features.extend(this_node_features);
                 });
         }
-        Ok((node_embedding, anchor_node_names))
+        Ok((
+            node_embedding,
+            if return_sampled_node_names {
+                Some(anchor_node_names)
+            } else {
+                None
+            },
+        ))
     }
 }
