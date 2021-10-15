@@ -6,7 +6,6 @@ use std::cmp::Ord;
 use std::collections::VecDeque;
 use std::hash::{Hash, Hasher};
 use std::string::ToString;
-use vec_rand::sorted_unique_sub_sampling;
 
 #[derive(Hash, Clone, Debug)]
 pub struct ShortestPathsResultBFS {
@@ -644,8 +643,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `src_node_ids`: Vec<NodeT> - Roots of the tree of minimum paths.
-    /// * `max_neighbours`: Option<u64> - Maximum number of neighbours to sample per node. By default, all of them.
-    /// * `random_state`: Option<u64> - Random state to use to sample the neighbours. By default, 42.
+    /// * `maximal_depth`: Option<NodeT> - The maximal depth to run the BFS for.
     ///
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
@@ -654,8 +652,7 @@ impl Graph {
     pub unsafe fn get_unchecked_breadth_first_search_distances_parallel_from_node_ids(
         &self,
         src_node_ids: Vec<NodeT>,
-        max_neighbours: Option<u64>,
-        random_state: Option<u64>,
+        maximal_depth: Option<NodeT>,
     ) -> ShortestPathsResultBFS {
         let nodes_number = self.get_nodes_number() as usize;
         let thread_shared_distances = ThreadDataRaceAware {
@@ -666,74 +663,23 @@ impl Graph {
         }
         let mut eccentricity = 0;
         let mut most_distant_node = src_node_ids[0];
-        let mut random_state = random_state.unwrap_or(42);
 
         let mut frontier = src_node_ids;
 
         while !frontier.is_empty() {
             eccentricity += 1;
-            random_state += 1;
             most_distant_node = frontier[0];
-            println!("The current frontier length {}.", frontier.len());
+            if maximal_depth.map_or(false, |maximal_depth| maximal_depth > eccentricity) {
+                break;
+            }
+
             frontier = frontier
                 .into_par_iter()
                 .flat_map_iter(|node_id| {
                     // TODO!: The following line can be improved when the par iter is made
                     // generally available also for the elias-fano graphs.
-                    let iterator: Box<dyn Iterator<Item = NodeT> + '_> =
-                        if let Some(max_neighbours) = max_neighbours {
-                            let node_degree = self.get_unchecked_node_degree_from_node_id(node_id);
-                            if let Some(indices) = sorted_unique_sub_sampling(
-                                0,
-                                node_degree as u64,
-                                max_neighbours,
-                                random_state,
-                            )
-                            .ok()
-                            {
-                                let mut j = 0;
-                                Box::new(
-                                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(
-                                        node_id,
-                                    )
-                                    .filter(|&neighbour_node_id| {
-                                        (*thread_shared_distances.value.get())
-                                            [neighbour_node_id as usize]
-                                            != NODE_NOT_PRESENT
-                                    })
-                                    .enumerate()
-                                    .filter_map(
-                                        move |(i, node_id)| {
-                                            while j < max_neighbours {
-                                                match (i as u64).cmp(&indices[j as usize]) {
-                                                    std::cmp::Ordering::Equal => {
-                                                        return Some(node_id);
-                                                    }
-                                                    std::cmp::Ordering::Less => {
-                                                        return None;
-                                                    }
-                                                    std::cmp::Ordering::Greater => {
-                                                        j += 1;
-                                                    }
-                                                }
-                                            }
-                                            None
-                                        },
-                                    ),
-                                )
-                            } else {
-                                Box::new(
-                                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(
-                                        node_id,
-                                    ),
-                                )
-                            }
-                        } else {
-                            Box::new(
-                                self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id),
-                            )
-                        };
-                    iterator
+
+                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                 })
                 .filter_map(|neighbour_node_id| unsafe {
                     if (*thread_shared_distances.value.get())[neighbour_node_id as usize]
@@ -763,8 +709,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `src_node_id`: NodeT - Root of the tree of minimum paths.
-    /// * `max_neighbours`: Option<u64> - Maximum number of neighbours to sample per node. By default, all of them.
-    /// * `random_state`: Option<u64> - Random state to use to sample the neighbours. By default, 42.
+    /// * `maximal_depth`: Option<NodeT> - The maximal depth to run the BFS for.
     ///
     /// # Safety
     /// If any of the given node ID does not exist in the graph the method will panic.
@@ -772,13 +717,11 @@ impl Graph {
     pub unsafe fn get_unchecked_breadth_first_search_distances_parallel_from_node_id(
         &self,
         src_node_id: NodeT,
-        max_neighbours: Option<u64>,
-        random_state: Option<u64>,
+        maximal_depth: Option<NodeT>,
     ) -> ShortestPathsResultBFS {
         self.get_unchecked_breadth_first_search_distances_parallel_from_node_ids(
             vec![src_node_id],
-            max_neighbours,
-            random_state,
+            maximal_depth,
         )
     }
 
@@ -1955,7 +1898,6 @@ impl Graph {
         let bfs = unsafe {
             self.get_unchecked_breadth_first_search_distances_parallel_from_node_id(
                 low_eccentricity_node,
-                None,
                 None,
             )
         };

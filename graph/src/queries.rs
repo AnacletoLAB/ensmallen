@@ -574,11 +574,12 @@ impl Graph {
         if !self.has_nodes() {
             return Err("The node degrees are not well defined in an empty graph.".to_string());
         }
+        let threshold = self.get_node_degree_geometric_distribution_threshold(k);
         let mut node_ids = self
             .par_iter_node_degrees()
             .enumerate()
             .filter_map(|(node_id, node_degree)| {
-                if node_degree > 0 {
+                if node_degree as f64 > threshold {
                     Some(node_id as NodeT)
                 } else {
                     None
