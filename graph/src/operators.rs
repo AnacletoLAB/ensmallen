@@ -1,7 +1,7 @@
-use rayon::iter::{IntoParallelIterator, ParallelIterator, IndexedParallelIterator};
 use crate::constructors::{
     build_graph_from_integers, build_graph_from_strings_without_type_iterators,
 };
+use rayon::iter::{IndexedParallelIterator, IntoParallelIterator, ParallelIterator};
 
 use super::*;
 use std::ops;

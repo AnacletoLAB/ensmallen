@@ -42664,7 +42664,11 @@ pub fn get_node_source_html_url_from_node_name(node_name: &str) -> String {
 /// * `node_type_name`: &str - Node name to query for.
 pub fn get_node_type_source_html_url_from_node_type_name(node_type_name: &str) -> String {
     match get_node_type_source_url_from_node_type_name(node_type_name) {
-        Ok(url) => get_url_formatted(url.as_str(), node_type_name, get_node_type_repository_from_node_type_name(node_type_name).ok()),
+        Ok(url) => get_url_formatted(
+            url.as_str(),
+            node_type_name,
+            get_node_type_repository_from_node_type_name(node_type_name).ok(),
+        ),
         Err(_) => escape(node_type_name).to_string(),
     }
 }

@@ -21,7 +21,7 @@ pub(crate) struct PropertyCache {
     pub(crate) unique_directed_edges_number: Option<EdgeT>,
     pub(crate) diameter: Option<Result<f64>>,
     pub(crate) weighted_diameter: Option<Result<f64>>,
-    pub(crate) is_connected: Option<bool>
+    pub(crate) is_connected: Option<bool>,
 }
 
 impl Default for PropertyCache {
@@ -46,7 +46,7 @@ impl Default for PropertyCache {
             unique_directed_edges_number: None,
             diameter: None,
             weighted_diameter: None,
-            is_connected: None
+            is_connected: None,
         }
     }
 }

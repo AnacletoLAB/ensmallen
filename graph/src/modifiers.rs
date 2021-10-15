@@ -13,7 +13,7 @@ impl Graph {
         vector_sources: Option<bool>,
         vector_destinations: Option<bool>,
         vector_cumulative_node_degrees: Option<bool>,
-        vector_reciprocal_sqrt_degrees: Option<bool>
+        vector_reciprocal_sqrt_degrees: Option<bool>,
     ) -> Result<()> {
         let vector_sources = vector_sources.unwrap_or(false);
         let vector_destinations = vector_destinations.unwrap_or(true);

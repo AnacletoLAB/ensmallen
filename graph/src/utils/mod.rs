@@ -201,7 +201,6 @@ pub fn parse_weight(weight: String) -> Result<WeightT> {
         .map_err(|_| format!("Cannot parse weight {} as a float.", weight))
 }
 
-
 /// Convert a strig to integer ASSUMING IT IS CORRECT
 pub fn atoi_c(val: &str) -> u32 {
     let mut result: u32 = 0;
@@ -217,7 +216,6 @@ pub trait ToAtomicVec<T> {
 pub trait RemoveAtomicVec<T> {
     fn remove_atomic(self: Self) -> Vec<T>;
 }
-
 
 #[macro_export]
 /// Create a vector of atomic using a default value.
@@ -236,7 +234,7 @@ macro_rules! impl_to_atomic_vec {
                 unsafe { std::mem::transmute::<Vec<$atomic_type>, Vec<$normal_type>>(self) }
             }
         }
-    }
+    };
 }
 
 impl_to_atomic_vec!(std::sync::atomic::AtomicU8, u8);

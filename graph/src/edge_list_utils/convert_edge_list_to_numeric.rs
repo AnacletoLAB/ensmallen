@@ -227,7 +227,7 @@ pub fn convert_edge_list_to_numeric(
                 Some(edge_type_file_reader.has_numeric_type_ids()),
                 edge_type_file_reader.get_minimum_type_id(),
                 true,
-                edge_type_list_is_correct
+                edge_type_list_is_correct,
             )?
             .unwrap();
             edge_types_vocabulary
@@ -552,7 +552,7 @@ pub fn densify_sparse_numeric_edge_list(
                 Some(edge_type_file_reader.has_numeric_type_ids()),
                 edge_type_file_reader.get_minimum_type_id(),
                 true,
-                edge_type_list_is_correct
+                edge_type_list_is_correct,
             )?
             .unwrap();
             edge_types_vocabulary

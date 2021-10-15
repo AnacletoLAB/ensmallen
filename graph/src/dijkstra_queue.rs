@@ -1,5 +1,5 @@
-use tags::*;
 use super::*;
+use tags::*;
 
 #[derive(Debug)]
 /// Reference classic binary heap

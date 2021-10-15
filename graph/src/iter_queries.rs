@@ -83,6 +83,31 @@ impl Graph {
             .unwrap()
     }
 
+    /// Returns iterator over the edge types that have given node ID as source.
+    ///
+    /// This method assumes that the given source node ID exists in the graph.
+    /// Additionally it assumes that the graph has edge types.
+    /// If either one of the above assumptions are not true, it will panic.
+    ///
+    /// # Arguments
+    /// * `source_node_id`: NodeT - The source node whose weights are to be returned.
+    ///
+    /// # Safety
+    /// If the given node ID does not exist in the graph the method will panic.
+    pub unsafe fn iter_unchecked_edge_types_from_source_node_id(
+        &self,
+        source_node_id: NodeT,
+    ) -> impl Iterator<Item = Option<EdgeTypeT>> + '_ {
+        self.edge_types
+            .as_ref()
+            .map(|edge_types| {
+                edge_types.ids[self.iter_unchecked_edge_ids_from_source_node_id(source_node_id)]
+                    .iter()
+                    .cloned()
+            })
+            .unwrap()
+    }
+
     /// Returns iterator over the edge weights that have given node ID as destination.
     ///
     /// This method assumes that the given destination node ID exists in the graph.

@@ -22,7 +22,9 @@ impl Graph {
     }
 
     /// Returns parallel iterator over the unweighted degree centrality for all nodes.
-    pub fn par_iter_degree_centrality(&self) -> Result<impl IndexedParallelIterator<Item = f32> + '_> {
+    pub fn par_iter_degree_centrality(
+        &self,
+    ) -> Result<impl IndexedParallelIterator<Item = f32> + '_> {
         self.must_have_edges()?;
 
         let max_degree = unsafe { self.get_unchecked_maximum_node_degree() as f32 };

@@ -106,8 +106,8 @@ unsafe impl<T> Sync for ThreadDataRaceAware<T> {}
 
 impl<T> ThreadDataRaceAware<T> {
     pub fn new(value: T) -> ThreadDataRaceAware<T> {
-        ThreadDataRaceAware{
-            value: std::cell::UnsafeCell::new(value)
+        ThreadDataRaceAware {
+            value: std::cell::UnsafeCell::new(value),
         }
     }
 }

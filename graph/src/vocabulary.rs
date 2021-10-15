@@ -2,10 +2,10 @@ use super::types::*;
 use itertools::Itertools;
 use rayon::iter::ParallelIterator;
 use rayon::iter::{IndexedParallelIterator, IntoParallelIterator};
+use rayon::prelude::ParallelSliceMut;
 use std::collections::hash_map::Entry;
 use std::collections::HashMap;
 use std::fmt::Debug;
-use rayon::prelude::ParallelSliceMut;
 use std::ops::Range;
 
 #[derive(Debug, Clone, PartialEq)] // Arbitrary
