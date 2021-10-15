@@ -4,6 +4,7 @@ use pyo3::prelude::*;
 use pyo3::types::PyDict;
 use std::collections::{HashMap, HashSet};
 
+#[allow(unused_imports)]
 use graph::{EdgeT, EdgeTypeT, NodeT, NodeTypeT, Result, WeightT};
 use tags::*;
 
