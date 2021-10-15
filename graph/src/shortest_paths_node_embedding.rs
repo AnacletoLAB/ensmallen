@@ -613,6 +613,23 @@ impl Graph {
     /// * `return_sampled_node_names`: Option<bool> - Whether to return the name of the sampled nodes. By default true if the `number_of_nodes_to_sample_per_feature` parameter is less than 100.
     /// * `verbose`: Option<bool> - Whether to show the loading bar. By default true.
     ///
+    /// # Details on the supported node centrality distributions
+    /// The node centrality distributions are used to find an optimal threshold that avoids
+    /// sorting nodes that include also non-useful nodes, that is nodes that we will never
+    /// be interested in sampling. We currently support the following node centrality distributions:
+    ///
+    /// ## Exponential
+    /// The most common distribution for node centralities is the exponential distribution.
+    /// Most likely, your node centralities will follow this distribution.
+    ///
+    /// ## Geometric
+    /// The geometric distribution is to be used for an integer distribution, when the normalization
+    /// by the distances from the most central node is disabled (or it will make the distribution a float value).
+    ///
+    /// ## Unknown
+    /// For now we do not have support for other distributions implemented, so if the distribution
+    /// is not expected to be one of the aforementioned distributions we will use zero as a threshold.
+    /// 
     /// # Raises
     /// * If the provided node centralities are not provided for all features.
     /// * If the provided node centralities contain illegal values, like NaNs or infinities.
@@ -741,6 +758,23 @@ impl Graph {
     /// * `return_sampled_node_names`: Option<bool> - Whether to return the name of the sampled nodes. By default true if the `number_of_nodes_to_sample_per_feature` parameter is less than 100.
     /// * `verbose`: Option<bool> - Whether to show the loading bar. By default true.
     ///
+    /// # Details on the supported node centrality distributions
+    /// The node centrality distributions are used to find an optimal threshold that avoids
+    /// sorting nodes that include also non-useful nodes, that is nodes that we will never
+    /// be interested in sampling. We currently support the following node centrality distributions:
+    ///
+    /// ## Exponential
+    /// The most common distribution for node centralities is the exponential distribution.
+    /// Most likely, your node centralities will follow this distribution.
+    ///
+    /// ## Geometric
+    /// The geometric distribution is to be used for an integer distribution, when the normalization
+    /// by the distances from the most central node is disabled (or it will make the distribution a float value).
+    ///
+    /// ## Unknown
+    /// For now we do not have support for other distributions implemented, so if the distribution
+    /// is not expected to be one of the aforementioned distributions we will use zero as a threshold.
+    /// 
     /// # Raises
     /// * If the provided node centralities are not provided for all features.
     /// * If the provided node centralities contain illegal values, like NaNs or infinities.
@@ -869,6 +903,23 @@ impl Graph {
     /// * `return_sampled_node_names`: Option<bool> - Whether to return the name of the sampled nodes. By default true if the `number_of_nodes_to_sample_per_feature` parameter is less than 100.
     /// * `verbose`: Option<bool> - Whether to show the loading bar. By default true.
     ///
+    /// # Details on the supported node centrality distributions
+    /// The node centrality distributions are used to find an optimal threshold that avoids
+    /// sorting nodes that include also non-useful nodes, that is nodes that we will never
+    /// be interested in sampling. We currently support the following node centrality distributions:
+    ///
+    /// ## Exponential
+    /// The most common distribution for node centralities is the exponential distribution.
+    /// Most likely, your node centralities will follow this distribution.
+    ///
+    /// ## Geometric
+    /// The geometric distribution is to be used for an integer distribution, when the normalization
+    /// by the distances from the most central node is disabled (or it will make the distribution a float value).
+    ///
+    /// ## Unknown
+    /// For now we do not have support for other distributions implemented, so if the distribution
+    /// is not expected to be one of the aforementioned distributions we will use zero as a threshold.
+    /// 
     /// # Raises
     /// * If the provided node centralities are not provided for all features.
     /// * If the provided node centralities contain illegal values, like NaNs or infinities.
@@ -998,6 +1049,23 @@ impl Graph {
     /// * `return_sampled_node_names`: Option<bool> - Whether to return the name of the sampled nodes. By default true if the `number_of_nodes_to_sample_per_feature` parameter is less than 100.
     /// * `verbose`: Option<bool> - Whether to show the loading bar. By default true.
     ///
+    /// # Details on the supported node centrality distributions
+    /// The node centrality distributions are used to find an optimal threshold that avoids
+    /// sorting nodes that include also non-useful nodes, that is nodes that we will never
+    /// be interested in sampling. We currently support the following node centrality distributions:
+    ///
+    /// ## Exponential
+    /// The most common distribution for node centralities is the exponential distribution.
+    /// Most likely, your node centralities will follow this distribution.
+    ///
+    /// ## Geometric
+    /// The geometric distribution is to be used for an integer distribution, when the normalization
+    /// by the distances from the most central node is disabled (or it will make the distribution a float value).
+    ///
+    /// ## Unknown
+    /// For now we do not have support for other distributions implemented, so if the distribution
+    /// is not expected to be one of the aforementioned distributions we will use zero as a threshold.
+    /// 
     /// # Raises
     /// * If the provided node centralities are not provided for all features.
     /// * If the provided node centralities contain illegal values, like NaNs or infinities.
