@@ -9,6 +9,7 @@ fn translate_return_type(
     is_static: bool,
     is_self_ref: bool, 
     is_self_mut: bool, 
+    depth: usize,
 
 ) -> (String, Option<String>) {
     let (body, r_type) = match return_type {
@@ -25,7 +26,8 @@ fn translate_return_type(
                     this_struct, 
                     is_static,
                     is_self_ref, 
-                is_self_mut
+                    is_self_mut,
+                    depth + 1,
                 );
                 bodies.push(inner_body);
                 return_types.push(inner_return_type);
@@ -37,15 +39,18 @@ fn translate_return_type(
                     .map(|i| format!("subresult_{}", i))
                     .collect::<Vec<_>>().join(", ")
                 );
-
-            let final_body = format!(
+            
+            let mut final_body = format!(
                 "let {} = {};\n({})", 
                 subresult_splitter,
                 body,
-                bodies.into_iter()
-                    .map(|x| format!("{{{}}}", x)).
-                    collect::<Vec<_>>().join(", ")
+                bodies.join(", ")
             );
+
+            if depth != 0 {
+                final_body = format!("{{{}}}", final_body);
+            }
+
             let final_type = format!(
                 "({})", 
                 return_types.into_iter()
@@ -69,7 +74,11 @@ fn translate_return_type(
                     if body.ends_with(".into()") {
                         body = body.strip_suffix(".into()").unwrap().to_string();
                     }
-                    (format!("{{{};()}}", body), None)
+                    if depth == 0 {
+                        (format!("{};()", body), None)
+                    } else {
+                        (format!("{{{};()}}", body), None)
+                    }
                 },
                 (true, false) => {
                     body = format!("{}.into()", body);
@@ -93,26 +102,37 @@ fn translate_return_type(
                 _ => true,
             };
 
+            let mut sub_body = format!(
+                "pe!({})?{}", 
+                body,
+                if needs_into {
+                    ".into()"
+                } else {
+                    ""
+                }
+            );
+
+            if depth != 0 {
+                sub_body = format!("{{{}}}", sub_body);
+            }
+
             let (inner_body, inner_type) = translate_return_type(
                 attributes, 
                 &return_type[0], 
-                format!(
-                    "pe!({{{}}})?{}", 
-                    body,
-                    if needs_into {
-                        ".into()"
-                    } else {
-                        ""
-                    }
-                ), 
+                sub_body, 
                 this_struct, 
                 is_static,
                 is_self_ref, 
-                is_self_mut
+                is_self_mut,
+                depth + 1,
             );
             
             (
-                format!("Ok({{{}}})", inner_body), 
+                if depth == 0 {
+                    format!("Ok({})", inner_body)
+                } else {
+                    format!("Ok({{{}}})", inner_body)
+                }, 
                 Some(format!("PyResult<{}>", inner_type.unwrap_or("()".into())))
             )
         }
@@ -127,15 +147,21 @@ fn translate_return_type(
                 body = body.strip_suffix(".into()").unwrap().to_string();
             }
 
-            (
-                format!(
-                    concat!(
-                        "let gil = pyo3::Python::acquire_gil();\n",
-                        "to_ndarray_1d!(gil, {body}, {inner_type})"
-                    ),
-                    body = body,
-                    inner_type = inner_type,
+            let mut body = format!(
+                concat!(
+                    "let gil = pyo3::Python::acquire_gil();\n",
+                    "to_ndarray_1d!(gil, {body}, {inner_type})"
                 ),
+                body = body,
+                inner_type = inner_type,
+            );
+            
+            if depth != 0 {
+                body = format!("{{{}}}", body);
+            }
+
+            (
+                body,
                 Some(
                     format!("Py<PyArray1<{}>>", inner_type)
                 )
@@ -152,15 +178,21 @@ fn translate_return_type(
                 body = body.strip_suffix(".into()").unwrap().to_string();
             }
 
-            (
-                format!(
-                    concat!(
-                        "let gil = pyo3::Python::acquire_gil();\n",
-                        "to_ndarray_2d!(gil, {body}, {inner_type})"
-                    ),
-                    body = body,
-                    inner_type = inner_type,
+            let mut body = format!(
+                concat!(
+                    "let gil = pyo3::Python::acquire_gil();\n",
+                    "to_ndarray_2d!(gil, {body}, {inner_type})"
                 ),
+                body = body,
+                inner_type = inner_type,
+            );
+
+            if depth != 0 {
+                body = format!("{{{}}}", body);
+            }
+
+            (
+                body,
                 Some(
                     format!("Py<PyArray2<{}>>", inner_type)
                 )
@@ -286,7 +318,7 @@ impl GenBinding for Function {
         // parse the return type
         let (body, return_type) = match &self.return_type {
                 None => (format!("{};", body), None),
-                Some(r_type) => translate_return_type(&self.attributes, r_type, body, &this_struct, self.is_static(), is_self_ref, is_self_mut),
+                Some(r_type) => translate_return_type(&self.attributes, r_type, body, &this_struct, self.is_static(), is_self_ref, is_self_mut,0),
             };
 
         format!(
