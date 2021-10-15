@@ -287,7 +287,7 @@ impl GenBinding for BindingsModule {
             if !klass.ztruct.attributes.iter().any(|x| x == "no_binding")
                 && klass.ztruct.visibility == Visibility::Public {
                     registrations.push(
-                        format!("\tm.add_class::<{}>()?;", klass_name)
+                        format!("\t_m.add_class::<{}>()?;", klass_name)
                     );
                 }
             
@@ -296,27 +296,27 @@ impl GenBinding for BindingsModule {
         for func in &self.funcs {
             if  is_to_bind(func) {
                 registrations.push(
-                    format!("\tm.add_wrapped(wrap_pyfunction!({}))?;", func.name)
+                    format!("\t_m.add_wrapped(wrap_pyfunction!({}))?;", func.name)
                 );
             }
         }
 
         for (mods_name, _mods) in self.modules.iter() {
             registrations.push(
-                format!("\tm.add_wrapped(wrap_pymodule!({}))?;", mods_name)
+                format!("\t_m.add_wrapped(wrap_pymodule!({}))?;", mods_name)
             );
         }
         
         if self.module_name == "ensmallen" {
             registrations.push(
-                "\tm.add_wrapped(wrap_pymodule!(preprocessing))?;".into()
+                "\t_m.add_wrapped(wrap_pymodule!(preprocessing))?;".into()
             );
         }
 
         format!(
 r#"
 #[pymodule]
-fn {module_name}(_py: Python, m:&PyModule) -> PyResult<()> {{
+fn {module_name}(_py: Python, _m:&PyModule) -> PyResult<()> {{
     {registrations}
     Ok(())
 }}
@@ -430,23 +430,15 @@ pub fn gen_bindings(to_parse_path: &str, path: &str, init_path: &str) {
     print_sep();
 
     let file_content = format!(
-        r#"#[allow(unused_braces)]
-#[allow(unused_variables)]     
+        r#"
+#[allow(unused_variables)]    
 use super::*;
 use pyo3::{{wrap_pyfunction, wrap_pymodule}};
 use rayon::iter::{{IndexedParallelIterator, IntoParallelRefIterator, ParallelIterator}};
 use pyo3::class::basic::PyObjectProtocol;
 use std::hash::{{Hash, Hasher}};
 use std::collections::hash_map::DefaultHasher;
-use strsim::*;
-use graph::{{
-    NodeT,
-    EdgeT,
-    WeightT,
-    NodeTypeT,
-    EdgeTypeT,
-    Result,
-}};
+use strsim::*; 
 
 /// Returns the given method name separated in the component parts.
 ///

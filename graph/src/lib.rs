@@ -14,7 +14,7 @@
 #![type_length_limit = "3764086"]
 #![feature(exclusive_range_pattern)]
 #![feature(option_result_unwrap_unchecked)]
-#![feature(macro_attributes_in_derive_output)]
+//#![feature(macro_attributes_in_derive_output)]
 
 mod vocabulary;
 pub use self::vocabulary::*;
