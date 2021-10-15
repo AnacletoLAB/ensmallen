@@ -7,7 +7,7 @@ use super::*;
 ///
 /// # Example
 /// To validate a node you can use:
-/// ```rust
+/// ```ignore
 /// # use graph::*;
 /// let flybase_node_name1 = "FlyBase:FBgn0000003";
 /// let flybase_node_name2 = "FB:FBgn0000003";

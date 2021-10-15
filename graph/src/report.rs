@@ -481,7 +481,7 @@ impl Graph {
                     // According to the presence of the node type segment
                     // of the description we add the correct join term
                     join_term = if node_type.is_some() { "," } else { " and" },
-                    weighted_degree = self.get_unchecked_node_degree_from_node_id(node_id)
+                    weighted_degree = self.get_unchecked_weighted_node_degree_from_node_id(node_id)
                 )
             });
         }

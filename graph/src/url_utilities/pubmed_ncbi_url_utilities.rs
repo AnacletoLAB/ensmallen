@@ -7,7 +7,7 @@ use super::*;
 ///
 /// # Example
 /// To validate a node you can use:
-/// ```rust
+/// ```ignore
 /// # use graph::*;
 /// let pubmed_ncbi_node_name = "PMID:1001879";
 /// let not_pubmed_ncbi_node_name = "PizzaQuattroStagioni";

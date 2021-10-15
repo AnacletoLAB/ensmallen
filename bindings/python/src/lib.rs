@@ -21,6 +21,7 @@ mod types;
 pub(crate) use crate::types::*;
 mod laplacian;
 mod operators;
+mod shortest_path;
 mod walks;
 
 // automatically generated files

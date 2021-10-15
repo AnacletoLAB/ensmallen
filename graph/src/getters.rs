@@ -314,11 +314,7 @@ impl Graph {
     /// println!("The node with maximum node degree of the graph is {}.", unsafe{graph.get_unchecked_most_central_node_id()});
     /// ```
     pub unsafe fn get_unchecked_most_central_node_id(&self) -> NodeT {
-        self.par_iter_node_degrees()
-            .enumerate()
-            .max_by(|(_, degree_a), (_, degree_b)| degree_a.cmp(degree_b))
-            .unwrap()
-            .0 as NodeT
+        self.par_iter_node_degrees().argmax().unwrap().0 as NodeT
     }
 
     /// Returns maximum node degree of the graph.
