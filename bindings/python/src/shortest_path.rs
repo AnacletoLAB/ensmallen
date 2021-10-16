@@ -107,7 +107,7 @@ macro_rules! impl_get_shortest_paths_node_embedding {
                                 number_of_nodes_to_sample_per_feature,
                                 maximum_number_of_features,
                                 validate_node_centralities,
-                                maximal_depth,
+                                maximal_depth.map(|x| x  as $dtype),
                                 central_node_name,
                                 central_node_id,
                                 random_state,
@@ -150,7 +150,7 @@ macro_rules! impl_get_shortest_paths_node_embedding {
     };
 }
 
-impl_get_shortest_paths_node_embedding! {u8, u16, u32, u64}
+impl_get_shortest_paths_node_embedding! {u8, u16, u32}
 
 macro_rules! impl_get_shortest_paths_node_embedding_per_node_type {
     ($($dtype:ty),*) => {
@@ -258,7 +258,7 @@ macro_rules! impl_get_shortest_paths_node_embedding_per_node_type {
                                 number_of_nodes_to_sample_per_feature,
                                 maximum_number_of_features_per_node_type,
                                 validate_node_centralities,
-                                maximal_depth,
+                                maximal_depth.map(|x| x  as $dtype),
                                 central_node_name,
                                 central_node_id,
                                 random_state,
@@ -302,7 +302,7 @@ macro_rules! impl_get_shortest_paths_node_embedding_per_node_type {
     };
 }
 
-impl_get_shortest_paths_node_embedding_per_node_type! {u8, u16, u32, u64}
+impl_get_shortest_paths_node_embedding_per_node_type! {u8, u16, u32}
 
 macro_rules! impl_get_shortest_paths_node_embedding_per_edge_type {
     ($($dtype:ty),*) => {
@@ -410,7 +410,7 @@ macro_rules! impl_get_shortest_paths_node_embedding_per_edge_type {
                                 number_of_nodes_to_sample_per_feature,
                                 maximum_number_of_features_per_edge_type,
                                 validate_node_centralities,
-                                maximal_depth,
+                                maximal_depth.map(|x| x  as $dtype),
                                 central_node_name,
                                 central_node_id,
                                 random_state,
@@ -454,7 +454,7 @@ macro_rules! impl_get_shortest_paths_node_embedding_per_edge_type {
     };
 }
 
-impl_get_shortest_paths_node_embedding_per_edge_type! {u8, u16, u32, u64}
+impl_get_shortest_paths_node_embedding_per_edge_type! {u8, u16, u32}
 
 #[pymethods]
 impl Graph {

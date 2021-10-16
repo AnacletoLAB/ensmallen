@@ -250,7 +250,7 @@ impl Graph {
     /// * If the use edge weights as probabilities is requested, but the graph does not have edge weights as probabilities (between 0 and 1).
     /// * If the use edge weights as probabilities is requested, but not the edge weights.
     ///
-    pub fn get_shortest_paths_node_embedding<'a, T: 'a + TryFrom<u32> + Into<f32> + Into<u32> + Send + Sync + IsInteger + TryFrom<usize>>(
+    pub fn get_shortest_paths_node_embedding<'a, T: 'a + TryFrom<u32> + Into<u32> + Send + Sync + IsInteger + TryFrom<usize>>(
         &'a self,
         node_centralities: Option<Vec<f32>>,
         mut node_centralities_distribution: Option<&str>,
@@ -307,14 +307,16 @@ impl Graph {
                     None,
                 )
             };
-            let eccentricity: f32 = eccentricity.into();
+            let eccentricity: u32 = eccentricity.try_into().ok().unwrap();
+            let eccentricity: f32 = eccentricity as f32;
+
             distances
                 .into_par_iter()
                 .zip(node_centralities.par_iter_mut())
                 .for_each(|(distance, node_centrality)| {
                     if distance != T::MAX {
-                        let distance: f32 = distance.into();
-                        *node_centrality *=  distance/ eccentricity;
+                        let distance: u32 = distance.try_into().ok().unwrap();
+                        *node_centrality *=  distance as f32/ eccentricity;
                     }
                 });
         }
@@ -639,7 +641,7 @@ impl Graph {
     ///
     pub fn get_shortest_paths_node_embedding_per_node_type<
         'a,
-        T: 'a + TryFrom<u32> + Send + Sync+ TryFrom<usize> + IsInteger + Into<f32> + Into<u32>,
+        T: 'a + TryFrom<u32> + Send + Sync+ TryFrom<usize> + IsInteger + Into<u32>,
     >(
         &'a self,
         node_centralities: Option<Vec<f32>>,
@@ -929,7 +931,7 @@ impl Graph {
     ///
     pub fn get_shortest_paths_node_embedding_per_edge_type<
         'a,
-        T: 'a + TryFrom<u32> + TryFrom<usize> + Send + Sync + IsInteger + Into<f32> + Into<u32>,
+        T: 'a + TryFrom<u32> + TryFrom<usize> + Send + Sync + IsInteger + Into<u32>,
     >(
         &'a self,
         node_centralities: Option<Vec<f32>>,
