@@ -89,6 +89,7 @@ impl Graph {
     /// * `node_centralities_distribution`: Option<&str> - Distribution expected out of the provided node centralities distribution.
     /// * `number_of_nodes_to_sample_per_feature`: NodeT - Number of nodes to sample per feature.
     /// * `maximum_number_of_features`: usize - Maximum number of node features to generate.
+    /// * `remove_neighbouring_nodes`: Option<bool> - Whether to remove the neighbouring nodes from the set of samplable anchor nodes. By default true.
     /// * `verbose`: bool - Whether to show the loading bar.
     ///
     /// # Raises
@@ -99,6 +100,7 @@ impl Graph {
         node_centralities_distribution: Option<&str>,
         number_of_nodes_to_sample_per_feature: NodeT,
         maximum_number_of_features: NodeT,
+        remove_neighbouring_nodes: Option<bool>,
         verbose: bool,
     ) -> Result<Vec<Vec<NodeT>>> {
         let pb = get_loading_bar(
@@ -106,6 +108,7 @@ impl Graph {
             "Sampling anchor node IDs for the required node features",
             maximum_number_of_features as usize,
         );
+        let remove_neighbouring_nodes = remove_neighbouring_nodes.unwrap_or(true);
         (0..maximum_number_of_features)
             .progress_with(pb)
             .map(|_| {
@@ -160,7 +163,7 @@ impl Graph {
                         let thread_shared_node_centralities = ThreadDataRaceAware {
                             value: std::cell::UnsafeCell::new(&mut node_centralities),
                         };
-            
+                        
                         // Update the centralities vector, setting sampled nodes centralities to zero.
                         anchor_node_ids
                             .par_iter()
@@ -169,12 +172,14 @@ impl Graph {
                                 // Set centrality zero to the node and the neighbouring nodes
                                 // so we do not re-sample nodes that would produce extremely similar features.
                                 (*thread_shared_node_centralities.value.get())[anchor_node_id as usize] = 0.0;
-                                // TODO! Update this when parallel iterator over neighbours is made available!
-                                self.iter_unchecked_neighbour_node_ids_from_source_node_id(anchor_node_id)
-                                    .for_each(|neighbour_node_id| {
-                                        (*thread_shared_node_centralities.value.get())
-                                            [neighbour_node_id as usize] = 0.0;
-                                    });
+                                if remove_neighbouring_nodes{
+                                    // TODO! Update this when parallel iterator over neighbours is made available!
+                                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(anchor_node_id)
+                                        .for_each(|neighbour_node_id| {
+                                            (*thread_shared_node_centralities.value.get())
+                                                [neighbour_node_id as usize] = 0.0;
+                                        });
+                                }
                             });
                     Ok(anchor_node_ids)
             }).take_while(|anchor_node_ids| anchor_node_ids.as_ref().map_or(false, |anchor_node_ids| !anchor_node_ids.is_empty()))
@@ -216,6 +221,7 @@ impl Graph {
     /// * `adjust_by_central_node_distance`: Option<bool> - Whether to adjust the node eccentricity by the normalized distance to the most central node. By default true.
     /// * `number_of_nodes_to_sample_per_feature`: Option<NodeT> - Number of nodes to sample per feature. By default 10.
     /// * `maximum_number_of_features`: Option<usize> - Maximum number of node features to generate. By default 50.
+    /// * `remove_neighbouring_nodes`: Option<bool> - Whether to remove the neighbouring nodes from the set of samplable anchor nodes. By default true.
     /// * `validate_node_centralities`: Option<bool> - Whether to validate the node centralities. By default true when the node centralities are provided.
     /// * `maximal_depth`: Option<NodeT> - The maximal depth to use if node features are to be focused in a local area of the graph.
     /// * `central_node_name`: Option<&str> - The node name from where to start sampling the BFS mask for the maximal depth. Either the node name of the node ID can be provided at once.
@@ -257,6 +263,7 @@ impl Graph {
         adjust_by_central_node_distance: Option<bool>,
         number_of_nodes_to_sample_per_feature: Option<NodeT>,
         maximum_number_of_features: Option<NodeT>,
+        remove_neighbouring_nodes: Option<bool>,
         validate_node_centralities: Option<bool>,
         maximal_depth: Option<T>,
         central_node_name: Option<&str>,
@@ -354,6 +361,7 @@ impl Graph {
             node_centralities_distribution,
             number_of_nodes_to_sample_per_feature,
             maximum_number_of_features,
+            remove_neighbouring_nodes,
             verbose,
         )?;
 
@@ -402,6 +410,7 @@ impl Graph {
     /// * `adjust_by_central_node_distance`: Option<bool> - Whether to adjust the node eccentricity by the normalized distance to the most central node. By default true.
     /// * `number_of_nodes_to_sample_per_feature`: Option<NodeT> - Number of nodes to sample per feature. By default 10.
     /// * `maximum_number_of_features`: Option<usize> - Maximum number of node features to generate. By default 50.
+    /// * `remove_neighbouring_nodes`: Option<bool> - Whether to remove the neighbouring nodes from the set of samplable anchor nodes. By default true.
     /// * `validate_node_centralities`: Option<bool> - Whether to validate the node centralities. By default true when the node centralities are provided.
     /// * `maximal_depth`: Option<NodeT> - The maximal depth to use if node features are to be focused in a local area of the graph.
     /// * `central_node_name`: Option<&str> - The node name from where to start sampling the BFS mask for the maximal depth. Either the node name of the node ID can be provided at once.
@@ -444,6 +453,7 @@ impl Graph {
         adjust_by_central_node_distance: Option<bool>,
         number_of_nodes_to_sample_per_feature: Option<NodeT>,
         maximum_number_of_features: Option<NodeT>,
+        remove_neighbouring_nodes: Option<bool>,
         validate_node_centralities: Option<bool>,
         maximal_depth: Option<NodeT>,
         central_node_name: Option<&str>,
@@ -553,6 +563,7 @@ impl Graph {
             node_centralities_distribution,
             number_of_nodes_to_sample_per_feature,
             maximum_number_of_features,
+            remove_neighbouring_nodes,
             verbose,
         )?;
 
@@ -605,6 +616,7 @@ impl Graph {
     /// * `adjust_by_central_node_distance`: Option<bool> - Whether to adjust the node eccentricity by the normalized distance to the most central node. By default true.
     /// * `number_of_nodes_to_sample_per_feature`: Option<NodeT> - Number of nodes to sample per feature. By default 10.
     /// * `maximum_number_of_features_per_node_type`: Option<usize> - Maximum number of node features to generate. By default 50.
+    /// * `remove_neighbouring_nodes`: Option<bool> - Whether to remove the neighbouring nodes from the set of samplable anchor nodes. By default true.
     /// * `validate_node_centralities`: Option<bool> - Whether to validate the node centralities. By default true when the node centralities are provided.
     /// * `maximal_depth`: Option<NodeT> - The maximal depth to use if node features are to be focused in a local area of the graph.
     /// * `central_node_name`: Option<&str> - The node name from where to start sampling the BFS mask for the maximal depth. Either the node name of the node ID can be provided at once.
@@ -649,6 +661,7 @@ impl Graph {
         adjust_by_central_node_distance: Option<bool>,
         number_of_nodes_to_sample_per_feature: Option<NodeT>,
         maximum_number_of_features_per_node_type: Option<NodeT>,
+        remove_neighbouring_nodes: Option<bool>,
         validate_node_centralities: Option<bool>,
         maximal_depth: Option<T>,
         central_node_name: Option<&str>,
@@ -704,6 +717,7 @@ impl Graph {
                         adjust_by_central_node_distance,
                         number_of_nodes_to_sample_per_feature,
                         maximum_number_of_features_per_node_type,
+                        remove_neighbouring_nodes,
                         Some(validate_node_centralities),
                         maximal_depth,
                         central_node_name,
@@ -749,6 +763,7 @@ impl Graph {
     /// * `adjust_by_central_node_distance`: Option<bool> - Whether to adjust the node eccentricity by the normalized distance to the most central node. By default true.
     /// * `number_of_nodes_to_sample_per_feature`: Option<NodeT> - Number of nodes to sample per feature. By default 10.
     /// * `maximum_number_of_features_per_node_type`: Option<usize> - Maximum number of node features to generate. By default 50.
+    /// * `remove_neighbouring_nodes`: Option<bool> - Whether to remove the neighbouring nodes from the set of samplable anchor nodes. By default true.
     /// * `validate_node_centralities`: Option<bool> - Whether to validate the node centralities. By default true when the node centralities are provided.
     /// * `maximal_depth`: Option<NodeT> - The maximal depth to use if node features are to be focused in a local area of the graph.
     /// * `central_node_name`: Option<&str> - The node name from where to start sampling the BFS mask for the maximal depth. Either the node name of the node ID can be provided at once.
@@ -791,6 +806,7 @@ impl Graph {
         adjust_by_central_node_distance: Option<bool>,
         number_of_nodes_to_sample_per_feature: Option<NodeT>,
         maximum_number_of_features_per_node_type: Option<NodeT>,
+        remove_neighbouring_nodes: Option<bool>,
         validate_node_centralities: Option<bool>,
         maximal_depth: Option<NodeT>,
         central_node_name: Option<&str>,
@@ -849,6 +865,7 @@ impl Graph {
                         adjust_by_central_node_distance,
                         number_of_nodes_to_sample_per_feature,
                         maximum_number_of_features_per_node_type,
+                        remove_neighbouring_nodes,
                         Some(validate_node_centralities),
                         maximal_depth,
                         central_node_name,
@@ -895,6 +912,7 @@ impl Graph {
     /// * `adjust_by_central_node_distance`: Option<bool> - Whether to adjust the node eccentricity by the normalized distance to the most central node. By default true.
     /// * `number_of_nodes_to_sample_per_feature`: Option<NodeT> - Number of nodes to sample per feature. By default 10.
     /// * `maximum_number_of_features_per_node_type`: Option<usize> - Maximum number of node features to generate. By default 50.
+    /// * `remove_neighbouring_nodes`: Option<bool> - Whether to remove the neighbouring nodes from the set of samplable anchor nodes. By default true.
     /// * `validate_node_centralities`: Option<bool> - Whether to validate the node centralities. By default true when the node centralities are provided.
     /// * `maximal_depth`: Option<NodeT> - The maximal depth to use if node features are to be focused in a local area of the graph.
     /// * `central_node_name`: Option<&str> - The node name from where to start sampling the BFS mask for the maximal depth. Either the node name of the node ID can be provided at once.
@@ -939,6 +957,7 @@ impl Graph {
         adjust_by_central_node_distance: Option<bool>,
         number_of_nodes_to_sample_per_feature: Option<NodeT>,
         maximum_number_of_features_per_edge_type: Option<NodeT>,
+        remove_neighbouring_nodes: Option<bool>,
         validate_node_centralities: Option<bool>,
         maximal_depth: Option<T>,
         central_node_name: Option<&str>,
@@ -995,6 +1014,7 @@ impl Graph {
                         adjust_by_central_node_distance,
                         number_of_nodes_to_sample_per_feature,
                         maximum_number_of_features_per_edge_type,
+                        remove_neighbouring_nodes,
                         Some(validate_node_centralities),
                         maximal_depth,
                         central_node_name,
@@ -1040,6 +1060,7 @@ impl Graph {
     /// * `adjust_by_central_node_distance`: Option<bool> - Whether to adjust the node eccentricity by the normalized distance to the most central node. By default true.
     /// * `number_of_nodes_to_sample_per_feature`: Option<NodeT> - Number of nodes to sample per feature. By default 10.
     /// * `maximum_number_of_features_per_edge_type`: Option<usize> - Maximum number of node features to generate. By default 50.
+    /// * `remove_neighbouring_nodes`: Option<bool> - Whether to remove the neighbouring nodes from the set of samplable anchor nodes. By default true.
     /// * `validate_node_centralities`: Option<bool> - Whether to validate the node centralities. By default true when the node centralities are provided.
     /// * `maximal_depth`: Option<NodeT> - The maximal depth to use if node features are to be focused in a local area of the graph.
     /// * `central_node_name`: Option<&str> - The node name from where to start sampling the BFS mask for the maximal depth. Either the node name of the node ID can be provided at once.
@@ -1082,6 +1103,7 @@ impl Graph {
         adjust_by_central_node_distance: Option<bool>,
         number_of_nodes_to_sample_per_feature: Option<NodeT>,
         maximum_number_of_features_per_edge_type: Option<NodeT>,
+        remove_neighbouring_nodes: Option<bool>,
         validate_node_centralities: Option<bool>,
         maximal_depth: Option<NodeT>,
         central_node_name: Option<&str>,
@@ -1141,6 +1163,7 @@ impl Graph {
                         adjust_by_central_node_distance,
                         number_of_nodes_to_sample_per_feature,
                         maximum_number_of_features_per_edge_type,
+                        remove_neighbouring_nodes,
                         Some(validate_node_centralities),
                         maximal_depth,
                         central_node_name,

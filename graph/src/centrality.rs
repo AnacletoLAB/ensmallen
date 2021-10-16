@@ -521,7 +521,7 @@ impl Graph {
                 let mut stack: Vec<NodeT> = Vec::new();
                 let mut node_lists: Vec<Vec<NodeT>> =
                     self.iter_node_ids().map(|_| Vec::new()).collect();
-                let mut shortest_path_counts = vec![0; nodes_number];
+                let mut shortest_path_counts: Vec<u64> = vec![0; nodes_number];
                 shortest_path_counts[src_node_id as usize] = 1;
                 let mut distance_from_root = vec![u64::MAX; nodes_number];
                 distance_from_root[src_node_id as usize] = 0;

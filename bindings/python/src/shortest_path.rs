@@ -21,6 +21,8 @@ macro_rules! impl_get_shortest_paths_node_embedding {
             ///     Number of nodes to sample per feature. By default 10.
             /// maximum_number_of_features`: Optional[int]
             ///     Maximum number of node features to generate. By default 50.
+            /// remove_neighbouring_nodes: Optional[bool] = True
+            ///     Whether to remove the neighbouring nodes from the set of samplable anchor nodes. By default true.
             /// validate_node_centralities: Optional[bool] = True
             ///     Whether to validate the node centralities. By default true when the node centralities are provided.
             /// maximal_depth: Optional[int] = None
@@ -73,6 +75,7 @@ macro_rules! impl_get_shortest_paths_node_embedding {
                 adjust_by_central_node_distance: Option<bool>,
                 number_of_nodes_to_sample_per_feature: Option<NodeT>,
                 maximum_number_of_features: Option<NodeT>,
+                remove_neighbouring_nodes: Option<bool>,
                 validate_node_centralities: Option<bool>,
                 maximal_depth: Option<NodeT>,
                 central_node_name: Option<&str>,
@@ -106,6 +109,7 @@ macro_rules! impl_get_shortest_paths_node_embedding {
                                 adjust_by_central_node_distance,
                                 number_of_nodes_to_sample_per_feature,
                                 maximum_number_of_features,
+                                remove_neighbouring_nodes,
                                 validate_node_centralities,
                                 maximal_depth.map(|x| x  as $dtype),
                                 central_node_name,
@@ -172,6 +176,8 @@ macro_rules! impl_get_shortest_paths_node_embedding_per_node_type {
             ///     Number of nodes to sample per feature. By default 10.
             /// maximum_number_of_features_per_node_type: Optional[int] = 50
             ///     Maximum number of node features to generate. By default 50.
+            /// remove_neighbouring_nodes: Optional[bool] = True
+            ///     Whether to remove the neighbouring nodes from the set of samplable anchor nodes. By default true.
             /// validate_node_centralities: Optional[bool] = True
             ///     Whether to validate the node centralities. By default true when the node centralities are provided.
             /// maximal_depth: Optional[int] = None
@@ -224,6 +230,7 @@ macro_rules! impl_get_shortest_paths_node_embedding_per_node_type {
                 adjust_by_central_node_distance: Option<bool>,
                 number_of_nodes_to_sample_per_feature: Option<NodeT>,
                 maximum_number_of_features_per_node_type: Option<NodeT>,
+                remove_neighbouring_nodes: Option<bool>,
                 validate_node_centralities: Option<bool>,
                 maximal_depth: Option<NodeT>,
                 central_node_name: Option<&str>,
@@ -257,6 +264,7 @@ macro_rules! impl_get_shortest_paths_node_embedding_per_node_type {
                                 adjust_by_central_node_distance,
                                 number_of_nodes_to_sample_per_feature,
                                 maximum_number_of_features_per_node_type,
+                                remove_neighbouring_nodes,
                                 validate_node_centralities,
                                 maximal_depth.map(|x| x  as $dtype),
                                 central_node_name,
@@ -324,6 +332,8 @@ macro_rules! impl_get_shortest_paths_node_embedding_per_edge_type {
             ///     Number of nodes to sample per feature. By default 10.
             /// maximum_number_of_features_per_node_type: Optional[int] = 50
             ///     Maximum number of node features to generate. By default 50.
+            /// remove_neighbouring_nodes: Optional[bool] = True
+            ///     Whether to remove the neighbouring nodes from the set of samplable anchor nodes. By default true.
             /// validate_node_centralities: Optional[bool] = True
             ///     Whether to validate the node centralities. By default true when the node centralities are provided.
             /// maximal_depth: Optional[int] = None
@@ -376,6 +386,7 @@ macro_rules! impl_get_shortest_paths_node_embedding_per_edge_type {
                 adjust_by_central_node_distance: Option<bool>,
                 number_of_nodes_to_sample_per_feature: Option<NodeT>,
                 maximum_number_of_features_per_edge_type: Option<NodeT>,
+                remove_neighbouring_nodes: Option<bool>,
                 validate_node_centralities: Option<bool>,
                 maximal_depth: Option<NodeT>,
                 central_node_name: Option<&str>,
@@ -409,6 +420,7 @@ macro_rules! impl_get_shortest_paths_node_embedding_per_edge_type {
                                 adjust_by_central_node_distance,
                                 number_of_nodes_to_sample_per_feature,
                                 maximum_number_of_features_per_edge_type,
+                                remove_neighbouring_nodes,
                                 validate_node_centralities,
                                 maximal_depth.map(|x| x  as $dtype),
                                 central_node_name,
@@ -474,6 +486,8 @@ impl Graph {
     ///     Number of nodes to sample per feature. By default 10.
     /// maximum_number_of_features`: Optional[int]
     ///     Maximum number of node features to generate. By default 50.
+    /// remove_neighbouring_nodes: Optional[bool] = True
+    ///     Whether to remove the neighbouring nodes from the set of samplable anchor nodes. By default true.
     /// validate_node_centralities: Optional[bool] = True
     ///     Whether to validate the node centralities. By default true when the node centralities are provided.
     /// maximal_depth: Optional[int] = None
@@ -528,6 +542,7 @@ impl Graph {
         adjust_by_central_node_distance: Option<bool>,
         number_of_nodes_to_sample_per_feature: Option<NodeT>,
         maximum_number_of_features: Option<NodeT>,
+        remove_neighbouring_nodes: Option<bool>,
         validate_node_centralities: Option<bool>,
         maximal_depth: Option<NodeT>,
         central_node_name: Option<&str>,
@@ -546,6 +561,7 @@ impl Graph {
                 adjust_by_central_node_distance,
                 number_of_nodes_to_sample_per_feature,
                 maximum_number_of_features,
+                remove_neighbouring_nodes,
                 validate_node_centralities,
                 maximal_depth,
                 central_node_name,
@@ -591,6 +607,8 @@ impl Graph {
     ///     Number of nodes to sample per feature. By default 10.
     /// maximum_number_of_features_per_node_type: Optional[int] = 50
     ///     Maximum number of node features to generate. By default 50.
+    /// remove_neighbouring_nodes: Optional[bool] = True
+    ///     Whether to remove the neighbouring nodes from the set of samplable anchor nodes. By default true.
     /// validate_node_centralities: Optional[bool] = True
     ///     Whether to validate the node centralities. By default true when the node centralities are provided.
     /// maximal_depth: Optional[int] = None
@@ -645,6 +663,7 @@ impl Graph {
         adjust_by_central_node_distance: Option<bool>,
         number_of_nodes_to_sample_per_feature: Option<NodeT>,
         maximum_number_of_features_per_node_type: Option<NodeT>,
+        remove_neighbouring_nodes: Option<bool>,
         validate_node_centralities: Option<bool>,
         maximal_depth: Option<NodeT>,
         central_node_name: Option<&str>,
@@ -665,6 +684,7 @@ impl Graph {
                     adjust_by_central_node_distance,
                     number_of_nodes_to_sample_per_feature,
                     maximum_number_of_features_per_node_type,
+                    remove_neighbouring_nodes,
                     validate_node_centralities,
                     maximal_depth,
                     central_node_name,
@@ -724,6 +744,8 @@ impl Graph {
     ///     Number of nodes to sample per feature. By default 10.
     /// maximum_number_of_features_per_edge_type`: Optional[int]
     ///     Maximum number of node features to generate. By default 50.
+    /// remove_neighbouring_nodes: Optional[bool] = True
+    ///     Whether to remove the neighbouring nodes from the set of samplable anchor nodes. By default true.
     /// validate_node_centralities: Optional[bool] = True
     ///     Whether to validate the node centralities. By default true when the node centralities are provided.
     /// maximal_depth: Optional[int] = None
@@ -778,6 +800,7 @@ impl Graph {
         adjust_by_central_node_distance: Option<bool>,
         number_of_nodes_to_sample_per_feature: Option<NodeT>,
         maximum_number_of_features_per_edge_type: Option<NodeT>,
+        remove_neighbouring_nodes: Option<bool>,
         validate_node_centralities: Option<bool>,
         maximal_depth: Option<NodeT>,
         central_node_name: Option<&str>,
@@ -798,6 +821,7 @@ impl Graph {
                     adjust_by_central_node_distance,
                     number_of_nodes_to_sample_per_feature,
                     maximum_number_of_features_per_edge_type,
+                    remove_neighbouring_nodes,
                     validate_node_centralities,
                     maximal_depth,
                     central_node_name,
