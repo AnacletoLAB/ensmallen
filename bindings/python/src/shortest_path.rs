@@ -317,7 +317,7 @@ macro_rules! impl_get_shortest_paths_node_embedding_per_edge_type {
         #[pymethods]
         impl Graph {
             #[args(py_kwargs = "**")]
-            #[text_signature = "($self, node_centralities, node_centralities_distribution, adjust_by_central_node_distance, number_of_nodes_to_sample_per_feature, maximum_number_of_features_per_edge_type, validate_node_centralities, maximal_depth, central_node_name, central_node_id, random_state, return_sampled_node_names, dtype, verbose)"]
+            #[text_signature = "($self, node_centralities, node_centralities_distribution, adjust_by_central_node_distance, number_of_nodes_to_sample_per_feature, maximum_number_of_features_per_edge_type, remove_neighbouring_nodes, validate_node_centralities, maximal_depth, central_node_name, central_node_id, random_state, return_sampled_node_names, dtype, verbose)"]
             /// Return node embedding vector obtained from shortest-paths.
             ///
             /// Arguments
@@ -729,7 +729,7 @@ impl Graph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, node_centralities, node_centralities_distribution, adjust_by_central_node_distance, number_of_nodes_to_sample_per_feature, maximum_number_of_features_per_edge_type, validate_node_centralities, maximal_depth, central_node_name, central_node_id, use_edge_weights_as_probabilities, random_state, return_sampled_node_names, dtype, verbose)"]
+    #[text_signature = "($self, node_centralities, node_centralities_distribution, adjust_by_central_node_distance, number_of_nodes_to_sample_per_feature, maximum_number_of_features_per_edge_type, remove_neighbouring_nodes, validate_node_centralities, maximal_depth, central_node_name, central_node_id, use_edge_weights_as_probabilities, random_state, return_sampled_node_names, dtype, verbose)"]
     /// Return node embedding vector obtained from weighted shortest-paths.
     ///
     /// Arguments
