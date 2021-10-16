@@ -244,7 +244,7 @@ unsafe fn get_wheel_edges_iterator(
     let total_edges = if total_nodes == 0 {
         0
     } else {
-        total_nodes * 2 + (total_nodes - 1) * 2 + if include_selfloops { total_nodes } else { 0 }
+        (total_nodes - 1) * 4 + if include_selfloops { total_nodes } else { 0 }
     } as EdgeT;
     (
         total_edges,
@@ -277,9 +277,9 @@ unsafe fn get_wheel_edges_iterator(
                         let needs_following_closing_edge =
                             !needs_following_edge && needs_previous_edge;
                         let mut offsets = if include_selfloops {
-                            total_nodes as usize + (i - 1) * 3
+                            total_nodes as usize + (i - 1) * 4
                         } else {
-                            total_nodes as usize - 1 + (i - 1) * 2
+                            total_nodes as usize - 1 + (i - 1) * 3
                         };
                         // We initialize the edges vector with the edge to the center of the wheel
                         let mut edges = vec![(
@@ -731,8 +731,8 @@ impl Graph {
         // Get the generator the star in the middle of the two cliques
         let (edges_number, edges_iterator) = unsafe {
             get_star_edges_iterator(
-                1,
-                nodes_number + 1,
+                0,
+                nodes_number,
                 include_selfloops,
                 Some(0),
                 weight.unwrap_or(WeightT::NAN),
@@ -799,8 +799,8 @@ impl Graph {
         // Get the generator the wheel in the middle of the two cliques
         let (edges_number, edges_iterator) = unsafe {
             get_wheel_edges_iterator(
-                1,
-                nodes_number + 1,
+                0,
+                nodes_number,
                 include_selfloops,
                 Some(0),
                 weight.unwrap_or(WeightT::NAN),
@@ -1137,7 +1137,9 @@ impl Graph {
         let (chain_edges_number, chain_edges_iterator) = unsafe {
             get_chain_edges_iterator_unchecked(
                 left_clique_nodes_number.saturating_sub(1),
-                left_clique_nodes_number + chain_nodes_number + 1,
+                left_clique_nodes_number
+                    + chain_nodes_number
+                    + if right_clique_nodes_number > 0 { 1 } else { 0 },
                 include_selfloops,
                 Some(1),
                 chain_weight.unwrap_or(WeightT::NAN),
@@ -1218,13 +1220,13 @@ impl Graph {
             chain_nodes_number,
             include_selfloops,
             clique_node_type.or(Some("clique")),
-            chain_node_type,
+            None,
             chain_node_type,
             clique_edge_type.or(Some("clique")),
-            chain_edge_type,
+            None,
             chain_edge_type,
             clique_weight,
-            chain_weight,
+            None,
             chain_weight,
             directed,
             name.or(Some("Lollipop")),
