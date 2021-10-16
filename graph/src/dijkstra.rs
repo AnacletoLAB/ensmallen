@@ -1,9 +1,11 @@
 use super::*;
+use funty::IsInteger;
 use indicatif::ParallelProgressIterator;
 use num_traits::Zero;
 use rayon::prelude::*;
 use std::cmp::Ord;
 use std::collections::VecDeque;
+use std::convert::TryFrom;
 use std::hash::{Hash, Hasher};
 use std::string::ToString;
 
@@ -639,6 +641,7 @@ impl Graph {
         )
     }
 
+    #[no_binding]
     /// Returns shortest path result for the BFS from given source node IDs, treating the set of source nodes as an hyper-node.
     ///
     /// # Arguments
@@ -649,25 +652,30 @@ impl Graph {
     /// If any of the given node IDs does not exist in the graph the method will panic.
     /// The provided list of node ids must be non-empty, or the method will panic.
     ///
-    pub unsafe fn get_unchecked_breadth_first_search_distances_parallel_from_node_ids(
+    pub unsafe fn get_unchecked_generic_breadth_first_search_distances_parallel_from_node_ids<
+        T: Send + Sync + IsInteger + TryFrom<usize>,
+    >(
         &self,
         src_node_ids: Vec<NodeT>,
-        maximal_depth: Option<NodeT>,
-    ) -> ShortestPathsResultBFS {
+        maximal_depth: Option<T>,
+    ) -> (Vec<T>, T, NodeT) {
         let nodes_number = self.get_nodes_number() as usize;
+        let node_not_present = T::MAX;
+        let mut distances = vec![node_not_present; nodes_number];
         let thread_shared_distances = ThreadDataRaceAware {
-            value: std::cell::UnsafeCell::new(vec![NODE_NOT_PRESENT; nodes_number]),
+            value: std::cell::UnsafeCell::new(&mut distances),
         };
         for src_node_id in src_node_ids.iter().cloned() {
-            (*thread_shared_distances.value.get())[src_node_id as usize] = 0;
+            (*thread_shared_distances.value.get())[src_node_id as usize] =
+                T::try_from(0).ok().unwrap();
         }
-        let mut eccentricity = 0;
+        let mut eccentricity: T = T::try_from(0).ok().unwrap();
         let mut most_distant_node = src_node_ids[0];
 
         let mut frontier = src_node_ids;
 
         while !frontier.is_empty() {
-            eccentricity += 1;
+            eccentricity += T::try_from(1).ok().unwrap();
             most_distant_node = frontier[0];
             if maximal_depth.map_or(false, |maximal_depth| maximal_depth > eccentricity) {
                 break;
@@ -683,7 +691,7 @@ impl Graph {
                 })
                 .filter_map(|neighbour_node_id| unsafe {
                     if (*thread_shared_distances.value.get())[neighbour_node_id as usize]
-                        == NODE_NOT_PRESENT
+                        == node_not_present
                     {
                         // Set it's distance
                         (*thread_shared_distances.value.get())[neighbour_node_id as usize] =
@@ -696,13 +704,31 @@ impl Graph {
                 })
                 .collect::<Vec<NodeT>>();
         }
-        eccentricity -= 1;
-        ShortestPathsResultBFS::new(
-            Some(thread_shared_distances.value.into_inner()),
-            None,
-            eccentricity,
-            most_distant_node,
-        )
+        eccentricity = eccentricity.saturating_sub(T::try_from(1).ok().unwrap());
+        (distances, eccentricity, most_distant_node)
+    }
+
+    /// Returns shortest path result for the BFS from given source node IDs, treating the set of source nodes as an hyper-node.
+    ///
+    /// # Arguments
+    /// * `src_node_ids`: Vec<NodeT> - Roots of the tree of minimum paths.
+    /// * `maximal_depth`: Option<NodeT> - The maximal depth to run the BFS for.
+    ///
+    /// # Safety
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    /// The provided list of node ids must be non-empty, or the method will panic.
+    ///
+    pub unsafe fn get_unchecked_breadth_first_search_distances_parallel_from_node_ids(
+        &self,
+        src_node_ids: Vec<NodeT>,
+        maximal_depth: Option<NodeT>,
+    ) -> ShortestPathsResultBFS {
+        let (distances, eccentricity, most_distant_node) = self
+            .get_unchecked_generic_breadth_first_search_distances_parallel_from_node_ids::<u32>(
+                src_node_ids,
+                maximal_depth,
+            );
+        ShortestPathsResultBFS::new(Some(distances), None, eccentricity, most_distant_node)
     }
 
     /// Returns shortest path result for the BFS from given source node ID.

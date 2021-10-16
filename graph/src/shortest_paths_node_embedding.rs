@@ -1,6 +1,7 @@
 use super::*;
 use indicatif::ParallelProgressIterator;
 use indicatif::ProgressIterator;
+use funty::IsInteger;
 use log::info;
 use rayon::prelude::*;
 use std::convert::TryFrom;
@@ -249,15 +250,15 @@ impl Graph {
     /// * If the use edge weights as probabilities is requested, but the graph does not have edge weights as probabilities (between 0 and 1).
     /// * If the use edge weights as probabilities is requested, but not the edge weights.
     ///
-    pub fn get_shortest_paths_node_embedding<T: TryFrom<u32> + Send + Sync>(
-        &self,
+    pub fn get_shortest_paths_node_embedding<'a, T: 'a + TryFrom<u32> + Into<f32> + Into<u32> + Send + Sync + IsInteger + TryFrom<usize>>(
+        &'a self,
         node_centralities: Option<Vec<f32>>,
         mut node_centralities_distribution: Option<&str>,
         adjust_by_central_node_distance: Option<bool>,
         number_of_nodes_to_sample_per_feature: Option<NodeT>,
         maximum_number_of_features: Option<NodeT>,
         validate_node_centralities: Option<bool>,
-        maximal_depth: Option<NodeT>,
+        maximal_depth: Option<T>,
         central_node_name: Option<&str>,
         central_node_id: Option<NodeT>,
         random_state: Option<u64>,
@@ -265,7 +266,7 @@ impl Graph {
         verbose: Option<bool>,
     ) -> Result<(
         NodeT,
-        impl Iterator<Item = impl IndexedParallelIterator<Item = T> + '_> + '_,
+        impl Iterator<Item = impl IndexedParallelIterator<Item = T> + 'a> + 'a,
         Option<Vec<Vec<String>>>,
     )> {
         let number_of_nodes_to_sample_per_feature =
@@ -288,7 +289,7 @@ impl Graph {
             validate_node_centralities,
             number_of_nodes_to_sample_per_feature,
             maximum_number_of_features,
-            maximal_depth,
+            maximal_depth.map(|maximal_depth| maximal_depth.into()),
             central_node_name,
             central_node_id,
         )?;
@@ -300,20 +301,20 @@ impl Graph {
             let most_central_node_id = self.get_most_central_node_id()?;
 
             info!("Computing min-paths using BFS for weighting centralities.");
-            let result = unsafe {
-                self.get_unchecked_breadth_first_search_distances_parallel_from_node_id(
-                    most_central_node_id,
+            let (distances, eccentricity, _, ) = unsafe {
+                self.get_unchecked_generic_breadth_first_search_distances_parallel_from_node_ids::<T>(
+                    vec![most_central_node_id],
                     None,
                 )
             };
-            let eccentricity = result.get_eccentricity() as f32;
-            result
-                .into_distances()
+            let eccentricity: f32 = eccentricity.into();
+            distances
                 .into_par_iter()
                 .zip(node_centralities.par_iter_mut())
                 .for_each(|(distance, node_centrality)| {
-                    if distance != NODE_NOT_PRESENT {
-                        *node_centrality *= distance as f32 / eccentricity;
+                    if distance != T::MAX {
+                        let distance: f32 = distance.into();
+                        *node_centrality *=  distance/ eccentricity;
                     }
                 });
         }
@@ -331,16 +332,15 @@ impl Graph {
 
             info!("Computing min-paths using BFS for masking centralities.");
             unsafe {
-                self.get_unchecked_breadth_first_search_distances_parallel_from_node_id(
-                    central_node_id,
+                self.get_unchecked_generic_breadth_first_search_distances_parallel_from_node_ids::<T>(
+                    vec![central_node_id],
                     Some(maximal_depth),
                 )
-            }
-            .into_distances()
+            }.0
             .into_par_iter()
             .zip(node_centralities.par_iter_mut())
             .for_each(|(distance, node_centrality)| {
-                if distance == NODE_NOT_PRESENT {
+                if distance == T::MAX {
                     *node_centrality = 0.0;
                 }
             });
@@ -369,18 +369,16 @@ impl Graph {
                 .progress_with(pb)
                 .map(move |anchor_node_ids| {
                     // Compute the node features
-                    let result = unsafe {
-                        self.get_unchecked_breadth_first_search_distances_parallel_from_node_ids(
+                    let (distances, eccentricity, _) = unsafe {
+                        self.get_unchecked_generic_breadth_first_search_distances_parallel_from_node_ids::<T>(
                             anchor_node_ids,
                             None,
                         )
                     };
-                    let eccentricity = result.get_eccentricity();
-                    result
-                        .into_distances()
+                    distances
                         .into_par_iter()
                         .map(move |distance| {
-                            T::try_from(if distance == NODE_NOT_PRESENT {
+                            T::try_from(if distance == T::MAX {
                                 eccentricity
                             } else {
                                 distance
@@ -641,7 +639,7 @@ impl Graph {
     ///
     pub fn get_shortest_paths_node_embedding_per_node_type<
         'a,
-        T: 'a + TryFrom<u32> + Send + Sync,
+        T: 'a + TryFrom<u32> + Send + Sync+ TryFrom<usize> + IsInteger + Into<f32> + Into<u32>,
     >(
         &'a self,
         node_centralities: Option<Vec<f32>>,
@@ -650,7 +648,7 @@ impl Graph {
         number_of_nodes_to_sample_per_feature: Option<NodeT>,
         maximum_number_of_features_per_node_type: Option<NodeT>,
         validate_node_centralities: Option<bool>,
-        maximal_depth: Option<NodeT>,
+        maximal_depth: Option<T>,
         central_node_name: Option<&str>,
         central_node_id: Option<NodeT>,
         random_state: Option<u64>,
@@ -931,7 +929,7 @@ impl Graph {
     ///
     pub fn get_shortest_paths_node_embedding_per_edge_type<
         'a,
-        T: 'a + TryFrom<u32> + Send + Sync,
+        T: 'a + TryFrom<u32> + TryFrom<usize> + Send + Sync + IsInteger + Into<f32> + Into<u32>,
     >(
         &'a self,
         node_centralities: Option<Vec<f32>>,
@@ -940,7 +938,7 @@ impl Graph {
         number_of_nodes_to_sample_per_feature: Option<NodeT>,
         maximum_number_of_features_per_edge_type: Option<NodeT>,
         validate_node_centralities: Option<bool>,
-        maximal_depth: Option<NodeT>,
+        maximal_depth: Option<T>,
         central_node_name: Option<&str>,
         central_node_id: Option<NodeT>,
         random_state: Option<u64>,
