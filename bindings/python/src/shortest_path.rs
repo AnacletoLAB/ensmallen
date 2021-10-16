@@ -207,7 +207,7 @@ macro_rules! impl_get_shortest_paths_node_embedding_per_node_type {
             /// ~~~~~~~~~~~~~~~~~~~~~
             /// For now we do not have support for other distributions implemented, so if the distribution
             /// is not expected to be one of the aforementioned distributions we will use zero as a threshold.
-            /// 
+            ///
             /// Raises
             /// ----------------------------------------------------------------------
             /// * If the provided node centralities are not provided for all features.
@@ -359,7 +359,7 @@ macro_rules! impl_get_shortest_paths_node_embedding_per_edge_type {
             /// ~~~~~~~~~~~~~~~~~~~~~
             /// For now we do not have support for other distributions implemented, so if the distribution
             /// is not expected to be one of the aforementioned distributions we will use zero as a threshold.
-            /// 
+            ///
             /// Raises
             /// ----------------------------------------------------------------------
             /// * If the provided node centralities are not provided for all features.
@@ -628,7 +628,7 @@ impl Graph {
     /// ~~~~~~~~~~~~~~~~~~~~~
     /// For now we do not have support for other distributions implemented, so if the distribution
     /// is not expected to be one of the aforementioned distributions we will use zero as a threshold.
-    /// 
+    ///
     /// Raises
     /// ----------------------------------------------------------------------
     /// * If the provided node centralities are not provided for all features.
@@ -761,7 +761,7 @@ impl Graph {
     /// ~~~~~~~~~~~~~~~~~~~~~
     /// For now we do not have support for other distributions implemented, so if the distribution
     /// is not expected to be one of the aforementioned distributions we will use zero as a threshold.
-    /// 
+    ///
     /// Raises
     /// ----------------------------------------------------------------------
     /// * If the provided node centralities are not provided for all features.
