@@ -211,6 +211,145 @@ unsafe fn get_circle_edges_iterator(
     )
 }
 
+/// Return numeric representation of the requested node ID from coordinates.
+///
+/// # Arguments
+/// `x`: NodeT - The first coordinate of the given Node ID.
+/// `y`: NodeT - The second coordinate of the given Node ID.
+/// `maximal_dimension_size`: NodeT - The maximal dimension size of the second coordinate of the node.
+///
+fn compose_node_id(x: NodeT, y: NodeT, maximal_dimension_size: NodeT) -> NodeT {
+    x * maximal_dimension_size + y
+}
+
+/// Return coordinates of the provided node ID in 2D space.
+///
+/// # Arguments
+/// `node_id`: NodeT - The node ID to decode.
+/// `maximal_dimension_size`: NodeT - The maximal dimension size of the second coordinate of the node.
+///
+fn decompose_node_id(node_id: NodeT, maximal_dimension_size: NodeT) -> (NodeT, NodeT) {
+    (
+        node_id / maximal_dimension_size,
+        node_id % maximal_dimension_size,
+    )
+}
+
+/// Returns node ID from the provided multi-dimensional coordinate.
+///
+/// # Arguments
+/// `coordinates`: &[NodeT] - The coordinates of the node to decode.
+/// `maximal_dimension_sizes`: &[NodeT] - The maximal coordinate sizes.
+///
+fn multidimensional_compose_node_id(
+    coordinates: &[NodeT],
+    maximal_dimension_sizes: &[NodeT],
+) -> NodeT {
+    coordinates
+        .iter()
+        .cloned()
+        .zip(maximal_dimension_sizes.iter().cloned())
+        .rev()
+        .fold(0, |node_id, (coordinate, maximal_dimension_size)| {
+            compose_node_id(node_id, coordinate, maximal_dimension_size)
+        })
+}
+
+/// Returns coordinates in nD space for the provided node IDs.
+///
+/// # Arguments
+/// `node_id`: NodeT - The node ID to decode.
+/// `maximal_dimension_sizes`: &[NodeT] - The maximal coordinate sizes.
+fn multidimensional_decompose_node_id(
+    node_id: NodeT,
+    maximal_dimension_sizes: &[NodeT],
+) -> Vec<NodeT> {
+    maximal_dimension_sizes
+        .iter()
+        .cloned()
+        .scan(node_id, |node_id, maximal_dimension_size| {
+            let (this_node_id, coordinate) = decompose_node_id(*node_id, maximal_dimension_size);
+            *node_id = this_node_id;
+            Some(coordinate)
+        })
+        .collect()
+}
+
+/// Return number of edges and iterator over edge list of an hyper-dimensional lattice with square cell.
+///
+/// # Implementative details
+/// Please do note that the edge IDs are NOT produced in correct order so the graph will be sorted.
+///
+/// # Arguments
+/// * `sides`: &'a [NodeT] - Sides of the hyper-dimensional lattice with square cell.
+/// * `minimum_node_id`: NodeT - The minimum node ID for the range of the wheel.
+/// * `edge_type`: Option<EdgeTypeT> - Edge type for the edges in the wheel.
+/// * `weight`: Option<WeightT> - Edge weights for the edges in the wheel.
+unsafe fn get_squared_lattice_edges_iterator<'a>(
+    sides: &'a [NodeT],
+    minimum_node_id: NodeT,
+    edge_type: Option<EdgeTypeT>,
+    weight: WeightT,
+) -> (
+    NodeT,
+    EdgeT,
+    impl ParallelIterator<Item = (usize, (NodeT, NodeT, Option<EdgeTypeT>, WeightT))> + 'a,
+) {
+    let dimensions = sides.len();
+    let nodes_number = sides.iter().cloned().reduce(|a, b| a * b).unwrap();
+    let edges_number = sides
+        .iter()
+        .cloned()
+        .enumerate()
+        .map(|(dimension_number, maximal_dimension_size)| {
+            (maximal_dimension_size as EdgeT + 1)
+                * sides
+                    .iter()
+                    .cloned()
+                    .enumerate()
+                    .filter_map(|(inner_dimension_number, maximal_dimension_size)| {
+                        if inner_dimension_number == dimension_number {
+                            None
+                        } else {
+                            Some(maximal_dimension_size as EdgeT)
+                        }
+                    })
+                    .reduce(|a, b| a * b)
+                    .unwrap()
+        })
+        .sum::<EdgeT>();
+    (
+        nodes_number,
+        edges_number,
+        (minimum_node_id..(minimum_node_id + nodes_number))
+            .into_par_iter()
+            .flat_map(move |src_node_id| {
+                let mut coordinates = multidimensional_decompose_node_id(src_node_id, sides);
+                let destinations = (0..dimensions)
+                    .zip(sides.iter().cloned())
+                    .flat_map(|(i, maximal_dimension_size)| {
+                        let mut neighbours = Vec::new();
+                        let coordinate = coordinates[i];
+                        if coordinate > 0 {
+                            coordinates[i] -= 1;
+                            neighbours.push(multidimensional_compose_node_id(&coordinates, sides));
+                            coordinates[i] += 1;
+                        }
+                        if coordinate != maximal_dimension_size - 1 {
+                            coordinates[i] += 1;
+                            neighbours.push(multidimensional_compose_node_id(&coordinates, sides));
+                            coordinates[i] -= 1;
+                        }
+                        neighbours.into_iter()
+                    })
+                    .collect::<Vec<NodeT>>();
+                destinations
+                    .into_par_iter()
+                    .map(move |dst_node_id| (0, (src_node_id, dst_node_id, edge_type, weight)))
+            }),
+    )
+}
+
 /// Return number of edges and iterator over edge list of a wheel.
 ///
 /// # Implementative details
@@ -1230,6 +1369,71 @@ impl Graph {
             chain_weight,
             directed,
             name.or(Some("Lollipop")),
+        )
+    }
+
+    /// Creates new squared lattice graph with given sizes and types.
+    ///
+    /// # Arguments
+    /// * `sides`: &'a [NodeT] - Sides of the hyper-dimensional lattice with square cell.
+    /// * `minimum_node_id`: Option<NodeT> - Minimum node ID to start with. May be needed when chaining graphs. By default 0.
+    /// * `node_type`: Option<&str> - The node type to use for the squared lattice. By default 'squared_lattice'.
+    /// * `weight`: Option<WeightT> - The weight to use for the edges in the left clique. By default None.
+    /// * `directed`: Option<bool> - Whether the graph is to built as directed. By default false.
+    /// * `name`: Option<&str> - Name of the graph. By default 'Lollipop'.
+    ///
+    /// # Raises
+    /// * If the edge weights are provided only for a subset.
+    pub fn generate_squared_lattice_graph(
+        sides: &[NodeT],
+        minimum_node_id: Option<NodeT>,
+        node_type: Option<&str>,
+        weight: Option<WeightT>,
+        directed: Option<bool>,
+        name: Option<&str>,
+    ) -> Result<Graph> {
+        if sides.is_empty() {
+            return Err("The number of dimensions provided is zero.".to_string());
+        }
+
+        if sides.iter().any(|side| side.is_zero()) {
+            return Err("One of the provided lattice sides is zero.".to_string());
+        }
+        let minimum_node_id = minimum_node_id.unwrap_or(0);
+        let directed = directed.unwrap_or(false);
+        let has_edge_weights = weight.is_some();
+
+        // Get the generator the wheel in the middle of the two cliques
+        let (nodes_number, edges_number, edges_iterator) = unsafe {
+            get_squared_lattice_edges_iterator(
+                sides,
+                minimum_node_id,
+                None,
+                weight.unwrap_or(WeightT::NAN),
+            )
+        };
+
+        let node_types = NodeTypeVocabulary::from_structs(
+            vec![Some(vec![0]); nodes_number as usize],
+            Vocabulary::from_reverse_map(vec![node_type.unwrap_or("squared_lattice").to_owned()])?,
+        );
+        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + nodes_number));
+        let name = name.unwrap_or("SquaredLattice");
+
+        build_graph_from_integers(
+            Some(edges_iterator),
+            nodes,
+            Some(node_types),
+            None,
+            has_edge_weights,
+            directed,
+            Some(true),
+            Some(false),
+            Some(false),
+            Some(edges_number),
+            false,
+            false,
+            name.to_string(),
         )
     }
 }
