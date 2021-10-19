@@ -60,6 +60,7 @@ def OVAE(
     version: str = "release"
         The version of the graph to retrieve.		
 	The available versions are:
+			- 04-11-2016
 			- release
     additional_graph_kwargs: Dict
         Additional graph kwargs.

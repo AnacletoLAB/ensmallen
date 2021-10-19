@@ -60,6 +60,7 @@ def EHDAA2(
     version: str = "04%3A07%3A2013%2020%3A21"
         The version of the graph to retrieve.		
 	The available versions are:
+			- 2013-07-04
 			- 04%3A07%3A2013%2020%3A21
     additional_graph_kwargs: Dict
         Additional graph kwargs.

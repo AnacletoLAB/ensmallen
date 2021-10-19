@@ -60,6 +60,7 @@ def PLANA(
     version: str = "2021-09-29"
         The version of the graph to retrieve.		
 	The available versions are:
+			- 2021-10-06
 			- 2021-09-29
     additional_graph_kwargs: Dict
         Additional graph kwargs.

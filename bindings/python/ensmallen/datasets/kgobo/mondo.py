@@ -60,6 +60,7 @@ def MONDO(
     version: str = "2021-09-01"
         The version of the graph to retrieve.		
 	The available versions are:
+			- 2021-10-01
 			- 2021-09-01
     additional_graph_kwargs: Dict
         Additional graph kwargs.

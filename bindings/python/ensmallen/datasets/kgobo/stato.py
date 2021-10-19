@@ -60,6 +60,7 @@ def STATO(
     version: str = "release"
         The version of the graph to retrieve.		
 	The available versions are:
+			- RC1.4
 			- release
     additional_graph_kwargs: Dict
         Additional graph kwargs.

@@ -60,6 +60,7 @@ def ICO(
     version: str = "release"
         The version of the graph to retrieve.		
 	The available versions are:
+			- 2021-04-21
 			- release
     additional_graph_kwargs: Dict
         Additional graph kwargs.

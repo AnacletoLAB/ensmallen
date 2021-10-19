@@ -60,6 +60,7 @@ def CHEBI(
     version: str = "203"
         The version of the graph to retrieve.		
 	The available versions are:
+			- 204
 			- 203
     additional_graph_kwargs: Dict
         Additional graph kwargs.
