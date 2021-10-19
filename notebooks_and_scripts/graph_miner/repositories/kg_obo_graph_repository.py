@@ -25,7 +25,7 @@ class KGOBOGraphRepository(GraphRepository):
 
         graph_url_placeholder = urljoin(
             root_url,
-            "{graph_name}/{version}/{graph_name}_kgz_tsv.tar.gz"
+            "{graph_name}/{version}/{graph_name}_kgx_tsv.tar.gz"
         )
 
         graph_data = {
