@@ -53,8 +53,8 @@ class KGOBOGraphRepository(GraphRepository):
                 mined_data[callable_graph_name][version] = {
                     "urls": [graph_url],
                     "arguments": {
-                        "edge_path": "{graph_name}/{graph_name}_edges.tsv".format(graph_name=graph_name),
-                        "node_path": "{graph_name}/{graph_name}_nodes.tsv".format(graph_name=graph_name),
+                        "edge_path": "{graph_name}_kgx_tsv/{graph_name}_kgx_tsv_edges.tsv".format(graph_name=graph_name),
+                        "node_path": "{graph_name}_kgx_tsv/{graph_name}_kgx_tsv_nodes.tsv".format(graph_name=graph_name),
                         "name": callable_graph_name,
                         "sources_column": "subject",
                         "destinations_column": "object",
