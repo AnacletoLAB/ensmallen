@@ -314,6 +314,16 @@ impl Graph {
         Ok(())
     }
 
+    /// Raises an error if the graph contains trap nodes.
+    ///
+    /// # Raises
+    /// * If the graph contains trap nodes.
+    pub fn must_not_have_trap_nodes(&self) -> Result<()> {
+        if self.has_trap_nodes() {
+            return Err("The current graph instance contains trap nodes.".to_string());
+        }
+        Ok(())
+    }
     /// Raises an error if the graph does not have edge types.
     ///
     /// # Example

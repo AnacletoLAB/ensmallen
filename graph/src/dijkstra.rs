@@ -800,14 +800,13 @@ impl Graph {
     ///
     /// # Arguments
     /// * `src_node_ids`: Vec<NodeT> - Root of the tree of minimum paths.
-    /// * `maybe_dst_node_id`: Option<NodeT> - Optional target destination. If provided, Dijkstra will stop upon reaching this node.
+    /// * `maybe_dst_node_id`: Option<NodeT> - Optional target destination. If provided, the breadth first search will stop upon reaching this node.
     /// * `compute_predecessors`: Option<bool> - Whether to compute the vector of predecessors.
     /// * `maximal_depth`: Option<NodeT> - The maximal depth to execute the DFS for.
     ///
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
     ///
-    /// TODO! Explore chains accelerations!
     pub unsafe fn get_unchecked_breadth_first_search_from_node_ids(
         &self,
         src_node_ids: Vec<NodeT>,
@@ -900,14 +899,13 @@ impl Graph {
     ///
     /// # Arguments
     /// * `src_node_id`: NodeT - Root of the tree of minimum paths.
-    /// * `maybe_dst_node_id`: Option<NodeT> - Optional target destination. If provided, Dijkstra will stop upon reaching this node.
+    /// * `maybe_dst_node_id`: Option<NodeT> - Optional target destination. If provided, breadth first search will stop upon reaching this node.
     /// * `compute_predecessors`: Option<bool> - Whether to compute the vector of predecessors.
     /// * `maximal_depth`: Option<NodeT> - The maximal depth to execute the DFS for.
     ///
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
     ///
-    /// TODO! Explore chains accelerations!
     pub unsafe fn get_unchecked_breadth_first_search_from_node_id(
         &self,
         src_node_id: NodeT,
@@ -1555,6 +1553,290 @@ impl Graph {
         }
     }
 
+    /// Returns shortest paths dijsktra object using as weight the UNWEIGHTED symmetric laplacian edges.
+    ///
+    /// # Implementative details
+    /// Note that the weights are always treated as probabilities.
+    ///
+    /// # Arguments
+    /// * `src_node_id`: Vec<NodeT> - Root of the tree of minimum paths.
+    /// * `maybe_dst_node_id`: Option<NodeT> - Optional target destination. If provided, Dijkstra will stop upon reaching this node.
+    /// * `maybe_dst_node_ids`: Option<Vec<NodeT>> - Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
+    /// * `compute_predecessors`: bool - Whether to compute the vector of predecessors.
+    /// * `maximal_depth`: Option<NodeT> - The maximal number of iterations to execute Dijkstra for.
+    ///
+    /// # Safety
+    /// * If any of the given node IDs does not exist in the graph the method will panic.
+    /// * If the graph is directed and contains traps, the method may panic.
+    pub unsafe fn get_unchecked_symmetric_laplacian_dijkstra_from_node_ids(
+        &self,
+        src_node_ids: Vec<NodeT>,
+        maybe_dst_node_id: Option<NodeT>,
+        mut maybe_dst_node_ids: Option<Vec<NodeT>>,
+        compute_predecessors: Option<bool>,
+        maximal_depth: Option<NodeT>,
+    ) -> ShortestPathsDjkstra {
+        let compute_predecessors = compute_predecessors.unwrap_or(true);
+        let nodes_number = self.get_nodes_number() as usize;
+        let mut most_distant_node = src_node_ids[0];
+        let mut dst_node_distance = maybe_dst_node_id.map(|_| 0.0);
+        let mut predecessors: Option<Vec<Option<NodeT>>> = if compute_predecessors {
+            Some(vec![None; nodes_number])
+        } else {
+            None
+        };
+
+        if src_node_ids
+            .iter()
+            .cloned()
+            .all(|src_node_id| self.is_unchecked_disconnected_node_from_node_id(src_node_id))
+        {
+            return ShortestPathsDjkstra::new(
+                vec![0.0; nodes_number],
+                most_distant_node,
+                predecessors,
+                dst_node_distance,
+                0.0,
+                0.0,
+                0.0,
+            );
+        }
+
+        let bfs: Option<ShortestPathsResultBFS> = maximal_depth.map(|md| {
+            self.get_unchecked_breadth_first_search_from_node_ids(
+                src_node_ids.clone(),
+                maybe_dst_node_id,
+                None,
+                Some(md),
+            )
+        });
+
+        let mut nodes_to_explore: DijkstraQueue =
+            DijkstraQueue::with_capacity_from_roots(nodes_number, src_node_ids);
+        let mut eccentricity: f64 = 0.0;
+        let mut total_distance: f64 = 0.0;
+        let mut total_harmonic_distance: f64 = 0.0;
+
+        while let Some(closest_node_id) = nodes_to_explore.pop() {
+            // Update the distances metrics
+            let closest_node_id_distance = nodes_to_explore[closest_node_id];
+            if closest_node_id_distance > eccentricity {
+                eccentricity = closest_node_id_distance;
+                most_distant_node = closest_node_id as NodeT;
+            }
+            total_distance += nodes_to_explore[closest_node_id];
+            if nodes_to_explore[closest_node_id] > 0.0 {
+                total_harmonic_distance += (-nodes_to_explore[closest_node_id]).exp();
+            }
+            // If the closest node is the optional destination node, we have
+            // completed what the user has required.
+            if maybe_dst_node_id.map_or(false, |dst| dst == closest_node_id as NodeT) {
+                let _ = dst_node_distance.insert((-nodes_to_explore[closest_node_id]).exp());
+                break;
+            }
+            // If the closest node is in the set of the destination nodes
+            if let Some(dst_node_ids) = &mut maybe_dst_node_ids {
+                // We remove it
+                let node_id_idx = dst_node_ids
+                    .iter()
+                    .position(|x| *x as usize == closest_node_id);
+
+                if let Some(nii) = node_id_idx {
+                    dst_node_ids.remove(nii);
+                }
+                // And if now the roaringbitmap is empty
+                if dst_node_ids.is_empty() {
+                    // We have completed the requested task.
+                    break;
+                }
+            }
+
+            self.iter_unchecked_neighbour_node_ids_from_source_node_id(closest_node_id as NodeT)
+                .for_each(|neighbour_node_id| {
+                    if let Some(bfs) = bfs.as_ref() {
+                        if !bfs.has_path_to_node_id(neighbour_node_id).unwrap() {
+                            return;
+                        }
+                    }
+                    let weight = 1.0
+                        / (self.get_unchecked_node_degree_from_node_id(closest_node_id as NodeT)
+                            as f64
+                            * self.get_unchecked_node_degree_from_node_id(neighbour_node_id)
+                                as f64)
+                            .sqrt();
+                    let new_neighbour_distance =
+                        nodes_to_explore[closest_node_id] + -(weight as f64).ln();
+                    if new_neighbour_distance < nodes_to_explore[neighbour_node_id as usize] {
+                        if let Some(predecessors) = &mut predecessors {
+                            predecessors[neighbour_node_id as usize] =
+                                Some(closest_node_id as NodeT);
+                        }
+                        nodes_to_explore.push(neighbour_node_id as usize, new_neighbour_distance);
+                    }
+                });
+        }
+
+        let mut distances = nodes_to_explore.unwrap();
+
+        // Since the edge weights are to be treated as probabilities
+        // we need to adjust the distances back using the exponentiation.
+        distances
+            .par_iter_mut()
+            .for_each(|distance| *distance = (-*distance).exp());
+        eccentricity = (-eccentricity).exp();
+        total_distance = (-total_distance).exp();
+
+        ShortestPathsDjkstra {
+            distances,
+            most_distant_node,
+            predecessors,
+            dst_node_distance,
+            eccentricity,
+            total_distance,
+            total_harmonic_distance,
+        }
+    }
+
+    /// Returns shortest paths dijsktra object using as weight the UNWEIGHTED random walk laplacian edges.
+    ///
+    /// # Implementative details
+    /// Note that the weights are always treated as probabilities.
+    ///
+    /// # Arguments
+    /// * `src_node_id`: Vec<NodeT> - Root of the tree of minimum paths.
+    /// * `maybe_dst_node_id`: Option<NodeT> - Optional target destination. If provided, Dijkstra will stop upon reaching this node.
+    /// * `maybe_dst_node_ids`: Option<Vec<NodeT>> - Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
+    /// * `compute_predecessors`: bool - Whether to compute the vector of predecessors.
+    /// * `maximal_depth`: Option<NodeT> - The maximal number of iterations to execute Dijkstra for.
+    ///
+    /// # Safety
+    /// * If any of the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_random_walk_laplacian_dijkstra_from_node_ids(
+        &self,
+        src_node_ids: Vec<NodeT>,
+        maybe_dst_node_id: Option<NodeT>,
+        mut maybe_dst_node_ids: Option<Vec<NodeT>>,
+        compute_predecessors: Option<bool>,
+        maximal_depth: Option<NodeT>,
+    ) -> ShortestPathsDjkstra {
+        let compute_predecessors = compute_predecessors.unwrap_or(true);
+        let nodes_number = self.get_nodes_number() as usize;
+        let mut most_distant_node = src_node_ids[0];
+        let mut dst_node_distance = maybe_dst_node_id.map(|_| 0.0);
+        let mut predecessors: Option<Vec<Option<NodeT>>> = if compute_predecessors {
+            Some(vec![None; nodes_number])
+        } else {
+            None
+        };
+
+        if src_node_ids
+            .iter()
+            .cloned()
+            .all(|src_node_id| self.is_unchecked_disconnected_node_from_node_id(src_node_id))
+        {
+            return ShortestPathsDjkstra::new(
+                vec![0.0; nodes_number],
+                most_distant_node,
+                predecessors,
+                dst_node_distance,
+                0.0,
+                0.0,
+                0.0,
+            );
+        }
+
+        let bfs: Option<ShortestPathsResultBFS> = maximal_depth.map(|md| {
+            self.get_unchecked_breadth_first_search_from_node_ids(
+                src_node_ids.clone(),
+                maybe_dst_node_id,
+                None,
+                Some(md),
+            )
+        });
+
+        let mut nodes_to_explore: DijkstraQueue =
+            DijkstraQueue::with_capacity_from_roots(nodes_number, src_node_ids);
+        let mut eccentricity: f64 = 0.0;
+        let mut total_distance: f64 = 0.0;
+        let mut total_harmonic_distance: f64 = 0.0;
+
+        while let Some(closest_node_id) = nodes_to_explore.pop() {
+            // Update the distances metrics
+            let closest_node_id_distance = nodes_to_explore[closest_node_id];
+            if closest_node_id_distance > eccentricity {
+                eccentricity = closest_node_id_distance;
+                most_distant_node = closest_node_id as NodeT;
+            }
+            total_distance += nodes_to_explore[closest_node_id];
+            if nodes_to_explore[closest_node_id] > 0.0 {
+                total_harmonic_distance += (-nodes_to_explore[closest_node_id]).exp();
+            }
+            // If the closest node is the optional destination node, we have
+            // completed what the user has required.
+            if maybe_dst_node_id.map_or(false, |dst| dst == closest_node_id as NodeT) {
+                let _ = dst_node_distance.insert((-nodes_to_explore[closest_node_id]).exp());
+                break;
+            }
+            // If the closest node is in the set of the destination nodes
+            if let Some(dst_node_ids) = &mut maybe_dst_node_ids {
+                // We remove it
+                let node_id_idx = dst_node_ids
+                    .iter()
+                    .position(|x| *x as usize == closest_node_id);
+
+                if let Some(nii) = node_id_idx {
+                    dst_node_ids.remove(nii);
+                }
+                // And if now the roaringbitmap is empty
+                if dst_node_ids.is_empty() {
+                    // We have completed the requested task.
+                    break;
+                }
+            }
+
+            let node_weight =
+                -(self.get_unchecked_node_degree_from_node_id(closest_node_id as NodeT) as f64)
+                    .ln();
+            self.iter_unchecked_neighbour_node_ids_from_source_node_id(closest_node_id as NodeT)
+                .for_each(|neighbour_node_id| {
+                    if let Some(bfs) = bfs.as_ref() {
+                        if !bfs.has_path_to_node_id(neighbour_node_id).unwrap() {
+                            return;
+                        }
+                    }
+                    let new_neighbour_distance = nodes_to_explore[closest_node_id] + node_weight;
+                    if new_neighbour_distance < nodes_to_explore[neighbour_node_id as usize] {
+                        if let Some(predecessors) = &mut predecessors {
+                            predecessors[neighbour_node_id as usize] =
+                                Some(closest_node_id as NodeT);
+                        }
+                        nodes_to_explore.push(neighbour_node_id as usize, new_neighbour_distance);
+                    }
+                });
+        }
+
+        let mut distances = nodes_to_explore.unwrap();
+
+        // Since the edge weights are to be treated as probabilities
+        // we need to adjust the distances back using the exponentiation.
+        distances
+            .par_iter_mut()
+            .for_each(|distance| *distance = (-*distance).exp());
+        eccentricity = (-eccentricity).exp();
+        total_distance = (-total_distance).exp();
+
+        ShortestPathsDjkstra {
+            distances,
+            most_distant_node,
+            predecessors,
+            dst_node_distance,
+            eccentricity,
+            total_distance,
+            total_harmonic_distance,
+        }
+    }
+
+    
     /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
     ///
     /// # Arguments
