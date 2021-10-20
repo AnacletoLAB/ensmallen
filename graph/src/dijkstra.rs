@@ -1658,14 +1658,14 @@ impl Graph {
                             return;
                         }
                     }
-                    let weight = 1.0
+                    let weight = -(1.0
                         / (self.get_unchecked_node_degree_from_node_id(closest_node_id as NodeT)
                             as f64
                             * self.get_unchecked_node_degree_from_node_id(neighbour_node_id)
                                 as f64)
-                            .sqrt();
+                            .sqrt()).ln();
                     let new_neighbour_distance =
-                        nodes_to_explore[closest_node_id] + -(weight as f64).ln();
+                        nodes_to_explore[closest_node_id] + weight;
                     if new_neighbour_distance < nodes_to_explore[neighbour_node_id as usize] {
                         if let Some(predecessors) = &mut predecessors {
                             predecessors[neighbour_node_id as usize] =
@@ -1794,9 +1794,9 @@ impl Graph {
                 }
             }
 
-            let node_weight =
-                -(self.get_unchecked_node_degree_from_node_id(closest_node_id as NodeT) as f64)
-                    .ln();
+            let node_weight = -(1.0
+                / self.get_unchecked_node_degree_from_node_id(closest_node_id as NodeT) as f64)
+                .ln();
             self.iter_unchecked_neighbour_node_ids_from_source_node_id(closest_node_id as NodeT)
                 .for_each(|neighbour_node_id| {
                     if let Some(bfs) = bfs.as_ref() {
@@ -1836,7 +1836,6 @@ impl Graph {
         }
     }
 
-    
     /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
     ///
     /// # Arguments
