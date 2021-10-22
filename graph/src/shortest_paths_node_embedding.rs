@@ -86,7 +86,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_centralities`: Vec<f32> - Vector with the importance of the nodes, used to properly sample the anchors.
-    /// * `node_centralities_distribution`: Option<&str> - Distribution expected out of the provided node centralities distribution.
+    /// * `node_centralities_distribution`: &str - Distribution expected out of the provided node centralities distribution.
     /// * `number_of_nodes_to_sample_per_feature`: NodeT - Number of nodes to sample per feature.
     /// * `maximum_number_of_features`: usize - Maximum number of node features to generate.
     /// * `number_of_bins`: Option<usize> - Number of bins to use when the provided node distribution is unknown. By default, 100.
@@ -98,7 +98,7 @@ impl Graph {
     fn get_anchor_node_ids_from_node_centralities(
         &self,
         mut node_centralities: Vec<f32>,
-        node_centralities_distribution: Option<&str>,
+        node_centralities_distribution: &str,
         number_of_nodes_to_sample_per_feature: NodeT,
         maximum_number_of_features: NodeT,
         number_of_bins: Option<usize>,
@@ -116,17 +116,16 @@ impl Graph {
             .progress_with(pb)
             .map(|_| {
                 let threshold =
-                    if let Some(node_centralities_distribution) = node_centralities_distribution {
                         match node_centralities_distribution {
                             "exponential" => self.get_exponential_distribution_threshold(
                                 &node_centralities,
                                 number_of_nodes_to_sample_per_feature as usize,
-                            ),
+                            ) as f32,
                             "geometric" => self.get_geometric_distribution_threshold(
                                 &node_centralities,
                                 number_of_nodes_to_sample_per_feature as usize,
-                            ),
-                            "unknown" => self.get_unknown_distribution_threshold(&node_centralities, number_of_nodes_to_sample_per_feature as usize, number_of_bins) as f64,
+                            ) as f32,
+                            "unknown" => self.get_unknown_distribution_threshold(&node_centralities, number_of_nodes_to_sample_per_feature as usize, number_of_bins),
                             distribution => {
                                 return Err(format!(
                                     concat!(
@@ -136,14 +135,7 @@ impl Graph {
                                     distribution
                                 ));
                             }
-                        }
-                    } else {
-                        self.get_unknown_distribution_threshold(
-                            &node_centralities, 
-                            number_of_nodes_to_sample_per_feature as usize,
-                            number_of_bins
-                        ) as f64
-                    } as f32;
+                        };
                 let mut node_ids = self
                     .par_iter_node_ids()
                     .zip(node_centralities.par_iter().cloned())
@@ -268,7 +260,7 @@ impl Graph {
     pub fn get_shortest_paths_node_embedding<'a, T: 'a + TryFrom<u32> + Into<u32> + Send + Sync + IsInteger + TryFrom<usize>>(
         &'a self,
         node_centralities: Option<Vec<f32>>,
-        mut node_centralities_distribution: Option<&str>,
+        node_centralities_distribution: Option<&str>,
         adjust_by_central_node_distance: Option<bool>,
         number_of_nodes_to_sample_per_feature: Option<NodeT>,
         maximum_number_of_features: Option<NodeT>,
@@ -295,7 +287,7 @@ impl Graph {
             validate_node_centralities.unwrap_or(true) && node_centralities.is_some();
 
         let random_state = random_state.unwrap_or(42);
-        node_centralities_distribution = Some("unknown");
+        let node_centralities_distribution = node_centralities_distribution.unwrap_or("unknown");
         let mut node_centralities = node_centralities.unwrap_or(self.get_degree_centrality()?);
 
         self.validate_shortest_paths_node_embedding_parameters(
@@ -458,7 +450,7 @@ impl Graph {
     pub fn get_weighted_shortest_paths_node_embedding(
         &self,
         node_centralities: Option<Vec<f32>>,
-        mut node_centralities_distribution: Option<&str>,
+        node_centralities_distribution: Option<&str>,
         adjust_by_central_node_distance: Option<bool>,
         number_of_nodes_to_sample_per_feature: Option<NodeT>,
         maximum_number_of_features: Option<NodeT>,
@@ -490,7 +482,7 @@ impl Graph {
             self.must_have_edge_weights_representing_probabilities()?;
         }
         let random_state = random_state.unwrap_or(42);
-        node_centralities_distribution = Some("unknown");
+        let node_centralities_distribution = node_centralities_distribution.unwrap_or("unknown");
         let mut node_centralities = node_centralities.unwrap_or(self.get_degree_centrality()?);
 
         self.validate_shortest_paths_node_embedding_parameters(
