@@ -155,3 +155,6 @@ pub use chains::*;
 
 mod circles;
 pub use circles::*;
+
+mod stars;
+pub use stars::*;
