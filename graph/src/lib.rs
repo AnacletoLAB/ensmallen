@@ -149,3 +149,6 @@ pub use nodes_sampling::*;
 
 mod subgraphs;
 pub use subgraphs::*;
+
+mod chains;
+pub use chains::*;
