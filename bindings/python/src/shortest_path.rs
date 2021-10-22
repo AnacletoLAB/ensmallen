@@ -6,7 +6,7 @@ macro_rules! impl_get_shortest_paths_node_embedding {
         #[pymethods]
         impl Graph {
             #[args(py_kwargs = "**")]
-            #[text_signature = "($self, node_centralities, node_centralities_distribution, adjust_by_central_node_distance, number_of_nodes_to_sample_per_feature, maximum_number_of_features, validate_node_centralities, maximal_depth, central_node_name, central_node_id, random_state, return_sampled_node_names, dtype, verbose)"]
+            #[text_signature = "($self, node_centralities, node_centralities_distribution, adjust_by_central_node_distance, number_of_nodes_to_sample_per_feature, maximum_number_of_features, number_of_bins, remove_neighbouring_nodes, validate_node_centralities, maximal_depth, central_node_name, central_node_id, random_state, return_sampled_node_names, dtype, verbose)"]
             /// Return node embedding vector obtained from shortest-paths.
             ///
             /// Parameters
@@ -21,6 +21,8 @@ macro_rules! impl_get_shortest_paths_node_embedding {
             ///     Number of nodes to sample per feature. By default 10.
             /// maximum_number_of_features`: Optional[int]
             ///     Maximum number of node features to generate. By default 50.
+            /// number_of_bins: Optional[int]
+            ///     Number of bins to use when the provided node distribution is unknown. By default, 100.
             /// remove_neighbouring_nodes: Optional[bool] = True
             ///     Whether to remove the neighbouring nodes from the set of samplable anchor nodes. By default true.
             /// validate_node_centralities: Optional[bool] = True
@@ -75,6 +77,7 @@ macro_rules! impl_get_shortest_paths_node_embedding {
                 adjust_by_central_node_distance: Option<bool>,
                 number_of_nodes_to_sample_per_feature: Option<NodeT>,
                 maximum_number_of_features: Option<NodeT>,
+                number_of_bins: Option<usize>,
                 remove_neighbouring_nodes: Option<bool>,
                 validate_node_centralities: Option<bool>,
                 maximal_depth: Option<NodeT>,
@@ -109,6 +112,7 @@ macro_rules! impl_get_shortest_paths_node_embedding {
                                 adjust_by_central_node_distance,
                                 number_of_nodes_to_sample_per_feature,
                                 maximum_number_of_features,
+                                number_of_bins,
                                 remove_neighbouring_nodes,
                                 validate_node_centralities,
                                 maximal_depth.map(|x| x  as $dtype),
@@ -176,6 +180,8 @@ macro_rules! impl_get_shortest_paths_node_embedding_per_node_type {
             ///     Number of nodes to sample per feature. By default 10.
             /// maximum_number_of_features_per_node_type: Optional[int] = 50
             ///     Maximum number of node features to generate. By default 50.
+            /// number_of_bins: Optional[int]
+            ///     Number of bins to use when the provided node distribution is unknown. By default, 100.
             /// remove_neighbouring_nodes: Optional[bool] = True
             ///     Whether to remove the neighbouring nodes from the set of samplable anchor nodes. By default true.
             /// validate_node_centralities: Optional[bool] = True
@@ -230,6 +236,7 @@ macro_rules! impl_get_shortest_paths_node_embedding_per_node_type {
                 adjust_by_central_node_distance: Option<bool>,
                 number_of_nodes_to_sample_per_feature: Option<NodeT>,
                 maximum_number_of_features_per_node_type: Option<NodeT>,
+                number_of_bins: Option<usize>,
                 remove_neighbouring_nodes: Option<bool>,
                 validate_node_centralities: Option<bool>,
                 maximal_depth: Option<NodeT>,
@@ -264,6 +271,7 @@ macro_rules! impl_get_shortest_paths_node_embedding_per_node_type {
                                 adjust_by_central_node_distance,
                                 number_of_nodes_to_sample_per_feature,
                                 maximum_number_of_features_per_node_type,
+                                number_of_bins,
                                 remove_neighbouring_nodes,
                                 validate_node_centralities,
                                 maximal_depth.map(|x| x  as $dtype),
@@ -317,7 +325,7 @@ macro_rules! impl_get_shortest_paths_node_embedding_per_edge_type {
         #[pymethods]
         impl Graph {
             #[args(py_kwargs = "**")]
-            #[text_signature = "($self, node_centralities, node_centralities_distribution, adjust_by_central_node_distance, number_of_nodes_to_sample_per_feature, maximum_number_of_features_per_edge_type, remove_neighbouring_nodes, validate_node_centralities, maximal_depth, central_node_name, central_node_id, random_state, return_sampled_node_names, dtype, verbose)"]
+            #[text_signature = "($self, node_centralities, node_centralities_distribution, adjust_by_central_node_distance, number_of_nodes_to_sample_per_feature, maximum_number_of_features_per_edge_type, number_of_bins, remove_neighbouring_nodes, validate_node_centralities, maximal_depth, central_node_name, central_node_id, random_state, return_sampled_node_names, dtype, verbose)"]
             /// Return node embedding vector obtained from shortest-paths.
             ///
             /// Arguments
@@ -332,6 +340,8 @@ macro_rules! impl_get_shortest_paths_node_embedding_per_edge_type {
             ///     Number of nodes to sample per feature. By default 10.
             /// maximum_number_of_features_per_node_type: Optional[int] = 50
             ///     Maximum number of node features to generate. By default 50.
+            /// number_of_bins: Optional[int]
+            ///     Number of bins to use when the provided node distribution is unknown. By default, 100.
             /// remove_neighbouring_nodes: Optional[bool] = True
             ///     Whether to remove the neighbouring nodes from the set of samplable anchor nodes. By default true.
             /// validate_node_centralities: Optional[bool] = True
@@ -386,6 +396,7 @@ macro_rules! impl_get_shortest_paths_node_embedding_per_edge_type {
                 adjust_by_central_node_distance: Option<bool>,
                 number_of_nodes_to_sample_per_feature: Option<NodeT>,
                 maximum_number_of_features_per_edge_type: Option<NodeT>,
+                number_of_bins: Option<usize>,
                 remove_neighbouring_nodes: Option<bool>,
                 validate_node_centralities: Option<bool>,
                 maximal_depth: Option<NodeT>,
@@ -420,6 +431,7 @@ macro_rules! impl_get_shortest_paths_node_embedding_per_edge_type {
                                 adjust_by_central_node_distance,
                                 number_of_nodes_to_sample_per_feature,
                                 maximum_number_of_features_per_edge_type,
+                                number_of_bins,
                                 remove_neighbouring_nodes,
                                 validate_node_centralities,
                                 maximal_depth.map(|x| x  as $dtype),
@@ -471,7 +483,7 @@ impl_get_shortest_paths_node_embedding_per_edge_type! {u8, u16, u32}
 #[pymethods]
 impl Graph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, node_centralities, node_centralities_distribution, adjust_by_central_node_distance, number_of_nodes_to_sample_per_feature, maximum_number_of_features, validate_node_centralities, maximal_depth, central_node_name, central_node_id, use_edge_weights_as_probabilities, random_state, return_sampled_node_names, dtype, verbose)"]
+    #[text_signature = "($self, node_centralities, node_centralities_distribution, adjust_by_central_node_distance, number_of_nodes_to_sample_per_feature, maximum_number_of_features, number_of_bins, remove_neighbouring_nodes, validate_node_centralities, maximal_depth, central_node_name, central_node_id, use_edge_weights_as_probabilities, random_state, return_sampled_node_names, dtype, verbose)"]
     /// Return node embedding vector obtained from weighted shortest-paths.
     ///
     /// Arguments
@@ -486,6 +498,8 @@ impl Graph {
     ///     Number of nodes to sample per feature. By default 10.
     /// maximum_number_of_features`: Optional[int]
     ///     Maximum number of node features to generate. By default 50.
+    /// number_of_bins: Optional[int]
+    ///     Number of bins to use when the provided node distribution is unknown. By default, 100.
     /// remove_neighbouring_nodes: Optional[bool] = True
     ///     Whether to remove the neighbouring nodes from the set of samplable anchor nodes. By default true.
     /// validate_node_centralities: Optional[bool] = True
@@ -542,6 +556,7 @@ impl Graph {
         adjust_by_central_node_distance: Option<bool>,
         number_of_nodes_to_sample_per_feature: Option<NodeT>,
         maximum_number_of_features: Option<NodeT>,
+        number_of_bins: Option<usize>,
         remove_neighbouring_nodes: Option<bool>,
         validate_node_centralities: Option<bool>,
         maximal_depth: Option<NodeT>,
@@ -561,6 +576,7 @@ impl Graph {
                 adjust_by_central_node_distance,
                 number_of_nodes_to_sample_per_feature,
                 maximum_number_of_features,
+                number_of_bins,
                 remove_neighbouring_nodes,
                 validate_node_centralities,
                 maximal_depth,
@@ -607,6 +623,8 @@ impl Graph {
     ///     Number of nodes to sample per feature. By default 10.
     /// maximum_number_of_features_per_node_type: Optional[int] = 50
     ///     Maximum number of node features to generate. By default 50.
+    /// number_of_bins: Optional[int]
+    ///     Number of bins to use when the provided node distribution is unknown. By default, 100.
     /// remove_neighbouring_nodes: Optional[bool] = True
     ///     Whether to remove the neighbouring nodes from the set of samplable anchor nodes. By default true.
     /// validate_node_centralities: Optional[bool] = True
@@ -663,6 +681,7 @@ impl Graph {
         adjust_by_central_node_distance: Option<bool>,
         number_of_nodes_to_sample_per_feature: Option<NodeT>,
         maximum_number_of_features_per_node_type: Option<NodeT>,
+        number_of_bins: Option<usize>,
         remove_neighbouring_nodes: Option<bool>,
         validate_node_centralities: Option<bool>,
         maximal_depth: Option<NodeT>,
@@ -684,6 +703,7 @@ impl Graph {
                     adjust_by_central_node_distance,
                     number_of_nodes_to_sample_per_feature,
                     maximum_number_of_features_per_node_type,
+                    number_of_bins,
                     remove_neighbouring_nodes,
                     validate_node_centralities,
                     maximal_depth,
@@ -729,7 +749,7 @@ impl Graph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, node_centralities, node_centralities_distribution, adjust_by_central_node_distance, number_of_nodes_to_sample_per_feature, maximum_number_of_features_per_edge_type, remove_neighbouring_nodes, validate_node_centralities, maximal_depth, central_node_name, central_node_id, use_edge_weights_as_probabilities, random_state, return_sampled_node_names, dtype, verbose)"]
+    #[text_signature = "($self, node_centralities, node_centralities_distribution, adjust_by_central_node_distance, number_of_nodes_to_sample_per_feature, maximum_number_of_features_per_edge_type, number_of_bins, remove_neighbouring_nodes, validate_node_centralities, maximal_depth, central_node_name, central_node_id, use_edge_weights_as_probabilities, random_state, return_sampled_node_names, dtype, verbose)"]
     /// Return node embedding vector obtained from weighted shortest-paths.
     ///
     /// Arguments
@@ -744,6 +764,8 @@ impl Graph {
     ///     Number of nodes to sample per feature. By default 10.
     /// maximum_number_of_features_per_edge_type`: Optional[int]
     ///     Maximum number of node features to generate. By default 50.
+    /// number_of_bins: Optional[int]
+    ///     Number of bins to use when the provided node distribution is unknown. By default, 100.
     /// remove_neighbouring_nodes: Optional[bool] = True
     ///     Whether to remove the neighbouring nodes from the set of samplable anchor nodes. By default true.
     /// validate_node_centralities: Optional[bool] = True
@@ -800,6 +822,7 @@ impl Graph {
         adjust_by_central_node_distance: Option<bool>,
         number_of_nodes_to_sample_per_feature: Option<NodeT>,
         maximum_number_of_features_per_edge_type: Option<NodeT>,
+        number_of_bins: Option<usize>,
         remove_neighbouring_nodes: Option<bool>,
         validate_node_centralities: Option<bool>,
         maximal_depth: Option<NodeT>,
@@ -821,6 +844,7 @@ impl Graph {
                     adjust_by_central_node_distance,
                     number_of_nodes_to_sample_per_feature,
                     maximum_number_of_features_per_edge_type,
+                    number_of_bins,
                     remove_neighbouring_nodes,
                     validate_node_centralities,
                     maximal_depth,
