@@ -17,6 +17,9 @@ pub use iters_wrapper::ItersWrapper;
 mod argmax_argmin;
 pub use argmax_argmin::*;
 
+mod minmax;
+pub use minmax::*;
+
 mod clonable_unsafe_cell;
 pub(crate) use clonable_unsafe_cell::*;
 

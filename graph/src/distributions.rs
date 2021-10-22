@@ -1,4 +1,6 @@
 use super::*;
+use core::sync::atomic::AtomicUsize;
+use core::sync::atomic::Ordering;
 use num_traits::Zero;
 use rayon::iter::IntoParallelRefIterator;
 use rayon::iter::ParallelIterator;
@@ -80,6 +82,66 @@ impl Graph {
         } else {
             numerator / (1.0 - 1.0 / mean_score)
         }
+    }
+
+    #[no_binding]
+    /// Return threshold representing cutuoff point in given unknown distribution to have the given amount of elements above cutoff.
+    ///
+    /// # Implementative details
+    /// Note that if the number of required elements is higher than the number of elements in the array,
+    /// the threshold returned will be equal to zero.
+    ///
+    /// # Arguments
+    /// * `scores`: &[T] - The scores to be used to compute the threshold.
+    /// * `number_of_elements_above_threshold`: usize - Number of elements expected to be above cutoff threshold.
+    /// * `number_of_bins`: usize - Number of bins to use to try to identify the best cutoff.
+    pub fn get_unknown_distribution_threshold<
+        T: Into<f32> + Sync + Clone + PartialOrd + Copy + Sized + Send,
+    >(
+        &self,
+        scores: &[T],
+        number_of_elements_above_threshold: usize,
+        number_of_bins: usize,
+    ) -> f32 {
+        // If the number of requested elements is higher than the number of available elements
+        // the threshold to cutoff that numbeer of elements is surely zero.
+        if number_of_elements_above_threshold >= scores.len() {
+            return 0.0;
+        }
+        // We compute the minimum and maximum value of the provided scores
+        let (min_value, max_value) = scores.par_iter().cloned().minmax().unwrap();
+        if min_value == max_value {
+            return 0.0;
+        }
+        // Compute the hashing coefficient
+        let delta: f32 = max_value.into() - min_value.into();
+        let hashing_coefficient: f32 = number_of_bins as f32 / delta;
+        // Create the vector of Atomics
+        let counters = (0..number_of_bins)
+            .map(|_| AtomicUsize::new(0))
+            .collect::<Vec<AtomicUsize>>();
+        // Populate the counters
+        scores.par_iter().cloned().for_each(|score| {
+            let index: usize =
+                number_of_bins - (score.into() * hashing_coefficient).ceil() as usize;
+            counters[index].fetch_add(1, Ordering::Relaxed);
+        });
+        // Find the first counter that curresponding to the maximum threshold
+        let mut optimal_index = 0;
+        let mut comulative_sum = 0;
+        for (i, counter) in counters
+            .into_iter()
+            .map(|counter| counter.into_inner())
+            .enumerate()
+        {
+            comulative_sum += counter;
+            if comulative_sum >= number_of_elements_above_threshold {
+                optimal_index = i;
+                break;
+            }
+        }
+        // Compute and return the threshold
+        min_value.into() + (number_of_bins - optimal_index) as f32 / number_of_bins as f32 * delta
     }
 
     /// Return threshold representing cutuoff point in graph node degree geometric distribution to have the given amount of elements above cutoff.

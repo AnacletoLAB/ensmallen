@@ -89,6 +89,7 @@ impl Graph {
     /// * `node_centralities_distribution`: Option<&str> - Distribution expected out of the provided node centralities distribution.
     /// * `number_of_nodes_to_sample_per_feature`: NodeT - Number of nodes to sample per feature.
     /// * `maximum_number_of_features`: usize - Maximum number of node features to generate.
+    /// * `number_of_bins`: Option<usize> - Number of bins to use when the provided node distribution is unknown. By default, 100.
     /// * `remove_neighbouring_nodes`: Option<bool> - Whether to remove the neighbouring nodes from the set of samplable anchor nodes. By default true.
     /// * `verbose`: bool - Whether to show the loading bar.
     ///
@@ -100,6 +101,7 @@ impl Graph {
         node_centralities_distribution: Option<&str>,
         number_of_nodes_to_sample_per_feature: NodeT,
         maximum_number_of_features: NodeT,
+        number_of_bins: Option<usize>,
         remove_neighbouring_nodes: Option<bool>,
         verbose: bool,
     ) -> Result<Vec<Vec<NodeT>>> {
@@ -108,6 +110,7 @@ impl Graph {
             "Sampling anchor node IDs for the required node features",
             maximum_number_of_features as usize,
         );
+        let number_of_bins = number_of_bins.unwrap_or(100).min((self.get_nodes_number() / 2 ) as usize);
         let remove_neighbouring_nodes = remove_neighbouring_nodes.unwrap_or(true);
         (0..maximum_number_of_features)
             .progress_with(pb)
@@ -123,10 +126,11 @@ impl Graph {
                                 &node_centralities,
                                 number_of_nodes_to_sample_per_feature as usize,
                             ),
+                            "unknown" => self.get_unknown_distribution_threshold(&node_centralities, number_of_nodes_to_sample_per_feature as usize, number_of_bins) as f64,
                             distribution => {
                                 return Err(format!(
                                     concat!(
-                                        "The supported distributions currently are only `exponential`. ",
+                                        "The supported distributions currently are only `exponential`, `geometric` and `unknown`. ",
                                         "You have provided as node centralities distribution {}."
                                     ),
                                     distribution
@@ -134,7 +138,11 @@ impl Graph {
                             }
                         }
                     } else {
-                        0.0
+                        self.get_unknown_distribution_threshold(
+                            &node_centralities, 
+                            number_of_nodes_to_sample_per_feature as usize,
+                            number_of_bins
+                        ) as f64
                     } as f32;
                 let mut node_ids = self
                     .par_iter_node_ids()
@@ -221,6 +229,7 @@ impl Graph {
     /// * `adjust_by_central_node_distance`: Option<bool> - Whether to adjust the node eccentricity by the normalized distance to the most central node. By default true.
     /// * `number_of_nodes_to_sample_per_feature`: Option<NodeT> - Number of nodes to sample per feature. By default 10.
     /// * `maximum_number_of_features`: Option<usize> - Maximum number of node features to generate. By default 50.
+    /// * `number_of_bins`: Option<usize> - Number of bins to use when the provided node distribution is unknown. By default, 100.
     /// * `remove_neighbouring_nodes`: Option<bool> - Whether to remove the neighbouring nodes from the set of samplable anchor nodes. By default true.
     /// * `validate_node_centralities`: Option<bool> - Whether to validate the node centralities. By default true when the node centralities are provided.
     /// * `maximal_depth`: Option<NodeT> - The maximal depth to use if node features are to be focused in a local area of the graph.
@@ -263,6 +272,7 @@ impl Graph {
         adjust_by_central_node_distance: Option<bool>,
         number_of_nodes_to_sample_per_feature: Option<NodeT>,
         maximum_number_of_features: Option<NodeT>,
+        number_of_bins: Option<usize>,
         remove_neighbouring_nodes: Option<bool>,
         validate_node_centralities: Option<bool>,
         maximal_depth: Option<T>,
@@ -285,10 +295,7 @@ impl Graph {
             validate_node_centralities.unwrap_or(true) && node_centralities.is_some();
 
         let random_state = random_state.unwrap_or(42);
-        if node_centralities.is_none() {
-            info!("Computing node degree centralities.");
-            node_centralities_distribution = Some("exponential");
-        }
+        node_centralities_distribution = Some("unknown");
         let mut node_centralities = node_centralities.unwrap_or(self.get_degree_centrality()?);
 
         self.validate_shortest_paths_node_embedding_parameters(
@@ -361,6 +368,7 @@ impl Graph {
             node_centralities_distribution,
             number_of_nodes_to_sample_per_feature,
             maximum_number_of_features,
+            number_of_bins,
             remove_neighbouring_nodes,
             verbose,
         )?;
@@ -410,6 +418,7 @@ impl Graph {
     /// * `adjust_by_central_node_distance`: Option<bool> - Whether to adjust the node eccentricity by the normalized distance to the most central node. By default true.
     /// * `number_of_nodes_to_sample_per_feature`: Option<NodeT> - Number of nodes to sample per feature. By default 10.
     /// * `maximum_number_of_features`: Option<usize> - Maximum number of node features to generate. By default 50.
+    /// * `number_of_bins`: Option<usize> - Number of bins to use when the provided node distribution is unknown. By default, 100.
     /// * `remove_neighbouring_nodes`: Option<bool> - Whether to remove the neighbouring nodes from the set of samplable anchor nodes. By default true.
     /// * `validate_node_centralities`: Option<bool> - Whether to validate the node centralities. By default true when the node centralities are provided.
     /// * `maximal_depth`: Option<NodeT> - The maximal depth to use if node features are to be focused in a local area of the graph.
@@ -453,6 +462,7 @@ impl Graph {
         adjust_by_central_node_distance: Option<bool>,
         number_of_nodes_to_sample_per_feature: Option<NodeT>,
         maximum_number_of_features: Option<NodeT>,
+        number_of_bins: Option<usize>,
         remove_neighbouring_nodes: Option<bool>,
         validate_node_centralities: Option<bool>,
         maximal_depth: Option<NodeT>,
@@ -480,10 +490,7 @@ impl Graph {
             self.must_have_edge_weights_representing_probabilities()?;
         }
         let random_state = random_state.unwrap_or(42);
-        if node_centralities.is_none() {
-            info!("Computing node degree centralities.");
-            node_centralities_distribution = Some("exponential");
-        }
+        node_centralities_distribution = Some("unknown");
         let mut node_centralities = node_centralities.unwrap_or(self.get_degree_centrality()?);
 
         self.validate_shortest_paths_node_embedding_parameters(
@@ -563,6 +570,7 @@ impl Graph {
             node_centralities_distribution,
             number_of_nodes_to_sample_per_feature,
             maximum_number_of_features,
+            number_of_bins,
             remove_neighbouring_nodes,
             verbose,
         )?;
@@ -616,6 +624,7 @@ impl Graph {
     /// * `adjust_by_central_node_distance`: Option<bool> - Whether to adjust the node eccentricity by the normalized distance to the most central node. By default true.
     /// * `number_of_nodes_to_sample_per_feature`: Option<NodeT> - Number of nodes to sample per feature. By default 10.
     /// * `maximum_number_of_features_per_node_type`: Option<usize> - Maximum number of node features to generate. By default 50.
+    /// * `number_of_bins`: Option<usize> - Number of bins to use when the provided node distribution is unknown. By default, 100.
     /// * `remove_neighbouring_nodes`: Option<bool> - Whether to remove the neighbouring nodes from the set of samplable anchor nodes. By default true.
     /// * `validate_node_centralities`: Option<bool> - Whether to validate the node centralities. By default true when the node centralities are provided.
     /// * `maximal_depth`: Option<NodeT> - The maximal depth to use if node features are to be focused in a local area of the graph.
@@ -661,6 +670,7 @@ impl Graph {
         adjust_by_central_node_distance: Option<bool>,
         number_of_nodes_to_sample_per_feature: Option<NodeT>,
         maximum_number_of_features_per_node_type: Option<NodeT>,
+        number_of_bins: Option<usize>,
         remove_neighbouring_nodes: Option<bool>,
         validate_node_centralities: Option<bool>,
         maximal_depth: Option<T>,
@@ -717,6 +727,7 @@ impl Graph {
                         adjust_by_central_node_distance,
                         number_of_nodes_to_sample_per_feature,
                         maximum_number_of_features_per_node_type,
+                        number_of_bins,
                         remove_neighbouring_nodes,
                         Some(validate_node_centralities),
                         maximal_depth,
@@ -763,6 +774,7 @@ impl Graph {
     /// * `adjust_by_central_node_distance`: Option<bool> - Whether to adjust the node eccentricity by the normalized distance to the most central node. By default true.
     /// * `number_of_nodes_to_sample_per_feature`: Option<NodeT> - Number of nodes to sample per feature. By default 10.
     /// * `maximum_number_of_features_per_node_type`: Option<usize> - Maximum number of node features to generate. By default 50.
+    /// * `number_of_bins`: Option<usize> - Number of bins to use when the provided node distribution is unknown. By default, 100.
     /// * `remove_neighbouring_nodes`: Option<bool> - Whether to remove the neighbouring nodes from the set of samplable anchor nodes. By default true.
     /// * `validate_node_centralities`: Option<bool> - Whether to validate the node centralities. By default true when the node centralities are provided.
     /// * `maximal_depth`: Option<NodeT> - The maximal depth to use if node features are to be focused in a local area of the graph.
@@ -806,6 +818,7 @@ impl Graph {
         adjust_by_central_node_distance: Option<bool>,
         number_of_nodes_to_sample_per_feature: Option<NodeT>,
         maximum_number_of_features_per_node_type: Option<NodeT>,
+        number_of_bins: Option<usize>,
         remove_neighbouring_nodes: Option<bool>,
         validate_node_centralities: Option<bool>,
         maximal_depth: Option<NodeT>,
@@ -865,6 +878,7 @@ impl Graph {
                         adjust_by_central_node_distance,
                         number_of_nodes_to_sample_per_feature,
                         maximum_number_of_features_per_node_type,
+                        number_of_bins,
                         remove_neighbouring_nodes,
                         Some(validate_node_centralities),
                         maximal_depth,
@@ -912,6 +926,7 @@ impl Graph {
     /// * `adjust_by_central_node_distance`: Option<bool> - Whether to adjust the node eccentricity by the normalized distance to the most central node. By default true.
     /// * `number_of_nodes_to_sample_per_feature`: Option<NodeT> - Number of nodes to sample per feature. By default 10.
     /// * `maximum_number_of_features_per_node_type`: Option<usize> - Maximum number of node features to generate. By default 50.
+    /// * `number_of_bins`: Option<usize> - Number of bins to use when the provided node distribution is unknown. By default, 100.
     /// * `remove_neighbouring_nodes`: Option<bool> - Whether to remove the neighbouring nodes from the set of samplable anchor nodes. By default true.
     /// * `validate_node_centralities`: Option<bool> - Whether to validate the node centralities. By default true when the node centralities are provided.
     /// * `maximal_depth`: Option<NodeT> - The maximal depth to use if node features are to be focused in a local area of the graph.
@@ -957,6 +972,7 @@ impl Graph {
         adjust_by_central_node_distance: Option<bool>,
         number_of_nodes_to_sample_per_feature: Option<NodeT>,
         maximum_number_of_features_per_edge_type: Option<NodeT>,
+        number_of_bins: Option<usize>,
         remove_neighbouring_nodes: Option<bool>,
         validate_node_centralities: Option<bool>,
         maximal_depth: Option<T>,
@@ -1014,6 +1030,7 @@ impl Graph {
                         adjust_by_central_node_distance,
                         number_of_nodes_to_sample_per_feature,
                         maximum_number_of_features_per_edge_type,
+                        number_of_bins,
                         remove_neighbouring_nodes,
                         Some(validate_node_centralities),
                         maximal_depth,
@@ -1060,6 +1077,7 @@ impl Graph {
     /// * `adjust_by_central_node_distance`: Option<bool> - Whether to adjust the node eccentricity by the normalized distance to the most central node. By default true.
     /// * `number_of_nodes_to_sample_per_feature`: Option<NodeT> - Number of nodes to sample per feature. By default 10.
     /// * `maximum_number_of_features_per_edge_type`: Option<usize> - Maximum number of node features to generate. By default 50.
+    /// * `number_of_bins`: Option<usize> - Number of bins to use when the provided node distribution is unknown. By default, 100.
     /// * `remove_neighbouring_nodes`: Option<bool> - Whether to remove the neighbouring nodes from the set of samplable anchor nodes. By default true.
     /// * `validate_node_centralities`: Option<bool> - Whether to validate the node centralities. By default true when the node centralities are provided.
     /// * `maximal_depth`: Option<NodeT> - The maximal depth to use if node features are to be focused in a local area of the graph.
@@ -1103,6 +1121,7 @@ impl Graph {
         adjust_by_central_node_distance: Option<bool>,
         number_of_nodes_to_sample_per_feature: Option<NodeT>,
         maximum_number_of_features_per_edge_type: Option<NodeT>,
+        number_of_bins: Option<usize>,
         remove_neighbouring_nodes: Option<bool>,
         validate_node_centralities: Option<bool>,
         maximal_depth: Option<NodeT>,
@@ -1163,6 +1182,7 @@ impl Graph {
                         adjust_by_central_node_distance,
                         number_of_nodes_to_sample_per_feature,
                         maximum_number_of_features_per_edge_type,
+                        number_of_bins,
                         remove_neighbouring_nodes,
                         Some(validate_node_centralities),
                         maximal_depth,
