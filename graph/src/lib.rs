@@ -151,3 +151,12 @@ pub use nodes_sampling::*;
 
 mod subgraphs;
 pub use subgraphs::*;
+
+mod chains;
+pub use chains::*;
+
+mod circles;
+pub use circles::*;
+
+mod stars;
+pub use stars::*;
