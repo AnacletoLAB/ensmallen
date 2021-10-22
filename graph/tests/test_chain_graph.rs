@@ -9,9 +9,11 @@ fn test_chain_graph() -> Result<()> {
             .unwrap();
     assert_eq!(chain_graph.get_nodes_number(), nodes_number);
     assert!(chain_graph.is_connected(Some(true)));
+    let circles = chain_graph.get_circles(None, None, None).unwrap();
+    assert!(circles.is_empty());
     let chains = chain_graph.get_chains(None, None, None).unwrap();
     assert_eq!(chains.len(), 1);
-    assert!(chains[0].get_root_node_id() == 0 || chains[0].get_root_node_id() == 99);
+    assert_eq!(chains[0].get_root_node_id(), 0);
     assert_eq!(chains[0].len(), nodes_number);
     assert_eq!(
         chains[0].get_chain_node_ids(),
