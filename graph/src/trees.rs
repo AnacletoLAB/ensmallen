@@ -190,7 +190,10 @@ impl Graph {
             }
             let src_component = components[src as usize];
             let dst_component = components[dst as usize];
-            match (src_component == NODE_NOT_PRESENT, dst_component == NODE_NOT_PRESENT) {
+            match (
+                src_component == NODE_NOT_PRESENT,
+                dst_component == NODE_NOT_PRESENT,
+            ) {
                 // If neither nodes have a component, they must be inserted
                 // both in the components vector and in the tree.
                 // The edge must be added to the three.
@@ -252,7 +255,8 @@ impl Graph {
                 }
                 // If only one node has a component, the second node must be added.
                 _ => {
-                    let (component_id, not_inserted_node) = match src_component == NODE_NOT_PRESENT {
+                    let (component_id, not_inserted_node) = match src_component == NODE_NOT_PRESENT
+                    {
                         true => (components_remapping[dst_component as usize], src),
                         false => (components_remapping[src_component as usize], dst),
                     };

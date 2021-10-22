@@ -60,6 +60,7 @@ def VT(
     version: str = "28%3A09%3A2021%2011%3A17"
         The version of the graph to retrieve.		
 	The available versions are:
+			- 04%3A10%3A2021%2010%3A15
 			- 28%3A09%3A2021%2011%3A17
     additional_graph_kwargs: Dict
         Additional graph kwargs.

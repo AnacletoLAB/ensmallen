@@ -1,4 +1,3 @@
-//! A graph representation optimized for executing random walks on huge graphs.
 use std::{intrinsics::unlikely, sync::atomic::AtomicU8};
 
 use super::*;
@@ -6,7 +5,23 @@ use bitvec::prelude::*;
 use elias_fano_rust::*;
 use rayon::prelude::*;
 
-/// A graph representation optimized for executing random walks on huge graphs.
+/// This is the main struct in Ensmallen, it allows to load and manipulate Graphs efficently.
+/// You are not supposed to directly instantiate this struct but instead you should use the
+/// static method `from_csv`, which allows to load the graph from an edge-list.
+///
+/// To get information about a loaded graph, you can call the `textual_report` method which
+/// generates an human-readable HTML report.
+///
+/// By default we use EliasFano to store the Adjacency Matrix, this allows to save memory but
+/// is slower than a CSR. For this reason you can use the `enable` method to enable optimizzations
+/// which speeds up the operations at the cost of more memory usage. You can check the memory usage
+/// in bytes using `get_total_memory_used` and you can get a detailed memory report of each data-structure
+/// inside Graph using `memory_stats`.
+///
+/// You can pre-compute the memory needed (in bits) to store the adjacency matrix of a Graph with $|E|$ edges and $|V|$ nodes:
+///  $$2 |E| + |E| \\left\\lceil \\log_2 \\frac{|V|^2}{|E|} \\right\\rceil$$
+///
+/// Most Graph properties are automatically cached to speed up.
 #[derive(Clone, Debug)]
 pub struct Graph {
     /// The main datastructure where all the edges are saved
@@ -115,7 +130,7 @@ impl Graph {
             unique_sources: None,
             connected_nodes: None,
             connected_nodes_number: nodes_number as NodeT,
-            reciprocal_sqrt_degrees: None
+            reciprocal_sqrt_degrees: None,
         };
         if may_have_singletons || may_have_singleton_with_selfloops {
             let connected_nodes =

@@ -60,6 +60,7 @@ def SBO(
     version: str = "release"
         The version of the graph to retrieve.		
 	The available versions are:
+			- 28%3A08%3A2021%2003%3A13
 			- release
     additional_graph_kwargs: Dict
         Additional graph kwargs.

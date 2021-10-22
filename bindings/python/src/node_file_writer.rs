@@ -8,26 +8,26 @@ impl Graph {
     /// Write to disk the nodes (and optionally the metadata) of the graph.
     ///
     /// Parameters
-    /// ------------------------
-    /// path: str,
+    /// ----------
+    /// path: str
     ///     Path where to save the nodes and their metadata.
-    /// verbose: bool = True,
+    /// verbose: bool = True
     ///     Wether to show a loading bar while writing to file.
-    /// separator: str = "\t",
+    /// separator: str = "\t"
     ///     What separator to use while writing out to file.
-    /// header: bool = True,
+    /// header: bool = True
     ///     Wether to write out the header of the file.
-    /// nodes_column_number: int = 0,
+    /// nodes_column_number: int = 0
     ///     The column number where to write the nodes.
-    /// nodes_column: str = "id",
+    /// nodes_column: str = "id"
     ///     The name of the column of the nodes.
-    /// node_types_column_number: int = 1,
+    /// node_types_column_number: int = 1
     ///     The column number where to write the node types.
-    /// nodes_type_column: str = "category",
+    /// nodes_type_column: str = "category"
     ///     The name of the column of the node types.
     ///
     /// Raises
-    /// ------------------------
+    /// ------
     /// TODO: update the set of exceptions
     ///
     fn dump_nodes(&self, path: String, py_kwargs: Option<&PyDict>) -> PyResult<()> {

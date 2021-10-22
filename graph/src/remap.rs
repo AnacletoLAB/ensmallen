@@ -44,10 +44,9 @@ impl Graph {
     /// * Not available for each of the node IDs of the graph.
     pub unsafe fn remap_unchecked_from_node_ids(&self, node_ids: Vec<NodeT>) -> Graph {
         let new_node_types = self.node_types.as_ref().map(|node_types| {
-            let remapped_node_ids = node_ids.iter()
-                .map(|node_id| {
-                    node_types.ids[*node_id as usize].clone()
-                })
+            let remapped_node_ids = node_ids
+                .iter()
+                .map(|node_id| node_types.ids[*node_id as usize].clone())
                 .collect::<Vec<_>>();
             NodeTypeVocabulary::from_structs(remapped_node_ids, node_types.vocabulary.clone())
         });

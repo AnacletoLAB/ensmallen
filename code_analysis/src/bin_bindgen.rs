@@ -1,16 +1,8 @@
 use libcodeanalysis::*;
-use rust_parser::*;
-use std::collections::HashSet;
-use std::fs;
-use std::fs::read_dir;
-
-mod bindgen;
-use bindgen::*;
-
 
 fn main() {
     // Generate the bindings
-    gen_bindings("../bindings/python/src/auto_generated_bindings.rs", "../bindings/python/ensmallen/__init__.py");
+    gen_bindings("../graph/src", "../bindings/python/src/auto_generated_bindings.rs", "../bindings/python/ensmallen/__init__.py");
 
     // Format the files
     assert!(

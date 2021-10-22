@@ -1,6 +1,6 @@
 use super::*;
-use std::fmt;
 use rayon::prelude::*;
+use std::fmt;
 use std::iter::FromIterator;
 
 /// Struct that we use to threat sequential and parallel iterators in an
@@ -23,14 +23,18 @@ pub enum ItersWrapper<Item, I: Iterator<Item = Item>, P: ParallelIterator<Item =
     Parallel(P),
 }
 
-
-impl<Item, I: Iterator<Item = Item>, P: ParallelIterator<Item = Item>> fmt::Debug for ItersWrapper<Item, I, P> {
+impl<Item, I: Iterator<Item = Item>, P: ParallelIterator<Item = Item>> fmt::Debug
+    for ItersWrapper<Item, I, P>
+{
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("ItersWrapper")
-            .field("iter_type", &match &self {
-                ItersWrapper::Parallel(_) => "Parallel",
-                ItersWrapper::Sequential(_) => "Sequential",
-            })
+            .field(
+                "iter_type",
+                &match &self {
+                    ItersWrapper::Parallel(_) => "Parallel",
+                    ItersWrapper::Sequential(_) => "Sequential",
+                },
+            )
             .field("items_type", &std::any::type_name::<Item>())
             .finish()
     }

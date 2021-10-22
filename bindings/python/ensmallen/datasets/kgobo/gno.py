@@ -60,6 +60,7 @@ def GNO(
     version: str = "release"
         The version of the graph to retrieve.		
 	The available versions are:
+			- 2021-08-13
 			- release
     additional_graph_kwargs: Dict
         Additional graph kwargs.

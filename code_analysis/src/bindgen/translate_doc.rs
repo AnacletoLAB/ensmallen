@@ -1,6 +1,6 @@
 use super::*;
 
-pub fn translate_doc(doc: &str) -> String {
+pub fn translate_doc(doc: &str, user_defined_types: &[&str]) -> String {
     let mut result = String::new();
 
     // parse the documentation into sections
@@ -30,7 +30,7 @@ pub fn translate_doc(doc: &str) -> String {
                             &format!(
                                 "{name}: {arg_type}\n    {description}\n",
                                 name = name,
-                                arg_type = translate_type_str(arg_type),
+                                arg_type = translate_type_str(arg_type, &user_defined_types),
                                 description = description,
                             )
                         ),

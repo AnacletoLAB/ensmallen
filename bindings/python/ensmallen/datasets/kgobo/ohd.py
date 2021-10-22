@@ -60,6 +60,7 @@ def OHD(
     version: str = "release"
         The version of the graph to retrieve.		
 	The available versions are:
+			- 2016-06-27
 			- release
     additional_graph_kwargs: Dict
         Additional graph kwargs.

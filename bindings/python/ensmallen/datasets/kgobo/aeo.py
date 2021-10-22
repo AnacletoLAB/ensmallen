@@ -60,6 +60,7 @@ def AEO(
     version: str = "04%3A07%3A2013%2020%3A24"
         The version of the graph to retrieve.		
 	The available versions are:
+			- 2014-12-05
 			- 04%3A07%3A2013%2020%3A24
     additional_graph_kwargs: Dict
         Additional graph kwargs.

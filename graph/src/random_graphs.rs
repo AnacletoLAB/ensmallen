@@ -211,6 +211,352 @@ unsafe fn get_circle_edges_iterator(
     )
 }
 
+/// Return numeric representation of the requested node ID from coordinates.
+///
+/// # Arguments
+/// `x`: NodeT - The first coordinate of the given Node ID.
+/// `y`: NodeT - The second coordinate of the given Node ID.
+/// `maximal_dimension_size`: NodeT - The maximal dimension size of the second coordinate of the node.
+///
+fn compose_node_id(x: NodeT, y: NodeT, maximal_dimension_size: NodeT) -> NodeT {
+    x * maximal_dimension_size + y
+}
+
+/// Return coordinates of the provided node ID in 2D space.
+///
+/// # Arguments
+/// `node_id`: NodeT - The node ID to decode.
+/// `maximal_dimension_size`: NodeT - The maximal dimension size of the second coordinate of the node.
+///
+fn decompose_node_id(node_id: NodeT, maximal_dimension_size: NodeT) -> (NodeT, NodeT) {
+    (
+        node_id / maximal_dimension_size,
+        node_id % maximal_dimension_size,
+    )
+}
+
+/// Returns node ID from the provided multi-dimensional coordinate.
+///
+/// # Arguments
+/// `coordinates`: &[NodeT] - The coordinates of the node to decode.
+/// `maximal_dimension_sizes`: &[NodeT] - The maximal coordinate sizes.
+///
+fn multidimensional_compose_node_id(
+    coordinates: &[NodeT],
+    maximal_dimension_sizes: &[NodeT],
+) -> NodeT {
+    coordinates
+        .iter()
+        .cloned()
+        .zip(maximal_dimension_sizes.iter().cloned())
+        .rev()
+        .fold(0, |node_id, (coordinate, maximal_dimension_size)| {
+            compose_node_id(node_id, coordinate, maximal_dimension_size)
+        })
+}
+
+/// Returns coordinates in nD space for the provided node IDs.
+///
+/// # Arguments
+/// `node_id`: NodeT - The node ID to decode.
+/// `maximal_dimension_sizes`: &[NodeT] - The maximal coordinate sizes.
+fn multidimensional_decompose_node_id(
+    node_id: NodeT,
+    maximal_dimension_sizes: &[NodeT],
+) -> Vec<NodeT> {
+    maximal_dimension_sizes
+        .iter()
+        .cloned()
+        .scan(node_id, |node_id, maximal_dimension_size| {
+            let (this_node_id, coordinate) = decompose_node_id(*node_id, maximal_dimension_size);
+            *node_id = this_node_id;
+            Some(coordinate)
+        })
+        .collect()
+}
+
+/// Return number of edges and iterator over edge list of an hyper-dimensional lattice with square cell.
+///
+/// # Implementative details
+/// Please do note that the edge IDs are NOT produced in correct order so the graph will be sorted.
+///
+/// # Arguments
+/// * `sides`: &'a [NodeT] - Sides of the hyper-dimensional lattice with square cell.
+/// * `minimum_node_id`: NodeT - The minimum node ID for the range of the wheel.
+/// * `edge_type`: Option<EdgeTypeT> - Edge type for the edges in the wheel.
+/// * `weight`: Option<WeightT> - Edge weights for the edges in the wheel.
+unsafe fn get_squared_lattice_edges_iterator<'a>(
+    sides: &'a [NodeT],
+    minimum_node_id: NodeT,
+    edge_type: Option<EdgeTypeT>,
+    weight: WeightT,
+) -> (
+    NodeT,
+    EdgeT,
+    impl ParallelIterator<Item = (usize, (NodeT, NodeT, Option<EdgeTypeT>, WeightT))> + 'a,
+) {
+    let dimensions = sides.len();
+    let nodes_number = sides.iter().cloned().reduce(|a, b| a * b).unwrap();
+    let edges_number = sides
+        .iter()
+        .cloned()
+        .enumerate()
+        .map(|(dimension_number, maximal_dimension_size)| {
+            (maximal_dimension_size as EdgeT + 1)
+                * sides
+                    .iter()
+                    .cloned()
+                    .enumerate()
+                    .filter_map(|(inner_dimension_number, maximal_dimension_size)| {
+                        if inner_dimension_number == dimension_number {
+                            None
+                        } else {
+                            Some(maximal_dimension_size as EdgeT)
+                        }
+                    })
+                    .reduce(|a, b| a * b)
+                    .unwrap()
+        })
+        .sum::<EdgeT>();
+    (
+        nodes_number,
+        edges_number,
+        (minimum_node_id..(minimum_node_id + nodes_number))
+            .into_par_iter()
+            .flat_map(move |src_node_id| {
+                let mut coordinates = multidimensional_decompose_node_id(src_node_id, sides);
+                let destinations = (0..dimensions)
+                    .zip(sides.iter().cloned())
+                    .flat_map(|(i, maximal_dimension_size)| {
+                        let mut neighbours = Vec::new();
+                        let coordinate = coordinates[i];
+                        if coordinate > 0 {
+                            coordinates[i] -= 1;
+                            neighbours.push(multidimensional_compose_node_id(&coordinates, sides));
+                            coordinates[i] += 1;
+                        }
+                        if coordinate != maximal_dimension_size - 1 {
+                            coordinates[i] += 1;
+                            neighbours.push(multidimensional_compose_node_id(&coordinates, sides));
+                            coordinates[i] -= 1;
+                        }
+                        neighbours.into_iter()
+                    })
+                    .collect::<Vec<NodeT>>();
+                destinations
+                    .into_par_iter()
+                    .map(move |dst_node_id| (0, (src_node_id, dst_node_id, edge_type, weight)))
+            }),
+    )
+}
+
+/// Return number of edges and iterator over edge list of a wheel.
+///
+/// # Implementative details
+/// Please do note that the edge IDs are produced in correct order.
+///
+/// # Arguments
+/// * `minimum_node_id`: NodeT - The minimum node ID for the range of the wheel.
+/// * `maximum_node_id`: NodeT - The maximum node ID for the range of the wheel.
+/// * `include_selfloops`: bool - Whether to include selfloops in the wheel.
+/// * `edge_type`: Option<EdgeTypeT> - Edge type for the edges in the wheel.
+/// * `weight`: Option<WeightT> - Edge weights for the edges in the wheel.
+/// * `edge_id_offset`: usize - How many edges come before the first of this list.
+///
+/// # Safety
+/// If the minimum node ID is higher than the maximum node ID the method will cause a panic
+/// caused by subtraction.
+unsafe fn get_wheel_edges_iterator(
+    minimum_node_id: NodeT,
+    maximum_node_id: NodeT,
+    include_selfloops: bool,
+    edge_type: Option<EdgeTypeT>,
+    weight: WeightT,
+    edge_id_offset: usize,
+) -> (
+    EdgeT,
+    impl ParallelIterator<Item = (usize, (NodeT, NodeT, Option<EdgeTypeT>, WeightT))>,
+) {
+    let total_nodes = maximum_node_id - minimum_node_id;
+    let first_node_of_circle = minimum_node_id + 1;
+    let last_node_of_circle = maximum_node_id - 1;
+    let total_edges = if total_nodes == 0 {
+        0
+    } else {
+        (total_nodes - 1) * 4 + if include_selfloops { total_nodes } else { 0 }
+    } as EdgeT;
+    (
+        total_edges,
+        (minimum_node_id..maximum_node_id)
+            .into_par_iter()
+            .enumerate()
+            .flat_map_iter(move |(i, src_node_id)| {
+                let result: Box<
+                    dyn Iterator<Item = (usize, (NodeT, NodeT, Option<EdgeTypeT>, WeightT))>,
+                > = if i == 0 {
+                    Box::new(
+                        (minimum_node_id..maximum_node_id)
+                            .filter(move |&dst_node_id| {
+                                dst_node_id != src_node_id || include_selfloops
+                            })
+                            .enumerate()
+                            .map(move |(j, dst_node_id)| {
+                                (
+                                    edge_id_offset + j,
+                                    (src_node_id, dst_node_id, edge_type, weight),
+                                )
+                            }),
+                    )
+                } else {
+                    Box::new({
+                        let needs_previous_edge = src_node_id != first_node_of_circle;
+                        let needs_following_edge = src_node_id != last_node_of_circle;
+                        let needs_previous_closing_edge =
+                            !needs_previous_edge && needs_following_edge;
+                        let needs_following_closing_edge =
+                            !needs_following_edge && needs_previous_edge;
+                        let mut offsets = if include_selfloops {
+                            total_nodes as usize + (i - 1) * 4
+                        } else {
+                            total_nodes as usize - 1 + (i - 1) * 3
+                        };
+                        // We initialize the edges vector with the edge to the center of the wheel
+                        let mut edges = vec![(
+                            edge_id_offset + offsets,
+                            (src_node_id, minimum_node_id, edge_type, weight),
+                        )];
+                        offsets += 1;
+                        // If this is the last node and we need to add the edge to the first node
+                        // in order to close the circle part of the wheel
+                        if needs_following_closing_edge {
+                            edges.push((
+                                edge_id_offset + offsets,
+                                (src_node_id, first_node_of_circle, edge_type, weight),
+                            ));
+                            offsets += 1;
+                        }
+                        // Then we add, if necessary, the edge to the previous node.
+                        if needs_previous_edge {
+                            edges.push((
+                                edge_id_offset + offsets,
+                                (src_node_id, src_node_id - 1, edge_type, weight),
+                            ));
+                            offsets += 1;
+                        }
+                        // If self-loops are necessary, we add the edge to the node itself.
+                        if include_selfloops {
+                            edges.push((
+                                edge_id_offset + offsets,
+                                (src_node_id, src_node_id, edge_type, weight),
+                            ));
+                            offsets += 1;
+                        }
+                        // Then we add, if necessary, the edge to the following node.
+                        if needs_following_edge {
+                            edges.push((
+                                edge_id_offset + offsets,
+                                (src_node_id, src_node_id + 1, edge_type, weight),
+                            ));
+                            offsets += 1;
+                        }
+                        // If this is the first node and we need to add the edge to the last node
+                        // in order to close the circle part of the wheel
+                        if needs_previous_closing_edge {
+                            edges.push((
+                                edge_id_offset + offsets,
+                                (src_node_id, last_node_of_circle, edge_type, weight),
+                            ));
+                        }
+                        edges.into_iter()
+                    })
+                };
+                result
+            }),
+    )
+}
+
+/// Return number of edges and iterator over edge list of a star.
+///
+/// # Implementative details
+/// Please do note that the edge IDs are produced in correct order.
+///
+/// # Arguments
+/// * `minimum_node_id`: NodeT - The minimum node ID for the range of the star.
+/// * `maximum_node_id`: NodeT - The maximum node ID for the range of the star.
+/// * `include_selfloops`: bool - Whether to include selfloops in the star.
+/// * `edge_type`: Option<EdgeTypeT> - Edge type for the edges in the star.
+/// * `weight`: Option<WeightT> - Edge weights for the edges in the star.
+/// * `edge_id_offset`: usize - How many edges come before the first of this list.
+///
+/// # Safety
+/// If the minimum node ID is higher than the maximum node ID the method will cause a panic
+/// caused by subtraction.
+unsafe fn get_star_edges_iterator(
+    minimum_node_id: NodeT,
+    maximum_node_id: NodeT,
+    include_selfloops: bool,
+    edge_type: Option<EdgeTypeT>,
+    weight: WeightT,
+    edge_id_offset: usize,
+) -> (
+    EdgeT,
+    impl ParallelIterator<Item = (usize, (NodeT, NodeT, Option<EdgeTypeT>, WeightT))>,
+) {
+    let total_nodes = maximum_node_id - minimum_node_id;
+    let total_edges = if total_nodes == 0 {
+        0
+    } else {
+        (total_nodes - 1) * 2 + if include_selfloops { total_nodes } else { 0 }
+    } as EdgeT;
+    (
+        total_edges,
+        (minimum_node_id..maximum_node_id)
+            .into_par_iter()
+            .enumerate()
+            .flat_map_iter(move |(i, src_node_id)| {
+                let result: Box<
+                    dyn Iterator<Item = (usize, (NodeT, NodeT, Option<EdgeTypeT>, WeightT))>,
+                > = if i == 0 {
+                    Box::new(
+                        (minimum_node_id..maximum_node_id)
+                            .filter(move |&dst_node_id| {
+                                dst_node_id != src_node_id || include_selfloops
+                            })
+                            .enumerate()
+                            .map(move |(j, dst_node_id)| {
+                                (
+                                    edge_id_offset + j,
+                                    (src_node_id, dst_node_id, edge_type, weight),
+                                )
+                            }),
+                    )
+                } else {
+                    Box::new(
+                        if include_selfloops {
+                            vec![
+                                (
+                                    edge_id_offset + total_nodes as usize + (i - 1) * 2,
+                                    (src_node_id, minimum_node_id, edge_type, weight),
+                                ),
+                                (
+                                    edge_id_offset + total_nodes as usize + (i - 1) * 2 + 1,
+                                    (src_node_id, src_node_id, edge_type, weight),
+                                ),
+                            ]
+                        } else {
+                            vec![(
+                                edge_id_offset + total_nodes as usize + i - 2,
+                                (src_node_id, minimum_node_id, edge_type, weight),
+                            )]
+                        }
+                        .into_iter(),
+                    )
+                };
+                result
+            }),
+    )
+}
+
 /// Return number of edges and iterator over edge list of a random tree.
 ///
 /// # Arguments
@@ -475,6 +821,142 @@ impl Graph {
             Some(true),
             Some(false),
             Some(false),
+            Some(edges_number),
+            false,
+            false,
+            name.to_string(),
+        )
+    }
+
+    /// Creates new star graph with given sizes and types.
+    ///
+    /// # Arguments
+    /// * `minimum_node_id`: Option<NodeT> - Minimum node ID to start with. May be needed when circleing graphs. By default 0.
+    /// * `nodes_number`: Option<NodeT> - Number of nodes in the star. By default 10.
+    /// * `include_selfloops`: Option<bool> - Whether to include selfloops.
+    /// * `node_type`: Option<&str> - The node type to use for the star. By default 'star'.
+    /// * `edge_type`: Option<&str> - The node type to use for the star. By default 'star'.
+    /// * `weight`: Option<WeightT> - The weight to use for the edges in the star. By default None.
+    /// * `directed`: Option<bool> - Whether the graph is to built as directed. By default false.
+    /// * `name`: Option<&str> - Name of the graph. By default 'Star'.
+    ///
+    pub fn generate_star_graph(
+        minimum_node_id: Option<NodeT>,
+        nodes_number: Option<NodeT>,
+        include_selfloops: Option<bool>,
+        node_type: Option<&str>,
+        edge_type: Option<&str>,
+        weight: Option<WeightT>,
+        directed: Option<bool>,
+        name: Option<&str>,
+    ) -> Result<Graph> {
+        let nodes_number = nodes_number.unwrap_or(10);
+        let minimum_node_id = minimum_node_id.unwrap_or(0);
+        let include_selfloops = include_selfloops.unwrap_or(false);
+        let directed = directed.unwrap_or(false);
+        let node_type = node_type.unwrap_or("star");
+        let node_types = NodeTypeVocabulary::from_structs(
+            vec![Some(vec![0]); nodes_number as usize],
+            Vocabulary::from_reverse_map(vec![node_type.to_owned()])?,
+        );
+
+        let edge_type = edge_type.unwrap_or("star");
+        let edge_types_vocabulary: Vocabulary<EdgeTypeT> =
+            Vocabulary::from_reverse_map(vec![edge_type.to_owned()])?;
+        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + nodes_number));
+        let name = name.unwrap_or("Star");
+        let has_edge_weights = weight.is_some();
+
+        // Get the generator the star in the middle of the two cliques
+        let (edges_number, edges_iterator) = unsafe {
+            get_star_edges_iterator(
+                0,
+                nodes_number,
+                include_selfloops,
+                Some(0),
+                weight.unwrap_or(WeightT::NAN),
+                0,
+            )
+        };
+
+        build_graph_from_integers(
+            Some(edges_iterator),
+            nodes,
+            Some(node_types),
+            Some(edge_types_vocabulary),
+            has_edge_weights,
+            directed,
+            Some(true),
+            Some(false),
+            Some(true),
+            Some(edges_number),
+            false,
+            false,
+            name.to_string(),
+        )
+    }
+
+    /// Creates new wheel graph with given sizes and types.
+    ///
+    /// # Arguments
+    /// * `minimum_node_id`: Option<NodeT> - Minimum node ID to start with. May be needed when circleing graphs. By default 0.
+    /// * `nodes_number`: Option<NodeT> - Number of nodes in the wheel. By default 10.
+    /// * `include_selfloops`: Option<bool> - Whether to include selfloops.
+    /// * `node_type`: Option<&str> - The node type to use for the wheel. By default 'wheel'.
+    /// * `edge_type`: Option<&str> - The node type to use for the wheel. By default 'wheel'.
+    /// * `weight`: Option<WeightT> - The weight to use for the edges in the wheel. By default None.
+    /// * `directed`: Option<bool> - Whether the graph is to built as directed. By default false.
+    /// * `name`: Option<&str> - Name of the graph. By default 'Wheel'.
+    ///
+    pub fn generate_wheel_graph(
+        minimum_node_id: Option<NodeT>,
+        nodes_number: Option<NodeT>,
+        include_selfloops: Option<bool>,
+        node_type: Option<&str>,
+        edge_type: Option<&str>,
+        weight: Option<WeightT>,
+        directed: Option<bool>,
+        name: Option<&str>,
+    ) -> Result<Graph> {
+        let nodes_number = nodes_number.unwrap_or(10);
+        let minimum_node_id = minimum_node_id.unwrap_or(0);
+        let include_selfloops = include_selfloops.unwrap_or(false);
+        let directed = directed.unwrap_or(false);
+        let node_type = node_type.unwrap_or("wheel");
+        let node_types = NodeTypeVocabulary::from_structs(
+            vec![Some(vec![0]); nodes_number as usize],
+            Vocabulary::from_reverse_map(vec![node_type.to_owned()])?,
+        );
+
+        let edge_type = edge_type.unwrap_or("wheel");
+        let edge_types_vocabulary: Vocabulary<EdgeTypeT> =
+            Vocabulary::from_reverse_map(vec![edge_type.to_owned()])?;
+        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + nodes_number));
+        let name = name.unwrap_or("Wheel");
+        let has_edge_weights = weight.is_some();
+
+        // Get the generator the wheel in the middle of the two cliques
+        let (edges_number, edges_iterator) = unsafe {
+            get_wheel_edges_iterator(
+                0,
+                nodes_number,
+                include_selfloops,
+                Some(0),
+                weight.unwrap_or(WeightT::NAN),
+                0,
+            )
+        };
+
+        build_graph_from_integers(
+            Some(edges_iterator),
+            nodes,
+            Some(node_types),
+            Some(edge_types_vocabulary),
+            has_edge_weights,
+            directed,
+            Some(true),
+            Some(false),
+            Some(true),
             Some(edges_number),
             false,
             false,
@@ -794,7 +1276,9 @@ impl Graph {
         let (chain_edges_number, chain_edges_iterator) = unsafe {
             get_chain_edges_iterator_unchecked(
                 left_clique_nodes_number.saturating_sub(1),
-                left_clique_nodes_number + chain_nodes_number + 1,
+                left_clique_nodes_number
+                    + chain_nodes_number
+                    + if right_clique_nodes_number > 0 { 1 } else { 0 },
                 include_selfloops,
                 Some(1),
                 chain_weight.unwrap_or(WeightT::NAN),
@@ -829,6 +1313,123 @@ impl Graph {
             Some(true),
             Some(false),
             Some(true),
+            Some(edges_number),
+            false,
+            false,
+            name.to_string(),
+        )
+    }
+
+    /// Creates new lollipop graph with given sizes and types.
+    ///
+    /// # Arguments
+    /// * `minimum_node_id`: Option<NodeT> - Minimum node ID to start with. May be needed when chaining graphs. By default 0.
+    /// * `clique_nodes_number`: Option<NodeT> - Number of nodes in the left clique. By default 10.
+    /// * `chain_nodes_number`: Option<NodeT> - Number of nodes in the chain. By default 10.
+    /// * `include_selfloops`: Option<bool> - Whether to include selfloops.
+    /// * `clique_node_type`: Option<&str> - The node type to use for the left clique. By default 'clique'.
+    /// * `chain_node_type`: Option<&str> - The node type to use for the chain. By default 'chain'.
+    /// * `clique_edge_type`: Option<&str> - The node type to use for the left clique. By default 'clique'.
+    /// * `chain_edge_type`: Option<&str> - The node type to use for the chain. By default 'chain'.
+    /// * `clique_weight`: Option<WeightT> - The weight to use for the edges in the left clique. By default None.
+    /// * `chain_weight`: Option<WeightT> - The weight to use for the edges in the chain. By default None.
+    /// * `directed`: Option<bool> - Whether the graph is to built as directed. By default false.
+    /// * `name`: Option<&str> - Name of the graph. By default 'Lollipop'.
+    ///
+    /// # Raises
+    /// * If the edge weights are provided only for a subset.
+    pub fn generate_lollipop_graph(
+        minimum_node_id: Option<NodeT>,
+        clique_nodes_number: Option<NodeT>,
+        chain_nodes_number: Option<NodeT>,
+        include_selfloops: Option<bool>,
+        clique_node_type: Option<&str>,
+        chain_node_type: Option<&str>,
+        clique_edge_type: Option<&str>,
+        chain_edge_type: Option<&str>,
+        clique_weight: Option<WeightT>,
+        chain_weight: Option<WeightT>,
+        directed: Option<bool>,
+        name: Option<&str>,
+    ) -> Result<Graph> {
+        Graph::generate_barbell_graph(
+            minimum_node_id,
+            clique_nodes_number,
+            Some(0),
+            chain_nodes_number,
+            include_selfloops,
+            clique_node_type.or(Some("clique")),
+            None,
+            chain_node_type,
+            clique_edge_type.or(Some("clique")),
+            None,
+            chain_edge_type,
+            clique_weight,
+            None,
+            chain_weight,
+            directed,
+            name.or(Some("Lollipop")),
+        )
+    }
+
+    /// Creates new squared lattice graph with given sizes and types.
+    ///
+    /// # Arguments
+    /// * `sides`: &'a [NodeT] - Sides of the hyper-dimensional lattice with square cell.
+    /// * `minimum_node_id`: Option<NodeT> - Minimum node ID to start with. May be needed when chaining graphs. By default 0.
+    /// * `node_type`: Option<&str> - The node type to use for the squared lattice. By default 'squared_lattice'.
+    /// * `weight`: Option<WeightT> - The weight to use for the edges in the left clique. By default None.
+    /// * `directed`: Option<bool> - Whether the graph is to built as directed. By default false.
+    /// * `name`: Option<&str> - Name of the graph. By default 'Lollipop'.
+    ///
+    /// # Raises
+    /// * If the edge weights are provided only for a subset.
+    pub fn generate_squared_lattice_graph(
+        sides: &[NodeT],
+        minimum_node_id: Option<NodeT>,
+        node_type: Option<&str>,
+        weight: Option<WeightT>,
+        directed: Option<bool>,
+        name: Option<&str>,
+    ) -> Result<Graph> {
+        if sides.is_empty() {
+            return Err("The number of dimensions provided is zero.".to_string());
+        }
+
+        if sides.iter().any(|side| side.is_zero()) {
+            return Err("One of the provided lattice sides is zero.".to_string());
+        }
+        let minimum_node_id = minimum_node_id.unwrap_or(0);
+        let directed = directed.unwrap_or(false);
+        let has_edge_weights = weight.is_some();
+
+        // Get the generator the wheel in the middle of the two cliques
+        let (nodes_number, edges_number, edges_iterator) = unsafe {
+            get_squared_lattice_edges_iterator(
+                sides,
+                minimum_node_id,
+                None,
+                weight.unwrap_or(WeightT::NAN),
+            )
+        };
+
+        let node_types = NodeTypeVocabulary::from_structs(
+            vec![Some(vec![0]); nodes_number as usize],
+            Vocabulary::from_reverse_map(vec![node_type.unwrap_or("squared_lattice").to_owned()])?,
+        );
+        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + nodes_number));
+        let name = name.unwrap_or("SquaredLattice");
+
+        build_graph_from_integers(
+            Some(edges_iterator),
+            nodes,
+            Some(node_types),
+            None,
+            has_edge_weights,
+            directed,
+            Some(true),
+            Some(false),
+            Some(false),
             Some(edges_number),
             false,
             false,

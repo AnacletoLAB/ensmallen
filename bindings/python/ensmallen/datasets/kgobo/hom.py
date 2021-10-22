@@ -60,6 +60,7 @@ def HOM(
     version: str = "02%3A12%3A2009%2015%3A16"
         The version of the graph to retrieve.		
 	The available versions are:
+			- 2015-01-07
 			- 02%3A12%3A2009%2015%3A16
     additional_graph_kwargs: Dict
         Additional graph kwargs.

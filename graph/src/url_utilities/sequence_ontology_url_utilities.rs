@@ -7,7 +7,7 @@ use super::*;
 ///
 /// # Example
 /// To validate a node you can use:
-/// ```rust
+/// ```ignore
 /// # use graph::*;
 /// let sequence_ontology_node_name = "SO:0001217";
 /// let not_sequence_ontology_node_name = "PizzaQuattroStagioni";

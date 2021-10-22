@@ -1,5 +1,6 @@
 """Module offering fast graph processing and graph datasets."""
 
+""" 
 import cpuinfo
 
 required_flags = ("sse", "sse2", "ssse3", "sse4_1", "sse4_2",
@@ -21,11 +22,14 @@ if len(unavailable_flags) > 0:
             "has been extensively designed to use SIMD instructions, so "
             "you would have a version slower than the one provided on Pypi."
         ).format(unavailable_flags)
-    )
+    ) """
 
-from . import datasets
 from .ensmallen import preprocessing  # pylint: disable=import-error
 from .ensmallen import Graph  # pylint: disable=import-error
 from .ensmallen import edge_list_utils  # pylint: disable=import-error
+
+# The import of dataset should ALWAYS be under the imports from the compiled bindings
+# Because otherwise it generate a Circular import and crash
+from . import datasets
 
 __all__ = ["edge_list_utils", "Graph", "preprocessing", "datasets"]

@@ -463,6 +463,18 @@ impl Graph {
         })
     }
 
+    /// Return iterator on the node IDs and ther node type IDs.
+    pub fn par_iter_node_ids_and_node_type_ids(
+        &self,
+    ) -> impl IndexedParallelIterator<Item = (NodeT, Option<Vec<NodeTypeT>>)> + '_ {
+        self.par_iter_node_ids().map(move |node_id| unsafe {
+            (
+                node_id,
+                self.get_unchecked_node_type_id_from_node_id(node_id),
+            )
+        })
+    }
+
     /// Return iterator on the node type IDs.
     ///
     /// # Safety
@@ -1081,8 +1093,7 @@ impl Graph {
         &self,
     ) -> impl IndexedParallelIterator<Item = (EdgeT, NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>)>
            + '_ {
-        self.par_iter_directed_edge_node_ids_and_edge_type_id()
-        .map(
+        self.par_iter_directed_edge_node_ids_and_edge_type_id().map(
             move |(edge_id, src, dst, edge_type)| unsafe {
                 (
                     edge_id,

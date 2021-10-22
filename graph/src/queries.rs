@@ -574,19 +574,24 @@ impl Graph {
         if !self.has_nodes() {
             return Err("The node degrees are not well defined in an empty graph.".to_string());
         }
-        let mut node_ids_and_degrees = vec![(0, 0); self.get_nodes_number() as usize];
-
-        self.par_iter_node_degrees()
+        let threshold = self.get_node_degree_geometric_distribution_threshold(k);
+        let mut node_ids = self
+            .par_iter_node_degrees()
             .enumerate()
-            .map(|(node_id, node_degree)| (node_id as NodeT, node_degree))
-            .collect_into_vec(&mut node_ids_and_degrees);
+            .filter_map(|(node_id, node_degree)| {
+                if node_degree as f64 > threshold {
+                    Some(node_id as NodeT)
+                } else {
+                    None
+                }
+            })
+            .collect::<Vec<NodeT>>();
 
-        node_ids_and_degrees.par_sort_unstable_by(|(_, a), (_, b)| b.cmp(a));
-        Ok(node_ids_and_degrees
-            .into_iter()
-            .take(k as usize)
-            .map(|(node_id, _)| node_id)
-            .collect())
+        node_ids.par_sort_unstable_by(|&a, &b| unsafe {
+            self.get_unchecked_node_degree_from_node_id(b)
+                .cmp(&self.get_unchecked_node_degree_from_node_id(a))
+        });
+        Ok(node_ids.into_iter().take(k as usize).collect())
     }
 
     /// Return vector with weighted top k central node Ids.
