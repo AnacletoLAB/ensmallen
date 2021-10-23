@@ -46,6 +46,8 @@ class KGOBOGraphRepository(GraphRepository):
             callable_graph_name = graph_name.upper()
             mined_data[callable_graph_name] = {}
             for version in versions:
+                if "\n" in version:
+                    continue
                 graph_url = graph_url_placeholder.format(
                     graph_name=graph_name,
                     version=version
@@ -66,6 +68,8 @@ class KGOBOGraphRepository(GraphRepository):
                         "edge_list_is_correct": True,
                     }
                 }
+            if len(mined_data[callable_graph_name]) == 0:
+                mined_data.pop(callable_graph_name)
         return mined_data
 
     def build_stored_graph_name(self, partial_graph_name: str) -> str:
