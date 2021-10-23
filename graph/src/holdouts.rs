@@ -472,7 +472,7 @@ impl Graph {
                 ),
                 self.nodes.clone(),
                 self.node_types.clone(),
-                self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+                self.edge_types.as_ref().as_ref().map(|ets| ets.vocabulary.clone()),
                 self.has_edge_weights(),
                 self.is_directed(),
                 Some(true),
@@ -498,7 +498,7 @@ impl Graph {
                 ),
                 self.nodes.clone(),
                 self.node_types.clone(),
-                self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+                self.edge_types.as_ref().as_ref().map(|ets| ets.vocabulary.clone()),
                 self.has_edge_weights(),
                 self.is_directed(),
                 Some(true),
@@ -746,7 +746,7 @@ impl Graph {
         // (node_types_number, number of nodes of that node type)
         let node_sets: Vec<Vec<NodeT>> = self
             .node_types
-            .as_ref()
+            .as_ref().as_ref()
             .map(|nts| {
                 if use_stratification {
                     // Initialize the vectors for each node type
@@ -881,14 +881,14 @@ impl Graph {
         let mut test_graph = self.clone();
 
         // Replace the node_types with the one computes above
-        train_graph.node_types = NodeTypeVocabulary::from_option_structs(
+        train_graph.node_types = Arc::new(NodeTypeVocabulary::from_option_structs(
             Some(train_node_types),
-            self.node_types.as_ref().map(|ntv| ntv.vocabulary.clone()),
-        );
-        test_graph.node_types = NodeTypeVocabulary::from_option_structs(
+            self.node_types.as_ref().as_ref().map(|ntv| ntv.vocabulary.clone()),
+        ));
+        test_graph.node_types = Arc::new(NodeTypeVocabulary::from_option_structs(
             Some(test_node_types),
-            self.node_types.as_ref().map(|ntv| ntv.vocabulary.clone()),
-        );
+            self.node_types.as_ref().as_ref().map(|ntv| ntv.vocabulary.clone()),
+        ));
 
         Ok((train_graph, test_graph))
     }
@@ -939,7 +939,7 @@ impl Graph {
         // (edge_types_number, number of edges of that edge type)
         let edge_sets: Vec<Vec<EdgeT>> = self
             .edge_types
-            .as_ref()
+            .as_ref().as_ref()
             .map(|nts| {
                 if use_stratification {
                     // Initialize the vectors for each edge type
@@ -1003,20 +1003,20 @@ impl Graph {
         let mut test_graph = self.clone();
 
         // Replace the edge_types with the one computes above
-        train_graph.edge_types = Some(EdgeTypeVocabulary::from_structs(
+        train_graph.edge_types = Arc::new(Some(EdgeTypeVocabulary::from_structs(
             train_edge_types,
             self.edge_types
-                .as_ref()
+                .as_ref().as_ref()
                 .map(|etv| etv.vocabulary.clone())
                 .unwrap(),
-        ));
-        test_graph.edge_types = Some(EdgeTypeVocabulary::from_structs(
+        )));
+        test_graph.edge_types = Arc::new(Some(EdgeTypeVocabulary::from_structs(
             test_edge_types,
             self.edge_types
-                .as_ref()
+                .as_ref().as_ref()
                 .map(|etv| etv.vocabulary.clone())
                 .unwrap(),
-        ));
+        )));
 
         Ok((train_graph, test_graph))
     }
@@ -1146,7 +1146,7 @@ impl Graph {
             ),
             self.nodes.clone(),
             self.node_types.clone(),
-            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+            self.edge_types.as_ref().as_ref().map(|ets| ets.vocabulary.clone()),
             self.has_edge_weights(),
             self.is_directed(),
             Some(true),
@@ -1204,7 +1204,7 @@ impl Graph {
         // (node_types_number, number of nodes of that node type)
         let node_sets: Vec<Vec<NodeT>> = self
             .node_types
-            .as_ref()
+            .as_ref().as_ref()
             .map(|nts| {
                 if use_stratification {
                     // Initialize the vectors for each node type
@@ -1268,14 +1268,14 @@ impl Graph {
         let mut test_graph = self.clone();
 
         // Replace the node_types with the one computes above
-        train_graph.node_types = NodeTypeVocabulary::from_option_structs(
+        train_graph.node_types = Arc::new(NodeTypeVocabulary::from_option_structs(
             Some(train_node_types),
-            self.node_types.as_ref().map(|ntv| ntv.vocabulary.clone()),
-        );
-        test_graph.node_types = NodeTypeVocabulary::from_option_structs(
+            self.node_types.as_ref().as_ref().map(|ntv| ntv.vocabulary.clone()),
+        ));
+        test_graph.node_types = Arc::new(NodeTypeVocabulary::from_option_structs(
             Some(test_node_types),
-            self.node_types.as_ref().map(|ntv| ntv.vocabulary.clone()),
-        );
+            self.node_types.as_ref().as_ref().map(|ntv| ntv.vocabulary.clone()),
+        ));
 
         Ok((train_graph, test_graph))
     }
@@ -1327,7 +1327,7 @@ impl Graph {
         // (node_types_number, number of nodes of that node type)
         let node_sets: Vec<Vec<u64>> = self
             .node_types
-            .as_ref()
+            .as_ref().as_ref()
             .map(|nts| {
                 if use_stratification {
                     // Initialize the vectors for each node type
@@ -1386,14 +1386,14 @@ impl Graph {
         let mut test_graph = self.clone();
 
         // Replace the node_types with the one computes above
-        train_graph.node_types = NodeTypeVocabulary::from_option_structs(
+        train_graph.node_types = Arc::new(NodeTypeVocabulary::from_option_structs(
             Some(train_node_types),
-            self.node_types.as_ref().map(|ntv| ntv.vocabulary.clone()),
-        );
-        test_graph.node_types = NodeTypeVocabulary::from_option_structs(
+            self.node_types.as_ref().as_ref().map(|ntv| ntv.vocabulary.clone()),
+        ));
+        test_graph.node_types = Arc::new(NodeTypeVocabulary::from_option_structs(
             Some(test_node_types),
-            self.node_types.as_ref().map(|ntv| ntv.vocabulary.clone()),
-        );
+            self.node_types.as_ref().as_ref().map(|ntv| ntv.vocabulary.clone()),
+        ));
 
         Ok((train_graph, test_graph))
     }
@@ -1444,7 +1444,7 @@ impl Graph {
         // (edge_types_number, number of edges of that edge type)
         let edge_sets: Vec<Vec<EdgeT>> = self
             .edge_types
-            .as_ref()
+            .as_ref().as_ref()
             .map(|nts| {
                 if use_stratification {
                     // Initialize the vectors for each edge type
@@ -1508,20 +1508,20 @@ impl Graph {
         let mut test_graph = self.clone();
 
         // Replace the edge_types with the one computes above
-        train_graph.edge_types = Some(EdgeTypeVocabulary::from_structs(
+        train_graph.edge_types = Arc::new(Some(EdgeTypeVocabulary::from_structs(
             train_edge_types,
             self.edge_types
-                .as_ref()
+                .as_ref().as_ref()
                 .map(|etv| etv.vocabulary.clone())
                 .unwrap(),
-        ));
-        test_graph.edge_types = Some(EdgeTypeVocabulary::from_structs(
+        )));
+        test_graph.edge_types = Arc::new(Some(EdgeTypeVocabulary::from_structs(
             test_edge_types,
             self.edge_types
-                .as_ref()
+                .as_ref().as_ref()
                 .map(|etv| etv.vocabulary.clone())
                 .unwrap(),
-        ));
+        )));
 
         Ok((train_graph, test_graph))
     }
@@ -1574,7 +1574,7 @@ impl Graph {
         // (edge_types_number, number of edges of that edge type)
         let edge_sets: Vec<Vec<EdgeT>> = self
             .edge_types
-            .as_ref()
+            .as_ref().as_ref()
             .map(|nts| {
                 if use_stratification {
                     // Initialize the vectors for each edge type
@@ -1633,20 +1633,20 @@ impl Graph {
         let mut test_graph = self.clone();
 
         // Replace the edge_types with the one computes above
-        train_graph.edge_types = Some(EdgeTypeVocabulary::from_structs(
+        train_graph.edge_types = Arc::new(Some(EdgeTypeVocabulary::from_structs(
             train_edge_types,
             self.edge_types
-                .as_ref()
+                .as_ref().as_ref()
                 .map(|etv| etv.vocabulary.clone())
                 .unwrap(),
-        ));
-        test_graph.edge_types = Some(EdgeTypeVocabulary::from_structs(
+        )));
+        test_graph.edge_types = Arc::new(Some(EdgeTypeVocabulary::from_structs(
             test_edge_types,
             self.edge_types
-                .as_ref()
+                .as_ref().as_ref()
                 .map(|etv| etv.vocabulary.clone())
                 .unwrap(),
-        ));
+        )));
 
         Ok((train_graph, test_graph))
     }

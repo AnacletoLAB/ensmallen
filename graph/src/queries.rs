@@ -19,7 +19,7 @@ impl Graph {
     /// # Safety
     /// If the given edge ID does not exists in the graph this method will panic.
     pub unsafe fn get_unchecked_edge_weight_from_edge_id(&self, edge_id: EdgeT) -> Option<WeightT> {
-        self.weights.as_ref().map(|ws| ws[edge_id as usize])
+        self.weights.as_ref().as_ref().map(|ws| ws[edge_id as usize])
     }
 
     /// Returns option with the weight of the given node ids.
@@ -67,7 +67,7 @@ impl Graph {
         edge_type_name: &str,
     ) -> Option<EdgeTypeT> {
         self.edge_types
-            .as_ref()
+            .as_ref().as_ref()
             .and_then(|ets| ets.get(edge_type_name))
     }
 
@@ -83,7 +83,7 @@ impl Graph {
         &self,
         edge_type_id: Option<EdgeTypeT>,
     ) -> Option<String> {
-        match (&self.edge_types, edge_type_id) {
+        match (&*self.edge_types, edge_type_id) {
             (Some(ets), Some(et)) => Some(ets.unchecked_translate(et)),
             _ => None,
         }
@@ -100,7 +100,7 @@ impl Graph {
         &self,
         edge_type: Option<EdgeTypeT>,
     ) -> EdgeT {
-        match (&self.edge_types, edge_type) {
+        match (&*self.edge_types, edge_type) {
             (Some(ets), None) => ets.get_unknown_count(),
             (Some(ets), Some(et)) => ets.counts[et as usize],
             _ => unreachable!("The current graph instance does not have edge types!"),
@@ -115,7 +115,7 @@ impl Graph {
         &self,
         node_type: Option<NodeTypeT>,
     ) -> NodeT {
-        match (&self.node_types, node_type) {
+        match (&*self.node_types, node_type) {
             (Some(nts), None) => nts.get_unknown_count(),
             (Some(nts), Some(nt)) => nts.counts[nt as usize],
             _ => unreachable!("The current graph instance does not have node types!"),
@@ -137,7 +137,7 @@ impl Graph {
         dst: NodeT,
         edge_type: Option<EdgeTypeT>,
     ) -> EdgeT {
-        self.edge_types.as_ref().map_or_else(
+        self.edge_types.as_ref().as_ref().map_or_else(
             || self.get_unchecked_edge_id_from_node_ids(src, dst),
             |ets| {
                 self.iter_unchecked_edge_ids_from_node_ids(src, dst)
@@ -209,7 +209,7 @@ impl Graph {
     /// # Safety
     /// If the given edge ID does not exist in the current graph the method will raise a panic.
     pub unsafe fn get_unchecked_node_ids_from_edge_id(&self, edge_id: EdgeT) -> (NodeT, NodeT) {
-        if let (Some(sources), Some(destinations)) = (&self.sources, &self.destinations) {
+        if let (Some(sources), Some(destinations)) = (&*self.sources, &*self.destinations) {
             return (sources[edge_id as usize], destinations[edge_id as usize]);
         }
         self.decode_edge(self.edges.unchecked_select(edge_id))
@@ -238,7 +238,7 @@ impl Graph {
     /// # Safety
     /// If the given edge ID does not exist in the current graph the method will cause an out of bounds.
     pub unsafe fn get_unchecked_source_node_id_from_edge_id(&self, edge_id: EdgeT) -> NodeT {
-        self.sources.as_ref().map_or_else(
+        self.sources.as_ref().as_ref().map_or_else(
             || self.get_unchecked_node_ids_from_edge_id(edge_id).0,
             |srscs| srscs[edge_id as usize],
         )
@@ -252,7 +252,7 @@ impl Graph {
     /// # Safety
     /// If the given edge ID does not exist in the current graph the method will cause an out of bounds.
     pub unsafe fn get_unchecked_destination_node_id_from_edge_id(&self, edge_id: EdgeT) -> NodeT {
-        self.destinations.as_ref().map_or_else(
+        self.destinations.as_ref().as_ref().map_or_else(
             || self.get_unchecked_node_ids_from_edge_id(edge_id).1,
             |dsts| dsts[edge_id as usize],
         )
@@ -440,7 +440,7 @@ impl Graph {
     /// If the given source node ID does not exist in the current graph the method will panic.
     pub unsafe fn get_unchecked_unique_source_node_id(&self, source_id: NodeT) -> NodeT {
         self.unique_sources
-            .as_ref()
+            .as_ref().as_ref()
             .map_or(source_id, |unique_sources| {
                 unique_sources.unchecked_select(source_id as u64) as NodeT
             })
@@ -819,7 +819,7 @@ impl Graph {
         node_id: NodeT,
     ) -> Option<Vec<NodeTypeT>> {
         self.node_types
-            .as_ref()
+            .as_ref().as_ref()
             .and_then(|nts| nts.ids[node_id as usize].clone())
     }
 
@@ -866,7 +866,7 @@ impl Graph {
         edge_id: EdgeT,
     ) -> Option<EdgeTypeT> {
         self.edge_types
-            .as_ref()
+            .as_ref().as_ref()
             .and_then(|ets| ets.ids[edge_id as usize])
     }
 
@@ -952,7 +952,7 @@ impl Graph {
     pub fn get_edge_type_name_from_edge_type_id(&self, edge_type_id: EdgeTypeT) -> Result<String> {
         self.must_have_edge_types()?;
         self.edge_types
-            .as_ref()
+            .as_ref().as_ref()
             .map(|ets| ets.translate(edge_type_id))
             .unwrap()
     }
@@ -975,7 +975,7 @@ impl Graph {
     /// ```
     pub fn get_edge_weight_from_edge_id(&self, edge_id: EdgeT) -> Result<WeightT> {
         self.must_have_edge_weights()?;
-        self.weights.as_ref().map(
+        self.weights.as_ref().as_ref().map(
             |weights| weights.get(edge_id as usize).map_or(
                 Err(format!(
                     "The given edge_id {} is higher than the number of available directed edges {}.",
@@ -1260,7 +1260,7 @@ impl Graph {
         &self,
         edge_type_name: Option<&str>,
     ) -> Result<Option<EdgeTypeT>> {
-        match (&self.edge_types, edge_type_name) {
+        match (&*self.edge_types, edge_type_name) {
             (None, _) => Err("Current graph does not have edge types.".to_owned()),
             (Some(_), None) => Ok(None),
             (Some(ets), Some(etn)) => match ets.get(etn) {
@@ -1300,7 +1300,7 @@ impl Graph {
     pub fn get_node_type_id_from_node_type_name(&self, node_type_name: &str) -> Result<NodeTypeT> {
         self.must_have_node_types()?;
         self.node_types
-            .as_ref()
+            .as_ref().as_ref()
             .map(|nts| {
                 nts.get(node_type_name).map_or_else(
                     || {
@@ -1455,7 +1455,7 @@ impl Graph {
         edge_type: Option<EdgeTypeT>,
     ) -> Result<EdgeT> {
         self.edge_types
-            .as_ref()
+            .as_ref().as_ref()
             .map_or_else(
                 || self.get_edge_id_from_node_ids(src, dst).ok(),
                 |ets| {
@@ -1627,7 +1627,7 @@ impl Graph {
         &self,
         src: NodeT,
     ) -> (EdgeT, EdgeT) {
-        match &self.cumulative_node_degrees {
+        match &*self.cumulative_node_degrees {
             Some(cumulative_node_degrees) => {
                 let min_edge_id = if src == 0 {
                     0
@@ -1667,7 +1667,7 @@ impl Graph {
     pub fn get_node_type_name_from_node_type_id(&self, node_type_id: NodeTypeT) -> Result<String> {
         self.must_have_node_types()?;
         self.node_types
-            .as_ref()
+            .as_ref().as_ref()
             .map(|nts| nts.translate(node_type_id))
             .unwrap()
     }
@@ -1684,7 +1684,7 @@ impl Graph {
         node_type_ids: Vec<NodeTypeT>,
     ) -> Vec<String> {
         self.node_types
-            .as_ref()
+            .as_ref().as_ref()
             .map(|nts| nts.unchecked_translate_vector(node_type_ids))
             .unwrap_unchecked()
     }

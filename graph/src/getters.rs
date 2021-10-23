@@ -387,7 +387,7 @@ impl Graph {
     /// ```
     ///
     pub fn get_name(&self) -> String {
-        self.name.clone()
+        self.name.to_string()
     }
 
     #[cache_property(trap_nodes_number)]
@@ -503,7 +503,7 @@ impl Graph {
     /// Return the edge types of the edges.
     pub fn get_edge_type_ids(&self) -> Result<Vec<Option<EdgeTypeT>>> {
         self.must_have_edge_types()
-            .map(|_| self.edge_types.as_ref().map(|ets| ets.ids.clone()).unwrap())
+            .map(|_| self.edge_types.as_ref().as_ref().map(|ets| ets.ids.clone()).unwrap())
     }
 
     /// Return the unique edge type IDs of the graph edges.
@@ -527,7 +527,7 @@ impl Graph {
     pub fn get_edge_type_names(&self) -> Result<Vec<Option<String>>> {
         self.must_have_edge_types().map(|_| {
             self.edge_types
-                .as_ref()
+                .as_ref().as_ref()
                 .map(|ets| {
                     ets.ids
                         .iter()
@@ -559,7 +559,7 @@ impl Graph {
     /// ```
     pub fn get_edge_weights(&self) -> Result<Vec<WeightT>> {
         self.must_have_edge_weights()?;
-        Ok(self.weights.clone().unwrap())
+        Ok((*self.weights).clone().unwrap())
     }
 
     /// Return the weighted indegree (total weighted inbound edge weights) for each node.
@@ -607,7 +607,7 @@ impl Graph {
     ///
     pub fn get_node_type_ids(&self) -> Result<Vec<Option<Vec<NodeTypeT>>>> {
         self.must_have_node_types()
-            .map(|_| self.node_types.as_ref().map(|nts| nts.ids.clone()).unwrap())
+            .map(|_| self.node_types.as_ref().as_ref().map(|nts| nts.ids.clone()).unwrap())
     }
 
     /// Returns boolean mask of known node types.
@@ -1240,7 +1240,7 @@ impl Graph {
 
     /// Return vector with node cumulative_node_degrees, that is the comulative node degree.
     pub fn get_cumulative_node_degrees(&self) -> Vec<EdgeT> {
-        self.cumulative_node_degrees.as_ref().map_or_else(
+        self.cumulative_node_degrees.as_ref().as_ref().map_or_else(
             || {
                 let mut cumulative_node_degrees = vec![0; self.get_nodes_number() as usize];
                 self.par_iter_comulative_node_degrees()
@@ -1253,7 +1253,7 @@ impl Graph {
 
     /// Return vector with
     pub fn get_reciprocal_sqrt_degrees(&self) -> Vec<WeightT> {
-        self.reciprocal_sqrt_degrees.as_ref().map_or_else(
+        self.reciprocal_sqrt_degrees.as_ref().as_ref().map_or_else(
             || {
                 let mut reciprocal_sqrt_degrees = vec![0.0; self.get_nodes_number() as usize];
                 self.par_iter_reciprocal_sqrt_degrees()

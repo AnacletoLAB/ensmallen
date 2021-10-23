@@ -3,16 +3,23 @@ use indicatif::ParallelProgressIterator;
 use rayon::prelude::*;
 
 #[derive(Hash, Clone, Debug)]
-pub struct Star<'a> {
-    graph: &'a Graph,
+pub struct Star {
+    graph: Graph,
     root_node_id: NodeT,
     len: NodeT,
 }
 
-impl<'a> Star<'a> {
-    pub(crate) fn new(graph: &'a Graph, root_node_id: NodeT, len: NodeT) -> Star<'a> {
+use std::string::ToString;
+impl ToString for Star {
+    fn to_string(&self) -> String {
+        format!("{:?}", self)
+    }
+}
+
+impl Star {
+    pub(crate) fn new(graph: &Graph, root_node_id: NodeT, len: NodeT) -> Star {
         Star {
-            graph,
+            graph: graph.clone(),
             root_node_id,
             len,
         }

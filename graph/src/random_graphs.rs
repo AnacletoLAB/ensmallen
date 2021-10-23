@@ -740,8 +740,8 @@ impl Graph {
 
         build_graph_from_integers(
             Some(edges_iterator),
-            nodes,
-            Some(node_types),
+            Arc::new(nodes),
+            Arc::new(Some(node_types)),
             Some(edge_types_vocabulary),
             has_edge_weights,
             directed,
@@ -813,8 +813,8 @@ impl Graph {
 
         build_graph_from_integers(
             Some(edges_iterator),
-            nodes,
-            Some(node_types),
+            Arc::new(nodes),
+            Arc::new(Some(node_types)),
             Some(edge_types_vocabulary),
             has_edge_weights,
             directed,
@@ -881,8 +881,8 @@ impl Graph {
 
         build_graph_from_integers(
             Some(edges_iterator),
-            nodes,
-            Some(node_types),
+            Arc::new(nodes),
+            Arc::new(Some(node_types)),
             Some(edge_types_vocabulary),
             has_edge_weights,
             directed,
@@ -949,8 +949,8 @@ impl Graph {
 
         build_graph_from_integers(
             Some(edges_iterator),
-            nodes,
-            Some(node_types),
+            Arc::new(nodes),
+            Arc::new(Some(node_types)),
             Some(edge_types_vocabulary),
             has_edge_weights,
             directed,
@@ -1017,8 +1017,8 @@ impl Graph {
 
         build_graph_from_integers(
             Some(edges_iterator),
-            nodes,
-            Some(node_types),
+            Arc::new(nodes),
+            Arc::new(Some(node_types)),
             Some(edge_types_vocabulary),
             has_edge_weights,
             directed,
@@ -1085,8 +1085,8 @@ impl Graph {
 
         build_graph_from_integers(
             Some(edges_iterator),
-            nodes,
-            Some(node_types),
+            Arc::new(nodes),
+            Arc::new(Some(node_types)),
             Some(edge_types_vocabulary),
             has_edge_weights,
             directed,
@@ -1153,8 +1153,8 @@ impl Graph {
 
         build_graph_from_integers(
             Some(edges_iterator),
-            nodes,
-            Some(node_types),
+            Arc::new(nodes),
+            Arc::new(Some(node_types)),
             Some(edge_types_vocabulary),
             has_edge_weights,
             directed,
@@ -1305,8 +1305,8 @@ impl Graph {
 
         build_graph_from_integers(
             Some(edges_iterator),
-            nodes,
-            Some(node_types),
+            Arc::new(nodes),
+            Arc::new(Some(node_types)),
             Some(edge_types_vocabulary),
             has_edge_weights,
             directed,
@@ -1422,8 +1422,8 @@ impl Graph {
 
         build_graph_from_integers(
             Some(edges_iterator),
-            nodes,
-            Some(node_types),
+            Arc::new(nodes),
+            Arc::new(Some(node_types)),
             None,
             has_edge_weights,
             directed,

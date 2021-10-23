@@ -94,7 +94,7 @@ impl Graph {
             ),
             self.nodes.clone(),
             self.node_types.clone(),
-            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+            self.edge_types.as_ref().as_ref().map(|ets| ets.vocabulary.clone()),
             true,
             directed,
             Some(true),

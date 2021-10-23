@@ -3,26 +3,33 @@ use indicatif::ParallelProgressIterator;
 use rayon::prelude::*;
 
 #[derive(Hash, Clone, Debug)]
-pub struct Chain<'a> {
-    graph: &'a Graph,
+pub struct Chain {
+    graph: Graph,
     root_node_id: NodeT,
     len: NodeT,
     node_ids: Option<Vec<NodeT>>,
 }
 
-impl<'a> Chain<'a> {
-    pub(crate) fn new(graph: &'a Graph, root_node_id: NodeT, len: NodeT) -> Chain<'a> {
+use std::string::ToString;
+impl ToString for Chain {
+    fn to_string(&self) -> String {
+        format!("{:?}", self)
+    }
+}
+
+impl Chain {
+    pub(crate) fn new(graph: &Graph, root_node_id: NodeT, len: NodeT) -> Chain {
         Chain {
-            graph,
+            graph: graph.clone(),
             root_node_id,
             len,
             node_ids: None,
         }
     }
 
-    pub(crate) fn from_node_ids(graph: &'a Graph, node_ids: Vec<NodeT>) -> Chain<'a> {
+    pub(crate) fn from_node_ids(graph: &Graph, node_ids: Vec<NodeT>) -> Chain {
         Chain {
-            graph,
+            graph: graph.clone(),
             root_node_id: node_ids[0],
             len: node_ids.len() as NodeT,
             node_ids: Some(node_ids),

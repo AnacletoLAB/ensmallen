@@ -43,7 +43,7 @@ impl Graph {
     /// * Not unique
     /// * Not available for each of the node IDs of the graph.
     pub unsafe fn remap_unchecked_from_node_ids(&self, node_ids: Vec<NodeT>) -> Graph {
-        let new_node_types = self.node_types.as_ref().map(|node_types| {
+        let new_node_types = self.node_types.as_ref().as_ref().map(|node_types| {
             let remapped_node_ids = node_ids
                 .iter()
                 .map(|node_id| node_types.ids[*node_id as usize].clone())
@@ -76,9 +76,9 @@ impl Graph {
                         )
                     }),
             ),
-            new_nodes_vocabulary,
-            new_node_types,
-            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+            Arc::new(new_nodes_vocabulary),
+            Arc::new(new_node_types),
+            self.edge_types.as_ref().as_ref().map(|ets| ets.vocabulary.clone()),
             self.has_edge_weights(),
             self.is_directed(),
             Some(true),
@@ -202,7 +202,7 @@ impl Graph {
             ),
             other.nodes.clone(),
             other.node_types.clone(),
-            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+            self.edge_types.as_ref().as_ref().map(|ets| ets.vocabulary.clone()),
             self.has_edge_weights(),
             self.is_directed(),
             Some(true),

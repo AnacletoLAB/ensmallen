@@ -85,24 +85,24 @@ impl Graph {
             destinations: size_of::<Option<Vec<NodeT>>>()
                 + self
                     .destinations
-                    .as_ref()
+                    .as_ref().as_ref()
                     .map_or(0, |v| v.capacity() * size_of::<NodeT>()),
             sources: size_of::<Option<Vec<NodeT>>>()
                 + self
                     .sources
-                    .as_ref()
+                    .as_ref().as_ref()
                     .map_or(0, |v| v.capacity() * size_of::<NodeT>()),
             cumulative_node_degrees: size_of::<Option<Vec<EdgeT>>>()
                 + self
                     .cumulative_node_degrees
-                    .as_ref()
+                    .as_ref().as_ref()
                     .map_or(0, |v| v.capacity() * size_of::<EdgeT>()),
 
-            unique_sources: self.unique_sources.as_ref().map_or(0, |e| e.size()),
+            unique_sources: self.unique_sources.as_ref().as_ref().map_or(0, |e| e.size()),
             connected_nodes: size_of::<Option<BitVec<Lsb0, u8>>>()
                 + self
                     .connected_nodes
-                    .as_ref()
+                    .as_ref().as_ref()
                     .map_or(0, |bv| bv.capacity() * size_of::<u8>()),
         }
     }
@@ -141,7 +141,7 @@ impl Graph {
     /// Returns how many bytes are currently used to store the edge weights.
     pub fn get_edge_weights_total_memory_requirements(&self) -> usize {
         size_of::<Option<Vec<WeightT>>>()
-            + self.weights.as_ref().map_or(0, |edge_weights| {
+            + self.weights.as_ref().as_ref().map_or(0, |edge_weights| {
                 edge_weights.capacity() * size_of::<WeightT>()
             })
     }

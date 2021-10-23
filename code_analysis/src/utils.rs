@@ -18,7 +18,8 @@ pub const DENY_LIST: &[&str] = &[
     "parallel_lines_reader_with_index.rs",
     "url_utilities",
     "constructors",
-    "argmax_argmin.rs"
+    "argmax_argmin.rs",
+    "minmax.rs",
 ];
 
 
