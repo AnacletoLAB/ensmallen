@@ -75,6 +75,7 @@ impl Graph {
     ) -> impl Iterator<Item = WeightT> + '_ {
         self.weights
             .as_ref()
+            .as_ref()
             .map(|weights| {
                 weights[self.iter_unchecked_edge_ids_from_source_node_id(source_node_id)]
                     .iter()
@@ -100,6 +101,7 @@ impl Graph {
     ) -> impl Iterator<Item = Option<EdgeTypeT>> + '_ {
         self.edge_types
             .as_ref()
+            .as_ref()
             .map(|edge_types| {
                 edge_types.ids[self.iter_unchecked_edge_ids_from_source_node_id(source_node_id)]
                     .iter()
@@ -124,6 +126,7 @@ impl Graph {
         destination_node_id: NodeT,
     ) -> impl Iterator<Item = WeightT> + '_ {
         self.weights
+            .as_ref()
             .as_ref()
             .map(move |weights| {
                 self.iter_unchecked_edge_ids_from_destination_node_id(destination_node_id)
@@ -178,7 +181,7 @@ impl Graph {
         &self,
         src: NodeT,
     ) -> Box<dyn Iterator<Item = NodeT> + Send + '_> {
-        match &self.destinations {
+        match &*self.destinations {
             Some(dsts) => Box::new(
                 dsts[self.iter_unchecked_edge_ids_from_source_node_id(src)]
                     .iter()
@@ -235,7 +238,7 @@ impl Graph {
         &self,
         src: NodeT,
     ) -> impl IndexedParallelIterator<Item = NodeT> + Send + '_ {
-        match &self.destinations {
+        match &*self.destinations {
             Some(dsts) => dsts[self.iter_unchecked_edge_ids_from_source_node_id(src)]
                 .par_iter()
                 .cloned(),

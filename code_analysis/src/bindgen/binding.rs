@@ -168,6 +168,22 @@ fn translate_return_type(
             )
         }
 
+        // handle other vec with maybe complex types
+        x if x == "Vec<_>" => {
+            // TODO! make this recursive??
+            let mut res_body = format!(
+                "{}.into_iter().map(|x| x.into()).collect::<Vec<_>>()", 
+                body.strip_suffix(".into()").unwrap_or(&body)
+            );
+
+            (
+                res_body,
+                Some(
+                    format!("Vec<{}>", &return_type[0])
+                )
+            )
+        }
+
         // handle 2d numpy arrays
         x if x == "Vec<Vec<Primitive>>" 
             && !attributes.iter().any(|x| x == "no_numpy_binding") 

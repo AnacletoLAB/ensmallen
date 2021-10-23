@@ -217,18 +217,18 @@ pub fn second_order_walker(
 }
 
 fn validate_vocabularies(graph: &Graph) {
-    if let Some(ets) = &graph.edge_types {
+    if let Some(ets) = &*graph.edge_types {
         assert_eq!(!ets.ids.is_empty(), graph.has_edge_types(),
             "We expected that if the graph has edge types then it cannot be empty. The report of the graph is:\n{:?}",
             graph.textual_report()
         );
     }
 
-    if let Some(nts) = &graph.node_types {
+    if let Some(nts) = &*graph.node_types {
         assert_eq!(!nts.ids.is_empty(), graph.has_node_types());
     }
 
-    if let Some(ws) = &graph.weights {
+    if let Some(ws) = &*graph.weights {
         assert_eq!(
             !ws.is_empty(), graph.has_edge_weights(),
             concat!(
@@ -1424,14 +1424,14 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: Option<bool>) -> Result<()
         for mode in 0..2 {
             if mode == 1 {
                 graph.enable(None, None, None, None)?;
-                if let Some(cumulative_node_degrees) = &graph.cumulative_node_degrees {
+                if let Some(cumulative_node_degrees) = &*graph.cumulative_node_degrees {
                     assert_eq!(
                         cumulative_node_degrees.len(),
                         graph.get_nodes_number() as usize,
                         "Length of cumulative_node_degrees does not match number of nodes in the graph."
                     );
                 }
-                if let Some(destinations) = &graph.destinations {
+                if let Some(destinations) = &*graph.destinations {
                     assert_eq!(
                         destinations.len(),
                         graph.get_directed_edges_number() as usize,
@@ -2002,8 +2002,8 @@ pub fn test_nodelabel_holdouts(graph: &mut Graph, _verbose: Option<bool>) -> Res
             "The re-merged holdouts does not contain the original graph."
         );
         assert!(
-            train.node_types.as_ref().map_or(false, |train_nts| {
-                test.node_types.as_ref().map_or(false, |test_nts| {
+            train.node_types.as_ref().as_ref().map_or(false, |train_nts| {
+                test.node_types.as_ref().as_ref().map_or(false, |test_nts| {
                     train_nts.ids.iter().zip(test_nts.ids.iter()).all(
                         |(train_node_type, test_node_type)| {
                             !(train_node_type.is_some() && test_node_type.is_some())
@@ -2033,8 +2033,8 @@ pub fn test_edgelabel_holdouts(graph: &mut Graph, _verbose: Option<bool>) -> Res
         assert!(train.has_unknown_edge_types()?);
         assert!(test.has_unknown_edge_types()?);
         assert!(
-            train.edge_types.as_ref().map_or(false, |train_nts| {
-                test.edge_types.as_ref().map_or(false, |test_nts| {
+            train.edge_types.as_ref().as_ref().map_or(false, |train_nts| {
+                test.edge_types.as_ref().as_ref().map_or(false, |test_nts| {
                     train_nts.ids.iter().zip(test_nts.ids.iter()).all(
                         |(train_edge_type, test_edge_type)| {
                             !(train_edge_type.is_some() && test_edge_type.is_some())

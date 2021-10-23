@@ -171,7 +171,7 @@ fn generic_integer_operator(
                     })
             });
 
-    let node_types = match (&main.node_types, &other.node_types) {
+    let node_types = match (&*main.node_types, &*other.node_types) {
         (Some(mnts), Some(onts)) => Some(match mnts == onts {
             true => mnts.clone(),
             false => {
@@ -195,8 +195,8 @@ fn generic_integer_operator(
     build_graph_from_integers(
         Some(edges_iterator),
         main.nodes.clone(),
-        node_types,
-        main.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+        Arc::new(node_types),
+        main.edge_types.as_ref().as_ref().map(|ets| ets.vocabulary.clone()),
         main.has_edge_weights(),
         main.is_directed(),
         Some(true),
@@ -268,12 +268,12 @@ impl Graph {
         if self.nodes != other.nodes {
             return Ok(false);
         }
-        if let (Some(snts), Some(onts)) = (&self.node_types, &other.node_types) {
+        if let (Some(snts), Some(onts)) = (&*self.node_types, &*other.node_types) {
             if snts.vocabulary != onts.vocabulary {
                 return Ok(false);
             }
         }
-        if let (Some(sets), Some(oets)) = (&self.edge_types, &other.edge_types) {
+        if let (Some(sets), Some(oets)) = (&*self.edge_types, &*other.edge_types) {
             if sets.vocabulary != oets.vocabulary {
                 return Ok(false);
             }

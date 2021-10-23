@@ -340,8 +340,8 @@ impl Graph {
                         }
                     }),
             ),
-            Vocabulary::from_range(0..communities_number),
-            None,
+            Arc::new(Vocabulary::from_range(0..communities_number)),
+            Arc::new(None),
             None,
             true,
             self.is_directed(),

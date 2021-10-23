@@ -55,7 +55,7 @@ impl Graph {
         let mut report: HashMap<&'static str, String> = HashMap::new();
 
         // Adding the default metrics
-        report.insert("name", self.name.clone());
+        report.insert("name", (*self.name).clone());
         report.insert("directed", self.is_directed().to_string());
         report.insert("nodes_number", self.get_nodes_number().to_string());
         report.insert(

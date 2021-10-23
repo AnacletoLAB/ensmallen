@@ -268,7 +268,7 @@ impl Graph {
         if !self.has_node_types() {
             return Err("The current graph instance does not have node types.".to_string());
         }
-        Ok(self.node_types.as_ref().unwrap())
+        Ok(self.node_types.as_ref().as_ref().unwrap())
     }
 
     #[no_binding]
@@ -290,7 +290,7 @@ impl Graph {
         if !self.has_edge_types() {
             return Err("The current graph instance does not have edge types.".to_string());
         }
-        Ok(self.edge_types.as_ref().unwrap())
+        Ok(self.edge_types.as_ref().as_ref().unwrap())
     }
 
     /// Raises an error if the graph does not have edge types.
@@ -419,7 +419,7 @@ impl Graph {
         if !self.has_edge_weights() {
             return Err("The current graph instance does not have weights.".to_string());
         }
-        Ok(self.weights.as_ref().unwrap())
+        Ok(self.weights.as_ref().as_ref().unwrap())
     }
 
     #[no_binding]
@@ -490,7 +490,7 @@ impl Graph {
                     .to_string(),
             );
         }
-        Ok(self.weights.as_ref().unwrap())
+        Ok(self.weights.as_ref().as_ref().unwrap())
     }
 
     #[no_binding]
@@ -513,7 +513,7 @@ impl Graph {
         if self.has_negative_edge_weights()? {
             return Err("The current graph instance contains negative edge weights.".to_string());
         }
-        Ok(self.weights.as_ref().unwrap())
+        Ok(self.weights.as_ref().as_ref().unwrap())
     }
 
     /// Raises an error if the graph contains zero weighted degree.
