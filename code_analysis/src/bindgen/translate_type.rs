@@ -40,7 +40,7 @@ pub fn translate_type(value: &Type, user_defined_types: &[&str]) -> String {
             "isize" | "i64" | "i32" | "i16" | "i8" => "int".into(),
             "WeightT" | "f64" | "f32" => "float".into(),
             "bool" => "bool".into(),
-            "str" | "S" | "String" => "str".into(),
+            "char" | "str" | "S" | "String" => "str".into(),
             "RoaringBitmap" => "List[int]".into(),
             "HashSet" => {
                 let mut result = "Set[".to_string();
