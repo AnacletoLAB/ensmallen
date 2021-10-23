@@ -274,15 +274,33 @@ impl<T: ToFromUsize + Sync> TypeFileReader<T> {
     ///
     /// # Arguments
     ///
-    /// * separator: Option<String> - The separator to use for the file.
+    /// * separator: Option<char> - The separator to use for the file.
     ///
-    pub fn set_separator(mut self, separator: Option<String>) -> Result<TypeFileReader<T>> {
+    pub fn set_separator(mut self, separator: Option<char>) -> Result<TypeFileReader<T>> {
         if separator.is_some() {
             self.must_have_reader()?;
         }
         self.reader = self.reader.map_or(Ok::<_, String>(None), |reader| {
             Ok(Some(reader.set_separator(separator)?))
         })?;
+        Ok(self)
+    }
+
+    /// Set whether to support the balanced quotes while reading the CSV, operation that will significantly slow down the execution.
+    ///
+    /// # Arguments
+    /// * `support_balanced_quotes`: Option<bool> - Whether to support the balanced quotes while reading the CSV.
+    ///
+    pub fn set_support_balanced_quotes(
+        mut self,
+        support_balanced_quotes: Option<bool>,
+    ) -> Result<TypeFileReader<T>> {
+        if support_balanced_quotes.is_some() {
+            self.must_have_reader()?;
+        }
+        self.reader = self
+            .reader
+            .map(|reader| reader.set_support_balanced_quotes(support_balanced_quotes));
         Ok(self)
     }
 

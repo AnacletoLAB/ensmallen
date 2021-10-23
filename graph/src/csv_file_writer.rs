@@ -7,13 +7,13 @@ use std::{fs::File, io::prelude::*, io::BufWriter};
 /// # Attributes
 /// * path: String - The path where to save the file. E.g. "/tmp/test.csv"
 /// * `verbose`: bool - If the progress bars and logging must be displayed.
-/// * separator: String - The separator to use, usually, this is "\t" for tsv and "," for csv.
-/// * header: bool - If the file (will / must) have the header with the titles of the columns.
+/// * `separator`: char - The separator to use, usually, this is '\t' for tsv and "," for csv.
+/// * `header`: bool - If the file (will / must) have the header with the titles of the columns.
 #[no_binding]
 pub struct CSVFileWriter {
     pub(crate) path: String,
     verbose: bool,
-    separator: String,
+    separator: char,
     header: bool,
 }
 
@@ -22,14 +22,13 @@ impl CSVFileWriter {
     /// Return new CSVFileWriter object.
     ///
     /// # Arguments
-    ///
-    /// * path: String - Path where to store/load the file.
+    /// * `path`: String - Path where to store/load the file.
     ///
     pub fn new<S: Into<String>>(path: S) -> CSVFileWriter {
         CSVFileWriter {
             path: path.into(),
             verbose: true,
-            separator: "\t".to_string(),
+            separator: '\t',
             header: true,
         }
     }
@@ -65,12 +64,9 @@ impl CSVFileWriter {
     /// Set separator to the provided value.
     ///
     /// # Arguments
-    /// * `separator`: Option<String> - The value to use as separator in the file.
-    pub fn set_separator(mut self, separator: Option<String>) -> Result<CSVFileWriter> {
+    /// * `separator`: Option<char> - The value to use as separator in the file.
+    pub fn set_separator(mut self, separator: Option<char>) -> Result<CSVFileWriter> {
         if let Some(separator) = separator {
-            if separator.is_empty() {
-                return Err("The separator cannot be empty.".to_owned());
-            }
             self.separator = separator
         };
         Ok(self)
@@ -103,7 +99,7 @@ impl CSVFileWriter {
         let mut stream = BufWriter::with_capacity(8 * 1024 * 1024, file);
 
         if self.header {
-            let mut line = header.join(&self.separator);
+            let mut line = header.join(self.separator.to_string().as_str());
             line.push('\n');
             match stream.write(line.as_bytes()) {
                 Ok(_) => Ok(()),
@@ -114,7 +110,7 @@ impl CSVFileWriter {
         }
 
         for (i, value) in values.progress_with(pb).enumerate() {
-            let mut line = value.join(&self.separator);
+            let mut line = value.join(self.separator.to_string().as_str());
             line.push('\n');
             match stream.write(line.as_bytes()) {
                 Ok(_) => Ok(()),

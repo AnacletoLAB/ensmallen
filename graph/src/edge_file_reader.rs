@@ -507,15 +507,28 @@ impl EdgeFileReader {
     /// Set the separator.
     ///
     /// # Arguments
-    /// * separator: Option<String> - The separator to use for the file.
+    /// * `separator`: Option<char> - The separator to use for the file.
     ///
-    pub fn set_separator(mut self, separator: Option<String>) -> Result<EdgeFileReader> {
+    pub fn set_separator(mut self, separator: Option<char>) -> Result<EdgeFileReader> {
         self.reader = self.reader.set_separator(separator)?;
         Ok(self)
     }
 
+    /// Set whether to support the balanced quotes while reading the CSV, operation that will significantly slow down the execution.
+    ///
+    /// # Arguments
+    /// * `support_balanced_quotes`: Option<bool> - Whether to support the balanced quotes while reading the CSV.
+    ///
+    pub fn set_support_balanced_quotes(
+        mut self,
+        support_balanced_quotes: Option<bool>,
+    ) -> EdgeFileReader {
+        self.reader = self.reader.set_support_balanced_quotes(support_balanced_quotes);
+        self
+    }
+
     /// Return the CSV reader separator
-    pub fn get_separator(&self) -> String {
+    pub fn get_separator(&self) -> char {
         self.reader.separator.clone()
     }
 

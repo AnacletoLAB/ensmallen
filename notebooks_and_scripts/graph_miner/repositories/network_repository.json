@@ -1675,7 +1675,7 @@
             ],
             "arguments": {
                 "node_path": "PLC-40-30-L5/PLC-40-30-L5.node_labels",
-                "edge_list_separator": "\t",
+                "edge_list_separator": '\t',
                 "directed": false,
                 "node_list_header": false,
                 "edge_list_header": false,
@@ -1684,7 +1684,7 @@
                 "nodes_column_number": 0,
                 "node_list_node_types_column_number": 1,
                 "name": "PLC-40-30-L5",
-                "node_list_separator": "\t",
+                "node_list_separator": '\t',
                 "edge_path": "PLC-40-30-L5/PLC-40-30-L5.edges",
                 "edge_list_rows_to_skip": 0
             }
@@ -2556,7 +2556,7 @@
             ],
             "arguments": {
                 "node_path": "CL-10K-1d8-L5/CL-10K-1d8-L5.node_labels",
-                "edge_list_separator": "\t",
+                "edge_list_separator": '\t',
                 "directed": false,
                 "node_list_header": false,
                 "edge_list_header": false,
@@ -2565,7 +2565,7 @@
                 "nodes_column_number": 0,
                 "node_list_node_types_column_number": 1,
                 "name": "CL-10K-1d8-L5",
-                "node_list_separator": "\t",
+                "node_list_separator": '\t',
                 "edge_path": "CL-10K-1d8-L5/CL-10K-1d8-L5.edges",
                 "edge_list_rows_to_skip": 0
             }
@@ -4118,7 +4118,7 @@
                 "node_list_header": false,
                 "name": "ca-MathSciNet-dir",
                 "edge_path": "ca-MathSciNet-dir/ca-MathSciNet-dir.txt",
-                "edge_list_separator": "\t",
+                "edge_list_separator": '\t',
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2
@@ -7539,7 +7539,7 @@
             ],
             "arguments": {
                 "node_path": "CL-10M-1d8-L5/CL-10M-1d8-L5.node_labels",
-                "edge_list_separator": "\t",
+                "edge_list_separator": '\t',
                 "directed": false,
                 "node_list_header": false,
                 "edge_list_header": false,
@@ -7548,7 +7548,7 @@
                 "nodes_column_number": 0,
                 "node_list_node_types_column_number": 1,
                 "name": "CL-10M-1d8-L5",
-                "node_list_separator": "\t",
+                "node_list_separator": '\t',
                 "edge_path": "CL-10M-1d8-L5/CL-10M-1d8-L5.edges",
                 "edge_list_rows_to_skip": 0
             }
@@ -12340,7 +12340,7 @@
             ],
             "arguments": {
                 "node_path": "SW-10000-6-0d3-L2/SW-10000-6-0d3-L2.node_labels",
-                "edge_list_separator": "\t",
+                "edge_list_separator": '\t',
                 "directed": false,
                 "node_list_header": false,
                 "edge_list_header": false,
@@ -12349,7 +12349,7 @@
                 "nodes_column_number": 0,
                 "node_list_node_types_column_number": 1,
                 "name": "SW-10000-6-0d3-L2",
-                "node_list_separator": "\t",
+                "node_list_separator": '\t',
                 "edge_path": "SW-10000-6-0d3-L2/SW-10000-6-0d3-L2.edges",
                 "edge_list_rows_to_skip": 0
             }
@@ -13501,7 +13501,7 @@
             ],
             "arguments": {
                 "node_path": "PLC-60-30-L2/PLC-60-30-L2.node_labels",
-                "edge_list_separator": "\t",
+                "edge_list_separator": '\t',
                 "directed": false,
                 "node_list_header": false,
                 "edge_list_header": false,
@@ -13510,7 +13510,7 @@
                 "nodes_column_number": 0,
                 "node_list_node_types_column_number": 1,
                 "name": "PLC-60-30-L2",
-                "node_list_separator": "\t",
+                "node_list_separator": '\t',
                 "edge_path": "PLC-60-30-L2/PLC-60-30-L2.edges",
                 "edge_list_rows_to_skip": 0
             }
@@ -21938,7 +21938,7 @@
                 "name": "soc-livejournal07",
                 "edge_path": "soc-livejournal07/soc-livejournal07.edges",
                 "edge_list_comment_symbol": "%",
-                "edge_list_separator": "\t",
+                "edge_list_separator": '\t',
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -22361,7 +22361,7 @@
                 "node_list_header": false,
                 "name": "web-cc12-PayLevelDomain",
                 "edge_path": "web-cc12-PayLevelDomain/web-cc12-PayLevelDomain.edges",
-                "edge_list_separator": "\t",
+                "edge_list_separator": '\t',
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -24538,7 +24538,7 @@
                 "name": "soc-orkut-dir",
                 "edge_path": "soc-orkut-dir/soc-orkut-dir.edges",
                 "edge_list_comment_symbol": "%",
-                "edge_list_separator": "\t",
+                "edge_list_separator": '\t',
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -25785,7 +25785,7 @@
                 "name": "ip-trace",
                 "edge_path": "ip-trace/ip-trace.edges",
                 "edge_list_edge_types_column_number": 2,
-                "edge_list_separator": "\t",
+                "edge_list_separator": '\t',
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }
@@ -29246,7 +29246,7 @@
             ],
             "arguments": {
                 "node_path": "SW-10000-6-0d3-L5/SW-10000-6-0d3-L5.node_labels",
-                "edge_list_separator": "\t",
+                "edge_list_separator": '\t',
                 "directed": false,
                 "node_list_header": false,
                 "edge_list_header": false,
@@ -29255,7 +29255,7 @@
                 "nodes_column_number": 0,
                 "node_list_node_types_column_number": 1,
                 "name": "SW-10000-6-0d3-L5",
-                "node_list_separator": "\t",
+                "node_list_separator": '\t',
                 "edge_path": "SW-10000-6-0d3-L5/SW-10000-6-0d3-L5.edges",
                 "edge_list_rows_to_skip": 0
             }
@@ -29887,7 +29887,7 @@
                 "name": "soc-flickr-und",
                 "edge_path": "soc-flickr-und/soc-flickr-und.edges",
                 "edge_list_comment_symbol": "%",
-                "edge_list_separator": "\t",
+                "edge_list_separator": '\t',
                 "sources_column_number": 0,
                 "destinations_column_number": 1
             }

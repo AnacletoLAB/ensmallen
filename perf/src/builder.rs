@@ -4,7 +4,7 @@ use rayon::iter::ParallelIterator;
 
 fn main() {
     let edges_reader = EdgeFileReader::new("../graph/tests/data/ppi/edges.tsv".to_string()).unwrap()
-        .set_separator(Some("\t".to_string())).unwrap()
+        .set_separator(Some('\t'.to_string())).unwrap()
         .set_sources_column(Some("subject".to_string())).unwrap()
         .set_destinations_column(Some("object".to_string())).unwrap()
         .set_weights_column(Some("weight".to_string())).unwrap()

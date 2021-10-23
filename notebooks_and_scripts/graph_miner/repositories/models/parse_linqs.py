@@ -112,7 +112,7 @@ def parse_linqs_pubmed_incidence_matrix(
     with open(cites_path) as f:
         cites = f.read()
 
-    separator = "\t"
+    separator = '\t'
 
     edge_list_file = open(edge_path, "w")
     node_list_file = open(node_path, "w")
@@ -194,7 +194,7 @@ def parse_linqs_incidence_matrix(
     # Loading the content file (incidence matrix)
     content = pd.read_csv(
         content_path,
-        sep="\t",
+        sep='\t',
         header=None,
         index_col=0,
         dtype=str
@@ -202,7 +202,7 @@ def parse_linqs_incidence_matrix(
     # Loading the citations file (edge list)
     cities = pd.read_csv(
         cites_path,
-        sep="\t",
+        sep='\t',
         header=None,
         dtype=str
     )
@@ -248,6 +248,6 @@ def parse_linqs_incidence_matrix(
         })
     ]).reset_index(drop=True)
     # Storing the generated node list
-    node_list.to_csv(node_path, sep="\t", index=False)
+    node_list.to_csv(node_path, sep='\t', index=False)
     # Storing the generated edge list
-    edge_list.to_csv(edge_path, sep="\t", index=False)
+    edge_list.to_csv(edge_path, sep='\t', index=False)

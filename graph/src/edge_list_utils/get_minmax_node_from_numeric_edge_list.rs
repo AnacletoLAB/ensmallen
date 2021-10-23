@@ -4,7 +4,7 @@ use crate::{EdgeFileReader, EdgeT, Result};
 ///
 /// # Arguments
 /// * `path`: &str - The path from where to load the edge list.
-/// * `separator`: Option<String> - The separator for the rows in the edge list.
+/// * `separator`: Option<char> - The separator for the rows in the edge list.
 /// * `header`: Option<bool> - Whether the edge list has an header.
 /// * `sources_column`: Option<String> - The column name to use for the source nodes.
 /// * `sources_column_number`: Option<usize> - The column number to use for the source nodes.
@@ -24,7 +24,7 @@ use crate::{EdgeFileReader, EdgeT, Result};
 /// * If the edge list is empty.
 pub fn get_minmax_node_from_numeric_edge_list(
     path: &str,
-    separator: Option<String>,
+    separator: Option<char>,
     header: Option<bool>,
     sources_column: Option<String>,
     sources_column_number: Option<usize>,
