@@ -12,45 +12,56 @@ impl<'s> SplitUnquotedChar<'s> {
     }
 }
 
+/// parse a line of a csv spearated by `separator` which
+/// can has quotes and escaped quotes
 impl<'s> Iterator for SplitUnquotedChar<'s> {
     type Item = &'s str;
 
     fn next(&mut self) -> Option<&'s str> {
-        let mut char_indices = self.line.char_indices();
-        if let Some((_, c0)) = char_indices.next() {
-            let mut previous = c0;
-            for (bi, c) in self.line.char_indices() {
-                if c == self.separator {
-                    if c0 == '"' {
-                        if bi == 1 || previous != '"' {
-                            previous = c;
-                            continue;
-                        }
-                        // the first and last quotes aren't part of the
-                        // returned token
-                        let token = &self.line[1..bi - 1];
-                        self.line = &self.line[bi..];
-                        return Some(token);
-                    }
-                    let token = &self.line[..bi];
-                    self.line = &self.line[bi..];
-                    return Some(token);
+        let line_start = self.line;
+        let mut counter = 0;
+        let mut inside_double_quotes = false;
+        let mut previous_char_is_backslash = false;
+        while let Some(current_char) = self.line.chars().next() {  
+            match current_char {
+                '\\' => {
+                    previous_char_is_backslash ^= true;
                 }
-                previous = c;
+                '"' => {
+                    if !previous_char_is_backslash {
+                        inside_double_quotes ^= true;
+                    }
+                    previous_char_is_backslash = false;
+                }
+                x if x == self.separator => {
+                    // if we are not escaped and we are not inside quotes
+                    // return the current val
+                    if !previous_char_is_backslash && !inside_double_quotes {
+                        // skip the separator
+                        self.line = &self.line[1..];
+                        // reutrn the current line
+                        return Some(&line_start[..counter]);
+                    }
+                    previous_char_is_backslash = false;
+                }
+                _ => {
+                    previous_char_is_backslash = false;
+                }
             }
-            let unwrap = c0 == '"' && previous == '"' && self.line.len() > 1;
-            let token = if unwrap {
-                &self.line[1..self.line.len() - 1]
-            } else {
-                self.line
-            };
-            self.line = &self.line[0..0];
-            Some(token)
+            // skip one character
+            self.line = &self.line[1..];
+            counter += 1;
+        }
+
+        // if the line is empty then we are finished
+        if !line_start.is_empty() {
+            Some(line_start)
         } else {
             None
         }
     }
 }
+
 
 /// Returns iterator over given line to split.
 ///
@@ -70,3 +81,4 @@ pub(crate) fn splitter<'a>(
     };
     iterator
 }
+
