@@ -12,11 +12,27 @@ pub struct Star {
 use std::string::ToString;
 impl ToString for Star {
     fn to_string(&self) -> String {
-        format!("{:?}", self)
+        format!(
+            concat!(
+                "<p>This star of nodes from the graph {} contains {} nodes, and has as central node {}. ",
+                "Specifically, the nodes involved in the star are: {}</p>",
+            ),
+            self.graph.get_name(),
+            self.len(),
+            self.get_root_node_name(),
+            unsafe {get_unchecked_formatted_list(&self.get_star_node_names())}
+        )
     }
 }
 
 impl Star {
+
+    /// Return new Star object created with the provided root and length.
+    /// 
+    /// # Arguments
+    /// * `graph`: &Graph - The graph of reference of the star.
+    /// * `root_node_id`: NodeT - Central node ID of the star.
+    /// * `len`: NodeT - precomputed length of the star.
     pub(crate) fn new(graph: &Graph, root_node_id: NodeT, len: NodeT) -> Star {
         Star {
             graph: graph.clone(),
@@ -25,9 +41,17 @@ impl Star {
         }
     }
 
-    /// Return the first node ID of the Star.
+    /// Return the central node ID of the Star.
     pub fn get_root_node_id(&self) -> NodeT {
         self.root_node_id
+    }
+
+    /// Return the central node name of the star.
+    pub fn get_root_node_name(&self) -> String {
+        unsafe {
+            self.graph
+                .get_unchecked_node_name_from_node_id(self.root_node_id)
+        }
     }
 
     /// Return length of the Star.

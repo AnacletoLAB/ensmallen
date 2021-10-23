@@ -13,11 +13,27 @@ pub struct Chain {
 use std::string::ToString;
 impl ToString for Chain {
     fn to_string(&self) -> String {
-        format!("{:?}", self)
+        format!(
+            concat!(
+                "<p>This chain of nodes from the graph {} contains {} nodes and starts from the node {}. ",
+                "Specifically, the nodes involved in the chain are: {}</p>",
+            ),
+            self.graph.get_name(),
+            self.len(),
+            self.get_root_node_name(),
+            unsafe {get_unchecked_formatted_list(&self.get_chain_node_names())}
+        )
     }
 }
 
 impl Chain {
+    /// Return new chain object created with the provided root and length.
+    /// 
+    /// # Arguments
+    /// * `graph`: &Graph - The graph of reference of the chain.
+    /// * `root_node_id`: NodeT - First node ID of the chain.
+    /// * `len`: NodeT - Precomputed length of the chain.
+    /// 
     pub(crate) fn new(graph: &Graph, root_node_id: NodeT, len: NodeT) -> Chain {
         Chain {
             graph: graph.clone(),
@@ -39,6 +55,14 @@ impl Chain {
     /// Return the first node ID of the chain.
     pub fn get_root_node_id(&self) -> NodeT {
         self.root_node_id
+    }
+
+    /// Return the first node name of the chain.
+    pub fn get_root_node_name(&self) -> String {
+        unsafe {
+            self.graph
+                .get_unchecked_node_name_from_node_id(self.root_node_id)
+        }
     }
 
     /// Return length of the chain.

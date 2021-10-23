@@ -323,25 +323,6 @@ impl Graph {
         ))
     }
 
-    /// Returns given list in a uman readable format.
-    ///
-    /// # Safety
-    /// If the list is empty the method will raise a panic.
-    unsafe fn get_unchecked_formatted_list(&self, list: &[String]) -> String {
-        if list.is_empty() {
-            panic!("Cannot format a list with no elements.");
-        }
-        if list.len() == 1 {
-            return list.first().unwrap().clone();
-        }
-        let all_minus_last: String = list[0..list.len() - 1].join(", ");
-        format!(
-            "{all_minus_last} and {last}",
-            all_minus_last = all_minus_last,
-            last = list.last().unwrap()
-        )
-    }
-
     /// Return human-readable html report of the given node.
     ///
     /// The report, by default, is rendered using html.
@@ -444,7 +425,7 @@ impl Graph {
                     )),
                     _ => Some(format!(
                         "node types {}",
-                        self.get_unchecked_formatted_list(
+                        get_unchecked_formatted_list(
                             node_type_names
                                 .iter()
                                 .map(|node_type_name| {
@@ -678,7 +659,7 @@ impl Graph {
             mode_node_degree = self.get_node_degrees_mode().unwrap(),
             mean_node_degree = self.get_node_degrees_mean().unwrap(),
             node_degree_median = self.get_node_degrees_median().unwrap(),
-            list_of_most_central_nodes = self.get_unchecked_formatted_list(
+            list_of_most_central_nodes = get_unchecked_formatted_list(
                 self.get_top_k_central_node_ids(5).unwrap()
                     .into_iter()
                     .filter(|node_id| {
@@ -721,7 +702,7 @@ impl Graph {
                             "{additional_singleton_nodes}"
                         ),
                         singleton_nodes_number = singleton_nodes_number,
-                        singleton_nodes_list = self.get_unchecked_formatted_list(
+                        singleton_nodes_list = get_unchecked_formatted_list(
                             self.iter_singleton_node_ids()
                                 .take(5)
                                 .map(|node_id| {
@@ -776,7 +757,7 @@ impl Graph {
                             "{additional_singleton_nodes_with_selfloop}"
                         ),
                         singleton_nodes_with_selfloops_number = singleton_nodes_with_selfloops_number,
-                        singleton_nodes_list = self.get_unchecked_formatted_list(
+                        singleton_nodes_list = get_unchecked_formatted_list(
                             self.iter_singleton_nodes_with_selfloops_node_ids()
                                 .take(5)
                                 .map(|node_id| {
@@ -856,7 +837,7 @@ impl Graph {
             weighted_maximum_node_degree = self.get_weighted_maximum_node_degree().clone().unwrap(),
             weighted_mean_node_degree = self.get_weighted_node_degrees_mean().unwrap(),
             weighted_node_degree_median = self.get_weighted_node_degrees_median().unwrap(),
-            weighted_list_of_most_central_nodes = self.get_unchecked_formatted_list(
+            weighted_list_of_most_central_nodes = get_unchecked_formatted_list(
                 self.get_weighted_top_k_central_node_ids(5).unwrap()
                     .into_iter()
                     .map(|node_id| {
@@ -903,7 +884,7 @@ impl Graph {
                             "{additional_singleton_nodes_with_selfloop}"
                         ),
                         singleton_nodes_types_number = singleton_nodes_types_number,
-                        singleton_node_types_list = self.get_unchecked_formatted_list(
+                        singleton_node_types_list = get_unchecked_formatted_list(
                             self.iter_singleton_node_type_names()
                                 .unwrap()
                                 .take(5)
@@ -964,7 +945,7 @@ impl Graph {
                             "{additional_unknown_nodes}"
                         ),
                         unknown_node_types_number = unknown_node_types_number,
-                        unknown_node_types_list = self.get_unchecked_formatted_list(
+                        unknown_node_types_list = get_unchecked_formatted_list(
                             self.iter_node_ids_with_unknown_node_types()
                                 .unwrap()
                                 .take(5)
@@ -1026,7 +1007,7 @@ impl Graph {
                         .into_iter()
                         .collect::<Vec<_>>();
                     node_type_counts.sort_by(|(_, a), (_, b)| b.cmp(a));
-                    let node_type_descriptions = self.get_unchecked_formatted_list(
+                    let node_type_descriptions = get_unchecked_formatted_list(
                         node_type_counts
                             .into_iter()
                             .take(5)
@@ -1108,7 +1089,7 @@ impl Graph {
                             "{additional_edgges_with_singleton_edge_types}. "
                         ),
                         singleton_edges_types_number = singleton_edges_types_number,
-                        singleton_edge_types_list = self.get_unchecked_formatted_list(
+                        singleton_edge_types_list = get_unchecked_formatted_list(
                             self.iter_singleton_edge_type_names()
                                 .unwrap()
                                 .take(5)
@@ -1169,7 +1150,7 @@ impl Graph {
                             "{additional_unknown_edges}."
                         ),
                         unknown_types_number = unknown_types_number,
-                        unknown_edge_types_list = self.get_unchecked_formatted_list(
+                        unknown_edge_types_list = get_unchecked_formatted_list(
                             self.iter_edge_ids_with_unknown_edge_types()
                                 .unwrap()
                                 .take(5)
@@ -1231,7 +1212,7 @@ impl Graph {
                         .into_iter()
                         .collect::<Vec<_>>();
                     edge_type_counts.sort_by(|(_, a), (_, b)| b.cmp(a));
-                    let edge_type_descriptions = self.get_unchecked_formatted_list(
+                    let edge_type_descriptions = get_unchecked_formatted_list(
                         edge_type_counts
                             .into_iter()
                             .take(5)
