@@ -49,7 +49,7 @@ impl Graph {
 
         let writer = pe!(NodeFileWriter::new(path)
             .set_verbose(extract_value!(kwargs, "verbose", bool))
-            .set_separator(extract_value!(kwargs, "separator", String)))?
+            .set_separator(extract_value!(kwargs, "separator", char)))?
         .set_header(extract_value!(kwargs, "header", bool))
         .set_nodes_column_number(extract_value!(kwargs, "nodes_column_number", usize))
         .set_nodes_column(extract_value!(kwargs, "nodes_column", String))

@@ -68,7 +68,7 @@ impl Graph {
 
         let mut writer = pe!(EdgeFileWriter::new(path)
             .set_verbose(extract_value!(kwargs, "verbose", bool))
-            .set_separator(extract_value!(kwargs, "separator", String)))?;
+            .set_separator(extract_value!(kwargs, "separator", char)))?;
 
         writer = writer
             .set_header(extract_value!(kwargs, "header", bool))
