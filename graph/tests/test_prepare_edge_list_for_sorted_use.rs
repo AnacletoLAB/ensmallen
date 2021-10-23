@@ -43,8 +43,10 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         None,
         None,
         None,
+        None,
+        None,
         Some("tests/data/macaque_node_list.tsv".to_string()),
-        Some('\t'.to_string()),
+        Some('\t'),
         Some(true),
         Some("node_name".to_string()),
         Some(0),
@@ -69,9 +71,11 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         None,
         None,
         None,
+        None,
         "tests/data/unsorted_macaque.tsv".to_string(),
         None,
         Some(false),
+        None,
         Some(0),
         None,
         Some(1),
@@ -102,7 +106,7 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         .unwrap()
         .set_header(Some(false))
         .unwrap()
-        .set_separator(Some('\t'.to_string()))
+        .set_separator(Some('\t'))
         .unwrap()
         .set_verbose(Some(false))
         .set_numeric_node_ids(Some(true))
@@ -137,7 +141,7 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         .unwrap()
         .set_header(Some(false))
         .unwrap()
-        .set_separator(Some('\t'.to_string()))
+        .set_separator(Some('\t'))
         .unwrap()
         .set_verbose(Some(false))
         .set_numeric_node_ids(Some(true))
@@ -206,8 +210,10 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         None,
         None,
         None,
+        None,
+        None,
         Some("tests/data/macaque_node_list.tsv".to_string()),
-        Some('\t'.to_string()),
+        Some('\t'),
         Some(true),
         Some("node_name".to_string()),
         Some(0),
@@ -232,9 +238,11 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         None,
         None,
         None,
+        None,
         "tests/data/unsorted_macaque.tsv".to_string(),
         None,
         Some(false),
+        None,
         Some(0),
         None,
         Some(1),
@@ -265,7 +273,7 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         .unwrap()
         .set_header(Some(false))
         .unwrap()
-        .set_separator(Some('\t'.to_string()))
+        .set_separator(Some('\t'))
         .unwrap()
         .set_verbose(Some(false))
         .set_numeric_node_ids(Some(true))
@@ -300,7 +308,7 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         .unwrap()
         .set_header(Some(false))
         .unwrap()
-        .set_separator(Some('\t'.to_string()))
+        .set_separator(Some('\t'))
         .unwrap()
         .set_verbose(Some(false))
         .set_numeric_node_ids(Some(true))

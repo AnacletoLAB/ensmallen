@@ -1,5 +1,4 @@
 use super::*;
-use indicatif::ParallelProgressIterator;
 use rayon::prelude::*;
 
 #[derive(Hash, Clone, Debug)]
@@ -114,10 +113,12 @@ impl Graph {
                 if root_node_id > neighbour_node_id {
                     return None;
                 }
+                if self.get_chain_node_degree(neighbour_node_id) != 2 {
+                    return None;
+                }
                 if neighbour_node_id != node_id
                     && neighbour_node_id != root_node_id
                     && neighbour_node_id != previous_node_id
-                    && self.get_unchecked_node_degree_from_node_id(neighbour_node_id) == 2
                 {
                     previous_node_id = node_id;
                     node_id = neighbour_node_id;
@@ -130,53 +131,113 @@ impl Graph {
         Some(circle_node_ids)
     }
 
+    /// Return option with number of the nodes in the circle, 
+    ///
+    /// # Arguments
+    /// `node_id`: NodeT - The root of the provided Circle.
+    ///
+    /// # Safety
+    /// The node ID must be among the node IDs present in the graph, or the method will panic.
+    /// Additionally, it must be the root node of a Circle.
+    unsafe fn get_circle_nodes_number_from_root_node_id(
+        &self,
+        root_node_id: NodeT,
+    ) -> Option<NodeT> {
+        let mut number_of_nodes = 1;
+        let mut node_id = root_node_id;
+        let mut previous_node_id = node_id;
+        'outer: loop {
+            for neighbour_node_id in
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+            {
+                if root_node_id > neighbour_node_id {
+                    return None;
+                }
+                if self.get_chain_node_degree(neighbour_node_id) != 2 {
+                    return None;
+                }
+                if neighbour_node_id != node_id
+                    && neighbour_node_id != root_node_id
+                    && neighbour_node_id != previous_node_id
+                {
+                    previous_node_id = node_id;
+                    node_id = neighbour_node_id;
+                    number_of_nodes += 1;
+                    continue 'outer;
+                }
+            }
+            break;
+        }
+        Some(number_of_nodes)
+    }
+
     /// Return vector of Circles in the current graph instance.
     ///
     /// # Arguments
     /// `minimum_number_of_nodes_per_circle`: Option<NodeT> - Minimum size of the Circles.
     /// `compute_circle_nodes`: Option<bool> - Whether to pre-compute the Circle nodes.
-    /// `verbose`: Option<bool> - Whether to show the loading bars.
+    /// 
+    /// # Definitions
+    /// A circle is a **component** where every node has degree 2 and each of its neighbours also have degree 2.
+    /// The root of the circle is defined as the node with the smallest id in it.
+    /// 
+    /// Here we use the same definition of degree as in the chains, so that we ignore selfloops and allow for
+    /// multigraphs.
     pub fn get_circles(
         &self,
         minimum_number_of_nodes_per_circle: Option<NodeT>,
         compute_circle_nodes: Option<bool>,
-        verbose: Option<bool>,
     ) -> Result<Vec<Circle>> {
         self.must_be_undirected()?;
         let minimum_number_of_nodes_per_circle = minimum_number_of_nodes_per_circle.unwrap_or(10);
-        let verbose = verbose.unwrap_or(true);
         let compute_circle_nodes = compute_circle_nodes.unwrap_or(false);
-        let progress_bar = get_loading_bar(
-            verbose,
-            "Detecting nodes inside Circles",
-            self.get_nodes_number() as usize,
-        );
+
         Ok(self
             .par_iter_node_ids()
-            .progress_with(progress_bar)
             .filter(|&node_id| unsafe {
-                self.get_unchecked_node_degree_from_node_id(node_id) == 2
-                    && self
-                        .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                        .all(|neighbour_node_id| {
-                            neighbour_node_id > node_id
-                                && self.get_unchecked_node_degree_from_node_id(neighbour_node_id)
-                                    == 2
-                        })
+                // quickly check if the given node has only two
+                // neihgbours that also degree == 2
+                // and that it's the local smallest (speed up)
+
+                let mut node_degree = 0;
+                let mut previous_node_id = node_id;
+                for neighbour_node_id in self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id) {
+                    // ignore selfloops and destinations already visited
+                    if neighbour_node_id == node_id || neighbour_node_id == previous_node_id {
+                        continue;
+                    }
+                    // ignore the node if it has a smaller neighbour
+                    // because by definition also neighbour_node_id will be checked
+                    // and thus we can reduce the number of nodes to check
+                    if neighbour_node_id < node_id {
+                        return false;
+                    }
+                    node_degree += 1;
+                    // early stop
+                    if node_degree > 2 || self.get_chain_node_degree(neighbour_node_id) != 2 {
+                        return false;
+                    }
+                    previous_node_id = node_id;
+                }
+                true
             })
             .filter_map(|node_id| unsafe {
-                if let Some(node_ids) = self.get_circle_node_ids_from_root_node_id(node_id) {
-                    if node_ids.len() as NodeT >= minimum_number_of_nodes_per_circle {
-                        Some(if compute_circle_nodes {
-                            Circle::from_node_ids(self, node_ids)
+                if compute_circle_nodes {
+                    self.get_circle_node_ids_from_root_node_id(node_id).and_then(|node_ids|{
+                        if node_ids.len() as NodeT >= minimum_number_of_nodes_per_circle {
+                            Some(Circle::from_node_ids(self, node_ids))
                         } else {
-                            Circle::new(self, node_id, node_ids.len() as NodeT)
-                        })
-                    } else {
-                        None
-                    }
+                            None
+                        }
+                    })
                 } else {
-                    None
+                    self.get_circle_nodes_number_from_root_node_id(node_id).and_then(|nodes_number|{
+                        if nodes_number >= minimum_number_of_nodes_per_circle {
+                            Some(Circle::new(self, node_id, nodes_number))
+                        } else {
+                            None
+                        }
+                    })
                 }
             })
             .collect::<Vec<Circle>>())

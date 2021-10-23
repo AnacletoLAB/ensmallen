@@ -23,7 +23,7 @@ fn test_barbell_graph() -> Result<()> {
     )
     .unwrap();
     assert!(barbell_graph.is_connected(Some(true)));
-    let chains = barbell_graph.get_chains(None, None, None).unwrap();
+    let chains = barbell_graph.get_chains(None, None).unwrap();
     assert_eq!(chains.len(), 1);
     assert_eq!(chains[0].len(), 100);
     let _ = graph::test_utilities::default_test_suite(&mut barbell_graph, None);

@@ -8,7 +8,7 @@ fn test_load_sorted_sequential() {
         .unwrap()
         .set_header(Some(false))
         .unwrap()
-        .set_separator(Some('\t'.to_string()))
+        .set_separator(Some('\t'))
         .unwrap()
         .set_verbose(Some(false))
         .set_numeric_node_ids(Some(true))
