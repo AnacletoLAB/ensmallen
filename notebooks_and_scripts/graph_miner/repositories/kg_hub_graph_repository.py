@@ -160,8 +160,16 @@ class KGHubGraphRepository(GraphRepository):
                     "r"
                 ).read()
             ]
-        
-        # TODO! add a citation for KG-Microbe!
+        if graph_name == "KGMicrobe":
+            return [
+                open(
+                    "{}/models/KGMicrobe.bib".format(
+                        os.path.dirname(os.path.abspath(__file__)),
+                        graph_name
+                    ),
+                    "r"
+                ).read()
+            ]
 
     def get_graph_paths(self, graph_name: str, urls: List[str]) -> List[str]:
         """Return url for the given graph.

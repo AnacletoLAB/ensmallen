@@ -1,0 +1,124 @@
+"""
+This file offers the methods to automatically retrieve the graph Wikidata.
+
+The graph is automatically retrieved from the WikiData repository. 
+
+
+References
+---------------------
+Please cite the following if you use the data:
+
+```bib
+@article{vrandevcic2014wikidata,
+  title={Wikidata: a free collaborative knowledgebase},
+  author={Vrande{\v{c}}i{\'c}, Denny and Kr{\"o}tzsch, Markus},
+  journal={Communications of the ACM},
+  volume={57},
+  number={10},
+  pages={78--85},
+  year={2014},
+  publisher={ACM New York, NY, USA}
+}
+```
+"""
+from typing import Dict
+
+from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
+from ...ensmallen import Graph  # pylint: disable=import-error
+
+
+def WikiData(
+    directed: bool = False,
+    preprocess: bool = True,
+    load_nodes: bool = True,
+    verbose: int = 2,
+    cache: bool = True,
+    cache_path: str = "graphs/wikidata",
+    version: str = "latest-truthy",
+    **additional_graph_kwargs: Dict
+) -> Graph:
+    """Return new instance of the Wikidata graph.
+
+    The graph is automatically retrieved from the WikiData repository.	
+
+    Parameters
+    -------------------
+    directed: bool = False
+        Wether to load the graph as directed or undirected.
+        By default false.
+    preprocess: bool = True
+        Whether to preprocess the graph to be loaded in 
+        optimal time and memory.
+    load_nodes: bool = True,
+        Whether to load the nodes vocabulary or treat the nodes
+        simply as a numeric range.
+    verbose: int = 2,
+        Wether to show loading bars during the retrieval and building
+        of the graph.
+    cache: bool = True
+        Whether to use cache, i.e. download files only once
+        and preprocess them only once.
+    cache_path: str = "graphs"
+        Where to store the downloaded graphs.
+    version: str = "latest-truthy"
+        The version of the graph to retrieve.		
+	The available versions are:
+			- wikidata-20210908-truthy-BETA
+			- wikidata-20210910-lexemes-BETA
+			- wikidata-20210913-all-BETA
+			- wikidata-20210915-truthy-BETA
+			- wikidata-20210917-lexemes-BETA
+			- wikidata-20210920-all-BETA
+			- wikidata-20210922-truthy-BETA
+			- wikidata-20210924-lexemes-BETA
+			- wikidata-20210927-all-BETA
+			- wikidata-20210929-truthy-BETA
+			- wikidata-20211001-lexemes-BETA
+			- wikidata-20211004-all-BETA
+			- wikidata-20211006-truthy-BETA
+			- wikidata-20211008-lexemes-BETA
+			- wikidata-20211011-all-BETA
+			- wikidata-20211013-truthy-BETA
+			- wikidata-20211015-lexemes-BETA
+			- wikidata-20211018-all-BETA
+			- wikidata-20211020-truthy-BETA
+			- wikidata-20211022-lexemes-BETA
+			- latest-all
+			- latest-lexemes
+			- latest-truthy
+    additional_graph_kwargs: Dict
+        Additional graph kwargs.
+
+    Returns
+    -----------------------
+    Instace of Wikidata graph.
+
+	References
+	---------------------
+	Please cite the following if you use the data:
+	
+	```bib
+	@article{vrandevcic2014wikidata,
+	  title={Wikidata: a free collaborative knowledgebase},
+	  author={Vrande{\v{c}}i{\'c}, Denny and Kr{\"o}tzsch, Markus},
+	  journal={Communications of the ACM},
+	  volume={57},
+	  number={10},
+	  pages={78--85},
+	  year={2014},
+	  publisher={ACM New York, NY, USA}
+	}
+	```
+    """
+    return AutomaticallyRetrievedGraph(
+        graph_name="WikiData",
+        repository="wikidata",
+        version=version,
+        directed=directed,
+        preprocess=preprocess,
+        load_nodes=load_nodes,
+        verbose=verbose,
+        cache=cache,
+        cache_path=cache_path,
+        additional_graph_kwargs=additional_graph_kwargs
+    )()

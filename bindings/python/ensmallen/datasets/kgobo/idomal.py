@@ -60,6 +60,7 @@ def IDOMAL(
     version: str = "16%3A03%3A2015%2021%3A20"
         The version of the graph to retrieve.		
 	The available versions are:
+			- 2015-03-16
 			- 16%3A03%3A2015%2021%3A20
     additional_graph_kwargs: Dict
         Additional graph kwargs.

@@ -4,7 +4,16 @@ This file offers the methods to automatically retrieve the graph kg-microbe.
 The graph is automatically retrieved from the KGHub repository. 
 
 
+References
+---------------------
+Please cite the following if you use the data:
 
+```bib
+@article{joachimiakkg,
+  title={KG-Microbe: a reference knowledge-graph and platform for harmonized microbial information},
+  author={Joachimiak, Marcin P and Reese, Justin T and Hegde, Harshad and Cappelletti, Luca and Mungall, Christopher J and Duncan, William D and Thessen, Anne E}
+}
+```
 """
 from typing import Dict
 
@@ -63,7 +72,16 @@ def KGMicrobe(
     -----------------------
     Instace of kg-microbe graph.
 
+	References
+	---------------------
+	Please cite the following if you use the data:
 	
+	```bib
+	@article{joachimiakkg,
+	  title={KG-Microbe: a reference knowledge-graph and platform for harmonized microbial information},
+	  author={Joachimiak, Marcin P and Reese, Justin T and Hegde, Harshad and Cappelletti, Luca and Mungall, Christopher J and Duncan, William D and Thessen, Anne E}
+	}
+	```
     """
     return AutomaticallyRetrievedGraph(
         graph_name="KGMicrobe",

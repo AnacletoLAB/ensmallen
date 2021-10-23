@@ -60,6 +60,7 @@ def CDNO(
     version: str = "2021-09-09"
         The version of the graph to retrieve.		
 	The available versions are:
+			- 2021-10-20
 			- 2021-09-09
     additional_graph_kwargs: Dict
         Additional graph kwargs.

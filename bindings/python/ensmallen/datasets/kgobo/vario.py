@@ -60,6 +60,7 @@ def VARIO(
     version: str = "release"
         The version of the graph to retrieve.		
 	The available versions are:
+			- no_version
 			- release
     additional_graph_kwargs: Dict
         Additional graph kwargs.

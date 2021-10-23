@@ -303,6 +303,7 @@ class AutomaticallyRetrievedGraph:
                     # original_numeric_node_type_ids,
                     # original_minimum_node_type_id,
                     # original_node_type_list_header,
+                    # original_node_type_list_support_balanced_quotes,
                     # original_node_type_list_rows_to_skip,
                     # original_node_type_list_max_rows_number,
                     # original_node_type_list_comment_symbol,
@@ -315,6 +316,9 @@ class AutomaticallyRetrievedGraph:
                     original_node_path=node_path,
                     original_node_list_header=graph_arguments.get(
                         "node_list_header"
+                    ),
+                    original_node_list_support_balanced_quotes=graph_arguments.get(
+                        "node_list_support_balanced_quotes"
                     ),
                     node_list_rows_to_skip=graph_arguments.get(
                         "node_list_rows_to_skip"
@@ -389,6 +393,9 @@ class AutomaticallyRetrievedGraph:
                         self._cache_path, graph_arguments["edge_path"]),
                     original_edge_list_header=graph_arguments.get(
                         "edge_list_header"
+                    ),
+                    original_edge_list_support_balanced_quotes=graph_arguments.get(
+                        "edge_list_support_balanced_quotes"
                     ),
                     original_edge_list_separator=graph_arguments.get(
                         "edge_list_separator"
@@ -465,7 +472,7 @@ class AutomaticallyRetrievedGraph:
                     "node_type_path": target_node_type_list_path,
                     "node_types_column_number": 0,
                     "node_type_list_is_correct": True,
-                    "node_type_list_separator": '\t'
+                    "node_type_list_separator": "\t"
                 }
             else:
                 node_types_arguments = {}
@@ -473,7 +480,7 @@ class AutomaticallyRetrievedGraph:
             if self._load_nodes:
                 nodes_arguments = {
                     "node_path": target_node_path,
-                    "node_list_separator": '\t',
+                    "node_list_separator": "\t",
                     "nodes_column_number": 0,
                     "node_types_separator": "|" if has_node_types else None,
                     "node_list_node_types_column_number": 1 if has_node_types else None,
@@ -486,7 +493,7 @@ class AutomaticallyRetrievedGraph:
                 nodes_arguments = {
                     "numeric_node_ids": True,
                 }
-                
+
             # If the edge types are provided
             has_edge_types = metadata["edge_types_number"] is not None
             if has_edge_types:
@@ -494,7 +501,7 @@ class AutomaticallyRetrievedGraph:
                     "edge_type_path": target_edge_type_list_path,
                     "edge_types_column_number": 0,
                     "edge_type_list_is_correct": True,
-                    "edge_type_list_separator": '\t'
+                    "edge_type_list_separator": "\t"
                 }
             else:
                 edge_types_arguments = {}

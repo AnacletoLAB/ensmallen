@@ -60,6 +60,7 @@ def TADS(
     version: str = "13%3A03%3A2012%2015%3A35"
         The version of the graph to retrieve.		
 	The available versions are:
+			- 2015-08-20
 			- 13%3A03%3A2012%2015%3A35
     additional_graph_kwargs: Dict
         Additional graph kwargs.

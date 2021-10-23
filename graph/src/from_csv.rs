@@ -145,6 +145,7 @@ impl Graph {
     /// * `numeric_node_type_ids`: Option<bool> - Whether the node type names should be loaded as numeric values, i.e. casted from string to a numeric representation.
     /// * `minimum_node_type_id`: Option<NodeTypeT> - The minimum node type ID to be used when using numeric node type IDs.
     /// * `node_type_list_header`: Option<bool> - Whether the node type file has an header.
+    /// * `node_type_list_support_balanced_quotes`: Option<bool> - Whether to support balanced quotes.
     /// * `node_type_list_rows_to_skip`: Option<usize> - The number of lines to skip in the node types file`: the header is already skipped if it has been specified that the file has an header.
     /// * `node_type_list_is_correct`: Option<bool> - Whether the node types file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.
     /// * `node_type_list_max_rows_number`: Option<usize> - The maximum number of lines to be loaded from the node types file.
@@ -153,6 +154,7 @@ impl Graph {
     /// * `node_path`: Option<String> - The path to the file with the unique node names.
     /// * `node_list_separator`: Option<char> - The separator to use for the nodes file. Note that if this is not provided, one will be automatically detected among the following`: comma, semi-column, tab and space.
     /// * `node_list_header`: Option<bool> - Whether the nodes file has an header.
+    /// * `node_list_support_balanced_quotes`: Option<bool> - Whether to support balanced quotes.
     /// * `node_list_rows_to_skip`: Option<usize> - Number of rows to skip in the node list file.
     /// * `node_list_is_correct`: Option<bool> - Whether the nodes file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.
     /// * `node_list_max_rows_number`: Option<usize> - The maximum number of lines to be loaded from the nodes file.
@@ -179,6 +181,7 @@ impl Graph {
     /// * `minimum_edge_type_id`: Option<EdgeTypeT> - The minimum edge type ID to be used when using numeric edge type IDs.
     /// * `edge_type_list_separator`: Option<char> - The separator to use for the edge type list. Note that, if None is provided, one will be attempted to be detected automatically between ';', ',', tab or space.
     /// * `edge_type_list_header`: Option<bool> - Whether the edge type file has an header.
+    /// * `edge_type_list_support_balanced_quotes`: Option<bool> - Whether to support balanced quotes while reading the edge type list.
     /// * `edge_type_list_rows_to_skip`: Option<usize> - Number of rows to skip in the edge type list file.
     /// * `edge_type_list_is_correct`: Option<bool> - Whether the edge types file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.
     /// * `edge_type_list_max_rows_number`: Option<usize> - The maximum number of lines to be loaded from the edge types file.
@@ -187,6 +190,7 @@ impl Graph {
     /// * `edge_path`: Option<String> - The path to the file with the edge list.
     /// * `edge_list_separator`: Option<char> - The separator to use for the edge list. Note that, if None is provided, one will be attempted to be detected automatically between ';', ',', tab or space.
     /// * `edge_list_header`: Option<bool> - Whether the edges file has an header.
+    /// * `edge_list_support_balanced_quotes`: Option<bool> - Whether to support balanced quotes while reading the edge list.
     /// * `edge_list_rows_to_skip`: Option<usize> - Number of rows to skip in the edge list file.
     /// * `sources_column_number`: Option<usize> - The number of the column of the edges file from where to load the source nodes.
     /// * `sources_column`: Option<String> - The name of the column of the edges file from where to load the source nodes.
@@ -229,6 +233,7 @@ impl Graph {
         numeric_node_type_ids: Option<bool>,
         minimum_node_type_id: Option<NodeTypeT>,
         node_type_list_header: Option<bool>,
+        node_type_list_support_balanced_quotes: Option<bool>,
         node_type_list_rows_to_skip: Option<usize>,
         node_type_list_is_correct: Option<bool>,
         node_type_list_max_rows_number: Option<usize>,
@@ -238,6 +243,7 @@ impl Graph {
         node_path: Option<String>,
         node_list_separator: Option<char>,
         node_list_header: Option<bool>,
+        node_list_support_balanced_quotes: Option<bool>,
         node_list_rows_to_skip: Option<usize>,
         node_list_is_correct: Option<bool>,
         node_list_max_rows_number: Option<usize>,
@@ -267,6 +273,7 @@ impl Graph {
         minimum_edge_type_id: Option<EdgeTypeT>,
         edge_type_list_separator: Option<char>,
         edge_type_list_header: Option<bool>,
+        edge_type_list_support_balanced_quotes: Option<bool>,
         edge_type_list_rows_to_skip: Option<usize>,
         edge_type_list_is_correct: Option<bool>,
         edge_type_list_max_rows_number: Option<usize>,
@@ -276,6 +283,7 @@ impl Graph {
         edge_path: Option<String>,
         edge_list_separator: Option<char>,
         edge_list_header: Option<bool>,
+        edge_list_support_balanced_quotes: Option<bool>,
         edge_list_rows_to_skip: Option<usize>,
         sources_column_number: Option<usize>,
         sources_column: Option<String>,
@@ -314,6 +322,7 @@ impl Graph {
                     TypeFileReader::new(node_type_path)?
                         .set_comment_symbol(node_type_list_comment_symbol)?
                         .set_header(node_type_list_header)?
+                        .set_support_balanced_quotes(node_type_list_support_balanced_quotes)?
                         .set_max_rows_number(node_type_list_max_rows_number)?
                         .set_rows_to_skip(node_type_list_rows_to_skip)?
                         .set_separator(node_type_list_separator)?
@@ -338,6 +347,7 @@ impl Graph {
                     TypeFileReader::new(edge_type_path)?
                         .set_comment_symbol(edge_type_list_comment_symbol)?
                         .set_header(edge_type_list_header)?
+                        .set_support_balanced_quotes(edge_type_list_support_balanced_quotes)?
                         .set_max_rows_number(edge_type_list_max_rows_number)?
                         .set_rows_to_skip(edge_type_list_rows_to_skip)?
                         .set_separator(edge_type_list_separator)?
@@ -361,6 +371,7 @@ impl Graph {
                 NodeFileReader::new(node_path)?
                     .set_comment_symbol(node_list_comment_symbol)?
                     .set_header(node_list_header)?
+                    .set_support_balanced_quotes(node_list_support_balanced_quotes)?
                     .set_max_rows_number(node_list_max_rows_number)?
                     .set_rows_to_skip(node_list_rows_to_skip)?
                     .set_separator(node_list_separator)?
@@ -390,6 +401,7 @@ impl Graph {
                 EdgeFileReader::new(edge_path)?
                     .set_comment_symbol(edge_list_comment_symbol)?
                     .set_header(edge_list_header)?
+                    .set_support_balanced_quotes(edge_list_support_balanced_quotes)
                     .set_max_rows_number(edge_list_max_rows_number)?
                     .set_rows_to_skip(edge_list_rows_to_skip)?
                     .set_separator(edge_list_separator)?

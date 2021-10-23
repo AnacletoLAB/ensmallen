@@ -60,6 +60,7 @@ def TGMA(
     version: str = "14%3A09%3A2011%2023%3A44"
         The version of the graph to retrieve.		
 	The available versions are:
+			- 2013-06-03
 			- 14%3A09%3A2011%2023%3A44
     additional_graph_kwargs: Dict
         Additional graph kwargs.
