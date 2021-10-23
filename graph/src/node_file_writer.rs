@@ -188,9 +188,9 @@ impl NodeFileWriter {
     /// Set the separator.
     ///
     /// # Arguments
-    /// * separator: Option<String> - The separator to use for the file.
+    /// * separator: Option<char> - The separator to use for the file.
     ///
-    pub fn set_separator(mut self, separator: Option<String>) -> Result<NodeFileWriter> {
+    pub fn set_separator(mut self, separator: Option<char>) -> Result<NodeFileWriter> {
         self.writer = self.writer.set_separator(separator)?;
         Ok(self)
     }

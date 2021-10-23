@@ -4,14 +4,15 @@ use crate::{utils::ItersWrapper, CSVFileReader, CSVFileWriter, Result};
 ///
 /// # Arguments
 /// * `original_csv_path`: &str - The path from where to load the original CSV.
-/// * `original_csv_separator`: Option<String> - Separator to use for the original CSV.
+/// * `original_csv_separator`: Option<char> - Separator to use for the original CSV.
 /// * `original_csv_header`: Option<bool> - Whether the original CSV has an header.
 /// * `target_csv_path`: &str - The path from where to load the target CSV. This cannot be the same as the original CSV.
-/// * `target_csv_separator`: Option<String> - Separator to use for the target CSV. If None, the one provided from the original CSV will be used.
+/// * `target_csv_separator`: Option<char> - Separator to use for the target CSV. If None, the one provided from the original CSV will be used.
 /// * `target_csv_header`: Option<bool> - Whether the target CSV has an header. If None, the one provided from the original CSV will be used.
 /// * `target_csv_ids_column`: Option<String> - The column name to use for the ids in the target list.
 /// * `target_csv_ids_column_number`: Option<usize> - The column number to use for the ids in the target list.
 /// * `comment_symbol`: Option<String> - The comment symbol to use within the original CSV.
+/// * `support_balanced_quotes`: Option<bool> - Whether to support balanced quotes.
 /// * `max_rows_number`: Option<usize> - The amount of rows to load from the original CSV.
 /// * `rows_to_skip`: Option<usize> - The amount of rows to skip from the original CSV.
 /// * `verbose`: Option<bool> - Whether to show the loading bar while processing the file.
@@ -23,14 +24,15 @@ use crate::{utils::ItersWrapper, CSVFileReader, CSVFileWriter, Result};
 /// TODO! add check for space on disk where possible.
 pub fn add_numeric_id_to_csv(
     original_csv_path: &str,
-    original_csv_separator: Option<String>,
+    original_csv_separator: Option<char>,
     original_csv_header: Option<bool>,
     target_csv_path: &str,
-    target_csv_separator: Option<String>,
+    target_csv_separator: Option<char>,
     target_csv_header: Option<bool>,
     target_csv_ids_column: Option<String>,
     target_csv_ids_column_number: Option<usize>,
     comment_symbol: Option<String>,
+    support_balanced_quotes: Option<bool>,
     max_rows_number: Option<usize>,
     rows_to_skip: Option<usize>,
     lines_number: Option<usize>,
@@ -56,6 +58,7 @@ pub fn add_numeric_id_to_csv(
         .set_max_rows_number(max_rows_number)?
         .set_header(original_csv_header)?
         .set_separator(original_csv_separator)?
+        .set_support_balanced_quotes(support_balanced_quotes)
         .set_parallel(Some(false));
 
     let file_writer = CSVFileWriter::new(target_csv_path)

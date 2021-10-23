@@ -310,7 +310,7 @@ class AutomaticallyRetrievedGraph:
                     # original_node_type_list_is_correct,
                     # node_types_number,
                     target_node_type_list_path=target_node_type_list_path,
-                    target_node_type_list_separator="\t",
+                    target_node_type_list_separator='\t',
                     target_node_type_list_node_types_column_number=0,
                     original_node_path=node_path,
                     original_node_list_header=graph_arguments.get(
@@ -362,7 +362,7 @@ class AutomaticallyRetrievedGraph:
                         "maximum_node_id"
                     ),
                     target_node_path=target_node_path,
-                    target_node_list_separator="\t",
+                    target_node_list_separator='\t',
                     target_nodes_column=graph_arguments.get(
                         "nodes_column"
                     ),
@@ -383,7 +383,7 @@ class AutomaticallyRetrievedGraph:
                     # edge_type_list_is_correct,
                     # edge_types_number,
                     target_edge_type_list_path=target_edge_type_list_path,
-                    target_edge_type_list_separator="\t",
+                    target_edge_type_list_separator='\t',
                     target_edge_type_list_edge_types_column_number=0,
                     original_edge_path=os.path.join(
                         self._cache_path, graph_arguments["edge_path"]),
@@ -444,7 +444,7 @@ class AutomaticallyRetrievedGraph:
                     load_edge_list_in_parallel=True,
                     edges_number=graph_arguments.get("edges_number"),
                     target_edge_path=target_edge_path,
-                    target_edge_list_separator="\t",
+                    target_edge_list_separator='\t',
                     directed=self._directed,
                     verbose=self._verbose > 0,
                     name=self._name,
@@ -465,7 +465,7 @@ class AutomaticallyRetrievedGraph:
                     "node_type_path": target_node_type_list_path,
                     "node_types_column_number": 0,
                     "node_type_list_is_correct": True,
-                    "node_type_list_separator": "\t"
+                    "node_type_list_separator": '\t'
                 }
             else:
                 node_types_arguments = {}
@@ -473,7 +473,7 @@ class AutomaticallyRetrievedGraph:
             if self._load_nodes:
                 nodes_arguments = {
                     "node_path": target_node_path,
-                    "node_list_separator": "\t",
+                    "node_list_separator": '\t',
                     "nodes_column_number": 0,
                     "node_types_separator": "|" if has_node_types else None,
                     "node_list_node_types_column_number": 1 if has_node_types else None,
@@ -494,7 +494,7 @@ class AutomaticallyRetrievedGraph:
                     "edge_type_path": target_edge_type_list_path,
                     "edge_types_column_number": 0,
                     "edge_type_list_is_correct": True,
-                    "edge_type_list_separator": "\t"
+                    "edge_type_list_separator": '\t'
                 }
             else:
                 edge_types_arguments = {}

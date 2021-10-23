@@ -10,7 +10,7 @@ use crate::{EdgeFileReader, Result};
 /// # Arguments
 /// * `path`: &str - The path from where to load the edge list.
 /// * `target_path`: &str - The where to store the edge list.
-/// * `separator`: Option<String> - The separator for the rows in the edge list.
+/// * `separator`: Option<char> - The separator for the rows in the edge list.
 /// * `header`: Option<bool> - Whether the edge list has an header.
 /// * `sources_column`: Option<String> - The column name to use for the source nodes.
 /// * `sources_column_number`: Option<usize> - The column number to use for the source nodes.
@@ -24,7 +24,7 @@ use crate::{EdgeFileReader, Result};
 pub fn sort_numeric_edge_list(
     path: &str,
     target_path: &str,
-    separator: Option<String>,
+    separator: Option<char>,
     header: Option<bool>,
     sources_column: Option<String>,
     sources_column_number: Option<usize>,
@@ -119,7 +119,7 @@ pub fn sort_numeric_edge_list(
 ///
 /// # Arguments
 /// * `path`: &str - The path from where to load the edge list.
-/// * `separator`: Option<String> - The separator for the rows in the edge list.
+/// * `separator`: Option<char> - The separator for the rows in the edge list.
 /// * `header`: Option<bool> - Whether the edge list has an header.
 /// * `sources_column`: Option<String> - The column name to use for the source nodes.
 /// * `sources_column_number`: Option<usize> - The column number to use for the source nodes.
@@ -132,7 +132,7 @@ pub fn sort_numeric_edge_list(
 ///
 pub fn sort_numeric_edge_list_inplace(
     path: &str,
-    separator: Option<String>,
+    separator: Option<char>,
     header: Option<bool>,
     sources_column: Option<String>,
     sources_column_number: Option<usize>,

@@ -14,7 +14,7 @@ impl Graph {
     ///     Path where to save the edges and their metadata.
     /// verbose: bool = True
     ///     Wether to show a loading bar while writing to file.
-    /// separator: str = "\t"
+    /// separator: str = '\t'
     ///     What separator to use while writing out to file.
     /// header: bool = True
     ///     Wether to write out the header of the file.

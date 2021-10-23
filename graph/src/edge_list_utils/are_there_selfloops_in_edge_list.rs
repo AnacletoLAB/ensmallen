@@ -4,13 +4,14 @@ use crate::{EdgeFileReader, EdgeT, Result};
 ///
 /// # Arguments
 /// * `path`: &str - The path from where to load the edge list.
-/// * `separator`: Option<String> - The separator for the rows in the edge list.
+/// * `separator`: Option<char> - The separator for the rows in the edge list.
 /// * `header`: Option<bool> - Whether the edge list has an header.
 /// * `sources_column`: Option<String> - The column name to use for the source nodes.
 /// * `sources_column_number`: Option<usize> - The column number to use for the source nodes.
 /// * `destinations_column`: Option<String> - The column name to use for the destination nodes.
 /// * `destinations_column_number`: Option<usize> - The column number to use for the destination nodes.
 /// * `comment_symbol`: Option<String> - The comment symbol to use for the lines to skip.
+/// * `support_balanced_quotes`: Option<bool> - Whether to support balanced quotes.
 /// * `max_rows_number`: Option<usize> - The number of rows to read at most. Note that this parameter is ignored when reading in parallel.
 /// * `rows_to_skip`: Option<usize> - Number of rows to skip in the edge list.
 /// * `edges_number`: Option<EdgeT> - Number of edges in the edge list.
@@ -20,13 +21,14 @@ use crate::{EdgeFileReader, EdgeT, Result};
 ///
 pub fn are_there_selfloops_in_edge_list(
     path: &str,
-    separator: Option<String>,
+    separator: Option<char>,
     header: Option<bool>,
     sources_column: Option<String>,
     sources_column_number: Option<usize>,
     destinations_column: Option<String>,
     destinations_column_number: Option<usize>,
     comment_symbol: Option<String>,
+    support_balanced_quotes: Option<bool>,
     max_rows_number: Option<usize>,
     rows_to_skip: Option<usize>,
     edges_number: Option<EdgeT>,
@@ -37,6 +39,7 @@ pub fn are_there_selfloops_in_edge_list(
     let name = name.unwrap_or("Graph".to_owned());
     let file_reader = EdgeFileReader::new(path)?
         .set_comment_symbol(comment_symbol)?
+        .set_support_balanced_quotes(support_balanced_quotes)
         .set_rows_to_skip(rows_to_skip)?
         .set_header(header)?
         .set_max_rows_number(max_rows_number)?

@@ -4,8 +4,9 @@ use crate::{utils::ItersWrapper, EdgeFileReader, EdgeFileWriter, Result, WeightT
 ///
 /// # Arguments
 /// * `original_edge_path`: &str - The path from where to load the original edge list.
-/// * `original_edge_list_separator`: Option<String> - Separator to use for the original edge list.
+/// * `original_edge_list_separator`: Option<char> - Separator to use for the original edge list.
 /// * `original_edge_list_header`: Option<bool> - Whether the original edge list has an header.
+/// * `original_edge_list_support_balanced_quotes`: Option<bool> - Whether to support balanced quotes.
 /// * `original_edge_list_sources_column`: Option<String> - The column name to use to load the sources in the original edges list.
 /// * `original_edge_list_sources_column_number`: Option<usize> - The column number to use to load the sources in the original edges list.
 /// * `original_edge_list_destinations_column`: Option<String> - The column name to use to load the destinations in the original edges list.
@@ -15,7 +16,7 @@ use crate::{utils::ItersWrapper, EdgeFileReader, EdgeFileWriter, Result, WeightT
 /// * `original_edge_list_weights_column`: Option<String> - The column name to use for the weights in the original edges list.
 /// * `original_edge_list_weights_column_number`: Option<usize> - The column number to use for the weights in the original edges list.
 /// * `target_edge_path`: &str - The path from where to load the target edge list.
-/// * `target_edge_list_separator`: Option<String> - Separator to use for the target edge list.
+/// * `target_edge_list_separator`: Option<char> - Separator to use for the target edge list.
 /// * `target_edge_list_header`: Option<bool> - Whether the target edge list has an header.
 /// * `target_edge_list_sources_column`: Option<String> - The column name to use to load the sources in the target edges list.
 /// * `target_edge_list_sources_column_number`: Option<usize> - The column number to use to load the sources in the target edges list.
@@ -37,8 +38,9 @@ use crate::{utils::ItersWrapper, EdgeFileReader, EdgeFileWriter, Result, WeightT
 /// * `name`: Option<String> - The name of the graph to display in the loading bar.
 pub fn filter_duplicates_from_edge_list(
     original_edge_path: &str,
-    original_edge_list_separator: Option<String>,
+    original_edge_list_separator: Option<char>,
     original_edge_list_header: Option<bool>,
+    original_edge_list_support_balanced_quotes: Option<bool>,
     original_edge_list_sources_column: Option<String>,
     original_edge_list_sources_column_number: Option<usize>,
     original_edge_list_destinations_column: Option<String>,
@@ -48,7 +50,7 @@ pub fn filter_duplicates_from_edge_list(
     original_edge_list_weights_column: Option<String>,
     original_edge_list_weights_column_number: Option<usize>,
     target_edge_path: &str,
-    target_edge_list_separator: Option<String>,
+    target_edge_list_separator: Option<char>,
     target_edge_list_header: Option<bool>,
     target_edge_list_sources_column_number: Option<usize>,
     target_edge_list_sources_column: Option<String>,
@@ -73,6 +75,7 @@ pub fn filter_duplicates_from_edge_list(
     let file_reader = EdgeFileReader::new(original_edge_path)?
         .set_comment_symbol(comment_symbol)?
         .set_header(original_edge_list_header)?
+        .set_support_balanced_quotes(original_edge_list_support_balanced_quotes)
         .set_max_rows_number(max_rows_number)?
         .set_rows_to_skip(rows_to_skip)?
         .set_separator(original_edge_list_separator)?

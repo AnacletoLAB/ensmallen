@@ -20,6 +20,9 @@ pub use argmax_argmin::*;
 mod minmax;
 pub use minmax::*;
 
+mod splitter;
+pub use splitter::*;
+
 mod clonable_unsafe_cell;
 pub(crate) use clonable_unsafe_cell::*;
 

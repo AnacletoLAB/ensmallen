@@ -67,7 +67,7 @@ pub fn load_ppi(
                 .set_default_node_type(Some("default".to_string()))
                 .set_ignore_duplicates(Some(true))
                 .unwrap()
-                .set_separator(Some("\t".to_string()))
+                .set_separator(Some('\t'))
                 .unwrap()
                 .set_nodes_column(Some("id".to_string()))
                 .unwrap()
@@ -97,7 +97,7 @@ pub fn load_ppi(
         .unwrap()
         .set_rows_to_skip(Some(0))
         .unwrap()
-        .set_separator(None::<String>)
+        .set_separator(None::<char>)
         .unwrap()
         .set_sources_column(Some("subject".to_string()))
         .unwrap()
@@ -160,7 +160,7 @@ pub fn load_cora() -> Graph {
     let graph_name = "Cora".to_owned();
     let edges_reader = EdgeFileReader::new("tests/data/cora/edges.tsv")
         .unwrap()
-        .set_separator(Some("\t".to_string()))
+        .set_separator(Some('\t'))
         .unwrap()
         .set_verbose(Some(false))
         .set_sources_column(Some("subject"))
@@ -171,7 +171,7 @@ pub fn load_cora() -> Graph {
         .unwrap();
     let nodes_reader = NodeFileReader::new(Some("tests/data/cora/nodes.tsv".to_owned()))
         .unwrap()
-        .set_separator(Some("\t".to_string()))
+        .set_separator(Some('\t'))
         .unwrap()
         .set_nodes_column(Some("id"))
         .unwrap()
@@ -1829,7 +1829,7 @@ pub fn test_dump_graph(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
     let node_file = random_path(None);
     let nodes_writer = NodeFileWriter::new(node_file.clone())
         .set_verbose(verbose)
-        .set_separator(Some("\t".to_string()))?
+        .set_separator(Some('\t'))?
         .set_header(Some(true))
         .set_node_types_column_number(Some(4))
         .set_nodes_column_number(Some(6))
@@ -1841,7 +1841,7 @@ pub fn test_dump_graph(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
     let edges_file = random_path(None);
     let edges_writer = EdgeFileWriter::new(edges_file.clone())
         .set_verbose(verbose)
-        .set_separator(Some("\t".to_string()))?
+        .set_separator(Some('\t'))?
         .set_header(Some(true))
         .set_edge_types_column(Some("edge_types".to_owned()))
         .set_destinations_column_number(Some(3))

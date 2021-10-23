@@ -44,7 +44,7 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         None,
         None,
         Some("tests/data/macaque_node_list.tsv".to_string()),
-        Some("\t".to_string()),
+        Some('\t'.to_string()),
         Some(true),
         Some("node_name".to_string()),
         Some(0),
@@ -102,7 +102,7 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         .unwrap()
         .set_header(Some(false))
         .unwrap()
-        .set_separator(Some("\t".to_string()))
+        .set_separator(Some('\t'.to_string()))
         .unwrap()
         .set_verbose(Some(false))
         .set_numeric_node_ids(Some(true))
@@ -137,7 +137,7 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         .unwrap()
         .set_header(Some(false))
         .unwrap()
-        .set_separator(Some("\t".to_string()))
+        .set_separator(Some('\t'.to_string()))
         .unwrap()
         .set_verbose(Some(false))
         .set_numeric_node_ids(Some(true))
@@ -207,7 +207,7 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         None,
         None,
         Some("tests/data/macaque_node_list.tsv".to_string()),
-        Some("\t".to_string()),
+        Some('\t'.to_string()),
         Some(true),
         Some("node_name".to_string()),
         Some(0),
@@ -265,7 +265,7 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         .unwrap()
         .set_header(Some(false))
         .unwrap()
-        .set_separator(Some("\t".to_string()))
+        .set_separator(Some('\t'.to_string()))
         .unwrap()
         .set_verbose(Some(false))
         .set_numeric_node_ids(Some(true))
@@ -300,7 +300,7 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         .unwrap()
         .set_header(Some(false))
         .unwrap()
-        .set_separator(Some("\t".to_string()))
+        .set_separator(Some('\t'.to_string()))
         .unwrap()
         .set_verbose(Some(false))
         .set_numeric_node_ids(Some(true))
