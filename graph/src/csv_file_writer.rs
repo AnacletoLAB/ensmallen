@@ -93,7 +93,7 @@ impl CSVFileWriter {
 
         // Create file in such a way it supports also rewrite inplace
         let mut file = match OpenOptions::new()
-            .append(true)
+            .write(true)
             .create(true)
             .open(self.path.clone())
         {
@@ -103,7 +103,7 @@ impl CSVFileWriter {
 
         // Move the pointer back to the beginning of the file.
         match file.seek(std::io::SeekFrom::Start(0)) {
-            Ok(f) => Ok(()),
+            Ok(_) => Ok(()),
             Err(_) => Err(format!(
                 "Unable to move file pointer to beginning of the file {}",
                 self.path
