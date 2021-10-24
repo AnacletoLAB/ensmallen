@@ -49,8 +49,9 @@ impl<'s> Iterator for SplitUnquotedChar<'s> {
                 }
             }
             // skip one character
-            self.line = &self.line[1..];
-            counter += 1;
+            let char_size = current_char.len_utf8();
+            self.line = &self.line[char_size..];
+            counter += char_size;
         }
 
         // if the line is empty then we are finished

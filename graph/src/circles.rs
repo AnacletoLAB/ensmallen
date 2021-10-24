@@ -182,7 +182,7 @@ impl Graph {
     /// The root of the circle is defined as the node with the smallest id in it.
     /// 
     /// Here we use the same definition of degree as in the chains, so that we ignore selfloops and allow for
-    /// multigraphs.
+    /// multigraphs. 
     pub fn get_circles(
         &self,
         minimum_number_of_nodes_per_circle: Option<NodeT>,
