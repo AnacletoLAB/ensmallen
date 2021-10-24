@@ -90,11 +90,14 @@ pub fn convert_edge_list_to_numeric(
     edges_number: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
     skip_weights_if_unavailable: Option<bool>,
+    numeric_rows_are_surely_smaller_than_original: Option<bool>,
     directed: bool,
     verbose: Option<bool>,
     name: Option<String>,
 ) -> Result<(NodeT, Option<EdgeTypeT>)> {
-    if original_edge_path == target_edge_path {
+    let numeric_rows_are_surely_smaller_than_original =
+        numeric_rows_are_surely_smaller_than_original.unwrap_or(false);
+    if !numeric_rows_are_surely_smaller_than_original && original_edge_path == target_edge_path {
         return Err(concat!(
             "Both the original and the target edge list path ",
             "are set to the same path.\n",
@@ -365,7 +368,7 @@ pub fn convert_edge_list_to_numeric(
 /// * `original_edge_path`: &str - The path from where to load the original edge list.
 /// * `original_edge_list_separator`: Option<char> - Separator to use for the original edge list.
 /// * `original_edge_list_header`: Option<bool> - Whether the original edge list has an header.
-/// * `original_edge_list_support_balanced_quotes`: Option<bool> - 
+/// * `original_edge_list_support_balanced_quotes`: Option<bool> -
 /// * `original_sources_column`: Option<String> - The column name to use to load the sources in the original edges list.
 /// * `original_sources_column_number`: Option<usize> - The column number to use to load the sources in the original edges list.
 /// * `original_destinations_column`: Option<String> - The column name to use to load the destinations in the original edges list.
@@ -457,11 +460,13 @@ pub fn densify_sparse_numeric_edge_list(
     edges_number: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
     skip_weights_if_unavailable: Option<bool>,
+    numeric_rows_are_surely_smaller_than_original: Option<bool>,
     directed: bool,
     verbose: Option<bool>,
     name: Option<String>,
 ) -> Result<(NodeT, Option<EdgeTypeT>)> {
-    if original_edge_path == target_edge_path {
+    let numeric_rows_are_surely_smaller_than_original = numeric_rows_are_surely_smaller_than_original.unwrap_or(false);
+    if !numeric_rows_are_surely_smaller_than_original && original_edge_path == target_edge_path {
         return Err(concat!(
             "Both the original and the target edge list path ",
             "are set to the same path.\n",

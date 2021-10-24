@@ -1,6 +1,6 @@
 use super::*;
 use indicatif::ProgressIterator;
-use std::{fs::File, io::prelude::*, io::BufWriter};
+use std::{fs::OpenOptions, io::prelude::*, io::BufWriter};
 
 /// Structure that saves the common parameters for reading csv files.
 ///
@@ -91,9 +91,16 @@ impl CSVFileWriter {
             lines_number.unwrap_or(0),
         );
 
-        let file = match File::create(self.path.clone()) {
+        // Create file in such a way it supports also rewrite inplace
+        let mut file = match OpenOptions::new().append(true).open(self.path.clone()) {
             Ok(f) => Ok(f),
             Err(_) => Err(format!("Cannot open in writing the file {}", self.path)),
+        }?;
+
+        // Move the pointer back to the beginning of the file.
+        match file.seek(std::io::SeekFrom::Start(0)) {
+            Ok(f) => Ok(()),
+            Err(_) => Err(format!("Unable to move file pointer to beginning of the file {}", self.path)),
         }?;
 
         let mut stream = BufWriter::with_capacity(8 * 1024 * 1024, file);
@@ -124,7 +131,27 @@ impl CSVFileWriter {
         match stream.flush() {
             Ok(_) => Ok(()),
             Err(_) => Err("Unable to close file. There might have been an I/O error.".to_string()),
-        }
+        }?;
+
+        // Get the file ownership back from the stream.
+        let mut file = match stream.into_inner() {
+            Ok(f) => Ok(f),
+            Err(_) => Err("Cannot recover ownership of file pointer from stream.".to_string()),
+        }?;
+
+        // Reading the file size of the current stream position.
+        let file_size = match file.stream_position() {
+            Ok(file_size) => Ok(file_size),
+            Err(_) => Err("Cannot read file size.".to_string()),
+        }?;
+
+        // Truncate the possible remainder of the file.
+        match file.set_len(file_size) {
+            Ok(_) => Ok(()),
+            Err(_) => Err("Cannot truncate the file.".to_string()),
+        }?;
+
+        Ok(())
     }
 }
 

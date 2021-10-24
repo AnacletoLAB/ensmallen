@@ -108,6 +108,7 @@ pub fn build_optimal_lists_files(
     target_edge_path: String,
     target_edge_list_separator: Option<char>,
 
+    numeric_rows_are_surely_smaller_than_original: Option<bool>,
     verbose: Option<bool>,
     directed: bool,
     name: Option<String>,
@@ -369,6 +370,7 @@ pub fn build_optimal_lists_files(
             edges_number.map(|edges_number| edges_number as usize),
             skip_edge_types_if_unavailable,
             skip_weights_if_unavailable,
+            numeric_rows_are_surely_smaller_than_original,
             directed,
             verbose,
             name.clone(),
@@ -449,6 +451,7 @@ pub fn build_optimal_lists_files(
             edges_number.map(|edges_number| edges_number as usize),
             skip_edge_types_if_unavailable,
             skip_weights_if_unavailable,
+            numeric_rows_are_surely_smaller_than_original,
             directed,
             verbose,
             name.clone(),
