@@ -92,7 +92,11 @@ impl CSVFileWriter {
         );
 
         // Create file in such a way it supports also rewrite inplace
-        let mut file = match OpenOptions::new().append(true).open(self.path.clone()) {
+        let mut file = match OpenOptions::new()
+            .append(true)
+            .create(true)
+            .open(self.path.clone())
+        {
             Ok(f) => Ok(f),
             Err(_) => Err(format!("Cannot open in writing the file {}", self.path)),
         }?;
@@ -100,7 +104,10 @@ impl CSVFileWriter {
         // Move the pointer back to the beginning of the file.
         match file.seek(std::io::SeekFrom::Start(0)) {
             Ok(f) => Ok(()),
-            Err(_) => Err(format!("Unable to move file pointer to beginning of the file {}", self.path)),
+            Err(_) => Err(format!(
+                "Unable to move file pointer to beginning of the file {}",
+                self.path
+            )),
         }?;
 
         let mut stream = BufWriter::with_capacity(8 * 1024 * 1024, file);
