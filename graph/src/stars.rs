@@ -112,7 +112,7 @@ impl Graph {
         let minimum_number_of_nodes_per_star = minimum_number_of_nodes_per_star.unwrap_or(10);
 
         // check for unreasonable inputs
-        if minimum_number_of_nodes_per_star <= 1 {
+        if minimum_number_of_nodes_per_star <= 2 {
             return Err("A star with less than two neighbours is not a valid definition.".into());
         }
 
