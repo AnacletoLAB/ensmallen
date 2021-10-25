@@ -3,41 +3,41 @@ use crate::{utils::ItersWrapper, EdgeFileReader, Result, WeightT};
 /// Return whether the provided edge list contains duplicated edges.
 ///
 /// # Arguments
-/// * `original_edge_path`: &str - The path from where to load the original edge list.
-/// * `original_edge_list_separator`: Option<char> - Separator to use for the original edge list.
-/// * `original_edge_list_header`: Option<bool> - Whether the original edge list has an header.
-/// * `original_edge_list_support_balanced_quotes`: Option<bool> - Whether to support balanced quotes.
-/// * `original_edge_list_sources_column`: Option<String> - The column name to use to load the sources in the original edges list.
-/// * `original_edge_list_sources_column_number`: Option<usize> - The column number to use to load the sources in the original edges list.
-/// * `original_edge_list_destinations_column`: Option<String> - The column name to use to load the destinations in the original edges list.
-/// * `original_edge_list_destinations_column_number`: Option<usize> - The column number to use to load the destinations in the original edges list.
-/// * `original_edge_list_edge_type_column`: Option<String> - The column name to use for the edge types in the original edges list.
-/// * `original_edge_list_edge_type_column_number`: Option<usize> - The column number to use for the edge types in the original edges list.
-/// * `original_edge_list_weights_column`: Option<String> - The column name to use for the weights in the original edges list.
-/// * `original_edge_list_weights_column_number`: Option<usize> - The column number to use for the weights in the original edges list.
-/// * `comment_symbol`: Option<String> - The comment symbol to use within the original edge list.
-/// * `default_edge_type`: Option<String> - The default edge type to use within the original edge list.
-/// * `default_weight`: Option<WeightT> - The default weight to use within the original edge list.
-/// * `max_rows_number`: Option<usize> - The amount of rows to load from the original edge list.
-/// * `rows_to_skip`: Option<usize> - The amount of rows to skip from the original edge list.
+/// * `edge_path`: &str - The path from where to load the edge list.
+/// * `edge_list_separator`: Option<char> - Separator to use for the edge list.
+/// * `edge_list_header`: Option<bool> - Whether the edge list has an header.
+/// * `edge_list_support_balanced_quotes`: Option<bool> - Whether to support balanced quotes.
+/// * `edge_list_sources_column`: Option<String> - The column name to use to load the sources in the edges list.
+/// * `edge_list_sources_column_number`: Option<usize> - The column number to use to load the sources in the edges list.
+/// * `edge_list_destinations_column`: Option<String> - The column name to use to load the destinations in the edges list.
+/// * `edge_list_destinations_column_number`: Option<usize> - The column number to use to load the destinations in the edges list.
+/// * `edge_list_edge_type_column`: Option<String> - The column name to use for the edge types in the edges list.
+/// * `edge_list_edge_type_column_number`: Option<usize> - The column number to use for the edge types in the edges list.
+/// * `edge_list_weights_column`: Option<String> - The column name to use for the weights in the edges list.
+/// * `edge_list_weights_column_number`: Option<usize> - The column number to use for the weights in the edges list.
+/// * `comment_symbol`: Option<String> - The comment symbol to use within the edge list.
+/// * `default_edge_type`: Option<String> - The default edge type to use within the edge list.
+/// * `default_weight`: Option<WeightT> - The default weight to use within the edge list.
+/// * `max_rows_number`: Option<usize> - The amount of rows to load from the edge list.
+/// * `rows_to_skip`: Option<usize> - The amount of rows to skip from the edge list.
 /// * `edges_number`: Option<usize> - The expected number of edges. It will be used for the loading bar.
 /// * `skip_edge_types_if_unavailable`: Option<bool> - Whether to automatically skip the edge types if they are not available.
 /// * `skip_weights_if_unavailable`: Option<bool> - Whether to automatically skip the weights if they are not available.
 /// * `verbose`: Option<bool> - Whether to show the loading bar while processing the file.
 /// * `name`: Option<String> - The name of the graph to display in the loading bar.
 pub fn has_duplicated_edges_in_edge_list(
-    original_edge_path: &str,
-    original_edge_list_separator: Option<char>,
-    original_edge_list_header: Option<bool>,
-    original_edge_list_support_balanced_quotes: Option<bool>,
-    original_edge_list_sources_column: Option<String>,
-    original_edge_list_sources_column_number: Option<usize>,
-    original_edge_list_destinations_column: Option<String>,
-    original_edge_list_destinations_column_number: Option<usize>,
-    original_edge_list_edge_type_column: Option<String>,
-    original_edge_list_edge_type_column_number: Option<usize>,
-    original_edge_list_weights_column: Option<String>,
-    original_edge_list_weights_column_number: Option<usize>,
+    edge_path: &str,
+    edge_list_separator: Option<char>,
+    edge_list_header: Option<bool>,
+    edge_list_support_balanced_quotes: Option<bool>,
+    edge_list_sources_column: Option<String>,
+    edge_list_sources_column_number: Option<usize>,
+    edge_list_destinations_column: Option<String>,
+    edge_list_destinations_column_number: Option<usize>,
+    edge_list_edge_type_column: Option<String>,
+    edge_list_edge_type_column_number: Option<usize>,
+    edge_list_weights_column: Option<String>,
+    edge_list_weights_column_number: Option<usize>,
     comment_symbol: Option<String>,
     default_edge_type: Option<String>,
     default_weight: Option<WeightT>,
@@ -50,23 +50,23 @@ pub fn has_duplicated_edges_in_edge_list(
     name: Option<String>,
 ) -> Result<bool> {
     let name = name.unwrap_or("Graph".to_owned());
-    let file_reader = EdgeFileReader::new(original_edge_path)?
+    let file_reader = EdgeFileReader::new(edge_path)?
         .set_comment_symbol(comment_symbol)?
-        .set_header(original_edge_list_header)?
-        .set_support_balanced_quotes(original_edge_list_support_balanced_quotes)
+        .set_header(edge_list_header)?
+        .set_support_balanced_quotes(edge_list_support_balanced_quotes)
         .set_max_rows_number(max_rows_number)?
         .set_rows_to_skip(rows_to_skip)?
-        .set_separator(original_edge_list_separator)?
+        .set_separator(edge_list_separator)?
         .set_default_edge_type(default_edge_type)
         .set_default_weight(default_weight)?
-        .set_destinations_column(original_edge_list_destinations_column)?
-        .set_destinations_column_number(original_edge_list_destinations_column_number)?
-        .set_sources_column(original_edge_list_sources_column)?
-        .set_sources_column_number(original_edge_list_sources_column_number)?
-        .set_edge_types_column(original_edge_list_edge_type_column)?
-        .set_edge_types_column_number(original_edge_list_edge_type_column_number)?
-        .set_weights_column(original_edge_list_weights_column)?
-        .set_weights_column_number(original_edge_list_weights_column_number)?
+        .set_destinations_column(edge_list_destinations_column)?
+        .set_destinations_column_number(edge_list_destinations_column_number)?
+        .set_sources_column(edge_list_sources_column)?
+        .set_sources_column_number(edge_list_sources_column_number)?
+        .set_edge_types_column(edge_list_edge_type_column)?
+        .set_edge_types_column_number(edge_list_edge_type_column_number)?
+        .set_weights_column(edge_list_weights_column)?
+        .set_weights_column_number(edge_list_weights_column_number)?
         .set_parallel(Some(false))
         .set_skip_edge_types_if_unavailable(skip_edge_types_if_unavailable)
         .set_skip_weights_if_unavailable(skip_weights_if_unavailable)
