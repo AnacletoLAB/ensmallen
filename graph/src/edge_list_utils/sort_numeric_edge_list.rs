@@ -112,7 +112,16 @@ pub fn sort_numeric_edge_list(
 
     // We check if the operation went fine.
     match sort_command_status {
-        Ok(_) => Ok(()),
+        Ok(command_status) => match command_status.exit_ok() {
+            Ok(_) => Ok(()),
+            Err(_) => Err(concat!(
+                "Something went wrong while parsing the edge list file, often ",
+                "it is caused by limited space on disk on the interested device.\n",
+                "An error from the sort routine should have been printed on the terminal ",
+                "where you are executing this command. If you are on a Jupyter Notebook, ",
+                "control the kernel of the Jupyter."
+            ).to_string()),
+        },
         Err(_) => Err("Could not execute sort inplace on the provided edge list.".to_owned()),
     }
 }

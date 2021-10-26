@@ -1,5 +1,6 @@
 use num_traits::Zero;
 use rayon::iter::ParallelIterator;
+use std::collections::HashMap;
 
 use super::*;
 /// Structure that saves the reader specific to writing and reading a nodes csv file.
@@ -21,6 +22,7 @@ pub struct EdgeFileReader {
     pub(crate) complete: Option<bool>,
     pub(crate) sorted: Option<bool>,
     pub(crate) edges_number: Option<EdgeT>,
+    pub(crate) node_name_tokens_remapping: Option<HashMap<String, String>>
 }
 
 impl EdgeFileReader {
@@ -46,7 +48,24 @@ impl EdgeFileReader {
             complete: None,
             sorted: None,
             edges_number: None,
+            node_name_tokens_remapping: None
         })
+    }
+
+    /// Set the HashMap to be used to replace tokens in the node names.
+    /// 
+    /// This is meant to be useful when the nodes include extremely long
+    /// prefixes, such as in graphs like WikiData.
+    ///
+    /// # Arguments
+    /// * `node_name_tokens_remapping`: Option<HashMap<String, String>> - Mapping of tokens to be used to simplify the node names.
+    ///
+    pub fn set_node_name_tokens_remapping(
+        mut self,
+        node_name_tokens_remapping: Option<HashMap<String, String>>,
+    ) -> EdgeFileReader {
+        self.node_name_tokens_remapping = node_name_tokens_remapping;
+        self
     }
 
     /// Set the column of the edge IDs.
