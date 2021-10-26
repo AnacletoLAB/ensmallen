@@ -1,4 +1,5 @@
 use rayon::iter::ParallelIterator;
+use std::collections::HashMap;
 
 use super::*;
 
@@ -17,6 +18,7 @@ pub struct NodeFileReader {
     pub(crate) numeric_node_ids: bool,
     pub(crate) numeric_node_type_ids: bool,
     pub(crate) skip_node_types_if_unavailable: bool,
+    pub(crate) node_name_tokens_remapping: Option<HashMap<String, String>>
 }
 
 impl NodeFileReader {
@@ -42,7 +44,24 @@ impl NodeFileReader {
             numeric_node_ids: !has_path,
             numeric_node_type_ids: false,
             skip_node_types_if_unavailable: false,
+            node_name_tokens_remapping: None
         })
+    }
+
+    /// Set the HashMap to be used to replace tokens in the node names.
+    /// 
+    /// This is meant to be useful when the nodes include extremely long
+    /// prefixes, such as in graphs like WikiData.
+    ///
+    /// # Arguments
+    /// * `node_name_tokens_remapping`: Option<HashMap<String, String>> - Mapping of tokens to be used to simplify the node names.
+    ///
+    pub fn set_node_name_tokens_remapping(
+        mut self,
+        node_name_tokens_remapping: Option<HashMap<String, String>>,
+    ) -> NodeFileReader {
+        self.node_name_tokens_remapping = node_name_tokens_remapping;
+        self
     }
 
     /// Set the column of the node IDs.

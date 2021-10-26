@@ -10,6 +10,7 @@
 #![warn(unused_macros)]
 #![feature(is_sorted)]
 #![feature(map_first_last)]
+#![feature(exit_status_error)]
 #![feature(core_intrinsics)]
 #![type_length_limit = "3764086"]
 #![feature(exclusive_range_pattern)]
