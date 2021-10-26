@@ -265,6 +265,7 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         "tests/data/sorted_macaque.tsv".to_string(),
         None,
         None,
+        None,
         Some(true),
         true,
         Some("Macaque".to_string()),
