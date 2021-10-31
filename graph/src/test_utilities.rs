@@ -1900,6 +1900,7 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: Option<bool>) -> 
                 Some(0.4),
                 None,
                 None,
+                None,
                 Some(false),
                 Some(false),
                 Some(10),

@@ -291,6 +291,7 @@ impl Graph {
     /// * `negative_samples_rate`: Option<f64> - The component of netagetive samples to use.
     /// * `return_node_types`: Option<bool> - Whether to return the source and destination nodes node types.
     /// * `return_edge_types`: Option<bool> - Whether to return the edge types. The negative edges edge type will be samples at random.
+    /// * `return_only_edges_with_known_edge_types`: Option<bool> - Whether to return only the edges with known edge types.
     /// * `return_edge_metrics`: Option<bool> - Whether to return the edge metrics.
     /// * `avoid_false_negatives`: Option<bool> - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
     /// * `maximal_sampling_attempts`: Option<usize> - Number of attempts to execute to sample the negative edges.
@@ -304,7 +305,6 @@ impl Graph {
     /// * If edge types are requested but the graph does not contain any.
     /// * If edge types are requested but the graph contains unknown edge types.
     ///
-    /// TODO! Add the possibility for returning only known edges
     /// TODO! When returning only known edges, add the possibility for balanced
     /// edge types.
     pub fn get_edge_prediction_mini_batch<'a>(
@@ -314,6 +314,7 @@ impl Graph {
         negative_samples_rate: Option<f64>,
         return_node_types: Option<bool>,
         return_edge_types: Option<bool>,
+        return_only_edges_with_known_edge_types: Option<bool>,
         return_edge_metrics: Option<bool>,
         avoid_false_negatives: Option<bool>,
         maximal_sampling_attempts: Option<usize>,
@@ -335,6 +336,7 @@ impl Graph {
         let batch_size = batch_size.unwrap_or(1024);
         let negative_samples_rate = negative_samples_rate.unwrap_or(0.5);
         let avoid_false_negatives = avoid_false_negatives.unwrap_or(false);
+        let return_only_edges_with_known_edge_types = return_only_edges_with_known_edge_types.unwrap_or(false);
         let maximal_sampling_attempts = maximal_sampling_attempts.unwrap_or(10_000);
         let shuffle = shuffle.unwrap_or(true);
 
@@ -412,22 +414,28 @@ impl Graph {
             if shuffle && sampled > negative_samples_threshold
                 || !shuffle && i < expected_positive_samples_number
             {
-                let edge_id = sampled % edges_number;
-                let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
-                let edge_type = if return_edge_types {
-                    self.get_unchecked_edge_type_id_from_edge_id(edge_id)
-                } else {
-                    None
-                };
-                return (
-                    src,
-                    get_node_type_ids(src),
-                    dst,
-                    get_node_type_ids(dst),
-                    get_edge_metrics(src, dst),
-                    edge_type,
-                    true,
-                );
+                for j in 0..maximal_sampling_attempts {
+                    let edge_id = (sampled + j as EdgeT) % edges_number;
+                    let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
+                    let edge_type = if return_edge_types {
+                        let edge_type = self.get_unchecked_edge_type_id_from_edge_id(edge_id);
+                        if return_only_edges_with_known_edge_types && edge_type.is_none(){
+                            continue;
+                        }
+                        edge_type
+                    } else {
+                        None
+                    };
+                    return (
+                        src,
+                        get_node_type_ids(src),
+                        dst,
+                        get_node_type_ids(dst),
+                        get_edge_metrics(src, dst),
+                        edge_type,
+                        true,
+                    );
+                }
             }
             if does_not_require_resampling {
                 // split the random u64 into 2 u32 and mod them to have
@@ -524,6 +532,7 @@ impl Graph {
             idx,
             batch_size,
             negative_samples,
+            Some(false),
             Some(false),
             Some(false),
             Some(false),

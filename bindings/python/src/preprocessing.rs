@@ -455,7 +455,7 @@ impl Graph {
         Ok(((destinations, edge_weights), labels.t.to_owned()))
     }
 
-    #[text_signature = "($self, idx, batch_size, negative_samples_rate, return_node_types, return_edge_types, avoid_false_negatives, maximal_sampling_attempts, shuffle, graph_to_avoid)"]
+    #[text_signature = "($self, idx, batch_size, negative_samples_rate, return_node_types, return_edge_types, return_only_edges_with_known_edge_types, return_edge_metrics, avoid_false_negatives, maximal_sampling_attempts, shuffle, graph_to_avoid)"]
     /// Returns n-ple with index to build numpy array, source node, source node type, destination node, destination node type, edge type and whether this edge is real or artificial.
     ///
     /// Parameters
@@ -470,6 +470,8 @@ impl Graph {
     ///     Whether to return the source and destination nodes node types.
     /// return_edge_types: Optional[bool]
     ///     Whether to return the edge types. The negative edges edge type will be samples at random.
+    /// return_only_edges_with_known_edge_types: Optional[bool]
+    ///     Whether to return only the edges with known edge types.
     /// return_edge_metrics: Optional[bool]
     ///     Whether to return the edge metrics.
     /// avoid_false_negatives: Optional[bool]
@@ -500,6 +502,7 @@ impl Graph {
         negative_samples_rate: Option<f64>,
         return_node_types: Option<bool>,
         return_edge_types: Option<bool>,
+        return_only_edges_with_known_edge_types: Option<bool>,
         return_edge_metrics: Option<bool>,
         avoid_false_negatives: Option<bool>,
         maximal_sampling_attempts: Option<usize>,
@@ -527,6 +530,7 @@ impl Graph {
             negative_samples_rate,
             Some(return_node_types),
             Some(return_edge_types),
+            return_only_edges_with_known_edge_types,
             Some(return_edge_metrics),
             avoid_false_negatives,
             maximal_sampling_attempts,
