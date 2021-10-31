@@ -7,14 +7,27 @@ use std::collections::hash_map::Entry;
 use std::collections::HashMap;
 use std::fmt::Debug;
 use std::ops::Range;
+use std::collections::hash_map::DefaultHasher;
+use std::hash::{Hash, Hasher};
+
+/// which integer type the string hashes will 
+type HashType = u64;
+
+#[inline]
+fn compute_hash<T: Hash>(t: &T) -> u64 {
+    let mut s = DefaultHasher::new();
+    t.hash(&mut s);
+    s.finish()
+}
 
 #[derive(Debug, Clone, PartialEq)] // Arbitrary
 pub enum Vocabulary<IndexT: ToFromUsize + Sync + Debug> {
     // If the values are arbitrary and we cannot make any assumptions
     // about them
     String {
-        // TODO! avoid duplication and use references
-        map: HashMap<String, IndexT>,
+        // TODO: is there a way to have a fast compressed mapping between 
+        // integers?, specifically the output is dense from 0 to n
+        map: HashMap<HashType, IndexT>,
         reverse_map: Vec<String>,
     },
 
@@ -60,11 +73,7 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
                 VocabularyMemoryStats::String {
                     // https://github.com/servo/servo/issues/6908
                     map: (map.capacity() as f64 * 1.1) as usize
-                        * (size_of::<String>() + size_of::<IndexT>() + size_of::<usize>())
-                        + map
-                            .keys()
-                            .map(|s| size_of::<String>() + s.capacity() * size_of::<char>())
-                            .sum::<usize>(),
+                        * (size_of::<HashType>() + size_of::<IndexT>() + size_of::<usize>()),
                     reverse_map: reverse_map
                         .iter()
                         .map(|s| size_of::<String>() + s.capacity() * size_of::<char>())
@@ -142,20 +151,20 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
             .iter()
             .cloned()
             .enumerate()
-            .map(|(i, x)| (x, IndexT::from_usize(i)))
-            .collect::<HashMap<String, IndexT>>();
-
-        if map.contains_key("") {
-            return Err("The vocabulary cannot contain an empty term.".to_string());
-        }
+            .map(|(i, x)| 
+                if x.is_empty() {
+                    Err("The vocabulary cannot contain an empty term.".to_string())
+                } else {
+                    Ok((compute_hash(&x), IndexT::from_usize(i)))
+                })
+            .collect::<Result<HashMap<HashType, IndexT>>>()?;
 
         if map.len() != reverse_map.len() {
             let reverse_map_length = reverse_map.len();
             let map_length = map.len();
             let expected_duplicates_number = reverse_map.len() - map.len();
             reverse_map.par_sort_unstable();
-            let duplicates = reverse_map
-                .into_iter()
+            let duplicates = reverse_map.into_iter()
                 .scan(None, |last_object, object| {
                     let equal_to_last_edge = last_object
                         .as_ref()
@@ -239,7 +248,7 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
                 (string_parsed_value, IndexT::from_usize(parsed_value))
             }
 
-            Vocabulary::String { map, .. } => (value.to_string(), IndexT::from_usize(map.len())),
+            Vocabulary::String { reverse_map, .. } => (value.to_string(), IndexT::from_usize(reverse_map.len())),
         })
     }
 
@@ -250,10 +259,15 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
     /// * `value`: String - The value to be inserted.
     pub unsafe fn unchecked_insert(&mut self, value: String) -> IndexT {
         match self {
-            Vocabulary::String { map, .. } => {
-                let current_length = map.len();
-                *map.entry(value)
-                    .or_insert_with_key(|_| IndexT::from_usize(current_length))
+            Vocabulary::String { map, reverse_map } => {
+                match map.entry(compute_hash(&value)) {
+                    Entry::Occupied(index) =>  *index.get(),
+                    Entry::Vacant(vacant_entry) => {
+                        let current_length = reverse_map.len();
+                        reverse_map.push(value);
+                        *vacant_entry.insert(IndexT::from_usize(current_length))
+                    }
+                }
             }
 
             Vocabulary::Numeric { range, count } => {
@@ -287,10 +301,15 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
         let (normalized_value, index) = self.normalize_value(value)?;
 
         match self {
-            Vocabulary::String { map, .. } => Ok(match map.entry(normalized_value) {
-                Entry::Occupied(extracted_index) => (*extracted_index.get(), true),
-                Entry::Vacant(vacant_entry) => (*vacant_entry.insert(index), false),
-            }),
+            Vocabulary::String { map, reverse_map } => Ok(
+                match map.entry(compute_hash(&normalized_value)) {
+                    Entry::Occupied(extracted_index) => 
+                        (*extracted_index.get(), true),
+                    Entry::Vacant(vacant_entry) => {
+                        reverse_map.push(value.to_string());
+                        (*vacant_entry.insert(index), false)
+                    },
+                }),
             Vocabulary::Numeric { range, count } => {
                 let value = { value.parse::<usize>().unwrap() };
                 if value < range.start {
@@ -326,10 +345,11 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
                 }
             }
             Vocabulary::String { map, reverse_map } => {
+                assert_eq!(map.len(), reverse_map.len());
+                /*
                 if !reverse_map.is_empty() {
                     panic!("Build reverse mapping called multiple times!");
                 }
-
                 *reverse_map = vec!["".to_string(); map.len()];
                 for (k, v) in map.iter() {
                     if *v >= IndexT::from_usize(map.len()) {
@@ -358,7 +378,7 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
                         );
                     }
                     reverse_map[IndexT::to_usize(*v)] = k.clone();
-                }
+                }*/
                 Ok(())
             }
         }
@@ -419,7 +439,7 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
     /// * `key`: &str - the key whose Id is to be retrieved.
     pub fn get(&self, key: &str) -> Option<IndexT> {
         match self {
-            Vocabulary::String { map, .. } => map.get(key).map(|x| *x),
+            Vocabulary::String { map, .. } => map.get(&compute_hash(&key)).map(|x| *x),
             Vocabulary::Numeric { range, .. } => {
                 let id = key.parse::<usize>();
                 if id.is_err() {
@@ -448,7 +468,10 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
     /// Return vector of keys of the map.
     pub fn map(&self) -> HashMap<String, IndexT> {
         match self {
-            Vocabulary::String { map, .. } => map.clone(),
+            Vocabulary::String { reverse_map, .. } => reverse_map.iter().cloned()
+                .enumerate()
+                .map(|(i, x)| (x, IndexT::from_usize(i)))
+                .collect::<HashMap<String, IndexT>>(),
             Vocabulary::Numeric { range, .. } => range
                 .clone()
                 .map(|i| (format!("{}", i), IndexT::from_usize(i)))
@@ -463,7 +486,7 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
     /// * `key`: &str - the key to check existance of.
     pub fn contains_key(&self, key: &str) -> bool {
         match self {
-            Vocabulary::String { map, .. } => map.contains_key(key),
+            Vocabulary::String { map, .. } => map.contains_key(&compute_hash(&key)),
             Vocabulary::Numeric { range, .. } => range.contains(&{ key.parse::<usize>().unwrap() }),
         }
     }
@@ -471,7 +494,7 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
     /// Return length of the vocabulary.
     pub fn len(&self) -> usize {
         match self {
-            Vocabulary::String { map, .. } => map.len(),
+            Vocabulary::String { reverse_map, .. } => reverse_map.len(),
             Vocabulary::Numeric { range, .. } => range.end - range.start,
         }
     }
@@ -506,8 +529,8 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
         let id = self.get(&original).unwrap();
         match self {
             Vocabulary::String { map, reverse_map } => {
-                map.remove(&original);
-                map.insert(replace.clone(), id);
+                map.remove(&compute_hash(&original));
+                map.insert(compute_hash(&replace), id);
                 reverse_map[IndexT::to_usize(id)] = replace;
             }
             Vocabulary::Numeric { .. } => {
@@ -526,7 +549,7 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
             Vocabulary::Numeric { range, .. } => {
                 *self = Vocabulary::String {
                     map: range
-                        .map(|i| (format!("{}", i), IndexT::from_usize(i)))
+                        .map(|i| (compute_hash(&format!("{}", i)), IndexT::from_usize(i)))
                         .collect(),
                     reverse_map: range.map(|i| format!("{}", i)).collect(),
                 }

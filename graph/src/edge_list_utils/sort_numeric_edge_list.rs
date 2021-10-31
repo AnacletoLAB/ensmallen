@@ -20,6 +20,7 @@ use crate::{EdgeFileReader, Result};
 /// * `edge_types_column_number`: Option<usize> - The column number to use for the edge types.
 /// * `rows_to_skip`: Option<usize> - Number of rows to skip in the edge list.
 /// * `skip_edge_types_if_unavailable`: Option<bool> - Whether to automatically skip the edge types if they are not available.
+/// * `temporary_directory`: Option<String> - Where to store the temporary files that are created during parallel sorting.
 ///
 pub fn sort_numeric_edge_list(
     path: &str,
@@ -34,6 +35,7 @@ pub fn sort_numeric_edge_list(
     edge_types_column_number: Option<usize>,
     rows_to_skip: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
+    temporary_directory: Option<String>,
 ) -> Result<()> {
     if cfg!(target_os = "windows") {
         return Err(concat!(
@@ -88,6 +90,11 @@ pub fn sort_numeric_edge_list(
         } else {
             "".to_owned()
         },
+        if let Some(tmp_dir) = temporary_directory {
+            format!("--temporary-directory={}", tmp_dir)
+        } else {
+            "".to_owned()
+        },
         // The values in the keys are numeric
         "--numeric-sort".to_owned(),
         // We want to remove duplicates
@@ -138,6 +145,7 @@ pub fn sort_numeric_edge_list(
 /// * `edge_types_column_number`: Option<usize> - The column number to use for the edge types.
 /// * `rows_to_skip`: Option<usize> - Number of rows to skip in the edge list.
 /// * `skip_edge_types_if_unavailable`: Option<bool> - Whether to automatically skip the edge types if they are not available.
+/// * `temporary_directory`: Option<String> - Where to store the temporary files that are created during parallel sorting.
 ///
 pub fn sort_numeric_edge_list_inplace(
     path: &str,
@@ -151,6 +159,7 @@ pub fn sort_numeric_edge_list_inplace(
     edge_types_column_number: Option<usize>,
     rows_to_skip: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
+    temporary_directory: Option<String>,
 ) -> Result<()> {
     sort_numeric_edge_list(
         path,
@@ -165,5 +174,6 @@ pub fn sort_numeric_edge_list_inplace(
         edge_types_column_number,
         rows_to_skip,
         skip_edge_types_if_unavailable,
+        temporary_directory,
     )
 }
