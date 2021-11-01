@@ -603,8 +603,10 @@ impl Graph {
                                 *(edges_metrics.t.uget_mut([i, j])) = metric;
                             });
                     }
-                    if let Some(edge_type_ids) = edge_type_ids.as_ref() {
-                        *(edge_type_ids.t.uget_mut([i])) = edge_type.unwrap();
+                    if let (Some(edge_type_ids), Some(edge_type)) =
+                        (edge_type_ids.as_ref(), edge_type)
+                    {
+                        *(edge_type_ids.t.uget_mut([i])) = edge_type;
                     }
                     *(labels.t.uget_mut([i])) = label;
                 },
