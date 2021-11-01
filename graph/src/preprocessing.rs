@@ -354,7 +354,6 @@ impl Graph {
         let return_edge_types = return_edge_types.unwrap_or(false);
         let return_edge_metrics = return_edge_metrics.unwrap_or(false);
         let edge_types_number = if return_edge_types {
-            self.must_not_contain_unknown_edge_types()?;
             self.get_edge_types_number()?
         } else {
             0
