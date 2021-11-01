@@ -315,6 +315,30 @@ impl Graph {
         directed: bool,
         name: Option<String>,
     ) -> Result<Graph> {
+        if node_type_path.is_none()
+            && [
+                node_type_list_comment_symbol.is_some(),
+                node_type_list_header.is_some(),
+                node_type_list_support_balanced_quotes.is_some(),
+                node_type_list_max_rows_number.is_some(),
+                node_type_list_separator.is_some(),
+                node_types_column_number.is_some(),
+                node_types_column.is_some(),
+                node_types_ids_column.is_some(),
+                node_types_ids_column_number.is_some(),
+                node_type_list_is_correct.is_some(),
+                load_node_type_list_in_parallel.is_some(),
+            ]
+            .iter()
+            .any(|&x| x)
+        {
+            return Err(concat!(
+                "The path to the node type file (not the node list!) was not provided ",
+                "but one or more arguments that make sense only when the node type path ",
+                "is provided where provided!"
+            )
+            .to_string());
+        }
         let name = name.unwrap_or("Graph".to_string());
         let node_type_file_reader: Option<TypeFileReader<NodeTypeT>> =
             if node_type_path.is_some() || node_types_number.is_some() {
@@ -340,7 +364,30 @@ impl Graph {
             } else {
                 None
             };
-
+        if edge_type_path.is_none()
+            && [
+                edge_type_list_comment_symbol.is_some(),
+                edge_type_list_header.is_some(),
+                edge_type_list_support_balanced_quotes.is_some(),
+                edge_type_list_max_rows_number.is_some(),
+                edge_type_list_separator.is_some(),
+                edge_types_column_number.is_some(),
+                edge_types_column.is_some(),
+                edge_types_ids_column.is_some(),
+                edge_types_ids_column_number.is_some(),
+                edge_type_list_is_correct.is_some(),
+                load_edge_type_list_in_parallel.is_some(),
+            ]
+            .iter()
+            .any(|&x| x)
+        {
+            return Err(concat!(
+                "The path to the edge type file (not the edge list!) was not provided ",
+                "but one or more arguments that make sense only when the edge type path ",
+                "is provided where provided!"
+            )
+            .to_string());
+        }
         let edge_type_file_reader: Option<TypeFileReader<EdgeTypeT>> =
             if edge_type_path.is_some() || edge_types_number.is_some() {
                 Some(
