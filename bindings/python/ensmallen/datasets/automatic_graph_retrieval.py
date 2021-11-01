@@ -19,6 +19,7 @@ class AutomaticallyRetrievedGraph:
         directed: bool = False,
         preprocess: bool = True,
         load_nodes: bool = True,
+        automatically_enable_speedups_for_small_graphs: bool = True,
         verbose: int = 2,
         cache: bool = True,
         cache_path: str = "graphs",
@@ -45,6 +46,10 @@ class AutomaticallyRetrievedGraph:
         load_nodes: bool = True,
             Whether to load the nodes vocabulary or treat the nodes
             simply as a numeric range.
+        automatically_enable_speedups_for_small_graphs: bool = True,
+            Whether to enable the Ensmallen time-memory tradeoffs in small graphs
+            automatically. By default True, that is, if a graph has less than
+            50 million edges. In such use cases the memory expenditure is minimal.
         verbose: int = 2,
             Whether to show loading bars.
         cache: bool = True,
@@ -68,7 +73,6 @@ class AutomaticallyRetrievedGraph:
             is Windows, which does not provide the sort command.
         """
         try:
-
             validate_graph_version(graph_name, repository, version)
 
             all_versions = compress_json.local_load(os.path.join(
@@ -98,6 +102,7 @@ class AutomaticallyRetrievedGraph:
         self._load_nodes = load_nodes
         self._name = graph_name
         self._version = version
+        self._automatically_enable_speedups_for_small_graphs = automatically_enable_speedups_for_small_graphs
         self._cache = cache
         self._verbose = verbose
         self._callbacks = callbacks
@@ -506,7 +511,7 @@ class AutomaticallyRetrievedGraph:
             else:
                 edge_types_arguments = {}
             # Load the graph
-            return Graph.from_csv(**{
+            graph = Graph.from_csv(**{
                 **metadata,
                 **nodes_arguments,
                 **edge_types_arguments,
@@ -532,16 +537,19 @@ class AutomaticallyRetrievedGraph:
                 "directed": self._directed,
                 "name": self._name,
             })
-
-        # Otherwise just load the graph.
-        return Graph.from_csv(**{
-            **{
-                key: os.path.join(self._cache_path, value)
-                if key.endswith("_path") else value
-                for key, value in graph_arguments.items()
-            },
-            "directed": self._directed,
-            "verbose": self._verbose > 0,
-            "name": self._name,
-            **self._additional_graph_kwargs,
-        })
+        else:
+            # Otherwise just load the graph.
+            graph=Graph.from_csv(**{
+                **{
+                    key: os.path.join(self._cache_path, value)
+                    if key.endswith("_path") else value
+                    for key, value in graph_arguments.items()
+                },
+                "directed": self._directed,
+                "verbose": self._verbose > 0,
+                "name": self._name,
+                **self._additional_graph_kwargs,
+            })
+        if self._automatically_enable_speedups_for_small_graphs:
+            graph.enable()
+        return graph
