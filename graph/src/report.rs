@@ -729,7 +729,7 @@ impl Graph {
                 concat!(
                     "<h4>Circles</h4>",
                     "<p>",
-                    "We have detected {circles_number} circles in the graph, with the largest having {max_circles_size} nodes. ",
+                    "We have detected {circles_number} circles in the graph, with the one containing {max_circles_size} nodes. ",
                     "The detected circles, sorted by decreasing size, are:",
                     "</p>",
                     "<ol>",
@@ -758,7 +758,7 @@ impl Graph {
                 concat!(
                     "<h4>Chains</h4>",
                     "<p>",
-                    "We have detected {chains_number} chains in the graph, with the largest having {max_chains_size} nodes. ",
+                    "We have detected {chains_number} chains in the graph, with the largest one containing {max_chains_size} nodes. ",
                     "The detected chains, sorted by decreasing size, are:",
                     "</p>",
                     "<ol>",
@@ -787,7 +787,7 @@ impl Graph {
                 concat!(
                     "<h4>Stars</h4>",
                     "<p>",
-                    "We have detected {stars_number} stars in the graph, with the largest having {max_stars_size} nodes. ",
+                    "We have detected {stars_number} stars in the graph, with the largest one containing {max_stars_size} nodes. ",
                     "The detected stars, sorted by decreasing size, are:",
                     "</p>",
                     "<ol>",
