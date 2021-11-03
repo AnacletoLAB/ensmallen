@@ -2,6 +2,8 @@ use super::*;
 use indicatif::{ProgressBar, ProgressStyle};
 use rayon::ThreadPool;
 
+use num_traits::pow::Pow;
+
 mod method_caller;
 pub use method_caller::*;
 
@@ -214,6 +216,25 @@ pub fn atoi_c(val: &str) -> u32 {
         result = result * 10 + (*b - b'0') as u32;
     }
     result
+}
+
+/// Return given number converted to a human readable value.
+/// 
+/// # Arguments
+/// `number`: usize - The value to convert.
+pub(crate) fn to_human_readable_high_integer(number: usize) -> String {
+    let (exponent, unit) = match number {
+        0..1_000 => (0, ""),
+        1_000..1_000_000 => (1, "K"),
+        1_000_000..1_000_000_000 => (2, "M"),
+        1_000_000_000..1_000_000_000_000 => (3, "G"),
+        _ => (4, "T"),
+    };
+    format!(
+        "{amount:.2}{unit}",
+        amount = number as f64 / (1000.0 as f64).pow(exponent),
+        unit = unit
+    )
 }
 
 /// Returns given list in a uman readable format.

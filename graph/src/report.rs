@@ -444,29 +444,32 @@ impl Graph {
         } else {
             None
         };
-        let mut node_degree = match self.get_node_degree_from_node_id(node_id) {
+        let node_degree = match self.get_node_degree_from_node_id(node_id) {
             Ok(degree) => {
                 if degree == 0 {
                     None
                 } else {
-                    Some(format!("degree {}", degree))
+                    Some(format!(
+                        "degree {}",
+                        to_human_readable_high_integer(degree as usize)
+                    ))
                 }
             }
             Err(_) => None,
         };
         // Update the node degree with also the weighted degree.
-        if self.has_edge_weights() {
-            node_degree = node_degree.map(|degree_string| {
-                format!(
-                    "{degree_string}{join_term} weighted degree {weighted_degree:.2}",
-                    degree_string = degree_string,
-                    // According to the presence of the node type segment
-                    // of the description we add the correct join term
-                    join_term = if node_type.is_some() { "," } else { " and" },
-                    weighted_degree = self.get_unchecked_weighted_node_degree_from_node_id(node_id)
-                )
-            });
-        }
+        // if self.has_edge_weights() {
+        //     node_degree = node_degree.map(|degree_string| {
+        //         format!(
+        //             "{degree_string}{join_term} weighted degree {weighted_degree:.2}",
+        //             degree_string = degree_string,
+        //             // According to the presence of the node type segment
+        //             // of the description we add the correct join term
+        //             join_term = if node_type.is_some() { "," } else { " and" },
+        //             weighted_degree = self.get_unchecked_weighted_node_degree_from_node_id(node_id)
+        //         )
+        //     });
+        // }
 
         // If any of the terms was given we build the output description
         let description = if node_degree.is_some() || node_type.is_some() {
@@ -563,7 +566,7 @@ impl Graph {
                 ),
                 nodes_number => format!(
                     "{nodes_number}{heterogeneous_nodes} nodes",
-                    nodes_number = nodes_number,
+                    nodes_number = to_human_readable_high_integer(nodes_number as usize),
                     heterogeneous_nodes = match self.get_node_types_number() {
                         Ok(n) =>
                             if n == 1 {
@@ -602,7 +605,7 @@ impl Graph {
                 ),
                 edges_number => format!(
                     "{edges_number}{heterogeneous_edges} edges",
-                    edges_number = edges_number,
+                    edges_number = to_human_readable_high_integer(edges_number as usize),
                     heterogeneous_edges = match self.get_edge_types_number() {
                         Ok(n) =>
                             if n == 1 {
@@ -655,11 +658,11 @@ impl Graph {
                 "the mode degree is {mode_node_degree}, the mean degree is {mean_node_degree:.2} and the node degree median is {node_degree_median}.</p>",
                 "<p>The nodes with highest degree centrality are: {list_of_most_central_nodes}.</p>"
             ),
-            minimum_node_degree = self.get_minimum_node_degree().unwrap(),
-            maximum_node_degree = self.get_maximum_node_degree().unwrap(),
-            mode_node_degree = self.get_node_degrees_mode().unwrap(),
+            minimum_node_degree = to_human_readable_high_integer(self.get_minimum_node_degree().unwrap() as usize),
+            maximum_node_degree = to_human_readable_high_integer(self.get_maximum_node_degree().unwrap() as usize),
+            mode_node_degree = to_human_readable_high_integer(self.get_node_degrees_mode().unwrap() as usize),
             mean_node_degree = self.get_node_degrees_mean().unwrap(),
-            node_degree_median = self.get_node_degrees_median().unwrap(),
+            node_degree_median = to_human_readable_high_integer(self.get_node_degrees_median().unwrap() as usize),
             list_of_most_central_nodes = get_unchecked_formatted_list(
                 self.get_top_k_central_node_ids(5).unwrap()
                     .into_iter()
@@ -693,7 +696,7 @@ impl Graph {
                 "The graph contains {} connected components, with the largest one containing {} nodes and the smallest one containing {} nodes.",
                 "</p>"
             ),
-            components_number, maximum_component_size, minimum_component_size,
+            to_human_readable_high_integer(components_number as usize), to_human_readable_high_integer(maximum_component_size as usize), to_human_readable_high_integer(minimum_component_size as usize),
         )
     }
 
@@ -860,7 +863,7 @@ impl Graph {
                                 })
                                 .collect::<Vec<_>>()
                                 .as_ref(),
-                                None
+                            None
                         ),
                         additional_singleton_nodes = if singleton_nodes_number > 5 {
                             format!(
@@ -975,30 +978,30 @@ impl Graph {
             concat!(
                 "<h3>Weights</h3>",
                 "<p>The minimum edge weight is {minimum_edge_weight}, the maximum edge weight is {maximum_edge_weight} and the total edge weight is {total_edge_weight}.</p>",
-                "<h4>Weighted degree centrality</h4>",
-                "<p>The minimum node degree is {weighted_minimum_node_degree:.2}, the maximum node degree is {weighted_maximum_node_degree:.2}, ",
-                "the mean degree is {weighted_mean_node_degree:.2} and the node degree median is {weighted_node_degree_median:2}.</p>",
-                "<p>The nodes with highest degree centrality are: {weighted_list_of_most_central_nodes}.</p>",
+                //"<h4>Weighted degree centrality</h4>",
+                //"<p>The minimum node degree is {weighted_minimum_node_degree:.2}, the maximum node degree is {weighted_maximum_node_degree:.2}, ",
+                //"the mean degree is {weighted_mean_node_degree:.2} and the node degree median is {weighted_node_degree_median:2}.</p>",
+                //"<p>The nodes with highest degree centrality are: {weighted_list_of_most_central_nodes}.</p>",
                 "<h4>RAM requirements</h4>",
                 "<p>The RAM requirements for the edge weights data structure is {ram_edge_weights}.</p>"
             ),
             minimum_edge_weight= self.get_mininum_edge_weight().clone().unwrap(),
             maximum_edge_weight= self.get_maximum_edge_weight().clone().unwrap(),
             total_edge_weight=self.get_total_edge_weights().clone().unwrap(),
-            weighted_minimum_node_degree = self.get_weighted_minimum_node_degree().clone().unwrap(),
-            weighted_maximum_node_degree = self.get_weighted_maximum_node_degree().clone().unwrap(),
-            weighted_mean_node_degree = self.get_weighted_node_degrees_mean().unwrap(),
-            weighted_node_degree_median = self.get_weighted_node_degrees_median().unwrap(),
-            weighted_list_of_most_central_nodes = get_unchecked_formatted_list(
-                self.get_weighted_top_k_central_node_ids(5).unwrap()
-                    .into_iter()
-                    .map(|node_id| {
-                        self.get_unchecked_succinct_node_description(node_id)
-                    })
-                    .collect::<Vec<_>>()
-                    .as_ref(),
-                    None
-            ),
+            //weighted_minimum_node_degree = self.get_weighted_minimum_node_degree().clone().unwrap(),
+            //weighted_maximum_node_degree = self.get_weighted_maximum_node_degree().clone().unwrap(),
+            //weighted_mean_node_degree = self.get_weighted_node_degrees_mean().unwrap(),
+            //weighted_node_degree_median = self.get_weighted_node_degrees_median().unwrap(),
+            //weighted_list_of_most_central_nodes = get_unchecked_formatted_list(
+            //    self.get_weighted_top_k_central_node_ids(5).unwrap()
+            //        .into_iter()
+            //        .map(|node_id| {
+            //            self.get_unchecked_succinct_node_description(node_id)
+            //        })
+            //        .collect::<Vec<_>>()
+            //        .as_ref(),
+            //        None
+            //),
             ram_edge_weights=self.get_edge_weights_total_memory_requirements_human_readable()
         )
     }
@@ -1048,7 +1051,7 @@ impl Graph {
                                 })
                                 .collect::<Vec<_>>()
                                 .as_ref(),
-                                None
+                            None
                         ),
                         additional_singleton_nodes_with_selfloop =
                             if singleton_nodes_types_number > 5 {
@@ -1179,7 +1182,7 @@ impl Graph {
                             })
                             .collect::<Vec<_>>()
                             .as_ref(),
-                            None
+                        None,
                     );
                     format!(
                         "{node_types_number} node types, {top_five_caveat} {node_type_description}",
@@ -1388,7 +1391,7 @@ impl Graph {
                             })
                             .collect::<Vec<_>>()
                             .as_ref(),
-                            None
+                        None,
                     );
                     format!(
                         "{edge_types_number} edge types, {top_five_caveat} {edge_type_description}",
@@ -1479,7 +1482,7 @@ impl Graph {
         }
 
         // And the report with oddities, if there are any to report
-        if self.has_edges() && !self.is_directed(){
+        if self.has_edges() && !self.is_directed() {
             if let Some(oddity_report) = self.get_report_of_topological_oddities().unwrap() {
                 paragraphs.push(oddity_report);
             }
