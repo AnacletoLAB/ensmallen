@@ -782,7 +782,7 @@ impl Graph {
         } else {
             format!(
                 concat!(
-                    "<h4>stars</h4>",
+                    "<h4>Stars</h4>",
                     "<p>",
                     "We have detected {stars_number} stars in the graph, with the largest having {max_stars_size} nodes. ",
                     "The detected stars, sorted by decreasing size, are:",

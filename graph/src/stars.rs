@@ -25,6 +25,7 @@ impl ToString for Star {
                     &self
                         .get_star_node_ids()
                         .into_iter()
+                        .skip(1)
                         .map(|node_id| self.graph.get_unchecked_succinct_node_description(node_id))
                         .collect::<Vec<String>>(),
                         Some(5)
