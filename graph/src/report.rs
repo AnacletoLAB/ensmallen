@@ -1182,7 +1182,7 @@ impl Graph {
                                     html_url = get_node_type_source_html_url_from_node_type_name(
                                         node_type_name.as_ref()
                                     ),
-                                    count = count,
+                                    count = to_human_readable_high_integer(count as usize),
                                     percentage =
                                         (count as f64 / self.get_nodes_number() as f64) * 100.0
                                 )
@@ -1391,7 +1391,7 @@ impl Graph {
                                     html_url = get_edge_type_source_html_url_from_edge_type_name(
                                         edge_type_name.as_ref()
                                     ),
-                                    count = count,
+                                    count = to_human_readable_high_integer(count as usize),
                                     percentage = (count as f64
                                         / self.get_directed_edges_number() as f64)
                                         * 100.0
@@ -1403,7 +1403,7 @@ impl Graph {
                     );
                     format!(
                         "{edge_types_number} edge types, {top_five_caveat} {edge_type_description}",
-                        edge_types_number = edge_types_number,
+                        edge_types_number = to_human_readable_high_integer(edge_types_number as usize),
                         top_five_caveat = if edge_types_number > 5 {
                             "of which the 5 most common are"
                         } else {
