@@ -15,10 +15,9 @@ impl ToString for Chain {
     fn to_string(&self) -> String {
         format!(
             concat!(
-                "<p>This chain of nodes from the graph {} contains {} nodes and starts from the node {}. ",
+                "<p>Chain containing {} nodes and starts from the node {}. ",
                 "Specifically, the nodes involved in the chain are: {}.</p>",
             ),
-            self.graph.get_name(),
             to_human_readable_high_integer(self.len() as usize),
             unsafe{self.graph.get_unchecked_succinct_node_description(self.get_root_node_id())},
             unsafe {

@@ -15,10 +15,9 @@ impl ToString for Circle {
     fn to_string(&self) -> String {
         format!(
             concat!(
-                "<p>Circle from the graph {} containing {} nodes. ",
+                "<p>Circle containing {} nodes. ",
                 "Specifically, the nodes involved in the circle are: {}.</p>",
             ),
-            self.graph.get_name(),
             to_human_readable_high_integer(self.len() as usize),
             unsafe {
                 get_unchecked_formatted_list(

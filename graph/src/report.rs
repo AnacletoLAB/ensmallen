@@ -743,7 +743,7 @@ impl Graph {
                 possibly_conclusive_entry = if circles.len() > 5 {
                     format!(
                         "<p>And other {} circles.</p>",
-                        circles.len() -5
+                        to_human_readable_high_integer(circles.len() -5)
                     )
                 } else {
                     "".to_string()
@@ -772,7 +772,7 @@ impl Graph {
                 possibly_conclusive_entry = if chains.len() > 5 {
                     format!(
                         "<p>And other {} chains.</p>",
-                        chains.len() -5
+                        to_human_readable_high_integer(chains.len() -5)
                     )
                 } else {
                     "".to_string()
@@ -801,7 +801,7 @@ impl Graph {
                 possibly_conclusive_entry = if stars.len() > 5 {
                     format!(
                         "<p>And other {} stars.</p>",
-                        stars.len() -5
+                        to_human_readable_high_integer(stars.len() -5)
                     )
                 } else {
                     "".to_string()
@@ -1058,18 +1058,17 @@ impl Graph {
                                 .as_ref(),
                             None
                         ),
-                        additional_singleton_nodes_with_selfloop = if singleton_nodes_types_number
-                            > 5
-                        {
-                            format!(
+                        additional_singleton_nodes_with_selfloop =
+                            if singleton_nodes_types_number > 5 {
+                                format!(
                                 ", plus other {singleton_nodes_types_number} singleton node types",
                                 singleton_nodes_types_number = to_human_readable_high_integer(
                                     singleton_nodes_types_number as usize - 5
                                 )
                             )
-                        } else {
-                            "".to_string()
-                        }
+                            } else {
+                                "".to_string()
+                            }
                     )
                 }
             }
@@ -1194,7 +1193,8 @@ impl Graph {
                     );
                     format!(
                         "{node_types_number} node types, {top_five_caveat} {node_type_description}",
-                        node_types_number = to_human_readable_high_integer(node_types_number as usize),
+                        node_types_number =
+                            to_human_readable_high_integer(node_types_number as usize),
                         top_five_caveat = if node_types_number > 5 {
                             "of which the 5 most common are"
                         } else {

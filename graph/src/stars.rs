@@ -14,10 +14,9 @@ impl ToString for Star {
     fn to_string(&self) -> String {
         format!(
             concat!(
-                "<p>This star of nodes from the graph {} contains {} nodes, and has as central node {}. ",
+                "<p>Star containining {} nodes, and has as central node {}. ",
                 "Specifically, the nodes involved in the star are: {}.</p>",
             ),
-            self.graph.get_name(),
             to_human_readable_high_integer(self.len() as usize),
             unsafe{self.graph.get_unchecked_succinct_node_description(self.get_root_node_id())},
             unsafe {
