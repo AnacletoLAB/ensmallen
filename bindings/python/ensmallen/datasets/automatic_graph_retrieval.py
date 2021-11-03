@@ -550,6 +550,6 @@ class AutomaticallyRetrievedGraph:
                 "name": self._name,
                 **self._additional_graph_kwargs,
             })
-        if self._automatically_enable_speedups_for_small_graphs:
+        if self._automatically_enable_speedups_for_small_graphs and graph.get_unique_edges_number() < 50e6:
             graph.enable()
         return graph
