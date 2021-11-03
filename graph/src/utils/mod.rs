@@ -224,7 +224,7 @@ pub fn atoi_c(val: &str) -> u32 {
 /// `number`: usize - The value to convert.
 pub(crate) fn to_human_readable_high_integer(number: usize) -> String {
     let (exponent, unit) = match number {
-        0..1_000 => (0, ""),
+        0..1_000 => return number.to_string(),
         1_000..1_000_000 => (1, "K"),
         1_000_000..1_000_000_000 => (2, "M"),
         1_000_000_000..1_000_000_000_000 => (3, "G"),

@@ -18,7 +18,7 @@ impl ToString for Star {
                 "Specifically, the nodes involved in the star are: {}.</p>",
             ),
             self.graph.get_name(),
-            self.len(),
+            to_human_readable_high_integer(self.len() as usize),
             unsafe{self.graph.get_unchecked_succinct_node_description(self.get_root_node_id())},
             unsafe {
                 get_unchecked_formatted_list(

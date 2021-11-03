@@ -854,7 +854,8 @@ impl Graph {
                             "{singleton_nodes_list}",
                             "{additional_singleton_nodes}"
                         ),
-                        singleton_nodes_number = singleton_nodes_number,
+                        singleton_nodes_number =
+                            to_human_readable_high_integer(singleton_nodes_number as usize),
                         singleton_nodes_list = get_unchecked_formatted_list(
                             self.iter_singleton_node_ids()
                                 .take(5)
@@ -868,7 +869,9 @@ impl Graph {
                         additional_singleton_nodes = if singleton_nodes_number > 5 {
                             format!(
                                 ", plus other {singleton_nodes_number} singleton nodes",
-                                singleton_nodes_number = singleton_nodes_number - 5
+                                singleton_nodes_number = to_human_readable_high_integer(
+                                    singleton_nodes_number as usize - 5
+                                )
                             )
                         } else {
                             ".".to_string()
@@ -910,7 +913,7 @@ impl Graph {
                             "{singleton_nodes_list}",
                             "{additional_singleton_nodes_with_selfloop}"
                         ),
-                        singleton_nodes_with_selfloops_number = singleton_nodes_with_selfloops_number,
+                        singleton_nodes_with_selfloops_number = to_human_readable_high_integer(singleton_nodes_with_selfloops_number as usize),
                         singleton_nodes_list = get_unchecked_formatted_list(
                             self.iter_singleton_nodes_with_selfloops_node_ids()
                                 .take(5)
@@ -924,7 +927,7 @@ impl Graph {
                         additional_singleton_nodes_with_selfloop = if singleton_nodes_with_selfloops_number > 5 {
                             format!(
                                 ", plus other {singleton_nodes_with_selfloops_number} singleton nodes with selfloops",
-                                singleton_nodes_with_selfloops_number = singleton_nodes_with_selfloops_number - 5
+                                singleton_nodes_with_selfloops_number = to_human_readable_high_integer(singleton_nodes_with_selfloops_number as usize - 5)
                             )
                         } else {
                             "".to_string()
@@ -951,7 +954,8 @@ impl Graph {
                 "to any other node.",
                 "The graph contains {disconnected_nodes_number} disconnected nodes.</p>"
             ),
-            disconnected_nodes_number = self.get_disconnected_nodes_number()
+            disconnected_nodes_number =
+                to_human_readable_high_integer(self.get_disconnected_nodes_number() as usize)
         ));
 
         if self.has_singleton_nodes() {
@@ -1039,7 +1043,8 @@ impl Graph {
                             "{singleton_node_types_list}",
                             "{additional_singleton_nodes_with_selfloop}"
                         ),
-                        singleton_nodes_types_number = singleton_nodes_types_number,
+                        singleton_nodes_types_number =
+                            to_human_readable_high_integer(singleton_nodes_types_number as usize),
                         singleton_node_types_list = get_unchecked_formatted_list(
                             self.iter_singleton_node_type_names()
                                 .unwrap()
@@ -1053,15 +1058,18 @@ impl Graph {
                                 .as_ref(),
                             None
                         ),
-                        additional_singleton_nodes_with_selfloop =
-                            if singleton_nodes_types_number > 5 {
-                                format!(
+                        additional_singleton_nodes_with_selfloop = if singleton_nodes_types_number
+                            > 5
+                        {
+                            format!(
                                 ", plus other {singleton_nodes_types_number} singleton node types",
-                                singleton_nodes_types_number = singleton_nodes_types_number - 5
+                                singleton_nodes_types_number = to_human_readable_high_integer(
+                                    singleton_nodes_types_number as usize - 5
+                                )
                             )
-                            } else {
-                                "".to_string()
-                            }
+                        } else {
+                            "".to_string()
+                        }
                     )
                 }
             }
@@ -1101,7 +1109,7 @@ impl Graph {
                             "{unknown_node_types_list}",
                             "{additional_unknown_nodes}"
                         ),
-                        unknown_node_types_number = unknown_node_types_number,
+                        unknown_node_types_number = to_human_readable_high_integer(unknown_node_types_number as usize),
                         unknown_node_types_list = get_unchecked_formatted_list(
                             self.iter_node_ids_with_unknown_node_types()
                                 .unwrap()
@@ -1116,7 +1124,7 @@ impl Graph {
                         additional_unknown_nodes = if unknown_node_types_number > 5 {
                             format!(
                                 ", plus other {unknown_node_types_number} nodes with unknown node types",
-                                unknown_node_types_number = unknown_node_types_number - 5
+                                unknown_node_types_number = to_human_readable_high_integer(unknown_node_types_number as usize - 5)
                             )
                         } else {
                             "".to_string()
@@ -1186,7 +1194,7 @@ impl Graph {
                     );
                     format!(
                         "{node_types_number} node types, {top_five_caveat} {node_type_description}",
-                        node_types_number = node_types_number,
+                        node_types_number = to_human_readable_high_integer(node_types_number as usize),
                         top_five_caveat = if node_types_number > 5 {
                             "of which the 5 most common are"
                         } else {
@@ -1247,7 +1255,7 @@ impl Graph {
                             "{singleton_edge_types_list}",
                             "{additional_edgges_with_singleton_edge_types}. "
                         ),
-                        singleton_edges_types_number = singleton_edges_types_number,
+                        singleton_edges_types_number = to_human_readable_high_integer(singleton_edges_types_number as usize),
                         singleton_edge_types_list = get_unchecked_formatted_list(
                             self.iter_singleton_edge_type_names()
                                 .unwrap()
@@ -1265,7 +1273,7 @@ impl Graph {
                             if singleton_edges_types_number > 5 {
                                 format!(
                                 ", plus other {singleton_edges_types_number} edges with singleton edge types",
-                                singleton_edges_types_number = singleton_edges_types_number - 5
+                                singleton_edges_types_number = to_human_readable_high_integer(singleton_edges_types_number as usize - 5)
                             )
                             } else {
                                 "".to_string()
