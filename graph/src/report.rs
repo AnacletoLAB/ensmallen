@@ -675,6 +675,27 @@ impl Graph {
     }
 
     /// Returns report on the oddities detected within the graph.
+    fn get_report_of_connected_components(&self) -> String {
+        let (components_number, minimum_component_size, maximum_component_size) =
+            self.get_connected_components_number(None);
+        if components_number == 1 {
+            return concat!(
+                "<h3>Connected components</h3>",
+                "<p>The graph is connected, that is, it is composed of a single connected component that includes all nodes and edges.</p>"
+            ).to_string();
+        }
+        format!(
+            concat!(
+                "<h3>Connected components</h3>",
+                "<p>",
+                "The graph contains {} connected components, with the largest one containing {} nodes and the smallest one containing {} nodes.",
+                "</p>"
+            ),
+            components_number, maximum_component_size, minimum_component_size,
+        )
+    }
+
+    /// Returns report on the oddities detected within the graph.
     ///
     /// # Implementation details
     /// The oddities reported within this section of the report include Stars, Chains and Circles.
@@ -1408,8 +1429,17 @@ impl Graph {
         if self.has_edges() {
             // We add to the report the unweighted node degree centrality
             paragraphs.push(unsafe { self.get_node_degree_centrality_report() });
-            // And the report with oddities
+            // And if the graph is undirected, we have some more high efficiency
+            // algorithms that we may want to use.
             if !self.is_directed() {
+                // We compute the connected components, if the speed-ups relative to
+                // the destinations are enabled (as it may be too slow otherwise on
+                // some instances. Similarly, if the graph has less than 1M nodes we
+                // also compute the connected components as it should be quite immediate.
+                if self.get_nodes_number() < 10e6 as NodeT || self.destinations.is_some() {
+                    paragraphs.push(self.get_report_of_connected_components());
+                }
+                // And the report with oddities, if there are any to report
                 if let Some(oddity_report) = self.get_report_of_topological_oddities().unwrap() {
                     paragraphs.push(oddity_report);
                 }
@@ -1441,6 +1471,8 @@ impl Graph {
             paragraphs.push(unsafe { self.get_edge_types_report() });
         }
 
-        paragraphs.join("")
+        let mut report = paragraphs.join("");
+        report = report.replace("<p>", "<p align=\"justify\">");
+        report
     }
 }
