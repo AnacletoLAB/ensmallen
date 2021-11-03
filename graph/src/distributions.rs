@@ -121,11 +121,17 @@ impl Graph {
             .map(|_| AtomicUsize::new(0))
             .collect::<Vec<AtomicUsize>>();
         // Populate the counters
-        scores.par_iter().cloned().for_each(|score| {
-            let index: usize =
-                number_of_bins - (score.into() * hashing_coefficient).ceil() as usize;
-            counters[index].fetch_add(1, Ordering::Relaxed);
-        });
+        scores
+            .par_iter()
+            .cloned()
+            .map(|score| score.into())
+            .for_each(|score| {
+                if !score.is_zero() {
+                    let index: usize =
+                        number_of_bins - (score * hashing_coefficient).ceil() as usize;
+                    counters[index].fetch_add(1, Ordering::Relaxed);
+                }
+            });
         // Find the first counter that curresponding to the maximum threshold
         let mut optimal_index = 0;
         let mut comulative_sum = 0;
