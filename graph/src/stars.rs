@@ -1,7 +1,8 @@
 use super::*;
 use rayon::prelude::*;
+use std::cmp::Ordering;
 
-#[derive(Hash, Clone, Debug)]
+#[derive(Hash, Clone, Debug, PartialEq)]
 pub struct Star {
     graph: Graph,
     root_node_id: NodeT,
@@ -19,8 +20,22 @@ impl ToString for Star {
             self.graph.get_name(),
             self.len(),
             self.get_root_node_name(),
-            unsafe {get_unchecked_formatted_list(&self.get_star_node_names())}
+            unsafe {
+                get_unchecked_formatted_list(
+                    &self
+                        .get_first_k_star_node_ids(10)
+                        .into_iter()
+                        .map(|node_id| self.graph.get_unchecked_succinct_node_description(node_id))
+                        .collect::<Vec<String>>(),
+                )
+            }
         )
+    }
+}
+
+impl PartialOrd for Star {
+    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
+        Some(self.len.cmp(&other.len))
     }
 }
 
@@ -65,12 +80,32 @@ impl Star {
         }
     }
 
-    /// Return the node names of the nodes composing the Star.
-    pub fn get_star_node_names(&self) -> Vec<String> {
+    /// Return the node names of the nodes composing the star.
+    pub fn par_iter_star_node_names(&self) -> impl IndexedParallelIterator<Item = String> + '_ {
         self.get_star_node_ids()
             .into_par_iter()
-            .map(|node_id| unsafe { self.graph.get_unchecked_node_name_from_node_id(node_id) })
-            .collect()
+            .map(move |node_id| unsafe { self.graph.get_unchecked_node_name_from_node_id(node_id) })
+    }
+
+    /// Return the first `k` node IDs of the nodes composing the star.
+    ///
+    /// # Arguments
+    /// `k`: usize - The number of terms to return.
+    pub fn get_first_k_star_node_ids(&self, k: usize) -> Vec<NodeT> {
+        self.get_star_node_ids().into_iter().take(k).collect()
+    }
+
+    /// Return the first `k` node names of the nodes composing the star.
+    ///
+    /// # Arguments
+    /// `k`: usize - The number of terms to return.
+    pub fn get_first_k_star_node_names(&self, k: usize) -> Vec<String> {
+        self.par_iter_star_node_names().take(k).collect()
+    }
+
+    /// Return the node names of the nodes composing the star.
+    pub fn get_star_node_names(&self) -> Vec<String> {
+        self.par_iter_star_node_names().collect()
     }
 }
 

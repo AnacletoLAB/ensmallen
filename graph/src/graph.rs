@@ -3,8 +3,8 @@ use std::{intrinsics::unlikely, sync::atomic::AtomicU8};
 use super::*;
 use bitvec::prelude::*;
 use elias_fano_rust::*;
-use std::sync::Arc;
 use rayon::prelude::*;
+use std::sync::Arc;
 
 /// This is the main struct in Ensmallen, it allows to load and manipulate Graphs efficently.
 /// You are not supposed to directly instantiate this struct but instead you should use the

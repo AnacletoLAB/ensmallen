@@ -410,7 +410,7 @@ impl Graph {
     ///
     /// # Safety
     /// This method will cause an out of bound if the given node ID does not exist.
-    unsafe fn get_unchecked_succinct_node_description(&self, node_id: NodeT) -> String {
+    pub(crate) unsafe fn get_unchecked_succinct_node_description(&self, node_id: NodeT) -> String {
         let node_name = self.get_unchecked_node_name_from_node_id(node_id);
         let node_name = get_node_source_html_url_from_node_name(node_name.as_ref());
         let node_type = if self.has_node_types() {
@@ -672,6 +672,133 @@ impl Graph {
                     .as_ref()
             )
         )
+    }
+
+    /// Returns report on the oddities detected within the graph.
+    ///
+    /// # Implementation details
+    /// The oddities reported within this section of the report include Stars, Chains and Circles.
+    /// The stars and chains, to be considered, must have at least \(10\) nodes, while the circles
+    /// must have at least \(5\) nodes. When a graph does not contain a type of oddity, that section
+    /// of the report is omitted. When no oddity is found, this report will be empty.
+    ///
+    /// # Safety
+    /// This method may cause a panic when called on a graph with no edges.
+    fn get_report_of_topological_oddities(&self) -> Result<Option<String>> {
+        let mut circles = self.get_circles(None, None)?;
+        circles.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+        let mut chains = self.get_chains(None, None)?;
+        chains.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+        let mut stars = self.get_stars(None)?;
+        stars.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+        // If the graph does not contain any oddity, we do not prepare a report.
+        if circles.is_empty() && chains.is_empty() && stars.is_empty() {
+            return Ok(None);
+        }
+        // Create the report for the circles, if there are any.
+        let circles_description = if circles.is_empty() {
+            "".to_string()
+        } else {
+            format!(
+                concat!(
+                    "<h4>Circles</h4>",
+                    "<p>",
+                    "We have detected {circles_number} circles in the graph, with the largest having {max_circles_size} nodes. ",
+                    "The detected circles, sorted by decreasing size, are:",
+                    "</p>",
+                    "<ol>",
+                    "{circles_description}",
+                    "</ol>",
+                    "{possibly_conclusive_entry}"
+                ),
+                circles_number = circles.len(),
+                max_circles_size = circles.first().unwrap().len(),
+                circles_description = circles.iter().take(5).map(|circle| format!("<li>{}</li>", circle.to_string())).join("\n"),
+                possibly_conclusive_entry = if circles.len() > 5 {
+                    format!(
+                        "<p>And other {} circles.</p>",
+                        circles.len() -5
+                    )
+                } else {
+                    "".to_string()
+                }
+            )
+        };
+        // Create the report for the chains, if there are any.
+        let chains_description = if chains.is_empty() {
+            "".to_string()
+        } else {
+            format!(
+                concat!(
+                    "<h4>Chains</h4>",
+                    "<p>",
+                    "We have detected {chains_number} chains in the graph, with the largest having {max_chains_size} nodes. ",
+                    "The detected chains, sorted by decreasing size, are:",
+                    "</p>",
+                    "<ol>",
+                    "{chains_description}",
+                    "</ol>",
+                    "{possibly_conclusive_entry}"
+                ),
+                chains_number = chains.len(),
+                max_chains_size = chains.first().unwrap().len(),
+                chains_description = chains.iter().take(5).map(|circle| format!("<li>{}</li>", circle.to_string())).join("\n"),
+                possibly_conclusive_entry = if chains.len() > 5 {
+                    format!(
+                        "<p>And other {} chains.</p>",
+                        chains.len() -5
+                    )
+                } else {
+                    "".to_string()
+                }
+            )
+        };
+        // Create the report for the stars, if there are any.
+        let stars_description = if stars.is_empty() {
+            "".to_string()
+        } else {
+            format!(
+                concat!(
+                    "<h4>stars</h4>",
+                    "<p>",
+                    "We have detected {stars_number} stars in the graph, with the largest having {max_stars_size} nodes. ",
+                    "The detected stars, sorted by decreasing size, are:",
+                    "</p>",
+                    "<ol>",
+                    "{stars_description}",
+                    "</ol>",
+                    "{possibly_conclusive_entry}"
+                ),
+                stars_number = stars.len(),
+                max_stars_size = stars.first().unwrap().len(),
+                stars_description = stars.iter().take(5).map(|circle| format!("<li>{}</li>", circle.to_string())).join("\n"),
+                possibly_conclusive_entry = if stars.len() > 5 {
+                    format!(
+                        "<p>And other {} stars.</p>",
+                        stars.len() -5
+                    )
+                } else {
+                    "".to_string()
+                }
+            )
+        };
+        Ok(Some(format!(
+            concat!(
+                "<h3>Topological Oddities</h3>",
+                "<p>",
+                "A topological oddity is a set of nodes in the graph that may be derived by ",
+                "an error during the generation of the edge list of the graph. ",
+                "We currently support the detection of <i>Stars</i>, <i>Chains</i>, and <i>Circles</i>. ",
+                "In the following paragraph we will describe the detected topological oddities.",
+                "</p>",
+                "{circles_description}",
+                "{chains_description}",
+                "{stars_description}",
+            ),
+            circles_description=circles_description,
+            chains_description=chains_description,
+            stars_description=stars_description
+        )))
     }
 
     /// Returns report on the singleton nodes of the graph.
@@ -1277,10 +1404,16 @@ impl Graph {
         // We add to the report paragrams the one with the brief summary
         paragraphs.push(self.get_textual_report_summary());
 
-        // We add to the report the unweighted node degree centrality
         // if the graph has at least an edge.
         if self.has_edges() {
+            // We add to the report the unweighted node degree centrality
             paragraphs.push(unsafe { self.get_node_degree_centrality_report() });
+            // And the report with oddities
+            if !self.is_directed() {
+                if let Some(oddity_report) = self.get_report_of_topological_oddities().unwrap() {
+                    paragraphs.push(oddity_report);
+                }
+            }
         }
 
         // We add to the report the graph on disconnected nodes if the graph
