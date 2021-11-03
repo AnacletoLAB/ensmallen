@@ -815,7 +815,7 @@ impl Graph {
                 "A topological oddity is a set of nodes in the graph that may be derived by ",
                 "an error during the generation of the edge list of the graph. ",
                 "We currently support the detection of <i>Stars</i>, <i>Chains</i>, and <i>Circles</i>. ",
-                "In the following paragraph we will describe the detected topological oddities.",
+                "In the following paragraph we will describe the detected topological oddities (with at least 10 nodes).",
                 "</p>",
                 "{circles_description}",
                 "{chains_description}",
