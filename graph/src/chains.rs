@@ -2,7 +2,6 @@ use super::*;
 use rayon::prelude::*;
 use std::cmp::Ordering;
 
-
 #[derive(Hash, Clone, Debug, PartialEq)]
 pub struct Chain {
     graph: Graph,
@@ -17,18 +16,19 @@ impl ToString for Chain {
         format!(
             concat!(
                 "<p>This chain of nodes from the graph {} contains {} nodes and starts from the node {}. ",
-                "Specifically, the nodes involved in the chain are: {}</p>",
+                "Specifically, the nodes involved in the chain are: {}.</p>",
             ),
             self.graph.get_name(),
             self.len(),
-            self.get_root_node_name(),
+            self.graph.get_unchecked_succinct_node_description(self.get_root_node_id()),
             unsafe {
                 get_unchecked_formatted_list(
                     &self
-                        .get_first_k_chain_node_ids(10)
+                        .get_chain_node_ids()
                         .into_iter()
                         .map(|node_id| self.graph.get_unchecked_succinct_node_description(node_id))
                         .collect::<Vec<String>>(),
+                    Some(5)
                 )
             }
         )

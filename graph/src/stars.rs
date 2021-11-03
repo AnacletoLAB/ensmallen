@@ -15,18 +15,19 @@ impl ToString for Star {
         format!(
             concat!(
                 "<p>This star of nodes from the graph {} contains {} nodes, and has as central node {}. ",
-                "Specifically, the nodes involved in the star are: {}</p>",
+                "Specifically, the nodes involved in the star are: {}.</p>",
             ),
             self.graph.get_name(),
             self.len(),
-            self.get_root_node_name(),
+            unsafe{self.graph.get_unchecked_succinct_node_description(self.get_root_node_id())},
             unsafe {
                 get_unchecked_formatted_list(
                     &self
-                        .get_first_k_star_node_ids(10)
+                        .get_star_node_ids()
                         .into_iter()
                         .map(|node_id| self.graph.get_unchecked_succinct_node_description(node_id))
                         .collect::<Vec<String>>(),
+                        Some(5)
                 )
             }
         )

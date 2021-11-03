@@ -220,21 +220,37 @@ pub fn atoi_c(val: &str) -> u32 {
 ///
 /// # Safety
 /// If the list is empty the method will raise a panic.
-pub unsafe fn get_unchecked_formatted_list(list: &[String]) -> String {
-    if list.is_empty() {
+///
+/// # Arguments
+/// `elements`: &[String] - The elements to format.
+/// `max_number_of_elements`: Option<usize> - Maximum number of elements to display.
+pub unsafe fn get_unchecked_formatted_list(
+    elements: &[String],
+    max_number_of_elements: Option<usize>,
+) -> String {
+    let max_number_of_elements = max_number_of_elements.unwrap_or(elements.len());
+    if elements.is_empty() {
         panic!("Cannot format a list with no elements.");
     }
-    if list.len() == 1 {
-        return list.first().unwrap().clone();
+    if elements.len() == 1 {
+        return elements.first().unwrap().clone();
     }
-    let all_minus_last: String = list[0..list.len() - 1].join(", ");
+    let all_minus_last: String = elements[0..elements.len() - 1]
+        .iter()
+        .cloned()
+        .take(max_number_of_elements)
+        .collect::<Vec<String>>()
+        .join(", ");
     format!(
         "{all_minus_last} and {last}",
         all_minus_last = all_minus_last,
-        last = list.last().unwrap()
+        last = if elements.len() <= max_number_of_elements {
+            elements.last().unwrap().clone()
+        } else {
+            format!("other {}", max_number_of_elements - elements.len())
+        }
     )
 }
-
 
 pub trait ToAtomicVec<T> {
     fn to_atomic(self: Self) -> Vec<T>;

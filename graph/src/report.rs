@@ -434,7 +434,8 @@ impl Graph {
                                     )
                                 })
                                 .collect::<Vec<_>>()
-                                .as_ref()
+                                .as_ref(),
+                                None
                         )
                     )),
                 },
@@ -669,7 +670,8 @@ impl Graph {
                         self.get_unchecked_succinct_node_description(node_id)
                     })
                     .collect::<Vec<_>>()
-                    .as_ref()
+                    .as_ref(),
+                    None
             )
         )
     }
@@ -857,7 +859,8 @@ impl Graph {
                                     self.get_unchecked_succinct_node_description(node_id)
                                 })
                                 .collect::<Vec<_>>()
-                                .as_ref()
+                                .as_ref(),
+                                None
                         ),
                         additional_singleton_nodes = if singleton_nodes_number > 5 {
                             format!(
@@ -912,7 +915,8 @@ impl Graph {
                                     self.get_unchecked_succinct_node_description(node_id)
                                 })
                                 .collect::<Vec<_>>()
-                                .as_ref()
+                                .as_ref(),
+                                None
                         ),
                         additional_singleton_nodes_with_selfloop = if singleton_nodes_with_selfloops_number > 5 {
                             format!(
@@ -992,7 +996,8 @@ impl Graph {
                         self.get_unchecked_succinct_node_description(node_id)
                     })
                     .collect::<Vec<_>>()
-                    .as_ref()
+                    .as_ref(),
+                    None
             ),
             ram_edge_weights=self.get_edge_weights_total_memory_requirements_human_readable()
         )
@@ -1042,7 +1047,8 @@ impl Graph {
                                     )
                                 })
                                 .collect::<Vec<_>>()
-                                .as_ref()
+                                .as_ref(),
+                                None
                         ),
                         additional_singleton_nodes_with_selfloop =
                             if singleton_nodes_types_number > 5 {
@@ -1101,7 +1107,8 @@ impl Graph {
                                     self.get_unchecked_succinct_node_description(node_id)
                                 })
                                 .collect::<Vec<_>>()
-                                .as_ref()
+                                .as_ref(),
+                                None
                         ),
                         additional_unknown_nodes = if unknown_node_types_number > 5 {
                             format!(
@@ -1172,6 +1179,7 @@ impl Graph {
                             })
                             .collect::<Vec<_>>()
                             .as_ref(),
+                            None
                     );
                     format!(
                         "{node_types_number} node types, {top_five_caveat} {node_type_description}",
@@ -1247,7 +1255,8 @@ impl Graph {
                                     )
                                 })
                                 .collect::<Vec<_>>()
-                                .as_ref()
+                                .as_ref(),
+                                None
                         ),
                         additional_edgges_with_singleton_edge_types =
                             if singleton_edges_types_number > 5 {
@@ -1306,7 +1315,8 @@ impl Graph {
                                     self.get_unchecked_succinct_edge_description(edge_id)
                                 })
                                 .collect::<Vec<_>>()
-                                .as_ref()
+                                .as_ref(),
+                                None
                         ),
                         additional_unknown_edges = if unknown_types_number > 5 {
                             format!(
@@ -1378,6 +1388,7 @@ impl Graph {
                             })
                             .collect::<Vec<_>>()
                             .as_ref(),
+                            None
                     );
                     format!(
                         "{edge_types_number} edge types, {top_five_caveat} {edge_type_description}",
@@ -1439,10 +1450,6 @@ impl Graph {
                 if self.get_nodes_number() < 10e6 as NodeT || self.destinations.is_some() {
                     paragraphs.push(self.get_report_of_connected_components());
                 }
-                // And the report with oddities, if there are any to report
-                if let Some(oddity_report) = self.get_report_of_topological_oddities().unwrap() {
-                    paragraphs.push(oddity_report);
-                }
             }
         }
 
@@ -1471,8 +1478,15 @@ impl Graph {
             paragraphs.push(unsafe { self.get_edge_types_report() });
         }
 
+        // And the report with oddities, if there are any to report
+        if self.has_edges() && !self.is_directed(){
+            if let Some(oddity_report) = self.get_report_of_topological_oddities().unwrap() {
+                paragraphs.push(oddity_report);
+            }
+        }
+
         let mut report = paragraphs.join("");
-        report = report.replace("<p>", "<p align=\"justify\">");
+        report = report.replace("<p>", "<p style=\"text-align: justify;\">");
         report
     }
 }

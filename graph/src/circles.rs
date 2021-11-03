@@ -16,17 +16,18 @@ impl ToString for Circle {
         format!(
             concat!(
                 "<p>Circle from the graph {} containing {} nodes. ",
-                "Specifically, the nodes involved in the circle are: {}</p>",
+                "Specifically, the nodes involved in the circle are: {}.</p>",
             ),
             self.graph.get_name(),
             self.len(),
             unsafe {
                 get_unchecked_formatted_list(
                     &self
-                        .get_first_k_circle_node_ids(10)
+                        .get_circle_node_ids()
                         .into_iter()
                         .map(|node_id| self.graph.get_unchecked_succinct_node_description(node_id))
                         .collect::<Vec<String>>(),
+                    Some(5)
                 )
             }
         )
