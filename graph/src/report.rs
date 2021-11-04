@@ -622,9 +622,10 @@ impl Graph {
         // And put the report summary line togheter.
         report.push(format!(
             concat!(
-                "<p>The {directionality} {multigraph}graph{name} has {nodes_number} and {edges_number}.</p>",
-                "<h3>RAM requirements</h3>",
-                "<p>The RAM requirements for the nodes and edges data structures are {ram_nodes} and {ram_edges} respectively.</p>"
+                "<p>",
+                "The {directionality} {multigraph}graph{name} has {nodes_number} and {edges_number}. ",
+                "The RAM requirements for the nodes and edges data structures are {ram_nodes} and {ram_edges} respectively.",
+                "</p>"
             ),
             directionality = if self.is_directed() {
                 "directed"
@@ -981,13 +982,14 @@ impl Graph {
         format!(
             concat!(
                 "<h3>Weights</h3>",
-                "<p>The minimum edge weight is {minimum_edge_weight}, the maximum edge weight is {maximum_edge_weight} and the total edge weight is {total_edge_weight}.</p>",
+                "<p>",
+                "The minimum edge weight is {minimum_edge_weight}, the maximum edge weight is {maximum_edge_weight} and the total edge weight is {total_edge_weight}. ",
+                "The RAM requirements for the edge weights data structure is {ram_edge_weights}.",
+                "</p>",
                 //"<h4>Weighted degree centrality</h4>",
                 //"<p>The minimum node degree is {weighted_minimum_node_degree:.2}, the maximum node degree is {weighted_maximum_node_degree:.2}, ",
                 //"the mean degree is {weighted_mean_node_degree:.2} and the node degree median is {weighted_node_degree_median:2}.</p>",
                 //"<p>The nodes with highest degree centrality are: {weighted_list_of_most_central_nodes}.</p>",
-                "<h4>RAM requirements</h4>",
-                "<p>The RAM requirements for the edge weights data structure is {ram_edge_weights}.</p>"
             ),
             minimum_edge_weight= self.get_mininum_edge_weight().clone().unwrap(),
             maximum_edge_weight= self.get_maximum_edge_weight().clone().unwrap(),
@@ -1148,9 +1150,10 @@ impl Graph {
         paragraphs.push(format!(
             concat!(
                 "<h3>Node types</h3>",
-                "<p>The graph has {node_types_number}.</p>",
-                "<h4>RAM requirements</h4>",
-                "<p>The RAM requirements for the node types data structure is {ram_node_types}.</p>"
+                "<p>",
+                "The graph has {node_types_number}. ",
+                "The RAM requirements for the node types data structure is {ram_node_types}.",
+                "</p>",
             ),
             node_types_number = match self.get_node_types_number().unwrap() {
                 1 => format!(
@@ -1357,9 +1360,10 @@ impl Graph {
         paragraphs.push(format!(
             concat!(
                 "<h3>Edge types</h3>",
-                "<p>The graph has {edge_types_number}.</p>",
-                "<h4>RAM requirements</h4>",
-                "<p>The RAM requirements for the edge types data structure is {ram_edge_types}.</p>"
+                "<p>",
+                "The graph has {edge_types_number}. ",
+                "The RAM requirements for the edge types data structure is {ram_edge_types}.",
+                "</p>",
             ),
             edge_types_number = match self.get_edge_types_number().unwrap() {
                 1 => format!(
