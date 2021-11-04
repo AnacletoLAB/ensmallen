@@ -622,7 +622,7 @@ impl Graph {
         // And put the report summary line togheter.
         report.push(format!(
             concat!(
-                "<p>The {directionality}{multigraph} graph{name} has {nodes_number} and {edges_number}.</p>",
+                "<p>The {directionality} {multigraph}graph{name} has {nodes_number} and {edges_number}.</p>",
                 "<h3>RAM requirements</h3>",
                 "<p>The RAM requirements for the nodes and edges data structures are {ram_nodes} and {ram_edges} respectively.</p>"
             ),
@@ -632,7 +632,7 @@ impl Graph {
                 "undirected"
             },
             multigraph = if self.is_multigraph() {
-                " multigraph"
+                "multi"
             } else {
                 ""
             },
