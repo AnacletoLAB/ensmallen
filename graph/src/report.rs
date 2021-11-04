@@ -1501,7 +1501,9 @@ impl Graph {
         }
 
         let mut report = paragraphs.join("");
-        report = report.replace("<p>", "<p style=\"text-align: justify;\">");
+        report = report.replace("<p>", "<p style=\"text-align: justify; word-break: break-all;\">");
+        report = report.replace("<h3>", "<h3 style=\"margin: 1em 0 0 0;\">");
+        report = report.replace("<h4>", "<h4 style=\"margin: 1em 0 0 0;\">");
         report
     }
 }
