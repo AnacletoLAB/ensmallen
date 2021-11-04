@@ -619,11 +619,26 @@ impl Graph {
             }
         };
 
+        // And if the graph is undirected, we have some more high efficiency
+        // algorithms that we may want to use.
+        // We compute the connected components, if the speed-ups relative to
+        // the destinations are enabled (as it may be too slow otherwise on
+        // some instances. Similarly, if the graph has less than 1M nodes we
+        // also compute the connected components as it should be quite immediate.
+        let connected_components = if !self.is_directed()
+            && (self.get_nodes_number() < 10e6 as NodeT || self.destinations.is_some())
+        {
+            format!("{} ", self.get_report_of_connected_components())
+        } else {
+            "".to_string()
+        };
+
         // And put the report summary line togheter.
         report.push(format!(
             concat!(
                 "<p>",
                 "The {directionality} {multigraph}graph{name} has {nodes_number} and {edges_number}. ",
+                "{connected_components}",
                 "The RAM requirements for the nodes and edges data structures are {ram_nodes} and {ram_edges} respectively.",
                 "</p>"
             ),
@@ -640,6 +655,7 @@ impl Graph {
             name = name.unwrap_or_else(|| "".to_string()),
             nodes_number = nodes_number,
             edges_number = edges_number,
+            connected_components=connected_components,
             ram_nodes = self.get_nodes_total_memory_requirement_human_readable(),
             ram_edges = self.get_edges_total_memory_requirement_human_readable()
         ));
@@ -686,16 +702,12 @@ impl Graph {
             self.get_connected_components_number(None);
         if components_number == 1 {
             return concat!(
-                "<h3>Connected components</h3>",
-                "<p>The graph is connected, that is, it is composed of a single connected component that includes all nodes and edges.</p>"
+                "The graph is connected, that is, it is composed of a single connected component that includes all nodes and edges."
             ).to_string();
         }
         format!(
             concat!(
-                "<h3>Connected components</h3>",
-                "<p>",
                 "The graph contains {} connected components, with the largest one containing {} nodes and the smallest one containing {} nodes.",
-                "</p>"
             ),
             to_human_readable_high_integer(components_number as usize), to_human_readable_high_integer(maximum_component_size as usize), to_human_readable_high_integer(minimum_component_size as usize),
         )
@@ -1407,7 +1419,8 @@ impl Graph {
                     );
                     format!(
                         "{edge_types_number} edge types, {top_five_caveat} {edge_type_description}",
-                        edge_types_number = to_human_readable_high_integer(edge_types_number as usize),
+                        edge_types_number =
+                            to_human_readable_high_integer(edge_types_number as usize),
                         top_five_caveat = if edge_types_number > 5 {
                             "of which the 5 most common are"
                         } else {
@@ -1437,8 +1450,6 @@ impl Graph {
 
     /// Return html short textual report of the graph.
     ///
-    /// TODO! Add reports on triangles
-    /// TODO! Add reports on connected components
     /// TODO! Add reports on various node metrics
     /// TODO! Add reports on various edge metrics
     /// NOTE! Most of the above TODOs will require first to implement the
@@ -1455,17 +1466,6 @@ impl Graph {
         if self.has_edges() {
             // We add to the report the unweighted node degree centrality
             paragraphs.push(unsafe { self.get_node_degree_centrality_report() });
-            // And if the graph is undirected, we have some more high efficiency
-            // algorithms that we may want to use.
-            if !self.is_directed() {
-                // We compute the connected components, if the speed-ups relative to
-                // the destinations are enabled (as it may be too slow otherwise on
-                // some instances. Similarly, if the graph has less than 1M nodes we
-                // also compute the connected components as it should be quite immediate.
-                if self.get_nodes_number() < 10e6 as NodeT || self.destinations.is_some() {
-                    paragraphs.push(self.get_report_of_connected_components());
-                }
-            }
         }
 
         // We add to the report the graph on disconnected nodes if the graph
