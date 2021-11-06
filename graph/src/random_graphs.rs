@@ -283,12 +283,10 @@ fn multidimensional_decompose_node_id(
 /// # Arguments
 /// * `sides`: &'a [NodeT] - Sides of the hyper-dimensional lattice with square cell.
 /// * `minimum_node_id`: NodeT - The minimum node ID for the range of the wheel.
-/// * `edge_type`: Option<EdgeTypeT> - Edge type for the edges in the wheel.
 /// * `weight`: Option<WeightT> - Edge weights for the edges in the wheel.
 unsafe fn get_squared_lattice_edges_iterator<'a>(
     sides: &'a [NodeT],
     minimum_node_id: NodeT,
-    edge_type: Option<EdgeTypeT>,
     weight: WeightT,
 ) -> (
     NodeT,
@@ -325,27 +323,35 @@ unsafe fn get_squared_lattice_edges_iterator<'a>(
             .into_par_iter()
             .flat_map(move |src_node_id| {
                 let mut coordinates = multidimensional_decompose_node_id(src_node_id, sides);
-                let destinations = (0..dimensions)
+                let destinations_and_edge_types: Vec<(NodeT, EdgeTypeT)> = (0..dimensions)
                     .zip(sides.iter().cloned())
                     .flat_map(|(i, maximal_dimension_size)| {
                         let mut neighbours = Vec::new();
                         let coordinate = coordinates[i];
                         if coordinate > 0 {
                             coordinates[i] -= 1;
-                            neighbours.push(multidimensional_compose_node_id(&coordinates, sides));
+                            neighbours.push((
+                                multidimensional_compose_node_id(&coordinates, sides),
+                                i as EdgeTypeT,
+                            ));
                             coordinates[i] += 1;
                         }
                         if coordinate != maximal_dimension_size - 1 {
                             coordinates[i] += 1;
-                            neighbours.push(multidimensional_compose_node_id(&coordinates, sides));
+                            neighbours.push((
+                                multidimensional_compose_node_id(&coordinates, sides),
+                                i as EdgeTypeT,
+                            ));
                             coordinates[i] -= 1;
                         }
                         neighbours.into_iter()
                     })
-                    .collect::<Vec<NodeT>>();
-                destinations
+                    .collect::<Vec<(NodeT, EdgeTypeT)>>();
+                destinations_and_edge_types
                     .into_par_iter()
-                    .map(move |dst_node_id| (0, (src_node_id, dst_node_id, edge_type, weight)))
+                    .map(move |(dst_node_id, edge_type)| {
+                        (0, (src_node_id, dst_node_id, Some(edge_type), weight))
+                    })
             }),
     )
 }
@@ -1408,7 +1414,6 @@ impl Graph {
             get_squared_lattice_edges_iterator(
                 sides,
                 minimum_node_id,
-                None,
                 weight.unwrap_or(WeightT::NAN),
             )
         };
@@ -1418,13 +1423,18 @@ impl Graph {
             Vocabulary::from_reverse_map(vec![node_type.unwrap_or("squared_lattice").to_owned()])?,
         );
         let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + nodes_number));
+        let edge_types_vocabulary: Vocabulary<EdgeTypeT> = Vocabulary::from_reverse_map(
+            (0..sides.len())
+                .map(|dimension| format!("Dimension_{}", dimension))
+                .collect::<Vec<String>>(),
+        )?;
         let name = name.unwrap_or("SquaredLattice");
 
         build_graph_from_integers(
             Some(edges_iterator),
             Arc::new(nodes),
             Arc::new(Some(node_types)),
-            None,
+            Some(edge_types_vocabulary),
             has_edge_weights,
             directed,
             Some(true),
