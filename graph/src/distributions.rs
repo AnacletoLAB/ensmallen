@@ -114,7 +114,8 @@ impl Graph {
             return 0.0;
         }
         // Compute the hashing coefficient
-        let delta: f32 = max_value.into() - min_value.into();
+        let min_value: f32 = min_value.into();
+        let delta: f32 = max_value.into() - min_value;
         let hashing_coefficient: f32 = number_of_bins as f32 / delta;
         // Create the vector of Atomics
         let counters = (0..number_of_bins)
@@ -124,13 +125,10 @@ impl Graph {
         scores
             .par_iter()
             .cloned()
-            .map(|score| score.into())
+            .map(|score| score.into() - min_value)
             .for_each(|score| {
-                if !score.is_zero() {
-                    let index: usize =
-                        number_of_bins - (score * hashing_coefficient).ceil() as usize;
-                    counters[index].fetch_add(1, Ordering::Relaxed);
-                }
+                let index: usize = number_of_bins - 1 - (score * hashing_coefficient).ceil() as usize;
+                counters[index].fetch_add(1, Ordering::Relaxed);
             });
         // Find the first counter that curresponding to the maximum threshold
         let mut optimal_index = 0;
@@ -147,7 +145,7 @@ impl Graph {
             }
         }
         // Compute and return the threshold
-        min_value.into() + (number_of_bins - optimal_index) as f32 / number_of_bins as f32 * delta
+        min_value + (number_of_bins - optimal_index) as f32 / number_of_bins as f32 * delta
     }
 
     /// Return threshold representing cutuoff point in graph node degree geometric distribution to have the given amount of elements above cutoff.
