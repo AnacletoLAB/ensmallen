@@ -572,7 +572,7 @@ impl Graph {
                             if n == 1 {
                                 " homogeneous"
                             } else {
-                                " heterogenous"
+                                " heterogeneous"
                             },
                         Err(_) => "",
                     },
@@ -611,7 +611,7 @@ impl Graph {
                             if n == 1 {
                                 " homogeneous"
                             } else {
-                                " heterogenous"
+                                " heterogeneous"
                             },
                         Err(_) => "",
                     },
