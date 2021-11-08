@@ -23,7 +23,7 @@ Please cite the following if you use the data:
         note = {{https://archive.org/details/friendster-dataset-201107}}}
 ```
 """
-from typing import Dict
+from typing import Dict, Optional
 
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen import Graph  # pylint: disable=import-error

@@ -31,7 +31,7 @@ Imre and Vicsek, Tam{\'a}s},
 }
 ```
 """
-from typing import Dict
+from typing import Dict, Optional
 
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen import Graph  # pylint: disable=import-error

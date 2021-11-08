@@ -6,7 +6,7 @@ The graph is automatically retrieved from the {repository_name} repository.
 
 {references}
 """
-from typing import Dict
+from typing import Dict, Optional
 {imports}
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen import Graph  # pylint: disable=import-error

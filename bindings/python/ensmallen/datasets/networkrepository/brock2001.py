@@ -23,7 +23,7 @@ Please cite the following if you use the data:
         note={http://dimacs.rutgers.edu/Challenges/}}
 ```
 """
-from typing import Dict
+from typing import Dict, Optional
 
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen import Graph  # pylint: disable=import-error

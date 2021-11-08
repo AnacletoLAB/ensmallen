@@ -33,7 +33,7 @@ Please cite the following if you use the data:
 }
 ```
 """
-from typing import Dict
+from typing import Dict, Optional
 from .parse_linqs import parse_linqs_incidence_matrix
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen import Graph  # pylint: disable=import-error
