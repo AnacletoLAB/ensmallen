@@ -1,6 +1,7 @@
-use itertools::Itertools;
-
 use super::*;
+use indicatif::ProgressIterator;
+use itertools::Itertools;
+use std::{fs::File, io::BufWriter};
 
 /// Structure that saves the writer specific to writing and reading a nodes csv file.
 ///
@@ -310,6 +311,44 @@ impl NodeFileWriter {
         }
     }
 
+    pub(crate) fn start_writer(&self) -> Result<BufWriter<File>> {
+        let (header_values, header_positions) = self.build_header();
+        self.writer.start_writer(compose_lines(
+            self.number_of_columns,
+            header_values,
+            header_positions,
+        ))
+    }
+
+    /// Write the provided set of line elements to file.
+    ///
+    /// # Arguments
+    /// `stream`: BufWriter<File> - The stream where to write the line
+    /// `node_id`: NodeT - Node ID of the node.
+    /// `node_name`: String - Name of the node.
+    /// `node_type_ids`: Option<Vec<NodeTypeT>> - Numeric IDs of the node types of the node.
+    /// `node_type_names`: Option<Vec<String>> - Names of the node types of the node.
+    ///
+    /// # Raises
+    /// * If some I/O error is encountered.
+    pub(crate) fn write_line(
+        &self,
+        stream: BufWriter<File>,
+        node_id: NodeT,
+        node_name: String,
+        node_type_ids: Option<Vec<NodeTypeT>>,
+        node_type_names: Option<Vec<String>>,
+    ) -> Result<BufWriter<File>> {
+        self.writer.write_line(
+            stream,
+            self.parse_line(node_id, node_name, node_type_ids, node_type_names),
+        )
+    }
+
+    pub(crate) fn close_writer(&self, stream: BufWriter<File>) -> Result<()> {
+        self.writer.close_writer(stream)
+    }
+
     /// Write edge list iterator to file.
     ///  
     /// # Arguments
@@ -320,14 +359,16 @@ impl NodeFileWriter {
         lines_number: Option<usize>,
         iterator: impl Iterator<Item = (NodeT, String, Option<Vec<NodeTypeT>>, Option<Vec<String>>)>,
     ) -> Result<()> {
-        let (header_values, header_positions) = self.build_header();
-        self.writer.write_lines(
-            lines_number,
-            compose_lines(self.number_of_columns, header_values, header_positions),
-            iterator.map(|(node_id, node_name, node_type_ids, node_type_names)| {
-                self.parse_line(node_id, node_name, node_type_ids, node_type_names)
-            }),
-        )
+        let pb = get_loading_bar(
+            self.writer.verbose && lines_number.is_some(),
+            "Writing to node list",
+            lines_number.unwrap_or(0),
+        );
+        let mut stream = self.start_writer()?;
+        for (node_id, node_name, node_type_ids, node_type_names) in iterator.progress_with(pb) {
+            stream = self.write_line(stream, node_id, node_name, node_type_ids, node_type_names)?;
+        }
+        self.close_writer(stream)
     }
 
     /// Write nodes to file.

@@ -160,9 +160,7 @@ impl Graph {
                         .to_vec();
                         info!("Setting neighbouring nodes node centralities to zero.");
 
-                        let thread_shared_node_centralities = ThreadDataRaceAware {
-                            value: std::cell::UnsafeCell::new(&mut node_centralities),
-                        };
+                        let thread_shared_node_centralities = ThreadDataRaceAware::new(&mut node_centralities);
                         
                         // Update the centralities vector, setting sampled nodes centralities to zero.
                         anchor_node_ids

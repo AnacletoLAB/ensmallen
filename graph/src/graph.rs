@@ -178,9 +178,7 @@ impl Graph {
     ) -> BitVec<Lsb0, u8> {
         let connected_nodes = if may_have_singletons && self.is_directed() {
             let mut connected_nodes = bitvec![Lsb0, AtomicU8; 0; self.get_nodes_number() as usize];
-            let thread_shared_connected_nodes = ThreadDataRaceAware {
-                value: std::cell::UnsafeCell::new(&mut connected_nodes),
-            };
+            let thread_shared_connected_nodes = ThreadDataRaceAware::new(&mut connected_nodes);
             // If the graph may contain singletons, we need to iterate on all
             // the nodes neighbours in order to find if whether a node is a singleton or
             // if it is a trap node.
@@ -201,9 +199,7 @@ impl Graph {
             connected_nodes
         } else {
             let mut connected_nodes = bitvec![Lsb0, AtomicU8; 1; self.get_nodes_number() as usize];
-            let thread_shared_connected_nodes = ThreadDataRaceAware {
-                value: std::cell::UnsafeCell::new(&mut connected_nodes),
-            };
+            let thread_shared_connected_nodes = ThreadDataRaceAware::new(&mut connected_nodes);
             self.par_iter_node_degrees()
                 .enumerate()
                 .for_each(|(node_id, node_degree)| unsafe {

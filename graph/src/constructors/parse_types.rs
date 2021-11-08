@@ -40,12 +40,10 @@ pub(crate) fn parse_types<TypeT: ToFromUsize>(
         // are not numeric in nature, we can load them in parallel
         // maintaining the order.
         (Some(nti), Some(types_number), false, _, true) => {
-            let types = ThreadDataRaceAware {
-                value: std::cell::UnsafeCell::new(vec![
-                    "".to_owned();
-                    TypeT::to_usize(types_number)
-                ]),
-            };
+            let types = ThreadDataRaceAware::new(vec![
+                "".to_owned();
+                TypeT::to_usize(types_number)
+            ]);
             nti.for_each(|line| unsafe {
                 // We can unwrap because the user tells us that this is surely
                 // a correct node list.
@@ -160,8 +158,8 @@ pub(crate) fn parse_types<TypeT: ToFromUsize>(
             let min = minimum_type_id.unwrap_or(TypeT::from_usize(0));
             Ok(Some(Vocabulary::from_range(min..min)))
         }
-        (None, Some(ntn), false, None, _) => Ok(Some(Vocabulary::with_capacity(TypeT::to_usize(ntn)))),
-        (None, None, false, None, _) => Ok(Some(Vocabulary::new())),
+        (None, Some(ntn), false, None, _) => Ok(Some(Vocabulary::with_capacity(TypeT::to_usize(ntn), true))),
+        (None, None, false, None, _) => Ok(Some(Vocabulary::new(true))),
         all_others => unreachable!(
             "All other cases must be explictily handled. Specifically, this case was composed of: {:?}.",
             all_others

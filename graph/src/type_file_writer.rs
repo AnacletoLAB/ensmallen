@@ -191,6 +191,7 @@ impl TypeFileWriter {
             lines_number,
             compose_lines(self.number_of_columns, header_values, header_positions),
             iterator.map(|(type_id, type_name)| self.parse_line(type_id, type_name)),
-        )
+        )?;
+        Ok(())
     }
 }

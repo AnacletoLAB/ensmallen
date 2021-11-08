@@ -129,7 +129,7 @@ pub fn convert_node_list_node_types_to_numeric(
             .unwrap();
             node_types_vocabulary
         } else {
-            Vocabulary::new()
+            Vocabulary::new(true)
         };
 
     let nodes_reader: NodeFileReader = NodeFileReader::new(Some(original_node_path))?
@@ -213,8 +213,7 @@ pub fn convert_node_list_node_types_to_numeric(
         node_type_writer.dump_iterator(
             Some(node_types.len()),
             node_types
-                .iter_keys()
-                .enumerate()
+                .iter()
                 .map(|(node_type_id, node_type_name)| (node_type_id as NodeTypeT, node_type_name)),
         )?;
     }

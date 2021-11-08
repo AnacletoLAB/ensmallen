@@ -442,9 +442,7 @@ impl Graph {
         let active_nodes_number = AtomicUsize::new(0);
         let completed = AtomicBool::new(false);
         let total_inserted_edges = AtomicUsize::new(0);
-        let thread_safe_parents = ThreadDataRaceAware {
-            value: std::cell::UnsafeCell::new(&mut parents),
-        };
+        let thread_safe_parents = ThreadDataRaceAware::new(&mut parents);
 
         pool.scope(|s| {
             // for each leaf of the previous stub tree start a DFS keeping track
@@ -597,15 +595,9 @@ impl Graph {
         let active_nodes_number = AtomicUsize::new(0);
         let current_component_size = AtomicU32::new(0);
         let completed = AtomicBool::new(false);
-        let thread_safe_min_component_size = ThreadDataRaceAware {
-            value: std::cell::UnsafeCell::new(&mut min_component_size),
-        };
-        let thread_safe_max_component_size = ThreadDataRaceAware {
-            value: std::cell::UnsafeCell::new(&mut max_component_size),
-        };
-        let thread_safe_components_number = ThreadDataRaceAware {
-            value: std::cell::UnsafeCell::new(&mut components_number),
-        };
+        let thread_safe_min_component_size = ThreadDataRaceAware::new(&mut min_component_size);
+        let thread_safe_max_component_size = ThreadDataRaceAware::new(&mut max_component_size);
+        let thread_safe_components_number = ThreadDataRaceAware::new(&mut components_number);
 
         // since we were able to build a stub tree with cpu.len() leafs,
         // we spawn the treads and make anyone of them build the sub-trees.
