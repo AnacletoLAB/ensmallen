@@ -164,7 +164,7 @@ class KGHubGraphRepository(GraphRepository):
         if graph_name == "KGMicrobe":
             return [
                 open(
-                    "{}/models/KGMicrobe.bib".format(
+                    "{}/models/kgmicrobe.bib".format(
                         os.path.dirname(os.path.abspath(__file__)),
                         graph_name
                     ),

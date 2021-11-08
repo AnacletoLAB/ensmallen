@@ -9,6 +9,7 @@
             ],
             "arguments": {
                 "name": "FreeBase",
+                "edge_path": "freebase",
                 "sources_column_number": 0,
                 "edge_list_edge_types_column_number": 1,
                 "destinations_column_number": 2,
@@ -28,6 +29,7 @@
             ],
             "arguments": {
                 "name": "FreeBase2WikiData",
+                "edge_path": "fb2w.nt",
                 "sources_column_number": 0,
                 "edge_list_edge_types_column_number": 1,
                 "destinations_column_number": 2,
