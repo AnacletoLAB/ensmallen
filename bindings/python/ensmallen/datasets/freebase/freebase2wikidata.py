@@ -20,7 +20,7 @@ Please cite the following if you use the data:
 @misc{freebase:datadumps,
   title = "Freebase Data Dumps"
   author = "Google",
-  howpublished = "\url{https://developers.google.com/freebase/data}",
+  howpublished = "\\url{https://developers.google.com/freebase/data}",
 }
 ```
 """
@@ -93,7 +93,7 @@ def FreeBase2WikiData(
 	@misc{freebase:datadumps,
 	  title = "Freebase Data Dumps"
 	  author = "Google",
-	  howpublished = "\url{https://developers.google.com/freebase/data}",
+	  howpublished = "\\url{https://developers.google.com/freebase/data}",
 	}
 	```
     """
