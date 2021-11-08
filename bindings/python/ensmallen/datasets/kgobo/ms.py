@@ -30,7 +30,8 @@ def MS(
     load_nodes: bool = True,
     verbose: int = 2,
     cache: bool = True,
-    cache_path: str = "graphs/kgobo",
+    cache_path: Optional[str] = None,
+    cache_path_system_variable: str = "GRAPH_CACHE_DIR",
     version: str = "4.1.35",
     **additional_graph_kwargs: Dict
 ) -> Graph:
@@ -55,11 +56,16 @@ def MS(
     cache: bool = True
         Whether to use cache, i.e. download files only once
         and preprocess them only once.
-    cache_path: str = "graphs"
+    cache_path: Optional[str] = None,
         Where to store the downloaded graphs.
+        If no path is provided, first we check the system variable
+        provided below is set, otherwise we use the directory `graphs`.
+    cache_path_system_variable: str = "GRAPH_CACHE_DIR",
+        The system variable with the default graph cache directory.
     version: str = "4.1.35"
         The version of the graph to retrieve.		
 	The available versions are:
+			- 4.1.62
 			- 4.1.35
     additional_graph_kwargs: Dict
         Additional graph kwargs.
@@ -92,5 +98,6 @@ def MS(
         verbose=verbose,
         cache=cache,
         cache_path=cache_path,
+        cache_path_system_variable=cache_path_system_variable,
         additional_graph_kwargs=additional_graph_kwargs
     )()

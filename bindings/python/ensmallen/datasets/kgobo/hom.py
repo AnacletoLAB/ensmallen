@@ -30,8 +30,9 @@ def HOM(
     load_nodes: bool = True,
     verbose: int = 2,
     cache: bool = True,
-    cache_path: str = "graphs/kgobo",
-    version: str = "02%3A12%3A2009%2015%3A16",
+    cache_path: Optional[str] = None,
+    cache_path_system_variable: str = "GRAPH_CACHE_DIR",
+    version: str = "2015-01-07",
     **additional_graph_kwargs: Dict
 ) -> Graph:
     """Return new instance of the HOM graph.
@@ -55,13 +56,16 @@ def HOM(
     cache: bool = True
         Whether to use cache, i.e. download files only once
         and preprocess them only once.
-    cache_path: str = "graphs"
+    cache_path: Optional[str] = None,
         Where to store the downloaded graphs.
-    version: str = "02%3A12%3A2009%2015%3A16"
+        If no path is provided, first we check the system variable
+        provided below is set, otherwise we use the directory `graphs`.
+    cache_path_system_variable: str = "GRAPH_CACHE_DIR",
+        The system variable with the default graph cache directory.
+    version: str = "2015-01-07"
         The version of the graph to retrieve.		
 	The available versions are:
 			- 2015-01-07
-			- 02%3A12%3A2009%2015%3A16
     additional_graph_kwargs: Dict
         Additional graph kwargs.
 
@@ -93,5 +97,6 @@ def HOM(
         verbose=verbose,
         cache=cache,
         cache_path=cache_path,
+        cache_path_system_variable=cache_path_system_variable,
         additional_graph_kwargs=additional_graph_kwargs
     )()

@@ -30,8 +30,9 @@ def VT(
     load_nodes: bool = True,
     verbose: int = 2,
     cache: bool = True,
-    cache_path: str = "graphs/kgobo",
-    version: str = "28%3A09%3A2021%2011%3A17",
+    cache_path: Optional[str] = None,
+    cache_path_system_variable: str = "GRAPH_CACHE_DIR",
+    version: str = "04-10-2021-10-15",
     **additional_graph_kwargs: Dict
 ) -> Graph:
     """Return new instance of the VT graph.
@@ -55,13 +56,16 @@ def VT(
     cache: bool = True
         Whether to use cache, i.e. download files only once
         and preprocess them only once.
-    cache_path: str = "graphs"
+    cache_path: Optional[str] = None,
         Where to store the downloaded graphs.
-    version: str = "28%3A09%3A2021%2011%3A17"
+        If no path is provided, first we check the system variable
+        provided below is set, otherwise we use the directory `graphs`.
+    cache_path_system_variable: str = "GRAPH_CACHE_DIR",
+        The system variable with the default graph cache directory.
+    version: str = "04-10-2021-10-15"
         The version of the graph to retrieve.		
 	The available versions are:
-			- 04%3A10%3A2021%2010%3A15
-			- 28%3A09%3A2021%2011%3A17
+			- 04-10-2021-10-15
     additional_graph_kwargs: Dict
         Additional graph kwargs.
 
@@ -93,5 +97,6 @@ def VT(
         verbose=verbose,
         cache=cache,
         cache_path=cache_path,
+        cache_path_system_variable=cache_path_system_variable,
         additional_graph_kwargs=additional_graph_kwargs
     )()

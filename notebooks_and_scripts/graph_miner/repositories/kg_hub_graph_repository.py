@@ -18,15 +18,16 @@ class KGHubGraphRepository(GraphRepository):
         """Returns metadata mined from the KGHub repository."""
         mined_data = {}
         black_list = ["README", ".."]
-        graph_names = ["kg-covid-19", "kg-microbe"]
         graph_names_mapping = {
             "kg-covid-19": "KGCOVID19",
-            "kg-microbe": "KGMicrobe"
+            "kg-microbe": "KGMicrobe",
+            #"kg-idg": "KGIDG",
+            #"eco-kg": "EcoKG"
         }
         root_pattern = "https://kg-hub.berkeleybop.io/{graph_name}/index.html"
         graph_url_pattern = "https://kg-hub.berkeleybop.io/{graph_name}/{version}/{graph_name}.tar.gz"
 
-        for graph_name in graph_names:
+        for graph_name in graph_names_mapping:
             anchors = BeautifulSoup(
                 requests.get(root_pattern.format(graph_name=graph_name)).text,
                 "lxml"

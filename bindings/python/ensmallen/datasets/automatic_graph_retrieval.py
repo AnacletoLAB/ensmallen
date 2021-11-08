@@ -13,6 +13,8 @@ from .get_dataset import validate_graph_version
 
 
 class AutomaticallyRetrievedGraph:
+    """Class definying an automatically retrievable graph."""
+
     def __init__(
         self,
         graph_name: str,

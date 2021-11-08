@@ -71,5 +71,6 @@ def {graph_method_name}(
         verbose=verbose,
         cache=cache,
         cache_path=cache_path,
+        cache_path_system_variable=cache_path_system_variable,
         additional_graph_kwargs=additional_graph_kwargs{callbacks_data}
     )()

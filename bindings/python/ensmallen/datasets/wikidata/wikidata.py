@@ -33,7 +33,8 @@ def WikiData(
     load_nodes: bool = True,
     verbose: int = 2,
     cache: bool = True,
-    cache_path: str = "graphs/wikidata",
+    cache_path: Optional[str] = None,
+    cache_path_system_variable: str = "GRAPH_CACHE_DIR",
     version: str = "latest-truthy",
     **additional_graph_kwargs: Dict
 ) -> Graph:
@@ -58,18 +59,15 @@ def WikiData(
     cache: bool = True
         Whether to use cache, i.e. download files only once
         and preprocess them only once.
-    cache_path: str = "graphs"
+    cache_path: Optional[str] = None,
         Where to store the downloaded graphs.
+        If no path is provided, first we check the system variable
+        provided below is set, otherwise we use the directory `graphs`.
+    cache_path_system_variable: str = "GRAPH_CACHE_DIR",
+        The system variable with the default graph cache directory.
     version: str = "latest-truthy"
         The version of the graph to retrieve.		
 	The available versions are:
-			- wikidata-20210908-truthy-BETA
-			- wikidata-20210910-lexemes-BETA
-			- wikidata-20210913-all-BETA
-			- wikidata-20210915-truthy-BETA
-			- wikidata-20210917-lexemes-BETA
-			- wikidata-20210920-all-BETA
-			- wikidata-20210922-truthy-BETA
 			- wikidata-20210924-lexemes-BETA
 			- wikidata-20210927-all-BETA
 			- wikidata-20210929-truthy-BETA
@@ -83,6 +81,12 @@ def WikiData(
 			- wikidata-20211018-all-BETA
 			- wikidata-20211020-truthy-BETA
 			- wikidata-20211022-lexemes-BETA
+			- wikidata-20211025-all-BETA
+			- wikidata-20211027-truthy-BETA
+			- wikidata-20211029-lexemes-BETA
+			- wikidata-20211101-all-BETA
+			- wikidata-20211103-truthy-BETA
+			- wikidata-20211105-lexemes-BETA
 			- latest-all
 			- latest-lexemes
 			- latest-truthy
@@ -120,5 +124,6 @@ def WikiData(
         verbose=verbose,
         cache=cache,
         cache_path=cache_path,
+        cache_path_system_variable=cache_path_system_variable,
         additional_graph_kwargs=additional_graph_kwargs
     )()

@@ -30,7 +30,8 @@ def PheKnowLator(
     load_nodes: bool = True,
     verbose: int = 2,
     cache: bool = True,
-    cache_path: str = "graphs/pheknowlatorkg",
+    cache_path: Optional[str] = None,
+    cache_path_system_variable: str = "GRAPH_CACHE_DIR",
     version: str = "v3.0.2-2021-10-18.subclass-relationsOnly-owlnets-purified",
     **additional_graph_kwargs: Dict
 ) -> Graph:
@@ -55,8 +56,12 @@ def PheKnowLator(
     cache: bool = True
         Whether to use cache, i.e. download files only once
         and preprocess them only once.
-    cache_path: str = "graphs"
+    cache_path: Optional[str] = None,
         Where to store the downloaded graphs.
+        If no path is provided, first we check the system variable
+        provided below is set, otherwise we use the directory `graphs`.
+    cache_path_system_variable: str = "GRAPH_CACHE_DIR",
+        The system variable with the default graph cache directory.
     version: str = "v3.0.2-2021-10-18.subclass-relationsOnly-owlnets-purified"
         The version of the graph to retrieve.		
 	The available versions are:
@@ -152,6 +157,18 @@ def PheKnowLator(
 			- v2.1.0-2021-9-01.subclass-relationsOnly-owl
 			- v2.1.0-2021-9-01.subclass-relationsOnly-owlnets
 			- v2.1.0-2021-9-01.subclass-relationsOnly-owlnets-purified
+			- v3.0.2-2021-1-01.instance-inverseRelations-owl
+			- v3.0.2-2021-1-01.instance-inverseRelations-owlnets
+			- v3.0.2-2021-1-01.instance-inverseRelations-owlnets-purified
+			- v3.0.2-2021-1-01.instance-relationsOnly-owl
+			- v3.0.2-2021-1-01.instance-relationsOnly-owlnets
+			- v3.0.2-2021-1-01.instance-relationsOnly-owlnets-purified
+			- v3.0.2-2021-1-01.subclass-inverseRelations-owl
+			- v3.0.2-2021-1-01.subclass-inverseRelations-owlnets
+			- v3.0.2-2021-1-01.subclass-inverseRelations-owlnets-purified
+			- v3.0.2-2021-1-01.subclass-relationsOnly-owl
+			- v3.0.2-2021-1-01.subclass-relationsOnly-owlnets
+			- v3.0.2-2021-1-01.subclass-relationsOnly-owlnets-purified
 			- v3.0.2-2021-10-18.instance-inverseRelations-owl
 			- v3.0.2-2021-10-18.instance-inverseRelations-owlnets
 			- v3.0.2-2021-10-18.instance-inverseRelations-owlnets-purified
@@ -195,5 +212,6 @@ def PheKnowLator(
         verbose=verbose,
         cache=cache,
         cache_path=cache_path,
+        cache_path_system_variable=cache_path_system_variable,
         additional_graph_kwargs=additional_graph_kwargs
     )()
