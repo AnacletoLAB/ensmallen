@@ -1,3 +1,5 @@
+"""Module providing class for automatically retrieving graphs."""
+
 import os
 import shutil
 from typing import Callable, Dict, List, Optional
@@ -22,7 +24,8 @@ class AutomaticallyRetrievedGraph:
         automatically_enable_speedups_for_small_graphs: bool = True,
         verbose: int = 2,
         cache: bool = True,
-        cache_path: str = "graphs",
+        cache_path: Optional[str] = None,
+        cache_path_system_variable: str = "GRAPH_CACHE_DIR",
         callbacks: List[Callable] = (),
         callbacks_arguments: List[Dict] = (),
         additional_graph_kwargs: Dict = None
@@ -31,22 +34,22 @@ class AutomaticallyRetrievedGraph:
 
         Parameters
         -------------------
-        graph_name: str,
+        graph_name: str
             The name of the graph to be retrieved and loaded.
-        version: str,
+        version: str
             The version of the graph to be retrieved.
-        repository: str,
+        repository: str
             Name of the repository to load data from.
-        directed: bool = False,
+        directed: bool = False
             Whether to load the graph as directed or undirected.
             By default false.
-        preprocess: bool = True,
+        preprocess: bool = True
             Whether to preprocess the node list and edge list
             to be loaded optimally in both time and memory.
-        load_nodes: bool = True,
+        load_nodes: bool = True
             Whether to load the nodes vocabulary or treat the nodes
             simply as a numeric range.
-        automatically_enable_speedups_for_small_graphs: bool = True,
+        automatically_enable_speedups_for_small_graphs: bool = True
             Whether to enable the Ensmallen time-memory tradeoffs in small graphs
             automatically. By default True, that is, if a graph has less than
             50 million edges. In such use cases the memory expenditure is minimal.
@@ -55,8 +58,12 @@ class AutomaticallyRetrievedGraph:
         cache: bool = True,
             Whether to use cache, i.e. download files only once
             and preprocess them only once.
-        cache_path: str = "graphs",
+        cache_path: Optional[str] = None,
             Where to store the downloaded graphs.
+            If no path is provided, first we check the system variable
+            provided below is set, otherwise we use the directory `graphs`.
+        cache_path_system_variable: str = "GRAPH_CACHE_DIR",
+            The system variable with the default graph cache directory.
         callbacks: List[Callable] = (),
             Eventual callbacks to call after download files.
         callbacks_arguments: List[Dict] = (),
@@ -97,6 +104,15 @@ class AutomaticallyRetrievedGraph:
                 "command, which is only available to our knowledge on Linux and "
                 "macOS systems."
             )
+
+        # If the cache path was not provided
+        # we either check the system variable
+        # and if it is not set we use `graphs`
+        if cache_path is None:
+            cache_path = os.getenv(cache_path_system_variable, "graphs")
+
+        cache_path = os.path.join(cache_path, repository)
+
         self._directed = directed
         self._preprocess = preprocess
         self._load_nodes = load_nodes
@@ -539,7 +555,7 @@ class AutomaticallyRetrievedGraph:
             })
         else:
             # Otherwise just load the graph.
-            graph=Graph.from_csv(**{
+            graph = Graph.from_csv(**{
                 **{
                     key: os.path.join(self._cache_path, value)
                     if key.endswith("_path") else value

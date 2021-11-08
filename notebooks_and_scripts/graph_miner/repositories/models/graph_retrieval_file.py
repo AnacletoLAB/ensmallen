@@ -18,7 +18,8 @@ def {graph_method_name}(
     load_nodes: bool = True,
     verbose: int = 2,
     cache: bool = True,
-    cache_path: str = "graphs/{repository_package_name}",
+    cache_path: Optional[str] = None,
+    cache_path_system_variable: str = "GRAPH_CACHE_DIR",
     version: str = "{default_version}",
     **additional_graph_kwargs: Dict
 ) -> Graph:
@@ -43,8 +44,12 @@ def {graph_method_name}(
     cache: bool = True
         Whether to use cache, i.e. download files only once
         and preprocess them only once.
-    cache_path: str = "graphs"
+    cache_path: Optional[str] = None,
         Where to store the downloaded graphs.
+        If no path is provided, first we check the system variable
+        provided below is set, otherwise we use the directory `graphs`.
+    cache_path_system_variable: str = "GRAPH_CACHE_DIR",
+        The system variable with the default graph cache directory.
     version: str = "{default_version}"
         The version of the graph to retrieve.{available_graph_versions}
     additional_graph_kwargs: Dict
