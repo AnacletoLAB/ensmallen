@@ -1,0 +1,40 @@
+{
+    "FreeBase": {
+        "latest": {
+            "urls": [
+                "http://commondatastorage.googleapis.com/freebase-public/rdf/freebase-rdf-latest.gz"
+            ],
+            "paths": [
+                "freebase.gz"
+            ],
+            "arguments": {
+                "name": "FreeBase",
+                "sources_column_number": 0,
+                "edge_list_edge_types_column_number": 1,
+                "destinations_column_number": 2,
+                "edge_list_header": false,
+                "edge_list_support_balanced_quotes": true,
+                "edge_list_is_correct": true
+            }
+        }
+    },
+    "FreeBase2WikiData": {
+        "latest": {
+            "urls": [
+                "http://storage.googleapis.com/freebase-public/fb2w.nt.gz"
+            ],
+            "paths": [
+                "fb2w.nt.gz"
+            ],
+            "arguments": {
+                "name": "FreeBase2WikiData",
+                "sources_column_number": 0,
+                "edge_list_edge_types_column_number": 1,
+                "destinations_column_number": 2,
+                "edge_list_header": false,
+                "edge_list_support_balanced_quotes": true,
+                "edge_list_is_correct": true
+            }
+        }
+    }
+}
