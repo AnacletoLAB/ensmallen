@@ -549,7 +549,10 @@ class AutomaticallyRetrievedGraph:
                     "edge_type_path": target_edge_type_list_path,
                     "edge_types_column_number": 0,
                     "edge_type_list_is_correct": True,
-                    "edge_type_list_separator": "\t"
+                    "edge_type_list_separator": "\t",
+                    "edge_list_edge_types_column_number": None if metadata["edge_types_number"] is None else 2,
+                    "edge_list_numeric_edge_type_ids": True,
+                    "skip_edge_types_if_unavailable": True,
                 }
             else:
                 edge_types_arguments = {}
@@ -563,12 +566,9 @@ class AutomaticallyRetrievedGraph:
                 "edge_list_header": False,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
-                "edge_list_edge_types_column_number": None if metadata["edge_types_number"] is None else 2,
                 "weights_column_number": 2 + int(metadata["edge_types_number"] is not None),
-                "edge_list_numeric_edge_type_ids": True,
                 "edge_list_numeric_node_ids": True,
                 "skip_weights_if_unavailable": True,
-                "skip_edge_types_if_unavailable": True,
                 "edge_list_is_complete": True,
                 "edge_list_may_contain_duplicates": False,
                 "edge_list_is_sorted": True,
