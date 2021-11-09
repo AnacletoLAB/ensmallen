@@ -67,7 +67,7 @@ class ZenodoGraphRepository(GraphRepository):
                     "edge_list_separator": "\t",
                     "name": specific_graph_name,
                     "sources_column": "page_title_from",
-                    "destinations_column_number": "page_title_to"
+                    "destinations_column": "page_title_to"
                 }
             }
 

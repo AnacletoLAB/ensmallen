@@ -32,7 +32,6 @@ def ChlamydiaMuridarum(
     preprocess: bool = True,
     load_nodes: bool = True,
     load_node_types: bool = True,
-    load_edge_types: bool = True,
     automatically_enable_speedups_for_small_graphs: bool = True,
     sort_temporary_directory: Optional[str] = None,
     verbose: int = 2,
@@ -59,16 +58,7 @@ def ChlamydiaMuridarum(
         simply as a numeric range.
     load_node_types: bool = True,
         Whether to load the node types or skip them entirely.
-        This may be useful for graphs that we currently do not support,
-        where the number of node types is higher than max(u16), roughly 65000.
         This feature is only available when the preprocessing is enabled.
-        TODO: add support for graphs with more than 65000 node types.
-    load_edge_types: bool = True,
-        Whether to load the edge types or skip them entirely.
-        This may be useful for graphs that we currently do not support,
-        where the number of edge types is higher than max(u16), roughly 65000.
-        This feature is only available when the preprocessing is enabled.
-        TODO: add support for graphs with more than 65000 edge types.
     automatically_enable_speedups_for_small_graphs: bool = True
         Whether to enable the Ensmallen time-memory tradeoffs in small graphs
         automatically. By default True, that is, if a graph has less than
@@ -131,7 +121,6 @@ def ChlamydiaMuridarum(
         preprocess=preprocess,
         load_nodes=load_nodes,
         load_node_types=load_node_types,
-        load_edge_types=load_edge_types,
         automatically_enable_speedups_for_small_graphs=automatically_enable_speedups_for_small_graphs,
         sort_temporary_directory=sort_temporary_directory,
         verbose=verbose,

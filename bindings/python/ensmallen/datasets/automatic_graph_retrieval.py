@@ -24,7 +24,6 @@ class AutomaticallyRetrievedGraph:
         preprocess: bool = True,
         load_nodes: bool = True,
         load_node_types: bool = True,
-        load_edge_types: bool = True,
         automatically_enable_speedups_for_small_graphs: bool = True,
         sort_temporary_directory: Optional[str] = None,
         verbose: int = 2,
@@ -57,16 +56,7 @@ class AutomaticallyRetrievedGraph:
             This feature is only available when the preprocessing is enabled.
         load_node_types: bool = True,
             Whether to load the node types or skip them entirely.
-            This may be useful for graphs that we currently do not support,
-            where the number of node types is higher than max(u16), roughly 65000.
             This feature is only available when the preprocessing is enabled.
-            TODO: add support for graphs with more than 65000 node types.
-        load_edge_types: bool = True,
-            Whether to load the edge types or skip them entirely.
-            This may be useful for graphs that we currently do not support,
-            where the number of edge types is higher than max(u16), roughly 65000.
-            This feature is only available when the preprocessing is enabled.
-            TODO: add support for graphs with more than 65000 edge types.
         automatically_enable_speedups_for_small_graphs: bool = True
             Whether to enable the Ensmallen time-memory tradeoffs in small graphs
             automatically. By default True, that is, if a graph has less than
@@ -140,7 +130,6 @@ class AutomaticallyRetrievedGraph:
         self._preprocess = preprocess
         self._load_nodes = load_nodes
         self._load_node_types = load_node_types
-        self._load_edge_types = load_edge_types
         self._name = graph_name
         self._version = version
         self._automatically_enable_speedups_for_small_graphs = automatically_enable_speedups_for_small_graphs
@@ -544,7 +533,7 @@ class AutomaticallyRetrievedGraph:
 
             # If the edge types are provided
             has_edge_types = metadata["edge_types_number"] is not None
-            if has_edge_types and self._load_edge_types:
+            if has_edge_types:
                 edge_types_arguments = {
                     "edge_type_path": target_edge_type_list_path,
                     "edge_types_column_number": 0,
