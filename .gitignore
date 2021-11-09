@@ -6,6 +6,8 @@ hfuzz_workspace
 hfuzz_target
 corpus
 
+# This file is automatically generate so commiting it wouldn't make any sense
+**/compilation_flags.py
 
 # AVOID BINARIES THEY MAKE THE REPO SLOW
 **/*.so
