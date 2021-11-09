@@ -17,6 +17,7 @@ def Isopret(
     preprocess: bool = True,
     load_nodes: bool = True,
     load_node_types: bool = True,
+    load_edge_weights: bool = True,
     automatically_enable_speedups_for_small_graphs: bool = True,
     sort_temporary_directory: Optional[str] = None,
     verbose: int = 2,
@@ -41,8 +42,11 @@ def Isopret(
     load_nodes: bool = True
         Whether to load the nodes vocabulary or treat the nodes
         simply as a numeric range.
-    load_node_types: bool = True,
+    load_node_types: bool = True
         Whether to load the node types or skip them entirely.
+        This feature is only available when the preprocessing is enabled.
+    load_edge_weights: bool = True
+        Whether to load the edge weights if available or skip them entirely.
         This feature is only available when the preprocessing is enabled.
     automatically_enable_speedups_for_small_graphs: bool = True
         Whether to enable the Ensmallen time-memory tradeoffs in small graphs
@@ -84,6 +88,7 @@ def Isopret(
         preprocess=preprocess,
         load_nodes=load_nodes,
         load_node_types=load_node_types,
+        load_edge_weights=load_edge_weights,
         automatically_enable_speedups_for_small_graphs=automatically_enable_speedups_for_small_graphs,
         sort_temporary_directory=sort_temporary_directory,
         verbose=verbose,

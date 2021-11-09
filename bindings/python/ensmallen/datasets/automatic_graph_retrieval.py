@@ -24,6 +24,7 @@ class AutomaticallyRetrievedGraph:
         preprocess: bool = True,
         load_nodes: bool = True,
         load_node_types: bool = True,
+        load_edge_weights: bool = True,
         automatically_enable_speedups_for_small_graphs: bool = True,
         sort_temporary_directory: Optional[str] = None,
         verbose: int = 2,
@@ -54,8 +55,11 @@ class AutomaticallyRetrievedGraph:
             Whether to load the nodes vocabulary or treat the nodes
             simply as a numeric range.
             This feature is only available when the preprocessing is enabled.
-        load_node_types: bool = True,
-            Whether to load the node types or skip them entirely.
+        load_node_types: bool = True
+            Whether to load the node types if available or skip them entirely.
+            This feature is only available when the preprocessing is enabled.
+        load_edge_weights: bool = True
+            Whether to load the edge weights if available or skip them entirely.
             This feature is only available when the preprocessing is enabled.
         automatically_enable_speedups_for_small_graphs: bool = True
             Whether to enable the Ensmallen time-memory tradeoffs in small graphs
@@ -130,6 +134,7 @@ class AutomaticallyRetrievedGraph:
         self._preprocess = preprocess
         self._load_nodes = load_nodes
         self._load_node_types = load_node_types
+        self._load_edge_weights = load_edge_weights
         self._name = graph_name
         self._version = version
         self._automatically_enable_speedups_for_small_graphs = automatically_enable_speedups_for_small_graphs
@@ -545,19 +550,35 @@ class AutomaticallyRetrievedGraph:
                 }
             else:
                 edge_types_arguments = {}
+
+            has_edge_weights = any(
+                column in graph_arguments
+                for column in (
+                    "weights_column_number",
+                    "weights_column",
+                    "default_weight"
+                )
+            )
+            if has_edge_weights and self._load_edge_weights:
+                edge_weights_arguments = {
+                    "weights_column_number": 2 + int(metadata["edge_types_number"] is not None),
+                    "skip_weights_if_unavailable": True,
+                }
+            else:
+                edge_weights_arguments = {}
+
             # Load the graph
             graph = Graph.from_csv(**{
                 **metadata,
                 **nodes_arguments,
                 **edge_types_arguments,
+                **edge_weights_arguments,
 
                 "edge_path": target_edge_path,
                 "edge_list_header": False,
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
-                "weights_column_number": 2 + int(metadata["edge_types_number"] is not None),
                 "edge_list_numeric_node_ids": True,
-                "skip_weights_if_unavailable": True,
                 "edge_list_is_complete": True,
                 "edge_list_may_contain_duplicates": False,
                 "edge_list_is_sorted": True,
