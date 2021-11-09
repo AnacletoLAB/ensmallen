@@ -1,26 +1,44 @@
 """Module offering fast graph processing and graph datasets."""
 
+import os
+from .compilation_flags import FLAGS, TARGET_TRIPLE, OS, CPU_ARCH
+
+# Check that the OS and the CPU Arch match, this should be already done by pip
+# but better check twice 
+if os.uname().sysname.lower().strip() != OS.lower().strip() \
+    or os.uname().machine.lower().strip() != CPU_ARCH.lower().strip():
+    raise ValueError((
+        "This version of the library was compiled for '{}' assuming the ",
+        "following flags '{}'. You souldn't have been able to install this as ",
+        "pip should have already catched this error. ",
+        "Please open an Issue on Github detailing the installation process ",
+        "you used so we can debug it."
+        ).format(TARGET_TRIPLE, FLAGS)
+    )
+
 import cpuinfo
 
-required_flags = ("sse", "sse2", "ssse3", "sse4_1", "sse4_2",
-                  "avx", "avx2", "bmi1", "bmi2", "popcnt")
-
-flags = cpuinfo.get_cpu_info()["flags"]
-
-unavailable_flags = set(required_flags) - set(flags)
+unavailable_flags = set(FLAGS) - set(cpuinfo.get_cpu_info()["flags"])
 
 if len(unavailable_flags) > 0:
     raise ValueError(
         (
-            "This library was compiled assuming that SIMD instruction "
-            "commonly available in CPU hardware since 2013 are present "
-            "on the machine where this library is intended to run.\n"
-            "On the current machine, the flags {} are not available.\n"
-            "You could still compile Ensmallen on this machine and have "
-            "a version of the library that can execute here, but the library "
-            "has been extensively designed to use SIMD instructions, so "
-            "you would have a version slower than the one provided on Pypi."
-        ).format(unavailable_flags)
+            "On the current machine, the flags '{}' are not available.\n"
+            "This library was compiled assuming that the following instruction ",
+            "sets are available: {}\n",
+            "You can solve this issue by manually compiling ensmallen tailoring",
+            " it to your hardware following the guides on our Github repository."
+            " Ensmallen has no strict dependancy on any flag or cpu_arch as it ",
+            "can be compiled for any arch supported by LLVM (Arm, AArch64, Mips,",
+            " ...). Supporting"
+            "\nIn particular, the pip pre-compiled versions are aimed to x86_64",
+            "Cpus with architecture newer or equal to Haswell (2013).",
+            "This is done because we heavily explioit both SSE and AVX ",
+            "instructions which allows great speed-ups of several core routines",
+            "and providing pre-compiled versions for all cpu arches with ",
+            "all flags combinations for all operating systems would have a ",
+            "prohibitive cost."
+        ).format(unavailable_flags, FLAGS)
     )
 
 from .ensmallen import preprocessing  # pylint: disable=import-error
