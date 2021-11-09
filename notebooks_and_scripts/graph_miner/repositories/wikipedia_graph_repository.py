@@ -227,3 +227,45 @@ class WikipediaGraphRepository(GraphRepository):
     def get_graph_list(self) -> List[str]:
         """Return list of graph names."""
         return list(self._data.keys())
+
+    def get_imports(self, graph_name: str, version: str) -> str:
+        """Return imports to be added to model file.
+
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of the graph.
+
+        Returns
+        -----------------------
+        Imports.
+        """
+        return "\n".join(self._data[graph_name][version]["imports"])
+
+    def get_callbacks(self, graph_name: str, version: str) -> List[str]:
+        """Return callbacks to be added to model file.
+
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of the graph.
+
+        Returns
+        -----------------------
+        callbacks.
+        """
+        return [self._data[graph_name][version]["callback"]]
+
+    def get_callbacks_arguments(self, graph_name: str, version: str) -> List[Dict]:
+        """Return dictionary with list of arguments to pass to callbacks.
+
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of the graph to retrieve.
+
+        Returns
+        -----------------------
+        Arguments to pass to callbacks.
+        """
+        return [self._data[graph_name][version]["callback_arguments"]]

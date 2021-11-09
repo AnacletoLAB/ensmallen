@@ -9,7 +9,7 @@ The graph is automatically retrieved from the Wikipedia repository.
 from ...ensmallen import Graph  # pylint: disable=import-error
 from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from typing import Dict, Optional
-
+from ensmallen.edge_list_utils import parse_wikipedia_graph
 
 
 def WikiBooksNA(
@@ -107,5 +107,21 @@ def WikiBooksNA(
         cache=cache,
         cache_path=cache_path,
         cache_path_system_variable=cache_path_system_variable,
-        additional_graph_kwargs=additional_graph_kwargs
+        additional_graph_kwargs=additional_graph_kwargs,
+		callbacks=[
+			parse_wikipedia_graph
+		],
+		callbacks_arguments=[
+		    {
+		        "source": "nawikibooks-latest-pages-articles-multistream.xml.bz2",
+		        "edge_path": "edge_list.tsv",
+		        "node_path": "node_list.tsv",
+		        "node_type_path": "node_type_list.tsv",
+		        "node_types_separator": "|",
+		        "nodes_column": "id",
+		        "node_list_node_types_column": "category",
+		        "sources_column": "sources",
+		        "destinations_column": "destinations"
+		    }
+		]
     )()
