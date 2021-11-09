@@ -4,7 +4,8 @@ import requests
 
 
 @Cache(
-    cache_path="cached_pages/{_hash}.txt"
+    cache_path="cached_pages/{_hash}.txt",
+    validity_duration=60*60*24
 )
 def get_cached_page(url: str) -> str:
     """Returns text from the given page url."""

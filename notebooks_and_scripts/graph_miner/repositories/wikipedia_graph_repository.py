@@ -1,56 +1,37 @@
-"""Sub-module handling the retrieval and building of graphs from WikiData."""
+"""Sub-module handling the retrieval and building of graphs from Wikipedia."""
 from typing import List, Dict
-import os
 import requests
-from bs4 import BeautifulSoup
-import pandas as pd
 from tqdm.auto import tqdm
+from bs4 import BeautifulSoup
 from .graph_repository import GraphRepository
+from ..utils import get_cached_page
 
 
-def ntriples_filter(anchor_text: str) -> bool:
-    """Returns whether to keep a given anchor for wikidata.
-
-    Parameters
-    -------------------------
-    anchor_text: str
-        The anchor text
-    """
-    return anchor_text.endswith(".nt.gz")
-
-
-def root_white_list_filter(anchor_text: str) -> bool:
-    """Returns whether to keep a given anchor for wikidata.
+def normalize_wikipedia_graph_name(graph_name: str) -> str:
+    """Return given wikipedia graph name normalized.
 
     Parameters
-    -------------------------
-    anchor_text: str
-        The anchor text
+    ------------------------
+    graph_name: str
+        Graph name to be normalized
     """
-    return ntriples_filter(anchor_text) or anchor_text.strip("/").isnumeric()
+    well_formed = {
+        "wiki": "Wiki",
+        "wikimedia": "WikiMedia",
+        "wikisource": "WikiSource",
+        "wikiquote": "WikiQuote",
+        "wikivoyage": "WikiVoyage",
+        "wikibooks": "WikiBooks",
+        "wikinews": "WikiNews",
+        "wikiversity": "Wikiversity",
+    }
+    return "{}{}".format(
+        well_formed[graph_name[2:]],
+        graph_name[:2].upper(),
+    )
 
 
-def get_wikidata_anchors_from_url(url: str, is_root: bool) -> List[str]:
-    """Returns anchor names from the given wikidata url.
-
-    Parameters
-    -------------------------
-    url: str
-        The url from where to retrieve the data.
-    is_root: bool
-        Whether this url is root.
-    """
-    return [
-        anchor.text
-        for anchor in BeautifulSoup(
-            requests.get(url).text,
-            "lxml"
-        ).find_all("a")
-        if is_root and root_white_list_filter(anchor.text) or not is_root and ntriples_filter(anchor.text)
-    ]
-
-
-class WikiDataGraphRepository(GraphRepository):
+class WikipediaGraphRepository(GraphRepository):
 
     def __init__(self):
         """Create new String Graph Repository object."""
@@ -58,53 +39,81 @@ class WikiDataGraphRepository(GraphRepository):
         self._data = self.get_data()
 
     def get_data(self) -> Dict:
-        """Returns metadata mined from the WikiData repository."""
-        mined_data = {
-            "WikiData": {}
-        }
-        url = "https://dumps.wikimedia.org/wikidatawiki/entities/"
-        sub_url_pattern = "https://dumps.wikimedia.org/wikidatawiki/entities/{}"
+        """Returns metadata mined from the Wikipedia repository."""
+        main_url = "https://dumps.wikimedia.org/backup-index.html"
+        root_url_pattern = "https://dumps.wikimedia.org/{main_root}/"
+        data_url_pattern = "https://dumps.wikimedia.org/{main_root}/{version}/{main_root}-{version}-pages-articles-multistream.xml.bz2"
+        edge_path_pattern = "{main_root}-{version}-pages-articles-multistream.xml.bz2"
+        versions_black_list = ["../"]
 
-        anchors = get_wikidata_anchors_from_url(url, is_root=True)
-        all_versions = [
-            dict(
-                file_name=sub_anchor.replace(".nt.gz", ".nt"),
-                url=sub_url_pattern.format(anchor + sub_anchor),
-                version=sub_anchor.replace(".nt.gz", "")
-            )
-            for anchor in tqdm(
-                anchors,
-                desc="Retrieve the anchors from WikiData dumps",
-                leave=False
-            )
-            if not ntriples_filter(anchor)
-            for sub_anchor in get_wikidata_anchors_from_url(
-                sub_url_pattern.format(anchor),
-                is_root=False
-            )
-        ] + [
-            dict(
-                file_name=anchor.replace(".nt.gz", ".nt"),
-                url=sub_url_pattern.format(anchor),
-                version=anchor.replace(".nt.gz", "")
-            )
-            for anchor in anchors
-            if ntriples_filter(anchor)
+        soup = BeautifulSoup(get_cached_page(main_url), "lxml")
+        main_roots = [
+            anchor["href"].split("/")[0]
+            for anchor in soup.find_all("a")
+            if anchor["href"][2:6] == "wiki"
         ]
 
-        for graph_data in all_versions:
-            mined_data["WikiData"][graph_data["version"]] = {
-                "urls": [graph_data["url"]],
-                "arguments": {
-                    "edge_path": graph_data["file_name"],
-                    "name": "Wikidata",
-                    "sources_column_number": 0,
-                    "edge_list_edge_types_column_number": 1,
-                    "destinations_column_number": 2,
-                    "edge_list_header": False,
-                    "edge_list_support_balanced_quotes": True,
-                    "edge_list_is_correct": True,
+        mined_data = {}
+        kwargs = {
+            "edge_path": "edge_list.tsv",
+            "node_path": "node_list.tsv",
+            "node_type_path": "node_type_list.tsv",
+            "node_types_separator": "|",
+            "nodes_column": "id",
+            "node_list_node_types_column": "category",
+            "sources_column": "sources",
+            "destinations_column": "destinations",
+        }
+
+        for main_root in tqdm(
+            main_roots,
+            desc="Parsing Wikipedia graphs",
+            leave=False
+        ):
+            soup = BeautifulSoup(get_cached_page(root_url_pattern.format(
+                main_root=main_root
+            )), "lxml")
+            graph_name = normalize_wikipedia_graph_name(main_root)
+            versions = [
+                anchor["href"][:-1]
+                for anchor in soup.find_all("a")
+                if anchor["href"] not in versions_black_list
+            ]
+            mined_data[graph_name] = {
+                version: {
+                    "urls": [
+                        data_url_pattern.format(
+                            main_root=main_root,
+                            version=version
+                        )
+                    ],
+                    "paths": [
+                        edge_path_pattern.format(
+                            main_root=main_root,
+                            version=version
+                        )
+                    ],
+                    "callback": "parse_wikipedia_graph",
+                    "callback_arguments": {
+                        "source": edge_path_pattern.format(
+                            main_root=main_root,
+                            version=version
+                        ),
+                        **kwargs
+                    },
+                    "imports": [
+                        "from ensmallen.edge_list_utils import parse_wikipedia_graph"
+                    ],
+                    "arguments": {
+                        **kwargs,
+                        "edge_list_support_balanced_quotes": True,
+                        "edge_list_is_correct": True,
+                        "node_list_is_correct": True,
+                        "node_type_list_is_correct": True,
+                        "name": graph_name,
+                    }
                 }
+                for version in versions
             }
         return mined_data
 
@@ -124,7 +133,7 @@ class WikiDataGraphRepository(GraphRepository):
 
     def get_formatted_repository_name(self) -> str:
         """Return formatted repository name."""
-        return "WikiData"
+        return "Wikipedia"
 
     def get_graph_arguments(
         self,
@@ -195,40 +204,26 @@ class WikiDataGraphRepository(GraphRepository):
 
         Returns
         -----------------------
-        Citations relative to the WikiData graphs
+        Citations relative to the Wikipedia graphs
         """
-        return [
-            open(
-                "{}/models/wikidata.bib".format(
-                    os.path.dirname(os.path.abspath(__file__)),
-                    graph_name
-                ),
-                "r"
-            ).read()
-        ]
+        return None
 
-    def get_graph_paths(self, graph_name: str, urls: List[str]) -> List[str]:
+    def get_graph_paths(self, graph_name: str, version: str) -> List[str]:
         """Return url for the given graph.
 
         Parameters
         -----------------------
         graph_name: str,
-            Name of graph to retrievel URLs for.
-        urls: List[str],
-            Urls from where to download the graphs.
+            Name of graph to retrievel paths for.
+        version: str,
+            Version to retrieve this information for.
 
         Returns
         -----------------------
         The paths where to store the downloaded graphs.
-
-        Implementative details
-        -----------------------
-        It is returned None because the path that is automatically
-        used by downloader is sufficiently precise.
         """
-        return None
+        return self._data[graph_name][version].get("paths")
 
     def get_graph_list(self) -> List[str]:
         """Return list of graph names."""
         return list(self._data.keys())
-
