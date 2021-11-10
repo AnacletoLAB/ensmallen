@@ -19,4 +19,4 @@ To build it locally running the following command should be enough.
 make python
 ```
 
-See [this page](https://github.com/LucaCappelletti94/ensmallen/blob/master/bindings/python/README.md) to compile the bindings yourself.
+See [this page](https://github.com/AnacletoLAB/ensmallen/blob/master/bindings/python/README.md) to compile the bindings yourself.
