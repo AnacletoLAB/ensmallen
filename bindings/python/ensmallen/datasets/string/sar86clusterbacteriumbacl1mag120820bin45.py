@@ -85,8 +85,8 @@ def Sar86ClusterBacteriumBacl1Mag120820Bin45(
     cache_path_system_variable: str = "GRAPH_CACHE_DIR"
         The system variable with the default graph cache directory.
     version: str = "links.v11.5"
-        The version of the graph to retrieve.		
-	The available versions are:
+        The version of the graph to retrieve.	
+		The available versions are:
 			- homology.v11.5
 			- physical.links.v11.5
 			- links.v11.5

@@ -436,7 +436,7 @@ class GraphRepository:
         """Return versions available."""
         if versions == ["latest"]:
             return ""
-        return "\t\nThe available versions are:\n{}".format("\n".join([
+        return "\n\tThe available versions are:\n{}".format("\n".join([
             "\t\t- {}".format(version)
             for version in versions
         ]))

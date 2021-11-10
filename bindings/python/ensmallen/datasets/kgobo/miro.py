@@ -82,8 +82,8 @@ def MIRO(
     cache_path_system_variable: str = "GRAPH_CACHE_DIR"
         The system variable with the default graph cache directory.
     version: str = "11%3A04%3A2014%2011%3A14"
-        The version of the graph to retrieve.		
-	The available versions are:
+        The version of the graph to retrieve.	
+		The available versions are:
 			- 2014-05-14
 			- 11%3A04%3A2014%2011%3A14
     additional_graph_kwargs: Dict

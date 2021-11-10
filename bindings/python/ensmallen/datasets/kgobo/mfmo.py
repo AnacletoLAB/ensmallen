@@ -82,8 +82,8 @@ def MFMO(
     cache_path_system_variable: str = "GRAPH_CACHE_DIR"
         The system variable with the default graph cache directory.
     version: str = "2013-11-16"
-        The version of the graph to retrieve.		
-	The available versions are:
+        The version of the graph to retrieve.	
+		The available versions are:
 			- 2013-11-16
     additional_graph_kwargs: Dict
         Additional graph kwargs.

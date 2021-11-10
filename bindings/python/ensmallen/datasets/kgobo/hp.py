@@ -82,8 +82,8 @@ def HP(
     cache_path_system_variable: str = "GRAPH_CACHE_DIR"
         The system variable with the default graph cache directory.
     version: str = "2021-08-02"
-        The version of the graph to retrieve.		
-	The available versions are:
+        The version of the graph to retrieve.	
+		The available versions are:
 			- 2021-10-10
 			- 2021-08-02
     additional_graph_kwargs: Dict

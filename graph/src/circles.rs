@@ -24,7 +24,7 @@ impl ToString for Circle {
                     &self
                         .get_circle_node_ids()
                         .into_iter()
-                        .map(|node_id| self.graph.get_unchecked_succinct_node_description(node_id))
+                        .map(|node_id| self.graph.get_unchecked_succinct_node_description(node_id, 2))
                         .collect::<Vec<String>>(),
                     Some(5)
                 )

@@ -82,8 +82,8 @@ def OGG(
     cache_path_system_variable: str = "GRAPH_CACHE_DIR"
         The system variable with the default graph cache directory.
     version: str = "12-01-2016"
-        The version of the graph to retrieve.		
-	The available versions are:
+        The version of the graph to retrieve.	
+		The available versions are:
 			- 12-01-2016
     additional_graph_kwargs: Dict
         Additional graph kwargs.

@@ -65,8 +65,8 @@ def WikiMediaBE(
     cache_path_system_variable: str = "GRAPH_CACHE_DIR"
         The system variable with the default graph cache directory.
     version: str = "latest"
-        The version of the graph to retrieve.		
-	The available versions are:
+        The version of the graph to retrieve.	
+		The available versions are:
 			- 20210620
 			- 20210701
 			- 20210720

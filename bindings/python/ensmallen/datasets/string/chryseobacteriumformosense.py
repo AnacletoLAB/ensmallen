@@ -85,8 +85,8 @@ def ChryseobacteriumFormosense(
     cache_path_system_variable: str = "GRAPH_CACHE_DIR"
         The system variable with the default graph cache directory.
     version: str = "links.v11.5"
-        The version of the graph to retrieve.		
-	The available versions are:
+        The version of the graph to retrieve.	
+		The available versions are:
 			- homology.v11.0
 			- homology.v11.5
 			- physical.links.v11.0

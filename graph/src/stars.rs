@@ -18,14 +18,14 @@ impl ToString for Star {
                 "Specifically, the nodes involved in the star are: {}.</p>",
             ),
             to_human_readable_high_integer(self.len() as usize),
-            unsafe{self.graph.get_unchecked_succinct_node_description(self.get_root_node_id())},
+            unsafe{self.graph.get_unchecked_succinct_node_description(self.get_root_node_id(), 1)},
             unsafe {
                 get_unchecked_formatted_list(
                     &self
                         .get_star_node_ids()
                         .into_iter()
                         .skip(1)
-                        .map(|node_id| self.graph.get_unchecked_succinct_node_description(node_id))
+                        .map(|node_id| self.graph.get_unchecked_succinct_node_description(node_id, 1))
                         .collect::<Vec<String>>(),
                         Some(5)
                 )

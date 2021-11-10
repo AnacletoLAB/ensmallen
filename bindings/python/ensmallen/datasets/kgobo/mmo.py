@@ -82,8 +82,8 @@ def MMO(
     cache_path_system_variable: str = "GRAPH_CACHE_DIR"
         The system variable with the default graph cache directory.
     version: str = "2.39"
-        The version of the graph to retrieve.		
-	The available versions are:
+        The version of the graph to retrieve.	
+		The available versions are:
 			- 2.39
     additional_graph_kwargs: Dict
         Additional graph kwargs.

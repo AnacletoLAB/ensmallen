@@ -82,8 +82,8 @@ def PheKnowLator(
     cache_path_system_variable: str = "GRAPH_CACHE_DIR"
         The system variable with the default graph cache directory.
     version: str = "v3.0.2-2021-10-18.subclass-relationsOnly-owlnets-purified"
-        The version of the graph to retrieve.		
-	The available versions are:
+        The version of the graph to retrieve.	
+		The available versions are:
 			- v2.0.0-2020-5-10.instance-inverseRelations-owl
 			- v2.0.0-2020-5-10.instance-inverseRelations-owlnets
 			- v2.0.0-2020-5-10.instance-relationsOnly-owl

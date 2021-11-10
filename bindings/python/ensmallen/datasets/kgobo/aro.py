@@ -82,8 +82,8 @@ def ARO(
     cache_path_system_variable: str = "GRAPH_CACHE_DIR"
         The system variable with the default graph cache directory.
     version: str = "05-10-2021-09-37"
-        The version of the graph to retrieve.		
-	The available versions are:
+        The version of the graph to retrieve.	
+		The available versions are:
 			- 05-10-2021-09-37
     additional_graph_kwargs: Dict
         Additional graph kwargs.

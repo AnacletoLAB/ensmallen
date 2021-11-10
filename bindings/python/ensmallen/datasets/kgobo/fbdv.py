@@ -82,8 +82,8 @@ def FBDV(
     cache_path_system_variable: str = "GRAPH_CACHE_DIR"
         The system variable with the default graph cache directory.
     version: str = "2021-09-01"
-        The version of the graph to retrieve.		
-	The available versions are:
+        The version of the graph to retrieve.	
+		The available versions are:
 			- 2021-10-13
 			- 2021-09-01
     additional_graph_kwargs: Dict

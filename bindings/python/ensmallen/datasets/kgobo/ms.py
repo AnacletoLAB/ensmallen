@@ -82,8 +82,8 @@ def MS(
     cache_path_system_variable: str = "GRAPH_CACHE_DIR"
         The system variable with the default graph cache directory.
     version: str = "4.1.35"
-        The version of the graph to retrieve.		
-	The available versions are:
+        The version of the graph to retrieve.	
+		The available versions are:
 			- 4.1.62
 			- 4.1.35
     additional_graph_kwargs: Dict

@@ -65,6 +65,7 @@ pub fn parse_wikipedia_graph(
     nodes_column: &str,
     node_types_column: &str,
     node_list_node_types_column: &str,
+    node_descriptions_column: &str,
     edge_list_separator: char,
     sort_temporary_directory: Option<String>,
     directed: bool,
@@ -78,7 +79,11 @@ pub fn parse_wikipedia_graph(
         .set_separator(Some(node_list_separator))?
         .set_node_types_separator(Some(node_types_separator))?
         .set_nodes_column(Some(nodes_column))
+        .set_nodes_column_number(Some(0))
         .set_node_types_column(Some(node_list_node_types_column))
+        .set_node_types_column_number(Some(1))
+        .set_node_descriptions_column(Some(node_descriptions_column))
+        .set_node_descriptions_column_number(Some(2))
         .set_numeric_node_type_ids(Some(true));
 
     let mut nodes_stream = nodes_writer.start_writer()?;
@@ -101,13 +106,31 @@ pub fn parse_wikipedia_graph(
 
     // Create the required regex.
     // First we create the regex to recognize titles.
-    let title_regex = Regex::new(r"^<title>([^<]+)<\/title>$").unwrap();
+    let title_regex = Regex::new(r"^<title>([^<]+)</title>$").unwrap();
     // Then we create the regex to recognize the end of a page.
     let end_of_page_regex = Regex::new(r"^</page>$").unwrap();
     // Then we define the regex to extract the destination nodes.
     let destination_nodes_regex = Regex::new(r"\[\[([^\]]+?)(?:\|[^\]]+?)?\]\]").unwrap();
     // Then we define the regex to extract the node types.
-    let node_types_regex = Regex::new(r"^\[\[en:Category:([^\]]+?)\]\]$").unwrap();
+    let categories = [
+        "Category",
+        "Categoria",
+        "Категория",
+        "Kategória",
+        "Kategorie",
+        "Κατηγορία",
+        "Categoría",
+        "Luokka",
+        "Kategori",
+        "კატეგორია",
+        "분류",
+        "Kategorija"
+    ];
+
+    let node_types_regex = Regex::new(&format!(
+        r"^\[\[[^\]]*?(?:{}):([^\]]+?)\]\]$",
+        categories.join("|")
+    )).unwrap();
     // Start to read of the file.
     info!("Starting to build the node list and node type list.");
     // Initialize the current node name.
@@ -155,8 +178,8 @@ pub fn parse_wikipedia_graph(
         }
         // Check if the line contains a title if we don't currently have one.
         if current_node_name.is_none() {
-            if let Some(title) = title_regex.find(&line) {
-                current_node_name = Some(title.as_str().to_owned());
+            if let Some(captures) = title_regex.captures(&line) {
+                current_node_name = Some(captures[1].to_owned());
             }
             continue;
         }
@@ -165,8 +188,8 @@ pub fn parse_wikipedia_graph(
             continue;
         }
         // Check if the line is a node type.
-        if let Some(node_type) = node_types_regex.find(&line) {
-            let node_type_name = node_type.as_str().to_owned();
+        if let Some(captures) = node_types_regex.captures(&line) {
+            let node_type_name = captures[1].to_owned();
             // Get the node type ID and insert the original string into the dictionary.
             let (node_type_id, was_already_present) =
                 node_types_vocabulary.insert(&node_type_name)?;
@@ -206,9 +229,9 @@ pub fn parse_wikipedia_graph(
         }
         // Finally, we parse the line and extract the destination nodes.
         for destination_node_name in destination_nodes_regex
-            .find_iter(&line)
+            .captures_iter(&line)
             .into_iter()
-            .map(|destination_node_name| destination_node_name.as_str().to_owned())
+            .map(|destination_node_name| destination_node_name[1].to_owned())
         {
             let (destination_node_id, was_already_present) =
                 nodes_vocabulary.insert(&destination_node_name)?;

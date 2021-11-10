@@ -82,8 +82,8 @@ def STATO(
     cache_path_system_variable: str = "GRAPH_CACHE_DIR"
         The system variable with the default graph cache directory.
     version: str = "release"
-        The version of the graph to retrieve.		
-	The available versions are:
+        The version of the graph to retrieve.	
+		The available versions are:
 			- RC1.4
 			- release
     additional_graph_kwargs: Dict

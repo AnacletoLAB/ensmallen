@@ -43,7 +43,6 @@ class WikipediaGraphRepository(GraphRepository):
         main_url = "https://dumps.wikimedia.org/backup-index.html"
         root_url_pattern = "https://dumps.wikimedia.org/{main_root}/"
         data_url_pattern = "https://dumps.wikimedia.org/{main_root}/{version}/{main_root}-{version}-pages-articles-multistream.xml.bz2"
-        edge_path_pattern = "{main_root}-{version}-pages-articles-multistream.xml"
         compressed_edge_path_pattern = "{main_root}-{version}-pages-articles-multistream.xml.bz2"
         versions_black_list = ["../"]
 
@@ -94,10 +93,6 @@ class WikipediaGraphRepository(GraphRepository):
                             version=version
                         )
                     ],
-                    "source_path": edge_path_pattern.format(
-                        main_root=main_root,
-                        version=version
-                    ),
                     "arguments": {
                         "edge_list_support_balanced_quotes": True,
                         "name": graph_name,

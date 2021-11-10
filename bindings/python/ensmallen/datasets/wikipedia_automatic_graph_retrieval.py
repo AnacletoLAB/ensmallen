@@ -113,11 +113,12 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
         if not self._cache and os.path.exists(root):
             shutil.rmtree(root)
 
+        paths = self.get_adjusted_graph_paths()
         if not os.path.exists(root):
             # Download the necessary data
             self._downloader.download(
                 self._graph["urls"],
-                self.get_adjusted_graph_paths()
+                paths
             )
 
         os.makedirs(root, exist_ok=True)
@@ -132,7 +133,7 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
                 nodes_number,
                 edges_number
             ) = edge_list_utils.parse_wikipedia_graph(
-                source_path=graph_arguments["source_path"],
+                source_path=paths[0].replace(".bz2", ""),
                 edge_path=edge_path,
                 node_path=node_path,
                 node_type_path=node_type_list_path,
@@ -142,6 +143,7 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
                 nodes_column="node_names",
                 node_types_column="node_type_names",
                 node_list_node_types_column="node_type_names",
+                node_descriptions_column="node_descriptions",
                 edge_list_separator="\t",
                 sort_temporary_directory=self._sort_temporary_directory,
                 directed=self._directed,
@@ -188,6 +190,7 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
         # Load the graph
         graph = Graph.from_csv(**{
             **metadata,
+            **graph_arguments,
             **nodes_arguments,
 
             "edge_path": edge_path,
