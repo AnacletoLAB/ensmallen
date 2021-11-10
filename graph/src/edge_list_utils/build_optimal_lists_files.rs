@@ -9,13 +9,14 @@ use log::info;
 /// TODO: write the docstring
 pub fn build_optimal_lists_files(
     original_node_type_path: Option<String>,
-    original_node_type_list_separator: Option<String>,
+    original_node_type_list_separator: Option<char>,
     original_node_types_column_number: Option<usize>,
     original_node_types_column: Option<String>,
     original_numeric_node_type_ids: Option<bool>,
     original_minimum_node_type_id: Option<NodeTypeT>,
 
     original_node_type_list_header: Option<bool>,
+    original_node_type_list_support_balanced_quotes: Option<bool>,
     original_node_type_list_rows_to_skip: Option<usize>,
     original_node_type_list_max_rows_number: Option<usize>,
     original_node_type_list_comment_symbol: Option<String>,
@@ -24,14 +25,15 @@ pub fn build_optimal_lists_files(
     mut node_types_number: Option<NodeTypeT>,
 
     target_node_type_list_path: Option<String>,
-    target_node_type_list_separator: Option<String>,
+    target_node_type_list_separator: Option<char>,
     mut target_node_type_list_node_types_column_number: Option<usize>,
     mut target_node_type_list_node_types_column: Option<String>,
     target_node_type_list_header: Option<bool>,
 
     mut original_node_path: Option<String>,
-    mut original_node_list_separator: Option<String>,
+    mut original_node_list_separator: Option<char>,
     mut original_node_list_header: Option<bool>,
+    original_node_list_support_balanced_quotes: Option<bool>,
     node_list_rows_to_skip: Option<usize>,
     mut node_list_is_correct: Option<bool>,
     node_list_max_rows_number: Option<usize>,
@@ -39,7 +41,7 @@ pub fn build_optimal_lists_files(
     default_node_type: Option<String>,
     mut original_nodes_column_number: Option<usize>,
     mut original_nodes_column: Option<String>,
-    original_node_types_separator: Option<String>,
+    original_node_types_separator: Option<char>,
     original_node_list_node_types_column_number: Option<usize>,
     original_node_list_node_types_column: Option<String>,
     mut nodes_number: Option<NodeT>,
@@ -51,21 +53,22 @@ pub fn build_optimal_lists_files(
     mut maximum_node_id: Option<EdgeT>,
 
     target_node_path: Option<String>,
-    mut target_node_list_separator: Option<String>,
+    mut target_node_list_separator: Option<char>,
     target_node_list_header: Option<bool>,
     mut target_nodes_column: Option<String>,
     mut target_nodes_column_number: Option<usize>,
-    target_node_types_separator: Option<String>,
+    target_node_types_separator: Option<char>,
     mut target_node_list_node_types_column: Option<String>,
     mut target_node_list_node_types_column_number: Option<usize>,
 
     original_edge_type_path: Option<String>,
-    original_edge_type_list_separator: Option<String>,
+    original_edge_type_list_separator: Option<char>,
     original_edge_types_column_number: Option<usize>,
     original_edge_types_column: Option<String>,
     original_numeric_edge_type_ids: Option<bool>,
     original_minimum_edge_type_id: Option<EdgeTypeT>,
     original_edge_type_list_header: Option<bool>,
+    original_edge_type_list_support_balanced_quotes: Option<bool>,
     edge_type_list_rows_to_skip: Option<usize>,
     edge_type_list_max_rows_number: Option<usize>,
     edge_type_list_comment_symbol: Option<String>,
@@ -74,14 +77,15 @@ pub fn build_optimal_lists_files(
     edge_types_number: Option<NodeTypeT>,
 
     target_edge_type_list_path: Option<String>,
-    target_edge_type_list_separator: Option<String>,
+    target_edge_type_list_separator: Option<char>,
     mut target_edge_type_list_edge_types_column_number: Option<usize>,
     mut target_edge_type_list_edge_types_column: Option<String>,
     target_edge_type_list_header: Option<bool>,
 
     original_edge_path: String,
-    original_edge_list_separator: Option<String>,
+    original_edge_list_separator: Option<char>,
     original_edge_list_header: Option<bool>,
+    original_edge_list_support_balanced_quotes: Option<bool>,
     original_sources_column_number: Option<usize>,
     original_sources_column: Option<String>,
     original_destinations_column_number: Option<usize>,
@@ -102,8 +106,10 @@ pub fn build_optimal_lists_files(
     mut edges_number: Option<EdgeT>,
 
     target_edge_path: String,
-    target_edge_list_separator: Option<String>,
+    target_edge_list_separator: Option<char>,
 
+    numeric_rows_are_surely_smaller_than_original: Option<bool>,
+    sort_temporary_directory: Option<String>,
     verbose: Option<bool>,
     directed: bool,
     name: Option<String>,
@@ -187,6 +193,7 @@ pub fn build_optimal_lists_files(
             original_numeric_node_type_ids,
             original_minimum_node_type_id,
             original_node_type_list_header,
+            original_node_type_list_support_balanced_quotes,
             original_node_type_list_rows_to_skip,
             original_node_type_list_is_correct,
             original_node_type_list_max_rows_number,
@@ -200,6 +207,7 @@ pub fn build_optimal_lists_files(
             original_node_path.clone(),
             original_node_list_separator,
             original_node_list_header,
+            original_node_list_support_balanced_quotes,
             node_list_rows_to_skip,
             node_list_max_rows_number,
             node_list_comment_symbol.clone(),
@@ -247,24 +255,29 @@ pub fn build_optimal_lists_files(
     // We always treat as non-numeric the nodes if the
     // node list vocabulary has been provided.
     info!("Computing whether the edge list has numeric node IDs.");
-    let numeric_edge_list_node_ids = !original_node_path.is_some()
-        && (original_edge_list_numeric_node_ids.unwrap_or(false)
-            || is_numeric_edge_list(
-                original_edge_path.as_ref(),
-                original_edge_list_separator.clone(),
-                original_edge_list_header,
-                original_sources_column.clone(),
-                original_sources_column_number,
-                original_destinations_column.clone(),
-                original_destinations_column_number,
-                edge_list_comment_symbol.clone(),
-                edge_list_max_rows_number,
-                edge_list_rows_to_skip,
-                None,
-                load_edge_list_in_parallel,
-                verbose,
-                name.clone(),
-            )?);
+    let numeric_edge_list_node_ids = original_node_path.is_none()
+        && original_edge_list_numeric_node_ids.map_or_else(
+            || {
+                is_numeric_edge_list(
+                    original_edge_path.as_ref(),
+                    original_edge_list_separator.clone(),
+                    original_edge_list_header,
+                    original_edge_list_support_balanced_quotes,
+                    original_sources_column.clone(),
+                    original_sources_column_number,
+                    original_destinations_column.clone(),
+                    original_destinations_column_number,
+                    edge_list_comment_symbol.clone(),
+                    edge_list_max_rows_number,
+                    edge_list_rows_to_skip,
+                    None,
+                    load_edge_list_in_parallel,
+                    verbose,
+                    name.clone(),
+                )
+            },
+            |value| Ok(value),
+        )?;
 
     // We identify if the edge list is meant to have edge types
     let has_edge_types = original_edge_list_edge_types_column.is_some()
@@ -358,6 +371,7 @@ pub fn build_optimal_lists_files(
             edges_number.map(|edges_number| edges_number as usize),
             skip_edge_types_if_unavailable,
             skip_weights_if_unavailable,
+            numeric_rows_are_surely_smaller_than_original,
             directed,
             verbose,
             name.clone(),
@@ -368,6 +382,7 @@ pub fn build_optimal_lists_files(
             original_node_path,
             original_node_list_separator,
             original_node_list_header,
+            original_node_list_support_balanced_quotes,
             node_list_rows_to_skip,
             node_list_is_correct,
             node_list_max_rows_number,
@@ -386,6 +401,7 @@ pub fn build_optimal_lists_files(
             original_minimum_edge_type_id,
             original_edge_type_list_separator,
             original_edge_type_list_header,
+            original_edge_type_list_support_balanced_quotes,
             edge_type_list_rows_to_skip,
             edge_type_list_is_correct,
             edge_type_list_max_rows_number,
@@ -394,6 +410,7 @@ pub fn build_optimal_lists_files(
             original_edge_path.as_ref(),
             original_edge_list_separator.clone(),
             original_edge_list_header,
+            original_edge_list_support_balanced_quotes,
             original_sources_column_number,
             original_sources_column.clone(),
             original_destinations_column_number,
@@ -435,6 +452,7 @@ pub fn build_optimal_lists_files(
             edges_number.map(|edges_number| edges_number as usize),
             skip_edge_types_if_unavailable,
             skip_weights_if_unavailable,
+            numeric_rows_are_surely_smaller_than_original,
             directed,
             verbose,
             name.clone(),
@@ -455,6 +473,7 @@ pub fn build_optimal_lists_files(
         if has_edge_types { Some(2) } else { None },
         None,
         None,
+        sort_temporary_directory,
     )?;
 
     // Add the edge IDs to the edge list

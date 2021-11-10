@@ -10,11 +10,13 @@
 #![warn(unused_macros)]
 #![feature(is_sorted)]
 #![feature(map_first_last)]
+#![feature(exit_status_error)]
 #![feature(core_intrinsics)]
 #![type_length_limit = "3764086"]
 #![feature(exclusive_range_pattern)]
 #![feature(option_result_unwrap_unchecked)]
 #![feature(macro_attributes_in_derive_output)]
+use std::sync::Arc;
 
 mod vocabulary;
 pub use self::vocabulary::*;
@@ -63,6 +65,7 @@ pub use self::utils::*;
 mod bitmaps;
 mod centrality;
 mod dense;
+mod distributions;
 mod edge_list_utils;
 mod edge_lists;
 mod edge_metrics;
@@ -83,6 +86,7 @@ mod remap;
 mod remove;
 mod selfloops;
 mod setters;
+mod shortest_paths_node_embedding;
 mod sort;
 mod tarjan;
 mod tfidf;
@@ -149,3 +153,12 @@ pub use nodes_sampling::*;
 
 mod subgraphs;
 pub use subgraphs::*;
+
+mod chains;
+pub use chains::*;
+
+mod circles;
+pub use circles::*;
+
+mod stars;
+pub use stars::*;

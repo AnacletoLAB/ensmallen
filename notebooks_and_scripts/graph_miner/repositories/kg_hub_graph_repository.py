@@ -18,15 +18,16 @@ class KGHubGraphRepository(GraphRepository):
         """Returns metadata mined from the KGHub repository."""
         mined_data = {}
         black_list = ["README", ".."]
-        graph_names = ["kg-covid-19", "kg-microbe"]
         graph_names_mapping = {
             "kg-covid-19": "KGCOVID19",
-            "kg-microbe": "KGMicrobe"
+            "kg-microbe": "KGMicrobe",
+            #"kg-idg": "KGIDG",
+            "eco-kg": "EcoKG"
         }
         root_pattern = "https://kg-hub.berkeleybop.io/{graph_name}/index.html"
         graph_url_pattern = "https://kg-hub.berkeleybop.io/{graph_name}/{version}/{graph_name}.tar.gz"
 
-        for graph_name in graph_names:
+        for graph_name in graph_names_mapping:
             anchors = BeautifulSoup(
                 requests.get(root_pattern.format(graph_name=graph_name)).text,
                 "lxml"
@@ -160,8 +161,16 @@ class KGHubGraphRepository(GraphRepository):
                     "r"
                 ).read()
             ]
-        
-        # TODO! add a citation for KG-Microbe!
+        if graph_name == "KGMicrobe":
+            return [
+                open(
+                    "{}/models/kgmicrobe.bib".format(
+                        os.path.dirname(os.path.abspath(__file__)),
+                        graph_name
+                    ),
+                    "r"
+                ).read()
+            ]
 
     def get_graph_paths(self, graph_name: str, urls: List[str]) -> List[str]:
         """Return url for the given graph.

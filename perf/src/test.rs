@@ -5,7 +5,7 @@ use rayon::iter::ParallelIterator;
 fn main() {
     let graph_name = "Cora".to_owned();
     let edges_reader = EdgeFileReader::new("/Workspace/Github/ensmallen/graph/tests/data/cora/edges.tsv").unwrap()
-        .set_separator(Some("\t")).unwrap()
+        .set_separator(Some('\t')).unwrap()
         .set_verbose(Some(false))
         .set_sources_column(Some("subject")).unwrap()
         .set_destinations_column(Some("object")).unwrap()
@@ -13,7 +13,7 @@ fn main() {
         .set_edge_types_column(Some("edge_type")).unwrap();
     let nodes_reader = Some(
         NodeFileReader::new("/Workspace/Github/ensmallen/graph/tests/data/cora/nodes.tsv").unwrap()
-            .set_separator(Some("\t")).unwrap()
+            .set_separator(Some('\t')).unwrap()
             .set_nodes_column(Some("id")).unwrap()
             .set_verbose(Some(false))
             .set_node_types_column(Some("node_type")).unwrap(),

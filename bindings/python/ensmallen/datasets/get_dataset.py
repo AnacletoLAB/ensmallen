@@ -6,7 +6,7 @@ from typing import Any, Callable, List, Optional
 import compress_json
 import pandas as pd
 from ensmallen import Graph, datasets
-from userinput.utils import closest, set_validator
+from userinput.utils import closest, set_validator, get_k_closest
 
 
 def get_available_repositories() -> List[str]:
@@ -61,6 +61,15 @@ def get_available_graphs_from_repository(repository: str) -> List[str]:
     ]
 
 
+def get_all_available_graphs() -> List[str]:
+    """Return list of all available graphs."""
+    return [
+        graph_name
+        for repository in get_available_repositories()
+        for graph_name in get_available_graphs_from_repository(repository)
+    ]
+
+
 def get_available_versions_from_graph_and_repository(graph_name: str, repository: str) -> List[str]:
     """Return list of available graphs from the given repositories.
 
@@ -80,6 +89,25 @@ def get_available_versions_from_graph_and_repository(graph_name: str, repository
         repository,
         "{}.json.gz".format(graph_name)
     )).keys())
+
+
+def get_repositories_containing_graph(graph_name: str) -> List[str]:
+    """Returns the repositories containing a graph with the given graph name.
+
+    Parameters
+    ----------------------------
+    graph_name: str,
+        The name of the graph to retrieve.
+
+    Returns
+    ----------------------------
+    List of repository names.
+    """
+    return [
+        repository
+        for repository in get_available_repositories()
+        if graph_name in get_available_graphs_from_repository(repository)
+    ]
 
 
 def get_all_available_graphs_dataframe() -> pd.DataFrame:
@@ -135,18 +163,20 @@ def validate_graph_version(
 
 def get_dataset(
     graph_name: str,
-    repository: str,
+    repository: Optional[str] = None,
     version: Optional[str] = None
 ) -> Callable[[Any], Graph]:
     """Return the graph curresponding to the given graph name, repository and version.
 
     Parameters
     ----------------------
-    graph_name: str,
+    graph_name: str = None
         The name of the graph to retrieve.
-    repository: str,
+    repository: Optional[str] = None
         The name of the repository to retrieve the graph from.
-    version: Option[str],
+        This is needed only when there is not an unique graph name for the
+        provided graph.
+    version: Option[str] = None
         The version of the graph to retrieve.
         Note that this will ONLY check that the version is available.
 
@@ -157,33 +187,68 @@ def get_dataset(
     ValueError,
         If the given graph is not available.
     """
+    # If the repository was not specified
+    if repository is None:
+        # We retrieve the repositoris that seem to contain this graph.
+        candidate_repositories = get_repositories_containing_graph(graph_name)
+        if len(candidate_repositories) == 0:
+            # If no candidate repository was found, then we need
+            # to raise a proper error.
+            raise ValueError(
+                (
+                    "The provided graph `{graph_name}` is not available in any of the repositories.\n"
+                    "The top 10 graphs with the most similar names are:\n"
+                    "{similar_graph_names}"
+                ).format(
+                    graph_name=graph_name,
+                    similar_graph_names="".join([
+                        "\t-{}\n".format(graph_name)
+                        for graph_name in get_k_closest(
+                            graph_name,
+                            get_all_available_graphs(),
+                            k=10
+                        )
+                    ])
+                )
+            )
+        elif len(candidate_repositories) == 1:
+            # We have found the repository we wanted!
+            repository = candidate_repositories[0]
+        elif len(candidate_repositories) > 1:
+            raise ValueError(
+                (
+                    "The provided graph `{graph_name}` appears in {number_of_occurrences} repositories "
+                    "and therefore it is not possible to automatically infer from where to extract "
+                    "this specific graph.\n"
+                    "Specifically, the repositories that include the provided graph name are:\n"
+                    "{candidate_repositories}"
+                ).format(
+                    graph_name=graph_name,
+                    number_of_occurrences=len(candidate_repositories),
+                    candidate_repositories="".join([
+                        "\t-{}\n".format(candidate_repository)
+                        for candidate_repository in candidate_repositories
+                    ])
+                )
+            )
 
     graph_names = get_available_graphs_from_repository(repository)
-
     if not set_validator(graph_names)(graph_name):
-        # We check if the given graph is from another repository
-        other_repository = None
-        for candidate_repository in get_available_repositories():
-            if graph_name in get_available_graphs_from_repository(
-                candidate_repository
-            ):
-                other_repository = candidate_repository
-
         raise ValueError((
-            "The provided graph name `{}` is not within the set "
-            "of supported graph names within the repository {}.\n"
-            "Did you mean `{}`?\n"
-            "{}"
-            "The complete set of graphs available from the given "
-            "repository is {}."
+            "The provided graph `{graph_name}` is not available in the repository {repository}.\n"
+            "The top 10 graphs within the given repository with the most similar names are:\n"
+            "{similar_graph_names}"
         ).format(
-            graph_name,
-            repository,
-            closest(graph_name, graph_names),
-            "" if other_repository is None else "We have found a graph with the given name in the repository `{}`. Maybe you wanted to use this one?\n".format(
-                other_repository
-            ),
-            ", ".join(graph_names),
+            graph_name=graph_name,
+            repository=repository,
+            similar_graph_names="".join([
+                "\t-{}\n".format(graph_name)
+                for graph_name in get_k_closest(
+                    graph_name,
+                    graph_names,
+                    k=10
+                )
+            ])
         ))
 
     if version is not None:

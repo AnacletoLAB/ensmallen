@@ -4,6 +4,7 @@ use pyo3::prelude::*;
 use pyo3::types::PyDict;
 use std::collections::{HashMap, HashSet};
 
+#[allow(unused_imports)]
 use graph::{EdgeT, EdgeTypeT, NodeT, NodeTypeT, Result, WeightT};
 use tags::*;
 
@@ -21,10 +22,9 @@ mod types;
 pub(crate) use crate::types::*;
 mod laplacian;
 mod operators;
+mod shortest_path;
 mod walks;
 
 // automatically generated files
 mod auto_generated_bindings;
 pub use auto_generated_bindings::*;
-mod method_names_list;
-pub use method_names_list::*;

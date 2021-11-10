@@ -4,7 +4,7 @@ use rayon::iter::ParallelIterator;
 
 fn main() {
     let edges_reader = EdgeFileReader::new("/home/zom/complete_string.tsv".to_string()).unwrap()
-        .set_separator(Some("\t".to_string())).unwrap()
+        .set_separator(Some('\t'.to_string())).unwrap()
         .set_sources_column_number(Some(0)).unwrap()
         .set_destinations_column_number(Some(1)).unwrap()
         .set_weights_column_number(Some(2)).unwrap()

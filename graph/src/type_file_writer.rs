@@ -115,9 +115,9 @@ impl TypeFileWriter {
     /// Set the separator.
     ///
     /// # Arguments
-    /// * separator: Option<String> - The separator to use for the file.
+    /// * separator: Option<char> - The separator to use for the file.
     ///
-    pub fn set_separator(mut self, separator: Option<String>) -> Result<TypeFileWriter> {
+    pub fn set_separator(mut self, separator: Option<char>) -> Result<TypeFileWriter> {
         self.writer = self.writer.set_separator(separator)?;
         Ok(self)
     }
@@ -191,6 +191,7 @@ impl TypeFileWriter {
             lines_number,
             compose_lines(self.number_of_columns, header_values, header_positions),
             iterator.map(|(type_id, type_name)| self.parse_line(type_id, type_name)),
-        )
+        )?;
+        Ok(())
     }
 }

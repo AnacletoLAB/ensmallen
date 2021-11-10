@@ -2,7 +2,8 @@
 
 from .kgmicrobe import KGMicrobe
 from .kgcovid19 import KGCOVID19
+from .ecokg import EcoKG
 
 __all__ = [
-	"KGMicrobe", "KGCOVID19",
+	"KGMicrobe", "KGCOVID19", "EcoKG",
 ]

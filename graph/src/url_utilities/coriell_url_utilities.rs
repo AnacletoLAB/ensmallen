@@ -6,7 +6,7 @@ use super::*;
 ///
 /// # Example
 /// To validate a node you can use:
-/// ```rust
+/// ```ignore
 /// # use graph::*;
 /// let coriell_node_name = "Coriell:AG01439";
 /// let not_coriell_node_name = "PizzaQuattroStagioni";

@@ -1,5 +1,6 @@
 use num_traits::Zero;
 use rayon::iter::ParallelIterator;
+use std::collections::HashMap;
 
 use super::*;
 /// Structure that saves the reader specific to writing and reading a nodes csv file.
@@ -21,6 +22,7 @@ pub struct EdgeFileReader {
     pub(crate) complete: Option<bool>,
     pub(crate) sorted: Option<bool>,
     pub(crate) edges_number: Option<EdgeT>,
+    pub(crate) node_name_tokens_remapping: Option<HashMap<String, String>>
 }
 
 impl EdgeFileReader {
@@ -46,7 +48,24 @@ impl EdgeFileReader {
             complete: None,
             sorted: None,
             edges_number: None,
+            node_name_tokens_remapping: None
         })
+    }
+
+    /// Set the HashMap to be used to replace tokens in the node names.
+    /// 
+    /// This is meant to be useful when the nodes include extremely long
+    /// prefixes, such as in graphs like WikiData.
+    ///
+    /// # Arguments
+    /// * `node_name_tokens_remapping`: Option<HashMap<String, String>> - Mapping of tokens to be used to simplify the node names.
+    ///
+    pub fn set_node_name_tokens_remapping(
+        mut self,
+        node_name_tokens_remapping: Option<HashMap<String, String>>,
+    ) -> EdgeFileReader {
+        self.node_name_tokens_remapping = node_name_tokens_remapping;
+        self
     }
 
     /// Set the column of the edge IDs.
@@ -507,15 +526,28 @@ impl EdgeFileReader {
     /// Set the separator.
     ///
     /// # Arguments
-    /// * separator: Option<String> - The separator to use for the file.
+    /// * `separator`: Option<char> - The separator to use for the file.
     ///
-    pub fn set_separator(mut self, separator: Option<String>) -> Result<EdgeFileReader> {
+    pub fn set_separator(mut self, separator: Option<char>) -> Result<EdgeFileReader> {
         self.reader = self.reader.set_separator(separator)?;
         Ok(self)
     }
 
+    /// Set whether to support the balanced quotes while reading the CSV, operation that will significantly slow down the execution.
+    ///
+    /// # Arguments
+    /// * `support_balanced_quotes`: Option<bool> - Whether to support the balanced quotes while reading the CSV.
+    ///
+    pub fn set_support_balanced_quotes(
+        mut self,
+        support_balanced_quotes: Option<bool>,
+    ) -> EdgeFileReader {
+        self.reader = self.reader.set_support_balanced_quotes(support_balanced_quotes);
+        self
+    }
+
     /// Return the CSV reader separator
-    pub fn get_separator(&self) -> String {
+    pub fn get_separator(&self) -> char {
         self.reader.separator.clone()
     }
 

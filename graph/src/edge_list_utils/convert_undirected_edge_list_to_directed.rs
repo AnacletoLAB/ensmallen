@@ -6,8 +6,9 @@ use crate::{utils::ItersWrapper, EdgeFileReader, EdgeFileWriter, EdgeT, Result, 
 ///
 /// # Arguments
 /// * `original_edge_path`: &str - The path from where to load the original edge list.
-/// * `original_edge_list_separator`: Option<String> - Separator to use for the original edge list.
+/// * `original_edge_list_separator`: Option<char> - Separator to use for the original edge list.
 /// * `original_edge_list_header`: Option<bool> - Whether the original edge list has an header.
+/// * `original_edge_list_support_balanced_quotes`: Option<bool> - Whether to support balanced quotes while reading the edge list.
 /// * `original_sources_column`: Option<String> - The column name to use to load the sources in the original edges list.
 /// * `original_sources_column_number`: Option<usize> - The column number to use to load the sources in the original edges list.
 /// * `original_destinations_column`: Option<String> - The column name to use to load the destinations in the original edges list.
@@ -17,7 +18,7 @@ use crate::{utils::ItersWrapper, EdgeFileReader, EdgeFileWriter, EdgeT, Result, 
 /// * `original_weights_column`: Option<String> - The column name to use for the weights in the original edges list.
 /// * `original_weights_column_number`: Option<usize> - The column number to use for the weights in the original edges list.
 /// * `target_edge_path`: &str - The path from where to load the target edge list. This must be different from the original edge list path.
-/// * `target_edge_list_separator`: Option<String> - Separator to use for the target edge list. If None, the one provided from the original edge list will be used.
+/// * `target_edge_list_separator`: Option<char> - Separator to use for the target edge list. If None, the one provided from the original edge list will be used.
 /// * `target_edge_list_header`: Option<bool> - Whether the target edge list has an header. If None, the one provided from the original edge list will be used.
 /// * `target_sources_column`: Option<String> - The column name to use to load the sources in the target edges list. If None, the one provided from the original edge list will be used.
 /// * `target_sources_column_number`: Option<usize> - The column number to use to load the sources in the target edges list. If None, the one provided from the original edge list will be used.
@@ -39,8 +40,9 @@ use crate::{utils::ItersWrapper, EdgeFileReader, EdgeFileWriter, EdgeT, Result, 
 /// * `name`: Option<String> - The name of the graph to display in the loading bar.
 pub fn convert_undirected_edge_list_to_directed(
     original_edge_path: &str,
-    original_edge_list_separator: Option<String>,
+    original_edge_list_separator: Option<char>,
     original_edge_list_header: Option<bool>,
+    original_edge_list_support_balanced_quotes: Option<bool>,
     original_sources_column: Option<String>,
     original_sources_column_number: Option<usize>,
     original_destinations_column: Option<String>,
@@ -50,7 +52,7 @@ pub fn convert_undirected_edge_list_to_directed(
     original_weights_column: Option<String>,
     original_weights_column_number: Option<usize>,
     target_edge_path: &str,
-    target_edge_list_separator: Option<String>,
+    target_edge_list_separator: Option<char>,
     target_edge_list_header: Option<bool>,
     target_sources_column: Option<String>,
     target_sources_column_number: Option<usize>,
@@ -88,6 +90,7 @@ pub fn convert_undirected_edge_list_to_directed(
         .set_max_rows_number(max_rows_number)?
         .set_rows_to_skip(rows_to_skip)?
         .set_header(original_edge_list_header)?
+        .set_support_balanced_quotes(original_edge_list_support_balanced_quotes)
         .set_separator(original_edge_list_separator)?
         .set_default_edge_type(default_edge_type)
         .set_default_weight(default_weight)?

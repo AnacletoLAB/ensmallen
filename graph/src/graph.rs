@@ -1,29 +1,45 @@
-//! A graph representation optimized for executing random walks on huge graphs.
 use std::{intrinsics::unlikely, sync::atomic::AtomicU8};
 
 use super::*;
 use bitvec::prelude::*;
 use elias_fano_rust::*;
 use rayon::prelude::*;
+use std::sync::Arc;
 
-/// A graph representation optimized for executing random walks on huge graphs.
+/// This is the main struct in Ensmallen, it allows to load and manipulate Graphs efficently.
+/// You are not supposed to directly instantiate this struct but instead you should use the
+/// static method `from_csv`, which allows to load the graph from an edge-list.
+///
+/// To get information about a loaded graph, you can call the `textual_report` method which
+/// generates an human-readable HTML report.
+///
+/// By default we use EliasFano to store the Adjacency Matrix, this allows to save memory but
+/// is slower than a CSR. For this reason you can use the `enable` method to enable optimizzations
+/// which speeds up the operations at the cost of more memory usage. You can check the memory usage
+/// in bytes using `get_total_memory_used` and you can get a detailed memory report of each data-structure
+/// inside Graph using `memory_stats`.
+///
+/// You can pre-compute the memory needed (in bits) to store the adjacency matrix of a Graph with $|E|$ edges and $|V|$ nodes:
+///  $$2 |E| + |E| \\left\\lceil \\log_2 \\frac{|V|^2}{|E|} \\right\\rceil$$
+///
+/// Most Graph properties are automatically cached to speed up.
 #[derive(Clone, Debug)]
 pub struct Graph {
     /// The main datastructure where all the edges are saved
     /// in the endoced form ((src << self.node_bits) | dst) this allows us to do almost every
     /// operation in O(1) without decompressing the data.
-    pub(crate) edges: EliasFano,
+    pub(crate) edges: Arc<EliasFano>,
     /// Optional vector of the weights of every edge.
     /// `weights[10]` return the weight of the edge with edge_id 10
-    pub(crate) weights: Option<Vec<WeightT>>,
+    pub(crate) weights: Arc<Option<Vec<WeightT>>>,
     /// Vocabulary that save the mappings from string to index of every node type
-    pub(crate) node_types: Option<NodeTypeVocabulary>,
+    pub(crate) node_types: Arc<Option<NodeTypeVocabulary>>,
     // This is the next attribute that will be embedded inside of edges once
     // the first refactoring is done
     /// Vocabulary that save the mappings from string to index of every edge type
-    pub(crate) edge_types: Option<EdgeTypeVocabulary>,
+    pub(crate) edge_types: Arc<Option<EdgeTypeVocabulary>>,
     /// Vocabulary that save the mappings from string to index of every node
-    pub(crate) nodes: Vocabulary<NodeT>,
+    pub(crate) nodes: Arc<Vocabulary<NodeT>>,
 
     /// How many bits are needed to save a node.
     pub(crate) node_bits: u8,
@@ -34,33 +50,33 @@ pub struct Graph {
     /// if the graph is directed or undirected
     pub(crate) directed: bool,
     /// Graph name
-    pub(crate) name: String,
+    pub(crate) name: Arc<String>,
 
     // /////////////////////////////////////////////////////////////////////////
     // Elias-Fano Caching related attributes
     // /////////////////////////////////////////////////////////////////////////
     /// Vector of destinations to execute fast walks if required.
-    pub(crate) destinations: Option<Vec<NodeT>>,
+    pub(crate) destinations: Arc<Option<Vec<NodeT>>>,
     /// Vector of sources to execute fast link prediction sequences if required.
-    pub(crate) sources: Option<Vec<NodeT>>,
+    pub(crate) sources: Arc<Option<Vec<NodeT>>>,
     /// Vector of cumulative_node_degrees to execute fast walks if required.
-    pub(crate) cumulative_node_degrees: Option<Vec<EdgeT>>,
+    pub(crate) cumulative_node_degrees: Arc<Option<Vec<EdgeT>>>,
     /// Option of Elias-Fano of unique sources.
     /// When it is None it means that ALL nodes are sources.
-    pub(crate) unique_sources: Option<EliasFano>,
+    pub(crate) unique_sources: Arc<Option<EliasFano>>,
     /// Option of bitvec containing connected nodes.
     /// When it is None it means that ALL nodes are connected, i.e. not singleton or singletons with selfloops.
-    pub(crate) connected_nodes: Option<BitVec<Lsb0, u8>>,
+    pub(crate) connected_nodes: Arc<Option<BitVec<Lsb0, u8>>>,
     /// Number of connected nodes in the graph.
     pub(crate) connected_nodes_number: NodeT,
 
     // /////////////////////////////////////////////////////////////////////////
     // Kernels Caching related attributes
     // /////////////////////////////////////////////////////////////////////////
-    pub(crate) reciprocal_sqrt_degrees: Option<Vec<WeightT>>,
+    pub(crate) reciprocal_sqrt_degrees: Arc<Option<Vec<WeightT>>>,
 
     // /////////////////////////////////////////////////////////////////////////
-    pub(crate) cache: ClonableUnsafeCell<PropertyCache>,
+    pub(crate) cache: Arc<ClonableUnsafeCell<PropertyCache>>,
 }
 
 use std::string::ToString;
@@ -86,11 +102,11 @@ impl Graph {
     /// * `name`: S - The name of the graph.
     pub(crate) fn new<S: Into<String>>(
         directed: bool,
-        nodes: Vocabulary<NodeT>,
-        node_types: Option<NodeTypeVocabulary>,
-        edges: EliasFano,
-        edge_types: Option<EdgeTypeVocabulary>,
-        weights: Option<Vec<WeightT>>,
+        nodes: Arc<Vocabulary<NodeT>>,
+        node_types: Arc<Option<NodeTypeVocabulary>>,
+        edges: Arc<EliasFano>,
+        edge_types: Arc<Option<EdgeTypeVocabulary>>,
+        weights: Arc<Option<Vec<WeightT>>>,
         may_have_singletons: bool,
         may_have_singleton_with_selfloops: bool,
         name: S,
@@ -100,22 +116,22 @@ impl Graph {
         let node_bit_mask = (1 << node_bits) - 1;
         let mut graph = Graph {
             directed,
-            edges,
+            edges: edges,
             node_bits,
             node_bit_mask,
-            weights,
-            node_types,
-            edge_types,
-            nodes,
-            sources: None,
-            destinations: None,
-            cumulative_node_degrees: None,
-            name: name.into(),
-            cache: ClonableUnsafeCell::default(),
-            unique_sources: None,
-            connected_nodes: None,
+            weights: weights,
+            node_types: node_types,
+            edge_types: edge_types,
+            nodes: nodes,
+            sources: Arc::new(None),
+            destinations: Arc::new(None),
+            cumulative_node_degrees: Arc::new(None),
+            name: Arc::new(name.into()),
+            cache: Arc::new(ClonableUnsafeCell::default()),
+            unique_sources: Arc::new(None),
+            connected_nodes: Arc::new(None),
             connected_nodes_number: nodes_number as NodeT,
-            reciprocal_sqrt_degrees: None
+            reciprocal_sqrt_degrees: Arc::new(None),
         };
         if may_have_singletons || may_have_singleton_with_selfloops {
             let connected_nodes =
@@ -124,9 +140,9 @@ impl Graph {
             // If there are less connected nodes than the number of nodes
             // in the graph, it means that there must be some singleton or singleton with selfloops.
             if connected_nodes_number < graph.get_nodes_number() {
-                graph.connected_nodes = Some(connected_nodes);
+                graph.connected_nodes = Arc::new(Some(connected_nodes));
                 graph.connected_nodes_number = connected_nodes_number;
-                graph.unique_sources = Some(graph.get_unique_sources());
+                graph.unique_sources = Arc::new(Some(graph.get_unique_sources()));
             }
         }
         graph
@@ -162,9 +178,7 @@ impl Graph {
     ) -> BitVec<Lsb0, u8> {
         let connected_nodes = if may_have_singletons && self.is_directed() {
             let mut connected_nodes = bitvec![Lsb0, AtomicU8; 0; self.get_nodes_number() as usize];
-            let thread_shared_connected_nodes = ThreadDataRaceAware {
-                value: std::cell::UnsafeCell::new(&mut connected_nodes),
-            };
+            let thread_shared_connected_nodes = ThreadDataRaceAware::new(&mut connected_nodes);
             // If the graph may contain singletons, we need to iterate on all
             // the nodes neighbours in order to find if whether a node is a singleton or
             // if it is a trap node.
@@ -185,9 +199,7 @@ impl Graph {
             connected_nodes
         } else {
             let mut connected_nodes = bitvec![Lsb0, AtomicU8; 1; self.get_nodes_number() as usize];
-            let thread_shared_connected_nodes = ThreadDataRaceAware {
-                value: std::cell::UnsafeCell::new(&mut connected_nodes),
-            };
+            let thread_shared_connected_nodes = ThreadDataRaceAware::new(&mut connected_nodes);
             self.par_iter_node_degrees()
                 .enumerate()
                 .for_each(|(node_id, node_degree)| unsafe {

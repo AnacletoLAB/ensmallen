@@ -5,7 +5,9 @@ from .repositories import (JAXGraphRepository, KGHubGraphRepository,
                            NetworkRepositoryGraphRepository,
                            PheKnowLatorKGGraphrepository,
                            StringGraphRepository, YueGraphRepository,
-                           ZenodoGraphRepository)
+                           FreebaseGraphRepository,
+                           ZenodoGraphRepository, WikiDataGraphRepository,
+                           WikipediaGraphRepository)
 
 __all__ = [
     "StringGraphRepository",
@@ -17,5 +19,8 @@ __all__ = [
     "ZenodoGraphRepository",
     "PheKnowLatorKGGraphrepository",
     "JAXGraphRepository",
-    "KGOBOGraphRepository"
+    "KGOBOGraphRepository",
+    "WikiDataGraphRepository",
+    "FreebaseGraphRepository",
+    "WikipediaGraphRepository"
 ]

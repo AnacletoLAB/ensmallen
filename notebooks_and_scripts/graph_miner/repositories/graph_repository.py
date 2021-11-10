@@ -478,7 +478,7 @@ class GraphRepository:
         --------------------
         Formatted text.
         """
-        return "\t" + "\n\t".join(text.split("\n"))
+        return '\t' + "\n\t".join(text.split("\n"))
 
     def format_callbacks_data(self, graph_name: str, version: str) -> str:
         """Return formatted callbacks data.

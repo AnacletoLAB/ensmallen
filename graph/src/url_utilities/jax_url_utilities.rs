@@ -6,7 +6,7 @@ use super::*;
 ///
 /// # Example
 /// To validate a node you can use:
-/// ```rust
+/// ```ignore
 /// # use graph::*;
 /// let jax_node_name = "JAX:000046";
 /// let not_jax_node_name = "PizzaQuattroStagioni";

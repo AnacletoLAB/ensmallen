@@ -16,7 +16,7 @@ impl Graph {
     /// If the given node ID does not exists in the graph this method will panic.
     pub unsafe fn is_unchecked_connected_from_node_id(&self, node_id: NodeT) -> bool {
         self.connected_nodes
-            .as_ref()
+            .as_ref().as_ref()
             .map_or(true, |connected_nodes| connected_nodes[node_id as usize])
     }
 
@@ -283,7 +283,7 @@ impl Graph {
     /// If the given node ID does not exists in the graph this method will panic.
     pub unsafe fn is_unchecked_trap_node_from_node_id(&self, node_id: NodeT) -> bool {
         self.connected_nodes
-            .as_ref()
+            .as_ref().as_ref()
             .map_or(!self.has_singleton_nodes(), |connected_nodes| {
                 connected_nodes[node_id as usize]
             })

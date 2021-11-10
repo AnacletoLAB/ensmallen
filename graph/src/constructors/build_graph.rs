@@ -1,4 +1,5 @@
 use super::*;
+use std::sync::Arc;
 use rayon::prelude::*;
 
 #[manual_binding]
@@ -100,7 +101,7 @@ pub fn build_graph_from_strings<S: Into<String>>(
         numeric_node_type_ids,
         minimum_node_type_id,
         has_node_types,
-        node_types_list_is_correct
+        node_types_list_is_correct,
     )?;
     let nodes_iterator_was_provided = nodes_iterator.is_some();
     let (nodes, node_types) = parse_nodes(
@@ -132,7 +133,7 @@ pub fn build_graph_from_strings<S: Into<String>>(
         numeric_edge_type_ids,
         minimum_edge_type_id,
         has_edge_types,
-        edge_types_list_is_correct
+        edge_types_list_is_correct,
     )?;
     let (nodes, edges, edge_types, weights, has_selfloops) = parse_string_edges(
         edges_iterator,
@@ -152,11 +153,11 @@ pub fn build_graph_from_strings<S: Into<String>>(
     )?;
     Ok(Graph::new(
         directed,
-        nodes,
-        node_types,
-        edges,
-        edge_types,
-        weights,
+        Arc::new(nodes),
+        Arc::new(node_types),
+        Arc::new(edges),
+        Arc::new(edge_types),
+        Arc::new(weights),
         may_have_singletons,
         may_have_singleton_with_selfloops && has_selfloops,
         name,
@@ -316,8 +317,8 @@ pub fn build_graph_from_integers<S: Into<String>>(
     edges_iterator: Option<
         impl ParallelIterator<Item = (usize, (NodeT, NodeT, Option<EdgeTypeT>, WeightT))>,
     >,
-    nodes: Vocabulary<NodeT>,
-    node_types: Option<NodeTypeVocabulary>,
+    nodes: Arc<Vocabulary<NodeT>>,
+    node_types: Arc<Option<NodeTypeVocabulary>>,
     edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
     has_edge_weights: bool,
     directed: bool,
@@ -342,11 +343,11 @@ pub fn build_graph_from_integers<S: Into<String>>(
     )?;
     Ok(Graph::new(
         directed,
-        nodes,
-        node_types,
-        edges,
-        edge_types,
-        weights,
+        nodes.clone(),
+        node_types.clone(),
+        Arc::new(edges),
+        Arc::new(edge_types),
+        Arc::new(weights),
         may_have_singletons,
         may_have_singleton_with_selfloops && has_selfloops,
         name,

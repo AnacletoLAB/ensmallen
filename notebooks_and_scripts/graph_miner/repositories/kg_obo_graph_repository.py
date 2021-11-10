@@ -23,38 +23,31 @@ class KGOBOGraphRepository(GraphRepository):
         root_url = "https://kg-hub.berkeleybop.io/kg-obo/"
         yaml_url = urljoin(root_url, "tracking.yaml")
 
-        versions_url_placeholder = urljoin(
-            root_url,
-            "{graph_name}"
-        )
         graph_url_placeholder = urljoin(
             root_url,
-            "{graph_name}/{version}/{graph_name}.tar.gz"
+            "{graph_name}/{version}/{graph_name}_kgx_tsv.tar.gz"
         )
 
-        black_list_set = {"../"}
-
-        graph_names = [
-            graph
+        graph_data = {
+            graph: data
             for graph, data in yaml.safe_load(
                 requests.get(yaml_url).content.decode('utf-8')
             )["ontologies"].items()
             if data["current_version"] != "NA"
-        ]
+        }
 
-        for graph_name in graph_names:
+        for graph_name, data in graph_data.items():
             versions = [
-                version_candidate.text
-                for version_candidate in BeautifulSoup(
-                    requests.get(versions_url_placeholder.format(
-                        graph_name=graph_name)).text,
-                    "lxml"
-                ).find_all("a")
-                if version_candidate.text not in black_list_set
+                data["current_version"],
+                *(
+                    [e["version"] for e in data["archive"]] if "archive" in data else []
+                )
             ]
             callable_graph_name = graph_name.upper()
             mined_data[callable_graph_name] = {}
             for version in versions:
+                if "\n" in version:
+                    continue
                 graph_url = graph_url_placeholder.format(
                     graph_name=graph_name,
                     version=version
@@ -62,8 +55,8 @@ class KGOBOGraphRepository(GraphRepository):
                 mined_data[callable_graph_name][version] = {
                     "urls": [graph_url],
                     "arguments": {
-                        "edge_path": "{graph_name}/{graph_name}_edges.tsv".format(graph_name=graph_name),
-                        "node_path": "{graph_name}/{graph_name}_nodes.tsv".format(graph_name=graph_name),
+                        "edge_path": "{graph_name}_kgx_tsv/{graph_name}_kgx_tsv_edges.tsv".format(graph_name=graph_name),
+                        "node_path": "{graph_name}_kgx_tsv/{graph_name}_kgx_tsv_nodes.tsv".format(graph_name=graph_name),
                         "name": callable_graph_name,
                         "sources_column": "subject",
                         "destinations_column": "object",
@@ -75,6 +68,8 @@ class KGOBOGraphRepository(GraphRepository):
                         "edge_list_is_correct": True,
                     }
                 }
+            if len(mined_data[callable_graph_name]) == 0:
+                mined_data.pop(callable_graph_name)
         return mined_data
 
     def build_stored_graph_name(self, partial_graph_name: str) -> str:

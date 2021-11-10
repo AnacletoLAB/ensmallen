@@ -67,7 +67,7 @@ pub fn load_ppi(
                 .set_default_node_type(Some("default".to_string()))
                 .set_ignore_duplicates(Some(true))
                 .unwrap()
-                .set_separator(Some("\t".to_string()))
+                .set_separator(Some('\t'))
                 .unwrap()
                 .set_nodes_column(Some("id".to_string()))
                 .unwrap()
@@ -97,7 +97,7 @@ pub fn load_ppi(
         .unwrap()
         .set_rows_to_skip(Some(0))
         .unwrap()
-        .set_separator(None::<String>)
+        .set_separator(None::<char>)
         .unwrap()
         .set_sources_column(Some("subject".to_string()))
         .unwrap()
@@ -160,7 +160,7 @@ pub fn load_cora() -> Graph {
     let graph_name = "Cora".to_owned();
     let edges_reader = EdgeFileReader::new("tests/data/cora/edges.tsv")
         .unwrap()
-        .set_separator(Some("\t".to_string()))
+        .set_separator(Some('\t'))
         .unwrap()
         .set_verbose(Some(false))
         .set_sources_column(Some("subject"))
@@ -171,7 +171,7 @@ pub fn load_cora() -> Graph {
         .unwrap();
     let nodes_reader = NodeFileReader::new(Some("tests/data/cora/nodes.tsv".to_owned()))
         .unwrap()
-        .set_separator(Some("\t".to_string()))
+        .set_separator(Some('\t'))
         .unwrap()
         .set_nodes_column(Some("id"))
         .unwrap()
@@ -217,18 +217,18 @@ pub fn second_order_walker(
 }
 
 fn validate_vocabularies(graph: &Graph) {
-    if let Some(ets) = &graph.edge_types {
+    if let Some(ets) = &*graph.edge_types {
         assert_eq!(!ets.ids.is_empty(), graph.has_edge_types(),
             "We expected that if the graph has edge types then it cannot be empty. The report of the graph is:\n{:?}",
             graph.textual_report()
         );
     }
 
-    if let Some(nts) = &graph.node_types {
+    if let Some(nts) = &*graph.node_types {
         assert_eq!(!nts.ids.is_empty(), graph.has_node_types());
     }
 
-    if let Some(ws) = &graph.weights {
+    if let Some(ws) = &*graph.weights {
         assert_eq!(
             !ws.is_empty(), graph.has_edge_weights(),
             concat!(
@@ -957,7 +957,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
     if !graph.is_directed() {
         // Checking that the connected components are a dense range.
         let (connected_components, total_connected_components, _, _) =
-            graph.connected_components(verbose).unwrap();
+            graph.get_connected_components(verbose).unwrap();
         let actual_components_number = connected_components.iter().unique().count() as NodeT;
         assert_eq!(
             actual_components_number,
@@ -1424,14 +1424,14 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: Option<bool>) -> Result<()
         for mode in 0..2 {
             if mode == 1 {
                 graph.enable(None, None, None, None)?;
-                if let Some(cumulative_node_degrees) = &graph.cumulative_node_degrees {
+                if let Some(cumulative_node_degrees) = &*graph.cumulative_node_degrees {
                     assert_eq!(
                         cumulative_node_degrees.len(),
                         graph.get_nodes_number() as usize,
                         "Length of cumulative_node_degrees does not match number of nodes in the graph."
                     );
                 }
-                if let Some(destinations) = &graph.destinations {
+                if let Some(destinations) = &*graph.destinations {
                     assert_eq!(
                         destinations.len(),
                         graph.get_directed_edges_number() as usize,
@@ -1829,7 +1829,7 @@ pub fn test_dump_graph(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
     let node_file = random_path(None);
     let nodes_writer = NodeFileWriter::new(node_file.clone())
         .set_verbose(verbose)
-        .set_separator(Some("\t".to_string()))?
+        .set_separator(Some('\t'))?
         .set_header(Some(true))
         .set_node_types_column_number(Some(4))
         .set_nodes_column_number(Some(6))
@@ -1841,7 +1841,7 @@ pub fn test_dump_graph(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
     let edges_file = random_path(None);
     let edges_writer = EdgeFileWriter::new(edges_file.clone())
         .set_verbose(verbose)
-        .set_separator(Some("\t".to_string()))?
+        .set_separator(Some('\t'))?
         .set_header(Some(true))
         .set_edge_types_column(Some("edge_types".to_owned()))
         .set_destinations_column_number(Some(3))
@@ -1898,6 +1898,7 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: Option<bool>) -> 
                 0,
                 Some(256),
                 Some(0.4),
+                None,
                 None,
                 None,
                 Some(false),
@@ -2002,8 +2003,8 @@ pub fn test_nodelabel_holdouts(graph: &mut Graph, _verbose: Option<bool>) -> Res
             "The re-merged holdouts does not contain the original graph."
         );
         assert!(
-            train.node_types.as_ref().map_or(false, |train_nts| {
-                test.node_types.as_ref().map_or(false, |test_nts| {
+            train.node_types.as_ref().as_ref().map_or(false, |train_nts| {
+                test.node_types.as_ref().as_ref().map_or(false, |test_nts| {
                     train_nts.ids.iter().zip(test_nts.ids.iter()).all(
                         |(train_node_type, test_node_type)| {
                             !(train_node_type.is_some() && test_node_type.is_some())
@@ -2033,8 +2034,8 @@ pub fn test_edgelabel_holdouts(graph: &mut Graph, _verbose: Option<bool>) -> Res
         assert!(train.has_unknown_edge_types()?);
         assert!(test.has_unknown_edge_types()?);
         assert!(
-            train.edge_types.as_ref().map_or(false, |train_nts| {
-                test.edge_types.as_ref().map_or(false, |test_nts| {
+            train.edge_types.as_ref().as_ref().map_or(false, |train_nts| {
+                test.edge_types.as_ref().as_ref().map_or(false, |test_nts| {
                     train_nts.ids.iter().zip(test_nts.ids.iter()).all(
                         |(train_edge_type, test_edge_type)| {
                             !(train_edge_type.is_some() && test_edge_type.is_some())

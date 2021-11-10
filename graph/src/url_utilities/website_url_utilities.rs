@@ -5,7 +5,7 @@
 ///
 /// # Example
 /// To validate a node you can use:
-/// ```rust
+/// ```ignore
 /// # use graph::*;
 /// let this_library_node_name = "https://docs.rs/url/2.2.2/url/";
 /// let not_this_library_node_name1 = "PizzaQuattroStagioni";

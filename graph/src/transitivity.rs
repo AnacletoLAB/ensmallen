@@ -45,7 +45,7 @@ impl Graph {
                             None
                         } else {
                             Some(
-                                self.get_unchecked_breadth_first_search_from_node_ids(
+                                self.get_unchecked_breadth_first_search_from_node_id(
                                     src_node_id,
                                     None,
                                     None,
@@ -66,7 +66,7 @@ impl Graph {
             ),
             self.nodes.clone(),
             self.node_types.clone(),
-            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+            self.edge_types.as_ref().as_ref().map(|ets| ets.vocabulary.clone()),
             false,
             self.is_directed(),
             Some(true),
@@ -120,7 +120,7 @@ impl Graph {
                     .filter_map(|src_node_id| unsafe {
                         if self.is_unchecked_connected_from_node_id(src_node_id) {
                             Some(
-                                self.get_unchecked_breadth_first_search_from_node_ids(
+                                self.get_unchecked_breadth_first_search_from_node_id(
                                     src_node_id,
                                     None,
                                     None,
@@ -130,7 +130,8 @@ impl Graph {
                                 .into_iter()
                                 .enumerate()
                                 .filter(move |&(dst_node_id, distance)| {
-                                    distance != NODE_NOT_PRESENT && src_node_id != dst_node_id as NodeT
+                                    distance != NODE_NOT_PRESENT
+                                        && src_node_id != dst_node_id as NodeT
                                 })
                                 .map(move |(dst_node_id, distance)| {
                                     (
@@ -153,7 +154,7 @@ impl Graph {
             ),
             self.nodes.clone(),
             self.node_types.clone(),
-            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+            self.edge_types.as_ref().as_ref().map(|ets| ets.vocabulary.clone()),
             true,
             self.is_directed(),
             Some(true),
@@ -219,7 +220,7 @@ impl Graph {
                     .filter_map(|src_node_id| unsafe {
                         if self.is_unchecked_connected_from_node_id(src_node_id) {
                             Some(
-                                self.get_unchecked_dijkstra_from_node_ids(
+                                self.get_unchecked_dijkstra_from_node_id(
                                     src_node_id,
                                     None,
                                     None,
@@ -253,7 +254,7 @@ impl Graph {
             ),
             self.nodes.clone(),
             self.node_types.clone(),
-            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+            self.edge_types.as_ref().as_ref().map(|ets| ets.vocabulary.clone()),
             true,
             self.is_directed() || iterations.is_some(),
             Some(true),
