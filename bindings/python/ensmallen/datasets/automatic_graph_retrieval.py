@@ -245,19 +245,26 @@ class AutomaticallyRetrievedGraph:
             self.get_preprocessed_graph_metadata_path()
         )
 
-    def __call__(self) -> Graph:
-        """Return Graph containing required graph."""
-        paths = self._graph.get("paths", None)
-        graph_arguments = {
+    def get_graph_arguments(self) -> Dict:
+        """Return the dictionary of arguments of the Graph."""
+        return {
             **self._graph["arguments"],
             **self._additional_graph_kwargs
         }
+    
+    def get_adjusted_graph_paths(self) -> str:
+        """Return adjusted list of paths.""" 
+        paths = self._graph.get("paths", None)
         if paths is not None:
             paths = [
                 os.path.join(self._cache_path, path)
                 for path in paths
             ]
+        return paths
 
+    def __call__(self) -> Graph:
+        """Return Graph containing required graph."""
+        graph_arguments = self.get_graph_arguments()
         root = self.get_preprocessed_graph_directory_path()
 
         if not self._cache and os.path.exists(root):
@@ -267,13 +274,10 @@ class AutomaticallyRetrievedGraph:
             # Download the necessary data
             self._downloader.download(
                 self._graph["urls"],
-                paths
+                self.get_adjusted_graph_paths()
             )
 
-        os.makedirs(
-            root,
-            exist_ok=True
-        )
+        os.makedirs(root, exist_ok=True)
 
         # Call the provided callbacks to process the edge lists, if any.
         for callback, arguments in zip(self._callbacks, self._callbacks_arguments):

@@ -428,6 +428,10 @@ class GraphRepository:
         ) as f:
             return f.read().format("\n\n".join(references))
 
+    def get_graph_retrieval_file(self) -> str:
+        """Return graph retrieval file."""
+        return "graph_retrieval_file"
+
     def format_versions(self, versions: List[str]) -> str:
         """Return versions available."""
         if versions == ["latest"]:
@@ -528,8 +532,10 @@ class GraphRepository:
         Formatted model of the report.
         """
         with open(
-            "{}/models/graph_retrieval_file.py".format(
-                os.path.dirname(os.path.abspath(__file__))),
+            "{}/models/{}.py".format(
+                os.path.dirname(os.path.abspath(__file__)),
+                self.get_graph_retrieval_file()
+            ),
             "r"
         ) as f:
             return f.read().format(

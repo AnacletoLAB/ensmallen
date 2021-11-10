@@ -286,12 +286,12 @@ pub fn convert_edge_list_to_numeric(
             if let Some(node_file_writer) = &node_file_writer {
                 if !src_was_already_present {
                     nfs = node_file_writer
-                        .write_line(nfs, src_id, src_name, None, None)
+                        .write_line(nfs, src_id, src_name, None, None, None)
                         .unwrap();
                 }
                 if !dst_was_already_present {
                     nfs = node_file_writer
-                        .write_line(nfs, dst_id, dst_name, None, None)
+                        .write_line(nfs, dst_id, dst_name, None, None, None)
                         .unwrap();
                 }
                 Some(nfs)

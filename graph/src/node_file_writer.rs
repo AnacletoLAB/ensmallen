@@ -6,22 +6,31 @@ use std::{fs::File, io::BufWriter};
 /// Structure that saves the writer specific to writing and reading a nodes csv file.
 ///
 /// # Attributes
-/// * writer: CSVFileWriter - The common writer for readin and writing a csv.
-/// * nodes_column: String - The name of the nodes names column. This parameter is mutually exclusive with nodes_column_number.
-/// * nodes_column_number: usize - The rank of the column with the nodes names. This parameter is mutually exclusive with nodes_column.
-/// * node_types_column: String - The name of the nodes type column. This parameter is mutually exclusive with node_types_column_number.
-/// * node_types_column_number: usize - The rank of the column with the nodes types. This parameter is mutually exclusive with node_types_column.
-/// * node_types_separator: String - Separator to split the node types.
+/// * `writer`: CSVFileWriter - The common writer for readin and writing a csv.
+/// * `node_ids_column`: Option<String> - The name of the node ids column.
+/// * `node_ids_column_number`: Option<usize> - The rank of the column with the nodes ids.
+/// * `nodes_column`: String - The name of the nodes names column.
+/// * `nodes_column_number`: usize - The rank of the column with the nodes names.
+/// * `node_types_column`: String - The name of the nodes type column.
+/// * `node_types_column_number`: usize - The rank of the column with the nodes types.
+/// * `node_types_separator`: String - Separator to split the node types.
+/// * `node_descriptions_column`: Option<String> - The name of the nodes descriptions column.
+/// * `node_descriptions_column_number`: Option<usize> - The rank of the column with the nodes descriptions.
+/// * `numeric_node_type_ids`: bool - Whether the node type IDs should be written out as numeric.
+/// * `number_of_columns`: usize - The number of columns to be written out.
+/// * `columns_are_dense`: bool - Whether the columns can be assumed to be dense, that is without gaps in between. This information can be used for a faster writer implementation.
 #[no_binding]
 pub struct NodeFileWriter {
     pub(crate) writer: CSVFileWriter,
     pub(crate) node_ids_column: Option<String>,
     pub(crate) node_ids_column_number: Option<usize>,
     pub(crate) nodes_column: String,
-    pub(crate) node_types_column: Option<String>,
     pub(crate) nodes_column_number: usize,
+    pub(crate) node_types_column: Option<String>,
     pub(crate) node_types_column_number: Option<usize>,
     pub(crate) node_types_separator: Option<String>,
+    pub(crate) node_descriptions_column: Option<String>,
+    pub(crate) node_descriptions_column_number: Option<usize>,
     pub(crate) numeric_node_type_ids: bool,
     number_of_columns: usize,
     columns_are_dense: bool,
@@ -44,6 +53,8 @@ impl NodeFileWriter {
             node_types_column: None,
             node_types_column_number: None,
             node_types_separator: None,
+            node_descriptions_column: None,
+            node_descriptions_column_number: None,
             numeric_node_type_ids: false,
             number_of_columns: 1,
             columns_are_dense: true,
@@ -62,11 +73,29 @@ impl NodeFileWriter {
         if self.node_ids_column_number.is_some() {
             offset += 1;
         }
-        self.nodes_column_number == offset
-            && self
-                .node_types_column_number
-                .as_ref()
-                .map_or(true, |&ntcn| ntcn == offset + 1)
+        if self.nodes_column_number != offset {
+            return false;
+        }
+        offset += 1;
+
+        if self
+            .node_types_column_number
+            .as_ref()
+            .map_or(false, |&ntcn| ntcn != offset)
+        {
+            return false;
+        }
+        if self.node_types_column_number.is_some() {
+            offset += 1;
+        }
+        if self
+            .node_descriptions_column_number
+            .as_ref()
+            .map_or(false, |&ntcn| ntcn != offset)
+        {
+            return false;
+        }
+        true
     }
 
     /// Set the column of the nodes.
@@ -81,7 +110,7 @@ impl NodeFileWriter {
         self
     }
 
-    /// Set the column of the nodes.
+    /// Set the column of the node types.
     ///
     /// # Arguments
     /// * `node_types_column`: Option<String> - The node types column to use for the file.
@@ -92,6 +121,21 @@ impl NodeFileWriter {
     ) -> NodeFileWriter {
         if let Some(column) = nodes_type_column {
             self.node_types_column = Some(column.into());
+        }
+        self
+    }
+
+    /// Set the column of the node descriptions.
+    ///
+    /// # Arguments
+    /// * `node_descriptions_column`: Option<String> - The node descriptions column to use for the file.
+    ///
+    pub fn set_node_descriptions_column<S: Into<String>>(
+        mut self,
+        node_descriptions_column: Option<S>,
+    ) -> NodeFileWriter {
+        if let Some(column) = node_descriptions_column {
+            self.node_descriptions_column = Some(column.into());
         }
         self
     }
@@ -110,7 +154,7 @@ impl NodeFileWriter {
         self
     }
 
-    /// Set the column_number of the nodes.
+    /// Set the column_number of the node types.
     ///
     /// # Arguments
     /// * `node_types_column_number`: Option<usize> - The node types column_number to use for the file.
@@ -125,6 +169,26 @@ impl NodeFileWriter {
             self.columns_are_dense = self.are_columns_dense();
             if self.node_types_column.is_none() {
                 self.node_types_column = Some(column_number.to_string());
+            }
+        }
+        self
+    }
+
+    /// Set the column_number of the node descriptions.
+    ///
+    /// # Arguments
+    /// * `node_descriptions_column_number`: Option<usize> - The node descriptions column_number to use for the file.
+    ///
+    pub fn set_node_descriptions_column_number(
+        mut self,
+        node_descriptions_column_number: Option<usize>,
+    ) -> NodeFileWriter {
+        if let Some(column_number) = node_descriptions_column_number {
+            self.node_descriptions_column_number = Some(column_number);
+            self.number_of_columns = self.number_of_columns.max(column_number + 1);
+            self.columns_are_dense = self.are_columns_dense();
+            if self.node_descriptions_column.is_none() {
+                self.node_descriptions_column = Some(column_number.to_string());
             }
         }
         self
@@ -257,6 +321,14 @@ impl NodeFileWriter {
             header_positions.push(node_types_column_number);
         }
 
+        if let (Some(node_descriptions_column), Some(node_descriptions_column_number)) = (
+            &self.node_descriptions_column,
+            self.node_descriptions_column_number,
+        ) {
+            header_values.push(node_descriptions_column.clone());
+            header_positions.push(node_descriptions_column_number);
+        }
+
         (header_values, header_positions)
     }
 
@@ -266,6 +338,7 @@ impl NodeFileWriter {
         node_name: String,
         node_type_ids: Option<Vec<NodeTypeT>>,
         node_type_names: Option<Vec<String>>,
+        node_description: Option<String>,
     ) -> Vec<String> {
         let mut line = vec![];
         let mut positions = vec![];
@@ -304,6 +377,14 @@ impl NodeFileWriter {
                 positions.push(*column_number);
             }
         }
+
+        if let Some(node_descriptions_column_number) = &self.node_descriptions_column_number {
+            line.push(node_description.unwrap_or("".to_string()));
+            if !self.columns_are_dense {
+                positions.push(*node_descriptions_column_number);
+            }
+        }
+
         if self.columns_are_dense {
             line
         } else {
@@ -328,6 +409,7 @@ impl NodeFileWriter {
     /// `node_name`: String - Name of the node.
     /// `node_type_ids`: Option<Vec<NodeTypeT>> - Numeric IDs of the node types of the node.
     /// `node_type_names`: Option<Vec<String>> - Names of the node types of the node.
+    /// `node_description`: Option<String> - Description of the node.
     ///
     /// # Raises
     /// * If some I/O error is encountered.
@@ -338,10 +420,17 @@ impl NodeFileWriter {
         node_name: String,
         node_type_ids: Option<Vec<NodeTypeT>>,
         node_type_names: Option<Vec<String>>,
+        node_description: Option<String>,
     ) -> Result<BufWriter<File>> {
         self.writer.write_line(
             stream,
-            self.parse_line(node_id, node_name, node_type_ids, node_type_names),
+            self.parse_line(
+                node_id,
+                node_name,
+                node_type_ids,
+                node_type_names,
+                node_description,
+            ),
         )
     }
 
@@ -366,7 +455,14 @@ impl NodeFileWriter {
         );
         let mut stream = self.start_writer()?;
         for (node_id, node_name, node_type_ids, node_type_names) in iterator.progress_with(pb) {
-            stream = self.write_line(stream, node_id, node_name, node_type_ids, node_type_names)?;
+            stream = self.write_line(
+                stream,
+                node_id,
+                node_name,
+                node_type_ids,
+                node_type_names,
+                None,
+            )?;
         }
         self.close_writer(stream)
     }

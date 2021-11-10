@@ -476,7 +476,6 @@ pub fn build_optimal_lists_files(
         sort_temporary_directory,
     )?;
 
-    // Add the edge IDs to the edge list
     info!("Count the lines in the path, that match exactly with the number of edges.");
     let edges_number = get_rows_number(target_edge_path.as_ref())? as EdgeT;
 

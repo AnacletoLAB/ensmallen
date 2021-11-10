@@ -43,7 +43,8 @@ class WikipediaGraphRepository(GraphRepository):
         main_url = "https://dumps.wikimedia.org/backup-index.html"
         root_url_pattern = "https://dumps.wikimedia.org/{main_root}/"
         data_url_pattern = "https://dumps.wikimedia.org/{main_root}/{version}/{main_root}-{version}-pages-articles-multistream.xml.bz2"
-        edge_path_pattern = "{main_root}-{version}-pages-articles-multistream.xml.bz2"
+        edge_path_pattern = "{main_root}-{version}-pages-articles-multistream.xml"
+        compressed_edge_path_pattern = "{main_root}-{version}-pages-articles-multistream.xml.bz2"
         versions_black_list = ["../"]
 
         soup = BeautifulSoup(get_cached_page(main_url), "lxml")
@@ -61,8 +62,8 @@ class WikipediaGraphRepository(GraphRepository):
             "node_types_separator": "|",
             "nodes_column": "id",
             "node_list_node_types_column": "category",
-            "sources_column": "sources",
-            "destinations_column": "destinations",
+            "sources_column_number": 0,
+            "destinations_column_number": 1,
         }
 
         for main_root in tqdm(
@@ -88,28 +89,17 @@ class WikipediaGraphRepository(GraphRepository):
                         )
                     ],
                     "paths": [
-                        edge_path_pattern.format(
+                        compressed_edge_path_pattern.format(
                             main_root=main_root,
                             version=version
                         )
                     ],
-                    "callback": "parse_wikipedia_graph",
-                    "callback_arguments": {
-                        "source": edge_path_pattern.format(
-                            main_root=main_root,
-                            version=version
-                        ),
-                        **kwargs
-                    },
-                    "imports": [
-                        "from ensmallen.edge_list_utils import parse_wikipedia_graph"
-                    ],
+                    "source_path": edge_path_pattern.format(
+                        main_root=main_root,
+                        version=version
+                    ),
                     "arguments": {
-                        **kwargs,
                         "edge_list_support_balanced_quotes": True,
-                        "edge_list_is_correct": True,
-                        "node_list_is_correct": True,
-                        "node_type_list_is_correct": True,
                         "name": graph_name,
                     }
                 }
@@ -228,44 +218,6 @@ class WikipediaGraphRepository(GraphRepository):
         """Return list of graph names."""
         return list(self._data.keys())
 
-    def get_imports(self, graph_name: str, version: str) -> str:
-        """Return imports to be added to model file.
-
-        Parameters
-        -----------------------
-        graph_name: str,
-            Name of the graph.
-
-        Returns
-        -----------------------
-        Imports.
-        """
-        return "\n".join(self._data[graph_name][version]["imports"])
-
-    def get_callbacks(self, graph_name: str, version: str) -> List[str]:
-        """Return callbacks to be added to model file.
-
-        Parameters
-        -----------------------
-        graph_name: str,
-            Name of the graph.
-
-        Returns
-        -----------------------
-        callbacks.
-        """
-        return [self._data[graph_name][version]["callback"]]
-
-    def get_callbacks_arguments(self, graph_name: str, version: str) -> List[Dict]:
-        """Return dictionary with list of arguments to pass to callbacks.
-
-        Parameters
-        -----------------------
-        graph_name: str,
-            Name of the graph to retrieve.
-
-        Returns
-        -----------------------
-        Arguments to pass to callbacks.
-        """
-        return [self._data[graph_name][version]["callback_arguments"]]
+    def get_graph_retrieval_file(self) -> str:
+        """Return graph retrieval file."""
+        return "wikipedia_graph_retrieval_file"
