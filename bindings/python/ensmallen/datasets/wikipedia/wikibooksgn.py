@@ -13,7 +13,6 @@ from typing import Dict, Optional
 
 def WikiBooksGN(
     directed: bool = False,
-    preprocess: bool = True,
     load_nodes: bool = True,
     load_node_types: bool = True,
     automatically_enable_speedups_for_small_graphs: bool = True,
@@ -34,9 +33,6 @@ def WikiBooksGN(
     directed: bool = False
         Wether to load the graph as directed or undirected.
         By default false.
-    preprocess: bool = True
-        Whether to preprocess the graph to be loaded in 
-        optimal time and memory.
     load_nodes: bool = True
         Whether to load the nodes vocabulary or treat the nodes
         simply as a numeric range.
@@ -92,7 +88,6 @@ def WikiBooksGN(
         repository="wikipedia",
         version=version,
         directed=directed,
-        preprocess=preprocess,
         load_nodes=load_nodes,
         load_node_types=load_node_types,
         automatically_enable_speedups_for_small_graphs=automatically_enable_speedups_for_small_graphs,

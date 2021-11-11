@@ -84,6 +84,7 @@ def FYPO(
     version: str = "2021-10-05"
         The version of the graph to retrieve.	
 		The available versions are:
+			- 2021-11-08
 			- 2021-10-05
     additional_graph_kwargs: Dict
         Additional graph kwargs.

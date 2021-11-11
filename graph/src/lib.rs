@@ -9,6 +9,7 @@
 
 #![warn(unused_macros)]
 #![feature(is_sorted)]
+#![feature(string_remove_matches)]
 #![feature(map_first_last)]
 #![feature(exit_status_error)]
 #![feature(core_intrinsics)]

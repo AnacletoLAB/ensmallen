@@ -22,7 +22,6 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
         version: str,
         repository: str,
         directed: bool = False,
-        preprocess: bool = True,
         load_nodes: bool = True,
         load_node_types: bool = True,
         automatically_enable_speedups_for_small_graphs: bool = True,
@@ -46,9 +45,6 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
         directed: bool = False
             Whether to load the graph as directed or undirected.
             By default false.
-        preprocess: bool = True
-            Whether to preprocess the node list and edge list
-            to be loaded optimally in both time and memory.
         load_nodes: bool = True
             Whether to load the nodes vocabulary or treat the nodes
             simply as a numeric range.
@@ -163,9 +159,13 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
         if has_node_types:
             node_types_arguments = {
                 "node_type_path": node_type_list_path,
+                "node_types_number": metadata["node_types_number"],
                 "node_types_column": "node_type_names",
                 "node_type_list_is_correct": True,
-                "node_type_list_separator": "\t"
+                "node_type_list_separator": "\t",
+                "node_types_separator": "|",
+                "node_list_node_types_column_number": 1,
+                "node_list_numeric_node_type_ids": True,
             }
         else:
             node_types_arguments = {}
@@ -175,11 +175,7 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
                 "node_path": node_path,
                 "node_list_separator": "\t",
                 "nodes_column": "node_names",
-                "node_types_separator": "|" if has_node_types else None,
-                "node_list_node_types_column_number": 1 if has_node_types else None,
-                "node_list_numeric_node_type_ids": True if has_node_types else None,
-                "skip_node_types_if_unavailable": True if has_node_types else None,
-                "node_list_is_correct": True,
+                "node_list_is_correct": False,
                 **node_types_arguments
             }
         else:

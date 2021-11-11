@@ -627,7 +627,7 @@ impl Graph {
         // some instances. Similarly, if the graph has less than 1M nodes we
         // also compute the connected components as it should be quite immediate.
         let connected_components = if !self.is_directed()
-            && (self.get_nodes_number() < 10e6 as NodeT || self.destinations.is_some())
+            && (self.get_nodes_number() < 100e6 as NodeT || self.destinations.is_some())
         {
             format!("{} ", self.get_report_of_connected_components())
         } else {
@@ -917,7 +917,8 @@ impl Graph {
                     self.get_unchecked_succinct_node_description(
                         self.iter_singleton_nodes_with_selfloops_node_ids()
                             .next()
-                            .unwrap(), 0
+                            .unwrap(),
+                            1
                     )
                 ),
                 singleton_nodes_with_selfloops_number => {
@@ -932,7 +933,7 @@ impl Graph {
                             self.iter_singleton_nodes_with_selfloops_node_ids()
                                 .take(5)
                                 .map(|node_id| {
-                                    self.get_unchecked_succinct_node_description(node_id, 0)
+                                    self.get_unchecked_succinct_node_description(node_id, 1)
                                 })
                                 .collect::<Vec<_>>()
                                 .as_ref(),

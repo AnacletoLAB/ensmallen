@@ -84,6 +84,7 @@ def PORO(
     version: str = "2016-09-13"
         The version of the graph to retrieve.	
 		The available versions are:
+			- 2016-10-06
 			- 2016-09-13
     additional_graph_kwargs: Dict
         Additional graph kwargs.

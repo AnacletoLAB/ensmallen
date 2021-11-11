@@ -36,7 +36,7 @@ def MONDO(
     cache: bool = True,
     cache_path: Optional[str] = None,
     cache_path_system_variable: str = "GRAPH_CACHE_DIR",
-    version: str = "2021-09-01",
+    version: str = "2021-10-01",
     **additional_graph_kwargs: Dict
 ) -> Graph:
     """Return new instance of the MONDO graph.
@@ -81,11 +81,12 @@ def MONDO(
         provided below is set, otherwise we use the directory `graphs`.
     cache_path_system_variable: str = "GRAPH_CACHE_DIR"
         The system variable with the default graph cache directory.
-    version: str = "2021-09-01"
+    version: str = "2021-10-01"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 2021-10-01
+			- 2021-11-01
 			- 2021-09-01
+			- 2021-10-01
     additional_graph_kwargs: Dict
         Additional graph kwargs.
 

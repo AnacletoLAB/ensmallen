@@ -168,21 +168,13 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
             let expected_duplicates_number = reverse_map.len() - map.len();
             reverse_map.par_sort_unstable();
             let duplicates = reverse_map
-                .into_iter()
-                .scan(None, |last_object, object| {
-                    let equal_to_last_edge = last_object
-                        .as_ref()
-                        .map_or(false, |last_object| *last_object == object);
-
-                    let result: Option<String> = if equal_to_last_edge {
-                        Some(object.to_string())
+                .windows(2)
+                .filter_map(|a| {
+                    if a[0] == a[1] {
+                        Some(a[0].clone())
                     } else {
                         None
-                    };
-
-                    let _ = *last_object.insert(object.to_string());
-
-                    result
+                    }
                 })
                 .unique()
                 .collect::<Vec<String>>();
