@@ -114,7 +114,7 @@ fn sanitize_line(mut line: String) -> String {
 // Return provided term without peculiar characters.
 fn sanitize_term(mut term: String) -> String {
     term = term.trim().to_string();
-    if term.startswith("http"){
+    if term.starts_with("http"){
         let y: &[_] = &['\t'];
         term.remove_matches(y);
     } else {
