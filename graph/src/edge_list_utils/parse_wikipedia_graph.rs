@@ -9,7 +9,28 @@ use std::fs::File;
 use std::io::prelude::*;
 use std::io::BufReader;
 
-const COMMENT_SYMBOLS: &[&str] = &["&lt;", "{", "}", "|", "----", "!", ":", "=", "<", "*"];
+const COMMENT_SYMBOLS: &[&str] = &["&lt;", "{", "}", "|", "----", "!", ":", "=", "<"];
+const SPECIAL_NODE_STARTERS: &[&str] = &[
+    "/",
+    "Image:",
+    "image:",
+    "User:",
+    "File:",
+    ":File",
+    "media:",
+    "Cookbook:",
+    "Template:",
+];
+
+/// Returns boolean represing whether the given candidate node is a special node.
+///
+/// # Arguments
+/// `candidate_node`: &str - Candidate node to check.
+fn is_special_node(candidate_node: &str) -> bool {
+    SPECIAL_NODE_STARTERS
+        .iter()
+        .any(|&starter| candidate_node.starts_with(starter))
+}
 
 /// Returns boolean representing whether the given line should be skipped.
 ///
@@ -69,8 +90,13 @@ pub fn parse_wikipedia_graph(
     edge_list_separator: char,
     sort_temporary_directory: Option<String>,
     directed: bool,
+    keep_interwikipedia_nodes: Option<bool>,
+    keep_external_nodes: Option<bool>,
     verbose: Option<bool>,
 ) -> Result<(NodeTypeT, NodeT, EdgeT)> {
+    // TODO! When normalizing the nodes, keep only the right-most value after : if the node name does not start with http.
+    let keep_external_nodes = keep_external_nodes.unwrap_or(true);
+    let keep_interwikipedia_nodes = keep_interwikipedia_nodes.unwrap_or(true);
     let verbose = verbose.unwrap_or(true);
     let mut node_types_vocabulary: Vocabulary<NodeTypeT> = Vocabulary::new(false);
     let mut nodes_vocabulary: Vocabulary<NodeT> = Vocabulary::new(false);
@@ -124,13 +150,14 @@ pub fn parse_wikipedia_graph(
         "Kategori",
         "კატეგორია",
         "분류",
-        "Kategorija"
+        "Kategorija",
     ];
 
     let node_types_regex = Regex::new(&format!(
         r"^\[\[[^\]]*?(?:{}):([^\]]+?)\]\]$",
         categories.join("|")
-    )).unwrap();
+    ))
+    .unwrap();
     // Start to read of the file.
     info!("Starting to build the node list and node type list.");
     // Initialize the current node name.
