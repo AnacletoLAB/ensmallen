@@ -120,6 +120,7 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
         os.makedirs(root, exist_ok=True)
 
         node_type_list_path = self.get_preprocessed_graph_node_types_path()
+        edge_type_list_path = self.get_preprocessed_graph_edge_types_path()
         node_path = self.get_preprocessed_graph_nodes_path()
         edge_path = self.get_preprocessed_graph_edges_path()
 
@@ -133,12 +134,15 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
                 edge_path=edge_path,
                 node_path=node_path,
                 node_type_path=node_type_list_path,
+                edge_type_path=edge_type_list_path,
                 node_list_separator="\t",
                 node_type_list_separator="\t",
+                edge_type_list_separator="\t",
                 node_types_separator="|",
                 nodes_column="node_names",
                 node_types_column="node_type_names",
                 node_list_node_types_column="node_type_names",
+                edge_types_column="edge_type_names",
                 node_descriptions_column="node_descriptions",
                 edge_list_separator="\t",
                 sort_temporary_directory=self._sort_temporary_directory,
@@ -155,8 +159,7 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
         # Load the stored metadata
         metadata = self.get_preprocessed_metadata()
         # If the node types are provided
-        has_node_types = metadata["node_types_number"] is not None and self._load_node_types
-        if has_node_types:
+        if self._load_node_types:
             node_types_arguments = {
                 "node_type_path": node_type_list_path,
                 "node_types_number": metadata["node_types_number"],
@@ -183,11 +186,22 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
                 "numeric_node_ids": True,
             }
 
+        # If the edge types are provided
+        edge_types_arguments = {
+            "edge_type_path": edge_type_list_path,
+            "edge_types_column_number": 0,
+            "edge_type_list_is_correct": True,
+            "edge_type_list_separator": "\t",
+            "edge_list_edge_types_column_number": 2,
+            "edge_list_numeric_edge_type_ids": True
+        }
+
         # Load the graph
         graph = Graph.from_csv(**{
             **metadata,
             **graph_arguments,
             **nodes_arguments,
+            **edge_types_arguments,
 
             "edge_path": edge_path,
             "edge_list_header": False,

@@ -1,6 +1,7 @@
 use crate::{
-    get_rows_number, sort_numeric_edge_list_inplace, utils::get_loading_bar, EdgeFileWriter, EdgeT,
-    NodeFileWriter, NodeT, NodeTypeT, Result, TypeFileWriter, Vocabulary,
+    compute_hash, get_rows_number, sort_numeric_edge_list_inplace, utils::get_loading_bar,
+    EdgeFileWriter, EdgeT, EdgeTypeT, NodeFileWriter, NodeT, NodeTypeT, Result, TypeFileWriter,
+    Vocabulary,
 };
 use indicatif::ProgressIterator;
 use lazy_static::lazy_static;
@@ -9,6 +10,7 @@ use log::info;
 use nix::fcntl::*;
 use regex::Captures;
 use regex::Regex;
+use std::collections::HashMap;
 use std::fs::File;
 use std::io::prelude::*;
 use std::io::BufReader;
@@ -90,10 +92,6 @@ fn get_lines_iterator(path: &str) -> Result<impl Iterator<Item = Result<String>>
 
 /// Remove metadata and other symbols from the text in a wikipedia page
 fn sanitize_line(mut line: String) -> String {
-    line.remove_matches("[");
-    line.remove_matches("]");
-    line.remove_matches("'");
-    line.remove_matches("&quot;");
     line = LINE_SANITIZER_SPACES_REMOVER
         .replace_all(&line, " ")
         .to_string();
@@ -106,12 +104,18 @@ fn sanitize_line(mut line: String) -> String {
     line = LINE_SANITIZER_SQUARE_BRACES_REMOVER
         .replace_all(&line, r"\a")
         .to_string();
+    let x: &[_] = &['[', ']', '\''];
+    line.remove_matches(x);
+    line.remove_matches("&quot;");
+    line.remove_matches("</text>");
     line
 }
 
-fn sanitize_term(term: &str) -> String {
-    let x: &[_] = &[' ', '\t', ':', '-', '/', '*', '#'];
-    term.to_owned().trim_matches(x).to_owned()
+// Return provided term without peculiar characters.
+fn sanitize_term(mut term: String) -> String {
+    let y: &[_] = &['\t', ':', '-', '/', '*', '#'];
+    term.remove_matches(y);
+    term.trim().to_string()
 }
 
 /// TODO: write the docstring
@@ -120,12 +124,15 @@ pub fn parse_wikipedia_graph(
     edge_path: &str,
     node_path: &str,
     node_type_path: &str,
+    edge_type_path: &str,
     node_list_separator: char,
     node_type_list_separator: char,
+    edge_type_list_separator: char,
     node_types_separator: &str,
     nodes_column: &str,
     node_types_column: &str,
     node_list_node_types_column: &str,
+    edge_types_column: &str,
     node_descriptions_column: &str,
     edge_list_separator: char,
     sort_temporary_directory: Option<String>,
@@ -136,10 +143,11 @@ pub fn parse_wikipedia_graph(
 ) -> Result<(NodeTypeT, NodeT, EdgeT)> {
     let keep_external_nodes = keep_external_nodes.unwrap_or(true);
     let keep_interwikipedia_nodes = keep_interwikipedia_nodes.unwrap_or(true);
+    let mut redirect_hashmap: HashMap<u64, String> = HashMap::new();
     let verbose = verbose.unwrap_or(true);
     let mut node_types_vocabulary: Vocabulary<NodeTypeT> = Vocabulary::new(false);
     let mut nodes_vocabulary: Vocabulary<NodeT> = Vocabulary::new(false);
-
+    let edge_types = ["internal_wiki_link", "external_wiki_link", "websites_link"];
     let nodes_writer: NodeFileWriter = NodeFileWriter::new(node_path)
         .set_separator(Some(node_list_separator))?
         .set_node_types_separator(Some(node_types_separator))?
@@ -159,9 +167,24 @@ pub fn parse_wikipedia_graph(
 
     let mut node_types_stream = node_types_writer.start_writer()?;
 
+    let edge_types_writer = TypeFileWriter::new(edge_type_path)
+        .set_separator(Some(edge_type_list_separator))?
+        .set_types_column(Some(edge_types_column));
+
+    edge_types_writer.dump_iterator(
+        Some(edge_types.len()),
+        edge_types
+            .iter()
+            .enumerate()
+            .map(|(edge_type_id, &edge_type_name)| {
+                (edge_type_id as EdgeTypeT, edge_type_name.to_string())
+            }),
+    )?;
+
     let edges_writer = EdgeFileWriter::new(edge_path)
         .set_sources_column_number(Some(0))
         .set_destinations_column_number(Some(1))
+        .set_edge_types_column_number(Some(2))
         .set_separator(Some(edge_list_separator))?
         .set_numeric_node_ids(Some(true))
         .set_numeric_edge_type_ids(Some(true))
@@ -172,6 +195,7 @@ pub fn parse_wikipedia_graph(
     // Create the required regex.
     // First we create the regex to recognize titles.
     let title_regex = Regex::new(r"^<title>([^<]+)</title>$").unwrap();
+    let redirect_title_regex = Regex::new(r#"^<redirect title="([^"]+)"\s*/>"#).unwrap();
     // Then we create the regex to recognize the end of a page.
     let end_of_page_regex = Regex::new(r"^</page>$").unwrap();
     // Then we define the regex to extract the destination nodes.
@@ -216,7 +240,6 @@ pub fn parse_wikipedia_graph(
         lines_number,
     );
     // Initialize the current node name.
-    let mut current_node_id: Option<NodeT> = None;
     let mut current_node_name: Option<String> = None;
     let mut current_node_types: Vec<NodeTypeT> = Vec::new();
     let mut current_node_description: Vec<String> = Vec::new();
@@ -229,25 +252,26 @@ pub fn parse_wikipedia_graph(
         let line = line?;
         // We check if the current page is finished.
         if end_of_page_regex.is_match(&line) {
-            if let (Some(current_node_id), Some(current_node_name)) =
-                (current_node_id, current_node_name)
-            {
-                nodes_stream = nodes_writer.write_line(
-                    nodes_stream,
-                    current_node_id,
-                    current_node_name,
-                    if current_node_types.is_empty() {
-                        None
-                    } else {
-                        Some(current_node_types)
-                    },
-                    None,
-                    Some(sanitize_line(current_node_description.join(" "))),
-                )?;
+            if let Some(current_node_name) = current_node_name {
+                let (current_node_id, was_already_present) =
+                    nodes_vocabulary.insert(&current_node_name)?;
+                if !was_already_present {
+                    nodes_stream = nodes_writer.write_line(
+                        nodes_stream,
+                        current_node_id,
+                        current_node_name,
+                        if current_node_types.is_empty() {
+                            None
+                        } else {
+                            Some(current_node_types)
+                        },
+                        None,
+                        Some(sanitize_line(current_node_description.join(" "))),
+                    )?;
+                }
             }
             // We write the node to the node list file.
             // Finally we restore the current varibales to defaults.
-            current_node_id = None;
             current_node_name = None;
             current_node_types = Vec::new();
             current_node_description = Vec::new();
@@ -255,7 +279,7 @@ pub fn parse_wikipedia_graph(
         // Check if the line contains a title if we don't currently have one.
         if current_node_name.is_none() {
             if let Some(captures) = title_regex.captures(&line) {
-                let node_name = sanitize_term(&captures[1]);
+                let node_name = sanitize_term(captures[1].to_string());
                 // Check that the node name is not empty
                 if node_name.is_empty() {
                     continue;
@@ -265,14 +289,17 @@ pub fn parse_wikipedia_graph(
                 if is_special_node(&node_name) {
                     continue;
                 }
-                let (node_id, was_already_present) = nodes_vocabulary.insert(&node_name)?;
-                // Since the node may have been already parsed in the case
-                // when multiple pages share the same title we need to check
-                // for collisions.
-                if !was_already_present {
-                    current_node_id = Some(node_id);
-                    current_node_name = Some(node_name);
+                current_node_name = Some(node_name);
+            }
+            continue;
+        }
+        if let Some(node_name) = &current_node_name {
+            if let Some(captures) = title_regex.captures(&line) {
+                let redirect_node_name = sanitize_term(captures[1].to_string());
+                if redirect_node_name != *node_name {
+                    redirect_hashmap.insert(compute_hash(&node_name), redirect_node_name);
                 }
+                current_node_name = None;
             }
             continue;
         }
@@ -282,7 +309,7 @@ pub fn parse_wikipedia_graph(
         }
         // Check if the line is a node type.
         if let Some(captures) = node_types_regex.captures(&line) {
-            let node_type_name = sanitize_term(&captures[1]);
+            let node_type_name = sanitize_term(captures[1].to_string());
             // Check that the note type is not empty
             if node_type_name.is_empty() {
                 continue;
@@ -323,37 +350,58 @@ pub fn parse_wikipedia_graph(
         // Check if the line contains a title if we don't currently have one.
         if source_node_id.is_none() {
             if let Some(captures) = title_regex.captures(&line) {
-                source_node_id = nodes_vocabulary.get(&captures[1].to_owned());
+                source_node_id = nodes_vocabulary.get(&captures[1].to_string());
             }
+            continue;
+        }
+        if source_node_id.is_some() && redirect_title_regex.is_match(&line) {
+            source_node_id = None;
             continue;
         }
         // We check if the line should be skipped
         if should_skip_line(&line) || node_types_regex.is_match(&line) {
             continue;
         }
-        let external_iterator: Box<dyn Iterator<Item = Captures>> = if keep_external_nodes {
-            Box::new(
-                external_destination_nodes_regex
-                    .captures_iter(&line)
-                    .into_iter(),
-            )
-        } else {
-            Box::new(::std::iter::empty())
-        };
+        let external_iterator: Box<dyn Iterator<Item = (Captures, EdgeTypeT)>> =
+            if keep_external_nodes {
+                Box::new(
+                    external_destination_nodes_regex
+                        .captures_iter(&line)
+                        .into_iter()
+                        .map(|capture| (capture, 2)),
+                )
+            } else {
+                Box::new(::std::iter::empty())
+            };
         // Finally, we parse the line and extract the destination nodes.
-        for destination_node_name in internal_destination_nodes_regex
+        for (destination_node_name, mut edge_type_id) in internal_destination_nodes_regex
             .captures_iter(&line)
             .into_iter()
+            .map(|capture| (capture, 0))
             .chain(external_iterator)
-            .map(|destination_node_name| sanitize_term(&destination_node_name[1]))
-            .filter(|destination_node_name| {
+            .map(|(destination_node_name, edge_type_id)| {
+                (
+                    sanitize_term(destination_node_name[1].to_string()),
+                    edge_type_id,
+                )
+            })
+            .filter(|(destination_node_name, _)| {
                 !destination_node_name.is_empty() && !is_special_node(destination_node_name)
             })
         {
+            let mut destination_node_name = destination_node_name.to_string();
+            while let Some(remapped_destination_node_name) =
+                redirect_hashmap.get(&compute_hash(&destination_node_name))
+            {
+                destination_node_name = remapped_destination_node_name.to_string();
+            }
             let destination_node_id = if keep_interwikipedia_nodes || keep_external_nodes {
                 let (destination_node_id, was_already_present) =
                     nodes_vocabulary.insert(&destination_node_name)?;
                 if !was_already_present {
+                    if edge_type_id == 0 {
+                        edge_type_id = 1;
+                    }
                     nodes_stream = nodes_writer.write_line(
                         nodes_stream,
                         destination_node_id,
@@ -377,10 +425,10 @@ pub fn parse_wikipedia_graph(
                     edges_stream,
                     0,
                     source_node_id,
-                    "".to_owned(),
+                    "".to_string(),
                     destination_node_id,
-                    "".to_owned(),
-                    None,
+                    "".to_string(),
+                    Some(edge_type_id),
                     None,
                     None,
                 )?;
@@ -389,10 +437,10 @@ pub fn parse_wikipedia_graph(
                         edges_stream,
                         0,
                         destination_node_id,
-                        "".to_owned(),
+                        "".to_string(),
                         source_node_id,
-                        "".to_owned(),
-                        None,
+                        "".to_string(),
+                        Some(edge_type_id),
                         None,
                         None,
                     )?;

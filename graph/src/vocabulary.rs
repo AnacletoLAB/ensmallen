@@ -14,7 +14,7 @@ use std::ops::Range;
 type HashType = u64;
 
 #[inline]
-fn compute_hash<T: Hash>(t: &T) -> u64 {
+pub(crate) fn compute_hash<T: Hash>(t: &T) -> u64 {
     let mut s = DefaultHasher::new();
     t.hash(&mut s);
     s.finish()
