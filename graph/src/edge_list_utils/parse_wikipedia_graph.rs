@@ -461,7 +461,7 @@ pub fn parse_wikipedia_graph(
         None,
         Some(1),
         None,
-        None,
+        Some(2),
         None,
         None,
         sort_temporary_directory,
