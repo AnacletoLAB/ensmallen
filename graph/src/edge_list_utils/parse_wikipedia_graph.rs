@@ -44,6 +44,8 @@ const SPECIAL_NODE_STARTERS: &[&str] = &[
     ":File",
     "media:",
     "Template:",
+    ":commons:",
+    "Progetto:"
 ];
 
 /// Returns boolean represing whether the given candidate node is a special node.
