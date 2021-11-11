@@ -251,9 +251,9 @@ class AutomaticallyRetrievedGraph:
             **self._graph["arguments"],
             **self._additional_graph_kwargs
         }
-    
+
     def get_adjusted_graph_paths(self) -> str:
-        """Return adjusted list of paths.""" 
+        """Return adjusted list of paths."""
         paths = self._graph.get("paths", None)
         if paths is not None:
             paths = [
@@ -518,7 +518,11 @@ class AutomaticallyRetrievedGraph:
                     "node_type_path": target_node_type_list_path,
                     "node_types_column_number": 0,
                     "node_type_list_is_correct": True,
-                    "node_type_list_separator": "\t"
+                    "node_type_list_separator": "\t",
+                    "node_types_separator": "|",
+                    "node_list_node_types_column_number": 1,
+                    "node_list_numeric_node_type_ids": True,
+                    "skip_node_types_if_unavailable": True,
                 }
             else:
                 node_types_arguments = {}
@@ -528,10 +532,6 @@ class AutomaticallyRetrievedGraph:
                     "node_path": target_node_path,
                     "node_list_separator": "\t",
                     "nodes_column_number": 0,
-                    "node_types_separator": "|" if has_node_types else None,
-                    "node_list_node_types_column_number": 1 if has_node_types else None,
-                    "node_list_numeric_node_type_ids": True if has_node_types else None,
-                    "skip_node_types_if_unavailable": True if has_node_types else None,
                     "node_list_is_correct": True,
                     **node_types_arguments
                 }
@@ -548,7 +548,7 @@ class AutomaticallyRetrievedGraph:
                     "edge_types_column_number": 0,
                     "edge_type_list_is_correct": True,
                     "edge_type_list_separator": "\t",
-                    "edge_list_edge_types_column_number": None if metadata["edge_types_number"] is None else 2,
+                    "edge_list_edge_types_column_number": 2,
                     "edge_list_numeric_edge_type_ids": True,
                     "skip_edge_types_if_unavailable": True,
                 }
