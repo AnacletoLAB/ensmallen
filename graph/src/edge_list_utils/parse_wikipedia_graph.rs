@@ -18,6 +18,22 @@ use std::io::BufReader;
 use std::os::unix::io::AsRawFd;
 
 const COMMENT_SYMBOLS: &[&str] = &["&lt;", "{", "}", "|", "----", "!", "=", "<"];
+// Then we define the regex to extract the node types.
+const CATEGORIES: &[&str] = &[
+    "Category",
+    "category",
+    "Categoria",
+    "Категория",
+    "Kategória",
+    "Kategorie",
+    "Κατηγορία",
+    "Categoría",
+    "Luokka",
+    "Kategori",
+    "კატეგორია",
+    "분류",
+    "Kategorija",
+];
 const SPECIAL_NODE_STARTERS: &[&str] = &[
     "/",
     "../",
@@ -37,6 +53,7 @@ const SPECIAL_NODE_STARTERS: &[&str] = &[
 fn is_special_node(candidate_node: &str) -> bool {
     SPECIAL_NODE_STARTERS
         .iter()
+        .chain(CATEGORIES.iter())
         .any(|&starter| candidate_node.starts_with(starter))
 }
 
@@ -118,7 +135,7 @@ fn sanitize_term(mut term: String) -> String {
         let y: &[_] = &['\t'];
         term.remove_matches(y);
     } else {
-        let y: &[_] = &['\t', ':', '-', '/', '*', '#'];
+        let y: &[_] = &['\t', '*', '#'];
         term.remove_matches(y);
     }
     term
@@ -209,33 +226,17 @@ pub fn parse_wikipedia_graph(
     // Create the required regex.
     // First we create the regex to recognize titles.
     let title_regex = Regex::new(r"^<title>([^<]+)</title>$").unwrap();
-    let redirect_title_regex = Regex::new(r#"^<redirect title="([^"]+)"\s*/>"#).unwrap();
+    let redirect_title_regex = Regex::new(r#"^<redirect title="([^"]+)"\s*/>$"#).unwrap();
     // Then we create the regex to recognize the end of a page.
     let end_of_page_regex = Regex::new(r"^</page>$").unwrap();
     // Then we define the regex to extract the destination nodes.
     let internal_destination_nodes_regex = Regex::new(r"\[\[([^\]]+?)(?:\|[^\]]+?)?\]\]").unwrap();
     let external_destination_nodes_regex =
         Regex::new(r"[^\[]\[([^\]]+?)(?:\|[^\]]+?)?\][^\]]").unwrap();
-    // Then we define the regex to extract the node types.
-    let categories = [
-        "Category",
-        "category",
-        "Categoria",
-        "Категория",
-        "Kategória",
-        "Kategorie",
-        "Κατηγορία",
-        "Categoría",
-        "Luokka",
-        "Kategori",
-        "კატეგორია",
-        "분류",
-        "Kategorija",
-    ];
 
     let node_types_regex = Regex::new(&format!(
         r"^\[\[[^\]]*?(?:{}):([^\]\|]+?)(?:\|[^\]]*?)?\]\]$",
-        categories.join("|")
+        CATEGORIES.join("|")
     ))
     .unwrap();
 
