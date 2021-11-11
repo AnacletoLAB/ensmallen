@@ -148,6 +148,7 @@ pub fn parse_wikipedia_graph(
     let mut node_types_vocabulary: Vocabulary<NodeTypeT> = Vocabulary::new(false);
     let mut nodes_vocabulary: Vocabulary<NodeT> = Vocabulary::new(false);
     let edge_types = ["internal_wiki_link", "external_wiki_link", "websites_link"];
+    let node_types = ["internal_wiki", "external_wiki", "websites"];
     let nodes_writer: NodeFileWriter = NodeFileWriter::new(node_path)
         .set_separator(Some(node_list_separator))?
         .set_node_types_separator(Some(node_types_separator))?
@@ -164,8 +165,15 @@ pub fn parse_wikipedia_graph(
     let node_types_writer = TypeFileWriter::new(node_type_path)
         .set_separator(Some(node_type_list_separator))?
         .set_types_column(Some(node_types_column));
-
     let mut node_types_stream = node_types_writer.start_writer()?;
+
+    for node_type in node_types {
+        node_types_stream = node_types_writer.write_line(
+            node_types_stream,
+            unsafe { node_types_vocabulary.unchecked_insert(node_type.to_string()) },
+            node_type.to_string(),
+        )?;
+    }
 
     let edge_types_writer = TypeFileWriter::new(edge_type_path)
         .set_separator(Some(edge_type_list_separator))?
@@ -241,7 +249,7 @@ pub fn parse_wikipedia_graph(
     );
     // Initialize the current node name.
     let mut current_node_name: Option<String> = None;
-    let mut current_node_types: Vec<NodeTypeT> = Vec::new();
+    let mut current_node_types: Vec<NodeTypeT> = vec![0];
     let mut current_node_description: Vec<String> = Vec::new();
     let mut current_line_number: usize = 0;
     // Start to parse and write the node list and node type list.
@@ -273,7 +281,7 @@ pub fn parse_wikipedia_graph(
             // We write the node to the node list file.
             // Finally we restore the current varibales to defaults.
             current_node_name = None;
-            current_node_types = Vec::new();
+            current_node_types = vec![0];
             current_node_description = Vec::new();
         }
         // Check if the line contains a title if we don't currently have one.
@@ -300,8 +308,8 @@ pub fn parse_wikipedia_graph(
                     redirect_hashmap.insert(compute_hash(&node_name), redirect_node_name);
                 }
                 current_node_name = None;
+                continue;
             }
-            continue;
         }
         // We check if the line should be skipped
         if should_skip_line(&line) {
@@ -406,7 +414,7 @@ pub fn parse_wikipedia_graph(
                         nodes_stream,
                         destination_node_id,
                         destination_node_name,
-                        None,
+                        Some(vec![edge_type_id]),
                         None,
                         None,
                     )?;
