@@ -189,6 +189,7 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
         # If the edge types are provided
         edge_types_arguments = {
             "edge_type_path": edge_type_list_path,
+            "edge_types_number": metadata["edge_types_number"],
             "edge_types_column_number": 0,
             "edge_type_list_is_correct": True,
             "edge_type_list_separator": "\t",
