@@ -102,7 +102,7 @@ fn sanitize_line(mut line: String) -> String {
         .replace_all(&line, "")
         .to_string();
     line = LINE_SANITIZER_SQUARE_BRACES_REMOVER
-        .replace_all(&line, r"\a")
+        .replace_all(&line, "\a")
         .to_string();
     let x: &[_] = &['[', ']', '\''];
     line.remove_matches(x);
