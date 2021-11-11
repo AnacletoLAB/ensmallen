@@ -178,7 +178,7 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
                 "node_path": node_path,
                 "node_list_separator": "\t",
                 "nodes_column": "node_names",
-                "node_list_is_correct": False,
+                "node_list_is_correct": True,
                 **node_types_arguments
             }
         else:

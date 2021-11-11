@@ -334,7 +334,7 @@ pub fn parse_wikipedia_graph(
     info!("Starting to build the edge list.");
     let pb = get_loading_bar(
         verbose,
-        "Executing second parse to build the edge list.",
+        "Building edge list",
         current_line_number,
     );
     let mut source_node_id = None;
@@ -346,7 +346,7 @@ pub fn parse_wikipedia_graph(
             source_node_id = None;
             continue;
         }
-        // Check if the line contains a title if we don't currently have one.
+        // Check if the line contains a title if we don't currently have one.git log
         if source_node_id.is_none() {
             if let Some(captures) = title_regex.captures(&line) {
                 let node_name = sanitize_term(captures[1].to_string());
