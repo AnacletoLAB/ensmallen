@@ -45,7 +45,7 @@ const SPECIAL_NODE_STARTERS: &[&str] = &[
     "media:",
     "Template:",
     ":commons:",
-    "Progetto:"
+    "Progetto:",
 ];
 
 /// Returns boolean represing whether the given candidate node is a special node.
@@ -334,11 +334,7 @@ pub fn parse_wikipedia_graph(
     }
     // Reset the buffer
     info!("Starting to build the edge list.");
-    let pb = get_loading_bar(
-        verbose,
-        "Building edge list",
-        current_line_number,
-    );
+    let pb = get_loading_bar(verbose, "Building edge list", current_line_number);
     let mut source_node_id = None;
     for line in get_lines_iterator(source_path)?.progress_with(pb) {
         // First of all we check that all is fine with the current line reading attempt.
@@ -375,25 +371,30 @@ pub fn parse_wikipedia_graph(
                 Box::new(::std::iter::empty())
             };
         // Finally, we parse the line and extract the destination nodes.
-        for (destination_node_name, mut edge_type_id) in internal_destination_nodes_regex
-            .captures_iter(&line)
-            .into_iter()
-            .map(|capture| (capture, 0))
-            .chain(external_iterator)
-            .map(|(destination_node_name, edge_type_id)| {
-                (destination_node_name[1].trim().to_string(), edge_type_id)
-            })
-            .filter(|(destination_node_name, _)| !is_special_node(destination_node_name))
-            .map(|(destination_node_name, edge_type_id)| {
-                (sanitize_term(destination_node_name), edge_type_id)
-            })
-            .filter(|(destination_node_name, _)| !destination_node_name.is_empty())
+        'outer: for (mut destination_node_name, mut edge_type_id) in
+            internal_destination_nodes_regex
+                .captures_iter(&line)
+                .into_iter()
+                .map(|capture| (capture, 0))
+                .chain(external_iterator)
+                .map(|(destination_node_name, edge_type_id)| {
+                    (destination_node_name[1].trim().to_string(), edge_type_id)
+                })
+                .filter(|(destination_node_name, _)| !is_special_node(destination_node_name))
+                .map(|(destination_node_name, edge_type_id)| {
+                    (sanitize_term(destination_node_name), edge_type_id)
+                })
+                .filter(|(destination_node_name, _)| !destination_node_name.is_empty())
         {
-            let mut destination_node_name = destination_node_name.to_string();
+            let original_destination_node_name: String = destination_node_name.clone();
             while let Some(remapped_destination_node_name) =
                 redirect_hashmap.get(&compute_hash(&destination_node_name))
             {
                 destination_node_name = remapped_destination_node_name.to_string();
+                // Check for circular redirection
+                if original_destination_node_name == destination_node_name {
+                    continue 'outer;
+                }
             }
             let destination_node_id = if keep_interwikipedia_nodes || keep_external_nodes {
                 let (destination_node_id, was_already_present) =
