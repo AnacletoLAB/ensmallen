@@ -158,15 +158,28 @@ pub fn parse_wikipedia_graph(
         categories.join("|")
     ))
     .unwrap();
+
+    info!("Count the lines in the source path, so to be able to show a loading bar.");
+    let lines_number = if verbose {
+        get_rows_number(source_path.as_ref())?
+    } else {
+        0
+    };
+
     // Start to read of the file.
     info!("Starting to build the node list and node type list.");
+    let pb = get_loading_bar(
+        verbose,
+        "Executing first parse to build the node and node type list.",
+        lines_number,
+    );
     // Initialize the current node name.
     let mut current_node_name: Option<String> = None;
     let mut current_node_types: Vec<NodeTypeT> = Vec::new();
     let mut current_node_description: Vec<String> = Vec::new();
     let mut current_line_number: usize = 0;
     // Start to parse and write the node list and node type list.
-    for line in get_lines_iterator(source_path)? {
+    for line in get_lines_iterator(source_path)?.progress_with(pb) {
         // We increase the current line number
         current_line_number += 1;
         // First of all we check that all is fine with the current line reading attempt.
