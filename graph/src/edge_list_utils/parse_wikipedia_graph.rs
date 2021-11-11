@@ -9,9 +9,10 @@ use std::fs::File;
 use std::io::prelude::*;
 use std::io::BufReader;
 
-const COMMENT_SYMBOLS: &[&str] = &["&lt;", "{", "}", "|", "----", "!", ":", "=", "<"];
+const COMMENT_SYMBOLS: &[&str] = &["&lt;", "{", "}", "|", "----", "!", "=", "<"];
 const SPECIAL_NODE_STARTERS: &[&str] = &[
     "/",
+    "../",
     "Image:",
     "image:",
     "User:",
@@ -140,6 +141,7 @@ pub fn parse_wikipedia_graph(
     // Then we define the regex to extract the node types.
     let categories = [
         "Category",
+        "category",
         "Categoria",
         "Категория",
         "Kategória",
