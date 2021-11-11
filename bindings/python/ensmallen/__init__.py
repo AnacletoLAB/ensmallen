@@ -25,7 +25,12 @@ collision_flags = {
     'xsaveopt',
     'xsavec',
     'xsaves',
-    'cmpxchg16b'
+    'cmpxchg16b',
+    # TODO! the following are very weird to not be detected! Likely needs a dictionary for renormalization!
+    'sse3',
+    'sse4.2',
+    'lzcnt',
+    'sse4.1'
 }
 
 unavailable_flags = set(FLAGS) - set(cpuinfo.get_cpu_info()["flags"]) - collision_flags
