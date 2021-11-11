@@ -92,9 +92,6 @@ fn get_lines_iterator(path: &str) -> Result<impl Iterator<Item = Result<String>>
 
 /// Remove metadata and other symbols from the text in a wikipedia page
 fn sanitize_line(mut line: String) -> String {
-    line = LINE_SANITIZER_SPACES_REMOVER
-        .replace_all(&line, " ")
-        .to_string();
     line = LINE_SANITIZER_CURLY_BRACES_REMOVER
         .replace_all(&line, "")
         .to_string();
@@ -104,17 +101,20 @@ fn sanitize_line(mut line: String) -> String {
     line = LINE_SANITIZER_SQUARE_BRACES_REMOVER
         .replace_all(&line, "$a")
         .to_string();
-    let x: &[_] = &['[', ']', '\''];
+    let x: &[_] = &['[', ']', '\'', '*'];
     line.remove_matches(x);
     line.remove_matches("&quot;");
     line.remove_matches("</text>");
+    line = LINE_SANITIZER_SPACES_REMOVER
+        .replace_all(&line, " ")
+        .to_string();
     line
 }
 
 // Return provided term without peculiar characters.
 fn sanitize_term(mut term: String) -> String {
     term = term.trim().to_string();
-    if term.starts_with("http"){
+    if term.starts_with("http") {
         let y: &[_] = &['\t'];
         term.remove_matches(y);
     } else {
@@ -260,11 +260,7 @@ pub fn parse_wikipedia_graph(
                         nodes_stream,
                         current_node_id,
                         current_node_name,
-                        if current_node_types.is_empty() {
-                            None
-                        } else {
-                            Some(current_node_types)
-                        },
+                        Some(current_node_types),
                         None,
                         Some(sanitize_line(current_node_description.join(" "))),
                     )?;
@@ -279,28 +275,30 @@ pub fn parse_wikipedia_graph(
         // Check if the line contains a title if we don't currently have one.
         if current_node_name.is_none() {
             if let Some(captures) = title_regex.captures(&line) {
-                let node_name = sanitize_term(captures[1].to_string());
-                // Check that the node name is not empty
-                if node_name.is_empty() {
-                    continue;
-                }
+                let mut node_name = captures[1].trim().to_string();
                 // Check if the node is a semantic node for website content
                 // If so, we skip it.
                 if is_special_node(&node_name) {
                     continue;
                 }
+                node_name = sanitize_term(node_name);
+                // Check that the node name is not empty
+                if node_name.is_empty() {
+                    continue;
+                }
+
                 current_node_name = Some(node_name);
             }
             continue;
         }
         if let Some(node_name) = &current_node_name {
-            if let Some(captures) = title_regex.captures(&line) {
+            if let Some(captures) = redirect_title_regex.captures(&line) {
                 let redirect_node_name = sanitize_term(captures[1].to_string());
                 if redirect_node_name != *node_name {
                     redirect_hashmap.insert(compute_hash(&node_name), redirect_node_name);
+                    current_node_name = None;
+                    continue;
                 }
-                current_node_name = None;
-                continue;
             }
         }
         // We check if the line should be skipped
@@ -350,12 +348,12 @@ pub fn parse_wikipedia_graph(
         // Check if the line contains a title if we don't currently have one.
         if source_node_id.is_none() {
             if let Some(captures) = title_regex.captures(&line) {
-                source_node_id = nodes_vocabulary.get(&captures[1].to_string());
+                let node_name = sanitize_term(captures[1].to_string());
+                if redirect_hashmap.contains_key(&compute_hash(&node_name)) {
+                    continue;
+                }
+                source_node_id = nodes_vocabulary.get(&node_name);
             }
-            continue;
-        }
-        if source_node_id.is_some() && redirect_title_regex.is_match(&line) {
-            source_node_id = None;
             continue;
         }
         // We check if the line should be skipped
@@ -380,14 +378,13 @@ pub fn parse_wikipedia_graph(
             .map(|capture| (capture, 0))
             .chain(external_iterator)
             .map(|(destination_node_name, edge_type_id)| {
-                (
-                    sanitize_term(destination_node_name[1].to_string()),
-                    edge_type_id,
-                )
+                (destination_node_name[1].trim().to_string(), edge_type_id)
             })
-            .filter(|(destination_node_name, _)| {
-                !destination_node_name.is_empty() && !is_special_node(destination_node_name)
+            .filter(|(destination_node_name, _)| !is_special_node(destination_node_name))
+            .map(|(destination_node_name, edge_type_id)| {
+                (sanitize_term(destination_node_name), edge_type_id)
             })
+            .filter(|(destination_node_name, _)| !destination_node_name.is_empty())
         {
             let mut destination_node_name = destination_node_name.to_string();
             while let Some(remapped_destination_node_name) =
