@@ -121,6 +121,7 @@ fn sanitize_term(mut term: String) -> String {
         let y: &[_] = &['\t', ':', '-', '/', '*', '#'];
         term.remove_matches(y);
     }
+    term
 }
 
 /// TODO: write the docstring
