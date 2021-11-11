@@ -7,6 +7,7 @@ use lazy_static::lazy_static;
 use log::info;
 #[cfg(target_os = "linux")]
 use nix::fcntl::*;
+use regex::Captures;
 use regex::Regex;
 use std::fs::File;
 use std::io::prelude::*;
@@ -14,14 +15,35 @@ use std::io::BufReader;
 #[cfg(target_os = "linux")]
 use std::os::unix::io::AsRawFd;
 
-const COMMENT_SYMBOLS: &[&str] = &["&lt;", "{", "}", "|", "----", "!", ":", "=", "<", "*"];
+const COMMENT_SYMBOLS: &[&str] = &["&lt;", "{", "}", "|", "----", "!", "=", "<"];
+const SPECIAL_NODE_STARTERS: &[&str] = &[
+    "/",
+    "../",
+    "Image:",
+    "image:",
+    "User:",
+    "File:",
+    ":File",
+    "media:",
+    "Template:",
+];
+
+/// Returns boolean represing whether the given candidate node is a special node.
+///
+/// # Arguments
+/// `candidate_node`: &str - Candidate node to check.
+fn is_special_node(candidate_node: &str) -> bool {
+    SPECIAL_NODE_STARTERS
+        .iter()
+        .any(|&starter| candidate_node.starts_with(starter))
+}
 
 lazy_static! {
     static ref LINE_SANITIZER_CURLY_BRACES_REMOVER: Regex = Regex::new(r"\{\{[^\}]+?\}\}").unwrap();
     static ref LINE_SANITIZER_SQUARE_BRACES_REMOVER: Regex =
         Regex::new(r"\[\[(?P<a>[^\]]+?)(?:\|[^\]]+?)?\]\]").unwrap();
     static ref LINE_SANITIZER_ANGULAR_BRACES_REMOVER: Regex = Regex::new(r"&lt;.+?&gt;").unwrap();
-    static ref LINE_SANITIZER_SPACES_REMOVER: Regex = Regex::new(r"\s\s+").unwrap();
+    static ref LINE_SANITIZER_SPACES_REMOVER: Regex = Regex::new(r"\s+").unwrap();
 }
 
 /// Returns boolean representing whether the given line should be skipped.
@@ -88,8 +110,8 @@ fn sanitize_line(mut line: String) -> String {
 }
 
 fn sanitize_term(term: &str) -> String {
-    let x: &[_] = &[':', '-', '/'];
-    term.to_owned().trim().trim_matches(x).to_owned()
+    let x: &[_] = &[' ', '\t', ':', '-', '/', '*', '#'];
+    term.to_owned().trim_matches(x).to_owned()
 }
 
 /// TODO: write the docstring
@@ -108,8 +130,12 @@ pub fn parse_wikipedia_graph(
     edge_list_separator: char,
     sort_temporary_directory: Option<String>,
     directed: bool,
+    keep_interwikipedia_nodes: Option<bool>,
+    keep_external_nodes: Option<bool>,
     verbose: Option<bool>,
 ) -> Result<(NodeTypeT, NodeT, EdgeT)> {
+    let keep_external_nodes = keep_external_nodes.unwrap_or(true);
+    let keep_interwikipedia_nodes = keep_interwikipedia_nodes.unwrap_or(true);
     let verbose = verbose.unwrap_or(true);
     let mut node_types_vocabulary: Vocabulary<NodeTypeT> = Vocabulary::new(false);
     let mut nodes_vocabulary: Vocabulary<NodeT> = Vocabulary::new(false);
@@ -149,10 +175,13 @@ pub fn parse_wikipedia_graph(
     // Then we create the regex to recognize the end of a page.
     let end_of_page_regex = Regex::new(r"^</page>$").unwrap();
     // Then we define the regex to extract the destination nodes.
-    let destination_nodes_regex = Regex::new(r"\[\[([^\]]+?)(?:\|[^\]]+?)?\]\]").unwrap();
+    let internal_destination_nodes_regex = Regex::new(r"\[\[([^\]]+?)(?:\|[^\]]+?)?\]\]").unwrap();
+    let external_destination_nodes_regex =
+        Regex::new(r"[^\[]\[([^\]]+?)(?:\|[^\]]+?)?\][^\]]").unwrap();
     // Then we define the regex to extract the node types.
     let categories = [
         "Category",
+        "category",
         "Categoria",
         "Категория",
         "Kategória",
@@ -171,8 +200,21 @@ pub fn parse_wikipedia_graph(
         categories.join("|")
     ))
     .unwrap();
+
+    info!("Count the lines in the source path, so to be able to show a loading bar.");
+    let lines_number = if verbose {
+        get_rows_number(source_path.as_ref())?
+    } else {
+        0
+    };
+
     // Start to read of the file.
     info!("Starting to build the node list and node type list.");
+    let pb = get_loading_bar(
+        verbose,
+        "Executing first parse to build the node and node type list.",
+        lines_number,
+    );
     // Initialize the current node name.
     let mut current_node_id: Option<NodeT> = None;
     let mut current_node_name: Option<String> = None;
@@ -180,7 +222,7 @@ pub fn parse_wikipedia_graph(
     let mut current_node_description: Vec<String> = Vec::new();
     let mut current_line_number: usize = 0;
     // Start to parse and write the node list and node type list.
-    for line in get_lines_iterator(source_path)? {
+    for line in get_lines_iterator(source_path)?.progress_with(pb) {
         // We increase the current line number
         current_line_number += 1;
         // First of all we check that all is fine with the current line reading attempt.
@@ -216,6 +258,11 @@ pub fn parse_wikipedia_graph(
                 let node_name = sanitize_term(&captures[1]);
                 // Check that the node name is not empty
                 if node_name.is_empty() {
+                    continue;
+                }
+                // Check if the node is a semantic node for website content
+                // If so, we skip it.
+                if is_special_node(&node_name) {
                     continue;
                 }
                 let (node_id, was_already_present) = nodes_vocabulary.insert(&node_name)?;
@@ -284,25 +331,47 @@ pub fn parse_wikipedia_graph(
         if should_skip_line(&line) || node_types_regex.is_match(&line) {
             continue;
         }
+        let external_iterator: Box<dyn Iterator<Item = Captures>> = if keep_external_nodes {
+            Box::new(
+                external_destination_nodes_regex
+                    .captures_iter(&line)
+                    .into_iter(),
+            )
+        } else {
+            Box::new(::std::iter::empty())
+        };
         // Finally, we parse the line and extract the destination nodes.
-        for destination_node_name in destination_nodes_regex
+        for destination_node_name in internal_destination_nodes_regex
             .captures_iter(&line)
             .into_iter()
+            .chain(external_iterator)
             .map(|destination_node_name| sanitize_term(&destination_node_name[1]))
-            .filter(|destination_node_name| !destination_node_name.is_empty())
+            .filter(|destination_node_name| {
+                !destination_node_name.is_empty() && !is_special_node(destination_node_name)
+            })
         {
-            let (destination_node_id, was_already_present) =
-                nodes_vocabulary.insert(&destination_node_name)?;
-            if !was_already_present {
-                nodes_stream = nodes_writer.write_line(
-                    nodes_stream,
-                    destination_node_id,
-                    destination_node_name,
-                    None,
-                    None,
-                    None,
-                )?;
-            }
+            let destination_node_id = if keep_interwikipedia_nodes || keep_external_nodes {
+                let (destination_node_id, was_already_present) =
+                    nodes_vocabulary.insert(&destination_node_name)?;
+                if !was_already_present {
+                    nodes_stream = nodes_writer.write_line(
+                        nodes_stream,
+                        destination_node_id,
+                        destination_node_name,
+                        None,
+                        None,
+                        None,
+                    )?;
+                }
+                destination_node_id
+            } else {
+                if let Some(destination_node_id) = nodes_vocabulary.get(&destination_node_name) {
+                    destination_node_id
+                } else {
+                    continue;
+                }
+            };
+
             if let Some(source_node_id) = source_node_id {
                 edges_stream = edges_writer.write_line(
                     edges_stream,
