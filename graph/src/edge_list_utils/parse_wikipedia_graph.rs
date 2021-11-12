@@ -29,6 +29,7 @@ const CATEGORIES: &[&str] = &[
     "Kategória",
     "Kategorie",
     "Κατηγορία",
+    "Категорія",
     "Categoría",
     "Luokka",
     "Kategori",
@@ -81,8 +82,6 @@ const SPECIAL_NODES: &[&str] = &["/", "../", "...", "v", "e", "t"];
 /// # Arguments
 /// `candidate_node`: &str - Candidate node to check.
 fn is_special_node(candidate_node: &str) -> bool {
-    let x: &[_] = &['[', ']', '\'', '*', ':', ' ', '\t'];
-    let candidate_node = candidate_node.trim_matches(x).to_lowercase();
     candidate_node.len() < 2
         || candidate_node.parse::<f64>().is_ok()
         || SPECIAL_NODES
@@ -145,7 +144,7 @@ fn get_lines_iterator(path: &str) -> Result<impl Iterator<Item = Result<String>>
 }
 
 /// Remove metadata and other symbols from the text in a wikipedia page
-fn sanitize_line(mut line: String) -> String {
+fn sanitize_paragraph(mut line: String) -> String {
     line = LINE_SANITIZER_CURLY_BRACES_REMOVER
         .replace_all(&line, "")
         .to_string();
@@ -155,7 +154,7 @@ fn sanitize_line(mut line: String) -> String {
     line = LINE_SANITIZER_SQUARE_BRACES_REMOVER
         .replace_all(&line, "$a")
         .to_string();
-    let x: &[_] = &['[', ']', '\'', '*'];
+    let x: &[_] = &['[', ']', '\'', '*', '"'];
     line.remove_matches(x);
     line.remove_matches("&quot;");
     line.remove_matches("</text>");
@@ -165,18 +164,12 @@ fn sanitize_line(mut line: String) -> String {
     line
 }
 
-// Return provided term without peculiar characters.
+// Return provided term with partial sanitization which still allows for check for special nodes.
 fn sanitize_term(mut term: String) -> String {
-    let x: &[_] = &[' ', ':'];
-    term = term.trim_matches(x).to_string();
-    if term.starts_with("http") {
-        let y: &[_] = &['\t'];
-        term.remove_matches(y);
-    } else {
-        let y: &[_] = &['\t', '*', '#'];
-        term.remove_matches(y);
-    }
-    term.to_lowercase()
+    let x: &[_] = &['[', ']', '\'', '*', ':', ' ', '"'];
+    term.remove_matches("&quot;");
+    term.remove_matches("\t");
+    term.trim_matches(x).to_lowercase()
 }
 
 /// TODO: write the docstring
@@ -315,7 +308,7 @@ pub fn parse_wikipedia_graph(
                         Some(current_node_types),
                         None,
                         if compute_node_description {
-                            Some(sanitize_line(current_node_description.join(" ")))
+                            Some(sanitize_paragraph(current_node_description.join(" ")))
                         } else {
                             None
                         },
@@ -331,43 +324,30 @@ pub fn parse_wikipedia_graph(
         // Check if the line contains a title if we don't currently have one.
         if current_node_name.is_none() {
             if let Some(captures) = title_regex.captures(&line) {
-                let mut node_name = captures[1].trim().to_string();
+                let node_name = sanitize_term(captures[1].trim().to_string());
                 // Check if the node is a semantic node for website content
                 // If so, we skip it.
                 if is_special_node(&node_name) {
                     continue;
                 }
-                node_name = sanitize_term(node_name);
-                // Check that the node name is not empty
-                if node_name.is_empty() {
-                    continue;
-                }
-
                 current_node_name = Some(node_name);
             }
             continue;
         }
-        if let Some(node_name) = &current_node_name {
+        if let Some(node_name) = &mut current_node_name {
             if let Some(captures) = redirect_title_regex.captures(&line) {
-                let redirect_node_name = captures[1].to_string();
-                if is_special_node(&redirect_node_name) {
-                    current_node_name = None;
-                    continue;
+                let mut redirect_node_name = sanitize_term(captures[1].to_string());
+                if !is_special_node(&redirect_node_name) {
+                    redirect_node_name = redirect_hashmap
+                        .get(&compute_hash(&redirect_node_name))
+                        .unwrap_or(&redirect_node_name)
+                        .to_owned();
+                    if redirect_node_name != *node_name {
+                        redirect_hashmap.insert(compute_hash(&node_name), redirect_node_name);
+                    }
                 }
-                let mut redirect_node_name = sanitize_term(redirect_node_name);
-                if redirect_node_name.is_empty() {
-                    current_node_name = None;
-                    continue;
-                }
-                redirect_node_name = redirect_hashmap
-                    .get(&compute_hash(&redirect_node_name))
-                    .unwrap_or(&redirect_node_name)
-                    .to_owned();
-                if redirect_node_name != *node_name {
-                    redirect_hashmap.insert(compute_hash(&node_name), redirect_node_name);
-                    current_node_name = None;
-                    continue;
-                }
+                current_node_name = None;
+                continue;
             }
         }
         // We check if the line should be skipped
