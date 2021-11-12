@@ -268,7 +268,7 @@ pub fn parse_wikipedia_graph(
         Regex::new(r"[^\[]\[([^\]]+?)(?:\|[^\]]+?)?\][^\]]").unwrap();
 
     let node_types_regex = Regex::new(&format!(
-        r"(?i)^\[\[[^\]]*?(?:{}):([^\]\|]+?)(?:\|[^\]]*?)?\]\]$",
+        r"(?i)^\[\[[^\]]*?(?:{}):([^\]\|]+?)(?:\|[^\]]*?)?\]\]",
         CATEGORIES.join("|")
     ))
     .unwrap();
