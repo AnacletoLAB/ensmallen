@@ -332,6 +332,40 @@ pub fn parse_wikipedia_graph(
         }
         current_node_description.push(line);
     }
+    info!("Renormalize redictions.");
+    loop {
+        let mut looped_node_hash: Option<u64> = None;
+        let mut regression_node_name: Option<String> = None;
+        // We iterate of the target nodes of the redirection.
+        for node_name in redirect_hashmap.values() {
+            // If for a given node we discover that the node also exists
+            // in the dictionary as a key, we need to update the regression
+            // of the current node.
+            let current_node_hash = &compute_hash(&node_name);
+            if let Some(target_node_name) = redirect_hashmap.get(current_node_hash) {
+                if target_node_name == node_name {
+                    // If the two values are equal then we have detected a loop
+                    // and we need to remove this key from the hashmap.
+                    looped_node_hash = Some(*current_node_hash);
+                } else {
+                    // Else we need to propagate backwards this redirection dependency.
+                    regression_node_name = Some(target_node_name.to_string());
+                }
+                break;
+            }
+        }
+        if let Some(looped_node_hash) = looped_node_hash {
+            redirect_hashmap.remove(&looped_node_hash);
+        } else if let Some(regression_node_name) = regression_node_name {
+            for node_name in redirect_hashmap.values_mut() {
+                if regression_node_name == *node_name {
+                    *node_name = regression_node_name.clone();
+                }
+            }
+        } else {
+            break;
+        }
+    }
     // Reset the buffer
     info!("Starting to build the edge list.");
     let pb = get_loading_bar(verbose, "Building edge list", current_line_number);
@@ -371,31 +405,25 @@ pub fn parse_wikipedia_graph(
                 Box::new(::std::iter::empty())
             };
         // Finally, we parse the line and extract the destination nodes.
-        'outer: for (mut destination_node_name, mut edge_type_id) in
-            internal_destination_nodes_regex
-                .captures_iter(&line)
-                .into_iter()
-                .map(|capture| (capture, 0))
-                .chain(external_iterator)
-                .map(|(destination_node_name, edge_type_id)| {
-                    (destination_node_name[1].trim().to_string(), edge_type_id)
-                })
-                .filter(|(destination_node_name, _)| !is_special_node(destination_node_name))
-                .map(|(destination_node_name, edge_type_id)| {
-                    (sanitize_term(destination_node_name), edge_type_id)
-                })
-                .filter(|(destination_node_name, _)| !destination_node_name.is_empty())
+        for (mut destination_node_name, mut edge_type_id) in internal_destination_nodes_regex
+            .captures_iter(&line)
+            .into_iter()
+            .map(|capture| (capture, 0))
+            .chain(external_iterator)
+            .map(|(destination_node_name, edge_type_id)| {
+                (destination_node_name[1].trim().to_string(), edge_type_id)
+            })
+            .filter(|(destination_node_name, _)| !is_special_node(destination_node_name))
+            .map(|(destination_node_name, edge_type_id)| {
+                (sanitize_term(destination_node_name), edge_type_id)
+            })
+            .filter(|(destination_node_name, _)| !destination_node_name.is_empty())
         {
-            let original_destination_node_name: String = destination_node_name.clone();
-            while let Some(remapped_destination_node_name) =
-                redirect_hashmap.get(&compute_hash(&destination_node_name))
-            {
-                destination_node_name = remapped_destination_node_name.to_string();
-                // Check for circular redirection
-                if original_destination_node_name == destination_node_name {
-                    continue 'outer;
-                }
-            }
+            destination_node_name = redirect_hashmap
+                .get(&compute_hash(&destination_node_name))
+                .unwrap_or(&destination_node_name)
+                .to_string();
+
             let destination_node_id = if keep_interwikipedia_nodes || keep_external_nodes {
                 let (destination_node_id, was_already_present) =
                     nodes_vocabulary.insert(&destination_node_name)?;
