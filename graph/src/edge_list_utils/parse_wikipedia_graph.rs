@@ -48,6 +48,11 @@ const SPECIAL_NODE_STARTERS: &[&str] = &[
     "commons:",
     "mediawiki:",
     "progetto:",
+    "portal:",
+    "module:",
+    "draft:",
+    "wikt:",
+    "list of acronyms:",
     "wikipedia:",
     "en:wikipedia:",
     "wp:",
@@ -58,6 +63,7 @@ const SPECIAL_NODE_STARTERS: &[&str] = &[
     "user_talk:",
     "special:",
     "{",
+    "="
 ];
 
 const SPECIAL_NODES: &[&str] = &["/", "../", "...", "v", "e", "t"];
