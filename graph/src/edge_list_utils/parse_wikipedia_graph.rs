@@ -48,6 +48,14 @@ const SPECIAL_NODE_STARTERS: &[&str] = &[
     "commons:",
     "mediawiki:",
     "progetto:",
+    "wiktionary:",
+    "wikisource:",
+    "wikispecies:",
+    "portal talk:",
+    "talk:",
+    "imdbtitle:",
+    "imdbname:",
+    "iarchive:",
     "portal:",
     "module:",
     "draft:",
@@ -159,7 +167,8 @@ fn sanitize_line(mut line: String) -> String {
 
 // Return provided term without peculiar characters.
 fn sanitize_term(mut term: String) -> String {
-    term = term.trim().to_string();
+    let x: &[_] = &[' ', ':'];
+    term = term.trim_matches(x).to_string();
     if term.starts_with("http") {
         let y: &[_] = &['\t'];
         term.remove_matches(y);
