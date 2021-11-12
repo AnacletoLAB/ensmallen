@@ -8,6 +8,8 @@ use lazy_static::lazy_static;
 use log::info;
 #[cfg(target_os = "linux")]
 use nix::fcntl::*;
+use rayon::iter::IntoParallelRefIterator;
+use rayon::iter::ParallelIterator;
 use regex::Captures;
 use regex::Regex;
 use std::collections::HashMap;
@@ -244,9 +246,12 @@ pub fn parse_wikipedia_graph(
     .unwrap();
 
     info!("Starting to build the nodes list and node types list.");
-    let pb = get_loading_bar(verbose, "Building node list", 
-    std::fs::metadata(source_path)
-            .map_err(|x| x.to_string())?.len() as _
+    let pb = get_loading_bar(
+        verbose,
+        "Building node list",
+        std::fs::metadata(source_path)
+            .map_err(|x| x.to_string())?
+            .len() as _,
     );
     // Initialize the current node name.
     let mut current_node_name: Option<String> = None;
@@ -346,12 +351,21 @@ pub fn parse_wikipedia_graph(
         current_node_description.push(line);
     }
     pb.finish();
-    
+
     info!(
         "Renormalize redictions, specifically {} redirections were detected.",
         redirect_hashmap.len().to_string()
     );
-    let mut adjusted_redirect: HashMap<u64, String> = HashMap::new();
+    let mut adjusted_redirect: HashMap<u64, String> = redirect_hashmap
+        .par_iter()
+        .filter(|(_, node_name)| !redirect_hashmap.contains_key(&compute_hash(node_name)))
+        .map(|(key, value)| (*key, value.clone()))
+        .collect();
+    redirect_hashmap = redirect_hashmap
+        .par_iter()
+        .filter(|(_, node_name)| redirect_hashmap.contains_key(&compute_hash(node_name)))
+        .map(|(key, value)| (*key, value.clone()))
+        .collect();
     let mut number_of_adjusted_redirections = 0;
     let pb = get_loading_bar(verbose, "Adjusting redirections", redirect_hashmap.len());
 
@@ -363,7 +377,7 @@ pub fn parse_wikipedia_graph(
         .first()
     {
         number_of_adjusted_redirections += 1;
-        let mut explored_nodes: Vec<u64> =vec![source_hash];
+        let mut explored_nodes: Vec<u64> = vec![source_hash];
         pb.inc(1);
 
         let mut node_name = redirect_hashmap.remove(&source_hash).unwrap();
@@ -378,7 +392,7 @@ pub fn parse_wikipedia_graph(
                 explored_nodes.push(node_name_hash);
                 pb.inc(1);
             } else {
-                break 'inner
+                break 'inner;
             }
         }
 
@@ -388,7 +402,7 @@ pub fn parse_wikipedia_graph(
         }
         // update the loading bar
         // the node is a destination, so we can just propagate it backward
-        for node_hash in explored_nodes  {
+        for node_hash in explored_nodes {
             adjusted_redirect.insert(node_hash, node_name.clone());
         }
     }
