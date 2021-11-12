@@ -328,7 +328,16 @@ pub fn parse_wikipedia_graph(
         }
         if let Some(node_name) = &current_node_name {
             if let Some(captures) = redirect_title_regex.captures(&line) {
-                let mut redirect_node_name = sanitize_term(captures[1].to_string());
+                let redirect_node_name = captures[1].to_string();
+                if is_special_node(&redirect_node_name) {
+                    current_node_name = None;
+                    continue;
+                }
+                let mut redirect_node_name = sanitize_term(redirect_node_name);
+                if redirect_node_name.is_empty() {
+                    current_node_name = None;
+                    continue;
+                }
                 redirect_node_name = redirect_hashmap
                     .get(&compute_hash(&redirect_node_name))
                     .unwrap_or(&redirect_node_name)

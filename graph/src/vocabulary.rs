@@ -295,14 +295,12 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
         let value = value.as_ref();
 
         if value.is_empty() {
-            return Err(format!(
+            return Err(
                 concat!(
                     "The given value is empty, ",
                     "we cannot insert an empty value into the vocabulary.\n",
-                    "Currently the vocabulary contains: {:?}."
-                ),
-                self
-            ));
+                ).into()
+            );
         }
 
         let (normalized_value, index) = self.normalize_value(value)?;
