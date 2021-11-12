@@ -279,7 +279,7 @@ pub fn parse_wikipedia_graph(
                         current_node_name,
                         Some(current_node_types),
                         None,
-                        None//Some(sanitize_line(current_node_description.join(" "))),
+                        None, //Some(sanitize_line(current_node_description.join(" "))),
                     )?;
                 }
             }
@@ -323,7 +323,7 @@ pub fn parse_wikipedia_graph(
             }
         }
         continue; // TODO:! remove, this is for debug
-        // We check if the line should be skipped
+                  // We check if the line should be skipped
         if should_skip_line(&line) {
             continue;
         }
@@ -468,10 +468,11 @@ pub fn parse_wikipedia_graph(
             })
             .filter(|(destination_node_name, _)| !destination_node_name.is_empty())
         {
-            // destination_node_name = adjusted_redirect
-            //     .get(&compute_hash(&destination_node_name))
-            //     .unwrap_or(&destination_node_name)
-            //     .to_string();
+            if let Some(new_destination_name) =
+                adjusted_redirect.get(&compute_hash(&destination_node_name))
+            {
+                destination_node_name = new_destination_name.to_string();
+            }
 
             let destination_node_id = if keep_interwikipedia_nodes || keep_external_nodes {
                 let (destination_node_id, was_already_present) =
