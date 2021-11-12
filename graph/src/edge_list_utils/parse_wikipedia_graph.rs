@@ -70,6 +70,7 @@ fn is_special_node(candidate_node: &str) -> bool {
     let x: &[_] = &['[', ']', '\'', '*', ':', ' ', '\t'];
     let candidate_node = candidate_node.trim_matches(x).to_lowercase();
     candidate_node.len() < 2
+        || candidate_node.parse::<f64>().is_ok()
         || SPECIAL_NODES
             .iter()
             .any(|special_node| *special_node == candidate_node)
