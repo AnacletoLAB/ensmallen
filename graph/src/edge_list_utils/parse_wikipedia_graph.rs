@@ -38,6 +38,7 @@ const CATEGORIES: &[&str] = &[
 ];
 const SPECIAL_NODE_STARTERS: &[&str] = &[
     "image:",
+    "immagine:",
     "user:",
     "en:user:",
     "en:user:",
@@ -57,6 +58,7 @@ const SPECIAL_NODE_STARTERS: &[&str] = &[
     "imdbname:",
     "iarchive:",
     "portal:",
+    "portale:",
     "module:",
     "draft:",
     "wikt:",
@@ -489,13 +491,9 @@ pub fn parse_wikipedia_graph(
             .map(|capture| (capture, 0))
             .chain(external_iterator)
             .map(|(destination_node_name, edge_type_id)| {
-                (destination_node_name[1].trim().to_string(), edge_type_id)
+                (sanitize_term(destination_node_name[1]), edge_type_id)
             })
             .filter(|(destination_node_name, _)| !is_special_node(destination_node_name))
-            .map(|(destination_node_name, edge_type_id)| {
-                (sanitize_term(destination_node_name), edge_type_id)
-            })
-            .filter(|(destination_node_name, _)| !destination_node_name.is_empty())
         {
             if let Some(new_destination_name) =
                 adjusted_redirect.get(&compute_hash(&destination_node_name))
