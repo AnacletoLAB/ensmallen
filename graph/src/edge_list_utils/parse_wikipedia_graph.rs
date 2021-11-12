@@ -380,10 +380,7 @@ pub fn parse_wikipedia_graph(
         );
     }
     if number_of_loops > 0 {
-        info!(
-            "Removed {} redirection loops.",
-            number_of_loops.to_string()
-        );
+        info!("Removed {} redirection loops.", number_of_loops.to_string());
     }
     // Reset the buffer
     info!("Starting to build the edge list.");
