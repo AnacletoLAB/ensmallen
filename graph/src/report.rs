@@ -1405,7 +1405,7 @@ impl Graph {
                             .take(5)
                             .map(|(edge_type_name, count)| {
                                 format!(
-                                    "{html_url} ({count} edges, {percentage:.2}%)",
+                                    "{html_url} ({count} directed edges, {percentage:.2}%)",
                                     html_url = get_edge_type_source_html_url_from_edge_type_name(
                                         edge_type_name.as_ref()
                                     ),

@@ -71,7 +71,7 @@ const SPECIAL_NODE_STARTERS: &[&str] = &[
     "user_talk:",
     "special:",
     "{",
-    "="
+    "=",
 ];
 
 const SPECIAL_NODES: &[&str] = &["/", "../", "...", "v", "e", "t"];
@@ -198,10 +198,12 @@ pub fn parse_wikipedia_graph(
     edge_list_separator: char,
     sort_temporary_directory: Option<String>,
     directed: bool,
+    compute_node_description: Option<bool>,
     keep_interwikipedia_nodes: Option<bool>,
     keep_external_nodes: Option<bool>,
     verbose: Option<bool>,
 ) -> Result<(NodeTypeT, NodeT, EdgeT)> {
+    let compute_node_description = compute_node_description.unwrap_or(false);
     let keep_external_nodes = keep_external_nodes.unwrap_or(true);
     let keep_interwikipedia_nodes = keep_interwikipedia_nodes.unwrap_or(true);
     let mut redirect_hashmap: HashMap<u64, String> = HashMap::new();
@@ -312,7 +314,11 @@ pub fn parse_wikipedia_graph(
                         current_node_name,
                         Some(current_node_types),
                         None,
-                        Some(sanitize_line(current_node_description.join(" "))),
+                        if compute_node_description {
+                            Some(sanitize_line(current_node_description.join(" ")))
+                        } else {
+                            None
+                        },
                     )?;
                 }
             }
@@ -390,7 +396,9 @@ pub fn parse_wikipedia_graph(
             current_node_types.push(node_type_id);
             continue;
         }
-        current_node_description.push(line);
+        if compute_node_description {
+            current_node_description.push(line);
+        }
     }
     pb.finish();
 
