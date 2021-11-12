@@ -279,7 +279,7 @@ pub fn parse_wikipedia_graph(
                         current_node_name,
                         Some(current_node_types),
                         None,
-                        Some(sanitize_line(current_node_description.join(" "))),
+                        None//Some(sanitize_line(current_node_description.join(" "))),
                     )?;
                 }
             }
@@ -348,7 +348,7 @@ pub fn parse_wikipedia_graph(
             current_node_types.push(node_type_id);
             continue;
         }
-        current_node_description.push(line);
+        //current_node_description.push(line);
     }
     pb.finish();
 
