@@ -37,29 +37,46 @@ const CATEGORIES: &[&str] = &[
     "Kategorija",
 ];
 const SPECIAL_NODE_STARTERS: &[&str] = &[
-    "/",
-    "../",
-    "Image:",
     "image:",
-    "User:",
-    "File:",
-    ":File",
+    "user:",
+    "en:user:",
+    "en:user:",
+    "file:",
+    "file",
     "media:",
-    "Template:",
-    ":commons:",
-    "Progetto:",
-    "Wikipedia:Community Portal",
+    "template:",
+    "commons:",
+    "mediawiki:",
+    "progetto:",
+    "wikipedia:",
+    "en:wikipedia:",
+    "wp:",
+    "en:wp:",
+    "help:",
+    "user talk:",
+    "user talk",
+    "user_talk:",
+    "special:",
+    "{",
 ];
+
+const SPECIAL_NODES: &[&str] = &["/", "../", "...", "v", "e", "t"];
 
 /// Returns boolean represing whether the given candidate node is a special node.
 ///
 /// # Arguments
 /// `candidate_node`: &str - Candidate node to check.
 fn is_special_node(candidate_node: &str) -> bool {
-    SPECIAL_NODE_STARTERS
-        .iter()
-        .chain(CATEGORIES.iter())
-        .any(|&starter| candidate_node.starts_with(starter))
+    let x: &[_] = &['[', ']', '\'', '*', ':', ' ', '\t'];
+    let candidate_node = candidate_node.trim_matches(x).to_lowercase();
+    candidate_node.len() < 2
+        || SPECIAL_NODES
+            .iter()
+            .any(|special_node| *special_node == candidate_node)
+        || SPECIAL_NODE_STARTERS
+            .iter()
+            .chain(CATEGORIES.iter())
+            .any(|&starter| candidate_node.starts_with(starter))
 }
 
 lazy_static! {
@@ -143,7 +160,7 @@ fn sanitize_term(mut term: String) -> String {
         let y: &[_] = &['\t', '*', '#'];
         term.remove_matches(y);
     }
-    term
+    term.to_lowercase()
 }
 
 /// TODO: write the docstring
