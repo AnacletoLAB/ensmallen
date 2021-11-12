@@ -297,7 +297,7 @@ pub fn parse_wikipedia_graph(
                         current_node_name,
                         Some(current_node_types),
                         None,
-                        None, //Some(sanitize_line(current_node_description.join(" "))),
+                        Some(sanitize_line(current_node_description.join(" "))),
                     )?;
                 }
             }
@@ -349,8 +349,7 @@ pub fn parse_wikipedia_graph(
                 }
             }
         }
-        continue; // TODO:! remove, this is for debug
-                  // We check if the line should be skipped
+        // We check if the line should be skipped
         if should_skip_line(&line) {
             continue;
         }
@@ -376,7 +375,7 @@ pub fn parse_wikipedia_graph(
             current_node_types.push(node_type_id);
             continue;
         }
-        //current_node_description.push(line);
+        current_node_description.push(line);
     }
     pb.finish();
 
