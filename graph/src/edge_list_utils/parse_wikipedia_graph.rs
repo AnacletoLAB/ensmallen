@@ -332,7 +332,12 @@ pub fn parse_wikipedia_graph(
         }
         current_node_description.push(line);
     }
-    info!("Renormalize redictions.");
+    info!(
+        "Renormalize redictions, specifically {} redirections were detected.",
+        redirect_hashmap.len().to_string()
+    );
+    let mut number_of_loops = 0;
+    let mut number_of_adjusted_redirections = 0;
     loop {
         let mut looped_node_hash: Option<u64> = None;
         let mut regression_node_name: Option<String> = None;
@@ -347,6 +352,7 @@ pub fn parse_wikipedia_graph(
                     // If the two values are equal then we have detected a loop
                     // and we need to remove this key from the hashmap.
                     looped_node_hash = Some(*current_node_hash);
+                    number_of_loops += 1;
                 } else {
                     // Else we need to propagate backwards this redirection dependency.
                     regression_node_name = Some(target_node_name.to_string());
@@ -359,12 +365,25 @@ pub fn parse_wikipedia_graph(
         } else if let Some(regression_node_name) = regression_node_name {
             for node_name in redirect_hashmap.values_mut() {
                 if regression_node_name == *node_name {
+                    number_of_adjusted_redirections += 1;
                     *node_name = regression_node_name.clone();
                 }
             }
         } else {
             break;
         }
+    }
+    if number_of_adjusted_redirections > 0 {
+        info!(
+            "Adjusted {} redirections.",
+            number_of_adjusted_redirections.to_string()
+        );
+    }
+    if number_of_loops > 0 {
+        info!(
+            "Removed {} redirection loops.",
+            number_of_loops.to_string()
+        );
     }
     // Reset the buffer
     info!("Starting to build the edge list.");
