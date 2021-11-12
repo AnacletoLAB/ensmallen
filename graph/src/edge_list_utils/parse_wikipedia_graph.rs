@@ -468,10 +468,10 @@ pub fn parse_wikipedia_graph(
             })
             .filter(|(destination_node_name, _)| !destination_node_name.is_empty())
         {
-            destination_node_name = adjusted_redirect
-                .get(&compute_hash(&destination_node_name))
-                .unwrap_or(&destination_node_name)
-                .to_string();
+            // destination_node_name = adjusted_redirect
+            //     .get(&compute_hash(&destination_node_name))
+            //     .unwrap_or(&destination_node_name)
+            //     .to_string();
 
             let destination_node_id = if keep_interwikipedia_nodes || keep_external_nodes {
                 let (destination_node_id, was_already_present) =
