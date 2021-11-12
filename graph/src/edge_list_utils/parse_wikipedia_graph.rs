@@ -22,20 +22,19 @@ use std::os::unix::io::AsRawFd;
 const COMMENT_SYMBOLS: &[&str] = &["&lt;", "{", "}", "|", "----", "!", "=", "<"];
 // Then we define the regex to extract the node types.
 const CATEGORIES: &[&str] = &[
-    "Category",
     "category",
-    "Categoria",
-    "Категория",
-    "Kategória",
-    "Kategorie",
-    "Κατηγορία",
-    "Категорія",
-    "Categoría",
-    "Luokka",
-    "Kategori",
+    "categoria",
+    "категория",
+    "kategória",
+    "kategorie",
+    "κατηγορία",
+    "категорія",
+    "categoría",
+    "luokka",
+    "kategori",
     "კატეგორია",
     "분류",
-    "Kategorija",
+    "kategorija",
 ];
 const SPECIAL_NODE_STARTERS: &[&str] = &[
     "image:",
@@ -154,7 +153,7 @@ fn sanitize_paragraph(mut line: String) -> String {
     line = LINE_SANITIZER_SQUARE_BRACES_REMOVER
         .replace_all(&line, "$a")
         .to_string();
-    let x: &[_] = &['[', ']', '\'', '*', '"'];
+    let x: &[_] = &['[', ']', '*', '"'];
     line.remove_matches(x);
     line.remove_matches("&quot;");
     line.remove_matches("</text>");
@@ -166,7 +165,8 @@ fn sanitize_paragraph(mut line: String) -> String {
 
 // Return provided term with partial sanitization which still allows for check for special nodes.
 fn sanitize_term(mut term: String) -> String {
-    let x: &[_] = &['[', ']', '\'', '*', ':', ' ', '"'];
+    let x: &[_] = &['[', ']', '*', ':', ' ', '"'];
+    term = term.replace("&#039;", "'");
     term.remove_matches("&quot;");
     term.remove_matches("\t");
     term.trim_matches(x).to_lowercase()
@@ -268,12 +268,12 @@ pub fn parse_wikipedia_graph(
         Regex::new(r"[^\[]\[([^\]]+?)(?:\|[^\]]+?)?\][^\]]").unwrap();
 
     let node_types_regex = Regex::new(&format!(
-        r"^\[\[[^\]]*?(?:{}):([^\]\|]+?)(?:\|[^\]]*?)?\]\]$",
+        r"(?i)^\[\[[^\]]*?(?:{}):([^\]\|]+?)(?:\|[^\]]*?)?\]\]$",
         CATEGORIES.join("|")
     ))
     .unwrap();
 
-    info!("Starting to build the nodes list and node types list.");
+    info!("Starting to build the nodes and node types list.");
     let pb = get_loading_bar(
         verbose,
         "Building node list",
