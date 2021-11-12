@@ -46,6 +46,7 @@ const SPECIAL_NODE_STARTERS: &[&str] = &[
     "Template:",
     ":commons:",
     "Progetto:",
+    "Wikipedia:Community Portal",
 ];
 
 /// Returns boolean represing whether the given candidate node is a special node.
@@ -103,7 +104,7 @@ fn get_lines_iterator(path: &str) -> Result<impl Iterator<Item = Result<String>>
     let buffer = BufReader::with_capacity(8 * 1024 * 1024, file);
     Ok(buffer.lines().map(|line|{
         match line {
-            Ok(l)=>Ok(l.trim().to_string()),
+            Ok(l)=>Ok(l),
             Err(_)=>Err("There might have been an I/O error or the line could contains bytes that are not valid UTF-8".to_string()),
         }
     }))
@@ -242,6 +243,11 @@ pub fn parse_wikipedia_graph(
     ))
     .unwrap();
 
+    info!("Starting to build the nodes list and node types list.");
+    let pb = get_loading_bar(verbose, "Building node list", 
+    std::fs::metadata(source_path)
+            .map_err(|x| x.to_string())?.len() as _
+    );
     // Initialize the current node name.
     let mut current_node_name: Option<String> = None;
     let mut current_node_types: Vec<NodeTypeT> = vec![0];
@@ -253,6 +259,9 @@ pub fn parse_wikipedia_graph(
         current_line_number += 1;
         // First of all we check that all is fine with the current line reading attempt.
         let line = line?;
+        pb.inc(line.len() as _);
+        // sanitize the string
+        let line = line.trim().to_string();
         // We check if the current page is finished.
         if end_of_page_regex.is_match(&line) {
             if let Some(current_node_name) = current_node_name {
@@ -296,7 +305,11 @@ pub fn parse_wikipedia_graph(
         }
         if let Some(node_name) = &current_node_name {
             if let Some(captures) = redirect_title_regex.captures(&line) {
-                let redirect_node_name = sanitize_term(captures[1].to_string());
+                let mut redirect_node_name = sanitize_term(captures[1].to_string());
+                redirect_node_name = redirect_hashmap
+                    .get(&compute_hash(&redirect_node_name))
+                    .unwrap_or(&redirect_node_name)
+                    .to_owned();
                 if redirect_node_name != *node_name {
                     redirect_hashmap.insert(compute_hash(&node_name), redirect_node_name);
                     current_node_name = None;
@@ -332,55 +345,60 @@ pub fn parse_wikipedia_graph(
         }
         current_node_description.push(line);
     }
+    pb.finish();
+    
     info!(
         "Renormalize redictions, specifically {} redirections were detected.",
         redirect_hashmap.len().to_string()
     );
-    let mut number_of_loops = 0;
+    let mut adjusted_redirect: HashMap<u64, String> = HashMap::new();
     let mut number_of_adjusted_redirections = 0;
-    loop {
-        let mut looped_node_hash: Option<u64> = None;
-        let mut regression_node_name: Option<String> = None;
-        // We iterate of the target nodes of the redirection.
-        for node_name in redirect_hashmap.values() {
-            // If for a given node we discover that the node also exists
-            // in the dictionary as a key, we need to update the regression
-            // of the current node.
-            let current_node_hash = &compute_hash(&node_name);
-            if let Some(target_node_name) = redirect_hashmap.get(current_node_hash) {
-                if target_node_name == node_name {
-                    // If the two values are equal then we have detected a loop
-                    // and we need to remove this key from the hashmap.
-                    looped_node_hash = Some(*current_node_hash);
-                    number_of_loops += 1;
-                } else {
-                    // Else we need to propagate backwards this redirection dependency.
-                    regression_node_name = Some(target_node_name.to_string());
-                }
-                break;
+    let pb = get_loading_bar(verbose, "Adjusting redirections", redirect_hashmap.len());
+
+    while let Some(&source_hash) = redirect_hashmap
+        .keys()
+        .take(1)
+        .cloned()
+        .collect::<Vec<_>>()
+        .first()
+    {
+        number_of_adjusted_redirections += 1;
+        let mut explored_nodes: Vec<u64> =vec![source_hash];
+        pb.inc(1);
+
+        let mut node_name = redirect_hashmap.remove(&source_hash).unwrap();
+        let mut node_name_hash = compute_hash(&node_name);
+
+        'inner: loop {
+            // if the next node is also a reference just go to the next node
+            // this also implicitely break cycles
+            if let Some(next_node_name) = redirect_hashmap.remove(&node_name_hash) {
+                node_name = next_node_name;
+                node_name_hash = compute_hash(&node_name);
+                explored_nodes.push(node_name_hash);
+                pb.inc(1);
+            } else {
+                break 'inner
             }
         }
-        if let Some(looped_node_hash) = looped_node_hash {
-            redirect_hashmap.remove(&looped_node_hash);
-        } else if let Some(regression_node_name) = regression_node_name {
-            for node_name in redirect_hashmap.values_mut() {
-                if regression_node_name == *node_name {
-                    number_of_adjusted_redirections += 1;
-                    *node_name = regression_node_name.clone();
-                }
-            }
-        } else {
-            break;
+
+        // if the next is a node already solved, we can just propagate the result
+        if let Some(result_name) = adjusted_redirect.get(&node_name_hash) {
+            node_name = result_name.clone();
+        }
+        // update the loading bar
+        // the node is a destination, so we can just propagate it backward
+        for node_hash in explored_nodes  {
+            adjusted_redirect.insert(node_hash, node_name.clone());
         }
     }
+    pb.finish();
+
     if number_of_adjusted_redirections > 0 {
         info!(
             "Adjusted {} redirections.",
             number_of_adjusted_redirections.to_string()
         );
-    }
-    if number_of_loops > 0 {
-        info!("Removed {} redirection loops.", number_of_loops.to_string());
     }
     // Reset the buffer
     info!("Starting to build the edge list.");
@@ -388,7 +406,7 @@ pub fn parse_wikipedia_graph(
     let mut source_node_id = None;
     for line in get_lines_iterator(source_path)?.progress_with(pb) {
         // First of all we check that all is fine with the current line reading attempt.
-        let line = line?;
+        let line = line?.trim().to_string();
         // Each time we finish to read a page, we can safely increase the current node ID.
         if end_of_page_regex.is_match(&line) {
             source_node_id = None;
@@ -435,7 +453,7 @@ pub fn parse_wikipedia_graph(
             })
             .filter(|(destination_node_name, _)| !destination_node_name.is_empty())
         {
-            destination_node_name = redirect_hashmap
+            destination_node_name = adjusted_redirect
                 .get(&compute_hash(&destination_node_name))
                 .unwrap_or(&destination_node_name)
                 .to_string();
