@@ -491,7 +491,7 @@ pub fn parse_wikipedia_graph(
             .map(|capture| (capture, 0))
             .chain(external_iterator)
             .map(|(destination_node_name, edge_type_id)| {
-                (sanitize_term(destination_node_name[1]), edge_type_id)
+                (sanitize_term(destination_node_name[1].to_owned()), edge_type_id)
             })
             .filter(|(destination_node_name, _)| !is_special_node(destination_node_name))
         {
