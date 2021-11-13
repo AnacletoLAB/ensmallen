@@ -5,7 +5,7 @@ from typing import Any, Callable, List, Optional
 
 import compress_json
 import pandas as pd
-from ..ensmallen import Graph, datasets
+from ensmallen import Graph, datasets
 from userinput.utils import closest, set_validator, get_k_closest
 
 
