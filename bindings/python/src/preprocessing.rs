@@ -1,6 +1,7 @@
 use super::*;
 use graph::{
-    cooccurence_matrix as rust_cooccurence_matrix, okapi_bm25_tfidf as rust_okapi_bm25_tfidf,
+    cooccurence_matrix as rust_cooccurence_matrix,
+    get_okapi_bm25_tfidf_from_documents as rust_get_okapi_bm25_tfidf_from_documents,
     word2vec as rust_word2vec, NodeT, NodeTypeT,
 };
 use numpy::{PyArray, PyArray1, PyArray2};
@@ -13,16 +14,17 @@ use types::ThreadDataRaceAware;
 fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_wrapped(wrap_pyfunction!(word2vec))?;
     m.add_wrapped(wrap_pyfunction!(cooccurence_matrix))?;
-    m.add_wrapped(wrap_pyfunction!(okapi_bm25_tfidf_int))?;
-    m.add_wrapped(wrap_pyfunction!(okapi_bm25_tfidf_str))?;
+    m.add_wrapped(wrap_pyfunction!(get_okapi_bm25_tfidf_from_documents_u16))?;
+    m.add_wrapped(wrap_pyfunction!(get_okapi_bm25_tfidf_from_documents_u32))?;
+    m.add_wrapped(wrap_pyfunction!(get_okapi_bm25_tfidf_from_documents_u64))?;
+    m.add_wrapped(wrap_pyfunction!(get_okapi_bm25_tfidf_from_documents_str))?;
     Ok(())
 }
 
 #[module(preprocessing)]
 #[pyfunction()]
-#[text_signature = "(documents, k1, b, vocabulary_size, verbose)"]
-/// Return vocabulary and TFIDF matrix of given documents.
-///
+#[text_signature = "(documents, k1, b, verbose)"]
+/// Return list of vocabularies (with same length of the number of documents) with the term and their associated OKAPI BM25 TFIDF score.
 ///
 /// Arguments
 /// ---------
@@ -32,31 +34,78 @@ fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
 ///     The default parameter for k1, tipically between 1.2 and 2.0.
 /// b: Optional[float]
 ///     The default parameter for b, tipically equal to 0.75.
-/// vocabulary_size: Optional[int]
-///     The expected vocabulary size.
 /// verbose: Optional[bool]
-///     Whether to show a loading bar.
+///     Whether to show a loading bar. By default true.
 ///
-fn okapi_bm25_tfidf_int(
-    documents: Vec<Vec<u64>>,
-    k1: Option<f64>,
-    b: Option<f64>,
-    vocabulary_size: Option<usize>,
+fn get_okapi_bm25_tfidf_from_documents_u16(
+    documents: Vec<Vec<u16>>,
+    k1: Option<f32>,
+    b: Option<f32>,
     verbose: Option<bool>,
-) -> PyResult<Vec<HashMap<u64, f64>>> {
-    pe!(rust_okapi_bm25_tfidf::<u64>(
-        &documents,
-        k1,
-        b,
-        vocabulary_size,
-        verbose
+) -> PyResult<Vec<HashMap<u16, f32>>> {
+    pe!(rust_get_okapi_bm25_tfidf_from_documents::<u16>(
+        &documents, k1, b, verbose
     ))
 }
 
 #[module(preprocessing)]
 #[pyfunction()]
-#[text_signature = "(documents, k1, b, vocabulary_size, verbose)"]
-/// Return vocabulary and TFIDF matrix of given documents.
+#[text_signature = "(documents, k1, b, verbose)"]
+/// Return list of vocabularies (with same length of the number of documents) with the term and their associated OKAPI BM25 TFIDF score.
+///
+/// Arguments
+/// ---------
+/// documents: List[List[str]],
+///     The documents to parse
+/// k1: Optional[float]
+///     The default parameter for k1, tipically between 1.2 and 2.0.
+/// b: Optional[float]
+///     The default parameter for b, tipically equal to 0.75.
+/// verbose: Optional[bool]
+///     Whether to show a loading bar. By default true.
+///
+fn get_okapi_bm25_tfidf_from_documents_u32(
+    documents: Vec<Vec<u32>>,
+    k1: Option<f32>,
+    b: Option<f32>,
+    verbose: Option<bool>,
+) -> PyResult<Vec<HashMap<u32, f32>>> {
+    pe!(rust_get_okapi_bm25_tfidf_from_documents::<u32>(
+        &documents, k1, b, verbose
+    ))
+}
+
+#[module(preprocessing)]
+#[pyfunction()]
+#[text_signature = "(documents, k1, b, verbose)"]
+/// Return list of vocabularies (with same length of the number of documents) with the term and their associated OKAPI BM25 TFIDF score.
+///
+/// Arguments
+/// ---------
+/// documents: List[List[str]],
+///     The documents to parse
+/// k1: Optional[float]
+///     The default parameter for k1, tipically between 1.2 and 2.0.
+/// b: Optional[float]
+///     The default parameter for b, tipically equal to 0.75.
+/// verbose: Optional[bool]
+///     Whether to show a loading bar. By default true.
+///
+fn get_okapi_bm25_tfidf_from_documents_u64(
+    documents: Vec<Vec<u64>>,
+    k1: Option<f32>,
+    b: Option<f32>,
+    verbose: Option<bool>,
+) -> PyResult<Vec<HashMap<u64, f32>>> {
+    pe!(rust_get_okapi_bm25_tfidf_from_documents::<u64>(
+        &documents, k1, b, verbose
+    ))
+}
+
+#[module(preprocessing)]
+#[pyfunction()]
+#[text_signature = "(documents, k1, b, verbose)"]
+/// Return list of vocabularies (with same length of the number of documents) with the term and their associated OKAPI BM25 TFIDF score.
 ///
 ///
 /// Arguments
@@ -67,24 +116,17 @@ fn okapi_bm25_tfidf_int(
 ///     The default parameter for k1, tipically between 1.2 and 2.0.
 /// b: Optional[float]
 ///     The default parameter for b, tipically equal to 0.75.
-/// vocabulary_size: Optional[int]
-///     The expected vocabulary size.
 /// verbose: Optional[bool]
-///     Whether to show a loading bar.
+///     Whether to show a loading bar. By default true.
 ///
-fn okapi_bm25_tfidf_str(
+fn get_okapi_bm25_tfidf_from_documents_str(
     documents: Vec<Vec<&str>>,
-    k1: Option<f64>,
-    b: Option<f64>,
-    vocabulary_size: Option<usize>,
+    k1: Option<f32>,
+    b: Option<f32>,
     verbose: Option<bool>,
-) -> PyResult<Vec<HashMap<&str, f64>>> {
-    pe!(rust_okapi_bm25_tfidf::<&str>(
-        &documents,
-        k1,
-        b,
-        vocabulary_size,
-        verbose
+) -> PyResult<Vec<HashMap<&str, f32>>> {
+    pe!(rust_get_okapi_bm25_tfidf_from_documents::<&str>(
+        &documents, k1, b, verbose
     ))
 }
 
@@ -642,7 +684,7 @@ impl Graph {
     /// normalize: Optional[bool] = True
     ///     Whether to normalize the metrics.
     /// verbose: Optional[bool] = True
-    ///     Whether to show a loading bar.
+    ///     Whether to show a loading bar. By default true.
     ///
     /// Returns
     /// -------
@@ -693,7 +735,7 @@ impl Graph {
     /// normalize: Optional[bool] = True
     ///     Whether to normalize the metrics.
     /// verbose: Optional[bool] = True
-    ///     Whether to show a loading bar.
+    ///     Whether to show a loading bar. By default true.
     ///
     /// Returns
     /// -------
