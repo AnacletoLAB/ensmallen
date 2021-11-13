@@ -1,212 +1,212 @@
 """This sub-module offers methods to automatically retrieve the graphs from KGOBO repository."""
 
-from .aeo import AEO
-from .agro import AGRO
-from .aism import AISM
-from .amphx import AMPHX
-from .apo import APO
-from .apollo_sv import APOLLO_SV
-from .aro import ARO
-from .bco import BCO
-from .bfo import BFO
-from .bspo import BSPO
-from .bto import BTO
-from .cdao import CDAO
-from .cdno import CDNO
-from .ceph import CEPH
-from .chebi import CHEBI
-from .cheminf import CHEMINF
-from .chiro import CHIRO
-from .chmo import CHMO
-from .cido import CIDO
-from .cio import CIO
-from .cl import CL
-from .clao import CLAO
-from .clo import CLO
-from .clyh import CLYH
-from .cmo import CMO
-from .cob import COB
-from .cro import CRO
-from .cteno import CTENO
-from .cto import CTO
-from .cvdo import CVDO
-from .ddanat import DDANAT
-from .ddpheno import DDPHENO
-from .dideo import DIDEO
-from .doid import DOID
-from .dpo import DPO
-from .dron import DRON
-from .duo import DUO
-from .ecao import ECAO
-from .eco import ECO
-from .ecocore import ECOCORE
-from .ecto import ECTO
-from .ehdaa2 import EHDAA2
-from .emapa import EMAPA
-from .envo import ENVO
-from .ero import ERO
-from .eupath import EUPATH
-from .exo import EXO
-from .fao import FAO
-from .fbbi import FBBI
+from .mod import MOD
 from .fbbt import FBBT
-from .fbcv import FBCV
+from .bto import BTO
+from .chmo import CHMO
+from .oba import OBA
+from .pso import PSO
+from .ogsf import OGSF
+from .mco import MCO
+from .opmi import OPMI
 from .fbdv import FBDV
-from .fix import FIX
+from .ceph import CEPH
+from .mpath import MPATH
+from .spd import SPD
+from .omit import OMIT
+from .vt import VT
+from .ehdaa2 import EHDAA2
 from .flopo import FLOPO
-from .fma import FMA
-from .foodon import FOODON
-from .fovt import FOVT
+from .wbls import WBLS
+from .rxno import RXNO
+from .omp import OMP
+from .ero import ERO
+from .gno import GNO
+from .xco import XCO
+from .amphx import AMPHX
+from .clyh import CLYH
+from .oostt import OOSTT
 from .fypo import FYPO
-from .gaz import GAZ
+from .ncro import NCRO
+from .iao import IAO
+from .geo import GEO
+from .exo import EXO
+from .swo import SWO
+from .obcs import OBCS
+from .envo import ENVO
+from .symp import SYMP
+from .taxrank import TAXRANK
+from .apo import APO
+from .clo import CLO
+from .cmo import CMO
+from .ohmi import OHMI
+from .hso import HSO
+from .fbbi import FBBI
+from .obi import OBI
+from .cdao import CDAO
+from .mfmo import MFMO
+from .cro import CRO
+from .cheminf import CHEMINF
+from .mp import MP
+from .duo import DUO
+from .labo import LABO
+from .olatdv import OLATDV
+from .mpio import MPIO
+from .chebi import CHEBI
+from .aeo import AEO
+from .geno import GENO
+from .sbo import SBO
+from .to import TO
+from .uo import UO
+from .mop import MOP
+from .chiro import CHIRO
+from .ogms import OGMS
+from .ncbitaxon import NCBITAXON
+from .foodon import FOODON
+from .pw import PW
+from .fovt import FOVT
+from .xpo import XPO
+from .zfs import ZFS
+from .rs import RS
+from .cto import CTO
+from .omo import OMO
+from .fix import FIX
+from .mamo import MAMO
+from .vto import VTO
+from .uberon import UBERON
+from .mfomd import MFOMD
+from .bfo import BFO
+from .htn import HTN
+from .poro import PORO
+from .aism import AISM
+from .wbbt import WBBT
+from .hao import HAO
+from .so import SO
+from .ro import RO
+from .mondo import MONDO
+from .ddpheno import DDPHENO
+from .idomal import IDOMAL
+from .maxo import MAXO
+from .fbcv import FBCV
+from .trans import TRANS
+from .psdo import PSDO
+from .scdo import SCDO
+from .ontoneo import ONTONEO
+from .dron import DRON
+from .rbo import RBO
+from .ncit import NCIT
+from .fma import FMA
+from .rex import REX
+from .cob import COB
+from .sibo import SIBO
+from .pdro import PDRO
+from .ogg import OGG
+from .xlmod import XLMOD
+from .hancestro import HANCESTRO
+from .go import GO
+from .mf import MF
+from .gsso import GSSO
+from .upheno import UPHENO
+from .plana import PLANA
+from .oae import OAE
+from .mmusdv import MMUSDV
+from .ms import MS
+from .apollo_sv import APOLLO_SV
+from .hsapdv import HSAPDV
+from .vo import VO
+from .miro import MIRO
+from .emapa import EMAPA
 from .gecko import GECKO
 from .genepio import GENEPIO
-from .geno import GENO
-from .geo import GEO
-from .gno import GNO
-from .go import GO
-from .gsso import GSSO
-from .hancestro import HANCESTRO
-from .hao import HAO
-from .hom import HOM
-from .hp import HP
-from .hsapdv import HSAPDV
-from .hso import HSO
-from .htn import HTN
-from .iao import IAO
-from .iceo import ICEO
-from .ico import ICO
-from .ido import IDO
-from .idomal import IDOMAL
-from .ino import INO
-from .kisao import KISAO
-from .labo import LABO
-from .ma import MA
-from .mamo import MAMO
-from .maxo import MAXO
-from .mco import MCO
-from .mf import MF
-from .mfmo import MFMO
-from .mfoem import MFOEM
-from .mfomd import MFOMD
-from .mi import MI
-from .miapa import MIAPA
-from .miro import MIRO
-from .mmo import MMO
-from .mmusdv import MMUSDV
-from .mod import MOD
-from .mondo import MONDO
-from .mop import MOP
-from .mp import MP
-from .mpath import MPATH
-from .mpio import MPIO
-from .mro import MRO
-from .ms import MS
-from .nbo import NBO
-from .ncbitaxon import NCBITAXON
-from .ncit import NCIT
-from .ncro import NCRO
-from .nomen import NOMEN
-from .oae import OAE
-from .oarcs import OARCS
-from .oba import OBA
-from .obcs import OBCS
-from .obi import OBI
-from .obib import OBIB
-from .ogg import OGG
-from .ogms import OGMS
-from .ogsf import OGSF
-from .ohd import OHD
-from .ohmi import OHMI
-from .ohpi import OHPI
-from .olatdv import OLATDV
-from .omit import OMIT
-from .omo import OMO
-from .omp import OMP
-from .omrse import OMRSE
-from .one import ONE
-from .ons import ONS
-from .ontoneo import ONTONEO
-from .oostt import OOSTT
-from .opl import OPL
-from .opmi import OPMI
-from .ornaseq import ORNASEQ
-from .ovae import OVAE
-from .pato import PATO
-from .pco import PCO
-from .pdro import PDRO
-from .pdumdv import PDUMDV
-from .peco import PECO
-from .phipo import PHIPO
-from .plana import PLANA
-from .planp import PLANP
-from .po import PO
-from .poro import PORO
-from .ppo import PPO
-from .pr import PR
-from .psdo import PSDO
-from .pso import PSO
-from .pw import PW
-from .rbo import RBO
-from .rex import REX
-from .ro import RO
-from .rs import RS
-from .rxno import RXNO
-from .sbo import SBO
-from .scdo import SCDO
-from .sepio import SEPIO
-from .sibo import SIBO
-from .so import SO
-from .spd import SPD
-from .stato import STATO
-from .swo import SWO
-from .symp import SYMP
 from .tads import TADS
-from .taxrank import TAXRANK
+from .fao import FAO
+from .cvdo import CVDO
+from .ecao import ECAO
+from .ohpi import OHPI
+from .opl import OPL
 from .tgma import TGMA
-from .to import TO
-from .trans import TRANS
-from .tto import TTO
-from .txpo import TXPO
-from .uberon import UBERON
-from .uo import UO
-from .upa import UPA
-from .upheno import UPHENO
-from .vario import VARIO
-from .vo import VO
-from .vt import VT
-from .vto import VTO
-from .wbbt import WBBT
-from .wbls import WBLS
-from .wbphenotype import WBPHENOTYPE
-from .xao import XAO
-from .xco import XCO
-from .xlmod import XLMOD
-from .xpo import XPO
+from .bco import BCO
+from .ico import ICO
 from .zeco import ZECO
-from .zfa import ZFA
-from .zfs import ZFS
+from .phipo import PHIPO
+from .pdumdv import PDUMDV
+from .aro import ARO
+from .oarcs import OARCS
+from .cteno import CTENO
+from .planp import PLANP
+from .doid import DOID
+from .omrse import OMRSE
+from .ppo import PPO
+from .ovae import OVAE
 from .zp import ZP
+from .stato import STATO
+from .one import ONE
+from .ecto import ECTO
+from .xao import XAO
+from .miapa import MIAPA
+from .mi import MI
+from .ecocore import ECOCORE
+from .mmo import MMO
+from .eupath import EUPATH
+from .obib import OBIB
+from .ido import IDO
+from .sepio import SEPIO
+from .tto import TTO
+from .pr import PR
+from .nbo import NBO
+from .wbphenotype import WBPHENOTYPE
+from .peco import PECO
+from .gaz import GAZ
+from .cio import CIO
+from .ino import INO
+from .clao import CLAO
+from .upa import UPA
+from .nomen import NOMEN
+from .zfa import ZFA
+from .cido import CIDO
+from .kisao import KISAO
+from .ma import MA
+from .po import PO
+from .cdno import CDNO
+from .ons import ONS
+from .ohd import OHD
+from .vario import VARIO
+from .agro import AGRO
+from .dideo import DIDEO
+from .txpo import TXPO
+from .pato import PATO
+from .hom import HOM
+from .eco import ECO
+from .iceo import ICEO
+from .ddanat import DDANAT
+from .bspo import BSPO
+from .mro import MRO
+from .pco import PCO
+from .ornaseq import ORNASEQ
+from .hp import HP
+from .dpo import DPO
+from .cl import CL
+from .mfoem import MFOEM
 
 __all__ = [
-	"AEO", "AGRO", "AISM", "AMPHX", "APO", "APOLLO_SV", "ARO", "BCO", "BFO",
-	"BSPO", "BTO", "CDAO", "CDNO", "CEPH", "CHEBI", "CHEMINF", "CHIRO", "CHMO",
-	"CIDO", "CIO", "CL", "CLAO", "CLO", "CLYH", "CMO", "COB", "CRO", "CTENO",
-	"CTO", "CVDO", "DDANAT", "DDPHENO", "DIDEO", "DOID", "DPO", "DRON", "DUO",
-	"ECAO", "ECO", "ECOCORE", "ECTO", "EHDAA2", "EMAPA", "ENVO", "ERO", "EUPATH",
-	"EXO", "FAO", "FBBI", "FBBT", "FBCV", "FBDV", "FIX", "FLOPO", "FMA", "FOODON",
-	"FOVT", "FYPO", "GAZ", "GECKO", "GENEPIO", "GENO", "GEO", "GNO", "GO",
-	"GSSO", "HANCESTRO", "HAO", "HOM", "HP", "HSAPDV", "HSO", "HTN", "IAO",
-	"ICEO", "ICO", "IDO", "IDOMAL", "INO", "KISAO", "LABO", "MA", "MAMO", "MAXO",
-	"MCO", "MF", "MFMO", "MFOEM", "MFOMD", "MI", "MIAPA", "MIRO", "MMO", "MMUSDV",
-	"MOD", "MONDO", "MOP", "MP", "MPATH", "MPIO", "MRO", "MS", "NBO", "NCBITAXON",
-	"NCIT", "NCRO", "NOMEN", "OAE", "OARCS", "OBA", "OBCS", "OBI", "OBIB",
-	"OGG", "OGMS", "OGSF", "OHD", "OHMI", "OHPI", "OLATDV", "OMIT", "OMO",
-	"OMP", "OMRSE", "ONE", "ONS", "ONTONEO", "OOSTT", "OPL", "OPMI", "ORNASEQ",
-	"OVAE", "PATO", "PCO", "PDRO", "PDUMDV", "PECO", "PHIPO", "PLANA", "PLANP",
-	"PO", "PORO", "PPO", "PR", "PSDO", "PSO", "PW", "RBO", "REX", "RO", "RS",
-	"RXNO", "SBO", "SCDO", "SEPIO", "SIBO", "SO", "SPD", "STATO", "SWO", "SYMP",
-	"TADS", "TAXRANK", "TGMA", "TO", "TRANS", "TTO", "TXPO", "UBERON", "UO",
-	"UPA", "UPHENO", "VARIO", "VO", "VT", "VTO", "WBBT", "WBLS", "WBPHENOTYPE",
-	"XAO", "XCO", "XLMOD", "XPO", "ZECO", "ZFA", "ZFS", "ZP",
+	"MOD", "FBBT", "BTO", "CHMO", "OBA", "PSO", "OGSF", "MCO", "OPMI", "FBDV",
+	"CEPH", "MPATH", "SPD", "OMIT", "VT", "EHDAA2", "FLOPO", "WBLS", "RXNO",
+	"OMP", "ERO", "GNO", "XCO", "AMPHX", "CLYH", "OOSTT", "FYPO", "NCRO", "IAO",
+	"GEO", "EXO", "SWO", "OBCS", "ENVO", "SYMP", "TAXRANK", "APO", "CLO", "CMO",
+	"OHMI", "HSO", "FBBI", "OBI", "CDAO", "MFMO", "CRO", "CHEMINF", "MP", "DUO",
+	"LABO", "OLATDV", "MPIO", "CHEBI", "AEO", "GENO", "SBO", "TO", "UO", "MOP",
+	"CHIRO", "OGMS", "NCBITAXON", "FOODON", "PW", "FOVT", "XPO", "ZFS", "RS",
+	"CTO", "OMO", "FIX", "MAMO", "VTO", "UBERON", "MFOMD", "BFO", "HTN", "PORO",
+	"AISM", "WBBT", "HAO", "SO", "RO", "MONDO", "DDPHENO", "IDOMAL", "MAXO",
+	"FBCV", "TRANS", "PSDO", "SCDO", "ONTONEO", "DRON", "RBO", "NCIT", "FMA",
+	"REX", "COB", "SIBO", "PDRO", "OGG", "XLMOD", "HANCESTRO", "GO", "MF",
+	"GSSO", "UPHENO", "PLANA", "OAE", "MMUSDV", "MS", "APOLLO_SV", "HSAPDV",
+	"VO", "MIRO", "EMAPA", "GECKO", "GENEPIO", "TADS", "FAO", "CVDO", "ECAO",
+	"OHPI", "OPL", "TGMA", "BCO", "ICO", "ZECO", "PHIPO", "PDUMDV", "ARO",
+	"OARCS", "CTENO", "PLANP", "DOID", "OMRSE", "PPO", "OVAE", "ZP", "STATO",
+	"ONE", "ECTO", "XAO", "MIAPA", "MI", "ECOCORE", "MMO", "EUPATH", "OBIB",
+	"IDO", "SEPIO", "TTO", "PR", "NBO", "WBPHENOTYPE", "PECO", "GAZ", "CIO",
+	"INO", "CLAO", "UPA", "NOMEN", "ZFA", "CIDO", "KISAO", "MA", "PO", "CDNO",
+	"ONS", "OHD", "VARIO", "AGRO", "DIDEO", "TXPO", "PATO", "HOM", "ECO", "ICEO",
+	"DDANAT", "BSPO", "MRO", "PCO", "ORNASEQ", "HP", "DPO", "CL", "MFOEM",
 ]

@@ -36,7 +36,7 @@ def MAMO(
     cache: bool = True,
     cache_path: Optional[str] = None,
     cache_path_system_variable: str = "GRAPH_CACHE_DIR",
-    version: str = "release",
+    version: str = "no_version",
     **additional_graph_kwargs: Dict
 ) -> Graph:
     """Return new instance of the MAMO graph.
@@ -81,11 +81,10 @@ def MAMO(
         provided below is set, otherwise we use the directory `graphs`.
     cache_path_system_variable: str = "GRAPH_CACHE_DIR"
         The system variable with the default graph cache directory.
-    version: str = "release"
+    version: str = "no_version"
         The version of the graph to retrieve.	
 		The available versions are:
 			- no_version
-			- release
     additional_graph_kwargs: Dict
         Additional graph kwargs.
 

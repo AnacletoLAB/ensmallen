@@ -36,7 +36,7 @@ def CHEBI(
     cache: bool = True,
     cache_path: Optional[str] = None,
     cache_path_system_variable: str = "GRAPH_CACHE_DIR",
-    version: str = "203",
+    version: str = "204",
     **additional_graph_kwargs: Dict
 ) -> Graph:
     """Return new instance of the CHEBI graph.
@@ -81,11 +81,12 @@ def CHEBI(
         provided below is set, otherwise we use the directory `graphs`.
     cache_path_system_variable: str = "GRAPH_CACHE_DIR"
         The system variable with the default graph cache directory.
-    version: str = "203"
+    version: str = "204"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 204
+			- 205
 			- 203
+			- 204
     additional_graph_kwargs: Dict
         Additional graph kwargs.
 

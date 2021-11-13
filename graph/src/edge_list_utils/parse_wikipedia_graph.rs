@@ -202,7 +202,7 @@ pub fn parse_wikipedia_graph(
     keep_external_nodes: Option<bool>,
     verbose: Option<bool>,
 ) -> Result<(NodeTypeT, NodeT, EdgeT)> {
-    let compute_node_description = compute_node_description.unwrap_or(false);
+    let compute_node_description = compute_node_description.unwrap_or(true);
     let keep_external_nodes = keep_external_nodes.unwrap_or(true);
     let keep_interwikipedia_nodes = keep_interwikipedia_nodes.unwrap_or(true);
     let mut redirect_hashmap: HashMap<u64, String> = HashMap::new();

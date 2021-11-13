@@ -1,17 +1,17 @@
 """This sub-module offers methods to automatically retrieve the graphs from Zenodo repository."""
 
+from .wikilinkit import WikiLinkIT
+from .wikilinkfr import WikiLinkFR
 from .gianttn import GiantTN
 from .wikilinkde import WikiLinkDE
-from .wikilinken import WikiLinkEN
-from .wikilinkes import WikiLinkES
-from .wikilinkfr import WikiLinkFR
-from .wikilinkit import WikiLinkIT
 from .wikilinknl import WikiLinkNL
-from .wikilinkpl import WikiLinkPL
-from .wikilinkru import WikiLinkRU
 from .wikilinksv import WikiLinkSV
+from .wikilinkpl import WikiLinkPL
+from .wikilinkes import WikiLinkES
+from .wikilinken import WikiLinkEN
+from .wikilinkru import WikiLinkRU
 
 __all__ = [
-	"GiantTN", "WikiLinkDE", "WikiLinkEN", "WikiLinkES", "WikiLinkFR", "WikiLinkIT",
-	"WikiLinkNL", "WikiLinkPL", "WikiLinkRU", "WikiLinkSV",
+	"WikiLinkIT", "WikiLinkFR", "GiantTN", "WikiLinkDE", "WikiLinkNL", "WikiLinkSV",
+	"WikiLinkPL", "WikiLinkES", "WikiLinkEN", "WikiLinkRU",
 ]

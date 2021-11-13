@@ -15,6 +15,7 @@ def WikiBooksBN(
     directed: bool = False,
     load_nodes: bool = True,
     load_node_types: bool = True,
+    compute_node_description: bool = False,
     automatically_enable_speedups_for_small_graphs: bool = True,
     sort_temporary_directory: Optional[str] = None,
     verbose: int = 2,
@@ -39,6 +40,9 @@ def WikiBooksBN(
     load_node_types: bool = True
         Whether to load the node types or skip them entirely.
         This feature is only available when the preprocessing is enabled.
+    compute_node_description: bool = False
+        Whether to compute the node descriptions.
+        Note that this will significantly increase the side of the node lists!
     automatically_enable_speedups_for_small_graphs: bool = True
         Whether to enable the Ensmallen time-memory tradeoffs in small graphs
         automatically. By default True, that is, if a graph has less than

@@ -36,7 +36,7 @@ def OPMI(
     cache: bool = True,
     cache_path: Optional[str] = None,
     cache_path_system_variable: str = "GRAPH_CACHE_DIR",
-    version: str = "release",
+    version: str = "Vision-Release--1.0.130",
     **additional_graph_kwargs: Dict
 ) -> Graph:
     """Return new instance of the OPMI graph.
@@ -81,10 +81,10 @@ def OPMI(
         provided below is set, otherwise we use the directory `graphs`.
     cache_path_system_variable: str = "GRAPH_CACHE_DIR"
         The system variable with the default graph cache directory.
-    version: str = "release"
+    version: str = "Vision-Release--1.0.130"
         The version of the graph to retrieve.	
 		The available versions are:
-			- release
+			- Vision-Release--1.0.130
     additional_graph_kwargs: Dict
         Additional graph kwargs.
 

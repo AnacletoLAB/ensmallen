@@ -36,7 +36,7 @@ def SBO(
     cache: bool = True,
     cache_path: Optional[str] = None,
     cache_path_system_variable: str = "GRAPH_CACHE_DIR",
-    version: str = "release",
+    version: str = "28-08-2021-03-13",
     **additional_graph_kwargs: Dict
 ) -> Graph:
     """Return new instance of the SBO graph.
@@ -81,11 +81,10 @@ def SBO(
         provided below is set, otherwise we use the directory `graphs`.
     cache_path_system_variable: str = "GRAPH_CACHE_DIR"
         The system variable with the default graph cache directory.
-    version: str = "release"
+    version: str = "28-08-2021-03-13"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 28%3A08%3A2021%2003%3A13
-			- release
+			- 28-08-2021-03-13
     additional_graph_kwargs: Dict
         Additional graph kwargs.
 
