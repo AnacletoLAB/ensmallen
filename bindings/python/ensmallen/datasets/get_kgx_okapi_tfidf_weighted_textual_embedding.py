@@ -9,7 +9,7 @@ from .get_graph_okapi_tfidf_weighted_textual_embedding import get_graph_okapi_tf
 def get_kgx_okapi_tfidf_weighted_textual_embedding(
     graph_name: str,
     repository: str,
-    version: str = "latest",
+    version: str = "current",
     k1: float = 1.5,
     b: float = 0.75,
     pretrained_model_name_or_path: str = "allenai/scibert_scivocab_uncased",
@@ -25,7 +25,7 @@ def get_kgx_okapi_tfidf_weighted_textual_embedding(
         The name of the graph to be retrieved and loaded.
     repository: str,
         The kgx repository to be used.
-    version: str = "latest"
+    version: str = "current"
         The version of the graph to be retrieved.
     k1: float = 1.5
         K1 parameter for the OKAPI TFIDF
@@ -56,7 +56,7 @@ def get_kgx_okapi_tfidf_weighted_textual_embedding(
 
 def get_kghub_okapi_tfidf_weighted_textual_embedding(
     graph_name: str,
-    version: str = "latest",
+    version: str = "current",
     k1: float = 1.5,
     b: float = 0.75,
     pretrained_model_name_or_path: str = "allenai/scibert_scivocab_uncased",
@@ -70,7 +70,7 @@ def get_kghub_okapi_tfidf_weighted_textual_embedding(
     ------------------------
     graph_name: str
         The name of the graph to be retrieved and loaded.
-    version: str = "latest"
+    version: str = "current"
         The version of the graph to be retrieved.
     k1: float = 1.5
         K1 parameter for the OKAPI TFIDF
@@ -99,7 +99,7 @@ def get_kghub_okapi_tfidf_weighted_textual_embedding(
 
 def get_kgobo_okapi_tfidf_weighted_textual_embedding(
     graph_name: str,
-    version: str = "latest",
+    version: str = "current",
     k1: float = 1.5,
     b: float = 0.75,
     pretrained_model_name_or_path: str = "allenai/scibert_scivocab_uncased",
@@ -113,7 +113,7 @@ def get_kgobo_okapi_tfidf_weighted_textual_embedding(
     ------------------------
     graph_name: str
         The name of the graph to be retrieved and loaded.
-    version: str = "latest"
+    version: str = "current"
         The version of the graph to be retrieved.
     k1: float = 1.5
         K1 parameter for the OKAPI TFIDF
