@@ -37,7 +37,7 @@ def _compute_tokens_wrapper(args):
 
 
 @Cache(
-    cache_path="{cache_dir}/{pretrained_model_name_or_path}.csv.xz",
+    cache_path="{cache_dir}/{pretrained_model_name_or_path}.npy",
     cache_dir="precomputed_word_embedding"
 )
 def get_precomputed_word_embedding(
@@ -171,7 +171,7 @@ def get_tfidf_scores(
     )
 
 @Cache(
-    cache_path="{cache_dir}/{_hash}.csv.xz",
+    cache_path="{cache_dir}/{_hash}.npy",
     cache_dir="okapi_tfidf_weighted_textual_embedding"
 )
 def get_okapi_tfidf_weighted_textual_embedding(
