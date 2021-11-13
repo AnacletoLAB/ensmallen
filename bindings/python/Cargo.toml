@@ -20,6 +20,7 @@ requires-dist = [
     "compress_json",
     "environments_utils",
     "userinput>=1.0.16",
+    "cache_decorator>=2.0.10",
     "tqdm",
     "pandas",
     "transformers",
