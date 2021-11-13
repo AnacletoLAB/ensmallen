@@ -56,7 +56,7 @@ def get_wikipedia_okapi_tfidf_weighted_textual_embedding(
         b=b,
         columns=["node_names", "node_descriptions"],
         pretrained_model_name_or_path=pretrained_model_name_or_path,
-        read_csv_kwargs=dict(set="\t"),
+        read_csv_kwargs=dict(sep="\t"),
         bert_tokenizer_kwargs=bert_tokenizer_kwargs,
         bert_model_kwargs=bert_model_kwargs,
         verbose=verbose
