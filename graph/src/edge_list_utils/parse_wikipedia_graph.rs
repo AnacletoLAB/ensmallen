@@ -53,6 +53,8 @@ const SPECIAL_NODE_STARTERS: &[&str] = &[
     "wikisource:",
     "wikispecies:",
     "portal talk:",
+    "list of",
+    "timedtext:",
     "talk:",
     "imdbtitle:",
     "imdbname:",
@@ -173,6 +175,8 @@ fn sanitize_term(mut term: String) -> String {
     term.remove_matches("\t");
     term.trim_matches(x).to_lowercase()
 }
+
+
 
 /// TODO: write the docstring
 pub fn parse_wikipedia_graph(
