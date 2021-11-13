@@ -145,7 +145,6 @@ def get_tfidf_scores(
                         (chunk[columns], tokenizer)
                         for chunk in pd.read_csv(
                             path,
-                            sep='\t',
                             iterator=True,
                             chunksize=1000,
                             **read_csv_kwargs
