@@ -93,6 +93,7 @@ def WikiFR(
         directed=directed,
         load_nodes=load_nodes,
         load_node_types=load_node_types,
+        compute_node_description=compute_node_description,
         automatically_enable_speedups_for_small_graphs=automatically_enable_speedups_for_small_graphs,
         sort_temporary_directory=sort_temporary_directory,
         verbose=verbose,

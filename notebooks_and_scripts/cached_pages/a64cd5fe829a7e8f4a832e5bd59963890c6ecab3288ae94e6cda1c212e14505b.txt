@@ -1,0 +1,14 @@
+<html>
+<head><title>Index of /wikidatawiki/entities/20211018/</title></head>
+<body bgcolor="white">
+<h1>Index of /wikidatawiki/entities/20211018/</h1><hr><pre><a href="../">../</a>
+<a href="wikidata-20211018-all-BETA.nt.bz2">wikidata-20211018-all-BETA.nt.bz2</a>                  21-Oct-2021 14:19        141384886725
+<a href="wikidata-20211018-all-BETA.nt.gz">wikidata-20211018-all-BETA.nt.gz</a>                   20-Oct-2021 20:32        180849139444
+<a href="wikidata-20211018-all-BETA.ttl.bz2">wikidata-20211018-all-BETA.ttl.bz2</a>                 21-Oct-2021 01:54         90093980150
+<a href="wikidata-20211018-all-BETA.ttl.gz">wikidata-20211018-all-BETA.ttl.gz</a>                  20-Oct-2021 16:09        108509009803
+<a href="wikidata-20211018-all.json.bz2">wikidata-20211018-all.json.bz2</a>                     21-Oct-2021 00:26         70616339247
+<a href="wikidata-20211018-all.json.gz">wikidata-20211018-all.json.gz</a>                      20-Oct-2021 16:10        106497187104
+<a href="wikidata-20211018-md5sums.txt">wikidata-20211018-md5sums.txt</a>                      21-Oct-2021 15:49                 401
+<a href="wikidata-20211018-sha1sums.txt">wikidata-20211018-sha1sums.txt</a>                     21-Oct-2021 16:46                 449
+</pre><hr></body>
+</html>
