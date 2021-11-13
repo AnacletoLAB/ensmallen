@@ -89,7 +89,6 @@ def WikiMediaCA(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiMediaCA",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

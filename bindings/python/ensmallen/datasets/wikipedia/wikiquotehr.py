@@ -89,7 +89,6 @@ def WikiQuoteHR(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiQuoteHR",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

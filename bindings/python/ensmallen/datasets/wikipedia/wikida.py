@@ -89,7 +89,6 @@ def WikiDA(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiDA",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

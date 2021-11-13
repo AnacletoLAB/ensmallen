@@ -89,7 +89,6 @@ def WikiNV(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiNV",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

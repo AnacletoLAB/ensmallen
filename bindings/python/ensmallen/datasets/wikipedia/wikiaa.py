@@ -89,7 +89,6 @@ def WikiAA(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiAA",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

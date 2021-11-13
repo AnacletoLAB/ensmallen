@@ -89,7 +89,6 @@ def WikiQuoteJA(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiQuoteJA",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

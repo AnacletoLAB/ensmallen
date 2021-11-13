@@ -89,7 +89,6 @@ def WikiZU(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiZU",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

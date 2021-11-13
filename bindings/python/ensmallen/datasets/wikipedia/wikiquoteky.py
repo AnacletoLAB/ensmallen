@@ -89,7 +89,6 @@ def WikiQuoteKY(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiQuoteKY",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

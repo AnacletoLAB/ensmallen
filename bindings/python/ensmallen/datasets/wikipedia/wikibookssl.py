@@ -89,7 +89,6 @@ def WikiBooksSL(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiBooksSL",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

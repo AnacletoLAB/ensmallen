@@ -89,7 +89,6 @@ def WikiMediaET(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiMediaET",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

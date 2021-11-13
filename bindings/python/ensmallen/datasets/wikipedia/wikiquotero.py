@@ -89,7 +89,6 @@ def WikiQuoteRO(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiQuoteRO",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

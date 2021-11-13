@@ -89,7 +89,6 @@ def WikiMN(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiMN",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

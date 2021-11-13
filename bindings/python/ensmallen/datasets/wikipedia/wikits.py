@@ -89,7 +89,6 @@ def WikiTS(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiTS",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

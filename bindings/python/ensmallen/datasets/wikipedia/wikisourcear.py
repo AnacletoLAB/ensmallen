@@ -89,7 +89,6 @@ def WikiSourceAR(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiSourceAR",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

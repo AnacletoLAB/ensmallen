@@ -89,7 +89,6 @@ def WikiNA(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiNA",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

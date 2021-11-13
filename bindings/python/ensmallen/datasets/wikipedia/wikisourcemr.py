@@ -89,7 +89,6 @@ def WikiSourceMR(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiSourceMR",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

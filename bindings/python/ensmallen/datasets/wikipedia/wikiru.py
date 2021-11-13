@@ -87,7 +87,6 @@ def WikiRU(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiRU",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

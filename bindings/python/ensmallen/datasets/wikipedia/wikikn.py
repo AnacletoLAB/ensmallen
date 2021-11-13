@@ -89,7 +89,6 @@ def WikiKN(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiKN",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

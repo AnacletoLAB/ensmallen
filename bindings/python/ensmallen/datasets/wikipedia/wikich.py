@@ -89,7 +89,6 @@ def WikiCH(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiCH",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

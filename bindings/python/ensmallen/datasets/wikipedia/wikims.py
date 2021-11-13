@@ -89,7 +89,6 @@ def WikiMS(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiMS",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

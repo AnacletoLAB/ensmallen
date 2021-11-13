@@ -89,7 +89,6 @@ def WikiRN(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiRN",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

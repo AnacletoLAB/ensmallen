@@ -89,7 +89,6 @@ def WikiNewsAR(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiNewsAR",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

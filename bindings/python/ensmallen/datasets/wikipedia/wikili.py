@@ -89,7 +89,6 @@ def WikiLI(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiLI",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

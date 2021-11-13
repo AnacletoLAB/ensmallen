@@ -89,7 +89,6 @@ def WikiHE(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiHE",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

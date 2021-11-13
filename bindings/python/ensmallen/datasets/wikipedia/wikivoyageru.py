@@ -89,7 +89,6 @@ def WikiVoyageRU(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiVoyageRU",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

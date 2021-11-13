@@ -89,7 +89,6 @@ def WikiQuoteSL(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiQuoteSL",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

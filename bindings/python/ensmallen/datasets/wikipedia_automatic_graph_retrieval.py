@@ -20,7 +20,6 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
         self,
         graph_name: str,
         version: str,
-        repository: str,
         directed: bool = False,
         load_nodes: bool = True,
         load_node_types: bool = True,
@@ -41,8 +40,6 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
             The name of the graph to be retrieved and loaded.
         version: str
             The version of the graph to be retrieved.
-        repository: str
-            Name of the repository to load data from.
         directed: bool = False
             Whether to load the graph as directed or undirected.
             By default false.
@@ -91,7 +88,7 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
         super().__init__(
             graph_name=graph_name,
             version=version,
-            repository=repository,
+            repository="wikipedia",
             directed=directed,
             preprocess=True,
             load_nodes=load_nodes,

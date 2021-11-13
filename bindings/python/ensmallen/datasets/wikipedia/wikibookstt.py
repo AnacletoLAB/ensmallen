@@ -89,7 +89,6 @@ def WikiBooksTT(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiBooksTT",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

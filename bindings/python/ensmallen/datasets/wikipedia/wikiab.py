@@ -89,7 +89,6 @@ def WikiAB(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiAB",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

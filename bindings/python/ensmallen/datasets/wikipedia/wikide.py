@@ -87,7 +87,6 @@ def WikiDE(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiDE",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

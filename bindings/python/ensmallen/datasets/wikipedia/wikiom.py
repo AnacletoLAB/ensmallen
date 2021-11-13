@@ -89,7 +89,6 @@ def WikiOM(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiOM",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

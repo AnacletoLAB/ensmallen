@@ -89,7 +89,6 @@ def WikiMT(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiMT",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

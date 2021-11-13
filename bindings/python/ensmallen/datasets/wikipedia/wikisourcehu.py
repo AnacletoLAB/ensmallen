@@ -89,7 +89,6 @@ def WikiSourceHU(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiSourceHU",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

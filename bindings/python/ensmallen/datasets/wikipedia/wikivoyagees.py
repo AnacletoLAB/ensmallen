@@ -89,7 +89,6 @@ def WikiVoyageES(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiVoyageES",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

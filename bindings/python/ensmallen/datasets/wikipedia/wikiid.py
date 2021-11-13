@@ -89,7 +89,6 @@ def WikiID(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiID",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

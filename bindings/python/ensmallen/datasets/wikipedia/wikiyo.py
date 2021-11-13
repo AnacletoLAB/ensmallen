@@ -89,7 +89,6 @@ def WikiYO(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiYO",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

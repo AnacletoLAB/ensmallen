@@ -89,7 +89,6 @@ def WikiNE(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiNE",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

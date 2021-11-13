@@ -77,7 +77,6 @@ def {graph_method_name}(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="{graph_method_name}",
-        repository="{repository_package_name}",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

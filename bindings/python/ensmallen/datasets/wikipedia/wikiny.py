@@ -89,7 +89,6 @@ def WikiNY(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiNY",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

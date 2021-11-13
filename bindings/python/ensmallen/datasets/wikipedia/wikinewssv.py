@@ -89,7 +89,6 @@ def WikiNewsSV(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiNewsSV",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

@@ -89,7 +89,6 @@ def WikiNewsRU(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiNewsRU",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

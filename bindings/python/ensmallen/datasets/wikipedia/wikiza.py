@@ -89,7 +89,6 @@ def WikiZA(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiZA",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

@@ -89,7 +89,6 @@ def WikiSG(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiSG",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

@@ -89,7 +89,6 @@ def WikiMG(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiMG",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

@@ -89,7 +89,6 @@ def WikiMediaDK(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiMediaDK",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

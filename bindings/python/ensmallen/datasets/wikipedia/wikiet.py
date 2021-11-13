@@ -89,7 +89,6 @@ def WikiET(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiET",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

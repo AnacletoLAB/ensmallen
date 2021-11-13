@@ -89,7 +89,6 @@ def WikiCR(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiCR",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

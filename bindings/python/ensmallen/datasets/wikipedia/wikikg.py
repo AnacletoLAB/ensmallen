@@ -89,7 +89,6 @@ def WikiKG(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiKG",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

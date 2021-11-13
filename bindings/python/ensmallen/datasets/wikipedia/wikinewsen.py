@@ -89,7 +89,6 @@ def WikiNewsEN(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiNewsEN",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

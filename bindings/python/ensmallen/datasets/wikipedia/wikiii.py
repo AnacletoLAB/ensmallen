@@ -89,7 +89,6 @@ def WikiII(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiII",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

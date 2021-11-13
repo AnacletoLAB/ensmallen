@@ -87,7 +87,6 @@ def WikiSV(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiSV",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

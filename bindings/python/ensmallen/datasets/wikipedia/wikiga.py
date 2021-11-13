@@ -89,7 +89,6 @@ def WikiGA(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiGA",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

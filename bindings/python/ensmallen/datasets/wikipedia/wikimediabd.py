@@ -89,7 +89,6 @@ def WikiMediaBD(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiMediaBD",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

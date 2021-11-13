@@ -89,7 +89,6 @@ def WikiversityPT(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiversityPT",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

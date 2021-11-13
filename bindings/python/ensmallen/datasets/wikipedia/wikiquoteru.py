@@ -89,7 +89,6 @@ def WikiQuoteRU(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiQuoteRU",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

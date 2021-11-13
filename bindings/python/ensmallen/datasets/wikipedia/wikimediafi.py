@@ -89,7 +89,6 @@ def WikiMediaFI(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiMediaFI",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

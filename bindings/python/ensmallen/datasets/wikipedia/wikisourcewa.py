@@ -89,7 +89,6 @@ def WikiSourceWA(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiSourceWA",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

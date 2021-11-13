@@ -89,7 +89,6 @@ def WikiversitySL(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiversitySL",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

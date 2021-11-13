@@ -89,7 +89,6 @@ def WikiTR(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiTR",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

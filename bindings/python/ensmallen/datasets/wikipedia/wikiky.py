@@ -89,7 +89,6 @@ def WikiKY(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiKY",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

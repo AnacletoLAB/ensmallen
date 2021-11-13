@@ -89,7 +89,6 @@ def WikiSH(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiSH",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

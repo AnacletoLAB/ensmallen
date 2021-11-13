@@ -89,7 +89,6 @@ def WikiSourceIT(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiSourceIT",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

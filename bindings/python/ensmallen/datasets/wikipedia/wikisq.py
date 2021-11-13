@@ -89,7 +89,6 @@ def WikiSQ(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiSQ",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

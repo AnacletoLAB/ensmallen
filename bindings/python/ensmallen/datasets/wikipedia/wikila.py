@@ -89,7 +89,6 @@ def WikiLA(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiLA",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

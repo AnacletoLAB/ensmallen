@@ -89,7 +89,6 @@ def WikiBooksZH(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiBooksZH",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

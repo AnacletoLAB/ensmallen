@@ -89,7 +89,6 @@ def WikiSC(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiSC",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

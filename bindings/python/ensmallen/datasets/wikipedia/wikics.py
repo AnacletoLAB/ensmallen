@@ -89,7 +89,6 @@ def WikiCS(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiCS",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

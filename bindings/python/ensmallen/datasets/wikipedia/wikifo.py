@@ -89,7 +89,6 @@ def WikiFO(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiFO",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

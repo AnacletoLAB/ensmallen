@@ -89,7 +89,6 @@ def WikiMediaMK(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiMediaMK",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

@@ -86,7 +86,6 @@ def WikiEN(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiEN",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

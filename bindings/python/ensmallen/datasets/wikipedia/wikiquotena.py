@@ -89,7 +89,6 @@ def WikiQuoteNA(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiQuoteNA",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

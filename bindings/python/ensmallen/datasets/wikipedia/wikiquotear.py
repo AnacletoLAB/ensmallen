@@ -89,7 +89,6 @@ def WikiQuoteAR(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiQuoteAR",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

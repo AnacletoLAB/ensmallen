@@ -89,7 +89,6 @@ def WikiNewsEO(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiNewsEO",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

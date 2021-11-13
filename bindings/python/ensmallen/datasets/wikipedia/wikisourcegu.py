@@ -89,7 +89,6 @@ def WikiSourceGU(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiSourceGU",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

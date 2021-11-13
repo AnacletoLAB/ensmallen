@@ -89,7 +89,6 @@ def WikiBR(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiBR",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

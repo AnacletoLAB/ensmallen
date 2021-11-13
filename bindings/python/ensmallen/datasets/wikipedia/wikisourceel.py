@@ -89,7 +89,6 @@ def WikiSourceEL(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiSourceEL",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

@@ -8,8 +8,7 @@ from .get_okapi_tfidf_weighted_textual_embedding import get_okapi_tfidf_weighted
 
 def get_wikipedia_okapi_tfidf_weighted_textual_embedding(
     graph_name: str,
-    version: str,
-    repository: str,
+    version: str = "latest",
     k1: float = 1.5,
     b: float = 0.75,
     pretrained_model_name_or_path: str = "allenai/scibert_scivocab_uncased",
@@ -25,8 +24,6 @@ def get_wikipedia_okapi_tfidf_weighted_textual_embedding(
         The name of the graph to be retrieved and loaded.
     version: str
         The version of the graph to be retrieved.
-    repository: str
-        Name of the repository to load data from.
     k1: float = 1.5
         K1 parameter for the OKAPI TFIDF
     b: float = 0.75
@@ -44,7 +41,6 @@ def get_wikipedia_okapi_tfidf_weighted_textual_embedding(
     graph_retriever = WikipediaAutomaticallyRetrievedGraph(
         graph_name=graph_name,
         version=version,
-        repository=repository,
         verbose=verbose
     )
     # Get the path to the file to read.

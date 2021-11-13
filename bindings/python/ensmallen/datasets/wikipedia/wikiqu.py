@@ -89,7 +89,6 @@ def WikiQU(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiQU",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

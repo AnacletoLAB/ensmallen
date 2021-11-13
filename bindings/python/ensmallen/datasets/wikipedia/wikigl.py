@@ -89,7 +89,6 @@ def WikiGL(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiGL",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

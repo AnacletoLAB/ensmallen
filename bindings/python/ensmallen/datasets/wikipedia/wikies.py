@@ -87,7 +87,6 @@ def WikiES(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiES",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

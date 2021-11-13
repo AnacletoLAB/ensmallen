@@ -89,7 +89,6 @@ def WikiQuoteDE(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiQuoteDE",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

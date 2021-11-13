@@ -89,7 +89,6 @@ def WikiversityFI(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiversityFI",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

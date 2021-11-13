@@ -89,7 +89,6 @@ def WikiCY(
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="WikiCY",
-        repository="wikipedia",
         version=version,
         directed=directed,
         load_nodes=load_nodes,
