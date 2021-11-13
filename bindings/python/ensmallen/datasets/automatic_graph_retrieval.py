@@ -171,11 +171,21 @@ class AutomaticallyRetrievedGraph:
         )
 
     def get_preprocessed_graph_nodes_path(self) -> str:
-        """Return the path to file where the metadata of the graph are stored."""
+        """Return the path to file where the nodes of the graph are stored."""
         return os.path.join(
             self.get_preprocessed_graph_directory_path(),
             "nodes.tsv"
         )
+
+    def get_adjusted_graph_nodes_path(self) -> str:
+        """Return the path to file where the nodes of the graph are downloaded."""
+        node_path = self.get_graph_arguments().get("node_path")
+        if node_path is not None:
+            # We add the cache path to it
+            return os.path.join(
+                self._cache_path,
+                node_path
+            )
 
     def get_preprocessed_graph_edge_types_path(self) -> str:
         """Return the path to file where the metadata of the graph are stored."""
@@ -262,6 +272,14 @@ class AutomaticallyRetrievedGraph:
             ]
         return paths
 
+    def download(self):
+        if not os.path.exists(self.get_preprocessed_graph_directory_path()):
+            # Download the necessary data
+            self._downloader.download(
+                self._graph["urls"],
+                self.get_adjusted_graph_paths()
+            )
+
     def __call__(self) -> Graph:
         """Return Graph containing required graph."""
         graph_arguments = self.get_graph_arguments()
@@ -270,13 +288,7 @@ class AutomaticallyRetrievedGraph:
         if not self._cache and os.path.exists(root):
             shutil.rmtree(root)
 
-        if not os.path.exists(root):
-            # Download the necessary data
-            self._downloader.download(
-                self._graph["urls"],
-                self.get_adjusted_graph_paths()
-            )
-
+        self.download()
         os.makedirs(root, exist_ok=True)
 
         # Call the provided callbacks to process the edge lists, if any.
@@ -318,17 +330,7 @@ class AutomaticallyRetrievedGraph:
             target_edge_path = self.get_preprocessed_graph_edges_path()
 
             # If a node path was specified
-            node_path = graph_arguments.get(
-                "node_path"
-            )
-
-            # And it is not None
-            if node_path is not None:
-                # We add the cache path to it
-                node_path = os.path.join(
-                    self._cache_path,
-                    graph_arguments["node_path"]
-                )
+            node_path = self.get_adjusted_graph_nodes_path()
 
             may_have_singletons = graph_arguments.get(
                 "may_have_singletons", True

@@ -22,6 +22,7 @@ requires-dist = [
     "userinput>=1.0.16",
     "tqdm",
     "pandas",
+    "transformers",
     "py-cpuinfo"
 ]
 
