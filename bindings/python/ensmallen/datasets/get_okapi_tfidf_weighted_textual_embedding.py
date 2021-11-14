@@ -166,7 +166,7 @@ def get_tfidf_scores(
                             path,
                             iterator=True,
                             chunksize=1000,
-                            use_cols=column_numbers,
+                            usecols=column_numbers,
                             dtype=str,
                             **read_csv_kwargs
                         )
