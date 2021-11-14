@@ -183,6 +183,8 @@ def get_tfidf_scores(
         p.close()
         p.join()
 
+    print("Number of lines read", tokens)
+
     # Compute the TFIDF tokenization.
     return preprocessing.get_okapi_bm25_tfidf_from_documents_u32(
         documents=tokens,
