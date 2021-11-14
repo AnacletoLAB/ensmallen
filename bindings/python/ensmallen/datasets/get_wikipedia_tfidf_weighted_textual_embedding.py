@@ -49,6 +49,8 @@ def get_wikipedia_okapi_tfidf_weighted_textual_embedding(
     # We compute the word embedding
     return get_okapi_tfidf_weighted_textual_embedding(
         path=node_path,
+        separator="\t",
+        header=True,
         k1=k1,
         b=b,
         columns=["node_names", "node_descriptions"],
