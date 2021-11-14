@@ -23,6 +23,10 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
         directed: bool = False,
         load_nodes: bool = True,
         load_node_types: bool = True,
+        keep_nodes_without_descriptions: bool = True,
+        keep_nodes_without_categories: bool = True,
+        keep_interwikipedia_nodes: bool = True,
+        keep_external_nodes: bool = True,
         compute_node_description: bool = False,
         automatically_enable_speedups_for_small_graphs: bool = True,
         sort_temporary_directory: Optional[str] = None,
@@ -50,6 +54,14 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
         load_node_types: bool = True
             Whether to load the node types if available or skip them entirely.
             This feature is only available when the preprocessing is enabled.
+        keep_nodes_without_descriptions: bool = True
+            Whether to keep the nodes laking a description
+        keep_nodes_without_categories: bool = True
+            Whether to keep the nodes laking a category
+        keep_interwikipedia_nodes: bool = True
+            Whether to keep nodes from external wikipedia websites
+        keep_external_nodes: bool = True
+            Whether to keep nodes from external websites (non wikipedia ones).
         compute_node_description: bool = False
             Whether to compute the node descriptions.
             Note that this will significantly increase the side of the node lists!
@@ -84,6 +96,11 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
             If the preprocess flag is provided but the system
             is Windows, which does not provide the sort command.
         """
+        self._keep_nodes_without_descriptions = keep_nodes_without_descriptions
+        self._keep_nodes_without_categories = keep_nodes_without_categories
+        self._keep_interwikipedia_nodes = keep_interwikipedia_nodes
+        self._keep_external_nodes = keep_external_nodes
+
         self._compute_node_description = compute_node_description
         super().__init__(
             graph_name=graph_name,
@@ -147,6 +164,10 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
                 edge_types_column="edge_type_names",
                 node_descriptions_column="node_descriptions",
                 edge_list_separator="\t",
+                keep_nodes_without_descriptions=self._keep_nodes_without_descriptions,
+                keep_nodes_without_categories=self._keep_nodes_without_categories,
+                keep_interwikipedia_nodes=self._keep_interwikipedia_nodes,
+                keep_external_nodes=self._keep_external_nodes,
                 compute_node_description=self._compute_node_description,
                 sort_temporary_directory=self._sort_temporary_directory,
                 directed=self._directed,

@@ -15,6 +15,10 @@ def WikiQuoteUR(
     directed: bool = False,
     load_nodes: bool = True,
     load_node_types: bool = True,
+    keep_nodes_without_descriptions: bool = True,
+    keep_nodes_without_categories: bool = True,
+    keep_interwikipedia_nodes: bool = True,
+    keep_external_nodes: bool = True,
     compute_node_description: bool = False,
     automatically_enable_speedups_for_small_graphs: bool = True,
     sort_temporary_directory: Optional[str] = None,
@@ -40,6 +44,14 @@ def WikiQuoteUR(
     load_node_types: bool = True
         Whether to load the node types or skip them entirely.
         This feature is only available when the preprocessing is enabled.
+    keep_nodes_without_descriptions: bool = True
+        Whether to keep the nodes laking a description
+    keep_nodes_without_categories: bool = True
+        Whether to keep the nodes laking a category
+    keep_interwikipedia_nodes: bool = True
+        Whether to keep nodes from external wikipedia websites
+    keep_external_nodes: bool = True
+        Whether to keep nodes from external websites (non wikipedia ones).
     compute_node_description: bool = False
         Whether to compute the node descriptions.
         Note that this will significantly increase the side of the node lists!
@@ -93,6 +105,10 @@ def WikiQuoteUR(
         directed=directed,
         load_nodes=load_nodes,
         load_node_types=load_node_types,
+        keep_nodes_without_descriptions=keep_nodes_without_descriptions,
+        keep_nodes_without_categories=keep_nodes_without_categories,
+        keep_interwikipedia_nodes=keep_interwikipedia_nodes,
+        keep_external_nodes=keep_external_nodes,
         compute_node_description=compute_node_description,
         automatically_enable_speedups_for_small_graphs=automatically_enable_speedups_for_small_graphs,
         sort_temporary_directory=sort_temporary_directory,

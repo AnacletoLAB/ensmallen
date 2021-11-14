@@ -176,8 +176,6 @@ fn sanitize_term(mut term: String) -> String {
     term.trim_matches(x).to_lowercase()
 }
 
-
-
 /// TODO: write the docstring
 pub fn parse_wikipedia_graph(
     source_path: &str,
@@ -198,6 +196,8 @@ pub fn parse_wikipedia_graph(
     sort_temporary_directory: Option<String>,
     directed: bool,
     compute_node_description: Option<bool>,
+    keep_nodes_without_descriptions: Option<bool>,
+    keep_nodes_without_categories: Option<bool>,
     keep_interwikipedia_nodes: Option<bool>,
     keep_external_nodes: Option<bool>,
     verbose: Option<bool>,
@@ -205,6 +205,8 @@ pub fn parse_wikipedia_graph(
     let compute_node_description = compute_node_description.unwrap_or(true);
     let keep_external_nodes = keep_external_nodes.unwrap_or(true);
     let keep_interwikipedia_nodes = keep_interwikipedia_nodes.unwrap_or(true);
+    let keep_nodes_without_descriptions = keep_nodes_without_descriptions.unwrap_or(true);
+    let keep_nodes_without_categories = keep_nodes_without_categories.unwrap_or(true);
     let mut redirect_hashmap: HashMap<u64, String> = HashMap::new();
     let verbose = verbose.unwrap_or(true);
     let mut node_types_vocabulary: Vocabulary<NodeTypeT> = Vocabulary::new(false);
@@ -304,21 +306,26 @@ pub fn parse_wikipedia_graph(
         // We check if the current page is finished.
         if end_of_page_regex.is_match(&line) {
             if let Some(current_node_name) = current_node_name {
-                let (current_node_id, was_already_present) =
-                    nodes_vocabulary.insert(&current_node_name)?;
-                if !was_already_present {
-                    nodes_stream = nodes_writer.write_line(
-                        nodes_stream,
-                        current_node_id,
-                        current_node_name,
-                        Some(current_node_types),
-                        None,
-                        if compute_node_description {
-                            Some(sanitize_paragraph(current_node_description.join(" ")))
-                        } else {
-                            None
-                        },
-                    )?;
+                let description = sanitize_paragraph(current_node_description.join(" "));
+                if (!description.is_empty() || keep_nodes_without_descriptions)
+                    && (current_node_types.len() > 1 || keep_nodes_without_categories)
+                {
+                    let (current_node_id, was_already_present) =
+                        nodes_vocabulary.insert(&current_node_name)?;
+                    if !was_already_present {
+                        nodes_stream = nodes_writer.write_line(
+                            nodes_stream,
+                            current_node_id,
+                            current_node_name,
+                            Some(current_node_types),
+                            None,
+                            if compute_node_description {
+                                Some(description)
+                            } else {
+                                None
+                            },
+                        )?;
+                    }
                 }
             }
             // We write the node to the node list file.
@@ -495,7 +502,10 @@ pub fn parse_wikipedia_graph(
             .map(|capture| (capture, 0))
             .chain(external_iterator)
             .map(|(destination_node_name, edge_type_id)| {
-                (sanitize_term(destination_node_name[1].to_owned()), edge_type_id)
+                (
+                    sanitize_term(destination_node_name[1].to_owned()),
+                    edge_type_id,
+                )
             })
             .filter(|(destination_node_name, _)| !is_special_node(destination_node_name))
         {
