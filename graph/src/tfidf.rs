@@ -11,6 +11,7 @@ use tokenizers::tokenizer::Tokenizer;
 
 use super::*;
 
+#[manual_binding]
 /// Return vector of hashmaps containing the non-zero frequencies.
 ///
 /// # Arguments
@@ -149,7 +150,7 @@ impl Tokens {
 /// Return vector of vector of tokens extracted from given CSV.
 ///
 /// # Arguments
-/// * `path`: &[Vec<T>] - The path to be processed.
+/// * `path`: &str - The path to be processed.
 /// * `columns`: Option<Vec<String>> - The columns to be read. If none are given, all the columns will be used.
 /// * `separator`: Option<char> - The separator for the CSV.
 /// * `header`: Option<bool> - Whether to skip the header.
