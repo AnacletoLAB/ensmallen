@@ -14,13 +14,11 @@ def get_graph_okapi_tfidf_weighted_textual_embedding(
     k1: float = 1.5,
     b: float = 0.75,
     pretrained_model_name_or_path: str = "allenai/scibert_scivocab_uncased",
-    read_csv_kwargs: Optional[Dict] = None,
-    bert_tokenizer_kwargs: Optional[Dict] = None,
     bert_model_kwargs: Optional[Dict] = None,
     verbose: bool = True
 ) -> np.ndarray:
     """Return OKAPI TFIDF-weighted textual embedding of the data available for the selected graph.
-    
+
     Parameters
     ------------------------
     graph_name: str
@@ -37,10 +35,6 @@ def get_graph_okapi_tfidf_weighted_textual_embedding(
         B parameter for the OKAPI TFIDF
     pretrained_model_name_or_path: str = "allenai/scibert_scivocab_uncased"
         Name of the pretrained model to be used.
-    read_csv_kwargs: Optional[Dict] = None
-        Kwargs to be used when opening a CSV to be read
-    bert_tokenizer_kwargs: Optional[Dict] = None
-        Kwargs to be used when retrieving the tokenizer
     bert_model_kwargs: Optional[Dict] = None
         Arguments to be used to retrieve the model.
     verbose: bool = True
@@ -55,6 +49,7 @@ def get_graph_okapi_tfidf_weighted_textual_embedding(
     )
     # Get the path to the file to read.
     node_path = graph_retriever.get_adjusted_graph_nodes_path()
+    arguments = graph_retriever.get_graph_arguments()
     if node_path is None:
         # If the current graph does not have a node list, it does
         # not make sense to require for a textual embedding of the node list.
@@ -65,16 +60,20 @@ def get_graph_okapi_tfidf_weighted_textual_embedding(
         )
     # We retrieve the node data
     # This is automally cached if previously dowloaded
-    graph_retriever.download() 
+    graph_retriever.download()
     # We compute the word embedding
     return get_okapi_tfidf_weighted_textual_embedding(
         path=node_path,
+        separator=arguments.get(
+            "node_list_separator"
+        ),
+        header=arguments.get(
+            "node_list_header"
+        ),
         k1=k1,
         b=b,
         columns=columns,
         pretrained_model_name_or_path=pretrained_model_name_or_path,
-        read_csv_kwargs=read_csv_kwargs,
-        bert_tokenizer_kwargs=bert_tokenizer_kwargs,
         bert_model_kwargs=bert_model_kwargs,
         verbose=verbose
     )

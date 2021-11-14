@@ -30,6 +30,7 @@ serde = "1.0.130"
 rand = {version="0.7", features = ["small_rng"] }
 itertools = "0.10.0"
 permutation = "0.2.5"
+tokenizers = "0.11.0"
 counter = "0.5.2"
 is_sorted = "0.1.1"
 derive-getters = "0.1.0"

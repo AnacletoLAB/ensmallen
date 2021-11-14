@@ -12,7 +12,6 @@ def get_wikipedia_okapi_tfidf_weighted_textual_embedding(
     k1: float = 1.5,
     b: float = 0.75,
     pretrained_model_name_or_path: str = "allenai/scibert_scivocab_uncased",
-    bert_tokenizer_kwargs: Optional[Dict] = None,
     bert_model_kwargs: Optional[Dict] = None,
     verbose: bool = True
 ) -> np.ndarray:
@@ -30,8 +29,6 @@ def get_wikipedia_okapi_tfidf_weighted_textual_embedding(
         B parameter for the OKAPI TFIDF
     pretrained_model_name_or_path: str = "allenai/scibert_scivocab_uncased"
         Name of the pretrained model to be used.
-    bert_tokenizer_kwargs: Optional[Dict] = None
-        Kwargs to be used when retrieving the tokenizer
     bert_model_kwargs: Optional[Dict] = None
         Arguments to be used to retrieve the model.
     verbose: bool = True
@@ -56,8 +53,6 @@ def get_wikipedia_okapi_tfidf_weighted_textual_embedding(
         b=b,
         columns=["node_names", "node_descriptions"],
         pretrained_model_name_or_path=pretrained_model_name_or_path,
-        read_csv_kwargs=dict(sep="\t"),
-        bert_tokenizer_kwargs=bert_tokenizer_kwargs,
         bert_model_kwargs=bert_model_kwargs,
         verbose=verbose
     )

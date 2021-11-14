@@ -2,7 +2,8 @@ use super::*;
 use graph::{
     cooccurence_matrix as rust_cooccurence_matrix,
     get_okapi_bm25_tfidf_from_documents as rust_get_okapi_bm25_tfidf_from_documents,
-    word2vec as rust_word2vec, NodeT, NodeTypeT,
+    get_tokenized_csv as rust_get_tokenized_csv, iter_okapi_bm25_tfidf_from_documents,
+    word2vec as rust_word2vec, NodeT, NodeTypeT, Tokens,
 };
 use numpy::{PyArray, PyArray1, PyArray2};
 use pyo3::wrap_pyfunction;
@@ -18,6 +19,7 @@ fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_wrapped(wrap_pyfunction!(get_okapi_bm25_tfidf_from_documents_u32))?;
     m.add_wrapped(wrap_pyfunction!(get_okapi_bm25_tfidf_from_documents_u64))?;
     m.add_wrapped(wrap_pyfunction!(get_okapi_bm25_tfidf_from_documents_str))?;
+    m.add_wrapped(wrap_pyfunction!(get_okapi_tfidf_weighted_textual_embedding))?;
     Ok(())
 }
 
@@ -128,6 +130,131 @@ fn get_okapi_bm25_tfidf_from_documents_str(
     pe!(rust_get_okapi_bm25_tfidf_from_documents::<&str>(
         &documents, k1, b, verbose
     ))
+}
+
+#[module(preprocessing)]
+#[pyfunction()]
+#[text_signature = "(path, embedding, pretrained_model_name_or_path, k1, b, columns, separator, header, verbose)"]
+/// Returns embedding of all the term in given CSV weighted by OKAPI/TFIDF.
+///
+/// Arguments
+/// ------------
+/// path: str,
+///     The path to be processed.
+/// embedding: np.ndarray
+///     The numpy array to use for the dictionary.
+///     This must be compatible with the provided pretrained_model_name_or_path!
+/// pretrained_model_name_or_path: str
+///     Name of the tokenizer model to be retrieved.
+/// k1: Optional[float]
+///     The default parameter for k1, tipically between 1.2 and 2.0.
+/// b: Optional[float]
+///     The default parameter for b, tipically equal to 0.75.
+/// columns: Optional[List[String>]]
+///     The columns to be read.
+///     If none are given, all the columns will be used.
+/// separator: Optional[str]
+///     The separator for the CSV.
+/// header: Optional[bool]
+///     Whether to skip the header.
+/// verbose: Optional[bool]
+///     Whether to show a loading bar. By default true.
+///
+fn get_okapi_tfidf_weighted_textual_embedding(
+    path: &str,
+    embedding: Py<PyArray2<f32>>,
+    pretrained_model_name_or_path: String,
+    k1: Option<f32>,
+    b: Option<f32>,
+    columns: Option<Vec<String>>,
+    separator: Option<char>,
+    header: Option<bool>,
+    verbose: Option<bool>,
+) -> PyResult<Py<PyArray2<f32>>> {
+    let tokens = pe!(rust_get_tokenized_csv(
+        path,
+        columns,
+        separator,
+        header,
+        Some(pretrained_model_name_or_path.as_str()),
+    ))?;
+    let rows_number = tokens.len();
+    let gil = pyo3::Python::acquire_gil();
+    let actual_embedding = embedding.as_ref(gil.python());
+    let columns_number = actual_embedding.shape()[1];
+    let resulting_embedding = ThreadDataRaceAware {
+        t: PyArray2::zeros(gil.python(), [rows_number, columns_number], false),
+    };
+    let actual_embedding = ThreadDataRaceAware {
+        t: actual_embedding,
+    };
+    match tokens {
+        Tokens::TokensU8(inner) => {
+            pe!(iter_okapi_bm25_tfidf_from_documents(&inner, k1, b, verbose,))?
+                .enumerate()
+                .for_each(|(i, scores)| unsafe {
+                    let inner = resulting_embedding.t;
+                    let original = actual_embedding.t;
+                    let document_size = scores.len() as f32;
+                    scores.into_iter().for_each(|(k, score)| {
+                        let k = k as usize;
+                        (0..columns_number).for_each(|j| {
+                            *(inner.uget_mut([i, j])) +=
+                                original.uget([k, j]) * score / document_size;
+                        });
+                    });
+                });
+        }
+        Tokens::TokensU16(inner) => {
+            pe!(iter_okapi_bm25_tfidf_from_documents(&inner, k1, b, verbose,))?
+                .enumerate()
+                .for_each(|(i, scores)| unsafe {
+                    let inner = resulting_embedding.t;
+                    let original = actual_embedding.t;
+                    let document_size = scores.len() as f32;
+                    scores.into_iter().for_each(|(k, score)| {
+                        let k = k as usize;
+                        (0..columns_number).for_each(|j| {
+                            *(inner.uget_mut([i, j])) +=
+                                original.uget([k, j]) * score / document_size;
+                        });
+                    });
+                });
+        }
+        Tokens::TokensU32(inner) => {
+            pe!(iter_okapi_bm25_tfidf_from_documents(&inner, k1, b, verbose,))?
+                .enumerate()
+                .for_each(|(i, scores)| unsafe {
+                    let inner = resulting_embedding.t;
+                    let original = actual_embedding.t;
+                    let document_size = scores.len() as f32;
+                    scores.into_iter().for_each(|(k, score)| {
+                        let k = k as usize;
+                        (0..columns_number).for_each(|j| {
+                            *(inner.uget_mut([i, j])) +=
+                                original.uget([k, j]) * score / document_size;
+                        });
+                    });
+                });
+        }
+        Tokens::TokensU64(inner) => {
+            pe!(iter_okapi_bm25_tfidf_from_documents(&inner, k1, b, verbose,))?
+                .enumerate()
+                .for_each(|(i, scores)| unsafe {
+                    let inner = resulting_embedding.t;
+                    let original = actual_embedding.t;
+                    let document_size = scores.len() as f32;
+                    scores.into_iter().for_each(|(k, score)| {
+                        let k = k as usize;
+                        (0..columns_number).for_each(|j| {
+                            *(inner.uget_mut([i, j])) +=
+                                original.uget([k, j]) * score / document_size;
+                        });
+                    });
+                });
+        }
+    }
+    Ok(resulting_embedding.t.to_owned())
 }
 
 #[module(preprocessing)]
