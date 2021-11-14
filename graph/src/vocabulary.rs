@@ -295,12 +295,11 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
         let value = value.as_ref();
 
         if value.is_empty() {
-            return Err(
-                concat!(
-                    "The given value is empty, ",
-                    "we cannot insert an empty value into the vocabulary.\n",
-                ).into()
-            );
+            return Err(concat!(
+                "The given value is empty, ",
+                "we cannot insert an empty value into the vocabulary.\n",
+            )
+            .into());
         }
 
         let (normalized_value, index) = self.normalize_value(value)?;
@@ -610,11 +609,14 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
                 // compute the new dense mapping of the indices
                 let new_type_ids_map = (0..map.len())
                     .scan(0, |offset, type_id| {
-                        if type_ids_to_remove.contains(&IndexT::from_usize(type_id)) {
-                            *offset += 1;
-                            return Some(None);
-                        }
-                        Some(Some(type_id - *offset))
+                        Some(
+                            if type_ids_to_remove.contains(&IndexT::from_usize(type_id)) {
+                                *offset += 1;
+                                None
+                            } else {
+                                Some(type_id - *offset)
+                            },
+                        )
                     })
                     .collect::<Vec<_>>();
 
@@ -631,10 +633,12 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
                 // since we start from a valid state this should never fail
                 // unless there are bugs in the code
                 if let Some(reverse_map) = reverse_map {
-                    reverse_map.clear();
+                    *reverse_map = map
+                        .values()
+                        .cloned()
+                        .map(|value| reverse_map[IndexT::to_usize(value)].clone())
+                        .collect();
                 }
-
-                self.build().unwrap();
 
                 new_type_ids_map
             }
