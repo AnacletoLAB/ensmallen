@@ -51,6 +51,7 @@ def get_kgx_okapi_tfidf_weighted_textual_embedding(
         read_csv_kwargs=dict(
             sep=r"\t",
             encoding="utf8",
+            engine="python"
         ),
         bert_tokenizer_kwargs=bert_tokenizer_kwargs,
         bert_model_kwargs=bert_model_kwargs,
