@@ -147,6 +147,7 @@ impl Tokens {
     }
 }
 
+#[manual_binding]
 /// Return vector of vector of tokens extracted from given CSV.
 ///
 /// # Arguments
