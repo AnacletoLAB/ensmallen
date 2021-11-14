@@ -11,7 +11,7 @@ from transformers import BertModel, BertTokenizer
 from ..ensmallen import preprocessing
 
 
-def _compute_tokens(df: pd.DataFrame, tokenizer: BertTokenizer) -> List[List[int]]:
+def _compute_tokens(df: pd.DataFrame, tokenizer: BertTokenizer, dtype: str) -> List[np.ndarray]:
     """Returns tokenized tokens from the provided dataframe using the provided tokenizer.
 
     Parameters
@@ -22,11 +22,11 @@ def _compute_tokens(df: pd.DataFrame, tokenizer: BertTokenizer) -> List[List[int
         Tokenizer to use
     """
     return [
-        tokenizer.encode(" ".join((
+        np.array(tokenizer.encode(" ".join((
             e
             for e in row
             if pd.notna(e)
-        )))
+        ))), dtype=dtype)
         for _, row in df.iterrows()
     ]
 
@@ -128,11 +128,30 @@ def get_tfidf_scores(
                 "columns present in the provided set of columns: {}."
             ).format(column, csv_columns))
 
+    # Create set of columns to be actually read by pandas.
+    column_numbers = [
+        i
+        for i, column in enumerate(csv_columns)
+        if column in columns
+    ]
+
     # Create the requested tokenizer.
     tokenizer = BertTokenizer.from_pretrained(
         pretrained_model_name_or_path=pretrained_model_name_or_path,
         **bert_tokenizer_kwargs
     )
+
+    # Get the vocabulary size
+    vocabulary_size = len(tokenizer.get_vocab())
+
+    if vocabulary_size < 2**8:
+        dtype = "uint8"
+    elif vocabulary_size < 2**16:
+        dtype = "uint16"
+    elif vocabulary_size < 2**32:
+        dtype = "uint16"
+    else:
+        dtype = "uint64"
 
     # Initialize the pool to compute the tokens in parallel.
     with Pool(cpu_count()) as p:
@@ -142,11 +161,13 @@ def get_tfidf_scores(
                 for tokens in p.imap(
                     _compute_tokens_wrapper,
                     (
-                        (chunk[columns], tokenizer)
+                        (chunk[columns], tokenizer, dtype)
                         for chunk in pd.read_csv(
                             path,
                             iterator=True,
                             chunksize=1000,
+                            use_cols=column_numbers,
+                            dtype=str,
                             **read_csv_kwargs
                         )
                     )
@@ -169,6 +190,7 @@ def get_tfidf_scores(
         b=b,
         verbose=verbose
     )
+
 
 @Cache(
     cache_path="{cache_dir}/{_hash}.npy",
@@ -227,7 +249,7 @@ def get_okapi_tfidf_weighted_textual_embedding(
     # Compute the weighted embedding
     return np.array([
         np.average(
-            a=word_embedding[np.array(list(tfidf_score.keys()))],
+            a=word_embedding[list(tfidf_score.keys())],
             weights=list(tfidf_score.values()),
             axis=0,
             returned=False
