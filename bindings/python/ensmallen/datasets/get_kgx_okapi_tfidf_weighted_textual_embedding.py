@@ -48,7 +48,10 @@ def get_kgx_okapi_tfidf_weighted_textual_embedding(
         b=b,
         columns=["id", "category", "name", "description", "synonym"],
         pretrained_model_name_or_path=pretrained_model_name_or_path,
-        read_csv_kwargs=dict(sep="\t"),
+        read_csv_kwargs=dict(
+            sep=r"\t",
+            encoding="utf8",
+        ),
         bert_tokenizer_kwargs=bert_tokenizer_kwargs,
         bert_model_kwargs=bert_model_kwargs,
         verbose=verbose
