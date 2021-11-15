@@ -12,7 +12,7 @@ def get_kgx_okapi_tfidf_weighted_textual_embedding(
     version: str = "current",
     k1: float = 1.5,
     b: float = 0.75,
-    pretrained_model_name_or_path: str = "allenai/scibert_scivocab_uncased",
+    pretrained_model_name_or_path: str = "bert-base-uncased",
     bert_model_kwargs: Optional[Dict] = None,
     verbose: bool = True
 ) -> np.ndarray:
@@ -30,7 +30,7 @@ def get_kgx_okapi_tfidf_weighted_textual_embedding(
         K1 parameter for the OKAPI TFIDF
     b: float = 0.75
         B parameter for the OKAPI TFIDF
-    pretrained_model_name_or_path: str = "allenai/scibert_scivocab_uncased"
+    pretrained_model_name_or_path: str = "bert-base-uncased"
         Name of the pretrained model to be used.
     bert_model_kwargs: Optional[Dict] = None
         Arguments to be used to retrieve the model.
@@ -54,7 +54,7 @@ def get_kghub_okapi_tfidf_weighted_textual_embedding(
     version: str = "current",
     k1: float = 1.5,
     b: float = 0.75,
-    pretrained_model_name_or_path: str = "allenai/scibert_scivocab_uncased",
+    pretrained_model_name_or_path: str = "bert-base-uncased",
     bert_model_kwargs: Optional[Dict] = None,
     verbose: bool = True
 ) -> np.ndarray:
@@ -70,7 +70,7 @@ def get_kghub_okapi_tfidf_weighted_textual_embedding(
         K1 parameter for the OKAPI TFIDF
     b: float = 0.75
         B parameter for the OKAPI TFIDF
-    pretrained_model_name_or_path: str = "allenai/scibert_scivocab_uncased"
+    pretrained_model_name_or_path: str = "bert-base-uncased"
         Name of the pretrained model to be used.
     bert_model_kwargs: Optional[Dict] = None
         Arguments to be used to retrieve the model.
@@ -93,7 +93,7 @@ def get_kgobo_okapi_tfidf_weighted_textual_embedding(
     version: str = "current",
     k1: float = 1.5,
     b: float = 0.75,
-    pretrained_model_name_or_path: str = "allenai/scibert_scivocab_uncased",
+    pretrained_model_name_or_path: str = "bert-base-uncased",
     bert_model_kwargs: Optional[Dict] = None,
     verbose: bool = True
 ) -> np.ndarray:
@@ -109,7 +109,7 @@ def get_kgobo_okapi_tfidf_weighted_textual_embedding(
         K1 parameter for the OKAPI TFIDF
     b: float = 0.75
         B parameter for the OKAPI TFIDF
-    pretrained_model_name_or_path: str = "allenai/scibert_scivocab_uncased"
+    pretrained_model_name_or_path: str = "bert-base-uncased"
         Name of the pretrained model to be used.
     bert_model_kwargs: Optional[Dict] = None
         Arguments to be used to retrieve the model.

@@ -16,14 +16,14 @@ from ..ensmallen import preprocessing
     cache_dir="precomputed_word_embedding"
 )
 def get_precomputed_word_embedding(
-    pretrained_model_name_or_path: str = "allenai/scibert_scivocab_uncased",
+    pretrained_model_name_or_path: str = "bert-base-uncased",
     bert_model_kwargs: Optional[Dict] = None
 ) -> np.ndarray:
     """Returns numpy array with word embedding from the provided embedding.
 
     Parameters
     --------------------------------
-    pretrained_model_name_or_path: str = "allenai/scibert_scivocab_uncased"
+    pretrained_model_name_or_path: str = "bert-base-uncased"
         The model to be used.
     bert_model_kwargs: Optional[Dict] = None
         Arguments to be used to retrieve the model.
@@ -58,7 +58,7 @@ def get_okapi_tfidf_weighted_textual_embedding(
     k1: float = 1.5,
     b: float = 0.75,
     columns: Optional[str] = None,
-    pretrained_model_name_or_path: str = "allenai/scibert_scivocab_uncased",
+    pretrained_model_name_or_path: str = "bert-base-uncased",
     bert_model_kwargs: Optional[Dict] = None,
     verbose: bool = True
 ) -> np.ndarray:
@@ -78,7 +78,7 @@ def get_okapi_tfidf_weighted_textual_embedding(
         B parameter for the OKAPI TFIDF
     columns: Optional[str] = None
         The columns to be taken into consideration for the tokenization
-    pretrained_model_name_or_path: str = "allenai/scibert_scivocab_uncased"
+    pretrained_model_name_or_path: str = "bert-base-uncased"
         Name of the pretrained model to be used.
     read_csv_kwargs: Optional[Dict] = None
         Kwargs to be used when opening a CSV to be read

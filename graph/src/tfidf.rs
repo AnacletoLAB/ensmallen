@@ -166,7 +166,7 @@ pub fn get_tokenized_csv(
 ) -> Result<Tokens> {
     // Set the pretrained model if none where given
     let pretrained_model_name_or_path =
-        pretrained_model_name_or_path.unwrap_or("allenai/scibert_scivocab_uncased");
+        pretrained_model_name_or_path.unwrap_or("bert-base-uncased");
     // Retrieve the pretrained tokenizer from HuggngFace
     let tokenizer = Tokenizer::from_pretrained(pretrained_model_name_or_path, None)
         .map_err(|err| err.to_string())?;
