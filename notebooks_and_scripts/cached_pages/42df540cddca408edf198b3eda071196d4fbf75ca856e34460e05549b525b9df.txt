@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+	  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html lang="en">
+  <head profile="http://www.w3.org/1999/xhtml/vocab">
+
+    <meta charset="utf-8">
+
+    <title>Directory index for https://kg-hub.berkeleybop.io/kg-microbe/</title>
+
+  </head>
+
+  <body>
+
+    <h5>Parent</h5>
+    <ul>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/index.html">..</a>
+      </li>
+    </ul>
+
+    <h5>Directories</h5>
+    <ul>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20210422/index.html">20210422</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20210517/index.html">20210517</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20210608/index.html">20210608</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20210615/index.html">20210615</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20210617/index.html">20210617</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20210622/index.html">20210622</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20210715/index.html">20210715</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-microbe/current/index.html">current</a>
+      </li>
+    </ul>
+
+    <h5>Files</h5>
+    <ul>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-microbe/README">README</a>
+      </li>
+    </ul>
+
+  </body>
+</html>

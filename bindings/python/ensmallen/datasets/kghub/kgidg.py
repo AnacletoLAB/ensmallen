@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph kg-idg.
+This file offers the methods to automatically retrieve the graph KG-IDG.
 
 The graph is automatically retrieved from the KGHub repository. 
 
@@ -27,7 +27,7 @@ def KGIDG(
     version: str = "current",
     **additional_graph_kwargs: Dict
 ) -> Graph:
-    """Return new instance of the kg-idg graph.
+    """Return new instance of the KG-IDG graph.
 
     The graph is automatically retrieved from the KGHub repository.	
 
@@ -81,7 +81,7 @@ def KGIDG(
 
     Returns
     -----------------------
-    Instace of kg-idg graph.
+    Instace of KG-IDG graph.
 
 	
     """
