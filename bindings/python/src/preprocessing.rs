@@ -132,6 +132,8 @@ fn get_okapi_bm25_tfidf_from_documents_str(
     ))
 }
 
+use half::f16;
+
 #[module(preprocessing)]
 #[pyfunction()]
 #[text_signature = "(path, embedding, pretrained_model_name_or_path, k1, b, columns, separator, header, verbose)"]
@@ -170,7 +172,7 @@ fn get_okapi_tfidf_weighted_textual_embedding(
     separator: Option<char>,
     header: Option<bool>,
     verbose: Option<bool>,
-) -> PyResult<Py<PyArray2<f32>>> {
+) -> PyResult<Py<PyAny>> {
     let tokens = pe!(rust_get_tokenized_csv(
         path,
         columns,
@@ -199,8 +201,9 @@ fn get_okapi_tfidf_weighted_textual_embedding(
                     scores.into_iter().for_each(|(k, score)| {
                         let k = k as usize;
                         (0..columns_number).for_each(|j| {
-                            *(inner.uget_mut([i, j])) +=
-                                original.uget([k, j]) * score / document_size;
+                            *(inner.uget_mut([i, j])) = (f16::from_bits(*(inner.uget_mut([i, j])))
+                                + f16::from_f32(original.uget([k, j]) * score / document_size))
+                            .to_bits();
                         });
                     });
                 });
@@ -215,8 +218,9 @@ fn get_okapi_tfidf_weighted_textual_embedding(
                     scores.into_iter().for_each(|(k, score)| {
                         let k = k as usize;
                         (0..columns_number).for_each(|j| {
-                            *(inner.uget_mut([i, j])) +=
-                                original.uget([k, j]) * score / document_size;
+                            *(inner.uget_mut([i, j])) = (f16::from_bits(*(inner.uget_mut([i, j])))
+                                + f16::from_f32(original.uget([k, j]) * score / document_size))
+                            .to_bits();
                         });
                     });
                 });
@@ -231,8 +235,9 @@ fn get_okapi_tfidf_weighted_textual_embedding(
                     scores.into_iter().for_each(|(k, score)| {
                         let k = k as usize;
                         (0..columns_number).for_each(|j| {
-                            *(inner.uget_mut([i, j])) +=
-                                original.uget([k, j]) * score / document_size;
+                            *(inner.uget_mut([i, j])) = (f16::from_bits(*(inner.uget_mut([i, j])))
+                                + f16::from_f32(original.uget([k, j]) * score / document_size))
+                            .to_bits();
                         });
                     });
                 });
@@ -247,14 +252,23 @@ fn get_okapi_tfidf_weighted_textual_embedding(
                     scores.into_iter().for_each(|(k, score)| {
                         let k = k as usize;
                         (0..columns_number).for_each(|j| {
-                            *(inner.uget_mut([i, j])) +=
-                                original.uget([k, j]) * score / document_size;
+                            *(inner.uget_mut([i, j])) = (f16::from_bits(*(inner.uget_mut([i, j])))
+                                + f16::from_f32(original.uget([k, j]) * score / document_size))
+                            .to_bits();
                         });
                     });
                 });
         }
     }
-    Ok(resulting_embedding.t.to_owned())
+
+    let embedding = resulting_embedding.t.to_owned();
+    unsafe {
+        let ptr = &mut *(*embedding.as_ref(gil.python())).as_array_ptr();
+        //libc::free(ptr.descr);
+        ptr.descr =  numpy::npyffi::PY_ARRAY_API.PyArray_DescrFromType(numpy::npyffi::NPY_TYPES::NPY_HALF as _);
+    }
+
+    Ok(embedding.into_py(gil.python()))
 }
 
 #[module(preprocessing)]
