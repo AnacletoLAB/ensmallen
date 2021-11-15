@@ -42,7 +42,6 @@ def get_string_okapi_tfidf_weighted_textual_embedding(
         b=b,
         columns=["preferred_name", "annotation"],
         pretrained_model_name_or_path=pretrained_model_name_or_path,
-        read_csv_kwargs=dict(sep="\t"),
         bert_model_kwargs=bert_model_kwargs,
         verbose=verbose
     )
