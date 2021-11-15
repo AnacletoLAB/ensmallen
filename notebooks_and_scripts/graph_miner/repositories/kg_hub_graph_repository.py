@@ -21,7 +21,7 @@ class KGHubGraphRepository(GraphRepository):
         graph_names_mapping = {
             "kg-covid-19": "KGCOVID19",
             "kg-microbe": "KGMicrobe",
-            #"kg-idg": "KGIDG",
+            "kg-idg": "KGIDG",
             "eco-kg": "EcoKG"
         }
         root_pattern = "https://kg-hub.berkeleybop.io/{graph_name}/index.html"
