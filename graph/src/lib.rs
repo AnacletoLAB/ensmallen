@@ -86,7 +86,7 @@ mod remap;
 mod remove;
 mod selfloops;
 mod setters;
-mod shortest_paths_node_embedding;
+mod spine;
 mod sort;
 mod tarjan;
 mod tfidf;
