@@ -33,10 +33,10 @@ impl Graph {
         let mut current_total = 0.0;
 
         info!("Sorting centralities.");
-        let mut node_ids: Vec<usize> = self.get_node_ids();
+        let mut node_ids: Vec<NodeT> = self.get_node_ids();
         node_ids.par_sort_unstable_by(|&a, &b| {
-            node_centralities[b]
-                .partial_cmp(&node_centralities[a])
+            node_centralities[b as usize]
+                .partial_cmp(&node_centralities[a as usize])
                 .unwrap()
         });
         let embedding_size = embedding_size.min(node_ids.len());
@@ -54,9 +54,9 @@ impl Graph {
         node_ids.into_iter().progress_with(pb).for_each(|node_id|{
             if current_total < threshold {
                 let (argmin, _) = bucket_centralities.par_iter().argmin().unwrap();
-                bucket_centralities[argmin] += node_centralities[node_id];
-                current_total += node_centralities[node_id];
-                buckets[argmin].push(node_id as NodeT);    
+                bucket_centralities[argmin] += node_centralities[node_id as usize];
+                current_total += node_centralities[node_id as usize];
+                buckets[argmin].push(node_id);    
             }
         });
 
