@@ -49,7 +49,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             "Computing anchors",
-            embedding_size
+            node_ids.len()
         );
         node_ids.into_iter().progress_with(pb).for_each(|node_id|{
             if current_total < threshold {
