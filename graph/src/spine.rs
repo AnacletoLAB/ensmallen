@@ -30,11 +30,10 @@ impl Graph {
         
         // Compute the threshold
         let threshold = total_node_features * (1.0 - quantile);
+        let mut current_total = 0.0;
 
         info!("Sorting centralities.");
-        let mut node_ids: Vec<usize> = node_centralities.par_iter().enumerate().filter(|&(_, node_frequency)| *node_frequency > threshold).map(|(node_id, _)|{
-            node_id
-        }).collect();
+        let mut node_ids: Vec<usize> = self.get_node_ids();
         node_ids.par_sort_unstable_by(|&a, &b| {
             node_centralities[b]
                 .partial_cmp(&node_centralities[a])
@@ -53,9 +52,12 @@ impl Graph {
             embedding_size
         );
         node_ids.into_iter().progress_with(pb).for_each(|node_id|{
-            let (argmin, _) = bucket_centralities.par_iter().argmin().unwrap();
-            bucket_centralities[argmin] += node_centralities[node_id];
-            buckets[argmin].push(node_id as NodeT);
+            if current_total < threshold {
+                let (argmin, _) = bucket_centralities.par_iter().argmin().unwrap();
+                bucket_centralities[argmin] += node_centralities[node_id];
+                current_total += node_centralities[node_id];
+                buckets[argmin].push(node_id as NodeT);    
+            }
         });
 
         Ok(buckets)
