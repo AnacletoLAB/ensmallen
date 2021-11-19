@@ -29,7 +29,7 @@ impl Graph {
         let total_node_features: f32 = node_centralities.par_iter().sum();
         
         // Compute the threshold
-        let threshold = total_node_features * (1.0 - quantile);
+        let threshold = total_node_features * quantile;
         let mut current_total = 0.0;
 
         info!("Sorting centralities.");
@@ -137,13 +137,18 @@ impl Graph {
         );
 
         central_node_ids.into_iter().progress_with(pb).for_each(|node_id| unsafe{
-            self.get_unchecked_generic_breadth_first_search_distances_parallel_from_node_ids::<T>(
+            let (distances, eccentricity, _) = self.get_unchecked_generic_breadth_first_search_distances_parallel_from_node_ids::<T>(
                 vec![node_id], 
                 None
-            ).0.into_par_iter()
+            );
+            let eccentricity: u32 = eccentricity.into();
+            distances.into_par_iter()
             .zip(node_centralities.par_iter_mut())
             .for_each(|(distance, node_centrality)|{
-                    let distance: u32 = distance.into();
+                    let mut distance: u32 = distance.into();
+                    if distance > eccentricity {
+                        distance = eccentricity;
+                    }
                     if distance > 0 {
                         *node_centrality *= distance as f32;    
                 }
