@@ -6,12 +6,13 @@ macro_rules! impl_get_spine {
         #[pymethods]
         impl Graph {
             #[args(py_kwargs = "**")]
-            #[text_signature = "($self, embedding_size, number_of_central_nodes_to_sample, quantile, verbose)"]
+            #[text_signature = "($self, embedding_size, dtype, verbose)"]
             /// Return node embedding vector obtained from shortest-paths.
             ///
             /// Parameters
             /// ----------------------------
             /// embedding_size: Optional[int] - The number of features to generate. By default 100, or the number of nodes in the graph if it is lower.
+            /// dtype: Optional[str] - Dtype to use for the embedding. Note that an improper dtype may cause overflows.
             /// verbose: Optional[bool] - Whether to show the loading bar. By default true.
             pub fn get_spine(
                 &self,
