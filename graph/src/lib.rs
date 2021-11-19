@@ -15,7 +15,6 @@
 #![feature(core_intrinsics)]
 #![type_length_limit = "3764086"]
 #![feature(exclusive_range_pattern)]
-#![feature(option_result_unwrap_unchecked)]
 use std::sync::Arc;
 
 mod vocabulary;
