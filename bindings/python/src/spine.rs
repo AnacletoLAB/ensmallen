@@ -12,14 +12,10 @@ macro_rules! impl_get_spine {
             /// Parameters
             /// ----------------------------
             /// embedding_size: Optional[int] - The number of features to generate. By default 100, or the number of nodes in the graph if it is lower.
-            /// number_of_central_nodes_to_sample: Optional[int] - The number of nodes of high degree to initially sample. By default 10, or the number of nodes in the graph if it is lower.
-            /// quantile: Optional[float] - The top quantile of nodes to sample after weighting. By default, the top 20%.
             /// verbose: Optional[bool] - Whether to show the loading bar. By default true.
             pub fn get_spine(
                 &self,
                 embedding_size: Option<usize>,
-                number_of_central_nodes_to_sample: Option<usize>,
-                quantile: Option<f32>,
                 dtype: Option<&str>,
                 verbose: Option<bool>,
             ) -> PyResult<Py<PyAny>> {
@@ -43,8 +39,6 @@ macro_rules! impl_get_spine {
                             let (number_of_node_features, node_embedding_iterator) =
                             pe!(self.inner.get_spine::<$dtype>(
                                 embedding_size,
-                                number_of_central_nodes_to_sample,
-                                quantile,
                                 verbose,
                             ))?;
                         let node_embedding: ThreadDataRaceAware<PyArray2<$dtype>> = ThreadDataRaceAware {
