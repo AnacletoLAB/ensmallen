@@ -196,7 +196,10 @@ fn generic_integer_operator(
         Some(edges_iterator),
         main.nodes.clone(),
         Arc::new(node_types),
-        main.edge_types.as_ref().as_ref().map(|ets| ets.vocabulary.clone()),
+        main.edge_types
+            .as_ref()
+            .as_ref()
+            .map(|ets| ets.vocabulary.clone()),
         main.has_edge_weights(),
         main.is_directed(),
         Some(true),

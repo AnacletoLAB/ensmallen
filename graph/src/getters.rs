@@ -502,8 +502,13 @@ impl Graph {
 
     /// Return the edge types of the edges.
     pub fn get_edge_type_ids(&self) -> Result<Vec<Option<EdgeTypeT>>> {
-        self.must_have_edge_types()
-            .map(|_| self.edge_types.as_ref().as_ref().map(|ets| ets.ids.clone()).unwrap())
+        self.must_have_edge_types().map(|_| {
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| ets.ids.clone())
+                .unwrap()
+        })
     }
 
     /// Return the unique edge type IDs of the graph edges.
@@ -527,7 +532,8 @@ impl Graph {
     pub fn get_edge_type_names(&self) -> Result<Vec<Option<String>>> {
         self.must_have_edge_types().map(|_| {
             self.edge_types
-                .as_ref().as_ref()
+                .as_ref()
+                .as_ref()
                 .map(|ets| {
                     ets.ids
                         .iter()
@@ -606,8 +612,13 @@ impl Graph {
     /// ```
     ///
     pub fn get_node_type_ids(&self) -> Result<Vec<Option<Vec<NodeTypeT>>>> {
-        self.must_have_node_types()
-            .map(|_| self.node_types.as_ref().as_ref().map(|nts| nts.ids.clone()).unwrap())
+        self.must_have_node_types().map(|_| {
+            self.node_types
+                .as_ref()
+                .as_ref()
+                .map(|nts| nts.ids.clone())
+                .unwrap()
+        })
     }
 
     /// Returns boolean mask of known node types.

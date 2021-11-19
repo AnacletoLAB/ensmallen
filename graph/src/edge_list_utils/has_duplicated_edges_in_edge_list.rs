@@ -80,12 +80,12 @@ pub fn has_duplicated_edges_in_edge_list(
     };
     let mut last_line = None;
     let has_duplicated_edges = lines_iterator
-    // Removing eventual errors.
-    .filter_map(|line| line.ok())
-    .any(|(_, line)| {
-        last_line
-            .replace(line.clone())
-            .map_or(false, |last_line| last_line == line)
-    });
+        // Removing eventual errors.
+        .filter_map(|line| line.ok())
+        .any(|(_, line)| {
+            last_line
+                .replace(line.clone())
+                .map_or(false, |last_line| last_line == line)
+        });
     Ok(has_duplicated_edges)
 }

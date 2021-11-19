@@ -336,7 +336,8 @@ impl Graph {
         let batch_size = batch_size.unwrap_or(1024);
         let negative_samples_rate = negative_samples_rate.unwrap_or(0.5);
         let avoid_false_negatives = avoid_false_negatives.unwrap_or(false);
-        let return_only_edges_with_known_edge_types = return_only_edges_with_known_edge_types.unwrap_or(false);
+        let return_only_edges_with_known_edge_types =
+            return_only_edges_with_known_edge_types.unwrap_or(false);
         let maximal_sampling_attempts = maximal_sampling_attempts.unwrap_or(10_000);
         let shuffle = shuffle.unwrap_or(true);
 
@@ -418,7 +419,7 @@ impl Graph {
                     let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
                     let edge_type = if return_edge_types {
                         let edge_type = self.get_unchecked_edge_type_id_from_edge_id(edge_id);
-                        if return_only_edges_with_known_edge_types && edge_type.is_none(){
+                        if return_only_edges_with_known_edge_types && edge_type.is_none() {
                             continue;
                         }
                         edge_type

@@ -65,9 +65,7 @@ pub fn get_geometric_distribution_threshold<T: Into<f64> + Send + Sync + Clone>(
         })
         .reduce(
             || (0.0, false),
-            |(score_a, a_is_zero), (score_b, b_is_zero)| {
-                (score_a + score_b, a_is_zero | b_is_zero)
-            },
+            |(score_a, a_is_zero), (score_b, b_is_zero)| (score_a + score_b, a_is_zero | b_is_zero),
         );
     let mean_score = total_score / scores.len() as f64;
     // And then, using the geometric distribution formula,
@@ -145,7 +143,6 @@ pub fn get_unknown_distribution_threshold<
 
 /// Implementation of methods relative to statistical tools.
 impl Graph {
-
     /// Return threshold representing cutuoff point in graph node degree geometric distribution to have the given amount of elements above cutoff.
     ///
     /// # Implementative details

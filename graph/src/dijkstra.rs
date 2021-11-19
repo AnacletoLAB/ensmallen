@@ -596,7 +596,8 @@ impl Graph {
         src_node_id: NodeT,
     ) -> ShortestPathsResultBFS {
         let nodes_number = self.get_nodes_number() as usize;
-        let thread_shared_predecessors = ThreadDataRaceAware::new(vec![NODE_NOT_PRESENT; nodes_number]);
+        let thread_shared_predecessors =
+            ThreadDataRaceAware::new(vec![NODE_NOT_PRESENT; nodes_number]);
         (*thread_shared_predecessors.value.get())[src_node_id as usize] = src_node_id;
         let mut eccentricity = 0;
         let mut most_distant_node = src_node_id;
@@ -1229,7 +1230,7 @@ impl Graph {
         node_id: NodeT,
     ) -> (NodeT, NodeT) {
         let nodes_number = self.get_nodes_number() as usize;
-        let thread_shared_visited =  ThreadDataRaceAware::new(vec![false; nodes_number]); 
+        let thread_shared_visited = ThreadDataRaceAware::new(vec![false; nodes_number]);
         (*thread_shared_visited.value.get())[node_id as usize] = true;
         let mut eccentricity = 0;
         let mut most_distant_node = node_id;
@@ -1546,8 +1547,6 @@ impl Graph {
             total_harmonic_distance,
         }
     }
-
-    
 
     /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
     ///

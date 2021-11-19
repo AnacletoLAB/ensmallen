@@ -88,11 +88,10 @@ pub(crate) fn parse_nodes(
                     // Since we know the number of nodes and the node list
                     // is provided as correct, it is possible to pre-allocate the vectors
                     // and populate them with a foreach.
-                    let node_names = ThreadDataRaceAware::new(vec![
-                        "".to_owned();
-                        nodes_number as usize
-                    ]);
-                    let node_types_ids = ThreadDataRaceAware::new(vec![None; nodes_number as usize]);
+                    let node_names =
+                        ThreadDataRaceAware::new(vec!["".to_owned(); nodes_number as usize]);
+                    let node_types_ids =
+                        ThreadDataRaceAware::new(vec![None; nodes_number as usize]);
                     ni.for_each(|line| unsafe {
                         // We can unwrap because the user tells us that this is surely
                         // a correct node list.
@@ -103,10 +102,8 @@ pub(crate) fn parse_nodes(
                     let node_type_ids = node_types_ids.value.into_inner();
                     (node_names.value.into_inner(), optionify!(node_type_ids))
                 } else {
-                    let node_names = ThreadDataRaceAware::new(vec![
-                        "".to_owned();
-                        nodes_number as usize
-                    ]);
+                    let node_names =
+                        ThreadDataRaceAware::new(vec!["".to_owned(); nodes_number as usize]);
                     ni.for_each(|line| unsafe {
                         // We can unwrap because the user tells us that this is surely
                         // a correct node list.

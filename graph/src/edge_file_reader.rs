@@ -22,7 +22,7 @@ pub struct EdgeFileReader {
     pub(crate) complete: Option<bool>,
     pub(crate) sorted: Option<bool>,
     pub(crate) edges_number: Option<EdgeT>,
-    pub(crate) node_name_tokens_remapping: Option<HashMap<String, String>>
+    pub(crate) node_name_tokens_remapping: Option<HashMap<String, String>>,
 }
 
 impl EdgeFileReader {
@@ -48,12 +48,12 @@ impl EdgeFileReader {
             complete: None,
             sorted: None,
             edges_number: None,
-            node_name_tokens_remapping: None
+            node_name_tokens_remapping: None,
         })
     }
 
     /// Set the HashMap to be used to replace tokens in the node names.
-    /// 
+    ///
     /// This is meant to be useful when the nodes include extremely long
     /// prefixes, such as in graphs like WikiData.
     ///
@@ -542,7 +542,9 @@ impl EdgeFileReader {
         mut self,
         support_balanced_quotes: Option<bool>,
     ) -> EdgeFileReader {
-        self.reader = self.reader.set_support_balanced_quotes(support_balanced_quotes);
+        self.reader = self
+            .reader
+            .set_support_balanced_quotes(support_balanced_quotes);
         self
     }
 

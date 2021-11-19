@@ -370,7 +370,12 @@ impl Graph {
     /// ```
     pub fn iter_edge_weights(&self) -> Result<impl Iterator<Item = WeightT> + '_> {
         self.must_have_edge_weights()?;
-        Ok(self.weights.as_ref().as_ref().map(|ws| ws.iter().cloned()).unwrap())
+        Ok(self
+            .weights
+            .as_ref()
+            .as_ref()
+            .map(|ws| ws.iter().cloned())
+            .unwrap())
     }
 
     /// Return parallel iterator on the edges' weights.

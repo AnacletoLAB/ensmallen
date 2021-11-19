@@ -411,7 +411,11 @@ impl Graph {
     ///
     /// # Safety
     /// This method will cause an out of bound if the given node ID does not exist.
-    pub(crate) unsafe fn get_unchecked_succinct_node_description(&self, node_id: NodeT, minimum_node_degree: NodeT) -> String {
+    pub(crate) unsafe fn get_unchecked_succinct_node_description(
+        &self,
+        node_id: NodeT,
+        minimum_node_degree: NodeT,
+    ) -> String {
         let node_name = self.get_unchecked_node_name_from_node_id(node_id);
         let node_name = get_node_source_html_url_from_node_name(node_name.as_ref());
         let node_type = if self.has_node_types() {
@@ -858,7 +862,8 @@ impl Graph {
                 1 => format!(
                     "a singleton node, which is {}",
                     self.get_unchecked_succinct_node_description(
-                        self.iter_singleton_node_ids().next().unwrap(), 0
+                        self.iter_singleton_node_ids().next().unwrap(),
+                        0
                     )
                 ),
                 singleton_nodes_number => {
@@ -918,7 +923,7 @@ impl Graph {
                         self.iter_singleton_nodes_with_selfloops_node_ids()
                             .next()
                             .unwrap(),
-                            1
+                        1
                     )
                 ),
                 singleton_nodes_with_selfloops_number => {
@@ -1503,7 +1508,10 @@ impl Graph {
         }
 
         let mut report = paragraphs.join("");
-        report = report.replace("<p>", "<p style=\"text-align: justify; word-break: break-all;\">");
+        report = report.replace(
+            "<p>",
+            "<p style=\"text-align: justify; word-break: break-all;\">",
+        );
         report = report.replace("<h3>", "<h3 style=\"margin: 1em 0 0 0;\">");
         report = report.replace("<h4>", "<h4 style=\"margin: 1em 0 0 0;\">");
         report

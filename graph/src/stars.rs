@@ -18,16 +18,22 @@ impl ToString for Star {
                 "Specifically, the nodes involved in the star are: {}.</p>",
             ),
             to_human_readable_high_integer(self.len() as usize),
-            unsafe{self.graph.get_unchecked_succinct_node_description(self.get_root_node_id(), 1)},
+            unsafe {
+                self.graph
+                    .get_unchecked_succinct_node_description(self.get_root_node_id(), 1)
+            },
             unsafe {
                 get_unchecked_formatted_list(
                     &self
                         .get_star_node_ids()
                         .into_iter()
                         .skip(1)
-                        .map(|node_id| self.graph.get_unchecked_succinct_node_description(node_id, 1))
+                        .map(|node_id| {
+                            self.graph
+                                .get_unchecked_succinct_node_description(node_id, 1)
+                        })
                         .collect::<Vec<String>>(),
-                        Some(5)
+                    Some(5),
                 )
             }
         )
@@ -122,11 +128,13 @@ impl Graph {
     unsafe fn get_star_node_ids_from_root_node_id(&self, root_node_id: NodeT) -> Vec<NodeT> {
         let mut result = vec![root_node_id];
         let mut previous_node_id = root_node_id;
-        for neighbour_node_id in self.iter_unchecked_neighbour_node_ids_from_source_node_id(root_node_id) {
+        for neighbour_node_id in
+            self.iter_unchecked_neighbour_node_ids_from_source_node_id(root_node_id)
+        {
             if neighbour_node_id != root_node_id && neighbour_node_id != previous_node_id {
                 result.push(neighbour_node_id);
                 previous_node_id = neighbour_node_id;
-            } 
+            }
         }
 
         result
@@ -141,7 +149,7 @@ impl Graph {
     /// A star center is a node whose neighbours are connected only to the star center (and possibly themself).
     /// A star node has at least two neighbours.
     /// A star is a component composed by the star center and its neighbours.
-    /// 
+    ///
     /// Note that this definition allows for both self-loops and multigraphs.
     pub fn get_stars(&self, minimum_number_of_nodes_per_star: Option<NodeT>) -> Result<Vec<Star>> {
         self.must_be_undirected()?;

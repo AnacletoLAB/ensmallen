@@ -4,7 +4,7 @@ use crate::{
 };
 
 /// Converts the node list at given path to numeric saving in stream to file. Furthermore, returns the number of nodes that were written and their node types if any.
-/// 
+///
 /// # Arguments
 /// `original_node_type_path`: Option<String> - Path to the original list of node types.
 /// `original_node_type_list_separator`: Option<char> - Separator to be used for the original node type list.
@@ -51,7 +51,7 @@ use crate::{
 /// `target_node_list_node_types_column_number`: Option<usize> - Number for the column with the node type names within the target node list.
 /// `target_node_list_node_types_column`: Option<String> - Name for the column with the node type names within the target node list.
 /// `nodes_number`: Option<NodeT> - Number of the nodes in the original node list.
-/// 
+///
 pub fn convert_node_list_node_types_to_numeric(
     original_node_type_path: Option<String>,
     original_node_type_list_separator: Option<char>,

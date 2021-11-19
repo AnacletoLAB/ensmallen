@@ -219,7 +219,7 @@ pub fn atoi_c(val: &str) -> u32 {
 }
 
 /// Return given number converted to a human readable value.
-/// 
+///
 /// # Arguments
 /// `number`: usize - The value to convert.
 pub(crate) fn to_human_readable_high_integer(number: usize) -> String {
@@ -268,7 +268,10 @@ pub unsafe fn get_unchecked_formatted_list(
         last = if elements.len() <= max_number_of_elements {
             elements.last().unwrap().clone()
         } else {
-            format!("other {}", to_human_readable_high_integer(elements.len() - max_number_of_elements))
+            format!(
+                "other {}",
+                to_human_readable_high_integer(elements.len() - max_number_of_elements)
+            )
         }
     )
 }

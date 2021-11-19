@@ -1,13 +1,12 @@
 use super::*;
-use indicatif::ProgressIterator;
 use funty::IsInteger;
+use indicatif::ProgressIterator;
 use log::info;
 use rayon::prelude::*;
 use std::convert::TryFrom;
 
 /// # Shortest path node embedding-based algorithms.
 impl Graph {
-
     /// Return vector of vectors of anchor node IDs, samples according to provided node centralities.
     ///
     /// # Arguments
@@ -27,7 +26,7 @@ impl Graph {
     ) -> Result<Vec<Vec<NodeT>>> {
         info!("Computing sum of node features.");
         let total_node_features: f32 = node_centralities.par_iter().sum();
-        
+
         // Compute the threshold
         let threshold = total_node_features * quantile;
         let mut current_total = 0.0;
@@ -46,22 +45,18 @@ impl Graph {
         // Allocate the node scores
         let mut buckets: Vec<Vec<NodeT>> = (0..embedding_size).map(|_| Vec::new()).collect();
         // Start to properly iterate
-        let pb = get_loading_bar(
-            verbose,
-            "Computing anchors",
-            node_ids.len()
-        );
-        node_ids.into_iter().progress_with(pb).for_each(|node_id|{
-            if current_total < threshold {
-                let (argmin, _) = bucket_centralities.par_iter().argmin().unwrap();
-                bucket_centralities[argmin] += node_centralities[node_id as usize];
-                current_total += node_centralities[node_id as usize];
-                buckets[argmin].push(node_id);    
+        let pb = get_loading_bar(verbose, "Computing anchors", node_ids.len());
+        for node_id in node_ids.into_iter().progress_with(pb) {
+            if current_total > threshold {
+                break;
             }
-        });
+            let (argmin, _) = bucket_centralities.par_iter().argmin().unwrap();
+            bucket_centralities[argmin] += node_centralities[node_id as usize];
+            current_total += node_centralities[node_id as usize];
+            buckets[argmin].push(node_id);
+        }
 
         Ok(buckets)
-
     }
 
     #[manual_binding]
@@ -73,16 +68,22 @@ impl Graph {
     /// * `quantile`: Option<f32> - The top quantile of nodes to sample after weighting. By default, the top 20%.
     /// * `verbose`: Option<bool> - Whether to show the loading bar. By default true.
     ///
-    pub fn get_spine<'a, T: 'a + TryFrom<u32> + Into<u32> + Send + Sync + IsInteger + TryFrom<usize>>(
+    pub fn get_spine<
+        'a,
+        T: 'a + TryFrom<u32> + Into<u32> + Send + Sync + IsInteger + TryFrom<usize>,
+    >(
         &'a self,
         embedding_size: Option<usize>,
         number_of_central_nodes_to_sample: Option<usize>,
         quantile: Option<f32>,
         verbose: Option<bool>,
-    ) -> Result<(NodeT, impl Iterator<Item = impl IndexedParallelIterator<Item = T> + 'a> + 'a)> {
+    ) -> Result<(
+        NodeT,
+        impl Iterator<Item = impl IndexedParallelIterator<Item = T> + 'a> + 'a,
+    )> {
         let embedding_size = embedding_size.unwrap_or(100.min(self.get_nodes_number() as usize));
 
-        if embedding_size < 1{
+        if embedding_size < 1 {
             return Err(format!(
                 concat!(
                     "The embedding size cannot be less than one. ",
@@ -92,9 +93,10 @@ impl Graph {
             ));
         }
 
-        let number_of_central_nodes_to_sample = number_of_central_nodes_to_sample.unwrap_or(10.min(self.get_nodes_number() as usize));
-        
-        if number_of_central_nodes_to_sample < 1{
+        let number_of_central_nodes_to_sample =
+            number_of_central_nodes_to_sample.unwrap_or(10.min(self.get_nodes_number() as usize));
+
+        if number_of_central_nodes_to_sample < 1 {
             return Err(format!(
                 concat!(
                     "The number of central nodes to sample cannot be less than one. ",
@@ -106,7 +108,7 @@ impl Graph {
 
         let quantile = quantile.unwrap_or(0.2);
 
-        if quantile <= 0.0 || quantile >= 1.0{
+        if quantile <= 0.0 || quantile >= 1.0 {
             return Err(format!(
                 concat!(
                     "The provided quantile must be between 0 and 1, while ",
@@ -119,9 +121,13 @@ impl Graph {
         let verbose = verbose.unwrap_or(true);
 
         // Compute the top k nodes
-        info!("Computing top {} node ids.", number_of_central_nodes_to_sample);
-        let central_node_ids = self.get_top_k_central_node_ids(number_of_central_nodes_to_sample as NodeT)?;
-        
+        info!(
+            "Computing top {} node ids.",
+            number_of_central_nodes_to_sample
+        );
+        let central_node_ids =
+            self.get_top_k_central_node_ids(number_of_central_nodes_to_sample as NodeT)?;
+
         // Compute the nodes degree centralities
         info!("Computing node degree centralities.");
         let mut node_centralities = self.get_degree_centrality()?;
@@ -131,14 +137,14 @@ impl Graph {
         // to their distance.
         info!("Starting to approximated harmonic centralities.");
         let pb = get_loading_bar(
-            verbose, 
+            verbose,
             "Compute approximated harmonic centralities",
-            number_of_central_nodes_to_sample
+            number_of_central_nodes_to_sample,
         );
 
         central_node_ids.into_iter().progress_with(pb).for_each(|node_id| unsafe{
             let (distances, eccentricity, _) = self.get_unchecked_generic_breadth_first_search_distances_parallel_from_node_ids::<T>(
-                vec![node_id], 
+                vec![node_id],
                 None
             );
             let eccentricity: u32 = eccentricity.into();
@@ -150,7 +156,7 @@ impl Graph {
                         distance = eccentricity;
                     }
                     if distance > 0 {
-                        *node_centrality *= distance as f32;    
+                        *node_centrality *= distance as f32;
                 }
             });
         });
@@ -164,12 +170,8 @@ impl Graph {
         )?;
 
         info!("Starting to compute node features.");
-        let pb = get_loading_bar(
-            verbose, 
-            "Compute approximated harmonic centralities",
-            number_of_central_nodes_to_sample
-        );
-        
+        let pb = get_loading_bar(verbose, "Computing node features", anchor_node_ids.len());
+
         Ok((
             anchor_node_ids.len() as NodeT,
             anchor_node_ids
