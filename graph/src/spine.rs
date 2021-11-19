@@ -11,9 +11,8 @@ impl Graph {
     ///
     /// # Arguments
     /// * `embedding_size`: usize - The number of features to sample for.
-    /// * `verbose`: bool - Whether to show the loading bar.
     ///
-    fn get_anchor_node_ids(&self, embedding_size: usize, verbose: bool) -> Result<Vec<Vec<NodeT>>> {
+    fn get_anchor_node_ids(&self, embedding_size: usize) -> Result<Vec<Vec<NodeT>>> {
         info!("Computing sum of node features.");
         let number_of_edge_per_bucket: EdgeT =
             (self.get_directed_edges_number() as f32 / 2 as f32 / embedding_size as f32).floor()
@@ -31,20 +30,17 @@ impl Graph {
         let mut current_bucket_size = 0;
         let mut current_bucket_index = 0;
         let mut buckets: Vec<Vec<NodeT>> = (0..embedding_size).map(|_| Vec::new()).collect();
-        // Start to properly iterate
-        let pb = get_loading_bar(verbose, "Computing anchors", node_ids.len());
-        node_ids
-            .into_iter()
-            .progress_with(pb)
-            .for_each(|node_id| unsafe {
-                if current_bucket_size > number_of_edge_per_bucket {
-                    current_bucket_size = 0;
-                    current_bucket_index += 1;
-                }
-                current_bucket_size +=
-                    self.get_unchecked_node_degree_from_node_id(node_id) as EdgeT;
-                buckets[current_bucket_index].push(node_id);
-            });
+        node_ids.into_iter().for_each(|node_id| unsafe {
+            if current_bucket_size > number_of_edge_per_bucket {
+                current_bucket_size = 0;
+                current_bucket_index += 1;
+            }
+            if current_bucket_index == embedding_size {
+                return;
+            }
+            current_bucket_size += self.get_unchecked_node_degree_from_node_id(node_id) as EdgeT;
+            buckets[current_bucket_index].push(node_id);
+        });
 
         Ok(buckets)
     }
@@ -82,7 +78,7 @@ impl Graph {
         let verbose = verbose.unwrap_or(true);
 
         // Compute the anchor node IDs.
-        let anchor_node_ids = self.get_anchor_node_ids(embedding_size, verbose)?;
+        let anchor_node_ids = self.get_anchor_node_ids(embedding_size)?;
 
         info!("Starting to compute node features.");
         let pb = get_loading_bar(verbose, "Computing node features", anchor_node_ids.len());
