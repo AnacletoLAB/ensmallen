@@ -264,21 +264,20 @@ impl Graph {
     /// * If one of the two graphs has node types and the other does not.
     /// * If one of the two graphs has edge types and the other does not.
     pub fn overlaps(&self, other: &Graph) -> Result<bool> {
-        Ok(match self.is_compatible(other)? {
-            true => other
-                .par_iter_edge_node_ids_and_edge_type_id(other.directed)
-                .any(|(_, src, dst, et)| {
-                    self.has_edge_from_node_ids_and_edge_type_id(src, dst, et)
-                }),
-            false => other
-                .par_iter_edge_node_names_and_edge_type_name(other.directed)
+        Ok(if other.has_edge_types() && self.has_edge_types() {
+            self.par_iter_directed_edge_node_names_and_edge_type_name()
                 .any(|(_, _, src_name, _, dst_name, _, edge_type_name)| {
-                    self.has_edge_from_node_names_and_edge_type_name(
+                    other.has_edge_from_node_names_and_edge_type_name(
                         &src_name,
                         &dst_name,
                         edge_type_name.as_deref(),
                     )
-                }),
+                })
+        } else {
+            self.par_iter_directed_edges()
+                .any(|(_, _, src_name, _, dst_name)| {
+                    other.has_edge_from_node_names(&src_name, &dst_name)
+                })
         })
     }
 
