@@ -226,16 +226,23 @@ impl Graph {
             })
             .count();
         // Get overlapping edges
-        let overlapping_edges_number = self
-            .par_iter_edge_node_names_and_edge_type_name(self.directed)
-            .filter(|(_, _, src_name, _, dst_name, _, edge_type_name)| {
-                other.has_edge_from_node_names_and_edge_type_name(
-                    src_name,
-                    dst_name,
-                    edge_type_name.as_deref(),
-                )
-            })
-            .count();
+        let overlapping_edges_number = if other.has_edge_types() && self.has_edge_types() {
+            self.par_iter_directed_edge_node_names_and_edge_type_name()
+                .filter(|(_, _, src_name, _, dst_name, _, edge_type_name)| {
+                    other.has_edge_from_node_names_and_edge_type_name(
+                        src_name,
+                        dst_name,
+                        edge_type_name.as_deref(),
+                    )
+                })
+                .count()
+        } else {
+            self.par_iter_directed_edges()
+                .filter(|(_, _, src_name, _, dst_name)| {
+                    other.has_edge_from_node_names(src_name, dst_name)
+                })
+                .count()
+        };
         // Get number of overlapping components
         let first_nodes_components = self.get_node_connected_component_ids(verbose);
         let second_nodes_components = other.get_node_connected_component_ids(verbose);
