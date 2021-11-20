@@ -32,9 +32,9 @@ fn generic_string_operator(
     // deny_graph: right hand edges "deny list"
     // must_have_graph: right hand edges "must have list
     let edges_iterator: ItersWrapper<_, std::iter::Empty<_>, _> =
-        ItersWrapper::Parallel(graphs.into_par_iter().flat_map_iter(
+        ItersWrapper::Parallel(graphs.into_par_iter().flat_map(
             |(one, deny_graph, must_have_graph)| {
-                one.iter_edge_node_names_and_edge_type_name_and_edge_weight(main.directed)
+                one.par_iter_directed_edge_node_names_and_edge_type_name_and_edge_weight()
                     .filter(move |(_, _, src_name, _, dst_name, _, edge_type_name, _)| {
                         // If the secondary graph is given
                         // we filter out the edges that were previously added to avoid
