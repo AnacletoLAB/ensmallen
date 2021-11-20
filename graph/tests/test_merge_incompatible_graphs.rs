@@ -9,7 +9,6 @@ fn test_merge_incompatible_graphs() -> Result<(), String> {
     let directed_ppi = load_ppi(true, true, false, true, false, false);
     assert!((&cora | &ppi.remove_edge_weights().unwrap()).is_ok());
     assert!((&ppi | &directed_ppi).is_err());
-    assert!((&ppi | &ppi.remove_node_types().unwrap()).is_err());
     assert!((&ppi | &ppi.remove_edge_types().unwrap()).is_err());
     assert!((&ppi | &ppi.remove_edge_weights().unwrap()).is_err());
     Ok(())

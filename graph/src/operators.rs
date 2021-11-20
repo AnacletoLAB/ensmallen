@@ -4,6 +4,7 @@ use crate::constructors::{
 use rayon::iter::{IndexedParallelIterator, IntoParallelIterator, ParallelIterator};
 
 use super::*;
+use itertools::Itertools;
 use std::ops;
 
 fn build_operator_graph_name(main: &Graph, other: &Graph, operator: String) -> String {
@@ -75,29 +76,46 @@ fn generic_string_operator(
 
     // Chaining node types in a way that merges the information between
     // two node type sets where one of the two has some unknown node types
-    let nodes_iterator: ItersWrapper<_, std::iter::Empty<_>, _> =
-        ItersWrapper::Parallel(
-            main.par_iter_node_names_and_node_type_names()
-                .map(|(_, node_name, _, node_type_names)| {
-                    let node_type_names =
-                        match node_type_names {
-                            Some(ntns) => Some(ntns),
-                            None => other.get_node_id_from_node_name(&node_name).ok().and_then(
-                                |node_id| other.get_node_type_names_from_node_id(node_id).unwrap(),
-                            ),
-                        };
-                    Ok((0, (node_name, node_type_names)))
-                })
-                .chain(other.par_iter_node_names_and_node_type_names().filter_map(
-                    |(_, node_name, _, node_type_names)| match main.has_node_name(&node_name) {
-                        true => None,
-                        false => Some(Ok((0, (node_name, node_type_names)))),
-                    },
-                )),
-        );
+    let nodes_iterator: ItersWrapper<_, std::iter::Empty<_>, _> = ItersWrapper::Parallel(
+        main.par_iter_node_names_and_node_type_names()
+            .map(|(_, node_name, _, node_type_names)| {
+                // We retrieve the node type names of the other graph, if the node
+                // even exists in the other graph.
+                let other_node_type_names = other
+                    .get_node_type_names_from_node_name(&node_name)
+                    .unwrap_or(None);
+                // According to whether the current node has one or node type names
+                // in the current main graph or one or more of the other graphs
+                // we need to merge this properly.
+                let node_type_names = match (node_type_names, other_node_type_names) {
+                    // In the first case, the node types are present in both source graphs.
+                    // In this use case we need to merge the two node types.
+                    (Some(main_ntns), Some(other_ntns)) => Some(
+                        main_ntns
+                            .into_iter()
+                            .chain(other_ntns.into_iter())
+                            .unique()
+                            .collect::<Vec<String>>(),
+                    ),
+                    // If it is present only in the first one, we keep only the first one.
+                    (Some(main_ntns), None) => Some(main_ntns),
+                    // If it is present only in the second one, we keep only the secondo one.
+                    (None, Some(other_ntns)) => Some(other_ntns),
+                    // If it is not present in either, we can only return None.
+                    (None, None) => None,
+                };
+                Ok((0, (node_name, node_type_names)))
+            })
+            .chain(other.par_iter_node_names_and_node_type_names().filter_map(
+                |(_, node_name, _, node_type_names)| match main.has_node_name(&node_name) {
+                    true => None,
+                    false => Some(Ok((0, (node_name, node_type_names)))),
+                },
+            )),
+    );
 
     build_graph_from_strings_without_type_iterators(
-        main.has_node_types(),
+        main.has_node_types() || other.has_node_types(),
         Some(nodes_iterator),
         None,
         true,
@@ -235,12 +253,6 @@ impl<'a, 'b> Graph {
         if self.has_edge_weights() != other.has_edge_weights() {
             return Err(String::from(
                 "Both graphs need to have weights or neither can.",
-            ));
-        }
-
-        if self.has_node_types() != other.has_node_types() {
-            return Err(String::from(
-                "Both graphs need to have node types or neither can.",
             ));
         }
 
