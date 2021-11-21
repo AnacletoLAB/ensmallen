@@ -43,7 +43,7 @@ def get_kgx_okapi_tfidf_weighted_textual_embedding(
         repository=repository,
         k1=k1,
         b=b,
-        columns=["id", "category", "name", "description", "synonym"],
+        columns=["id", "name", "description", "synonym"],
         pretrained_model_name_or_path=pretrained_model_name_or_path,
         bert_model_kwargs=bert_model_kwargs,
         verbose=verbose
