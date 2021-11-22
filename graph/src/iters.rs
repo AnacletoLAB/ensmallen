@@ -1309,6 +1309,196 @@ impl Graph {
         })
     }
 
+    /// Returns iterator over node IDs of the nodes with given node type ID.
+    ///
+    /// # Argument
+    /// * `node_type_id`: node_type_id - The node type ID to filter for.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    /// * If the given node type ID does not exist in the current graph instance.
+    pub fn iter_node_ids_from_node_type_id(
+        &self,
+        node_type_id: NodeTypeT,
+    ) -> Result<impl Iterator<Item = NodeT> + '_> {
+        self.validate_node_type_id(Some(node_type_id))?;
+        self.must_have_node_types().map(|node_types| {
+            node_types
+                .ids
+                .iter()
+                .enumerate()
+                .filter_map(move |(node_id, node_type_ids)| {
+                    if node_type_ids
+                        .as_ref()
+                        .map_or(false, |node_type_ids| node_type_ids.contains(&node_type_id))
+                    {
+                        Some(node_id as NodeT)
+                    } else {
+                        None
+                    }
+                })
+        })
+    }
+
+    /// Returns iterator over node IDs of the nodes with given node type name.
+    ///
+    /// # Argument
+    /// * `node_type_name`: &str - The node type name to filter for.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    /// * If the given node type name does not exist in the current graph instance.
+    pub fn iter_node_ids_from_node_type_name(
+        &self,
+        node_type_name: &str,
+    ) -> Result<impl Iterator<Item = NodeT> + '_> {
+        self.iter_node_ids_from_node_type_id(
+            self.get_node_type_id_from_node_type_name(node_type_name)?,
+        )
+    }
+
+    /// Returns parallel iterator over node IDs of the nodes with given node type ID.
+    ///
+    /// # Argument
+    /// * `node_type_id`: node_type_id - The node type ID to filter for.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    /// * If the given node type ID does not exist in the current graph instance.
+    pub fn par_iter_node_ids_from_node_type_id(
+        &self,
+        node_type_id: NodeTypeT,
+    ) -> Result<impl ParallelIterator<Item = NodeT> + '_> {
+        self.validate_node_type_id(Some(node_type_id))?;
+        self.must_have_node_types().map(|node_types| {
+            node_types
+                .ids
+                .par_iter()
+                .enumerate()
+                .filter_map(move |(node_id, node_type_ids)| {
+                    if node_type_ids
+                        .as_ref()
+                        .map_or(false, |node_type_ids| node_type_ids.contains(&node_type_id))
+                    {
+                        Some(node_id as NodeT)
+                    } else {
+                        None
+                    }
+                })
+        })
+    }
+
+    /// Returns parallel iterator over node IDs of the nodes with given node type name.
+    ///
+    /// # Argument
+    /// * `node_type_name`: &str - The node type name to filter for.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    /// * If the given node type name does not exist in the current graph instance.
+    pub fn par_iter_node_ids_from_node_type_name(
+        &self,
+        node_type_name: &str,
+    ) -> Result<impl ParallelIterator<Item = NodeT> + '_> {
+        self.par_iter_node_ids_from_node_type_id(
+            self.get_node_type_id_from_node_type_name(node_type_name)?,
+        )
+    }
+
+    /// Returns iterator over node names of the nodes with given node type ID.
+    ///
+    /// # Argument
+    /// * `node_type_id`: node_type_id - The node type ID to filter for.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    /// * If the given node type ID does not exist in the current graph instance.
+    pub fn iter_node_names_from_node_type_id(
+        &self,
+        node_type_id: NodeTypeT,
+    ) -> Result<impl Iterator<Item = String> + '_> {
+        self.validate_node_type_id(Some(node_type_id))?;
+        self.must_have_node_types().map(|node_types| {
+            node_types
+                .ids
+                .iter()
+                .enumerate()
+                .filter_map(move |(node_id, node_type_ids)| unsafe {
+                    if node_type_ids
+                        .as_ref()
+                        .map_or(false, |node_type_ids| node_type_ids.contains(&node_type_id))
+                    {
+                        Some(self.get_unchecked_node_name_from_node_id(node_id as NodeT))
+                    } else {
+                        None
+                    }
+                })
+        })
+    }
+
+    /// Returns iterator over node names of the nodes with given node type name.
+    ///
+    /// # Argument
+    /// * `node_type_name`: &str - The node type name to filter for.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    /// * If the given node type name does not exist in the current graph instance.
+    pub fn iter_node_names_from_node_type_name(
+        &self,
+        node_type_name: &str,
+    ) -> Result<impl Iterator<Item = String> + '_> {
+        self.iter_node_names_from_node_type_id(
+            self.get_node_type_id_from_node_type_name(node_type_name)?,
+        )
+    }
+
+    /// Returns parallel iterator over node names of the nodes with given node type ID.
+    ///
+    /// # Argument
+    /// * `node_type_id`: node_type_id - The node type ID to filter for.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    /// * If the given node type ID does not exist in the current graph instance.
+    pub fn par_iter_node_names_from_node_type_id(
+        &self,
+        node_type_id: NodeTypeT,
+    ) -> Result<impl ParallelIterator<Item = String> + '_> {
+        self.validate_node_type_id(Some(node_type_id))?;
+        self.must_have_node_types().map(|node_types| {
+            node_types.ids.par_iter().enumerate().filter_map(
+                move |(node_id, node_type_ids)| unsafe {
+                    if node_type_ids
+                        .as_ref()
+                        .map_or(false, |node_type_ids| node_type_ids.contains(&node_type_id))
+                    {
+                        Some(self.get_unchecked_node_name_from_node_id(node_id as NodeT))
+                    } else {
+                        None
+                    }
+                },
+            )
+        })
+    }
+
+    /// Returns parallel iterator over node names of the nodes with given node type name.
+    ///
+    /// # Argument
+    /// * `node_type_name`: &str - The node type name to filter for.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    /// * If the given node type name does not exist in the current graph instance.
+    pub fn par_iter_node_names_from_node_type_name(
+        &self,
+        node_type_name: &str,
+    ) -> Result<impl ParallelIterator<Item = String> + '_> {
+        self.par_iter_node_names_from_node_type_id(
+            self.get_node_type_id_from_node_type_name(node_type_name)?,
+        )
+    }
+
     /// Returns iterator over node IDs of the nodes with known node types
     ///
     /// # Raises

@@ -265,7 +265,8 @@ fn get_okapi_tfidf_weighted_textual_embedding(
     unsafe {
         let ptr = &mut *(*embedding.as_ref(gil.python())).as_array_ptr();
         //libc::free(ptr.descr);
-        ptr.descr =  numpy::npyffi::PY_ARRAY_API.PyArray_DescrFromType(numpy::npyffi::NPY_TYPES::NPY_HALF as _);
+        ptr.descr = numpy::npyffi::PY_ARRAY_API
+            .PyArray_DescrFromType(numpy::npyffi::NPY_TYPES::NPY_HALF as _);
     }
 
     Ok(embedding.into_py(gil.python()))

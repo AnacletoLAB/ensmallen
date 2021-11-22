@@ -1037,6 +1037,54 @@ impl Graph {
             .map(|x| x.collect())
     }
 
+    /// Returns node IDs of the nodes with given node type ID.
+    ///
+    /// # Arguments
+    /// * `node_type_id`: NodeTypeT - The node type ID to filter for.
+    /// 
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_ids_from_node_type_id(&self, node_type_id: NodeTypeT) -> Result<Vec<NodeT>> {
+        self.iter_node_ids_from_node_type_id(node_type_id)
+            .map(|x| x.collect())
+    }
+
+    /// Returns node names of the nodes with given node type ID.
+    ///
+    /// # Arguments
+    /// * `node_type_id`: NodeTypeT - The node type ID to filter for.
+    /// 
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_names_from_node_type_id(&self, node_type_id: NodeTypeT) -> Result<Vec<String>> {
+        self.iter_node_names_from_node_type_id(node_type_id)
+            .map(|x| x.collect())
+    }
+
+    /// Returns node IDs of the nodes with given node type name.
+    ///
+    /// # Arguments
+    /// * `node_type_name`: &str - The node type ID to filter for.
+    /// 
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_ids_from_node_type_name(&self, node_type_name: &str) -> Result<Vec<NodeT>> {
+        self.iter_node_ids_from_node_type_name(node_type_name)
+            .map(|x| x.collect())
+    }
+
+    /// Returns node names of the nodes with given node type name.
+    ///
+    /// # Arguments
+    /// * `node_type_name`: &str - The node type ID to filter for.
+    /// 
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_names_from_node_type_name(&self, node_type_name: &str) -> Result<Vec<String>> {
+        self.iter_node_names_from_node_type_name(node_type_name)
+            .map(|x| x.collect())
+    }
+
     /// Returns node names of the nodes with known node types
     ///
     /// # Raises
