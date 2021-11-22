@@ -719,9 +719,16 @@ impl Graph {
         }
         format!(
             concat!(
-                "The graph contains {} connected components, with the largest one containing {} nodes and the smallest one containing {} nodes.",
+                "The graph contains {} connected components, with the largest one containing {} nodes and the smallest one containing {}.",
             ),
-            to_human_readable_high_integer(components_number as usize), to_human_readable_high_integer(maximum_component_size as usize), to_human_readable_high_integer(minimum_component_size as usize),
+            to_human_readable_high_integer(components_number as usize), to_human_readable_high_integer(maximum_component_size as usize), if minimum_component_size == 1 {
+                "a single node".to_string()
+            } else {
+                format!(
+                    "{} nodes",
+                    to_human_readable_high_integer(minimum_component_size as usize)
+                )
+            },
         )
     }
 
