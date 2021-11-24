@@ -91,8 +91,8 @@ impl Graph {
                 });
         }
 
-        let nodes_iterator: ItersWrapper<_, std::iter::Empty<_>, _> =
-            ItersWrapper::Parallel(self.par_iter_node_names_and_node_type_names().filter_map(
+        let nodes_iterator: ItersWrapper<_, _, rayon::iter::Empty<_>> =
+            ItersWrapper::Sequential(self.iter_node_names_and_node_type_names().filter_map(
                 |(node_id, node_name, _, node_type_names)| {
                     match keep_components.contains(components_vector[node_id as usize]) {
                         // We put as row 0 as it will not be dense because of the filter
@@ -124,8 +124,6 @@ impl Graph {
                 ),
         );
 
-        // TODO if a vector of offsets of removed edges is kept, it is possible
-        // to build the filtered version in parallell sorted without memory peaks.
         build_graph_from_strings_without_type_iterators(
             self.has_node_types(),
             Some(nodes_iterator),
@@ -144,9 +142,7 @@ impl Graph {
             Some(true),
             Some(true),
             Some(false),
-            // TODO: as aforementioned in the previous todos, it is possible to get this to work
-            // as sorted with the proper offsets precomputed.
-            Some(false),
+            Some(true),
             None,
             None,
             None,
