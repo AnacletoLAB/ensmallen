@@ -743,7 +743,7 @@ impl Graph {
     /// # Safety
     /// This method may cause a panic when called on a graph with no edges.
     fn get_report_of_topological_oddities(&self) -> Result<Option<String>> {
-        let (circles, chains, stars) =  if !self.is_directed(){
+        let (circles, chains, stars) = if !self.is_directed() {
             let mut circles = self.get_circles(None, None)?;
             circles.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
             let mut chains = self.get_chains(None, None)?;
@@ -756,7 +756,7 @@ impl Graph {
         };
 
         let has_isomorphic_nodes = self.has_isomorphic_nodes(Some(10));
-        
+
         // If the graph does not contain any oddity, we do not prepare a report.
         if !has_isomorphic_nodes && circles.is_empty() && chains.is_empty() && stars.is_empty() {
             return Ok(None);
@@ -851,16 +851,15 @@ impl Graph {
 
         // Create the report for the isomorphic nodes, if there are any.
         let isomorphic_nodes_description = if has_isomorphic_nodes {
-            
-                concat!(
-                    "<h4>Isomorphic node reports</h4>",
-                    "<p>",
-                    "Isomorphic nodes are nodes with exactly the same neighbours ",
-                    "and node types, if present. We have detected at least two ",
-                    "isomorphic nodes with at least degree 10.",
-                    "You can obtain the full list of isomorphic nodes ",
-                    "by executing the <code>get_isomorphic_node_ids</code> method.",
-                    "</p>"
+            concat!(
+                "<h4>Isomorphic node reports</h4>",
+                "<p>",
+                "Isomorphic nodes are nodes with exactly the same neighbours ",
+                "and node types, if present. We have detected at least two ",
+                "isomorphic nodes with at least degree 10.",
+                "You can obtain the full list of isomorphic nodes ",
+                "by executing the <code>get_isomorphic_node_ids</code> method.",
+                "</p>"
             )
         } else {
             ""
@@ -871,7 +870,7 @@ impl Graph {
                 "<p>",
                 "A topological oddity is a set of nodes in the graph that may be derived by ",
                 "an error during the generation of the edge list of the graph. ",
-                "We currently support the detection of <i>Stars</i>, <i>Chains</i>, and <i>Circles</i>. ",
+                "We currently support the detection of <i>Stars</i>, <i>Chains</i>, <i>Circles</i> and <i>Isomorphic nodes</i>. ",
                 "In the following paragraph we will describe the detected topological oddities (with at least 10 nodes).",
                 "</p>",
                 "{circles_description}",
@@ -1148,7 +1147,8 @@ impl Graph {
                 "then the fact that the node is in the graph. ",
                 "The graph contains {homogeneous_nodes_types_number}.</p>"
             ),
-            homogeneous_nodes_types_number = match self.get_homogeneous_node_types_number().unwrap() {
+            homogeneous_nodes_types_number = match self.get_homogeneous_node_types_number().unwrap()
+            {
                 1 => format!(
                     "a homogeneous node type, which is {}",
                     get_node_type_source_html_url_from_node_type_name(
