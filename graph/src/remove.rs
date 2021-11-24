@@ -91,20 +91,6 @@ impl Graph {
                 });
         }
 
-        let nodes_number = self
-            .par_iter_node_names_and_node_type_names()
-            .filter(|(node_id, _, _, _)| {
-                keep_components.contains(components_vector[*node_id as usize])
-            })
-            .count() as NodeT;
-
-        let edges_number = self
-            .par_iter_directed_edge_node_names_and_edge_type_name_and_edge_weight()
-            .filter(|(_, src_id, _, _, _, _, _, _)| {
-                keep_components.contains(components_vector[*src_id as usize])
-            })
-            .count() as EdgeT;
-
         let nodes_iterator: ItersWrapper<_, _, rayon::iter::Empty<_>> =
             ItersWrapper::Sequential(self.iter_node_names_and_node_type_names().filter_map(
                 |(node_id, node_name, _, node_type_names)| {
@@ -141,7 +127,7 @@ impl Graph {
         build_graph_from_strings_without_type_iterators(
             self.has_node_types(),
             Some(nodes_iterator),
-            Some(nodes_number),
+            None,
             true,
             false,
             false,
@@ -159,7 +145,7 @@ impl Graph {
             // of each edge, and therefore it is not possible
             // to construct the graph in parallel directly.
             Some(false),
-            Some(edges_number),
+            None,
             None,
             None,
             None,
