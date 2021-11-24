@@ -93,17 +93,17 @@ impl Graph {
 
         let nodes_number = self
             .par_iter_node_names_and_node_type_names()
-            .filter(|(node_id, node_name, _, node_type_names)| {
-                keep_components.contains(components_vector[node_id as usize])
+            .filter(|(node_id, _, _, _)| {
+                keep_components.contains(components_vector[*node_id as usize])
             })
-            .count();
+            .count() as NodeT;
 
         let edges_number = self
             .par_iter_directed_edge_node_names_and_edge_type_name_and_edge_weight()
             .filter(|(_, src_id, _, _, _, _, _, _)| {
-                keep_components.contains(components_vector[src_id as usize])
+                keep_components.contains(components_vector[*src_id as usize])
             })
-            .count();
+            .count() as EdgeT;
 
         let nodes_iterator: ItersWrapper<_, _, rayon::iter::Empty<_>> =
             ItersWrapper::Sequential(self.iter_node_names_and_node_type_names().filter_map(
