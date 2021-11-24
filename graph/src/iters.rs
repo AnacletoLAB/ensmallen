@@ -348,6 +348,54 @@ impl Graph {
         )
     }
 
+    /// Return iterator on the homogeneous node type ids.
+    pub fn iter_homogeneous_node_type_ids(&self) -> Result<impl Iterator<Item = NodeTypeT> + '_> {
+        self.must_have_node_types().map(move |node_types| {
+            node_types
+                .counts
+                .iter()
+                .enumerate()
+                .filter(move |&(_, node_type_count)| *node_type_count == self.get_nodes_number())
+                .map(|(node_type_id, _)| NodeTypeT::from_usize(node_type_id))
+        })
+    }
+
+    /// Return iterator on the homogeneous node type names.
+    pub fn iter_homogeneous_node_type_names(&self) -> Result<impl Iterator<Item = String> + '_> {
+        Ok(self
+            .iter_homogeneous_node_type_ids()?
+            .map(move |node_type_id| {
+                self.get_node_type_name_from_node_type_id(node_type_id)
+                    .unwrap()
+            }))
+    }
+
+    /// Return parallel iterator on the homogeneous node type ids.
+    pub fn par_iter_homogeneous_node_type_ids(
+        &self,
+    ) -> Result<impl ParallelIterator<Item = NodeTypeT> + '_> {
+        self.must_have_node_types().map(move |node_types| {
+            node_types
+                .counts
+                .par_iter()
+                .enumerate()
+                .filter(move |&(_, node_type_count)| *node_type_count == self.get_nodes_number())
+                .map(|(node_type_id, _)| NodeTypeT::from_usize(node_type_id))
+        })
+    }
+
+    /// Return parallel iterator on the homogeneous node type names.
+    pub fn par_iter_homogeneous_node_type_names(
+        &self,
+    ) -> Result<impl ParallelIterator<Item = String> + '_> {
+        Ok(self
+            .par_iter_homogeneous_node_type_ids()?
+            .map(move |node_type_id| {
+                self.get_node_type_name_from_node_type_id(node_type_id)
+                    .unwrap()
+            }))
+    }
+
     /// Return iterator on the (non unique) source nodes of the graph.
     ///
     /// # Arguments

@@ -1110,6 +1110,67 @@ impl Graph {
         )
     }
 
+    /// Returns report on the homogeneous node types of the graph.
+    unsafe fn get_homogeneous_nodes_types_report(&self) -> String {
+        format!(
+            concat!(
+                "<h4>Homogeneous node types</h4>",
+                "<p>Homogeneous node types are node types that are assigned ",
+                "to all the nodes in the graph, making the node type ",
+                "relatively meaningless, as it adds no more information ",
+                "then the fact that the node is in the graph. ",
+                "The graph contains {homogeneous_nodes_types_number}.</p>"
+            ),
+            homogeneous_nodes_types_number = match self.get_homogeneous_node_types_number().unwrap() {
+                1 => format!(
+                    "a homogeneous node type, which is {}",
+                    get_node_type_source_html_url_from_node_type_name(
+                        self.iter_homogeneous_node_type_names()
+                            .unwrap()
+                            .next()
+                            .unwrap()
+                            .as_ref()
+                    )
+                ),
+                homogeneous_nodes_types_number => {
+                    format!(
+                        concat!(
+                            "{homogeneous_nodes_types_number} homogeneous node types, which are ",
+                            "{homogeneous_node_types_list}",
+                            "{additional_homogeneous_nodes_with_selfloop}"
+                        ),
+                        homogeneous_nodes_types_number =
+                            to_human_readable_high_integer(homogeneous_nodes_types_number as usize),
+                        homogeneous_node_types_list = get_unchecked_formatted_list(
+                            self.iter_homogeneous_node_type_names()
+                                .unwrap()
+                                .take(5)
+                                .map(|node_type_name| {
+                                    get_node_type_source_html_url_from_node_type_name(
+                                        node_type_name.as_ref(),
+                                    )
+                                })
+                                .collect::<Vec<_>>()
+                                .as_ref(),
+                            None
+                        ),
+                        additional_homogeneous_nodes_with_selfloop =
+                            if homogeneous_nodes_types_number > 5 {
+                                format!(
+                                ", plus other {homogeneous_nodes_types_number} homogeneous node types",
+                                homogeneous_nodes_types_number = to_human_readable_high_integer(
+                                    homogeneous_nodes_types_number as usize - 5
+                                )
+                            )
+                            } else {
+                                "".to_string()
+                            }
+                    )
+                }
+            }
+        )
+    }
+
     /// Returns report on the unknown types of the graph.
     ///
     /// # Safety
@@ -1248,6 +1309,11 @@ impl Graph {
         // When the graph contains singleton node types, we build their report.
         if self.has_singleton_node_types().unwrap() {
             paragraphs.push(self.get_singleton_nodes_types_report());
+        }
+
+        // When the graph contains homogeneous node types, we build their report.
+        if self.has_homogeneous_node_types().unwrap() {
+            paragraphs.push(self.get_homogeneous_nodes_types_report());
         }
 
         // When the graph contains unknown node types, we build their report.

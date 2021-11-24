@@ -875,6 +875,30 @@ impl Graph {
         })
     }
 
+    /// Returns number of homogeneous node types.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn get_homogeneous_node_types_number(&self) -> Result<NodeTypeT> {
+        Ok(self.par_iter_homogeneous_node_type_ids()?.count() as NodeTypeT)
+    }
+
+    /// Returns list of homogeneous node type IDs.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn get_homogeneous_node_type_ids(&self) -> Result<Vec<NodeTypeT>> {
+        Ok(self.par_iter_homogeneous_node_type_ids()?.collect())
+    }
+
+    /// Returns list of homogeneous node type names.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn get_homogeneous_node_type_names(&self) -> Result<Vec<String>> {
+        Ok(self.par_iter_homogeneous_node_type_names()?.collect())
+    }
+
     /// Returns vector of singleton node types IDs.
     ///
     /// # Raises
@@ -1041,7 +1065,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_type_id`: NodeTypeT - The node type ID to filter for.
-    /// 
+    ///
     /// # Raises
     /// * If there are no node types in the graph.
     pub fn get_node_ids_from_node_type_id(&self, node_type_id: NodeTypeT) -> Result<Vec<NodeT>> {
@@ -1053,7 +1077,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_type_id`: NodeTypeT - The node type ID to filter for.
-    /// 
+    ///
     /// # Raises
     /// * If there are no node types in the graph.
     pub fn get_node_names_from_node_type_id(&self, node_type_id: NodeTypeT) -> Result<Vec<String>> {
@@ -1065,7 +1089,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_type_name`: &str - The node type ID to filter for.
-    /// 
+    ///
     /// # Raises
     /// * If there are no node types in the graph.
     pub fn get_node_ids_from_node_type_name(&self, node_type_name: &str) -> Result<Vec<NodeT>> {
@@ -1077,7 +1101,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_type_name`: &str - The node type ID to filter for.
-    /// 
+    ///
     /// # Raises
     /// * If there are no node types in the graph.
     pub fn get_node_names_from_node_type_name(&self, node_type_name: &str) -> Result<Vec<String>> {
