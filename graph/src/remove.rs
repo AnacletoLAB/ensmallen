@@ -153,7 +153,12 @@ impl Graph {
             Some(true),
             Some(true),
             Some(false),
-            Some(true),
+            // Even though the edges are sortof
+            // sorted, the filtering procedure makes
+            // it impossible to actually know the edge ID
+            // of each edge, and therefore it is not possible
+            // to construct the graph in parallel directly.
+            Some(false),
             Some(edges_number),
             None,
             None,
