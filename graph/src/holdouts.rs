@@ -574,21 +574,21 @@ impl Graph {
             .0;
 
         let edge_factor = if self.is_directed() { 1 } else { 2 };
-        let train_edges_number = (self.get_directed_edges_number() as f64 * train_size) as usize;
-        let mut validation_edges_number =
-            (self.get_directed_edges_number() as f64 * (1.0 - train_size)) as EdgeT;
 
         // We need to check if the connected holdout can actually be built with
         // the additional constraint of the edge types.
-        if let Some(etis) = &edge_type_ids {
+        let validation_edges_number = if let Some(etis) = &edge_type_ids {
             let selected_edges_number: EdgeT = etis
                 .iter()
                 .map(|et| unsafe { self.get_unchecked_edge_count_from_edge_type_id(*et) } as EdgeT)
                 .sum();
-            validation_edges_number = (selected_edges_number as f64 * (1.0 - train_size)) as EdgeT;
-        }
+            (selected_edges_number as f64 * (1.0 - train_size)) as EdgeT
+        } else {
+            (self.get_directed_edges_number() as f64 * (1.0 - train_size)) as EdgeT
+        };
+        let train_edges_number = self.get_directed_edges_number() - validation_edges_number;
 
-        if tree.len() * edge_factor > train_edges_number {
+        if tree.len() * edge_factor > train_edges_number as usize{
             return Err(format!(
                 concat!(
                     "The given spanning tree of the graph contains {} edges ",
