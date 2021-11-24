@@ -1013,12 +1013,7 @@ impl Graph {
                 "<h3>Topological synonims</h3>",
                 "<p>",
                 "Topological synonims are nodes with exactly the same neighbours ",
-                "and node types, if present. The minimum node degree considered is 10. ",
-                "<i>Since it remains computational expensive to compute the set of topological ",
-                "synonims in a graph, we do not provide further informations in this short report, ",
-                "but it is possible to compute them by calling the <code>get_topological_synonims_node_ids</code> ",
-                "method.",
-                "</i>",
+                "and node types, if present.",
                 "</p>"
             )
         );

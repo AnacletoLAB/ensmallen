@@ -1,4 +1,5 @@
 use super::*;
+use bitvec::prelude::*;
 use rayon::prelude::*;
 
 impl Graph {
@@ -52,24 +53,33 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_id`: NodeT - The node ID to check for.
+    /// * `skip_lower_node_ids`: Option<bool> - Whether to check lower node IDs. By default false.
     pub fn iter_topological_synonim_from_node_id(
         &self,
         node_id: NodeT,
+        skip_lower_node_ids: Option<bool>,
     ) -> impl Iterator<Item = NodeT> + '_ {
-        self.iter_node_ids().filter(move |&this_node_id| unsafe {
-            self.is_unchecked_topological_synonim_from_node_ids(node_id, this_node_id)
-        })
+        let skip_lower_node_ids = skip_lower_node_ids.unwrap_or(false);
+        self.iter_node_ids()
+            .filter(move |&this_node_id| !skip_lower_node_ids || this_node_id > node_id)
+            .filter(move |&this_node_id| unsafe {
+                self.is_unchecked_topological_synonim_from_node_ids(node_id, this_node_id)
+            })
     }
 
     /// Returns parallel iterator over the topological synonims of the provide node types.
     ///
     /// # Arguments
     /// * `node_id`: NodeT - The node ID to check for.
+    /// * `skip_lower_node_ids`: Option<bool> - Whether to check lower node IDs. By default false.
     pub fn par_iter_topological_synonim_from_node_id(
         &self,
         node_id: NodeT,
+        skip_lower_node_ids: Option<bool>,
     ) -> impl ParallelIterator<Item = NodeT> + '_ {
+        let skip_lower_node_ids = skip_lower_node_ids.unwrap_or(false);
         self.par_iter_node_ids()
+            .filter(move |&this_node_id| !skip_lower_node_ids || this_node_id > node_id)
             .filter(move |&this_node_id| unsafe {
                 self.is_unchecked_topological_synonim_from_node_ids(node_id, this_node_id)
             })
@@ -79,25 +89,35 @@ impl Graph {
     ///
     /// # Arguments
     /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims.
-    pub fn par_iter_topological_synonims_node_ids(
+    pub fn iter_topological_synonims_node_ids(
         &self,
         minimum_node_degree: Option<NodeT>,
-    ) -> impl ParallelIterator<Item = (NodeT, Vec<NodeT>)> + '_ {
+    ) -> impl Iterator<Item = (NodeT, Vec<NodeT>)> + '_ {
         let minimum_node_degree = minimum_node_degree.unwrap_or(1);
-        self.par_iter_node_ids()
-            .filter(move |&node_id| unsafe {
-                self.get_unchecked_node_degree_from_node_id(node_id) >= minimum_node_degree
-            })
-            .filter_map(move |node_id| {
-                let topological_synonims = self
-                    .iter_topological_synonim_from_node_id(node_id)
-                    .collect::<Vec<NodeT>>();
-                if topological_synonims.is_empty() {
-                    None
-                } else {
-                    Some((node_id, topological_synonims))
-                }
-            })
+        let mut topological_synonim_mask = bitvec![Lsb0, u8; 0; self.get_nodes_number() as usize];
+        self.iter_node_ids().filter_map(move |node_id| unsafe {
+            if topological_synonim_mask[node_id as usize] {
+                return None;
+            }
+            let node_degree = self.get_unchecked_node_degree_from_node_id(node_id);
+            if node_degree < minimum_node_degree {
+                return None;
+            }
+            let topological_synonims = self
+                .par_iter_topological_synonim_from_node_id(node_id, Some(true))
+                .collect::<Vec<NodeT>>();
+            if topological_synonims.is_empty() {
+                None
+            } else {
+                *topological_synonim_mask.get_mut(node_id as usize).unwrap() = true;
+                topological_synonims.iter().for_each(|&other_node_id| {
+                    *topological_synonim_mask
+                        .get_mut(other_node_id as usize)
+                        .unwrap() = true;
+                });
+                Some((node_id, topological_synonims))
+            }
+        })
     }
 
     /// Returns topological synonims detected in the current graph.
@@ -108,7 +128,7 @@ impl Graph {
         &self,
         minimum_node_degree: Option<NodeT>,
     ) -> Vec<(NodeT, Vec<NodeT>)> {
-        self.par_iter_topological_synonims_node_ids(minimum_node_degree)
+        self.iter_topological_synonims_node_ids(minimum_node_degree)
             .collect()
     }
 
@@ -117,7 +137,7 @@ impl Graph {
     /// # Arguments
     /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims.
     pub fn has_topological_synonims(&self, minimum_node_degree: Option<NodeT>) -> bool {
-        self.par_iter_topological_synonims_node_ids(minimum_node_degree)
+        self.iter_topological_synonims_node_ids(minimum_node_degree)
             .any(|_| true)
     }
 
