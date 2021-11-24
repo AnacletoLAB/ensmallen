@@ -185,6 +185,19 @@ impl Graph {
         Ok(self)
     }
 
+    /// Remove homogeneous node types from all nodes.
+    ///
+    /// If any given node remains with no node type, that node is labeled
+    /// with node type None. Note that the modification happens inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    ///
+    pub fn remove_inplace_homogeneous_node_types(&mut self) -> Result<&mut Graph> {
+        self.remove_inplace_node_type_ids(self.get_homogeneous_node_type_ids()?)?;
+        Ok(self)
+    }
+
     /// Remove given edge type ID from all edges.
     ///
     /// # Arguments
@@ -320,6 +333,20 @@ impl Graph {
     pub fn remove_singleton_node_types(&self) -> Result<Graph> {
         let mut graph = self.clone();
         graph.remove_inplace_singleton_node_types()?;
+        Ok(graph)
+    }
+
+    /// Remove homogeneous node types from all nodes.
+    ///
+    /// If any given node remains with no node type, that node is labeled
+    /// with node type None. Note that the modification DOES NOT happen inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    ///
+    pub fn remove_homogeneous_node_types(&self) -> Result<Graph> {
+        let mut graph = self.clone();
+        graph.remove_inplace_homogeneous_node_types()?;
         Ok(graph)
     }
 

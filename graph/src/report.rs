@@ -1003,6 +1003,29 @@ impl Graph {
         paragraphs.join("")
     }
 
+    /// Returns report on the topological synonim nodes.
+    unsafe fn get_topological_synonims_report(&self) -> String {
+        // First we create the empty list of paragraphs of the report
+        let mut paragraphs = Vec::new();
+
+        paragraphs.push(
+            concat!(
+                "<h3>Topological synonims</h3>",
+                "<p>",
+                "Topological synonims are nodes with exactly the same neighbours ",
+                "and node types, if present. The minimum node degree considered is 10. ",
+                "<i>Since it remains computational expensive to compute the set of topological ",
+                "synonims in a graph, we do not provide further informations in this short report, ",
+                "but it is possible to compute them by calling the <code>get_topological_synonims_node_ids</code> ",
+                "method.",
+                "</i>",
+                "</p>"
+            )
+        );
+
+        paragraphs.join("")
+    }
+
     /// Returns report on the graph edge weights
     ///
     /// # Safety
@@ -1559,6 +1582,12 @@ impl Graph {
         // contains any.
         if self.has_disconnected_nodes() {
             paragraphs.push(unsafe { self.get_disconnected_nodes_report() });
+        }
+
+        // We add to the report the graph on topological synonim nodes if the graph
+        // contains any. We put as a node degree threshold 10.
+        if self.has_topological_synonims(Some(10)) {
+            paragraphs.push(unsafe { self.get_topological_synonims_report() });
         }
 
         // We add to the report the edge weights report if the graph
