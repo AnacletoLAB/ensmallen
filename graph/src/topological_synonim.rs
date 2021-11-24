@@ -110,6 +110,23 @@ impl Graph {
         })
     }
 
+    /// Returns parallel iterator topological synonims node names detected in the current graph.
+    ///
+    /// # Arguments
+    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims.
+    pub fn par_iter_topological_synonims_node_names(
+        &self,
+        minimum_node_degree: Option<NodeT>,
+    ) -> impl ParallelIterator<Item = Vec<String>> + '_ {
+        self.par_iter_topological_synonims_node_ids(minimum_node_degree)
+            .map(move |synonims| unsafe {
+                synonims
+                    .into_iter()
+                    .map(|node_id| self.get_unchecked_node_name_from_node_id(node_id))
+                    .collect()
+            })
+    }
+
     #[no_numpy_binding]
     /// Returns topological synonims detected in the current graph.
     ///
