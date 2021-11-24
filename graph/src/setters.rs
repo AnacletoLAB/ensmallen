@@ -139,8 +139,10 @@ impl Graph {
 
             // Iter over each node and update its node
             node_types.ids.par_iter_mut().for_each(|node_type_ids| {
+                // If the node type of the current node is not unknown
                 if let Some(ntis) = node_type_ids.as_mut() {
                     // We remove the given node type if one was given.
+                    // For each of the node
                     for node_type_id_to_remove in &node_type_ids_to_remove {
                         if let Some(pos) = ntis.iter().position(|x| *x == *node_type_id_to_remove) {
                             ntis.remove(pos);

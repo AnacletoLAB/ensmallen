@@ -548,7 +548,7 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
         }
     }
 
-    /// Removegiven values from the vocabulary
+    /// Removes given values from the vocabulary
     ///
     /// # Arguments
     /// * `type_ids_to_remove`: Vec<IndexT> - The values to be removed.
@@ -623,9 +623,9 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
                 // update the mapping
                 *map = map
                     .iter()
-                    .filter_map(|(key, val)| {
-                        new_type_ids_map[IndexT::to_usize(*val)]
-                            .map(|x| (key.clone(), IndexT::from_usize(x)))
+                    .filter_map(|(key, previous_identifier)| {
+                        new_type_ids_map[IndexT::to_usize(*previous_identifier)]
+                            .map(|new_identifier| (key.clone(), IndexT::from_usize(new_identifier)))
                     })
                     .collect();
 
@@ -633,11 +633,9 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
                 // since we start from a valid state this should never fail
                 // unless there are bugs in the code
                 if let Some(reverse_map) = reverse_map {
-                    *reverse_map = map
-                        .values()
-                        .cloned()
-                        .map(|value| reverse_map[IndexT::to_usize(value)].clone())
-                        .collect();
+                    reverse_map.retain(|previous_identifier_name| {
+                        map.contains_key(&compute_hash(previous_identifier_name))
+                    });
                 }
 
                 new_type_ids_map
