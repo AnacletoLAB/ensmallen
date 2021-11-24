@@ -2,7 +2,6 @@ use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
 use rayon::slice::ParallelSliceMut;
-use std::cell::UnsafeCell;
 
 use super::*;
 
@@ -126,9 +125,8 @@ impl Graph {
     ) -> Result<Vec<NodeT>> {
         let bfs_topological_sorting =
             self.get_bfs_topological_sorting_from_node_id(root_node_id)?;
-        let reversed_bfs_topological_sorting = ThreadDataRaceAware {
-            value: UnsafeCell::new(vec![NODE_NOT_PRESENT; self.get_nodes_number() as usize]),
-        };
+        let reversed_bfs_topological_sorting =
+            ThreadDataRaceAware::new(vec![NODE_NOT_PRESENT; self.get_nodes_number() as usize]);
 
         bfs_topological_sorting
             .into_par_iter()

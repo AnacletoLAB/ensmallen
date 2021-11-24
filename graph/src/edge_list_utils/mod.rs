@@ -26,3 +26,5 @@ mod get_rows_number;
 pub use get_rows_number::*;
 mod has_duplicated_edges_in_edge_list;
 pub use has_duplicated_edges_in_edge_list::*;
+mod parse_wikipedia_graph;
+pub use parse_wikipedia_graph::*;

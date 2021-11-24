@@ -1,4 +1,6 @@
 use super::*;
+use indicatif::ProgressIterator;
+use std::{fs::File, io::BufWriter};
 
 /// Structure that saves the writer specific to writing and reading a types csv file.
 #[no_binding]
@@ -177,20 +179,57 @@ impl TypeFileWriter {
         }
     }
 
+    pub(crate) fn start_writer(&self) -> Result<BufWriter<File>> {
+        let (header_values, header_positions) = self.build_header();
+        self.writer.start_writer(compose_lines(
+            self.number_of_columns,
+            header_values,
+            header_positions,
+        ))
+    }
+
+    /// Write the provided set of line elements to file.
+    ///
+    /// # Arguments
+    /// `stream`: BufWriter<File> - The stream where to write the line
+    /// `type_id`: T - The type of the element to be written to disk.
+    /// `type_name`: String - The name of the element to be writter to disk.
+    ///
+    /// # Raises
+    /// * If some I/O error is encountered.
+    pub(crate) fn write_line<T: ToFromUsize>(
+        &self,
+        stream: BufWriter<File>,
+        type_id: T,
+        type_name: String,
+    ) -> Result<BufWriter<File>> {
+        self.writer
+            .write_line(stream, self.parse_line(type_id, type_name))
+    }
+
+    pub(crate) fn close_writer(&self, stream: BufWriter<File>) -> Result<()> {
+        self.writer.close_writer(stream)
+    }
+
     /// Write edge list iterator to file.
     ///  
     /// # Arguments
+    /// * `lines_number`: Option<usize> - The number of lines in the file.
     /// * `iterator`: impl Iterator<Item=_> - The iterator with the edge list to write to file.
     pub fn dump_iterator<T: ToFromUsize>(
         &self,
         lines_number: Option<usize>,
         iterator: impl Iterator<Item = (T, String)>,
     ) -> Result<()> {
-        let (header_values, header_positions) = self.build_header();
-        self.writer.write_lines(
-            lines_number,
-            compose_lines(self.number_of_columns, header_values, header_positions),
-            iterator.map(|(type_id, type_name)| self.parse_line(type_id, type_name)),
-        )
+        let pb = get_loading_bar(
+            self.writer.verbose && lines_number.is_some(),
+            "Writing to type list",
+            lines_number.unwrap_or(0),
+        );
+        let mut stream = self.start_writer()?;
+        for (type_id, type_name) in iterator.progress_with(pb) {
+            stream = self.write_line(stream, type_id, type_name)?;
+        }
+        self.close_writer(stream)
     }
 }

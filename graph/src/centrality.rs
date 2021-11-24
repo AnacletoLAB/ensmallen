@@ -671,7 +671,7 @@ impl Graph {
     /// The estimated betweenness centrality score of \(v\), \(BC(v)\) is given by \(\frac{nS}{k}\).
     ///
     /// # Example
-    /// In order to compute the approximated weighted betweenness centrality of the first node of the graph
+    /// In order to compute the approximated betweenness centrality of the first node of the graph
     /// Homo Sapiens from STRING PPI you can use the following:
     ///
     /// ```rust
@@ -679,7 +679,8 @@ impl Graph {
     /// graph.get_approximated_betweenness_centrality_from_node_id(
     ///     0,
     ///     None,
-    ///     None   
+    ///     None,
+    ///     None
     /// );
     /// ```
     ///
@@ -812,6 +813,7 @@ impl Graph {
     /// graph.get_approximated_betweenness_centrality_from_node_name(
     ///     "ENSG00000178607",
     ///     None,
+    ///     None,
     ///     None   
     /// );
     /// ```
@@ -864,6 +866,7 @@ impl Graph {
     /// let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// graph.get_weighted_approximated_betweenness_centrality_from_node_id(
     ///     0,
+    ///     None,
     ///     None,
     ///     None,
     ///     None   
@@ -1012,7 +1015,8 @@ impl Graph {
     ///     "ENSG00000178607",
     ///     None,
     ///     None,
-    ///     None   
+    ///     None,
+    ///     None
     /// );
     /// ```
     ///

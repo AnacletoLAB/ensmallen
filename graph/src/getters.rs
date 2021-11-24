@@ -26,7 +26,7 @@ impl Graph {
         } else {
             info!("Executing undirected parallel version of connected components.");
             let (_, components_number, min_component_size, max_component_size) =
-                self.connected_components(verbose).unwrap();
+                self.get_connected_components(verbose).unwrap();
             (components_number, min_component_size, max_component_size)
         }
     }
@@ -502,8 +502,13 @@ impl Graph {
 
     /// Return the edge types of the edges.
     pub fn get_edge_type_ids(&self) -> Result<Vec<Option<EdgeTypeT>>> {
-        self.must_have_edge_types()
-            .map(|_| self.edge_types.as_ref().as_ref().map(|ets| ets.ids.clone()).unwrap())
+        self.must_have_edge_types().map(|_| {
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| ets.ids.clone())
+                .unwrap()
+        })
     }
 
     /// Return the unique edge type IDs of the graph edges.
@@ -527,7 +532,8 @@ impl Graph {
     pub fn get_edge_type_names(&self) -> Result<Vec<Option<String>>> {
         self.must_have_edge_types().map(|_| {
             self.edge_types
-                .as_ref().as_ref()
+                .as_ref()
+                .as_ref()
                 .map(|ets| {
                     ets.ids
                         .iter()
@@ -606,8 +612,13 @@ impl Graph {
     /// ```
     ///
     pub fn get_node_type_ids(&self) -> Result<Vec<Option<Vec<NodeTypeT>>>> {
-        self.must_have_node_types()
-            .map(|_| self.node_types.as_ref().as_ref().map(|nts| nts.ids.clone()).unwrap())
+        self.must_have_node_types().map(|_| {
+            self.node_types
+                .as_ref()
+                .as_ref()
+                .map(|nts| nts.ids.clone())
+                .unwrap()
+        })
     }
 
     /// Returns boolean mask of known node types.
@@ -1026,6 +1037,54 @@ impl Graph {
             .map(|x| x.collect())
     }
 
+    /// Returns node IDs of the nodes with given node type ID.
+    ///
+    /// # Arguments
+    /// * `node_type_id`: NodeTypeT - The node type ID to filter for.
+    /// 
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_ids_from_node_type_id(&self, node_type_id: NodeTypeT) -> Result<Vec<NodeT>> {
+        self.iter_node_ids_from_node_type_id(node_type_id)
+            .map(|x| x.collect())
+    }
+
+    /// Returns node names of the nodes with given node type ID.
+    ///
+    /// # Arguments
+    /// * `node_type_id`: NodeTypeT - The node type ID to filter for.
+    /// 
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_names_from_node_type_id(&self, node_type_id: NodeTypeT) -> Result<Vec<String>> {
+        self.iter_node_names_from_node_type_id(node_type_id)
+            .map(|x| x.collect())
+    }
+
+    /// Returns node IDs of the nodes with given node type name.
+    ///
+    /// # Arguments
+    /// * `node_type_name`: &str - The node type ID to filter for.
+    /// 
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_ids_from_node_type_name(&self, node_type_name: &str) -> Result<Vec<NodeT>> {
+        self.iter_node_ids_from_node_type_name(node_type_name)
+            .map(|x| x.collect())
+    }
+
+    /// Returns node names of the nodes with given node type name.
+    ///
+    /// # Arguments
+    /// * `node_type_name`: &str - The node type ID to filter for.
+    /// 
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_names_from_node_type_name(&self, node_type_name: &str) -> Result<Vec<String>> {
+        self.iter_node_names_from_node_type_name(node_type_name)
+            .map(|x| x.collect())
+    }
+
     /// Returns node names of the nodes with known node types
     ///
     /// # Raises
@@ -1149,7 +1208,7 @@ impl Graph {
     pub fn get_node_connected_component_ids(&self, verbose: Option<bool>) -> Vec<NodeT> {
         match self.directed {
             true => self.spanning_arborescence_kruskal(verbose).1,
-            false => self.connected_components(verbose).unwrap().0,
+            false => self.get_connected_components(verbose).unwrap().0,
         }
     }
 

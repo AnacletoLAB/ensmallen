@@ -109,7 +109,7 @@ pub fn build_optimal_lists_files(
     target_edge_list_separator: Option<char>,
 
     numeric_rows_are_surely_smaller_than_original: Option<bool>,
-    temporary_directory: Option<String>,
+    sort_temporary_directory: Option<String>,
     verbose: Option<bool>,
     directed: bool,
     name: Option<String>,
@@ -473,10 +473,9 @@ pub fn build_optimal_lists_files(
         if has_edge_types { Some(2) } else { None },
         None,
         None,
-        temporary_directory,
+        sort_temporary_directory,
     )?;
 
-    // Add the edge IDs to the edge list
     info!("Count the lines in the path, that match exactly with the number of edges.");
     let edges_number = get_rows_number(target_edge_path.as_ref())? as EdgeT;
 

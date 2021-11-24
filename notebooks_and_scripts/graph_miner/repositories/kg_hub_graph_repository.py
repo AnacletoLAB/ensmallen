@@ -5,6 +5,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 from .graph_repository import GraphRepository
+from ..utils import get_cached_page
 
 
 class KGHubGraphRepository(GraphRepository):
@@ -18,17 +19,19 @@ class KGHubGraphRepository(GraphRepository):
         """Returns metadata mined from the KGHub repository."""
         mined_data = {}
         black_list = ["README", ".."]
-        graph_names = ["kg-covid-19", "kg-microbe"]
         graph_names_mapping = {
             "kg-covid-19": "KGCOVID19",
-            "kg-microbe": "KGMicrobe"
+            "kg-microbe": "KGMicrobe",
+            "KG-IDG": "KGIDG",
+            "eco-kg": "EcoKG"
         }
-        root_pattern = "https://kg-hub.berkeleybop.io/{graph_name}/index.html"
-        graph_url_pattern = "https://kg-hub.berkeleybop.io/{graph_name}/{version}/{graph_name}.tar.gz"
+        root_pattern = "https://kg-hub.berkeleybop.io/{lower_graph_name}/index.html"
+        graph_url_pattern = "https://kg-hub.berkeleybop.io/{lower_graph_name}/{version}/{graph_name}.tar.gz"
 
-        for graph_name in graph_names:
+        for graph_name in graph_names_mapping:
+            url = root_pattern.format(lower_graph_name=graph_name.lower())
             anchors = BeautifulSoup(
-                requests.get(root_pattern.format(graph_name=graph_name)).text,
+                get_cached_page(url),
                 "lxml"
             ).find_all("a")
             versions = [
@@ -40,6 +43,7 @@ class KGHubGraphRepository(GraphRepository):
             mined_data[callable_graph_name] = {}
             for version in versions:
                 graph_url = graph_url_pattern.format(
+                    lower_graph_name=graph_name.lower(),
                     graph_name=graph_name,
                     version=version
                 )
@@ -104,7 +108,7 @@ class KGHubGraphRepository(GraphRepository):
         graph_name: str,
     ) -> List[str]:
         """Return list of versions of the given graph.
-        
+
         Parameters
         -----------------------
         graph_name: str,
@@ -163,7 +167,7 @@ class KGHubGraphRepository(GraphRepository):
         if graph_name == "KGMicrobe":
             return [
                 open(
-                    "{}/models/KGMicrobe.bib".format(
+                    "{}/models/kgmicrobe.bib".format(
                         os.path.dirname(os.path.abspath(__file__)),
                         graph_name
                     ),

@@ -311,6 +311,9 @@ impl GenBinding for BindingsModule {
             registrations.push(
                 "\t_m.add_wrapped(wrap_pymodule!(preprocessing))?;".into()
             );
+            registrations.push(
+                "\tenv_logger::init();".into()
+            );
         }
 
         format!(

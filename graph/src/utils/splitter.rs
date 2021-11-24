@@ -5,10 +5,7 @@ pub struct SplitUnquotedChar<'s> {
 
 impl<'s> SplitUnquotedChar<'s> {
     pub fn new(line: &'s str, separator: char) -> Self {
-        Self {
-            line,
-            separator,
-        }
+        Self { line, separator }
     }
 }
 
@@ -22,7 +19,7 @@ impl<'s> Iterator for SplitUnquotedChar<'s> {
         let mut counter = 0;
         let mut inside_double_quotes = false;
         let mut previous_char_is_backslash = false;
-        while let Some(current_char) = self.line.chars().next() {  
+        while let Some(current_char) = self.line.chars().next() {
             match current_char {
                 '\\' => {
                     previous_char_is_backslash ^= true;
@@ -63,7 +60,6 @@ impl<'s> Iterator for SplitUnquotedChar<'s> {
     }
 }
 
-
 /// Returns iterator over given line to split.
 ///
 /// # Arguments
@@ -82,4 +78,3 @@ pub(crate) fn splitter<'a>(
     };
     iterator
 }
-

@@ -1,7 +1,8 @@
 use super::*;
 use rayon::prelude::*;
+use std::cmp::Ordering;
 
-#[derive(Hash, Clone, Debug)]
+#[derive(Hash, Clone, Debug, PartialEq)]
 pub struct Star {
     graph: Graph,
     root_node_id: NodeT,
@@ -13,14 +14,35 @@ impl ToString for Star {
     fn to_string(&self) -> String {
         format!(
             concat!(
-                "<p>This star of nodes from the graph {} contains {} nodes, and has as central node {}. ",
-                "Specifically, the nodes involved in the star are: {}</p>",
+                "<p>Star containining {} nodes, and has as central node {}. ",
+                "Specifically, the nodes involved in the star are: {}.</p>",
             ),
-            self.graph.get_name(),
-            self.len(),
-            self.get_root_node_name(),
-            unsafe {get_unchecked_formatted_list(&self.get_star_node_names())}
+            to_human_readable_high_integer(self.len() as usize),
+            unsafe {
+                self.graph
+                    .get_unchecked_succinct_node_description(self.get_root_node_id(), 1)
+            },
+            unsafe {
+                get_unchecked_formatted_list(
+                    &self
+                        .get_star_node_ids()
+                        .into_iter()
+                        .skip(1)
+                        .map(|node_id| {
+                            self.graph
+                                .get_unchecked_succinct_node_description(node_id, 1)
+                        })
+                        .collect::<Vec<String>>(),
+                    Some(5),
+                )
+            }
         )
+    }
+}
+
+impl PartialOrd for Star {
+    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
+        Some(self.len.cmp(&other.len))
     }
 }
 
@@ -65,12 +87,32 @@ impl Star {
         }
     }
 
-    /// Return the node names of the nodes composing the Star.
-    pub fn get_star_node_names(&self) -> Vec<String> {
+    /// Return the node names of the nodes composing the star.
+    pub fn par_iter_star_node_names(&self) -> impl IndexedParallelIterator<Item = String> + '_ {
         self.get_star_node_ids()
             .into_par_iter()
-            .map(|node_id| unsafe { self.graph.get_unchecked_node_name_from_node_id(node_id) })
-            .collect()
+            .map(move |node_id| unsafe { self.graph.get_unchecked_node_name_from_node_id(node_id) })
+    }
+
+    /// Return the first `k` node IDs of the nodes composing the star.
+    ///
+    /// # Arguments
+    /// `k`: usize - The number of terms to return.
+    pub fn get_first_k_star_node_ids(&self, k: usize) -> Vec<NodeT> {
+        self.get_star_node_ids().into_iter().take(k).collect()
+    }
+
+    /// Return the first `k` node names of the nodes composing the star.
+    ///
+    /// # Arguments
+    /// `k`: usize - The number of terms to return.
+    pub fn get_first_k_star_node_names(&self, k: usize) -> Vec<String> {
+        self.par_iter_star_node_names().take(k).collect()
+    }
+
+    /// Return the node names of the nodes composing the star.
+    pub fn get_star_node_names(&self) -> Vec<String> {
+        self.par_iter_star_node_names().collect()
     }
 }
 
@@ -86,11 +128,13 @@ impl Graph {
     unsafe fn get_star_node_ids_from_root_node_id(&self, root_node_id: NodeT) -> Vec<NodeT> {
         let mut result = vec![root_node_id];
         let mut previous_node_id = root_node_id;
-        for neighbour_node_id in self.iter_unchecked_neighbour_node_ids_from_source_node_id(root_node_id) {
+        for neighbour_node_id in
+            self.iter_unchecked_neighbour_node_ids_from_source_node_id(root_node_id)
+        {
             if neighbour_node_id != root_node_id && neighbour_node_id != previous_node_id {
                 result.push(neighbour_node_id);
                 previous_node_id = neighbour_node_id;
-            } 
+            }
         }
 
         result
@@ -105,7 +149,7 @@ impl Graph {
     /// A star center is a node whose neighbours are connected only to the star center (and possibly themself).
     /// A star node has at least two neighbours.
     /// A star is a component composed by the star center and its neighbours.
-    /// 
+    ///
     /// Note that this definition allows for both self-loops and multigraphs.
     pub fn get_stars(&self, minimum_number_of_nodes_per_star: Option<NodeT>) -> Result<Vec<Star>> {
         self.must_be_undirected()?;

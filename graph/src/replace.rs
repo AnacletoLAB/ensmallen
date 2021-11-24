@@ -52,16 +52,18 @@ impl Graph {
                 Arc::make_mut(&mut new_graph.nodes).replace_inplace(key, value)?;
             }
         }
-        if let (Some(node_types), Some(node_type_name_mapping)) =
-            (Arc::make_mut(&mut new_graph.node_types), node_type_name_mapping)
-        {
+        if let (Some(node_types), Some(node_type_name_mapping)) = (
+            Arc::make_mut(&mut new_graph.node_types),
+            node_type_name_mapping,
+        ) {
             for (key, value) in node_type_name_mapping.into_iter() {
                 node_types.vocabulary.replace_inplace(key, value)?;
             }
         }
-        if let (Some(edge_types), Some(edge_type_name_mapping)) =
-            (Arc::make_mut(&mut new_graph.edge_types), edge_type_name_mapping)
-        {
+        if let (Some(edge_types), Some(edge_type_name_mapping)) = (
+            Arc::make_mut(&mut new_graph.edge_types),
+            edge_type_name_mapping,
+        ) {
             for (key, value) in edge_type_name_mapping.into_iter() {
                 edge_types.vocabulary.replace_inplace(key, value)?;
             }

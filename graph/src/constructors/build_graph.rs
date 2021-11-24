@@ -1,6 +1,6 @@
 use super::*;
-use std::sync::Arc;
 use rayon::prelude::*;
+use std::sync::Arc;
 
 #[manual_binding]
 /// Return new graph object built from string iterators.

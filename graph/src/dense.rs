@@ -1,5 +1,3 @@
-use std::cell::UnsafeCell;
-
 use rayon::iter::ParallelIterator;
 
 use super::*;
@@ -18,9 +16,7 @@ impl Graph {
         let mut ajacency =
             vec![vec![false; self.get_nodes_number() as usize]; self.get_nodes_number() as usize];
         // We wrap the adjacency into an object we can share between threads
-        let thread_ajacency = ThreadDataRaceAware {
-            value: UnsafeCell::new(&mut ajacency),
-        };
+        let thread_ajacency = ThreadDataRaceAware::new(&mut ajacency);
         // We iterate on the edges and populate the matrix.
         self.par_iter_edge_node_ids(true)
             .for_each(|(_, src, dst)| unsafe {
@@ -55,9 +51,7 @@ impl Graph {
         let mut ajacency =
             vec![vec![weight; self.get_nodes_number() as usize]; self.get_nodes_number() as usize];
         // We wrap the adjacency into an object we can share between threads
-        let thread_ajacency = ThreadDataRaceAware {
-            value: UnsafeCell::new(&mut ajacency),
-        };
+        let thread_ajacency = ThreadDataRaceAware::new(&mut ajacency);
         // We iterate on the edges and populate the matrix.
         self.par_iter_edge_node_ids_and_edge_weight()?
             .for_each(|(_, src, dst, weight)| unsafe {

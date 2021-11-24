@@ -957,7 +957,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
     if !graph.is_directed() {
         // Checking that the connected components are a dense range.
         let (connected_components, total_connected_components, _, _) =
-            graph.connected_components(verbose).unwrap();
+            graph.get_connected_components(verbose).unwrap();
         let actual_components_number = connected_components.iter().unique().count() as NodeT;
         assert_eq!(
             actual_components_number,
@@ -2003,15 +2003,19 @@ pub fn test_nodelabel_holdouts(graph: &mut Graph, _verbose: Option<bool>) -> Res
             "The re-merged holdouts does not contain the original graph."
         );
         assert!(
-            train.node_types.as_ref().as_ref().map_or(false, |train_nts| {
-                test.node_types.as_ref().as_ref().map_or(false, |test_nts| {
-                    train_nts.ids.iter().zip(test_nts.ids.iter()).all(
-                        |(train_node_type, test_node_type)| {
-                            !(train_node_type.is_some() && test_node_type.is_some())
-                        },
-                    )
-                })
-            }),
+            train
+                .node_types
+                .as_ref()
+                .as_ref()
+                .map_or(false, |train_nts| {
+                    test.node_types.as_ref().as_ref().map_or(false, |test_nts| {
+                        train_nts.ids.iter().zip(test_nts.ids.iter()).all(
+                            |(train_node_type, test_node_type)| {
+                                !(train_node_type.is_some() && test_node_type.is_some())
+                            },
+                        )
+                    })
+                }),
             "The train and test node-label graphs are overlapping!"
         );
     }
@@ -2034,15 +2038,19 @@ pub fn test_edgelabel_holdouts(graph: &mut Graph, _verbose: Option<bool>) -> Res
         assert!(train.has_unknown_edge_types()?);
         assert!(test.has_unknown_edge_types()?);
         assert!(
-            train.edge_types.as_ref().as_ref().map_or(false, |train_nts| {
-                test.edge_types.as_ref().as_ref().map_or(false, |test_nts| {
-                    train_nts.ids.iter().zip(test_nts.ids.iter()).all(
-                        |(train_edge_type, test_edge_type)| {
-                            !(train_edge_type.is_some() && test_edge_type.is_some())
-                        },
-                    )
-                })
-            }),
+            train
+                .edge_types
+                .as_ref()
+                .as_ref()
+                .map_or(false, |train_nts| {
+                    test.edge_types.as_ref().as_ref().map_or(false, |test_nts| {
+                        train_nts.ids.iter().zip(test_nts.ids.iter()).all(
+                            |(train_edge_type, test_edge_type)| {
+                                !(train_edge_type.is_some() && test_edge_type.is_some())
+                            },
+                        )
+                    })
+                }),
             "The train and test edge-label graphs are overlapping!"
         );
     }

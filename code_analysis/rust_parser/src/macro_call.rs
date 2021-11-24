@@ -55,7 +55,7 @@ impl Parse for MacroCall {
         };
 
         result.content = bytes_to_string(macro_body);
-
+        println!("MB {:?}", result.content);
         data = skip_whitespace(data);
 
         if data[0] == b';' {

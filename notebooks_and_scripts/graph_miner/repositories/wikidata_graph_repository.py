@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 from tqdm.auto import tqdm
 from .graph_repository import GraphRepository
+from ..utils import get_cached_page
 
 
 def ntriples_filter(anchor_text: str) -> bool:
@@ -43,7 +44,7 @@ def get_wikidata_anchors_from_url(url: str, is_root: bool) -> List[str]:
     return [
         anchor.text
         for anchor in BeautifulSoup(
-            requests.get(url).text,
+            get_cached_page(url),
             "lxml"
         ).find_all("a")
         if is_root and root_white_list_filter(anchor.text) or not is_root and ntriples_filter(anchor.text)

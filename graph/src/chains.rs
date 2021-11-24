@@ -1,7 +1,8 @@
 use super::*;
 use rayon::prelude::*;
+use std::cmp::Ordering;
 
-#[derive(Hash, Clone, Debug)]
+#[derive(Hash, Clone, Debug, PartialEq)]
 pub struct Chain {
     graph: Graph,
     root_node_id: NodeT,
@@ -14,25 +15,46 @@ impl ToString for Chain {
     fn to_string(&self) -> String {
         format!(
             concat!(
-                "<p>This chain of nodes from the graph {} contains {} nodes and starts from the node {}. ",
-                "Specifically, the nodes involved in the chain are: {}</p>",
+                "<p>Chain containing {} nodes and starts from the node {}. ",
+                "Specifically, the nodes involved in the chain are: {}.</p>",
             ),
-            self.graph.get_name(),
-            self.len(),
-            self.get_root_node_name(),
-            unsafe {get_unchecked_formatted_list(&self.get_chain_node_names())}
+            to_human_readable_high_integer(self.len() as usize),
+            unsafe {
+                self.graph
+                    .get_unchecked_succinct_node_description(self.get_root_node_id(), 2)
+            },
+            unsafe {
+                get_unchecked_formatted_list(
+                    &self
+                        .get_chain_node_ids()
+                        .into_iter()
+                        .skip(1)
+                        .map(|node_id| {
+                            self.graph
+                                .get_unchecked_succinct_node_description(node_id, 2)
+                        })
+                        .collect::<Vec<String>>(),
+                    Some(5),
+                )
+            }
         )
+    }
+}
+
+impl PartialOrd for Chain {
+    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
+        Some(self.len.cmp(&other.len))
     }
 }
 
 impl Chain {
     /// Return new chain object created with the provided root and length.
-    /// 
+    ///
     /// # Arguments
     /// * `graph`: &Graph - The graph of reference of the chain.
     /// * `root_node_id`: NodeT - First node ID of the chain.
     /// * `len`: NodeT - Precomputed length of the chain.
-    /// 
+    ///
     pub(crate) fn new(graph: &Graph, root_node_id: NodeT, len: NodeT) -> Chain {
         Chain {
             graph: graph.clone(),
@@ -82,11 +104,31 @@ impl Chain {
     }
 
     /// Return the node names of the nodes composing the chain.
-    pub fn get_chain_node_names(&self) -> Vec<String> {
+    pub fn par_iter_chain_node_names(&self) -> impl IndexedParallelIterator<Item = String> + '_ {
         self.get_chain_node_ids()
             .into_par_iter()
-            .map(|node_id| unsafe { self.graph.get_unchecked_node_name_from_node_id(node_id) })
-            .collect()
+            .map(move |node_id| unsafe { self.graph.get_unchecked_node_name_from_node_id(node_id) })
+    }
+
+    /// Return the first `k` node IDs of the nodes composing the chain.
+    ///
+    /// # Arguments
+    /// `k`: usize - The number of terms to return.
+    pub fn get_first_k_chain_node_ids(&self, k: usize) -> Vec<NodeT> {
+        self.get_chain_node_ids().into_iter().take(k).collect()
+    }
+
+    /// Return the first `k` node names of the nodes composing the chain.
+    ///
+    /// # Arguments
+    /// `k`: usize - The number of terms to return.
+    pub fn get_first_k_chain_node_names(&self, k: usize) -> Vec<String> {
+        self.par_iter_chain_node_names().take(k).collect()
+    }
+
+    /// Return the node names of the nodes composing the chain.
+    pub fn get_chain_node_names(&self) -> Vec<String> {
+        self.par_iter_chain_node_names().collect()
     }
 }
 
@@ -154,14 +196,15 @@ impl Graph {
     /// Get the "degree" of a node, as defined for the chains.
     /// In particular we ignore selfloops and consider the unique destinations
     /// to be able to support multi-graph chains.
-    /// 
+    ///
     /// Since we only care for the cases where it's equal to 1 or 2,
     /// if it's bigger than 2 we will always return 3.
     pub(crate) unsafe fn get_chain_node_degree(&self, node_id: NodeT) -> NodeT {
         let mut node_degree = 0;
         let mut previous_node_id = node_id;
 
-        for neighbour_node_id in self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id) {
+        for neighbour_node_id in self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+        {
             // ignore selfloops and destinations already visited
             if neighbour_node_id == node_id || neighbour_node_id == previous_node_id {
                 continue;
@@ -179,11 +222,12 @@ impl Graph {
 
     /// The same as `get_chain_node_degree` but we also return the max "chain degree" of the neighbours
     /// of the current node
-    unsafe fn get_chain_node_degree_with_max_neighbour_id(&self, node_id: NodeT) -> (NodeT, NodeT){
+    unsafe fn get_chain_node_degree_with_max_neighbour_id(&self, node_id: NodeT) -> (NodeT, NodeT) {
         let mut node_degree = 0;
         let mut max_neighbour_degree = 0;
         let mut previous_node_id = node_id;
-        for neighbour_node_id in self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id) {
+        for neighbour_node_id in self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+        {
             // ignore selfloops and destinations already visited
             if neighbour_node_id == node_id || neighbour_node_id == previous_node_id {
                 continue;
@@ -192,7 +236,8 @@ impl Graph {
             if node_degree > 2 {
                 return (3, 3);
             }
-            max_neighbour_degree = max_neighbour_degree.max(self.get_chain_node_degree(neighbour_node_id));
+            max_neighbour_degree =
+                max_neighbour_degree.max(self.get_chain_node_degree(neighbour_node_id));
             previous_node_id = node_id;
         }
 
@@ -200,33 +245,33 @@ impl Graph {
     }
 
     /// Return vector of chains in the current graph instance.
-    /// 
+    ///
     /// # Arguments
     /// `minimum_number_of_nodes_per_chain`: Option<NodeT> - Minimum size of the chains.
     /// `compute_chain_nodes`: Option<bool> - Whether to pre-compute the chain nodes.
-    /// 
+    ///
     /// # Definitions
-    /// In an undirected graph, a chain is a path that only visit nodes that have 
-    /// degree equals to 2 or 1. 
-    /// 
+    /// In an undirected graph, a chain is a path that only visit nodes that have
+    /// degree equals to 2 or 1.
+    ///
     /// In a chain the root nodes are defined as the nodes
     /// with either degree 1 and a neighbour with degree 2, or a node with degree 2
     /// and a neighbour with degree strictly higher than 2.
-    /// 
+    ///
     /// Of the two roots, we always return the one with lower node id.
-    /// 
+    ///
     /// In this section we will always consider degree as the number of unique destinations
     /// at distance 1 from the given node. This allows for multi-graph chains and ignores
     /// self-loops.
-    /// 
-    /// 
+    ///
+    ///
     /// Example: O are ignored nodes, C and R are nodes in the chain, and R are the root nodes
-    /// ```ignore 
+    /// ```ignore
     /// O - O - R - C = C - R
     /// | \ |
     /// O - O
     /// ```
-    /// 
+    ///
     /// By definition we ignore the following case:
     /// ```ignore
     /// O - O - X
@@ -234,19 +279,19 @@ impl Graph {
     /// O - O
     /// ```
     /// Here `X` is NOT part of a chain.
-    /// 
+    ///
     /// By definition `X` is not a chain root because we do not count selfloops in the degree:
     /// ```ignore
     /// O - O - X )
     /// | \ |
     /// O - O
     /// ```
-    /// 
+    ///
     /// Also this is not a chain:
     /// ```ignore
     /// X - X
     /// ```
-    /// 
+    ///
     pub fn get_chains(
         &self,
         minimum_number_of_nodes_per_chain: Option<NodeT>,
@@ -259,8 +304,9 @@ impl Graph {
             .par_iter_node_ids()
             // keep only chains roots
             .filter(|&node_id| unsafe {
-                let (node_degree, max_neighbour_degree) = self.get_chain_node_degree_with_max_neighbour_id(node_id);
-                
+                let (node_degree, max_neighbour_degree) =
+                    self.get_chain_node_degree_with_max_neighbour_id(node_id);
+
                 // brenchless filter, here we just apply the definition
                 // of chain root
                 (node_degree == 1 && max_neighbour_degree == 2)
@@ -272,10 +318,15 @@ impl Graph {
                     // compute explicitely the chain
                     let node_ids = self.get_chain_node_ids_from_root_node_id(node_id);
                     // return the info about the chain
-                    (node_ids.len() as NodeT, *node_ids.last().unwrap(), Some(node_ids))
+                    (
+                        node_ids.len() as NodeT,
+                        *node_ids.last().unwrap(),
+                        Some(node_ids),
+                    )
                 } else {
                     // just compute the chain lenght and last node
-                    let (chain_length, last_node) = self.get_chain_last_id_from_root_node_id(node_id);
+                    let (chain_length, last_node) =
+                        self.get_chain_last_id_from_root_node_id(node_id);
                     (chain_length, last_node, None)
                 };
 
@@ -293,7 +344,6 @@ impl Graph {
                 } else {
                     Chain::new(self, node_id, chain_length)
                 })
-                
             })
             .collect::<Vec<Chain>>())
     }

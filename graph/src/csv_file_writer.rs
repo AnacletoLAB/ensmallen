@@ -1,6 +1,6 @@
 use super::*;
 use indicatif::ProgressIterator;
-use std::{fs::OpenOptions, io::prelude::*, io::BufWriter};
+use std::{fs::File, fs::OpenOptions, io::prelude::*, io::BufWriter};
 
 /// Structure that saves the common parameters for reading csv files.
 ///
@@ -12,7 +12,7 @@ use std::{fs::OpenOptions, io::prelude::*, io::BufWriter};
 #[no_binding]
 pub struct CSVFileWriter {
     pub(crate) path: String,
-    verbose: bool,
+    pub(crate) verbose: bool,
     separator: char,
     header: bool,
 }
@@ -72,25 +72,11 @@ impl CSVFileWriter {
         Ok(self)
     }
 
-    /// Write given rows iterator to file.
+    /// Starts the writer and writes the header of the file.
     ///
     /// # Arguments
-    ///
-    /// * `lines_number`: Option<usize> - Number of lines to expect to write out.
     /// * `header`: Vec<String> - The header to write out, if so required.
-    /// * `values`: impl Iterator<Item = Vec<String>> - Iterator of rows to write out.
-    pub(crate) fn write_lines(
-        &self,
-        lines_number: Option<usize>,
-        header: Vec<String>,
-        values: impl Iterator<Item = Vec<String>>,
-    ) -> Result<()> {
-        let pb = get_loading_bar(
-            self.verbose && lines_number.is_some(),
-            "Writing to file",
-            lines_number.unwrap_or(0),
-        );
-
+    pub(crate) fn start_writer(&self, header: Vec<String>) -> Result<BufWriter<File>> {
         // Create file in such a way it supports also rewrite inplace
         let mut file = match OpenOptions::new()
             .write(true)
@@ -123,18 +109,11 @@ impl CSVFileWriter {
             }?;
         }
 
-        for (i, value) in values.progress_with(pb).enumerate() {
-            let mut line = value.join(self.separator.to_string().as_str());
-            line.push('\n');
-            match stream.write(line.as_bytes()) {
-                Ok(_) => Ok(()),
-                Err(_) => Err(format!(
-                    "Cannot write the {i} line. There might have been an I/O error.",
-                    i = i
-                )),
-            }?;
-        }
+        Ok(stream)
+    }
 
+    /// Closes the writer and handles file clipping if needed.
+    pub(crate) fn close_writer(&self, mut stream: BufWriter<File>) -> Result<()> {
         match stream.flush() {
             Ok(_) => Ok(()),
             Err(_) => Err("Unable to close file. There might have been an I/O error.".to_string()),
@@ -159,6 +138,57 @@ impl CSVFileWriter {
         }?;
 
         Ok(())
+    }
+
+    /// Write the provided set of line elements to file.
+    ///
+    /// # Arguments
+    /// `stream`: BufWriter<File> - The stream where to write the line
+    /// `line_elements`: Vec<String> - Segments of the line to be written to file.
+    ///
+    /// # Raises
+    /// * If some I/O error is encountered.
+    pub(crate) fn write_line(
+        &self,
+        mut stream: BufWriter<File>,
+        line_elements: Vec<String>,
+    ) -> Result<BufWriter<File>> {
+        let line = format!(
+            "{}\n",
+            line_elements.join(self.separator.to_string().as_str())
+        );
+        match stream.write(line.as_bytes()) {
+            Ok(_) => Ok(()),
+            Err(_) => Err(concat!(
+                "It was not possible to write a line to file. ",
+                "This was likely caused by some form of I/O error."
+            )),
+        }?;
+        Ok(stream)
+    }
+
+    /// Write given rows iterator to file.
+    ///
+    /// # Arguments
+    /// * `lines_number`: Option<usize> - Number of lines to expect to write out.
+    /// * `header`: Vec<String> - The header to write out, if so required.
+    /// * `values`: impl Iterator<Item = Vec<String>> - Iterator of rows to write out.
+    pub(crate) fn write_lines(
+        &self,
+        lines_number: Option<usize>,
+        header: Vec<String>,
+        values: impl Iterator<Item = Vec<String>>,
+    ) -> Result<()> {
+        let pb = get_loading_bar(
+            self.verbose && lines_number.is_some(),
+            "Writing to file",
+            lines_number.unwrap_or(0),
+        );
+        let mut stream = self.start_writer(header)?;
+        for line_elements in values.progress_with(pb) {
+            stream = self.write_line(stream, line_elements)?;
+        }
+        self.close_writer(stream)
     }
 }
 

@@ -164,7 +164,7 @@ pub fn convert_edge_list_to_numeric(
         )?;
         nodes
     } else {
-        Vocabulary::new()
+        Vocabulary::new(false)
     };
 
     let mut edge_types: Vocabulary<EdgeTypeT> =
@@ -194,7 +194,7 @@ pub fn convert_edge_list_to_numeric(
             .unwrap();
             edge_types_vocabulary
         } else {
-            Vocabulary::new()
+            Vocabulary::new(true)
         };
 
     let file_reader = EdgeFileReader::new(original_edge_path)?
@@ -251,64 +251,7 @@ pub fn convert_edge_list_to_numeric(
         ItersWrapper::Parallel(_) => unreachable!("This is not meant to run in parallel."),
         ItersWrapper::Sequential(i) => i,
     };
-    file_writer.dump_iterator(
-        // We do not care to be exact here: if the graph does not contain
-        // selfloops the value will be correct.
-        edges_number.map(|edges_number| {
-            if directed {
-                edges_number
-            } else {
-                edges_number * 2
-            }
-        }),
-        lines_iterator
-            // Removing eventual errors.
-            .filter_map(|line| line.ok())
-            // Processing line
-            .flat_map(|(_, (src_name, dst_name, edge_type, weight))| unsafe {
-                let src_id = nodes.unchecked_insert(src_name);
-                let dst_id = nodes.unchecked_insert(dst_name);
-                let edge_type = edge_type.map(|edge_type| edge_types.unchecked_insert(edge_type));
-                let weight = if weight.is_nan() { None } else { Some(weight) };
-                if directed || src_id == dst_id {
-                    vec![(
-                        0,
-                        src_id,
-                        "".to_string(),
-                        dst_id,
-                        "".to_string(),
-                        edge_type,
-                        None,
-                        weight,
-                    )]
-                } else {
-                    vec![
-                        (
-                            0,
-                            src_id,
-                            "".to_string(),
-                            dst_id,
-                            "".to_string(),
-                            edge_type,
-                            None,
-                            weight,
-                        ),
-                        (
-                            0,
-                            dst_id,
-                            "".to_string(),
-                            src_id,
-                            "".to_string(),
-                            edge_type,
-                            None,
-                            weight,
-                        ),
-                    ]
-                }
-            }),
-    )?;
-
-    if original_node_path.is_none() {
+    let (node_file_writer, mut node_file_stream) = if original_node_path.is_none() {
         if let Some(target_node_path) = target_node_path {
             nodes.build()?;
             let node_file_writer = NodeFileWriter::new(target_node_path)
@@ -324,7 +267,83 @@ pub fn convert_edge_list_to_numeric(
                     .enumerate()
                     .map(|(node_id, node_name)| (node_id as NodeT, node_name, None, None)),
             )?;
+            let stream = node_file_writer.start_writer()?;
+            (Some(node_file_writer), Some(stream))
+        } else {
+            (None, None)
         }
+    } else {
+        (None, None)
+    };
+
+    let mut edge_file_stream = file_writer.start_writer()?;
+
+    for (_, (src_name, dst_name, edge_type, weight)) in lines_iterator.filter_map(|line| line.ok())
+    {
+        let (src_id, src_was_already_present) = nodes.insert(src_name.clone())?;
+        let (dst_id, dst_was_already_present) = nodes.insert(dst_name.clone())?;
+        node_file_stream = node_file_stream.and_then(|mut nfs| {
+            if let Some(node_file_writer) = &node_file_writer {
+                if !src_was_already_present {
+                    nfs = node_file_writer
+                        .write_line(nfs, src_id, src_name, None, None, None)
+                        .unwrap();
+                }
+                if !dst_was_already_present {
+                    nfs = node_file_writer
+                        .write_line(nfs, dst_id, dst_name, None, None, None)
+                        .unwrap();
+                }
+                Some(nfs)
+            } else {
+                None
+            }
+        });
+
+        let edge_type =
+            edge_type.map(|edge_type| unsafe { edge_types.unchecked_insert(edge_type) });
+        let weight = if weight.is_nan() { None } else { Some(weight) };
+        if directed || src_id == dst_id {
+            edge_file_stream = file_writer.write_line(
+                edge_file_stream,
+                0,
+                src_id,
+                "".to_string(),
+                dst_id,
+                "".to_string(),
+                edge_type,
+                None,
+                weight,
+            )?;
+        } else {
+            edge_file_stream = file_writer.write_line(
+                edge_file_stream,
+                0,
+                src_id,
+                "".to_string(),
+                dst_id,
+                "".to_string(),
+                edge_type,
+                None,
+                weight,
+            )?;
+            edge_file_stream = file_writer.write_line(
+                edge_file_stream,
+                0,
+                dst_id,
+                "".to_string(),
+                src_id,
+                "".to_string(),
+                edge_type,
+                None,
+                weight,
+            )?;
+        }
+    }
+    file_writer.close_writer(edge_file_stream)?;
+
+    if let (Some(node_file_writer), Some(stream)) = (node_file_writer, node_file_stream) {
+        node_file_writer.close_writer(stream)?;
     }
 
     if let Some(target_edge_type_list_path) = target_edge_type_list_path {
@@ -338,8 +357,7 @@ pub fn convert_edge_list_to_numeric(
         edge_type_writer.dump_iterator(
             Some(edge_types.len()),
             edge_types
-                .iter_keys()
-                .enumerate()
+                .iter()
                 .map(|(edge_type_id, edge_type_name)| (edge_type_id as EdgeTypeT, edge_type_name)),
         )?;
     }
@@ -465,7 +483,8 @@ pub fn densify_sparse_numeric_edge_list(
     verbose: Option<bool>,
     name: Option<String>,
 ) -> Result<(NodeT, Option<EdgeTypeT>)> {
-    let numeric_rows_are_surely_smaller_than_original = numeric_rows_are_surely_smaller_than_original.unwrap_or(false);
+    let numeric_rows_are_surely_smaller_than_original =
+        numeric_rows_are_surely_smaller_than_original.unwrap_or(false);
     if !numeric_rows_are_surely_smaller_than_original && original_edge_path == target_edge_path {
         return Err(concat!(
             "Both the original and the target edge list path ",
@@ -523,7 +542,7 @@ pub fn densify_sparse_numeric_edge_list(
             .unwrap();
             edge_types_vocabulary
         } else {
-            Vocabulary::new()
+            Vocabulary::new(true)
         };
     let file_reader = EdgeFileReader::new(original_edge_path)?
         .set_comment_symbol(comment_symbol)?
@@ -674,8 +693,7 @@ pub fn densify_sparse_numeric_edge_list(
         edge_type_writer.dump_iterator(
             Some(edge_types.len()),
             edge_types
-                .iter_keys()
-                .enumerate()
+                .iter()
                 .map(|(edge_type_id, edge_type_name)| (edge_type_id as EdgeTypeT, edge_type_name)),
         )?;
     }

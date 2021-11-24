@@ -9,13 +9,12 @@
 
 #![warn(unused_macros)]
 #![feature(is_sorted)]
+#![feature(string_remove_matches)]
 #![feature(map_first_last)]
 #![feature(exit_status_error)]
 #![feature(core_intrinsics)]
 #![type_length_limit = "3764086"]
 #![feature(exclusive_range_pattern)]
-#![feature(option_result_unwrap_unchecked)]
-#![feature(macro_attributes_in_derive_output)]
 use std::sync::Arc;
 
 mod vocabulary;
@@ -86,8 +85,8 @@ mod remap;
 mod remove;
 mod selfloops;
 mod setters;
-mod shortest_paths_node_embedding;
 mod sort;
+mod spine;
 mod tarjan;
 mod tfidf;
 mod thickeners;
@@ -98,6 +97,7 @@ mod types;
 mod url_utilities;
 mod vertex_cover;
 mod walks;
+mod topological_synonim;
 pub mod walks_parameters;
 pub use edge_list_utils::*;
 
@@ -124,6 +124,7 @@ pub use self::trees::*;
 pub use self::types::*;
 pub use self::walks::*;
 pub use self::walks_parameters::*;
+pub use topological_synonim::*;
 pub use preprocessing::*;
 pub use tfidf::*;
 

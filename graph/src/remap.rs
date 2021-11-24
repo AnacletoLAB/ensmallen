@@ -78,7 +78,10 @@ impl Graph {
             ),
             Arc::new(new_nodes_vocabulary),
             Arc::new(new_node_types),
-            self.edge_types.as_ref().as_ref().map(|ets| ets.vocabulary.clone()),
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| ets.vocabulary.clone()),
             self.has_edge_weights(),
             self.is_directed(),
             Some(true),
@@ -202,7 +205,10 @@ impl Graph {
             ),
             other.nodes.clone(),
             other.node_types.clone(),
-            self.edge_types.as_ref().as_ref().map(|ets| ets.vocabulary.clone()),
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| ets.vocabulary.clone()),
             self.has_edge_weights(),
             self.is_directed(),
             Some(true),

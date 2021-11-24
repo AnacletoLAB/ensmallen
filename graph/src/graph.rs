@@ -3,8 +3,8 @@ use std::{intrinsics::unlikely, sync::atomic::AtomicU8};
 use super::*;
 use bitvec::prelude::*;
 use elias_fano_rust::*;
-use std::sync::Arc;
 use rayon::prelude::*;
+use std::sync::Arc;
 
 /// This is the main struct in Ensmallen, it allows to load and manipulate Graphs efficently.
 /// You are not supposed to directly instantiate this struct but instead you should use the
@@ -178,9 +178,7 @@ impl Graph {
     ) -> BitVec<Lsb0, u8> {
         let connected_nodes = if may_have_singletons && self.is_directed() {
             let mut connected_nodes = bitvec![Lsb0, AtomicU8; 0; self.get_nodes_number() as usize];
-            let thread_shared_connected_nodes = ThreadDataRaceAware {
-                value: std::cell::UnsafeCell::new(&mut connected_nodes),
-            };
+            let thread_shared_connected_nodes = ThreadDataRaceAware::new(&mut connected_nodes);
             // If the graph may contain singletons, we need to iterate on all
             // the nodes neighbours in order to find if whether a node is a singleton or
             // if it is a trap node.
@@ -201,9 +199,7 @@ impl Graph {
             connected_nodes
         } else {
             let mut connected_nodes = bitvec![Lsb0, AtomicU8; 1; self.get_nodes_number() as usize];
-            let thread_shared_connected_nodes = ThreadDataRaceAware {
-                value: std::cell::UnsafeCell::new(&mut connected_nodes),
-            };
+            let thread_shared_connected_nodes = ThreadDataRaceAware::new(&mut connected_nodes);
             self.par_iter_node_degrees()
                 .enumerate()
                 .for_each(|(node_id, node_degree)| unsafe {
@@ -268,21 +264,20 @@ impl Graph {
     /// * If one of the two graphs has node types and the other does not.
     /// * If one of the two graphs has edge types and the other does not.
     pub fn overlaps(&self, other: &Graph) -> Result<bool> {
-        Ok(match self.is_compatible(other)? {
-            true => other
-                .par_iter_edge_node_ids_and_edge_type_id(other.directed)
-                .any(|(_, src, dst, et)| {
-                    self.has_edge_from_node_ids_and_edge_type_id(src, dst, et)
-                }),
-            false => other
-                .par_iter_edge_node_names_and_edge_type_name(other.directed)
+        Ok(if other.has_edge_types() && self.has_edge_types() {
+            self.par_iter_directed_edge_node_names_and_edge_type_name()
                 .any(|(_, _, src_name, _, dst_name, _, edge_type_name)| {
-                    self.has_edge_from_node_names_and_edge_type_name(
+                    other.has_edge_from_node_names_and_edge_type_name(
                         &src_name,
                         &dst_name,
                         edge_type_name.as_deref(),
                     )
-                }),
+                })
+        } else {
+            self.par_iter_directed_edges()
+                .any(|(_, _, src_name, _, dst_name)| {
+                    other.has_edge_from_node_names(&src_name, &dst_name)
+                })
         })
     }
 

@@ -1,7 +1,9 @@
 use super::*;
 use graph::{
-    cooccurence_matrix as rust_cooccurence_matrix, okapi_bm25_tfidf as rust_okapi_bm25_tfidf,
-    word2vec as rust_word2vec, NodeT, NodeTypeT,
+    cooccurence_matrix as rust_cooccurence_matrix,
+    get_okapi_bm25_tfidf_from_documents as rust_get_okapi_bm25_tfidf_from_documents,
+    get_tokenized_csv as rust_get_tokenized_csv, iter_okapi_bm25_tfidf_from_documents,
+    word2vec as rust_word2vec, NodeT, NodeTypeT, Tokens,
 };
 use numpy::{PyArray, PyArray1, PyArray2};
 use pyo3::wrap_pyfunction;
@@ -13,16 +15,18 @@ use types::ThreadDataRaceAware;
 fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_wrapped(wrap_pyfunction!(word2vec))?;
     m.add_wrapped(wrap_pyfunction!(cooccurence_matrix))?;
-    m.add_wrapped(wrap_pyfunction!(okapi_bm25_tfidf_int))?;
-    m.add_wrapped(wrap_pyfunction!(okapi_bm25_tfidf_str))?;
+    m.add_wrapped(wrap_pyfunction!(get_okapi_bm25_tfidf_from_documents_u16))?;
+    m.add_wrapped(wrap_pyfunction!(get_okapi_bm25_tfidf_from_documents_u32))?;
+    m.add_wrapped(wrap_pyfunction!(get_okapi_bm25_tfidf_from_documents_u64))?;
+    m.add_wrapped(wrap_pyfunction!(get_okapi_bm25_tfidf_from_documents_str))?;
+    m.add_wrapped(wrap_pyfunction!(get_okapi_tfidf_weighted_textual_embedding))?;
     Ok(())
 }
 
 #[module(preprocessing)]
 #[pyfunction()]
-#[text_signature = "(documents, k1, b, vocabulary_size, verbose)"]
-/// Return vocabulary and TFIDF matrix of given documents.
-///
+#[text_signature = "(documents, k1, b, verbose)"]
+/// Return list of vocabularies (with same length of the number of documents) with the term and their associated OKAPI BM25 TFIDF score.
 ///
 /// Arguments
 /// ---------
@@ -32,31 +36,78 @@ fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
 ///     The default parameter for k1, tipically between 1.2 and 2.0.
 /// b: Optional[float]
 ///     The default parameter for b, tipically equal to 0.75.
-/// vocabulary_size: Optional[int]
-///     The expected vocabulary size.
 /// verbose: Optional[bool]
-///     Whether to show a loading bar.
+///     Whether to show a loading bar. By default true.
 ///
-fn okapi_bm25_tfidf_int(
-    documents: Vec<Vec<u64>>,
-    k1: Option<f64>,
-    b: Option<f64>,
-    vocabulary_size: Option<usize>,
+fn get_okapi_bm25_tfidf_from_documents_u16(
+    documents: Vec<Vec<u16>>,
+    k1: Option<f32>,
+    b: Option<f32>,
     verbose: Option<bool>,
-) -> PyResult<Vec<HashMap<u64, f64>>> {
-    pe!(rust_okapi_bm25_tfidf::<u64>(
-        &documents,
-        k1,
-        b,
-        vocabulary_size,
-        verbose
+) -> PyResult<Vec<HashMap<u16, f32>>> {
+    pe!(rust_get_okapi_bm25_tfidf_from_documents::<u16>(
+        &documents, k1, b, verbose
     ))
 }
 
 #[module(preprocessing)]
 #[pyfunction()]
-#[text_signature = "(documents, k1, b, vocabulary_size, verbose)"]
-/// Return vocabulary and TFIDF matrix of given documents.
+#[text_signature = "(documents, k1, b, verbose)"]
+/// Return list of vocabularies (with same length of the number of documents) with the term and their associated OKAPI BM25 TFIDF score.
+///
+/// Arguments
+/// ---------
+/// documents: List[List[str]],
+///     The documents to parse
+/// k1: Optional[float]
+///     The default parameter for k1, tipically between 1.2 and 2.0.
+/// b: Optional[float]
+///     The default parameter for b, tipically equal to 0.75.
+/// verbose: Optional[bool]
+///     Whether to show a loading bar. By default true.
+///
+fn get_okapi_bm25_tfidf_from_documents_u32(
+    documents: Vec<Vec<u32>>,
+    k1: Option<f32>,
+    b: Option<f32>,
+    verbose: Option<bool>,
+) -> PyResult<Vec<HashMap<u32, f32>>> {
+    pe!(rust_get_okapi_bm25_tfidf_from_documents::<u32>(
+        &documents, k1, b, verbose
+    ))
+}
+
+#[module(preprocessing)]
+#[pyfunction()]
+#[text_signature = "(documents, k1, b, verbose)"]
+/// Return list of vocabularies (with same length of the number of documents) with the term and their associated OKAPI BM25 TFIDF score.
+///
+/// Arguments
+/// ---------
+/// documents: List[List[str]],
+///     The documents to parse
+/// k1: Optional[float]
+///     The default parameter for k1, tipically between 1.2 and 2.0.
+/// b: Optional[float]
+///     The default parameter for b, tipically equal to 0.75.
+/// verbose: Optional[bool]
+///     Whether to show a loading bar. By default true.
+///
+fn get_okapi_bm25_tfidf_from_documents_u64(
+    documents: Vec<Vec<u64>>,
+    k1: Option<f32>,
+    b: Option<f32>,
+    verbose: Option<bool>,
+) -> PyResult<Vec<HashMap<u64, f32>>> {
+    pe!(rust_get_okapi_bm25_tfidf_from_documents::<u64>(
+        &documents, k1, b, verbose
+    ))
+}
+
+#[module(preprocessing)]
+#[pyfunction()]
+#[text_signature = "(documents, k1, b, verbose)"]
+/// Return list of vocabularies (with same length of the number of documents) with the term and their associated OKAPI BM25 TFIDF score.
 ///
 ///
 /// Arguments
@@ -67,25 +118,158 @@ fn okapi_bm25_tfidf_int(
 ///     The default parameter for k1, tipically between 1.2 and 2.0.
 /// b: Optional[float]
 ///     The default parameter for b, tipically equal to 0.75.
-/// vocabulary_size: Optional[int]
-///     The expected vocabulary size.
 /// verbose: Optional[bool]
-///     Whether to show a loading bar.
+///     Whether to show a loading bar. By default true.
 ///
-fn okapi_bm25_tfidf_str(
+fn get_okapi_bm25_tfidf_from_documents_str(
     documents: Vec<Vec<&str>>,
-    k1: Option<f64>,
-    b: Option<f64>,
-    vocabulary_size: Option<usize>,
+    k1: Option<f32>,
+    b: Option<f32>,
     verbose: Option<bool>,
-) -> PyResult<Vec<HashMap<&str, f64>>> {
-    pe!(rust_okapi_bm25_tfidf::<&str>(
-        &documents,
-        k1,
-        b,
-        vocabulary_size,
-        verbose
+) -> PyResult<Vec<HashMap<&str, f32>>> {
+    pe!(rust_get_okapi_bm25_tfidf_from_documents::<&str>(
+        &documents, k1, b, verbose
     ))
+}
+
+use half::f16;
+
+#[module(preprocessing)]
+#[pyfunction()]
+#[text_signature = "(path, embedding, pretrained_model_name_or_path, k1, b, columns, separator, header, verbose)"]
+/// Returns embedding of all the term in given CSV weighted by OKAPI/TFIDF.
+///
+/// Arguments
+/// ------------
+/// path: str,
+///     The path to be processed.
+/// embedding: np.ndarray
+///     The numpy array to use for the dictionary.
+///     This must be compatible with the provided pretrained_model_name_or_path!
+/// pretrained_model_name_or_path: str
+///     Name of the tokenizer model to be retrieved.
+/// k1: Optional[float]
+///     The default parameter for k1, tipically between 1.2 and 2.0.
+/// b: Optional[float]
+///     The default parameter for b, tipically equal to 0.75.
+/// columns: Optional[List[String>]]
+///     The columns to be read.
+///     If none are given, all the columns will be used.
+/// separator: Optional[str]
+///     The separator for the CSV.
+/// header: Optional[bool]
+///     Whether to skip the header.
+/// verbose: Optional[bool]
+///     Whether to show a loading bar. By default true.
+///
+fn get_okapi_tfidf_weighted_textual_embedding(
+    path: &str,
+    embedding: Py<PyArray2<f32>>,
+    pretrained_model_name_or_path: String,
+    k1: Option<f32>,
+    b: Option<f32>,
+    columns: Option<Vec<String>>,
+    separator: Option<char>,
+    header: Option<bool>,
+    verbose: Option<bool>,
+) -> PyResult<Py<PyAny>> {
+    let tokens = pe!(rust_get_tokenized_csv(
+        path,
+        columns,
+        separator,
+        header,
+        Some(pretrained_model_name_or_path.as_str()),
+    ))?;
+    let rows_number = tokens.len();
+    let gil = pyo3::Python::acquire_gil();
+    let actual_embedding = embedding.as_ref(gil.python());
+    let columns_number = actual_embedding.shape()[1];
+    let resulting_embedding = ThreadDataRaceAware {
+        t: PyArray2::zeros(gil.python(), [rows_number, columns_number], false),
+    };
+    let actual_embedding = ThreadDataRaceAware {
+        t: actual_embedding,
+    };
+    match tokens {
+        Tokens::TokensU8(inner) => {
+            pe!(iter_okapi_bm25_tfidf_from_documents(&inner, k1, b, verbose,))?
+                .enumerate()
+                .for_each(|(i, scores)| unsafe {
+                    let inner = resulting_embedding.t;
+                    let original = actual_embedding.t;
+                    let document_size = scores.len() as f32;
+                    scores.into_iter().for_each(|(k, score)| {
+                        let k = k as usize;
+                        (0..columns_number).for_each(|j| {
+                            *(inner.uget_mut([i, j])) = (f16::from_bits(*(inner.uget_mut([i, j])))
+                                + f16::from_f32(original.uget([k, j]) * score / document_size))
+                            .to_bits();
+                        });
+                    });
+                });
+        }
+        Tokens::TokensU16(inner) => {
+            pe!(iter_okapi_bm25_tfidf_from_documents(&inner, k1, b, verbose,))?
+                .enumerate()
+                .for_each(|(i, scores)| unsafe {
+                    let inner = resulting_embedding.t;
+                    let original = actual_embedding.t;
+                    let document_size = scores.len() as f32;
+                    scores.into_iter().for_each(|(k, score)| {
+                        let k = k as usize;
+                        (0..columns_number).for_each(|j| {
+                            *(inner.uget_mut([i, j])) = (f16::from_bits(*(inner.uget_mut([i, j])))
+                                + f16::from_f32(original.uget([k, j]) * score / document_size))
+                            .to_bits();
+                        });
+                    });
+                });
+        }
+        Tokens::TokensU32(inner) => {
+            pe!(iter_okapi_bm25_tfidf_from_documents(&inner, k1, b, verbose,))?
+                .enumerate()
+                .for_each(|(i, scores)| unsafe {
+                    let inner = resulting_embedding.t;
+                    let original = actual_embedding.t;
+                    let document_size = scores.len() as f32;
+                    scores.into_iter().for_each(|(k, score)| {
+                        let k = k as usize;
+                        (0..columns_number).for_each(|j| {
+                            *(inner.uget_mut([i, j])) = (f16::from_bits(*(inner.uget_mut([i, j])))
+                                + f16::from_f32(original.uget([k, j]) * score / document_size))
+                            .to_bits();
+                        });
+                    });
+                });
+        }
+        Tokens::TokensU64(inner) => {
+            pe!(iter_okapi_bm25_tfidf_from_documents(&inner, k1, b, verbose,))?
+                .enumerate()
+                .for_each(|(i, scores)| unsafe {
+                    let inner = resulting_embedding.t;
+                    let original = actual_embedding.t;
+                    let document_size = scores.len() as f32;
+                    scores.into_iter().for_each(|(k, score)| {
+                        let k = k as usize;
+                        (0..columns_number).for_each(|j| {
+                            *(inner.uget_mut([i, j])) = (f16::from_bits(*(inner.uget_mut([i, j])))
+                                + f16::from_f32(original.uget([k, j]) * score / document_size))
+                            .to_bits();
+                        });
+                    });
+                });
+        }
+    }
+
+    let embedding = resulting_embedding.t.to_owned();
+    unsafe {
+        let ptr = &mut *(*embedding.as_ref(gil.python())).as_array_ptr();
+        //libc::free(ptr.descr);
+        ptr.descr = numpy::npyffi::PY_ARRAY_API
+            .PyArray_DescrFromType(numpy::npyffi::NPY_TYPES::NPY_HALF as _);
+    }
+
+    Ok(embedding.into_py(gil.python()))
 }
 
 #[module(preprocessing)]
@@ -642,7 +826,7 @@ impl Graph {
     /// normalize: Optional[bool] = True
     ///     Whether to normalize the metrics.
     /// verbose: Optional[bool] = True
-    ///     Whether to show a loading bar.
+    ///     Whether to show a loading bar. By default true.
     ///
     /// Returns
     /// -------
@@ -693,7 +877,7 @@ impl Graph {
     /// normalize: Optional[bool] = True
     ///     Whether to normalize the metrics.
     /// verbose: Optional[bool] = True
-    ///     Whether to show a loading bar.
+    ///     Whether to show a loading bar. By default true.
     ///
     /// Returns
     /// -------

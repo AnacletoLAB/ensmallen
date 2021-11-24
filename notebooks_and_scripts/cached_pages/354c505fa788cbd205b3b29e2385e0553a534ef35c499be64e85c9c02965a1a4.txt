@@ -1,0 +1,12 @@
+<html>
+<head><title>Index of /wikidatawiki/entities/20211006/</title></head>
+<body bgcolor="white">
+<h1>Index of /wikidatawiki/entities/20211006/</h1><hr><pre><a href="../">../</a>
+<a href="wikidata-20211006-lexemes.json.bz2">wikidata-20211006-lexemes.json.bz2</a>                 06-Oct-2021 03:42           195288101
+<a href="wikidata-20211006-lexemes.json.gz">wikidata-20211006-lexemes.json.gz</a>                  06-Oct-2021 03:40           271807724
+<a href="wikidata-20211006-md5sums.txt">wikidata-20211006-md5sums.txt</a>                      09-Oct-2021 05:44                 278
+<a href="wikidata-20211006-sha1sums.txt">wikidata-20211006-sha1sums.txt</a>                     09-Oct-2021 05:59                 310
+<a href="wikidata-20211006-truthy-BETA.nt.bz2">wikidata-20211006-truthy-BETA.nt.bz2</a>               09-Oct-2021 05:29         30708742696
+<a href="wikidata-20211006-truthy-BETA.nt.gz">wikidata-20211006-truthy-BETA.nt.gz</a>                09-Oct-2021 02:38         50187553542
+</pre><hr></body>
+</html>
