@@ -88,7 +88,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims.
-    pub fn par_iter_topological_synonims_node_ids(
+    pub fn par_iter_isomorphic_node_ids(
         &self,
         minimum_node_degree: Option<NodeT>,
     ) -> impl ParallelIterator<Item = Vec<NodeT>> + '_ {
@@ -98,14 +98,14 @@ impl Graph {
             if node_degree < minimum_node_degree {
                 return None;
             }
-            let mut topological_synonims = self
+            let mut isomorphic = self
                 .iter_topological_synonim_from_node_id(node_id, Some(true))
                 .collect::<Vec<NodeT>>();
-            if topological_synonims.is_empty() {
+            if isomorphic.is_empty() {
                 None
             } else {
-                topological_synonims.push(node_id);
-                Some(topological_synonims)
+                isomorphic.push(node_id);
+                Some(isomorphic)
             }
         })
     }
@@ -114,11 +114,11 @@ impl Graph {
     ///
     /// # Arguments
     /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims.
-    pub fn par_iter_topological_synonims_node_names(
+    pub fn par_iter_isomorphic_node_names(
         &self,
         minimum_node_degree: Option<NodeT>,
     ) -> impl ParallelIterator<Item = Vec<String>> + '_ {
-        self.par_iter_topological_synonims_node_ids(minimum_node_degree)
+        self.par_iter_isomorphic_node_ids(minimum_node_degree)
             .map(move |synonims| unsafe {
                 synonims
                     .into_iter()
@@ -132,11 +132,11 @@ impl Graph {
     ///
     /// # Arguments
     /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims.
-    pub fn get_topological_synonims_node_ids(
+    pub fn get_isomorphic_node_ids(
         &self,
         minimum_node_degree: Option<NodeT>,
     ) -> Vec<Vec<NodeT>> {
-        self.par_iter_topological_synonims_node_ids(minimum_node_degree)
+        self.par_iter_isomorphic_node_ids(minimum_node_degree)
             .collect()
     }
 
@@ -144,8 +144,8 @@ impl Graph {
     ///
     /// # Arguments
     /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims.
-    pub fn has_topological_synonims(&self, minimum_node_degree: Option<NodeT>) -> bool {
-        self.par_iter_topological_synonims_node_ids(minimum_node_degree)
+    pub fn has_isomorphic_nodes(&self, minimum_node_degree: Option<NodeT>) -> bool {
+        self.par_iter_isomorphic_node_ids(minimum_node_degree)
             .any(|_| true)
     }
 

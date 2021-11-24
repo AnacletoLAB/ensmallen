@@ -97,7 +97,7 @@ mod types;
 mod url_utilities;
 mod vertex_cover;
 mod walks;
-mod topological_synonim;
+mod isomorphism;
 pub mod walks_parameters;
 pub use edge_list_utils::*;
 
@@ -124,7 +124,7 @@ pub use self::trees::*;
 pub use self::types::*;
 pub use self::walks::*;
 pub use self::walks_parameters::*;
-pub use topological_synonim::*;
+pub use isomorphism::*;
 pub use preprocessing::*;
 pub use tfidf::*;
 

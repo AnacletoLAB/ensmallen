@@ -743,14 +743,22 @@ impl Graph {
     /// # Safety
     /// This method may cause a panic when called on a graph with no edges.
     fn get_report_of_topological_oddities(&self) -> Result<Option<String>> {
-        let mut circles = self.get_circles(None, None)?;
-        circles.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
-        let mut chains = self.get_chains(None, None)?;
-        chains.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
-        let mut stars = self.get_stars(None)?;
-        stars.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+        let (circles, chains, stars) =  if !self.is_directed(){
+            let mut circles = self.get_circles(None, None)?;
+            circles.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+            let mut chains = self.get_chains(None, None)?;
+            chains.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+            let mut stars = self.get_stars(None)?;
+            stars.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+            (circles, chains, stars)
+        } else {
+            (Vec::new(), Vec::new(), Vec::new())
+        };
+
+        let has_isomorphic_nodes = self.has_isomorphic_nodes(Some(10));
+        
         // If the graph does not contain any oddity, we do not prepare a report.
-        if circles.is_empty() && chains.is_empty() && stars.is_empty() {
+        if !has_isomorphic_nodes && circles.is_empty() && chains.is_empty() && stars.is_empty() {
             return Ok(None);
         }
         // Create the report for the circles, if there are any.
@@ -840,6 +848,22 @@ impl Graph {
                 }
             )
         };
+
+        // Create the report for the isomorphic nodes, if there are any.
+        let isomorphic_nodes_description = if has_isomorphic_nodes {
+            "".to_string()
+        } else {
+                concat!(
+                    "<h4>Isomorphic node reports</h4>",
+                    "<p>",
+                    "Isomorphic nodes are nodes with exactly the same neighbours ",
+                    "and node types, if present. We have detected at least two ",
+                    "isomorphic nodes with at least degree 10.",
+                    "You can obtain the full list of isomorphic nodes ",
+                    "by executing the <code>get_isomorphic_node_ids</code> method.",
+                    "</p>"
+            ).to_string()
+        };
         Ok(Some(format!(
             concat!(
                 "<h3>Topological Oddities</h3>",
@@ -852,10 +876,12 @@ impl Graph {
                 "{circles_description}",
                 "{chains_description}",
                 "{stars_description}",
+                "{isomorphic_nodes_description}"
             ),
             circles_description=circles_description,
             chains_description=chains_description,
-            stars_description=stars_description
+            stars_description=stars_description,
+            isomorphic_nodes_description=isomorphic_nodes_description
         )))
     }
 
@@ -999,24 +1025,6 @@ impl Graph {
         if self.has_singleton_nodes_with_selfloops() {
             paragraphs.push(self.get_singleton_nodes_with_selfloops_report());
         }
-
-        paragraphs.join("")
-    }
-
-    /// Returns report on the topological synonim nodes.
-    unsafe fn get_topological_synonims_report(&self) -> String {
-        // First we create the empty list of paragraphs of the report
-        let mut paragraphs = Vec::new();
-
-        paragraphs.push(
-            concat!(
-                "<h3>Topological synonims</h3>",
-                "<p>",
-                "Topological synonims are nodes with exactly the same neighbours ",
-                "and node types, if present.",
-                "</p>"
-            )
-        );
 
         paragraphs.join("")
     }
@@ -1579,12 +1587,6 @@ impl Graph {
             paragraphs.push(unsafe { self.get_disconnected_nodes_report() });
         }
 
-        // We add to the report the graph on topological synonim nodes if the graph
-        // contains any. We put as a node degree threshold 10.
-        if self.has_topological_synonims(Some(10)) {
-            paragraphs.push(unsafe { self.get_topological_synonims_report() });
-        }
-
         // We add to the report the edge weights report if the graph
         if self.has_edge_weights() {
             paragraphs.push(unsafe { self.get_edge_weights_report() });
@@ -1605,7 +1607,7 @@ impl Graph {
         }
 
         // And the report with oddities, if there are any to report
-        if self.has_edges() && !self.is_directed() {
+        if self.has_edges() {
             if let Some(oddity_report) = self.get_report_of_topological_oddities().unwrap() {
                 paragraphs.push(oddity_report);
             }
