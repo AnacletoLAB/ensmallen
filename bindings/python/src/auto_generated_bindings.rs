@@ -47,17 +47,485 @@ fn split_words(method_name: &str) -> Vec<String> {
 
 #[pymodule]
 fn ensmallen(_py: Python, _m: &PyModule) -> PyResult<()> {
-    _m.add_class::<Graph>()?;
     _m.add_class::<Circle>()?;
-    _m.add_class::<ShortestPathsResultBFS>()?;
-    _m.add_class::<ShortestPathsDjkstra>()?;
     _m.add_class::<Chain>()?;
+    _m.add_class::<Graph>()?;
     _m.add_class::<Star>()?;
-    _m.add_wrapped(wrap_pymodule!(edge_list_utils))?;
+    _m.add_class::<ShortestPathsDjkstra>()?;
+    _m.add_class::<ShortestPathsResultBFS>()?;
     _m.add_wrapped(wrap_pymodule!(utils))?;
+    _m.add_wrapped(wrap_pymodule!(edge_list_utils))?;
     _m.add_wrapped(wrap_pymodule!(preprocessing))?;
     env_logger::init();
     Ok(())
+}
+
+///
+#[pyclass]
+#[derive(Debug, Clone)]
+pub struct Circle {
+    pub inner: graph::Circle,
+}
+
+impl From<graph::Circle> for Circle {
+    fn from(val: graph::Circle) -> Circle {
+        Circle { inner: val }
+    }
+}
+
+impl From<Circle> for graph::Circle {
+    fn from(val: Circle) -> graph::Circle {
+        val.inner
+    }
+}
+
+#[pymethods]
+impl Circle {
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return the first node ID of the Circle
+    pub fn get_root_node_id(&self) -> NodeT {
+        self.inner.get_root_node_id().into()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return the first node name of the circle
+    pub fn get_root_node_name(&self) -> String {
+        self.inner.get_root_node_name().into()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return length of the Circle
+    pub fn len(&self) -> NodeT {
+        self.inner.len().into()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return the node IDs of the nodes composing the Circle
+    pub fn get_circle_node_ids(&self) -> Py<PyArray1<NodeT>> {
+        let gil = pyo3::Python::acquire_gil();
+        to_ndarray_1d!(gil, self.inner.get_circle_node_ids(), NodeT)
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, k)"]
+    /// Return the first `k` node IDs of the nodes composing the Circle.
+    ///
+    /// Parameters
+    /// ----------
+    ///
+    pub fn get_first_k_circle_node_ids(&self, k: usize) -> Py<PyArray1<NodeT>> {
+        let gil = pyo3::Python::acquire_gil();
+        to_ndarray_1d!(gil, self.inner.get_first_k_circle_node_ids(k.into()), NodeT)
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, k)"]
+    /// Return the first `k` node names of the nodes composing the Circle.
+    ///
+    /// Parameters
+    /// ----------
+    ///
+    pub fn get_first_k_circle_node_names(&self, k: usize) -> Vec<String> {
+        self.inner
+            .get_first_k_circle_node_names(k.into())
+            .into_iter()
+            .map(|x| x.into())
+            .collect::<Vec<_>>()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return the node names of the nodes composing the Circle
+    pub fn get_circle_node_names(&self) -> Vec<String> {
+        self.inner
+            .get_circle_node_names()
+            .into_iter()
+            .map(|x| x.into())
+            .collect::<Vec<_>>()
+    }
+}
+
+pub const CIRCLE_METHODS_NAMES: &[&str] = &[
+    "get_root_node_id",
+    "get_root_node_name",
+    "len",
+    "get_circle_node_ids",
+    "get_first_k_circle_node_ids",
+    "get_first_k_circle_node_names",
+    "get_circle_node_names",
+];
+
+pub const CIRCLE_TERMS: &[&str] = &[
+    "get",
+    "root",
+    "node_id",
+    "node_name",
+    "len",
+    "circle",
+    "node_ids",
+    "first",
+    "k",
+    "node_names",
+];
+
+pub const CIRCLE_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
+    &[
+        ("node_id", 0.8037883),
+        ("get", 0.099701576),
+        ("root", 0.55850667),
+    ],
+    &[
+        ("get", 0.099701576),
+        ("node_name", 0.8037883),
+        ("root", 0.55850667),
+    ],
+    &[("len", 2.4368012)],
+    &[
+        ("node_ids", 0.55850667),
+        ("circle", 0.2762709),
+        ("get", 0.099701576),
+    ],
+    &[
+        ("get", 0.04539644),
+        ("first", 0.25430104),
+        ("circle", 0.12579255),
+        ("k", 0.25430104),
+        ("node_ids", 0.25430104),
+    ],
+    &[
+        ("circle", 0.12579255),
+        ("k", 0.25430104),
+        ("get", 0.04539644),
+        ("node_names", 0.25430104),
+        ("first", 0.25430104),
+    ],
+    &[
+        ("get", 0.099701576),
+        ("node_names", 0.55850667),
+        ("circle", 0.2762709),
+    ],
+];
+
+#[pymethods]
+impl Circle {
+    fn _repr_html_(&self) -> String {
+        self.__repr__()
+    }
+}
+
+#[pyproto]
+impl PyObjectProtocol for Circle {
+    fn __str__(&'p self) -> String {
+        self.inner.to_string()
+    }
+    fn __repr__(&'p self) -> String {
+        self.__str__()
+    }
+
+    fn __hash__(&'p self) -> PyResult<isize> {
+        let mut hasher = DefaultHasher::new();
+        self.inner.hash(&mut hasher);
+        Ok(hasher.finish() as isize)
+    }
+
+    fn __getattr__(&self, name: String) -> PyResult<()> {
+        // split the query into tokens
+        let tokens = split_words(&name);
+
+        // compute the similarities between all the terms and tokens
+        let tokens_expanded = tokens
+            .iter()
+            .map(|token| {
+                let mut similarities = CIRCLE_TERMS
+                    .iter()
+                    .map(move |term| (*term, jaro_winkler(token, term) as f64))
+                    .collect::<Vec<(&str, f64)>>();
+
+                similarities.sort_by(|(_, a), (_, b)| b.partial_cmp(a).unwrap());
+
+                similarities.into_iter().take(1)
+            })
+            .flatten()
+            .collect::<Vec<(&str, f64)>>();
+
+        // Compute the weighted ranking of each method ("document")
+        // where the conribution of each term is weighted by it's similarity
+        // with the query tokens
+        let mut doc_scores = CIRCLE_TFIDF_FREQUENCIES
+            .par_iter()
+            .enumerate()
+            // for each document
+            .map(|(id, frequencies_doc)| {
+                (
+                    id,
+                    (jaro_winkler(&name, CIRCLE_METHODS_NAMES[id]).exp() - 1.0)
+                        * frequencies_doc
+                            .iter()
+                            .map(|(term, weight)| {
+                                match tokens_expanded.iter().find(|(token, _)| token == term) {
+                                    Some((_, similarity)) => (similarity.exp() - 1.0) * weight,
+                                    None => 0.0,
+                                }
+                            })
+                            .sum::<f64>(),
+                )
+            })
+            .collect::<Vec<(usize, f64)>>();
+
+        // sort the scores in a decreasing order
+        doc_scores.sort_by(|(_, d1), (_, d2)| d2.partial_cmp(d1).unwrap());
+
+        Err(PyAttributeError::new_err(format!(
+            "The method '{}' does not exists, did you mean one of the following?\n{}",
+            &name,
+            doc_scores
+                .iter()
+                .map(|(method_id, _)| {
+                    format!("* '{}'", CIRCLE_METHODS_NAMES[*method_id].to_string())
+                })
+                .take(10)
+                .collect::<Vec<String>>()
+                .join("\n"),
+        )))
+    }
+}
+
+///
+#[pyclass]
+#[derive(Debug, Clone)]
+pub struct Chain {
+    pub inner: graph::Chain,
+}
+
+impl From<graph::Chain> for Chain {
+    fn from(val: graph::Chain) -> Chain {
+        Chain { inner: val }
+    }
+}
+
+impl From<Chain> for graph::Chain {
+    fn from(val: Chain) -> graph::Chain {
+        val.inner
+    }
+}
+
+#[pymethods]
+impl Chain {
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return the first node ID of the chain
+    pub fn get_root_node_id(&self) -> NodeT {
+        self.inner.get_root_node_id().into()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return the first node name of the chain
+    pub fn get_root_node_name(&self) -> String {
+        self.inner.get_root_node_name().into()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return length of the chain
+    pub fn len(&self) -> NodeT {
+        self.inner.len().into()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return the node IDs of the nodes composing the chain
+    pub fn get_chain_node_ids(&self) -> Py<PyArray1<NodeT>> {
+        let gil = pyo3::Python::acquire_gil();
+        to_ndarray_1d!(gil, self.inner.get_chain_node_ids(), NodeT)
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, k)"]
+    /// Return the first `k` node IDs of the nodes composing the chain.
+    ///
+    /// Parameters
+    /// ----------
+    ///
+    pub fn get_first_k_chain_node_ids(&self, k: usize) -> Py<PyArray1<NodeT>> {
+        let gil = pyo3::Python::acquire_gil();
+        to_ndarray_1d!(gil, self.inner.get_first_k_chain_node_ids(k.into()), NodeT)
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, k)"]
+    /// Return the first `k` node names of the nodes composing the chain.
+    ///
+    /// Parameters
+    /// ----------
+    ///
+    pub fn get_first_k_chain_node_names(&self, k: usize) -> Vec<String> {
+        self.inner
+            .get_first_k_chain_node_names(k.into())
+            .into_iter()
+            .map(|x| x.into())
+            .collect::<Vec<_>>()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return the node names of the nodes composing the chain
+    pub fn get_chain_node_names(&self) -> Vec<String> {
+        self.inner
+            .get_chain_node_names()
+            .into_iter()
+            .map(|x| x.into())
+            .collect::<Vec<_>>()
+    }
+}
+
+pub const CHAIN_METHODS_NAMES: &[&str] = &[
+    "get_root_node_id",
+    "get_root_node_name",
+    "len",
+    "get_chain_node_ids",
+    "get_first_k_chain_node_ids",
+    "get_first_k_chain_node_names",
+    "get_chain_node_names",
+];
+
+pub const CHAIN_TERMS: &[&str] = &[
+    "get",
+    "root",
+    "node_id",
+    "node_name",
+    "len",
+    "chain",
+    "node_ids",
+    "first",
+    "k",
+    "node_names",
+];
+
+pub const CHAIN_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
+    &[
+        ("node_id", 0.8037883),
+        ("root", 0.55850667),
+        ("get", 0.099701576),
+    ],
+    &[
+        ("root", 0.55850667),
+        ("node_name", 0.8037883),
+        ("get", 0.099701576),
+    ],
+    &[("len", 2.4368012)],
+    &[
+        ("get", 0.099701576),
+        ("chain", 0.2762709),
+        ("node_ids", 0.55850667),
+    ],
+    &[
+        ("first", 0.25430104),
+        ("k", 0.25430104),
+        ("chain", 0.12579255),
+        ("node_ids", 0.25430104),
+        ("get", 0.04539644),
+    ],
+    &[
+        ("first", 0.25430104),
+        ("get", 0.04539644),
+        ("node_names", 0.25430104),
+        ("chain", 0.12579255),
+        ("k", 0.25430104),
+    ],
+    &[
+        ("node_names", 0.55850667),
+        ("get", 0.099701576),
+        ("chain", 0.2762709),
+    ],
+];
+
+#[pymethods]
+impl Chain {
+    fn _repr_html_(&self) -> String {
+        self.__repr__()
+    }
+}
+
+#[pyproto]
+impl PyObjectProtocol for Chain {
+    fn __str__(&'p self) -> String {
+        self.inner.to_string()
+    }
+    fn __repr__(&'p self) -> String {
+        self.__str__()
+    }
+
+    fn __hash__(&'p self) -> PyResult<isize> {
+        let mut hasher = DefaultHasher::new();
+        self.inner.hash(&mut hasher);
+        Ok(hasher.finish() as isize)
+    }
+
+    fn __getattr__(&self, name: String) -> PyResult<()> {
+        // split the query into tokens
+        let tokens = split_words(&name);
+
+        // compute the similarities between all the terms and tokens
+        let tokens_expanded = tokens
+            .iter()
+            .map(|token| {
+                let mut similarities = CHAIN_TERMS
+                    .iter()
+                    .map(move |term| (*term, jaro_winkler(token, term) as f64))
+                    .collect::<Vec<(&str, f64)>>();
+
+                similarities.sort_by(|(_, a), (_, b)| b.partial_cmp(a).unwrap());
+
+                similarities.into_iter().take(1)
+            })
+            .flatten()
+            .collect::<Vec<(&str, f64)>>();
+
+        // Compute the weighted ranking of each method ("document")
+        // where the conribution of each term is weighted by it's similarity
+        // with the query tokens
+        let mut doc_scores = CHAIN_TFIDF_FREQUENCIES
+            .par_iter()
+            .enumerate()
+            // for each document
+            .map(|(id, frequencies_doc)| {
+                (
+                    id,
+                    (jaro_winkler(&name, CHAIN_METHODS_NAMES[id]).exp() - 1.0)
+                        * frequencies_doc
+                            .iter()
+                            .map(|(term, weight)| {
+                                match tokens_expanded.iter().find(|(token, _)| token == term) {
+                                    Some((_, similarity)) => (similarity.exp() - 1.0) * weight,
+                                    None => 0.0,
+                                }
+                            })
+                            .sum::<f64>(),
+                )
+            })
+            .collect::<Vec<(usize, f64)>>();
+
+        // sort the scores in a decreasing order
+        doc_scores.sort_by(|(_, d1), (_, d2)| d2.partial_cmp(d1).unwrap());
+
+        Err(PyAttributeError::new_err(format!(
+            "The method '{}' does not exists, did you mean one of the following?\n{}",
+            &name,
+            doc_scores
+                .iter()
+                .map(|(method_id, _)| {
+                    format!("* '{}'", CHAIN_METHODS_NAMES[*method_id].to_string())
+                })
+                .take(10)
+                .collect::<Vec<String>>()
+                .join("\n"),
+        )))
+    }
 }
 
 /// This is the main struct in Ensmallen, it allows to load and manipulate Graphs efficently.
@@ -2406,7 +2874,7 @@ impl Graph {
     pub fn get_topological_synonims_node_ids(
         &self,
         minimum_node_degree: Option<NodeT>,
-    ) -> Vec<(NodeT, Vec<NodeT>)> {
+    ) -> Vec<Vec<NodeT>> {
         self.inner
             .get_topological_synonims_node_ids(minimum_node_degree.into())
             .into_iter()
@@ -12234,500 +12702,500 @@ pub const GRAPH_TERMS: &[&str] = &[
 
 pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
     &[
+        ("graph", 1.3458637),
         ("laplacian", 1.7848395),
         ("get", 0.14767002),
-        ("graph", 1.3458637),
         ("transformed", 1.7848395),
     ],
     &[
-        ("get", 0.07798422),
-        ("matrix", 0.8697139),
-        ("laplacian", 0.94257),
-        ("coo", 1.1602342),
         ("edges", 0.6734897),
+        ("get", 0.07798422),
+        ("laplacian", 0.94257),
         ("number", 0.5278446),
+        ("matrix", 0.8697139),
+        ("coo", 1.1602342),
     ],
     &[
-        ("get", 0.0600886),
-        ("transformed", 0.7262714),
-        ("graph", 0.5476472),
         ("normalized", 0.76463723),
+        ("transformed", 0.7262714),
+        ("laplacian", 0.7262714),
+        ("graph", 0.5476472),
+        ("get", 0.0600886),
         ("walk", 0.81600344),
         ("random", 0.57030517),
-        ("laplacian", 0.7262714),
     ],
     &[
-        ("symmetric", 1.0590261),
-        ("graph", 0.7107478),
-        ("transformed", 0.94257),
         ("normalized", 0.99236196),
         ("get", 0.07798422),
         ("laplacian", 0.94257),
+        ("graph", 0.7107478),
+        ("symmetric", 1.0590261),
+        ("transformed", 0.94257),
     ],
     &[
-        ("normalized", 1.3348502),
-        ("graph", 0.9560441),
         ("transformed", 1.2678738),
+        ("graph", 0.9560441),
         ("symmetric", 1.4245217),
         ("get", 0.10489847),
+        ("normalized", 1.3348502),
     ],
     &[
-        ("node_id", 0.5983322),
-        ("unchecked", 0.53457636),
         ("connected", 1.0420648),
+        ("unchecked", 0.53457636),
         ("is", 0.9059273),
+        ("node_id", 0.5983322),
         ("from", 0.296112),
     ],
     &[
-        ("node", 0.448418),
-        ("from", 0.22013728),
-        ("is", 0.6734897),
         ("disconnected", 0.94257),
         ("unchecked", 0.3974178),
+        ("node", 0.448418),
         ("node_id", 0.44481558),
+        ("is", 0.6734897),
+        ("from", 0.22013728),
     ],
     &[
-        ("unchecked", 0.53457636),
         ("is", 0.9059273),
+        ("unchecked", 0.53457636),
+        ("from", 0.296112),
         ("singleton", 0.7492793),
         ("node_id", 0.5983322),
-        ("from", 0.296112),
     ],
     &[
+        ("singleton", 1.0547923),
         ("node_id", 0.84229755),
         ("is", 1.2753122),
         ("from", 0.4168494),
-        ("singleton", 1.0547923),
     ],
     &[
-        ("from", 0.16962074),
         ("with", 0.4875134),
-        ("unchecked", 0.3062194),
-        ("singleton", 0.4292069),
-        ("selfloops", 0.57030517),
-        ("is", 0.51893896),
         ("node_id", 0.34274042),
+        ("singleton", 0.4292069),
+        ("is", 0.51893896),
+        ("unchecked", 0.3062194),
+        ("selfloops", 0.57030517),
+        ("from", 0.16962074),
     ],
     &[
-        ("singleton", 0.55703354),
-        ("is", 0.6734897),
-        ("from", 0.22013728),
         ("selfloops", 0.74015373),
         ("with", 0.6327049),
         ("node_id", 0.44481558),
+        ("from", 0.22013728),
+        ("is", 0.6734897),
+        ("singleton", 0.55703354),
     ],
     &[
+        ("is", 0.9059273),
         ("unchecked", 0.53457636),
         ("from", 0.296112),
         ("node_name", 0.8273618),
-        ("is", 0.9059273),
         ("singleton", 0.7492793),
     ],
     &[
-        ("from", 0.4168494),
         ("node_name", 1.1647122),
-        ("singleton", 1.0547923),
         ("is", 1.2753122),
+        ("singleton", 1.0547923),
+        ("from", 0.4168494),
     ],
-    &[("has", 2.2293177), ("node_name", 2.7808943)],
-    &[("node_type_id", 3.502545), ("has", 2.2293177)],
+    &[("node_name", 2.7808943), ("has", 2.2293177)],
+    &[("has", 2.2293177), ("node_type_id", 3.502545)],
     &[("has", 2.2293177), ("node_type_name", 3.502545)],
     &[("has", 2.2293177), ("edge_type_id", 2.903234)],
     &[("has", 2.2293177), ("edge_type_name", 3.3463655)],
     &[
-        ("from", 0.4168494),
         ("node_ids", 0.71222025),
-        ("has", 0.9336973),
         ("edge", 0.8631457),
+        ("from", 0.4168494),
+        ("has", 0.9336973),
     ],
     &[
         ("from", 0.4168494),
-        ("has", 0.9336973),
-        ("selfloop", 2.0053594),
         ("node_id", 0.84229755),
+        ("selfloop", 2.0053594),
+        ("has", 0.9336973),
     ],
     &[
-        ("has", 0.49308357),
-        ("node_ids", 0.37612203),
         ("edge", 0.45582545),
+        ("has", 0.49308357),
         ("edge_type_id", 0.64214134),
-        ("from", 0.22013728),
+        ("node_ids", 0.37612203),
         ("and", 0.7107478),
+        ("from", 0.22013728),
     ],
     &[
-        ("node_id", 0.44481558),
         ("trap", 0.8697139),
         ("unchecked", 0.3974178),
+        ("node_id", 0.44481558),
         ("is", 0.6734897),
         ("node", 0.448418),
         ("from", 0.22013728),
     ],
     &[
-        ("node", 0.6031779),
-        ("trap", 1.1698732),
-        ("node_id", 0.5983322),
-        ("is", 0.9059273),
         ("from", 0.296112),
+        ("node_id", 0.5983322),
+        ("trap", 1.1698732),
+        ("is", 0.9059273),
+        ("node", 0.6031779),
     ],
     &[
-        ("has", 0.9336973),
         ("node_type_name", 1.4669588),
-        ("node_name", 1.1647122),
         ("and", 1.3458637),
+        ("node_name", 1.1647122),
+        ("has", 0.9336973),
     ],
     &[
+        ("from", 0.4168494),
         ("has", 0.9336973),
         ("edge", 0.8631457),
-        ("from", 0.4168494),
         ("node_names", 0.9424226),
     ],
     &[
-        ("edge", 0.45582545),
         ("and", 0.7107478),
-        ("from", 0.22013728),
+        ("edge", 0.45582545),
         ("edge_type_name", 0.74015373),
+        ("from", 0.22013728),
         ("node_names", 0.4976914),
         ("has", 0.49308357),
     ],
     &[
-        ("components", 2.6625037),
         ("connected", 2.1883104),
         ("strongly", 3.277346),
+        ("components", 2.6625037),
     ],
     &[
-        ("by", 0.8413619),
+        ("sort", 0.94257),
         ("increasing", 1.0590261),
-        ("degree", 0.62369764),
         ("outbound", 0.94257),
-        ("sort", 0.94257),
+        ("degree", 0.62369764),
         ("node", 0.448418),
+        ("by", 0.8413619),
     ],
     &[
-        ("sort", 0.94257),
-        ("node", 0.448418),
-        ("decreasing", 1.0590261),
-        ("degree", 0.62369764),
         ("by", 0.8413619),
         ("outbound", 0.94257),
+        ("degree", 0.62369764),
+        ("sort", 0.94257),
+        ("decreasing", 1.0590261),
+        ("node", 0.448418),
     ],
     &[
-        ("order", 1.4245217),
-        ("node", 0.6031779),
-        ("lexicographic", 1.4245217),
         ("sort", 1.2678738),
         ("by", 1.1317363),
+        ("lexicographic", 1.4245217),
+        ("order", 1.4245217),
+        ("node", 0.6031779),
     ],
     &[
+        ("from", 0.22013728),
         ("get", 0.07798422),
         ("sorting", 0.99236196),
-        ("from", 0.22013728),
+        ("bfs", 0.99236196),
         ("topological", 0.8165637),
         ("node_id", 0.44481558),
-        ("bfs", 0.99236196),
     ],
     &[
-        ("bfs", 0.76463723),
-        ("get", 0.0600886),
         ("reversed", 0.8939866),
+        ("sorting", 0.76463723),
+        ("get", 0.0600886),
         ("node_id", 0.34274042),
+        ("bfs", 0.76463723),
         ("topological", 0.6291807),
         ("from", 0.16962074),
-        ("sorting", 0.76463723),
     ],
     &[
         ("from", 0.16962074),
         ("sorting", 0.76463723),
         ("node_id", 0.34274042),
         ("by", 0.64828825),
-        ("bfs", 0.76463723),
         ("topological", 0.6291807),
         ("sort", 0.7262714),
+        ("bfs", 0.76463723),
     ],
     &[
-        ("matrix", 1.1698732),
         ("dense", 1.3348502),
         ("binary", 1.5606592),
-        ("adjacency", 1.3348502),
         ("get", 0.10489847),
+        ("adjacency", 1.3348502),
+        ("matrix", 1.1698732),
     ],
     &[
-        ("matrix", 1.1698732),
-        ("dense", 1.3348502),
         ("get", 0.10489847),
-        ("weighted", 0.68230283),
+        ("dense", 1.3348502),
         ("adjacency", 1.3348502),
+        ("matrix", 1.1698732),
+        ("weighted", 0.68230283),
     ],
     &[("components", 4.2615247), ("remove", 2.8605704)],
     &[("overlaps", 8.952923)],
     &[("contains", 8.171952)],
     &[
+        ("get", 0.22028421),
         ("edges", 1.902425),
         ("bipartite", 2.9914606),
-        ("get", 0.22028421),
     ],
     &[
         ("edge_names", 2.8031526),
-        ("bipartite", 2.9914606),
         ("get", 0.22028421),
+        ("bipartite", 2.9914606),
     ],
     &[
-        ("get", 0.22028421),
         ("edges", 1.902425),
+        ("get", 0.22028421),
         ("star", 2.8031526),
     ],
     &[
+        ("get", 0.22028421),
         ("star", 2.8031526),
-        ("get", 0.22028421),
         ("edge_names", 2.8031526),
     ],
     &[
         ("get", 0.22028421),
+        ("clique", 2.9914606),
         ("edges", 1.902425),
-        ("clique", 2.9914606),
     ],
     &[
         ("edge_names", 2.8031526),
-        ("clique", 2.9914606),
         ("get", 0.22028421),
+        ("clique", 2.9914606),
     ],
     &[("edge", 2.060867), ("encode", 5.245623)],
     &[("edge", 2.060867), ("decode", 5.245623)],
     &[
-        ("max", 1.5606592),
-        ("number", 0.71001655),
-        ("edge", 0.61314183),
         ("encodable", 1.5606592),
+        ("max", 1.5606592),
+        ("edge", 0.61314183),
+        ("number", 0.71001655),
         ("get", 0.10489847),
     ],
     &[("node_id", 2.0110896), ("validate", 3.6918283)],
-    &[("validate", 3.6918283), ("node_ids", 1.7005138)],
+    &[("node_ids", 1.7005138), ("validate", 3.6918283)],
     &[("validate", 3.6918283), ("edge_id", 2.608098)],
-    &[("edge_ids", 3.5921965), ("validate", 3.6918283)],
+    &[("validate", 3.6918283), ("edge_ids", 3.5921965)],
     &[
-        ("node_types", 0.69579965),
         ("not", 1.1698732),
         ("contain", 1.2678738),
-        ("unknown", 0.89111763),
+        ("node_types", 0.69579965),
         ("must", 1.0178204),
+        ("unknown", 0.89111763),
     ],
     &[
-        ("contain", 1.2678738),
-        ("unknown", 0.89111763),
-        ("edge_types", 0.7328739),
         ("must", 1.0178204),
+        ("unknown", 0.89111763),
+        ("contain", 1.2678738),
+        ("edge_types", 0.7328739),
         ("not", 1.1698732),
     ],
     &[("node_type_id", 3.502545), ("validate", 3.6918283)],
-    &[("validate", 3.6918283), ("node_type_ids", 3.4210558)],
+    &[("node_type_ids", 3.4210558), ("validate", 3.6918283)],
     &[("edge_type_id", 2.903234), ("validate", 3.6918283)],
     &[("validate", 3.6918283), ("edge_type_ids", 3.9321296)],
     &[
-        ("undirected", 2.5501976),
         ("be", 2.6625037),
         ("must", 2.1373978),
+        ("undirected", 2.5501976),
     ],
     &[
-        ("trap", 1.1698732),
-        ("not", 1.1698732),
-        ("nodes", 0.72503495),
         ("must", 1.0178204),
+        ("not", 1.1698732),
         ("have", 1.3348502),
+        ("trap", 1.1698732),
+        ("nodes", 0.72503495),
     ],
     &[
-        ("be", 2.6625037),
         ("must", 2.1373978),
         ("multigraph", 2.8031526),
+        ("be", 2.6625037),
     ],
     &[
-        ("not", 1.6468801),
         ("must", 1.4328288),
         ("be", 1.7848395),
+        ("not", 1.6468801),
         ("multigraph", 1.8791251),
     ],
     &[
+        ("contain", 1.7848395),
+        ("matrix", 1.6468801),
         ("must", 1.4328288),
         ("identity", 2.0053594),
-        ("matrix", 1.6468801),
-        ("contain", 1.7848395),
     ],
     &[
-        ("not", 0.8697139),
         ("must", 0.7566739),
-        ("singleton", 0.55703354),
-        ("nodes", 0.53900963),
         ("contain", 0.94257),
+        ("singleton", 0.55703354),
+        ("not", 0.8697139),
+        ("nodes", 0.53900963),
         ("weighted", 0.5072415),
     ],
     &[
         ("must", 2.1373978),
+        ("have", 2.8031526),
         ("edges", 1.902425),
-        ("have", 2.8031526),
     ],
     &[
-        ("must", 2.1373978),
+        ("have", 2.8031526),
         ("nodes", 1.5225556),
-        ("have", 2.8031526),
+        ("must", 2.1373978),
     ],
     &[
-        ("connected", 2.1883104),
         ("must", 2.1373978),
+        ("connected", 2.1883104),
         ("be", 2.6625037),
     ],
     &[
         ("get", 0.14767002),
-        ("weights", 1.3458637),
-        ("edge", 0.8631457),
         ("total", 1.4015465),
+        ("edge", 0.8631457),
+        ("weights", 1.3458637),
     ],
     &[
-        ("weight", 1.4328288),
-        ("get", 0.14767002),
         ("mininum", 2.197006),
-        ("edge", 0.8631457),
-    ],
-    &[
         ("weight", 1.4328288),
-        ("get", 0.14767002),
-        ("maximum", 1.5462356),
         ("edge", 0.8631457),
+        ("get", 0.14767002),
     ],
     &[
+        ("edge", 0.8631457),
+        ("maximum", 1.5462356),
+        ("get", 0.14767002),
+        ("weight", 1.4328288),
+    ],
+    &[
+        ("degree", 0.8389508),
         ("get", 0.10489847),
         ("node", 0.6031779),
+        ("unchecked", 0.53457636),
         ("maximum", 1.0983797),
+    ],
+    &[
         ("degree", 0.8389508),
+        ("node", 0.6031779),
+        ("minimum", 1.1317363),
+        ("get", 0.10489847),
         ("unchecked", 0.53457636),
     ],
     &[
-        ("node", 0.6031779),
-        ("unchecked", 0.53457636),
-        ("degree", 0.8389508),
-        ("minimum", 1.1317363),
-        ("get", 0.10489847),
-    ],
-    &[
+        ("weighted", 0.68230283),
         ("get", 0.10489847),
         ("maximum", 1.0983797),
-        ("node", 0.6031779),
         ("degree", 0.8389508),
-        ("weighted", 0.68230283),
+        ("node", 0.6031779),
     ],
     &[
         ("weighted", 0.68230283),
+        ("node", 0.6031779),
+        ("get", 0.10489847),
         ("degree", 0.8389508),
         ("minimum", 1.1317363),
-        ("get", 0.10489847),
-        ("node", 0.6031779),
     ],
     &[
-        ("number", 0.71001655),
+        ("get", 0.10489847),
+        ("nodes", 0.72503495),
         ("singleton", 0.7492793),
         ("weighted", 0.68230283),
-        ("nodes", 0.72503495),
-        ("get", 0.10489847),
+        ("number", 0.71001655),
     ],
     &[
         ("get", 0.22028421),
-        ("selfloops", 2.090733),
         ("number", 1.4910173),
+        ("selfloops", 2.090733),
     ],
     &[
         ("get", 0.14767002),
         ("number", 0.99952036),
-        ("unique", 1.4669588),
         ("selfloops", 1.4015465),
+        ("unique", 1.4669588),
     ],
     &[
         ("features", 1.1602342),
+        ("node", 0.448418),
+        ("edges", 0.6734897),
         ("new", 1.1602342),
         ("generate", 0.7566739),
-        ("edges", 0.6734897),
         ("from", 0.22013728),
-        ("node", 0.448418),
     ],
     &[("set_name", 8.952923)],
     &[
+        ("all", 1.5462356),
+        ("set", 1.7095538),
         ("edge_types", 1.0316976),
         ("inplace", 1.3208431),
-        ("all", 1.5462356),
-        ("set", 1.7095538),
     ],
     &[
-        ("edge_types", 1.5390172),
         ("all", 2.3065703),
         ("set", 2.5501976),
+        ("edge_types", 1.5390172),
     ],
     &[
         ("all", 1.5462356),
-        ("node_types", 0.9795066),
         ("set", 1.7095538),
+        ("node_types", 0.9795066),
         ("inplace", 1.3208431),
     ],
     &[
         ("set", 2.5501976),
-        ("node_types", 1.4611621),
         ("all", 2.3065703),
+        ("node_types", 1.4611621),
     ],
     &[
+        ("node_type_ids", 2.1373978),
         ("remove", 1.7872193),
         ("inplace", 1.970345),
-        ("node_type_ids", 2.1373978),
     ],
     &[
         ("remove", 1.1980827),
-        ("node_types", 0.9795066),
-        ("singleton", 1.0547923),
         ("inplace", 1.3208431),
+        ("singleton", 1.0547923),
+        ("node_types", 0.9795066),
     ],
     &[
+        ("inplace", 1.3208431),
         ("node_types", 0.9795066),
         ("homogeneous", 1.593193),
-        ("inplace", 1.3208431),
         ("remove", 1.1980827),
     ],
     &[
-        ("edge_type_ids", 2.456705),
         ("remove", 1.7872193),
         ("inplace", 1.970345),
+        ("edge_type_ids", 2.456705),
     ],
     &[
-        ("remove", 1.1980827),
-        ("singleton", 1.0547923),
         ("inplace", 1.3208431),
         ("edge_types", 1.0316976),
+        ("singleton", 1.0547923),
+        ("remove", 1.1980827),
     ],
     &[
         ("node_type_name", 2.1883104),
-        ("inplace", 1.970345),
         ("remove", 1.7872193),
+        ("inplace", 1.970345),
     ],
     &[("node_type_id", 3.502545), ("remove", 2.8605704)],
     &[
         ("node_types", 1.4611621),
-        ("singleton", 1.5734682),
         ("remove", 1.7872193),
+        ("singleton", 1.5734682),
     ],
     &[
+        ("homogeneous", 2.3766184),
         ("node_types", 1.4611621),
         ("remove", 1.7872193),
-        ("homogeneous", 2.3766184),
     ],
-    &[("node_type_name", 3.502545), ("remove", 2.8605704)],
+    &[("remove", 2.8605704), ("node_type_name", 3.502545)],
     &[
-        ("remove", 1.7872193),
         ("edge_type_name", 2.090733),
         ("inplace", 1.970345),
+        ("remove", 1.7872193),
     ],
-    &[("edge_type_id", 2.903234), ("remove", 2.8605704)],
+    &[("remove", 2.8605704), ("edge_type_id", 2.903234)],
     &[
         ("edge_types", 1.5390172),
         ("singleton", 1.5734682),
         ("remove", 1.7872193),
     ],
-    &[("edge_type_name", 3.3463655), ("remove", 2.8605704)],
+    &[("remove", 2.8605704), ("edge_type_name", 3.3463655)],
     &[
-        ("node_types", 1.4611621),
         ("remove", 1.7872193),
+        ("node_types", 1.4611621),
         ("inplace", 1.970345),
     ],
     &[("node_types", 2.338693), ("remove", 2.8605704)],
@@ -12736,21 +13204,21 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("remove", 1.7872193),
         ("inplace", 1.970345),
     ],
-    &[("remove", 2.8605704), ("edge_types", 2.4633055)],
+    &[("edge_types", 2.4633055), ("remove", 2.8605704)],
     &[
         ("edge", 0.8631457),
-        ("remove", 1.1980827),
         ("weights", 1.3458637),
+        ("remove", 1.1980827),
         ("inplace", 1.3208431),
     ],
     &[
-        ("weights", 2.0076692),
-        ("remove", 1.7872193),
         ("edge", 1.2875829),
+        ("remove", 1.7872193),
+        ("weights", 2.0076692),
     ],
     &[
-        ("inplace", 1.3208431),
         ("edge", 0.8631457),
+        ("inplace", 1.3208431),
         ("weights", 1.3458637),
         ("divide", 2.0053594),
     ],
@@ -12760,115 +13228,115 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("weights", 2.0076692),
     ],
     &[
+        ("weights", 1.3458637),
+        ("multiply", 2.0053594),
         ("inplace", 1.3208431),
         ("edge", 0.8631457),
-        ("multiply", 2.0053594),
-        ("weights", 1.3458637),
     ],
     &[
         ("edge", 1.2875829),
-        ("multiply", 2.9914606),
         ("weights", 2.0076692),
+        ("multiply", 2.9914606),
     ],
-    &[("circles", 5.245623), ("get", 0.3525804)],
+    &[("get", 0.3525804), ("circles", 5.245623)],
     &[
-        ("get", 0.22028421),
         ("memory", 2.090733),
         ("stats", 3.277346),
+        ("get", 0.22028421),
     ],
     &[
-        ("used", 2.197006),
-        ("total", 1.4015465),
-        ("get", 0.14767002),
         ("memory", 1.4015465),
+        ("used", 2.197006),
+        ("get", 0.14767002),
+        ("total", 1.4015465),
     ],
     &[
-        ("get", 0.10489847),
-        ("requirement", 1.2678738),
-        ("total", 0.9955988),
-        ("memory", 0.9955988),
         ("nodes", 0.72503495),
+        ("requirement", 1.2678738),
+        ("memory", 0.9955988),
+        ("total", 0.9955988),
+        ("get", 0.10489847),
     ],
     &[
-        ("total", 0.57030517),
-        ("requirement", 0.7262714),
         ("memory", 0.57030517),
-        ("readable", 0.6956368),
         ("nodes", 0.41531906),
         ("human", 0.6956368),
+        ("requirement", 0.7262714),
+        ("readable", 0.6956368),
         ("get", 0.0600886),
+        ("total", 0.57030517),
     ],
     &[
-        ("get", 0.10489847),
-        ("memory", 0.9955988),
         ("total", 0.9955988),
         ("edges", 0.9059273),
+        ("get", 0.10489847),
+        ("memory", 0.9955988),
         ("requirement", 1.2678738),
     ],
     &[
-        ("readable", 0.6956368),
+        ("requirement", 0.7262714),
+        ("total", 0.57030517),
         ("edges", 0.51893896),
         ("memory", 0.57030517),
-        ("requirement", 0.7262714),
         ("human", 0.6956368),
-        ("total", 0.57030517),
+        ("readable", 0.6956368),
         ("get", 0.0600886),
     ],
     &[
         ("get", 0.07798422),
-        ("edge", 0.45582545),
+        ("total", 0.74015373),
         ("memory", 0.74015373),
+        ("edge", 0.45582545),
         ("weights", 0.7107478),
         ("requirements", 0.8697139),
-        ("total", 0.74015373),
     ],
     &[
-        ("edge", 0.27847078),
-        ("readable", 0.5515416),
-        ("total", 0.45217133),
-        ("get", 0.04764176),
-        ("memory", 0.45217133),
-        ("requirements", 0.53132164),
         ("human", 0.5515416),
+        ("readable", 0.5515416),
+        ("memory", 0.45217133),
+        ("total", 0.45217133),
+        ("edge", 0.27847078),
         ("weights", 0.43420678),
+        ("requirements", 0.53132164),
+        ("get", 0.04764176),
     ],
     &[
-        ("get", 0.10489847),
         ("requirements", 1.1698732),
+        ("get", 0.10489847),
+        ("memory", 0.9955988),
         ("total", 0.9955988),
         ("node_types", 0.69579965),
-        ("memory", 0.9955988),
     ],
     &[
-        ("memory", 0.57030517),
-        ("get", 0.0600886),
-        ("node_types", 0.3985723),
-        ("total", 0.57030517),
-        ("human", 0.6956368),
         ("requirements", 0.6701342),
         ("readable", 0.6956368),
+        ("total", 0.57030517),
+        ("node_types", 0.3985723),
+        ("human", 0.6956368),
+        ("memory", 0.57030517),
+        ("get", 0.0600886),
     ],
     &[
-        ("total", 0.9955988),
-        ("memory", 0.9955988),
         ("requirements", 1.1698732),
         ("get", 0.10489847),
         ("edge_types", 0.7328739),
+        ("memory", 0.9955988),
+        ("total", 0.9955988),
     ],
     &[
-        ("memory", 0.57030517),
-        ("readable", 0.6956368),
         ("get", 0.0600886),
-        ("requirements", 0.6701342),
-        ("human", 0.6956368),
         ("total", 0.57030517),
         ("edge_types", 0.41980943),
+        ("requirements", 0.6701342),
+        ("readable", 0.6956368),
+        ("human", 0.6956368),
+        ("memory", 0.57030517),
     ],
     &[
         ("get", 0.14767002),
         ("number", 0.99952036),
-        ("triangles", 2.0053594),
         ("of", 2.0053594),
+        ("triangles", 2.0053594),
     ],
     &[
         ("number", 1.4910173),
@@ -12878,499 +13346,499 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
     &[
         ("weighted", 0.9605066),
         ("number", 0.99952036),
-        ("get", 0.14767002),
         ("triads", 2.0053594),
+        ("get", 0.14767002),
     ],
     &[("get", 0.3525804), ("transitivity", 5.245623)],
     &[
-        ("node", 0.448418),
-        ("number", 0.5278446),
-        ("per", 1.0590261),
-        ("of", 1.0590261),
-        ("get", 0.07798422),
         ("triangles", 1.0590261),
+        ("per", 1.0590261),
+        ("number", 0.5278446),
+        ("get", 0.07798422),
+        ("of", 1.0590261),
+        ("node", 0.448418),
     ],
     &[
-        ("node", 0.6031779),
-        ("per", 1.4245217),
         ("coefficient", 1.1698732),
         ("clustering", 1.3348502),
+        ("per", 1.4245217),
         ("get", 0.10489847),
+        ("node", 0.6031779),
     ],
     &[
+        ("clustering", 2.8031526),
         ("get", 0.22028421),
         ("coefficient", 2.456705),
-        ("clustering", 2.8031526),
     ],
     &[
-        ("coefficient", 1.6468801),
         ("clustering", 1.8791251),
         ("get", 0.14767002),
+        ("coefficient", 1.6468801),
         ("average", 2.197006),
     ],
     &[
-        ("topological", 0.8165637),
         ("from", 0.22013728),
-        ("node_ids", 0.37612203),
-        ("is", 0.6734897),
-        ("synonim", 0.99236196),
         ("unchecked", 0.3974178),
+        ("node_ids", 0.37612203),
+        ("synonim", 0.99236196),
+        ("is", 0.6734897),
+        ("topological", 0.8165637),
     ],
     &[
-        ("get", 0.14767002),
         ("synonims", 2.0053594),
-        ("topological", 1.5462356),
         ("node_ids", 0.71222025),
+        ("get", 0.14767002),
+        ("topological", 1.5462356),
     ],
     &[
+        ("synonims", 2.9914606),
         ("has", 1.3928269),
         ("topological", 2.3065703),
-        ("synonims", 2.9914606),
     ],
     &[
+        ("synonim", 1.3348502),
+        ("is", 0.9059273),
+        ("from", 0.296112),
         ("node_ids", 0.50593084),
         ("topological", 1.0983797),
-        ("is", 0.9059273),
-        ("from", 0.296112),
-        ("synonim", 1.3348502),
     ],
     &[
-        ("synonim", 1.3348502),
-        ("topological", 1.0983797),
-        ("is", 0.9059273),
         ("from", 0.296112),
         ("node_names", 0.6694568),
+        ("topological", 1.0983797),
+        ("synonim", 1.3348502),
+        ("is", 0.9059273),
     ],
     &[
-        ("remappable", 3.277346),
         ("nodes", 1.5225556),
         ("are", 3.277346),
+        ("remappable", 3.277346),
     ],
     &[
-        ("unchecked", 0.7525458),
         ("node_ids", 0.71222025),
-        ("remap", 1.7848395),
         ("from", 0.4168494),
+        ("remap", 1.7848395),
+        ("unchecked", 0.7525458),
     ],
     &[
-        ("from", 0.62182796),
         ("remap", 2.6625037),
         ("node_ids", 1.0624423),
+        ("from", 0.62182796),
     ],
     &[
+        ("remap", 2.6625037),
         ("from", 0.62182796),
         ("node_names", 1.4058428),
-        ("remap", 2.6625037),
     ],
     &[
         ("from", 0.62182796),
-        ("graph", 2.0076692),
         ("remap", 2.6625037),
+        ("graph", 2.0076692),
     ],
     &[("negatives", 5.245623), ("sample", 5.245623)],
-    &[("holdout", 3.6918283), ("connected", 3.502545)],
+    &[("connected", 3.502545), ("holdout", 3.6918283)],
     &[("holdout", 3.6918283), ("random", 3.3463655)],
     &[
-        ("get", 0.10489847),
+        ("holdout", 1.0983797),
         ("indices", 1.5606592),
         ("node", 0.6031779),
-        ("holdout", 1.0983797),
+        ("get", 0.10489847),
         ("label", 1.0687375),
     ],
     &[
-        ("holdout", 1.0983797),
-        ("label", 1.0687375),
         ("labels", 1.5606592),
         ("get", 0.10489847),
         ("node", 0.6031779),
+        ("label", 1.0687375),
+        ("holdout", 1.0983797),
     ],
     &[
+        ("get", 0.10489847),
         ("label", 1.0687375),
         ("node", 0.6031779),
-        ("get", 0.10489847),
-        ("graphs", 1.4245217),
         ("holdout", 1.0983797),
+        ("graphs", 1.4245217),
     ],
     &[
-        ("holdout", 1.0983797),
-        ("edge", 0.61314183),
         ("graphs", 1.4245217),
+        ("holdout", 1.0983797),
         ("get", 0.10489847),
         ("label", 1.0687375),
+        ("edge", 0.61314183),
     ],
     &[
-        ("get", 0.22028421),
-        ("subgraph", 3.277346),
         ("random", 2.090733),
+        ("subgraph", 3.277346),
+        ("get", 0.22028421),
     ],
     &[
         ("random", 0.9955988),
-        ("get", 0.10489847),
-        ("label", 1.0687375),
-        ("holdout", 1.0983797),
         ("node", 0.6031779),
+        ("get", 0.10489847),
+        ("label", 1.0687375),
+        ("holdout", 1.0983797),
     ],
     &[
         ("kfold", 1.8791251),
-        ("label", 1.5045071),
-        ("get", 0.14767002),
         ("node", 0.8491191),
+        ("get", 0.14767002),
+        ("label", 1.5045071),
     ],
     &[
         ("random", 0.9955988),
-        ("edge", 0.61314183),
         ("holdout", 1.0983797),
         ("label", 1.0687375),
         ("get", 0.10489847),
+        ("edge", 0.61314183),
     ],
     &[
-        ("edge", 0.8631457),
-        ("label", 1.5045071),
-        ("get", 0.14767002),
         ("kfold", 1.8791251),
+        ("label", 1.5045071),
+        ("edge", 0.8631457),
+        ("get", 0.14767002),
     ],
     &[
-        ("edge", 0.8631457),
+        ("get", 0.14767002),
         ("prediction", 2.197006),
         ("kfold", 1.8791251),
-        ("get", 0.14767002),
+        ("edge", 0.8631457),
     ],
-    &[("get", 0.3525804), ("chains", 5.245623)],
+    &[("chains", 5.245623), ("get", 0.3525804)],
     &[
-        ("unchecked", 0.19701447),
-        ("breadth", 0.39387593),
+        ("from", 0.109130055),
         ("search", 0.39387593),
-        ("parallel", 0.4475566),
-        ("get", 0.038659614),
+        ("first", 0.39387593),
         ("predecessors", 0.5751703),
-        ("first", 0.39387593),
+        ("breadth", 0.39387593),
+        ("get", 0.038659614),
         ("node_id", 0.22051126),
-        ("from", 0.109130055),
+        ("unchecked", 0.19701447),
+        ("parallel", 0.4475566),
     ],
     &[
-        ("first", 0.39387593),
-        ("breadth", 0.39387593),
-        ("search", 0.39387593),
-        ("from", 0.109130055),
         ("node_ids", 0.18645737),
-        ("parallel", 0.4475566),
-        ("get", 0.038659614),
-        ("distances", 0.49194992),
-        ("unchecked", 0.19701447),
-    ],
-    &[
-        ("get", 0.038659614),
-        ("distances", 0.49194992),
         ("first", 0.39387593),
-        ("search", 0.39387593),
-        ("node_id", 0.22051126),
         ("from", 0.109130055),
-        ("unchecked", 0.19701447),
-        ("parallel", 0.4475566),
+        ("get", 0.038659614),
         ("breadth", 0.39387593),
+        ("search", 0.39387593),
+        ("distances", 0.49194992),
+        ("parallel", 0.4475566),
+        ("unchecked", 0.19701447),
     ],
     &[
-        ("unchecked", 0.19701447),
+        ("first", 0.39387593),
+        ("from", 0.109130055),
+        ("parallel", 0.4475566),
+        ("distances", 0.49194992),
+        ("breadth", 0.39387593),
         ("node_id", 0.22051126),
+        ("unchecked", 0.19701447),
+        ("get", 0.038659614),
+        ("search", 0.39387593),
+    ],
+    &[
+        ("first", 0.39387593),
+        ("unchecked", 0.19701447),
+        ("distances", 0.49194992),
+        ("breadth", 0.39387593),
+        ("search", 0.39387593),
         ("sequential", 0.5751703),
-        ("first", 0.39387593),
-        ("search", 0.39387593),
-        ("from", 0.109130055),
-        ("breadth", 0.39387593),
-        ("distances", 0.49194992),
         ("get", 0.038659614),
+        ("from", 0.109130055),
+        ("node_id", 0.22051126),
     ],
     &[
         ("node_ids", 0.28981048),
+        ("from", 0.16962074),
         ("breadth", 0.612201),
         ("unchecked", 0.3062194),
-        ("get", 0.0600886),
-        ("from", 0.16962074),
-        ("search", 0.612201),
         ("first", 0.612201),
+        ("search", 0.612201),
+        ("get", 0.0600886),
     ],
     &[
-        ("unchecked", 0.3062194),
-        ("from", 0.16962074),
         ("node_id", 0.34274042),
-        ("breadth", 0.612201),
-        ("first", 0.612201),
         ("get", 0.0600886),
         ("search", 0.612201),
+        ("first", 0.612201),
+        ("breadth", 0.612201),
+        ("from", 0.16962074),
+        ("unchecked", 0.3062194),
     ],
     &[
-        ("unchecked", 0.3062194),
-        ("get", 0.0600886),
-        ("from", 0.16962074),
+        ("shortest", 0.5279216),
         ("node_ids", 0.5462637),
-        ("path", 0.5476472),
-        ("shortest", 0.5279216),
-    ],
-    &[
+        ("from", 0.16962074),
         ("unchecked", 0.3062194),
         ("get", 0.0600886),
-        ("from", 0.16962074),
-        ("node_ids", 0.28981048),
-        ("node_names", 0.38348243),
-        ("shortest", 0.5279216),
         ("path", 0.5476472),
     ],
     &[
-        ("path", 0.7107478),
-        ("node_ids", 0.6970059),
-        ("shortest", 0.6851475),
+        ("get", 0.0600886),
+        ("node_ids", 0.28981048),
+        ("path", 0.5476472),
+        ("unchecked", 0.3062194),
+        ("from", 0.16962074),
+        ("shortest", 0.5279216),
+        ("node_names", 0.38348243),
+    ],
+    &[
         ("get", 0.07798422),
+        ("shortest", 0.6851475),
         ("from", 0.22013728),
+        ("node_ids", 0.6970059),
+        ("path", 0.7107478),
     ],
     &[
         ("path", 0.7107478),
-        ("shortest", 0.6851475),
-        ("from", 0.22013728),
-        ("get", 0.07798422),
         ("node_ids", 0.37612203),
+        ("get", 0.07798422),
+        ("from", 0.22013728),
+        ("shortest", 0.6851475),
         ("node_names", 0.4976914),
     ],
     &[
-        ("shortest", 0.6851475),
-        ("get", 0.07798422),
         ("from", 0.22013728),
-        ("node_names", 0.92229074),
+        ("shortest", 0.6851475),
         ("path", 0.7107478),
+        ("node_names", 0.92229074),
+        ("get", 0.07798422),
     ],
     &[
+        ("path", 0.43420678),
+        ("shortest", 0.41856718),
+        ("node_ids", 0.43833527),
+        ("get", 0.04764176),
         ("from", 0.13448526),
         ("k", 0.51400095),
-        ("get", 0.04764176),
-        ("node_ids", 0.43833527),
-        ("shortest", 0.41856718),
         ("unchecked", 0.24278867),
-        ("path", 0.43420678),
     ],
     &[
-        ("shortest", 0.5279216),
         ("node_ids", 0.5462637),
-        ("path", 0.5476472),
         ("k", 0.64828825),
-        ("from", 0.16962074),
         ("get", 0.0600886),
+        ("shortest", 0.5279216),
+        ("path", 0.5476472),
+        ("from", 0.16962074),
     ],
     &[
-        ("shortest", 0.5279216),
+        ("get", 0.0600886),
+        ("node_names", 0.38348243),
+        ("k", 0.64828825),
+        ("path", 0.5476472),
         ("node_ids", 0.28981048),
         ("from", 0.16962074),
-        ("get", 0.0600886),
-        ("path", 0.5476472),
-        ("k", 0.64828825),
-        ("node_names", 0.38348243),
+        ("shortest", 0.5279216),
     ],
     &[
-        ("shortest", 0.5279216),
         ("from", 0.16962074),
         ("get", 0.0600886),
-        ("node_names", 0.7228259),
+        ("shortest", 0.5279216),
         ("path", 0.5476472),
         ("k", 0.64828825),
+        ("node_names", 0.7228259),
     ],
     &[
-        ("node_id", 0.42435083),
         ("eccentricity", 0.43114883),
+        ("unchecked", 0.19701447),
+        ("node_id", 0.42435083),
+        ("and", 0.35234353),
+        ("from", 0.109130055),
         ("get", 0.038659614),
         ("distant", 0.5249978),
-        ("unchecked", 0.19701447),
         ("most", 0.4672662),
-        ("from", 0.109130055),
-        ("and", 0.35234353),
     ],
     &[
-        ("eccentricity", 0.8697139),
-        ("get", 0.07798422),
         ("from", 0.22013728),
-        ("node_id", 0.44481558),
-        ("unchecked", 0.3974178),
+        ("get", 0.07798422),
         ("weighted", 0.5072415),
+        ("node_id", 0.44481558),
+        ("eccentricity", 0.8697139),
+        ("unchecked", 0.3974178),
     ],
     &[
-        ("from", 0.13448526),
-        ("most", 0.5758305),
-        ("eccentricity", 0.53132164),
         ("and", 0.43420678),
         ("get", 0.04764176),
+        ("from", 0.13448526),
+        ("most", 0.5758305),
         ("distant", 0.6469754),
+        ("eccentricity", 0.53132164),
         ("node_id", 0.51839125),
     ],
     &[
-        ("eccentricity", 1.1698732),
-        ("weighted", 0.68230283),
         ("get", 0.10489847),
         ("node_id", 0.5983322),
+        ("weighted", 0.68230283),
         ("from", 0.296112),
+        ("eccentricity", 1.1698732),
     ],
     &[
         ("from", 0.4168494),
+        ("node_name", 1.1647122),
         ("eccentricity", 1.6468801),
         ("get", 0.14767002),
-        ("node_name", 1.1647122),
     ],
     &[
+        ("get", 0.10489847),
+        ("from", 0.296112),
         ("node_name", 0.8273618),
-        ("eccentricity", 1.1698732),
         ("weighted", 0.68230283),
-        ("get", 0.10489847),
-        ("from", 0.296112),
+        ("eccentricity", 1.1698732),
     ],
     &[
+        ("from", 0.296112),
+        ("get", 0.10489847),
+        ("dijkstra", 1.2678738),
         ("unchecked", 0.53457636),
-        ("dijkstra", 1.2678738),
-        ("get", 0.10489847),
         ("node_ids", 0.50593084),
-        ("from", 0.296112),
     ],
     &[
-        ("from", 0.296112),
         ("get", 0.10489847),
-        ("dijkstra", 1.2678738),
         ("node_id", 0.5983322),
         ("unchecked", 0.53457636),
+        ("dijkstra", 1.2678738),
+        ("from", 0.296112),
     ],
     &[
         ("unchecked", 0.24278867),
-        ("path", 0.43420678),
-        ("from", 0.13448526),
-        ("shortest", 0.41856718),
+        ("get", 0.04764176),
         ("node_ids", 0.43833527),
-        ("get", 0.04764176),
         ("weighted", 0.30988166),
-    ],
-    &[
-        ("weighted", 0.30988166),
-        ("node_names", 0.30404735),
-        ("from", 0.13448526),
         ("shortest", 0.41856718),
-        ("get", 0.04764176),
-        ("unchecked", 0.24278867),
         ("path", 0.43420678),
+        ("from", 0.13448526),
+    ],
+    &[
+        ("unchecked", 0.24278867),
+        ("weighted", 0.30988166),
+        ("get", 0.04764176),
+        ("path", 0.43420678),
+        ("shortest", 0.41856718),
+        ("from", 0.13448526),
         ("node_ids", 0.22977874),
+        ("node_names", 0.30404735),
     ],
     &[
-        ("path", 0.5476472),
-        ("weighted", 0.390841),
-        ("from", 0.16962074),
         ("node_ids", 0.5462637),
-        ("get", 0.0600886),
+        ("weighted", 0.390841),
+        ("path", 0.5476472),
         ("shortest", 0.5279216),
+        ("get", 0.0600886),
+        ("from", 0.16962074),
     ],
     &[
-        ("weighted", 0.390841),
-        ("node_ids", 0.28981048),
+        ("get", 0.0600886),
         ("node_names", 0.38348243),
-        ("shortest", 0.5279216),
+        ("node_ids", 0.28981048),
         ("path", 0.5476472),
-        ("from", 0.16962074),
-        ("get", 0.0600886),
-    ],
-    &[
-        ("node_names", 0.7228259),
         ("weighted", 0.390841),
-        ("path", 0.5476472),
-        ("shortest", 0.5279216),
-        ("get", 0.0600886),
         ("from", 0.16962074),
+        ("shortest", 0.5279216),
     ],
     &[
-        ("from", 0.22013728),
+        ("path", 0.5476472),
+        ("from", 0.16962074),
+        ("node_names", 0.7228259),
+        ("shortest", 0.5279216),
+        ("weighted", 0.390841),
+        ("get", 0.0600886),
+    ],
+    &[
+        ("node_ids", 0.37612203),
         ("breadth", 0.794527),
+        ("from", 0.22013728),
         ("search", 0.794527),
         ("get", 0.07798422),
         ("first", 0.794527),
-        ("node_ids", 0.37612203),
     ],
     &[
-        ("dijkstra", 1.7848395),
-        ("from", 0.4168494),
-        ("get", 0.14767002),
         ("node_ids", 0.71222025),
+        ("dijkstra", 1.7848395),
+        ("get", 0.14767002),
+        ("from", 0.4168494),
     ],
     &[
         ("get", 0.22028421),
         ("naive", 2.9914606),
         ("diameter", 2.8031526),
     ],
-    &[("get", 0.3525804), ("diameter", 4.4866433)],
+    &[("diameter", 4.4866433), ("get", 0.3525804)],
     &[
-        ("diameter", 1.8791251),
-        ("naive", 2.0053594),
         ("get", 0.14767002),
         ("weighted", 0.9605066),
+        ("diameter", 1.8791251),
+        ("naive", 2.0053594),
     ],
     &[
-        ("get", 0.07798422),
-        ("first", 0.794527),
-        ("from", 0.22013728),
-        ("breadth", 0.794527),
         ("node_names", 0.4976914),
         ("search", 0.794527),
+        ("from", 0.22013728),
+        ("first", 0.794527),
+        ("breadth", 0.794527),
+        ("get", 0.07798422),
     ],
     &[
-        ("dijkstra", 1.7848395),
         ("get", 0.14767002),
         ("node_names", 0.9424226),
         ("from", 0.4168494),
+        ("dijkstra", 1.7848395),
     ],
     &[
+        ("connected", 1.4669588),
         ("components", 1.7848395),
-        ("connected", 1.4669588),
-        ("number", 0.99952036),
         ("get", 0.14767002),
+        ("number", 0.99952036),
     ],
     &[
-        ("get", 0.14767002),
-        ("number", 0.99952036),
-        ("nodes", 1.0206624),
         ("connected", 1.4669588),
+        ("get", 0.14767002),
+        ("nodes", 1.0206624),
+        ("number", 0.99952036),
     ],
     &[
         ("selfloops", 0.74015373),
-        ("singleton", 0.55703354),
-        ("get", 0.07798422),
         ("with", 0.6327049),
+        ("get", 0.07798422),
         ("number", 0.5278446),
         ("nodes", 0.53900963),
+        ("singleton", 0.55703354),
     ],
     &[
+        ("get", 0.14767002),
+        ("nodes", 1.0206624),
         ("singleton", 1.0547923),
-        ("nodes", 1.0206624),
-        ("get", 0.14767002),
         ("number", 0.99952036),
     ],
     &[
-        ("nodes", 1.0206624),
         ("get", 0.14767002),
+        ("nodes", 1.0206624),
+        ("number", 0.99952036),
         ("disconnected", 1.7848395),
-        ("number", 0.99952036),
     ],
     &[
-        ("node_ids", 1.0624423),
         ("singleton", 1.5734682),
         ("get", 0.22028421),
+        ("node_ids", 1.0624423),
     ],
     &[
-        ("singleton", 1.5734682),
         ("node_names", 1.4058428),
         ("get", 0.22028421),
+        ("singleton", 1.5734682),
     ],
     &[
-        ("singleton", 0.7492793),
-        ("selfloops", 0.9955988),
-        ("with", 0.85106677),
         ("get", 0.10489847),
         ("node_ids", 0.50593084),
+        ("with", 0.85106677),
+        ("selfloops", 0.9955988),
+        ("singleton", 0.7492793),
     ],
     &[
-        ("singleton", 0.7492793),
         ("with", 0.85106677),
-        ("get", 0.10489847),
         ("node_names", 0.6694568),
+        ("get", 0.10489847),
         ("selfloops", 0.9955988),
+        ("singleton", 0.7492793),
     ],
     &[("get", 0.3525804), ("density", 5.245623)],
     &[
@@ -13381,29 +13849,29 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
     ],
     &[
         ("node", 0.8491191),
-        ("get", 0.14767002),
         ("mean", 2.0053594),
+        ("get", 0.14767002),
         ("degrees", 1.4669588),
     ],
     &[
+        ("degrees", 1.0420648),
+        ("get", 0.10489847),
         ("weighted", 0.68230283),
         ("node", 0.6031779),
         ("mean", 1.4245217),
-        ("degrees", 1.0420648),
-        ("get", 0.10489847),
     ],
     &[
-        ("number", 0.99952036),
         ("edges", 1.2753122),
+        ("number", 0.99952036),
         ("get", 0.14767002),
         ("undirected", 1.7095538),
     ],
     &[
-        ("edges", 0.9059273),
         ("number", 0.71001655),
+        ("edges", 0.9059273),
         ("undirected", 1.214394),
-        ("unique", 1.0420648),
         ("get", 0.10489847),
+        ("unique", 1.0420648),
     ],
     &[
         ("number", 1.4910173),
@@ -13411,36 +13879,36 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("edges", 1.902425),
     ],
     &[
-        ("get", 0.14767002),
-        ("edges", 1.2753122),
         ("number", 0.99952036),
+        ("edges", 1.2753122),
+        ("get", 0.14767002),
         ("unique", 1.4669588),
     ],
     &[
-        ("degrees", 1.4669588),
-        ("median", 2.0053594),
-        ("get", 0.14767002),
         ("node", 0.8491191),
+        ("median", 2.0053594),
+        ("degrees", 1.4669588),
+        ("get", 0.14767002),
     ],
     &[
         ("node", 0.6031779),
-        ("degrees", 1.0420648),
         ("get", 0.10489847),
-        ("weighted", 0.68230283),
         ("median", 1.4245217),
+        ("weighted", 0.68230283),
+        ("degrees", 1.0420648),
     ],
     &[
-        ("degree", 1.1810266),
-        ("maximum", 1.5462356),
-        ("node", 0.8491191),
         ("get", 0.14767002),
+        ("degree", 1.1810266),
+        ("node", 0.8491191),
+        ("maximum", 1.5462356),
     ],
     &[
         ("get", 0.10489847),
-        ("unchecked", 0.53457636),
-        ("central", 1.214394),
         ("node_id", 0.5983322),
+        ("central", 1.214394),
         ("most", 1.2678738),
+        ("unchecked", 0.53457636),
     ],
     &[
         ("most", 1.7848395),
@@ -13451,49 +13919,49 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
     &[
         ("node", 0.8491191),
         ("get", 0.14767002),
-        ("minimum", 1.593193),
         ("degree", 1.1810266),
+        ("minimum", 1.593193),
     ],
     &[
-        ("mode", 2.197006),
         ("degrees", 1.4669588),
         ("get", 0.14767002),
+        ("mode", 2.197006),
         ("node", 0.8491191),
     ],
     &[
-        ("rate", 1.6468801),
         ("selfloop", 2.0053594),
-        ("nodes", 1.0206624),
         ("get", 0.14767002),
+        ("nodes", 1.0206624),
+        ("rate", 1.6468801),
     ],
     &[("get_name", 8.952923)],
     &[
-        ("number", 0.99952036),
-        ("nodes", 1.0206624),
-        ("trap", 1.6468801),
         ("get", 0.14767002),
+        ("trap", 1.6468801),
+        ("nodes", 1.0206624),
+        ("number", 0.99952036),
     ],
     &[
         ("source", 2.1883104),
-        ("node_ids", 1.0624423),
         ("get", 0.22028421),
+        ("node_ids", 1.0624423),
     ],
     &[
         ("get", 0.14767002),
+        ("node_ids", 0.71222025),
         ("source", 1.4669588),
         ("directed", 1.4669588),
-        ("node_ids", 0.71222025),
     ],
     &[("get", 0.3525804), ("source_names", 5.245623)],
     &[
         ("get", 0.22028421),
-        ("destination", 2.456705),
         ("node_ids", 1.0624423),
+        ("destination", 2.456705),
     ],
     &[
-        ("node_ids", 0.71222025),
-        ("destination", 1.6468801),
         ("directed", 1.4669588),
+        ("destination", 1.6468801),
+        ("node_ids", 0.71222025),
         ("get", 0.14767002),
     ],
     &[("destination_names", 5.245623), ("get", 0.3525804)],
@@ -13504,180 +13972,180 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("ontologies", 3.277346),
         ("get", 0.22028421),
     ],
-    &[("node_ids", 1.7005138), ("get", 0.3525804)],
+    &[("get", 0.3525804), ("node_ids", 1.7005138)],
     &[("get", 0.3525804), ("edge_type_ids", 3.9321296)],
     &[
         ("get", 0.22028421),
-        ("edge_type_ids", 2.456705),
         ("unique", 2.1883104),
+        ("edge_type_ids", 2.456705),
     ],
     &[("get", 0.3525804), ("edge_type_names", 4.081771)],
     &[
-        ("get", 0.22028421),
         ("unique", 2.1883104),
+        ("get", 0.22028421),
         ("edge_type_names", 2.5501976),
     ],
     &[
         ("get", 0.22028421),
-        ("edge", 1.2875829),
         ("weights", 2.0076692),
+        ("edge", 1.2875829),
     ],
     &[
+        ("get", 0.14767002),
         ("node", 0.8491191),
-        ("indegrees", 2.0053594),
         ("weighted", 0.9605066),
-        ("get", 0.14767002),
+        ("indegrees", 2.0053594),
     ],
-    &[("node_type_ids", 3.4210558), ("get", 0.3525804)],
+    &[("get", 0.3525804), ("node_type_ids", 3.4210558)],
     &[
-        ("mask", 1.6468801),
-        ("node_types", 0.9795066),
         ("known", 1.2973874),
+        ("mask", 1.6468801),
         ("get", 0.14767002),
+        ("node_types", 0.9795066),
     ],
     &[
         ("node_types", 0.9795066),
         ("mask", 1.6468801),
-        ("get", 0.14767002),
         ("unknown", 1.254464),
+        ("get", 0.14767002),
     ],
     &[
-        ("one", 1.2678738),
-        ("encoded", 1.2678738),
-        ("get", 0.10489847),
-        ("node_types", 0.69579965),
         ("hot", 1.2678738),
+        ("one", 1.2678738),
+        ("get", 0.10489847),
+        ("encoded", 1.2678738),
+        ("node_types", 0.69579965),
     ],
     &[
+        ("hot", 0.94257),
+        ("get", 0.07798422),
         ("one", 0.94257),
         ("encoded", 0.94257),
-        ("get", 0.07798422),
-        ("hot", 0.94257),
-        ("node_types", 0.51727533),
         ("known", 0.6851475),
+        ("node_types", 0.51727533),
     ],
     &[
+        ("encoded", 1.2678738),
+        ("edge_types", 0.7328739),
         ("get", 0.10489847),
         ("one", 1.2678738),
-        ("edge_types", 0.7328739),
         ("hot", 1.2678738),
-        ("encoded", 1.2678738),
     ],
     &[
-        ("hot", 0.94257),
         ("get", 0.07798422),
         ("encoded", 0.94257),
+        ("one", 0.94257),
         ("edge_types", 0.5448373),
         ("known", 0.6851475),
-        ("one", 0.94257),
+        ("hot", 0.94257),
     ],
     &[("node_type_names", 3.4210558), ("get", 0.3525804)],
     &[
         ("node_type_ids", 2.1373978),
-        ("get", 0.22028421),
         ("unique", 2.1883104),
+        ("get", 0.22028421),
     ],
     &[
+        ("unique", 2.1883104),
+        ("get", 0.22028421),
         ("node_type_names", 2.1373978),
-        ("get", 0.22028421),
-        ("unique", 2.1883104),
     ],
     &[
+        ("number", 0.71001655),
+        ("edges", 0.9059273),
+        ("get", 0.10489847),
         ("unique", 1.0420648),
         ("directed", 1.0420648),
-        ("get", 0.10489847),
-        ("edges", 0.9059273),
-        ("number", 0.71001655),
     ],
     &[
-        ("get", 0.22028421),
-        ("mapping", 2.9914606),
         ("nodes", 1.5225556),
+        ("mapping", 2.9914606),
+        ("get", 0.22028421),
     ],
     &[
+        ("edge", 1.2875829),
         ("node_ids", 1.0624423),
-        ("edge", 1.2875829),
         ("get", 0.22028421),
     ],
     &[
-        ("directed", 1.4669588),
-        ("get", 0.14767002),
-        ("edge", 0.8631457),
         ("node_ids", 0.71222025),
-    ],
-    &[
-        ("edge", 1.2875829),
-        ("node_names", 1.4058428),
-        ("get", 0.22028421),
-    ],
-    &[
         ("get", 0.14767002),
-        ("node_names", 0.9424226),
         ("directed", 1.4669588),
         ("edge", 0.8631457),
     ],
     &[
+        ("edge", 1.2875829),
+        ("get", 0.22028421),
+        ("node_names", 1.4058428),
+    ],
+    &[
+        ("edge", 0.8631457),
+        ("directed", 1.4669588),
+        ("node_names", 0.9424226),
         ("get", 0.14767002),
+    ],
+    &[
         ("node_types", 0.9795066),
+        ("unknown", 1.254464),
+        ("get", 0.14767002),
         ("number", 0.99952036),
+    ],
+    &[
+        ("node_types", 0.9795066),
+        ("known", 1.2973874),
+        ("get", 0.14767002),
+        ("number", 0.99952036),
+    ],
+    &[
+        ("node_types", 0.9795066),
+        ("rate", 1.6468801),
+        ("get", 0.14767002),
         ("unknown", 1.254464),
     ],
     &[
         ("node_types", 0.9795066),
-        ("get", 0.14767002),
         ("known", 1.2973874),
-        ("number", 0.99952036),
-    ],
-    &[
-        ("get", 0.14767002),
-        ("node_types", 0.9795066),
-        ("unknown", 1.254464),
-        ("rate", 1.6468801),
-    ],
-    &[
-        ("known", 1.2973874),
-        ("node_types", 0.9795066),
         ("rate", 1.6468801),
         ("get", 0.14767002),
     ],
     &[
-        ("number", 0.99952036),
-        ("get", 0.14767002),
         ("minimum", 1.593193),
         ("node_types", 0.9795066),
+        ("number", 0.99952036),
+        ("get", 0.14767002),
     ],
     &[
-        ("get", 0.14767002),
-        ("maximum", 1.5462356),
         ("node_types", 0.9795066),
         ("number", 0.99952036),
+        ("maximum", 1.5462356),
+        ("get", 0.14767002),
     ],
     &[
         ("count", 1.6468801),
-        ("maximum", 1.5462356),
         ("get", 0.14767002),
+        ("maximum", 1.5462356),
         ("multilabel", 2.0053594),
     ],
     &[
-        ("get", 0.14767002),
         ("singleton", 1.0547923),
-        ("node_types", 0.9795066),
+        ("get", 0.14767002),
         ("number", 0.99952036),
+        ("node_types", 0.9795066),
     ],
     &[
+        ("node_types", 0.9795066),
         ("homogeneous", 1.593193),
-        ("node_types", 0.9795066),
         ("get", 0.14767002),
         ("number", 0.99952036),
     ],
     &[
-        ("get", 0.22028421),
-        ("node_type_ids", 2.1373978),
         ("homogeneous", 2.3766184),
+        ("node_type_ids", 2.1373978),
+        ("get", 0.22028421),
     ],
     &[
-        ("node_type_names", 2.1373978),
         ("homogeneous", 2.3766184),
+        ("node_type_names", 2.1373978),
         ("get", 0.22028421),
     ],
     &[
@@ -13686,185 +14154,185 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("get", 0.22028421),
     ],
     &[
-        ("node_type_names", 2.1373978),
         ("singleton", 1.5734682),
+        ("node_type_names", 2.1373978),
         ("get", 0.22028421),
     ],
     &[
-        ("get", 0.14767002),
         ("number", 0.99952036),
         ("edge_types", 1.0316976),
+        ("get", 0.14767002),
         ("unknown", 1.254464),
     ],
     &[
-        ("unknown", 0.89111763),
         ("get", 0.10489847),
         ("edge_types", 0.7328739),
         ("edge_ids", 1.0687375),
+        ("unknown", 0.89111763),
         ("with", 0.85106677),
     ],
     &[
-        ("with", 0.85106677),
-        ("edge_types", 0.7328739),
         ("edge_ids", 1.0687375),
+        ("edge_types", 0.7328739),
+        ("with", 0.85106677),
         ("get", 0.10489847),
         ("known", 0.92160857),
     ],
     &[
-        ("edge_types", 0.5448373),
-        ("with", 0.6327049),
-        ("unknown", 0.6624798),
         ("node_ids", 0.37612203),
         ("get", 0.07798422),
         ("edge", 0.45582545),
+        ("edge_types", 0.5448373),
+        ("with", 0.6327049),
+        ("unknown", 0.6624798),
     ],
     &[
-        ("get", 0.07798422),
         ("node_ids", 0.37612203),
-        ("edge_types", 0.5448373),
-        ("known", 0.6851475),
-        ("with", 0.6327049),
         ("edge", 0.45582545),
+        ("known", 0.6851475),
+        ("get", 0.07798422),
+        ("with", 0.6327049),
+        ("edge_types", 0.5448373),
     ],
     &[
-        ("with", 0.6327049),
+        ("get", 0.07798422),
+        ("edge", 0.45582545),
         ("edge_types", 0.5448373),
+        ("with", 0.6327049),
         ("node_names", 0.4976914),
-        ("get", 0.07798422),
         ("unknown", 0.6624798),
-        ("edge", 0.45582545),
     ],
     &[
-        ("edge", 0.45582545),
+        ("edge_types", 0.5448373),
+        ("get", 0.07798422),
         ("node_names", 0.4976914),
         ("with", 0.6327049),
-        ("edge_types", 0.5448373),
-        ("get", 0.07798422),
+        ("edge", 0.45582545),
         ("known", 0.6851475),
     ],
     &[
+        ("edge_types", 0.5448373),
+        ("with", 0.6327049),
         ("unknown", 0.6624798),
-        ("mask", 0.8697139),
-        ("edge_types", 0.5448373),
-        ("with", 0.6327049),
-        ("edge_ids", 0.794527),
         ("get", 0.07798422),
+        ("mask", 0.8697139),
+        ("edge_ids", 0.794527),
     ],
     &[
-        ("with", 0.6327049),
-        ("known", 0.6851475),
-        ("edge_ids", 0.794527),
-        ("get", 0.07798422),
-        ("edge_types", 0.5448373),
         ("mask", 0.8697139),
+        ("edge_ids", 0.794527),
+        ("edge_types", 0.5448373),
+        ("known", 0.6851475),
+        ("get", 0.07798422),
+        ("with", 0.6327049),
     ],
     &[
         ("node_ids", 0.50593084),
+        ("with", 0.85106677),
+        ("unknown", 0.89111763),
+        ("get", 0.10489847),
         ("node_types", 0.69579965),
+    ],
+    &[
+        ("with", 0.85106677),
+        ("known", 0.92160857),
+        ("node_types", 0.69579965),
+        ("node_ids", 0.50593084),
+        ("get", 0.10489847),
+    ],
+    &[
+        ("node_types", 0.69579965),
+        ("node_names", 0.6694568),
         ("get", 0.10489847),
         ("unknown", 0.89111763),
         ("with", 0.85106677),
     ],
     &[
+        ("node_type_id", 1.4669588),
+        ("node_ids", 0.71222025),
+        ("get", 0.14767002),
+        ("from", 0.4168494),
+    ],
+    &[
+        ("node_type_id", 1.4669588),
+        ("from", 0.4168494),
+        ("node_names", 0.9424226),
+        ("get", 0.14767002),
+    ],
+    &[
+        ("from", 0.4168494),
+        ("get", 0.14767002),
+        ("node_ids", 0.71222025),
+        ("node_type_name", 1.4669588),
+    ],
+    &[
+        ("node_type_name", 1.4669588),
+        ("node_names", 0.9424226),
+        ("from", 0.4168494),
+        ("get", 0.14767002),
+    ],
+    &[
+        ("node_names", 0.6694568),
+        ("node_types", 0.69579965),
         ("with", 0.85106677),
         ("known", 0.92160857),
         ("get", 0.10489847),
-        ("node_types", 0.69579965),
-        ("node_ids", 0.50593084),
     ],
     &[
-        ("node_types", 0.69579965),
-        ("with", 0.85106677),
-        ("unknown", 0.89111763),
-        ("node_names", 0.6694568),
-        ("get", 0.10489847),
-    ],
-    &[
-        ("get", 0.14767002),
-        ("node_ids", 0.71222025),
-        ("from", 0.4168494),
-        ("node_type_id", 1.4669588),
-    ],
-    &[
-        ("get", 0.14767002),
-        ("node_names", 0.9424226),
-        ("node_type_id", 1.4669588),
-        ("from", 0.4168494),
-    ],
-    &[
-        ("get", 0.14767002),
-        ("node_type_name", 1.4669588),
-        ("node_ids", 0.71222025),
-        ("from", 0.4168494),
-    ],
-    &[
-        ("get", 0.14767002),
-        ("node_names", 0.9424226),
-        ("node_type_name", 1.4669588),
-        ("from", 0.4168494),
-    ],
-    &[
-        ("node_types", 0.69579965),
-        ("known", 0.92160857),
-        ("node_names", 0.6694568),
-        ("get", 0.10489847),
-        ("with", 0.85106677),
-    ],
-    &[
-        ("get", 0.07798422),
-        ("node_ids", 0.37612203),
+        ("with", 0.6327049),
         ("node_types", 0.51727533),
         ("unknown", 0.6624798),
         ("mask", 0.8697139),
-        ("with", 0.6327049),
+        ("node_ids", 0.37612203),
+        ("get", 0.07798422),
     ],
     &[
+        ("node_types", 0.51727533),
+        ("with", 0.6327049),
+        ("node_ids", 0.37612203),
         ("known", 0.6851475),
         ("mask", 0.8697139),
         ("get", 0.07798422),
-        ("node_types", 0.51727533),
-        ("node_ids", 0.37612203),
-        ("with", 0.6327049),
     ],
     &[
         ("known", 1.2973874),
-        ("edge_types", 1.0316976),
-        ("get", 0.14767002),
         ("number", 0.99952036),
+        ("get", 0.14767002),
+        ("edge_types", 1.0316976),
     ],
     &[
         ("rate", 1.6468801),
-        ("get", 0.14767002),
         ("edge_types", 1.0316976),
         ("unknown", 1.254464),
+        ("get", 0.14767002),
     ],
     &[
-        ("get", 0.14767002),
-        ("rate", 1.6468801),
-        ("known", 1.2973874),
         ("edge_types", 1.0316976),
+        ("get", 0.14767002),
+        ("known", 1.2973874),
+        ("rate", 1.6468801),
     ],
     &[
         ("get", 0.14767002),
+        ("edge_types", 1.0316976),
+        ("number", 0.99952036),
         ("minimum", 1.593193),
-        ("number", 0.99952036),
-        ("edge_types", 1.0316976),
     ],
     &[
-        ("singleton", 1.0547923),
         ("number", 0.99952036),
         ("get", 0.14767002),
         ("edge_types", 1.0316976),
+        ("singleton", 1.0547923),
     ],
     &[
+        ("singleton", 1.5734682),
         ("get", 0.22028421),
         ("edge_type_ids", 2.456705),
-        ("singleton", 1.5734682),
     ],
     &[
+        ("get", 0.22028421),
         ("singleton", 1.5734682),
         ("edge_type_names", 2.5501976),
-        ("get", 0.22028421),
     ],
     &[
         ("get", 0.22028421),
@@ -13872,215 +14340,215 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("number", 1.4910173),
     ],
     &[
-        ("component_ids", 2.197006),
-        ("node", 0.8491191),
-        ("get", 0.14767002),
         ("connected", 1.4669588),
+        ("component_ids", 2.197006),
+        ("get", 0.14767002),
+        ("node", 0.8491191),
     ],
     &[
+        ("get", 0.14767002),
+        ("directed", 1.4669588),
         ("number", 0.99952036),
         ("edges", 1.2753122),
-        ("directed", 1.4669588),
-        ("get", 0.14767002),
     ],
     &[
-        ("edge_types", 1.5390172),
         ("get", 0.22028421),
+        ("edge_types", 1.5390172),
         ("number", 1.4910173),
     ],
     &[
         ("node_types", 1.4611621),
+        ("get", 0.22028421),
         ("number", 1.4910173),
-        ("get", 0.22028421),
     ],
     &[
-        ("get", 0.22028421),
-        ("node", 1.2666589),
         ("degrees", 2.1883104),
+        ("get", 0.22028421),
+        ("node", 1.2666589),
     ],
     &[
         ("get", 0.22028421),
-        ("node", 1.2666589),
         ("indegrees", 2.9914606),
+        ("node", 1.2666589),
     ],
     &[
         ("degrees", 1.4669588),
-        ("get", 0.14767002),
         ("weighted", 0.9605066),
+        ("get", 0.14767002),
         ("node", 0.8491191),
     ],
     &[
         ("get", 0.14767002),
-        ("singletons", 2.197006),
         ("node_ids", 0.71222025),
+        ("singletons", 2.197006),
         ("not", 1.6468801),
     ],
     &[
+        ("mapping", 2.0053594),
         ("nodes", 1.0206624),
         ("get", 0.14767002),
         ("dense", 1.8791251),
-        ("mapping", 2.0053594),
     ],
     &[
         ("edges", 1.2753122),
         ("number", 0.99952036),
-        ("get", 0.14767002),
         ("parallel", 1.7095538),
+        ("get", 0.14767002),
     ],
     &[
-        ("get", 0.14767002),
         ("cumulative", 2.197006),
         ("degrees", 1.4669588),
         ("node", 0.8491191),
+        ("get", 0.14767002),
     ],
     &[
-        ("get", 0.14767002),
         ("reciprocal", 1.7848395),
-        ("degrees", 1.4669588),
-        ("sqrt", 1.7848395),
-    ],
-    &[
-        ("number", 0.71001655),
-        ("source", 1.0420648),
-        ("get", 0.10489847),
-        ("nodes", 0.72503495),
-        ("unique", 1.0420648),
-    ],
-    &[
         ("get", 0.14767002),
-        ("counts", 1.7848395),
-        ("hashmap", 1.7848395),
+        ("sqrt", 1.7848395),
+        ("degrees", 1.4669588),
+    ],
+    &[
+        ("unique", 1.0420648),
+        ("get", 0.10489847),
+        ("source", 1.0420648),
+        ("nodes", 0.72503495),
+        ("number", 0.71001655),
+    ],
+    &[
         ("edge_type_id", 1.2159513),
+        ("hashmap", 1.7848395),
+        ("counts", 1.7848395),
+        ("get", 0.14767002),
     ],
     &[
         ("edge_type_names", 1.7095538),
-        ("get", 0.14767002),
         ("counts", 1.7848395),
         ("hashmap", 1.7848395),
+        ("get", 0.14767002),
     ],
     &[
+        ("counts", 1.7848395),
         ("get", 0.14767002),
         ("node_type_id", 1.4669588),
-        ("counts", 1.7848395),
         ("hashmap", 1.7848395),
     ],
     &[
-        ("get", 0.14767002),
-        ("hashmap", 1.7848395),
-        ("counts", 1.7848395),
         ("node_type_names", 1.4328288),
+        ("hashmap", 1.7848395),
+        ("get", 0.14767002),
+        ("counts", 1.7848395),
     ],
     &[
         ("inplace", 1.970345),
+        ("to", 2.1373978),
         ("directed", 2.1883104),
-        ("to", 2.1373978),
     ],
-    &[("to", 3.4210558), ("directed", 3.502545)],
+    &[("directed", 3.502545), ("to", 3.4210558)],
     &[
         ("triangular", 2.9914606),
-        ("to", 2.1373978),
         ("upper", 3.277346),
+        ("to", 2.1373978),
     ],
     &[
         ("to", 2.1373978),
-        ("triangular", 2.9914606),
         ("lower", 3.277346),
+        ("triangular", 2.9914606),
     ],
     &[
-        ("to", 2.1373978),
-        ("diagonal", 2.9914606),
         ("main", 3.277346),
-    ],
-    &[
         ("to", 2.1373978),
         ("diagonal", 2.9914606),
-        ("anti", 3.277346),
     ],
-    &[("to", 3.4210558), ("bidiagonal", 5.245623)],
+    &[
+        ("anti", 3.277346),
+        ("to", 2.1373978),
+        ("diagonal", 2.9914606),
+    ],
+    &[("bidiagonal", 5.245623), ("to", 3.4210558)],
     &[("to", 3.4210558), ("arrowhead", 5.245623)],
-    &[("to", 3.4210558), ("transposed", 5.245623)],
-    &[("complementary", 5.245623), ("to", 3.4210558)],
+    &[("transposed", 5.245623), ("to", 3.4210558)],
+    &[("to", 3.4210558), ("complementary", 5.245623)],
     &[("report", 6.966528)],
     &[
-        ("report", 2.5501976),
         ("overlap", 3.277346),
         ("textual", 2.9914606),
+        ("report", 2.5501976),
     ],
     &[
+        ("report", 1.214394),
+        ("from", 0.296112),
         ("node_id", 0.5983322),
-        ("node", 0.6031779),
-        ("from", 0.296112),
         ("get", 0.10489847),
-        ("report", 1.214394),
+        ("node", 0.6031779),
     ],
     &[
-        ("report", 1.214394),
-        ("get", 0.10489847),
         ("node", 0.6031779),
+        ("report", 1.214394),
         ("from", 0.296112),
+        ("get", 0.10489847),
         ("node_name", 0.8273618),
     ],
     &[("textual", 4.7880435), ("report", 4.081771)],
     &[
         ("graph", 1.3458637),
+        ("connected", 1.4669588),
         ("generate", 1.4328288),
         ("random", 1.4015465),
-        ("connected", 1.4669588),
     ],
     &[
-        ("spanning", 1.8791251),
-        ("random", 1.4015465),
         ("generate", 1.4328288),
+        ("random", 1.4015465),
+        ("spanning", 1.8791251),
         ("tree", 2.197006),
     ],
     &[
         ("generate", 2.1373978),
-        ("graph", 2.0076692),
         ("star", 2.8031526),
+        ("graph", 2.0076692),
     ],
     &[
+        ("graph", 2.0076692),
         ("generate", 2.1373978),
         ("wheel", 3.277346),
-        ("graph", 2.0076692),
     ],
     &[
-        ("graph", 2.0076692),
         ("generate", 2.1373978),
         ("circle", 3.277346),
+        ("graph", 2.0076692),
     ],
     &[
-        ("graph", 2.0076692),
         ("chain", 3.277346),
+        ("graph", 2.0076692),
         ("generate", 2.1373978),
     ],
     &[
-        ("generate", 2.1373978),
         ("graph", 2.0076692),
+        ("generate", 2.1373978),
         ("complete", 3.277346),
     ],
     &[
         ("graph", 2.0076692),
-        ("generate", 2.1373978),
         ("barbell", 3.277346),
+        ("generate", 2.1373978),
     ],
     &[
         ("graph", 2.0076692),
-        ("lollipop", 3.277346),
         ("generate", 2.1373978),
+        ("lollipop", 3.277346),
     ],
     &[
-        ("squared", 2.197006),
         ("generate", 1.4328288),
         ("lattice", 2.197006),
+        ("squared", 2.197006),
         ("graph", 1.3458637),
     ],
     &[("replace", 8.952923)],
-    &[("filter", 4.7880435), ("from_ids", 5.245623)],
-    &[("from_names", 5.245623), ("filter", 4.7880435)],
+    &[("from_ids", 5.245623), ("filter", 4.7880435)],
+    &[("filter", 4.7880435), ("from_names", 5.245623)],
     &[
-        ("node_types", 1.4611621),
-        ("drop", 2.3766184),
         ("unknown", 1.8713251),
+        ("drop", 2.3766184),
+        ("node_types", 1.4611621),
     ],
     &[
         ("edge_types", 1.5390172),
@@ -14088,16 +14556,16 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("unknown", 1.8713251),
     ],
     &[
-        ("drop", 2.3766184),
         ("singleton", 1.5734682),
         ("nodes", 1.5225556),
+        ("drop", 2.3766184),
     ],
     &[
-        ("drop", 1.1317363),
-        ("nodes", 0.72503495),
-        ("singleton", 0.7492793),
         ("with", 0.85106677),
+        ("singleton", 0.7492793),
+        ("drop", 1.1317363),
         ("selfloops", 0.9955988),
+        ("nodes", 0.72503495),
     ],
     &[
         ("nodes", 1.5225556),
@@ -14106,245 +14574,245 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
     ],
     &[("selfloops", 3.3463655), ("drop", 3.803945)],
     &[
-        ("edges", 1.902425),
         ("parallel", 2.5501976),
+        ("edges", 1.902425),
         ("drop", 2.3766184),
     ],
     &[
         ("kruskal", 2.0053594),
-        ("arborescence", 2.0053594),
         ("spanning", 1.8791251),
         ("random", 1.4015465),
+        ("arborescence", 2.0053594),
     ],
     &[
+        ("spanning", 2.8031526),
         ("arborescence", 2.9914606),
         ("kruskal", 2.9914606),
-        ("spanning", 2.8031526),
     ],
     &[
+        ("connected", 2.1883104),
         ("get", 0.22028421),
         ("components", 2.6625037),
-        ("connected", 2.1883104),
     ],
     &[("enable", 8.952923)],
-    &[("disable", 5.245623), ("all", 3.6918283)],
-    &[("is", 3.0449653), ("compatible", 5.245623)],
+    &[("all", 3.6918283), ("disable", 5.245623)],
+    &[("compatible", 5.245623), ("is", 3.0449653)],
     &[
+        ("same", 2.197006),
         ("adjacency", 1.8791251),
         ("has", 0.9336973),
-        ("same", 2.197006),
         ("matrix", 1.6468801),
     ],
     &[
-        ("approximated", 1.7095538),
         ("cover", 2.197006),
+        ("approximated", 1.7095538),
         ("set", 1.7095538),
         ("vertex", 2.197006),
     ],
     &[
+        ("random", 2.090733),
         ("get", 0.22028421),
         ("node", 1.2666589),
-        ("random", 2.090733),
     ],
     &[
-        ("random", 2.090733),
-        ("nodes", 1.5225556),
         ("get", 0.22028421),
+        ("nodes", 1.5225556),
+        ("random", 2.090733),
     ],
     &[
-        ("random", 0.74015373),
-        ("search", 0.794527),
-        ("breadth", 0.794527),
+        ("nodes", 0.53900963),
         ("first", 0.794527),
+        ("search", 0.794527),
+        ("random", 0.74015373),
         ("get", 0.07798422),
-        ("nodes", 0.53900963),
+        ("breadth", 0.794527),
     ],
     &[
-        ("random", 1.371607),
-        ("get", 0.07798422),
-        ("walk", 1.0590261),
         ("nodes", 0.53900963),
+        ("walk", 1.0590261),
+        ("get", 0.07798422),
         ("uniform", 1.1602342),
+        ("random", 1.371607),
     ],
     &[
         ("sampling", 2.197006),
-        ("node", 0.8491191),
         ("methods", 1.8791251),
         ("get", 0.14767002),
+        ("node", 0.8491191),
     ],
     &[
-        ("subsampled", 3.277346),
         ("nodes", 1.5225556),
+        ("subsampled", 3.277346),
         ("get", 0.22028421),
     ],
     &[
-        ("propagation", 1.0590261),
-        ("feature", 1.1602342),
-        ("okapi", 1.0590261),
-        ("node", 0.448418),
-        ("get", 0.07798422),
         ("bm25", 1.0590261),
+        ("propagation", 1.0590261),
+        ("node", 0.448418),
+        ("okapi", 1.0590261),
+        ("feature", 1.1602342),
+        ("get", 0.07798422),
     ],
     &[
+        ("label", 0.794527),
+        ("okapi", 1.0590261),
+        ("bm25", 1.0590261),
         ("node", 0.448418),
         ("get", 0.07798422),
         ("propagation", 1.0590261),
-        ("label", 0.794527),
-        ("bm25", 1.0590261),
-        ("okapi", 1.0590261),
     ],
     &[
         ("has", 1.3928269),
         ("default", 3.277346),
         ("graph_name", 3.277346),
     ],
-    &[("nodes", 2.4369574), ("has", 2.2293177)],
+    &[("has", 2.2293177), ("nodes", 2.4369574)],
     &[("edges", 3.0449653), ("has", 2.2293177)],
-    &[("has", 1.3928269), ("trap", 2.456705), ("nodes", 1.5225556)],
+    &[("nodes", 1.5225556), ("has", 1.3928269), ("trap", 2.456705)],
     &[("is", 3.0449653), ("directed", 3.502545)],
     &[
-        ("edge", 1.2875829),
         ("has", 1.3928269),
         ("weights", 2.0076692),
+        ("edge", 1.2875829),
     ],
     &[
         ("representing", 1.5606592),
-        ("has", 0.6632587),
         ("weights", 0.9560441),
-        ("probabilities", 1.5606592),
         ("edge", 0.61314183),
+        ("probabilities", 1.5606592),
+        ("has", 0.6632587),
     ],
     &[
-        ("nodes", 1.0206624),
         ("singleton", 1.0547923),
-        ("weighted", 0.9605066),
         ("has", 0.9336973),
+        ("weighted", 0.9605066),
+        ("nodes", 1.0206624),
     ],
     &[
-        ("edge", 0.8631457),
-        ("weights", 1.3458637),
         ("has", 0.9336973),
+        ("weights", 1.3458637),
+        ("edge", 0.8631457),
         ("constant", 2.197006),
     ],
     &[
         ("has", 0.9336973),
         ("edge", 0.8631457),
-        ("weights", 1.3458637),
         ("negative", 2.197006),
+        ("weights", 1.3458637),
     ],
     &[("has", 2.2293177), ("edge_types", 2.4633055)],
     &[("has", 2.2293177), ("selfloops", 3.3463655)],
     &[
+        ("disconnected", 2.6625037),
         ("nodes", 1.5225556),
         ("has", 1.3928269),
-        ("disconnected", 2.6625037),
     ],
     &[
-        ("has", 1.3928269),
         ("singleton", 1.5734682),
         ("nodes", 1.5225556),
+        ("has", 1.3928269),
     ],
     &[
-        ("with", 0.85106677),
         ("singleton", 0.7492793),
+        ("selfloops", 0.9955988),
         ("nodes", 0.72503495),
         ("has", 0.6632587),
-        ("selfloops", 0.9955988),
+        ("with", 0.85106677),
     ],
-    &[("is", 3.0449653), ("connected", 3.502545)],
-    &[("has", 2.2293177), ("node_types", 2.338693)],
+    &[("connected", 3.502545), ("is", 3.0449653)],
+    &[("node_types", 2.338693), ("has", 2.2293177)],
     &[
+        ("node_types", 1.4611621),
+        ("has", 1.3928269),
         ("multilabel", 2.9914606),
-        ("has", 1.3928269),
-        ("node_types", 1.4611621),
     ],
     &[
         ("node_types", 1.4611621),
-        ("unknown", 1.8713251),
         ("has", 1.3928269),
-    ],
-    &[
-        ("known", 1.9353553),
-        ("has", 1.3928269),
-        ("node_types", 1.4611621),
-    ],
-    &[
-        ("has", 1.3928269),
-        ("edge_types", 1.5390172),
         ("unknown", 1.8713251),
     ],
     &[
-        ("has", 1.3928269),
         ("known", 1.9353553),
-        ("edge_types", 1.5390172),
-    ],
-    &[
         ("node_types", 1.4611621),
-        ("homogeneous", 2.3766184),
         ("has", 1.3928269),
     ],
     &[
-        ("homogeneous", 2.3766184),
+        ("unknown", 1.8713251),
         ("edge_types", 1.5390172),
         ("has", 1.3928269),
     ],
     &[
+        ("has", 1.3928269),
+        ("edge_types", 1.5390172),
+        ("known", 1.9353553),
+    ],
+    &[
         ("node_types", 1.4611621),
+        ("has", 1.3928269),
+        ("homogeneous", 2.3766184),
+    ],
+    &[
+        ("has", 1.3928269),
+        ("homogeneous", 2.3766184),
+        ("edge_types", 1.5390172),
+    ],
+    &[
+        ("has", 1.3928269),
         ("singleton", 1.5734682),
-        ("has", 1.3928269),
+        ("node_types", 1.4611621),
     ],
     &[
+        ("has", 1.3928269),
         ("node", 1.2666589),
-        ("has", 1.3928269),
         ("oddities", 2.8031526),
     ],
     &[
         ("oddities", 2.8031526),
-        ("has", 1.3928269),
         ("node_types", 1.4611621),
+        ("has", 1.3928269),
     ],
     &[
+        ("has", 1.3928269),
+        ("edge_types", 1.5390172),
         ("singleton", 1.5734682),
-        ("edge_types", 1.5390172),
-        ("has", 1.3928269),
     ],
     &[
         ("has", 1.3928269),
-        ("edge_types", 1.5390172),
         ("oddities", 2.8031526),
+        ("edge_types", 1.5390172),
     ],
-    &[("multigraph", 4.4866433), ("is", 3.0449653)],
+    &[("is", 3.0449653), ("multigraph", 4.4866433)],
     &[
-        ("nodes", 0.3292893),
-        ("outbound", 0.5758305),
-        ("degree", 0.3810265),
-        ("node", 0.27394548),
-        ("has", 0.30123234),
-        ("decreasing", 0.6469754),
         ("sorted", 0.6062492),
+        ("degree", 0.3810265),
         ("by", 0.51400095),
+        ("decreasing", 0.6469754),
+        ("node", 0.27394548),
+        ("outbound", 0.5758305),
+        ("has", 0.30123234),
+        ("nodes", 0.3292893),
     ],
     &[
         ("has", 0.49308357),
+        ("lexicographic", 1.0590261),
         ("nodes", 0.53900963),
-        ("by", 0.8413619),
         ("order", 1.0590261),
         ("sorted", 0.99236196),
-        ("lexicographic", 1.0590261),
+        ("by", 0.8413619),
     ],
     &[
-        ("contains", 2.9914606),
         ("identity", 2.9914606),
+        ("contains", 2.9914606),
         ("matrix", 2.456705),
     ],
     &[
-        ("outbound", 0.5758305),
-        ("has", 0.30123234),
-        ("sorted", 0.6062492),
         ("by", 0.51400095),
+        ("outbound", 0.5758305),
         ("nodes", 0.3292893),
-        ("degree", 0.3810265),
+        ("sorted", 0.6062492),
         ("increasing", 0.6469754),
+        ("degree", 0.3810265),
+        ("has", 0.30123234),
         ("node", 0.27394548),
     ],
     &[
@@ -14354,41 +14822,48 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
     ],
     &[
         ("paths", 2.0053594),
+        ("get", 0.14767002),
         ("all", 1.5462356),
         ("shortest", 1.2973874),
-        ("get", 0.14767002),
     ],
     &[
+        ("weighted", 0.68230283),
         ("get", 0.10489847),
         ("paths", 1.4245217),
         ("all", 1.0983797),
-        ("weighted", 0.68230283),
         ("shortest", 0.92160857),
     ],
     &[
-        ("edge", 0.45582545),
-        ("weight", 0.7566739),
-        ("unchecked", 0.3974178),
-        ("from", 0.22013728),
         ("edge_id", 0.57686275),
         ("get", 0.07798422),
+        ("unchecked", 0.3974178),
+        ("weight", 0.7566739),
+        ("edge", 0.45582545),
+        ("from", 0.22013728),
     ],
     &[
         ("get", 0.07798422),
         ("weight", 0.7566739),
-        ("edge", 0.45582545),
-        ("node_ids", 0.37612203),
         ("unchecked", 0.3974178),
+        ("edge", 0.45582545),
         ("from", 0.22013728),
+        ("node_ids", 0.37612203),
     ],
     &[
-        ("from", 0.296112),
         ("unchecked", 0.53457636),
-        ("get", 0.10489847),
+        ("from", 0.296112),
         ("node_name", 0.8273618),
+        ("get", 0.10489847),
         ("node_id", 0.5983322),
     ],
     &[
+        ("edge_type_id", 0.8637599),
+        ("get", 0.10489847),
+        ("from", 0.296112),
+        ("edge_type_name", 0.9955988),
+        ("unchecked", 0.53457636),
+    ],
+    &[
         ("unchecked", 0.53457636),
         ("edge_type_name", 0.9955988),
         ("from", 0.296112),
@@ -14396,926 +14871,919 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("edge_type_id", 0.8637599),
     ],
     &[
-        ("edge_type_id", 0.8637599),
-        ("unchecked", 0.53457636),
-        ("edge_type_name", 0.9955988),
-        ("from", 0.296112),
-        ("get", 0.10489847),
-    ],
-    &[
-        ("get", 0.07798422),
-        ("unchecked", 0.3974178),
         ("count", 0.8697139),
-        ("edge", 0.45582545),
-        ("edge_type_id", 0.64214134),
+        ("unchecked", 0.3974178),
+        ("get", 0.07798422),
         ("from", 0.22013728),
+        ("edge_type_id", 0.64214134),
+        ("edge", 0.45582545),
     ],
     &[
-        ("edge_type_id", 0.49478436),
         ("from", 0.16962074),
-        ("unchecked", 0.3062194),
         ("get", 0.0600886),
-        ("and", 0.5476472),
         ("edge_id", 0.44448575),
         ("node_ids", 0.28981048),
+        ("and", 0.5476472),
+        ("unchecked", 0.3062194),
+        ("edge_type_id", 0.49478436),
     ],
     &[
+        ("from", 0.22013728),
+        ("unchecked", 0.3974178),
         ("get", 0.07798422),
+        ("edge_ids", 0.794527),
         ("minmax", 0.94257),
         ("node_ids", 0.37612203),
-        ("unchecked", 0.3974178),
-        ("edge_ids", 0.794527),
-        ("from", 0.22013728),
     ],
     &[
         ("node_ids", 0.50593084),
         ("edge_id", 0.7759521),
+        ("unchecked", 0.53457636),
         ("get", 0.10489847),
         ("from", 0.296112),
-        ("unchecked", 0.53457636),
     ],
     &[
+        ("edge_id", 0.7759521),
         ("unchecked", 0.53457636),
         ("node_names", 0.6694568),
-        ("edge_id", 0.7759521),
-        ("from", 0.296112),
         ("get", 0.10489847),
+        ("from", 0.296112),
     ],
     &[
-        ("source", 0.7746978),
         ("from", 0.22013728),
-        ("unchecked", 0.3974178),
+        ("source", 0.7746978),
+        ("edge_id", 0.57686275),
         ("get", 0.07798422),
+        ("node_id", 0.44481558),
+        ("unchecked", 0.3974178),
+    ],
+    &[
         ("edge_id", 0.57686275),
         ("node_id", 0.44481558),
-    ],
-    &[
-        ("get", 0.07798422),
-        ("edge_id", 0.57686275),
-        ("destination", 0.8697139),
+        ("from", 0.22013728),
         ("unchecked", 0.3974178),
-        ("node_id", 0.44481558),
-        ("from", 0.22013728),
+        ("get", 0.07798422),
+        ("destination", 0.8697139),
     ],
     &[
-        ("get", 0.10489847),
+        ("node_id", 0.5983322),
         ("edge_id", 0.7759521),
+        ("from", 0.296112),
         ("source", 1.0420648),
-        ("from", 0.296112),
-        ("node_id", 0.5983322),
+        ("get", 0.10489847),
     ],
     &[
-        ("get", 0.10489847),
-        ("edge_id", 0.7759521),
-        ("destination", 1.1698732),
         ("from", 0.296112),
+        ("get", 0.10489847),
+        ("destination", 1.1698732),
         ("node_id", 0.5983322),
+        ("edge_id", 0.7759521),
     ],
     &[
         ("from", 0.22013728),
         ("get", 0.07798422),
-        ("edge_id", 0.57686275),
         ("node_name", 0.6150821),
+        ("edge_id", 0.57686275),
         ("unchecked", 0.3974178),
         ("source", 0.7746978),
     ],
     &[
-        ("edge_id", 0.57686275),
-        ("from", 0.22013728),
-        ("unchecked", 0.3974178),
-        ("destination", 0.8697139),
         ("get", 0.07798422),
         ("node_name", 0.6150821),
+        ("unchecked", 0.3974178),
+        ("destination", 0.8697139),
+        ("edge_id", 0.57686275),
+        ("from", 0.22013728),
     ],
     &[
         ("source", 1.0420648),
-        ("get", 0.10489847),
-        ("edge_id", 0.7759521),
-        ("node_name", 0.8273618),
         ("from", 0.296112),
+        ("get", 0.10489847),
+        ("node_name", 0.8273618),
+        ("edge_id", 0.7759521),
     ],
     &[
+        ("edge_id", 0.7759521),
         ("destination", 1.1698732),
         ("node_name", 0.8273618),
         ("from", 0.296112),
-        ("edge_id", 0.7759521),
         ("get", 0.10489847),
     ],
     &[
+        ("edge_id", 1.0923406),
         ("node_names", 0.9424226),
-        ("get", 0.14767002),
         ("from", 0.4168494),
-        ("edge_id", 1.0923406),
+        ("get", 0.14767002),
     ],
     &[
-        ("from", 0.4168494),
-        ("edge_id", 1.0923406),
         ("node_ids", 0.71222025),
+        ("edge_id", 1.0923406),
+        ("from", 0.4168494),
         ("get", 0.14767002),
     ],
     &[
-        ("unchecked", 0.53457636),
-        ("get", 0.10489847),
         ("node_ids", 0.50593084),
-        ("from", 0.296112),
         ("edge_id", 0.7759521),
+        ("unchecked", 0.53457636),
+        ("get", 0.10489847),
+        ("from", 0.296112),
     ],
     &[
         ("from", 0.4168494),
         ("get", 0.14767002),
-        ("edge_id", 1.0923406),
         ("node_ids", 0.71222025),
+        ("edge_id", 1.0923406),
     ],
     &[
-        ("unchecked", 0.53457636),
         ("unique", 1.0420648),
-        ("get", 0.10489847),
+        ("unchecked", 0.53457636),
         ("node_id", 0.5983322),
+        ("get", 0.10489847),
         ("source", 1.0420648),
     ],
     &[
-        ("from", 0.16962074),
-        ("unchecked", 0.3062194),
-        ("get", 0.0600886),
-        ("edge_id", 0.44448575),
         ("edge_type_id", 0.49478436),
+        ("edge_id", 0.44448575),
+        ("get", 0.0600886),
         ("node_ids", 0.28981048),
+        ("unchecked", 0.3062194),
+        ("from", 0.16962074),
         ("and", 0.5476472),
     ],
     &[
-        ("node_ids", 0.37612203),
-        ("edge_type_id", 0.64214134),
-        ("from", 0.22013728),
-        ("and", 0.7107478),
-        ("get", 0.07798422),
         ("edge_id", 0.57686275),
+        ("from", 0.22013728),
+        ("node_ids", 0.37612203),
+        ("get", 0.07798422),
+        ("and", 0.7107478),
+        ("edge_type_id", 0.64214134),
     ],
     &[
-        ("edge_id", 0.23653924),
-        ("from", 0.09026603),
         ("and", 0.5645309),
         ("weight", 0.31026977),
         ("edge_type_id", 0.26330635),
         ("get", 0.03197698),
-        ("edge", 0.18690859),
-        ("unchecked", 0.16295889),
+        ("edge_id", 0.23653924),
         ("node_ids", 0.15422666),
+        ("unchecked", 0.16295889),
+        ("from", 0.09026603),
+        ("edge", 0.18690859),
     ],
     &[
+        ("from", 0.109130055),
         ("edge_id", 0.28597185),
-        ("get", 0.038659614),
+        ("weight", 0.37511075),
         ("and", 0.67804825),
+        ("node_ids", 0.18645737),
+        ("get", 0.038659614),
         ("edge_type_id", 0.31833282),
         ("edge", 0.22596924),
-        ("node_ids", 0.18645737),
-        ("from", 0.109130055),
-        ("weight", 0.37511075),
     ],
     &[
-        ("get", 0.10489847),
-        ("central", 1.214394),
+        ("top", 1.3348502),
         ("node_ids", 0.50593084),
         ("k", 1.1317363),
-        ("top", 1.3348502),
+        ("get", 0.10489847),
+        ("central", 1.214394),
     ],
     &[
-        ("weighted", 0.5072415),
-        ("central", 0.90281177),
-        ("get", 0.07798422),
         ("top", 0.99236196),
+        ("get", 0.07798422),
+        ("weighted", 0.5072415),
         ("node_ids", 0.37612203),
+        ("central", 0.90281177),
         ("k", 0.8413619),
     ],
     &[
-        ("from", 0.22013728),
-        ("node_id", 0.44481558),
-        ("unchecked", 0.3974178),
-        ("degree", 0.62369764),
         ("get", 0.07798422),
         ("node", 0.448418),
+        ("degree", 0.62369764),
+        ("from", 0.22013728),
+        ("unchecked", 0.3974178),
+        ("node_id", 0.44481558),
     ],
     &[
-        ("degree", 0.48057306),
+        ("unchecked", 0.3062194),
         ("node", 0.34551618),
-        ("get", 0.0600886),
+        ("degree", 0.48057306),
         ("node_id", 0.34274042),
         ("weighted", 0.390841),
         ("from", 0.16962074),
-        ("unchecked", 0.3062194),
-    ],
-    &[
-        ("from", 0.296112),
-        ("node", 0.6031779),
-        ("degree", 0.8389508),
-        ("get", 0.10489847),
-        ("node_id", 0.5983322),
-    ],
-    &[
-        ("node", 0.34551618),
-        ("comulative", 0.81600344),
-        ("unchecked", 0.3062194),
-        ("degree", 0.48057306),
         ("get", 0.0600886),
+    ],
+    &[
+        ("node_id", 0.5983322),
+        ("degree", 0.8389508),
+        ("node", 0.6031779),
+        ("get", 0.10489847),
+        ("from", 0.296112),
+    ],
+    &[
         ("from", 0.16962074),
         ("node_id", 0.34274042),
+        ("degree", 0.48057306),
+        ("get", 0.0600886),
+        ("comulative", 0.81600344),
+        ("node", 0.34551618),
+        ("unchecked", 0.3062194),
     ],
     &[
+        ("comulative", 1.0590261),
         ("from", 0.22013728),
         ("node_id", 0.44481558),
         ("node", 0.448418),
-        ("comulative", 1.0590261),
-        ("get", 0.07798422),
         ("degree", 0.62369764),
+        ("get", 0.07798422),
     ],
     &[
-        ("node_id", 0.34274042),
-        ("degree", 0.48057306),
-        ("reciprocal", 0.7262714),
-        ("from", 0.16962074),
-        ("get", 0.0600886),
         ("unchecked", 0.3062194),
+        ("get", 0.0600886),
         ("sqrt", 0.7262714),
+        ("reciprocal", 0.7262714),
+        ("degree", 0.48057306),
+        ("from", 0.16962074),
+        ("node_id", 0.34274042),
     ],
     &[
-        ("reciprocal", 0.94257),
         ("sqrt", 0.94257),
         ("from", 0.22013728),
+        ("reciprocal", 0.94257),
+        ("node_id", 0.44481558),
         ("degree", 0.62369764),
         ("get", 0.07798422),
-        ("node_id", 0.44481558),
     ],
     &[
-        ("unchecked", 0.3062194),
         ("sqrt", 0.7262714),
-        ("reciprocal", 0.7262714),
         ("degrees", 0.5969221),
         ("from", 0.16962074),
-        ("get", 0.0600886),
         ("node_ids", 0.28981048),
+        ("unchecked", 0.3062194),
+        ("reciprocal", 0.7262714),
+        ("get", 0.0600886),
     ],
     &[
-        ("from", 0.22013728),
-        ("weighted", 0.5072415),
         ("node", 0.448418),
-        ("degree", 0.62369764),
         ("node_id", 0.44481558),
+        ("weighted", 0.5072415),
+        ("from", 0.22013728),
         ("get", 0.07798422),
+        ("degree", 0.62369764),
     ],
     &[
-        ("node", 0.6031779),
-        ("node_name", 0.8273618),
-        ("get", 0.10489847),
         ("degree", 0.8389508),
+        ("node_name", 0.8273618),
         ("from", 0.296112),
+        ("node", 0.6031779),
+        ("get", 0.10489847),
     ],
     &[
-        ("node_names", 0.6694568),
+        ("central", 1.214394),
         ("top", 1.3348502),
         ("get", 0.10489847),
         ("k", 1.1317363),
-        ("central", 1.214394),
+        ("node_names", 0.6694568),
     ],
     &[
-        ("from", 0.296112),
-        ("node_id", 0.5983322),
         ("unchecked", 0.53457636),
         ("get", 0.10489847),
+        ("node_id", 0.5983322),
+        ("from", 0.296112),
         ("node_type_id", 1.0420648),
     ],
     &[
         ("from", 0.4168494),
+        ("get", 0.14767002),
         ("node_type_ids", 1.4328288),
         ("node_id", 0.84229755),
-        ("get", 0.14767002),
     ],
     &[
-        ("edge_id", 0.7759521),
-        ("get", 0.10489847),
-        ("edge_type_id", 0.8637599),
-        ("unchecked", 0.53457636),
         ("from", 0.296112),
+        ("edge_type_id", 0.8637599),
+        ("get", 0.10489847),
+        ("unchecked", 0.53457636),
+        ("edge_id", 0.7759521),
     ],
     &[
         ("from", 0.4168494),
-        ("get", 0.14767002),
         ("edge_id", 1.0923406),
         ("edge_type_id", 1.2159513),
+        ("get", 0.14767002),
     ],
     &[
         ("node_id", 0.5983322),
         ("get", 0.10489847),
-        ("unchecked", 0.53457636),
         ("from", 0.296112),
         ("node_type_names", 1.0178204),
-    ],
-    &[
-        ("from", 0.4168494),
-        ("node_type_names", 1.4328288),
-        ("node_id", 0.84229755),
-        ("get", 0.14767002),
-    ],
-    &[
-        ("node_type_names", 1.4328288),
-        ("node_name", 1.1647122),
-        ("get", 0.14767002),
-        ("from", 0.4168494),
-    ],
-    &[
-        ("from", 0.4168494),
-        ("get", 0.14767002),
-        ("edge_type_name", 1.4015465),
-        ("edge_id", 1.0923406),
-    ],
-    &[
-        ("edge_type_name", 1.4015465),
-        ("get", 0.14767002),
-        ("edge_type_id", 1.2159513),
-        ("from", 0.4168494),
-    ],
-    &[
-        ("edge", 0.61314183),
-        ("edge_id", 0.7759521),
-        ("from", 0.296112),
-        ("get", 0.10489847),
-        ("weight", 1.0178204),
-    ],
-    &[
-        ("from", 0.296112),
-        ("get", 0.10489847),
-        ("node_ids", 0.50593084),
-        ("edge", 0.61314183),
-        ("weight", 1.0178204),
-    ],
-    &[
-        ("edge_type_id", 0.49478436),
-        ("weight", 0.5830343),
-        ("get", 0.0600886),
-        ("from", 0.16962074),
-        ("edge", 0.35122377),
-        ("and", 0.5476472),
-        ("node_ids", 0.28981048),
-    ],
-    &[
-        ("weight", 0.5830343),
-        ("get", 0.0600886),
-        ("and", 0.5476472),
-        ("edge_type_name", 0.57030517),
-        ("node_names", 0.38348243),
-        ("from", 0.16962074),
-        ("edge", 0.35122377),
-    ],
-    &[
-        ("weight", 1.0178204),
-        ("from", 0.296112),
-        ("get", 0.10489847),
-        ("node_names", 0.6694568),
-        ("edge", 0.61314183),
-    ],
-    &[
-        ("node_id", 0.5983322),
-        ("from", 0.296112),
-        ("get", 0.10489847),
-        ("node_name", 0.8273618),
         ("unchecked", 0.53457636),
     ],
     &[
+        ("get", 0.14767002),
+        ("node_type_names", 1.4328288),
+        ("from", 0.4168494),
         ("node_id", 0.84229755),
-        ("node_name", 1.1647122),
-        ("from", 0.4168494),
-        ("get", 0.14767002),
     ],
     &[
-        ("node_id", 0.84229755),
-        ("from", 0.4168494),
+        ("node_type_names", 1.4328288),
         ("get", 0.14767002),
+        ("from", 0.4168494),
         ("node_name", 1.1647122),
     ],
     &[
-        ("get", 0.14767002),
-        ("from", 0.4168494),
-        ("node_ids", 0.71222025),
-        ("node_names", 0.9424226),
-    ],
-    &[
-        ("from", 0.22013728),
-        ("node_ids", 0.37612203),
-        ("get", 0.07798422),
-        ("edge", 0.84470737),
-        ("node_names", 0.4976914),
-    ],
-    &[
-        ("from", 0.22013728),
-        ("edge", 0.84470737),
-        ("node_ids", 0.37612203),
-        ("node_names", 0.4976914),
-        ("get", 0.07798422),
-    ],
-    &[
-        ("get", 0.14767002),
-        ("from", 0.4168494),
-        ("node_type_ids", 1.4328288),
-        ("node_name", 1.1647122),
-    ],
-    &[
-        ("node_type_name", 1.4669588),
-        ("get", 0.14767002),
-        ("node_name", 1.1647122),
-        ("from", 0.4168494),
-    ],
-    &[
-        ("edge_type_id", 0.8637599),
-        ("edge", 0.61314183),
-        ("from", 0.296112),
-        ("get", 0.10489847),
-        ("count", 1.1698732),
-    ],
-    &[
+        ("edge_id", 1.0923406),
         ("from", 0.4168494),
         ("edge_type_name", 1.4015465),
-        ("edge_type_id", 1.2159513),
         ("get", 0.14767002),
     ],
     &[
-        ("edge_type_name", 0.9955988),
+        ("get", 0.14767002),
+        ("edge_type_id", 1.2159513),
+        ("edge_type_name", 1.4015465),
+        ("from", 0.4168494),
+    ],
+    &[
+        ("weight", 1.0178204),
+        ("edge", 0.61314183),
         ("get", 0.10489847),
-        ("count", 1.1698732),
+        ("edge_id", 0.7759521),
+        ("from", 0.296112),
+    ],
+    &[
+        ("node_ids", 0.50593084),
+        ("edge", 0.61314183),
+        ("weight", 1.0178204),
+        ("from", 0.296112),
+        ("get", 0.10489847),
+    ],
+    &[
+        ("weight", 0.5830343),
+        ("edge_type_id", 0.49478436),
+        ("get", 0.0600886),
+        ("node_ids", 0.28981048),
+        ("from", 0.16962074),
+        ("and", 0.5476472),
+        ("edge", 0.35122377),
+    ],
+    &[
+        ("from", 0.16962074),
+        ("weight", 0.5830343),
+        ("get", 0.0600886),
+        ("node_names", 0.38348243),
+        ("edge_type_name", 0.57030517),
+        ("and", 0.5476472),
+        ("edge", 0.35122377),
+    ],
+    &[
+        ("weight", 1.0178204),
+        ("get", 0.10489847),
         ("from", 0.296112),
         ("edge", 0.61314183),
-    ],
-    &[
-        ("from", 0.4168494),
-        ("node_type_name", 1.4669588),
-        ("get", 0.14767002),
-        ("node_type_id", 1.4669588),
-    ],
-    &[
-        ("count", 1.1698732),
-        ("get", 0.10489847),
-        ("node", 0.6031779),
-        ("from", 0.296112),
-        ("node_type_id", 1.0420648),
-    ],
-    &[
-        ("node", 0.6031779),
-        ("from", 0.296112),
-        ("get", 0.10489847),
-        ("node_type_name", 1.0420648),
-        ("count", 1.1698732),
-    ],
-    &[
-        ("neighbour", 1.3348502),
-        ("node_ids", 0.50593084),
-        ("node_id", 0.5983322),
-        ("get", 0.10489847),
-        ("from", 0.296112),
-    ],
-    &[
-        ("from", 0.296112),
-        ("node_ids", 0.50593084),
-        ("neighbour", 1.3348502),
-        ("node_name", 0.8273618),
-        ("get", 0.10489847),
-    ],
-    &[
-        ("get", 0.10489847),
-        ("neighbour", 1.3348502),
-        ("from", 0.296112),
-        ("node_name", 0.8273618),
         ("node_names", 0.6694568),
     ],
     &[
-        ("get", 0.10489847),
-        ("minmax", 1.2678738),
+        ("node_id", 0.5983322),
         ("from", 0.296112),
-        ("node_ids", 0.50593084),
-        ("edge_ids", 1.0687375),
+        ("unchecked", 0.53457636),
+        ("node_name", 0.8273618),
+        ("get", 0.10489847),
     ],
     &[
-        ("get", 0.07798422),
-        ("edge_type_id", 0.64214134),
-        ("edge_id", 0.57686275),
-        ("node_ids", 0.37612203),
-        ("from", 0.22013728),
-        ("and", 0.7107478),
-    ],
-    &[
-        ("node_names", 0.9424226),
+        ("node_id", 0.84229755),
         ("get", 0.14767002),
         ("from", 0.4168494),
-        ("edge_id", 1.0923406),
+        ("node_name", 1.1647122),
+    ],
+    &[
+        ("get", 0.14767002),
+        ("from", 0.4168494),
+        ("node_name", 1.1647122),
+        ("node_id", 0.84229755),
+    ],
+    &[
+        ("get", 0.14767002),
+        ("from", 0.4168494),
+        ("node_names", 0.9424226),
+        ("node_ids", 0.71222025),
+    ],
+    &[
+        ("node_names", 0.4976914),
+        ("get", 0.07798422),
+        ("node_ids", 0.37612203),
+        ("edge", 0.84470737),
+        ("from", 0.22013728),
     ],
     &[
         ("from", 0.22013728),
+        ("edge", 0.84470737),
+        ("get", 0.07798422),
+        ("node_names", 0.4976914),
+        ("node_ids", 0.37612203),
+    ],
+    &[
+        ("node_type_ids", 1.4328288),
+        ("node_name", 1.1647122),
+        ("from", 0.4168494),
+        ("get", 0.14767002),
+    ],
+    &[
+        ("get", 0.14767002),
+        ("node_type_name", 1.4669588),
+        ("node_name", 1.1647122),
+        ("from", 0.4168494),
+    ],
+    &[
+        ("get", 0.10489847),
+        ("edge", 0.61314183),
+        ("edge_type_id", 0.8637599),
+        ("count", 1.1698732),
+        ("from", 0.296112),
+    ],
+    &[
+        ("edge_type_id", 1.2159513),
+        ("get", 0.14767002),
+        ("edge_type_name", 1.4015465),
+        ("from", 0.4168494),
+    ],
+    &[
+        ("count", 1.1698732),
+        ("edge_type_name", 0.9955988),
+        ("from", 0.296112),
+        ("edge", 0.61314183),
+        ("get", 0.10489847),
+    ],
+    &[
+        ("from", 0.4168494),
+        ("node_type_id", 1.4669588),
+        ("node_type_name", 1.4669588),
+        ("get", 0.14767002),
+    ],
+    &[
+        ("from", 0.296112),
+        ("node", 0.6031779),
+        ("node_type_id", 1.0420648),
+        ("get", 0.10489847),
+        ("count", 1.1698732),
+    ],
+    &[
+        ("from", 0.296112),
+        ("count", 1.1698732),
+        ("node", 0.6031779),
+        ("get", 0.10489847),
+        ("node_type_name", 1.0420648),
+    ],
+    &[
+        ("node_ids", 0.50593084),
+        ("get", 0.10489847),
+        ("from", 0.296112),
+        ("neighbour", 1.3348502),
+        ("node_id", 0.5983322),
+    ],
+    &[
+        ("from", 0.296112),
+        ("node_name", 0.8273618),
+        ("get", 0.10489847),
+        ("neighbour", 1.3348502),
+        ("node_ids", 0.50593084),
+    ],
+    &[
+        ("neighbour", 1.3348502),
+        ("node_names", 0.6694568),
+        ("get", 0.10489847),
+        ("node_name", 0.8273618),
+        ("from", 0.296112),
+    ],
+    &[
+        ("node_ids", 0.50593084),
+        ("minmax", 1.2678738),
+        ("edge_ids", 1.0687375),
+        ("get", 0.10489847),
+        ("from", 0.296112),
+    ],
+    &[
         ("edge_id", 0.57686275),
         ("and", 0.7107478),
-        ("edge_type_name", 0.74015373),
-        ("node_names", 0.4976914),
+        ("from", 0.22013728),
+        ("node_ids", 0.37612203),
+        ("edge_type_id", 0.64214134),
         ("get", 0.07798422),
     ],
     &[
-        ("edge_type_ids", 1.6468801),
+        ("edge_id", 1.0923406),
+        ("get", 0.14767002),
+        ("node_names", 0.9424226),
+        ("from", 0.4168494),
+    ],
+    &[
+        ("get", 0.07798422),
+        ("edge_id", 0.57686275),
+        ("and", 0.7107478),
+        ("from", 0.22013728),
+        ("edge_type_name", 0.74015373),
+        ("node_names", 0.4976914),
+    ],
+    &[
         ("from", 0.4168494),
         ("edge_type_names", 1.7095538),
         ("get", 0.14767002),
+        ("edge_type_ids", 1.6468801),
     ],
     &[
-        ("node_type_names", 1.4328288),
         ("get", 0.14767002),
         ("node_type_ids", 1.4328288),
         ("from", 0.4168494),
+        ("node_type_names", 1.4328288),
     ],
     &[
         ("multiple", 1.5606592),
         ("node_type_ids", 1.0178204),
-        ("get", 0.10489847),
-        ("node_type_names", 1.0178204),
         ("from", 0.296112),
+        ("node_type_names", 1.0178204),
+        ("get", 0.10489847),
     ],
     &[
-        ("node_id", 0.34274042),
         ("source", 0.5969221),
-        ("edge_ids", 0.612201),
-        ("get", 0.0600886),
-        ("unchecked", 0.3062194),
         ("from", 0.16962074),
         ("minmax", 0.7262714),
+        ("unchecked", 0.3062194),
+        ("edge_ids", 0.612201),
+        ("get", 0.0600886),
+        ("node_id", 0.34274042),
     ],
     &[
+        ("from", 0.22013728),
+        ("edge_ids", 0.794527),
         ("get", 0.07798422),
         ("minmax", 0.94257),
-        ("edge_ids", 0.794527),
-        ("from", 0.22013728),
-        ("source", 0.7746978),
         ("node_id", 0.44481558),
+        ("source", 0.7746978),
     ],
     &[
-        ("get", 0.14767002),
         ("node_type_id", 1.4669588),
+        ("get", 0.14767002),
         ("from", 0.4168494),
         ("node_type_name", 1.4669588),
     ],
     &[
-        ("from", 0.296112),
-        ("node_type_names", 1.0178204),
-        ("unchecked", 0.53457636),
         ("node_type_ids", 1.0178204),
         ("get", 0.10489847),
+        ("from", 0.296112),
+        ("unchecked", 0.53457636),
+        ("node_type_names", 1.0178204),
     ],
     &[
-        ("threshold", 1.1602342),
-        ("geometric", 1.1602342),
-        ("distribution", 1.1602342),
-        ("get", 0.07798422),
         ("node", 0.448418),
+        ("distribution", 1.1602342),
         ("degree", 0.62369764),
+        ("geometric", 1.1602342),
+        ("threshold", 1.1602342),
+        ("get", 0.07798422),
     ],
     &[
+        ("sparse", 1.5606592),
+        ("weighting", 1.4245217),
+        ("edge", 0.61314183),
         ("methods", 1.3348502),
         ("get", 0.10489847),
-        ("sparse", 1.5606592),
-        ("edge", 0.61314183),
-        ("weighting", 1.4245217),
     ],
     &[
-        ("edge", 0.8631457),
         ("weighting", 2.0053594),
+        ("edge", 0.8631457),
         ("get", 0.14767002),
         ("methods", 1.8791251),
     ],
-    &[("add", 5.245623), ("selfloops", 3.3463655)],
+    &[("selfloops", 3.3463655), ("add", 5.245623)],
     &[
-        ("degree", 1.7617761),
-        ("get", 0.22028421),
         ("centrality", 1.8713251),
+        ("get", 0.22028421),
+        ("degree", 1.7617761),
     ],
     &[
-        ("degree", 1.1810266),
         ("centrality", 1.254464),
         ("weighted", 0.9605066),
+        ("degree", 1.1810266),
         ("get", 0.14767002),
     ],
     &[
-        ("get", 0.07798422),
-        ("closeness", 0.94257),
         ("node_id", 0.44481558),
         ("unchecked", 0.3974178),
-        ("centrality", 0.6624798),
         ("from", 0.22013728),
+        ("closeness", 0.94257),
+        ("get", 0.07798422),
+        ("centrality", 0.6624798),
     ],
     &[
         ("closeness", 0.7262714),
-        ("centrality", 0.5104556),
-        ("unchecked", 0.3062194),
-        ("node_id", 0.34274042),
-        ("from", 0.16962074),
-        ("get", 0.0600886),
         ("weighted", 0.390841),
+        ("from", 0.16962074),
+        ("centrality", 0.5104556),
+        ("node_id", 0.34274042),
+        ("unchecked", 0.3062194),
+        ("get", 0.0600886),
     ],
     &[
-        ("centrality", 1.8713251),
         ("closeness", 2.6625037),
         ("get", 0.22028421),
+        ("centrality", 1.8713251),
     ],
     &[
-        ("get", 0.14767002),
-        ("centrality", 1.254464),
-        ("closeness", 1.7848395),
         ("weighted", 0.9605066),
+        ("closeness", 1.7848395),
+        ("centrality", 1.254464),
+        ("get", 0.14767002),
     ],
     &[
-        ("get", 0.07798422),
-        ("unchecked", 0.3974178),
+        ("node_id", 0.44481558),
         ("centrality", 0.6624798),
         ("from", 0.22013728),
+        ("unchecked", 0.3974178),
+        ("get", 0.07798422),
         ("harmonic", 0.94257),
-        ("node_id", 0.44481558),
     ],
     &[
         ("unchecked", 0.3062194),
-        ("harmonic", 0.7262714),
         ("node_id", 0.34274042),
-        ("get", 0.0600886),
         ("from", 0.16962074),
-        ("centrality", 0.5104556),
         ("weighted", 0.390841),
+        ("get", 0.0600886),
+        ("centrality", 0.5104556),
+        ("harmonic", 0.7262714),
     ],
     &[
-        ("get", 0.22028421),
-        ("harmonic", 2.6625037),
         ("centrality", 1.8713251),
+        ("harmonic", 2.6625037),
+        ("get", 0.22028421),
     ],
     &[
         ("harmonic", 1.7848395),
-        ("weighted", 0.9605066),
         ("centrality", 1.254464),
+        ("weighted", 0.9605066),
         ("get", 0.14767002),
     ],
     &[
-        ("stress", 3.277346),
         ("centrality", 1.8713251),
+        ("stress", 3.277346),
         ("get", 0.22028421),
     ],
     &[
+        ("betweenness", 2.5501976),
         ("get", 0.22028421),
         ("centrality", 1.8713251),
-        ("betweenness", 2.5501976),
     ],
     &[
         ("get", 0.07798422),
-        ("approximated", 0.90281177),
-        ("betweenness", 0.90281177),
         ("from", 0.22013728),
-        ("node_id", 0.44481558),
+        ("approximated", 0.90281177),
         ("centrality", 0.6624798),
+        ("node_id", 0.44481558),
+        ("betweenness", 0.90281177),
     ],
     &[
+        ("betweenness", 0.90281177),
+        ("centrality", 0.6624798),
+        ("from", 0.22013728),
         ("approximated", 0.90281177),
         ("get", 0.07798422),
         ("node_name", 0.6150821),
-        ("betweenness", 0.90281177),
-        ("from", 0.22013728),
-        ("centrality", 0.6624798),
     ],
     &[
         ("approximated", 0.6956368),
+        ("from", 0.16962074),
+        ("betweenness", 0.6956368),
+        ("get", 0.0600886),
+        ("weighted", 0.390841),
         ("node_id", 0.34274042),
-        ("betweenness", 0.6956368),
-        ("weighted", 0.390841),
-        ("get", 0.0600886),
-        ("from", 0.16962074),
         ("centrality", 0.5104556),
     ],
     &[
-        ("from", 0.16962074),
         ("betweenness", 0.6956368),
-        ("centrality", 0.5104556),
-        ("approximated", 0.6956368),
         ("node_name", 0.4739346),
-        ("get", 0.0600886),
+        ("from", 0.16962074),
+        ("approximated", 0.6956368),
         ("weighted", 0.390841),
+        ("get", 0.0600886),
+        ("centrality", 0.5104556),
     ],
     &[
-        ("eigenvector", 2.9914606),
         ("get", 0.22028421),
         ("centrality", 1.8713251),
+        ("eigenvector", 2.9914606),
     ],
     &[
-        ("eigenvector", 2.0053594),
-        ("weighted", 0.9605066),
         ("get", 0.14767002),
+        ("weighted", 0.9605066),
         ("centrality", 1.254464),
+        ("eigenvector", 2.0053594),
     ],
-    &[("dot", 5.245623), ("to", 3.4210558)],
-    &[("stars", 5.245623), ("get", 0.3525804)],
+    &[("to", 3.4210558), ("dot", 5.245623)],
+    &[("get", 0.3525804), ("stars", 5.245623)],
     &[
-        ("detection", 1.5606592),
-        ("louvain", 1.5606592),
         ("undirected", 1.214394),
-        ("community", 1.3348502),
+        ("louvain", 1.5606592),
+        ("detection", 1.5606592),
         ("get", 0.10489847),
+        ("community", 1.3348502),
     ],
     &[
-        ("node", 0.34551618),
-        ("memberships", 0.81600344),
-        ("from", 0.16962074),
-        ("community", 0.76463723),
         ("directed", 0.5969221),
         ("get", 0.0600886),
-        ("modularity", 0.81600344),
-    ],
-    &[
-        ("undirected", 0.6956368),
-        ("modularity", 0.81600344),
-        ("get", 0.0600886),
-        ("memberships", 0.81600344),
-        ("from", 0.16962074),
         ("node", 0.34551618),
         ("community", 0.76463723),
+        ("from", 0.16962074),
+        ("modularity", 0.81600344),
+        ("memberships", 0.81600344),
     ],
     &[
-        ("preferential", 1.0420648),
+        ("node", 0.34551618),
+        ("from", 0.16962074),
+        ("get", 0.0600886),
+        ("memberships", 0.81600344),
+        ("undirected", 0.6956368),
+        ("community", 0.76463723),
+        ("modularity", 0.81600344),
+    ],
+    &[
+        ("attachment", 1.0420648),
         ("get", 0.10489847),
         ("unchecked", 0.53457636),
+        ("preferential", 1.0420648),
         ("minimum", 1.1317363),
-        ("attachment", 1.0420648),
     ],
     &[
+        ("unchecked", 0.53457636),
+        ("preferential", 1.0420648),
+        ("attachment", 1.0420648),
         ("get", 0.10489847),
         ("maximum", 1.0983797),
-        ("unchecked", 0.53457636),
-        ("preferential", 1.0420648),
-        ("attachment", 1.0420648),
     ],
     &[
-        ("preferential", 0.7746978),
-        ("weighted", 0.5072415),
-        ("attachment", 0.7746978),
         ("unchecked", 0.3974178),
         ("minimum", 0.8413619),
-        ("get", 0.07798422),
-    ],
-    &[
-        ("unchecked", 0.3974178),
+        ("preferential", 0.7746978),
         ("weighted", 0.5072415),
-        ("preferential", 0.7746978),
-        ("attachment", 0.7746978),
-        ("maximum", 0.8165637),
         ("get", 0.07798422),
+        ("attachment", 0.7746978),
     ],
     &[
-        ("node_ids", 0.37612203),
-        ("from", 0.22013728),
+        ("get", 0.07798422),
+        ("preferential", 0.7746978),
         ("unchecked", 0.3974178),
-        ("get", 0.07798422),
-        ("preferential", 0.7746978),
+        ("maximum", 0.8165637),
+        ("weighted", 0.5072415),
         ("attachment", 0.7746978),
     ],
     &[
-        ("from", 0.296112),
+        ("attachment", 0.7746978),
+        ("unchecked", 0.3974178),
+        ("from", 0.22013728),
+        ("get", 0.07798422),
+        ("node_ids", 0.37612203),
+        ("preferential", 0.7746978),
+    ],
+    &[
         ("node_ids", 0.50593084),
-        ("attachment", 1.0420648),
+        ("from", 0.296112),
         ("get", 0.10489847),
         ("preferential", 1.0420648),
+        ("attachment", 1.0420648),
     ],
     &[
+        ("get", 0.10489847),
         ("preferential", 1.0420648),
         ("attachment", 1.0420648),
         ("from", 0.296112),
         ("node_names", 0.6694568),
-        ("get", 0.10489847),
     ],
     &[
         ("preferential", 0.5969221),
-        ("attachment", 0.5969221),
-        ("get", 0.0600886),
-        ("from", 0.16962074),
-        ("node_ids", 0.28981048),
         ("unchecked", 0.3062194),
         ("weighted", 0.390841),
+        ("attachment", 0.5969221),
+        ("from", 0.16962074),
+        ("node_ids", 0.28981048),
+        ("get", 0.0600886),
     ],
     &[
-        ("get", 0.07798422),
-        ("from", 0.22013728),
         ("node_ids", 0.37612203),
-        ("preferential", 0.7746978),
-        ("attachment", 0.7746978),
         ("weighted", 0.5072415),
-    ],
-    &[
         ("from", 0.22013728),
         ("get", 0.07798422),
+        ("attachment", 0.7746978),
         ("preferential", 0.7746978),
-        ("weighted", 0.5072415),
+    ],
+    &[
+        ("preferential", 0.7746978),
         ("node_names", 0.4976914),
+        ("from", 0.22013728),
+        ("get", 0.07798422),
         ("attachment", 0.7746978),
+        ("weighted", 0.5072415),
     ],
     &[
-        ("coefficient", 0.8697139),
         ("get", 0.07798422),
         ("node_ids", 0.37612203),
-        ("from", 0.22013728),
         ("jaccard", 0.99236196),
+        ("coefficient", 0.8697139),
         ("unchecked", 0.3974178),
+        ("from", 0.22013728),
     ],
     &[
-        ("get", 0.10489847),
         ("from", 0.296112),
-        ("coefficient", 1.1698732),
+        ("get", 0.10489847),
         ("jaccard", 1.3348502),
+        ("coefficient", 1.1698732),
         ("node_ids", 0.50593084),
     ],
     &[
-        ("coefficient", 1.1698732),
-        ("get", 0.10489847),
         ("from", 0.296112),
         ("node_names", 0.6694568),
+        ("get", 0.10489847),
+        ("coefficient", 1.1698732),
         ("jaccard", 1.3348502),
     ],
     &[
-        ("from", 0.16962074),
-        ("node_ids", 0.28981048),
-        ("get", 0.0600886),
-        ("index", 0.612201),
-        ("adar", 0.76463723),
-        ("unchecked", 0.3062194),
         ("adamic", 0.76463723),
+        ("adar", 0.76463723),
+        ("from", 0.16962074),
+        ("get", 0.0600886),
+        ("node_ids", 0.28981048),
+        ("unchecked", 0.3062194),
+        ("index", 0.612201),
     ],
     &[
-        ("node_ids", 0.37612203),
-        ("adar", 0.99236196),
-        ("index", 0.794527),
-        ("adamic", 0.99236196),
         ("get", 0.07798422),
         ("from", 0.22013728),
+        ("adamic", 0.99236196),
+        ("adar", 0.99236196),
+        ("node_ids", 0.37612203),
+        ("index", 0.794527),
     ],
     &[
-        ("get", 0.07798422),
-        ("adar", 0.99236196),
-        ("index", 0.794527),
         ("adamic", 0.99236196),
+        ("get", 0.07798422),
+        ("index", 0.794527),
         ("node_names", 0.4976914),
         ("from", 0.22013728),
+        ("adar", 0.99236196),
     ],
     &[
+        ("unchecked", 0.3062194),
+        ("resource", 0.6701342),
+        ("node_ids", 0.28981048),
         ("get", 0.0600886),
         ("index", 0.612201),
         ("from", 0.16962074),
-        ("unchecked", 0.3062194),
         ("allocation", 0.6701342),
-        ("resource", 0.6701342),
-        ("node_ids", 0.28981048),
     ],
     &[
-        ("resource", 0.53132164),
         ("from", 0.13448526),
-        ("node_ids", 0.22977874),
-        ("index", 0.4853888),
+        ("resource", 0.53132164),
         ("unchecked", 0.24278867),
         ("weighted", 0.30988166),
-        ("allocation", 0.53132164),
         ("get", 0.04764176),
+        ("node_ids", 0.22977874),
+        ("index", 0.4853888),
+        ("allocation", 0.53132164),
     ],
     &[
-        ("allocation", 0.8697139),
+        ("get", 0.07798422),
+        ("resource", 0.8697139),
         ("node_ids", 0.37612203),
         ("index", 0.794527),
-        ("from", 0.22013728),
-        ("get", 0.07798422),
-        ("resource", 0.8697139),
-    ],
-    &[
-        ("index", 0.794527),
-        ("get", 0.07798422),
-        ("node_names", 0.4976914),
-        ("resource", 0.8697139),
         ("allocation", 0.8697139),
         ("from", 0.22013728),
     ],
     &[
-        ("index", 0.612201),
-        ("allocation", 0.6701342),
-        ("node_ids", 0.28981048),
-        ("resource", 0.6701342),
-        ("weighted", 0.390841),
-        ("get", 0.0600886),
-        ("from", 0.16962074),
+        ("from", 0.22013728),
+        ("node_names", 0.4976914),
+        ("get", 0.07798422),
+        ("resource", 0.8697139),
+        ("index", 0.794527),
+        ("allocation", 0.8697139),
     ],
     &[
-        ("node_names", 0.38348243),
+        ("from", 0.16962074),
+        ("resource", 0.6701342),
+        ("get", 0.0600886),
+        ("allocation", 0.6701342),
+        ("node_ids", 0.28981048),
+        ("weighted", 0.390841),
+        ("index", 0.612201),
+    ],
+    &[
         ("resource", 0.6701342),
         ("get", 0.0600886),
         ("index", 0.612201),
+        ("node_names", 0.38348243),
         ("allocation", 0.6701342),
         ("weighted", 0.390841),
         ("from", 0.16962074),
     ],
     &[
         ("unchecked", 0.3062194),
-        ("edge", 0.35122377),
-        ("all", 0.6291807),
-        ("metrics", 0.8939866),
         ("get", 0.0600886),
+        ("all", 0.6291807),
         ("node_ids", 0.28981048),
+        ("metrics", 0.8939866),
+        ("edge", 0.35122377),
         ("from", 0.16962074),
     ],
     &[("csv", 5.245623), ("from", 0.99527943)],
@@ -15408,75 +15876,75 @@ impl PyObjectProtocol for Graph {
 ///
 #[pyclass]
 #[derive(Debug, Clone)]
-pub struct Circle {
-    pub inner: graph::Circle,
+pub struct Star {
+    pub inner: graph::Star,
 }
 
-impl From<graph::Circle> for Circle {
-    fn from(val: graph::Circle) -> Circle {
-        Circle { inner: val }
+impl From<graph::Star> for Star {
+    fn from(val: graph::Star) -> Star {
+        Star { inner: val }
     }
 }
 
-impl From<Circle> for graph::Circle {
-    fn from(val: Circle) -> graph::Circle {
+impl From<Star> for graph::Star {
+    fn from(val: Star) -> graph::Star {
         val.inner
     }
 }
 
 #[pymethods]
-impl Circle {
+impl Star {
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
-    /// Return the first node ID of the Circle
+    /// Return the central node ID of the Star
     pub fn get_root_node_id(&self) -> NodeT {
         self.inner.get_root_node_id().into()
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
-    /// Return the first node name of the circle
+    /// Return the central node name of the star
     pub fn get_root_node_name(&self) -> String {
         self.inner.get_root_node_name().into()
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
-    /// Return length of the Circle
+    /// Return length of the Star
     pub fn len(&self) -> NodeT {
         self.inner.len().into()
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
-    /// Return the node IDs of the nodes composing the Circle
-    pub fn get_circle_node_ids(&self) -> Py<PyArray1<NodeT>> {
+    /// Return the node IDs of the nodes composing the Star
+    pub fn get_star_node_ids(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(gil, self.inner.get_circle_node_ids(), NodeT)
+        to_ndarray_1d!(gil, self.inner.get_star_node_ids(), NodeT)
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self, k)"]
-    /// Return the first `k` node IDs of the nodes composing the Circle.
+    /// Return the first `k` node IDs of the nodes composing the star.
     ///
     /// Parameters
     /// ----------
     ///
-    pub fn get_first_k_circle_node_ids(&self, k: usize) -> Py<PyArray1<NodeT>> {
+    pub fn get_first_k_star_node_ids(&self, k: usize) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(gil, self.inner.get_first_k_circle_node_ids(k.into()), NodeT)
+        to_ndarray_1d!(gil, self.inner.get_first_k_star_node_ids(k.into()), NodeT)
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self, k)"]
-    /// Return the first `k` node names of the nodes composing the Circle.
+    /// Return the first `k` node names of the nodes composing the star.
     ///
     /// Parameters
     /// ----------
     ///
-    pub fn get_first_k_circle_node_names(&self, k: usize) -> Vec<String> {
+    pub fn get_first_k_star_node_names(&self, k: usize) -> Vec<String> {
         self.inner
-            .get_first_k_circle_node_names(k.into())
+            .get_first_k_star_node_names(k.into())
             .into_iter()
             .map(|x| x.into())
             .collect::<Vec<_>>()
@@ -15484,86 +15952,86 @@ impl Circle {
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
-    /// Return the node names of the nodes composing the Circle
-    pub fn get_circle_node_names(&self) -> Vec<String> {
+    /// Return the node names of the nodes composing the star
+    pub fn get_star_node_names(&self) -> Vec<String> {
         self.inner
-            .get_circle_node_names()
+            .get_star_node_names()
             .into_iter()
             .map(|x| x.into())
             .collect::<Vec<_>>()
     }
 }
 
-pub const CIRCLE_METHODS_NAMES: &[&str] = &[
+pub const STAR_METHODS_NAMES: &[&str] = &[
     "get_root_node_id",
     "get_root_node_name",
     "len",
-    "get_circle_node_ids",
-    "get_first_k_circle_node_ids",
-    "get_first_k_circle_node_names",
-    "get_circle_node_names",
+    "get_star_node_ids",
+    "get_first_k_star_node_ids",
+    "get_first_k_star_node_names",
+    "get_star_node_names",
 ];
 
-pub const CIRCLE_TERMS: &[&str] = &[
+pub const STAR_TERMS: &[&str] = &[
     "get",
     "root",
     "node_id",
     "node_name",
     "len",
-    "circle",
+    "star",
     "node_ids",
     "first",
     "k",
     "node_names",
 ];
 
-pub const CIRCLE_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
+pub const STAR_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
     &[
-        ("node_id", 0.8037883),
         ("root", 0.55850667),
+        ("node_id", 0.8037883),
         ("get", 0.099701576),
     ],
     &[
         ("get", 0.099701576),
-        ("node_name", 0.8037883),
         ("root", 0.55850667),
+        ("node_name", 0.8037883),
     ],
     &[("len", 2.4368012)],
     &[
         ("get", 0.099701576),
         ("node_ids", 0.55850667),
-        ("circle", 0.2762709),
+        ("star", 0.2762709),
     ],
     &[
-        ("get", 0.04539644),
-        ("first", 0.25430104),
-        ("circle", 0.12579255),
         ("node_ids", 0.25430104),
-        ("k", 0.25430104),
-    ],
-    &[
         ("get", 0.04539644),
-        ("first", 0.25430104),
+        ("star", 0.12579255),
         ("k", 0.25430104),
-        ("node_names", 0.25430104),
-        ("circle", 0.12579255),
+        ("first", 0.25430104),
     ],
     &[
-        ("get", 0.099701576),
+        ("first", 0.25430104),
+        ("get", 0.04539644),
+        ("star", 0.12579255),
+        ("node_names", 0.25430104),
+        ("k", 0.25430104),
+    ],
+    &[
+        ("star", 0.2762709),
         ("node_names", 0.55850667),
-        ("circle", 0.2762709),
+        ("get", 0.099701576),
     ],
 ];
 
 #[pymethods]
-impl Circle {
+impl Star {
     fn _repr_html_(&self) -> String {
         self.__repr__()
     }
 }
 
 #[pyproto]
-impl PyObjectProtocol for Circle {
+impl PyObjectProtocol for Star {
     fn __str__(&'p self) -> String {
         self.inner.to_string()
     }
@@ -15585,7 +16053,7 @@ impl PyObjectProtocol for Circle {
         let tokens_expanded = tokens
             .iter()
             .map(|token| {
-                let mut similarities = CIRCLE_TERMS
+                let mut similarities = STAR_TERMS
                     .iter()
                     .map(move |term| (*term, jaro_winkler(token, term) as f64))
                     .collect::<Vec<(&str, f64)>>();
@@ -15600,14 +16068,14 @@ impl PyObjectProtocol for Circle {
         // Compute the weighted ranking of each method ("document")
         // where the conribution of each term is weighted by it's similarity
         // with the query tokens
-        let mut doc_scores = CIRCLE_TFIDF_FREQUENCIES
+        let mut doc_scores = STAR_TFIDF_FREQUENCIES
             .par_iter()
             .enumerate()
             // for each document
             .map(|(id, frequencies_doc)| {
                 (
                     id,
-                    (jaro_winkler(&name, CIRCLE_METHODS_NAMES[id]).exp() - 1.0)
+                    (jaro_winkler(&name, STAR_METHODS_NAMES[id]).exp() - 1.0)
                         * frequencies_doc
                             .iter()
                             .map(|(term, weight)| {
@@ -15630,7 +16098,351 @@ impl PyObjectProtocol for Circle {
             doc_scores
                 .iter()
                 .map(|(method_id, _)| {
-                    format!("* '{}'", CIRCLE_METHODS_NAMES[*method_id].to_string())
+                    format!("* '{}'", STAR_METHODS_NAMES[*method_id].to_string())
+                })
+                .take(10)
+                .collect::<Vec<String>>()
+                .join("\n"),
+        )))
+    }
+}
+
+///
+#[pyclass]
+#[derive(Debug, Clone)]
+pub struct ShortestPathsDjkstra {
+    pub inner: graph::ShortestPathsDjkstra,
+}
+
+impl From<graph::ShortestPathsDjkstra> for ShortestPathsDjkstra {
+    fn from(val: graph::ShortestPathsDjkstra) -> ShortestPathsDjkstra {
+        ShortestPathsDjkstra { inner: val }
+    }
+}
+
+impl From<ShortestPathsDjkstra> for graph::ShortestPathsDjkstra {
+    fn from(val: ShortestPathsDjkstra) -> graph::ShortestPathsDjkstra {
+        val.inner
+    }
+}
+
+#[pymethods]
+impl ShortestPathsDjkstra {
+    #[automatically_generated_binding]
+    #[text_signature = "($self, node_id)"]
+    ///
+    pub fn has_path_to_node_id(&self, node_id: NodeT) -> PyResult<bool> {
+        Ok(pe!(self.inner.has_path_to_node_id(node_id.into()))?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, node_id)"]
+    ///
+    pub fn get_distance_from_node_id(&self, node_id: NodeT) -> PyResult<f64> {
+        Ok(pe!(self.inner.get_distance_from_node_id(node_id.into()))?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, node_id)"]
+    ///
+    pub fn get_parent_from_node_id(&self, node_id: NodeT) -> PyResult<Option<NodeT>> {
+        Ok(pe!(self.inner.get_parent_from_node_id(node_id.into()))?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, dst_node_id, distance)"]
+    /// Returns node at just before given distance on minimum path to given destination node.
+    ///
+    /// Parameters
+    /// ----------
+    /// dst_node_id: int
+    ///     The node to start computing predecessors from.
+    /// distance: float
+    ///     The distance to aim for.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the predecessors vector was not requested.
+    ///
+    pub fn get_point_at_given_distance_on_shortest_path(
+        &self,
+        dst_node_id: NodeT,
+        distance: f64,
+    ) -> PyResult<NodeT> {
+        Ok(pe!(self
+            .inner
+            .get_point_at_given_distance_on_shortest_path(dst_node_id.into(), distance.into()))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, dst_node_id)"]
+    ///
+    pub fn get_median_point(&self, dst_node_id: NodeT) -> PyResult<NodeT> {
+        Ok(pe!(self.inner.get_median_point(dst_node_id.into()))?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    ///
+    pub fn get_eccentricity(&self) -> f64 {
+        self.inner.get_eccentricity().into()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    ///
+    pub fn get_most_distant_node(&self) -> NodeT {
+        self.inner.get_most_distant_node().into()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Returns the number of shortest paths starting from the root node
+    pub fn get_number_of_shortest_paths(&self) -> NodeT {
+        self.inner.get_number_of_shortest_paths().into()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, node_id)"]
+    /// Returns the number of shortest paths passing through the given node.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     The node id.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If neither predecessors nor distances were computed for this BFS.
+    /// ValueError
+    ///     If the given node ID does not exist in the current graph instance.
+    ///
+    pub fn get_number_of_shortest_paths_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
+        Ok(pe!(self
+            .inner
+            .get_number_of_shortest_paths_from_node_id(node_id.into()))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, source_node_id)"]
+    /// Return list of successors of a given node.
+    ///
+    /// Parameters
+    /// ----------
+    /// source_node_id: int
+    ///     The node for which to return the successors.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given node ID does not exist in the graph.
+    ///
+    pub fn get_successors_from_node_id(
+        &self,
+        source_node_id: NodeT,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self
+                    .inner
+                    .get_successors_from_node_id(source_node_id.into()))?,
+                NodeT
+            )
+        })
+    }
+}
+
+pub const SHORTESTPATHSDJKSTRA_METHODS_NAMES: &[&str] = &[
+    "has_path_to_node_id",
+    "get_distance_from_node_id",
+    "get_parent_from_node_id",
+    "get_point_at_given_distance_on_shortest_path",
+    "get_median_point",
+    "get_eccentricity",
+    "get_most_distant_node",
+    "get_number_of_shortest_paths",
+    "get_number_of_shortest_paths_from_node_id",
+    "get_successors_from_node_id",
+];
+
+pub const SHORTESTPATHSDJKSTRA_TERMS: &[&str] = &[
+    "has",
+    "path",
+    "to",
+    "node_id",
+    "get",
+    "distance",
+    "from",
+    "parent",
+    "point",
+    "at",
+    "given",
+    "on",
+    "shortest",
+    "median",
+    "eccentricity",
+    "most",
+    "distant",
+    "node",
+    "number",
+    "of",
+    "paths",
+    "successors",
+];
+
+pub const SHORTESTPATHSDJKSTRA_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
+    &[
+        ("node_id", 0.26659507),
+        ("to", 0.76631933),
+        ("has", 0.76631933),
+        ("path", 0.56984794),
+    ],
+    &[
+        ("node_id", 0.26659507),
+        ("get", 0.05638595),
+        ("distance", 0.56984794),
+        ("from", 0.3437761),
+    ],
+    &[
+        ("node_id", 0.26659507),
+        ("parent", 0.76631933),
+        ("get", 0.05638595),
+        ("from", 0.3437761),
+    ],
+    &[
+        ("point", 0.18520057),
+        ("given", 0.24905378),
+        ("at", 0.24905378),
+        ("shortest", 0.14314154),
+        ("get", 0.018325433),
+        ("path", 0.18520057),
+        ("distance", 0.18520057),
+        ("on", 0.24905378),
+    ],
+    &[
+        ("get", 0.08377341),
+        ("median", 1.1385316),
+        ("point", 0.8466312),
+    ],
+    &[("get", 0.13327588), ("eccentricity", 1.8113003)],
+    &[
+        ("get", 0.05638595),
+        ("node", 0.76631933),
+        ("most", 0.76631933),
+        ("distant", 0.76631933),
+    ],
+    &[
+        ("number", 0.40591905),
+        ("shortest", 0.3137349),
+        ("paths", 0.40591905),
+        ("of", 0.40591905),
+        ("get", 0.04016533),
+    ],
+    &[
+        ("of", 0.23332357),
+        ("from", 0.14075872),
+        ("get", 0.023087163),
+        ("number", 0.23332357),
+        ("paths", 0.23332357),
+        ("node_id", 0.10915705),
+        ("shortest", 0.1803358),
+    ],
+    &[
+        ("successors", 0.76631933),
+        ("node_id", 0.26659507),
+        ("from", 0.3437761),
+        ("get", 0.05638595),
+    ],
+];
+
+#[pymethods]
+impl ShortestPathsDjkstra {
+    fn _repr_html_(&self) -> String {
+        self.__repr__()
+    }
+}
+
+#[pyproto]
+impl PyObjectProtocol for ShortestPathsDjkstra {
+    fn __str__(&'p self) -> String {
+        self.inner.to_string()
+    }
+    fn __repr__(&'p self) -> String {
+        self.__str__()
+    }
+
+    fn __hash__(&'p self) -> PyResult<isize> {
+        let mut hasher = DefaultHasher::new();
+        self.inner.hash(&mut hasher);
+        Ok(hasher.finish() as isize)
+    }
+
+    fn __getattr__(&self, name: String) -> PyResult<()> {
+        // split the query into tokens
+        let tokens = split_words(&name);
+
+        // compute the similarities between all the terms and tokens
+        let tokens_expanded = tokens
+            .iter()
+            .map(|token| {
+                let mut similarities = SHORTESTPATHSDJKSTRA_TERMS
+                    .iter()
+                    .map(move |term| (*term, jaro_winkler(token, term) as f64))
+                    .collect::<Vec<(&str, f64)>>();
+
+                similarities.sort_by(|(_, a), (_, b)| b.partial_cmp(a).unwrap());
+
+                similarities.into_iter().take(1)
+            })
+            .flatten()
+            .collect::<Vec<(&str, f64)>>();
+
+        // Compute the weighted ranking of each method ("document")
+        // where the conribution of each term is weighted by it's similarity
+        // with the query tokens
+        let mut doc_scores = SHORTESTPATHSDJKSTRA_TFIDF_FREQUENCIES
+            .par_iter()
+            .enumerate()
+            // for each document
+            .map(|(id, frequencies_doc)| {
+                (
+                    id,
+                    (jaro_winkler(&name, SHORTESTPATHSDJKSTRA_METHODS_NAMES[id]).exp() - 1.0)
+                        * frequencies_doc
+                            .iter()
+                            .map(|(term, weight)| {
+                                match tokens_expanded.iter().find(|(token, _)| token == term) {
+                                    Some((_, similarity)) => (similarity.exp() - 1.0) * weight,
+                                    None => 0.0,
+                                }
+                            })
+                            .sum::<f64>(),
+                )
+            })
+            .collect::<Vec<(usize, f64)>>();
+
+        // sort the scores in a decreasing order
+        doc_scores.sort_by(|(_, d1), (_, d2)| d2.partial_cmp(d1).unwrap());
+
+        Err(PyAttributeError::new_err(format!(
+            "The method '{}' does not exists, did you mean one of the following?\n{}",
+            &name,
+            doc_scores
+                .iter()
+                .map(|(method_id, _)| {
+                    format!(
+                        "* '{}'",
+                        SHORTESTPATHSDJKSTRA_METHODS_NAMES[*method_id].to_string()
+                    )
                 })
                 .take(10)
                 .collect::<Vec<String>>()
@@ -15902,76 +16714,76 @@ pub const SHORTESTPATHSRESULTBFS_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("node_id", 0.37825358),
     ],
     &[
-        ("from", 0.45390818),
         ("distance", 0.8680945),
         ("get", 0.039721824),
         ("node_id", 0.37825358),
+        ("from", 0.45390818),
     ],
     &[
         ("from", 0.45390818),
-        ("get", 0.039721824),
-        ("parent", 0.8680945),
         ("node_id", 0.37825358),
+        ("parent", 0.8680945),
+        ("get", 0.039721824),
     ],
     &[
-        ("shortest", 0.18492344),
         ("path", 0.22352391),
-        ("get", 0.01618278),
+        ("shortest", 0.18492344),
         ("unchecked", 0.3536641),
         ("point", 0.18492344),
-        ("on", 0.27520415),
         ("kth", 0.27520415),
+        ("get", 0.01618278),
+        ("on", 0.27520415),
     ],
     &[
-        ("get", 0.020996379),
-        ("shortest", 0.23992926),
-        ("on", 0.35706416),
-        ("kth", 0.35706416),
         ("point", 0.23992926),
         ("path", 0.29001153),
+        ("kth", 0.35706416),
+        ("on", 0.35706416),
+        ("shortest", 0.23992926),
+        ("get", 0.020996379),
     ],
     &[
-        ("point", 0.6765762),
-        ("median", 1.0068847),
         ("get", 0.059207667),
+        ("median", 1.0068847),
+        ("point", 0.6765762),
     ],
     &[
-        ("median", 0.27520415),
-        ("point", 0.18492344),
-        ("distant", 0.27520415),
-        ("node", 0.27520415),
         ("most", 0.27520415),
+        ("median", 0.27520415),
         ("get", 0.01618278),
+        ("distant", 0.27520415),
         ("to", 0.27520415),
+        ("point", 0.18492344),
+        ("node", 0.27520415),
     ],
-    &[("eccentricity", 2.0685964), ("get", 0.09465378)],
+    &[("get", 0.09465378), ("eccentricity", 2.0685964)],
     &[
-        ("distant", 0.6755088),
-        ("most", 0.6755088),
         ("node", 0.6755088),
+        ("distant", 0.6755088),
         ("get", 0.039721824),
+        ("most", 0.6755088),
     ],
     &[
-        ("number", 0.48011124),
-        ("paths", 0.48011124),
-        ("shortest", 0.32261077),
-        ("get", 0.028231896),
         ("of", 0.48011124),
+        ("shortest", 0.32261077),
+        ("number", 0.48011124),
+        ("get", 0.028231896),
+        ("paths", 0.48011124),
     ],
     &[
-        ("of", 0.27520415),
-        ("number", 0.27520415),
+        ("from", 0.18492344),
+        ("node_id", 0.15410155),
         ("shortest", 0.18492344),
         ("get", 0.01618278),
-        ("node_id", 0.15410155),
-        ("from", 0.18492344),
+        ("number", 0.27520415),
         ("paths", 0.27520415),
+        ("of", 0.27520415),
     ],
     &[
-        ("successors", 0.8680945),
-        ("from", 0.45390818),
         ("node_id", 0.37825358),
         ("get", 0.039721824),
+        ("successors", 0.8680945),
+        ("from", 0.45390818),
     ],
     &[("get", 0.09465378), ("distances", 2.0685964)],
     &[("predecessors", 2.0685964), ("get", 0.09465378)],
@@ -16064,816 +16876,9 @@ impl PyObjectProtocol for ShortestPathsResultBFS {
     }
 }
 
-///
-#[pyclass]
-#[derive(Debug, Clone)]
-pub struct ShortestPathsDjkstra {
-    pub inner: graph::ShortestPathsDjkstra,
-}
-
-impl From<graph::ShortestPathsDjkstra> for ShortestPathsDjkstra {
-    fn from(val: graph::ShortestPathsDjkstra) -> ShortestPathsDjkstra {
-        ShortestPathsDjkstra { inner: val }
-    }
-}
-
-impl From<ShortestPathsDjkstra> for graph::ShortestPathsDjkstra {
-    fn from(val: ShortestPathsDjkstra) -> graph::ShortestPathsDjkstra {
-        val.inner
-    }
-}
-
-#[pymethods]
-impl ShortestPathsDjkstra {
-    #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
-    ///
-    pub fn has_path_to_node_id(&self, node_id: NodeT) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_path_to_node_id(node_id.into()))?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
-    ///
-    pub fn get_distance_from_node_id(&self, node_id: NodeT) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_distance_from_node_id(node_id.into()))?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
-    ///
-    pub fn get_parent_from_node_id(&self, node_id: NodeT) -> PyResult<Option<NodeT>> {
-        Ok(pe!(self.inner.get_parent_from_node_id(node_id.into()))?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self, dst_node_id, distance)"]
-    /// Returns node at just before given distance on minimum path to given destination node.
-    ///
-    /// Parameters
-    /// ----------
-    /// dst_node_id: int
-    ///     The node to start computing predecessors from.
-    /// distance: float
-    ///     The distance to aim for.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the predecessors vector was not requested.
-    ///
-    pub fn get_point_at_given_distance_on_shortest_path(
-        &self,
-        dst_node_id: NodeT,
-        distance: f64,
-    ) -> PyResult<NodeT> {
-        Ok(pe!(self
-            .inner
-            .get_point_at_given_distance_on_shortest_path(dst_node_id.into(), distance.into()))?
-        .into())
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self, dst_node_id)"]
-    ///
-    pub fn get_median_point(&self, dst_node_id: NodeT) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_median_point(dst_node_id.into()))?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    ///
-    pub fn get_eccentricity(&self) -> f64 {
-        self.inner.get_eccentricity().into()
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    ///
-    pub fn get_most_distant_node(&self) -> NodeT {
-        self.inner.get_most_distant_node().into()
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    /// Returns the number of shortest paths starting from the root node
-    pub fn get_number_of_shortest_paths(&self) -> NodeT {
-        self.inner.get_number_of_shortest_paths().into()
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
-    /// Returns the number of shortest paths passing through the given node.
-    ///
-    /// Parameters
-    /// ----------
-    /// node_id: int
-    ///     The node id.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If neither predecessors nor distances were computed for this BFS.
-    /// ValueError
-    ///     If the given node ID does not exist in the current graph instance.
-    ///
-    pub fn get_number_of_shortest_paths_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
-        Ok(pe!(self
-            .inner
-            .get_number_of_shortest_paths_from_node_id(node_id.into()))?
-        .into())
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self, source_node_id)"]
-    /// Return list of successors of a given node.
-    ///
-    /// Parameters
-    /// ----------
-    /// source_node_id: int
-    ///     The node for which to return the successors.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the given node ID does not exist in the graph.
-    ///
-    pub fn get_successors_from_node_id(
-        &self,
-        source_node_id: NodeT,
-    ) -> PyResult<Py<PyArray1<NodeT>>> {
-        Ok({
-            let gil = pyo3::Python::acquire_gil();
-            to_ndarray_1d!(
-                gil,
-                pe!(self
-                    .inner
-                    .get_successors_from_node_id(source_node_id.into()))?,
-                NodeT
-            )
-        })
-    }
-}
-
-pub const SHORTESTPATHSDJKSTRA_METHODS_NAMES: &[&str] = &[
-    "has_path_to_node_id",
-    "get_distance_from_node_id",
-    "get_parent_from_node_id",
-    "get_point_at_given_distance_on_shortest_path",
-    "get_median_point",
-    "get_eccentricity",
-    "get_most_distant_node",
-    "get_number_of_shortest_paths",
-    "get_number_of_shortest_paths_from_node_id",
-    "get_successors_from_node_id",
-];
-
-pub const SHORTESTPATHSDJKSTRA_TERMS: &[&str] = &[
-    "has",
-    "path",
-    "to",
-    "node_id",
-    "get",
-    "distance",
-    "from",
-    "parent",
-    "point",
-    "at",
-    "given",
-    "on",
-    "shortest",
-    "median",
-    "eccentricity",
-    "most",
-    "distant",
-    "node",
-    "number",
-    "of",
-    "paths",
-    "successors",
-];
-
-pub const SHORTESTPATHSDJKSTRA_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
-    &[
-        ("to", 0.76631933),
-        ("path", 0.56984794),
-        ("has", 0.76631933),
-        ("node_id", 0.26659507),
-    ],
-    &[
-        ("distance", 0.56984794),
-        ("node_id", 0.26659507),
-        ("from", 0.3437761),
-        ("get", 0.05638595),
-    ],
-    &[
-        ("get", 0.05638595),
-        ("node_id", 0.26659507),
-        ("parent", 0.76631933),
-        ("from", 0.3437761),
-    ],
-    &[
-        ("shortest", 0.14314154),
-        ("point", 0.18520057),
-        ("path", 0.18520057),
-        ("on", 0.24905378),
-        ("at", 0.24905378),
-        ("given", 0.24905378),
-        ("distance", 0.18520057),
-        ("get", 0.018325433),
-    ],
-    &[
-        ("get", 0.08377341),
-        ("point", 0.8466312),
-        ("median", 1.1385316),
-    ],
-    &[("eccentricity", 1.8113003), ("get", 0.13327588)],
-    &[
-        ("get", 0.05638595),
-        ("node", 0.76631933),
-        ("most", 0.76631933),
-        ("distant", 0.76631933),
-    ],
-    &[
-        ("get", 0.04016533),
-        ("of", 0.40591905),
-        ("paths", 0.40591905),
-        ("shortest", 0.3137349),
-        ("number", 0.40591905),
-    ],
-    &[
-        ("node_id", 0.10915705),
-        ("of", 0.23332357),
-        ("get", 0.023087163),
-        ("number", 0.23332357),
-        ("shortest", 0.1803358),
-        ("paths", 0.23332357),
-        ("from", 0.14075872),
-    ],
-    &[
-        ("node_id", 0.26659507),
-        ("successors", 0.76631933),
-        ("from", 0.3437761),
-        ("get", 0.05638595),
-    ],
-];
-
-#[pymethods]
-impl ShortestPathsDjkstra {
-    fn _repr_html_(&self) -> String {
-        self.__repr__()
-    }
-}
-
-#[pyproto]
-impl PyObjectProtocol for ShortestPathsDjkstra {
-    fn __str__(&'p self) -> String {
-        self.inner.to_string()
-    }
-    fn __repr__(&'p self) -> String {
-        self.__str__()
-    }
-
-    fn __hash__(&'p self) -> PyResult<isize> {
-        let mut hasher = DefaultHasher::new();
-        self.inner.hash(&mut hasher);
-        Ok(hasher.finish() as isize)
-    }
-
-    fn __getattr__(&self, name: String) -> PyResult<()> {
-        // split the query into tokens
-        let tokens = split_words(&name);
-
-        // compute the similarities between all the terms and tokens
-        let tokens_expanded = tokens
-            .iter()
-            .map(|token| {
-                let mut similarities = SHORTESTPATHSDJKSTRA_TERMS
-                    .iter()
-                    .map(move |term| (*term, jaro_winkler(token, term) as f64))
-                    .collect::<Vec<(&str, f64)>>();
-
-                similarities.sort_by(|(_, a), (_, b)| b.partial_cmp(a).unwrap());
-
-                similarities.into_iter().take(1)
-            })
-            .flatten()
-            .collect::<Vec<(&str, f64)>>();
-
-        // Compute the weighted ranking of each method ("document")
-        // where the conribution of each term is weighted by it's similarity
-        // with the query tokens
-        let mut doc_scores = SHORTESTPATHSDJKSTRA_TFIDF_FREQUENCIES
-            .par_iter()
-            .enumerate()
-            // for each document
-            .map(|(id, frequencies_doc)| {
-                (
-                    id,
-                    (jaro_winkler(&name, SHORTESTPATHSDJKSTRA_METHODS_NAMES[id]).exp() - 1.0)
-                        * frequencies_doc
-                            .iter()
-                            .map(|(term, weight)| {
-                                match tokens_expanded.iter().find(|(token, _)| token == term) {
-                                    Some((_, similarity)) => (similarity.exp() - 1.0) * weight,
-                                    None => 0.0,
-                                }
-                            })
-                            .sum::<f64>(),
-                )
-            })
-            .collect::<Vec<(usize, f64)>>();
-
-        // sort the scores in a decreasing order
-        doc_scores.sort_by(|(_, d1), (_, d2)| d2.partial_cmp(d1).unwrap());
-
-        Err(PyAttributeError::new_err(format!(
-            "The method '{}' does not exists, did you mean one of the following?\n{}",
-            &name,
-            doc_scores
-                .iter()
-                .map(|(method_id, _)| {
-                    format!(
-                        "* '{}'",
-                        SHORTESTPATHSDJKSTRA_METHODS_NAMES[*method_id].to_string()
-                    )
-                })
-                .take(10)
-                .collect::<Vec<String>>()
-                .join("\n"),
-        )))
-    }
-}
-
-///
-#[pyclass]
-#[derive(Debug, Clone)]
-pub struct Chain {
-    pub inner: graph::Chain,
-}
-
-impl From<graph::Chain> for Chain {
-    fn from(val: graph::Chain) -> Chain {
-        Chain { inner: val }
-    }
-}
-
-impl From<Chain> for graph::Chain {
-    fn from(val: Chain) -> graph::Chain {
-        val.inner
-    }
-}
-
-#[pymethods]
-impl Chain {
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    /// Return the first node ID of the chain
-    pub fn get_root_node_id(&self) -> NodeT {
-        self.inner.get_root_node_id().into()
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    /// Return the first node name of the chain
-    pub fn get_root_node_name(&self) -> String {
-        self.inner.get_root_node_name().into()
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    /// Return length of the chain
-    pub fn len(&self) -> NodeT {
-        self.inner.len().into()
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    /// Return the node IDs of the nodes composing the chain
-    pub fn get_chain_node_ids(&self) -> Py<PyArray1<NodeT>> {
-        let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(gil, self.inner.get_chain_node_ids(), NodeT)
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self, k)"]
-    /// Return the first `k` node IDs of the nodes composing the chain.
-    ///
-    /// Parameters
-    /// ----------
-    ///
-    pub fn get_first_k_chain_node_ids(&self, k: usize) -> Py<PyArray1<NodeT>> {
-        let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(gil, self.inner.get_first_k_chain_node_ids(k.into()), NodeT)
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self, k)"]
-    /// Return the first `k` node names of the nodes composing the chain.
-    ///
-    /// Parameters
-    /// ----------
-    ///
-    pub fn get_first_k_chain_node_names(&self, k: usize) -> Vec<String> {
-        self.inner
-            .get_first_k_chain_node_names(k.into())
-            .into_iter()
-            .map(|x| x.into())
-            .collect::<Vec<_>>()
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    /// Return the node names of the nodes composing the chain
-    pub fn get_chain_node_names(&self) -> Vec<String> {
-        self.inner
-            .get_chain_node_names()
-            .into_iter()
-            .map(|x| x.into())
-            .collect::<Vec<_>>()
-    }
-}
-
-pub const CHAIN_METHODS_NAMES: &[&str] = &[
-    "get_root_node_id",
-    "get_root_node_name",
-    "len",
-    "get_chain_node_ids",
-    "get_first_k_chain_node_ids",
-    "get_first_k_chain_node_names",
-    "get_chain_node_names",
-];
-
-pub const CHAIN_TERMS: &[&str] = &[
-    "get",
-    "root",
-    "node_id",
-    "node_name",
-    "len",
-    "chain",
-    "node_ids",
-    "first",
-    "k",
-    "node_names",
-];
-
-pub const CHAIN_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
-    &[
-        ("root", 0.55850667),
-        ("node_id", 0.8037883),
-        ("get", 0.099701576),
-    ],
-    &[
-        ("get", 0.099701576),
-        ("root", 0.55850667),
-        ("node_name", 0.8037883),
-    ],
-    &[("len", 2.4368012)],
-    &[
-        ("get", 0.099701576),
-        ("node_ids", 0.55850667),
-        ("chain", 0.2762709),
-    ],
-    &[
-        ("node_ids", 0.25430104),
-        ("first", 0.25430104),
-        ("get", 0.04539644),
-        ("k", 0.25430104),
-        ("chain", 0.12579255),
-    ],
-    &[
-        ("chain", 0.12579255),
-        ("get", 0.04539644),
-        ("first", 0.25430104),
-        ("k", 0.25430104),
-        ("node_names", 0.25430104),
-    ],
-    &[
-        ("node_names", 0.55850667),
-        ("chain", 0.2762709),
-        ("get", 0.099701576),
-    ],
-];
-
-#[pymethods]
-impl Chain {
-    fn _repr_html_(&self) -> String {
-        self.__repr__()
-    }
-}
-
-#[pyproto]
-impl PyObjectProtocol for Chain {
-    fn __str__(&'p self) -> String {
-        self.inner.to_string()
-    }
-    fn __repr__(&'p self) -> String {
-        self.__str__()
-    }
-
-    fn __hash__(&'p self) -> PyResult<isize> {
-        let mut hasher = DefaultHasher::new();
-        self.inner.hash(&mut hasher);
-        Ok(hasher.finish() as isize)
-    }
-
-    fn __getattr__(&self, name: String) -> PyResult<()> {
-        // split the query into tokens
-        let tokens = split_words(&name);
-
-        // compute the similarities between all the terms and tokens
-        let tokens_expanded = tokens
-            .iter()
-            .map(|token| {
-                let mut similarities = CHAIN_TERMS
-                    .iter()
-                    .map(move |term| (*term, jaro_winkler(token, term) as f64))
-                    .collect::<Vec<(&str, f64)>>();
-
-                similarities.sort_by(|(_, a), (_, b)| b.partial_cmp(a).unwrap());
-
-                similarities.into_iter().take(1)
-            })
-            .flatten()
-            .collect::<Vec<(&str, f64)>>();
-
-        // Compute the weighted ranking of each method ("document")
-        // where the conribution of each term is weighted by it's similarity
-        // with the query tokens
-        let mut doc_scores = CHAIN_TFIDF_FREQUENCIES
-            .par_iter()
-            .enumerate()
-            // for each document
-            .map(|(id, frequencies_doc)| {
-                (
-                    id,
-                    (jaro_winkler(&name, CHAIN_METHODS_NAMES[id]).exp() - 1.0)
-                        * frequencies_doc
-                            .iter()
-                            .map(|(term, weight)| {
-                                match tokens_expanded.iter().find(|(token, _)| token == term) {
-                                    Some((_, similarity)) => (similarity.exp() - 1.0) * weight,
-                                    None => 0.0,
-                                }
-                            })
-                            .sum::<f64>(),
-                )
-            })
-            .collect::<Vec<(usize, f64)>>();
-
-        // sort the scores in a decreasing order
-        doc_scores.sort_by(|(_, d1), (_, d2)| d2.partial_cmp(d1).unwrap());
-
-        Err(PyAttributeError::new_err(format!(
-            "The method '{}' does not exists, did you mean one of the following?\n{}",
-            &name,
-            doc_scores
-                .iter()
-                .map(|(method_id, _)| {
-                    format!("* '{}'", CHAIN_METHODS_NAMES[*method_id].to_string())
-                })
-                .take(10)
-                .collect::<Vec<String>>()
-                .join("\n"),
-        )))
-    }
-}
-
-///
-#[pyclass]
-#[derive(Debug, Clone)]
-pub struct Star {
-    pub inner: graph::Star,
-}
-
-impl From<graph::Star> for Star {
-    fn from(val: graph::Star) -> Star {
-        Star { inner: val }
-    }
-}
-
-impl From<Star> for graph::Star {
-    fn from(val: Star) -> graph::Star {
-        val.inner
-    }
-}
-
-#[pymethods]
-impl Star {
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    /// Return the central node ID of the Star
-    pub fn get_root_node_id(&self) -> NodeT {
-        self.inner.get_root_node_id().into()
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    /// Return the central node name of the star
-    pub fn get_root_node_name(&self) -> String {
-        self.inner.get_root_node_name().into()
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    /// Return length of the Star
-    pub fn len(&self) -> NodeT {
-        self.inner.len().into()
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    /// Return the node IDs of the nodes composing the Star
-    pub fn get_star_node_ids(&self) -> Py<PyArray1<NodeT>> {
-        let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(gil, self.inner.get_star_node_ids(), NodeT)
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self, k)"]
-    /// Return the first `k` node IDs of the nodes composing the star.
-    ///
-    /// Parameters
-    /// ----------
-    ///
-    pub fn get_first_k_star_node_ids(&self, k: usize) -> Py<PyArray1<NodeT>> {
-        let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(gil, self.inner.get_first_k_star_node_ids(k.into()), NodeT)
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self, k)"]
-    /// Return the first `k` node names of the nodes composing the star.
-    ///
-    /// Parameters
-    /// ----------
-    ///
-    pub fn get_first_k_star_node_names(&self, k: usize) -> Vec<String> {
-        self.inner
-            .get_first_k_star_node_names(k.into())
-            .into_iter()
-            .map(|x| x.into())
-            .collect::<Vec<_>>()
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    /// Return the node names of the nodes composing the star
-    pub fn get_star_node_names(&self) -> Vec<String> {
-        self.inner
-            .get_star_node_names()
-            .into_iter()
-            .map(|x| x.into())
-            .collect::<Vec<_>>()
-    }
-}
-
-pub const STAR_METHODS_NAMES: &[&str] = &[
-    "get_root_node_id",
-    "get_root_node_name",
-    "len",
-    "get_star_node_ids",
-    "get_first_k_star_node_ids",
-    "get_first_k_star_node_names",
-    "get_star_node_names",
-];
-
-pub const STAR_TERMS: &[&str] = &[
-    "get",
-    "root",
-    "node_id",
-    "node_name",
-    "len",
-    "star",
-    "node_ids",
-    "first",
-    "k",
-    "node_names",
-];
-
-pub const STAR_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
-    &[
-        ("node_id", 0.8037883),
-        ("get", 0.099701576),
-        ("root", 0.55850667),
-    ],
-    &[
-        ("root", 0.55850667),
-        ("get", 0.099701576),
-        ("node_name", 0.8037883),
-    ],
-    &[("len", 2.4368012)],
-    &[
-        ("get", 0.099701576),
-        ("star", 0.2762709),
-        ("node_ids", 0.55850667),
-    ],
-    &[
-        ("star", 0.12579255),
-        ("node_ids", 0.25430104),
-        ("first", 0.25430104),
-        ("get", 0.04539644),
-        ("k", 0.25430104),
-    ],
-    &[
-        ("first", 0.25430104),
-        ("node_names", 0.25430104),
-        ("star", 0.12579255),
-        ("k", 0.25430104),
-        ("get", 0.04539644),
-    ],
-    &[
-        ("star", 0.2762709),
-        ("node_names", 0.55850667),
-        ("get", 0.099701576),
-    ],
-];
-
-#[pymethods]
-impl Star {
-    fn _repr_html_(&self) -> String {
-        self.__repr__()
-    }
-}
-
-#[pyproto]
-impl PyObjectProtocol for Star {
-    fn __str__(&'p self) -> String {
-        self.inner.to_string()
-    }
-    fn __repr__(&'p self) -> String {
-        self.__str__()
-    }
-
-    fn __hash__(&'p self) -> PyResult<isize> {
-        let mut hasher = DefaultHasher::new();
-        self.inner.hash(&mut hasher);
-        Ok(hasher.finish() as isize)
-    }
-
-    fn __getattr__(&self, name: String) -> PyResult<()> {
-        // split the query into tokens
-        let tokens = split_words(&name);
-
-        // compute the similarities between all the terms and tokens
-        let tokens_expanded = tokens
-            .iter()
-            .map(|token| {
-                let mut similarities = STAR_TERMS
-                    .iter()
-                    .map(move |term| (*term, jaro_winkler(token, term) as f64))
-                    .collect::<Vec<(&str, f64)>>();
-
-                similarities.sort_by(|(_, a), (_, b)| b.partial_cmp(a).unwrap());
-
-                similarities.into_iter().take(1)
-            })
-            .flatten()
-            .collect::<Vec<(&str, f64)>>();
-
-        // Compute the weighted ranking of each method ("document")
-        // where the conribution of each term is weighted by it's similarity
-        // with the query tokens
-        let mut doc_scores = STAR_TFIDF_FREQUENCIES
-            .par_iter()
-            .enumerate()
-            // for each document
-            .map(|(id, frequencies_doc)| {
-                (
-                    id,
-                    (jaro_winkler(&name, STAR_METHODS_NAMES[id]).exp() - 1.0)
-                        * frequencies_doc
-                            .iter()
-                            .map(|(term, weight)| {
-                                match tokens_expanded.iter().find(|(token, _)| token == term) {
-                                    Some((_, similarity)) => (similarity.exp() - 1.0) * weight,
-                                    None => 0.0,
-                                }
-                            })
-                            .sum::<f64>(),
-                )
-            })
-            .collect::<Vec<(usize, f64)>>();
-
-        // sort the scores in a decreasing order
-        doc_scores.sort_by(|(_, d1), (_, d2)| d2.partial_cmp(d1).unwrap());
-
-        Err(PyAttributeError::new_err(format!(
-            "The method '{}' does not exists, did you mean one of the following?\n{}",
-            &name,
-            doc_scores
-                .iter()
-                .map(|(method_id, _)| {
-                    format!("* '{}'", STAR_METHODS_NAMES[*method_id].to_string())
-                })
-                .take(10)
-                .collect::<Vec<String>>()
-                .join("\n"),
-        )))
-    }
+#[pymodule]
+fn utils(_py: Python, _m: &PyModule) -> PyResult<()> {
+    Ok(())
 }
 
 #[pymodule]
@@ -18755,9 +18760,4 @@ pub fn sort_numeric_edge_list_inplace(
         skip_edge_types_if_unavailable.into(),
         sort_temporary_directory.into()
     ))?)
-}
-
-#[pymodule]
-fn utils(_py: Python, _m: &PyModule) -> PyResult<()> {
-    Ok(())
 }
