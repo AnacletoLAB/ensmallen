@@ -79,7 +79,6 @@ def WikiMT(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20210620
 			- 20210701
 			- 20210720
 			- 20210801
@@ -89,6 +88,7 @@ def WikiMT(
 			- 20211001
 			- 20211020
 			- 20211101
+			- 20211120
 			- latest
     additional_graph_kwargs: Dict
         Additional graph kwargs.

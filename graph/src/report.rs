@@ -851,8 +851,7 @@ impl Graph {
 
         // Create the report for the isomorphic nodes, if there are any.
         let isomorphic_nodes_description = if has_isomorphic_nodes {
-            "".to_string()
-        } else {
+            
                 concat!(
                     "<h4>Isomorphic node reports</h4>",
                     "<p>",
@@ -862,7 +861,9 @@ impl Graph {
                     "You can obtain the full list of isomorphic nodes ",
                     "by executing the <code>get_isomorphic_node_ids</code> method.",
                     "</p>"
-            ).to_string()
+            )
+        } else {
+            ""
         };
         Ok(Some(format!(
             concat!(

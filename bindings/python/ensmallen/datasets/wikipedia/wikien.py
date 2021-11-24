@@ -79,13 +79,13 @@ def WikiEN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20210801
 			- 20210820
 			- 20210901
 			- 20210920
 			- 20211001
 			- 20211020
 			- 20211101
+			- 20211120
 			- latest
     additional_graph_kwargs: Dict
         Additional graph kwargs.

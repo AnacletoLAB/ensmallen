@@ -75,6 +75,7 @@ def KGIDG(
 			- 20211029
 			- 20211101
 			- 20211112
+			- 20211123
 			- current
     additional_graph_kwargs: Dict
         Additional graph kwargs.

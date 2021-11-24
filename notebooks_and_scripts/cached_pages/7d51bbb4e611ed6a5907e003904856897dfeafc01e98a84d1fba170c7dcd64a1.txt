@@ -30,6 +30,9 @@
 	<a href="https://kg-hub.berkeleybop.io/kg-idg/20211112">20211112</a>
       </li>
       <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-idg/20211123">20211123</a>
+      </li>
+      <li>
 	<a href="https://kg-hub.berkeleybop.io/kg-idg/current">current</a>
       </li>
     </ul>
