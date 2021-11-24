@@ -1,7 +1,5 @@
 use super::*;
-use bitvec::prelude::*;
 use rayon::prelude::*;
-use std::sync::atomic::AtomicU8;
 
 impl Graph {
     /// Returns whether the two given node IDs are topological synonims.
