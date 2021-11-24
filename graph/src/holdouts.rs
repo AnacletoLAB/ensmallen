@@ -603,7 +603,7 @@ impl Graph {
                 train_edges_number,
                 validation_edges_number,
                 train_size,
-                (tree.len() * edge_factor) as f64 / train_edges_number as f64
+                (tree.len() * edge_factor) as f64 / self.get_directed_edges_number() as f64
             ));
         }
 
