@@ -939,7 +939,7 @@ impl Graph {
                             "Specifically, the nodes involved in the group are: {}.</p></li>",
                         ),
                         to_human_readable_high_integer(isomorphic_node_group.len() as usize),
-                        self.get_unchecked_succinct_node_attributes_description(isomorphic_node_group[0], 0),
+                        unsafe{self.get_unchecked_succinct_node_attributes_description(isomorphic_node_group[0], 0)},
                         unsafe {
                             get_unchecked_formatted_list(
                                 &isomorphic_node_group
