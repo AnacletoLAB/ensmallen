@@ -422,7 +422,7 @@ impl Graph {
         &self,
         node_id: NodeT,
         minimum_node_degree: NodeT,
-    )-> String {
+    ) -> String {
         let node_type = if self.has_node_types() {
             match self.get_unchecked_node_type_names_from_node_id(node_id) {
                 Some(node_type_names) => match node_type_names.len() {
@@ -513,9 +513,12 @@ impl Graph {
         node_id: NodeT,
         minimum_node_degree: NodeT,
     ) -> String {
-        let node_name = get_node_source_html_url_from_node_name(self.get_unchecked_node_name_from_node_id(node_id).as_ref());
-        let description = self.get_unchecked_succinct_node_attributes_description(node_id, minimum_node_degree);
-        let description = if description.is_empty(){
+        let node_name = get_node_source_html_url_from_node_name(
+            self.get_unchecked_node_name_from_node_id(node_id).as_ref(),
+        );
+        let description =
+            self.get_unchecked_succinct_node_attributes_description(node_id, minimum_node_degree);
+        let description = if description.is_empty() {
             description
         } else {
             format!(" ({})", description)
@@ -739,9 +742,18 @@ impl Graph {
         }
         format!(
             concat!(
-                "The graph contains {} connected components, with the largest one containing {} nodes and the smallest one containing {}.",
+                "The graph contains {} connected components{}, with the largest one containing {} nodes and the smallest one containing {}.",
             ),
-            to_human_readable_high_integer(components_number as usize), to_human_readable_high_integer(maximum_component_size as usize), if minimum_component_size == 1 {
+            to_human_readable_high_integer(components_number as usize),
+            match self.get_disconnected_nodes_number() {
+                0 => "".to_string(),
+                disconnected_nodes_number => format!(
+                    " (of which {} are disconnected nodes)",
+                    disconnected_nodes_number
+                )
+            },
+            to_human_readable_high_integer(maximum_component_size as usize),
+            if minimum_component_size == 1 {
                 "a single node".to_string()
             } else {
                 format!(
