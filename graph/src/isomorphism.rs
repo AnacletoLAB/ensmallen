@@ -1,22 +1,29 @@
 use super::*;
 use rayon::prelude::*;
-use std::sync::atomic::{AtomicBool, Ordering};
+use std::sync::atomic::{AtomicBool, AtomicU32, Ordering};
 
 impl Graph {
     /// Returns parallel iterator of vectors of isomorphic node groups IDs.
     ///
     /// # Arguments
     /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5.
-    pub fn par_iter_isomorphic_node_groups(
+    /// * `k`: Option<NodeT> - Maximum number of groups to retrieve.
+    pub fn par_iter_isomorphic_node_ids_groups(
         &self,
         minimum_node_degree: Option<NodeT>,
+        k: Option<NodeT>,
     ) -> impl ParallelIterator<Item = Vec<NodeT>> + '_ {
         let minimum_node_degree = minimum_node_degree.unwrap_or(5);
         let isomorphisms: Vec<AtomicBool> = self
             .par_iter_node_ids()
             .map(|_| AtomicBool::new(false))
             .collect();
+        let k = k.unwrap_or(self.get_nodes_number());
+        let number_of_isomorphisms = AtomicU32::new(0);
         self.par_iter_node_ids().filter_map(move |node_id| unsafe {
+            if number_of_isomorphisms.load(Ordering::Relaxed) >= k {
+                return None;
+            }
             if isomorphisms[node_id as usize].load(Ordering::Relaxed) {
                 return None;
             }
@@ -43,6 +50,7 @@ impl Graph {
             if isomorphic_group.is_empty() {
                 None
             } else {
+                number_of_isomorphisms.fetch_add(1, Ordering::Relaxed);
                 isomorphic_group.push(node_id);
                 isomorphic_group.iter().for_each(|&node_id| {
                     isomorphisms[node_id as usize].store(true, Ordering::Relaxed);
@@ -52,15 +60,48 @@ impl Graph {
         })
     }
 
+    /// Returns parallel iterator of vectors of isomorphic node groups names.
+    ///
+    /// # Arguments
+    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5.
+    /// * `k`: Option<NodeT> - Maximum number of groups to retrieve.
+    pub fn par_iter_isomorphic_node_names_groups(
+        &self,
+        minimum_node_degree: Option<NodeT>,
+        k: Option<NodeT>,
+    ) -> impl ParallelIterator<Item = Vec<String>> + '_ {
+        self.par_iter_isomorphic_node_ids_groups(minimum_node_degree, k)
+            .map(move |group| {
+                group
+                    .into_iter()
+                    .map(|node_id| unsafe { self.get_unchecked_node_name_from_node_id(node_id) })
+                    .collect()
+            })
+    }
+
+    #[no_numpy_binding]
     /// Returns vector with isomorphic node groups IDs.
     ///
     /// # Arguments
     /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5.
-    pub fn get_isomorphic_node_groups(
+    pub fn get_isomorphic_node_ids_groups(
         &self,
         minimum_node_degree: Option<NodeT>,
     ) -> Vec<Vec<NodeT>> {
-        self.par_iter_isomorphic_node_groups(minimum_node_degree)
+        self.par_iter_isomorphic_node_ids_groups(minimum_node_degree, None)
+            .collect()
+    }
+
+    #[no_numpy_binding]
+    /// Returns vector with isomorphic node groups names.
+    ///
+    /// # Arguments
+    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5.
+    pub fn get_isomorphic_node_names_groups(
+        &self,
+        minimum_node_degree: Option<NodeT>,
+    ) -> Vec<Vec<String>> {
+        self.par_iter_isomorphic_node_names_groups(minimum_node_degree, None)
             .collect()
     }
 
@@ -68,11 +109,8 @@ impl Graph {
     ///
     /// # Arguments
     /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5.
-    pub fn get_isomorphic_node_groups_number(
-        &self,
-        minimum_node_degree: Option<NodeT>,
-    ) -> NodeT {
-        self.par_iter_isomorphic_node_groups(minimum_node_degree)
+    pub fn get_isomorphic_node_groups_number(&self, minimum_node_degree: Option<NodeT>) -> NodeT {
+        self.par_iter_isomorphic_node_ids_groups(minimum_node_degree, None)
             .count() as NodeT
     }
 

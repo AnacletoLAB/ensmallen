@@ -755,10 +755,16 @@ impl Graph {
             (Vec::new(), Vec::new(), Vec::new())
         };
 
-        let has_isomorphic_nodes = self.has_isomorphic_nodes(Some(10));
+        let isomorphic_node_groups: Vec<Vec<NodeT>> = self
+            .par_iter_isomorphic_node_ids_groups(Some(50), Some(10))
+            .collect();
 
         // If the graph does not contain any oddity, we do not prepare a report.
-        if !has_isomorphic_nodes && circles.is_empty() && chains.is_empty() && stars.is_empty() {
+        if isomorphic_node_groups.is_empty()
+            && circles.is_empty()
+            && chains.is_empty()
+            && stars.is_empty()
+        {
             return Ok(None);
         }
         // Create the report for the circles, if there are any.
@@ -808,7 +814,7 @@ impl Graph {
                 ),
                 chains_number = chains.len(),
                 max_chains_size = chains.first().unwrap().len(),
-                chains_description = chains.iter().take(5).map(|circle| format!("<li>{}</li>", circle.to_string())).join("\n"),
+                chains_description = chains.iter().take(5).map(|chain| format!("<li>{}</li>", chain.to_string())).join("\n"),
                 possibly_conclusive_entry = if chains.len() > 5 {
                     format!(
                         "<p>And other {} chains.</p>",
@@ -837,7 +843,7 @@ impl Graph {
                 ),
                 stars_number = stars.len(),
                 max_stars_size = stars.first().unwrap().len(),
-                stars_description = stars.iter().take(5).map(|circle| format!("<li>{}</li>", circle.to_string())).join("\n"),
+                stars_description = stars.iter().take(5).map(|star| format!("<li>{}</li>", star.to_string())).join("\n"),
                 possibly_conclusive_entry = if stars.len() > 5 {
                     format!(
                         "<p>And other {} stars.</p>",
@@ -849,20 +855,53 @@ impl Graph {
             )
         };
 
-        // Create the report for the isomorphic nodes, if there are any.
-        let isomorphic_nodes_description = if has_isomorphic_nodes {
-            concat!(
-                "<h4>Isomorphic node reports</h4>",
-                "<p>",
-                "Isomorphic nodes are nodes with exactly the same neighbours ",
-                "and node types, if present. We have detected at least two ",
-                "isomorphic nodes with at least degree 10.",
-                "You can obtain the full list of isomorphic nodes ",
-                "by executing the <code>get_isomorphic_node_ids</code> method.",
-                "</p>"
-            )
+        // Create the report for the stars, if there are any.
+        let isomorphic_nodes_description = if isomorphic_node_groups.is_empty() {
+            "".to_string()
         } else {
-            ""
+            format!(
+                concat!(
+                    "<h4>Isomorphic node reports</h4>",
+                    "<p>",
+                    "Isomorphic nodes are nodes with exactly the same neighbours ",
+                    "and node types (if present in the graph). ",
+                    "Computing the complete list of isomorphic groups is too computational ",
+                    "extensive for the goals of this preliminary report, therefore we have ",
+                    "limited the check to nodes with degree higher or equal to 50 and ",
+                    "we have computed only upwards to the first 10 groups.",
+                    "It is always possible to compute the number of isomorphic node groups ",
+                    "and the groups themselves with respectively ",
+                    "the <code>get_isomorphic_node_groups_number</code> and the ",
+                    "<code>get_isomorphic_node_ids_groups</code> methods.",
+                    "</p>",
+                    "<ol>",
+                    "{isomorphic_nodes_description}",
+                    "</ol>",
+                    "<p>Do note that other groups, expecially with lower node degree, may exist.</p>"
+                ),
+                isomorphic_nodes_description = isomorphic_node_groups.into_iter().map(|isomorphic_node_group| {
+                    format!(
+                        concat!(
+                            "<li><p>Isomorphic node group containing {} nodes with degree {}.",
+                            "Specifically, the nodes involved in the group are: {}.</p></li>",
+                        ),
+                        to_human_readable_high_integer(isomorphic_node_group.len() as usize),
+                        unsafe{self.get_unchecked_node_degree_from_node_id(isomorphic_node_group[0])},
+                        unsafe {
+                            get_unchecked_formatted_list(
+                                &isomorphic_node_group
+                                    .into_iter()
+                                    .map(|node_id| {
+                                        self
+                                            .get_unchecked_succinct_node_description(node_id, NodeT::MAX)
+                                    })
+                                    .collect::<Vec<String>>(),
+                                Some(5),
+                            )
+                        }
+                    )
+                }).join("\n"),
+            )
         };
         Ok(Some(format!(
             concat!(
