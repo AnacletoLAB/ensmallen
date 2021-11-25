@@ -3,7 +3,7 @@ use rayon::prelude::*;
 use std::sync::atomic::{AtomicBool, Ordering};
 
 impl Graph {
-    /// Returns vector of vectors of isomorphic node groups IDs.
+    /// Returns parallel iterator of vectors of isomorphic node groups IDs.
     ///
     /// # Arguments
     /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5.
@@ -54,9 +54,6 @@ impl Graph {
 
     /// Returns vector with isomorphic node groups IDs.
     ///
-    /// # Implementative details
-    /// Nodes not associated with no particular group are mapped with the maximum U32.
-    ///
     /// # Arguments
     /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5.
     pub fn get_isomorphic_node_groups(
@@ -65,6 +62,18 @@ impl Graph {
     ) -> Vec<Vec<NodeT>> {
         self.par_iter_isomorphic_node_groups(minimum_node_degree)
             .collect()
+    }
+
+    /// Returns number of isomorphic node groups.
+    ///
+    /// # Arguments
+    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5.
+    pub fn get_isomorphic_node_groups_number(
+        &self,
+        minimum_node_degree: Option<NodeT>,
+    ) -> NodeT {
+        self.par_iter_isomorphic_node_groups(minimum_node_degree)
+            .count() as NodeT
     }
 
     /// Returns whether the current graph has topological synonims.
