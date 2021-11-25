@@ -13,30 +13,38 @@ pub struct Tendril {
 use std::string::ToString;
 impl ToString for Tendril {
     fn to_string(&self) -> String {
-        format!(
-            concat!(
-                "<p>Tendril containing {} nodes and starts from the node {}. ",
-                "Specifically, the nodes involved in the Tendril are: {}.</p>",
-            ),
-            to_human_readable_high_integer(self.len() as usize),
-            unsafe {
+        match self.len() {
+            0 => unreachable!("It does not make sense to have an empty tendril."),
+            1 => format!(
+                "<p>Tendril containing a single node {}.</p>",
                 self.graph
                     .get_unchecked_succinct_node_description(self.get_root_node_id(), 2)
-            },
-            unsafe {
-                get_unchecked_formatted_list(
-                    &self
-                        .get_tendril_node_ids()
-                        .into_iter()
-                        .map(|node_id| {
-                            self.graph
-                                .get_unchecked_succinct_node_description(node_id, 2)
-                        })
-                        .collect::<Vec<String>>(),
-                    Some(5),
-                )
-            }
-        )
+            ),
+            nodes_number => format!(
+                concat!(
+                    "<p>Tendril containing {} nodes and starts from the node {}. ",
+                    "Specifically, the nodes involved in the Tendril are: {}.</p>",
+                ),
+                to_human_readable_high_integer(self.len() as usize),
+                unsafe {
+                    self.graph
+                        .get_unchecked_succinct_node_description(self.get_root_node_id(), 2)
+                },
+                unsafe {
+                    get_unchecked_formatted_list(
+                        &self
+                            .get_tendril_node_ids()
+                            .into_iter()
+                            .map(|node_id| {
+                                self.graph
+                                    .get_unchecked_succinct_node_description(node_id, 2)
+                            })
+                            .collect::<Vec<String>>(),
+                        Some(5),
+                    )
+                }
+            ),
+        }
     }
 }
 
@@ -132,7 +140,6 @@ impl Tendril {
 }
 
 impl Graph {
-
     /// Returns parallel iterator over tendrils of the graph.
     ///
     /// # Arguments
