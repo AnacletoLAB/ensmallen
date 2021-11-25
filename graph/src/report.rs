@@ -1106,7 +1106,7 @@ impl Graph {
             concat!(
                 "<h3>Disconnected nodes</h3>",
                 "<p>Disconnected nodes are nodes that are not connected ",
-                "to any other node.",
+                "to any other node. ",
                 "The graph contains {disconnected_nodes_number} disconnected nodes.</p>"
             ),
             disconnected_nodes_number =
