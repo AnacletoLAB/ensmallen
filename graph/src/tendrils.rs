@@ -78,11 +78,6 @@ impl Tendril {
         self.root_node_id
     }
 
-    /// Return the first node ID of the Tendril.
-    pub fn get_tail_node_id(&self) -> NodeT {
-        self.root_node_id
-    }
-
     /// Return the first node name of the Tendril.
     pub fn get_root_node_name(&self) -> String {
         unsafe {
@@ -156,9 +151,9 @@ impl Graph {
             .par_iter_node_ids()
             // keep only tendrils roots
             .filter(move |&node_id| unsafe {
-                let (node_degree, _) =
+                let (node_degree, neighbour_node_degree) =
                     self.get_chain_node_degree_with_max_neighbour_id(node_id);
-                node_degree == 1
+                node_degree == 1 && neighbour_node_degree > 1
             })
             .filter_map(move |node_id| unsafe {
                 // compute the nodes in the tendril

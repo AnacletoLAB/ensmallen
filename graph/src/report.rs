@@ -775,7 +775,7 @@ impl Graph {
     /// # Safety
     /// This method may cause a panic when called on a graph with no edges.
     fn get_report_of_topological_oddities(&self) -> Result<Option<String>> {
-        let (circles, chains, stars, tendrils) = if !self.is_directed() {
+        let (circles, chains, stars, tendrils, node_tuples) = if !self.is_directed() {
             let mut circles = self.get_circles(None, None)?;
             circles.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
             let mut chains = self.get_chains(None, None)?;
@@ -784,9 +784,11 @@ impl Graph {
             stars.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
             let mut tendrils = self.get_tendrils(Some(1), None)?;
             tendrils.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
-            (circles, chains, stars, tendrils)
+            let mut node_tuples = self.get_node_tuples()?;
+            node_tuples.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+            (circles, chains, stars, tendrils, node_tuples)
         } else {
-            (Vec::new(), Vec::new(), Vec::new(), Vec::new())
+            (Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new())
         };
 
         let isomorphic_node_groups: Vec<Vec<NodeT>> = self
@@ -797,6 +799,8 @@ impl Graph {
         if isomorphic_node_groups.is_empty()
             && circles.is_empty()
             && chains.is_empty()
+            && tendrils.is_empty()
+            && node_tuples.is_empty()
             && stars.is_empty()
         {
             return Ok(None);
@@ -809,6 +813,7 @@ impl Graph {
                 concat!(
                     "<h4>Circles</h4>",
                     "<p>",
+                    "A circle is a circular chain of nodes with degree two. ",
                     "We have detected {circles_number} circles in the graph, with the one containing {max_circles_size} nodes. ",
                     "The detected circles, sorted by decreasing size, are:",
                     "</p>",
@@ -838,6 +843,8 @@ impl Graph {
                 concat!(
                     "<h4>Chains</h4>",
                     "<p>",
+                    "A chain is a path with one or more nodes with degree 2, ",
+                    "connecting two nodes from two different strongly connected components. ",
                     "We have detected {chains_number} chains in the graph, with the largest one containing {max_chains_size} nodes. ",
                     "The detected chains, sorted by decreasing size, are:",
                     "</p>",
@@ -868,6 +875,7 @@ impl Graph {
                 concat!(
                     "<h4>Tendrils</h4>",
                     "<p>",
+                    "A tendril is a chain composed of one of more nodes that starts from a root with degree one. ",
                     "We have detected {tendrils_number} tendrils in the graph, with the largest one containing {max_tendrils_size} nodes. ",
                     "The detected tendrils, sorted by decreasing size, are:",
                     "</p>",
@@ -898,6 +906,8 @@ impl Graph {
                 concat!(
                     "<h4>Stars</h4>",
                     "<p>",
+                    "A star is a connected component with an highly central node and (generally) many other nodes with degree one ",
+                    "connected to the central node. ",
                     "We have detected {stars_number} stars in the graph, with the largest one containing {max_stars_size} nodes. ",
                     "The detected stars, sorted by decreasing size, are:",
                     "</p>",
@@ -913,6 +923,36 @@ impl Graph {
                     format!(
                         "<p>And other {} stars.</p>",
                         to_human_readable_high_integer(stars.len() -10)
+                    )
+                } else {
+                    "".to_string()
+                }
+            )
+        };
+
+        // Create the report for the node tuples, if there are any.
+        let node_tuples_description = if node_tuples.is_empty() {
+            "".to_string()
+        } else {
+            format!(
+                concat!(
+                    "<h4>Node tuples</h4>",
+                    "<p>",
+                    "A node tuple is a connected component composed of two nodes. ",
+                    "We have detected {node_tuples_number} node_tuples in the graph. ",
+                    "The detected node_tuples are:",
+                    "</p>",
+                    "<ol>",
+                    "{node_tuples_description}",
+                    "</ol>",
+                    "{possibly_conclusive_entry}"
+                ),
+                node_tuples_number = to_human_readable_high_integer(node_tuples.len()),
+                node_tuples_description = node_tuples.iter().take(10).map(|star| format!("<li>{}</li>", star.to_string())).join("\n"),
+                possibly_conclusive_entry = if node_tuples.len() > 10 {
+                    format!(
+                        "<p>And other {} node tuples.</p>",
+                        to_human_readable_high_integer(node_tuples.len() -10)
                     )
                 } else {
                     "".to_string()
@@ -975,19 +1015,21 @@ impl Graph {
                 "A topological oddity is a set of nodes in the graph that may be derived by ",
                 "an error during the generation of the edge list of the graph. ",
                 "We currently support the detection of <i>Stars</i>, <i>Chains</i>, <i>Circles</i>, <i>Tendrils</i> and <i>Isomorphic nodes</i>. ",
-                "Note that in directed graph we only support the detection of isomorphic nodes.",
+                "Note that in directed graph we only support the detection of isomorphic nodes. ",
                 "In the following paragraph we will describe the detected topological oddities (with at least 10 nodes).",
                 "</p>",
                 "{circles_description}",
                 "{chains_description}",
                 "{tendrils_description}",
                 "{stars_description}",
+                "{node_tuples_description}",
                 "{isomorphic_nodes_description}"
             ),
             circles_description=circles_description,
             chains_description=chains_description,
             tendrils_description=tendrils_description,
             stars_description=stars_description,
+            node_tuples_description=node_tuples_description,
             isomorphic_nodes_description=isomorphic_nodes_description
         )))
     }

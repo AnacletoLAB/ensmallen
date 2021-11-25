@@ -266,8 +266,7 @@ impl Graph {
 
                 // brenchless filter, here we just apply the definition
                 // of chain root
-                (node_degree == 1 && max_neighbour_degree == 2)
-                    || (node_degree == 2 && max_neighbour_degree > 2)
+                node_degree == 2 && max_neighbour_degree > 2
             })
             .filter_map(move |node_id| unsafe {
                 // compute the nodes in the chain
