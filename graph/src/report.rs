@@ -809,12 +809,14 @@ impl Graph {
         let circles_description = if circles.is_empty() {
             "".to_string()
         } else {
+            let involved_nodes: usize = circles.iter().map(|circle| circle.len() as usize).sum();
             format!(
                 concat!(
                     "<h4>Circles</h4>",
                     "<p>",
                     "A circle is a circular chain of nodes with degree two. ",
                     "We have detected {circles_number} circles in the graph, with the one containing {max_circles_size} nodes. ",
+                    "The circle topological oddities involve a total of {involved_nodes_number} nodes ({involved_nodes_percentage}%). ",
                     "The detected circles, sorted by decreasing size, are:",
                     "</p>",
                     "<ol>",
@@ -823,6 +825,8 @@ impl Graph {
                     "{possibly_conclusive_entry}"
                 ),
                 circles_number = to_human_readable_high_integer(circles.len()),
+                involved_nodes_number = to_human_readable_high_integer(involved_nodes),
+                involved_nodes_percentage= (involved_nodes as f64 / self.get_nodes_number() as f64) * 100.0,
                 max_circles_size = circles.first().unwrap().len(),
                 circles_description = circles.iter().take(10).map(|circle| format!("<li>{}</li>", circle.to_string())).join("\n"),
                 possibly_conclusive_entry = if circles.len() > 10 {
@@ -844,6 +848,7 @@ impl Graph {
         let chains_description = if chains.is_empty() {
             "".to_string()
         } else {
+            let involved_nodes: usize = chains.iter().map(|chain| chain.len() as usize).sum();
             format!(
                 concat!(
                     "<h4>Chains</h4>",
@@ -851,6 +856,7 @@ impl Graph {
                     "A chain is a path with one or more nodes with degree 2, ",
                     "connecting two nodes from two different strongly connected components. ",
                     "We have detected {chains_number} chains in the graph, with the largest one containing {max_chains_size} nodes. ",
+                    "The chain topological oddities involve a total of {involved_nodes_number} nodes ({involved_nodes_percentage}%). ",
                     "The detected chains, sorted by decreasing size, are:",
                     "</p>",
                     "<ol>",
@@ -859,6 +865,8 @@ impl Graph {
                     "{possibly_conclusive_entry}"
                 ),
                 chains_number = to_human_readable_high_integer(chains.len()),
+                involved_nodes_number = to_human_readable_high_integer(involved_nodes),
+                involved_nodes_percentage= (involved_nodes as f64 / self.get_nodes_number() as f64) * 100.0,
                 max_chains_size = chains.first().unwrap().len(),
                 chains_description = chains.iter().take(10).map(|chain| format!("<li>{}</li>", chain.to_string())).join("\n"),
                 possibly_conclusive_entry = if chains.len() > 10 {
@@ -881,12 +889,14 @@ impl Graph {
         let tendrils_description = if tendrils.is_empty() {
             "".to_string()
         } else {
+            let involved_nodes: usize = tendrils.iter().map(|tendril| tendril.len() as usize).sum();
             format!(
                 concat!(
                     "<h4>Tendrils</h4>",
                     "<p>",
                     "A tendril is a chain composed of one or more nodes that starts from a root with degree one. ",
                     "We have detected {tendrils_number} tendrils in the graph, with the largest one containing {max_tendrils_size} nodes. ",
+                    "The tendril topological oddities involve a total of {involved_nodes_number} nodes ({involved_nodes_percentage}%). ",
                     "The detected tendrils, sorted by decreasing size, are:",
                     "</p>",
                     "<ol>",
@@ -895,6 +905,8 @@ impl Graph {
                     "{possibly_conclusive_entry}"
                 ),
                 tendrils_number = to_human_readable_high_integer(tendrils.len()),
+                involved_nodes_number = to_human_readable_high_integer(involved_nodes),
+                involved_nodes_percentage= (involved_nodes as f64 / self.get_nodes_number() as f64) * 100.0,
                 max_tendrils_size = tendrils.first().unwrap().len(),
                 tendrils_description = tendrils.iter().take(10).map(|chain| format!("<li>{}</li>", chain.to_string())).join("\n"),
                 possibly_conclusive_entry = if tendrils.len() > 10 {
@@ -917,6 +929,7 @@ impl Graph {
         let stars_description = if stars.is_empty() {
             "".to_string()
         } else {
+            let involved_nodes: usize = stars.iter().map(|star| star.len() as usize).sum();
             format!(
                 concat!(
                     "<h4>Stars</h4>",
@@ -924,6 +937,7 @@ impl Graph {
                     "A star is a connected component with an highly central node and (generally) many other nodes with degree one ",
                     "connected to the central node. ",
                     "We have detected {stars_number} stars in the graph, with the largest one containing {max_stars_size} nodes. ",
+                    "The star topological oddities involve a total of {involved_nodes_number} nodes ({involved_nodes_percentage}%). ",
                     "The detected stars, sorted by decreasing size, are:",
                     "</p>",
                     "<ol>",
@@ -932,6 +946,8 @@ impl Graph {
                     "{possibly_conclusive_entry}"
                 ),
                 stars_number = to_human_readable_high_integer(stars.len()),
+                involved_nodes_number = to_human_readable_high_integer(involved_nodes),
+                involved_nodes_percentage= (involved_nodes as f64 / self.get_nodes_number() as f64) * 100.0,
                 max_stars_size = stars.first().unwrap().len(),
                 stars_description = stars.iter().take(10).map(|star| format!("<li>{}</li>", star.to_string())).join("\n"),
                 possibly_conclusive_entry = if stars.len() > 10 {
@@ -954,12 +970,14 @@ impl Graph {
         let node_tuples_description = if node_tuples.is_empty() {
             "".to_string()
         } else {
+            let involved_nodes: usize = node_tuples.iter().map(|node_tuple| node_tuple.len() as usize).sum();
             format!(
                 concat!(
                     "<h4>Node tuples</h4>",
                     "<p>",
                     "A node tuple is a connected component composed of two nodes. ",
                     "We have detected {node_tuples_number} node_tuples in the graph. ",
+                    "The node tuples topological oddities involve a total of {involved_nodes_number} nodes ({involved_nodes_percentage}%). ",
                     "The detected node_tuples are:",
                     "</p>",
                     "<ol>",
@@ -968,6 +986,8 @@ impl Graph {
                     "{possibly_conclusive_entry}"
                 ),
                 node_tuples_number = to_human_readable_high_integer(node_tuples.len()),
+                involved_nodes_number = to_human_readable_high_integer(involved_nodes),
+                involved_nodes_percentage= (involved_nodes as f64 / self.get_nodes_number() as f64) * 100.0,
                 node_tuples_description = node_tuples
                     .iter()
                     .take(10)
