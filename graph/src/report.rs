@@ -791,9 +791,14 @@ impl Graph {
             (Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new())
         };
 
-        let isomorphic_node_groups: Vec<Vec<NodeT>> = self
+        let mut isomorphic_node_groups: Vec<Vec<NodeT>> = self
             .par_iter_isomorphic_node_ids_groups(Some(50), Some(10))
             .collect();
+
+        isomorphic_node_groups.sort_unstable_by(|group1, group2| unsafe {
+            (self.get_unchecked_node_degree_from_node_id(group2[0]) as usize * group2.len())
+                .cmp(&(self.get_unchecked_node_degree_from_node_id(group1[0]) as usize*group1.len()))
+        });
 
         // If the graph does not contain any oddity, we do not prepare a report.
         if isomorphic_node_groups.is_empty()
@@ -970,7 +975,10 @@ impl Graph {
         let node_tuples_description = if node_tuples.is_empty() {
             "".to_string()
         } else {
-            let involved_nodes: usize = node_tuples.iter().map(|node_tuple| node_tuple.len() as usize).sum();
+            let involved_nodes: usize = node_tuples
+                .iter()
+                .map(|node_tuple| node_tuple.len() as usize)
+                .sum();
             format!(
                 concat!(
                     "<h4>Node tuples</h4>",
