@@ -743,7 +743,7 @@ impl Graph {
     /// # Safety
     /// This method may cause a panic when called on a graph with no edges.
     fn get_report_of_topological_oddities(&self) -> Result<Option<String>> {
-        let (circles, chains, tendrils, stars) = if !self.is_directed() {
+        let (circles, chains, stars, tendrils) = if !self.is_directed() {
             let mut circles = self.get_circles(None, None)?;
             circles.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
             let mut chains = self.get_chains(None, None)?;
@@ -758,7 +758,7 @@ impl Graph {
         };
 
         let isomorphic_node_groups: Vec<Vec<NodeT>> = self
-            .par_iter_isomorphic_node_ids_groups(Some(50), Some(10))
+            .par_iter_isomorphic_node_ids_groups(Some(50), Some(5))
             .collect();
 
         // If the graph does not contain any oddity, we do not prepare a report.
@@ -901,7 +901,7 @@ impl Graph {
                     "Computing the complete list of isomorphic groups is too computational ",
                     "extensive for the goals of this preliminary report, therefore we have ",
                     "limited the check to nodes with degree higher or equal to 50 and ",
-                    "we have computed only upwards to the first 10 groups.",
+                    "we have computed only upwards to the first 5 groups. ",
                     "It is always possible to compute the number of isomorphic node groups ",
                     "and the groups themselves with respectively ",
                     "the <code>get_isomorphic_node_groups_number</code> and the ",
@@ -915,7 +915,7 @@ impl Graph {
                 isomorphic_nodes_description = isomorphic_node_groups.into_iter().map(|isomorphic_node_group| {
                     format!(
                         concat!(
-                            "<li><p>Isomorphic node group containing {} nodes with degree {}.",
+                            "<li><p>Isomorphic node group containing {} nodes with degree {}. ",
                             "Specifically, the nodes involved in the group are: {}.</p></li>",
                         ),
                         to_human_readable_high_integer(isomorphic_node_group.len() as usize),
