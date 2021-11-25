@@ -158,6 +158,9 @@ pub use subgraphs::*;
 mod chains;
 pub use chains::*;
 
+mod tendrils;
+pub use tendrils::*;
+
 mod circles;
 pub use circles::*;
 

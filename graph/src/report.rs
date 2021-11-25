@@ -743,16 +743,18 @@ impl Graph {
     /// # Safety
     /// This method may cause a panic when called on a graph with no edges.
     fn get_report_of_topological_oddities(&self) -> Result<Option<String>> {
-        let (circles, chains, stars) = if !self.is_directed() {
+        let (circles, chains, tendrils, stars) = if !self.is_directed() {
             let mut circles = self.get_circles(None, None)?;
             circles.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
             let mut chains = self.get_chains(None, None)?;
             chains.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
             let mut stars = self.get_stars(None)?;
             stars.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
-            (circles, chains, stars)
+            let mut tendrils = self.get_tendrils(Some(1), None)?;
+            tendrils.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+            (circles, chains, stars, tendrils)
         } else {
-            (Vec::new(), Vec::new(), Vec::new())
+            (Vec::new(), Vec::new(), Vec::new(), Vec::new())
         };
 
         let isomorphic_node_groups: Vec<Vec<NodeT>> = self
@@ -825,6 +827,37 @@ impl Graph {
                 }
             )
         };
+
+        // Create the report for the tendrils, if there are any.
+        let tendrils_description = if tendrils.is_empty() {
+            "".to_string()
+        } else {
+            format!(
+                concat!(
+                    "<h4>Tendrils</h4>",
+                    "<p>",
+                    "We have detected {tendrils_number} tendrils in the graph, with the largest one containing {max_tendrils_size} nodes. ",
+                    "The detected tendrils, sorted by decreasing size, are:",
+                    "</p>",
+                    "<ol>",
+                    "{tendrils_description}",
+                    "</ol>",
+                    "{possibly_conclusive_entry}"
+                ),
+                tendrils_number = tendrils.len(),
+                max_tendrils_size = tendrils.first().unwrap().len(),
+                tendrils_description = tendrils.iter().take(5).map(|chain| format!("<li>{}</li>", chain.to_string())).join("\n"),
+                possibly_conclusive_entry = if tendrils.len() > 5 {
+                    format!(
+                        "<p>And other {} tendrils.</p>",
+                        to_human_readable_high_integer(tendrils.len() -5)
+                    )
+                } else {
+                    "".to_string()
+                }
+            )
+        };
+
         // Create the report for the stars, if there are any.
         let stars_description = if stars.is_empty() {
             "".to_string()
@@ -909,16 +942,19 @@ impl Graph {
                 "<p>",
                 "A topological oddity is a set of nodes in the graph that may be derived by ",
                 "an error during the generation of the edge list of the graph. ",
-                "We currently support the detection of <i>Stars</i>, <i>Chains</i>, <i>Circles</i> and <i>Isomorphic nodes</i>. ",
+                "We currently support the detection of <i>Stars</i>, <i>Chains</i>, <i>Circles</i>, <i>Tendrils</i> and <i>Isomorphic nodes</i>. ",
+                "Note that in directed graph we only support the detection of isomorphic nodes.",
                 "In the following paragraph we will describe the detected topological oddities (with at least 10 nodes).",
                 "</p>",
                 "{circles_description}",
                 "{chains_description}",
+                "{tendrils_description}",
                 "{stars_description}",
                 "{isomorphic_nodes_description}"
             ),
             circles_description=circles_description,
             chains_description=chains_description,
+            tendrils_description=tendrils_description,
             stars_description=stars_description,
             isomorphic_nodes_description=isomorphic_nodes_description
         )))

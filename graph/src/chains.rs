@@ -141,7 +141,7 @@ impl Graph {
     /// # Safety
     /// The node ID must be among the node IDs present in the graph, or the method will panic.
     /// Additionally, it must be the root node of a chain.
-    unsafe fn get_chain_last_id_from_root_node_id(&self, mut node_id: NodeT) -> (NodeT, NodeT) {
+    pub(crate) unsafe fn get_chain_last_id_from_root_node_id(&self, mut node_id: NodeT) -> (NodeT, NodeT) {
         let mut chain_length = 1;
         let mut previous_node_id = node_id;
         'outer: loop {
@@ -171,7 +171,7 @@ impl Graph {
     /// # Safety
     /// The node ID must be among the node IDs present in the graph, or the method will panic.
     /// Additionally, it must be the root node of a chain.
-    unsafe fn get_chain_node_ids_from_root_node_id(&self, mut node_id: NodeT) -> Vec<NodeT> {
+    pub(crate) unsafe fn get_chain_node_ids_from_root_node_id(&self, mut node_id: NodeT) -> Vec<NodeT> {
         let mut chain_node_ids: Vec<NodeT> = vec![node_id];
         let mut previous_node_id = node_id;
         'outer: loop {
@@ -222,7 +222,7 @@ impl Graph {
 
     /// The same as `get_chain_node_degree` but we also return the max "chain degree" of the neighbours
     /// of the current node
-    unsafe fn get_chain_node_degree_with_max_neighbour_id(&self, node_id: NodeT) -> (NodeT, NodeT) {
+    pub(crate) unsafe fn get_chain_node_degree_with_max_neighbour_id(&self, node_id: NodeT) -> (NodeT, NodeT) {
         let mut node_degree = 0;
         let mut max_neighbour_degree = 0;
         let mut previous_node_id = node_id;
@@ -242,6 +242,66 @@ impl Graph {
         }
 
         (node_degree, max_neighbour_degree)
+    }
+
+    /// Returns parallel iterator over chains of the graph.
+    ///
+    /// # Arguments
+    /// `minimum_number_of_nodes_per_chain`: Option<NodeT> - Minimum size of the chains.
+    /// `compute_chain_nodes`: Option<bool> - Whether to pre-compute the chain nodes.
+    pub fn par_iter_chains(
+        &self,
+        minimum_number_of_nodes_per_chain: Option<NodeT>,
+        compute_chain_nodes: Option<bool>,
+    ) -> Result<impl ParallelIterator<Item = Chain> + '_> {
+        self.must_be_undirected()?;
+        let minimum_number_of_nodes_per_chain = minimum_number_of_nodes_per_chain.unwrap_or(10);
+        let compute_chain_nodes = compute_chain_nodes.unwrap_or(false);
+        Ok(self
+            .par_iter_node_ids()
+            // keep only chains roots
+            .filter(move |&node_id| unsafe {
+                let (node_degree, max_neighbour_degree) =
+                    self.get_chain_node_degree_with_max_neighbour_id(node_id);
+
+                // brenchless filter, here we just apply the definition
+                // of chain root
+                (node_degree == 1 && max_neighbour_degree == 2)
+                    || (node_degree == 2 && max_neighbour_degree > 2)
+            })
+            .filter_map(move |node_id| unsafe {
+                // compute the nodes in the chain
+                let (chain_length, last_node, node_ids) = if compute_chain_nodes {
+                    // compute explicitely the chain
+                    let node_ids = self.get_chain_node_ids_from_root_node_id(node_id);
+                    // return the info about the chain
+                    (
+                        node_ids.len() as NodeT,
+                        *node_ids.last().unwrap(),
+                        Some(node_ids),
+                    )
+                } else {
+                    // just compute the chain lenght and last node
+                    let (chain_length, last_node) =
+                        self.get_chain_last_id_from_root_node_id(node_id);
+                    (chain_length, last_node, None)
+                };
+
+                // if the chain is shorted than what we want, ignore it
+                if chain_length < minimum_number_of_nodes_per_chain {
+                    return None;
+                }
+                // only keep the root with the smaller node_id
+                if last_node < node_id {
+                    return None;
+                }
+                // return the chain
+                Some(if let Some(node_ids) = node_ids {
+                    Chain::from_node_ids(self, node_ids)
+                } else {
+                    Chain::new(self, node_id, chain_length)
+                })
+            }))
     }
 
     /// Return vector of chains in the current graph instance.
@@ -297,54 +357,8 @@ impl Graph {
         minimum_number_of_nodes_per_chain: Option<NodeT>,
         compute_chain_nodes: Option<bool>,
     ) -> Result<Vec<Chain>> {
-        self.must_be_undirected()?;
-        let minimum_number_of_nodes_per_chain = minimum_number_of_nodes_per_chain.unwrap_or(10);
-        let compute_chain_nodes = compute_chain_nodes.unwrap_or(false);
         Ok(self
-            .par_iter_node_ids()
-            // keep only chains roots
-            .filter(|&node_id| unsafe {
-                let (node_degree, max_neighbour_degree) =
-                    self.get_chain_node_degree_with_max_neighbour_id(node_id);
-
-                // brenchless filter, here we just apply the definition
-                // of chain root
-                (node_degree == 1 && max_neighbour_degree == 2)
-                    || (node_degree == 2 && max_neighbour_degree > 2)
-            })
-            .filter_map(|node_id| unsafe {
-                // compute the nodes in the chain
-                let (chain_length, last_node, node_ids) = if compute_chain_nodes {
-                    // compute explicitely the chain
-                    let node_ids = self.get_chain_node_ids_from_root_node_id(node_id);
-                    // return the info about the chain
-                    (
-                        node_ids.len() as NodeT,
-                        *node_ids.last().unwrap(),
-                        Some(node_ids),
-                    )
-                } else {
-                    // just compute the chain lenght and last node
-                    let (chain_length, last_node) =
-                        self.get_chain_last_id_from_root_node_id(node_id);
-                    (chain_length, last_node, None)
-                };
-
-                // if the chain is shorted than what we want, ignore it
-                if chain_length < minimum_number_of_nodes_per_chain {
-                    return None;
-                }
-                // only keep the root with the smaller node_id
-                if last_node < node_id {
-                    return None;
-                }
-                // return the chain
-                Some(if let Some(node_ids) = node_ids {
-                    Chain::from_node_ids(self, node_ids)
-                } else {
-                    Chain::new(self, node_id, chain_length)
-                })
-            })
-            .collect::<Vec<Chain>>())
+            .par_iter_chains(minimum_number_of_nodes_per_chain, compute_chain_nodes)?
+            .collect())
     }
 }
