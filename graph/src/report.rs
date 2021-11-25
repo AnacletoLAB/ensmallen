@@ -1302,8 +1302,10 @@ impl Graph {
                     format!(
                         "a singleton node type, which is {} (node {})",
                         get_node_type_source_html_url_from_node_type_name(&node_type_name),
-                        self.get_node_names_from_node_type_name(&node_type_name)
-                            .unwrap()[0]
+                        get_node_source_html_url_from_node_name(
+                            self.get_node_names_from_node_type_name(&node_type_name)
+                                .unwrap()[0]
+                        )
                     )
                 }
                 singleton_nodes_types_number => {
@@ -1325,8 +1327,12 @@ impl Graph {
                                         get_node_type_source_html_url_from_node_type_name(
                                             node_type_name.as_ref(),
                                         ),
-                                        self.get_node_names_from_node_type_name(&node_type_name)
+                                        get_node_source_html_url_from_node_name(
+                                            self.get_node_names_from_node_type_name(
+                                                &node_type_name
+                                            )
                                             .unwrap()[0]
+                                        )
                                     )
                                 })
                                 .collect::<Vec<_>>()
