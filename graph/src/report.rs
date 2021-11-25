@@ -1036,8 +1036,7 @@ impl Graph {
                 isomorphic_nodes_description = isomorphic_node_groups.into_iter().map(|isomorphic_node_group| {
                     format!(
                         concat!(
-                            "<li><p>Isomorphic node group containing {} nodes with {}. ",
-                            "Specifically, the nodes involved in the group are: {}.</p></li>",
+                            "<li><p>Isomorphic node containing {} nodes with {}, which are: {}.</p></li>",
                         ),
                         to_human_readable_high_integer(isomorphic_node_group.len() as usize),
                         unsafe{self.get_unchecked_succinct_node_attributes_description(isomorphic_node_group[0], 0)},
