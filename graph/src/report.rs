@@ -418,13 +418,11 @@ impl Graph {
     ///
     /// # Safety
     /// This method will cause an out of bound if the given node ID does not exist.
-    pub(crate) unsafe fn get_unchecked_succinct_node_description(
+    pub(crate) unsafe fn get_unchecked_succinct_node_attributes_description(
         &self,
         node_id: NodeT,
         minimum_node_degree: NodeT,
-    ) -> String {
-        let node_name = self.get_unchecked_node_name_from_node_id(node_id);
-        let node_name = get_node_source_html_url_from_node_name(node_name.as_ref());
+    )-> String {
         let node_type = if self.has_node_types() {
             match self.get_unchecked_node_type_names_from_node_id(node_id) {
                 Some(node_type_names) => match node_type_names.len() {
@@ -487,7 +485,7 @@ impl Graph {
         let description = if node_degree.is_some() || node_type.is_some() {
             let node_degree_is_some = node_degree.is_some();
             format!(
-                " ({node_degree}{join_term}{node_type})",
+                "{node_degree}{join_term}{node_type}",
                 node_degree = node_degree.unwrap_or_else(|| "".to_string()),
                 join_term = if node_degree_is_some && node_type.is_some() {
                     " and "
@@ -499,7 +497,29 @@ impl Graph {
         } else {
             "".to_string()
         };
+        description
+    }
 
+    /// Returns html formatting for the given node name URLs.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - Node ID to query for.
+    /// * `minimum_node_degree`: NodeT - The minimum node degree to show the node degree information. This parameter is available because in some use cases (e.g. the stars report) the degree is extremely redoundant.
+    ///
+    /// # Safety
+    /// This method will cause an out of bound if the given node ID does not exist.
+    pub(crate) unsafe fn get_unchecked_succinct_node_description(
+        &self,
+        node_id: NodeT,
+        minimum_node_degree: NodeT,
+    ) -> String {
+        let node_name = get_node_source_html_url_from_node_name(self.get_unchecked_node_name_from_node_id(node_id).as_ref());
+        let description = self.get_unchecked_succinct_node_attributes_description(node_id, minimum_node_degree);
+        let description = if description.is_empty(){
+            description
+        } else {
+            format!(" ({})", description)
+        };
         format!(
             "{node_name}{description}",
             node_name = node_name,
@@ -915,18 +935,18 @@ impl Graph {
                 isomorphic_nodes_description = isomorphic_node_groups.into_iter().map(|isomorphic_node_group| {
                     format!(
                         concat!(
-                            "<li><p>Isomorphic node group containing {} nodes with degree {}. ",
+                            "<li><p>Isomorphic node group containing {} nodes with {}. ",
                             "Specifically, the nodes involved in the group are: {}.</p></li>",
                         ),
                         to_human_readable_high_integer(isomorphic_node_group.len() as usize),
-                        unsafe{self.get_unchecked_node_degree_from_node_id(isomorphic_node_group[0])},
+                        self.get_unchecked_succinct_node_attributes_description(isomorphic_node_group[0], 0),
                         unsafe {
                             get_unchecked_formatted_list(
                                 &isomorphic_node_group
                                     .into_iter()
                                     .map(|node_id| {
                                         self
-                                            .get_unchecked_succinct_node_description(node_id, NodeT::MAX)
+                                            .get_unchecked_node_name_from_node_id(node_id)
                                     })
                                     .collect::<Vec<String>>(),
                                 Some(5),
