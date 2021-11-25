@@ -758,7 +758,7 @@ impl Graph {
         };
 
         let isomorphic_node_groups: Vec<Vec<NodeT>> = self
-            .par_iter_isomorphic_node_ids_groups(Some(50), Some(5))
+            .par_iter_isomorphic_node_ids_groups(Some(50), Some(10))
             .collect();
 
         // If the graph does not contain any oddity, we do not prepare a report.
@@ -787,11 +787,11 @@ impl Graph {
                 ),
                 circles_number = circles.len(),
                 max_circles_size = circles.first().unwrap().len(),
-                circles_description = circles.iter().take(5).map(|circle| format!("<li>{}</li>", circle.to_string())).join("\n"),
-                possibly_conclusive_entry = if circles.len() > 5 {
+                circles_description = circles.iter().take(10).map(|circle| format!("<li>{}</li>", circle.to_string())).join("\n"),
+                possibly_conclusive_entry = if circles.len() > 10 {
                     format!(
                         "<p>And other {} circles.</p>",
-                        to_human_readable_high_integer(circles.len() -5)
+                        to_human_readable_high_integer(circles.len() -10)
                     )
                 } else {
                     "".to_string()
@@ -816,11 +816,11 @@ impl Graph {
                 ),
                 chains_number = chains.len(),
                 max_chains_size = chains.first().unwrap().len(),
-                chains_description = chains.iter().take(5).map(|chain| format!("<li>{}</li>", chain.to_string())).join("\n"),
-                possibly_conclusive_entry = if chains.len() > 5 {
+                chains_description = chains.iter().take(10).map(|chain| format!("<li>{}</li>", chain.to_string())).join("\n"),
+                possibly_conclusive_entry = if chains.len() > 10 {
                     format!(
                         "<p>And other {} chains.</p>",
-                        to_human_readable_high_integer(chains.len() -5)
+                        to_human_readable_high_integer(chains.len() -10)
                     )
                 } else {
                     "".to_string()
@@ -846,11 +846,11 @@ impl Graph {
                 ),
                 tendrils_number = tendrils.len(),
                 max_tendrils_size = tendrils.first().unwrap().len(),
-                tendrils_description = tendrils.iter().take(5).map(|chain| format!("<li>{}</li>", chain.to_string())).join("\n"),
-                possibly_conclusive_entry = if tendrils.len() > 5 {
+                tendrils_description = tendrils.iter().take(10).map(|chain| format!("<li>{}</li>", chain.to_string())).join("\n"),
+                possibly_conclusive_entry = if tendrils.len() > 10 {
                     format!(
                         "<p>And other {} tendrils.</p>",
-                        to_human_readable_high_integer(tendrils.len() -5)
+                        to_human_readable_high_integer(tendrils.len() -10)
                     )
                 } else {
                     "".to_string()
@@ -876,11 +876,11 @@ impl Graph {
                 ),
                 stars_number = stars.len(),
                 max_stars_size = stars.first().unwrap().len(),
-                stars_description = stars.iter().take(5).map(|star| format!("<li>{}</li>", star.to_string())).join("\n"),
-                possibly_conclusive_entry = if stars.len() > 5 {
+                stars_description = stars.iter().take(10).map(|star| format!("<li>{}</li>", star.to_string())).join("\n"),
+                possibly_conclusive_entry = if stars.len() > 10 {
                     format!(
                         "<p>And other {} stars.</p>",
-                        to_human_readable_high_integer(stars.len() -5)
+                        to_human_readable_high_integer(stars.len() -10)
                     )
                 } else {
                     "".to_string()
@@ -901,7 +901,7 @@ impl Graph {
                     "Computing the complete list of isomorphic groups is too computational ",
                     "extensive for the goals of this preliminary report, therefore we have ",
                     "limited the check to nodes with degree higher or equal to 50 and ",
-                    "we have computed only upwards to the first 5 groups. ",
+                    "we have computed only upwards to the first 10 groups. ",
                     "It is always possible to compute the number of isomorphic node groups ",
                     "and the groups themselves with respectively ",
                     "the <code>get_isomorphic_node_groups_number</code> and the ",
@@ -992,7 +992,7 @@ impl Graph {
                             to_human_readable_high_integer(singleton_nodes_number as usize),
                         singleton_nodes_list = get_unchecked_formatted_list(
                             self.iter_singleton_node_ids()
-                                .take(5)
+                                .take(10)
                                 .map(|node_id| {
                                     self.get_unchecked_succinct_node_description(node_id, 0)
                                 })
@@ -1000,11 +1000,11 @@ impl Graph {
                                 .as_ref(),
                             None
                         ),
-                        additional_singleton_nodes = if singleton_nodes_number > 5 {
+                        additional_singleton_nodes = if singleton_nodes_number > 10 {
                             format!(
                                 ", plus other {singleton_nodes_number} singleton nodes",
                                 singleton_nodes_number = to_human_readable_high_integer(
-                                    singleton_nodes_number as usize - 5
+                                    singleton_nodes_number as usize - 10
                                 )
                             )
                         } else {
@@ -1051,7 +1051,7 @@ impl Graph {
                         singleton_nodes_with_selfloops_number = to_human_readable_high_integer(singleton_nodes_with_selfloops_number as usize),
                         singleton_nodes_list = get_unchecked_formatted_list(
                             self.iter_singleton_nodes_with_selfloops_node_ids()
-                                .take(5)
+                                .take(10)
                                 .map(|node_id| {
                                     self.get_unchecked_succinct_node_description(node_id, 1)
                                 })
@@ -1059,10 +1059,10 @@ impl Graph {
                                 .as_ref(),
                                 None
                         ),
-                        additional_singleton_nodes_with_selfloop = if singleton_nodes_with_selfloops_number > 5 {
+                        additional_singleton_nodes_with_selfloop = if singleton_nodes_with_selfloops_number > 10 {
                             format!(
                                 ", plus other {singleton_nodes_with_selfloops_number} singleton nodes with selfloops",
-                                singleton_nodes_with_selfloops_number = to_human_readable_high_integer(singleton_nodes_with_selfloops_number as usize - 5)
+                                singleton_nodes_with_selfloops_number = to_human_readable_high_integer(singleton_nodes_with_selfloops_number as usize - 10)
                             )
                         } else {
                             "".to_string()
@@ -1184,7 +1184,7 @@ impl Graph {
                         singleton_node_types_list = get_unchecked_formatted_list(
                             self.iter_singleton_node_type_names()
                                 .unwrap()
-                                .take(5)
+                                .take(10)
                                 .map(|node_type_name| {
                                     get_node_type_source_html_url_from_node_type_name(
                                         node_type_name.as_ref(),
@@ -1195,11 +1195,11 @@ impl Graph {
                             None
                         ),
                         additional_singleton_nodes_with_selfloop =
-                            if singleton_nodes_types_number > 5 {
+                            if singleton_nodes_types_number > 10 {
                                 format!(
                                 ", plus other {singleton_nodes_types_number} singleton node types",
                                 singleton_nodes_types_number = to_human_readable_high_integer(
-                                    singleton_nodes_types_number as usize - 5
+                                    singleton_nodes_types_number as usize - 10
                                 )
                             )
                             } else {
@@ -1246,7 +1246,7 @@ impl Graph {
                         homogeneous_node_types_list = get_unchecked_formatted_list(
                             self.iter_homogeneous_node_type_names()
                                 .unwrap()
-                                .take(5)
+                                .take(10)
                                 .map(|node_type_name| {
                                     get_node_type_source_html_url_from_node_type_name(
                                         node_type_name.as_ref(),
@@ -1257,11 +1257,11 @@ impl Graph {
                             None
                         ),
                         additional_homogeneous_nodes_with_selfloop =
-                            if homogeneous_nodes_types_number > 5 {
+                            if homogeneous_nodes_types_number > 10 {
                                 format!(
                                 ", plus other {homogeneous_nodes_types_number} homogeneous node types",
                                 homogeneous_nodes_types_number = to_human_readable_high_integer(
-                                    homogeneous_nodes_types_number as usize - 5
+                                    homogeneous_nodes_types_number as usize - 10
                                 )
                             )
                             } else {
@@ -1310,7 +1310,7 @@ impl Graph {
                         unknown_node_types_list = get_unchecked_formatted_list(
                             self.iter_node_ids_with_unknown_node_types()
                                 .unwrap()
-                                .take(5)
+                                .take(10)
                                 .map(|node_id| {
                                     self.get_unchecked_succinct_node_description(node_id, 0)
                                 })
@@ -1318,10 +1318,10 @@ impl Graph {
                                 .as_ref(),
                                 None
                         ),
-                        additional_unknown_nodes = if unknown_node_types_number > 5 {
+                        additional_unknown_nodes = if unknown_node_types_number > 10 {
                             format!(
                                 ", plus other {unknown_node_types_number} nodes with unknown node types",
-                                unknown_node_types_number = to_human_readable_high_integer(unknown_node_types_number as usize - 5)
+                                unknown_node_types_number = to_human_readable_high_integer(unknown_node_types_number as usize - 10)
                             )
                         } else {
                             "".to_string()
@@ -1463,7 +1463,7 @@ impl Graph {
                         singleton_edge_types_list = get_unchecked_formatted_list(
                             self.iter_singleton_edge_type_names()
                                 .unwrap()
-                                .take(5)
+                                .take(10)
                                 .map(|edge_type_name| {
                                     get_edge_type_source_html_url_from_edge_type_name(
                                         edge_type_name.as_ref(),
@@ -1474,10 +1474,10 @@ impl Graph {
                                 None
                         ),
                         additional_edgges_with_singleton_edge_types =
-                            if singleton_edges_types_number > 5 {
+                            if singleton_edges_types_number > 10 {
                                 format!(
                                 ", plus other {singleton_edges_types_number} edges with singleton edge types",
-                                singleton_edges_types_number = to_human_readable_high_integer(singleton_edges_types_number as usize - 5)
+                                singleton_edges_types_number = to_human_readable_high_integer(singleton_edges_types_number as usize - 10)
                             )
                             } else {
                                 "".to_string()
@@ -1525,7 +1525,7 @@ impl Graph {
                         unknown_edge_types_list = get_unchecked_formatted_list(
                             self.iter_edge_ids_with_unknown_edge_types()
                                 .unwrap()
-                                .take(5)
+                                .take(10)
                                 .map(|edge_id| {
                                     self.get_unchecked_succinct_edge_description(edge_id)
                                 })
@@ -1533,10 +1533,10 @@ impl Graph {
                                 .as_ref(),
                                 None
                         ),
-                        additional_unknown_edges = if unknown_types_number > 5 {
+                        additional_unknown_edges = if unknown_types_number > 10 {
                             format!(
                                 ", plus other {unknown_types_number} edges with unknown edge types",
-                                unknown_types_number = unknown_types_number - 5
+                                unknown_types_number = unknown_types_number - 10
                             )
                         } else {
                             "".to_string()
