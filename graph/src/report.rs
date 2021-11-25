@@ -1303,7 +1303,7 @@ impl Graph {
                         "a singleton node type, which is {} (node {})",
                         get_node_type_source_html_url_from_node_type_name(&node_type_name),
                         get_node_source_html_url_from_node_name(
-                            self.get_node_names_from_node_type_name(&node_type_name)
+                            &self.get_node_names_from_node_type_name(&node_type_name)
                                 .unwrap()[0]
                         )
                     )
@@ -1328,7 +1328,7 @@ impl Graph {
                                             node_type_name.as_ref(),
                                         ),
                                         get_node_source_html_url_from_node_name(
-                                            self.get_node_names_from_node_type_name(
+                                            &self.get_node_names_from_node_type_name(
                                                 &node_type_name
                                             )
                                             .unwrap()[0]
