@@ -523,6 +523,41 @@ impl Graph {
         )
     }
 
+    /// Returns new graph without isomorphic nodes, only keeping the smallest node ID of each group.
+    /// 
+    /// # Arguments
+    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default equal to 2.
+    pub fn drop_isomorphic_nodes(&self, minimum_node_degree: Option<NodeT>) -> Graph {
+        let minimum_node_degree = minimum_node_degree.unwrap_or(2);
+        self.filter_from_ids(
+            None,
+            Some(
+                self.par_iter_isomorphic_node_ids_groups(Some(minimum_node_degree), None)
+                    .flat_map(|mut group| {
+                        group.pop();
+                        group.into_par_iter()
+                    })
+                    .collect(),
+            ),
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+        ).unwrap()
+    }
+
     /// Returns new graph without singleton nodes with selfloops.
     ///
     /// A node is singleton with selfloop when does not have neither incoming or outgoing edges.
