@@ -818,13 +818,13 @@ impl Graph {
     /// # Example
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The node type id of node {} is {:?}", 0, unsafe{ graph.get_unchecked_node_type_id_from_node_id(0) });
+    /// println!("The node type id of node {} is {:?}", 0, unsafe{ graph.get_unchecked_node_type_ids_from_node_id(0) });
     /// ```
     ///
     /// # Safety
     /// Even though the method will return an option when the node types are
     /// not available for the current graph, the behaviour is undefined.
-    pub unsafe fn get_unchecked_node_type_id_from_node_id(
+    pub unsafe fn get_unchecked_node_type_ids_from_node_id(
         &self,
         node_id: NodeT,
     ) -> Option<Vec<NodeTypeT>> {
@@ -849,7 +849,7 @@ impl Graph {
     pub fn get_node_type_ids_from_node_id(&self, node_id: NodeT) -> Result<Option<Vec<NodeTypeT>>> {
         self.must_have_node_types()?;
         self.validate_node_id(node_id)
-            .map(|node_id| unsafe { self.get_unchecked_node_type_id_from_node_id(node_id) })
+            .map(|node_id| unsafe { self.get_unchecked_node_type_ids_from_node_id(node_id) })
     }
 
     /// Returns edge type of given edge.
@@ -913,7 +913,7 @@ impl Graph {
         &self,
         node_id: NodeT,
     ) -> Option<Vec<String>> {
-        self.get_unchecked_node_type_id_from_node_id(node_id)
+        self.get_unchecked_node_type_ids_from_node_id(node_id)
             .map(|node_type_ids| {
                 self.get_unchecked_node_type_names_from_node_type_ids(node_type_ids)
             })

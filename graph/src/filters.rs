@@ -251,13 +251,13 @@ impl Graph {
                                     && node_filter(&(
                                         *src,
                                         src_name.clone(),
-                                        self.get_unchecked_node_type_id_from_node_id(*src),
+                                        self.get_unchecked_node_type_ids_from_node_id(*src),
                                         None,
                                     ))
                                     && node_filter(&(
                                         *dst,
                                         dst_name.clone(),
-                                        self.get_unchecked_node_type_id_from_node_id(*dst),
+                                        self.get_unchecked_node_type_ids_from_node_id(*dst),
                                         None,
                                     ))
                             },

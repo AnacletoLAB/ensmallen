@@ -512,7 +512,7 @@ impl Graph {
         self.iter_node_ids().map(move |node_id| unsafe {
             (
                 node_id,
-                self.get_unchecked_node_type_id_from_node_id(node_id),
+                self.get_unchecked_node_type_ids_from_node_id(node_id),
             )
         })
     }
@@ -524,7 +524,7 @@ impl Graph {
         self.par_iter_node_ids().map(move |node_id| unsafe {
             (
                 node_id,
-                self.get_unchecked_node_type_id_from_node_id(node_id),
+                self.get_unchecked_node_type_ids_from_node_id(node_id),
             )
         })
     }
@@ -538,7 +538,7 @@ impl Graph {
         &self,
     ) -> impl Iterator<Item = Option<Vec<NodeTypeT>>> + '_ {
         self.iter_node_ids()
-            .map(move |node_id| self.get_unchecked_node_type_id_from_node_id(node_id))
+            .map(move |node_id| self.get_unchecked_node_type_ids_from_node_id(node_id))
     }
 
     /// Return iterator on the one-hot encoded node type IDs.
@@ -598,7 +598,7 @@ impl Graph {
         self.par_iter_node_ids().map(move |node_id| {
             (
                 node_id,
-                self.get_unchecked_node_type_id_from_node_id(node_id),
+                self.get_unchecked_node_type_ids_from_node_id(node_id),
             )
         })
     }

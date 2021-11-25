@@ -246,7 +246,7 @@ impl Graph {
             let mut sample = xorshift(idx.wrapping_mul(splitmix64(i as u64)));
             let (node_id, node_type_ids) = loop {
                 let node_id = sample as u32 % nodes_number;
-                let node_type_ids = self.get_unchecked_node_type_id_from_node_id(node_id);
+                let node_type_ids = self.get_unchecked_node_type_ids_from_node_id(node_id);
                 if node_type_ids.is_some() {
                     break (node_id, node_type_ids.unwrap());
                 }
@@ -381,7 +381,7 @@ impl Graph {
             move |node_id: NodeT| -> Option<Vec<NodeTypeT>> {
                 if return_node_types {
                     let node_type_ids =
-                        unsafe { self.get_unchecked_node_type_id_from_node_id(node_id) };
+                        unsafe { self.get_unchecked_node_type_ids_from_node_id(node_id) };
                     if multi_label {
                         let mut padded_node_type_ids = vec![0; maximum_node_types_number];
                         node_type_ids.unwrap().into_iter().enumerate().for_each(

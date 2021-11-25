@@ -839,13 +839,13 @@ impl Graph {
         let mut train_node_types = vec![None; self.get_nodes_number() as usize];
         train_node_indices.into_iter().for_each(|node_id| unsafe {
             train_node_types[node_id as usize] =
-                self.get_unchecked_node_type_id_from_node_id(node_id)
+                self.get_unchecked_node_type_ids_from_node_id(node_id)
         });
         // For the test node types
         let mut test_node_types = vec![None; self.get_nodes_number() as usize];
         test_node_indices.into_iter().for_each(|node_id| unsafe {
             test_node_types[node_id as usize] =
-                self.get_unchecked_node_type_id_from_node_id(node_id)
+                self.get_unchecked_node_type_ids_from_node_id(node_id)
         });
 
         Ok((train_node_types, test_node_types))
@@ -1271,11 +1271,11 @@ impl Graph {
             // add the nodes to the relative vectors
             node_set[..train_size].iter().for_each(|node_id| unsafe {
                 train_node_types[*node_id as usize] =
-                    self.get_unchecked_node_type_id_from_node_id(*node_id)
+                    self.get_unchecked_node_type_ids_from_node_id(*node_id)
             });
             node_set[train_size..].iter().for_each(|node_id| unsafe {
                 test_node_types[*node_id as usize] =
-                    self.get_unchecked_node_type_id_from_node_id(*node_id)
+                    self.get_unchecked_node_type_ids_from_node_id(*node_id)
             });
         }
 
@@ -1395,7 +1395,7 @@ impl Graph {
             let validation_chunk = kfold(k, k_index, node_set, random_state)?;
             // Iterate of node ids
             for node_id in 0..self.get_nodes_number() {
-                let node_type = unsafe { self.get_unchecked_node_type_id_from_node_id(node_id) };
+                let node_type = unsafe { self.get_unchecked_node_type_ids_from_node_id(node_id) };
                 if validation_chunk.contains(node_id as u64) {
                     test_node_types[node_id as usize] = node_type;
                 } else {

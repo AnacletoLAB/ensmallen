@@ -27,18 +27,21 @@ impl Graph {
             return false;
         }
         // First we check if the two nodes have the same node degree.
-        if self.get_node_degree_from_node_id(first_node_id)
-            != self.get_node_degree_from_node_id(second_node_id)
+        if self.get_unchecked_node_degree_from_node_id(first_node_id)
+            != self.get_unchecked_node_degree_from_node_id(second_node_id)
         {
             // If they don't surely they do are not synonims.
             return false;
         }
-        // Secondly, we check if the two nodes have the same node type.
-        if self.get_node_type_ids_from_node_id(first_node_id)
-            != self.get_node_type_ids_from_node_id(second_node_id)
-        {
-            // If they don't, surely it is not a synonim.
-            return false;
+        // If the graph has node types.
+        if self.has_node_types() {
+            // Secondly, we check if the two nodes have the same node type.
+            if self.get_unchecked_node_type_ids_from_node_id(first_node_id)
+                != self.get_unchecked_node_type_ids_from_node_id(second_node_id)
+            {
+                // If they don't, surely it is not a synonim.
+                return false;
+            }
         }
         // Thirdly, and the most expensive test, we check if the neighbours are the same.
         self.iter_unchecked_neighbour_node_ids_from_source_node_id(first_node_id)
@@ -132,10 +135,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims.
-    pub fn get_isomorphic_node_ids(
-        &self,
-        minimum_node_degree: Option<NodeT>,
-    ) -> Vec<Vec<NodeT>> {
+    pub fn get_isomorphic_node_ids(&self, minimum_node_degree: Option<NodeT>) -> Vec<Vec<NodeT>> {
         self.par_iter_isomorphic_node_ids(minimum_node_degree)
             .collect()
     }
