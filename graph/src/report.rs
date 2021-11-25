@@ -1194,16 +1194,19 @@ impl Graph {
                 "The graph contains {singleton_nodes_types_number}.</p>"
             ),
             singleton_nodes_types_number = match self.get_singleton_node_types_number().unwrap() {
-                1 => format!(
-                    "a singleton node type, which is {}",
-                    get_node_type_source_html_url_from_node_type_name(
-                        self.iter_singleton_node_type_names()
-                            .unwrap()
-                            .next()
-                            .unwrap()
-                            .as_ref()
+                1 => {
+                    let node_type_name = self
+                        .iter_singleton_node_type_names()
+                        .unwrap()
+                        .next()
+                        .unwrap();
+                    format!(
+                        "a singleton node type, which is {} (node {})",
+                        get_node_type_source_html_url_from_node_type_name(&node_type_name),
+                        self.get_node_names_from_node_type_name(&node_type_name)
+                            .unwrap()[0]
                     )
-                ),
+                }
                 singleton_nodes_types_number => {
                     format!(
                         concat!(
@@ -1218,8 +1221,13 @@ impl Graph {
                                 .unwrap()
                                 .take(10)
                                 .map(|node_type_name| {
-                                    get_node_type_source_html_url_from_node_type_name(
-                                        node_type_name.as_ref(),
+                                    format!(
+                                        "{} ({})",
+                                        get_node_type_source_html_url_from_node_type_name(
+                                            node_type_name.as_ref(),
+                                        ),
+                                        self.get_node_names_from_node_type_name(&node_type_name)
+                                            .unwrap()[0]
                                     )
                                 })
                                 .collect::<Vec<_>>()
