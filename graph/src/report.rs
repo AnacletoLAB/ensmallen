@@ -894,7 +894,7 @@ impl Graph {
         } else {
             format!(
                 concat!(
-                    "<h4>Isomorphic node reports</h4>",
+                    "<h4>Isomorphic nodes</h4>",
                     "<p>",
                     "Isomorphic nodes are nodes with exactly the same neighbours ",
                     "and node types (if present in the graph). ",
