@@ -749,7 +749,7 @@ impl Graph {
                 0 => "".to_string(),
                 disconnected_nodes_number => format!(
                     " (of which {} are disconnected nodes)",
-                    disconnected_nodes_number
+                    to_human_readable_high_integer(disconnected_nodes_number as usize)
                 )
             },
             to_human_readable_high_integer(maximum_component_size as usize),
