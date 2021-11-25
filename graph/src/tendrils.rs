@@ -15,17 +15,16 @@ impl ToString for Tendril {
     fn to_string(&self) -> String {
         match self.len() {
             0 => unreachable!("It does not make sense to have an empty tendril."),
-            1 => format!(
-                "<p>Tendril containing a single node {}.</p>",
+            1 => format!("<p>Tendril containing a single node {}.</p>", unsafe {
                 self.graph
                     .get_unchecked_succinct_node_description(self.get_root_node_id(), 2)
-            ),
+            }),
             nodes_number => format!(
                 concat!(
                     "<p>Tendril containing {} nodes and starts from the node {}. ",
                     "Specifically, the nodes involved in the Tendril are: {}.</p>",
                 ),
-                to_human_readable_high_integer(self.len() as usize),
+                to_human_readable_high_integer(nodes_number as usize),
                 unsafe {
                     self.graph
                         .get_unchecked_succinct_node_description(self.get_root_node_id(), 2)

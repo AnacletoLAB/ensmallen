@@ -968,9 +968,13 @@ impl Graph {
                     "{possibly_conclusive_entry}"
                 ),
                 node_tuples_number = to_human_readable_high_integer(node_tuples.len()),
-                node_tuples_description = node_tuples.iter().take(10).map(|star| format!("<li>{}</li>", star.to_string())).join("\n"),
+                node_tuples_description = node_tuples
+                    .iter()
+                    .take(10)
+                    .map(|star| format!("<li>{}</li>", star.to_string()))
+                    .join("\n"),
                 possibly_conclusive_entry = if node_tuples.len() > 10 {
-                    let remaining_node_tuples = node_tuples.len() -10;
+                    let remaining_node_tuples = node_tuples.len() - 10;
                     if remaining_node_tuples == 1 {
                         "<p>And another node_tuple.</p>".to_string()
                     } else {
@@ -1022,8 +1026,8 @@ impl Graph {
                                 &isomorphic_node_group
                                     .into_iter()
                                     .map(|node_id| {
-                                        self
-                                            .get_unchecked_node_name_from_node_id(node_id)
+                                        get_node_source_html_url_from_node_name(&self
+                                            .get_unchecked_node_name_from_node_id(node_id))
                                     })
                                     .collect::<Vec<String>>(),
                                 Some(5),
