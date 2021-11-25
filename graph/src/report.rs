@@ -817,7 +817,7 @@ impl Graph {
                     "</ol>",
                     "{possibly_conclusive_entry}"
                 ),
-                circles_number = circles.len(),
+                circles_number = to_human_readable_high_integer(circles.len()),
                 max_circles_size = circles.first().unwrap().len(),
                 circles_description = circles.iter().take(10).map(|circle| format!("<li>{}</li>", circle.to_string())).join("\n"),
                 possibly_conclusive_entry = if circles.len() > 10 {
@@ -846,7 +846,7 @@ impl Graph {
                     "</ol>",
                     "{possibly_conclusive_entry}"
                 ),
-                chains_number = chains.len(),
+                chains_number = to_human_readable_high_integer(chains.len()),
                 max_chains_size = chains.first().unwrap().len(),
                 chains_description = chains.iter().take(10).map(|chain| format!("<li>{}</li>", chain.to_string())).join("\n"),
                 possibly_conclusive_entry = if chains.len() > 10 {
@@ -876,7 +876,7 @@ impl Graph {
                     "</ol>",
                     "{possibly_conclusive_entry}"
                 ),
-                tendrils_number = tendrils.len(),
+                tendrils_number = to_human_readable_high_integer(tendrils.len()),
                 max_tendrils_size = tendrils.first().unwrap().len(),
                 tendrils_description = tendrils.iter().take(10).map(|chain| format!("<li>{}</li>", chain.to_string())).join("\n"),
                 possibly_conclusive_entry = if tendrils.len() > 10 {
@@ -906,7 +906,7 @@ impl Graph {
                     "</ol>",
                     "{possibly_conclusive_entry}"
                 ),
-                stars_number = stars.len(),
+                stars_number = to_human_readable_high_integer(stars.len()),
                 max_stars_size = stars.first().unwrap().len(),
                 stars_description = stars.iter().take(10).map(|star| format!("<li>{}</li>", star.to_string())).join("\n"),
                 possibly_conclusive_entry = if stars.len() > 10 {
