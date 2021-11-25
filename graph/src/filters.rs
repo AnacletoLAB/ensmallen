@@ -1,5 +1,6 @@
 use crate::constructors::build_graph_from_integers;
 use crate::constructors::build_graph_from_strings_without_type_iterators;
+use rayon::iter::IntoParallelIterator;
 
 use super::*;
 use rayon::iter::ParallelIterator;
@@ -492,6 +493,34 @@ impl Graph {
             None,
         )
         .unwrap()
+    }
+
+    /// Returns new graph without tendrils.
+    pub fn drop_tendrils(&self) -> Result<Graph> {
+        self.filter_from_ids(
+            None,
+            Some(
+                self.par_iter_tendrils(Some(1), Some(true))?
+                    .flat_map(|tendril| tendril.get_tendril_node_ids().into_par_iter())
+                    .collect(),
+            ),
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+        )
     }
 
     /// Returns new graph without singleton nodes with selfloops.

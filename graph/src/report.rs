@@ -796,8 +796,9 @@ impl Graph {
             .collect();
 
         isomorphic_node_groups.sort_unstable_by(|group1, group2| unsafe {
-            (self.get_unchecked_node_degree_from_node_id(group2[0]) as usize * group2.len())
-                .cmp(&(self.get_unchecked_node_degree_from_node_id(group1[0]) as usize*group1.len()))
+            (self.get_unchecked_node_degree_from_node_id(group2[0]) as usize * group2.len()).cmp(
+                &(self.get_unchecked_node_degree_from_node_id(group1[0]) as usize * group1.len()),
+            )
         });
 
         // If the graph does not contain any oddity, we do not prepare a report.
