@@ -826,10 +826,15 @@ impl Graph {
                 max_circles_size = circles.first().unwrap().len(),
                 circles_description = circles.iter().take(10).map(|circle| format!("<li>{}</li>", circle.to_string())).join("\n"),
                 possibly_conclusive_entry = if circles.len() > 10 {
-                    format!(
-                        "<p>And other {} circles.</p>",
-                        to_human_readable_high_integer(circles.len() -10)
-                    )
+                    let remaining_circles = circles.len() -10;
+                    if remaining_circles == 1 {
+                        "<p>And another circle.</p>".to_string()
+                    } else {
+                        format!(
+                            "<p>And other {} circles.</p>",
+                            to_human_readable_high_integer(remaining_circles)
+                        )
+                    }
                 } else {
                     "".to_string()
                 }
@@ -857,10 +862,15 @@ impl Graph {
                 max_chains_size = chains.first().unwrap().len(),
                 chains_description = chains.iter().take(10).map(|chain| format!("<li>{}</li>", chain.to_string())).join("\n"),
                 possibly_conclusive_entry = if chains.len() > 10 {
-                    format!(
-                        "<p>And other {} chains.</p>",
-                        to_human_readable_high_integer(chains.len() -10)
-                    )
+                    let remaining_chains = chains.len() -10;
+                    if remaining_chains == 1 {
+                        "<p>And another chain.</p>".to_string()
+                    } else {
+                        format!(
+                            "<p>And other {} chains.</p>",
+                            to_human_readable_high_integer(remaining_chains)
+                        )
+                    }
                 } else {
                     "".to_string()
                 }
@@ -875,7 +885,7 @@ impl Graph {
                 concat!(
                     "<h4>Tendrils</h4>",
                     "<p>",
-                    "A tendril is a chain composed of one of more nodes that starts from a root with degree one. ",
+                    "A tendril is a chain composed of one or more nodes that starts from a root with degree one. ",
                     "We have detected {tendrils_number} tendrils in the graph, with the largest one containing {max_tendrils_size} nodes. ",
                     "The detected tendrils, sorted by decreasing size, are:",
                     "</p>",
@@ -888,10 +898,15 @@ impl Graph {
                 max_tendrils_size = tendrils.first().unwrap().len(),
                 tendrils_description = tendrils.iter().take(10).map(|chain| format!("<li>{}</li>", chain.to_string())).join("\n"),
                 possibly_conclusive_entry = if tendrils.len() > 10 {
-                    format!(
-                        "<p>And other {} tendrils.</p>",
-                        to_human_readable_high_integer(tendrils.len() -10)
-                    )
+                    let remaining_tendrils = tendrils.len() -10;
+                    if remaining_tendrils == 1 {
+                        "<p>And another tendril.</p>".to_string()
+                    } else {
+                        format!(
+                            "<p>And other {} tendrils.</p>",
+                            to_human_readable_high_integer(remaining_tendrils)
+                        )
+                    }
                 } else {
                     "".to_string()
                 }
@@ -920,10 +935,15 @@ impl Graph {
                 max_stars_size = stars.first().unwrap().len(),
                 stars_description = stars.iter().take(10).map(|star| format!("<li>{}</li>", star.to_string())).join("\n"),
                 possibly_conclusive_entry = if stars.len() > 10 {
-                    format!(
-                        "<p>And other {} stars.</p>",
-                        to_human_readable_high_integer(stars.len() -10)
-                    )
+                    let remaining_stars = stars.len() -10;
+                    if remaining_stars == 1 {
+                        "<p>And another star.</p>".to_string()
+                    } else {
+                        format!(
+                            "<p>And other {} stars.</p>",
+                            to_human_readable_high_integer(remaining_stars)
+                        )
+                    }
                 } else {
                     "".to_string()
                 }
@@ -950,10 +970,15 @@ impl Graph {
                 node_tuples_number = to_human_readable_high_integer(node_tuples.len()),
                 node_tuples_description = node_tuples.iter().take(10).map(|star| format!("<li>{}</li>", star.to_string())).join("\n"),
                 possibly_conclusive_entry = if node_tuples.len() > 10 {
-                    format!(
-                        "<p>And other {} node tuples.</p>",
-                        to_human_readable_high_integer(node_tuples.len() -10)
-                    )
+                    let remaining_node_tuples = node_tuples.len() -10;
+                    if remaining_node_tuples == 1 {
+                        "<p>And another node_tuple.</p>".to_string()
+                    } else {
+                        format!(
+                            "<p>And other {} node_tuples.</p>",
+                            to_human_readable_high_integer(remaining_node_tuples)
+                        )
+                    }
                 } else {
                     "".to_string()
                 }
@@ -1014,9 +1039,9 @@ impl Graph {
                 "<p>",
                 "A topological oddity is a set of nodes in the graph that may be derived by ",
                 "an error during the generation of the edge list of the graph. ",
-                "We currently support the detection of <i>Stars</i>, <i>Chains</i>, <i>Circles</i>, <i>Tendrils</i> and <i>Isomorphic nodes</i>. ",
-                "Note that in directed graph we only support the detection of isomorphic nodes. ",
-                "In the following paragraph we will describe the detected topological oddities (with at least 10 nodes).",
+                "We currently support the detection of <i>Stars</i>, <i>Chains</i>, <i>Circles</i>, <i>Tendrils</i>, <i>Node tuples</i> and <i>Isomorphic nodes</i>. ",
+                "Note that in a directed graph we only support the detection of isomorphic nodes. ",
+                "In the following paragraph, we will describe the detected topological oddities (with at least 10 nodes).",
                 "</p>",
                 "{circles_description}",
                 "{chains_description}",
@@ -1098,16 +1123,16 @@ impl Graph {
     unsafe fn get_singleton_nodes_with_selfloops_report(&self) -> String {
         format!(
             concat!(
-                "<h4>Singleton nodes with selfloops</h4>",
-                "<p>Singleton nodes with selfloops are nodes with no edge to other nodes ",
-                "and have exclusively selfloops. ",
+                "<h4>Singleton nodes with self-loops</h4>",
+                "<p>Singleton nodes with self-loops are nodes with no edge to other nodes ",
+                "and have exclusively self-loops. ",
                 "The graph contains {singleton_nodes_with_selfloops_number}.</p>"
             ),
             singleton_nodes_with_selfloops_number = match self
                 .get_singleton_nodes_with_selfloops_number()
             {
                 1 => format!(
-                    "a singleton node with selfloop, which is {}",
+                    "a singleton node with self-loop, which is {}",
                     self.get_unchecked_succinct_node_description(
                         self.iter_singleton_nodes_with_selfloops_node_ids()
                             .next()
@@ -1118,7 +1143,7 @@ impl Graph {
                 singleton_nodes_with_selfloops_number => {
                     format!(
                         concat!(
-                            "{singleton_nodes_with_selfloops_number} singleton nodes with selfloops, which are ",
+                            "{singleton_nodes_with_selfloops_number} singleton nodes with self-loops, which are ",
                             "{singleton_nodes_list}",
                             "{additional_singleton_nodes_with_selfloop}"
                         ),
@@ -1135,7 +1160,7 @@ impl Graph {
                         ),
                         additional_singleton_nodes_with_selfloop = if singleton_nodes_with_selfloops_number > 10 {
                             format!(
-                                ", plus other {singleton_nodes_with_selfloops_number} singleton nodes with selfloops",
+                                ", plus other {singleton_nodes_with_selfloops_number} singleton nodes with self-loops",
                                 singleton_nodes_with_selfloops_number = to_human_readable_high_integer(singleton_nodes_with_selfloops_number as usize - 10)
                             )
                         } else {
@@ -1232,7 +1257,7 @@ impl Graph {
                 "<p>Singleton node types are node types that are assigned ",
                 "exclusively to a single node, making the node type ",
                 "relatively meaningless, as it adds no more information ",
-                "then the name of node itself. ",
+                "than the node name itself. ",
                 "The graph contains {singleton_nodes_types_number}.</p>"
             ),
             singleton_nodes_types_number = match self.get_singleton_node_types_number().unwrap() {
@@ -1301,7 +1326,7 @@ impl Graph {
                 "<p>Homogeneous node types are node types that are assigned ",
                 "to all the nodes in the graph, making the node type ",
                 "relatively meaningless, as it adds no more information ",
-                "then the fact that the node is in the graph. ",
+                "than the fact that the node is in the graph. ",
                 "The graph contains {homogeneous_nodes_types_number}.</p>"
             ),
             homogeneous_nodes_types_number = match self.get_homogeneous_node_types_number().unwrap()
@@ -1531,7 +1556,7 @@ impl Graph {
                 "<p>Singleton edge types are edge types that are assigned ",
                 "exclusively to a single edge, making the edge type ",
                 "relatively meaningless, as it adds no more information ",
-                "then the name of edge itself. ",
+                "than the name of edge itself. ",
                 "The graph contains {singleton_edges_types_number}</p>"
             ),
             singleton_edges_types_number = match self.get_singleton_edge_types_number().unwrap() {
