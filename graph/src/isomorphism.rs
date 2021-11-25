@@ -1,142 +1,69 @@
 use super::*;
 use rayon::prelude::*;
+use std::sync::atomic::{AtomicBool, Ordering};
 
 impl Graph {
-    /// Returns whether the two given node IDs are topological synonims.
-    ///
-    /// # Details
-    /// Two nodes are topological synonims if they share the same set of neighbours,
-    /// have the same node types (if any) and the edges towards the same set of neighbouts
-    /// have the same weights and edge types (if it applies).
-    /// TODO: add the check for the weights and edge types.
-    ///
-    /// # Safety
-    /// The provided node IDs must exist in the current graph, or the current
-    /// function will panic.
+    /// Returns vector of vectors of isomorphic node groups IDs.
     ///
     /// # Arguments
-    /// * `first_node_id`: NodeT - The first node to check.
-    /// * `second_node_id`: NodeT - The second node to check.
-    pub unsafe fn is_unchecked_topological_synonim_from_node_ids(
-        &self,
-        first_node_id: NodeT,
-        second_node_id: NodeT,
-    ) -> bool {
-        // Preliminarly, we check that the two node IDs are not the same one.
-        if first_node_id == second_node_id {
-            return false;
-        }
-        // First we check if the two nodes have the same node degree.
-        if self.get_unchecked_node_degree_from_node_id(first_node_id)
-            != self.get_unchecked_node_degree_from_node_id(second_node_id)
-        {
-            // If they don't surely they do are not synonims.
-            return false;
-        }
-        // If the graph has node types.
-        if self.has_node_types() {
-            // Secondly, we check if the two nodes have the same node type.
-            if self.get_unchecked_node_type_ids_from_node_id(first_node_id)
-                != self.get_unchecked_node_type_ids_from_node_id(second_node_id)
-            {
-                // If they don't, surely it is not a synonim.
-                return false;
-            }
-        }
-        // Thirdly, and the most expensive test, we check if the neighbours are the same.
-        self.iter_unchecked_neighbour_node_ids_from_source_node_id(first_node_id)
-            .zip(self.iter_unchecked_neighbour_node_ids_from_source_node_id(second_node_id))
-            .all(|(first_node_neighbour_id, second_node_neighbour_id)| {
-                first_node_neighbour_id == second_node_neighbour_id
-            })
-    }
-
-    /// Returns iterator over the topological synonims of the provide node types.
-    ///
-    /// # Arguments
-    /// * `node_id`: NodeT - The node ID to check for.
-    /// * `skip_lower_node_ids`: Option<bool> - Whether to check lower node IDs. By default false.
-    pub fn iter_topological_synonim_from_node_id(
-        &self,
-        node_id: NodeT,
-        skip_lower_node_ids: Option<bool>,
-    ) -> impl Iterator<Item = NodeT> + '_ {
-        let skip_lower_node_ids = skip_lower_node_ids.unwrap_or(false);
-        self.iter_node_ids()
-            .filter(move |&this_node_id| !skip_lower_node_ids || this_node_id > node_id)
-            .filter(move |&this_node_id| unsafe {
-                self.is_unchecked_topological_synonim_from_node_ids(node_id, this_node_id)
-            })
-    }
-
-    /// Returns parallel iterator over the topological synonims of the provide node types.
-    ///
-    /// # Arguments
-    /// * `node_id`: NodeT - The node ID to check for.
-    /// * `skip_lower_node_ids`: Option<bool> - Whether to check lower node IDs. By default false.
-    pub fn par_iter_topological_synonim_from_node_id(
-        &self,
-        node_id: NodeT,
-        skip_lower_node_ids: Option<bool>,
-    ) -> impl ParallelIterator<Item = NodeT> + '_ {
-        let skip_lower_node_ids = skip_lower_node_ids.unwrap_or(false);
-        self.par_iter_node_ids()
-            .filter(move |&this_node_id| !skip_lower_node_ids || this_node_id > node_id)
-            .filter(move |&this_node_id| unsafe {
-                self.is_unchecked_topological_synonim_from_node_ids(node_id, this_node_id)
-            })
-    }
-
-    /// Returns parallel iterator topological synonims detected in the current graph.
-    ///
-    /// # Arguments
-    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims.
-    pub fn par_iter_isomorphic_node_ids(
+    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5.
+    pub fn par_iter_isomorphic_node_groups(
         &self,
         minimum_node_degree: Option<NodeT>,
     ) -> impl ParallelIterator<Item = Vec<NodeT>> + '_ {
-        let minimum_node_degree = minimum_node_degree.unwrap_or(1);
+        let minimum_node_degree = minimum_node_degree.unwrap_or(5);
+        let isomorphisms: Vec<AtomicBool> = self
+            .par_iter_node_ids()
+            .map(|_| AtomicBool::new(false))
+            .collect();
         self.par_iter_node_ids().filter_map(move |node_id| unsafe {
+            if isomorphisms[node_id as usize].load(Ordering::Relaxed) {
+                return None;
+            }
             let node_degree = self.get_unchecked_node_degree_from_node_id(node_id);
             if node_degree < minimum_node_degree {
                 return None;
             }
-            let mut isomorphic = self
-                .iter_topological_synonim_from_node_id(node_id, Some(true))
-                .collect::<Vec<NodeT>>();
-            if isomorphic.is_empty() {
+            let node_type = self.get_unchecked_node_type_ids_from_node_id(node_id);
+            let mut isomorphic_group: Vec<NodeT> = (node_id + 1..self.get_nodes_number())
+                .into_par_iter()
+                .filter(|&other_node_id| {
+                    self.get_unchecked_node_degree_from_node_id(other_node_id) == node_degree
+                        && self.get_unchecked_node_type_ids_from_node_id(other_node_id) == node_type
+                        && self
+                            .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                            .zip(self.iter_unchecked_neighbour_node_ids_from_source_node_id(
+                                other_node_id,
+                            ))
+                            .all(|(first_node_neighbour_id, second_node_neighbour_id)| {
+                                first_node_neighbour_id == second_node_neighbour_id
+                            })
+                })
+                .collect();
+            if isomorphic_group.is_empty() {
                 None
             } else {
-                isomorphic.push(node_id);
-                Some(isomorphic)
+                isomorphic_group.push(node_id);
+                isomorphic_group.iter().for_each(|&node_id| {
+                    isomorphisms[node_id as usize].store(true, Ordering::Relaxed);
+                });
+                Some(isomorphic_group)
             }
         })
     }
 
-    /// Returns parallel iterator topological synonims node names detected in the current graph.
+    /// Returns vector with isomorphic node groups IDs.
+    ///
+    /// # Implementative details
+    /// Nodes not associated with no particular group are mapped with the maximum U32.
     ///
     /// # Arguments
-    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims.
-    pub fn par_iter_isomorphic_node_names(
+    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5.
+    pub fn get_isomorphic_node_groups(
         &self,
         minimum_node_degree: Option<NodeT>,
-    ) -> impl ParallelIterator<Item = Vec<String>> + '_ {
-        self.par_iter_isomorphic_node_ids(minimum_node_degree)
-            .map(move |synonims| unsafe {
-                synonims
-                    .into_iter()
-                    .map(|node_id| self.get_unchecked_node_name_from_node_id(node_id))
-                    .collect()
-            })
-    }
-
-    #[no_numpy_binding]
-    /// Returns topological synonims detected in the current graph.
-    ///
-    /// # Arguments
-    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims.
-    pub fn get_isomorphic_node_ids(&self, minimum_node_degree: Option<NodeT>) -> Vec<Vec<NodeT>> {
-        self.par_iter_isomorphic_node_ids(minimum_node_degree)
+    ) -> Vec<Vec<NodeT>> {
+        self.par_iter_isomorphic_node_groups(minimum_node_degree)
             .collect()
     }
 
@@ -145,59 +72,27 @@ impl Graph {
     /// # Arguments
     /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims.
     pub fn has_isomorphic_nodes(&self, minimum_node_degree: Option<NodeT>) -> bool {
-        self.par_iter_isomorphic_node_ids(minimum_node_degree)
-            .any(|_| true)
-    }
-
-    /// Returns whether the two given node IDs are topological synonims.
-    ///
-    /// # Details
-    /// Two nodes are topological synonims if they share the same set of neighbours,
-    /// have the same node types (if any) and the edges towards the same set of neighbouts
-    /// have the same weights and edge types (if it applies).
-    /// TODO: add the check for the weights and edge types.
-    ///
-    /// # Arguments
-    /// * `first_node_id`: NodeT - The first node to check.
-    /// * `second_node_id`: NodeT - The second node to check.
-    ///
-    /// # Raises
-    /// * If one of more of the provided node IDs do not exist in the current graph.
-    pub fn is_topological_synonim_from_node_ids(
-        &self,
-        first_node_id: NodeT,
-        second_node_id: NodeT,
-    ) -> Result<bool> {
-        self.validate_node_id(first_node_id)?;
-        self.validate_node_id(second_node_id)?;
-        Ok(unsafe {
-            self.is_unchecked_topological_synonim_from_node_ids(first_node_id, second_node_id)
-        })
-    }
-
-    /// Returns whether the two given node names are topological synonims.
-    ///
-    /// # Details
-    /// Two nodes are topological synonims if they share the same set of neighbours,
-    /// have the same node types (if any) and the edges towards the same set of neighbouts
-    /// have the same weights and edge types (if it applies).
-    /// TODO: add the check for the weights and edge types.
-    ///
-    /// # Arguments
-    /// * `first_node_name`: &str - The first node to check.
-    /// * `second_node_name`: &str - The second node to check.
-    ///
-    /// # Raises
-    /// * If one of more of the provided node names do not exist in the current graph.
-    pub fn is_topological_synonim_from_node_names(
-        &self,
-        first_node_name: &str,
-        second_node_name: &str,
-    ) -> Result<bool> {
-        let first_node_id = self.get_node_id_from_node_name(first_node_name)?;
-        let second_node_id = self.get_node_id_from_node_name(second_node_name)?;
-        Ok(unsafe {
-            self.is_unchecked_topological_synonim_from_node_ids(first_node_id, second_node_id)
+        let minimum_node_degree = minimum_node_degree.unwrap_or(5);
+        self.par_iter_node_ids().any(move |node_id| unsafe {
+            let node_degree = self.get_unchecked_node_degree_from_node_id(node_id);
+            if node_degree < minimum_node_degree {
+                return false;
+            }
+            let node_type = self.get_unchecked_node_type_ids_from_node_id(node_id);
+            (node_id + 1..self.get_nodes_number())
+                .into_par_iter()
+                .any(|other_node_id| {
+                    self.get_unchecked_node_degree_from_node_id(other_node_id) == node_degree
+                        && self.get_unchecked_node_type_ids_from_node_id(other_node_id) == node_type
+                        && self
+                            .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                            .zip(self.iter_unchecked_neighbour_node_ids_from_source_node_id(
+                                other_node_id,
+                            ))
+                            .all(|(first_node_neighbour_id, second_node_neighbour_id)| {
+                                first_node_neighbour_id == second_node_neighbour_id
+                            })
+                })
         })
     }
 }
