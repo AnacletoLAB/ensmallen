@@ -268,10 +268,16 @@ pub unsafe fn get_unchecked_formatted_list(
         last = if elements.len() <= max_number_of_elements {
             elements.last().unwrap().clone()
         } else {
-            format!(
-                "other {}",
-                to_human_readable_high_integer(elements.len() - max_number_of_elements)
-            )
+            let remaining_values = elements.len() - max_number_of_elements;
+            if remaining_values == 1 {
+                "another one".to_string()
+            } else {
+                format!(
+                    "other {}",
+                    to_human_readable_high_integer(remaining_values)
+                )
+            }
+            
         }
     )
 }
