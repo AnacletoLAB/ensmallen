@@ -1374,7 +1374,7 @@ impl Graph {
                     let node_type_descriptions = get_unchecked_formatted_list(
                         node_type_counts
                             .into_iter()
-                            .take(5)
+                            .take(10)
                             .map(|(node_type_name, count)| {
                                 format!(
                                     "{html_url} ({count} nodes, {percentage:.2}%)",
@@ -1394,8 +1394,8 @@ impl Graph {
                         "{node_types_number} node types, {top_five_caveat} {node_type_description}",
                         node_types_number =
                             to_human_readable_high_integer(node_types_number as usize),
-                        top_five_caveat = if node_types_number > 5 {
-                            "of which the 5 most common are"
+                        top_five_caveat = if node_types_number > 10 {
+                            "of which the 10 most common are"
                         } else {
                             "which are"
                         },
@@ -1589,7 +1589,7 @@ impl Graph {
                     let edge_type_descriptions = get_unchecked_formatted_list(
                         edge_type_counts
                             .into_iter()
-                            .take(5)
+                            .take(10)
                             .map(|(edge_type_name, count)| {
                                 format!(
                                     "{html_url} ({count} directed edges, {percentage:.2}%)",
@@ -1610,8 +1610,8 @@ impl Graph {
                         "{edge_types_number} edge types, {top_five_caveat} {edge_type_description}",
                         edge_types_number =
                             to_human_readable_high_integer(edge_types_number as usize),
-                        top_five_caveat = if edge_types_number > 5 {
-                            "of which the 5 most common are"
+                        top_five_caveat = if edge_types_number > 10 {
+                            "of which the 10 most common are"
                         } else {
                             "which are"
                         },
