@@ -28,7 +28,6 @@ impl ToString for Tendril {
                     &self
                         .get_tendril_node_ids()
                         .into_iter()
-                        .skip(1)
                         .map(|node_id| {
                             self.graph
                                 .get_unchecked_succinct_node_description(node_id, 2)
