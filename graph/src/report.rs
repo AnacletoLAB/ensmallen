@@ -1387,7 +1387,7 @@ impl Graph {
             concat!(
                 "<h3>Node types</h3>",
                 "<p>",
-                "The graph has {node_types_number}. ",
+                "The graph has {node_types_number}.{multilabel_node_types} ",
                 "The RAM requirements for the node types data structure is {ram_node_types}.",
                 "</p>",
             ),
@@ -1442,6 +1442,17 @@ impl Graph {
                         node_type_description = node_type_descriptions
                     )
                 }
+            },
+            multilabel_node_types = if self.has_multilabel_node_types() {
+                format!(
+                    concat!(
+                        " The node types are multi-label, and the node ",
+                        "with most node types has {} node types."
+                    ),
+                    self.get_maximum_multilabel_count().unwrap()
+                )
+            } else {
+                "".to_string()
             },
             ram_node_types = self
                 .get_node_types_total_memory_requirements_human_readable()
