@@ -1443,7 +1443,7 @@ impl Graph {
                     )
                 }
             },
-            multilabel_node_types = if self.has_multilabel_node_types() {
+            multilabel_node_types = if self.has_multilabel_node_types().unwrap() {
                 format!(
                     concat!(
                         " The node types are multi-label, and the node ",
