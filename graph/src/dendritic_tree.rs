@@ -1,6 +1,7 @@
 use super::*;
 use rayon::prelude::*;
 use std::cmp::Ordering;
+use log::info;
 pub const DENDRITIC_TREE_LEAF: NodeT = NodeT::MAX - 1;
 
 #[derive(Hash, Clone, Debug, PartialEq)]
@@ -149,6 +150,7 @@ impl Graph {
         let predecessors = ThreadDataRaceAware::new(vec![NODE_NOT_PRESENT; nodes_number]);
 
         // We initialize the initial frontier to the set of nodes with degree one.
+        info!("Computing initial frontier.");
         let mut frontier: Vec<NodeT> = self
             .par_iter_node_degrees()
             .zip(self.par_iter_node_ids())
@@ -161,7 +163,8 @@ impl Graph {
                 }
             })
             .collect::<Vec<NodeT>>();
-
+        
+        info!("Starting to explore the graph.");
         while !frontier.is_empty() {
             frontier = frontier
                 .into_par_iter()
@@ -216,6 +219,7 @@ impl Graph {
         }
 
         let predecessors: Vec<NodeT> = predecessors.value.into_inner();
+        info!("Searching root nodes.");
         let roots = predecessors
             .par_iter()
             .cloned()
@@ -228,6 +232,7 @@ impl Graph {
                 }
             })
             .collect::<Vec<NodeT>>();
+        info!("Detected {} dendritic trees.", roots.len());
         Ok(roots
             .into_par_iter()
             .map(|root_node_id| {
