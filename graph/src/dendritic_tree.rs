@@ -1,7 +1,7 @@
 use super::*;
+use log::info;
 use rayon::prelude::*;
 use std::cmp::Ordering;
-use log::info;
 pub const DENDRITIC_TREE_LEAF: NodeT = NodeT::MAX - 1;
 
 #[derive(Hash, Clone, Debug, PartialEq)]
@@ -163,7 +163,7 @@ impl Graph {
                 }
             })
             .collect::<Vec<NodeT>>();
-        
+
         info!("Starting to explore the graph.");
         while !frontier.is_empty() {
             frontier = frontier
@@ -241,20 +241,33 @@ impl Graph {
                 let mut stack: Vec<NodeT> = predecessors
                     .iter()
                     .cloned()
-                    .filter(|&parent_node_id| parent_node_id == root_node_id)
+                    .enumerate()
+                    .filter_map(|(i, node_id)| {
+                        if root_node_id == node_id {
+                            Some(i as NodeT)
+                        } else {
+                            None
+                        }
+                    })
                     .collect();
                 while !stack.is_empty() {
                     depth += 1;
                     leaf_nodes.extend_from_slice(&stack);
-                    stack = stack
-                        .into_iter()
-                        .flat_map(|root_node_id| {
-                            predecessors
-                                .iter()
-                                .cloned()
-                                .filter(move |&parent_node_id| parent_node_id == root_node_id)
-                        })
-                        .collect::<Vec<NodeT>>();
+                    stack =
+                        stack
+                            .into_iter()
+                            .flat_map(|root_node_id| {
+                                predecessors.iter().cloned().enumerate().filter_map(
+                                    move |(i, node_id)| {
+                                        if root_node_id == node_id {
+                                            Some(i as NodeT)
+                                        } else {
+                                            None
+                                        }
+                                    },
+                                )
+                            })
+                            .collect::<Vec<NodeT>>();
                 }
                 DendriticTree::from_node_ids(&self, root_node_id, depth, leaf_nodes)
             })
