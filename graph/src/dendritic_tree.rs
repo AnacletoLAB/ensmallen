@@ -156,7 +156,8 @@ impl Graph {
             .filter_map(|node_id| unsafe {
                 if self
                     .iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id)
-                    .take(2).count()
+                    .take(2)
+                    .count()
                     == 1
                 {
                     (*predecessors.value.get())[node_id as usize] = DENDRITIC_TREE_LEAF;
@@ -178,8 +179,10 @@ impl Graph {
                         .map(move |neighbour_node_id| (neighbour_node_id, node_id))
                 })
                 .filter_map(|(neighbour_node_id, node_id)| unsafe {
-                    // If this node was not yet explored
-                    if (*predecessors.value.get())[neighbour_node_id as usize] == NODE_NOT_PRESENT {
+                    // If this node was not yet explored and the current node is a lead.
+                    if (*predecessors.value.get())[neighbour_node_id as usize] == NODE_NOT_PRESENT
+                        && (*predecessors.value.get())[node_id as usize] == DENDRITIC_TREE_LEAF
+                    {
                         // Check if this new node is a validate dentritic leaf, that is, it is a node
                         // with all neighbours MINUS ONE equal to dentritic leafs. All the nodes we explore
                         // are dentritic leafs, therefore this means to check how many nodes are not explored.
@@ -199,14 +202,13 @@ impl Graph {
                             // Set the neighbouring node as a dentritic tree leaf.
                             (*predecessors.value.get())[neighbour_node_id as usize] =
                                 DENDRITIC_TREE_LEAF;
-                            // add the node to the nodes to explore
-                            Some(neighbour_node_id)
                         } else {
                             // Set the neighbouring node as a dentritic tree root.
                             (*predecessors.value.get())[neighbour_node_id as usize] =
                                 neighbour_node_id;
-                            None
                         }
+                        // add the node to the nodes to explore
+                        Some(neighbour_node_id)
                     } else {
                         // If the neighbour is described as a dentritic leaf that has not
                         // yet a parent, its parent node will be the current node.
