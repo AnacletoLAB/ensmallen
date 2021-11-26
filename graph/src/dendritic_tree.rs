@@ -222,7 +222,7 @@ impl Graph {
                         // If the neighbour is described as a dentritic leaf that has not
                         // yet a parent, its parent node will be the current node.
                         if neighbour_parent == DENDRITIC_TREE_LEAF
-                            || neighbour_parent == neighbour_node_id
+                            || neighbour_parent == neighbour_node_id && neighbour_node_id > node_id
                         {
                             (*predecessors.value.get())[neighbour_node_id as usize] = node_id;
                         }
