@@ -204,7 +204,6 @@ impl Graph {
                                     (*predecessors.value.get())[farther_node_id as usize];
                                 parent_node_id == NODE_NOT_PRESENT
                                     || parent_node_id == farther_node_id
-                                        && farther_node_id > node_id
                             })
                             .take(2)
                             .count();
