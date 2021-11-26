@@ -523,8 +523,39 @@ impl Graph {
         )
     }
 
+    /// Returns new graph without tendrils.
+    pub fn drop_dendritic_trees(&self) -> Result<Graph> {
+        self.filter_from_ids(
+            None,
+            Some(
+                self.get_dendritic_trees()?
+                    .into_par_iter()
+                    .flat_map(|dendric_tree| {
+                        dendric_tree.get_dentritic_trees_node_ids().into_par_iter()
+                    })
+                    .collect(),
+            ),
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+        )
+    }
+
     /// Returns new graph without isomorphic nodes, only keeping the smallest node ID of each group.
-    /// 
+    ///
     /// # Arguments
     /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default equal to 2.
     pub fn drop_isomorphic_nodes(&self, minimum_node_degree: Option<NodeT>) -> Graph {
@@ -555,7 +586,8 @@ impl Graph {
             None,
             None,
             None,
-        ).unwrap()
+        )
+        .unwrap()
     }
 
     /// Returns new graph without singleton nodes with selfloops.

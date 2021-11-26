@@ -195,6 +195,31 @@ impl Graph {
         }
     }
 
+    /// Return iterator over NodeT of unique destinations of the given node src, excluding selfloops.
+    ///
+    /// # Arguments
+    /// * `src`: NodeT - The node whose neighbours are to be retrieved.
+    ///
+    /// # Safety
+    /// If the given node ID does not exist in the graph the method will panic.
+    pub unsafe fn iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
+        &self,
+        src: NodeT,
+    ) -> impl Iterator<Item = NodeT> + Send + '_ {
+        self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)
+            .scan(src, move |previous_node, dst| {
+                Some(if src == dst {
+                    None
+                } else if *previous_node == dst {
+                    None
+                } else {
+                    *previous_node = dst;
+                    Some(dst)
+                })
+            })
+            .filter_map(|value| value)
+    }
+
     /// Return iterator over sources of the given destination node.
     ///
     /// # Arguments
