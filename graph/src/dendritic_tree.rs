@@ -76,12 +76,17 @@ impl DendriticTree {
         }
     }
 
-    /// Return the first node ID of the DendriticTree.
+    /// Return the root node ID of the dendritic tree.
     pub fn get_root_node_id(&self) -> NodeT {
         self.root_node_id
     }
 
-    /// Return the first node name of the DendriticTree.
+    /// Return the depth of the dentritic tree.
+    pub fn get_depth(&self) -> NodeT {
+        self.depth
+    }
+
+    /// Return the root node name of the DendriticTree.
     pub fn get_root_node_name(&self) -> String {
         unsafe {
             self.graph
@@ -179,8 +184,10 @@ impl Graph {
                         .map(move |neighbour_node_id| (neighbour_node_id, node_id))
                 })
                 .filter_map(|(neighbour_node_id, node_id)| unsafe {
-                    // If this node was not yet explored and the current node is a lead.
-                    if (*predecessors.value.get())[neighbour_node_id as usize] == NODE_NOT_PRESENT
+                    // If this node was not yet explored and the current node is a leaf
+                    // or the neighbour is a tentative root node, that may be mis-labeled
+                    let neighbour_parent = (*predecessors.value.get())[neighbour_node_id as usize];
+                    if neighbour_parent == NODE_NOT_PRESENT
                         && (*predecessors.value.get())[node_id as usize] == DENDRITIC_TREE_LEAF
                     {
                         // Check if this new node is a validate dentritic leaf, that is, it is a node
@@ -193,8 +200,10 @@ impl Graph {
                                 neighbour_node_id,
                             )
                             .filter(|&farther_node_id| {
-                                (*predecessors.value.get())[farther_node_id as usize]
-                                    == NODE_NOT_PRESENT
+                                let parent_node_id =
+                                    (*predecessors.value.get())[farther_node_id as usize];
+                                parent_node_id == NODE_NOT_PRESENT
+                                    || parent_node_id == parent_node_id
                             })
                             .take(2)
                             .count();
@@ -212,8 +221,8 @@ impl Graph {
                     } else {
                         // If the neighbour is described as a dentritic leaf that has not
                         // yet a parent, its parent node will be the current node.
-                        if (*predecessors.value.get())[neighbour_node_id as usize]
-                            == DENDRITIC_TREE_LEAF
+                        if neighbour_parent == DENDRITIC_TREE_LEAF
+                            || neighbour_parent == neighbour_node_id
                         {
                             (*predecessors.value.get())[neighbour_node_id as usize] = node_id;
                         }

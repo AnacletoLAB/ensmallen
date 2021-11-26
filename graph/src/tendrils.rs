@@ -183,7 +183,9 @@ impl Graph {
                     return None;
                 }
                 // only keep the root with the smaller node_id
-                if last_node < node_id {
+                if last_node < node_id
+                    && self.get_unchecked_node_degree_from_node_id(last_node) == 1
+                {
                     return None;
                 }
                 // return the tendril
