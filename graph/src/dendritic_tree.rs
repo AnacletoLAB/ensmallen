@@ -156,7 +156,7 @@ impl Graph {
             .filter_map(|node_id| unsafe {
                 if self
                     .iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id)
-                    .take(2)
+                    .take(2).count()
                     == 1
                 {
                     (*predecessors.value.get())[node_id as usize] = DENDRITIC_TREE_LEAF;
