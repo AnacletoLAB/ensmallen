@@ -253,21 +253,17 @@ impl Graph {
                 while !stack.is_empty() {
                     depth += 1;
                     leaf_nodes.extend_from_slice(&stack);
-                    stack =
-                        stack
-                            .into_iter()
-                            .flat_map(|root_node_id| {
-                                predecessors.iter().cloned().enumerate().filter_map(
-                                    move |(i, node_id)| {
-                                        if root_node_id == node_id {
-                                            Some(i as NodeT)
-                                        } else {
-                                            None
-                                        }
-                                    },
-                                )
-                            })
-                            .collect::<Vec<NodeT>>();
+                    stack = predecessors
+                        .iter()
+                        .enumerate()
+                        .filter_map(move |(i, node_id)| {
+                            if stack.contains(node_id) {
+                                Some(i as NodeT)
+                            } else {
+                                None
+                            }
+                        })
+                        .collect::<Vec<NodeT>>();
                 }
                 DendriticTree::from_node_ids(&self, root_node_id, depth, leaf_nodes)
             })
