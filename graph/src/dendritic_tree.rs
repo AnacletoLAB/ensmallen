@@ -246,7 +246,7 @@ impl Graph {
                         // If the current node has as parent the root node
                         // but isn't the root node itself, which is represented
                         // as a selfloop.
-                        if root_node_id == node_id && i != root_node_id{
+                        if root_node_id == node_id && i as NodeT != root_node_id{
                             Some(i as NodeT)
                         } else {
                             None
