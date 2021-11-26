@@ -152,10 +152,13 @@ impl Graph {
         // We initialize the initial frontier to the set of nodes with degree one.
         info!("Computing initial frontier.");
         let mut frontier: Vec<NodeT> = self
-            .par_iter_node_degrees()
-            .zip(self.par_iter_node_ids())
-            .filter_map(|(node_degree, node_id)| unsafe {
-                if node_degree == 1 {
+            .par_iter_node_ids()
+            .filter_map(|node_id| unsafe {
+                if self
+                    .iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id)
+                    .take(2)
+                    == 1
+                {
                     (*predecessors.value.get())[node_id as usize] = DENDRITIC_TREE_LEAF;
                     Some(node_id)
                 } else {
@@ -246,7 +249,7 @@ impl Graph {
                         // If the current node has as parent the root node
                         // but isn't the root node itself, which is represented
                         // as a selfloop.
-                        if root_node_id == node_id && i as NodeT != root_node_id{
+                        if root_node_id == node_id && i as NodeT != root_node_id {
                             Some(i as NodeT)
                         } else {
                             None
