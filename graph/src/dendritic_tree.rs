@@ -1,7 +1,7 @@
 use super::*;
 use log::info;
 use rayon::prelude::*;
-use std::cmp::Ordering;
+use std::sync::atomic::{AtomicBool, AtomicU32, Ordering};
 pub const DENDRITIC_TREE_LEAF: NodeT = NodeT::MAX - 1;
 
 #[derive(Hash, Clone, Debug, PartialEq)]
@@ -55,7 +55,7 @@ impl ToString for DendriticTree {
 }
 
 impl PartialOrd for DendriticTree {
-    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
         Some(self.len.cmp(&other.len))
     }
 }
@@ -143,16 +143,7 @@ impl Graph {
     pub fn get_dendritic_trees(&self) -> Result<Vec<DendriticTree>> {
         self.must_be_undirected()?;
         let nodes_number = self.get_nodes_number() as usize;
-        if self.get_nodes_number() >= DENDRITIC_TREE_LEAF {
-            return Err(format!(
-                concat!(
-                    "The current version of this algorithm ",
-                    "does not support graphs with more than {} nodes."
-                ),
-                DENDRITIC_TREE_LEAF
-            ));
-        }
-        let predecessors = ThreadDataRaceAware::new(vec![NODE_NOT_PRESENT; nodes_number]);
+        let leaf_nodes = ThreadDataRaceAware::new(vec![false; nodes_number]);
 
         // We initialize the initial frontier to the set of nodes with degree one.
         info!("Computing initial frontier.");
@@ -165,7 +156,7 @@ impl Graph {
                     .count()
                     == 1
                 {
-                    (*predecessors.value.get())[node_id as usize] = DENDRITIC_TREE_LEAF;
+                    (*leaf_nodes.value.get())[node_id as usize] = true;
                     Some(node_id)
                 } else {
                     None
@@ -173,120 +164,88 @@ impl Graph {
             })
             .collect::<Vec<NodeT>>();
 
+        let expanded_frontier = AtomicBool::new(true);
         info!("Starting to explore the graph.");
-        while !frontier.is_empty() {
+        while expanded_frontier.load(Ordering::Relaxed) {
+            expanded_frontier.store(false, Ordering::Relaxed);
             frontier = frontier
                 .into_par_iter()
                 .flat_map_iter(|node_id| unsafe {
-                    // TODO!: The following line can be improved when the par iter is made
-                    // generally available also for the elias-fano graphs.
-                    self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id)
-                        .map(move |neighbour_node_id| (neighbour_node_id, node_id))
+                    // If this is a candidate root, we pass it without further exploring
+                    // its neighbouring nodes in order to not expand further the
+                    let iterator: Box<dyn Iterator<Item = (NodeT, NodeT)>> =
+                        if (*leaf_nodes.value.get())[node_id as usize] {
+                            Box::new(
+                                self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
+                                    node_id,
+                                )
+                                .filter(|&neighbour_node_id| {
+                                    !(*leaf_nodes.value.get())[neighbour_node_id as usize]
+                                })
+                                .map(move |neighbour_node_id| (neighbour_node_id, node_id)),
+                            )
+                        } else {
+                            Box::new(vec![(node_id, node_id)].into_iter())
+                        };
+                    iterator
                 })
                 .filter_map(|(neighbour_node_id, node_id)| unsafe {
-                    // If this node was not yet explored and the current node is a leaf
-                    // or the neighbour is a tentative root node, that may be mis-labeled
-                    let neighbour_parent = (*predecessors.value.get())[neighbour_node_id as usize];
-                    if neighbour_parent == NODE_NOT_PRESENT
-                        && (*predecessors.value.get())[node_id as usize] == DENDRITIC_TREE_LEAF
-                    {
-                        // Check if this new node is a validate dentritic leaf, that is, it is a node
-                        // with all neighbours MINUS ONE equal to dentritic leafs. All the nodes we explore
-                        // are dentritic leafs, therefore this means to check how many nodes are not explored.
-                        // We only want to check if the new node is with one or more neighbours that are not visited
-                        // and we do not need to explore all the other neighbours.
-                        let unexplored_neighbours = self
-                            .iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
-                                neighbour_node_id,
-                            )
-                            .filter(|&farther_node_id| {
-                                let parent_node_id =
-                                    (*predecessors.value.get())[farther_node_id as usize];
-                                parent_node_id == NODE_NOT_PRESENT
-                                    || parent_node_id == farther_node_id
-                            })
-                            .take(2)
-                            .count();
-                        if unexplored_neighbours == 1 {
-                            // Set the neighbouring node as a dentritic tree leaf.
-                            (*predecessors.value.get())[neighbour_node_id as usize] =
-                                DENDRITIC_TREE_LEAF;
-                        } else {
-                            // Set the neighbouring node as a dentritic tree root.
-                            (*predecessors.value.get())[neighbour_node_id as usize] =
-                                neighbour_node_id;
-                        }
-                        // add the node to the nodes to explore
-                        Some(neighbour_node_id)
-                    } else {
-                        // If the neighbour is described as a dentritic leaf that has not
-                        // yet a parent, its parent node will be the current node.
-                        if neighbour_parent == DENDRITIC_TREE_LEAF {
-                            (*predecessors.value.get())[neighbour_node_id as usize] = node_id;
-                        } else if neighbour_parent == neighbour_node_id {
-                            if neighbour_node_id > node_id {
-                                (*predecessors.value.get())[neighbour_node_id as usize] = node_id;
-                            } else {
-                                (*predecessors.value.get())[node_id as usize] = neighbour_node_id;
-                            }
-                        }
-                        None
+                    // We retrieve the number of neighbours of the node that is NOT a
+                    // dentritic leaf, and if the number is exactly equal to one
+                    // we can mark this new node also as a dentritic leaf.
+                    let unexplored_neighbours = self
+                        .iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
+                            neighbour_node_id,
+                        )
+                        .filter(|&farther_node_id| {
+                            !(*leaf_nodes.value.get())[farther_node_id as usize]
+                        })
+                        .take(2)
+                        .count();
+                    if unexplored_neighbours == 1 {
+                        // Set the neighbouring node as a dentritic tree leaf.
+                        (*leaf_nodes.value.get())[neighbour_node_id as usize] = true;
+                        expanded_frontier.store(true, Ordering::Relaxed);
                     }
+                    Some(neighbour_node_id)
                 })
                 .collect::<Vec<NodeT>>();
         }
 
-        let predecessors: Vec<NodeT> = predecessors.value.into_inner();
         info!("Searching root nodes.");
-        let roots = predecessors
-            .par_iter()
-            .cloned()
-            .enumerate()
-            .filter_map(|(i, node_id)| {
-                if node_id == i as NodeT {
-                    Some(node_id)
-                } else {
-                    None
-                }
-            })
-            .collect::<Vec<NodeT>>();
-        info!("Detected {} dendritic trees.", roots.len());
-        Ok(roots
+        // The nodes remaining in the frontier at convergence are root
+        // nodes, but they may be appearing multiple times. We need
+        // to make these values unique.
+        frontier.par_sort_unstable();
+        frontier.dedup();
+
+        info!("Detected {} dendritic trees.", frontier.len());
+        Ok(frontier
             .into_par_iter()
             .map(|root_node_id| {
-                let mut leaf_nodes: Vec<NodeT> = Vec::new();
+                let mut tree_nodes: Vec<NodeT> = Vec::new();
                 let mut depth: NodeT = 0;
-                let mut stack: Vec<NodeT> = predecessors
-                    .iter()
-                    .cloned()
-                    .enumerate()
-                    .filter_map(|(i, node_id)| {
-                        // If the current node has as parent the root node
-                        // but isn't the root node itself, which is represented
-                        // as a selfloop.
-                        if root_node_id == node_id && i as NodeT != root_node_id {
-                            Some(i as NodeT)
-                        } else {
-                            None
-                        }
-                    })
-                    .collect();
+                let mut stack: Vec<NodeT> = vec![root_node_id];
                 while !stack.is_empty() {
                     depth += 1;
-                    leaf_nodes.extend_from_slice(&stack);
-                    stack = predecessors
+                    stack = stack
                         .iter()
-                        .enumerate()
-                        .filter_map(move |(i, node_id)| {
-                            if stack.contains(node_id) {
-                                Some(i as NodeT)
-                            } else {
-                                None
-                            }
+                        .flat_map(|&node_id| unsafe {
+                            self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
+                                node_id,
+                            )
+                            .filter(|&neighbour_node_id| unsafe {
+                                (*leaf_nodes.value.get())[neighbour_node_id as usize]
+                            })
+                        })
+                        .map(|neighbour_node_id| unsafe {
+                            (*leaf_nodes.value.get())[neighbour_node_id as usize] = false;
+                            neighbour_node_id
                         })
                         .collect::<Vec<NodeT>>();
+                    tree_nodes.extend_from_slice(&stack);
                 }
-                DendriticTree::from_node_ids(&self, root_node_id, depth, leaf_nodes)
+                DendriticTree::from_node_ids(&self, root_node_id, depth, tree_nodes)
             })
             .collect::<Vec<DendriticTree>>())
     }
