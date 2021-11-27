@@ -1,7 +1,7 @@
 use crate::constructors::build_graph_from_integers;
 use crate::constructors::build_graph_from_strings_without_type_iterators;
 use rayon::iter::IntoParallelIterator;
-
+use log::info;
 use super::*;
 use rayon::iter::ParallelIterator;
 
@@ -525,16 +525,16 @@ impl Graph {
 
     /// Returns new graph without tendrils.
     pub fn drop_dendritic_trees(&self) -> Result<Graph> {
+        let node_ids_to_filter = self.get_dendritic_trees()?
+        .into_par_iter()
+        .flat_map(|dendric_tree| {
+            dendric_tree.get_dentritic_trees_node_ids()
+        })
+        .collect();
+        info!("Starting to filter");
         self.filter_from_ids(
             None,
-            Some(
-                self.get_dendritic_trees()?
-                    .into_par_iter()
-                    .flat_map(|dendric_tree| {
-                        dendric_tree.get_dentritic_trees_node_ids()
-                    })
-                    .collect(),
-            ),
+            Some(node_ids_to_filter),
             None,
             None,
             None,
