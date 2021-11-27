@@ -775,7 +775,7 @@ impl Graph {
     /// # Safety
     /// This method may cause a panic when called on a graph with no edges.
     fn get_report_of_topological_oddities(&self) -> Result<Option<String>> {
-        let (circles, chains, stars, tendrils, node_tuples) = if !self.is_directed() {
+        let (circles, chains, stars, tendrils, node_tuples, dendritic_trees) = if !self.is_directed() {
             let mut circles = self.get_circles(None, None)?;
             circles.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
             let mut chains = self.get_chains(None, None)?;
@@ -786,9 +786,11 @@ impl Graph {
             tendrils.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
             let mut node_tuples = self.get_node_tuples()?;
             node_tuples.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
-            (circles, chains, stars, tendrils, node_tuples)
+            let mut dendritic_trees = self.get_dendritic_trees()?;
+            dendritic_trees.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+            (circles, chains, stars, tendrils, node_tuples, dendritic_trees)
         } else {
-            (Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new())
+            (Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new())
         };
 
         let mut isomorphic_node_groups: Vec<Vec<NodeT>> = self
@@ -901,6 +903,7 @@ impl Graph {
                     "<h4>Tendrils</h4>",
                     "<p>",
                     "A tendril is a chain composed of one or more nodes that starts from a root with degree one. ",
+                    "Tendrils are the leaf segment of a dendritic tree. ",
                     "We have detected {tendrils_number} tendrils in the graph, with the largest one containing {max_tendrils_size} nodes. ",
                     "The tendril topological oddities involve a total of {involved_nodes_number} nodes ({involved_nodes_percentage:.2}%). ",
                     "The detected tendrils, sorted by decreasing size, are:",
@@ -923,6 +926,53 @@ impl Graph {
                         format!(
                             "<p>And other {} tendrils.</p>",
                             to_human_readable_high_integer(remaining_tendrils)
+                        )
+                    }
+                } else {
+                    "".to_string()
+                }
+            )
+        };
+
+        // Create the report for the dendritic trees, if there are any.
+        let dendritic_tree_description = if dendritic_trees.is_empty() {
+            "".to_string()
+        } else {
+            let involved_nodes: usize = dendritic_trees.iter().map(|tree| tree.len() as usize).sum();
+            format!(
+                concat!(
+                    "<h4>Dendritic Trees</h4>",
+                    "<p>",
+                    "A dendritic tree is a graph appendix structured as a tree. ",
+                    "They may derive from ingesting hierarchical ontologies into a knowledge graph while ",
+                    "not adding an amount of additional edges high enough to increase the density of this ",
+                    "area of the graph. ",
+                    "Most link prediction models based on graph topology will struggle to learn and predict ",
+                    "the links in minimal density areas of the graph, such as these ones.",
+                    "We have detected {dendritic_tree_number} dendritic_tree in the graph, with the largest one containing {max_dendritic_tree_size} nodes, ",
+                    "and the deepest one has a depth of {dendritic_tree_depth}. ",
+                    "The dendritic trees topological oddities involve a total of {involved_nodes_number} nodes ({involved_nodes_percentage:.2}%). ",
+                    "The detected dendritic trees, sorted by decreasing size, are:",
+                    "</p>",
+                    "<ol>",
+                    "{dendritic_tree_description}",
+                    "</ol>",
+                    "{possibly_conclusive_entry}"
+                ),
+                dendritic_tree_number = to_human_readable_high_integer(dendritic_trees.len()),
+                dendritic_tree_depth = dendritic_trees.par_iter().map(|tree| tree.get_depth()).max().unwrap(),
+                involved_nodes_number = to_human_readable_high_integer(involved_nodes),
+                involved_nodes_percentage= (involved_nodes as f64 / self.get_nodes_number() as f64) * 100.0,
+                max_dendritic_tree_size = dendritic_trees.first().unwrap().len(),
+                dendritic_tree_description = dendritic_trees.iter().take(10).map(|chain| format!("<li>{}</li>", chain.to_string())).join("\n"),
+                possibly_conclusive_entry = if dendritic_trees.len() > 10 {
+                    let remaining_dendritic_tree = dendritic_trees.len() -10;
+                    if remaining_dendritic_tree == 1 {
+                        "<p>And another dendritic tree.</p>".to_string()
+                    } else {
+                        format!(
+                            "<p>And other {} dendritic tree.</p>",
+                            to_human_readable_high_integer(remaining_dendritic_tree)
                         )
                     }
                 } else {
@@ -1026,7 +1076,7 @@ impl Graph {
                 concat!(
                     "<h4>Isomorphic nodes</h4>",
                     "<p>",
-                    "Isomorphic nodes are nodes with exactly the same neighbours ",
+                    "Isomorphic groups are nodes with exactly the same neighbours ",
                     "and node types (if present in the graph). ",
                     "Computing the complete list of isomorphic groups is too computational ",
                     "extensive for the goals of this preliminary report, therefore we have ",
@@ -1045,7 +1095,7 @@ impl Graph {
                 isomorphic_nodes_description = isomorphic_node_groups.into_iter().map(|isomorphic_node_group| {
                     format!(
                         concat!(
-                            "<li><p>Isomorphic node containing {} nodes with {}, which are: {}.</p></li>",
+                            "<li><p>Isomorphic group containing {} nodes with {}, which are: {}.</p></li>",
                         ),
                         to_human_readable_high_integer(isomorphic_node_group.len() as usize),
                         unsafe{self.get_unchecked_succinct_node_attributes_description(isomorphic_node_group[0], 0)},
@@ -1077,13 +1127,15 @@ impl Graph {
                 "</p>",
                 "{circles_description}",
                 "{chains_description}",
+                "{dendritic_tree_description}",
                 "{tendrils_description}",
                 "{stars_description}",
                 "{node_tuples_description}",
-                "{isomorphic_nodes_description}"
+                "{isomorphic_nodes_description}",
             ),
             circles_description=circles_description,
             chains_description=chains_description,
+            dendritic_tree_description=dendritic_tree_description,
             tendrils_description=tendrils_description,
             stars_description=stars_description,
             node_tuples_description=node_tuples_description,

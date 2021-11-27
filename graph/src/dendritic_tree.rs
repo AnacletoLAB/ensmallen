@@ -1,7 +1,7 @@
 use super::*;
 use log::info;
 use rayon::prelude::*;
-use std::sync::atomic::{AtomicBool, AtomicU32, Ordering};
+use std::sync::atomic::{AtomicBool, Ordering};
 pub const DENDRITIC_TREE_LEAF: NodeT = NodeT::MAX - 1;
 
 #[derive(Hash, Clone, Debug, PartialEq)]
@@ -173,7 +173,7 @@ impl Graph {
                 .flat_map_iter(|node_id| unsafe {
                     // If this is a candidate root, we pass it without further exploring
                     // its neighbouring nodes in order to not expand further the
-                    let iterator: Box<dyn Iterator<Item = (NodeT, NodeT)>> =
+                    let iterator: Box<dyn Iterator<Item = NodeT>> =
                         if (*leaf_nodes.value.get())[node_id as usize] {
                             Box::new(
                                 self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
@@ -182,14 +182,13 @@ impl Graph {
                                 .filter(|&neighbour_node_id| {
                                     !(*leaf_nodes.value.get())[neighbour_node_id as usize]
                                 })
-                                .map(move |neighbour_node_id| (neighbour_node_id, node_id)),
                             )
                         } else {
-                            Box::new(vec![(node_id, node_id)].into_iter())
+                            Box::new(vec![node_id].into_iter())
                         };
                     iterator
                 })
-                .filter_map(|(neighbour_node_id, node_id)| unsafe {
+                .filter_map(|neighbour_node_id| unsafe {
                     // We retrieve the number of neighbours of the node that is NOT a
                     // dentritic leaf, and if the number is exactly equal to one
                     // we can mark this new node also as a dentritic leaf.
@@ -234,7 +233,7 @@ impl Graph {
                             self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
                                 node_id,
                             )
-                            .filter(|&neighbour_node_id| unsafe {
+                            .filter(|&neighbour_node_id| {
                                 (*leaf_nodes.value.get())[neighbour_node_id as usize]
                             })
                         })
@@ -245,6 +244,7 @@ impl Graph {
                         .collect::<Vec<NodeT>>();
                     tree_nodes.extend_from_slice(&stack);
                 }
+                depth -= 1;
                 DendriticTree::from_node_ids(&self, root_node_id, depth, tree_nodes)
             })
             .collect::<Vec<DendriticTree>>())
