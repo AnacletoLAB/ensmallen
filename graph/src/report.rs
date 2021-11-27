@@ -1970,6 +1970,10 @@ impl Graph {
                 .unwrap()
         ));
 
+        if self.is_multigraph(){
+            paragraphs.push(self.get_isomorphic_edge_types_report());
+        }
+
         // When the graph contains singleton edge types, we build their report.
         if self.has_singleton_edge_types().unwrap() {
             paragraphs.push(self.get_singleton_edges_types_report());

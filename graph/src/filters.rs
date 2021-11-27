@@ -531,7 +531,7 @@ impl Graph {
                 self.get_dendritic_trees()?
                     .into_par_iter()
                     .flat_map(|dendric_tree| {
-                        dendric_tree.get_dentritic_trees_node_ids().into_par_iter()
+                        dendric_tree.get_dentritic_trees_node_ids()
                     })
                     .collect(),
             ),
