@@ -775,23 +775,38 @@ impl Graph {
     /// # Safety
     /// This method may cause a panic when called on a graph with no edges.
     fn get_report_of_topological_oddities(&self) -> Result<Option<String>> {
-        let (circles, chains, stars, tendrils, node_tuples, dendritic_trees) = if !self.is_directed() {
-            let mut circles = self.get_circles(None, None)?;
-            circles.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
-            let mut chains = self.get_chains(None, None)?;
-            chains.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
-            let mut stars = self.get_stars(None)?;
-            stars.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
-            let mut tendrils = self.get_tendrils(Some(1), None)?;
-            tendrils.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
-            let mut node_tuples = self.get_node_tuples()?;
-            node_tuples.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
-            let mut dendritic_trees = self.get_dendritic_trees()?;
-            dendritic_trees.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
-            (circles, chains, stars, tendrils, node_tuples, dendritic_trees)
-        } else {
-            (Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new(), Vec::new())
-        };
+        let (circles, chains, stars, tendrils, node_tuples, dendritic_trees) =
+            if !self.is_directed() {
+                let mut circles = self.get_circles(None, None)?;
+                circles.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+                let mut chains = self.get_chains(None, None)?;
+                chains.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+                let mut stars = self.get_stars(None)?;
+                stars.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+                let mut tendrils = self.get_tendrils(Some(1), None)?;
+                tendrils.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+                let mut node_tuples = self.get_node_tuples()?;
+                node_tuples.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+                let mut dendritic_trees = self.get_dendritic_trees()?;
+                dendritic_trees.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+                (
+                    circles,
+                    chains,
+                    stars,
+                    tendrils,
+                    node_tuples,
+                    dendritic_trees,
+                )
+            } else {
+                (
+                    Vec::new(),
+                    Vec::new(),
+                    Vec::new(),
+                    Vec::new(),
+                    Vec::new(),
+                    Vec::new(),
+                )
+            };
 
         let mut isomorphic_node_groups: Vec<Vec<NodeT>> = self
             .par_iter_isomorphic_node_ids_groups(Some(50), Some(10))
@@ -938,7 +953,8 @@ impl Graph {
         let dendritic_tree_description = if dendritic_trees.is_empty() {
             "".to_string()
         } else {
-            let involved_nodes: usize = dendritic_trees.iter().map(|tree| tree.len() as usize).sum();
+            let involved_nodes: usize =
+                dendritic_trees.iter().map(|tree| tree.len() as usize).sum();
             format!(
                 concat!(
                     "<h4>Dendritic Trees</h4>",
@@ -1334,7 +1350,7 @@ impl Graph {
     /// # Safety
     /// This method may cause a panic when called on graphs without
     /// singleton node types.
-    unsafe fn get_singleton_nodes_types_report(&self) -> String {
+    unsafe fn get_singleton_node_types_report(&self) -> String {
         format!(
             concat!(
                 "<h4>Singleton node types</h4>",
@@ -1406,6 +1422,122 @@ impl Graph {
                 }
             }
         )
+    }
+
+    /// Returns report on the isomorphic node types of the graph.
+    unsafe fn get_isomorphic_node_types_report(&self) -> String {
+        let isomorphic_node_types = self.get_isomorphic_node_type_ids_groups().unwrap();
+        if isomorphic_node_types.is_empty() {
+            "".to_string()
+        } else {
+            let isomorphic_node_types_number = isomorphic_node_types.len();
+            format!(
+                concat!(
+                    "<h4>Isomorphic node types</h4>",
+                    "<p>",
+                    "Isomorphic node types groups are node types describing ",
+                    "exactly the same set of nodes. The presence of such duplicated ",
+                    "node types suggests a potential modelling error in the pipeline ",
+                    "that has produced this graph. {isomorphic_node_types_number} isomorphic node types groups ",
+                    "where detected in this graph.",
+                    "</p>",
+                    "<ol>",
+                    "{isomorphic_node_types_description}",
+                    "</ol>",
+                    "{additional_isomorphic_node_types}"
+                ),
+                isomorphic_node_types_description = isomorphic_node_types.into_iter().take(10).map(|isomorphic_node_type_group| {
+                    format!(
+                        concat!(
+                            "<li><p>Isomorphic node type group containing {} node types, which are: {}.</p></li>",
+                        ),
+                        to_human_readable_high_integer(isomorphic_node_type_group.len() as usize),
+                        unsafe {
+                            get_unchecked_formatted_list(
+                                &isomorphic_node_type_group
+                                    .into_iter()
+                                    .map(|node_type_id| {
+                                        get_node_type_source_html_url_from_node_type_name(&self
+                                            .get_node_type_name_from_node_type_id(node_type_id).unwrap())
+                                    })
+                                    .collect::<Vec<String>>(),
+                                Some(5),
+                            )
+                        }
+                    )
+                }).join("\n"),
+                isomorphic_node_types_number = to_human_readable_high_integer(isomorphic_node_types_number),
+                additional_isomorphic_node_types =
+                            if isomorphic_node_types_number > 10 {
+                                format!(
+                                "<p>And other {isomorphic_node_types_number} isomorphic node types.</p>",
+                                isomorphic_node_types_number = to_human_readable_high_integer(
+                                    isomorphic_node_types_number as usize - 10
+                                )
+                            )
+                            } else {
+                                "".to_string()
+                            }
+            )
+        }
+    }
+
+    /// Returns report on the isomorphic edge types of the graph.
+    unsafe fn get_isomorphic_edge_types_report(&self) -> String {
+        let isomorphic_edge_types = self.get_isomorphic_edge_type_ids_groups().unwrap();
+        if isomorphic_edge_types.is_empty() {
+            "".to_string()
+        } else {
+            let isomorphic_edge_types_number = isomorphic_edge_types.len();
+            format!(
+                concat!(
+                    "<h4>Isomorphic edge types</h4>",
+                    "<p>",
+                    "Isomorphic edge types groups are edge types describing ",
+                    "exactly the same set of edges. The presence of such duplicated ",
+                    "edge types suggests a potential modelling error in the pipeline ",
+                    "that has produced this graph. {isomorphic_edge_types_number} isomorphic edge types groups ",
+                    "where detected in this graph.",
+                    "</p>",
+                    "<ol>",
+                    "{isomorphic_edge_types_description}",
+                    "</ol>",
+                    "{additional_isomorphic_edge_types}"
+                ),
+                isomorphic_edge_types_description = isomorphic_edge_types.into_iter().take(10).map(|isomorphic_edge_type_group| {
+                    format!(
+                        concat!(
+                            "<li><p>Isomorphic edge type group containing {} edge types, which are: {}.</p></li>",
+                        ),
+                        to_human_readable_high_integer(isomorphic_edge_type_group.len() as usize),
+                        unsafe {
+                            get_unchecked_formatted_list(
+                                &isomorphic_edge_type_group
+                                    .into_iter()
+                                    .map(|edge_type_id| {
+                                        get_edge_type_source_html_url_from_edge_type_name(&self
+                                            .get_unchecked_edge_type_name_from_edge_type_id(Some(edge_type_id)).unwrap())
+                                    })
+                                    .collect::<Vec<String>>(),
+                                Some(5),
+                            )
+                        }
+                    )
+                }).join("\n"),
+                isomorphic_edge_types_number = to_human_readable_high_integer(isomorphic_edge_types_number),
+                additional_isomorphic_edge_types =
+                            if isomorphic_edge_types_number > 10 {
+                                format!(
+                                "<p>And other {isomorphic_edge_types_number} isomorphic edge types.</p>",
+                                isomorphic_edge_types_number = to_human_readable_high_integer(
+                                    isomorphic_edge_types_number as usize - 10
+                                )
+                            )
+                            } else {
+                                "".to_string()
+                            }
+            )
+        }
     }
 
     /// Returns report on the homogeneous node types of the graph.
@@ -1616,9 +1748,15 @@ impl Graph {
                 .unwrap()
         ));
 
+        // When the graph contains multilabel node types, we build the report
+        // relative to the isomorphic node types.
+        if self.has_multilabel_node_types().unwrap() {
+            paragraphs.push(self.get_isomorphic_node_types_report());
+        }
+
         // When the graph contains singleton node types, we build their report.
         if self.has_singleton_node_types().unwrap() {
-            paragraphs.push(self.get_singleton_nodes_types_report());
+            paragraphs.push(self.get_singleton_node_types_report());
         }
 
         // When the graph contains homogeneous node types, we build their report.

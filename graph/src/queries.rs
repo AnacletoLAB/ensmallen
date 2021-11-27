@@ -1704,4 +1704,105 @@ impl Graph {
             .map(|nts| nts.unchecked_translate_vector(node_type_ids))
             .unwrap_unchecked()
     }
+
+    /// Return number of nodes with the provided node type ID.
+    ///
+    /// # Arguments
+    /// * `node_type_id`: NodeTypeT - The node type to return the number of nodes of.
+    ///
+    /// # Safety
+    /// The method may panic if an invalid node type (one not present in the graph)
+    /// is provided. If the graph does not have node types, zero will be returned.
+    pub unsafe fn get_unchecked_number_of_nodes_from_node_type_id(
+        &self,
+        node_type_id: NodeTypeT,
+    ) -> NodeT {
+        self.node_types
+            .as_ref()
+            .as_ref()
+            .map_or(0, |node_types| node_types.counts[node_type_id as usize])
+    }
+
+    /// Return number of nodes with the provided node type ID.
+    ///
+    /// # Arguments
+    /// * `node_type_id`: NodeTypeT - The node type to return the number of nodes of.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    /// * If the provided node type ID does not exist in the graph.
+    pub fn get_number_of_nodes_from_node_type_id(&self, node_type_id: NodeTypeT) -> Result<NodeT> {
+        Ok(unsafe {
+            self.get_unchecked_number_of_nodes_from_node_type_id(
+                self.validate_node_type_id(Some(node_type_id))?.unwrap(),
+            )
+        })
+    }
+
+    /// Return number of nodes with the provided node type name.
+    ///
+    /// # Arguments
+    /// * `node_type_name`: &str - The node type to return the number of nodes of.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    /// * If the provided node type name does not exist in the graph.
+    pub fn get_number_of_nodes_from_node_type_name(&self, node_type_name: &str) -> Result<NodeT> {
+        Ok(unsafe {
+            self.get_unchecked_number_of_nodes_from_node_type_id(
+                self.get_node_type_id_from_node_type_name(node_type_name)?,
+            )
+        })
+    }
+
+    /// Return number of edges with the provided edge type ID.
+    ///
+    /// # Arguments
+    /// * `edge_type_id`: EdgeTypeT - The edge type to return the number of edges of.
+    ///
+    /// # Safety
+    /// The method may panic if an invalid edge type (one not present in the graph)
+    /// is provided. If the graph does not have edge types, zero will be returned.
+    pub unsafe fn get_unchecked_number_of_edges_from_edge_type_id(
+        &self,
+        edge_type_id: EdgeTypeT,
+    ) -> EdgeT {
+        self.edge_types
+            .as_ref()
+            .as_ref()
+            .map_or(0, |edge_types| edge_types.counts[edge_type_id as usize])
+    }
+
+    /// Return number of edges with the provided edge type ID.
+    ///
+    /// # Arguments
+    /// * `edge_type_id`: EdgeTypeT - The edge type to return the number of edges of.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    /// * If the provided edge type ID does not exist in the graph.
+    pub fn get_number_of_edges_from_edge_type_id(&self, edge_type_id: EdgeTypeT) -> Result<EdgeT> {
+        Ok(unsafe {
+            self.get_unchecked_number_of_edges_from_edge_type_id(
+                self.validate_edge_type_id(Some(edge_type_id))?.unwrap(),
+            )
+        })
+    }
+
+    /// Return number of edges with the provided edge type name.
+    ///
+    /// # Arguments
+    /// * `edge_type_name`: &str - The edge type to return the number of edges of.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    /// * If the provided edge type name does not exist in the graph.
+    pub fn get_number_of_edges_from_edge_type_name(&self, edge_type_name: &str) -> Result<EdgeT> {
+        Ok(unsafe {
+            self.get_unchecked_number_of_edges_from_edge_type_id(
+                self.get_edge_type_id_from_edge_type_name(Some(edge_type_name))?
+                    .unwrap(),
+            )
+        })
+    }
 }

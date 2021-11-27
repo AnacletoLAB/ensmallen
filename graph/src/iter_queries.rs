@@ -155,7 +155,6 @@ impl Graph {
     /// Returns range of multigraph minimum and maximum edge ids with same source and destination nodes and different edge type.
     ///
     /// # Arguments
-    ///
     /// * `src`: NodeT - Source node of the edge.
     /// * `dst`: NodeT -  Destination node of the edge.
     ///
@@ -168,6 +167,38 @@ impl Graph {
     ) -> impl Iterator<Item = EdgeT> {
         let (min_edge_id, max_edge_id) = self.get_unchecked_minmax_edge_ids_from_node_ids(src, dst);
         min_edge_id..max_edge_id
+    }
+
+    /// Returns iterator over the edge type IDs corresponding to the given edge ID.
+    ///
+    /// # Arguments
+    /// * `src`: NodeT - Source node of the edge.
+    /// * `dst`: NodeT -  Destination node of the edge.
+    ///
+    /// # Safety
+    /// If any the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn iter_unchecked_edge_type_ids_from_node_ids(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+    ) -> impl Iterator<Item = Option<EdgeTypeT>> + '_ {
+        self.iter_unchecked_edge_ids_from_node_ids(src, dst)
+            .map(move |edge_id| self.get_unchecked_edge_type_id_from_edge_id(edge_id))
+    }
+
+    /// Returns iterator over the edge type IDs corresponding to the given edge ID.
+    ///
+    /// # Arguments
+    /// * `edge_id`: EdgeT - The edge to query for.
+    ///
+    /// # Safety
+    /// If any the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn iter_unchecked_edge_type_ids_from_edge_id(
+        &self,
+        edge_id: EdgeT,
+    ) -> impl Iterator<Item = Option<EdgeTypeT>> + '_ {
+        let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
+        self.iter_unchecked_edge_type_ids_from_node_ids(src, dst)
     }
 
     /// Return iterator over NodeT of destinations of the given node src.

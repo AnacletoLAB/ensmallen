@@ -66,11 +66,27 @@ impl Graph {
     }
 
     /// Return iterator on the unique node type IDs of the graph.
+    ///
+    /// # Raises
+    /// * If the graph does not contain node types.
     pub fn iter_unique_node_type_ids(&self) -> Result<impl Iterator<Item = NodeTypeT> + '_> {
         Ok(0..self.get_node_types_number()?)
     }
 
+    /// Return parallel iterator on the unique node type IDs of the graph.
+    ///
+    /// # Raises
+    /// * If the graph does not contain node types.
+    pub fn par_iter_unique_node_type_ids(
+        &self,
+    ) -> Result<impl IndexedParallelIterator<Item = NodeTypeT> + '_> {
+        Ok((0..self.get_node_types_number()?).into_par_iter())
+    }
+
     /// Return iterator on the unique node type IDs counts of the graph.
+    ///
+    /// # Raises
+    /// * If the graph does not contain node types.
     pub fn iter_node_type_counts(&self) -> Result<impl Iterator<Item = NodeT> + '_> {
         self.must_have_node_types()
             .map(|node_types| node_types.counts.iter().cloned())
@@ -103,6 +119,16 @@ impl Graph {
     /// Return iterator on the edge type IDs of the graph.
     pub fn iter_unique_edge_type_ids(&self) -> Result<impl Iterator<Item = EdgeTypeT> + '_> {
         Ok(0..self.get_edge_types_number()?)
+    }
+
+    /// Return parallel iterator on the unique edge type IDs of the graph.
+    ///
+    /// # Raises
+    /// * If the graph does not contain edge types.
+    pub fn par_iter_unique_edge_type_ids(
+        &self,
+    ) -> Result<impl IndexedParallelIterator<Item = EdgeTypeT> + '_> {
+        Ok((0..self.get_edge_types_number()?).into_par_iter())
     }
 
     /// Return iterator on the unique edge type IDs counts of the graph.
