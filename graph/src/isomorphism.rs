@@ -18,6 +18,14 @@ impl Graph {
             .par_iter_node_ids()
             .map(|_| AtomicBool::new(false))
             .collect();
+        let neighbours_sums = self
+            .par_iter_node_ids()
+            .map(|node_id| unsafe {
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                    .map(|neighbour_id| neighbour_id as usize)
+                    .sum()
+            })
+            .collect::<Vec<usize>>();
         let k = k.unwrap_or(self.get_nodes_number());
         let number_of_isomorphisms = AtomicU32::new(0);
         self.par_iter_node_ids().filter_map(move |node_id| unsafe {
@@ -31,10 +39,12 @@ impl Graph {
             if node_degree < minimum_node_degree {
                 return None;
             }
+            let neughbour_sum = neighbours_sums[node_id as usize];
             let node_type = self.get_unchecked_node_type_ids_from_node_id(node_id);
             let mut isomorphic_group: Vec<NodeT> = (node_id + 1..self.get_nodes_number())
                 .into_par_iter()
                 .filter(|&other_node_id| {
+                    neighbours_sums[other_node_id as usize] == neughbour_sum &&
                     self.get_unchecked_node_degree_from_node_id(other_node_id) == node_degree
                         && self.get_unchecked_node_type_ids_from_node_id(other_node_id) == node_type
                         && self
