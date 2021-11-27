@@ -1,8 +1,9 @@
+use super::*;
 use crate::constructors::build_graph_from_integers;
 use crate::constructors::build_graph_from_strings_without_type_iterators;
-use rayon::iter::IntoParallelIterator;
 use log::info;
-use super::*;
+use std::collections::HashSet;
+use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
 
 impl Graph {
@@ -78,6 +79,8 @@ impl Graph {
             filter_singleton_nodes_with_selfloop.unwrap_or(false);
         let filter_selfloops = filter_selfloops.unwrap_or(false);
         let filter_parallel_edges = filter_parallel_edges.unwrap_or(false);
+        let node_ids_to_filter: Option<HashSet<NodeT>> =
+            node_ids_to_filter.map(|node_ids_to_filter| node_ids_to_filter.into_iter().collect());
 
         let has_node_filters = self.has_nodes()
             && [
@@ -525,12 +528,11 @@ impl Graph {
 
     /// Returns new graph without tendrils.
     pub fn drop_dendritic_trees(&self) -> Result<Graph> {
-        let node_ids_to_filter = self.get_dendritic_trees()?
-        .into_par_iter()
-        .flat_map(|dendric_tree| {
-            dendric_tree.get_dentritic_trees_node_ids()
-        })
-        .collect();
+        let node_ids_to_filter = self
+            .get_dendritic_trees()?
+            .into_par_iter()
+            .flat_map(|dendric_tree| dendric_tree.get_dentritic_trees_node_ids())
+            .collect();
         info!("Starting to filter");
         self.filter_from_ids(
             None,
