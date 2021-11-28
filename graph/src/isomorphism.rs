@@ -101,9 +101,9 @@ impl Graph {
                     .filter(|&other_node_type_id| {
                         self.get_unchecked_number_of_nodes_from_node_type_id(other_node_type_id)
                             == node_type_count
-                            && self.par_iter_node_ids_and_node_type_ids().any(
+                            && !self.par_iter_node_ids_and_node_type_ids().any(
                                 |(_, node_type_ids)| {
-                                    node_type_ids.map_or(true, |node_type_ids| {
+                                    node_type_ids.map_or(false, |node_type_ids| {
                                         node_type_ids.contains(&other_node_type_id)
                                             ^ node_type_ids.contains(&node_type_id)
                                     })
@@ -155,7 +155,7 @@ impl Graph {
                     .filter(|&other_edge_type_id| {
                         self.get_unchecked_number_of_edges_from_edge_type_id(other_edge_type_id)
                             == edge_type_count
-                            && self.par_iter_edge_ids_with_known_edge_types().unwrap().any(
+                            && !self.par_iter_edge_ids_with_known_edge_types().unwrap().any(
                                 |edge_id| {
                                     let edge_type_ids = self
                                         .iter_unchecked_edge_type_ids_from_edge_id(edge_id)
