@@ -44,8 +44,8 @@ impl Graph {
             let mut isomorphic_group: Vec<NodeT> = (node_id + 1..self.get_nodes_number())
                 .into_par_iter()
                 .filter(|&other_node_id| {
-                    neighbours_sums[other_node_id as usize] == neughbour_sum &&
-                    self.get_unchecked_node_degree_from_node_id(other_node_id) == node_degree
+                    neighbours_sums[other_node_id as usize] == neughbour_sum
+                        && self.get_unchecked_node_degree_from_node_id(other_node_id) == node_degree
                         && self.get_unchecked_node_type_ids_from_node_id(other_node_id) == node_type
                         && self
                             .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
@@ -104,8 +104,8 @@ impl Graph {
                             && self.par_iter_node_ids_and_node_type_ids().all(
                                 |(_, node_type_ids)| {
                                     node_type_ids.map_or(true, |node_type_ids| {
-                                        node_type_ids.contains(&other_node_type_id)
-                                            ^ node_type_ids.contains(&node_type_id)
+                                        !(node_type_ids.contains(&other_node_type_id)
+                                            ^ node_type_ids.contains(&node_type_id))
                                     })
                                 },
                             )
@@ -161,8 +161,8 @@ impl Graph {
                                         .iter_unchecked_edge_type_ids_from_edge_id(edge_id)
                                         .map(|edge_type_id| edge_type_id.unwrap())
                                         .collect::<Vec<EdgeTypeT>>();
-                                    edge_type_ids.contains(&other_edge_type_id)
-                                        ^ edge_type_ids.contains(&edge_type_id)
+                                    !(edge_type_ids.contains(&other_edge_type_id)
+                                        ^ edge_type_ids.contains(&edge_type_id))
                                 },
                             )
                     })
