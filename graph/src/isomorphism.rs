@@ -14,60 +14,91 @@ impl Graph {
         k: Option<NodeT>,
     ) -> impl ParallelIterator<Item = Vec<NodeT>> + '_ {
         let minimum_node_degree = minimum_node_degree.unwrap_or(5);
-        let isomorphisms: Vec<AtomicBool> = self
+        let node_ids = self
             .par_iter_node_ids()
-            .map(|_| AtomicBool::new(false))
-            .collect();
-        let neighbours_sums = self
-            .par_iter_node_ids()
-            .map(|node_id| unsafe {
-                self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                    .map(|neighbour_id| neighbour_id as usize)
-                    .sum()
+            .zip(self.par_iter_node_degrees())
+            .filter_map(|(node_id, node_degree)| {
+                if node_degree < minimum_node_degree {
+                    None
+                } else {
+                    Some(node_id)
+                }
             })
-            .collect::<Vec<usize>>();
+            .collect::<Vec<NodeT>>();
+        let neighbours_hashes = node_ids
+            .par_iter()
+            .map(|&node_id| unsafe {
+                let node_degree = self.get_unchecked_node_degree_from_node_id(node_id);
+                let seed: u64 = 0xDEADBEEFC0FEBABE_u64.wrapping_mul(node_degree as u64);
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                    .take(50)
+                    .map(|neighbour_id| neighbour_id as u64)
+                    .fold(seed, |a: u64, b: u64| {
+                        (a ^ b).wrapping_add(0x0A2126967AE81C95)
+                    })
+            })
+            .collect::<Vec<u64>>();
+        // Get the indices of the filtered hashes for sorting
+        let mut indices = (0..(neighbours_hashes.len() as NodeT)).collect::<Vec<NodeT>>();
+        // Then we sort it according to the number of nodes with this node type.
+        indices.par_sort_unstable_by(|&a, &b| unsafe {
+            neighbours_hashes[a as usize].cmp(&neighbours_hashes[b as usize])
+        });
         let k = k.unwrap_or(self.get_nodes_number());
         let number_of_isomorphisms = AtomicU32::new(0);
-        self.par_iter_node_ids().filter_map(move |node_id| unsafe {
-            if number_of_isomorphisms.load(Ordering::Relaxed) >= k {
-                return None;
-            }
-            if isomorphisms[node_id as usize].load(Ordering::Relaxed) {
-                return None;
-            }
-            let node_degree = self.get_unchecked_node_degree_from_node_id(node_id);
-            if node_degree < minimum_node_degree {
-                return None;
-            }
-            let neughbour_sum = neighbours_sums[node_id as usize];
-            let node_type = self.get_unchecked_node_type_ids_from_node_id(node_id);
-            let mut isomorphic_group: Vec<NodeT> = (node_id + 1..self.get_nodes_number())
-                .into_par_iter()
-                .filter(|&other_node_id| {
-                    neighbours_sums[other_node_id as usize] == neughbour_sum
-                        && self.get_unchecked_node_degree_from_node_id(other_node_id) == node_degree
-                        && self.get_unchecked_node_type_ids_from_node_id(other_node_id) == node_type
-                        && self
-                            .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                            .zip(self.iter_unchecked_neighbour_node_ids_from_source_node_id(
-                                other_node_id,
-                            ))
-                            .all(|(first_node_neighbour_id, second_node_neighbour_id)| {
-                                first_node_neighbour_id == second_node_neighbour_id
+        let number_of_nodes = indices.len();
+        (0..(number_of_nodes - 1))
+            .into_par_iter()
+            .filter_map(move |i| unsafe {
+                let index = indices[i];
+                let node_id = node_ids[index as usize];
+                let node_hash = neighbours_hashes[index as usize];
+                if i != 0 && node_hash == neighbours_hashes[indices[i - 1] as usize]
+                    || node_hash != neighbours_hashes[indices[i + 1] as usize]
+                {
+                    return None;
+                }
+                let mut candidate_isomorphic_groups = vec![vec![node_id]];
+                let mut filtering_is_necessary = false;
+                for other_node_id in ((i + 1)..number_of_nodes)
+                    .take_while(|&j| node_hash == neighbours_hashes[indices[j] as usize])
+                    .map(|j| node_ids[indices[j] as usize])
+                {
+                    if let Some(isomorphic_group) =
+                        candidate_isomorphic_groups
+                            .iter_mut()
+                            .find(|candidate_isomorphic_group| {
+                                let node_id = candidate_isomorphic_group[0];
+                                self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                                    .zip(
+                                        self.iter_unchecked_neighbour_node_ids_from_source_node_id(
+                                            other_node_id,
+                                        ),
+                                    )
+                                    .all(|(first_node_neighbour_id, second_node_neighbour_id)| {
+                                        first_node_neighbour_id == second_node_neighbour_id
+                                    })
                             })
-                })
-                .collect();
-            if isomorphic_group.is_empty() {
-                None
-            } else {
-                number_of_isomorphisms.fetch_add(1, Ordering::Relaxed);
-                isomorphic_group.push(node_id);
-                isomorphic_group.iter().for_each(|&node_id| {
-                    isomorphisms[node_id as usize].store(true, Ordering::Relaxed);
-                });
-                Some(isomorphic_group)
-            }
-        })
+                    {
+                        isomorphic_group.push(other_node_id);
+                    } else {
+                        filtering_is_necessary = true;
+                        candidate_isomorphic_groups.push(vec![other_node_id]);
+                    }
+                }
+                if filtering_is_necessary {
+                    candidate_isomorphic_groups = candidate_isomorphic_groups
+                        .into_iter()
+                        .filter(|candidate_isomorphic_group| candidate_isomorphic_group.len() > 1)
+                        .collect();
+                }
+                if candidate_isomorphic_groups.is_empty() {
+                    None
+                } else {
+                    Some(candidate_isomorphic_groups)
+                }
+            })
+            .flat_map(|candidate_isomorphic_groups| candidate_isomorphic_groups)
     }
 
     /// Returns parallel iterator of vectors of isomorphic node type groups IDs.
