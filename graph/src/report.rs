@@ -808,9 +808,8 @@ impl Graph {
                 )
             };
 
-        let mut isomorphic_node_groups: Vec<Vec<NodeT>> = self
-            .par_iter_isomorphic_node_ids_groups(Some(50), Some(10))
-            .collect();
+        let mut isomorphic_node_groups: Vec<Vec<NodeT>> =
+            self.par_iter_isomorphic_node_ids_groups(None).collect();
 
         isomorphic_node_groups.sort_unstable_by(|group1, group2| unsafe {
             (self.get_unchecked_node_degree_from_node_id(group2[0]) as usize * group2.len()).cmp(
@@ -1088,27 +1087,31 @@ impl Graph {
         let isomorphic_nodes_description = if isomorphic_node_groups.is_empty() {
             "".to_string()
         } else {
+            let isomorphic_node_groups_number = isomorphic_node_groups.len();
+            let involved_nodes_number: usize = isomorphic_node_groups
+                .par_iter()
+                .map(|involved_nodes_number| involved_nodes_number.len())
+                .sum();
             format!(
                 concat!(
                     "<h4>Isomorphic nodes</h4>",
                     "<p>",
                     "Isomorphic groups are nodes with exactly the same neighbours ",
                     "and node types (if present in the graph). ",
-                    "Computing the complete list of isomorphic groups is too computational ",
-                    "extensive for the goals of this preliminary report, therefore we have ",
-                    "limited the check to nodes with degree higher or equal to 50 and ",
-                    "we have computed only upwards to the first 10 groups. ",
-                    "It is always possible to compute the number of isomorphic node groups ",
-                    "and the groups themselves with respectively ",
-                    "the <code>get_isomorphic_node_groups_number</code> and the ",
-                    "<code>get_isomorphic_node_ids_groups</code> methods.",
+                    "We have detected {isomorphic_groups_number} isomorphic groups in the graph with at least node degree 5, with the largest one containing {max_isomorphic_nodes_size} nodes. ",
+                    "The star topological oddities involve a total of {involved_nodes_number} nodes ({involved_nodes_percentage:.2}%). ",
+                    "The detected isomorphic groups, sorted by decreasing size, are:",
                     "</p>",
                     "<ol>",
                     "{isomorphic_nodes_description}",
                     "</ol>",
-                    "<p>Do note that other groups, expecially with lower node degree, may exist.</p>"
+                    "{possibly_conclusive_entry}"
                 ),
-                isomorphic_nodes_description = isomorphic_node_groups.into_iter().map(|isomorphic_node_group| {
+                isomorphic_groups_number = isomorphic_node_groups_number,
+                max_isomorphic_nodes_size = isomorphic_node_groups.par_iter().map(|isomorphic_node_group| isomorphic_node_group.len()).max().unwrap(),
+                involved_nodes_number = involved_nodes_number,
+                involved_nodes_percentage = (involved_nodes_number as f64 / self.get_nodes_number() as f64) * 100.0,
+                isomorphic_nodes_description = isomorphic_node_groups.into_iter().take(10).map(|isomorphic_node_group| {
                     format!(
                         concat!(
                             "<li><p>Isomorphic group containing {} nodes with {}, which are: {}.</p></li>",
@@ -1119,6 +1122,7 @@ impl Graph {
                             get_unchecked_formatted_list(
                                 &isomorphic_node_group
                                     .into_iter()
+                                    .take(5)
                                     .map(|node_id| {
                                         get_node_source_html_url_from_node_name(&self
                                             .get_unchecked_node_name_from_node_id(node_id))
@@ -1129,6 +1133,19 @@ impl Graph {
                         }
                     )
                 }).join("\n"),
+                possibly_conclusive_entry = if isomorphic_node_groups_number > 10 {
+                    let remaining_isomorphic_node_groups_number = isomorphic_node_groups_number - 10;
+                    if remaining_isomorphic_node_groups_number == 1 {
+                        "<p>And another isomorphic group.</p>".to_string()
+                    } else {
+                        format!(
+                            "<p>And other {} isomorphic groups.</p>",
+                            to_human_readable_high_integer(remaining_isomorphic_node_groups_number)
+                        )
+                    }
+                } else {
+                    "".to_string()
+                }
             )
         };
         Ok(Some(format!(

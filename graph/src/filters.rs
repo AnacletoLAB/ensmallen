@@ -559,13 +559,13 @@ impl Graph {
     /// Returns new graph without isomorphic nodes, only keeping the smallest node ID of each group.
     ///
     /// # Arguments
-    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default equal to 2.
+    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default equal to 5.
     pub fn drop_isomorphic_nodes(&self, minimum_node_degree: Option<NodeT>) -> Graph {
-        let minimum_node_degree = minimum_node_degree.unwrap_or(2);
+        let minimum_node_degree = minimum_node_degree.unwrap_or(5);
         self.filter_from_ids(
             None,
             Some(
-                self.par_iter_isomorphic_node_ids_groups(Some(minimum_node_degree), None)
+                self.par_iter_isomorphic_node_ids_groups(Some(minimum_node_degree))
                     .flat_map(|mut group| {
                         group.pop();
                         group.into_par_iter()
