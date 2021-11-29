@@ -1,5 +1,4 @@
 use super::*;
-use itertools::Itertools;
 use rayon::prelude::*;
 use std::sync::atomic::{AtomicBool, AtomicU32, Ordering};
 
@@ -83,7 +82,7 @@ impl Graph {
                 .cmp(&self.get_unchecked_number_of_nodes_from_node_type_id(b))
         });
         let considered_node_type_ids_number = node_type_ids.len();
-        Ok((0..considered_node_type_ids_number)
+        Ok((0..(considered_node_type_ids_number - 1))
             .into_par_iter()
             .filter_map(move |i| unsafe {
                 let node_type_id = node_type_ids[i];
@@ -91,9 +90,13 @@ impl Graph {
                 let number_of_nodes =
                     self.get_unchecked_number_of_nodes_from_node_type_id(node_type_id);
                 if i != 0
-                    && number_of_nodes
+                    && (number_of_nodes
                         == self
                             .get_unchecked_number_of_nodes_from_node_type_id(node_type_ids[i - 1])
+                        || number_of_nodes
+                            != self.get_unchecked_number_of_nodes_from_node_type_id(
+                                node_type_ids[i + 1],
+                            ))
                 {
                     return None;
                 }
