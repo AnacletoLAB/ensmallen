@@ -93,10 +93,9 @@ impl Graph {
                     && number_of_nodes
                         == self
                             .get_unchecked_number_of_nodes_from_node_type_id(node_type_ids[i - 1])
-                        || number_of_nodes
-                            != self.get_unchecked_number_of_nodes_from_node_type_id(
-                                node_type_ids[i + 1],
-                            )
+                    || number_of_nodes
+                        != self
+                            .get_unchecked_number_of_nodes_from_node_type_id(node_type_ids[i + 1])
                 {
                     return None;
                 }
@@ -133,7 +132,7 @@ impl Graph {
                 if filtering_is_necessary {
                     candidate_isomorphic_groups = candidate_isomorphic_groups
                         .into_iter()
-                        .filter(|candidate_isomorphic_group| candidate_isomorphic_group.len() == 1)
+                        .filter(|candidate_isomorphic_group| candidate_isomorphic_group.len() > 1)
                         .collect();
                 }
                 if candidate_isomorphic_groups.is_empty() {
@@ -146,59 +145,79 @@ impl Graph {
     }
 
     /// Returns parallel iterator of vectors of isomorphic edge type groups IDs.
-    ///
-    /// # Arguments
-    /// * `k`: Option<EdgeT> - Maximum number of groups to retrieve.
     pub fn par_iter_isomorphic_edge_type_ids_groups(
         &self,
-        k: Option<EdgeTypeT>,
     ) -> Result<impl ParallelIterator<Item = Vec<EdgeTypeT>> + '_> {
-        let isomorphisms: Vec<AtomicBool> = self
-            .par_iter_unique_edge_type_ids()?
-            .map(|_| AtomicBool::new(false))
-            .collect();
-        let k = k.unwrap_or(self.get_edge_types_number()?);
-        let number_of_isomorphisms = AtomicU32::new(0);
-        Ok(self
-            .par_iter_unique_edge_type_ids()?
-            .filter_map(move |edge_type_id| unsafe {
-                if number_of_isomorphisms.load(Ordering::Relaxed) >= k {
-                    return None;
-                }
-                if isomorphisms[edge_type_id as usize].load(Ordering::Relaxed) {
-                    return None;
-                }
-                let edge_type_count =
+        // First we create a vector with the unique node type IDs.
+        let mut edge_type_ids: Vec<EdgeTypeT> = self.iter_unique_edge_type_ids()?.collect();
+        // Then we sort it according to the number of edges with this edge type.
+        edge_type_ids.par_sort_unstable_by(|&a, &b| unsafe {
+            self.get_unchecked_number_of_edges_from_edge_type_id(a)
+                .cmp(&self.get_unchecked_number_of_edges_from_edge_type_id(b))
+        });
+        let considered_edge_type_ids_number = edge_type_ids.len();
+        Ok((0..(considered_edge_type_ids_number - 1))
+            .into_par_iter()
+            .filter_map(move |i| unsafe {
+                let edge_type_id = edge_type_ids[i];
+                // We only explore the group starters.
+                let number_of_edges =
                     self.get_unchecked_number_of_edges_from_edge_type_id(edge_type_id);
-                let mut isomorphic_group = (edge_type_id + 1
-                    ..self.get_edge_types_number().unwrap())
-                    .into_par_iter()
-                    .filter(|&other_edge_type_id| {
-                        self.get_unchecked_number_of_edges_from_edge_type_id(other_edge_type_id)
-                            == edge_type_count
-                            && !self.par_iter_edge_ids_with_known_edge_types().unwrap().any(
-                                |edge_id| {
-                                    let edge_type_ids = self
-                                        .iter_unchecked_edge_type_ids_from_edge_id(edge_id)
-                                        .map(|edge_type_id| edge_type_id.unwrap())
-                                        .collect::<Vec<EdgeTypeT>>();
-                                    edge_type_ids.contains(&other_edge_type_id)
-                                        ^ edge_type_ids.contains(&edge_type_id)
-                                },
-                            )
+                if i != 0
+                    && number_of_edges
+                        == self
+                            .get_unchecked_number_of_edges_from_edge_type_id(edge_type_ids[i - 1])
+                    || number_of_edges
+                        != self
+                            .get_unchecked_number_of_edges_from_edge_type_id(edge_type_ids[i + 1])
+                {
+                    return None;
+                }
+                let mut candidate_isomorphic_groups = vec![vec![edge_type_id]];
+                let mut filtering_is_necessary = false;
+                for other_edge_type_id in ((i + 1)..considered_edge_type_ids_number)
+                    .map(|j| edge_type_ids[j])
+                    .take_while(|&edge_type_id| {
+                        number_of_edges
+                            == self.get_unchecked_number_of_edges_from_edge_type_id(edge_type_id)
                     })
-                    .collect::<Vec<EdgeTypeT>>();
-                if isomorphic_group.is_empty() {
+                {
+                    if let Some(isomorphic_group) =
+                        candidate_isomorphic_groups
+                            .iter_mut()
+                            .find(|candidate_isomorphic_group| {
+                                let edge_type_id = candidate_isomorphic_group[0];
+                                !self.par_iter_edge_ids_with_known_edge_types().unwrap().any(
+                                    |edge_id| {
+                                        let edge_type_ids = self
+                                            .iter_unchecked_edge_type_ids_from_edge_id(edge_id)
+                                            .map(|edge_type_id| edge_type_id.unwrap())
+                                            .collect::<Vec<EdgeTypeT>>();
+                                        edge_type_ids.contains(&other_edge_type_id)
+                                            ^ edge_type_ids.contains(&edge_type_id)
+                                    },
+                                )
+                            })
+                    {
+                        isomorphic_group.push(other_edge_type_id);
+                    } else {
+                        filtering_is_necessary = true;
+                        candidate_isomorphic_groups.push(vec![other_edge_type_id]);
+                    }
+                }
+                if filtering_is_necessary {
+                    candidate_isomorphic_groups = candidate_isomorphic_groups
+                        .into_iter()
+                        .filter(|candidate_isomorphic_group| candidate_isomorphic_group.len() > 1)
+                        .collect();
+                }
+                if candidate_isomorphic_groups.is_empty() {
                     None
                 } else {
-                    number_of_isomorphisms.fetch_add(1, Ordering::Relaxed);
-                    isomorphic_group.push(edge_type_id);
-                    isomorphic_group.iter().for_each(|&edge_type_id| {
-                        isomorphisms[edge_type_id as usize].store(true, Ordering::Relaxed);
-                    });
-                    Some(isomorphic_group)
+                    Some(candidate_isomorphic_groups)
                 }
-            }))
+            })
+            .flat_map(|candidate_isomorphic_groups| candidate_isomorphic_groups))
     }
 
     /// Returns parallel iterator of vectors of isomorphic node groups names.
@@ -290,15 +309,11 @@ impl Graph {
     }
 
     /// Returns parallel iterator of vectors of isomorphic edge types groups names.
-    ///
-    /// # Arguments
-    /// * `k`: Option<NodeTypeT> - Maximum number of groups to retrieve.
     pub fn par_iter_isomorphic_edge_type_names_groups(
         &self,
-        k: Option<NodeTypeT>,
     ) -> Result<impl ParallelIterator<Item = Vec<String>> + '_> {
         Ok(self
-            .par_iter_isomorphic_edge_type_ids_groups(k)?
+            .par_iter_isomorphic_edge_type_ids_groups()?
             .map(move |group| {
                 group
                     .into_iter()
@@ -313,22 +328,18 @@ impl Graph {
     #[no_numpy_binding]
     /// Returns vector with isomorphic edge type groups IDs.
     pub fn get_isomorphic_edge_type_ids_groups(&self) -> Result<Vec<Vec<EdgeTypeT>>> {
-        Ok(self
-            .par_iter_isomorphic_edge_type_ids_groups(None)?
-            .collect())
+        Ok(self.par_iter_isomorphic_edge_type_ids_groups()?.collect())
     }
 
     #[no_numpy_binding]
     /// Returns vector with isomorphic edge type groups names.
     pub fn get_isomorphic_edge_type_names_groups(&self) -> Result<Vec<Vec<String>>> {
-        Ok(self
-            .par_iter_isomorphic_edge_type_names_groups(None)?
-            .collect())
+        Ok(self.par_iter_isomorphic_edge_type_names_groups()?.collect())
     }
 
     /// Returns number of isomorphic edge type groups.
     pub fn get_isomorphic_edge_type_groups_number(&self) -> Result<EdgeTypeT> {
-        Ok(self.par_iter_isomorphic_edge_type_ids_groups(None)?.count() as EdgeTypeT)
+        Ok(self.par_iter_isomorphic_edge_type_ids_groups()?.count() as EdgeTypeT)
     }
 
     /// Returns whether the current graph has topological synonims.

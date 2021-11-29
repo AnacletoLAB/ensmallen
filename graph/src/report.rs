@@ -1508,9 +1508,10 @@ impl Graph {
                 isomorphic_edge_types_description = isomorphic_edge_types.into_iter().take(10).map(|isomorphic_edge_type_group| {
                     format!(
                         concat!(
-                            "<li><p>Isomorphic edge type group containing {} edge types, which are: {}.</p></li>",
+                            "<li><p>Isomorphic edge type group containing {} edge types ({} edges), which are: {}.</p></li>",
                         ),
                         to_human_readable_high_integer(isomorphic_edge_type_group.len() as usize),
+                        to_human_readable_high_integer(self.get_unchecked_number_of_edges_from_edge_type_id(isomorphic_edge_type_group[0]) as usize),
                         unsafe {
                             get_unchecked_formatted_list(
                                 &isomorphic_edge_type_group
