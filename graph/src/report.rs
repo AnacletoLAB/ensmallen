@@ -1449,9 +1449,10 @@ impl Graph {
                 isomorphic_node_types_description = isomorphic_node_types.into_iter().take(10).map(|isomorphic_node_type_group| {
                     format!(
                         concat!(
-                            "<li><p>Isomorphic node type group containing {} node types, which are: {}.</p></li>",
+                            "<li><p>Isomorphic node type group containing {} node types ({} nodes), which are: {}.</p></li>",
                         ),
                         to_human_readable_high_integer(isomorphic_node_type_group.len() as usize),
+                        to_human_readable_high_integer(self.get_unchecked_number_of_nodes_from_node_type_id(isomorphic_node_type_group[0]) as usize),
                         unsafe {
                             get_unchecked_formatted_list(
                                 &isomorphic_node_type_group
@@ -1970,7 +1971,7 @@ impl Graph {
                 .unwrap()
         ));
 
-        if self.is_multigraph(){
+        if self.is_multigraph() {
             paragraphs.push(self.get_isomorphic_edge_types_report());
         }
 
