@@ -90,13 +90,13 @@ impl Graph {
                 let number_of_nodes =
                     self.get_unchecked_number_of_nodes_from_node_type_id(node_type_id);
                 if i != 0
-                    && (number_of_nodes
+                    && number_of_nodes
                         == self
                             .get_unchecked_number_of_nodes_from_node_type_id(node_type_ids[i - 1])
                         || number_of_nodes
                             != self.get_unchecked_number_of_nodes_from_node_type_id(
                                 node_type_ids[i + 1],
-                            ))
+                            )
                 {
                     return None;
                 }
