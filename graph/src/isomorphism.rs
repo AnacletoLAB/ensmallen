@@ -82,20 +82,6 @@ impl Graph {
             self.get_unchecked_number_of_nodes_from_node_type_id(a)
                 .cmp(&self.get_unchecked_number_of_nodes_from_node_type_id(b))
         });
-        // We can then preliminarly drop all node type IDs that don't have any match before or after.
-        node_type_ids = node_type_ids
-            .into_iter()
-            .tuple_windows()
-            .filter_map(|(a, b)| unsafe {
-                if self.get_unchecked_number_of_nodes_from_node_type_id(a)
-                    == self.get_unchecked_number_of_nodes_from_node_type_id(b)
-                {
-                    Some(a)
-                } else {
-                    None
-                }
-            })
-            .collect();
         let considered_node_type_ids_number = node_type_ids.len();
         Ok((0..considered_node_type_ids_number)
             .into_par_iter()
