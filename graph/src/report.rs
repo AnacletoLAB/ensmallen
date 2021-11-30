@@ -980,7 +980,7 @@ impl Graph {
         let singleton_nodes_description = self.get_report_of_oddity(
             "h4",
             "Singleton nodes",
-            concat!("A singleton node is a node disconnected to all other nodes."),
+            concat!("A singleton node is a node disconnected from all other nodes."),
             number_of_singleton_nodes,
             number_of_singleton_nodes,
             0,
