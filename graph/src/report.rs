@@ -788,6 +788,9 @@ impl Graph {
         maximum_number_of_involved_edges: EdgeT,
         oddities: impl Iterator<Item = T>,
     ) -> String {
+        if number_of_oddities > 0 {
+            return "".to_string()
+        }
         let number_of_oddities_to_report = 10;
         if oddity_name.is_empty() {
             panic!("The oddity name cannot be empty!");
@@ -953,11 +956,14 @@ impl Graph {
         );
 
         let number_of_chains = chains.len() as NodeT;
-        let number_of_nodes_involved_in_chains = chains.iter().map(|chain| chain.len()).sum();
-        let number_of_edges_involved_in_chains = (number_of_nodes_involved_in_chains - 1) as EdgeT;
+        let number_of_nodes_involved_in_chains =
+            chains.iter().map(|chain| chain.len()).sum::<NodeT>();
+        let number_of_edges_involved_in_chains =
+            number_of_nodes_involved_in_chains.saturating_sub(1) as EdgeT;
         let maximum_number_of_nodes_in_a_chain =
             chains.iter().map(|chain| chain.len()).max().unwrap_or(0);
-        let maximum_number_of_edges_in_a_chain = maximum_number_of_nodes_in_a_chain as EdgeT - 1;
+        let maximum_number_of_edges_in_a_chain =
+            maximum_number_of_nodes_in_a_chain.saturating_sub(1) as EdgeT;
         let chains_description = self.get_report_of_oddity(
             "h4",
             "Chain",

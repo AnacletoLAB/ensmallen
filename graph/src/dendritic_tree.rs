@@ -96,16 +96,20 @@ impl DendriticTree {
         self.number_of_non_leafs_at_root == 0
     }
 
+    pub fn get_number_of_leaf_nodes_at_root(&self) -> NodeT {
+        self.unique_root_node_degree - self.number_of_non_leafs_at_root
+    }
+
     /// Return whether the current dendritic tree is actually a tendril.
     pub fn is_tendril(&self) -> bool {
         !self.is_tree()
-            && self.unique_root_node_degree == 2
+            && self.get_number_of_leaf_nodes_at_root() == 1
             && self.has_minimum_degree_one_after_root
     }
 
     /// Return whether the current dendritic tree is a proper dentritic tree.
     pub fn is_dendritic_tree(&self) -> bool {
-        !self.is_tree() && !self.is_tendril()
+        !self.is_tree() && !self.has_minimum_degree_one_after_root
     }
 
     /// Return whether the current dendritic tree is actually a free-floating chain.
@@ -120,17 +124,23 @@ impl DendriticTree {
 
     /// Return whether the current dendritic tree is actually a star of tendrils.
     pub fn is_tendril_star(&self) -> bool {
-        self.is_tree() && self.depth > 1 && self.has_minimum_degree_one_after_root
+        self.is_tree()
+            && self.get_number_of_leaf_nodes_at_root() > 1
+            && self.depth > 1
+            && self.has_minimum_degree_one_after_root
     }
 
     /// Return whether the current dendritic tree is actually a dendritic star.
     pub fn is_dendritic_star(&self) -> bool {
-        !self.is_tree() && self.depth == 1 && self.unique_root_node_degree > 1
+        !self.is_tree() && self.depth == 1 && self.get_number_of_leaf_nodes_at_root() > 1
     }
 
     /// Return whether the current dendritic tree is actually a dendritic tendril star.
     pub fn is_dendritic_tendril_star(&self) -> bool {
-        !self.is_tree() && self.depth > 1 && self.has_minimum_degree_one_after_root
+        !self.is_tree()
+            && self.depth > 1
+            && self.has_minimum_degree_one_after_root
+            && self.get_number_of_leaf_nodes_at_root() > 1
     }
 
     /// Return the depth of the dentritic tree.
