@@ -905,7 +905,7 @@ impl Graph {
             "".to_string()
         } else {
             self.get_report_of_oddity(
-                "h5",
+                "h4",
                 oddity_name,
                 oddity_description,
                 tree_like_oddities.len() as NodeT,
@@ -1201,10 +1201,6 @@ impl Graph {
 
             format!(
                 concat!(
-                    "<h4>Tree oddities</h4>",
-                    "<p>",
-                    "Tree oddities are tree strutures, some degenerate, that may appear in a graph. ",
-                    "</p>",
                     "{trees_description}",
                     "{dendritic_trees_description}",
                     "{stars_description}",
