@@ -807,11 +807,9 @@ impl Graph {
                 "<{header_type}>{oddity_name}</{header_type}>",
                 "<p>",
                 "{oddity_description} ",
-                "We have detected {number_of_oddities} {lower_oddity_name} in the graph, ",
-                "involving a total of {number_of_involved_nodes} nodes {percentage_of_involved_nodes}",
-                "and {number_of_involved_edges} edges{percentage_of_involved_edges}, ",
-                "with the largest one involving {maximum_number_of_involved_nodes} nodes ",
-                "and {maximum_number_of_involved_edges} edges. ",
+                "We have detected {number_of_oddities} {lower_oddity_name} in the graph",
+                "{involved_nodes_and_edges}",
+                "{maximum_involved_nodes_and_edges}. ",
                 "The detected {lower_oddity_name}, sorted by decreasing size, are:",
                 "</p>",
                 "<ol>",
@@ -819,44 +817,70 @@ impl Graph {
                 "</ol>",
                 "{possibly_conclusive_entry}"
             ),
-            header_type=header_type,
-            oddity_name=oddity_name,
-            lower_oddity_name=oddity_name.to_lowercase(),
-            oddity_description=oddity_description,
+            header_type = header_type,
+            oddity_name = oddity_name,
+            lower_oddity_name = oddity_name.to_lowercase(),
+            oddity_description = oddity_description,
             number_of_oddities = to_human_readable_high_integer(number_of_oddities as usize),
-            number_of_involved_nodes = to_human_readable_high_integer(number_of_involved_nodes as usize),
-            percentage_of_involved_nodes= if percentage_of_involved_nodes > 0.01 {
+            involved_nodes_and_edges = if number_of_involved_nodes > 2 {
                 format!(
-                    "({percentage_of_involved_nodes:.2}%) ",
-                    percentage_of_involved_nodes=percentage_of_involved_nodes
+                    concat!(
+                        ", involving a total of {number_of_involved_nodes} nodes {percentage_of_involved_nodes}",
+                        "and {number_of_involved_edges} edges{percentage_of_involved_edges}"
+                    ),
+                    number_of_involved_nodes = to_human_readable_high_integer(number_of_involved_nodes as usize),
+                    percentage_of_involved_nodes= if percentage_of_involved_nodes > 0.01 {
+                        format!(
+                            "({percentage_of_involved_nodes:.2}%) ",
+                            percentage_of_involved_nodes=percentage_of_involved_nodes
+                        )
+                    } else {
+                        "".to_string()
+                    },
+                    number_of_involved_edges = to_human_readable_high_integer(number_of_involved_edges as usize),
+                    percentage_of_involved_edges= if percentage_of_involved_edges > 0.01 {
+                        format!(
+                            " ({percentage_of_involved_edges:.2}%)",
+                            percentage_of_involved_edges=percentage_of_involved_edges
+                        )
+                    } else {
+                        "".to_string()
+                    },
                 )
             } else {
                 "".to_string()
             },
-            number_of_involved_edges = to_human_readable_high_integer(number_of_involved_edges as usize),
-            percentage_of_involved_edges= if percentage_of_involved_edges > 0.01 {
+            maximum_involved_nodes_and_edges = if maximum_number_of_involved_nodes > 2 {
                 format!(
-                    " ({percentage_of_involved_edges:.2}%)",
-                    percentage_of_involved_edges=percentage_of_involved_edges
+                    concat!(
+                        ", with the largest one involving {maximum_number_of_involved_nodes} nodes ",
+                        "and {maximum_number_of_involved_edges} edges",
+                    ),
+                    maximum_number_of_involved_nodes = maximum_number_of_involved_nodes,
+                    maximum_number_of_involved_edges = maximum_number_of_involved_edges,
                 )
             } else {
                 "".to_string()
             },
-            maximum_number_of_involved_nodes = maximum_number_of_involved_nodes,
-            maximum_number_of_involved_edges = maximum_number_of_involved_edges,
-            top_oddities_description = oddities.take(number_of_oddities_to_report).map(|oddity| format!("<li>{}</li>", oddity.to_string())).join("\n"),
-            possibly_conclusive_entry = if number_of_oddities > number_of_oddities_to_report as NodeT {
+            top_oddities_description = oddities
+                .take(number_of_oddities_to_report)
+                .map(|oddity| format!("<li>{}</li>", oddity.to_string()))
+                .join("\n"),
+            possibly_conclusive_entry = if number_of_oddities
+                > number_of_oddities_to_report as NodeT
+            {
                 let remaining_oddities = number_of_oddities - number_of_oddities_to_report as NodeT;
                 if remaining_oddities == 1 {
                     format!(
                         "<p>And another {lower_oddity_name}.</p>",
-                        lower_oddity_name=oddity_name.to_lowercase()
+                        lower_oddity_name = oddity_name.to_lowercase()
                     )
                 } else {
                     format!(
                         "<p>And other {remaining_oddities} {lower_oddity_name}.</p>",
-                        remaining_oddities=to_human_readable_high_integer(remaining_oddities as usize),
-                        lower_oddity_name=oddity_name.to_lowercase()
+                        remaining_oddities =
+                            to_human_readable_high_integer(remaining_oddities as usize),
+                        lower_oddity_name = oddity_name.to_lowercase()
                     )
                 }
             } else {
