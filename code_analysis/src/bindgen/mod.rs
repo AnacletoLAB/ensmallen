@@ -55,7 +55,7 @@ fn is_to_bind(func: &Function) -> bool {
     && func.visibility == Visibility::Public
     && !func.attributes.iter().any(|x| x == "no_binding")
     && !func.attributes.iter().any(|x| x == "manual_binding")
-    && func.return_type.as_ref().map(|x| !x.to_string().contains("Iterator")).unwrap_or(true)
+    && func.return_type.as_ref().map(|x| !x.to_string().contains("Iterator")).unwrap_or(false)
 }
 
 macro_rules! format_vec {
@@ -194,12 +194,12 @@ impl PyObjectProtocol for {struct_name} {{
             .map(|(id, frequencies_doc)| {{
                 (
                     id,
-                    (jaro_winkler(&name, {struct_name_upper}_METHODS_NAMES[id]).exp() - 1.0)
+                    jaro_winkler(&name, {struct_name_upper}_METHODS_NAMES[id])
                         * frequencies_doc
                             .iter()
                             .map(|(term, weight)| {{
                                 match tokens_expanded.iter().find(|(token, _)| token == term) {{
-                                    Some((_, similarity)) => (similarity.exp() - 1.0) * weight,
+                                    Some((_, similarity)) => similarity * weight,
                                     None => 0.0,
                                 }}
                             }})
@@ -460,25 +460,10 @@ use strsim::*;
 /// # Arguments
 /// * `method_name`: &str - Name of the method to split.
 fn split_words(method_name: &str) -> Vec<String> {{
-    let mut result: Vec<String> = Vec::new();
-    for word in method_name.split("_") {{
-        match word {{
-            "type" | "types" | "id" | "ids" | "name" | "names" => match result.last_mut() {{
-                Some(last) => {{
-                    last.push('_');
-                    last.extend(word.chars());
-                }}
-                None => {{
-                    result.push(word.to_string());
-                }}
-            }},
-            _ => {{
-                result.push(word.to_string());
-            }}
-        }};
-    }}
-
-    result.into_iter().filter(|x| !x.is_empty()).collect()
+    method_name.split("_")
+        .filter(|x| !x.is_empty())
+        .map(|x| x.to_lowercase())
+        .collect()
 }}
 
 {}
