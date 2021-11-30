@@ -117,7 +117,9 @@ impl DendriticTree {
 
     /// Return whether the current dendritic tree is actually a tree.
     pub fn is_tree(&self) -> bool {
-        self.number_of_non_leafs_at_root == 0 && self.depth > 1
+        self.number_of_non_leafs_at_root == 0
+            && self.depth > 1
+            && !self.has_minimum_degree_one_after_root
     }
 
     /// Return whether the current dendritic tree is actually a tendril.
@@ -134,7 +136,9 @@ impl DendriticTree {
 
     /// Return whether the current dendritic tree is actually a free-floating chain.
     pub fn is_free_floating_chain(&self) -> bool {
-        self.number_of_non_leafs_at_root == 0 && self.has_minimum_degree_one_after_root && self.depth > 1
+        self.number_of_non_leafs_at_root == 0
+            && self.has_minimum_degree_one_after_root
+            && self.depth > 1
     }
 
     /// Return whether the current dendritic tree is actually a star.
@@ -178,7 +182,12 @@ impl DendriticTree {
 
     /// Return number of nodes involved in the dendritic tree.
     pub fn get_number_of_involved_nodes(&self) -> NodeT {
-        self.node_ids.len() as NodeT + if self.number_of_non_leafs_at_root == 0 { 1 } else { 0 }
+        self.node_ids.len() as NodeT
+            + if self.number_of_non_leafs_at_root == 0 {
+                1
+            } else {
+                0
+            }
     }
 
     /// Return number of edges involved in the dendritic tree.
