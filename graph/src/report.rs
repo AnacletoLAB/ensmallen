@@ -1075,6 +1075,7 @@ impl Graph {
             let mut dendritic_stars: Vec<DendriticTree> = Vec::new();
             let mut dendritic_tendril_stars: Vec<DendriticTree> = Vec::new();
             let mut free_floating_chains: Vec<DendriticTree> = Vec::new();
+
             tree_like_oddities.into_iter().for_each(|tree_like_oddity| {
                 if tree_like_oddity.is_tree() {
                     trees.push(tree_like_oddity);
@@ -1121,6 +1122,7 @@ impl Graph {
                     "{stars_description}",
                     "{tendril_stars_description}",
                     "{dendritic_stars_description}",
+                    "{dendritic_tendril_stars_description}",
                     "{free_floating_chains_description}",
                     "{tendrils_description}",
                 ),
@@ -1163,6 +1165,14 @@ impl Graph {
                         "A dendritic star is a dendritic tree with a maximal depth of one, where nodes ",
                         "with maximal unique deegree one are connected to a central ",
                         "root node with high degree and inside a strongly connected component."
+                    )
+                ),
+                dendritic_tendril_stars_description=self.get_report_of_specific_tree_like_oddities(
+                    dendritic_tendril_stars,
+                    "Dendritic tendril stars",
+                    concat!(
+                        "A dendritic tendril star is a dendritic tree with a depth greater than one, ",
+                        "where the arms of the star are tendrils."
                     )
                 ),
                 free_floating_chains_description=self.get_report_of_specific_tree_like_oddities(
