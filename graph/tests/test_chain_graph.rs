@@ -12,13 +12,7 @@ fn test_chain_graph() -> Result<()> {
     let circles = chain_graph.get_circles(None, None).unwrap();
     assert!(circles.is_empty());
     let chains = chain_graph.get_chains(None, None).unwrap();
-    assert_eq!(chains.len(), 1);
-    assert_eq!(chains[0].get_root_node_id(), 0);
-    assert_eq!(chains[0].len(), nodes_number);
-    assert_eq!(
-        chains[0].get_chain_node_ids(),
-        (0..nodes_number).collect::<Vec<NodeT>>()
-    );
+    assert_eq!(chains.len(), 0);
     let _ = graph::test_utilities::default_test_suite(&mut chain_graph, None);
     Ok(())
 }

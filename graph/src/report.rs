@@ -970,6 +970,7 @@ impl Graph {
             && circles.is_empty()
             && chains.is_empty()
             && node_tuples.is_empty()
+            && tree_like_oddities.is_empty()
             && !self.has_disconnected_nodes()
         {
             return Ok(None);
