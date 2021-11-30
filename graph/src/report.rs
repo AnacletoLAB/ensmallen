@@ -1778,8 +1778,6 @@ impl Graph {
             1 => format!(
                 concat!(
                     "a single node type, which is {node_type_description}. ",
-                    "Note that this means that all nodes have the same ",
-                    "node type, that is, all nodes are homogeneous.",
                 ),
                 node_type_description = get_node_type_source_html_url_from_node_type_name(
                     self.get_node_type_name_from_node_type_id(count.into_keys().last().unwrap())
@@ -2016,9 +2014,7 @@ impl Graph {
             }
             1 => format!(
                 concat!(
-                    "a single edge type, which is {edge_type_description}. ",
-                    "Note that this means that all edges have the same ",
-                    "edge type, that is, all edges are homogeneous.",
+                    "a single edge type, which is {edge_type_description}.",
                 ),
                 edge_type_description = get_edge_type_source_html_url_from_edge_type_name(
                     self.get_edge_type_name_from_edge_type_id(
