@@ -764,6 +764,129 @@ impl Graph {
         )
     }
 
+    /// Returns report on the provided tree-like oddity list.
+    ///
+    /// # Arguments
+    /// * `header_type`: &str - Type of header to use for this section.
+    /// * `oddity_name`: &str - Name of oddity.
+    /// * `oddity_description`: &str - Description of oddity.
+    /// * `number_of_oddities`: NodeT - Number of the oddities.
+    /// * `number_of_involved_nodes`: NodeT - Number of involved nodes.
+    /// * `number_of_involved_edges`: EdgeT - Number of involved edges.
+    /// * `maximum_number_of_involved_nodes`: NodeT - Number of nodes involved in the largest oddity of this type.
+    /// * `maximum_number_of_involved_edges`: EdgeT - Number of edges involved in the largest oddity of this type.
+    /// * `oddities`: impl Iterator<Item=T> - Iterator over the oddities.
+    fn get_report_of_oddity<T: ToString>(
+        &self,
+        header_type: &str,
+        oddity_name: &str,
+        oddity_description: &str,
+        number_of_oddities: NodeT,
+        number_of_involved_nodes: NodeT,
+        number_of_involved_edges: EdgeT,
+        maximum_number_of_involved_nodes: NodeT,
+        maximum_number_of_involved_edges: EdgeT,
+        oddities: impl Iterator<Item = T>,
+    ) -> String {
+        let number_of_oddities_to_report = 10;
+        if oddity_name.is_empty() {
+            panic!("The oddity name cannot be empty!");
+        }
+        if oddity_description.is_empty() {
+            panic!("The oddity description cannot be empty!");
+        }
+        format!(
+            concat!(
+                "<{header_type}>{oddity_name}</{header_type}>",
+                "<p>",
+                "{oddity_description} ",
+                "We have detected {number_of_oddities} {lower_oddity_name} in the graph, ",
+                "involving a total of {number_of_involved_nodes} nodes ({percentage_of_involved_nodes:.2}%) ",
+                "and {number_of_involved_edges} edges ({percentage_of_involved_edges:.2}%), ",
+                "with the largest one involving {maximum_number_of_involved_nodes} nodes ",
+                "and {maximum_number_of_involved_edges} edges. ",
+                "The detected {lower_oddity_name}, sorted by decreasing size, are:",
+                "</p>",
+                "<ol>",
+                "{top_oddities_description}",
+                "</ol>",
+                "{possibly_conclusive_entry}"
+            ),
+            header_type=header_type,
+            oddity_name=oddity_name,
+            lower_oddity_name=oddity_name.to_lowercase(),
+            oddity_description=oddity_description,
+            number_of_oddities = to_human_readable_high_integer(number_of_oddities as usize),
+            number_of_involved_nodes = to_human_readable_high_integer(number_of_involved_nodes as usize),
+            percentage_of_involved_nodes= (number_of_involved_nodes as f64 / self.get_nodes_number() as f64) * 100.0,
+            number_of_involved_edges = to_human_readable_high_integer(number_of_involved_edges as usize),
+            percentage_of_involved_edges= (number_of_involved_edges as f64 / self.get_directed_edges_number() as f64) * 100.0,
+            maximum_number_of_involved_nodes = maximum_number_of_involved_nodes,
+            maximum_number_of_involved_edges = maximum_number_of_involved_edges,
+            top_oddities_description = oddities.take(number_of_oddities_to_report).map(|oddity| format!("<li>{}</li>", oddity.to_string())).join("\n"),
+            possibly_conclusive_entry = if number_of_oddities > number_of_oddities_to_report as NodeT {
+                let remaining_oddities = number_of_oddities - number_of_oddities_to_report as NodeT;
+                if remaining_oddities == 1 {
+                    format!(
+                        "<p>And another {lower_oddity_name}.</p>",
+                        lower_oddity_name=oddity_name.to_lowercase()
+                    )
+                } else {
+                    format!(
+                        "<p>And other {remaining_oddities} {lower_oddity_name}.</p>",
+                        remaining_oddities=to_human_readable_high_integer(remaining_oddities as usize),
+                        lower_oddity_name=oddity_name.to_lowercase()
+                    )
+                }
+            } else {
+                "".to_string()
+            }
+        )
+    }
+
+    /// Returns report on the provided tree-like oddity list.
+    ///
+    /// # Arguments
+    /// * `tree_like_oddities`: Vec<DendriticTree> - Vector of oddities.
+    /// * `oddity_name`: &str - Name of the oddity.
+    /// * `oddity_description`: &str - Description of the oddity.
+    fn get_report_of_specific_tree_like_oddities(
+        &self,
+        tree_like_oddities: Vec<DendriticTree>,
+        oddity_name: &str,
+        oddity_description: &str,
+    ) -> String {
+        if tree_like_oddities.is_empty() {
+            "".to_string()
+        } else {
+            self.get_report_of_oddity(
+                "h5",
+                oddity_name,
+                oddity_description,
+                tree_like_oddities.len() as NodeT,
+                tree_like_oddities
+                    .par_iter()
+                    .map(|oddity| oddity.get_number_of_involved_nodes())
+                    .sum::<NodeT>(),
+                tree_like_oddities
+                    .par_iter()
+                    .map(|oddity| oddity.get_number_of_involved_edges())
+                    .sum::<EdgeT>(),
+                tree_like_oddities
+                    .par_iter()
+                    .map(|oddity| oddity.get_number_of_involved_nodes())
+                    .max()
+                    .unwrap(),
+                tree_like_oddities
+                    .par_iter()
+                    .map(|oddity| oddity.get_number_of_involved_edges())
+                    .max()
+                    .unwrap(),
+                tree_like_oddities.into_iter(),
+            )
+        }
+    }
+
     /// Returns report on the oddities detected within the graph.
     ///
     /// # Implementation details
@@ -775,38 +898,18 @@ impl Graph {
     /// # Safety
     /// This method may cause a panic when called on a graph with no edges.
     fn get_report_of_topological_oddities(&self) -> Result<Option<String>> {
-        let (circles, chains, stars, tendrils, node_tuples, dendritic_trees) =
-            if !self.is_directed() {
-                let mut circles = self.get_circles(None, None)?;
-                circles.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
-                let mut chains = self.get_chains(None, None)?;
-                chains.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
-                let mut stars = self.get_stars(None)?;
-                stars.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
-                let mut tendrils = self.get_tendrils(Some(1), None)?;
-                tendrils.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
-                let mut node_tuples = self.get_node_tuples()?;
-                node_tuples.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
-                let mut dendritic_trees = self.get_dendritic_trees()?;
-                dendritic_trees.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
-                (
-                    circles,
-                    chains,
-                    stars,
-                    tendrils,
-                    node_tuples,
-                    dendritic_trees,
-                )
-            } else {
-                (
-                    Vec::new(),
-                    Vec::new(),
-                    Vec::new(),
-                    Vec::new(),
-                    Vec::new(),
-                    Vec::new(),
-                )
-            };
+        let (circles, chains, node_tuples, tree_like_oddities) = if !self.is_directed() {
+            let mut circles = self.get_circles(None, None)?;
+            circles.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+            let mut chains = self.get_chains(None, None)?;
+            chains.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+            let mut node_tuples = self.get_node_tuples()?;
+            node_tuples.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+            let tree_like_oddities = self.get_dendritic_trees()?;
+            (circles, chains, node_tuples, tree_like_oddities)
+        } else {
+            (Vec::new(), Vec::new(), Vec::new(), Vec::new())
+        };
 
         let mut isomorphic_node_groups: Vec<Vec<NodeT>> =
             self.par_iter_isomorphic_node_ids_groups(None).collect();
@@ -821,333 +924,234 @@ impl Graph {
         if isomorphic_node_groups.is_empty()
             && circles.is_empty()
             && chains.is_empty()
-            && tendrils.is_empty()
             && node_tuples.is_empty()
-            && stars.is_empty()
         {
             return Ok(None);
         }
-        // Create the report for the circles, if there are any.
-        let circles_description = if circles.is_empty() {
-            "".to_string()
-        } else {
-            let involved_nodes: usize = circles.iter().map(|circle| circle.len() as usize).sum();
-            format!(
-                concat!(
-                    "<h4>Circles</h4>",
-                    "<p>",
-                    "A circle is a circular chain of nodes with degree two. ",
-                    "We have detected {circles_number} circles in the graph with at least 5 nodes, with the one containing {max_circles_size} nodes. ",
-                    "The circle topological oddities involve a total of {involved_nodes_number} nodes ({involved_nodes_percentage:.2}%). ",
-                    "The detected circles, sorted by decreasing size, are:",
-                    "</p>",
-                    "<ol>",
-                    "{circles_description}",
-                    "</ol>",
-                    "{possibly_conclusive_entry}"
-                ),
-                circles_number = to_human_readable_high_integer(circles.len()),
-                involved_nodes_number = to_human_readable_high_integer(involved_nodes),
-                involved_nodes_percentage= (involved_nodes as f64 / self.get_nodes_number() as f64) * 100.0,
-                max_circles_size = circles.first().unwrap().len(),
-                circles_description = circles.iter().take(10).map(|circle| format!("<li>{}</li>", circle.to_string())).join("\n"),
-                possibly_conclusive_entry = if circles.len() > 10 {
-                    let remaining_circles = circles.len() -10;
-                    if remaining_circles == 1 {
-                        "<p>And another circle.</p>".to_string()
-                    } else {
-                        format!(
-                            "<p>And other {} circles.</p>",
-                            to_human_readable_high_integer(remaining_circles)
-                        )
-                    }
-                } else {
-                    "".to_string()
-                }
-            )
-        };
-        // Create the report for the chains, if there are any.
-        let chains_description = if chains.is_empty() {
-            "".to_string()
-        } else {
-            let involved_nodes: usize = chains.iter().map(|chain| chain.len() as usize).sum();
-            format!(
-                concat!(
-                    "<h4>Chains</h4>",
-                    "<p>",
-                    "A chain is a path with one or more nodes with degree 2, ",
-                    "connecting two nodes from two different strongly connected components. ",
-                    "We have detected {chains_number} chains in the graph with at least 10 nodes, with the largest one containing {max_chains_size} nodes. ",
-                    "The chain topological oddities involve a total of {involved_nodes_number} nodes ({involved_nodes_percentage:.2}%). ",
-                    "The detected chains, sorted by decreasing size, are:",
-                    "</p>",
-                    "<ol>",
-                    "{chains_description}",
-                    "</ol>",
-                    "{possibly_conclusive_entry}"
-                ),
-                chains_number = to_human_readable_high_integer(chains.len()),
-                involved_nodes_number = to_human_readable_high_integer(involved_nodes),
-                involved_nodes_percentage= (involved_nodes as f64 / self.get_nodes_number() as f64) * 100.0,
-                max_chains_size = chains.first().unwrap().len(),
-                chains_description = chains.iter().take(10).map(|chain| format!("<li>{}</li>", chain.to_string())).join("\n"),
-                possibly_conclusive_entry = if chains.len() > 10 {
-                    let remaining_chains = chains.len() -10;
-                    if remaining_chains == 1 {
-                        "<p>And another chain.</p>".to_string()
-                    } else {
-                        format!(
-                            "<p>And other {} chains.</p>",
-                            to_human_readable_high_integer(remaining_chains)
-                        )
-                    }
-                } else {
-                    "".to_string()
-                }
-            )
-        };
 
-        // Create the report for the tendrils, if there are any.
-        let tendrils_description = if tendrils.is_empty() {
-            "".to_string()
-        } else {
-            let involved_nodes: usize = tendrils.iter().map(|tendril| tendril.len() as usize).sum();
-            format!(
-                concat!(
-                    "<h4>Tendrils</h4>",
-                    "<p>",
-                    "A tendril is a chain composed of one or more nodes that starts from a root with degree one. ",
-                    "Tendrils are the leaf segment of a dendritic tree. ",
-                    "We have detected {tendrils_number} tendrils in the graph, with the largest one containing {max_tendrils_size} nodes. ",
-                    "The tendril topological oddities involve a total of {involved_nodes_number} nodes ({involved_nodes_percentage:.2}%). ",
-                    "The detected tendrils, sorted by decreasing size, are:",
-                    "</p>",
-                    "<ol>",
-                    "{tendrils_description}",
-                    "</ol>",
-                    "{possibly_conclusive_entry}"
-                ),
-                tendrils_number = to_human_readable_high_integer(tendrils.len()),
-                involved_nodes_number = to_human_readable_high_integer(involved_nodes),
-                involved_nodes_percentage= (involved_nodes as f64 / self.get_nodes_number() as f64) * 100.0,
-                max_tendrils_size = tendrils.first().unwrap().len(),
-                tendrils_description = tendrils.iter().take(10).map(|chain| format!("<li>{}</li>", chain.to_string())).join("\n"),
-                possibly_conclusive_entry = if tendrils.len() > 10 {
-                    let remaining_tendrils = tendrils.len() -10;
-                    if remaining_tendrils == 1 {
-                        "<p>And another tendril.</p>".to_string()
-                    } else {
-                        format!(
-                            "<p>And other {} tendrils.</p>",
-                            to_human_readable_high_integer(remaining_tendrils)
-                        )
-                    }
-                } else {
-                    "".to_string()
-                }
-            )
-        };
+        let number_of_circles = circles.len() as NodeT;
+        let number_of_nodes_involved_in_circles = circles.iter().map(|circle| circle.len()).sum();
+        let number_of_edges_involved_in_circles =
+            (number_of_nodes_involved_in_circles + number_of_circles) as EdgeT;
+        let maximum_number_of_nodes_in_a_circle =
+            circles.iter().map(|circle| circle.len()).max().unwrap();
+        let maximum_number_of_edges_in_a_circle = maximum_number_of_nodes_in_a_circle as EdgeT + 1;
+        let circles_description = self.get_report_of_oddity(
+            "h4",
+            "Circle",
+            concat!(
+                "A circle is a connected component composed ",
+                "exclusively of nodes with unique degree 2, ",
+                "that is ignoring self-loop and multi-edges."
+            ),
+            number_of_circles,
+            number_of_nodes_involved_in_circles,
+            number_of_edges_involved_in_circles,
+            maximum_number_of_nodes_in_a_circle,
+            maximum_number_of_edges_in_a_circle,
+            circles.into_iter(),
+        );
 
-        // Create the report for the dendritic trees, if there are any.
-        let dendritic_tree_description = if dendritic_trees.is_empty() {
-            "".to_string()
-        } else {
-            let involved_nodes: usize =
-                dendritic_trees.iter().map(|tree| tree.len() as usize).sum();
-            format!(
-                concat!(
-                    "<h4>Dendritic Trees</h4>",
-                    "<p>",
-                    "A dendritic tree is a graph appendix structured as a tree. ",
-                    "They may derive from ingesting hierarchical ontologies into a knowledge graph while ",
-                    "not adding an amount of additional edges high enough to increase the density of this ",
-                    "area of the graph. ",
-                    "Most link prediction models based on graph topology will struggle to learn and predict ",
-                    "the links in minimal density areas of the graph, such as these ones.",
-                    "We have detected {dendritic_tree_number} dendritic_tree in the graph, with the largest one containing {max_dendritic_tree_size} nodes, ",
-                    "and the deepest one has a depth of {dendritic_tree_depth}. ",
-                    "The dendritic trees topological oddities involve a total of {involved_nodes_number} nodes ({involved_nodes_percentage:.2}%). ",
-                    "The detected dendritic trees, sorted by decreasing size, are:",
-                    "</p>",
-                    "<ol>",
-                    "{dendritic_tree_description}",
-                    "</ol>",
-                    "{possibly_conclusive_entry}"
-                ),
-                dendritic_tree_number = to_human_readable_high_integer(dendritic_trees.len()),
-                dendritic_tree_depth = dendritic_trees.par_iter().map(|tree| tree.get_depth()).max().unwrap(),
-                involved_nodes_number = to_human_readable_high_integer(involved_nodes),
-                involved_nodes_percentage= (involved_nodes as f64 / self.get_nodes_number() as f64) * 100.0,
-                max_dendritic_tree_size = dendritic_trees.first().unwrap().len(),
-                dendritic_tree_description = dendritic_trees.iter().take(10).map(|chain| format!("<li>{}</li>", chain.to_string())).join("\n"),
-                possibly_conclusive_entry = if dendritic_trees.len() > 10 {
-                    let remaining_dendritic_tree = dendritic_trees.len() -10;
-                    if remaining_dendritic_tree == 1 {
-                        "<p>And another dendritic tree.</p>".to_string()
-                    } else {
-                        format!(
-                            "<p>And other {} dendritic tree.</p>",
-                            to_human_readable_high_integer(remaining_dendritic_tree)
-                        )
-                    }
-                } else {
-                    "".to_string()
-                }
-            )
-        };
+        let number_of_chains = chains.len() as NodeT;
+        let number_of_nodes_involved_in_chains = chains.iter().map(|chain| chain.len()).sum();
+        let number_of_edges_involved_in_chains = (number_of_nodes_involved_in_chains - 1) as EdgeT;
+        let maximum_number_of_nodes_in_a_chain =
+            chains.iter().map(|chain| chain.len()).max().unwrap();
+        let maximum_number_of_edges_in_a_chain = maximum_number_of_nodes_in_a_chain as EdgeT - 1;
+        let chains_description = self.get_report_of_oddity(
+            "h4",
+            "Chain",
+            concat!(
+                "A chain is a path of nodes with unique degree 2, ",
+                "that is ignoring self-loop and multi-edges, ",
+                "connecting two strongly connected components of the graph."
+            ),
+            number_of_chains,
+            number_of_nodes_involved_in_chains,
+            number_of_edges_involved_in_chains,
+            maximum_number_of_nodes_in_a_chain,
+            maximum_number_of_edges_in_a_chain,
+            chains.into_iter(),
+        );
 
-        // Create the report for the stars, if there are any.
-        let stars_description = if stars.is_empty() {
-            "".to_string()
-        } else {
-            let involved_nodes: usize = stars.iter().map(|star| star.len() as usize).sum();
-            format!(
-                concat!(
-                    "<h4>Stars</h4>",
-                    "<p>",
-                    "A star is a connected component with an highly central node and (generally) many other nodes with degree one ",
-                    "connected to the central node. ",
-                    "We have detected {stars_number} stars in the graph with at least 10 nodes, with the largest one containing {max_stars_size} nodes. ",
-                    "The star topological oddities involve a total of {involved_nodes_number} nodes ({involved_nodes_percentage:.2}%). ",
-                    "The detected stars, sorted by decreasing size, are:",
-                    "</p>",
-                    "<ol>",
-                    "{stars_description}",
-                    "</ol>",
-                    "{possibly_conclusive_entry}"
-                ),
-                stars_number = to_human_readable_high_integer(stars.len()),
-                involved_nodes_number = to_human_readable_high_integer(involved_nodes),
-                involved_nodes_percentage= (involved_nodes as f64 / self.get_nodes_number() as f64) * 100.0,
-                max_stars_size = stars.first().unwrap().len(),
-                stars_description = stars.iter().take(10).map(|star| format!("<li>{}</li>", star.to_string())).join("\n"),
-                possibly_conclusive_entry = if stars.len() > 10 {
-                    let remaining_stars = stars.len() -10;
-                    if remaining_stars == 1 {
-                        "<p>And another star.</p>".to_string()
-                    } else {
-                        format!(
-                            "<p>And other {} stars.</p>",
-                            to_human_readable_high_integer(remaining_stars)
-                        )
-                    }
-                } else {
-                    "".to_string()
-                }
-            )
-        };
+        let number_of_node_tuples = node_tuples.len() as NodeT;
+        let number_of_nodes_involved_in_node_tuples = number_of_node_tuples * 2;
+        let number_of_edges_involved_in_node_tuples = number_of_node_tuples as EdgeT;
+        let maximum_number_of_nodes_in_a_node_tuple = 2;
+        let maximum_number_of_edges_in_a_node_tuple = 1;
+        let node_tuples_description = self.get_report_of_oddity(
+            "h4",
+            "Node tuple",
+            concat!("A node tuple is a connected component composed of two nodes."),
+            number_of_node_tuples,
+            number_of_nodes_involved_in_node_tuples,
+            number_of_edges_involved_in_node_tuples,
+            maximum_number_of_nodes_in_a_node_tuple,
+            maximum_number_of_edges_in_a_node_tuple,
+            node_tuples.into_iter(),
+        );
 
-        // Create the report for the node tuples, if there are any.
-        let node_tuples_description = if node_tuples.is_empty() {
-            "".to_string()
-        } else {
-            let involved_nodes: usize = node_tuples
-                .iter()
-                .map(|node_tuple| node_tuple.len() as usize)
-                .sum();
-            format!(
-                concat!(
-                    "<h4>Node tuples</h4>",
-                    "<p>",
-                    "A node tuple is a connected component composed of two nodes. ",
-                    "We have detected {node_tuples_number} node_tuples in the graph. ",
-                    "The node tuples topological oddities involve a total of {involved_nodes_number} nodes ({involved_nodes_percentage:.2}%). ",
-                    "The detected node_tuples are:",
-                    "</p>",
-                    "<ol>",
-                    "{node_tuples_description}",
-                    "</ol>",
-                    "{possibly_conclusive_entry}"
-                ),
-                node_tuples_number = to_human_readable_high_integer(node_tuples.len()),
-                involved_nodes_number = to_human_readable_high_integer(involved_nodes),
-                involved_nodes_percentage= (involved_nodes as f64 / self.get_nodes_number() as f64) * 100.0,
-                node_tuples_description = node_tuples
-                    .iter()
-                    .take(10)
-                    .map(|star| format!("<li>{}</li>", star.to_string()))
-                    .join("\n"),
-                possibly_conclusive_entry = if node_tuples.len() > 10 {
-                    let remaining_node_tuples = node_tuples.len() - 10;
-                    if remaining_node_tuples == 1 {
-                        "<p>And another node_tuple.</p>".to_string()
-                    } else {
-                        format!(
-                            "<p>And other {} node_tuples.</p>",
-                            to_human_readable_high_integer(remaining_node_tuples)
-                        )
-                    }
-                } else {
-                    "".to_string()
-                }
-            )
-        };
-
-        // Create the report for the stars, if there are any.
-        let isomorphic_nodes_description = if isomorphic_node_groups.is_empty() {
-            "".to_string()
-        } else {
-            let isomorphic_node_groups_number = isomorphic_node_groups.len();
-            let involved_nodes_number: usize = isomorphic_node_groups
-                .par_iter()
-                .map(|involved_nodes_number| involved_nodes_number.len())
-                .sum();
-            format!(
-                concat!(
-                    "<h4>Isomorphic nodes</h4>",
-                    "<p>",
-                    "Isomorphic groups are nodes with exactly the same neighbours ",
-                    "and node types (if present in the graph). ",
-                    "We have detected {isomorphic_groups_number} isomorphic groups in the graph with at least node degree 5, with the largest one containing {max_isomorphic_nodes_size} nodes. ",
-                    "The star topological oddities involve a total of {involved_nodes_number} nodes ({involved_nodes_percentage:.2}%). ",
-                    "The detected isomorphic groups, sorted by decreasing size, are:",
-                    "</p>",
-                    "<ol>",
-                    "{isomorphic_nodes_description}",
-                    "</ol>",
-                    "{possibly_conclusive_entry}"
-                ),
-                isomorphic_groups_number = isomorphic_node_groups_number,
-                max_isomorphic_nodes_size = isomorphic_node_groups.par_iter().map(|isomorphic_node_group| isomorphic_node_group.len()).max().unwrap(),
-                involved_nodes_number = involved_nodes_number,
-                involved_nodes_percentage = (involved_nodes_number as f64 / self.get_nodes_number() as f64) * 100.0,
-                isomorphic_nodes_description = isomorphic_node_groups.into_iter().take(10).map(|isomorphic_node_group| {
+        let number_of_isomorphic_node_groups = isomorphic_node_groups.len() as NodeT;
+        let number_of_nodes_involved_in_isomorphic_node_groups = isomorphic_node_groups
+            .iter()
+            .map(|isomorphic_node_group| isomorphic_node_group.len() as NodeT)
+            .sum();
+        let number_of_edges_involved_in_isomorphic_node_groups = isomorphic_node_groups
+            .iter()
+            .map(|isomorphic_node_group| unsafe {
+                (self.get_unchecked_node_degree_from_node_id(isomorphic_node_group[0]) as usize
+                    * isomorphic_node_group.len()) as EdgeT
+            })
+            .sum();
+        let maximum_number_of_nodes_in_a_isomorphic_node_group = isomorphic_node_groups
+            .iter()
+            .map(|isomorphic_node_group| isomorphic_node_group.len() as NodeT)
+            .max()
+            .unwrap();
+        let maximum_number_of_edges_in_a_isomorphic_node_group = isomorphic_node_groups
+            .iter()
+            .map(|isomorphic_node_group| unsafe {
+                (self.get_unchecked_node_degree_from_node_id(isomorphic_node_group[0]) as usize
+                    * isomorphic_node_group.len()) as EdgeT
+            })
+            .max()
+            .unwrap();
+        let isomorphic_node_groups_description = self.get_report_of_oddity(
+            "h4",
+            "Isomorphic node groups",
+            concat!(
+                "Isomorphic groups are nodes with exactly the same ",
+                "neighbours and node types (if present in the graph)."
+            ),
+            number_of_isomorphic_node_groups,
+            number_of_nodes_involved_in_isomorphic_node_groups,
+            number_of_edges_involved_in_isomorphic_node_groups,
+            maximum_number_of_nodes_in_a_isomorphic_node_group,
+            maximum_number_of_edges_in_a_isomorphic_node_group,
+            isomorphic_node_groups
+                .into_iter()
+                .map(|isomorphic_node_group| {
                     format!(
                         concat!(
-                            "<li><p>Isomorphic group containing {} nodes with {}, which are: {}.</p></li>",
+                            "<p>Isomorphic group containing {} nodes with {}, which are: {}.</p>",
                         ),
                         to_human_readable_high_integer(isomorphic_node_group.len() as usize),
-                        unsafe{self.get_unchecked_succinct_node_attributes_description(isomorphic_node_group[0], 0)},
+                        unsafe {
+                            self.get_unchecked_succinct_node_attributes_description(
+                                isomorphic_node_group[0],
+                                0,
+                            )
+                        },
                         unsafe {
                             get_unchecked_formatted_list(
                                 &isomorphic_node_group
                                     .into_iter()
                                     .take(5)
                                     .map(|node_id| {
-                                        get_node_source_html_url_from_node_name(&self
-                                            .get_unchecked_node_name_from_node_id(node_id))
+                                        get_node_source_html_url_from_node_name(
+                                            &self.get_unchecked_node_name_from_node_id(node_id),
+                                        )
                                     })
                                     .collect::<Vec<String>>(),
                                 Some(5),
                             )
                         }
                     )
-                }).join("\n"),
-                possibly_conclusive_entry = if isomorphic_node_groups_number > 10 {
-                    let remaining_isomorphic_node_groups_number = isomorphic_node_groups_number - 10;
-                    if remaining_isomorphic_node_groups_number == 1 {
-                        "<p>And another isomorphic group.</p>".to_string()
-                    } else {
-                        format!(
-                            "<p>And other {} isomorphic groups.</p>",
-                            to_human_readable_high_integer(remaining_isomorphic_node_groups_number)
-                        )
-                    }
+                }),
+        );
+
+        // ================================
+        // Trees and tree-like oddities
+        // ================================
+
+        let tree_like_oddities_description = if tree_like_oddities.is_empty() {
+            "".to_string()
+        } else {
+            let mut tendrils: Vec<DendriticTree> = Vec::new();
+            let mut trees: Vec<DendriticTree> = Vec::new();
+            let mut dendritic_trees: Vec<DendriticTree> = Vec::new();
+            let mut stars: Vec<DendriticTree> = Vec::new();
+            let mut free_floating_chains: Vec<DendriticTree> = Vec::new();
+            tree_like_oddities.into_iter().for_each(|tree_like_oddity| {
+                if tree_like_oddity.is_tree() {
+                    trees.push(tree_like_oddity);
+                } else if tree_like_oddity.is_star() {
+                    stars.push(tree_like_oddity);
+                } else if tree_like_oddity.is_tendril() {
+                    tendrils.push(tree_like_oddity);
+                } else if tree_like_oddity.is_free_floating_chain() {
+                    free_floating_chains.push(tree_like_oddity);
+                } else if tree_like_oddity.is_dendritic_tree() {
+                    dendritic_trees.push(tree_like_oddity);
                 } else {
-                    "".to_string()
+                    unreachable!(
+                        "The cases for the different dendritic trees should be fully described."
+                    );
                 }
+            });
+
+            tendrils.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+            trees.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+            dendritic_trees.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+            stars.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+            free_floating_chains.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+
+            format!(
+                concat!(
+                    "<h4>Tree oddities</h4>",
+                    "<p>",
+                    "Tree oddities are tree strutures, some degenerate, that may appear in a graph. ",
+                    "We currently detect <i>Stars</i>, <i>Dendritic Trees</i>, <i>Tendrils</i>, <i>Trees</i> and ",
+                    "<i>Free Floating Chains</i>. ",
+                    "</p>",
+                    "{trees_description}",
+                    "{dendritic_trees_description}",
+                    "{stars_description}",
+                    "{free_floating_chains_description}",
+                    "{tendrils_description}",
+                ),
+                trees_description=self.get_report_of_specific_tree_like_oddities(
+                    trees,
+                    "Trees",
+                    concat!(
+                        "A tree is a connected component with <code>n</code> nodes and <code>n-1</code> edges."
+                    )
+                ),
+                dendritic_trees_description=self.get_report_of_specific_tree_like_oddities(
+                    dendritic_trees,
+                    "Dendritic trees",
+                    concat!(
+                        "A dendritic tree is a tree-like structure starting from a root node ",
+                        "that is part of another strongly conneted component."
+                    )
+                ),
+                stars_description=self.get_report_of_specific_tree_like_oddities(
+                    stars,
+                    "Stars",
+                    concat!(
+                        "A star is a tree with a maximal depth of one, where nodes ",
+                        "with maximal unique deegree one are connected to a central ",
+                        "root node with high degree."
+                    )
+                ),
+                free_floating_chains_description=self.get_report_of_specific_tree_like_oddities(
+                    free_floating_chains,
+                    "Free floating chains",
+                    concat!(
+                        "A free floating chain is a tree with maximal degree two."
+                    )
+                ),
+                tendrils_description=self.get_report_of_specific_tree_like_oddities(
+                    tendrils,
+                    "Tendrils",
+                    concat!(
+                        "A tendril is a path starting from a node of degree one, ",
+                        "connected to a strongly connected component."
+                    )
+                ),
             )
         };
+
         Ok(Some(format!(
             concat!(
                 "<h3>Topological Oddities</h3>",
@@ -1160,19 +1164,15 @@ impl Graph {
                 "</p>",
                 "{circles_description}",
                 "{chains_description}",
-                "{dendritic_tree_description}",
-                "{tendrils_description}",
-                "{stars_description}",
                 "{node_tuples_description}",
-                "{isomorphic_nodes_description}",
+                "{isomorphic_node_groups_description}",
+                "{tree_like_oddities_description}",
             ),
             circles_description=circles_description,
             chains_description=chains_description,
-            dendritic_tree_description=dendritic_tree_description,
-            tendrils_description=tendrils_description,
-            stars_description=stars_description,
             node_tuples_description=node_tuples_description,
-            isomorphic_nodes_description=isomorphic_nodes_description
+            isomorphic_node_groups_description=isomorphic_node_groups_description,
+            tree_like_oddities_description=tree_like_oddities_description,
         )))
     }
 

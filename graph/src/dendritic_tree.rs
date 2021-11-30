@@ -8,9 +8,10 @@ pub const DENDRITIC_TREE_LEAF: NodeT = NodeT::MAX - 1;
 pub struct DendriticTree {
     graph: Graph,
     root_node_id: NodeT,
-    len: NodeT,
     depth: NodeT,
     node_ids: Vec<NodeT>,
+    has_minimum_degree_one: bool,
+    number_of_non_leafs_at_root: NodeT,
 }
 
 use std::string::ToString;
@@ -25,7 +26,7 @@ impl ToString for DendriticTree {
                 self.graph
                     .get_unchecked_succinct_node_description(self.get_root_node_id(), 1)
             },
-            other_nodes_description = match self.len() {
+            other_nodes_description = match self.get_number_of_involved_nodes() {
                 0 => unreachable!("It does not make sense to have an empty dendritic tree."),
                 1 => format!("containing a single other node, {}", unsafe {
                     self.graph
@@ -56,7 +57,10 @@ impl ToString for DendriticTree {
 
 impl PartialOrd for DendriticTree {
     fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.len.cmp(&other.len))
+        Some(
+            self.get_number_of_involved_nodes()
+                .cmp(&other.get_number_of_involved_nodes()),
+        )
     }
 }
 
@@ -66,19 +70,47 @@ impl DendriticTree {
         root_node_id: NodeT,
         depth: NodeT,
         node_ids: Vec<NodeT>,
+        has_minimum_degree_one: bool,
+        number_of_non_leafs_at_root: NodeT,
     ) -> DendriticTree {
         DendriticTree {
             graph: graph.clone(),
             root_node_id,
-            len: node_ids.len() as NodeT,
             depth,
             node_ids,
+            has_minimum_degree_one,
+            number_of_non_leafs_at_root,
         }
     }
 
     /// Return the root node ID of the dendritic tree.
     pub fn get_root_node_id(&self) -> NodeT {
         self.root_node_id
+    }
+
+    /// Return whether the current dendritic tree is actually a tree.
+    pub fn is_tree(&self) -> bool {
+        self.number_of_non_leafs_at_root == 0
+    }
+
+    /// Return whether the current dendritic tree is actually a tendril.
+    pub fn is_tendril(&self) -> bool {
+        !self.is_tree() && self.has_minimum_degree_one
+    }
+
+    /// Return whether the current dendritic tree is a proper dentritic tree.
+    pub fn is_dendritic_tree(&self) -> bool {
+        !self.is_tree() && !self.has_minimum_degree_one
+    }
+
+    /// Return whether the current dendritic tree is actually a free-floating chain.
+    pub fn is_free_floating_chain(&self) -> bool {
+        self.is_tree() && self.has_minimum_degree_one && self.depth > 1
+    }
+
+    /// Return whether the current dendritic tree is actually a star.
+    pub fn is_star(&self) -> bool {
+        self.is_tree() && self.depth == 1
     }
 
     /// Return the depth of the dentritic tree.
@@ -94,9 +126,14 @@ impl DendriticTree {
         }
     }
 
-    /// Return length of the DendriticTree.
-    pub fn len(&self) -> NodeT {
-        self.len
+    /// Return number of nodes involved in the dendritic tree.
+    pub fn get_number_of_involved_nodes(&self) -> NodeT {
+        self.node_ids.len() as NodeT + if self.is_tree() { 1 } else { 0 }
+    }
+
+    /// Return number of edges involved in the dendritic tree.
+    pub fn get_number_of_involved_edges(&self) -> EdgeT {
+        self.node_ids.len() as EdgeT
     }
 
     /// Return the node IDs of the nodes composing the DendriticTree.
@@ -181,7 +218,7 @@ impl Graph {
                                 )
                                 .filter(|&neighbour_node_id| {
                                     !(*leaf_nodes.value.get())[neighbour_node_id as usize]
-                                })
+                                }),
                             )
                         } else {
                             Box::new(vec![node_id].into_iter())
@@ -221,15 +258,22 @@ impl Graph {
         info!("Detected {} dendritic trees.", frontier.len());
         Ok(frontier
             .into_par_iter()
-            .map(|root_node_id| {
+            .map(|root_node_id| unsafe {
                 let mut tree_nodes: Vec<NodeT> = Vec::new();
                 let mut depth: NodeT = 0;
                 let mut stack: Vec<NodeT> = vec![root_node_id];
+                let mut has_minimum_degree_one: bool = true;
+                let number_of_non_leafs_at_root = self
+                    .iter_unchecked_unique_neighbour_node_ids_from_source_node_id(root_node_id)
+                    .filter(|&neighbour_node_id| {
+                        !(*leaf_nodes.value.get())[neighbour_node_id as usize]
+                    })
+                    .count() as NodeT;
                 while !stack.is_empty() {
                     depth += 1;
                     stack = stack
                         .iter()
-                        .flat_map(|&node_id| unsafe {
+                        .flat_map(|&node_id| {
                             self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
                                 node_id,
                             )
@@ -237,15 +281,25 @@ impl Graph {
                                 (*leaf_nodes.value.get())[neighbour_node_id as usize]
                             })
                         })
-                        .map(|neighbour_node_id| unsafe {
+                        .map(|neighbour_node_id| {
                             (*leaf_nodes.value.get())[neighbour_node_id as usize] = false;
                             neighbour_node_id
                         })
                         .collect::<Vec<NodeT>>();
+                    if stack.len() > 1 {
+                        has_minimum_degree_one = false;
+                    }
                     tree_nodes.extend_from_slice(&stack);
                 }
                 depth -= 1;
-                DendriticTree::from_node_ids(&self, root_node_id, depth, tree_nodes)
+                DendriticTree::from_node_ids(
+                    &self,
+                    root_node_id,
+                    depth,
+                    tree_nodes,
+                    has_minimum_degree_one,
+                    number_of_non_leafs_at_root,
+                )
             })
             .collect::<Vec<DendriticTree>>())
     }

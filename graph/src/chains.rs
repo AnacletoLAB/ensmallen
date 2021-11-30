@@ -294,6 +294,10 @@ impl Graph {
                 if last_node < node_id {
                     return None;
                 }
+                // We check that this chain is not a tendril.
+                if self.get_unchecked_node_degree_from_node_id(last_node) == 1 {
+                    return None;
+                }
                 // return the chain
                 Some(if let Some(node_ids) = node_ids {
                     Chain::from_node_ids(self, node_ids)
