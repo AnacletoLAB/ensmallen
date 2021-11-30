@@ -176,10 +176,26 @@ impl Graph {
     ) -> Result<impl ParallelIterator<Item = Vec<EdgeTypeT>> + '_> {
         // First we create a vector with the unique node type IDs.
         let mut edge_type_ids: Vec<EdgeTypeT> = self.iter_unique_edge_type_ids()?.collect();
+        let edge_type_hashes = edge_type_ids
+            .par_iter()
+            .map(|&edge_type_id| unsafe {
+                let number_of_edges =
+                    self.get_unchecked_number_of_edges_from_edge_type_id(edge_type_id);
+                let seed: u64 = 0xDEADBEEFC0FEBABE_u64.wrapping_mul(number_of_edges as u64);
+                self.iter_edge_node_ids_and_edge_type_id_from_edge_type_id(Some(edge_type_id), true)
+                    .unwrap()
+                    .take(50)
+                    .map(|(_, src, dst, _)| {
+                        (src as u64 ^ dst as u64).wrapping_add(0x0A2126967AE81C95)
+                    })
+                    .fold(seed, |a: u64, b: u64| {
+                        (a ^ b).wrapping_add(0x0A2126967AE81C95)
+                    })
+            })
+            .collect::<Vec<u64>>();
         // Then we sort it according to the number of edges with this edge type.
-        edge_type_ids.par_sort_unstable_by(|&a, &b| unsafe {
-            self.get_unchecked_number_of_edges_from_edge_type_id(a)
-                .cmp(&self.get_unchecked_number_of_edges_from_edge_type_id(b))
+        edge_type_ids.par_sort_unstable_by(|&a, &b| {
+            edge_type_hashes[a as usize].cmp(&edge_type_hashes[b as usize])
         });
         let considered_edge_type_ids_number = edge_type_ids.len();
         Ok((0..(considered_edge_type_ids_number - 1))
@@ -187,15 +203,9 @@ impl Graph {
             .filter_map(move |i| unsafe {
                 let edge_type_id = edge_type_ids[i];
                 // We only explore the group starters.
-                let number_of_edges =
-                    self.get_unchecked_number_of_edges_from_edge_type_id(edge_type_id);
-                if i != 0
-                    && number_of_edges
-                        == self
-                            .get_unchecked_number_of_edges_from_edge_type_id(edge_type_ids[i - 1])
-                    || number_of_edges
-                        != self
-                            .get_unchecked_number_of_edges_from_edge_type_id(edge_type_ids[i + 1])
+                let edge_type_hash = edge_type_hashes[edge_type_id as usize];
+                if i != 0 && edge_type_hash == edge_type_hashes[edge_type_ids[i - 1] as usize]
+                    || edge_type_hash != edge_type_hashes[edge_type_ids[i + 1] as usize]
                 {
                     return None;
                 }
@@ -204,8 +214,7 @@ impl Graph {
                 for other_edge_type_id in ((i + 1)..considered_edge_type_ids_number)
                     .map(|j| edge_type_ids[j])
                     .take_while(|&edge_type_id| {
-                        number_of_edges
-                            == self.get_unchecked_number_of_edges_from_edge_type_id(edge_type_id)
+                        edge_type_hash == edge_type_hashes[edge_type_id as usize]
                     })
                 {
                     if let Some(isomorphic_group) =
