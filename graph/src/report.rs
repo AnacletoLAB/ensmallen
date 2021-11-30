@@ -1071,7 +1071,7 @@ impl Graph {
         let maximum_number_of_edges_in_a_node_tuple = 1;
         let node_tuples_description = self.get_report_of_oddity(
             "h4",
-            "Node tuple",
+            "Node tuples",
             concat!("A node tuple is a connected component composed of two nodes."),
             number_of_node_tuples,
             number_of_nodes_involved_in_node_tuples,

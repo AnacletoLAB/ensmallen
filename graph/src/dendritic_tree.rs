@@ -117,34 +117,34 @@ impl DendriticTree {
 
     /// Return whether the current dendritic tree is actually a tree.
     pub fn is_tree(&self) -> bool {
-        self.number_of_non_leafs_at_root == 0
+        self.number_of_non_leafs_at_root == 0 && self.depth > 1
     }
 
     /// Return whether the current dendritic tree is actually a tendril.
     pub fn is_tendril(&self) -> bool {
-        !self.is_tree()
+        self.number_of_non_leafs_at_root != 0
             && self.number_of_leafs_at_root == 1
             && self.has_minimum_degree_one_after_root
     }
 
     /// Return whether the current dendritic tree is a proper dentritic tree.
     pub fn is_dendritic_tree(&self) -> bool {
-        !self.is_tree() && !self.has_minimum_degree_one_after_root
+        self.number_of_non_leafs_at_root != 0 && !self.has_minimum_degree_one_after_root
     }
 
     /// Return whether the current dendritic tree is actually a free-floating chain.
     pub fn is_free_floating_chain(&self) -> bool {
-        self.is_tree() && self.has_minimum_degree_one_after_root && self.depth > 1
+        self.number_of_non_leafs_at_root == 0 && self.has_minimum_degree_one_after_root && self.depth > 1
     }
 
     /// Return whether the current dendritic tree is actually a star.
     pub fn is_star(&self) -> bool {
-        self.is_tree() && self.depth == 1
+        self.number_of_non_leafs_at_root == 0 && self.depth == 1
     }
 
     /// Return whether the current dendritic tree is actually a star of tendrils.
     pub fn is_tendril_star(&self) -> bool {
-        self.is_tree()
+        self.number_of_non_leafs_at_root == 0
             && self.number_of_leafs_at_root > 1
             && self.depth > 1
             && self.has_minimum_degree_one_after_root
@@ -152,12 +152,12 @@ impl DendriticTree {
 
     /// Return whether the current dendritic tree is actually a dendritic star.
     pub fn is_dendritic_star(&self) -> bool {
-        !self.is_tree() && self.depth == 1 && self.number_of_leafs_at_root > 1
+        self.number_of_non_leafs_at_root != 0 && self.depth == 1 && self.number_of_leafs_at_root > 1
     }
 
     /// Return whether the current dendritic tree is actually a dendritic tendril star.
     pub fn is_dendritic_tendril_star(&self) -> bool {
-        !self.is_tree()
+        self.number_of_non_leafs_at_root != 0
             && self.depth > 1
             && self.has_minimum_degree_one_after_root
             && self.number_of_leafs_at_root > 1
@@ -178,7 +178,7 @@ impl DendriticTree {
 
     /// Return number of nodes involved in the dendritic tree.
     pub fn get_number_of_involved_nodes(&self) -> NodeT {
-        self.node_ids.len() as NodeT + if self.is_tree() { 1 } else { 0 }
+        self.node_ids.len() as NodeT + if self.number_of_non_leafs_at_root == 0 { 1 } else { 0 }
     }
 
     /// Return number of edges involved in the dendritic tree.
