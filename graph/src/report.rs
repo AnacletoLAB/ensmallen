@@ -1000,7 +1000,8 @@ impl Graph {
             .map(|node_id| unsafe { self.get_unchecked_node_degree_from_node_id(node_id) })
             .max()
             .unwrap_or(0) as EdgeT;
-        let singleton_nodes_description = self.get_report_of_oddity(
+
+        let singleton_nodes_with_selfloops_description = self.get_report_of_oddity(
             "h4",
             "Singleton nodes with selfloops",
             concat!(
@@ -1287,12 +1288,16 @@ impl Graph {
                 "In the following paragraph, we will describe the detected topological oddities.",
                 "</p>",
                 "{circles_description}",
+                "{singleton_nodes_description}",
+                "{singleton_nodes_with_selfloops_description}",
                 "{chains_description}",
                 "{node_tuples_description}",
                 "{isomorphic_node_groups_description}",
                 "{tree_like_oddities_description}",
             ),
             circles_description = circles_description,
+            singleton_nodes_description = singleton_nodes_description,
+            singleton_nodes_with_selfloops_description = singleton_nodes_with_selfloops_description,
             chains_description = chains_description,
             node_tuples_description = node_tuples_description,
             isomorphic_node_groups_description = isomorphic_node_groups_description,
