@@ -95,7 +95,7 @@ impl Graph {
     ///
     /// # Safety
     /// If the given node ID does not exist in the graph the method will panic.
-    pub unsafe fn iter_unchecked_edge_types_from_source_node_id(
+    pub unsafe fn iter_unchecked_edge_type_ids_from_source_node_id(
         &self,
         source_node_id: NodeT,
     ) -> impl Iterator<Item = Option<EdgeTypeT>> + '_ {

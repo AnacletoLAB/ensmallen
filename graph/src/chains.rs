@@ -13,17 +13,26 @@ pub struct Chain {
 use std::string::ToString;
 impl ToString for Chain {
     fn to_string(&self) -> String {
+        let node_ids = if self.graph.has_node_types() || self.graph.has_edge_types() {
+            Some(self.get_chain_node_ids())
+        } else {
+            None
+        };
         format!(
             concat!(
-                "<p>Chain containing {} nodes and starts from the node {}. ",
-                "Specifically, the nodes involved in the chain are: {}.</p>",
+                "<p>",
+                "Chain containing {nodes_number} nodes and starts from the node {root_node}. ",
+                "Specifically, the nodes involved in the chain are: {chain_nodes}.",
+                "{node_types_counts}{separator}",
+                "{edge_types_counts}",
+                "</p>",
             ),
-            to_human_readable_high_integer(self.len() as usize),
-            unsafe {
+            nodes_number = to_human_readable_high_integer(self.len() as usize),
+            root_node = unsafe {
                 self.graph
                     .get_unchecked_succinct_node_description(self.get_root_node_id(), 2)
             },
-            unsafe {
+            chain_nodes = unsafe {
                 get_unchecked_formatted_list(
                     &self
                         .get_chain_node_ids()
@@ -36,6 +45,47 @@ impl ToString for Chain {
                         .collect::<Vec<String>>(),
                     Some(5),
                 )
+            },
+            separator = if self.graph.has_node_types() && self.graph.has_edge_types() {
+                " "
+            } else {
+                ""
+            },
+            node_types_counts = if let Some(node_ids) = &node_ids {
+                unsafe {
+                    self.graph
+                        .get_unchecked_node_type_id_counts_hashmap_from_node_ids(node_ids.as_ref())
+                        .map_or_else(
+                            |_| "".to_string(),
+                            |count| {
+                                format!(
+                                    "Its nodes are characterized by {}",
+                                    self.graph
+                                        .get_unchecked_node_types_description_from_count(count)
+                                )
+                            },
+                        )
+                }
+            } else {
+                "".to_string()
+            },
+            edge_types_counts = if let Some(node_ids) = &node_ids {
+                unsafe {
+                    self.graph
+                        .get_unchecked_edge_type_id_counts_hashmap_from_node_ids(node_ids.as_ref())
+                        .map_or_else(
+                            |_| "".to_string(),
+                            |count| {
+                                format!(
+                                    "Its edges are characterized by {}",
+                                    self.graph
+                                        .get_unchecked_edge_types_description_from_count(count)
+                                )
+                            },
+                        )
+                }
+            } else {
+                "".to_string()
             }
         )
     }
@@ -141,7 +191,10 @@ impl Graph {
     /// # Safety
     /// The node ID must be among the node IDs present in the graph, or the method will panic.
     /// Additionally, it must be the root node of a chain.
-    pub(crate) unsafe fn get_chain_last_id_from_root_node_id(&self, mut node_id: NodeT) -> (NodeT, NodeT) {
+    pub(crate) unsafe fn get_chain_last_id_from_root_node_id(
+        &self,
+        mut node_id: NodeT,
+    ) -> (NodeT, NodeT) {
         let mut chain_length = 1;
         let mut previous_node_id = node_id;
         'outer: loop {
@@ -171,7 +224,10 @@ impl Graph {
     /// # Safety
     /// The node ID must be among the node IDs present in the graph, or the method will panic.
     /// Additionally, it must be the root node of a chain.
-    pub(crate) unsafe fn get_chain_node_ids_from_root_node_id(&self, mut node_id: NodeT) -> Vec<NodeT> {
+    pub(crate) unsafe fn get_chain_node_ids_from_root_node_id(
+        &self,
+        mut node_id: NodeT,
+    ) -> Vec<NodeT> {
         let mut chain_node_ids: Vec<NodeT> = vec![node_id];
         let mut previous_node_id = node_id;
         'outer: loop {
@@ -222,7 +278,10 @@ impl Graph {
 
     /// The same as `get_chain_node_degree` but we also return the max "chain degree" of the neighbours
     /// of the current node
-    pub(crate) unsafe fn get_chain_node_degree_with_max_neighbour_id(&self, node_id: NodeT) -> (NodeT, NodeT) {
+    pub(crate) unsafe fn get_chain_node_degree_with_max_neighbour_id(
+        &self,
+        node_id: NodeT,
+    ) -> (NodeT, NodeT) {
         let mut node_degree = 0;
         let mut max_neighbour_degree = 0;
         let mut previous_node_id = node_id;

@@ -1759,6 +1759,62 @@ impl Graph {
         )
     }
 
+    /// Returns the node types description for the provided count.
+    ///
+    /// # Arguments
+    /// * `count`: HashMap<NodeTypeT, NodeT> - The node type description count.
+    ///
+    /// # Safety
+    /// It is assumed that the provided count makes sense with the current graph instance
+    /// or it may lead to panic or undefined behaviours.
+    pub(crate) unsafe fn get_unchecked_node_types_description_from_count(
+        &self,
+        count: HashMap<NodeTypeT, NodeT>,
+    ) -> String {
+        match count.len() {
+            0 => {
+                unreachable!("It does not make sense to require the description of an empty count.")
+            }
+            1 => format!(
+                concat!(
+                    "a single node type, which is {node_type_description}. ",
+                    "Note that this means that all nodes have the same ",
+                    "node type, that is, all nodes are homogeneous.",
+                ),
+                node_type_description = get_node_type_source_html_url_from_node_type_name(
+                    self.get_node_type_name_from_node_type_id(count.into_keys().last().unwrap())
+                        .unwrap()
+                        .as_ref()
+                )
+            ),
+            node_types_number => {
+                let mut count = count.into_iter().collect::<Vec<(NodeTypeT, NodeT)>>();
+                count.sort_by(|(_, a), (_, b)| b.cmp(a));
+                let node_type_descriptions = get_unchecked_formatted_list(
+                    count
+                        .into_iter()
+                        .take(10)
+                        .map(|(node_type_id, _)| {
+                            self.get_unchecked_succinct_node_type_description(node_type_id)
+                        })
+                        .collect::<Vec<_>>()
+                        .as_ref(),
+                    None,
+                );
+                format!(
+                    "{node_types_number} node types, {top_ten_caveat} {node_type_description}",
+                    node_types_number = to_human_readable_high_integer(node_types_number as usize),
+                    top_ten_caveat = if node_types_number > 10 {
+                        "of which the 10 most common are"
+                    } else {
+                        "which are"
+                    },
+                    node_type_description = node_type_descriptions
+                )
+            }
+        }
+    }
+
     /// Returns report on the graph node types.
     ///
     /// # Safety
@@ -1774,54 +1830,13 @@ impl Graph {
             concat!(
                 "<h3>Node types</h3>",
                 "<p>",
-                "The graph has {node_types_number}.{multilabel_node_types} ",
+                "The graph has {node_types_description}.{multilabel_node_types} ",
                 "The RAM requirements for the node types data structure is {ram_node_types}.",
                 "</p>",
             ),
-            node_types_number = match self.get_node_types_number().unwrap() {
-                1 => format!(
-                    concat!(
-                        "a single node type, which is {node_type_description}. ",
-                        "Note that this means that all nodes have the same ",
-                        "node type, that is, all nodes are homogeneous.",
-                    ),
-                    node_type_description = get_node_type_source_html_url_from_node_type_name(
-                        self.get_node_type_name_from_node_type_id(0)
-                            .unwrap()
-                            .as_ref()
-                    )
-                ),
-                node_types_number => {
-                    let mut node_type_counts = self
-                        .get_node_type_id_counts_hashmap()
-                        .unwrap()
-                        .into_iter()
-                        .collect::<Vec<_>>();
-                    node_type_counts.sort_by(|(_, a), (_, b)| b.cmp(a));
-                    let node_type_descriptions = get_unchecked_formatted_list(
-                        node_type_counts
-                            .into_iter()
-                            .take(10)
-                            .map(|(node_type_id, _)| {
-                                self.get_unchecked_succinct_node_type_description(node_type_id)
-                            })
-                            .collect::<Vec<_>>()
-                            .as_ref(),
-                        None,
-                    );
-                    format!(
-                        "{node_types_number} node types, {top_ten_caveat} {node_type_description}",
-                        node_types_number =
-                            to_human_readable_high_integer(node_types_number as usize),
-                        top_ten_caveat = if node_types_number > 10 {
-                            "of which the 10 most common are"
-                        } else {
-                            "which are"
-                        },
-                        node_type_description = node_type_descriptions
-                    )
-                }
-            },
+            node_types_description = self.get_unchecked_node_types_description_from_count(
+                self.get_node_type_id_counts_hashmap().unwrap()
+            ),
             multilabel_node_types = if self.has_multilabel_node_types().unwrap() {
                 format!(
                     concat!(
@@ -1983,6 +1998,62 @@ impl Graph {
         )
     }
 
+    /// Returns the edge types description for the provided count.
+    ///
+    /// # Arguments
+    /// * `count`: HashMap<EdgeTypeT, edgeT> - The edge type description count.
+    ///
+    /// # Safety
+    /// It is assumed that the provided count makes sense with the current graph instance
+    /// or it may lead to panic or undefined behaviours.
+    pub(crate) unsafe fn get_unchecked_edge_types_description_from_count(
+        &self,
+        count: HashMap<EdgeTypeT, EdgeT>,
+    ) -> String {
+        match count.len() {
+            0 => {
+                unreachable!("It does not make sense to require the description of an empty count.")
+            }
+            1 => format!(
+                concat!(
+                    "a single edge type, which is {edge_type_description}. ",
+                    "Note that this means that all edges have the same ",
+                    "edge type, that is, all edges are homogeneous.",
+                ),
+                edge_type_description = get_edge_type_source_html_url_from_edge_type_name(
+                    self.get_edge_type_name_from_edge_type_id(
+                        count.into_keys().last().unwrap()
+                    ).unwrap().as_ref()
+                )
+            ),
+            edge_types_number => {
+                let mut edge_type_counts = count.into_iter().collect::<Vec<_>>();
+                edge_type_counts.par_sort_unstable_by(|(_, a), (_, b)| b.cmp(a));
+                let edge_type_descriptions = get_unchecked_formatted_list(
+                    edge_type_counts
+                        .into_iter()
+                        .take(10)
+                        .map(|(edge_type_id, _)| {
+                            self.get_unchecked_succinct_edge_type_description(edge_type_id)
+                        })
+                        .collect::<Vec<_>>()
+                        .as_ref(),
+                    None,
+                );
+                format!(
+                    "{edge_types_number} edge types, {top_ten_caveat} {edge_type_description}",
+                    edge_types_number = to_human_readable_high_integer(edge_types_number as usize),
+                    top_ten_caveat = if edge_types_number > 10 {
+                        "of which the 10 most common are"
+                    } else {
+                        "which are"
+                    },
+                    edge_type_description = edge_type_descriptions
+                )
+            }
+        }
+    }
+
     /// Returns report on the graph edge types.
     ///
     /// # Safety
@@ -2002,50 +2073,9 @@ impl Graph {
                 "The RAM requirements for the edge types data structure is {ram_edge_types}.",
                 "</p>",
             ),
-            edge_types_number = match self.get_edge_types_number().unwrap() {
-                1 => format!(
-                    concat!(
-                        "a single edge type, which is {edge_type_description}. ",
-                        "Note that this means that all edges have the same ",
-                        "edge type, that is, all edges are homogeneous.",
-                    ),
-                    edge_type_description = get_edge_type_source_html_url_from_edge_type_name(
-                        self.get_edge_type_name_from_edge_type_id(0)
-                            .unwrap()
-                            .as_ref()
-                    )
-                ),
-                edge_types_number => {
-                    let mut edge_type_counts = self
-                        .get_edge_type_id_counts_hashmap()
-                        .unwrap()
-                        .into_iter()
-                        .collect::<Vec<_>>();
-                    edge_type_counts.sort_by(|(_, a), (_, b)| b.cmp(a));
-                    let edge_type_descriptions = get_unchecked_formatted_list(
-                        edge_type_counts
-                            .into_iter()
-                            .take(10)
-                            .map(|(edge_type_id, _)| {
-                                self.get_unchecked_succinct_edge_type_description(edge_type_id)
-                            })
-                            .collect::<Vec<_>>()
-                            .as_ref(),
-                        None,
-                    );
-                    format!(
-                        "{edge_types_number} edge types, {top_ten_caveat} {edge_type_description}",
-                        edge_types_number =
-                            to_human_readable_high_integer(edge_types_number as usize),
-                        top_ten_caveat = if edge_types_number > 10 {
-                            "of which the 10 most common are"
-                        } else {
-                            "which are"
-                        },
-                        edge_type_description = edge_type_descriptions
-                    )
-                }
-            },
+            edge_types_number = self.get_unchecked_edge_types_description_from_count(
+                self.get_edge_type_id_counts_hashmap().unwrap()
+            ),
             ram_edge_types = self
                 .get_edge_types_total_memory_requirements_human_readable()
                 .unwrap()

@@ -20,8 +20,12 @@ impl ToString for DendriticTree {
     fn to_string(&self) -> String {
         format!(
             concat!(
-                "<p>{dendritic_tree_type} starting from the root node {root_node_description}, ",
-                "and {other_nodes_description}.</p>"
+                "<p>",
+                "{dendritic_tree_type} starting from the root node {root_node_description}, ",
+                "and {other_nodes_description}.",
+                "{node_types_counts}{separator}",
+                "{edge_types_counts}",
+                "</p>"
             ),
             dendritic_tree_type = self.get_dendritic_tree_type(),
             root_node_description = unsafe {
@@ -52,6 +56,39 @@ impl ToString for DendriticTree {
                         )
                     }
                 ),
+            },
+            separator = if self.graph.has_node_types() && self.graph.has_edge_types() {
+                " "
+            } else {
+                ""
+            },
+            node_types_counts = unsafe {
+                self.graph
+                    .get_unchecked_node_type_id_counts_hashmap_from_node_ids(self.node_ids.as_ref())
+                    .map_or_else(
+                        |_| "".to_string(),
+                        |count| {
+                            format!(
+                                "Its nodes are characterized by {}",
+                                self.graph
+                                    .get_unchecked_node_types_description_from_count(count)
+                            )
+                        },
+                    )
+            },
+            edge_types_counts = unsafe {
+                self.graph
+                    .get_unchecked_edge_type_id_counts_hashmap_from_node_ids(self.node_ids.as_ref())
+                    .map_or_else(
+                        |_| "".to_string(),
+                        |count| {
+                            format!(
+                                "Its edges are characterized by {}",
+                                self.graph
+                                    .get_unchecked_edge_types_description_from_count(count)
+                            )
+                        },
+                    )
             }
         )
     }

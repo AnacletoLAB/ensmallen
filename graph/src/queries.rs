@@ -1,5 +1,6 @@
 use super::*;
 use rayon::prelude::*;
+use std::collections::HashMap;
 
 /// # Queries
 /// The naming convention we follow is:
@@ -1804,5 +1805,61 @@ impl Graph {
                     .unwrap(),
             )
         })
+    }
+
+    /// Returns node type IDs counts hashmap for the provided node IDs.
+    ///
+    /// # Arguments
+    /// * `node_ids`: &[NodeT] - The node IDs to consider for this count.
+    ///
+    /// # Safety
+    /// Must have node types and the provided node IDs must exit in the graph
+    /// or the result will be undefined and most likely will lead to panic.
+    pub unsafe fn get_unchecked_node_type_id_counts_hashmap_from_node_ids(
+        &self,
+        node_ids: &[NodeT],
+    ) -> Result<HashMap<NodeTypeT, NodeT>> {
+        self.must_have_node_types()?;
+        let mut counts: HashMap<NodeTypeT, NodeT> = HashMap::new();
+        node_ids
+            .iter()
+            .cloned()
+            .filter_map(|node_id| self.get_unchecked_node_type_ids_from_node_id(node_id))
+            .for_each(|node_type_ids| {
+                node_type_ids.into_iter().for_each(|node_type_id| {
+                    counts
+                        .entry(node_type_id)
+                        .and_modify(|total| *total += 1)
+                        .or_insert(1);
+                });
+            });
+        Ok(counts)
+    }
+
+    /// Returns edge type IDs counts hashmap for the provided node IDs.
+    ///
+    /// # Arguments
+    /// * `node_ids`: &[NodeT] - The node IDs to consider for this count.
+    ///
+    /// # Safety
+    /// Must have edge types and the provided node IDs must exit in the graph
+    /// or the result will be undefined and most likely will lead to panic.
+    pub unsafe fn get_unchecked_edge_type_id_counts_hashmap_from_node_ids(
+        &self,
+        node_ids: &[NodeT],
+    ) -> Result<HashMap<EdgeTypeT, EdgeT>> {
+        self.must_have_edge_types()?;
+        let mut counts: HashMap<EdgeTypeT, EdgeT> = HashMap::new();
+        node_ids.iter().cloned().for_each(|node_id| {
+            self.iter_unchecked_edge_type_ids_from_source_node_id(node_id)
+                .filter_map(|edge_type_id| edge_type_id)
+                .for_each(|edge_type_id| {
+                    counts
+                        .entry(edge_type_id)
+                        .and_modify(|total| *total += 1)
+                        .or_insert(1);
+                });
+        });
+        Ok(counts)
     }
 }

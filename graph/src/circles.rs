@@ -13,17 +13,27 @@ pub struct Circle {
 use std::string::ToString;
 impl ToString for Circle {
     fn to_string(&self) -> String {
+        let node_ids = if self.graph.has_node_types() || self.graph.has_edge_types() {
+            Some(self.get_circle_node_ids())
+        } else {
+            None
+        };
         format!(
             concat!(
-                "<p>Circle containing {} nodes. ",
-                "Specifically, the nodes involved in the circle are: {}.</p>",
+                "<p>",
+                "Circle containing {nodes_number} nodes. ",
+                "Specifically, the nodes involved in the circle are: {circle_nodes}.",
+                "{node_types_counts}{separator}",
+                "{edge_types_counts}",
+                "</p>",
             ),
-            to_human_readable_high_integer(self.len() as usize),
-            unsafe {
+            nodes_number = to_human_readable_high_integer(self.len() as usize),
+            circle_nodes = unsafe {
                 get_unchecked_formatted_list(
                     &self
                         .get_circle_node_ids()
                         .into_iter()
+                        .skip(1)
                         .map(|node_id| {
                             self.graph
                                 .get_unchecked_succinct_node_description(node_id, 2)
@@ -31,6 +41,47 @@ impl ToString for Circle {
                         .collect::<Vec<String>>(),
                     Some(5),
                 )
+            },
+            separator = if self.graph.has_node_types() && self.graph.has_edge_types() {
+                " "
+            } else {
+                ""
+            },
+            node_types_counts = if let Some(node_ids) = &node_ids {
+                unsafe {
+                    self.graph
+                        .get_unchecked_node_type_id_counts_hashmap_from_node_ids(node_ids.as_ref())
+                        .map_or_else(
+                            |_| "".to_string(),
+                            |count| {
+                                format!(
+                                    "Its nodes are characterized by {}",
+                                    self.graph
+                                        .get_unchecked_node_types_description_from_count(count)
+                                )
+                            },
+                        )
+                }
+            } else {
+                "".to_string()
+            },
+            edge_types_counts = if let Some(node_ids) = &node_ids {
+                unsafe {
+                    self.graph
+                        .get_unchecked_edge_type_id_counts_hashmap_from_node_ids(node_ids.as_ref())
+                        .map_or_else(
+                            |_| "".to_string(),
+                            |count| {
+                                format!(
+                                    "Its edges are characterized by {}",
+                                    self.graph
+                                        .get_unchecked_edge_types_description_from_count(count)
+                                )
+                            },
+                        )
+                }
+            } else {
+                "".to_string()
             }
         )
     }
