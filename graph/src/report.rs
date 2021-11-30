@@ -463,19 +463,6 @@ impl Graph {
                 to_human_readable_high_integer(node_degree as usize)
             ))
         };
-        // Update the node degree with also the weighted degree.
-        // if self.has_edge_weights() {
-        //     node_degree = node_degree.map(|degree_string| {
-        //         format!(
-        //             "{degree_string}{join_term} weighted degree {weighted_degree:.2}",
-        //             degree_string = degree_string,
-        //             // According to the presence of the node type segment
-        //             // of the description we add the correct join term
-        //             join_term = if node_type.is_some() { "," } else { " and" },
-        //             weighted_degree = self.get_unchecked_weighted_node_degree_from_node_id(node_id)
-        //         )
-        //     });
-        // }
 
         // If any of the terms was given we build the output description
         let description = if node_degree.is_some() || node_type.is_some() {
@@ -522,6 +509,134 @@ impl Graph {
         format!(
             "{node_name}{description}",
             node_name = node_name,
+            description = description
+        )
+    }
+
+    /// Returns html formatting for the given node type id attributes.
+    ///
+    /// # Arguments
+    /// * `node_type_id`: NodeTypeT - Node ID to query for.
+    ///
+    /// # Safety
+    /// This method will cause an out of bound if the given node type ID does not exist.
+    pub(crate) unsafe fn get_unchecked_succinct_node_type_attributes_description(
+        &self,
+        node_type_id: NodeTypeT,
+    ) -> String {
+        let number_of_nodes = self.get_unchecked_number_of_nodes_from_node_type_id(node_type_id);
+        if number_of_nodes > 1 {
+            let percentage_of_nodes =
+                number_of_nodes as f64 / self.get_nodes_number() as f64 * 100.0;
+            format!(
+                "{number_of_nodes} nodes{percentage_of_nodes}",
+                number_of_nodes = to_human_readable_high_integer(number_of_nodes as usize),
+                percentage_of_nodes = if percentage_of_nodes >= 0.01 {
+                    format!(
+                        " {percentage_of_nodes:.2}",
+                        percentage_of_nodes = percentage_of_nodes
+                    )
+                } else {
+                    "".to_string()
+                }
+            )
+        } else {
+            "".to_string()
+        }
+    }
+
+    /// Returns html formatting for the given node type id.
+    ///
+    /// # Arguments
+    /// * `node_type_id`: NodeTypeT - Node ID to query for.
+    ///
+    /// # Safety
+    /// This method will cause an out of bound if the given node type ID does not exist.
+    pub(crate) unsafe fn get_unchecked_succinct_node_type_description(
+        &self,
+        node_type_id: NodeTypeT,
+    ) -> String {
+        let node_type_name = get_node_type_source_html_url_from_node_type_name(
+            self.get_node_type_name_from_node_type_id(node_type_id)
+                .unwrap()
+                .as_ref(),
+        );
+
+        let description =
+            self.get_unchecked_succinct_node_type_attributes_description(node_type_id);
+
+        let description = if description.is_empty() {
+            description
+        } else {
+            format!(" ({})", description)
+        };
+        format!(
+            "{node_type_name}{description}",
+            node_type_name = node_type_name,
+            description = description
+        )
+    }
+
+    /// Returns html formatting for the given edge type id attributes.
+    ///
+    /// # Arguments
+    /// * `edge_type_id`: EdgeTypeT - edge ID to query for.
+    ///
+    /// # Safety
+    /// This method will cause an out of bound if the given edge type ID does not exist.
+    pub(crate) unsafe fn get_unchecked_succinct_edge_type_attributes_description(
+        &self,
+        edge_type_id: EdgeTypeT,
+    ) -> String {
+        let number_of_edges = self.get_unchecked_number_of_edges_from_edge_type_id(edge_type_id);
+        if number_of_edges > 1 {
+            let percentage_of_edges =
+                number_of_edges as f64 / self.get_directed_edges_number() as f64 * 100.0;
+            format!(
+                "{number_of_edges} edges{percentage_of_edges}",
+                number_of_edges = to_human_readable_high_integer(number_of_edges as usize),
+                percentage_of_edges = if percentage_of_edges >= 0.01 {
+                    format!(
+                        " {percentage_of_edges:.2}",
+                        percentage_of_edges = percentage_of_edges
+                    )
+                } else {
+                    "".to_string()
+                }
+            )
+        } else {
+            "".to_string()
+        }
+    }
+
+    /// Returns html formatting for the given edge type id.
+    ///
+    /// # Arguments
+    /// * `edge_type_id`: EdgeTypeT - edge ID to query for.
+    ///
+    /// # Safety
+    /// This method will cause an out of bound if the given edge type ID does not exist.
+    pub(crate) unsafe fn get_unchecked_succinct_edge_type_description(
+        &self,
+        edge_type_id: EdgeTypeT,
+    ) -> String {
+        let edge_type_name = get_edge_type_source_html_url_from_edge_type_name(
+            self.get_edge_type_name_from_edge_type_id(edge_type_id)
+                .unwrap()
+                .as_ref(),
+        );
+
+        let description =
+            self.get_unchecked_succinct_edge_type_attributes_description(edge_type_id);
+
+        let description = if description.is_empty() {
+            description
+        } else {
+            format!(" ({})", description)
+        };
+        format!(
+            "{edge_type_name}{description}",
+            edge_type_name = edge_type_name,
             description = description
         )
     }
@@ -1318,28 +1433,10 @@ impl Graph {
                 "The minimum edge weight is {minimum_edge_weight}, the maximum edge weight is {maximum_edge_weight} and the total edge weight is {total_edge_weight}. ",
                 "The RAM requirements for the edge weights data structure is {ram_edge_weights}.",
                 "</p>",
-                //"<h4>Weighted degree centrality</h4>",
-                //"<p>The minimum node degree is {weighted_minimum_node_degree:.2}, the maximum node degree is {weighted_maximum_node_degree:.2}, ",
-                //"the mean degree is {weighted_mean_node_degree:.2} and the node degree median is {weighted_node_degree_median:2}.</p>",
-                //"<p>The nodes with highest degree centrality are: {weighted_list_of_most_central_nodes}.</p>",
             ),
             minimum_edge_weight= self.get_mininum_edge_weight().clone().unwrap(),
             maximum_edge_weight= self.get_maximum_edge_weight().clone().unwrap(),
             total_edge_weight=self.get_total_edge_weights().clone().unwrap(),
-            //weighted_minimum_node_degree = self.get_weighted_minimum_node_degree().clone().unwrap(),
-            //weighted_maximum_node_degree = self.get_weighted_maximum_node_degree().clone().unwrap(),
-            //weighted_mean_node_degree = self.get_weighted_node_degrees_mean().unwrap(),
-            //weighted_node_degree_median = self.get_weighted_node_degrees_median().unwrap(),
-            //weighted_list_of_most_central_nodes = get_unchecked_formatted_list(
-            //    self.get_weighted_top_k_central_node_ids(5).unwrap()
-            //        .into_iter()
-            //        .map(|node_id| {
-            //            self.get_unchecked_succinct_node_description(node_id)
-            //        })
-            //        .collect::<Vec<_>>()
-            //        .as_ref(),
-            //        None
-            //),
             ram_edge_weights=self.get_edge_weights_total_memory_requirements_human_readable()
         )
     }
@@ -1448,10 +1545,10 @@ impl Graph {
                 isomorphic_node_types_description = isomorphic_node_types.into_iter().take(10).map(|isomorphic_node_type_group| {
                     format!(
                         concat!(
-                            "<li><p>Isomorphic node type group containing {} node types ({} nodes), which are: {}.</p></li>",
+                            "<li><p>Isomorphic node type group containing {} node types ({}), which are: {}.</p></li>",
                         ),
                         to_human_readable_high_integer(isomorphic_node_type_group.len() as usize),
-                        to_human_readable_high_integer(self.get_unchecked_number_of_nodes_from_node_type_id(isomorphic_node_type_group[0]) as usize),
+                        self.get_unchecked_succinct_node_type_attributes_description(isomorphic_node_type_group[0]),
                         unsafe {
                             get_unchecked_formatted_list(
                                 &isomorphic_node_type_group
@@ -1507,10 +1604,10 @@ impl Graph {
                 isomorphic_edge_types_description = isomorphic_edge_types.into_iter().take(10).map(|isomorphic_edge_type_group| {
                     format!(
                         concat!(
-                            "<li><p>Isomorphic edge type group containing {} edge types ({} edges), which are: {}.</p></li>",
+                            "<li><p>Isomorphic edge type group containing {} edge types ({}), which are: {}.</p></li>",
                         ),
                         to_human_readable_high_integer(isomorphic_edge_type_group.len() as usize),
-                        to_human_readable_high_integer(self.get_unchecked_number_of_edges_from_edge_type_id(isomorphic_edge_type_group[0]) as usize),
+                        self.get_unchecked_succinct_edge_type_attributes_description(isomorphic_edge_type_group[0]),
                         unsafe {
                             get_unchecked_formatted_list(
                                 &isomorphic_edge_type_group
@@ -1696,7 +1793,7 @@ impl Graph {
                 ),
                 node_types_number => {
                     let mut node_type_counts = self
-                        .get_node_type_names_counts_hashmap()
+                        .get_node_type_id_counts_hashmap()
                         .unwrap()
                         .into_iter()
                         .collect::<Vec<_>>();
@@ -1705,26 +1802,18 @@ impl Graph {
                         node_type_counts
                             .into_iter()
                             .take(10)
-                            .map(|(node_type_name, count)| {
-                                format!(
-                                    "{html_url} ({count} nodes, {percentage:.2}%)",
-                                    html_url = get_node_type_source_html_url_from_node_type_name(
-                                        node_type_name.as_ref()
-                                    ),
-                                    count = to_human_readable_high_integer(count as usize),
-                                    percentage =
-                                        (count as f64 / self.get_nodes_number() as f64) * 100.0
-                                )
+                            .map(|(node_type_id, _)| {
+                                self.get_unchecked_succinct_node_type_description(node_type_id)
                             })
                             .collect::<Vec<_>>()
                             .as_ref(),
                         None,
                     );
                     format!(
-                        "{node_types_number} node types, {top_five_caveat} {node_type_description}",
+                        "{node_types_number} node types, {top_ten_caveat} {node_type_description}",
                         node_types_number =
                             to_human_readable_high_integer(node_types_number as usize),
-                        top_five_caveat = if node_types_number > 10 {
+                        top_ten_caveat = if node_types_number > 10 {
                             "of which the 10 most common are"
                         } else {
                             "which are"
@@ -1928,7 +2017,7 @@ impl Graph {
                 ),
                 edge_types_number => {
                     let mut edge_type_counts = self
-                        .get_edge_type_names_counts_hashmap()
+                        .get_edge_type_id_counts_hashmap()
                         .unwrap()
                         .into_iter()
                         .collect::<Vec<_>>();
@@ -1937,27 +2026,18 @@ impl Graph {
                         edge_type_counts
                             .into_iter()
                             .take(10)
-                            .map(|(edge_type_name, count)| {
-                                format!(
-                                    "{html_url} ({count} directed edges, {percentage:.2}%)",
-                                    html_url = get_edge_type_source_html_url_from_edge_type_name(
-                                        edge_type_name.as_ref()
-                                    ),
-                                    count = to_human_readable_high_integer(count as usize),
-                                    percentage = (count as f64
-                                        / self.get_directed_edges_number() as f64)
-                                        * 100.0
-                                )
+                            .map(|(edge_type_id, _)| {
+                                self.get_unchecked_succinct_edge_type_description(edge_type_id)
                             })
                             .collect::<Vec<_>>()
                             .as_ref(),
                         None,
                     );
                     format!(
-                        "{edge_types_number} edge types, {top_five_caveat} {edge_type_description}",
+                        "{edge_types_number} edge types, {top_ten_caveat} {edge_type_description}",
                         edge_types_number =
                             to_human_readable_high_integer(edge_types_number as usize),
-                        top_five_caveat = if edge_types_number > 10 {
+                        top_ten_caveat = if edge_types_number > 10 {
                             "of which the 10 most common are"
                         } else {
                             "which are"
