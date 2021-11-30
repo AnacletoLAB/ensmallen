@@ -28,7 +28,7 @@ impl Graph {
                 let node_degree = self.get_unchecked_node_degree_from_node_id(node_id);
                 let seed: u64 = 0xDEADBEEFC0FEBABE_u64.wrapping_mul(node_degree as u64);
                 self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                    .take(50)
+                    .take(20)
                     .map(|neighbour_id| neighbour_id as u64)
                     .fold(seed, |a: u64, b: u64| {
                         (a ^ b).wrapping_add(0x0A2126967AE81C95)
@@ -102,26 +102,34 @@ impl Graph {
     ) -> Result<impl ParallelIterator<Item = Vec<NodeTypeT>> + '_> {
         // First we create a vector with the unique node type IDs.
         let mut node_type_ids: Vec<NodeTypeT> = self.iter_unique_node_type_ids()?.collect();
+        let node_type_hashes = node_type_ids
+            .par_iter()
+            .map(|&node_type_id| unsafe {
+                let number_of_nodes =
+                    self.get_unchecked_number_of_nodes_from_node_type_id(node_type_id);
+                let seed: u64 = 0xDEADBEEFC0FEBABE_u64.wrapping_mul(number_of_nodes as u64);
+                self.iter_node_ids_and_node_type_ids_from_node_type_id(Some(node_type_id))
+                    .unwrap()
+                    .take(20)
+                    .map(|(node_id, _)| node_id as u64)
+                    .fold(seed, |a: u64, b: u64| {
+                        (a ^ b).wrapping_add(0x0A2126967AE81C95)
+                    })
+            })
+            .collect::<Vec<u64>>();
         // Then we sort it according to the number of nodes with this node type.
-        node_type_ids.par_sort_unstable_by(|&a, &b| unsafe {
-            self.get_unchecked_number_of_nodes_from_node_type_id(a)
-                .cmp(&self.get_unchecked_number_of_nodes_from_node_type_id(b))
+        node_type_ids.par_sort_unstable_by(|&a, &b| {
+            node_type_hashes[a as usize].cmp(&node_type_hashes[b as usize])
         });
         let considered_node_type_ids_number = node_type_ids.len();
         Ok((0..(considered_node_type_ids_number - 1))
             .into_par_iter()
-            .filter_map(move |i| unsafe {
+            .filter_map(move |i| {
                 let node_type_id = node_type_ids[i];
                 // We only explore the group starters.
-                let number_of_nodes =
-                    self.get_unchecked_number_of_nodes_from_node_type_id(node_type_id);
-                if i != 0
-                    && number_of_nodes
-                        == self
-                            .get_unchecked_number_of_nodes_from_node_type_id(node_type_ids[i - 1])
-                    || number_of_nodes
-                        != self
-                            .get_unchecked_number_of_nodes_from_node_type_id(node_type_ids[i + 1])
+                let node_type_hash = node_type_hashes[node_type_id as usize];
+                if i != 0 && node_type_hash == node_type_hashes[node_type_ids[i - 1] as usize]
+                    || node_type_hash != node_type_hashes[node_type_ids[i + 1] as usize]
                 {
                     return None;
                 }
@@ -130,8 +138,7 @@ impl Graph {
                 for other_node_type_id in ((i + 1)..considered_node_type_ids_number)
                     .map(|j| node_type_ids[j])
                     .take_while(|&node_type_id| {
-                        number_of_nodes
-                            == self.get_unchecked_number_of_nodes_from_node_type_id(node_type_id)
+                        node_type_hash == node_type_hashes[node_type_id as usize]
                     })
                 {
                     if let Some(isomorphic_group) =
