@@ -454,18 +454,14 @@ impl Graph {
         } else {
             None
         };
-        let node_degree = match self.get_node_degree_from_node_id(node_id) {
-            Ok(degree) => {
-                if degree <= minimum_node_degree {
-                    None
-                } else {
-                    Some(format!(
-                        "degree {}",
-                        to_human_readable_high_integer(degree as usize)
-                    ))
-                }
-            }
-            Err(_) => None,
+        let node_degree = self.get_unchecked_node_degree_from_node_id(node_id);
+        let node_degree = if node_degree <= minimum_node_degree {
+            None
+        } else {
+            Some(format!(
+                "degree {}",
+                to_human_readable_high_integer(node_degree as usize)
+            ))
         };
         // Update the node degree with also the weighted degree.
         // if self.has_edge_weights() {
