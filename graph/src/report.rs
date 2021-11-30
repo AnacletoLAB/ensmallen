@@ -995,11 +995,11 @@ impl Graph {
             .par_iter_singleton_nodes_with_selfloops_node_ids()
             .map(|node_id| unsafe { self.get_unchecked_node_degree_from_node_id(node_id) as EdgeT })
             .sum::<EdgeT>();
-        let maximum_number_of_edges_in_a_singleton_with_selfloop = self
-            .par_iter_singleton_nodes_with_selfloops_node_ids()
-            .map(|node_id| unsafe { self.get_unchecked_node_degree_from_node_id(node_id) })
-            .max()
-            .unwrap_or(0) as EdgeT;
+        let maximum_number_of_edges_in_a_singleton_with_selfloop =
+            self.par_iter_singleton_nodes_with_selfloops_node_ids()
+                .map(|node_id| unsafe { self.get_unchecked_node_degree_from_node_id(node_id) })
+                .max()
+                .unwrap_or(0) as EdgeT;
 
         let singleton_nodes_with_selfloops_description = self.get_report_of_oddity(
             "h4",
