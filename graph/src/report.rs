@@ -360,7 +360,7 @@ impl Graph {
                 match self.get_singleton_nodes_with_selfloops_number() {
                     1 => format!(
                         concat!(
-                        "The given node {} is the only singleton node with selfloops in the graph."
+                        "The given node {} is the only singleton node with self-loops in the graph."
                     ),
                         node_name
                     ),
@@ -1004,10 +1004,10 @@ impl Graph {
 
         let singleton_nodes_with_selfloops_description = self.get_report_of_oddity(
             "h4",
-            "Singleton nodes with selfloops",
+            "Singleton nodes with self-loops",
             concat!(
-                "A singleton node with selfloop(s) is a node disconnected ",
-                "to all other nodes except itself."
+                "A singleton node with self-loops is a node disconnected ",
+                "from all other nodes except itself."
             ),
             number_of_singleton_nodes_with_selfloops,
             number_of_singleton_nodes_with_selfloops,
@@ -1224,7 +1224,7 @@ impl Graph {
                     "Dendritic trees",
                     concat!(
                         "A dendritic tree is a tree-like structure starting from a root node ",
-                        "that is part of another strongly conneted component."
+                        "that is part of another strongly connected component."
                     )
                 ),
                 stars_description=self.get_report_of_specific_tree_like_oddities(
@@ -1232,7 +1232,7 @@ impl Graph {
                     "Stars",
                     concat!(
                         "A star is a tree with a maximal depth of one, where nodes ",
-                        "with maximal unique deegree one are connected to a central ",
+                        "with maximal unique degree one are connected to a central ",
                         "root node with high degree."
                     )
                 ),
@@ -1249,7 +1249,7 @@ impl Graph {
                     "Dendritic stars",
                     concat!(
                         "A dendritic star is a dendritic tree with a maximal depth of one, where nodes ",
-                        "with maximal unique deegree one are connected to a central ",
+                        "with maximal unique degree one are connected to a central ",
                         "root node with high degree and inside a strongly connected component."
                     )
                 ),
@@ -1263,9 +1263,9 @@ impl Graph {
                 ),
                 free_floating_chains_description=self.get_report_of_specific_tree_like_oddities(
                     free_floating_chains,
-                    "Free floating chains",
+                    "Free-floating chains",
                     concat!(
-                        "A free floating chain is a tree with maximal degree two."
+                        "A free-floating chain is a tree with maximal degree two."
                     )
                 ),
                 tendrils_description=self.get_report_of_specific_tree_like_oddities(

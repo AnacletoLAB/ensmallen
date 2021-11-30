@@ -13,7 +13,7 @@ impl ToString for NodeTuple {
     fn to_string(&self) -> String {
         format!(
             concat!(
-                "<p>Tuple of nodes containing the nodes {}.</p>",
+                "<p>Node tuple containing the nodes {}.</p>",
             ),
             unsafe {
                 get_unchecked_formatted_list(
