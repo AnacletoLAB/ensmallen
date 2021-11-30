@@ -23,7 +23,7 @@ impl ToString for DendriticTree {
                 "<p>",
                 "{dendritic_tree_type} starting from the root node {root_node_description}, ",
                 "and {other_nodes_description}.",
-                "{node_types_counts}{separator}",
+                "{node_types_counts}",
                 "{edge_types_counts}",
                 "</p>"
             ),
@@ -57,11 +57,6 @@ impl ToString for DendriticTree {
                     }
                 ),
             },
-            separator = if self.graph.has_node_types() && self.graph.has_edge_types() {
-                " "
-            } else {
-                ""
-            },
             node_types_counts = if self.get_number_of_involved_nodes() > 5 {
                 unsafe {
                     self.graph
@@ -72,7 +67,7 @@ impl ToString for DendriticTree {
                             |_| "".to_string(),
                             |count| {
                                 format!(
-                                    "Its nodes are characterized by {}",
+                                    " Its nodes are characterized by {}.",
                                     self.graph
                                         .get_unchecked_node_types_description_from_count(count)
                                 )
@@ -89,7 +84,7 @@ impl ToString for DendriticTree {
                         |_| "".to_string(),
                         |count| {
                             format!(
-                                "Its edges are characterized by {}",
+                                " Its edges are characterized by {}.",
                                 self.graph
                                     .get_unchecked_edge_types_description_from_count(count)
                             )

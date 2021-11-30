@@ -24,7 +24,7 @@ impl ToString for Circle {
                 "<p>",
                 "Circle containing {nodes_number} nodes. ",
                 "Specifically, the nodes involved in the circle are: {circle_nodes}.",
-                "{node_types_counts}{separator}",
+                "{node_types_counts}",
                 "{edge_types_counts}",
                 "</p>",
             ),
@@ -43,11 +43,6 @@ impl ToString for Circle {
                     Some(5),
                 )
             },
-            separator = if self.graph.has_node_types() && self.graph.has_edge_types() {
-                " "
-            } else {
-                ""
-            },
             node_types_counts = if let Some(node_ids) = &node_ids {
                 if self.len() > 5 {
                     unsafe {
@@ -59,7 +54,7 @@ impl ToString for Circle {
                                 |_| "".to_string(),
                                 |count| {
                                     format!(
-                                        "Its nodes are characterized by {}",
+                                        " Its nodes are characterized by {}.",
                                         self.graph
                                             .get_unchecked_node_types_description_from_count(count)
                                     )
@@ -80,7 +75,7 @@ impl ToString for Circle {
                             |_| "".to_string(),
                             |count| {
                                 format!(
-                                    "Its edges are characterized by {}",
+                                    " Its edges are characterized by {}.",
                                     self.graph
                                         .get_unchecked_edge_types_description_from_count(count)
                                 )

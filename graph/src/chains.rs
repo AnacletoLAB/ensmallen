@@ -24,7 +24,7 @@ impl ToString for Chain {
                 "<p>",
                 "Chain containing {nodes_number} nodes and starts from the node {root_node}. ",
                 "Specifically, the nodes involved in the chain are: {chain_nodes}.",
-                "{node_types_counts}{separator}",
+                "{node_types_counts}",
                 "{edge_types_counts}",
                 "</p>",
             ),
@@ -47,11 +47,6 @@ impl ToString for Chain {
                     Some(5),
                 )
             },
-            separator = if self.graph.has_node_types() && self.graph.has_edge_types() {
-                " "
-            } else {
-                ""
-            },
             node_types_counts = if let Some(node_ids) = &node_ids {
                 if self.len() > 5 {
                     unsafe {
@@ -63,7 +58,7 @@ impl ToString for Chain {
                                 |_| "".to_string(),
                                 |count| {
                                     format!(
-                                        "Its nodes are characterized by {}",
+                                        " Its nodes are characterized by {}.",
                                         self.graph
                                             .get_unchecked_node_types_description_from_count(count)
                                     )
@@ -84,7 +79,7 @@ impl ToString for Chain {
                             |_| "".to_string(),
                             |count| {
                                 format!(
-                                    "Its edges are characterized by {}",
+                                    " Its edges are characterized by {}.",
                                     self.graph
                                         .get_unchecked_edge_types_description_from_count(count)
                                 )

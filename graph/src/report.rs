@@ -533,7 +533,7 @@ impl Graph {
                 number_of_nodes = to_human_readable_high_integer(number_of_nodes as usize),
                 percentage_of_nodes = if percentage_of_nodes >= 0.01 {
                     format!(
-                        " {percentage_of_nodes:.2}",
+                        ", {percentage_of_nodes:.2}%",
                         percentage_of_nodes = percentage_of_nodes
                     )
                 } else {
@@ -597,7 +597,7 @@ impl Graph {
                 number_of_edges = to_human_readable_high_integer(number_of_edges as usize),
                 percentage_of_edges = if percentage_of_edges >= 0.01 {
                     format!(
-                        " {percentage_of_edges:.2}",
+                        ", {percentage_of_edges:.2}%",
                         percentage_of_edges = percentage_of_edges
                     )
                 } else {
@@ -1777,7 +1777,7 @@ impl Graph {
             }
             1 => format!(
                 concat!(
-                    "a single node type, which is {node_type_description}. ",
+                    "a single node type, which is {node_type_description}",
                 ),
                 node_type_description = get_node_type_source_html_url_from_node_type_name(
                     self.get_node_type_name_from_node_type_id(count.into_keys().last().unwrap())
@@ -2014,7 +2014,7 @@ impl Graph {
             }
             1 => format!(
                 concat!(
-                    "a single edge type, which is {edge_type_description}.",
+                    "a single edge type, which is {edge_type_description}",
                 ),
                 edge_type_description = get_edge_type_source_html_url_from_edge_type_name(
                     self.get_edge_type_name_from_edge_type_id(
