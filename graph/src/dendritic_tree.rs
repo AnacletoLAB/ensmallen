@@ -10,7 +10,7 @@ pub struct DendriticTree {
     root_node_id: NodeT,
     depth: NodeT,
     node_ids: Vec<NodeT>,
-    unique_root_node_degree: NodeT,
+    number_of_leafs_at_root: NodeT,
     has_minimum_degree_one_after_root: bool,
     number_of_non_leafs_at_root: NodeT,
 }
@@ -71,7 +71,7 @@ impl DendriticTree {
         root_node_id: NodeT,
         depth: NodeT,
         node_ids: Vec<NodeT>,
-        unique_root_node_degree: NodeT,
+        number_of_leafs_at_root: NodeT,
         has_minimum_degree_one_after_root: bool,
         number_of_non_leafs_at_root: NodeT,
     ) -> DendriticTree {
@@ -80,7 +80,7 @@ impl DendriticTree {
             root_node_id,
             depth,
             node_ids,
-            unique_root_node_degree,
+            number_of_leafs_at_root,
             has_minimum_degree_one_after_root,
             number_of_non_leafs_at_root,
         }
@@ -96,14 +96,10 @@ impl DendriticTree {
         self.number_of_non_leafs_at_root == 0
     }
 
-    pub fn get_number_of_leaf_nodes_at_root(&self) -> NodeT {
-        self.unique_root_node_degree - self.number_of_non_leafs_at_root
-    }
-
     /// Return whether the current dendritic tree is actually a tendril.
     pub fn is_tendril(&self) -> bool {
         !self.is_tree()
-            && self.get_number_of_leaf_nodes_at_root() == 1
+            && self.number_of_leafs_at_root() == 1
             && self.has_minimum_degree_one_after_root
     }
 
@@ -125,14 +121,14 @@ impl DendriticTree {
     /// Return whether the current dendritic tree is actually a star of tendrils.
     pub fn is_tendril_star(&self) -> bool {
         self.is_tree()
-            && self.get_number_of_leaf_nodes_at_root() > 1
+            && self.number_of_leafs_at_root() > 1
             && self.depth > 1
             && self.has_minimum_degree_one_after_root
     }
 
     /// Return whether the current dendritic tree is actually a dendritic star.
     pub fn is_dendritic_star(&self) -> bool {
-        !self.is_tree() && self.depth == 1 && self.get_number_of_leaf_nodes_at_root() > 1
+        !self.is_tree() && self.depth == 1 && self.number_of_leafs_at_root() > 1
     }
 
     /// Return whether the current dendritic tree is actually a dendritic tendril star.
@@ -140,7 +136,7 @@ impl DendriticTree {
         !self.is_tree()
             && self.depth > 1
             && self.has_minimum_degree_one_after_root
-            && self.get_number_of_leaf_nodes_at_root() > 1
+            && self.number_of_leafs_at_root() > 1
     }
 
     /// Return the depth of the dentritic tree.
@@ -292,7 +288,7 @@ impl Graph {
                 let mut tree_nodes: Vec<NodeT> = Vec::new();
                 let mut depth: NodeT = 0;
                 let mut stack: Vec<NodeT> = vec![root_node_id];
-                let mut unique_root_node_degree = 0;
+                let mut number_of_leafs_at_root = 0;
                 let mut has_minimum_degree_one_after_root: bool = true;
                 let number_of_non_leafs_at_root = self
                     .iter_unchecked_unique_neighbour_node_ids_from_source_node_id(root_node_id)
@@ -317,8 +313,8 @@ impl Graph {
                             neighbour_node_id
                         })
                         .collect::<Vec<NodeT>>();
-                    if unique_root_node_degree == 0 {
-                        unique_root_node_degree = stack.len() as NodeT;
+                    if number_of_leafs_at_root == 0 {
+                        number_of_leafs_at_root = stack.len() as NodeT;
                     } else if stack.len() > 1 {
                         has_minimum_degree_one_after_root = false;
                     }
@@ -330,7 +326,7 @@ impl Graph {
                     root_node_id,
                     depth,
                     tree_nodes,
-                    unique_root_node_degree,
+                    number_of_leafs_at_root,
                     has_minimum_degree_one_after_root,
                     number_of_non_leafs_at_root,
                 )
