@@ -934,7 +934,7 @@ impl Graph {
         let number_of_edges_involved_in_circles =
             (number_of_nodes_involved_in_circles + number_of_circles) as EdgeT;
         let maximum_number_of_nodes_in_a_circle =
-            circles.iter().map(|circle| circle.len()).max().unwrap();
+            circles.iter().map(|circle| circle.len()).max().unwrap_or(0);
         let maximum_number_of_edges_in_a_circle = maximum_number_of_nodes_in_a_circle as EdgeT + 1;
         let circles_description = self.get_report_of_oddity(
             "h4",
@@ -956,7 +956,7 @@ impl Graph {
         let number_of_nodes_involved_in_chains = chains.iter().map(|chain| chain.len()).sum();
         let number_of_edges_involved_in_chains = (number_of_nodes_involved_in_chains - 1) as EdgeT;
         let maximum_number_of_nodes_in_a_chain =
-            chains.iter().map(|chain| chain.len()).max().unwrap();
+            chains.iter().map(|chain| chain.len()).max().unwrap_or(0);
         let maximum_number_of_edges_in_a_chain = maximum_number_of_nodes_in_a_chain as EdgeT - 1;
         let chains_description = self.get_report_of_oddity(
             "h4",
@@ -1007,7 +1007,7 @@ impl Graph {
             .iter()
             .map(|isomorphic_node_group| isomorphic_node_group.len() as NodeT)
             .max()
-            .unwrap();
+            .unwrap_or(0);
         let maximum_number_of_edges_in_a_isomorphic_node_group = isomorphic_node_groups
             .iter()
             .map(|isomorphic_node_group| unsafe {
@@ -1015,7 +1015,7 @@ impl Graph {
                     * isomorphic_node_group.len()) as EdgeT
             })
             .max()
-            .unwrap();
+            .unwrap_or(0);
         let isomorphic_node_groups_description = self.get_report_of_oddity(
             "h4",
             "Isomorphic node groups",
@@ -1071,6 +1071,9 @@ impl Graph {
             let mut trees: Vec<DendriticTree> = Vec::new();
             let mut dendritic_trees: Vec<DendriticTree> = Vec::new();
             let mut stars: Vec<DendriticTree> = Vec::new();
+            let mut tendril_stars: Vec<DendriticTree> = Vec::new();
+            let mut dendritic_stars: Vec<DendriticTree> = Vec::new();
+            let mut dendritic_tendril_stars: Vec<DendriticTree> = Vec::new();
             let mut free_floating_chains: Vec<DendriticTree> = Vec::new();
             tree_like_oddities.into_iter().for_each(|tree_like_oddity| {
                 if tree_like_oddity.is_tree() {
@@ -1083,6 +1086,12 @@ impl Graph {
                     free_floating_chains.push(tree_like_oddity);
                 } else if tree_like_oddity.is_dendritic_tree() {
                     dendritic_trees.push(tree_like_oddity);
+                } else if tree_like_oddity.is_dendritic_star() {
+                    dendritic_stars.push(tree_like_oddity);
+                } else if tree_like_oddity.is_dendritic_tendril_star() {
+                    dendritic_tendril_stars.push(tree_like_oddity);
+                } else if tree_like_oddity.is_tendril_star() {
+                    tendril_stars.push(tree_like_oddity);
                 } else {
                     unreachable!(
                         "The cases for the different dendritic trees should be fully described."
@@ -1090,11 +1099,14 @@ impl Graph {
                 }
             });
 
-            tendrils.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
             trees.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
-            dendritic_trees.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
             stars.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+            tendrils.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
             free_floating_chains.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+            dendritic_trees.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+            dendritic_stars.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+            dendritic_tendril_stars.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+            tendril_stars.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
 
             format!(
                 concat!(
@@ -1107,6 +1119,8 @@ impl Graph {
                     "{trees_description}",
                     "{dendritic_trees_description}",
                     "{stars_description}",
+                    "{tendril_stars_description}",
+                    "{dendritic_stars_description}",
                     "{free_floating_chains_description}",
                     "{tendrils_description}",
                 ),
@@ -1132,6 +1146,23 @@ impl Graph {
                         "A star is a tree with a maximal depth of one, where nodes ",
                         "with maximal unique deegree one are connected to a central ",
                         "root node with high degree."
+                    )
+                ),
+                tendril_stars_description=self.get_report_of_specific_tree_like_oddities(
+                    tendril_stars,
+                    "Tendril stars",
+                    concat!(
+                        "A tendril star is a tree with a depth greater than one, ",
+                        "where the arms of the star are tendrils."
+                    )
+                ),
+                dendritic_stars_description=self.get_report_of_specific_tree_like_oddities(
+                    dendritic_stars,
+                    "Dendritic stars",
+                    concat!(
+                        "A dendritic star is a dendritic tree with a maximal depth of one, where nodes ",
+                        "with maximal unique deegree one are connected to a central ",
+                        "root node with high degree and inside a strongly connected component."
                     )
                 ),
                 free_floating_chains_description=self.get_report_of_specific_tree_like_oddities(

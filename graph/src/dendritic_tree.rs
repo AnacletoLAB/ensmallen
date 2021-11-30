@@ -10,7 +10,8 @@ pub struct DendriticTree {
     root_node_id: NodeT,
     depth: NodeT,
     node_ids: Vec<NodeT>,
-    has_minimum_degree_one: bool,
+    unique_root_node_degree: NodeT,
+    has_minimum_degree_one_after_root: bool,
     number_of_non_leafs_at_root: NodeT,
 }
 
@@ -70,7 +71,8 @@ impl DendriticTree {
         root_node_id: NodeT,
         depth: NodeT,
         node_ids: Vec<NodeT>,
-        has_minimum_degree_one: bool,
+        unique_root_node_degree: NodeT,
+        has_minimum_degree_one_after_root: bool,
         number_of_non_leafs_at_root: NodeT,
     ) -> DendriticTree {
         DendriticTree {
@@ -78,7 +80,8 @@ impl DendriticTree {
             root_node_id,
             depth,
             node_ids,
-            has_minimum_degree_one,
+            unique_root_node_degree,
+            has_minimum_degree_one_after_root,
             number_of_non_leafs_at_root,
         }
     }
@@ -95,22 +98,39 @@ impl DendriticTree {
 
     /// Return whether the current dendritic tree is actually a tendril.
     pub fn is_tendril(&self) -> bool {
-        !self.is_tree() && self.has_minimum_degree_one
+        !self.is_tree()
+            && self.unique_root_node_degree == 2
+            && self.has_minimum_degree_one_after_root
     }
 
     /// Return whether the current dendritic tree is a proper dentritic tree.
     pub fn is_dendritic_tree(&self) -> bool {
-        !self.is_tree() && !self.has_minimum_degree_one
+        !self.is_tree() && !self.is_tendril()
     }
 
     /// Return whether the current dendritic tree is actually a free-floating chain.
     pub fn is_free_floating_chain(&self) -> bool {
-        self.is_tree() && self.has_minimum_degree_one && self.depth > 1
+        self.is_tree() && self.has_minimum_degree_one_after_root && self.depth > 1
     }
 
     /// Return whether the current dendritic tree is actually a star.
     pub fn is_star(&self) -> bool {
         self.is_tree() && self.depth == 1
+    }
+
+    /// Return whether the current dendritic tree is actually a star of tendrils.
+    pub fn is_tendril_star(&self) -> bool {
+        self.is_tree() && self.depth > 1 && self.has_minimum_degree_one_after_root
+    }
+
+    /// Return whether the current dendritic tree is actually a dendritic star.
+    pub fn is_dendritic_star(&self) -> bool {
+        !self.is_tree() && self.depth == 1 && self.unique_root_node_degree > 1
+    }
+
+    /// Return whether the current dendritic tree is actually a dendritic tendril star.
+    pub fn is_dendritic_tendril_star(&self) -> bool {
+        !self.is_tree() && self.depth > 1 && self.has_minimum_degree_one_after_root
     }
 
     /// Return the depth of the dentritic tree.
@@ -262,7 +282,8 @@ impl Graph {
                 let mut tree_nodes: Vec<NodeT> = Vec::new();
                 let mut depth: NodeT = 0;
                 let mut stack: Vec<NodeT> = vec![root_node_id];
-                let mut has_minimum_degree_one: bool = true;
+                let mut unique_root_node_degree = 0;
+                let mut has_minimum_degree_one_after_root: bool = true;
                 let number_of_non_leafs_at_root = self
                     .iter_unchecked_unique_neighbour_node_ids_from_source_node_id(root_node_id)
                     .filter(|&neighbour_node_id| {
@@ -286,8 +307,10 @@ impl Graph {
                             neighbour_node_id
                         })
                         .collect::<Vec<NodeT>>();
-                    if stack.len() > 1 {
-                        has_minimum_degree_one = false;
+                    if unique_root_node_degree == 0 {
+                        unique_root_node_degree = stack.len() as NodeT;
+                    } else if stack.len() > 1 {
+                        has_minimum_degree_one_after_root = false;
                     }
                     tree_nodes.extend_from_slice(&stack);
                 }
@@ -297,7 +320,8 @@ impl Graph {
                     root_node_id,
                     depth,
                     tree_nodes,
-                    has_minimum_degree_one,
+                    unique_root_node_degree,
+                    has_minimum_degree_one_after_root,
                     number_of_non_leafs_at_root,
                 )
             })
