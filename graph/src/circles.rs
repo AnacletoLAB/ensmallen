@@ -13,11 +13,12 @@ pub struct Circle {
 use std::string::ToString;
 impl ToString for Circle {
     fn to_string(&self) -> String {
-        let node_ids = if self.graph.has_node_types() || self.graph.has_edge_types() {
-            Some(self.get_circle_node_ids())
-        } else {
-            None
-        };
+        let node_ids =
+            if self.graph.has_node_types() && self.len() > 5 || self.graph.has_edge_types() {
+                Some(self.get_circle_node_ids())
+            } else {
+                None
+            };
         format!(
             concat!(
                 "<p>",
@@ -48,19 +49,25 @@ impl ToString for Circle {
                 ""
             },
             node_types_counts = if let Some(node_ids) = &node_ids {
-                unsafe {
-                    self.graph
-                        .get_unchecked_node_type_id_counts_hashmap_from_node_ids(node_ids.as_ref())
-                        .map_or_else(
-                            |_| "".to_string(),
-                            |count| {
-                                format!(
-                                    "Its nodes are characterized by {}",
-                                    self.graph
-                                        .get_unchecked_node_types_description_from_count(count)
-                                )
-                            },
-                        )
+                if self.len() > 5 {
+                    unsafe {
+                        self.graph
+                            .get_unchecked_node_type_id_counts_hashmap_from_node_ids(
+                                node_ids.as_ref(),
+                            )
+                            .map_or_else(
+                                |_| "".to_string(),
+                                |count| {
+                                    format!(
+                                        "Its nodes are characterized by {}",
+                                        self.graph
+                                            .get_unchecked_node_types_description_from_count(count)
+                                    )
+                                },
+                            )
+                    }
+                } else {
+                    "".to_string()
                 }
             } else {
                 "".to_string()

@@ -62,19 +62,25 @@ impl ToString for DendriticTree {
             } else {
                 ""
             },
-            node_types_counts = unsafe {
-                self.graph
-                    .get_unchecked_node_type_id_counts_hashmap_from_node_ids(self.node_ids.as_ref())
-                    .map_or_else(
-                        |_| "".to_string(),
-                        |count| {
-                            format!(
-                                "Its nodes are characterized by {}",
-                                self.graph
-                                    .get_unchecked_node_types_description_from_count(count)
-                            )
-                        },
-                    )
+            node_types_counts = if self.get_number_of_involved_nodes() > 5 {
+                unsafe {
+                    self.graph
+                        .get_unchecked_node_type_id_counts_hashmap_from_node_ids(
+                            self.node_ids.as_ref(),
+                        )
+                        .map_or_else(
+                            |_| "".to_string(),
+                            |count| {
+                                format!(
+                                    "Its nodes are characterized by {}",
+                                    self.graph
+                                        .get_unchecked_node_types_description_from_count(count)
+                                )
+                            },
+                        )
+                }
+            } else {
+                "".to_string()
             },
             edge_types_counts = unsafe {
                 self.graph
