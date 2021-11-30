@@ -791,7 +791,7 @@ impl Graph {
         if number_of_oddities == 0 {
             return "".to_string();
         }
-        let number_of_oddities_to_report = 10;
+        let number_of_oddities_to_report = 5;
         if oddity_name.is_empty() {
             panic!("The oddity name cannot be empty!");
         }
@@ -970,9 +970,51 @@ impl Graph {
             && circles.is_empty()
             && chains.is_empty()
             && node_tuples.is_empty()
+            && !self.has_disconnected_nodes()
         {
             return Ok(None);
         }
+
+        let number_of_singleton_nodes = self.get_singleton_nodes_number();
+        let singleton_nodes_description = self.get_report_of_oddity(
+            "h4",
+            "Singleton nodes",
+            concat!("A singleton node is a node disconnected to all other nodes."),
+            number_of_singleton_nodes,
+            number_of_singleton_nodes,
+            0,
+            1,
+            0,
+            self.iter_singleton_node_ids()
+                .map(|node_id| unsafe { self.get_unchecked_succinct_node_description(node_id, 0) }),
+        );
+
+        let number_of_singleton_nodes_with_selfloops =
+            self.get_singleton_nodes_with_selfloops_number();
+        let number_of_edges_involved_in_singleton_with_selfloops = self
+            .par_iter_singleton_nodes_with_selfloops_node_ids()
+            .map(|node_id| unsafe { self.get_unchecked_node_degree_from_node_id(node_id) as EdgeT })
+            .sum::<EdgeT>();
+        let maximum_number_of_edges_in_a_singleton_with_selfloop = self
+            .par_iter_singleton_nodes_with_selfloops_node_ids()
+            .map(|node_id| unsafe { self.get_unchecked_node_degree_from_node_id(node_id) })
+            .max()
+            .unwrap_or(0) as EdgeT;
+        let singleton_nodes_description = self.get_report_of_oddity(
+            "h4",
+            "Singleton nodes with selfloops",
+            concat!(
+                "A singleton node with selfloop(s) is a node disconnected ",
+                "to all other nodes except itself."
+            ),
+            number_of_singleton_nodes_with_selfloops,
+            number_of_singleton_nodes_with_selfloops,
+            number_of_edges_involved_in_singleton_with_selfloops,
+            1,
+            maximum_number_of_edges_in_a_singleton_with_selfloop,
+            self.iter_singleton_nodes_with_selfloops_node_ids()
+                .map(|node_id| unsafe { self.get_unchecked_succinct_node_description(node_id, 1) }),
+        );
 
         let number_of_circles = circles.len() as NodeT;
         let number_of_nodes_involved_in_circles = circles.iter().map(|circle| circle.len()).sum();
@@ -1162,8 +1204,6 @@ impl Graph {
                     "<h4>Tree oddities</h4>",
                     "<p>",
                     "Tree oddities are tree strutures, some degenerate, that may appear in a graph. ",
-                    "We currently detect <i>Stars</i>, <i>Dendritic Trees</i>, <i>Tendrils</i>, <i>Trees</i> and ",
-                    "<i>Free Floating Chains</i>. ",
                     "</p>",
                     "{trees_description}",
                     "{dendritic_trees_description}",
@@ -1247,7 +1287,6 @@ impl Graph {
                 "<p>",
                 "A topological oddity is a set of nodes in the graph that may be derived by ",
                 "an error during the generation of the edge list of the graph. ",
-                "We currently support the detection of <i>Stars</i>, <i>Chains</i>, <i>Circles</i>, <i>Tendrils</i>, <i>Node tuples</i> and <i>Isomorphic nodes</i>. ",
                 "Note that in a directed graph we only support the detection of isomorphic nodes. ",
                 "In the following paragraph, we will describe the detected topological oddities.",
                 "</p>",
@@ -1257,156 +1296,12 @@ impl Graph {
                 "{isomorphic_node_groups_description}",
                 "{tree_like_oddities_description}",
             ),
-            circles_description=circles_description,
-            chains_description=chains_description,
-            node_tuples_description=node_tuples_description,
-            isomorphic_node_groups_description=isomorphic_node_groups_description,
-            tree_like_oddities_description=tree_like_oddities_description,
+            circles_description = circles_description,
+            chains_description = chains_description,
+            node_tuples_description = node_tuples_description,
+            isomorphic_node_groups_description = isomorphic_node_groups_description,
+            tree_like_oddities_description = tree_like_oddities_description,
         )))
-    }
-
-    /// Returns report on the singleton nodes of the graph.
-    ///
-    /// # Safety
-    /// This method may cause a panic when called on graphs without
-    /// singleton nodes.
-    unsafe fn get_singleton_nodes_report(&self) -> String {
-        format!(
-            concat!(
-                "<h4>Singleton nodes</h4>",
-                "<p>Singleton nodes are nodes with no edge to other nodes ",
-                "nor selfloops. ",
-                "The graph contains {singleton_nodes_number}.</p>"
-            ),
-            singleton_nodes_number = match self.get_singleton_nodes_number() {
-                1 => format!(
-                    "a singleton node, which is {}",
-                    self.get_unchecked_succinct_node_description(
-                        self.iter_singleton_node_ids().next().unwrap(),
-                        0
-                    )
-                ),
-                singleton_nodes_number => {
-                    format!(
-                        concat!(
-                            "{singleton_nodes_number} singleton nodes, which are ",
-                            "{singleton_nodes_list}",
-                            "{additional_singleton_nodes}"
-                        ),
-                        singleton_nodes_number =
-                            to_human_readable_high_integer(singleton_nodes_number as usize),
-                        singleton_nodes_list = get_unchecked_formatted_list(
-                            self.iter_singleton_node_ids()
-                                .take(10)
-                                .map(|node_id| {
-                                    self.get_unchecked_succinct_node_description(node_id, 0)
-                                })
-                                .collect::<Vec<_>>()
-                                .as_ref(),
-                            None
-                        ),
-                        additional_singleton_nodes = if singleton_nodes_number > 10 {
-                            format!(
-                                ", plus other {singleton_nodes_number} singleton nodes",
-                                singleton_nodes_number = to_human_readable_high_integer(
-                                    singleton_nodes_number as usize - 10
-                                )
-                            )
-                        } else {
-                            ".".to_string()
-                        }
-                    )
-                }
-            }
-        )
-    }
-
-    /// Returns report on the singleton nodes with selfloops of the graph.
-    ///
-    /// # Safety
-    /// This method may cause a panic when called on graphs without
-    /// singleton nodes with selfloops.
-    unsafe fn get_singleton_nodes_with_selfloops_report(&self) -> String {
-        format!(
-            concat!(
-                "<h4>Singleton nodes with self-loops</h4>",
-                "<p>Singleton nodes with self-loops are nodes with no edge to other nodes ",
-                "and have exclusively self-loops. ",
-                "The graph contains {singleton_nodes_with_selfloops_number}.</p>"
-            ),
-            singleton_nodes_with_selfloops_number = match self
-                .get_singleton_nodes_with_selfloops_number()
-            {
-                1 => format!(
-                    "a singleton node with self-loop, which is {}",
-                    self.get_unchecked_succinct_node_description(
-                        self.iter_singleton_nodes_with_selfloops_node_ids()
-                            .next()
-                            .unwrap(),
-                        1
-                    )
-                ),
-                singleton_nodes_with_selfloops_number => {
-                    format!(
-                        concat!(
-                            "{singleton_nodes_with_selfloops_number} singleton nodes with self-loops, which are ",
-                            "{singleton_nodes_list}",
-                            "{additional_singleton_nodes_with_selfloop}"
-                        ),
-                        singleton_nodes_with_selfloops_number = to_human_readable_high_integer(singleton_nodes_with_selfloops_number as usize),
-                        singleton_nodes_list = get_unchecked_formatted_list(
-                            self.iter_singleton_nodes_with_selfloops_node_ids()
-                                .take(10)
-                                .map(|node_id| {
-                                    self.get_unchecked_succinct_node_description(node_id, 1)
-                                })
-                                .collect::<Vec<_>>()
-                                .as_ref(),
-                                None
-                        ),
-                        additional_singleton_nodes_with_selfloop = if singleton_nodes_with_selfloops_number > 10 {
-                            format!(
-                                ", plus other {singleton_nodes_with_selfloops_number} singleton nodes with self-loops",
-                                singleton_nodes_with_selfloops_number = to_human_readable_high_integer(singleton_nodes_with_selfloops_number as usize - 10)
-                            )
-                        } else {
-                            "".to_string()
-                        }
-                    )
-                }
-            }
-        )
-    }
-
-    /// Returns report on the disconnected nodes.
-    ///
-    /// # Safety
-    /// This method may cause a panic when called on graphs without
-    /// disconnected nodes.
-    unsafe fn get_disconnected_nodes_report(&self) -> String {
-        // First we create the empty list of paragraphs of the report
-        let mut paragraphs = Vec::new();
-
-        paragraphs.push(format!(
-            concat!(
-                "<h3>Disconnected nodes</h3>",
-                "<p>Disconnected nodes are nodes that are not connected ",
-                "to any other node. ",
-                "The graph contains {disconnected_nodes_number} disconnected nodes.</p>"
-            ),
-            disconnected_nodes_number =
-                to_human_readable_high_integer(self.get_disconnected_nodes_number() as usize)
-        ));
-
-        if self.has_singleton_nodes() {
-            paragraphs.push(self.get_singleton_nodes_report());
-        }
-
-        if self.has_singleton_nodes_with_selfloops() {
-            paragraphs.push(self.get_singleton_nodes_with_selfloops_report());
-        }
-
-        paragraphs.join("")
     }
 
     /// Returns report on the graph edge weights
@@ -2115,12 +2010,6 @@ impl Graph {
             paragraphs.push(unsafe { self.get_node_degree_centrality_report() });
         }
 
-        // We add to the report the graph on disconnected nodes if the graph
-        // contains any.
-        if self.has_disconnected_nodes() {
-            paragraphs.push(unsafe { self.get_disconnected_nodes_report() });
-        }
-
         // We add to the report the edge weights report if the graph
         if self.has_edge_weights() {
             paragraphs.push(unsafe { self.get_edge_weights_report() });
@@ -2154,6 +2043,7 @@ impl Graph {
         );
         report = report.replace("<h3>", "<h3 style=\"margin: 1em 0 0 0;\">");
         report = report.replace("<h4>", "<h4 style=\"margin: 1em 0 0 0;\">");
+        report = report.replace("<h5>", "<h5 style=\"margin: 1em 0 0 0;\">");
         report
     }
 }
