@@ -20,9 +20,10 @@ impl ToString for DendriticTree {
     fn to_string(&self) -> String {
         format!(
             concat!(
-                "<p>Dendritic Tree starting from the root node {root_node_description}, ",
+                "<p>{dendritic_tree_type} starting from the root node {root_node_description}, ",
                 "and {other_nodes_description}.</p>"
             ),
+            dendritic_tree_type = self.get_dendritic_tree_type(),
             root_node_description = unsafe {
                 self.graph
                     .get_unchecked_succinct_node_description(self.get_root_node_id(), 1)
@@ -83,6 +84,29 @@ impl DendriticTree {
             number_of_leafs_at_root,
             has_minimum_degree_one_after_root,
             number_of_non_leafs_at_root,
+        }
+    }
+
+    /// Return the type of the dendritic tree.
+    pub fn get_dendritic_tree_type(&self) -> &str {
+        if self.is_tree() {
+            "Tree"
+        } else if self.is_star() {
+            "Star"
+        } else if self.is_tendril() {
+            "Tendril"
+        } else if self.is_free_floating_chain() {
+            "Free-floating chain"
+        } else if self.is_dendritic_tree() {
+            "Dendritic tree"
+        } else if self.is_dendritic_star() {
+            "Dendritic star"
+        } else if self.is_dendritic_tendril_star() {
+            "Dendritic tendril star"
+        } else if self.is_tendril_star() {
+            "Tendril star"
+        } else {
+            unreachable!("The cases for the different dendritic trees should be fully described.");
         }
     }
 
