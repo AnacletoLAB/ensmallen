@@ -42,7 +42,7 @@ impl Graph {
             neighbours_hashes[a as usize].cmp(&neighbours_hashes[b as usize])
         });
         let number_of_nodes = indices.len();
-        (0..(number_of_nodes - 1))
+        (0..number_of_nodes.saturating_sub(1))
             .into_par_iter()
             .filter_map(move |i| unsafe {
                 let index = indices[i];
