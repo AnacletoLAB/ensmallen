@@ -791,7 +791,7 @@ impl Graph {
         if number_of_oddities == 0 {
             return "".to_string();
         }
-        let number_of_oddities_to_report = 5;
+        let number_of_oddities_to_report = 3;
         if oddity_name.is_empty() {
             panic!("The oddity name cannot be empty!");
         }
