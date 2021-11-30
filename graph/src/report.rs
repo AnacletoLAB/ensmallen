@@ -788,8 +788,8 @@ impl Graph {
         maximum_number_of_involved_edges: EdgeT,
         oddities: impl Iterator<Item = T>,
     ) -> String {
-        if number_of_oddities > 0 {
-            return "".to_string()
+        if number_of_oddities == 0 {
+            return "".to_string();
         }
         let number_of_oddities_to_report = 10;
         if oddity_name.is_empty() {
@@ -798,14 +798,18 @@ impl Graph {
         if oddity_description.is_empty() {
             panic!("The oddity description cannot be empty!");
         }
+        let percentage_of_involved_nodes =
+            (number_of_involved_nodes as f64 / self.get_nodes_number() as f64) * 100.0;
+        let percentage_of_involved_edges =
+            (number_of_involved_edges as f64 / self.get_directed_edges_number() as f64) * 100.0;
         format!(
             concat!(
                 "<{header_type}>{oddity_name}</{header_type}>",
                 "<p>",
                 "{oddity_description} ",
                 "We have detected {number_of_oddities} {lower_oddity_name} in the graph, ",
-                "involving a total of {number_of_involved_nodes} nodes ({percentage_of_involved_nodes:.2}%) ",
-                "and {number_of_involved_edges} edges ({percentage_of_involved_edges:.2}%), ",
+                "involving a total of {number_of_involved_nodes} nodes {percentage_of_involved_nodes}",
+                "and {number_of_involved_edges} edges{percentage_of_involved_edges}, ",
                 "with the largest one involving {maximum_number_of_involved_nodes} nodes ",
                 "and {maximum_number_of_involved_edges} edges. ",
                 "The detected {lower_oddity_name}, sorted by decreasing size, are:",
@@ -821,9 +825,23 @@ impl Graph {
             oddity_description=oddity_description,
             number_of_oddities = to_human_readable_high_integer(number_of_oddities as usize),
             number_of_involved_nodes = to_human_readable_high_integer(number_of_involved_nodes as usize),
-            percentage_of_involved_nodes= (number_of_involved_nodes as f64 / self.get_nodes_number() as f64) * 100.0,
+            percentage_of_involved_nodes= if percentage_of_involved_nodes > 0.01 {
+                format!(
+                    "({percentage_of_involved_nodes:.2}%) ",
+                    percentage_of_involved_nodes=percentage_of_involved_nodes
+                )
+            } else {
+                "".to_string()
+            },
             number_of_involved_edges = to_human_readable_high_integer(number_of_involved_edges as usize),
-            percentage_of_involved_edges= (number_of_involved_edges as f64 / self.get_directed_edges_number() as f64) * 100.0,
+            percentage_of_involved_edges= if percentage_of_involved_edges > 0.01 {
+                format!(
+                    " ({percentage_of_involved_edges:.2}%)",
+                    percentage_of_involved_edges=percentage_of_involved_edges
+                )
+            } else {
+                "".to_string()
+            },
             maximum_number_of_involved_nodes = maximum_number_of_involved_nodes,
             maximum_number_of_involved_edges = maximum_number_of_involved_edges,
             top_oddities_description = oddities.take(number_of_oddities_to_report).map(|oddity| format!("<li>{}</li>", oddity.to_string())).join("\n"),
