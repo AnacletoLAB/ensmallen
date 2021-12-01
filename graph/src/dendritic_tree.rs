@@ -67,7 +67,7 @@ impl ToString for DendriticTree {
                             |_| "".to_string(),
                             |count| {
                                 format!(
-                                    " Its nodes are characterized by {}.",
+                                    " Its nodes have {}.",
                                     self.graph
                                         .get_unchecked_node_types_description_from_count(count)
                                 )
@@ -84,7 +84,7 @@ impl ToString for DendriticTree {
                         |_| "".to_string(),
                         |count| {
                             format!(
-                                " Its edges are characterized by {}.",
+                                " Its edges have {}.",
                                 self.graph
                                     .get_unchecked_edge_types_description_from_count(count)
                             )
