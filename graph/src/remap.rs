@@ -316,7 +316,11 @@ impl Graph {
                 .unwrap();
         let positions = self
             .par_iter_node_names()
-            .map(|node_name| new_nodes_vocabulary.get(&node_name).unwrap())
+            .map(|node_name| {
+                new_nodes_vocabulary
+                    .get(node_names_map.get(&node_name).unwrap())
+                    .unwrap()
+            })
             .collect::<Vec<NodeT>>();
         Ok(unsafe {
             self.remap_unchecked_from_positions_and_vocabulary(&positions, new_nodes_vocabulary)
