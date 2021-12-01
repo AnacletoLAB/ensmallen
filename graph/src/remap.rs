@@ -312,7 +312,8 @@ impl Graph {
             }).collect::<Result<()>>()?;
 
         let new_nodes_vocabulary: Vocabulary<NodeT> =
-            Vocabulary::from_reverse_map(node_names_map.values().cloned().collect()).unwrap();
+            Vocabulary::from_reverse_map(node_names_map.values().cloned().unique().collect())
+                .unwrap();
         let positions = self
             .par_iter_node_names()
             .map(|node_name| new_nodes_vocabulary.get(&node_name).unwrap())
