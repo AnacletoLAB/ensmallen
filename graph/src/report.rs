@@ -938,6 +938,9 @@ impl Graph {
         if oddity_name.is_empty() {
             panic!("The oddity name cannot be empty!");
         }
+        if oddity_name.ends_with('s') {
+            panic!("The oddity name cannot end with the character `s`!");
+        }
         if oddity_description.is_empty() {
             panic!("The oddity description cannot be empty!");
         }
@@ -945,31 +948,52 @@ impl Graph {
             (number_of_involved_nodes as f64 / self.get_nodes_number() as f64) * 100.0;
         let percentage_of_involved_edges =
             (number_of_involved_edges as f64 / self.get_directed_edges_number() as f64) * 100.0;
+        let plural_oddity_name = format!("{oddity_name}s", oddity_name = oddity_name);
         format!(
             concat!(
-                "<{header_type}>{oddity_name}</{header_type}>",
+                "<{header_type}>{plural_oddity_name}</{header_type}>",
                 "<p>",
                 "{oddity_description} ",
-                "We have detected {number_of_oddities} {lower_oddity_name} in the graph",
+                "We have detected {number_of_oddities_in_graph} in the graph",
                 "{involved_nodes_and_edges}",
-                "{maximum_involved_nodes_and_edges}. ",
-                "The detected {lower_oddity_name}, sorted by decreasing size, are:",
+                "{maximum_involved_nodes_and_edges}.",
+                "{list_description}",
                 "</p>",
-                "<ol>",
+                "<{list_type}>",
                 "{top_oddities_description}",
-                "</ol>",
+                "</{list_type}>",
                 "{possibly_conclusive_entry}"
             ),
+            list_type = if number_of_oddities == 1 { "ul" } else { "ol" },
+            list_description = if number_of_oddities > 1 {
+                format!(
+                    " The detected {lower_plural_oddity_name}, sorted by decreasing size, are:",
+                    lower_plural_oddity_name = plural_oddity_name.to_lowercase(),
+                )
+            } else {
+                "".to_string()
+            },
             header_type = header_type,
-            oddity_name = oddity_name,
-            lower_oddity_name = oddity_name.to_lowercase(),
+            plural_oddity_name = plural_oddity_name,
             oddity_description = oddity_description,
-            number_of_oddities = to_human_readable_high_integer(number_of_oddities as usize),
+            number_of_oddities_in_graph = if number_of_oddities == 1 {
+                format!(
+                    " a single {lower_oddity_name}",
+                    lower_oddity_name = oddity_name.to_lowercase()
+                )
+            } else {
+                format!(
+                    "{number_of_oddities} {lower_plural_oddity_name}",
+                    number_of_oddities =
+                        to_human_readable_high_integer(number_of_oddities as usize),
+                    lower_plural_oddity_name = plural_oddity_name.to_lowercase(),
+                )
+            },
             involved_nodes_and_edges = if number_of_involved_nodes > 2 {
                 format!(
                     concat!(
                         ", involving a total of {number_of_involved_nodes} nodes {percentage_of_involved_nodes}",
-                        "and {number_of_involved_edges} edges{percentage_of_involved_edges}"
+                        "{note_on_edges}"
                     ),
                     number_of_involved_nodes = to_human_readable_high_integer(number_of_involved_nodes as usize),
                     percentage_of_involved_nodes= if percentage_of_involved_nodes > 0.01 {
@@ -980,15 +1004,22 @@ impl Graph {
                     } else {
                         "".to_string()
                     },
-                    number_of_involved_edges = to_human_readable_high_integer(number_of_involved_edges as usize),
-                    percentage_of_involved_edges= if percentage_of_involved_edges > 0.01 {
+                    note_on_edges = if number_of_involved_edges > 0 {
                         format!(
-                            " ({percentage_of_involved_edges:.2}%)",
-                            percentage_of_involved_edges=percentage_of_involved_edges
+                            "and {number_of_involved_edges} edges{percentage_of_involved_edges}",
+                            number_of_involved_edges = to_human_readable_high_integer(number_of_involved_edges as usize),
+                            percentage_of_involved_edges= if percentage_of_involved_edges > 0.01 {
+                                format!(
+                                    " ({percentage_of_involved_edges:.2}%)",
+                                    percentage_of_involved_edges=percentage_of_involved_edges
+                                )
+                            } else {
+                                "".to_string()
+                            },
                         )
                     } else {
                         "".to_string()
-                    },
+                    }
                 )
             } else {
                 "".to_string()
