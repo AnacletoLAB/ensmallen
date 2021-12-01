@@ -990,13 +990,13 @@ impl Graph {
             involved_nodes_and_edges = if number_of_involved_nodes > 2 {
                 format!(
                     concat!(
-                        ", involving a total of {number_of_involved_nodes} nodes {percentage_of_involved_nodes}",
+                        ", involving a total of {number_of_involved_nodes} nodes{percentage_of_involved_nodes}",
                         "{note_on_edges}"
                     ),
                     number_of_involved_nodes = to_human_readable_high_integer(number_of_involved_nodes as usize),
                     percentage_of_involved_nodes= if percentage_of_involved_nodes > 0.01 {
                         format!(
-                            "({percentage_of_involved_nodes:.2}%) ",
+                            " ({percentage_of_involved_nodes:.2}%) ",
                             percentage_of_involved_nodes=percentage_of_involved_nodes
                         )
                     } else {
