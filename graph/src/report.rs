@@ -912,6 +912,7 @@ impl Graph {
     /// # Arguments
     /// * `header_type`: &str - Type of header to use for this section.
     /// * `oddity_name`: &str - Name of oddity.
+    /// * `plural_oddity_name`: &str - Name of oddity.
     /// * `oddity_description`: &str - Description of oddity.
     /// * `number_of_oddities`: NodeT - Number of the oddities.
     /// * `number_of_involved_nodes`: NodeT - Number of involved nodes.
@@ -923,6 +924,7 @@ impl Graph {
         &self,
         header_type: &str,
         oddity_name: &str,
+        plural_oddity_name: &str,
         oddity_description: &str,
         number_of_oddities: NodeT,
         number_of_involved_nodes: NodeT,
@@ -938,9 +940,6 @@ impl Graph {
         if oddity_name.is_empty() {
             panic!("The oddity name cannot be empty!");
         }
-        if oddity_name.ends_with('s') {
-            panic!("The oddity name cannot end with the character `s`!");
-        }
         if oddity_description.is_empty() {
             panic!("The oddity description cannot be empty!");
         }
@@ -948,7 +947,6 @@ impl Graph {
             (number_of_involved_nodes as f64 / self.get_nodes_number() as f64) * 100.0;
         let percentage_of_involved_edges =
             (number_of_involved_edges as f64 / self.get_directed_edges_number() as f64) * 100.0;
-        let plural_oddity_name = format!("{oddity_name}s", oddity_name = oddity_name);
         format!(
             concat!(
                 "<{header_type}>{plural_oddity_name}</{header_type}>",
@@ -1068,11 +1066,13 @@ impl Graph {
     /// # Arguments
     /// * `tree_like_oddities`: Vec<DendriticTree> - Vector of oddities.
     /// * `oddity_name`: &str - Name of the oddity.
+    /// * `plural_oddity_name`: &str - Name of the oddity conjugated to the plural form.
     /// * `oddity_description`: &str - Description of the oddity.
     fn get_report_of_specific_tree_like_oddities(
         &self,
         tree_like_oddities: Vec<DendriticTree>,
         oddity_name: &str,
+        plural_oddity_name: &str,
         oddity_description: &str,
     ) -> String {
         if tree_like_oddities.is_empty() {
@@ -1081,6 +1081,7 @@ impl Graph {
             self.get_report_of_oddity(
                 "h4",
                 oddity_name,
+                plural_oddity_name,
                 oddity_description,
                 tree_like_oddities.len() as NodeT,
                 tree_like_oddities
@@ -1153,6 +1154,7 @@ impl Graph {
         let number_of_singleton_nodes = self.get_singleton_nodes_number();
         let singleton_nodes_description = self.get_report_of_oddity(
             "h4",
+            "Singleton node",
             "Singleton nodes",
             concat!("A singleton node is a node disconnected from all other nodes."),
             number_of_singleton_nodes,
@@ -1179,6 +1181,7 @@ impl Graph {
 
         let singleton_nodes_with_selfloops_description = self.get_report_of_oddity(
             "h4",
+            "Singleton node with self-loops",
             "Singleton nodes with self-loops",
             concat!(
                 "A singleton node with self-loops is a node disconnected ",
@@ -1205,6 +1208,7 @@ impl Graph {
         let circles_description = self.get_report_of_oddity(
             "h4",
             "Circle",
+            "Circles",
             concat!(
                 "A circle is a connected component composed ",
                 "exclusively of nodes with unique degree 2, ",
@@ -1230,6 +1234,7 @@ impl Graph {
         let chains_description = self.get_report_of_oddity(
             "h4",
             "Chain",
+            "Chains",
             concat!(
                 "A chain is a path of nodes with unique degree 2, ",
                 "that is ignoring self-loop and multi-edges, ",
@@ -1250,6 +1255,7 @@ impl Graph {
         let maximum_number_of_edges_in_a_node_tuple = 1;
         let node_tuples_description = self.get_report_of_oddity(
             "h4",
+            "Node tuple",
             "Node tuples",
             concat!("A node tuple is a connected component composed of two nodes."),
             number_of_node_tuples,
@@ -1287,6 +1293,7 @@ impl Graph {
             .unwrap_or(0);
         let isomorphic_node_groups_description = self.get_report_of_oddity(
             "h4",
+            "Isomorphic node group",
             "Isomorphic node groups",
             concat!(
                 "Isomorphic groups are nodes with exactly the same ",
@@ -1392,6 +1399,7 @@ impl Graph {
                 ),
                 trees_description=self.get_report_of_specific_tree_like_oddities(
                     trees,
+                    "Tree",
                     "Trees",
                     concat!(
                         "A tree is a connected component with <code>n</code> nodes and <code>n-1</code> edges."
@@ -1399,6 +1407,7 @@ impl Graph {
                 ),
                 dendritic_trees_description=self.get_report_of_specific_tree_like_oddities(
                     dendritic_trees,
+                    "Dendritic tree",
                     "Dendritic trees",
                     concat!(
                         "A dendritic tree is a tree-like structure starting from a root node ",
@@ -1407,6 +1416,7 @@ impl Graph {
                 ),
                 stars_description=self.get_report_of_specific_tree_like_oddities(
                     stars,
+                    "Star",
                     "Stars",
                     concat!(
                         "A star is a tree with a maximal depth of one, where nodes ",
@@ -1416,6 +1426,7 @@ impl Graph {
                 ),
                 tendril_stars_description=self.get_report_of_specific_tree_like_oddities(
                     tendril_stars,
+                    "Tendril star",
                     "Tendril stars",
                     concat!(
                         "A tendril star is a tree with a depth greater than one, ",
@@ -1424,6 +1435,7 @@ impl Graph {
                 ),
                 dendritic_stars_description=self.get_report_of_specific_tree_like_oddities(
                     dendritic_stars,
+                    "Dendritic star",
                     "Dendritic stars",
                     concat!(
                         "A dendritic star is a dendritic tree with a maximal depth of one, where nodes ",
@@ -1433,6 +1445,7 @@ impl Graph {
                 ),
                 dendritic_tendril_stars_description=self.get_report_of_specific_tree_like_oddities(
                     dendritic_tendril_stars,
+                    "Dendritic tendril star",
                     "Dendritic tendril stars",
                     concat!(
                         "A dendritic tendril star is a dendritic tree with a depth greater than one, ",
@@ -1441,6 +1454,7 @@ impl Graph {
                 ),
                 free_floating_chains_description=self.get_report_of_specific_tree_like_oddities(
                     free_floating_chains,
+                    "Free-floating chain",
                     "Free-floating chains",
                     concat!(
                         "A free-floating chain is a tree with maximal degree two."
@@ -1448,6 +1462,7 @@ impl Graph {
                 ),
                 tendrils_description=self.get_report_of_specific_tree_like_oddities(
                     tendrils,
+                    "Tendril",
                     "Tendrils",
                     concat!(
                         "A tendril is a path starting from a node of degree one, ",
