@@ -17,7 +17,7 @@ impl ToString for Tendril {
             0 => unreachable!("It does not make sense to have an empty tendril."),
             1 => format!("<p>Tendril containing a single node {}.</p>", unsafe {
                 self.graph
-                    .get_unchecked_succinct_node_description(self.get_root_node_id(), 2)
+                    .get_unchecked_succinct_node_description(self.get_root_node_id(), 2, false)
             }),
             nodes_number => format!(
                 concat!(
@@ -27,7 +27,7 @@ impl ToString for Tendril {
                 to_human_readable_high_integer(nodes_number as usize),
                 unsafe {
                     self.graph
-                        .get_unchecked_succinct_node_description(self.get_root_node_id(), 2)
+                        .get_unchecked_succinct_node_description(self.get_root_node_id(), 2, false)
                 },
                 unsafe {
                     get_unchecked_formatted_list(
@@ -36,7 +36,7 @@ impl ToString for Tendril {
                             .into_iter()
                             .map(|node_id| {
                                 self.graph
-                                    .get_unchecked_succinct_node_description(node_id, 2)
+                                    .get_unchecked_succinct_node_description(node_id, 2, false)
                             })
                             .collect::<Vec<String>>(),
                         Some(5),

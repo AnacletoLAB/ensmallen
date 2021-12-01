@@ -13,12 +13,19 @@ pub struct Chain {
 use std::string::ToString;
 impl ToString for Chain {
     fn to_string(&self) -> String {
-        let node_ids =
-            if self.graph.has_node_types() && self.len() > 5 || self.graph.has_edge_types() {
-                Some(self.get_chain_node_ids())
-            } else {
-                None
-            };
+        let node_ids = if self.graph.has_node_types() || self.graph.has_edge_types() {
+            Some(self.get_chain_node_ids())
+        } else {
+            None
+        };
+        let show_node_type = if self.graph.has_node_types() {
+            node_ids.as_ref().map_or(false, |node_ids| unsafe {
+                self.graph
+                    .has_unchecked_isomorphic_node_types_from_node_ids(node_ids)
+            })
+        } else {
+            false
+        };
         format!(
             concat!(
                 "<p>",
@@ -30,8 +37,11 @@ impl ToString for Chain {
             ),
             nodes_number = to_human_readable_high_integer(self.len() as usize),
             root_node = unsafe {
-                self.graph
-                    .get_unchecked_succinct_node_description(self.get_root_node_id(), 2)
+                self.graph.get_unchecked_succinct_node_description(
+                    self.get_root_node_id(),
+                    2,
+                    show_node_type,
+                )
             },
             chain_nodes = unsafe {
                 get_unchecked_formatted_list(
@@ -40,8 +50,11 @@ impl ToString for Chain {
                         .into_iter()
                         .skip(1)
                         .map(|node_id| {
-                            self.graph
-                                .get_unchecked_succinct_node_description(node_id, 2)
+                            self.graph.get_unchecked_succinct_node_description(
+                                node_id,
+                                2,
+                                show_node_type,
+                            )
                         })
                         .collect::<Vec<String>>(),
                     Some(5),

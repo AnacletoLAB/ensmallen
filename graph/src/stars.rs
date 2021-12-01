@@ -20,7 +20,7 @@ impl ToString for Star {
             to_human_readable_high_integer(self.len() as usize),
             unsafe {
                 self.graph
-                    .get_unchecked_succinct_node_description(self.get_root_node_id(), 1)
+                    .get_unchecked_succinct_node_description(self.get_root_node_id(), 1, true)
             },
             unsafe {
                 get_unchecked_formatted_list(
@@ -30,7 +30,7 @@ impl ToString for Star {
                         .skip(1)
                         .map(|node_id| {
                             self.graph
-                                .get_unchecked_succinct_node_description(node_id, 1)
+                                .get_unchecked_succinct_node_description(node_id, 1, true)
                         })
                         .collect::<Vec<String>>(),
                     Some(5),

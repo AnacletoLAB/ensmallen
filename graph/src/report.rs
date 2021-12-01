@@ -415,6 +415,7 @@ impl Graph {
     /// # Arguments
     /// * `node_id`: NodeT - Node ID to query for.
     /// * `minimum_node_degree`: NodeT - The minimum node degree to show the node degree information. This parameter is available because in some use cases (e.g. the stars report) the degree is extremely redoundant.
+    /// * `show_node_type`: bool - Whether to display the node nodes type.
     ///
     /// # Safety
     /// This method will cause an out of bound if the given node ID does not exist.
@@ -422,8 +423,9 @@ impl Graph {
         &self,
         node_id: NodeT,
         minimum_node_degree: NodeT,
+        show_node_type: bool,
     ) -> String {
-        let node_type = if self.has_node_types() {
+        let node_type = if show_node_type && self.has_node_types() {
             match self.get_unchecked_node_type_names_from_node_id(node_id) {
                 Some(node_type_names) => match node_type_names.len() {
                     0 => unreachable!("A node cannot have an empty list of node types, as that case should be None."),
@@ -488,6 +490,7 @@ impl Graph {
     /// # Arguments
     /// * `node_id`: NodeT - Node ID to query for.
     /// * `minimum_node_degree`: NodeT - The minimum node degree to show the node degree information. This parameter is available because in some use cases (e.g. the stars report) the degree is extremely redoundant.
+    /// * `show_node_type`: bool - Whether to display the node nodes type.
     ///
     /// # Safety
     /// This method will cause an out of bound if the given node ID does not exist.
@@ -495,12 +498,16 @@ impl Graph {
         &self,
         node_id: NodeT,
         minimum_node_degree: NodeT,
+        show_node_type: bool,
     ) -> String {
         let node_name = get_node_source_html_url_from_node_name(
             self.get_unchecked_node_name_from_node_id(node_id).as_ref(),
         );
-        let description =
-            self.get_unchecked_succinct_node_attributes_description(node_id, minimum_node_degree);
+        let description = self.get_unchecked_succinct_node_attributes_description(
+            node_id,
+            minimum_node_degree,
+            show_node_type,
+        );
         let description = if description.is_empty() {
             description
         } else {
@@ -612,7 +619,7 @@ impl Graph {
             format!(
                 "{number_of_edges} edges{percentage_of_edges}",
                 number_of_edges = to_human_readable_high_integer(number_of_edges as usize),
-                percentage_of_edges = if percentage_of_edges >= 0.01 && total_edges > 10{
+                percentage_of_edges = if percentage_of_edges >= 0.01 && total_edges > 10 {
                     format!(
                         ", {percentage_of_edges:.2}%",
                         percentage_of_edges = percentage_of_edges
@@ -675,8 +682,8 @@ impl Graph {
     unsafe fn get_unchecked_succinct_edge_description(&self, edge_id: EdgeT) -> String {
         format!(
             "edge between {source_node_description:?} and {destination_node_description:?}{edge_type}",
-            source_node_description = self.get_unchecked_succinct_node_description(self.get_unchecked_source_node_id_from_edge_id(edge_id), 0),
-            destination_node_description = self.get_unchecked_succinct_node_description(self.get_unchecked_destination_node_id_from_edge_id(edge_id), 0),
+            source_node_description = self.get_unchecked_succinct_node_description(self.get_unchecked_source_node_id_from_edge_id(edge_id), 0, true),
+            destination_node_description = self.get_unchecked_succinct_node_description(self.get_unchecked_destination_node_id_from_edge_id(edge_id), 0, true),
             edge_type = if self.has_edge_types() {
                 match self.get_edge_type_name_from_edge_id(edge_id).unwrap() {
                     Some(edge_type_name) => {
@@ -732,7 +739,8 @@ impl Graph {
             match self.get_nodes_number() {
                 1 => format!(
                     "a single node called {node_name_description}",
-                    node_name_description = self.get_unchecked_succinct_node_description(0, 0),
+                    node_name_description =
+                        self.get_unchecked_succinct_node_description(0, 0, true),
                 ),
                 nodes_number => format!(
                     "{nodes_number}{heterogeneous_nodes} nodes",
@@ -857,7 +865,7 @@ impl Graph {
                         self.get_unchecked_node_degree_from_node_id(*node_id) > 0
                     })
                     .map(|node_id| {
-                        self.get_unchecked_succinct_node_description(node_id, 0)
+                        self.get_unchecked_succinct_node_description(node_id, 0, true)
                     })
                     .collect::<Vec<_>>()
                     .as_ref(),
@@ -1121,8 +1129,9 @@ impl Graph {
             0,
             1,
             0,
-            self.iter_singleton_node_ids()
-                .map(|node_id| unsafe { self.get_unchecked_succinct_node_description(node_id, 0) }),
+            self.iter_singleton_node_ids().map(|node_id| unsafe {
+                self.get_unchecked_succinct_node_description(node_id, 0, true)
+            }),
         );
 
         let number_of_singleton_nodes_with_selfloops =
@@ -1150,7 +1159,9 @@ impl Graph {
             1,
             maximum_number_of_edges_in_a_singleton_with_selfloop,
             self.iter_singleton_nodes_with_selfloops_node_ids()
-                .map(|node_id| unsafe { self.get_unchecked_succinct_node_description(node_id, 1) }),
+                .map(|node_id| unsafe {
+                    self.get_unchecked_succinct_node_description(node_id, 1, true)
+                }),
         );
 
         let number_of_circles = circles.len() as NodeT;
@@ -1267,6 +1278,7 @@ impl Graph {
                             self.get_unchecked_succinct_node_attributes_description(
                                 isomorphic_node_group[0],
                                 0,
+                                true,
                             )
                         },
                         unsafe {
@@ -1493,7 +1505,8 @@ impl Graph {
                         self.get_unchecked_succinct_node_description(
                             self.get_node_ids_from_node_type_name(&node_type_name)
                                 .unwrap()[0],
-                            0
+                            0,
+                            true
                         )
                     )
                 }
@@ -1502,7 +1515,7 @@ impl Graph {
                         concat!(
                             "{singleton_nodes_types_number} singleton node types, which are ",
                             "{singleton_node_types_list}",
-                            "{additional_singleton_nodes_with_selfloop}"
+                            "{additional_singleton_nodes_types}"
                         ),
                         singleton_nodes_types_number =
                             to_human_readable_high_integer(singleton_nodes_types_number as usize),
@@ -1519,7 +1532,8 @@ impl Graph {
                                         self.get_unchecked_succinct_node_description(
                                             self.get_node_ids_from_node_type_name(&node_type_name)
                                                 .unwrap()[0],
-                                            0
+                                            0,
+                                            true
                                         )
                                     )
                                 })
@@ -1527,17 +1541,16 @@ impl Graph {
                                 .as_ref(),
                             None
                         ),
-                        additional_singleton_nodes_with_selfloop =
-                            if singleton_nodes_types_number > 10 {
-                                format!(
+                        additional_singleton_nodes_types = if singleton_nodes_types_number > 10 {
+                            format!(
                                 ", plus other {singleton_nodes_types_number} singleton node types",
                                 singleton_nodes_types_number = to_human_readable_high_integer(
                                     singleton_nodes_types_number as usize - 10
                                 )
                             )
-                            } else {
-                                "".to_string()
-                            }
+                        } else {
+                            "".to_string()
+                        }
                     )
                 }
             }
@@ -1751,7 +1764,7 @@ impl Graph {
                         self.iter_node_ids_with_unknown_node_types()
                             .unwrap()
                             .next()
-                            .unwrap(), 0
+                            .unwrap(), 0, false
                     )
                 ),
                 unknown_node_types_number => {
@@ -1767,7 +1780,7 @@ impl Graph {
                                 .unwrap()
                                 .take(10)
                                 .map(|node_id| {
-                                    self.get_unchecked_succinct_node_description(node_id, 0)
+                                    self.get_unchecked_succinct_node_description(node_id, 0, false)
                                 })
                                 .collect::<Vec<_>>()
                                 .as_ref(),

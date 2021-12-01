@@ -19,6 +19,13 @@ impl ToString for Circle {
             } else {
                 None
             };
+        let show_node_type = if self.graph.has_node_types() {
+            node_ids.as_ref().map_or(false, |node_ids| unsafe {
+                self.graph.has_unchecked_isomorphic_node_types_from_node_ids(node_ids)
+            })
+        } else {
+            false
+        };
         format!(
             concat!(
                 "<p>",
@@ -36,8 +43,11 @@ impl ToString for Circle {
                         .into_iter()
                         .skip(1)
                         .map(|node_id| {
-                            self.graph
-                                .get_unchecked_succinct_node_description(node_id, 2)
+                            self.graph.get_unchecked_succinct_node_description(
+                                node_id,
+                                2,
+                                show_node_type,
+                            )
                         })
                         .collect::<Vec<String>>(),
                     Some(5),

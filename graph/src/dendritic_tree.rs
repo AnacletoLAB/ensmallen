@@ -18,6 +18,11 @@ pub struct DendriticTree {
 use std::string::ToString;
 impl ToString for DendriticTree {
     fn to_string(&self) -> String {
+        let show_node_type = if self.graph.has_node_types() {
+            unsafe{self.graph.has_unchecked_isomorphic_node_types_from_node_ids(self.node_ids.as_ref())}
+        } else {
+            false
+        };
         format!(
             concat!(
                 "<p>",
@@ -29,14 +34,20 @@ impl ToString for DendriticTree {
             ),
             dendritic_tree_type = self.get_dendritic_tree_type(),
             root_node_description = unsafe {
-                self.graph
-                    .get_unchecked_succinct_node_description(self.get_root_node_id(), 1)
+                self.graph.get_unchecked_succinct_node_description(
+                    self.get_root_node_id(),
+                    1,
+                    show_node_type,
+                )
             },
             other_nodes_description = match self.get_number_of_involved_nodes() {
                 0 => unreachable!("It does not make sense to have an empty dendritic tree."),
                 1 => format!("containing a single other node, {}", unsafe {
-                    self.graph
-                        .get_unchecked_succinct_node_description(self.node_ids[0], 1)
+                    self.graph.get_unchecked_succinct_node_description(
+                        self.node_ids[0],
+                        1,
+                        show_node_type,
+                    )
                 }),
                 nodes_number => format!(
                     concat!("containing {} nodes, with a maximal depth of {}, which are {}"),
@@ -47,9 +58,13 @@ impl ToString for DendriticTree {
                             &self
                                 .get_dentritic_trees_node_ids()
                                 .into_iter()
+                                .take(5)
                                 .map(|node_id| {
-                                    self.graph
-                                        .get_unchecked_succinct_node_description(node_id, 2)
+                                    self.graph.get_unchecked_succinct_node_description(
+                                        node_id,
+                                        2,
+                                        show_node_type,
+                                    )
                                 })
                                 .collect::<Vec<String>>(),
                             Some(5),
@@ -57,25 +72,19 @@ impl ToString for DendriticTree {
                     }
                 ),
             },
-            node_types_counts = if self.get_number_of_involved_nodes() > 5 {
-                unsafe {
-                    self.graph
-                        .get_unchecked_node_type_id_counts_hashmap_from_node_ids(
-                            self.node_ids.as_ref(),
-                        )
-                        .map_or_else(
-                            |_| "".to_string(),
-                            |count| {
-                                format!(
-                                    " Its nodes have {}.",
-                                    self.graph
-                                        .get_unchecked_node_types_description_from_count(count)
-                                )
-                            },
-                        )
-                }
-            } else {
-                "".to_string()
+            node_types_counts = unsafe {
+                self.graph
+                    .get_unchecked_node_type_id_counts_hashmap_from_node_ids(self.node_ids.as_ref())
+                    .map_or_else(
+                        |_| "".to_string(),
+                        |count| {
+                            format!(
+                                " Its nodes have {}.",
+                                self.graph
+                                    .get_unchecked_node_types_description_from_count(count)
+                            )
+                        },
+                    )
             },
             edge_types_counts = unsafe {
                 self.graph

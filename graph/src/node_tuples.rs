@@ -22,7 +22,7 @@ impl ToString for NodeTuple {
                         .into_iter()
                         .map(|node_id| {
                             self.graph
-                                .get_unchecked_succinct_node_description(node_id, 1)
+                                .get_unchecked_succinct_node_description(node_id, 1, true)
                         })
                         .collect::<Vec<String>>(),
                     Some(5),

@@ -410,4 +410,36 @@ impl Graph {
                 })
         })
     }
+
+    /// Returns whether the set of provided node IDs have isomorphic node types.
+    ///
+    /// # Arguments
+    /// * `node_ids`: &[NodeT] - Node IDs to check for.
+    pub unsafe fn has_unchecked_isomorphic_node_types_from_node_ids(&self, node_ids: &[NodeT]) -> bool {
+        let node_type_ids = self.get_unchecked_node_type_ids_from_node_id(node_ids[0]);
+        node_ids[1..]
+            .par_iter()
+            .all(|&node_id| node_type_ids == self.get_unchecked_node_type_ids_from_node_id(node_id))
+    }
+
+    /// Returns whether the set of provided node IDs have isomorphic node types.
+    ///
+    /// # Arguments
+    /// * `node_ids`: &[NodeT] - Node IDs to check for.
+    pub fn has_isomorphic_node_types_from_node_ids(&self, node_ids: &[NodeT]) -> Result<bool> {
+        self.must_have_node_types()?;
+        if node_ids.is_empty() {
+            return Err("The provided list of node IDs is empty.".to_string());
+        }
+        if node_ids
+            .par_iter()
+            .any(|&node_id| self.validate_node_id(node_id).is_err())
+        {
+            return Err(
+                "One of the provided node IDs is higher than the number of nodes in the graph."
+                    .to_string(),
+            );
+        }
+        Ok(unsafe{self.has_unchecked_isomorphic_node_types_from_node_ids(node_ids)})
+    }
 }
