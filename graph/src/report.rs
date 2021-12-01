@@ -536,7 +536,7 @@ impl Graph {
             format!(
                 "{number_of_nodes} nodes{percentage_of_nodes}",
                 number_of_nodes = to_human_readable_high_integer(number_of_nodes as usize),
-                percentage_of_nodes = if percentage_of_nodes >= 0.01 {
+                percentage_of_nodes = if percentage_of_nodes >= 0.01 && total_nodes > 10 {
                     format!(
                         ", {percentage_of_nodes:.2}%",
                         percentage_of_nodes = percentage_of_nodes
@@ -612,7 +612,7 @@ impl Graph {
             format!(
                 "{number_of_edges} edges{percentage_of_edges}",
                 number_of_edges = to_human_readable_high_integer(number_of_edges as usize),
-                percentage_of_edges = if percentage_of_edges >= 0.01 {
+                percentage_of_edges = if percentage_of_edges >= 0.01 && total_edges > 10{
                     format!(
                         ", {percentage_of_edges:.2}%",
                         percentage_of_edges = percentage_of_edges
