@@ -851,7 +851,7 @@ impl Graph {
                 "<h3>Degree centrality</h3>",
                 "<p>The minimum node degree is {minimum_node_degree}, the maximum node degree is {maximum_node_degree}, ",
                 "the mode degree is {mode_node_degree}, the mean degree is {mean_node_degree:.2} and the node degree median is {node_degree_median}.</p>",
-                "<p>The nodes with highest degree centrality are: {list_of_most_central_nodes}.</p>"
+                "<p>The nodes with the highest degree centrality are {list_of_most_central_nodes}.</p>"
             ),
             minimum_node_degree = to_human_readable_high_integer(self.get_minimum_node_degree().unwrap() as usize),
             maximum_node_degree = to_human_readable_high_integer(self.get_maximum_node_degree().unwrap() as usize),
