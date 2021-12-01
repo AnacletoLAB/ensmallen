@@ -1049,10 +1049,10 @@ impl Graph {
                     )
                 } else {
                     format!(
-                        "<p>And other {remaining_oddities} {lower_oddity_name}.</p>",
+                        "<p>And other {remaining_oddities} {lower_plural_oddity_name}.</p>",
                         remaining_oddities =
                             to_human_readable_high_integer(remaining_oddities as usize),
-                        lower_oddity_name = oddity_name.to_lowercase()
+                        lower_plural_oddity_name = plural_oddity_name.to_lowercase()
                     )
                 }
             } else {
