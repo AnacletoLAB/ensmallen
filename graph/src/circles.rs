@@ -21,7 +21,7 @@ impl ToString for Circle {
             };
         let show_node_type = if self.graph.has_node_types() {
             node_ids.as_ref().map_or(false, |node_ids| unsafe {
-                self.graph.has_unchecked_isomorphic_node_types_from_node_ids(node_ids)
+                !self.graph.has_unchecked_isomorphic_node_types_from_node_ids(node_ids)
             })
         } else {
             false
