@@ -1004,7 +1004,7 @@ impl Graph {
                     },
                     note_on_edges = if number_of_involved_edges > 0 {
                         format!(
-                            "and {number_of_involved_edges} edges{percentage_of_involved_edges}",
+                            " and {number_of_involved_edges} edges{percentage_of_involved_edges}",
                             number_of_involved_edges = to_human_readable_high_integer(number_of_involved_edges as usize),
                             percentage_of_involved_edges= if percentage_of_involved_edges > 0.01 {
                                 format!(
