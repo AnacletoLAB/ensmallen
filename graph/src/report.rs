@@ -517,17 +517,22 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_type_id`: NodeTypeT - Node ID to query for.
+    /// * `local_total`: Option<NodeT> - The total amount of nodes in this local area. If None, the number of nodes is used.
+    /// * `local_count`: Option<NodeT> - The total amount of nodes of this type in this local area. If None, the amount of nodes of this type in the graph is used.
     ///
     /// # Safety
     /// This method will cause an out of bound if the given node type ID does not exist.
     pub(crate) unsafe fn get_unchecked_succinct_node_type_attributes_description(
         &self,
         node_type_id: NodeTypeT,
+        local_total: Option<NodeT>,
+        local_count: Option<NodeT>,
     ) -> String {
-        let number_of_nodes = self.get_unchecked_number_of_nodes_from_node_type_id(node_type_id);
+        let total_nodes = local_total.unwrap_or_else(|| self.get_nodes_number());
+        let number_of_nodes = local_count
+            .unwrap_or_else(|| self.get_unchecked_number_of_nodes_from_node_type_id(node_type_id));
         if number_of_nodes > 1 {
-            let percentage_of_nodes =
-                number_of_nodes as f64 / self.get_nodes_number() as f64 * 100.0;
+            let percentage_of_nodes = number_of_nodes as f64 / total_nodes as f64 * 100.0;
             format!(
                 "{number_of_nodes} nodes{percentage_of_nodes}",
                 number_of_nodes = to_human_readable_high_integer(number_of_nodes as usize),
@@ -549,12 +554,16 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_type_id`: NodeTypeT - Node ID to query for.
+    /// * `local_total`: Option<NodeT> - The total amount of nodes in this local area. If None, the number of nodes is used.
+    /// * `local_count`: Option<NodeT> - The total amount of nodes of this type in this local area. If None, the amount of nodes of this type in the graph is used.
     ///
     /// # Safety
     /// This method will cause an out of bound if the given node type ID does not exist.
     pub(crate) unsafe fn get_unchecked_succinct_node_type_description(
         &self,
         node_type_id: NodeTypeT,
+        local_total: Option<NodeT>,
+        local_count: Option<NodeT>,
     ) -> String {
         let node_type_name = get_node_type_source_html_url_from_node_type_name(
             self.get_node_type_name_from_node_type_id(node_type_id)
@@ -562,8 +571,11 @@ impl Graph {
                 .as_ref(),
         );
 
-        let description =
-            self.get_unchecked_succinct_node_type_attributes_description(node_type_id);
+        let description = self.get_unchecked_succinct_node_type_attributes_description(
+            node_type_id,
+            local_total,
+            local_count,
+        );
 
         let description = if description.is_empty() {
             description
@@ -581,17 +593,22 @@ impl Graph {
     ///
     /// # Arguments
     /// * `edge_type_id`: EdgeTypeT - edge ID to query for.
+    /// * `local_total`: Option<EdgeT> - The total amount of edges in this local area. If None, the directed number of edges is used.
+    /// * `local_count`: Option<EdgeT> - The total amount of edges of this type in this local area. If None, the amount of edges of this type in the graph is used.
     ///
     /// # Safety
     /// This method will cause an out of bound if the given edge type ID does not exist.
     pub(crate) unsafe fn get_unchecked_succinct_edge_type_attributes_description(
         &self,
         edge_type_id: EdgeTypeT,
+        local_total: Option<EdgeT>,
+        local_count: Option<EdgeT>,
     ) -> String {
-        let number_of_edges = self.get_unchecked_number_of_edges_from_edge_type_id(edge_type_id);
+        let total_edges = local_total.unwrap_or_else(|| self.get_directed_edges_number());
+        let number_of_edges = local_count
+            .unwrap_or_else(|| self.get_unchecked_number_of_edges_from_edge_type_id(edge_type_id));
         if number_of_edges > 1 {
-            let percentage_of_edges =
-                number_of_edges as f64 / self.get_directed_edges_number() as f64 * 100.0;
+            let percentage_of_edges = number_of_edges as f64 / total_edges as f64 * 100.0;
             format!(
                 "{number_of_edges} edges{percentage_of_edges}",
                 number_of_edges = to_human_readable_high_integer(number_of_edges as usize),
@@ -613,12 +630,16 @@ impl Graph {
     ///
     /// # Arguments
     /// * `edge_type_id`: EdgeTypeT - edge ID to query for.
+    /// * `local_total`: Option<EdgeT> - The total amount of edges in this local area. If None, the directed number of edges is used.
+    /// * `local_count`: Option<EdgeT> - The total amount of edges of this type in this local area. If None, the amount of edges of this type in the graph is used.
     ///
     /// # Safety
     /// This method will cause an out of bound if the given edge type ID does not exist.
     pub(crate) unsafe fn get_unchecked_succinct_edge_type_description(
         &self,
         edge_type_id: EdgeTypeT,
+        local_total: Option<EdgeT>,
+        local_count: Option<EdgeT>,
     ) -> String {
         let edge_type_name = get_edge_type_source_html_url_from_edge_type_name(
             self.get_edge_type_name_from_edge_type_id(edge_type_id)
@@ -626,8 +647,11 @@ impl Graph {
                 .as_ref(),
         );
 
-        let description =
-            self.get_unchecked_succinct_edge_type_attributes_description(edge_type_id);
+        let description = self.get_unchecked_succinct_edge_type_attributes_description(
+            edge_type_id,
+            local_total,
+            local_count,
+        );
 
         let description = if description.is_empty() {
             description
@@ -1548,7 +1572,11 @@ impl Graph {
                             "<li><p>Isomorphic node type group containing {} node types ({}), which are: {}.</p></li>",
                         ),
                         to_human_readable_high_integer(isomorphic_node_type_group.len() as usize),
-                        self.get_unchecked_succinct_node_type_attributes_description(isomorphic_node_type_group[0]),
+                        self.get_unchecked_succinct_node_type_attributes_description(
+                            isomorphic_node_type_group[0],
+                            None,
+                            None
+                        ),
                         unsafe {
                             get_unchecked_formatted_list(
                                 &isomorphic_node_type_group
@@ -1607,7 +1635,7 @@ impl Graph {
                             "<li><p>Isomorphic edge type group containing {} edge types ({}), which are: {}.</p></li>",
                         ),
                         to_human_readable_high_integer(isomorphic_edge_type_group.len() as usize),
-                        self.get_unchecked_succinct_edge_type_attributes_description(isomorphic_edge_type_group[0]),
+                        self.get_unchecked_succinct_edge_type_attributes_description(isomorphic_edge_type_group[0], None, None),
                         unsafe {
                             get_unchecked_formatted_list(
                                 &isomorphic_edge_type_group
@@ -1776,9 +1804,7 @@ impl Graph {
                 unreachable!("It does not make sense to require the description of an empty count.")
             }
             1 => format!(
-                concat!(
-                    "a single node type, which is {node_type_description}",
-                ),
+                concat!("a single node type, which is {node_type_description}",),
                 node_type_description = get_node_type_source_html_url_from_node_type_name(
                     self.get_node_type_name_from_node_type_id(count.into_keys().last().unwrap())
                         .unwrap()
@@ -1788,12 +1814,17 @@ impl Graph {
             node_types_number => {
                 let mut count = count.into_iter().collect::<Vec<(NodeTypeT, NodeT)>>();
                 count.sort_by(|(_, a), (_, b)| b.cmp(a));
+                let total_nodes = Some(count.iter().map(|(_, nodes_number)| *nodes_number).sum());
                 let node_type_descriptions = get_unchecked_formatted_list(
                     count
                         .into_iter()
                         .take(10)
-                        .map(|(node_type_id, _)| {
-                            self.get_unchecked_succinct_node_type_description(node_type_id)
+                        .map(|(node_type_id, count)| {
+                            self.get_unchecked_succinct_node_type_description(
+                                node_type_id,
+                                total_nodes,
+                                Some(count),
+                            )
                         })
                         .collect::<Vec<_>>()
                         .as_ref(),
@@ -2013,24 +2044,32 @@ impl Graph {
                 unreachable!("It does not make sense to require the description of an empty count.")
             }
             1 => format!(
-                concat!(
-                    "a single edge type, which is {edge_type_description}",
-                ),
+                concat!("a single edge type, which is {edge_type_description}",),
                 edge_type_description = get_edge_type_source_html_url_from_edge_type_name(
-                    self.get_edge_type_name_from_edge_type_id(
-                        count.into_keys().last().unwrap()
-                    ).unwrap().as_ref()
+                    self.get_edge_type_name_from_edge_type_id(count.into_keys().last().unwrap())
+                        .unwrap()
+                        .as_ref()
                 )
             ),
             edge_types_number => {
                 let mut edge_type_counts = count.into_iter().collect::<Vec<_>>();
                 edge_type_counts.par_sort_unstable_by(|(_, a), (_, b)| b.cmp(a));
+                let total_edges = Some(
+                    edge_type_counts
+                        .iter()
+                        .map(|(_, edges_number)| *edges_number)
+                        .sum(),
+                );
                 let edge_type_descriptions = get_unchecked_formatted_list(
                     edge_type_counts
                         .into_iter()
                         .take(10)
-                        .map(|(edge_type_id, _)| {
-                            self.get_unchecked_succinct_edge_type_description(edge_type_id)
+                        .map(|(edge_type_id, count)| {
+                            self.get_unchecked_succinct_edge_type_description(
+                                edge_type_id,
+                                total_edges,
+                                Some(count),
+                            )
                         })
                         .collect::<Vec<_>>()
                         .as_ref(),
