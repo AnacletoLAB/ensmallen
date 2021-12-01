@@ -1421,7 +1421,7 @@ impl Graph {
                     concat!(
                         "A star is a tree with a maximal depth of one, where nodes ",
                         "with maximal unique degree one are connected to a central ",
-                        "root node with high degree."
+                        "root node with a high degree."
                     )
                 ),
                 tendril_stars_description=self.get_report_of_specific_tree_like_oddities(
