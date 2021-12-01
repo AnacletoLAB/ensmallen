@@ -49,8 +49,6 @@ mod parameters_validators;
 pub use self::parameters_validators::*;
 mod getters_boolean;
 pub use self::getters_boolean::*;
-mod replace;
-pub use self::replace::*;
 
 mod dijkstra;
 pub use self::dijkstra::*;
@@ -73,6 +71,7 @@ mod getters;
 mod graph;
 mod hash;
 mod holdouts;
+mod isomorphism;
 mod iter_queries;
 mod iters;
 mod laplacian;
@@ -97,7 +96,6 @@ mod types;
 mod url_utilities;
 mod vertex_cover;
 mod walks;
-mod isomorphism;
 pub mod walks_parameters;
 pub use edge_list_utils::*;
 

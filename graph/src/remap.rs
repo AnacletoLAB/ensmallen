@@ -1,8 +1,9 @@
-use crate::constructors::build_graph_from_integers;
-
 use super::*;
+use crate::constructors::build_graph_from_integers;
 use itertools::Itertools;
+use log::info;
 use rayon::iter::{IntoParallelIterator, ParallelIterator};
+use std::collections::HashMap;
 
 impl Graph {
     /// Return whether nodes are remappable to those of the given graph.
@@ -33,34 +34,101 @@ impl Graph {
             })
     }
 
-    /// Returns graph remapped using given node IDs ordering.
+    /// Returns graph remapped using given node IDs ordering and vocabulary.
     ///
     /// # Arguments
-    /// * `node_ids`: Vec<NodeT> - The node Ids to remap the graph to.
+    /// * `positions`: &[NodeT] - Vector of the node IDs representing the new positions of the node names.
+    /// * `vocabulary`: Vocabulary<NodeT> - New vocabulary to use to remap the nodes.
+    ///
+    /// # Examples
+    ///
+    /// ## Remapping one to one
+    /// Considering the use case where you need to remap the graph nodes vocabulary
+    /// to another mapping where to each node curresponding exactly to a single new
+    /// entity.
+    ///
+    /// TODO: add code example.
+    ///
+    /// ## Remapping many to one
+    /// Considering the use case where you need to remap the graph nodes vocabulary
+    /// to another mapping where to multiple node may currespond the same destination.
+    /// One such use case, for instance, may be the remapping of protein nodes to the
+    /// relative coding gene (as many proteins usually do map to the same gene).
+    ///
+    /// In such cases, we expect the node IDs vector to contain the same value (the ID
+    /// relative to the gene) repeated multiple times for each of the proteins that
+    /// are meant to remap to the aforementioned gene.
+    ///
+    /// If the original nodes have node types, these need to be aggregates into the target
+    /// node through union, so if the source nodes have for instance as node types
+    /// `{"NamedThing"}` and `{"Drug"}`, the resulting node will have as node types
+    /// the union of the previous node types set `{"NamedThing", "Drug"}`.
+    ///
+    /// If the different nodes already share a common neighbouring node, merging the nodes
+    /// will turn the original graph into a multi-graph, that is, a graph where multiple
+    /// edges exist between some pair of nodes in the graph.
+    ///
+    /// TODO: add code example.
     ///
     /// # Safety
-    /// This method will cause a panic if the node IDs are either:
-    /// * Not unique
-    /// * Not available for each of the node IDs of the graph.
-    pub unsafe fn remap_unchecked_from_node_ids(&self, node_ids: Vec<NodeT>) -> Graph {
-        let new_node_types = self.node_types.as_ref().as_ref().map(|node_types| {
-            let remapped_node_ids = node_ids
-                .iter()
-                .map(|node_id| node_types.ids[*node_id as usize].clone())
-                .collect::<Vec<_>>();
-            NodeTypeVocabulary::from_structs(remapped_node_ids, node_types.vocabulary.clone())
-        });
-        let new_nodes_vocabulary: Vocabulary<NodeT> = Vocabulary::from_reverse_map(
-            node_ids
-                .into_par_iter()
-                .map(|node_id| self.get_unchecked_node_name_from_node_id(node_id))
-                .collect(),
-        )
-        .unwrap();
-        let new_node_positions = self
-            .par_iter_node_names()
-            .map(|node_name| new_nodes_vocabulary.get(&node_name).unwrap())
-            .collect::<Vec<NodeT>>();
+    /// The method is undefined when the provided node IDs are not compatible with
+    /// the current graph instance and may raise a panic.
+    unsafe fn remap_unchecked_from_positions_and_vocabulary(
+        &self,
+        positions: &[NodeT],
+        vocabulary: Vocabulary<NodeT>,
+    ) -> Graph {
+        // The node IDs are expected to have the same length
+        // as the number of nodes in the current graph instance.
+        if positions.len() as NodeT != self.get_nodes_number() {
+            panic!(
+                concat!(
+                    "The provided positions is not compatible with ",
+                    "the current graph instance. You have provided a node IDs ",
+                    "vector of length {}, while the number of nodes in the ",
+                    "current graph is {}."
+                ),
+                positions.len(),
+                self.get_nodes_number()
+            );
+        }
+
+        // Create the new Node Type Vocabulary object
+        // if the current graph instance has node types.
+        let new_node_types = if let Some(node_types) = self.node_types.as_ref() {
+            // First we create the empty vector of node type IDs, with initially
+            // value `None`, representing `unknown` node types.
+            let mut remapped_node_type_ids: Vec<Option<Vec<NodeTypeT>>> =
+                vec![None; vocabulary.len()];
+            // Secondly, we iterate over the provided node IDs vector and sequentially
+            // merge the nodes' node types with the remapped node types.
+            self.iter_node_ids_and_node_type_ids()
+                .for_each(|(node_id, node_type_ids)| {
+                    // If the node originally had node types
+                    if let Some(node_type_ids) = node_type_ids {
+                        // We retrieve the new position for the node types.
+                        let new_node_id = positions[node_id as usize] as usize;
+                        // Assign / extend inplace the set of node type IDs that are already
+                        // present.
+                        if let Some(new_node_type_ids) = &mut remapped_node_type_ids[new_node_id] {
+                            node_type_ids.into_iter().for_each(|node_type_id| {
+                                if !new_node_type_ids.contains(&node_type_id) {
+                                    new_node_type_ids.push(node_type_id);
+                                }
+                            });
+                        } else {
+                            remapped_node_type_ids[new_node_id] = Some(node_type_ids);
+                        }
+                    }
+                });
+            Some(NodeTypeVocabulary::from_structs(
+                remapped_node_type_ids,
+                node_types.vocabulary.clone(),
+            ))
+        } else {
+            None
+        };
+
         build_graph_from_integers(
             Some(
                 self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
@@ -68,15 +136,15 @@ impl Graph {
                         (
                             0,
                             (
-                                new_node_positions[src_name_id as usize],
-                                new_node_positions[dst_name_id as usize],
+                                positions[src_name_id as usize],
+                                positions[dst_name_id as usize],
                                 edge_type_id,
                                 weight.unwrap_or(WeightT::NAN),
                             ),
                         )
                     }),
             ),
-            Arc::new(new_nodes_vocabulary),
+            Arc::new(vocabulary),
             Arc::new(new_node_types),
             self.edge_types
                 .as_ref()
@@ -88,11 +156,35 @@ impl Graph {
             Some(false),
             Some(false),
             Some(self.get_directed_edges_number()),
-            self.has_singleton_nodes(),
-            self.has_singleton_nodes_with_selfloops(),
+            true,
+            true,
             self.get_name(),
         )
         .unwrap()
+    }
+
+    /// Returns graph remapped using given node IDs ordering.
+    ///
+    /// # Arguments
+    /// * `node_ids`: Vec<NodeT> - The node Ids to remap the graph to.
+    ///
+    /// # Safety
+    /// This method will cause a panic if the node IDs are either:
+    /// * Not unique
+    /// * Not available for each of the node IDs of the graph.
+    pub unsafe fn remap_unchecked_from_node_ids(&self, node_ids: Vec<NodeT>) -> Graph {
+        let new_nodes_vocabulary: Vocabulary<NodeT> = Vocabulary::from_reverse_map(
+            node_ids
+                .into_par_iter()
+                .map(|node_id| self.get_unchecked_node_name_from_node_id(node_id))
+                .collect(),
+        )
+        .unwrap();
+        let positions = self
+            .par_iter_node_names()
+            .map(|node_name| new_nodes_vocabulary.get(&node_name).unwrap())
+            .collect::<Vec<NodeT>>();
+        self.remap_unchecked_from_positions_and_vocabulary(&positions, new_nodes_vocabulary)
     }
 
     /// Returns graph remapped using given node IDs ordering.
@@ -162,6 +254,71 @@ impl Graph {
                 .map(|node_name| self.get_node_id_from_node_name(node_name))
                 .collect::<Result<Vec<NodeT>>>()?,
         )
+    }
+
+    /// Returns graph remapped using given node names mapping hashmap.
+    ///
+    /// # Arguments
+    /// * `node_names_map`: HashMap<String, String> - The node names to remap the graph to.
+    ///
+    pub fn remap_from_node_names_map(
+        &self,
+        node_names_map: HashMap<String, String>,
+    ) -> Result<Graph> {
+        // First of all, we need to check that the node names map is indeed mono-directional
+        // and does not contain loops or circles.
+        info!("Checking that all original node names exist in the current graph.");
+        node_names_map
+            .keys()
+            .map(|node_name| {
+                if self.has_node_name(node_name) {
+                    Ok(())
+                } else {
+                    Err(format!(
+                        concat!(
+                            "One of the provided source nodes, {}, does not exist in ",
+                            "the current graph instance."
+                        ),
+                        node_name
+                    ))
+                }
+            })
+            .collect::<Result<()>>()?;
+        info!("Checking for the existance of circles in provided mapping.");
+        node_names_map
+            .iter()
+            .map(|(original_node_name, destination_node_name)| {
+                if original_node_name != destination_node_name
+                    && node_names_map
+                        .get(destination_node_name)
+                        .map_or(false, |further_step| further_step == destination_node_name)
+                {
+                    Err(format!(
+                        concat!(
+                            "A loop or chain was identified in the provided mapping, that is a node existing in the original ",
+                            "graph `{}` is remapped to another node `{}` that also exists in the original graph. This ",
+                            "latter node is then remapped to yet another node, causing therefore either a chain or a loop of ",
+                            "redirections. Since resolving redirection loops is not generally defined, and the expected ",
+                            "behaviour changes from case to case, please provide a mapping where the mapping is free of ",
+                            "these rediction chains and loops."
+                        ),
+                        original_node_name,
+                        destination_node_name
+                    ))
+                } else {
+                    Ok(())
+                }
+            }).collect::<Result<()>>()?;
+
+        let new_nodes_vocabulary: Vocabulary<NodeT> =
+            Vocabulary::from_reverse_map(node_names_map.values().cloned().collect()).unwrap();
+        let positions = self
+            .par_iter_node_names()
+            .map(|node_name| new_nodes_vocabulary.get(&node_name).unwrap())
+            .collect::<Vec<NodeT>>();
+        Ok(unsafe {
+            self.remap_unchecked_from_positions_and_vocabulary(&positions, new_nodes_vocabulary)
+        })
     }
 
     /// Return graph remapped towards nodes of the given graph.
