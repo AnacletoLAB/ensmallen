@@ -996,7 +996,7 @@ impl Graph {
                     number_of_involved_nodes = to_human_readable_high_integer(number_of_involved_nodes as usize),
                     percentage_of_involved_nodes= if percentage_of_involved_nodes > 0.01 {
                         format!(
-                            " ({percentage_of_involved_nodes:.2}%) ",
+                            " ({percentage_of_involved_nodes:.2}%)",
                             percentage_of_involved_nodes=percentage_of_involved_nodes
                         )
                     } else {
