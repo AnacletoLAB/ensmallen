@@ -282,6 +282,9 @@ impl Graph {
                         cliques.push(possible_new_clique);
                     }
                 });
+                cliques.iter_mut().for_each(|clique|{
+                    clique.push(node_id);
+                });
                 Some(cliques)
             })
             .flat_map(move |cliques| {
