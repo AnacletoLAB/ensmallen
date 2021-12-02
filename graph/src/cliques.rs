@@ -184,7 +184,10 @@ impl Graph {
                                         neighbour_node_id,
                                     )
                                 }
-                                .filter(|dst| neighbours.contains(dst))
+                                .filter(|dst| {
+                                    let degree = node_degrees[*dst as usize].load(Ordering::Relaxed);
+                                    degree >= minimum_degree && degree != NODE_NOT_PRESENT && neighbours.contains(dst)
+                                })
                                 .take(minimum_degree as usize)
                                 .count() as NodeT
                                     == minimum_degree
