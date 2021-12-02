@@ -214,7 +214,12 @@ impl Graph {
             );
             current_iteration += 1;
         }
-
+        info!(
+            "Searching cliques in the remaining {} nodes",
+            to_human_readable_high_integer(
+                (self.get_nodes_number() - total_removed_nodes) as usize
+            )
+        );
         // Convert the node degrees atomic vector into normal U32 values.
         let node_degrees =
             unsafe { std::mem::transmute::<Vec<AtomicU32>, Vec<NodeT>>(node_degrees) };
