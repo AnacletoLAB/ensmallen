@@ -21,7 +21,9 @@ impl ToString for Circle {
             };
         let show_node_type = if self.graph.has_node_types() {
             node_ids.as_ref().map_or(false, |node_ids| unsafe {
-                !self.graph.has_unchecked_isomorphic_node_types_from_node_ids(node_ids)
+                !self
+                    .graph
+                    .has_unchecked_isomorphic_node_types_from_node_ids(node_ids)
             })
         } else {
             false
@@ -54,25 +56,19 @@ impl ToString for Circle {
                 )
             },
             node_types_counts = if let Some(node_ids) = &node_ids {
-                if self.len() > 5 {
-                    unsafe {
-                        self.graph
-                            .get_unchecked_node_type_id_counts_hashmap_from_node_ids(
-                                node_ids.as_ref(),
-                            )
-                            .map_or_else(
-                                |_| "".to_string(),
-                                |count| {
-                                    format!(
-                                        " Its nodes have {}.",
-                                        self.graph
-                                            .get_unchecked_node_types_description_from_count(count)
-                                    )
-                                },
-                            )
-                    }
-                } else {
-                    "".to_string()
+                unsafe {
+                    self.graph
+                        .get_unchecked_node_type_id_counts_hashmap_from_node_ids(node_ids.as_ref())
+                        .map_or_else(
+                            |_| "".to_string(),
+                            |count| {
+                                format!(
+                                    " Its nodes have {}.",
+                                    self.graph
+                                        .get_unchecked_node_types_description_from_count(count)
+                                )
+                            },
+                        )
                 }
             } else {
                 "".to_string()

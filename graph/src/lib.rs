@@ -170,3 +170,6 @@ pub use node_tuples::*;
 
 mod dendritic_tree;
 pub use dendritic_tree::*;
+
+mod cliques;
+pub use cliques::*;
