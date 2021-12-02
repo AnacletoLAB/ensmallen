@@ -149,11 +149,18 @@ impl Graph {
                     // We retrieve the current node degree.
                     let degree = node_degrees[node_id as usize].load(Ordering::Relaxed);
                     // If the degree is zero, we have already dropped this node from the game.
-                    if degree == 0 {
+                    if degree == 0 || degree == NODE_NOT_PRESENT {
                         return 0;
                     }
                     // If the degree is higher than the minimum degree
                     if degree > minimum_degree {
+                        // If this node has neighbours 
+                        if unsafe{self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id)}.any(|neighbour_node_id|{
+                            neighbour_node_id > node_id
+                        }){
+                            node_degrees[node_id as usize].store(NODE_NOT_PRESENT, Ordering::Relaxed);
+                            return 1;
+                        }
                         // If we are in a node that has, currently, degree higher or equal
                         // than the minimum degree, we check if is NOT inside a clique
                         // of size at least equal to the provided minimum degree.
@@ -161,9 +168,11 @@ impl Graph {
                             self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id)
                         }
                         .filter(|&dst| {
-                            node_degrees[dst as usize].load(Ordering::Relaxed) >= minimum_degree
+                            let degree = node_degrees[dst as usize].load(Ordering::Relaxed);
+                            degree >= minimum_degree && degree != NODE_NOT_PRESENT
                         })
                         .collect::<HashSet<NodeT>>();
+
                         // To prove that this node is NOT inside a clique of the desired
                         // minimum size, we need to check its neighbours and find at
                         // least `neighbours.len() - not_shared_neighbours < minimum_degree`.
@@ -191,12 +200,13 @@ impl Graph {
                     node_degrees[node_id as usize].store(0, Ordering::Relaxed);
                     unsafe { self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id) }
                         .filter(|&dst| {
-                            node_degrees[dst as usize]
-                                .fetch_update(Ordering::Relaxed, Ordering::Relaxed, |degree| {
-                                    Some(degree.saturating_sub(1))
-                                })
-                                .unwrap()
-                                == 1
+                            let degree = node_degrees[dst as usize].load(Ordering::Relaxed);
+                            if degree > 0 && degree != NODE_NOT_PRESENT {
+                                node_degrees[dst as usize].store(degree - 1, Ordering::Relaxed);
+                                true
+                            } else {
+                                false
+                            }
                         })
                         .count() as NodeT
                         + 1
