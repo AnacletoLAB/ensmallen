@@ -242,7 +242,7 @@ impl Graph {
                 neighbours.into_iter().skip(1).for_each(|node_id| {
                     // If the current neighbour wont fit in any of the other cliques
                     // we need to prepare a vector where to store its current matches.
-                    let mut possible_new_clique = Vec::new();
+                    let mut possible_new_cliques = Vec::new();
                     // We start to iterate over the existing growing cliques.
                     let number_of_matches = cliques
                         .iter_mut()
@@ -250,8 +250,12 @@ impl Graph {
                             // We count the number of matches in the current clique.
                             let matches = iter_set::intersection(
                                 clique.iter().cloned(),
-                                self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id)
-                            ).collect::<Vec<NodeT>>();
+                                self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
+                                    node_id,
+                                )
+                                .filter(|&dst| node_degrees[dst as usize] > 0),
+                            )
+                            .collect::<Vec<NodeT>>();
                             // If we have a perfect match we can add the current
                             // node to this clique. Note that we cannot stop
                             // at this point, as the node may be shared between
@@ -264,7 +268,7 @@ impl Graph {
                             // have some matches we need to store these matches
                             // in the new clique we are growing for this node.
                             } else if matches.len() > 0 {
-                                possible_new_clique.extend(matches);
+                                possible_new_cliques.push(matches);
                                 0
                             } else {
                                 0
@@ -274,18 +278,30 @@ impl Graph {
                     // If the total number of matches is zero
                     if number_of_matches == 0 {
                         // We add the current node to the currently growing clique
-                        possible_new_clique.push(node_id);
-                        // We sort the new clique
-                        possible_new_clique.sort_unstable();
-                        possible_new_clique.dedup();
+                        if possible_new_cliques.is_empty() {
+                            possible_new_cliques.push(Vec::new());
+                        }
+                        possible_new_cliques.iter_mut().for_each(|clique| {
+                            clique.push(node_id);
+                            clique.sort_unstable();
+                        });
                         // and push the clique to the set of cliques.
-                        cliques.push(possible_new_clique);
+                        cliques.extend(possible_new_cliques);
                     }
                 });
-                cliques.iter_mut().for_each(|clique|{
-                    clique.push(node_id);
-                });
-                Some(cliques)
+                Some(
+                    cliques
+                        .into_iter()
+                        .filter_map(|mut clique| {
+                            if (clique.len() as NodeT) < minimum_degree {
+                                None
+                            } else {
+                                clique.push(node_id);
+                                Some(clique)
+                            }
+                        })
+                        .collect::<Vec<Vec<NodeT>>>(),
+                )
             })
             .flat_map(move |cliques| {
                 cliques
