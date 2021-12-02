@@ -232,7 +232,7 @@ impl Graph {
                 // neighbour of the root node.
                 let mut cliques: Vec<Vec<NodeT>> = vec![vec![neighbours[0]]];
                 // We iterate over the neighbours
-                neighbours.into_iter().for_each(|node_id| {
+                neighbours.into_iter().skip(1).for_each(|node_id| {
                     // If the current neighbour wont fit in any of the other cliques
                     // we need to prepare a vector where to store its current matches.
                     let mut possible_new_clique = Vec::new();
