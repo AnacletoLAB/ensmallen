@@ -203,13 +203,15 @@ impl Graph {
                     node_degrees[node_id as usize].store(0, Ordering::Relaxed);
                     unsafe { self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id) }
                         .filter(|&dst| {
-                            let degree = node_degrees[dst as usize].load(Ordering::Relaxed);
-                            if degree > 0 && degree != NODE_NOT_PRESENT {
-                                node_degrees[dst as usize].store(degree - 1, Ordering::Relaxed);
-                                true
-                            } else {
-                                false
-                            }
+                            node_degrees[dst as usize]
+                                .fetch_update(Ordering::Relaxed, Ordering::Relaxed, |mut degree| {
+                                    if degree > 0 && degree != NODE_NOT_PRESENT {
+                                        degree -= 1;
+                                    }
+                                    Some(degree)
+                                })
+                                .unwrap()
+                                == 1
                         })
                         .count() as NodeT
                         + 1
