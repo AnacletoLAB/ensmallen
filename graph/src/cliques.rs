@@ -203,7 +203,7 @@ impl Graph {
             if currently_removed_nodes == 0 {
                 break;
             }
-            total_removed_nodes += total_removed_nodes;
+            total_removed_nodes += currently_removed_nodes;
             info!(
                 "Iteration #{current_iteration}: removed {currently_removed_nodes} more nodes, {percentage:.2}% out of total.",
                 current_iteration=current_iteration,
