@@ -158,7 +158,7 @@ impl Graph {
                         // than the minimum degree, we check if is NOT inside a clique
                         // of size at least equal to the provided minimum degree.
                         let neighbours = unsafe {
-                            self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                            self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id)
                         }
                         .filter(|&dst| {
                             node_degrees[dst as usize].load(Ordering::Relaxed) >= minimum_degree
@@ -171,7 +171,7 @@ impl Graph {
                             .iter()
                             .filter(|&&neighbour_node_id| {
                                 unsafe {
-                                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(
+                                    self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
                                         neighbour_node_id,
                                     )
                                 }
@@ -189,7 +189,7 @@ impl Graph {
                         }
                     }
                     node_degrees[node_id as usize].store(0, Ordering::Relaxed);
-                    unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id) }
+                    unsafe { self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id) }
                         .filter(|&dst| {
                             node_degrees[dst as usize]
                                 .fetch_update(Ordering::Relaxed, Ordering::Relaxed, |degree| {
@@ -246,35 +246,27 @@ impl Graph {
                     // We start to iterate over the existing growing cliques.
                     let number_of_matches = cliques
                         .iter_mut()
-                        .map(|clique| {
+                        .map(|clique| unsafe {
                             // We count the number of matches in the current clique.
-                            let number_of_matches = clique
-                                .iter()
-                                .filter(|&&dst| self.has_edge_from_node_ids(node_id, dst))
-                                .count();
+                            let matches = iter_set::intersection(
+                                clique.iter().cloned(),
+                                self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id)
+                            ).collect::<Vec<NodeT>>();
                             // If we have a perfect match we can add the current
                             // node to this clique. Note that we cannot stop
                             // at this point, as the node may be shared between
                             // multiple cliques.
-                            if number_of_matches == clique.len() {
+                            if matches.len() == clique.len() {
                                 clique.push(node_id);
+                                clique.par_sort_unstable();
                                 1
                             // Otherwise if the match is not perfect but we still
                             // have some matches we need to store these matches
                             // in the new clique we are growing for this node.
-                            } else if number_of_matches > 0 {
-                                // We iterate the nodes in this clique
-                                clique.iter().for_each(|&dst| {
-                                    // and if the provided node is not already present
-                                    // in the current growing clique
-                                    if !possible_new_clique.contains(&dst)
-                                        // and an edge exists
-                                        && self.has_edge_from_node_ids(node_id, dst)
-                                    {
-                                        // we add it to the growing clique.
-                                        possible_new_clique.push(dst);
-                                    }
-                                });
+                            } else if matches.len() > 0 {
+                                possible_new_clique.extend(matches);
+                                possible_new_clique.par_sort_unstable();
+                                possible_new_clique.dedup();
                                 0
                             } else {
                                 0
@@ -286,6 +278,8 @@ impl Graph {
                     if number_of_matches == 0 || !possible_new_clique.is_empty() {
                         // We add the current node to the currently growing clique
                         possible_new_clique.push(node_id);
+                        // We sort the new clique
+                        possible_new_clique.par_sort_unstable();
                         // and push the clique to the set of cliques.
                         cliques.push(possible_new_clique);
                     }
