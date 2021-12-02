@@ -198,7 +198,7 @@ impl Graph {
                                 .unwrap()
                                 == 1
                         })
-                        .count()
+                        .count() as NodeT
                         + 1
                 })
                 .sum::<NodeT>();
