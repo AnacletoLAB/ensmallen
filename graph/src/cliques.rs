@@ -271,9 +271,8 @@ impl Graph {
                             }
                         })
                         .sum::<usize>();
-                    // If the total number of matches is zero or the new
-                    // clique is not empty.
-                    if number_of_matches == 0 || !possible_new_clique.is_empty() {
+                    // If the total number of matches is zero
+                    if number_of_matches == 0 {
                         // We add the current node to the currently growing clique
                         possible_new_clique.push(node_id);
                         // We sort the new clique
