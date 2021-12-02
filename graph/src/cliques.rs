@@ -258,15 +258,13 @@ impl Graph {
                             // multiple cliques.
                             if matches.len() == clique.len() {
                                 clique.push(node_id);
-                                clique.par_sort_unstable();
+                                clique.sort_unstable();
                                 1
                             // Otherwise if the match is not perfect but we still
                             // have some matches we need to store these matches
                             // in the new clique we are growing for this node.
                             } else if matches.len() > 0 {
                                 possible_new_clique.extend(matches);
-                                possible_new_clique.par_sort_unstable();
-                                possible_new_clique.dedup();
                                 0
                             } else {
                                 0
@@ -279,7 +277,7 @@ impl Graph {
                         // We add the current node to the currently growing clique
                         possible_new_clique.push(node_id);
                         // We sort the new clique
-                        possible_new_clique.par_sort_unstable();
+                        possible_new_clique.sort_unstable();
                         // and push the clique to the set of cliques.
                         cliques.push(possible_new_clique);
                     }
