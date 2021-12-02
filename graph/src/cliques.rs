@@ -190,14 +190,16 @@ impl Graph {
                     }
                     node_degrees[node_id as usize].store(0, Ordering::Relaxed);
                     unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id) }
-                        .for_each(|dst| {
+                        .filter(|&dst| {
                             node_degrees[dst as usize]
                                 .fetch_update(Ordering::Relaxed, Ordering::Relaxed, |degree| {
                                     Some(degree.saturating_sub(1))
                                 })
-                                .unwrap();
-                        });
-                    1
+                                .unwrap()
+                                == 1
+                        })
+                        .count()
+                        + 1
                 })
                 .sum::<NodeT>();
             if currently_removed_nodes == 0 {
