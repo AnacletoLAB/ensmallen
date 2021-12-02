@@ -278,6 +278,7 @@ impl Graph {
                         possible_new_clique.push(node_id);
                         // We sort the new clique
                         possible_new_clique.sort_unstable();
+                        possible_new_clique.dedup();
                         // and push the clique to the set of cliques.
                         cliques.push(possible_new_clique);
                     }
