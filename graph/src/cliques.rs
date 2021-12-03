@@ -459,6 +459,9 @@ impl Graph {
             .into_iter()
             .progress_with(pb)
             .filter_map(move |node_id| {
+                if node_degrees[node_id as usize] < minimum_degree {
+                    return None;
+                }
                 // First of all, we check if this node is a root of isomorphic nodes
                 // and whether it has a degree equal to the number of nodes in the isomorphic
                 // group: if this is true, the maximum clique of this node is equal to
@@ -470,19 +473,12 @@ impl Graph {
                         return Some(vec![clique]);
                     }
                 }
-                if node_degrees[node_id as usize] < minimum_degree {
-                    return None;
-                }
                 // Otherwise we need to check whether this node is in a clique.
                 let neighbours = unsafe {
                     self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id)
                 }
                 .filter(|&dst| node_degrees[dst as usize] >= minimum_degree)
                 .collect::<Vec<NodeT>>();
-                // If in the meantime its neighbours were removed, we can skip this node.
-                if neighbours.is_empty() {
-                    return None;
-                }
                 // The cliques vectors starts out as the root node and the first
                 // neighbour of the root node.
                 let mut clique = vec![node_id, neighbours[0]];
@@ -523,10 +519,6 @@ impl Graph {
                             // have some matches we need to store these matches
                             // in the new clique we are growing for this node.
                             } else if matches.len() > 0 {
-                                node_degrees[inner_node_id as usize] -= matches.len() as NodeT;
-                                matches.iter().for_each(|&clique_node_id| {
-                                    node_degrees[clique_node_id as usize] -= 1;
-                                });
                                 possible_new_cliques.push(matches);
                                 0
                             } else {
@@ -542,6 +534,9 @@ impl Graph {
                         }
                         possible_new_cliques.iter_mut().for_each(|clique| {
                             clique.push(inner_node_id);
+                            clique.iter().for_each(|&clique_node_id| {
+                                node_degrees[clique_node_id as usize] = node_degrees[clique_node_id as usize].saturating_sub(clique.len() as NodeT);
+                            });
                             clique.sort_unstable();
                         });
                         // and push the clique to the set of cliques.
