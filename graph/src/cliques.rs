@@ -356,8 +356,7 @@ impl Graph {
                                         // isomorphic node group.
                                         node_degrees[node_id as usize].store(0, Ordering::Relaxed);
                                         node_id
-                                    }),
-                                ).chain(vec![root_node_id].into_iter()).collect::<Vec<NodeT>>()
+                                    }).chain(vec![root_node_id].into_iter()).collect::<Vec<NodeT>>())
                             } else {
                                 None
                             }
