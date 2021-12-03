@@ -393,7 +393,6 @@ impl Graph {
         // Finally, we compute the dominating set of the nodes
         // and we obtain the set of nodes from where cliques may
         // be computed.
-        let mut number_of_covered_nodes = 0;
         let mut dominating_set = Vec::new();
         loop {
             let (node_id, degree) = node_degrees_copy.par_iter().cloned().argmax().unwrap();
@@ -472,7 +471,9 @@ impl Graph {
                 }
                 // The cliques vectors starts out as the root node and the first
                 // neighbour of the root node.
-                let mut cliques: Vec<Vec<NodeT>> = vec![vec![node_id, neighbours[0]]];
+                let mut clique = vec![node_id, neighbours[0]];
+                clique.sort_unstable();
+                let mut cliques: Vec<Vec<NodeT>> = vec![clique];
                 // We iterate over the neighbours
                 neighbours.into_iter().skip(1).for_each(|inner_node_id| {
                     // If the current neighbour wont fit in any of the other cliques
