@@ -496,7 +496,7 @@ impl Graph {
                     let found_clique = AtomicBool::new(false);
                     let mut possible_new_cliques = cliques
                         .par_iter_mut()
-                        .filter_map(|clique| unsafe {
+                        .filter_map(|clique| {
                             // We count the number of matches in the current clique.
                             let matches = iter_set::intersection(
                                 clique.iter().cloned(),
@@ -516,6 +516,8 @@ impl Graph {
                             // have some matches we need to store these matches
                             // in the new clique we are growing for this node.
                             } else if matches.len() > 1 {
+                                matches.push(inner_node_id);
+                                clique.sort_unstable();
                                 Some(matches)
                             } else {
                                 None
@@ -524,10 +526,6 @@ impl Graph {
                         .collect::<Vec<Vec<NodeT>>>();
                     // If the total number of matches is zero
                     if !found_clique.load(Ordering::Relaxed) {
-                        possible_new_cliques.iter_mut().for_each(|clique| {
-                            clique.push(inner_node_id);
-                            clique.sort_unstable();
-                        });
                         possible_new_cliques.sort_unstable();
                         possible_new_cliques.dedup();
                         // and push the clique to the set of cliques.
