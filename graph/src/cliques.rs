@@ -394,8 +394,10 @@ impl Graph {
         // and we obtain the set of nodes from where cliques may
         // be computed.
         let mut number_of_covered_nodes = 0;
+        let mut dominating_set = Vec::new();
         while number_of_covered_nodes != node_ids.len() {
             let (node_id, _) = node_degrees_copy.par_iter().cloned().argmax().unwrap();
+            dominating_set.push(node_id as NodeT);
             let covered_nodes = unsafe {
                 self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id as NodeT)
             }
@@ -423,22 +425,15 @@ impl Graph {
             };
         }
 
-        // Further reduce the node IDs, using the mask obtained
-        // from the dominating node set.
-        node_ids = node_ids
-            .into_par_iter()
-            .filter(|&node_id| node_degrees_copy[node_id as usize] > 0)
-            .collect();
-
         info!(
             "Dominating set with {} nodes.",
-            to_human_readable_high_integer(node_ids.len())
+            to_human_readable_high_integer(dominating_set.len())
         );
 
-        let pb = get_loading_bar(true, "Computing cliques", node_ids.len());
+        let pb = get_loading_bar(true, "Computing cliques", dominating_set.len());
 
         // Actually compute and return cliques.
-        Ok(node_ids
+        Ok(dominating_set
             .into_iter()
             .progress_with(pb)
             .filter_map(move |node_id| {
