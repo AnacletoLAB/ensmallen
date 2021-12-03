@@ -410,7 +410,7 @@ impl Graph {
                 .filter(|&dst| node_degrees[dst as usize].load(Ordering::Relaxed) >= minimum_degree)
                 .collect::<Vec<NodeT>>();
                 // If in the meantime its neighbours were removed, we can skip this node.
-                if neighbours.is_empty(){
+                if neighbours.is_empty() {
                     return None;
                 }
                 // The cliques vectors starts out as the root node (implicit) and the first
@@ -455,7 +455,9 @@ impl Graph {
                                         .fetch_update(
                                             Ordering::Acquire,
                                             Ordering::Acquire,
-                                            |degree| Some(degree - clique.len() as NodeT),
+                                            |degree| {
+                                                Some(degree.saturating_sub(clique.len() as NodeT))
+                                            },
                                         )
                                         .unwrap();
                                     clique.iter().for_each(|&clique_node_id| {
@@ -463,7 +465,7 @@ impl Graph {
                                             .fetch_update(
                                                 Ordering::Acquire,
                                                 Ordering::Acquire,
-                                                |degree| Some(degree - 1),
+                                                |degree| Some(degree.saturating_sub(1)),
                                             )
                                             .unwrap();
                                     });
