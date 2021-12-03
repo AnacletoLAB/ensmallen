@@ -350,14 +350,14 @@ impl Graph {
                                     candidate_isomorphic_group.into_iter().skip(1),
                                     self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
                                         root_node_id,
-                                    ).map(|node_id| {
+                                    )).map(|node_id| {
                                         // We mark this node as with no degree, since it will
                                         // be functionally merged with the root node of this
                                         // isomorphic node group.
                                         node_degrees[node_id as usize].store(0, Ordering::Relaxed);
                                         node_id
                                     }),
-                                ).chain(vec![root_node_id].into_iter()).collect::<Vec<NodeT>>())
+                                ).chain(vec![root_node_id].into_iter()).collect::<Vec<NodeT>>()
                             } else {
                                 None
                             }
@@ -397,7 +397,11 @@ impl Graph {
         info!(
             "Computing dominating set for {} nodes.",
             to_human_readable_high_integer(
-                node_degrees.par_iter().cloned().filter(|&degree| degree > 0).count()
+                node_degrees
+                    .par_iter()
+                    .cloned()
+                    .filter(|&degree| degree > 0)
+                    .count()
             )
         );
         let mut node_degrees_copy = node_degrees.clone();
