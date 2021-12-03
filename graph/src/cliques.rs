@@ -498,7 +498,7 @@ impl Graph {
                         .par_iter_mut()
                         .filter_map(|clique| {
                             // We count the number of matches in the current clique.
-                            let matches = iter_set::intersection(
+                            let mut matches = iter_set::intersection(
                                 clique.iter().cloned(),
                                 neighbours.iter().cloned(),
                             )
@@ -526,6 +526,11 @@ impl Graph {
                         .collect::<Vec<Vec<NodeT>>>();
                     // If the total number of matches is zero
                     if !found_clique.load(Ordering::Relaxed) {
+                        if possible_new_cliques.is_empty(){
+                            let mut clique = vec![node_id, inner_node_id];
+                            clique.sort_unstable();
+                            possible_new_cliques.push(clique);
+                        }
                         possible_new_cliques.sort_unstable();
                         possible_new_cliques.dedup();
                         // and push the clique to the set of cliques.
