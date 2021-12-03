@@ -407,22 +407,33 @@ impl Graph {
                 let neighbours = unsafe {
                     self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id)
                 }
-                .filter(|&dst| node_degrees[dst as usize].load(Ordering::Relaxed) > minimum_degree)
+                .filter(|&dst| node_degrees[dst as usize].load(Ordering::Relaxed) >= minimum_degree)
                 .collect::<Vec<NodeT>>();
+                // If in the meantime its neighbours were removed, we can skip this node.
+                if neighbours.is_empty(){
+                    return None;
+                }
                 // The cliques vectors starts out as the root node (implicit) and the first
                 // neighbour of the root node.
                 let mut cliques: Vec<Vec<NodeT>> = vec![vec![node_id, neighbours[0]]];
                 // We iterate over the neighbours
-                neighbours.into_iter().skip(1).for_each(|inner_node_id| {
-                    // If the current neighbour wont fit in any of the other cliques
-                    // we need to prepare a vector where to store its current matches.
-                    let mut possible_new_cliques = Vec::new();
-                    // We start to iterate over the existing growing cliques.
-                    let number_of_matches = cliques
-                        .iter_mut()
-                        .map(|clique| unsafe {
-                            // We count the number of matches in the current clique.
-                            let matches = iter_set::intersection(
+                neighbours
+                    .into_iter()
+                    .skip(1)
+                    .filter(|&inner_node_id| {
+                        node_degrees[inner_node_id as usize].load(Ordering::Relaxed)
+                            >= minimum_degree
+                    })
+                    .for_each(|inner_node_id| {
+                        // If the current neighbour wont fit in any of the other cliques
+                        // we need to prepare a vector where to store its current matches.
+                        let mut possible_new_cliques = Vec::new();
+                        // We start to iterate over the existing growing cliques.
+                        let number_of_matches = cliques
+                            .iter_mut()
+                            .map(|clique| unsafe {
+                                // We count the number of matches in the current clique.
+                                let matches = iter_set::intersection(
                                 clique.iter().cloned(),
                                 self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
                                     inner_node_id,
@@ -433,69 +444,75 @@ impl Graph {
                                 }),
                             )
                             .collect::<Vec<NodeT>>();
-                            // If we have a perfect match we can add the current
-                            // node to this clique. Note that we cannot stop
-                            // at this point, as the node may be shared between
-                            // multiple cliques.
-                            if matches.len() == clique.len() {
-                                // Reduce the degree of the current node and all of the
-                                // other nodes in the clique.
-                                node_degrees[node_id as usize]
-                                    .fetch_update(Ordering::Acquire, Ordering::Acquire, |degree| {
-                                        Some(degree - clique.len() as NodeT)
-                                    })
-                                    .unwrap();
-                                clique.iter().for_each(|&clique_node_id| {
-                                    node_degrees[clique_node_id as usize]
+                                // If we have a perfect match we can add the current
+                                // node to this clique. Note that we cannot stop
+                                // at this point, as the node may be shared between
+                                // multiple cliques.
+                                if matches.len() == clique.len() {
+                                    // Reduce the degree of the current node and all of the
+                                    // other nodes in the clique.
+                                    node_degrees[node_id as usize]
                                         .fetch_update(
                                             Ordering::Acquire,
                                             Ordering::Acquire,
-                                            |degree| Some(degree - 1),
+                                            |degree| Some(degree - clique.len() as NodeT),
                                         )
                                         .unwrap();
-                                });
-                                clique.push(node_id);
-                                clique.sort_unstable();
-                                1
-                            // Otherwise if the match is not perfect but we still
-                            // have some matches we need to store these matches
-                            // in the new clique we are growing for this node.
-                            } else if matches.len() > 0 {
-                                node_degrees[node_id as usize]
-                                    .fetch_update(Ordering::Acquire, Ordering::Acquire, |degree| {
-                                        Some(degree - matches.len() as NodeT)
-                                    })
-                                    .unwrap();
-                                matches.iter().for_each(|&clique_node_id| {
-                                    node_degrees[clique_node_id as usize]
+                                    clique.iter().for_each(|&clique_node_id| {
+                                        node_degrees[clique_node_id as usize]
+                                            .fetch_update(
+                                                Ordering::Acquire,
+                                                Ordering::Acquire,
+                                                |degree| Some(degree - 1),
+                                            )
+                                            .unwrap();
+                                    });
+                                    clique.push(node_id);
+                                    clique.sort_unstable();
+                                    1
+                                // Otherwise if the match is not perfect but we still
+                                // have some matches we need to store these matches
+                                // in the new clique we are growing for this node.
+                                } else if matches.len() > 0 {
+                                    node_degrees[node_id as usize]
                                         .fetch_update(
                                             Ordering::Acquire,
                                             Ordering::Acquire,
-                                            |degree| Some(degree - 1),
+                                            |degree| {
+                                                Some(degree.saturating_sub(matches.len() as NodeT))
+                                            },
                                         )
                                         .unwrap();
-                                });
-                                possible_new_cliques.push(matches);
-                                0
-                            } else {
-                                0
+                                    matches.iter().for_each(|&clique_node_id| {
+                                        node_degrees[clique_node_id as usize]
+                                            .fetch_update(
+                                                Ordering::Acquire,
+                                                Ordering::Acquire,
+                                                |degree| Some(degree.saturating_sub(1)),
+                                            )
+                                            .unwrap();
+                                    });
+                                    possible_new_cliques.push(matches);
+                                    0
+                                } else {
+                                    0
+                                }
+                            })
+                            .sum::<usize>();
+                        // If the total number of matches is zero
+                        if number_of_matches == 0 {
+                            // We add the current node to the currently growing clique
+                            if possible_new_cliques.is_empty() {
+                                possible_new_cliques.push(Vec::new());
                             }
-                        })
-                        .sum::<usize>();
-                    // If the total number of matches is zero
-                    if number_of_matches == 0 {
-                        // We add the current node to the currently growing clique
-                        if possible_new_cliques.is_empty() {
-                            possible_new_cliques.push(Vec::new());
+                            possible_new_cliques.iter_mut().for_each(|clique| {
+                                clique.push(inner_node_id);
+                                clique.sort_unstable();
+                            });
+                            // and push the clique to the set of cliques.
+                            cliques.extend(possible_new_cliques);
                         }
-                        possible_new_cliques.iter_mut().for_each(|clique| {
-                            clique.push(inner_node_id);
-                            clique.sort_unstable();
-                        });
-                        // and push the clique to the set of cliques.
-                        cliques.extend(possible_new_cliques);
-                    }
-                });
+                    });
                 Some(
                     cliques
                         .into_iter()
