@@ -378,8 +378,14 @@ impl Graph {
                 .collect::<HashMap<NodeT, Vec<NodeT>>>();
         // Creating another info log.
         info!(
-            "Identified {} isomorphic groups.",
-            to_human_readable_high_integer(isomorphic_groups.len())
+            "Found {} isomorphic groups composed of {} nodes.",
+            to_human_readable_high_integer(isomorphic_groups.len()),
+            to_human_readable_high_integer(
+                isomorphic_groups
+                    .values()
+                    .map(|isomorphic_group| isomorphic_group.len() + 1)
+                    .sum()
+            )
         );
 
         //===========================================
