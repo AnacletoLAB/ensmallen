@@ -399,6 +399,10 @@ impl Graph {
                         return Some(vec![isomorphic_group.clone()]);
                     }
                 }
+                // If this node is a new `dynamic` singleton, we skip it.
+                if node_degrees[node_id as usize].load(Ordering::Relaxed) < minimum_degree {
+                    return None;
+                }
                 // Otherwise we need to check whether this node is in a clique.
                 let neighbours = unsafe {
                     self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id)
