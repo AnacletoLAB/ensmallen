@@ -395,15 +395,24 @@ impl Graph {
         // be computed.
         let mut number_of_covered_nodes = 0;
         let mut dominating_set = Vec::new();
-        while number_of_covered_nodes != node_ids.len() {
-            let (node_id, _) = node_degrees_copy.par_iter().cloned().argmax().unwrap();
+        loop {
+            let (node_id, degree) = node_degrees_copy.par_iter().cloned().argmax().unwrap();
+            if degree == 0 {
+                break;
+            }
             dominating_set.push(node_id as NodeT);
             let covered_nodes = unsafe {
                 self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id as NodeT)
             }
             .filter(|&neighbour_node_id| node_degrees_copy[neighbour_node_id as usize] > 0)
             .collect::<Vec<NodeT>>();
-            number_of_covered_nodes += covered_nodes.len() + 1;
+            // We mark as covered the central node and all of its neighbours.
+            node_degrees_copy[node_id] = 0;
+            // Since the central node is covered, the degree of all of its
+            // neighbours must be decreased by one.
+            covered_nodes.iter().for_each(|&node_id| {
+                node_degrees_copy[node_id as usize] -= 1;
+            });
             let node_degrees_copy_atomic =
                 unsafe { std::mem::transmute::<Vec<NodeT>, Vec<AtomicU32>>(node_degrees_copy) };
             covered_nodes
