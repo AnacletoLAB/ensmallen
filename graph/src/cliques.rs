@@ -1,4 +1,5 @@
 use super::*;
+use indicatif::ProgressIterator;
 use log::info;
 use rayon::prelude::*;
 use std::collections::HashMap;
@@ -125,7 +126,7 @@ impl Graph {
     pub fn par_iter_cliques(
         &self,
         minimum_degree: Option<NodeT>,
-    ) -> Result<impl ParallelIterator<Item = Clique> + '_> {
+    ) -> Result<impl Iterator<Item = Clique> + '_> {
         self.must_be_undirected()?;
         // First of all we set the minimum degree, which if None were provided is set to 5.
         let minimum_degree = minimum_degree.unwrap_or(5);
@@ -375,45 +376,91 @@ impl Graph {
                     (root_node, candidate_isomorphic_group)
                 })
                 .collect::<HashMap<NodeT, Vec<NodeT>>>();
-        // Further reduce the node IDs, since now there are more
-        // node IDs with degree zero (the ones merged into isomorphic groups).
-        node_ids = node_ids
-            .into_par_iter()
-            .filter(|&node_id| node_degrees[node_id as usize].load(Ordering::Relaxed) > 0)
-            .collect();
         // Creating another info log.
         info!(
-            "Identified {} isomorphic groups and removed {} more nodes.",
-            to_human_readable_high_integer(isomorphic_groups.len()),
-            to_human_readable_high_integer(number_of_nodes - node_ids.len())
+            "Identified {} isomorphic groups.",
+            to_human_readable_high_integer(isomorphic_groups.len())
         );
+
+        //===========================================
+        // Start computation of dominating set.
+        //===========================================
+        info!("Computing dominating set.");
+        // We convert the atomic degrees to non-atomic.
+        let mut node_degrees =
+            unsafe { std::mem::transmute::<Vec<AtomicU32>, Vec<NodeT>>(node_degrees) };
+        let mut node_degrees_copy = node_degrees.clone();
+        // Finally, we compute the dominating set of the nodes
+        // and we obtain the set of nodes from where cliques may
+        // be computed.
+        let mut number_of_covered_nodes = 0;
+        while number_of_covered_nodes != node_ids.len() {
+            let (node_id, _) = node_degrees_copy.par_iter().cloned().argmax().unwrap();
+            let covered_nodes = unsafe {
+                self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id as NodeT)
+            }
+            .filter(|&neighbour_node_id| node_degrees_copy[neighbour_node_id as usize] > 0)
+            .collect::<Vec<NodeT>>();
+            number_of_covered_nodes += covered_nodes.len() + 1;
+            let node_degrees_copy_atomic =
+                unsafe { std::mem::transmute::<Vec<NodeT>, Vec<AtomicU32>>(node_degrees_copy) };
+            covered_nodes
+                .into_par_iter()
+                .for_each(|neighbour_node_id| unsafe {
+                    self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
+                        neighbour_node_id,
+                    )
+                    .for_each(|target_node_id| {
+                        node_degrees_copy_atomic[target_node_id as usize]
+                            .fetch_update(Ordering::Acquire, Ordering::Acquire, |degree| {
+                                Some(degree.saturating_sub(1))
+                            })
+                            .unwrap();
+                    });
+                });
+            node_degrees_copy = unsafe {
+                std::mem::transmute::<Vec<AtomicU32>, Vec<NodeT>>(node_degrees_copy_atomic)
+            };
+        }
+
+        // Further reduce the node IDs, using the mask obtained
+        // from the dominating node set.
+        node_ids = node_ids
+            .into_par_iter()
+            .filter(|&node_id| node_degrees_copy[node_id as usize] > 0)
+            .collect();
+
+        info!(
+            "Dominating set with {} nodes.",
+            to_human_readable_high_integer(node_ids.len())
+        );
+
+        let pb = get_loading_bar(true, "Computing cliques", node_ids.len());
 
         // Actually compute and return cliques.
         Ok(node_ids
-            .into_par_iter()
+            .into_iter()
+            .progress_with(pb)
             .filter_map(move |node_id| {
                 // First of all, we check if this node is a root of isomorphic nodes
                 // and whether it has a degree equal to the number of nodes in the isomorphic
                 // group: if this is true, the maximum clique of this node is equal to
                 // the isomorphic group.
                 if let Some(isomorphic_group) = isomorphic_groups.get(&node_id) {
-                    if isomorphic_group.len()
-                        == node_degrees[node_id as usize].load(Ordering::Relaxed) as usize
-                    {
+                    if isomorphic_group.len() == node_degrees[node_id as usize] as usize {
                         let mut clique = isomorphic_group.clone();
                         clique.push(node_id);
                         return Some(vec![clique]);
                     }
                 }
-                // If this node is a new `dynamic` singleton, we skip it.
-                if node_degrees[node_id as usize].load(Ordering::Relaxed) < minimum_degree {
+                if node_degrees[node_id as usize] < minimum_degree {
                     return None;
                 }
                 // Otherwise we need to check whether this node is in a clique.
                 let neighbours = unsafe {
                     self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id)
                 }
-                .filter(|&dst| node_degrees[dst as usize].load(Ordering::Relaxed) >= minimum_degree)
+                .filter(|&dst| node_degrees[dst as usize] >= minimum_degree)
                 .collect::<Vec<NodeT>>();
                 // If in the meantime its neighbours were removed, we can skip this node.
                 if neighbours.is_empty() {
@@ -446,40 +493,20 @@ impl Graph {
                             if matches.len() == clique.len() {
                                 // Reduce the degree of the current node and all of the
                                 // other nodes in the clique.
-                                node_degrees[node_id as usize]
-                                    .fetch_update(Ordering::Acquire, Ordering::Acquire, |degree| {
-                                        Some(degree.saturating_sub(clique.len() as NodeT))
-                                    })
-                                    .unwrap();
+                                node_degrees[inner_node_id as usize] -= clique.len() as NodeT;
                                 clique.iter().for_each(|&clique_node_id| {
-                                    node_degrees[clique_node_id as usize]
-                                        .fetch_update(
-                                            Ordering::Acquire,
-                                            Ordering::Acquire,
-                                            |degree| Some(degree.saturating_sub(1)),
-                                        )
-                                        .unwrap();
+                                    node_degrees[clique_node_id as usize] -= 1;
                                 });
-                                clique.push(node_id);
+                                clique.push(inner_node_id);
                                 clique.sort_unstable();
                                 1
                             // Otherwise if the match is not perfect but we still
                             // have some matches we need to store these matches
                             // in the new clique we are growing for this node.
                             } else if matches.len() > 0 {
-                                node_degrees[node_id as usize]
-                                    .fetch_update(Ordering::Acquire, Ordering::Acquire, |degree| {
-                                        Some(degree.saturating_sub(matches.len() as NodeT))
-                                    })
-                                    .unwrap();
+                                node_degrees[inner_node_id as usize] -= matches.len() as NodeT;
                                 matches.iter().for_each(|&clique_node_id| {
-                                    node_degrees[clique_node_id as usize]
-                                        .fetch_update(
-                                            Ordering::Acquire,
-                                            Ordering::Acquire,
-                                            |degree| Some(degree.saturating_sub(1)),
-                                        )
-                                        .unwrap();
+                                    node_degrees[clique_node_id as usize] -= 1;
                                 });
                                 possible_new_cliques.push(matches);
                                 0
@@ -518,12 +545,13 @@ impl Graph {
                                 })
                                 .collect::<Vec<NodeT>>()
                         })
+                        .filter(|clique| clique.len() > minimum_degree as usize)
                         .collect::<Vec<Vec<NodeT>>>(),
                 )
             })
             .flat_map(move |cliques| {
                 cliques
-                    .into_par_iter()
+                    .into_iter()
                     .map(move |clique| Clique::from_node_ids(self, clique))
             }))
     }
