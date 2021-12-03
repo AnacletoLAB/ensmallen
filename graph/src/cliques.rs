@@ -3,7 +3,7 @@ use indicatif::ProgressIterator;
 use log::info;
 use rayon::prelude::*;
 use std::collections::HashMap;
-use std::sync::atomic::{AtomicU32, Ordering};
+use std::sync::atomic::{AtomicBool, AtomicU32, Ordering};
 
 #[derive(Hash, Clone, Debug, PartialEq)]
 pub struct Clique {
@@ -486,19 +486,21 @@ impl Graph {
                 let mut cliques: Vec<Vec<NodeT>> = vec![clique];
                 // We iterate over the neighbours
                 neighbours.into_iter().skip(1).for_each(|inner_node_id| {
-                    // If the current neighbour wont fit in any of the other cliques
-                    // we need to prepare a vector where to store its current matches.
-                    let mut possible_new_cliques = Vec::new();
                     // We start to iterate over the existing growing cliques.
-                    let number_of_matches = cliques
-                        .iter_mut()
-                        .map(|clique| unsafe {
+                    let neighbours = unsafe {
+                        self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
+                            inner_node_id,
+                        )
+                    }
+                    .collect::<Vec<NodeT>>();
+                    let found_clique = AtomicBool::new(false);
+                    let mut possible_new_cliques = cliques
+                        .par_iter_mut()
+                        .filter_map(|clique| unsafe {
                             // We count the number of matches in the current clique.
                             let matches = iter_set::intersection(
                                 clique.iter().cloned(),
-                                self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
-                                    inner_node_id,
-                                ),
+                                neighbours.iter().cloned(),
                             )
                             .collect::<Vec<NodeT>>();
                             // If we have a perfect match we can add the current
@@ -508,28 +510,26 @@ impl Graph {
                             if matches.len() == clique.len() {
                                 clique.push(inner_node_id);
                                 clique.sort_unstable();
-                                1
+                                found_clique.store(true, Ordering::Relaxed);
+                                None
                             // Otherwise if the match is not perfect but we still
                             // have some matches we need to store these matches
                             // in the new clique we are growing for this node.
-                            } else if matches.len() > 0 {
-                                possible_new_cliques.push(matches);
-                                0
+                            } else if matches.len() > 1 {
+                                Some(matches)
                             } else {
-                                0
+                                None
                             }
                         })
-                        .sum::<usize>();
+                        .collect::<Vec<Vec<NodeT>>>();
                     // If the total number of matches is zero
-                    if number_of_matches == 0 {
-                        // We add the current node to the currently growing clique
-                        if possible_new_cliques.is_empty() {
-                            possible_new_cliques.push(Vec::new());
-                        }
+                    if !found_clique.load(Ordering::Relaxed) {
                         possible_new_cliques.iter_mut().for_each(|clique| {
                             clique.push(inner_node_id);
                             clique.sort_unstable();
                         });
+                        possible_new_cliques.sort_unstable();
+                        possible_new_cliques.dedup();
                         // and push the clique to the set of cliques.
                         cliques.extend(possible_new_cliques);
                     }
