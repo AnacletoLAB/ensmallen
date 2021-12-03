@@ -249,7 +249,7 @@ impl Graph {
             current_iteration += 1;
         }
         info!(
-            "Searching cliques in the remaining {} nodes",
+            "Searching for isomorphic cliques in {} nodes.",
             to_human_readable_high_integer(node_ids.len())
         );
         // The next step in our algorithm will be to collapse the nodes
@@ -391,6 +391,7 @@ impl Graph {
         //===========================================
         // Start computation of dominating set.
         //===========================================
+        // We convert the atomic degrees to non-atomic.
         let mut node_degrees =
             unsafe { std::mem::transmute::<Vec<AtomicU32>, Vec<NodeT>>(node_degrees) };
         info!(
@@ -399,8 +400,6 @@ impl Graph {
                 node_degrees.par_iter().cloned().filter(|&degree| degree > 0).count()
             )
         );
-        // We convert the atomic degrees to non-atomic.
-
         let mut node_degrees_copy = node_degrees.clone();
         // Finally, we compute the dominating set of the nodes
         // and we obtain the set of nodes from where cliques may
@@ -446,7 +445,7 @@ impl Graph {
         }
 
         info!(
-            "Dominating set with {} nodes.",
+            "Found dominating set with {} nodes.",
             to_human_readable_high_integer(dominating_set.len())
         );
 
