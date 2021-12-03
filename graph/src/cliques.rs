@@ -459,7 +459,7 @@ impl Graph {
             .into_iter()
             .progress_with(pb)
             .filter_map(move |node_id| {
-                if node_degrees[node_id as usize] < minimum_degree {
+                if node_degrees[node_id as usize] < minimum_degree_minus_one as NodeT {
                     return None;
                 }
                 // First of all, we check if this node is a root of isomorphic nodes
@@ -477,7 +477,7 @@ impl Graph {
                 let neighbours = unsafe {
                     self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id)
                 }
-                .filter(|&dst| node_degrees[dst as usize] >= minimum_degree)
+                .filter(|&dst| node_degrees[dst as usize] >= minimum_degree_minus_one as NodeT)
                 .collect::<Vec<NodeT>>();
                 // The cliques vectors starts out as the root node and the first
                 // neighbour of the root node.
@@ -506,12 +506,6 @@ impl Graph {
                             // at this point, as the node may be shared between
                             // multiple cliques.
                             if matches.len() == clique.len() {
-                                // Reduce the degree of the current node and all of the
-                                // other nodes in the clique.
-                                node_degrees[inner_node_id as usize] -= clique.len() as NodeT;
-                                clique.iter().for_each(|&clique_node_id| {
-                                    node_degrees[clique_node_id as usize] -= 1;
-                                });
                                 clique.push(inner_node_id);
                                 clique.sort_unstable();
                                 1
@@ -534,9 +528,6 @@ impl Graph {
                         }
                         possible_new_cliques.iter_mut().for_each(|clique| {
                             clique.push(inner_node_id);
-                            clique.iter().for_each(|&clique_node_id| {
-                                node_degrees[clique_node_id as usize] = node_degrees[clique_node_id as usize].saturating_sub(clique.len() as NodeT);
-                            });
                             clique.sort_unstable();
                         });
                         // and push the clique to the set of cliques.
@@ -560,6 +551,13 @@ impl Graph {
                                 .collect::<Vec<NodeT>>()
                         })
                         .filter(|clique| clique.len() > minimum_degree as usize)
+                        .map(|clique| {
+                            clique.iter().for_each(|&node_id| {
+                                node_degrees[node_id as usize] = node_degrees[node_id as usize]
+                                    .saturating_sub(clique.len() as NodeT);
+                            });
+                            clique
+                        })
                         .collect::<Vec<Vec<NodeT>>>(),
                 )
             })
