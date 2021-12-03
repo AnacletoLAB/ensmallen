@@ -311,12 +311,16 @@ impl Graph {
                                 self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
                                 node_id,
                             )
-                            .filter(|&dst| node_degrees[dst as usize].load(Ordering::Relaxed) > 0)
+                            .filter(|&dst| {
+                                dst != other_node_id &&
+                                node_degrees[dst as usize].load(Ordering::Relaxed) > 0
+                            })
                             .zip(
                                 self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
                                     other_node_id,
                                 )
                                 .filter(|&dst| {
+                                    dst != node_id &&
                                     node_degrees[dst as usize].load(Ordering::Relaxed) > 0
                                 }),
                             )
