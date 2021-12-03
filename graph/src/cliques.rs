@@ -391,10 +391,16 @@ impl Graph {
         //===========================================
         // Start computation of dominating set.
         //===========================================
-        info!("Computing dominating set.");
-        // We convert the atomic degrees to non-atomic.
         let mut node_degrees =
             unsafe { std::mem::transmute::<Vec<AtomicU32>, Vec<NodeT>>(node_degrees) };
+        info!(
+            "Computing dominating set for {} nodes.",
+            to_human_readable_high_integer(
+                node_degrees.par_iter().cloned().filter(|&degree| degree > 0).count()
+            )
+        );
+        // We convert the atomic degrees to non-atomic.
+
         let mut node_degrees_copy = node_degrees.clone();
         // Finally, we compute the dominating set of the nodes
         // and we obtain the set of nodes from where cliques may
