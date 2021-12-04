@@ -518,6 +518,9 @@ impl Graph {
                                 node_degrees[dst as usize].load(Ordering::Relaxed) >= node_degree
                             })
                             .collect::<Vec<NodeT>>();
+                            if node_neighbours.is_empty(){
+                                return None;
+                            }
                             let score = iter_set::intersection(
                                 node_neighbours.iter().cloned(),
                                 clique_neighbours.iter().cloned(),
@@ -540,7 +543,11 @@ impl Graph {
                                         as f64
                                 })
                                 .sum::<f64>();
-                            Some((neighbour_node_id, score))
+                            if score > 0.0 {
+                                Some((neighbour_node_id, score))
+                            } else {
+                                None
+                            }
                         })
                         .max_by(|(_, a), (_, b)| a.partial_cmp(b).unwrap())
                     {
@@ -553,8 +560,13 @@ impl Graph {
                             clique_neighbours.iter().cloned(),
                         )
                         .collect::<Vec<NodeT>>();
+                        // Here we need to subtract to the degree of the best neighbour
+                        // the number of nodes in the clique (plus one because the root node is implicit).
                         node_degrees[best_neighbour_node_id as usize]
-                            .fetch_sub(tentative_clique.len() as NodeT, Ordering::Relaxed);
+                            .fetch_sub(1 + tentative_clique.len() as NodeT, Ordering::Relaxed);
+                        // Then we reduce by one the degree of the root node.
+                        node_degrees[node_id as usize].fetch_sub(1, Ordering::Relaxed);
+                        // And the degree of all the other nodes in the tentative clique.
                         tentative_clique.iter().for_each(|&node_in_clique| {
                             node_degrees[node_in_clique as usize].fetch_sub(1, Ordering::Relaxed);
                         });
