@@ -467,14 +467,12 @@ impl Graph {
             to_human_readable_high_integer(clique_roots.len())
         );
 
-        let pb = get_loading_bar(true, "Computing cliques", clique_roots.len());
         let node_degrees =
             unsafe { std::mem::transmute::<Vec<NodeT>, Vec<AtomicU32>>(node_degrees) };
 
         // Actually compute and return cliques.
         Ok(clique_roots
             .into_par_iter()
-            .progress_with(pb)
             .filter_map(move |node_id| {
                 // First of all we find the degree of this node.
                 let node_degree = node_degrees[node_id as usize].load(Ordering::Relaxed);
