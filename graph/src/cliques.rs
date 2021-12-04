@@ -370,6 +370,7 @@ impl Graph {
                     {
                         // We add the current node to the isomorphic group
                         isomorphic_group.push(other_node_id);
+                        node_degrees[other_node_id as usize].store(0, Ordering::Relaxed);
                     } else {
                         // We begin another isomorphic group
                         candidate_isomorphic_groups.push(vec![other_node_id]);
