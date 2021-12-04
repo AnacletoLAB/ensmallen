@@ -444,12 +444,6 @@ impl Graph {
                 node_degrees_copy[node_id as usize] -= degree;
             });
         }
-
-        info!(
-            "Found {} clique roots.",
-            to_human_readable_high_integer(clique_roots.len())
-        );
-
         let node_degrees =
             unsafe { std::mem::transmute::<Vec<NodeT>, Vec<AtomicU32>>(node_degrees) };
 
@@ -521,7 +515,6 @@ impl Graph {
                         })
                         .max_by(|(_, a), (_, b)| a.partial_cmp(b).unwrap())
                     {
-                        let previous_number_of_neighbours = clique_neighbours.len();
                         clique_neighbours = iter_set::intersection(
                             unsafe {
                                 self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
