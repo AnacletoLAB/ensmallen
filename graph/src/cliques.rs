@@ -505,7 +505,7 @@ impl Graph {
                 loop {
                     let mut tentative_clique = vec![];
                     let mut clique_neighbours = neighbours.clone();
-                    while let Some((best_neighbour_node_id, _)) = neighbours
+                    while let Some((best_neighbour_node_id, _)) = clique_neighbours
                         .iter()
                         .cloned()
                         .filter_map(|neighbour_node_id| {
