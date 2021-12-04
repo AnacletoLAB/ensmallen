@@ -128,7 +128,7 @@ impl Graph {
         &self,
         minimum_degree: Option<NodeT>,
         clique_per_node: Option<usize>,
-    ) -> Result<impl Iterator<Item = Clique> + '_> {
+    ) -> Result<impl ParallelIterator<Item = Clique> + '_> {
         self.must_be_undirected()?;
         // First of all we set the minimum degree, which if None were provided is set to 5.
         let minimum_degree = minimum_degree.unwrap_or(5);
@@ -444,22 +444,6 @@ impl Graph {
             covered_nodes.iter().for_each(|&node_id| {
                 node_degrees_copy[node_id as usize] -= degree;
             });
-            let node_degrees_copy_atomic =
-                unsafe { std::mem::transmute::<Vec<NodeT>, Vec<AtomicU32>>(node_degrees_copy) };
-            covered_nodes
-                .into_par_iter()
-                .for_each(|neighbour_node_id| unsafe {
-                    self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
-                        neighbour_node_id,
-                    )
-                    .for_each(|target_node_id| {
-                        node_degrees_copy_atomic[target_node_id as usize]
-                            .fetch_sub(degree, Ordering::Relaxed);
-                    });
-                });
-            node_degrees_copy = unsafe {
-                std::mem::transmute::<Vec<AtomicU32>, Vec<NodeT>>(node_degrees_copy_atomic)
-            };
         }
 
         info!(
@@ -472,7 +456,7 @@ impl Graph {
 
         // Actually compute and return cliques.
         Ok(clique_roots
-            .into_iter()
+            .into_par_iter()
             .filter_map(move |node_id| {
                 // First of all we find the degree of this node.
                 let node_degree = node_degrees[node_id as usize].load(Ordering::Relaxed);
@@ -501,15 +485,10 @@ impl Graph {
                 // Otherwise, we start to find the cliques.
                 let mut cliques = Vec::new();
                 loop {
-                    info!(
-                        "Starting to compute #{} clique for node {}.",
-                        cliques.len() + 1,
-                        node_id
-                    );
                     let mut tentative_clique = vec![];
                     let mut clique_neighbours = neighbours.clone();
                     while let Some((best_neighbour_node_id, _)) = clique_neighbours
-                        .par_iter()
+                        .iter()
                         .cloned()
                         .filter_map(|neighbour_node_id| {
                             let node_neighbours = unsafe {
@@ -517,12 +496,10 @@ impl Graph {
                                     neighbour_node_id,
                                 )
                             }
+                            .filter(|&dst| {
+                                node_degrees[dst as usize].load(Ordering::Relaxed) >= node_degree
+                            })
                             .collect::<Vec<NodeT>>();
-                            info!(
-                                "Node {} has {} neighbours",
-                                neighbour_node_id,
-                                to_human_readable_high_integer(node_neighbours.len())
-                            );
                             if node_neighbours.is_empty() {
                                 return None;
                             }
@@ -530,17 +507,25 @@ impl Graph {
                                 node_neighbours.iter().cloned(),
                                 clique_neighbours.iter().cloned(),
                             )
+                            .map(|node_id| {
+                                isomorphic_groups
+                                    .get(&node_id)
+                                    .map_or(1, |vector| vector.len())
+                                    as f64
+                            })
                             .count() as f64
                                 / iter_set::union(
                                     node_neighbours.into_iter(),
                                     clique_neighbours.iter().cloned(),
                                 )
+                                .map(|node_id| {
+                                    isomorphic_groups
+                                        .get(&node_id)
+                                        .map_or(1, |vector| vector.len())
+                                        as f64
+                                })
                                 .count() as f64;
-                                info!(
-                                    "Node {} has score {}",
-                                    neighbour_node_id,
-                                    score
-                                );
+                            info!("Node {} has score {}", neighbour_node_id, score);
                             if score > 0.0 {
                                 Some((neighbour_node_id, score))
                             } else {
@@ -618,7 +603,7 @@ impl Graph {
             })
             .flat_map(move |cliques| {
                 cliques
-                    .into_iter()
+                    .into_par_iter()
                     .map(move |clique| Clique::from_node_ids(self, clique))
             }))
     }
