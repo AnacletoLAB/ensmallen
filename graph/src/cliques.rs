@@ -518,7 +518,7 @@ impl Graph {
                                 node_degrees[dst as usize].load(Ordering::Relaxed) >= node_degree
                             })
                             .collect::<Vec<NodeT>>();
-                            if node_neighbours.is_empty(){
+                            if node_neighbours.is_empty() {
                                 return None;
                             }
                             let score = iter_set::intersection(
@@ -551,6 +551,7 @@ impl Graph {
                         })
                         .max_by(|(_, a), (_, b)| a.partial_cmp(b).unwrap())
                     {
+                        let previous_number_of_neighbours = clique_neighbours.len();
                         clique_neighbours = iter_set::intersection(
                             unsafe {
                                 self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
@@ -560,6 +561,15 @@ impl Graph {
                             clique_neighbours.iter().cloned(),
                         )
                         .collect::<Vec<NodeT>>();
+                        assert!(
+                            previous_number_of_neighbours > clique_neighbours.len(),
+                            concat!(
+                                "The previous number of neighbours `{}` must be higher ",
+                                "than the current number of neighbours `{}`."
+                            ),
+                            previous_number_of_neighbours,
+                            clique_neighbours.len()
+                        );
                         // Here we need to subtract to the degree of the best neighbour
                         // the number of nodes in the clique (plus one because the root node is implicit).
                         node_degrees[best_neighbour_node_id as usize]
