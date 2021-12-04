@@ -514,9 +514,6 @@ impl Graph {
                                     neighbour_node_id,
                                 )
                             }
-                            .filter(|&dst| {
-                                node_degrees[dst as usize].load(Ordering::Relaxed) >= node_degree
-                            })
                             .collect::<Vec<NodeT>>();
                             if node_neighbours.is_empty() {
                                 return None;
@@ -525,24 +522,12 @@ impl Graph {
                                 node_neighbours.iter().cloned(),
                                 clique_neighbours.iter().cloned(),
                             )
-                            .map(|node_id| {
-                                isomorphic_groups
-                                    .get(&node_id)
-                                    .map_or(1, |vector| vector.len())
-                                    as f64
-                            })
-                            .sum::<f64>()
+                            .count() as f64
                                 / iter_set::union(
                                     node_neighbours.into_iter(),
                                     clique_neighbours.iter().cloned(),
                                 )
-                                .map(|node_id| {
-                                    isomorphic_groups
-                                        .get(&node_id)
-                                        .map_or(1, |vector| vector.len())
-                                        as f64
-                                })
-                                .sum::<f64>();
+                                .count() as f64;
                             if score > 0.0 {
                                 Some((neighbour_node_id, score))
                             } else {
