@@ -128,7 +128,7 @@ impl Graph {
         &self,
         minimum_degree: Option<NodeT>,
         clique_per_node: Option<usize>,
-    ) -> Result<impl ParallelIterator<Item = Clique> + '_> {
+    ) -> Result<impl Iterator<Item = Clique> + '_> {
         self.must_be_undirected()?;
         // First of all we set the minimum degree, which if None were provided is set to 5.
         let minimum_degree = minimum_degree.unwrap_or(5);
@@ -472,7 +472,7 @@ impl Graph {
 
         // Actually compute and return cliques.
         Ok(clique_roots
-            .into_par_iter()
+            .into_iter()
             .filter_map(move |node_id| {
                 // First of all we find the degree of this node.
                 let node_degree = node_degrees[node_id as usize].load(Ordering::Relaxed);
@@ -509,7 +509,7 @@ impl Graph {
                     let mut tentative_clique = vec![];
                     let mut clique_neighbours = neighbours.clone();
                     while let Some((best_neighbour_node_id, _)) = clique_neighbours
-                        .iter()
+                        .par_iter()
                         .cloned()
                         .filter_map(|neighbour_node_id| {
                             let node_neighbours = unsafe {
@@ -618,7 +618,7 @@ impl Graph {
             })
             .flat_map(move |cliques| {
                 cliques
-                    .into_par_iter()
+                    .into_iter()
                     .map(move |clique| Clique::from_node_ids(self, clique))
             }))
     }
