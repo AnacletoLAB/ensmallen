@@ -518,15 +518,6 @@ impl Graph {
                                 node_degrees[dst as usize].load(Ordering::Relaxed) >= node_degree
                             })
                             .collect::<Vec<NodeT>>();
-                            if iter_set::intersection(
-                                node_neighbours.iter().cloned(),
-                                tentative_clique.iter().cloned(),
-                            )
-                            .count()
-                                < tentative_clique.len()
-                            {
-                                return None;
-                            }
                             let score = iter_set::intersection(
                                 node_neighbours.iter().cloned(),
                                 clique_neighbours.iter().cloned(),
