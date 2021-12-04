@@ -551,6 +551,7 @@ impl Graph {
                         })
                         .max_by(|(_, a), (_, b)| a.partial_cmp(b).unwrap())
                     {
+                        info!("Adding node {}", best_neighbour_node_id);
                         let previous_number_of_neighbours = clique_neighbours.len();
                         clique_neighbours = iter_set::intersection(
                             unsafe {
