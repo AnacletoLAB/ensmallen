@@ -1,5 +1,4 @@
 use super::*;
-use indicatif::ParallelProgressIterator;
 use log::info;
 use rayon::prelude::*;
 use std::collections::HashMap;
@@ -513,20 +512,9 @@ impl Graph {
                                     .map_or(1, |vector| vector.len())
                                     as f64
                             })
-                            .count() as f64
-                                / iter_set::union(
-                                    node_neighbours.into_iter(),
-                                    clique_neighbours.iter().cloned(),
-                                )
-                                .map(|node_id| {
-                                    isomorphic_groups
-                                        .get(&node_id)
-                                        .map_or(1, |vector| vector.len())
-                                        as f64
-                                })
-                                .count() as f64;
+                            .count();
                             info!("Node {} has score {}", neighbour_node_id, score);
-                            if score > 0.0 {
+                            if score > 0 {
                                 Some((neighbour_node_id, score))
                             } else {
                                 None
