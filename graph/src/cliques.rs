@@ -501,6 +501,11 @@ impl Graph {
                 // Otherwise, we start to find the cliques.
                 let mut cliques = Vec::new();
                 loop {
+                    info!(
+                        "Starting to compute #{} clique for node {}.",
+                        cliques.len() + 1,
+                        node_id
+                    );
                     let mut tentative_clique = vec![];
                     let mut clique_neighbours = neighbours.clone();
                     while let Some((best_neighbour_node_id, _)) = clique_neighbours
@@ -513,6 +518,11 @@ impl Graph {
                                 )
                             }
                             .collect::<Vec<NodeT>>();
+                            info!(
+                                "Node {} has {} neighbours",
+                                neighbour_node_id,
+                                to_human_readable_high_integer(node_neighbours.len())
+                            );
                             if node_neighbours.is_empty() {
                                 return None;
                             }
@@ -526,6 +536,11 @@ impl Graph {
                                     clique_neighbours.iter().cloned(),
                                 )
                                 .count() as f64;
+                                info!(
+                                    "Node {} has score {}",
+                                    neighbour_node_id,
+                                    score
+                                );
                             if score > 0.0 {
                                 Some((neighbour_node_id, score))
                             } else {
