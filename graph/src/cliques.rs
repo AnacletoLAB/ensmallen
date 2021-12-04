@@ -139,7 +139,12 @@ impl Graph {
         self.par_iter_node_degrees()
             .map(|degree| AtomicU32::new(degree))
             .collect_into_vec(&mut node_degrees);
-        // We define the method we use to update the node degrees.
+
+        // We define the method we use to remove a node from the set of nodes
+        // that might form a clique of at least `minimum_degree` nodes.
+        // This just set the degree of the given node to 0 and decrease the degree
+        // of each of its neighbours to reflect the removing of the node from
+        // the graph.
         let update_node_degree = |node_id: NodeT| {
             node_degrees[node_id as usize].store(0, Ordering::Relaxed);
             unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id) }
@@ -151,8 +156,10 @@ impl Graph {
                         .unwrap();
                 });
         };
+
         // We do a preliminary filtering round removing the nodes with degree
-        // lower than the provided minimum amount.
+        // lower than the provided minimum amount as they cannot form a clique
+        // with at least `minimum_degree` nodes.
         // This initial filtering is also done again afterwards, but
         // by doing this preliminarly with an iterator we can allocate
         // a much smaller vector of nodes of interest.
@@ -192,52 +199,68 @@ impl Graph {
         let minimum_degree_minus_one = (minimum_degree - 1) as usize;
         loop {
             let previous_nodes_number = node_ids.len();
-            node_ids = node_ids.into_par_iter()
+            node_ids = node_ids
+                .into_par_iter()
                 .filter_map(|node_id| {
                     // We retrieve the current node degree.
                     let degree = node_degrees[node_id as usize].load(Ordering::Relaxed);
-                    // If the degree is higher than the minimum degree
-                    if degree > minimum_degree {
-                        // If we are in a node that has, currently, degree higher or equal
-                        // than the minimum degree, we check if is NOT inside a clique
-                        // of size at least equal to the provided minimum degree.
-                        let neighbours = unsafe {
-                            self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id)
-                        }
-                        .filter(|&dst| {
-                            node_degrees[dst as usize].load(Ordering::Relaxed) >= minimum_degree
-                        })
-                        .collect::<Vec<NodeT>>();
+                    // If the degree is smaller than the minimum degree we can
+                    // filter it out.
+                    if degree < minimum_degree {
+                        update_node_degree(node_id);
+                        return None;
+                    }
+                    // Compute the neighbours of the node that have a degree
+                    // high enough to be compatible with being in a clique with
+                    // at least `minimum_degree` nodes.
+                    // here the degree must be at least `minimum_degree - 1`
+                    // because each node must have an edge to all the other nodes
+                    // thus it's the size of the clique minus the node itself
+                    let neighbours = unsafe {
+                        self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id)
+                    }
+                    .filter(|&dst| {
+                        node_degrees[dst as usize].load(Ordering::Relaxed)
+                            >= minimum_degree_minus_one as NodeT
+                    })
+                    .collect::<Vec<NodeT>>();
 
-                        // To check that the node may be part of a clique of size at least `minimum_degree`,
-                        // then at least `minimum_degree - 1` neighbouring nodes must have at least `minimum_degree - 1`
-                        // neighbouring nodes in the set of nodes of the initial node.
-                        if neighbours
-                            .iter()
-                            .filter(|&&neighbour_node_id| {
-                                iter_set::intersection(
-                                    neighbours.iter().cloned(),
-                                    unsafe{self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
-                                        neighbour_node_id,
-                                    )},
+                    // to be in a clique with `k` nodes, the node must have at
+                    // least `k - 1` neighbours with at least degree `k - 1`.
+                    // if this condition is not met, we can filter the node.
+                    if neighbours.len() < minimum_degree_minus_one {
+                        update_node_degree(node_id);
+                        return None;
+                    }
+
+                    // To check that the node may be part of a clique of size at least `minimum_degree`,
+                    // then at least `minimum_degree - 1` neighbouring nodes must have at least `minimum_degree - 1`
+                    // neighbouring nodes in the set of nodes of the initial node.
+                    if neighbours
+                        .iter()
+                        .filter(|&&neighbour_node_id| {
+                            iter_set::intersection(neighbours.iter().cloned(), unsafe {
+                                self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
+                                    neighbour_node_id,
                                 )
-                                .take(minimum_degree_minus_one)
-                                .count()
-                                    == minimum_degree_minus_one
                             })
                             .take(minimum_degree_minus_one)
                             .count()
-                            == minimum_degree_minus_one
-                        {
-                            // We keep the node.
-                            return Some(node_id);
-                        }
+                                == minimum_degree_minus_one
+                        })
+                        .take(minimum_degree_minus_one)
+                        .count()
+                        != minimum_degree_minus_one
+                    {
+                        update_node_degree(node_id);
+                        return None;
                     }
-                    update_node_degree(node_id);
-                    None
+
+                    // We keep the node.
+                    Some(node_id)
                 })
                 .collect::<Vec<NodeT>>();
-            // We check if we already have to stop.
+            // We check if we have to stop.
             let currently_removed_nodes = previous_nodes_number - node_ids.len();
             if currently_removed_nodes == 0 {
                 break;
@@ -265,9 +288,13 @@ impl Graph {
                 let mut seed: u64 = 0xDEADBEEFC0FEBABE_u64
                     .wrapping_mul(node_degrees[node_id as usize].load(Ordering::Relaxed) as u64);
                 let mut added_selfloop = false;
+
                 for neighbour_id in self
                     .iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id)
-                    .filter(|&dst| node_degrees[dst as usize].load(Ordering::Relaxed) > 0)
+                    .filter(|&dst| {
+                        node_degrees[dst as usize].load(Ordering::Relaxed)
+                            > minimum_degree_minus_one as NodeT
+                    })
                     .take(100)
                     .map(|neighbour_id| neighbour_id as u64)
                 {
@@ -277,12 +304,17 @@ impl Graph {
                     }
                     seed = (seed ^ neighbour_id).wrapping_add(0x0A2126967AE81C95)
                 }
+
+                if !added_selfloop {
+                    seed = (seed ^ node_id as u64).wrapping_add(0x0A2126967AE81C95)
+                }
                 seed
             })
             .collect::<Vec<u64>>();
         // Get the indices of the filtered hashes for sorting
         let mut indices = (0..(neighbours_hashes.len() as NodeT)).collect::<Vec<NodeT>>();
-        // Then we sort it according to the hash and the node ID.
+        // Then we sort it according to the hash and the node ID so that slices
+        // of nodes with the same hash are sorted.
         indices.par_sort_unstable_by(|&a, &b| {
             match neighbours_hashes[a as usize].cmp(&neighbours_hashes[b as usize]) {
                 std::cmp::Ordering::Equal => node_ids[a as usize].cmp(&node_ids[b as usize]),
@@ -395,7 +427,7 @@ impl Graph {
             .par_iter()
             .cloned()
             .enumerate()
-            .filter(|(i, degree)| *degree > 0)
+            .filter(|(_, degree)| *degree > 0)
             .min_by(|(_, a), (_, b)| a.cmp(b))
         {
             clique_roots.push(node_id as NodeT);
@@ -470,12 +502,12 @@ impl Graph {
                 // Otherwise, we start to find the cliques.
                 let mut cliques = Vec::new();
                 loop {
-                    let mut tentative_clique = vec![node_id];
+                    let mut tentative_clique = vec![];
                     let mut clique_neighbours = neighbours.clone();
-                    while let Some((best_neighbour_node_id, score)) = neighbours
+                    while let Some((best_neighbour_node_id, _)) = neighbours
                         .iter()
                         .cloned()
-                        .map(|neighbour_node_id| {
+                        .filter_map(|neighbour_node_id| {
                             let node_neighbours = unsafe {
                                 self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
                                     neighbour_node_id,
@@ -485,6 +517,15 @@ impl Graph {
                                 node_degrees[dst as usize].load(Ordering::Relaxed) >= node_degree
                             })
                             .collect::<Vec<NodeT>>();
+                            if iter_set::intersection(
+                                node_neighbours.iter().cloned(),
+                                tentative_clique.iter().cloned(),
+                            )
+                            .count()
+                                < tentative_clique.len()
+                            {
+                                return None;
+                            }
                             let score = iter_set::intersection(
                                 node_neighbours.iter().cloned(),
                                 clique_neighbours.iter().cloned(),
@@ -507,7 +548,7 @@ impl Graph {
                                         as f64
                                 })
                                 .sum::<f64>();
-                            (neighbour_node_id, score)
+                            Some((neighbour_node_id, score))
                         })
                         .max_by(|(_, a), (_, b)| a.partial_cmp(b).unwrap())
                     {
@@ -522,15 +563,15 @@ impl Graph {
                         .collect::<Vec<NodeT>>();
                         node_degrees[best_neighbour_node_id as usize]
                             .fetch_sub(tentative_clique.len() as NodeT, Ordering::Relaxed);
-                        tentative_clique.iter().for_each(|node_in_clique| {
-                            node_degrees[best_neighnode_in_cliquebour_node_id as usize]
-                                .fetch_sub(1, Ordering::Relaxed);
+                        tentative_clique.iter().for_each(|&node_in_clique| {
+                            node_degrees[node_in_clique as usize].fetch_sub(1, Ordering::Relaxed);
                         });
                         tentative_clique.push(best_neighbour_node_id);
                     }
-                    if tentative_clique.len() == 1 {
+                    if tentative_clique.is_empty() {
                         break;
                     }
+                    tentative_clique.push(node_id);
                     cliques.push(tentative_clique);
                     if cliques.len() == clique_per_node {
                         break;
