@@ -302,7 +302,7 @@ impl Graph {
         // and we obtain the set of nodes from where cliques may
         // be computed.
         let mut clique_roots = Vec::new();
-        while let Some((node_id, _)) = node_degrees_copy
+        while let Some((node_id, degree)) = node_degrees_copy
             .par_iter()
             .cloned()
             .enumerate()
@@ -317,13 +317,12 @@ impl Graph {
                 node_degrees_copy[neighbour_node_id as usize] >= minimum_clique_size - 1
             })
             .collect::<Vec<NodeT>>();
-            let number_of_covered_nodes = covered_nodes.len() as NodeT;
             // We mark as covered the central node and all of its neighbours.
-            node_degrees_copy[node_id] -= number_of_covered_nodes;
+            node_degrees_copy[node_id] = 0;
             // Since the central node is covered, the degree of all of its
             // neighbours must be decreased by one.
             covered_nodes.iter().for_each(|&node_id| {
-                node_degrees_copy[node_id as usize] -= number_of_covered_nodes;
+                node_degrees_copy[node_id as usize] -= degree;
             });
         }
 
@@ -390,7 +389,7 @@ impl Graph {
                     // Reduce the size of the degree of the nodes in the clique
                     // by the number of nodes in the clique, except for themselves.
                     tentative_clique.iter().for_each(|&node_in_clique|{
-                        node_degrees[node_in_clique as usize] -= number_of_nodes_in_clique - 1;
+                        node_degrees[node_in_clique as usize] -= node_degree;
                     });
                     cliques.push(tentative_clique);
                     if cliques.len() == clique_per_node {
