@@ -296,19 +296,13 @@ impl Graph {
 
         info!(
             "Computing clique roots for {} nodes.",
-            to_human_readable_high_integer(
-                node_degrees_copy
-                    .par_iter()
-                    .cloned()
-                    .filter(|&degree| degree > 0)
-                    .count()
-            )
+            to_human_readable_high_integer(node_ids.len())
         );
         // Finally, we compute the clique root set of the nodes
         // and we obtain the set of nodes from where cliques may
         // be computed.
         let mut clique_roots = Vec::new();
-        while let Some((node_id, degree)) = node_degrees_copy
+        while let Some((node_id, _)) = node_degrees_copy
             .par_iter()
             .cloned()
             .enumerate()
@@ -323,14 +317,20 @@ impl Graph {
                 node_degrees_copy[neighbour_node_id as usize] >= minimum_clique_size - 1
             })
             .collect::<Vec<NodeT>>();
+            let number_of_covered_nodes = covered_nodes.len() as NodeT;
             // We mark as covered the central node and all of its neighbours.
-            node_degrees_copy[node_id] = 0;
+            node_degrees_copy[node_id] -= number_of_covered_nodes;
             // Since the central node is covered, the degree of all of its
             // neighbours must be decreased by one.
             covered_nodes.iter().for_each(|&node_id| {
-                node_degrees_copy[node_id as usize] -= degree;
+                node_degrees_copy[node_id as usize] -= number_of_covered_nodes;
             });
         }
+
+        info!(
+            "Found {} clique roots.",
+            to_human_readable_high_integer(clique_roots.len())
+        );
 
         // Create the progress bar.
         let pb = get_loading_bar(verbose, "Computing graph cliques", clique_roots.len());
