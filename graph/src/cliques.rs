@@ -321,7 +321,7 @@ impl Graph {
             // Since the central node is covered, the degree of all of its
             // neighbours must be decreased by one.
             covered_nodes.iter().for_each(|&node_id| {
-                node_degrees_copy[node_id as usize] -= degree;
+                node_degrees_copy[node_id as usize] -= 1;
             });
         }
 
