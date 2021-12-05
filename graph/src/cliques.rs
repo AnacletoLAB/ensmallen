@@ -301,7 +301,7 @@ impl Graph {
         // and we obtain the set of nodes from where cliques may
         // be computed.
         let mut clique_roots = Vec::new();
-        while let Some((node_id, degree)) = node_degrees_copy
+        while let Some((node_id, _)) = node_degrees_copy
             .par_iter()
             .cloned()
             .enumerate()
@@ -467,7 +467,7 @@ impl Graph {
         };
         while let Some(clique) = self
             .iter_approximated_cliques(
-                Some(threshold),
+                Some(candidate_maximal_clique.len()),
                 Some(candidate_maximal_clique.len() + 1),
                 Some(1),
                 Some(false),
