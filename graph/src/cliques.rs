@@ -490,7 +490,7 @@ impl Graph {
                         .map(|node_id| unsafe {
                             self.get_unchecked_node_degree_from_node_id(node_id)
                         })
-                        .max()
+                        .min()
                         .unwrap(),
                 ),
                 Some(candidate_maximal_clique.len() + 1),
