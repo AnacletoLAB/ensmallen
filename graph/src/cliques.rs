@@ -341,19 +341,13 @@ impl Graph {
             .filter_map(move |node_id| {
                 // First of all we find the degree of this node.
                 let node_degree = node_degrees[node_id as usize];
-                // If the degree of this node has fallen below the minimum threshold
-                // for it to be considered as part of a clique with at least `minimum_node_degree`
-                // nodes, because a sufficient number of its neighbours has been removed,
-                // then we can drop it. Note that the removal happens in parallel.
-                if node_degree < (minimum_clique_size - 1) as NodeT {
-                    return None;
-                }
+                // We compute the neighbours of this node.
                 let mut neighbours = unsafe {
                     self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id)
                 }
                 .filter(|&dst| node_degrees[dst as usize] >= node_degree)
                 .collect::<Vec<NodeT>>();
-                // Otherwise, we start to find the cliques.
+                // We start to find the cliques.
                 let mut cliques = Vec::new();
                 loop {
                     let mut tentative_clique = vec![];
@@ -376,8 +370,13 @@ impl Graph {
                                 Some((neighbour_node_id, shared_neighbours))
                             }
                         })
-                        .max_by(|(_, a), (_, b)| a.len().cmp(&b.len()))
+                        .max_by_key(|(_, a)| a.len())
                     {
+                        info!(
+                            "Adding node {}, current root degree {}",
+                            best_neighbour_node_id,
+                            node_degrees[node_id as usize]
+                        );
                         clique_neighbours =shared_neighbours;
                         // Here we need to subtract to the degree of the best neighbour
                         // the number of nodes in the clique (plus one because the root node is implicit).
