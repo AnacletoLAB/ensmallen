@@ -467,7 +467,7 @@ impl Graph {
         };
         while let Some(clique) = self
             .iter_approximated_cliques(
-                Some(candidate_maximal_clique.len()),
+                Some(threshold),
                 Some(candidate_maximal_clique.len() + 1),
                 Some(1),
                 Some(false),
