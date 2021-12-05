@@ -339,7 +339,7 @@ impl Graph {
             .progress_with(pb)
             .filter_map(move |node_id| {
                 // First of all we find the degree of this node.
-                let node_degree = node_degrees[node_id as usize];
+                let mut node_degree = node_degrees[node_id as usize];
                 // We compute the neighbours of this node.
                 let mut neighbours = unsafe {
                     self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id)
@@ -377,14 +377,24 @@ impl Graph {
                     if tentative_clique.is_empty() {
                         break;
                     }
+
+                    node_degree = node_degree.min(tentative_clique.len() as NodeT - 1);
+
                     tentative_clique.push(node_id);
+
                     // Reduce the size of the degree of the nodes in the clique
                     // by the number of nodes in the clique, except for themselves.
                     tentative_clique.iter().for_each(|&node_in_clique|{
                         node_degrees[node_in_clique as usize] -= node_degree;
                     });
+
+                    if tentative_clique.len() < minimum_clique_size as usize {
+                        break;
+                    }
+
                     cliques.push(tentative_clique);
-                    if cliques.len() == clique_per_node {
+                    node_degree = node_degrees[node_id as usize];
+                    if cliques.len() == clique_per_node || node_degree == 0 {
                         break;
                     }
                     // We remove from the node's neighbours
