@@ -312,14 +312,16 @@ impl Graph {
             .par_iter()
             .cloned()
             .enumerate()
-            .filter(|(_, degree)| *degree >= minimum_clique_size - 1 as NodeT)
+            .filter(|(_, degree)| *degree >= minimum_clique_size - 1)
             .min_by(|(_, a), (_, b)| a.cmp(b))
         {
             clique_roots.push(node_id as NodeT);
             let covered_nodes = unsafe {
                 self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id as NodeT)
             }
-            .filter(|&neighbour_node_id| node_degrees_copy[neighbour_node_id as usize] > 0)
+            .filter(|&neighbour_node_id| {
+                node_degrees_copy[neighbour_node_id as usize] > minimum_clique_size - 1
+            })
             .collect::<Vec<NodeT>>();
             // We mark as covered the central node and all of its neighbours.
             node_degrees_copy[node_id] = 0;
