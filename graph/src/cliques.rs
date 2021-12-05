@@ -124,15 +124,17 @@ impl Graph {
     /// `minimum_degree`: Option<NodeT> - The optional minimum degree, by default 10.
     /// `minimum_clique_size`: Option<NodeT> - The optional minimum clique size, by default 10.
     /// `clique_per_node`: Option<usize> - Maximum number of clique to find for each node.
+    /// `maximum_number_of_cliques`: Option<usize> - Maximum number of cliques to compute. By default, equal to the number of nodes.
     /// `verbose`: Option<bool> - Whether to show a loading bar. By default, True.
     ///
     /// # Raises
     /// * If the current graph is directed.
-    pub fn par_iter_approximated_cliques(
+    pub fn iter_approximated_cliques(
         &self,
         minimum_degree: Option<NodeT>,
         minimum_clique_size: Option<NodeT>,
         clique_per_node: Option<usize>,
+        maximum_number_of_cliques: Option<usize>,
         verbose: Option<bool>,
     ) -> Result<impl Iterator<Item = Clique> + '_> {
         self.must_be_undirected()?;
@@ -142,6 +144,9 @@ impl Graph {
         let minimum_clique_size = minimum_clique_size.unwrap_or(10);
         // The number of clique per node to compute, which by default is 1.
         let clique_per_node = clique_per_node.unwrap_or(1);
+        // The maximum number of cliques to compute, which defaults to the number of nodes.
+        let maximum_number_of_cliques =
+            maximum_number_of_cliques.unwrap_or(self.get_nodes_number() as usize);
         // Whether to show the loading bar while computing cliques.
         let verbose = verbose.unwrap_or(true);
         // We create a vector with the initial node degrees of the graph, wrapped into atomic.
@@ -324,6 +329,9 @@ impl Graph {
             covered_nodes.iter().for_each(|&node_id| {
                 node_degrees_copy[node_id as usize] -= degree;
             });
+            if maximum_number_of_cliques <= clique_roots.len() {
+                break;
+            }
         }
 
         info!(
@@ -436,13 +444,67 @@ impl Graph {
         verbose: Option<bool>,
     ) -> Result<Vec<Clique>> {
         Ok(self
-            .par_iter_approximated_cliques(
+            .iter_approximated_cliques(
                 minimum_degree,
                 minimum_clique_size,
                 clique_per_node,
+                None,
                 verbose,
             )?
             .collect())
+    }
+
+    /// Returns the maximum clique in the graph.
+    ///
+    /// # Raises
+    /// * If the current graph is directed.
+    pub fn get_max_clique(&self) -> Result<Clique> {
+        let minimum_node_degree = self.get_minimum_node_degree()?;
+        let mut threshold = self.get_maximum_node_degree()? / 10;
+        let mut candidate_maximal_clique = loop {
+            if let Some(clique) = self
+                .iter_approximated_cliques(
+                    Some(threshold),
+                    Some(threshold),
+                    Some(1),
+                    Some(1),
+                    Some(false),
+                )?
+                .take(1)
+                .collect::<Vec<Clique>>()
+                .first()
+            {
+                break clique.to_owned();
+            }
+            threshold /= 2;
+            if minimum_node_degree > threshold {
+                return Err("Impossible to detect the maximum clique in this graph.".to_string());
+            }
+        };
+        while let Some(clique) = self
+            .iter_approximated_cliques(
+                Some(
+                    candidate_maximal_clique
+                        .get_node_ids()
+                        .into_iter()
+                        .map(|node_id| unsafe {
+                            self.get_unchecked_node_degree_from_node_id(node_id)
+                        })
+                        .max()
+                        .unwrap(),
+                ),
+                Some(candidate_maximal_clique.len() + 1),
+                Some(1),
+                Some(1),
+                Some(false),
+            )?
+            .take(1)
+            .collect::<Vec<Clique>>()
+            .first()
+        {
+            candidate_maximal_clique = clique.to_owned();
+        }
+        Ok(candidate_maximal_clique)
     }
 
     /// Returns number of graph cliques with at least `minimum_degree` nodes.
@@ -463,10 +525,11 @@ impl Graph {
         verbose: Option<bool>,
     ) -> Result<usize> {
         Ok(self
-            .par_iter_approximated_cliques(
+            .iter_approximated_cliques(
                 minimum_degree,
                 minimum_clique_size,
                 clique_per_node,
+                None,
                 verbose,
             )?
             .count())
