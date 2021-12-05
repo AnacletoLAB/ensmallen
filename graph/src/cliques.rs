@@ -378,14 +378,6 @@ impl Graph {
                         break;
                     }
                     tentative_clique.push(node_id);
-                    // Get the number of nodes in the clique.
-                    let number_of_nodes_in_clique = tentative_clique.len() as NodeT;
-                    info!(
-                        "New click with {} nodes, root node {}, root node degree {}.",
-                        number_of_nodes_in_clique,
-                        node_id,
-                        node_degree,
-                    );
                     // Reduce the size of the degree of the nodes in the clique
                     // by the number of nodes in the clique, except for themselves.
                     tentative_clique.iter().for_each(|&node_in_clique|{
