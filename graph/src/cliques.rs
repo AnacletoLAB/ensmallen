@@ -372,27 +372,26 @@ impl Graph {
                         })
                         .max_by_key(|(_, a)| a.len())
                     {
-                        info!(
-                            "Adding node {}, current root degree {}",
-                            best_neighbour_node_id,
-                            node_degrees[node_id as usize]
-                        );
                         clique_neighbours =shared_neighbours;
-                        // Here we need to subtract to the degree of the best neighbour
-                        // the number of nodes in the clique (plus one because the root node is implicit).
-                        node_degrees[best_neighbour_node_id as usize] -= 1 + tentative_clique.len() as NodeT;
-                        // Then we reduce by one the degree of the root node.
-                        node_degrees[node_id as usize] -= 1;
-                        // And the degree of all the other nodes in the tentative clique.
-                        tentative_clique.iter().for_each(|&node_in_clique| {
-                            node_degrees[node_in_clique as usize] -= 1;
-                        });
                         tentative_clique.push(best_neighbour_node_id);
                     }
                     if tentative_clique.is_empty() {
                         break;
                     }
                     tentative_clique.push(node_id);
+                    // Get the number of nodes in the clique.
+                    let number_of_nodes_in_clique = tentative_clique.len() as NodeT;
+                    info!(
+                        "New click with {} nodes, root node {}, root node degree {}.",
+                        number_of_nodes_in_clique,
+                        node_id,
+                        node_degree,
+                    );
+                    // Reduce the size of the degree of the nodes in the clique
+                    // by the number of nodes in the clique, except for themselves.
+                    tentative_clique.iter().for_each(|&node_in_clique|{
+                        node_degrees[node_in_clique as usize] -= number_of_nodes_in_clique - 1;
+                    });
                     cliques.push(tentative_clique);
                     if cliques.len() == clique_per_node {
                         break;
