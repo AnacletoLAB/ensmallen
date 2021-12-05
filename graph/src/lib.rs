@@ -93,7 +93,7 @@ mod to_conversions;
 mod transitivity;
 mod trees;
 mod types;
-//mod url_utilities;
+mod url_utilities;
 mod vertex_cover;
 mod walks;
 pub mod walks_parameters;
@@ -107,7 +107,7 @@ mod queries_boolean;
 mod queries_walk;
 pub use self::queries::*;
 pub use self::queries_boolean::*;
-//pub use self::url_utilities::*;
+pub use self::url_utilities::*;
 
 pub mod test_utilities;
 

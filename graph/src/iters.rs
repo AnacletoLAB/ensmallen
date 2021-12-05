@@ -35,21 +35,22 @@ impl Graph {
 
     /// Return iterator on the node urls of the graph.
     pub fn iter_node_urls(&self) -> impl Iterator<Item = Option<String>> + '_ {
-        self.iter_node_names().map(|node_name| None) // get_node_source_url_from_node_name(&node_name).ok())
+        self.iter_node_names()
+            .map(|node_name| get_node_source_url_from_node_name(&node_name).ok())
     }
 
     /// Return parallel iterator on the node urls of the graph.
     pub fn par_iter_node_urls(&self) -> impl IndexedParallelIterator<Item = Option<String>> + '_ {
-        self.par_iter_node_names().map(|node_name| None) //get_node_source_url_from_node_name(&node_name).ok())
+        self.par_iter_node_names()
+            .map(|node_name| get_node_source_url_from_node_name(&node_name).ok())
     }
 
     /// Return iterator on the node ontologies of the graph.
     pub fn iter_node_ontologies(&self) -> impl Iterator<Item = Option<String>> + '_ {
         self.iter_node_names().map(|node_name| {
-            None
-            // get_node_repository_from_node_name(&node_name)
-            //     .ok()
-            //     .map(|ontology| ontology.to_string())
+            get_node_repository_from_node_name(&node_name)
+                .ok()
+                .map(|ontology| ontology.to_string())
         })
     }
 
@@ -58,10 +59,9 @@ impl Graph {
         &self,
     ) -> impl IndexedParallelIterator<Item = Option<String>> + '_ {
         self.par_iter_node_names().map(|node_name| {
-            None
-            // get_node_repository_from_node_name(&node_name)
-            //     .ok()
-            //     .map(|ontology| ontology.to_string())
+            get_node_repository_from_node_name(&node_name)
+                .ok()
+                .map(|ontology| ontology.to_string())
         })
     }
 
