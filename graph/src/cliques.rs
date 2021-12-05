@@ -1,7 +1,7 @@
 use super::*;
+use indicatif::ProgressIterator;
 use log::info;
 use rayon::prelude::*;
-use std::collections::HashMap;
 use std::sync::atomic::{AtomicU32, Ordering};
 
 #[derive(Hash, Clone, Debug, PartialEq)]
@@ -118,20 +118,32 @@ impl Clique {
 }
 
 impl Graph {
-    /// Returns parallel iterator over the graph cliques with at least `minimum_degree` nodes.
+    /// Returns parallel iterator over a subset of the graph cliques.
     ///
     /// # Arguments
-    /// `minimum_degree`: Option<NodeT> - The optional minimum degree, by default 5.
+    /// `minimum_degree`: Option<NodeT> - The optional minimum degree, by default 10.
+    /// `minimum_clique_size`: Option<NodeT> - The optional minimum clique size, by default 10.
     /// `clique_per_node`: Option<usize> - Maximum number of clique to find for each node.
+    /// `verbose`: Option<bool> - Whether to show a loading bar. By default, True.
+    ///
+    /// # Raises
+    /// * If the current graph is directed.
     pub fn par_iter_approximated_cliques(
         &self,
         minimum_degree: Option<NodeT>,
+        minimum_clique_size: Option<NodeT>,
         clique_per_node: Option<usize>,
-    ) -> Result<impl ParallelIterator<Item = Clique> + '_> {
+        verbose: Option<bool>,
+    ) -> Result<impl Iterator<Item = Clique> + '_> {
         self.must_be_undirected()?;
-        // First of all we set the minimum degree, which if None were provided is set to 5.
-        let minimum_degree = minimum_degree.unwrap_or(5);
+        // First of all we set the minimum degree, which if None were provided is set to 10.
+        let minimum_degree = minimum_degree.unwrap_or(10);
+        // First of all we set the minimum clique size, which if None were provided is set to 10.
+        let minimum_clique_size = minimum_clique_size.unwrap_or(10);
+        // The number of clique per node to compute, which by default is 1.
         let clique_per_node = clique_per_node.unwrap_or(1);
+        // Whether to show the loading bar while computing cliques.
+        let verbose = verbose.unwrap_or(true);
         // We create a vector with the initial node degrees of the graph, wrapped into atomic.
         info!("Create the node degrees vector.");
         let mut node_degrees: Vec<AtomicU32> = Vec::with_capacity(self.get_nodes_number() as usize);
@@ -195,7 +207,7 @@ impl Graph {
         // done.
         info!("Start iterations.");
         let mut current_iteration = 0;
-        let minimum_degree_minus_one = (minimum_degree - 1) as usize;
+        let minimum_clique_size_minus_one = (minimum_clique_size - 1) as usize;
         loop {
             let previous_nodes_number = node_ids.len();
             node_ids = node_ids
@@ -220,20 +232,20 @@ impl Graph {
                     }
                     .filter(|&dst| {
                         node_degrees[dst as usize].load(Ordering::Relaxed)
-                            >= minimum_degree_minus_one as NodeT
+                            >= (minimum_clique_size - 1) as NodeT
                     })
                     .collect::<Vec<NodeT>>();
 
                     // to be in a clique with `k` nodes, the node must have at
                     // least `k - 1` neighbours with at least degree `k - 1`.
                     // if this condition is not met, we can filter the node.
-                    if neighbours.len() < minimum_degree_minus_one {
+                    if neighbours.len() < minimum_clique_size_minus_one {
                         update_node_degree(node_id);
                         return None;
                     }
 
-                    // To check that the node may be part of a clique of size at least `minimum_degree`,
-                    // then at least `minimum_degree - 1` neighbouring nodes must have at least `minimum_degree - 1`
+                    // To check that the node may be part of a clique of size at least `minimum_clique_size`,
+                    // then at least `minimum_clique_size - 1` neighbouring nodes must have at least `minimum_clique_size - 1`
                     // neighbouring nodes in the set of nodes of the initial node.
                     if neighbours
                         .iter()
@@ -243,13 +255,13 @@ impl Graph {
                                     neighbour_node_id,
                                 )
                             })
-                            .take(minimum_degree_minus_one)
+                            .take(minimum_clique_size_minus_one)
                             .count()
-                                == minimum_degree_minus_one
+                                == minimum_clique_size_minus_one
                         })
-                        .take(minimum_degree_minus_one)
+                        .take(minimum_clique_size_minus_one)
                         .count()
-                        != minimum_degree_minus_one
+                        != minimum_clique_size_minus_one
                     {
                         update_node_degree(node_id);
                         return None;
@@ -273,139 +285,12 @@ impl Graph {
             );
             current_iteration += 1;
         }
-        info!(
-            "Searching for isomorphic cliques in {} nodes.",
-            to_human_readable_high_integer(node_ids.len())
-        );
-        // The next step in our algorithm will be to collapse the nodes
-        // that, after having removed all the low centrality nodes,
-        // are now connected isomorphic nodes. We collapse these nodes
-        // into "virtual" hyper-nodes.
-        let neighbours_hashes = node_ids
-            .par_iter()
-            .map(|&node_id| unsafe {
-                let mut seed: u64 = 0xDEADBEEFC0FEBABE_u64
-                    .wrapping_mul(node_degrees[node_id as usize].load(Ordering::Relaxed) as u64);
-                let mut added_selfloop = false;
-
-                for neighbour_id in self
-                    .iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id)
-                    .filter(|&dst| {
-                        node_degrees[dst as usize].load(Ordering::Relaxed)
-                            > minimum_degree_minus_one as NodeT
-                    })
-                    .take(100)
-                    .map(|neighbour_id| neighbour_id as u64)
-                {
-                    if !added_selfloop && neighbour_id > node_id as u64 {
-                        added_selfloop = true;
-                        seed = (seed ^ node_id as u64).wrapping_add(0x0A2126967AE81C95)
-                    }
-                    seed = (seed ^ neighbour_id).wrapping_add(0x0A2126967AE81C95)
-                }
-
-                if !added_selfloop {
-                    seed = (seed ^ node_id as u64).wrapping_add(0x0A2126967AE81C95)
-                }
-                seed
-            })
-            .collect::<Vec<u64>>();
-        // Get the indices of the filtered hashes for sorting
-        let mut indices = (0..(neighbours_hashes.len() as NodeT)).collect::<Vec<NodeT>>();
-        // Then we sort it according to the hash and the node ID so that slices
-        // of nodes with the same hash are sorted.
-        indices.par_sort_unstable_by(|&a, &b| {
-            match neighbours_hashes[a as usize].cmp(&neighbours_hashes[b as usize]) {
-                std::cmp::Ordering::Equal => node_ids[a as usize].cmp(&node_ids[b as usize]),
-                std::cmp::Ordering::Greater => std::cmp::Ordering::Greater,
-                std::cmp::Ordering::Less => std::cmp::Ordering::Less,
-            }
-        });
-        let number_of_nodes = indices.len();
-        // We compute the isomorphic groups
-        let isomorphic_groups = (0..number_of_nodes.saturating_sub(1))
-            .into_par_iter()
-            .filter_map(|i| unsafe {
-                let index = indices[i];
-                let node_id = node_ids[index as usize];
-                let node_hash = neighbours_hashes[index as usize];
-                if i != 0 && node_hash == neighbours_hashes[indices[i - 1] as usize]
-                    || node_hash != neighbours_hashes[indices[i + 1] as usize]
-                {
-                    return None;
-                }
-                let mut candidate_isomorphic_groups = vec![vec![node_id]];
-                for other_node_id in ((i + 1)..number_of_nodes)
-                    .take_while(|&j| node_hash == neighbours_hashes[indices[j] as usize])
-                    .map(|j| node_ids[indices[j] as usize])
-                {
-                    if let Some(isomorphic_group) =
-                        candidate_isomorphic_groups
-                            .iter_mut()
-                            .find(|candidate_isomorphic_group| {
-                                let node_id = candidate_isomorphic_group[0];
-                                self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
-                                node_id,
-                            )
-                            .filter(|&dst| {
-                                dst != other_node_id &&
-                                node_degrees[dst as usize].load(Ordering::Relaxed) > 0
-                            })
-                            .zip(
-                                self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
-                                    other_node_id,
-                                )
-                                .filter(|&dst| {
-                                    dst != node_id &&
-                                    node_degrees[dst as usize].load(Ordering::Relaxed) > 0
-                                }),
-                            )
-                            .all(
-                                |(first_node_neighbour_id, second_node_neighbour_id)| {
-                                    first_node_neighbour_id == second_node_neighbour_id
-                                },
-                            )
-                            })
-                    {
-                        // We add the current node to the isomorphic group
-                        isomorphic_group.push(other_node_id);
-                        node_degrees[other_node_id as usize].store(0, Ordering::Relaxed);
-                    } else {
-                        // We begin another isomorphic group
-                        candidate_isomorphic_groups.push(vec![other_node_id]);
-                    }
-                }
-                // We need to check that the isomorphic groups
-                // are not tautological, aka formed of a single node.
-                Some(
-                    candidate_isomorphic_groups
-                        .into_iter()
-                        .filter(|candidate_isomorphic_group| candidate_isomorphic_group.len() > 1)
-                        .collect::<Vec<Vec<NodeT>>>(),
-                )
-            })
-            .flat_map(|candidate_isomorphic_groups| candidate_isomorphic_groups)
-            .map(|candidate_isomorphic_group: Vec<NodeT>| {
-                (candidate_isomorphic_group[0], candidate_isomorphic_group)
-            })
-            .collect::<HashMap<NodeT, Vec<NodeT>>>();
-        // Creating another info log.
-        info!(
-            "Found {} isomorphic groups composed of {} nodes.",
-            to_human_readable_high_integer(isomorphic_groups.len()),
-            to_human_readable_high_integer(
-                isomorphic_groups
-                    .values()
-                    .map(|isomorphic_group| isomorphic_group.len() + 1)
-                    .sum()
-            )
-        );
 
         //===========================================
         // Start computation of clique roots.
         //===========================================
         // We convert the atomic degrees to non-atomic.
-        let node_degrees =
+        let mut node_degrees =
             unsafe { std::mem::transmute::<Vec<AtomicU32>, Vec<NodeT>>(node_degrees) };
         let mut node_degrees_copy = node_degrees.clone();
 
@@ -427,7 +312,7 @@ impl Graph {
             .par_iter()
             .cloned()
             .enumerate()
-            .filter(|(_, degree)| *degree > 0)
+            .filter(|(_, degree)| *degree >= minimum_clique_size - 1 as NodeT)
             .min_by(|(_, a), (_, b)| a.cmp(b))
         {
             clique_roots.push(node_id as NodeT);
@@ -444,78 +329,62 @@ impl Graph {
                 node_degrees_copy[node_id as usize] -= degree;
             });
         }
-        let node_degrees =
-            unsafe { std::mem::transmute::<Vec<NodeT>, Vec<AtomicU32>>(node_degrees) };
 
+        // Create the progress bar.
+        let pb = get_loading_bar(verbose, "Computing graph cliques", clique_roots.len());
         // Actually compute and return cliques.
         Ok(clique_roots
-            .into_par_iter()
+            .into_iter()
+            .progress_with(pb)
             .filter_map(move |node_id| {
                 // First of all we find the degree of this node.
-                let node_degree = node_degrees[node_id as usize].load(Ordering::Relaxed);
+                let node_degree = node_degrees[node_id as usize];
                 // If the degree of this node has fallen below the minimum threshold
                 // for it to be considered as part of a clique with at least `minimum_node_degree`
                 // nodes, because a sufficient number of its neighbours has been removed,
                 // then we can drop it. Note that the removal happens in parallel.
-                if node_degree < minimum_degree_minus_one as NodeT {
+                if node_degree < (minimum_clique_size - 1) as NodeT {
                     return None;
                 }
-                // Otherwise, we retrieve its neighbours, filtering out the nodes that have a degree
-                // smaller than its degree, since, again, this node has the minimum degree of the clique.
                 let mut neighbours = unsafe {
                     self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(node_id)
                 }
-                .filter(|&dst| node_degrees[dst as usize].load(Ordering::Relaxed) >= node_degree)
+                .filter(|&dst| node_degrees[dst as usize] >= node_degree)
                 .collect::<Vec<NodeT>>();
-                // If the set of neighbours is empty, we check if the node is a root of
-                // an isomorphic group: if so, the clique is the isomorphic group itself.
-                // We interrupt in either case the exploration of this node.
-                if neighbours.is_empty() {
-                    return isomorphic_groups
-                        .get(&node_id)
-                        .map(|isomorphic_group| vec![isomorphic_group.clone()]);
-                }
                 // Otherwise, we start to find the cliques.
                 let mut cliques = Vec::new();
                 loop {
                     let mut tentative_clique = vec![];
                     let mut clique_neighbours = neighbours.clone();
-                    while let Some((best_neighbour_node_id, shared_neighbours, _)) = clique_neighbours
-                        .iter()
+                    while let Some((best_neighbour_node_id, shared_neighbours)) = clique_neighbours
+                        .par_iter()
                         .cloned()
                         .filter_map(|neighbour_node_id| {
                             let shared_neighbours = iter_set::intersection(
                                 unsafe {
                                     self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
                                         neighbour_node_id,
-                                    ).filter(|&dst| node_degrees[dst as usize].load(Ordering::Relaxed) >= node_degree)
+                                    ).filter(|&dst| node_degrees[dst as usize] >= node_degree)
                                 },
                                 clique_neighbours.iter().cloned(),
                             ).collect::<Vec<NodeT>>();
-                            let score = shared_neighbours.iter().map(|node_id| {
-                                isomorphic_groups
-                                    .get(&node_id)
-                                    .map_or(1, |vector| vector.len())
-                            })
-                            .sum::<usize>();
-                            if score > 0 {
-                                Some((neighbour_node_id, shared_neighbours, score))
-                            } else {
+                            if shared_neighbours.is_empty() {
                                 None
+                            } else {
+                                Some((neighbour_node_id, shared_neighbours))
                             }
                         })
-                        .max_by(|(_, _, a), (_, _, b)| a.cmp(b))
+                        .max_by(|(_, a), (_, b)| a.len().cmp(&b.len()))
                     {
                         clique_neighbours =shared_neighbours;
                         // Here we need to subtract to the degree of the best neighbour
                         // the number of nodes in the clique (plus one because the root node is implicit).
-                        node_degrees[best_neighbour_node_id as usize]
-                            .fetch_sub(1 + tentative_clique.len() as NodeT, Ordering::Relaxed);
+                        node_degrees[best_neighbour_node_id as usize] -= 1 + tentative_clique.len() as NodeT;
                         // Then we reduce by one the degree of the root node.
-                        node_degrees[node_id as usize].fetch_sub(1, Ordering::Relaxed);
+                        node_degrees[node_id as usize] -= 1;
                         // And the degree of all the other nodes in the tentative clique.
                         tentative_clique.iter().for_each(|&node_in_clique| {
-                            node_degrees[node_in_clique as usize].fetch_sub(1, Ordering::Relaxed);
+                            node_degrees[node_in_clique as usize] -= 1;
                         });
                         tentative_clique.push(best_neighbour_node_id);
                     }
@@ -530,33 +399,20 @@ impl Graph {
                     // We remove from the node's neighbours
                     // the nodes that now have a smaller degree.
                     neighbours.retain(|&dst| {
-                        node_degrees[dst as usize].load(Ordering::Relaxed) >= node_degree
+                        node_degrees[dst as usize] >= node_degree
                     });
                 }
                 // Expand the isomorphic groups in the cliques.
                 Some(
                     cliques
                         .into_iter()
-                        .map(|clique| {
-                            clique
-                                .into_iter()
-                                .flat_map(|node_id| {
-                                    if let Some(isomorphic_group) = isomorphic_groups.get(&node_id)
-                                    {
-                                        isomorphic_group.clone()
-                                    } else {
-                                        vec![node_id]
-                                    }
-                                })
-                                .collect::<Vec<NodeT>>()
-                        })
                         .filter(|clique| clique.len() > minimum_degree as usize)
                         .collect::<Vec<Vec<NodeT>>>(),
                 )
             })
             .flat_map(move |cliques| {
                 cliques
-                    .into_par_iter()
+                    .into_iter()
                     .map(move |clique| Clique::from_node_ids(self, clique))
             }))
     }
@@ -564,30 +420,54 @@ impl Graph {
     /// Returns graph cliques with at least `minimum_degree` nodes.
     ///
     /// # Arguments
-    /// `minimum_degree`: Option<NodeT> - The optional minimum degree, by default 5.
+    /// `minimum_degree`: Option<NodeT> - The optional minimum degree, by default 10.
+    /// `minimum_clique_size`: Option<NodeT> - The optional minimum clique size, by default 10.
     /// `clique_per_node`: Option<usize> - Maximum number of clique to find for each node.
+    /// `verbose`: Option<bool> - Whether to show a loading bar. By default, True.
+    ///
+    /// # Raises
+    /// * If the current graph is directed.
     pub fn get_approximated_cliques(
         &self,
         minimum_degree: Option<NodeT>,
+        minimum_clique_size: Option<NodeT>,
         clique_per_node: Option<usize>,
+        verbose: Option<bool>,
     ) -> Result<Vec<Clique>> {
         Ok(self
-            .par_iter_approximated_cliques(minimum_degree, clique_per_node)?
+            .par_iter_approximated_cliques(
+                minimum_degree,
+                minimum_clique_size,
+                clique_per_node,
+                verbose,
+            )?
             .collect())
     }
 
     /// Returns number of graph cliques with at least `minimum_degree` nodes.
     ///
     /// # Arguments
-    /// `minimum_degree`: Option<NodeT> - The optional minimum degree, by default 5.
+    /// `minimum_degree`: Option<NodeT> - The optional minimum degree, by default 10.
+    /// `minimum_clique_size`: Option<NodeT> - The optional minimum clique size, by default 10.
     /// `clique_per_node`: Option<usize> - Maximum number of clique to find for each node.
+    /// `verbose`: Option<bool> - Whether to show a loading bar. By default, True.
+    ///
+    /// # Raises
+    /// * If the current graph is directed.
     pub fn get_approximated_cliques_number(
         &self,
         minimum_degree: Option<NodeT>,
+        minimum_clique_size: Option<NodeT>,
         clique_per_node: Option<usize>,
+        verbose: Option<bool>,
     ) -> Result<usize> {
         Ok(self
-            .par_iter_approximated_cliques(minimum_degree, clique_per_node)?
+            .par_iter_approximated_cliques(
+                minimum_degree,
+                minimum_clique_size,
+                clique_per_node,
+                verbose,
+            )?
             .count())
     }
 }

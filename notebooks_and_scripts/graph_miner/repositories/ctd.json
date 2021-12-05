@@ -1,0 +1,24 @@
+{
+    "Chemical2GeneInteractions": {
+        "current": {
+            "urls": [
+                "http://ctdbase.org/reports/CTD_chem_gene_ixns.csv.gz"
+            ],
+            "paths": [
+                "CTD_chem_gene_ixns.csv.gz"
+            ],
+            "arguments": {
+                "directed": false,
+                "edge_list_header": false,
+                "node_list_header": false,
+                "name": "Chemical2GeneInteractions",
+                "edge_path": "CTD_chem_gene_ixns.csv",
+                "edge_list_comment_symbol": "#",
+                "edge_list_separator": ",",
+                "sources_column_number": 0,
+                "destinations_column_number": 3,
+                "edge_list_edge_types_column": 9
+            }
+        }
+    }    
+}
