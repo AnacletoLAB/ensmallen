@@ -488,7 +488,7 @@ impl Graph {
                                 unsafe {
                                     self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
                                         neighbour_node_id,
-                                    )
+                                    ).filter(|&dst| node_degrees[dst as usize].load(Ordering::Relaxed) >= node_degree)
                                 },
                                 clique_neighbours.iter().cloned(),
                             ).collect::<Vec<NodeT>>();
