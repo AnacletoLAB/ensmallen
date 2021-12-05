@@ -480,50 +480,33 @@ impl Graph {
                 loop {
                     let mut tentative_clique = vec![];
                     let mut clique_neighbours = neighbours.clone();
-                    while let Some((best_neighbour_node_id, _)) = clique_neighbours
+                    while let Some((best_neighbour_node_id, shared_neighbours, _)) = clique_neighbours
                         .iter()
                         .cloned()
                         .filter_map(|neighbour_node_id| {
-                            let node_neighbours = unsafe {
-                                self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
-                                    neighbour_node_id,
-                                )
-                            }
-                            .filter(|&dst| {
-                                node_degrees[dst as usize].load(Ordering::Relaxed) >= node_degree
-                            })
-                            .collect::<Vec<NodeT>>();
-                            if node_neighbours.is_empty() {
-                                return None;
-                            }
-                            let score = iter_set::intersection(
-                                node_neighbours.iter().cloned(),
+                            let shared_neighbours = iter_set::intersection(
+                                unsafe {
+                                    self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
+                                        neighbour_node_id,
+                                    )
+                                },
                                 clique_neighbours.iter().cloned(),
-                            )
-                            .map(|node_id| {
+                            ).collect::<Vec<NodeT>>();
+                            let score = shared_neighbours.iter().map(|node_id| {
                                 isomorphic_groups
                                     .get(&node_id)
                                     .map_or(1, |vector| vector.len())
-                                    as f64
                             })
-                            .count();
+                            .sum::<usize>();
                             if score > 0 {
-                                Some((neighbour_node_id, score))
+                                Some((neighbour_node_id, shared_neighbours, score))
                             } else {
                                 None
                             }
                         })
-                        .max_by(|(_, a), (_, b)| a.partial_cmp(b).unwrap())
+                        .max_by(|(_, _, a), (_, _, b)| a.cmp(b))
                     {
-                        clique_neighbours = iter_set::intersection(
-                            unsafe {
-                                self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
-                                    best_neighbour_node_id,
-                                )
-                            },
-                            clique_neighbours.iter().cloned(),
-                        )
-                        .collect::<Vec<NodeT>>();
+                        clique_neighbours =shared_neighbours;
                         // Here we need to subtract to the degree of the best neighbour
                         // the number of nodes in the clique (plus one because the root node is implicit).
                         node_degrees[best_neighbour_node_id as usize]
