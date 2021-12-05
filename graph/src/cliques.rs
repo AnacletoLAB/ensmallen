@@ -467,16 +467,7 @@ impl Graph {
         };
         while let Some(clique) = self
             .iter_approximated_cliques(
-                Some(
-                    candidate_maximal_clique
-                        .get_node_ids()
-                        .into_iter()
-                        .map(|node_id| unsafe {
-                            self.get_unchecked_node_degree_from_node_id(node_id)
-                        })
-                        .min()
-                        .unwrap(),
-                ),
+                Some(candidate_maximal_clique.len()),
                 Some(candidate_maximal_clique.len() + 1),
                 Some(1),
                 Some(false),
