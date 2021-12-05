@@ -4,6 +4,16 @@ use itertools::Itertools;
 use rayon::prelude::*;
 use std::collections::HashMap;
 
+pub fn get_node_source_html_url_from_node_name(l: &str) -> String {
+    "".to_string()
+}
+pub fn get_node_type_source_html_url_from_node_type_name(l: &str) -> String {
+    "".to_string()
+}
+pub fn get_edge_type_source_html_url_from_edge_type_name(l: &str) -> String {
+    "".to_string()
+}
+
 /// # Human readable report of the properties of the graph
 impl Graph {
     /// Returns report relative to the graph metrics
