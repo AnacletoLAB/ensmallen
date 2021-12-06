@@ -12,6 +12,7 @@ from .kg_obo_graph_repository import KGOBOGraphRepository
 from .wikidata_graph_repository import WikiDataGraphRepository
 from .freebase_graph_repository import FreebaseGraphRepository
 from .wikipedia_graph_repository import WikipediaGraphRepository
+from .ctd_graph_repositories import CTDGraphRepository
 
 __all__ = [
     "StringGraphRepository",
@@ -26,5 +27,6 @@ __all__ = [
     "KGOBOGraphRepository",
     "WikiDataGraphRepository",
     "FreebaseGraphRepository",
-    "WikipediaGraphRepository"
+    "WikipediaGraphRepository",
+    "CTDGraphRepository"
 ]
