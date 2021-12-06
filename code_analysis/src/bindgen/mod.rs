@@ -104,6 +104,55 @@ impl GenBinding for Class {
     fn gen_python_binding(&self) -> String {
         let methods_names = self.get_methods_names();
         let (terms, tfidf) = tfidf_gen(&methods_names);
+
+        let impl_ord = self.impls.iter()
+            .any(|x| {
+                let trait_impl = x.impl_trait.as_ref()
+                .map(|x| x.to_string())
+                .unwrap_or(String::new());
+
+                trait_impl.contains("Ord")
+            }) && self.impls.iter().any(|x| {
+                x.methods.iter()
+                    .any(|f| {
+                        f.name == "cmp"
+                    })
+            });
+        let impl_partial_ord = self.impls.iter()
+            .any(|x| {
+                let trait_impl = x.impl_trait.as_ref()
+                .map(|x| x.to_string())
+                .unwrap_or(String::new());
+
+                trait_impl.contains("PartialOrd")
+            }) && self.impls.iter().any(|x| {
+                x.methods.iter()
+                    .any(|f| {
+                        f.name == "partial_cmp"
+                    })
+            });
+        println!("Richcmp: {:30} Ord: {:6} PartialOrd: {:6}", 
+            self.ztruct.struct_type.to_string(),
+            impl_ord,
+            impl_partial_ord,
+        );
+        let cmp_impl = if impl_ord || impl_partial_ord {
+r#"
+fn __richcmp__(&'p self, other: Self, op: CompareOp) -> bool {
+    match op {
+        CompareOp::Lt => self.inner < other.inner,
+        CompareOp::Le => self.inner <= other.inner,
+        CompareOp::Eq => self.inner == other.inner,
+        CompareOp::Ne => self.inner != other.inner,
+        CompareOp::Gt => self.inner > other.inner,
+        CompareOp::Ge => self.inner >= other.inner,
+    }
+}
+"#
+        } else {
+            ""
+        };
+
         format!(
 r#"
 {struct_doc}
@@ -163,6 +212,8 @@ impl PyObjectProtocol for {struct_name} {{
         self.inner.hash(&mut hasher);
         Ok(hasher.finish() as isize)
     }}
+
+    {cmp_impl}
 
     fn __getattr__(&self, name: String) -> PyResult<()> {{
         // split the query into tokens
@@ -238,6 +289,7 @@ impl PyObjectProtocol for {struct_name} {{
         ).collect::<Vec<_>>(),
         "{}", "\n\n"
     ),
+    cmp_impl=cmp_impl,
     method_names=format_vec!(methods_names, "    \"{}\",", "\n"),
     terms=format_vec!(terms, "    \"{}\",", "\n"),
     tfidf=format_vec!(tfidf, "&{:?},", "\n"),
@@ -442,6 +494,7 @@ use pyo3::class::basic::PyObjectProtocol;
 use std::hash::{{Hash, Hasher}};
 use std::collections::hash_map::DefaultHasher;
 use strsim::*; 
+use pyo3::class::basic::CompareOp;
 
 /// Returns the given method name separated in the component parts.
 ///
