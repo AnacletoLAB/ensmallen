@@ -125,10 +125,14 @@ impl Graph {
                 }
             });
 
-        info!("Sorting hashes.");    
-        // Then we sort it according to the number of nodes with this node type.
+        info!("Sorting hashes.");
+        // Then we sort it according to their hash and node type ids so that
+        // the buckets of common hash are sorted by node type id.
         node_type_ids.par_sort_unstable_by(|&a, &b| {
-            node_type_hashes[a as usize].cmp(&node_type_hashes[b as usize])
+            match node_type_hashes[a as usize].cmp(&node_type_hashes[b as usize]) {
+                std::cmp::Ordering::Equal => a.cmp(&b),
+                x => x,
+            }
         });
 
         info!("Computing isomorphic node types.");
@@ -144,43 +148,105 @@ impl Graph {
                 {
                     return None;
                 }
-                let mut candidate_isomorphic_groups = vec![vec![node_type_id]];
-                let mut filtering_is_necessary = false;
-                for other_node_type_id in ((i + 1)..considered_node_type_ids_number)
+                let mut candidate_isomorphic_groups = vec![(i
+                    ..considered_node_type_ids_number)
                     .map(|j| node_type_ids[j])
                     .take_while(|&node_type_id| {
                         node_type_hash == node_type_hashes[node_type_id as usize]
                     })
-                {
-                    if let Some(isomorphic_group) =
-                        candidate_isomorphic_groups
-                            .iter_mut()
-                            .find(|candidate_isomorphic_group| {
-                                let node_type_id = candidate_isomorphic_group[0];
-                                !self
-                                    .iter_node_ids_and_node_type_ids_from_node_type_id(Some(
-                                        node_type_id,
-                                    ))
-                                    .unwrap()
-                                    .any(|(_, node_type_ids)| {
-                                        node_type_ids.map_or(false, |node_type_ids| {
-                                            node_type_ids.contains(&other_node_type_id)
-                                        })
-                                    })
-                            })
-                    {
-                        isomorphic_group.push(other_node_type_id);
-                    } else {
-                        filtering_is_necessary = true;
-                        candidate_isomorphic_groups.push(vec![other_node_type_id]);
-                    }
-                }
-                if filtering_is_necessary {
-                    candidate_isomorphic_groups = candidate_isomorphic_groups
-                        .into_iter()
-                        .filter(|candidate_isomorphic_group| candidate_isomorphic_group.len() > 1)
-                        .collect();
-                }
+                    .collect::<Vec<_>>()];
+
+                self.iter_node_ids_and_node_type_ids()
+                    .for_each(|(_, node_type_ids)| {
+                        if node_type_ids.is_none() {
+                            return;
+                        }
+
+                        let node_type_ids = node_type_ids.unwrap();
+                        
+                        let number_of_groups = candidate_isomorphic_groups.len();
+                        let mut remove_empty_groups = false;
+
+                        for index in 0..number_of_groups {
+                            let candidate_isomorphic_group = &mut candidate_isomorphic_groups[index];
+                            let number_of_shared_elements = iter_set::intersection(
+                                candidate_isomorphic_group.iter().copied(),
+                                node_type_ids.iter().copied(),
+                            )
+                            .count();
+                            if number_of_shared_elements == 0
+                                || number_of_shared_elements == candidate_isomorphic_group.len()
+                            {
+                                // The group of node type IDs is still a valid candidate
+                                continue;
+                            }
+
+                            // If the current isomorphic candidate group was composed of two node types
+                            // and exclusively one of these was present in the node type IDs of the current
+                            // node, then this is not an isomorphic group altogheter and must be removed.
+                            if number_of_shared_elements == 1
+                                && candidate_isomorphic_group.len() == 2
+                            {
+                                // TODO! remove candidate isomorphic group.
+                                remove_empty_groups = true;
+                                candidate_isomorphic_group.clear();
+                                continue;
+                            }
+
+                            // If the number of shared elements is exactly one, we just need to remove this entity
+                            // from the current isomorphic group.
+                            if number_of_shared_elements == 1 {
+                                let single_shared_node_type = iter_set::intersection(
+                                    candidate_isomorphic_group.iter().copied(),
+                                    node_type_ids.iter().copied(),
+                                )
+                                .nth(0)
+                                .unwrap();
+                                candidate_isomorphic_group.retain(|&node_type_id| {
+                                    node_type_id != single_shared_node_type
+                                });
+                                continue
+                            }
+
+                            // If the number of non shared elements is exactly one,
+                            // we just need to remove this entity
+                            // from the current isomorphic group.
+                            if candidate_isomorphic_group.len() - number_of_shared_elements == 1 {
+                                let single_non_shared_node_type = iter_set::difference(
+                                    candidate_isomorphic_group.iter().copied(),
+                                    node_type_ids.iter().copied(),
+                                )
+                                .nth(0)
+                                .unwrap();
+                                candidate_isomorphic_group.retain(|&node_type_id| {
+                                    node_type_id != single_non_shared_node_type
+                                });
+                                continue
+                            }
+
+                            let shared_node_type = iter_set::intersection(
+                                candidate_isomorphic_group.iter().copied(),
+                                node_type_ids.iter().copied(),
+                            ).collect::<Vec<_>>();
+
+                            let different_node_type = iter_set::difference(
+                                candidate_isomorphic_group.iter().copied(),
+                                node_type_ids.iter().copied(),
+                            ).collect::<Vec<_>>();
+
+                            *candidate_isomorphic_group = shared_node_type;
+                            candidate_isomorphic_groups.push(
+                                different_node_type
+                            );
+                        }
+
+                        if remove_empty_groups {
+                            candidate_isomorphic_groups
+                                .retain(|x| !x.is_empty());
+                        }
+                    });
+
+
                 if candidate_isomorphic_groups.is_empty() {
                     None
                 } else {
