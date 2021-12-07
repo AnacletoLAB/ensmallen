@@ -104,7 +104,7 @@ impl Graph {
         info!("Computing node type hashes seeds.");
         let mut node_type_hashes = self
             .par_iter_unique_node_type_ids()?
-            .map(|&node_type_id| unsafe {
+            .map(|node_type_id| unsafe {
                 0xDEADBEEFC0FEBABE_u64.wrapping_mul(
                     self.get_unchecked_number_of_nodes_from_node_type_id(node_type_id) as u64,
                 )
@@ -277,7 +277,7 @@ impl Graph {
     ) -> Result<impl ParallelIterator<Item = Vec<EdgeTypeT>> + '_> {
         let edge_type_hashes = self
             .par_iter_unique_edge_type_ids()?
-            .map(|&edge_type_id| unsafe {
+            .map(|edge_type_id| unsafe {
                 let number_of_edges =
                     self.get_unchecked_number_of_edges_from_edge_type_id(edge_type_id);
                 let seed: u64 = 0xDEADBEEFC0FEBABE_u64.wrapping_mul(number_of_edges as u64);
