@@ -120,7 +120,7 @@ impl Graph {
                     node_type_ids.iter().for_each(|&node_type_id| {
                         node_type_hashes[node_type_id as usize] =
                             (node_type_hashes[node_type_id as usize] ^ node_id as u64)
-                                .wrapping_add(0x0A2126967AE81C95);
+                                .wrapping_add(0x0A2126967AE81C95_u64);
                     });
                 }
             });

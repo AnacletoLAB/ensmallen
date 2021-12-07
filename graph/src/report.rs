@@ -1641,7 +1641,8 @@ impl Graph {
                         concat!(
                             " Since the graph has a high number of node types (> {}) ",
                             "we use an approximated version of the node types isomorphisms ",
-                            "detection. It is possible to execute the exact computation with ",
+                            "detection. Note that hash collisions and false positives are possible. ",
+                            "It is possible to execute the exact computation with ",
                             "the <code>get_isomorphic_node_type_ids_groups</code> method."
                         ),
                         to_human_readable_high_integer(threshold as usize)
