@@ -102,7 +102,12 @@ impl Graph {
         &self,
     ) -> Result<impl ParallelIterator<Item = Vec<NodeTypeT>> + '_> {
         // First we create a vector with the unique node type IDs.
-        let mut node_type_ids: Vec<NodeTypeT> = self.iter_unique_node_type_ids()?.collect();
+        let mut node_type_ids: Vec<NodeTypeT> = self
+            .iter_unique_node_type_ids()?
+            .filter(|&node_type_id| unsafe {
+                self.get_unchecked_number_of_nodes_from_node_type_id(node_type_id) > 0
+            })
+            .collect();
         info!("Computing node type hashes seeds.");
         let mut node_type_hashes = node_type_ids
             .par_iter()
@@ -269,8 +274,13 @@ impl Graph {
     pub fn par_iter_isomorphic_edge_type_ids_groups(
         &self,
     ) -> Result<impl ParallelIterator<Item = Vec<EdgeTypeT>> + '_> {
-        // First we create a vector with the unique node type IDs.
-        let mut edge_type_ids: Vec<EdgeTypeT> = self.iter_unique_edge_type_ids()?.collect();
+        // First we create a vector with the unique edge type IDs.
+        let mut edge_type_ids: Vec<EdgeTypeT> = self
+            .iter_unique_edge_type_ids()?
+            .filter(|&edge_type_id| unsafe {
+                self.get_unchecked_number_of_edges_from_edge_type_id(edge_type_id) > 0
+            })
+            .collect();
         let edge_type_hashes = edge_type_ids
             .par_iter()
             .map(|&edge_type_id| unsafe {
