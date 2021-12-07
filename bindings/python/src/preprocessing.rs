@@ -615,7 +615,7 @@ impl Graph {
             let (destinations, edge_weights): (Vec<Vec<NodeT>>, Vec<Vec<WeightT>>) = iter
                 .enumerate()
                 .map(|(i, ((destinations, weights), node_types))| {
-                    node_types.into_iter().for_each(|label| unsafe {
+                    node_types.iter().for_each(|&label| unsafe {
                         *labels.t.uget_mut([i, label as usize]) = 1;
                     });
                     (destinations, weights.unwrap())
@@ -626,7 +626,7 @@ impl Graph {
             (
                 iter.enumerate()
                     .map(|(i, ((destinations, _), node_types))| {
-                        node_types.into_iter().for_each(|label| unsafe {
+                        node_types.iter().for_each(|&label| unsafe {
                             *labels.t.uget_mut([i, label as usize]) = 1;
                         });
                         destinations

@@ -10207,9 +10207,9 @@ impl Graph {
     pub unsafe fn get_unchecked_node_type_ids_from_node_id(
         &self,
         node_id: NodeT,
-    ) -> Option<&Vec<NodeTypeT>> {
+    ) -> Option<Vec<NodeTypeT>> {
         self.inner
-            .get_unchecked_node_type_ids_from_node_id(node_id.into())
+            .get_unchecked_node_type_ids_from_node_id(node_id.into()).map(|x| x.clone())
             .into()
     }
 
@@ -10225,8 +10225,8 @@ impl Graph {
     pub fn get_node_type_ids_from_node_id(
         &self,
         node_id: NodeT,
-    ) -> PyResult<Option<&Vec<NodeTypeT>>> {
-        Ok(pe!(self.inner.get_node_type_ids_from_node_id(node_id.into()))?.into())
+    ) -> PyResult<Option<Vec<NodeTypeT>>> {
+        Ok(pe!(self.inner.get_node_type_ids_from_node_id(node_id.into()))?.map(|x| x.clone()).into())
     }
 
     #[automatically_generated_binding]
@@ -10622,10 +10622,10 @@ impl Graph {
     pub fn get_node_type_ids_from_node_name(
         &self,
         node_name: &str,
-    ) -> PyResult<Option<&Vec<NodeTypeT>>> {
+    ) -> PyResult<Option<Vec<NodeTypeT>>> {
         Ok(pe!(self
             .inner
-            .get_node_type_ids_from_node_name(node_name.into()))?
+            .get_node_type_ids_from_node_name(node_name.into()))?.map(|x| x.clone())
         .into())
     }
 
