@@ -1605,17 +1605,23 @@ impl Graph {
 
     /// Returns report on the isomorphic node types of the graph.
     unsafe fn get_isomorphic_node_types_report(&self) -> String {
-        let isomorphic_node_types = self.get_isomorphic_node_type_ids_groups().unwrap();
+        let threshold = 10_000;
+        let use_approximation = self.get_node_types_number().unwrap() > threshold;
+        let isomorphic_node_types = if use_approximation {
+            self.get_approximated_isomorphic_node_type_ids_groups().unwrap()
+        } else {
+            self.get_isomorphic_node_type_ids_groups().unwrap()
+        };
         if isomorphic_node_types.is_empty() {
             "".to_string()
         } else {
             let isomorphic_node_types_number = isomorphic_node_types.len();
             format!(
                 concat!(
-                    "<h4>Isomorphic node types</h4>",
+                    "<h4>{oddity_name}</h4>",
                     "<p>",
-                    "Isomorphic node types groups are node types describing ",
-                    "exactly the same set of nodes. The presence of such duplicated ",
+                    "{oddity_name} groups are node types describing ",
+                    "exactly the same set of nodes.{approximation_note} The presence of such duplicated ",
                     "node types suggests a potential modelling error in the pipeline ",
                     "that has produced this graph. {isomorphic_node_types_number} isomorphic node types groups ",
                     "were detected in this graph.",
@@ -1625,6 +1631,24 @@ impl Graph {
                     "</ol>",
                     "{additional_isomorphic_node_types}"
                 ),
+                oddity_name= if use_approximation {
+                    "Approximated isomorphic node types"
+                } else {
+                    "Isomorphic node types"
+                },
+                approximation_note = if use_approximation {
+                    format!(
+                        concat!(
+                            " Since the graph has a high number of node types (> {}) ",
+                            "we use an approximated version of the node types isomorphisms ",
+                            "detection. It is possible to execute the exact computation with ",
+                            "the <code>get_isomorphic_node_type_ids_groups</code> method."
+                        ),
+                        to_human_readable_high_integer(threshold as usize)
+                    )
+                } else {
+                    "".to_string()
+                },
                 isomorphic_node_types_description = isomorphic_node_types.into_iter().take(10).map(|isomorphic_node_type_group| {
                     format!(
                         concat!(

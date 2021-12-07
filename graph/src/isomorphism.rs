@@ -97,8 +97,8 @@ impl Graph {
             .flat_map(|candidate_isomorphic_groups| candidate_isomorphic_groups)
     }
 
-    /// Returns parallel iterator of vectors of isomorphic node type groups IDs.
-    pub fn par_iter_isomorphic_node_type_ids_groups(
+    /// Returns parallel iterator of vectors of approximated isomorphic node type group IDs.
+    pub fn par_iter_approximated_isomorphic_node_type_ids_groups(
         &self,
     ) -> Result<impl ParallelIterator<Item = Vec<NodeTypeT>> + '_> {
         // First we create a vector with the unique node type IDs.
@@ -148,14 +148,25 @@ impl Graph {
                 {
                     return None;
                 }
-                let mut candidate_isomorphic_groups = vec![(i
-                    ..considered_node_type_ids_number)
-                    .map(|j| node_type_ids[j])
-                    .take_while(|&node_type_id| {
-                        node_type_hash == node_type_hashes[node_type_id as usize]
-                    })
-                    .collect::<Vec<_>>()];
+                Some(
+                    (i..considered_node_type_ids_number)
+                        .map(|j| node_type_ids[j])
+                        .take_while(|&node_type_id| {
+                            node_type_hash == node_type_hashes[node_type_id as usize]
+                        })
+                        .collect::<Vec<_>>(),
+                )
+            }))
+    }
 
+    /// Returns parallel iterator of vectors of isomorphic node type groups IDs.
+    pub fn par_iter_isomorphic_node_type_ids_groups(
+        &self,
+    ) -> Result<impl ParallelIterator<Item = Vec<NodeTypeT>> + '_> {
+        Ok(self
+            .par_iter_approximated_isomorphic_node_type_ids_groups()?
+            .filter_map(move |candidate_isomorphic_group| {
+                let mut candidate_isomorphic_groups = vec![candidate_isomorphic_group];
                 self.iter_node_ids_and_node_type_ids()
                     .for_each(|(_, node_type_ids)| {
                         if node_type_ids.is_none() {
@@ -163,12 +174,13 @@ impl Graph {
                         }
 
                         let node_type_ids = node_type_ids.unwrap();
-                        
+
                         let number_of_groups = candidate_isomorphic_groups.len();
                         let mut remove_empty_groups = false;
 
                         for index in 0..number_of_groups {
-                            let candidate_isomorphic_group = &mut candidate_isomorphic_groups[index];
+                            let candidate_isomorphic_group =
+                                &mut candidate_isomorphic_groups[index];
                             let number_of_shared_elements = iter_set::intersection(
                                 candidate_isomorphic_group.iter().copied(),
                                 node_type_ids.iter().copied(),
@@ -187,7 +199,6 @@ impl Graph {
                             if number_of_shared_elements == 1
                                 && candidate_isomorphic_group.len() == 2
                             {
-                                // TODO! remove candidate isomorphic group.
                                 remove_empty_groups = true;
                                 candidate_isomorphic_group.clear();
                                 continue;
@@ -205,7 +216,7 @@ impl Graph {
                                 candidate_isomorphic_group.retain(|&node_type_id| {
                                     node_type_id != single_shared_node_type
                                 });
-                                continue
+                                continue;
                             }
 
                             // If the number of non shared elements is exactly one,
@@ -221,31 +232,29 @@ impl Graph {
                                 candidate_isomorphic_group.retain(|&node_type_id| {
                                     node_type_id != single_non_shared_node_type
                                 });
-                                continue
+                                continue;
                             }
 
                             let shared_node_type = iter_set::intersection(
                                 candidate_isomorphic_group.iter().copied(),
                                 node_type_ids.iter().copied(),
-                            ).collect::<Vec<_>>();
+                            )
+                            .collect::<Vec<_>>();
 
                             let different_node_type = iter_set::difference(
                                 candidate_isomorphic_group.iter().copied(),
                                 node_type_ids.iter().copied(),
-                            ).collect::<Vec<_>>();
+                            )
+                            .collect::<Vec<_>>();
 
                             *candidate_isomorphic_group = shared_node_type;
-                            candidate_isomorphic_groups.push(
-                                different_node_type
-                            );
+                            candidate_isomorphic_groups.push(different_node_type);
                         }
 
                         if remove_empty_groups {
-                            candidate_isomorphic_groups
-                                .retain(|x| !x.is_empty());
+                            candidate_isomorphic_groups.retain(|x| !x.is_empty());
                         }
                     });
-
 
                 if candidate_isomorphic_groups.is_empty() {
                     None
@@ -425,6 +434,46 @@ impl Graph {
     /// Returns number of isomorphic node type groups.
     pub fn get_isomorphic_node_type_groups_number(&self) -> Result<NodeTypeT> {
         Ok(self.par_iter_isomorphic_node_type_ids_groups()?.count() as NodeTypeT)
+    }
+
+    /// Returns parallel iterator of vectors of isomorphic node types groups names.
+    pub fn par_iter_approximated_isomorphic_node_type_names_groups(
+        &self,
+    ) -> Result<impl ParallelIterator<Item = Vec<String>> + '_> {
+        Ok(self
+            .par_iter_approximated_isomorphic_node_type_ids_groups()?
+            .map(move |group| {
+                group
+                    .into_iter()
+                    .map(|node_type_id| {
+                        self.get_node_type_name_from_node_type_id(node_type_id)
+                            .unwrap()
+                    })
+                    .collect()
+            }))
+    }
+
+    #[no_numpy_binding]
+    /// Returns vector with isomorphic node type groups IDs.
+    pub fn get_approximated_isomorphic_node_type_ids_groups(&self) -> Result<Vec<Vec<NodeTypeT>>> {
+        Ok(self
+            .par_iter_approximated_isomorphic_node_type_ids_groups()?
+            .collect())
+    }
+
+    #[no_numpy_binding]
+    /// Returns vector with isomorphic node type groups names.
+    pub fn get_approximated_isomorphic_node_type_names_groups(&self) -> Result<Vec<Vec<String>>> {
+        Ok(self
+            .par_iter_approximated_isomorphic_node_type_names_groups()?
+            .collect())
+    }
+
+    /// Returns number of isomorphic node type groups.
+    pub fn get_approximated_isomorphic_node_type_groups_number(&self) -> Result<NodeTypeT> {
+        Ok(self
+            .par_iter_approximated_isomorphic_node_type_ids_groups()?
+            .count() as NodeTypeT)
     }
 
     /// Returns parallel iterator of vectors of isomorphic edge types groups names.
