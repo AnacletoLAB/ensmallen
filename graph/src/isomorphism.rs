@@ -1,5 +1,7 @@
 use super::*;
 use rayon::prelude::*;
+use std::sync::atomic::AtomicU64;
+use std::sync::atomic::Ordering;
 
 impl Graph {
     /// Returns parallel iterator of vectors of isomorphic node groups IDs.
@@ -107,16 +109,26 @@ impl Graph {
             .map(|&node_type_id| unsafe {
                 let number_of_nodes =
                     self.get_unchecked_number_of_nodes_from_node_type_id(node_type_id);
-                let seed: u64 = 0xDEADBEEFC0FEBABE_u64.wrapping_mul(number_of_nodes as u64);
-                self.iter_node_ids_and_node_type_ids_from_node_type_id(Some(node_type_id))
-                    .unwrap()
-                    .take(20)
-                    .map(|(node_id, _)| node_id as u64)
-                    .fold(seed, |a: u64, b: u64| {
-                        (a ^ b).wrapping_add(0x0A2126967AE81C95)
-                    })
+                AtomicU64::new(0xDEADBEEFC0FEBABE_u64.wrapping_mul(number_of_nodes as u64))
             })
-            .collect::<Vec<u64>>();
+            .collect::<Vec<AtomicU64>>();
+
+        self.par_iter_node_ids_and_node_type_ids()
+            .for_each(|(node_id, node_type_ids)| {
+                if let Some(node_type_ids) = node_type_ids {
+                    node_type_ids.iter().for_each(|&node_type_id| {
+                        node_type_hashes[node_type_id as usize].fetch_update(
+                            Ordering::Relaxed,
+                            Ordering::Relaxed,
+                            |current_hash| {
+                                Some((current_hash ^ node_id as u64).wrapping_add(0x0A2126967AE81C95))
+                            },
+                        ).unwrap();
+                    });
+                }
+            });
+        let node_type_hashes =
+            unsafe { std::mem::transmute::<Vec<AtomicU64>, Vec<u64>>(node_type_hashes) };
         // Then we sort it according to the number of nodes with this node type.
         node_type_ids.par_sort_unstable_by(|&a, &b| {
             node_type_hashes[a as usize].cmp(&node_type_hashes[b as usize])
@@ -415,7 +427,10 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_ids`: &[NodeT] - Node IDs to check for.
-    pub unsafe fn has_unchecked_isomorphic_node_types_from_node_ids(&self, node_ids: &[NodeT]) -> bool {
+    pub unsafe fn has_unchecked_isomorphic_node_types_from_node_ids(
+        &self,
+        node_ids: &[NodeT],
+    ) -> bool {
         let node_type_ids = self.get_unchecked_node_type_ids_from_node_id(node_ids[0]);
         node_ids[1..]
             .par_iter()
@@ -440,6 +455,6 @@ impl Graph {
                     .to_string(),
             );
         }
-        Ok(unsafe{self.has_unchecked_isomorphic_node_types_from_node_ids(node_ids)})
+        Ok(unsafe { self.has_unchecked_isomorphic_node_types_from_node_ids(node_ids) })
     }
 }

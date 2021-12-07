@@ -275,11 +275,10 @@ impl NodeTypeVocabulary {
     /// Returns string name of given id.
     ///
     /// # Arguments
-    ///
     /// * `ids`: Vec<NodeTypeT> - Node Type IDs to be translated.
-    pub fn unchecked_translate_vector(&self, ids: Vec<NodeTypeT>) -> Vec<String> {
-        ids.into_iter()
-            .map(|id| self.unchecked_translate(id))
+    pub fn unchecked_translate_vector(&self, ids: &[NodeTypeT]) -> Vec<String> {
+        ids.iter()
+            .map(|&id| self.unchecked_translate(id))
             .collect()
     }
 

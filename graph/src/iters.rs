@@ -534,7 +534,7 @@ impl Graph {
     /// Return iterator on the node IDs and ther node type IDs.
     pub fn iter_node_ids_and_node_type_ids(
         &self,
-    ) -> impl Iterator<Item = (NodeT, Option<Vec<NodeTypeT>>)> + '_ {
+    ) -> impl Iterator<Item = (NodeT, Option<&Vec<NodeTypeT>>)> + '_ {
         self.iter_node_ids().map(move |node_id| unsafe {
             (
                 node_id,
@@ -546,7 +546,7 @@ impl Graph {
     /// Return iterator on the node IDs and ther node type IDs.
     pub fn par_iter_node_ids_and_node_type_ids(
         &self,
-    ) -> impl IndexedParallelIterator<Item = (NodeT, Option<Vec<NodeTypeT>>)> + '_ {
+    ) -> impl IndexedParallelIterator<Item = (NodeT, Option<&Vec<NodeTypeT>>)> + '_ {
         self.par_iter_node_ids().map(move |node_id| unsafe {
             (
                 node_id,
@@ -562,7 +562,7 @@ impl Graph {
     /// iterator over None values.
     pub unsafe fn iter_unchecked_node_type_ids(
         &self,
-    ) -> impl Iterator<Item = Option<Vec<NodeTypeT>>> + '_ {
+    ) -> impl Iterator<Item = Option<&Vec<NodeTypeT>>> + '_ {
         self.iter_node_ids()
             .map(move |node_id| self.get_unchecked_node_type_ids_from_node_id(node_id))
     }
@@ -580,7 +580,7 @@ impl Graph {
                 .map(move |maybe_node_types| {
                     let mut dummies = vec![false; node_types_number as usize];
                     if let Some(node_types) = maybe_node_types {
-                        node_types.into_iter().for_each(|node_type| {
+                        node_types.iter().for_each(|&node_type| {
                             dummies[node_type as usize] = true;
                         });
                     }
@@ -602,7 +602,7 @@ impl Graph {
                 .filter_map(move |maybe_node_types| {
                     if let Some(node_types) = maybe_node_types {
                         let mut dummies = vec![false; node_types_number as usize];
-                        node_types.into_iter().for_each(|node_type| {
+                        node_types.iter().for_each(|&node_type| {
                             dummies[node_type as usize] = true;
                         });
                         Some(dummies)
@@ -620,7 +620,7 @@ impl Graph {
     /// iterator over None values as node types.
     pub unsafe fn par_iter_unchecked_node_ids_and_node_type_ids(
         &self,
-    ) -> impl IndexedParallelIterator<Item = (NodeT, Option<Vec<NodeTypeT>>)> + '_ {
+    ) -> impl IndexedParallelIterator<Item = (NodeT, Option<&Vec<NodeTypeT>>)> + '_ {
         self.par_iter_node_ids().map(move |node_id| {
             (
                 node_id,
@@ -632,7 +632,7 @@ impl Graph {
     /// Return iterator on the node of the graph as Strings.
     pub fn iter_node_names_and_node_type_names(
         &self,
-    ) -> impl Iterator<Item = (NodeT, String, Option<Vec<NodeTypeT>>, Option<Vec<String>>)> + '_
+    ) -> impl Iterator<Item = (NodeT, String, Option<&Vec<NodeTypeT>>, Option<Vec<String>>)> + '_
     {
         self.iter_node_ids_and_node_type_ids()
             .map(move |(node_id, node_types)| unsafe {
@@ -649,7 +649,7 @@ impl Graph {
     pub fn par_iter_node_names_and_node_type_names(
         &self,
     ) -> impl IndexedParallelIterator<
-        Item = (NodeT, String, Option<Vec<NodeTypeT>>, Option<Vec<String>>),
+        Item = (NodeT, String, Option<&Vec<NodeTypeT>>, Option<Vec<String>>),
     > + '_ {
         unsafe {
             self.par_iter_unchecked_node_ids_and_node_type_ids().map(

@@ -361,10 +361,10 @@ impl NodeFileWriter {
                 line.push(match (node_type_ids, &self.node_types_separator) {
                     (None, _) => "".to_string(),
                     (Some(ntns), Some(sep)) => ntns
-                        .into_iter()
+                        .iter()
                         .map(|node_type_id| node_type_id.to_string())
                         .join(sep),
-                    (Some(mut ntns), None) => ntns.pop().unwrap().to_string(),
+                    (Some(ntns), None) => ntns[0].to_string(),
                 });
             } else {
                 line.push(match (node_type_names, &self.node_types_separator) {
@@ -486,7 +486,16 @@ impl NodeFileWriter {
         }
         self.dump_iterator(
             Some(graph.get_nodes_number() as usize),
-            graph.iter_node_names_and_node_type_names(),
+            graph.iter_node_names_and_node_type_names().map(
+                |(node_id, node_name, node_type_ids, node_type_names)| {
+                    (
+                        node_id,
+                        node_name,
+                        node_type_ids.map(|x| x.clone()),
+                        node_type_names,
+                    )
+                },
+            ),
         )
     }
 }

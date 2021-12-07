@@ -158,7 +158,6 @@ impl Graph {
     /// This operation is meaningfull only in a multigraph.
     ///
     /// # Arguments
-    ///
     /// * `src`: NodeT - Source node.
     /// * `dst`: NodeT - Destination node.
     ///
@@ -182,7 +181,6 @@ impl Graph {
     /// the non-existing ones.
     ///
     /// # Arguments
-    ///
     /// * `src`: NodeT - Source node.
     /// * `dst`: NodeT - Destination node.
     ///
@@ -654,7 +652,6 @@ impl Graph {
     /// Returns the number of outbound neighbours of given node.
     ///
     /// # Arguments
-    ///
     /// * `node_id`: NodeT - Integer ID of the node.
     ///
     /// # Safety
@@ -671,7 +668,6 @@ impl Graph {
     /// nodes in the graph.
     ///
     /// # Arguments
-    ///
     /// * `node_id`: NodeT - Integer ID of the node.
     ///
     /// # Safety
@@ -795,7 +791,6 @@ impl Graph {
     /// Return vector with top k central node names.
     ///
     /// # Arguments
-    ///
     /// * `k`: NodeT - Number of central nodes to extract.
     pub fn get_top_k_central_node_names(&self, k: NodeT) -> Result<Vec<String>> {
         self.get_top_k_central_node_ids(k).map(|x| {
@@ -813,7 +808,6 @@ impl Graph {
     /// return neither an error or a panic.
     ///
     /// # Arguments
-    ///
     /// * `node_id`: NodeT - node whose node type is to be returned.
     ///
     /// # Example
@@ -828,17 +822,16 @@ impl Graph {
     pub unsafe fn get_unchecked_node_type_ids_from_node_id(
         &self,
         node_id: NodeT,
-    ) -> Option<Vec<NodeTypeT>> {
+    ) -> Option<&Vec<NodeTypeT>> {
         self.node_types
             .as_ref()
             .as_ref()
-            .and_then(|nts| nts.ids[node_id as usize].clone())
+            .and_then(|nts| nts.ids[node_id as usize].as_ref())
     }
 
     /// Returns node type of given node.
     ///
     /// # Arguments
-    ///
     /// * `node_id`: NodeT - node whose node type is to be returned.
     ///
     /// # Example
@@ -847,7 +840,7 @@ impl Graph {
     /// println!("The node type id of node {} is {:?}", 0, graph.get_node_type_ids_from_node_id(0));
     /// ```
     ///
-    pub fn get_node_type_ids_from_node_id(&self, node_id: NodeT) -> Result<Option<Vec<NodeTypeT>>> {
+    pub fn get_node_type_ids_from_node_id(&self, node_id: NodeT) -> Result<Option<&Vec<NodeTypeT>>> {
         self.must_have_node_types()?;
         self.validate_node_id(node_id)
             .map(|node_id| unsafe { self.get_unchecked_node_type_ids_from_node_id(node_id) })
@@ -861,7 +854,6 @@ impl Graph {
     /// return neither an error or a panic.
     ///
     /// # Arguments
-    ///
     /// * `edge_id`: EdgeT - edge whose edge type is to be returned.
     ///
     /// # Example
@@ -886,7 +878,6 @@ impl Graph {
     /// Returns edge type of given edge.
     ///
     /// # Arguments
-    ///
     /// * `edge_id`: EdgeT - edge whose edge type is to be returned.
     ///
     /// # Example
@@ -1207,7 +1198,6 @@ impl Graph {
     /// Return node type ID for the given node name if available.
     ///
     /// # Arguments
-    ///
     /// * `node_name`: &str - Name of the node.
     ///
     /// # Example
@@ -1220,14 +1210,13 @@ impl Graph {
     pub fn get_node_type_ids_from_node_name(
         &self,
         node_name: &str,
-    ) -> Result<Option<Vec<NodeTypeT>>> {
+    ) -> Result<Option<&Vec<NodeTypeT>>> {
         self.get_node_type_ids_from_node_id(self.get_node_id_from_node_name(node_name)?)
     }
 
     /// Return node type name for the given node name if available.
     ///
     /// # Arguments
-    ///
     /// * `node_name`: &str - Name of the node.
     ///
     /// # Example
@@ -1373,7 +1362,6 @@ impl Graph {
     /// Return vector of destinations for the given source node ID.
     ///
     /// # Arguments
-    ///
     /// * `node_id`: NodeT - Node ID whose neighbours are to be retrieved.
     ///
     /// # Example
@@ -1395,7 +1383,6 @@ impl Graph {
     /// Return vector of destinations for the given source node name.
     ///
     /// # Arguments
-    ///
     /// * `node_name`: &str - Node ID whose neighbours are to be retrieved.
     ///
     /// # Example
@@ -1413,7 +1400,6 @@ impl Graph {
     /// Return vector of destination names for the given source node name.
     ///
     /// # Arguments
-    ///
     /// * `node_name`: &str - Node name whose neighbours are to be retrieved.
     ///
     /// # Example
@@ -1438,7 +1424,6 @@ impl Graph {
     /// This operation is meaningfull only in a multigraph.
     ///
     /// # Arguments
-    ///
     /// * `src`: NodeT - Source node.
     /// * `dst`: NodeT - Destination node.
     ///
@@ -1576,7 +1561,6 @@ impl Graph {
     /// Return translated node types from string to internal node ID.
     ///
     /// # Arguments
-    ///
     /// * `node_type_names`: Vec<Option<String>> - Vector of node types to be converted.
     pub fn get_node_type_ids_from_node_type_names(
         &self,
@@ -1597,7 +1581,6 @@ impl Graph {
     /// Return translated node types from string to internal node ID.
     ///
     /// # Arguments
-    ///
     /// * `node_type_names`: Vec<Option<Vec<&str>>> - Vector of node types to be converted.
     ///
     /// # Raises
@@ -1633,7 +1616,6 @@ impl Graph {
     /// the number of nodes in the graph.
     ///
     /// # Arguments
-    ///
     /// * `src`: NodeT - Node for which we need to compute the cumulative_node_degrees range.
     ///
     /// # Safety
@@ -1664,7 +1646,6 @@ impl Graph {
     /// Return range of outbound edges IDs which have as source the given Node.
     ///
     /// # Arguments
-    ///
     /// * `src`: NodeT - Node for which we need to compute the cumulative_node_degrees range.
     ///
     pub fn get_minmax_edge_ids_from_source_node_id(&self, src: NodeT) -> Result<(EdgeT, EdgeT)> {
@@ -1691,13 +1672,13 @@ impl Graph {
     /// Return node type name of given node type.
     ///
     /// # Arguments
-    /// * `node_type_ids`: Vec<NodeTypeT> - Id of the node type.
+    /// * `node_type_ids`: &[NodeTypeT] - Id of the node type.
     ///
     /// # Safety
     /// The method will panic if the graph does not contain node types.
     pub unsafe fn get_unchecked_node_type_names_from_node_type_ids(
         &self,
-        node_type_ids: Vec<NodeTypeT>,
+        node_type_ids: &[NodeTypeT],
     ) -> Vec<String> {
         self.node_types
             .as_ref()
@@ -1826,7 +1807,7 @@ impl Graph {
             .cloned()
             .filter_map(|node_id| self.get_unchecked_node_type_ids_from_node_id(node_id))
             .for_each(|node_type_ids| {
-                node_type_ids.into_iter().for_each(|node_type_id| {
+                node_type_ids.iter().for_each(|&node_type_id| {
                     counts
                         .entry(node_type_id)
                         .and_modify(|total| *total += 1)

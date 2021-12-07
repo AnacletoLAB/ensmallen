@@ -194,7 +194,7 @@ pub fn convert_node_list_node_types_to_numeric(
                             .map(|node_type_name| unsafe {
                                 node_types.unchecked_insert(node_type_name)
                             })
-                            .collect()
+                            .collect::<Vec<NodeTypeT>>()
                     }),
                     maybe_node_type_names,
                 )

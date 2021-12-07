@@ -2,9 +2,9 @@ use super::*;
 use crate::constructors::build_graph_from_integers;
 use crate::constructors::build_graph_from_strings_without_type_iterators;
 use log::info;
-use std::collections::HashSet;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
+use std::collections::HashSet;
 
 impl Graph {
     /// Returns a **NEW** Graph that does not have the required attributes.
@@ -149,7 +149,7 @@ impl Graph {
         let node_filter = |(node_id, _, node_type_ids, _): &(
             NodeT,
             String,
-            Option<Vec<NodeTypeT>>,
+            Option<&Vec<NodeTypeT>>,
             Option<Vec<String>>,
         )| {
             node_ids_to_keep
@@ -160,10 +160,10 @@ impl Graph {
                     .map_or(true, |nitf| !nitf.contains(node_id))
                 && node_type_ids_to_keep
                     .as_ref()
-                    .map_or(true, |ntitk| ntitk.contains(node_type_ids))
+                    .map_or(true, |ntitk| ntitk.contains(&node_type_ids.map(|x| x.clone())))
                 && node_type_ids_to_filter
                     .as_ref()
-                    .map_or(true, |ntitf| !ntitf.contains(node_type_ids))
+                    .map_or(true, |ntitf| !ntitf.contains(&node_type_ids.map(|x| x.clone())))
                 && node_type_id_to_keep
                     .as_ref()
                     .map_or(true, |ntitk| match node_type_ids {

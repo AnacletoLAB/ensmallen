@@ -111,14 +111,14 @@ impl Graph {
                         // Assign / extend inplace the set of node type IDs that are already
                         // present.
                         if let Some(new_node_type_ids) = &mut remapped_node_type_ids[new_node_id] {
-                            node_type_ids.into_iter().for_each(|node_type_id| {
+                            node_type_ids.iter().for_each(|&node_type_id| {
                                 if !new_node_type_ids.contains(&node_type_id) {
                                     new_node_type_ids.push(node_type_id);
                                 }
                             });
                             new_node_type_ids.sort_unstable();
                         } else {
-                            remapped_node_type_ids[new_node_id] = Some(node_type_ids);
+                            remapped_node_type_ids[new_node_id] = Some(node_type_ids.clone());
                         }
                     }
                 });

@@ -588,7 +588,7 @@ impl Graph {
         };
         let train_edges_number = self.get_directed_edges_number() - validation_edges_number;
 
-        if tree.len() * edge_factor > train_edges_number as usize{
+        if tree.len() * edge_factor > train_edges_number as usize {
             return Err(format!(
                 concat!(
                     "The given spanning tree of the graph contains {} edges ",
@@ -839,13 +839,13 @@ impl Graph {
         let mut train_node_types = vec![None; self.get_nodes_number() as usize];
         train_node_indices.into_iter().for_each(|node_id| unsafe {
             train_node_types[node_id as usize] =
-                self.get_unchecked_node_type_ids_from_node_id(node_id)
+                self.get_unchecked_node_type_ids_from_node_id(node_id).map(|x| x.clone())
         });
         // For the test node types
         let mut test_node_types = vec![None; self.get_nodes_number() as usize];
         test_node_indices.into_iter().for_each(|node_id| unsafe {
             test_node_types[node_id as usize] =
-                self.get_unchecked_node_type_ids_from_node_id(node_id)
+                self.get_unchecked_node_type_ids_from_node_id(node_id).map(|x| x.clone())
         });
 
         Ok((train_node_types, test_node_types))
@@ -1260,8 +1260,8 @@ impl Graph {
         let mut rnd = SmallRng::seed_from_u64(splitmix64(random_state as u64));
 
         // Allocate the vectors for the nodes of each
-        let mut train_node_types = vec![None; self.get_nodes_number() as usize];
-        let mut test_node_types = vec![None; self.get_nodes_number() as usize];
+        let mut train_node_types: Vec<Option<Vec<NodeTypeT>>> = vec![None; self.get_nodes_number() as usize];
+        let mut test_node_types: Vec<Option<Vec<NodeTypeT>>> = vec![None; self.get_nodes_number() as usize];
 
         for mut node_set in node_sets {
             // Shuffle in a reproducible way the nodes of the current node_type
@@ -1271,11 +1271,11 @@ impl Graph {
             // add the nodes to the relative vectors
             node_set[..train_size].iter().for_each(|node_id| unsafe {
                 train_node_types[*node_id as usize] =
-                    self.get_unchecked_node_type_ids_from_node_id(*node_id)
+                    self.get_unchecked_node_type_ids_from_node_id(*node_id).map(|x| x.clone())
             });
             node_set[train_size..].iter().for_each(|node_id| unsafe {
                 test_node_types[*node_id as usize] =
-                    self.get_unchecked_node_type_ids_from_node_id(*node_id)
+                    self.get_unchecked_node_type_ids_from_node_id(*node_id).map(|x| x.clone())
             });
         }
 
@@ -1387,8 +1387,10 @@ impl Graph {
             .unwrap();
 
         // Allocate the vectors for the nodes of each
-        let mut train_node_types = vec![None; self.get_nodes_number() as usize];
-        let mut test_node_types = vec![None; self.get_nodes_number() as usize];
+        let mut train_node_types: Vec<Option<Vec<NodeTypeT>>> =
+            vec![None; self.get_nodes_number() as usize];
+        let mut test_node_types: Vec<Option<Vec<NodeTypeT>>> =
+            vec![None; self.get_nodes_number() as usize];
 
         for node_set in node_sets {
             // Shuffle in a reproducible way the nodes of the current node_type
@@ -1397,9 +1399,9 @@ impl Graph {
             for node_id in 0..self.get_nodes_number() {
                 let node_type = unsafe { self.get_unchecked_node_type_ids_from_node_id(node_id) };
                 if validation_chunk.contains(node_id as u64) {
-                    test_node_types[node_id as usize] = node_type;
+                    test_node_types[node_id as usize] = node_type.map(|x| x.clone());
                 } else {
-                    train_node_types[node_id as usize] = node_type;
+                    train_node_types[node_id as usize] = node_type.map(|x| x.clone());
                 }
             }
         }

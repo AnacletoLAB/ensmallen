@@ -216,7 +216,7 @@ impl Graph {
         return_edge_weights: Option<bool>,
         max_neighbours: Option<NodeT>,
     ) -> Result<
-        impl IndexedParallelIterator<Item = ((Vec<NodeT>, Option<Vec<WeightT>>), Vec<NodeTypeT>)> + '_,
+        impl IndexedParallelIterator<Item = ((Vec<NodeT>, Option<Vec<WeightT>>), &Vec<NodeTypeT>)> + '_,
     > {
         if let Some(return_edge_weights) = return_edge_weights {
             if return_edge_weights {
@@ -381,7 +381,7 @@ impl Graph {
             move |node_id: NodeT| -> Option<Vec<NodeTypeT>> {
                 if return_node_types {
                     let node_type_ids =
-                        unsafe { self.get_unchecked_node_type_ids_from_node_id(node_id) };
+                        unsafe { self.get_unchecked_node_type_ids_from_node_id(node_id) }.map(|x| x.clone());
                     if multi_label {
                         let mut padded_node_type_ids = vec![0; maximum_node_types_number];
                         node_type_ids.unwrap().into_iter().enumerate().for_each(

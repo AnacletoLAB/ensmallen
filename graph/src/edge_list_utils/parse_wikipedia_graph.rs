@@ -409,7 +409,7 @@ pub fn parse_wikipedia_graph(
         .filter(|(_, node_name)| redirect_hashmap.contains_key(&compute_hash(node_name)))
         .map(|(key, value)| (*key, value.clone()))
         .collect();
-    let mut number_of_adjusted_redirections = 0;
+    let mut number_of_adjusted_redirections: usize = 0;
     let pb = get_loading_bar(verbose, "Adjusting redirections", redirect_hashmap.len());
 
     while let Some(&source_hash) = redirect_hashmap
