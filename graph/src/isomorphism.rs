@@ -1,7 +1,5 @@
 use super::*;
 use rayon::prelude::*;
-use std::sync::atomic::AtomicU64;
-use std::sync::atomic::Ordering;
 
 impl Graph {
     /// Returns parallel iterator of vectors of isomorphic node groups IDs.
@@ -104,31 +102,25 @@ impl Graph {
     ) -> Result<impl ParallelIterator<Item = Vec<NodeTypeT>> + '_> {
         // First we create a vector with the unique node type IDs.
         let mut node_type_ids: Vec<NodeTypeT> = self.iter_unique_node_type_ids()?.collect();
-        let node_type_hashes = node_type_ids
+        let mut node_type_hashes = node_type_ids
             .par_iter()
             .map(|&node_type_id| unsafe {
                 let number_of_nodes =
                     self.get_unchecked_number_of_nodes_from_node_type_id(node_type_id);
-                AtomicU64::new(0xDEADBEEFC0FEBABE_u64.wrapping_mul(number_of_nodes as u64))
+                0xDEADBEEFC0FEBABE_u64.wrapping_mul(number_of_nodes as u64)
             })
-            .collect::<Vec<AtomicU64>>();
+            .collect::<Vec<u64>>();
 
-        self.par_iter_node_ids_and_node_type_ids()
+        self.iter_node_ids_and_node_type_ids()
             .for_each(|(node_id, node_type_ids)| {
                 if let Some(node_type_ids) = node_type_ids {
                     node_type_ids.iter().for_each(|&node_type_id| {
-                        node_type_hashes[node_type_id as usize].fetch_update(
-                            Ordering::Relaxed,
-                            Ordering::Relaxed,
-                            |current_hash| {
-                                Some((current_hash ^ node_id as u64).wrapping_add(0x0A2126967AE81C95))
-                            },
-                        ).unwrap();
+                        node_type_hashes[node_type_id as usize] =
+                            (node_type_hashes[node_type_id as usize] ^ node_id as u64)
+                                .wrapping_add(0x0A2126967AE81C95);
                     });
                 }
             });
-        let node_type_hashes =
-            unsafe { std::mem::transmute::<Vec<AtomicU64>, Vec<u64>>(node_type_hashes) };
         // Then we sort it according to the number of nodes with this node type.
         node_type_ids.par_sort_unstable_by(|&a, &b| {
             node_type_hashes[a as usize].cmp(&node_type_hashes[b as usize])
