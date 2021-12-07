@@ -137,6 +137,30 @@ fn translate_return_type(
             )
         }
 
+        // handle the Option type
+        x if x == "Option<_>" => {
+            let needs_into = match &return_type[0] {
+                x if x == "()" => false,
+                _ => true,
+            };
+
+            let (inner_body, inner_type) = translate_return_type(
+                attributes, 
+                &return_type[0], 
+                "x".into(), 
+                this_struct, 
+                is_static,
+                is_self_ref, 
+                is_self_mut,
+                depth + 1,
+            );
+            let body = body.strip_suffix(".into()").unwrap_or(body.as_str());
+            (
+                format!("{}.map(|x| {})", body, inner_body),
+                Some(format!("Option<{}>", inner_type.unwrap_or("()".into())))
+            )
+        }
+
         // handle 1d numpy arrays
         x if x == "Vec<Primitive>" 
             && !attributes.iter().any(|x| x == "no_numpy_binding") 
@@ -216,7 +240,43 @@ fn translate_return_type(
         }
 
         // we don't have special rules so we can just use the default case
-        _ => (format!("{}.into()", body), Some(return_type.to_string())),
+        x => {
+            match x {
+                Type::SimpleType{
+                    name,
+                    modifiers,
+                    generics,
+                    traits,
+                } => {
+                    if modifiers.reference && name != "str" {
+                        let mut new_modifiers = modifiers.clone();
+                        new_modifiers.reference = false;
+
+                        translate_return_type(
+                            attributes, 
+                            &Type::SimpleType{
+                                name: name.clone(),
+                                modifiers: new_modifiers,
+                                generics: generics.clone(),
+                                traits: traits.clone(),
+                            },
+                            format!("{{{}}}.clone()", body), 
+                            this_struct, 
+                            is_static,
+                            is_self_ref, 
+                            is_self_mut,
+                            depth + 1,
+                        )
+                    } else {
+                        (format!("{}.into()", body), Some(return_type.to_string()))
+                    }
+                    
+                }
+                _ => {
+                    (format!("{}.into()", body), Some(return_type.to_string()))
+                }
+            }
+        },
     };
 
     (body.replace(".into().into()", ".into()"), r_type)
