@@ -1,4 +1,5 @@
 use super::*;
+use log::info;
 use rayon::prelude::*;
 
 impl Graph {
@@ -102,15 +103,17 @@ impl Graph {
     ) -> Result<impl ParallelIterator<Item = Vec<NodeTypeT>> + '_> {
         // First we create a vector with the unique node type IDs.
         let mut node_type_ids: Vec<NodeTypeT> = self.iter_unique_node_type_ids()?.collect();
+        info!("Computing node type hashes seeds.");
         let mut node_type_hashes = node_type_ids
             .par_iter()
             .map(|&node_type_id| unsafe {
-                let number_of_nodes =
-                    self.get_unchecked_number_of_nodes_from_node_type_id(node_type_id);
-                0xDEADBEEFC0FEBABE_u64.wrapping_mul(number_of_nodes as u64)
+                0xDEADBEEFC0FEBABE_u64.wrapping_mul(
+                    self.get_unchecked_number_of_nodes_from_node_type_id(node_type_id) as u64,
+                )
             })
             .collect::<Vec<u64>>();
 
+        info!("Computing node type hashes.");
         self.iter_node_ids_and_node_type_ids()
             .for_each(|(node_id, node_type_ids)| {
                 if let Some(node_type_ids) = node_type_ids {
@@ -121,10 +124,14 @@ impl Graph {
                     });
                 }
             });
+
+        info!("Sorting hashes.");    
         // Then we sort it according to the number of nodes with this node type.
         node_type_ids.par_sort_unstable_by(|&a, &b| {
             node_type_hashes[a as usize].cmp(&node_type_hashes[b as usize])
         });
+
+        info!("Computing isomorphic node types.");
         let considered_node_type_ids_number = node_type_ids.len();
         Ok((0..(considered_node_type_ids_number - 1))
             .into_par_iter()
