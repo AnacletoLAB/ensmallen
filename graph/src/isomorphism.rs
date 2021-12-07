@@ -150,14 +150,16 @@ impl Graph {
                             .iter_mut()
                             .find(|candidate_isomorphic_group| {
                                 let node_type_id = candidate_isomorphic_group[0];
-                                !self.par_iter_node_ids_and_node_type_ids().any(
-                                    |(_, node_type_ids)| {
+                                !self
+                                    .iter_node_ids_and_node_type_ids_from_node_type_id(Some(
+                                        node_type_id,
+                                    ))
+                                    .unwrap()
+                                    .any(|(_, node_type_ids)| {
                                         node_type_ids.map_or(false, |node_type_ids| {
                                             node_type_ids.contains(&other_node_type_id)
-                                                ^ node_type_ids.contains(&node_type_id)
                                         })
-                                    },
-                                )
+                                    })
                             })
                     {
                         isomorphic_group.push(other_node_type_id);
