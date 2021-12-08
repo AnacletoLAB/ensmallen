@@ -1110,8 +1110,8 @@ impl Graph {
                     .map(|oddity| oddity.get_number_of_involved_edges())
                     .max()
                     .unwrap(),
-                    Some(3),
-                    None,
+                    Some(6),
+                    Some(2),
                 tree_like_oddities.into_iter(),
             )
         }
