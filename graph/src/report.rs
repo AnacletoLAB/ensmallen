@@ -1282,7 +1282,7 @@ impl Graph {
             maximum_number_of_nodes_in_a_node_tuple,
             maximum_number_of_edges_in_a_node_tuple,
             Some(10),
-            Some(2),
+            Some(3),
             node_tuples.into_iter(),
         );
 
@@ -1317,7 +1317,9 @@ impl Graph {
             "Isomorphic node groups",
             concat!(
                 "Isomorphic groups are nodes with exactly the same ",
-                "neighbours and node types (if present in the graph)."
+                "neighbours and node types (if present in the graph). ",
+                "Nodes in such groups are topologically indistinguishable, ",
+                "that is swapping their ID would not change the graph topology."
             ),
             number_of_isomorphic_node_groups,
             number_of_nodes_involved_in_isomorphic_node_groups,
@@ -1498,9 +1500,10 @@ impl Graph {
             concat!(
                 "<h3>Topological Oddities</h3>",
                 "<p>",
-                "A topological oddity is a set of nodes in the graph that may be derived by ",
-                "an error during the generation of the edge list of the graph. ",
-                "Note that in a directed graph we only support the detection of isomorphic nodes. ",
+                "A topological oddity is a set of nodes in the graph that <i>may be derived</i> by ",
+                "an error during the generation of the edge list of the graph and, depending ",
+                "on the task, could bias the results of topology-base models. ",
+                "{directed_graph_note}",
                 "In the following paragraph, we will describe the detected topological oddities.",
                 "</p>",
                 "{circles_description}",
@@ -1512,6 +1515,11 @@ impl Graph {
                 "{tree_like_oddities_description}",
             ),
             circles_description = circles_description,
+            directed_graph_note= if self.is_directed(){
+                "Note that in a directed graph we only support the detection of isomorphic nodes. "
+            } else {
+                ""
+            },
             singleton_nodes_description = singleton_nodes_description,
             singleton_nodes_with_selfloops_description = singleton_nodes_with_selfloops_description,
             chains_description = chains_description,
