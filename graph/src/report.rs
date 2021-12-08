@@ -1281,7 +1281,7 @@ impl Graph {
             number_of_edges_involved_in_node_tuples,
             maximum_number_of_nodes_in_a_node_tuple,
             maximum_number_of_edges_in_a_node_tuple,
-            Some(10),
+            Some(15),
             Some(3),
             node_tuples.into_iter(),
         );
@@ -1326,8 +1326,8 @@ impl Graph {
             number_of_edges_involved_in_isomorphic_node_groups,
             maximum_number_of_nodes_in_a_isomorphic_node_group,
             maximum_number_of_edges_in_a_isomorphic_node_group,
-            Some(10),
-            Some(2),
+            Some(15),
+            Some(3),
             isomorphic_node_groups
                 .into_iter()
                 .map(|isomorphic_node_group| {
