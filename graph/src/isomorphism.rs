@@ -101,12 +101,10 @@ impl Graph {
     pub fn par_iter_approximated_isomorphic_node_type_ids_groups(
         &self,
     ) -> Result<impl ParallelIterator<Item = Vec<NodeTypeT>> + '_> {
-        // First we create a vector with the unique node type IDs.
-        let mut node_type_ids: Vec<NodeTypeT> = self.iter_unique_node_type_ids()?.collect();
         info!("Computing node type hashes seeds.");
-        let mut node_type_hashes = node_type_ids
-            .par_iter()
-            .map(|&node_type_id| unsafe {
+        let mut node_type_hashes = self
+            .par_iter_unique_node_type_ids()?
+            .map(|node_type_id| unsafe {
                 0xDEADBEEFC0FEBABE_u64.wrapping_mul(
                     self.get_unchecked_number_of_nodes_from_node_type_id(node_type_id) as u64,
                 )
@@ -124,6 +122,14 @@ impl Graph {
                     });
                 }
             });
+
+        // First we create a vector with the unique node type IDs.
+        let mut node_type_ids: Vec<NodeTypeT> = self
+            .iter_unique_node_type_ids()?
+            .filter(|&node_type_id| unsafe {
+                self.get_unchecked_number_of_nodes_from_node_type_id(node_type_id) > 0
+            })
+            .collect();
 
         info!("Sorting hashes.");
         // Then we sort it according to their hash and node type ids so that
@@ -269,11 +275,9 @@ impl Graph {
     pub fn par_iter_isomorphic_edge_type_ids_groups(
         &self,
     ) -> Result<impl ParallelIterator<Item = Vec<EdgeTypeT>> + '_> {
-        // First we create a vector with the unique node type IDs.
-        let mut edge_type_ids: Vec<EdgeTypeT> = self.iter_unique_edge_type_ids()?.collect();
-        let edge_type_hashes = edge_type_ids
-            .par_iter()
-            .map(|&edge_type_id| unsafe {
+        let edge_type_hashes = self
+            .par_iter_unique_edge_type_ids()?
+            .map(|edge_type_id| unsafe {
                 let number_of_edges =
                     self.get_unchecked_number_of_edges_from_edge_type_id(edge_type_id);
                 let seed: u64 = 0xDEADBEEFC0FEBABE_u64.wrapping_mul(number_of_edges as u64);
@@ -288,6 +292,13 @@ impl Graph {
                     })
             })
             .collect::<Vec<u64>>();
+        // First we create a vector with the unique edge type IDs.
+        let mut edge_type_ids: Vec<EdgeTypeT> = self
+            .iter_unique_edge_type_ids()?
+            .filter(|&edge_type_id| unsafe {
+                self.get_unchecked_number_of_edges_from_edge_type_id(edge_type_id) > 0
+            })
+            .collect();
         // Then we sort it according to the number of edges with this edge type.
         edge_type_ids.par_sort_unstable_by(|&a, &b| {
             edge_type_hashes[a as usize].cmp(&edge_type_hashes[b as usize])
