@@ -920,7 +920,7 @@ impl Graph {
     /// * `maximum_number_of_involved_nodes`: NodeT - Number of nodes involved in the largest oddity of this type.
     /// * `maximum_number_of_involved_edges`: EdgeT - Number of edges involved in the largest oddity of this type.
     /// * `maximum_number_of_oddities_to_report`: Option<usize> - Maximum number of oddities to report, by default 6.
-    /// * `number_of_columns`: Option<usize> - Number of columns to use for the report visualization. By default 2.
+    /// * `number_of_columns`: Option<usize> - Number of columns to use for the report visualization. By default 1.
     /// * `oddities`: impl Iterator<Item=T> - Iterator over the oddities.
     fn get_report_of_oddity<T: ToString>(
         &self,
@@ -941,7 +941,7 @@ impl Graph {
             return "".to_string();
         }
         let maximum_number_of_oddities_to_report = maximum_number_of_oddities_to_report.unwrap_or(6);
-        let number_of_columns = number_of_columns.unwrap_or(2);
+        let number_of_columns = number_of_columns.unwrap_or(1);
         if oddity_name.is_empty() {
             panic!("The oddity name cannot be empty!");
         }
@@ -968,7 +968,7 @@ impl Graph {
                 "{possibly_conclusive_entry}"
             ),
             list_type = if number_of_oddities == 1 { "ul".to_string() } else { format!(
-                "ol style=\"number_of_columns={number_of_columns}\"",
+                "ol style=\"column-count: {number_of_columns}; column-gap: 2em;\"",
                 number_of_columns=number_of_columns
             ) },
             list_description = if number_of_oddities > 1 {
@@ -1110,7 +1110,7 @@ impl Graph {
                     .map(|oddity| oddity.get_number_of_involved_edges())
                     .max()
                     .unwrap(),
-                    None,
+                    Some(3),
                     None,
                 tree_like_oddities.into_iter(),
             )
@@ -1173,7 +1173,7 @@ impl Graph {
             1,
             0,
             Some(20),
-            Some(4),
+            Some(2),
             self.iter_singleton_node_ids().map(|node_id| unsafe {
                 self.get_unchecked_succinct_node_description(node_id, 0, true)
             }),
@@ -1205,7 +1205,7 @@ impl Graph {
             1,
             maximum_number_of_edges_in_a_singleton_with_selfloop,
             Some(20),
-            Some(4),
+            Some(2),
             self.iter_singleton_nodes_with_selfloops_node_ids()
                 .map(|node_id| unsafe {
                     self.get_unchecked_succinct_node_description(node_id, 1, true)
@@ -1281,8 +1281,8 @@ impl Graph {
             number_of_edges_involved_in_node_tuples,
             maximum_number_of_nodes_in_a_node_tuple,
             maximum_number_of_edges_in_a_node_tuple,
-            Some(15),
-            Some(3),
+            Some(10),
+            Some(2),
             node_tuples.into_iter(),
         );
 
@@ -1324,7 +1324,7 @@ impl Graph {
             number_of_edges_involved_in_isomorphic_node_groups,
             maximum_number_of_nodes_in_a_isomorphic_node_group,
             maximum_number_of_edges_in_a_isomorphic_node_group,
-            Some(20),
+            Some(10),
             Some(2),
             isomorphic_node_groups
                 .into_iter()
