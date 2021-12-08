@@ -75,10 +75,17 @@ impl<'a> ParallelIterator for ParallelLinesWithIndex<'a> {
         // Create the file reader
         let mut reader = BufReader::with_capacity(self.buffer_size, self.file);
         // Skip the first rows (as specified by the user)
-        if let Some(rts) = self.number_of_rows_to_skip {
-            for _ in 0..rts {
+        if let Some(mut rts) = self.number_of_rows_to_skip {
+            while rts > 0 {
                 let mut _buffer = String::new();
                 let result_bytes_read = reader.read_line(&mut _buffer);
+                if let Some(cs) = self.comment_symbol.as_deref() {
+                    if !_buffer.starts_with(cs) {
+                        rts -= 1;
+                    }
+                } else {
+                    rts -= 1;
+                }
                 match result_bytes_read {
                     Ok(bytes_read) => {
                         // Reached End Of File
