@@ -1543,7 +1543,7 @@ impl Graph {
                 "<h3>Weights</h3>",
                 "<p>",
                 "The minimum edge weight is {minimum_edge_weight}, the maximum edge weight is {maximum_edge_weight} and the total edge weight is {total_edge_weight}. ",
-                "The RAM requirements for the edge weights data structure is {ram_edge_weights}.",
+                "The RAM requirement for the edge weights data structure is {ram_edge_weights}.",
                 "</p>",
             ),
             minimum_edge_weight= self.get_mininum_edge_weight().clone().unwrap(),
@@ -1985,7 +1985,7 @@ impl Graph {
                 "<h3>Node types</h3>",
                 "<p>",
                 "The graph has {node_types_description}.{multilabel_node_types} ",
-                "The RAM requirements for the node types data structure is {ram_node_types}.",
+                "The RAM requirement for the node types data structure is {ram_node_types}.",
                 "</p>",
             ),
             node_types_description = self.get_unchecked_node_types_description_from_count(
@@ -2230,7 +2230,7 @@ impl Graph {
                 "<h3>Edge types</h3>",
                 "<p>",
                 "The graph has {edge_types_number}. ",
-                "The RAM requirements for the edge types data structure is {ram_edge_types}.",
+                "The RAM requirement for the edge types data structure is {ram_edge_types}.",
                 "</p>",
             ),
             edge_types_number = self.get_unchecked_edge_types_description_from_count(
