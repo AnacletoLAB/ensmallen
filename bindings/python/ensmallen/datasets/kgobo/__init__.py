@@ -163,12 +163,12 @@ from .clao import CLAO
 from .upa import UPA
 from .nomen import NOMEN
 from .zfa import ZFA
+from .disdriv import DISDRIV
 from .cido import CIDO
 from .kisao import KISAO
 from .ma import MA
 from .po import PO
 from .cdno import CDNO
-from .ons import ONS
 from .ohd import OHD
 from .vario import VARIO
 from .agro import AGRO
@@ -182,6 +182,7 @@ from .ddanat import DDANAT
 from .bspo import BSPO
 from .mro import MRO
 from .pco import PCO
+from .epso import EPSO
 from .ornaseq import ORNASEQ
 from .hp import HP
 from .dpo import DPO
@@ -206,7 +207,8 @@ __all__ = [
 	"OARCS", "CTENO", "PLANP", "DOID", "OMRSE", "PPO", "OVAE", "ZP", "STATO",
 	"ONE", "ECTO", "XAO", "MIAPA", "MI", "ECOCORE", "MMO", "EUPATH", "OBIB",
 	"IDO", "SEPIO", "TTO", "PR", "NBO", "WBPHENOTYPE", "PECO", "GAZ", "CIO",
-	"INO", "CLAO", "UPA", "NOMEN", "ZFA", "CIDO", "KISAO", "MA", "PO", "CDNO",
-	"ONS", "OHD", "VARIO", "AGRO", "DIDEO", "TXPO", "PATO", "HOM", "ECO", "ICEO",
-	"DDANAT", "BSPO", "MRO", "PCO", "ORNASEQ", "HP", "DPO", "CL", "MFOEM",
+	"INO", "CLAO", "UPA", "NOMEN", "ZFA", "DISDRIV", "CIDO", "KISAO", "MA",
+	"PO", "CDNO", "OHD", "VARIO", "AGRO", "DIDEO", "TXPO", "PATO", "HOM", "ECO",
+	"ICEO", "DDANAT", "BSPO", "MRO", "PCO", "EPSO", "ORNASEQ", "HP", "DPO",
+	"CL", "MFOEM",
 ]

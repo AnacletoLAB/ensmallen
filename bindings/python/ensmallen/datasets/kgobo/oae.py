@@ -36,7 +36,7 @@ def OAE(
     cache: bool = True,
     cache_path: Optional[str] = None,
     cache_path_system_variable: str = "GRAPH_CACHE_DIR",
-    version: str = "release",
+    version: str = "1.2.44",
     **additional_graph_kwargs: Dict
 ) -> Graph:
     """Return new instance of the OAE graph.
@@ -81,10 +81,10 @@ def OAE(
         provided below is set, otherwise we use the directory `graphs`.
     cache_path_system_variable: str = "GRAPH_CACHE_DIR"
         The system variable with the default graph cache directory.
-    version: str = "release"
+    version: str = "1.2.44"
         The version of the graph to retrieve.	
 		The available versions are:
-			- release
+			- 1.2.44
     additional_graph_kwargs: Dict
         Additional graph kwargs.
 

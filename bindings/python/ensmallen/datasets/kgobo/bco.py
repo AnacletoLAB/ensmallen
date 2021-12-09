@@ -84,6 +84,7 @@ def BCO(
     version: str = "2020-03-27"
         The version of the graph to retrieve.	
 		The available versions are:
+			- 2021-11-14
 			- 2020-03-27
     additional_graph_kwargs: Dict
         Additional graph kwargs.

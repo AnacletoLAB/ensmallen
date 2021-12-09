@@ -84,6 +84,7 @@ def UBERON(
     version: str = "2021-10-01"
         The version of the graph to retrieve.	
 		The available versions are:
+			- 2021-11-28
 			- 2021-10-01
     additional_graph_kwargs: Dict
         Additional graph kwargs.

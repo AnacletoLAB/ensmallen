@@ -84,6 +84,7 @@ def SO(
     version: str = "2021-07-12"
         The version of the graph to retrieve.	
 		The available versions are:
+			- 2021-11-22
 			- 2021-07-12
     additional_graph_kwargs: Dict
         Additional graph kwargs.

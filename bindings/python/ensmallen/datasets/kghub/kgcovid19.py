@@ -107,6 +107,7 @@ def KGCOVID19(
 			- 20210902
 			- 20211002
 			- 20211102
+			- 20211202
 			- current
     additional_graph_kwargs: Dict
         Additional graph kwargs.

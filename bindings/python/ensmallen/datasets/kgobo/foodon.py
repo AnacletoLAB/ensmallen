@@ -84,6 +84,7 @@ def FOODON(
     version: str = "2021-09-15"
         The version of the graph to retrieve.	
 		The available versions are:
+			- 2021-11-25
 			- 2021-09-15
     additional_graph_kwargs: Dict
         Additional graph kwargs.

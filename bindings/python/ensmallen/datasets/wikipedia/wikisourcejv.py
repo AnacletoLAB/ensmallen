@@ -87,6 +87,7 @@ def WikiSourceJV(
 			- 20211020
 			- 20211101
 			- 20211120
+			- 20211201
 			- latest
     additional_graph_kwargs: Dict
         Additional graph kwargs.

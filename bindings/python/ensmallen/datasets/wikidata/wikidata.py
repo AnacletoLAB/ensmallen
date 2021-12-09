@@ -87,12 +87,6 @@ def WikiData(
     version: str = "latest-truthy"
         The version of the graph to retrieve.	
 		The available versions are:
-			- wikidata-20211011-all-BETA
-			- wikidata-20211013-truthy-BETA
-			- wikidata-20211015-lexemes-BETA
-			- wikidata-20211018-all-BETA
-			- wikidata-20211020-truthy-BETA
-			- wikidata-20211022-lexemes-BETA
 			- wikidata-20211025-all-BETA
 			- wikidata-20211027-truthy-BETA
 			- wikidata-20211029-lexemes-BETA
@@ -105,6 +99,13 @@ def WikiData(
 			- wikidata-20211115-all-BETA
 			- wikidata-20211117-truthy-BETA
 			- wikidata-20211119-lexemes-BETA
+			- wikidata-20211122-all-BETA
+			- wikidata-20211124-truthy-BETA
+			- wikidata-20211126-lexemes-BETA
+			- wikidata-20211129-all-BETA
+			- wikidata-20211201-truthy-BETA
+			- wikidata-20211203-lexemes-BETA
+			- wikidata-20211206-all-BETA
 			- latest-all
 			- latest-lexemes
 			- latest-truthy

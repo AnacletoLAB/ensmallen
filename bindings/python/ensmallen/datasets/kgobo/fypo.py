@@ -36,7 +36,7 @@ def FYPO(
     cache: bool = True,
     cache_path: Optional[str] = None,
     cache_path_system_variable: str = "GRAPH_CACHE_DIR",
-    version: str = "2021-10-05",
+    version: str = "2021-11-18",
     **additional_graph_kwargs: Dict
 ) -> Graph:
     """Return new instance of the FYPO graph.
@@ -81,11 +81,13 @@ def FYPO(
         provided below is set, otherwise we use the directory `graphs`.
     cache_path_system_variable: str = "GRAPH_CACHE_DIR"
         The system variable with the default graph cache directory.
-    version: str = "2021-10-05"
+    version: str = "2021-11-18"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 2021-11-08
+			- 2021-12-07
 			- 2021-10-05
+			- 2021-11-08
+			- 2021-11-18
     additional_graph_kwargs: Dict
         Additional graph kwargs.
 

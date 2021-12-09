@@ -84,6 +84,7 @@ def OBA(
     version: str = "13-11-2015-10-21"
         The version of the graph to retrieve.	
 		The available versions are:
+			- 2021-12-03
 			- 13-11-2015-10-21
     additional_graph_kwargs: Dict
         Additional graph kwargs.

@@ -79,7 +79,6 @@ def WikiKA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20210701
 			- 20210720
 			- 20210801
 			- 20210820
@@ -89,6 +88,7 @@ def WikiKA(
 			- 20211020
 			- 20211101
 			- 20211120
+			- 20211201
 			- latest
     additional_graph_kwargs: Dict
         Additional graph kwargs.

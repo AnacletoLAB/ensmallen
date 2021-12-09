@@ -36,7 +36,7 @@ def OHD(
     cache: bool = True,
     cache_path: Optional[str] = None,
     cache_path_system_variable: str = "GRAPH_CACHE_DIR",
-    version: str = "release",
+    version: str = "2016-06-27",
     **additional_graph_kwargs: Dict
 ) -> Graph:
     """Return new instance of the OHD graph.
@@ -81,11 +81,10 @@ def OHD(
         provided below is set, otherwise we use the directory `graphs`.
     cache_path_system_variable: str = "GRAPH_CACHE_DIR"
         The system variable with the default graph cache directory.
-    version: str = "release"
+    version: str = "2016-06-27"
         The version of the graph to retrieve.	
 		The available versions are:
 			- 2016-06-27
-			- release
     additional_graph_kwargs: Dict
         Additional graph kwargs.
 

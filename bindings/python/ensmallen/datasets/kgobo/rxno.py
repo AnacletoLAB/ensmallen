@@ -36,7 +36,7 @@ def RXNO(
     cache: bool = True,
     cache_path: Optional[str] = None,
     cache_path_system_variable: str = "GRAPH_CACHE_DIR",
-    version: str = "2021-01-21",
+    version: str = "2021-11-15",
     **additional_graph_kwargs: Dict
 ) -> Graph:
     """Return new instance of the RXNO graph.
@@ -81,10 +81,12 @@ def RXNO(
         provided below is set, otherwise we use the directory `graphs`.
     cache_path_system_variable: str = "GRAPH_CACHE_DIR"
         The system variable with the default graph cache directory.
-    version: str = "2021-01-21"
+    version: str = "2021-11-15"
         The version of the graph to retrieve.	
 		The available versions are:
+			- 2021-12-06
 			- 2021-01-21
+			- 2021-11-15
     additional_graph_kwargs: Dict
         Additional graph kwargs.
 

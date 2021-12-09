@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ONS.
+This file offers the methods to automatically retrieve the graph EPSO.
 
 The graph is automatically retrieved from the KGOBO repository. 
 
@@ -24,7 +24,7 @@ from typing import Dict, Optional
 
 
 
-def ONS(
+def EPSO(
     directed: bool = False,
     preprocess: bool = True,
     load_nodes: bool = True,
@@ -36,10 +36,10 @@ def ONS(
     cache: bool = True,
     cache_path: Optional[str] = None,
     cache_path_system_variable: str = "GRAPH_CACHE_DIR",
-    version: str = "release",
+    version: str = "",
     **additional_graph_kwargs: Dict
 ) -> Graph:
-    """Return new instance of the ONS graph.
+    """Return new instance of the EPSO graph.
 
     The graph is automatically retrieved from the KGOBO repository.	
 
@@ -81,16 +81,17 @@ def ONS(
         provided below is set, otherwise we use the directory `graphs`.
     cache_path_system_variable: str = "GRAPH_CACHE_DIR"
         The system variable with the default graph cache directory.
-    version: str = "release"
+    version: str = ""
         The version of the graph to retrieve.	
 		The available versions are:
-			- release
+			- 2021-05-28
+			- 
     additional_graph_kwargs: Dict
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of ONS graph.
+    Instace of EPSO graph.
 
 	References
 	---------------------
@@ -107,7 +108,7 @@ def ONS(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="ONS",
+        graph_name="EPSO",
         repository="kgobo",
         version=version,
         directed=directed,

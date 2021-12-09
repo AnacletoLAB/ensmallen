@@ -84,6 +84,7 @@ def WBLS(
     version: str = "2021-07-06"
         The version of the graph to retrieve.	
 		The available versions are:
+			- 2021-12-08
 			- 2021-07-06
     additional_graph_kwargs: Dict
         Additional graph kwargs.

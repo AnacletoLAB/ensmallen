@@ -81,6 +81,9 @@
 	<a href="https://kg-hub.berkeleybop.io/kg-covid-19/20211102/index.html">20211102</a>
       </li>
       <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-covid-19/20211202/index.html">20211202</a>
+      </li>
+      <li>
 	<a href="https://kg-hub.berkeleybop.io/kg-covid-19/current/index.html">current</a>
       </li>
     </ul>
