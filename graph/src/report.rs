@@ -942,7 +942,8 @@ impl Graph {
         if number_of_oddities == 0 {
             return "".to_string();
         }
-        let maximum_number_of_oddities_to_report = maximum_number_of_oddities_to_report.unwrap_or(6);
+        let maximum_number_of_oddities_to_report =
+            maximum_number_of_oddities_to_report.unwrap_or(6);
         let number_of_columns = number_of_columns.unwrap_or(1);
         if oddity_name.is_empty() {
             panic!("The oddity name cannot be empty!");
@@ -969,15 +970,19 @@ impl Graph {
                 "</{list_type}>",
                 "{possibly_conclusive_entry}"
             ),
-            column_style=if number_of_oddities > 1 {
+            column_style = if number_of_oddities > 1 {
                 format!(
                     " style=\"column-count: {number_of_columns}; column-gap: 2em;\"",
-                    number_of_columns=number_of_columns
+                    number_of_columns = number_of_columns
                 )
             } else {
                 "".to_string()
             },
-            list_type = if sorted { "ol" } else { "ul"},
+            list_type = if sorted && number_of_oddities > 1 {
+                "ol"
+            } else {
+                "ul"
+            },
             list_description = if number_of_oddities > 1 {
                 format!(
                     " The detected {lower_plural_oddity_name}{sorted_note} are:",
@@ -1058,26 +1063,26 @@ impl Graph {
                 .take(maximum_number_of_oddities_to_report)
                 .map(|oddity| format!("<li>{}</li>", oddity.to_string()))
                 .join("\n"),
-            possibly_conclusive_entry = if number_of_oddities
-                > maximum_number_of_oddities_to_report as NodeT
-            {
-                let remaining_oddities = number_of_oddities - maximum_number_of_oddities_to_report as NodeT;
-                if remaining_oddities == 1 {
-                    format!(
-                        "<p>And another {lower_oddity_name}.</p>",
-                        lower_oddity_name = oddity_name.to_lowercase()
-                    )
+            possibly_conclusive_entry =
+                if number_of_oddities > maximum_number_of_oddities_to_report as NodeT {
+                    let remaining_oddities =
+                        number_of_oddities - maximum_number_of_oddities_to_report as NodeT;
+                    if remaining_oddities == 1 {
+                        format!(
+                            "<p>And another {lower_oddity_name}.</p>",
+                            lower_oddity_name = oddity_name.to_lowercase()
+                        )
+                    } else {
+                        format!(
+                            "<p>And other {remaining_oddities} {lower_plural_oddity_name}.</p>",
+                            remaining_oddities =
+                                to_human_readable_high_integer(remaining_oddities as usize),
+                            lower_plural_oddity_name = plural_oddity_name.to_lowercase()
+                        )
+                    }
                 } else {
-                    format!(
-                        "<p>And other {remaining_oddities} {lower_plural_oddity_name}.</p>",
-                        remaining_oddities =
-                            to_human_readable_high_integer(remaining_oddities as usize),
-                        lower_plural_oddity_name = plural_oddity_name.to_lowercase()
-                    )
+                    "".to_string()
                 }
-            } else {
-                "".to_string()
-            }
         )
     }
 
@@ -1122,9 +1127,9 @@ impl Graph {
                     .map(|oddity| oddity.get_number_of_involved_edges())
                     .max()
                     .unwrap(),
-                    true,
-                    Some(6),
-                    Some(2),
+                true,
+                Some(6),
+                Some(2),
                 tree_like_oddities.into_iter(),
             )
         }
@@ -1351,9 +1356,7 @@ impl Graph {
                 .into_iter()
                 .map(|isomorphic_node_group| {
                     format!(
-                        concat!(
-                            "<p>Group with {} nodes ({}): {}.</p>",
-                        ),
+                        concat!("<p>Group with {} nodes ({}): {}.</p>",),
                         to_human_readable_high_integer(isomorphic_node_group.len() as usize),
                         unsafe {
                             self.get_unchecked_succinct_node_attributes_description(
