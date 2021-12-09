@@ -317,7 +317,7 @@ impl Graph {
         probabilistic_indices: &Option<Vec<u64>>,
     ) -> Vec<WeightT> {
         match &probabilistic_indices {
-            Some(indices) => match &self.weights {
+            Some(indices) => match &*self.weights {
                 Some(ws) => indices
                     .iter()
                     .map(|edge_id| ws[*edge_id as usize])
@@ -325,7 +325,7 @@ impl Graph {
                 // Otherwise we return an uniform vector.
                 None => vec![1.0; indices.len()],
             },
-            None => match &self.weights {
+            None => match &*self.weights {
                 Some(ws) => ws[(min_edge_id as usize)..(max_edge_id as usize)].to_vec(),
                 // Otherwise we return an uniform vector.
                 None => vec![1.0; (max_edge_id - min_edge_id) as usize],
@@ -360,7 +360,7 @@ impl Graph {
 
         if not_one(change_node_type_weight) {
             // If the node types were given:
-            if let Some(nt) = &self.node_types {
+            if let Some(nt) = &*self.node_types {
                 // if the destination node type matches the neighbour
                 // destination node type (we are not changing the node type)
                 // we weigth using the provided change_node_type_weight weight.
@@ -449,7 +449,7 @@ impl Graph {
 
         // If the edge types were given:
         if not_one(walk_weights.change_edge_type_weight) {
-            if let Some(ets) = &self.edge_types {
+            if let Some(ets) = &*self.edge_types {
                 //# If the neighbour edge type matches the previous
                 //# edge type (we are not changing the edge type)
                 //# we weigth using the provided change_edge_type_weight weight.

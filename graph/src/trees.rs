@@ -121,7 +121,7 @@ impl Graph {
     pub(crate) fn kruskal<'a>(
         &self,
         edges: impl Iterator<Item = (NodeT, NodeT)> + 'a,
-    ) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
+    ) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT,) {
         // If the graph does not have nodes, we return all
         // results as empty to provide an uniform, though pathological,
         // return value.
@@ -190,7 +190,10 @@ impl Graph {
             }
             let src_component = components[src as usize];
             let dst_component = components[dst as usize];
-            match (src_component == NODE_NOT_PRESENT, dst_component == NODE_NOT_PRESENT) {
+            match (
+                src_component == NODE_NOT_PRESENT,
+                dst_component == NODE_NOT_PRESENT,
+            ) {
                 // If neither nodes have a component, they must be inserted
                 // both in the components vector and in the tree.
                 // The edge must be added to the three.
@@ -252,7 +255,8 @@ impl Graph {
                 }
                 // If only one node has a component, the second node must be added.
                 _ => {
-                    let (component_id, not_inserted_node) = match src_component == NODE_NOT_PRESENT {
+                    let (component_id, not_inserted_node) = match src_component == NODE_NOT_PRESENT
+                    {
                         true => (components_remapping[dst_component as usize], src),
                         false => (components_remapping[src_component as usize], dst),
                     };
@@ -438,9 +442,7 @@ impl Graph {
         let active_nodes_number = AtomicUsize::new(0);
         let completed = AtomicBool::new(false);
         let total_inserted_edges = AtomicUsize::new(0);
-        let thread_safe_parents = ThreadDataRaceAware {
-            value: std::cell::UnsafeCell::new(&mut parents),
-        };
+        let thread_safe_parents = ThreadDataRaceAware::new(&mut parents);
 
         pool.scope(|s| {
             // for each leaf of the previous stub tree start a DFS keeping track
@@ -558,7 +560,7 @@ impl Graph {
     /// # Raises
     /// * If the given graph is directed.
     /// * If the system configuration does not allow for the creation of the thread pool.
-    pub fn connected_components(
+    pub fn get_connected_components(
         &self,
         verbose: Option<bool>,
     ) -> Result<(Vec<NodeT>, NodeT, NodeT, NodeT)> {
@@ -593,15 +595,9 @@ impl Graph {
         let active_nodes_number = AtomicUsize::new(0);
         let current_component_size = AtomicU32::new(0);
         let completed = AtomicBool::new(false);
-        let thread_safe_min_component_size = ThreadDataRaceAware {
-            value: std::cell::UnsafeCell::new(&mut min_component_size),
-        };
-        let thread_safe_max_component_size = ThreadDataRaceAware {
-            value: std::cell::UnsafeCell::new(&mut max_component_size),
-        };
-        let thread_safe_components_number = ThreadDataRaceAware {
-            value: std::cell::UnsafeCell::new(&mut components_number),
-        };
+        let thread_safe_min_component_size = ThreadDataRaceAware::new(&mut min_component_size);
+        let thread_safe_max_component_size = ThreadDataRaceAware::new(&mut max_component_size);
+        let thread_safe_components_number = ThreadDataRaceAware::new(&mut components_number);
 
         // since we were able to build a stub tree with cpu.len() leafs,
         // we spawn the treads and make anyone of them build the sub-trees.

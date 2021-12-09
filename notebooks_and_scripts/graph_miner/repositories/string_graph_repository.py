@@ -19,11 +19,11 @@ class StringGraphRepository(GraphRepository):
         """Returns metadata mined from the KGHub repository."""
         species_11_0 = pd.read_csv(
             "https://stringdb-static.org/download/species.v11.0.txt",
-            sep="\t"
+            sep='\t'
         )
         species_11_5 = pd.read_csv(
             "https://stringdb-static.org/download/species.v11.5.txt",
-            sep="\t"
+            sep='\t'
         )
 
         mined_data = {}

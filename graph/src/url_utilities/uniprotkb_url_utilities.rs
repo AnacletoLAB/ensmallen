@@ -7,7 +7,7 @@ use super::*;
 ///
 /// # Example
 /// To validate a node you can use:
-/// ```rust
+/// ```ignore
 /// # use graph::*;
 /// let uniprotkb_node_name1 = "UniProtKB:Q63ZW2";
 /// let uniprotkb_node_name2 = "UniProtKB:A0A2R9YJI3";

@@ -63,17 +63,17 @@ impl Hash for Graph {
         self.nodes.hash(state);
         self.edges.hash(state);
 
-        if let Some(ws) = &self.weights {
+        if let Some(ws) = &*self.weights {
             for w in ws {
                 hash_f32(*w, state);
             }
         }
 
-        if let Some(nt) = &self.node_types {
+        if let Some(nt) = &*self.node_types {
             nt.hash(state);
         }
 
-        if let Some(et) = &self.edge_types {
+        if let Some(et) = &*self.edge_types {
             et.hash(state);
         }
 

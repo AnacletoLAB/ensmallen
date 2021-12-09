@@ -26,7 +26,7 @@ impl Graph {
         } else {
             info!("Executing undirected parallel version of connected components.");
             let (_, components_number, min_component_size, max_component_size) =
-                self.connected_components(verbose).unwrap();
+                self.get_connected_components(verbose).unwrap();
             (components_number, min_component_size, max_component_size)
         }
     }
@@ -314,11 +314,7 @@ impl Graph {
     /// println!("The node with maximum node degree of the graph is {}.", unsafe{graph.get_unchecked_most_central_node_id()});
     /// ```
     pub unsafe fn get_unchecked_most_central_node_id(&self) -> NodeT {
-        self.par_iter_node_degrees()
-            .enumerate()
-            .max_by(|(_, degree_a), (_, degree_b)| degree_a.cmp(degree_b))
-            .unwrap()
-            .0 as NodeT
+        self.par_iter_node_degrees().argmax().unwrap().0 as NodeT
     }
 
     /// Returns maximum node degree of the graph.
@@ -391,7 +387,7 @@ impl Graph {
     /// ```
     ///
     pub fn get_name(&self) -> String {
-        self.name.clone()
+        self.name.to_string()
     }
 
     #[cache_property(trap_nodes_number)]
@@ -506,8 +502,13 @@ impl Graph {
 
     /// Return the edge types of the edges.
     pub fn get_edge_type_ids(&self) -> Result<Vec<Option<EdgeTypeT>>> {
-        self.must_have_edge_types()
-            .map(|_| self.edge_types.as_ref().map(|ets| ets.ids.clone()).unwrap())
+        self.must_have_edge_types().map(|_| {
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| ets.ids.clone())
+                .unwrap()
+        })
     }
 
     /// Return the unique edge type IDs of the graph edges.
@@ -531,6 +532,7 @@ impl Graph {
     pub fn get_edge_type_names(&self) -> Result<Vec<Option<String>>> {
         self.must_have_edge_types().map(|_| {
             self.edge_types
+                .as_ref()
                 .as_ref()
                 .map(|ets| {
                     ets.ids
@@ -563,7 +565,7 @@ impl Graph {
     /// ```
     pub fn get_edge_weights(&self) -> Result<Vec<WeightT>> {
         self.must_have_edge_weights()?;
-        Ok(self.weights.clone().unwrap())
+        Ok((*self.weights).clone().unwrap())
     }
 
     /// Return the weighted indegree (total weighted inbound edge weights) for each node.
@@ -610,8 +612,13 @@ impl Graph {
     /// ```
     ///
     pub fn get_node_type_ids(&self) -> Result<Vec<Option<Vec<NodeTypeT>>>> {
-        self.must_have_node_types()
-            .map(|_| self.node_types.as_ref().map(|nts| nts.ids.clone()).unwrap())
+        self.must_have_node_types().map(|_| {
+            self.node_types
+                .as_ref()
+                .as_ref()
+                .map(|nts| nts.ids.clone())
+                .unwrap()
+        })
     }
 
     /// Returns boolean mask of known node types.
@@ -868,6 +875,30 @@ impl Graph {
         })
     }
 
+    /// Returns number of homogeneous node types.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn get_homogeneous_node_types_number(&self) -> Result<NodeTypeT> {
+        Ok(self.par_iter_homogeneous_node_type_ids()?.count() as NodeTypeT)
+    }
+
+    /// Returns list of homogeneous node type IDs.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn get_homogeneous_node_type_ids(&self) -> Result<Vec<NodeTypeT>> {
+        Ok(self.par_iter_homogeneous_node_type_ids()?.collect())
+    }
+
+    /// Returns list of homogeneous node type names.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn get_homogeneous_node_type_names(&self) -> Result<Vec<String>> {
+        Ok(self.par_iter_homogeneous_node_type_names()?.collect())
+    }
+
     /// Returns vector of singleton node types IDs.
     ///
     /// # Raises
@@ -1030,6 +1061,54 @@ impl Graph {
             .map(|x| x.collect())
     }
 
+    /// Returns node IDs of the nodes with given node type ID.
+    ///
+    /// # Arguments
+    /// * `node_type_id`: NodeTypeT - The node type ID to filter for.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_ids_from_node_type_id(&self, node_type_id: NodeTypeT) -> Result<Vec<NodeT>> {
+        self.iter_node_ids_from_node_type_id(node_type_id)
+            .map(|x| x.collect())
+    }
+
+    /// Returns node names of the nodes with given node type ID.
+    ///
+    /// # Arguments
+    /// * `node_type_id`: NodeTypeT - The node type ID to filter for.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_names_from_node_type_id(&self, node_type_id: NodeTypeT) -> Result<Vec<String>> {
+        self.iter_node_names_from_node_type_id(node_type_id)
+            .map(|x| x.collect())
+    }
+
+    /// Returns node IDs of the nodes with given node type name.
+    ///
+    /// # Arguments
+    /// * `node_type_name`: &str - The node type ID to filter for.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_ids_from_node_type_name(&self, node_type_name: &str) -> Result<Vec<NodeT>> {
+        self.iter_node_ids_from_node_type_name(node_type_name)
+            .map(|x| x.collect())
+    }
+
+    /// Returns node names of the nodes with given node type name.
+    ///
+    /// # Arguments
+    /// * `node_type_name`: &str - The node type ID to filter for.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_names_from_node_type_name(&self, node_type_name: &str) -> Result<Vec<String>> {
+        self.iter_node_names_from_node_type_name(node_type_name)
+            .map(|x| x.collect())
+    }
+
     /// Returns node names of the nodes with known node types
     ///
     /// # Raises
@@ -1153,7 +1232,7 @@ impl Graph {
     pub fn get_node_connected_component_ids(&self, verbose: Option<bool>) -> Vec<NodeT> {
         match self.directed {
             true => self.spanning_arborescence_kruskal(verbose).1,
-            false => self.connected_components(verbose).unwrap().0,
+            false => self.get_connected_components(verbose).unwrap().0,
         }
     }
 
@@ -1244,7 +1323,7 @@ impl Graph {
 
     /// Return vector with node cumulative_node_degrees, that is the comulative node degree.
     pub fn get_cumulative_node_degrees(&self) -> Vec<EdgeT> {
-        self.cumulative_node_degrees.as_ref().map_or_else(
+        self.cumulative_node_degrees.as_ref().as_ref().map_or_else(
             || {
                 let mut cumulative_node_degrees = vec![0; self.get_nodes_number() as usize];
                 self.par_iter_comulative_node_degrees()
@@ -1257,7 +1336,7 @@ impl Graph {
 
     /// Return vector with
     pub fn get_reciprocal_sqrt_degrees(&self) -> Vec<WeightT> {
-        self.reciprocal_sqrt_degrees.as_ref().map_or_else(
+        self.reciprocal_sqrt_degrees.as_ref().as_ref().map_or_else(
             || {
                 let mut reciprocal_sqrt_degrees = vec![0.0; self.get_nodes_number() as usize];
                 self.par_iter_reciprocal_sqrt_degrees()

@@ -1,47 +1,30 @@
 use memchr;
-#[cfg(target_os = "linux")]
-use nix::fcntl::*;
 use rayon::iter::plumbing::{bridge_unindexed, UnindexedProducer};
 use rayon::prelude::*;
-use std::fs::File;
-use std::io::{prelude::*, BufReader, ErrorKind, SeekFrom};
-#[cfg(target_os = "linux")]
-use std::os::unix::io::AsRawFd;
+use std::sync::Arc;
+use super::MemoryMappedReadOnlyFile;
 
 pub const READER_CAPACITY: usize = 1 << 17;
 
 type IterType = (usize, Result<String, String>);
 
-pub struct ParallelLinesWithIndex<'a> {
-    path: &'a str,
-    file: File,
+pub struct ParallelLinesWithIndex {
+    mmap: Arc<MemoryMappedReadOnlyFile>,
     comment_symbol: Option<String>,
     number_of_lines: Option<usize>,
     number_of_rows_to_skip: Option<usize>,
-    buffer_size: usize,
     max_producers: usize,
 }
 
-impl<'a> ParallelLinesWithIndex<'a> {
-    pub fn new(path: &'a str) -> Result<ParallelLinesWithIndex<'a>, String> {
-        let file = match File::open(path.clone()) {
-            Ok(file) => Ok(file),
-            Err(_) => Err(format!("Cannot open file {}", path)),
-        }?;
-
+impl ParallelLinesWithIndex {
+    pub fn new(path: &str) -> Result<ParallelLinesWithIndex, String> {
         Ok(ParallelLinesWithIndex {
-            path: path,
-            file,
+            mmap: Arc::new(MemoryMappedReadOnlyFile::new(path)?),
             number_of_lines: None,
             comment_symbol: None,
             number_of_rows_to_skip: None,
-            buffer_size: READER_CAPACITY,
             max_producers: num_cpus::get(),
         })
-    }
-
-    pub fn set_buffer_size(&mut self, buffer_size: usize) {
-        self.buffer_size = buffer_size;
     }
 
     pub fn set_max_producers(&mut self, max_producers: usize) {
@@ -57,51 +40,34 @@ impl<'a> ParallelLinesWithIndex<'a> {
     }
 }
 
-impl<'a> ParallelIterator for ParallelLinesWithIndex<'a> {
+impl ParallelIterator for ParallelLinesWithIndex {
     type Item = IterType;
 
     fn drive_unindexed<C>(self, consumer: C) -> C::Result
     where
         C: rayon::iter::plumbing::UnindexedConsumer<Self::Item>,
     {
-        #[cfg(target_os = "linux")]
-        let _ = posix_fadvise(
-            self.file.as_raw_fd(),
-            0,
-            0,
-            PosixFadviseAdvice::POSIX_FADV_SEQUENTIAL,
-        );
-
-        // Create the file reader
-        let mut reader = BufReader::with_capacity(self.buffer_size, self.file);
+        let mut data = self.mmap.as_str();
         // Skip the first rows (as specified by the user)
         if let Some(rts) = self.number_of_rows_to_skip {
             for _ in 0..rts {
                 let mut _buffer = String::new();
-                let result_bytes_read = reader.read_line(&mut _buffer);
-                match result_bytes_read {
-                    Ok(bytes_read) => {
-                        // Reached End Of File
-                        if bytes_read == 0 {
-                            break;
-                        }
-                    }
-                    Err(_errot) => {}
-                }
+                let (_, rest) = data.split_once("\n")
+                    .unwrap_or(("", data));
+                data = rest;
             }
         }
 
         // Create the first producer
         let producer = ParalellLinesProducerWithIndex {
-            path: self.path,
-            file: reader,
+            mmap: self.mmap.clone(),
+            data, 
             line_count: 0,
             modulus_mask: 0,
             depth: 0,
             remainder: 0,
             maximal_depth: (self.max_producers as f64).log2().ceil() as usize,
-            buffer_size: self.buffer_size,
-            comment_symbol: self.comment_symbol,
+            comment_symbol: self.comment_symbol.clone(),
         };
         bridge_unindexed(producer, consumer)
     }
@@ -112,143 +78,67 @@ impl<'a> ParallelIterator for ParallelLinesWithIndex<'a> {
 }
 
 #[derive(Debug)]
-struct ParalellLinesProducerWithIndex<'a> {
-    path: &'a str,
-    file: BufReader<File>,
+struct ParalellLinesProducerWithIndex {
+    mmap: Arc<MemoryMappedReadOnlyFile>,
+    data: &'static str,
     line_count: usize,
     modulus_mask: usize,
     remainder: usize,
     maximal_depth: usize,
     depth: usize,
-    buffer_size: usize,
     comment_symbol: Option<String>,
 }
 
-impl<'a> ParalellLinesProducerWithIndex<'a> {
+impl ParalellLinesProducerWithIndex {
     #[inline]
     fn get_modulus(&self) -> usize {
         self.modulus_mask + 1
     }
 }
 
-impl<'a> Iterator for ParalellLinesProducerWithIndex<'a> {
+impl Iterator for ParalellLinesProducerWithIndex {
     type Item = IterType;
 
     fn next(&mut self) -> Option<Self::Item> {
-        // read a line
-        let mut line_buffer = Vec::with_capacity(128);
-        // In this counter we will sum the number of characters
-        // that have been read for the buffered line.
-        let mut line_number_of_characters_read = 0;
-        'outer: loop {
-            let (line_is_finished, number_of_characters_read) = {
-                // We get the next batch of characters from the buffer.
-                let mut available = match self.file.fill_buf() {
-                    Ok(n) => n,
-                    Err(ref e) if e.kind() == ErrorKind::Interrupted => continue,
-                    Err(_) => {
-                        return Some((
-                            self.line_count,
-                            Err("Something went wrong reading the file".to_string()),
-                        ))
-                    }
-                };
-                let mut number_of_characters_read = 0;
-
-                // If this is a file with '\n\r' end of lines, it is not impossible
-                // that the read bits start with the carriage return symbol.
-                // We need to handle this use case as follows:
-                if !available.is_empty() && available[0] == b'\r' {
-                    available = &available[1..];
-                    number_of_characters_read += 1;
-                }
-                if let Some(comment_symbol) = self.comment_symbol.as_deref() {
-                    if available.starts_with(comment_symbol.as_bytes()) {
-                        // We deincrease the number of characters that have been found.
-                        let _ = self.line_count.saturating_sub(1);
-                        number_of_characters_read += comment_symbol.len();
-                        available = &available[comment_symbol.len()..];
-                    }
-                }
-                let mut line_is_finished = false;
-                while let Some(pos) = memchr::memchr(b'\n', available) {
-                    // update the count of how many bytes from the buffer we have parsed
-                    number_of_characters_read += pos + 1;
-                    // We either have finished searching for the correct delimiter
-                    // and we can finally start to grow our string from this delimiter
-                    // or alternatively we need to parse the currently loaded characters
-                    if (self.line_count & self.modulus_mask) != self.remainder {
-                        available = &available[(pos + 1)..];
-                        if !available.is_empty() && available[0] == b'\r' {
-                            available = &available[1..];
-                            number_of_characters_read += 1;
-                        }
-                        // We increase the number of characters that have been found.
-                        self.line_count += 1;
-                        if let Some(comment_symbol) = self.comment_symbol.as_deref() {
-                            if available.starts_with(comment_symbol.as_bytes()) {
-                                // We deincrease the number of characters that have been found.
-                                self.line_count -= 1;
-                                number_of_characters_read += comment_symbol.len();
-                                available = &available[comment_symbol.len()..];
-                            }
-                        }
-                        continue;
-                    }
-                    // If we are now finally in the correct line, we can grow
-                    // our line buffer.
-                    line_is_finished = true;
-                    // We return a tuple containing a boolean
-                    // that represents we are done with preparing
-                    // this line of the file and the number of characters
-                    // that have been read.
-                    line_number_of_characters_read += pos + 1;
-                    // Note that we EXCLUDE the separator from the line, so we don't
-                    // need to check to remove it afterwards.
-                    line_buffer.extend_from_slice(&available[..pos]);
-                    // We increase the number of characters that have been found.
-                    self.line_count += 1;
-                    break;
-                }
-                if !line_is_finished {
-                    // Otherwise we can continue to read onward.
-                    // We get the number of characters that have been read.
-                    number_of_characters_read += available.len();
-                    // If the number of delimiters that we need to find still is
-                    // just one, that is the final delimiter, we need to store
-                    // these characters into the string buffer.
-                    if (self.line_count & self.modulus_mask) == self.remainder {
-                        line_buffer.extend_from_slice(available);
-                        line_number_of_characters_read += available.len();
-                    }
-                }
-                // We return a tuple containing a boolean
-                // that represents we are not yet done with preparing
-                // this line of the file and the number of characters
-                // that have been read.
-                (line_is_finished, number_of_characters_read)
-            };
-            // We consume a number of characters from the file
-            // equal to the number of characters we have read
-            self.file.consume(number_of_characters_read);
-            // If either the line is finished or the number
-            // of characters read is zero, we are done.
-            if line_is_finished || number_of_characters_read == 0 {
-                break 'outer;
+        loop {
+            if self.data.trim().is_empty() {
+                return None;
             }
-        }
 
-        if line_number_of_characters_read == 0 {
-            None
-        } else {
-            Some((self.line_count - 1, unsafe {
-                Ok(String::from_utf8_unchecked(line_buffer))
-            }))
+            let line_length  = memchr::memchr(b'\n', self.data.as_bytes())
+            .unwrap_or(self.data.len() - 1);
+
+            if let Some(comment_symbol) = self.comment_symbol.as_deref() {
+                if self.data.starts_with(comment_symbol) {
+                    // skip this line and go to the next
+                    self.data = &self.data[line_length + 1..];
+                    continue;
+                }
+            }
+
+            // skip empty lines
+            if self.data[..line_length].trim().is_empty() {
+                self.data = &self.data[line_length + 1..];
+                continue
+            }
+
+
+            // skip lines until we met the one with the right remainder
+            if (self.line_count & self.modulus_mask) != self.remainder {
+                self.data = &self.data[line_length + 1..];
+                self.line_count += 1;
+                continue;
+            }
+
+            let result = &self.data[..line_length];
+            self.data = &self.data[line_length + 1..];
+            self.line_count += 1;
+            return Some((self.line_count - 1, Ok(result.to_string())));
         }
     }
 }
 
-impl<'a> UnindexedProducer for ParalellLinesProducerWithIndex<'a> {
+impl UnindexedProducer for ParalellLinesProducerWithIndex {
     type Item = IterType;
 
     /// Split the file in two approximately balanced streams
@@ -257,28 +147,6 @@ impl<'a> UnindexedProducer for ParalellLinesProducerWithIndex<'a> {
         if self.depth >= self.maximal_depth.saturating_sub(1) {
             return (self, None);
         }
-
-        let file =
-            File::open(self.path.clone()).expect(&format!("Could not open the file {}", self.path));
-
-        #[cfg(target_os = "linux")]
-        let _ = posix_fadvise(
-            file.as_raw_fd(),
-            0,
-            0,
-            PosixFadviseAdvice::POSIX_FADV_SEQUENTIAL,
-        );
-
-        // Create a copy of the file reader of the father
-        let mut new_file = BufReader::with_capacity(self.buffer_size, file);
-
-        // Updated its position to the same byte in the file as the father.
-        new_file
-            .seek(SeekFrom::Start(self.file.stream_position().expect(
-                "Could not read the file pointer position in the file.",
-            )))
-            .expect("Could seek the new file to the position of the old one.");
-
         // Since we only do binary splits, the modulus will always be a power of
         // two. So when checking if the current line should be retrieved,
         // we don't need to use the slower % but we can use the faster &.
@@ -316,15 +184,14 @@ impl<'a> UnindexedProducer for ParalellLinesProducerWithIndex<'a> {
         // mod 8 = 2 * old_mod, rem 5 = old_rem + old_modulus
         //
         let new = ParalellLinesProducerWithIndex {
-            path: self.path.clone(),
-            line_count: self.line_count,
-            file: new_file,
             modulus_mask: new_modulus_mask,
             remainder: self.get_modulus() + self.remainder,
-            buffer_size: self.buffer_size,
             comment_symbol: self.comment_symbol.clone(),
             depth: self.depth + 1,
             maximal_depth: self.maximal_depth,
+            mmap: self.mmap.clone(),
+            data: self.data,
+            line_count: self.line_count,
         };
 
         // Update the father modulus so that the lines are equally splitted

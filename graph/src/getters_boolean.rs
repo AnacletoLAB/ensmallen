@@ -264,7 +264,16 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have node types.
     pub fn has_homogeneous_node_types(&self) -> Result<bool> {
-        Ok(self.get_node_types_number()? == 1)
+        Ok(self
+            .node_types
+            .as_ref()
+            .as_ref()
+            .map_or(false, |node_type_ids| {
+                node_type_ids
+                    .counts
+                    .iter()
+                    .any(|&node_type_count| node_type_count == self.get_nodes_number())
+            }))
     }
 
     /// Returns whether the edges have an homogenous edge type.

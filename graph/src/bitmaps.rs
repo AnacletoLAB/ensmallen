@@ -39,8 +39,8 @@ impl Graph {
                             || node_type_ids.contains(&None),
                             // If some
                             |ns| {
-                                ns.into_iter().any(|node_type_name| {
-                                    node_type_ids.contains(&Some(node_type_name))
+                                ns.iter().any(|&node_type_id| {
+                                    node_type_ids.contains(&Some(node_type_id))
                                 })
                             },
                         ) {

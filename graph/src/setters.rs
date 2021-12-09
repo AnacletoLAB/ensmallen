@@ -11,7 +11,7 @@ impl Graph {
     ///
     /// * `name`: String - Name of the graph.
     pub fn set_name(&mut self, name: String) {
-        self.name = name;
+        self.name = Arc::new(name);
     }
 
     /// Replace all edge types (if present) and set all the edge to edge_type.
@@ -51,7 +51,7 @@ impl Graph {
             vec![Some(0); self.get_directed_edges_number() as usize],
             vocabulary,
         );
-        self.edge_types = Some(edge_types);
+        self.edge_types = Arc::new(Some(edge_types));
         Ok(self)
     }
 
@@ -78,7 +78,7 @@ impl Graph {
             vec![Some(vec![0]); self.get_nodes_number() as usize],
             vocabulary,
         );
-        self.node_types = Some(node_types);
+        self.node_types = Arc::new(Some(node_types));
         Ok(self)
     }
 
@@ -128,7 +128,7 @@ impl Graph {
             );
         }
 
-        if let Some(node_types) = self.node_types.as_mut() {
+        if let Some(node_types) = Arc::make_mut(&mut self.node_types) {
             // compute the new node ids once the given ones are removed
             // we need this to keep a dense mapping.
             let new_node_type_ids =
@@ -139,8 +139,10 @@ impl Graph {
 
             // Iter over each node and update its node
             node_types.ids.par_iter_mut().for_each(|node_type_ids| {
+                // If the node type of the current node is not unknown
                 if let Some(ntis) = node_type_ids.as_mut() {
                     // We remove the given node type if one was given.
+                    // For each of the node
                     for node_type_id_to_remove in &node_type_ids_to_remove {
                         if let Some(pos) = ntis.iter().position(|x| *x == *node_type_id_to_remove) {
                             ntis.remove(pos);
@@ -180,6 +182,19 @@ impl Graph {
     ///
     pub fn remove_inplace_singleton_node_types(&mut self) -> Result<&mut Graph> {
         self.remove_inplace_node_type_ids(self.get_singleton_node_type_ids()?)?;
+        Ok(self)
+    }
+
+    /// Remove homogeneous node types from all nodes.
+    ///
+    /// If any given node remains with no node type, that node is labeled
+    /// with node type None. Note that the modification happens inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    ///
+    pub fn remove_inplace_homogeneous_node_types(&mut self) -> Result<&mut Graph> {
+        self.remove_inplace_node_type_ids(self.get_homogeneous_node_type_ids()?)?;
         Ok(self)
     }
 
@@ -232,7 +247,7 @@ impl Graph {
             );
         }
 
-        if let Some(edge_types) = self.edge_types.as_mut() {
+        if let Some(edge_types) = Arc::make_mut(&mut self.edge_types) {
             // compute the new edge ids once the given ones are removed
             // we need this to keep a dense mapping.
             let new_edge_type_ids =
@@ -318,6 +333,20 @@ impl Graph {
     pub fn remove_singleton_node_types(&self) -> Result<Graph> {
         let mut graph = self.clone();
         graph.remove_inplace_singleton_node_types()?;
+        Ok(graph)
+    }
+
+    /// Remove homogeneous node types from all nodes.
+    ///
+    /// If any given node remains with no node type, that node is labeled
+    /// with node type None. Note that the modification DOES NOT happen inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    ///
+    pub fn remove_homogeneous_node_types(&self) -> Result<Graph> {
+        let mut graph = self.clone();
+        graph.remove_inplace_homogeneous_node_types()?;
         Ok(graph)
     }
 
@@ -417,7 +446,7 @@ impl Graph {
     ///
     pub fn remove_inplace_node_types(&mut self) -> Result<&Graph> {
         self.must_have_node_types()?;
-        self.node_types = None;
+        self.node_types = Arc::new(None);
         Ok(self)
     }
 
@@ -445,7 +474,7 @@ impl Graph {
     pub fn remove_inplace_edge_types(&mut self) -> Result<&Graph> {
         self.must_have_edge_types()?;
         self.must_not_be_multigraph()?;
-        self.edge_types = None;
+        self.edge_types = Arc::new(None);
         Ok(self)
     }
 
@@ -472,7 +501,7 @@ impl Graph {
     ///
     pub fn remove_inplace_edge_weights(&mut self) -> Result<&Graph> {
         self.must_have_edge_weights()?;
-        self.weights = None;
+        self.weights = Arc::new(None);
         Ok(self)
     }
 
@@ -486,6 +515,66 @@ impl Graph {
     pub fn remove_edge_weights(&self) -> Result<Graph> {
         let mut graph = self.clone();
         graph.remove_inplace_edge_weights()?;
+        Ok(graph)
+    }
+
+    /// Divide edge weights in place.
+    ///
+    /// Note that the modification happens inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge weights.
+    ///
+    pub fn divide_edge_weights_inplace(&mut self, denominator: WeightT) -> Result<()> {
+        self.must_have_edge_weights()?;
+        if let Some(edge_weights) = Arc::make_mut(&mut self.weights) {
+            edge_weights.par_iter_mut().for_each(|edge_weight| {
+                *edge_weight /= denominator;
+            });
+        }
+        Ok(())
+    }
+
+    /// Divide edge weights.
+    ///
+    /// Note that the modification does not happen inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge weights.
+    ///
+    pub fn divide_edge_weights(&self, denominator: WeightT) -> Result<Graph> {
+        let mut graph = self.clone();
+        graph.divide_edge_weights_inplace(denominator)?;
+        Ok(graph)
+    }
+
+    /// Multiply edge weights in place.
+    ///
+    /// Note that the modification happens inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge weights.
+    ///
+    pub fn multiply_edge_weights_inplace(&mut self, denominator: WeightT) -> Result<()> {
+        self.must_have_edge_weights()?;
+        if let Some(edge_weights) = Arc::make_mut(&mut self.weights) {
+            edge_weights.par_iter_mut().for_each(|edge_weight| {
+                *edge_weight *= denominator;
+            });
+        }
+        Ok(())
+    }
+
+    /// Multiply edge weights.
+    ///
+    /// Note that the modification does not happen inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge weights.
+    ///
+    pub fn multiply_edge_weights(&self, denominator: WeightT) -> Result<Graph> {
+        let mut graph = self.clone();
+        graph.divide_edge_weights_inplace(denominator)?;
         Ok(graph)
     }
 }

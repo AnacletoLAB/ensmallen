@@ -9,6 +9,6 @@ use graph::test_utilities::load_cora;
 fn bench_connected_components(b: &mut Bencher) {
     let cora = load_cora();
     b.iter(|| {
-        let _ = black_box(cora.connected_components(Some(false)));
+        let _ = black_box(cora.get_connected_components(Some(false)));
     });
 }

@@ -1,0 +1,7 @@
+<html>
+<head><title>Index of /wikidatawiki/entities/20211122/</title></head>
+<body bgcolor="white">
+<h1>Index of /wikidatawiki/entities/20211122/</h1><hr><pre><a href="../">../</a>
+<a href="wikidata-20211122-all.json.gz">wikidata-20211122-all.json.gz</a>                      24-Nov-2021 17:04        107570290042
+</pre><hr></body>
+</html>

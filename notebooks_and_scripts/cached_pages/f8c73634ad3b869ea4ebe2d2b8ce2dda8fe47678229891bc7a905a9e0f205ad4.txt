@@ -1,0 +1,41 @@
+<html>
+<head><title>Index of /wikidatawiki/entities/</title></head>
+<body bgcolor="white">
+<h1>Index of /wikidatawiki/entities/</h1><hr><pre><a href="../">../</a>
+<a href="20211011/">20211011/</a>                                          14-Oct-2021 10:42                   -
+<a href="20211013/">20211013/</a>                                          16-Oct-2021 07:31                   -
+<a href="20211015/">20211015/</a>                                          15-Oct-2021 23:28                   -
+<a href="20211018/">20211018/</a>                                          21-Oct-2021 14:19                   -
+<a href="20211020/">20211020/</a>                                          23-Oct-2021 11:21                   -
+<a href="20211022/">20211022/</a>                                          22-Oct-2021 23:30                   -
+<a href="20211025/">20211025/</a>                                          28-Oct-2021 15:37                   -
+<a href="20211027/">20211027/</a>                                          30-Oct-2021 12:37                   -
+<a href="20211029/">20211029/</a>                                          29-Oct-2021 23:30                   -
+<a href="20211101/">20211101/</a>                                          04-Nov-2021 13:59                   -
+<a href="20211103/">20211103/</a>                                          06-Nov-2021 11:14                   -
+<a href="20211105/">20211105/</a>                                          05-Nov-2021 23:31                   -
+<a href="20211108/">20211108/</a>                                          11-Nov-2021 14:00                   -
+<a href="20211110/">20211110/</a>                                          13-Nov-2021 06:42                   -
+<a href="20211112/">20211112/</a>                                          12-Nov-2021 23:30                   -
+<a href="20211115/">20211115/</a>                                          18-Nov-2021 15:09                   -
+<a href="20211117/">20211117/</a>                                          20-Nov-2021 11:40                   -
+<a href="20211119/">20211119/</a>                                          19-Nov-2021 23:30                   -
+<a href="20211122/">20211122/</a>                                          24-Nov-2021 17:04                   -
+<a href="20211124/">20211124/</a>                                          24-Nov-2021 03:41                   -
+<a href="dcatap.rdf">dcatap.rdf</a>                                         20-Nov-2021 12:11               84751
+<a href="latest-all.json.bz2">latest-all.json.bz2</a>                                18-Nov-2021 01:24         71089372345
+<a href="latest-all.json.gz">latest-all.json.gz</a>                                 24-Nov-2021 17:04        107570290042
+<a href="latest-all.nt.bz2">latest-all.nt.bz2</a>                                  18-Nov-2021 15:09        142258776857
+<a href="latest-all.nt.gz">latest-all.nt.gz</a>                                   17-Nov-2021 21:26        182255941917
+<a href="latest-all.ttl.bz2">latest-all.ttl.bz2</a>                                 18-Nov-2021 02:47         90740040607
+<a href="latest-all.ttl.gz">latest-all.ttl.gz</a>                                  17-Nov-2021 17:02        109472048306
+<a href="latest-lexemes.json.bz2">latest-lexemes.json.bz2</a>                            24-Nov-2021 03:41           199695944
+<a href="latest-lexemes.json.gz">latest-lexemes.json.gz</a>                             24-Nov-2021 03:40           277639584
+<a href="latest-lexemes.nt.bz2">latest-lexemes.nt.bz2</a>                              19-Nov-2021 23:30           565796940
+<a href="latest-lexemes.nt.gz">latest-lexemes.nt.gz</a>                               19-Nov-2021 23:25           761756705
+<a href="latest-lexemes.ttl.bz2">latest-lexemes.ttl.bz2</a>                             19-Nov-2021 23:26           309515888
+<a href="latest-lexemes.ttl.gz">latest-lexemes.ttl.gz</a>                              19-Nov-2021 23:23           391602012
+<a href="latest-truthy.nt.bz2">latest-truthy.nt.bz2</a>                               20-Nov-2021 11:40         31248632791
+<a href="latest-truthy.nt.gz">latest-truthy.nt.gz</a>                                20-Nov-2021 08:45         51226326205
+</pre><hr></body>
+</html>

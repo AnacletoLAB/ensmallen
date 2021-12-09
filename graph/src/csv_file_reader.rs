@@ -8,7 +8,7 @@ use nix::fcntl::*;
 use std::os::unix::io::AsRawFd;
 
 use num_traits::Zero;
-use rayon::{iter::ParallelIterator, str};
+use rayon::iter::ParallelIterator;
 use std::{collections::HashMap, fs::File, io::prelude::*, io::BufReader};
 
 use crate::utils::get_loading_bar;
@@ -27,8 +27,8 @@ pub struct CSVFileReader {
     /// because otherwise the bar synchronization ovehead is too massive.
     pub(crate) verbose: bool,
 
-    /// The separator to use, usually, this is "\t" for tsv and "," for csv.
-    pub(crate) separator: String,
+    /// The separator to use, usually, this is '\t' for tsv and "," for csv.
+    pub(crate) separator: char,
 
     /// Boolean to check consistency when calling the builder methods.
     pub(crate) separator_was_set: bool,
@@ -67,6 +67,9 @@ pub struct CSVFileReader {
 
     /// Whether to read the file sequentially or in parallel
     pub(crate) parallel: bool,
+
+    /// Whether to support reading of balanced quotes, which will significantly slow down the parsing.
+    pub(crate) support_balanced_quotes: bool,
 }
 
 /// # Builder methods
@@ -86,7 +89,7 @@ impl CSVFileReader {
                 CSVFileReader {
                     path,
                     verbose: true,
-                    separator: "\t".to_string(),
+                    separator: '\t',
                     separator_was_set: false,
                     number_of_lines_to_automatically_detect_separator: 2000,
                     header: true,
@@ -99,6 +102,7 @@ impl CSVFileReader {
                     graph_name: "Graph".to_string(),
                     may_have_duplicates: None,
                     parallel: true,
+                    support_balanced_quotes: false,
                 }
             }),
             Err(_) => Err(format!("Cannot open the file at {}", path)),
@@ -117,15 +121,27 @@ impl CSVFileReader {
         self
     }
 
+    /// Set whether to support the balanced quotes while reading the CSV, operation that will significantly slow down the execution.
+    ///
+    /// # Arguments
+    /// * support_balanced_quotes: Option<bool> - Whether to support the balanced quotes while reading the CSV.
+    ///
+    pub fn set_support_balanced_quotes(
+        mut self,
+        support_balanced_quotes: Option<bool>,
+    ) -> CSVFileReader {
+        if let Some(support_balanced_quotes) = support_balanced_quotes {
+            self.support_balanced_quotes = support_balanced_quotes;
+        }
+        self
+    }
+
     /// Set separator to the provided value.
     ///
     /// # Arguments
-    /// * `separator`: Option<String> - The value to use as separator in the file.
-    pub fn set_separator(mut self, separator: Option<String>) -> Result<CSVFileReader> {
+    /// * `separator`: Option<char> - The value to use as separator in the file.
+    pub fn set_separator(mut self, separator: Option<char>) -> Result<CSVFileReader> {
         self.separator = if let Some(separator) = separator {
-            if separator.is_empty() {
-                return Err("The separator cannot be empty.".to_owned());
-            }
             separator
         } else {
             self.detect_separator()?
@@ -135,7 +151,7 @@ impl CSVFileReader {
     }
 
     /// Return the separator.
-    pub fn get_separator(&self) -> String {
+    pub fn get_separator(&self) -> char {
         self.separator.clone()
     }
 
@@ -236,7 +252,7 @@ impl CSVFileReader {
     /// Automatically detects which separator to use among a set.
     ///
     /// Specifically, the set includes ';', ',', '\t' and empty space.
-    pub fn detect_separator(&self) -> Result<String> {
+    pub fn detect_separator(&self) -> Result<char> {
         let mut counter: HashMap<char, usize> = TYPES_OF_SEPARATORS
             .iter()
             .map(|separator| (*separator, 0))
@@ -279,8 +295,7 @@ impl CSVFileReader {
             .into_iter()
             .max_by(|(_, left), (_, right)| left.cmp(right))
             .unwrap()
-            .0
-            .to_string())
+            .0)
     }
 
     fn get_buffer_reader(&self) -> Result<BufReader<File>> {
@@ -316,10 +331,11 @@ impl CSVFileReader {
     pub fn get_header(&self) -> Result<Vec<String>> {
         self.separator_must_already_be_set()?;
         if let Some((_, first_line)) = self.get_sequential_lines_iterator(false, false)?.next() {
-            Ok(first_line?
-                .split(&self.separator)
-                .map(|s| s.to_string())
-                .collect::<Vec<String>>())
+            Ok(
+                splitter(&first_line?, self.separator, self.support_balanced_quotes)
+                    .map(|s| s.to_string())
+                    .collect::<Vec<String>>(),
+            )
         } else {
             Err("The given file has no lines!".to_string())
         }
@@ -439,7 +455,7 @@ impl CSVFileReader {
             Some((_, fl)) => {
                 match fl {
                     Ok(f) => {
-                        Ok(f.matches(&self.separator).count() + 1)
+                        Ok(f.matches(self.separator).count() + 1)
                     },
                     Err(_) => Err("There might have been an I/O error or the line could contains bytes that are not valid UTF-8".to_string())
                 }
@@ -529,15 +545,15 @@ impl CSVFileReader {
             // values split on the separator.
             |line_number: usize,
              line: Result<String>,
-             separator: &str,
+             separator: char,
+             support_balanced_quotes: bool,
              _: &[(usize, usize)],
              _: usize,
              _: usize| {
                 line.map(|line: String| {
                     (
                         line_number,
-                        line.split(separator)
-                            .into_iter()
+                        splitter(&line, separator, support_balanced_quotes)
                             .map(|element| {
                                 if element.is_empty() {
                                     None
@@ -554,7 +570,8 @@ impl CSVFileReader {
             // or generally it becomes necessary to remap the values
             |line_number: usize,
              line: Result<String>,
-             separator: &str,
+             separator: char,
+             support_balanced_quotes: bool,
              columns_of_interest_and_position: &[(usize, usize)],
              min_column_of_interest: usize,
              max_column_of_interest: usize| {
@@ -562,7 +579,7 @@ impl CSVFileReader {
                     let mut elements: Vec<Option<String>> =
                         vec![None; columns_of_interest_and_position.len()];
                     let mut j = 0;
-                    line.split(&separator)
+                    splitter(&line, separator, support_balanced_quotes)
                         .enumerate()
                         // We skip to the first value of interest
                         .skip(min_column_of_interest)
@@ -590,7 +607,8 @@ impl CSVFileReader {
                 parse_line(
                     line_number,
                     line,
-                    &self.separator,
+                    self.separator,
+                    self.support_balanced_quotes,
                     &columns_of_interest_and_position,
                     min_column_of_interest,
                     max_column_of_interest,

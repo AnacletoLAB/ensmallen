@@ -1,4 +1,6 @@
 use super::*;
+use indicatif::ProgressIterator;
+use std::{fs::File, io::BufWriter};
 
 /// Structure that saves the reader specific to writing and reading a nodes csv file.
 ///
@@ -274,9 +276,9 @@ impl EdgeFileWriter {
     /// Set the separator.
     ///
     /// # Arguments
-    /// * separator: Option<String> - The separator to use for the file.
+    /// * separator: Option<char> - The separator to use for the file.
     ///
-    pub fn set_separator(mut self, separator: Option<String>) -> Result<EdgeFileWriter> {
+    pub fn set_separator(mut self, separator: Option<char>) -> Result<EdgeFileWriter> {
         self.writer = self.writer.set_separator(separator)?;
         Ok(self)
     }
@@ -399,6 +401,53 @@ impl EdgeFileWriter {
         (header_values, header_positions)
     }
 
+    pub(crate) fn start_writer(&self) -> Result<BufWriter<File>> {
+        let (header_values, header_positions) = self.build_header();
+        self.writer.start_writer(compose_lines(
+            self.number_of_columns,
+            header_values,
+            header_positions,
+        ))
+    }
+
+    /// Write the provided set of line elements to file.
+    ///
+    /// # Arguments
+    /// `stream`: BufWriter<File> - The stream where to write the line
+    ///
+    /// # Raises
+    /// * If some I/O error is encountered.
+    pub(crate) fn write_line(
+        &self,
+        stream: BufWriter<File>,
+        edge_id: EdgeT,
+        src: NodeT,
+        src_name: String,
+        dst: NodeT,
+        dst_name: String,
+        edge_type: Option<EdgeTypeT>,
+        edge_type_name: Option<String>,
+        weight: Option<WeightT>,
+    ) -> Result<BufWriter<File>> {
+        self.writer.write_line(
+            stream,
+            self.parse_line(
+                edge_id,
+                src,
+                src_name,
+                dst,
+                dst_name,
+                edge_type,
+                edge_type_name,
+                weight,
+            ),
+        )
+    }
+
+    pub(crate) fn close_writer(&self, stream: BufWriter<File>) -> Result<()> {
+        self.writer.close_writer(stream)
+    }
+
     /// Write edge list iterator to file.
     ///  
     /// # Arguments
@@ -419,32 +468,35 @@ impl EdgeFileWriter {
             ),
         >,
     ) -> Result<()> {
-        let (header_values, header_positions) = self.build_header();
-        self.writer.write_lines(
-            lines_number,
-            compose_lines(self.number_of_columns, header_values, header_positions),
-            iterator.map(
-                |(edge_id, src, src_name, dst, dst_name, edge_type, edge_type_name, weight)| {
-                    self.parse_line(
-                        edge_id,
-                        src,
-                        src_name,
-                        dst,
-                        dst_name,
-                        edge_type,
-                        edge_type_name,
-                        weight,
-                    )
-                },
-            ),
-        )
+        let pb = get_loading_bar(
+            self.writer.verbose && lines_number.is_some(),
+            "Writing to node list",
+            lines_number.unwrap_or(0),
+        );
+        let mut stream = self.start_writer()?;
+        for (edge_id, src, src_name, dst, dst_name, edge_type, edge_type_name, weight) in
+            iterator.progress_with(pb)
+        {
+            stream = self.write_line(
+                stream,
+                edge_id,
+                src,
+                src_name,
+                dst,
+                dst_name,
+                edge_type,
+                edge_type_name,
+                weight,
+            )?;
+        }
+        self.close_writer(stream)
     }
 
     /// Write edge file from graph.
     ///  
     /// # Arguments
     /// * `graph`: &Graph - the graph to write out.
-    pub fn dump_graph(&self, graph: &Graph) -> Result<()> {
+    pub fn dump_graph(self, graph: &Graph) -> Result<()> {
         let directed: bool = self.directed.unwrap_or_else(|| graph.is_directed());
         self.dump_iterator(
             Some(graph.get_directed_edges_number() as usize),

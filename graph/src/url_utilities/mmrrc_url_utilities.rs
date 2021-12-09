@@ -7,7 +7,7 @@ use super::*;
 ///
 /// # Example
 /// To validate a node you can use:
-/// ```rust
+/// ```ignore
 /// # use graph::*;
 /// let mmrrc_node_name = "MMRRC:000123";
 /// let not_mmrrc_node_name = "PizzaQuattroStagioni";

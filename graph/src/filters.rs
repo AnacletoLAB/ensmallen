@@ -1,8 +1,10 @@
+use super::*;
 use crate::constructors::build_graph_from_integers;
 use crate::constructors::build_graph_from_strings_without_type_iterators;
-
-use super::*;
+use log::info;
+use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
+use std::collections::HashSet;
 
 impl Graph {
     /// Returns a **NEW** Graph that does not have the required attributes.
@@ -77,6 +79,8 @@ impl Graph {
             filter_singleton_nodes_with_selfloop.unwrap_or(false);
         let filter_selfloops = filter_selfloops.unwrap_or(false);
         let filter_parallel_edges = filter_parallel_edges.unwrap_or(false);
+        let node_ids_to_filter: Option<HashSet<NodeT>> =
+            node_ids_to_filter.map(|node_ids_to_filter| node_ids_to_filter.into_iter().collect());
 
         let has_node_filters = self.has_nodes()
             && [
@@ -145,7 +149,7 @@ impl Graph {
         let node_filter = |(node_id, _, node_type_ids, _): &(
             NodeT,
             String,
-            Option<Vec<NodeTypeT>>,
+            Option<&Vec<NodeTypeT>>,
             Option<Vec<String>>,
         )| {
             node_ids_to_keep
@@ -156,10 +160,10 @@ impl Graph {
                     .map_or(true, |nitf| !nitf.contains(node_id))
                 && node_type_ids_to_keep
                     .as_ref()
-                    .map_or(true, |ntitk| ntitk.contains(node_type_ids))
+                    .map_or(true, |ntitk| ntitk.contains(&node_type_ids.map(|x| x.clone())))
                 && node_type_ids_to_filter
                     .as_ref()
-                    .map_or(true, |ntitf| !ntitf.contains(node_type_ids))
+                    .map_or(true, |ntitf| !ntitf.contains(&node_type_ids.map(|x| x.clone())))
                 && node_type_id_to_keep
                     .as_ref()
                     .map_or(true, |ntitk| match node_type_ids {
@@ -211,7 +215,10 @@ impl Graph {
                 ),
                 self.nodes.clone(),
                 self.node_types.clone(),
-                self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+                self.edge_types
+                    .as_ref()
+                    .as_ref()
+                    .map(|ets| ets.vocabulary.clone()),
                 self.has_edge_weights(),
                 self.is_directed(),
                 Some(true),
@@ -248,13 +255,13 @@ impl Graph {
                                     && node_filter(&(
                                         *src,
                                         src_name.clone(),
-                                        self.get_unchecked_node_type_id_from_node_id(*src),
+                                        self.get_unchecked_node_type_ids_from_node_id(*src),
                                         None,
                                     ))
                                     && node_filter(&(
                                         *dst,
                                         dst_name.clone(),
-                                        self.get_unchecked_node_type_id_from_node_id(*dst),
+                                        self.get_unchecked_node_type_ids_from_node_id(*dst),
                                         None,
                                     ))
                             },
@@ -484,6 +491,100 @@ impl Graph {
             None,
             None,
             Some(true),
+            None,
+            None,
+            None,
+        )
+        .unwrap()
+    }
+
+    /// Returns new graph without tendrils.
+    pub fn drop_tendrils(&self) -> Result<Graph> {
+        self.filter_from_ids(
+            None,
+            Some(
+                self.par_iter_tendrils(Some(1), Some(true))?
+                    .flat_map(|tendril| tendril.get_tendril_node_ids().into_par_iter())
+                    .collect(),
+            ),
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+        )
+    }
+
+    /// Returns new graph without tendrils.
+    pub fn drop_dendritic_trees(&self) -> Result<Graph> {
+        let node_ids_to_filter = self
+            .get_dendritic_trees()?
+            .into_par_iter()
+            .flat_map(|dendric_tree| dendric_tree.get_dentritic_trees_node_ids())
+            .collect();
+        info!("Starting to filter");
+        self.filter_from_ids(
+            None,
+            Some(node_ids_to_filter),
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+        )
+    }
+
+    /// Returns new graph without isomorphic nodes, only keeping the smallest node ID of each group.
+    ///
+    /// # Arguments
+    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default equal to 5.
+    pub fn drop_isomorphic_nodes(&self, minimum_node_degree: Option<NodeT>) -> Graph {
+        let minimum_node_degree = minimum_node_degree.unwrap_or(5);
+        self.filter_from_ids(
+            None,
+            Some(
+                self.par_iter_isomorphic_node_ids_groups(Some(minimum_node_degree))
+                    .flat_map(|mut group| {
+                        group.pop();
+                        group.into_par_iter()
+                    })
+                    .collect(),
+            ),
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
             None,
             None,
             None,

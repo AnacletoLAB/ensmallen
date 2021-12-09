@@ -1,0 +1,12 @@
+<html>
+<head><title>Index of /wikidatawiki/entities/20211015/</title></head>
+<body bgcolor="white">
+<h1>Index of /wikidatawiki/entities/20211015/</h1><hr><pre><a href="../">../</a>
+<a href="wikidata-20211015-lexemes-BETA.nt.bz2">wikidata-20211015-lexemes-BETA.nt.bz2</a>              15-Oct-2021 23:28           559411106
+<a href="wikidata-20211015-lexemes-BETA.nt.gz">wikidata-20211015-lexemes-BETA.nt.gz</a>               15-Oct-2021 23:24           754715800
+<a href="wikidata-20211015-lexemes-BETA.ttl.bz2">wikidata-20211015-lexemes-BETA.ttl.bz2</a>             15-Oct-2021 23:25           305475976
+<a href="wikidata-20211015-lexemes-BETA.ttl.gz">wikidata-20211015-lexemes-BETA.ttl.gz</a>              15-Oct-2021 23:22           387011291
+<a href="wikidata-20211015-md5sums.txt">wikidata-20211015-md5sums.txt</a>                      15-Oct-2021 23:29                 288
+<a href="wikidata-20211015-sha1sums.txt">wikidata-20211015-sha1sums.txt</a>                     15-Oct-2021 23:29                 320
+</pre><hr></body>
+</html>

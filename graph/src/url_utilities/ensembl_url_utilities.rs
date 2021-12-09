@@ -7,7 +7,7 @@ use super::*;
 ///
 /// # Example
 /// To validate a node you can use:
-/// ```rust
+/// ```ignore
 /// # use graph::*;
 /// let ensembl_node_name1 = "ENSEMBL:ENSACAG00000000017";
 /// let ensembl_node_name2 = "ENSACAG00000000017";

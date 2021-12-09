@@ -2,20 +2,33 @@ use super::types::*;
 use itertools::Itertools;
 use rayon::iter::ParallelIterator;
 use rayon::iter::{IndexedParallelIterator, IntoParallelIterator};
+use rayon::prelude::ParallelSliceMut;
+use std::collections::hash_map::DefaultHasher;
 use std::collections::hash_map::Entry;
 use std::collections::HashMap;
 use std::fmt::Debug;
-use rayon::prelude::ParallelSliceMut;
+use std::hash::{Hash, Hasher};
 use std::ops::Range;
+
+/// which integer type the string hashes will
+type HashType = u64;
+
+#[inline]
+pub(crate) fn compute_hash<T: Hash>(t: &T) -> u64 {
+    let mut s = DefaultHasher::new();
+    t.hash(&mut s);
+    s.finish()
+}
 
 #[derive(Debug, Clone, PartialEq)] // Arbitrary
 pub enum Vocabulary<IndexT: ToFromUsize + Sync + Debug> {
     // If the values are arbitrary and we cannot make any assumptions
     // about them
     String {
-        // TODO! avoid duplication and use references
-        map: HashMap<String, IndexT>,
-        reverse_map: Vec<String>,
+        // TODO: is there a way to have a fast compressed mapping between
+        // integers?, specifically the output is dense from 0 to n
+        map: HashMap<HashType, IndexT>,
+        reverse_map: Option<Vec<String>>,
     },
 
     // If the values are in a dense integer range
@@ -60,15 +73,16 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
                 VocabularyMemoryStats::String {
                     // https://github.com/servo/servo/issues/6908
                     map: (map.capacity() as f64 * 1.1) as usize
-                        * (size_of::<String>() + size_of::<IndexT>() + size_of::<usize>())
-                        + map
-                            .keys()
-                            .map(|s| size_of::<String>() + s.capacity() * size_of::<char>())
-                            .sum::<usize>(),
-                    reverse_map: reverse_map
-                        .iter()
-                        .map(|s| size_of::<String>() + s.capacity() * size_of::<char>())
-                        .sum::<usize>(),
+                        * (size_of::<HashType>() + size_of::<IndexT>() + size_of::<usize>()),
+                    reverse_map: reverse_map.as_ref().map_or(
+                        size_of::<Option<Vec<String>>>(),
+                        |reverse_map| {
+                            reverse_map
+                                .iter()
+                                .map(|s| size_of::<String>() + s.capacity() * size_of::<char>())
+                                .sum::<usize>()
+                        },
+                    ),
                     metadata: size_of::<Vocabulary<IndexT>>(),
                 }
             }
@@ -81,16 +95,20 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
 
 impl<IndexT: ToFromUsize + Sync + Debug> Default for Vocabulary<IndexT> {
     fn default() -> Self {
-        Self::new()
+        Self::new(true)
     }
 }
 
 /// # Constructors
 impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
-    pub fn new() -> Vocabulary<IndexT> {
+    pub fn new(use_reverse_map: bool) -> Vocabulary<IndexT> {
         Vocabulary::String {
             map: HashMap::new(),
-            reverse_map: Vec::new(),
+            reverse_map: if use_reverse_map {
+                Some(Vec::new())
+            } else {
+                None
+            },
         }
     }
 
@@ -103,27 +121,20 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
     }
 
     // TODO! properly extend Iterator
-    pub fn iter(&self) -> Box<dyn Iterator<Item = (String, IndexT)> + '_> {
-        match self {
-            Vocabulary::String { reverse_map, .. } => Box::new(
-                reverse_map
-                    .iter()
-                    .enumerate()
-                    .map(|(value, key)| (key.clone(), IndexT::from_usize(value))),
-            ),
-            Vocabulary::Numeric { range, .. } => Box::new(
-                range
-                    .clone()
-                    .enumerate()
-                    .map(|(value, key)| (format!("{}", key), IndexT::from_usize(value))),
-            ),
-        }
+    pub fn iter(&self) -> impl Iterator<Item = (IndexT, String)> + '_ {
+        self.iter_keys()
+            .enumerate()
+            .map(|(i, name)| (IndexT::from_usize(i), name))
     }
 
-    pub fn with_capacity(capacity: usize) -> Vocabulary<IndexT> {
+    pub fn with_capacity(capacity: usize, use_reverse_map: bool) -> Vocabulary<IndexT> {
         Vocabulary::String {
             map: HashMap::with_capacity(capacity),
-            reverse_map: Vec::with_capacity(capacity),
+            reverse_map: if use_reverse_map {
+                Some(Vec::with_capacity(capacity))
+            } else {
+                None
+            },
         }
     }
 
@@ -142,12 +153,14 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
             .iter()
             .cloned()
             .enumerate()
-            .map(|(i, x)| (x, IndexT::from_usize(i)))
-            .collect::<HashMap<String, IndexT>>();
-
-        if map.contains_key("") {
-            return Err("The vocabulary cannot contain an empty term.".to_string());
-        }
+            .map(|(i, x)| {
+                if x.is_empty() {
+                    Err("The vocabulary cannot contain an empty term.".to_string())
+                } else {
+                    Ok((compute_hash(&x), IndexT::from_usize(i)))
+                }
+            })
+            .collect::<Result<HashMap<HashType, IndexT>>>()?;
 
         if map.len() != reverse_map.len() {
             let reverse_map_length = reverse_map.len();
@@ -155,21 +168,13 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
             let expected_duplicates_number = reverse_map.len() - map.len();
             reverse_map.par_sort_unstable();
             let duplicates = reverse_map
-                .into_iter()
-                .scan(None, |last_object, object| {
-                    let equal_to_last_edge = last_object
-                        .as_ref()
-                        .map_or(false, |last_object| *last_object == object);
-
-                    let result: Option<String> = if equal_to_last_edge {
-                        Some(object.to_string())
+                .windows(2)
+                .filter_map(|a| {
+                    if a[0] == a[1] {
+                        Some(a[0].clone())
                     } else {
                         None
-                    };
-
-                    let _ = *last_object.insert(object.to_string());
-
-                    result
+                    }
                 })
                 .unique()
                 .collect::<Vec<String>>();
@@ -186,7 +191,10 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
             ));
         }
 
-        Ok(Vocabulary::String { map, reverse_map })
+        Ok(Vocabulary::String {
+            map,
+            reverse_map: Some(reverse_map),
+        })
     }
 }
 
@@ -195,10 +203,16 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
     pub fn iter_keys(&self) -> Box<dyn Iterator<Item = String> + '_> {
         match self {
             Vocabulary::String { reverse_map, .. } => {
-                Box::new(reverse_map.iter().map(|key| key.clone()))
+                let iterator: Box<dyn Iterator<Item = String>> =
+                    if let Some(reverse_map) = reverse_map {
+                        Box::new(reverse_map.iter().cloned())
+                    } else {
+                        Box::new((0..self.len()).map(|value| format!("{}", value)))
+                    };
+                iterator
             }
             Vocabulary::Numeric { range, .. } => {
-                Box::new(range.clone().map(|key| format!("{}", key)))
+                Box::new(range.clone().map(|value| format!("{}", value)))
             }
         }
     }
@@ -250,10 +264,17 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
     /// * `value`: String - The value to be inserted.
     pub unsafe fn unchecked_insert(&mut self, value: String) -> IndexT {
         match self {
-            Vocabulary::String { map, .. } => {
+            Vocabulary::String { map, reverse_map } => {
                 let current_length = map.len();
-                *map.entry(value)
-                    .or_insert_with_key(|_| IndexT::from_usize(current_length))
+                match map.entry(compute_hash(&value)) {
+                    Entry::Occupied(index) => *index.get(),
+                    Entry::Vacant(vacant_entry) => {
+                        if let Some(reverse_map) = reverse_map {
+                            reverse_map.push(value);
+                        }
+                        *vacant_entry.insert(IndexT::from_usize(current_length))
+                    }
+                }
             }
 
             Vocabulary::Numeric { range, count } => {
@@ -274,23 +295,27 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
         let value = value.as_ref();
 
         if value.is_empty() {
-            return Err(format!(
-                concat!(
-                    "The given value is empty, ",
-                    "we cannot insert an empty value into the vocabulary.\n",
-                    "Currently the vocabulary contains: {:?}."
-                ),
-                self
-            ));
+            return Err(concat!(
+                "The given value is empty, ",
+                "we cannot insert an empty value into the vocabulary.\n",
+            )
+            .into());
         }
 
         let (normalized_value, index) = self.normalize_value(value)?;
 
         match self {
-            Vocabulary::String { map, .. } => Ok(match map.entry(normalized_value) {
-                Entry::Occupied(extracted_index) => (*extracted_index.get(), true),
-                Entry::Vacant(vacant_entry) => (*vacant_entry.insert(index), false),
-            }),
+            Vocabulary::String { map, reverse_map } => {
+                Ok(match map.entry(compute_hash(&normalized_value)) {
+                    Entry::Occupied(extracted_index) => (*extracted_index.get(), true),
+                    Entry::Vacant(vacant_entry) => {
+                        if let Some(reverse_map) = reverse_map {
+                            reverse_map.push(value.to_string());
+                        }
+                        (*vacant_entry.insert(index), false)
+                    }
+                })
+            }
             Vocabulary::Numeric { range, count } => {
                 let value = { value.parse::<usize>().unwrap() };
                 if value < range.start {
@@ -325,11 +350,12 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
                     ))
                 }
             }
-            Vocabulary::String { map, reverse_map } => {
+            Vocabulary::String { .. } => {
+                // TODO! Check if the following comment can be deleted!
+                /*
                 if !reverse_map.is_empty() {
                     panic!("Build reverse mapping called multiple times!");
                 }
-
                 *reverse_map = vec!["".to_string(); map.len()];
                 for (k, v) in map.iter() {
                     if *v >= IndexT::from_usize(map.len()) {
@@ -358,7 +384,7 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
                         );
                     }
                     reverse_map[IndexT::to_usize(*v)] = k.clone();
-                }
+                }*/
                 Ok(())
             }
         }
@@ -367,10 +393,7 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
     /// Returns whether the value is empty or not.
     pub fn is_empty(&self) -> bool {
         match self {
-            Vocabulary::String {
-                map: _,
-                reverse_map,
-            } => reverse_map.is_empty(),
+            Vocabulary::String { map, .. } => map.is_empty(),
             Vocabulary::Numeric { range, .. } => range.is_empty(),
         }
     }
@@ -382,7 +405,11 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
     /// * `id`: IndexT - Id to be translated.
     pub fn unchecked_translate(&self, id: IndexT) -> String {
         match self {
-            Vocabulary::String { reverse_map, .. } => reverse_map[IndexT::to_usize(id)].clone(),
+            Vocabulary::String { reverse_map, .. } => reverse_map
+                .as_ref()
+                .map_or(format!("{}", id), |reverse_map| {
+                    reverse_map[IndexT::to_usize(id)].clone()
+                }),
             Vocabulary::Numeric { range, .. } => format!("{}", range.start + IndexT::to_usize(id)),
         }
     }
@@ -393,23 +420,17 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
     ///
     /// * `id`: IndexT - Id to be translated.
     pub fn translate(&self, id: IndexT) -> Result<String> {
-        match self {
-            Vocabulary::String { reverse_map, .. } => match reverse_map.get(IndexT::to_usize(id)) {
-                Some(name) => Ok(name.clone()),
-                None => Err("The requested ID is not available in current dictionary.".to_string()),
-            },
-            Vocabulary::Numeric { range, .. } => {
-                let id = IndexT::from_usize(range.start) + id;
-                if range.contains(&IndexT::to_usize(id)) {
-                    Ok(format!("{}", id))
-                } else {
-                    Err(
-                        "The requested id is over the range of the current numeric vocabulary."
-                            .to_string(),
-                    )
-                }
-            }
+        if id >= IndexT::from_usize(self.len()) {
+            return Err(format!(
+                concat!(
+                    "The provided ID `{}` is higher or equal to the length ",
+                    "of the vocabulary `{}`."
+                ),
+                id,
+                self.len()
+            ));
         }
+        Ok(self.unchecked_translate(id))
     }
 
     /// Return the id of given key.
@@ -419,7 +440,7 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
     /// * `key`: &str - the key whose Id is to be retrieved.
     pub fn get(&self, key: &str) -> Option<IndexT> {
         match self {
-            Vocabulary::String { map, .. } => map.get(key).map(|x| *x),
+            Vocabulary::String { map, .. } => map.get(&compute_hash(&key)).map(|x| *x),
             Vocabulary::Numeric { range, .. } => {
                 let id = key.parse::<usize>();
                 if id.is_err() {
@@ -437,23 +458,12 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
 
     /// Return vector of keys of the map.
     pub fn keys(&self) -> Vec<String> {
-        match self {
-            Vocabulary::String { reverse_map, .. } => reverse_map.clone(),
-            Vocabulary::Numeric { range, .. } => {
-                range.clone().map(|i| format!("{}", i)).collect::<_>()
-            }
-        }
+        self.iter_keys().collect()
     }
 
     /// Return vector of keys of the map.
     pub fn map(&self) -> HashMap<String, IndexT> {
-        match self {
-            Vocabulary::String { map, .. } => map.clone(),
-            Vocabulary::Numeric { range, .. } => range
-                .clone()
-                .map(|i| (format!("{}", i), IndexT::from_usize(i)))
-                .collect::<HashMap<String, IndexT>>(),
-        }
+        self.iter().map(|(index, name)| (name, index)).collect()
     }
 
     /// Return boolean representing if given key is present.
@@ -463,7 +473,7 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
     /// * `key`: &str - the key to check existance of.
     pub fn contains_key(&self, key: &str) -> bool {
         match self {
-            Vocabulary::String { map, .. } => map.contains_key(key),
+            Vocabulary::String { map, .. } => map.contains_key(&compute_hash(&key)),
             Vocabulary::Numeric { range, .. } => range.contains(&{ key.parse::<usize>().unwrap() }),
         }
     }
@@ -479,7 +489,9 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
     // Return whether the keys are sorted by lexicographical order.
     pub fn is_sorted_by_lexicographic_order(&self) -> bool {
         match self {
-            Vocabulary::String { reverse_map, .. } => reverse_map.is_sorted(),
+            Vocabulary::String { reverse_map, .. } => reverse_map
+                .as_ref()
+                .map_or_else(|| self.len() < 10, |reverse_map| reverse_map.is_sorted()),
             Vocabulary::Numeric { .. } => self.len() < 10,
         }
     }
@@ -506,9 +518,11 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
         let id = self.get(&original).unwrap();
         match self {
             Vocabulary::String { map, reverse_map } => {
-                map.remove(&original);
-                map.insert(replace.clone(), id);
-                reverse_map[IndexT::to_usize(id)] = replace;
+                map.remove(&compute_hash(&original));
+                map.insert(compute_hash(&replace), id);
+                if let Some(reverse_map) = reverse_map {
+                    reverse_map[IndexT::to_usize(id)] = replace;
+                }
             }
             Vocabulary::Numeric { .. } => {
                 self.to_string_vocabulary();
@@ -526,15 +540,15 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
             Vocabulary::Numeric { range, .. } => {
                 *self = Vocabulary::String {
                     map: range
-                        .map(|i| (format!("{}", i), IndexT::from_usize(i)))
+                        .map(|i| (compute_hash(&format!("{}", i)), IndexT::from_usize(i)))
                         .collect(),
-                    reverse_map: range.map(|i| format!("{}", i)).collect(),
+                    reverse_map: Some(range.map(|i| format!("{}", i)).collect()),
                 }
             }
         }
     }
 
-    /// Removegiven values from the vocabulary
+    /// Removes given values from the vocabulary
     ///
     /// # Arguments
     /// * `type_ids_to_remove`: Vec<IndexT> - The values to be removed.
@@ -593,31 +607,36 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
             }
             Vocabulary::String { map, reverse_map } => {
                 // compute the new dense mapping of the indices
-                let new_type_ids_map = (0..reverse_map.len())
+                let new_type_ids_map = (0..map.len())
                     .scan(0, |offset, type_id| {
-                        if type_ids_to_remove.contains(&IndexT::from_usize(type_id)) {
-                            *offset += 1;
-                            return Some(None);
-                        }
-                        Some(Some(type_id - *offset))
+                        Some(
+                            if type_ids_to_remove.contains(&IndexT::from_usize(type_id)) {
+                                *offset += 1;
+                                None
+                            } else {
+                                Some(type_id - *offset)
+                            },
+                        )
                     })
                     .collect::<Vec<_>>();
 
                 // update the mapping
                 *map = map
                     .iter()
-                    .filter_map(|(key, val)| {
-                        new_type_ids_map[IndexT::to_usize(*val)]
-                            .map(|x| (key.clone(), IndexT::from_usize(x)))
+                    .filter_map(|(key, previous_identifier)| {
+                        new_type_ids_map[IndexT::to_usize(*previous_identifier)]
+                            .map(|new_identifier| (key.clone(), IndexT::from_usize(new_identifier)))
                     })
                     .collect();
 
                 // re-build the reverse mapping
                 // since we start from a valid state this should never fail
                 // unless there are bugs in the code
-                reverse_map.clear();
-
-                self.build().unwrap();
+                if let Some(reverse_map) = reverse_map {
+                    reverse_map.retain(|previous_identifier_name| {
+                        map.contains_key(&compute_hash(previous_identifier_name))
+                    });
+                }
 
                 new_type_ids_map
             }

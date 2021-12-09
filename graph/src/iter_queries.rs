@@ -75,8 +75,35 @@ impl Graph {
     ) -> impl Iterator<Item = WeightT> + '_ {
         self.weights
             .as_ref()
+            .as_ref()
             .map(|weights| {
                 weights[self.iter_unchecked_edge_ids_from_source_node_id(source_node_id)]
+                    .iter()
+                    .cloned()
+            })
+            .unwrap()
+    }
+
+    /// Returns iterator over the edge types that have given node ID as source.
+    ///
+    /// This method assumes that the given source node ID exists in the graph.
+    /// Additionally it assumes that the graph has edge types.
+    /// If either one of the above assumptions are not true, it will panic.
+    ///
+    /// # Arguments
+    /// * `source_node_id`: NodeT - The source node whose weights are to be returned.
+    ///
+    /// # Safety
+    /// If the given node ID does not exist in the graph the method will panic.
+    pub unsafe fn iter_unchecked_edge_type_ids_from_source_node_id(
+        &self,
+        source_node_id: NodeT,
+    ) -> impl Iterator<Item = Option<EdgeTypeT>> + '_ {
+        self.edge_types
+            .as_ref()
+            .as_ref()
+            .map(|edge_types| {
+                edge_types.ids[self.iter_unchecked_edge_ids_from_source_node_id(source_node_id)]
                     .iter()
                     .cloned()
             })
@@ -99,6 +126,7 @@ impl Graph {
         destination_node_id: NodeT,
     ) -> impl Iterator<Item = WeightT> + '_ {
         self.weights
+            .as_ref()
             .as_ref()
             .map(move |weights| {
                 self.iter_unchecked_edge_ids_from_destination_node_id(destination_node_id)
@@ -127,7 +155,6 @@ impl Graph {
     /// Returns range of multigraph minimum and maximum edge ids with same source and destination nodes and different edge type.
     ///
     /// # Arguments
-    ///
     /// * `src`: NodeT - Source node of the edge.
     /// * `dst`: NodeT -  Destination node of the edge.
     ///
@@ -142,6 +169,38 @@ impl Graph {
         min_edge_id..max_edge_id
     }
 
+    /// Returns iterator over the edge type IDs corresponding to the given edge ID.
+    ///
+    /// # Arguments
+    /// * `src`: NodeT - Source node of the edge.
+    /// * `dst`: NodeT -  Destination node of the edge.
+    ///
+    /// # Safety
+    /// If any the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn iter_unchecked_edge_type_ids_from_node_ids(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+    ) -> impl Iterator<Item = Option<EdgeTypeT>> + '_ {
+        self.iter_unchecked_edge_ids_from_node_ids(src, dst)
+            .map(move |edge_id| self.get_unchecked_edge_type_id_from_edge_id(edge_id))
+    }
+
+    /// Returns iterator over the edge type IDs corresponding to the given edge ID.
+    ///
+    /// # Arguments
+    /// * `edge_id`: EdgeT - The edge to query for.
+    ///
+    /// # Safety
+    /// If any the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn iter_unchecked_edge_type_ids_from_edge_id(
+        &self,
+        edge_id: EdgeT,
+    ) -> impl Iterator<Item = Option<EdgeTypeT>> + '_ {
+        let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
+        self.iter_unchecked_edge_type_ids_from_node_ids(src, dst)
+    }
+
     /// Return iterator over NodeT of destinations of the given node src.
     ///
     /// # Arguments
@@ -153,7 +212,7 @@ impl Graph {
         &self,
         src: NodeT,
     ) -> Box<dyn Iterator<Item = NodeT> + Send + '_> {
-        match &self.destinations {
+        match &*self.destinations {
             Some(dsts) => Box::new(
                 dsts[self.iter_unchecked_edge_ids_from_source_node_id(src)]
                     .iter()
@@ -165,6 +224,31 @@ impl Graph {
                     .map(move |edge| self.decode_edge(edge).1),
             ),
         }
+    }
+
+    /// Return iterator over NodeT of unique destinations of the given node src, excluding selfloops.
+    ///
+    /// # Arguments
+    /// * `src`: NodeT - The node whose neighbours are to be retrieved.
+    ///
+    /// # Safety
+    /// If the given node ID does not exist in the graph the method will panic.
+    pub unsafe fn iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
+        &self,
+        src: NodeT,
+    ) -> impl Iterator<Item = NodeT> + Send + '_ {
+        self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)
+            .scan(src, move |previous_node, dst| {
+                Some(if src == dst {
+                    None
+                } else if *previous_node == dst {
+                    None
+                } else {
+                    *previous_node = dst;
+                    Some(dst)
+                })
+            })
+            .filter_map(|value| value)
     }
 
     /// Return iterator over sources of the given destination node.
@@ -210,7 +294,7 @@ impl Graph {
         &self,
         src: NodeT,
     ) -> impl IndexedParallelIterator<Item = NodeT> + Send + '_ {
-        match &self.destinations {
+        match &*self.destinations {
             Some(dsts) => dsts[self.iter_unchecked_edge_ids_from_source_node_id(src)]
                 .par_iter()
                 .cloned(),
@@ -342,7 +426,7 @@ impl Graph {
     pub fn iter_node_ids_and_node_type_ids_from_node_type_id(
         &self,
         node_type_id: Option<NodeTypeT>,
-    ) -> Result<impl Iterator<Item = (NodeT, Option<Vec<NodeTypeT>>)> + '_> {
+    ) -> Result<impl Iterator<Item = (NodeT, Option<&Vec<NodeTypeT>>)> + '_> {
         self.validate_node_type_id(node_type_id)
             .map(|node_type_id| {
                 self.iter_node_ids_and_node_type_ids().filter(
@@ -367,7 +451,7 @@ impl Graph {
         &self,
         node_type_id: Option<NodeTypeT>,
     ) -> Result<
-        impl Iterator<Item = (NodeT, String, Option<Vec<NodeTypeT>>, Option<Vec<String>>)> + '_,
+        impl Iterator<Item = (NodeT, String, Option<&Vec<NodeTypeT>>, Option<Vec<String>>)> + '_,
     > {
         self.validate_node_type_id(node_type_id)
             .map(|node_type_id| {

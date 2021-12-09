@@ -59,7 +59,7 @@ pub(crate) fn parse_nodes(
         (true, _, true, true) => NodeTypeParser::to_numeric_unchecked,
         (true, _, false, true) => NodeTypeParser::to_numeric,
     };
-    let node_types_vocabulary = node_types_vocabulary.unwrap_or(Vocabulary::new());
+    let node_types_vocabulary = node_types_vocabulary.unwrap_or(Vocabulary::new(true));
 
     let mut node_type_parser = NodeTypeParser::new(node_types_vocabulary);
     let nodes_iterator: Option<
@@ -88,15 +88,10 @@ pub(crate) fn parse_nodes(
                     // Since we know the number of nodes and the node list
                     // is provided as correct, it is possible to pre-allocate the vectors
                     // and populate them with a foreach.
-                    let node_names = ThreadDataRaceAware {
-                        value: std::cell::UnsafeCell::new(vec![
-                            "".to_owned();
-                            nodes_number as usize
-                        ]),
-                    };
-                    let node_types_ids = ThreadDataRaceAware {
-                        value: std::cell::UnsafeCell::new(vec![None; nodes_number as usize]),
-                    };
+                    let node_names =
+                        ThreadDataRaceAware::new(vec!["".to_owned(); nodes_number as usize]);
+                    let node_types_ids =
+                        ThreadDataRaceAware::new(vec![None; nodes_number as usize]);
                     ni.for_each(|line| unsafe {
                         // We can unwrap because the user tells us that this is surely
                         // a correct node list.
@@ -107,12 +102,8 @@ pub(crate) fn parse_nodes(
                     let node_type_ids = node_types_ids.value.into_inner();
                     (node_names.value.into_inner(), optionify!(node_type_ids))
                 } else {
-                    let node_names = ThreadDataRaceAware {
-                        value: std::cell::UnsafeCell::new(vec![
-                            "".to_owned();
-                            nodes_number as usize
-                        ]),
-                    };
+                    let node_names =
+                        ThreadDataRaceAware::new(vec!["".to_owned(); nodes_number as usize]);
                     ni.for_each(|line| unsafe {
                         // We can unwrap because the user tells us that this is surely
                         // a correct node list.
@@ -285,9 +276,9 @@ pub(crate) fn parse_nodes(
             Ok((Vocabulary::from_range(min..min), None, None))
         }
         (None, Some(ntn), false, None, _) => {
-            Ok((Vocabulary::with_capacity(ntn as usize), None, None))
+            Ok((Vocabulary::with_capacity(ntn as usize, true), None, None))
         }
-        (None, None, false, None, _) => Ok((Vocabulary::new(), None, None)),
+        (None, None, false, None, _) => Ok((Vocabulary::new(true), None, None)),
         // TODO! improve error
         _ => unreachable!("All other cases must be explicitly handled."),
     }?;

@@ -56,14 +56,14 @@ impl Default for Type {
 impl Type {
     /// Iff this is a simple type, return the name of it
     /// otherwise panic
-    pub fn get_name(&self) -> String {
+    pub fn get_name(&self) -> Option<String> {
         match self {
             Type::SimpleType {
                 name,
                 ..
-            } => name.to_string(),
-            Type::None => "()".to_string(),
-            _ => unreachable!("A struct cannot have a type which is not simple"),
+            } => Some(name.to_string()),
+            Type::None => Some("()".to_string()),
+            _ => None,
         }
     }
 }

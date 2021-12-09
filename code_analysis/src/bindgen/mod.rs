@@ -1,9 +1,14 @@
 use super::*;
 use std::collections::HashMap;
 use regex::Regex;
+use lazy_static::lazy_static;
+use std::fs;
 
 mod binding;
 pub use binding::*;
+
+mod skeleton;
+pub use skeleton::*;
 
 mod translate_doc;
 pub use translate_doc::*;
@@ -15,8 +20,32 @@ mod tfidf_gen;
 pub use tfidf_gen::*;
 
 pub fn extract_module_name_from_path(path: &str) -> Option<String> {
-    let re = Regex::new(r"\.\./graph/src/(.+)/.+\.rs").unwrap();
-    re.captures(path).map(|x| x.get(1).unwrap().as_str().to_string())
+    lazy_static! {
+        static ref RE: Regex = Regex::new(r"\.\./graph/src/(.+)/.+\.rs").unwrap();
+    }       
+    RE.captures(path).map(|x| x.get(1).unwrap().as_str().to_string())
+}
+
+fn extract_module_name_from_func(func: &Function) -> Option<String> {
+    extract_module_name_from_path(func.file_path.as_str()).or_else(
+        || {
+            let module_attr = func.attributes.iter()
+                .find(|attr| attr.0.starts_with("module"));
+            module_attr.map(|module| {
+                module.0[7..module.0.len() - 1].to_string()
+            })
+     })
+}
+
+fn extract_module_name_from_struct(ztruct: &Struct) -> Option<String> {
+    extract_module_name_from_path(ztruct.file_path.as_str()).or_else(
+        || {
+            let module_attr = ztruct.attributes.iter()
+                .find(|attr| attr.0.starts_with("module"));
+            module_attr.map(|module| {
+                module.0[7..module.0.len() - 1].to_string()
+            })
+     })
 }
 
 /// If we should emit a binding for the given function
@@ -75,8 +104,58 @@ impl GenBinding for Class {
     fn gen_python_binding(&self) -> String {
         let methods_names = self.get_methods_names();
         let (terms, tfidf) = tfidf_gen(&methods_names);
+
+        let impl_ord = self.impls.iter()
+            .any(|x| {
+                let trait_impl = x.impl_trait.as_ref()
+                .map(|x| x.to_string())
+                .unwrap_or(String::new());
+
+                trait_impl.contains("Ord")
+            }) && self.impls.iter().any(|x| {
+                x.methods.iter()
+                    .any(|f| {
+                        f.name == "cmp"
+                    })
+            });
+        let impl_partial_ord = self.impls.iter()
+            .any(|x| {
+                let trait_impl = x.impl_trait.as_ref()
+                .map(|x| x.to_string())
+                .unwrap_or(String::new());
+
+                trait_impl.contains("PartialOrd")
+            }) && self.impls.iter().any(|x| {
+                x.methods.iter()
+                    .any(|f| {
+                        f.name == "partial_cmp"
+                    })
+            });
+        println!("Richcmp: {:30} Ord: {:6} PartialOrd: {:6}", 
+            self.ztruct.struct_type.to_string(),
+            impl_ord,
+            impl_partial_ord,
+        );
+        let cmp_impl = if impl_ord || impl_partial_ord {
+r#"
+fn __richcmp__(&'p self, other: Self, op: CompareOp) -> bool {
+    match op {
+        CompareOp::Lt => self.inner < other.inner,
+        CompareOp::Le => self.inner <= other.inner,
+        CompareOp::Eq => self.inner == other.inner,
+        CompareOp::Ne => self.inner != other.inner,
+        CompareOp::Gt => self.inner > other.inner,
+        CompareOp::Ge => self.inner >= other.inner,
+    }
+}
+"#
+        } else {
+            ""
+        };
+
         format!(
 r#"
+{struct_doc}
 #[pyclass]
 #[derive(Debug, Clone)]
 pub struct {struct_name} {{
@@ -134,6 +213,8 @@ impl PyObjectProtocol for {struct_name} {{
         Ok(hasher.finish() as isize)
     }}
 
+    {cmp_impl}
+
     fn __getattr__(&self, name: String) -> PyResult<()> {{
         // split the query into tokens
         let tokens = split_words(&name);
@@ -164,12 +245,12 @@ impl PyObjectProtocol for {struct_name} {{
             .map(|(id, frequencies_doc)| {{
                 (
                     id,
-                    (jaro_winkler(&name, {struct_name_upper}_METHODS_NAMES[id]).exp() - 1.0)
+                    jaro_winkler(&name, {struct_name_upper}_METHODS_NAMES[id])
                         * frequencies_doc
                             .iter()
                             .map(|(term, weight)| {{
                                 match tokens_expanded.iter().find(|(token, _)| token == term) {{
-                                    Some((_, similarity)) => (similarity.exp() - 1.0) * weight,
+                                    Some((_, similarity)) => similarity * weight,
                                     None => 0.0,
                                 }}
                             }})
@@ -196,8 +277,9 @@ impl PyObjectProtocol for {struct_name} {{
     }}
 }}
 "#, 
-    struct_name=self.ztruct.struct_type.get_name(),
-    struct_name_upper=self.ztruct.struct_type.get_name().to_uppercase(),
+    struct_doc=self.ztruct.doc.trim().split("\n").map(|x| format!("/// {}", x)).collect::<Vec<_>>().join("\n").trim(),
+    struct_name=self.ztruct.struct_type.get_name().unwrap(),
+    struct_name_upper=self.ztruct.struct_type.get_name().unwrap().to_uppercase(),
     methods=format_vec!(
         self.impls.iter()
         .flat_map(|imp| imp.methods.iter()
@@ -207,6 +289,7 @@ impl PyObjectProtocol for {struct_name} {{
         ).collect::<Vec<_>>(),
         "{}", "\n\n"
     ),
+    cmp_impl=cmp_impl,
     method_names=format_vec!(methods_names, "    \"{}\",", "\n"),
     terms=format_vec!(terms, "    \"{}\",", "\n"),
     tfidf=format_vec!(tfidf, "&{:?},", "\n"),
@@ -226,7 +309,7 @@ struct BindingsModule {
 
 impl BindingsModule {
     fn push_class(&mut self, ztruct: Struct) {
-        self.structs.insert(ztruct.struct_type.get_name(), Class::new(ztruct));
+        self.structs.insert(ztruct.struct_type.get_name().unwrap(), Class::new(ztruct));
     }
 
     fn new(name: String) -> Self {
@@ -256,7 +339,7 @@ impl GenBinding for BindingsModule {
             if !klass.ztruct.attributes.iter().any(|x| x == "no_binding")
                 && klass.ztruct.visibility == Visibility::Public {
                     registrations.push(
-                        format!("\tm.add_class::<{}>()?;", klass_name)
+                        format!("\t_m.add_class::<{}>()?;", klass_name)
                     );
                 }
             
@@ -265,27 +348,30 @@ impl GenBinding for BindingsModule {
         for func in &self.funcs {
             if  is_to_bind(func) {
                 registrations.push(
-                    format!("\tm.add_wrapped(wrap_pyfunction!({}))?;", func.name)
+                    format!("\t_m.add_wrapped(wrap_pyfunction!({}))?;", func.name)
                 );
             }
         }
 
-        for (mods_name, mods) in self.modules.iter() {
+        for (mods_name, _mods) in self.modules.iter() {
             registrations.push(
-                format!("\tm.add_wrapped(wrap_pymodule!({}))?;", mods_name)
+                format!("\t_m.add_wrapped(wrap_pymodule!({}))?;", mods_name)
             );
         }
         
         if self.module_name == "ensmallen" {
             registrations.push(
-                "\tm.add_wrapped(wrap_pymodule!(preprocessing))?;".into()
+                "\t_m.add_wrapped(wrap_pymodule!(preprocessing))?;".into()
+            );
+            registrations.push(
+                "\tenv_logger::init();".into()
             );
         }
 
         format!(
 r#"
 #[pymodule]
-fn {module_name}(_py: Python, m:&PyModule) -> PyResult<()> {{
+fn {module_name}(_py: Python, _m:&PyModule) -> PyResult<()> {{
     {registrations}
     Ok(())
 }}
@@ -300,6 +386,15 @@ fn {module_name}(_py: Python, m:&PyModule) -> PyResult<()> {{
     registrations=registrations.join("\n"),
     functions=format_vec!(self.funcs.iter().filter(|func| is_to_bind(func))
     .map(GenBinding::gen_python_binding)
+    .map(|x| format!(
+        "{module}\n{x}",
+        module=if self.module_name != "ensmallen" {
+            format!("#[module({})]", self.module_name)
+        } else {
+            "".into()
+        },
+        x=x,
+    ))
     .collect::<Vec<_>>(), "{}", "\n\n"),
     classes=format_vec!(
         self.structs.values()
@@ -308,7 +403,7 @@ fn {module_name}(_py: Python, m:&PyModule) -> PyResult<()> {{
             && c.ztruct.visibility == Visibility::Public
         })
         .map(|c| {
-            println!("Generating struct: {}", c.ztruct.struct_type.get_name());
+            println!("Generating struct: {}", c.ztruct.struct_type.get_name().unwrap());
             c.gen_python_binding()
         }).collect::<Vec<_>>(), 
         "{}", "\n\n"
@@ -334,13 +429,15 @@ impl Default for BindingsModule{
 fn group_data(modules: Vec<Module>) -> BindingsModule {
     let mut bindings = BindingsModule::default();
     bindings.module_name = "ensmallen".to_string();
+
+    let mut struct_modules_map = HashMap::new();
     
     // collect info about all the structs
     for module in &modules {
         for ztruct in &module.structs {
-            bindings.get_submodule(
-                extract_module_name_from_path(ztruct.file_path.as_str())
-            ).push_class(ztruct.clone());
+            let submodule = extract_module_name_from_struct(&ztruct);
+            struct_modules_map.insert(ztruct.struct_type.to_string(), submodule.clone());
+            bindings.get_submodule(submodule).push_class(ztruct.clone());
         }
     }
 
@@ -348,24 +445,28 @@ fn group_data(modules: Vec<Module>) -> BindingsModule {
     for module in &modules {
         for func in &module.functions {
             bindings.get_submodule(
-                extract_module_name_from_path(func.file_path.as_str())
+                extract_module_name_from_func(func)
             ).funcs.push(func.clone());
         }
     }
-
+    
     // For each struct, collect all its implementaitons
     for module in &modules {
         for imp in &module.impls {
             // find the correct submodule
-            let struct_ref = bindings.get_submodule(
-                extract_module_name_from_path(imp.file_path.as_str())
-            ) // get the related struct
-            .structs.get_mut(&imp.struct_name.get_name());
-            if let Some(struct_ref) = struct_ref {
-                // add it to the impls
-                struct_ref.impls.push(imp.clone());
+            if let Some(struct_module) = struct_modules_map.get(&imp.struct_name.get_name().unwrap()) {
+                let struct_ref =  bindings.get_submodule(
+                    struct_module.clone()
+                ).structs.get_mut(&imp.struct_name.get_name().unwrap());
+    
+                if let Some(struct_ref) = struct_ref {
+                    // add it to the impls
+                    struct_ref.impls.push(imp.clone());
+                } else {
+                    println!("Skipping impl for '{}' at '{}'.", imp.struct_name.get_name().unwrap(), imp.file_path);
+                }
             } else {
-                println!("Skipping impl for '{}' at '{}'.", imp.struct_name.get_name(), imp.file_path);
+                println!("Skipping impl for '{}' at '{}'.", imp.struct_name.get_name().unwrap(), imp.file_path);
             }
         }
     }
@@ -373,32 +474,27 @@ fn group_data(modules: Vec<Module>) -> BindingsModule {
     bindings
 }
 
-pub fn gen_bindings(path: &str, init_path: &str) {
+pub fn gen_bindings(to_parse_path: &str, path: &str, init_path: &str) {
     print_sep();
     println!("Parsing the library source files");
     print_sep();
-    let data = group_data(get_library_sources());
+    let data = group_data(parse_crate(to_parse_path, DENY_LIST));
 
     print_sep();
     println!("Generating the bindings");
     print_sep();
 
     let file_content = format!(
-        r#"use super::*;
+        r#"
+#[allow(unused_variables)]    
+use super::*;
 use pyo3::{{wrap_pyfunction, wrap_pymodule}};
 use rayon::iter::{{IndexedParallelIterator, IntoParallelRefIterator, ParallelIterator}};
 use pyo3::class::basic::PyObjectProtocol;
 use std::hash::{{Hash, Hasher}};
 use std::collections::hash_map::DefaultHasher;
-use strsim::*;
-use graph::{{
-    NodeT,
-    EdgeT,
-    WeightT,
-    NodeTypeT,
-    EdgeTypeT,
-    Result,
-}};
+use strsim::*; 
+use pyo3::class::basic::CompareOp;
 
 /// Returns the given method name separated in the component parts.
 ///
@@ -417,25 +513,10 @@ use graph::{{
 /// # Arguments
 /// * `method_name`: &str - Name of the method to split.
 fn split_words(method_name: &str) -> Vec<String> {{
-    let mut result: Vec<String> = Vec::new();
-    for word in method_name.split("_") {{
-        match word {{
-            "type" | "types" | "id" | "ids" | "name" | "names" => match result.last_mut() {{
-                Some(last) => {{
-                    last.push('_');
-                    last.extend(word.chars());
-                }}
-                None => {{
-                    result.push(word.to_string());
-                }}
-            }},
-            _ => {{
-                result.push(word.to_string());
-            }}
-        }};
-    }}
-
-    result.into_iter().filter(|x| !x.is_empty()).collect()
+    method_name.split("_")
+        .filter(|x| !x.is_empty())
+        .map(|x| x.to_lowercase())
+        .collect()
 }}
 
 {}

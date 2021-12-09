@@ -1,23 +1,12 @@
 use super::*;
 use bitvec::prelude::*;
 use elias_fano_rust::*;
-use num_traits::Pow;
 use std::mem::size_of;
 use tags::no_binding;
 
+/// Returns the given bytes number as a human readable number.
 fn to_human_readable_memory_requirement(bytes_number: usize) -> String {
-    let (exponent, unit) = match bytes_number {
-        0..1_000 => (0, ""),
-        1_000..1_000_000 => (1, "K"),
-        1_000_000..1_000_000_000 => (2, "M"),
-        1_000_000_000..1_000_000_000_000 => (3, "G"),
-        _ => (4, "T"),
-    };
-    format!(
-        "{amount:.2}{unit}B",
-        amount = bytes_number as f64 / (1000.0 as f64).pow(exponent),
-        unit = unit
-    )
+    format!("{}B", to_human_readable_high_integer(bytes_number))
 }
 
 #[derive(Clone, Debug)]
@@ -86,22 +75,30 @@ impl Graph {
                 + self
                     .destinations
                     .as_ref()
+                    .as_ref()
                     .map_or(0, |v| v.capacity() * size_of::<NodeT>()),
             sources: size_of::<Option<Vec<NodeT>>>()
                 + self
                     .sources
+                    .as_ref()
                     .as_ref()
                     .map_or(0, |v| v.capacity() * size_of::<NodeT>()),
             cumulative_node_degrees: size_of::<Option<Vec<EdgeT>>>()
                 + self
                     .cumulative_node_degrees
                     .as_ref()
+                    .as_ref()
                     .map_or(0, |v| v.capacity() * size_of::<EdgeT>()),
 
-            unique_sources: self.unique_sources.as_ref().map_or(0, |e| e.size()),
+            unique_sources: self
+                .unique_sources
+                .as_ref()
+                .as_ref()
+                .map_or(0, |e| e.size()),
             connected_nodes: size_of::<Option<BitVec<Lsb0, u8>>>()
                 + self
                     .connected_nodes
+                    .as_ref()
                     .as_ref()
                     .map_or(0, |bv| bv.capacity() * size_of::<u8>()),
         }
@@ -141,7 +138,7 @@ impl Graph {
     /// Returns how many bytes are currently used to store the edge weights.
     pub fn get_edge_weights_total_memory_requirements(&self) -> usize {
         size_of::<Option<Vec<WeightT>>>()
-            + self.weights.as_ref().map_or(0, |edge_weights| {
+            + self.weights.as_ref().as_ref().map_or(0, |edge_weights| {
                 edge_weights.capacity() * size_of::<WeightT>()
             })
     }

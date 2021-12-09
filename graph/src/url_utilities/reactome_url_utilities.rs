@@ -7,7 +7,7 @@ use super::*;
 ///
 /// # Example
 /// To validate a node you can use:
-/// ```rust
+/// ```ignore
 /// # use graph::*;
 /// let reactome_node_name1 = "REACT:R-HSA-8851222";
 /// let reactome_node_name2 = "REACT:R-HSA-77267";

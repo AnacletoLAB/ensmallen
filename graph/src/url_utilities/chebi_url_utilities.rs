@@ -7,7 +7,7 @@ use super::*;
 ///
 /// # Example
 /// To validate a node you can use:
-/// ```rust
+/// ```ignore
 /// # use graph::*;
 /// let chebi_node_name1 = "CHEBI:145556";
 /// let chebi_node_name2 = "CHEBI:85302";

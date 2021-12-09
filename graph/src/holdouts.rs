@@ -472,7 +472,10 @@ impl Graph {
                 ),
                 self.nodes.clone(),
                 self.node_types.clone(),
-                self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+                self.edge_types
+                    .as_ref()
+                    .as_ref()
+                    .map(|ets| ets.vocabulary.clone()),
                 self.has_edge_weights(),
                 self.is_directed(),
                 Some(true),
@@ -498,7 +501,10 @@ impl Graph {
                 ),
                 self.nodes.clone(),
                 self.node_types.clone(),
-                self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+                self.edge_types
+                    .as_ref()
+                    .as_ref()
+                    .map(|ets| ets.vocabulary.clone()),
                 self.has_edge_weights(),
                 self.is_directed(),
                 Some(true),
@@ -568,21 +574,21 @@ impl Graph {
             .0;
 
         let edge_factor = if self.is_directed() { 1 } else { 2 };
-        let train_edges_number = (self.get_directed_edges_number() as f64 * train_size) as usize;
-        let mut validation_edges_number =
-            (self.get_directed_edges_number() as f64 * (1.0 - train_size)) as EdgeT;
 
         // We need to check if the connected holdout can actually be built with
         // the additional constraint of the edge types.
-        if let Some(etis) = &edge_type_ids {
+        let validation_edges_number = if let Some(etis) = &edge_type_ids {
             let selected_edges_number: EdgeT = etis
                 .iter()
                 .map(|et| unsafe { self.get_unchecked_edge_count_from_edge_type_id(*et) } as EdgeT)
                 .sum();
-            validation_edges_number = (selected_edges_number as f64 * (1.0 - train_size)) as EdgeT;
-        }
+            (selected_edges_number as f64 * (1.0 - train_size)) as EdgeT
+        } else {
+            (self.get_directed_edges_number() as f64 * (1.0 - train_size)) as EdgeT
+        };
+        let train_edges_number = self.get_directed_edges_number() - validation_edges_number;
 
-        if tree.len() * edge_factor > train_edges_number {
+        if tree.len() * edge_factor > train_edges_number as usize {
             return Err(format!(
                 concat!(
                     "The given spanning tree of the graph contains {} edges ",
@@ -597,7 +603,7 @@ impl Graph {
                 train_edges_number,
                 validation_edges_number,
                 train_size,
-                (tree.len() * edge_factor) as f64 / train_edges_number as f64
+                (tree.len() * edge_factor) as f64 / self.get_directed_edges_number() as f64
             ));
         }
 
@@ -747,6 +753,7 @@ impl Graph {
         let node_sets: Vec<Vec<NodeT>> = self
             .node_types
             .as_ref()
+            .as_ref()
             .map(|nts| {
                 if use_stratification {
                     // Initialize the vectors for each node type
@@ -832,13 +839,13 @@ impl Graph {
         let mut train_node_types = vec![None; self.get_nodes_number() as usize];
         train_node_indices.into_iter().for_each(|node_id| unsafe {
             train_node_types[node_id as usize] =
-                self.get_unchecked_node_type_id_from_node_id(node_id)
+                self.get_unchecked_node_type_ids_from_node_id(node_id).map(|x| x.clone())
         });
         // For the test node types
         let mut test_node_types = vec![None; self.get_nodes_number() as usize];
         test_node_indices.into_iter().for_each(|node_id| unsafe {
             test_node_types[node_id as usize] =
-                self.get_unchecked_node_type_id_from_node_id(node_id)
+                self.get_unchecked_node_type_ids_from_node_id(node_id).map(|x| x.clone())
         });
 
         Ok((train_node_types, test_node_types))
@@ -881,14 +888,20 @@ impl Graph {
         let mut test_graph = self.clone();
 
         // Replace the node_types with the one computes above
-        train_graph.node_types = NodeTypeVocabulary::from_option_structs(
+        train_graph.node_types = Arc::new(NodeTypeVocabulary::from_option_structs(
             Some(train_node_types),
-            self.node_types.as_ref().map(|ntv| ntv.vocabulary.clone()),
-        );
-        test_graph.node_types = NodeTypeVocabulary::from_option_structs(
+            self.node_types
+                .as_ref()
+                .as_ref()
+                .map(|ntv| ntv.vocabulary.clone()),
+        ));
+        test_graph.node_types = Arc::new(NodeTypeVocabulary::from_option_structs(
             Some(test_node_types),
-            self.node_types.as_ref().map(|ntv| ntv.vocabulary.clone()),
-        );
+            self.node_types
+                .as_ref()
+                .as_ref()
+                .map(|ntv| ntv.vocabulary.clone()),
+        ));
 
         Ok((train_graph, test_graph))
     }
@@ -939,6 +952,7 @@ impl Graph {
         // (edge_types_number, number of edges of that edge type)
         let edge_sets: Vec<Vec<EdgeT>> = self
             .edge_types
+            .as_ref()
             .as_ref()
             .map(|nts| {
                 if use_stratification {
@@ -1003,20 +1017,22 @@ impl Graph {
         let mut test_graph = self.clone();
 
         // Replace the edge_types with the one computes above
-        train_graph.edge_types = Some(EdgeTypeVocabulary::from_structs(
+        train_graph.edge_types = Arc::new(Some(EdgeTypeVocabulary::from_structs(
             train_edge_types,
             self.edge_types
                 .as_ref()
-                .map(|etv| etv.vocabulary.clone())
-                .unwrap(),
-        ));
-        test_graph.edge_types = Some(EdgeTypeVocabulary::from_structs(
-            test_edge_types,
-            self.edge_types
                 .as_ref()
                 .map(|etv| etv.vocabulary.clone())
                 .unwrap(),
-        ));
+        )));
+        test_graph.edge_types = Arc::new(Some(EdgeTypeVocabulary::from_structs(
+            test_edge_types,
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|etv| etv.vocabulary.clone())
+                .unwrap(),
+        )));
 
         Ok((train_graph, test_graph))
     }
@@ -1146,7 +1162,10 @@ impl Graph {
             ),
             self.nodes.clone(),
             self.node_types.clone(),
-            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| ets.vocabulary.clone()),
             self.has_edge_weights(),
             self.is_directed(),
             Some(true),
@@ -1205,6 +1224,7 @@ impl Graph {
         let node_sets: Vec<Vec<NodeT>> = self
             .node_types
             .as_ref()
+            .as_ref()
             .map(|nts| {
                 if use_stratification {
                     // Initialize the vectors for each node type
@@ -1240,8 +1260,8 @@ impl Graph {
         let mut rnd = SmallRng::seed_from_u64(splitmix64(random_state as u64));
 
         // Allocate the vectors for the nodes of each
-        let mut train_node_types = vec![None; self.get_nodes_number() as usize];
-        let mut test_node_types = vec![None; self.get_nodes_number() as usize];
+        let mut train_node_types: Vec<Option<Vec<NodeTypeT>>> = vec![None; self.get_nodes_number() as usize];
+        let mut test_node_types: Vec<Option<Vec<NodeTypeT>>> = vec![None; self.get_nodes_number() as usize];
 
         for mut node_set in node_sets {
             // Shuffle in a reproducible way the nodes of the current node_type
@@ -1251,11 +1271,11 @@ impl Graph {
             // add the nodes to the relative vectors
             node_set[..train_size].iter().for_each(|node_id| unsafe {
                 train_node_types[*node_id as usize] =
-                    self.get_unchecked_node_type_id_from_node_id(*node_id)
+                    self.get_unchecked_node_type_ids_from_node_id(*node_id).map(|x| x.clone())
             });
             node_set[train_size..].iter().for_each(|node_id| unsafe {
                 test_node_types[*node_id as usize] =
-                    self.get_unchecked_node_type_id_from_node_id(*node_id)
+                    self.get_unchecked_node_type_ids_from_node_id(*node_id).map(|x| x.clone())
             });
         }
 
@@ -1268,14 +1288,20 @@ impl Graph {
         let mut test_graph = self.clone();
 
         // Replace the node_types with the one computes above
-        train_graph.node_types = NodeTypeVocabulary::from_option_structs(
+        train_graph.node_types = Arc::new(NodeTypeVocabulary::from_option_structs(
             Some(train_node_types),
-            self.node_types.as_ref().map(|ntv| ntv.vocabulary.clone()),
-        );
-        test_graph.node_types = NodeTypeVocabulary::from_option_structs(
+            self.node_types
+                .as_ref()
+                .as_ref()
+                .map(|ntv| ntv.vocabulary.clone()),
+        ));
+        test_graph.node_types = Arc::new(NodeTypeVocabulary::from_option_structs(
             Some(test_node_types),
-            self.node_types.as_ref().map(|ntv| ntv.vocabulary.clone()),
-        );
+            self.node_types
+                .as_ref()
+                .as_ref()
+                .map(|ntv| ntv.vocabulary.clone()),
+        ));
 
         Ok((train_graph, test_graph))
     }
@@ -1328,6 +1354,7 @@ impl Graph {
         let node_sets: Vec<Vec<u64>> = self
             .node_types
             .as_ref()
+            .as_ref()
             .map(|nts| {
                 if use_stratification {
                     // Initialize the vectors for each node type
@@ -1360,19 +1387,21 @@ impl Graph {
             .unwrap();
 
         // Allocate the vectors for the nodes of each
-        let mut train_node_types = vec![None; self.get_nodes_number() as usize];
-        let mut test_node_types = vec![None; self.get_nodes_number() as usize];
+        let mut train_node_types: Vec<Option<Vec<NodeTypeT>>> =
+            vec![None; self.get_nodes_number() as usize];
+        let mut test_node_types: Vec<Option<Vec<NodeTypeT>>> =
+            vec![None; self.get_nodes_number() as usize];
 
         for node_set in node_sets {
             // Shuffle in a reproducible way the nodes of the current node_type
             let validation_chunk = kfold(k, k_index, node_set, random_state)?;
             // Iterate of node ids
             for node_id in 0..self.get_nodes_number() {
-                let node_type = unsafe { self.get_unchecked_node_type_id_from_node_id(node_id) };
+                let node_type = unsafe { self.get_unchecked_node_type_ids_from_node_id(node_id) };
                 if validation_chunk.contains(node_id as u64) {
-                    test_node_types[node_id as usize] = node_type;
+                    test_node_types[node_id as usize] = node_type.map(|x| x.clone());
                 } else {
-                    train_node_types[node_id as usize] = node_type;
+                    train_node_types[node_id as usize] = node_type.map(|x| x.clone());
                 }
             }
         }
@@ -1386,14 +1415,20 @@ impl Graph {
         let mut test_graph = self.clone();
 
         // Replace the node_types with the one computes above
-        train_graph.node_types = NodeTypeVocabulary::from_option_structs(
+        train_graph.node_types = Arc::new(NodeTypeVocabulary::from_option_structs(
             Some(train_node_types),
-            self.node_types.as_ref().map(|ntv| ntv.vocabulary.clone()),
-        );
-        test_graph.node_types = NodeTypeVocabulary::from_option_structs(
+            self.node_types
+                .as_ref()
+                .as_ref()
+                .map(|ntv| ntv.vocabulary.clone()),
+        ));
+        test_graph.node_types = Arc::new(NodeTypeVocabulary::from_option_structs(
             Some(test_node_types),
-            self.node_types.as_ref().map(|ntv| ntv.vocabulary.clone()),
-        );
+            self.node_types
+                .as_ref()
+                .as_ref()
+                .map(|ntv| ntv.vocabulary.clone()),
+        ));
 
         Ok((train_graph, test_graph))
     }
@@ -1444,6 +1479,7 @@ impl Graph {
         // (edge_types_number, number of edges of that edge type)
         let edge_sets: Vec<Vec<EdgeT>> = self
             .edge_types
+            .as_ref()
             .as_ref()
             .map(|nts| {
                 if use_stratification {
@@ -1508,20 +1544,22 @@ impl Graph {
         let mut test_graph = self.clone();
 
         // Replace the edge_types with the one computes above
-        train_graph.edge_types = Some(EdgeTypeVocabulary::from_structs(
+        train_graph.edge_types = Arc::new(Some(EdgeTypeVocabulary::from_structs(
             train_edge_types,
             self.edge_types
                 .as_ref()
-                .map(|etv| etv.vocabulary.clone())
-                .unwrap(),
-        ));
-        test_graph.edge_types = Some(EdgeTypeVocabulary::from_structs(
-            test_edge_types,
-            self.edge_types
                 .as_ref()
                 .map(|etv| etv.vocabulary.clone())
                 .unwrap(),
-        ));
+        )));
+        test_graph.edge_types = Arc::new(Some(EdgeTypeVocabulary::from_structs(
+            test_edge_types,
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|etv| etv.vocabulary.clone())
+                .unwrap(),
+        )));
 
         Ok((train_graph, test_graph))
     }
@@ -1574,6 +1612,7 @@ impl Graph {
         // (edge_types_number, number of edges of that edge type)
         let edge_sets: Vec<Vec<EdgeT>> = self
             .edge_types
+            .as_ref()
             .as_ref()
             .map(|nts| {
                 if use_stratification {
@@ -1633,20 +1672,22 @@ impl Graph {
         let mut test_graph = self.clone();
 
         // Replace the edge_types with the one computes above
-        train_graph.edge_types = Some(EdgeTypeVocabulary::from_structs(
+        train_graph.edge_types = Arc::new(Some(EdgeTypeVocabulary::from_structs(
             train_edge_types,
             self.edge_types
                 .as_ref()
-                .map(|etv| etv.vocabulary.clone())
-                .unwrap(),
-        ));
-        test_graph.edge_types = Some(EdgeTypeVocabulary::from_structs(
-            test_edge_types,
-            self.edge_types
                 .as_ref()
                 .map(|etv| etv.vocabulary.clone())
                 .unwrap(),
-        ));
+        )));
+        test_graph.edge_types = Arc::new(Some(EdgeTypeVocabulary::from_structs(
+            test_edge_types,
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|etv| etv.vocabulary.clone())
+                .unwrap(),
+        )));
 
         Ok((train_graph, test_graph))
     }
