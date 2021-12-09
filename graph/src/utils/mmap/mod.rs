@@ -5,9 +5,9 @@
 //! https://docs.microsoft.com/en-us/windows/win32/memory/creating-a-file-mapping-object
 
 #[cfg(target_os="windows")]
-mod windows;
+mod windows_mmap;
 #[cfg(target_os="windows")]
-pub use windows::MemoryMappedReadOnlyFile;
+pub use windows_mmap::MemoryMappedReadOnlyFile;
 
 #[cfg(not(target_os="windows"))]
 mod unix;
