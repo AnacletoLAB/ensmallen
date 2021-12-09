@@ -1047,7 +1047,7 @@ impl Graph {
             } else {
                 "".to_string()
             },
-            maximum_involved_nodes_and_edges = if maximum_number_of_involved_nodes > 2 {
+            maximum_involved_nodes_and_edges = if sorted && maximum_number_of_involved_nodes > 2 {
                 format!(
                     concat!(
                         ", with the largest one involving {maximum_number_of_involved_nodes} nodes ",
