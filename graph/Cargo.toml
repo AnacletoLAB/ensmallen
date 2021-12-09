@@ -20,6 +20,7 @@ linecount= "0.1.0"
 criterion = "0.3"
 
 [dependencies]
+libc = "0.2.109"
 crossbeam = "0.8.0"
 log = "0.4.8"
 regex = "1.5.4"
@@ -56,6 +57,9 @@ atoi_radix10 = { git = "https://github.com/gilescope/atoi_radix10"}
 
 [target.'cfg(unix)'.dependencies]
 nix = "0.22.0"
+
+[target.'cfg(windows)'.dependencies]
+windows = { version = "0.28.0", features = ["alloc",  "Win32_System_Memory", "Win32_Storage_FileSystem", "Win32_Foundation", "Win32_Security"]}
 
 [profile.release]
 opt-level = 3

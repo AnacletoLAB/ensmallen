@@ -1,20 +1,6 @@
 """Module offering fast graph processing and graph datasets."""
 
-import os
 from .compilation_flags import FLAGS, TARGET_TRIPLE, OS, CPU_ARCH
-
-# Check that the OS and the CPU Arch match, this should be already done by pip
-# but better check twice
-if os.uname().sysname.lower().strip() != OS.lower().strip() \
-        or os.uname().machine.lower().strip() != CPU_ARCH.lower().strip():
-    raise ValueError((
-        "This version of the library was compiled for '{}' assuming the "
-        "following flags '{}'. You should't have been able to install this as "
-        "pip should have already catched this error. "
-        "Please open an Issue on Github detailing the installation process "
-        "you used so we can debug it."
-    ).format(TARGET_TRIPLE, FLAGS)
-    )
 
 import cpuinfo
 
