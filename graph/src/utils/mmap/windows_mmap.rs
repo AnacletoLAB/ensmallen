@@ -4,7 +4,8 @@ use windows::Win32::Foundation::*;
 use windows::Win32::System::Memory::*;
 use windows::Win32::Storage::FileSystem::*;
 
-struct MemoryMappedReadOnlyFile {
+#[derive(Debug)]
+pub struct MemoryMappedReadOnlyFile {
     file_handle: HANDLE,
     mapping_handle: HANDLE,
     addr: *mut c_void,
@@ -94,7 +95,7 @@ impl MemoryMappedReadOnlyFile {
                 );
             }
 
-            Ok(MMap{
+            Ok(MemoryMappedReadOnlyFile{
                 file_handle,
                 mapping_handle,
                 addr,
