@@ -22,7 +22,6 @@ mod types;
 pub(crate) use crate::types::*;
 mod laplacian;
 mod operators;
-mod spine;
 mod walks;
 
 // automatically generated files

@@ -20,7 +20,8 @@ pub const DENY_LIST: &[&str] = &[
     "constructors",
     "argmax_argmin.rs",
     "minmax.rs",
-    "splitter.rs"
+    "splitter.rs",
+    "mmap"
 ];
 
 
