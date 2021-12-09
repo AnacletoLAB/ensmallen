@@ -7,6 +7,7 @@ build_avx:
 	rustup update
 	cargo update
 	(cd ../../code_analysis; cargo run --release --bin bindgen)
+	cp pyproject_avx.toml pyproject.toml
 	RUSTFLAGS="-C opt-level=3 -Ctarget-feature=${CPU_FEATURES} -C inline-threshold=1000" maturin build --release --strip  --out ./wheels_avx
 
 build_no_avx:
@@ -16,6 +17,7 @@ build_no_avx:
 	rustup update
 	cargo update
 	(cd ../../code_analysis; cargo run --release --bin bindgen)
+	cp pyproject_no_avx.toml pyproject.toml
 	RUSTFLAGS="-C opt-level=3 -C inline-threshold=1000" maturin build --release --strip --out ./wheels_no_avx
 
 build:
