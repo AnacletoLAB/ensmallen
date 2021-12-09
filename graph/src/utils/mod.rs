@@ -4,6 +4,9 @@ use rayon::ThreadPool;
 
 use num_traits::pow::Pow;
 
+mod mmap;
+pub use mmap::*;
+
 mod method_caller;
 pub use method_caller::*;
 
