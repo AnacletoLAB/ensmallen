@@ -56,7 +56,7 @@ impl MemoryMappedReadOnlyFile {
             PROT_READ,
             // We don't want the eventual modifications to get propagated
             // to the underlying file
-            libc::MAP_PRIVATE | libc::MAP_HUGE_1GB,
+            libc::MAP_PRIVATE,
             // the file descriptor of the file to mmap
             fd,
             // the offset in bytes from the start of the file, we want to mmap
@@ -67,12 +67,11 @@ impl MemoryMappedReadOnlyFile {
         if addr == usize::MAX as *mut c_void {
             return Err(
                 format!(concat!(
-                    "Cannot mmap the file '{}' with file descriptor '{}'.",
-                    " Errno: {} for more info see ",
+                    "Cannot mmap the file '{}' with file descriptor '{}'. ",
                     "https://man7.org/linux/man-pages/man2/mmap.2.html",
                     " or the equivalent manual for your POSIX OS.",
                     ),
-                    path, fd, unsafe{*libc::__errno_location()}
+                    path, fd
                 )
             );
         }
