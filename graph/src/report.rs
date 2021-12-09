@@ -1095,7 +1095,7 @@ impl Graph {
     /// * `oddity_description`: &str - Description of the oddity.
     fn get_report_of_specific_tree_like_oddities(
         &self,
-        tree_like_oddities: Vec<DendriticTree>,
+        mut tree_like_oddities: Vec<DendriticTree>,
         oddity_name: &str,
         plural_oddity_name: &str,
         oddity_description: &str,
@@ -1103,6 +1103,15 @@ impl Graph {
         if tree_like_oddities.is_empty() {
             "".to_string()
         } else {
+            tree_like_oddities.par_sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
+            let sorted = tree_like_oddities
+                .first()
+                .unwrap()
+                .get_number_of_involved_nodes()
+                > tree_like_oddities
+                    .last()
+                    .unwrap()
+                    .get_number_of_involved_nodes();
             self.get_report_of_oddity(
                 "h4",
                 oddity_name,
@@ -1127,7 +1136,7 @@ impl Graph {
                     .map(|oddity| oddity.get_number_of_involved_edges())
                     .max()
                     .unwrap(),
-                true,
+                sorted,
                 Some(6),
                 Some(2),
                 tree_like_oddities.into_iter(),
@@ -1421,15 +1430,6 @@ impl Graph {
                     );
                 }
             });
-
-            trees.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
-            stars.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
-            tendrils.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
-            free_floating_chains.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
-            dendritic_trees.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
-            dendritic_stars.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
-            dendritic_tendril_stars.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
-            tendril_stars.sort_unstable_by(|a, b| b.partial_cmp(a).unwrap());
 
             format!(
                 concat!(
