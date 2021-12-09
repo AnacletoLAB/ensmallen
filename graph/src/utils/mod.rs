@@ -210,7 +210,7 @@ pub fn parse_weight(weight: String) -> Result<WeightT> {
 }
 
 /// Convert a strig to integer ASSUMING IT IS CORRECT
-pub fn atoi_c(val: &str) -> u32 {
+pub unsafe fn atoi_c(val: &str) -> u32 {
     let mut result: u32 = 0;
     for b in val.as_bytes() {
         result = result * 10 + (*b - b'0') as u32;
@@ -221,7 +221,7 @@ pub fn atoi_c(val: &str) -> u32 {
 /// Return given number converted to a human readable value.
 ///
 /// # Arguments
-/// `number`: usize - The value to convert.
+/// `number`: usize - The value to convert into a human readable string.
 pub(crate) fn to_human_readable_high_integer(number: usize) -> String {
     let (exponent, unit) = match number {
         0..1_000 => return number.to_string(),

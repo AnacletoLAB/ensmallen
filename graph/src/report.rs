@@ -919,6 +919,7 @@ impl Graph {
     /// * `number_of_involved_edges`: EdgeT - Number of involved edges.
     /// * `maximum_number_of_involved_nodes`: NodeT - Number of nodes involved in the largest oddity of this type.
     /// * `maximum_number_of_involved_edges`: EdgeT - Number of edges involved in the largest oddity of this type.
+    /// * `sorted`: bool - Whether to consider these oddities to be sorted.
     /// * `maximum_number_of_oddities_to_report`: Option<usize> - Maximum number of oddities to report, by default 6.
     /// * `number_of_columns`: Option<usize> - Number of columns to use for the report visualization. By default 1.
     /// * `oddities`: impl Iterator<Item=T> - Iterator over the oddities.
@@ -933,6 +934,7 @@ impl Graph {
         number_of_involved_edges: EdgeT,
         maximum_number_of_involved_nodes: NodeT,
         maximum_number_of_involved_edges: EdgeT,
+        sorted: bool,
         maximum_number_of_oddities_to_report: Option<usize>,
         number_of_columns: Option<usize>,
         oddities: impl Iterator<Item = T>,
@@ -962,19 +964,29 @@ impl Graph {
                 "{maximum_involved_nodes_and_edges}.",
                 "{list_description}",
                 "</p>",
-                "<{list_type}>",
+                "<{list_type}{column_style}>",
                 "{top_oddities_description}",
                 "</{list_type}>",
                 "{possibly_conclusive_entry}"
             ),
-            list_type = if number_of_oddities == 1 { "ul".to_string() } else { format!(
-                "ol style=\"column-count: {number_of_columns}; column-gap: 2em;\"",
-                number_of_columns=number_of_columns
-            ) },
+            column_style=if number_of_oddities > 1 {
+                format!(
+                    " style=\"column-count: {number_of_columns}; column-gap: 2em;\"",
+                    number_of_columns=number_of_columns
+                )
+            } else {
+                "".to_string()
+            },
+            list_type = if sorted { "ol" } else { "ul"},
             list_description = if number_of_oddities > 1 {
                 format!(
-                    " The detected {lower_plural_oddity_name}, sorted by decreasing size, are:",
+                    " The detected {lower_plural_oddity_name}{sorted_note} are:",
                     lower_plural_oddity_name = plural_oddity_name.to_lowercase(),
+                    sorted_note = if sorted {
+                        ", sorted by decreasing size,"
+                    } else {
+                        ""
+                    }
                 )
             } else {
                 "".to_string()
@@ -1036,8 +1048,8 @@ impl Graph {
                         ", with the largest one involving {maximum_number_of_involved_nodes} nodes ",
                         "and {maximum_number_of_involved_edges} edges",
                     ),
-                    maximum_number_of_involved_nodes = maximum_number_of_involved_nodes,
-                    maximum_number_of_involved_edges = maximum_number_of_involved_edges,
+                    maximum_number_of_involved_nodes = to_human_readable_high_integer(maximum_number_of_involved_nodes as usize),
+                    maximum_number_of_involved_edges = to_human_readable_high_integer(maximum_number_of_involved_edges as usize),
                 )
             } else {
                 "".to_string()
@@ -1110,6 +1122,7 @@ impl Graph {
                     .map(|oddity| oddity.get_number_of_involved_edges())
                     .max()
                     .unwrap(),
+                    true,
                     Some(6),
                     Some(2),
                 tree_like_oddities.into_iter(),
@@ -1172,6 +1185,7 @@ impl Graph {
             0,
             1,
             0,
+            false,
             Some(15),
             Some(3),
             self.iter_singleton_node_ids().map(|node_id| unsafe {
@@ -1204,6 +1218,7 @@ impl Graph {
             number_of_edges_involved_in_singleton_with_selfloops,
             1,
             maximum_number_of_edges_in_a_singleton_with_selfloop,
+            false,
             Some(15),
             Some(3),
             self.iter_singleton_nodes_with_selfloops_node_ids()
@@ -1233,6 +1248,7 @@ impl Graph {
             number_of_edges_involved_in_circles,
             maximum_number_of_nodes_in_a_circle,
             maximum_number_of_edges_in_a_circle,
+            true,
             Some(10),
             Some(2),
             circles.into_iter(),
@@ -1261,6 +1277,7 @@ impl Graph {
             number_of_edges_involved_in_chains,
             maximum_number_of_nodes_in_a_chain,
             maximum_number_of_edges_in_a_chain,
+            true,
             Some(10),
             Some(2),
             chains.into_iter(),
@@ -1281,6 +1298,7 @@ impl Graph {
             number_of_edges_involved_in_node_tuples,
             maximum_number_of_nodes_in_a_node_tuple,
             maximum_number_of_edges_in_a_node_tuple,
+            false,
             Some(15),
             Some(3),
             node_tuples.into_iter(),
@@ -1326,6 +1344,7 @@ impl Graph {
             number_of_edges_involved_in_isomorphic_node_groups,
             maximum_number_of_nodes_in_a_isomorphic_node_group,
             maximum_number_of_edges_in_a_isomorphic_node_group,
+            true,
             Some(15),
             Some(3),
             isomorphic_node_groups
@@ -1347,7 +1366,6 @@ impl Graph {
                             get_unchecked_formatted_list(
                                 &isomorphic_node_group
                                     .into_iter()
-                                    .take(5)
                                     .map(|node_id| {
                                         get_node_source_html_url_from_node_name(
                                             &self.get_unchecked_node_name_from_node_id(node_id),
@@ -1502,7 +1520,7 @@ impl Graph {
                 "<p>",
                 "A topological oddity is a set of nodes in the graph that <i>may be derived</i> by ",
                 "an error during the generation of the edge list of the graph and, depending ",
-                "on the task, could bias the results of topology-base models. ",
+                "on the task, could bias the results of topology-based models. ",
                 "{directed_graph_note}",
                 "In the following paragraph, we will describe the detected topological oddities.",
                 "</p>",
