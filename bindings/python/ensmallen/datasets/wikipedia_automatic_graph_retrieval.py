@@ -25,7 +25,7 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
         keep_external_nodes: bool = True,
         compute_node_description: bool = False,
         auto_enable_tradeoffs: bool = True,
-        sort_temporary_directory: Optional[str] = None,
+        sort_tmp_dir: Optional[str] = None,
         verbose: int = 2,
         cache: bool = True,
         cache_path: Optional[str] = None,
@@ -65,7 +65,7 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
             Whether to enable the Ensmallen time-memory tradeoffs in small graphs
             automatically. By default True, that is, if a graph has less than
             50 million edges. In such use cases the memory expenditure is minimal.
-        sort_temporary_directory: Optional[str] = None
+        sort_tmp_dir: Optional[str] = None
             Which folder to use to store the temporary files needed to sort in 
             parallel the edge list when building the optimal preprocessed file.
             This defaults to the same folder of the edge list when no value is 
@@ -108,7 +108,7 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
             load_node_types=load_node_types,
             load_edge_weights=False,
             auto_enable_tradeoffs=auto_enable_tradeoffs,
-            sort_tmp_dir=sort_temporary_directory,
+            sort_tmp_dir=sort_tmp_dir,
             verbose=verbose,
             cache=cache,
             cache_path=cache_path,
@@ -172,7 +172,7 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
                 keep_interwikipedia_nodes=self._keep_interwikipedia_nodes,
                 keep_external_nodes=self._keep_external_nodes,
                 compute_node_description=self._compute_node_description,
-                sort_temporary_directory=self._sort_temporary_directory,
+                sort_temporary_directory=self._sort_tmp_dir,
                 directed=self._directed,
                 verbose=self._verbose > 0,
             )
