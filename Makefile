@@ -1,12 +1,12 @@
 
 BUILD_COMMAND=make build
-MANYLINUX=sudo docker run --rm -v "$${PWD}:/io" manylinux2010
+MANYLINUX=sudo docker run --rm -v "$${PWD}:/io"
 
 python: 
 	(cd bindings/python; ${BUILD_COMMAND})
 
 python_manylinux2010: bindgen
-	${MANYLINUX} make python
+	${MANYLINUX} manylinux2010 make python
 
 build_manylinux2010: 
 	sudo docker build -t manylinux2010 -f ./setup/DockerFileManylinux2010 ./setup

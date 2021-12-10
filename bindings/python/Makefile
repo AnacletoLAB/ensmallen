@@ -5,7 +5,7 @@ build:
 	rustup update
 	cargo update
 	(cd ../../code_analysis; cargo run --release --bin bindgen)
-	RUSTFLAGS="-C opt-level=3 -Ctarget-feature=${CPU_FEATURES} -C inline-threshold=1000" maturin build --release --strip
+	RUSTFLAGS="-C opt-level=3 -Ctarget-feature=${CPU_FEATURES} -C inline-threshold=1000" maturin build --release --strip -i python3.6
 
 atheris:
 # https://clang.llvm.org/docs/SanitizerCoverage.html

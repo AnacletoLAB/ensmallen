@@ -3,14 +3,17 @@
 target
 **/target
 hfuzz_workspace
-hfuzz_target
+**/hfuzz_target
 corpus
+**/wheels_avx
+**/wheels_no_avx
+**/wheels
+**/wheels_merged
 
 # This file is automatically generate so commiting it wouldn't make any sense
 **/compilation_flags.py
-
-# AVOID BINARIES THEY MAKE THE REPO SLOW
-**/*.so
+bindings/python/ensmallen/*.so
+build
 
 **/perf.data
 **/perf.data.old
