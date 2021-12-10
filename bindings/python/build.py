@@ -76,6 +76,7 @@ for python_minor_version in [6, 7, 8, 9]:
     shutil.rmtree(join("build"), ignore_errors=True)
     # Copy the sources to the build folder so that we can modify it without worries
     shutil.copytree(join("."), join("build"))
+    os.makedirs(join("wheels_no_avx"), exist_ok=True)
 
     print("Patching the library")
     patch(join("build", "pyproject.toml"),
@@ -111,6 +112,7 @@ for python_minor_version in [6, 7, 8, 9]:
     shutil.rmtree(join("build"), ignore_errors=True)
     # Copy the sources to the build folder so that we can modify it without worries
     shutil.copytree(join("."), join("build"))
+    os.makedirs(join("wheels_avx"), exist_ok=True)
 
     patch(join("build", "Cargo.toml"),
         r"""path\s*=\s*\"..""", 
@@ -131,7 +133,6 @@ for python_minor_version in [6, 7, 8, 9]:
     # Copy the file to the other wheel
     ################################################################################
     os.makedirs(join(TARGET_FOLDER), exist_ok=True)
-
 
     # Find the no_avx wheel file
     src_wheel = join("wheels_no_avx", os.listdir(join("wheels_no_avx"))[0])
