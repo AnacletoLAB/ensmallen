@@ -34,7 +34,12 @@ def get_words_data(
             graph.get_node_name_from_node_id(dst): graph.get_edge_weight_from_node_ids(src, dst) if graph.has_edge_weights() else 1.0
             for dst in graph.get_neighbour_node_ids_from_node_id(src)
         }
-        for src, node_name in enumerate(tqdm(graph.get_node_names(), desc="Extracting words features"))
+        for src, node_name in enumerate(tqdm(
+            graph.get_node_names(),
+            desc="Extracting words features",
+            dynamic_ncols=True,
+            leave=False
+        ))
         if word_node_type in graph.get_node_type_ids_from_node_id(src)
     }).fillna(0.0)
     
