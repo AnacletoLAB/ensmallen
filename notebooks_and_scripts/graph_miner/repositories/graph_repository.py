@@ -681,7 +681,8 @@ class GraphRepository:
                 "*.json.gz"
             )),
             desc="Building graph retrieval methods for {}".format(self.name),
-            leave=False
+            leave=False,
+            dynamic_ncols=True
         ):
             graph_data = compress_json.load(graph_data_path)
             first_graph_version_data = list(graph_data.values())[0]
