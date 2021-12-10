@@ -62,7 +62,7 @@ for python_minor_version in [6, 7, 8, 9]:
     # Build the non avx version
     ################################################################################
     print("Creating the build folder")
-    shutil.rmtree(join("build"))
+    shutil.rmtree(join("build"), ignore_errors=True)
     # Copy the sources to the build folder so that we can modify it without worries
     shutil.copytree(join("."), join("build"))
 
@@ -97,7 +97,7 @@ for python_minor_version in [6, 7, 8, 9]:
     # Build the avx version
     ################################################################################
     print("Creating the build folder")
-    shutil.rmtree(join("build"))
+    shutil.rmtree(join("build"), ignore_errors=True)
     # Copy the sources to the build folder so that we can modify it without worries
     shutil.copytree(join("."), join("build"))
 
