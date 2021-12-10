@@ -18,7 +18,7 @@ def WikiMediaRU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaRU graph.
 
@@ -81,7 +81,7 @@ def WikiMediaRU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -103,7 +103,7 @@ def WikiMediaRU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSV(
@@ -122,7 +122,7 @@ def WikiSV(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSV graph.
 
@@ -183,7 +183,7 @@ def WikiSV(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -205,7 +205,7 @@ def WikiSV(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaBE(
@@ -224,7 +224,7 @@ def WikiMediaBE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaBE graph.
 
@@ -287,7 +287,7 @@ def WikiMediaBE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -309,7 +309,7 @@ def WikiMediaBE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiHO(
@@ -328,7 +328,7 @@ def WikiHO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiHO graph.
 
@@ -391,7 +391,7 @@ def WikiHO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -413,7 +413,7 @@ def WikiHO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiIO(
@@ -432,7 +432,7 @@ def WikiIO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiIO graph.
 
@@ -495,7 +495,7 @@ def WikiIO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -517,7 +517,7 @@ def WikiIO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiTA(
@@ -536,7 +536,7 @@ def WikiTA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiTA graph.
 
@@ -599,7 +599,7 @@ def WikiTA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -621,7 +621,7 @@ def WikiTA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsPL(
@@ -640,7 +640,7 @@ def WikiNewsPL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsPL graph.
 
@@ -703,7 +703,7 @@ def WikiNewsPL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -725,7 +725,7 @@ def WikiNewsPL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiVoyageRU(
@@ -744,7 +744,7 @@ def WikiVoyageRU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiVoyageRU graph.
 
@@ -807,7 +807,7 @@ def WikiVoyageRU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -829,7 +829,7 @@ def WikiVoyageRU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksPS(
@@ -848,7 +848,7 @@ def WikiBooksPS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksPS graph.
 
@@ -911,7 +911,7 @@ def WikiBooksPS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -933,7 +933,7 @@ def WikiBooksPS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBS(
@@ -952,7 +952,7 @@ def WikiBS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBS graph.
 
@@ -1015,7 +1015,7 @@ def WikiBS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -1037,7 +1037,7 @@ def WikiBS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiCS(
@@ -1056,7 +1056,7 @@ def WikiCS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiCS graph.
 
@@ -1119,7 +1119,7 @@ def WikiCS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -1141,7 +1141,7 @@ def WikiCS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSC(
@@ -1160,7 +1160,7 @@ def WikiSC(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSC graph.
 
@@ -1223,7 +1223,7 @@ def WikiSC(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -1245,7 +1245,7 @@ def WikiSC(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksGA(
@@ -1264,7 +1264,7 @@ def WikiBooksGA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksGA graph.
 
@@ -1327,7 +1327,7 @@ def WikiBooksGA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -1349,7 +1349,7 @@ def WikiBooksGA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiOM(
@@ -1368,7 +1368,7 @@ def WikiOM(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiOM graph.
 
@@ -1431,7 +1431,7 @@ def WikiOM(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -1453,7 +1453,7 @@ def WikiOM(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksFA(
@@ -1472,7 +1472,7 @@ def WikiBooksFA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksFA graph.
 
@@ -1535,7 +1535,7 @@ def WikiBooksFA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -1557,7 +1557,7 @@ def WikiBooksFA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiTT(
@@ -1576,7 +1576,7 @@ def WikiTT(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiTT graph.
 
@@ -1639,7 +1639,7 @@ def WikiTT(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -1661,7 +1661,7 @@ def WikiTT(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiHZ(
@@ -1680,7 +1680,7 @@ def WikiHZ(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiHZ graph.
 
@@ -1743,7 +1743,7 @@ def WikiHZ(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -1765,7 +1765,7 @@ def WikiHZ(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsCS(
@@ -1784,7 +1784,7 @@ def WikiNewsCS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsCS graph.
 
@@ -1847,7 +1847,7 @@ def WikiNewsCS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -1869,7 +1869,7 @@ def WikiNewsCS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsBS(
@@ -1888,7 +1888,7 @@ def WikiNewsBS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsBS graph.
 
@@ -1951,7 +1951,7 @@ def WikiNewsBS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -1973,7 +1973,7 @@ def WikiNewsBS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksIE(
@@ -1992,7 +1992,7 @@ def WikiBooksIE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksIE graph.
 
@@ -2055,7 +2055,7 @@ def WikiBooksIE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -2077,7 +2077,7 @@ def WikiBooksIE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksHE(
@@ -2096,7 +2096,7 @@ def WikiBooksHE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksHE graph.
 
@@ -2159,7 +2159,7 @@ def WikiBooksHE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -2181,7 +2181,7 @@ def WikiBooksHE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksUK(
@@ -2200,7 +2200,7 @@ def WikiBooksUK(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksUK graph.
 
@@ -2263,7 +2263,7 @@ def WikiBooksUK(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -2285,7 +2285,7 @@ def WikiBooksUK(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiversityEL(
@@ -2304,7 +2304,7 @@ def WikiversityEL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiversityEL graph.
 
@@ -2367,7 +2367,7 @@ def WikiversityEL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -2389,7 +2389,7 @@ def WikiversityEL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksTK(
@@ -2408,7 +2408,7 @@ def WikiBooksTK(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksTK graph.
 
@@ -2471,7 +2471,7 @@ def WikiBooksTK(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -2493,7 +2493,7 @@ def WikiBooksTK(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourcePT(
@@ -2512,7 +2512,7 @@ def WikiSourcePT(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourcePT graph.
 
@@ -2575,7 +2575,7 @@ def WikiSourcePT(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -2597,7 +2597,7 @@ def WikiSourcePT(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteIS(
@@ -2616,7 +2616,7 @@ def WikiQuoteIS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteIS graph.
 
@@ -2679,7 +2679,7 @@ def WikiQuoteIS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -2701,7 +2701,7 @@ def WikiQuoteIS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceZH(
@@ -2720,7 +2720,7 @@ def WikiSourceZH(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceZH graph.
 
@@ -2783,7 +2783,7 @@ def WikiSourceZH(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -2805,7 +2805,7 @@ def WikiSourceZH(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksCY(
@@ -2824,7 +2824,7 @@ def WikiBooksCY(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksCY graph.
 
@@ -2887,7 +2887,7 @@ def WikiBooksCY(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -2909,7 +2909,7 @@ def WikiBooksCY(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiKU(
@@ -2928,7 +2928,7 @@ def WikiKU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiKU graph.
 
@@ -2991,7 +2991,7 @@ def WikiKU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -3013,7 +3013,7 @@ def WikiKU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksSI(
@@ -3032,7 +3032,7 @@ def WikiBooksSI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksSI graph.
 
@@ -3095,7 +3095,7 @@ def WikiBooksSI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -3117,7 +3117,7 @@ def WikiBooksSI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteCO(
@@ -3136,7 +3136,7 @@ def WikiQuoteCO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteCO graph.
 
@@ -3199,7 +3199,7 @@ def WikiQuoteCO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -3221,7 +3221,7 @@ def WikiQuoteCO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsSV(
@@ -3240,7 +3240,7 @@ def WikiNewsSV(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsSV graph.
 
@@ -3303,7 +3303,7 @@ def WikiNewsSV(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -3325,7 +3325,7 @@ def WikiNewsSV(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiPL(
@@ -3344,7 +3344,7 @@ def WikiPL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiPL graph.
 
@@ -3405,7 +3405,7 @@ def WikiPL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -3427,7 +3427,7 @@ def WikiPL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteTH(
@@ -3446,7 +3446,7 @@ def WikiQuoteTH(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteTH graph.
 
@@ -3509,7 +3509,7 @@ def WikiQuoteTH(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -3531,7 +3531,7 @@ def WikiQuoteTH(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiLB(
@@ -3550,7 +3550,7 @@ def WikiLB(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiLB graph.
 
@@ -3613,7 +3613,7 @@ def WikiLB(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -3635,7 +3635,7 @@ def WikiLB(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksEN(
@@ -3654,7 +3654,7 @@ def WikiBooksEN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksEN graph.
 
@@ -3717,7 +3717,7 @@ def WikiBooksEN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -3739,7 +3739,7 @@ def WikiBooksEN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourcePA(
@@ -3758,7 +3758,7 @@ def WikiSourcePA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourcePA graph.
 
@@ -3821,7 +3821,7 @@ def WikiSourcePA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -3843,7 +3843,7 @@ def WikiSourcePA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsTA(
@@ -3862,7 +3862,7 @@ def WikiNewsTA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsTA graph.
 
@@ -3925,7 +3925,7 @@ def WikiNewsTA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -3947,7 +3947,7 @@ def WikiNewsTA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiversityJA(
@@ -3966,7 +3966,7 @@ def WikiversityJA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiversityJA graph.
 
@@ -4029,7 +4029,7 @@ def WikiversityJA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -4051,7 +4051,7 @@ def WikiversityJA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaNG(
@@ -4070,7 +4070,7 @@ def WikiMediaNG(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaNG graph.
 
@@ -4133,7 +4133,7 @@ def WikiMediaNG(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -4155,7 +4155,7 @@ def WikiMediaNG(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiVoyageEN(
@@ -4174,7 +4174,7 @@ def WikiVoyageEN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiVoyageEN graph.
 
@@ -4237,7 +4237,7 @@ def WikiVoyageEN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -4259,7 +4259,7 @@ def WikiVoyageEN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksLA(
@@ -4278,7 +4278,7 @@ def WikiBooksLA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksLA graph.
 
@@ -4341,7 +4341,7 @@ def WikiBooksLA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -4363,7 +4363,7 @@ def WikiBooksLA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiIS(
@@ -4382,7 +4382,7 @@ def WikiIS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiIS graph.
 
@@ -4445,7 +4445,7 @@ def WikiIS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -4467,7 +4467,7 @@ def WikiIS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteKU(
@@ -4486,7 +4486,7 @@ def WikiQuoteKU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteKU graph.
 
@@ -4549,7 +4549,7 @@ def WikiQuoteKU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -4571,7 +4571,7 @@ def WikiQuoteKU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiVoyageUK(
@@ -4590,7 +4590,7 @@ def WikiVoyageUK(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiVoyageUK graph.
 
@@ -4653,7 +4653,7 @@ def WikiVoyageUK(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -4675,7 +4675,7 @@ def WikiVoyageUK(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBO(
@@ -4694,7 +4694,7 @@ def WikiBO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBO graph.
 
@@ -4757,7 +4757,7 @@ def WikiBO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -4779,7 +4779,7 @@ def WikiBO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiCO(
@@ -4798,7 +4798,7 @@ def WikiCO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiCO graph.
 
@@ -4861,7 +4861,7 @@ def WikiCO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -4883,7 +4883,7 @@ def WikiCO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceSR(
@@ -4902,7 +4902,7 @@ def WikiSourceSR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceSR graph.
 
@@ -4965,7 +4965,7 @@ def WikiSourceSR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -4987,7 +4987,7 @@ def WikiSourceSR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiVoyageHE(
@@ -5006,7 +5006,7 @@ def WikiVoyageHE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiVoyageHE graph.
 
@@ -5069,7 +5069,7 @@ def WikiVoyageHE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -5091,7 +5091,7 @@ def WikiVoyageHE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuotePL(
@@ -5110,7 +5110,7 @@ def WikiQuotePL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuotePL graph.
 
@@ -5173,7 +5173,7 @@ def WikiQuotePL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -5195,7 +5195,7 @@ def WikiQuotePL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceEU(
@@ -5214,7 +5214,7 @@ def WikiSourceEU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceEU graph.
 
@@ -5277,7 +5277,7 @@ def WikiSourceEU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -5299,7 +5299,7 @@ def WikiSourceEU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiTH(
@@ -5318,7 +5318,7 @@ def WikiTH(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiTH graph.
 
@@ -5381,7 +5381,7 @@ def WikiTH(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -5403,7 +5403,7 @@ def WikiTH(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteLB(
@@ -5422,7 +5422,7 @@ def WikiQuoteLB(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteLB graph.
 
@@ -5485,7 +5485,7 @@ def WikiQuoteLB(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -5507,7 +5507,7 @@ def WikiQuoteLB(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksLT(
@@ -5526,7 +5526,7 @@ def WikiBooksLT(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksLT graph.
 
@@ -5589,7 +5589,7 @@ def WikiBooksLT(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -5611,7 +5611,7 @@ def WikiBooksLT(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceTE(
@@ -5630,7 +5630,7 @@ def WikiSourceTE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceTE graph.
 
@@ -5693,7 +5693,7 @@ def WikiSourceTE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -5715,7 +5715,7 @@ def WikiSourceTE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceFO(
@@ -5734,7 +5734,7 @@ def WikiSourceFO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceFO graph.
 
@@ -5797,7 +5797,7 @@ def WikiSourceFO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -5819,7 +5819,7 @@ def WikiSourceFO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteSV(
@@ -5838,7 +5838,7 @@ def WikiQuoteSV(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteSV graph.
 
@@ -5901,7 +5901,7 @@ def WikiQuoteSV(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -5923,7 +5923,7 @@ def WikiQuoteSV(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiVoyageFA(
@@ -5942,7 +5942,7 @@ def WikiVoyageFA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiVoyageFA graph.
 
@@ -6005,7 +6005,7 @@ def WikiVoyageFA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -6027,7 +6027,7 @@ def WikiVoyageFA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteTA(
@@ -6046,7 +6046,7 @@ def WikiQuoteTA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteTA graph.
 
@@ -6109,7 +6109,7 @@ def WikiQuoteTA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -6131,7 +6131,7 @@ def WikiQuoteTA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMK(
@@ -6150,7 +6150,7 @@ def WikiMK(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMK graph.
 
@@ -6213,7 +6213,7 @@ def WikiMK(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -6235,7 +6235,7 @@ def WikiMK(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsTH(
@@ -6254,7 +6254,7 @@ def WikiNewsTH(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsTH graph.
 
@@ -6317,7 +6317,7 @@ def WikiNewsTH(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -6339,7 +6339,7 @@ def WikiNewsTH(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksHY(
@@ -6358,7 +6358,7 @@ def WikiBooksHY(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksHY graph.
 
@@ -6421,7 +6421,7 @@ def WikiBooksHY(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -6443,7 +6443,7 @@ def WikiBooksHY(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiVoyagePS(
@@ -6462,7 +6462,7 @@ def WikiVoyagePS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiVoyagePS graph.
 
@@ -6525,7 +6525,7 @@ def WikiVoyagePS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -6547,7 +6547,7 @@ def WikiVoyagePS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksSU(
@@ -6566,7 +6566,7 @@ def WikiBooksSU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksSU graph.
 
@@ -6629,7 +6629,7 @@ def WikiBooksSU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -6651,7 +6651,7 @@ def WikiBooksSU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteBS(
@@ -6670,7 +6670,7 @@ def WikiQuoteBS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteBS graph.
 
@@ -6733,7 +6733,7 @@ def WikiQuoteBS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -6755,7 +6755,7 @@ def WikiQuoteBS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksRU(
@@ -6774,7 +6774,7 @@ def WikiBooksRU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksRU graph.
 
@@ -6837,7 +6837,7 @@ def WikiBooksRU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -6859,7 +6859,7 @@ def WikiBooksRU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteCS(
@@ -6878,7 +6878,7 @@ def WikiQuoteCS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteCS graph.
 
@@ -6941,7 +6941,7 @@ def WikiQuoteCS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -6963,7 +6963,7 @@ def WikiQuoteCS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiKI(
@@ -6982,7 +6982,7 @@ def WikiKI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiKI graph.
 
@@ -7045,7 +7045,7 @@ def WikiKI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -7067,7 +7067,7 @@ def WikiKI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksBE(
@@ -7086,7 +7086,7 @@ def WikiBooksBE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksBE graph.
 
@@ -7149,7 +7149,7 @@ def WikiBooksBE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -7171,7 +7171,7 @@ def WikiBooksBE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiversityDE(
@@ -7190,7 +7190,7 @@ def WikiversityDE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiversityDE graph.
 
@@ -7253,7 +7253,7 @@ def WikiversityDE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -7275,7 +7275,7 @@ def WikiversityDE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteTT(
@@ -7294,7 +7294,7 @@ def WikiQuoteTT(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteTT graph.
 
@@ -7357,7 +7357,7 @@ def WikiQuoteTT(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -7379,7 +7379,7 @@ def WikiQuoteTT(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiEL(
@@ -7398,7 +7398,7 @@ def WikiEL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiEL graph.
 
@@ -7461,7 +7461,7 @@ def WikiEL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -7483,7 +7483,7 @@ def WikiEL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceDA(
@@ -7502,7 +7502,7 @@ def WikiSourceDA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceDA graph.
 
@@ -7565,7 +7565,7 @@ def WikiSourceDA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -7587,7 +7587,7 @@ def WikiSourceDA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiHR(
@@ -7606,7 +7606,7 @@ def WikiHR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiHR graph.
 
@@ -7669,7 +7669,7 @@ def WikiHR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -7691,7 +7691,7 @@ def WikiHR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNE(
@@ -7710,7 +7710,7 @@ def WikiNE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNE graph.
 
@@ -7773,7 +7773,7 @@ def WikiNE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -7795,7 +7795,7 @@ def WikiNE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteVO(
@@ -7814,7 +7814,7 @@ def WikiQuoteVO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteVO graph.
 
@@ -7877,7 +7877,7 @@ def WikiQuoteVO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -7899,7 +7899,7 @@ def WikiQuoteVO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksFI(
@@ -7918,7 +7918,7 @@ def WikiBooksFI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksFI graph.
 
@@ -7981,7 +7981,7 @@ def WikiBooksFI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -8003,7 +8003,7 @@ def WikiBooksFI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteWO(
@@ -8022,7 +8022,7 @@ def WikiQuoteWO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteWO graph.
 
@@ -8085,7 +8085,7 @@ def WikiQuoteWO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -8107,7 +8107,7 @@ def WikiQuoteWO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteJA(
@@ -8126,7 +8126,7 @@ def WikiQuoteJA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteJA graph.
 
@@ -8189,7 +8189,7 @@ def WikiQuoteJA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -8211,7 +8211,7 @@ def WikiQuoteJA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiVoyageEO(
@@ -8230,7 +8230,7 @@ def WikiVoyageEO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiVoyageEO graph.
 
@@ -8293,7 +8293,7 @@ def WikiVoyageEO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -8315,7 +8315,7 @@ def WikiVoyageEO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteKA(
@@ -8334,7 +8334,7 @@ def WikiQuoteKA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteKA graph.
 
@@ -8397,7 +8397,7 @@ def WikiQuoteKA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -8419,7 +8419,7 @@ def WikiQuoteKA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSK(
@@ -8438,7 +8438,7 @@ def WikiSK(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSK graph.
 
@@ -8501,7 +8501,7 @@ def WikiSK(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -8523,7 +8523,7 @@ def WikiSK(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiTI(
@@ -8542,7 +8542,7 @@ def WikiTI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiTI graph.
 
@@ -8605,7 +8605,7 @@ def WikiTI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -8627,7 +8627,7 @@ def WikiTI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaID(
@@ -8646,7 +8646,7 @@ def WikiMediaID(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaID graph.
 
@@ -8709,7 +8709,7 @@ def WikiMediaID(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -8731,7 +8731,7 @@ def WikiMediaID(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksAK(
@@ -8750,7 +8750,7 @@ def WikiBooksAK(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksAK graph.
 
@@ -8813,7 +8813,7 @@ def WikiBooksAK(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -8835,7 +8835,7 @@ def WikiBooksAK(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceET(
@@ -8854,7 +8854,7 @@ def WikiSourceET(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceET graph.
 
@@ -8917,7 +8917,7 @@ def WikiSourceET(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -8939,7 +8939,7 @@ def WikiSourceET(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiIG(
@@ -8958,7 +8958,7 @@ def WikiIG(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiIG graph.
 
@@ -9021,7 +9021,7 @@ def WikiIG(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -9043,7 +9043,7 @@ def WikiIG(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBN(
@@ -9062,7 +9062,7 @@ def WikiBN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBN graph.
 
@@ -9125,7 +9125,7 @@ def WikiBN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -9147,7 +9147,7 @@ def WikiBN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksXH(
@@ -9166,7 +9166,7 @@ def WikiBooksXH(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksXH graph.
 
@@ -9229,7 +9229,7 @@ def WikiBooksXH(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -9251,7 +9251,7 @@ def WikiBooksXH(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiversitySV(
@@ -9270,7 +9270,7 @@ def WikiversitySV(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiversitySV graph.
 
@@ -9333,7 +9333,7 @@ def WikiversitySV(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -9355,7 +9355,7 @@ def WikiversitySV(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksNO(
@@ -9374,7 +9374,7 @@ def WikiBooksNO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksNO graph.
 
@@ -9437,7 +9437,7 @@ def WikiBooksNO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -9459,7 +9459,7 @@ def WikiBooksNO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteBG(
@@ -9478,7 +9478,7 @@ def WikiQuoteBG(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteBG graph.
 
@@ -9541,7 +9541,7 @@ def WikiQuoteBG(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -9563,7 +9563,7 @@ def WikiQuoteBG(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksSA(
@@ -9582,7 +9582,7 @@ def WikiBooksSA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksSA graph.
 
@@ -9645,7 +9645,7 @@ def WikiBooksSA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -9667,7 +9667,7 @@ def WikiBooksSA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteDE(
@@ -9686,7 +9686,7 @@ def WikiQuoteDE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteDE graph.
 
@@ -9749,7 +9749,7 @@ def WikiQuoteDE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -9771,7 +9771,7 @@ def WikiQuoteDE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceMR(
@@ -9790,7 +9790,7 @@ def WikiSourceMR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceMR graph.
 
@@ -9853,7 +9853,7 @@ def WikiSourceMR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -9875,7 +9875,7 @@ def WikiSourceMR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiAA(
@@ -9894,7 +9894,7 @@ def WikiAA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiAA graph.
 
@@ -9957,7 +9957,7 @@ def WikiAA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -9979,7 +9979,7 @@ def WikiAA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsEL(
@@ -9998,7 +9998,7 @@ def WikiNewsEL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsEL graph.
 
@@ -10061,7 +10061,7 @@ def WikiNewsEL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -10083,7 +10083,7 @@ def WikiNewsEL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksES(
@@ -10102,7 +10102,7 @@ def WikiBooksES(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksES graph.
 
@@ -10165,7 +10165,7 @@ def WikiBooksES(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -10187,7 +10187,7 @@ def WikiBooksES(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteCR(
@@ -10206,7 +10206,7 @@ def WikiQuoteCR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteCR graph.
 
@@ -10269,7 +10269,7 @@ def WikiQuoteCR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -10291,7 +10291,7 @@ def WikiQuoteCR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiversityCS(
@@ -10310,7 +10310,7 @@ def WikiversityCS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiversityCS graph.
 
@@ -10373,7 +10373,7 @@ def WikiversityCS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -10395,7 +10395,7 @@ def WikiversityCS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteBR(
@@ -10414,7 +10414,7 @@ def WikiQuoteBR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteBR graph.
 
@@ -10477,7 +10477,7 @@ def WikiQuoteBR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -10499,7 +10499,7 @@ def WikiQuoteBR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiGV(
@@ -10518,7 +10518,7 @@ def WikiGV(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiGV graph.
 
@@ -10581,7 +10581,7 @@ def WikiGV(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -10603,7 +10603,7 @@ def WikiGV(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteNL(
@@ -10622,7 +10622,7 @@ def WikiQuoteNL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteNL graph.
 
@@ -10685,7 +10685,7 @@ def WikiQuoteNL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -10707,7 +10707,7 @@ def WikiQuoteNL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiRW(
@@ -10726,7 +10726,7 @@ def WikiRW(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiRW graph.
 
@@ -10789,7 +10789,7 @@ def WikiRW(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -10811,7 +10811,7 @@ def WikiRW(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaNZ(
@@ -10830,7 +10830,7 @@ def WikiMediaNZ(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaNZ graph.
 
@@ -10893,7 +10893,7 @@ def WikiMediaNZ(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -10915,7 +10915,7 @@ def WikiMediaNZ(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiVoyageES(
@@ -10934,7 +10934,7 @@ def WikiVoyageES(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiVoyageES graph.
 
@@ -10997,7 +10997,7 @@ def WikiVoyageES(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -11019,7 +11019,7 @@ def WikiVoyageES(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSW(
@@ -11038,7 +11038,7 @@ def WikiSW(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSW graph.
 
@@ -11101,7 +11101,7 @@ def WikiSW(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -11123,7 +11123,7 @@ def WikiSW(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNY(
@@ -11142,7 +11142,7 @@ def WikiNY(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNY graph.
 
@@ -11205,7 +11205,7 @@ def WikiNY(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -11227,7 +11227,7 @@ def WikiNY(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksGU(
@@ -11246,7 +11246,7 @@ def WikiBooksGU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksGU graph.
 
@@ -11309,7 +11309,7 @@ def WikiBooksGU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -11331,7 +11331,7 @@ def WikiBooksGU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaBD(
@@ -11350,7 +11350,7 @@ def WikiMediaBD(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaBD graph.
 
@@ -11413,7 +11413,7 @@ def WikiMediaBD(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -11435,7 +11435,7 @@ def WikiMediaBD(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBG(
@@ -11454,7 +11454,7 @@ def WikiBG(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBG graph.
 
@@ -11517,7 +11517,7 @@ def WikiBG(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -11539,7 +11539,7 @@ def WikiBG(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksKK(
@@ -11558,7 +11558,7 @@ def WikiBooksKK(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksKK graph.
 
@@ -11621,7 +11621,7 @@ def WikiBooksKK(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -11643,7 +11643,7 @@ def WikiBooksKK(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksMI(
@@ -11662,7 +11662,7 @@ def WikiBooksMI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksMI graph.
 
@@ -11725,7 +11725,7 @@ def WikiBooksMI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -11747,7 +11747,7 @@ def WikiBooksMI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiDE(
@@ -11766,7 +11766,7 @@ def WikiDE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiDE graph.
 
@@ -11827,7 +11827,7 @@ def WikiDE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -11849,7 +11849,7 @@ def WikiDE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiEE(
@@ -11868,7 +11868,7 @@ def WikiEE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiEE graph.
 
@@ -11931,7 +11931,7 @@ def WikiEE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -11953,7 +11953,7 @@ def WikiEE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksLI(
@@ -11972,7 +11972,7 @@ def WikiBooksLI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksLI graph.
 
@@ -12035,7 +12035,7 @@ def WikiBooksLI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -12057,7 +12057,7 @@ def WikiBooksLI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiCR(
@@ -12076,7 +12076,7 @@ def WikiCR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiCR graph.
 
@@ -12139,7 +12139,7 @@ def WikiCR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -12161,7 +12161,7 @@ def WikiCR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBR(
@@ -12180,7 +12180,7 @@ def WikiBR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBR graph.
 
@@ -12243,7 +12243,7 @@ def WikiBR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -12265,7 +12265,7 @@ def WikiBR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceRO(
@@ -12284,7 +12284,7 @@ def WikiSourceRO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceRO graph.
 
@@ -12347,7 +12347,7 @@ def WikiSourceRO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -12369,7 +12369,7 @@ def WikiSourceRO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsJA(
@@ -12388,7 +12388,7 @@ def WikiNewsJA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsJA graph.
 
@@ -12451,7 +12451,7 @@ def WikiNewsJA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -12473,7 +12473,7 @@ def WikiNewsJA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNL(
@@ -12492,7 +12492,7 @@ def WikiNL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNL graph.
 
@@ -12553,7 +12553,7 @@ def WikiNL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -12575,7 +12575,7 @@ def WikiNL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaNO(
@@ -12594,7 +12594,7 @@ def WikiMediaNO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaNO graph.
 
@@ -12657,7 +12657,7 @@ def WikiMediaNO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -12679,7 +12679,7 @@ def WikiMediaNO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteEL(
@@ -12698,7 +12698,7 @@ def WikiQuoteEL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteEL graph.
 
@@ -12761,7 +12761,7 @@ def WikiQuoteEL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -12783,7 +12783,7 @@ def WikiQuoteEL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksID(
@@ -12802,7 +12802,7 @@ def WikiBooksID(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksID graph.
 
@@ -12865,7 +12865,7 @@ def WikiBooksID(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -12887,7 +12887,7 @@ def WikiBooksID(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsDE(
@@ -12906,7 +12906,7 @@ def WikiNewsDE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsDE graph.
 
@@ -12969,7 +12969,7 @@ def WikiNewsDE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -12991,7 +12991,7 @@ def WikiNewsDE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteHR(
@@ -13010,7 +13010,7 @@ def WikiQuoteHR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteHR graph.
 
@@ -13073,7 +13073,7 @@ def WikiQuoteHR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -13095,7 +13095,7 @@ def WikiQuoteHR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiLV(
@@ -13114,7 +13114,7 @@ def WikiLV(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiLV graph.
 
@@ -13177,7 +13177,7 @@ def WikiLV(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -13199,7 +13199,7 @@ def WikiLV(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsNL(
@@ -13218,7 +13218,7 @@ def WikiNewsNL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsNL graph.
 
@@ -13281,7 +13281,7 @@ def WikiNewsNL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -13303,7 +13303,7 @@ def WikiNewsNL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiVO(
@@ -13322,7 +13322,7 @@ def WikiVO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiVO graph.
 
@@ -13385,7 +13385,7 @@ def WikiVO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -13407,7 +13407,7 @@ def WikiVO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiWO(
@@ -13426,7 +13426,7 @@ def WikiWO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiWO graph.
 
@@ -13489,7 +13489,7 @@ def WikiWO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -13511,7 +13511,7 @@ def WikiWO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiJA(
@@ -13530,7 +13530,7 @@ def WikiJA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiJA graph.
 
@@ -13591,7 +13591,7 @@ def WikiJA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -13613,7 +13613,7 @@ def WikiJA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiKA(
@@ -13632,7 +13632,7 @@ def WikiKA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiKA graph.
 
@@ -13695,7 +13695,7 @@ def WikiKA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -13717,7 +13717,7 @@ def WikiKA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksBM(
@@ -13736,7 +13736,7 @@ def WikiBooksBM(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksBM graph.
 
@@ -13799,7 +13799,7 @@ def WikiBooksBM(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -13821,7 +13821,7 @@ def WikiBooksBM(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteSK(
@@ -13840,7 +13840,7 @@ def WikiQuoteSK(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteSK graph.
 
@@ -13903,7 +13903,7 @@ def WikiQuoteSK(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -13925,7 +13925,7 @@ def WikiQuoteSK(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceFR(
@@ -13944,7 +13944,7 @@ def WikiSourceFR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceFR graph.
 
@@ -14007,7 +14007,7 @@ def WikiSourceFR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -14029,7 +14029,7 @@ def WikiSourceFR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksEO(
@@ -14048,7 +14048,7 @@ def WikiBooksEO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksEO graph.
 
@@ -14111,7 +14111,7 @@ def WikiBooksEO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -14133,7 +14133,7 @@ def WikiBooksEO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiVoyageFI(
@@ -14152,7 +14152,7 @@ def WikiVoyageFI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiVoyageFI graph.
 
@@ -14215,7 +14215,7 @@ def WikiVoyageFI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -14237,7 +14237,7 @@ def WikiVoyageFI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsBG(
@@ -14256,7 +14256,7 @@ def WikiNewsBG(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsBG graph.
 
@@ -14319,7 +14319,7 @@ def WikiNewsBG(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -14341,7 +14341,7 @@ def WikiNewsBG(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiFJ(
@@ -14360,7 +14360,7 @@ def WikiFJ(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiFJ graph.
 
@@ -14423,7 +14423,7 @@ def WikiFJ(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -14445,7 +14445,7 @@ def WikiFJ(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaFI(
@@ -14464,7 +14464,7 @@ def WikiMediaFI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaFI graph.
 
@@ -14527,7 +14527,7 @@ def WikiMediaFI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -14549,7 +14549,7 @@ def WikiMediaFI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiIE(
@@ -14568,7 +14568,7 @@ def WikiIE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiIE graph.
 
@@ -14631,7 +14631,7 @@ def WikiIE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -14653,7 +14653,7 @@ def WikiIE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiHE(
@@ -14672,7 +14672,7 @@ def WikiHE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiHE graph.
 
@@ -14735,7 +14735,7 @@ def WikiHE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -14757,7 +14757,7 @@ def WikiHE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiUK(
@@ -14776,7 +14776,7 @@ def WikiUK(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiUK graph.
 
@@ -14839,7 +14839,7 @@ def WikiUK(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -14861,7 +14861,7 @@ def WikiUK(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteLA(
@@ -14880,7 +14880,7 @@ def WikiQuoteLA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteLA graph.
 
@@ -14943,7 +14943,7 @@ def WikiQuoteLA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -14965,7 +14965,7 @@ def WikiQuoteLA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiTK(
@@ -14984,7 +14984,7 @@ def WikiTK(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiTK graph.
 
@@ -15047,7 +15047,7 @@ def WikiTK(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -15069,7 +15069,7 @@ def WikiTK(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiversityFI(
@@ -15088,7 +15088,7 @@ def WikiversityFI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiversityFI graph.
 
@@ -15151,7 +15151,7 @@ def WikiversityFI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -15173,7 +15173,7 @@ def WikiversityFI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaCO(
@@ -15192,7 +15192,7 @@ def WikiMediaCO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaCO graph.
 
@@ -15255,7 +15255,7 @@ def WikiMediaCO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -15277,7 +15277,7 @@ def WikiMediaCO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceCA(
@@ -15296,7 +15296,7 @@ def WikiSourceCA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceCA graph.
 
@@ -15359,7 +15359,7 @@ def WikiSourceCA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -15381,7 +15381,7 @@ def WikiSourceCA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiOR(
@@ -15400,7 +15400,7 @@ def WikiOR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiOR graph.
 
@@ -15463,7 +15463,7 @@ def WikiOR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -15485,7 +15485,7 @@ def WikiOR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsFA(
@@ -15504,7 +15504,7 @@ def WikiNewsFA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsFA graph.
 
@@ -15567,7 +15567,7 @@ def WikiNewsFA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -15589,7 +15589,7 @@ def WikiNewsFA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteLT(
@@ -15608,7 +15608,7 @@ def WikiQuoteLT(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteLT graph.
 
@@ -15671,7 +15671,7 @@ def WikiQuoteLT(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -15693,7 +15693,7 @@ def WikiQuoteLT(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksPL(
@@ -15712,7 +15712,7 @@ def WikiBooksPL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksPL graph.
 
@@ -15775,7 +15775,7 @@ def WikiBooksPL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -15797,7 +15797,7 @@ def WikiBooksPL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksLB(
@@ -15816,7 +15816,7 @@ def WikiBooksLB(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksLB graph.
 
@@ -15879,7 +15879,7 @@ def WikiBooksLB(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -15901,7 +15901,7 @@ def WikiBooksLB(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiEN(
@@ -15920,7 +15920,7 @@ def WikiEN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiEN graph.
 
@@ -15980,7 +15980,7 @@ def WikiEN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -16002,7 +16002,7 @@ def WikiEN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSI(
@@ -16021,7 +16021,7 @@ def WikiSI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSI graph.
 
@@ -16084,7 +16084,7 @@ def WikiSI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -16106,7 +16106,7 @@ def WikiSI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNG(
@@ -16125,7 +16125,7 @@ def WikiNG(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNG graph.
 
@@ -16188,7 +16188,7 @@ def WikiNG(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -16210,7 +16210,7 @@ def WikiNG(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiCY(
@@ -16229,7 +16229,7 @@ def WikiCY(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiCY graph.
 
@@ -16292,7 +16292,7 @@ def WikiCY(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -16314,7 +16314,7 @@ def WikiCY(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksKU(
@@ -16333,7 +16333,7 @@ def WikiBooksKU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksKU graph.
 
@@ -16396,7 +16396,7 @@ def WikiBooksKU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -16418,7 +16418,7 @@ def WikiBooksKU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsEN(
@@ -16437,7 +16437,7 @@ def WikiNewsEN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsEN graph.
 
@@ -16500,7 +16500,7 @@ def WikiNewsEN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -16522,7 +16522,7 @@ def WikiNewsEN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteHY(
@@ -16541,7 +16541,7 @@ def WikiQuoteHY(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteHY graph.
 
@@ -16604,7 +16604,7 @@ def WikiQuoteHY(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -16626,7 +16626,7 @@ def WikiQuoteHY(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiPS(
@@ -16645,7 +16645,7 @@ def WikiPS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiPS graph.
 
@@ -16708,7 +16708,7 @@ def WikiPS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -16730,7 +16730,7 @@ def WikiPS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksTA(
@@ -16749,7 +16749,7 @@ def WikiBooksTA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksTA graph.
 
@@ -16812,7 +16812,7 @@ def WikiBooksTA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -16834,7 +16834,7 @@ def WikiBooksTA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiKJ(
@@ -16853,7 +16853,7 @@ def WikiKJ(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiKJ graph.
 
@@ -16916,7 +16916,7 @@ def WikiKJ(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -16938,7 +16938,7 @@ def WikiKJ(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteNN(
@@ -16957,7 +16957,7 @@ def WikiQuoteNN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteNN graph.
 
@@ -17020,7 +17020,7 @@ def WikiQuoteNN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -17042,7 +17042,7 @@ def WikiQuoteNN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksSV(
@@ -17061,7 +17061,7 @@ def WikiBooksSV(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksSV graph.
 
@@ -17124,7 +17124,7 @@ def WikiBooksSV(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -17146,7 +17146,7 @@ def WikiBooksSV(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceVI(
@@ -17165,7 +17165,7 @@ def WikiSourceVI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceVI graph.
 
@@ -17228,7 +17228,7 @@ def WikiSourceVI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -17250,7 +17250,7 @@ def WikiSourceVI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsHE(
@@ -17269,7 +17269,7 @@ def WikiNewsHE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsHE graph.
 
@@ -17332,7 +17332,7 @@ def WikiNewsHE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -17354,7 +17354,7 @@ def WikiNewsHE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiversityES(
@@ -17373,7 +17373,7 @@ def WikiversityES(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiversityES graph.
 
@@ -17436,7 +17436,7 @@ def WikiversityES(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -17458,7 +17458,7 @@ def WikiversityES(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksTT(
@@ -17477,7 +17477,7 @@ def WikiBooksTT(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksTT graph.
 
@@ -17540,7 +17540,7 @@ def WikiBooksTT(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -17562,7 +17562,7 @@ def WikiBooksTT(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiAV(
@@ -17581,7 +17581,7 @@ def WikiAV(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiAV graph.
 
@@ -17644,7 +17644,7 @@ def WikiAV(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -17666,7 +17666,7 @@ def WikiAV(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsUK(
@@ -17685,7 +17685,7 @@ def WikiNewsUK(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsUK graph.
 
@@ -17748,7 +17748,7 @@ def WikiNewsUK(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -17770,7 +17770,7 @@ def WikiNewsUK(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaMK(
@@ -17789,7 +17789,7 @@ def WikiMediaMK(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaMK graph.
 
@@ -17852,7 +17852,7 @@ def WikiMediaMK(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -17874,7 +17874,7 @@ def WikiMediaMK(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMH(
@@ -17893,7 +17893,7 @@ def WikiMH(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMH graph.
 
@@ -17956,7 +17956,7 @@ def WikiMH(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -17978,7 +17978,7 @@ def WikiMH(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteBE(
@@ -17997,7 +17997,7 @@ def WikiQuoteBE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteBE graph.
 
@@ -18060,7 +18060,7 @@ def WikiQuoteBE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -18082,7 +18082,7 @@ def WikiQuoteBE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiGA(
@@ -18101,7 +18101,7 @@ def WikiGA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiGA graph.
 
@@ -18164,7 +18164,7 @@ def WikiGA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -18186,7 +18186,7 @@ def WikiGA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiFA(
@@ -18205,7 +18205,7 @@ def WikiFA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiFA graph.
 
@@ -18268,7 +18268,7 @@ def WikiFA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -18290,7 +18290,7 @@ def WikiFA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksBS(
@@ -18309,7 +18309,7 @@ def WikiBooksBS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksBS graph.
 
@@ -18372,7 +18372,7 @@ def WikiBooksBS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -18394,7 +18394,7 @@ def WikiBooksBS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteSU(
@@ -18413,7 +18413,7 @@ def WikiQuoteSU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteSU graph.
 
@@ -18476,7 +18476,7 @@ def WikiQuoteSU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -18498,7 +18498,7 @@ def WikiQuoteSU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksCS(
@@ -18517,7 +18517,7 @@ def WikiBooksCS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksCS graph.
 
@@ -18580,7 +18580,7 @@ def WikiBooksCS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -18602,7 +18602,7 @@ def WikiBooksCS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceGL(
@@ -18621,7 +18621,7 @@ def WikiSourceGL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceGL graph.
 
@@ -18684,7 +18684,7 @@ def WikiSourceGL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -18706,7 +18706,7 @@ def WikiSourceGL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteRU(
@@ -18725,7 +18725,7 @@ def WikiQuoteRU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteRU graph.
 
@@ -18788,7 +18788,7 @@ def WikiQuoteRU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -18810,7 +18810,7 @@ def WikiQuoteRU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiTW(
@@ -18829,7 +18829,7 @@ def WikiTW(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiTW graph.
 
@@ -18892,7 +18892,7 @@ def WikiTW(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -18914,7 +18914,7 @@ def WikiTW(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiHY(
@@ -18933,7 +18933,7 @@ def WikiHY(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiHY graph.
 
@@ -18996,7 +18996,7 @@ def WikiHY(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -19018,7 +19018,7 @@ def WikiHY(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiYI(
@@ -19037,7 +19037,7 @@ def WikiYI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiYI graph.
 
@@ -19100,7 +19100,7 @@ def WikiYI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -19122,7 +19122,7 @@ def WikiYI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceHT(
@@ -19141,7 +19141,7 @@ def WikiSourceHT(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceHT graph.
 
@@ -19204,7 +19204,7 @@ def WikiSourceHT(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -19226,7 +19226,7 @@ def WikiSourceHT(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksMK(
@@ -19245,7 +19245,7 @@ def WikiBooksMK(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksMK graph.
 
@@ -19308,7 +19308,7 @@ def WikiBooksMK(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -19330,7 +19330,7 @@ def WikiBooksMK(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceIT(
@@ -19349,7 +19349,7 @@ def WikiSourceIT(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceIT graph.
 
@@ -19412,7 +19412,7 @@ def WikiSourceIT(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -19434,7 +19434,7 @@ def WikiSourceIT(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNN(
@@ -19453,7 +19453,7 @@ def WikiNN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNN graph.
 
@@ -19516,7 +19516,7 @@ def WikiNN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -19538,7 +19538,7 @@ def WikiNN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiVoyageSV(
@@ -19557,7 +19557,7 @@ def WikiVoyageSV(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiVoyageSV graph.
 
@@ -19620,7 +19620,7 @@ def WikiVoyageSV(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -19642,7 +19642,7 @@ def WikiVoyageSV(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaUA(
@@ -19661,7 +19661,7 @@ def WikiMediaUA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaUA graph.
 
@@ -19724,7 +19724,7 @@ def WikiMediaUA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -19746,7 +19746,7 @@ def WikiMediaUA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiCE(
@@ -19765,7 +19765,7 @@ def WikiCE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiCE graph.
 
@@ -19828,7 +19828,7 @@ def WikiCE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -19850,7 +19850,7 @@ def WikiCE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBE(
@@ -19869,7 +19869,7 @@ def WikiBE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBE graph.
 
@@ -19932,7 +19932,7 @@ def WikiBE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -19954,7 +19954,7 @@ def WikiBE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteGA(
@@ -19973,7 +19973,7 @@ def WikiQuoteGA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteGA graph.
 
@@ -20036,7 +20036,7 @@ def WikiQuoteGA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -20058,7 +20058,7 @@ def WikiQuoteGA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteFA(
@@ -20077,7 +20077,7 @@ def WikiQuoteFA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteFA graph.
 
@@ -20140,7 +20140,7 @@ def WikiQuoteFA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -20162,7 +20162,7 @@ def WikiQuoteFA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSU(
@@ -20181,7 +20181,7 @@ def WikiSU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSU graph.
 
@@ -20244,7 +20244,7 @@ def WikiSU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -20266,7 +20266,7 @@ def WikiSU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiRU(
@@ -20285,7 +20285,7 @@ def WikiRU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiRU graph.
 
@@ -20346,7 +20346,7 @@ def WikiRU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -20368,7 +20368,7 @@ def WikiRU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksIS(
@@ -20387,7 +20387,7 @@ def WikiBooksIS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksIS graph.
 
@@ -20450,7 +20450,7 @@ def WikiBooksIS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -20472,7 +20472,7 @@ def WikiBooksIS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceML(
@@ -20491,7 +20491,7 @@ def WikiSourceML(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceML graph.
 
@@ -20554,7 +20554,7 @@ def WikiSourceML(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -20576,7 +20576,7 @@ def WikiSourceML(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteHE(
@@ -20595,7 +20595,7 @@ def WikiQuoteHE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteHE graph.
 
@@ -20658,7 +20658,7 @@ def WikiQuoteHE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -20680,7 +20680,7 @@ def WikiQuoteHE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteUK(
@@ -20699,7 +20699,7 @@ def WikiQuoteUK(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteUK graph.
 
@@ -20762,7 +20762,7 @@ def WikiQuoteUK(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -20784,7 +20784,7 @@ def WikiQuoteUK(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiLA(
@@ -20803,7 +20803,7 @@ def WikiLA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiLA graph.
 
@@ -20866,7 +20866,7 @@ def WikiLA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -20888,7 +20888,7 @@ def WikiLA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaPL(
@@ -20907,7 +20907,7 @@ def WikiMediaPL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaPL graph.
 
@@ -20970,7 +20970,7 @@ def WikiMediaPL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -20992,7 +20992,7 @@ def WikiMediaPL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceAR(
@@ -21011,7 +21011,7 @@ def WikiSourceAR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceAR graph.
 
@@ -21074,7 +21074,7 @@ def WikiSourceAR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -21096,7 +21096,7 @@ def WikiSourceAR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteTK(
@@ -21115,7 +21115,7 @@ def WikiQuoteTK(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteTK graph.
 
@@ -21178,7 +21178,7 @@ def WikiQuoteTK(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -21200,7 +21200,7 @@ def WikiQuoteTK(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsRU(
@@ -21219,7 +21219,7 @@ def WikiNewsRU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsRU graph.
 
@@ -21282,7 +21282,7 @@ def WikiNewsRU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -21304,7 +21304,7 @@ def WikiNewsRU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiVoyagePL(
@@ -21323,7 +21323,7 @@ def WikiVoyagePL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiVoyagePL graph.
 
@@ -21386,7 +21386,7 @@ def WikiVoyagePL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -21408,7 +21408,7 @@ def WikiVoyagePL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiJV(
@@ -21427,7 +21427,7 @@ def WikiJV(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiJV graph.
 
@@ -21490,7 +21490,7 @@ def WikiJV(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -21512,7 +21512,7 @@ def WikiJV(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiKV(
@@ -21531,7 +21531,7 @@ def WikiKV(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiKV graph.
 
@@ -21594,7 +21594,7 @@ def WikiKV(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -21616,7 +21616,7 @@ def WikiKV(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiLT(
@@ -21635,7 +21635,7 @@ def WikiLT(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiLT graph.
 
@@ -21698,7 +21698,7 @@ def WikiLT(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -21720,7 +21720,7 @@ def WikiLT(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMT(
@@ -21739,7 +21739,7 @@ def WikiMT(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMT graph.
 
@@ -21802,7 +21802,7 @@ def WikiMT(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -21824,7 +21824,7 @@ def WikiMT(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteEN(
@@ -21843,7 +21843,7 @@ def WikiQuoteEN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteEN graph.
 
@@ -21906,7 +21906,7 @@ def WikiQuoteEN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -21928,7 +21928,7 @@ def WikiQuoteEN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksTH(
@@ -21947,7 +21947,7 @@ def WikiBooksTH(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksTH graph.
 
@@ -22010,7 +22010,7 @@ def WikiBooksTH(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -22032,7 +22032,7 @@ def WikiBooksTH(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksBO(
@@ -22051,7 +22051,7 @@ def WikiBooksBO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksBO graph.
 
@@ -22114,7 +22114,7 @@ def WikiBooksBO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -22136,7 +22136,7 @@ def WikiBooksBO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksCO(
@@ -22155,7 +22155,7 @@ def WikiBooksCO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksCO graph.
 
@@ -22218,7 +22218,7 @@ def WikiBooksCO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -22240,7 +22240,7 @@ def WikiBooksCO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceKN(
@@ -22259,7 +22259,7 @@ def WikiSourceKN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceKN graph.
 
@@ -22322,7 +22322,7 @@ def WikiSourceKN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -22344,7 +22344,7 @@ def WikiSourceKN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteCY(
@@ -22363,7 +22363,7 @@ def WikiQuoteCY(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteCY graph.
 
@@ -22426,7 +22426,7 @@ def WikiQuoteCY(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -22448,7 +22448,7 @@ def WikiQuoteCY(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNO(
@@ -22467,7 +22467,7 @@ def WikiNO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNO graph.
 
@@ -22530,7 +22530,7 @@ def WikiNO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -22552,7 +22552,7 @@ def WikiNO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSA(
@@ -22571,7 +22571,7 @@ def WikiSA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSA graph.
 
@@ -22634,7 +22634,7 @@ def WikiSA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -22656,7 +22656,7 @@ def WikiSA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiVoyageDE(
@@ -22675,7 +22675,7 @@ def WikiVoyageDE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiVoyageDE graph.
 
@@ -22738,7 +22738,7 @@ def WikiVoyageDE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -22760,7 +22760,7 @@ def WikiVoyageDE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteKK(
@@ -22779,7 +22779,7 @@ def WikiQuoteKK(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteKK graph.
 
@@ -22842,7 +22842,7 @@ def WikiQuoteKK(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -22864,7 +22864,7 @@ def WikiQuoteKK(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaNL(
@@ -22883,7 +22883,7 @@ def WikiMediaNL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaNL graph.
 
@@ -22946,7 +22946,7 @@ def WikiMediaNL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -22968,7 +22968,7 @@ def WikiMediaNL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteGU(
@@ -22987,7 +22987,7 @@ def WikiQuoteGU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteGU graph.
 
@@ -23050,7 +23050,7 @@ def WikiQuoteGU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -23072,7 +23072,7 @@ def WikiQuoteGU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaBR(
@@ -23091,7 +23091,7 @@ def WikiMediaBR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaBR graph.
 
@@ -23154,7 +23154,7 @@ def WikiMediaBR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -23176,7 +23176,7 @@ def WikiMediaBR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceSL(
@@ -23195,7 +23195,7 @@ def WikiSourceSL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceSL graph.
 
@@ -23258,7 +23258,7 @@ def WikiSourceSL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -23280,7 +23280,7 @@ def WikiSourceSL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceHU(
@@ -23299,7 +23299,7 @@ def WikiSourceHU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceHU graph.
 
@@ -23362,7 +23362,7 @@ def WikiSourceHU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -23384,7 +23384,7 @@ def WikiSourceHU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiXH(
@@ -23403,7 +23403,7 @@ def WikiXH(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiXH graph.
 
@@ -23466,7 +23466,7 @@ def WikiXH(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -23488,7 +23488,7 @@ def WikiXH(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiVoyageNL(
@@ -23507,7 +23507,7 @@ def WikiVoyageNL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiVoyageNL graph.
 
@@ -23570,7 +23570,7 @@ def WikiVoyageNL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -23592,7 +23592,7 @@ def WikiVoyageNL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsFI(
@@ -23611,7 +23611,7 @@ def WikiNewsFI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsFI graph.
 
@@ -23674,7 +23674,7 @@ def WikiNewsFI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -23696,7 +23696,7 @@ def WikiNewsFI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiST(
@@ -23715,7 +23715,7 @@ def WikiST(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiST graph.
 
@@ -23778,7 +23778,7 @@ def WikiST(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -23800,7 +23800,7 @@ def WikiST(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiES(
@@ -23819,7 +23819,7 @@ def WikiES(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiES graph.
 
@@ -23880,7 +23880,7 @@ def WikiES(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -23902,7 +23902,7 @@ def WikiES(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteLI(
@@ -23921,7 +23921,7 @@ def WikiQuoteLI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteLI graph.
 
@@ -23984,7 +23984,7 @@ def WikiQuoteLI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -24006,7 +24006,7 @@ def WikiQuoteLI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksAA(
@@ -24025,7 +24025,7 @@ def WikiBooksAA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksAA graph.
 
@@ -24088,7 +24088,7 @@ def WikiBooksAA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -24110,7 +24110,7 @@ def WikiBooksAA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksNE(
@@ -24129,7 +24129,7 @@ def WikiBooksNE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksNE graph.
 
@@ -24192,7 +24192,7 @@ def WikiBooksNE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -24214,7 +24214,7 @@ def WikiBooksNE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiFI(
@@ -24233,7 +24233,7 @@ def WikiFI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiFI graph.
 
@@ -24296,7 +24296,7 @@ def WikiFI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -24318,7 +24318,7 @@ def WikiFI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksSK(
@@ -24337,7 +24337,7 @@ def WikiBooksSK(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksSK graph.
 
@@ -24400,7 +24400,7 @@ def WikiBooksSK(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -24422,7 +24422,7 @@ def WikiBooksSK(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteBM(
@@ -24441,7 +24441,7 @@ def WikiQuoteBM(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteBM graph.
 
@@ -24504,7 +24504,7 @@ def WikiQuoteBM(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -24526,7 +24526,7 @@ def WikiQuoteBM(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiKW(
@@ -24545,7 +24545,7 @@ def WikiKW(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiKW graph.
 
@@ -24608,7 +24608,7 @@ def WikiKW(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -24630,7 +24630,7 @@ def WikiKW(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksHR(
@@ -24649,7 +24649,7 @@ def WikiBooksHR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksHR graph.
 
@@ -24712,7 +24712,7 @@ def WikiBooksHR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -24734,7 +24734,7 @@ def WikiBooksHR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceAS(
@@ -24753,7 +24753,7 @@ def WikiSourceAS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceAS graph.
 
@@ -24816,7 +24816,7 @@ def WikiSourceAS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -24838,7 +24838,7 @@ def WikiSourceAS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksEL(
@@ -24857,7 +24857,7 @@ def WikiBooksEL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksEL graph.
 
@@ -24920,7 +24920,7 @@ def WikiBooksEL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -24942,7 +24942,7 @@ def WikiBooksEL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteID(
@@ -24961,7 +24961,7 @@ def WikiQuoteID(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteID graph.
 
@@ -25024,7 +25024,7 @@ def WikiQuoteID(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -25046,7 +25046,7 @@ def WikiQuoteID(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsES(
@@ -25065,7 +25065,7 @@ def WikiNewsES(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsES graph.
 
@@ -25128,7 +25128,7 @@ def WikiNewsES(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -25150,7 +25150,7 @@ def WikiNewsES(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksBN(
@@ -25169,7 +25169,7 @@ def WikiBooksBN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksBN graph.
 
@@ -25232,7 +25232,7 @@ def WikiBooksBN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -25254,7 +25254,7 @@ def WikiBooksBN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceWA(
@@ -25273,7 +25273,7 @@ def WikiSourceWA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceWA graph.
 
@@ -25336,7 +25336,7 @@ def WikiSourceWA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -25358,7 +25358,7 @@ def WikiSourceWA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsNO(
@@ -25377,7 +25377,7 @@ def WikiNewsNO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsNO graph.
 
@@ -25440,7 +25440,7 @@ def WikiNewsNO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -25462,7 +25462,7 @@ def WikiNewsNO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceKO(
@@ -25481,7 +25481,7 @@ def WikiSourceKO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceKO graph.
 
@@ -25544,7 +25544,7 @@ def WikiSourceKO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -25566,7 +25566,7 @@ def WikiSourceKO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiVoyageJA(
@@ -25585,7 +25585,7 @@ def WikiVoyageJA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiVoyageJA graph.
 
@@ -25648,7 +25648,7 @@ def WikiVoyageJA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -25670,7 +25670,7 @@ def WikiVoyageJA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteEO(
@@ -25689,7 +25689,7 @@ def WikiQuoteEO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteEO graph.
 
@@ -25752,7 +25752,7 @@ def WikiQuoteEO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -25774,7 +25774,7 @@ def WikiQuoteEO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiversityEN(
@@ -25793,7 +25793,7 @@ def WikiversityEN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiversityEN graph.
 
@@ -25856,7 +25856,7 @@ def WikiversityEN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -25878,7 +25878,7 @@ def WikiversityEN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiAK(
@@ -25897,7 +25897,7 @@ def WikiAK(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiAK graph.
 
@@ -25960,7 +25960,7 @@ def WikiAK(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -25982,7 +25982,7 @@ def WikiAK(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaCN(
@@ -26001,7 +26001,7 @@ def WikiMediaCN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaCN graph.
 
@@ -26064,7 +26064,7 @@ def WikiMediaCN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -26086,7 +26086,7 @@ def WikiMediaCN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksVO(
@@ -26105,7 +26105,7 @@ def WikiBooksVO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksVO graph.
 
@@ -26168,7 +26168,7 @@ def WikiBooksVO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -26190,7 +26190,7 @@ def WikiBooksVO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteFI(
@@ -26209,7 +26209,7 @@ def WikiQuoteFI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteFI graph.
 
@@ -26272,7 +26272,7 @@ def WikiQuoteFI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -26294,7 +26294,7 @@ def WikiQuoteFI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksJA(
@@ -26313,7 +26313,7 @@ def WikiBooksJA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksJA graph.
 
@@ -26376,7 +26376,7 @@ def WikiBooksJA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -26398,7 +26398,7 @@ def WikiBooksJA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksKA(
@@ -26417,7 +26417,7 @@ def WikiBooksKA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksKA graph.
 
@@ -26480,7 +26480,7 @@ def WikiBooksKA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -26502,7 +26502,7 @@ def WikiBooksKA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBM(
@@ -26521,7 +26521,7 @@ def WikiBM(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBM graph.
 
@@ -26584,7 +26584,7 @@ def WikiBM(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -26606,7 +26606,7 @@ def WikiBM(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteKW(
@@ -26625,7 +26625,7 @@ def WikiQuoteKW(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteKW graph.
 
@@ -26688,7 +26688,7 @@ def WikiQuoteKW(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -26710,7 +26710,7 @@ def WikiQuoteKW(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiOS(
@@ -26729,7 +26729,7 @@ def WikiOS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiOS graph.
 
@@ -26792,7 +26792,7 @@ def WikiOS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -26814,7 +26814,7 @@ def WikiOS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsLI(
@@ -26833,7 +26833,7 @@ def WikiNewsLI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsLI graph.
 
@@ -26896,7 +26896,7 @@ def WikiNewsLI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -26918,7 +26918,7 @@ def WikiNewsLI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiDZ(
@@ -26937,7 +26937,7 @@ def WikiDZ(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiDZ graph.
 
@@ -27000,7 +27000,7 @@ def WikiDZ(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -27022,7 +27022,7 @@ def WikiDZ(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceHI(
@@ -27041,7 +27041,7 @@ def WikiSourceHI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceHI graph.
 
@@ -27104,7 +27104,7 @@ def WikiSourceHI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -27126,7 +27126,7 @@ def WikiSourceHI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksLV(
@@ -27145,7 +27145,7 @@ def WikiBooksLV(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksLV graph.
 
@@ -27208,7 +27208,7 @@ def WikiBooksLV(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -27230,7 +27230,7 @@ def WikiBooksLV(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiVoyageBN(
@@ -27249,7 +27249,7 @@ def WikiVoyageBN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiVoyageBN graph.
 
@@ -27312,7 +27312,7 @@ def WikiVoyageBN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -27334,7 +27334,7 @@ def WikiVoyageBN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiID(
@@ -27353,7 +27353,7 @@ def WikiID(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiID graph.
 
@@ -27416,7 +27416,7 @@ def WikiID(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -27438,7 +27438,7 @@ def WikiID(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiVoyageEL(
@@ -27457,7 +27457,7 @@ def WikiVoyageEL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiVoyageEL graph.
 
@@ -27520,7 +27520,7 @@ def WikiVoyageEL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -27542,7 +27542,7 @@ def WikiVoyageEL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSH(
@@ -27561,7 +27561,7 @@ def WikiSH(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSH graph.
 
@@ -27624,7 +27624,7 @@ def WikiSH(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -27646,7 +27646,7 @@ def WikiSH(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiEO(
@@ -27665,7 +27665,7 @@ def WikiEO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiEO graph.
 
@@ -27728,7 +27728,7 @@ def WikiEO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -27750,7 +27750,7 @@ def WikiEO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceTR(
@@ -27769,7 +27769,7 @@ def WikiSourceTR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceTR graph.
 
@@ -27832,7 +27832,7 @@ def WikiSourceTR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -27854,7 +27854,7 @@ def WikiSourceTR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiVE(
@@ -27873,7 +27873,7 @@ def WikiVE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiVE graph.
 
@@ -27936,7 +27936,7 @@ def WikiVE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -27958,7 +27958,7 @@ def WikiVE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteNO(
@@ -27977,7 +27977,7 @@ def WikiQuoteNO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteNO graph.
 
@@ -28040,7 +28040,7 @@ def WikiQuoteNO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -28062,7 +28062,7 @@ def WikiQuoteNO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteSA(
@@ -28081,7 +28081,7 @@ def WikiQuoteSA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteSA graph.
 
@@ -28144,7 +28144,7 @@ def WikiQuoteSA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -28166,7 +28166,7 @@ def WikiQuoteSA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksBG(
@@ -28185,7 +28185,7 @@ def WikiBooksBG(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksBG graph.
 
@@ -28248,7 +28248,7 @@ def WikiBooksBG(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -28270,7 +28270,7 @@ def WikiBooksBG(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiKK(
@@ -28289,7 +28289,7 @@ def WikiKK(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiKK graph.
 
@@ -28352,7 +28352,7 @@ def WikiKK(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -28374,7 +28374,7 @@ def WikiKK(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksSW(
@@ -28393,7 +28393,7 @@ def WikiBooksSW(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksSW graph.
 
@@ -28456,7 +28456,7 @@ def WikiBooksSW(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -28478,7 +28478,7 @@ def WikiBooksSW(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiGU(
@@ -28497,7 +28497,7 @@ def WikiGU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiGU graph.
 
@@ -28560,7 +28560,7 @@ def WikiGU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -28582,7 +28582,7 @@ def WikiGU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsEO(
@@ -28601,7 +28601,7 @@ def WikiNewsEO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsEO graph.
 
@@ -28664,7 +28664,7 @@ def WikiNewsEO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -28686,7 +28686,7 @@ def WikiNewsEO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiAB(
@@ -28705,7 +28705,7 @@ def WikiAB(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiAB graph.
 
@@ -28768,7 +28768,7 @@ def WikiAB(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -28790,7 +28790,7 @@ def WikiAB(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksNL(
@@ -28809,7 +28809,7 @@ def WikiBooksNL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksNL graph.
 
@@ -28872,7 +28872,7 @@ def WikiBooksNL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -28894,7 +28894,7 @@ def WikiBooksNL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiversityRU(
@@ -28913,7 +28913,7 @@ def WikiversityRU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiversityRU graph.
 
@@ -28976,7 +28976,7 @@ def WikiversityRU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -28998,7 +28998,7 @@ def WikiversityRU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteES(
@@ -29017,7 +29017,7 @@ def WikiQuoteES(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteES graph.
 
@@ -29080,7 +29080,7 @@ def WikiQuoteES(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -29102,7 +29102,7 @@ def WikiQuoteES(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMI(
@@ -29121,7 +29121,7 @@ def WikiMI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMI graph.
 
@@ -29184,7 +29184,7 @@ def WikiMI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -29206,7 +29206,7 @@ def WikiMI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksDE(
@@ -29225,7 +29225,7 @@ def WikiBooksDE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksDE graph.
 
@@ -29288,7 +29288,7 @@ def WikiBooksDE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -29310,7 +29310,7 @@ def WikiBooksDE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceAZ(
@@ -29329,7 +29329,7 @@ def WikiSourceAZ(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceAZ graph.
 
@@ -29392,7 +29392,7 @@ def WikiSourceAZ(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -29414,7 +29414,7 @@ def WikiSourceAZ(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiLI(
@@ -29433,7 +29433,7 @@ def WikiLI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiLI graph.
 
@@ -29496,7 +29496,7 @@ def WikiLI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -29518,7 +29518,7 @@ def WikiLI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksSR(
@@ -29537,7 +29537,7 @@ def WikiBooksSR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksSR graph.
 
@@ -29600,7 +29600,7 @@ def WikiBooksSR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -29622,7 +29622,7 @@ def WikiBooksSR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiVoyagePT(
@@ -29641,7 +29641,7 @@ def WikiVoyagePT(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiVoyagePT graph.
 
@@ -29704,7 +29704,7 @@ def WikiVoyagePT(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -29726,7 +29726,7 @@ def WikiVoyagePT(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiKN(
@@ -29745,7 +29745,7 @@ def WikiKN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiKN graph.
 
@@ -29808,7 +29808,7 @@ def WikiKN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -29830,7 +29830,7 @@ def WikiKN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksTE(
@@ -29849,7 +29849,7 @@ def WikiBooksTE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksTE graph.
 
@@ -29912,7 +29912,7 @@ def WikiBooksTE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -29934,7 +29934,7 @@ def WikiBooksTE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsIT(
@@ -29953,7 +29953,7 @@ def WikiNewsIT(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsIT graph.
 
@@ -30016,7 +30016,7 @@ def WikiNewsIT(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -30038,7 +30038,7 @@ def WikiNewsIT(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceLT(
@@ -30057,7 +30057,7 @@ def WikiSourceLT(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceLT graph.
 
@@ -30120,7 +30120,7 @@ def WikiSourceLT(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -30142,7 +30142,7 @@ def WikiSourceLT(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMY(
@@ -30161,7 +30161,7 @@ def WikiMY(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMY graph.
 
@@ -30224,7 +30224,7 @@ def WikiMY(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -30246,7 +30246,7 @@ def WikiMY(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksEU(
@@ -30265,7 +30265,7 @@ def WikiBooksEU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksEU graph.
 
@@ -30328,7 +30328,7 @@ def WikiBooksEU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -30350,7 +30350,7 @@ def WikiBooksEU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaPT(
@@ -30369,7 +30369,7 @@ def WikiMediaPT(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaPT graph.
 
@@ -30432,7 +30432,7 @@ def WikiMediaPT(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -30454,7 +30454,7 @@ def WikiMediaPT(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteSQ(
@@ -30473,7 +30473,7 @@ def WikiQuoteSQ(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteSQ graph.
 
@@ -30536,7 +30536,7 @@ def WikiQuoteSQ(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -30558,7 +30558,7 @@ def WikiQuoteSQ(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceJV(
@@ -30577,7 +30577,7 @@ def WikiSourceJV(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceJV graph.
 
@@ -30639,7 +30639,7 @@ def WikiSourceJV(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -30661,7 +30661,7 @@ def WikiSourceJV(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteCA(
@@ -30680,7 +30680,7 @@ def WikiQuoteCA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteCA graph.
 
@@ -30743,7 +30743,7 @@ def WikiQuoteCA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -30765,7 +30765,7 @@ def WikiQuoteCA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiVoyageZH(
@@ -30784,7 +30784,7 @@ def WikiVoyageZH(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiVoyageZH graph.
 
@@ -30847,7 +30847,7 @@ def WikiVoyageZH(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -30869,7 +30869,7 @@ def WikiVoyageZH(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiML(
@@ -30888,7 +30888,7 @@ def WikiML(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiML graph.
 
@@ -30951,7 +30951,7 @@ def WikiML(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -30973,7 +30973,7 @@ def WikiML(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiversityHI(
@@ -30992,7 +30992,7 @@ def WikiversityHI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiversityHI graph.
 
@@ -31055,7 +31055,7 @@ def WikiversityHI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -31077,7 +31077,7 @@ def WikiversityHI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceLA(
@@ -31096,7 +31096,7 @@ def WikiSourceLA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceLA graph.
 
@@ -31159,7 +31159,7 @@ def WikiSourceLA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -31181,7 +31181,7 @@ def WikiSourceLA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiAR(
@@ -31200,7 +31200,7 @@ def WikiAR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiAR graph.
 
@@ -31263,7 +31263,7 @@ def WikiAR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -31285,7 +31285,7 @@ def WikiAR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteKR(
@@ -31304,7 +31304,7 @@ def WikiQuoteKR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteKR graph.
 
@@ -31367,7 +31367,7 @@ def WikiQuoteKR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -31389,7 +31389,7 @@ def WikiQuoteKR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNV(
@@ -31408,7 +31408,7 @@ def WikiNV(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNV graph.
 
@@ -31471,7 +31471,7 @@ def WikiNV(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -31493,7 +31493,7 @@ def WikiNV(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceBE(
@@ -31512,7 +31512,7 @@ def WikiSourceBE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceBE graph.
 
@@ -31575,7 +31575,7 @@ def WikiSourceBE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -31597,7 +31597,7 @@ def WikiSourceBE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceRU(
@@ -31616,7 +31616,7 @@ def WikiSourceRU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceRU graph.
 
@@ -31679,7 +31679,7 @@ def WikiSourceRU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -31701,7 +31701,7 @@ def WikiSourceRU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteGL(
@@ -31720,7 +31720,7 @@ def WikiQuoteGL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteGL graph.
 
@@ -31783,7 +31783,7 @@ def WikiQuoteGL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -31805,7 +31805,7 @@ def WikiQuoteGL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBH(
@@ -31824,7 +31824,7 @@ def WikiBH(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBH graph.
 
@@ -31887,7 +31887,7 @@ def WikiBH(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -31909,7 +31909,7 @@ def WikiBH(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiCH(
@@ -31928,7 +31928,7 @@ def WikiCH(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiCH graph.
 
@@ -31991,7 +31991,7 @@ def WikiCH(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -32013,7 +32013,7 @@ def WikiCH(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsAR(
@@ -32032,7 +32032,7 @@ def WikiNewsAR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsAR graph.
 
@@ -32095,7 +32095,7 @@ def WikiNewsAR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -32117,7 +32117,7 @@ def WikiNewsAR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiTO(
@@ -32136,7 +32136,7 @@ def WikiTO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiTO graph.
 
@@ -32199,7 +32199,7 @@ def WikiTO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -32221,7 +32221,7 @@ def WikiTO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiIA(
@@ -32240,7 +32240,7 @@ def WikiIA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiIA graph.
 
@@ -32303,7 +32303,7 @@ def WikiIA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -32325,7 +32325,7 @@ def WikiIA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiHA(
@@ -32344,7 +32344,7 @@ def WikiHA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiHA graph.
 
@@ -32407,7 +32407,7 @@ def WikiHA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -32429,7 +32429,7 @@ def WikiHA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksMS(
@@ -32448,7 +32448,7 @@ def WikiBooksMS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksMS graph.
 
@@ -32511,7 +32511,7 @@ def WikiBooksMS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -32533,7 +32533,7 @@ def WikiBooksMS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiOC(
@@ -32552,7 +32552,7 @@ def WikiOC(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiOC graph.
 
@@ -32615,7 +32615,7 @@ def WikiOC(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -32637,7 +32637,7 @@ def WikiOC(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteVI(
@@ -32656,7 +32656,7 @@ def WikiQuoteVI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteVI graph.
 
@@ -32719,7 +32719,7 @@ def WikiQuoteVI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -32741,7 +32741,7 @@ def WikiQuoteVI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSM(
@@ -32760,7 +32760,7 @@ def WikiSM(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSM graph.
 
@@ -32823,7 +32823,7 @@ def WikiSM(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -32845,7 +32845,7 @@ def WikiSM(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksZA(
@@ -32864,7 +32864,7 @@ def WikiBooksZA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksZA graph.
 
@@ -32927,7 +32927,7 @@ def WikiBooksZA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -32949,7 +32949,7 @@ def WikiBooksZA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiRM(
@@ -32968,7 +32968,7 @@ def WikiRM(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiRM graph.
 
@@ -33031,7 +33031,7 @@ def WikiRM(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -33053,7 +33053,7 @@ def WikiRM(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceHY(
@@ -33072,7 +33072,7 @@ def WikiSourceHY(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceHY graph.
 
@@ -33135,7 +33135,7 @@ def WikiSourceHY(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -33157,7 +33157,7 @@ def WikiSourceHY(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiHT(
@@ -33176,7 +33176,7 @@ def WikiHT(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiHT graph.
 
@@ -33239,7 +33239,7 @@ def WikiHT(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -33261,7 +33261,7 @@ def WikiHT(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiIT(
@@ -33280,7 +33280,7 @@ def WikiIT(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiIT graph.
 
@@ -33341,7 +33341,7 @@ def WikiIT(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -33363,7 +33363,7 @@ def WikiIT(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceYI(
@@ -33382,7 +33382,7 @@ def WikiSourceYI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceYI graph.
 
@@ -33445,7 +33445,7 @@ def WikiSourceYI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -33467,7 +33467,7 @@ def WikiSourceYI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiUZ(
@@ -33486,7 +33486,7 @@ def WikiUZ(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiUZ graph.
 
@@ -33549,7 +33549,7 @@ def WikiUZ(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -33571,7 +33571,7 @@ def WikiUZ(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceFA(
@@ -33590,7 +33590,7 @@ def WikiSourceFA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceFA graph.
 
@@ -33653,7 +33653,7 @@ def WikiSourceFA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -33675,7 +33675,7 @@ def WikiSourceFA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiKR(
@@ -33694,7 +33694,7 @@ def WikiKR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiKR graph.
 
@@ -33757,7 +33757,7 @@ def WikiKR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -33779,7 +33779,7 @@ def WikiKR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsCA(
@@ -33798,7 +33798,7 @@ def WikiNewsCA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsCA graph.
 
@@ -33861,7 +33861,7 @@ def WikiNewsCA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -33883,7 +33883,7 @@ def WikiNewsCA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsSQ(
@@ -33902,7 +33902,7 @@ def WikiNewsSQ(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsSQ graph.
 
@@ -33965,7 +33965,7 @@ def WikiNewsSQ(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -33987,7 +33987,7 @@ def WikiNewsSQ(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiGL(
@@ -34006,7 +34006,7 @@ def WikiGL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiGL graph.
 
@@ -34069,7 +34069,7 @@ def WikiGL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -34091,7 +34091,7 @@ def WikiGL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsSD(
@@ -34110,7 +34110,7 @@ def WikiNewsSD(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsSD graph.
 
@@ -34173,7 +34173,7 @@ def WikiNewsSD(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -34195,7 +34195,7 @@ def WikiNewsSD(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiFY(
@@ -34214,7 +34214,7 @@ def WikiFY(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiFY graph.
 
@@ -34277,7 +34277,7 @@ def WikiFY(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -34299,7 +34299,7 @@ def WikiFY(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiVI(
@@ -34318,7 +34318,7 @@ def WikiVI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiVI graph.
 
@@ -34381,7 +34381,7 @@ def WikiVI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -34403,7 +34403,7 @@ def WikiVI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiKG(
@@ -34422,7 +34422,7 @@ def WikiKG(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiKG graph.
 
@@ -34485,7 +34485,7 @@ def WikiKG(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -34507,7 +34507,7 @@ def WikiKG(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiversitySL(
@@ -34526,7 +34526,7 @@ def WikiversitySL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiversitySL graph.
 
@@ -34589,7 +34589,7 @@ def WikiversitySL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -34611,7 +34611,7 @@ def WikiversitySL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaAM(
@@ -34630,7 +34630,7 @@ def WikiMediaAM(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaAM graph.
 
@@ -34693,7 +34693,7 @@ def WikiMediaAM(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -34715,7 +34715,7 @@ def WikiMediaAM(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksTL(
@@ -34734,7 +34734,7 @@ def WikiBooksTL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksTL graph.
 
@@ -34797,7 +34797,7 @@ def WikiBooksTL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -34819,7 +34819,7 @@ def WikiBooksTL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiAN(
@@ -34838,7 +34838,7 @@ def WikiAN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiAN graph.
 
@@ -34901,7 +34901,7 @@ def WikiAN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -34923,7 +34923,7 @@ def WikiAN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteIT(
@@ -34942,7 +34942,7 @@ def WikiQuoteIT(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteIT graph.
 
@@ -35005,7 +35005,7 @@ def WikiQuoteIT(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -35027,7 +35027,7 @@ def WikiQuoteIT(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteUZ(
@@ -35046,7 +35046,7 @@ def WikiQuoteUZ(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteUZ graph.
 
@@ -35109,7 +35109,7 @@ def WikiQuoteUZ(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -35131,7 +35131,7 @@ def WikiQuoteUZ(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceCY(
@@ -35150,7 +35150,7 @@ def WikiSourceCY(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceCY graph.
 
@@ -35213,7 +35213,7 @@ def WikiSourceCY(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -35235,7 +35235,7 @@ def WikiSourceCY(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiversityKO(
@@ -35254,7 +35254,7 @@ def WikiversityKO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiversityKO graph.
 
@@ -35317,7 +35317,7 @@ def WikiversityKO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -35339,7 +35339,7 @@ def WikiversityKO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSD(
@@ -35358,7 +35358,7 @@ def WikiSD(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSD graph.
 
@@ -35421,7 +35421,7 @@ def WikiSD(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -35443,7 +35443,7 @@ def WikiSD(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksZH(
@@ -35462,7 +35462,7 @@ def WikiBooksZH(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksZH graph.
 
@@ -35525,7 +35525,7 @@ def WikiBooksZH(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -35547,7 +35547,7 @@ def WikiBooksZH(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteKN(
@@ -35566,7 +35566,7 @@ def WikiQuoteKN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteKN graph.
 
@@ -35629,7 +35629,7 @@ def WikiQuoteKN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -35651,7 +35651,7 @@ def WikiQuoteKN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksPA(
@@ -35670,7 +35670,7 @@ def WikiBooksPA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksPA graph.
 
@@ -35733,7 +35733,7 @@ def WikiBooksPA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -35755,7 +35755,7 @@ def WikiBooksPA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceEN(
@@ -35774,7 +35774,7 @@ def WikiSourceEN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceEN graph.
 
@@ -35837,7 +35837,7 @@ def WikiSourceEN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -35859,7 +35859,7 @@ def WikiSourceEN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiTS(
@@ -35878,7 +35878,7 @@ def WikiTS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiTS graph.
 
@@ -35941,7 +35941,7 @@ def WikiTS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -35963,7 +35963,7 @@ def WikiTS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSQ(
@@ -35982,7 +35982,7 @@ def WikiSQ(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSQ graph.
 
@@ -36045,7 +36045,7 @@ def WikiSQ(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -36067,7 +36067,7 @@ def WikiSQ(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiCA(
@@ -36086,7 +36086,7 @@ def WikiCA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiCA graph.
 
@@ -36149,7 +36149,7 @@ def WikiCA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -36171,7 +36171,7 @@ def WikiCA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceOR(
@@ -36190,7 +36190,7 @@ def WikiSourceOR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceOR graph.
 
@@ -36253,7 +36253,7 @@ def WikiSourceOR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -36275,7 +36275,7 @@ def WikiSourceOR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBA(
@@ -36294,7 +36294,7 @@ def WikiBA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBA graph.
 
@@ -36357,7 +36357,7 @@ def WikiBA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -36379,7 +36379,7 @@ def WikiBA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksKM(
@@ -36398,7 +36398,7 @@ def WikiBooksKM(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksKM graph.
 
@@ -36461,7 +36461,7 @@ def WikiBooksKM(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -36483,7 +36483,7 @@ def WikiBooksKM(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteML(
@@ -36502,7 +36502,7 @@ def WikiQuoteML(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteML graph.
 
@@ -36565,7 +36565,7 @@ def WikiQuoteML(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -36587,7 +36587,7 @@ def WikiQuoteML(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceUK(
@@ -36606,7 +36606,7 @@ def WikiSourceUK(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceUK graph.
 
@@ -36669,7 +36669,7 @@ def WikiSourceUK(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -36691,7 +36691,7 @@ def WikiSourceUK(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksPT(
@@ -36710,7 +36710,7 @@ def WikiBooksPT(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksPT graph.
 
@@ -36773,7 +36773,7 @@ def WikiBooksPT(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -36795,7 +36795,7 @@ def WikiBooksPT(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteAR(
@@ -36814,7 +36814,7 @@ def WikiQuoteAR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteAR graph.
 
@@ -36877,7 +36877,7 @@ def WikiQuoteAR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -36899,7 +36899,7 @@ def WikiQuoteAR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiDV(
@@ -36918,7 +36918,7 @@ def WikiDV(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiDV graph.
 
@@ -36981,7 +36981,7 @@ def WikiDV(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -37003,7 +37003,7 @@ def WikiDV(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceHE(
@@ -37022,7 +37022,7 @@ def WikiSourceHE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceHE graph.
 
@@ -37085,7 +37085,7 @@ def WikiSourceHE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -37107,7 +37107,7 @@ def WikiSourceHE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiAZ(
@@ -37126,7 +37126,7 @@ def WikiAZ(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiAZ graph.
 
@@ -37189,7 +37189,7 @@ def WikiAZ(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -37211,7 +37211,7 @@ def WikiAZ(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceLI(
@@ -37230,7 +37230,7 @@ def WikiSourceLI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceLI graph.
 
@@ -37293,7 +37293,7 @@ def WikiSourceLI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -37315,7 +37315,7 @@ def WikiSourceLI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiKS(
@@ -37334,7 +37334,7 @@ def WikiKS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiKS graph.
 
@@ -37397,7 +37397,7 @@ def WikiKS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -37419,7 +37419,7 @@ def WikiKS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksRO(
@@ -37438,7 +37438,7 @@ def WikiBooksRO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksRO graph.
 
@@ -37501,7 +37501,7 @@ def WikiBooksRO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -37523,7 +37523,7 @@ def WikiBooksRO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksNA(
@@ -37542,7 +37542,7 @@ def WikiBooksNA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksNA graph.
 
@@ -37605,7 +37605,7 @@ def WikiBooksNA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -37627,7 +37627,7 @@ def WikiBooksNA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsTR(
@@ -37646,7 +37646,7 @@ def WikiNewsTR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsTR graph.
 
@@ -37709,7 +37709,7 @@ def WikiNewsTR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -37731,7 +37731,7 @@ def WikiNewsTR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteHU(
@@ -37750,7 +37750,7 @@ def WikiQuoteHU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteHU graph.
 
@@ -37813,7 +37813,7 @@ def WikiQuoteHU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -37835,7 +37835,7 @@ def WikiQuoteHU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiversityIT(
@@ -37854,7 +37854,7 @@ def WikiversityIT(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiversityIT graph.
 
@@ -37917,7 +37917,7 @@ def WikiversityIT(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -37939,7 +37939,7 @@ def WikiversityIT(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceGU(
@@ -37958,7 +37958,7 @@ def WikiSourceGU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceGU graph.
 
@@ -38021,7 +38021,7 @@ def WikiSourceGU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -38043,7 +38043,7 @@ def WikiSourceGU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteSL(
@@ -38062,7 +38062,7 @@ def WikiQuoteSL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteSL graph.
 
@@ -38125,7 +38125,7 @@ def WikiQuoteSL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -38147,7 +38147,7 @@ def WikiQuoteSL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteAF(
@@ -38166,7 +38166,7 @@ def WikiQuoteAF(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteAF graph.
 
@@ -38229,7 +38229,7 @@ def WikiQuoteAF(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -38251,7 +38251,7 @@ def WikiQuoteAF(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksMN(
@@ -38270,7 +38270,7 @@ def WikiBooksMN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksMN graph.
 
@@ -38333,7 +38333,7 @@ def WikiBooksMN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -38355,7 +38355,7 @@ def WikiBooksMN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksLN(
@@ -38374,7 +38374,7 @@ def WikiBooksLN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksLN graph.
 
@@ -38437,7 +38437,7 @@ def WikiBooksLN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -38459,7 +38459,7 @@ def WikiBooksLN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiTR(
@@ -38478,7 +38478,7 @@ def WikiTR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiTR graph.
 
@@ -38541,7 +38541,7 @@ def WikiTR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -38563,7 +38563,7 @@ def WikiTR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiUR(
@@ -38582,7 +38582,7 @@ def WikiUR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiUR graph.
 
@@ -38645,7 +38645,7 @@ def WikiUR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -38667,7 +38667,7 @@ def WikiUR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceEO(
@@ -38686,7 +38686,7 @@ def WikiSourceEO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceEO graph.
 
@@ -38749,7 +38749,7 @@ def WikiSourceEO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -38771,7 +38771,7 @@ def WikiSourceEO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiCU(
@@ -38790,7 +38790,7 @@ def WikiCU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiCU graph.
 
@@ -38853,7 +38853,7 @@ def WikiCU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -38875,7 +38875,7 @@ def WikiCU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksKY(
@@ -38894,7 +38894,7 @@ def WikiBooksKY(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksKY graph.
 
@@ -38957,7 +38957,7 @@ def WikiBooksKY(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -38979,7 +38979,7 @@ def WikiBooksKY(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteKO(
@@ -38998,7 +38998,7 @@ def WikiQuoteKO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteKO graph.
 
@@ -39061,7 +39061,7 @@ def WikiQuoteKO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -39083,7 +39083,7 @@ def WikiQuoteKO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSE(
@@ -39102,7 +39102,7 @@ def WikiSE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSE graph.
 
@@ -39165,7 +39165,7 @@ def WikiSE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -39187,7 +39187,7 @@ def WikiSE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiII(
@@ -39206,7 +39206,7 @@ def WikiII(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiII graph.
 
@@ -39269,7 +39269,7 @@ def WikiII(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -39291,7 +39291,7 @@ def WikiII(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiHI(
@@ -39310,7 +39310,7 @@ def WikiHI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiHI graph.
 
@@ -39373,7 +39373,7 @@ def WikiHI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -39395,7 +39395,7 @@ def WikiHI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiUG(
@@ -39414,7 +39414,7 @@ def WikiUG(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiUG graph.
 
@@ -39477,7 +39477,7 @@ def WikiUG(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -39499,7 +39499,7 @@ def WikiUG(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiTG(
@@ -39518,7 +39518,7 @@ def WikiTG(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiTG graph.
 
@@ -39581,7 +39581,7 @@ def WikiTG(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -39603,7 +39603,7 @@ def WikiTG(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceID(
@@ -39622,7 +39622,7 @@ def WikiSourceID(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceID graph.
 
@@ -39685,7 +39685,7 @@ def WikiSourceID(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -39707,7 +39707,7 @@ def WikiSourceID(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaET(
@@ -39726,7 +39726,7 @@ def WikiMediaET(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaET graph.
 
@@ -39789,7 +39789,7 @@ def WikiMediaET(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -39811,7 +39811,7 @@ def WikiMediaET(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiversityAR(
@@ -39830,7 +39830,7 @@ def WikiversityAR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiversityAR graph.
 
@@ -39893,7 +39893,7 @@ def WikiversityAR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -39915,7 +39915,7 @@ def WikiversityAR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksQU(
@@ -39934,7 +39934,7 @@ def WikiBooksQU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksQU graph.
 
@@ -39997,7 +39997,7 @@ def WikiBooksQU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -40019,7 +40019,7 @@ def WikiBooksQU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaRS(
@@ -40038,7 +40038,7 @@ def WikiMediaRS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaRS graph.
 
@@ -40101,7 +40101,7 @@ def WikiMediaRS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -40123,7 +40123,7 @@ def WikiMediaRS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksFR(
@@ -40142,7 +40142,7 @@ def WikiBooksFR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksFR graph.
 
@@ -40205,7 +40205,7 @@ def WikiBooksFR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -40227,7 +40227,7 @@ def WikiBooksFR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiAF(
@@ -40246,7 +40246,7 @@ def WikiAF(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiAF graph.
 
@@ -40309,7 +40309,7 @@ def WikiAF(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -40331,7 +40331,7 @@ def WikiAF(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsHU(
@@ -40350,7 +40350,7 @@ def WikiNewsHU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsHU graph.
 
@@ -40413,7 +40413,7 @@ def WikiNewsHU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -40435,7 +40435,7 @@ def WikiNewsHU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksET(
@@ -40454,7 +40454,7 @@ def WikiBooksET(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksET graph.
 
@@ -40517,7 +40517,7 @@ def WikiBooksET(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -40539,7 +40539,7 @@ def WikiBooksET(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteTR(
@@ -40558,7 +40558,7 @@ def WikiQuoteTR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteTR graph.
 
@@ -40621,7 +40621,7 @@ def WikiQuoteTR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -40643,7 +40643,7 @@ def WikiQuoteTR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteUR(
@@ -40662,7 +40662,7 @@ def WikiQuoteUR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteUR graph.
 
@@ -40725,7 +40725,7 @@ def WikiQuoteUR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -40747,7 +40747,7 @@ def WikiQuoteUR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiVoyageFR(
@@ -40766,7 +40766,7 @@ def WikiVoyageFR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiVoyageFR graph.
 
@@ -40829,7 +40829,7 @@ def WikiVoyageFR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -40851,7 +40851,7 @@ def WikiVoyageFR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaGR(
@@ -40870,7 +40870,7 @@ def WikiMediaGR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaGR graph.
 
@@ -40933,7 +40933,7 @@ def WikiMediaGR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -40955,7 +40955,7 @@ def WikiMediaGR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiKO(
@@ -40974,7 +40974,7 @@ def WikiKO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiKO graph.
 
@@ -41035,7 +41035,7 @@ def WikiKO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -41057,7 +41057,7 @@ def WikiKO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaWB(
@@ -41076,7 +41076,7 @@ def WikiMediaWB(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaWB graph.
 
@@ -41139,7 +41139,7 @@ def WikiMediaWB(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -41161,7 +41161,7 @@ def WikiMediaWB(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiWA(
@@ -41180,7 +41180,7 @@ def WikiWA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiWA graph.
 
@@ -41243,7 +41243,7 @@ def WikiWA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -41265,7 +41265,7 @@ def WikiWA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteHI(
@@ -41284,7 +41284,7 @@ def WikiQuoteHI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteHI graph.
 
@@ -41347,7 +41347,7 @@ def WikiQuoteHI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -41369,7 +41369,7 @@ def WikiQuoteHI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksYO(
@@ -41388,7 +41388,7 @@ def WikiBooksYO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksYO graph.
 
@@ -41451,7 +41451,7 @@ def WikiBooksYO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -41473,7 +41473,7 @@ def WikiBooksYO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksDA(
@@ -41492,7 +41492,7 @@ def WikiBooksDA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksDA graph.
 
@@ -41555,7 +41555,7 @@ def WikiBooksDA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -41577,7 +41577,7 @@ def WikiBooksDA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteUG(
@@ -41596,7 +41596,7 @@ def WikiQuoteUG(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteUG graph.
 
@@ -41659,7 +41659,7 @@ def WikiQuoteUG(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -41681,7 +41681,7 @@ def WikiQuoteUG(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiAS(
@@ -41700,7 +41700,7 @@ def WikiAS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiAS graph.
 
@@ -41763,7 +41763,7 @@ def WikiAS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -41785,7 +41785,7 @@ def WikiAS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksCV(
@@ -41804,7 +41804,7 @@ def WikiBooksCV(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksCV graph.
 
@@ -41867,7 +41867,7 @@ def WikiBooksCV(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -41889,7 +41889,7 @@ def WikiBooksCV(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceFI(
@@ -41908,7 +41908,7 @@ def WikiSourceFI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceFI graph.
 
@@ -41971,7 +41971,7 @@ def WikiSourceFI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -41993,7 +41993,7 @@ def WikiSourceFI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiGD(
@@ -42012,7 +42012,7 @@ def WikiGD(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiGD graph.
 
@@ -42075,7 +42075,7 @@ def WikiGD(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -42097,7 +42097,7 @@ def WikiGD(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceES(
@@ -42116,7 +42116,7 @@ def WikiSourceES(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceES graph.
 
@@ -42179,7 +42179,7 @@ def WikiSourceES(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -42201,7 +42201,7 @@ def WikiSourceES(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiTN(
@@ -42220,7 +42220,7 @@ def WikiTN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiTN graph.
 
@@ -42283,7 +42283,7 @@ def WikiTN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -42305,7 +42305,7 @@ def WikiTN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksMR(
@@ -42324,7 +42324,7 @@ def WikiBooksMR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksMR graph.
 
@@ -42387,7 +42387,7 @@ def WikiBooksMR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -42409,7 +42409,7 @@ def WikiBooksMR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteAZ(
@@ -42428,7 +42428,7 @@ def WikiQuoteAZ(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteAZ graph.
 
@@ -42491,7 +42491,7 @@ def WikiQuoteAZ(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -42513,7 +42513,7 @@ def WikiQuoteAZ(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteKS(
@@ -42532,7 +42532,7 @@ def WikiQuoteKS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteKS graph.
 
@@ -42595,7 +42595,7 @@ def WikiQuoteKS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -42617,7 +42617,7 @@ def WikiQuoteKS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksZU(
@@ -42636,7 +42636,7 @@ def WikiBooksZU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksZU graph.
 
@@ -42699,7 +42699,7 @@ def WikiBooksZU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -42721,7 +42721,7 @@ def WikiBooksZU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBI(
@@ -42740,7 +42740,7 @@ def WikiBI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBI graph.
 
@@ -42803,7 +42803,7 @@ def WikiBI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -42825,7 +42825,7 @@ def WikiBI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiVoyageRO(
@@ -42844,7 +42844,7 @@ def WikiVoyageRO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiVoyageRO graph.
 
@@ -42907,7 +42907,7 @@ def WikiVoyageRO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -42929,7 +42929,7 @@ def WikiVoyageRO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksMG(
@@ -42948,7 +42948,7 @@ def WikiBooksMG(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksMG graph.
 
@@ -43011,7 +43011,7 @@ def WikiBooksMG(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -43033,7 +43033,7 @@ def WikiBooksMG(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiIU(
@@ -43052,7 +43052,7 @@ def WikiIU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiIU graph.
 
@@ -43115,7 +43115,7 @@ def WikiIU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -43137,7 +43137,7 @@ def WikiIU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksAY(
@@ -43156,7 +43156,7 @@ def WikiBooksAY(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksAY graph.
 
@@ -43219,7 +43219,7 @@ def WikiBooksAY(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -43241,7 +43241,7 @@ def WikiBooksAY(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiHU(
@@ -43260,7 +43260,7 @@ def WikiHU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiHU graph.
 
@@ -43323,7 +43323,7 @@ def WikiHU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -43345,7 +43345,7 @@ def WikiHU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceSA(
@@ -43364,7 +43364,7 @@ def WikiSourceSA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceSA graph.
 
@@ -43427,7 +43427,7 @@ def WikiSourceSA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -43449,7 +43449,7 @@ def WikiSourceSA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsKO(
@@ -43468,7 +43468,7 @@ def WikiNewsKO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsKO graph.
 
@@ -43531,7 +43531,7 @@ def WikiNewsKO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -43553,7 +43553,7 @@ def WikiNewsKO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceNO(
@@ -43572,7 +43572,7 @@ def WikiSourceNO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceNO graph.
 
@@ -43635,7 +43635,7 @@ def WikiSourceNO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -43657,7 +43657,7 @@ def WikiSourceNO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSL(
@@ -43676,7 +43676,7 @@ def WikiSL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSL graph.
 
@@ -43739,7 +43739,7 @@ def WikiSL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -43761,7 +43761,7 @@ def WikiSL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksGN(
@@ -43780,7 +43780,7 @@ def WikiBooksGN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksGN graph.
 
@@ -43843,7 +43843,7 @@ def WikiBooksGN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -43865,7 +43865,7 @@ def WikiBooksGN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMS(
@@ -43884,7 +43884,7 @@ def WikiMS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMS graph.
 
@@ -43947,7 +43947,7 @@ def WikiMS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -43969,7 +43969,7 @@ def WikiMS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksIA(
@@ -43988,7 +43988,7 @@ def WikiBooksIA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksIA graph.
 
@@ -44051,7 +44051,7 @@ def WikiBooksIA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -44073,7 +44073,7 @@ def WikiBooksIA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiAM(
@@ -44092,7 +44092,7 @@ def WikiAM(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiAM graph.
 
@@ -44155,7 +44155,7 @@ def WikiAM(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -44177,7 +44177,7 @@ def WikiAM(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiVoyageVI(
@@ -44196,7 +44196,7 @@ def WikiVoyageVI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiVoyageVI graph.
 
@@ -44259,7 +44259,7 @@ def WikiVoyageVI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -44281,7 +44281,7 @@ def WikiVoyageVI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksCH(
@@ -44300,7 +44300,7 @@ def WikiBooksCH(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksCH graph.
 
@@ -44363,7 +44363,7 @@ def WikiBooksCH(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -44385,7 +44385,7 @@ def WikiBooksCH(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksIT(
@@ -44404,7 +44404,7 @@ def WikiBooksIT(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksIT graph.
 
@@ -44467,7 +44467,7 @@ def WikiBooksIT(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -44489,7 +44489,7 @@ def WikiBooksIT(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceMK(
@@ -44508,7 +44508,7 @@ def WikiSourceMK(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceMK graph.
 
@@ -44571,7 +44571,7 @@ def WikiSourceMK(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -44593,7 +44593,7 @@ def WikiSourceMK(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksUZ(
@@ -44612,7 +44612,7 @@ def WikiBooksUZ(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksUZ graph.
 
@@ -44675,7 +44675,7 @@ def WikiBooksUZ(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -44697,7 +44697,7 @@ def WikiBooksUZ(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksOC(
@@ -44716,7 +44716,7 @@ def WikiBooksOC(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksOC graph.
 
@@ -44779,7 +44779,7 @@ def WikiBooksOC(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -44801,7 +44801,7 @@ def WikiBooksOC(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiFO(
@@ -44820,7 +44820,7 @@ def WikiFO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiFO graph.
 
@@ -44883,7 +44883,7 @@ def WikiFO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -44905,7 +44905,7 @@ def WikiFO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsSR(
@@ -44924,7 +44924,7 @@ def WikiNewsSR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsSR graph.
 
@@ -44987,7 +44987,7 @@ def WikiNewsSR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -45009,7 +45009,7 @@ def WikiNewsSR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiZA(
@@ -45028,7 +45028,7 @@ def WikiZA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiZA graph.
 
@@ -45091,7 +45091,7 @@ def WikiZA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -45113,7 +45113,7 @@ def WikiZA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksRM(
@@ -45132,7 +45132,7 @@ def WikiBooksRM(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksRM graph.
 
@@ -45195,7 +45195,7 @@ def WikiBooksRM(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -45217,7 +45217,7 @@ def WikiBooksRM(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceTH(
@@ -45236,7 +45236,7 @@ def WikiSourceTH(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceTH graph.
 
@@ -45299,7 +45299,7 @@ def WikiSourceTH(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -45321,7 +45321,7 @@ def WikiSourceTH(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksMY(
@@ -45340,7 +45340,7 @@ def WikiBooksMY(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksMY graph.
 
@@ -45403,7 +45403,7 @@ def WikiBooksMY(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -45425,7 +45425,7 @@ def WikiBooksMY(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiEU(
@@ -45444,7 +45444,7 @@ def WikiEU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiEU graph.
 
@@ -45507,7 +45507,7 @@ def WikiEU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -45529,7 +45529,7 @@ def WikiEU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiTE(
@@ -45548,7 +45548,7 @@ def WikiTE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiTE graph.
 
@@ -45611,7 +45611,7 @@ def WikiTE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -45633,7 +45633,7 @@ def WikiTE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiIK(
@@ -45652,7 +45652,7 @@ def WikiIK(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiIK graph.
 
@@ -45715,7 +45715,7 @@ def WikiIK(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -45737,7 +45737,7 @@ def WikiIK(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaCA(
@@ -45756,7 +45756,7 @@ def WikiMediaCA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaCA graph.
 
@@ -45819,7 +45819,7 @@ def WikiMediaCA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -45841,7 +45841,7 @@ def WikiMediaCA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksKN(
@@ -45860,7 +45860,7 @@ def WikiBooksKN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksKN graph.
 
@@ -45923,7 +45923,7 @@ def WikiBooksKN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -45945,7 +45945,7 @@ def WikiBooksKN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteZH(
@@ -45964,7 +45964,7 @@ def WikiQuoteZH(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteZH graph.
 
@@ -46027,7 +46027,7 @@ def WikiQuoteZH(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -46049,7 +46049,7 @@ def WikiQuoteZH(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSR(
@@ -46068,7 +46068,7 @@ def WikiSR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSR graph.
 
@@ -46131,7 +46131,7 @@ def WikiSR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -46153,7 +46153,7 @@ def WikiSR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksAR(
@@ -46172,7 +46172,7 @@ def WikiBooksAR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksAR graph.
 
@@ -46235,7 +46235,7 @@ def WikiBooksAR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -46257,7 +46257,7 @@ def WikiBooksAR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuotePT(
@@ -46276,7 +46276,7 @@ def WikiQuotePT(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuotePT graph.
 
@@ -46339,7 +46339,7 @@ def WikiQuotePT(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -46361,7 +46361,7 @@ def WikiQuotePT(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksML(
@@ -46380,7 +46380,7 @@ def WikiBooksML(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksML graph.
 
@@ -46443,7 +46443,7 @@ def WikiBooksML(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -46465,7 +46465,7 @@ def WikiBooksML(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceIS(
@@ -46484,7 +46484,7 @@ def WikiSourceIS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceIS graph.
 
@@ -46547,7 +46547,7 @@ def WikiSourceIS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -46569,7 +46569,7 @@ def WikiSourceIS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSG(
@@ -46588,7 +46588,7 @@ def WikiSG(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSG graph.
 
@@ -46651,7 +46651,7 @@ def WikiSG(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -46673,7 +46673,7 @@ def WikiSG(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiversityFR(
@@ -46692,7 +46692,7 @@ def WikiversityFR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiversityFR graph.
 
@@ -46755,7 +46755,7 @@ def WikiversityFR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -46777,7 +46777,7 @@ def WikiversityFR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteEU(
@@ -46796,7 +46796,7 @@ def WikiQuoteEU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteEU graph.
 
@@ -46859,7 +46859,7 @@ def WikiQuoteEU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -46881,7 +46881,7 @@ def WikiQuoteEU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourcePL(
@@ -46900,7 +46900,7 @@ def WikiSourcePL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourcePL graph.
 
@@ -46963,7 +46963,7 @@ def WikiSourcePL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -46985,7 +46985,7 @@ def WikiSourcePL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaAR(
@@ -47004,7 +47004,7 @@ def WikiMediaAR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaAR graph.
 
@@ -47067,7 +47067,7 @@ def WikiMediaAR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -47089,7 +47089,7 @@ def WikiMediaAR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiLO(
@@ -47108,7 +47108,7 @@ def WikiLO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiLO graph.
 
@@ -47171,7 +47171,7 @@ def WikiLO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -47193,7 +47193,7 @@ def WikiLO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteTE(
@@ -47212,7 +47212,7 @@ def WikiQuoteTE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteTE graph.
 
@@ -47275,7 +47275,7 @@ def WikiQuoteTE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -47297,7 +47297,7 @@ def WikiQuoteTE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiPA(
@@ -47316,7 +47316,7 @@ def WikiPA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiPA graph.
 
@@ -47379,7 +47379,7 @@ def WikiPA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -47401,7 +47401,7 @@ def WikiPA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiFF(
@@ -47420,7 +47420,7 @@ def WikiFF(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiFF graph.
 
@@ -47483,7 +47483,7 @@ def WikiFF(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -47505,7 +47505,7 @@ def WikiFF(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaGE(
@@ -47524,7 +47524,7 @@ def WikiMediaGE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaGE graph.
 
@@ -47587,7 +47587,7 @@ def WikiMediaGE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -47609,7 +47609,7 @@ def WikiMediaGE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiZH(
@@ -47628,7 +47628,7 @@ def WikiZH(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiZH graph.
 
@@ -47689,7 +47689,7 @@ def WikiZH(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -47711,7 +47711,7 @@ def WikiZH(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteSR(
@@ -47730,7 +47730,7 @@ def WikiQuoteSR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteSR graph.
 
@@ -47793,7 +47793,7 @@ def WikiQuoteSR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -47815,7 +47815,7 @@ def WikiQuoteSR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiPT(
@@ -47834,7 +47834,7 @@ def WikiPT(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiPT graph.
 
@@ -47895,7 +47895,7 @@ def WikiPT(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -47917,7 +47917,7 @@ def WikiPT(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksCA(
@@ -47936,7 +47936,7 @@ def WikiBooksCA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksCA graph.
 
@@ -47999,7 +47999,7 @@ def WikiBooksCA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -48021,7 +48021,7 @@ def WikiBooksCA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksBA(
@@ -48040,7 +48040,7 @@ def WikiBooksBA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksBA graph.
 
@@ -48103,7 +48103,7 @@ def WikiBooksBA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -48125,7 +48125,7 @@ def WikiBooksBA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiKM(
@@ -48144,7 +48144,7 @@ def WikiKM(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiKM graph.
 
@@ -48207,7 +48207,7 @@ def WikiKM(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -48229,7 +48229,7 @@ def WikiKM(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksSQ(
@@ -48248,7 +48248,7 @@ def WikiBooksSQ(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksSQ graph.
 
@@ -48311,7 +48311,7 @@ def WikiBooksSQ(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -48333,7 +48333,7 @@ def WikiBooksSQ(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiTY(
@@ -48352,7 +48352,7 @@ def WikiTY(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiTY graph.
 
@@ -48415,7 +48415,7 @@ def WikiTY(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -48437,7 +48437,7 @@ def WikiTY(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsPT(
@@ -48456,7 +48456,7 @@ def WikiNewsPT(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsPT graph.
 
@@ -48519,7 +48519,7 @@ def WikiNewsPT(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -48541,7 +48541,7 @@ def WikiNewsPT(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteAM(
@@ -48560,7 +48560,7 @@ def WikiQuoteAM(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteAM graph.
 
@@ -48623,7 +48623,7 @@ def WikiQuoteAM(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -48645,7 +48645,7 @@ def WikiQuoteAM(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceBS(
@@ -48664,7 +48664,7 @@ def WikiSourceBS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceBS graph.
 
@@ -48727,7 +48727,7 @@ def WikiSourceBS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -48749,7 +48749,7 @@ def WikiSourceBS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksGL(
@@ -48768,7 +48768,7 @@ def WikiBooksGL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksGL graph.
 
@@ -48831,7 +48831,7 @@ def WikiBooksGL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -48853,7 +48853,7 @@ def WikiBooksGL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceCS(
@@ -48872,7 +48872,7 @@ def WikiSourceCS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceCS graph.
 
@@ -48935,7 +48935,7 @@ def WikiSourceCS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -48957,7 +48957,7 @@ def WikiSourceCS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSN(
@@ -48976,7 +48976,7 @@ def WikiSN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSN graph.
 
@@ -49039,7 +49039,7 @@ def WikiSN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -49061,7 +49061,7 @@ def WikiSN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiRN(
@@ -49080,7 +49080,7 @@ def WikiRN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiRN graph.
 
@@ -49143,7 +49143,7 @@ def WikiRN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -49165,7 +49165,7 @@ def WikiRN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiVoyageIT(
@@ -49184,7 +49184,7 @@ def WikiVoyageIT(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiVoyageIT graph.
 
@@ -49247,7 +49247,7 @@ def WikiVoyageIT(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -49269,7 +49269,7 @@ def WikiVoyageIT(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceTA(
@@ -49288,7 +49288,7 @@ def WikiSourceTA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceTA graph.
 
@@ -49351,7 +49351,7 @@ def WikiSourceTA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -49373,7 +49373,7 @@ def WikiSourceTA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiTL(
@@ -49392,7 +49392,7 @@ def WikiTL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiTL graph.
 
@@ -49455,7 +49455,7 @@ def WikiTL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -49477,7 +49477,7 @@ def WikiTL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceSV(
@@ -49496,7 +49496,7 @@ def WikiSourceSV(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceSV graph.
 
@@ -49559,7 +49559,7 @@ def WikiSourceSV(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -49581,7 +49581,7 @@ def WikiSourceSV(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksVI(
@@ -49600,7 +49600,7 @@ def WikiBooksVI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksVI graph.
 
@@ -49663,7 +49663,7 @@ def WikiBooksVI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -49685,7 +49685,7 @@ def WikiBooksVI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteZA(
@@ -49704,7 +49704,7 @@ def WikiQuoteZA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteZA graph.
 
@@ -49767,7 +49767,7 @@ def WikiQuoteZA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -49789,7 +49789,7 @@ def WikiQuoteZA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsZH(
@@ -49808,7 +49808,7 @@ def WikiNewsZH(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsZH graph.
 
@@ -49871,7 +49871,7 @@ def WikiNewsZH(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -49893,7 +49893,7 @@ def WikiNewsZH(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksFY(
@@ -49912,7 +49912,7 @@ def WikiBooksFY(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksFY graph.
 
@@ -49975,7 +49975,7 @@ def WikiBooksFY(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -49997,7 +49997,7 @@ def WikiBooksFY(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksSE(
@@ -50016,7 +50016,7 @@ def WikiBooksSE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksSE graph.
 
@@ -50079,7 +50079,7 @@ def WikiBooksSE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -50101,7 +50101,7 @@ def WikiBooksSE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiKY(
@@ -50120,7 +50120,7 @@ def WikiKY(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiKY graph.
 
@@ -50183,7 +50183,7 @@ def WikiKY(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -50205,7 +50205,7 @@ def WikiKY(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksTR(
@@ -50224,7 +50224,7 @@ def WikiBooksTR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksTR graph.
 
@@ -50287,7 +50287,7 @@ def WikiBooksTR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -50309,7 +50309,7 @@ def WikiBooksTR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteET(
@@ -50328,7 +50328,7 @@ def WikiQuoteET(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteET graph.
 
@@ -50391,7 +50391,7 @@ def WikiQuoteET(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -50413,7 +50413,7 @@ def WikiQuoteET(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksUR(
@@ -50432,7 +50432,7 @@ def WikiBooksUR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksUR graph.
 
@@ -50495,7 +50495,7 @@ def WikiBooksUR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -50517,7 +50517,7 @@ def WikiBooksUR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMN(
@@ -50536,7 +50536,7 @@ def WikiMN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMN graph.
 
@@ -50599,7 +50599,7 @@ def WikiMN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -50621,7 +50621,7 @@ def WikiMN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiLN(
@@ -50640,7 +50640,7 @@ def WikiLN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiLN graph.
 
@@ -50703,7 +50703,7 @@ def WikiLN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -50725,7 +50725,7 @@ def WikiLN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiKL(
@@ -50744,7 +50744,7 @@ def WikiKL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiKL graph.
 
@@ -50807,7 +50807,7 @@ def WikiKL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -50829,7 +50829,7 @@ def WikiKL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceJA(
@@ -50848,7 +50848,7 @@ def WikiSourceJA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceJA graph.
 
@@ -50911,7 +50911,7 @@ def WikiSourceJA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -50933,7 +50933,7 @@ def WikiSourceJA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsRO(
@@ -50952,7 +50952,7 @@ def WikiNewsRO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsRO graph.
 
@@ -51015,7 +51015,7 @@ def WikiNewsRO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -51037,7 +51037,7 @@ def WikiNewsRO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiFR(
@@ -51056,7 +51056,7 @@ def WikiFR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiFR graph.
 
@@ -51118,7 +51118,7 @@ def WikiFR(
 			- 20211201
 			- frwiki
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -51140,7 +51140,7 @@ def WikiFR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaMX(
@@ -51159,7 +51159,7 @@ def WikiMediaMX(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaMX graph.
 
@@ -51222,7 +51222,7 @@ def WikiMediaMX(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -51244,7 +51244,7 @@ def WikiMediaMX(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQU(
@@ -51263,7 +51263,7 @@ def WikiQU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQU graph.
 
@@ -51326,7 +51326,7 @@ def WikiQU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -51348,7 +51348,7 @@ def WikiQU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksHI(
@@ -51367,7 +51367,7 @@ def WikiBooksHI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksHI graph.
 
@@ -51430,7 +51430,7 @@ def WikiBooksHI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -51452,7 +51452,7 @@ def WikiBooksHI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksUG(
@@ -51471,7 +51471,7 @@ def WikiBooksUG(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksUG graph.
 
@@ -51534,7 +51534,7 @@ def WikiBooksUG(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -51556,7 +51556,7 @@ def WikiBooksUG(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteDA(
@@ -51575,7 +51575,7 @@ def WikiQuoteDA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteDA graph.
 
@@ -51638,7 +51638,7 @@ def WikiQuoteDA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -51660,7 +51660,7 @@ def WikiQuoteDA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksTG(
@@ -51679,7 +51679,7 @@ def WikiBooksTG(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksTG graph.
 
@@ -51742,7 +51742,7 @@ def WikiBooksTG(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -51764,7 +51764,7 @@ def WikiBooksTG(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiRO(
@@ -51783,7 +51783,7 @@ def WikiRO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiRO graph.
 
@@ -51846,7 +51846,7 @@ def WikiRO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -51868,7 +51868,7 @@ def WikiRO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNewsFR(
@@ -51887,7 +51887,7 @@ def WikiNewsFR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNewsFR graph.
 
@@ -51950,7 +51950,7 @@ def WikiNewsFR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -51972,7 +51972,7 @@ def WikiNewsFR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSO(
@@ -51991,7 +51991,7 @@ def WikiSO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSO graph.
 
@@ -52054,7 +52054,7 @@ def WikiSO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -52076,7 +52076,7 @@ def WikiSO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiNA(
@@ -52095,7 +52095,7 @@ def WikiNA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiNA graph.
 
@@ -52158,7 +52158,7 @@ def WikiNA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -52180,7 +52180,7 @@ def WikiNA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceBR(
@@ -52199,7 +52199,7 @@ def WikiSourceBR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceBR graph.
 
@@ -52262,7 +52262,7 @@ def WikiSourceBR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -52284,7 +52284,7 @@ def WikiSourceBR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksKS(
@@ -52303,7 +52303,7 @@ def WikiBooksKS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksKS graph.
 
@@ -52366,7 +52366,7 @@ def WikiBooksKS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -52388,7 +52388,7 @@ def WikiBooksKS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceNL(
@@ -52407,7 +52407,7 @@ def WikiSourceNL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceNL graph.
 
@@ -52470,7 +52470,7 @@ def WikiSourceNL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -52492,7 +52492,7 @@ def WikiSourceNL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteMR(
@@ -52511,7 +52511,7 @@ def WikiQuoteMR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteMR graph.
 
@@ -52574,7 +52574,7 @@ def WikiQuoteMR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -52596,7 +52596,7 @@ def WikiQuoteMR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceDE(
@@ -52615,7 +52615,7 @@ def WikiSourceDE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceDE graph.
 
@@ -52678,7 +52678,7 @@ def WikiSourceDE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -52700,7 +52700,7 @@ def WikiSourceDE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksAZ(
@@ -52719,7 +52719,7 @@ def WikiBooksAZ(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksAZ graph.
 
@@ -52782,7 +52782,7 @@ def WikiBooksAZ(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -52804,7 +52804,7 @@ def WikiBooksAZ(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaDK(
@@ -52823,7 +52823,7 @@ def WikiMediaDK(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaDK graph.
 
@@ -52886,7 +52886,7 @@ def WikiMediaDK(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -52908,7 +52908,7 @@ def WikiMediaDK(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceBG(
@@ -52927,7 +52927,7 @@ def WikiSourceBG(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceBG graph.
 
@@ -52990,7 +52990,7 @@ def WikiSourceBG(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -53012,7 +53012,7 @@ def WikiSourceBG(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteRO(
@@ -53031,7 +53031,7 @@ def WikiQuoteRO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteRO graph.
 
@@ -53094,7 +53094,7 @@ def WikiQuoteRO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -53116,7 +53116,7 @@ def WikiQuoteRO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksBI(
@@ -53135,7 +53135,7 @@ def WikiBooksBI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksBI graph.
 
@@ -53198,7 +53198,7 @@ def WikiBooksBI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -53220,7 +53220,7 @@ def WikiBooksBI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteNA(
@@ -53239,7 +53239,7 @@ def WikiQuoteNA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteNA graph.
 
@@ -53302,7 +53302,7 @@ def WikiQuoteNA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -53324,7 +53324,7 @@ def WikiQuoteNA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiZU(
@@ -53343,7 +53343,7 @@ def WikiZU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiZU graph.
 
@@ -53406,7 +53406,7 @@ def WikiZU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -53428,7 +53428,7 @@ def WikiZU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMR(
@@ -53447,7 +53447,7 @@ def WikiMR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMR graph.
 
@@ -53510,7 +53510,7 @@ def WikiMR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -53532,7 +53532,7 @@ def WikiMR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksSL(
@@ -53551,7 +53551,7 @@ def WikiBooksSL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksSL graph.
 
@@ -53614,7 +53614,7 @@ def WikiBooksSL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -53636,7 +53636,7 @@ def WikiBooksSL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiGN(
@@ -53655,7 +53655,7 @@ def WikiGN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiGN graph.
 
@@ -53718,7 +53718,7 @@ def WikiGN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -53740,7 +53740,7 @@ def WikiGN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiAY(
@@ -53759,7 +53759,7 @@ def WikiAY(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiAY graph.
 
@@ -53822,7 +53822,7 @@ def WikiAY(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -53844,7 +53844,7 @@ def WikiAY(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksHU(
@@ -53863,7 +53863,7 @@ def WikiBooksHU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksHU graph.
 
@@ -53926,7 +53926,7 @@ def WikiBooksHU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -53948,7 +53948,7 @@ def WikiBooksHU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiPI(
@@ -53967,7 +53967,7 @@ def WikiPI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiPI graph.
 
@@ -54030,7 +54030,7 @@ def WikiPI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -54052,7 +54052,7 @@ def WikiPI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiLG(
@@ -54071,7 +54071,7 @@ def WikiLG(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiLG graph.
 
@@ -54134,7 +54134,7 @@ def WikiLG(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -54156,7 +54156,7 @@ def WikiLG(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMG(
@@ -54175,7 +54175,7 @@ def WikiMG(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMG graph.
 
@@ -54238,7 +54238,7 @@ def WikiMG(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -54260,7 +54260,7 @@ def WikiMG(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksKO(
@@ -54279,7 +54279,7 @@ def WikiBooksKO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksKO graph.
 
@@ -54342,7 +54342,7 @@ def WikiBooksKO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -54364,7 +54364,7 @@ def WikiBooksKO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiversityZH(
@@ -54383,7 +54383,7 @@ def WikiversityZH(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiversityZH graph.
 
@@ -54446,7 +54446,7 @@ def WikiversityZH(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -54468,7 +54468,7 @@ def WikiversityZH(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksWA(
@@ -54487,7 +54487,7 @@ def WikiBooksWA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksWA graph.
 
@@ -54550,7 +54550,7 @@ def WikiBooksWA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -54572,7 +54572,7 @@ def WikiBooksWA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiVoyageHI(
@@ -54591,7 +54591,7 @@ def WikiVoyageHI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiVoyageHI graph.
 
@@ -54654,7 +54654,7 @@ def WikiVoyageHI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -54676,7 +54676,7 @@ def WikiVoyageHI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceBN(
@@ -54695,7 +54695,7 @@ def WikiSourceBN(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceBN graph.
 
@@ -54758,7 +54758,7 @@ def WikiSourceBN(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -54780,7 +54780,7 @@ def WikiSourceBN(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSS(
@@ -54799,7 +54799,7 @@ def WikiSS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSS graph.
 
@@ -54862,7 +54862,7 @@ def WikiSS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -54884,7 +54884,7 @@ def WikiSS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteKY(
@@ -54903,7 +54903,7 @@ def WikiQuoteKY(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteKY graph.
 
@@ -54966,7 +54966,7 @@ def WikiQuoteKY(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -54988,7 +54988,7 @@ def WikiQuoteKY(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiET(
@@ -55007,7 +55007,7 @@ def WikiET(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiET graph.
 
@@ -55070,7 +55070,7 @@ def WikiET(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -55092,7 +55092,7 @@ def WikiET(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksAF(
@@ -55111,7 +55111,7 @@ def WikiBooksAF(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksAF graph.
 
@@ -55174,7 +55174,7 @@ def WikiBooksAF(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -55196,7 +55196,7 @@ def WikiBooksAF(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaHI(
@@ -55215,7 +55215,7 @@ def WikiMediaHI(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaHI graph.
 
@@ -55278,7 +55278,7 @@ def WikiMediaHI(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -55300,7 +55300,7 @@ def WikiMediaHI(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaSE(
@@ -55319,7 +55319,7 @@ def WikiMediaSE(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaSE graph.
 
@@ -55382,7 +55382,7 @@ def WikiMediaSE(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -55404,7 +55404,7 @@ def WikiMediaSE(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteFR(
@@ -55423,7 +55423,7 @@ def WikiQuoteFR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteFR graph.
 
@@ -55486,7 +55486,7 @@ def WikiQuoteFR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -55508,7 +55508,7 @@ def WikiQuoteFR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceSK(
@@ -55527,7 +55527,7 @@ def WikiSourceSK(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceSK graph.
 
@@ -55590,7 +55590,7 @@ def WikiSourceSK(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -55612,7 +55612,7 @@ def WikiSourceSK(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiVoyageTR(
@@ -55631,7 +55631,7 @@ def WikiVoyageTR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiVoyageTR graph.
 
@@ -55694,7 +55694,7 @@ def WikiVoyageTR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -55716,7 +55716,7 @@ def WikiVoyageTR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiCV(
@@ -55735,7 +55735,7 @@ def WikiCV(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiCV graph.
 
@@ -55798,7 +55798,7 @@ def WikiCV(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -55820,7 +55820,7 @@ def WikiCV(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceEL(
@@ -55839,7 +55839,7 @@ def WikiSourceEL(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceEL graph.
 
@@ -55902,7 +55902,7 @@ def WikiSourceEL(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -55924,7 +55924,7 @@ def WikiSourceEL(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiMediaTR(
@@ -55943,7 +55943,7 @@ def WikiMediaTR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiMediaTR graph.
 
@@ -56006,7 +56006,7 @@ def WikiMediaTR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -56028,7 +56028,7 @@ def WikiMediaTR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiBooksAS(
@@ -56047,7 +56047,7 @@ def WikiBooksAS(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiBooksAS graph.
 
@@ -56110,7 +56110,7 @@ def WikiBooksAS(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -56132,7 +56132,7 @@ def WikiBooksAS(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiQuoteQU(
@@ -56151,7 +56151,7 @@ def WikiQuoteQU(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiQuoteQU graph.
 
@@ -56214,7 +56214,7 @@ def WikiQuoteQU(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -56236,7 +56236,7 @@ def WikiQuoteQU(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiversityPT(
@@ -56255,7 +56255,7 @@ def WikiversityPT(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiversityPT graph.
 
@@ -56318,7 +56318,7 @@ def WikiversityPT(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -56340,7 +56340,7 @@ def WikiversityPT(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiYO(
@@ -56359,7 +56359,7 @@ def WikiYO(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiYO graph.
 
@@ -56422,7 +56422,7 @@ def WikiYO(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -56444,7 +56444,7 @@ def WikiYO(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiDA(
@@ -56463,7 +56463,7 @@ def WikiDA(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiDA graph.
 
@@ -56526,7 +56526,7 @@ def WikiDA(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -56548,7 +56548,7 @@ def WikiDA(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 
 def WikiSourceHR(
@@ -56567,7 +56567,7 @@ def WikiSourceHR(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "latest",
-    **additional_graph_kwargs
+    **kwargs
 ) -> Graph:
     """Return new instance of the WikiSourceHR graph.
 
@@ -56630,7 +56630,7 @@ def WikiSourceHR(
 			- 20211120
 			- 20211201
 			- latest
-    additional_graph_kwargs
+    kwargs
         Additional graph kwargs.	
 	
 	
@@ -56652,6 +56652,6 @@ def WikiSourceHR(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        additional_graph_kwargs=additional_graph_kwargs
+        kwargs=kwargs
     )()
 

@@ -30,7 +30,7 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
         cache: bool = True,
         cache_path: Optional[str] = None,
         cache_sys_var: str = "GRAPH_CACHE_DIR",
-        additional_graph_kwargs: Dict = None
+        kwargs: Dict = None
     ):
         """Create new automatically retrieved graph.
 
@@ -81,7 +81,7 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
             provided below is set, otherwise we use the directory `graphs`.
         cache_sys_var: str = "GRAPH_CACHE_DIR"
             The system variable with the default graph cache directory.
-        additional_graph_kwargs: Dict = None
+        kwargs: Dict = None
             Eventual additional kwargs for loading the graph.
 
         Raises
@@ -113,7 +113,7 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
             cache=cache,
             cache_path=cache_path,
             cache_sys_var=cache_sys_var,
-            additional_graph_kwargs=additional_graph_kwargs,
+            kwargs=kwargs,
             hash_seed=sha256(dict(
                 keep_nodes_without_descriptions=keep_nodes_without_descriptions,
                 keep_nodes_without_categories=keep_nodes_without_categories,

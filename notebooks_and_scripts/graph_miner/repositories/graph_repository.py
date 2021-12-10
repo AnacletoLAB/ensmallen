@@ -17,6 +17,14 @@ from .custom_exceptions import UnsupportedGraphException
 class GraphRepository:
     def __init__(self):
         """Create new Graph Repository object."""
+        with open(
+            "{}/models/{}.py".format(
+                os.path.dirname(os.path.abspath(__file__)),
+                self.get_graph_retrieval_file()
+            ),
+            "r"
+        ) as f:
+            self._graph_method_model = f.read()
 
     def build_stored_graph_name(self, partial_graph_name: str) -> str:
         """Return built graph name.
@@ -378,7 +386,8 @@ class GraphRepository:
         for graph_name in tqdm(
             self.get_uncached_graph_list(),
             desc="Retrieving graphs for {}".format(self.name),
-            leave=False
+            leave=False,
+            dynamic_ncols=True
         ):
             self.store_graph_data(
                 {
@@ -532,38 +541,31 @@ class GraphRepository:
         ---------------------
         Formatted model of the report.
         """
-        with open(
-            "{}/models/{}.py".format(
-                os.path.dirname(os.path.abspath(__file__)),
-                self.get_graph_retrieval_file()
+        return self._graph_method_model.format(
+            graph_method_name=graph_method_name,
+            repository_package_name=self.repository_package_name,
+            graph_name=graph_name,
+            repository_name=self.get_formatted_repository_name(),
+            callbacks_data=self.format_callbacks_data(
+                graph_name,
+                versions[-1]
             ),
-            "r"
-        ) as f:
-            return f.read().format(
-                graph_method_name=graph_method_name,
-                repository_package_name=self.repository_package_name,
-                graph_name=graph_name,
-                repository_name=self.get_formatted_repository_name(),
-                callbacks_data=self.format_callbacks_data(
-                    graph_name,
-                    versions[-1]
-                ),
-                description=self.format_lines(
-                    self.get_description(graph_name, versions[-1])
-                ),
-                tabbed_description=self.add_tabs(
-                    self.format_lines(self.get_description(
-                        graph_name, versions[-1]))
-                ),
-                references=self.format_references(references),
-                tabbed_references= "" if has_unique_references else self.add_tabs(
-                    "\n\n{}".format(self.format_references(references))
-                ),
-                default_version="latest" if "latest" in versions else versions[-1],
-                available_graph_versions=self.add_tabs(
-                    self.format_versions(versions)
-                ),
-            )
+            description=self.format_lines(
+                self.get_description(graph_name, versions[-1])
+            ),
+            tabbed_description=self.add_tabs(
+                self.format_lines(self.get_description(
+                    graph_name, versions[-1]))
+            ),
+            references=self.format_references(references),
+            tabbed_references="" if has_unique_references else self.add_tabs(
+                "\n\n{}".format(self.format_references(references))
+            ),
+            default_version="latest" if "latest" in versions else versions[-1],
+            available_graph_versions=self.add_tabs(
+                self.format_versions(versions)
+            ),
+        )
 
     def get_automatic_graph_retrieval_import(self) -> str:
         """Return what should be imported as automatic graph retrieval class."""
@@ -637,7 +639,8 @@ class GraphRepository:
             graph_data = compress_json.load(graph_data_path)
             first_graph_version_data = list(graph_data.values())[0]
             graph_name = first_graph_version_data["graph_name"]
-            packages_to_import = self.get_imports(graph_name, list(graph_data.keys())[-1])
+            packages_to_import = self.get_imports(
+                graph_name, list(graph_data.keys())[-1])
             if packages_to_import:
                 imports.append(packages_to_import)
 
@@ -651,7 +654,8 @@ class GraphRepository:
         ))[0]).values())[0]["references"]
 
         has_unique_references = all(
-            list(compress_json.load(path).values())[0]["references"] == first_references
+            list(compress_json.load(path).values())[
+                0]["references"] == first_references
             for path in glob(os.path.join(
                 os.path.dirname(os.path.abspath(__file__)),
                 "graph_repositories",
@@ -664,7 +668,8 @@ class GraphRepository:
         file.write("\n".join([
             "\"\"\"Module providing graphs available from {repository_name}.{references}\"\"\"".format(
                 repository_name=self.get_formatted_repository_name(),
-                references= "\n\n{}\n".format(self.format_references(first_references)) if has_unique_references else ""
+                references="\n\n{}\n".format(self.format_references(
+                    first_references)) if has_unique_references else ""
             ),
             "from ..ensmallen import Graph  # pylint: disable=import-error",
             self.get_automatic_graph_retrieval_import(),
