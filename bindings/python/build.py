@@ -24,7 +24,7 @@ def patch(file, src_regex, dst_regex):
         text = f.read()
 
     if len(text) == 0:
-        raise ValueError("PDIO")
+        raise ValueError("The opened file '{}' is empty".format(file))
 
     text = re.sub(src_regex, dst_regex, text)
 

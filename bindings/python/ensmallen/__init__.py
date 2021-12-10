@@ -3,7 +3,7 @@
 import cpuinfo
 import warnings
 
-AVX_FLAGS = ["sse","sse2","sse3","ssse3","sse4".1,"sse4".2,"sse4a","avx","avx2","bmi1","bmi2","lzcnt","popcnt","cmov"]
+AVX_FLAGS = ["sse","sse2","sse3","ssse3","sse4.1","sse4.2","sse4a","avx","avx2","bmi1","bmi2","lzcnt","popcnt","cmov"]
 NO_AVX_FLAGS = ["sse","sse2","fxsr"]
 
 # In some systems cpuinfo is not able to detect some flags no matter what.
