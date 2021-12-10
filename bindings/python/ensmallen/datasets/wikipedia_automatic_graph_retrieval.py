@@ -99,7 +99,7 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
         self._compute_node_description = compute_node_description
 
         super().__init__(
-            graph_name=graph_name,
+            name=graph_name,
             version=version,
             repository="wikipedia",
             directed=directed,
