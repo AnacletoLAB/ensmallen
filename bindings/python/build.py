@@ -139,8 +139,13 @@ for python_minor_version in [6, 7, 8, 9]:
     print("Opening {}".format(src_wheel))
 
     # Find the .so compiled library in it
+    if platform.system().strip().lower() == "windows":
+        library_extension = ".so"
+    else:
+        library_extension = ".pyd"
+
     with zipfile.ZipFile(src_wheel) as z:
-        lib = next(x for x in z.filelist if x.filename.endswith(".so"))
+        lib = next(x for x in z.filelist if x.filename.endswith(library_extension))
 
         # Read the .so
         print("Extracting {}".format(lib.filename))
