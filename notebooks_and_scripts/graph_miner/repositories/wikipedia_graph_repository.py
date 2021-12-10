@@ -216,3 +216,7 @@ class WikipediaGraphRepository(GraphRepository):
     def get_graph_retrieval_file(self) -> str:
         """Return graph retrieval file."""
         return "wikipedia_graph_retrieval_file"
+
+    def get_automatic_graph_retrieval_import(self) -> str:
+        """Return what should be imported as automatic graph retrieval class."""
+        return "from .wikipedia_automatic_graph_retrieval import WikipediaAutomaticallyRetrievedGraph"

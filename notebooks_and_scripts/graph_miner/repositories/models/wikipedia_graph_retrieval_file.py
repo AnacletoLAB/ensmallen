@@ -1,16 +1,3 @@
-"""
-This file offers the methods to automatically retrieve the wikipedia graph {graph_name}.
-
-The graph is automatically retrieved from the {repository_name} repository. 
-{description}
-
-{references}
-"""
-from ...ensmallen import Graph  # pylint: disable=import-error
-from ..wikipedia_automatic_graph_retrieval import WikipediaAutomaticallyRetrievedGraph
-from typing import Dict, Optional
-
-
 def {graph_method_name}(
     directed: bool = False,
     load_nodes: bool = True,
@@ -20,14 +7,14 @@ def {graph_method_name}(
     keep_interwikipedia_nodes: bool = True,
     keep_external_nodes: bool = True,
     compute_node_description: bool = False,
-    automatically_enable_speedups_for_small_graphs: bool = True,
-    sort_temporary_directory: Optional[str] = None,
+    auto_enable_tradeoffs: bool = True,
+    sort_tmp_dir: str = None,
     verbose: int = 2,
     cache: bool = True,
-    cache_path: Optional[str] = None,
-    cache_path_system_variable: str = "GRAPH_CACHE_DIR",
+    cache_path: str = None,
+    cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "{default_version}",
-    **additional_graph_kwargs: Dict
+    **graph_kwargs
 ) -> Graph:
     """Return new instance of the {graph_name} graph.
 
@@ -55,11 +42,11 @@ def {graph_method_name}(
     compute_node_description: bool = False
         Whether to compute the node descriptions.
         Note that this will significantly increase the side of the node lists!
-    automatically_enable_speedups_for_small_graphs: bool = True
+    auto_enable_tradeoffs: bool = True
         Whether to enable the Ensmallen time-memory tradeoffs in small graphs
         automatically. By default True, that is, if a graph has less than
         50 million edges. In such use cases the memory expenditure is minimal.
-    sort_temporary_directory: Optional[str] = None
+    sort_tmp_dir: str = None
         Which folder to use to store the temporary files needed to sort in 
         parallel the edge list when building the optimal preprocessed file.
         This defaults to the same folder of the edge list when no value is 
@@ -70,22 +57,16 @@ def {graph_method_name}(
     cache: bool = True
         Whether to use cache, i.e. download files only once
         and preprocess them only once.
-    cache_path: Optional[str] = None
+    cache_path: str = None
         Where to store the downloaded graphs.
         If no path is provided, first we check the system variable
         provided below is set, otherwise we use the directory `graphs`.
-    cache_path_system_variable: str = "GRAPH_CACHE_DIR"
+    cache_sys_var: str = "GRAPH_CACHE_DIR"
         The system variable with the default graph cache directory.
     version: str = "{default_version}"
         The version of the graph to retrieve.{available_graph_versions}
-    additional_graph_kwargs: Dict
-        Additional graph kwargs.
-
-    Returns
-    -----------------------
-    Instace of {graph_name} graph.
-
-{tabbed_references}
+    graph_kwargs
+        Additional graph kwargs.{tabbed_references}
     """
     return WikipediaAutomaticallyRetrievedGraph(
         graph_name="{graph_method_name}",
@@ -98,11 +79,12 @@ def {graph_method_name}(
         keep_interwikipedia_nodes=keep_interwikipedia_nodes,
         keep_external_nodes=keep_external_nodes,
         compute_node_description=compute_node_description,
-        automatically_enable_speedups_for_small_graphs=automatically_enable_speedups_for_small_graphs,
-        sort_temporary_directory=sort_temporary_directory,
+        auto_enable_tradeoffs=auto_enable_tradeoffs,
+        sort_tmp_dir=sort_tmp_dir,
         verbose=verbose,
         cache=cache,
         cache_path=cache_path,
-        cache_path_system_variable=cache_path_system_variable,
-        additional_graph_kwargs=additional_graph_kwargs
+        cache_sys_var=cache_sys_var,
+        graph_kwargs=graph_kwargs
     )()
+

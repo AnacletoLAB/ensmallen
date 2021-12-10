@@ -2,14 +2,10 @@
 
 import os
 import shutil
-from typing import Callable, Dict, List, Optional
+from typing import Dict, List, Optional
 
-import compress_json
-from downloaders import BaseDownloader
-from environments_utils import is_windows
-from userinput.utils import set_validator, closest
+from dict_hash import sha256
 from ..ensmallen import Graph, edge_list_utils
-from .get_dataset import validate_graph_version
 from .automatic_graph_retrieval import AutomaticallyRetrievedGraph
 
 
@@ -28,13 +24,13 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
         keep_interwikipedia_nodes: bool = True,
         keep_external_nodes: bool = True,
         compute_node_description: bool = False,
-        automatically_enable_speedups_for_small_graphs: bool = True,
-        sort_temporary_directory: Optional[str] = None,
+        auto_enable_tradeoffs: bool = True,
+        sort_tmp_dir: Optional[str] = None,
         verbose: int = 2,
         cache: bool = True,
         cache_path: Optional[str] = None,
-        cache_path_system_variable: str = "GRAPH_CACHE_DIR",
-        additional_graph_kwargs: Dict = None
+        cache_sys_var: str = "GRAPH_CACHE_DIR",
+        graph_kwargs: Dict = None
     ):
         """Create new automatically retrieved graph.
 
@@ -65,11 +61,11 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
         compute_node_description: bool = False
             Whether to compute the node descriptions.
             Note that this will significantly increase the side of the node lists!
-        automatically_enable_speedups_for_small_graphs: bool = True
+        auto_enable_tradeoffs: bool = True
             Whether to enable the Ensmallen time-memory tradeoffs in small graphs
             automatically. By default True, that is, if a graph has less than
             50 million edges. In such use cases the memory expenditure is minimal.
-        sort_temporary_directory: Optional[str] = None
+        sort_tmp_dir: Optional[str] = None
             Which folder to use to store the temporary files needed to sort in 
             parallel the edge list when building the optimal preprocessed file.
             This defaults to the same folder of the edge list when no value is 
@@ -83,9 +79,9 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
             Where to store the downloaded graphs.
             If no path is provided, first we check the system variable
             provided below is set, otherwise we use the directory `graphs`.
-        cache_path_system_variable: str = "GRAPH_CACHE_DIR"
+        cache_sys_var: str = "GRAPH_CACHE_DIR"
             The system variable with the default graph cache directory.
-        additional_graph_kwargs: Dict = None
+        graph_kwargs: Dict = None
             Eventual additional kwargs for loading the graph.
 
         Raises
@@ -100,10 +96,10 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
         self._keep_nodes_without_categories = keep_nodes_without_categories
         self._keep_interwikipedia_nodes = keep_interwikipedia_nodes
         self._keep_external_nodes = keep_external_nodes
-
         self._compute_node_description = compute_node_description
+
         super().__init__(
-            graph_name=graph_name,
+            name=graph_name,
             version=version,
             repository="wikipedia",
             directed=directed,
@@ -111,13 +107,20 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
             load_nodes=load_nodes,
             load_node_types=load_node_types,
             load_edge_weights=False,
-            automatically_enable_speedups_for_small_graphs=automatically_enable_speedups_for_small_graphs,
-            sort_temporary_directory=sort_temporary_directory,
+            auto_enable_tradeoffs=auto_enable_tradeoffs,
+            sort_tmp_dir=sort_tmp_dir,
             verbose=verbose,
             cache=cache,
             cache_path=cache_path,
-            cache_path_system_variable=cache_path_system_variable,
-            additional_graph_kwargs=additional_graph_kwargs
+            cache_sys_var=cache_sys_var,
+            graph_kwargs=graph_kwargs,
+            hash_seed=sha256(dict(
+                keep_nodes_without_descriptions=keep_nodes_without_descriptions,
+                keep_nodes_without_categories=keep_nodes_without_categories,
+                keep_interwikipedia_nodes=keep_interwikipedia_nodes,
+                keep_external_nodes=keep_external_nodes,
+                compute_node_description=compute_node_description
+            ))
         )
 
     def __call__(self) -> Graph:
@@ -169,7 +172,7 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
                 keep_interwikipedia_nodes=self._keep_interwikipedia_nodes,
                 keep_external_nodes=self._keep_external_nodes,
                 compute_node_description=self._compute_node_description,
-                sort_temporary_directory=self._sort_temporary_directory,
+                sort_temporary_directory=self._sort_tmp_dir,
                 directed=self._directed,
                 verbose=self._verbose > 0,
             )
@@ -244,6 +247,6 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
             "directed": self._directed,
             "name": self._name,
         })
-        if self._automatically_enable_speedups_for_small_graphs and graph.get_unique_edges_number() < 50e6:
+        if self._auto_enable_tradeoffs and graph.get_unique_edges_number() < 50e6:
             graph.enable()
         return graph
