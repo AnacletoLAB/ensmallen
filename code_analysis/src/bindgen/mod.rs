@@ -55,7 +55,7 @@ fn is_to_bind(func: &Function) -> bool {
     && func.visibility == Visibility::Public
     && !func.attributes.iter().any(|x| x == "no_binding")
     && !func.attributes.iter().any(|x| x == "manual_binding")
-    && func.return_type.as_ref().map(|x| !x.to_string().contains("Iterator")).unwrap_or(false)
+    && func.return_type.as_ref().map(|x| !x.to_string().contains("Iterator")).unwrap_or(true)
 }
 
 macro_rules! format_vec {
