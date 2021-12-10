@@ -3,6 +3,7 @@ import re
 import shlex
 import shutil
 import zipfile
+import platform
 import subprocess
 
 def join(*args):
@@ -58,6 +59,16 @@ for python_minor_version in [6, 7, 8, 9]:
     print("#" * 80)
     print("# Building version: 3.{}".format(python_minor_version))
     print("#" * 80)
+
+    #
+    if platform.system().strip().lower() == "windows":
+        python_interpreter = "{}\AppData\Local\Programs\Python\Python3{}\python.exe".format(
+            os.path.expanduser("~"),
+            python_minor_version,
+        )
+    else:
+        python_interpreter = "python3.{}".format(python_minor_version)
+
     ################################################################################
     # Build the non avx version
     ################################################################################
@@ -88,7 +99,7 @@ for python_minor_version in [6, 7, 8, 9]:
 
     print("Compiling the noavx version")
     exec(
-        "maturin build --release --strip -i python3.{} --no-sdist --out ../wheels_no_avx".format(python_minor_version), 
+        "maturin build --release --strip -i {} --no-sdist --out ../wheels_no_avx".format(python_interpreter), 
         env=os.environ,
         cwd=join("build"),
     )
@@ -108,7 +119,7 @@ for python_minor_version in [6, 7, 8, 9]:
 
     print("Compiling the avx version")
     exec(
-        "maturin build --release --strip -i python3.{} --no-sdist --out ../wheels_avx".format(python_minor_version), 
+        "maturin build --release --strip -i {} --no-sdist --out ../wheels_avx".format(python_interpreter), 
         env={
             **os.environ,
             "RUSTFLAGS":RUSTFLAGS,
