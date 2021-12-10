@@ -7,7 +7,7 @@ from typing import Callable, Dict, List, Optional
 import compress_json
 from downloaders import BaseDownloader
 from environments_utils import is_windows
-from userinput.utils import set_validator, closest
+from dict_hash import sha256
 from ..ensmallen import Graph, edge_list_utils
 from .get_dataset import validate_graph_version
 
@@ -17,7 +17,7 @@ class AutomaticallyRetrievedGraph:
 
     def __init__(
         self,
-        graph_name: str,
+        name: str,
         version: str,
         repository: str,
         directed: bool = False,
@@ -25,21 +25,21 @@ class AutomaticallyRetrievedGraph:
         load_nodes: bool = True,
         load_node_types: bool = True,
         load_edge_weights: bool = True,
-        automatically_enable_speedups_for_small_graphs: bool = True,
-        sort_temporary_directory: Optional[str] = None,
+        auto_enable_tradeoffs: bool = True,
+        sort_tmp_dir: Optional[str] = None,
         verbose: int = 2,
         cache: bool = True,
         cache_path: Optional[str] = None,
-        cache_path_system_variable: str = "GRAPH_CACHE_DIR",
+        cache_sys_var: str = "GRAPH_CACHE_DIR",
+        graph_kwargs: Dict = None,
         callbacks: List[Callable] = (),
         callbacks_arguments: List[Dict] = (),
-        additional_graph_kwargs: Dict = None
     ):
         """Create new automatically retrieved graph.
 
         Parameters
         -------------------
-        graph_name: str
+        name: str
             The name of the graph to be retrieved and loaded.
         version: str
             The version of the graph to be retrieved.
@@ -61,11 +61,11 @@ class AutomaticallyRetrievedGraph:
         load_edge_weights: bool = True
             Whether to load the edge weights if available or skip them entirely.
             This feature is only available when the preprocessing is enabled.
-        automatically_enable_speedups_for_small_graphs: bool = True
+        auto_enable_tradeoffs: bool = True
             Whether to enable the Ensmallen time-memory tradeoffs in small graphs
             automatically. By default True, that is, if a graph has less than
             50 million edges. In such use cases the memory expenditure is minimal.
-        sort_temporary_directory: Optional[str] = None
+        sort_tmp_dir: Optional[str] = None
             Which folder to use to store the temporary files needed to sort in 
             parallel the edge list when building the optimal preprocessed file.
             This defaults to the same folder of the edge list when no value is 
@@ -79,14 +79,14 @@ class AutomaticallyRetrievedGraph:
             Where to store the downloaded graphs.
             If no path is provided, first we check the system variable
             provided below is set, otherwise we use the directory `graphs`.
-        cache_path_system_variable: str = "GRAPH_CACHE_DIR"
+        cache_sys_var: str = "GRAPH_CACHE_DIR"
             The system variable with the default graph cache directory.
+        graph_kwargs: Dict = None
+            Eventual additional kwargs for loading the graph.
         callbacks: List[Callable] = ()
             Eventual callbacks to call after download files.
         callbacks_arguments: List[Dict] = ()
             Eventual arguments for callbacks.
-        additional_graph_kwargs: Dict = None
-            Eventual additional kwargs for loading the graph.
 
         Raises
         -------------------
@@ -97,21 +97,20 @@ class AutomaticallyRetrievedGraph:
             is Windows, which does not provide the sort command.
         """
         try:
-            validate_graph_version(graph_name, repository, version)
+            validate_graph_version(name, repository, version)
 
-            all_versions = compress_json.local_load(os.path.join(
-                repository,
-                "{}.json.gz".format(graph_name)
-            ))
+            all_versions = compress_json.local_load(
+                "{}.json.gz".format(repository)
+            )[name]
 
             self._graph = all_versions[version]
-        except FileNotFoundError:
+        except KeyError:
             raise ValueError(
                 (
                     "Requested graph `{}` is not currently available.\n"
                     "Open an issue on the Graph repository to ask "
                     "for this graph to be added."
-                ).format(graph_name)
+                ).format(name)
             )
 
         if preprocess and is_windows():
@@ -126,7 +125,7 @@ class AutomaticallyRetrievedGraph:
         # we either check the system variable
         # and if it is not set we use `graphs`
         if cache_path is None:
-            cache_path = os.getenv(cache_path_system_variable, "graphs")
+            cache_path = os.getenv(cache_sys_var, "graphs")
 
         cache_path = os.path.join(cache_path, repository)
 
@@ -135,18 +134,26 @@ class AutomaticallyRetrievedGraph:
         self._load_nodes = load_nodes
         self._load_node_types = load_node_types
         self._load_edge_weights = load_edge_weights
-        self._name = graph_name
+        self._name = name
         self._version = version
-        self._automatically_enable_speedups_for_small_graphs = automatically_enable_speedups_for_small_graphs
-        self._sort_temporary_directory = sort_temporary_directory
+        self._auto_enable_tradeoffs = auto_enable_tradeoffs
+        self._sort_tmp_dir = sort_tmp_dir
         self._cache = cache
         self._verbose = verbose
         self._callbacks = callbacks
-        if additional_graph_kwargs is None:
-            additional_graph_kwargs = {}
-        self._additional_graph_kwargs = additional_graph_kwargs
+        if graph_kwargs is None:
+            graph_kwargs = {}
+        self._graph_kwargs = graph_kwargs
         self._callbacks_arguments = callbacks_arguments
-        self._cache_path = os.path.join(cache_path, graph_name, version)
+        self._instance_hash = sha256({
+            **self._graph,
+            **self._graph_kwargs,
+        })
+        self._cache_path = os.path.join(
+            cache_path,
+            name,
+            version
+        )
         self._downloader = BaseDownloader(
             auto_extract=True,
             cache=cache,
@@ -160,7 +167,8 @@ class AutomaticallyRetrievedGraph:
         return os.path.join(
             self._cache_path,
             "preprocessed",
-            "directed" if self._directed else "undirected"
+            "directed" if self._directed else "undirected",
+            self._instance_hash
         )
 
     def get_preprocessed_graph_node_types_path(self) -> str:
@@ -259,7 +267,7 @@ class AutomaticallyRetrievedGraph:
         """Return the dictionary of arguments of the Graph."""
         return {
             **self._graph["arguments"],
-            **self._additional_graph_kwargs
+            **self._graph_kwargs
         }
 
     def get_adjusted_graph_paths(self) -> str:
@@ -499,7 +507,7 @@ class AutomaticallyRetrievedGraph:
                     edges_number=graph_arguments.get("edges_number"),
                     target_edge_path=target_edge_path,
                     target_edge_list_separator='\t',
-                    sort_temporary_directory=self._sort_temporary_directory,
+                    sort_temporary_directory=self._sort_tmp_dir,
                     directed=self._directed,
                     verbose=self._verbose > 0,
                     name=self._name,
@@ -607,8 +615,8 @@ class AutomaticallyRetrievedGraph:
                 "directed": self._directed,
                 "verbose": self._verbose > 0,
                 "name": self._name,
-                **self._additional_graph_kwargs,
+                **self._graph_kwargs,
             })
-        if self._automatically_enable_speedups_for_small_graphs and graph.get_unique_edges_number() < 50e6:
+        if self._auto_enable_tradeoffs and graph.get_unique_edges_number() < 50e6:
             graph.enable()
         return graph
