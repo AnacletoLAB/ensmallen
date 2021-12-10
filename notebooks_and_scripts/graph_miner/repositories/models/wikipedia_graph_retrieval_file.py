@@ -14,7 +14,7 @@ def {graph_method_name}(
     cache_path: str = None,
     cache_sys_var: str = "GRAPH_CACHE_DIR",
     version: str = "{default_version}",
-    **kwargs
+    **graph_kwargs
 ) -> Graph:
     """Return new instance of the {graph_name} graph.
 
@@ -65,7 +65,7 @@ def {graph_method_name}(
         The system variable with the default graph cache directory.
     version: str = "{default_version}"
         The version of the graph to retrieve.{available_graph_versions}
-    kwargs
+    graph_kwargs
         Additional graph kwargs.{tabbed_references}
     """
     return WikipediaAutomaticallyRetrievedGraph(
@@ -85,6 +85,6 @@ def {graph_method_name}(
         cache=cache,
         cache_path=cache_path,
         cache_sys_var=cache_sys_var,
-        kwargs=kwargs
+        graph_kwargs=graph_kwargs
     )()
 
