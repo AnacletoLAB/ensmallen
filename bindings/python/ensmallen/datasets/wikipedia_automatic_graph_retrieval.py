@@ -24,12 +24,12 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
         keep_interwikipedia_nodes: bool = True,
         keep_external_nodes: bool = True,
         compute_node_description: bool = False,
-        automatically_enable_speedups_for_small_graphs: bool = True,
+        auto_enable_tradeoffs: bool = True,
         sort_temporary_directory: Optional[str] = None,
         verbose: int = 2,
         cache: bool = True,
         cache_path: Optional[str] = None,
-        cache_path_system_variable: str = "GRAPH_CACHE_DIR",
+        cache_sys_var: str = "GRAPH_CACHE_DIR",
         additional_graph_kwargs: Dict = None
     ):
         """Create new automatically retrieved graph.
@@ -61,7 +61,7 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
         compute_node_description: bool = False
             Whether to compute the node descriptions.
             Note that this will significantly increase the side of the node lists!
-        automatically_enable_speedups_for_small_graphs: bool = True
+        auto_enable_tradeoffs: bool = True
             Whether to enable the Ensmallen time-memory tradeoffs in small graphs
             automatically. By default True, that is, if a graph has less than
             50 million edges. In such use cases the memory expenditure is minimal.
@@ -79,7 +79,7 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
             Where to store the downloaded graphs.
             If no path is provided, first we check the system variable
             provided below is set, otherwise we use the directory `graphs`.
-        cache_path_system_variable: str = "GRAPH_CACHE_DIR"
+        cache_sys_var: str = "GRAPH_CACHE_DIR"
             The system variable with the default graph cache directory.
         additional_graph_kwargs: Dict = None
             Eventual additional kwargs for loading the graph.
@@ -107,12 +107,12 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
             load_nodes=load_nodes,
             load_node_types=load_node_types,
             load_edge_weights=False,
-            automatically_enable_speedups_for_small_graphs=automatically_enable_speedups_for_small_graphs,
-            sort_temporary_directory=sort_temporary_directory,
+            auto_enable_tradeoffs=auto_enable_tradeoffs,
+            sort_tmp_dir=sort_temporary_directory,
             verbose=verbose,
             cache=cache,
             cache_path=cache_path,
-            cache_path_system_variable=cache_path_system_variable,
+            cache_sys_var=cache_sys_var,
             additional_graph_kwargs=additional_graph_kwargs,
             hash_seed=sha256(dict(
                 keep_nodes_without_descriptions=keep_nodes_without_descriptions,
@@ -247,6 +247,6 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
             "directed": self._directed,
             "name": self._name,
         })
-        if self._automatically_enable_speedups_for_small_graphs and graph.get_unique_edges_number() < 50e6:
+        if self._auto_enable_tradeoffs and graph.get_unique_edges_number() < 50e6:
             graph.enable()
         return graph
