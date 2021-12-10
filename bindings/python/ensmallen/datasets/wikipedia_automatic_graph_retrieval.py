@@ -2,14 +2,10 @@
 
 import os
 import shutil
-from typing import Callable, Dict, List, Optional
+from typing import Dict, List, Optional
 
-import compress_json
-from downloaders import BaseDownloader
-from environments_utils import is_windows
-from userinput.utils import set_validator, closest
+from dict_hash import sha256
 from ..ensmallen import Graph, edge_list_utils
-from .get_dataset import validate_graph_version
 from .automatic_graph_retrieval import AutomaticallyRetrievedGraph
 
 
@@ -100,8 +96,8 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
         self._keep_nodes_without_categories = keep_nodes_without_categories
         self._keep_interwikipedia_nodes = keep_interwikipedia_nodes
         self._keep_external_nodes = keep_external_nodes
-
         self._compute_node_description = compute_node_description
+
         super().__init__(
             graph_name=graph_name,
             version=version,
@@ -117,7 +113,14 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
             cache=cache,
             cache_path=cache_path,
             cache_path_system_variable=cache_path_system_variable,
-            additional_graph_kwargs=additional_graph_kwargs
+            additional_graph_kwargs=additional_graph_kwargs,
+            hash_seed=sha256(dict(
+                keep_nodes_without_descriptions=keep_nodes_without_descriptions,
+                keep_nodes_without_categories=keep_nodes_without_categories,
+                keep_interwikipedia_nodes=keep_interwikipedia_nodes,
+                keep_external_nodes=keep_external_nodes,
+                compute_node_description=compute_node_description
+            ))
         )
 
     def __call__(self) -> Graph:

@@ -32,6 +32,7 @@ class AutomaticallyRetrievedGraph:
         cache_path: Optional[str] = None,
         cache_sys_var: str = "GRAPH_CACHE_DIR",
         graph_kwargs: Dict = None,
+        hash_seed: str = None,
         callbacks: List[Callable] = (),
         callbacks_arguments: List[Dict] = (),
     ):
@@ -83,6 +84,8 @@ class AutomaticallyRetrievedGraph:
             The system variable with the default graph cache directory.
         graph_kwargs: Dict = None
             Eventual additional kwargs for loading the graph.
+        hash_seed: str = None
+            Seed to use for the hash.
         callbacks: List[Callable] = ()
             Eventual callbacks to call after download files.
         callbacks_arguments: List[Dict] = ()
@@ -146,6 +149,7 @@ class AutomaticallyRetrievedGraph:
         self._graph_kwargs = graph_kwargs
         self._callbacks_arguments = callbacks_arguments
         self._instance_hash = sha256({
+            "hash_seed": hash_seed,
             **self._graph,
             **self._graph_kwargs,
         })
