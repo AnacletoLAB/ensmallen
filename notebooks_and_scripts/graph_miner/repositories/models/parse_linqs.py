@@ -1,4 +1,3 @@
-"""Methods to parse the incidence matrix from LINQS."""
 import re
 import os
 import pandas as pd

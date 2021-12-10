@@ -85,10 +85,7 @@ def get_available_versions_from_graph_and_repository(graph_name: str, repository
     ValueError,
         If the given repository is not available.
     """
-    return list(compress_json.local_load(os.path.join(
-        repository,
-        "{}.json.gz".format(graph_name)
-    )).keys())
+    return list(compress_json.local_load("{}.json.gz".format(repository))[graph_name].keys())
 
 
 def get_repositories_containing_graph(graph_name: str) -> List[str]:
@@ -146,7 +143,9 @@ def validate_graph_version(
         If the given repository is not available.
     """
     all_versions = get_available_versions_from_graph_and_repository(
-        graph_name, repository)
+        graph_name,
+        repository
+    )
     if not set_validator(all_versions)(version):
         raise ValueError((
             "The provided version `{}` is not within the set "

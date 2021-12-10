@@ -82,20 +82,6 @@ class LINQSGraphRepository(GraphRepository):
         """
         return "edges.tsv"
 
-    def get_imports(self, graph_name: str, version: str) -> str:
-        """Return imports to be added to model file.
-
-        Parameters
-        -----------------------
-        graph_name: str,
-            Name of the graph.
-
-        Returns
-        -----------------------
-        Imports.
-        """
-        return "\n".join(self._data[graph_name][version]["imports"])
-
     def get_description(self, graph_name: str, version: str) -> str:
         """Return description to be added to model file.
 
@@ -170,7 +156,7 @@ class LINQSGraphRepository(GraphRepository):
             "edge_list_edge_types_column": "edge_type",
             "node_list_node_types_column": "node_type",
             "nodes_column": "id",
-            "name":graph_name,
+            "name": graph_name,
             "edge_list_separator": "\t",
             "node_list_separator": "\t",
             "skip_weights_if_unavailable": True,
@@ -268,11 +254,11 @@ class LINQSGraphRepository(GraphRepository):
     def build_all(self):
         """Build graph retrieval methods."""
         super().build_all()
-        shutil.copyfile(
-            "graph_miner/repositories/models/parse_linqs.py",
-            os.path.join(
-                "../bindings/python/ensmallen/datasets",
-                self.repository_package_name,
-                "parse_linqs.py"
-            )
+        target_directory_path = os.path.join(
+            "../bindings/python/ensmallen/datasets",
+            self.repository_package_name,
         )
+        file_path = "{}.py".format(target_directory_path)
+        with open(file_path, "a") as f:
+            with open("graph_miner/repositories/models/parse_linqs.py", "r") as original:
+                f.write(original.read())
