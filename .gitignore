@@ -5,15 +5,13 @@ target
 hfuzz_workspace
 **/hfuzz_target
 corpus
-**/wheels_avx
-**/wheels_no_avx
 **/wheels
-**/wheels_merged
 
 # This file is automatically generate so commiting it wouldn't make any sense
 **/compilation_flags.py
 bindings/python/ensmallen/*.so
-build
+build_avx
+build_no_avx
 
 **/perf.data
 **/perf.data.old

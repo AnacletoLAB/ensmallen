@@ -42,9 +42,11 @@ def patch(file, src_regex, dst_regex):
 # Get the settings form the env vars
 ################################################################################
 
-WHEEL_FOLDER = os.environ.get("WHEEL_FOLDER", join("./wheels")) 
+WHEELS_FOLDER = os.environ.get("WHEELS_FOLDER", join("./wheels")) 
 
-TARGET_FOLDER = os.environ.get("TARGET_FOLDER", join("./wheels_merged")) 
+MERGIN_FOLDER = os.environ.get("MERGIN_FOLDER", join(WHEELS_FOLDER, "wheels_merged")) 
+AVX_FOLDER = os.environ.get("AVX_FOLDER", join(WHEELS_FOLDER, "avx")) 
+NO_AVX_FOLDER = os.environ.get("NO_AVX_FOLDER", join(WHEELS_FOLDER, "no_avx")) 
 
 CPU_FEATURES = os.environ.get("CPU_FEATURES", 
     "+sse,+sse2,+sse3,+ssse3,+sse4.1,+sse4.2,+sse4a,+avx,+avx2,+bmi1,+bmi2,+lzcnt,+popcnt,+cmov"
@@ -59,12 +61,58 @@ print("Building with: RUSTFLAGS: {}".format(RUSTFLAGS))
 ################################################################################
 # Clean the folders
 ################################################################################
-shutil.rmtree(join(TARGET_FOLDER), ignore_errors=True)
-shutil.rmtree(join(WHEEL_FOLDER), ignore_errors=True)
+shutil.rmtree(join(WHEELS_FOLDER), ignore_errors=True)
 
+os.makedirs(join(WHEELS_FOLDER), exist_ok=True)
+os.makedirs(join(MERGIN_FOLDER), exist_ok=True)
+
+print("Creating the build folder")
+shutil.rmtree(join("build_no_avx"), ignore_errors=True)
+# Copy the sources to the build_no_avx folder so that we can modify it without worries
+shutil.copytree(join("."), join("build_no_avx"))
+os.makedirs(join("wheels_no_avx"), exist_ok=True)
+
+print("Patching the library")
+patch(join("build_no_avx", "pyproject.toml"),
+    r"name\s*=\s*\".+?\"", 
+    r"""name="ensmallen_no_avx" """
+)
+patch(join("build_no_avx", "Cargo.toml"),
+    r"name\s*=\s*\".+?\"", 
+    r"""name = "ensmallen_no_avx" """
+)
+patch(join("build_no_avx", "Cargo.toml"),
+    r"""path\s*=\s*\"..""", 
+    r"""path = "../..""", 
+)
+patch(join("build_no_avx", "src", "auto_generated_bindings.rs"), 
+    r"fn ensmallen\(_py: Python", 
+    r"fn ensmallen_no_avx(_py: Python",
+)   
+
+# Rename the sources folder
+shutil.move(
+    join("build_no_avx", "ensmallen"), 
+    join("build_no_avx", "ensmallen_no_avx")
+)
+
+print("Creating the build_avx folder")
+shutil.rmtree(join("build_avx"), ignore_errors=True)
+# Copy the sources to the build folder so that we can modify it without worries
+shutil.copytree(join("."), join("build_avx"))
+os.makedirs(join("wheels_avx"), exist_ok=True)
+
+patch(join("build_avx", "Cargo.toml"),
+    r"""path\s*=\s*\"..""", 
+    r"""path = "../..""", 
+)
+
+################################################################################
+# Build the wheels
+################################################################################
 for python_minor_version in [6, 7, 8, 9]:
-    shutil.rmtree(join("wheels_no_avx"), ignore_errors=True)
-    shutil.rmtree(join("wheels_avx"), ignore_errors=True)
+    shutil.rmtree(AVX_FOLDER, ignore_errors=True)
+    shutil.rmtree(NO_AVX_FOLDER, ignore_errors=True)
     print("#" * 80)
     print("# Building version: 3.{}".format(python_minor_version))
     print("#" * 80)
@@ -81,70 +129,39 @@ for python_minor_version in [6, 7, 8, 9]:
     ################################################################################
     # Build the non avx version
     ################################################################################
-    print("Creating the build folder")
-    shutil.rmtree(join("build"), ignore_errors=True)
-    # Copy the sources to the build folder so that we can modify it without worries
-    shutil.copytree(join("."), join("build"))
-    os.makedirs(join("wheels_no_avx"), exist_ok=True)
-
-    print("Patching the library")
-    patch(join("build", "pyproject.toml"),
-        r"name\s*=\s*\".+?\"", 
-        r"""name="ensmallen_no_avx" """
-    )
-    patch(join("build", "Cargo.toml"),
-        r"name\s*=\s*\".+?\"", 
-        r"""name = "ensmallen_no_avx" """
-    )
-    patch(join("build", "Cargo.toml"),
-        r"""path\s*=\s*\"..""", 
-        r"""path = "../..""", 
-    )
-    patch(join("build", "src", "auto_generated_bindings.rs"), 
-        r"fn ensmallen\(_py: Python", 
-        r"fn ensmallen_no_avx(_py: Python",
-    )   
-
-    shutil.move(join("build", "ensmallen"), join("build", "ensmallen_no_avx"))
-
     print("Compiling the noavx version")
     exec(
-        "maturin build --release --strip -i {} --no-sdist --out ../wheels_no_avx".format(python_interpreter), 
+        "maturin build --release --strip -i {} --no-sdist --out {}".format(
+            python_interpreter,
+            NO_AVX_FOLDER
+        ), 
         env=os.environ,
-        cwd=join("build"),
+        cwd=join("build_no_avx"),
     )
 
     ################################################################################
     # Build the avx version
     ################################################################################
-    print("Creating the build folder")
-    shutil.rmtree(join("build"), ignore_errors=True)
-    # Copy the sources to the build folder so that we can modify it without worries
-    shutil.copytree(join("."), join("build"))
-    os.makedirs(join("wheels_avx"), exist_ok=True)
-
-    patch(join("build", "Cargo.toml"),
-        r"""path\s*=\s*\"..""", 
-        r"""path = "../..""", 
-    )
-
     print("Compiling the avx version")
     exec(
-        "maturin build --release --strip -i {} --no-sdist --out ../wheels_avx".format(python_interpreter), 
+        "maturin build --release --strip -i {} --no-sdist --out {}".format(
+            python_interpreter,
+            AVX_FOLDER,
+        ), 
         env={
             **os.environ,
             "RUSTFLAGS":RUSTFLAGS,
         },
-        cwd=join("build"),
+        cwd=join("build_avx"),
     )
 
     ################################################################################
     # Copy the file to the other wheel
     ################################################################################
-    os.makedirs(join(TARGET_FOLDER), exist_ok=True)
+    os.makedirs(join(MERGIN_FOLDER), exist_ok=True)
 
     # Find the no_avx wheel file
-    src_wheel = join("wheels_no_avx", os.listdir(join("wheels_no_avx"))[0])
+    src_wheel = join(NO_AVX_FOLDER, os.listdir(NO_AVX_FOLDER)[0])
     print("Opening {}".format(src_wheel))
 
     # Find the .so compiled library in it
@@ -167,11 +184,11 @@ for python_minor_version in [6, 7, 8, 9]:
     no_avx_library_hash = base64.b64encode(m.digest())
 
     # Find the avx wheel file
-    dst_wheel = join("wheels_avx", os.listdir(join("wheels_avx"))[0])
+    dst_wheel = join(AVX_FOLDER, os.listdir(AVX_FOLDER)[0])
     print("Opening {}".format(dst_wheel))
 
     # Compute the target zip file
-    target_file = join(TARGET_FOLDER, os.path.basename(dst_wheel))
+    target_file = join(MERGIN_FOLDER, os.path.basename(dst_wheel))
     shutil.rmtree(target_file, ignore_errors=True)
     print("Creating {}".format(target_file))
 
@@ -209,9 +226,9 @@ for python_minor_version in [6, 7, 8, 9]:
     # WARNING: adding --strip here breaks the wheel OFC
     if platform.system().strip().lower() == "linux":
         exec(
-            "auditwheel repair {} --wheel-dir {}".format(target_file, WHEEL_FOLDER),
+            "auditwheel repair {} --wheel-dir {}".format(target_file, WHEELS_FOLDER),
             env=os.environ,
-            cwd=TARGET_FOLDER,
+            cwd=MERGIN_FOLDER,
         )
     else:
-        shutil.copy(target_file, join(WHEEL_FOLDER, os.path.basename(dst_wheel)))
+        shutil.copy(target_file, join(WHEELS_FOLDER, os.path.basename(dst_wheel)))
