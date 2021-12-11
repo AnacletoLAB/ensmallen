@@ -1,10 +1,16 @@
 import os
 import re
 import shlex
+import base64
 import shutil
 import zipfile
+import hashlib
 import platform
 import subprocess
+
+################################################################################
+# Utils
+################################################################################
 
 def join(*args):
     return os.path.join(
@@ -32,20 +38,23 @@ def patch(file, src_regex, dst_regex):
     with open(join(file), "w") as f:
         f.write(text)
 
-
+################################################################################
+# Get the settings form the env vars
+################################################################################
 
 WHEEL_FOLDER = os.environ.get("WHEEL_FOLDER", join("./wheels")) 
+
 TARGET_FOLDER = os.environ.get("TARGET_FOLDER", join("./wheels_merged")) 
 
 CPU_FEATURES = os.environ.get("CPU_FEATURES", 
     "+sse,+sse2,+sse3,+ssse3,+sse4.1,+sse4.2,+sse4a,+avx,+avx2,+bmi1,+bmi2,+lzcnt,+popcnt,+cmov"
 )
 print("Building with: CPU_FEATURES: {}".format(CPU_FEATURES))
+
 RUSTFLAGS = os.environ.get("RUSTFLAGS", 
     "-C target-feature={cpu_features} -C inline-threshold=1000"
 ).format(cpu_features=CPU_FEATURES)
 print("Building with: RUSTFLAGS: {}".format(RUSTFLAGS))
-
 
 ################################################################################
 # Clean the folders
@@ -60,7 +69,7 @@ for python_minor_version in [6, 7, 8, 9]:
     print("# Building version: 3.{}".format(python_minor_version))
     print("#" * 80)
 
-    #
+    # Dispatch the python interpreter
     if platform.system().strip().lower() == "windows":
         python_interpreter = "{}\AppData\Local\Programs\Python\Python3{}\python.exe".format(
             os.path.expanduser("~"),
@@ -152,18 +161,14 @@ for python_minor_version in [6, 7, 8, 9]:
         with z.open(lib.filename) as f:
             no_avx_library = f.read()
 
+    # Compute the hash of the library
+    m = hashlib.sha256()
+    m.update(no_avx_library)
+    no_avx_library_hash = base64.b64encode(m.digest())
 
     # Find the avx wheel file
     dst_wheel = join("wheels_avx", os.listdir(join("wheels_avx"))[0])
     print("Opening {}".format(dst_wheel))
-
-    # Extract the RECORD file to patch it
-    with zipfile.ZipFile(dst_wheel, mode="r") as z2:
-        record_path = next(x for x in z2.filelist if x.filename.endswith("RECORD"))
-        with z2.open(record_path) as f:
-            record_data = f.read()
-
-    record_data += ("ensmallen/{},,\n".format(os.path.basename(lib.filename))).encode()
 
     # Compute the target zip file
     target_file = join(TARGET_FOLDER, os.path.basename(dst_wheel))
@@ -172,16 +177,29 @@ for python_minor_version in [6, 7, 8, 9]:
 
     with zipfile.ZipFile(dst_wheel, 'r') as zipread:
         with zipfile.ZipFile(target_file, 'w') as zipwrite:
+            # Add the non_avx library to the new zip
             zipwrite.writestr(
                 "ensmallen/{}".format(os.path.basename(lib.filename)), 
                 no_avx_library
             )
+
+            # Copy all the other files from the avx zip
             for item in zipread.infolist():
-                if not item.filename.endswith("RECORD"):
-                    data = zipread.read(item.filename)
-                    zipwrite.writestr(item, data)
-                else:
-                    zipwrite.writestr(item, record_data)
+                data = zipread.read(item.filename)
+
+                # Patch the RECORD file adding the non_avx library
+                # The record line has the following format:
+                # $PATH,$HASH,$FILE_SIZE_IN_BYTES
+                if item.filename.endswith("RECORD"):
+                    data += ("ensmallen/{},sha256={},{}\n".format(
+                        os.path.basename(lib.filename),
+                        no_avx_library_hash,
+                        len(no_avx_library),
+                    )).encode()
+                    # Sort the lines
+                    data = "\n".join(sorted(data.split("\n")))
+
+                zipwrite.writestr(item, data)
 
     ################################################################################
     # Copy the file to the other wheel
