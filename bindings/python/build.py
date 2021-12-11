@@ -225,7 +225,10 @@ for python_minor_version in [6, 7, 8, 9]:
 
     logging.info("Merging the wheels")
     with zipfile.ZipFile(dst_wheel, 'r') as zipread:
-        with zipfile.ZipFile(target_file, 'w') as zipwrite:
+        with zipfile.ZipFile(
+            target_file, 'w', 
+            compression=zipfile.ZIP_DEFLATED,
+            ) as zipwrite:
             # Add the non_avx library to the new zip
             zipwrite.writestr(
                 "ensmallen/{}".format(os.path.basename(lib.filename)), 
