@@ -189,8 +189,11 @@ for python_minor_version in [6, 7, 8, 9]:
 
     # Repairing the file
     # WARNING: adding --strip here breaks the wheel OFC
-    exec(
-        "auditwheel repair {} --wheel-dir {}".format(target_file, WHEEL_FOLDER),
-        env=os.environ,
-        cwd=TARGET_FOLDER,
-    )
+    if platform.system().strip().lower() == "linux":
+        exec(
+            "auditwheel repair {} --wheel-dir {}".format(target_file, WHEEL_FOLDER),
+            env=os.environ,
+            cwd=TARGET_FOLDER,
+        )
+    else:
+        shutil.copy(target_file, join(WHEEL_FOLDER, os.path.basename(dst_wheel)))
