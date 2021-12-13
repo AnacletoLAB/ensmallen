@@ -1,17 +1,10 @@
 """Class providing an abstract graph repository."""
 from typing import List, Dict, Set
-import pandas as pd
 import os
 import json
 import compress_json
-import datetime
-import shutil
 from glob import glob
-from ensmallen import Graph
 from tqdm.auto import tqdm
-from environments_utils import is_notebook
-from IPython.display import display
-from .custom_exceptions import UnsupportedGraphException
 
 
 class GraphRepository:
@@ -399,7 +392,6 @@ class GraphRepository:
                         version=version,
                         graph_method_name=self.build_stored_graph_name(
                             graph_name),
-                        datetime=str(datetime.datetime.now()),
                         urls=self.get_graph_urls(graph_name, version),
                         paths=self.get_graph_paths(graph_name, version),
                         references=self.get_graph_references(
