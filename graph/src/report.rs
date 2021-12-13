@@ -970,14 +970,16 @@ impl Graph {
                 "</{list_type}>",
                 "{possibly_conclusive_entry}"
             ),
-            column_style = if number_of_oddities > 1 {
-                format!(
-                    " style=\"column-count: {number_of_columns}; column-gap: 2em;\"",
-                    number_of_columns = number_of_columns
-                )
-            } else {
-                "".to_string()
-            },
+            column_style = format!(
+                " class=\"{}\"",
+                match number_of_columns {
+                    4 => "small-columns",
+                    3 => "medium-columns",
+                    2 => "large-columns",
+                    1 => "single-column",
+                    _ => unreachable!("We only support column numbers from 1 to 5.")
+                }
+            ),
             list_type = if sorted && number_of_oddities > 1 {
                 "ol"
             } else {
@@ -1138,7 +1140,7 @@ impl Graph {
                     .unwrap(),
                 sorted,
                 Some(6),
-                Some(2),
+                Some(3),
                 tree_like_oddities.into_iter(),
             )
         }
@@ -1201,7 +1203,7 @@ impl Graph {
             0,
             false,
             Some(15),
-            Some(3),
+            Some(4),
             self.iter_singleton_node_ids().map(|node_id| unsafe {
                 self.get_unchecked_succinct_node_description(node_id, 0, true)
             }),
@@ -1234,7 +1236,7 @@ impl Graph {
             maximum_number_of_edges_in_a_singleton_with_selfloop,
             false,
             Some(15),
-            Some(3),
+            Some(4),
             self.iter_singleton_nodes_with_selfloops_node_ids()
                 .map(|node_id| unsafe {
                     self.get_unchecked_succinct_node_description(node_id, 1, true)
@@ -1264,7 +1266,7 @@ impl Graph {
             maximum_number_of_edges_in_a_circle,
             true,
             Some(10),
-            Some(2),
+            Some(3),
             circles.into_iter(),
         );
 
@@ -1293,7 +1295,7 @@ impl Graph {
             maximum_number_of_edges_in_a_chain,
             true,
             Some(10),
-            Some(2),
+            Some(3),
             chains.into_iter(),
         );
 
@@ -2325,11 +2327,62 @@ impl Graph {
             }
         }
 
-        let mut report = paragraphs.join("");
-        report = report.replace(
-            "<p>",
-            "<p style=\"text-align: justify; word-break: break-all;\">",
+        let style = concat!(
+            "<style>",
+            ".paragraph {",
+            "text-align: justify;",
+            "word-break: break-all;",
+            "}",
+            ".small-columns {",
+            "column-count: 4;",
+            "column-gap: 2em;",
+            "}",
+            ".medium-columns {",
+            "column-count: 3;",
+            "column-gap: 2em;",
+            "}",
+            ".large-columns {",
+            "column-count: 2;",
+            "column-gap: 2em;",
+            "}",
+            ".single-column {}",
+            "@media only screen and (max-width: 600px) {",
+            ".small-columns {",
+            "column-count: 1;",
+            "}",
+            ".medium-columns {",
+            "column-count: 1;",
+            "}",
+            ".large-columns {",
+            "column-count: 1;",
+            "}",
+            "}",
+            "@media only screen and (min-width: 600px) and (max-width: 800px) {",
+            ".small-columns {",
+            "column-count: 2;",
+            "}",
+            ".medium-columns {",
+            "column-count: 1;",
+            "}",
+            ".large-columns {",
+            "column-count: 1;",
+            "}",
+            "}",
+            "@media only screen and (min-width: 800px) and (max-width: 1024px) {",
+            ".small-columns {",
+            "column-count: 3;",
+            "}",
+            ".medium-columns {",
+            "column-count: 2;",
+            "}",
+            ".large-columns {",
+            "column-count: 1;",
+            "}",
+            "}",
+            "</style>"
         );
+        let mut report = format!("{}{}", style, paragraphs.join(""));
+        report = report.replace("<p>", "<p class=\"paragraph\">");
         report = report.replace("<h3>", "<h3 style=\"margin: 1em 0 0 0;\">");
         report = report.replace("<h4>", "<h4 style=\"margin: 1em 0 0 0;\">");
         report = report.replace("<h5>", "<h5 style=\"margin: 1em 0 0 0;\">");
