@@ -85,7 +85,6 @@ mod remove;
 mod selfloops;
 mod setters;
 mod sort;
-mod spine;
 mod tarjan;
 mod tfidf;
 mod thickeners;

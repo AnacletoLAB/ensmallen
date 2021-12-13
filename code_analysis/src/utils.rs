@@ -21,7 +21,7 @@ pub const DENY_LIST: &[&str] = &[
     "argmax_argmin.rs",
     "minmax.rs",
     "splitter.rs",
-    "mmap",
+    "mmap"
 ];
 
 
