@@ -132,7 +132,7 @@ patch(join(AVX_BUILD_FOLDER, "Cargo.toml"),
 ################################################################################
 # Build the wheels
 ################################################################################
-for python_minor_version in [6, 7, 8, 9]:
+for python_minor_version in [7]:# [6, 7, 8, 9]:
     shutil.rmtree(AVX_FOLDER, ignore_errors=True)
     os.makedirs(AVX_FOLDER, exist_ok=True)
 

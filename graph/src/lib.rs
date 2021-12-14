@@ -172,3 +172,6 @@ pub use dendritic_tree::*;
 
 mod cliques;
 pub use cliques::*;
+
+mod spine;
+pub use spine::*;

@@ -20,7 +20,7 @@ Please cite:
 }
 ```
 """
-from ..ensmallen import Graph  # pylint: disable=import-error
+from ensmallen import Graph  # pylint: disable=import-error
 from .automatic_graph_retrieval import AutomaticallyRetrievedGraph
 
 def FreeBase(

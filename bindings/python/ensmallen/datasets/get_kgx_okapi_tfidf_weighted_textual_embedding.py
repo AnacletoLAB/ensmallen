@@ -7,7 +7,7 @@ from .get_graph_okapi_tfidf_weighted_textual_embedding import get_graph_okapi_tf
 
 
 def get_kgx_okapi_tfidf_weighted_textual_embedding(
-    graph_name: str,
+    name: str,
     repository: str,
     version: str = "current",
     k1: float = 1.5,
@@ -20,7 +20,7 @@ def get_kgx_okapi_tfidf_weighted_textual_embedding(
     
     Parameters
     ------------------------
-    graph_name: str
+    name: str
         The name of the graph to be retrieved and loaded.
     repository: str,
         The kgx repository to be used.
@@ -38,7 +38,7 @@ def get_kgx_okapi_tfidf_weighted_textual_embedding(
         Whether to show the loading bars
     """
     return get_graph_okapi_tfidf_weighted_textual_embedding(
-        graph_name=graph_name,
+        name=name,
         version=version,
         repository=repository,
         k1=k1,
@@ -50,7 +50,7 @@ def get_kgx_okapi_tfidf_weighted_textual_embedding(
     )
 
 def get_kghub_okapi_tfidf_weighted_textual_embedding(
-    graph_name: str,
+    name: str,
     version: str = "current",
     k1: float = 1.5,
     b: float = 0.75,
@@ -62,7 +62,7 @@ def get_kghub_okapi_tfidf_weighted_textual_embedding(
     
     Parameters
     ------------------------
-    graph_name: str
+    name: str
         The name of the graph to be retrieved and loaded.
     version: str = "current"
         The version of the graph to be retrieved.
@@ -78,7 +78,7 @@ def get_kghub_okapi_tfidf_weighted_textual_embedding(
         Whether to show the loading bars
     """
     return get_kgx_okapi_tfidf_weighted_textual_embedding(
-        graph_name=graph_name,
+        name=name,
         version=version,
         repository="kghub",
         k1=k1,
@@ -89,7 +89,7 @@ def get_kghub_okapi_tfidf_weighted_textual_embedding(
     )
 
 def get_kgobo_okapi_tfidf_weighted_textual_embedding(
-    graph_name: str,
+    name: str,
     version: str = "current",
     k1: float = 1.5,
     b: float = 0.75,
@@ -101,7 +101,7 @@ def get_kgobo_okapi_tfidf_weighted_textual_embedding(
     
     Parameters
     ------------------------
-    graph_name: str
+    name: str
         The name of the graph to be retrieved and loaded.
     version: str = "current"
         The version of the graph to be retrieved.
@@ -117,7 +117,7 @@ def get_kgobo_okapi_tfidf_weighted_textual_embedding(
         Whether to show the loading bars
     """
     return get_kgx_okapi_tfidf_weighted_textual_embedding(
-        graph_name=graph_name,
+        name=name,
         version=version,
         repository="kgobo",
         k1=k1,

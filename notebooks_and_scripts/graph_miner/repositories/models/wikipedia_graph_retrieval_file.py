@@ -69,7 +69,7 @@ def {graph_method_name}(
         Additional graph kwargs.{tabbed_references}
     """
     return WikipediaAutomaticallyRetrievedGraph(
-        graph_name="{graph_method_name}",
+        name="{graph_method_name}",
         version=version,
         directed=directed,
         load_nodes=load_nodes,

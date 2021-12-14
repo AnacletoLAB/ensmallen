@@ -7,7 +7,7 @@ from .get_okapi_tfidf_weighted_textual_embedding import get_okapi_tfidf_weighted
 
 
 def get_wikipedia_okapi_tfidf_weighted_textual_embedding(
-    graph_name: str,
+    name: str,
     version: str = "latest",
     k1: float = 1.5,
     b: float = 0.75,
@@ -19,7 +19,7 @@ def get_wikipedia_okapi_tfidf_weighted_textual_embedding(
     
     Parameters
     ------------------------
-    graph_name: str
+    name: str
         The name of the graph to be retrieved and loaded.
     version: str
         The version of the graph to be retrieved.
@@ -36,7 +36,7 @@ def get_wikipedia_okapi_tfidf_weighted_textual_embedding(
     """
     # Sanitize data using the automatic graph retrieval
     graph_retriever = WikipediaAutomaticallyRetrievedGraph(
-        graph_name=graph_name,
+        name=name,
         version=version,
         verbose=verbose
     )

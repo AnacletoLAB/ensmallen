@@ -14,7 +14,7 @@ Please cite:
 }
 ```
 """
-from ..ensmallen import Graph  # pylint: disable=import-error
+from ensmallen import Graph  # pylint: disable=import-error
 from .automatic_graph_retrieval import AutomaticallyRetrievedGraph
 
 def MOD(
@@ -5356,7 +5356,7 @@ def ICO(
     directed = False, preprocess = True, load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "release", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-04-21", **kwargs
 ) -> Graph:
     """Return ICO graph	
 
@@ -5383,11 +5383,10 @@ def ICO(
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
         Sys var with cache directory
-    version = "release"
+    version = "2021-04-21"
         Version to retrieve	
 		The available versions are:
 			- 2021-04-21
-			- release
     """
     return AutomaticallyRetrievedGraph(
         "ICO", version, "kgobo", directed, preprocess, load_nodes,
@@ -6915,7 +6914,7 @@ def DISDRIV(
     directed = False, preprocess = True, load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
 ) -> Graph:
     """Return DISDRIV graph	
 
@@ -6942,11 +6941,10 @@ def DISDRIV(
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
         Sys var with cache directory
-    version = ""
+    version = "no_version"
         Version to retrieve	
 		The available versions are:
 			- no_version
-			- 
     """
     return AutomaticallyRetrievedGraph(
         "DISDRIV", version, "kgobo", directed, preprocess, load_nodes,
@@ -7496,8 +7494,6 @@ def ECO(
         Version to retrieve	
 		The available versions are:
 			- 2021-12-03
-			- 2021-10-01
-			- 2021-10-08
 			- 2021-10-20
     """
     return AutomaticallyRetrievedGraph(

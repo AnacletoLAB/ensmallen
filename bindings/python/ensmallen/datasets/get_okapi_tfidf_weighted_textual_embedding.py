@@ -8,7 +8,7 @@ from cache_decorator import Cache
 from tqdm.auto import tqdm
 from transformers import BertModel, BertTokenizer
 
-from ..ensmallen import preprocessing
+from ensmallen import preprocessing
 
 
 @Cache(
