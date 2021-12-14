@@ -10,8 +10,7 @@ corpus
 # This file is automatically generate so commiting it wouldn't make any sense
 **/compilation_flags.py
 bindings/python/ensmallen/*.so
-build_avx
-build_no_avx
+**/build_*
 
 **/perf.data
 **/perf.data.old

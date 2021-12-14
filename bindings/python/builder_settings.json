@@ -1,0 +1,39 @@
+{
+    // Which python versions to compile for
+    "python_versions":["3.6", "3.7", "3.8", "3.9", "3.10"],
+    // Where the final wheels, and the tmp building folders will, be
+    "wheels_folder":"wheels", 
+    // flags passed to RUSTFLAGS to all targets
+    "shared_rustflags":"-C inline-threshold=1000",
+    // List of the different libraries that will be compiled
+    // In the resulting wheel the different targets will be
+    // like `ensmallen_{target}_{complation_infos}.{extension}` so that they can
+    // be imported as `ensmallen_{target}`
+    "targets":{
+        // for the gcloud cpus refer to https://cloud.google.com/compute/docs/cpu-platforms
+        // WARNING: to compile these we need to be on a cpu that supports avx512 
+        // otherwise we'd get a SIGILL error 
+
+        // version optimized for the newest google cloud cpus
+        //"icelake":{
+        //    "build_dir":"build_icelake",
+        //    "rustflags":"-C target-cpu=icelake-server"
+        //},
+        // version optimized for the relatively new google cloud cpus
+        //"cascadelake":{
+        //    "build_dir":"build_cascadelake",
+        //   "rustflags":"-C target-cpu=cascadelake"
+        //},
+        
+        // good balance of compatability and speed, (2013)
+        "haswell":{
+            "build_dir":"build_haswell",
+            "rustflags":"-C target-cpu=haswell"
+        },
+        // full compatability (2006)
+        "core2":{
+            "build_dir":"build_core2",
+            "rustflags":"-C target-cpu=core2"
+        }
+    }
+}
