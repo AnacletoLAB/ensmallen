@@ -1,5 +1,5 @@
 """Module providing graphs available from Wikipedia."""
-from ..ensmallen import Graph  # pylint: disable=import-error
+from ensmallen import Graph  # pylint: disable=import-error
 from .wikipedia_automatic_graph_retrieval import WikipediaAutomaticallyRetrievedGraph
 
 def WikiMediaRU(

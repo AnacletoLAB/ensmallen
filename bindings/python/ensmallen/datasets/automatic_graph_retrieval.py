@@ -8,7 +8,7 @@ import compress_json
 from downloaders import BaseDownloader
 from environments_utils import is_windows
 from dict_hash import sha256
-from ..ensmallen import Graph, edge_list_utils
+from ensmallen import Graph, edge_list_utils
 from .get_dataset import validate_graph_version
 
 

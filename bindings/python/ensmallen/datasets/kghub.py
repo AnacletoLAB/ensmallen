@@ -1,5 +1,5 @@
 """Module providing graphs available from KGHub."""
-from ..ensmallen import Graph  # pylint: disable=import-error
+from ensmallen import Graph  # pylint: disable=import-error
 from .automatic_graph_retrieval import AutomaticallyRetrievedGraph
 
 def KGMicrobe(

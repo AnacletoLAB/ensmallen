@@ -663,7 +663,7 @@ class GraphRepository:
                 references="\n\n{}\n".format(self.format_references(
                     first_references)) if has_unique_references else ""
             ),
-            "from ..ensmallen import Graph  # pylint: disable=import-error",
+            "from ensmallen import Graph  # pylint: disable=import-error",
             self.get_automatic_graph_retrieval_import(),
             *imports,
             "",
