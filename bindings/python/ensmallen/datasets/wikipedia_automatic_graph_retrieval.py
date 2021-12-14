@@ -14,7 +14,7 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
 
     def __init__(
         self,
-        graph_name: str,
+        name: str,
         version: str,
         directed: bool = False,
         load_nodes: bool = True,
@@ -36,7 +36,7 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
 
         Parameters
         -------------------
-        graph_name: str
+        name: str
             The name of the graph to be retrieved and loaded.
         version: str
             The version of the graph to be retrieved.
@@ -99,7 +99,7 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
         self._compute_node_description = compute_node_description
 
         super().__init__(
-            name=graph_name,
+            name=name,
             version=version,
             repository="wikipedia",
             directed=directed,

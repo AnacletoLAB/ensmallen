@@ -7,7 +7,7 @@ from .get_graph_okapi_tfidf_weighted_textual_embedding import get_graph_okapi_tf
 
 
 def get_string_okapi_tfidf_weighted_textual_embedding(
-    graph_name: str,
+    name: str,
     version: str = "links.v11.5",
     k1: float = 1.5,
     b: float = 0.75,
@@ -19,7 +19,7 @@ def get_string_okapi_tfidf_weighted_textual_embedding(
     
     Parameters
     ------------------------
-    graph_name: str
+    name: str
         The name of the graph to be retrieved and loaded.
     version: str = "links.v11.5"
         The version of the graph to be retrieved.
@@ -35,7 +35,7 @@ def get_string_okapi_tfidf_weighted_textual_embedding(
         Whether to show the loading bars
     """
     return get_graph_okapi_tfidf_weighted_textual_embedding(
-        graph_name=graph_name,
+        name=name,
         version=version,
         repository="string",
         k1=k1,

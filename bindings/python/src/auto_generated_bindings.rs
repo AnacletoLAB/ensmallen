@@ -8756,8 +8756,8 @@ impl Graph {
     /// Return if graph has name that is not the default one.
     ///
     /// TODO: use a default for the default graph name
-    pub fn has_default_graph_name(&self) -> bool {
-        self.inner.has_default_graph_name().into()
+    pub fn has_default_name(&self) -> bool {
+        self.inner.has_default_name().into()
     }
 
     #[automatically_generated_binding]
@@ -13465,7 +13465,7 @@ pub const GRAPH_METHODS_NAMES: &[&str] = &[
     "get_subsampled_nodes",
     "get_okapi_bm25_node_feature_propagation",
     "get_okapi_bm25_node_label_propagation",
-    "has_default_graph_name",
+    "has_default_name",
     "has_nodes",
     "has_edges",
     "has_trap_nodes",
