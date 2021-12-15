@@ -2,11 +2,11 @@
 
 import os
 import shutil
-from typing import Callable, Dict, List, Optional
+from typing import Callable, Dict, List, Optional, Union
 
 import compress_json
 from downloaders import BaseDownloader
-from environments_utils import is_windows
+from environments_utils import is_windows, is_linux, is_macos
 from dict_hash import sha256
 from ensmallen import Graph, edge_list_utils
 from .get_dataset import validate_graph_version
@@ -21,7 +21,7 @@ class AutomaticallyRetrievedGraph:
         version: str,
         repository: str,
         directed: bool = False,
-        preprocess: bool = True,
+        preprocess: Union[bool, str] = "auto",
         load_nodes: bool = True,
         load_node_types: bool = True,
         load_edge_weights: bool = True,
@@ -49,9 +49,11 @@ class AutomaticallyRetrievedGraph:
         directed: bool = False
             Whether to load the graph as directed or undirected.
             By default false.
-        preprocess: bool = True
+        preprocess: Union[bool, str] = "auto"
             Whether to preprocess the node list and edge list
             to be loaded optimally in both time and memory.
+            Will automatically preprocess in Linux and macOS
+            and avoid doing this on Windows.
         load_nodes: bool = True
             Whether to load the nodes vocabulary or treat the nodes
             simply as a numeric range.
@@ -115,6 +117,9 @@ class AutomaticallyRetrievedGraph:
                     "for this graph to be added."
                 ).format(name)
             )
+
+        if preprocess == "auto":
+            preprocess = is_macos() or is_linux()
 
         if preprocess and is_windows():
             raise ValueError(

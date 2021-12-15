@@ -7,6 +7,7 @@ from typing import Dict, List, Optional
 from dict_hash import sha256
 from ensmallen import Graph, edge_list_utils
 from .automatic_graph_retrieval import AutomaticallyRetrievedGraph
+from environments_utils import is_windows
 
 
 class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
@@ -89,9 +90,13 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
         ValueError,
             If the given graph name is not available.
         ValueError,
-            If the preprocess flag is provided but the system
-            is Windows, which does not provide the sort command.
+            If the OS is Windows, we cannot process the file.
         """
+        if is_windows():
+            raise ValueError(
+                "On Windows we do not support the processing of "
+                "Wikipedia graphs."
+            )
         self._keep_nodes_without_descriptions = keep_nodes_without_descriptions
         self._keep_nodes_without_categories = keep_nodes_without_categories
         self._keep_interwikipedia_nodes = keep_interwikipedia_nodes
