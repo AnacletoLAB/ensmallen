@@ -18,7 +18,7 @@ from ensmallen import Graph  # pylint: disable=import-error
 from .automatic_graph_retrieval import AutomaticallyRetrievedGraph
 
 def MOD(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "10-03-2021-14-36", **kwargs
@@ -29,8 +29,9 @@ def MOD(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -60,7 +61,7 @@ def MOD(
     )()
 
 def FBBT(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-09-01", **kwargs
@@ -71,8 +72,9 @@ def FBBT(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -103,7 +105,7 @@ def FBBT(
     )()
 
 def BTO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-04-27", **kwargs
@@ -114,8 +116,9 @@ def BTO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -146,7 +149,7 @@ def BTO(
     )()
 
 def CHMO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
@@ -157,8 +160,9 @@ def CHMO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -188,7 +192,7 @@ def CHMO(
     )()
 
 def OBA(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "13-11-2015-10-21", **kwargs
@@ -199,8 +203,9 @@ def OBA(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -231,7 +236,7 @@ def OBA(
     )()
 
 def PSO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-05-19", **kwargs
@@ -242,8 +247,9 @@ def PSO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -273,7 +279,7 @@ def PSO(
     )()
 
 def OGSF(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "11-22-2014", **kwargs
@@ -284,8 +290,9 @@ def OGSF(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -315,7 +322,7 @@ def OGSF(
     )()
 
 def MCO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2019-05-15", **kwargs
@@ -326,8 +333,9 @@ def MCO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -357,7 +365,7 @@ def MCO(
     )()
 
 def OPMI(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "Vision-Release--1.0.130", **kwargs
@@ -368,8 +376,9 @@ def OPMI(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -399,7 +408,7 @@ def OPMI(
     )()
 
 def FBDV(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-10-13", **kwargs
@@ -410,8 +419,9 @@ def FBDV(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -443,7 +453,7 @@ def FBDV(
     )()
 
 def CEPH(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2016-01-12", **kwargs
@@ -454,8 +464,9 @@ def CEPH(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -485,7 +496,7 @@ def CEPH(
     )()
 
 def MPATH(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-05-19", **kwargs
@@ -496,8 +507,9 @@ def MPATH(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -527,7 +539,7 @@ def MPATH(
     )()
 
 def SPD(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "1.0", **kwargs
@@ -538,8 +550,9 @@ def SPD(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -569,7 +582,7 @@ def SPD(
     )()
 
 def OMIT(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "dev", **kwargs
@@ -580,8 +593,9 @@ def OMIT(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -611,7 +625,7 @@ def OMIT(
     )()
 
 def VT(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "04-10-2021-10-15", **kwargs
@@ -622,8 +636,9 @@ def VT(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -653,7 +668,7 @@ def VT(
     )()
 
 def EHDAA2(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2013-07-04", **kwargs
@@ -664,8 +679,9 @@ def EHDAA2(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -695,7 +711,7 @@ def EHDAA2(
     )()
 
 def FLOPO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
@@ -706,8 +722,9 @@ def FLOPO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -737,7 +754,7 @@ def FLOPO(
     )()
 
 def WBLS(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-07-06", **kwargs
@@ -748,8 +765,9 @@ def WBLS(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -780,7 +798,7 @@ def WBLS(
     )()
 
 def RXNO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-11-15", **kwargs
@@ -791,8 +809,9 @@ def RXNO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -824,7 +843,7 @@ def RXNO(
     )()
 
 def OMP(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-10-01", **kwargs
@@ -835,8 +854,9 @@ def OMP(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -867,7 +887,7 @@ def OMP(
     )()
 
 def ERO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
@@ -878,8 +898,9 @@ def ERO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -909,7 +930,7 @@ def ERO(
     )()
 
 def GNO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-08-13", **kwargs
@@ -920,8 +941,9 @@ def GNO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -951,7 +973,7 @@ def GNO(
     )()
 
 def XCO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "4.46", **kwargs
@@ -962,8 +984,9 @@ def XCO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -993,7 +1016,7 @@ def XCO(
     )()
 
 def AMPHX(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-12-18", **kwargs
@@ -1004,8 +1027,9 @@ def AMPHX(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -1035,7 +1059,7 @@ def AMPHX(
     )()
 
 def CLYH(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-05-29", **kwargs
@@ -1046,8 +1070,9 @@ def CLYH(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -1077,7 +1102,7 @@ def CLYH(
     )()
 
 def OOSTT(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-01-08", **kwargs
@@ -1088,8 +1113,9 @@ def OOSTT(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -1119,7 +1145,7 @@ def OOSTT(
     )()
 
 def FYPO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-11-18", **kwargs
@@ -1130,8 +1156,9 @@ def FYPO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -1164,7 +1191,7 @@ def FYPO(
     )()
 
 def NCRO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2015-12-10", **kwargs
@@ -1175,8 +1202,9 @@ def NCRO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -1206,7 +1234,7 @@ def NCRO(
     )()
 
 def IAO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-12-09", **kwargs
@@ -1217,8 +1245,9 @@ def IAO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -1248,7 +1277,7 @@ def IAO(
     )()
 
 def GEO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "release", **kwargs
@@ -1259,8 +1288,9 @@ def GEO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -1290,7 +1320,7 @@ def GEO(
     )()
 
 def EXO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2.1", **kwargs
@@ -1301,8 +1331,9 @@ def EXO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -1332,7 +1363,7 @@ def EXO(
     )()
 
 def SWO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "swo.owl", **kwargs
@@ -1343,8 +1374,9 @@ def SWO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -1374,7 +1406,7 @@ def SWO(
     )()
 
 def OBCS(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2018-02-22", **kwargs
@@ -1385,8 +1417,9 @@ def OBCS(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -1416,7 +1449,7 @@ def OBCS(
     )()
 
 def ENVO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-05-14", **kwargs
@@ -1427,8 +1460,9 @@ def ENVO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -1458,7 +1492,7 @@ def ENVO(
     )()
 
 def SYMP(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-08-04", **kwargs
@@ -1469,8 +1503,9 @@ def SYMP(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -1500,7 +1535,7 @@ def SYMP(
     )()
 
 def TAXRANK(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2016-04-15", **kwargs
@@ -1511,8 +1546,9 @@ def TAXRANK(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -1542,7 +1578,7 @@ def TAXRANK(
     )()
 
 def APO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-09-07", **kwargs
@@ -1553,8 +1589,9 @@ def APO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -1585,7 +1622,7 @@ def APO(
     )()
 
 def CLO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2019-02-10", **kwargs
@@ -1596,8 +1633,9 @@ def CLO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -1627,7 +1665,7 @@ def CLO(
     )()
 
 def CMO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2019-02-19", **kwargs
@@ -1638,8 +1676,9 @@ def CMO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -1669,7 +1708,7 @@ def CMO(
     )()
 
 def OHMI(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2019-09-17", **kwargs
@@ -1680,8 +1719,9 @@ def OHMI(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -1711,7 +1751,7 @@ def OHMI(
     )()
 
 def HSO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-11-28", **kwargs
@@ -1722,8 +1762,9 @@ def HSO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -1753,7 +1794,7 @@ def HSO(
     )()
 
 def FBBI(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-11-06", **kwargs
@@ -1764,8 +1805,9 @@ def FBBI(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -1795,7 +1837,7 @@ def FBBI(
     )()
 
 def OBI(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-08-18", **kwargs
@@ -1806,8 +1848,9 @@ def OBI(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -1837,7 +1880,7 @@ def OBI(
     )()
 
 def CDAO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2019-06-26", **kwargs
@@ -1848,8 +1891,9 @@ def CDAO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -1879,7 +1923,7 @@ def CDAO(
     )()
 
 def MFMO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2013-11-16", **kwargs
@@ -1890,8 +1934,9 @@ def MFMO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -1921,7 +1966,7 @@ def MFMO(
     )()
 
 def CRO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2019-12-11", **kwargs
@@ -1932,8 +1977,9 @@ def CRO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -1963,7 +2009,7 @@ def CRO(
     )()
 
 def CHEMINF(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2.0", **kwargs
@@ -1974,8 +2020,9 @@ def CHEMINF(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -2005,7 +2052,7 @@ def CHEMINF(
     )()
 
 def MP(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-11-04", **kwargs
@@ -2016,8 +2063,9 @@ def MP(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -2051,7 +2099,7 @@ def MP(
     )()
 
 def DUO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-02-23", **kwargs
@@ -2062,8 +2110,9 @@ def DUO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -2093,7 +2142,7 @@ def DUO(
     )()
 
 def LABO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-06-08", **kwargs
@@ -2104,8 +2153,9 @@ def LABO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -2135,7 +2185,7 @@ def LABO(
     )()
 
 def OLATDV(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-03-10", **kwargs
@@ -2146,8 +2196,9 @@ def OLATDV(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -2177,7 +2228,7 @@ def OLATDV(
     )()
 
 def MPIO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2019-01-30", **kwargs
@@ -2188,8 +2239,9 @@ def MPIO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -2219,7 +2271,7 @@ def MPIO(
     )()
 
 def CHEBI(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "205", **kwargs
@@ -2230,8 +2282,9 @@ def CHEBI(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -2264,7 +2317,7 @@ def CHEBI(
     )()
 
 def AEO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2014-12-05", **kwargs
@@ -2275,8 +2328,9 @@ def AEO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -2306,7 +2360,7 @@ def AEO(
     )()
 
 def GENO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-03-08", **kwargs
@@ -2317,8 +2371,9 @@ def GENO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -2348,7 +2403,7 @@ def GENO(
     )()
 
 def SBO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "28-08-2021-03-13", **kwargs
@@ -2359,8 +2414,9 @@ def SBO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -2390,7 +2446,7 @@ def SBO(
     )()
 
 def TO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-04-06", **kwargs
@@ -2401,8 +2457,9 @@ def TO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -2432,7 +2489,7 @@ def TO(
     )()
 
 def UO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
@@ -2443,8 +2500,9 @@ def UO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -2474,7 +2532,7 @@ def UO(
     )()
 
 def MOP(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2014-09-03", **kwargs
@@ -2485,8 +2543,9 @@ def MOP(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -2516,7 +2575,7 @@ def MOP(
     )()
 
 def CHIRO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2015-11-23", **kwargs
@@ -2527,8 +2586,9 @@ def CHIRO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -2558,7 +2618,7 @@ def CHIRO(
     )()
 
 def OGMS(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-08-19", **kwargs
@@ -2569,8 +2629,9 @@ def OGMS(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -2600,7 +2661,7 @@ def OGMS(
     )()
 
 def NCBITAXON(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-06-10", **kwargs
@@ -2611,8 +2672,9 @@ def NCBITAXON(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -2642,7 +2704,7 @@ def NCBITAXON(
     )()
 
 def FOODON(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-09-15", **kwargs
@@ -2653,8 +2715,9 @@ def FOODON(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -2685,7 +2748,7 @@ def FOODON(
     )()
 
 def PW(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "7.52", **kwargs
@@ -2696,8 +2759,9 @@ def PW(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -2727,7 +2791,7 @@ def PW(
     )()
 
 def FOVT(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-10-29", **kwargs
@@ -2738,8 +2802,9 @@ def FOVT(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -2771,7 +2836,7 @@ def FOVT(
     )()
 
 def XPO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-03-05", **kwargs
@@ -2782,8 +2847,9 @@ def XPO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -2813,7 +2879,7 @@ def XPO(
     )()
 
 def ZFS(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-03-10", **kwargs
@@ -2824,8 +2890,9 @@ def ZFS(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -2855,7 +2922,7 @@ def ZFS(
     )()
 
 def RS(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "6.107", **kwargs
@@ -2866,8 +2933,9 @@ def RS(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -2897,7 +2965,7 @@ def RS(
     )()
 
 def CTO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
@@ -2908,8 +2976,9 @@ def CTO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -2939,7 +3008,7 @@ def CTO(
     )()
 
 def OMO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-06-08", **kwargs
@@ -2950,8 +3019,9 @@ def OMO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -2981,7 +3051,7 @@ def OMO(
     )()
 
 def FIX(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-04-13", **kwargs
@@ -2992,8 +3062,9 @@ def FIX(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -3023,7 +3094,7 @@ def FIX(
     )()
 
 def MAMO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
@@ -3034,8 +3105,9 @@ def MAMO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -3065,7 +3137,7 @@ def MAMO(
     )()
 
 def VTO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-11-13", **kwargs
@@ -3076,8 +3148,9 @@ def VTO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -3107,7 +3180,7 @@ def VTO(
     )()
 
 def UBERON(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-10-01", **kwargs
@@ -3118,8 +3191,9 @@ def UBERON(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -3150,7 +3224,7 @@ def UBERON(
     )()
 
 def MFOMD(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-04-26", **kwargs
@@ -3161,8 +3235,9 @@ def MFOMD(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -3192,7 +3267,7 @@ def MFOMD(
     )()
 
 def BFO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2019-08-26", **kwargs
@@ -3203,8 +3278,9 @@ def BFO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -3234,7 +3310,7 @@ def BFO(
     )()
 
 def HTN(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "release", **kwargs
@@ -3245,8 +3321,9 @@ def HTN(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -3276,7 +3353,7 @@ def HTN(
     )()
 
 def PORO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2016-09-13", **kwargs
@@ -3287,8 +3364,9 @@ def PORO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -3319,7 +3397,7 @@ def PORO(
     )()
 
 def AISM(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-09-08", **kwargs
@@ -3330,8 +3408,9 @@ def AISM(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -3362,7 +3441,7 @@ def AISM(
     )()
 
 def WBBT(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-09-27", **kwargs
@@ -3373,8 +3452,9 @@ def WBBT(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -3404,7 +3484,7 @@ def WBBT(
     )()
 
 def HAO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
@@ -3415,8 +3495,9 @@ def HAO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -3446,7 +3527,7 @@ def HAO(
     )()
 
 def SO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-07-12", **kwargs
@@ -3457,8 +3538,9 @@ def SO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -3489,7 +3571,7 @@ def SO(
     )()
 
 def RO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-10-27", **kwargs
@@ -3500,8 +3582,9 @@ def RO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -3533,7 +3616,7 @@ def RO(
     )()
 
 def MONDO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-11-01", **kwargs
@@ -3544,8 +3627,9 @@ def MONDO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -3578,7 +3662,7 @@ def MONDO(
     )()
 
 def DDPHENO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-06-19", **kwargs
@@ -3589,8 +3673,9 @@ def DDPHENO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -3620,7 +3705,7 @@ def DDPHENO(
     )()
 
 def IDOMAL(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2015-03-16", **kwargs
@@ -3631,8 +3716,9 @@ def IDOMAL(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -3662,7 +3748,7 @@ def IDOMAL(
     )()
 
 def MAXO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-08-19", **kwargs
@@ -3673,8 +3759,9 @@ def MAXO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -3704,7 +3791,7 @@ def MAXO(
     )()
 
 def FBCV(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-09-02", **kwargs
@@ -3715,8 +3802,9 @@ def FBCV(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -3747,7 +3835,7 @@ def FBCV(
     )()
 
 def TRANS(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-08-04", **kwargs
@@ -3758,8 +3846,9 @@ def TRANS(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -3789,7 +3878,7 @@ def TRANS(
     )()
 
 def PSDO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-12-04", **kwargs
@@ -3800,8 +3889,9 @@ def PSDO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -3831,7 +3921,7 @@ def PSDO(
     )()
 
 def SCDO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-04-15", **kwargs
@@ -3842,8 +3932,9 @@ def SCDO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -3873,7 +3964,7 @@ def SCDO(
     )()
 
 def ONTONEO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-04-29", **kwargs
@@ -3884,8 +3975,9 @@ def ONTONEO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -3915,7 +4007,7 @@ def ONTONEO(
     )()
 
 def DRON(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-08-12", **kwargs
@@ -3926,8 +4018,9 @@ def DRON(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -3958,7 +4051,7 @@ def DRON(
     )()
 
 def RBO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-08-30", **kwargs
@@ -3969,8 +4062,9 @@ def RBO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -4000,7 +4094,7 @@ def RBO(
     )()
 
 def NCIT(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-08-20", **kwargs
@@ -4011,8 +4105,9 @@ def NCIT(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -4042,7 +4137,7 @@ def NCIT(
     )()
 
 def FMA(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-04-13", **kwargs
@@ -4053,8 +4148,9 @@ def FMA(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -4084,7 +4180,7 @@ def FMA(
     )()
 
 def REX(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2017-11-19", **kwargs
@@ -4095,8 +4191,9 @@ def REX(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -4126,7 +4223,7 @@ def REX(
     )()
 
 def COB(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-09-13", **kwargs
@@ -4137,8 +4234,9 @@ def COB(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -4168,7 +4266,7 @@ def COB(
     )()
 
 def SIBO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2015-06-15", **kwargs
@@ -4179,8 +4277,9 @@ def SIBO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -4210,7 +4309,7 @@ def SIBO(
     )()
 
 def PDRO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-06-08", **kwargs
@@ -4221,8 +4320,9 @@ def PDRO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -4252,7 +4352,7 @@ def PDRO(
     )()
 
 def OGG(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "12-01-2016", **kwargs
@@ -4263,8 +4363,9 @@ def OGG(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -4294,7 +4395,7 @@ def OGG(
     )()
 
 def XLMOD(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
@@ -4305,8 +4406,9 @@ def XLMOD(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -4336,7 +4438,7 @@ def XLMOD(
     )()
 
 def HANCESTRO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-12-18", **kwargs
@@ -4347,8 +4449,9 @@ def HANCESTRO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -4378,7 +4481,7 @@ def HANCESTRO(
     )()
 
 def GO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-10-26", **kwargs
@@ -4389,8 +4492,9 @@ def GO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -4422,7 +4526,7 @@ def GO(
     )()
 
 def MF(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-09-21", **kwargs
@@ -4433,8 +4537,9 @@ def MF(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -4465,7 +4570,7 @@ def MF(
     )()
 
 def GSSO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2.0.5", **kwargs
@@ -4476,8 +4581,9 @@ def GSSO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -4507,7 +4613,7 @@ def GSSO(
     )()
 
 def UPHENO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
@@ -4518,8 +4624,9 @@ def UPHENO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -4549,7 +4656,7 @@ def UPHENO(
     )()
 
 def PLANA(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-10-21", **kwargs
@@ -4560,8 +4667,9 @@ def PLANA(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -4594,7 +4702,7 @@ def PLANA(
     )()
 
 def OAE(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "1.2.44", **kwargs
@@ -4605,8 +4713,9 @@ def OAE(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -4636,7 +4745,7 @@ def OAE(
     )()
 
 def MMUSDV(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-03-10", **kwargs
@@ -4647,8 +4756,9 @@ def MMUSDV(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -4678,7 +4788,7 @@ def MMUSDV(
     )()
 
 def MS(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "4.1.62", **kwargs
@@ -4689,8 +4799,9 @@ def MS(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -4722,7 +4833,7 @@ def MS(
     )()
 
 def APOLLO_SV(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "v4.1.1.", **kwargs
@@ -4733,8 +4844,9 @@ def APOLLO_SV(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -4764,7 +4876,7 @@ def APOLLO_SV(
     )()
 
 def HSAPDV(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-03-10", **kwargs
@@ -4775,8 +4887,9 @@ def HSAPDV(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -4806,7 +4919,7 @@ def HSAPDV(
     )()
 
 def VO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "September_18__2021", **kwargs
@@ -4817,8 +4930,9 @@ def VO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -4848,7 +4962,7 @@ def VO(
     )()
 
 def MIRO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2014-05-14", **kwargs
@@ -4859,8 +4973,9 @@ def MIRO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -4890,7 +5005,7 @@ def MIRO(
     )()
 
 def EMAPA(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-09-01", **kwargs
@@ -4901,8 +5016,9 @@ def EMAPA(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -4932,7 +5048,7 @@ def EMAPA(
     )()
 
 def GECKO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-01-18", **kwargs
@@ -4943,8 +5059,9 @@ def GECKO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -4974,7 +5091,7 @@ def GECKO(
     )()
 
 def GENEPIO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-05-24", **kwargs
@@ -4985,8 +5102,9 @@ def GENEPIO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -5016,7 +5134,7 @@ def GENEPIO(
     )()
 
 def TADS(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2015-08-20", **kwargs
@@ -5027,8 +5145,9 @@ def TADS(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -5058,7 +5177,7 @@ def TADS(
     )()
 
 def FAO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-05-07", **kwargs
@@ -5069,8 +5188,9 @@ def FAO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -5100,7 +5220,7 @@ def FAO(
     )()
 
 def CVDO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-03-05", **kwargs
@@ -5111,8 +5231,9 @@ def CVDO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -5142,7 +5263,7 @@ def CVDO(
     )()
 
 def ECAO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-05-22", **kwargs
@@ -5153,8 +5274,9 @@ def ECAO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -5184,7 +5306,7 @@ def ECAO(
     )()
 
 def OHPI(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "releases", **kwargs
@@ -5195,8 +5317,9 @@ def OHPI(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -5226,7 +5349,7 @@ def OHPI(
     )()
 
 def OPL(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-01-28", **kwargs
@@ -5237,8 +5360,9 @@ def OPL(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -5268,7 +5392,7 @@ def OPL(
     )()
 
 def TGMA(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2013-06-03", **kwargs
@@ -5279,8 +5403,9 @@ def TGMA(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -5310,7 +5435,7 @@ def TGMA(
     )()
 
 def BCO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-03-27", **kwargs
@@ -5321,8 +5446,9 @@ def BCO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -5353,7 +5479,7 @@ def BCO(
     )()
 
 def ICO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-04-21", **kwargs
@@ -5364,8 +5490,9 @@ def ICO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -5395,7 +5522,7 @@ def ICO(
     )()
 
 def ZECO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-06-04", **kwargs
@@ -5406,8 +5533,9 @@ def ZECO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -5437,7 +5565,7 @@ def ZECO(
     )()
 
 def PHIPO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-07-14", **kwargs
@@ -5448,8 +5576,9 @@ def PHIPO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -5479,7 +5608,7 @@ def PHIPO(
     )()
 
 def PDUMDV(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-03-10", **kwargs
@@ -5490,8 +5619,9 @@ def PDUMDV(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -5521,7 +5651,7 @@ def PDUMDV(
     )()
 
 def ARO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "05-10-2021-09-37", **kwargs
@@ -5532,8 +5662,9 @@ def ARO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -5563,7 +5694,7 @@ def ARO(
     )()
 
 def OARCS(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
@@ -5574,8 +5705,9 @@ def OARCS(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -5605,7 +5737,7 @@ def OARCS(
     )()
 
 def CTENO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2016-10-19", **kwargs
@@ -5616,8 +5748,9 @@ def CTENO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -5647,7 +5780,7 @@ def CTENO(
     )()
 
 def PLANP(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-03-28", **kwargs
@@ -5658,8 +5791,9 @@ def PLANP(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -5689,7 +5823,7 @@ def PLANP(
     )()
 
 def DOID(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-10-12", **kwargs
@@ -5700,8 +5834,9 @@ def DOID(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -5733,7 +5868,7 @@ def DOID(
     )()
 
 def OMRSE(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-08-30", **kwargs
@@ -5744,8 +5879,9 @@ def OMRSE(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -5775,7 +5911,7 @@ def OMRSE(
     )()
 
 def PPO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2018-10-26", **kwargs
@@ -5786,8 +5922,9 @@ def PPO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -5817,7 +5954,7 @@ def PPO(
     )()
 
 def OVAE(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "04-11-2016", **kwargs
@@ -5828,8 +5965,9 @@ def OVAE(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -5859,7 +5997,7 @@ def OVAE(
     )()
 
 def ZP(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-08-02", **kwargs
@@ -5870,8 +6008,9 @@ def ZP(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -5901,7 +6040,7 @@ def ZP(
     )()
 
 def STATO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "RC1.4", **kwargs
@@ -5912,8 +6051,9 @@ def STATO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -5943,7 +6083,7 @@ def STATO(
     )()
 
 def ONE(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
@@ -5954,8 +6094,9 @@ def ONE(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -5985,7 +6126,7 @@ def ONE(
     )()
 
 def ECTO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-08-25", **kwargs
@@ -5996,8 +6137,9 @@ def ECTO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -6027,7 +6169,7 @@ def ECTO(
     )()
 
 def XAO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-03-04", **kwargs
@@ -6038,8 +6180,9 @@ def XAO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -6069,7 +6212,7 @@ def XAO(
     )()
 
 def MIAPA(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
@@ -6080,8 +6223,9 @@ def MIAPA(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -6111,7 +6255,7 @@ def MIAPA(
     )()
 
 def MI(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-04-13", **kwargs
@@ -6122,8 +6266,9 @@ def MI(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -6153,7 +6298,7 @@ def MI(
     )()
 
 def ECOCORE(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-02-17", **kwargs
@@ -6164,8 +6309,9 @@ def ECOCORE(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -6195,7 +6341,7 @@ def ECOCORE(
     )()
 
 def MMO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2.39", **kwargs
@@ -6206,8 +6352,9 @@ def MMO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -6237,7 +6384,7 @@ def MMO(
     )()
 
 def EUPATH(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-09-09", **kwargs
@@ -6248,8 +6395,9 @@ def EUPATH(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -6279,7 +6427,7 @@ def EUPATH(
     )()
 
 def OBIB(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-02-02", **kwargs
@@ -6290,8 +6438,9 @@ def OBIB(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -6322,7 +6471,7 @@ def OBIB(
     )()
 
 def IDO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2017-11-03", **kwargs
@@ -6333,8 +6482,9 @@ def IDO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -6364,7 +6514,7 @@ def IDO(
     )()
 
 def SEPIO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
@@ -6375,8 +6525,9 @@ def SEPIO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -6406,7 +6557,7 @@ def SEPIO(
     )()
 
 def TTO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "19-07-2012-13-26", **kwargs
@@ -6417,8 +6568,9 @@ def TTO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -6448,7 +6600,7 @@ def TTO(
     )()
 
 def PR(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "63.0", **kwargs
@@ -6459,8 +6611,9 @@ def PR(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -6490,7 +6643,7 @@ def PR(
     )()
 
 def NBO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-02-15", **kwargs
@@ -6501,8 +6654,9 @@ def NBO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -6532,7 +6686,7 @@ def NBO(
     )()
 
 def WBPHENOTYPE(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-09-27", **kwargs
@@ -6543,8 +6697,9 @@ def WBPHENOTYPE(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -6575,7 +6730,7 @@ def WBPHENOTYPE(
     )()
 
 def PECO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-08-21", **kwargs
@@ -6586,8 +6741,9 @@ def PECO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -6617,7 +6773,7 @@ def PECO(
     )()
 
 def GAZ(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
@@ -6628,8 +6784,9 @@ def GAZ(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -6659,7 +6816,7 @@ def GAZ(
     )()
 
 def CIO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2015-03-10", **kwargs
@@ -6670,8 +6827,9 @@ def CIO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -6701,7 +6859,7 @@ def CIO(
     )()
 
 def INO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "1.0.112", **kwargs
@@ -6712,8 +6870,9 @@ def INO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -6743,7 +6902,7 @@ def INO(
     )()
 
 def CLAO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-09-27", **kwargs
@@ -6754,8 +6913,9 @@ def CLAO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -6785,7 +6945,7 @@ def CLAO(
     )()
 
 def UPA(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2018-12-12", **kwargs
@@ -6796,8 +6956,9 @@ def UPA(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -6827,7 +6988,7 @@ def UPA(
     )()
 
 def NOMEN(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
@@ -6838,8 +6999,9 @@ def NOMEN(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -6869,7 +7031,7 @@ def NOMEN(
     )()
 
 def ZFA(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-04-14", **kwargs
@@ -6880,8 +7042,9 @@ def ZFA(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -6911,7 +7074,7 @@ def ZFA(
     )()
 
 def DISDRIV(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
@@ -6922,8 +7085,9 @@ def DISDRIV(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -6953,7 +7117,7 @@ def DISDRIV(
     )()
 
 def CIDO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "09-03-2021", **kwargs
@@ -6964,8 +7128,9 @@ def CIDO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -6995,7 +7160,7 @@ def CIDO(
     )()
 
 def KISAO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2.30", **kwargs
@@ -7006,8 +7171,9 @@ def KISAO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -7037,7 +7203,7 @@ def KISAO(
     )()
 
 def MA(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2017-02-07", **kwargs
@@ -7048,8 +7214,9 @@ def MA(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -7079,7 +7246,7 @@ def MA(
     )()
 
 def PO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-08-13", **kwargs
@@ -7090,8 +7257,9 @@ def PO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -7121,7 +7289,7 @@ def PO(
     )()
 
 def CDNO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-10-20", **kwargs
@@ -7132,8 +7300,9 @@ def CDNO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -7163,7 +7332,7 @@ def CDNO(
     )()
 
 def OHD(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2016-06-27", **kwargs
@@ -7174,8 +7343,9 @@ def OHD(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -7205,7 +7375,7 @@ def OHD(
     )()
 
 def VARIO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
@@ -7216,8 +7386,9 @@ def VARIO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -7247,7 +7418,7 @@ def VARIO(
     )()
 
 def AGRO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-07-01", **kwargs
@@ -7258,8 +7429,9 @@ def AGRO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -7290,7 +7462,7 @@ def AGRO(
     )()
 
 def DIDEO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-06-11", **kwargs
@@ -7301,8 +7473,9 @@ def DIDEO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -7332,7 +7505,7 @@ def DIDEO(
     )()
 
 def TXPO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-03-03", **kwargs
@@ -7343,8 +7516,9 @@ def TXPO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -7374,7 +7548,7 @@ def TXPO(
     )()
 
 def PATO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-11-05", **kwargs
@@ -7385,8 +7559,9 @@ def PATO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -7418,7 +7593,7 @@ def PATO(
     )()
 
 def HOM(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2015-01-07", **kwargs
@@ -7429,8 +7604,9 @@ def HOM(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -7460,7 +7636,7 @@ def HOM(
     )()
 
 def ECO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-10-20", **kwargs
@@ -7471,8 +7647,9 @@ def ECO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -7503,7 +7680,7 @@ def ECO(
     )()
 
 def ICEO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2.1", **kwargs
@@ -7514,8 +7691,9 @@ def ICEO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -7545,7 +7723,7 @@ def ICEO(
     )()
 
 def DDANAT(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-04-13", **kwargs
@@ -7556,8 +7734,9 @@ def DDANAT(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -7587,7 +7766,7 @@ def DDANAT(
     )()
 
 def BSPO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-09-22", **kwargs
@@ -7598,8 +7777,9 @@ def BSPO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -7630,7 +7810,7 @@ def BSPO(
     )()
 
 def MRO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-11-04", **kwargs
@@ -7641,8 +7821,9 @@ def MRO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -7675,7 +7856,7 @@ def MRO(
     )()
 
 def PCO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-05-03", **kwargs
@@ -7686,8 +7867,9 @@ def PCO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -7717,7 +7899,7 @@ def PCO(
     )()
 
 def EPSO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "", **kwargs
@@ -7728,8 +7910,9 @@ def EPSO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -7760,7 +7943,7 @@ def EPSO(
     )()
 
 def ORNASEQ(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2019-07-08", **kwargs
@@ -7771,8 +7954,9 @@ def ORNASEQ(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -7802,7 +7986,7 @@ def ORNASEQ(
     )()
 
 def HP(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-08-02", **kwargs
@@ -7813,8 +7997,9 @@ def HP(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -7845,7 +8030,7 @@ def HP(
     )()
 
 def DPO(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-09-02", **kwargs
@@ -7856,8 +8041,9 @@ def DPO(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -7888,7 +8074,7 @@ def DPO(
     )()
 
 def CL(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-11-25", **kwargs
@@ -7899,8 +8085,9 @@ def CL(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -7932,7 +8119,7 @@ def CL(
     )()
 
 def MFOEM(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-09-21", **kwargs
@@ -7943,8 +8130,9 @@ def MFOEM(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True

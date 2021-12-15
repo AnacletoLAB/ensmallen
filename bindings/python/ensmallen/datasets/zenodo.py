@@ -3,7 +3,7 @@ from ensmallen import Graph  # pylint: disable=import-error
 from .automatic_graph_retrieval import AutomaticallyRetrievedGraph
 
 def WikiLinkIT(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2018", **kwargs
@@ -14,8 +14,9 @@ def WikiLinkIT(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -77,7 +78,7 @@ def WikiLinkIT(
     )()
 
 def WikiLinkFR(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2018", **kwargs
@@ -88,8 +89,9 @@ def WikiLinkFR(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -151,7 +153,7 @@ def WikiLinkFR(
     )()
 
 def GiantTN(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "latest", **kwargs
@@ -162,8 +164,9 @@ def GiantTN(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -208,7 +211,7 @@ def GiantTN(
     )()
 
 def WikiLinkDE(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2018", **kwargs
@@ -219,8 +222,9 @@ def WikiLinkDE(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -282,7 +286,7 @@ def WikiLinkDE(
     )()
 
 def WikiLinkNL(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2018", **kwargs
@@ -293,8 +297,9 @@ def WikiLinkNL(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -356,7 +361,7 @@ def WikiLinkNL(
     )()
 
 def WikiLinkSV(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2018", **kwargs
@@ -367,8 +372,9 @@ def WikiLinkSV(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -430,7 +436,7 @@ def WikiLinkSV(
     )()
 
 def WikiLinkPL(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2018", **kwargs
@@ -441,8 +447,9 @@ def WikiLinkPL(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -504,7 +511,7 @@ def WikiLinkPL(
     )()
 
 def WikiLinkES(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2018", **kwargs
@@ -515,8 +522,9 @@ def WikiLinkES(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -578,7 +586,7 @@ def WikiLinkES(
     )()
 
 def WikiLinkEN(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2018", **kwargs
@@ -589,8 +597,9 @@ def WikiLinkEN(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -652,7 +661,7 @@ def WikiLinkEN(
     )()
 
 def WikiLinkRU(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "2018", **kwargs
@@ -663,8 +672,9 @@ def WikiLinkRU(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
