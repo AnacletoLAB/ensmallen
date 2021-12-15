@@ -214,7 +214,7 @@ for python_minor_version in PYTHON_VERSIONS:
 
     # Dispatch the python interpreter
     if platform.system().strip().lower() == "windows":
-        python_interpreter = "{}\AppData\Local\Programs\Python\Python3{}\python.exe".format(
+        python_interpreter = "{}\AppData\Local\Programs\Python\Python{}\python.exe".format(
             os.path.expanduser("~"),
             python_minor_version.replace(".", ""),
         )
