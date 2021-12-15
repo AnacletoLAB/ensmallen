@@ -21,7 +21,7 @@ from ensmallen import Graph  # pylint: disable=import-error
 from .automatic_graph_retrieval import AutomaticallyRetrievedGraph
 
 def Monarch(
-    directed = False, preprocess = True, load_nodes = True, load_node_types = True,
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
     cache_sys_var = "GRAPH_CACHE_DIR", version = "202103", **kwargs
@@ -32,8 +32,9 @@ def Monarch(
     ----------
     directed = False
         Load as directed or undirected
-    preprocess = True
-        Preprocess for optimal load time & memory peak
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
