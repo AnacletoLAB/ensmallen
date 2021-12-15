@@ -470,7 +470,7 @@ impl EdgeFileWriter {
     ) -> Result<()> {
         let pb = get_loading_bar(
             self.writer.verbose && lines_number.is_some(),
-            "Writing to node list",
+            "Writing to edge list",
             lines_number.unwrap_or(0),
         );
         let mut stream = self.start_writer()?;
