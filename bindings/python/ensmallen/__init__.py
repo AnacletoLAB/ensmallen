@@ -1,5 +1,5 @@
 """Module offering fast graph processing and graph datasets."""
-
+import logging
 import cpuinfo
 import warnings
 
@@ -19,7 +19,7 @@ CORE2_AVX_FLAGS = [
 unavailable_flags = set(HASWELL_FLAGS) - set(cpuinfo.get_cpu_info()["flags"])
 
 if len(unavailable_flags) == 0:
-    print("Using Haswell")
+    logging.info("Ensmallen is using Haswell")
     from .ensmallen_haswell import preprocessing  # pylint: disable=import-error
     from .ensmallen_haswell import Graph  # pylint: disable=import-error
     from .ensmallen_haswell import edge_list_utils  # pylint: disable=import-error
@@ -35,7 +35,7 @@ else:
     unavailable_flags = set(CORE2_AVX_FLAGS) - set(cpuinfo.get_cpu_info()["flags"])
 
     if len(unavailable_flags) == 0:
-        print("Using Core2")
+        logging.info("Ensmallen is using Core2")
         from .ensmallen_core2 import preprocessing  # pylint: disable=import-error
         from .ensmallen_core2 import Graph  # pylint: disable=import-error
         from .ensmallen_core2 import edge_list_utils  # pylint: disable=import-error
