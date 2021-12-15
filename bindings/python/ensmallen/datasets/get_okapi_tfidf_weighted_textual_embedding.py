@@ -1,12 +1,9 @@
 """Sub-module providing TFIDF weighted textual embedding of common embedding."""
-from multiprocessing import Pool, cpu_count
-from typing import Dict, List, Optional
+from typing import Dict, Optional
 
 import numpy as np
 import pandas as pd
 from cache_decorator import Cache
-from tqdm.auto import tqdm
-from transformers import BertModel, BertTokenizer
 
 from ensmallen import preprocessing
 
@@ -32,6 +29,8 @@ def get_precomputed_word_embedding(
     --------------------------------
     The pretrained models available can be seen here: https://huggingface.co/models
     """
+    from transformers import BertModel
+
     if bert_model_kwargs is None:
         bert_model_kwargs = {}
     # Retrieve the model.
