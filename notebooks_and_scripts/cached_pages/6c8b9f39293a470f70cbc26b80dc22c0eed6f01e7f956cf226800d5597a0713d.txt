@@ -1,0 +1,14 @@
+<html>
+<head><title>Index of /wikidatawiki/entities/20220214/</title></head>
+<body bgcolor="white">
+<h1>Index of /wikidatawiki/entities/20220214/</h1><hr><pre><a href="../">../</a>
+<a href="wikidata-20220214-all-BETA.nt.bz2">wikidata-20220214-all-BETA.nt.bz2</a>                  17-Feb-2022 15:25        144872746021
+<a href="wikidata-20220214-all-BETA.nt.gz">wikidata-20220214-all-BETA.nt.gz</a>                   16-Feb-2022 21:08        186160919622
+<a href="wikidata-20220214-all-BETA.ttl.bz2">wikidata-20220214-all-BETA.ttl.bz2</a>                 17-Feb-2022 02:38         92731735765
+<a href="wikidata-20220214-all-BETA.ttl.gz">wikidata-20220214-all-BETA.ttl.gz</a>                  16-Feb-2022 16:36        112347312370
+<a href="wikidata-20220214-all.json.bz2">wikidata-20220214-all.json.bz2</a>                     17-Feb-2022 01:07         72519192146
+<a href="wikidata-20220214-all.json.gz">wikidata-20220214-all.json.gz</a>                      16-Feb-2022 16:37        109861684260
+<a href="wikidata-20220214-md5sums.txt">wikidata-20220214-md5sums.txt</a>                      17-Feb-2022 16:55                 401
+<a href="wikidata-20220214-sha1sums.txt">wikidata-20220214-sha1sums.txt</a>                     17-Feb-2022 17:54                 449
+</pre><hr></body>
+</html>

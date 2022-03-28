@@ -42,6 +42,51 @@
 	<a href="https://kg-hub.berkeleybop.io/kg-idg/20211207">20211207</a>
       </li>
       <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-idg/20211210">20211210</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-idg/20211213">20211213</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-idg/20211215">20211215</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-idg/20211221">20211221</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-idg/20211223">20211223</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-idg/20220101">20220101</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-idg/20220106">20220106</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-idg/20220107">20220107</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-idg/20220119">20220119</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-idg/20220201">20220201</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-idg/20220203">20220203</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-idg/20220204">20220204</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-idg/20220216">20220216</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-idg/20220223">20220223</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-idg/20220303">20220303</a>
+      </li>
+      <li>
 	<a href="https://kg-hub.berkeleybop.io/kg-idg/current">current</a>
       </li>
     </ul>

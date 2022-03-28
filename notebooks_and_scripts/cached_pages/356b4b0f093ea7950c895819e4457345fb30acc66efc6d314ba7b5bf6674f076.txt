@@ -1,0 +1,12 @@
+<html>
+<head><title>Index of /wikidatawiki/entities/20220309/</title></head>
+<body bgcolor="white">
+<h1>Index of /wikidatawiki/entities/20220309/</h1><hr><pre><a href="../">../</a>
+<a href="wikidata-20220309-lexemes.json.bz2">wikidata-20220309-lexemes.json.bz2</a>                 09-Mar-2022 03:42           206381467
+<a href="wikidata-20220309-lexemes.json.gz">wikidata-20220309-lexemes.json.gz</a>                  09-Mar-2022 03:41           286668473
+<a href="wikidata-20220309-md5sums.txt">wikidata-20220309-md5sums.txt</a>                      12-Mar-2022 11:17                 278
+<a href="wikidata-20220309-sha1sums.txt">wikidata-20220309-sha1sums.txt</a>                     12-Mar-2022 11:29                 310
+<a href="wikidata-20220309-truthy-BETA.nt.bz2">wikidata-20220309-truthy-BETA.nt.bz2</a>               12-Mar-2022 10:57         32685992234
+<a href="wikidata-20220309-truthy-BETA.nt.gz">wikidata-20220309-truthy-BETA.nt.gz</a>                12-Mar-2022 07:51         53922332817
+</pre><hr></body>
+</html>
