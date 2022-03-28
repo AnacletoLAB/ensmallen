@@ -24,7 +24,7 @@ harness without any sort of coverage. This can also be used to reproduce bugs fo
 - `./setup` Dockerfiles and bash scripts that we use to build ensmallen on different systems.
 
 In general we try to have a file `README.md` in every folder that contains informations and details and
-a `Makefile` that contains recipies for the most common operations.
+a `Makefile` that contains recipies releasesfor the most common operations.
 
 # Core
 The core of the library is inside the folder `./graph`.
@@ -105,18 +105,70 @@ $ cargo run --release --bin bindgen
 
 The bindings use the [`PyO3`](https://github.com/PyO3/pyo3) library and [`maturin`](https://github.com/PyO3/maturin) for the compilation and packaging steps.
 
-To quiclky build and install the bindings for you current python environment use:
+To be able to optimize the compilation for different target cpus, we have a custom 
+build script `./bindings/python/build.py` which automatically build the bindings 
+for multiple versions of python, and create wheels that automatically dispatch 
+the best version for the current CPU.
+
+Most settings for the builder can be edited in `./bindings/python/builder_settings.json`
+which is json format that allows comments (the comment must start with `//` and have to be on its own line).
+
+The building script is a CLI tool:
 ```bash
-$ cd ./bindings/python
-$ maturin develop --release --strip
+$ python ./build.py -h
+usage: build.py [-h] [-p PYTHON_VERSIONS] [-s SETTINGS_PATH] [-v {debug,info,error}]
+
+Build Ensmallen with performance vs compatability automatical dispatching. This
+utility makes to build folders, one for the avx version, one for the non_avx version.
+The script will compile in both the wheels, and then merge them making a new wheel
+file that can dispatch at startup which library to use. Finally, to be able to
+guarantee proper compatability, on linux, we follow the manylinux2010 standard which
+requires us to patch the created wheel using `auditwheel`. This is needed because we
+have `reqwest` as a dependancy which requires libcrypto (openssl) which is not in the
+manylinux2010 allowd libraries. To fix this auditwheel will ship in the wheel the
+needed libraries and patch the relocations section of the two versions of ensmallen to
+import these. This builder uses a json file for settings the targets. An example of
+settings file is: 
+{ 
+    "python_versions":["3.6", "3.7", "3.8", "3.9", "3.10"],
+    "wheels_folder":"wheels", 
+    "shared_rustflags":"-C inline-threshold=1000", 
+    "targets":{
+        "haswell":{ 
+            "build_dir":"build_haswell", 
+            "rustflags":"-C target-cpu=haswell" 
+        },
+        "core2":{ 
+            "build_dir":"build_core2", 
+            "rustflags":"-C target-cpu=core2" 
+        } 
+    } 
+}
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PYTHON_VERSIONS, --python-versions PYTHON_VERSIONS
+                        comma separated string of python version to compile for, this
+                        defaults to what specified in the settings file (default:
+                        None)
+  -s SETTINGS_PATH, --settings-path SETTINGS_PATH
+                        The json file f (default: builder_settings.json)
+  -v {debug,info,error}, --verbosity {debug,info,error}
+                        Verbosity of the logger (default: info)
 ```
 
-To compile them for publishing use:
-```bash
-$ cd ./bindings/python
-$ RUSTFLAGS="-C opt-level=3 -C target-cpu=native -C inline-threshold=1000" maturin build --release --strip
+Before running it you have to install `auditwheel` with:
 ```
-The compiled bindins will be in `./bindings/python/target/wheels/`.
+pip install auditwheel
+```
+
+then you can run the building with:
+```
+cd ./bindings/python
+python build.py
+```
+
+the resulting wheels will be in the folder specified in the settings (by default `./bindings/python/wheels`).
 
 # Fuzzing Python Bindings
 Using the new shiny Google's toy, [Atheris](https://github.com/google/atheris) we can fuzz the bindings.
