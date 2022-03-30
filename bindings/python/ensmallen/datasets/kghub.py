@@ -63,6 +63,53 @@ def KGMicrobe(
         cache_path, cache_sys_var, kwargs
     )()
 
+def KGOntoML(
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
+    load_edge_weights = True, auto_enable_tradeoffs = True,
+    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "placeholder", **kwargs
+) -> Graph:
+    """Return kg-ontoml graph	
+
+    Parameters
+    ----------
+    directed = False
+        Load as directed or undirected
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+        Load node types
+    load_edge_weights = True
+        Load edge weights
+    auto_enable_tradeoffs = True
+        Enable tradeoffs when graph has < 50M edges
+    sort_tmp_dir = None
+        Path to sorting tmp folder
+    verbose = 2
+    cache = True
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+        Sys var with cache directory
+    version = "placeholder"
+        Version to retrieve	
+		The available versions are:
+			- 20220304
+			- current
+			- placeholder	
+	
+	
+    """
+    return AutomaticallyRetrievedGraph(
+        "KGOntoML", version, "kghub", directed, preprocess, load_nodes,
+        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
+        cache_path, cache_sys_var, kwargs
+    )()
+
 def KGIDG(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
