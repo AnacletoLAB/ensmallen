@@ -96,6 +96,8 @@ method has a documentation formatted in our standard way, that, if the files has
 naming convention, it's respected, and other checks.
 
 # Python Bindings
+***For linux this currently works only with maturin before 0.12.4 because the 0.12.5 broke our auditwheel.***
+
 Most of the python bindings are automatically generated throught our `code_analysis` tools.
 So it's a good practice to re-generate the bindings each time you compile them:
 ```bash
