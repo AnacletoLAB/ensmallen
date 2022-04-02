@@ -74,11 +74,11 @@ impl Graph {
     /// # Raises
     /// * If the given edge ID does not exists in the graph.
     pub fn validate_edge_id(&self, edge_id: EdgeT) -> Result<EdgeT> {
-        if edge_id >= self.get_directed_edges_number() {
+        if edge_id >= self.get_number_of_directed_edges() {
             return Err(format!(
                 "The given edge id ({}) is higher than the number of edges within the graph ({}).",
                 edge_id,
-                self.get_directed_edges_number()
+                self.get_number_of_directed_edges()
             ));
         }
         Ok(edge_id)

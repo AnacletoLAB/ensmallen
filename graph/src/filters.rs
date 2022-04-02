@@ -188,7 +188,7 @@ impl Graph {
                 (!filter_singleton_nodes_with_selfloop || unsafe{!self.is_unchecked_singleton_with_selfloops_from_node_id(*node_id)})
         };
 
-        let mut edges_number = self.get_directed_edges_number();
+        let mut edges_number = self.get_number_of_directed_edges();
 
         if filter_parallel_edges {
             edges_number -= self.get_parallel_edges_number();

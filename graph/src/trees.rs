@@ -32,7 +32,7 @@ impl Graph {
         &self,
         random_state: u64,
     ) -> impl Iterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
-        let edges_number = self.get_directed_edges_number();
+        let edges_number = self.get_number_of_directed_edges();
         // We execute two times the xorshift to improve the randomness of the seed.
         let updated_random_state = rand_u64(rand_u64(splitmix64(random_state)));
         (updated_random_state..edges_number + updated_random_state).filter_map(move |i| {
@@ -62,7 +62,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             format!("Building random spanning tree for {}", self.name).as_ref(),
-            self.get_directed_edges_number() as usize,
+            self.get_number_of_directed_edges() as usize,
         );
         let result: Box<dyn Iterator<Item = (NodeT, NodeT)>> =
             if let (Some(uet), _) = (undesired_edge_types, &self.edge_types) {

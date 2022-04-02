@@ -603,6 +603,11 @@ impl Graph {
         })
     }
 
+    /// Returns number of currently supported edge metrics.
+    pub fn get_number_of_available_edge_metrics(&self) -> u64 {
+        4
+    }
+
     /// Returns all the implemented edge metrics for the two given node IDs.
     ///
     /// Specifically, the returned values are:

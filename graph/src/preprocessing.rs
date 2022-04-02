@@ -372,7 +372,7 @@ impl Graph {
             (batch_size as f64 * negative_samples_rate).ceil() as usize;
         let expected_positive_samples_number = batch_size - expected_negative_samples_number;
 
-        let edges_number = self.get_directed_edges_number();
+        let edges_number = self.get_number_of_directed_edges();
         let nodes_number = self.get_nodes_number();
 
         let does_not_require_resampling = !(avoid_false_negatives || graph_to_avoid.is_some());
@@ -381,7 +381,8 @@ impl Graph {
             move |node_id: NodeT| -> Option<Vec<NodeTypeT>> {
                 if return_node_types {
                     let node_type_ids =
-                        unsafe { self.get_unchecked_node_type_ids_from_node_id(node_id) }.map(|x| x.clone());
+                        unsafe { self.get_unchecked_node_type_ids_from_node_id(node_id) }
+                            .map(|x| x.clone());
                     if multi_label {
                         let mut padded_node_type_ids = vec![0; maximum_node_types_number];
                         node_type_ids.unwrap().into_iter().enumerate().for_each(
@@ -498,6 +499,113 @@ impl Graph {
                 maximal_sampling_attempts
             );
         }))
+    }
+
+    #[manual_binding]
+    /// Returns n-ple with index to build numpy array, source node, source node type, destination node, destination node type.
+    ///
+    /// # Arguments
+    /// * `idx`: usize - The index of the batch to generate,
+    /// * `batch_size`: Option<usize> - The maximal size of the batch to generate,
+    /// * `return_node_types`: Option<bool> - Whether to return the source and destination nodes node types.
+    /// * `return_edge_types`: Option<bool> - Whether to return the edge types.
+    /// * `return_edge_metrics`: Option<bool> - Whether to return the edge metrics.
+    ///
+    /// # Raises
+    /// * If node types are requested but the graph does not contain any.
+    /// * If node types are requested but the graph contains unknown node types.
+    /// * If edge types are requested but the graph does not contain any.
+    /// * If edge types are requested but the graph contains unknown edge types.
+    ///
+    pub fn get_edge_prediction_chunk_mini_batch<'a>(
+        &'a self,
+        idx: usize,
+        batch_size: Option<usize>,
+        return_node_types: Option<bool>,
+        return_edge_types: Option<bool>,
+        return_edge_metrics: Option<bool>,
+    ) -> Result<
+        impl IndexedParallelIterator<
+                Item = (
+                    NodeT,
+                    Option<Vec<NodeTypeT>>,
+                    NodeT,
+                    Option<Vec<NodeTypeT>>,
+                    Option<Vec<f64>>,
+                    Option<EdgeTypeT>,
+                ),
+            > + 'a,
+    > {
+        let batch_size = batch_size.unwrap_or(1024);
+
+        let return_node_types = return_node_types.unwrap_or(false);
+        let (maximum_node_types_number, multi_label) = if return_node_types {
+            self.must_not_contain_unknown_node_types()?;
+            (
+                self.get_maximum_multilabel_count()? as usize,
+                self.has_multilabel_node_types()?,
+            )
+        } else {
+            (0, false)
+        };
+
+        let return_edge_types = return_edge_types.unwrap_or(false);
+        let return_edge_metrics = return_edge_metrics.unwrap_or(false);
+
+        let get_node_type_ids =
+            move |node_id: NodeT| -> Option<Vec<NodeTypeT>> {
+                if return_node_types {
+                    let node_type_ids =
+                        unsafe { self.get_unchecked_node_type_ids_from_node_id(node_id) }
+                            .map(|x| x.clone());
+                    if multi_label {
+                        let mut padded_node_type_ids = vec![0; maximum_node_types_number];
+                        node_type_ids.unwrap().into_iter().enumerate().for_each(
+                            |(i, node_type)| {
+                                // We need to add one because we need to reserve 0 for the mask.
+                                padded_node_type_ids[i] = node_type + 1;
+                            },
+                        );
+                        Some(padded_node_type_ids)
+                    } else {
+                        node_type_ids
+                    }
+                } else {
+                    None
+                }
+            };
+
+        let get_edge_metrics = move |src: NodeT, dst: NodeT| -> Option<Vec<f64>> {
+            if return_edge_metrics {
+                Some(unsafe { self.get_unchecked_all_edge_metrics_from_node_ids(src, dst, true) })
+            } else {
+                None
+            }
+        };
+
+        let min_edge_id = batch_size * idx;
+        let max_edge_id = std::cmp::min(batch_size * (idx + 1), self.get_number_of_directed_edges() as usize);
+
+        Ok((min_edge_id..max_edge_id)
+            .into_par_iter()
+            .map(move |edge_id| unsafe {
+                let edge_id = edge_id as u64;
+                let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
+                let edge_type = if return_edge_types {
+                    let edge_type = self.get_unchecked_edge_type_id_from_edge_id(edge_id);
+                    edge_type
+                } else {
+                    None
+                };
+                (
+                    src,
+                    get_node_type_ids(src),
+                    dst,
+                    get_node_type_ids(dst),
+                    get_edge_metrics(src, dst),
+                    edge_type,
+                )
+            }))
     }
 
     #[manual_binding]
@@ -629,7 +737,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             "Computing edge metrics",
-            self.get_directed_edges_number() as usize,
+            self.get_number_of_directed_edges() as usize,
         );
         self.par_iter_directed_edge_node_ids()
             .progress_with(pb)

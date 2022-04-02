@@ -499,7 +499,7 @@ impl EdgeFileWriter {
     pub fn dump_graph(self, graph: &Graph) -> Result<()> {
         let directed: bool = self.directed.unwrap_or_else(|| graph.is_directed());
         self.dump_iterator(
-            Some(graph.get_directed_edges_number() as usize),
+            Some(graph.get_number_of_directed_edges() as usize),
             graph.iter_edge_node_names_and_edge_type_name_and_edge_weight(directed),
         )
     }

@@ -54,7 +54,7 @@ impl Graph {
                     "Computing which components are to keep for the graph {}",
                     &self.name
                 ),
-                self.get_directed_edges_number() as usize,
+                self.get_number_of_directed_edges() as usize,
             );
 
             self.iter_edge_node_ids_and_edge_type_id(self.directed)

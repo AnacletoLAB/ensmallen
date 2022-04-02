@@ -273,7 +273,7 @@ impl Graph {
             Some(true),
             Some(false),
             Some(false),
-            Some(self.get_directed_edges_number()),
+            Some(self.get_number_of_directed_edges()),
             self.has_singleton_nodes(),
             self.has_singleton_nodes_with_selfloops(),
             self.get_name(),

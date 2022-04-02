@@ -644,7 +644,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
                     "any. The graph contains {} edges and would have seemed to contain ",
                     "{} edges with known edge types."
                 ),
-                graph.get_directed_edges_number(),
+                graph.get_number_of_directed_edges(),
                 graph.get_known_edge_types_number().unwrap()
             );
             assert!(graph.get_edge_ids_with_known_edge_types().unwrap().len() > 0);
@@ -897,7 +897,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
     );
 
     assert!(
-        graph.get_edge_type_id_from_edge_id(graph.get_directed_edges_number() + 1).is_err(),
+        graph.get_edge_type_id_from_edge_id(graph.get_number_of_directed_edges() + 1).is_err(),
         "Given graph does not raise an exception when a edge's edge type greater than the number of available edges is requested."
     );
 
@@ -1434,7 +1434,7 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: Option<bool>) -> Result<()
                 if let Some(destinations) = &*graph.destinations {
                     assert_eq!(
                         destinations.len(),
-                        graph.get_directed_edges_number() as usize,
+                        graph.get_number_of_directed_edges() as usize,
                         "Length of destinations does not match number of edges in the graph."
                     );
                 }
@@ -1783,7 +1783,7 @@ pub fn test_negative_edges_generation(graph: &mut Graph, verbose: Option<bool>) 
     for only_from_same_component in &[true, false] {
         // If the graph is very sparse, this takes a lot of time
         // and makes the test suite very slow.
-        if *only_from_same_component && graph.get_directed_edges_number() < 100 {
+        if *only_from_same_component && graph.get_number_of_directed_edges() < 100 {
             continue;
         }
         let negatives = graph.sample_negatives(
@@ -2025,7 +2025,7 @@ pub fn test_nodelabel_holdouts(graph: &mut Graph, _verbose: Option<bool>) -> Res
 pub fn test_edgelabel_holdouts(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
     for use_stratification in [true, false].iter() {
         if *use_stratification && graph.has_singleton_edge_types()?
-            || graph.get_directed_edges_number() - graph.get_unknown_edge_types_number()? < 2
+            || graph.get_number_of_directed_edges() - graph.get_unknown_edge_types_number()? < 2
             || !graph.has_edge_types()
         {
             assert!(graph
@@ -2266,7 +2266,7 @@ pub fn test_clone_and_setters(graph: &mut Graph, _verbose: Option<bool>) -> Resu
     if !graph.is_multigraph() {
         assert_eq!(
             unsafe{clone.get_unchecked_edge_count_from_edge_type_id(Some(0))},
-            graph.get_directed_edges_number(),
+            graph.get_number_of_directed_edges(),
             "Number of edges with the unique edge type does not match number of edges in the graph."
         );
     }

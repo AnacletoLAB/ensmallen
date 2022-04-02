@@ -187,7 +187,7 @@ impl Graph {
                 "The mean of the node degrees is not defined on an empty graph".to_string(),
             );
         }
-        Ok(self.get_directed_edges_number() as f64 / self.get_nodes_number() as f64)
+        Ok(self.get_number_of_directed_edges() as f64 / self.get_nodes_number() as f64)
     }
 
     /// Returns weighted mean node degree of the graph.
@@ -209,7 +209,7 @@ impl Graph {
     /// println!("The number of undirected edges of the graph is  {}", graph.get_undirected_edges_number());
     /// ```
     pub fn get_undirected_edges_number(&self) -> EdgeT {
-        (self.get_directed_edges_number() - self.get_selfloops_number()) / 2
+        (self.get_number_of_directed_edges() - self.get_selfloops_number()) / 2
             + self.get_selfloops_number()
     }
 
@@ -234,7 +234,7 @@ impl Graph {
     /// ```
     pub fn get_edges_number(&self) -> EdgeT {
         match self.directed {
-            true => self.get_directed_edges_number(),
+            true => self.get_number_of_directed_edges(),
             false => self.get_undirected_edges_number(),
         }
     }
@@ -374,7 +374,7 @@ impl Graph {
         if !self.has_edges() {
             return Err("The self-loops rate is not defined for graphs without edges.".to_string());
         }
-        Ok(self.get_selfloops_number() as f64 / self.get_directed_edges_number() as f64)
+        Ok(self.get_selfloops_number() as f64 / self.get_number_of_directed_edges() as f64)
     }
     /// Return name of the graph.
     ///
@@ -417,7 +417,7 @@ impl Graph {
 
     /// Return vector on the (non unique) directed source nodes of the graph.
     pub fn get_directed_source_node_ids(&self) -> Vec<NodeT> {
-        let mut sources = vec![0 as NodeT; self.get_directed_edges_number() as usize];
+        let mut sources = vec![0 as NodeT; self.get_number_of_directed_edges() as usize];
         self.par_iter_directed_source_node_ids()
             .collect_into_vec(&mut sources);
         sources
@@ -443,7 +443,7 @@ impl Graph {
 
     /// Return vector on the (non unique) directed destination nodes of the graph.
     pub fn get_directed_destination_node_ids(&self) -> Vec<NodeT> {
-        let mut destinations = vec![0 as NodeT; self.get_directed_edges_number() as usize];
+        let mut destinations = vec![0 as NodeT; self.get_number_of_directed_edges() as usize];
         self.par_iter_directed_destination_node_ids()
             .collect_into_vec(&mut destinations);
         destinations
@@ -770,7 +770,7 @@ impl Graph {
 
     /// Return vector with the sorted directed edge Ids.
     pub fn get_directed_edge_node_ids(&self) -> Vec<Vec<NodeT>> {
-        let mut edge_ids = vec![vec![0; 2]; self.get_directed_edges_number() as usize];
+        let mut edge_ids = vec![vec![0; 2]; self.get_number_of_directed_edges() as usize];
         self.par_iter_directed_edge_node_ids()
             .map(|(_, src, dst)| vec![src, dst])
             .collect_into_vec(&mut edge_ids);
@@ -790,7 +790,7 @@ impl Graph {
     /// Return vector with the sorted directed edge names.
     pub fn get_directed_edge_node_names(&self) -> Vec<(String, String)> {
         let mut edge_names =
-            vec![("".to_string(), "".to_string()); self.get_directed_edges_number() as usize];
+            vec![("".to_string(), "".to_string()); self.get_number_of_directed_edges() as usize];
         self.par_iter_directed_edges()
             .map(|(_, _, src_name, _, dst_name)| (src_name, dst_name))
             .collect_into_vec(&mut edge_names);
@@ -1011,7 +1011,7 @@ impl Graph {
     /// * If there are no edge types in the graph.
     pub fn get_edge_ids_with_unknown_edge_types_mask(&self) -> Result<Vec<bool>> {
         self.iter_edge_ids_with_unknown_edge_types().map(|x| {
-            let mut mask = vec![false; self.get_directed_edges_number() as usize];
+            let mut mask = vec![false; self.get_number_of_directed_edges() as usize];
             x.for_each(|id| {
                 mask[id as usize] = true;
             });
@@ -1026,7 +1026,7 @@ impl Graph {
     /// * If there are no edge types in the graph.
     pub fn get_edge_ids_with_known_edge_types_mask(&self) -> Result<Vec<bool>> {
         self.iter_edge_ids_with_known_edge_types().map(|x| {
-            let mut mask = vec![false; self.get_directed_edges_number() as usize];
+            let mut mask = vec![false; self.get_number_of_directed_edges() as usize];
             x.for_each(|id| {
                 mask[id as usize] = true;
             });
@@ -1153,7 +1153,7 @@ impl Graph {
     /// # Raises
     /// * If there are no edge types in the graph.
     pub fn get_known_edge_types_number(&self) -> Result<EdgeT> {
-        Ok(self.get_directed_edges_number() - self.get_unknown_edge_types_number()?)
+        Ok(self.get_number_of_directed_edges() - self.get_unknown_edge_types_number()?)
     }
 
     /// Returns rate of unknown edge types over total edges number.
@@ -1163,7 +1163,7 @@ impl Graph {
     pub fn get_unknown_edge_types_rate(&self) -> Result<f64> {
         self.get_unknown_edge_types_number()
             .map(|unknown_edge_types_number| {
-                unknown_edge_types_number as f64 / self.get_directed_edges_number() as f64
+                unknown_edge_types_number as f64 / self.get_number_of_directed_edges() as f64
             })
     }
 
@@ -1174,7 +1174,7 @@ impl Graph {
     pub fn get_known_edge_types_rate(&self) -> Result<f64> {
         self.get_known_edge_types_number()
             .map(|known_edge_types_number| {
-                known_edge_types_number as f64 / self.get_directed_edges_number() as f64
+                known_edge_types_number as f64 / self.get_number_of_directed_edges() as f64
             })
     }
 
@@ -1237,7 +1237,7 @@ impl Graph {
     }
 
     /// Returns number of directed edges in the graph.
-    pub fn get_directed_edges_number(&self) -> EdgeT {
+    pub fn get_number_of_directed_edges(&self) -> EdgeT {
         self.edges.len() as EdgeT
     }
 
@@ -1318,7 +1318,7 @@ impl Graph {
 
     /// Return number of edges that have multigraph syblings.
     pub fn get_parallel_edges_number(&self) -> EdgeT {
-        self.get_directed_edges_number() - self.get_unique_directed_edges_number()
+        self.get_number_of_directed_edges() - self.get_unique_directed_edges_number()
     }
 
     /// Return vector with node cumulative_node_degrees, that is the comulative node degree.

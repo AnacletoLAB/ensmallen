@@ -675,7 +675,7 @@ impl Graph {
     ) -> Box<dyn Iterator<Item = (EdgeT, NodeT, NodeT)> + '_> {
         if self.sources.is_some() && self.destinations.is_some() {
             return Box::new(
-                (0..self.get_directed_edges_number()).filter_map(move |edge_id| {
+                (0..self.get_number_of_directed_edges()).filter_map(move |edge_id| {
                     let (src, dst) = unsafe { self.get_unchecked_node_ids_from_edge_id(edge_id) };
                     if !directed && src > dst {
                         return None;
@@ -704,7 +704,7 @@ impl Graph {
     ) -> Box<dyn Iterator<Item = (EdgeT, NodeT, NodeT)> + Send + '_> {
         if self.sources.is_some() && self.destinations.is_some() {
             return Box::new(
-                (0..self.get_directed_edges_number()).filter_map(move |edge_id| {
+                (0..self.get_number_of_directed_edges()).filter_map(move |edge_id| {
                     let (src, dst) = unsafe { self.get_unchecked_node_ids_from_edge_id(edge_id) };
                     Some((edge_id, src, dst))
                 }),
@@ -1233,7 +1233,7 @@ impl Graph {
         directed: bool,
     ) -> Box<dyn Iterator<Item = (NodeT, NodeT)> + '_> {
         if self.sources.is_some() && self.destinations.is_some() {
-            return Box::new((0..self.get_directed_edges_number()).filter_map(
+            return Box::new((0..self.get_number_of_directed_edges()).filter_map(
                 move |edge_id| unsafe {
                     let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
                     if edge_id > 0 {

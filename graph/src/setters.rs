@@ -48,7 +48,7 @@ impl Graph {
         })?;
         let vocabulary = Vocabulary::from_reverse_map(vec![edge_type.into()])?;
         let edge_types = EdgeTypeVocabulary::from_structs(
-            vec![Some(0); self.get_directed_edges_number() as usize],
+            vec![Some(0); self.get_number_of_directed_edges() as usize],
             vocabulary,
         );
         self.edge_types = Arc::new(Some(edge_types));

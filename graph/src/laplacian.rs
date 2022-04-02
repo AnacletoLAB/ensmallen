@@ -52,7 +52,7 @@ impl Graph {
         get_selfloop_edge_weight: fn(&Graph, NodeT) -> WeightT,
         directed: bool,
     ) -> Graph {
-        let total_edges_number = self.get_directed_edges_number() - self.get_selfloops_number()
+        let total_edges_number = self.get_number_of_directed_edges() - self.get_selfloops_number()
             + self.get_nodes_number() as EdgeT;
 
         // TODO! this method can be made fully sorted parallell by using an offset vector

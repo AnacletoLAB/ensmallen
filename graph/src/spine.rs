@@ -15,7 +15,7 @@ impl Graph {
     fn get_anchor_node_ids(&self, embedding_size: usize) -> Result<Vec<Vec<NodeT>>> {
         info!("Computing sum of node features.");
         let number_of_edge_per_bucket: EdgeT =
-            (self.get_directed_edges_number() as f32 / 2 as f32 / embedding_size as f32).floor()
+            (self.get_number_of_directed_edges() as f32 / 2 as f32 / embedding_size as f32).floor()
                 as EdgeT;
 
         info!("Sorting centralities.");

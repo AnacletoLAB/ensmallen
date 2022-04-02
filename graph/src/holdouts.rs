@@ -325,8 +325,8 @@ impl Graph {
         if train_size <= 0.0 || train_size >= 1.0 {
             return Err(String::from("Train rate must be strictly between 0 and 1."));
         }
-        if self.directed && self.get_directed_edges_number() == 1
-            || !self.directed && self.get_directed_edges_number() == 2
+        if self.directed && self.get_number_of_directed_edges() == 1
+            || !self.directed && self.get_number_of_directed_edges() == 2
         {
             return Err(String::from(
                 "The current graph instance has only one edge. You cannot build an holdout with one edge.",
@@ -380,7 +380,7 @@ impl Graph {
 
         // generate and shuffle the indices of the edges
         let mut rng = SmallRng::seed_from_u64(splitmix64(random_state as u64) as EdgeT);
-        let mut edge_indices: Vec<EdgeT> = (0..self.get_directed_edges_number()).collect();
+        let mut edge_indices: Vec<EdgeT> = (0..self.get_number_of_directed_edges()).collect();
         edge_indices.shuffle(&mut rng);
 
         let mut valid_edges_bitmap = RoaringTreemap::new();
@@ -443,12 +443,12 @@ impl Graph {
                 actual_validation_edges_number=actual_validation_edges_number,
             ));
         }
-        let validation_edge_ids = (0..self.get_directed_edges_number())
+        let validation_edge_ids = (0..self.get_number_of_directed_edges())
             .into_par_iter()
             .filter(|edge_id| valid_edges_bitmap.contains(*edge_id))
             .collect::<Vec<_>>();
 
-        let train_edge_ids = (0..self.get_directed_edges_number())
+        let train_edge_ids = (0..self.get_number_of_directed_edges())
             .into_par_iter()
             .filter(|edge_id| !valid_edges_bitmap.contains(*edge_id))
             .collect::<Vec<_>>();
@@ -584,9 +584,9 @@ impl Graph {
                 .sum();
             (selected_edges_number as f64 * (1.0 - train_size)) as EdgeT
         } else {
-            (self.get_directed_edges_number() as f64 * (1.0 - train_size)) as EdgeT
+            (self.get_number_of_directed_edges() as f64 * (1.0 - train_size)) as EdgeT
         };
-        let train_edges_number = self.get_directed_edges_number() - validation_edges_number;
+        let train_edges_number = self.get_number_of_directed_edges() - validation_edges_number;
 
         if tree.len() * edge_factor > train_edges_number as usize {
             return Err(format!(
@@ -603,7 +603,7 @@ impl Graph {
                 train_edges_number,
                 validation_edges_number,
                 train_size,
-                (tree.len() * edge_factor) as f64 / self.get_directed_edges_number() as f64
+                (tree.len() * edge_factor) as f64 / self.get_number_of_directed_edges() as f64
             ));
         }
 
@@ -664,7 +664,7 @@ impl Graph {
         let total_edges_number = if include_all_edge_types {
             self.get_unique_edges_number()
         } else {
-            self.get_directed_edges_number()
+            self.get_number_of_directed_edges()
         };
 
         let (_, validation_edges_number) =
@@ -989,8 +989,8 @@ impl Graph {
         let mut rnd = SmallRng::seed_from_u64(splitmix64(random_state as u64));
 
         // Allocate the vectors for the edges of each
-        let mut train_edge_types = vec![None; self.get_directed_edges_number() as usize];
-        let mut test_edge_types = vec![None; self.get_directed_edges_number() as usize];
+        let mut train_edge_types = vec![None; self.get_number_of_directed_edges() as usize];
+        let mut test_edge_types = vec![None; self.get_number_of_directed_edges() as usize];
 
         for mut edge_set in edge_sets {
             // Shuffle in a reproducible way the edges of the current edge_type
@@ -1089,7 +1089,7 @@ impl Graph {
         let pb2 = get_loading_bar(
             verbose,
             "Computing subgraph edges",
-            self.get_directed_edges_number() as usize,
+            self.get_number_of_directed_edges() as usize,
         );
 
         // Creating the random number generator
@@ -1516,8 +1516,8 @@ impl Graph {
         let mut rnd = SmallRng::seed_from_u64(splitmix64(random_state as u64));
 
         // Allocate the vectors for the edges of each
-        let mut train_edge_types = vec![None; self.get_directed_edges_number() as usize];
-        let mut test_edge_types = vec![None; self.get_directed_edges_number() as usize];
+        let mut train_edge_types = vec![None; self.get_number_of_directed_edges() as usize];
+        let mut test_edge_types = vec![None; self.get_number_of_directed_edges() as usize];
 
         for mut edge_set in edge_sets {
             // Shuffle in a reproducible way the edges of the current edge_type
@@ -1646,8 +1646,8 @@ impl Graph {
             .unwrap();
 
         // Allocate the vectors for the edges of each
-        let mut train_edge_types = vec![None; self.get_directed_edges_number() as usize];
-        let mut test_edge_types = vec![None; self.get_directed_edges_number() as usize];
+        let mut train_edge_types = vec![None; self.get_number_of_directed_edges() as usize];
+        let mut test_edge_types = vec![None; self.get_number_of_directed_edges() as usize];
 
         for edge_set in edge_sets {
             // Shuffle in a reproducible way the edges of the current edge_type

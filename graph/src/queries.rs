@@ -985,7 +985,7 @@ impl Graph {
                 Err(format!(
                     "The given edge_id {} is higher than the number of available directed edges {}.",
                     edge_id,
-                    self.get_directed_edges_number()
+                    self.get_number_of_directed_edges()
                 )),
                 |value| Ok(*value)
             )

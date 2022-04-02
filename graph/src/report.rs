@@ -79,7 +79,7 @@ impl Graph {
         }
         report.insert(
             "directed_edges_number",
-            self.get_directed_edges_number().to_string(),
+            self.get_number_of_directed_edges().to_string(),
         );
         report.insert("selfloops_number", self.get_selfloops_number().to_string());
         report.insert(
@@ -259,11 +259,11 @@ impl Graph {
             other.merged_components_number(&second_nodes_components, self);
 
         let first_edges = match self.directed {
-            true => self.get_directed_edges_number(),
+            true => self.get_number_of_directed_edges(),
             false => self.get_undirected_edges_number(),
         };
         let second_edges = match other.directed {
-            true => other.get_directed_edges_number(),
+            true => other.get_number_of_directed_edges(),
             false => other.get_undirected_edges_number(),
         };
         // Building up the report
@@ -611,7 +611,7 @@ impl Graph {
         local_total: Option<EdgeT>,
         local_count: Option<EdgeT>,
     ) -> String {
-        let total_edges = local_total.unwrap_or_else(|| self.get_directed_edges_number());
+        let total_edges = local_total.unwrap_or_else(|| self.get_number_of_directed_edges());
         let number_of_edges = local_count
             .unwrap_or_else(|| self.get_unchecked_number_of_edges_from_edge_type_id(edge_type_id));
         if number_of_edges > 1 {
@@ -954,7 +954,7 @@ impl Graph {
         let percentage_of_involved_nodes =
             (number_of_involved_nodes as f64 / self.get_nodes_number() as f64) * 100.0;
         let percentage_of_involved_edges =
-            (number_of_involved_edges as f64 / self.get_directed_edges_number() as f64) * 100.0;
+            (number_of_involved_edges as f64 / self.get_number_of_directed_edges() as f64) * 100.0;
         format!(
             concat!(
                 "<{header_type}>{plural_oddity_name}</{header_type}>",
