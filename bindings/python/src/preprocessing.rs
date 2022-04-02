@@ -808,6 +808,145 @@ impl Graph {
         ))
     }
 
+    #[text_signature = "($self, idx, batch_size, negative_samples_rate, return_node_types, return_edge_types, return_only_edges_with_known_edge_types, return_edge_metrics, avoid_false_negatives, maximal_sampling_attempts, shuffle, graph_to_avoid)"]
+    /// Returns n-ple with index to build numpy array, source node, source node type, destination node, destination node type, edge type and whether this edge is real or artificial.
+    ///
+    /// Parameters
+    /// -------------
+    /// idx: int
+    ///     The index of the batch to generate, behaves like a random random_state,
+    /// batch_size: Optional[int]
+    ///     The maximal size of the batch to generate,
+    /// negative_samples: Optional[float]
+    ///     The component of netagetive samples to use.
+    /// return_node_types: Optional[bool]
+    ///     Whether to return the source and destination nodes node types.
+    /// return_edge_types: Optional[bool]
+    ///     Whether to return the edge types. The negative edges edge type will be samples at random.
+    /// return_only_edges_with_known_edge_types: Optional[bool]
+    ///     Whether to return only the edges with known edge types.
+    /// return_edge_metrics: Optional[bool]
+    ///     Whether to return the edge metrics.
+    /// avoid_false_negatives: Optional[bool]
+    ///     Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
+    /// maximal_sampling_attempts: Optional[int]
+    ///     Number of attempts to execute to sample the negative edges.
+    /// shuffle: Optional[bool]
+    ///     Whether to shuffle the samples within the batch.
+    /// graph_to_avoid: Optional[Graph]
+    ///     The graph whose edges are to be avoided during the generation of false negatives,
+    fn get_edge_prediction_chunk_mini_batch(
+        &self,
+        idx: usize,
+        batch_size: Option<usize>,
+        return_node_types: Option<bool>,
+        return_edge_types: Option<bool>,
+        return_edge_metrics: Option<bool>,
+    ) -> PyResult<(
+        Py<PyArray1<NodeT>>,
+        Option<Py<PyArray2<NodeTypeT>>>,
+        Py<PyArray1<NodeT>>,
+        Option<Py<PyArray2<NodeTypeT>>>,
+        Option<Py<PyArray2<f64>>>,
+        Option<Py<PyArray1<EdgeTypeT>>>,
+    )> {
+        let gil = pyo3::Python::acquire_gil();
+        let return_node_types = return_node_types.unwrap_or(false);
+        let return_edge_types = return_edge_types.unwrap_or(false);
+        let return_edge_metrics = return_edge_metrics.unwrap_or(false);
+        let batch_size = batch_size.unwrap_or(1024);
+
+        let par_iter = pe!(self.inner.get_edge_prediction_chunk_mini_batch(
+            idx,
+            Some(batch_size),
+            Some(return_node_types),
+            Some(return_edge_types),
+            Some(return_edge_metrics),
+        ))?;
+
+        let actual_batch_size = par_iter.len();
+
+        let srcs = ThreadDataRaceAware {
+            t: PyArray1::new(gil.python(), [actual_batch_size], false),
+        };
+        let dsts = ThreadDataRaceAware {
+            t: PyArray1::new(gil.python(), [actual_batch_size], false),
+        };
+        let (src_node_type_ids, dst_node_type_ids) = if return_node_types {
+            let max_node_type_count = pe!(self.inner.get_maximum_multilabel_count())? as usize;
+            (
+                Some(ThreadDataRaceAware {
+                    t: PyArray2::new(gil.python(), [actual_batch_size, max_node_type_count], false),
+                }),
+                Some(ThreadDataRaceAware {
+                    t: PyArray2::new(gil.python(), [actual_batch_size, max_node_type_count], false),
+                }),
+            )
+        } else {
+            (None, None)
+        };
+        let edges_metrics = if return_edge_metrics {
+            Some(ThreadDataRaceAware {
+                t: PyArray2::new(gil.python(), [actual_batch_size, 4], false),
+            })
+        } else {
+            None
+        };
+        let edge_type_ids = if return_edge_types {
+            Some(ThreadDataRaceAware {
+                t: PyArray1::new(gil.python(), [actual_batch_size], false),
+            })
+        } else {
+            None
+        };
+
+        unsafe {
+            par_iter.enumerate().for_each(
+                |(i, (src, src_node_type, dst, dst_node_type, edge_features, edge_type))| {
+                    *(dsts.t.uget_mut([i])) = src;
+                    *(srcs.t.uget_mut([i])) = dst;
+                    if let (Some(src_node_type_ids), Some(dst_node_type_ids)) =
+                        (src_node_type_ids.as_ref(), dst_node_type_ids.as_ref())
+                    {
+                        src_node_type.unwrap().into_iter().enumerate().for_each(
+                            |(j, node_type)| {
+                                *(src_node_type_ids.t.uget_mut([i, j])) = node_type;
+                            },
+                        );
+                        dst_node_type.unwrap().into_iter().enumerate().for_each(
+                            |(j, node_type)| {
+                                *(dst_node_type_ids.t.uget_mut([i, j])) = node_type;
+                            },
+                        );
+                    }
+                    if let Some(edges_metrics) = edges_metrics.as_ref() {
+                        edge_features
+                            .unwrap()
+                            .into_iter()
+                            .enumerate()
+                            .for_each(|(j, metric)| {
+                                *(edges_metrics.t.uget_mut([i, j])) = metric;
+                            });
+                    }
+                    if let (Some(edge_type_ids), Some(edge_type)) =
+                        (edge_type_ids.as_ref(), edge_type)
+                    {
+                        *(edge_type_ids.t.uget_mut([i])) = edge_type;
+                    }
+                },
+            );
+        }
+
+        Ok((
+            srcs.t.to_owned(),
+            src_node_type_ids.map(|x| x.t.to_owned()),
+            dsts.t.to_owned(),
+            dst_node_type_ids.map(|x| x.t.to_owned()),
+            edges_metrics.map(|x| x.t.to_owned()),
+            edge_type_ids.map(|x| x.t.to_owned()),
+        ))
+    }
+
     #[text_signature = "($self, source_node_ids, destination_node_ids, normalize, verbose)"]
     /// Returns all available edge prediction metrics for given edges.
     ///
@@ -892,7 +1031,7 @@ impl Graph {
         let batch_metrics = ThreadDataRaceAware {
             t: PyArray2::new(
                 gil.python(),
-                [self.inner.get_directed_edges_number() as usize, 4],
+                [self.inner.get_number_of_directed_edges() as usize, 4],
                 false,
             ),
         };
