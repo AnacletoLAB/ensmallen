@@ -93,7 +93,7 @@ impl EdgeNodeNamesParser {
         ))
     }
 
-    pub fn to_numeric<E, W>(
+    pub fn to_numeric_with_insertion<E, W>(
         &mut self,
         value: Result<(usize, (String, String, E, W))>,
     ) -> Result<(usize, (NodeT, NodeT, E, W))> {
@@ -110,6 +110,53 @@ impl EdgeNodeNamesParser {
         ))
     }
 
+    pub fn to_numeric_checked<E, W>(
+        &mut self,
+        value: Result<(usize, (String, String, E, W))>,
+    ) -> Result<(usize, (NodeT, NodeT, E, W))> {
+        let (line_number, (src_name, dst_name, edge_type_name, weight)) = value?;
+        let vocabulary_length = self.get_immutable().len() as NodeT;
+        let src = match src_name.parse::<NodeT>() {
+            Ok(src) => {
+                if src >= vocabulary_length {
+                    Err(format!(
+                        concat!(
+                            "The provided source node {} is higher than the ",
+                            "number of nodes in the current node vocabulary {}.",
+                        ),
+                        src, vocabulary_length
+                    ))
+                } else {
+                    Ok(src)
+                }
+            }
+            Err(_) => Err(format!(
+                "Unable to parse to integer the provided source node {}.",
+                src_name
+            )),
+        }?;
+        let dst = match dst_name.parse::<NodeT>() {
+            Ok(dst) => {
+                if dst >= vocabulary_length {
+                    Err(format!(
+                        concat!(
+                            "The provided destination node {} is higher than the ",
+                            "number of nodes in the current node vocabulary {}.",
+                        ),
+                        dst, vocabulary_length
+                    ))
+                } else {
+                    Ok(dst)
+                }
+            }
+            Err(_) => Err(format!(
+                "Unable to parse to integer the provided destination node {}.",
+                dst_name
+            )),
+        }?;
+        Ok((line_number, (src, dst, edge_type_name, weight)))
+    }
+
     pub fn to_numeric_unchecked<E, W>(
         &mut self,
         value: Result<(usize, (String, String, E, W))>,
@@ -118,8 +165,8 @@ impl EdgeNodeNamesParser {
         Ok((
             line_number,
             (
-                unsafe{atoi_c(src_name.as_str())},
-                unsafe{atoi_c(dst_name.as_str())},
+                unsafe { atoi_c(src_name.as_str()) },
+                unsafe { atoi_c(dst_name.as_str()) },
                 edge_type_name,
                 weight,
             ),

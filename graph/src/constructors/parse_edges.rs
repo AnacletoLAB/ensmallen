@@ -458,7 +458,8 @@ pub(crate) fn parse_string_edges(
         (false, true, false) => EdgeNodeNamesParser::get_unchecked,
         (false, false, false) => EdgeNodeNamesParser::get,
         (_, true, true) => EdgeNodeNamesParser::to_numeric_unchecked,
-        (_, false, true) => EdgeNodeNamesParser::to_numeric,
+        (true, false, true) => EdgeNodeNamesParser::to_numeric_with_insertion,
+        (false, false, true) => EdgeNodeNamesParser::to_numeric_checked,
     };
 
     let edge_types_vocabulary = edge_types_vocabulary.unwrap_or(Vocabulary::new(true));
