@@ -185,19 +185,6 @@ impl Graph {
             ));
         }
 
-        // As the above check, it is not possible to generate some negative
-        // graphs when some conditions.
-        if negatives_number % 2 == 1 && !self.is_directed() && !self.has_selfloops() {
-            return Err(format!(
-                concat!(
-                    "The requested negatives number {} is an odd number and ",
-                    "the graph is neither directed nor has selfloops, so it is ",
-                    "not possible to sample an odd number of edges."
-                ),
-                negatives_number
-            ));
-        }
-
         let pb1 = get_loading_bar(
             verbose,
             "Computing negative edges",
