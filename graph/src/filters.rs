@@ -141,8 +141,8 @@ impl Graph {
             edge_node_ids_to_keep.as_ref().map_or(true, |edge_node_ids| edge_node_ids.contains(&(*src, *dst)) || !self.is_directed() && edge_node_ids.contains(&(*dst, *src))) &&
             // If the deny edge types set was provided
             !edge_node_ids_to_filter.as_ref().map_or(false, |edge_node_ids| edge_node_ids.contains(&(*src, *dst)) || !self.is_directed() && edge_node_ids.contains(&(*dst, *src))) &&
-            edge_type_ids_to_keep.as_ref().map_or(true, |ntitk| ntitk.contains(edge_type_id)) &&
-            edge_type_ids_to_filter.as_ref().map_or(true, |ntitf| !ntitf.contains(edge_type_id)) &&
+            edge_type_ids_to_keep.as_ref().map_or(true, |etitk| etitk.contains(edge_type_id)) &&
+            edge_type_ids_to_filter.as_ref().map_or(true, |etitf| !etitf.contains(edge_type_id)) &&
             weight.map_or(true, |weight| weight >= min_edge_weight && weight <= max_edge_weight)
         };
 
