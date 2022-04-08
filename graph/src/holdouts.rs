@@ -548,7 +548,7 @@ impl Graph {
             return Err(String::from("Train rate must be strictly between 0 and 1."));
         }
 
-        let edge_type_ids = edge_types.map_or(Ok::<_, String>(None), |ets| {
+        let edge_type_ids = edge_types.clone().map_or(Ok::<_, String>(None), |ets| {
             Ok(Some(
                 self.get_edge_type_ids_from_edge_type_names(ets)?
                     .into_iter()
@@ -569,6 +569,22 @@ impl Graph {
                 .iter()
                 .map(|et| unsafe { self.get_unchecked_edge_count_from_edge_type_id(*et) } as EdgeT)
                 .sum();
+            if selected_edges_number == 0 {
+                return Err(format!(
+                    concat!(
+                        "The provided list of edge type(s) ({}) do exist in the current graph ",
+                        "edge types dictionary, but they do not have any edge assigned ",
+                        "to them, and therefore would create an empty validation set."
+                    ),
+                    edge_types
+                        .unwrap()
+                        .iter()
+                        .cloned()
+                        .filter_map(|e| e)
+                        .collect::<Vec<String>>()
+                        .join(", ")
+                ));
+            }
             (selected_edges_number as f64 * (1.0 - train_size)) as EdgeT
         } else {
             (self.get_number_of_directed_edges() as f64 * (1.0 - train_size)) as EdgeT
@@ -825,14 +841,16 @@ impl Graph {
         // For the training node types
         let mut train_node_types = vec![None; self.get_nodes_number() as usize];
         train_node_indices.into_iter().for_each(|node_id| unsafe {
-            train_node_types[node_id as usize] =
-                self.get_unchecked_node_type_ids_from_node_id(node_id).map(|x| x.clone())
+            train_node_types[node_id as usize] = self
+                .get_unchecked_node_type_ids_from_node_id(node_id)
+                .map(|x| x.clone())
         });
         // For the test node types
         let mut test_node_types = vec![None; self.get_nodes_number() as usize];
         test_node_indices.into_iter().for_each(|node_id| unsafe {
-            test_node_types[node_id as usize] =
-                self.get_unchecked_node_type_ids_from_node_id(node_id).map(|x| x.clone())
+            test_node_types[node_id as usize] = self
+                .get_unchecked_node_type_ids_from_node_id(node_id)
+                .map(|x| x.clone())
         });
 
         Ok((train_node_types, test_node_types))
@@ -1247,8 +1265,10 @@ impl Graph {
         let mut rnd = SmallRng::seed_from_u64(splitmix64(random_state as u64));
 
         // Allocate the vectors for the nodes of each
-        let mut train_node_types: Vec<Option<Vec<NodeTypeT>>> = vec![None; self.get_nodes_number() as usize];
-        let mut test_node_types: Vec<Option<Vec<NodeTypeT>>> = vec![None; self.get_nodes_number() as usize];
+        let mut train_node_types: Vec<Option<Vec<NodeTypeT>>> =
+            vec![None; self.get_nodes_number() as usize];
+        let mut test_node_types: Vec<Option<Vec<NodeTypeT>>> =
+            vec![None; self.get_nodes_number() as usize];
 
         for mut node_set in node_sets {
             // Shuffle in a reproducible way the nodes of the current node_type
@@ -1257,12 +1277,14 @@ impl Graph {
             let (train_size, _) = self.get_holdouts_elements_number(train_size, node_set.len())?;
             // add the nodes to the relative vectors
             node_set[..train_size].iter().for_each(|node_id| unsafe {
-                train_node_types[*node_id as usize] =
-                    self.get_unchecked_node_type_ids_from_node_id(*node_id).map(|x| x.clone())
+                train_node_types[*node_id as usize] = self
+                    .get_unchecked_node_type_ids_from_node_id(*node_id)
+                    .map(|x| x.clone())
             });
             node_set[train_size..].iter().for_each(|node_id| unsafe {
-                test_node_types[*node_id as usize] =
-                    self.get_unchecked_node_type_ids_from_node_id(*node_id).map(|x| x.clone())
+                test_node_types[*node_id as usize] = self
+                    .get_unchecked_node_type_ids_from_node_id(*node_id)
+                    .map(|x| x.clone())
             });
         }
 
