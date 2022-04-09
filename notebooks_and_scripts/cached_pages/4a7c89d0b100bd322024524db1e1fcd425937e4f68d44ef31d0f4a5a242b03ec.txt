@@ -2,5 +2,13 @@
 <head><title>Index of /wikidatawiki/entities/20220328/</title></head>
 <body bgcolor="white">
 <h1>Index of /wikidatawiki/entities/20220328/</h1><hr><pre><a href="../">../</a>
+<a href="wikidata-20220328-all-BETA.nt.bz2">wikidata-20220328-all-BETA.nt.bz2</a>                  31-Mar-2022 15:04        146318465836
+<a href="wikidata-20220328-all-BETA.nt.gz">wikidata-20220328-all-BETA.nt.gz</a>                   30-Mar-2022 20:32        188386660083
+<a href="wikidata-20220328-all-BETA.ttl.bz2">wikidata-20220328-all-BETA.ttl.bz2</a>                 31-Mar-2022 02:09         93679279079
+<a href="wikidata-20220328-all-BETA.ttl.gz">wikidata-20220328-all-BETA.ttl.gz</a>                  30-Mar-2022 15:58        113739272060
+<a href="wikidata-20220328-all.json.bz2">wikidata-20220328-all.json.bz2</a>                     31-Mar-2022 00:36         73086841535
+<a href="wikidata-20220328-all.json.gz">wikidata-20220328-all.json.gz</a>                      30-Mar-2022 16:02        110851852676
+<a href="wikidata-20220328-md5sums.txt">wikidata-20220328-md5sums.txt</a>                      31-Mar-2022 16:37                 401
+<a href="wikidata-20220328-sha1sums.txt">wikidata-20220328-sha1sums.txt</a>                     31-Mar-2022 17:36                 449
 </pre><hr></body>
 </html>

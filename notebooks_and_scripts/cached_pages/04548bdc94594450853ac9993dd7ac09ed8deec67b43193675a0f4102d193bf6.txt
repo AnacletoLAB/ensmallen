@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
 	  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
 <html lang="en">
@@ -100,6 +101,15 @@
       </li>
       <li>
 	<a href="https://kg-hub.berkeleybop.io/kg-covid-19/20220228/index.html">20220228</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-covid-19/20220328/index.html">20220328</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-covid-19/20220330/index.html">20220330</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-covid-19/20220402/index.html">20220402</a>
       </li>
       <li>
 	<a href="https://kg-hub.berkeleybop.io/kg-covid-19/current/index.html">current</a>
