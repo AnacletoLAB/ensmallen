@@ -977,7 +977,7 @@ impl Graph {
                     3 => "medium-columns",
                     2 => "large-columns",
                     1 => "single-column",
-                    _ => unreachable!("We only support column numbers from 1 to 5.")
+                    _ => unreachable!("We only support column numbers from 1 to 5."),
                 }
             ),
             list_type = if sorted && number_of_oddities > 1 {
@@ -1666,7 +1666,7 @@ impl Graph {
         } else {
             self.get_isomorphic_node_type_ids_groups().unwrap()
         };
-        isomorphic_node_types.par_sort_unstable_by(|a, b| unsafe {
+        isomorphic_node_types.par_sort_unstable_by(|a, b| {
             (self.get_unchecked_number_of_nodes_from_node_type_id(b[0]) as usize * b.len()).cmp(
                 &(self.get_unchecked_number_of_nodes_from_node_type_id(a[0]) as usize * a.len()),
             )
@@ -1720,7 +1720,7 @@ impl Graph {
                             None,
                             None
                         ),
-                        unsafe {
+                         {
                             get_unchecked_formatted_list(
                                 &isomorphic_node_type_group
                                     .into_iter()
@@ -1753,7 +1753,7 @@ impl Graph {
     /// Returns report on the isomorphic edge types of the graph.
     unsafe fn get_isomorphic_edge_types_report(&self) -> String {
         let mut isomorphic_edge_types = self.get_isomorphic_edge_type_ids_groups().unwrap();
-        isomorphic_edge_types.par_sort_unstable_by(|a, b| unsafe {
+        isomorphic_edge_types.par_sort_unstable_by(|a, b| {
             (self.get_unchecked_number_of_edges_from_edge_type_id(b[0]) as usize * b.len()).cmp(
                 &(self.get_unchecked_number_of_edges_from_edge_type_id(a[0]) as usize * a.len()),
             )
@@ -1784,7 +1784,7 @@ impl Graph {
                         ),
                         to_human_readable_high_integer(isomorphic_edge_type_group.len() as usize),
                         self.get_unchecked_succinct_edge_type_attributes_description(isomorphic_edge_type_group[0], None, None),
-                        unsafe {
+                        {
                             get_unchecked_formatted_list(
                                 &isomorphic_edge_type_group
                                     .into_iter()
@@ -2384,7 +2384,11 @@ impl Graph {
             "}",
             "</style>"
         );
-        let mut report = format!("<div class=\"graph-report\">{}{}</div>", style, paragraphs.join(""));
+        let mut report = format!(
+            "<div class=\"graph-report\">{}{}</div>",
+            style,
+            paragraphs.join("")
+        );
         report = report.replace("<p>", "<p class=\"paragraph\">");
         report = report.replace("<h3>", "<h3 style=\"margin: 1em 0 0 0;\">");
         report = report.replace("<h4>", "<h4 style=\"margin: 1em 0 0 0;\">");

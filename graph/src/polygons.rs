@@ -49,7 +49,7 @@ impl Graph {
             .par_iter()
             .progress_with(pb)
             // For each node in the cover
-            .map(|&node_id| unsafe {
+            .map(|&node_id| {
                 // We obtain the neighbours and collect them into a vector
                 // We store them instead of using them in a stream because we will need
                 // them multiple times below.
@@ -172,7 +172,7 @@ impl Graph {
             .par_iter_node_ids()
             .progress_with(pb)
             // For each node in the cover
-            .map(|node_id| unsafe {
+            .map(|node_id| {
                 // We obtain the neighbours and collect them into a vector
                 // We store them instead of using them in a stream because we will need
                 // them multiple times below.
@@ -317,7 +317,7 @@ impl Graph {
             .par_iter()
             .progress_with(pb)
             // For each node in the cover
-            .for_each(|&node_id| unsafe {
+            .for_each(|&node_id| {
                 // We obtain the neighbours and collect them into a vector
                 // We store them instead of using them in a stream because we will need
                 // them multiple times below.
@@ -445,7 +445,7 @@ impl Graph {
         self.par_iter_node_ids()
             .progress_with(pb)
             // For each node in the cover
-            .for_each(|node_id| unsafe {
+            .for_each(|node_id| {
                 // We obtain the neighbours and collect them into a vector
                 // We store them instead of using them in a stream because we will need
                 // them multiple times below.

@@ -15,8 +15,9 @@ impl Graph {
     fn get_anchor_node_ids(&self, embedding_size: usize) -> Result<Vec<Vec<NodeT>>> {
         info!("Computing sum of node features.");
         let number_of_edge_per_bucket: EdgeT =
-            (self.get_number_of_directed_edges() as f32 / 2 as f32 / embedding_size as f32).floor()
-                as EdgeT;
+            ((self.get_number_of_directed_edges() as f32 / 2 as f32 / embedding_size as f32).ceil()
+                as EdgeT)
+                .max(1);
 
         info!("Sorting centralities.");
         let mut node_ids: Vec<NodeT> = self.get_node_ids();
@@ -28,18 +29,19 @@ impl Graph {
         info!("Starting to compute anchors.");
         // Allocate the node scores
         let mut current_bucket_size = 0;
-        let mut current_bucket_index = 0;
-        let mut buckets: Vec<Vec<NodeT>> = (0..embedding_size).map(|_| Vec::new()).collect();
+        let mut buckets: Vec<Vec<NodeT>> = Vec::new();
+        let mut current_bucket: Vec<NodeT> = Vec::new();
         node_ids.into_iter().for_each(|node_id| unsafe {
             if current_bucket_size > number_of_edge_per_bucket {
                 current_bucket_size = 0;
-                current_bucket_index += 1;
+                buckets.push(current_bucket.clone());
+                current_bucket = Vec::new();
             }
-            if current_bucket_index == embedding_size {
+            if buckets.len() == embedding_size {
                 return;
             }
             current_bucket_size += self.get_unchecked_node_degree_from_node_id(node_id) as EdgeT;
-            buckets[current_bucket_index].push(node_id);
+            current_bucket.push(node_id);
         });
 
         Ok(buckets)
@@ -79,6 +81,14 @@ impl Graph {
 
         // Compute the anchor node IDs.
         let anchor_node_ids = self.get_anchor_node_ids(embedding_size)?;
+
+        // Check if the anchor nodes computation has been successful.
+        if anchor_node_ids.is_empty(){
+            return Err(concat!(
+                "This graph is either so small or so full of singletons ",
+                "that it is not possible to determine any anchor node."
+            ).to_string());
+        }
 
         info!("Starting to compute node features.");
         let pb = get_loading_bar(verbose, "Computing node features", anchor_node_ids.len());

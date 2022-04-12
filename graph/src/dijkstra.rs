@@ -615,7 +615,7 @@ impl Graph {
                     self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                         .map(move |neighbour_node_id| (neighbour_node_id, node_id))
                 })
-                .filter_map(|(neighbour_node_id, node_id)| unsafe {
+                .filter_map(|(neighbour_node_id, node_id)| {
                     if (*thread_shared_predecessors.value.get())[neighbour_node_id as usize]
                         == NODE_NOT_PRESENT
                     {
@@ -686,7 +686,7 @@ impl Graph {
 
                     self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                 })
-                .filter_map(|neighbour_node_id| unsafe {
+                .filter_map(|neighbour_node_id| {
                     if (*thread_shared_distances.value.get())[neighbour_node_id as usize]
                         == node_not_present
                     {
@@ -1245,7 +1245,7 @@ impl Graph {
                 .flat_map_iter(|node_id| {
                     self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                 })
-                .filter_map(|neighbour_node_id| unsafe {
+                .filter_map(|neighbour_node_id| {
                     if !(*thread_shared_visited.value.get())[neighbour_node_id as usize] {
                         // Set it's distance
                         (*thread_shared_visited.value.get())[neighbour_node_id as usize] = true;
