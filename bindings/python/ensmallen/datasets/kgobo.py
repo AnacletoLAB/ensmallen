@@ -1585,6 +1585,7 @@ def SYMP(
     version = "2020-08-04"
         Version to retrieve	
 		The available versions are:
+			- 2022-04-05
 			- 2020-08-04
     """
     return AutomaticallyRetrievedGraph(
@@ -2339,7 +2340,7 @@ def CHEBI(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "208", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "209", **kwargs
 ) -> Graph:
     """Return CHEBI graph	
 
@@ -2367,16 +2368,17 @@ def CHEBI(
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
         Sys var with cache directory
-    version = "208"
+    version = "209"
         Version to retrieve	
 		The available versions are:
-			- 209
+			- 210
 			- 203
 			- 204
 			- 205
 			- 206
 			- 207
 			- 208
+			- 209
     """
     return AutomaticallyRetrievedGraph(
         "CHEBI", version, "kgobo", directed, preprocess, load_nodes,
@@ -2462,6 +2464,7 @@ def GENO(
     version = "2020-03-08"
         Version to retrieve	
 		The available versions are:
+			- 2022-03-05
 			- 2020-03-08
     """
     return AutomaticallyRetrievedGraph(
@@ -3256,7 +3259,7 @@ def UBERON(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-11-28", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-02-21", **kwargs
 ) -> Graph:
     """Return UBERON graph	
 
@@ -3284,12 +3287,13 @@ def UBERON(
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
         Sys var with cache directory
-    version = "2021-11-28"
+    version = "2022-02-21"
         Version to retrieve	
 		The available versions are:
-			- 2022-02-21
+			- 2022-04-05
 			- 2021-10-01
 			- 2021-11-28
+			- 2022-02-21
     """
     return AutomaticallyRetrievedGraph(
         "UBERON", version, "kgobo", directed, preprocess, load_nodes,
@@ -3699,7 +3703,7 @@ def MONDO(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-02-04", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-03-01", **kwargs
 ) -> Graph:
     """Return MONDO graph	
 
@@ -3727,16 +3731,17 @@ def MONDO(
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
         Sys var with cache directory
-    version = "2022-02-04"
+    version = "2022-03-01"
         Version to retrieve	
 		The available versions are:
-			- 2022-03-01
+			- 2022-04-04
 			- 2021-09-01
 			- 2021-10-01
 			- 2021-11-01
 			- 2021-12-01
 			- 2021-12-30
 			- 2022-02-04
+			- 2022-03-01
     """
     return AutomaticallyRetrievedGraph(
         "MONDO", version, "kgobo", directed, preprocess, load_nodes,
@@ -3835,7 +3840,7 @@ def MAXO(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-08-19", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-03-23", **kwargs
 ) -> Graph:
     """Return MAXO graph	
 
@@ -3863,11 +3868,12 @@ def MAXO(
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
         Sys var with cache directory
-    version = "2021-08-19"
+    version = "2022-03-23"
         Version to retrieve	
 		The available versions are:
-			- 2022-03-23
+			- 2022-04-08
 			- 2021-08-19
+			- 2022-03-23
     """
     return AutomaticallyRetrievedGraph(
         "MAXO", version, "kgobo", directed, preprocess, load_nodes,
@@ -4618,7 +4624,7 @@ def GO(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-01-13", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-03-10", **kwargs
 ) -> Graph:
     """Return GO graph	
 
@@ -4646,15 +4652,16 @@ def GO(
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
         Sys var with cache directory
-    version = "2022-01-13"
+    version = "2022-03-10"
         Version to retrieve	
 		The available versions are:
-			- 2022-03-10
+			- 2022-03-22
 			- 2021-09-01
 			- 2021-10-26
 			- 2021-11-16
 			- 2021-12-15
 			- 2022-01-13
+			- 2022-03-10
     """
     return AutomaticallyRetrievedGraph(
         "GO", version, "kgobo", directed, preprocess, load_nodes,
@@ -4928,7 +4935,7 @@ def MS(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "4.1.71", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "4.1.78", **kwargs
 ) -> Graph:
     """Return MS graph	
 
@@ -4956,10 +4963,10 @@ def MS(
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
         Sys var with cache directory
-    version = "4.1.71"
+    version = "4.1.78"
         Version to retrieve	
 		The available versions are:
-			- 4.1.78
+			- 4.1.82
 			- 4.1.35
 			- 4.1.62
 			- 4.1.64
@@ -4968,6 +4975,7 @@ def MS(
 			- 4.1.69
 			- 4.1.70
 			- 4.1.71
+			- 4.1.78
     """
     return AutomaticallyRetrievedGraph(
         "MS", version, "kgobo", directed, preprocess, load_nodes,
@@ -6061,7 +6069,7 @@ def DOID(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-02-21", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-03-02", **kwargs
 ) -> Graph:
     """Return DOID graph	
 
@@ -6089,16 +6097,17 @@ def DOID(
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
         Sys var with cache directory
-    version = "2022-02-21"
+    version = "2022-03-02"
         Version to retrieve	
 		The available versions are:
-			- 2022-03-02
+			- 2022-04-01
 			- 2021-10-01
 			- 2021-10-12
 			- 2021-11-17
 			- 2021-12-15
 			- 2022-01-31
 			- 2022-02-21
+			- 2022-03-02
     """
     return AutomaticallyRetrievedGraph(
         "DOID", version, "kgobo", directed, preprocess, load_nodes,
@@ -6141,6 +6150,7 @@ def OMRSE(
     version = "2021-08-30"
         Version to retrieve	
 		The available versions are:
+			- 2022-04-06
 			- 2021-08-30
     """
     return AutomaticallyRetrievedGraph(
@@ -6845,7 +6855,7 @@ def PR(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "64.0", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "65.0", **kwargs
 ) -> Graph:
     """Return PR graph	
 
@@ -6873,12 +6883,13 @@ def PR(
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
         Sys var with cache directory
-    version = "64.0"
+    version = "65.0"
         Version to retrieve	
 		The available versions are:
-			- 65.0
+			- 66.0
 			- 63.0
 			- 64.0
+			- 65.0
     """
     return AutomaticallyRetrievedGraph(
         "PR", version, "kgobo", directed, preprocess, load_nodes,
@@ -7586,7 +7597,7 @@ def CDNO(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-10-20", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-01-10", **kwargs
 ) -> Graph:
     """Return CDNO graph	
 
@@ -7614,11 +7625,12 @@ def CDNO(
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
         Sys var with cache directory
-    version = "2021-10-20"
+    version = "2022-01-10"
         Version to retrieve	
 		The available versions are:
-			- 2022-01-10
+			- 2022-04-06
 			- 2021-10-20
+			- 2022-01-10
     """
     return AutomaticallyRetrievedGraph(
         "CDNO", version, "kgobo", directed, preprocess, load_nodes,

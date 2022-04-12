@@ -23,7 +23,7 @@ class KGHubGraphRepository(GraphRepository):
             "kg-covid-19": "KGCOVID19",
             "kg-microbe": "KGMicrobe",
             "KG-IDG": "KGIDG",
-            "kg-ontoml": "KGOntoML",
+            "KG-OntoML": "KGOntoML",
             "eco-kg": "EcoKG"
         }
         root_pattern = "https://kg-hub.berkeleybop.io/{lower_graph_name}/index.html"
@@ -48,6 +48,8 @@ class KGHubGraphRepository(GraphRepository):
                     graph_name=graph_name,
                     version=version
                 )
+                if version == "placeholder":
+                    continue
                 mined_data[callable_graph_name][version] = {
                     "urls": [graph_url],
                     "arguments": {
