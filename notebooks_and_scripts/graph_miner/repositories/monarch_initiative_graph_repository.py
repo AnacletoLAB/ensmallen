@@ -33,7 +33,7 @@ class MonarchInitiativeGraphRepository(GraphRepository):
             version = path.split("/")[0]
             self._data["Monarch"][version] = {
                 "urls": [
-                    "{}/{}".format(base_url, path)
+                    base_url + path
                 ],
                 "arguments": {
                     "edge_path": "monarch-kg/monarch-kg_edges.tsv",
