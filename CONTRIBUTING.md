@@ -132,7 +132,6 @@ needed libraries and patch the relocations section of the two versions of ensmal
 import these. This builder uses a json file for settings the targets. An example of
 settings file is: 
 { 
-    "python_versions":["3.6", "3.7", "3.8", "3.9", "3.10"],
     "wheels_folder":"wheels", 
     "shared_rustflags":"-C inline-threshold=1000", 
     "targets":{
@@ -149,10 +148,6 @@ settings file is:
 
 optional arguments:
   -h, --help            show this help message and exit
-  -p PYTHON_VERSIONS, --python-versions PYTHON_VERSIONS
-                        comma separated string of python version to compile for, this
-                        defaults to what specified in the settings file (default:
-                        None)
   -s SETTINGS_PATH, --settings-path SETTINGS_PATH
                         The json file f (default: builder_settings.json)
   -v {debug,info,error}, --verbosity {debug,info,error}

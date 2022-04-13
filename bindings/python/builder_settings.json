@@ -1,6 +1,4 @@
 {
-    // Which python versions to compile for
-    "python_versions":["3.6", "3.7", "3.8", "3.9", "3.10"],
     // Where the final wheels, and the tmp building folders will, be
     "wheels_folder":"wheels", 
     // flags passed to RUSTFLAGS to all targets

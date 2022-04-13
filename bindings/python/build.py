@@ -65,7 +65,6 @@ file is:
 
 ```json
 {
-    "python_versions":["3.6", "3.7", "3.8", "3.9", "3.10"],
     "wheels_folder":"wheels", 
     "shared_rustflags":"-C inline-threshold=1000",
     "targets":{
@@ -81,12 +80,6 @@ file is:
 }
 ```
 """, formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-
-parser.add_argument("-p", "--python-versions", type=str,
-    default=None,
-    help="""comma separated string of python version to compile for, 
-this defaults to what specified in the settings file""".replace("\n", "")
-)
 
 parser.add_argument("-s", "--settings-path", type=str,
     default="builder_settings.json",
@@ -133,11 +126,6 @@ try:
 except JSONDecodeError:
     raise ValueError("The given settings are not a json.\n%s"%settings_txt)
 
-
-if args.python_versions is not None:
-    PYTHON_VERSIONS = args.python_versions.split(",")
-else:
-    PYTHON_VERSIONS = settings.get("python_versions", ["3.6", "3.7", "3.8", "3.9"])
 
 WHEELS_FOLDER = join(settings.get("wheels_folder", "wheels"))
 MERGIN_FOLDER =  join(WHEELS_FOLDER, "merged")
@@ -207,186 +195,170 @@ for i, (target_name, target_settings) in enumerate(settings["targets"].items()):
 ################################################################################
 
 resulting_wheels = []
-for python_minor_version in PYTHON_VERSIONS:
+################################################################################
+# Compile all the targets
+################################################################################
+for target_name, target_settings in settings["targets"].items():
+    logging.info("%s settings: %s", target_name, target_settings)
 
-    logging.info("Building version: %s", python_minor_version)
+    build_dir = join(target_settings["build_dir"])
+    logging.info("Build dir '%s'", build_dir)
+    target_dir = join(WHEELS_FOLDER, target_name)
+    # Clean the folder
+    shutil.rmtree(target_dir, ignore_errors=True)
+    os.makedirs(target_dir, exist_ok=True)
 
-    # Dispatch the python interpreter
-    if platform.system().strip().lower() == "windows":
-        python_interpreter = "{}\AppData\Local\Programs\Python\Python{}\python.exe".format(
-            os.path.expanduser("~"),
-            python_minor_version.replace(".", ""),
-        )
-    else:
-        python_interpreter = "python{}".format(python_minor_version)
+    rust_flags = settings["shared_rustflags"] + " " + target_settings["rustflags"]
 
-    logging.info("Using the interpreter: %s", python_interpreter)
-        
-    ################################################################################
-    # Compile all the targets
-    ################################################################################
-    for target_name, target_settings in settings["targets"].items():
-        logging.info("%s settings: %s", target_name, target_settings)
-
-        build_dir = join(target_settings["build_dir"])
-        logging.info("Build dir '%s'", build_dir)
-        target_dir = join(WHEELS_FOLDER, target_name)
-        # Clean the folder
-        shutil.rmtree(target_dir, ignore_errors=True)
-        os.makedirs(target_dir, exist_ok=True)
-
-        rust_flags = settings["shared_rustflags"] + " " + target_settings["rustflags"]
-
-        logging.info("Compiling the '%s' target with flags: '%s'", target_name, rust_flags)
-        exec(
-            "maturin build --release --strip -i {} --no-sdist --out {}".format(
-                python_interpreter,
-                target_dir
-            ), 
-            env={
-                **os.environ,
-                "RUSTFLAGS":rust_flags,
-            },
-            cwd=build_dir,
-        )
-
-    ################################################################################
-    # Copy the file to the other wheel
-    ################################################################################
-    logging.info("Merging the wheel files")
-    os.makedirs(MERGIN_FOLDER, exist_ok=True)
-
-    # Extract the compiled libraries form the wheels
-    libs = []
-
-    for i, (target_name, target_settings) in enumerate(settings["targets"].items()):
-        target_dir = join(WHEELS_FOLDER, target_name)
-        src_wheel = join(target_dir, os.listdir(target_dir)[0])
-        wheel_name = os.path.basename(src_wheel)
-
-        logging.debug("Reading the '%s' compiled library from '%s'", target_name, src_wheel)
-        with zipfile.ZipFile(src_wheel) as z:
-            lib = next(x for x in z.filelist if x.filename.endswith(library_extension))
-
-            # Read the .so
-            logging.info("The %s compiled library is '%s'", target_name, lib.filename)
-            with z.open(lib.filename) as f:
-                compiled_libray = f.read()
-
-            lib_name = os.path.basename(lib.filename)
-
-        # Compute the hash of the library
-        m = hashlib.sha256()
-        m.update(compiled_libray)
-        library_hash = base64.b64encode(m.digest()).decode()
-        logging.debug("The '%s' compiled library hash is %s", target_name, library_hash)
-
-        libs.append({
-            "target_name":target_name,
-            "wheel_name":wheel_name,
-            "lib_name":lib_name,
-            "lib":compiled_libray,
-            "hash":library_hash,
-            "size":len(compiled_libray),
-        })
-
-    # Take a wheel to copy all the non compiled files
-    donor_target, _ = list(settings["targets"].items())[0]
-    donor_dir = join(WHEELS_FOLDER, donor_target)
-    donor_wheel = join(donor_dir, os.listdir(donor_dir)[0])
-    logging.debug("The donor wheel is %s", donor_wheel)
-
-    # Compute the target zip file
-    target_file = os.path.basename(donor_wheel).replace(
-        "ensmallen_%s"%donor_target,
-        "ensmallen",
+    logging.info("Compiling the '%s' target with flags: '%s'", target_name, rust_flags)
+    exec(
+        "maturin build --release --strip --no-sdist --out {}".format(
+            target_dir
+        ), 
+        env={
+            **os.environ,
+            "RUSTFLAGS":rust_flags,
+        },
+        cwd=build_dir,
     )
-    merged_wheel = join(MERGIN_FOLDER, target_file)
-    shutil.rmtree(merged_wheel, ignore_errors=True)
-    logging.debug("The merged wheel will be %s", merged_wheel)
 
-    logging.debug("Merging the wheels")
-    with zipfile.ZipFile(donor_wheel, 'r') as zipread:
-        with zipfile.ZipFile(
-            merged_wheel, 'w', 
-            compression=zipfile.ZIP_DEFLATED,
-            ) as zipwrite:
+################################################################################
+# Copy the file to the other wheel
+################################################################################
+logging.info("Merging the wheel files")
+os.makedirs(MERGIN_FOLDER, exist_ok=True)
 
-            for data in libs:
-                library_path = "ensmallen/{}".format(data["lib_name"])
-                logging.debug("Copying the compiled libraries to '%s'", library_path)
-                # Add the libraries to the new zip
-                zipwrite.writestr(
-                    library_path, 
-                    data["lib"]
-                )
+# Extract the compiled libraries form the wheels
+libs = []
 
-            # Copy all the other files from the avx zip
-            for item in zipread.infolist():
-                data = zipread.read(item.filename)
-                dst_path = item.filename.replace(
+for i, (target_name, target_settings) in enumerate(settings["targets"].items()):
+    target_dir = join(WHEELS_FOLDER, target_name)
+    src_wheel = join(target_dir, os.listdir(target_dir)[0])
+    wheel_name = os.path.basename(src_wheel)
+
+    logging.debug("Reading the '%s' compiled library from '%s'", target_name, src_wheel)
+    with zipfile.ZipFile(src_wheel) as z:
+        lib = next(x for x in z.filelist if x.filename.endswith(library_extension))
+
+        # Read the .so
+        logging.info("The %s compiled library is '%s'", target_name, lib.filename)
+        with z.open(lib.filename) as f:
+            compiled_libray = f.read()
+
+        lib_name = os.path.basename(lib.filename)
+
+    # Compute the hash of the library
+    m = hashlib.sha256()
+    m.update(compiled_libray)
+    library_hash = base64.b64encode(m.digest()).decode()
+    logging.debug("The '%s' compiled library hash is %s", target_name, library_hash)
+
+    libs.append({
+        "target_name":target_name,
+        "wheel_name":wheel_name,
+        "lib_name":lib_name,
+        "lib":compiled_libray,
+        "hash":library_hash,
+        "size":len(compiled_libray),
+    })
+
+# Take a wheel to copy all the non compiled files
+donor_target, _ = list(settings["targets"].items())[0]
+donor_dir = join(WHEELS_FOLDER, donor_target)
+donor_wheel = join(donor_dir, os.listdir(donor_dir)[0])
+logging.debug("The donor wheel is %s", donor_wheel)
+
+# Compute the target zip file
+target_file = os.path.basename(donor_wheel).replace(
+    "ensmallen_%s"%donor_target,
+    "ensmallen",
+)
+merged_wheel = join(MERGIN_FOLDER, target_file)
+shutil.rmtree(merged_wheel, ignore_errors=True)
+logging.debug("The merged wheel will be %s", merged_wheel)
+
+logging.debug("Merging the wheels")
+with zipfile.ZipFile(donor_wheel, 'r') as zipread:
+    with zipfile.ZipFile(
+        merged_wheel, 'w', 
+        compression=zipfile.ZIP_DEFLATED,
+        ) as zipwrite:
+
+        for data in libs:
+            library_path = "ensmallen/{}".format(data["lib_name"])
+            logging.debug("Copying the compiled libraries to '%s'", library_path)
+            # Add the libraries to the new zip
+            zipwrite.writestr(
+                library_path, 
+                data["lib"]
+            )
+
+        # Copy all the other files from the avx zip
+        for item in zipread.infolist():
+            data = zipread.read(item.filename)
+            dst_path = item.filename.replace(
+                "ensmallen_%s"%donor_target,
+                "ensmallen",
+            )
+            logging.debug("Copying file bewtten wheels '%s' to '%s'", item.filename, dst_path)
+
+            # Skip the compiledlibrary from the donor wheel
+            if dst_path.startswith("ensmallen") and dst_path.endswith(library_extension):
+                logging.debug("Skipping '%s'", dst_path)
+                continue
+
+            # Patch the RECORD file adding the non_avx library
+            # The record line has the following format:
+            # $PATH,$HASH,$FILE_SIZE_IN_BYTES
+            if dst_path.endswith("METADATA"):
+                logging.debug("Patching the METADATA file")
+                data = data.decode()
+                data = data.replace(
                     "ensmallen_%s"%donor_target,
                     "ensmallen",
-                )
-                logging.debug("Copying file bewtten wheels '%s' to '%s'", item.filename, dst_path)
-
-                # Skip the compiledlibrary from the donor wheel
-                if dst_path.startswith("ensmallen") and dst_path.endswith(library_extension):
-                    logging.debug("Skipping '%s'", dst_path)
-                    continue
-
-                # Patch the RECORD file adding the non_avx library
-                # The record line has the following format:
-                # $PATH,$HASH,$FILE_SIZE_IN_BYTES
-                if dst_path.endswith("METADATA"):
-                    logging.debug("Patching the METADATA file")
-                    data = data.decode()
-                    data = data.replace(
+                ).encode()
+            elif dst_path.endswith("RECORD"):
+                logging.debug("Patching the RECORD file")
+                data = data.decode()
+                data = [
+                    x.replace(
                         "ensmallen_%s"%donor_target,
                         "ensmallen",
-                    ).encode()
-                elif dst_path.endswith("RECORD"):
-                    logging.debug("Patching the RECORD file")
-                    data = data.decode()
-                    data = [
-                        x.replace(
-                            "ensmallen_%s"%donor_target,
-                            "ensmallen",
-                        )
-                        for x in data.split("\n") 
-                        if x.strip() != "" and 
-                            not (x.split(",")[0].endswith(library_extension))
-                    ]
-                    for vals in libs:
-                        data.append("ensmallen/{lib_name},sha256={hash},{size}".format(**vals))
-                    # Sort the lines
-                    data = "\n".join(sorted(data)) + "\n"
-                    data = data.encode()
+                    )
+                    for x in data.split("\n") 
+                    if x.strip() != "" and 
+                        not (x.split(",")[0].endswith(library_extension))
+                ]
+                for vals in libs:
+                    data.append("ensmallen/{lib_name},sha256={hash},{size}".format(**vals))
+                # Sort the lines
+                data = "\n".join(sorted(data)) + "\n"
+                data = data.encode()
 
-                zipwrite.writestr(dst_path, data)
+            zipwrite.writestr(dst_path, data)
 
-    logging.debug("Done!")
-    ################################################################################
-    # Copy the file to the other wheel
-    ################################################################################
+logging.debug("Done!")
+################################################################################
+# Copy the file to the other wheel
+################################################################################
 
-    # Repairing the file
-    final_wheel = join(WHEELS_FOLDER, target_file)
-    logging.info("The final wheel will be at '%s'", final_wheel)
-    # WARNING: adding --strip here breaks the wheel OFC
-    if platform.system().strip().lower() == "linux":
-        logging.info("Fixing the wheel to be in the standard manylinux2010 if needed")
-        exec(
-            "auditwheel repair {} --wheel-dir {}".format(target_file, WHEELS_FOLDER),
-            env=os.environ,
-            cwd=MERGIN_FOLDER,
-        )
-    else:
-        shutil.copy(
-            merged_wheel, 
-            final_wheel,
-        )
+# Repairing the file
+final_wheel = join(WHEELS_FOLDER, target_file)
+logging.info("The final wheel will be at '%s'", final_wheel)
+# WARNING: adding --strip here breaks the wheel OFC
+if platform.system().strip().lower() == "linux":
+    logging.info("Fixing the wheel to be in the standard manylinux2010 if needed")
+    exec(
+        "auditwheel repair {} --wheel-dir {}".format(target_file, WHEELS_FOLDER),
+        env=os.environ,
+        cwd=MERGIN_FOLDER,
+    )
+else:
+    shutil.copy(
+        merged_wheel, 
+        final_wheel,
+    )
 
-    resulting_wheels.append(final_wheel)
+resulting_wheels.append(final_wheel)
 
 logging.info("To publish just run:\ntwine upload %s", " ".join(resulting_wheels))
