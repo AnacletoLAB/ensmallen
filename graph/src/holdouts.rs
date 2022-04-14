@@ -90,26 +90,40 @@ impl Graph {
     /// fed into the argument "graph_to_avoid" of the link_prediction or the
     /// skipgrams algorithm.
     ///
-    ///
     /// # Arguments
-    ///
     /// * `negatives_number`: EdgeT - Number of negatives edges to include.
     /// * `random_state`: Option<EdgeT> - random_state to use to reproduce negative edge set.
     /// * `seed_graph`: Option<&Graph> - Optional graph to use to filter the negative edges. The negative edges generated when this variable is provided will always have a node within this graph.
     /// * `only_from_same_component`: Option<bool> - Whether to sample negative edges only from nodes that are from the same component.
+    /// * `sample_only_edges_with_heterogeneous_node_types`: Option<bool> - Whether to sample negative edges only with source and destination nodes that have different node types.
     /// * `verbose`: Option<bool> - Whether to show the loading bar.
     ///
+    /// # Raises
+    /// * If the `sample_only_edges_with_heterogeneous_node_types` argument is provided as true, but the graph does not have node types.
     pub fn sample_negatives(
         &self,
         negatives_number: EdgeT,
         random_state: Option<EdgeT>,
         seed_graph: Option<&Graph>,
         only_from_same_component: Option<bool>,
+        sample_only_edges_with_heterogeneous_node_types: Option<bool>,
         verbose: Option<bool>,
     ) -> Result<Graph> {
         if negatives_number == 0 {
             return Err(String::from("The number of negatives cannot be zero."));
         }
+        let sample_only_edges_with_heterogeneous_node_types =
+            sample_only_edges_with_heterogeneous_node_types.unwrap_or(false);
+
+        if sample_only_edges_with_heterogeneous_node_types && !self.has_node_types() {
+            return Err(concat!(
+                "The parameter `sample_only_edges_with_heterogeneous_node_types` was provided with value `true` ",
+                "but the current graph instance does not contain any node type. ",
+                "If you expected to have node types within this graph, maybe you have either dropped them ",
+                "with a wrong filter operation or use the wrong parametrization to load the graph."
+            ).to_string());
+        }
+
         let only_from_same_component = only_from_same_component.unwrap_or(false);
         let mut random_state = random_state.unwrap_or(0xbadf00d);
         let verbose = verbose.unwrap_or(false);
@@ -240,6 +254,14 @@ impl Graph {
                             return None;
                         }
                     }
+
+                    if sample_only_edges_with_heterogeneous_node_types
+                        && unsafe{self.get_unchecked_node_type_ids_from_node_id(src)
+                            == self.get_unchecked_node_type_ids_from_node_id(dst)}
+                    {
+                        return None;
+                    }
+
                     // If the edge is not a self-loop or the user allows self-loops and
                     // the graph is directed or the edges are inserted in a way to avoid
                     // inserting bidirectional edges.

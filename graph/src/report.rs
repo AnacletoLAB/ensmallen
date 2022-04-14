@@ -2189,7 +2189,7 @@ impl Graph {
     ) -> String {
         match count.len() {
             0 => {
-                unreachable!("It does not make sense to require the description of an empty count.")
+                "".to_string()
             }
             1 => format!(
                 concat!("a single edge type, which is {edge_type_description}",),

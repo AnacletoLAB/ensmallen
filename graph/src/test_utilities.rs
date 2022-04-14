@@ -1791,6 +1791,7 @@ pub fn test_negative_edges_generation(graph: &mut Graph, verbose: Option<bool>) 
             None,
             None,
             Some(*only_from_same_component),
+            None,
             verbose,
         )?;
         assert_eq!(
@@ -1890,6 +1891,7 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: Option<bool>) -> 
                 Some(10),
                 Some(false),
                 None,
+                None,
             )
             .unwrap()
             .collect::<Vec<_>>();
@@ -1905,6 +1907,7 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: Option<bool>) -> 
                 Some(false),
                 Some(10),
                 Some(false),
+                None,
                 None,
             )
             .unwrap()

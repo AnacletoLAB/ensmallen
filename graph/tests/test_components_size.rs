@@ -13,8 +13,11 @@ fn test_components_size() {
         .unwrap()
         .set_separator(Some(','))
         .unwrap()
+        .set_parallel(Some(false))
         .set_verbose(Some(false))
         .set_numeric_node_ids(Some(true));
+
+    println!("{:?}", edges_reader.clone().read_lines().unwrap().collect::<Vec<_>>());
 
     let g = Graph::from_file_readers(
         Some(edges_reader),

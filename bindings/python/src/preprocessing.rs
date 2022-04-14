@@ -664,6 +664,8 @@ impl Graph {
     ///     Number of attempts to execute to sample the negative edges.
     /// shuffle: Optional[bool]
     ///     Whether to shuffle the samples within the batch.
+    /// sample_only_edges_with_heterogeneous_node_types: Optional[bool]
+    ///     Whether to sample negative edges only with source and destination nodes that have different node types.
     /// graph_to_avoid: Optional[Graph]
     ///     The graph whose edges are to be avoided during the generation of false negatives,
     ///
@@ -679,6 +681,8 @@ impl Graph {
     ///     If edge types are requested but the graph does not contain any.
     /// ValueError
     ///     If edge types are requested but the graph contains unknown edge types.
+    /// ValueError
+    ///     If the `sample_only_edges_with_heterogeneous_node_types` argument is provided as true, but the graph does not have node types.
     fn get_edge_prediction_mini_batch(
         &self,
         idx: u64,
@@ -691,6 +695,7 @@ impl Graph {
         avoid_false_negatives: Option<bool>,
         maximal_sampling_attempts: Option<usize>,
         shuffle: Option<bool>,
+        sample_only_edges_with_heterogeneous_node_types: Option<bool>,
         graph_to_avoid: Option<Graph>,
     ) -> PyResult<(
         Py<PyArray1<NodeT>>,
@@ -719,6 +724,7 @@ impl Graph {
             avoid_false_negatives,
             maximal_sampling_attempts,
             shuffle,
+            sample_only_edges_with_heterogeneous_node_types,
             graph_to_avoid.as_ref(),
         ))?;
 
@@ -876,10 +882,18 @@ impl Graph {
             let max_node_type_count = pe!(self.inner.get_maximum_multilabel_count())? as usize;
             (
                 Some(ThreadDataRaceAware {
-                    t: PyArray2::new(gil.python(), [actual_batch_size, max_node_type_count], false),
+                    t: PyArray2::new(
+                        gil.python(),
+                        [actual_batch_size, max_node_type_count],
+                        false,
+                    ),
                 }),
                 Some(ThreadDataRaceAware {
-                    t: PyArray2::new(gil.python(), [actual_batch_size, max_node_type_count], false),
+                    t: PyArray2::new(
+                        gil.python(),
+                        [actual_batch_size, max_node_type_count],
+                        false,
+                    ),
                 }),
             )
         } else {

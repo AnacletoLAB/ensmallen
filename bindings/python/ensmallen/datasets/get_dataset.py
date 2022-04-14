@@ -11,18 +11,14 @@ from userinput.utils import closest, set_validator, get_k_closest
 
 def get_available_repositories() -> List[str]:
     """Return list of available repositories."""
-    black_list = {
-        "__pycache__"
-    }
     return [
-        directory_candidate.split(os.sep)[-1]
+        directory_candidate.split(os.sep)[-1].split(".")[0]
         for directory_candidate in glob(
             os.path.join(
                 os.path.dirname(os.path.abspath(__file__)),
-                "*"
+                "*.json.gz"
             )
         )
-        if os.path.isdir(directory_candidate) and directory_candidate.split(os.sep)[-1] not in black_list
     ]
 
 
@@ -51,14 +47,9 @@ def get_available_graphs_from_repository(repository: str) -> List[str]:
             closest(repository, repositories)
         ))
 
-    return [
-        ".".join(path.split(os.sep)[-1].split(".")[:-2])
-        for path in glob(os.path.join(
-            os.path.dirname(os.path.abspath(__file__)),
-            repository,
-            "*.json.gz"
-        ))
-    ]
+    return compress_json.local_load("{repository}.json.gz".format(
+        repository=repository
+    )).keys()
 
 
 def get_all_available_graphs() -> List[str]:

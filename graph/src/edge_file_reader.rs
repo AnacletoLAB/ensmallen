@@ -657,38 +657,34 @@ impl EdgeFileReader {
         let maybe_source_node_name = elements_in_line.pop().unwrap();
         // We check that these values are actually provided
         if maybe_destination_node_name.is_none() {
-            return Err(
-                format!(
-                        concat!(
-                        "While reading the provided edge list, we have encountered ",
-                        "an undefined destination node, represented by a NaN or empty value. ",
-                        "Such cases are often caused by unexpected separator symbol in ",
-                        "other fields of the CSV file (for instance node descriptions) ",
-                        "or just error in the prepreocessing pipeline. Do consider loading ",
-                        "the edge list in Pandas, if possible, to debug and remove the ",
-                        "missing value. ",
-                        "The current line number is {}."
-                    ),
-                    line_number
-                )
-            );
+            return Err(format!(
+                concat!(
+                    "While reading the provided edge list, we have encountered ",
+                    "an undefined destination node, represented by a NaN or empty value. ",
+                    "Such cases are often caused by unexpected separator symbol in ",
+                    "other fields of the CSV file (for instance node descriptions) ",
+                    "or just error in the prepreocessing pipeline. Do consider loading ",
+                    "the edge list in Pandas, if possible, to debug and remove the ",
+                    "missing value. ",
+                    "The current line number is {}."
+                ),
+                line_number
+            ));
         }
         if maybe_source_node_name.is_none() {
-            return Err(
-                format!(
-                    concat!(
-                        "While reading the provided edge list, we have encountered ",
-                        "an undefined source node, represented by a NaN or empty value. ",
-                        "Such cases are often caused by unexpected separator symbol in ",
-                        "other fields of the CSV file (for instance node descriptions) ",
-                        "or just error in the prepreocessing pipeline. Do consider loading ",
-                        "the edge list in Pandas, if possible, to debug and remove the ",
-                        "missing value. ",
-                        "The current line number is {}."
-                    ),
-                    line_number
-                )
-            );
+            return Err(format!(
+                concat!(
+                    "While reading the provided edge list, we have encountered ",
+                    "an undefined source node, represented by a NaN or empty value. ",
+                    "Such cases are often caused by unexpected separator symbol in ",
+                    "other fields of the CSV file (for instance node descriptions) ",
+                    "or just error in the prepreocessing pipeline. Do consider loading ",
+                    "the edge list in Pandas, if possible, to debug and remove the ",
+                    "missing value. ",
+                    "The current line number is {}."
+                ),
+                line_number
+            ));
         }
 
         // Finally we check if the edge ID was provided.

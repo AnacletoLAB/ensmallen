@@ -296,6 +296,7 @@ impl Graph {
     /// * `avoid_false_negatives`: Option<bool> - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
     /// * `maximal_sampling_attempts`: Option<usize> - Number of attempts to execute to sample the negative edges.
     /// * `shuffle`: Option<bool> - Whether to shuffle the samples within the batch.
+    /// * `sample_only_edges_with_heterogeneous_node_types`: Option<bool> - Whether to sample negative edges only with source and destination nodes that have different node types.
     /// * `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
     /// # Raises
@@ -304,6 +305,7 @@ impl Graph {
     /// * If node types are requested but the graph contains unknown node types.
     /// * If edge types are requested but the graph does not contain any.
     /// * If edge types are requested but the graph contains unknown edge types.
+    /// * If the `sample_only_edges_with_heterogeneous_node_types` argument is provided as true, but the graph does not have node types.
     ///
     /// TODO! When returning only known edges, add the possibility for balanced
     /// edge types.
@@ -319,6 +321,7 @@ impl Graph {
         avoid_false_negatives: Option<bool>,
         maximal_sampling_attempts: Option<usize>,
         shuffle: Option<bool>,
+        sample_only_edges_with_heterogeneous_node_types: Option<bool>,
         graph_to_avoid: Option<&'a Graph>,
     ) -> Result<
         impl IndexedParallelIterator<
@@ -333,6 +336,8 @@ impl Graph {
                 ),
             > + 'a,
     > {
+        let sample_only_edges_with_heterogeneous_node_types =
+            sample_only_edges_with_heterogeneous_node_types.unwrap_or(false);
         let batch_size = batch_size.unwrap_or(1024);
         let negative_samples_rate = negative_samples_rate.unwrap_or(0.5);
         let avoid_false_negatives = avoid_false_negatives.unwrap_or(false);
@@ -340,6 +345,15 @@ impl Graph {
             return_only_edges_with_known_edge_types.unwrap_or(false);
         let maximal_sampling_attempts = maximal_sampling_attempts.unwrap_or(10_000);
         let shuffle = shuffle.unwrap_or(true);
+
+        if sample_only_edges_with_heterogeneous_node_types && !self.has_node_types() {
+            return Err(concat!(
+                "The parameter `sample_only_edges_with_heterogeneous_node_types` was provided with value `true` ",
+                "but the current graph instance does not contain any node type. ",
+                "If you expected to have node types within this graph, maybe you have either dropped them ",
+                "with a wrong filter operation or use the wrong parametrization to load the graph."
+            ).to_string());
+        }
 
         let return_node_types = return_node_types.unwrap_or(false);
         let (maximum_node_types_number, multi_label) = if return_node_types {
@@ -466,6 +480,10 @@ impl Graph {
                 let dst = (sampled >> 32) as u32 % nodes_number;
 
                 if avoid_false_negatives && self.has_edge_from_node_ids(src, dst)
+                    || sample_only_edges_with_heterogeneous_node_types && {
+                        self.get_unchecked_node_type_ids_from_node_id(src)
+                            == self.get_unchecked_node_type_ids_from_node_id(dst)
+                    }
                     || graph_to_avoid
                         .as_ref()
                         .map_or(false, |g| g.has_edge_from_node_ids(src, dst))
@@ -584,7 +602,10 @@ impl Graph {
         };
 
         let min_edge_id = batch_size * idx;
-        let max_edge_id = std::cmp::min(batch_size * (idx + 1), self.get_number_of_directed_edges() as usize);
+        let max_edge_id = std::cmp::min(
+            batch_size * (idx + 1),
+            self.get_number_of_directed_edges() as usize,
+        );
 
         Ok((min_edge_id..max_edge_id)
             .into_par_iter()
@@ -621,6 +642,7 @@ impl Graph {
     /// * `avoid_false_negatives`: bool - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
     /// * `maximal_sampling_attempts`: usize - Number of attempts to execute to sample the negative edges.
     /// * `shuffle`: Option<bool> - Whether to shuffle the samples within the batch.
+    /// * `sample_only_edges_with_heterogeneous_node_types`: Option<bool> - Whether to sample negative edges only with source and destination nodes that have different node types.
     /// * `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
     /// # Raises
@@ -634,6 +656,7 @@ impl Graph {
         avoid_false_negatives: Option<bool>,
         maximal_sampling_attempts: Option<usize>,
         shuffle: Option<bool>,
+        sample_only_edges_with_heterogeneous_node_types: Option<bool>,
         graph_to_avoid: Option<&'a Graph>,
     ) -> Result<impl ParallelIterator<Item = (f64, f64, bool)> + 'a> {
         let iter = self.get_edge_prediction_mini_batch(
@@ -647,6 +670,7 @@ impl Graph {
             avoid_false_negatives,
             maximal_sampling_attempts,
             shuffle,
+            sample_only_edges_with_heterogeneous_node_types,
             graph_to_avoid,
         )?;
 
