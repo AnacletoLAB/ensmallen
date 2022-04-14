@@ -33,7 +33,7 @@ crate-type = ["cdylib"]
 
 [dependencies.pyo3]
 version = "0.13.2"
-features = ["extension-module"]
+features = ["extension-module", "abi3-py36"]
 
 [dependencies]
 env_logger = "0.8.1"
