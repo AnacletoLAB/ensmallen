@@ -635,16 +635,15 @@ impl Graph {
         parameters: &'a WalksParameters,
     ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a> {
         self.must_have_edges()?;
-        let factor = 0xDEAD;
-        let random_state = splitmix64(parameters.random_state.wrapping_mul(factor) as u64);
+        let random_state = splitmix64(parameters.random_state as u64);
         self.iter_walk(
             quantity,
             move |index| {
                 let local_index = index % quantity;
                 let random_source_id =
-                    splitmix64(random_state + local_index.wrapping_mul(factor) as u64) as NodeT;
+                    splitmix64((random_state + local_index as u64).wrapping_add(0x4cc4854c0155130a)) as NodeT;
                 (
-                    splitmix64(random_state + index.wrapping_mul(factor) as u64),
+                    splitmix64(random_state + index as u64),
                     unsafe {
                         self.get_unchecked_unique_source_node_id(
                             random_source_id % self.get_unique_source_nodes_number(),
@@ -671,13 +670,12 @@ impl Graph {
         parameters: &'a WalksParameters,
     ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a> {
         self.must_have_edges()?;
-        let factor = 0xDEAD;
-        let random_state = splitmix64(parameters.random_state.wrapping_mul(factor) as u64);
+        let random_state = splitmix64(parameters.random_state as u64);
         self.iter_walk(
             self.get_unique_source_nodes_number(),
             move |index| {
                 (
-                    splitmix64(random_state + index.wrapping_mul(factor) as u64),
+                    splitmix64(random_state + index as u64),
                     unsafe {
                         self.get_unchecked_unique_source_node_id(
                             index as NodeT % self.get_unique_source_nodes_number(),
@@ -850,7 +848,7 @@ impl Graph {
         (0..1)
             .map(move |_| node)
             .chain((1..walk_length).scan(node, move |node, iteration| {
-                *node = self.extract_uniform_node(*node, random_state + iteration);
+                *node = self.extract_uniform_node(*node, splitmix64(random_state + iteration));
                 Some(*node)
             }))
     }
