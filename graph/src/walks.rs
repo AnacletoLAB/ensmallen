@@ -760,7 +760,7 @@ impl Graph {
     unsafe fn get_unchecked_single_walk(
         &self,
         node: NodeT,
-        random_state: u64,
+        mut random_state: u64,
         parameters: &SingleWalkParameters,
     ) -> Vec<NodeT> {
         let (min_edge_id, max_edge_id, destinations, indices) = self
@@ -769,6 +769,7 @@ impl Graph {
                 random_state,
                 node,
             );
+        random_state = splitmix64(random_state);
         let (dst, edge) = self.extract_node(
             node,
             random_state,
@@ -792,17 +793,19 @@ impl Graph {
         let mut previous_edge = edge;
 
         for i in 2..parameters.walk_length {
+            random_state = splitmix64(random_state);
             let (min_edge_id, max_edge_id, destinations, indices) = self
                 .get_unchecked_edges_and_destinations_from_source_node_id(
                     parameters.max_neighbours,
-                    random_state + i,
+                    random_state,
                     previous_dst,
                 );
+            random_state = splitmix64(random_state);
             let (dst, edge) = self.extract_edge(
                 previous_src,
                 previous_dst,
                 previous_edge,
-                random_state + i,
+                random_state,
                 &parameters.weights,
                 min_edge_id,
                 max_edge_id,
