@@ -792,7 +792,7 @@ impl Graph {
         let mut previous_dst = dst;
         let mut previous_edge = edge;
 
-        for i in 2..parameters.walk_length {
+        for _ in 2..parameters.walk_length {
             random_state = splitmix64(random_state);
             let (min_edge_id, max_edge_id, destinations, indices) = self
                 .get_unchecked_edges_and_destinations_from_source_node_id(
