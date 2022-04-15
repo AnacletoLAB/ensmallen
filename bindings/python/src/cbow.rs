@@ -25,8 +25,22 @@ impl Graph {
         verbose: Option<bool>,
     ) -> PyResult<Py<PyArray2<f32>>> {
         let gil = pyo3::Python::acquire_gil();
+        let embedding_size = embedding_size.unwrap_or(100);
+
+        let rows_number = self.graph.get_nodes_number() as usize;
+        let columns_number = embedding_size;
+        let embedding = PyArray2::zeros(
+            gil.python(), 
+            [rows_number, columns_number], 
+            false,
+        );
     
+        let embedding_slice = unsafe {
+            embedding.as_slice_mut().unwrap()
+        };
+
         self.graph.cbow(
+            embedding_slice,
             embedding_size,
             epochs,
             walk_length,
@@ -35,6 +49,8 @@ impl Graph {
             learning_rate,
             random_state,
             verbose,
-        )
+        )?;
+
+        Ok(embedding.into_py(gil.python()))
     }
 }

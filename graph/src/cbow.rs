@@ -9,8 +9,11 @@ use vec_rand::sample_uniform;
 impl Graph {
     
     #[manual_binding]
+    /// Given a memory allocation `embedding` (which HAVE TO be already initialized at
+    /// 0.0), write into it the CBOW embeddings
     pub fn compute_cbow_embedding(
         &self,
+        embedding: &mut [f32],
         embedding_size: Option<usize>,
         epochs: Option<usize>,
         walk_length: Option<u64>,
@@ -19,7 +22,7 @@ impl Graph {
         learning_rate: Option<f32>,
         random_state: Option<u64>,
         verbose: Option<bool>,
-    ) -> Result<Vec<f32>> {
+    ) -> Result<()> {
         let embedding_size = embedding_size.unwrap_or(100);
         let walk_length = walk_length.unwrap_or(128);
         let window_size = window_size.unwrap_or(4);
@@ -48,9 +51,18 @@ impl Graph {
 
         let mut walk_parameters = WalksParameters::new(walk_length)?;
         walk_parameters = walk_parameters.set_random_state(Some(random_state as usize));
-        let embedding = (0..(embedding_size * self.get_nodes_number() as usize))
-            .map(|_| AtomicF32::new(0.0))
-            .collect::<Vec<_>>();
+
+
+        let expected_embedding_len = embedding_size * self.get_nodes_number() as usize;
+
+        if embedding.len() != expected_embedding_len {
+            return Err(format!("The given memory allocation for the embeddings is {} long but we expect {}.", embedding.len(), expected_embedding_len));
+        }
+
+        let embedding = unsafe{
+            core::mem::transmute::<&mut [f32], &mut [AtomicF32]>(embedding)
+        };
+
         let negative_embedding = (0..(embedding_size * self.get_nodes_number() as usize))
             .map(|_| AtomicF32::new(0.0))
             .collect::<Vec<_>>();
