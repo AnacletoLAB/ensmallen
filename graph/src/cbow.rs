@@ -1,0 +1,243 @@
+use super::*;
+use atomic_float::AtomicF32;
+use indicatif::ProgressIterator;
+use rayon::iter::IntoParallelIterator;
+use rayon::iter::ParallelIterator;
+use std::sync::atomic::Ordering;
+use vec_rand::sample_uniform;
+
+impl Graph {
+    
+    #[manual_binding]
+    pub fn compute_cbow_embedding(
+        &self,
+        embedding_size: Option<usize>,
+        epochs: Option<usize>,
+        walk_length: Option<u64>,
+        window_size: Option<usize>,
+        negatives_number: Option<usize>,
+        learning_rate: Option<f32>,
+        random_state: Option<u64>,
+        verbose: Option<bool>,
+    ) -> Result<Vec<f32>> {
+        let embedding_size = embedding_size.unwrap_or(100);
+        let walk_length = walk_length.unwrap_or(128);
+        let window_size = window_size.unwrap_or(4);
+        let epochs = epochs.unwrap_or(1);
+        let negatives_number = negatives_number.unwrap_or(5);
+        let learning_rate = learning_rate.unwrap_or(0.025);
+        let mut random_state = random_state.unwrap_or(42);
+        random_state = splitmix64(random_state);
+        let verbose = verbose.unwrap_or(false);
+
+        if embedding_size == 0 {
+            return Err("The embedding size must be greater than zero.".to_string());
+        }
+
+        if epochs == 0 {
+            return Err("The number of epochs must be greater than zero.".to_string());
+        }
+
+        if !self.has_nodes() {
+            return Err("The current graph does not have any node.".to_string());
+        }
+
+        if !self.has_nodes_sorted_by_decreasing_outbound_node_degree() {
+            return Err("The current graph does not have decreasing outbounds.".to_string());
+        }
+
+        let mut walk_parameters = WalksParameters::new(walk_length)?;
+        walk_parameters = walk_parameters.set_random_state(Some(random_state as usize));
+        let embedding = (0..(embedding_size * self.get_nodes_number() as usize))
+            .map(|_| AtomicF32::new(0.0))
+            .collect::<Vec<_>>();
+        let negative_embedding = (0..(embedding_size * self.get_nodes_number() as usize))
+            .map(|_| AtomicF32::new(0.0))
+            .collect::<Vec<_>>();
+        let pb = get_loading_bar(verbose, "Training CBOW model", epochs);
+
+        let number_of_directed_edges = self.get_number_of_directed_edges();
+
+        // We build the lookup table for the exponentiations
+        // that we need to do in the core loop.
+        const MAX_EXPONENT_VALUE: usize = 6;
+        const EXPONENTIAL_TABLE_SIZE: usize = 1000;
+        let exp_lookup_table = (0..EXPONENTIAL_TABLE_SIZE)
+            .into_par_iter()
+            .map(|i| {
+                let value = ((i as f32 / EXPONENTIAL_TABLE_SIZE as f32 * 2.0 - 1.0)
+                    * MAX_EXPONENT_VALUE as f32)
+                    .exp();
+                value / (value + 1.0)
+            })
+            .collect::<Vec<f32>>();
+
+        let weighted_sum = |factor: f32, source: &[AtomicF32], result: &mut [f32]| {
+            result
+                .iter_mut()
+                .zip(source.iter().map(|a| a.load(Ordering::SeqCst)))
+                .for_each(|(a, b)| {
+                    *a += b * factor;
+                });
+        };
+
+        let atomic_weighted_sum = |factor: f32, source: &[f32], result: &[AtomicF32]| {
+            result
+                .iter()
+                .zip(source.iter().cloned())
+                .for_each(|(a, b)| {
+                    a.fetch_add(b * factor, Ordering::SeqCst);
+                });
+        };
+
+        let compute_dot_product = |v1: &[AtomicF32], v2: &[f32]| -> f32 {
+            v1.iter()
+                .zip(v2.iter().cloned())
+                .map(|(a, b)| a.load(Ordering::SeqCst) * b)
+                .sum()
+        };
+
+        for _ in (0..epochs).progress_with(pb) {
+            random_state = splitmix64(random_state);
+            word2vec(self.iter_complete_walks(&walk_parameters)?, window_size).for_each(
+                |(contextual_nodes_indices, central_node_index)| {
+                    let mut random_state = splitmix64(
+                        random_state
+                            .wrapping_add(central_node_index as u64)
+                            .wrapping_add(
+                                contextual_nodes_indices
+                                    .iter()
+                                    .cloned()
+                                    .map(|node_index| node_index as u64)
+                                    .sum::<u64>(),
+                            ),
+                    );
+                    let mut context_mean_embedding = vec![0.0; embedding_size];
+                    let mut negative_context_mean_embedding = vec![0.0; embedding_size];
+                    contextual_nodes_indices
+                        .iter()
+                        .cloned()
+                        .map(|contextual_node_index| contextual_node_index as usize)
+                        .for_each(|contextual_node_index| {
+                            context_mean_embedding
+                                .iter_mut()
+                                .zip(
+                                    embedding[(contextual_node_index * embedding_size)
+                                        ..((contextual_node_index + 1) * embedding_size)]
+                                        .iter()
+                                        .map(|e| e.load(Ordering::SeqCst)),
+                                )
+                                .for_each(|(c, e)| *c += e);
+                        });
+
+                    // Divide the mean by the number of elements in the context.
+                    context_mean_embedding
+                        .iter_mut()
+                        .for_each(|value| *value /= (window_size * 2) as f32);
+
+                    // Start to sample negative indices
+                    let number_of_actually_sampled_negatives =
+                        vec![(central_node_index as usize, 1.0)]
+                            .iter()
+                            .cloned()
+                            .chain(
+                                (0..negatives_number)
+                                    .filter_map(|_| unsafe {
+                                        let sampled_node = self
+                                            .get_unchecked_node_ids_from_edge_id(sample_uniform(
+                                                number_of_directed_edges,
+                                                random_state,
+                                            )
+                                                as EdgeT)
+                                            .0;
+                                        random_state = splitmix64(random_state);
+                                        if sampled_node == central_node_index {
+                                            None
+                                        } else {
+                                            Some(sampled_node)
+                                        }
+                                    })
+                                    .map(|sampled_node| (sampled_node as usize, 0.0)),
+                            )
+                            .map(|(node_index, label): (usize, f32)| {
+                                // Sample negative index
+                                // Retrieve the node embedding from the negative embedding
+                                // curresponding to the `negative_node_index` node.
+                                let node_negative_embedding = &negative_embedding[(node_index
+                                    * embedding_size)
+                                    ..((node_index + 1) * embedding_size)];
+                                // Compute the dot product between the negative embedding and the context average.
+                                let dot_product: f32 = compute_dot_product(
+                                    node_negative_embedding,
+                                    context_mean_embedding.as_slice(),
+                                );
+                                // Now, if the obtained value which we should exponentiate
+                                // is higher than the maximum sensible exponent we have already
+                                // precomputed in the lookup table, we will just drop this
+                                // particular negative sampling.
+                                if dot_product <= -(MAX_EXPONENT_VALUE as f32)
+                                    || dot_product >= MAX_EXPONENT_VALUE as f32
+                                {
+                                    return 0;
+                                }
+                                // Othersiwe, we proceed to retrieve the exponentiated value from
+                                // the lookup table.
+                                let exponentiated_dot_product = exp_lookup_table[((dot_product
+                                    + MAX_EXPONENT_VALUE as f32)
+                                    * (EXPONENTIAL_TABLE_SIZE as f32
+                                        / MAX_EXPONENT_VALUE as f32
+                                        / 2.0))
+                                    .floor()
+                                    as usize];
+                                // Finally, we compute this portion of the error.
+                                let loss = (label - exponentiated_dot_product) * learning_rate;
+
+                                // We sum the currently sampled negative context node embedding
+                                // to the (currently sum of) negative context embeddings,
+                                // weighted by the current loss.
+                                weighted_sum(
+                                    loss,
+                                    node_negative_embedding,
+                                    &mut negative_context_mean_embedding,
+                                );
+
+                                // We sum the mean context embedding
+                                // to the negative embedding of the currently sampled negative context node
+                                // weighted by the current loss.
+
+                                atomic_weighted_sum(
+                                    loss,
+                                    context_mean_embedding.as_ref(),
+                                    &node_negative_embedding,
+                                );
+                                1
+                            })
+                            .sum::<usize>();
+
+                    // Compute the mean of the negative context embedding.
+                    // TODO: check if this mean is correct.
+                    negative_context_mean_embedding
+                        .iter_mut()
+                        .for_each(|value| *value /= number_of_actually_sampled_negatives as f32);
+
+                    // Update the node embedding of every node in the context.
+                    contextual_nodes_indices
+                        .iter()
+                        .cloned()
+                        .map(|contextual_node_index| contextual_node_index as usize)
+                        .for_each(|contextual_node_index| {
+                            atomic_weighted_sum(
+                                1.0,
+                                negative_context_mean_embedding.as_slice(),
+                                &embedding[(contextual_node_index * embedding_size)
+                                    ..((contextual_node_index + 1) * embedding_size)],
+                            );
+                        });
+                },
+            );
+        }
+        Ok(unsafe{
+            std::mem::transmute::<Vec<AtomicF32>, Vec<f32>>(embedding)
+        })
+    }
+}

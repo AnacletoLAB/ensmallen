@@ -67,6 +67,7 @@ mod edge_list_utils;
 mod edge_lists;
 mod edge_metrics;
 mod filters;
+mod cbow;
 mod getters;
 mod graph;
 mod hash;
