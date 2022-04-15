@@ -1,19 +1,11 @@
 use super::*;
-use graph::{
-    NodeT, NodeTypeT, Tokens,
-};
-use numpy::{PyArray, PyArray1, PyArray2};
-use pyo3::wrap_pyfunction;
-use rayon::prelude::*;
-use std::sync::atomic::{AtomicUsize, Ordering};
-use types::ThreadDataRaceAware;
-
+use numpy::PyArray2;
 
 #[pymethods]
 impl Graph {
     #[args(py_kwargs = "**")]
     #[text_signature = "($self, *, embedding_size, epochs, walk_length, window_size, negatives_number, learning_rate, random_state, verbose)"]
-    fn cbow(
+    fn compute_cbow_embedding(
         &self,
         embedding_size: Option<usize>,
         epochs: Option<usize>,
@@ -27,21 +19,15 @@ impl Graph {
         let gil = pyo3::Python::acquire_gil();
         let embedding_size = embedding_size.unwrap_or(100);
 
-        let rows_number = self.graph.get_nodes_number() as usize;
+        let rows_number = self.inner.get_nodes_number() as usize;
         let columns_number = embedding_size;
-        let embedding = PyArray2::zeros(
-            gil.python(), 
-            [rows_number, columns_number], 
-            false,
-        );
-    
-        let embedding_slice = unsafe {
-            embedding.as_slice_mut().unwrap()
-        };
+        let embedding = PyArray2::zeros(gil.python(), [rows_number, columns_number], false);
 
-        self.graph.cbow(
+        let embedding_slice = unsafe { embedding.as_slice_mut().unwrap() };
+
+        pe!(self.inner.compute_cbow_embedding(
             embedding_slice,
-            embedding_size,
+            Some(embedding_size),
             epochs,
             walk_length,
             window_size,
@@ -49,7 +35,7 @@ impl Graph {
             learning_rate,
             random_state,
             verbose,
-        )?;
+        ))?;
 
         Ok(embedding.into_py(gil.python()))
     }

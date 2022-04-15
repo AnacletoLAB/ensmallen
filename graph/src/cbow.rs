@@ -7,7 +7,7 @@ use std::sync::atomic::Ordering;
 use vec_rand::sample_uniform;
 
 impl Graph {
-    
+
     #[manual_binding]
     /// Given a memory allocation `embedding` (which HAVE TO be already initialized at
     /// 0.0), write into it the CBOW embeddings
@@ -248,8 +248,6 @@ impl Graph {
                 },
             );
         }
-        Ok(unsafe{
-            std::mem::transmute::<Vec<AtomicF32>, Vec<f32>>(embedding)
-        })
+        Ok(())
     }
 }
