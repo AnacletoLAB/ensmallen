@@ -4,7 +4,7 @@ use indicatif::ProgressIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
 use std::sync::atomic::Ordering;
-use vec_rand::sample_uniform;
+use vec_rand::{sample_uniform, random_f32};
 
 impl Graph {
 
@@ -63,8 +63,11 @@ impl Graph {
             core::mem::transmute::<&mut [f32], &mut [AtomicF32]>(embedding)
         };
 
+        embedding.iter().enumerate()
+            .for_each(|(i, e)| e.store(random_f32(random_state + i as u64), Ordering::SeqCst));
+
         let negative_embedding = (0..(embedding_size * self.get_nodes_number() as usize))
-            .map(|_| AtomicF32::new(0.0))
+            .map(|i| AtomicF32::new(random_f32(random_state + i as u64)))
             .collect::<Vec<_>>();
         let pb = get_loading_bar(verbose, "Training CBOW model", epochs);
 
