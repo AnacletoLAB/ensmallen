@@ -11,8 +11,8 @@ use vec_rand::{random_f32, sample_uniform};
 impl Graph {
     #[manual_binding]
     /// Given a memory allocation `embedding` (which HAVE TO be already initialized at
-    /// 0.0), write into it the CBOW embeddings
-    pub fn compute_cbow_embedding(
+    /// 0.0), write into it the SkipGram embeddings
+    pub fn compute_skipgram_embedding(
         &self,
         embedding: &mut [f32],
         embedding_size: Option<usize>,
@@ -92,7 +92,7 @@ impl Graph {
             .into_par_iter()
             .map(|i| AtomicF32::new(2.0 * random_f32(random_state + i as u64) - 1.0))
             .collect::<Vec<_>>();
-        let pb = get_loading_bar(verbose, "Training CBOW model", epochs);
+        let pb = get_loading_bar(verbose, "Training SkipGram model", epochs);
 
         let number_of_directed_edges = self.get_number_of_directed_edges();
 
@@ -162,98 +162,94 @@ impl Graph {
                                 .wrapping_add(i as u64)
                                 .wrapping_add((j as u64) * walk_length),
                         );
-                        let mut context_mean_embedding = vec![0.0; embedding_size];
                         let mut negative_context_total_embedding = vec![0.0; embedding_size];
                         get_contextual_nodes_indices().for_each(|contextual_node_index| {
-                            context_mean_embedding
-                                .iter_mut()
-                                .zip(
-                                    embedding[(contextual_node_index * embedding_size)
-                                        ..((contextual_node_index + 1) * embedding_size)]
-                                        .iter()
-                                        .map(|e| e.load(Ordering::SeqCst)),
+                            let contextual_node_embedding = &embedding[(contextual_node_index
+                                * embedding_size)
+                                ..((contextual_node_index + 1) * embedding_size)];
+                            // Start to sample negative indices
+                            vec![(central_node_index as usize, 1.0)]
+                                .iter()
+                                .cloned()
+                                .chain(
+                                    (0..negatives_number)
+                                        .filter_map(|_| unsafe {
+                                            let sampled_node = self
+                                                .get_unchecked_node_ids_from_edge_id(
+                                                    sample_uniform(
+                                                        number_of_directed_edges,
+                                                        random_state,
+                                                    )
+                                                        as EdgeT,
+                                                )
+                                                .0;
+                                            random_state = splitmix64(random_state);
+                                            if sampled_node == central_node_index {
+                                                None
+                                            } else {
+                                                Some(sampled_node)
+                                            }
+                                        })
+                                        .map(|sampled_node| (sampled_node as usize, 0.0)),
                                 )
-                                .for_each(|(c, e)| *c += e);
-                        });
-
-                        // Start to sample negative indices
-
-                        vec![(central_node_index as usize, 1.0)]
-                            .iter()
-                            .cloned()
-                            .chain(
-                                (0..negatives_number)
-                                    .filter_map(|_| unsafe {
-                                        let sampled_node = self
-                                            .get_unchecked_node_ids_from_edge_id(sample_uniform(
-                                                number_of_directed_edges,
-                                                random_state,
+                                .for_each(|(node_index, label): (usize, f32)| {
+                                    // Sample negative index
+                                    // Retrieve the node embedding from the negative embedding
+                                    // curresponding to the `negative_node_index` node.
+                                    let node_negative_embedding = &negative_embedding[(node_index
+                                        * embedding_size)
+                                        ..((node_index + 1) * embedding_size)];
+                                    // Compute the dot product between the negative embedding and the context average.
+                                    let dot_product: f32 = compute_dot_product(
+                                        unsafe {
+                                            core::mem::transmute::<&[AtomicF32], &[f32]>(
+                                                node_negative_embedding,
                                             )
-                                                as EdgeT)
-                                            .0;
-                                        random_state = splitmix64(random_state);
-                                        if sampled_node == central_node_index {
-                                            None
-                                        } else {
-                                            Some(sampled_node)
-                                        }
-                                    })
-                                    .map(|sampled_node| (sampled_node as usize, 0.0)),
-                            )
-                            .for_each(|(node_index, label): (usize, f32)| {
-                                // Sample negative index
-                                // Retrieve the node embedding from the negative embedding
-                                // curresponding to the `negative_node_index` node.
-                                let node_negative_embedding = &negative_embedding[(node_index
-                                    * embedding_size)
-                                    ..((node_index + 1) * embedding_size)];
-                                // Compute the dot product between the negative embedding and the context average.
-                                let dot_product: f32 = compute_dot_product(
-                                    unsafe {
-                                        core::mem::transmute::<&[AtomicF32], &[f32]>(
-                                            node_negative_embedding,
-                                        )
-                                    },
-                                    context_mean_embedding.as_slice(),
-                                ) / context_size;
-                                // Othersiwe, we proceed to retrieve the exponentiated value from
-                                // the lookup table.
-                                let exponentiated_dot_product = dot_product.exp();
-                                // Finally, we compute this portion of the error.
-                                let loss = (label
-                                    - (exponentiated_dot_product
-                                        / (exponentiated_dot_product + 1.0)))
-                                    * learning_rate;
+                                        },
+                                        unsafe {
+                                            core::mem::transmute::<&[AtomicF32], &[f32]>(
+                                                contextual_node_embedding,
+                                            )
+                                        },
+                                    ) / context_size;
+                                    // Othersiwe, we proceed to retrieve the exponentiated value from
+                                    // the lookup table.
+                                    let exponentiated_dot_product = dot_product.exp();
+                                    // Finally, we compute this portion of the error.
+                                    let loss = (label
+                                        - (exponentiated_dot_product
+                                            / (exponentiated_dot_product + 1.0)))
+                                        * learning_rate;
 
-                                // We sum the currently sampled negative context node embedding
-                                // to the (currently sum of) negative context embeddings,
-                                // weighted by the current loss.
-                                weighted_sum(
-                                    loss,
-                                    node_negative_embedding,
-                                    &mut negative_context_total_embedding,
-                                );
+                                    // We sum the currently sampled negative context node embedding
+                                    // to the (currently sum of) negative context embeddings,
+                                    // weighted by the current loss.
+                                    weighted_sum(
+                                        loss,
+                                        node_negative_embedding,
+                                        &mut negative_context_total_embedding,
+                                    );
 
-                                // We sum the mean context embedding
-                                // to the negative embedding of the currently sampled negative context node
-                                // weighted by the current loss.
-                                atomic_weighted_sum(
-                                    loss / context_size,
-                                    context_mean_embedding.as_ref(),
-                                    &node_negative_embedding,
-                                );
-                            });
+                                    // We sum the mean context embedding
+                                    // to the negative embedding of the currently sampled negative context node
+                                    // weighted by the current loss.
+                                    atomic_weighted_sum(
+                                        loss / context_size,
+                                        unsafe {
+                                            core::mem::transmute::<&[AtomicF32], &[f32]>(
+                                                contextual_node_embedding,
+                                            )
+                                        },
+                                        &node_negative_embedding,
+                                    );
+                                });
 
-                        // Update the node embedding of every node in the context.
-                        get_contextual_nodes_indices()
-                            .map(|contextual_node_index| contextual_node_index as usize)
-                            .for_each(|contextual_node_index| {
-                                atomic_sum(
-                                    negative_context_total_embedding.as_slice(),
-                                    &embedding[(contextual_node_index * embedding_size)
-                                        ..((contextual_node_index + 1) * embedding_size)],
-                                );
-                            });
+                            // Update the node embedding of the node in the context.
+                            atomic_sum(
+                                negative_context_total_embedding.as_slice(),
+                                &contextual_node_embedding,
+                            );
+                        });
                     });
                 });
         }

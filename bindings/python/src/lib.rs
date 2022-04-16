@@ -15,6 +15,7 @@ mod hash;
 mod node_file_writer;
 mod preprocessing;
 mod cbow;
+mod skipgram;
 mod subgraphs;
 mod trees;
 mod utilities;
