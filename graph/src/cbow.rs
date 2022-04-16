@@ -143,23 +143,24 @@ impl Graph {
                 .sum()
         };
 
+        let mut walk_parameters = WalksParameters::new(walk_length)?;
+        walk_parameters = walk_parameters
+            .set_change_edge_type_weight(change_edge_type_weight)?
+            .set_change_node_type_weight(change_node_type_weight)?
+            .set_explore_weight(explore_weight)?
+            .set_return_weight(return_weight)?
+            .set_max_neighbours(max_neighbours)?
+            .set_iterations(iterations)?;
+
         for _ in (0..epochs).progress_with(pb) {
             random_state = splitmix64(random_state);
 
-            let mut walk_parameters = WalksParameters::new(walk_length)?;
-            walk_parameters = walk_parameters
-                .set_random_state(Some(random_state as usize))
-                .set_change_edge_type_weight(change_edge_type_weight)?
-                .set_change_node_type_weight(change_node_type_weight)?
-                .set_explore_weight(explore_weight)?
-                .set_return_weight(return_weight)?
-                .set_max_neighbours(max_neighbours)?
-                .set_iterations(iterations)?;
+            walk_parameters = walk_parameters.set_random_state(Some(random_state as usize));
 
             self.iter_complete_walks(&walk_parameters)?
                 .enumerate()
                 .for_each(|(i, sequence)| {
-                    (window_size..(walk_length as usize - window_size)).map(|j| {
+                    (window_size..(walk_length as usize - window_size)).for_each(|j| {
                         let get_contextual_nodes_indices = || {
                             sequence[j - window_size..j]
                                 .iter()
@@ -169,22 +170,22 @@ impl Graph {
                         let central_node_index = sequence[j];
                         let mut random_state = splitmix64(
                             random_state
-                                .wrapping_add(central_node_index as u64)
+                                .wrapping_add(i as u64)
+                                .wrapping_add((j as u64) * walk_length),
                         );
                         let mut context_mean_embedding = vec![0.0; embedding_size];
                         let mut negative_context_mean_embedding = vec![0.0; embedding_size];
-                        get_contextual_nodes_indices()
-                            .for_each(|contextual_node_index| {
-                                context_mean_embedding
-                                    .iter_mut()
-                                    .zip(
-                                        embedding[(contextual_node_index * embedding_size)
-                                            ..((contextual_node_index + 1) * embedding_size)]
-                                            .iter()
-                                            .map(|e| e.load(Ordering::SeqCst)),
-                                    )
-                                    .for_each(|(c, e)| *c += e);
-                            });
+                        get_contextual_nodes_indices().for_each(|contextual_node_index| {
+                            context_mean_embedding
+                                .iter_mut()
+                                .zip(
+                                    embedding[(contextual_node_index * embedding_size)
+                                        ..((contextual_node_index + 1) * embedding_size)]
+                                        .iter()
+                                        .map(|e| e.load(Ordering::SeqCst)),
+                                )
+                                .for_each(|(c, e)| *c += e);
+                        });
 
                         // Divide the mean by the number of elements in the context.
                         context_mean_embedding
