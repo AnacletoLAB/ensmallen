@@ -146,7 +146,7 @@ impl Graph {
             self.iter_complete_walks(&walk_parameters)?
                 .enumerate()
                 .for_each(|(i, sequence)| {
-                    (window_size..(walk_length as usize - window_size)).for_e(|j| {
+                    (window_size..(walk_length as usize - window_size)).for_each(|j| {
                         let get_contextual_nodes_indices = || {
                             sequence[j - window_size..j]
                                 .iter()
@@ -247,7 +247,6 @@ impl Graph {
                                     // We sum the mean context embedding
                                     // to the negative embedding of the currently sampled negative context node
                                     // weighted by the current loss.
-
                                     atomic_weighted_sum(
                                         loss,
                                         context_mean_embedding.as_ref(),
