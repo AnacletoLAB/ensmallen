@@ -18,6 +18,7 @@ pub struct SingleWalkParameters {
     pub(crate) walk_length: u64,
     pub(crate) weights: WalkWeights,
     pub(crate) max_neighbours: Option<NodeT>,
+    pub(crate) normalize_by_degree: bool,
 }
 
 #[derive(Clone, Debug, PartialEq)]
@@ -119,6 +120,7 @@ impl SingleWalkParameters {
             walk_length,
             weights: WalkWeights::default(),
             max_neighbours: None,
+            normalize_by_degree: false
         })
     }
 
@@ -133,7 +135,7 @@ impl SingleWalkParameters {
     /// assert!(weights.is_first_order_walk());
     /// ```
     pub fn is_first_order_walk(&self) -> bool {
-        self.weights.is_first_order_walk()
+        self.weights.is_first_order_walk() && !self.normalize_by_degree
     }
 }
 
@@ -239,6 +241,35 @@ impl WalksParameters {
             self.single_walk_parameters.max_neighbours = Some(mn);
         }
         Ok(self)
+    }
+
+    /// Set whether the walk destination nodes weights should be weighted by the destination node degree.
+    ///
+    /// # Arguments
+    ///
+    /// * `normalize_by_degree`: Option<NodeT> - Number of neighbours to consider for each extraction.
+    ///
+    /// # Example
+    /// You can change the `normalize_by_degree` parameter as follows:
+    ///
+    /// ```rust
+    /// # use graph::walks_parameters::WalksParameters;
+    /// assert!(WalksParameters::new(32).unwrap().set_normalize_by_degree(Some(true)).is_err());
+    /// assert!(WalksParameters::new(32).unwrap().set_normalize_by_degree(Some(false)).is_ok());
+    /// ```
+    ///
+    /// You can also call the method with an option None, in order to avoid a match
+    /// wrapper above. This will end up don't doing anything, just a passthrough.
+    ///
+    /// ```rust
+    /// # use graph::walks_parameters::WalksParameters;
+    /// assert!(WalksParameters::new(32).unwrap().set_normalize_by_degree(None).is_ok());
+    /// ```
+    pub fn set_normalize_by_degree(mut self, normalize_by_degree: Option<bool>) -> WalksParameters {
+        if let Some(normalize_by_degree) = normalize_by_degree {
+            self.single_walk_parameters.normalize_by_degree = normalize_by_degree;
+        }
+        self
     }
 
     /// Set the random_state.

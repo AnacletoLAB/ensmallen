@@ -344,6 +344,7 @@ impl Graph {
     /// * `transition`: &mut Vec<WeightT> - Vector of transitions to update.
     /// * `destinations`: impl Iterator<Item = NodeT> - Iterator of the destinations.
     /// * `change_node_type_weight`: ParamsT - The weight to multiply the transition by if there is a change of node type.
+    /// * `normalize_by_degree`: bool - Whether to normalize the random walk by the degree of the destination nodes.
     ///
     /// # Safety
     /// If a non-existing node ID is provided, this method may cause an out of bound.
@@ -351,12 +352,22 @@ impl Graph {
         &self,
         node: NodeT,
         transition: &mut Vec<WeightT>,
-        destinations: impl Iterator<Item = NodeT>,
+        destinations: &[NodeT],
         change_node_type_weight: ParamsT,
+        normalize_by_degree: bool
     ) {
         //############################################################
         //# Handling of the change node type parameter               #
         //############################################################
+
+        if normalize_by_degree {
+            transition
+                .iter_mut()
+                .zip(destinations.iter().cloned())
+                .for_each(|(transition_value, dst)| {
+                    *transition_value /= self.get_unchecked_node_degree_from_node_id(dst) as f32;
+                });
+        }
 
         if not_one(change_node_type_weight) {
             // If the node types were given:
@@ -367,7 +378,7 @@ impl Graph {
 
                 transition
                     .iter_mut()
-                    .zip(destinations)
+                    .zip(destinations.iter().cloned())
                     .for_each(|(transition_value, dst)| {
                         if nt.ids[node as usize] != nt.ids[dst as usize] {
                             *transition_value *= change_node_type_weight
@@ -383,6 +394,7 @@ impl Graph {
     ///
     /// * `node`: NodeT, the previous node from which to compute the transitions, if this is bigger that the number of nodes it will panic.
     /// * `walk_weights`: WalkWeights, the weights for the weighted random walks.
+    /// * `normalize_by_degree`: bool - Whether to normalize the random walk by the degree of the destination nodes.
     ///
     /// # Safety
     /// If a non-existing node ID is provided, this method may cause an out of bound.
@@ -394,6 +406,7 @@ impl Graph {
         max_edge_id: EdgeT,
         destinations: &[NodeT],
         probabilistic_indices: &Option<Vec<u64>>,
+        normalize_by_degree: bool
     ) -> Vec<WeightT> {
         // Retrieve the data to compute the update transition
         let mut transition =
@@ -403,8 +416,9 @@ impl Graph {
         self.update_node_transition(
             node,
             &mut transition,
-            destinations.iter().cloned(),
+            destinations,
             walk_weights.change_node_type_weight,
+            normalize_by_degree
         );
 
         transition
@@ -416,7 +430,10 @@ impl Graph {
     ///
     /// * `edge`: EdgeT - the previous edge from which to compute the transitions.
     /// * `weights`: WalkWeights - Weights to use for the weighted walk.
+    /// * `normalize_by_degree`: bool - Whether to normalize the random walk by the degree of the destination nodes.
     ///
+    /// TODO! Update docstring!
+    /// 
     /// # Safety
     /// If a non-existing node ID is provided, this method may cause an out of bound.
     unsafe fn get_edge_transition(
@@ -431,6 +448,7 @@ impl Graph {
         previous_destinations: &[NodeT],
         probabilistic_indices: &Option<Vec<u64>>,
         has_selfloop: bool,
+        normalize_by_degree: bool
     ) -> (Vec<WeightT>, EdgeT) {
         let mut transition =
             self.get_edge_weighted_transitions(min_edge_id, max_edge_id, probabilistic_indices);
@@ -439,8 +457,9 @@ impl Graph {
         self.update_node_transition(
             dst,
             &mut transition,
-            destinations.iter().cloned(),
+            destinations,
             walk_weights.change_node_type_weight,
+            normalize_by_degree
         );
 
         //############################################################
@@ -532,6 +551,9 @@ impl Graph {
     /// * `node`: NodeT, the previous node from which to compute the transitions.
     /// * `random_state`: usize, the random_state to use for extracting the node.
     /// * `walk_weights`: WalkWeights, the weights for the weighted random walks.
+    /// * `normalize_by_degree`: bool - Whether to normalize the random walk by the degree of the destination nodes.
+    /// 
+    /// !TODO: Update docstring!
     ///
     /// # Safety
     /// If a non-existing node ID is provided, this method may cause an out of bound.
@@ -544,6 +566,7 @@ impl Graph {
         max_edge_id: EdgeT,
         destinations: &[NodeT],
         probabilistic_indices: &Option<Vec<u64>>,
+        normalize_by_degree: bool
     ) -> (NodeT, EdgeT) {
         let mut weights = self.get_node_transition(
             node,
@@ -552,6 +575,7 @@ impl Graph {
             max_edge_id,
             destinations,
             probabilistic_indices,
+            normalize_by_degree
         );
         let sampled_offset = sample(&mut weights, random_state);
         let edge_id = match probabilistic_indices {
@@ -579,6 +603,7 @@ impl Graph {
     /// * `destinations`: &[NodeT] - Current destinations slice.
     /// * `previous_destinations`: &[NodeT] - Previous destination slice.
     /// * `probabilistic_indices`: &Option<Vec<u64>> - Probabilistic indices, used when max neighbours is provided.
+    /// * `normalize_by_degree`: bool - Whether to normalize the random walk by the degree of the destination nodes.
     ///
     /// # Safety
     /// If a non-existing node ID is provided, this method may cause an out of bound.
@@ -594,6 +619,7 @@ impl Graph {
         destinations: &[NodeT],
         previous_destinations: &[NodeT],
         probabilistic_indices: &Option<Vec<u64>>,
+        normalize_by_degree: bool
     ) -> (NodeT, EdgeT) {
         let (mut weights, min_edge_id) = self.get_edge_transition(
             src,
@@ -606,6 +632,7 @@ impl Graph {
             previous_destinations,
             probabilistic_indices,
             self.has_selfloops(),
+            normalize_by_degree
         );
         let sampled_offset = sample(&mut weights, random_state as u64);
         let edge_id = match probabilistic_indices {
@@ -773,6 +800,7 @@ impl Graph {
             max_edge_id,
             self.get_destinations_slice(min_edge_id, max_edge_id, &destinations),
             &indices,
+            parameters.normalize_by_degree
         );
 
         let mut result = Vec::with_capacity(parameters.walk_length as usize);
@@ -811,6 +839,7 @@ impl Graph {
                     &previous_destinations,
                 ),
                 &indices,
+                parameters.normalize_by_degree
             );
 
             previous_min_edge_id = min_edge_id;

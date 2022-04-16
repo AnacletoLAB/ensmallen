@@ -24,6 +24,7 @@ impl Graph {
         change_node_type_weight: Option<f32>,
         iterations: Option<NodeT>,
         max_neighbours: Option<NodeT>,
+        normalize_by_degree: Option<bool>,
         window_size: Option<usize>,
         negatives_number: Option<usize>,
         learning_rate: Option<f32>,
@@ -33,7 +34,7 @@ impl Graph {
         let embedding_size = embedding_size.unwrap_or(100);
         let walk_length = walk_length.unwrap_or(128);
         let window_size = window_size.unwrap_or(4);
-        let context_size = (window_size*2) as f32;
+        let context_size = (window_size * 2) as f32;
         let epochs = epochs.unwrap_or(1);
         let negatives_number = negatives_number.unwrap_or(5);
         let learning_rate = learning_rate.unwrap_or(0.025);
@@ -137,6 +138,7 @@ impl Graph {
             .set_explore_weight(explore_weight)?
             .set_return_weight(return_weight)?
             .set_max_neighbours(max_neighbours)?
+            .set_normalize_by_degree(normalize_by_degree)
             .set_iterations(iterations)?;
 
         for _ in (0..epochs).progress_with(pb) {
@@ -220,7 +222,10 @@ impl Graph {
                                     // the lookup table.
                                     let exponentiated_dot_product = dot_product.exp();
                                     // Finally, we compute this portion of the error.
-                                    let loss = (label - (exponentiated_dot_product/ (exponentiated_dot_product + 1.0))) * learning_rate;
+                                    let loss = (label
+                                        - (exponentiated_dot_product
+                                            / (exponentiated_dot_product + 1.0)))
+                                        * learning_rate;
 
                                     // We sum the currently sampled negative context node embedding
                                     // to the (currently sum of) negative context embeddings,
