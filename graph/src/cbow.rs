@@ -224,11 +224,11 @@ impl Graph {
                                     // is higher than the maximum sensible exponent we have already
                                     // precomputed in the lookup table, we will just drop this
                                     // particular negative sampling.
-                                    // if dot_product <= -6.0
-                                    //     || dot_product >= 6.0
-                                    // {
-                                    //     return 0;
-                                    // }
+                                    if dot_product <= -6.0
+                                        || dot_product >= 6.0
+                                    {
+                                        return 0;
+                                    }
                                     // Othersiwe, we proceed to retrieve the exponentiated value from
                                     // the lookup table.
                                     let exponentiated_dot_product = dot_product.exp();
