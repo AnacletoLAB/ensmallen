@@ -23,6 +23,7 @@ impl Graph {
         change_edge_type_weight: Option<f32>,
         change_node_type_weight: Option<f32>,
         iterations: Option<NodeT>,
+        max_neighbours: Option<NodeT>,
         window_size: Option<usize>,
         negatives_number: Option<usize>,
         learning_rate: Option<f32>,
@@ -139,6 +140,7 @@ impl Graph {
                 .set_change_node_type_weight(change_node_type_weight)?
                 .set_explore_weight(explore_weight)?
                 .set_return_weight(return_weight)?
+                .set_max_neighbours(max_neighbours)?
                 .set_iterations(iterations)?;
 
             word2vec(self.iter_complete_walks(&walk_parameters)?, window_size).for_each(
