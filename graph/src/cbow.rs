@@ -97,6 +97,15 @@ impl Graph {
                 });
         };
 
+        let atomic_sum = |source: &[f32], result: &[AtomicF32]| {
+            result
+                .iter()
+                .zip(source.iter().cloned())
+                .for_each(|(a, b)| {
+                    a.fetch_add(b, Ordering::SeqCst);
+                });
+        };
+
         let atomic_weighted_sum = |factor: f32, source: &[f32], result: &[AtomicF32]| {
             result
                 .iter()
@@ -248,8 +257,7 @@ impl Graph {
                             .cloned()
                             .map(|contextual_node_index| contextual_node_index as usize)
                             .for_each(|contextual_node_index| {
-                                atomic_weighted_sum(
-                                    1.0,
+                                atomic_sum(
                                     negative_context_mean_embedding.as_slice(),
                                     &embedding[(contextual_node_index * embedding_size)
                                         ..((contextual_node_index + 1) * embedding_size)],
