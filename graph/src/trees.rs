@@ -121,7 +121,7 @@ impl Graph {
     pub(crate) fn kruskal<'a>(
         &self,
         edges: impl Iterator<Item = (NodeT, NodeT)> + 'a,
-    ) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT,) {
+    ) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
         // If the graph does not have nodes, we return all
         // results as empty to provide an uniform, though pathological,
         // return value.

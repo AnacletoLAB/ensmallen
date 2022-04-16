@@ -2188,9 +2188,7 @@ impl Graph {
         count: HashMap<EdgeTypeT, EdgeT>,
     ) -> String {
         match count.len() {
-            0 => {
-                "".to_string()
-            }
+            0 => "".to_string(),
             1 => format!(
                 concat!("a single edge type, which is {edge_type_description}",),
                 edge_type_description = get_edge_type_source_html_url_from_edge_type_name(

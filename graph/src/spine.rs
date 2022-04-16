@@ -83,11 +83,12 @@ impl Graph {
         let anchor_node_ids = self.get_anchor_node_ids(embedding_size)?;
 
         // Check if the anchor nodes computation has been successful.
-        if anchor_node_ids.is_empty(){
+        if anchor_node_ids.is_empty() {
             return Err(concat!(
                 "This graph is either so small or so full of singletons ",
                 "that it is not possible to determine any anchor node."
-            ).to_string());
+            )
+            .to_string());
         }
 
         info!("Starting to compute node features.");

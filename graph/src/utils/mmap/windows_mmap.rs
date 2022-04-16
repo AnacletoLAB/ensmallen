@@ -1,8 +1,7 @@
-
 use core::ffi::c_void;
 use windows::Win32::Foundation::*;
-use windows::Win32::System::Memory::*;
 use windows::Win32::Storage::FileSystem::*;
+use windows::Win32::System::Memory::*;
 
 #[derive(Debug)]
 pub struct MemoryMappedReadOnlyFile {
@@ -17,24 +16,18 @@ impl Drop for MemoryMappedReadOnlyFile {
         unsafe {
             let res = UnmapViewOfFile(self.addr);
             if res == BOOL(0) {
-                panic!(
-                    "Cannot unmap view of file.",
-                );
+                panic!("Cannot unmap view of file.",);
             }
 
             let res = CloseHandle(self.mapping_handle);
             if res == BOOL(0) {
-                panic!(
-                    "Cannot Close the mapping handle."
-                );
+                panic!("Cannot Close the mapping handle.");
             }
 
             let res = CloseHandle(self.file_handle);
             if res == BOOL(0) {
-                panic!(
-                    "Cannot Close the mapping handle."
-                );
-             }
+                panic!("Cannot Close the mapping handle.");
+            }
         }
     }
 }
@@ -45,41 +38,33 @@ impl MemoryMappedReadOnlyFile {
             let file_handle = CreateFileW(
                 path,
                 FILE_GENERIC_READ,
-                FILE_SHARE_NONE,  // prevent other processes to modify the file while we are reading it
+                FILE_SHARE_NONE, // prevent other processes to modify the file while we are reading it
                 std::ptr::null() as _,
                 OPEN_EXISTING,
                 FILE_FLAG_SEQUENTIAL_SCAN,
                 HANDLE(0),
             );
-            
+
             if file_handle == INVALID_HANDLE_VALUE {
-                return Err(
-                    "Error opening file CreateFileW".into()
-                );
+                return Err("Error opening file CreateFileW".into());
             }
 
             let mut len_higher: u32 = 0;
-            let len_lower = GetFileSize(
-                file_handle, 
-                (&mut len_higher) as *mut u32
-            );
+            let len_lower = GetFileSize(file_handle, (&mut len_higher) as *mut u32);
             let len = ((len_lower as u64) | (len_higher as u64) << 32) as usize;
 
             let mapping_handle = CreateFileMappingW(
                 file_handle,
                 std::ptr::null_mut(),
-                PAGE_READONLY, // | SEC_LARGE_PAGES, 
-                0, 
-                0, 
+                PAGE_READONLY, // | SEC_LARGE_PAGES,
+                0,
+                0,
                 PWSTR(std::ptr::null_mut()),
             );
-            
-            if mapping_handle == HANDLE(0) {
-                return Err(
-                    "Error opening file CreateFileMappingW".into()
-                );
-            }
 
+            if mapping_handle == HANDLE(0) {
+                return Err("Error opening file CreateFileMappingW".into());
+            }
 
             let addr = MapViewOfFile(
                 mapping_handle,
@@ -88,14 +73,12 @@ impl MemoryMappedReadOnlyFile {
                 0,
                 len,
             );
-            
+
             if addr == std::ptr::null_mut() as _ {
-                return Err(
-                    "Error opening file MapViewOfFile".into()
-                );
+                return Err("Error opening file MapViewOfFile".into());
             }
 
-            Ok(MemoryMappedReadOnlyFile{
+            Ok(MemoryMappedReadOnlyFile {
                 file_handle,
                 mapping_handle,
                 addr,

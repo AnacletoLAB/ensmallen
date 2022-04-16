@@ -20,7 +20,8 @@ impl ToString for Chain {
         };
         let show_node_type = if self.graph.has_node_types() {
             node_ids.as_ref().map_or(false, |node_ids| unsafe {
-                !self.graph
+                !self
+                    .graph
                     .has_unchecked_isomorphic_node_types_from_node_ids(node_ids)
             })
         } else {

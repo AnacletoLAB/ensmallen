@@ -19,7 +19,10 @@ use std::string::ToString;
 impl ToString for DendriticTree {
     fn to_string(&self) -> String {
         let show_node_type = if self.graph.has_node_types() {
-            !unsafe{self.graph.has_unchecked_isomorphic_node_types_from_node_ids(self.node_ids.as_ref())}
+            !unsafe {
+                self.graph
+                    .has_unchecked_isomorphic_node_types_from_node_ids(self.node_ids.as_ref())
+            }
         } else {
             false
         };

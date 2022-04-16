@@ -12,9 +12,7 @@ use std::string::ToString;
 impl ToString for NodeTuple {
     fn to_string(&self) -> String {
         format!(
-            concat!(
-                "<p>Node tuple containing the nodes {}.</p>",
-            ),
+            concat!("<p>Node tuple containing the nodes {}.</p>",),
             unsafe {
                 get_unchecked_formatted_list(
                     &self

@@ -4,10 +4,9 @@ use indicatif::ProgressIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
 use std::sync::atomic::Ordering;
-use vec_rand::{sample_uniform, random_f32};
+use vec_rand::{random_f32, sample_uniform};
 
 impl Graph {
-
     #[manual_binding]
     /// Given a memory allocation `embedding` (which HAVE TO be already initialized at
     /// 0.0), write into it the CBOW embeddings
@@ -49,25 +48,27 @@ impl Graph {
             return Err("The current graph does not have decreasing outbounds.".to_string());
         }
 
-        let mut walk_parameters = WalksParameters::new(walk_length)?;
-        walk_parameters = walk_parameters.set_random_state(Some(random_state as usize));
-
-
         let expected_embedding_len = embedding_size * self.get_nodes_number() as usize;
 
         if embedding.len() != expected_embedding_len {
-            return Err(format!("The given memory allocation for the embeddings is {} long but we expect {}.", embedding.len(), expected_embedding_len));
+            return Err(format!(
+                "The given memory allocation for the embeddings is {} long but we expect {}.",
+                embedding.len(),
+                expected_embedding_len
+            ));
         }
 
-        let embedding = unsafe{
-            core::mem::transmute::<&mut [f32], &mut [AtomicF32]>(embedding)
-        };
+        let embedding = unsafe { core::mem::transmute::<&mut [f32], &mut [AtomicF32]>(embedding) };
 
-        embedding.iter().enumerate()
-            .for_each(|(i, e)| e.store(random_f32(random_state + i as u64), Ordering::SeqCst));
+        embedding.iter().enumerate().for_each(|(i, e)| {
+            e.store(
+                2.0 * random_f32(random_state + i as u64) - 1.0,
+                Ordering::SeqCst,
+            )
+        });
 
         let negative_embedding = (0..(embedding_size * self.get_nodes_number() as usize))
-            .map(|i| AtomicF32::new(random_f32(random_state + i as u64)))
+            .map(|i| AtomicF32::new(2.0 * random_f32(random_state + i as u64) - 1.0))
             .collect::<Vec<_>>();
         let pb = get_loading_bar(verbose, "Training CBOW model", epochs);
 
@@ -114,6 +115,10 @@ impl Graph {
 
         for _ in (0..epochs).progress_with(pb) {
             random_state = splitmix64(random_state);
+
+            let mut walk_parameters = WalksParameters::new(walk_length)?;
+            walk_parameters = walk_parameters.set_random_state(Some(random_state as usize));
+
             word2vec(self.iter_complete_walks(&walk_parameters)?, window_size).for_each(
                 |(contextual_nodes_indices, central_node_index)| {
                     let mut random_state = splitmix64(

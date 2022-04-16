@@ -60,6 +60,7 @@ pub mod utils;
 pub use self::utils::*;
 
 mod bitmaps;
+mod cbow;
 mod centrality;
 mod dense;
 mod distributions;
@@ -67,7 +68,6 @@ mod edge_list_utils;
 mod edge_lists;
 mod edge_metrics;
 mod filters;
-mod cbow;
 mod getters;
 mod graph;
 mod hash;

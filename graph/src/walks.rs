@@ -640,16 +640,14 @@ impl Graph {
             quantity,
             move |index| {
                 let local_index = index % quantity;
-                let random_source_id =
-                    splitmix64((random_state + local_index as u64).wrapping_add(0x4cc4854c0155130a)) as NodeT;
-                (
-                    splitmix64(random_state + index as u64),
-                    unsafe {
-                        self.get_unchecked_unique_source_node_id(
-                            random_source_id % self.get_unique_source_nodes_number(),
-                        )
-                    },
-                )
+                let random_source_id = splitmix64(
+                    (random_state + local_index as u64).wrapping_add(0x4cc4854c0155130a),
+                ) as NodeT;
+                (splitmix64(random_state + index as u64), unsafe {
+                    self.get_unchecked_unique_source_node_id(
+                        random_source_id % self.get_unique_source_nodes_number(),
+                    )
+                })
             },
             parameters,
         )
@@ -674,14 +672,11 @@ impl Graph {
         self.iter_walk(
             self.get_unique_source_nodes_number(),
             move |index| {
-                (
-                    splitmix64(random_state + index as u64),
-                    unsafe {
-                        self.get_unchecked_unique_source_node_id(
-                            index as NodeT % self.get_unique_source_nodes_number(),
-                        )
-                    },
-                )
+                (splitmix64(random_state + index as u64), unsafe {
+                    self.get_unchecked_unique_source_node_id(
+                        index as NodeT % self.get_unique_source_nodes_number(),
+                    )
+                })
             },
             parameters,
         )

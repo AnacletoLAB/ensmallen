@@ -216,7 +216,7 @@ impl Graph {
             let src_random_state = rand_u64(random_state);
             random_state = splitmix64(random_state as u64) as EdgeT;
             let dst_random_state = rand_u64(random_state);
-            
+
             let tmp_tb = get_loading_bar(
                 verbose,
                 format!("Negatives sampling round {}", sampling_round).as_ref(),
@@ -253,8 +253,10 @@ impl Graph {
                     }
 
                     if sample_only_edges_with_heterogeneous_node_types
-                        && unsafe{self.get_unchecked_node_type_ids_from_node_id(src)
-                            == self.get_unchecked_node_type_ids_from_node_id(dst)}
+                        && unsafe {
+                            self.get_unchecked_node_type_ids_from_node_id(src)
+                                == self.get_unchecked_node_type_ids_from_node_id(dst)
+                        }
                     {
                         return None;
                     }
