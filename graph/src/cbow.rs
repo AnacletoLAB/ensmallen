@@ -177,8 +177,7 @@ impl Graph {
                         // Start to sample negative indices
                         let number_of_actually_sampled_negatives =
                             vec![(central_node_index as usize, 1.0)]
-                                .iter()
-                                .cloned()
+                                .into_iter()
                                 .chain(
                                     (0..negatives_number)
                                         .filter_map(|_| unsafe {
