@@ -177,7 +177,6 @@ impl Graph {
                         });
 
                         // Start to sample negative indices
-
                         vec![(central_node_index as usize, 1.0)]
                             .iter()
                             .cloned()
