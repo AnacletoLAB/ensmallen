@@ -3,6 +3,8 @@ use atomic_float::AtomicF32;
 use indicatif::ProgressIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
+use rayon::iter::IndexedParallelIterator;
+use rayon::iter::IntoParallelRefIterator;
 use std::sync::atomic::Ordering;
 use vec_rand::{random_f32, sample_uniform};
 
@@ -65,7 +67,7 @@ impl Graph {
 
         let embedding = unsafe { core::mem::transmute::<&mut [f32], &mut [AtomicF32]>(embedding) };
 
-        embedding.iter().enumerate().for_each(|(i, e)| {
+        embedding.par_iter().enumerate().for_each(|(i, e)| {
             e.store(
                 2.0 * random_f32(random_state + i as u64) - 1.0,
                 Ordering::SeqCst,
@@ -73,6 +75,7 @@ impl Graph {
         });
 
         let negative_embedding = (0..(embedding_size * self.get_nodes_number() as usize))
+            .into_par_iter()
             .map(|i| AtomicF32::new(2.0 * random_f32(random_state + i as u64) - 1.0))
             .collect::<Vec<_>>();
         let pb = get_loading_bar(verbose, "Training CBOW model", epochs);
