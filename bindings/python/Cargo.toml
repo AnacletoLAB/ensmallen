@@ -24,7 +24,8 @@ requires-dist = [
     "tqdm",
     "pandas",
     "transformers",
-    "py-cpuinfo"
+    "py-cpuinfo",
+    "environments_utils"
 ]
 
 [lib]

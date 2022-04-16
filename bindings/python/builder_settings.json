@@ -8,30 +8,38 @@
     // like `ensmallen_{target}_{complation_infos}.{extension}` so that they can
     // be imported as `ensmallen_{target}`
     "targets":{
-        // for the gcloud cpus refer to https://cloud.google.com/compute/docs/cpu-platforms
-        // WARNING: to compile these we need to be on a cpu that supports avx512 
-        // otherwise we'd get a SIGILL error 
+        "x86_64":{
+            // for the gcloud cpus refer to https://cloud.google.com/compute/docs/cpu-platforms
+            // WARNING: to compile these we need to be on a cpu that supports avx512 
+            // otherwise we'd get a SIGILL error 
 
-        // version optimized for the newest google cloud cpus
-        //"icelake":{
-        //    "build_dir":"build_icelake",
-        //    "rustflags":"-C target-cpu=icelake-server"
-        //},
-        // version optimized for the relatively new google cloud cpus
-        //"cascadelake":{
-        //    "build_dir":"build_cascadelake",
-        //   "rustflags":"-C target-cpu=cascadelake"
-        //},
-        
-        // good balance of compatability and speed, (2013)
-        "haswell":{
-            "build_dir":"build_haswell",
-            "rustflags":"-C target-cpu=haswell"
+            // version optimized for the newest google cloud cpus
+            //"icelake":{
+            //    "build_dir":"build_icelake",
+            //    "rustflags":"-C target-cpu=icelake-server"
+            //},
+            // version optimized for the relatively new google cloud cpus
+            //"cascadelake":{
+            //    "build_dir":"build_cascadelake",
+            //   "rustflags":"-C target-cpu=cascadelake"
+            //},
+            
+            // good balance of compatability and speed, (2013)
+            "haswell":{
+                "build_dir":"build_haswell",
+                "rustflags":"-C target-cpu=haswell"
+            },
+            // full compatability (2006)
+            "core2":{
+                "build_dir":"build_core2",
+                "rustflags":"-C target-cpu=core2"
+            }
         },
-        // full compatability (2006)
-        "core2":{
-            "build_dir":"build_core2",
-            "rustflags":"-C target-cpu=core2"
+        "arm64":{
+            "default":{
+                "build_dir":"build_arm_default",
+                "rustflags":""
+            }
         }
     }
 }

@@ -126,6 +126,7 @@ try:
 except JSONDecodeError:
     raise ValueError("The given settings are not a json.\n%s"%settings_txt)
 
+settings["targets"] = settings["targets"][platform.machine()]
 
 WHEELS_FOLDER = join(settings.get("wheels_folder", "wheels"))
 MERGIN_FOLDER =  join(WHEELS_FOLDER, "merged")
