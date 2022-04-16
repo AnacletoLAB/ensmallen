@@ -33,6 +33,7 @@ impl Graph {
         let embedding_size = embedding_size.unwrap_or(100);
         let walk_length = walk_length.unwrap_or(128);
         let window_size = window_size.unwrap_or(4);
+        let context_size = window_size*2;
         let epochs = epochs.unwrap_or(1);
         let negatives_number = negatives_number.unwrap_or(5);
         let learning_rate = learning_rate.unwrap_or(0.025);
@@ -93,20 +94,6 @@ impl Graph {
         let pb = get_loading_bar(verbose, "Training CBOW model", epochs);
 
         let number_of_directed_edges = self.get_number_of_directed_edges();
-
-        // We build the lookup table for the exponentiations
-        // that we need to do in the core loop.
-        const MAX_EXPONENT_VALUE: usize = 6;
-        const EXPONENTIAL_TABLE_SIZE: usize = 1000;
-        let exp_lookup_table = (0..EXPONENTIAL_TABLE_SIZE)
-            .into_par_iter()
-            .map(|i| {
-                let value = ((i as f32 / EXPONENTIAL_TABLE_SIZE as f32 * 2.0 - 1.0)
-                    * MAX_EXPONENT_VALUE as f32)
-                    .exp();
-                value / (value + 1.0)
-            })
-            .collect::<Vec<f32>>();
 
         let weighted_sum = |factor: f32, source: &[AtomicF32], result: &mut [f32]| {
             result
@@ -174,7 +161,7 @@ impl Graph {
                                 .wrapping_add((j as u64) * walk_length),
                         );
                         let mut context_mean_embedding = vec![0.0; embedding_size];
-                        let mut negative_context_mean_embedding = vec![0.0; embedding_size];
+                        let mut negative_context_total_embedding = vec![0.0; embedding_size];
                         get_contextual_nodes_indices().for_each(|contextual_node_index| {
                             context_mean_embedding
                                 .iter_mut()
@@ -186,11 +173,6 @@ impl Graph {
                                 )
                                 .for_each(|(c, e)| *c += e);
                         });
-
-                        // Divide the mean by the number of elements in the context.
-                        context_mean_embedding
-                            .iter_mut()
-                            .for_each(|value| *value /= (window_size * 2) as f32);
 
                         // Start to sample negative indices
                         let number_of_actually_sampled_negatives =
@@ -233,25 +215,12 @@ impl Graph {
                                             )
                                         },
                                         context_mean_embedding.as_slice(),
-                                    );
-                                    // Now, if the obtained value which we should exponentiate
-                                    // is higher than the maximum sensible exponent we have already
-                                    // precomputed in the lookup table, we will just drop this
-                                    // particular negative sampling.
-                                    if dot_product <= -(MAX_EXPONENT_VALUE as f32)
-                                        || dot_product >= MAX_EXPONENT_VALUE as f32
-                                    {
-                                        return 0;
-                                    }
+                                    ) / context_size as f32;
+                                    // TODO: Explore whether clipping is a good idea.
                                     // Othersiwe, we proceed to retrieve the exponentiated value from
                                     // the lookup table.
-                                    let exponentiated_dot_product = exp_lookup_table[((dot_product
-                                        + MAX_EXPONENT_VALUE as f32)
-                                        * (EXPONENTIAL_TABLE_SIZE as f32
-                                            / MAX_EXPONENT_VALUE as f32
-                                            / 2.0))
-                                        .floor()
-                                        as usize];
+                                    let exponentiated_dot_product = dot_product.exp();
+
                                     // Finally, we compute this portion of the error.
                                     let loss = (label - exponentiated_dot_product) * learning_rate;
 
@@ -261,7 +230,7 @@ impl Graph {
                                     weighted_sum(
                                         loss,
                                         node_negative_embedding,
-                                        &mut negative_context_mean_embedding,
+                                        &mut negative_context_total_embedding,
                                     );
 
                                     // We sum the mean context embedding
@@ -269,7 +238,7 @@ impl Graph {
                                     // weighted by the current loss.
 
                                     atomic_weighted_sum(
-                                        loss,
+                                        loss  / context_size as f32,
                                         context_mean_embedding.as_ref(),
                                         &node_negative_embedding,
                                     );
@@ -284,7 +253,7 @@ impl Graph {
                                 .map(|contextual_node_index| contextual_node_index as usize)
                                 .for_each(|contextual_node_index| {
                                     atomic_sum(
-                                        negative_context_mean_embedding.as_slice(),
+                                        negative_context_total_embedding.as_slice(),
                                         &embedding[(contextual_node_index * embedding_size)
                                             ..((contextual_node_index + 1) * embedding_size)],
                                     );
