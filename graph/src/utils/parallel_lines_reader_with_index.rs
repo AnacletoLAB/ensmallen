@@ -1,8 +1,8 @@
+use super::MemoryMappedReadOnlyFile;
 use memchr;
 use rayon::iter::plumbing::{bridge_unindexed, UnindexedProducer};
 use rayon::prelude::*;
 use std::sync::Arc;
-use super::MemoryMappedReadOnlyFile;
 
 pub const READER_CAPACITY: usize = 1 << 17;
 
@@ -52,8 +52,7 @@ impl ParallelIterator for ParallelLinesWithIndex {
         if let Some(rts) = self.number_of_rows_to_skip {
             for _ in 0..rts {
                 let mut _buffer = String::new();
-                let (_, rest) = data.split_once("\n")
-                    .unwrap_or(("", data));
+                let (_, rest) = data.split_once("\n").unwrap_or(("", data));
                 data = rest;
             }
         }
@@ -61,7 +60,7 @@ impl ParallelIterator for ParallelLinesWithIndex {
         // Create the first producer
         let producer = ParalellLinesProducerWithIndex {
             mmap: self.mmap.clone(),
-            data, 
+            data,
             line_count: 0,
             modulus_mask: 0,
             depth: 0,
@@ -105,8 +104,8 @@ impl Iterator for ParalellLinesProducerWithIndex {
                 return None;
             }
 
-            let line_length  = memchr::memchr(b'\n', self.data.as_bytes())
-            .unwrap_or(self.data.len() - 1);
+            let line_length =
+                memchr::memchr(b'\n', self.data.as_bytes()).unwrap_or(self.data.len() - 1);
 
             if let Some(comment_symbol) = self.comment_symbol.as_deref() {
                 if self.data.starts_with(comment_symbol) {
@@ -119,9 +118,8 @@ impl Iterator for ParalellLinesProducerWithIndex {
             // skip empty lines
             if self.data[..line_length].trim().is_empty() {
                 self.data = &self.data[line_length + 1..];
-                continue
+                continue;
             }
-
 
             // skip lines until we met the one with the right remainder
             if (self.line_count & self.modulus_mask) != self.remainder {

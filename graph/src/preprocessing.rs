@@ -474,6 +474,7 @@ impl Graph {
                 );
             }
             for _ in 0..maximal_sampling_attempts {
+                sampled = xorshift(sampled);
                 // split the random u64 into 2 u32 and mod them to have
                 // usable nodes (this is slightly biased towards low values)
                 let src = (sampled & 0xffffffff) as u32 % nodes_number;
@@ -488,11 +489,11 @@ impl Graph {
                         .as_ref()
                         .map_or(false, |g| g.has_edge_from_node_ids(src, dst))
                 {
-                    sampled = xorshift(sampled);
                     continue;
                 }
 
                 let edge_type = if return_edge_types {
+                    sampled = xorshift(sampled);
                     Some(sampled as EdgeTypeT % edge_types_number)
                 } else {
                     None

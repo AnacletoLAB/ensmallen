@@ -840,7 +840,10 @@ impl Graph {
     /// println!("The node type id of node {} is {:?}", 0, graph.get_node_type_ids_from_node_id(0));
     /// ```
     ///
-    pub fn get_node_type_ids_from_node_id(&self, node_id: NodeT) -> Result<Option<&Vec<NodeTypeT>>> {
+    pub fn get_node_type_ids_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> Result<Option<&Vec<NodeTypeT>>> {
         self.must_have_node_types()?;
         self.validate_node_id(node_id)
             .map(|node_id| unsafe { self.get_unchecked_node_type_ids_from_node_id(node_id) })

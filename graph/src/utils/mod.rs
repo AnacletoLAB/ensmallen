@@ -275,12 +275,8 @@ pub unsafe fn get_unchecked_formatted_list(
             if remaining_values == 1 {
                 "another one".to_string()
             } else {
-                format!(
-                    "other {}",
-                    to_human_readable_high_integer(remaining_values)
-                )
+                format!("other {}", to_human_readable_high_integer(remaining_values))
             }
-            
         }
     )
 }

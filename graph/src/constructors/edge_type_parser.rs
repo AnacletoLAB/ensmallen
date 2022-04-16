@@ -142,7 +142,8 @@ impl EdgeTypeParser {
             (
                 src,
                 dst,
-                edge_type_name.map(|edge_type_name| unsafe{atoi_c(edge_type_name.as_str()) as EdgeTypeT}),
+                edge_type_name
+                    .map(|edge_type_name| unsafe { atoi_c(edge_type_name.as_str()) as EdgeTypeT }),
                 weight,
             ),
         ))

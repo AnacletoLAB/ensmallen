@@ -205,10 +205,6 @@ impl Graph {
             negatives_number as usize,
         );
 
-        // xorshift breaks if the random_state is zero
-        // so we initialize it using splitmix64 as Vigna suggests
-        random_state = splitmix64(random_state as u64) as EdgeT;
-
         let mut negative_edges_hashset = HashSet::with_capacity(negatives_number as usize);
         let mut last_length = 0;
         let mut sampling_round: usize = 0;
@@ -216,9 +212,10 @@ impl Graph {
         // randomly extract negative edges until we have the choosen number
         while negative_edges_hashset.len() < negatives_number as usize {
             // generate two random_states for reproducibility porpouses
+            random_state = splitmix64(random_state as u64) as EdgeT;
             let src_random_state = rand_u64(random_state);
-            let dst_random_state = rand_u64(src_random_state);
-            random_state = rand_u64(dst_random_state);
+            random_state = splitmix64(random_state as u64) as EdgeT;
+            let dst_random_state = rand_u64(random_state);
 
             let tmp_tb = get_loading_bar(
                 verbose,
@@ -256,8 +253,10 @@ impl Graph {
                     }
 
                     if sample_only_edges_with_heterogeneous_node_types
-                        && unsafe{self.get_unchecked_node_type_ids_from_node_id(src)
-                            == self.get_unchecked_node_type_ids_from_node_id(dst)}
+                        && unsafe {
+                            self.get_unchecked_node_type_ids_from_node_id(src)
+                                == self.get_unchecked_node_type_ids_from_node_id(dst)
+                        }
                     {
                         return None;
                     }

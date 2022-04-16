@@ -171,7 +171,7 @@ impl NodeTypeParser {
         let (line_number, (node_name, node_type_names)) = value?;
         let node_type_ids = node_type_names.map(|ntns| {
             ntns.into_iter()
-                .map(|node_type_name| unsafe{atoi_c(node_type_name.as_str()) as NodeTypeT})
+                .map(|node_type_name| unsafe { atoi_c(node_type_name.as_str()) as NodeTypeT })
                 .collect::<Vec<NodeTypeT>>()
         });
         Ok((line_number, (node_name, node_type_ids)))
