@@ -30,7 +30,7 @@ impl Graph {
         let learning_rate = learning_rate.unwrap_or(0.025);
         let mut random_state = random_state.unwrap_or(42);
         random_state = splitmix64(random_state);
-        let verbose = verbose.unwrap_or(false);
+        let verbose = verbose.unwrap_or(true);
 
         if embedding_size == 0 {
             return Err("The embedding size must be greater than zero.".to_string());
@@ -235,24 +235,26 @@ impl Graph {
                             .sum::<usize>();
 
                     // Compute the mean of the negative context embedding.
-                    // TODO: check if this mean is correct.
-                    // negative_context_mean_embedding
-                    //     .iter_mut()
-                    //     .for_each(|value| *value /= number_of_actually_sampled_negatives as f32);
-
-                    // Update the node embedding of every node in the context.
-                    contextual_nodes_indices
-                        .iter()
-                        .cloned()
-                        .map(|contextual_node_index| contextual_node_index as usize)
-                        .for_each(|contextual_node_index| {
-                            atomic_weighted_sum(
-                                1.0,
-                                negative_context_mean_embedding.as_slice(),
-                                &embedding[(contextual_node_index * embedding_size)
-                                    ..((contextual_node_index + 1) * embedding_size)],
-                            );
-                        });
+                    if number_of_actually_sampled_negatives > 0{
+                        negative_context_mean_embedding
+                            .iter_mut()
+                            .for_each(|value| {
+                                *value /= number_of_actually_sampled_negatives as f32
+                            });
+                        // Update the node embedding of every node in the context.
+                        contextual_nodes_indices
+                            .iter()
+                            .cloned()
+                            .map(|contextual_node_index| contextual_node_index as usize)
+                            .for_each(|contextual_node_index| {
+                                atomic_weighted_sum(
+                                    1.0,
+                                    negative_context_mean_embedding.as_slice(),
+                                    &embedding[(contextual_node_index * embedding_size)
+                                        ..((contextual_node_index + 1) * embedding_size)],
+                                );
+                            });
+                    }
                 },
             );
         }
