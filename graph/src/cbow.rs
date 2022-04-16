@@ -33,6 +33,7 @@ impl Graph {
         let embedding_size = embedding_size.unwrap_or(100);
         let walk_length = walk_length.unwrap_or(128);
         let window_size = window_size.unwrap_or(4);
+        let context_size = window_size*2 as f32;
         let epochs = epochs.unwrap_or(1);
         let negatives_number = negatives_number.unwrap_or(5);
         let learning_rate = learning_rate.unwrap_or(0.025);
@@ -173,11 +174,6 @@ impl Graph {
                                 .for_each(|(c, e)| *c += e);
                         });
 
-                        // Divide the mean by the number of elements in the context.
-                        context_mean_embedding
-                            .iter_mut()
-                            .for_each(|value| *value /= (window_size * 2) as f32);
-
                         // Start to sample negative indices
                         let number_of_actually_sampled_negatives =
                             vec![(central_node_index as usize, 1.0)]
@@ -219,16 +215,7 @@ impl Graph {
                                             )
                                         },
                                         context_mean_embedding.as_slice(),
-                                    );
-                                    // Now, if the obtained value which we should exponentiate
-                                    // is higher than the maximum sensible exponent we have already
-                                    // precomputed in the lookup table, we will just drop this
-                                    // particular negative sampling.
-                                    // if dot_product <= -6.0
-                                    //     || dot_product >= 6.0
-                                    // {
-                                    //     return 0;
-                                    // }
+                                    ) / context_size;
                                     // Othersiwe, we proceed to retrieve the exponentiated value from
                                     // the lookup table.
                                     let exponentiated_dot_product = dot_product.exp();
@@ -248,7 +235,7 @@ impl Graph {
                                     // to the negative embedding of the currently sampled negative context node
                                     // weighted by the current loss.
                                     atomic_weighted_sum(
-                                        loss,
+                                        loss / context_size,
                                         context_mean_embedding.as_ref(),
                                         &node_negative_embedding,
                                     );
