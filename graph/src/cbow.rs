@@ -224,16 +224,16 @@ impl Graph {
                                     // is higher than the maximum sensible exponent we have already
                                     // precomputed in the lookup table, we will just drop this
                                     // particular negative sampling.
-                                    if dot_product <= -6.0
-                                        || dot_product >= 6.0
-                                    {
-                                        return 0;
-                                    }
+                                    // if dot_product <= -6.0
+                                    //     || dot_product >= 6.0
+                                    // {
+                                    //     return 0;
+                                    // }
                                     // Othersiwe, we proceed to retrieve the exponentiated value from
                                     // the lookup table.
                                     let exponentiated_dot_product = dot_product.exp();
                                     // Finally, we compute this portion of the error.
-                                    let loss = (label - exponentiated_dot_product) * learning_rate;
+                                    let loss = (label - (exponentiated_dot_product/ (exponentiated_dot_product + 1.0))) * learning_rate;
 
                                     // We sum the currently sampled negative context node embedding
                                     // to the (currently sum of) negative context embeddings,
