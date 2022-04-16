@@ -4,12 +4,17 @@ use numpy::PyArray2;
 #[pymethods]
 impl Graph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, *, embedding_size, epochs, walk_length, window_size, negatives_number, learning_rate, random_state, verbose)"]
+    #[text_signature = "($self, *, embedding_size, epochs, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, iterations, window_size, negatives_number, learning_rate, random_state, verbose)"]
     fn compute_cbow_embedding(
         &self,
         embedding_size: Option<usize>,
         epochs: Option<usize>,
         walk_length: Option<u64>,
+        return_weight: Option<f32>,
+        explore_weight: Option<f32>,
+        change_edge_type_weight: Option<f32>,
+        change_node_type_weight: Option<f32>,
+        iterations: Option<NodeT>,
         window_size: Option<usize>,
         negatives_number: Option<usize>,
         learning_rate: Option<f32>,
@@ -30,6 +35,11 @@ impl Graph {
             Some(embedding_size),
             epochs,
             walk_length,
+            return_weight,
+            explore_weight,
+            change_edge_type_weight,
+            change_node_type_weight,
+            iterations,
             window_size,
             negatives_number,
             learning_rate,

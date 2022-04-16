@@ -16,6 +16,11 @@ impl Graph {
         embedding_size: Option<usize>,
         epochs: Option<usize>,
         walk_length: Option<u64>,
+        return_weight: Option<f32>,
+        explore_weight: Option<f32>,
+        change_edge_type_weight: Option<f32>,
+        change_node_type_weight: Option<f32>,
+        iterations: Option<NodeT>,
         window_size: Option<usize>,
         negatives_number: Option<usize>,
         learning_rate: Option<f32>,
@@ -115,10 +120,10 @@ impl Graph {
                 });
         };
 
-        let compute_dot_product = |v1: &[AtomicF32], v2: &[f32]| -> f32 {
-            v1.iter()
+        let compute_dot_product = |v1: &[f32], v2: &[f32]| -> f32 {
+            v1.iter().cloned()
                 .zip(v2.iter().cloned())
-                .map(|(a, b)| a.load(Ordering::SeqCst) * b)
+                .map(|(a, b)| a * b)
                 .sum()
         };
 
@@ -126,7 +131,12 @@ impl Graph {
             random_state = splitmix64(random_state);
 
             let mut walk_parameters = WalksParameters::new(walk_length)?;
-            walk_parameters = walk_parameters.set_random_state(Some(random_state as usize));
+            walk_parameters = walk_parameters.set_random_state(Some(random_state as usize))
+                .set_change_edge_type_weight(change_edge_type_weight)?
+                .set_change_node_type_weight(change_node_type_weight)?
+                .set_explore_weight(explore_weight)?
+                .set_return_weight(return_weight)?
+                .set_iterations(iterations)?;
 
             word2vec(self.iter_complete_walks(&walk_parameters)?, window_size).for_each(
                 |(contextual_nodes_indices, central_node_index)| {
@@ -197,7 +207,7 @@ impl Graph {
                                     ..((node_index + 1) * embedding_size)];
                                 // Compute the dot product between the negative embedding and the context average.
                                 let dot_product: f32 = compute_dot_product(
-                                    node_negative_embedding,
+                                    unsafe { core::mem::transmute::<&[AtomicF32], &[f32]>(node_negative_embedding) },
                                     context_mean_embedding.as_slice(),
                                 );
                                 // Now, if the obtained value which we should exponentiate
