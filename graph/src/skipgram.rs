@@ -34,7 +34,6 @@ impl Graph {
         let embedding_size = embedding_size.unwrap_or(100);
         let walk_length = walk_length.unwrap_or(128);
         let window_size = window_size.unwrap_or(4);
-        let context_size = (window_size * 2) as f32;
         let epochs = epochs.unwrap_or(1);
         let negatives_number = negatives_number.unwrap_or(5);
         let learning_rate = learning_rate.unwrap_or(0.025);
@@ -143,7 +142,6 @@ impl Graph {
 
         for _ in (0..epochs).progress_with(pb) {
             random_state = splitmix64(random_state);
-
             walk_parameters = walk_parameters.set_random_state(Some(random_state as usize));
 
             self.iter_complete_walks(&walk_parameters)?
@@ -211,7 +209,7 @@ impl Graph {
                                                 contextual_node_embedding,
                                             )
                                         },
-                                    ) / context_size;
+                                    );
                                     // Othersiwe, we proceed to retrieve the exponentiated value from
                                     // the lookup table.
                                     let exponentiated_dot_product = dot_product.exp();
@@ -234,7 +232,7 @@ impl Graph {
                                     // to the negative embedding of the currently sampled negative context node
                                     // weighted by the current loss.
                                     atomic_weighted_sum(
-                                        loss / context_size,
+                                        loss,
                                         unsafe {
                                             core::mem::transmute::<&[AtomicF32], &[f32]>(
                                                 contextual_node_embedding,
