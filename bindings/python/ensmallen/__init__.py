@@ -2,7 +2,7 @@
 import logging
 import warnings
 import platform
-from environment_utils import is_x86_64, is_arm
+from environments_utils import is_x86_64, is_arm
 
 
 if is_x86_64():
