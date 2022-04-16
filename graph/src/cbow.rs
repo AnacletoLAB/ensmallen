@@ -236,11 +236,12 @@ impl Graph {
 
                     // Compute the mean of the negative context embedding.
                     if number_of_actually_sampled_negatives > 0{
-                        negative_context_mean_embedding
-                            .iter_mut()
-                            .for_each(|value| {
-                                *value /= number_of_actually_sampled_negatives as f32
-                            });
+                        // TODO: it is currently unclear whether this should be a mean or not.
+                        // negative_context_mean_embedding
+                        //     .iter_mut()
+                        //     .for_each(|value| {
+                        //         *value /= number_of_actually_sampled_negatives as f32
+                        //     });
                         // Update the node embedding of every node in the context.
                         contextual_nodes_indices
                             .iter()
