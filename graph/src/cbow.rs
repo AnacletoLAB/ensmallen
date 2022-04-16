@@ -33,7 +33,7 @@ impl Graph {
         let embedding_size = embedding_size.unwrap_or(100);
         let walk_length = walk_length.unwrap_or(128);
         let window_size = window_size.unwrap_or(4);
-        let context_size = window_size*2;
+        let context_size = window_size * 2;
         let epochs = epochs.unwrap_or(1);
         let negatives_number = negatives_number.unwrap_or(5);
         let learning_rate = learning_rate.unwrap_or(0.025);
@@ -207,15 +207,15 @@ impl Graph {
                                         * embedding_size)
                                         ..((node_index + 1) * embedding_size)];
                                     // Compute the dot product between the negative embedding and the context average.
-                                    let dot_product: f32 = compute_dot_product(
+                                    let dot_product: f32 = (compute_dot_product(
                                         unsafe {
                                             core::mem::transmute::<&[AtomicF32], &[f32]>(
                                                 node_negative_embedding,
                                             )
                                         },
                                         context_mean_embedding.as_slice(),
-                                    ) / context_size as f32;
-                                    // TODO: Explore whether clipping is a good idea.
+                                    ) / context_size as f32)
+                                        .clamp(-6.0, 6.0);
                                     // Othersiwe, we proceed to retrieve the exponentiated value from
                                     // the lookup table.
                                     let exponentiated_dot_product = dot_product.exp();
@@ -237,7 +237,7 @@ impl Graph {
                                     // weighted by the current loss.
 
                                     atomic_weighted_sum(
-                                        loss  / context_size as f32,
+                                        loss / context_size as f32,
                                         context_mean_embedding.as_ref(),
                                         &node_negative_embedding,
                                     );
