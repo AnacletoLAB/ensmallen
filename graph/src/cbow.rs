@@ -131,17 +131,18 @@ impl Graph {
                 .sum()
         };
 
+        let mut walk_parameters = WalksParameters::new(walk_length)?;
+        walk_parameters = walk_parameters
+            .set_change_edge_type_weight(change_edge_type_weight)?
+            .set_change_node_type_weight(change_node_type_weight)?
+            .set_explore_weight(explore_weight)?
+            .set_return_weight(return_weight)?
+            .set_max_neighbours(max_neighbours)?
+            .set_iterations(iterations)?;
+
         for _ in (0..epochs).progress_with(pb) {
             random_state = splitmix64(random_state);
-
-            let mut walk_parameters = WalksParameters::new(walk_length)?;
-            walk_parameters = walk_parameters.set_random_state(Some(random_state as usize))
-                .set_change_edge_type_weight(change_edge_type_weight)?
-                .set_change_node_type_weight(change_node_type_weight)?
-                .set_explore_weight(explore_weight)?
-                .set_return_weight(return_weight)?
-                .set_max_neighbours(max_neighbours)?
-                .set_iterations(iterations)?;
+            walk_parameters = walk_parameters.set_random_state(Some(random_state as usize));
 
             word2vec(self.iter_complete_walks(&walk_parameters)?, window_size).for_each(
                 |(contextual_nodes_indices, central_node_index)| {
