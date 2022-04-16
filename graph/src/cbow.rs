@@ -177,90 +177,83 @@ impl Graph {
                         });
 
                         // Start to sample negative indices
-                        let number_of_actually_sampled_negatives =
-                            vec![(central_node_index as usize, 1.0)]
-                                .iter()
-                                .cloned()
-                                .chain(
-                                    (0..negatives_number)
-                                        .filter_map(|_| unsafe {
-                                            let sampled_node = self
-                                                .get_unchecked_node_ids_from_edge_id(
-                                                    sample_uniform(
-                                                        number_of_directed_edges,
-                                                        random_state,
-                                                    )
-                                                        as EdgeT,
-                                                )
-                                                .0;
-                                            random_state = splitmix64(random_state);
-                                            if sampled_node == central_node_index {
-                                                None
-                                            } else {
-                                                Some(sampled_node)
-                                            }
-                                        })
-                                        .map(|sampled_node| (sampled_node as usize, 0.0)),
-                                )
-                                .map(|(node_index, label): (usize, f32)| {
-                                    // Sample negative index
-                                    // Retrieve the node embedding from the negative embedding
-                                    // curresponding to the `negative_node_index` node.
-                                    let node_negative_embedding = &negative_embedding[(node_index
-                                        * embedding_size)
-                                        ..((node_index + 1) * embedding_size)];
-                                    // Compute the dot product between the negative embedding and the context average.
-                                    let dot_product: f32 = compute_dot_product(
-                                        unsafe {
-                                            core::mem::transmute::<&[AtomicF32], &[f32]>(
-                                                node_negative_embedding,
+
+                        vec![(central_node_index as usize, 1.0)]
+                            .iter()
+                            .cloned()
+                            .chain(
+                                (0..negatives_number)
+                                    .filter_map(|_| unsafe {
+                                        let sampled_node = self
+                                            .get_unchecked_node_ids_from_edge_id(sample_uniform(
+                                                number_of_directed_edges,
+                                                random_state,
                                             )
-                                        },
-                                        context_mean_embedding.as_slice(),
-                                    ) / context_size;
-                                    // Othersiwe, we proceed to retrieve the exponentiated value from
-                                    // the lookup table.
-                                    let exponentiated_dot_product = dot_product.exp();
-                                    // Finally, we compute this portion of the error.
-                                    let loss = (label
-                                        - (exponentiated_dot_product
-                                            / (exponentiated_dot_product + 1.0)))
-                                        * learning_rate;
+                                                as EdgeT)
+                                            .0;
+                                        random_state = splitmix64(random_state);
+                                        if sampled_node == central_node_index {
+                                            None
+                                        } else {
+                                            Some(sampled_node)
+                                        }
+                                    })
+                                    .map(|sampled_node| (sampled_node as usize, 0.0)),
+                            )
+                            .for_each(|(node_index, label): (usize, f32)| {
+                                // Sample negative index
+                                // Retrieve the node embedding from the negative embedding
+                                // curresponding to the `negative_node_index` node.
+                                let node_negative_embedding = &negative_embedding[(node_index
+                                    * embedding_size)
+                                    ..((node_index + 1) * embedding_size)];
+                                // Compute the dot product between the negative embedding and the context average.
+                                let dot_product: f32 = compute_dot_product(
+                                    unsafe {
+                                        core::mem::transmute::<&[AtomicF32], &[f32]>(
+                                            node_negative_embedding,
+                                        )
+                                    },
+                                    context_mean_embedding.as_slice(),
+                                ) / context_size;
+                                // Othersiwe, we proceed to retrieve the exponentiated value from
+                                // the lookup table.
+                                let exponentiated_dot_product = dot_product.exp();
+                                // Finally, we compute this portion of the error.
+                                let loss = (label
+                                    - (exponentiated_dot_product
+                                        / (exponentiated_dot_product + 1.0)))
+                                    * learning_rate;
 
-                                    // We sum the currently sampled negative context node embedding
-                                    // to the (currently sum of) negative context embeddings,
-                                    // weighted by the current loss.
-                                    weighted_sum(
-                                        loss,
-                                        node_negative_embedding,
-                                        &mut negative_context_mean_embedding,
-                                    );
+                                // We sum the currently sampled negative context node embedding
+                                // to the (currently sum of) negative context embeddings,
+                                // weighted by the current loss.
+                                weighted_sum(
+                                    loss,
+                                    node_negative_embedding,
+                                    &mut negative_context_mean_embedding,
+                                );
 
-                                    // We sum the mean context embedding
-                                    // to the negative embedding of the currently sampled negative context node
-                                    // weighted by the current loss.
-                                    atomic_weighted_sum(
-                                        loss / context_size,
-                                        context_mean_embedding.as_ref(),
-                                        &node_negative_embedding,
-                                    );
-                                    1
-                                })
-                                .sum::<usize>();
+                                // We sum the mean context embedding
+                                // to the negative embedding of the currently sampled negative context node
+                                // weighted by the current loss.
+                                atomic_weighted_sum(
+                                    loss / context_size,
+                                    context_mean_embedding.as_ref(),
+                                    &node_negative_embedding,
+                                );
+                            });
 
-                        // Compute the mean of the negative context embedding.
-                        if number_of_actually_sampled_negatives > 0 {
-                            // Update the node embedding of every node in the context.
-                            get_contextual_nodes_indices()
-                                .map(|contextual_node_index| contextual_node_index as usize)
-                                .for_each(|contextual_node_index| {
-                                    atomic_sum(
-                                        negative_context_mean_embedding.as_slice(),
-                                        &embedding[(contextual_node_index * embedding_size)
-                                            ..((contextual_node_index + 1) * embedding_size)],
-                                    );
-                                });
-                        }
+                        // Update the node embedding of every node in the context.
+                        get_contextual_nodes_indices()
+                            .map(|contextual_node_index| contextual_node_index as usize)
+                            .for_each(|contextual_node_index| {
+                                atomic_sum(
+                                    negative_context_mean_embedding.as_slice(),
+                                    &embedding[(contextual_node_index * embedding_size)
+                                        ..((contextual_node_index + 1) * embedding_size)],
+                                );
+                            });
                     });
                 });
         }
