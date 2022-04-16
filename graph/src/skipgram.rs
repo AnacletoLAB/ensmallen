@@ -160,8 +160,8 @@ impl Graph {
                                 .wrapping_add(i as u64)
                                 .wrapping_add((j as u64) * walk_length),
                         );
-                        let mut negative_context_total_embedding = vec![0.0; embedding_size];
                         get_contextual_nodes_indices().for_each(|contextual_node_index| {
+                            let mut negative_context_total_embedding = vec![0.0; embedding_size];
                             let contextual_node_embedding = &embedding[(contextual_node_index
                                 * embedding_size)
                                 ..((contextual_node_index + 1) * embedding_size)];
