@@ -56,7 +56,7 @@ if is_x86_64():
                 ).format(unavailable_flags, CORE2_AVX_FLAGS)
             )
 elif is_arm():
-    logging.info("Ensmallen is using Core2")
+    logging.info("Ensmallen is using Default Arm")
     from .ensmallen_default import preprocessing  # pylint: disable=import-error
     from .ensmallen_default import Graph  # pylint: disable=import-error
     from .ensmallen_default import edge_list_utils  # pylint: disable=import-error
