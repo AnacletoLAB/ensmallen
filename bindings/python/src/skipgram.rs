@@ -8,14 +8,14 @@ impl Graph {
     /// Compute the SkipGram node embedding for the current graph.
     /// This method will return a numpy array with shape (number_of_nodes, embedding_size)
     /// where the i-th row is the embedding of the node with node_id i.
-    /// 
+    ///
     /// Paramters
     /// ---------
-    /// embedding_size: int = 
+    /// embedding_size: int =
     ///     The number of dimensions of the embedding
     /// epochs: int = 1
     ///     How many epochs the model will train for.
-    ///     In this context an epoch means that the model will compute a random 
+    ///     In this context an epoch means that the model will compute a random
     ///     walk starting from every node in the graph.
     /// walk_length: int = 100
     ///     How many **steps** the random walk will do from it source
@@ -58,11 +58,11 @@ impl Graph {
     ///     How many non-contextual words we will add to the contextual one
     ///     when computing the gradients.
     /// learning_rate: float = 0.025
-    ///     Multiplier for the gradient application, lower learning rates 
+    ///     Multiplier for the gradient application, lower learning rates
     ///     makes the embeddings slower to converge but might get to a better
     ///     minimum.
     /// random_state: int = 42
-    ///     The seed used for all PRNGs, this makes the embeddings almost 
+    ///     The seed used for all PRNGs, this makes the embeddings almost
     ///     reproducible. Due to concurrencies in the computation of them
     ///     even with the same random_state the embeddings could be different.
     /// verbose: bool = False

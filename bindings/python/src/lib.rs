@@ -10,11 +10,11 @@ use tags::*;
 
 mod macros;
 pub(crate) use crate::macros::*;
+mod cbow;
 mod edge_file_writer;
 mod hash;
 mod node_file_writer;
 mod preprocessing;
-mod cbow;
 mod skipgram;
 mod subgraphs;
 mod trees;

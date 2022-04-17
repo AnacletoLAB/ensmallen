@@ -1,7 +1,7 @@
 #!/bin/python3
-from json.decoder import JSONDecodeError
 import os
 import re
+import sys
 import json
 import base64
 import shutil
@@ -11,6 +11,8 @@ import hashlib
 import argparse
 import platform
 import subprocess
+import glob
+from json.decoder import JSONDecodeError
 
 ################################################################################
 # Utils
@@ -44,6 +46,37 @@ def patch(file, src_regex, dst_regex):
     with open(join(file), "w") as f:
         f.write(text)
 
+def hash_file(file_path) -> str:
+    sha256 = hashlib.sha256()
+    with open(file_path, "rb") as f:
+        while True:
+            data = f.read(1024)
+            if not data:
+                break
+            sha256.update(data)
+    return sha256.hexdigest()
+
+def rsync_folders(src, dst):
+    """Portable rsync like utility. This is needed because we are going to copy
+    only changed files, this way we don't change the modification date and
+    rust won't compile things again."""
+    
+    for file in sorted(glob.iglob(os.path.join(src, "**/*",), recursive=True)):
+        if not os.path.isfile(file):
+            continue
+
+        desinenza = os.path.abspath(file)[len(os.path.abspath(src)) + 1:]
+        dst_file = os.path.join(dst, desinenza)
+
+        # Skip if the file exists and has not changed
+        if os.path.exists(dst_file) and hash_file(file) == hash_file(dst_file):
+            continue
+
+        logging.info("The file {} changed, overwriting.".format(desinenza))
+
+        # this can copy folder, but whatever it works also on files
+        shutil.copyfile(file, dst_file)
+
 ################################################################################
 # Get the settings form the env vars
 ################################################################################
@@ -68,13 +101,21 @@ file is:
     "wheels_folder":"wheels", 
     "shared_rustflags":"-C inline-threshold=1000",
     "targets":{
-        "haswell":{
-            "build_dir":"build_haswell",
-            "rustflags":"-C target-cpu=haswell"
+        "x86_64":{
+            "haswell":{
+                "build_dir":"build_haswell",
+                "rustflags":"-C target-cpu=haswell"
+            },
+            "core2":{
+                "build_dir":"build_core2",
+                "rustflags":"-C target-cpu=core2"
+            }
         },
-        "core2":{
-            "build_dir":"build_core2",
-            "rustflags":"-C target-cpu=core2"
+        "arm64":{
+            "default":{
+                "build_dir":"build_arm_default",
+                "rustflags":""
+            }
         }
     }
 }
@@ -83,13 +124,28 @@ file is:
 
 parser.add_argument("-s", "--settings-path", type=str,
     default="builder_settings.json",
-    help="The json file f",
+    help="The path to the json file with the build specification.",
 )
 
 parser.add_argument("-v", "--verbosity", type=str,
     default="info",
     choices=["debug", "info", "error"],
     help="Verbosity of the logger"
+)
+
+parser.add_argument("-sr", "--skip-repair",
+    default=False,
+    action="store_true",
+    help="""For linux wheels we run `auditwheel repair` on the wheel to be sure to
+    include the needed shared libraries. This breaks if the compilation environment
+    is not `manylinux_2010` compatible, this flag skips this step.""".replace("\n", ""),
+)
+
+parser.add_argument("-nc", "--no-clean",
+    default=False,
+    action="store_true",
+    help="""By default the script will delete and re-create the folders for each
+    target. Enabling this flag skips this step and uses the old folders.""".replace("\n", ""),
 )
 
 args = parser.parse_args()
@@ -136,6 +192,13 @@ if platform.system().strip().lower() == "windows":
     library_extension = ".pyd"
 else:
     library_extension = ".so"
+
+################################################################################
+# Generating the bindings
+################################################################################
+logging.info("Generating the bindings")
+exec("cargo run --release --bin bindgen", cwd=join("..", "..", "code_analysis"))
+
 ################################################################################
 # Clean the folders and prepare them to be compiled
 ################################################################################
@@ -143,53 +206,64 @@ shutil.rmtree(join(WHEELS_FOLDER), ignore_errors=True)
 os.makedirs(join(WHEELS_FOLDER), exist_ok=True)
 os.makedirs(join(MERGIN_FOLDER), exist_ok=True)
 
-# Clean the building directory from past compilations
-for target_name, target_settings in settings["targets"].items():
-    build_dir = join(target_settings["build_dir"])
-    shutil.rmtree(build_dir, ignore_errors=True)
+if not args.no_clean:
+    # Clean the building directory from past compilations
+    for target_name, target_settings in settings["targets"].items():
+        build_dir = join(target_settings["build_dir"])
+        shutil.rmtree(build_dir, ignore_errors=True)
 
-# Copy the sources to the build folder so that we can modify it without worries
-# We copy the non_avx folder because if we copy `.` otherwise it will include
-# a copy of the avx build
-last_copied_folder = join(".")
-# Clone the building folders
-for target_name, target_settings in settings["targets"].items():
-    build_dir = join(target_settings["build_dir"])
-    logging.info("Creating the folder %s", build_dir)
     # Copy the sources to the build folder so that we can modify it without worries
     # We copy the non_avx folder because if we copy `.` otherwise it will include
     # a copy of the avx build
-    shutil.copytree(last_copied_folder, build_dir)
-    last_copied_folder = build_dir
+    last_copied_folder = join(".")
+    # Clone the building folders
+    for target_name, target_settings in settings["targets"].items():
+        build_dir = join(target_settings["build_dir"])
+        logging.info("Creating the folder %s", build_dir)
+        # Copy the sources to the build folder so that we can modify it without worries
+        # We copy the non_avx folder because if we copy `.` otherwise it will include
+        # a copy of the avx build
+        shutil.copytree(last_copied_folder, build_dir)
+        last_copied_folder = build_dir
 
-# Patch the folders 
-for i, (target_name, target_settings) in enumerate(settings["targets"].items()):
-    build_dir = join(target_settings["build_dir"])
+    # Patch the folders 
+    for i, (target_name, target_settings) in enumerate(settings["targets"].items()):
+        build_dir = join(target_settings["build_dir"])
 
-    logging.info("Patching the %s build", target_name)
-    patch(join(build_dir, "Cargo.toml"),
-        r"""path\s*=\s*\"..""", 
-        r"""path = "../..""", 
-    )
-    patch(join(build_dir, "pyproject.toml"),
-        r"name\s*=\s*\".+?\"", 
-        r"""name="ensmallen_%s" """%target_name
-    )
-    patch(join(build_dir, "Cargo.toml"),
-        r"name\s*=\s*\".+?\"", 
-        r"""name = "ensmallen_%s" """%target_name
-    )
-    patch(join(build_dir, "src", "auto_generated_bindings.rs"), 
-        r"fn ensmallen\(_py: Python", 
-        r"fn ensmallen_%s(_py: Python"%target_name,
-    )   
+        logging.info("Patching the %s build", target_name)
+        patch(join(build_dir, "Cargo.toml"),
+            r"""path\s*=\s*\"..""", 
+            r"""path = "../..""", 
+        )
+        patch(join(build_dir, "pyproject.toml"),
+            r"name\s*=\s*\".+?\"", 
+            r"""name="ensmallen_%s" """%target_name
+        )
+        patch(join(build_dir, "Cargo.toml"),
+            r"name\s*=\s*\".+?\"", 
+            r"""name = "ensmallen_%s" """%target_name
+        )
+        patch(join(build_dir, "src", "auto_generated_bindings.rs"), 
+            r"fn ensmallen\(_py: Python", 
+            r"fn ensmallen_%s(_py: Python"%target_name,
+        )   
 
-    # Rename the sources folder
-    shutil.move(
-        join(build_dir, "ensmallen"), 
-        join(build_dir, "ensmallen_%s"%target_name)
-    )
-
+        # Rename the sources folder
+        shutil.move(
+            join(build_dir, "ensmallen"), 
+            join(build_dir, "ensmallen_%s"%target_name)
+        )
+else:
+    # just sync the src folders
+    # TODO!: should we sync anything else?
+    for target_name, target_settings in settings["targets"].items():
+        src = join("src")
+        dst = join(target_settings["build_dir"], "src")
+        logging.info("Syncing %s and %s", src, dst)
+        rsync_folders(
+            src,
+            dst,
+        )
 
 ################################################################################
 # Build the wheels
@@ -347,7 +421,7 @@ logging.debug("Done!")
 final_wheel = join(WHEELS_FOLDER, target_file)
 logging.info("The final wheel will be at '%s'", final_wheel)
 # WARNING: adding --strip here breaks the wheel OFC
-if platform.system().strip().lower() == "linux":
+if platform.system().strip().lower() == "linux" and not args.skip_repair:
     logging.info("Fixing the wheel to be in the standard manylinux2010 if needed")
     exec(
         "auditwheel repair {} --wheel-dir {}".format(target_file, WHEELS_FOLDER),
