@@ -130,10 +130,10 @@ pub fn get_okapi_bm25_tfidf_from_documents<T: Eq + Hash + Send + Sync + Clone + 
                 .iter()
                 .collect::<Counter<&T, usize>>()
                 .into_iter()
-                .map(|(&word_name, &current_document_word_count)| {
+                .map(|(&word_name, current_document_word_count)| {
                     // Surely the word is, by definition in the vocabulary.
                     let word_id = *vocabulary.get(&word_name).unwrap();
-                    let word_frequency = current_document_word_count as f32 / document_len;
+                    let word_frequency = current_document_word_count.clone() as f32 / document_len;
                     let unique_document_occurrencies =
                         unique_document_occurrencies_per_word[word_id] as f32;
                     let inverse_document_frequency =
