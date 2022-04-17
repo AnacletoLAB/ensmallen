@@ -50,7 +50,7 @@ impl Graph {
     ///     called `get_dense_node_mapping` that returns a mapping from
     ///     the non trap nodes (those from where a walk could start) and
     ///     maps these nodes into a dense range of values.
-    /// max_neighbours: int = None
+    /// max_neighbours: Optional[int] = 100
     ///     Maximum number of randomly sampled neighbours to consider.
     ///     If this parameter is used, the walks becomes probabilistic in nature
     ///     and becomes an approximation of an exact walk.
@@ -140,7 +140,7 @@ impl Graph {
     ///     called `get_dense_node_mapping` that returns a mapping from
     ///     the non trap nodes (those from where a walk could start) and
     ///     maps these nodes into a dense range of values.
-    /// max_neighbours: int = None
+    /// max_neighbours: Optional[int] = 100
     ///     Maximum number of randomly sampled neighbours to consider.
     ///     If this parameter is used, the walks becomes probabilistic in nature
     ///     and becomes an approximation of an exact walk.

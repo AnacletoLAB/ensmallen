@@ -54,7 +54,7 @@ impl Graph {
     /// * `embedding_size`: Option<usize> - The number of features to generate. By default 100, or the number of nodes in the graph if it is lower.
     /// * `verbose`: Option<bool> - Whether to show the loading bar. By default true.
     ///
-    pub fn get_spine<
+    pub fn compute_spine_embedding<
         'a,
         T: 'a + TryFrom<u32> + Into<u32> + Send + Sync + IsInteger + TryFrom<usize>,
     >(

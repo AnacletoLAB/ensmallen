@@ -26,7 +26,7 @@ impl Graph {
         max_neighbours: Option<NodeT>,
         normalize_by_degree: Option<bool>,
         window_size: Option<usize>,
-        negatives_number: Option<usize>,
+        number_of_negative_samples: Option<usize>,
         learning_rate: Option<f32>,
         random_state: Option<u64>,
         verbose: Option<bool>,
@@ -36,7 +36,7 @@ impl Graph {
         let window_size = window_size.unwrap_or(4);
         let context_size = (window_size * 2) as f32;
         let epochs = epochs.unwrap_or(1);
-        let negatives_number = negatives_number.unwrap_or(5);
+        let number_of_negative_samples = number_of_negative_samples.unwrap_or(5);
         let learning_rate = learning_rate.unwrap_or(0.025);
         let mut random_state = random_state.unwrap_or(42);
         random_state = splitmix64(random_state);
@@ -55,7 +55,16 @@ impl Graph {
         }
 
         if !self.has_nodes_sorted_by_decreasing_outbound_node_degree() {
-            return Err("The current graph does not have decreasing outbounds.".to_string());
+            return Err(
+                concat!(
+                    "The current graph does not have nodes sorted by decreasing node degrees ",
+                    "and therefore the negative sampling used to approximate the sigmoid and ",
+                    "binary cross-entropy loss. You can sort this graph the desired way by ",
+                    "using the `graph.sort_by_decreasing_outbound_node_degree()` method. ",
+                    "Do note that this method does not sort in-place ",
+                    "but creates a new instance of the provided graph. "
+                ).to_string()
+            );
         }
 
         if (walk_length as usize) < window_size * 2 + 1 {
@@ -181,7 +190,7 @@ impl Graph {
                             .iter()
                             .cloned()
                             .chain(
-                                (0..negatives_number)
+                                (0..number_of_negative_samples)
                                     .filter_map(|_| unsafe {
                                         let sampled_node = self
                                             .get_unchecked_node_ids_from_edge_id(sample_uniform(

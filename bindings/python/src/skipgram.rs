@@ -4,7 +4,7 @@ use numpy::PyArray2;
 #[pymethods]
 impl Graph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, *, embedding_size, epochs, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, iterations, max_neighbours, normalize_by_degree, window_size, negatives_number, learning_rate, random_state, verbose)"]
+    #[text_signature = "($self, *, embedding_size, epochs, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, iterations, max_neighbours, normalize_by_degree, window_size, number_of_negative_samples, learning_rate, random_state, verbose)"]
     /// Compute the SkipGram node embedding for the current graph.
     /// This method will return a numpy array with shape (number_of_nodes, embedding_size)
     /// where the i-th row is the embedding of the node with node_id i.
@@ -43,7 +43,7 @@ impl Graph {
     ///     multigraphs, otherwise it has no impact.
     /// iterations: int = 1
     ///     Number of cycles on the graphs to execute.
-    /// max_neighbours: int = None
+    /// max_neighbours: Optional[int] = 100
     ///     Maximum number of randomly sampled neighbours to consider.
     ///     If this parameter is used, the walks becomes probabilistic in nature
     ///     and becomes an approximation of an exact walk.
@@ -54,7 +54,7 @@ impl Graph {
     ///     it can be more fit for some graphs.
     /// window_size: int = 4
     ///     Window size to consider for the sequences.
-    /// negatives_number: usize = 5
+    /// number_of_negative_samples: usize = 5
     ///     How many non-contextual words we will add to the contextual one
     ///     when computing the gradients.
     /// learning_rate: float = 0.025
@@ -80,7 +80,7 @@ impl Graph {
         max_neighbours: Option<NodeT>,
         normalize_by_degree: Option<bool>,
         window_size: Option<usize>,
-        negatives_number: Option<usize>,
+        number_of_negative_samples: Option<usize>,
         learning_rate: Option<f32>,
         random_state: Option<u64>,
         verbose: Option<bool>,
@@ -107,7 +107,7 @@ impl Graph {
             max_neighbours,
             normalize_by_degree,
             window_size,
-            negatives_number,
+            number_of_negative_samples,
             learning_rate,
             random_state,
             verbose,

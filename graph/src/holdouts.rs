@@ -91,7 +91,7 @@ impl Graph {
     /// skipgrams algorithm.
     ///
     /// # Arguments
-    /// * `negatives_number`: EdgeT - Number of negatives edges to include.
+    /// * `number_of_negative_samples`: EdgeT - Number of negatives edges to include.
     /// * `random_state`: Option<EdgeT> - random_state to use to reproduce negative edge set.
     /// * `seed_graph`: Option<&Graph> - Optional graph to use to filter the negative edges. The negative edges generated when this variable is provided will always have a node within this graph.
     /// * `only_from_same_component`: Option<bool> - Whether to sample negative edges only from nodes that are from the same component.
@@ -102,14 +102,14 @@ impl Graph {
     /// * If the `sample_only_edges_with_heterogeneous_node_types` argument is provided as true, but the graph does not have node types.
     pub fn sample_negatives(
         &self,
-        negatives_number: EdgeT,
+        number_of_negative_samples: EdgeT,
         random_state: Option<EdgeT>,
         seed_graph: Option<&Graph>,
         only_from_same_component: Option<bool>,
         sample_only_edges_with_heterogeneous_node_types: Option<bool>,
         verbose: Option<bool>,
     ) -> Result<Graph> {
-        if negatives_number == 0 {
+        if number_of_negative_samples == 0 {
             return Err(String::from("The number of negatives cannot be zero."));
         }
         let sample_only_edges_with_heterogeneous_node_types =
@@ -189,28 +189,28 @@ impl Graph {
 
         // We check that the number of requested negative edges is compatible with the
         // current graph instance.
-        if negatives_number > max_negative_edges {
+        if number_of_negative_samples > max_negative_edges {
             return Err(format!(
                 concat!(
                     "The requested negatives number {} is more than the ",
                     "number of negative edges that exist in the graph ({})."
                 ),
-                negatives_number, max_negative_edges
+                number_of_negative_samples, max_negative_edges
             ));
         }
 
         let pb1 = get_loading_bar(
             verbose,
             "Computing negative edges",
-            negatives_number as usize,
+            number_of_negative_samples as usize,
         );
 
-        let mut negative_edges_hashset = HashSet::with_capacity(negatives_number as usize);
+        let mut negative_edges_hashset = HashSet::with_capacity(number_of_negative_samples as usize);
         let mut last_length = 0;
         let mut sampling_round: usize = 0;
 
         // randomly extract negative edges until we have the choosen number
-        while negative_edges_hashset.len() < negatives_number as usize {
+        while negative_edges_hashset.len() < number_of_negative_samples as usize {
             // generate two random_states for reproducibility porpouses
             random_state = splitmix64(random_state as u64) as EdgeT;
             let src_random_state = rand_u64(random_state);
@@ -220,14 +220,14 @@ impl Graph {
             let tmp_tb = get_loading_bar(
                 verbose,
                 format!("Negatives sampling round {}", sampling_round).as_ref(),
-                negatives_number as usize,
+                number_of_negative_samples as usize,
             );
             sampling_round += 1;
 
             // generate the random edge-sources
-            let sampled_edge_ids = gen_random_vec(negatives_number as usize, src_random_state)
+            let sampled_edge_ids = gen_random_vec(number_of_negative_samples as usize, src_random_state)
                 .into_par_iter()
-                .zip(gen_random_vec(negatives_number as usize, dst_random_state).into_par_iter())
+                .zip(gen_random_vec(number_of_negative_samples as usize, dst_random_state).into_par_iter())
                 // convert them to plain (src, dst)
                 .progress_with(tmp_tb)
                 .filter_map(|(src_seed, dst_seed)| {
@@ -278,11 +278,11 @@ impl Graph {
                     sampling_round
                 )
                 .as_ref(),
-                negatives_number as usize,
+                number_of_negative_samples as usize,
             );
 
             for edge_id in sampled_edge_ids.iter().progress_with(pb3) {
-                if negative_edges_hashset.len() >= negatives_number as usize {
+                if negative_edges_hashset.len() >= number_of_negative_samples as usize {
                     break;
                 }
                 negative_edges_hashset.insert(*edge_id);

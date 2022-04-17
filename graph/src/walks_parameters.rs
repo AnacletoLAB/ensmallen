@@ -119,7 +119,7 @@ impl SingleWalkParameters {
         Ok(SingleWalkParameters {
             walk_length,
             weights: WalkWeights::default(),
-            max_neighbours: None,
+            max_neighbours: Some(100),
             normalize_by_degree: false
         })
     }

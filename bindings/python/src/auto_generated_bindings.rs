@@ -9855,7 +9855,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, negatives_number, random_state, seed_graph, only_from_same_component, sample_only_edges_with_heterogeneous_node_types, verbose)"]
+    #[text_signature = "($self, number_of_negative_samples, random_state, seed_graph, only_from_same_component, sample_only_edges_with_heterogeneous_node_types, verbose)"]
     /// Returns Graph with given amount of negative edges as positive edges.
     ///
     /// The graph generated may be used as a testing negatives partition to be
@@ -9864,7 +9864,7 @@ impl Graph {
     ///
     /// Parameters
     /// ----------
-    /// negatives_number: int
+    /// number_of_negative_samples: int
     ///     Number of negatives edges to include.
     /// random_state: Optional[int]
     ///     random_state to use to reproduce negative edge set.
@@ -9885,7 +9885,7 @@ impl Graph {
     ///
     pub fn sample_negatives(
         &self,
-        negatives_number: EdgeT,
+        number_of_negative_samples: EdgeT,
         random_state: Option<EdgeT>,
         seed_graph: Option<&Graph>,
         only_from_same_component: Option<bool>,
@@ -9893,7 +9893,7 @@ impl Graph {
         verbose: Option<bool>,
     ) -> PyResult<Graph> {
         Ok(pe!(self.inner.sample_negatives(
-            negatives_number.into(),
+            number_of_negative_samples.into(),
             random_state.into(),
             seed_graph.map(|sg| &sg.inner),
             only_from_same_component.into(),

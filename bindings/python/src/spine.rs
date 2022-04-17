@@ -1,7 +1,7 @@
 use super::*;
 use rayon::prelude::*;
 
-macro_rules! impl_get_spine {
+macro_rules! impl_compute_spine_embedding {
     ($($dtype:ty),*) => {
         #[pymethods]
         impl Graph {
@@ -11,10 +11,14 @@ macro_rules! impl_get_spine {
             ///
             /// Parameters
             /// ----------------------------
-            /// embedding_size: Optional[int] - The number of features to generate. By default 100, or the number of nodes in the graph if it is lower.
-            /// dtype: Optional[str] - Dtype to use for the embedding. Note that an improper dtype may cause overflows.
-            /// verbose: Optional[bool] - Whether to show the loading bar. By default true.
-            pub fn get_spine(
+            /// embedding_size: Optional[int]
+            ///     The number of features to generate. By default 100, or the number of nodes in the graph if it is lower.
+            /// dtype: Optional[str] = None
+            ///     Dtype to use for the embedding. Note that an improper dtype may cause overflows.
+            ///     When not provided, we automatically infer the best one by using the diameter.
+            /// verbose: Optional[bool] = True
+            ///     Whether to show the loading bar. By default true.
+            pub fn compute_spine_embedding(
                 &self,
                 embedding_size: Option<usize>,
                 dtype: Option<&str>,
@@ -38,7 +42,7 @@ macro_rules! impl_get_spine {
                     $(
                         stringify!($dtype) => {
                             let (number_of_node_features, node_embedding_iterator) =
-                            pe!(self.inner.get_spine::<$dtype>(
+                            pe!(self.inner.compute_spine_embedding::<$dtype>(
                                 embedding_size,
                                 verbose,
                             ))?;
@@ -77,4 +81,4 @@ macro_rules! impl_get_spine {
     };
 }
 
-impl_get_spine! {u8, u16, u32}
+impl_compute_spine_embedding! {u8, u16, u32}
