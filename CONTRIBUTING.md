@@ -154,10 +154,12 @@ optional arguments:
                         Verbosity of the logger (default: info)
 ```
 
-Before running it you have to install `auditwheel` with:
+If you want to publish the wheel for linux (you should **really** follow the section below) you have to install `auditwheel` with:
 ```
 pip install auditwheel
 ```
+otherwise you can skip the repair with adding the `--skip-repair` flag on the build script. This is fine for local development but
+the wheel won't be accepted by Pypi.
 
 then you can run the building with:
 ```
@@ -166,6 +168,30 @@ python build.py
 ```
 
 the resulting wheels will be in the folder specified in the settings (by default `./bindings/python/wheels`).
+
+## Building a publishable wheel for ManyLinux2010
+1-  (the first time) Build the compilation environment
+```shell
+sudo docker build -t manylinux2010 -f ./setup/DockerFileManylinux2010 ./setup
+```
+2- Open a shell
+```shell
+sudo docker run --rm -it -v "${PWD}:/io" manylinux2010 bash
+```
+3- Inside the shell:
+```shell
+# navigate to the the python bindings
+cd /io/bindings/python
+# run the compilation
+python3 ./build.py
+# upload the result
+twine upload ./wheels/*.whl
+```
+Since the docker runs as root it will touch many files, at the end run in the root:
+```shell
+sudo chown -R $USER:$USER *
+```
+If `twine upload` hangs with no output it's usually a permission problem and you are probably trying to upload the wheel ***outside*** of the docker which requires to `chown` the wheels.
 
 # Fuzzing Python Bindings
 Using the new shiny Google's toy, [Atheris](https://github.com/google/atheris) we can fuzz the bindings.
