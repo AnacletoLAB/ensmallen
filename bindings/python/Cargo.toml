@@ -18,7 +18,6 @@ requires-dist = [
     "toml~=0.10.0",
     "downloaders>=1.0.15",
     "compress_json",
-    "environments_utils",
     "userinput>=1.0.16",
     "cache_decorator>=2.0.13",
     "tqdm",
