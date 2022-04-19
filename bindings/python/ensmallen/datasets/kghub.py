@@ -67,7 +67,7 @@ def KGOntoML(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "current", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "graphml", **kwargs
 ) -> Graph:
     """Return KG-OntoML graph	
 
@@ -95,11 +95,13 @@ def KGOntoML(
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
         Sys var with cache directory
-    version = "current"
+    version = "graphml"
         Version to retrieve	
 		The available versions are:
 			- 20220304
-			- current	
+			- 20220414
+			- current
+			- graphml	
 	
 	
     """

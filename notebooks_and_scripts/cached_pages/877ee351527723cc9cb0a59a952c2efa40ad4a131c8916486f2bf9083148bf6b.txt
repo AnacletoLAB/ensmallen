@@ -68,603 +68,14 @@
             </p>
             <div class="visualClear"></div>
             <div class="status">
-                Dumps are in progress...
+                Dump process is idle.
             </div>
             <div class="otherindexlink">
                 Also view sorted by <a href="backup-index-bydb.html">wiki name</a>
             </div>
             <ul>
-                <li>2022-04-09 06:18:08 <a href="wikidatawiki/20220401">wikidatawiki</a>: <span class='in-progress'>Dump in progress</span></li>
-<ul><li class='in-progress'><span class='updates'>2022-04-06 01:41:49</span> <span class='status'>in-progress</span> <span class='title'>All pages with complete page edit history (.bz2)</span><ul><li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p1p166.bz2 2.8 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p167p323.bz2 3.2 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p324p393.bz2 1.6 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p394p458.bz2 3.5 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p459p958.bz2 2.3 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p959p1103.bz2 2.4 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p1104p1246.bz2 2.4 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p1247p1367.bz2 2.3 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p1368p2241.bz2 1.7 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p2242p4549.bz2 1.4 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p4550p7654.bz2 1.3 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p7655p10142.bz2 1.4 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p10143p13282.bz2 1.2 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p13283p15790.bz2 1.4 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p15791p20246.bz2 1.2 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p20247p26316.bz2 1.0 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p26317p30624.bz2 1.1 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p30625p36894.bz2 1.1 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p36895p41981.bz2 1.3 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p41982p45360.bz2 1.2 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p45361p49451.bz2 1.2 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p49452p55560.bz2 1.1 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p55561p61955.bz2 986.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p61956p68158.bz2 909.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p68159p75621.bz2 841.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p75622p81993.bz2 929.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p81994p87412.bz2 1.1 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p87413p98787.bz2 830.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p98788p109105.bz2 940.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p109106p119380.bz2 922.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p119381p129845.bz2 1.0 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p129846p135292.bz2 1.1 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p135293p147762.bz2 1018.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p147763p155808.bz2 1.0 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p155809p159912.bz2 1.0 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p159913p164908.bz2 1.1 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p164909p170746.bz2 1.2 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p170747p175146.bz2 1.3 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p175147p180964.bz2 1.1 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p180965p185042.bz2 1.3 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p185043p188000.bz2 1.3 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p188001p191171.bz2 1.2 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p191172p198332.bz2 1.0 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p198333p203992.bz2 1.1 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p203993p208459.bz2 1.1 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p208460p213562.bz2 1.0 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p213563p222218.bz2 1.1 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p222219p228927.bz2 1.0 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p228928p235107.bz2 1.2 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p235108p245053.bz2 1.0 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p245054p256647.bz2 961.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p256648p262396.bz2 1.1 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p262397p267019.bz2 1.1 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p267020p279395.bz2 993.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p279396p294639.bz2 909.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p294640p301869.bz2 935.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p301870p307133.bz2 1.0 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p307134p315589.bz2 1.0 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p315590p322234.bz2 1.0 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p322235p338645.bz2 896.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p338646p351210.bz2 924.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p351211p362663.bz2 893.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p362664p373418.bz2 1.0 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p373419p396331.bz2 1.0 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p396332p410260.bz2 937.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p410261p425442.bz2 867.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p425443p434578.bz2 1.0 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history1.xml-p434579p441397.bz2 592.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p441398p450541.bz2 1015.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p450542p461511.bz2 1.0 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p461512p472415.bz2 952.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p472416p482540.bz2 845.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p482541p496680.bz2 829.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p496681p510506.bz2 851.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p510507p523164.bz2 865.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p523165p539111.bz2 850.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p539112p555349.bz2 970.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p555350p572646.bz2 760.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p572647p591281.bz2 758.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p591282p606732.bz2 887.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p606733p623227.bz2 873.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p623228p639160.bz2 901.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p639161p656435.bz2 821.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p656436p669867.bz2 940.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p669868p682588.bz2 940.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p682589p696348.bz2 858.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p696349p713244.bz2 885.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p713245p732341.bz2 750.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p732342p757589.bz2 679.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p757590p781165.bz2 727.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p781166p798354.bz2 850.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p798355p815225.bz2 1.4 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p815226p836623.bz2 692.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p836624p859254.bz2 746.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p859255p878357.bz2 787.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p878358p894811.bz2 829.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p894812p911265.bz2 799.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p911266p928486.bz2 770.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p928487p948253.bz2 842.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p948254p971683.bz2 682.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p971684p993288.bz2 657.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p993289p1012869.bz2 734.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p1012870p1029011.bz2 787.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p1029012p1046843.bz2 736.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p1046844p1069739.bz2 657.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p1069740p1091476.bz2 721.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p1091477p1113041.bz2 721.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history2.xml-p1113042p1114931.bz2 64.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1114932p1138705.bz2 642.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1138706p1165567.bz2 617.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1165568p1192864.bz2 598.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1192865p1209904.bz2 810.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1209905p1233715.bz2 769.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1233716p1259188.bz2 695.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1259189p1281242.bz2 665.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1281243p1300852.bz2 731.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1300853p1321095.bz2 750.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1321096p1344994.bz2 662.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1344995p1370982.bz2 626.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1370983p1395816.bz2 582.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1395817p1421754.bz2 549.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1421755p1451027.bz2 512.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1451028p1479873.bz2 538.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1479874p1509530.bz2 508.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1509531p1532791.bz2 660.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1532792p1555666.bz2 555.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1555667p1579799.bz2 653.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1579800p1608018.bz2 617.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1608019p1631776.bz2 546.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1631777p1658220.bz2 517.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1658221p1685731.bz2 513.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1685732p1706309.bz2 596.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1706310p1737753.bz2 521.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1737754p1767503.bz2 467.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1767504p1802230.bz2 429.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1802231p1828823.bz2 474.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1828824p1854480.bz2 525.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1854481p1878977.bz2 502.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1878978p1906802.bz2 489.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1906803p1932663.bz2 508.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1932664p1957444.bz2 556.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1957445p1983970.bz2 495.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p1983971p2007198.bz2 553.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p2007199p2034609.bz2 487.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history3.xml-p2034610p2049641.bz2 219.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2049642p2078895.bz2 445.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2078896p2106243.bz2 452.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2106244p2134790.bz2 395.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2134791p2161353.bz2 489.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2161354p2190445.bz2 421.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2190446p2218209.bz2 522.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2218210p2247299.bz2 440.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2247300p2274482.bz2 488.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2274483p2303209.bz2 455.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2303210p2332156.bz2 592.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2332157p2359248.bz2 447.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2359249p2386239.bz2 487.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2386240p2413571.bz2 467.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2413572p2442895.bz2 465.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2442896p2471646.bz2 488.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2471647p2497496.bz2 493.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2497497p2523112.bz2 499.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2523113p2546170.bz2 521.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2546171p2571155.bz2 537.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2571156p2597529.bz2 435.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2597530p2620210.bz2 506.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2620211p2649447.bz2 441.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2649448p2684970.bz2 360.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2684971p2721832.bz2 458.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2721833p2752467.bz2 459.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2752468p2786415.bz2 479.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2786416p2819330.bz2 449.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2819331p2854372.bz2 411.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2854373p2886000.bz2 451.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2886001p2918740.bz2 478.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2918741p2949090.bz2 483.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2949091p2978705.bz2 482.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p2978706p3007809.bz2 478.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p3007810p3033656.bz2 469.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p3033657p3062257.bz2 483.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history4.xml-p3062258p3098446.bz2 428.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p3098447p3131958.bz2 460.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p3131959p3158611.bz2 484.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p3158612p3190777.bz2 463.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p3190778p3223433.bz2 438.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p3223434p3261127.bz2 421.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p3261128p3291008.bz2 421.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p3291009p3326613.bz2 413.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p3326614p3361591.bz2 463.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p3361592p3398394.bz2 466.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p3398395p3434644.bz2 407.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p3434645p3471014.bz2 418.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p3471015p3513055.bz2 406.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p3513056p3546785.bz2 407.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p3546786p3578339.bz2 428.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p3578340p3605247.bz2 461.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p3605248p3638457.bz2 430.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p3638458p3672596.bz2 426.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p3672597p3715382.bz2 361.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p3715383p3753485.bz2 388.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p3753486p3794654.bz2 384.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p3794655p3838514.bz2 374.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p3838515p3882163.bz2 466.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p3882164p3918491.bz2 457.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p3918492p3953959.bz2 541.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p3953960p3990456.bz2 455.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p3990457p4029294.bz2 459.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p4029295p4065933.bz2 453.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p4065934p4101503.bz2 416.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p4101504p4139935.bz2 409.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p4139936p4177252.bz2 791.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p4177253p4217734.bz2 438.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p4217735p4258352.bz2 467.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p4258353p4298686.bz2 437.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p4298687p4335177.bz2 469.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p4335178p4402252.bz2 326.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p4402253p4458646.bz2 363.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history5.xml-p4458647p4469004.bz2 105.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p4469005p4506784.bz2 412.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p4506785p4542708.bz2 388.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p4542709p4576328.bz2 403.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p4576329p4617613.bz2 408.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p4617614p4663529.bz2 346.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p4663530p4702015.bz2 371.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p4702016p4741151.bz2 374.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p4741152p4776352.bz2 394.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p4776353p4820110.bz2 406.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p4820111p4858218.bz2 409.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p4858219p4898635.bz2 376.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p4898636p4944419.bz2 368.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p4944420p4984660.bz2 427.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p4984661p5015900.bz2 405.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p5015901p5057090.bz2 370.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p5057091p5099390.bz2 359.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p5099391p5135122.bz2 401.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p5135123p5173889.bz2 418.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p5173890p5218703.bz2 394.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p5218704p5256523.bz2 411.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p5256524p5296867.bz2 385.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p5296868p5331311.bz2 455.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p5331312p5374624.bz2 397.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p5374625p5418794.bz2 425.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p5418795p5476430.bz2 369.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p5476431p5531094.bz2 395.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p5531095p5589244.bz2 312.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p5589245p5642747.bz2 316.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p5642748p5693498.bz2 369.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p5693499p5740870.bz2 378.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p5740871p5796828.bz2 391.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p5796829p5863340.bz2 388.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p5863341p5915391.bz2 382.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p5915392p5959231.bz2 411.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p5959232p6001432.bz2 398.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p6001433p6041815.bz2 413.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history6.xml-p6041816p6052571.bz2 113.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p6052572p6095720.bz2 407.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p6095721p6146872.bz2 399.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p6146873p6200247.bz2 377.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p6200248p6239742.bz2 419.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p6239743p6278126.bz2 610.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p6278127p6318586.bz2 383.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p6318587p6359852.bz2 379.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p6359853p6406765.bz2 394.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p6406766p6469383.bz2 378.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p6469384p6526649.bz2 433.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p6526650p6582466.bz2 436.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p6582467p6624004.bz2 417.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p6624005p6672168.bz2 424.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p6672169p6726076.bz2 404.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p6726077p6797474.bz2 431.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p6797475p6857311.bz2 446.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p6857312p6911908.bz2 391.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p6911909p6964062.bz2 430.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p6964063p7011399.bz2 375.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p7011400p7052574.bz2 405.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p7052575p7091657.bz2 410.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p7091658p7141668.bz2 398.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p7141669p7190677.bz2 365.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p7190678p7233265.bz2 381.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p7233266p7270963.bz2 398.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p7270964p7317902.bz2 368.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p7317903p7364638.bz2 364.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p7364639p7404231.bz2 422.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p7404232p7480652.bz2 378.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p7480653p7529770.bz2 360.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p7529771p7585165.bz2 395.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p7585166p7636811.bz2 388.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p7636812p7686209.bz2 423.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p7686210p7730038.bz2 379.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p7730039p7775083.bz2 362.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p7775084p7830830.bz2 324.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history7.xml-p7830831p7838096.bz2 48.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p7838097p7883895.bz2 369.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p7883896p7936313.bz2 354.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p7936314p7975147.bz2 401.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p7975148p8023021.bz2 371.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p8023022p8063463.bz2 333.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p8063464p8104148.bz2 310.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p8104149p8146456.bz2 312.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p8146457p8194782.bz2 308.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p8194783p8244477.bz2 307.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p8244478p8291540.bz2 302.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p8291541p8346421.bz2 293.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p8346422p8404543.bz2 265.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p8404544p8462198.bz2 299.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p8462199p8526804.bz2 289.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p8526805p8589101.bz2 297.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p8589102p8663587.bz2 268.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p8663588p8741900.bz2 273.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p8741901p8818714.bz2 317.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p8818715p8902609.bz2 288.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p8902610p8993258.bz2 261.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p8993259p9069441.bz2 289.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p9069442p9143457.bz2 358.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p9143458p9228212.bz2 320.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p9228213p9314155.bz2 407.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p9314156p9404089.bz2 338.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p9404090p9482448.bz2 422.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p9482449p9578189.bz2 272.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p9578190p9691767.bz2 222.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p9691768p9803902.bz2 272.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p9803903p10029984.bz2 250.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p10029985p10647884.bz2 185.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p10647885p10995416.bz2 196.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p10995417p11242243.bz2 243.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p11242244p11453951.bz2 209.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history8.xml-p11453952p11495800.bz2 42.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p11495801p11614086.bz2 307.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p11614087p11685386.bz2 335.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p11685387p11728461.bz2 288.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p11728462p11761176.bz2 278.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p11761177p11798314.bz2 282.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p11798315p11839908.bz2 310.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p11839909p11880254.bz2 292.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p11880255p11913385.bz2 265.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p11913386p11946657.bz2 398.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p11946658p11987308.bz2 287.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p11987309p12044258.bz2 288.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p12044259p12114104.bz2 290.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p12114105p12165090.bz2 548.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p12165091p12225127.bz2 360.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p12225128p12287663.bz2 354.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p12287664p12345502.bz2 362.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p12345503p12427026.bz2 345.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p12427027p12515692.bz2 310.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p12515693p12587587.bz2 307.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p12587588p12654973.bz2 299.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p12654974p12719212.bz2 311.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p12719213p12789268.bz2 300.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p12789269p12853260.bz2 428.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p12853261p12910638.bz2 552.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p12910639p12982154.bz2 419.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p12982155p13077776.bz2 345.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p13077777p13181288.bz2 323.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p13181289p13250000.bz2 401.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p13250001p13286148.bz2 513.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p13286149p13362916.bz2 388.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p13362917p13453846.bz2 356.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p13453847p13533349.bz2 422.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p13533350p13642726.bz2 787.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p13642727p13737889.bz2 429.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p13737890p13784085.bz2 334.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p13784086p13969684.bz2 285.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history9.xml-p13969685p13998367.bz2 41.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p13998368p14164203.bz2 627.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p14164204p14349025.bz2 746.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p14349026p14545542.bz2 475.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p14545543p14805867.bz2 944.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p14805868p14880194.bz2 573.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p14880195p15037340.bz2 822.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p15037341p15074732.bz2 804.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p15074733p15116418.bz2 1.2 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p15116419p15146578.bz2 718.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p15146579p15173917.bz2 269.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p15173918p15203756.bz2 355.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p15203757p15233113.bz2 358.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p15233114p15265310.bz2 356.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p15265311p15295014.bz2 388.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p15295015p15333224.bz2 275.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p15333225p15381092.bz2 221.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p15381093p15435864.bz2 234.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p15435865p15490134.bz2 222.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p15490135p15526832.bz2 258.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p15526833p15569185.bz2 251.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p15569186p15611012.bz2 249.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p15611013p15657541.bz2 233.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p15657542p15712315.bz2 234.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p15712316p15761443.bz2 256.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p15761444p15823836.bz2 245.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p15823837p15893770.bz2 246.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p15893771p15961824.bz2 283.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p15961825p16013227.bz2 284.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p16013228p16052361.bz2 279.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p16052362p16088547.bz2 282.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p16088548p16127289.bz2 285.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p16127290p16173335.bz2 342.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p16173336p16206843.bz2 298.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history10.xml-p16206844p16236979.bz2 226.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p16236980p16285059.bz2 317.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p16285060p16322877.bz2 388.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p16322878p16356859.bz2 241.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p16356860p16395042.bz2 243.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p16395043p16443440.bz2 233.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p16443441p16498015.bz2 244.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p16498016p16532153.bz2 307.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p16532154p16561916.bz2 367.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p16561917p16596036.bz2 843.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p16596037p16646986.bz2 555.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p16646987p16714324.bz2 361.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p16714325p16773356.bz2 592.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p16773357p16827132.bz2 381.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p16827133p16879295.bz2 368.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p16879296p16927656.bz2 400.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p16927657p16971854.bz2 582.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p16971855p17000021.bz2 376.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p17000022p17029751.bz2 354.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p17029752p17058712.bz2 409.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p17058713p17095367.bz2 419.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p17095368p17118218.bz2 385.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p17118219p17141058.bz2 369.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p17141059p17163895.bz2 384.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p17163896p17188079.bz2 376.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p17188080p17212374.bz2 363.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p17212375p17236685.bz2 363.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p17236686p17271902.bz2 446.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p17271903p17312449.bz2 301.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p17312450p17363208.bz2 681.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p17363209p17401569.bz2 933.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p17401570p17442699.bz2 283.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p17442700p17495687.bz2 403.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p17495688p17569569.bz2 632.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p17569570p17617739.bz2 809.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history11.xml-p17617740p17670284.bz2 366.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p17670285p17757929.bz2 353.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p17757930p17830253.bz2 377.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p17830254p17877177.bz2 443.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p17877178p17949463.bz2 399.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p17949464p18052818.bz2 368.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p18052819p18144046.bz2 307.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p18144047p18222146.bz2 323.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p18222147p18292809.bz2 383.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p18292810p18362594.bz2 415.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p18362595p18442779.bz2 321.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p18442780p18495013.bz2 405.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p18495014p18574971.bz2 593.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p18574972p18652773.bz2 613.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p18652774p18720268.bz2 405.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p18720269p18773208.bz2 352.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p18773209p18827633.bz2 303.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p18827634p18862720.bz2 295.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p18862721p18903546.bz2 325.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p18903547p18958219.bz2 434.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p18958220p19019031.bz2 470.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p19019032p19073386.bz2 372.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p19073387p19131949.bz2 361.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p19131950p19179279.bz2 340.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p19179280p19253497.bz2 324.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p19253498p19348466.bz2 246.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p19348467p19417029.bz2 246.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p19417030p19483427.bz2 325.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p19483428p19561965.bz2 805.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p19561966p19570822.bz2 557.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p19570823p19576765.bz2 1.9 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p19576766p19589363.bz2 590.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p19589364p19613551.bz2 719.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p19613552p19661511.bz2 308.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p19661512p19726231.bz2 373.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p19726232p19783117.bz2 477.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p19783118p19831091.bz2 620.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history12.xml-p19831092p19883157.bz2 793.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p19883158p19967252.bz2 379.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p19967253p20036372.bz2 271.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p20036373p20089121.bz2 680.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p20089122p20128908.bz2 494.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p20128909p20171587.bz2 842.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p20171588p20239237.bz2 359.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p20239238p20301915.bz2 372.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p20301916p20385423.bz2 257.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p20385424p20489619.bz2 287.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p20489620p20547304.bz2 322.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p20547305p20656444.bz2 290.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p20656445p20778411.bz2 274.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p20778412p20842705.bz2 234.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p20842706p20943528.bz2 314.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p20943529p21030708.bz2 279.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p21030709p21152591.bz2 259.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p21152592p21224500.bz2 361.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p21224501p21300679.bz2 331.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p21300680p21405937.bz2 341.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p21405938p21491445.bz2 370.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p21491446p21561860.bz2 348.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p21561861p21622547.bz2 355.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p21622548p21702750.bz2 591.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p21702751p21789490.bz2 643.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p21789491p21895232.bz2 312.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p21895233p21980825.bz2 242.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p21980826p22054243.bz2 218.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p22054244p22164231.bz2 226.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p22164232p22253852.bz2 317.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p22253853p22361604.bz2 365.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p22361605p22441331.bz2 434.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p22441332p22492474.bz2 2.7 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p22492475p22545887.bz2 618.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p22545888p22621731.bz2 1.0 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p22621732p22807850.bz2 198.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history13.xml-p22807851p22836126.bz2 16.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p22836127p22984128.bz2 198.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p22984129p23049917.bz2 450.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p23049918p23117767.bz2 641.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p23117768p23156501.bz2 847.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p23156502p23167884.bz2 700.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p23167885p23182616.bz2 708.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p23182617p23232285.bz2 734.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p23232286p23276975.bz2 652.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p23276976p23312007.bz2 361.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p23312008p23351306.bz2 446.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p23351307p23389904.bz2 237.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p23389905p23441149.bz2 220.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p23441150p23497515.bz2 376.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p23497516p23540712.bz2 2.1 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p23540713p23565943.bz2 2.1 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p23565944p23600683.bz2 4.4 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p23600684p23652153.bz2 1.5 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p23652154p23711762.bz2 967.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p23711763p23763820.bz2 2.4 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p23763821p23821205.bz2 320.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p23821206p23891059.bz2 381.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p23891060p23951609.bz2 294.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p23951610p24015212.bz2 526.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p24015213p24022839.bz2 615.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p24022840p24078059.bz2 1.4 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p24078060p24145814.bz2 443.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p24145815p24228511.bz2 521.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p24228512p24290496.bz2 582.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p24290497p24335096.bz2 500.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p24335097p24385412.bz2 629.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p24385413p24447911.bz2 191.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p24447912p24511870.bz2 195.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p24511871p24577059.bz2 190.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p24577060p24642346.bz2 219.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p24642347p24701468.bz2 1.4 GB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p24701469p24830501.bz2 433.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p24830502p24949536.bz2 496.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p24949537p25015559.bz2 422.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history14.xml-p25015560p25024140.bz2 48.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p25024141p25084520.bz2 440.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p25084521p25157321.bz2 466.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p25157322p25234766.bz2 460.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p25234767p25318091.bz2 473.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p25318092p25393706.bz2 466.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p25393707p25454647.bz2 571.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p25454648p25503611.bz2 667.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p25503612p25556059.bz2 704.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p25556060p25608908.bz2 726.1 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p25608909p25671124.bz2 529.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p25671125p25748263.bz2 484.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p25748264p25813954.bz2 618.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p25813955p25880737.bz2 244.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p25880738p25918460.bz2 565.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p25918461p25981614.bz2 327.3 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p25981615p26051277.bz2 353.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p26051278p26108546.bz2 535.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p26108547p26161778.bz2 742.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p26161779p26216826.bz2 560.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p26216827p26263637.bz2 676.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p26263638p26289943.bz2 744.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p26289944p26340844.bz2 590.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p26340845p26413178.bz2 531.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p26413179p26480470.bz2 231.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p26648659p26714961.bz2 302.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p26714962p26770276.bz2 523.0 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p26770277p26828767.bz2 504.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p26828768p26918087.bz2 282.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p26918088p27016681.bz2 280.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history15.xml-p27016682p27066455.bz2 133.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history16.xml-p27066456p27148454.bz2 229.7 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history16.xml-p27148455p27223623.bz2 337.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history16.xml-p27223624p27296908.bz2 229.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history16.xml-p27296909p27391175.bz2 266.9 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history16.xml-p27391176p27664294.bz2 323.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history16.xml-p27664295p27817034.bz2 284.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history16.xml-p27817035p27952272.bz2 404.6 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history16.xml-p27952273p28111798.bz2 253.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history16.xml-p28111799p28194655.bz2 531.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history16.xml-p28194656p28254497.bz2 400.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history16.xml-p28254498p28316527.bz2 439.4 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history16.xml-p28316528p28384575.bz2 214.2 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history16.xml-p28384576p28464471.bz2 322.8 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history16.xml-p28464472p28610908.bz2 286.5 MB (written) </li>
-<li class='file'>wikidatawiki-20220401-pages-meta-history16.xml-p28610909p28673667.bz2 647.6 MB (written) </li></ul></li></ul>
+                <li>2022-04-16 00:45:53 <a href="wikidatawiki/20220401">wikidatawiki</a>: <span class='done'>Dump complete</span></li>
+
 <li>2022-04-07 21:43:42 <a href="enwiki/20220401">enwiki</a>: <span class='done'>Dump complete</span></li>
 
 <li>2022-04-05 05:12:56 <a href="ruwiki/20220401">ruwiki</a>: <span class='done'>Dump complete</span></li>
@@ -1043,9 +454,9 @@
 
 <li>2022-04-02 15:04:03 <a href="mznwiki/20220401">mznwiki</a>: <span class='done'>Dump complete</span></li>
 
-<li>2022-04-02 15:03:40 techconductwiki (private data): <span class='done'>Dump complete</span></li>
-
 <li>2022-04-02 15:03:38 <a href="ptwikinews/20220401">ptwikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-04-02 15:03:40 techconductwiki (private data): <span class='done'>Dump complete</span></li>
 
 <li>2022-04-02 15:03:26 <a href="ukwiktionary/20220401">ukwiktionary</a>: <span class='done'>Dump complete</span></li>
 
@@ -1131,9 +542,9 @@
 
 <li>2022-04-02 14:53:50 <a href="twwiki/20220401">twwiki</a>: <span class='done'>Dump complete</span></li>
 
-<li>2022-04-02 14:53:42 wikimaniateamwiki (private data): <span class='done'>Dump complete</span></li>
-
 <li>2022-04-02 14:53:36 <a href="iswiki/20220401">iswiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-04-02 14:53:42 wikimaniateamwiki (private data): <span class='done'>Dump complete</span></li>
 
 <li>2022-04-02 14:53:38 <a href="tetwiki/20220401">tetwiki</a>: <span class='done'>Dump complete</span></li>
 
@@ -1147,9 +558,9 @@
 
 <li>2022-04-02 14:52:33 <a href="newiktionary/20220401">newiktionary</a>: <span class='done'>Dump complete</span></li>
 
-<li>2022-04-02 14:52:33 <a href="xhwiktionary/20220401">xhwiktionary</a> (closed): <span class='done'>Dump complete</span></li>
-
 <li>2022-04-02 14:52:25 <a href="dewikivoyage/20220401">dewikivoyage</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-04-02 14:52:33 <a href="xhwiktionary/20220401">xhwiktionary</a> (closed): <span class='done'>Dump complete</span></li>
 
 <li>2022-04-02 14:52:31 <a href="zh_min_nanwikibooks/20220401">zh_min_nanwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
 
@@ -1213,9 +624,9 @@
 
 <li>2022-04-02 14:47:07 <a href="brwiki/20220401">brwiki</a>: <span class='done'>Dump complete</span></li>
 
-<li>2022-04-02 14:47:01 <a href="thwikinews/20220401">thwikinews</a> (closed): <span class='done'>Dump complete</span></li>
-
 <li>2022-04-02 14:46:54 <a href="bclwiki/20220401">bclwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-04-02 14:47:01 <a href="thwikinews/20220401">thwikinews</a> (closed): <span class='done'>Dump complete</span></li>
 
 <li>2022-04-02 14:46:47 <a href="frwikinews/20220401">frwikinews</a>: <span class='done'>Dump complete</span></li>
 
@@ -1227,13 +638,13 @@
 
 <li>2022-04-02 14:46:34 <a href="wikimania2005wiki/20220401">wikimania2005wiki</a> (closed): <span class='done'>Dump complete</span></li>
 
-<li>2022-04-02 14:46:29 <a href="yiwiki/20220401">yiwiki</a>: <span class='done'>Dump complete</span></li>
-
 <li>2022-04-02 14:46:25 <a href="nsowiki/20220401">nsowiki</a>: <span class='done'>Dump complete</span></li>
 
-<li>2022-04-02 14:46:18 <a href="srwikibooks/20220401">srwikibooks</a>: <span class='done'>Dump complete</span></li>
+<li>2022-04-02 14:46:29 <a href="yiwiki/20220401">yiwiki</a>: <span class='done'>Dump complete</span></li>
 
 <li>2022-04-02 14:46:12 <a href="dtywiki/20220401">dtywiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-04-02 14:46:18 <a href="srwikibooks/20220401">srwikibooks</a>: <span class='done'>Dump complete</span></li>
 
 <li>2022-04-02 14:46:10 <a href="tswiktionary/20220401">tswiktionary</a>: <span class='done'>Dump complete</span></li>
 
@@ -1723,9 +1134,9 @@
 
 <li>2022-04-02 13:59:27 <a href="ptwikisource/20220401">ptwikisource</a>: <span class='done'>Dump complete</span></li>
 
-<li>2022-04-02 13:59:25 <a href="wowiki/20220401">wowiki</a>: <span class='done'>Dump complete</span></li>
-
 <li>2022-04-02 13:59:22 <a href="mnwiki/20220401">mnwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-04-02 13:59:25 <a href="wowiki/20220401">wowiki</a>: <span class='done'>Dump complete</span></li>
 
 <li>2022-04-02 13:59:17 <a href="nowikibooks/20220401">nowikibooks</a>: <span class='done'>Dump complete</span></li>
 
@@ -1753,9 +1164,9 @@
 
 <li>2022-04-02 13:57:26 <a href="yowikibooks/20220401">yowikibooks</a> (closed): <span class='done'>Dump complete</span></li>
 
-<li>2022-04-02 13:57:16 <a href="wikimania2017wiki/20220401">wikimania2017wiki</a> (closed): <span class='done'>Dump complete</span></li>
-
 <li>2022-04-02 13:57:15 <a href="suwikiquote/20220401">suwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-04-02 13:57:16 <a href="wikimania2017wiki/20220401">wikimania2017wiki</a> (closed): <span class='done'>Dump complete</span></li>
 
 <li>2022-04-02 13:57:07 <a href="etwikisource/20220401">etwikisource</a>: <span class='done'>Dump complete</span></li>
 
@@ -1793,9 +1204,9 @@
 
 <li>2022-04-02 13:53:43 <a href="avwiki/20220401">avwiki</a>: <span class='done'>Dump complete</span></li>
 
-<li>2022-04-02 13:53:42 <a href="zuwikibooks/20220401">zuwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
-
 <li>2022-04-02 13:53:39 <a href="snwiktionary/20220401">snwiktionary</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-04-02 13:53:42 <a href="zuwikibooks/20220401">zuwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
 
 <li>2022-04-02 13:53:16 <a href="cswikisource/20220401">cswikisource</a>: <span class='done'>Dump complete</span></li>
 
@@ -2279,31 +1690,31 @@
 
 <li>2022-04-02 13:07:08 chapcomwiki (private data): <span class='done'>Dump complete</span></li>
 
-<li>2022-04-02 13:06:56 <a href="tlwiktionary/20220401">tlwiktionary</a>: <span class='done'>Dump complete</span></li>
-
 <li>2022-04-02 13:06:47 <a href="arwikimedia/20220401">arwikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-04-02 13:06:56 <a href="tlwiktionary/20220401">tlwiktionary</a>: <span class='done'>Dump complete</span></li>
 
 <li>2022-04-02 13:06:49 <a href="kowikiquote/20220401">kowikiquote</a>: <span class='done'>Dump complete</span></li>
 
 <li>2022-04-02 13:06:07 <a href="advisorywiki/20220401">advisorywiki</a> (closed): <span class='done'>Dump complete</span></li>
 
-<li>2022-04-02 13:06:11 <a href="thwikibooks/20220401">thwikibooks</a>: <span class='done'>Dump complete</span></li>
-
 <li>2022-04-02 13:06:05 <a href="hrwiktionary/20220401">hrwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-04-02 13:06:11 <a href="thwikibooks/20220401">thwikibooks</a>: <span class='done'>Dump complete</span></li>
 
 <li>2022-04-02 13:05:59 <a href="jawikiversity/20220401">jawikiversity</a>: <span class='done'>Dump complete</span></li>
 
 <li>2022-04-02 13:05:14 <a href="svwikivoyage/20220401">svwikivoyage</a>: <span class='done'>Dump complete</span></li>
 
-<li>2022-04-02 13:04:51 <a href="uawikimedia/20220401">uawikimedia</a>: <span class='done'>Dump complete</span></li>
-
 <li>2022-04-02 13:04:48 <a href="novwiki/20220401">novwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-04-02 13:04:51 <a href="uawikimedia/20220401">uawikimedia</a>: <span class='done'>Dump complete</span></li>
 
 <li>2022-04-02 13:04:30 <a href="kowikinews/20220401">kowikinews</a>: <span class='done'>Dump complete</span></li>
 
-<li>2022-04-02 13:04:01 <a href="trwikinews/20220401">trwikinews</a> (closed): <span class='done'>Dump complete</span></li>
-
 <li>2022-04-02 13:03:56 <a href="itwikivoyage/20220401">itwikivoyage</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-04-02 13:04:01 <a href="trwikinews/20220401">trwikinews</a> (closed): <span class='done'>Dump complete</span></li>
 
 <li>2022-04-02 13:03:22 <a href="sowiktionary/20220401">sowiktionary</a>: <span class='done'>Dump complete</span></li>
 
@@ -2325,9 +1736,9 @@
 
 <li>2022-04-02 12:59:51 <a href="fawikibooks/20220401">fawikibooks</a>: <span class='done'>Dump complete</span></li>
 
-<li>2022-04-02 12:59:44 <a href="tpiwiki/20220401">tpiwiki</a>: <span class='done'>Dump complete</span></li>
-
 <li>2022-04-02 12:59:35 <a href="arwikibooks/20220401">arwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-04-02 12:59:44 <a href="tpiwiki/20220401">tpiwiki</a>: <span class='done'>Dump complete</span></li>
 
 <li>2022-04-02 12:59:11 <a href="map_bmswiki/20220401">map_bmswiki</a>: <span class='done'>Dump complete</span></li>
 
