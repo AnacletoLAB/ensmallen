@@ -282,14 +282,14 @@ impl Graph {
         let minimum_number_of_edges = minimum_number_of_edges.unwrap_or(5);
         let edge_type_hashes = self
             .par_iter_unique_edge_type_ids()?
-            .filter_map(|edge_type_id| unsafe {
+            .map(|edge_type_id| unsafe {
                 let number_of_edges =
                     self.get_unchecked_number_of_edges_from_edge_type_id(edge_type_id);
                 if number_of_edges < minimum_number_of_edges {
-                    return None;
+                    return 0;
                 }
                 let seed: u64 = 0xDEADBEEFC0FEBABE_u64.wrapping_mul(number_of_edges as u64);
-                Some(self.iter_edge_node_ids_and_edge_type_id_from_edge_type_id(Some(edge_type_id), true)
+                self.iter_edge_node_ids_and_edge_type_id_from_edge_type_id(Some(edge_type_id), true)
                     .unwrap()
                     .take(50)
                     .map(|(_, src, dst, _)| {
@@ -297,7 +297,7 @@ impl Graph {
                     })
                     .fold(seed, |a: u64, b: u64| {
                         (a ^ b).wrapping_add(0x0A2126967AE81C95)
-                    }))
+                    })
             })
             .collect::<Vec<u64>>();
         // First we create a vector with the unique edge type IDs.
