@@ -209,7 +209,7 @@ impl Graph {
 pub fn parse_weight(weight: String) -> Result<WeightT> {
     weight
         .parse::<WeightT>()
-        .map_err(|_| format!("Cannot parse weight {} as a float.", weight))
+        .map_err(|_| format!("Cannot parse weight `{}` as a float.", weight))
 }
 
 /// Convert a strig to integer ASSUMING IT IS CORRECT
