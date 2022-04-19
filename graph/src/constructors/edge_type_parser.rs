@@ -120,7 +120,7 @@ impl EdgeTypeParser {
                     concat!(
                         "The given edge type name {:?} ",
                         "has a value greater than the number ",
-                        "of provided nodes {}."
+                        "of provided edge types {}."
                     ),
                     edge_type_id,
                     vocabulary.len()

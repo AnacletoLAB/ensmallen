@@ -272,9 +272,9 @@ impl Graph {
     }
 
     /// Returns parallel iterator of vectors of isomorphic edge type groups IDs.
-    pub fn par_iter_isomorphic_edge_type_ids_groups(
+    pub fn iter_isomorphic_edge_type_ids_groups(
         &self,
-    ) -> Result<impl ParallelIterator<Item = Vec<EdgeTypeT>> + '_> {
+    ) -> Result<impl Iterator<Item = Vec<EdgeTypeT>> + '_> {
         let edge_type_hashes = self
             .par_iter_unique_edge_type_ids()?
             .map(|edge_type_id| unsafe {
@@ -305,7 +305,6 @@ impl Graph {
         });
         let considered_edge_type_ids_number = edge_type_ids.len();
         Ok((0..(considered_edge_type_ids_number - 1))
-            .into_par_iter()
             .filter_map(move |i| unsafe {
                 let edge_type_id = edge_type_ids[i];
                 // We only explore the group starters.
@@ -488,11 +487,11 @@ impl Graph {
     }
 
     /// Returns parallel iterator of vectors of isomorphic edge types groups names.
-    pub fn par_iter_isomorphic_edge_type_names_groups(
+    pub fn iter_isomorphic_edge_type_names_groups(
         &self,
-    ) -> Result<impl ParallelIterator<Item = Vec<String>> + '_> {
+    ) -> Result<impl Iterator<Item = Vec<String>> + '_> {
         Ok(self
-            .par_iter_isomorphic_edge_type_ids_groups()?
+            .iter_isomorphic_edge_type_ids_groups()?
             .map(move |group| {
                 group
                     .into_iter()
@@ -507,18 +506,18 @@ impl Graph {
     #[no_numpy_binding]
     /// Returns vector with isomorphic edge type groups IDs.
     pub fn get_isomorphic_edge_type_ids_groups(&self) -> Result<Vec<Vec<EdgeTypeT>>> {
-        Ok(self.par_iter_isomorphic_edge_type_ids_groups()?.collect())
+        Ok(self.iter_isomorphic_edge_type_ids_groups()?.collect())
     }
 
     #[no_numpy_binding]
     /// Returns vector with isomorphic edge type groups names.
     pub fn get_isomorphic_edge_type_names_groups(&self) -> Result<Vec<Vec<String>>> {
-        Ok(self.par_iter_isomorphic_edge_type_names_groups()?.collect())
+        Ok(self.iter_isomorphic_edge_type_names_groups()?.collect())
     }
 
     /// Returns number of isomorphic edge type groups.
     pub fn get_isomorphic_edge_type_groups_number(&self) -> Result<EdgeTypeT> {
-        Ok(self.par_iter_isomorphic_edge_type_ids_groups()?.count() as EdgeTypeT)
+        Ok(self.iter_isomorphic_edge_type_ids_groups()?.count() as EdgeTypeT)
     }
 
     /// Returns whether the current graph has topological synonims.
