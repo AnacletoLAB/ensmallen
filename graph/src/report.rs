@@ -1205,7 +1205,10 @@ impl Graph {
             Some(15),
             Some(4),
             self.iter_singleton_node_ids().map(|node_id| unsafe {
-                self.get_unchecked_succinct_node_description(node_id, 0, true)
+                format!(
+                    "<p>{}</p>",
+                    self.get_unchecked_succinct_node_description(node_id, 0, true)
+                )
             }),
         );
 
@@ -1239,7 +1242,10 @@ impl Graph {
             Some(4),
             self.iter_singleton_nodes_with_selfloops_node_ids()
                 .map(|node_id| unsafe {
-                    self.get_unchecked_succinct_node_description(node_id, 1, true)
+                    format!(
+                        "<p>{}</p>",
+                        self.get_unchecked_succinct_node_description(node_id, 1, true)
+                    )
                 }),
         );
 
