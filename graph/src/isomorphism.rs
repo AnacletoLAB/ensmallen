@@ -272,16 +272,24 @@ impl Graph {
     }
 
     /// Returns parallel iterator of vectors of isomorphic edge type groups IDs.
-    pub fn iter_isomorphic_edge_type_ids_groups(
+    /// 
+    /// # Arguments
+    /// * `minimum_number_of_edges`: Option<EdgeT> - Minimum number of edges to detect edge types topological synonims. By default, 5.
+    pub fn par_iter_isomorphic_edge_type_ids_groups(
         &self,
-    ) -> Result<impl Iterator<Item = Vec<EdgeTypeT>> + '_> {
+        minimum_number_of_edges: Option<EdgeT>
+    ) -> Result<impl ParallelIterator<Item = Vec<EdgeTypeT>> + '_> {
+        let minimum_number_of_edges = minimum_number_of_edges.unwrap_or(5);
         let edge_type_hashes = self
             .par_iter_unique_edge_type_ids()?
-            .map(|edge_type_id| unsafe {
+            .filter_map(|edge_type_id| unsafe {
                 let number_of_edges =
                     self.get_unchecked_number_of_edges_from_edge_type_id(edge_type_id);
+                if number_of_edges < minimum_number_of_edges {
+                    return None;
+                }
                 let seed: u64 = 0xDEADBEEFC0FEBABE_u64.wrapping_mul(number_of_edges as u64);
-                self.iter_edge_node_ids_and_edge_type_id_from_edge_type_id(Some(edge_type_id), true)
+                Some(self.iter_edge_node_ids_and_edge_type_id_from_edge_type_id(Some(edge_type_id), true)
                     .unwrap()
                     .take(50)
                     .map(|(_, src, dst, _)| {
@@ -289,14 +297,14 @@ impl Graph {
                     })
                     .fold(seed, |a: u64, b: u64| {
                         (a ^ b).wrapping_add(0x0A2126967AE81C95)
-                    })
+                    }))
             })
             .collect::<Vec<u64>>();
         // First we create a vector with the unique edge type IDs.
         let mut edge_type_ids: Vec<EdgeTypeT> = self
             .iter_unique_edge_type_ids()?
             .filter(|&edge_type_id| unsafe {
-                self.get_unchecked_number_of_edges_from_edge_type_id(edge_type_id) > 0
+                self.get_unchecked_number_of_edges_from_edge_type_id(edge_type_id) > minimum_number_of_edges
             })
             .collect();
         // Then we sort it according to the number of edges with this edge type.
@@ -305,6 +313,7 @@ impl Graph {
         });
         let considered_edge_type_ids_number = edge_type_ids.len();
         Ok((0..(considered_edge_type_ids_number - 1))
+            .into_par_iter()
             .filter_map(move |i| unsafe {
                 let edge_type_id = edge_type_ids[i];
                 // We only explore the group starters.
@@ -487,11 +496,15 @@ impl Graph {
     }
 
     /// Returns parallel iterator of vectors of isomorphic edge types groups names.
-    pub fn iter_isomorphic_edge_type_names_groups(
+    /// 
+    /// # Arguments
+    /// * `minimum_number_of_edges`: Option<EdgeT> - Minimum number of edges to detect edge types topological synonims. By default, 5.
+    pub fn par_iter_isomorphic_edge_type_names_groups(
         &self,
-    ) -> Result<impl Iterator<Item = Vec<String>> + '_> {
+        minimum_number_of_edges: Option<EdgeT>,
+    ) -> Result<impl ParallelIterator<Item = Vec<String>> + '_> {
         Ok(self
-            .iter_isomorphic_edge_type_ids_groups()?
+            .par_iter_isomorphic_edge_type_ids_groups(minimum_number_of_edges)?
             .map(move |group| {
                 group
                     .into_iter()
@@ -505,19 +518,28 @@ impl Graph {
 
     #[no_numpy_binding]
     /// Returns vector with isomorphic edge type groups IDs.
-    pub fn get_isomorphic_edge_type_ids_groups(&self) -> Result<Vec<Vec<EdgeTypeT>>> {
-        Ok(self.iter_isomorphic_edge_type_ids_groups()?.collect())
+    /// 
+    /// # Arguments
+    /// * `minimum_number_of_edges`: Option<EdgeT> - Minimum number of edges to detect edge types topological synonims. By default, 5.
+    pub fn get_isomorphic_edge_type_ids_groups(&self, minimum_number_of_edges: Option<EdgeT>) -> Result<Vec<Vec<EdgeTypeT>>> {
+        Ok(self.par_iter_isomorphic_edge_type_ids_groups(minimum_number_of_edges)?.collect())
     }
 
     #[no_numpy_binding]
     /// Returns vector with isomorphic edge type groups names.
-    pub fn get_isomorphic_edge_type_names_groups(&self) -> Result<Vec<Vec<String>>> {
-        Ok(self.iter_isomorphic_edge_type_names_groups()?.collect())
+    /// 
+    /// # Arguments
+    /// * `minimum_number_of_edges`: Option<EdgeT> - Minimum number of edges to detect edge types topological synonims. By default, 5.
+    pub fn get_isomorphic_edge_type_names_groups(&self, minimum_number_of_edges: Option<EdgeT>) -> Result<Vec<Vec<String>>> {
+        Ok(self.par_iter_isomorphic_edge_type_names_groups(minimum_number_of_edges)?.collect())
     }
 
     /// Returns number of isomorphic edge type groups.
-    pub fn get_isomorphic_edge_type_groups_number(&self) -> Result<EdgeTypeT> {
-        Ok(self.iter_isomorphic_edge_type_ids_groups()?.count() as EdgeTypeT)
+    /// 
+    /// # Arguments
+    /// * `minimum_number_of_edges`: Option<EdgeT> - Minimum number of edges to detect edge types topological synonims. By default, 5.
+    pub fn get_isomorphic_edge_type_groups_number(&self, minimum_number_of_edges: Option<EdgeT>) -> Result<EdgeTypeT> {
+        Ok(self.par_iter_isomorphic_edge_type_ids_groups(minimum_number_of_edges)?.count() as EdgeTypeT)
     }
 
     /// Returns whether the current graph has topological synonims.

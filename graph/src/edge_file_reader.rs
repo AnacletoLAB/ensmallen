@@ -635,7 +635,7 @@ impl EdgeFileReader {
                 // We can unwrap because the check always happens in the CSV reader
                 .unwrap()
                 .map_or(Ok::<_, String>(self.default_weight), |candidate_weight| {
-                    Ok(Some(parse_weight(candidate_weight)?))
+                    Ok(Some(parse_weight(candidate_weight.trim())?))
                 })?
         } else {
             self.default_weight

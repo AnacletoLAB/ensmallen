@@ -206,7 +206,7 @@ impl Graph {
 /// assert_eq!(parse_weight("2.0".to_string()).unwrap(), 2.0);
 /// ```
 ///
-pub fn parse_weight(weight: String) -> Result<WeightT> {
+pub fn parse_weight(weight: &str) -> Result<WeightT> {
     weight
         .parse::<WeightT>()
         .map_err(|_| format!("Cannot parse weight `{}` as a float.", weight))

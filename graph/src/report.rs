@@ -1758,7 +1758,7 @@ impl Graph {
 
     /// Returns report on the isomorphic edge types of the graph.
     unsafe fn get_isomorphic_edge_types_report(&self) -> String {
-        let mut isomorphic_edge_types = self.get_isomorphic_edge_type_ids_groups().unwrap();
+        let mut isomorphic_edge_types = self.get_isomorphic_edge_type_ids_groups(Some(5)).unwrap();
         isomorphic_edge_types.par_sort_unstable_by(|a, b| {
             (self.get_unchecked_number_of_edges_from_edge_type_id(b[0]) as usize * b.len()).cmp(
                 &(self.get_unchecked_number_of_edges_from_edge_type_id(a[0]) as usize * a.len()),
