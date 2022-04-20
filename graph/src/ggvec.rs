@@ -216,8 +216,7 @@ impl Graph {
                     let dst = dst as usize;
                     let loss = clip_loss(
                         (predict_edge_score(src, dst) - edge_weight)
-                            .powf(exponent)
-                            .abs(),
+                            .asinh(),
                     );
                     update_embedding_and_bias(src, dst, loss);
                     loss.abs() as f64
