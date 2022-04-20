@@ -210,7 +210,7 @@ impl Graph {
                 .map(|((_, src, dst), edge_weight)| {
                     let src = src as usize;
                     let dst = dst as usize;
-                    let loss = clip_loss(predict_edge_score(src, dst) - edge_weight.powf(exponent));
+                    let loss = clip_loss(predict_edge_score(src, dst) - edge_weight.powf(exponent).abs());
                     update_embedding_and_bias(src, dst, loss);
                     loss.abs() as f64
                 })
@@ -240,7 +240,7 @@ impl Graph {
                     max_latest = max_latest,
                     learning_rate = learning_rate
                 ));
-            } else if loss.is_infinite() {
+            } else if !loss.is_finite() {
                 return Err(format!(
                     concat!(
                         "The loss is currently non-finite. ",
