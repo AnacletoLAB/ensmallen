@@ -47,10 +47,8 @@ impl Graph {
 
     /// Return iterator on the node ontologies of the graph.
     pub fn iter_node_ontologies(&self) -> impl Iterator<Item = Option<String>> + '_ {
-        self.iter_node_names().map(|node_name| {
-            get_node_repository_from_node_name(&node_name)
-                .ok()
-                .map(|ontology| ontology.to_string())
+        self.iter_node_names().map(move |node_name| unsafe {
+            self.get_unchecked_ontology_from_node_name(&node_name)
         })
     }
 
@@ -58,10 +56,8 @@ impl Graph {
     pub fn par_iter_node_ontologies(
         &self,
     ) -> impl IndexedParallelIterator<Item = Option<String>> + '_ {
-        self.par_iter_node_names().map(|node_name| {
-            get_node_repository_from_node_name(&node_name)
-                .ok()
-                .map(|ontology| ontology.to_string())
+        self.par_iter_node_names().map(move |node_name| unsafe {
+            self.get_unchecked_ontology_from_node_name(&node_name)
         })
     }
 

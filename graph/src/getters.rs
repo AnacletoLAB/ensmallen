@@ -495,6 +495,35 @@ impl Graph {
         node_urls
     }
 
+    /// Return node ontology for the provided node name, if available.
+    ///
+    /// # Implementative details
+    /// The node with an unknown ontology will have None as an ontology.
+    ///
+    /// # Arguments
+    /// * `node_name`: &str - The node name to query for.
+    ///
+    pub unsafe fn get_unchecked_ontology_from_node_name(&self, node_name: &str) -> Option<String> {
+        get_node_repository_from_node_name(&node_name)
+            .ok()
+            .map(|ontology| ontology.to_string())
+    }
+
+    /// Return node ontology for the provided node name, if available.
+    ///
+    /// # Implementative details
+    /// The node with an unknown ontology will have None as an ontology.
+    ///
+    /// # Arguments
+    /// * `node_name`: &str - The node name to query for.
+    ///
+    /// # Raises
+    /// * If the provided node name does not exist in the current graph.
+    pub fn get_ontology_from_node_name(&self, node_name: &str) -> Result<Option<String>> {
+        self.get_node_id_from_node_name(node_name)?;
+        Ok(unsafe { self.get_unchecked_ontology_from_node_name(node_name) })
+    }
+
     /// Return vector with the sorted nodes Ids.
     pub fn get_node_ids(&self) -> Vec<NodeT> {
         self.iter_node_ids().collect()
