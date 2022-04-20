@@ -167,7 +167,7 @@ impl Graph {
         ))?;
 
         let parameters = pe!(self.build_walk_parameters(walk_length, kwargs))?;
-        let iter = pe!(self.inner.iter_complete_walks(&parameters))?;
+        let iter = pe!(self.inner.par_iter_complete_walks(&parameters))?;
         let array = ThreadDataRaceAware {
             t: PyArray2::new(
                 py.python(),

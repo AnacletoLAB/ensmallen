@@ -690,7 +690,7 @@ impl Graph {
     /// * If the graph does not contain edges.
     /// * If the graph is directed.
     /// * If the given walks parameters are not compatible with the current graph instance.
-    pub fn par_iter_complete_walks<'a>(
+    pub fn par_par_iter_complete_walks<'a>(
         &'a self,
         parameters: &'a WalksParameters,
     ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a> {

@@ -177,7 +177,7 @@ impl Graph {
         verbose: Option<bool>,
     ) -> Result<(usize, impl Iterator<Item = (NodeT, NodeT, f64)> + 'a)> {
         self.must_have_edges()?;
-        let walks = self.par_iter_complete_walks(walks_parameters)?;
+        let walks = self.par_par_iter_complete_walks(walks_parameters)?;
         cooccurence_matrix(
             walks,
             window_size,
