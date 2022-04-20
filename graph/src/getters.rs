@@ -509,6 +509,20 @@ impl Graph {
             .map(|ontology| ontology.to_string())
     }
 
+    /// Return node ontology for the provided node id, if available.
+    ///
+    /// # Implementative details
+    /// The node with an unknown ontology will have None as an ontology.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - The node id to query for.
+    ///
+    pub unsafe fn get_unchecked_ontology_from_node_id(&self, node_id: NodeT) -> Option<String> {
+        self.get_unchecked_ontology_from_node_name(
+            &self.get_unchecked_node_name_from_node_id(node_id),
+        )
+    }
+
     /// Return node ontology for the provided node name, if available.
     ///
     /// # Implementative details
@@ -522,6 +536,21 @@ impl Graph {
     pub fn get_ontology_from_node_name(&self, node_name: &str) -> Result<Option<String>> {
         self.get_node_id_from_node_name(node_name)?;
         Ok(unsafe { self.get_unchecked_ontology_from_node_name(node_name) })
+    }
+
+    /// Return node ontology for the provided node id, if available.
+    ///
+    /// # Implementative details
+    /// The node with an unknown ontology will have None as an ontology.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - The node id to query for.
+    ///
+    /// # Raises
+    /// * If the provided node ID does not exist in the current graph.
+    pub fn get_ontology_from_node_id(&self, node_id: NodeT) -> Result<Option<String>> {
+        self.validate_node_id(node_id)
+            .map(|node_id| unsafe { self.get_unchecked_ontology_from_node_id(node_id) })
     }
 
     /// Return vector with the sorted nodes Ids.
