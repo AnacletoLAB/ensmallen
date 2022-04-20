@@ -102,18 +102,6 @@ impl Graph {
             return Err("The current graph does not have edge weights.".to_string());
         }
 
-        if !self.has_nodes_sorted_by_decreasing_outbound_node_degree() {
-            return Err(concat!(
-                "The current graph does not have nodes sorted by decreasing node degrees ",
-                "and therefore the negative sampling used to approximate the sigmoid and ",
-                "binary cross-entropy loss. You can sort this graph the desired way by ",
-                "using the `graph.sort_by_decreasing_outbound_node_degree()` method. ",
-                "Do note that this method does not sort in-place ",
-                "but creates a new instance of the provided graph. "
-            )
-            .to_string());
-        }
-
         let expected_embedding_len = embedding_size * self.get_nodes_number() as usize;
 
         if embedding.len() != expected_embedding_len {
@@ -126,7 +114,7 @@ impl Graph {
 
         let embedding = unsafe { core::mem::transmute::<&mut [f32], &mut [AtomicF32]>(embedding) };
         let bias =
-            unsafe { core::mem::transmute::<Vec<f32>, Vec<AtomicF32>>(vec![0.0; embedding_size]) };
+            unsafe { core::mem::transmute::<Vec<f32>, Vec<AtomicF32>>(vec![0.0; self.get_nodes_number() as usize]) };
 
         embedding.par_iter().enumerate().for_each(|(i, e)| {
             e.store(random_f32(random_state + i as u64) - 0.5, Ordering::SeqCst)
