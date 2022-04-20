@@ -62,6 +62,7 @@ pub use self::utils::*;
 mod bitmaps;
 mod cbow;
 mod skipgram;
+mod ggvec;
 mod centrality;
 mod dense;
 mod distributions;
