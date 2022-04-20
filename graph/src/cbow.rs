@@ -155,7 +155,7 @@ impl Graph {
 
             walk_parameters = walk_parameters.set_random_state(Some(random_state as usize));
 
-            self.iter_complete_walks(&walk_parameters)?
+            self.par_iter_complete_walks(&walk_parameters)?
                 .enumerate()
                 .for_each(|(i, sequence)| {
                     (window_size..(walk_length as usize - window_size)).for_each(|j| {
