@@ -113,8 +113,12 @@ impl Graph {
         }
 
         let embedding = unsafe { core::mem::transmute::<&mut [f32], &mut [AtomicF32]>(embedding) };
-        let bias =
-            unsafe { core::mem::transmute::<Vec<f32>, Vec<AtomicF32>>(vec![0.0; self.get_nodes_number() as usize]) };
+        let bias = unsafe {
+            core::mem::transmute::<Vec<f32>, Vec<AtomicF32>>(vec![
+                0.0;
+                self.get_nodes_number() as usize
+            ])
+        };
 
         embedding.par_iter().enumerate().for_each(|(i, e)| {
             e.store(random_f32(random_state + i as u64) - 0.5, Ordering::SeqCst)
@@ -210,19 +214,18 @@ impl Graph {
                 .map(|((_, src, dst), edge_weight)| {
                     let src = src as usize;
                     let dst = dst as usize;
-                    let loss = clip_loss(predict_edge_score(src, dst) - edge_weight.powf(exponent).abs());
+                    let loss = clip_loss(
+                        (predict_edge_score(src, dst) - edge_weight)
+                            .powf(exponent)
+                            .abs(),
+                    );
                     update_embedding_and_bias(src, dst, loss);
                     loss.abs() as f64
                 })
                 .sum::<f64>()
                 / (number_of_directed_edges as f64);
 
-            let (min_latest, max_latest) = losses
-                .iter()
-                .minmax()
-                .into_option()
-                .unwrap()
-                .to_owned();
+            let (min_latest, max_latest) = losses.iter().minmax().into_option().unwrap().to_owned();
             let min_latest = min_latest.to_owned();
             let max_latest = max_latest.to_owned();
             let improvement = (max_latest - min_latest).abs() / max_latest;
