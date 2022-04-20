@@ -37,7 +37,7 @@ impl Graph {
         let context_size = (window_size * 2) as f32;
         let epochs = epochs.unwrap_or(1);
         let use_weight_clipping = use_weight_clipping.unwrap_or(false);
-        let max_loss = max_loss.unwrap_or(10.0);
+        let max_loss = max_loss.unwrap_or(1.0);
         let number_of_negative_samples = number_of_negative_samples.unwrap_or(5);
         let learning_rate = learning_rate.unwrap_or(0.025) * (embedding_size as f32).sqrt();
         let mut random_state = random_state.unwrap_or(42);
@@ -124,15 +124,15 @@ impl Graph {
             }
         };
 
-        // let clip_loss = |score: f32| -> f32 {
-        //     if score < -max_loss {
-        //         -max_loss
-        //     } else if score > max_loss {
-        //         max_loss
-        //     } else {
-        //         score
-        //     }
-        // };
+        let clip_loss = |score: f32| -> f32 {
+            if score < -max_loss {
+                -max_loss
+            } else if score > max_loss {
+                max_loss
+            } else {
+                score
+            }
+        };
 
         let weighted_sum = |factor: f32, source: &[f32], result: &mut [f32]| {
             result.iter_mut().zip(source.iter()).for_each(|(a, b)| {
@@ -249,12 +249,10 @@ impl Graph {
                                 // the lookup table.
                                 let exponentiated_dot_product = dot_product.exp();
                                 // Finally, we compute this portion of the error.
-                                let loss = (label
+                                let loss = clip_loss((label
                                     - (exponentiated_dot_product
                                         / (exponentiated_dot_product + 1.0)))
-                                    * learning_rate;
-
-                                println!("{}", loss);
+                                    * learning_rate);
 
                                 // We sum the currently sampled negative context node embedding
                                 // to the (currently sum of) negative context embeddings,
