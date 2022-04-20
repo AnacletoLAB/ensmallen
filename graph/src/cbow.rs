@@ -1,9 +1,11 @@
 use super::*;
+use atomic_float::AtomicF32;
 use indicatif::ProgressIterator;
 use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
-use rayon::iter::IntoParallelRefMutIterator;
+use rayon::iter::IntoParallelRefIterator;
 use rayon::iter::ParallelIterator;
+use std::sync::atomic::Ordering;
 use vec_rand::{random_f32, sample_uniform};
 
 impl Graph {
@@ -25,8 +27,6 @@ impl Graph {
         normalize_by_degree: Option<bool>,
         window_size: Option<usize>,
         number_of_negative_samples: Option<usize>,
-        max_loss: Option<f32>,
-        use_weight_clipping: Option<bool>,
         learning_rate: Option<f32>,
         random_state: Option<u64>,
         verbose: Option<bool>,
@@ -36,10 +36,8 @@ impl Graph {
         let window_size = window_size.unwrap_or(4);
         let context_size = (window_size * 2) as f32;
         let epochs = epochs.unwrap_or(1);
-        let use_weight_clipping = use_weight_clipping.unwrap_or(false);
-        let max_loss = max_loss.unwrap_or(1.0);
         let number_of_negative_samples = number_of_negative_samples.unwrap_or(5);
-        let learning_rate = learning_rate.unwrap_or(0.025) * (embedding_size as f32).sqrt();
+        let learning_rate = learning_rate.unwrap_or(0.025);
         let mut random_state = random_state.unwrap_or(42);
         random_state = splitmix64(random_state);
         let verbose = verbose.unwrap_or(true);
@@ -57,15 +55,16 @@ impl Graph {
         }
 
         if !self.has_nodes_sorted_by_decreasing_outbound_node_degree() {
-            return Err(concat!(
-                "The current graph does not have nodes sorted by decreasing node degrees ",
-                "and therefore the negative sampling used to approximate the sigmoid and ",
-                "binary cross-entropy loss. You can sort this graph the desired way by ",
-                "using the `graph.sort_by_decreasing_outbound_node_degree()` method. ",
-                "Do note that this method does not sort in-place ",
-                "but creates a new instance of the provided graph. "
-            )
-            .to_string());
+            return Err(
+                concat!(
+                    "The current graph does not have nodes sorted by decreasing node degrees ",
+                    "and therefore the negative sampling used to approximate the sigmoid and ",
+                    "binary cross-entropy loss. You can sort this graph the desired way by ",
+                    "using the `graph.sort_by_decreasing_outbound_node_degree()` method. ",
+                    "Do note that this method does not sort in-place ",
+                    "but creates a new instance of the provided graph. "
+                ).to_string()
+            );
         }
 
         if (walk_length as usize) < window_size * 2 + 1 {
@@ -89,72 +88,47 @@ impl Graph {
             ));
         }
 
-        embedding.par_iter_mut().enumerate().for_each(|(i, e)| {
-            *e = random_f32(random_state + i as u64) - 0.5;
+        let embedding = unsafe { core::mem::transmute::<&mut [f32], &mut [AtomicF32]>(embedding) };
+
+        embedding.par_iter().enumerate().for_each(|(i, e)| {
+            e.store(
+                2.0 * random_f32(random_state + i as u64) - 1.0,
+                Ordering::SeqCst,
+            )
         });
 
-        let embedding = ThreadDataRaceAware::new(embedding);
-
-        let mut negative_embedding = (0..(embedding_size * self.get_nodes_number() as usize))
+        let negative_embedding = (0..(embedding_size * self.get_nodes_number() as usize))
             .into_par_iter()
-            .map(|i| random_f32(random_state + i as u64) - 0.5)
+            .map(|i| AtomicF32::new(2.0 * random_f32(random_state + i as u64) - 1.0))
             .collect::<Vec<_>>();
-
-        let negative_embedding = ThreadDataRaceAware::new(&mut negative_embedding);
-
         let pb = get_loading_bar(verbose, "Training CBOW model", epochs);
 
         let number_of_directed_edges = self.get_number_of_directed_edges();
 
-        let clip_value = |score: f32, max_value: f32| -> f32 {
-            if score < -max_value {
-                -max_value
-            } else if score > max_value {
-                max_value
-            } else {
-                score
-            }
-        };
-
-        let clip_weight = |score: f32| -> f32 {
-            if use_weight_clipping {
-                clip_value(score, 1.0)
-            } else {
-                score
-            }
-        };
-
-        let clip_loss = |score: f32| -> f32 {
-            if score < -max_loss {
-                -max_loss
-            } else if score > max_loss {
-                max_loss
-            } else {
-                score
-            }
-        };
-
-        let weighted_sum = |factor: f32, source: &[f32], result: &mut [f32]| {
-            result.iter_mut().zip(source.iter()).for_each(|(a, b)| {
-                *a += b * factor;
-            });
-        };
-
-        let atomic_sum = |source: &[f32], result: &mut [f32]| {
+        let weighted_sum = |factor: f32, source: &[AtomicF32], result: &mut [f32]| {
             result
                 .iter_mut()
-                .zip(source.iter().cloned())
+                .zip(source.iter().map(|a| a.load(Ordering::SeqCst)))
                 .for_each(|(a, b)| {
-                    *a = clip_weight(*a * b);
+                    *a += b * factor;
                 });
         };
 
-        let atomic_weighted_sum = |factor: f32, source: &[f32], result: &mut [f32]| {
+        let atomic_sum = |source: &[f32], result: &[AtomicF32]| {
             result
-                .iter_mut()
+                .iter()
                 .zip(source.iter().cloned())
                 .for_each(|(a, b)| {
-                    *a = clip_weight(*a * b * factor);
+                    a.fetch_add(b, Ordering::SeqCst);
+                });
+        };
+
+        let atomic_weighted_sum = |factor: f32, source: &[f32], result: &[AtomicF32]| {
+            result
+                .iter()
+                .zip(source.iter().cloned())
+                .for_each(|(a, b)| {
+                    a.fetch_add(b * factor, Ordering::SeqCst);
                 });
         };
 
@@ -183,7 +157,7 @@ impl Graph {
 
             self.par_iter_complete_walks(&walk_parameters)?
                 .enumerate()
-                .for_each(|(i, sequence)| unsafe {
+                .for_each(|(i, sequence)| {
                     (window_size..(walk_length as usize - window_size)).for_each(|j| {
                         let get_contextual_nodes_indices = || {
                             sequence[j - window_size..j]
@@ -203,9 +177,10 @@ impl Graph {
                             context_mean_embedding
                                 .iter_mut()
                                 .zip(
-                                    (*embedding.value.get())[(contextual_node_index * embedding_size)
+                                    embedding[(contextual_node_index * embedding_size)
                                         ..((contextual_node_index + 1) * embedding_size)]
-                                        .iter(),
+                                        .iter()
+                                        .map(|e| e.load(Ordering::SeqCst)),
                                 )
                                 .for_each(|(c, e)| *c += e);
                         });
@@ -216,7 +191,7 @@ impl Graph {
                             .cloned()
                             .chain(
                                 (0..number_of_negative_samples)
-                                    .filter_map(|_| {
+                                    .filter_map(|_| unsafe {
                                         let sampled_node = self
                                             .get_unchecked_node_ids_from_edge_id(sample_uniform(
                                                 number_of_directed_edges,
@@ -237,22 +212,26 @@ impl Graph {
                                 // Sample negative index
                                 // Retrieve the node embedding from the negative embedding
                                 // curresponding to the `negative_node_index` node.
-                                let node_negative_embedding = &mut (*negative_embedding.value.get())[(node_index
+                                let node_negative_embedding = &negative_embedding[(node_index
                                     * embedding_size)
                                     ..((node_index + 1) * embedding_size)];
                                 // Compute the dot product between the negative embedding and the context average.
                                 let dot_product: f32 = compute_dot_product(
-                                    node_negative_embedding,
+                                    unsafe {
+                                        core::mem::transmute::<&[AtomicF32], &[f32]>(
+                                            node_negative_embedding,
+                                        )
+                                    },
                                     context_mean_embedding.as_slice(),
                                 ) / context_size;
                                 // Othersiwe, we proceed to retrieve the exponentiated value from
                                 // the lookup table.
                                 let exponentiated_dot_product = dot_product.exp();
                                 // Finally, we compute this portion of the error.
-                                let loss = clip_loss((label
+                                let loss = (label
                                     - (exponentiated_dot_product
                                         / (exponentiated_dot_product + 1.0)))
-                                    * learning_rate);
+                                    * learning_rate;
 
                                 // We sum the currently sampled negative context node embedding
                                 // to the (currently sum of) negative context embeddings,
@@ -269,7 +248,7 @@ impl Graph {
                                 atomic_weighted_sum(
                                     loss / context_size,
                                     context_mean_embedding.as_ref(),
-                                    node_negative_embedding,
+                                    &node_negative_embedding,
                                 );
                             });
 
@@ -279,7 +258,7 @@ impl Graph {
                             .for_each(|contextual_node_index| {
                                 atomic_sum(
                                     negative_context_total_embedding.as_slice(),
-                                    &mut (*embedding.value.get())[(contextual_node_index * embedding_size)
+                                    &embedding[(contextual_node_index * embedding_size)
                                         ..((contextual_node_index + 1) * embedding_size)],
                                 );
                             });
