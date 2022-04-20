@@ -482,7 +482,7 @@ impl Graph {
     /// Return vector with the node predicted ontology.
     ///
     /// # Implementative details
-    /// The node with an unknown ontology will have None as an URL.
+    /// The node with an unknown ontology will have None as an ontology.
     ///
     /// # How to add new ontologies
     /// If you need another ontology to be added, just do a pull request
