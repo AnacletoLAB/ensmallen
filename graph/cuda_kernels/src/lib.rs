@@ -7,16 +7,12 @@ use intrinsics::*;
 
 #[no_mangle]
 /// Actual function called by the CPU code in the GPU
-pub unsafe extern "ptx-kernel" fn test_kernel(
-    _input: *mut u32,
-    _input_len: usize,
-    output: *mut u32,
-    _output_len: usize,
+pub unsafe extern "ptx-kernel" fn add_one(
+    input: *mut u32,
+    input_len: usize,
 ) {
-    let idx = (block_idx_x() * 1024 + thread_idx_x()) as isize;
-
-    let start = clock();
-    let end = clock();
-
-    *output.offset(idx) = end - start;
+    let idx = ((block_idx_x() * 1024) + thread_idx_x()) as usize;
+    if idx < input_len {
+        *input.add(idx) += 1;
+    }
 }
