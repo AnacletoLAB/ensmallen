@@ -1,6 +1,6 @@
 use crate::*;
 use graph::{Graph, NodeT, WalksParameters};
-use indicatif::{ProgressIterator, ProgressBar, ProgressStyle};
+use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
 use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::IntoParallelRefMutIterator;
@@ -66,18 +66,16 @@ impl CBOW {
         let learning_rate = learning_rate.unwrap_or(0.025);
         let mut walk_parameters = self.walk_parameters.clone();
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
-        let mut random_walk_length = walk_parameters.get_random_walk_length() as usize;
-        let mut iterations = walk_parameters.get_iterations() as usize;
-        let actual_batch_size = batch_size
-            * iterations
-            * (random_walk_length - (self.window_size as usize) * 2);
-        let mut window_size = self.window_size as isize;
+        let random_walk_length = walk_parameters.get_random_walk_length() as usize;
+        let iterations = walk_parameters.get_iterations() as usize;
+        let actual_batch_size =
+            batch_size * iterations * (random_walk_length - (self.window_size as usize) * 2);
+        let window_size = self.window_size as isize;
         let verbose = verbose.unwrap_or(true);
-        let mut vocabulary_size = graph.get_nodes_number();
-        let mut number_of_negative_samples = self.number_of_negative_samples;
-        let mut embedding_size = self.embedding_size;
-        let number_of_random_walks = batch_size
-        * iterations;
+        let vocabulary_size = graph.get_nodes_number();
+        let number_of_negative_samples = self.number_of_negative_samples;
+        let embedding_size = self.embedding_size;
+        let number_of_random_walks = batch_size * iterations;
 
         // if epochs == 0 {
         //     return Err("The number of epochs must be strictly greater than zero.".to_string());
@@ -117,7 +115,10 @@ impl CBOW {
         // get info about this device
         let props = device.get_properties()?;
         println!("using GPU {}", device.get_name()?);
-        println!("The gpu has {:.4} Gib of VRAM", props.totalGlobalMem as f64 / 1_000_000_000 as f64);
+        println!(
+            "The gpu has {:.4} Gib of VRAM",
+            props.totalGlobalMem as f64 / 1_000_000_000 as f64
+        );
 
         // setup this device for computation
         let mut gpu = GPU::new(device)?;
@@ -126,9 +127,11 @@ impl CBOW {
         // get a function from the compiled code
         let compute_cbow_mini_batch = ptx.get_kernel("compute_cbow_mini_batch")?;
 
-        assert!(number_of_random_walks%1024==0);
+        assert!(number_of_random_walks % 1024 == 0);
         // set the parallelizzation specs
-        let grid = Grid::default().set_grid_x(number_of_random_walks / 1024)?.set_block_x(1024)?;
+        let grid = Grid::default()
+            .set_grid_x(number_of_random_walks / 1024)?
+            .set_block_x(1024)?;
 
         // TODO!: Check if the requested vector sizes would even fit in GPU.
         // The check should include: embedding, hidden, batch.
@@ -142,7 +145,7 @@ impl CBOW {
         // allocate a gpu buffer and copy data from the host
         let embedding_on_gpu = gpu.buffer_from_slice::<f32>(embedding)?;
 
-        // 
+        //
         random_state = splitmix64(random_state);
 
         // Create and allocate the hidden layer
@@ -155,11 +158,8 @@ impl CBOW {
         let hidden_on_gpu = gpu.buffer_from_slice::<f32>(&hidden)?;
 
         // Create the vector we will populate with the random walks.
-        let mut random_walks: Vec<NodeT> = vec![
-            0;
-            number_of_random_walks
-                * random_walk_length as usize
-        ];
+        let mut random_walks: Vec<NodeT> =
+            vec![0; number_of_random_walks * random_walk_length as usize];
 
         let random_walks_on_gpu = gpu.buffer_from_slice::<NodeT>(&random_walks)?;
 
@@ -227,7 +227,7 @@ impl CBOW {
                 // launch the function with the args
                 gpu.launch_kernel(
                     &compute_cbow_mini_batch,
-                    &grid, 
+                    &grid,
                     args![
                         embedding_on_gpu.as_device_ptr(),
                         hidden_on_gpu.as_device_ptr(),
@@ -241,7 +241,7 @@ impl CBOW {
                         vocabulary_size,
                         batch_size,
                         iterations,
-                    ]
+                    ],
                 )?;
 
                 // wait for the gpu to finish

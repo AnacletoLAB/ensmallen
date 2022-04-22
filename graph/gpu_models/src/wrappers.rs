@@ -1,6 +1,6 @@
 use cuda_driver_sys::*;
 use cuda_runtime_sys::*;
-use std::ffi::{CString, c_void};
+use std::ffi::{c_void, CString};
 
 /// Create arguments for a kernel
 #[macro_export]
@@ -8,7 +8,7 @@ macro_rules! args {
     [$($value:expr,)*] => {
         &mut vec![
             $(
-                &mut $value as *mut _ as *mut core::ffi::c_void, 
+                & $value as *const _ as *mut _ as *mut core::ffi::c_void,
             )*
         ]
     };
@@ -18,7 +18,7 @@ macro_rules! impl_gpu_error {
     ($(
         $field:ident => $value:literal => $doc:literal,
     )*) => {
-        
+
 #[derive(Clone, Copy, Eq, PartialEq)]
 pub enum GPUError {
     $(
@@ -87,7 +87,7 @@ impl GPUError {
     };
 }
 
-impl_gpu_error!{
+impl_gpu_error! {
     Success => 0 => "The API call returned with no errors. In the case of query calls, this also means that the operation being queried is complete (see cuEventQuery() and cuStreamQuery()).",
     InvalidValue => 1 => "This indicates that one or more of the parameters passed to the API call is not within an acceptable range of values.",
     OutOfMemory => 2 => "The API call failed because it was unable to allocate enough memory to perform the requested operation.",
@@ -175,12 +175,11 @@ impl_gpu_error!{
     GraphExecUpdateFailure => 910 => "This error indicates that the graph update was not performed because it included changes which violated constraints specific to instantiated graph update.",
     ExternalDevice => 911 => "This indicates that an async error has occurred in a device outside of CUDA. If CUDA was waiting for an external device's signal before consuming shared data, the external device signaled an error indicating that the data is not valid for consumption. This leaves the process in an inconsistent state and any further CUDA work will return the same error. To continue using CUDA, the process must be terminated and relaunched.",
     Unknown => 999 => "This indicates that an unknown internal error has occurred.",
-    InvalidBufferSize => 1337 => "This error is raised when the given slice does not match in length with the GPU buffer.", 
+    InvalidBufferSize => 1337 => "This error is raised when the given slice does not match in length with the GPU buffer.",
 }
 
-
 /// Fat pointer to a GPU buffer to simplify allocation, freeing, and copying
-/// data to and from the GPU 
+/// data to and from the GPU
 pub struct GPUBuffer<T> {
     device_ptr: CUdeviceptr,
     len: usize,
@@ -190,7 +189,7 @@ pub struct GPUBuffer<T> {
 /// Automatically free the buffer when its handle is out of scope
 impl<T> std::ops::Drop for GPUBuffer<T> {
     fn drop(&mut self) {
-        unsafe{cudaFree(self.device_ptr as _)};
+        unsafe { cudaFree(self.device_ptr as _) };
     }
 }
 
@@ -200,13 +199,14 @@ impl<T> GPUBuffer<T> {
         if src.len() < self.len() {
             return Err(GPUError::InvalidBufferSize);
         }
-        let error: GPUError = unsafe{
+        let error: GPUError = unsafe {
             cuMemcpyHtoD_v2(
                 self.device_ptr,
                 src.as_ptr() as _,
                 self.len() * core::mem::size_of::<T>(),
             )
-        }.into();
+        }
+        .into();
         error.into_result(())
     }
 
@@ -215,20 +215,21 @@ impl<T> GPUBuffer<T> {
         if dst.len() < self.len() {
             return Err(GPUError::InvalidBufferSize);
         }
-        let error: GPUError = unsafe{
+        let error: GPUError = unsafe {
             cuMemcpyDtoH_v2(
                 dst.as_mut_ptr() as _,
                 self.device_ptr,
                 self.len() * core::mem::size_of::<T>(),
             )
-        }.into();
+        }
+        .into();
         error.into_result(())
     }
 
     /// Copy the buffer from the GPU to a new vector in the CPU RAM
     pub fn to_vec(&self) -> Result<Vec<T>, GPUError> {
         let mut result = Vec::with_capacity(self.len);
-        unsafe{result.set_len(self.len)};
+        unsafe { result.set_len(self.len) };
         self.copy_gpu2host(&mut result)?;
         Ok(result)
     }
@@ -274,7 +275,7 @@ impl Grid {
         }
         self.block_x = block_x;
         Ok(self)
-    }  
+    }
 
     pub fn set_block_y(mut self, block_y: usize) -> Result<Self, GPUError> {
         if block_y > 65535 {
@@ -282,7 +283,7 @@ impl Grid {
         }
         self.block_y = block_y;
         Ok(self)
-    }  
+    }
 
     pub fn set_block_z(mut self, block_z: usize) -> Result<Self, GPUError> {
         if block_z > 65535 {
@@ -290,7 +291,7 @@ impl Grid {
         }
         self.block_x = block_z;
         Ok(self)
-    }  
+    }
 
     pub fn set_grid_x(mut self, grid_x: usize) -> Result<Self, GPUError> {
         if grid_x > i32::MAX as usize {
@@ -298,7 +299,7 @@ impl Grid {
         }
         self.grid_x = grid_x;
         Ok(self)
-    }  
+    }
 
     pub fn set_grid_y(mut self, grid_y: usize) -> Result<Self, GPUError> {
         if grid_y > 65535 {
@@ -306,7 +307,7 @@ impl Grid {
         }
         self.grid_y = grid_y;
         Ok(self)
-    }  
+    }
 
     pub fn set_grid_z(mut self, grid_z: usize) -> Result<Self, GPUError> {
         if grid_z > 65535 {
@@ -314,7 +315,7 @@ impl Grid {
         }
         self.grid_x = grid_z;
         Ok(self)
-    }  
+    }
 }
 
 /// Wrapper for a gpu kernel
@@ -325,7 +326,7 @@ pub struct PTX(CUmodule);
 
 impl std::ops::Drop for PTX {
     fn drop(&mut self) {
-        unsafe{cuModuleUnload(self.0)};
+        unsafe { cuModuleUnload(self.0) };
     }
 }
 
@@ -334,11 +335,10 @@ impl PTX {
     pub fn get_kernel(&mut self, kernel_name: &str) -> Result<Kernel, GPUError> {
         let func_name = CString::new(kernel_name).unwrap();
         let mut func: CUfunction = core::ptr::null_mut();
-        let error: GPUError = unsafe{cuModuleGetFunction(
-            &mut func as *mut CUfunction, 
-            self.0, 
-            func_name.as_ptr(),
-        )}.into();
+        let error: GPUError = unsafe {
+            cuModuleGetFunction(&mut func as *mut CUfunction, self.0, func_name.as_ptr())
+        }
+        .into();
         error.into_result(Kernel(func))
     }
 }
@@ -357,21 +357,14 @@ impl Device {
 
     pub fn get_name(&self) -> Result<String, GPUError> {
         let props = self.get_properties()?;
-        let bytes = unsafe{
-            std::mem::transmute::<&[i8], &[u8]>(props.name.as_slice())
-        };
+        let bytes = unsafe { std::mem::transmute::<&[i8], &[u8]>(props.name.as_slice()) };
         Ok(std::str::from_utf8(bytes).unwrap().to_string())
     }
 
     /// Get informations about a Device
     pub fn get_properties(&self) -> Result<cudaDeviceProp, GPUError> {
-        let mut props: cudaDeviceProp = unsafe{core::mem::MaybeUninit::uninit().assume_init()};
-        let error = unsafe{
-            cudaGetDeviceProperties(
-                &mut props as *mut _,
-                self.0 as _,
-            )
-        };
+        let mut props: cudaDeviceProp = unsafe { core::mem::MaybeUninit::uninit().assume_init() };
+        let error = unsafe { cudaGetDeviceProperties(&mut props as *mut _, self.0 as _) };
         if error != cudaError::cudaSuccess {
             return Err(GPUError::from(error as usize));
         }
@@ -379,18 +372,20 @@ impl Device {
     }
 
     pub fn get_devices() -> Result<Vec<Device>, GPUError> {
-        Ok((0..Device::get_device_count()?).map(|i| Device(i)).collect())
+        Ok((0..Device::get_device_count()?)
+            .map(|i| Device(i))
+            .collect())
     }
 
     /// Get the number of available devices
     pub fn get_device_count() -> Result<usize, GPUError> {
         let mut number_of_devices = 0;
-        let error = unsafe { cudaGetDeviceCount(&mut number_of_devices as *mut _) }; 
+        let error = unsafe { cudaGetDeviceCount(&mut number_of_devices as *mut _) };
         if error != cudaError::cudaSuccess {
             return Err(GPUError::from(error as usize));
         }
         Ok(number_of_devices as usize)
-    }   
+    }
 }
 
 /// Wrapper for the context and stream of a device
@@ -403,8 +398,8 @@ pub struct GPU {
 /// Automatically free the buffer when its handle is out of scope
 impl std::ops::Drop for GPU {
     fn drop(&mut self) {
-        unsafe{cudaStreamDestroy(self.stream as _)};
-        unsafe{cuCtxDestroy_v2(self.context as _)};
+        unsafe { cudaStreamDestroy(self.stream as _) };
+        unsafe { cuCtxDestroy_v2(self.context as _) };
     }
 }
 
@@ -416,33 +411,33 @@ impl GPU {
 
         // Get the first available device
         let mut device: CUdevice = device.0 as _;
-        let error: GPUError = unsafe{ cuDeviceGet(&mut device as *mut CUdevice, 0) }.into();    
+        let error: GPUError = unsafe { cuDeviceGet(&mut device as *mut CUdevice, 0) }.into();
         if error != GPUError::Success {
             return Err(error);
         }
 
         // create a context
         let mut context: CUcontext = core::ptr::null_mut();
-        let error: GPUError = unsafe{ cuCtxCreate_v2(
-            &mut context as *mut CUcontext, 
-            cudaDeviceScheduleAuto, 
-            device
-        )}.into();  
+        let error: GPUError = unsafe {
+            cuCtxCreate_v2(
+                &mut context as *mut CUcontext,
+                cudaDeviceScheduleAuto,
+                device,
+            )
+        }
+        .into();
         if error != GPUError::Success {
             return Err(error);
         }
 
         // Create a stream
-        let mut stream = unsafe{core::mem::MaybeUninit::uninit().assume_init()};
-        let error: GPUError = unsafe{ cuStreamCreate(
-            &mut stream as *mut CUstream, 
-            0,
-        )}.into();  
+        let mut stream = unsafe { core::mem::MaybeUninit::uninit().assume_init() };
+        let error: GPUError = unsafe { cuStreamCreate(&mut stream as *mut CUstream, 0) }.into();
         if error != GPUError::Success {
             return Err(error);
         }
 
-        Ok(GPU{
+        Ok(GPU {
             device,
             context,
             stream,
@@ -452,34 +447,39 @@ impl GPU {
     pub fn load_ptx(&mut self, ptx: &str) -> Result<PTX, GPUError> {
         let mut module: CUmodule = core::ptr::null_mut();
         let file = CString::new(ptx).unwrap();
-        let error: GPUError = unsafe{cuModuleLoadData(
-            &mut module as *mut CUmodule,
-            file.as_ptr() as *const _,
-        )}.into();  
+        let error: GPUError =
+            unsafe { cuModuleLoadData(&mut module as *mut CUmodule, file.as_ptr() as *const _) }
+                .into();
         error.into_result(PTX(module))
     }
 
     /// Wait for the GPU to finish all the launched kernels
     pub fn synchronize(&mut self) -> Result<(), GPUError> {
-        let error: GPUError = unsafe{ cuStreamSynchronize(self.stream) }.into();  
+        let error: GPUError = unsafe { cuStreamSynchronize(self.stream) }.into();
         error.into_result(())
     }
 
-    pub fn launch_kernel(&mut self, kernel: &Kernel, grid: &Grid, args: &mut [*mut c_void]) -> Result<(), GPUError> {
-        let error = unsafe{ cuLaunchKernel(
-                kernel.0, 
+    pub fn launch_kernel(
+        &mut self,
+        kernel: &Kernel,
+        grid: &Grid,
+        args: &mut [*mut c_void],
+    ) -> Result<(), GPUError> {
+        let error = unsafe {
+            cuLaunchKernel(
+                kernel.0,
                 grid.block_x as _,
                 grid.block_y as _,
                 grid.block_z as _,
-                grid.grid_x  as _,
-                grid.grid_y  as _,
-                grid.grid_z  as _,
+                grid.grid_x as _,
+                grid.grid_y as _,
+                grid.grid_z as _,
                 0,
                 self.stream,
                 args.as_mut_ptr(),
                 core::ptr::null_mut(),
             )
-        };  
+        };
         if error != cudaError_enum::CUDA_SUCCESS {
             return Err(GPUError::from(error as usize));
         }
@@ -490,11 +490,12 @@ impl GPU {
         let mut device_ptr: CUdeviceptr = 0;
         let error: GPUError = unsafe {
             cuMemAlloc_v2(
-                (&mut device_ptr) as *mut CUdeviceptr, 
-                len * core::mem::size_of::<T>()
+                (&mut device_ptr) as *mut CUdeviceptr,
+                len * core::mem::size_of::<T>(),
             )
-        }.into();  
-        error.into_result(GPUBuffer{
+        }
+        .into();
+        error.into_result(GPUBuffer {
             device_ptr,
             len,
             _marker: core::marker::PhantomData::default(),
@@ -508,7 +509,7 @@ impl GPU {
         Ok(result)
     }
 
-    /// Create a new GPU buffer from a slice with no initializzation that can 
+    /// Create a new GPU buffer from a slice with no initializzation that can
     /// store `len` objects of type `T`
     pub unsafe fn buffer_uninitialized<T>(&mut self, len: usize) -> Result<GPUBuffer<T>, GPUError> {
         self.allocate_buffer::<T>(len)
