@@ -40,6 +40,7 @@ pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
             * iterations
             * (random_walk_length as isize - window_size * 2) as usize,
     );
+    let context_size = (window_size * 2) as f32;
 
     // We iterate for all skipgram batches of the random walk.
     for center in window_size..(random_walk_length as isize - window_size) {
@@ -67,10 +68,16 @@ pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
                     * current_context_node_embedding[feature];
             }
         }
+        // Adjust dot by the size of the embedding to obtain mean.
+        dot /= context_size;
         // We compute the exponentiation of the dot product.
         let exponentiated_dot = dot.exp2();
         // We compute the loss for the POSITIVE node
         let loss = (1.0 - (exponentiated_dot / (exponentiated_dot + 1.0))) * learning_rate;
+        // Analogously, since we are not dividing the contexts by context size,
+        // we need to divide the loss by the context size for the update of the
+        // hidden layer.
+        let averaged_context_loss = loss / context_size; 
 
         // We backpropagate the loss to the hidden layer and the embeddding layer
         for context in (-window_size..0).chain(1..window_size + 1) {
@@ -82,7 +89,7 @@ pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
                 ..(current_context_node_id + 1) * embedding_size];
             for feature in 0..embedding_size {
                 current_central_node_embedding[feature] +=
-                    current_context_node_embedding[feature] * loss;
+                    current_context_node_embedding[feature] * averaged_context_loss;
                 current_context_node_embedding[feature] +=
                     current_central_node_embedding[feature] * loss;
             }
@@ -121,10 +128,16 @@ pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
                         * current_context_node_embedding[feature];
                 }
             }
+            // Adjust dot by the size of the embedding to obtain mean.
+            dot /= context_size;
             // We compute the exponentiation of the dot product.
             let exponentiated_dot = dot.exp2();
             // We compute the loss for the NEGATIVE node
             let loss = (exponentiated_dot / (exponentiated_dot + 1.0)) * learning_rate;
+            // Analogously, since we are not dividing the contexts by context size,
+            // we need to divide the loss by the context size for the update of the
+            // hidden layer.
+            let averaged_context_loss = loss / context_size; 
 
             // We backpropagate the loss to the hidden layer and the embeddding layer
             for context in (-window_size..0).chain(1..window_size + 1) {
@@ -136,7 +149,7 @@ pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
                     ..(current_context_node_id + 1) * embedding_size];
                 for feature in 0..embedding_size {
                     current_negative_node_embedding[feature] -=
-                        current_context_node_embedding[feature] * loss;
+                        current_context_node_embedding[feature] * averaged_context_loss;
                     current_context_node_embedding[feature] -=
                         current_negative_node_embedding[feature] * loss;
                 }
