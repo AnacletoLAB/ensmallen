@@ -2,6 +2,7 @@
 const PTX: &str = include_str!("../../cuda_kernels/target/nvptx64-nvidia-cuda/release/cuda_kernels.ptx");
 
 mod cbow;
+pub use cbow::*;
 mod wrappers;
 use wrappers::*;
 
