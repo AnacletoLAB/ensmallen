@@ -1441,20 +1441,20 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: Option<bool>) -> Result<()
             }
             assert_eq!(
                 graph
-                    .iter_random_walks(1, &walker)
+                    .par_iter_random_walks(1, &walker)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 graph
-                    .iter_random_walks(1, &walker)
+                    .par_iter_random_walks(1, &walker)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 "Walks of first order are not reproducible!"
             );
 
             assert_eq!(
                 graph
-                    .iter_random_walks(1, &second_order_walker(&graph, 2.0, 2.0)?)
+                    .par_iter_random_walks(1, &second_order_walker(&graph, 2.0, 2.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 graph
-                    .iter_random_walks(1, &second_order_walker(&graph, 2.0, 2.0)?)
+                    .par_iter_random_walks(1, &second_order_walker(&graph, 2.0, 2.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 "Walks of second order are not reproducible!"
             );

@@ -112,6 +112,9 @@ impl CBOW {
 
         // TODO!: load the provided embedding in GPU.
 
+        // 
+        random_state = splitmix64(random_state);
+
         // Create and allocate the hidden layer
         let mut hidden = (0..expected_embedding_len)
             .into_par_iter()

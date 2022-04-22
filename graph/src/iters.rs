@@ -1,5 +1,6 @@
 use super::*;
 use rayon::prelude::*;
+use vec_rand::sample_uniform;
 
 /// # Iterators
 /// The naming convention for the iterators is:
@@ -47,18 +48,16 @@ impl Graph {
 
     /// Return iterator on the node ontologies of the graph.
     pub fn iter_node_ontologies(&self) -> impl Iterator<Item = Option<String>> + '_ {
-        self.iter_node_names().map(move |node_name| unsafe {
-            self.get_unchecked_ontology_from_node_name(&node_name)
-        })
+        self.iter_node_names()
+            .map(move |node_name| unsafe { self.get_unchecked_ontology_from_node_name(&node_name) })
     }
 
     /// Return parallel iterator on the node ontologies of the graph.
     pub fn par_iter_node_ontologies(
         &self,
     ) -> impl IndexedParallelIterator<Item = Option<String>> + '_ {
-        self.par_iter_node_names().map(move |node_name| unsafe {
-            self.get_unchecked_ontology_from_node_name(&node_name)
-        })
+        self.par_iter_node_names()
+            .map(move |node_name| unsafe { self.get_unchecked_ontology_from_node_name(&node_name) })
     }
 
     /// Return iterator on the unique node type IDs of the graph.
@@ -511,6 +510,47 @@ impl Graph {
     ) -> impl ParallelIterator<Item = NodeT> + '_ {
         self.par_iter_edge_node_ids(directed)
             .map(move |(_, _, dst)| dst)
+    }
+
+    /// Return iterator on random (non unique) source node IDs.
+    ///
+    /// # Arguments
+    /// 'quantity': usize - Number of nodes to sample.
+    /// 'random_state': u64 - Random state to use to sample the nodes.
+    pub fn iter_random_source_node_ids(
+        &self,
+        quantity: usize,
+        mut random_state: u64,
+    ) -> impl Iterator<Item = NodeT> + '_ {
+        let number_of_directed_edges = self.get_number_of_directed_edges();
+        (0..quantity).map(move |_| unsafe {
+            random_state = splitmix64(random_state);
+            self.get_unchecked_node_ids_from_edge_id(sample_uniform(
+                number_of_directed_edges,
+                random_state,
+            ) as EdgeT)
+                .0
+        })
+    }
+
+    /// Return parallel iterator on random (non unique) source node IDs.
+    ///
+    /// # Arguments
+    /// 'quantity': usize - Number of nodes to sample.
+    /// 'random_state': u64 - Random state to use to sample the nodes.
+    pub fn par_iter_random_source_node_ids(
+        &self,
+        quantity: usize,
+        random_state: u64,
+    ) -> impl IndexedParallelIterator<Item = NodeT> + '_ {
+        let number_of_directed_edges = self.get_number_of_directed_edges();
+        (0..quantity).into_par_iter().map(move |i| unsafe {
+            self.get_unchecked_node_ids_from_edge_id(sample_uniform(
+                number_of_directed_edges,
+                splitmix64(random_state + i as u64),
+            ) as EdgeT)
+                .0
+        })
     }
 
     /// Return iterator on the (non unique) directed destination nodes of the graph.

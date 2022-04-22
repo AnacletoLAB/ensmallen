@@ -55,16 +55,15 @@ impl Graph {
         }
 
         if !self.has_nodes_sorted_by_decreasing_outbound_node_degree() {
-            return Err(
-                concat!(
-                    "The current graph does not have nodes sorted by decreasing node degrees ",
-                    "and therefore the negative sampling used to approximate the sigmoid and ",
-                    "binary cross-entropy loss. You can sort this graph the desired way by ",
-                    "using the `graph.sort_by_decreasing_outbound_node_degree()` method. ",
-                    "Do note that this method does not sort in-place ",
-                    "but creates a new instance of the provided graph. "
-                ).to_string()
-            );
+            return Err(concat!(
+                "The current graph does not have nodes sorted by decreasing node degrees ",
+                "and therefore the negative sampling used to approximate the sigmoid and ",
+                "binary cross-entropy loss. You can sort this graph the desired way by ",
+                "using the `graph.sort_by_decreasing_outbound_node_degree()` method. ",
+                "Do note that this method does not sort in-place ",
+                "but creates a new instance of the provided graph. "
+            )
+            .to_string());
         }
 
         if (walk_length as usize) < window_size * 2 + 1 {
