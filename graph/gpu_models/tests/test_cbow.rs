@@ -2,7 +2,7 @@ extern crate graph;
 
 use gpu_models::*;
 use graph::test_utilities::*;
-use graph::CSVFileWriter;
+use graph::{CSVFileWriter, WalksParameters};
 
 #[test]
 fn test_cbow_on_cora() -> Result<(), GPUError> {
@@ -10,7 +10,8 @@ fn test_cbow_on_cora() -> Result<(), GPUError> {
     cora.enable(Some(true), Some(true), Some(true), Some(false))
         .unwrap();
     let embedding_size = 32;
-    let cbow = CBOW::new(Some(embedding_size), None, Some(10), Some(5)).unwrap();
+    let walks = WalksParameters::new(128);
+    let cbow = CBOW::new(Some(embedding_size), Some(walks), Some(10), Some(5)).unwrap();
     let mut embedding = vec![0.0; embedding_size * cora.get_nodes_number() as usize];
     cbow.fit_transform(
         &cora,
