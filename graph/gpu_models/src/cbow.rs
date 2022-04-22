@@ -220,8 +220,8 @@ impl CBOW {
                     .collect_into_vec(&mut negative_node_ids);
 
                 // We move the two portions of the batch into the GPU
-                random_walks_on_gpu.copy_host2gpu(&random_walks);
-                negative_node_ids_on_gpu.copy_host2gpu(&negative_node_ids);
+                random_walks_on_gpu.copy_host2gpu(&random_walks)?;
+                negative_node_ids_on_gpu.copy_host2gpu(&negative_node_ids)?;
 
                 // We compute the current batch
                 // launch the function with the args
