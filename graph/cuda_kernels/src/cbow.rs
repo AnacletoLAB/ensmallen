@@ -99,9 +99,10 @@ pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
             * number_of_negative_samples;
         for negative_number in start_negatives..end_negatives {
             // We retrieve the value of the current central node ID
-            let current_negative_node_id = negative_node_ids
-                [random_walk_number * random_walk_length + negative_number + center as usize]
-                as usize;
+            let current_negative_node_id = negative_node_ids[random_walk_number
+                * number_of_contexts_per_random_walk
+                + negative_number
+                + center as usize] as usize;
             // and we retrieve its embedding
             let current_negative_node_embedding = &mut hidden[current_negative_node_id
                 * embedding_size
