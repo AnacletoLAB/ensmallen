@@ -8,7 +8,7 @@ macro_rules! args {
     [$($value:expr,)*] => {
         &mut vec![
             $(
-                & $value as *const _ as *mut _ as *mut core::ffi::c_void,
+                & $value as *const _ as *mut core::ffi::c_void,
             )*
         ]
     };
