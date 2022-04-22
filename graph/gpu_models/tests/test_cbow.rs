@@ -30,7 +30,7 @@ fn test_cbow_on_cora() -> Result<(), GPUError> {
     writer
         .write_lines(
             Some(cora.get_nodes_number() as usize),
-            vec!["node_name"]
+            vec!["node_name".to_string()]
                 .iter()
                 .chain((0..embedding_size).map(|e| e.to_string()))
                 .collect::<Vec<String>>(),
