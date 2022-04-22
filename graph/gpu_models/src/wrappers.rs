@@ -228,6 +228,7 @@ impl<T> GPUBuffer<T> {
     /// Copy the buffer from the GPU to a new vector in the CPU RAM
     pub fn to_vec(&self) -> Result<Vec<T>, GPUError> {
         let mut result = Vec::with_capacity(self.len);
+        unsafe{result.set_len(self.len)};
         self.copy_gpu2host(&mut result)?;
         Ok(result)
     }
