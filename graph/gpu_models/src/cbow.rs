@@ -155,20 +155,20 @@ impl CBOW {
             .collect::<Vec<_>>();
 
         // allocate a gpu buffer and copy data from the host
-        let hidden_on_gpu = gpu.buffer_from_slice::<f32>(&hidden)?;
+        let hidden_on_gpu = gpu.buffer_from_slice::<f32>(&mut hidden)?;
 
         // Create the vector we will populate with the random walks.
         let mut random_walks: Vec<NodeT> =
             vec![0; number_of_random_walks * random_walk_length as usize];
 
-        let random_walks_on_gpu = gpu.buffer_from_slice::<NodeT>(&random_walks)?;
+        let mut random_walks_on_gpu = gpu.buffer_from_slice::<NodeT>(&random_walks)?;
 
         // Create the vector we will be reusing multiple times
         // for the negative node IDs used to approximate a softmax
         let mut negative_node_ids: Vec<NodeT> =
             vec![0; actual_batch_size * self.number_of_negative_samples];
 
-        let negative_node_ids_on_gpu = gpu.buffer_from_slice::<NodeT>(&negative_node_ids)?;
+        let mut negative_node_ids_on_gpu = gpu.buffer_from_slice::<NodeT>(&negative_node_ids)?;
 
         // Depending whether verbosity was requested by the user
         // we create or not a visible progress bar to show the progress
