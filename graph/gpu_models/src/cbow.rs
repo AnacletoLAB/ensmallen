@@ -1,3 +1,4 @@
+use crate::*;
 use graph::{Graph, NodeT, WalksParameters};
 use indicatif::{ProgressIterator, ProgressBar, ProgressStyle};
 use rayon::iter::IndexedParallelIterator;
@@ -57,7 +58,7 @@ impl CBOW {
         learning_rate: Option<f32>,
         batch_size: Option<usize>,
         verbose: Option<bool>,
-    ) -> Result<(), String> {
+    ) -> Result<(), GPUError> {
         let epochs = epochs.unwrap_or(10);
         let batch_size = batch_size.unwrap_or(32);
         let number_of_batches_per_epoch =
@@ -66,40 +67,65 @@ impl CBOW {
         let mut walk_parameters = self.walk_parameters.clone();
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
         let random_walk_length = walk_parameters.get_random_walk_length() as usize;
+        let iterations = walk_parameters.get_iterations() as usize;
         let actual_batch_size = batch_size
-            * walk_parameters.get_iterations() as usize
+            * iterations
             * (random_walk_length - (self.window_size as usize) * 2);
         let verbose = verbose.unwrap_or(true);
+        let vocabulary_size = graph.get_nodes_number();
+        let number_of_random_walks = batch_size
+        * iterations;
 
-        if epochs == 0 {
-            return Err("The number of epochs must be strictly greater than zero.".to_string());
-        }
+        // if epochs == 0 {
+        //     return Err("The number of epochs must be strictly greater than zero.".to_string());
+        // }
 
-        if !graph.has_nodes() {
-            return Err("The provided graph does not have any node.".to_string());
-        }
+        // if !graph.has_nodes() {
+        //     return Err("The provided graph does not have any node.".to_string());
+        // }
 
-        if !graph.has_nodes_sorted_by_decreasing_outbound_node_degree() {
-            return Err(concat!(
-                "The provided graph does not have nodes sorted by decreasing node degrees ",
-                "and therefore the negative sampling used to approximate the sigmoid and ",
-                "binary cross-entropy loss. You can sort this graph the desired way by ",
-                "using the `graph.sort_by_decreasing_outbound_node_degree()` method. ",
-                "Do note that this method does not sort in-place ",
-                "but creates a new instance of the provided graph. "
-            )
-            .to_string());
-        }
+        // if !graph.has_nodes_sorted_by_decreasing_outbound_node_degree() {
+        //     return Err(concat!(
+        //         "The provided graph does not have nodes sorted by decreasing node degrees ",
+        //         "and therefore the negative sampling used to approximate the sigmoid and ",
+        //         "binary cross-entropy loss. You can sort this graph the desired way by ",
+        //         "using the `graph.sort_by_decreasing_outbound_node_degree()` method. ",
+        //         "Do note that this method does not sort in-place ",
+        //         "but creates a new instance of the provided graph. "
+        //     )
+        //     .to_string());
+        // }
 
         let expected_embedding_len = self.embedding_size * graph.get_nodes_number() as usize;
 
-        if embedding.len() != expected_embedding_len {
-            return Err(format!(
-                "The given memory allocation for the embeddings is {} long but we expect {}.",
-                embedding.len(),
-                expected_embedding_len
-            ));
-        }
+        // if embedding.len() != expected_embedding_len {
+        //     return Err(format!(
+        //         "The given memory allocation for the embeddings is {} long but we expect {}.",
+        //         embedding.len(),
+        //         expected_embedding_len
+        //     ));
+        // }
+
+        // get all the devices in the system
+        let devices = Device::get_devices()?;
+        // we use the first device
+        let device = devices[0];
+
+        // get info about this device
+        let props = device.get_properties()?;
+        println!("using GPU {}", device.get_name()?);
+        println!("The gpu has {:.4} Gib of VRAM", props.totalGlobalMem as f64 / 1_000_000_000 as f64);
+
+        // setup this device for computation
+        let mut gpu = GPU::new(device)?;
+        // load our compiled code
+        let mut ptx = gpu.load_ptx(PTX)?;
+        // get a function from the compiled code
+        let compute_cbow_mini_batch = ptx.get_kernel("compute_cbow_mini_batch")?;
+
+        assert!(number_of_random_walks%1024==0);
+        // set the parallelizzation specs
+        let grid = Grid::default().set_grid_x(number_of_random_walks / 1024)?.set_block_x(1024)?;
 
         // TODO!: Check if the requested vector sizes would even fit in GPU.
         // The check should include: embedding, hidden, batch.
@@ -110,7 +136,8 @@ impl CBOW {
             .enumerate()
             .for_each(|(i, e)| *e = 2.0 * random_f32(random_state + i as u64) - 1.0);
 
-        // TODO!: load the provided embedding in GPU.
+        // allocate a gpu buffer and copy data from the host
+        let embedding_on_gpu = gpu.buffer_from_slice::<f32>(embedding)?;
 
         // 
         random_state = splitmix64(random_state);
@@ -121,19 +148,24 @@ impl CBOW {
             .map(|i| 2.0 * random_f32(random_state + i as u64) - 1.0)
             .collect::<Vec<_>>();
 
-        // TODO!: load the hidden layer in GPU.
+        // allocate a gpu buffer and copy data from the host
+        let hidden_on_gpu = gpu.buffer_from_slice::<f32>(&hidden)?;
 
         // Create the vector we will populate with the random walks.
         let mut random_walks: Vec<NodeT> = vec![
             0;
-            batch_size
-                * walk_parameters.get_iterations() as usize
+            number_of_random_walks
                 * random_walk_length as usize
         ];
+
+        let random_walks_on_gpu = gpu.buffer_from_slice::<NodeT>(&random_walks)?;
+
         // Create the vector we will be reusing multiple times
         // for the negative node IDs used to approximate a softmax
         let mut negative_node_ids: Vec<NodeT> =
             vec![0; actual_batch_size * self.number_of_negative_samples];
+
+        let negative_node_ids_on_gpu = gpu.buffer_from_slice::<NodeT>(&negative_node_ids)?;
 
         // Depending whether verbosity was requested by the user
         // we create or not a visible progress bar to show the progress
@@ -185,10 +217,36 @@ impl CBOW {
                     .collect_into_vec(&mut negative_node_ids);
 
                 // We move the two portions of the batch into the GPU
+                random_walks_on_gpu.copy_host2gpu(&random_walks);
+                negative_node_ids_on_gpu.copy_host2gpu(&negative_node_ids);
 
-                // TODO! copy data in GPU
+                // We compute the current batch
+                // launch the function with the args
+                gpu.launch_kernel(
+                    compute_cbow_mini_batch,
+                    grid, 
+                    args![
+                        embedding_on_gpu.as_device_ptr(),
+                        hidden_on_gpu.as_device_ptr(),
+                        random_walks_on_gpu.as_device_ptr(),
+                        negative_node_ids_on_gpu.as_device_ptr(),
+                        learning_rate,
+                        self.window_size as isize,
+                        self.number_of_negative_samples,
+                        random_walk_length,
+                        self.embedding_size,
+                        vocabulary_size,
+                        batch_size,
+                        iterations,
+                    ]
+                )?;
+
+                // wait for the gpu to finish
+                gpu.synchronize()?;
             }
         }
+
+        embedding_on_gpu.copy_gpu2host(embedding)?;
         Ok(())
     }
 }
