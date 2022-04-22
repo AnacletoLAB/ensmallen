@@ -66,8 +66,8 @@ impl CBOW {
         let learning_rate = learning_rate.unwrap_or(0.025);
         let mut walk_parameters = self.walk_parameters.clone();
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
-        let random_walk_length = walk_parameters.get_random_walk_length() as usize;
-        let iterations = walk_parameters.get_iterations() as usize;
+        let mut random_walk_length = walk_parameters.get_random_walk_length() as usize;
+        let mut iterations = walk_parameters.get_iterations() as usize;
         let actual_batch_size = batch_size
             * iterations
             * (random_walk_length - (self.window_size as usize) * 2);
