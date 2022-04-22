@@ -155,6 +155,7 @@ impl CBOW {
             .collect::<Vec<_>>();
 
         // allocate a gpu buffer and copy data from the host
+        // TODO! check if here it needs to be mutable or not!
         let hidden_on_gpu = gpu.buffer_from_slice::<f32>(&mut hidden)?;
 
         // Create the vector we will populate with the random walks.
@@ -212,7 +213,7 @@ impl CBOW {
                     batch_size as NodeT,
                     &self.walk_parameters,
                     random_walks.as_mut_slice(),
-                );
+                ).unwrap();
 
                 // The second part by the negative node IDs
                 graph
