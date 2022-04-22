@@ -12,7 +12,7 @@ fn test_cbow_on_cora() -> Result<(), GPUError> {
         .unwrap();
     let embedding_size = 32;
     let walks = WalksParameters::new(128).unwrap().set_iterations(Some(10)).unwrap();
-    let cbow = CBOW::new(Some(embedding_size), Some(walks), Some(20), Some(5)).unwrap();
+    let cbow = CBOW::new(Some(embedding_size), Some(walks), Some(10), Some(5)).unwrap();
     let mut embedding = vec![0.0; embedding_size * cora.get_nodes_number() as usize];
     cbow.fit_transform(
         &cora,
