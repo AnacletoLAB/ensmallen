@@ -4,7 +4,7 @@ const PTX: &str = include_str!("../../cuda_kernels/target/nvptx64-nvidia-cuda/re
 mod wrappers;
 use wrappers::*;
 
-pub fn add_one(vals: &[usize]) -> Result<Vec<usize>, GPUError> {
+pub fn add_one(vals: &[u32]) -> Result<Vec<u32>, GPUError> {
     // get all the devices in the system
     let devices = Device::get_devices()?;
     // we use the first device
@@ -23,7 +23,7 @@ pub fn add_one(vals: &[usize]) -> Result<Vec<usize>, GPUError> {
     let kernel = ptx.get_kernel("test_kernel")?;
     
     // allocate a gpu buffer and copy data from the host
-    let buffer = gpu.buffer_from_slice::<usize>(vals)?;
+    let buffer = gpu.buffer_from_slice::<u32>(vals)?;
 
     // set the parallelizzation specs
     let grid = Grid::default().set_block_x(1024)?;
