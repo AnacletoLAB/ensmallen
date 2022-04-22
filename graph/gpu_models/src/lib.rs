@@ -2,3 +2,4 @@
 const PTX_PATH: &str = "../cuda_kernels/target/nvptx64-nvidia-cuda/release/cuda_kernels.ptx";
 const PTX: &str = includ!(PTX_PATH);
 
+mod cbow;
