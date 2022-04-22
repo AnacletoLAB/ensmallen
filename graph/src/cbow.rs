@@ -1,12 +1,12 @@
 use super::*;
-use atomic_float::AtomicF32;
+use atomic_float::AtomicF64;
 use indicatif::ProgressIterator;
 use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::IntoParallelRefIterator;
 use rayon::iter::ParallelIterator;
 use std::sync::atomic::Ordering;
-use vec_rand::{random_f32, sample_uniform};
+use vec_rand::{random_f64, sample_uniform};
 
 impl Graph {
     #[manual_binding]
@@ -14,7 +14,7 @@ impl Graph {
     /// 0.0), write into it the CBOW embeddings
     pub fn compute_cbow_embedding(
         &self,
-        embedding: &mut [f32],
+        embedding: &mut [f64],
         embedding_size: Option<usize>,
         epochs: Option<usize>,
         walk_length: Option<u64>,
@@ -27,14 +27,14 @@ impl Graph {
         normalize_by_degree: Option<bool>,
         window_size: Option<usize>,
         number_of_negative_samples: Option<usize>,
-        learning_rate: Option<f32>,
+        learning_rate: Option<f64>,
         random_state: Option<u64>,
         verbose: Option<bool>,
     ) -> Result<()> {
         let embedding_size = embedding_size.unwrap_or(100);
         let walk_length = walk_length.unwrap_or(128);
         let window_size = window_size.unwrap_or(4);
-        let context_size = (window_size * 2) as f32;
+        let context_size = (window_size * 2) as f64;
         let epochs = epochs.unwrap_or(1);
         let number_of_negative_samples = number_of_negative_samples.unwrap_or(5);
         let learning_rate = learning_rate.unwrap_or(0.025);
@@ -87,24 +87,24 @@ impl Graph {
             ));
         }
 
-        let embedding = unsafe { core::mem::transmute::<&mut [f32], &mut [AtomicF32]>(embedding) };
+        let embedding = unsafe { core::mem::transmute::<&mut [f64], &mut [AtomicF64]>(embedding) };
 
         embedding.par_iter().enumerate().for_each(|(i, e)| {
             e.store(
-                2.0 * random_f32(random_state + i as u64) - 1.0,
+                2.0 * random_f64(random_state + i as u64) - 1.0,
                 Ordering::SeqCst,
             )
         });
 
         let negative_embedding = (0..(embedding_size * self.get_nodes_number() as usize))
             .into_par_iter()
-            .map(|i| AtomicF32::new(2.0 * random_f32(random_state + i as u64) - 1.0))
+            .map(|i| AtomicF64::new(2.0 * random_f64(random_state + i as u64) - 1.0))
             .collect::<Vec<_>>();
         let pb = get_loading_bar(verbose, "Training CBOW model", epochs);
 
         let number_of_directed_edges = self.get_number_of_directed_edges();
 
-        let weighted_sum = |factor: f32, source: &[AtomicF32], result: &mut [f32]| {
+        let weighted_sum = |factor: f64, source: &[AtomicF64], result: &mut [f64]| {
             result
                 .iter_mut()
                 .zip(source.iter().map(|a| a.load(Ordering::SeqCst)))
@@ -113,7 +113,7 @@ impl Graph {
                 });
         };
 
-        let atomic_sum = |source: &[f32], result: &[AtomicF32]| {
+        let atomic_sum = |source: &[f64], result: &[AtomicF64]| {
             result
                 .iter()
                 .zip(source.iter().cloned())
@@ -122,7 +122,7 @@ impl Graph {
                 });
         };
 
-        let atomic_weighted_sum = |factor: f32, source: &[f32], result: &[AtomicF32]| {
+        let atomic_weighted_sum = |factor: f64, source: &[f64], result: &[AtomicF64]| {
             result
                 .iter()
                 .zip(source.iter().cloned())
@@ -131,7 +131,7 @@ impl Graph {
                 });
         };
 
-        let compute_dot_product = |v1: &[f32], v2: &[f32]| -> f32 {
+        let compute_dot_product = |v1: &[f64], v2: &[f64]| -> f64 {
             v1.iter()
                 .cloned()
                 .zip(v2.iter().cloned())
@@ -207,7 +207,7 @@ impl Graph {
                                     })
                                     .map(|sampled_node| (sampled_node as usize, 0.0)),
                             )
-                            .for_each(|(node_index, label): (usize, f32)| {
+                            .for_each(|(node_index, label): (usize, f64)| {
                                 // Sample negative index
                                 // Retrieve the node embedding from the negative embedding
                                 // curresponding to the `negative_node_index` node.
@@ -215,9 +215,9 @@ impl Graph {
                                     * embedding_size)
                                     ..((node_index + 1) * embedding_size)];
                                 // Compute the dot product between the negative embedding and the context average.
-                                let dot_product: f32 = compute_dot_product(
+                                let dot_product: f64 = compute_dot_product(
                                     unsafe {
-                                        core::mem::transmute::<&[AtomicF32], &[f32]>(
+                                        core::mem::transmute::<&[AtomicF64], &[f64]>(
                                             node_negative_embedding,
                                         )
                                     },
