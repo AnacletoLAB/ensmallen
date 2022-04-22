@@ -336,14 +336,45 @@ impl PTX {
     }
 }
 
-/// Wrapper for the 
-pub struct GPU {
-    device: CUdevice,
-    context: CUcontext,
-    stream: CUstream,
-}
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Ord, PartialOrd)]
+pub struct Device(usize);
 
-impl GPU {
+impl Device {
+    pub fn new(device_id: usize) -> Result<Device, GPUError> {
+        // Check that the device asked is reasonable
+        if device_id > Device::get_device_count()? {
+            return Err(GPUError::InvalidDevice);
+        }
+        Ok(Device(device_id))
+    }
+
+    pub fn get_name(&self) -> Result<String, GPUError> {
+        let props = self.get_properties()?;
+        let bytes = unsafe{
+            std::mem::transmute::<&[i8], &[u8]>(props.name.as_slice())
+        };
+        Ok(std::str::from_utf8(bytes).unwrap().to_string())
+    }
+
+    /// Get informations about a Device
+    pub fn get_properties(&self) -> Result<cudaDeviceProp, GPUError> {
+        let mut props: cudaDeviceProp = unsafe{core::mem::MaybeUninit::uninit().assume_init()};
+        let error = unsafe{
+            cudaGetDeviceProperties(
+                &mut props as *mut _,
+                self.0 as _,
+            )
+        };
+        if error != cudaError::cudaSuccess {
+            return Err(GPUError::from(error as usize));
+        }
+        Ok(props)
+    }
+
+    pub fn get_devices() -> Result<Vec<Device>, GPUError> {
+        Ok((0..Device::get_device_count()?).map(|i| Device(i)).collect())
+    }
+
     /// Get the number of available devices
     pub fn get_device_count() -> Result<usize, GPUError> {
         let mut number_of_devices = 0;
@@ -352,19 +383,32 @@ impl GPU {
             return Err(GPUError::from(error as usize));
         }
         Ok(number_of_devices as usize)
-    }
+    }   
+}
 
-    pub fn new(device: usize) -> Result<Self, GPUError> {
+/// Wrapper for the context and stream of a device
+pub struct GPU {
+    device: CUdevice,
+    context: CUcontext,
+    stream: CUstream,
+}
+
+/// Automatically free the buffer when its handle is out of scope
+impl std::ops::Drop for GPU {
+    fn drop(&mut self) {
+        unsafe{cudaStreamDestroy(self.stream as _)};
+        unsafe{cuCtxDestroy_v2(self.context as _)};
+    }
+}
+
+impl GPU {
+    /// Create a new GPU contex and stream from a device
+    pub fn new(device: Device) -> Result<Self, GPUError> {
         // Init the cuda library
         unsafe { cuInit(0) };
 
-        // Check that the device asked is reasonable
-        if device > GPU::get_device_count()? {
-            return Err(GPUError::InvalidDevice);
-        }
-
         // Get the first available device
-        let mut device: CUdevice = device as _;
+        let mut device: CUdevice = device.0 as _;
         let error: GPUError = unsafe{ cuDeviceGet(&mut device as *mut CUdevice, 0) }.into();    
         if error != GPUError::Success {
             return Err(error);
