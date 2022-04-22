@@ -36,6 +36,54 @@ pub fn block_idx_x() -> u32{
     result
 }
 
+#[inline(always)]
+pub fn thread_idx_y() -> u32{
+    let mut result: u32;
+    unsafe {
+        asm!(
+            "mov.u32 {r}, %tid.y;",
+            r = out(reg32) result,
+        );
+    }
+    result
+}
+
+#[inline(always)]
+pub fn block_idx_y() -> u32{
+    let mut result: u32;
+    unsafe {
+        asm!(
+            "mov.u32 {r}, %ctaid.y;",
+            r = out(reg32) result,
+        );
+    }
+    result
+}
+
+#[inline(always)]
+pub fn thread_idx_z() -> u32{
+    let mut result: u32;
+    unsafe {
+        asm!(
+            "mov.u32 {r}, %tid.z;",
+            r = out(reg32) result,
+        );
+    }
+    result
+}
+
+#[inline(always)]
+pub fn block_idx_z() -> u32{
+    let mut result: u32;
+    unsafe {
+        asm!(
+            "mov.u32 {r}, %ctaid.z;",
+            r = out(reg32) result,
+        );
+    }
+    result
+}
+
 #[panic_handler]
 pub unsafe fn breakpoint_panic_handler(_: &::core::panic::PanicInfo) -> ! {
     core::intrinsics::breakpoint();
