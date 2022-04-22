@@ -173,7 +173,7 @@ impl CSVFileWriter {
     /// * `lines_number`: Option<usize> - Number of lines to expect to write out.
     /// * `header`: Vec<String> - The header to write out, if so required.
     /// * `values`: impl Iterator<Item = Vec<String>> - Iterator of rows to write out.
-    pub(crate) fn write_lines(
+    pub fn write_lines(
         &self,
         lines_number: Option<usize>,
         header: Vec<String>,
