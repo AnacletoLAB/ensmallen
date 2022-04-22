@@ -7,6 +7,7 @@ use graph::{CSVFileWriter, WalksParameters};
 #[test]
 fn test_cbow_on_cora() -> Result<(), GPUError> {
     let mut cora = load_cora();
+    cora = cora.sort_by_decreasing_outbound_node_degree();
     cora.enable(Some(true), Some(true), Some(true), Some(false))
         .unwrap();
     let embedding_size = 32;
