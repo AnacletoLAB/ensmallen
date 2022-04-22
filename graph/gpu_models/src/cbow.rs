@@ -5,7 +5,7 @@ use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::IntoParallelRefMutIterator;
 use rayon::iter::ParallelIterator;
-use vec_rand::{random_f32, splitmix64};
+use vec_rand::{random_f64, splitmix64};
 
 pub struct CBOW {
     embedding_size: usize,
@@ -53,9 +53,9 @@ impl CBOW {
     pub fn fit_transform(
         &self,
         graph: &Graph,
-        embedding: &mut [f32],
+        embedding: &mut [f64],
         epochs: Option<usize>,
-        learning_rate: Option<f32>,
+        learning_rate: Option<f64>,
         batch_size: Option<usize>,
         verbose: Option<bool>,
     ) -> Result<(), GPUError> {
@@ -140,10 +140,10 @@ impl CBOW {
         embedding
             .par_iter_mut()
             .enumerate()
-            .for_each(|(i, e)| *e = 2.0 * random_f32(random_state + i as u64) - 1.0);
+            .for_each(|(i, e)| *e = 2.0 * random_f64(random_state + i as u64) - 1.0);
 
         // allocate a gpu buffer and copy data from the host
-        let embedding_on_gpu = gpu.buffer_from_slice::<f32>(embedding)?;
+        let embedding_on_gpu = gpu.buffer_from_slice::<f64>(embedding)?;
 
         //
         random_state = splitmix64(random_state);
@@ -151,12 +151,12 @@ impl CBOW {
         // Create and allocate the hidden layer
         let mut hidden = (0..expected_embedding_len)
             .into_par_iter()
-            .map(|i| 2.0 * random_f32(random_state + i as u64) - 1.0)
+            .map(|i| 2.0 * random_f64(random_state + i as u64) - 1.0)
             .collect::<Vec<_>>();
 
         // allocate a gpu buffer and copy data from the host
         // TODO! check if here it needs to be mutable or not!
-        let hidden_on_gpu = gpu.buffer_from_slice::<f32>(&mut hidden)?;
+        let hidden_on_gpu = gpu.buffer_from_slice::<f64>(&mut hidden)?;
 
         // Create the vector we will populate with the random walks.
         let mut random_walks: Vec<NodeT> =
