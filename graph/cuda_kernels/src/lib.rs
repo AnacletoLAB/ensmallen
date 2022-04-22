@@ -3,7 +3,9 @@
 #![feature(asm_experimental_arch)]
 
 mod intrinsics;
+mod cbow;
 use intrinsics::*;
+pub use cbow::*;
 
 #[no_mangle]
 /// Actual function called by the CPU code in the GPU
