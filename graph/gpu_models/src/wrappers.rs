@@ -228,6 +228,7 @@ impl<T> GPUBuffer<T> {
     /// Copy the buffer from the GPU to a new vector in the CPU RAM
     pub fn to_vec(&self) -> Result<Vec<T>, GPUError> {
         let mut result = Vec::with_capacity(self.len);
+        unsafe{result.set_len(self.len)};
         self.copy_gpu2host(&mut result)?;
         Ok(result)
     }
@@ -321,6 +322,12 @@ pub struct Kernel(CUfunction);
 
 /// Wrapper for a loaded module that contains callable kernels
 pub struct PTX(CUmodule);
+
+impl std::ops::Drop for PTX {
+    fn drop(&mut self) {
+        unsafe{cuModuleUnload(self.0)};
+    }
+}
 
 impl PTX {
     /// Get a kernel by name from the module
@@ -444,10 +451,10 @@ impl GPU {
 
     pub fn load_ptx(&mut self, ptx: &str) -> Result<PTX, GPUError> {
         let mut module: CUmodule = core::ptr::null_mut();
-        let file_name = CString::new(ptx).unwrap();
-        let error: GPUError = unsafe{cuModuleLoad(
+        let file = CString::new(ptx).unwrap();
+        let error: GPUError = unsafe{cuModuleLoadData(
             &mut module as *mut CUmodule,
-            file_name.as_ptr(),
+            file.as_ptr() as *const _,
         )}.into();  
         error.into_result(PTX(module))
     }

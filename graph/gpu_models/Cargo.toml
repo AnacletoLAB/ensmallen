@@ -8,3 +8,6 @@ edition = "2021"
 [dependencies]
 cuda-driver-sys="0.3.0"
 cuda-runtime-sys="0.3.0-alpha.1"
+
+[profile.release]
+debug = true
