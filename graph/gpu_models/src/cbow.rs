@@ -226,8 +226,8 @@ impl CBOW {
                 // We compute the current batch
                 // launch the function with the args
                 gpu.launch_kernel(
-                    compute_cbow_mini_batch,
-                    grid, 
+                    &compute_cbow_mini_batch,
+                    &grid, 
                     args![
                         embedding_on_gpu.as_device_ptr(),
                         hidden_on_gpu.as_device_ptr(),

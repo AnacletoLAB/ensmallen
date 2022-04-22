@@ -465,7 +465,7 @@ impl GPU {
         error.into_result(())
     }
 
-    pub fn launch_kernel(&mut self, kernel: Kernel, grid: Grid, args: &mut [*mut c_void]) -> Result<(), GPUError> {
+    pub fn launch_kernel(&mut self, kernel: &Kernel, grid: &Grid, args: &mut [*mut c_void]) -> Result<(), GPUError> {
         let error = unsafe{ cuLaunchKernel(
                 kernel.0, 
                 grid.block_x as _,

@@ -30,7 +30,7 @@ pub fn add_one(vals: &[u32]) -> Result<Vec<u32>, GPUError> {
     let grid = Grid::default().set_block_x(1024)?;
 
     // launch the function with the args
-    gpu.launch_kernel(kernel, grid, args![
+    gpu.launch_kernel(&kernel, &grid, args![
         buffer.as_device_ptr(),
         buffer.len(),
     ])?;
