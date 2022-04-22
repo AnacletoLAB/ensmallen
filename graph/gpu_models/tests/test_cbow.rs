@@ -36,7 +36,7 @@ fn test_cbow_on_cora() -> Result<(), GPUError> {
                 .collect::<Vec<String>>(),
             embedding
                 .chunks(128)
-                .zip(cora.get_node_names().into_iter().cloned())
+                .zip(cora.get_node_names().into_iter())
                 .map(|(features, node_name)| {
                     vec![node_name.to_string()]
                         .into_iter()
