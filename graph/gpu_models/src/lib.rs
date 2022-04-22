@@ -4,7 +4,7 @@ const PTX: &str = include_str!("../../cuda_kernels/target/nvptx64-nvidia-cuda/re
 mod cbow;
 pub use cbow::*;
 mod wrappers;
-use wrappers::*;
+pub use wrappers::*;
 
 pub fn add_one(vals: &[u32]) -> Result<Vec<u32>, GPUError> {
     // get all the devices in the system
