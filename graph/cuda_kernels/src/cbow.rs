@@ -73,20 +73,20 @@ pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
         let loss = (1.0 - (exponentiated_dot / (exponentiated_dot + 1.0))) * learning_rate;
 
         // We backpropagate the loss to the hidden layer and the embeddding layer
-        // for context in (-window_size..0).chain(1..window_size + 1) {
-        //     let current_context_node_id = random_walks
-        //         [random_walk_number * random_walk_length + (center + context) as usize]
-        //         as usize;
-        //     let current_context_node_embedding = &mut embedding[current_context_node_id
-        //         * embedding_size
-        //         ..(current_context_node_id + 1) * embedding_size];
-        //     for feature in 0..embedding_size {
-        //         current_central_node_embedding[feature] +=
-        //             current_context_node_embedding[feature] * loss;
-        //         current_context_node_embedding[feature] +=
-        //             current_central_node_embedding[feature] * loss;
-        //     }
-        // }
+        for context in (-window_size..0).chain(1..window_size + 1) {
+            let current_context_node_id = random_walks
+                [random_walk_number * random_walk_length + (center + context) as usize]
+                as usize;
+            let current_context_node_embedding = &mut embedding[current_context_node_id
+                * embedding_size
+                ..(current_context_node_id + 1) * embedding_size];
+            for feature in 0..embedding_size {
+                current_central_node_embedding[feature] +=
+                    current_context_node_embedding[feature] * loss;
+                current_context_node_embedding[feature] +=
+                    current_central_node_embedding[feature] * loss;
+            }
+        }
 
         // BEGIN THE RELAXATION STEP FOR THE NEGATIVES OF THIS CONTEXT
 
