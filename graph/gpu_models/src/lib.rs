@@ -21,11 +21,10 @@ pub fn add_one(vals: &[u32]) -> Result<Vec<u32>, GPUError> {
     // load our compiled code
     let mut ptx = gpu.load_ptx(PTX)?;
     // get a function from the compiled code
-    let kernel = ptx.get_kernel("test_kernel")?;
+    let kernel = ptx.get_kernel("add_one")?;
     
     // allocate a gpu buffer and copy data from the host
     let buffer = gpu.buffer_from_slice::<u32>(vals)?;
-
     // set the parallelizzation specs
     let grid = Grid::default().set_block_x(1024)?;
 

@@ -11,7 +11,7 @@ pub unsafe extern "ptx-kernel" fn add_one(
     input: *mut u32,
     input_len: usize,
 ) {
-    let idx = ((block_idx_x() * 1024) + thread_idx_x()) as usize;
+    let idx = ((block_idx_x() * block_dim_x()) + thread_idx_x()) as usize;
     if idx < input_len {
         *input.add(idx) += 1;
     }

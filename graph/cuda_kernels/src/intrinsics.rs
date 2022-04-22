@@ -204,9 +204,20 @@ pub fn wrap_sz() -> u32{
     result
 }
 
+
 /// A trait that allows us to add methods to primitive types
 pub trait FloatsMissingOps {
+    /// Compute the square root of the value
     fn sqrt(&self) -> Self;
+
+    /// Compute the 2**value
+    fn exp2(&self) -> Self;
+
+    /// Compute log2 of the value
+    fn log2(&self) -> Self;
+
+    /// a * b + c but fast
+    fn fma(a: f32, b: f32, c: f32) -> Self;
 }
 
 /// The actual implementation calling raw PTX assembly
@@ -226,7 +237,58 @@ impl FloatsMissingOps for f32 {
         }
         result
     }
+
+    #[inline(always)]
+    fn exp2(&self) -> f32 {
+        let mut result: f32;
+        unsafe {
+            asm!(
+                // here we use the fast and approximated sqrt,
+                // we could use sqrt.rnd.f32 if we want slower but
+                // IEEE 754 compliant rounding
+                "ex2.approx.f32 {output}, {input};",
+                input = in(reg32) *self,
+                output = out(reg32) result,
+            );
+        }
+        result
+    }
+
+    #[inline(always)]
+    fn log2(&self) -> f32 {
+        let mut result: f32;
+        unsafe {
+            asm!(
+                // here we use the fast and approximated sqrt,
+                // we could use sqrt.rnd.f32 if we want slower but
+                // IEEE 754 compliant rounding
+                "lg2.approx.f32 {output}, {input};",
+                input = in(reg32) *self,
+                output = out(reg32) result,
+            );
+        }
+        result
+    }
+
+    #[inline(always)]
+    fn fma(a: f32, b: f32, c: f32) -> f32 {
+        let mut result: f32;
+        unsafe {
+            asm!(
+                // here we use the fast and approximated sqrt,
+                // we could use sqrt.rnd.f32 if we want slower but
+                // IEEE 754 compliant rounding
+                "fma.rnd.f32 {output}, {a}, {b}, {c};",
+                a = in(reg32) a,
+                b = in(reg32) b,
+                c = in(reg32) c,
+                output = out(reg32) result,
+            );
+        }
+        result
+    }
 }
+
 
 #[panic_handler]
 pub unsafe fn breakpoint_panic_handler(_: &::core::panic::PanicInfo) -> ! {
