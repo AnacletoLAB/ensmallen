@@ -22,7 +22,7 @@ fn test_cbow_on_cora() -> Result<(), GPUError> {
     )?;
 
     let writer = CSVFileWriter::new("cora_embedding.tsv")
-        .set_separator(Some('\t'))?
+        .set_separator(Some('\t')).unwrap()
         .set_header(Some(true))
         .set_verbose(Some(true));
 
