@@ -22,22 +22,28 @@ fn test_cbow_on_cora() -> Result<(), GPUError> {
     )?;
 
     let writer = CSVFileWriter::new("cora_embedding.tsv")
-        .set_separator(Some('\t')).unwrap()
+        .set_separator(Some('\t'))
+        .unwrap()
         .set_header(Some(true))
         .set_verbose(Some(true));
 
     writer
         .write_lines(
             Some(cora.get_nodes_number() as usize),
-            (0..embedding_size)
-                .map(|e| e.to_string())
-                .collect::<Vec<String>>(),
-            embedding.chunks(128).map(|features| {
-                features
-                    .iter()
+            vec!["node_name"].iter().chain(
+                (0..embedding_size)
                     .map(|e| e.to_string())
-                    .collect::<Vec<String>>()
-            }),
+                    .collect::<Vec<String>>(),
+            ),
+            embedding
+                .chunks(128)
+                .zip(cora.get_node_names().iter())
+                .map(|(features, node_name)| {
+                    vec![node_name]
+                        .iter()
+                        .chain(features.iter().map(|e| e.to_string()))
+                        .collect::<Vec<String>>()
+                }),
         )
         .unwrap();
 
