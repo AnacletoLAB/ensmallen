@@ -1,7 +1,7 @@
 extern crate graph;
 
 use gpu_models::*;
-use graph::test_utils::*;
+use graph::test_utilities::*;
 
 #[test]
 fn test_cbow_on_cora() -> Result<(), GPUError> {
