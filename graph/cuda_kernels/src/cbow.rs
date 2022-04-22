@@ -91,11 +91,11 @@ pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
         // BEGIN THE RELAXATION STEP FOR THE NEGATIVES OF THIS CONTEXT
 
         let start_negatives = (number_of_contexts_per_random_walk * random_walk_number
-            + center as usize) as usize
+            + (center - window_size) as usize)
             * number_of_negative_samples;
         let end_negatives = (number_of_contexts_per_random_walk * random_walk_number
-            + center as usize
-            + 1) as usize
+            + (center - window_size) as usize
+            + 1)
             * number_of_negative_samples;
         for negative_number in start_negatives..end_negatives {
             // We retrieve the value of the current central node ID
