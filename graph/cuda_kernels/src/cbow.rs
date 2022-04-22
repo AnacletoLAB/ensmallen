@@ -48,7 +48,7 @@ pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
         let current_central_node_id =
             random_walks[random_walk_number * random_walk_length + center as usize];
         // and we retrieve its embedding
-        let current_central_node_embedding = hidden[current_central_node_id * embedding_size
+        let current_central_node_embedding = &mut hidden[current_central_node_id * embedding_size
             ..(current_central_node_id + 1) * embedding_size];
         // We iterate on the context around the center
         let mut dot: f32 = 0.0;
@@ -57,7 +57,7 @@ pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
         for context in (-window_size..0).chain(1..window_size + 1) {
             let current_context_node_id =
                 random_walks[random_walk_number * random_walk_length + (center + context) as usize];
-            let current_context_node_embedding = hidden[current_context_node_id * embedding_size
+            let current_context_node_embedding = &mut hidden[current_context_node_id * embedding_size
                 ..(current_context_node_id + 1) * embedding_size];
             for feature in 0..embedding_size {
                 dot += current_central_node_embedding[feature]
@@ -73,7 +73,7 @@ pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
         for context in (-window_size..0).chain(1..window_size + 1) {
             let current_context_node_id =
                 random_walks[random_walk_number * random_walk_length + (center + context) as usize];
-            let current_context_node_embedding = hidden[current_context_node_id * embedding_size
+            let current_context_node_embedding = &mut hidden[current_context_node_id * embedding_size
                 ..(current_context_node_id + 1) * embedding_size];
             for feature in 0..embedding_size {
                 current_central_node_embedding[feature] +=
@@ -94,7 +94,7 @@ pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
             let current_negative_node_id =
                 negative_node_ids[random_walk_number * random_walk_length + center as usize];
             // and we retrieve its embedding
-            let current_negative_node_embedding = hidden[current_negative_node_id * embedding_size
+            let current_negative_node_embedding = &mut hidden[current_negative_node_id * embedding_size
                 ..(current_negative_node_id + 1) * embedding_size];
 
             // We iterate on the context around the center
@@ -104,7 +104,7 @@ pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
             for context in (-window_size..0).chain(1..window_size + 1) {
                 let current_context_node_id = random_walks
                     [random_walk_number * random_walk_length + (center + context) as usize];
-                let current_context_node_embedding = hidden[current_context_node_id * embedding_size
+                let current_context_node_embedding = &mut hidden[current_context_node_id * embedding_size
                     ..(current_context_node_id + 1) * embedding_size];
                 for feature in 0..embedding_size {
                     dot += current_negative_node_embedding[feature]
@@ -120,7 +120,7 @@ pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
             for context in (-window_size..0).chain(1..window_size + 1) {
                 let current_context_node_id = random_walks
                     [random_walk_number * random_walk_length + (center + context) as usize];
-                let current_context_node_embedding = hidden[current_context_node_id * embedding_size
+                let current_context_node_embedding = &mut hidden[current_context_node_id * embedding_size
                     ..(current_context_node_id + 1) * embedding_size];
                 for feature in 0..embedding_size {
                     current_negative_node_embedding[feature] -=
