@@ -46,7 +46,6 @@ pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
 
     // We iterate for all skipgram batches of the random walk.
     for center in window_size..(random_walk_length - window_size) {
-
         // BEGIN THE CONTRACTION STEP FOR THIS BATCH
 
         // We retrieve the value of the current central node ID
@@ -69,7 +68,7 @@ pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
             }
         }
         // We compute the exponentiation of the dot product.
-        let exponentiated_dot = dot.exp();
+        let exponentiated_dot = dot.exp2();
         // We compute the loss for the POSITIVE node
         let loss = (1.0 - (exponentiated_dot / (exponentiated_dot + 1.0))) * learning_rate;
 
@@ -111,7 +110,7 @@ pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
                 }
             }
             // We compute the exponentiation of the dot product.
-            let exponentiated_dot = dot.exp();
+            let exponentiated_dot = dot.exp2();
             // We compute the loss for the NEGATIVE node
             let loss = (exponentiated_dot / (exponentiated_dot + 1.0)) * learning_rate;
 
