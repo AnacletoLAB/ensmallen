@@ -71,8 +71,11 @@ impl CBOW {
         let actual_batch_size = batch_size
             * iterations
             * (random_walk_length - (self.window_size as usize) * 2);
+        let mut window_size = self.window_size as isize;
         let verbose = verbose.unwrap_or(true);
-        let vocabulary_size = graph.get_nodes_number();
+        let mut vocabulary_size = graph.get_nodes_number();
+        let mut number_of_negative_samples = self.number_of_negative_samples;
+        let mut embedding_size = self.embedding_size;
         let number_of_random_walks = batch_size
         * iterations;
 
@@ -231,10 +234,10 @@ impl CBOW {
                         random_walks_on_gpu.as_device_ptr(),
                         negative_node_ids_on_gpu.as_device_ptr(),
                         learning_rate,
-                        self.window_size as isize,
-                        self.number_of_negative_samples,
+                        window_size,
+                        number_of_negative_samples,
                         random_walk_length,
-                        self.embedding_size,
+                        embedding_size,
                         vocabulary_size,
                         batch_size,
                         iterations,
