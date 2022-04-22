@@ -27,8 +27,7 @@ pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
     batch_size: usize,
     iterations: usize,
 ) {
-    let row_idx = block_idx_x() as isize * block_dim_x() as isize + thread_idx_x() as isize;
-    let col_idx = block_idx_y() as isize * block_dim_y() as isize + thread_idx_y() as isize;
+    let random_walk_number = block_idx_x() as isize * block_dim_x() as isize + thread_idx_x() as isize;
 
     // Embedding has shape (vocabulary_size, embedding_size)
     let embedding = core::slice::from_raw_parts(embedding, vocabulary_size * embedding_size);
@@ -45,19 +44,59 @@ pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
         number_of_negative_samples * batch_size * iterations * (random_walk_length - window_size * 2),
     );
 
-    // We start to iterate on the random walks computed for this batch
-    for random_walk_number in 0..number_of_random_walks {
-        // We iterate for all skipgram batches of the random walk.
-        for center in window_size..(random_walk_length - window_size) {
+    // We iterate for all skipgram batches of the random walk.
+    for center in window_size..(random_walk_length - window_size) {
 
-            // BEGIN THE CONTRACTION STEP FOR THIS BATCH
+        // BEGIN THE CONTRACTION STEP FOR THIS BATCH
 
+        // We retrieve the value of the current central node ID
+        let current_central_node_id =
+            random_walks[random_walk_number * random_walk_length + center as usize];
+        // and we retrieve its embedding
+        let current_central_node_embedding = hidden[current_central_node_id * embedding_size
+            ..(current_central_node_id + 1) * embedding_size];
+        // We iterate on the context around the center
+        let mut dot: f32 = 0.0;
+        // We compute the dot product of the sum of the contextual node embedding and the
+        // current central node.
+        for context in (-window_size..0).chain(1..window_size + 1) {
+            let current_context_node_id =
+                random_walks[random_walk_number * random_walk_length + (center + context) as usize];
+            let current_context_node_embedding = hidden[current_context_node_id * embedding_size
+                ..(current_context_node_id + 1) * embedding_size];
+            for feature in 0..embedding_size {
+                dot += current_central_node_embedding[feature] * current_context_node_embedding[feature];
+            }
+        }
+        // We compute the exponentiation of the dot product.
+        let exponentiated_dot = dot.exp();
+        // We compute the loss for the POSITIVE node
+        let loss = (1.0 - (exponentiated_dot / (exponentiated_dot + 1.0))) * learning_rate;
+
+        // We backpropagate the loss to the hidden layer and the embeddding layer
+        for context in (-window_size..0).chain(1..window_size + 1) {
+            let current_context_node_id =
+                random_walks[random_walk_number * random_walk_length + (center + context) as usize];
+            let current_context_node_embedding = hidden[current_context_node_id * embedding_size
+                ..(current_context_node_id + 1) * embedding_size];
+            for feature in 0..embedding_size {
+                current_central_node_embedding[feature] += current_context_node_embedding[feature] * loss;
+                current_context_node_embedding[feature] += current_central_node_embedding[feature] * loss;
+            }
+        }
+
+        // BEGIN THE RELAXATION STEP FOR THE NEGATIVES OF THIS CONTEXT             
+
+        let start_negatives = (number_of_contexts_per_random_walk * random_walk_number + center) * number_of_negative_samples;
+        let end_negatives = (number_of_contexts_per_random_walk * random_walk_number + center + 1) * number_of_negative_samples;
+        for negative_number in start_negatives..end_negatives{
             // We retrieve the value of the current central node ID
-            let current_central_node_id =
-                random_walks[random_walk_number * random_walk_length + center as usize];
+            let current_negative_node_id =
+                negative_node_ids[random_walk_number * random_walk_length + center as usize];
             // and we retrieve its embedding
-            let current_central_node_embedding = hidden[current_central_node_id * embedding_size
-                ..(current_central_node_id + 1) * embedding_size];
+            let current_negative_node_embedding = hidden[current_negative_node_id * embedding_size
+                ..(current_negative_node_id + 1) * embedding_size];
+            
             // We iterate on the context around the center
             let mut dot: f32 = 0.0;
             // We compute the dot product of the sum of the contextual node embedding and the
@@ -68,13 +107,13 @@ pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
                 let current_context_node_embedding = hidden[current_context_node_id * embedding_size
                     ..(current_context_node_id + 1) * embedding_size];
                 for feature in 0..embedding_size {
-                    dot += current_central_node_embedding[feature] * current_context_node_embedding[feature];
+                    dot += current_negative_node_embedding[feature] * current_context_node_embedding[feature];
                 }
             }
             // We compute the exponentiation of the dot product.
             let exponentiated_dot = dot.exp();
-            // We compute the loss for the POSITIVE node
-            let loss = (1.0 - (exponentiated_dot / (exponentiated_dot + 1.0))) * learning_rate;
+            // We compute the loss for the NEGATIVE node
+            let loss = (exponentiated_dot / (exponentiated_dot + 1.0)) * learning_rate;
 
             // We backpropagate the loss to the hidden layer and the embeddding layer
             for context in (-window_size..0).chain(1..window_size + 1) {
@@ -83,51 +122,8 @@ pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
                 let current_context_node_embedding = hidden[current_context_node_id * embedding_size
                     ..(current_context_node_id + 1) * embedding_size];
                 for feature in 0..embedding_size {
-                    current_central_node_embedding[feature] += current_context_node_embedding[feature] * loss;
-                    current_context_node_embedding[feature] += current_central_node_embedding[feature] * loss;
-                }
-            }
-
-            // BEGIN THE RELAXATION STEP FOR THE NEGATIVES OF THIS CONTEXT             
-
-            let start_negatives = (number_of_contexts_per_random_walk * random_walk_number + center) * number_of_negative_samples;
-            let end_negatives = (number_of_contexts_per_random_walk * random_walk_number + center + 1) * number_of_negative_samples;
-            for negative_number in start_negatives..end_negatives{
-                // We retrieve the value of the current central node ID
-                let current_negative_node_id =
-                    negative_node_ids[random_walk_number * random_walk_length + center as usize];
-                // and we retrieve its embedding
-                let current_negative_node_embedding = hidden[current_negative_node_id * embedding_size
-                    ..(current_negative_node_id + 1) * embedding_size];
-                
-                // We iterate on the context around the center
-                let mut dot: f32 = 0.0;
-                // We compute the dot product of the sum of the contextual node embedding and the
-                // current central node.
-                for context in (-window_size..0).chain(1..window_size + 1) {
-                    let current_context_node_id =
-                        random_walks[random_walk_number * random_walk_length + (center + context) as usize];
-                    let current_context_node_embedding = hidden[current_context_node_id * embedding_size
-                        ..(current_context_node_id + 1) * embedding_size];
-                    for feature in 0..embedding_size {
-                        dot += current_negative_node_embedding[feature] * current_context_node_embedding[feature];
-                    }
-                }
-                // We compute the exponentiation of the dot product.
-                let exponentiated_dot = dot.exp();
-                // We compute the loss for the NEGATIVE node
-                let loss = (exponentiated_dot / (exponentiated_dot + 1.0)) * learning_rate;
-
-                // We backpropagate the loss to the hidden layer and the embeddding layer
-                for context in (-window_size..0).chain(1..window_size + 1) {
-                    let current_context_node_id =
-                        random_walks[random_walk_number * random_walk_length + (center + context) as usize];
-                    let current_context_node_embedding = hidden[current_context_node_id * embedding_size
-                        ..(current_context_node_id + 1) * embedding_size];
-                    for feature in 0..embedding_size {
-                        current_negative_node_embedding[feature] -= current_context_node_embedding[feature] * loss;
-                        current_context_node_embedding[feature] -= current_negative_node_embedding[feature] * loss;
-                    }
+                    current_negative_node_embedding[feature] -= current_context_node_embedding[feature] * loss;
+                    current_context_node_embedding[feature] -= current_negative_node_embedding[feature] * loss;
                 }
             }
         }
