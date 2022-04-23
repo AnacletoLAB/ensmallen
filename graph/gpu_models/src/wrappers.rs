@@ -714,8 +714,8 @@ impl Device {
                 capacity,
             )
         };
-        
-        let len = slice.iter().position(|b| b == b'\0').unwrap_or(capacity);
+
+        let len = slice.iter().position(|b| *b == b'\0').unwrap_or(capacity);
 
         let result = unsafe{
             String::from_raw_parts(
