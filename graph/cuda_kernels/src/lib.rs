@@ -10,7 +10,7 @@ pub use cbow::*;
 #[no_mangle]
 /// Actual function called by the CPU code in the GPU
 pub unsafe extern "ptx-kernel" fn add_one(
-    input: *mut u32,
+    input: *mut f32,
     input_len: usize,
 ) {
     let idx = ((block_idx_x() * block_dim_x()) + thread_idx_x()) as usize;

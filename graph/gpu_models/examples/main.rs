@@ -1,6 +1,6 @@
 use gpu_models::*;
 
-pub fn add_one(vals: &[u32]) -> Result<Vec<u32>, GPUError> {
+pub fn add_one(vals: &[f32]) -> Result<Vec<f32>, GPUError> {
     println!("{:?}", get_driver_version());
     // get all the devices in the system
     let devices = Device::get_devices()?;
