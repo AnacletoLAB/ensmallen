@@ -7,7 +7,7 @@ pub fn add_one(vals: &[u32]) -> Result<Vec<u32>, GPUError> {
     // get info about this device
     println!("{:#4?}", devices);
     // we use the first device
-    let device = devices[0];
+    let device = devices[0];    
 
     // setup this device for computation
     let mut gpu = GPU::new(device)?;
@@ -17,7 +17,7 @@ pub fn add_one(vals: &[u32]) -> Result<Vec<u32>, GPUError> {
     let kernel = ptx.get_kernel("add_one")?;
     
     // allocate a gpu buffer and copy data from the host
-    let buffer = gpu.buffer_from_slice::<u32>(vals)?;
+    let buffer = gpu.buffer_from_slice::<f32>(vals)?;
     // set the parallelizzation specs
     let grid = Grid::default().set_block_x(1024)?;
 
@@ -35,5 +35,5 @@ pub fn add_one(vals: &[u32]) -> Result<Vec<u32>, GPUError> {
 }
 
 fn main() {
-    println!("{:?}", add_one(&[1, 2, 3, 4, 5, 6, 7]).unwrap());
+    println!("{:?}", add_one(&[1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0]).unwrap());
 }  
