@@ -616,8 +616,14 @@ impl std::fmt::Debug for Device {
             {$($field:literal => $value:ident,)*} => {
                 let mut d = f.debug_struct("Device");
                 let d = d.field("device_id", &self.0);
-                let d = d.field("name", &self.get_name());
-                let d = d.field("total_memory", &self.get_total_mem());
+                let d = match self.get_name() {
+                    Ok(value) => d.field("name", &value),
+                    Err(error) => d.field("name", &Result::<(), _>::Err(error)),
+                };
+                let d = match self.get_total_mem() {
+                    Ok(value) => d.field("total_mem", &value),
+                    Err(error) => d.field("total_mem", &Result::<(), _>::Err(error)),
+                };
                 
                 $(
                     let d = match self.get_attribute(DeviceAttribute::$value) {
@@ -699,6 +705,13 @@ impl Device {
         }.into();
         // return if error
         error.into_result(())?;
+
+        println!("{:?}", unsafe{
+            core::slice::from_raw_parts(
+                ptr as *const u8,
+                capacity,
+            )
+        });
 
         // the string is null-terminated so we need to compute the length to get
         // a proper rust string
