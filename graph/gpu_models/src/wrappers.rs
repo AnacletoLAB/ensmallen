@@ -691,7 +691,7 @@ impl Device {
 
         // the string is null-terminated so we need to compute the length to get
         // a proper rust string
-        let mut len = match result.bytes().position(|c| c == b'\0') {
+        let len = match result.bytes().position(|c| c == b'\0') {
             Some(idx) => Ok(idx),
             None => Err(GPUError::InvalidGPUName) 
         }?;
@@ -765,6 +765,9 @@ impl Device {
 
 /// Wrapper for the context and stream of a device
 pub struct GPU {
+    #[allow(dead_code)]
+    // currently it' not used but we will need in the soon future to query
+    // the GPU properties
     device: CUdevice,
     context: CUcontext,
     stream: CUstream,
