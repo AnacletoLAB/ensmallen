@@ -217,7 +217,7 @@ pub trait FloatsMissingOps {
     fn log2(&self) -> Self;
 
     /// a * b + c but fast
-    fn fma(a: f32, b: f32, c: f32) -> Self;
+    fn fma(a: Self, b: Self, c: Self) -> Self;
 }
 
 /// The actual implementation calling raw PTX assembly
@@ -300,8 +300,8 @@ impl FloatsMissingOps for f64 {
                 // we could use sqrt.rnd.f64 if we want slower but
                 // IEEE 754 compliant rounding
                 "sqrt.approx.f64 {output}, {input};",
-                input = in(reg32) *self,
-                output = out(reg32) result,
+                input = in(reg64) *self,
+                output = out(reg64) result,
             );
         }
         result
@@ -316,8 +316,8 @@ impl FloatsMissingOps for f64 {
                 // we could use sqrt.rnd.f64 if we want slower but
                 // IEEE 754 compliant rounding
                 "ex2.approx.f64 {output}, {input};",
-                input = in(reg32) *self,
-                output = out(reg32) result,
+                input = in(reg64) *self,
+                output = out(reg64) result,
             );
         }
         result
@@ -332,8 +332,8 @@ impl FloatsMissingOps for f64 {
                 // we could use sqrt.rnd.f64 if we want slower but
                 // IEEE 754 compliant rounding
                 "lg2.approx.f64 {output}, {input};",
-                input = in(reg32) *self,
-                output = out(reg32) result,
+                input = in(reg64) *self,
+                output = out(reg64) result,
             );
         }
         result
