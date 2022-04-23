@@ -632,8 +632,11 @@ impl std::fmt::Debug for Device {
                     };
                 )*
                 
-                d.field("grid_limits", &self.get_grid_limits())
-                .finish()
+                let d = match self.get_grid_limits() {
+                    Ok(value) => d.field("grid_limits", &value),
+                    Err(error) => d.field("grid_limits", &Result::<(), _>::Err(error)),
+                };
+                d.finish()
             };
         }
 
