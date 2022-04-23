@@ -113,12 +113,7 @@ impl CBOW {
         let device = devices[0];
 
         // get info about this device
-        let props = device.get_properties()?;
-        println!("using GPU {}", device.get_name()?);
-        println!(
-            "The gpu has {:.4} Gib of VRAM",
-            props.totalGlobalMem as f64 / 1_000_000_000 as f64
-        );
+        println!("using GPU {:?}", device);
 
         // setup this device for computation
         let mut gpu = GPU::new(device)?;

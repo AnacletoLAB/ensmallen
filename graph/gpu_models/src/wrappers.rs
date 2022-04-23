@@ -1,5 +1,4 @@
 use cuda_driver_sys::*;
-use cuda_runtime_sys::*;
 use std::ffi::{c_void, CString};
 
 /// Create arguments for a kernel
@@ -33,7 +32,11 @@ impl std::fmt::Debug for GPUError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         use GPUError::*;
         match self {
-            $($field => f.write_str($doc),)*
+            $($field => {
+                f.write_str(stringify!($field))?;
+                f.write_str(" : ")?;
+                f.write_str($doc)
+            },)*
             Invalid(val) => f.write_str(format!("Invalid CUDA ERROR with code {}", val).as_str()),
         }
     }
@@ -176,6 +179,262 @@ impl_gpu_error! {
     ExternalDevice => 911 => "This indicates that an async error has occurred in a device outside of CUDA. If CUDA was waiting for an external device's signal before consuming shared data, the external device signaled an error indicating that the data is not valid for consumption. This leaves the process in an inconsistent state and any further CUDA work will return the same error. To continue using CUDA, the process must be terminated and relaunched.",
     Unknown => 999 => "This indicates that an unknown internal error has occurred.",
     InvalidBufferSize => 1337 => "This error is raised when the given slice does not match in length with the GPU buffer.",
+    InvalidGPUName => 1338 => "This error is raised when the name string given by the cuda driver is not properly NULL-terminated or it contains non ASCII / UTF-8 chars.",
+}
+
+/// Rustonic type for `CUdevice_attribute` which is used to query properties
+/// of a device
+#[repr(u32)]
+#[derive(Debug, Clone, Copy, Eq, PartialEq)]
+pub enum DeviceAttribute {
+    /// Maximum number of threads per block
+    MaxThreadsPerBlock = 1,
+    /// Maximum block dimension X
+    MaxBlockDimX = 2,
+    /// Maximum block dimension Y
+    MaxBlockDimY = 3,
+    /// Maximum block dimension Z
+    MaxBlockDimZ = 4,
+    /// Maximum grid dimension X
+    MaxGridDimX = 5,
+    /// Maximum grid dimension Y
+    MaxGridDimY = 6,
+    /// Maximum grid dimension Z
+    MaxGridDimZ = 7,
+    /// Maximum shared memory available per block in bytes
+    MaxSharedMemoryPerBlock = 8,
+    /// Memory available on device for __constant__ variables in a CUDA C kernel in bytes
+    TotalConstantMemory = 9,
+    /// Warp size in threads
+    WarpSize = 10,
+    /// Maximum pitch in bytes allowed by memory copies
+    MaxPitch = 11,
+    /// Maximum number of 32-bit registers available per block
+    MaxRegistersPerBlock = 12,
+    /// Typical clock frequency in kilohertz
+    ClockRate = 13,
+    /// Alignment requirement for textures
+    TextureAlignment = 14,
+    /// Device can possibly copy memory and execute a kernel concurrently. Deprecated. Use instead CU_DEVICE_ATTRIBUTE_ASYNC_ENGINE_COUNT.
+    GpuOverlap = 15,
+    /// Number of multiprocessors on device
+    MultiprocessorCount = 16,
+    /// Specifies whether there is a run time limit on kernels
+    KernelExecTimeout = 17,
+    /// Device is integrated with host memory
+    Integrated = 18,
+    /// Device can map host memory into CUDA address space
+    CanMapHostMemory = 19,
+    /// Compute mode (See CUcomputemode for details)
+    ComputeMode = 20,
+    /// Maximum 1D texture width
+    MaximumTexture1dWidth = 21,
+    /// Maximum 2D texture width
+    MaximumTexture2dWidth = 22,
+    /// Maximum 2D texture height
+    MaximumTexture2dHeight = 23,
+    /// Maximum 3D texture width
+    MaximumTexture3dWidth = 24,
+    /// Maximum 3D texture height
+    MaximumTexture3dHeight = 25,
+    /// Maximum 3D texture depth
+    MaximumTexture3dDepth = 26,
+    /// Maximum 2D layered texture width
+    MaximumTexture2dLayeredWidth = 27,
+    /// Maximum 2D layered texture height
+    MaximumTexture2dLayeredHeight = 28,
+    /// Maximum layers in a 2D layered texture
+    MaximumTexture2dLayeredLayers = 29,
+    /// Alignment requirement for surfaces
+    SurfaceAlignment = 30,
+    /// Device can possibly execute multiple kernels concurrently
+    ConcurrentKernels = 31,
+    /// Device has ECC support enabled
+    EccEnabled = 32,
+    /// PCI bus ID of the device
+    PciBusId = 33,
+    /// PCI device ID of the device
+    PciDeviceId = 34,
+    /// Device is using TCC driver model
+    TccDriver = 35,
+    /// Peak memory clock frequency in kilohertz
+    MemoryClockRate = 36,
+    /// Global memory bus width in bits
+    GlobalMemoryBusWidth = 37,
+    /// Size of L2 cache in bytes
+    L2CacheSize = 38,
+    /// Maximum resident threads per multiprocessor
+    MaxThreadsPerMultiprocessor = 39,
+    /// Number of asynchronous engines
+    AsyncEngineCount = 40,
+    /// Device shares a unified address space with the host
+    UnifiedAddressing = 41,
+    /// Maximum 1D layered texture width
+    MaximumTexture1dLayeredWidth = 42,
+    /// Maximum layers in a 1D layered texture
+    MaximumTexture1dLayeredLayers = 43,
+    /// Deprecated, do not use.
+    CanTex2dGather = 44,
+    /// Maximum 2D texture width if CUDA_ARRAY3D_TEXTURE_GATHER is set
+    MaximumTexture2dGatherWidth = 45,
+    /// Maximum 2D texture height if CUDA_ARRAY3D_TEXTURE_GATHER is set
+    MaximumTexture2dGatherHeight = 46,
+    /// Alternate maximum 3D texture width
+    MaximumTexture3dWidthAlternate = 47,
+    /// Alternate maximum 3D texture height
+    MaximumTexture3dHeightAlternate = 48,
+    /// Alternate maximum 3D texture depth
+    MaximumTexture3dDepthAlternate = 49,
+    /// PCI domain ID of the device
+    PciDomainId = 50,
+    /// Pitch alignment requirement for textures
+    TexturePitchAlignment = 51,
+    /// Maximum cubemap texture width/height
+    MaximumTexturecubemapWidth = 52,
+    /// Maximum cubemap layered texture width/height
+    MaximumTexturecubemapLayeredWidth = 53,
+    /// Maximum layers in a cubemap layered texture
+    MaximumTexturecubemapLayeredLayers = 54,
+    /// Maximum 1D surface width
+    MaximumSurface1dWidth = 55,
+    /// Maximum 2D surface width
+    MaximumSurface2dWidth = 56,
+    /// Maximum 2D surface height
+    MaximumSurface2dHeight = 57,
+    /// Maximum 3D surface width
+    MaximumSurface3dWidth = 58,
+    /// Maximum 3D surface height
+    MaximumSurface3dHeight = 59,
+    /// Maximum 3D surface depth
+    MaximumSurface3dDepth = 60,
+    /// Maximum 1D layered surface width
+    MaximumSurface1dLayeredWidth = 61,
+    /// Maximum layers in a 1D layered surface
+    MaximumSurface1dLayeredLayers = 62,
+    /// Maximum 2D layered surface width
+    MaximumSurface2dLayeredWidth = 63,
+    /// Maximum 2D layered surface height
+    MaximumSurface2dLayeredHeight = 64,
+    /// Maximum layers in a 2D layered surface
+    MaximumSurface2dLayeredLayers = 65,
+    /// Maximum cubemap surface width
+    MaximumSurfacecubemapWidth = 66,
+    /// Maximum cubemap layered surface width
+    MaximumSurfacecubemapLayeredWidth = 67,
+    /// Maximum layers in a cubemap layered surface
+    MaximumSurfacecubemapLayeredLayers = 68,
+    /// Deprecated, do not use. Use cudaDeviceGetTexture1DLinearMaxWidth() or cuDeviceGetTexture1DLinearMaxWidth() instead.
+    MaximumTexture1dLinearWidth = 69,
+    /// Maximum 2D linear texture width
+    MaximumTexture2dLinearWidth = 70,
+    /// Maximum 2D linear texture height
+    MaximumTexture2dLinearHeight = 71,
+    /// Maximum 2D linear texture pitch in bytes
+    MaximumTexture2dLinearPitch = 72,
+    /// Maximum mipmapped 2D texture width
+    MaximumTexture2dMipmappedWidth = 73,
+    /// Maximum mipmapped 2D texture height
+    MaximumTexture2dMipmappedHeight = 74,
+    /// Major compute capability version number
+    ComputeCapabilityMajor = 75,
+    /// Minor compute capability version number
+    ComputeCapabilityMinor = 76,
+    /// Maximum mipmapped 1D texture width
+    MaximumTexture1dMipmappedWidth = 77,
+    /// Device supports stream priorities
+    StreamPrioritiesSupported = 78,
+    /// Device supports caching globals in L1
+    GlobalL1CacheSupported = 79,
+    /// Device supports caching locals in L1
+    LocalL1CacheSupported = 80,
+    /// Maximum shared memory available per multiprocessor in bytes
+    MaxSharedMemoryPerMultiprocessor = 81,
+    /// Maximum number of 32-bit registers available per multiprocessor
+    MaxRegistersPerMultiprocessor = 82,
+    /// Device can allocate managed memory on this system
+    ManagedMemory = 83,
+    /// Device is on a multi-GPU board
+    MultiGpuBoard = 84,
+    /// Unique id for a group of devices on the same multi-GPU board
+    MultiGpuBoardGroupId = 85,
+    /// Link between the device and the host supports native atomic operations (this is a placeholder attribute, and is not supported on any current hardware)
+    HostNativeAtomicSupported = 86,
+    /// Ratio of single precision performance (in floating-point operations per second) to double precision performance
+    SingleToDoublePrecisionPerfRatio = 87,
+    /// Device supports coherently accessing pageable memory without calling cudaHostRegister on it
+    PageableMemoryAccess = 88,
+    /// Device can coherently access managed memory concurrently with the CPU
+    ConcurrentManagedAccess = 89,
+    /// Device supports compute preemption.
+    ComputePreemptionSupported = 90,
+    /// Device can access host registered memory at the same virtual address as the CPU
+    CanUseHostPointerForRegisteredMem = 91,
+    /// cuStreamBatchMemOp and related APIs are supported.
+    CanUseStreamMemOps = 92,
+    /// 64-bit operations are supported in cuStreamBatchMemOp and related APIs.
+    CanUse64BitStreamMemOps = 93,
+    /// CU_STREAM_WAIT_VALUE_NOR is supported.
+    CanUseStreamWaitValueNor = 94,
+    /// Device supports launching cooperative kernels via cuLaunchCooperativeKernel
+    CooperativeLaunch = 95,
+    /// Deprecated, cuLaunchCooperativeKernelMultiDevice is deprecated.
+    CooperativeMultiDeviceLaunch = 96,
+    /// Maximum optin shared memory per block
+    MaxSharedMemoryPerBlockOptin = 97,
+    /// The CU_STREAM_WAIT_VALUE_FLUSH flag and the CU_STREAM_MEM_OP_FLUSH_REMOTE_WRITES MemOp are supported on the device. See Stream memory operations for additional details.
+    CanFlushRemoteWrites = 98,
+    /// Device supports host memory registration via cudaHostRegister.
+    HostRegisterSupported = 99,
+    /// Device accesses pageable memory via the host's page tables.
+    PageableMemoryAccessUsesHostPageTables = 100,
+    /// The host can directly access managed memory on the device without migration.
+    DirectManagedMemAccessFromHost = 101,
+    /// Device supports virtual memory management APIs like cuMemAddressReserve, cuMemCreate, cuMemMap and related APIs
+    VirtualMemoryManagementSupported = 102,
+    /// Device supports exporting memory to a posix file descriptor with cuMemExportToShareableHandle, if requested via cuMemCreate
+    HandleTypePosixFileDescriptorSupported = 103,
+    /// Device supports exporting memory to a Win32 NT handle with cuMemExportToShareableHandle, if requested via cuMemCreate
+    HandleTypeWin32HandleSupported = 104,
+    /// Device supports exporting memory to a Win32 KMT handle with cuMemExportToShareableHandle, if requested via cuMemCreate
+    HandleTypeWin32KmtHandleSupported = 105,
+    /// Maximum number of blocks per multiprocessor
+    MaxBlocksPerMultiprocessor = 106,
+    /// Device supports compression of memory
+    GenericCompressionSupported = 107,
+    /// Maximum L2 persisting lines capacity setting in bytes.
+    MaxPersistingL2CacheSize = 108,
+    /// Maximum value of CUaccessPolicyWindow::num_bytes.
+    MaxAccessPolicyWindowSize = 109,
+    /// Device supports specifying the GPUDirect RDMA flag with cuMemCreate
+    GpuDirectRdmaWithCudaVmmSupported = 110,
+    /// Shared memory reserved by CUDA driver per block in bytes
+    ReservedSharedMemoryPerBlock = 111,
+    /// Device supports sparse CUDA arrays and sparse CUDA mipmapped arrays
+    SparseCudaArraySupported = 112,
+    /// Device supports using the cuMemHostRegister flag CU_MEMHOSTERGISTER_READ_ONLY to register memory that must be mapped as read-only to the GPU
+    ReadOnlyHostRegisterSupported = 113,
+    /// External timeline semaphore interop is supported on the device
+    TimelineSemaphoreInteropSupported = 114,
+    /// Device supports using the cuMemAllocAsync and cuMemPool family of APIs
+    MemoryPoolsSupported = 115,
+    /// Device supports GPUDirect RDMA APIs, like nvidia_p2p_get_pages (see https://docs.nvidia.com/cuda/gpudirect-rdma for more information)
+    GpuDirectRdmaSupported = 116,
+    /// The returned attribute shall be interpreted as a bitmask, where the individual bits are described by the CUflushGPUDirectRDMAWritesOptions enum
+    GpuDirectRdmaFlushWritesOptions = 117,
+    /// GPUDirect RDMA writes to the device do not need to be flushed for consumers within the scope indicated by the returned attribute. See CUGPUDirectRDMAWritesOrdering for the numerical values returned here.
+    GpuDirectRdmaWritesOrdering = 118,
+    /// Handle types supported with mempool based IPC
+    MempoolSupportedHandleTypes = 119,
+    /// Device supports deferred mapping CUDA arrays and CUDA mipmapped arrays
+    DeferredMappingCudaArraySupported = 121,
+}
+
+pub fn get_driver_version() -> Result<isize, GPUError> {
+    let mut result = 0;
+    let error: GPUError = unsafe{
+        cuDriverGetVersion(&mut result as *mut _)
+    }.into();
+    error.into_result(result as isize)
 }
 
 /// Fat pointer to a GPU buffer to simplify allocation, freeing, and copying
@@ -189,7 +448,7 @@ pub struct GPUBuffer<T> {
 /// Automatically free the buffer when its handle is out of scope
 impl<T> std::ops::Drop for GPUBuffer<T> {
     fn drop(&mut self) {
-        unsafe { cudaFree(self.device_ptr as _) };
+        unsafe { cuMemFree_v2(self.device_ptr as _) };
     }
 }
 
@@ -246,6 +505,7 @@ impl<T> GPUBuffer<T> {
 }
 
 /// How many threads / blocks / grids will be used to run the kernel
+#[derive(Debug, Clone, Copy, Eq, PartialEq)]
 pub struct Grid {
     block_x: usize,
     block_y: usize,
@@ -343,8 +603,63 @@ impl PTX {
     }
 }
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Ord, PartialOrd)]
+#[derive(Clone, Copy, PartialEq, Eq, Ord, PartialOrd)]
 pub struct Device(usize);
+
+impl std::fmt::Debug for Device {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.debug_struct("Device")
+            .field("device_id", &self.0)
+            .field("name", &self.get_name())
+            .field("compute_mode", &self.get_attribute(DeviceAttribute::ComputeMode))
+            .field("compute_capability_major", &self.get_attribute(DeviceAttribute::ComputeCapabilityMajor))
+            .field("compute_capability_minor", &self.get_attribute(DeviceAttribute::ComputeCapabilityMinor))
+            .field("pci_bus_id", &self.get_attribute(DeviceAttribute::PciBusId))
+            .field("pci_device_id", &self.get_attribute(DeviceAttribute::PciDeviceId))
+            .field("pci_domain_id", &self.get_attribute(DeviceAttribute::PciDomainId))
+            .field("multi_gpu_board", &self.get_attribute(DeviceAttribute::MultiGpuBoard))
+            .field("multi_gpu_board_group_id", &self.get_attribute(DeviceAttribute::MultiGpuBoardGroupId))
+
+            .field("clock_rate_khz", &self.get_attribute(DeviceAttribute::ClockRate))
+            .field("memory_clock_rate_khz", &self.get_attribute(DeviceAttribute::MemoryClockRate))
+            .field("global_memory_buswidth", &self.get_attribute(DeviceAttribute::GlobalMemoryBusWidth))
+            .field("single_to_double_precision_perf_ratio", &self.get_attribute(DeviceAttribute::SingleToDoublePrecisionPerfRatio))
+
+            .field("total_memory", &self.get_total_mem())
+            .field("total_const_memory", &self.get_attribute(DeviceAttribute::TotalConstantMemory))
+            .field("max_persisting_l2_cache_size", &self.get_attribute(DeviceAttribute::MaxPersistingL2CacheSize))
+            
+            .field("multiprocessor_count", &self.get_attribute(DeviceAttribute::MultiprocessorCount))
+            .field("max_threads_per_multiprocessor", &self.get_attribute(DeviceAttribute::MaxThreadsPerMultiprocessor))
+            .field("max_shared_memory_per_multiprocessor", &self.get_attribute(DeviceAttribute::MaxSharedMemoryPerMultiprocessor))
+            .field("max_registers_per_multiprocessor", &self.get_attribute(DeviceAttribute::MaxRegistersPerMultiprocessor))
+            .field("max_blocks_per_multiprocessor", &self.get_attribute(DeviceAttribute::MaxBlocksPerMultiprocessor))
+            .field("max_shared_memory_per_block", &self.get_attribute(DeviceAttribute::MaxSharedMemoryPerBlock))
+            .field("max_registers_per_block", &self.get_attribute(DeviceAttribute::MaxRegistersPerBlock))
+            .field("reserved_shared_memory_per_block", &self.get_attribute(DeviceAttribute::ReservedSharedMemoryPerBlock))
+
+            .field("wrap_size", &self.get_attribute(DeviceAttribute::WarpSize))
+            .field("max_pitch", &self.get_attribute(DeviceAttribute::MaxPitch))
+
+            .field("sparse_cuda_array_supported", &self.get_attribute(DeviceAttribute::SparseCudaArraySupported))
+            .field("kernel_exec_timeout", &self.get_attribute(DeviceAttribute::KernelExecTimeout))
+            .field("concurrent_kernels", &self.get_attribute(DeviceAttribute::ConcurrentKernels))
+            .field("async_engine_count", &self.get_attribute(DeviceAttribute::AsyncEngineCount))
+
+            .field("unified_addressing", &self.get_attribute(DeviceAttribute::UnifiedAddressing))
+            .field("generic_compression_supported", &self.get_attribute(DeviceAttribute::GenericCompressionSupported))
+            .field("can_map_host_memory", &self.get_attribute(DeviceAttribute::CanMapHostMemory))
+            .field("pageable_memory_access_use_host_page_tables", &self.get_attribute(DeviceAttribute::PageableMemoryAccessUsesHostPageTables))
+            .field("direct_managed_mem_Access_from_host", &self.get_attribute(DeviceAttribute::DirectManagedMemAccessFromHost))
+            .field("managed_memory", &self.get_attribute(DeviceAttribute::ManagedMemory))
+            .field("concurred_managed_access", &self.get_attribute(DeviceAttribute::ConcurrentManagedAccess))
+            .field("can_use_host_pointer_for_registered_mem", &self.get_attribute(DeviceAttribute::CanUseHostPointerForRegisteredMem))
+
+            .field("grid_limits", &self.get_grid_limits())
+            
+            .finish()
+    }
+}
 
 impl Device {
     pub fn new(device_id: usize) -> Result<Device, GPUError> {
@@ -356,19 +671,68 @@ impl Device {
     }
 
     pub fn get_name(&self) -> Result<String, GPUError> {
-        let props = self.get_properties()?;
-        let bytes = unsafe { std::mem::transmute::<&[i8], &[u8]>(props.name.as_slice()) };
-        Ok(std::str::from_utf8(bytes).unwrap().to_string())
+        // allocate the buffer
+        let mut result = String::with_capacity(256);
+        // into raw parts
+        let (ptr, capacity) = (
+            result.as_mut_ptr(),
+            result.capacity(),
+        );
+        // fill the buffer
+        let error: GPUError = unsafe{
+            cuDeviceGetName(
+                ptr as *mut _,
+                capacity as _,
+                self.0 as _,
+            )
+        }.into();
+        // return if error
+        error.into_result(())?;
+
+        // the string is null-terminated so we need to compute the length to get
+        // a proper rust string
+        let mut len = match result.bytes().position(|c| c == b'\0') {
+            Some(idx) => Ok(idx),
+            None => Err(GPUError::InvalidGPUName) 
+        }?;
+        let result = unsafe{
+            String::from_raw_parts(
+                ptr,
+                len,
+                capacity,
+            )
+        };
+        // TODO!: should we validate that it's proper ASCII?
+        Ok(result)
     }
 
-    /// Get informations about a Device
-    pub fn get_properties(&self) -> Result<cudaDeviceProp, GPUError> {
-        let mut props: cudaDeviceProp = unsafe { core::mem::MaybeUninit::uninit().assume_init() };
-        let error = unsafe { cudaGetDeviceProperties(&mut props as *mut _, self.0 as _) };
-        if error != cudaError::cudaSuccess {
-            return Err(GPUError::from(error as usize));
-        }
-        Ok(props)
+    pub fn get_attribute(&self, attribute: DeviceAttribute) -> Result<isize, GPUError> {
+        // yes this is a crime against nature, but our enum has docs and the
+        // crates one doesn't, this should be safe as both have `#[repr(u32)]`
+        let attr = unsafe{
+            core::mem::transmute::<DeviceAttribute, CUdevice_attribute>(attribute)
+        };
+        let mut result = 0;
+        let error: GPUError = unsafe{
+            cuDeviceGetAttribute(
+                &mut result as *mut _,
+                attr,
+                self.0 as _,
+            )
+        }.into();
+        error.into_result(result as isize)
+    }
+
+    /// Returns the total amount of memory available on the device in bytes.
+    pub fn get_total_mem(&self) -> Result<usize, GPUError> {
+        let mut result = 0;
+        let error: GPUError = unsafe{
+            cuDeviceTotalMem_v2(
+                &mut result as *mut _,
+                self.0 as _,
+            )
+        }.into();
+        error.into_result(result)
     }
 
     pub fn get_devices() -> Result<Vec<Device>, GPUError> {
@@ -380,11 +744,22 @@ impl Device {
     /// Get the number of available devices
     pub fn get_device_count() -> Result<usize, GPUError> {
         let mut number_of_devices = 0;
-        let error = unsafe { cudaGetDeviceCount(&mut number_of_devices as *mut _) };
-        if error != cudaError::cudaSuccess {
-            return Err(GPUError::from(error as usize));
-        }
-        Ok(number_of_devices as usize)
+        let error: GPUError = unsafe { 
+            cuDeviceGetCount(&mut number_of_devices as *mut _) 
+        }.into();
+        error.into_result(number_of_devices as usize)
+    }
+
+    /// Return the Max dimensions for blocks and grid for this device
+    pub fn get_grid_limits(&self) -> Result<Grid, GPUError> {
+        Ok(Grid{
+            block_x: self.get_attribute(DeviceAttribute::MaxBlockDimX)? as usize,
+            block_y: self.get_attribute(DeviceAttribute::MaxBlockDimY)? as usize,
+            block_z: self.get_attribute(DeviceAttribute::MaxBlockDimZ)? as usize,
+            grid_x: self.get_attribute(DeviceAttribute::MaxGridDimX)? as usize,
+            grid_y: self.get_attribute(DeviceAttribute::MaxGridDimY)? as usize,
+            grid_z: self.get_attribute(DeviceAttribute::MaxGridDimZ)? as usize,
+        })
     }
 }
 
@@ -398,7 +773,7 @@ pub struct GPU {
 /// Automatically free the buffer when its handle is out of scope
 impl std::ops::Drop for GPU {
     fn drop(&mut self) {
-        unsafe { cudaStreamDestroy(self.stream as _) };
+        unsafe { cuStreamDestroy_v2(self.stream as _) };
         unsafe { cuCtxDestroy_v2(self.context as _) };
     }
 }
@@ -421,7 +796,7 @@ impl GPU {
         let error: GPUError = unsafe {
             cuCtxCreate_v2(
                 &mut context as *mut CUcontext,
-                cudaDeviceScheduleAuto,
+                0 as _, // CU_CTX_SCHED_AUTO
                 device,
             )
         }
