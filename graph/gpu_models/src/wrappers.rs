@@ -713,7 +713,7 @@ impl Device {
             let current_char = unsafe{
                 *(ptr as *const u8)
             };
-            if c == b'\0' {
+            if current_char == b'\0' {
                 break
             }
             len += 1;
