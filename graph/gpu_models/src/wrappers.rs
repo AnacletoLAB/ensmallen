@@ -1,6 +1,9 @@
 use cuda_driver_sys::*;
 use std::ffi::{c_void, CString};
 
+use std::sync::atomic::{AtomicBool, Ordering};
+static CUDA_DRIVERS_HAVE_BEEN_INITIALIZED: AtomicBool = <AtomicBool>::new(false);
+
 /// Create arguments for a kernel
 #[macro_export]
 macro_rules! args {
@@ -743,6 +746,14 @@ impl Device {
 
     /// Get the number of available devices
     pub fn get_device_count() -> Result<usize, GPUError> {
+        // Init the cuda library if this wasn't already done
+        // This should be a mutex, and not an atomic since other threads could
+        // go on and call driver methods while this is being initzializzated
+        // but if you are trying to concurrently initialize GPU devices fuck you 
+        if !CUDA_DRIVERS_HAVE_BEEN_INITIALIZED.swap(true, Ordering::SeqCst) {
+            unsafe { cuInit(0) };
+        }
+
         let mut number_of_devices = 0;
         let error: GPUError = unsafe { 
             cuDeviceGetCount(&mut number_of_devices as *mut _) 
@@ -784,9 +795,6 @@ impl std::ops::Drop for GPU {
 impl GPU {
     /// Create a new GPU contex and stream from a device
     pub fn new(device: Device) -> Result<Self, GPUError> {
-        // Init the cuda library
-        unsafe { cuInit(0) };
-
         // Get the first available device
         let mut device: CUdevice = device.0 as _;
         let error: GPUError = unsafe { cuDeviceGet(&mut device as *mut CUdevice, 0) }.into();
