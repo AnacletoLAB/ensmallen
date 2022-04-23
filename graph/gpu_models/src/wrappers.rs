@@ -689,11 +689,12 @@ impl Device {
 
     pub fn get_name(&self) -> Result<String, GPUError> {
         // allocate the buffer
-        let mut result = String::with_capacity(256);
+        let mut buffer = Vec::with_capacity(256);
+        core::mem::forget(buffer);
         // into raw parts
         let (ptr, capacity) = (
-            result.as_mut_ptr(),
-            result.capacity(),
+            buffer.as_mut_ptr(),
+            buffer.capacity(),
         );
         // fill the buffer
         let error: GPUError = unsafe{
