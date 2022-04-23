@@ -611,56 +611,64 @@ pub struct Device(usize);
 
 impl std::fmt::Debug for Device {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        f.debug_struct("Device")
-            .field("device_id", &self.0)
-            .field("name", &self.get_name())
-            .field("compute_mode", &self.get_attribute(DeviceAttribute::ComputeMode))
-            .field("compute_capability_major", &self.get_attribute(DeviceAttribute::ComputeCapabilityMajor))
-            .field("compute_capability_minor", &self.get_attribute(DeviceAttribute::ComputeCapabilityMinor))
-            .field("pci_bus_id", &self.get_attribute(DeviceAttribute::PciBusId))
-            .field("pci_device_id", &self.get_attribute(DeviceAttribute::PciDeviceId))
-            .field("pci_domain_id", &self.get_attribute(DeviceAttribute::PciDomainId))
-            .field("multi_gpu_board", &self.get_attribute(DeviceAttribute::MultiGpuBoard))
-            .field("multi_gpu_board_group_id", &self.get_attribute(DeviceAttribute::MultiGpuBoardGroupId))
 
-            .field("clock_rate_khz", &self.get_attribute(DeviceAttribute::ClockRate))
-            .field("memory_clock_rate_khz", &self.get_attribute(DeviceAttribute::MemoryClockRate))
-            .field("global_memory_buswidth", &self.get_attribute(DeviceAttribute::GlobalMemoryBusWidth))
-            .field("single_to_double_precision_perf_ratio", &self.get_attribute(DeviceAttribute::SingleToDoublePrecisionPerfRatio))
+        macro_rules! debug_fmt_device {
+            {$($field:literal => $value:ident,)*} => {
+                let mut d = f.debug_struct("Device");
+                let d = d.field("device_id", &self.0);
+                let d = d.field("name", &self.get_name());
+                let d = d.field("total_memory", &self.get_total_mem());
+                
+                $(
+                    let d = match self.get_attribute(DeviceAttribute::$value) {
+                        Ok(value) => d.field($field, &value),
+                        Err(error) => d.field($field, &Result::<(), _>::Err(error)),
+                    };
+                )*
+                
+                d.field("grid_limits", &self.get_grid_limits())
+                .finish()
+            };
+        }
 
-            .field("total_memory", &self.get_total_mem())
-            .field("total_const_memory", &self.get_attribute(DeviceAttribute::TotalConstantMemory))
-            .field("max_persisting_l2_cache_size", &self.get_attribute(DeviceAttribute::MaxPersistingL2CacheSize))
-            
-            .field("multiprocessor_count", &self.get_attribute(DeviceAttribute::MultiprocessorCount))
-            .field("max_threads_per_multiprocessor", &self.get_attribute(DeviceAttribute::MaxThreadsPerMultiprocessor))
-            .field("max_shared_memory_per_multiprocessor", &self.get_attribute(DeviceAttribute::MaxSharedMemoryPerMultiprocessor))
-            .field("max_registers_per_multiprocessor", &self.get_attribute(DeviceAttribute::MaxRegistersPerMultiprocessor))
-            .field("max_blocks_per_multiprocessor", &self.get_attribute(DeviceAttribute::MaxBlocksPerMultiprocessor))
-            .field("max_shared_memory_per_block", &self.get_attribute(DeviceAttribute::MaxSharedMemoryPerBlock))
-            .field("max_registers_per_block", &self.get_attribute(DeviceAttribute::MaxRegistersPerBlock))
-            .field("reserved_shared_memory_per_block", &self.get_attribute(DeviceAttribute::ReservedSharedMemoryPerBlock))
-
-            .field("wrap_size", &self.get_attribute(DeviceAttribute::WarpSize))
-            .field("max_pitch", &self.get_attribute(DeviceAttribute::MaxPitch))
-
-            .field("sparse_cuda_array_supported", &self.get_attribute(DeviceAttribute::SparseCudaArraySupported))
-            .field("kernel_exec_timeout", &self.get_attribute(DeviceAttribute::KernelExecTimeout))
-            .field("concurrent_kernels", &self.get_attribute(DeviceAttribute::ConcurrentKernels))
-            .field("async_engine_count", &self.get_attribute(DeviceAttribute::AsyncEngineCount))
-
-            .field("unified_addressing", &self.get_attribute(DeviceAttribute::UnifiedAddressing))
-            .field("generic_compression_supported", &self.get_attribute(DeviceAttribute::GenericCompressionSupported))
-            .field("can_map_host_memory", &self.get_attribute(DeviceAttribute::CanMapHostMemory))
-            .field("pageable_memory_access_use_host_page_tables", &self.get_attribute(DeviceAttribute::PageableMemoryAccessUsesHostPageTables))
-            .field("direct_managed_mem_Access_from_host", &self.get_attribute(DeviceAttribute::DirectManagedMemAccessFromHost))
-            .field("managed_memory", &self.get_attribute(DeviceAttribute::ManagedMemory))
-            .field("concurred_managed_access", &self.get_attribute(DeviceAttribute::ConcurrentManagedAccess))
-            .field("can_use_host_pointer_for_registered_mem", &self.get_attribute(DeviceAttribute::CanUseHostPointerForRegisteredMem))
-
-            .field("grid_limits", &self.get_grid_limits())
-            
-            .finish()
+        debug_fmt_device!{
+            "compute_mode" => ComputeMode,
+            "compute_capability_major" => ComputeCapabilityMajor,
+            "compute_capability_minor" => ComputeCapabilityMinor,
+            "pci_bus_id" => PciBusId,
+            "pci_device_id" => PciDeviceId,
+            "pci_domain_id" => PciDomainId,
+            "multi_gpu_board" => MultiGpuBoard,
+            "multi_gpu_board_group_id" => MultiGpuBoardGroupId,
+            "clock_rate_khz" => ClockRate,
+            "memory_clock_rate_khz" => MemoryClockRate,
+            "global_memory_buswidth" => GlobalMemoryBusWidth,
+            "single_to_double_precision_perf_ratio" => SingleToDoublePrecisionPerfRatio,
+            "total_const_memory" => TotalConstantMemory,
+            "max_persisting_l2_cache_size" => MaxPersistingL2CacheSize,
+            "wrap_size" => WarpSize,
+            "multiprocessor_count" => MultiprocessorCount,
+            "max_threads_per_multiprocessor" => MaxThreadsPerMultiprocessor,
+            "max_shared_memory_per_multiprocessor" => MaxSharedMemoryPerMultiprocessor,
+            "max_registers_per_multiprocessor" => MaxRegistersPerMultiprocessor,
+            "max_blocks_per_multiprocessor" => MaxBlocksPerMultiprocessor,
+            "max_shared_memory_per_block" => MaxSharedMemoryPerBlock,
+            "max_registers_per_block" => MaxRegistersPerBlock,
+            "reserved_shared_memory_per_block" => ReservedSharedMemoryPerBlock,
+            "max_pitch" => MaxPitch,
+            "sparse_cuda_array_supported" => SparseCudaArraySupported,
+            "kernel_exec_timeout" => KernelExecTimeout,
+            "concurrent_kernels" => ConcurrentKernels,
+            "async_engine_count" => AsyncEngineCount,
+            "unified_addressing" => UnifiedAddressing,
+            "generic_compression_supported" => GenericCompressionSupported,
+            "can_map_host_memory" => CanMapHostMemory,
+            "pageable_memory_access_use_host_page_tables" => PageableMemoryAccessUsesHostPageTables,
+            "direct_managed_mem_Access_from_host" => DirectManagedMemAccessFromHost,
+            "managed_memory" => ManagedMemory,
+            "concurred_managed_access" => ConcurrentManagedAccess,
+            "can_use_host_pointer_for_registered_mem" => CanUseHostPointerForRegisteredMem,            
+        }
     }
 }
 
