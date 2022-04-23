@@ -706,19 +706,18 @@ impl Device {
         // return if error
         error.into_result(())?;
 
-        println!("{:?}", unsafe{
-            core::slice::from_raw_parts(
-                ptr as *const u8,
-                capacity,
-            )
-        });
-
         // the string is null-terminated so we need to compute the length to get
         // a proper rust string
-        let len = match result.bytes().position(|c| c == b'\0') {
-            Some(idx) => Ok(idx),
-            None => Err(GPUError::InvalidGPUName) 
-        }?;
+        let mut len = 0;
+        for i in 0..capacity {
+            let current_char = unsafe{
+                *(ptr as *const u8)
+            };
+            if c == b'\0' {
+                break
+            }
+            len += 1;
+        }
         let result = unsafe{
             String::from_raw_parts(
                 ptr,
