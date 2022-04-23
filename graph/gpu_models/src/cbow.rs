@@ -118,7 +118,7 @@ impl CBOW {
         // setup this device for computation
         let mut gpu = GPU::new(device)?;
         // load our compiled code
-        let mut ptx = gpu.load_ptx(PTX)?;
+        let mut ptx = gpu.load_ptx(PTX_SOURCE)?;
         // get a function from the compiled code
         let compute_cbow_mini_batch = ptx.get_kernel("compute_cbow_mini_batch")?;
 

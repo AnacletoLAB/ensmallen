@@ -12,7 +12,7 @@ pub fn add_one(vals: &[f32]) -> Result<Vec<f32>, GPUError> {
     // setup this device for computation
     let mut gpu = GPU::new(device)?;
     // load our compiled code
-    let mut ptx = gpu.load_ptx(PTX)?;
+    let mut ptx = gpu.load_ptx(PTX_SOURCE)?;
     // get a function from the compiled code
     let kernel = ptx.get_kernel("add_one")?;
     
