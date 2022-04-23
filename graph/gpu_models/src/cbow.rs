@@ -53,16 +53,16 @@ impl CBOW {
     pub fn fit_transform(
         &self,
         graph: &Graph,
-        embedding: &mut [f64],
+        embedding: &mut [f32],
         epochs: Option<usize>,
-        learning_rate: Option<f64>,
+        learning_rate: Option<f32>,
         batch_size: Option<usize>,
         verbose: Option<bool>,
     ) -> Result<(), GPUError> {
         let epochs = epochs.unwrap_or(10);
         let batch_size = batch_size.unwrap_or(32);
         let number_of_batches_per_epoch =
-            (graph.get_nodes_number() as f64 / batch_size as f64).ceil() as usize;
+            (graph.get_nodes_number() as f32 / batch_size as f32).ceil() as usize;
         let learning_rate = learning_rate.unwrap_or(0.025);
         let mut walk_parameters = self.walk_parameters.clone();
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
@@ -73,6 +73,7 @@ impl CBOW {
         let window_size = self.window_size as isize;
         let verbose = verbose.unwrap_or(true);
         let vocabulary_size = graph.get_nodes_number();
+
         let number_of_negative_samples = self.number_of_negative_samples;
         let embedding_size = self.embedding_size;
         let number_of_random_walks = batch_size * iterations;
@@ -135,10 +136,10 @@ impl CBOW {
         embedding
             .par_iter_mut()
             .enumerate()
-            .for_each(|(i, e)| *e = 2.0 * random_f64(random_state + i as u64) - 1.0);
+            .for_each(|(i, e)| *e = (2.0 * random_f64(random_state + i as u64) - 1.0) as f32);
 
         // allocate a gpu buffer and copy data from the host
-        let embedding_on_gpu = gpu.buffer_from_slice::<f64>(embedding)?;
+        let embedding_on_gpu = gpu.buffer_from_slice::<f32>(embedding)?;
 
         //
         random_state = splitmix64(random_state);
@@ -146,12 +147,12 @@ impl CBOW {
         // Create and allocate the hidden layer
         let mut hidden = (0..expected_embedding_len)
             .into_par_iter()
-            .map(|i| 2.0 * random_f64(random_state + i as u64) - 1.0)
+            .map(|i| (2.0 * random_f64(random_state + i as u64) - 1.0) as f32)
             .collect::<Vec<_>>();
 
         // allocate a gpu buffer and copy data from the host
         // TODO! check if here it needs to be mutable or not!
-        let hidden_on_gpu = gpu.buffer_from_slice::<f64>(&mut hidden)?;
+        let hidden_on_gpu = gpu.buffer_from_slice::<f32>(&mut hidden)?;
 
         // Create the vector we will populate with the random walks.
         let mut random_walks: Vec<NodeT> =

@@ -278,7 +278,7 @@ impl FloatsMissingOps for f32 {
                 // here we use the fast and approximated sqrt,
                 // we could use sqrt.rnd.f32 if we want slower but
                 // IEEE 754 compliant rounding
-                "fma.rn.f32 {output}, {a}, {b}, {c};",
+                "fma.rnd.f32 {output}, {a}, {b}, {c};",
                 a = in(reg32) a,
                 b = in(reg32) b,
                 c = in(reg32) c,
@@ -288,6 +288,76 @@ impl FloatsMissingOps for f32 {
         result
     }
 }
+
+/// The actual implementation calling raw PTX assembly
+impl FloatsMissingOps for f64 {
+    #[inline(always)]
+    fn sqrt(&self) -> f64 {
+        let mut result: f64;
+        unsafe {
+            asm!(
+                // here we use the fast and approximated sqrt,
+                // we could use sqrt.rnd.f64 if we want slower but
+                // IEEE 754 compliant rounding
+                "sqrt.approx.f64 {output}, {input};",
+                input = in(reg32) *self,
+                output = out(reg32) result,
+            );
+        }
+        result
+    }
+
+    #[inline(always)]
+    fn exp2(&self) -> f64 {
+        let mut result: f64;
+        unsafe {
+            asm!(
+                // here we use the fast and approximated sqrt,
+                // we could use sqrt.rnd.f64 if we want slower but
+                // IEEE 754 compliant rounding
+                "ex2.approx.f64 {output}, {input};",
+                input = in(reg32) *self,
+                output = out(reg32) result,
+            );
+        }
+        result
+    }
+
+    #[inline(always)]
+    fn log2(&self) -> f64 {
+        let mut result: f64;
+        unsafe {
+            asm!(
+                // here we use the fast and approximated sqrt,
+                // we could use sqrt.rnd.f64 if we want slower but
+                // IEEE 754 compliant rounding
+                "lg2.approx.f64 {output}, {input};",
+                input = in(reg32) *self,
+                output = out(reg32) result,
+            );
+        }
+        result
+    }
+
+    #[inline(always)]
+    fn fma(a: f64, b: f64, c: f64) -> f64 {
+        let mut result: f64;
+        unsafe {
+            asm!(
+                // here we use the fast and approximated sqrt,
+                // we could use sqrt.rnd.f64 if we want slower but
+                // IEEE 754 compliant rounding
+                "fma.rnd.f64 {output}, {a}, {b}, {c};",
+                a = in(reg64) a,
+                b = in(reg64) b,
+                c = in(reg64) c,
+                output = out(reg64) result,
+            );
+        }
+        result
+    }
+}
+
 
 #[panic_handler]
 pub unsafe fn breakpoint_panic_handler(_: &::core::panic::PanicInfo) -> ! {

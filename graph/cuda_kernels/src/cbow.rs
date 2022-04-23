@@ -6,11 +6,11 @@ use crate::*;
 /// # Arguments
 ///
 pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
-    embedding: *mut f64,
-    hidden: *mut f64,
+    embedding: *mut f32,
+    hidden: *mut f32,
     random_walks: *const u32,
     negative_node_ids: *const u32,
-    learning_rate: f64,
+    learning_rate: f32,
     window_size: isize,
     number_of_negative_samples: usize,
     random_walk_length: usize,
@@ -40,7 +40,7 @@ pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
             * iterations
             * (random_walk_length as isize - window_size * 2) as usize,
     );
-    let context_size = (window_size * 2) as f64;
+    let context_size = (window_size * 2) as f32;
 
     // We iterate for all skipgram batches of the random walk.
     for center in window_size..(random_walk_length as isize - window_size) {
@@ -53,7 +53,7 @@ pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
         let current_central_node_embedding = &mut hidden[current_central_node_id * embedding_size
             ..(current_central_node_id + 1) * embedding_size];
         // We iterate on the context around the center
-        let mut dot: f64 = 0.0;
+        let mut dot: f32 = 0.0;
         // We compute the dot product of the sum of the contextual node embedding and the
         // current central node.
         for context in (-window_size..0).chain(1..window_size + 1) {
@@ -113,7 +113,7 @@ pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
                 ..(current_negative_node_id + 1) * embedding_size];
 
             // We iterate on the context around the center
-            let mut dot: f64 = 0.0;
+            let mut dot: f32 = 0.0;
             // We compute the dot product of the sum of the contextual node embedding and the
             // current central node.
             for context in (-window_size..0).chain(1..window_size + 1) {

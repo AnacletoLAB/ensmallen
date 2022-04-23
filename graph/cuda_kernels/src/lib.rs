@@ -16,6 +16,6 @@ pub unsafe extern "ptx-kernel" fn add_one(
     let idx = ((block_idx_x() * block_dim_x()) + thread_idx_x()) as usize;
     if idx < input_len {
         let v = &mut (*input.add(idx));
-        *v = v.exp2();
+        *v = v.log2();
     }
 }
