@@ -117,7 +117,7 @@ impl CBOW {
         embedding
             .par_iter_mut()
             .enumerate()
-            .for_each(|(i, e)| *e = random_f32(splitmix64(random_state + i as u64)) - 0.5);
+            .for_each(|(i, e)| *e = 2.0 * random_f32(splitmix64(random_state + i as u64)) - 1.0);
 
         // Update the random state to avoid populating the hidden layer with
         // the same exact values as the embedding.
@@ -129,7 +129,7 @@ impl CBOW {
         // width  = number of features in embedding
         let mut hidden = (0..expected_embedding_len)
             .into_par_iter()
-            .map(|i| random_f32(splitmix64(random_state + i as u64)) - 0.5)
+            .map(|i| 2.0 * random_f32(splitmix64(random_state + i as u64)) - 1.0)
             .collect::<Vec<_>>();
 
         // Create and allocate the gradient for the central terms
@@ -273,7 +273,12 @@ impl CBOW {
                                     exp_dot / (exp_dot + 1.0)
                                 } * learning_rate;
 
-                            assert!(loss.is_finite(), "The loss is not finite! loss: {}, dot: {}", loss, dot);
+                            assert!(
+                                loss.is_finite(),
+                                "The loss is not finite! loss: {}, dot: {}",
+                                loss,
+                                dot
+                            );
 
                             // We compute the average loss to update the central gradient by the total central embedding.
                             let mean_loss = (loss / context_size) as f32;
