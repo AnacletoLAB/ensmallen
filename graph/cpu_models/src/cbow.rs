@@ -254,7 +254,7 @@ impl CBOW {
                             // Within this computation, we also do a conversion to f64
                             // that we convert back to f32 afterwards. This is done because
                             // we want to avoid as much numerical instability as possible.
-                            let dot = hidden_embedding
+                            let mut dot = hidden_embedding
                                 .iter()
                                 .zip(total_context_embedding.iter())
                                 .map(|(central_feature, contextual_feature)| {
@@ -271,6 +271,12 @@ impl CBOW {
                                 ),
                                 dot
                             );
+
+                            if dot > 6.0 {
+                                dot = 6.0;
+                            } else if dot < -6.0 {
+                                dot = -6.0;
+                            }
 
                             let exp_dot = dot.exp();
 
