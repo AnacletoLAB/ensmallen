@@ -68,7 +68,9 @@ impl CBOW {
         let batch_size = batch_size.unwrap_or(32);
         let number_of_batches_per_epoch =
             (graph.get_nodes_number() as f64 / batch_size as f64).ceil() as usize;
-        let learning_rate = learning_rate.unwrap_or(0.025);
+        let scale_factor = (self.embedding_size as f64).sqrt();
+
+        let learning_rate = learning_rate.unwrap_or(0.025) / scale_factor;
         let mut walk_parameters = self.walk_parameters.clone();
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
         let random_walk_length = walk_parameters.get_random_walk_length() as usize;
@@ -76,7 +78,6 @@ impl CBOW {
         let verbose = verbose.unwrap_or(true);
         let cpu_number = rayon::current_num_threads() as NodeT;
         let context_size = (self.window_size * 2) as f64;
-        let embedding_size = self.embedding_size;
         let number_of_random_walks = batch_size * iterations;
 
         if epochs == 0 {
@@ -233,7 +234,7 @@ impl CBOW {
                     // We define a closure that returns a reference to the embedding of the given node.
                     let get_node_embedding = |node_id: NodeT| {
                         let node_id = node_id as usize;
-                        &embedding[(node_id * embedding_size)..((node_id + 1) * embedding_size)]
+                        &embedding[(node_id * self.embedding_size)..((node_id + 1) * self.embedding_size)]
                     };
 
                     // We define a closure for better code readability that computes the loss
@@ -248,7 +249,7 @@ impl CBOW {
                             let node_id = node_id as usize;
                             // We retrieve the hidden weights of the current node ID.
                             let hidden_embedding = &hidden
-                                [(node_id * embedding_size)..((node_id + 1) * embedding_size)];
+                                [(node_id * self.embedding_size)..((node_id + 1) * self.embedding_size)];
                             // Within this computation, we also do a conversion to f64
                             // that we convert back to f32 afterwards. This is done because
                             // we want to avoid as much numerical instability as possible.
@@ -297,14 +298,14 @@ impl CBOW {
                         ))
                         .zip(
                             central_terms_batch_gradient
-                                .par_chunks_mut(number_of_central_terms_in_walk * embedding_size)
+                                .par_chunks_mut(number_of_central_terms_in_walk * self.embedding_size)
                                 .zip(non_central_terms_batch_gradient.par_chunks_mut(
                                     number_of_central_terms_in_walk
                                         * self.number_of_negative_samples
-                                        * embedding_size,
+                                        * self.embedding_size,
                                 ))
                                 .zip(contextual_terms_batch_gradient.par_chunks_mut(
-                                    number_of_central_terms_in_walk * embedding_size,
+                                    number_of_central_terms_in_walk * self.embedding_size,
                                 )),
                         )
                         .for_each(
@@ -333,13 +334,13 @@ impl CBOW {
                                     .zip(non_central_terms.chunks(self.number_of_negative_samples))
                                     .zip(
                                         central_terms_gradients
-                                            .chunks_mut(embedding_size)
+                                            .chunks_mut(self.embedding_size)
                                             .zip(non_central_terms_gradients.chunks_mut(
-                                                embedding_size * self.number_of_negative_samples,
+                                                self.embedding_size * self.number_of_negative_samples,
                                             ))
                                             .zip(
                                                 contextual_terms_gradients
-                                                    .chunks_mut(embedding_size),
+                                                    .chunks_mut(self.embedding_size),
                                             ),
                                     )
                                     .for_each(
@@ -393,7 +394,7 @@ impl CBOW {
                                             .cloned()
                                             .zip(
                                                 non_central_term_gradients
-                                                    .chunks_mut(embedding_size),
+                                                    .chunks_mut(self.embedding_size),
                                             )
                                             .for_each(
                                                 |(
@@ -429,7 +430,7 @@ impl CBOW {
                     let node_id = node_id as usize;
                     unsafe {
                         (*shared_hidden.get())
-                            [node_id * embedding_size..(node_id + 1) * embedding_size]
+                            [node_id * self.embedding_size..(node_id + 1) * self.embedding_size]
                             .iter_mut()
                             .zip(gradient.iter())
                             .for_each(|(hidden_feature, gradient_feature)| {
@@ -443,7 +444,7 @@ impl CBOW {
                     let node_id = node_id as usize;
                     unsafe {
                         (*shared_embedding.get())
-                            [node_id * embedding_size..(node_id + 1) * embedding_size]
+                            [node_id * self.embedding_size..(node_id + 1) * self.embedding_size]
                             .iter_mut()
                             .zip(gradient.iter())
                             .for_each(|(embedding_feature, gradient_feature)| {
@@ -461,15 +462,15 @@ impl CBOW {
                         ))
                         .zip(
                             central_terms_batch_gradient
-                                .chunks(number_of_central_terms_in_walk * embedding_size)
+                                .chunks(number_of_central_terms_in_walk * self.embedding_size)
                                 .zip(non_central_terms_batch_gradient.chunks(
                                     number_of_central_terms_in_walk
                                         * self.number_of_negative_samples
-                                        * embedding_size,
+                                        * self.embedding_size,
                                 ))
                                 .zip(
                                     contextual_terms_batch_gradient
-                                        .chunks(number_of_central_terms_in_walk * embedding_size),
+                                        .chunks(number_of_central_terms_in_walk * self.embedding_size),
                                 ),
                         )
                         .for_each(
@@ -498,11 +499,11 @@ impl CBOW {
                                     .zip(non_central_terms.chunks(self.number_of_negative_samples))
                                     .zip(
                                         central_terms_gradients
-                                            .chunks(embedding_size)
+                                            .chunks(self.embedding_size)
                                             .zip(non_central_terms_gradients.chunks(
-                                                embedding_size * self.number_of_negative_samples,
+                                                self.embedding_size * self.number_of_negative_samples,
                                             ))
-                                            .zip(contextual_terms_gradients.chunks(embedding_size)),
+                                            .zip(contextual_terms_gradients.chunks(self.embedding_size)),
                                     )
                                     .for_each(
                                         |(
