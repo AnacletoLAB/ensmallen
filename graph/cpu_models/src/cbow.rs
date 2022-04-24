@@ -398,7 +398,7 @@ impl CBOW {
                                                         .iter()
                                                         .zip(total_context_embedding.iter_mut())
                                                         .for_each(|(feature, total_feature)| {
-                                                            *total_feature += feature;
+                                                            *total_feature += *feature;
                                                         });
                                                 });
                                             // We have now finished to compute the total context embedding.
