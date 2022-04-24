@@ -263,10 +263,6 @@ impl CBOW {
                                 .sum::<f64>()
                                 / context_size;
 
-                            if dot > 6.0 || dot < -6.0 {
-                                return;
-                            }
-
                             let exp_dot = dot.exp();
 
                             assert!(
@@ -462,8 +458,7 @@ impl CBOW {
                             .iter_mut()
                             .zip(gradient.iter())
                             .for_each(|(hidden_feature, gradient_feature)| {
-                                *hidden_feature =
-                                    (gradient_feature + *hidden_feature).min(-1.0).max(1.0);
+                                *hidden_feature += gradient_feature;
                             });
                     }
                 };
@@ -477,8 +472,7 @@ impl CBOW {
                             .iter_mut()
                             .zip(gradient.iter())
                             .for_each(|(embedding_feature, gradient_feature)| {
-                                *embedding_feature =
-                                    (gradient_feature + *embedding_feature).min(-1.0).max(1.0);
+                                *embedding_feature += gradient_feature;
                             });
                     }
                 };
