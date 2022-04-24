@@ -254,7 +254,7 @@ impl CBOW {
                             // Within this computation, we also do a conversion to f64
                             // that we convert back to f32 afterwards. This is done because
                             // we want to avoid as much numerical instability as possible.
-                            let mut dot = hidden_embedding
+                            let dot = hidden_embedding
                                 .iter()
                                 .zip(total_context_embedding.iter())
                                 .map(|(central_feature, contextual_feature)| {
@@ -462,7 +462,8 @@ impl CBOW {
                             .iter_mut()
                             .zip(gradient.iter())
                             .for_each(|(hidden_feature, gradient_feature)| {
-                                *hidden_feature += gradient_feature;
+                                *hidden_feature =
+                                    (gradient_feature + *hidden_feature).min(-1.0).max(1.0);
                             });
                     }
                 };
@@ -476,7 +477,8 @@ impl CBOW {
                             .iter_mut()
                             .zip(gradient.iter())
                             .for_each(|(embedding_feature, gradient_feature)| {
-                                *embedding_feature += gradient_feature;
+                                *embedding_feature =
+                                    (gradient_feature + *embedding_feature).min(-1.0).max(1.0);
                             });
                     }
                 };
