@@ -253,7 +253,7 @@ impl CBOW {
                             // Within this computation, we also do a conversion to f64
                             // that we convert back to f32 afterwards. This is done because
                             // we want to avoid as much numerical instability as possible.
-                            let exp_dot = (hidden_embedding
+                            let mut exp_dot = (hidden_embedding
                                 .iter()
                                 .zip(total_context_embedding.iter())
                                 .map(|(central_feature, contextual_feature)| {
@@ -262,6 +262,13 @@ impl CBOW {
                                 .sum::<f64>()
                                 / context_size)
                                 .exp();
+
+                            // Clipping for numerical stability
+                            if exp_dot > 300.0 {
+                                exp_dot = 300.0;
+                            } else if exp_dot < -300.0 {
+                                exp_dot = -300.0;
+                            }
 
                             // We compute the loss for the given term.
                             let loss = (label - (exp_dot / (exp_dot + 1.0))) * learning_rate;
