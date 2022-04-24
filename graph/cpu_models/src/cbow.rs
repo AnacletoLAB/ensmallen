@@ -258,18 +258,6 @@ impl CBOW {
                                 .iter()
                                 .zip(total_context_embedding.iter())
                                 .map(|(node_feature, contextual_feature)| {
-                                    assert!(
-                                        node_feature.is_finite(),
-                                        "The node feature is not finite! node_feature: {}, contextual_feature: {}",
-                                        node_feature,
-                                        contextual_feature
-                                    );
-                                    assert!(
-                                        contextual_feature.is_finite(),
-                                        "The node feature is not finite! node_feature: {}, contextual_feature: {}",
-                                        node_feature,
-                                        contextual_feature
-                                    );
                                     *node_feature * *contextual_feature
                                 })
                                 .sum::<f32>()
@@ -432,6 +420,7 @@ impl CBOW {
                                                 non_central_term_gradients
                                                     .chunks_mut(self.embedding_size),
                                             )
+                                            .filter(|(non_central_node_id, _)| *non_central_node_id != central_node_id)
                                             .for_each(
                                                 |(
                                                     non_central_node_id,
