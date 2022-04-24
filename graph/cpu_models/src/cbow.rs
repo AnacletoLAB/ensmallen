@@ -347,14 +347,9 @@ impl CBOW {
                                                 [(central_index - self.window_size)..central_index],
                                             &random_walk[(central_index + 1)
                                                 ..(central_index + self.window_size)],
+                                                random_walk[central_index]
                                         )
                                     })
-                                    .zip(
-                                        random_walk[self.window_size
-                                            ..(random_walk_length - self.window_size)]
-                                            .iter()
-                                            .cloned(),
-                                    )
                                     .zip(non_central_terms.chunks(self.number_of_negative_samples))
                                     .zip(
                                         central_terms_gradients
@@ -371,7 +366,7 @@ impl CBOW {
                                     .for_each(
                                         |(
                                             (
-                                                ((left_context, right_context), central_node_id),
+                                                (left_context, right_context, central_node_id),
                                                 non_central_terms,
                                             ),
                                             (
@@ -504,20 +499,15 @@ impl CBOW {
                                                 [(central_index - self.window_size)..central_index],
                                             &random_walk[(central_index + 1)
                                                 ..(central_index + self.window_size)],
+                                            random_walk[central_index],
                                         )
                                     })
-                                    .zip(
-                                        random_walk[self.window_size
-                                            ..(random_walk_length - self.window_size)]
-                                            .iter()
-                                            .cloned(),
-                                    )
                                     .zip(central_terms_gradients.chunks(self.embedding_size).zip(
                                         contextual_terms_gradients.chunks(self.embedding_size),
                                     ))
                                     .for_each(
                                         |(
-                                            ((left_context, right_context), central_node_id),
+                                            (left_context, right_context, central_node_id),
                                             (central_term_gradient, contextual_terms_gradient),
                                         )| {
                                             // Update the hidden layer for the current central node.
