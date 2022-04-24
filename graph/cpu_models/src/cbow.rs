@@ -457,8 +457,8 @@ impl CBOW {
                             [node_id * self.embedding_size..(node_id + 1) * self.embedding_size]
                             .iter_mut()
                             .zip(gradient.iter())
-                            .for_each(|(hidden_feature, gradient_feature)| {
-                                *hidden_feature += gradient_feature;
+                            .for_each(|(hidden_feature, gradient_feature): (&mut f32, &f32)| {
+                                *hidden_feature += *gradient_feature;
                             });
                     }
                 };
@@ -471,8 +471,8 @@ impl CBOW {
                             [node_id * self.embedding_size..(node_id + 1) * self.embedding_size]
                             .iter_mut()
                             .zip(gradient.iter())
-                            .for_each(|(embedding_feature, gradient_feature)| {
-                                *embedding_feature += gradient_feature;
+                            .for_each(|(embedding_feature, gradient_feature): (&mut f32, &f32)| {
+                                *embedding_feature += *gradient_feature;
                             });
                     }
                 };
