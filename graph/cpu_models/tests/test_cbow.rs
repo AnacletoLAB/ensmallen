@@ -15,14 +15,14 @@ fn test_cbow_on_cora() -> Result<(), String> {
         .unwrap()
         .set_iterations(Some(1))
         .unwrap();
-    let cbow = CBOW::new(Some(embedding_size), Some(walks), Some(4), Some(10), None).unwrap();
+    let cbow = CBOW::new(Some(embedding_size), Some(walks), Some(4), Some(5), None).unwrap();
     let mut embedding = vec![0.0; embedding_size * cora.get_nodes_number() as usize];
     cbow.fit_transform(
         &cora,
         embedding.as_mut_slice(),
-        Some(10),
+        Some(3),
         None,
-        Some(1024),
+        Some(32),
         None,
     )?;
 
