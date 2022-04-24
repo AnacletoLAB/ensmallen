@@ -264,9 +264,9 @@ impl CBOW {
                                 / context_size;
 
                             let loss = label
-                                - if dot > 10.0 {
+                                - if dot > 6.0 {
                                     1.0
-                                } else if dot < -10.0 {
+                                } else if dot < -6.0 {
                                     0.0
                                 } else {
                                     let exp_dot = dot.exp();
