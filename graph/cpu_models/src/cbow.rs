@@ -161,11 +161,8 @@ impl CBOW {
         // height = number_of_central_terms_in_batch
         // width  = embedding_size
         // because the gradient of each element in the context is identical
-        let number_of_contextual_terms_in_batch = number_of_central_terms_in_batch;
-
-        // We initialize the contextual terms gradient to zeros.
         let mut contextual_terms_batch_gradient =
-            vec![0.0; number_of_contextual_terms_in_batch * self.embedding_size];
+            vec![0.0; number_of_central_terms_in_batch * self.embedding_size];
 
         // Create the vector we will populate with the random walks.
         let mut random_walks: Vec<NodeT> =
@@ -312,6 +309,17 @@ impl CBOW {
                                 });
                         };
 
+                    dbg!(
+                        random_walks.len(),
+                        random_walk_length,
+                        non_central_terms.len(),
+                        number_of_central_terms_in_walk,
+                        self.number_of_negative_samples,
+                        central_terms_batch_gradient.len(),
+                        non_central_terms_batch_gradient.len(),
+                        contextual_terms_batch_gradient.len(),
+                    );
+                        
                     // We start to compute the new gradients.
                     random_walks
                         .par_chunks(random_walk_length)
