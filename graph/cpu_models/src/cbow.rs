@@ -265,6 +265,12 @@ impl CBOW {
 
                             // We compute the loss for the given term.
                             let loss = (label - (exp_dot / (exp_dot + 1.0))) * learning_rate;
+
+                            assert!(loss.is_finite(), concat!(
+                                "The loss was expected to be finite but we obtained ",
+                                "the value {}."
+                            ), loss);
+
                             // We compute the average loss to update the central gradient by the total central embedding.
                             let mean_loss = (loss / context_size) as f32;
 
