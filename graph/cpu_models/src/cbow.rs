@@ -278,9 +278,9 @@ impl CBOW {
                                 exp_dot.is_finite(),
                                 concat!(
                                     "The exp dot product was expected to be finite but we obtained ",
-                                    "the value {}."
+                                    "the value {} with dot {}."
                                 ),
-                                exp_dot
+                                exp_dot, dot
                             );
 
                             // We compute the loss for the given term.
