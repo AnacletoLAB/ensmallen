@@ -257,11 +257,29 @@ impl CBOW {
                             let dot = hidden_embedding
                                 .iter()
                                 .zip(total_context_embedding.iter())
-                                .map(|(central_feature, contextual_feature)| {
-                                    *central_feature * *contextual_feature
+                                .map(|(node_feature, contextual_feature)| {
+                                    assert!(
+                                        node_feature.is_finite(),
+                                        "The node feature is not finite! node_feature: {}, contextual_feature: {}",
+                                        node_feature,
+                                        contextual_feature
+                                    );
+                                    assert!(
+                                        contextual_feature.is_finite(),
+                                        "The node feature is not finite! node_feature: {}, contextual_feature: {}",
+                                        node_feature,
+                                        contextual_feature
+                                    );
+                                    *node_feature * *contextual_feature
                                 })
                                 .sum::<f32>()
                                 / context_size;
+
+                            assert!(
+                                dot.is_finite(),
+                                "The dot product is not finite! dot: {}",
+                                dot
+                            );
 
                             let loss = label
                                 - if dot > 6.0 {
