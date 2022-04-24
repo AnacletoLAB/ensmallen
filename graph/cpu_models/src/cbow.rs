@@ -274,6 +274,15 @@ impl CBOW {
 
                             let exp_dot = dot.exp();
 
+                            assert!(
+                                exp_dot.is_finite(),
+                                concat!(
+                                    "The exp dot product was expected to be finite but we obtained ",
+                                    "the value {}."
+                                ),
+                                exp_dot
+                            );
+
                             // We compute the loss for the given term.
                             let loss = (label - (exp_dot / (exp_dot + 1.0))) * learning_rate;
 
