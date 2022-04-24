@@ -230,6 +230,13 @@ impl CBOW {
                     )
                     .collect_into_vec(&mut non_central_terms);
 
+                let mut contextual_terms_batch_gradient =
+                    vec![0.0; number_of_contextual_terms_in_batch * self.embedding_size];
+                let mut central_terms_batch_gradient =
+                    vec![0.0; number_of_central_terms_in_batch * self.embedding_size];
+                let mut non_central_terms_batch_gradient =
+                    vec![0.0; number_of_non_central_terms_in_batch * self.embedding_size];
+
                 {
                     // We define a closure that returns a reference to the embedding of the given node.
                     let get_node_embedding = |node_id: NodeT| {
