@@ -263,10 +263,8 @@ impl CBOW {
                                 .sum::<f64>()
                                 / context_size;
 
-                            if dot > 6.0 {
-                                dot = 6.0;
-                            } else if dot < -6.0 {
-                                dot = -6.0;
+                            if dot > 6.0 || dot < -6.0 {
+                                return;
                             }
 
                             let exp_dot = dot.exp();
