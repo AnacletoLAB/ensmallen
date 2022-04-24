@@ -22,7 +22,7 @@ fn test_cbow_on_cora() -> Result<(), String> {
         embedding.as_mut_slice(),
         Some(10),
         None,
-        Some(256),
+        Some(1024),
         None,
     )?;
 
