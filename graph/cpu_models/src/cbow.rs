@@ -230,13 +230,6 @@ impl CBOW {
                     )
                     .collect_into_vec(&mut non_central_terms);
 
-                let mut contextual_terms_batch_gradient =
-                    vec![0.0; number_of_contextual_terms_in_batch * self.embedding_size];
-                let mut central_terms_batch_gradient =
-                    vec![0.0; number_of_central_terms_in_batch * self.embedding_size];
-                let mut non_central_terms_batch_gradient =
-                    vec![0.0; number_of_non_central_terms_in_batch * self.embedding_size];
-
                 {
                     // We define a closure that returns a reference to the embedding of the given node.
                     let get_node_embedding = |node_id: NodeT| {
@@ -263,9 +256,10 @@ impl CBOW {
                             // we want to avoid as much numerical instability as possible.
                             let dot = hidden_embedding
                                 .iter()
-                                .zip(total_context_embedding.iter())
+                                .cloned()
+                                .zip(total_context_embedding.iter().cloned())
                                 .map(|(node_feature, contextual_feature)| {
-                                    *node_feature * *contextual_feature
+                                    node_feature * contextual_feature
                                 })
                                 .sum::<f32>()
                                 / context_size;
