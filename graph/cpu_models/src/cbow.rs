@@ -263,15 +263,6 @@ impl CBOW {
                                 .sum::<f64>()
                                 / context_size;
 
-                            assert!(
-                                dot.is_finite(),
-                                concat!(
-                                    "The dot product was expected to be finite but we obtained ",
-                                    "the value {}."
-                                ),
-                                dot
-                            );
-
                             if dot > 6.0 {
                                 dot = 6.0;
                             } else if dot < -6.0 {
