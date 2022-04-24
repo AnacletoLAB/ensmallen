@@ -60,7 +60,7 @@ impl CBOW {
         graph: &Graph,
         mut embedding: &mut [f32],
         epochs: Option<usize>,
-        learning_rate: Option<f64>,
+        learning_rate: Option<f32>,
         batch_size: Option<usize>,
         verbose: Option<bool>,
     ) -> Result<(), String> {
@@ -68,7 +68,7 @@ impl CBOW {
         let batch_size = batch_size.unwrap_or(32);
         let number_of_batches_per_epoch =
             (graph.get_nodes_number() as f64 / batch_size as f64).ceil() as usize;
-        let scale_factor = (self.embedding_size as f64).sqrt();
+        let scale_factor = (self.embedding_size as f32).sqrt();
 
         let learning_rate = learning_rate.unwrap_or(0.025) / scale_factor;
         let mut walk_parameters = self.walk_parameters.clone();
@@ -77,7 +77,7 @@ impl CBOW {
         let iterations = walk_parameters.get_iterations() as usize;
         let verbose = verbose.unwrap_or(true);
         let cpu_number = rayon::current_num_threads() as NodeT;
-        let context_size = (self.window_size * 2) as f64;
+        let context_size = (self.window_size * 2) as f32;
         let number_of_random_walks = batch_size * iterations;
 
         if epochs == 0 {
@@ -176,7 +176,7 @@ impl CBOW {
 
         // We create a closure that will be used within the threads to check whether a
         // thread can execute the update of a given node embedding.
-        let can_update = |node_id, thread_id| node_id % cpu_number == thread_id;
+        let can_update = |node_id: NodeT, thread_id: NodeT| node_id % cpu_number == thread_id;
 
         // Depending whether verbosity was requested by the user
         // we create or not a visible progress bar to show the progress
@@ -243,7 +243,7 @@ impl CBOW {
                     let compute_mini_batch_step =
                         |total_context_embedding: &[f32],
                          node_id: NodeT,
-                         label: f64,
+                         label: f32,
                          node_gradient: &mut [f32],
                          context_gradient: &mut [f32]| {
                             // We compute the average exponentiated dot product
@@ -258,33 +258,15 @@ impl CBOW {
                                 .iter()
                                 .zip(total_context_embedding.iter())
                                 .map(|(central_feature, contextual_feature)| {
-                                    (*central_feature as f64) * (*contextual_feature as f64)
+                                    *central_feature * *contextual_feature
                                 })
-                                .sum::<f64>()
+                                .sum::<f32>()
                                 / context_size;
 
                             let exp_dot = dot.exp();
 
-                            assert!(
-                                exp_dot.is_finite(),
-                                concat!(
-                                    "The exp dot product was expected to be finite but we obtained ",
-                                    "the value {} with dot {}."
-                                ),
-                                exp_dot, dot
-                            );
-
                             // We compute the loss for the given term.
                             let loss = (label - (exp_dot / (exp_dot + 1.0))) * learning_rate;
-
-                            assert!(
-                                loss.is_finite(),
-                                concat!(
-                                    "The loss was expected to be finite but we obtained ",
-                                    "the value {}."
-                                ),
-                                loss
-                            );
 
                             // We compute the average loss to update the central gradient by the total central embedding.
                             let mean_loss = (loss / context_size) as f32;
