@@ -117,7 +117,7 @@ impl CBOW {
         embedding
             .par_iter_mut()
             .enumerate()
-            .for_each(|(i, e)| *e = 2.0 * random_f32(random_state + i as u64) - 1.0);
+            .for_each(|(i, e)| *e = random_f32(random_state + i as u64) - 0.5);
 
         // Update the random state to avoid populating the hidden layer with
         // the same exact values as the embedding.
@@ -129,7 +129,7 @@ impl CBOW {
         // width  = number of features in embedding
         let mut hidden = (0..expected_embedding_len)
             .into_par_iter()
-            .map(|i| 2.0 * random_f32(random_state + i as u64) - 1.0)
+            .map(|i| random_f32(random_state + i as u64) - 0.5)
             .collect::<Vec<_>>();
 
         // Create and allocate the gradient for the central terms
