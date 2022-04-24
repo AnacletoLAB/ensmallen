@@ -234,7 +234,8 @@ impl CBOW {
                     // We define a closure that returns a reference to the embedding of the given node.
                     let get_node_embedding = |node_id: NodeT| {
                         let node_id = node_id as usize;
-                        &embedding[(node_id * self.embedding_size)..((node_id + 1) * self.embedding_size)]
+                        &embedding
+                            [(node_id * self.embedding_size)..((node_id + 1) * self.embedding_size)]
                     };
 
                     // We define a closure for better code readability that computes the loss
@@ -248,28 +249,42 @@ impl CBOW {
                             // We compute the average exponentiated dot product
                             let node_id = node_id as usize;
                             // We retrieve the hidden weights of the current node ID.
-                            let hidden_embedding = &hidden
-                                [(node_id * self.embedding_size)..((node_id + 1) * self.embedding_size)];
+                            let hidden_embedding = &hidden[(node_id * self.embedding_size)
+                                ..((node_id + 1) * self.embedding_size)];
                             // Within this computation, we also do a conversion to f64
                             // that we convert back to f32 afterwards. This is done because
                             // we want to avoid as much numerical instability as possible.
-                            let exp_dot = (hidden_embedding
+                            let dot = hidden_embedding
                                 .iter()
                                 .zip(total_context_embedding.iter())
                                 .map(|(central_feature, contextual_feature)| {
                                     (*central_feature as f64) * (*contextual_feature as f64)
                                 })
                                 .sum::<f64>()
-                                / context_size)
-                                .exp();
+                                / context_size;
+
+                            assert!(
+                                dot.is_finite(),
+                                concat!(
+                                    "The dot product was expected to be finite but we obtained ",
+                                    "the value {}."
+                                ),
+                                dot
+                            );
+
+                            let exp_dot = dot.exp();
 
                             // We compute the loss for the given term.
                             let loss = (label - (exp_dot / (exp_dot + 1.0))) * learning_rate;
 
-                            assert!(loss.is_finite(), concat!(
-                                "The loss was expected to be finite but we obtained ",
-                                "the value {}."
-                            ), loss);
+                            assert!(
+                                loss.is_finite(),
+                                concat!(
+                                    "The loss was expected to be finite but we obtained ",
+                                    "the value {}."
+                                ),
+                                loss
+                            );
 
                             // We compute the average loss to update the central gradient by the total central embedding.
                             let mean_loss = (loss / context_size) as f32;
@@ -304,7 +319,9 @@ impl CBOW {
                         ))
                         .zip(
                             central_terms_batch_gradient
-                                .par_chunks_mut(number_of_central_terms_in_walk * self.embedding_size)
+                                .par_chunks_mut(
+                                    number_of_central_terms_in_walk * self.embedding_size,
+                                )
                                 .zip(non_central_terms_batch_gradient.par_chunks_mut(
                                     number_of_central_terms_in_walk
                                         * self.number_of_negative_samples
@@ -342,7 +359,8 @@ impl CBOW {
                                         central_terms_gradients
                                             .chunks_mut(self.embedding_size)
                                             .zip(non_central_terms_gradients.chunks_mut(
-                                                self.embedding_size * self.number_of_negative_samples,
+                                                self.embedding_size
+                                                    * self.number_of_negative_samples,
                                             ))
                                             .zip(
                                                 contextual_terms_gradients
