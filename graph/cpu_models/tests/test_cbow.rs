@@ -20,7 +20,7 @@ fn test_cbow_on_cora() -> Result<(), String> {
     cbow.fit_transform(
         &cora,
         embedding.as_mut_slice(),
-        Some(10),
+        Some(100),
         None,
         Some(1024),
         None,
