@@ -79,8 +79,7 @@ impl CBOW {
         let cpu_number = rayon::current_num_threads() as NodeT;
         let context_size = (self.window_size * 2) as f32;
         let number_of_random_walks = batch_size * iterations;
-        let learning_rate =
-            learning_rate.unwrap_or(0.025) / (number_of_random_walks * random_walk_length) as f32;
+        let learning_rate = learning_rate.unwrap_or(0.025);
 
         if epochs == 0 {
             return Err("The number of epochs must be strictly greater than zero.".to_string());
