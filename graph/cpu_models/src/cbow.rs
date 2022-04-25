@@ -68,9 +68,11 @@ impl CBOW {
         let batch_size = batch_size.unwrap_or(32);
         let number_of_batches_per_epoch =
             (graph.get_nodes_number() as f64 / batch_size as f64).ceil() as usize;
-        let scale_factor = (self.embedding_size as f32).sqrt();
 
-        let learning_rate = learning_rate.unwrap_or(0.025);// / scale_factor;
+        // TODO: check if the scale factor is useful or not.
+        // let scale_factor = (self.embedding_size as f32).sqrt();
+
+        let learning_rate = learning_rate.unwrap_or(0.025);
         let mut walk_parameters = self.walk_parameters.clone();
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
         let random_walk_length = walk_parameters.get_random_walk_length() as usize;
@@ -138,7 +140,7 @@ impl CBOW {
         // width  = embedding_size
         let number_of_central_terms_in_walk = random_walk_length - self.window_size * 2;
         let number_of_central_terms_in_batch =
-            batch_size * number_of_central_terms_in_walk * iterations;
+            number_of_central_terms_in_walk * number_of_random_walks;
 
         // We initialize the central terms gradient to zeros.
         let mut central_terms_batch_gradient =
@@ -479,9 +481,17 @@ impl CBOW {
                 (0..cpu_number).into_par_iter().for_each(|thread_id| {
                     random_walks
                         .chunks(random_walk_length)
+                        .zip(non_central_terms.chunks(
+                            number_of_central_terms_in_walk * self.number_of_negative_samples,
+                        ))
                         .zip(
                             central_terms_batch_gradient
                                 .chunks(number_of_central_terms_in_walk * self.embedding_size)
+                                .zip(non_central_terms_batch_gradient.chunks(
+                                    number_of_central_terms_in_walk
+                                        * self.number_of_negative_samples
+                                        * self.embedding_size,
+                                ))
                                 .zip(
                                     contextual_terms_batch_gradient.chunks(
                                         number_of_central_terms_in_walk * self.embedding_size,
@@ -490,8 +500,11 @@ impl CBOW {
                         )
                         .for_each(
                             |(
-                                random_walk,
-                                (central_terms_gradients, contextual_terms_gradients),
+                                (random_walk, non_central_terms_per_walk),
+                                (
+                                    (central_terms_gradients, non_central_terms_gradients),
+                                    contextual_terms_gradients,
+                                ),
                             )| {
                                 (self.window_size..random_walk_length - self.window_size)
                                     .map(|central_index| {
@@ -503,13 +516,29 @@ impl CBOW {
                                             random_walk[central_index],
                                         )
                                     })
-                                    .zip(central_terms_gradients.chunks(self.embedding_size).zip(
-                                        contextual_terms_gradients.chunks(self.embedding_size),
-                                    ))
+                                    .zip(
+                                        non_central_terms_per_walk
+                                            .chunks(self.number_of_negative_samples),
+                                    )
+                                    .zip(
+                                        central_terms_gradients
+                                            .chunks(self.embedding_size)
+                                            .zip(non_central_terms_gradients.chunks(
+                                                self.embedding_size
+                                                    * self.number_of_negative_samples,
+                                            ))
+                                            .zip(
+                                                contextual_terms_gradients
+                                                    .chunks(self.embedding_size),
+                                            ),
+                                    )
                                     .for_each(
                                         |(
-                                            (left_context, right_context, central_node_id),
-                                            (central_term_gradient, contextual_terms_gradient),
+                                            (
+                                                (left_context, right_context, central_node_id),
+                                                non_central_terms,
+                                            ),
+                                            ((central_term_gradient, non_central_terms_gradients), contextual_terms_gradient),
                                         )| {
                                             // Update the hidden layer for the current central node.
                                             if can_update(central_node_id, thread_id) {
@@ -532,20 +561,21 @@ impl CBOW {
                                                         contextual_terms_gradient,
                                                     );
                                                 });
+                                            // Update the non-central nodes.
+                                            non_central_terms
+                                            .iter()
+                                            .cloned()
+                                            .zip(non_central_terms_gradients.chunks(self.embedding_size))
+                                            .filter(|(non_central_node_id, _)| {
+                                                *non_central_node_id != central_node_id && can_update(*non_central_node_id, thread_id)
+                                            })
+                                            .for_each(|(non_central_node_id, non_central_node_gradient)| {
+                                                update_hidden(non_central_node_id, non_central_node_gradient);
+                                            });
                                         },
                                     )
                             },
                         );
-                    // Update the non-central nodes.
-                    non_central_terms
-                        .iter()
-                        .zip(non_central_terms_batch_gradient.chunks(self.embedding_size))
-                        .filter(|(non_central_node_id, _)| {
-                            can_update(**non_central_node_id, thread_id)
-                        })
-                        .for_each(|(non_central_node_id, non_central_node_gradient)| {
-                            update_hidden(*non_central_node_id, non_central_node_gradient);
-                        });
                 });
                 // We recover the reference to the embedding.
                 embedding = shared_embedding.into_inner();
