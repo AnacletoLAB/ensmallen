@@ -269,7 +269,7 @@ impl CBOW {
                                 dot
                             );
 
-                            let loss = if dot > 100.0 || dot < -100.0 {
+                            let loss = if dot > 50.0 || dot < -50.0 {
                                 0.0
                             } else {
                                 let exp_dot = dot.exp();
