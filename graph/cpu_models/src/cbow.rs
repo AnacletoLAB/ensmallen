@@ -64,7 +64,6 @@ impl CBOW {
         batch_size: Option<usize>,
         verbose: Option<bool>,
     ) -> Result<(), String> {
-        let max_weights = 10000.0;
         let epochs = epochs.unwrap_or(10);
         let batch_size = batch_size.unwrap_or(32);
         let number_of_batches_per_epoch =
@@ -129,10 +128,10 @@ impl CBOW {
         // This matrix has the same size of the embedding layer:
         // height = number of nodes in the graph
         // width  = number of features in embedding
-        let mut hidden = (0..expected_embedding_len)
-            .into_par_iter()
-            .map(|i| 2.0 * random_f32(splitmix64(random_state + i as u64)) - 1.0)
-            .collect::<Vec<_>>();
+        // let mut hidden = (0..expected_embedding_len)
+        //     .into_par_iter()
+        //     .map(|i| 2.0 * random_f32(splitmix64(random_state + i as u64)) - 1.0)
+        //     .collect::<Vec<_>>();
 
         // Create and allocate the gradient for the central terms
         // This particular gradient has a size equal to:
@@ -248,7 +247,7 @@ impl CBOW {
                             // We compute the average exponentiated dot product
                             let node_id = node_id as usize;
                             // We retrieve the hidden weights of the current node ID.
-                            let hidden_embedding = &hidden[(node_id * self.embedding_size)
+                            let hidden_embedding = &embedding[(node_id * self.embedding_size)
                                 ..((node_id + 1) * self.embedding_size)];
                             // Within this computation, we also do a conversion to f64
                             // that we convert back to f32 afterwards. This is done because
@@ -270,13 +269,12 @@ impl CBOW {
                                 dot
                             );
 
-                            let loss = (label
-                                - if dot > 10.0 || dot < -10.0 {
-                                    0.0
-                                } else {
-                                    let exp_dot = dot.exp();
-                                    exp_dot / (exp_dot + 1.0).powf(2.0)
-                                }) * learning_rate;
+                            let loss = if dot > 10.0 || dot < -10.0 {
+                                0.0
+                            } else {
+                                let exp_dot = dot.exp();
+                                (label - exp_dot / (exp_dot + 1.0).powf(2.0)) * learning_rate
+                            };
 
                             assert!(
                                 loss.is_finite(),
@@ -439,7 +437,7 @@ impl CBOW {
                 // Start to apply the computed gradients
 
                 // Create the thread shared version of the hidden layer.
-                let shared_hidden = ThreadDataRaceAware::new(&mut hidden);
+                // let shared_hidden = ThreadDataRaceAware::new(&mut hidden);
 
                 // Create the thread shared version of the embedding layer.
                 let shared_embedding = ThreadDataRaceAware::new(embedding);
@@ -448,14 +446,12 @@ impl CBOW {
                 let update_hidden = |node_id: NodeT, gradient: &[f32]| {
                     let node_id = node_id as usize;
                     unsafe {
-                        (*shared_hidden.get())
+                        (*shared_embedding.get())
                             [node_id * self.embedding_size..(node_id + 1) * self.embedding_size]
                             .iter_mut()
                             .zip(gradient.iter())
                             .for_each(|(hidden_feature, gradient_feature): (&mut f32, &f32)| {
-                                *hidden_feature = (*hidden_feature + *gradient_feature)
-                                    .max(-max_weights)
-                                    .min(max_weights);
+                                *hidden_feature = *hidden_feature + *gradient_feature;
                             });
                     }
                 };
@@ -469,9 +465,7 @@ impl CBOW {
                             .iter_mut()
                             .zip(gradient.iter())
                             .for_each(|(embedding_feature, gradient_feature): (&mut f32, &f32)| {
-                                *embedding_feature = (*embedding_feature + *gradient_feature)
-                                    .max(-max_weights)
-                                    .min(max_weights);
+                                *embedding_feature = *embedding_feature + *gradient_feature;
                             });
                     }
                 };
