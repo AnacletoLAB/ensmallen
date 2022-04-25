@@ -1,11 +1,11 @@
 use crate::*;
 
 #[no_mangle]
-/// Compute the CBOW mini-batch and updates the embedding and hidden layer.
+/// Compute the SkipGram mini-batch and updates the embedding.
 ///
 /// # Arguments
 ///
-pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
+pub unsafe extern "ptx-kernel" fn compute_skipgram_mini_batch(
     embedding: *mut f32,
     contexts: *mut f32,
     context_gradient: *mut f32,
