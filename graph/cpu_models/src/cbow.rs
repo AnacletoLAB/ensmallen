@@ -263,10 +263,6 @@ impl CBOW {
                                 / context_size
                                 / scale_factor;
 
-                            if dot > 6.0 || dot < -6.0 {
-                                return;
-                            }
-
                             assert!(
                                 dot.is_finite(),
                                 "The dot product is not finite! dot: {}",
