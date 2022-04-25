@@ -224,9 +224,15 @@ impl Graph {
                                     },
                                     context_mean_embedding.as_slice(),
                                 ) / context_size;
+
+                                if dot_product < -10.0 || dot_product > 10.0 {
+                                    return;
+                                }
+
                                 // Othersiwe, we proceed to retrieve the exponentiated value from
                                 // the lookup table.
                                 let exponentiated_dot_product = dot_product.exp();
+                                
                                 // Finally, we compute this portion of the error.
                                 let loss = (label
                                     - (exponentiated_dot_product
