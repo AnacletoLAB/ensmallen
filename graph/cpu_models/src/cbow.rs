@@ -263,7 +263,7 @@ impl CBOW {
                                 / context_size
                                 / scale_factor;
 
-                            if dot > 6.0 || dot < -6.0 {
+                            if dot > 20.0 || dot < -20.0 {
                                 node_gradient.iter_mut().for_each(|feature_gradient| {
                                     // Note that we are setting this gradient EQUAL to the
                                     // contextual node feature.
