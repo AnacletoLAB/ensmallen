@@ -64,6 +64,7 @@ impl CBOW {
         batch_size: Option<usize>,
         verbose: Option<bool>,
     ) -> Result<(), String> {
+        let apply_l2_norm = true;
         let max_weights = 1000.0;
         let epochs = epochs.unwrap_or(10);
         let batch_size = batch_size.unwrap_or(32);
@@ -264,18 +265,34 @@ impl CBOW {
                                 / context_size
                                 / scale_factor;
 
+                            let hidden_embedding_l2 = hidden_embedding
+                                .iter()
+                                .cloned()
+                                .map(|value| value.powf(2.0))
+                                .sum::<f32>()
+                                .sqrt();
+
+                            let context_embedding_l2 = total_context_embedding
+                                .iter()
+                                .cloned()
+                                .map(|value| value.powf(2.0))
+                                .sum::<f32>()
+                                .sqrt();
+
                             assert!(
                                 dot.is_finite(),
                                 "The dot product is not finite! dot: {}",
                                 dot
                             );
 
-                            let loss = if dot > 10.0 || dot < -10.0 {
+                            let loss = (if dot > 10.0 || dot < -10.0 {
                                 0.0
                             } else {
                                 let exp_dot = dot.exp();
                                 label - exp_dot / (exp_dot + 1.0).powf(2.0)
-                            } * learning_rate;
+                            } + hidden_embedding_l2
+                                + context_embedding_l2)
+                                * learning_rate;
 
                             assert!(
                                 loss.is_finite(),
