@@ -10,8 +10,8 @@ fn test_cbow_on_cora() -> Result<(), String> {
     cora = cora.sort_by_decreasing_outbound_node_degree();
     cora.enable(Some(true), Some(true), Some(true), Some(false))
         .unwrap();
-    let embedding_size = 128;
-    let walks = WalksParameters::new(256)
+    let embedding_size = 32;
+    let walks = WalksParameters::new(128)
         .unwrap()
         .set_iterations(Some(10))
         .unwrap();

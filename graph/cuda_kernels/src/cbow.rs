@@ -40,6 +40,7 @@ pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
             * iterations
             * (random_walk_length as isize - window_size * 2) as usize,
     );
+    let scale_factor = (embedding_size as f32).sqrt();
     let context_size = (window_size * 2) as f32;
 
     // We iterate for all skipgram batches of the random walk.
@@ -69,15 +70,22 @@ pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
             }
         }
         // Adjust dot by the size of the embedding to obtain mean.
-        dot /= context_size;
+        dot /= context_size * scale_factor;
+
+        if dot > 10.0 || dot < -10.0{
+            continue;
+        }
+
         // We compute the exponentiation of the dot product.
         let exponentiated_dot = dot.exp2();
         // We compute the loss for the POSITIVE node
-        let loss = (1.0 - (exponentiated_dot / (exponentiated_dot + 1.0))) * learning_rate;
+        let loss = (1.0
+            - (exponentiated_dot / ((exponentiated_dot + 1.0) * (exponentiated_dot + 1.0))))
+            * learning_rate;
         // Analogously, since we are not dividing the contexts by context size,
         // we need to divide the loss by the context size for the update of the
         // hidden layer.
-        let averaged_context_loss = loss / context_size; 
+        let averaged_context_loss = loss / context_size;
 
         // We backpropagate the loss to the hidden layer and the embeddding layer
         for context in (-window_size..0).chain(1..window_size + 1) {
@@ -129,15 +137,17 @@ pub unsafe extern "ptx-kernel" fn compute_cbow_mini_batch(
                 }
             }
             // Adjust dot by the size of the embedding to obtain mean.
-            dot /= context_size;
+            dot /= context_size * scale_factor;
             // We compute the exponentiation of the dot product.
             let exponentiated_dot = dot.exp2();
             // We compute the loss for the NEGATIVE node
-            let loss = (exponentiated_dot / (exponentiated_dot + 1.0)) * learning_rate;
+            let loss = (exponentiated_dot
+                / ((exponentiated_dot + 1.0) * (exponentiated_dot + 1.0)))
+                * learning_rate;
             // Analogously, since we are not dividing the contexts by context size,
             // we need to divide the loss by the context size for the update of the
             // hidden layer.
-            let averaged_context_loss = loss / context_size; 
+            let averaged_context_loss = loss / context_size;
 
             // We backpropagate the loss to the hidden layer and the embeddding layer
             for context in (-window_size..0).chain(1..window_size + 1) {
