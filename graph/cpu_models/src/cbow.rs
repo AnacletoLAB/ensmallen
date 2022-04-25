@@ -575,7 +575,7 @@ impl CBOW {
         let random_walk_length = walk_parameters.get_random_walk_length() as usize;
         let verbose = verbose.unwrap_or(true);
         let context_size = (self.window_size * 2) as f32;
-        let learning_rate = learning_rate.unwrap_or(0.025);
+        let learning_rate = learning_rate.unwrap_or(0.001);
 
         if epochs == 0 {
             return Err("The number of epochs must be strictly greater than zero.".to_string());
