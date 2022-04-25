@@ -13,7 +13,7 @@ fn test_skipgram_on_cora() -> Result<(), GPUError> {
     let embedding_size = 128;
     let walks = WalksParameters::new(128)
         .unwrap()
-        .set_iterations(Some(50))
+        .set_iterations(Some(10))
         .unwrap();
     let skipgram = SkipGram::new(Some(embedding_size), Some(walks), Some(10), Some(10)).unwrap();
     let mut embedding = vec![0.0; embedding_size * cora.get_nodes_number() as usize];
