@@ -116,9 +116,10 @@ impl CBOW {
         // This matrix has size:
         // height = number of nodes in the graph
         // width  = number of features in embedding
-        embedding.par_iter_mut().enumerate().for_each(|(i, e)| {
-            *e = 2.0 * random_f32(splitmix64(random_state.wrapping_mul(i as u64))) - 1.0
-        });
+        embedding
+            .par_iter_mut()
+            .enumerate()
+            .for_each(|(i, e)| *e = 2.0 * random_f32(splitmix64(random_state + i as u64)) - 1.0);
 
         // Update the random state to avoid populating the hidden layer with
         // the same exact values as the embedding.
@@ -130,7 +131,7 @@ impl CBOW {
         // width  = number of features in embedding
         let mut hidden = (0..expected_embedding_len)
             .into_par_iter()
-            .map(|i| 2.0 * random_f32(splitmix64(random_state.wrapping_mul(i as u64))) - 1.0)
+            .map(|i| 2.0 * random_f32(splitmix64(random_state + i as u64)) - 1.0)
             .collect::<Vec<_>>();
 
         // Create and allocate the gradient for the central terms
@@ -189,7 +190,6 @@ impl CBOW {
             ProgressBar::hidden()
         };
 
-        return Ok(());
         // We start to loop over the required amount of epochs.
         for _ in (0..epochs).progress_with(epochs_progress_bar) {
             // Depending whether verbosity was requested by the user
@@ -277,7 +277,7 @@ impl CBOW {
                                     0.0
                                 } else {
                                     let exp_dot = dot.exp();
-                                    exp_dot / (exp_dot + 1.0)
+                                    exp_dot / (exp_dot + 1.0).powf(2.0)
                                 } * learning_rate;
 
                             assert!(
