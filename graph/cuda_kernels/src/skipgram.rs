@@ -115,8 +115,8 @@ pub unsafe extern "ptx-kernel" fn compute_skipgram_mini_batch(
                         context_gradient.iter_mut().for_each(|value| {
                             *value = 0.0;
                         });
-                        embedding[((central_node_id as usize) * embedding_size)
-                            ..(((central_node_id as usize) + 1) * embedding_size)]
+                        embedding[((context_node_id as usize) * embedding_size)
+                            ..(((context_node_id as usize) + 1) * embedding_size)]
                             .iter()
                             .cloned()
                             .zip(contexts.iter_mut())
