@@ -238,21 +238,12 @@ impl CBOW {
 
                     // We define a closure for better code readability that computes the loss
                     // given a TOTAL context embedding, a node ID and its label.
-                    let compute_mini_batch_step =
-                        |total_context_embedding: &[f32],
-                         node_id: NodeT,
-                         label: f32,
-                         node_gradient: &mut [f32],
-                         context_gradient: &mut [f32]| {
-                            // We compute the average exponentiated dot product
-                            let node_id = node_id as usize;
-                            // We retrieve the hidden weights of the current node ID.
-                            let hidden_embedding = &embedding[(node_id * self.embedding_size)
-                                ..((node_id + 1) * self.embedding_size)];
+                    let compute_logit =
+                        |total_context_embedding: &[f32], node_id: NodeT| {
                             // Within this computation, we also do a conversion to f64
                             // that we convert back to f32 afterwards. This is done because
                             // we want to avoid as much numerical instability as possible.
-                            let dot = hidden_embedding
+                            (get_node_embedding(node_id)
                                 .iter()
                                 .cloned()
                                 .zip(total_context_embedding.iter().cloned())
@@ -261,43 +252,8 @@ impl CBOW {
                                 })
                                 .sum::<f32>()
                                 / context_size
-                                / scale_factor;
-
-                            assert!(
-                                dot.is_finite(),
-                                "The dot product is not finite! dot: {}",
-                                dot
-                            );
-
-                            if dot > 30.0 || dot < -30.0 {
-                                node_gradient.iter_mut().for_each(|feature_gradient| {
-                                    // Note that we are setting this gradient EQUAL to the
-                                    // contextual node feature.
-                                    *feature_gradient = 0.0;
-                                });
-                            } else {
-                                let exp_dot = dot.exp();
-                                let loss =
-                                    (label - exp_dot / (exp_dot + 1.0).powf(2.0)) * learning_rate;
-                                // We compute the average loss to update the central gradient by the total central embedding.
-                                let mean_loss = (loss / context_size) as f32;
-
-                                node_gradient
-                                    .iter_mut()
-                                    .zip(total_context_embedding.iter())
-                                    .for_each(|(feature_gradient, total_context_feature)| {
-                                        // Note that we are setting this gradient EQUAL to the
-                                        // contextual node feature.
-                                        *feature_gradient = *total_context_feature * mean_loss;
-                                    });
-                                context_gradient
-                                    .iter_mut()
-                                    .zip(hidden_embedding.iter())
-                                    .for_each(|(feature_gradient, current_node_feature)| {
-                                        // Note that we are SUMMING the current node feature
-                                        *feature_gradient += *current_node_feature * loss;
-                                    });
-                            };
+                                / scale_factor)
+                                .exp()
                         };
 
                     // We start to compute the new gradients.
@@ -362,13 +318,6 @@ impl CBOW {
                                                 contextual_terms_gradient,
                                             ),
                                         )| {
-                                            // We reset the contextual terms gradient to zeros,
-                                            // since we will add the deltas by summation.
-                                            contextual_terms_gradient.iter_mut().for_each(
-                                                |feature_gradient| {
-                                                    *feature_gradient = 0.0;
-                                                },
-                                            );
                                             // We compute the total context embedding.
                                             // First, we assign to it the embedding of the first context.
                                             let mut total_context_embedding =
@@ -387,16 +336,43 @@ impl CBOW {
                                                 });
                                             // We have now finished to compute the total context embedding.
 
+                                            // We compute the gradients relative to the negative classes.
+                                            let negative_logits = non_central_terms
+                                            .iter()
+                                            .cloned()
+                                            .filter(|non_central_node_id| *non_central_node_id != central_node_id)
+                                            .map(
+                                                |non_central_node_id| {
+                                                    compute_logit(
+                                                        total_context_embedding.as_slice(),
+                                                        non_central_node_id,
+                                                    )
+                                                },
+                                            ).collect::<Vec<f32>>();
+
                                             // We now compute the gradient relative to the positive
-                                            compute_mini_batch_step(
+                                            let positive_logit = compute_logit(
                                                 total_context_embedding.as_slice(),
                                                 central_node_id,
-                                                1.0,
-                                                central_term_gradient,
-                                                contextual_terms_gradient,
                                             );
 
-                                            // We compute the gradients relative to the negative classes.
+                                            let total_logits: f32 = negative_logits.iter().cloned().sum::<f32>() + positive_logit;
+                                            let loss = positive_logit / total_logits * learning_rate;
+
+                                            // We compute the average loss to update the central gradient by the total central embedding.
+                                            let mean_loss = (loss / context_size) as f32;
+
+                                            get_node_embedding(central_node_id)
+                                            .iter()
+                                            .cloned()
+                                            .zip(total_context_embedding.iter().cloned())
+                                            .zip(contextual_terms_gradient.iter_mut())
+                                            .zip(central_term_gradient.iter_mut())
+                                            .for_each(|(((feature, context_feature), context_gradient), central_term_gradient)|{
+                                                *context_gradient = mean_loss * feature;
+                                                *central_term_gradient = loss * context_feature;
+                                            });
+                                            
                                             non_central_terms
                                             .iter()
                                             .cloned()
@@ -410,15 +386,19 @@ impl CBOW {
                                                     non_central_node_id,
                                                     non_central_term_gradient,
                                                 )| {
-                                                    compute_mini_batch_step(
-                                                        total_context_embedding.as_slice(),
-                                                        non_central_node_id,
-                                                        0.0,
-                                                        non_central_term_gradient,
-                                                        contextual_terms_gradient,
-                                                    );
+                                                    get_node_embedding(non_central_node_id)
+                                                    .iter()
+                                                    .cloned()
+                                                    .zip(total_context_embedding.iter().cloned())
+                                                    .zip(contextual_terms_gradient.iter_mut())
+                                                    .zip(non_central_term_gradient.iter_mut())
+                                                    .for_each(|(((feature, context_feature), context_gradient), non_central_term_gradient)|{
+                                                        *context_gradient += mean_loss * feature;
+                                                        *non_central_term_gradient = loss * context_feature;
+                                                    });
                                                 },
                                             );
+
                                         },
                                     );
                             },
