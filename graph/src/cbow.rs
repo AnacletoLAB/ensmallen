@@ -39,6 +39,7 @@ impl Graph {
         let number_of_negative_samples = number_of_negative_samples.unwrap_or(5);
         let learning_rate = learning_rate.unwrap_or(0.025);
         let mut random_state = random_state.unwrap_or(42);
+        let scale_factor = (embedding_size as f32).sqrt();
         random_state = splitmix64(random_state);
         let verbose = verbose.unwrap_or(true);
 
@@ -223,7 +224,8 @@ impl Graph {
                                         )
                                     },
                                     context_mean_embedding.as_slice(),
-                                ) / context_size;
+                                ) / context_size
+                                    / scale_factor;
 
                                 if dot_product < -10.0 || dot_product > 10.0 {
                                     return;
@@ -232,7 +234,7 @@ impl Graph {
                                 // Othersiwe, we proceed to retrieve the exponentiated value from
                                 // the lookup table.
                                 let exponentiated_dot_product = dot_product.exp();
-                                
+
                                 // Finally, we compute this portion of the error.
                                 let loss = (label
                                     - (exponentiated_dot_product
