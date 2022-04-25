@@ -213,7 +213,7 @@ impl CBOW {
 
                 // The second part by the negative node IDs
                 graph
-                    .par_iter_random_source_node_ids(negative_node_ids.len(), random_state)
+                    .par_iter_random_node_ids(negative_node_ids.len(), random_state)
                     .collect_into_vec(&mut negative_node_ids);
 
                 // We move the two portions of the batch into the GPU

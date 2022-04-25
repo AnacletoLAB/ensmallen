@@ -553,6 +553,30 @@ impl Graph {
         })
     }
 
+    /// Return parallel iterator on random (non unique) node IDs.
+    ///
+    /// # Implementation details
+    /// This method is different from `par_iter_random_source_node_ids` as
+    /// it does not sample following any particular degree distribution.
+    ///
+    /// # Arguments
+    /// 'quantity': usize - Number of nodes to sample.
+    /// 'random_state': u64 - Random state to use to sample the nodes.
+    pub fn par_iter_random_node_ids(
+        &self,
+        quantity: usize,
+        random_state: u64,
+    ) -> impl IndexedParallelIterator<Item = NodeT> + '_ {
+        let number_of_nodes = self.get_nodes_number();
+        (0..quantity).into_par_iter().map(move |i| unsafe {
+            sample_uniform(
+                number_of_directed_edges,
+                splitmix64(random_state + i as u64),
+            ) as NodeT
+                % number_of_nodes
+        })
+    }
+
     /// Return iterator on the (non unique) directed destination nodes of the graph.
     pub fn iter_directed_destination_node_ids(&self) -> impl Iterator<Item = NodeT> + '_ {
         self.iter_directed_edge_node_ids()
