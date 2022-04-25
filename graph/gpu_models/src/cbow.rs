@@ -17,6 +17,7 @@ impl CBOW {
         Ok(Self {
             model: Node2Vec::new(
                 "compute_cbow_mini_batch",
+                "CBOW",
                 embedding_size,
                 walk_parameters,
                 window_size,

@@ -17,6 +17,7 @@ impl SkipGram {
         Ok(Self {
             model: Node2Vec::new(
                 "compute_skipgram_mini_batch",
+                "SkipGram",
                 embedding_size,
                 walk_parameters,
                 window_size,

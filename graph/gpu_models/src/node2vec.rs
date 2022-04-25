@@ -11,13 +11,15 @@ pub(crate) struct Node2Vec {
     window_size: usize,
     walk_parameters: WalksParameters,
     number_of_negative_samples: usize,
-    kernel: String
+    kernel: String,
+    model_name: String,
 }
 
 impl Node2Vec {
     /// Return new instance of Node2Vec model.
     pub fn new(
         kernel: &str,
+        model_name: &str,
         embedding_size: Option<usize>,
         walk_parameters: Option<WalksParameters>,
         window_size: Option<usize>,
@@ -48,7 +50,8 @@ impl Node2Vec {
             window_size,
             walk_parameters,
             number_of_negative_samples,
-            kernel: kernel.to_string()
+            model_name: model_name.to_string(),
+            kernel: kernel.to_string(),
         })
     }
 
@@ -152,8 +155,7 @@ impl Node2Vec {
         // TODO: describe
         let mut total_contexts: Vec<f32> =
             vec![0.0; number_of_random_walks * random_walk_length as usize];
-        let total_contexts_on_gpu =
-            gpu.buffer_from_slice::<f32>(total_contexts.as_mut_slice())?;
+        let total_contexts_on_gpu = gpu.buffer_from_slice::<f32>(total_contexts.as_mut_slice())?;
 
         let mut contexts_gradient: Vec<f32> =
             vec![0.0; number_of_random_walks * random_walk_length as usize];
@@ -174,7 +176,7 @@ impl Node2Vec {
         let epochs_progress_bar = if verbose {
             let pb = ProgressBar::new(epochs as u64);
             pb.set_style(ProgressStyle::default_bar().template(
-                "CBOW Epochs {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
+                &format!("{} Epochs {{spinner:.green}} [{{elapsed_precise}}] [{{bar:40.cyan/blue}}] ({{pos}}/{{len}}, ETA {{eta}})", self.model_name),
             ));
             pb
         } else {
