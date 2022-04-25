@@ -2,7 +2,6 @@ use crate::*;
 use graph::{Graph, NodeT, WalksParameters};
 use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
 use rayon::iter::IndexedParallelIterator;
-use rayon::iter::IntoParallelIterator;
 use rayon::iter::IntoParallelRefMutIterator;
 use rayon::iter::ParallelIterator;
 use vec_rand::{random_f64, splitmix64};
@@ -141,24 +140,23 @@ impl CBOW {
         // allocate a gpu buffer and copy data from the host
         let embedding_on_gpu = gpu.buffer_from_slice::<f32>(embedding)?;
 
-        //
-        random_state = splitmix64(random_state);
-
-        // Create and allocate the hidden layer
-        let mut hidden = (0..expected_embedding_len)
-            .into_par_iter()
-            .map(|i| (2.0 * random_f64(random_state + i as u64) - 1.0) as f32)
-            .collect::<Vec<_>>();
-
-        // allocate a gpu buffer and copy data from the host
-        // TODO! check if here it needs to be mutable or not!
-        let hidden_on_gpu = gpu.buffer_from_slice::<f32>(&mut hidden)?;
-
         // Create the vector we will populate with the random walks.
         let mut random_walks: Vec<NodeT> =
             vec![0; number_of_random_walks * random_walk_length as usize];
 
         let mut random_walks_on_gpu = gpu.buffer_from_slice::<NodeT>(&random_walks)?;
+
+        // TODO: describe
+        let mut total_contexts: Vec<f32> =
+            vec![0.0; number_of_random_walks * random_walk_length as usize];
+        let mut total_contexts_on_gpu =
+            gpu.buffer_from_slice::<f32>(total_contexts.as_mut_slice())?;
+
+        let mut contexts_gradient: Vec<f32> =
+            vec![0.0; number_of_random_walks * random_walk_length as usize];
+
+        let mut contexts_gradient_on_gpu =
+            gpu.buffer_from_slice::<f32>(contexts_gradient.as_mut_slice())?;
 
         // Create the vector we will be reusing multiple times
         // for the negative node IDs used to approximate a softmax
@@ -205,11 +203,13 @@ impl CBOW {
                 // We populate the vectors of the current training batch
 
                 // The first part of the current training batch is constituted by the random walks
-                graph.populate_random_walks_slice(
-                    batch_size as NodeT,
-                    &self.walk_parameters,
-                    random_walks.as_mut_slice(),
-                ).unwrap();
+                graph
+                    .populate_random_walks_slice(
+                        batch_size as NodeT,
+                        &self.walk_parameters,
+                        random_walks.as_mut_slice(),
+                    )
+                    .unwrap();
 
                 // The second part by the negative node IDs
                 graph
@@ -227,7 +227,8 @@ impl CBOW {
                     &grid,
                     args![
                         embedding_on_gpu.as_device_ptr(),
-                        hidden_on_gpu.as_device_ptr(),
+                        total_contexts_on_gpu.as_device_ptr(),
+                        contexts_gradient_on_gpu.as_device_ptr(),
                         random_walks_on_gpu.as_device_ptr(),
                         negative_node_ids_on_gpu.as_device_ptr(),
                         learning_rate,
