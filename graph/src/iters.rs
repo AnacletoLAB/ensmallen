@@ -568,7 +568,7 @@ impl Graph {
         random_state: u64,
     ) -> impl IndexedParallelIterator<Item = NodeT> + '_ {
         let number_of_nodes = self.get_nodes_number() as u64;
-        (0..quantity).into_par_iter().map(move |i| unsafe {
+        (0..quantity).into_par_iter().map(move |i| {
             sample_uniform(number_of_nodes, splitmix64(random_state + i as u64)) as NodeT
         })
     }
