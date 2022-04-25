@@ -357,21 +357,14 @@ impl CBOW {
                                             );
 
                                             let total_logits: f32 = negative_logits.iter().cloned().sum::<f32>() + positive_logit;
-                                            let negative_loss = if total_logits.is_finite() {
-                                                positive_logit / total_logits * learning_rate
-                                            } else {
-                                                0.0
-                                            };
-
                                             let positive_loss = if total_logits.is_finite() {
-                                                negative_loss - learning_rate
+                                                positive_logit / total_logits * learning_rate -1.0
                                             } else {
-                                                -learning_rate
+                                                -1.0
                                             };
 
                                             // We compute the average loss to update the central gradient by the total central embedding.
                                             let mean_positive_loss = (positive_loss / context_size) as f32;
-                                            let mean_negative_loss = (negative_loss / context_size) as f32;
 
                                             get_node_embedding(central_node_id)
                                             .iter()
@@ -391,12 +384,20 @@ impl CBOW {
                                                 non_central_term_gradients
                                                     .chunks_mut(self.embedding_size),
                                             )
-                                            .filter(|(non_central_node_id, _)| *non_central_node_id != central_node_id)
+                                            .zip(negative_logits.iter().cloned())
+                                            .filter(|((non_central_node_id, _), _)| *non_central_node_id != central_node_id)
                                             .for_each(
-                                                |(
+                                                |((
                                                     non_central_node_id,
                                                     non_central_term_gradient,
-                                                )| {
+                                                ), negative_logit)| {
+                                                    let negative_loss = if total_logits.is_finite() {
+                                                        negative_logit / total_logits * learning_rate -1.0
+                                                    } else {
+                                                        -1.0
+                                                    };
+                                                    let mean_negative_loss = (negative_loss / context_size) as f32;
+
                                                     get_node_embedding(non_central_node_id)
                                                     .iter()
                                                     .cloned()
@@ -404,6 +405,7 @@ impl CBOW {
                                                     .zip(contextual_terms_gradient.iter_mut())
                                                     .zip(non_central_term_gradient.iter_mut())
                                                     .for_each(|(((feature, context_feature), context_gradient), non_central_term_gradient)|{
+                                                        
                                                         *context_gradient += mean_negative_loss * feature;
                                                         *non_central_term_gradient = negative_loss * context_feature;
                                                     });
