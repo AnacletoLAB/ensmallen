@@ -81,10 +81,10 @@ impl Graph {
         normalize_by_degree: Option<bool>,
         window_size: Option<usize>,
         number_of_negative_samples: Option<usize>,
-        learning_rate: Option<f64>,
+        learning_rate: Option<f32>,
         random_state: Option<u64>,
         verbose: Option<bool>,
-    ) -> PyResult<Py<PyArray2<f64>>> {
+    ) -> PyResult<Py<PyArray2<f32>>> {
         let gil = pyo3::Python::acquire_gil();
         let embedding_size = embedding_size.unwrap_or(100);
 
