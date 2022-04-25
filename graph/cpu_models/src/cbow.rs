@@ -270,8 +270,12 @@ impl CBOW {
                                 dot
                             );
 
-                            let exp_dot = dot.exp();
-                            let loss = label - exp_dot / (exp_dot + 1.0).powf(2.0) * learning_rate;
+                            let loss = if dot > 15.0 || dot < -15.0 {
+                                0.0
+                            } else {
+                                let exp_dot = dot.exp();
+                                label - exp_dot / (exp_dot + 1.0).powf(2.0)
+                            } * learning_rate;
 
                             assert!(
                                 loss.is_finite(),
