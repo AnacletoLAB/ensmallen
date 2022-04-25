@@ -64,7 +64,7 @@ impl CBOW {
         batch_size: Option<usize>,
         verbose: Option<bool>,
     ) -> Result<(), String> {
-        let max_weights = 1.0;
+        let max_weights = 1000.0;
         let epochs = epochs.unwrap_or(10);
         let batch_size = batch_size.unwrap_or(32);
         let number_of_batches_per_epoch =
