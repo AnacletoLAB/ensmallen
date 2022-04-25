@@ -100,7 +100,7 @@ impl Graph {
             .into_par_iter()
             .map(|i| AtomicF64::new(2.0 * random_f64(random_state + i as u64) - 1.0))
             .collect::<Vec<_>>();
-        
+
         let pb = get_loading_bar(verbose, "Training CBOW model", epochs);
 
         let number_of_directed_edges = self.get_number_of_directed_edges();
@@ -230,7 +230,7 @@ impl Graph {
                                 // Finally, we compute this portion of the error.
                                 let loss = (label
                                     - (exponentiated_dot_product
-                                        / (exponentiated_dot_product + 1.0)))
+                                        / (exponentiated_dot_product + 1.0).powf(2.0)))
                                     * learning_rate;
 
                                 // We sum the currently sampled negative context node embedding
