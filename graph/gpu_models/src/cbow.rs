@@ -149,13 +149,13 @@ impl CBOW {
         // TODO: describe
         let mut total_contexts: Vec<f32> =
             vec![0.0; number_of_random_walks * random_walk_length as usize];
-        let mut total_contexts_on_gpu =
+        let total_contexts_on_gpu =
             gpu.buffer_from_slice::<f32>(total_contexts.as_mut_slice())?;
 
         let mut contexts_gradient: Vec<f32> =
             vec![0.0; number_of_random_walks * random_walk_length as usize];
 
-        let mut contexts_gradient_on_gpu =
+        let contexts_gradient_on_gpu =
             gpu.buffer_from_slice::<f32>(contexts_gradient.as_mut_slice())?;
 
         // Create the vector we will be reusing multiple times
