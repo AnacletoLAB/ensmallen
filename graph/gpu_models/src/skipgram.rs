@@ -2,12 +2,12 @@ use crate::node2vec::Node2Vec;
 use crate::*;
 use graph::{Graph, WalksParameters};
 
-pub struct CBOW {
+pub struct SkipGram {
     model: Node2Vec,
 }
 
-impl CBOW {
-    /// Return new instance of CBOW model.
+impl SkipGram {
+    /// Return new instance of SkipGram model.
     pub fn new(
         embedding_size: Option<usize>,
         walk_parameters: Option<WalksParameters>,
@@ -16,7 +16,7 @@ impl CBOW {
     ) -> Result<Self, String> {
         Ok(Self {
             model: Node2Vec::new(
-                "compute_cbow_mini_batch",
+                "compute_skipgram_mini_batch",
                 embedding_size,
                 walk_parameters,
                 window_size,
