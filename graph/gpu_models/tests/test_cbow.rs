@@ -17,8 +17,8 @@ fn test_cbow_on_cora() -> Result<(), GPUError> {
     cbow.fit_transform(
         &cora,
         embedding.as_mut_slice(),
-        Some(10),
-        Some(0.0005),
+        Some(1),
+        Some(0.001),
         Some(1024),
         None,
     )?;
