@@ -70,7 +70,7 @@ impl CBOW {
             (graph.get_nodes_number() as f64 / batch_size as f64).ceil() as usize;
         let scale_factor = (self.embedding_size as f32).sqrt();
 
-        let learning_rate = learning_rate.unwrap_or(0.025) / scale_factor;
+        let learning_rate = learning_rate.unwrap_or(0.025);// / scale_factor;
         let mut walk_parameters = self.walk_parameters.clone();
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
         let random_walk_length = walk_parameters.get_random_walk_length() as usize;
