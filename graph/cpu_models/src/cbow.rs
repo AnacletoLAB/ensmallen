@@ -290,8 +290,8 @@ impl CBOW {
                             } else {
                                 let exp_dot = dot.exp();
                                 label - exp_dot / (exp_dot + 1.0).powf(2.0)
-                            } + hidden_embedding_l2
-                                + context_embedding_l2)
+                            } + 0.0001 * (hidden_embedding_l2
+                                + context_embedding_l2))
                                 * learning_rate;
 
                             assert!(
