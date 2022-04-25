@@ -5,7 +5,7 @@ use graph::test_utilities::*;
 use graph::{CSVFileWriter, WalksParameters};
 
 #[test]
-fn test_cbow_on_cora() -> Result<(), String> {
+fn test_racing_cbow_on_cora() -> Result<(), String> {
     let mut cora = load_cora();
     cora = cora.sort_by_decreasing_outbound_node_degree();
     cora.enable(Some(true), Some(true), Some(true), Some(false))
@@ -17,16 +17,15 @@ fn test_cbow_on_cora() -> Result<(), String> {
         .unwrap();
     let cbow = CBOW::new(Some(embedding_size), Some(walks), Some(10), Some(10)).unwrap();
     let mut embedding = vec![0.0; embedding_size * cora.get_nodes_number() as usize];
-    cbow.fit_transform(
+    cbow.fit_transform_racing(
         &cora,
         embedding.as_mut_slice(),
         Some(10),
         None,
-        Some(1024),
         None,
     )?;
 
-    let writer = CSVFileWriter::new("cora_embedding.tsv")
+    let writer = CSVFileWriter::new("cora_racing_embedding.tsv")
         .set_separator(Some('\t'))
         .unwrap()
         .set_header(Some(true))
