@@ -69,8 +69,7 @@ impl CBOW {
         let number_of_batches_per_epoch =
             (graph.get_nodes_number() as f64 / batch_size as f64).ceil() as usize;
 
-        // TODO: check if the scale factor is useful or not.
-        // let scale_factor = (self.embedding_size as f32).sqrt();
+        let scale_factor = (self.embedding_size as f32).sqrt();
 
         let learning_rate = learning_rate.unwrap_or(0.025);
         let mut walk_parameters = self.walk_parameters.clone();
@@ -261,7 +260,8 @@ impl CBOW {
                                     node_feature * contextual_feature
                                 })
                                 .sum::<f32>()
-                                / context_size;
+                                / context_size
+                                / scale_factor;
 
                             if dot > 6.0 || dot < -6.0 {
                                 return;
