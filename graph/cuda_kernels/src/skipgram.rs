@@ -72,14 +72,14 @@ pub unsafe extern "ptx-kernel" fn compute_skipgram_mini_batch(
         );
     };
 
-    let compute_mini_batch_step = |total_context_embedding: &[f32],
+    let compute_mini_batch_step = |context_embedding: &[f32],
                                    context_embedding_gradient: &mut [f32],
                                    node_embedding: &mut [f32],
                                    label: f32| {
         let dot = node_embedding
             .iter()
             .cloned()
-            .zip(total_context_embedding.iter().cloned())
+            .zip(context_embedding.iter().cloned())
             .map(|(node_feature, contextual_feature)| node_feature * contextual_feature)
             .sum::<f32>()
             / scale_factor;
@@ -91,7 +91,7 @@ pub unsafe extern "ptx-kernel" fn compute_skipgram_mini_batch(
         let exp_dot = dot.exp2();
         let loss = (label - exp_dot / ((exp_dot + 1.0) * (exp_dot + 1.0))) * learning_rate;
 
-        weighted_vector_sum(node_embedding, total_context_embedding, loss);
+        weighted_vector_sum(node_embedding, context_embedding, loss);
         weighted_vector_sum(context_embedding_gradient, node_embedding, loss);
     };
 
