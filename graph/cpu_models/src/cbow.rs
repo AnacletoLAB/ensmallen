@@ -269,7 +269,7 @@ impl CBOW {
                                 dot
                             );
 
-                            let loss = if dot > 50.0 || dot < -50.0 {
+                            let loss = if dot > 10.0 || dot < -10.0 {
                                 0.0
                             } else {
                                 let exp_dot = dot.exp();
@@ -451,8 +451,7 @@ impl CBOW {
                             .iter_mut()
                             .zip(gradient.iter())
                             .for_each(|(hidden_feature, gradient_feature): (&mut f32, &f32)| {
-                                *hidden_feature =
-                                    (*hidden_feature + *gradient_feature).min(-1.0).max(1.0);
+                                *hidden_feature += *gradient_feature;
                             });
                     }
                 };
@@ -466,8 +465,7 @@ impl CBOW {
                             .iter_mut()
                             .zip(gradient.iter())
                             .for_each(|(embedding_feature, gradient_feature): (&mut f32, &f32)| {
-                                *embedding_feature =
-                                    (*embedding_feature + *gradient_feature).min(-1.0).max(1.0);
+                                *embedding_feature += *gradient_feature;
                             });
                     }
                 };
