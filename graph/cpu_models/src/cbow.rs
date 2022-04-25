@@ -190,6 +190,7 @@ impl CBOW {
             ProgressBar::hidden()
         };
 
+        return Ok(());
         // We start to loop over the required amount of epochs.
         for _ in (0..epochs).progress_with(epochs_progress_bar) {
             // Depending whether verbosity was requested by the user
