@@ -62,7 +62,6 @@ pub unsafe extern "ptx-kernel" fn compute_skipgram_mini_batch(
             * number_of_negative_samples];
 
     let scale_factor = (embedding_size as f32).sqrt();
-    let context_size = (window_size * 2) as f32;
 
     // Create the closure to apply a gradient to a provided node's embedding
     let weighted_vector_sum = |vector: &mut [f32], variation: &[f32], weight: f32| {
@@ -83,7 +82,6 @@ pub unsafe extern "ptx-kernel" fn compute_skipgram_mini_batch(
             .zip(total_context_embedding.iter().cloned())
             .map(|(node_feature, contextual_feature)| node_feature * contextual_feature)
             .sum::<f32>()
-            / context_size
             / scale_factor;
 
         if dot > 20.0 || dot < -20.0 {
@@ -93,7 +91,7 @@ pub unsafe extern "ptx-kernel" fn compute_skipgram_mini_batch(
         let exp_dot = dot.exp2();
         let loss = (label - exp_dot / ((exp_dot + 1.0) * (exp_dot + 1.0))) * learning_rate;
 
-        weighted_vector_sum(node_embedding, total_context_embedding, loss / context_size);
+        weighted_vector_sum(node_embedding, total_context_embedding, loss);
         weighted_vector_sum(context_embedding_gradient, node_embedding, loss);
     };
 

@@ -63,7 +63,6 @@ impl SkipGram {
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
         let random_walk_length = walk_parameters.get_random_walk_length() as usize;
         let verbose = verbose.unwrap_or(true);
-        let context_size = (self.window_size * 2) as f32;
         let learning_rate = learning_rate.unwrap_or(0.001);
 
         if epochs == 0 {
@@ -161,7 +160,6 @@ impl SkipGram {
                 .zip(total_context_embedding.iter().cloned())
                 .map(|(node_feature, contextual_feature)| node_feature * contextual_feature)
                 .sum::<f32>()
-                / context_size
                 / scale_factor;
 
             if dot > 20.0 || dot < -20.0 {
@@ -171,7 +169,7 @@ impl SkipGram {
             let exp_dot = dot.exp();
             let loss = (label - exp_dot / (exp_dot + 1.0).powf(2.0)) * learning_rate;
 
-            update_embedding(node_id, total_context_embedding, loss / context_size);
+            update_embedding(node_id, total_context_embedding, loss);
             weighted_vector_sum(
                 context_embedding_gradient,
                 get_node_embedding(node_id),
@@ -240,11 +238,7 @@ impl SkipGram {
                                                     0.0,
                                                 );
                                             });
-                                        update_embedding(
-                                            context_node_id,
-                                            &context_gradient,
-                                            1.0,
-                                        );
+                                        update_embedding(context_node_id, &context_gradient, 1.0);
                                     });
                             },
                         );
