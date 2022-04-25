@@ -269,43 +269,35 @@ impl CBOW {
                                 dot
                             );
 
-                            let loss = if dot > 30.0 || dot < -30.0 {
-                                0.0
-                            } else {
-                                let exp_dot = dot.exp();
-                                (label - exp_dot / (exp_dot + 1.0).powf(2.0)) * learning_rate
-                            };
-
-                            assert!(
-                                loss.is_finite(),
-                                "The loss is not finite! loss: {}, dot: {}",
-                                loss,
-                                dot
-                            );
-
-                            // We compute the average loss to update the central gradient by the total central embedding.
-                            let mean_loss = (loss / context_size) as f32;
-
-                            // We convert the loss to f32, now that we are done using it as f64.
-                            let loss = loss as f32;
-
-                            // We update the gradients of the current node ID using the loss.
-                            node_gradient
-                                .iter_mut()
-                                .zip(total_context_embedding.iter())
-                                .for_each(|(feature_gradient, total_context_feature)| {
+                            if dot > 30.0 || dot < -30.0 {
+                                node_gradient.iter_mut().for_each(|feature_gradient| {
                                     // Note that we are setting this gradient EQUAL to the
                                     // contextual node feature.
-                                    *feature_gradient = *total_context_feature * mean_loss;
+                                    *feature_gradient = 0.0;
                                 });
+                            } else {
+                                let exp_dot = dot.exp();
+                                let loss =
+                                    (label - exp_dot / (exp_dot + 1.0).powf(2.0)) * learning_rate;
+                                // We compute the average loss to update the central gradient by the total central embedding.
+                                let mean_loss = (loss / context_size) as f32;
 
-                            context_gradient
-                                .iter_mut()
-                                .zip(hidden_embedding.iter())
-                                .for_each(|(feature_gradient, current_node_feature)| {
-                                    // Note that we are SUMMING the current node feature
-                                    *feature_gradient += *current_node_feature * loss;
-                                });
+                                node_gradient
+                                    .iter_mut()
+                                    .zip(total_context_embedding.iter())
+                                    .for_each(|(feature_gradient, total_context_feature)| {
+                                        // Note that we are setting this gradient EQUAL to the
+                                        // contextual node feature.
+                                        *feature_gradient = *total_context_feature * mean_loss;
+                                    });
+                                context_gradient
+                                    .iter_mut()
+                                    .zip(hidden_embedding.iter())
+                                    .for_each(|(feature_gradient, current_node_feature)| {
+                                        // Note that we are SUMMING the current node feature
+                                        *feature_gradient += *current_node_feature * loss;
+                                    });
+                            };
                         };
 
                     // We start to compute the new gradients.
