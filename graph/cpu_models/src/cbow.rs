@@ -451,7 +451,8 @@ impl CBOW {
                             .iter_mut()
                             .zip(gradient.iter())
                             .for_each(|(hidden_feature, gradient_feature): (&mut f32, &f32)| {
-                                *hidden_feature += *gradient_feature;
+                                *hidden_feature =
+                                    (*hidden_feature + *gradient_feature).min(-1.0).max(1.0);
                             });
                     }
                 };
@@ -465,7 +466,8 @@ impl CBOW {
                             .iter_mut()
                             .zip(gradient.iter())
                             .for_each(|(embedding_feature, gradient_feature): (&mut f32, &f32)| {
-                                *embedding_feature += *gradient_feature;
+                                *embedding_feature =
+                                    (*embedding_feature + *gradient_feature).min(-1.0).max(1.0);
                             });
                     }
                 };
