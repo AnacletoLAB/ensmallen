@@ -126,7 +126,7 @@ impl Node2Vec {
         // load our compiled code
         let mut ptx = gpu.load_ptx(PTX_SOURCE)?;
         // get a function from the compiled code
-        let compute_cbow_mini_batch = ptx.get_kernel("compute_cbow_mini_batch")?;
+        let compute_cbow_mini_batch = ptx.get_kernel(&self.kernel)?;
 
         assert!(number_of_random_walks % 1024 == 0);
         // set the parallelizzation specs
