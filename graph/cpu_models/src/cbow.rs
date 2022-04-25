@@ -271,7 +271,7 @@ impl CBOW {
                                 });
                             } else {
                                 let exp_dot = dot.exp();
-                                let loss = (label - exp_dot / (exp_dot + 1.0)) * learning_rate;
+                                let loss = (label - exp_dot / (exp_dot + 1.0).powf(2.0)) * learning_rate;
                                 // We compute the average loss to update the central gradient by the total central embedding.
                                 let mean_loss = (loss / context_size) as f32;
 
