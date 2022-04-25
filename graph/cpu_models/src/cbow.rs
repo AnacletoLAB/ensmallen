@@ -357,10 +357,21 @@ impl CBOW {
                                             );
 
                                             let total_logits: f32 = negative_logits.iter().cloned().sum::<f32>() + positive_logit;
-                                            let loss = positive_logit / total_logits * learning_rate;
+                                            let negative_loss = if total_logits.is_finite() {
+                                                positive_logit / total_logits * learning_rate
+                                            } else {
+                                                0.0
+                                            };
+
+                                            let positive_loss = if total_logits.is_finite() {
+                                                negative_loss - learning_rate
+                                            } else {
+                                                -learning_rate
+                                            };
 
                                             // We compute the average loss to update the central gradient by the total central embedding.
-                                            let mean_loss = (loss / context_size) as f32;
+                                            let mean_positive_loss = (positive_loss / context_size) as f32;
+                                            let mean_negative_loss = (negative_loss / context_size) as f32;
 
                                             get_node_embedding(central_node_id)
                                             .iter()
@@ -369,8 +380,8 @@ impl CBOW {
                                             .zip(contextual_terms_gradient.iter_mut())
                                             .zip(central_term_gradient.iter_mut())
                                             .for_each(|(((feature, context_feature), context_gradient), central_term_gradient)|{
-                                                *context_gradient = mean_loss * feature;
-                                                *central_term_gradient = loss * context_feature;
+                                                *context_gradient = mean_positive_loss * feature;
+                                                *central_term_gradient = positive_loss * context_feature;
                                             });
                                             
                                             non_central_terms
@@ -393,8 +404,8 @@ impl CBOW {
                                                     .zip(contextual_terms_gradient.iter_mut())
                                                     .zip(non_central_term_gradient.iter_mut())
                                                     .for_each(|(((feature, context_feature), context_gradient), non_central_term_gradient)|{
-                                                        *context_gradient += mean_loss * feature;
-                                                        *non_central_term_gradient = loss * context_feature;
+                                                        *context_gradient += mean_negative_loss * feature;
+                                                        *non_central_term_gradient = negative_loss * context_feature;
                                                     });
                                                 },
                                             );
