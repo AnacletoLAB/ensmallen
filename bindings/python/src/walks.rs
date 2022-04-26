@@ -8,7 +8,7 @@ use types::ThreadDataRaceAware;
 #[pymethods]
 impl Graph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, walk_length, quantity, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, dense_node_mapping, max_neighbours)"]
+    #[text_signature = "($self, walk_length, quantity, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, dense_node_mapping, max_neighbours, normalize_by_degree)"]
     /// Return random walks done on the graph using Rust.
     ///
     /// Parameters
@@ -54,6 +54,8 @@ impl Graph {
     ///     Maximum number of randomly sampled neighbours to consider.
     ///     If this parameter is used, the walks becomes probabilistic in nature
     ///     and becomes an approximation of an exact walk.
+    /// normalize_by_degree: Optional[bool] = False
+    ///     Whether to normalize the random walks by the node degree.
     ///
     /// Raises
     /// ------
@@ -65,7 +67,6 @@ impl Graph {
     ///
     fn random_walks(
         &self,
-        walk_length: u64,
         quantity: NodeT,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<Py<PyArray2<NodeT>>> {
@@ -77,7 +78,8 @@ impl Graph {
             build_walk_parameters_list(&[]).as_slice()
         ))?;
 
-        let parameters = pe!(self.build_walk_parameters(walk_length, kwargs))?;
+        let parameters = build_walk_parameters(kwargs)?;
+        let walk_length = parameters.get_random_walk_length();
         let iter = pe!(self.inner.par_iter_random_walks(quantity, &parameters))?;
         let array = ThreadDataRaceAware {
             t: PyArray2::new(
@@ -100,7 +102,7 @@ impl Graph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, walk_length, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, dense_node_mapping, max_neighbours)"]
+    #[text_signature = "($self, *, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, dense_node_mapping, max_neighbours, normalize_by_degree)"]
     /// Return complete random walks done on the graph using Rust.
     ///
     /// Parameters
@@ -144,6 +146,8 @@ impl Graph {
     ///     Maximum number of randomly sampled neighbours to consider.
     ///     If this parameter is used, the walks becomes probabilistic in nature
     ///     and becomes an approximation of an exact walk.
+    /// normalize_by_degree: Optional[bool] = False
+    ///     Whether to normalize the random walks by the node degree.
     ///
     /// Raises
     /// ------
@@ -153,11 +157,7 @@ impl Graph {
     /// -------
     /// List of list of walks containing the numeric IDs of nodes.
     ///
-    fn complete_walks(
-        &self,
-        walk_length: u64,
-        py_kwargs: Option<&PyDict>,
-    ) -> PyResult<Py<PyArray2<NodeT>>> {
+    fn complete_walks(&self, py_kwargs: Option<&PyDict>) -> PyResult<Py<PyArray2<NodeT>>> {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
@@ -166,7 +166,8 @@ impl Graph {
             build_walk_parameters_list(&[]).as_slice()
         ))?;
 
-        let parameters = pe!(self.build_walk_parameters(walk_length, kwargs))?;
+        let parameters = build_walk_parameters(kwargs)?;
+        let walk_length = parameters.get_random_walk_length();
         let iter = pe!(self.inner.par_iter_complete_walks(&parameters))?;
         let array = ThreadDataRaceAware {
             t: PyArray2::new(

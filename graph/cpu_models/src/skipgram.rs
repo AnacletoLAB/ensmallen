@@ -5,6 +5,8 @@ use rayon::iter::IntoParallelRefMutIterator;
 use rayon::iter::ParallelIterator;
 use vec_rand::{random_f32, splitmix64};
 
+#[derive(Clone, Debug)]
+
 pub struct SkipGram {
     embedding_size: usize,
     window_size: usize,
@@ -14,6 +16,12 @@ pub struct SkipGram {
 
 impl SkipGram {
     /// Return new instance of SkipGram model.
+    ///
+    /// # Arguments
+    /// embedding_size: Option<usize> - Size of the embedding.
+    /// walk_parameters: Option<WalksParameters> - Parameters to be used within the walks.
+    /// window_size: Option<usize> - Window size defining the contexts.
+    /// number_of_negative_samples: Option<usize> - Number of negative samples to extract for each context.
     pub fn new(
         embedding_size: Option<usize>,
         walk_parameters: Option<WalksParameters>,
@@ -48,6 +56,23 @@ impl SkipGram {
         })
     }
 
+    /// Returns the used embedding size.
+    pub fn get_embedding_size(&self) -> usize {
+        self.embedding_size
+    }
+
+    /// Computes in the provided slice of embedding the SkipGram node embedding.
+    ///
+    /// # Implementative details
+    /// This implementation is NOT thread safe, that is, different threads may try
+    /// to overwrite each others memory.
+    ///
+    /// # Arguments
+    /// `graph`: &Graph - The graph to embed
+    /// `embedding`: &mut [f32] - The memory area where to write the embedding.
+    /// `epochs`: Option<usize> - The number of epochs to run the model for, by default 10.
+    /// `learning_rate`: Option<f32> - The learning rate to update the gradient, by default 0.005.
+    /// `verbose`: Option<bool> - Whether to show the loading bar, by default true.
     pub fn fit_transform(
         &self,
         graph: &Graph,
@@ -63,7 +88,7 @@ impl SkipGram {
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
         let random_walk_length = walk_parameters.get_random_walk_length() as usize;
         let verbose = verbose.unwrap_or(true);
-        let learning_rate = learning_rate.unwrap_or(0.001);
+        let learning_rate = learning_rate.unwrap_or(0.005);
 
         if epochs == 0 {
             return Err("The number of epochs must be strictly greater than zero.".to_string());

@@ -8,6 +8,7 @@ use rayon::prelude::ParallelSlice;
 use rayon::prelude::ParallelSliceMut;
 use vec_rand::{random_f32, splitmix64};
 
+#[derive(Clone, Debug)]
 pub struct CBOW {
     embedding_size: usize,
     window_size: usize,
@@ -17,6 +18,12 @@ pub struct CBOW {
 
 impl CBOW {
     /// Return new instance of CBOW model.
+    /// 
+    /// # Arguments
+    /// embedding_size: Option<usize> - Size of the embedding.
+    /// walk_parameters: Option<WalksParameters> - Parameters to be used within the walks.
+    /// window_size: Option<usize> - Window size defining the contexts.
+    /// number_of_negative_samples: Option<usize> - Number of negative samples to extract for each context.
     pub fn new(
         embedding_size: Option<usize>,
         walk_parameters: Option<WalksParameters>,
@@ -51,6 +58,25 @@ impl CBOW {
         })
     }
 
+    /// Returns the used embedding size.
+    pub fn get_embedding_size(&self) -> usize {
+        self.embedding_size
+    }
+
+    /// Computes in the provided slice of embedding the CBOW node embedding.
+    /// 
+    /// # Implementative details
+    /// This implementation is thread safe, that is, there is no possibility
+    /// for memory race in this version. Do note that this make this version a bit
+    /// slower and requires more memory than the racing version.
+    /// For most use cases, likely you would prefer to use the racing version.
+    /// 
+    /// # Arguments
+    /// `graph`: &Graph - The graph to embed
+    /// `embedding`: &mut [f32] - The memory area where to write the embedding.
+    /// `epochs`: Option<usize> - The number of epochs to run the model for, by default 10.
+    /// `learning_rate`: Option<f32> - The learning rate to update the gradient, by default 0.005.
+    /// `verbose`: Option<bool> - Whether to show the loading bar, by default true.
     pub fn fit_transform(
         &self,
         graph: &Graph,
@@ -559,6 +585,20 @@ impl CBOW {
         Ok(())
     }
 
+    /// Computes in the provided slice of embedding the CBOW node embedding.
+    /// 
+    /// # Implementative details
+    /// This implementation is NOT thread safe, that is, different threads may try
+    /// to overwrite each others memory. This version is faster than the memory safe
+    /// version and requires less memory. In most use cases, you would prefer to use
+    /// this version over the memory safe version.
+    /// 
+    /// # Arguments
+    /// `graph`: &Graph - The graph to embed
+    /// `embedding`: &mut [f32] - The memory area where to write the embedding.
+    /// `epochs`: Option<usize> - The number of epochs to run the model for, by default 10.
+    /// `learning_rate`: Option<f32> - The learning rate to update the gradient, by default 0.005.
+    /// `verbose`: Option<bool> - Whether to show the loading bar, by default true.
     pub fn fit_transform_racing(
         &self,
         graph: &Graph,
