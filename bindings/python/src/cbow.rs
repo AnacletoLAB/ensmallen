@@ -24,6 +24,7 @@ impl From<CBOW> for cpu_models::CBOW {
 #[pymethods]
 impl CBOW {
     #[new]
+    #[args(py_kwargs = "**")]
     /// Return a new instance of the CBOW model.
     ///
     /// Parameters

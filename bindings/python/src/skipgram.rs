@@ -24,6 +24,7 @@ impl From<SkipGram> for cpu_models::SkipGram {
 #[pymethods]
 impl SkipGram {
     #[new]
+    #[args(py_kwargs = "**")]
     /// Return a new instance of the SkipGram model.
     ///
     /// Parameters

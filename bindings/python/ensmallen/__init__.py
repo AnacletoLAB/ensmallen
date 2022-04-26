@@ -24,6 +24,7 @@ if is_x86_64():
     if len(unavailable_flags) == 0:
         logging.info("Ensmallen is using Haswell")
         from .ensmallen_haswell import preprocessing  # pylint: disable=import-error
+        from .ensmallen_haswell import models  # pylint: disable=import-error
         from .ensmallen_haswell import Graph  # pylint: disable=import-error
         from .ensmallen_haswell import edge_list_utils  # pylint: disable=import-error
     else:
@@ -40,6 +41,7 @@ if is_x86_64():
         if len(unavailable_flags) == 0:
             logging.info("Ensmallen is using Core2")
             from .ensmallen_core2 import preprocessing  # pylint: disable=import-error
+            from .ensmallen_core2 import models  # pylint: disable=import-error
             from .ensmallen_core2 import Graph  # pylint: disable=import-error
             from .ensmallen_core2 import edge_list_utils  # pylint: disable=import-error
         else:
@@ -58,6 +60,7 @@ if is_x86_64():
 elif is_arm():
     logging.info("Ensmallen is using Default Arm")
     from .ensmallen_default import preprocessing  # pylint: disable=import-error
+    from .ensmallen_default import models  # pylint: disable=import-error
     from .ensmallen_default import Graph  # pylint: disable=import-error
     from .ensmallen_default import edge_list_utils  # pylint: disable=import-error
 else:
@@ -66,4 +69,4 @@ else:
 # Because otherwise it generate a Circular import and crash
 from . import datasets
 
-__all__ = ["edge_list_utils", "Graph", "preprocessing", "datasets"]
+__all__ = ["edge_list_utils", "Graph", "preprocessing", "models", "datasets"]
