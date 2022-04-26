@@ -19,7 +19,7 @@ fn test_racing_cbow_on_cora_logsigmoid() -> Result<(), String> {
     let mut embedding = vec![0.0; embedding_size * cora.get_nodes_number() as usize];
     cbow.fit_transform_racing(&cora, embedding.as_mut_slice(), Some(10), None, None)?;
 
-    let writer = CSVFileWriter::new("cora_racing_embedding_logsigmoid.tsv")
+    let writer = CSVFileWriter::new("cora_racing_cbow_embedding_logsigmoid.tsv")
         .set_separator(Some('\t'))
         .unwrap()
         .set_header(Some(true))
@@ -62,7 +62,7 @@ fn test_racing_cbow_on_cora_sigmoid() -> Result<(), String> {
     let mut embedding = vec![0.0; embedding_size * cora.get_nodes_number() as usize];
     cbow.fit_transform_racing(&cora, embedding.as_mut_slice(), Some(10), None, None)?;
 
-    let writer = CSVFileWriter::new("cora_racing_embedding_sigmoid.tsv")
+    let writer = CSVFileWriter::new("cora_racing_cbow_embedding_sigmoid.tsv")
         .set_separator(Some('\t'))
         .unwrap()
         .set_header(Some(true))

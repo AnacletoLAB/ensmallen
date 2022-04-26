@@ -731,8 +731,8 @@ impl CBOW {
             let exp_dot = dot.exp();
             let loss = (label
                 - exp_dot
-                    / if log_sigmoid {
-                        (exp_dot + 1.0)
+                    / if self.log_sigmoid {
+                        exp_dot + 1.0
                     } else {
                         (exp_dot + 1.0).powf(2.0)
                     })
