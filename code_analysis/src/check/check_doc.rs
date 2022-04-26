@@ -1,6 +1,6 @@
 use super::*;
 
-use std::collections::HashSet;
+use std::collections::BTreeSet;
 
 const INCLUDE_EXAMPLE: bool = false;
 
@@ -23,7 +23,7 @@ impl Checker {
     /// * the arguments must be documented and their types must match the func declaration
     pub fn check_doc(&self) {
 
-        let mut introductions = HashSet::new();
+        let mut introductions = BTreeSet::new();
 
         for module in &self.modules {
             for impls in &module.impls {
@@ -159,10 +159,10 @@ impl Checker {
                                     ).collect();
 
                                     // check that all the args are present and no extra arg is present
-                                    let doc_names: HashSet<String> = parsed_args.iter().map(|x|
+                                    let doc_names: BTreeSet<String> = parsed_args.iter().map(|x|
                                         x.name.clone()
                                     ).collect();
-                                    let arg_names: HashSet<String> = method_args.iter().map(|x|
+                                    let arg_names: BTreeSet<String> = method_args.iter().map(|x|
                                         x.name.clone()
                                     ).collect();
 

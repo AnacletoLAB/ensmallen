@@ -1,12 +1,12 @@
 use super::*;
 use std::sync::Mutex;
-use std::collections::HashSet;
+use std::collections::BTreeSet;
 
 #[derive(Debug)]
 pub struct Checker{
     pub(crate) modules: Vec<Module>,
 
-    pub(crate) method_names: HashSet<String>,
+    pub(crate) method_names: BTreeSet<String>,
 
     /// This doesn't requires an actual mutex because rust doesn't currently 
     /// support partial move yet, we need this because in all the checks we
@@ -16,7 +16,7 @@ pub struct Checker{
 
 impl Checker {
     pub fn new(modules: Vec<Module>) -> Checker {
-        let mut method_names = HashSet::new();
+        let mut method_names = BTreeSet::new();
 
         for module in &modules {
             for imp in &module.impls {

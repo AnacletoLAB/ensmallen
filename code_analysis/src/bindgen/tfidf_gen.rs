@@ -47,7 +47,7 @@ fn split_words(method_name: &str) -> Vec<String> {
 use counter::Counter;
 use indicatif::{ParallelProgressIterator, ProgressIterator};
 use indicatif::{ProgressBar, ProgressStyle};
-use std::collections::HashMap;
+use std::collections::BTreeMap;
 use std::hash::Hash;
 
 pub fn get_loading_bar(verbose: bool, desc: &str, total_iterations: usize) -> ProgressBar {
@@ -66,7 +66,7 @@ pub fn get_loading_bar(verbose: bool, desc: &str, total_iterations: usize) -> Pr
     }
 }
 
-/// Return vector of hashmaps containing the non-zero frequencies.
+/// Return vector of BTreeMaps containing the non-zero frequencies.
 ///
 /// # Arguments
 /// * `documents`: &[Vec<T>] - The documents to be processed.
@@ -74,12 +74,12 @@ pub fn get_loading_bar(verbose: bool, desc: &str, total_iterations: usize) -> Pr
 /// * `b`: Option<f32> - The default parameter for b, tipically equal to 0.75.
 /// * `verbose`: Option<bool> - Whether to show a loading bar. By default, true.
 ///
-pub fn get_okapi_bm25_tfidf_from_documents<T: Eq + Hash + Send + Sync + Clone + Copy + Eq>(
+pub fn get_okapi_bm25_tfidf_from_documents<T: Eq + Hash + Send + Sync + Clone + Copy + Eq + Ord>(
     documents: &[Vec<T>],
     k1: Option<f32>,
     b: Option<f32>,
     verbose: Option<bool>,
-) -> Result<Vec<HashMap<T, f32>>, String> {
+) -> Result<Vec<BTreeMap<T, f32>>, String> {
     if documents.is_empty() {
         return Err("The given documents set is empty!".to_string());
     }
@@ -89,7 +89,7 @@ pub fn get_okapi_bm25_tfidf_from_documents<T: Eq + Hash + Send + Sync + Clone + 
     let number_of_documents = documents.len();
     let pb = get_loading_bar(verbose, "Computing vocabulary", number_of_documents);
     // We start to iterate over the documents list and create the vocabulary.
-    let vocabulary: HashMap<&T, usize> = documents
+    let vocabulary: BTreeMap<&T, usize> = documents
         .iter()
         .progress_with(pb)
         .flat_map(|document| document.iter())
@@ -148,7 +148,7 @@ pub fn get_okapi_bm25_tfidf_from_documents<T: Eq + Hash + Send + Sync + Clone + 
                         inverse_document_frequency * adjusted_word_frequency,
                     )
                 })
-                .collect::<HashMap<T, f32>>()
+                .collect::<BTreeMap<T, f32>>()
         })
-        .collect::<Vec<HashMap<T, f32>>>())
+        .collect::<Vec<BTreeMap<T, f32>>>())
 }

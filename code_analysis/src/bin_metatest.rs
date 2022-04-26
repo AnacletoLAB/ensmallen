@@ -290,7 +290,7 @@ pub struct MetaParams {{
         r#"
 use super::*;
 use arbitrary::Arbitrary;
-use std::collections::{{HashSet, HashMap}};
+use std::collections::{{BTreeSet, BTreeMap}};
 use rayon::iter::ParallelIterator;
 
 struct Rng{{
