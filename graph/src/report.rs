@@ -1595,9 +1595,9 @@ impl Graph {
                 "exclusively to a single node, making the node type ",
                 "relatively meaningless, as it adds no more information ",
                 "than the node name itself. ",
-                "The graph contains {singleton_nodes_types_number}.</p>"
+                "The graph contains {singleton_node_types_number}.</p>"
             ),
-            singleton_nodes_types_number = match self.get_singleton_node_types_number().unwrap() {
+            singleton_node_types_number = match self.get_singleton_node_types_number().unwrap() {
                 1 => {
                     let node_type_name = self
                         .iter_singleton_node_type_names()
@@ -1615,15 +1615,15 @@ impl Graph {
                         )
                     )
                 }
-                singleton_nodes_types_number => {
+                singleton_node_types_number => {
                     format!(
                         concat!(
-                            "{singleton_nodes_types_number} singleton node types, which are ",
+                            "{singleton_node_types_number} singleton node types, which are ",
                             "{singleton_node_types_list}",
-                            "{additional_singleton_nodes_types}"
+                            "{additional_singleton_node_types}"
                         ),
-                        singleton_nodes_types_number =
-                            to_human_readable_high_integer(singleton_nodes_types_number as usize),
+                        singleton_node_types_number =
+                            to_human_readable_high_integer(singleton_node_types_number as usize),
                         singleton_node_types_list = get_unchecked_formatted_list(
                             self.iter_singleton_node_type_names()
                                 .unwrap()
@@ -1646,11 +1646,11 @@ impl Graph {
                                 .as_ref(),
                             None
                         ),
-                        additional_singleton_nodes_types = if singleton_nodes_types_number > 10 {
+                        additional_singleton_node_types = if singleton_node_types_number > 10 {
                             format!(
-                                ", plus other {singleton_nodes_types_number} singleton node types",
-                                singleton_nodes_types_number = to_human_readable_high_integer(
-                                    singleton_nodes_types_number as usize - 10
+                                ", plus other {singleton_node_types_number} singleton node types",
+                                singleton_node_types_number = to_human_readable_high_integer(
+                                    singleton_node_types_number as usize - 10
                                 )
                             )
                         } else {
@@ -1821,7 +1821,7 @@ impl Graph {
     }
 
     /// Returns report on the homogeneous node types of the graph.
-    unsafe fn get_homogeneous_nodes_types_report(&self) -> String {
+    unsafe fn get_homogeneous_node_types_report(&self) -> String {
         format!(
             concat!(
                 "<h4>Homogeneous node types</h4>",
@@ -1829,9 +1829,9 @@ impl Graph {
                 "to all the nodes in the graph, making the node type ",
                 "relatively meaningless, as it adds no more information ",
                 "than the fact that the node is in the graph. ",
-                "The graph contains {homogeneous_nodes_types_number}.</p>"
+                "The graph contains {homogeneous_node_types_number}.</p>"
             ),
-            homogeneous_nodes_types_number = match self.get_homogeneous_node_types_number().unwrap()
+            homogeneous_node_types_number = match self.get_homogeneous_node_types_number().unwrap()
             {
                 1 => format!(
                     "a homogeneous node type, which is {}",
@@ -1843,15 +1843,15 @@ impl Graph {
                             .as_ref()
                     )
                 ),
-                homogeneous_nodes_types_number => {
+                homogeneous_node_types_number => {
                     format!(
                         concat!(
-                            "{homogeneous_nodes_types_number} homogeneous node types, which are ",
+                            "{homogeneous_node_types_number} homogeneous node types, which are ",
                             "{homogeneous_node_types_list}",
                             "{additional_homogeneous_nodes_with_selfloop}"
                         ),
-                        homogeneous_nodes_types_number =
-                            to_human_readable_high_integer(homogeneous_nodes_types_number as usize),
+                        homogeneous_node_types_number =
+                            to_human_readable_high_integer(homogeneous_node_types_number as usize),
                         homogeneous_node_types_list = get_unchecked_formatted_list(
                             self.iter_homogeneous_node_type_names()
                                 .unwrap()
@@ -1866,11 +1866,11 @@ impl Graph {
                             None
                         ),
                         additional_homogeneous_nodes_with_selfloop =
-                            if homogeneous_nodes_types_number > 10 {
+                            if homogeneous_node_types_number > 10 {
                                 format!(
-                                ", plus other {homogeneous_nodes_types_number} homogeneous node types",
-                                homogeneous_nodes_types_number = to_human_readable_high_integer(
-                                    homogeneous_nodes_types_number as usize - 10
+                                ", plus other {homogeneous_node_types_number} homogeneous node types",
+                                homogeneous_node_types_number = to_human_readable_high_integer(
+                                    homogeneous_node_types_number as usize - 10
                                 )
                             )
                             } else {
@@ -2049,7 +2049,7 @@ impl Graph {
 
         // When the graph contains homogeneous node types, we build their report.
         if self.has_homogeneous_node_types().unwrap() {
-            paragraphs.push(self.get_homogeneous_nodes_types_report());
+            paragraphs.push(self.get_homogeneous_node_types_report());
         }
 
         // When the graph contains unknown node types, we build their report.
@@ -2065,7 +2065,7 @@ impl Graph {
     /// # Safety
     /// This method may cause a panic when called on graphs without
     /// singleton edge types.
-    unsafe fn get_singleton_edges_types_report(&self) -> String {
+    unsafe fn get_singleton_edge_types_report(&self) -> String {
         format!(
             concat!(
                 "<h4>Singleton edge types</h4>",
@@ -2073,9 +2073,9 @@ impl Graph {
                 "exclusively to a single edge, making the edge type ",
                 "relatively meaningless, as it adds no more information ",
                 "than the name of edge itself. ",
-                "The graph contains {singleton_edges_types_number}</p>"
+                "The graph contains {singleton_edge_types_number}</p>"
             ),
-            singleton_edges_types_number = match self.get_singleton_edge_types_number().unwrap() {
+            singleton_edge_types_number = match self.get_singleton_edge_types_number().unwrap() {
                 1 => format!(
                     "a edge with singleton edge type, which is {}.",
                     get_edge_type_source_html_url_from_edge_type_name(
@@ -2086,14 +2086,14 @@ impl Graph {
                             .as_ref()
                     )
                 ),
-                singleton_edges_types_number => {
+                singleton_edge_types_number => {
                     format!(
                         concat!(
-                            "{singleton_edges_types_number} edges with singleton edge types, which are ",
+                            "{singleton_edge_types_number} edges with singleton edge types, which are ",
                             "{singleton_edge_types_list}",
                             "{additional_edgges_with_singleton_edge_types}. "
                         ),
-                        singleton_edges_types_number = to_human_readable_high_integer(singleton_edges_types_number as usize),
+                        singleton_edge_types_number = to_human_readable_high_integer(singleton_edge_types_number as usize),
                         singleton_edge_types_list = get_unchecked_formatted_list(
                             self.iter_singleton_edge_type_names()
                                 .unwrap()
@@ -2108,10 +2108,10 @@ impl Graph {
                                 None
                         ),
                         additional_edgges_with_singleton_edge_types =
-                            if singleton_edges_types_number > 10 {
+                            if singleton_edge_types_number > 10 {
                                 format!(
-                                ", plus other {singleton_edges_types_number} edges with singleton edge types",
-                                singleton_edges_types_number = to_human_readable_high_integer(singleton_edges_types_number as usize - 10)
+                                ", plus other {singleton_edge_types_number} edges with singleton edge types",
+                                singleton_edge_types_number = to_human_readable_high_integer(singleton_edge_types_number as usize - 10)
                             )
                             } else {
                                 "".to_string()
@@ -2274,7 +2274,7 @@ impl Graph {
 
         // When the graph contains singleton edge types, we build their report.
         if self.has_singleton_edge_types().unwrap() {
-            paragraphs.push(self.get_singleton_edges_types_report());
+            paragraphs.push(self.get_singleton_edge_types_report());
         }
 
         // When the graph contains unknown edge types, we build their report.

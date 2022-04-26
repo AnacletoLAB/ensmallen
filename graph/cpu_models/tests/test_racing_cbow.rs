@@ -18,7 +18,7 @@ fn test_racing_cbow_on_cora_logsigmoid() -> Result<(), String> {
     let cbow = CBOW::new(
         Some(embedding_size),
         Some(walks),
-        Some(50),
+        Some(10),
         None,
         Some(10),
         Some(true),
