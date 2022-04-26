@@ -2,7 +2,7 @@ extern crate graph;
 
 use cpu_models::*;
 use graph::test_utilities::*;
-use graph::{CSVFileWriter, WalksParameters, Graph, EdgeFileReader, NodeFileReader};
+use graph::{CSVFileWriter, EdgeFileReader, Graph, NodeFileReader, WalksParameters};
 
 #[allow(clippy::redundant_clone)]
 /// This is our default graph we use on tests with node types.
@@ -142,7 +142,6 @@ fn test_racing_cbow_on_cora_sigmoid() -> Result<(), String> {
 
     Ok(())
 }
-
 
 #[test]
 fn test_racing_cbow_on_ctd_logsigmoid() -> Result<(), String> {
