@@ -2,7 +2,7 @@
 import os
 from glob import glob
 from typing import Any, Callable, List, Optional
-
+from tqdm.auto import tqdm
 import compress_json
 import pandas as pd
 from ensmallen import Graph, datasets
@@ -106,8 +106,18 @@ def get_all_available_graphs_dataframe() -> pd.DataFrame:
             name=name,
             version=version
         )
-        for repository in get_available_repositories()
-        for name in get_available_graphs_from_repository(repository)
+        for repository in tqdm(
+            get_available_repositories(),
+            desc="Parsing repositories",
+            dynamic_ncols=True,
+            leave=False
+        )
+        for name in tqdm(
+            get_available_graphs_from_repository(repository),
+            desc="Parsing graphs",
+            dynamic_ncols=True,
+            leave=False
+        )
         for version in get_available_versions_from_graph_and_repository(name, repository)
     ])
 
