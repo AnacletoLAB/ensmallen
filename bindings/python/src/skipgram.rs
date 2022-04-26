@@ -4,7 +4,7 @@ use numpy::PyArray2;
 ///
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree)"]
+#[text_signature = "(*, embedding_size, window_size, clipping_value, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree)"]
 pub struct SkipGram {
     pub inner: cpu_models::SkipGram,
 }
@@ -32,6 +32,9 @@ impl SkipGram {
     ///     Size of the embedding.
     /// window_size: Optional[int] = 10
     ///     Window size defining the contexts.
+    /// clipping_value: Optional[float] = 6.0
+    ///     Value at which we clip the dot product, mostly for numerical stability issues.
+    ///     By default, `6.0`, where the loss is already close to zero.
     /// number_of_negative_samples: Optional[int] = 5
     ///     Number of negative samples to extract for each context.
     /// walk_length: Optional[int] = 32
@@ -84,6 +87,7 @@ impl SkipGram {
             build_walk_parameters_list(&[
                 "embedding_size",
                 "window_size",
+                "clipping_value",
                 "number_of_negative_samples"
             ])
             .as_slice()
@@ -96,6 +100,7 @@ impl SkipGram {
                 extract_value_rust_result!(kwargs, "embedding_size", usize),
                 Some(parameters),
                 extract_value_rust_result!(kwargs, "window_size", usize),
+                extract_value_rust_result!(kwargs, "clipping_value", f32),
                 extract_value_rust_result!(kwargs, "number_of_negative_samples", usize),
             ))?,
         })

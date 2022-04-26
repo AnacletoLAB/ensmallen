@@ -24,7 +24,7 @@ impl CBOW {
     /// `embedding_size`: Option<usize> - Size of the embedding.
     /// `walk_parameters`: Option<WalksParameters> - Parameters to be used within the walks.
     /// `window_size`: Option<usize> - Window size defining the contexts.
-    /// `clipping_value`: Option<f32> - Value at which we clip the dot product, mostly for numerical stability issues. By default, `6.0`.
+    /// `clipping_value`: Option<f32> - Value at which we clip the dot product, mostly for numerical stability issues. By default, `6.0`, where the loss is already close to zero.
     /// `number_of_negative_samples`: Option<usize> - Number of negative samples to extract for each context.
     pub fn new(
         embedding_size: Option<usize>,
