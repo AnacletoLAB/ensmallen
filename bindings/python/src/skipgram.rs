@@ -1,25 +1,47 @@
 use super::*;
 use numpy::PyArray2;
 
+///
+#[pyclass]
+#[derive(Debug, Clone)]
+#[text_signature = "(*, embedding_size, window_size, clipping_value, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree)"]
+pub struct SkipGram {
+    pub inner: cpu_models::SkipGram,
+}
+
+impl From<cpu_models::SkipGram> for SkipGram {
+    fn from(val: cpu_models::SkipGram) -> SkipGram {
+        SkipGram { inner: val }
+    }
+}
+
+impl From<SkipGram> for cpu_models::SkipGram {
+    fn from(val: SkipGram) -> cpu_models::SkipGram {
+        val.inner
+    }
+}
+
 #[pymethods]
-impl Graph {
+impl SkipGram {
+    #[new]
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, *, embedding_size, epochs, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, iterations, max_neighbours, normalize_by_degree, window_size, number_of_negative_samples, learning_rate, random_state, verbose)"]
-    /// Compute the SkipGram node embedding for the current graph.
-    /// This method will return a numpy array with shape (number_of_nodes, embedding_size)
-    /// where the i-th row is the embedding of the node with node_id i.
+    /// Return a new instance of the SkipGram model.
     ///
-    /// Paramters
-    /// ---------
-    /// embedding_size: int =
-    ///     The number of dimensions of the embedding
-    /// epochs: int = 1
-    ///     How many epochs the model will train for.
-    ///     In this context an epoch means that the model will compute a random
-    ///     walk starting from every node in the graph.
-    /// walk_length: int = 100
-    ///     How many **steps** the random walk will do from it source
-    /// return_weight: f32 = 1.0
+    /// Parameters
+    /// ------------------------
+    /// embedding_size: Optional[int] = 100
+    ///     Size of the embedding.
+    /// window_size: Optional[int] = 10
+    ///     Window size defining the contexts.
+    /// clipping_value: Optional[float] = 6.0
+    ///     Value at which we clip the dot product, mostly for numerical stability issues.
+    ///     By default, `6.0`, where the loss is already close to zero.
+    /// number_of_negative_samples: Optional[int] = 5
+    ///     Number of negative samples to extract for each context.
+    /// walk_length: Optional[int] = 32
+    ///     Maximal length of the random walk.
+    ///     On graphs without traps, all walks have this length.
+    /// return_weight: float = 1.0
     ///     Weight on the probability of returning to node coming from
     ///     Having this higher tends the walks to be
     ///     more like a Breadth-First Search.
@@ -41,76 +63,100 @@ impl Graph {
     ///     Weight on the probability of visiting a neighbor edge of a
     ///     different type than the previous edge. This only applies to
     ///     multigraphs, otherwise it has no impact.
+    /// random_state: int = 42
+    ///     random_state to use to reproduce the walks.
     /// iterations: int = 1
     ///     Number of cycles on the graphs to execute.
+    /// dense_node_mapping: Dict[int, int] = None
+    ///     Mapping to use for converting sparse walk space into a dense space.
+    ///     This object can be created using the method available from graph
+    ///     called `get_dense_node_mapping` that returns a mapping from
+    ///     the non trap nodes (those from where a walk could start) and
+    ///     maps these nodes into a dense range of values.
     /// max_neighbours: Optional[int] = 100
     ///     Maximum number of randomly sampled neighbours to consider.
     ///     If this parameter is used, the walks becomes probabilistic in nature
     ///     and becomes an approximation of an exact walk.
-    /// normalize_by_degree: bool = False
-    ///     Divide the weight of each edge by the degree of its destination.
-    ///     This is equivalent to computing the laplacian graph but does not
-    ///     require to store the weights, so it can use much less ram and thus
-    ///     it can be more fit for some graphs.
-    /// window_size: int = 4
-    ///     Window size to consider for the sequences.
-    /// number_of_negative_samples: usize = 5
-    ///     How many non-contextual words we will add to the contextual one
-    ///     when computing the gradients.
-    /// learning_rate: float = 0.025
-    ///     Multiplier for the gradient application, lower learning rates
-    ///     makes the embeddings slower to converge but might get to a better
-    ///     minimum.
-    /// random_state: int = 42
-    ///     The seed used for all PRNGs, this makes the embeddings almost
-    ///     reproducible. Due to concurrencies in the computation of them
-    ///     even with the same random_state the embeddings could be different.
-    /// verbose: bool = False
-    ///     If we should display the progress bar and logs or not.
-    fn compute_skipgram_embedding(
+    /// normalize_by_degree: Optional[bool] = False
+    ///     Whether to normalize the random walks by the node degree.
+    pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<SkipGram> {
+        let py = pyo3::Python::acquire_gil();
+        let kwargs = normalize_kwargs!(py_kwargs, py.python());
+
+        pe!(validate_kwargs(
+            kwargs,
+            build_walk_parameters_list(&[
+                "embedding_size",
+                "window_size",
+                "clipping_value",
+                "number_of_negative_samples"
+            ])
+            .as_slice()
+        ))?;
+
+        let parameters = pe!(build_walk_parameters(kwargs))?;
+
+        Ok(Self {
+            inner: pe!(cpu_models::SkipGram::new(
+                extract_value_rust_result!(kwargs, "embedding_size", usize),
+                Some(parameters),
+                extract_value_rust_result!(kwargs, "window_size", usize),
+                extract_value_rust_result!(kwargs, "clipping_value", f32),
+                extract_value_rust_result!(kwargs, "number_of_negative_samples", usize),
+            ))?,
+        })
+    }
+}
+
+#[pymethods]
+impl SkipGram {
+    #[args(py_kwargs = "**")]
+    #[text_signature = "($self, graph, *, epochs, learning_rate, verbose)"]
+    /// Return numpy embedding with SkipGram node embedding.
+    ///
+    /// Parameters
+    /// ---------
+    /// graph: Graph
+    ///     The graph to embed.
+    ///     Do note that this graph must be sorted with decreasing node degree
+    ///     because of the negative sampling to approximate the softmax.
+    /// epochs: Optional[int] = 10
+    ///     How many epochs the model will train for.
+    ///     In this context an epoch means that the model will compute a random
+    ///     walk starting from every node in the graph.
+    /// learning_rate: Optional[float] = 0.005
+    ///     The learning rate to update the gradient.
+    /// verbose: Optional[bool] = True
+    ///     Whether to show the loading bar.
+    fn fit_transform(
         &self,
-        embedding_size: Option<usize>,
-        epochs: Option<usize>,
-        walk_length: Option<u64>,
-        return_weight: Option<f32>,
-        explore_weight: Option<f32>,
-        change_edge_type_weight: Option<f32>,
-        change_node_type_weight: Option<f32>,
-        iterations: Option<NodeT>,
-        max_neighbours: Option<NodeT>,
-        normalize_by_degree: Option<bool>,
-        window_size: Option<usize>,
-        number_of_negative_samples: Option<usize>,
-        learning_rate: Option<f32>,
-        random_state: Option<u64>,
-        verbose: Option<bool>,
+        graph: &Graph,
+        py_kwargs: Option<&PyDict>,
     ) -> PyResult<Py<PyArray2<f32>>> {
         let gil = pyo3::Python::acquire_gil();
-        let embedding_size = embedding_size.unwrap_or(100);
 
-        let rows_number = self.inner.get_nodes_number() as usize;
-        let columns_number = embedding_size;
+        let py = pyo3::Python::acquire_gil();
+        let kwargs = normalize_kwargs!(py_kwargs, py.python());
+
+        pe!(validate_kwargs(
+            kwargs,
+            &["epochs", "learning_rate", "verbose"]
+        ))?;
+
+        let rows_number = graph.inner.get_nodes_number() as usize;
+        let columns_number = self.inner.get_embedding_size();
         let embedding = PyArray2::zeros(gil.python(), [rows_number, columns_number], false);
 
         let embedding_slice = unsafe { embedding.as_slice_mut().unwrap() };
 
-        pe!(self.inner.compute_skipgram_embedding(
+        // We always use the racing version of the fit transform
+        // as we generally do not care about memory collisions.
+        pe!(self.inner.fit_transform(
+            &graph.inner,
             embedding_slice,
-            Some(embedding_size),
-            epochs,
-            walk_length,
-            return_weight,
-            explore_weight,
-            change_edge_type_weight,
-            change_node_type_weight,
-            iterations,
-            max_neighbours,
-            normalize_by_degree,
-            window_size,
-            number_of_negative_samples,
-            learning_rate,
-            random_state,
-            verbose,
+            extract_value_rust_result!(kwargs, "epochs", usize),
+            extract_value_rust_result!(kwargs, "learning_rate", f32),
+            extract_value_rust_result!(kwargs, "verbose", bool),
         ))?;
 
         Ok(embedding.into_py(gil.python()))

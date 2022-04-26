@@ -1,0 +1,13 @@
+[package]
+name = "gpu_models"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+cuda-driver-sys="0.3.0"
+vec_rand = { git = "https://github.com/zommiommy/vec_rand", branch = "master" }
+graph = {path = "../"}
+indicatif = {version="0.16.0", features = ["rayon"]}
+rayon = "1.1"

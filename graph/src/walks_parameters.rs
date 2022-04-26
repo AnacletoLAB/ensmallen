@@ -120,7 +120,7 @@ impl SingleWalkParameters {
             walk_length,
             weights: WalkWeights::default(),
             max_neighbours: Some(100),
-            normalize_by_degree: false
+            normalize_by_degree: false,
         })
     }
 
@@ -136,6 +136,15 @@ impl SingleWalkParameters {
     /// ```
     pub fn is_first_order_walk(&self) -> bool {
         self.weights.is_first_order_walk() && !self.normalize_by_degree
+    }
+}
+
+impl Default for WalksParameters {
+    /// Create a default WalksParameters object.
+    ///
+    /// By default the object is parametrized for a simple first-order walk.
+    fn default() -> Self {
+        WalksParameters::new(32).unwrap()
     }
 }
 
@@ -207,6 +216,11 @@ impl WalksParameters {
     /// ```
     pub fn get_iterations(&self) -> NodeT {
         self.iterations
+    }
+
+    /// Return the length of the random walk.
+    pub fn get_random_walk_length(&self) -> u64 {
+        self.single_walk_parameters.walk_length
     }
 
     /// Set the maximum neighbours number to consider, making the walk probabilistic.
@@ -283,6 +297,11 @@ impl WalksParameters {
             self.random_state = splitmix64(s as u64) as NodeT;
         }
         self
+    }
+
+    /// Return the random_state used in the walks.
+    pub fn get_random_state(&self) -> NodeT {
+        self.random_state
     }
 
     /// Set the dense_node_mapping.

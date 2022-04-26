@@ -412,7 +412,6 @@ impl Graph {
     ///
     fn cooccurence_matrix(
         &self,
-        walk_length: u64,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>, Py<PyArray1<f64>>)> {
         let gil = pyo3::Python::acquire_gil();
@@ -423,7 +422,7 @@ impl Graph {
             build_walk_parameters_list(&["window_size", "verbose"]).as_slice(),
         ))?;
 
-        let parameters = pe!(self.build_walk_parameters(walk_length, kwargs))?;
+        let parameters = pe!(build_walk_parameters(kwargs))?;
 
         let (number_of_elements, iter) = pe!(self.inner.cooccurence_matrix(
             &parameters,
@@ -512,7 +511,6 @@ impl Graph {
     fn node2vec(
         &self,
         batch_size: NodeT,
-        walk_length: u64,
         window_size: usize,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray1<NodeT>>)> {
@@ -522,7 +520,8 @@ impl Graph {
             kwargs,
             build_walk_parameters_list(&[]).as_slice()
         ))?;
-        let parameters = pe!(self.build_walk_parameters(walk_length, kwargs))?;
+        let parameters = pe!(build_walk_parameters(kwargs))?;
+        let walk_length = parameters.get_random_walk_length();
 
         let iter = pe!(self.inner.node2vec(&parameters, batch_size, window_size))?;
 

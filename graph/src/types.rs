@@ -98,7 +98,7 @@ macro_rules! macro_impl_to_from_usize {
 
 macro_impl_to_from_usize!(u8 u16 u32 u64 usize);
 
-pub(crate) struct ThreadDataRaceAware<T> {
+pub struct ThreadDataRaceAware<T> {
     pub(crate) value: UnsafeCell<T>,
 }
 
@@ -109,5 +109,13 @@ impl<T> ThreadDataRaceAware<T> {
         ThreadDataRaceAware {
             value: std::cell::UnsafeCell::new(value),
         }
+    }
+
+    pub fn get(&self) -> *mut T {
+        self.value.get()
+    }
+
+    pub fn into_inner(self) -> T {
+        self.value.into_inner()
     }
 }

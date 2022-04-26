@@ -24,7 +24,7 @@ def Monarch(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-04-13", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "latest", **kwargs
 ) -> Graph:
     """Return Monarch graph	
 
@@ -52,7 +52,7 @@ def Monarch(
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
         Sys var with cache directory
-    version = "2022-04-13"
+    version = "latest"
         Version to retrieve	
 		The available versions are:
 			- 202012
@@ -63,6 +63,9 @@ def Monarch(
 			- 2022-03-30
 			- 2022-04-11
 			- 2022-04-13
+			- 2022-04-20
+			- 2022-04-25
+			- latest
     """
     return AutomaticallyRetrievedGraph(
         "Monarch", version, "monarchinitiative", directed, preprocess, load_nodes,

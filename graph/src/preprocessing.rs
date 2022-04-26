@@ -153,7 +153,7 @@ impl Graph {
         window_size: usize,
     ) -> Result<impl ParallelIterator<Item = (Vec<NodeT>, NodeT)> + 'a> {
         Ok(word2vec(
-            self.iter_random_walks(quantity, walk_parameters)?,
+            self.par_iter_random_walks(quantity, walk_parameters)?,
             window_size,
         ))
     }

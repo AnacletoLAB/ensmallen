@@ -60,8 +60,6 @@ pub mod utils;
 pub use self::utils::*;
 
 mod bitmaps;
-mod cbow;
-mod skipgram;
 mod centrality;
 mod dense;
 mod distributions;
