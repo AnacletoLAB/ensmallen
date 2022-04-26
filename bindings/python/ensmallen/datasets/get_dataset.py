@@ -76,7 +76,10 @@ def get_available_versions_from_graph_and_repository(name: str, repository: str)
     ValueError,
         If the given repository is not available.
     """
-    return list(compress_json.local_load("{}.json.gz".format(repository))[name].keys())
+    return list(compress_json.local_load(
+        "{}.json.gz".format(repository),
+        use_cache=True
+    )[name].keys())
 
 
 def get_repositories_containing_graph(name: str) -> List[str]:

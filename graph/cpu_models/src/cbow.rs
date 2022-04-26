@@ -15,6 +15,7 @@ pub struct CBOW {
     window_size: usize,
     clipping_value: f32,
     number_of_negative_samples: usize,
+    log_sigmoid: bool,
 }
 
 impl CBOW {
@@ -32,6 +33,7 @@ impl CBOW {
         window_size: Option<usize>,
         clipping_value: Option<f32>,
         number_of_negative_samples: Option<usize>,
+        log_sigmoid: Option<bool>,
     ) -> Result<Self, String> {
         // Handle the values of the default parameters.
         let embedding_size = embedding_size.unwrap_or(100);
@@ -39,6 +41,7 @@ impl CBOW {
         let clipping_value = clipping_value.unwrap_or(6.0);
         let walk_parameters = walk_parameters.unwrap_or_else(|| WalksParameters::default());
         let number_of_negative_samples = number_of_negative_samples.unwrap_or(5);
+        let log_sigmoid = log_sigmoid.unwrap_or(false);
 
         // Validate that the provided parameters are within
         // reasonable bounds.
@@ -60,6 +63,7 @@ impl CBOW {
             walk_parameters,
             clipping_value,
             number_of_negative_samples,
+            log_sigmoid,
         })
     }
 
@@ -725,7 +729,14 @@ impl CBOW {
             }
 
             let exp_dot = dot.exp();
-            let loss = (label - exp_dot / (exp_dot + 1.0).powf(2.0)) * learning_rate;
+            let loss = (label
+                - exp_dot
+                    / if self.log_sigmoid {
+                        exp_dot + 1.0
+                    } else {
+                        (exp_dot + 1.0).powf(2.0)
+                    })
+                * learning_rate;
 
             update_embedding(node_id, total_context_embedding, loss / context_size);
             weighted_vector_sum(
