@@ -19,18 +19,9 @@ pub fn load_kgcovid19() -> Graph {
         .unwrap()
         .set_edge_types_column(Some("edge_type"))
         .unwrap();
-    let nodes_reader = NodeFileReader::new(Some("tests/data/kgcovid19/nodes.tsv".to_owned()))
-        .unwrap()
-        .set_separator(Some('\t'))
-        .unwrap()
-        .set_nodes_column(Some("node_name"))
-        .unwrap()
-        .set_verbose(Some(false))
-        .set_node_types_column(Some("node_type"))
-        .unwrap();
     Graph::from_file_readers(
         Some(edges_reader),
-        Some(nodes_reader),
+        None,
         None,
         None,
         true,
