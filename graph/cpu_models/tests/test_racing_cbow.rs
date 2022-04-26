@@ -2,7 +2,7 @@ extern crate graph;
 
 use cpu_models::*;
 use graph::test_utilities::*;
-use graph::{CSVFileWriter, WalksParameters};
+use graph::{CSVFileWriter, WalksParameters, Graph, EdgeFileReader, NodeFileReader};
 
 #[allow(clippy::redundant_clone)]
 /// This is our default graph we use on tests with node types.
