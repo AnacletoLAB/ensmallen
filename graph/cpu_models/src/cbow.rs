@@ -11,28 +11,32 @@ use vec_rand::{random_f32, splitmix64};
 #[derive(Clone, Debug)]
 pub struct CBOW {
     embedding_size: usize,
-    window_size: usize,
     walk_parameters: WalksParameters,
+    window_size: usize,
+    clipping_value: f32,
     number_of_negative_samples: usize,
 }
 
 impl CBOW {
     /// Return new instance of CBOW model.
-    /// 
+    ///
     /// # Arguments
-    /// embedding_size: Option<usize> - Size of the embedding.
-    /// walk_parameters: Option<WalksParameters> - Parameters to be used within the walks.
-    /// window_size: Option<usize> - Window size defining the contexts.
-    /// number_of_negative_samples: Option<usize> - Number of negative samples to extract for each context.
+    /// `embedding_size`: Option<usize> - Size of the embedding.
+    /// `walk_parameters`: Option<WalksParameters> - Parameters to be used within the walks.
+    /// `window_size`: Option<usize> - Window size defining the contexts.
+    /// `clipping_value`: Option<f32> - Value at which we clip the dot product, mostly for numerical stability issues. By default, `6.0`.
+    /// `number_of_negative_samples`: Option<usize> - Number of negative samples to extract for each context.
     pub fn new(
         embedding_size: Option<usize>,
         walk_parameters: Option<WalksParameters>,
         window_size: Option<usize>,
+        clipping_value: Option<f32>,
         number_of_negative_samples: Option<usize>,
     ) -> Result<Self, String> {
         // Handle the values of the default parameters.
         let embedding_size = embedding_size.unwrap_or(100);
         let window_size = window_size.unwrap_or(10);
+        let clipping_value = clipping_value.unwrap_or(6.0);
         let walk_parameters = walk_parameters.unwrap_or_else(|| WalksParameters::default());
         let number_of_negative_samples = number_of_negative_samples.unwrap_or(5);
 
@@ -54,6 +58,7 @@ impl CBOW {
             embedding_size,
             window_size,
             walk_parameters,
+            clipping_value,
             number_of_negative_samples,
         })
     }
@@ -64,13 +69,13 @@ impl CBOW {
     }
 
     /// Computes in the provided slice of embedding the CBOW node embedding.
-    /// 
+    ///
     /// # Implementative details
     /// This implementation is thread safe, that is, there is no possibility
     /// for memory race in this version. Do note that this make this version a bit
     /// slower and requires more memory than the racing version.
     /// For most use cases, likely you would prefer to use the racing version.
-    /// 
+    ///
     /// # Arguments
     /// `graph`: &Graph - The graph to embed
     /// `embedding`: &mut [f32] - The memory area where to write the embedding.
@@ -285,7 +290,7 @@ impl CBOW {
                                 / context_size
                                 / scale_factor;
 
-                            if dot > 20.0 || dot < -20.0 {
+                            if dot > self.clipping_value || dot < -self.clipping_value {
                                 node_gradient.iter_mut().for_each(|feature_gradient| {
                                     // Note that we are setting this gradient EQUAL to the
                                     // contextual node feature.
@@ -586,13 +591,13 @@ impl CBOW {
     }
 
     /// Computes in the provided slice of embedding the CBOW node embedding.
-    /// 
+    ///
     /// # Implementative details
     /// This implementation is NOT thread safe, that is, different threads may try
     /// to overwrite each others memory. This version is faster than the memory safe
     /// version and requires less memory. In most use cases, you would prefer to use
     /// this version over the memory safe version.
-    /// 
+    ///
     /// # Arguments
     /// `graph`: &Graph - The graph to embed
     /// `embedding`: &mut [f32] - The memory area where to write the embedding.

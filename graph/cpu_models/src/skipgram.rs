@@ -11,6 +11,7 @@ pub struct SkipGram {
     embedding_size: usize,
     window_size: usize,
     walk_parameters: WalksParameters,
+    clipping_value: f32,
     number_of_negative_samples: usize,
 }
 
@@ -18,20 +19,23 @@ impl SkipGram {
     /// Return new instance of SkipGram model.
     ///
     /// # Arguments
-    /// embedding_size: Option<usize> - Size of the embedding.
-    /// walk_parameters: Option<WalksParameters> - Parameters to be used within the walks.
-    /// window_size: Option<usize> - Window size defining the contexts.
-    /// number_of_negative_samples: Option<usize> - Number of negative samples to extract for each context.
+    /// `embedding_size`: Option<usize> - Size of the embedding.
+    /// `walk_parameters`: Option<WalksParameters> - Parameters to be used within the walks.
+    /// `window_size`: Option<usize> - Window size defining the contexts.
+    /// `clipping_value`: Option<f32> - Value at which we clip the dot product, mostly for numerical stability issues. By default, `6.0`, where the loss is already close to zero.
+    /// `number_of_negative_samples`: Option<usize> - Number of negative samples to extract for each context.
     pub fn new(
         embedding_size: Option<usize>,
         walk_parameters: Option<WalksParameters>,
         window_size: Option<usize>,
+        clipping_value: Option<f32>,
         number_of_negative_samples: Option<usize>,
     ) -> Result<Self, String> {
         // Handle the values of the default parameters.
         let embedding_size = embedding_size.unwrap_or(100);
         let window_size = window_size.unwrap_or(10);
         let walk_parameters = walk_parameters.unwrap_or_else(|| WalksParameters::default());
+        let clipping_value = clipping_value.unwrap_or(6.0);
         let number_of_negative_samples = number_of_negative_samples.unwrap_or(5);
 
         // Validate that the provided parameters are within
@@ -52,6 +56,7 @@ impl SkipGram {
             embedding_size,
             window_size,
             walk_parameters,
+            clipping_value,
             number_of_negative_samples,
         })
     }
@@ -187,7 +192,7 @@ impl SkipGram {
                 .sum::<f32>()
                 / scale_factor;
 
-            if dot > 20.0 || dot < -20.0 {
+            if dot > self.clipping_value || dot < -self.clipping_value {
                 return;
             }
 
