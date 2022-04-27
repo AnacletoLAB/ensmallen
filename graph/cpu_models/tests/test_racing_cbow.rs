@@ -44,7 +44,6 @@ pub fn load_ctd() -> Graph {
 #[test]
 fn test_racing_cbow_on_cora_logsigmoid() -> Result<(), String> {
     let mut cora = load_cora();
-    cora = cora.sort_by_decreasing_outbound_node_degree();
     cora.enable(Some(true), Some(true), Some(true), Some(false))
         .unwrap();
     let embedding_size = 128;
@@ -59,6 +58,7 @@ fn test_racing_cbow_on_cora_logsigmoid() -> Result<(), String> {
         None,
         Some(10),
         Some(true),
+        Some(false),
     )
     .unwrap();
     let mut embedding = vec![0.0; embedding_size * cora.get_nodes_number() as usize];
@@ -95,7 +95,6 @@ fn test_racing_cbow_on_cora_logsigmoid() -> Result<(), String> {
 #[test]
 fn test_racing_cbow_on_cora_sigmoid() -> Result<(), String> {
     let mut cora = load_cora();
-    cora = cora.sort_by_decreasing_outbound_node_degree();
     cora.enable(Some(true), Some(true), Some(true), Some(false))
         .unwrap();
     let embedding_size = 128;
@@ -109,6 +108,7 @@ fn test_racing_cbow_on_cora_sigmoid() -> Result<(), String> {
         Some(10),
         None,
         Some(10),
+        Some(false),
         Some(false),
     )
     .unwrap();
@@ -146,7 +146,6 @@ fn test_racing_cbow_on_cora_sigmoid() -> Result<(), String> {
 #[test]
 fn test_racing_cbow_on_ctd_logsigmoid() -> Result<(), String> {
     let mut ctd = load_ctd();
-    ctd = ctd.sort_by_decreasing_outbound_node_degree();
     ctd.enable(Some(true), Some(true), Some(true), Some(false))
         .unwrap();
     let embedding_size = 128;
@@ -161,6 +160,7 @@ fn test_racing_cbow_on_ctd_logsigmoid() -> Result<(), String> {
         None,
         Some(10),
         Some(true),
+        Some(false),
     )
     .unwrap();
     let mut embedding = vec![0.0; embedding_size * ctd.get_nodes_number() as usize];
@@ -197,7 +197,6 @@ fn test_racing_cbow_on_ctd_logsigmoid() -> Result<(), String> {
 #[test]
 fn test_racing_cbow_on_ctd_sigmoid() -> Result<(), String> {
     let mut ctd = load_ctd();
-    ctd = ctd.sort_by_decreasing_outbound_node_degree();
     ctd.enable(Some(true), Some(true), Some(true), Some(false))
         .unwrap();
     let embedding_size = 128;
@@ -211,6 +210,7 @@ fn test_racing_cbow_on_ctd_sigmoid() -> Result<(), String> {
         Some(10),
         None,
         Some(10),
+        Some(false),
         Some(false),
     )
     .unwrap();

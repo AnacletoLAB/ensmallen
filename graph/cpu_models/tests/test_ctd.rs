@@ -1,7 +1,6 @@
 extern crate graph;
 
 use cpu_models::*;
-use graph::test_utilities::*;
 use graph::{CSVFileWriter, EdgeFileReader, Graph, NodeFileReader, WalksParameters};
 
 #[allow(clippy::redundant_clone)]
@@ -93,7 +92,7 @@ fn test_racing_cbow_on_ctd_logsigmoid() -> Result<(), String> {
     Ok(())
 }
 
-//#[test]
+#[test]
 fn test_racing_cbow_on_ctd_sigmoid() -> Result<(), String> {
     let mut ctd = load_ctd();
     ctd.enable(Some(true), Some(true), Some(true), Some(false))

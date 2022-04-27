@@ -28,6 +28,8 @@ impl CBOW {
     /// `window_size`: Option<usize> - Window size defining the contexts.
     /// `clipping_value`: Option<f32> - Value at which we clip the dot product, mostly for numerical stability issues. By default, `6.0`, where the loss is already close to zero.
     /// `number_of_negative_samples`: Option<usize> - Number of negative samples to extract for each context.
+    /// `log_sigmoid: Option<bool> - Whether to use the model using a sigmoid or log sigmoid. By default, log sigmoid.
+    /// `siamese: Option<bool> - Whether to use the model in Siamese mode, using half the weights.
     pub fn new(
         embedding_size: Option<usize>,
         walk_parameters: Option<WalksParameters>,
@@ -43,7 +45,7 @@ impl CBOW {
         let clipping_value = clipping_value.unwrap_or(6.0);
         let walk_parameters = walk_parameters.unwrap_or_else(|| WalksParameters::default());
         let number_of_negative_samples = number_of_negative_samples.unwrap_or(5);
-        let log_sigmoid = log_sigmoid.unwrap_or(false);
+        let log_sigmoid = log_sigmoid.unwrap_or(true);
         let siamese = siamese.unwrap_or(false);
 
         // Validate that the provided parameters are within
@@ -88,7 +90,7 @@ impl CBOW {
     /// `graph`: &Graph - The graph to embed
     /// `embedding`: &mut [f32] - The memory area where to write the embedding.
     /// `epochs`: Option<usize> - The number of epochs to run the model for, by default 10.
-    /// `learning_rate`: Option<f32> - The learning rate to update the gradient, by default 0.005.
+    /// `learning_rate`: Option<f32> - The learning rate to update the gradient, by default 0.01.
     /// `verbose`: Option<bool> - Whether to show the loading bar, by default true.
     pub fn fit_transform(
         &self,
@@ -114,11 +116,7 @@ impl CBOW {
         let cpu_number = rayon::current_num_threads() as NodeT;
         let context_size = (self.window_size * 2) as f32;
         let number_of_random_walks = batch_size * iterations;
-        let learning_rate = learning_rate.unwrap_or(0.025);
-
-        // if epochs == 0 {
-        //     return Err("The number of epochs must be strictly greater than zero.".to_string());
-        // }
+        let learning_rate = learning_rate.unwrap_or(0.01);
 
         if !graph.has_nodes() {
             return Err("The provided graph does not have any node.".to_string());
@@ -147,19 +145,11 @@ impl CBOW {
         // the same exact values as the embedding.
         random_state = splitmix64(random_state);
 
-        // Create and allocate the hidden layer
-        // This matrix has the same size of the embedding layer:
-        // height = number of nodes in the graph
-        // width  = number of features in embedding
-        // let mut hidden = (0..expected_embedding_len)
-        //     .into_par_iter()
-        //     .map(|i| 2.0 * random_f32(splitmix64(random_state + i as u64)) - 1.0)
-        //     .collect::<Vec<_>>();
-
         let mut hidden = if self.siamese {
             Vec::new()
         } else {
-            (0..embedding.len()).into_par_iter()
+            (0..embedding.len())
+                .into_par_iter()
                 .map(|i| 2.0 * random_f32(splitmix64(random_state + i as u64)) - 1.0)
                 .collect::<Vec<_>>()
         };
@@ -310,12 +300,14 @@ impl CBOW {
                                 });
                             } else {
                                 let exp_dot = dot.exp();
-                                let loss =
-                                    (label - exp_dot / if self.log_sigmoid {
-                                        exp_dot + 1.0
-                                    } else {
-                                        (exp_dot + 1.0).powf(2.0)
-                                    }) * learning_rate;
+                                let loss = (label
+                                    - exp_dot
+                                        / if self.log_sigmoid {
+                                            exp_dot + 1.0
+                                        } else {
+                                            (exp_dot + 1.0).powf(2.0)
+                                        })
+                                    * learning_rate;
                                 // We compute the average loss to update the central gradient by the total central embedding.
                                 let mean_loss = (loss / context_size) as f32;
 
@@ -470,7 +462,7 @@ impl CBOW {
 
                 // Create the thread shared version of the embedding layer.
                 let shared_embedding = ThreadDataRaceAware::new(embedding.as_mut());
-        
+
                 let shared_embedding_ref = &shared_embedding;
                 let shared_hidden_ref = if self.siamese {
                     &shared_embedding
@@ -623,7 +615,7 @@ impl CBOW {
     /// `graph`: &Graph - The graph to embed
     /// `embedding`: &mut [f32] - The memory area where to write the embedding.
     /// `epochs`: Option<usize> - The number of epochs to run the model for, by default 10.
-    /// `learning_rate`: Option<f32> - The learning rate to update the gradient, by default 0.005.
+    /// `learning_rate`: Option<f32> - The learning rate to update the gradient, by default 0.01.
     /// `verbose`: Option<bool> - Whether to show the loading bar, by default true.
     pub fn fit_transform_racing(
         &self,
@@ -634,29 +626,18 @@ impl CBOW {
         verbose: Option<bool>,
     ) -> Result<(), String> {
         let epochs = epochs.unwrap_or(10);
-
         let mut walk_parameters = self.walk_parameters.clone();
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
         let random_walk_length = walk_parameters.get_random_walk_length() as usize;
         let verbose = verbose.unwrap_or(true);
         let context_size = (self.window_size * 2) as f32;
-        let mut learning_rate = learning_rate.unwrap_or(
-            if self.log_sigmoid {
-                0.01
-            } else {
-                0.01
-            }
-        );
+        let mut learning_rate = learning_rate.unwrap_or(0.01);
 
         // This is used to scale the dot product to avoid getting NaN due to
         // exp(dot) being inf and the sigmoid becomes Nan
         // we multiply by context size so we have a faster division when computing
         // the dotproduct of the mean contexted mebedding
-        let scale_factor = context_size; //(self.embedding_size as f32).sqrt() * context_size;
-
-        // if epochs == 0 {
-        //     return Err("The number of epochs must be strictly greater than zero.".to_string());
-        // }
+        let scale_factor = (self.embedding_size as f32).sqrt() * context_size;
 
         if !graph.has_nodes() {
             return Err("The provided graph does not have any node.".to_string());
@@ -684,7 +665,8 @@ impl CBOW {
         let mut hidden = if self.siamese {
             Vec::new()
         } else {
-            (0..embedding.len()).into_par_iter()
+            (0..embedding.len())
+                .into_par_iter()
                 .map(|i| 2.0 * random_f32(splitmix64(random_state + i as u64)) - 1.0)
                 .collect::<Vec<_>>()
         };
@@ -778,33 +760,30 @@ impl CBOW {
                                        node_id: NodeT,
                                        label: f32,
                                        learning_rate: f32| {
-            let node_hidden = get_node_hidden(node_id);       
-            let dot = node_hidden.iter()
+            let node_hidden = get_node_hidden(node_id);
+            let dot = node_hidden
+                .iter()
                 .copied()
                 .zip(total_context_embedding.iter().copied())
                 .map(|(node_feature, contextual_feature)| node_feature * contextual_feature)
                 .sum::<f32>()
                 / scale_factor;
 
-            if dot > 20.0 || dot < -20.0 {
+            if dot > self.clipping_value || dot < -self.clipping_value {
                 return 0.0;
             }
 
             let exp_dot = dot.exp();
-            let loss = (
-                label - (
-                    exp_dot / if self.log_sigmoid {
+            let loss = (label
+                - (exp_dot
+                    / if self.log_sigmoid {
                         exp_dot + 1.0
                     } else {
                         (exp_dot + 1.0).powf(2.0)
-                    }
-                )) * learning_rate;
+                    }))
+                * learning_rate;
 
-            weighted_vector_sum(
-                context_embedding_gradient,
-                node_hidden,
-                loss,
-            );
+            weighted_vector_sum(context_embedding_gradient, node_hidden, loss);
             update_hidden(node_id, total_context_embedding, loss / context_size);
 
             loss.abs() / learning_rate
@@ -827,77 +806,74 @@ impl CBOW {
                     (self.window_size..random_walk_length - self.window_size)
                         .map(|central_index| {
                             (
-                                &random_walk[(central_index - self.window_size)..central_index + self.window_size],
+                                &random_walk[(central_index - self.window_size)
+                                    ..central_index + self.window_size],
                                 random_walk[central_index],
                                 central_index,
                             )
                         })
-                        .map(
-                            |(context, central_node_id, central_index)| {
-                                // We compute the total context embedding.
-                                // First, we assign to it the embedding of the first context.
-                                let mut total_context_embedding = vec![0.0; self.embedding_size];
-                                
-                                // Then we sum over it the other values.
-                                for contextual_node_id in context.iter().copied() {
-                                    if contextual_node_id == central_node_id {
-                                        continue;
-                                    }
-                                    get_node_embedding(contextual_node_id)
-                                        .iter()
-                                        .zip(total_context_embedding.iter_mut())
-                                        .for_each(|(feature, total_feature)| {
-                                            *total_feature += *feature;
-                                        });
+                        .map(|(context, central_node_id, central_index)| {
+                            // We compute the total context embedding.
+                            // First, we assign to it the embedding of the first context.
+                            let mut total_context_embedding = vec![0.0; self.embedding_size];
+
+                            // Then we sum over it the other values.
+                            for contextual_node_id in context.iter().copied() {
+                                if contextual_node_id == central_node_id {
+                                    continue;
                                 }
+                                get_node_embedding(contextual_node_id)
+                                    .iter()
+                                    .zip(total_context_embedding.iter_mut())
+                                    .for_each(|(feature, total_feature)| {
+                                        *total_feature += *feature;
+                                    });
+                            }
 
-                                let mut context_gradient = vec![0.0; self.embedding_size];
+                            let mut context_gradient = vec![0.0; self.embedding_size];
 
-                                // We now compute the gradient relative to the positive
-                                let positive_loss = compute_mini_batch_step(
-                                    total_context_embedding.as_slice(),
-                                    context_gradient.as_mut_slice(),
-                                    central_node_id,
-                                    1.0,
-                                    learning_rate,
-                                );
+                            // We now compute the gradient relative to the positive
+                            let positive_loss = compute_mini_batch_step(
+                                total_context_embedding.as_slice(),
+                                context_gradient.as_mut_slice(),
+                                central_node_id,
+                                1.0,
+                                learning_rate,
+                            );
 
-                                // We compute the gradients relative to the negative classes.
-                               let negative_loss = graph
-                                    .iter_random_source_node_ids(
-                                        self.number_of_negative_samples,
-                                        splitmix64(
-                                            random_state
-                                                + central_index as u64
-                                                + walk_number as u64,
-                                        ),
+                            // We compute the gradients relative to the negative classes.
+                            let negative_loss = graph
+                                .iter_random_source_node_ids(
+                                    self.number_of_negative_samples,
+                                    splitmix64(
+                                        random_state + central_index as u64 + walk_number as u64,
+                                    ),
+                                )
+                                .filter(|non_central_node_id| {
+                                    *non_central_node_id != central_node_id
+                                })
+                                .map(|non_central_node_id| {
+                                    compute_mini_batch_step(
+                                        total_context_embedding.as_slice(),
+                                        context_gradient.as_mut_slice(),
+                                        non_central_node_id,
+                                        0.0,
+                                        learning_rate,
                                     )
-                                        .filter(|non_central_node_id| {
-                                            *non_central_node_id != central_node_id
-                                        })
-                                    .map(|non_central_node_id| {
-                                        compute_mini_batch_step(
-                                            total_context_embedding.as_slice(),
-                                            context_gradient.as_mut_slice(),
-                                            non_central_node_id,
-                                            0.0,
-                                            learning_rate,
-                                        )
-                                    }).sum::<f32>();
+                                })
+                                .sum::<f32>();
 
-                                for contextual_node_id in context.iter().copied() {
-                                    if contextual_node_id == central_node_id {
-                                        continue
-                                    }
-                                    update_embedding(
-                                        contextual_node_id,
-                                        &context_gradient,
-                                    );
+                            for contextual_node_id in context.iter().copied() {
+                                if contextual_node_id == central_node_id {
+                                    continue;
                                 }
-                                positive_loss + negative_loss
-                            },
-                        ).sum::<f32>()
-                }).sum::<f32>();
+                                update_embedding(contextual_node_id, &context_gradient);
+                            }
+                            positive_loss + negative_loss
+                        })
+                        .sum::<f32>()
+                })
+                .sum::<f32>();
             epochs_progress_bar.inc(1);
             epochs_progress_bar.set_message(format!("{:.4}", total_loss));
         }
