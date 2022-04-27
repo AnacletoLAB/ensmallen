@@ -1,7 +1,6 @@
 extern crate graph;
 
 use cpu_models::*;
-use graph::test_utilities::*;
 use graph::{CSVFileWriter, EdgeFileReader, Graph, NodeFileReader, WalksParameters};
 
 #[allow(clippy::redundant_clone)]
@@ -42,108 +41,6 @@ pub fn load_ctd() -> Graph {
 }
 
 #[test]
-fn test_racing_cbow_on_cora_logsigmoid() -> Result<(), String> {
-    let mut cora = load_cora();
-    cora.enable(Some(true), Some(true), Some(true), Some(false))
-        .unwrap();
-    let embedding_size = 128;
-    let walks = WalksParameters::new(128)
-        .unwrap()
-        .set_iterations(Some(10))
-        .unwrap();
-    let cbow = CBOW::new(
-        Some(embedding_size),
-        Some(walks),
-        Some(10),
-        None,
-        Some(10),
-        Some(true),
-        Some(false),
-    )
-    .unwrap();
-    let mut embedding = vec![0.0; embedding_size * cora.get_nodes_number() as usize];
-    cbow.fit_transform_racing(&cora, embedding.as_mut_slice(), Some(10), None, None)?;
-
-    let writer = CSVFileWriter::new("cora_racing_cbow_embedding_logsigmoid.tsv")
-        .set_separator(Some('\t'))
-        .unwrap()
-        .set_header(Some(true))
-        .set_verbose(Some(true));
-
-    writer
-        .write_lines(
-            Some(cora.get_nodes_number() as usize),
-            vec!["node_name".to_string()]
-                .into_iter()
-                .chain((0..embedding_size).map(|e| e.to_string()))
-                .collect::<Vec<String>>(),
-            embedding
-                .chunks(embedding_size)
-                .zip(cora.get_node_names().into_iter())
-                .map(|(features, node_name)| {
-                    vec![node_name.to_string()]
-                        .into_iter()
-                        .chain(features.iter().map(|e| e.to_string()))
-                        .collect::<Vec<String>>()
-                }),
-        )
-        .unwrap();
-
-    Ok(())
-}
-
-#[test]
-fn test_racing_cbow_on_cora_sigmoid() -> Result<(), String> {
-    let mut cora = load_cora();
-    cora.enable(Some(true), Some(true), Some(true), Some(false))
-        .unwrap();
-    let embedding_size = 128;
-    let walks = WalksParameters::new(128)
-        .unwrap()
-        .set_iterations(Some(10))
-        .unwrap();
-    let cbow = CBOW::new(
-        Some(embedding_size),
-        Some(walks),
-        Some(10),
-        None,
-        Some(10),
-        Some(false),
-        Some(false),
-    )
-    .unwrap();
-    let mut embedding = vec![0.0; embedding_size * cora.get_nodes_number() as usize];
-    cbow.fit_transform_racing(&cora, embedding.as_mut_slice(), Some(10), None, None)?;
-
-    let writer = CSVFileWriter::new("cora_racing_cbow_embedding_sigmoid.tsv")
-        .set_separator(Some('\t'))
-        .unwrap()
-        .set_header(Some(true))
-        .set_verbose(Some(true));
-
-    writer
-        .write_lines(
-            Some(cora.get_nodes_number() as usize),
-            vec!["node_name".to_string()]
-                .into_iter()
-                .chain((0..embedding_size).map(|e| e.to_string()))
-                .collect::<Vec<String>>(),
-            embedding
-                .chunks(embedding_size)
-                .zip(cora.get_node_names().into_iter())
-                .map(|(features, node_name)| {
-                    vec![node_name.to_string()]
-                        .into_iter()
-                        .chain(features.iter().map(|e| e.to_string()))
-                        .collect::<Vec<String>>()
-                }),
-        )
-        .unwrap();
-
-    Ok(())
-}
-
-#[test]
 fn test_racing_cbow_on_ctd_logsigmoid() -> Result<(), String> {
     let mut ctd = load_ctd();
     ctd.enable(Some(true), Some(true), Some(true), Some(false))
@@ -151,8 +48,9 @@ fn test_racing_cbow_on_ctd_logsigmoid() -> Result<(), String> {
     let embedding_size = 128;
     let walks = WalksParameters::new(128)
         .unwrap()
-        .set_iterations(Some(10))
-        .unwrap();
+        .set_iterations(Some(10)) 
+        .unwrap()
+        .set_normalize_by_degree(Some(true));
     let cbow = CBOW::new(
         Some(embedding_size),
         Some(walks),
@@ -160,7 +58,7 @@ fn test_racing_cbow_on_ctd_logsigmoid() -> Result<(), String> {
         None,
         Some(10),
         Some(true),
-        Some(false),
+        Some(true),
     )
     .unwrap();
     let mut embedding = vec![0.0; embedding_size * ctd.get_nodes_number() as usize];

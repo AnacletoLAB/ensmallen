@@ -5,7 +5,7 @@ use pyo3::types::PyDict;
 #[pymethods]
 impl Graph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, path, *, verbose, separator, header, sources_column_number, sources_column, destinations_column_number, destinations_column, weights_column_number, weights_column, edge_types_column_number, edges_type_column, numeric_node_ids, directed)"]
+    #[text_signature = "($self, path, *, verbose, separator, header, sources_column_number, sources_column, destinations_column_number, destinations_column, weights_column_number, weights_column, edge_types_column_number, edge_type_column, numeric_node_ids, directed)"]
     /// Write to disk the edges (and optionally the metadata) of the graph.
     ///
     /// Parameters
@@ -28,7 +28,7 @@ impl Graph {
     ///     The name of the column where to write out the file.
     /// edge_types_column_number: int = 2
     ///     The column number where to write out the file.
-    /// edges_type_column: str = "label"
+    /// edge_type_column: str = "label"
     ///     The name of the column where to write out the file.
     /// weights_column_number: int = 3
     ///     The column number where to write out the file.
@@ -60,7 +60,7 @@ impl Graph {
                 "weights_column_number",
                 "weights_column",
                 "edge_types_column_number",
-                "edges_type_column",
+                "edge_type_column",
                 "numeric_node_ids",
                 "directed"
             ]
@@ -85,7 +85,7 @@ impl Graph {
             .set_weights_column(extract_value!(kwargs, "weights_column", String))
             .set_edge_types_column_number(extract_value!(kwargs, "edge_types_column_number", usize))
             .set_numeric_node_ids(extract_value!(kwargs, "numeric_node_ids", bool))
-            .set_edge_types_column(extract_value!(kwargs, "edges_type_column", String));
+            .set_edge_types_column(extract_value!(kwargs, "edge_type_column", String));
         pe!(writer.dump_graph(&self.inner))
     }
 }

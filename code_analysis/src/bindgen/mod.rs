@@ -1,5 +1,5 @@
 use super::*;
-use std::collections::HashMap;
+use std::collections::BTreeMap;
 use regex::Regex;
 use lazy_static::lazy_static;
 use std::fs;
@@ -302,9 +302,9 @@ impl PyObjectProtocol for {struct_name} {{
 #[derive(Clone, Debug)]
 struct BindingsModule {
     module_name: String,
-    modules: HashMap<String, BindingsModule>,
+    modules: BTreeMap<String, BindingsModule>,
     funcs: Vec<Function>,
-    structs: HashMap<String, Class>,
+    structs: BTreeMap<String, Class>,
 }
 
 impl BindingsModule {
@@ -315,9 +315,9 @@ impl BindingsModule {
     fn new(name: String) -> Self {
         BindingsModule{
             module_name: name,
-            modules: HashMap::new(),
+            modules: BTreeMap::new(),
             funcs: Vec::new(),
-            structs: HashMap::new(),
+            structs: BTreeMap::new(),
         }
     }
 
@@ -373,6 +373,7 @@ impl GenBinding for BindingsModule {
 
         format!(
 r#"
+
 #[pymodule]
 fn {module_name}(_py: Python, _m:&PyModule) -> PyResult<()> {{
     {registrations}
@@ -422,9 +423,9 @@ impl Default for BindingsModule{
     fn default() -> Self {
         BindingsModule{
             module_name: String::new(),
-            modules: HashMap::new(),
+            modules: BTreeMap::new(),
             funcs: Vec::new(),
-            structs: HashMap::new(),
+            structs: BTreeMap::new(),
         }
     }
 }
@@ -433,7 +434,7 @@ fn group_data(modules: Vec<Module>) -> BindingsModule {
     let mut bindings = BindingsModule::default();
     bindings.module_name = "ensmallen".to_string();
 
-    let mut struct_modules_map = HashMap::new();
+    let mut struct_modules_map = BTreeMap::new();
     
     // collect info about all the structs
     for module in &modules {

@@ -117,9 +117,9 @@ impl NodeFileWriter {
     ///
     pub fn set_node_types_column<S: Into<String>>(
         mut self,
-        nodes_type_column: Option<S>,
+        node_type_column: Option<S>,
     ) -> NodeFileWriter {
-        if let Some(column) = nodes_type_column {
+        if let Some(column) = node_type_column {
             self.node_types_column = Some(column.into());
         }
         self

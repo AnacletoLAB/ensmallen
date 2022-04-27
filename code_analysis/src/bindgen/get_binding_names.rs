@@ -1,7 +1,7 @@
 use super::*;
-use std::collections::HashSet;
+use std::collections::BTreeSet;
 
-pub fn get_binding_names() -> HashSet<String> {
+pub fn get_binding_names() -> BTreeSet<String> {
     let bindings_files: Vec<String> = read_dir("../bindings/python/src")
         .unwrap()
         .map(|path| {
@@ -14,7 +14,7 @@ pub fn get_binding_names() -> HashSet<String> {
         .filter(|path| !skip_file(path))
         .collect();
     let mut bindings_modules = Vec::new();
-    let mut method_names = HashSet::new();
+    let mut method_names = BTreeSet::new();
     for path in bindings_files {
         eprintln!("Getting the name of the bindings in {}", path);
         // read the file

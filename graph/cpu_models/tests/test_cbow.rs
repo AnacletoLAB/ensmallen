@@ -7,7 +7,6 @@ use graph::{CSVFileWriter, WalksParameters};
 #[test]
 fn test_cbow_on_cora() -> Result<(), String> {
     let mut cora = load_cora();
-    cora = cora.sort_by_decreasing_outbound_node_degree();
     cora.enable(Some(true), Some(true), Some(true), Some(false))
         .unwrap();
     let embedding_size = 128;
@@ -15,7 +14,7 @@ fn test_cbow_on_cora() -> Result<(), String> {
         .unwrap()
         .set_iterations(Some(10))
         .unwrap();
-    let cbow = CBOW::new(Some(embedding_size), Some(walks), Some(10), None, Some(10)).unwrap();
+    let cbow = CBOW::new(Some(embedding_size), Some(walks), Some(10), None, Some(10), Some(false), Some(false)).unwrap();
     let mut embedding = vec![0.0; embedding_size * cora.get_nodes_number() as usize];
     cbow.fit_transform(
         &cora,
