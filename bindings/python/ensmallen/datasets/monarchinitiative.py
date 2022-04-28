@@ -64,7 +64,7 @@ def Monarch(
 			- 2022-04-11
 			- 2022-04-13
 			- 2022-04-20
-			- 2022-04-25
+			- 2022-04-28
 			- latest
     """
     return AutomaticallyRetrievedGraph(
