@@ -1,5 +1,5 @@
 use graph::{Graph, NodeT, ThreadDataRaceAware, WalksParameters};
-use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
+use indicatif::{ProgressBar, ProgressStyle};
 use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::IntoParallelRefMutIterator;
@@ -86,7 +86,8 @@ impl SkipGram {
     /// `graph`: &Graph - The graph to embed
     /// `embedding`: &mut [f32] - The memory area where to write the embedding.
     /// `epochs`: Option<usize> - The number of epochs to run the model for, by default 10.
-    /// `learning_rate`: Option<f32> - The learning rate to update the gradient, by default 0.005.
+    /// `learning_rate`: Option<f32> - The learning rate to update the gradient, by default 0.01.
+    /// `learning_rate_decay`: Option<f32> - Factor to reduce the learning rate for at each epoch. By default 0.9.
     /// `verbose`: Option<bool> - Whether to show the loading bar, by default true.
     pub fn fit_transform(
         &self,
@@ -94,6 +95,7 @@ impl SkipGram {
         embedding: &mut [f32],
         epochs: Option<usize>,
         learning_rate: Option<f32>,
+        learning_rate_decay: Option<f32>,
         verbose: Option<bool>,
     ) -> Result<(), String> {
         let epochs = epochs.unwrap_or(10);
@@ -103,7 +105,8 @@ impl SkipGram {
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
         let random_walk_length = walk_parameters.get_random_walk_length() as usize;
         let verbose = verbose.unwrap_or(true);
-        let learning_rate = learning_rate.unwrap_or(0.005);
+        let mut learning_rate = learning_rate.unwrap_or(0.01);
+        let learning_rate_decay = learning_rate_decay.unwrap_or(0.9);
 
         if !graph.has_nodes() {
             return Err("The provided graph does not have any node.".to_string());
@@ -224,7 +227,8 @@ impl SkipGram {
         let compute_mini_batch_step = |total_context_embedding: &[f32],
                                        context_embedding_gradient: &mut [f32],
                                        node_id: NodeT,
-                                       label: f32| {
+                                       label: f32,
+                                       learning_rate: f32| {
             let node_hidden = get_node_hidden(node_id);
             let dot = node_hidden
                 .iter()
@@ -235,35 +239,36 @@ impl SkipGram {
                 / scale_factor;
 
             if dot > self.clipping_value || dot < -self.clipping_value {
-                return;
+                return 0.0;
             }
 
             let exp_dot = dot.exp();
-            let loss = (label
+            let loss = label
                 - exp_dot
                     / if self.log_sigmoid {
                         exp_dot + 1.0
                     } else {
                         (exp_dot + 1.0).powf(2.0)
-                    })
-                * learning_rate;
+                    };
+            let weighted_loss = loss * learning_rate;
 
-            update_hidden(node_id, total_context_embedding, loss);
-            weighted_vector_sum(context_embedding_gradient, node_hidden, loss);
+            update_hidden(node_id, total_context_embedding, weighted_loss);
+            weighted_vector_sum(context_embedding_gradient, node_hidden, weighted_loss);
+            loss.abs()
         };
 
         // We start to loop over the required amount of epochs.
-        for _ in (0..epochs).progress_with(epochs_progress_bar) {
+        for _ in 0..epochs {
             // We update the random state used to generate the random walks
             // and the negative samples.
             random_state = splitmix64(random_state);
             walk_parameters = walk_parameters.set_random_state(Some(random_state as usize));
 
             // We start to compute the new gradients.
-            graph
+            let total_variation = graph
                 .par_iter_complete_walks(&walk_parameters)?
                 .enumerate()
-                .for_each(|(walk_number, random_walk)| {
+                .map(|(walk_number, random_walk)| {
                     (self.window_size..random_walk_length - self.window_size)
                         .map(|central_index| {
                             (
@@ -273,25 +278,26 @@ impl SkipGram {
                                 central_index,
                             )
                         })
-                        .for_each(|(context, central_node_id, central_index)| {
+                        .map(|(context, central_node_id, central_index)| {
                             context
                                 .iter()
                                 .copied()
                                 .filter(|&context_node_id| context_node_id != central_node_id)
-                                .for_each(|context_node_id| {
+                                .map(|context_node_id| {
                                     let mut context_gradient = vec![0.0; self.embedding_size];
                                     let context_node_embedding =
                                         get_node_embedding(context_node_id);
                                     // We now compute the gradient relative to the positive
-                                    compute_mini_batch_step(
+                                    let positive_variation = compute_mini_batch_step(
                                         &context_node_embedding,
                                         context_gradient.as_mut_slice(),
                                         central_node_id,
                                         1.0,
+                                        learning_rate,
                                     );
 
                                     // We compute the gradients relative to the negative classes.
-                                    graph
+                                    let negative_variation = graph
                                         .iter_random_source_node_ids(
                                             self.number_of_negative_samples,
                                             splitmix64(
@@ -304,18 +310,28 @@ impl SkipGram {
                                             non_central_node_id != central_node_id
                                                 && non_central_node_id != context_node_id
                                         })
-                                        .for_each(|non_central_node_id| {
+                                        .map(|non_central_node_id| {
                                             compute_mini_batch_step(
                                                 &context_node_embedding,
                                                 context_gradient.as_mut_slice(),
                                                 non_central_node_id,
                                                 0.0,
-                                            );
-                                        });
+                                                learning_rate,
+                                            )
+                                        })
+                                        .sum::<f32>();
                                     update_embedding(context_node_id, &context_gradient);
-                                });
-                        });
-                });
+                                    negative_variation + positive_variation
+                                })
+                                .sum::<f32>()
+                        })
+                        .sum::<f32>()
+                })
+                .sum::<f32>();
+
+            epochs_progress_bar.inc(1);
+            epochs_progress_bar.set_message(format!(", variation: {:.4}", total_variation));
+            learning_rate *= learning_rate_decay;
         }
         Ok(())
     }

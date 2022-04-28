@@ -53,7 +53,7 @@ fn test_racing_cbow_on_kgcovid19_logsigmoid() -> Result<(), String> {
     )
     .unwrap();
     let mut embedding = vec![0.0; embedding_size * kgcovid19.get_nodes_number() as usize];
-    cbow.fit_transform_racing(&kgcovid19, embedding.as_mut_slice(), Some(10), None, None)?;
+    cbow.fit_transform_racing(&kgcovid19, embedding.as_mut_slice(), Some(10), None, None, None)?;
 
     let writer = CSVFileWriter::new("kgcovid19_racing_cbow_embedding_logsigmoid.tsv")
         .set_separator(Some('\t'))
@@ -105,7 +105,7 @@ fn test_racing_cbow_on_kgcovid19_sigmoid() -> Result<(), String> {
     )
     .unwrap();
     let mut embedding = vec![0.0; embedding_size * kgcovid19.get_nodes_number() as usize];
-    cbow.fit_transform_racing(&kgcovid19, embedding.as_mut_slice(), Some(10), None, None)?;
+    cbow.fit_transform_racing(&kgcovid19, embedding.as_mut_slice(), Some(10), None, None, None)?;
 
     let writer = CSVFileWriter::new("kgcovid19_racing_cbow_embedding_sigmoid.tsv")
         .set_separator(Some('\t'))

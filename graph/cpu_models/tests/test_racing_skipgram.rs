@@ -22,6 +22,7 @@ fn test_racing_cbow_on_cora() -> Result<(), String> {
         Some(10),
         None,
         None,
+        None,
     )?;
 
     let writer = CSVFileWriter::new("cora_racing_skipgram_embedding.tsv")
