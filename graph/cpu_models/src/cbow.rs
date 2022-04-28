@@ -782,19 +782,19 @@ impl CBOW {
             }
 
             let exp_dot = dot.exp();
-            let loss = label
+            let variation = label
                 - exp_dot
                     / if self.log_sigmoid {
                         exp_dot + 1.0
                     } else {
                         (exp_dot + 1.0).powf(2.0)
                     };
-            let weighted_loss = loss * learning_rate;
+            let weighted_variation = variation * learning_rate;
 
-            weighted_vector_sum(context_embedding_gradient, node_hidden, loss);
-            update_hidden(node_id, total_context_embedding, loss / context_size);
+            weighted_vector_sum(context_embedding_gradient, node_hidden, weighted_variation);
+            update_hidden(node_id, total_context_embedding, weighted_variation / context_size);
 
-            weighted_loss.abs()
+            weighted_variation.abs()
         };
 
         // We start to loop over the required amount of epochs.
