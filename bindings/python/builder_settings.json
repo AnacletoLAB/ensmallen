@@ -38,7 +38,7 @@
         "arm64":{
             "default":{
                 "build_dir":"build_arm_default",
-                "rustflags":""
+                "rustflags":"-C target-cpu=apple-m1"
             }
         }
     }
