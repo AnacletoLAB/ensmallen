@@ -23,6 +23,7 @@ fn test_cbow_on_cora() -> Result<(), String> {
         None,
         Some(1024),
         None,
+        None,
     )?;
 
     let writer = CSVFileWriter::new("cora_embedding.tsv")

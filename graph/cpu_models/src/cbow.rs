@@ -91,6 +91,8 @@ impl CBOW {
     /// `embedding`: &mut [f32] - The memory area where to write the embedding.
     /// `epochs`: Option<usize> - The number of epochs to run the model for, by default 10.
     /// `learning_rate`: Option<f32> - The learning rate to update the gradient, by default 0.01.
+    /// `learning_rate_decay`: Option<f32> - Factor to reduce the learning rate for at each epoch. By default 0.9.
+    /// `batch_size`: Option<usize> - Number of nodes per batch. By default, 32.
     /// `verbose`: Option<bool> - Whether to show the loading bar, by default true.
     pub fn fit_transform(
         &self,
@@ -98,6 +100,7 @@ impl CBOW {
         embedding: &mut [f32],
         epochs: Option<usize>,
         learning_rate: Option<f32>,
+        learning_rate_decay: Option<f32>,
         batch_size: Option<usize>,
         verbose: Option<bool>,
     ) -> Result<(), String> {
@@ -116,7 +119,8 @@ impl CBOW {
         let cpu_number = rayon::current_num_threads() as NodeT;
         let context_size = (self.window_size * 2) as f32;
         let number_of_random_walks = batch_size * iterations;
-        let learning_rate = learning_rate.unwrap_or(0.01);
+        let mut learning_rate = learning_rate.unwrap_or(0.01);
+        let learning_rate_decay = learning_rate_decay.unwrap_or(0.9);
 
         if !graph.has_nodes() {
             return Err("The provided graph does not have any node.".to_string());
@@ -598,6 +602,7 @@ impl CBOW {
                             },
                         );
                 });
+                learning_rate *= learning_rate_decay;
             }
         }
         Ok(())
@@ -616,6 +621,7 @@ impl CBOW {
     /// `embedding`: &mut [f32] - The memory area where to write the embedding.
     /// `epochs`: Option<usize> - The number of epochs to run the model for, by default 10.
     /// `learning_rate`: Option<f32> - The learning rate to update the gradient, by default 0.01.
+    /// `learning_rate_decay`: Option<f32> - Factor to reduce the learning rate for at each epoch. By default 0.9.
     /// `verbose`: Option<bool> - Whether to show the loading bar, by default true.
     pub fn fit_transform_racing(
         &self,
@@ -623,6 +629,7 @@ impl CBOW {
         embedding: &mut [f32],
         epochs: Option<usize>,
         learning_rate: Option<f32>,
+        learning_rate_decay: Option<f32>,
         verbose: Option<bool>,
     ) -> Result<(), String> {
         let epochs = epochs.unwrap_or(10);
@@ -632,6 +639,7 @@ impl CBOW {
         let verbose = verbose.unwrap_or(true);
         let context_size = (self.window_size * 2) as f32;
         let mut learning_rate = learning_rate.unwrap_or(0.01);
+        let learning_rate_decay = learning_rate_decay.unwrap_or(0.9);
 
         // This is used to scale the dot product to avoid getting NaN due to
         // exp(dot) being inf and the sigmoid becomes Nan
@@ -774,19 +782,19 @@ impl CBOW {
             }
 
             let exp_dot = dot.exp();
-            let loss = (label
-                - (exp_dot
+            let loss = label
+                - exp_dot
                     / if self.log_sigmoid {
                         exp_dot + 1.0
                     } else {
                         (exp_dot + 1.0).powf(2.0)
-                    }))
-                * learning_rate;
+                    };
+            let weighted_loss = loss * learning_rate;
 
             weighted_vector_sum(context_embedding_gradient, node_hidden, loss);
             update_hidden(node_id, total_context_embedding, loss / context_size);
 
-            loss.abs() / learning_rate
+            weighted_loss.abs()
         };
 
         // We start to loop over the required amount of epochs.
@@ -796,10 +804,8 @@ impl CBOW {
             random_state = splitmix64(random_state);
             walk_parameters = walk_parameters.set_random_state(Some(random_state as usize));
 
-            learning_rate = learning_rate * 0.9;
-
             // We start to compute the new gradients.
-            let total_loss = graph
+            let total_variation = graph
                 .par_iter_complete_walks(&walk_parameters)?
                 .enumerate()
                 .map(|(walk_number, random_walk)| {
@@ -833,7 +839,7 @@ impl CBOW {
                             let mut context_gradient = vec![0.0; self.embedding_size];
 
                             // We now compute the gradient relative to the positive
-                            let positive_loss = compute_mini_batch_step(
+                            let positive_variation = compute_mini_batch_step(
                                 total_context_embedding.as_slice(),
                                 context_gradient.as_mut_slice(),
                                 central_node_id,
@@ -842,7 +848,7 @@ impl CBOW {
                             );
 
                             // We compute the gradients relative to the negative classes.
-                            let negative_loss = graph
+                            let negative_variation = graph
                                 .iter_random_source_node_ids(
                                     self.number_of_negative_samples,
                                     splitmix64(
@@ -869,13 +875,14 @@ impl CBOW {
                                 }
                                 update_embedding(contextual_node_id, &context_gradient);
                             }
-                            positive_loss + negative_loss
+                            positive_variation + negative_variation
                         })
                         .sum::<f32>()
                 })
                 .sum::<f32>();
             epochs_progress_bar.inc(1);
-            epochs_progress_bar.set_message(format!("{:.4}", total_loss));
+            epochs_progress_bar.set_message(format!("variation {:.4}", total_variation));
+            learning_rate *= learning_rate_decay;
         }
         Ok(())
     }

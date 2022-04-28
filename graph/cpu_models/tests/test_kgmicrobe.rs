@@ -54,7 +54,7 @@ fn test_racing_cbow_on_kgmicrobe_logsigmoid() -> Result<(), String> {
     )
     .unwrap();
     let mut embedding = vec![0.0; embedding_size * kgmicrobe.get_nodes_number() as usize];
-    cbow.fit_transform_racing(&kgmicrobe, embedding.as_mut_slice(), Some(10), None, None)?;
+    cbow.fit_transform_racing(&kgmicrobe, embedding.as_mut_slice(), Some(10), None, None, None)?;
 
     let writer = CSVFileWriter::new("kgmicrobe_racing_cbow_embedding_logsigmoid.tsv")
         .set_separator(Some('\t'))
@@ -106,7 +106,7 @@ fn test_racing_cbow_on_kgmicrobe_sigmoid() -> Result<(), String> {
     )
     .unwrap();
     let mut embedding = vec![0.0; embedding_size * kgmicrobe.get_nodes_number() as usize];
-    cbow.fit_transform_racing(&kgmicrobe, embedding.as_mut_slice(), Some(10), None, None)?;
+    cbow.fit_transform_racing(&kgmicrobe, embedding.as_mut_slice(), Some(10), None, None, None)?;
 
     let writer = CSVFileWriter::new("kgmicrobe_racing_cbow_embedding_sigmoid.tsv")
         .set_separator(Some('\t'))

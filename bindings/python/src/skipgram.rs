@@ -134,6 +134,8 @@ impl SkipGram {
     ///     walk starting from every node in the graph.
     /// learning_rate: Optional[float] = 0.01
     ///     The learning rate to update the gradient.
+    /// learning_rate_decay: Optional[float] = 0.9
+    ///     Factor to reduce the learning rate for at each epoch. By default 0.9.
     /// verbose: Optional[bool] = True
     ///     Whether to show the loading bar.
     fn fit_transform(
@@ -148,7 +150,7 @@ impl SkipGram {
 
         pe!(validate_kwargs(
             kwargs,
-            &["epochs", "learning_rate", "verbose"]
+            &["epochs", "learning_rate", "learning_rate_decay", "verbose"]
         ))?;
 
         let rows_number = graph.inner.get_nodes_number() as usize;
@@ -164,6 +166,7 @@ impl SkipGram {
             embedding_slice,
             extract_value_rust_result!(kwargs, "epochs", usize),
             extract_value_rust_result!(kwargs, "learning_rate", f32),
+            extract_value_rust_result!(kwargs, "learning_rate_decay", f32),
             extract_value_rust_result!(kwargs, "verbose", bool),
         ))?;
 

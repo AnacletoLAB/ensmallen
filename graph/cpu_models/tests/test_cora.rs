@@ -24,7 +24,7 @@ fn inernal_run_test(graph: &Graph, use_siamese: bool, log_sigmoid: bool) -> Resu
     )
     .unwrap();
     let mut embedding = vec![0.0; EMBEDDING_SIZE * graph.get_nodes_number() as usize];
-    cbow.fit_transform_racing(&graph, embedding.as_mut_slice(), Some(EPOCHS), None, None)?;
+    cbow.fit_transform_racing(&graph, embedding.as_mut_slice(), Some(EPOCHS), None, None, None)?;
 
     let result_path = format!(
         "{}_racing_cbow_embedding_{}_{}.tsv",
@@ -100,7 +100,7 @@ fn inernal_run_test_thread_safe(graph: &Graph, use_siamese: bool, log_sigmoid: b
     )
     .unwrap();
     let mut embedding = vec![0.0; EMBEDDING_SIZE * graph.get_nodes_number() as usize];
-    cbow.fit_transform(&graph, embedding.as_mut_slice(), Some(EPOCHS), None, Some(64), None)?;
+    cbow.fit_transform(&graph, embedding.as_mut_slice(), Some(EPOCHS), None, Some(64), None, None)?;
 
     let result_path = format!(
         "{}_thread_safe_cbow_embedding_{}_{}.tsv",
