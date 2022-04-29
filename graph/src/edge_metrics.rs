@@ -227,17 +227,23 @@ impl Graph {
         source_node_id: NodeT,
         destination_node_id: NodeT,
     ) -> f64 {
-        self.iter_unchecked_neighbour_node_ids_intersection_from_source_node_ids(
-            source_node_id,
-            destination_node_id,
-        )
-        .count() as f64
-            / self
-                .iter_unchecked_neighbour_node_ids_union_from_source_node_ids(
-                    source_node_id,
-                    destination_node_id,
-                )
-                .count() as f64
+        let union = self
+            .iter_unchecked_neighbour_node_ids_union_from_source_node_ids(
+                source_node_id,
+                destination_node_id,
+            )
+            .count() as f64;
+        let intersection = self
+            .iter_unchecked_neighbour_node_ids_intersection_from_source_node_ids(
+                source_node_id,
+                destination_node_id,
+            )
+            .count() as f64;
+        if union.is_zero() {
+            0.0
+        } else {
+            intersection / union
+        }
     }
 
     /// Returns the Jaccard index for the two given nodes from the given node IDs.
