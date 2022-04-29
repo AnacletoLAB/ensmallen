@@ -349,6 +349,12 @@ impl Graph {
             .any(|ontology| ontology.is_some())
     }
 
+    /// Return whether at least a node has an unknown ontology.
+    pub fn has_unknown_node_ontologies(&self) -> bool {
+        self.par_iter_node_ontologies()
+            .any(|ontology| ontology.is_none())
+    }
+
     #[cache_property(nodes_sorted_by_decreasing_outbound_node_degree)]
     /// Returns whether the node IDs are sorted by decreasing outbound node degree.
     ///

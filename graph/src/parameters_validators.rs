@@ -271,6 +271,17 @@ impl Graph {
         Ok(self.node_types.as_ref().as_ref().unwrap())
     }
 
+    /// Raises an error if the graph's nodes do not have detectable ontologies.
+    ///
+    /// # Raises
+    /// * If the graph does not contain nodes with detectable ontologies.
+    pub fn must_have_node_ontologies(&self) -> Result<()> {
+        if !self.has_node_ontologies() {
+            return Err("The current graph's nodes do not have detectable ontologies.".to_string());
+        }
+        Ok(())
+    }
+
     #[no_binding]
     /// Raises an error if the graph does not have edge types.
     ///
