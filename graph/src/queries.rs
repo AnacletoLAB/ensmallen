@@ -1846,4 +1846,78 @@ impl Graph {
         });
         Ok(counts)
     }
+
+
+    /// Returns vector containing edge node IDs with given edge type.
+    ///
+    /// # Arguments
+    /// * `edge_type_id`: Option<EdgeTypeT> - Edge type ID to extract.
+    /// * `directed`: bool - Whether to iterate the edge list as directed or undirected.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type ID does not exist in the graph.
+    pub fn get_edge_node_ids_from_edge_type_id(
+        &self,
+        edge_type_id: Option<EdgeTypeT>,
+        directed: bool,
+    ) -> Result<Vec<(NodeT, NodeT)>> {
+        self.iter_edge_node_ids_from_edge_type_id(edge_type_id, directed).map(|iter| {
+            iter.collect::<Vec<_>>()
+        })
+    }
+
+    /// Returns vector containing directed edge node IDs with given edge type.
+    ///
+    /// # Arguments
+    /// * `edge_type_id`: Option<EdgeTypeT> - Edge type ID to extract.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type ID does not exist in the graph.
+    pub fn get_directed_edge_node_ids_from_edge_type_id(
+        &self,
+        edge_type_id: Option<EdgeTypeT>,
+    ) -> Result<Vec<(NodeT, NodeT)>> {
+        self.par_iter_directed_edge_node_ids_from_edge_type_id(edge_type_id).map(|iter| {
+            iter.collect::<Vec<_>>()
+        })
+    }
+
+    /// Returns vector containing edge node IDs with given edge type name.
+    ///
+    /// # Arguments
+    /// * `edge_type_name`: Option<&str> - Edge type name to extract.
+    /// * `directed`: bool - Whether to iterate the edge list as directed or undirected.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type name does not exist in the graph.
+    pub fn get_edge_node_ids_from_edge_type_name(
+        &self,
+        edge_type_name: Option<&str>,
+        directed: bool,
+    ) -> Result<Vec<(NodeT, NodeT)>> {
+        self.iter_edge_node_ids_from_edge_type_name(edge_type_name, directed).map(|iter| {
+            iter.collect::<Vec<_>>()
+        })
+    }
+
+    /// Returns vector containing directed edge node IDs with given edge type name.
+    ///
+    /// # Arguments
+    /// * `edge_type_names`: Option<EdgeTypeT> - Edge type names to extract.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type names does not exist in the graph.
+    pub fn get_directed_edge_node_ids_from_edge_type_name(
+        &self,
+        edge_type_name: Option<&str>,
+    ) -> Result<Vec<(NodeT, NodeT)>> {
+        self.par_iter_directed_edge_node_ids_from_edge_type_name(edge_type_name).map(|iter| {
+            iter.collect::<Vec<_>>()
+        })
+    }
+
 }

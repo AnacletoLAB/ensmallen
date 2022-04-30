@@ -289,10 +289,10 @@ impl Graph {
                     return 0;
                 }
                 let seed: u64 = 0xDEADBEEFC0FEBABE_u64.wrapping_mul(number_of_edges as u64);
-                self.iter_edge_node_ids_and_edge_type_id_from_edge_type_id(Some(edge_type_id), true)
+                self.iter_edge_node_ids_from_edge_type_id(Some(edge_type_id), true)
                     .unwrap()
                     .take(50)
-                    .map(|(_, src, dst, _)| {
+                    .map(|(src, dst)| {
                         (src as u64 ^ dst as u64).wrapping_add(0x0A2126967AE81C95)
                     })
                     .fold(seed, |a: u64, b: u64| {

@@ -394,7 +394,7 @@ impl Graph {
         Ok(min_edge_id..max_edge_id)
     }
 
-    /// Returns iterator over edge IDs and their properties with given edge type.
+    /// Returns iterator over edge node IDs with given edge type.
     ///
     /// # Arguments
     /// * `edge_type_id`: Option<EdgeTypeT> - Edge type ID to extract.
@@ -403,15 +403,148 @@ impl Graph {
     /// # Raises
     /// * If there are no edge types in the graph.
     /// * If the given edge type ID does not exist in the graph.
-    pub fn iter_edge_node_ids_and_edge_type_id_from_edge_type_id(
+    pub fn iter_edge_node_ids_from_edge_type_id(
         &self,
         edge_type_id: Option<EdgeTypeT>,
         directed: bool,
-    ) -> Result<impl Iterator<Item = (EdgeT, NodeT, NodeT, Option<EdgeTypeT>)> + '_> {
+    ) -> Result<impl Iterator<Item = (NodeT, NodeT)> + '_> {
         self.validate_edge_type_id(edge_type_id)
             .map(|edge_type_id| {
                 self.iter_edge_node_ids_and_edge_type_id(directed)
-                    .filter(move |(_, _, _, this_edge_type_id)| *this_edge_type_id == edge_type_id)
+                    .filter_map(move |(_, src, dst, this_edge_type_id)| {
+                        if this_edge_type_id == edge_type_id {
+                            Some((src, dst))
+                        } else {
+                            None
+                        }
+                    })
+            })
+    }
+
+    /// Returns iterator over directed edge node IDs with given edge type.
+    ///
+    /// # Arguments
+    /// * `edge_type_id`: Option<EdgeTypeT> - Edge type ID to extract.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type ID does not exist in the graph.
+    pub fn iter_directed_edge_node_ids_from_edge_type_id(
+        &self,
+        edge_type_id: Option<EdgeTypeT>,
+    ) -> Result<impl Iterator<Item = (NodeT, NodeT)> + '_> {
+        self.validate_edge_type_id(edge_type_id)
+            .map(|edge_type_id| {
+                self.iter_directed_edge_node_ids_and_edge_type_id()
+                    .filter_map(move |(_, src, dst, this_edge_type_id)| {
+                        if this_edge_type_id == edge_type_id {
+                            Some((src, dst))
+                        } else {
+                            None
+                        }
+                    })
+            })
+    }
+
+    /// Returns parallel iterator over directed edge node IDs with given edge type.
+    ///
+    /// # Arguments
+    /// * `edge_type_id`: Option<EdgeTypeT> - Edge type ID to extract.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type ID does not exist in the graph.
+    pub fn par_iter_directed_edge_node_ids_from_edge_type_id(
+        &self,
+        edge_type_id: Option<EdgeTypeT>,
+    ) -> Result<impl ParallelIterator<Item = (NodeT, NodeT)> + '_> {
+        self.validate_edge_type_id(edge_type_id)
+            .map(|edge_type_id| {
+                self.par_iter_directed_edge_node_ids_and_edge_type_id()
+                    .filter_map(move |(_, src, dst, this_edge_type_id)| {
+                        if this_edge_type_id == edge_type_id {
+                            Some((src, dst))
+                        } else {
+                            None
+                        }
+                    })
+            })
+    }
+
+    /// Returns iterator over edge node IDs with given edge type name.
+    ///
+    /// # Arguments
+    /// * `edge_type_name`: Option<&str> - Edge type name to extract.
+    /// * `directed`: bool - Whether to iterate the edge list as directed or undirected.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type name does not exist in the graph.
+    pub fn iter_edge_node_ids_from_edge_type_name(
+        &self,
+        edge_type_name: Option<&str>,
+        directed: bool,
+    ) -> Result<impl Iterator<Item = (NodeT, NodeT)> + '_> {
+        self.get_edge_type_id_from_edge_type_name(edge_type_name)
+            .map(|edge_type_id| {
+                self.iter_edge_node_ids_and_edge_type_id(directed)
+                    .filter_map(move |(_, src, dst, this_edge_type_id)| {
+                        if this_edge_type_id == edge_type_id {
+                            Some((src, dst))
+                        } else {
+                            None
+                        }
+                    })
+            })
+    }
+
+    /// Returns iterator over directed edge node IDs with given edge type name.
+    ///
+    /// # Arguments
+    /// * `edge_type_name`: Option<EdgeTypeT> - Edge type name to extract.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type name does not exist in the graph.
+    pub fn iter_directed_edge_node_ids_from_edge_type_name(
+        &self,
+        edge_type_name: Option<&str>,
+    ) -> Result<impl Iterator<Item = (NodeT, NodeT)> + '_> {
+        self.get_edge_type_id_from_edge_type_name(edge_type_name)
+            .map(|edge_type_id| {
+                self.iter_directed_edge_node_ids_and_edge_type_id()
+                    .filter_map(move |(_, src, dst, this_edge_type_id)| {
+                        if this_edge_type_id == edge_type_id {
+                            Some((src, dst))
+                        } else {
+                            None
+                        }
+                    })
+            })
+    }
+
+    /// Returns parallel iterator over directed edge node IDs with given edge type name.
+    ///
+    /// # Arguments
+    /// * `edge_type_names`: Option<EdgeTypeT> - Edge type names to extract.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type names does not exist in the graph.
+    pub fn par_iter_directed_edge_node_ids_from_edge_type_name(
+        &self,
+        edge_type_name: Option<&str>,
+    ) -> Result<impl ParallelIterator<Item = (NodeT, NodeT)> + '_> {
+        self.get_edge_type_id_from_edge_type_name(edge_type_name)
+            .map(|edge_type_id| {
+                self.par_iter_directed_edge_node_ids_and_edge_type_id()
+                    .filter_map(move |(_, src, dst, this_edge_type_id)| {
+                        if this_edge_type_id == edge_type_id {
+                            Some((src, dst))
+                        } else {
+                            None
+                        }
+                    })
             })
     }
 
