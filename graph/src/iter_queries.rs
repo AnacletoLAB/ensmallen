@@ -548,6 +548,52 @@ impl Graph {
             })
     }
 
+    /// Returns parallel iterator over directed edge node names with given edge type id.
+    ///
+    /// # Arguments
+    /// * `edge_type_id`: Option<EdgeTypeT> - Edge type id to extract.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type ids does not exist in the graph.
+    pub fn par_iter_directed_edge_node_names_from_edge_type_id(
+        &self,
+        edge_type_id: Option<EdgeTypeT>,
+    ) -> Result<impl ParallelIterator<Item = (String, String)> + '_> {
+        self.par_iter_directed_edge_node_ids_from_edge_type_id(edge_type_id)
+            .map(|iter| {
+                iter.map(move |(src, dst)| unsafe {
+                    (
+                        self.get_unchecked_node_name_from_node_id(src),
+                        self.get_unchecked_node_name_from_node_id(dst),
+                    )
+                })
+            })
+    }
+
+    /// Returns parallel iterator over directed edge node names with given edge type name.
+    ///
+    /// # Arguments
+    /// * `edge_type_name`: Option<&str> - Edge type name to extract.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type names does not exist in the graph.
+    pub fn par_iter_directed_edge_node_names_from_edge_type_name(
+        &self,
+        edge_type_name: Option<&str>,
+    ) -> Result<impl ParallelIterator<Item = (String, String)> + '_> {
+        self.par_iter_directed_edge_node_ids_from_edge_type_name(edge_type_name)
+            .map(|iter| {
+                iter.map(move |(src, dst)| unsafe {
+                    (
+                        self.get_unchecked_node_name_from_node_id(src),
+                        self.get_unchecked_node_name_from_node_id(dst),
+                    )
+                })
+            })
+    }
+
     /// Returns iterator over node IDs and their properties with given node type.
     ///
     /// # Arguments
@@ -612,7 +658,8 @@ impl Graph {
     ) -> Result<impl ParallelIterator<Item = EdgeT> + '_> {
         self.validate_edge_type_id(edge_type_id)
             .map(|edge_type_id| {
-                self.par_iter_directed_edge_type_ids().unwrap()
+                self.par_iter_directed_edge_type_ids()
+                    .unwrap()
                     .enumerate()
                     .filter_map(move |(edge_id, this_edge_type_id)| {
                         if this_edge_type_id == edge_type_id {

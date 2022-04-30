@@ -1881,6 +1881,38 @@ impl Graph {
             .map(|iter| iter.collect::<Vec<_>>())
     }
 
+    /// Returns vector containing directed edge node names with given edge type.
+    ///
+    /// # Arguments
+    /// * `edge_type_id`: Option<EdgeTypeT> - Edge type ID to extract.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type ID does not exist in the graph.
+    pub fn get_directed_edge_node_names_from_edge_type_id(
+        &self,
+        edge_type_id: Option<EdgeTypeT>,
+    ) -> Result<Vec<(String, String)>> {
+        self.par_iter_directed_edge_node_names_from_edge_type_id(edge_type_id)
+            .map(|iter| iter.collect::<Vec<_>>())
+    }
+
+    /// Returns vector containing directed edge node names with given edge type name.
+    ///
+    /// # Arguments
+    /// * `edge_type_name`: Option<EdgeTypeT> - Edge type name to extract.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type name does not exist in the graph.
+    pub fn get_directed_edge_node_names_from_edge_type_name(
+        &self,
+        edge_type_name: Option<&str>,
+    ) -> Result<Vec<(String, String)>> {
+        self.par_iter_directed_edge_node_names_from_edge_type_name(edge_type_name)
+            .map(|iter| iter.collect::<Vec<_>>())
+    }
+
     /// Returns vector containing directed edge IDs with given edge type name.
     ///
     /// # Arguments
