@@ -1508,7 +1508,7 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: Option<bool>) -> Result<()
 pub fn test_edge_holdouts(graph: &Graph, verbose: Option<bool>) -> Result<()> {
     if !graph.has_edge_types() {
         assert!(graph
-            .connected_holdout(0.8, None, Some(vec![None]), Some(false), None)
+            .connected_holdout(0.8, None, Some(vec![None]), Some(false), None, None, None)
             .is_err());
     }
     for include_all_edge_types in &[false, true] {
@@ -1521,8 +1521,15 @@ pub fn test_edge_holdouts(graph: &Graph, verbose: Option<bool>) -> Result<()> {
             verbose,
         )?;
         default_holdout_test_suite(graph, &train, &test)?;
-        let (train, test) =
-            graph.connected_holdout(0.8, None, None, Some(*include_all_edge_types), verbose)?;
+        let (train, test) = graph.connected_holdout(
+            0.8,
+            None,
+            None,
+            Some(*include_all_edge_types),
+            None,
+            None,
+            verbose,
+        )?;
         assert_eq!(graph.get_nodes_number(), train.get_nodes_number());
         assert_eq!(graph.get_nodes_number(), test.get_nodes_number());
 
@@ -1791,6 +1798,8 @@ pub fn test_negative_edges_generation(graph: &mut Graph, verbose: Option<bool>) 
             None,
             None,
             Some(*only_from_same_component),
+            None,
+            None,
             None,
             verbose,
         )?;
