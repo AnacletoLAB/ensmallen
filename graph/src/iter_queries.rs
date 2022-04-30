@@ -526,7 +526,7 @@ impl Graph {
     /// Returns parallel iterator over directed edge node IDs with given edge type name.
     ///
     /// # Arguments
-    /// * `edge_type_names`: Option<EdgeTypeT> - Edge type names to extract.
+    /// * `edge_type_name`: Option<EdgeTypeT> - Edge type names to extract.
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
@@ -596,6 +596,49 @@ impl Graph {
                     },
                 )
             })
+    }
+
+    /// Returns parallel iterator over directed edge IDs with given edge type.
+    ///
+    /// # Arguments
+    /// * `edge_type_id`: Option<EdgeTypeT> - Edge type ID to extract.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type ID does not exist in the graph.
+    pub fn par_iter_directed_edge_ids_from_edge_type_id(
+        &self,
+        edge_type_id: Option<EdgeTypeT>,
+    ) -> Result<impl ParallelIterator<Item = EdgeT> + '_> {
+        self.validate_edge_type_id(edge_type_id)
+            .map(|edge_type_id| {
+                self.par_iter_directed_edge_type_ids().unwrap()
+                    .enumerate()
+                    .filter_map(move |(edge_id, this_edge_type_id)| {
+                        if this_edge_type_id == edge_type_id {
+                            Some(edge_id as EdgeT)
+                        } else {
+                            None
+                        }
+                    })
+            })
+    }
+
+    /// Returns parallel iterator over directed edge IDs with given edge type name.
+    ///
+    /// # Arguments
+    /// * `edge_type_name`: Option<EdgeTypeT> - Edge type names to extract.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type names does not exist in the graph.
+    pub fn par_iter_directed_edge_ids_from_edge_type_name(
+        &self,
+        edge_type_name: Option<&str>,
+    ) -> Result<impl ParallelIterator<Item = EdgeT> + '_> {
+        self.par_iter_directed_edge_ids_from_edge_type_id(
+            self.get_edge_type_id_from_edge_type_name(edge_type_name)?,
+        )
     }
 
     /// Returns iterator over edge node names and their properties with given edge type.
