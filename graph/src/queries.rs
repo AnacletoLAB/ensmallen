@@ -2069,7 +2069,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `curie_prefix`: &str - Prefix of the source node names.
-    pub fn get_number_of_nodes_from_node_curie_prefix(&self, curie_prefix: &str) -> Vec<NodeT> {
+    pub fn get_number_of_nodes_from_node_curie_prefix(&self, curie_prefix: &str) -> NodeT {
         self.par_iter_node_ids_from_node_curie_prefix(curie_prefix)
             .count() as NodeT
     }
