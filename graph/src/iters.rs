@@ -471,6 +471,14 @@ impl Graph {
             .unwrap())
     }
 
+    /// Return iterator on the directed edges type IDs of the graph.
+    pub fn par_iter_directed_edge_type_ids(
+        &self,
+    ) -> Result<impl IndexedParallelIterator<Item = Option<EdgeTypeT>> + '_> {
+        self.must_have_edge_types()
+            .map(|edge_types_vocabulary| edge_types_vocabulary.ids.par_iter().copied())
+    }
+
     /// Return parallel iterator on the (non unique) source nodes of the graph.
     ///
     /// # Arguments

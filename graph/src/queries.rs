@@ -1846,4 +1846,231 @@ impl Graph {
         });
         Ok(counts)
     }
+
+    /// Returns vector containing edge node IDs with given edge type.
+    ///
+    /// # Arguments
+    /// * `edge_type_id`: Option<EdgeTypeT> - Edge type ID to extract.
+    /// * `directed`: bool - Whether to iterate the edge list as directed or undirected.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type ID does not exist in the graph.
+    pub fn get_edge_node_ids_from_edge_type_id(
+        &self,
+        edge_type_id: Option<EdgeTypeT>,
+        directed: bool,
+    ) -> Result<Vec<(NodeT, NodeT)>> {
+        self.iter_edge_node_ids_from_edge_type_id(edge_type_id, directed)
+            .map(|iter| iter.collect::<Vec<_>>())
+    }
+
+    /// Returns vector containing directed edge node IDs with given edge type.
+    ///
+    /// # Arguments
+    /// * `edge_type_id`: Option<EdgeTypeT> - Edge type ID to extract.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type ID does not exist in the graph.
+    pub fn get_directed_edge_node_ids_from_edge_type_id(
+        &self,
+        edge_type_id: Option<EdgeTypeT>,
+    ) -> Result<Vec<(NodeT, NodeT)>> {
+        self.par_iter_directed_edge_node_ids_from_edge_type_id(edge_type_id)
+            .map(|iter| iter.collect::<Vec<_>>())
+    }
+
+    /// Returns vector containing directed edge node names with given edge type.
+    ///
+    /// # Arguments
+    /// * `edge_type_id`: Option<EdgeTypeT> - Edge type ID to extract.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type ID does not exist in the graph.
+    pub fn get_directed_edge_node_names_from_edge_type_id(
+        &self,
+        edge_type_id: Option<EdgeTypeT>,
+    ) -> Result<Vec<(String, String)>> {
+        self.par_iter_directed_edge_node_names_from_edge_type_id(edge_type_id)
+            .map(|iter| iter.collect::<Vec<_>>())
+    }
+
+    /// Returns vector containing directed edge node names with given edge type name.
+    ///
+    /// # Arguments
+    /// * `edge_type_name`: Option<EdgeTypeT> - Edge type name to extract.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type name does not exist in the graph.
+    pub fn get_directed_edge_node_names_from_edge_type_name(
+        &self,
+        edge_type_name: Option<&str>,
+    ) -> Result<Vec<(String, String)>> {
+        self.par_iter_directed_edge_node_names_from_edge_type_name(edge_type_name)
+            .map(|iter| iter.collect::<Vec<_>>())
+    }
+
+    /// Returns vector containing directed edge IDs with given edge type name.
+    ///
+    /// # Arguments
+    /// * `edge_type_id`: Option<EdgeTypeT> - Edge type id to extract.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type id does not exist in the graph.
+    pub fn get_directed_edge_ids_from_edge_type_id(
+        &self,
+        edge_type_id: Option<EdgeTypeT>,
+    ) -> Result<Vec<EdgeT>> {
+        self.par_iter_directed_edge_ids_from_edge_type_id(edge_type_id)
+            .map(|iter| iter.collect::<Vec<_>>())
+    }
+
+    /// Returns vector containing edge node IDs with given edge type name.
+    ///
+    /// # Arguments
+    /// * `edge_type_name`: Option<&str> - Edge type name to extract.
+    /// * `directed`: bool - Whether to iterate the edge list as directed or undirected.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type name does not exist in the graph.
+    pub fn get_edge_node_ids_from_edge_type_name(
+        &self,
+        edge_type_name: Option<&str>,
+        directed: bool,
+    ) -> Result<Vec<(NodeT, NodeT)>> {
+        self.iter_edge_node_ids_from_edge_type_name(edge_type_name, directed)
+            .map(|iter| iter.collect::<Vec<_>>())
+    }
+
+    /// Returns vector containing directed edge node IDs with given edge type name.
+    ///
+    /// # Arguments
+    /// * `edge_type_names`: Option<EdgeTypeT> - Edge type names to extract.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type names does not exist in the graph.
+    pub fn get_directed_edge_node_ids_from_edge_type_name(
+        &self,
+        edge_type_name: Option<&str>,
+    ) -> Result<Vec<(NodeT, NodeT)>> {
+        self.par_iter_directed_edge_node_ids_from_edge_type_name(edge_type_name)
+            .map(|iter| iter.collect::<Vec<_>>())
+    }
+
+    /// Returns vector containing directed edge IDs with given edge type name.
+    ///
+    /// # Arguments
+    /// * `edge_type_names`: Option<EdgeTypeT> - Edge type names to extract.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type names does not exist in the graph.
+    pub fn get_directed_edge_ids_from_edge_type_name(
+        &self,
+        edge_type_name: Option<&str>,
+    ) -> Result<Vec<EdgeT>> {
+        self.par_iter_directed_edge_ids_from_edge_type_name(edge_type_name)
+            .map(|iter| iter.collect::<Vec<_>>())
+    }
+
+    /// Returns vector of directed edge node names with given node name prefixes
+    ///
+    /// # Arguments
+    /// * `src_node_name_prefix`: Option<&str> - Prefix of the source node names.
+    /// * `dst_node_name_prefix`: Option<&str> - Prefix of the source node names.
+    pub fn get_directed_edge_node_names_from_node_curie_prefixes(
+        &self,
+        src_node_name_prefix: Option<&str>,
+        dst_node_name_prefix: Option<&str>,
+    ) -> Vec<(String, String)> {
+        self.par_iter_directed_edge_node_names_from_node_curie_prefixes(
+            src_node_name_prefix,
+            dst_node_name_prefix,
+        )
+        .collect::<Vec<_>>()
+    }
+
+    /// Returns vector of directed edge node IDs with given node name prefixes
+    ///
+    /// # Arguments
+    /// * `src_node_name_prefix`: Option<&str> - Prefix of the source node names.
+    /// * `dst_node_name_prefix`: Option<&str> - Prefix of the source node names.
+    pub fn get_directed_edge_node_ids_from_node_curie_prefixes(
+        &self,
+        src_node_name_prefix: Option<&str>,
+        dst_node_name_prefix: Option<&str>,
+    ) -> Vec<(NodeT, NodeT)> {
+        self.par_iter_directed_edge_node_ids_from_node_curie_prefixes(
+            src_node_name_prefix,
+            dst_node_name_prefix,
+        )
+        .collect::<Vec<_>>()
+    }
+
+    /// Returns vector of directed edge IDs with given node name prefixes.
+    ///
+    /// # Arguments
+    /// * `src_node_name_prefix`: Option<&str> - Prefix of the source node names.
+    /// * `dst_node_name_prefix`: Option<&str> - Prefix of the source node names.
+    pub fn get_directed_edge_ids_from_node_curie_prefixes(
+        &self,
+        src_node_name_prefix: Option<&str>,
+        dst_node_name_prefix: Option<&str>,
+    ) -> Vec<EdgeT> {
+        self.par_iter_directed_edge_ids_from_node_curie_prefixes(
+            src_node_name_prefix,
+            dst_node_name_prefix,
+        )
+        .collect::<Vec<_>>()
+    }
+
+    /// Returns number of directed edge IDs with given node name prefixes.
+    ///
+    /// # Arguments
+    /// * `src_node_name_prefix`: Option<&str> - Prefix of the source node names.
+    /// * `dst_node_name_prefix`: Option<&str> - Prefix of the source node names.
+    pub fn get_number_of_directed_edges_from_node_curie_prefixes(
+        &self,
+        src_node_name_prefix: Option<&str>,
+        dst_node_name_prefix: Option<&str>,
+    ) -> EdgeT {
+        self.par_iter_directed_edge_ids_from_node_curie_prefixes(
+            src_node_name_prefix,
+            dst_node_name_prefix,
+        )
+        .count() as EdgeT
+    }
+
+    /// Returns vector with node IDs with given curie prefix.
+    ///
+    /// # Arguments
+    /// * `curie_prefix`: &str - Prefix of the source node names.
+    pub fn get_node_ids_from_node_curie_prefix(&self, curie_prefix: &str) -> Vec<NodeT> {
+        self.par_iter_node_ids_from_node_curie_prefix(curie_prefix)
+            .collect()
+    }
+
+    /// Returns vector with node names with given curie prefix.
+    ///
+    /// # Arguments
+    /// * `curie_prefix`: &str - Prefix of the source node names.
+    pub fn get_node_names_from_node_curie_prefix(&self, curie_prefix: &str) -> Vec<String> {
+        self.par_iter_node_names_from_node_curie_prefix(curie_prefix)
+            .collect()
+    }
+
+    /// Returns number of nodes with node IDs with given curie prefix.
+    ///
+    /// # Arguments
+    /// * `curie_prefix`: &str - Prefix of the source node names.
+    pub fn get_number_of_nodes_from_node_curie_prefix(&self, curie_prefix: &str) -> NodeT {
+        self.par_iter_node_ids_from_node_curie_prefix(curie_prefix)
+            .count() as NodeT
+    }
 }

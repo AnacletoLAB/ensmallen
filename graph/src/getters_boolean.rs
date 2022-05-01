@@ -276,6 +276,14 @@ impl Graph {
             }))
     }
 
+    /// Returns whether the nodes have an homogenous node ontology.
+    pub fn has_homogeneous_node_ontologies(&self) -> Result<bool> {
+        let first_node_ontology = self.get_ontology_from_node_id(0)?;
+        Ok(self
+            .par_iter_node_ontologies()
+            .all(|ontology| ontology == first_node_ontology))
+    }
+
     /// Returns whether the edges have an homogenous edge type.
     ///
     /// # Raises
@@ -347,6 +355,12 @@ impl Graph {
     pub fn has_node_ontologies(&self) -> bool {
         self.par_iter_node_ontologies()
             .any(|ontology| ontology.is_some())
+    }
+
+    /// Return whether at least a node has an unknown ontology.
+    pub fn has_unknown_node_ontologies(&self) -> bool {
+        self.par_iter_node_ontologies()
+            .any(|ontology| ontology.is_none())
     }
 
     #[cache_property(nodes_sorted_by_decreasing_outbound_node_degree)]

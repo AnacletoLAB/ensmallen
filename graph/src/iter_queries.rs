@@ -394,7 +394,7 @@ impl Graph {
         Ok(min_edge_id..max_edge_id)
     }
 
-    /// Returns iterator over edge IDs and their properties with given edge type.
+    /// Returns iterator over edge node IDs with given edge type.
     ///
     /// # Arguments
     /// * `edge_type_id`: Option<EdgeTypeT> - Edge type ID to extract.
@@ -403,15 +403,194 @@ impl Graph {
     /// # Raises
     /// * If there are no edge types in the graph.
     /// * If the given edge type ID does not exist in the graph.
-    pub fn iter_edge_node_ids_and_edge_type_id_from_edge_type_id(
+    pub fn iter_edge_node_ids_from_edge_type_id(
         &self,
         edge_type_id: Option<EdgeTypeT>,
         directed: bool,
-    ) -> Result<impl Iterator<Item = (EdgeT, NodeT, NodeT, Option<EdgeTypeT>)> + '_> {
+    ) -> Result<impl Iterator<Item = (NodeT, NodeT)> + '_> {
         self.validate_edge_type_id(edge_type_id)
             .map(|edge_type_id| {
                 self.iter_edge_node_ids_and_edge_type_id(directed)
-                    .filter(move |(_, _, _, this_edge_type_id)| *this_edge_type_id == edge_type_id)
+                    .filter_map(move |(_, src, dst, this_edge_type_id)| {
+                        if this_edge_type_id == edge_type_id {
+                            Some((src, dst))
+                        } else {
+                            None
+                        }
+                    })
+            })
+    }
+
+    /// Returns iterator over directed edge node IDs with given edge type.
+    ///
+    /// # Arguments
+    /// * `edge_type_id`: Option<EdgeTypeT> - Edge type ID to extract.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type ID does not exist in the graph.
+    pub fn iter_directed_edge_node_ids_from_edge_type_id(
+        &self,
+        edge_type_id: Option<EdgeTypeT>,
+    ) -> Result<impl Iterator<Item = (NodeT, NodeT)> + '_> {
+        self.validate_edge_type_id(edge_type_id)
+            .map(|edge_type_id| {
+                self.iter_directed_edge_node_ids_and_edge_type_id()
+                    .filter_map(move |(_, src, dst, this_edge_type_id)| {
+                        if this_edge_type_id == edge_type_id {
+                            Some((src, dst))
+                        } else {
+                            None
+                        }
+                    })
+            })
+    }
+
+    /// Returns parallel iterator over directed edge node IDs with given edge type.
+    ///
+    /// # Arguments
+    /// * `edge_type_id`: Option<EdgeTypeT> - Edge type ID to extract.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type ID does not exist in the graph.
+    pub fn par_iter_directed_edge_node_ids_from_edge_type_id(
+        &self,
+        edge_type_id: Option<EdgeTypeT>,
+    ) -> Result<impl ParallelIterator<Item = (NodeT, NodeT)> + '_> {
+        self.validate_edge_type_id(edge_type_id)
+            .map(|edge_type_id| {
+                self.par_iter_directed_edge_node_ids_and_edge_type_id()
+                    .filter_map(move |(_, src, dst, this_edge_type_id)| {
+                        if this_edge_type_id == edge_type_id {
+                            Some((src, dst))
+                        } else {
+                            None
+                        }
+                    })
+            })
+    }
+
+    /// Returns iterator over edge node IDs with given edge type name.
+    ///
+    /// # Arguments
+    /// * `edge_type_name`: Option<&str> - Edge type name to extract.
+    /// * `directed`: bool - Whether to iterate the edge list as directed or undirected.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type name does not exist in the graph.
+    pub fn iter_edge_node_ids_from_edge_type_name(
+        &self,
+        edge_type_name: Option<&str>,
+        directed: bool,
+    ) -> Result<impl Iterator<Item = (NodeT, NodeT)> + '_> {
+        self.get_edge_type_id_from_edge_type_name(edge_type_name)
+            .map(|edge_type_id| {
+                self.iter_edge_node_ids_and_edge_type_id(directed)
+                    .filter_map(move |(_, src, dst, this_edge_type_id)| {
+                        if this_edge_type_id == edge_type_id {
+                            Some((src, dst))
+                        } else {
+                            None
+                        }
+                    })
+            })
+    }
+
+    /// Returns iterator over directed edge node IDs with given edge type name.
+    ///
+    /// # Arguments
+    /// * `edge_type_name`: Option<EdgeTypeT> - Edge type name to extract.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type name does not exist in the graph.
+    pub fn iter_directed_edge_node_ids_from_edge_type_name(
+        &self,
+        edge_type_name: Option<&str>,
+    ) -> Result<impl Iterator<Item = (NodeT, NodeT)> + '_> {
+        self.get_edge_type_id_from_edge_type_name(edge_type_name)
+            .map(|edge_type_id| {
+                self.iter_directed_edge_node_ids_and_edge_type_id()
+                    .filter_map(move |(_, src, dst, this_edge_type_id)| {
+                        if this_edge_type_id == edge_type_id {
+                            Some((src, dst))
+                        } else {
+                            None
+                        }
+                    })
+            })
+    }
+
+    /// Returns parallel iterator over directed edge node IDs with given edge type name.
+    ///
+    /// # Arguments
+    /// * `edge_type_name`: Option<EdgeTypeT> - Edge type names to extract.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type names does not exist in the graph.
+    pub fn par_iter_directed_edge_node_ids_from_edge_type_name(
+        &self,
+        edge_type_name: Option<&str>,
+    ) -> Result<impl ParallelIterator<Item = (NodeT, NodeT)> + '_> {
+        self.get_edge_type_id_from_edge_type_name(edge_type_name)
+            .map(|edge_type_id| {
+                self.par_iter_directed_edge_node_ids_and_edge_type_id()
+                    .filter_map(move |(_, src, dst, this_edge_type_id)| {
+                        if this_edge_type_id == edge_type_id {
+                            Some((src, dst))
+                        } else {
+                            None
+                        }
+                    })
+            })
+    }
+
+    /// Returns parallel iterator over directed edge node names with given edge type id.
+    ///
+    /// # Arguments
+    /// * `edge_type_id`: Option<EdgeTypeT> - Edge type id to extract.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type ids does not exist in the graph.
+    pub fn par_iter_directed_edge_node_names_from_edge_type_id(
+        &self,
+        edge_type_id: Option<EdgeTypeT>,
+    ) -> Result<impl ParallelIterator<Item = (String, String)> + '_> {
+        self.par_iter_directed_edge_node_ids_from_edge_type_id(edge_type_id)
+            .map(|iter| {
+                iter.map(move |(src, dst)| unsafe {
+                    (
+                        self.get_unchecked_node_name_from_node_id(src),
+                        self.get_unchecked_node_name_from_node_id(dst),
+                    )
+                })
+            })
+    }
+
+    /// Returns parallel iterator over directed edge node names with given edge type name.
+    ///
+    /// # Arguments
+    /// * `edge_type_name`: Option<&str> - Edge type name to extract.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type names does not exist in the graph.
+    pub fn par_iter_directed_edge_node_names_from_edge_type_name(
+        &self,
+        edge_type_name: Option<&str>,
+    ) -> Result<impl ParallelIterator<Item = (String, String)> + '_> {
+        self.par_iter_directed_edge_node_ids_from_edge_type_name(edge_type_name)
+            .map(|iter| {
+                iter.map(move |(src, dst)| unsafe {
+                    (
+                        self.get_unchecked_node_name_from_node_id(src),
+                        self.get_unchecked_node_name_from_node_id(dst),
+                    )
+                })
             })
     }
 
@@ -463,6 +642,181 @@ impl Graph {
                     },
                 )
             })
+    }
+
+    /// Returns parallel iterator over directed edge IDs with given edge type.
+    ///
+    /// # Arguments
+    /// * `edge_type_id`: Option<EdgeTypeT> - Edge type ID to extract.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type ID does not exist in the graph.
+    pub fn par_iter_directed_edge_ids_from_edge_type_id(
+        &self,
+        edge_type_id: Option<EdgeTypeT>,
+    ) -> Result<impl ParallelIterator<Item = EdgeT> + '_> {
+        self.validate_edge_type_id(edge_type_id)
+            .map(|edge_type_id| {
+                self.par_iter_directed_edge_type_ids()
+                    .unwrap()
+                    .enumerate()
+                    .filter_map(move |(edge_id, this_edge_type_id)| {
+                        if this_edge_type_id == edge_type_id {
+                            Some(edge_id as EdgeT)
+                        } else {
+                            None
+                        }
+                    })
+            })
+    }
+
+    /// Returns parallel iterator over directed edge IDs with given edge type name.
+    ///
+    /// # Arguments
+    /// * `edge_type_name`: Option<EdgeTypeT> - Edge type names to extract.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the given edge type names does not exist in the graph.
+    pub fn par_iter_directed_edge_ids_from_edge_type_name(
+        &self,
+        edge_type_name: Option<&str>,
+    ) -> Result<impl ParallelIterator<Item = EdgeT> + '_> {
+        self.par_iter_directed_edge_ids_from_edge_type_id(
+            self.get_edge_type_id_from_edge_type_name(edge_type_name)?,
+        )
+    }
+
+    /// Returns parallel iterator over directed edge node names with given node name prefixes
+    ///
+    /// # Arguments
+    /// * `src_node_name_prefix`: Option<&str> - Prefix of the source node names.
+    /// * `dst_node_name_prefix`: Option<&str> - Prefix of the source node names.
+    ///
+    pub fn par_iter_directed_edge_node_names_from_node_curie_prefixes<'a>(
+        &'a self,
+        src_node_name_prefix: Option<&'a str>,
+        dst_node_name_prefix: Option<&'a str>,
+    ) -> impl ParallelIterator<Item = (String, String)> + 'a {
+        self.par_iter_directed_edges()
+            .filter_map(move |(_, _, src_node_name, _, dst_node_name)| {
+                if src_node_name_prefix
+                    .as_ref()
+                    .map_or(true, |src_node_name_prefix| {
+                        src_node_name.starts_with(src_node_name_prefix)
+                    })
+                    && dst_node_name_prefix
+                        .as_ref()
+                        .map_or(true, |dst_node_name_prefix| {
+                            dst_node_name.starts_with(dst_node_name_prefix)
+                        })
+                {
+                    Some((src_node_name, dst_node_name))
+                } else {
+                    None
+                }
+            })
+    }
+
+    /// Returns parallel iterator over directed edge node IDs with given node name prefixes
+    ///
+    /// # Arguments
+    /// * `src_node_name_prefix`: Option<&str> - Prefix of the source node names.
+    /// * `dst_node_name_prefix`: Option<&str> - Prefix of the source node names.
+    ///
+    pub fn par_iter_directed_edge_node_ids_from_node_curie_prefixes<'a>(
+        &'a self,
+        src_node_name_prefix: Option<&'a str>,
+        dst_node_name_prefix: Option<&'a str>,
+    ) -> impl ParallelIterator<Item = (NodeT, NodeT)> + 'a {
+        self.par_iter_directed_edges().filter_map(
+            move |(_, src, src_node_name, dst, dst_node_name)| {
+                if src_node_name_prefix
+                    .as_ref()
+                    .map_or(true, |src_node_name_prefix| {
+                        src_node_name.starts_with(src_node_name_prefix)
+                    })
+                    && dst_node_name_prefix
+                        .as_ref()
+                        .map_or(true, |dst_node_name_prefix| {
+                            dst_node_name.starts_with(dst_node_name_prefix)
+                        })
+                {
+                    Some((src, dst))
+                } else {
+                    None
+                }
+            },
+        )
+    }
+
+    /// Returns parallel iterator over directed edge IDs with given node name prefixes
+    ///
+    /// # Arguments
+    /// * `src_node_name_prefix`: Option<&str> - Prefix of the source node names.
+    /// * `dst_node_name_prefix`: Option<&str> - Prefix of the source node names.
+    ///
+    pub fn par_iter_directed_edge_ids_from_node_curie_prefixes<'a>(
+        &'a self,
+        src_node_name_prefix: Option<&'a str>,
+        dst_node_name_prefix: Option<&'a str>,
+    ) -> impl ParallelIterator<Item = EdgeT> + 'a {
+        self.par_iter_directed_edges().filter_map(
+            move |(edge_id, _, src_node_name, _, dst_node_name)| {
+                if src_node_name_prefix
+                    .as_ref()
+                    .map_or(true, |src_node_name_prefix| {
+                        src_node_name.starts_with(src_node_name_prefix)
+                    })
+                    && dst_node_name_prefix
+                        .as_ref()
+                        .map_or(true, |dst_node_name_prefix| {
+                            dst_node_name.starts_with(dst_node_name_prefix)
+                        })
+                {
+                    Some(edge_id)
+                } else {
+                    None
+                }
+            },
+        )
+    }
+
+    /// Returns parallel iterator over node IDs with given curie prefix
+    ///
+    /// # Arguments
+    /// * `curie_prefix`: &str - Prefix of the source node names.
+    pub fn par_iter_node_ids_from_node_curie_prefix<'a>(
+        &'a self,
+        curie_prefix: &'a str,
+    ) -> impl ParallelIterator<Item = NodeT> + 'a {
+        self.par_iter_node_ids()
+            .zip(self.par_iter_node_names())
+            .filter_map(move |(node_id, node_name)| {
+                if node_name.starts_with(curie_prefix) {
+                    Some(node_id)
+                } else {
+                    None
+                }
+            })
+    }
+
+    /// Returns parallel iterator over node names with given curie prefix
+    ///
+    /// # Arguments
+    /// * `curie_prefix`: &str - Prefix of the source node names.
+    pub fn par_iter_node_names_from_node_curie_prefix<'a>(
+        &'a self,
+        curie_prefix: &'a str,
+    ) -> impl ParallelIterator<Item = String> + 'a {
+        self.par_iter_node_names().filter_map(move |node_name| {
+            if node_name.starts_with(curie_prefix) {
+                Some(node_name)
+            } else {
+                None
+            }
+        })
     }
 
     /// Returns iterator over edge node names and their properties with given edge type.
