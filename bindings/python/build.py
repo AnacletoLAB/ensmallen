@@ -243,10 +243,11 @@ def gen_metadata(metadata) -> str:
     return result
 
 def gen_wheel_file(metadata):
+    """https://peps.python.org/pep-0491/"""
     result  = "Wheel-Version: 1.0\n"
     result += "Generator: ensmallen_toolchain\n"
     result += "Root-Is-Purelib: false\n"
-    result += "Tag: {python_tag}-{abi_tag}-{platform_tag}_{arch}\n".format(**metadata)
+    result += "Tag: {python_tag}-{abi_tag}-{platform_tag}\n".format(**metadata)
     return result
 
 def gen_wheel_name(metadata):
@@ -373,6 +374,7 @@ __all__ = ["edge_list_utils", "Graph", "preprocessing", "models", "datasets"]
             "arch":target["arch"],
             "target_os":target["target_os"],
             "crate_features":target["crate_features"],
+            "cpu_features":target["cpu_features"],
             "lib_name":target["lib_name"],
         }
         for target in settings["targets"]
@@ -422,6 +424,8 @@ PYTHON_METADATA = {
     # We need this one for windows abi3 builds
     "base_prefix": sys.base_prefix,
 }
+
+print(PYTHON_METADATA)
 
 ################################################################################
 # Settings Schema
@@ -610,11 +614,12 @@ SETTINGS_SCHEMA = {
                 "python_tag":{
                     "type":"string",
                     "pattern":r"^(py|cp|ip|pp|jy)\d+$",
-                    "default":"{interpreter_prefix}-{major}.{minor}".format(**PYTHON_METADATA)
+                    "default":"{interpreter_prefix}{major}{minor}".format(**PYTHON_METADATA)
                 },
                 "abi_tag":{"type":"string"},
                 "platform_tag":{
                     "type":"string",
+                    "sub":[r"[-.]+", r"_"],
                     "default":distutils.util.get_platform(),
                 },
                 "license":{
@@ -1037,6 +1042,13 @@ exec("cargo run --release --bin bindgen", cwd=join("..", "..", "code_analysis"))
 logging.info("Copyng the python library files top the merging folder")
 shutil.rmtree(settings["merging_folder"], ignore_errors=True)
 shutil.copytree(settings["python_files_path"], settings["merging_folder"])
+
+# Remove caches so that we don't put them in the wheel
+for file in glob.iglob(
+    join(settings["merging_folder"], "**", "__pycache__"), 
+    recursive=True,
+):
+    shutil.rmtree(file, ignore_errors=True)
 
 logging.info("Generating __init__.py file in the merging folder")
 gen_init_file(settings)
