@@ -1,44 +1,58 @@
 {
-    // Where the final wheels, and the tmp building folders will, be
+    "metadata":{
+        "libname":"ensmallen",
+        "version":"0.7.0.dev17",
+        "abi_tag":"abi3",
+        "license":"MIT",
+        "source_code_url":"https://github.com/LucaCappelletti94/ensmallen",
+        "readme_path":"README.md",
+        "keywords":["python", "rust", "graph", "random", "walk"],
+        "deps":[
+            "downloaders>=1.0.15",
+            "compress_json>=1.0.6",
+            "userinput>=1.0.16",
+            "cache_decorator>=2.0.13",
+            "tqdm",
+            "pandas",
+            "transformers",
+            "py-cpuinfo",
+            "environments_utils>=1.0.4"
+        ],
+        "authors":[
+            {
+                "name":"Luca Cappelleti",
+                "email":"cappelletti.luca94@gmail.com"
+            },
+            {
+                "name":"Tommaso Fontana",
+                "email":"tommaso.fontana.96@gmail.com"
+            }
+        ]
+    },
     "wheels_folder":"wheels", 
-    // flags passed to RUSTFLAGS to all targets
     "shared_rustflags":"-C inline-threshold=1000",
-    // List of the different libraries that will be compiled
-    // In the resulting wheel the different targets will be
-    // like `ensmallen_{target}_{complation_infos}.{extension}` so that they can
-    // be imported as `ensmallen_{target}`
+    "develop":{
+        "target_cpu":"native",
+        "crate_features":["cuda"]
+    },
     "targets":{
         "x86_64":{
-            // for the gcloud cpus refer to https://cloud.google.com/compute/docs/cpu-platforms
-            // WARNING: to compile these we need to be on a cpu that supports avx512 
-            // otherwise we'd get a SIGILL error 
-
-            // version optimized for the newest google cloud cpus
-            //"icelake":{
-            //    "build_dir":"build_icelake",
-            //    "rustflags":"-C target-cpu=icelake-server"
-            //},
-            // version optimized for the relatively new google cloud cpus
-            //"cascadelake":{
-            //    "build_dir":"build_cascadelake",
-            //   "rustflags":"-C target-cpu=cascadelake"
-            //},
-            
-            // good balance of compatability and speed, (2013)
-            "haswell":{
-                "build_dir":"build_haswell",
-                "rustflags":"-C target-cpu=haswell"
+            "balanced_cuda":{
+                "target_cpu":"haswell",
+                "crate_features":["cuda"],
+                "target_os":["linux"]
             },
-            // full compatability (2006)
-            "core2":{
-                "build_dir":"build_core2",
-                "rustflags":"-C target-cpu=core2"
+            "balanced":{
+                "target_cpu":"haswell"
+            },
+            "compatibility":{
+                "target_cpu":"core2"
             }
         },
-        "arm64":{
-            "default":{
-                "build_dir":"build_arm_default",
-                "rustflags":""
+        "aarch64":{
+            "mac_m1":{
+                "target_cpu":"apple-m1",
+                "target_os":["darwin"]
             }
         }
     }

@@ -3,29 +3,28 @@ use numpy::PyArray2;
 
 ///
 #[pyclass]
-#[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, window_size, clipping_value, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree)"]
-pub struct CBOW {
-    pub inner: cpu_models::CBOW,
+#[text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree)"]
+pub struct SkipGramCUDA {
+    pub inner: gpu_models::SkipGram,
 }
 
-impl From<cpu_models::CBOW> for CBOW {
-    fn from(val: cpu_models::CBOW) -> CBOW {
-        CBOW { inner: val }
+impl From<gpu_models::SkipGram> for SkipGramCUDA {
+    fn from(val: gpu_models::SkipGram) -> SkipGramCUDA {
+        SkipGramCUDA { inner: val }
     }
 }
 
-impl From<CBOW> for cpu_models::CBOW {
-    fn from(val: CBOW) -> cpu_models::CBOW {
+impl From<SkipGramCUDA> for gpu_models::SkipGram {
+    fn from(val: SkipGramCUDA) -> gpu_models::SkipGram {
         val.inner
     }
 }
 
 #[pymethods]
-impl CBOW {
+impl SkipGramCUDA {
     #[new]
     #[args(py_kwargs = "**")]
-    /// Return a new instance of the CBOW model.
+    /// Return a new instance of the SkipGramCUDA model.
     ///
     /// Parameters
     /// ------------------------
@@ -79,7 +78,7 @@ impl CBOW {
     ///     and becomes an approximation of an exact walk.
     /// normalize_by_degree: Optional[bool] = False
     ///     Whether to normalize the random walks by the node degree.
-    pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<CBOW> {
+    pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<SkipGramCUDA> {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
@@ -88,10 +87,7 @@ impl CBOW {
             build_walk_parameters_list(&[
                 "embedding_size",
                 "window_size",
-                "clipping_value",
-                "number_of_negative_samples",
-                "log_sigmoid",
-                "siamese",
+                "number_of_negative_samples"
             ])
             .as_slice()
         ))?;
@@ -99,24 +95,21 @@ impl CBOW {
         let parameters = pe!(build_walk_parameters(kwargs))?;
 
         Ok(Self {
-            inner: pe!(cpu_models::CBOW::new(
+            inner: pe!(gpu_models::SkipGram::new(
                 extract_value_rust_result!(kwargs, "embedding_size", usize),
                 Some(parameters),
                 extract_value_rust_result!(kwargs, "window_size", usize),
-                extract_value_rust_result!(kwargs, "clipping_value", f32),
                 extract_value_rust_result!(kwargs, "number_of_negative_samples", usize),
-                extract_value_rust_result!(kwargs, "log_sigmoid", bool),
-                extract_value_rust_result!(kwargs, "siamese", bool),
             ))?,
         })
     }
 }
 
 #[pymethods]
-impl CBOW {
+impl SkipGramCUDA {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, graph, *, epochs, learning_rate, verbose)"]
-    /// Return numpy embedding with CBOW node embedding.
+    #[text_signature = "($self, graph, *, epochs, learning_rate, batch_size, verbose)"]
+    /// Return numpy embedding with SkipGramCUDA node embedding.
     ///
     /// Parameters
     /// ---------
@@ -144,7 +137,7 @@ impl CBOW {
 
         pe!(validate_kwargs(
             kwargs,
-            &["epochs", "learning_rate", "verbose"]
+            &["epochs", "learning_rate", "batch_size", "verbose"]
         ))?;
 
         let rows_number = graph.inner.get_nodes_number() as usize;
@@ -155,13 +148,17 @@ impl CBOW {
 
         // We always use the racing version of the fit transform
         // as we generally do not care about memory collisions.
-        pe!(self.inner.fit_transform_racing(
-            &graph.inner,
-            embedding_slice,
-            extract_value_rust_result!(kwargs, "epochs", usize),
-            extract_value_rust_result!(kwargs, "learning_rate", f32),
-            extract_value_rust_result!(kwargs, "verbose", bool),
-        ))?;
+        pe!(self
+            .inner
+            .fit_transform(
+                &graph.inner,
+                embedding_slice,
+                extract_value_rust_result!(kwargs, "epochs", usize),
+                extract_value_rust_result!(kwargs, "learning_rate", f32),
+                extract_value_rust_result!(kwargs, "batch_size", usize),
+                extract_value_rust_result!(kwargs, "verbose", bool),
+            )
+            .map_err(|e| format!("{:?}", e)))?;
 
         Ok(embedding.into_py(gil.python()))
     }

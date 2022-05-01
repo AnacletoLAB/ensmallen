@@ -1,8 +1,11 @@
 #!/bin/python3
+from multiprocessing.sharedctypes import Value
 import os
 import re
 import sys
+import copy
 import json
+import shlex
 import base64
 import shutil
 import logging
@@ -10,8 +13,11 @@ import zipfile
 import hashlib
 import argparse
 import platform
+import sysconfig
+import distutils
 import subprocess
 import glob
+from functools import lru_cache
 from json.decoder import JSONDecodeError
 
 ################################################################################
@@ -19,10 +25,18 @@ from json.decoder import JSONDecodeError
 ################################################################################
 
 def join(*args):
-    return os.path.join(
+    return os.path.abspath(os.path.join(
         os.path.abspath(os.path.dirname(__file__)),
         *args
-    )
+    ))
+
+def strip_path_prefix(prefix, path):
+    if path.startswith(prefix):
+        result = path[len(prefix):]
+        if result.startswith(("/", "\\")):
+            result = result[1:]
+        return result
+    return path
 
 def exec(command, env={}, **kwargs):
     res = subprocess.run(command, env={
@@ -78,6 +92,700 @@ def rsync_folders(src, dst):
         shutil.copyfile(file, dst_file)
 
 ################################################################################
+# Compilation feautres funcs
+################################################################################
+
+@lru_cache
+def get_rust_targets():
+    return [
+        y.decode()
+        for y in subprocess.check_output(
+            shlex.split("rustc --print target-list")
+        ).split(b"\n")
+    ]
+
+# LLVM and Linux have different names for the same features :)
+features_traducer = {
+    "x86_64":{
+        "cmpxchg16b":"cx16",
+        "sse3":"pni", # this is just an implication but F u
+        "sse4.1":"sse4_1",
+        "sse4.2":"sse4_2",
+        "lzcnt":"abm", # Not equivalent but abm has lzcnt
+        "ermsb":None, # This is not reported by cpuinfo and it's basically depecrated
+    },
+}
+
+@lru_cache
+def get_random_triple_for_arch(arch):
+    return next(
+            x
+            for x in get_rust_targets()
+            if x.startswith(arch)
+        )
+
+@lru_cache
+def get_cpus(arch):
+    triple = get_random_triple_for_arch(arch)
+    return [
+        y.decode().strip()
+        for y in subprocess.check_output(
+            shlex.split(f"rustc --print target-cpus --target {triple}")
+        ).split(b"\n")[2:]
+        if y.decode().strip()
+    ]
+
+@lru_cache
+def get_cpu_features(arch, cpu):
+    triple = get_random_triple_for_arch(arch)
+    features = [
+        features_traducer.get(arch, {}).get(y.decode()[16:-1], y.decode()[16:-1])
+        for y in subprocess.check_output(
+            shlex.split(f"rustc --print=cfg -C target-cpu={cpu} --target {triple}")
+        ).split(b"\n")
+        if y.startswith(b"target_feature=") and not y.startswith(b"target_feature=\"llvm")
+    ]
+    return [x for x in features if x is not None]
+
+@lru_cache
+def get_available_features_for_arch(arch):
+    return list(sorted({
+        x
+        for cpu in get_cpus(arch)
+        for x in get_cpu_features(arch, cpu)
+    }))
+
+def get_crate_features():
+    """Get the features defined in the Cargo.toml of the current crate"""
+    with open("Cargo.toml", "r") as f:
+        for line in f:
+            if line.startswith("[features]"):
+                break
+        
+        features = []
+        for line in f:
+            if line.startswith("["):
+                break
+            if len(line.strip()) == 0:
+                continue
+            features.append(line.split("=")[0].strip())
+        return features
+
+def get_pyo3_abi_version():
+    """"""
+    with open("Cargo.toml", "r") as f:
+        data = f.read()
+    
+    result = re.findall("features\s*=\s*\[.+?abi3-py(\d+).+?\]", data)
+    if len(result) == 1:
+        return result[0]
+    else:
+        return None
+
+################################################################################
+# Wheel generation funcs
+################################################################################
+
+def gen_record_file(wheel_path, record_file_path) -> str:
+    result = ""
+    with zipfile.ZipFile(wheel_path, 'r') as zipread:
+        for item in zipread.infolist():
+            file_content = zipread.read(item.filename)
+        
+            m = hashlib.sha256()
+            m.update(file_content)
+            file_hash = base64.b64encode(m.digest()).decode()
+
+            result += f"{item.filename},sha256={file_hash},{len(file_content)}\n"
+
+    result += "{},,\n".format(record_file_path)
+    return result
+    
+def gen_metadata(metadata) -> str:
+    result = "Metadata-Version: 2.1\n"
+
+    for key, value in metadata.items():
+        if key == "libname":
+            result += f"Name: {value}\n"
+        elif key == "version":
+            result += f"Version: {value}\n"
+        elif key == "python_version":
+            result += f"Requires-Python: >={value}\n"
+        elif key == "license":
+            result += f"License: {value}\n"
+        elif key == "source_code_url":
+            result += f"Project-URL: Source Code, {value}\n"
+        elif key == "keywords":
+            result += "Keywords: {}\n".format(",".join(x.strip() for x in value))
+        elif key == "authors":
+            result += "Author: {}\n".format(", ".join(
+                "{name} <{email}>".format(**author)
+                for author in value
+            ))
+            result += "Author-email: {}\n".format(", ".join(
+                "\"{name}\" <{email}>".format(**author)
+                for author in value
+            ))
+        elif key == "deps":
+            result += "".join(
+                "Require-Dist: {}\n".format(dep)
+                for dep in value
+            )
+        
+    # readme format
+    result += "Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM\n"
+    # add an empty line to separate the readme from the metadata
+    result += "\n"
+    # add the readme
+    with open(metadata["readme_path"], "r") as f:
+        result += f.read()
+
+    return result
+
+def gen_wheel_file(metadata):
+    result  = "Wheel-Version: 1.0\n"
+    result += "Generator: ensmallen_toolchain\n"
+    result += "Root-Is-Purelib: false\n"
+    result += "Tag: {python_tag}-{abi_tag}-{platform_tag}_{arch}\n".format(**metadata)
+    return result
+
+def gen_wheel_name(metadata):
+    """https://peps.python.org/pep-0425/"""
+    return "{libname}-{version}-{python_tag}-{abi_tag}-{platform_tag}.whl".format(**metadata)
+
+def gen_wheel(settings):
+    dist_info_path = "{libname}-{version}.dist-info".format(**settings["metadata"])
+
+    # Create the zip
+    with zipfile.ZipFile(
+        settings["target_wheel_path"], 'w', 
+        compression=zipfile.ZIP_DEFLATED,
+        ) as zipwrite:
+
+        # Copy all the files
+        for path in glob.iglob(
+            os.path.join(settings["merging_folder"], "**", "*"), 
+            recursive=True
+        ):
+            if not os.path.isfile(path):
+                continue
+
+            local_path = os.path.join(
+                settings["metadata"]["libname"],
+                strip_path_prefix(settings["merging_folder"], path)
+            )
+
+            zipwrite.writestr(local_path, path)
+        # Add the metadata
+        zipwrite.writestr(
+            os.path.join(dist_info_path, "WHEEL"),
+            gen_wheel_file(settings["metadata"])
+        )
+        # Add the metadata
+        zipwrite.writestr(
+            os.path.join(dist_info_path, "METADATA"),
+            gen_metadata(settings["metadata"])
+        )
+
+    # Compute the hashes for all the files
+    record_file_path = os.path.join(dist_info_path, "RECORD")
+    record_file = gen_record_file(settings["target_wheel_path"], record_file_path)
+
+    # Add the record file to the zip
+    with zipfile.ZipFile(
+        settings["target_wheel_path"], 'a', 
+        compression=zipfile.ZIP_DEFLATED,
+        ) as zipwrite:
+        zipwrite.writestr(
+            record_file_path,
+            record_file
+        )
+
+def gen_init_file(settings):
+    init = """
+import logging
+import platform
+import cpuinfo
+import importlib
+import ctypes
+
+target_os = platform.system().lower()
+
+# Linux call it aarch64 while mac calls it arm64 :)
+arch = {{
+    "arm64":"aarch64", 
+}}.get(platform.machine(), platform.machine())
+
+cpu_infos = cpuinfo.get_cpu_info()
+cpu_features = set(cpu_infos["flags"])
+
+crate_features = set()
+
+# Detecting if cuda is available
+if target_os == "linux":
+    try:
+        ctypes.CDLL("libcuda.so")
+        crate_features.add("cuda")
+    except OSError:
+        pass
+
+targets = {targets}
+
+def choose_target(target_os, arch, cpu_features, crate_features, targets):
+    for target in targets:
+        if target_os not in target["target_os"]:
+            continue
+        if arch != target["arch"]:
+            continue
+        if len(set(target["crate_features"]) - crate_features) != 0:
+            continue
+
+        if len(set(target["cpu_features"]) - cpu_features) != 0:
+            # We have to skip the check on apple CPUs because the package
+            # cpuinfo can't retrieve the flags yet :)
+            if not (arch == "aarch64" and cpu_infos["brand_raw"].startswith("Apple")):
+                continue
+
+        return target
+
+    raise ValueError("Could not find a version compatible with the current system")
+
+choosen_target = choose_target(target_os, arch, cpu_features, crate_features, targets)
+logging.info("Ensmallen choosed target: {{}}".format(choosen_target))
+
+_lib = __import__(
+    "ensmallen.{{}}".format(choosen_target["lib_name"]),
+    fromlist=("Graph",),
+)
+
+locals().update({{
+    key:value
+    for key, value in vars(_lib).items()
+    if not key.startswith("_")
+}})
+
+# Because otherwise it generate a Circular import and crash
+from . import datasets
+
+__all__ = ["edge_list_utils", "Graph", "preprocessing", "models", "datasets"]
+    """.format(targets=[
+        {
+            "arch":target["arch"],
+            "target_os":target["target_os"],
+            "crate_features":target["crate_features"],
+            "lib_name":target["lib_name"],
+        }
+        for target in settings["targets"]
+    ])
+
+    with open(settings["init_path"], "w") as f:
+        f.write(init)
+
+
+# Copied from github.com/PyO3/maturin/src/get_interpeter_metadata.py
+if platform.python_implementation() == "PyPy":
+    # Workaround for PyPy 3.6 on windows:
+    #  - sysconfig.get_config_var("EXT_SUFFIX") differs to importlib until
+    #    Python 3.8
+    #  - PyPy does not load the plain ".pyd" suffix because it expects that's
+    #    for a CPython extension module
+    #
+    # This workaround can probably be removed once PyPy for Python 3.8 is the
+    # main PyPy version.
+    import importlib.machinery
+
+    EXT_SUFFIX = importlib.machinery.EXTENSION_SUFFIXES[0]
+else:
+    EXT_SUFFIX = sysconfig.get_config_var("EXT_SUFFIX")
+
+# copied from github.com/pypa/pip/src/pip/_vendor/distlib/wheel.py
+if hasattr(sys, 'pypy_version_info'):  # pragma: no cover
+    IMP_PREFIX = 'pp'
+elif sys.platform.startswith('java'):  # pragma: no cover
+    IMP_PREFIX = 'jy'
+elif sys.platform == 'cli':  # pragma: no cover
+    IMP_PREFIX = 'ip'
+else:
+    IMP_PREFIX = 'cp'
+
+PYTHON_METADATA = {
+    "major": sys.version_info.major,
+    "minor": sys.version_info.minor,
+    "abiflags": sysconfig.get_config_var("ABIFLAGS"),
+    "interpreter": platform.python_implementation().lower(),
+    "interpreter_prefix":IMP_PREFIX,
+    "ext_suffix": EXT_SUFFIX,
+    "abi_tag": (sysconfig.get_config_var("SOABI") or "-").split("-")[1] or None,
+    "platform": sysconfig.get_platform().lower(),
+    # This one isn't technically necessary, but still very useful for sanity checks
+    "system": platform.system().lower(),
+    # We need this one for windows abi3 builds
+    "base_prefix": sys.base_prefix,
+}
+
+################################################################################
+# Settings Schema
+################################################################################
+
+ARCH_ENUM = [
+    'aarch64',
+    'aarch64_be',
+    'arm',
+    'armebv7r',
+    'armv4t',
+    'armv5te',
+    'armv6',
+    'armv6k',
+    'armv7',
+    'armv7a',
+    'armv7r',
+    'armv7s',
+    'asmjs',
+    'avr',
+    'bpfeb',
+    'bpfel',
+    'hexagon',
+    'i386',
+    'i586',
+    'i686',
+    'm68k',
+    'mips',
+    'mips64',
+    'mips64el',
+    'mipsel',
+    'mipsisa32r6',
+    'mipsisa32r6el',
+    'mipsisa64r6',
+    'mipsisa64r6el',
+    'msp430',
+    'nvptx64',
+    'powerpc',
+    'powerpc64',
+    'powerpc64le',
+    'riscv32gc',
+    'riscv32i',
+    'riscv32im',
+    'riscv32imac',
+    'riscv32imc',
+    'riscv64gc',
+    'riscv64imac',
+    's390x',
+    'sparc',
+    'sparc64',
+    'sparcv9',
+    'thumbv4t',
+    'thumbv6m',
+    'thumbv7a',
+    'thumbv7em',
+    'thumbv7m',
+    'thumbv7neon',
+    'thumbv8m.base',
+    'thumbv8m.main',
+    'wasm32',
+    'wasm64',
+    'x86_64',
+]
+
+OS_ENUM = ["linux", "darwin", "windows"]
+
+TARGET_SCHEMA = {
+    "type":"object",
+    "properties":{
+        "target_cpu":{"type":"string"},
+        "crate_features":{ 
+            "type": "array",
+            "uniqueItems": True,
+            "items": {
+                "type": "string",
+                "enum":get_crate_features(),
+            },
+            "default":None,
+        },
+        "rustflags":{
+            "type":"string",
+            "default":None,
+        }, 
+        "target_os":{ 
+            "type": "array",
+            "uniqueItems": True,
+            "minItems": 1,
+            "items": {
+                "type": "string", 
+                "enum":OS_ENUM,
+            },
+            "default":OS_ENUM,
+        },
+    },
+    "required":[
+        "target_cpu",
+    ],
+}
+
+SETTINGS_SCHEMA = {
+    "type":"object",
+    "properties":{
+        "arch":{
+            "type":"string",
+            "enum":ARCH_ENUM,
+            "default":{
+                "arm64":"aarch64", # Linux call it aarch64 while mac calls it arm64 :)
+            }.get(platform.machine(), platform.machine())
+        },
+        "target_os":{
+            "type":"string",
+            "enum":OS_ENUM,
+            "default":platform.system().lower(),
+        },
+        "library_file_extension":{
+            "type":"string",
+            "enum":[".so", ".pyd"],
+            "default":(".pyd"
+                if platform.system().strip().lower() == "windows"
+                else ".so"
+            ),
+        },
+        "shared_rustflags":{
+            "type": "string",
+            "default":None,
+        },
+        "wheels_folder":{
+            "type": "path",
+            "default":"wheels",
+        },
+        "wheel_root":{
+            "type": "path",
+            "default":None,
+        },
+        "merging_folder":{
+            "type": "path",
+            "default":None,
+        },
+        "python_files_path":{
+            "type": "path",
+            "default":None,
+        },
+        "init_path":{
+            "type": "path",
+            "default":None,
+        },
+        "target_wheel_path":{
+            "type": "path",
+            "default":None,
+        },
+        "develop":TARGET_SCHEMA,
+        "targets":{
+            "type":"object",
+            "propertyNames": { 
+                "type": "string",
+                "enum": ARCH_ENUM
+            },
+            "minProperties": 1,
+            "patternProperties":{
+                r".+":{
+                    "type":"object",
+                    "minProperties": 1,
+                    "patternProperties":{
+                        r".+":TARGET_SCHEMA
+                    }
+                }
+            }
+        },
+        "metadata":{
+            "type":"object",
+            "properties":{
+                "libname":{
+                    "type":"string",
+                    "pattern":r"^([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9._-]*[a-zA-Z0-9])$",
+                    "sub":[r"[-_.]+", r"-"],
+                },
+                "version":{
+                    "type":"string",
+                    "pattern":r"^\d+\.\d+.\d+(\.dev\d+)?$",
+                },
+                "python_version":{
+                    "type":"string",
+                    "pattern":r"^\d+\.\d+$",
+                    "default":"{major}.{minor}".format(**PYTHON_METADATA)
+                },
+                "python_tag":{
+                    "type":"string",
+                    "pattern":r"^(py|cp|ip|pp|jy)\d+$",
+                    "default":"{interpreter_prefix}-{major}.{minor}".format(**PYTHON_METADATA)
+                },
+                "abi_tag":{"type":"string"},
+                "platform_tag":{
+                    "type":"string",
+                    "default":distutils.util.get_platform(),
+                },
+                "license":{
+                    "type":"string",
+                    "default":None,
+                },
+                "source_code_url":{
+                    "type":"string",
+                    "pattern":r"^https?://",
+                    "default":None,
+                },
+                "readme_path":{"type":"path"},
+                "deps":{ 
+                    "type": "array",
+                    "uniqueItems": True,
+                    "minItems": 1,
+                    "items": {
+                        "type": "string",
+                        "pattern":r"^([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9._-]*[a-zA-Z0-9])((==|>=|~=|<=)\d+\.\d+.\d+)?$",
+                    },
+                    "default":None,
+                },
+                "keywords":{ 
+                    "type": "array",
+                    "uniqueItems": True,
+                    "minItems": 1,
+                    "items": {
+                        "type": "string",
+                        "pattern":r"^([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9._-]*[a-zA-Z0-9])$",
+                    },
+                    "default":None,
+                },
+                "authors":{ 
+                    "type": "array",
+                    "uniqueItems": True,
+                    "minItems": 1,
+                    "items": {
+                        "type": "object",
+                        "properties":{
+                            "name":{"type":"string"},
+                            "email":{"type":"string"},
+                        },
+                        "required":[
+                            "name",
+                            "email",
+                        ],
+                    }
+                },
+            },
+            "required":[
+                "libname",
+                "version",
+                "abi_tag",
+                "readme_path",
+                "authors",
+            ],
+        },
+    },
+    "required":[
+        "metadata",
+        "develop",
+        "targets",
+    ],
+}
+
+def validate_json_schema(schema, obj):
+    """Validate a jsonschema like schema, this is handcoded because I don't want deps."""
+    return inner_validate_json_schema(obj, schema, obj)
+
+def inner_validate_json_schema(root, schema, obj):
+    if "default" in schema and obj is None:
+        # this is fine to don't validate because it's the schema responsabiliyy
+        if schema["default"] is None:
+            return obj
+
+        obj = copy.deepcopy(schema["default"])
+
+    if schema["type"] == "object":
+        if not isinstance(obj, dict):
+            raise ValueError(f"The given value {obj} is not a dictionary for schema {schema}.")
+
+        if schema.get("required", None) is not None:
+            for key, value in obj.items():
+                if key in schema["required"]:
+                    continue
+                if "default" not in schema["properties"][key]:
+                    raise ValueError(f"Missing default on non-required property '{key}'")
+            
+            for required in schema["required"]:
+                if required not in obj:
+                    raise ValueError(f"Missing required property '{required}' in object {obj}")
+                
+
+        if schema.get("minProperties", None) is not None:
+            if len(obj) < schema["minProperties"]:
+                raise ValueError(f"The object {obj} doest not have at least {schema['minProperties']} properties")
+
+        if schema.get("maxProperties", None) is not None:
+            if len(obj) < schema["maxProperties"]:
+                raise ValueError(f"The object {obj} doest not have at most {schema['maxProperties']} properties")
+
+        if schema.get("properties", None) is not None:
+            if len(set(obj.keys()) - set(schema["properties"].keys())) != 0:
+                raise ValueError(f"The object {obj} has some keys that are not in the schema. Specifically: {set(obj.keys()) - set(schema['properties'].keys())}")
+        
+            obj = {
+                name:inner_validate_json_schema(root, schema["properties"][name], value)
+                for name, value in (
+                    (x, obj.get(x, None))
+                    for x in set(obj.keys()) | set(schema["properties"].keys())
+                )
+            }
+
+        if schema.get("propertyNames", None) is not None:
+            for key in obj.keys():
+                inner_validate_json_schema(root, schema["propertyNames"], key)
+
+        if schema.get("patternProperties", None) is not None:
+            new_obj = {}
+            for key, value in obj.items():
+                for pattern, pattern_schema in schema["patternProperties"].items():
+                    if re.match(pattern, key) is not None:
+                        new_obj[key] = inner_validate_json_schema(root, pattern_schema, value)
+                if key not in new_obj:
+                    raise ValueError(f"The given key {key} does not match any of the patternProperties {list(schema['patternProperties'].keys())}")
+            obj = new_obj
+        return obj
+    elif schema["type"] in ["string", "path"]:
+        if not isinstance(obj, str):
+            raise ValueError(f"The given value {obj} is not a string for schema {schema}.")
+
+        if schema.get("enum", None) is not None:
+            if obj not in schema["enum"]:
+                raise ValueError(f"The given value {obj} is not in the allowed enum {schema['enum']}")
+
+        if schema.get("pattern", None) is not None:
+            if not re.match(schema["pattern"], obj):
+                raise ValueError(f"The given string '{obj}' does not match its pattern '{schema['pattern']}'")
+
+        if schema.get("sub", None) is not None:
+            obj = re.sub(schema["sub"][0], schema["sub"][1], obj)
+
+        if schema["type"] == "path":
+            obj = join(obj)
+
+        return obj
+    elif schema["type"] == "array":
+        if not isinstance(obj, list):
+            raise ValueError(f"The given value {obj} is not an array for schema {schema}.")
+
+        if schema.get("minItems", None) is not None:
+            if len(obj) < schema["minItems"]:
+                raise ValueError(f"The given value {obj} does not have at least {schema['minItems']} elements.")
+        
+        if schema.get("maxItems", None) is not None:
+            if len(obj) > schema["maxItems"]:
+                raise ValueError(f"The given value {obj} does not have at most {schema['maxItems']} elements.")
+        
+        if schema.get("uniqueItems", None) is not None:
+            if schema["uniqueItems"]:
+                if len({str(x) for x in obj}) != len({str(x) for x in obj}):
+                    raise ValueError(f"The given value {obj} has duplicated items.")
+
+        return [
+            inner_validate_json_schema(root, schema["items"], x)
+            for x in obj
+        ]
+    else:
+        raise ValueError(f"Unknown jsonschema type: {schema['type']}")
+
+################################################################################
 # Get the settings form the env vars
 ################################################################################
 
@@ -97,34 +805,23 @@ This builder uses a json file for settings the targets. An example of settings
 file is:
 
 ```json
-{
-    "wheels_folder":"wheels", 
-    "shared_rustflags":"-C inline-threshold=1000",
-    "targets":{
-        "x86_64":{
-            "haswell":{
-                "build_dir":"build_haswell",
-                "rustflags":"-C target-cpu=haswell"
-            },
-            "core2":{
-                "build_dir":"build_core2",
-                "rustflags":"-C target-cpu=core2"
-            }
-        },
-        "arm64":{
-            "default":{
-                "build_dir":"build_arm_default",
-                "rustflags":""
-            }
-        }
-    }
-}
 ```
 """, formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+
+parser.add_argument("build_type", type=str,
+    choices=["build", "develop", "publish"],
+    help="If the wheel build is for local development and testing or to publish a wheel",
+)
 
 parser.add_argument("-s", "--settings-path", type=str,
     default="builder_settings.json",
     help="The path to the json file with the build specification.",
+)
+
+parser.add_argument("-p", "--print-settings",
+    default=False,
+    action="store_true",
+    help="Print the settings"
 )
 
 parser.add_argument("-v", "--verbosity", type=str,
@@ -139,13 +836,6 @@ parser.add_argument("-sr", "--skip-repair",
     help="""For linux wheels we run `auditwheel repair` on the wheel to be sure to
     include the needed shared libraries. This breaks if the compilation environment
     is not `manylinux_2010` compatible, this flag skips this step.""".replace("\n", ""),
-)
-
-parser.add_argument("-nc", "--no-clean",
-    default=False,
-    action="store_true",
-    help="""By default the script will delete and re-create the folders for each
-    target. Enabling this flag skips this step and uses the old folders.""".replace("\n", ""),
 )
 
 args = parser.parse_args()
@@ -182,114 +872,146 @@ try:
 except JSONDecodeError:
     raise ValueError("The given settings are not a json.\n%s"%settings_txt)
 
-settings["targets"] = settings["targets"][platform.machine()]
-
-WHEELS_FOLDER = join(settings.get("wheels_folder", "wheels"))
-MERGIN_FOLDER =  join(WHEELS_FOLDER, "merged")
-
-# Find the .so compiled library in it
-if platform.system().strip().lower() == "windows":
-    library_extension = ".pyd"
-else:
-    library_extension = ".so"
-
+settings = validate_json_schema(SETTINGS_SCHEMA, settings)
 ################################################################################
-# Generating the bindings
+# Normalize the settings
 ################################################################################
-logging.info("Generating the bindings")
-exec("cargo run --release --bin bindgen", cwd=join("..", "..", "code_analysis"))
+
+settings["metadata"]["arch"] = settings["arch"]
+
+if settings["wheel_root"] is None:
+    settings["wheel_root"] = join(settings["wheels_folder"], "wheel_root")
+    
+if settings["merging_folder"] is None:
+    settings["merging_folder"] = join(settings["wheels_folder"], "merging_folder")
+
+if settings["python_files_path"] is None:
+    settings["python_files_path"] = join(settings["metadata"]["libname"])
+
+if settings["init_path"] is None:
+    settings["init_path"] = join(settings["python_files_path"], "__init__.py")
+
+if settings["target_wheel_path"] is None:
+    settings["target_wheel_path"] = join(settings["wheel_root"], gen_wheel_name(settings["metadata"]))
+
+
+logging.info("%s", settings)
+
+# Build the compilation settings
+settings["targets"] = [
+    {
+        "name":target_name,
+        "arch":arch,
+        "target_cpu":target_settings["target_cpu"],
+        "target_os":target_settings.get("target_os", ["darwin", "windows", "linux"]),
+        "build_dir":join(target_settings.get("build_dir", f"build_{arch}_{target_name}")),
+        "wheel_dir":join(
+            settings["wheels_folder"], 
+            target_settings.get(
+                "wheel_dir", 
+                f"ensmallen_{arch}_{target_name}"
+            ), 
+        ),
+        "lib_name":target_settings.get("lib_name", 
+            f"ensmallen_{arch}_{target_name}"
+        ),
+        "cpu_features": get_cpu_features(arch, target_settings['target_cpu']),
+        "crate_features": target_settings.get("crate_features", []),
+        "rustflags":target_settings.get("rustflags", ""),
+    }
+    for arch in settings["targets"].keys()
+    for target_name, target_settings in settings["targets"][arch].items()
+]
+
+# Keep a copy of only the targets to build
+settings["targets_to_build"] = [
+    target
+    for target in settings["targets"]
+    if settings["arch"] == target["arch"] and settings["target_os"] in target["target_os"]
+]
+
+# if we are in a develop build override the targets with only the local one
+if args.build_type == "develop":
+    settings["targets"] = [{
+        "name":"develop",
+        "arch":settings["arch"],
+        "target_cpu":"native",
+        "target_os":settings["target_os"],
+        "build_dir":"build_develop",
+        "wheel_dir":join(settings["wheels_folder"], "ensmallen_develop"),
+        "lib_name":"ensmallen_develop",
+        "cpu_features":[],
+        "crate_features":settings["develop"]["crate_features"],
+        "rustflags":settings["develop"]["rustflags"],
+
+    }]
+    settings["targets_to_build"] = settings["targets"]
+
+logging.debug("Building with settings:\n%s", json.dumps(settings, indent=4))
+if args.print_settings:
+    print(json.dumps(settings, indent=4))
 
 ################################################################################
 # Clean the folders and prepare them to be compiled
 ################################################################################
-shutil.rmtree(join(WHEELS_FOLDER), ignore_errors=True)
-os.makedirs(join(WHEELS_FOLDER), exist_ok=True)
-os.makedirs(join(MERGIN_FOLDER), exist_ok=True)
 
-if not args.no_clean:
-    # Clean the building directory from past compilations
-    for target_name, target_settings in settings["targets"].items():
-        build_dir = join(target_settings["build_dir"])
-        shutil.rmtree(build_dir, ignore_errors=True)
+def build_target_wheel(settings, target):
+    build_dir = target["build_dir"]
+    lib_name  = target["lib_name"]
+    wheel_dir = target["wheel_dir"]
 
-    # Copy the sources to the build folder so that we can modify it without worries
-    # We copy the non_avx folder because if we copy `.` otherwise it will include
-    # a copy of the avx build
-    last_copied_folder = join(".")
-    # Clone the building folders
-    for target_name, target_settings in settings["targets"].items():
-        build_dir = join(target_settings["build_dir"])
-        logging.info("Creating the folder %s", build_dir)
-        # Copy the sources to the build folder so that we can modify it without worries
-        # We copy the non_avx folder because if we copy `.` otherwise it will include
-        # a copy of the avx build
-        shutil.copytree(last_copied_folder, build_dir)
-        last_copied_folder = build_dir
+    logging.info("Deleting old build folder")
+    shutil.rmtree(build_dir, ignore_errors=True)
+    logging.info("Deleting old wheel folder")
+    shutil.rmtree(wheel_dir, ignore_errors=True)
+    os.makedirs(wheel_dir, exist_ok=True)
 
-    # Patch the folders 
-    for i, (target_name, target_settings) in enumerate(settings["targets"].items()):
-        build_dir = join(target_settings["build_dir"])
+    logging.info("Creating new build folders")
+    shutil.copytree(".", build_dir)
 
-        logging.info("Patching the %s build", target_name)
-        patch(join(build_dir, "Cargo.toml"),
-            r"""path\s*=\s*\"..""", 
-            r"""path = "../..""", 
-        )
-        patch(join(build_dir, "pyproject.toml"),
-            r"name\s*=\s*\".+?\"", 
-            r"""name="ensmallen_%s" """%target_name
-        )
-        patch(join(build_dir, "Cargo.toml"),
-            r"name\s*=\s*\".+?\"", 
-            r"""name = "ensmallen_%s" """%target_name
-        )
-        patch(join(build_dir, "src", "auto_generated_bindings.rs"), 
-            r"fn ensmallen\(_py: Python", 
-            r"fn ensmallen_%s(_py: Python"%target_name,
-        )   
+    logging.info("Patching the %s build", lib_name)
+    patch(join(build_dir, "Cargo.toml"),
+        r"""path\s*=\s*\"..""", 
+        r"""path = "../..""", 
+    )
+    patch(join(build_dir, "pyproject.toml"),
+        r"name\s*=\s*\".+?\"", 
+        r"""name="%s" """%lib_name
+    )
+    patch(join(build_dir, "Cargo.toml"),
+        r"name\s*=\s*\".+?\"", 
+        r"""name = "%s" """%lib_name
+    )
+    patch(join(build_dir, "src", "auto_generated_bindings.rs"), 
+        r"fn ensmallen\(_py: Python", 
+        r"fn %s(_py: Python"%lib_name,
+    )   
 
-        # Rename the sources folder
-        shutil.move(
-            join(build_dir, "ensmallen"), 
-            join(build_dir, "ensmallen_%s"%target_name)
-        )
-else:
-    # just sync the src folders
-    # TODO!: should we sync anything else?
-    for target_name, target_settings in settings["targets"].items():
-        src = join("src")
-        dst = join(target_settings["build_dir"], "src")
-        logging.info("Syncing %s and %s", src, dst)
-        rsync_folders(
-            src,
-            dst,
-        )
+    logging.info("Renaming the old python code folder")
+    shutil.move(
+        join(build_dir, "ensmallen"), 
+        join(build_dir, lib_name)
+    )
 
-################################################################################
-# Build the wheels
-################################################################################
+    rust_flags = f"-Ctarget-cpu={target['target_cpu']}"
 
-resulting_wheels = []
-################################################################################
-# Compile all the targets
-################################################################################
-for target_name, target_settings in settings["targets"].items():
-    logging.info("%s settings: %s", target_name, target_settings)
+    if settings["shared_rustflags"] is not None:
+        rust_flags += " " + settings["shared_rustflags"]
 
-    build_dir = join(target_settings["build_dir"])
-    logging.info("Build dir '%s'", build_dir)
-    target_dir = join(WHEELS_FOLDER, target_name)
-    # Clean the folder
-    shutil.rmtree(target_dir, ignore_errors=True)
-    os.makedirs(target_dir, exist_ok=True)
+    if target["rustflags"] is not None:
+        rust_flags += " " + target["rustflags"]
 
-    rust_flags = settings["shared_rustflags"] + " " + target_settings["rustflags"]
+    if target["crate_features"] is not None:
+        features = ",".join(target['crate_features'])
+    else:
+        features = None
 
-    logging.info("Compiling the '%s' target with flags: '%s'", target_name, rust_flags)
+    command = f"""maturin build --release --strip --skip-auditwheel --no-sdist --out {wheel_dir} """
+    if features is not None:
+        command += f"""--cargo-extra-args="--features={features}" """ 
+    logging.info("Compiling with '%s' and flags: '%s'", command, rust_flags)
     exec(
-        "maturin build --release --strip --no-sdist --out {}".format(
-            target_dir
-        ), 
+        command, 
         env={
             **os.environ,
             "RUSTFLAGS":rust_flags,
@@ -297,143 +1019,60 @@ for target_name, target_settings in settings["targets"].items():
         cwd=build_dir,
     )
 
-################################################################################
-# Copy the file to the other wheel
-################################################################################
-logging.info("Merging the wheel files")
-os.makedirs(MERGIN_FOLDER, exist_ok=True)
+    logging.info("Deleting the build folder")
+    shutil.rmtree(build_dir, ignore_errors=True)
 
-# Extract the compiled libraries form the wheels
-libs = []
+shutil.rmtree(settings["wheels_folder"], ignore_errors=True)
+os.makedirs(settings["wheels_folder"], exist_ok=True)
+shutil.rmtree(settings["wheel_root"], ignore_errors=True)
+os.makedirs(settings["wheel_root"], exist_ok=True)
 
-for i, (target_name, target_settings) in enumerate(settings["targets"].items()):
-    target_dir = join(WHEELS_FOLDER, target_name)
-    src_wheel = join(target_dir, os.listdir(target_dir)[0])
-    wheel_name = os.path.basename(src_wheel)
+logging.info("Cleaning the target folder so we don't copy useless data")
+exec("cargo clean", cwd=join("."))
+logging.info("Running cargo update")
+exec("cargo update", cwd=join("."))
+logging.info("Generating the bindings")
+exec("cargo run --release --bin bindgen", cwd=join("..", "..", "code_analysis"))
 
-    logging.debug("Reading the '%s' compiled library from '%s'", target_name, src_wheel)
-    with zipfile.ZipFile(src_wheel) as z:
-        lib = next(x for x in z.filelist if x.filename.endswith(library_extension))
+logging.info("Copyng the python library files top the merging folder")
+shutil.rmtree(settings["merging_folder"], ignore_errors=True)
+shutil.copytree(settings["python_files_path"], settings["merging_folder"])
 
-        # Read the .so
-        logging.info("The %s compiled library is '%s'", target_name, lib.filename)
-        with z.open(lib.filename) as f:
-            compiled_libray = f.read()
+logging.info("Generating __init__.py file in the merging folder")
+gen_init_file(settings)
 
-        lib_name = os.path.basename(lib.filename)
+# Build all the wheels
+logging.info("Building the wheels for each target")
+for target in settings["targets_to_build"]:
+    build_target_wheel(settings, target)
 
-    # Compute the hash of the library
-    m = hashlib.sha256()
-    m.update(compiled_libray)
-    library_hash = base64.b64encode(m.digest()).decode()
-    logging.debug("The '%s' compiled library hash is %s", target_name, library_hash)
+# Copy the shared library to the merging_folder
+logging.info("Copying the compiled libraries to the merging folder")
+for target in settings["targets_to_build"]:
+    # find the wheel file in its folder
+    wheel_path = glob.glob(os.path.join(target["wheel_dir"], "*.whl"))[0]
 
-    libs.append({
-        "target_name":target_name,
-        "wheel_name":wheel_name,
-        "lib_name":lib_name,
-        "lib":compiled_libray,
-        "hash":library_hash,
-        "size":len(compiled_libray),
-    })
-
-# Take a wheel to copy all the non compiled files
-donor_target, _ = list(settings["targets"].items())[0]
-donor_dir = join(WHEELS_FOLDER, donor_target)
-donor_wheel = join(donor_dir, os.listdir(donor_dir)[0])
-logging.debug("The donor wheel is %s", donor_wheel)
-
-# Compute the target zip file
-target_file = os.path.basename(donor_wheel).replace(
-    "ensmallen_%s"%donor_target,
-    "ensmallen",
-)
-merged_wheel = join(MERGIN_FOLDER, target_file)
-shutil.rmtree(merged_wheel, ignore_errors=True)
-logging.debug("The merged wheel will be %s", merged_wheel)
-
-logging.debug("Merging the wheels")
-with zipfile.ZipFile(donor_wheel, 'r') as zipread:
-    with zipfile.ZipFile(
-        merged_wheel, 'w', 
-        compression=zipfile.ZIP_DEFLATED,
-        ) as zipwrite:
-
-        for data in libs:
-            library_path = "ensmallen/{}".format(data["lib_name"])
-            logging.debug("Copying the compiled libraries to '%s'", library_path)
-            # Add the libraries to the new zip
-            zipwrite.writestr(
-                library_path, 
-                data["lib"]
-            )
-
-        # Copy all the other files from the avx zip
+    with zipfile.ZipFile(wheel_path, "r") as zipread:
         for item in zipread.infolist():
-            data = zipread.read(item.filename)
-            dst_path = item.filename.replace(
-                "ensmallen_%s"%donor_target,
-                "ensmallen",
-            )
-            logging.debug("Copying file bewtten wheels '%s' to '%s'", item.filename, dst_path)
+            if item.filename.endswith(settings["library_file_extension"]):
+                local_file = join(
+                    settings["merging_folder"],
+                    os.path.join(*os.path.split(item.filename)[1:]),
+                )
+                # Copy the file
+                with open(local_file, "wb") as f:
+                    f.write(zipread.read(item.filename))
 
-            # Skip the compiledlibrary from the donor wheel
-            if dst_path.startswith("ensmallen") and dst_path.endswith(library_extension):
-                logging.debug("Skipping '%s'", dst_path)
-                continue
+logging.info("Creating the final wheel")
+gen_wheel(settings)
 
-            # Patch the RECORD file adding the non_avx library
-            # The record line has the following format:
-            # $PATH,$HASH,$FILE_SIZE_IN_BYTES
-            if dst_path.endswith("METADATA"):
-                logging.debug("Patching the METADATA file")
-                data = data.decode()
-                data = data.replace(
-                    "ensmallen_%s"%donor_target,
-                    "ensmallen",
-                ).encode()
-            elif dst_path.endswith("RECORD"):
-                logging.debug("Patching the RECORD file")
-                data = data.decode()
-                data = [
-                    x.replace(
-                        "ensmallen_%s"%donor_target,
-                        "ensmallen",
-                    )
-                    for x in data.split("\n") 
-                    if x.strip() != "" and 
-                        not (x.split(",")[0].endswith(library_extension))
-                ]
-                for vals in libs:
-                    data.append("ensmallen/{lib_name},sha256={hash},{size}".format(**vals))
-                # Sort the lines
-                data = "\n".join(sorted(data)) + "\n"
-                data = data.encode()
-
-            zipwrite.writestr(dst_path, data)
-
-logging.debug("Done!")
-################################################################################
-# Copy the file to the other wheel
-################################################################################
-
-# Repairing the file
-final_wheel = join(WHEELS_FOLDER, target_file)
-logging.info("The final wheel will be at '%s'", final_wheel)
-# WARNING: adding --strip here breaks the wheel OFC
-if platform.system().strip().lower() == "linux" and not args.skip_repair:
-    logging.info("Fixing the wheel to be in the standard manylinux2010 if needed")
+if args.build_type == "develop":
     exec(
-        "auditwheel repair {} --wheel-dir {}".format(target_file, WHEELS_FOLDER),
-        env=os.environ,
-        cwd=MERGIN_FOLDER,
+        f"pip --disable-pip-version-check install {settings['target_wheel_path']} --force-reinstall"
     )
-else:
-    shutil.copy(
-        merged_wheel, 
-        final_wheel,
+elif args.build_type == "publish":
+    exec(
+        f"twine upload {settings['target_wheel_path']}"
     )
-
-resulting_wheels.append(final_wheel)
-
-logging.info("To publish just run:\ntwine upload %s", " ".join(resulting_wheels))
+elif args.build_type == "build":
+    print(f"To publish run 'twine upload {settings['target_wheel_path']}'")

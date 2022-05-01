@@ -55,6 +55,11 @@ impl Node2Vec {
         })
     }
 
+    /// Returns the used embedding size.
+    pub fn get_embedding_size(&self) -> usize {
+        self.embedding_size
+    }
+
     pub fn fit_transform(
         &self,
         graph: &Graph,
