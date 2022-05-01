@@ -1982,12 +1982,12 @@ impl Graph {
     /// Returns vector of directed edge node names with given node name prefixes
     ///
     /// # Arguments
-    /// * `src_node_name_prefix`: &str - Prefix of the source node names.
-    /// * `dst_node_name_prefix`: &str - Prefix of the source node names.
+    /// * `src_node_name_prefix`: Option<&str> - Prefix of the source node names.
+    /// * `dst_node_name_prefix`: Option<&str> - Prefix of the source node names.
     pub fn get_directed_edge_node_names_from_node_curie_prefixes(
         &self,
-        src_node_name_prefix: &str,
-        dst_node_name_prefix: &str,
+        src_node_name_prefix: Option<&str>,
+        dst_node_name_prefix: Option<&str>,
     ) -> Vec<(String, String)> {
         self.par_iter_directed_edge_node_names_from_node_curie_prefixes(
             src_node_name_prefix,
@@ -1999,12 +1999,12 @@ impl Graph {
     /// Returns vector of directed edge node IDs with given node name prefixes
     ///
     /// # Arguments
-    /// * `src_node_name_prefix`: &str - Prefix of the source node names.
-    /// * `dst_node_name_prefix`: &str - Prefix of the source node names.
+    /// * `src_node_name_prefix`: Option<&str> - Prefix of the source node names.
+    /// * `dst_node_name_prefix`: Option<&str> - Prefix of the source node names.
     pub fn get_directed_edge_node_ids_from_node_curie_prefixes(
         &self,
-        src_node_name_prefix: &str,
-        dst_node_name_prefix: &str,
+        src_node_name_prefix: Option<&str>,
+        dst_node_name_prefix: Option<&str>,
     ) -> Vec<(NodeT, NodeT)> {
         self.par_iter_directed_edge_node_ids_from_node_curie_prefixes(
             src_node_name_prefix,
@@ -2016,12 +2016,12 @@ impl Graph {
     /// Returns vector of directed edge IDs with given node name prefixes.
     ///
     /// # Arguments
-    /// * `src_node_name_prefix`: &str - Prefix of the source node names.
-    /// * `dst_node_name_prefix`: &str - Prefix of the source node names.
+    /// * `src_node_name_prefix`: Option<&str> - Prefix of the source node names.
+    /// * `dst_node_name_prefix`: Option<&str> - Prefix of the source node names.
     pub fn get_directed_edge_ids_from_node_curie_prefixes(
         &self,
-        src_node_name_prefix: &str,
-        dst_node_name_prefix: &str,
+        src_node_name_prefix: Option<&str>,
+        dst_node_name_prefix: Option<&str>,
     ) -> Vec<EdgeT> {
         self.par_iter_directed_edge_ids_from_node_curie_prefixes(
             src_node_name_prefix,
@@ -2033,12 +2033,12 @@ impl Graph {
     /// Returns number of directed edge IDs with given node name prefixes.
     ///
     /// # Arguments
-    /// * `src_node_name_prefix`: &str - Prefix of the source node names.
-    /// * `dst_node_name_prefix`: &str - Prefix of the source node names.
+    /// * `src_node_name_prefix`: Option<&str> - Prefix of the source node names.
+    /// * `dst_node_name_prefix`: Option<&str> - Prefix of the source node names.
     pub fn get_number_of_directed_edges_from_node_curie_prefixes(
         &self,
-        src_node_name_prefix: &str,
-        dst_node_name_prefix: &str,
+        src_node_name_prefix: Option<&str>,
+        dst_node_name_prefix: Option<&str>,
     ) -> EdgeT {
         self.par_iter_directed_edge_ids_from_node_curie_prefixes(
             src_node_name_prefix,
