@@ -688,6 +688,113 @@ impl Graph {
         )
     }
 
+    /// Returns parallel iterator over directed edge node names with given node name prefixes
+    ///
+    /// # Arguments
+    /// * `src_node_name_prefix`: &str - Prefix of the source node names.
+    /// * `dst_node_name_prefix`: &str - Prefix of the source node names.
+    ///
+    pub fn par_iter_directed_edge_node_names_from_node_curie_prefixes<'a>(
+        &'a self,
+        src_node_name_prefix: &'a str,
+        dst_node_name_prefix: &'a str,
+    ) -> impl ParallelIterator<Item = (String, String)> + 'a {
+        self.par_iter_directed_edges()
+            .filter_map(move |(_, _, src_node_name, _, dst_node_name)| {
+                if src_node_name.starts_with(src_node_name_prefix)
+                    && dst_node_name.starts_with(dst_node_name_prefix)
+                {
+                    Some((src_node_name, dst_node_name))
+                } else {
+                    None
+                }
+            })
+    }
+
+    /// Returns parallel iterator over directed edge node IDs with given node name prefixes
+    ///
+    /// # Arguments
+    /// * `src_node_name_prefix`: &str - Prefix of the source node names.
+    /// * `dst_node_name_prefix`: &str - Prefix of the source node names.
+    ///
+    pub fn par_iter_directed_edge_node_ids_from_node_curie_prefixes<'a>(
+        &'a self,
+        src_node_name_prefix: &'a str,
+        dst_node_name_prefix: &'a str,
+    ) -> impl ParallelIterator<Item = (NodeT, NodeT)> + 'a {
+        self.par_iter_directed_edges().filter_map(
+            move |(_, src, src_node_name, dst, dst_node_name)| {
+                if src_node_name.starts_with(src_node_name_prefix)
+                    && dst_node_name.starts_with(dst_node_name_prefix)
+                {
+                    Some((src, dst))
+                } else {
+                    None
+                }
+            },
+        )
+    }
+
+    /// Returns parallel iterator over directed edge IDs with given node name prefixes
+    ///
+    /// # Arguments
+    /// * `src_node_name_prefix`: &str - Prefix of the source node names.
+    /// * `dst_node_name_prefix`: &str - Prefix of the source node names.
+    ///
+    pub fn par_iter_directed_edge_ids_from_node_curie_prefixes<'a>(
+        &'a self,
+        src_node_name_prefix: &'a str,
+        dst_node_name_prefix: &'a str,
+    ) -> impl ParallelIterator<Item = EdgeT> + 'a {
+        self.par_iter_directed_edges().filter_map(
+            move |(edge_id, _, src_node_name, _, dst_node_name)| {
+                if src_node_name.starts_with(src_node_name_prefix)
+                    && dst_node_name.starts_with(dst_node_name_prefix)
+                {
+                    Some(edge_id)
+                } else {
+                    None
+                }
+            },
+        )
+    }
+
+    /// Returns parallel iterator over node IDs with given curie prefix
+    ///
+    /// # Arguments
+    /// * `curie_prefix`: &str - Prefix of the source node names.
+    pub fn par_iter_node_ids_from_node_curie_prefix<'a>(
+        &'a self,
+        curie_prefix: &'a str,
+    ) -> impl ParallelIterator<Item = NodeT> + 'a {
+        self.par_iter_node_ids()
+            .zip(self.par_iter_node_names())
+            .filter_map(move |(node_id, node_name)| {
+                if node_name.starts_with(curie_prefix) {
+                    Some(node_id)
+                } else {
+                    None
+                }
+            })
+    }
+
+    /// Returns parallel iterator over node names with given curie prefix
+    ///
+    /// # Arguments
+    /// * `curie_prefix`: &str - Prefix of the source node names.
+    pub fn par_iter_node_names_from_node_curie_prefix<'a>(
+        &'a self,
+        curie_prefix: &'a str,
+    ) -> impl ParallelIterator<Item = String> + 'a {
+        self.par_iter_node_names().filter_map(move |node_name| {
+            if node_name.starts_with(curie_prefix) {
+                Some(node_name)
+            } else {
+                None
+            }
+        })
+    }
+
     /// Returns iterator over edge node names and their properties with given edge type.
     ///
     /// # Arguments
