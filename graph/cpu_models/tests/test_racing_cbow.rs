@@ -44,7 +44,6 @@ pub fn load_ctd() -> Graph {
 #[test]
 fn test_racing_cbow_on_cora_logsigmoid() -> Result<(), String> {
     let mut cora = load_cora();
-    cora = cora.sort_by_decreasing_outbound_node_degree();
     cora.enable(Some(true), Some(true), Some(true), Some(false))
         .unwrap();
     let embedding_size = 128;
@@ -59,10 +58,11 @@ fn test_racing_cbow_on_cora_logsigmoid() -> Result<(), String> {
         None,
         Some(10),
         Some(true),
+        Some(false),
     )
     .unwrap();
     let mut embedding = vec![0.0; embedding_size * cora.get_nodes_number() as usize];
-    cbow.fit_transform_racing(&cora, embedding.as_mut_slice(), Some(10), None, None)?;
+    cbow.fit_transform_racing(&cora, embedding.as_mut_slice(), Some(10), None, None, None)?;
 
     let writer = CSVFileWriter::new("cora_racing_cbow_embedding_logsigmoid.tsv")
         .set_separator(Some('\t'))
@@ -95,7 +95,6 @@ fn test_racing_cbow_on_cora_logsigmoid() -> Result<(), String> {
 #[test]
 fn test_racing_cbow_on_cora_sigmoid() -> Result<(), String> {
     let mut cora = load_cora();
-    cora = cora.sort_by_decreasing_outbound_node_degree();
     cora.enable(Some(true), Some(true), Some(true), Some(false))
         .unwrap();
     let embedding_size = 128;
@@ -110,10 +109,11 @@ fn test_racing_cbow_on_cora_sigmoid() -> Result<(), String> {
         None,
         Some(10),
         Some(false),
+        Some(false),
     )
     .unwrap();
     let mut embedding = vec![0.0; embedding_size * cora.get_nodes_number() as usize];
-    cbow.fit_transform_racing(&cora, embedding.as_mut_slice(), Some(10), None, None)?;
+    cbow.fit_transform_racing(&cora, embedding.as_mut_slice(), Some(10), None, None, None)?;
 
     let writer = CSVFileWriter::new("cora_racing_cbow_embedding_sigmoid.tsv")
         .set_separator(Some('\t'))
@@ -146,7 +146,6 @@ fn test_racing_cbow_on_cora_sigmoid() -> Result<(), String> {
 #[test]
 fn test_racing_cbow_on_ctd_logsigmoid() -> Result<(), String> {
     let mut ctd = load_ctd();
-    ctd = ctd.sort_by_decreasing_outbound_node_degree();
     ctd.enable(Some(true), Some(true), Some(true), Some(false))
         .unwrap();
     let embedding_size = 128;
@@ -161,10 +160,11 @@ fn test_racing_cbow_on_ctd_logsigmoid() -> Result<(), String> {
         None,
         Some(10),
         Some(true),
+        Some(false),
     )
     .unwrap();
     let mut embedding = vec![0.0; embedding_size * ctd.get_nodes_number() as usize];
-    cbow.fit_transform_racing(&ctd, embedding.as_mut_slice(), Some(10), None, None)?;
+    cbow.fit_transform_racing(&ctd, embedding.as_mut_slice(), Some(10), None, None, None)?;
 
     let writer = CSVFileWriter::new("ctd_racing_cbow_embedding_logsigmoid.tsv")
         .set_separator(Some('\t'))
@@ -197,7 +197,6 @@ fn test_racing_cbow_on_ctd_logsigmoid() -> Result<(), String> {
 #[test]
 fn test_racing_cbow_on_ctd_sigmoid() -> Result<(), String> {
     let mut ctd = load_ctd();
-    ctd = ctd.sort_by_decreasing_outbound_node_degree();
     ctd.enable(Some(true), Some(true), Some(true), Some(false))
         .unwrap();
     let embedding_size = 128;
@@ -212,10 +211,11 @@ fn test_racing_cbow_on_ctd_sigmoid() -> Result<(), String> {
         None,
         Some(10),
         Some(false),
+        Some(false),
     )
     .unwrap();
     let mut embedding = vec![0.0; embedding_size * ctd.get_nodes_number() as usize];
-    cbow.fit_transform_racing(&ctd, embedding.as_mut_slice(), Some(10), None, None)?;
+    cbow.fit_transform_racing(&ctd, embedding.as_mut_slice(), Some(10), None, None, None)?;
 
     let writer = CSVFileWriter::new("ctd_racing_cbow_embedding_sigmoid.tsv")
         .set_separator(Some('\t'))

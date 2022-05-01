@@ -4,7 +4,7 @@ use numpy::PyArray2;
 ///
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, window_size, clipping_value, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree)"]
+#[text_signature = "(*, embedding_size, window_size, clipping_value, number_of_negative_samples, log_sigmoid, siamese, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree)"]
 pub struct SkipGram {
     pub inner: cpu_models::SkipGram,
 }
@@ -38,6 +38,10 @@ impl SkipGram {
     ///     By default, `6.0`, where the loss is already close to zero.
     /// number_of_negative_samples: Optional[int] = 5
     ///     Number of negative samples to extract for each context.
+    /// log_sigmoid: Optional[bool] = True
+    ///     Whether to use the model using a sigmoid or log sigmoid. By default, log sigmoid.
+    /// siamese: Optional[bool] = False
+    ///     Whether to use the model in Siamese mode, using half the weights and therefore half the memory.
     /// walk_length: Optional[int] = 32
     ///     Maximal length of the random walk.
     ///     On graphs without traps, all walks have this length.
@@ -89,7 +93,9 @@ impl SkipGram {
                 "embedding_size",
                 "window_size",
                 "clipping_value",
-                "number_of_negative_samples"
+                "number_of_negative_samples",
+                "log_sigmoid",
+                "siamese",
             ])
             .as_slice()
         ))?;
@@ -103,6 +109,8 @@ impl SkipGram {
                 extract_value_rust_result!(kwargs, "window_size", usize),
                 extract_value_rust_result!(kwargs, "clipping_value", f32),
                 extract_value_rust_result!(kwargs, "number_of_negative_samples", usize),
+                extract_value_rust_result!(kwargs, "log_sigmoid", bool),
+                extract_value_rust_result!(kwargs, "siamese", bool),
             ))?,
         })
     }
@@ -124,8 +132,10 @@ impl SkipGram {
     ///     How many epochs the model will train for.
     ///     In this context an epoch means that the model will compute a random
     ///     walk starting from every node in the graph.
-    /// learning_rate: Optional[float] = 0.005
+    /// learning_rate: Optional[float] = 0.01
     ///     The learning rate to update the gradient.
+    /// learning_rate_decay: Optional[float] = 0.9
+    ///     Factor to reduce the learning rate for at each epoch. By default 0.9.
     /// verbose: Optional[bool] = True
     ///     Whether to show the loading bar.
     fn fit_transform(
@@ -140,7 +150,7 @@ impl SkipGram {
 
         pe!(validate_kwargs(
             kwargs,
-            &["epochs", "learning_rate", "verbose"]
+            &["epochs", "learning_rate", "learning_rate_decay", "verbose"]
         ))?;
 
         let rows_number = graph.inner.get_nodes_number() as usize;
@@ -156,6 +166,7 @@ impl SkipGram {
             embedding_slice,
             extract_value_rust_result!(kwargs, "epochs", usize),
             extract_value_rust_result!(kwargs, "learning_rate", f32),
+            extract_value_rust_result!(kwargs, "learning_rate_decay", f32),
             extract_value_rust_result!(kwargs, "verbose", bool),
         ))?;
 

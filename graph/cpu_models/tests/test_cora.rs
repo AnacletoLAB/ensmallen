@@ -2,7 +2,7 @@ extern crate graph;
 
 use cpu_models::*;
 use graph::test_utilities::*;
-use graph::{CSVFileWriter, EdgeFileReader, Graph, NodeFileReader, WalksParameters};
+use graph::{CSVFileWriter, Graph, WalksParameters};
 
 const EPOCHS: usize = 10;
 const EMBEDDING_SIZE: usize = 20;
@@ -24,7 +24,7 @@ fn inernal_run_test(graph: &Graph, use_siamese: bool, log_sigmoid: bool) -> Resu
     )
     .unwrap();
     let mut embedding = vec![0.0; EMBEDDING_SIZE * graph.get_nodes_number() as usize];
-    cbow.fit_transform_racing(&graph, embedding.as_mut_slice(), Some(EPOCHS), None, None)?;
+    cbow.fit_transform_racing(&graph, embedding.as_mut_slice(), Some(EPOCHS), None, None, None)?;
 
     let result_path = format!(
         "{}_racing_cbow_embedding_{}_{}.tsv",
@@ -71,7 +71,6 @@ fn inernal_run_test(graph: &Graph, use_siamese: bool, log_sigmoid: bool) -> Resu
 #[test]
 fn test_cbow_on_cora() -> Result<(), String> {
     let mut cora = load_cora();
-    cora = cora.sort_by_decreasing_outbound_node_degree();
     cora.enable(Some(true), Some(true), Some(true), Some(false))
         .unwrap();
 
@@ -101,7 +100,7 @@ fn inernal_run_test_thread_safe(graph: &Graph, use_siamese: bool, log_sigmoid: b
     )
     .unwrap();
     let mut embedding = vec![0.0; EMBEDDING_SIZE * graph.get_nodes_number() as usize];
-    cbow.fit_transform(&graph, embedding.as_mut_slice(), Some(EPOCHS), None, Some(64), None)?;
+    cbow.fit_transform(&graph, embedding.as_mut_slice(), Some(EPOCHS), None, Some(64), None, None)?;
 
     let result_path = format!(
         "{}_thread_safe_cbow_embedding_{}_{}.tsv",
@@ -145,10 +144,9 @@ fn inernal_run_test_thread_safe(graph: &Graph, use_siamese: bool, log_sigmoid: b
     Ok(())
 }
 
-//#[test]
+#[test]
 fn test_cbow_on_cora_thread_safe() -> Result<(), String> {
     let mut cora = load_cora();
-    cora = cora.sort_by_decreasing_outbound_node_degree();
     cora.enable(Some(true), Some(true), Some(true), Some(false))
         .unwrap();
 

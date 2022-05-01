@@ -1,8 +1,7 @@
 extern crate graph;
 
 use cpu_models::*;
-use graph::test_utilities::*;
-use graph::{CSVFileWriter, EdgeFileReader, Graph, NodeFileReader, WalksParameters};
+use graph::{CSVFileWriter, EdgeFileReader, Graph, WalksParameters};
 
 #[allow(clippy::redundant_clone)]
 /// This is our default graph we use on tests with node types.
@@ -33,12 +32,11 @@ pub fn load_kgmicrobe() -> Graph {
     .unwrap()
 }
 
-
 #[test]
 fn test_racing_cbow_on_kgmicrobe_logsigmoid() -> Result<(), String> {
     let mut kgmicrobe = load_kgmicrobe();
-    kgmicrobe = kgmicrobe.sort_by_decreasing_outbound_node_degree();
-    kgmicrobe.enable(Some(true), Some(true), Some(true), Some(false))
+    kgmicrobe
+        .enable(Some(true), Some(true), Some(true), Some(false))
         .unwrap();
     let embedding_size = 128;
     let walks = WalksParameters::new(128)
@@ -52,10 +50,11 @@ fn test_racing_cbow_on_kgmicrobe_logsigmoid() -> Result<(), String> {
         None,
         Some(10),
         Some(true),
+        Some(false),
     )
     .unwrap();
     let mut embedding = vec![0.0; embedding_size * kgmicrobe.get_nodes_number() as usize];
-    cbow.fit_transform_racing(&kgmicrobe, embedding.as_mut_slice(), Some(10), None, None)?;
+    cbow.fit_transform_racing(&kgmicrobe, embedding.as_mut_slice(), Some(10), None, None, None)?;
 
     let writer = CSVFileWriter::new("kgmicrobe_racing_cbow_embedding_logsigmoid.tsv")
         .set_separator(Some('\t'))
@@ -88,8 +87,8 @@ fn test_racing_cbow_on_kgmicrobe_logsigmoid() -> Result<(), String> {
 #[test]
 fn test_racing_cbow_on_kgmicrobe_sigmoid() -> Result<(), String> {
     let mut kgmicrobe = load_kgmicrobe();
-    kgmicrobe = kgmicrobe.sort_by_decreasing_outbound_node_degree();
-    kgmicrobe.enable(Some(true), Some(true), Some(true), Some(false))
+    kgmicrobe
+        .enable(Some(true), Some(true), Some(true), Some(false))
         .unwrap();
     let embedding_size = 128;
     let walks = WalksParameters::new(128)
@@ -103,10 +102,11 @@ fn test_racing_cbow_on_kgmicrobe_sigmoid() -> Result<(), String> {
         None,
         Some(10),
         Some(false),
+        Some(false),
     )
     .unwrap();
     let mut embedding = vec![0.0; embedding_size * kgmicrobe.get_nodes_number() as usize];
-    cbow.fit_transform_racing(&kgmicrobe, embedding.as_mut_slice(), Some(10), None, None)?;
+    cbow.fit_transform_racing(&kgmicrobe, embedding.as_mut_slice(), Some(10), None, None, None)?;
 
     let writer = CSVFileWriter::new("kgmicrobe_racing_cbow_embedding_sigmoid.tsv")
         .set_separator(Some('\t'))

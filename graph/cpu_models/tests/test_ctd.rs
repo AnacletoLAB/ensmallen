@@ -1,7 +1,6 @@
 extern crate graph;
 
 use cpu_models::*;
-use graph::test_utilities::*;
 use graph::{CSVFileWriter, EdgeFileReader, Graph, NodeFileReader, WalksParameters};
 
 #[allow(clippy::redundant_clone)]
@@ -63,7 +62,7 @@ fn test_racing_cbow_on_ctd_logsigmoid() -> Result<(), String> {
     )
     .unwrap();
     let mut embedding = vec![0.0; embedding_size * ctd.get_nodes_number() as usize];
-    cbow.fit_transform_racing(&ctd, embedding.as_mut_slice(), Some(10), None, None)?;
+    cbow.fit_transform_racing(&ctd, embedding.as_mut_slice(), Some(10), None, None, None)?;
 
     let writer = CSVFileWriter::new("ctd_racing_cbow_embedding_logsigmoid.tsv")
         .set_separator(Some('\t'))
@@ -93,7 +92,7 @@ fn test_racing_cbow_on_ctd_logsigmoid() -> Result<(), String> {
     Ok(())
 }
 
-//#[test]
+#[test]
 fn test_racing_cbow_on_ctd_sigmoid() -> Result<(), String> {
     let mut ctd = load_ctd();
     ctd.enable(Some(true), Some(true), Some(true), Some(false))
@@ -114,7 +113,7 @@ fn test_racing_cbow_on_ctd_sigmoid() -> Result<(), String> {
     )
     .unwrap();
     let mut embedding = vec![0.0; embedding_size * ctd.get_nodes_number() as usize];
-    cbow.fit_transform_racing(&ctd, embedding.as_mut_slice(), Some(10), None, None)?;
+    cbow.fit_transform_racing(&ctd, embedding.as_mut_slice(), Some(10), None, None, None)?;
 
     let writer = CSVFileWriter::new("ctd_racing_cbow_embedding_sigmoid.tsv")
         .set_separator(Some('\t'))
