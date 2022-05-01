@@ -271,6 +271,9 @@ def gen_wheel(settings):
             if not os.path.isfile(path):
                 continue
 
+            if "__pycache__" in path:
+                continue
+
             local_path = os.path.join(
                 settings["metadata"]["libname"],
                 strip_path_prefix(settings["merging_folder"], path)
