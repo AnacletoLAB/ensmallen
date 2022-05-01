@@ -1,15 +1,13 @@
-use super::*;
-use graph::{EdgeT, Graph, NodeT, ThreadDataRaceAware, WalksParameters};
+use funty::Integral;
+use graph::{EdgeT, Graph, NodeT, ThreadDataRaceAware};
 use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
-use num::traits::{One, Unsigned, Zero};
-use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::IntoParallelRefMutIterator;
 use rayon::iter::ParallelIterator;
-use rayon::prelude::ParallelSlice;
 use rayon::prelude::ParallelSliceMut;
 use rayon::prelude::*;
-use std::convert::TryFrom;
+
+pub trait DistanceType: Send + Sync + Integral {}
 
 #[derive(Clone, Debug)]
 pub struct SPINE {
@@ -40,13 +38,13 @@ impl SPINE {
     }
 
     /// Return vector of vectors of anchor node IDs.
-    fn get_anchor_node_ids(&self, graph: &Graph) -> Result<Vec<Vec<NodeT>>, String> {
+    fn get_anchor_nodes_buckets(&self, graph: &Graph) -> Result<Vec<Vec<NodeT>>, String> {
         let number_of_edge_per_bucket: EdgeT =
             ((graph.get_number_of_directed_edges() as f32 / 2 as f32 / self.embedding_size as f32)
                 .ceil() as EdgeT)
                 .max(1);
 
-        let mut node_ids: Vec<NodeT> = self.get_node_ids();
+        let mut node_ids: Vec<NodeT> = graph.get_node_ids();
         node_ids.par_sort_unstable_by(|&a, &b| unsafe {
             graph
                 .get_unchecked_node_degree_from_node_id(b)
@@ -66,65 +64,85 @@ impl SPINE {
             if buckets.len() == self.embedding_size {
                 return;
             }
-            current_bucket_size += self.get_unchecked_node_degree_from_node_id(node_id) as EdgeT;
+            current_bucket_size += graph.get_unchecked_node_degree_from_node_id(node_id) as EdgeT;
             current_bucket.push(node_id);
         });
+
+        if buckets.len() < self.embedding_size {
+            return Err(format!(
+                concat!(
+                    "It was not possible to create buckets for the requested number of features ({embedding_size}) ",
+                    "but only for {actual_embedding_size} features.",
+                    "Please reduce the requested embedding size to a value equal to or smaller ",
+                    "than the number of features that can be created in this graph instance."
+                ),
+                embedding_size=self.embedding_size,
+                actual_embedding_size=buckets.len()
+            ));
+        }
 
         Ok(buckets)
     }
 
-    pub unsafe fn get_distances_from_bucket<Distance>(
+    pub unsafe fn compute_unchecked_feature_from_bucket<Distance>(
         &self,
+        graph: &Graph,
         mut bucket: Vec<NodeT>,
-        distances: &mut [Distance],
+        mut distances: &mut [Distance],
     ) where
-        Distance: Send + Sync + IsInteger + TryFrom<usize> + Zero + One,
+        Distance: DistanceType,
     {
         // We initialize the provided slice with the maximum distance.
         distances.par_iter_mut().for_each(|distance| {
             *distance = Distance::MAX;
         });
 
+        // We wrap the distances object in an unsafe cell so
+        // it may be shared among threads.
         let shared_distances = ThreadDataRaceAware::new(distances);
-        let zero = Distance::zero();
-        let one = Distance::one();
-        let mut eccentricity: Distance = zero;
+        let mut eccentricity: Distance = Distance::ZERO;
 
+        // We iterate over the source node IDs and we assign
+        // to each of them a distance of zero.
         bucket.par_iter().copied().for_each(|node_id| {
-            *(*thread_shared_distances.get()).get_unchecked_mut(node_id) = zero;
+            *(*shared_distances.get()).get_unchecked_mut(node_id as usize) = Distance::ZERO;
         });
 
-        while !frontier.is_empty() {
-            eccentricity += one;
-            if maximal_depth.map_or(false, |maximal_depth| maximal_depth > eccentricity) {
-                break;
-            }
+        // Until the bucket is not empty we start to iterate.
+        while !bucket.is_empty() {
+            eccentricity += Distance::ONE;
 
-            frontier = frontier
+            // We compute the next bucket of nodes, i.e. the next step of the frontier.
+            bucket = bucket
                 .into_par_iter()
                 .flat_map_iter(|node_id| {
-                    // TODO!: The following line can be improved when the par iter is made
-                    // generally available also for the elias-fano graphs.
-
-                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                })
-                .filter_map(|neighbour_node_id| {
-                    if (*thread_shared_distances.value.get())[neighbour_node_id as usize]
-                        == node_not_present
-                    {
-                        // Set it's distance
-                        (*thread_shared_distances.value.get())[neighbour_node_id as usize] =
-                            eccentricity;
-                        // add the node to the nodes to explore
-                        Some(neighbour_node_id)
-                    } else {
-                        None
-                    }
+                    graph
+                        .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                        .filter_map(|neighbour_node_id| {
+                            let distance = (*shared_distances.get())
+                                .get_unchecked_mut(neighbour_node_id as usize);
+                            if *distance == Distance::MAX {
+                                // Set it's distance
+                                *distance = eccentricity;
+                                // add the node to the nodes to explore
+                                Some(neighbour_node_id)
+                            } else {
+                                None
+                            }
+                        })
                 })
                 .collect::<Vec<NodeT>>();
         }
-        eccentricity = eccentricity.saturating_sub(T::try_from(1).ok().unwrap());
-        (distances, eccentricity, most_distant_node)
+
+        // We retrieve the reference to the distances slice.
+        distances = shared_distances.into_inner();
+
+        // We set all remaining MAX distances to the computed exentricity.
+        distances.par_iter_mut().for_each(|distance| {
+            if *distance == Distance::MAX {
+                *distance = eccentricity;
+            }
+        });
     }
 
     /// Computes in the provided slice of embedding the SPINE node embedding.
@@ -140,7 +158,7 @@ impl SPINE {
         verbose: Option<bool>,
     ) -> Result<(), String>
     where
-        Distance: TryFrom<u32> + Into<u32> + Send + Sync + IsInteger + TryFrom<usize>,
+        Distance: DistanceType,
     {
         let verbose = verbose.unwrap_or(true);
 
@@ -156,5 +174,29 @@ impl SPINE {
 
         // Check that the graph has edges.
         graph.must_have_edges()?;
+
+        // Depending whether verbosity was requested by the user
+        // we create or not a visible progress bar to show the progress
+        // in the computation of the features.
+        let features_progress_bar = if verbose {
+            let pb = ProgressBar::new(self.embedding_size as u64);
+            pb.set_style(ProgressStyle::default_bar().template(
+                "SPINE features {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
+            ));
+            pb
+        } else {
+            ProgressBar::hidden()
+        };
+
+        // We start to compute the features
+        embedding
+            .chunks_mut(self.embedding_size)
+            .zip(self.get_anchor_nodes_buckets(graph)?)
+            .progress_with(features_progress_bar)
+            .for_each(|(empty_feature, bucket)| unsafe {
+                self.compute_unchecked_feature_from_bucket(graph, bucket, empty_feature);
+            });
+
+        Ok(())
     }
 }
