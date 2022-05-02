@@ -29,10 +29,11 @@
             }
         ]
     },
+    "manylinux_version":"manylinux2010",
     "wheels_folder":"wheels", 
     "shared_rustflags":"-C inline-threshold=1000",
     "develop":{
-        "target_cpu":"native",
+        "target_cpu":"haswell",
         "crate_features":["cuda"]
     },
     "targets":{
