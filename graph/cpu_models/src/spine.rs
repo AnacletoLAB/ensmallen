@@ -194,7 +194,7 @@ impl SPINE {
 
         // We start to compute the features
         embedding
-            .chunks_mut(self.embedding_size)
+            .chunks_mut(graph.get_nodes_number() as usize)
             .zip(self.get_anchor_nodes_buckets(graph)?)
             .progress_with(features_progress_bar)
             .for_each(|(empty_feature, bucket)| unsafe {
