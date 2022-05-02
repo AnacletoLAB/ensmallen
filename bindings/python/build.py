@@ -1154,37 +1154,37 @@ def build_target_wheel(settings, target):
 
     logging.info("Deleting the build folder")
     shutil.rmtree(build_dir, ignore_errors=True)
-if False:
-    shutil.rmtree(settings["wheels_folder"], ignore_errors=True)
-    os.makedirs(settings["wheels_folder"], exist_ok=True)
-    shutil.rmtree(settings["wheel_root"], ignore_errors=True)
-    os.makedirs(settings["wheel_root"], exist_ok=True)
 
-    logging.info("Cleaning the target folder so we don't copy useless data")
-    exec("cargo clean", cwd=join("."))
-    logging.info("Running cargo update")
-    exec("cargo update", cwd=join("."))
-    logging.info("Generating the bindings")
-    exec("cargo run --release --bin bindgen", cwd=join("..", "..", "code_analysis"))
+shutil.rmtree(settings["wheels_folder"], ignore_errors=True)
+os.makedirs(settings["wheels_folder"], exist_ok=True)
+shutil.rmtree(settings["wheel_root"], ignore_errors=True)
+os.makedirs(settings["wheel_root"], exist_ok=True)
 
-    logging.info("Copyng the python library files top the merging folder")
-    shutil.rmtree(settings["merging_folder"], ignore_errors=True)
-    shutil.copytree(settings["python_files_path"], settings["merging_folder"])
+logging.info("Cleaning the target folder so we don't copy useless data")
+exec("cargo clean", cwd=join("."))
+logging.info("Running cargo update")
+exec("cargo update", cwd=join("."))
+logging.info("Generating the bindings")
+exec("cargo run --release --bin bindgen", cwd=join("..", "..", "code_analysis"))
 
-    # Remove caches so that we don't put them in the wheel
-    for file in glob.iglob(
-        join(settings["merging_folder"], "**", "__pycache__"), 
-        recursive=True,
-    ):
-        shutil.rmtree(file, ignore_errors=True)
+logging.info("Copyng the python library files top the merging folder")
+shutil.rmtree(settings["merging_folder"], ignore_errors=True)
+shutil.copytree(settings["python_files_path"], settings["merging_folder"])
 
-    logging.info("Generating __init__.py file in the merging folder")
-    gen_init_file(settings)
+# Remove caches so that we don't put them in the wheel
+for file in glob.iglob(
+    join(settings["merging_folder"], "**", "__pycache__"), 
+    recursive=True,
+):
+    shutil.rmtree(file, ignore_errors=True)
 
-    # Build all the wheels
-    logging.info("Building the wheels for each target")
-    for target in settings["targets_to_build"]:
-        build_target_wheel(settings, target)
+logging.info("Generating __init__.py file in the merging folder")
+gen_init_file(settings)
+
+# Build all the wheels
+logging.info("Building the wheels for each target")
+for target in settings["targets_to_build"]:
+    build_target_wheel(settings, target)
 
 # Copy the shared library to the merging_folder
 logging.info("Copying the compiled libraries to the merging folder")
