@@ -245,7 +245,7 @@ impl WeightedSPINE {
 
         // We start to compute the features
         embedding
-            .par_chunks_mut(self.embedding_size)
+            .par_chunks_mut(graph.get_nodes_number() as usize)
             .zip(self.get_anchor_nodes_buckets(graph)?)
             .progress_with(features_progress_bar)
             .for_each(|(empty_feature, bucket)| unsafe {
