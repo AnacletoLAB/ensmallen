@@ -267,19 +267,19 @@ impl Graph {
         edge_weighting_method: &str,
     ) -> Result<impl ParallelIterator<Item = (NodeT, usize, NodeT, usize, WeightT)> + 'a> {
         let nodes_number = node_ids.len();
-        let edge_weighting_method: Result<fn(&Graph, NodeT, NodeT) -> f64> = match edge_weighting_method {
+        let edge_weighting_method: Result<fn(&Graph, NodeT, NodeT) -> f32> = match edge_weighting_method {
             "unweighted_shortest_path" => {
                 self.must_be_connected()?;
                 // We make sure that the diameter is precomputed.
                 self.get_diameter(None, None)?;
-                Ok(|graph: &Graph, src: NodeT, dst: NodeT| -> f64 {
+                Ok(|graph: &Graph, src: NodeT, dst: NodeT| -> f32 {
                     if src == dst {
                         return 0.0;
                     }
                     graph
                         .get_unchecked_shortest_path_node_ids_from_node_ids(src, dst, None)
                         .unwrap()
-                        .len() as f64
+                        .len() as f32
                         / (*graph.cache.get())
                             .diameter
                             .as_ref()
@@ -290,7 +290,7 @@ impl Graph {
             }
             "probabilistic_weighted_shortest_path" => {
                 self.must_have_edge_weights_representing_probabilities()?;
-                Ok(|graph: &Graph, src: NodeT, dst: NodeT| -> f64 {
+                Ok(|graph: &Graph, src: NodeT, dst: NodeT| -> f32 {
                     if src == dst {
                         return 1.0;
                     }
@@ -304,29 +304,29 @@ impl Graph {
                         .0
                 })
             }
-            "preferential_attachment" => Ok(|graph: &Graph, src: NodeT, dst: NodeT| -> f64 {
+            "preferential_attachment" => Ok(|graph: &Graph, src: NodeT, dst: NodeT| -> f32 {
                 graph.get_unchecked_preferential_attachment_from_node_ids(src, dst, true)
             }),
             "weighted_preferential_attachment" => {
                 self.must_have_edge_weights()?;
-                Ok(|graph: &Graph, src: NodeT, dst: NodeT| -> f64 {
+                Ok(|graph: &Graph, src: NodeT, dst: NodeT| -> f32 {
                     graph.get_unchecked_weighted_preferential_attachment_from_node_ids(
                         src, dst, true,
                     )
                 })
             }
-            "jaccard_coefficient" => Ok(|graph: &Graph, src: NodeT, dst: NodeT| -> f64 {
+            "jaccard_coefficient" => Ok(|graph: &Graph, src: NodeT, dst: NodeT| -> f32 {
                 graph.get_unchecked_jaccard_coefficient_from_node_ids(src, dst)
             }),
-            "adamic_adar_index" => Ok(|graph: &Graph, src: NodeT, dst: NodeT| -> f64 {
+            "adamic_adar_index" => Ok(|graph: &Graph, src: NodeT, dst: NodeT| -> f32 {
                 graph.get_unchecked_adamic_adar_index_from_node_ids(src, dst)
             }),
-            "resource_allocation_index" => Ok(|graph: &Graph, src: NodeT, dst: NodeT| -> f64 {
+            "resource_allocation_index" => Ok(|graph: &Graph, src: NodeT, dst: NodeT| -> f32 {
                 graph.get_unchecked_resource_allocation_index_from_node_ids(src, dst)
             }),
             "weighted_resource_allocation_index" => {
                 self.must_have_edge_weights()?;
-                Ok(|graph: &Graph, src: NodeT, dst: NodeT| -> f64 {
+                Ok(|graph: &Graph, src: NodeT, dst: NodeT| -> f32 {
                     graph.get_unchecked_weighted_resource_allocation_index_from_node_ids(src, dst)
                 })
             }

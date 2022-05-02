@@ -330,7 +330,7 @@ impl Graph {
                     Option<Vec<NodeTypeT>>,
                     NodeT,
                     Option<Vec<NodeTypeT>>,
-                    Option<Vec<f64>>,
+                    Option<Vec<f32>>,
                     Option<EdgeTypeT>,
                     bool,
                 ),
@@ -414,7 +414,7 @@ impl Graph {
                 }
             };
 
-        let get_edge_metrics = move |src: NodeT, dst: NodeT| -> Option<Vec<f64>> {
+        let get_edge_metrics = move |src: NodeT, dst: NodeT| -> Option<Vec<f32>> {
             if return_edge_metrics {
                 Some(unsafe { self.get_unchecked_all_edge_metrics_from_node_ids(src, dst, true) })
             } else {
@@ -550,7 +550,7 @@ impl Graph {
                     Option<Vec<NodeTypeT>>,
                     NodeT,
                     Option<Vec<NodeTypeT>>,
-                    Option<Vec<f64>>,
+                    Option<Vec<f32>>,
                     Option<EdgeTypeT>,
                 ),
             > + 'a,
@@ -594,7 +594,7 @@ impl Graph {
                 }
             };
 
-        let get_edge_metrics = move |src: NodeT, dst: NodeT| -> Option<Vec<f64>> {
+        let get_edge_metrics = move |src: NodeT, dst: NodeT| -> Option<Vec<f32>> {
             if return_edge_metrics {
                 Some(unsafe { self.get_unchecked_all_edge_metrics_from_node_ids(src, dst, true) })
             } else {
@@ -722,7 +722,7 @@ impl Graph {
         destination_node_ids: Vec<NodeT>,
         normalize: Option<bool>,
         verbose: Option<bool>,
-    ) -> impl IndexedParallelIterator<Item = Vec<f64>> + '_ {
+    ) -> impl IndexedParallelIterator<Item = Vec<f32>> + '_ {
         let normalize = normalize.unwrap_or(true);
         let verbose = verbose.unwrap_or(true);
         let pb = get_loading_bar(verbose, "Computing edge metrics", source_node_ids.len());
@@ -756,7 +756,7 @@ impl Graph {
         &self,
         normalize: Option<bool>,
         verbose: Option<bool>,
-    ) -> impl IndexedParallelIterator<Item = Vec<f64>> + '_ {
+    ) -> impl IndexedParallelIterator<Item = Vec<f32>> + '_ {
         let normalize = normalize.unwrap_or(true);
         let verbose = verbose.unwrap_or(true);
         let pb = get_loading_bar(

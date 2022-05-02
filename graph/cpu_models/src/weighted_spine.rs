@@ -1,4 +1,5 @@
 use graph::{DijkstraQueue, EdgeT, Graph, NodeT};
+use indicatif::ParallelProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
 use rayon::iter::IntoParallelRefMutIterator;
 use rayon::iter::ParallelIterator;
@@ -8,6 +9,7 @@ use rayon::prelude::*;
 #[derive(Clone, Debug)]
 pub struct WeightedSPINE {
     embedding_size: usize,
+    use_edge_weights_as_probabilities: bool,
 }
 
 impl WeightedSPINE {
@@ -15,9 +17,14 @@ impl WeightedSPINE {
     ///
     /// # Arguments
     /// `embedding_size`: Option<usize> - Size of the embedding. By default 100.
-    pub fn new(embedding_size: Option<usize>) -> Result<Self, String> {
+    /// `use_edge_weights_as_probabilities`: Option<bool> - Whether to treat the weights as probabilities.
+    pub fn new(
+        embedding_size: Option<usize>,
+        use_edge_weights_as_probabilities: Option<bool>,
+    ) -> Result<Self, String> {
         // Handle the values of the default parameters.
         let embedding_size = embedding_size.unwrap_or(100);
+        let use_edge_weights_as_probabilities = use_edge_weights_as_probabilities.unwrap_or(false);
 
         // Validate that the provided parameters are within
         // reasonable bounds.
@@ -25,7 +32,10 @@ impl WeightedSPINE {
             return Err(concat!("The embedding size cannot be equal to zero.").to_string());
         }
 
-        Ok(Self { embedding_size })
+        Ok(Self {
+            embedding_size,
+            use_edge_weights_as_probabilities,
+        })
     }
 
     /// Returns the used embedding size.
@@ -84,12 +94,19 @@ impl WeightedSPINE {
         &self,
         graph: &Graph,
         bucket: Vec<NodeT>,
-        mut distances: &mut [f32],
-        use_edge_weights_as_probabilities: bool,
+        distances: &mut [f32],
     ) {
-        let mut nodes_to_explore: DijkstraQueue =
-            DijkstraQueue::with_capacity_from_roots(graph.get_nodes_number() as usize, bucket);
-        let mut eccentricity: f64 = 0.0;
+        // We initialize the provided slice with the maximum distance.
+        distances.par_iter_mut().for_each(|distance| {
+            *distance = f32::MAX;
+        });
+
+        let mut nodes_to_explore: DijkstraQueue = DijkstraQueue::with_capacity_from_roots(
+            graph.get_nodes_number() as usize,
+            bucket,
+            distances,
+        );
+        let mut eccentricity: f32 = 0.0;
 
         while let Some(closest_node_id) = nodes_to_explore.pop() {
             // Update the distances metrics
@@ -105,10 +122,10 @@ impl WeightedSPINE {
                 )
                 .for_each(|(neighbour_node_id, weight)| {
                     let new_neighbour_distance = nodes_to_explore[closest_node_id]
-                        + if use_edge_weights_as_probabilities {
-                            -(weight as f64).ln()
+                        + if self.use_edge_weights_as_probabilities {
+                            -weight.ln()
                         } else {
-                            weight as f64
+                            weight
                         };
                     if new_neighbour_distance < nodes_to_explore[neighbour_node_id as usize] {
                         nodes_to_explore.push(neighbour_node_id as usize, new_neighbour_distance);
@@ -116,15 +133,23 @@ impl WeightedSPINE {
                 });
         }
 
-        let mut distances = nodes_to_explore.unwrap();
-
         // If the edge weights are to be treated as probabilities
         // we need to adjust the distances back using the exponentiation.
-        if use_edge_weights_as_probabilities {
-            distances
-                .par_iter_mut()
-                .for_each(|distance| *distance = (-*distance).exp());
+        if self.use_edge_weights_as_probabilities {
             eccentricity = (-eccentricity).exp();
+            distances.par_iter_mut().for_each(|distance| {
+                if *distance == f32::MAX {
+                    *distance = eccentricity;
+                } else {
+                    *distance = (-*distance).exp();
+                }
+            });
+        } else {
+            distances.par_iter_mut().for_each(|distance| {
+                if *distance == f32::MAX {
+                    *distance = eccentricity;
+                }
+            });
         }
     }
 
@@ -134,12 +159,62 @@ impl WeightedSPINE {
     /// `graph`: &Graph - The graph to embed
     /// `embedding`: &mut [f32] - The memory area where to write the embedding.
     /// `verbose`: Option<bool> - Whether to show the loading bar, by default true.
+    ///
+    /// # Raises
+    /// * If the graph does not have weights.
+    /// * If the provided embedding is not of the right shape.
+    /// * If the edge weights are requested to be treated as probabilit
     pub fn fit_transform(
         &self,
         graph: &Graph,
         embedding: &mut [f32],
         verbose: Option<bool>,
     ) -> Result<(), String> {
+        if !graph.has_edge_weights() {
+            return Err(concat!(
+                "The provided graph does not have weights, which are necessary ",
+                "to execute the weighted SPINE embedding. If you graph does not have ",
+                "weights, consider using the normal SPINE embedding, which is surely ",
+                "much more efficient in terms of memory and time requirements for this ",
+                "use case."
+            )
+            .to_string());
+        }
+        if graph.has_constant_edge_weights().unwrap() {
+            return Err(concat!(
+                "The provided graph does have weights, but they are constant. ",
+                "Distances weighted by a constant weights are equal to unweighted ",
+                "distances, and therefore you would be better off by using the normal ",
+                "SPINE embedding, which is surely much more efficient in terms of ",
+                "memory and time requirements for this use case."
+            )
+            .to_string());
+        }
+        if graph.has_negative_edge_weights().unwrap() {
+            return Err(concat!(
+                "The provided graph has negative edge weights, which are not currently ",
+                "handled by this weighted SPINE implementation as it uses Dijkstra to ",
+                "compute the weighted distances. There exists graph algorithms that are ",
+                "able to compute distances including negative edge weights: if you need ",
+                "to execute such a use case, do consider to open a pull request on the ",
+                "Ensmallen GitHub repository."
+            )
+            .to_string());
+        }
+
+        if self.use_edge_weights_as_probabilities
+            && !graph.has_edge_weights_representing_probabilities().unwrap()
+        {
+            return Err(concat!(
+                "It has been requested to handle the edge weights for the weighted ",
+                "shortest paths as if they were probabilities, but the values are ",
+                "not normalized between zero and one. Possibly you wanted to execute ",
+                "either the `graph.normalize_edge_weights_inplace()` or the ",
+                "`graph.normalize_edge_weights()` methods."
+            )
+            .to_string());
+        }
+
         let verbose = verbose.unwrap_or(true);
 
         let expected_embedding_len = self.embedding_size * graph.get_nodes_number() as usize;

@@ -9,32 +9,32 @@ impl Graph {
     ///
     /// # Safety
     /// If the graph does not contain nodes, the return value will be undefined.
-    pub unsafe fn get_unchecked_minimum_preferential_attachment(&self) -> f64 {
-        (self.get_unchecked_minimum_node_degree() as f64).pow(2)
+    pub unsafe fn get_unchecked_minimum_preferential_attachment(&self) -> f32 {
+        (self.get_unchecked_minimum_node_degree() as f32).pow(2)
     }
 
     /// Returns the maximum unweighted preferential attachment score.
     ///
     /// # Safety
     /// If the graph does not contain nodes, the return value will be undefined.
-    pub unsafe fn get_unchecked_maximum_preferential_attachment(&self) -> f64 {
-        (self.get_unchecked_maximum_node_degree() as f64).pow(2)
+    pub unsafe fn get_unchecked_maximum_preferential_attachment(&self) -> f32 {
+        (self.get_unchecked_maximum_node_degree() as f32).pow(2)
     }
 
     /// Returns the minumum weighted preferential attachment score.
     ///
     /// # Safety
     /// If the graph does not contain nodes, the return value will be undefined.
-    pub unsafe fn get_unchecked_weighted_minimum_preferential_attachment(&self) -> f64 {
-        (self.get_weighted_minimum_node_degree().clone().unwrap() as f64).pow(2)
+    pub unsafe fn get_unchecked_weighted_minimum_preferential_attachment(&self) -> f32 {
+        (self.get_weighted_minimum_node_degree().clone().unwrap() as f32).pow(2)
     }
 
     /// Returns the maximum weighted preferential attachment score.
     ///
     /// # Safety
     /// If the graph does not contain nodes, the return value will be undefined.
-    pub unsafe fn get_unchecked_weighted_maximum_preferential_attachment(&self) -> f64 {
-        (self.get_weighted_maximum_node_degree().clone().unwrap() as f64).pow(2)
+    pub unsafe fn get_unchecked_weighted_maximum_preferential_attachment(&self) -> f32 {
+        (self.get_weighted_maximum_node_degree().clone().unwrap() as f32).pow(2)
     }
 
     /// Returns the unweighted preferential attachment from the given node IDs.
@@ -52,10 +52,10 @@ impl Graph {
         source_node_id: NodeT,
         destination_node_id: NodeT,
         normalize: bool,
-    ) -> f64 {
+    ) -> f32 {
         let mut preferential_attachment_score =
-            self.get_unchecked_node_degree_from_node_id(source_node_id) as f64
-                * self.get_unchecked_node_degree_from_node_id(destination_node_id) as f64;
+            self.get_unchecked_node_degree_from_node_id(source_node_id) as f32
+                * self.get_unchecked_node_degree_from_node_id(destination_node_id) as f32;
         if normalize {
             let min_preferential_attachment_score =
                 self.get_unchecked_minimum_preferential_attachment();
@@ -83,7 +83,7 @@ impl Graph {
         source_node_id: NodeT,
         destination_node_id: NodeT,
         normalize: bool,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         Ok(unsafe {
             self.get_unchecked_preferential_attachment_from_node_ids(
                 self.validate_node_id(source_node_id)?,
@@ -108,7 +108,7 @@ impl Graph {
         first_node_name: &str,
         second_node_name: &str,
         normalize: bool,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         Ok(unsafe {
             self.get_unchecked_preferential_attachment_from_node_ids(
                 self.get_node_id_from_node_name(first_node_name)?,
@@ -134,10 +134,10 @@ impl Graph {
         source_node_id: NodeT,
         destination_node_id: NodeT,
         normalize: bool,
-    ) -> f64 {
+    ) -> f32 {
         let mut preferential_attachment_score =
-            self.get_unchecked_weighted_node_degree_from_node_id(source_node_id) as f64
-                * self.get_unchecked_weighted_node_degree_from_node_id(destination_node_id) as f64;
+            self.get_unchecked_weighted_node_degree_from_node_id(source_node_id) as f32
+                * self.get_unchecked_weighted_node_degree_from_node_id(destination_node_id) as f32;
         if normalize {
             let min_preferential_attachment_score =
                 self.get_unchecked_weighted_minimum_preferential_attachment();
@@ -165,7 +165,7 @@ impl Graph {
         source_node_id: NodeT,
         destination_node_id: NodeT,
         normalize: bool,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         self.must_have_edge_weights()?;
         Ok(unsafe {
             self.get_unchecked_weighted_preferential_attachment_from_node_ids(
@@ -191,7 +191,7 @@ impl Graph {
         first_node_name: &str,
         second_node_name: &str,
         normalize: bool,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         self.must_have_edge_weights()?;
         Ok(unsafe {
             self.get_unchecked_weighted_preferential_attachment_from_node_ids(
@@ -226,19 +226,19 @@ impl Graph {
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
-    ) -> f64 {
+    ) -> f32 {
         let union = self
             .iter_unchecked_neighbour_node_ids_union_from_source_node_ids(
                 source_node_id,
                 destination_node_id,
             )
-            .count() as f64;
+            .count() as f32;
         let intersection = self
             .iter_unchecked_neighbour_node_ids_intersection_from_source_node_ids(
                 source_node_id,
                 destination_node_id,
             )
-            .count() as f64;
+            .count() as f32;
         if union.is_zero() {
             0.0
         } else {
@@ -269,7 +269,7 @@ impl Graph {
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         Ok(unsafe {
             self.get_unchecked_jaccard_coefficient_from_node_ids(
                 self.validate_node_id(source_node_id)?,
@@ -295,7 +295,7 @@ impl Graph {
         &self,
         first_node_name: &str,
         second_node_name: &str,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         Ok(unsafe {
             self.get_unchecked_jaccard_coefficient_from_node_ids(
                 self.get_node_id_from_node_name(first_node_name)?,
@@ -328,14 +328,14 @@ impl Graph {
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
-    ) -> f64 {
+    ) -> f32 {
         self.iter_unchecked_neighbour_node_ids_intersection_from_source_node_ids(
             source_node_id,
             destination_node_id,
         )
         .map(|node_id| self.get_unchecked_node_degree_from_node_id(node_id))
         .filter(|&node_degree| node_degree > 1)
-        .map(|node_degree| 1.0 / (node_degree as f64).ln())
+        .map(|node_degree| 1.0 / (node_degree as f32).ln())
         .sum()
     }
 
@@ -362,7 +362,7 @@ impl Graph {
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         Ok(unsafe {
             self.get_unchecked_adamic_adar_index_from_node_ids(
                 self.validate_node_id(source_node_id)?,
@@ -394,7 +394,7 @@ impl Graph {
         &self,
         first_node_name: &str,
         second_node_name: &str,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         Ok(unsafe {
             self.get_unchecked_adamic_adar_index_from_node_ids(
                 self.get_node_id_from_node_name(first_node_name)?,
@@ -428,14 +428,14 @@ impl Graph {
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
-    ) -> f64 {
+    ) -> f32 {
         self.iter_unchecked_neighbour_node_ids_intersection_from_source_node_ids(
             source_node_id,
             destination_node_id,
         )
         .map(|node_id| self.get_unchecked_node_degree_from_node_id(node_id))
         .filter(|&node_degree| node_degree > 0)
-        .map(|node_degree| 1.0 / node_degree as f64)
+        .map(|node_degree| 1.0 / node_degree as f32)
         .sum()
     }
 
@@ -464,14 +464,14 @@ impl Graph {
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
-    ) -> f64 {
+    ) -> f32 {
         self.iter_unchecked_neighbour_node_ids_intersection_from_source_node_ids(
             source_node_id,
             destination_node_id,
         )
         .map(|node_id| self.get_unchecked_weighted_node_degree_from_node_id(node_id))
         .filter(|&node_degree| !node_degree.is_zero())
-        .map(|node_degree| 1.0 / node_degree as f64)
+        .map(|node_degree| 1.0 / node_degree as f32)
         .sum()
     }
 
@@ -499,7 +499,7 @@ impl Graph {
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         Ok(unsafe {
             self.get_unchecked_resource_allocation_index_from_node_ids(
                 self.validate_node_id(source_node_id)?,
@@ -532,7 +532,7 @@ impl Graph {
         &self,
         first_node_name: &str,
         second_node_name: &str,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         Ok(unsafe {
             self.get_unchecked_resource_allocation_index_from_node_ids(
                 self.get_node_id_from_node_name(first_node_name)?,
@@ -565,7 +565,7 @@ impl Graph {
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         self.must_have_edge_weights()?;
         Ok(unsafe {
             self.get_unchecked_weighted_resource_allocation_index_from_node_ids(
@@ -599,7 +599,7 @@ impl Graph {
         &self,
         first_node_name: &str,
         second_node_name: &str,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         self.must_have_edge_weights()?;
         Ok(unsafe {
             self.get_unchecked_weighted_resource_allocation_index_from_node_ids(
@@ -634,7 +634,7 @@ impl Graph {
         source_node_id: NodeT,
         destination_node_id: NodeT,
         normalize: bool,
-    ) -> Vec<f64> {
+    ) -> Vec<f32> {
         vec![
             self.get_unchecked_adamic_adar_index_from_node_ids(source_node_id, destination_node_id),
             self.get_unchecked_jaccard_coefficient_from_node_ids(

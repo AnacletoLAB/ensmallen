@@ -1,5 +1,5 @@
 use super::*;
-use atomic_float::AtomicF64;
+use atomic_float::AtomicF32;
 use indicatif::ParallelProgressIterator;
 use itertools::Itertools;
 use num_traits::pow::Pow;
@@ -36,14 +36,14 @@ impl Graph {
     /// Returns iterator over the weighted degree centrality for all nodes.
     pub fn par_iter_weighted_degree_centrality(
         &self,
-    ) -> Result<impl IndexedParallelIterator<Item = f64> + '_> {
+    ) -> Result<impl IndexedParallelIterator<Item = f32> + '_> {
         self.must_have_edges()?;
         self.must_have_positive_edge_weights()?;
 
-        let weighted_max_degree = self.get_weighted_maximum_node_degree().clone()? as f64;
+        let weighted_max_degree = self.get_weighted_maximum_node_degree().clone()? as f32;
         Ok(self
             .par_iter_weighted_node_degrees()?
-            .map(move |degree| degree as f64 / weighted_max_degree))
+            .map(move |degree| degree as f32 / weighted_max_degree))
     }
 
     /// Returns vector of unweighted degree centrality for all nodes.
@@ -55,7 +55,7 @@ impl Graph {
     }
 
     /// Returns vector of weighted degree centrality for all nodes.
-    pub fn get_weighted_degree_centrality(&self) -> Result<Vec<f64>> {
+    pub fn get_weighted_degree_centrality(&self) -> Result<Vec<f32>> {
         let mut weighted_degree_centralities = vec![0.0; self.get_nodes_number() as usize];
         self.par_iter_weighted_degree_centrality()?
             .collect_into_vec(&mut weighted_degree_centralities);
@@ -76,11 +76,11 @@ impl Graph {
     ///
     /// # Safety
     /// If the given node ID does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_closeness_centrality_from_node_id(&self, node_id: NodeT) -> f64 {
+    pub unsafe fn get_unchecked_closeness_centrality_from_node_id(&self, node_id: NodeT) -> f32 {
         1.0 / self
             .get_unchecked_breadth_first_search_from_node_id(node_id, None, None, None)
             .into_iter_finite_distances()
-            .sum::<NodeT>() as f64
+            .sum::<NodeT>() as f32
     }
 
     /// Return closeness centrality of the requested node.
@@ -111,7 +111,7 @@ impl Graph {
         &self,
         node_id: NodeT,
         use_edge_weights_as_probabilities: bool,
-    ) -> f64 {
+    ) -> f32 {
         let total_distance = self
             .get_unchecked_dijkstra_from_node_id(
                 node_id,
@@ -139,7 +139,7 @@ impl Graph {
     pub fn par_iter_closeness_centrality(
         &self,
         verbose: Option<bool>,
-    ) -> impl ParallelIterator<Item = f64> + '_ {
+    ) -> impl ParallelIterator<Item = f32> + '_ {
         let verbose = verbose.unwrap_or(true);
         let pb = get_loading_bar(
             verbose,
@@ -183,7 +183,7 @@ impl Graph {
         &self,
         use_edge_weights_as_probabilities: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<impl ParallelIterator<Item = f64> + '_> {
+    ) -> Result<impl ParallelIterator<Item = f32> + '_> {
         self.must_have_positive_edge_weights()?;
         let use_edge_weights_as_probabilities = use_edge_weights_as_probabilities.unwrap_or(false);
         if use_edge_weights_as_probabilities {
@@ -213,7 +213,7 @@ impl Graph {
     ///
     /// # References
     /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
-    pub fn get_closeness_centrality(&self, verbose: Option<bool>) -> Vec<f64> {
+    pub fn get_closeness_centrality(&self, verbose: Option<bool>) -> Vec<f32> {
         self.par_iter_closeness_centrality(verbose).collect()
     }
 
@@ -244,7 +244,7 @@ impl Graph {
         &self,
         use_edge_weights_as_probabilities: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<Vec<f64>> {
+    ) -> Result<Vec<f32>> {
         self.par_iter_weighted_closeness_centrality(use_edge_weights_as_probabilities, verbose)
             .map(|x| x.collect())
     }
@@ -262,12 +262,12 @@ impl Graph {
     ///
     /// # Safety
     /// If the given node ID does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_harmonic_centrality_from_node_id(&self, node_id: NodeT) -> f64 {
+    pub unsafe fn get_unchecked_harmonic_centrality_from_node_id(&self, node_id: NodeT) -> f32 {
         self.get_unchecked_breadth_first_search_from_node_id(node_id, None, None, None)
             .into_iter_finite_distances()
             .map(|distance| {
                 if distance != 0 {
-                    1.0 / distance as f64
+                    1.0 / distance as f32
                 } else {
                     0.0
                 }
@@ -293,7 +293,7 @@ impl Graph {
         &self,
         node_id: NodeT,
         use_edge_weights_as_probabilities: bool,
-    ) -> f64 {
+    ) -> f32 {
         self.get_unchecked_dijkstra_from_node_id(
             node_id,
             None,
@@ -316,7 +316,7 @@ impl Graph {
     pub fn par_iter_harmonic_centrality(
         &self,
         verbose: Option<bool>,
-    ) -> impl ParallelIterator<Item = f64> + '_ {
+    ) -> impl ParallelIterator<Item = f32> + '_ {
         let verbose = verbose.unwrap_or(true);
         let pb = get_loading_bar(
             verbose,
@@ -347,7 +347,7 @@ impl Graph {
         &self,
         use_edge_weights_as_probabilities: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<impl ParallelIterator<Item = f64> + '_> {
+    ) -> Result<impl ParallelIterator<Item = f32> + '_> {
         self.must_have_positive_edge_weights()?;
         let use_edge_weights_as_probabilities = use_edge_weights_as_probabilities.unwrap_or(false);
         if use_edge_weights_as_probabilities {
@@ -378,7 +378,7 @@ impl Graph {
     ///
     /// # References
     /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
-    pub fn get_harmonic_centrality(&self, verbose: Option<bool>) -> Vec<f64> {
+    pub fn get_harmonic_centrality(&self, verbose: Option<bool>) -> Vec<f32> {
         self.par_iter_harmonic_centrality(verbose).collect()
     }
 
@@ -394,7 +394,7 @@ impl Graph {
         &self,
         use_edge_weights_as_probabilities: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<Vec<f64>> {
+    ) -> Result<Vec<f32>> {
         self.par_iter_weighted_harmonic_centrality(use_edge_weights_as_probabilities, verbose)
             .map(|x| x.collect())
     }
@@ -412,15 +412,15 @@ impl Graph {
         &self,
         normalize: Option<bool>,
         verbose: Option<bool>,
-    ) -> Vec<f64> {
+    ) -> Vec<f32> {
         if !self.has_nodes() {
             return Vec::new();
         }
         let normalize = normalize.unwrap_or(false);
         let verbose = verbose.unwrap_or(true);
         let nodes_number = self.get_nodes_number() as usize;
-        let centralities: Vec<AtomicF64> =
-            self.iter_node_ids().map(|_| AtomicF64::new(0.0)).collect();
+        let centralities: Vec<AtomicF32> =
+            self.iter_node_ids().map(|_| AtomicF32::new(0.0)).collect();
         let factor = if self.is_directed() { 1.0 } else { 2.0 };
         let pb = get_loading_bar(verbose, "Computing stress centralities", nodes_number);
         self.par_iter_node_ids()
@@ -466,7 +466,7 @@ impl Graph {
                         .iter()
                         .for_each(|&neighbour_node_id| {
                             dependencies[neighbour_node_id as usize] +=
-                                shortest_path_counts[neighbour_node_id as usize] as f64
+                                shortest_path_counts[neighbour_node_id as usize] as f32
                                     * (1.0 + dependencies[current_node_id as usize]);
                         });
                     if current_node_id != src_node_id {
@@ -478,7 +478,7 @@ impl Graph {
                 });
             });
         let mut centralities =
-            unsafe { std::mem::transmute::<Vec<AtomicF64>, Vec<f64>>(centralities) };
+            unsafe { std::mem::transmute::<Vec<AtomicF32>, Vec<f32>>(centralities) };
         if normalize {
             let (min_centrality, max_centrality) =
                 centralities.iter().cloned().minmax().into_option().unwrap();
@@ -504,15 +504,15 @@ impl Graph {
         &self,
         normalize: Option<bool>,
         verbose: Option<bool>,
-    ) -> Vec<f64> {
+    ) -> Vec<f32> {
         if !self.has_nodes() {
             return Vec::new();
         }
         let normalize = normalize.unwrap_or(false);
         let verbose = verbose.unwrap_or(true);
         let nodes_number = self.get_nodes_number() as usize;
-        let centralities: Vec<AtomicF64> =
-            self.iter_node_ids().map(|_| AtomicF64::new(0.0)).collect();
+        let centralities: Vec<AtomicF32> =
+            self.iter_node_ids().map(|_| AtomicF32::new(0.0)).collect();
         let factor = if self.is_directed() { 1.0 } else { 2.0 };
         let pb = get_loading_bar(verbose, "Computing betweennes centralities", nodes_number);
         self.par_iter_node_ids()
@@ -559,8 +559,8 @@ impl Graph {
                         .iter()
                         .for_each(|&neighbour_node_id| {
                             dependencies[neighbour_node_id as usize] +=
-                                shortest_path_counts[neighbour_node_id as usize] as f64
-                                    / shortest_path_counts[current_node_id as usize] as f64
+                                shortest_path_counts[neighbour_node_id as usize] as f32
+                                    / shortest_path_counts[current_node_id as usize] as f32
                                     * (1.0 + dependencies[current_node_id as usize]);
                         });
                     if current_node_id != src_node_id {
@@ -572,7 +572,7 @@ impl Graph {
                 });
             });
         let mut centralities =
-            unsafe { std::mem::transmute::<Vec<AtomicF64>, Vec<f64>>(centralities) };
+            unsafe { std::mem::transmute::<Vec<AtomicF32>, Vec<f32>>(centralities) };
         if normalize {
             let (min_centrality, max_centrality) =
                 centralities.iter().cloned().minmax().into_option().unwrap();
@@ -597,10 +597,10 @@ impl Graph {
         &self,
         node_id: NodeT,
         sssp: &ShortestPathsResultBFS,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         self.validate_node_id(node_id)?;
         let number_of_shortest_paths =
-            sssp.get_number_of_shortest_paths_from_node_id(node_id)? as f64;
+            sssp.get_number_of_shortest_paths_from_node_id(node_id)? as f32;
         Ok(sssp
             .get_successors_from_node_id(node_id)?
             .into_iter()
@@ -611,9 +611,9 @@ impl Graph {
                     * number_of_shortest_paths
                     / sssp
                         .get_number_of_shortest_paths_from_node_id(successor_node_id)
-                        .unwrap() as f64
+                        .unwrap() as f32
             })
-            .sum::<f64>())
+            .sum::<f32>())
     }
 
     #[no_binding]
@@ -629,10 +629,10 @@ impl Graph {
         &self,
         node_id: NodeT,
         sssp: &ShortestPathsDjkstra,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         self.validate_node_id(node_id)?;
         let number_of_shortest_paths =
-            sssp.get_number_of_shortest_paths_from_node_id(node_id)? as f64;
+            sssp.get_number_of_shortest_paths_from_node_id(node_id)? as f32;
         Ok(sssp
             .get_successors_from_node_id(node_id)?
             .into_iter()
@@ -643,17 +643,17 @@ impl Graph {
                     * number_of_shortest_paths
                     / sssp
                         .get_number_of_shortest_paths_from_node_id(successor_node_id)
-                        .unwrap() as f64
+                        .unwrap() as f32
             })
-            .sum::<f64>())
+            .sum::<f32>())
     }
 
     /// Returns the unweighted approximated betweenness centrality of the given node id.
     ///
     /// # Arguments
     /// * `node_id`: NodeT - The node ID for which to compute the approximated betweenness centrality.
-    /// * `constant`: Option<f64> - The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
-    /// * `maximum_samples_number`: Option<f64> - The maximum number of samples to sample. By default `nodes_number / 20`, as suggested in the paper.
+    /// * `constant`: Option<f32> - The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
+    /// * `maximum_samples_number`: Option<f32> - The maximum number of samples to sample. By default `nodes_number / 20`, as suggested in the paper.
     /// * `random_state`: Option<u64> - The random state to use for the sampling. By default 42.
     ///
     /// # Raises
@@ -689,20 +689,20 @@ impl Graph {
     pub fn get_approximated_betweenness_centrality_from_node_id(
         &self,
         node_id: NodeT,
-        constant: Option<f64>,
-        maximum_samples_number: Option<f64>,
+        constant: Option<f32>,
+        maximum_samples_number: Option<f32>,
         random_state: Option<u64>,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         self.validate_node_id(node_id)?;
         // The running sum, which in the paper is
         // referred to as \(S\).
-        let mut running_sum: f64 = 0.0;
+        let mut running_sum: f32 = 0.0;
         // The number of samples nodes considered, which in the paper
         // is referred to as \(k\).
-        let mut number_of_sampled_nodes: f64 = 0.0;
+        let mut number_of_sampled_nodes: f32 = 0.0;
         // The number of the nodes in the graph, which in the paper
         // is referred to as \(n\).
-        let nodes_number = self.get_nodes_number() as f64;
+        let nodes_number = self.get_nodes_number() as f32;
         // The random state to use to sample the nodes.
         let mut random_state = random_state.unwrap_or(42);
         let maximum_samples_number = maximum_samples_number.unwrap_or(nodes_number / 20.0);
@@ -786,8 +786,8 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_name`: &str - The node name for which to compute the approximated betweenness centrality.
-    /// * `constant`: Option<f64> - The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
-    /// * `maximum_samples_number`: Option<f64> - The maximum number of samples to sample. By default `nodes_number / 20`, as suggested in the paper.
+    /// * `constant`: Option<f32> - The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
+    /// * `maximum_samples_number`: Option<f32> - The maximum number of samples to sample. By default `nodes_number / 20`, as suggested in the paper.
     /// * `random_state`: Option<u64> - The random state to use for the sampling. By default 42.
     ///
     /// # Raises
@@ -823,10 +823,10 @@ impl Graph {
     pub fn get_approximated_betweenness_centrality_from_node_name(
         &self,
         node_name: &str,
-        constant: Option<f64>,
-        maximum_samples_number: Option<f64>,
+        constant: Option<f32>,
+        maximum_samples_number: Option<f32>,
         random_state: Option<u64>,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         self.get_approximated_betweenness_centrality_from_node_id(
             self.get_node_id_from_node_name(node_name)?,
             constant,
@@ -839,9 +839,9 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_id`: NodeT - The node ID for which to compute the approximated betweenness centrality.
-    /// * `constant`: Option<f64> - The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
+    /// * `constant`: Option<f32> - The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
     /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to consider the edge weights as probabilities.
-    /// * `maximum_samples_number`: Option<f64> - The maximum number of samples to sample. By default `nodes_number / 20`, as suggested in the paper.
+    /// * `maximum_samples_number`: Option<f32> - The maximum number of samples to sample. By default `nodes_number / 20`, as suggested in the paper.
     /// * `random_state`: Option<u64> - The random state to use for the sampling. By default 42.
     ///
     /// # Raises
@@ -878,21 +878,21 @@ impl Graph {
     pub fn get_weighted_approximated_betweenness_centrality_from_node_id(
         &self,
         node_id: NodeT,
-        constant: Option<f64>,
+        constant: Option<f32>,
         use_edge_weights_as_probabilities: Option<bool>,
-        maximum_samples_number: Option<f64>,
+        maximum_samples_number: Option<f32>,
         random_state: Option<u64>,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         self.validate_node_id(node_id)?;
         // The running sum, which in the paper is
         // referred to as \(S\).
-        let mut running_sum: f64 = 0.0;
+        let mut running_sum: f32 = 0.0;
         // The number of samples nodes considered, which in the paper
         // is referred to as \(k\).
-        let mut number_of_sampled_nodes: f64 = 0.0;
+        let mut number_of_sampled_nodes: f32 = 0.0;
         // The number of the nodes in the graph, which in the paper
         // is referred to as \(n\).
-        let nodes_number = self.get_nodes_number() as f64;
+        let nodes_number = self.get_nodes_number() as f32;
         let maximum_samples_number = maximum_samples_number.unwrap_or(nodes_number / 20.0);
         // The random state to use to sample the nodes.
         let mut random_state = random_state.unwrap_or(42);
@@ -986,9 +986,9 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_name`: &str - The node name for which to compute the approximated betweenness centrality.
-    /// * `constant`: Option<f64> - The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
+    /// * `constant`: Option<f32> - The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
     /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to consider the edge weights as probabilities.
-    /// * `maximum_samples_number`: Option<f64> - The maximum number of samples to sample. By default `nodes_number / 20`, as suggested in the paper.
+    /// * `maximum_samples_number`: Option<f32> - The maximum number of samples to sample. By default `nodes_number / 20`, as suggested in the paper.
     /// * `random_state`: Option<u64> - The random state to use for the sampling. By default 42.
     ///
     /// # Raises
@@ -1025,11 +1025,11 @@ impl Graph {
     pub fn get_weighted_approximated_betweenness_centrality_from_node_name(
         &self,
         node_name: &str,
-        constant: Option<f64>,
+        constant: Option<f32>,
         use_edge_weights_as_probabilities: Option<bool>,
-        maximum_samples_number: Option<f64>,
+        maximum_samples_number: Option<f32>,
         random_state: Option<u64>,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         self.get_weighted_approximated_betweenness_centrality_from_node_id(
             self.get_node_id_from_node_name(node_name)?,
             constant,
@@ -1044,26 +1044,26 @@ impl Graph {
     ///
     /// # Arguments
     /// * `maximum_iterations_number`: Option<usize> - The maximum number of iterations to consider.
-    /// * `tollerance`: Option<f64> - The maximum error tollerance for convergence.
+    /// * `tollerance`: Option<f32> - The maximum error tollerance for convergence.
     pub fn get_eigenvector_centrality(
         &self,
         maximum_iterations_number: Option<usize>,
-        tollerance: Option<f64>,
-    ) -> Result<Vec<f64>> {
+        tollerance: Option<f32>,
+    ) -> Result<Vec<f32>> {
         let maximum_iterations_number = maximum_iterations_number.unwrap_or(1000);
-        let tollerance = tollerance.unwrap_or(1e-6) * self.get_nodes_number() as f64;
-        if tollerance < f64::EPSILON {
+        let tollerance = tollerance.unwrap_or(1e-6) * self.get_nodes_number() as f32;
+        if tollerance < f32::EPSILON {
             return Err(
                 "The tollerance must be a non-zero positive value bigger than epislon (1e-16)."
                     .to_string(),
             );
         }
-        let mut centralities: Vec<AtomicF64> = self
+        let mut centralities: Vec<AtomicF32> = self
             .iter_node_ids()
-            .map(|_| AtomicF64::new(1.0 / self.get_nodes_number() as f64))
+            .map(|_| AtomicF32::new(1.0 / self.get_nodes_number() as f32))
             .collect();
         let mut last_centralities =
-            vec![1.0 / self.get_nodes_number() as f64; self.get_nodes_number() as usize];
+            vec![1.0 / self.get_nodes_number() as f32; self.get_nodes_number() as usize];
         for _ in 0..maximum_iterations_number {
             self.par_iter_node_ids().for_each(|src| {
                 unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(src) }
@@ -1072,10 +1072,10 @@ impl Graph {
                             .fetch_add(last_centralities[src as usize], Ordering::Relaxed);
                     });
             });
-            let norm: f64 = centralities
+            let norm: f32 = centralities
                 .par_iter()
                 .map(|centrality| centrality.load(Ordering::Relaxed).pow(2))
-                .sum::<f64>()
+                .sum::<f32>()
                 .sqrt();
             centralities.par_iter_mut().for_each(|centrality| {
                 centrality
@@ -1085,12 +1085,12 @@ impl Graph {
             let updated_centrality = centralities
                 .iter()
                 .map(|centrality| centrality.load(Ordering::Relaxed))
-                .collect::<Vec<f64>>();
+                .collect::<Vec<f32>>();
             let differences = updated_centrality
                 .par_iter()
                 .zip(last_centralities.par_iter())
                 .map(|(centrality, old_centrality)| (centrality - old_centrality).abs())
-                .sum::<f64>();
+                .sum::<f32>();
             if differences < tollerance {
                 return Ok(updated_centrality);
             }
@@ -1107,27 +1107,27 @@ impl Graph {
     ///
     /// # Arguments
     /// * `maximum_iterations_number`: Option<usize> - The maximum number of iterations to consider.
-    /// * `tollerance`: Option<f64> - The maximum error tollerance for convergence.
+    /// * `tollerance`: Option<f32> - The maximum error tollerance for convergence.
     pub fn get_weighted_eigenvector_centrality(
         &self,
         maximum_iterations_number: Option<usize>,
-        tollerance: Option<f64>,
-    ) -> Result<Vec<f64>> {
+        tollerance: Option<f32>,
+    ) -> Result<Vec<f32>> {
         self.must_have_positive_edge_weights()?;
         let maximum_iterations_number = maximum_iterations_number.unwrap_or(1000);
-        let tollerance = tollerance.unwrap_or(1e-6) * self.get_nodes_number() as f64;
-        if tollerance < f64::EPSILON {
+        let tollerance = tollerance.unwrap_or(1e-6) * self.get_nodes_number() as f32;
+        if tollerance < f32::EPSILON {
             return Err(
                 "The tollerance must be a non-zero positive value bigger than epsilon (1e-16)."
                     .to_string(),
             );
         }
-        let mut centralities: Vec<AtomicF64> = self
+        let mut centralities: Vec<AtomicF32> = self
             .iter_node_ids()
-            .map(|_| AtomicF64::new(1.0 / self.get_nodes_number() as f64))
+            .map(|_| AtomicF32::new(1.0 / self.get_nodes_number() as f32))
             .collect();
         let mut last_centralities =
-            vec![1.0 / self.get_nodes_number() as f64; self.get_nodes_number() as usize];
+            vec![1.0 / self.get_nodes_number() as f32; self.get_nodes_number() as usize];
         for _ in 0..maximum_iterations_number {
             self.par_iter_node_ids().for_each(|src| {
                 // TODO: this can be done in a faster way
@@ -1135,15 +1135,15 @@ impl Graph {
                     .for_each(|dst| unsafe {
                         centralities[dst as usize].fetch_add(
                             last_centralities[src as usize]
-                                * self.get_unchecked_edge_weight_from_node_ids(src, dst) as f64,
+                                * self.get_unchecked_edge_weight_from_node_ids(src, dst) as f32,
                             Ordering::Relaxed,
                         );
                     });
             });
-            let norm: f64 = centralities
+            let norm: f32 = centralities
                 .par_iter()
                 .map(|centrality| centrality.load(Ordering::Relaxed).pow(2))
-                .sum::<f64>()
+                .sum::<f32>()
                 .sqrt();
             centralities.par_iter_mut().for_each(|centrality| {
                 centrality
@@ -1153,12 +1153,12 @@ impl Graph {
             let updated_centrality = centralities
                 .iter()
                 .map(|centrality| centrality.load(Ordering::Relaxed))
-                .collect::<Vec<f64>>();
+                .collect::<Vec<f32>>();
             let differences = updated_centrality
                 .par_iter()
                 .zip(last_centralities.par_iter())
                 .map(|(centrality, old_centrality)| (centrality - old_centrality).abs())
-                .sum::<f64>();
+                .sum::<f32>();
             if differences < tollerance {
                 return Ok(updated_centrality);
             }

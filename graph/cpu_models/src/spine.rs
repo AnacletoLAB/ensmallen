@@ -9,6 +9,10 @@ use rayon::prelude::*;
 
 pub trait DistanceType: Send + Sync + Integral {}
 
+impl DistanceType for u32 {}
+impl DistanceType for u16 {}
+impl DistanceType for u8 {}
+
 #[derive(Clone, Debug)]
 pub struct SPINE {
     embedding_size: usize,
