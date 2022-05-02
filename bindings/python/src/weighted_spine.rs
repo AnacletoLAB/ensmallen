@@ -58,6 +58,8 @@ impl WeightedSPINE {
     #[text_signature = "($self, graph, *, verbose)"]
     /// Return numpy embedding with Weighted SPINE node embedding.
     ///
+    /// Do note that the embedding is returned transposed.
+    /// 
     /// Parameters
     /// ---------
     /// graph: Graph
@@ -78,7 +80,7 @@ impl WeightedSPINE {
 
         let rows_number = graph.inner.get_nodes_number() as usize;
         let columns_number = self.inner.get_embedding_size();
-        let embedding = PyArray2::new(gil.python(), [rows_number, columns_number], false);
+        let embedding = PyArray2::new(gil.python(), [columns_number, rows_number], false);
 
         let embedding_slice = unsafe { embedding.as_slice_mut().unwrap() };
 

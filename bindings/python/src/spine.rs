@@ -57,6 +57,8 @@ macro_rules! impl_spine_embedding {
             #[args(py_kwargs = "**")]
             #[text_signature = "($self, graph, *, dtype, verbose)"]
             /// Return numpy embedding with SPINE node embedding.
+            /// 
+            /// Do note that the embedding is returned transposed.
             ///
             /// Parameters
             /// ---------
@@ -81,7 +83,7 @@ macro_rules! impl_spine_embedding {
                     kwargs,
                     &["dtype", "verbose"]
                 ))?;
-                
+
                 let verbose = extract_value_rust_result!(kwargs, "verbose", bool);
                 let dtype = match extract_value_rust_result!(kwargs, "dtype", &str) {
                     Some(dtype) => dtype,
@@ -101,7 +103,7 @@ macro_rules! impl_spine_embedding {
                 match dtype {
                     $(
                         stringify!($dtype) => {
-                            let embedding: &PyArray2<$dtype> = PyArray2::new(gil.python(), [rows_number, columns_number], false);
+                            let embedding: &PyArray2<$dtype> = PyArray2::new(gil.python(), [columns_number, rows_number], false);
 
                             let embedding_slice = unsafe { embedding.as_slice_mut().unwrap() };
 
@@ -124,7 +126,7 @@ macro_rules! impl_spine_embedding {
                         dtype
                     ))),
                 }
-                
+
             }
         }
     };
