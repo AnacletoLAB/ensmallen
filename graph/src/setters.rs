@@ -548,6 +548,37 @@ impl Graph {
         Ok(graph)
     }
 
+    /// Normalize edge weights in place.
+    ///
+    /// Note that the modification happens inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge weights.
+    ///
+    pub fn normalize_edge_weights_inplace(&mut self) -> Result<()> {
+        self.must_have_positive_edge_weights()?;
+        let max_weight = self.get_maximum_edge_weight()?;
+        if let Some(edge_weights) = Arc::make_mut(&mut self.weights) {
+            edge_weights.par_iter_mut().for_each(|edge_weight| {
+                *edge_weight /= max_weight;
+            });
+        }
+        Ok(())
+    }
+
+    /// Normalize edge weights.
+    ///
+    /// Note that the modification does not happen inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge weights.
+    ///
+    pub fn normalize_edge_weights(&self) -> Result<Graph> {
+        let mut graph = self.clone();
+        graph.normalize_edge_weights_inplace()?;
+        Ok(graph)
+    }
+
     /// Multiply edge weights in place.
     ///
     /// Note that the modification happens inplace.

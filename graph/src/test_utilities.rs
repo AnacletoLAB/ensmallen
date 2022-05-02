@@ -1039,7 +1039,7 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: Option<bool>) -> Resul
         .enumerate()
         .for_each(|(node_id, value)| {
             if unsafe { graph.is_unchecked_singleton_from_node_id(node_id as NodeT) } {
-                assert!(value.abs() < f64::EPSILON);
+                assert!(value.abs() < f32::EPSILON);
             }
         });
     Ok(())

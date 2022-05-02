@@ -126,8 +126,6 @@ impl SkipGram {
     /// ---------
     /// graph: Graph
     ///     The graph to embed.
-    ///     Do note that this graph must be sorted with decreasing node degree
-    ///     because of the negative sampling to approximate the softmax.
     /// epochs: Optional[int] = 10
     ///     How many epochs the model will train for.
     ///     In this context an epoch means that the model will compute a random

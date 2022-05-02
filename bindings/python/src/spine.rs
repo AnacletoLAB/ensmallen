@@ -1,35 +1,93 @@
 use super::*;
-use rayon::prelude::*;
+use numpy::PyArray2;
 
-macro_rules! impl_compute_spine_embedding {
+///
+#[pyclass]
+#[derive(Debug, Clone)]
+#[text_signature = "(*, embedding_size)"]
+pub struct SPINE {
+    pub inner: cpu_models::SPINE,
+}
+
+impl From<cpu_models::SPINE> for SPINE {
+    fn from(val: cpu_models::SPINE) -> SPINE {
+        SPINE { inner: val }
+    }
+}
+
+impl From<SPINE> for cpu_models::SPINE {
+    fn from(val: SPINE) -> cpu_models::SPINE {
+        val.inner
+    }
+}
+
+#[pymethods]
+impl SPINE {
+    #[new]
+    #[args(py_kwargs = "**")]
+    /// Return a new instance of the SPINE model.
+    ///
+    /// Parameters
+    /// ------------------------
+    /// embedding_size: Optional[int] = 100
+    ///     Size of the embedding.
+    pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<SPINE> {
+        let py = pyo3::Python::acquire_gil();
+        let kwargs = normalize_kwargs!(py_kwargs, py.python());
+
+        pe!(validate_kwargs(
+            kwargs,
+            build_walk_parameters_list(&["embedding_size",]).as_slice()
+        ))?;
+
+        Ok(Self {
+            inner: pe!(cpu_models::SPINE::new(extract_value_rust_result!(
+                kwargs,
+                "embedding_size",
+                usize
+            ),))?,
+        })
+    }
+}
+
+macro_rules! impl_spine_embedding {
     ($($dtype:ty),*) => {
         #[pymethods]
-        impl Graph {
+        impl SPINE {
             #[args(py_kwargs = "**")]
-            #[text_signature = "($self, embedding_size, dtype, verbose)"]
-            /// Return node embedding vector obtained from shortest-paths.
+            #[text_signature = "($self, graph, *, dtype, verbose)"]
+            /// Return numpy embedding with SPINE node embedding.
             ///
             /// Parameters
-            /// ----------------------------
-            /// embedding_size: Optional[int]
-            ///     The number of features to generate. By default 100, or the number of nodes in the graph if it is lower.
+            /// ---------
+            /// graph: Graph
+            ///     The graph to embed.
             /// dtype: Optional[str] = None
             ///     Dtype to use for the embedding. Note that an improper dtype may cause overflows.
             ///     When not provided, we automatically infer the best one by using the diameter.
             /// verbose: Optional[bool] = True
             ///     Whether to show the loading bar. By default true.
-            pub fn compute_spine_embedding(
+            fn fit_transform(
                 &self,
-                embedding_size: Option<usize>,
-                dtype: Option<&str>,
-                verbose: Option<bool>,
+                graph: &Graph,
+                py_kwargs: Option<&PyDict>,
             ) -> PyResult<Py<PyAny>> {
                 let gil = pyo3::Python::acquire_gil();
-                let dtype = match dtype {
+
+                let py = pyo3::Python::acquire_gil();
+                let kwargs = normalize_kwargs!(py_kwargs, py.python());
+
+                pe!(validate_kwargs(
+                    kwargs,
+                    &["dtype", "verbose"]
+                ))?;
+                
+                let verbose = extract_value_rust_result!(kwargs, "verbose", bool);
+                let dtype = match extract_value_rust_result!(kwargs, "dtype", &str) {
                     Some(dtype) => dtype,
                     None => {
                         let (max_u8, max_u16, max_u32) = (u8::MAX as usize, u16::MAX as usize, u32::MAX as usize);
-                        match pe!(self.inner.get_diameter(Some(true), verbose))? as usize {
+                        match pe!(graph.get_diameter(Some(true), verbose))? as usize {
                             x if (0..=max_u8).contains(&x) => "u8",
                             x if (max_u8..=max_u16).contains(&x) => "u16",
                             x if (max_u16..=max_u32).contains(&x) => "u32",
@@ -37,35 +95,25 @@ macro_rules! impl_compute_spine_embedding {
                         }
                     }
                 };
-                let nodes_number = self.inner.get_nodes_number() as usize;
+
+                let rows_number = graph.inner.get_nodes_number() as usize;
+                let columns_number = self.inner.get_embedding_size();
                 match dtype {
                     $(
                         stringify!($dtype) => {
-                            let (number_of_node_features, node_embedding_iterator) =
-                            pe!(self.inner.compute_spine_embedding::<$dtype>(
-                                embedding_size,
+                            let embedding: &PyArray2<$dtype> = PyArray2::new(gil.python(), [rows_number, columns_number], false);
+
+                            let embedding_slice = unsafe { embedding.as_slice_mut().unwrap() };
+
+                            // We always use the racing version of the fit transform
+                            // as we generally do not care about memory collisions.
+                            pe!(self.inner.fit_transform(
+                                &graph.inner,
+                                embedding_slice,
                                 verbose,
                             ))?;
-                        let node_embedding: ThreadDataRaceAware<PyArray2<$dtype>> = ThreadDataRaceAware {
-                            t: PyArray2::new(
-                                gil.python(),
-                                [nodes_number, number_of_node_features as usize],
-                                false,
-                            ),
-                        };
-                        node_embedding_iterator
-                            .enumerate()
-                            .for_each(|(number_of_node_feature, iterator)| {
-                                iterator
-                                    .enumerate()
-                                    .for_each(|(node_id, node_feature)| unsafe {
-                                        *node_embedding.t.uget_mut([node_id, number_of_node_feature]) =
-                                            node_feature;
-                                    });
-                            });
-                        Ok(
-                            node_embedding.t.to_owned().into_py(gil.python()),
-                        )
+
+                            Ok(embedding.into_py(gil.python()))
                         }
                     )*
                     dtype => pe!(Err(format!(
@@ -76,9 +124,10 @@ macro_rules! impl_compute_spine_embedding {
                         dtype
                     ))),
                 }
+                
             }
         }
     };
 }
 
-impl_compute_spine_embedding! {u8, u16, u32}
+impl_spine_embedding! {u8, u16, u32}

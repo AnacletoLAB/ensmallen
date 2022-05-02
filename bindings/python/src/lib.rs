@@ -28,12 +28,17 @@ pub(crate) use crate::types::*;
 mod laplacian;
 mod operators;
 mod spine;
+pub(crate) use spine::*;
+mod weighted_spine;
+pub(crate) use weighted_spine::*;
 mod walks;
 
 #[pymodule]
 fn models(_py: Python, _m: &PyModule) -> PyResult<()> {
     _m.add_class::<CBOW>()?;
     _m.add_class::<SkipGram>()?;
+    _m.add_class::<SPINE>()?;
+    _m.add_class::<WeightedSPINE>()?;
     Ok(())
 }
 

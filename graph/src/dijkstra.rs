@@ -331,13 +331,13 @@ impl ShortestPathsResultBFS {
 
 #[derive(Clone, Debug)]
 pub struct ShortestPathsDjkstra {
-    pub(crate) distances: Vec<f64>,
+    pub(crate) distances: Vec<f32>,
     most_distant_node: NodeT,
     pub(crate) predecessors: Option<Vec<Option<NodeT>>>,
-    pub(crate) dst_node_distance: Option<f64>,
-    pub(crate) eccentricity: f64,
-    pub(crate) total_distance: f64,
-    pub(crate) total_harmonic_distance: f64,
+    pub(crate) dst_node_distance: Option<f32>,
+    pub(crate) eccentricity: f32,
+    pub(crate) total_distance: f32,
+    pub(crate) total_harmonic_distance: f32,
 }
 
 impl ToString for ShortestPathsDjkstra {
@@ -349,32 +349,32 @@ impl ToString for ShortestPathsDjkstra {
 impl Hash for ShortestPathsDjkstra {
     fn hash<H: Hasher>(&self, state: &mut H) {
         for d in &self.distances {
-            crate::hash::hash_f64(*d, state);
+            crate::hash::hash_f32(*d, state);
         }
         self.predecessors.hash(state);
 
         if let Some(d) = self.dst_node_distance {
             1.hash(state);
-            crate::hash::hash_f64(d, state);
+            crate::hash::hash_f32(d, state);
         } else {
             0.hash(state);
         }
 
-        crate::hash::hash_f64(self.eccentricity, state);
-        crate::hash::hash_f64(self.total_distance, state);
-        crate::hash::hash_f64(self.total_harmonic_distance, state);
+        crate::hash::hash_f32(self.eccentricity, state);
+        crate::hash::hash_f32(self.total_distance, state);
+        crate::hash::hash_f32(self.total_harmonic_distance, state);
     }
 }
 
 impl ShortestPathsDjkstra {
     pub(crate) fn new(
-        distances: Vec<f64>,
+        distances: Vec<f32>,
         most_distant_node: NodeT,
         predecessors: Option<Vec<Option<NodeT>>>,
-        dst_node_distance: Option<f64>,
-        eccentricity: f64,
-        total_distance: f64,
-        total_harmonic_distance: f64,
+        dst_node_distance: Option<f32>,
+        eccentricity: f32,
+        total_distance: f32,
+        total_harmonic_distance: f32,
     ) -> ShortestPathsDjkstra {
         ShortestPathsDjkstra {
             distances,
@@ -402,7 +402,7 @@ impl ShortestPathsDjkstra {
         Ok(node_id)
     }
 
-    pub fn get_distance_from_node_id(&self, node_id: NodeT) -> Result<f64> {
+    pub fn get_distance_from_node_id(&self, node_id: NodeT) -> Result<f32> {
         self.validate_node_id(node_id)
             .map(|node_id| self.distances[node_id as usize])
     }
@@ -423,14 +423,14 @@ impl ShortestPathsDjkstra {
     ///
     /// # Arguments
     /// * `dst_node_id`: NodeT - The node to start computing predecessors from.
-    /// * `distance`: f64 - The distance to aim for.
+    /// * `distance`: f32 - The distance to aim for.
     ///
     /// # Raises
     /// * If the predecessors vector was not requested.
     pub fn get_point_at_given_distance_on_shortest_path(
         &self,
         mut dst_node_id: NodeT,
-        distance: f64,
+        distance: f32,
     ) -> Result<NodeT> {
         if !self.has_path_to_node_id(dst_node_id)? {
             return Err("There is no path to the given destination node.".to_string());
@@ -467,7 +467,7 @@ impl ShortestPathsDjkstra {
         self.get_point_at_given_distance_on_shortest_path(dst_node_id, median_distance)
     }
 
-    pub fn get_eccentricity(&self) -> f64 {
+    pub fn get_eccentricity(&self) -> f32 {
         self.eccentricity
     }
 
@@ -554,7 +554,7 @@ impl ShortestPathsDjkstra {
     }
 
     #[no_binding]
-    pub fn into_iter_finite_distances(self) -> impl Iterator<Item = f64> {
+    pub fn into_iter_finite_distances(self) -> impl Iterator<Item = f32> {
         self.distances
             .into_iter()
             .filter(|&distance| distance.is_finite())
@@ -563,7 +563,7 @@ impl ShortestPathsDjkstra {
     #[no_binding]
     pub fn into_par_iter_node_ids_and_finite_distances(
         self,
-    ) -> impl ParallelIterator<Item = (NodeT, f64)> {
+    ) -> impl ParallelIterator<Item = (NodeT, f32)> {
         self.distances
             .into_par_iter()
             .enumerate()
@@ -577,7 +577,7 @@ impl ShortestPathsDjkstra {
     }
 
     #[no_binding]
-    pub fn into_distances(self) -> Vec<f64> {
+    pub fn into_distances(self) -> Vec<f32> {
         self.distances
     }
 }
@@ -1275,7 +1275,7 @@ impl Graph {
         &self,
         node_id: NodeT,
         use_edge_weights_as_probabilities: Option<bool>,
-    ) -> f64 {
+    ) -> f32 {
         self.get_unchecked_dijkstra_from_node_id(
             node_id,
             None,
@@ -1318,7 +1318,7 @@ impl Graph {
         &self,
         node_id: NodeT,
         use_edge_weights_as_probabilities: Option<bool>,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         if let Some(uewap) = use_edge_weights_as_probabilities {
             if uewap {
                 self.must_have_edge_weights_representing_probabilities()?;
@@ -1362,7 +1362,7 @@ impl Graph {
         &self,
         node_name: &str,
         use_edge_weights_as_probabilities: Option<bool>,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         if let Some(uewap) = use_edge_weights_as_probabilities {
             if uewap {
                 self.must_have_edge_weights_representing_probabilities()?;
@@ -1407,7 +1407,7 @@ impl Graph {
             if use_edge_weights_as_probabilities {
                 0.0
             } else {
-                f64::INFINITY
+                f32::INFINITY
             }
         });
         let mut predecessors: Option<Vec<Option<NodeT>>> = if compute_predecessors {
@@ -1433,12 +1433,12 @@ impl Graph {
                 );
             } else {
                 return ShortestPathsDjkstra::new(
-                    vec![f64::INFINITY; nodes_number],
+                    vec![f32::INFINITY; nodes_number],
                     most_distant_node,
                     predecessors,
                     dst_node_distance,
-                    f64::INFINITY,
-                    f64::INFINITY,
+                    f32::INFINITY,
+                    f32::INFINITY,
                     0.0,
                 );
             }
@@ -1453,11 +1453,12 @@ impl Graph {
             )
         });
 
+        let mut distances = vec![f32::MAX; nodes_number];
         let mut nodes_to_explore: DijkstraQueue =
-            DijkstraQueue::with_capacity_from_roots(nodes_number, src_node_ids);
-        let mut eccentricity: f64 = 0.0;
-        let mut total_distance: f64 = 0.0;
-        let mut total_harmonic_distance: f64 = 0.0;
+            DijkstraQueue::with_capacity_from_roots(nodes_number, src_node_ids, &mut distances);
+        let mut eccentricity: f32 = 0.0;
+        let mut total_distance: f32 = 0.0;
+        let mut total_harmonic_distance: f32 = 0.0;
 
         while let Some(closest_node_id) = nodes_to_explore.pop() {
             // Update the distances metrics
@@ -1511,9 +1512,9 @@ impl Graph {
                     }
                     let new_neighbour_distance = nodes_to_explore[closest_node_id]
                         + if use_edge_weights_as_probabilities {
-                            -(weight as f64).ln()
+                            -(weight as f32).ln()
                         } else {
-                            weight as f64
+                            weight as f32
                         };
                     if new_neighbour_distance < nodes_to_explore[neighbour_node_id as usize] {
                         if let Some(predecessors) = &mut predecessors {
@@ -1524,8 +1525,6 @@ impl Graph {
                     }
                 });
         }
-
-        let mut distances = nodes_to_explore.unwrap();
 
         // If the edge weights are to be treated as probabilities
         // we need to adjust the distances back using the exponentiation.
@@ -1595,7 +1594,7 @@ impl Graph {
         dst_node_id: NodeT,
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
-    ) -> (f64, Vec<NodeT>) {
+    ) -> (f32, Vec<NodeT>) {
         let dijkstra = self.get_unchecked_dijkstra_from_node_id(
             src_node_id,
             Some(dst_node_id),
@@ -1618,7 +1617,7 @@ impl Graph {
         // If the path length is infinite, it means that there is no path
         // between the given source node and the given destination node.
         if path_length.is_infinite() {
-            return (f64::INFINITY, Vec::new());
+            return (f32::INFINITY, Vec::new());
         }
         // Since we need to visit the predecessors vector we will be building
         // the path backwards and we will need to invert it afterwards.
@@ -1653,7 +1652,7 @@ impl Graph {
         dst_node_id: NodeT,
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
-    ) -> (f64, Vec<String>) {
+    ) -> (f32, Vec<String>) {
         let (path_length, path) = self.get_unchecked_weighted_shortest_path_node_ids_from_node_ids(
             src_node_id,
             dst_node_id,
@@ -1684,7 +1683,7 @@ impl Graph {
         dst_node_id: NodeT,
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
-    ) -> Result<(f64, Vec<NodeT>)> {
+    ) -> Result<(f32, Vec<NodeT>)> {
         self.must_have_positive_edge_weights()?;
         if let Some(uewp) = use_edge_weights_as_probabilities {
             if uewp {
@@ -1717,7 +1716,7 @@ impl Graph {
         dst_node_name: &str,
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
-    ) -> Result<(f64, Vec<NodeT>)> {
+    ) -> Result<(f32, Vec<NodeT>)> {
         self.must_have_positive_edge_weights()?;
         if let Some(uewp) = use_edge_weights_as_probabilities {
             if uewp {
@@ -1750,7 +1749,7 @@ impl Graph {
         dst_node_name: &str,
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
-    ) -> Result<(f64, Vec<String>)> {
+    ) -> Result<(f32, Vec<String>)> {
         self.must_have_positive_edge_weights()?;
         if let Some(uewp) = use_edge_weights_as_probabilities {
             if uewp {
@@ -1898,7 +1897,7 @@ impl Graph {
     ///
     /// # Referencences
     /// This method is based on the algorithm described in ["On computing the diameter of real-world undirected graphs" by Crescenzi et al](https://who.rocq.inria.fr/Laurent.Viennot/road/papers/ifub.pdf).
-    fn get_ifub(&self) -> Result<f64> {
+    fn get_ifub(&self) -> Result<f32> {
         if self.is_directed() {
             panic!(
                 "This method is not defined YET for directed graphs! We will add it in the future!"
@@ -1940,7 +1939,7 @@ impl Graph {
         // If all the test cases are empty, it means
         // that our tentative diameter is already the actual diameter.
         if node_ids_and_distances.is_empty() {
-            return Ok(tentative_diameter as f64);
+            return Ok(tentative_diameter as f32);
         }
 
         // sort the nodes by distance, so that we will start checking from the
@@ -1971,7 +1970,7 @@ impl Graph {
             );
         }
 
-        Ok(tentative_diameter as f64)
+        Ok(tentative_diameter as f32)
     }
 
     /// Returns diameter of the graph using naive method.
@@ -1991,13 +1990,13 @@ impl Graph {
         &self,
         ignore_infinity: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         self.must_have_nodes()?;
         let ignore_infinity = ignore_infinity.unwrap_or(false);
         let verbose = verbose.unwrap_or(true);
 
         if !self.has_edges() || !ignore_infinity && !self.is_connected(Some(verbose)) {
-            return Ok(f64::INFINITY);
+            return Ok(f32::INFINITY);
         }
 
         let pb = get_loading_bar(
@@ -2015,7 +2014,7 @@ impl Graph {
             })
             .filter(|&distance| !ignore_infinity || distance != NODE_NOT_PRESENT)
             .max()
-            .unwrap_or(0) as f64)
+            .unwrap_or(0) as f32)
     }
 
     #[cache_property(diameter)]
@@ -2035,13 +2034,13 @@ impl Graph {
         &self,
         ignore_infinity: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         self.must_have_nodes()?;
         let ignore_infinity = ignore_infinity.unwrap_or(false);
         let verbose = verbose.unwrap_or(true);
 
         if !self.has_edges() || !ignore_infinity && !self.is_connected(Some(verbose)) {
-            return Ok(f64::INFINITY);
+            return Ok(f32::INFINITY);
         }
 
         if self.is_directed() {
@@ -2049,76 +2048,6 @@ impl Graph {
         } else {
             self.get_ifub()
         }
-    }
-
-    #[cache_property(weighted_diameter)]
-    /// Returns diameter of the graph using naive method.
-    ///
-    /// Note that there exists the non-naive method for undirected graphs
-    /// and it is possible to implement a faster method for directed graphs
-    /// but we still need to get to it, as it will require an updated
-    /// succinct data structure.
-    ///
-    /// # Arguments
-    /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components.
-    /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to treat the edge weights as probabilities.
-    /// * `verbose`: Option<bool> - Whether to show a loading bar.
-    ///
-    /// # Raises
-    /// * If the graph does not contain nodes.
-    /// * If the graph does not have weights.
-    /// * If the graph contains negative weights.
-    /// * If the user has asked for the weights to be treated as probabilities but the weights are not between 0 and 1.
-    ///
-    /// TODO! Add better implementation for directed graphs
-    /// To make the better implementation for directed graphs we will first
-    /// need to make the Elias-Fano encode the directed graph in a better way.
-    pub fn get_weighted_diameter_naive(
-        &self,
-        ignore_infinity: Option<bool>,
-        use_edge_weights_as_probabilities: Option<bool>,
-        verbose: Option<bool>,
-    ) -> Result<f64> {
-        self.must_have_nodes()?;
-        self.must_have_positive_edge_weights()?;
-        let use_edge_weights_as_probabilities = use_edge_weights_as_probabilities.unwrap_or(false);
-        if use_edge_weights_as_probabilities {
-            self.must_have_edge_weights_representing_probabilities()?;
-        }
-        let ignore_infinity = ignore_infinity.unwrap_or(true);
-        let verbose = verbose.unwrap_or(true);
-
-        if !self.has_edges() || !ignore_infinity && !self.is_connected(Some(verbose)) {
-            return Ok(if use_edge_weights_as_probabilities {
-                0.0
-            } else {
-                f64::INFINITY
-            });
-        }
-
-        let pb = get_loading_bar(
-            verbose,
-            "Computing weighted diameter",
-            self.get_nodes_number() as usize,
-        );
-        Ok(self
-            .par_iter_node_ids()
-            .progress_with(pb)
-            .map(|node_id| unsafe {
-                self.get_unchecked_weighted_eccentricity_from_node_id(
-                    node_id,
-                    Some(use_edge_weights_as_probabilities),
-                )
-            })
-            .filter(|&distance| {
-                !ignore_infinity
-                    || if use_edge_weights_as_probabilities {
-                        !distance.is_zero()
-                    } else {
-                        distance.is_finite()
-                    }
-            })
-            .reduce(|| f64::NEG_INFINITY, f64::max))
     }
 
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node name and optional destination node name.

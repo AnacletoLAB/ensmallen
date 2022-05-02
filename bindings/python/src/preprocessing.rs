@@ -701,7 +701,7 @@ impl Graph {
         Option<Py<PyArray2<NodeTypeT>>>,
         Py<PyArray1<NodeT>>,
         Option<Py<PyArray2<NodeTypeT>>>,
-        Option<Py<PyArray2<f64>>>,
+        Option<Py<PyArray2<f32>>>,
         Option<Py<PyArray1<EdgeTypeT>>>,
         Py<PyArray1<bool>>,
     )> {
@@ -852,7 +852,7 @@ impl Graph {
         Option<Py<PyArray2<NodeTypeT>>>,
         Py<PyArray1<NodeT>>,
         Option<Py<PyArray2<NodeTypeT>>>,
-        Option<Py<PyArray2<f64>>>,
+        Option<Py<PyArray2<f32>>>,
         Option<Py<PyArray1<EdgeTypeT>>>,
     )> {
         let gil = pyo3::Python::acquire_gil();
@@ -989,7 +989,7 @@ impl Graph {
         destination_node_ids: Vec<NodeT>,
         normalize: Option<bool>,
         verbose: Option<bool>,
-    ) -> Py<PyArray2<f64>> {
+    ) -> Py<PyArray2<f32>> {
         let gil = pyo3::Python::acquire_gil();
 
         let batch_metrics = ThreadDataRaceAware {
@@ -1038,7 +1038,7 @@ impl Graph {
         &self,
         normalize: Option<bool>,
         verbose: Option<bool>,
-    ) -> Py<PyArray2<f64>> {
+    ) -> Py<PyArray2<f32>> {
         let gil = pyo3::Python::acquire_gil();
 
         let batch_metrics = ThreadDataRaceAware {
