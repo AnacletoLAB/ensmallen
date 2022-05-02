@@ -278,8 +278,8 @@ def gen_wheel(settings):
                 settings["metadata"]["libname"],
                 strip_path_prefix(settings["merging_folder"], path)
             )
-
-            zipwrite.writestr(local_path, path)
+            with open(path, "rb") as f:
+                zipwrite.writestr(local_path, f.read())
         # Add the metadata
         zipwrite.writestr(
             os.path.join(dist_info_path, "WHEEL"),
@@ -1083,7 +1083,7 @@ gen_wheel(settings)
 
 if args.build_type == "develop":
     exec(
-        f"pip --disable-pip-version-check install {settings['target_wheel_path']} --force-reinstall"
+        f"pip --disable-pip-version-check install --force-reinstall {settings['target_wheel_path']}"
     )
 elif args.build_type == "publish":
     exec(
