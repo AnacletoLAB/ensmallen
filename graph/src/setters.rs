@@ -556,14 +556,7 @@ impl Graph {
     /// * If the graph does not have edge weights.
     ///
     pub fn normalize_edge_weights_inplace(&mut self) -> Result<()> {
-        self.must_have_positive_edge_weights()?;
-        let max_weight = self.get_maximum_edge_weight()?;
-        if let Some(edge_weights) = Arc::make_mut(&mut self.weights) {
-            edge_weights.par_iter_mut().for_each(|edge_weight| {
-                *edge_weight /= max_weight;
-            });
-        }
-        Ok(())
+        self.divide_edge_weights_inplace(self.get_maximum_edge_weight()?)
     }
 
     /// Normalize edge weights.
