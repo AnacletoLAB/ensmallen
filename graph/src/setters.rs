@@ -1,5 +1,7 @@
 use super::*;
 use itertools::Itertools;
+use rayon::iter::IndexedParallelIterator;
+use rayon::iter::IntoParallelIterator;
 use rayon::iter::IntoParallelRefMutIterator;
 use rayon::iter::ParallelIterator;
 use std::sync::atomic::{AtomicU32, AtomicU64, Ordering};
@@ -347,6 +349,88 @@ impl Graph {
     pub fn remove_homogeneous_node_types(&self) -> Result<Graph> {
         let mut graph = self.clone();
         graph.remove_inplace_homogeneous_node_types()?;
+        Ok(graph)
+    }
+
+    /// Remove inplace isomorphic node types.
+    ///
+    /// This will leave for each isomorphic node tyoe group only an element.
+    ///
+    /// If any given node remains with no node type, that node is labeled
+    /// with node type None. Note that the modification DOES NOT happen inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    ///
+    pub fn remove_inplace_isomorphic_node_types(&mut self) -> Result<&Graph> {
+        let node_type_ids_to_remove = self
+            .par_iter_isomorphic_node_type_ids_groups()?
+            .flat_map(|group| group.into_par_iter().skip(1))
+            .collect::<Vec<NodeTypeT>>();
+        self.remove_inplace_node_type_ids(node_type_ids_to_remove)?;
+        Ok(self)
+    }
+
+    /// Remove isomorphic node types.
+    ///
+    /// This will leave for each isomorphic node tyoe group only an element.
+    ///
+    /// If any given node remains with no node type, that node is labeled
+    /// with node type None. Note that the modification DOES NOT happen inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    ///
+    pub fn remove_isomorphic_node_types(&self) -> Result<Graph> {
+        let mut graph = self.clone();
+        graph.remove_inplace_isomorphic_node_types()?;
+        Ok(graph)
+    }
+
+    /// Remove inplace isomorphic edge types.
+    ///
+    /// This will leave for each isomorphic edge tyoe group only an element.
+    ///
+    /// If any given edge remains with no edge type, that edge is labeled
+    /// with edge type None. Note that the modification DOES NOT happen inplace.
+    ///
+    /// # Arguments
+    /// * `minimum_number_of_edges`: Option<EdgeT> - Minimum number of edges to detect edge types topological synonims. By default, 5.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    ///
+    pub fn remove_inplace_isomorphic_edge_types(
+        &mut self,
+        minimum_number_of_edges: Option<EdgeT>,
+    ) -> Result<&Graph> {
+        let edge_type_ids_to_remove = self
+            .par_iter_isomorphic_edge_type_ids_groups(minimum_number_of_edges)?
+            .flat_map(|group| group.into_par_iter().skip(1))
+            .collect::<Vec<EdgeTypeT>>();
+        self.remove_inplace_edge_type_ids(edge_type_ids_to_remove)?;
+        Ok(self)
+    }
+
+    /// Remove isomorphic edge types.
+    ///
+    /// This will leave for each isomorphic edge tyoe group only an element.
+    ///
+    /// If any given edge remains with no edge type, that edge is labeled
+    /// with edge type None. Note that the modification DOES NOT happen inplace.
+    ///
+    /// # Arguments
+    /// * `minimum_number_of_edges`: Option<EdgeT> - Minimum number of edges to detect edge types topological synonims. By default, 5.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    ///
+    pub fn remove_isomorphic_edge_types(
+        &self,
+        minimum_number_of_edges: Option<EdgeT>,
+    ) -> Result<Graph> {
+        let mut graph = self.clone();
+        graph.remove_inplace_isomorphic_edge_types(minimum_number_of_edges)?;
         Ok(graph)
     }
 
