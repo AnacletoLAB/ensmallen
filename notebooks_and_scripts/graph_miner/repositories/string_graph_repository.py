@@ -57,7 +57,7 @@ class StringGraphRepository(GraphRepository):
         }
 
         edge_list_url_pattern = "https://stringdb-static.org/download/protein.{type_of_graph}.v{version}/{taxon_id}.protein.{type_of_graph}.v{version}.txt.gz"
-        enrichment_node_list_url_pattern = "https://stringdb-static.org/download/protein.enrichment.v{version}/{taxon_id}.protein.enrichment.terms.v{version}.txt.gz"
+        enrichment_node_list_url_pattern = "https://stringdb-static.org/download/protein.enrichment.terms.v{version}/{taxon_id}.protein.enrichment.terms.v{version}.txt.gz"
         info_node_list_url_pattern = "https://stringdb-static.org/download/protein.info.v{version}/{taxon_id}.protein.info.v{version}.txt.gz"
         sequence_node_list_url_pattern = "https://stringdb-static.org/download/protein.sequences.v{version}/{taxon_id}.protein.sequences.v{version}.fa.gz"
         tree_url_pattern = "https://stringdb-static.org/download/species.tree.v{version}.txt"
