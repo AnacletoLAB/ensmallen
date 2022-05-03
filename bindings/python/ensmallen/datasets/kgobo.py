@@ -28,27 +28,17 @@ def MOD(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "10-03-2021-14-36"
         Version to retrieve	
 		The available versions are:
@@ -72,27 +62,17 @@ def FBBT(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2022-02-24"
         Version to retrieve	
 		The available versions are:
@@ -120,27 +100,17 @@ def BTO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-04-27"
         Version to retrieve	
 		The available versions are:
@@ -164,27 +134,17 @@ def CHMO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2022-02-17"
         Version to retrieve	
 		The available versions are:
@@ -209,27 +169,17 @@ def OBA(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-12-03"
         Version to retrieve	
 		The available versions are:
@@ -254,27 +204,17 @@ def PSO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-05-19"
         Version to retrieve	
 		The available versions are:
@@ -297,27 +237,17 @@ def OGSF(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "11-22-2014"
         Version to retrieve	
 		The available versions are:
@@ -340,27 +270,17 @@ def MCO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2019-05-15"
         Version to retrieve	
 		The available versions are:
@@ -383,27 +303,17 @@ def OPMI(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "Vision-Release--1.0.130"
         Version to retrieve	
 		The available versions are:
@@ -426,27 +336,17 @@ def FBDV(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2022-02-25"
         Version to retrieve	
 		The available versions are:
@@ -474,27 +374,17 @@ def CEPH(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2016-01-12"
         Version to retrieve	
 		The available versions are:
@@ -517,27 +407,17 @@ def MPATH(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-05-19"
         Version to retrieve	
 		The available versions are:
@@ -560,27 +440,17 @@ def SPD(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "1.0"
         Version to retrieve	
 		The available versions are:
@@ -603,27 +473,17 @@ def OMIT(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "dev"
         Version to retrieve	
 		The available versions are:
@@ -646,27 +506,17 @@ def VT(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "04-10-2021-10-15"
         Version to retrieve	
 		The available versions are:
@@ -689,27 +539,17 @@ def EHDAA2(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2013-07-04"
         Version to retrieve	
 		The available versions are:
@@ -732,27 +572,17 @@ def FLOPO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "no_version"
         Version to retrieve	
 		The available versions are:
@@ -775,27 +605,17 @@ def WBLS(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-12-08"
         Version to retrieve	
 		The available versions are:
@@ -820,27 +640,17 @@ def RXNO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-12-06"
         Version to retrieve	
 		The available versions are:
@@ -866,27 +676,17 @@ def OMP(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2022-03-04"
         Version to retrieve	
 		The available versions are:
@@ -914,27 +714,17 @@ def ERO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "no_version"
         Version to retrieve	
 		The available versions are:
@@ -957,27 +747,17 @@ def GNO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-08-13"
         Version to retrieve	
 		The available versions are:
@@ -1001,27 +781,17 @@ def XCO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "4.46"
         Version to retrieve	
 		The available versions are:
@@ -1044,27 +814,17 @@ def AMPHX(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-12-18"
         Version to retrieve	
 		The available versions are:
@@ -1087,27 +847,17 @@ def EPIO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-05-28"
         Version to retrieve	
 		The available versions are:
@@ -1130,27 +880,17 @@ def CLYH(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-05-29"
         Version to retrieve	
 		The available versions are:
@@ -1173,27 +913,17 @@ def OOSTT(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-01-08"
         Version to retrieve	
 		The available versions are:
@@ -1216,27 +946,17 @@ def FYPO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2022-04-22"
         Version to retrieve	
 		The available versions are:
@@ -1266,27 +986,17 @@ def NCRO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2015-12-10"
         Version to retrieve	
 		The available versions are:
@@ -1309,27 +1019,17 @@ def IAO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-12-09"
         Version to retrieve	
 		The available versions are:
@@ -1352,27 +1052,17 @@ def GEO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "production-version-2016-03-26"
         Version to retrieve	
 		The available versions are:
@@ -1395,27 +1085,17 @@ def EXO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2.1"
         Version to retrieve	
 		The available versions are:
@@ -1438,27 +1118,17 @@ def SWO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "swo.owl"
         Version to retrieve	
 		The available versions are:
@@ -1481,27 +1151,17 @@ def OBCS(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2018-02-22"
         Version to retrieve	
 		The available versions are:
@@ -1524,27 +1184,17 @@ def ENVO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-05-14"
         Version to retrieve	
 		The available versions are:
@@ -1567,27 +1217,17 @@ def SYMP(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-08-04"
         Version to retrieve	
 		The available versions are:
@@ -1611,27 +1251,17 @@ def TAXRANK(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2016-04-15"
         Version to retrieve	
 		The available versions are:
@@ -1654,27 +1284,17 @@ def APO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2022-03-23"
         Version to retrieve	
 		The available versions are:
@@ -1702,27 +1322,17 @@ def CLO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2019-02-10"
         Version to retrieve	
 		The available versions are:
@@ -1746,27 +1356,17 @@ def CMO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2019-02-19"
         Version to retrieve	
 		The available versions are:
@@ -1789,27 +1389,17 @@ def OHMI(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2019-09-17"
         Version to retrieve	
 		The available versions are:
@@ -1832,27 +1422,17 @@ def HSO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-11-28"
         Version to retrieve	
 		The available versions are:
@@ -1876,27 +1456,17 @@ def FBBI(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-11-06"
         Version to retrieve	
 		The available versions are:
@@ -1919,27 +1489,17 @@ def OBI(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-08-18"
         Version to retrieve	
 		The available versions are:
@@ -1963,27 +1523,17 @@ def CDAO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2019-06-26"
         Version to retrieve	
 		The available versions are:
@@ -2006,27 +1556,17 @@ def MFMO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2013-11-16"
         Version to retrieve	
 		The available versions are:
@@ -2049,27 +1589,17 @@ def CRO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2019-12-11"
         Version to retrieve	
 		The available versions are:
@@ -2092,27 +1622,17 @@ def CHEMINF(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2.0"
         Version to retrieve	
 		The available versions are:
@@ -2135,27 +1655,17 @@ def MP(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-11-04"
         Version to retrieve	
 		The available versions are:
@@ -2182,27 +1692,17 @@ def DUO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-02-23"
         Version to retrieve	
 		The available versions are:
@@ -2225,27 +1725,17 @@ def LABO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-06-08"
         Version to retrieve	
 		The available versions are:
@@ -2268,27 +1758,17 @@ def OLATDV(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-03-10"
         Version to retrieve	
 		The available versions are:
@@ -2311,27 +1791,17 @@ def MPIO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2019-01-30"
         Version to retrieve	
 		The available versions are:
@@ -2354,27 +1824,17 @@ def CHEBI(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "209"
         Version to retrieve	
 		The available versions are:
@@ -2404,27 +1864,17 @@ def AEO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2014-12-05"
         Version to retrieve	
 		The available versions are:
@@ -2447,27 +1897,17 @@ def GENO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-03-08"
         Version to retrieve	
 		The available versions are:
@@ -2491,27 +1931,17 @@ def SBO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "28-08-2021-03-13"
         Version to retrieve	
 		The available versions are:
@@ -2534,27 +1964,17 @@ def TO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2022-03-09"
         Version to retrieve	
 		The available versions are:
@@ -2579,27 +1999,17 @@ def UO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "no_version"
         Version to retrieve	
 		The available versions are:
@@ -2622,27 +2032,17 @@ def MOP(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2014-09-03"
         Version to retrieve	
 		The available versions are:
@@ -2666,27 +2066,17 @@ def CHIRO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2015-11-23"
         Version to retrieve	
 		The available versions are:
@@ -2709,27 +2099,17 @@ def OGMS(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-08-19"
         Version to retrieve	
 		The available versions are:
@@ -2752,27 +2132,17 @@ def NCBITAXON(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-12-14"
         Version to retrieve	
 		The available versions are:
@@ -2797,27 +2167,17 @@ def FOODON(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-11-25"
         Version to retrieve	
 		The available versions are:
@@ -2842,27 +2202,17 @@ def PW(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "7.52"
         Version to retrieve	
 		The available versions are:
@@ -2885,27 +2235,17 @@ def FOVT(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-10-29"
         Version to retrieve	
 		The available versions are:
@@ -2930,27 +2270,17 @@ def XPO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-03-05"
         Version to retrieve	
 		The available versions are:
@@ -2973,27 +2303,17 @@ def ZFS(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-03-10"
         Version to retrieve	
 		The available versions are:
@@ -3016,27 +2336,17 @@ def RS(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "6.107"
         Version to retrieve	
 		The available versions are:
@@ -3059,27 +2369,17 @@ def CTO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "no_version"
         Version to retrieve	
 		The available versions are:
@@ -3102,27 +2402,17 @@ def OMO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-06-08"
         Version to retrieve	
 		The available versions are:
@@ -3145,27 +2435,17 @@ def FIX(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-04-13"
         Version to retrieve	
 		The available versions are:
@@ -3188,27 +2468,17 @@ def MAMO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "no_version"
         Version to retrieve	
 		The available versions are:
@@ -3231,27 +2501,17 @@ def VTO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-11-13"
         Version to retrieve	
 		The available versions are:
@@ -3274,27 +2534,17 @@ def UBERON(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2022-04-05"
         Version to retrieve	
 		The available versions are:
@@ -3321,27 +2571,17 @@ def MFOMD(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-04-26"
         Version to retrieve	
 		The available versions are:
@@ -3364,27 +2604,17 @@ def BFO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2019-08-26"
         Version to retrieve	
 		The available versions are:
@@ -3407,27 +2637,17 @@ def HTN(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "no_version"
         Version to retrieve	
 		The available versions are:
@@ -3450,27 +2670,17 @@ def PORO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2016-09-13"
         Version to retrieve	
 		The available versions are:
@@ -3494,27 +2704,17 @@ def AISM(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-12-13"
         Version to retrieve	
 		The available versions are:
@@ -3540,27 +2740,17 @@ def WBBT(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-12-14"
         Version to retrieve	
 		The available versions are:
@@ -3585,27 +2775,17 @@ def HAO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "no_version"
         Version to retrieve	
 		The available versions are:
@@ -3628,27 +2808,17 @@ def SO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-07-12"
         Version to retrieve	
 		The available versions are:
@@ -3672,27 +2842,17 @@ def RO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2022-02-07"
         Version to retrieve	
 		The available versions are:
@@ -3720,27 +2880,17 @@ def MONDO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2022-03-01"
         Version to retrieve	
 		The available versions are:
@@ -3770,27 +2920,17 @@ def DDPHENO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-06-19"
         Version to retrieve	
 		The available versions are:
@@ -3814,27 +2954,17 @@ def IDOMAL(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2015-03-16"
         Version to retrieve	
 		The available versions are:
@@ -3857,27 +2987,17 @@ def MAXO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2022-04-08"
         Version to retrieve	
 		The available versions are:
@@ -3903,27 +3023,17 @@ def FBCV(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2022-02-24"
         Version to retrieve	
 		The available versions are:
@@ -3951,27 +3061,17 @@ def TRANS(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-08-04"
         Version to retrieve	
 		The available versions are:
@@ -3994,27 +3094,17 @@ def PSDO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-12-04"
         Version to retrieve	
 		The available versions are:
@@ -4037,27 +3127,17 @@ def SCDO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-04-15"
         Version to retrieve	
 		The available versions are:
@@ -4080,27 +3160,17 @@ def LEPAO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-11-20"
         Version to retrieve	
 		The available versions are:
@@ -4123,27 +3193,17 @@ def ONTONEO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-04-29"
         Version to retrieve	
 		The available versions are:
@@ -4166,27 +3226,17 @@ def DRON(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2022-01-28"
         Version to retrieve	
 		The available versions are:
@@ -4212,27 +3262,17 @@ def RBO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2022-01-14"
         Version to retrieve	
 		The available versions are:
@@ -4257,27 +3297,17 @@ def NCIT(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-12-17"
         Version to retrieve	
 		The available versions are:
@@ -4302,27 +3332,17 @@ def FMA(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-04-13"
         Version to retrieve	
 		The available versions are:
@@ -4345,27 +3365,17 @@ def REX(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2017-11-19"
         Version to retrieve	
 		The available versions are:
@@ -4388,27 +3398,17 @@ def COB(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-09-13"
         Version to retrieve	
 		The available versions are:
@@ -4431,27 +3431,17 @@ def SIBO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2015-06-15"
         Version to retrieve	
 		The available versions are:
@@ -4474,27 +3464,17 @@ def PDRO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-06-08"
         Version to retrieve	
 		The available versions are:
@@ -4517,27 +3497,17 @@ def OGG(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "12-01-2016"
         Version to retrieve	
 		The available versions are:
@@ -4560,27 +3530,17 @@ def XLMOD(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "no_version"
         Version to retrieve	
 		The available versions are:
@@ -4604,27 +3564,17 @@ def HANCESTRO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-12-18"
         Version to retrieve	
 		The available versions are:
@@ -4647,27 +3597,17 @@ def GO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2022-03-10"
         Version to retrieve	
 		The available versions are:
@@ -4696,27 +3636,17 @@ def MF(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-09-21"
         Version to retrieve	
 		The available versions are:
@@ -4740,27 +3670,17 @@ def GSSO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2.0.5"
         Version to retrieve	
 		The available versions are:
@@ -4783,27 +3703,17 @@ def UPHENO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "no_version"
         Version to retrieve	
 		The available versions are:
@@ -4826,27 +3736,17 @@ def PLANA(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-10-21"
         Version to retrieve	
 		The available versions are:
@@ -4872,27 +3772,17 @@ def OAE(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "1.2.44"
         Version to retrieve	
 		The available versions are:
@@ -4915,27 +3805,17 @@ def MMUSDV(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-03-10"
         Version to retrieve	
 		The available versions are:
@@ -4958,27 +3838,17 @@ def MS(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "4.1.84"
         Version to retrieve	
 		The available versions are:
@@ -5013,27 +3883,17 @@ def APOLLO_SV(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "v4.1.1."
         Version to retrieve	
 		The available versions are:
@@ -5056,27 +3916,17 @@ def HSAPDV(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-03-10"
         Version to retrieve	
 		The available versions are:
@@ -5099,27 +3949,17 @@ def VO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "September_18__2021"
         Version to retrieve	
 		The available versions are:
@@ -5143,27 +3983,17 @@ def MIRO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2014-05-14"
         Version to retrieve	
 		The available versions are:
@@ -5186,27 +4016,17 @@ def EMAPA(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-09-01"
         Version to retrieve	
 		The available versions are:
@@ -5229,27 +4049,17 @@ def GECKO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-01-18"
         Version to retrieve	
 		The available versions are:
@@ -5272,27 +4082,17 @@ def CARO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2022-02-18"
         Version to retrieve	
 		The available versions are:
@@ -5315,27 +4115,17 @@ def GENEPIO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2022-01-26"
         Version to retrieve	
 		The available versions are:
@@ -5360,27 +4150,17 @@ def TADS(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2015-08-20"
         Version to retrieve	
 		The available versions are:
@@ -5403,27 +4183,17 @@ def FAO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-05-07"
         Version to retrieve	
 		The available versions are:
@@ -5446,27 +4216,17 @@ def CVDO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-03-05"
         Version to retrieve	
 		The available versions are:
@@ -5489,27 +4249,17 @@ def ECAO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-05-22"
         Version to retrieve	
 		The available versions are:
@@ -5532,27 +4282,17 @@ def OHPI(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "releases"
         Version to retrieve	
 		The available versions are:
@@ -5575,27 +4315,17 @@ def OPL(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-01-28"
         Version to retrieve	
 		The available versions are:
@@ -5618,27 +4348,17 @@ def TGMA(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2013-06-03"
         Version to retrieve	
 		The available versions are:
@@ -5661,27 +4381,17 @@ def BCO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-03-27"
         Version to retrieve	
 		The available versions are:
@@ -5705,27 +4415,17 @@ def ICO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-04-21"
         Version to retrieve	
 		The available versions are:
@@ -5748,27 +4448,17 @@ def ZECO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-06-04"
         Version to retrieve	
 		The available versions are:
@@ -5792,27 +4482,17 @@ def PHIPO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-07-14"
         Version to retrieve	
 		The available versions are:
@@ -5835,27 +4515,17 @@ def PDUMDV(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-03-10"
         Version to retrieve	
 		The available versions are:
@@ -5878,27 +4548,17 @@ def ARO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "05-10-2021-09-37"
         Version to retrieve	
 		The available versions are:
@@ -5921,27 +4581,17 @@ def OARCS(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "no_version"
         Version to retrieve	
 		The available versions are:
@@ -5964,27 +4614,17 @@ def PCL(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2022-03-02"
         Version to retrieve	
 		The available versions are:
@@ -6011,27 +4651,17 @@ def CTENO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2016-10-19"
         Version to retrieve	
 		The available versions are:
@@ -6054,27 +4684,17 @@ def PLANP(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-03-28"
         Version to retrieve	
 		The available versions are:
@@ -6097,27 +4717,17 @@ def DOID(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2022-04-01"
         Version to retrieve	
 		The available versions are:
@@ -6148,27 +4758,17 @@ def OMRSE(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-08-30"
         Version to retrieve	
 		The available versions are:
@@ -6192,27 +4792,17 @@ def PPO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2018-10-26"
         Version to retrieve	
 		The available versions are:
@@ -6235,27 +4825,17 @@ def OVAE(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "04-11-2016"
         Version to retrieve	
 		The available versions are:
@@ -6278,27 +4858,17 @@ def ZP(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-12-12"
         Version to retrieve	
 		The available versions are:
@@ -6321,27 +4891,17 @@ def STATO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "RC1.4"
         Version to retrieve	
 		The available versions are:
@@ -6364,27 +4924,17 @@ def ONE(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "no_version"
         Version to retrieve	
 		The available versions are:
@@ -6407,27 +4957,17 @@ def ECTO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-08-25"
         Version to retrieve	
 		The available versions are:
@@ -6451,27 +4991,17 @@ def XAO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-03-04"
         Version to retrieve	
 		The available versions are:
@@ -6494,27 +5024,17 @@ def MIAPA(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "no_version"
         Version to retrieve	
 		The available versions are:
@@ -6537,27 +5057,17 @@ def MI(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-04-13"
         Version to retrieve	
 		The available versions are:
@@ -6580,27 +5090,17 @@ def ECOCORE(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-02-17"
         Version to retrieve	
 		The available versions are:
@@ -6624,27 +5124,17 @@ def MMO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2.39"
         Version to retrieve	
 		The available versions are:
@@ -6667,27 +5157,17 @@ def EUPATH(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-09-09"
         Version to retrieve	
 		The available versions are:
@@ -6711,27 +5191,17 @@ def OBIB(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-02-02"
         Version to retrieve	
 		The available versions are:
@@ -6755,27 +5225,17 @@ def IDO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2017-11-03"
         Version to retrieve	
 		The available versions are:
@@ -6798,27 +5258,17 @@ def SEPIO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "no_version"
         Version to retrieve	
 		The available versions are:
@@ -6841,27 +5291,17 @@ def TTO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "19-07-2012-13-26"
         Version to retrieve	
 		The available versions are:
@@ -6884,27 +5324,17 @@ def PR(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "65.0"
         Version to retrieve	
 		The available versions are:
@@ -6930,27 +5360,17 @@ def NBO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-02-15"
         Version to retrieve	
 		The available versions are:
@@ -6973,27 +5393,17 @@ def WBPHENOTYPE(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-12-20"
         Version to retrieve	
 		The available versions are:
@@ -7020,27 +5430,17 @@ def PECO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-08-21"
         Version to retrieve	
 		The available versions are:
@@ -7063,27 +5463,17 @@ def GAZ(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "no_version"
         Version to retrieve	
 		The available versions are:
@@ -7106,27 +5496,17 @@ def CIO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2015-03-10"
         Version to retrieve	
 		The available versions are:
@@ -7149,27 +5529,17 @@ def INO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "1.0.112"
         Version to retrieve	
 		The available versions are:
@@ -7192,27 +5562,17 @@ def CLAO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-09-27"
         Version to retrieve	
 		The available versions are:
@@ -7235,27 +5595,17 @@ def UPA(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2018-12-12"
         Version to retrieve	
 		The available versions are:
@@ -7278,27 +5628,17 @@ def NOMEN(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "no_version"
         Version to retrieve	
 		The available versions are:
@@ -7321,27 +5661,17 @@ def ZFA(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2022-02-28"
         Version to retrieve	
 		The available versions are:
@@ -7368,27 +5698,17 @@ def DISDRIV(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "no_version"
         Version to retrieve	
 		The available versions are:
@@ -7411,27 +5731,17 @@ def CIDO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "09-03-2021"
         Version to retrieve	
 		The available versions are:
@@ -7454,27 +5764,17 @@ def COLAO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-12-14"
         Version to retrieve	
 		The available versions are:
@@ -7497,27 +5797,17 @@ def KISAO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2.30"
         Version to retrieve	
 		The available versions are:
@@ -7540,27 +5830,17 @@ def MA(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2017-02-07"
         Version to retrieve	
 		The available versions are:
@@ -7583,27 +5863,17 @@ def PO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-08-13"
         Version to retrieve	
 		The available versions are:
@@ -7626,27 +5896,17 @@ def CDNO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2022-01-10"
         Version to retrieve	
 		The available versions are:
@@ -7671,27 +5931,17 @@ def ONS(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "1.2.2"
         Version to retrieve	
 		The available versions are:
@@ -7715,27 +5965,17 @@ def OHD(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2016-06-27"
         Version to retrieve	
 		The available versions are:
@@ -7758,27 +5998,17 @@ def VARIO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "no_version"
         Version to retrieve	
 		The available versions are:
@@ -7801,27 +6031,17 @@ def AGRO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-07-01"
         Version to retrieve	
 		The available versions are:
@@ -7845,27 +6065,17 @@ def DIDEO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-06-11"
         Version to retrieve	
 		The available versions are:
@@ -7888,27 +6098,17 @@ def TXPO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-03-03"
         Version to retrieve	
 		The available versions are:
@@ -7931,27 +6131,17 @@ def PATO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2022-02-08"
         Version to retrieve	
 		The available versions are:
@@ -7979,27 +6169,17 @@ def HOM(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2015-01-07"
         Version to retrieve	
 		The available versions are:
@@ -8022,27 +6202,17 @@ def ECO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2022-02-09"
         Version to retrieve	
 		The available versions are:
@@ -8069,27 +6239,17 @@ def ICEO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2.1"
         Version to retrieve	
 		The available versions are:
@@ -8112,27 +6272,17 @@ def DDANAT(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2020-04-13"
         Version to retrieve	
 		The available versions are:
@@ -8155,27 +6305,17 @@ def BSPO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-09-22"
         Version to retrieve	
 		The available versions are:
@@ -8199,27 +6339,17 @@ def MRO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2022-01-21"
         Version to retrieve	
 		The available versions are:
@@ -8249,27 +6379,17 @@ def PCO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-05-03"
         Version to retrieve	
 		The available versions are:
@@ -8292,27 +6412,17 @@ def EPSO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = ""
         Version to retrieve	
 		The available versions are:
@@ -8336,27 +6446,17 @@ def ORNASEQ(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2019-07-08"
         Version to retrieve	
 		The available versions are:
@@ -8379,27 +6479,17 @@ def HP(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2022-02-14"
         Version to retrieve	
 		The available versions are:
@@ -8425,27 +6515,17 @@ def DPO(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2022-02-24"
         Version to retrieve	
 		The available versions are:
@@ -8473,27 +6553,17 @@ def CL(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2022-01-05"
         Version to retrieve	
 		The available versions are:
@@ -8521,27 +6591,17 @@ def MFOEM(
     Parameters
     ----------
     directed = False
-        Load as directed or undirected
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
-        Will automatically preprocess in Linux and macOS and avoid doing this on Windows.
+        Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
-    load_node_types = True
-        Load node types
-    load_edge_weights = True
-        Load edge weights
     auto_enable_tradeoffs = True
-        Enable tradeoffs when graph has < 50M edges
-    sort_tmp_dir = None
-        Path to sorting tmp folder
-    verbose = 2
-    cache = True
+        Enable when graph has < 50M edges
     cache_path = None
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-        Sys var with cache directory
     version = "2021-09-21"
         Version to retrieve	
 		The available versions are:
