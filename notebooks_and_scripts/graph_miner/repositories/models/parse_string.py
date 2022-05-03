@@ -83,9 +83,17 @@ def create_species_tree_node_and_edge_list(
     tree_df = pd.read_csv(tree_path, sep="\t")
     tree_metadata_df = pd.read_csv(tree_metadata_path, sep="\t", index_col=0)
 
-    node_list = tree_df[["#taxon_id", "taxon_name"]]
+    node_list = 
     node_list = node_list.set_index("#taxon_id")
 
+    # Making taxon names unique, so that corner cases
+    # such as `Drosophila Drosophila` can be handled.
+    node_list["taxon_name"] = [
+        "{}.{}".format(taxon_name, taxon_id)
+        for taxon_id, taxon_name in tree_df[["#taxon_id", "taxon_name"]].values
+    ]
+
+    # Adding last unique common ancestor
     node_list = pd.concat(
         (
             node_list,
@@ -107,8 +115,8 @@ def create_species_tree_node_and_edge_list(
         imputed_tree_metadata_df
     ], axis=1)
 
-    sources = node_list.loc[tree_df[tree_df.columns[0]]].taxon_name
-    destinations = node_list.loc[tree_df[tree_df.columns[1]]].taxon_name
+    sources = node_list.loc[tree_df[tree_df.columns[0]]].taxon_name.values
+    destinations = node_list.loc[tree_df[tree_df.columns[1]]].taxon_name.values
     node_list.to_csv(node_list_path, sep="\t", index=False)
     edge_list = pd.DataFrame({
         "sources": sources,
