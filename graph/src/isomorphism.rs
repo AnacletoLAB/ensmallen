@@ -98,6 +98,8 @@ impl Graph {
     }
 
     /// Returns parallel iterator of vectors of approximated isomorphic node type group IDs.
+    /// 
+    /// # TODO!: this approximation may not be correct and will require some more checks!
     pub fn par_iter_approximated_isomorphic_node_type_ids_groups(
         &self,
     ) -> Result<impl ParallelIterator<Item = Vec<NodeTypeT>> + '_> {

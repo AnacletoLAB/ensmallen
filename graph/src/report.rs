@@ -1664,7 +1664,7 @@ impl Graph {
 
     /// Returns report on the isomorphic node types of the graph.
     unsafe fn get_isomorphic_node_types_report(&self) -> String {
-        let threshold = 10_000;
+        let threshold = 50_000;
         let use_approximation = self.get_node_types_number().unwrap() > threshold;
         let mut isomorphic_node_types = if use_approximation {
             self.get_approximated_isomorphic_node_type_ids_groups()
