@@ -21,6 +21,12 @@ pub(crate) fn is_valid_node_name_from_seeds(
     id_length: Option<usize>,
     numeric_part_length: Option<usize>,
 ) -> Result<()> {
+    if node_name.contains(" "){
+        return Err(format!(
+            "The given curie node name {} contains spaces.",
+            node_name
+        ));
+    }
     if (base_names.is_none()
         || base_names
             .as_ref()
@@ -41,7 +47,7 @@ pub(crate) fn is_valid_node_name_from_seeds(
         for base_name in base_names.iter() {
             if node_name
                 .to_uppercase()
-                .starts_with(&base_name.to_string().to_uppercase())
+                .starts_with(&format!("{}:", base_name.to_string().to_uppercase()))
             {
                 // If so, it must have the provided base length.
                 if base_length
@@ -603,20 +609,12 @@ pub fn get_node_source_url_from_node_name(node_name: &str) -> Result<String> {
         return Ok(unsafe { format_database_snp_url_from_node_name(node_name) });
     }
 
-    if is_valid_cell_ontology_node_name(node_name) {
-        return Ok(unsafe { format_cell_ontology_url_from_node_name(node_name) });
-    }
-
     if is_valid_mugen_node_name(node_name) {
         return Ok(unsafe { format_mugen_url_from_node_name(node_name) });
     }
 
     if is_valid_world_geodetic_system_node_name(node_name) {
         return Ok(unsafe { format_world_geodetic_system_url_from_node_name(node_name) });
-    }
-
-    if is_valid_chromosome_ontology_node_name(node_name) {
-        return Ok(unsafe { format_chromosome_ontology_url_from_node_name(node_name) });
     }
 
     if is_valid_pharmgkb_node_name(node_name) {
@@ -21787,20 +21785,12 @@ pub fn get_node_repository_from_node_name(node_name: &str) -> Result<&str> {
         return Ok("Database SNP");
     }
 
-    if is_valid_cell_ontology_node_name(node_name) {
-        return Ok("Cell Ontology");
-    }
-
     if is_valid_mugen_node_name(node_name) {
         return Ok("Mugen");
     }
 
     if is_valid_world_geodetic_system_node_name(node_name) {
         return Ok("World Geodetic System");
-    }
-
-    if is_valid_chromosome_ontology_node_name(node_name) {
-        return Ok("Chromosome Ontology");
     }
 
     if is_valid_pharmgkb_node_name(node_name) {

@@ -21,7 +21,7 @@ pub fn is_valid_provenance_ontology_node_name(node_name: &str) -> bool {
         Some(&["PROV"]),
         None,
         Some(":"),
-        Some("AG"),
+        None,
         None,
         None,
     )

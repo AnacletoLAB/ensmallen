@@ -26,7 +26,7 @@ pub fn is_valid_ensembl_node_name(node_name: &str) -> bool {
         Some(":"),
         Some("ENS"),
         None,
-        None,
+        Some(11),
     )
     .is_ok()
 }
