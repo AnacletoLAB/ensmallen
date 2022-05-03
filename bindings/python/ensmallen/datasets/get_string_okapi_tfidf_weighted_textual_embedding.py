@@ -12,6 +12,7 @@ def get_string_okapi_tfidf_weighted_textual_embedding(
     k1: float = 1.5,
     b: float = 0.75,
     pretrained_model_name_or_path: str = "bert-base-uncased",
+    columns_to_use: List[str] = ("preferred_name", "annotation", "description"),
     bert_model_kwargs: Optional[Dict] = None,
     verbose: bool = True
 ) -> np.ndarray:
@@ -40,7 +41,7 @@ def get_string_okapi_tfidf_weighted_textual_embedding(
         repository="string",
         k1=k1,
         b=b,
-        columns=["preferred_name", "annotation"],
+        columns=list(columns_to_use),
         pretrained_model_name_or_path=pretrained_model_name_or_path,
         bert_model_kwargs=bert_model_kwargs,
         verbose=verbose
