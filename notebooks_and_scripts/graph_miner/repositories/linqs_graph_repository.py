@@ -1,16 +1,8 @@
 """Sub-module handling the retrieval and building of graphs from LINQSGraphRepository."""
 from typing import List, Dict
 import os
-import requests
-from bs4 import BeautifulSoup
-import pandas as pd
-import shutil
 import compress_json
 from .graph_repository import GraphRepository
-from .models.parse_linqs import (
-    parse_linqs_incidence_matrix,
-    parse_linqs_pubmed_incidence_matrix
-)
 
 
 class LINQSGraphRepository(GraphRepository):
@@ -19,10 +11,6 @@ class LINQSGraphRepository(GraphRepository):
         """Create new String Graph Repository object."""
         super().__init__()
         self._data = compress_json.local_load("linqs.json")
-        self._parse = {
-            "parse_linqs_incidence_matrix": parse_linqs_incidence_matrix,
-            "parse_linqs_pubmed_incidence_matrix": parse_linqs_pubmed_incidence_matrix
-        }
 
     def build_stored_graph_name(self, partial_graph_name: str) -> str:
         """Return built graph name.
