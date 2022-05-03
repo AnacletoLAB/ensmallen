@@ -83,7 +83,7 @@ def create_species_tree_node_and_edge_list(
     tree_df = pd.read_csv(tree_path, sep="\t")
     tree_metadata_df = pd.read_csv(tree_metadata_path, sep="\t", index_col=0)
 
-    node_list = 
+    node_list = tree_df[["#taxon_id", "taxon_name"]]
     node_list = node_list.set_index("#taxon_id")
 
     # Making taxon names unique, so that corner cases

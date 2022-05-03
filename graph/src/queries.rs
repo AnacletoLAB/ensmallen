@@ -2081,9 +2081,9 @@ impl Graph {
     ///
     /// # Raises
     /// * If the provided separator is empty.
-    pub fn get_node_names_prefixes<'a>(
-        &'a self,
-        separator: Option<&'a str>,
+    pub fn get_node_names_prefixes(
+        &self,
+        separator: Option<&str>,
     ) -> Result<Vec<String>> {
         self.par_iter_node_names_prefixes(separator)
             .map(|iter| iter.collect())

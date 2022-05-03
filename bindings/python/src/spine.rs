@@ -57,7 +57,7 @@ macro_rules! impl_spine_embedding {
             #[args(py_kwargs = "**")]
             #[text_signature = "($self, graph, *, dtype, verbose)"]
             /// Return numpy embedding with SPINE node embedding.
-            /// 
+            ///
             /// Do note that the embedding is returned transposed.
             ///
             /// Parameters

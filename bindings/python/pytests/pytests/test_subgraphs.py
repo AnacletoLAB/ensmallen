@@ -3,7 +3,7 @@ import pytest
 
 
 def test_subgraph_sampling_node_labels():
-    cora = Cora().drop_singleton_nodes()
+    cora = Cora().remove_singleton_nodes()
 
     with pytest.raises(ValueError):
         # Should raise because the list of metrics is empty

@@ -59,7 +59,7 @@ impl WeightedSPINE {
     /// Return numpy embedding with Weighted SPINE node embedding.
     ///
     /// Do note that the embedding is returned transposed.
-    /// 
+    ///
     /// Parameters
     /// ---------
     /// graph: Graph

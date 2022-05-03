@@ -207,6 +207,13 @@ class StringGraphRepository(GraphRepository):
                     # Mining metadata for Cluster STRING graphs   #
                     ###############################################
 
+                    graph_name = "{}Cluster".format(row.STRING_name_compact)
+                    stored_graph_name = self.build_stored_graph_name(
+                        graph_name
+                    )
+                    if stored_graph_name not in mined_data:
+                        mined_data[stored_graph_name] = {}
+
                     full_version_code = "cluster.v{version}".format(
                         type_of_graph=type_of_graph,
                         version=version
