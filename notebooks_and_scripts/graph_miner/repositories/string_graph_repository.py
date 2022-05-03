@@ -104,9 +104,6 @@ class StringGraphRepository(GraphRepository):
                     "node_list_path": node_path,
                     "edge_list_path": edge_path
                 },
-                "imports": [
-                    "from .parse_string import create_species_tree_node_and_edge_list"
-                ],
                 "arguments": {
                     "edge_path": edge_path,
                     "node_path": node_path,
@@ -154,7 +151,10 @@ class StringGraphRepository(GraphRepository):
                         taxon_id=taxon_id,
                         version=version
                     )
-                    node_list_path = "{taxon_id}.protein.complete.v{version}.txt"
+                    node_list_path = "{taxon_id}.protein.complete.v{version}.txt".format(
+                        taxon_id=taxon_id,
+                        version=version
+                    )
 
                     node_urls = [
                         enrichment_node_list_url_pattern.format(
@@ -186,9 +186,6 @@ class StringGraphRepository(GraphRepository):
                             "info_path": info_path,
                             "node_list_path": node_list_path
                         },
-                        "imports": [
-                            "from .parse_string import build_string_graph_node_list"
-                        ],
                         "arguments": {
                             "edge_path": "{taxon_id}.protein.{type_of_graph}.v{version}.txt".format(
                                 taxon_id=taxon_id,
@@ -226,7 +223,10 @@ class StringGraphRepository(GraphRepository):
                         taxon_id=taxon_id,
                         version=version
                     )
-                    node_list_path = "{taxon_id}.cluster.nodes.v{version}.txt"
+                    node_list_path = "{taxon_id}.cluster.nodes.v{version}.txt".format(
+                        taxon_id=taxon_id,
+                        version=version
+                    )
                     edge_list_path = "{taxon_id}.protein.cluster.v{version}.txt".format(
                         taxon_id=taxon_id,
                         version=version,
@@ -260,9 +260,6 @@ class StringGraphRepository(GraphRepository):
                             "node_list_path": node_list_path,
                             "edge_list_path": edge_list_path,
                         },
-                        "imports": [
-                            "from .parse_string import build_string_cluster_graph_node_and_edge_list"
-                        ],
                         "arguments": {
                             "edge_path": edge_list_path,
                             "node_path": node_list_path,
