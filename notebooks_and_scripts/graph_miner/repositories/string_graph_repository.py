@@ -195,7 +195,8 @@ class StringGraphRepository(GraphRepository):
                             "node_path": node_list_path,
                             "name": graph_name,
                             "nodes_column_number": 0,
-                            "node_list_node_types_column": "category",
+                            "node_types_separator": "|",
+                            "node_list_node_types_column": "term",
                             "node_list_is_correct": True,
                             "edge_list_is_correct": True,
                             **parameters_per_type_of_graph[type_of_graph]
@@ -265,7 +266,8 @@ class StringGraphRepository(GraphRepository):
                             "node_path": node_list_path,
                             "name": graph_name,
                             "nodes_column": "node_name",
-                            "node_list_node_types_column": "category",
+                            "node_types_separator": "|",
+                            "node_list_node_types_column": "term",
                             "node_list_is_correct": True,
                             "edge_list_is_correct": True,
                             **parameters_per_type_of_graph["cluster"]

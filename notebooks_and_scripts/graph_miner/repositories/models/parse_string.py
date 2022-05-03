@@ -41,9 +41,12 @@ def group_annotate_string_node_list(path: str) -> pd.DataFrame:
     path: str
         Path to the annotated protein node list file to load.
     """
-    return pd.read_csv(path, sep="\t")\
-        .groupby("#string_protein_id")\
-        .agg(lambda x: "|".join(sorted(set(x))))\
+    df: pd.DataFrame = pd.read_csv(path, sep="\t")
+
+    df.drop(columns="category", inplace=True)
+
+    return df.groupby("#string_protein_id")\
+        .agg(lambda x: "|".join(sorted(set(x))))
 
 
 
@@ -82,6 +85,13 @@ def create_species_tree_node_and_edge_list(
 
     node_list = tree_df[["#taxon_id", "taxon_name"]]
     node_list = node_list.set_index("#taxon_id")
+
+    node_list = pd.concat(
+        (
+            nodes,
+            pd.DataFrame({"taxon_name": "LUCA"}, index=[1])
+        )
+    )
 
     missing_indices = set(node_list.index) - set(tree_metadata_df.index)
     imputed_tree_metadata_df = pd.concat((
@@ -180,7 +190,7 @@ def build_string_cluster_graph_node_and_edge_list(
         node_list_path=node_list_path,
     )
     cluster_only_node_list = pd.read_csv(cluster_info_path, sep="\t")
-    cluster_only_node_list["category"] = "Cluster"
+    cluster_only_node_list["term"] = "Cluster"
     cluster_only_node_list.rename(
         columns={
             "description": "best_described_by",
