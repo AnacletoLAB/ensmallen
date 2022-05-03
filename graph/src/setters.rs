@@ -102,7 +102,7 @@ impl Graph {
     /// with node type None. Note that the modification happens inplace.
     ///
     /// # Arguments
-    /// * `node_type_id_to_remove`: NodeTypeT - The node type ID to remove.
+    /// * `node_type_ids_to_remove`: Vec<NodeTypeT> - The node type ID to remove.
     ///
     /// # Raises
     /// * If the graph does not have node types.
@@ -288,13 +288,33 @@ impl Graph {
         Ok(self)
     }
 
+    /// Remove given node type names from all nodes.
+    ///
+    /// If any given node remains with no node type, that node is labeled
+    /// with node type None. Note that the modification happens inplace.
+    ///
+    /// # Arguments
+    /// * `node_type_names`: Vec<&str> - The node type names to remove.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    /// * If the given node type name does not exists in the graph.
+    ///
+    pub fn remove_inplace_node_type_names(&mut self, node_type_names: Vec<&str>) -> Result<&Graph> {
+        let node_type_ids = node_type_names.into_iter().map(|node_type_name|{
+            self.get_node_type_id_from_node_type_name(node_type_name)
+        }).collect::<Result<Vec<NodeTypeT>>>()?;
+        self.remove_inplace_node_type_ids(node_type_ids)?;
+        Ok(self)
+    }
+    
     /// Remove given node type name from all nodes.
     ///
     /// If any given node remains with no node type, that node is labeled
     /// with node type None. Note that the modification happens inplace.
     ///
     /// # Arguments
-    /// * `node_type_name`: &str - The node type ID to remove.
+    /// * `node_type_name`: &str - The node type names to remove.
     ///
     /// # Raises
     /// * If the graph does not have node types.
@@ -434,6 +454,24 @@ impl Graph {
         Ok(graph)
     }
 
+    /// Remove given node type names from all nodes.
+    ///
+    /// If any given node remains with no node type, that node is labeled
+    /// with node type None. Note that the modification DOES NOT happen inplace.
+    ///
+    /// # Arguments
+    /// * `node_type_names`: Vec<&str> - The node type ID to remove.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    /// * If the given node type name does not exists in the graph.
+    ///
+    pub fn remove_node_type_names(&self, node_type_names: Vec<&str>) -> Result<Graph> {
+        let mut graph = self.clone();
+        graph.remove_inplace_node_type_names(node_type_names)?;
+        Ok(graph)
+    }
+
     /// Remove given node type name from all nodes.
     ///
     /// If any given node remains with no node type, that node is labeled
@@ -447,10 +485,9 @@ impl Graph {
     /// * If the given node type name does not exists in the graph.
     ///
     pub fn remove_node_type_name(&self, node_type_name: &str) -> Result<Graph> {
-        let mut graph = self.clone();
-        graph.remove_inplace_node_type_name(node_type_name)?;
-        Ok(graph)
+        self.remove_node_type_names(vec![node_type_name])
     }
+    
 
     /// Remove given edge type name from all edges.
     ///
