@@ -201,15 +201,15 @@ def build_string_cluster_graph_node_and_edge_list(
     cluster_only_node_list["term"] = "Cluster"
     cluster_only_node_list.rename(
         columns={
-            "description": "best_described_by",
-            "node_name": "cluster_id"
+            "best_described_by": "description",
+            "cluster_id": "node_name"
         },
         inplace=True
     )
     string_only_node_list = pd.read_csv(node_list_path, sep="\t")
     string_only_node_list.rename(
         columns={
-            "node_name": "#string_protein_id"
+            "#string_protein_id": "node_name"
         },
         inplace=True
     )
@@ -221,16 +221,16 @@ def build_string_cluster_graph_node_and_edge_list(
 
     cluster_tree_df.rename(
         columns={
-            "source": "child_cluster_id",
-            "destination": "parent_cluster_id",
+            "child_cluster_id": "source",
+            "parent_cluster_id": "destination",
         },
         inplace=True
     )
 
     cluster_to_proteins_df.rename(
         columns={
-            "source": "cluster_id",
-            "destination": "protein_id",
+            "cluster_id": "source",
+            "protein_id": "destination",
         },
         inplace=True
     )

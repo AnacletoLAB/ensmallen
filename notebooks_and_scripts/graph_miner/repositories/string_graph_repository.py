@@ -207,7 +207,7 @@ class StringGraphRepository(GraphRepository):
                     # Mining metadata for Cluster STRING graphs   #
                     ###############################################
 
-                    graph_name = "{}Cluster".format(row.STRING_name_compact)
+                    graph_name = "{} Cluster".format(row.STRING_name_compact)
                     stored_graph_name = self.build_stored_graph_name(
                         graph_name
                     )
