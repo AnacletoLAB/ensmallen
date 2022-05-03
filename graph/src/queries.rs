@@ -1807,7 +1807,7 @@ impl Graph {
         let mut counts: HashMap<NodeTypeT, NodeT> = HashMap::new();
         node_ids
             .iter()
-            .cloned()
+            .copied()
             .filter_map(|node_id| self.get_unchecked_node_type_ids_from_node_id(node_id))
             .for_each(|node_type_ids| {
                 node_type_ids.iter().for_each(|&node_type_id| {

@@ -81,11 +81,15 @@ impl ToString for DendriticTree {
                     .map_or_else(
                         |_| "".to_string(),
                         |count| {
-                            format!(
-                                " Its nodes have {}.",
-                                self.graph
-                                    .get_unchecked_node_types_description_from_count(count)
-                            )
+                            if count.is_empty() {
+                                "".to_string()
+                            } else {
+                                format!(
+                                    " Its nodes have {}.",
+                                    self.graph
+                                        .get_unchecked_node_types_description_from_count(count)
+                                )
+                            }
                         },
                     )
             },
@@ -95,11 +99,15 @@ impl ToString for DendriticTree {
                     .map_or_else(
                         |_| "".to_string(),
                         |count| {
-                            format!(
-                                " Its edges have {}.",
-                                self.graph
-                                    .get_unchecked_edge_types_description_from_count(count)
-                            )
+                            if count.is_empty() {
+                                "".to_string()
+                            } else {
+                                format!(
+                                    " Its edges have {}.",
+                                    self.graph
+                                        .get_unchecked_edge_types_description_from_count(count)
+                                )
+                            }
                         },
                     )
             }
