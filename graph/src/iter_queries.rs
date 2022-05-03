@@ -691,25 +691,29 @@ impl Graph {
     /// Returns parallel iterator over directed edge node names with given node name prefixes
     ///
     /// # Arguments
-    /// * `src_node_name_prefix`: Option<&str> - Prefix of the source node names.
-    /// * `dst_node_name_prefix`: Option<&str> - Prefix of the source node names.
+    /// * `src_node_name_prefixes`: Option<Vec<&str>> - Prefixes of the source node names.
+    /// * `dst_node_name_prefixes`: Option<Vec<&str>> - Prefixes of the source node names.
     ///
     pub fn par_iter_directed_edge_node_names_from_node_curie_prefixes<'a>(
         &'a self,
-        src_node_name_prefix: Option<&'a str>,
-        dst_node_name_prefix: Option<&'a str>,
+        src_node_name_prefixes: Option<Vec<&'a str>>,
+        dst_node_name_prefixes: Option<Vec<&'a str>>,
     ) -> impl ParallelIterator<Item = (String, String)> + 'a {
         self.par_iter_directed_edges()
             .filter_map(move |(_, _, src_node_name, _, dst_node_name)| {
-                if src_node_name_prefix
+                if src_node_name_prefixes
                     .as_ref()
-                    .map_or(true, |src_node_name_prefix| {
-                        src_node_name.starts_with(src_node_name_prefix)
+                    .map_or(true, |src_node_name_prefixes| {
+                        src_node_name_prefixes.iter().any(|src_node_name_prefix| {
+                            src_node_name.starts_with(src_node_name_prefix)
+                        })
                     })
-                    && dst_node_name_prefix
+                    && dst_node_name_prefixes
                         .as_ref()
-                        .map_or(true, |dst_node_name_prefix| {
-                            dst_node_name.starts_with(dst_node_name_prefix)
+                        .map_or(true, |dst_node_name_prefixes| {
+                            dst_node_name_prefixes.iter().any(|dst_node_name_prefix| {
+                                dst_node_name.starts_with(dst_node_name_prefix)
+                            })
                         })
                 {
                     Some((src_node_name, dst_node_name))
@@ -722,25 +726,29 @@ impl Graph {
     /// Returns parallel iterator over directed edge node IDs with given node name prefixes
     ///
     /// # Arguments
-    /// * `src_node_name_prefix`: Option<&str> - Prefix of the source node names.
-    /// * `dst_node_name_prefix`: Option<&str> - Prefix of the source node names.
+    /// * `src_node_name_prefixes`: Option<Vec<&str>> - Prefixes of the source node names.
+    /// * `dst_node_name_prefixes`: Option<Vec<&str>> - Prefixes of the source node names.
     ///
     pub fn par_iter_directed_edge_node_ids_from_node_curie_prefixes<'a>(
         &'a self,
-        src_node_name_prefix: Option<&'a str>,
-        dst_node_name_prefix: Option<&'a str>,
+        src_node_name_prefixes: Option<Vec<&'a str>>,
+        dst_node_name_prefixes: Option<Vec<&'a str>>,
     ) -> impl ParallelIterator<Item = (NodeT, NodeT)> + 'a {
         self.par_iter_directed_edges().filter_map(
             move |(_, src, src_node_name, dst, dst_node_name)| {
-                if src_node_name_prefix
+                if src_node_name_prefixes
                     .as_ref()
-                    .map_or(true, |src_node_name_prefix| {
-                        src_node_name.starts_with(src_node_name_prefix)
+                    .map_or(true, |src_node_name_prefixes| {
+                        src_node_name_prefixes.iter().any(|src_node_name_prefix| {
+                            src_node_name.starts_with(src_node_name_prefix)
+                        })
                     })
-                    && dst_node_name_prefix
+                    && dst_node_name_prefixes
                         .as_ref()
-                        .map_or(true, |dst_node_name_prefix| {
-                            dst_node_name.starts_with(dst_node_name_prefix)
+                        .map_or(true, |dst_node_name_prefixes| {
+                            dst_node_name_prefixes.iter().any(|dst_node_name_prefix| {
+                                dst_node_name.starts_with(dst_node_name_prefix)
+                            })
                         })
                 {
                     Some((src, dst))
@@ -754,25 +762,29 @@ impl Graph {
     /// Returns parallel iterator over directed edge IDs with given node name prefixes
     ///
     /// # Arguments
-    /// * `src_node_name_prefix`: Option<&str> - Prefix of the source node names.
-    /// * `dst_node_name_prefix`: Option<&str> - Prefix of the source node names.
+    /// * `src_node_name_prefixes`: Option<Vec<&str>> - Prefixes of the source node names.
+    /// * `dst_node_name_prefixes`: Option<Vec<&str>> - Prefixes of the source node names.
     ///
     pub fn par_iter_directed_edge_ids_from_node_curie_prefixes<'a>(
         &'a self,
-        src_node_name_prefix: Option<&'a str>,
-        dst_node_name_prefix: Option<&'a str>,
+        src_node_name_prefixes: Option<Vec<&'a str>>,
+        dst_node_name_prefixes: Option<Vec<&'a str>>,
     ) -> impl ParallelIterator<Item = EdgeT> + 'a {
         self.par_iter_directed_edges().filter_map(
             move |(edge_id, _, src_node_name, _, dst_node_name)| {
-                if src_node_name_prefix
+                if src_node_name_prefixes
                     .as_ref()
-                    .map_or(true, |src_node_name_prefix| {
-                        src_node_name.starts_with(src_node_name_prefix)
+                    .map_or(true, |src_node_name_prefixes| {
+                        src_node_name_prefixes.iter().any(|src_node_name_prefix| {
+                            src_node_name.starts_with(src_node_name_prefix)
+                        })
                     })
-                    && dst_node_name_prefix
+                    && dst_node_name_prefixes
                         .as_ref()
-                        .map_or(true, |dst_node_name_prefix| {
-                            dst_node_name.starts_with(dst_node_name_prefix)
+                        .map_or(true, |dst_node_name_prefixes| {
+                            dst_node_name_prefixes.iter().any(|dst_node_name_prefix| {
+                                dst_node_name.starts_with(dst_node_name_prefix)
+                            })
                         })
                 {
                     Some(edge_id)
@@ -783,18 +795,21 @@ impl Graph {
         )
     }
 
-    /// Returns parallel iterator over node IDs with given curie prefix
+    /// Returns parallel iterator over node IDs with given curie prefixes
     ///
     /// # Arguments
-    /// * `curie_prefix`: &str - Prefix of the source node names.
-    pub fn par_iter_node_ids_from_node_curie_prefix<'a>(
+    /// * `curie_prefixes`: Vec<&str> - Prefix of the node names.
+    pub fn par_iter_node_ids_from_node_curie_prefixes<'a>(
         &'a self,
-        curie_prefix: &'a str,
+        curie_prefixes: Vec<&'a str>,
     ) -> impl ParallelIterator<Item = NodeT> + 'a {
         self.par_iter_node_ids()
             .zip(self.par_iter_node_names())
             .filter_map(move |(node_id, node_name)| {
-                if node_name.starts_with(curie_prefix) {
+                if curie_prefixes
+                    .iter()
+                    .any(|curie_prefix| node_name.starts_with(curie_prefix))
+                {
                     Some(node_id)
                 } else {
                     None
@@ -802,16 +817,19 @@ impl Graph {
             })
     }
 
-    /// Returns parallel iterator over node names with given curie prefix
+    /// Returns parallel iterator over node names with given curie prefixes
     ///
     /// # Arguments
-    /// * `curie_prefix`: &str - Prefix of the source node names.
-    pub fn par_iter_node_names_from_node_curie_prefix<'a>(
+    /// * `curie_prefixes`: Vec<&str> - Prefixes of node names.
+    pub fn par_iter_node_names_from_node_curie_prefixes<'a>(
         &'a self,
-        curie_prefix: &'a str,
+        curie_prefixes: Vec<&'a str>,
     ) -> impl ParallelIterator<Item = String> + 'a {
         self.par_iter_node_names().filter_map(move |node_name| {
-            if node_name.starts_with(curie_prefix) {
+            if curie_prefixes
+                .iter()
+                .any(|curie_prefix| node_name.starts_with(curie_prefix))
+            {
                 Some(node_name)
             } else {
                 None
