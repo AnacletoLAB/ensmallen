@@ -88,7 +88,7 @@ def create_species_tree_node_and_edge_list(
 
     node_list = pd.concat(
         (
-            nodes,
+            node_list,
             pd.DataFrame({"taxon_name": "LUCA"}, index=[1])
         )
     )

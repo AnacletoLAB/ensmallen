@@ -527,6 +527,7 @@ impl Graph {
     ///
     pub fn divide_edge_weights_inplace(&mut self, denominator: WeightT) -> Result<()> {
         self.must_have_edge_weights()?;
+        unsafe { &mut (*self.cache.get()) }.reset_cached_edge_weights();
         if let Some(edge_weights) = Arc::make_mut(&mut self.weights) {
             edge_weights.par_iter_mut().for_each(|edge_weight| {
                 *edge_weight /= denominator;

@@ -208,9 +208,10 @@ impl WeightedSPINE {
             return Err(concat!(
                 "It has been requested to handle the edge weights for the weighted ",
                 "shortest paths as if they were probabilities, but the values are ",
-                "not normalized between zero and one. Possibly you wanted to execute ",
-                "either the `graph.normalize_edge_weights_inplace()` or the ",
-                "`graph.normalize_edge_weights()` methods."
+                "not normalized between zero and one. Possibly, you wanted to execute ",
+                "either the `graph.normalize_edge_weights_inplace()`, ",
+                "`graph.normalize_edge_weights()`, `graph.divide_edge_weights_inplace(value)` ",
+                " or `graph.divide_edge_weights(value)` methods.",
             )
             .to_string());
         }

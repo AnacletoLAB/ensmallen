@@ -54,4 +54,10 @@ impl PropertyCache {
         use std::mem::size_of;
         size_of::<PropertyCache>()
     }
+
+    pub fn reset_cached_edge_weights(&mut self) {
+        self.min_edge_weight = None;
+        self.max_edge_weight = None;
+        self.total_edge_weight = None;
+    }
 }
