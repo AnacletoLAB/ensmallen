@@ -112,6 +112,7 @@ class StringGraphRepository(GraphRepository):
                     "node_list_node_types_column": "domain",
                     "node_list_is_correct": True,
                     "edge_list_is_correct": True,
+                    "edge_list_edge_types_column": "domain",
                     "sources_column": "sources",
                     "destinations_column": "destinations",
                 }

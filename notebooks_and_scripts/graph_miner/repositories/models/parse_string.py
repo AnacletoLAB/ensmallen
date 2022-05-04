@@ -80,49 +80,45 @@ def create_species_tree_node_and_edge_list(
     edge_list_path: str
         The path where to store the tree edge list.
     """
-    tree_df = pd.read_csv(tree_path, sep="\t")
-    tree_metadata_df = pd.read_csv(tree_metadata_path, sep="\t", index_col=0)
+    tree = pd.read_csv(tree_path, sep="\t", index_col=0)
+    metadata = pd.read_csv(tree_metadata_path, sep="\t", index_col=0)
 
-    node_list = tree_df[["#taxon_id", "taxon_name"]]
-    node_list = node_list.set_index("#taxon_id")
+    # Imputing the missing domains in the Species Tree.
+    tree.loc[metadata.index, "domain"] = metadata.domain
+    tree.loc[tree.parent_taxon_id==1, "domain"] = "Ancestral"
+    tree.loc[tree.domain == "Eukaryotes", "domain"] = "Eukaryota"
+    tree = pd.concat(
+        [tree, pd.DataFrame(dict(parent_taxon_id=1, taxon_name="LUCA"), index=[1])]
+    )
+
+    while tree.domain.isna().any():
+        child_nodes = tree[tree.loc[tree.parent_taxon_id].domain.isna().values & tree.domain.notna().values]    
+        tree.loc[child_nodes.parent_taxon_id, "domain"] = child_nodes.domain.values
+    
+    # We drop the temporary node index 1
+    tree.drop(index=1, inplace=True)
+
+    # We drop edges from the root node to LUCA
+    tree.drop(
+        index=tree[tree.parent_taxon_id == 1].index[0],
+        inplace=True
+    )
 
     # Making taxon names unique, so that corner cases
     # such as `Drosophila Drosophila` can be handled.
-    node_list["taxon_name"] = [
-        "{}.{}".format(taxon_name, taxon_id)
-        for taxon_id, taxon_name in tree_df[["#taxon_id", "taxon_name"]].values
+    tree.loc[tree.duplicated("taxon_name"), "taxon_name"] = [
+        "{}.{}".format(taxon_name, index)
+        for index, taxon_name in tree.loc[tree.duplicated("taxon_name"), "taxon_name"].iteritems()
     ]
-
-    # Adding last unique common ancestor
-    node_list = pd.concat(
-        (
-            node_list,
-            pd.DataFrame({"taxon_name": "LUCA"}, index=[1])
-        )
-    )
-
-    missing_indices = set(node_list.index) - set(tree_metadata_df.index)
-    imputed_tree_metadata_df = pd.concat((
-        tree_metadata_df,
-        pd.DataFrame({
-            column: "Unknown"
-            for column in tree_metadata_df.columns
-        }, index=sorted(missing_indices))
-    ))
-
-    node_list = pd.concat([
-        node_list,
-        imputed_tree_metadata_df
-    ], axis=1)
-
-    sources = node_list.loc[tree_df[tree_df.columns[0]]].taxon_name.values
-    destinations = node_list.loc[tree_df[tree_df.columns[1]]].taxon_name.values
-    node_list.to_csv(node_list_path, sep="\t", index=False)
-    edge_list = pd.DataFrame({
-        "sources": sources,
-        "destinations": destinations
-    })
-    edge_list.to_csv(edge_list_path, sep="\t", index=False)
+    
+    # Writing the node list
+    tree[["taxon_name", "domain"]].to_csv(node_list_path, sep="\t", index=False)
+    # Writing the edge list
+    pd.DataFrame({
+        "sources": tree.loc[tree.index].taxon_name.values,
+        "destinations": tree.loc[tree.parent_taxon_id].taxon_name.values,
+        "domain": tree.domain.values
+    }).to_csv(edge_list_path, sep="\t", index=False)
 
 
 def build_string_graph_node_list(
