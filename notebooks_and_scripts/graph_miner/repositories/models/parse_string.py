@@ -98,12 +98,6 @@ def create_species_tree_node_and_edge_list(
     # We drop the temporary node index 1
     tree.drop(index=1, inplace=True)
 
-    # We drop edges from the root node to LUCA
-    tree.drop(
-        index=tree[tree.parent_taxon_id == 1].index[0],
-        inplace=True
-    )
-
     # Making taxon names unique, so that corner cases
     # such as `Drosophila Drosophila` can be handled.
     tree.loc[tree.duplicated("taxon_name"), "taxon_name"] = [
@@ -112,11 +106,19 @@ def create_species_tree_node_and_edge_list(
     ]
     
     # Writing the node list
-    tree[["taxon_name", "domain"]].to_csv(node_list_path, sep="\t", index=False)
+    node_list = tree[["taxon_name", "domain"]]
+    node_list.to_csv(node_list_path, sep="\t", index=False)
+
+    # We drop edges from the root node to LUCA
+    tree.drop(
+        index=tree[tree.parent_taxon_id == 1].index[0],
+        inplace=True
+    )
+
     # Writing the edge list
     pd.DataFrame({
-        "sources": tree.loc[tree.index].taxon_name.values,
-        "destinations": tree.loc[tree.parent_taxon_id].taxon_name.values,
+        "sources": node_list.loc[tree.index].taxon_name.values,
+        "destinations": node_list.loc[tree.parent_taxon_id].taxon_name.values,
         "domain": tree.domain.values
     }).to_csv(edge_list_path, sep="\t", index=False)
 

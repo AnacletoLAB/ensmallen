@@ -108,7 +108,7 @@ class StringGraphRepository(GraphRepository):
                     "edge_path": edge_path,
                     "node_path": node_path,
                     "name": graph_name,
-                    "nodes_column_number": 0,
+                    "nodes_column": "taxon_name",
                     "node_list_node_types_column": "domain",
                     "node_list_is_correct": True,
                     "edge_list_is_correct": True,
