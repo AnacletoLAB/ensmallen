@@ -167,8 +167,6 @@ mod omim_phenotypic_series_url_utilities;
 pub use omim_phenotypic_series_url_utilities::*;
 mod gene_ontology_obo_in_owl_url_utilities;
 pub use gene_ontology_obo_in_owl_url_utilities::*;
-mod arabidopsis_tair_url_utilities;
-pub use arabidopsis_tair_url_utilities::*;
 mod unified_medical_language_system_url_utilities;
 pub use unified_medical_language_system_url_utilities::*;
 mod zebrafish_phenotype_ontology_url_utilities;

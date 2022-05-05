@@ -464,10 +464,6 @@ pub fn get_node_source_url_from_node_name(node_name: &str) -> Result<String> {
         return Ok(unsafe { format_owl_url_from_node_name(node_name) });
     }
 
-    if is_valid_arabidopsis_tair_node_name(node_name) {
-        return Ok(unsafe { format_arabidopsis_tair_url_from_node_name(node_name) });
-    }
-
     if is_valid_unified_medical_language_system_node_name(node_name) {
         return Ok(unsafe { format_unified_medical_language_system_url_from_node_name(node_name) });
     }
@@ -21640,10 +21636,6 @@ pub fn get_node_repository_from_node_name(node_name: &str) -> Result<&str> {
 
     if is_valid_omim_phenotypic_series_node_name(node_name) {
         return Ok("OMIM Phenotypic Series");
-    }
-
-    if is_valid_arabidopsis_tair_node_name(node_name) {
-        return Ok("Arabidopsis Tair");
     }
 
     if is_valid_unified_medical_language_system_node_name(node_name) {
