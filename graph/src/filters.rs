@@ -417,7 +417,7 @@ impl Graph {
     /// Note that this method will remove ALL nodes labeled with unknown node
     /// type!
     ///
-    pub fn drop_unknown_node_types(&self) -> Graph {
+    pub fn remove_unknown_node_types(&self) -> Graph {
         self.filter_from_ids(
             None,
             None,
@@ -446,7 +446,7 @@ impl Graph {
     /// Note that this method will remove ALL edges labeled with unknown edge
     /// type!
     ///
-    pub fn drop_unknown_edge_types(&self) -> Graph {
+    pub fn remove_unknown_edge_types(&self) -> Graph {
         self.filter_from_ids(
             None,
             None,
@@ -474,7 +474,7 @@ impl Graph {
     ///
     /// A node is singleton when does not have neither incoming or outgoing edges.
     ///
-    pub fn drop_singleton_nodes(&self) -> Graph {
+    pub fn remove_singleton_nodes(&self) -> Graph {
         self.filter_from_ids(
             None,
             None,
@@ -499,7 +499,7 @@ impl Graph {
     }
 
     /// Returns new graph without tendrils.
-    pub fn drop_tendrils(&self) -> Result<Graph> {
+    pub fn remove_tendrils(&self) -> Result<Graph> {
         self.filter_from_ids(
             None,
             Some(
@@ -527,7 +527,7 @@ impl Graph {
     }
 
     /// Returns new graph without tendrils.
-    pub fn drop_dendritic_trees(&self) -> Result<Graph> {
+    pub fn remove_dendritic_trees(&self) -> Result<Graph> {
         let node_ids_to_filter = self
             .get_dendritic_trees()?
             .into_par_iter()
@@ -560,7 +560,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default equal to 5.
-    pub fn drop_isomorphic_nodes(&self, minimum_node_degree: Option<NodeT>) -> Graph {
+    pub fn remove_isomorphic_nodes(&self, minimum_node_degree: Option<NodeT>) -> Graph {
         let minimum_node_degree = minimum_node_degree.unwrap_or(5);
         self.filter_from_ids(
             None,
@@ -596,7 +596,7 @@ impl Graph {
     ///
     /// A node is singleton with selfloop when does not have neither incoming or outgoing edges.
     ///
-    pub fn drop_singleton_nodes_with_selfloops(&self) -> Graph {
+    pub fn remove_singleton_nodes_with_selfloops(&self) -> Graph {
         self.filter_from_ids(
             None,
             None,
@@ -624,7 +624,7 @@ impl Graph {
     ///
     /// A disconnected node is a node with no connection to any other node.
     ///
-    pub fn drop_disconnected_nodes(&self) -> Graph {
+    pub fn remove_disconnected_nodes(&self) -> Graph {
         self.filter_from_ids(
             None,
             None,
@@ -650,7 +650,7 @@ impl Graph {
 
     /// Returns new graph without selfloops.
     ///
-    pub fn drop_selfloops(&self) -> Graph {
+    pub fn remove_selfloops(&self) -> Graph {
         self.filter_from_ids(
             None,
             None,
@@ -675,7 +675,7 @@ impl Graph {
     }
 
     /// Returns new graph without parallel edges.
-    pub fn drop_parallel_edges(&self) -> Graph {
+    pub fn remove_parallel_edges(&self) -> Graph {
         self.filter_from_ids(
             None,
             None,

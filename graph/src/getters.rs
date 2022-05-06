@@ -1067,7 +1067,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
-    pub fn get_edge_ids_with_unknown_edge_types_mask(&self) -> Result<Vec<bool>> {
+    pub fn get_edges_with_unknown_edge_types_mask(&self) -> Result<Vec<bool>> {
         self.iter_edge_ids_with_unknown_edge_types().map(|x| {
             let mut mask = vec![false; self.get_number_of_directed_edges() as usize];
             x.for_each(|id| {
@@ -1082,7 +1082,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
-    pub fn get_edge_ids_with_known_edge_types_mask(&self) -> Result<Vec<bool>> {
+    pub fn get_edges_with_known_edge_types_mask(&self) -> Result<Vec<bool>> {
         self.iter_edge_ids_with_known_edge_types().map(|x| {
             let mut mask = vec![false; self.get_number_of_directed_edges() as usize];
             x.for_each(|id| {
@@ -1181,7 +1181,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no node types in the graph.
-    pub fn get_node_ids_with_unknown_node_types_mask(&self) -> Result<Vec<bool>> {
+    pub fn get_nodes_with_unknown_node_types_mask(&self) -> Result<Vec<bool>> {
         self.iter_node_ids_with_unknown_node_types().map(|x| {
             let mut mask = vec![false; self.get_nodes_number() as usize];
             x.for_each(|id| {
@@ -1196,7 +1196,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no node types in the graph.
-    pub fn get_node_ids_with_known_node_types_mask(&self) -> Result<Vec<bool>> {
+    pub fn get_nodes_with_known_node_types_mask(&self) -> Result<Vec<bool>> {
         self.iter_node_ids_with_known_node_types().map(|x| {
             let mut mask = vec![false; self.get_nodes_number() as usize];
             x.for_each(|id| {

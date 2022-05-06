@@ -267,6 +267,38 @@ impl<'a, 'b> Graph {
 }
 
 impl Graph {
+    /// Returns whether the graphs share the same nodes.
+    ///
+    /// # Arguments
+    /// * `other`: &Graph - The other graph.
+    pub fn has_compatible_node_vocabularies(&self, other: &Graph) -> bool {
+        self.nodes == other.nodes
+    }
+
+    /// Returns whether the graphs share the same node types or absence thereof.
+    ///
+    /// # Arguments
+    /// * `other`: &Graph - The other graph.
+    pub fn has_compatible_node_types_vocabularies(&self, other: &Graph) -> bool {
+        match (&*self.node_types, &*other.node_types) {
+            (Some(snts), Some(onts)) => snts.vocabulary == onts.vocabulary,
+            (None, None) => true,
+            _ => false,
+        }
+    }
+
+    /// Returns whether the graphs share the same edge types or absence thereof.
+    ///
+    /// # Arguments
+    /// * `other`: &Graph - The other graph.
+    pub fn has_compatible_edge_types_vocabularies(&self, other: &Graph) -> bool {
+        match (&*self.edge_types, &*other.edge_types) {
+            (Some(sets), Some(oets)) => sets.vocabulary == oets.vocabulary,
+            (None, None) => true,
+            _ => false,
+        }
+    }
+
     /// Return true if the graphs are compatible.
     ///
     /// # Arguments
@@ -280,20 +312,9 @@ impl Graph {
     /// * If one of the two graphs has edge types and the other does not.
     pub fn is_compatible(&self, other: &Graph) -> Result<bool> {
         self.validate_operator_terms(other)?;
-        if self.nodes != other.nodes {
-            return Ok(false);
-        }
-        if let (Some(snts), Some(onts)) = (&*self.node_types, &*other.node_types) {
-            if snts.vocabulary != onts.vocabulary {
-                return Ok(false);
-            }
-        }
-        if let (Some(sets), Some(oets)) = (&*self.edge_types, &*other.edge_types) {
-            if sets.vocabulary != oets.vocabulary {
-                return Ok(false);
-            }
-        }
-        Ok(true)
+        Ok(self.has_compatible_node_vocabularies(other)
+            & self.has_compatible_node_types_vocabularies(other)
+            & self.has_compatible_edge_types_vocabularies(other))
     }
 
     /// Return true if the graphs share the same adjacency matrix.

@@ -1,5 +1,7 @@
 use super::*;
 use itertools::Itertools;
+use rayon::iter::IndexedParallelIterator;
+use rayon::iter::IntoParallelIterator;
 use rayon::iter::IntoParallelRefMutIterator;
 use rayon::iter::ParallelIterator;
 use std::sync::atomic::{AtomicU32, AtomicU64, Ordering};
@@ -62,7 +64,7 @@ impl Graph {
     /// # Arguments
     /// * `edge_type`: S - The edge type to assing to all the edges.
     pub fn set_all_edge_types<S: Into<String>>(&self, edge_type: S) -> Result<Graph> {
-        let mut graph = self.drop_parallel_edges();
+        let mut graph = self.remove_parallel_edges();
         graph.set_inplace_all_edge_types(edge_type)?;
         Ok(graph)
     }
@@ -100,7 +102,7 @@ impl Graph {
     /// with node type None. Note that the modification happens inplace.
     ///
     /// # Arguments
-    /// * `node_type_id_to_remove`: NodeTypeT - The node type ID to remove.
+    /// * `node_type_ids_to_remove`: Vec<NodeTypeT> - The node type ID to remove.
     ///
     /// # Raises
     /// * If the graph does not have node types.
@@ -286,13 +288,33 @@ impl Graph {
         Ok(self)
     }
 
+    /// Remove given node type names from all nodes.
+    ///
+    /// If any given node remains with no node type, that node is labeled
+    /// with node type None. Note that the modification happens inplace.
+    ///
+    /// # Arguments
+    /// * `node_type_names`: Vec<&str> - The node type names to remove.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    /// * If the given node type name does not exists in the graph.
+    ///
+    pub fn remove_inplace_node_type_names(&mut self, node_type_names: Vec<&str>) -> Result<&Graph> {
+        let node_type_ids = node_type_names.into_iter().map(|node_type_name|{
+            self.get_node_type_id_from_node_type_name(node_type_name)
+        }).collect::<Result<Vec<NodeTypeT>>>()?;
+        self.remove_inplace_node_type_ids(node_type_ids)?;
+        Ok(self)
+    }
+    
     /// Remove given node type name from all nodes.
     ///
     /// If any given node remains with no node type, that node is labeled
     /// with node type None. Note that the modification happens inplace.
     ///
     /// # Arguments
-    /// * `node_type_name`: &str - The node type ID to remove.
+    /// * `node_type_name`: &str - The node type names to remove.
     ///
     /// # Raises
     /// * If the graph does not have node types.
@@ -350,6 +372,106 @@ impl Graph {
         Ok(graph)
     }
 
+    /// Remove inplace isomorphic node types.
+    ///
+    /// This will leave for each isomorphic node tyoe group only an element.
+    ///
+    /// If any given node remains with no node type, that node is labeled
+    /// with node type None. Note that the modification DOES NOT happen inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    ///
+    pub fn remove_inplace_isomorphic_node_types(&mut self) -> Result<&Graph> {
+        let node_type_ids_to_remove = self
+            .par_iter_isomorphic_node_type_ids_groups()?
+            .flat_map(|group| group.into_par_iter().skip(1))
+            .collect::<Vec<NodeTypeT>>();
+        self.remove_inplace_node_type_ids(node_type_ids_to_remove)?;
+        Ok(self)
+    }
+
+    /// Remove isomorphic node types.
+    ///
+    /// This will leave for each isomorphic node tyoe group only an element.
+    ///
+    /// If any given node remains with no node type, that node is labeled
+    /// with node type None. Note that the modification DOES NOT happen inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    ///
+    pub fn remove_isomorphic_node_types(&self) -> Result<Graph> {
+        let mut graph = self.clone();
+        graph.remove_inplace_isomorphic_node_types()?;
+        Ok(graph)
+    }
+
+    /// Remove inplace isomorphic edge types.
+    ///
+    /// This will leave for each isomorphic edge tyoe group only an element.
+    ///
+    /// If any given edge remains with no edge type, that edge is labeled
+    /// with edge type None. Note that the modification DOES NOT happen inplace.
+    ///
+    /// # Arguments
+    /// * `minimum_number_of_edges`: Option<EdgeT> - Minimum number of edges to detect edge types topological synonims. By default, 5.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    ///
+    pub fn remove_inplace_isomorphic_edge_types(
+        &mut self,
+        minimum_number_of_edges: Option<EdgeT>,
+    ) -> Result<&Graph> {
+        let edge_type_ids_to_remove = self
+            .par_iter_isomorphic_edge_type_ids_groups(minimum_number_of_edges)?
+            .flat_map(|group| group.into_par_iter().skip(1))
+            .collect::<Vec<EdgeTypeT>>();
+        self.remove_inplace_edge_type_ids(edge_type_ids_to_remove)?;
+        Ok(self)
+    }
+
+    /// Remove isomorphic edge types.
+    ///
+    /// This will leave for each isomorphic edge tyoe group only an element.
+    ///
+    /// If any given edge remains with no edge type, that edge is labeled
+    /// with edge type None. Note that the modification DOES NOT happen inplace.
+    ///
+    /// # Arguments
+    /// * `minimum_number_of_edges`: Option<EdgeT> - Minimum number of edges to detect edge types topological synonims. By default, 5.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    ///
+    pub fn remove_isomorphic_edge_types(
+        &self,
+        minimum_number_of_edges: Option<EdgeT>,
+    ) -> Result<Graph> {
+        let mut graph = self.clone();
+        graph.remove_inplace_isomorphic_edge_types(minimum_number_of_edges)?;
+        Ok(graph)
+    }
+
+    /// Remove given node type names from all nodes.
+    ///
+    /// If any given node remains with no node type, that node is labeled
+    /// with node type None. Note that the modification DOES NOT happen inplace.
+    ///
+    /// # Arguments
+    /// * `node_type_names`: Vec<&str> - The node type ID to remove.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    /// * If the given node type name does not exists in the graph.
+    ///
+    pub fn remove_node_type_names(&self, node_type_names: Vec<&str>) -> Result<Graph> {
+        let mut graph = self.clone();
+        graph.remove_inplace_node_type_names(node_type_names)?;
+        Ok(graph)
+    }
+
     /// Remove given node type name from all nodes.
     ///
     /// If any given node remains with no node type, that node is labeled
@@ -363,10 +485,9 @@ impl Graph {
     /// * If the given node type name does not exists in the graph.
     ///
     pub fn remove_node_type_name(&self, node_type_name: &str) -> Result<Graph> {
-        let mut graph = self.clone();
-        graph.remove_inplace_node_type_name(node_type_name)?;
-        Ok(graph)
+        self.remove_node_type_names(vec![node_type_name])
     }
+    
 
     /// Remove given edge type name from all edges.
     ///
@@ -486,7 +607,7 @@ impl Graph {
     /// * If the graph does not have edge types.
     ///
     pub fn remove_edge_types(&self) -> Result<Graph> {
-        let mut graph = self.drop_parallel_edges();
+        let mut graph = self.remove_parallel_edges();
         assert!(!graph.is_multigraph());
         graph.remove_inplace_edge_types()?;
         Ok(graph)
@@ -527,6 +648,7 @@ impl Graph {
     ///
     pub fn divide_edge_weights_inplace(&mut self, denominator: WeightT) -> Result<()> {
         self.must_have_edge_weights()?;
+        unsafe { &mut (*self.cache.get()) }.reset_cached_edge_weights();
         if let Some(edge_weights) = Arc::make_mut(&mut self.weights) {
             edge_weights.par_iter_mut().for_each(|edge_weight| {
                 *edge_weight /= denominator;
@@ -545,6 +667,30 @@ impl Graph {
     pub fn divide_edge_weights(&self, denominator: WeightT) -> Result<Graph> {
         let mut graph = self.clone();
         graph.divide_edge_weights_inplace(denominator)?;
+        Ok(graph)
+    }
+
+    /// Normalize edge weights in place.
+    ///
+    /// Note that the modification happens inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge weights.
+    ///
+    pub fn normalize_edge_weights_inplace(&mut self) -> Result<()> {
+        self.divide_edge_weights_inplace(self.get_maximum_edge_weight()?)
+    }
+
+    /// Normalize edge weights.
+    ///
+    /// Note that the modification does not happen inplace.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge weights.
+    ///
+    pub fn normalize_edge_weights(&self) -> Result<Graph> {
+        let mut graph = self.clone();
+        graph.normalize_edge_weights_inplace()?;
         Ok(graph)
     }
 

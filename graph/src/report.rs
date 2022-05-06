@@ -1664,7 +1664,7 @@ impl Graph {
 
     /// Returns report on the isomorphic node types of the graph.
     unsafe fn get_isomorphic_node_types_report(&self) -> String {
-        let threshold = 10_000;
+        let threshold = 50_000;
         let use_approximation = self.get_node_types_number().unwrap() > threshold;
         let mut isomorphic_node_types = if use_approximation {
             self.get_approximated_isomorphic_node_type_ids_groups()
@@ -1968,7 +1968,6 @@ impl Graph {
             node_types_number => {
                 let mut count = count.into_iter().collect::<Vec<(NodeTypeT, NodeT)>>();
                 count.sort_by(|(_, a), (_, b)| b.cmp(a));
-                let total_nodes = Some(count.iter().map(|(_, nodes_number)| *nodes_number).sum());
                 let node_type_descriptions = get_unchecked_formatted_list(
                     count
                         .into_iter()
@@ -1976,7 +1975,7 @@ impl Graph {
                         .map(|(node_type_id, count)| {
                             self.get_unchecked_succinct_node_type_description(
                                 node_type_id,
-                                total_nodes,
+                                None,
                                 Some(count),
                             )
                         })

@@ -49,11 +49,74 @@ class StringGraphRepository(GraphRepository):
                 "sources_column": "##protein1",
                 "destinations_column": "protein2",
                 "weights_column": "bitscore",
+            },
+            "cluster": {
+                "sources_column": "source",
+                "destinations_column": "destination",
             }
         }
 
         edge_list_url_pattern = "https://stringdb-static.org/download/protein.{type_of_graph}.v{version}/{taxon_id}.protein.{type_of_graph}.v{version}.txt.gz"
-        node_list_url_pattern = "https://stringdb-static.org/download/protein.info.v{version}/{taxon_id}.protein.info.v{version}.txt.gz"
+        enrichment_node_list_url_pattern = "https://stringdb-static.org/download/protein.enrichment.terms.v{version}/{taxon_id}.protein.enrichment.terms.v{version}.txt.gz"
+        info_node_list_url_pattern = "https://stringdb-static.org/download/protein.info.v{version}/{taxon_id}.protein.info.v{version}.txt.gz"
+        sequence_node_list_url_pattern = "https://stringdb-static.org/download/protein.sequences.v{version}/{taxon_id}.protein.sequences.v{version}.fa.gz"
+        tree_url_pattern = "https://stringdb-static.org/download/species.tree.v{version}.txt"
+        tree_metadata_url_pattern = "https://stringdb-static.org/download/species.v{version}.txt"
+        cluster_tree_url_pattern = "https://stringdb-static.org/download/clusters.tree.v{version}/{taxon_id}.clusters.tree.v{version}.txt.gz"
+        cluster_info_url_pattern = "https://stringdb-static.org/download/clusters.info.v{version}/{taxon_id}.clusters.info.v{version}.txt.gz"
+        cluster_to_protein_url_pattern = "https://stringdb-static.org/download/clusters.proteins.v{version}/{taxon_id}.clusters.proteins.v{version}.txt.gz"
+
+        graph_name = "SpeciesTree"
+        stored_graph_name = self.build_stored_graph_name(graph_name)
+        mined_data[stored_graph_name] = {}
+
+        for version in ("11.0", "11.5"):
+            full_version_code = "{type_of_graph}.v{version}".format(
+                type_of_graph="species.tree",
+                version=version
+            )
+            tree_path = "species.tree.v{version}.txt".format(
+                version=version,
+            )
+            tree_metadata_path = "species.v{version}.txt".format(
+                version=version,
+            )
+            edge_path = "species.tree.v{version}.edges.tsv".format(
+                version=version,
+            )
+            node_path = "species.tree.v{version}.nodes.tsv".format(
+                version=version,
+            )
+
+            mined_data[stored_graph_name][full_version_code] = {
+                "urls": [
+                    tree_url_pattern.format(
+                        version=version,
+                    ),
+                    tree_metadata_url_pattern.format(
+                        version=version,
+                    ),
+                ],
+                "callback": "create_species_tree_node_and_edge_list",
+                "callback_arguments": {
+                    "tree_path": tree_path,
+                    "tree_metadata_path": tree_metadata_path,
+                    "node_list_path": node_path,
+                    "edge_list_path": edge_path
+                },
+                "arguments": {
+                    "edge_path": edge_path,
+                    "node_path": node_path,
+                    "name": graph_name,
+                    "nodes_column": "taxon_name",
+                    "node_list_node_types_column": "domain",
+                    "node_list_is_correct": True,
+                    "edge_list_is_correct": True,
+                    "edge_list_edge_types_column": "domain",
+                    "sources_column": "sources",
+                    "destinations_column": "destinations",
+                }
+            }
 
         for type_of_graph in type_of_graphs:
             for version, species in (
@@ -62,7 +125,8 @@ class StringGraphRepository(GraphRepository):
             ):
                 for _, row in species.iterrows():
                     graph_name = row.STRING_name_compact
-                    stored_graph_name = self.build_stored_graph_name(graph_name)
+                    stored_graph_name = self.build_stored_graph_name(
+                        graph_name)
                     if stored_graph_name not in mined_data:
                         mined_data[stored_graph_name] = {}
                     taxon_id = row[0]
@@ -71,35 +135,150 @@ class StringGraphRepository(GraphRepository):
                         version=version,
                         type_of_graph=type_of_graph
                     )
-                    node_list_url = node_list_url_pattern.format(
-                        taxon_id=taxon_id,
-                        version=version,
-                        type_of_graph=type_of_graph
-                    )
                     full_version_code = "{type_of_graph}.v{version}".format(
                         type_of_graph=type_of_graph,
                         version=version
                     )
+
+                    sequence_path = "{taxon_id}.protein.sequences.v{version}.fa".format(
+                        taxon_id=taxon_id,
+                        version=version
+                    )
+                    enrichment_path = "{taxon_id}.protein.enrichment.terms.v{version}.txt".format(
+                        taxon_id=taxon_id,
+                        version=version
+                    )
+                    info_path = "{taxon_id}.protein.info.v{version}.txt".format(
+                        taxon_id=taxon_id,
+                        version=version
+                    )
+                    node_list_path = "{taxon_id}.protein.complete.v{version}.txt".format(
+                        taxon_id=taxon_id,
+                        version=version
+                    )
+
+                    node_urls = [
+                        enrichment_node_list_url_pattern.format(
+                            taxon_id=taxon_id,
+                            version=version,
+                            type_of_graph=type_of_graph
+                        ),
+                        info_node_list_url_pattern.format(
+                            taxon_id=taxon_id,
+                            version=version,
+                            type_of_graph=type_of_graph
+                        ),
+                        sequence_node_list_url_pattern.format(
+                            taxon_id=taxon_id,
+                            version=version,
+                            type_of_graph=type_of_graph
+                        ),
+                    ]
+
                     mined_data[stored_graph_name][full_version_code] = {
                         "urls": [
                             edge_list_url,
-                            node_list_url
+                            *node_urls
                         ],
+                        "callback": "build_string_graph_node_list",
+                        "callback_arguments": {
+                            "sequence_path": sequence_path,
+                            "enrichment_path": enrichment_path,
+                            "info_path": info_path,
+                            "node_list_path": node_list_path
+                        },
                         "arguments": {
                             "edge_path": "{taxon_id}.protein.{type_of_graph}.v{version}.txt".format(
                                 taxon_id=taxon_id,
                                 version=version,
                                 type_of_graph=type_of_graph
                             ),
-                            "node_path": "{taxon_id}.protein.info.v{version}.txt".format(
-                                taxon_id=taxon_id,
-                                version=version
-                            ),
+                            "node_path": node_list_path,
                             "name": graph_name,
                             "nodes_column_number": 0,
+                            "node_types_separator": "|",
+                            "node_list_node_types_column": "term",
                             "node_list_is_correct": True,
                             "edge_list_is_correct": True,
                             **parameters_per_type_of_graph[type_of_graph]
+                        }
+                    }
+
+                    ###############################################
+                    # Mining metadata for Cluster STRING graphs   #
+                    ###############################################
+
+                    graph_name = "{} Cluster".format(row.STRING_name_compact)
+                    stored_graph_name = self.build_stored_graph_name(
+                        graph_name
+                    )
+                    if stored_graph_name not in mined_data:
+                        mined_data[stored_graph_name] = {}
+
+                    full_version_code = "cluster.v{version}".format(
+                        type_of_graph=type_of_graph,
+                        version=version
+                    )
+
+                    cluster_info_path = "{taxon_id}.clusters.info.v{version}.txt".format(
+                        taxon_id=taxon_id,
+                        version=version
+                    )
+                    cluster_tree_path = "{taxon_id}.clusters.tree.v{version}.txt".format(
+                        taxon_id=taxon_id,
+                        version=version
+                    )
+                    cluster_to_proteins_path = "{taxon_id}.clusters.proteins.v{version}.txt".format(
+                        taxon_id=taxon_id,
+                        version=version
+                    )
+                    node_list_path = "{taxon_id}.cluster.nodes.v{version}.txt".format(
+                        taxon_id=taxon_id,
+                        version=version
+                    )
+                    edge_list_path = "{taxon_id}.protein.cluster.v{version}.txt".format(
+                        taxon_id=taxon_id,
+                        version=version,
+                        type_of_graph=type_of_graph
+                    )
+
+                    mined_data[stored_graph_name][full_version_code] = {
+                        "urls": [
+                            cluster_tree_url_pattern.format(
+                                taxon_id=taxon_id,
+                                version=version,
+                            ),
+                            cluster_info_url_pattern.format(
+                                taxon_id=taxon_id,
+                                version=version,
+                            ),
+                            cluster_to_protein_url_pattern.format(
+                                taxon_id=taxon_id,
+                                version=version,
+                            ),
+                            *node_urls
+                        ],
+                        "callback": "build_string_cluster_graph_node_and_edge_list",
+                        "callback_arguments": {
+                            "cluster_info_path": cluster_info_path,
+                            "cluster_tree_path": cluster_tree_path,
+                            "cluster_to_proteins_path": cluster_to_proteins_path,
+                            "sequence_path": sequence_path,
+                            "enrichment_path": enrichment_path,
+                            "info_path": info_path,
+                            "node_list_path": node_list_path,
+                            "edge_list_path": edge_list_path,
+                        },
+                        "arguments": {
+                            "edge_path": edge_list_path,
+                            "node_path": node_list_path,
+                            "name": graph_name,
+                            "nodes_column": "node_name",
+                            "node_types_separator": "|",
+                            "node_list_node_types_column": "term",
+                            "node_list_is_correct": True,
+                            "edge_list_is_correct": True,
+                            **parameters_per_type_of_graph["cluster"]
                         }
                     }
 
@@ -187,6 +366,34 @@ class StringGraphRepository(GraphRepository):
         """
         return self._data[graph_name][version]["urls"]
 
+    def get_callbacks(self, graph_name: str, version: str) -> List[str]:
+        """Return callbacks to be added to model file.
+
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of the graph.
+
+        Returns
+        -----------------------
+        callbacks.
+        """
+        return [self._data[self.build_stored_graph_name(graph_name)][version]["callback"]]
+
+    def get_callbacks_arguments(self, graph_name: str, version: str) -> List[Dict]:
+        """Return dictionary with list of arguments to pass to callbacks.
+
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of the graph to retrieve.
+
+        Returns
+        -----------------------
+        Arguments to pass to callbacks.
+        """
+        return [self._data[self.build_stored_graph_name(graph_name)][version]["callback_arguments"]]
+
     def get_graph_references(self, graph_name: str, version: str) -> List[str]:
         """Return url for the given graph.
 
@@ -234,3 +441,15 @@ class StringGraphRepository(GraphRepository):
     def get_graph_list(self) -> List[str]:
         """Return list of graph names."""
         return list(self._data.keys())
+
+    def build_all(self):
+        """Build graph retrieval methods."""
+        super().build_all()
+        target_directory_path = os.path.join(
+            "../bindings/python/ensmallen/datasets",
+            self.repository_package_name,
+        )
+        file_path = "{}.py".format(target_directory_path)
+        with open(file_path, "a") as f:
+            with open("graph_miner/repositories/models/parse_string.py", "r") as original:
+                f.write(original.read())

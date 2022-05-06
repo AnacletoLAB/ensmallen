@@ -1039,7 +1039,7 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: Option<bool>) -> Resul
         .enumerate()
         .for_each(|(node_id, value)| {
             if unsafe { graph.is_unchecked_singleton_from_node_id(node_id as NodeT) } {
-                assert!(value.abs() < f64::EPSILON);
+                assert!(value.abs() < f32::EPSILON);
             }
         });
     Ok(())
@@ -1327,7 +1327,7 @@ pub fn test_all_paths(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
 }
 
 pub fn test_selfloops(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
-    assert!(!graph.drop_selfloops().has_selfloops());
+    assert!(!graph.remove_selfloops().has_selfloops());
     assert_eq!(
         graph.add_selfloops(None, Some(1.0)).is_ok(),
         graph.has_edge_weights()
@@ -1629,7 +1629,7 @@ pub fn test_edge_holdouts(graph: &Graph, verbose: Option<bool>) -> Result<()> {
 
 pub fn test_remove_components(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
     if graph.get_connected_components_number(verbose).0 > 1 {
-        let without_selfloops = graph.drop_selfloops();
+        let without_selfloops = graph.remove_selfloops();
 
         assert_eq!(
             graph.get_connected_components_number(verbose),
@@ -1680,7 +1680,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: Option<bool>) -> Resul
             None,
             verbose,
         )?;
-        let without_selfloops = test.drop_selfloops();
+        let without_selfloops = test.remove_selfloops();
         assert_eq!(
             without_selfloops.get_connected_components_number(verbose).0,
             1,

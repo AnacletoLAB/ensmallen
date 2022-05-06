@@ -1926,4 +1926,28 @@ impl Graph {
             x.map(move |node_id| unsafe { self.get_unchecked_node_name_from_node_id(node_id) })
         })
     }
+
+    /// Returns parallel iterator over node names prefixes when the node names include the provided separator.
+    ///
+    /// # Arguments
+    /// * `separator`: Option<&str> - The separator to use to determine a prefix. By default, a column
+    ///
+    /// # Raises
+    /// * If the provided separator is empty.
+    pub fn par_iter_node_names_prefixes<'a>(
+        &'a self,
+        separator: Option<&'a str>,
+    ) -> Result<impl ParallelIterator<Item = String> + 'a> {
+        let separator = separator.unwrap_or(":");
+        if separator.is_empty() {
+            return Err("The provided separator is empty.".to_string());
+        }
+        Ok(self.par_iter_node_names().filter_map(move |node_name| {
+            if node_name.contains(separator) {
+                Some(node_name.split(separator).next().unwrap().to_string())
+            } else {
+                None
+            }
+        }))
+    }
 }

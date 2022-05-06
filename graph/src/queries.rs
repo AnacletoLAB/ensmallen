@@ -1807,7 +1807,7 @@ impl Graph {
         let mut counts: HashMap<NodeTypeT, NodeT> = HashMap::new();
         node_ids
             .iter()
-            .cloned()
+            .copied()
             .filter_map(|node_id| self.get_unchecked_node_type_ids_from_node_id(node_id))
             .for_each(|node_type_ids| {
                 node_type_ids.iter().for_each(|&node_type_id| {
@@ -1982,16 +1982,16 @@ impl Graph {
     /// Returns vector of directed edge node names with given node name prefixes
     ///
     /// # Arguments
-    /// * `src_node_name_prefix`: Option<&str> - Prefix of the source node names.
-    /// * `dst_node_name_prefix`: Option<&str> - Prefix of the source node names.
+    /// * `src_node_name_prefixes`: Option<Vec<&str>> - Prefix of the source node names.
+    /// * `dst_node_name_prefixes`: Option<Vec>&str>> - Prefix of the source node names.
     pub fn get_directed_edge_node_names_from_node_curie_prefixes(
         &self,
-        src_node_name_prefix: Option<&str>,
-        dst_node_name_prefix: Option<&str>,
+        src_node_name_prefixes: Option<Vec<&str>>,
+        dst_node_name_prefixes: Option<Vec<&str>>,
     ) -> Vec<(String, String)> {
         self.par_iter_directed_edge_node_names_from_node_curie_prefixes(
-            src_node_name_prefix,
-            dst_node_name_prefix,
+            src_node_name_prefixes,
+            dst_node_name_prefixes,
         )
         .collect::<Vec<_>>()
     }
@@ -1999,16 +1999,16 @@ impl Graph {
     /// Returns vector of directed edge node IDs with given node name prefixes
     ///
     /// # Arguments
-    /// * `src_node_name_prefix`: Option<&str> - Prefix of the source node names.
-    /// * `dst_node_name_prefix`: Option<&str> - Prefix of the source node names.
+    /// * `src_node_name_prefixes`: Option<Vec<&str>> - Prefix of the source node names.
+    /// * `dst_node_name_prefixes`: Option<Vec>&str>> - Prefix of the source node names.
     pub fn get_directed_edge_node_ids_from_node_curie_prefixes(
         &self,
-        src_node_name_prefix: Option<&str>,
-        dst_node_name_prefix: Option<&str>,
+        src_node_name_prefixes: Option<Vec<&str>>,
+        dst_node_name_prefixes: Option<Vec<&str>>,
     ) -> Vec<(NodeT, NodeT)> {
         self.par_iter_directed_edge_node_ids_from_node_curie_prefixes(
-            src_node_name_prefix,
-            dst_node_name_prefix,
+            src_node_name_prefixes,
+            dst_node_name_prefixes,
         )
         .collect::<Vec<_>>()
     }
@@ -2016,16 +2016,16 @@ impl Graph {
     /// Returns vector of directed edge IDs with given node name prefixes.
     ///
     /// # Arguments
-    /// * `src_node_name_prefix`: Option<&str> - Prefix of the source node names.
-    /// * `dst_node_name_prefix`: Option<&str> - Prefix of the source node names.
+    /// * `src_node_name_prefixes`: Option<Vec<&str>> - Prefix of the source node names.
+    /// * `dst_node_name_prefixes`: Option<Vec>&str>> - Prefix of the source node names.
     pub fn get_directed_edge_ids_from_node_curie_prefixes(
         &self,
-        src_node_name_prefix: Option<&str>,
-        dst_node_name_prefix: Option<&str>,
+        src_node_name_prefixes: Option<Vec<&str>>,
+        dst_node_name_prefixes: Option<Vec<&str>>,
     ) -> Vec<EdgeT> {
         self.par_iter_directed_edge_ids_from_node_curie_prefixes(
-            src_node_name_prefix,
-            dst_node_name_prefix,
+            src_node_name_prefixes,
+            dst_node_name_prefixes,
         )
         .collect::<Vec<_>>()
     }
@@ -2033,16 +2033,16 @@ impl Graph {
     /// Returns number of directed edge IDs with given node name prefixes.
     ///
     /// # Arguments
-    /// * `src_node_name_prefix`: Option<&str> - Prefix of the source node names.
-    /// * `dst_node_name_prefix`: Option<&str> - Prefix of the source node names.
+    /// * `src_node_name_prefixes`: Option<Vec<&str>> - Prefix of the source node names.
+    /// * `dst_node_name_prefixes`: Option<Vec>&str>> - Prefix of the source node names.
     pub fn get_number_of_directed_edges_from_node_curie_prefixes(
         &self,
-        src_node_name_prefix: Option<&str>,
-        dst_node_name_prefix: Option<&str>,
+        src_node_name_prefixes: Option<Vec<&str>>,
+        dst_node_name_prefixes: Option<Vec<&str>>,
     ) -> EdgeT {
         self.par_iter_directed_edge_ids_from_node_curie_prefixes(
-            src_node_name_prefix,
-            dst_node_name_prefix,
+            src_node_name_prefixes,
+            dst_node_name_prefixes,
         )
         .count() as EdgeT
     }
@@ -2050,27 +2050,42 @@ impl Graph {
     /// Returns vector with node IDs with given curie prefix.
     ///
     /// # Arguments
-    /// * `curie_prefix`: &str - Prefix of the source node names.
-    pub fn get_node_ids_from_node_curie_prefix(&self, curie_prefix: &str) -> Vec<NodeT> {
-        self.par_iter_node_ids_from_node_curie_prefix(curie_prefix)
+    /// * `curie_prefixes`: &str - Prefix of the source node names.
+    pub fn get_node_ids_from_node_curie_prefixes(&self, curie_prefixes: Vec<&str>) -> Vec<NodeT> {
+        self.par_iter_node_ids_from_node_curie_prefixes(curie_prefixes)
             .collect()
     }
 
     /// Returns vector with node names with given curie prefix.
     ///
     /// # Arguments
-    /// * `curie_prefix`: &str - Prefix of the source node names.
-    pub fn get_node_names_from_node_curie_prefix(&self, curie_prefix: &str) -> Vec<String> {
-        self.par_iter_node_names_from_node_curie_prefix(curie_prefix)
+    /// * `curie_prefixes`: &str - Prefix of the source node names.
+    pub fn get_node_names_from_node_curie_prefixes(&self, curie_prefixes: Vec<&str>) -> Vec<String> {
+        self.par_iter_node_names_from_node_curie_prefixes(curie_prefixes)
             .collect()
     }
 
     /// Returns number of nodes with node IDs with given curie prefix.
     ///
     /// # Arguments
-    /// * `curie_prefix`: &str - Prefix of the source node names.
-    pub fn get_number_of_nodes_from_node_curie_prefix(&self, curie_prefix: &str) -> NodeT {
-        self.par_iter_node_ids_from_node_curie_prefix(curie_prefix)
+    /// * `curie_prefixes`: Vec<&str> - Prefix of the source node names.
+    pub fn get_number_of_nodes_from_node_curie_prefixes(&self, curie_prefixes: Vec<&str>) -> NodeT {
+        self.par_iter_node_ids_from_node_curie_prefixes(curie_prefixes)
             .count() as NodeT
+    }
+
+    /// Returns vector with node names prefixes when the node names include the provided separator.
+    ///
+    /// # Arguments
+    /// * `separator`: Option<&str> - The separator to use to determine a prefix. By default, a column
+    ///
+    /// # Raises
+    /// * If the provided separator is empty.
+    pub fn get_node_names_prefixes(
+        &self,
+        separator: Option<&str>,
+    ) -> Result<Vec<String>> {
+        self.par_iter_node_names_prefixes(separator)
+            .map(|iter| iter.collect())
     }
 }

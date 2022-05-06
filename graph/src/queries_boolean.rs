@@ -21,6 +21,17 @@ impl Graph {
             .map_or(true, |connected_nodes| connected_nodes[node_id as usize])
     }
 
+    /// Returns boolean representing if given node is not a singleton nor a singleton with selfloop.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - The node to be checked for.
+    ///
+    /// # Raises
+    /// If the given node ID does not exists in the graph.
+    pub fn is_connected_from_node_id(&self, node_id: NodeT) -> Result<bool> {
+        self.validate_node_id(node_id).map(|node_id| unsafe{self.is_unchecked_connected_from_node_id(node_id)})
+    }
+
     /// Returns boolean representing if given node is a singleton or a singleton with selfloop.
     ///
     /// # Arguments

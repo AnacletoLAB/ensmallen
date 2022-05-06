@@ -1,4 +1,6 @@
 use super::*;
+use rayon::iter::IntoParallelRefIterator;
+use rayon::iter::ParallelIterator;
 use std::collections::hash_map::DefaultHasher;
 use std::hash::{Hash, Hasher};
 
@@ -19,7 +21,6 @@ pub struct NodeTypeVocabulary {
     /// TODO: update this value in a way that is always correct and minimal.
     pub max_multilabel_count: NodeTypeT,
     pub unknown_count: NodeT,
-    pub multilabel: bool,
 }
 
 #[derive(Debug, Clone)]
@@ -81,9 +82,6 @@ impl NodeTypeVocabulary {
         ids: Vec<Option<Vec<NodeTypeT>>>,
         vocabulary: Vocabulary<NodeTypeT>,
     ) -> NodeTypeVocabulary {
-        let multilabel = ids
-            .iter()
-            .any(|node_types| node_types.as_ref().map_or(false, |nts| nts.len() > 1));
         let mut vocabvec = NodeTypeVocabulary {
             ids,
             vocabulary,
@@ -92,7 +90,6 @@ impl NodeTypeVocabulary {
             max_count: 0,
             max_multilabel_count: 0,
             unknown_count: NodeT::from_usize(0),
-            multilabel,
         };
         vocabvec.build_counts();
         vocabvec
@@ -123,15 +120,20 @@ impl NodeTypeVocabulary {
                 None => self.unknown_count += NodeT::from_usize(1),
             }
         }
-        self.multilabel = max_multilabel_count > 1;
         self.max_multilabel_count = max_multilabel_count;
         self.counts = counts;
         self.update_min_max_count();
     }
 
     fn update_min_max_count(&mut self) {
-        self.min_count = self.counts.iter().cloned().min().unwrap_or(0);
-        self.max_count = self.counts.iter().cloned().max().unwrap_or(0);
+        self.min_count = self.counts.par_iter().copied().min().unwrap_or(0);
+        self.max_count = self.counts.par_iter().copied().max().unwrap_or(0);
+        self.max_multilabel_count = self
+            .ids
+            .par_iter()
+            .map(|nt| nt.as_ref().map_or(0, |nt| nt.len()))
+            .max()
+            .unwrap_or(0) as NodeTypeT;
     }
 
     /// Returns ids of given values inserted.
@@ -153,7 +155,6 @@ impl NodeTypeVocabulary {
                     .map(|value| self.vocabulary.unchecked_insert(value.into()))
                     .collect::<Vec<NodeTypeT>>();
 
-                self.multilabel = self.multilabel || ids.len() > 1;
                 self.max_multilabel_count = self.max_multilabel_count.max(ids.len() as NodeTypeT);
 
                 // Push the sorted IDs
@@ -208,7 +209,6 @@ impl NodeTypeVocabulary {
                         values
                     ));
                 }
-                self.multilabel = self.multilabel || ids.len() > 1;
                 self.max_multilabel_count = self.max_multilabel_count.max(ids.len() as NodeTypeT);
                 // Push the sorted IDs
                 self.ids.push(Some(ids.clone()));
@@ -228,7 +228,7 @@ impl NodeTypeVocabulary {
 
     /// Returns whether the node types are multi-label or not.
     pub fn is_multilabel(&self) -> bool {
-        self.multilabel
+        self.max_multilabel_count > 1
     }
 
     /// Returns number of minimum node-count.

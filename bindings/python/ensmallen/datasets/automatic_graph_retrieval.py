@@ -360,6 +360,8 @@ class AutomaticallyRetrievedGraph:
                     edge_types_number,
                     edges_number
                 ) = edge_list_utils.build_optimal_lists_files(
+                    # NOTE: the following parameters are supported by the parser, but
+                    # so far we have not encountered a single use case where we actually used them.  
                     # original_node_type_path,
                     # original_node_type_list_separator,
                     # original_node_types_column_number,
