@@ -126,6 +126,11 @@ impl EdgeTypeVocabulary {
         self.vocabulary.get(key)
     }
 
+    /// Return a reference to the underlaying ids vector.
+    pub fn get_ids(&self) -> &[Option<EdgeTypeT>] {
+        self.ids.as_slice()
+    }
+
     /// Return vector of keys of the map.
     pub fn keys(&self) -> Vec<String> {
         self.vocabulary.keys()

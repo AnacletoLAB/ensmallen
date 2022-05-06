@@ -308,6 +308,11 @@ impl NodeTypeVocabulary {
         self.counts.len()
     }
 
+    /// Return a reference to the underlaying ids vector.
+    pub fn get_ids(&self) -> &[Option<Vec<NodeTypeT>>] {
+        self.ids.as_slice()
+    }
+
     /// Remove a node type from the vocabulary
     ///
     /// # Safety

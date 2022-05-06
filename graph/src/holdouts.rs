@@ -27,12 +27,12 @@ use vec_rand::{gen_random_vec, sample_uniform};
 /// * If the requested number of k-folds is higher than the number of elements.
 /// * If the number of folds requested is one or zero.
 /// * If the requested fold index is higher than the number of folds.
-fn kfold(
+fn kfold<T: Copy + Eq + std::hash::Hash>(
     k: usize,
     k_index: usize,
-    mut indices: Vec<u64>,
+    indices: &mut [T],
     random_state: u64,
-) -> Result<RoaringTreemap> {
+) -> Result<&[T]> {
     if k >= indices.len() {
         return Err(format!(
             concat!(
@@ -70,16 +70,13 @@ fn kfold(
 
     // Get the k_index-th chunk
     let chunk_size = indices.len() as f64 / k as f64;
-    let start = (k_index as f64 * chunk_size).ceil() as EdgeT;
+    let start = (k_index as f64 * chunk_size).ceil() as usize;
     let end = std::cmp::min(
-        indices.len() as EdgeT,
-        (((k_index + 1) as f64) * chunk_size).ceil() as EdgeT,
+        indices.len(),
+        (((k_index + 1) as f64) * chunk_size).ceil() as usize,
     );
     // Return the chunk as a RoaringTreeMap
-    Ok(indices[start as usize..end as usize]
-        .iter()
-        .cloned()
-        .collect())
+    Ok(&indices[start..end])
 }
 
 /// # Holdouts.
@@ -1422,7 +1419,7 @@ impl Graph {
         random_state: Option<EdgeT>,
     ) -> Result<(Graph, Graph)> {
         self.must_have_node_types()?;
-        let random_state = random_state.unwrap_or(0xbadf00d);
+        let mut random_state = random_state.unwrap_or(0xbadf00d);
         let use_stratification = use_stratification.unwrap_or(false);
         if use_stratification {
             if self.has_multilabel_node_types()? {
@@ -1440,22 +1437,22 @@ impl Graph {
         // Compute the vectors with the indices of the nodes which node type matches
         // therefore the expected shape is:
         // (node_types_number, number of nodes of that node type)
-        let node_sets: Vec<Vec<u64>> = self
+        let node_sets: Vec<Vec<NodeT>> = self
             .node_types
             .as_ref()
             .as_ref()
             .map(|nts| {
                 if use_stratification {
                     // Initialize the vectors for each node type
-                    let mut node_sets: Vec<Vec<u64>> =
+                    let mut node_sets: Vec<Vec<NodeT>> =
                         vec![Vec::new(); self.get_node_types_number().unwrap() as usize];
                     // itering over the indices and adding each node to the
                     // vector of the corresponding node type.
-                    nts.ids.iter().enumerate().for_each(|(node_id, node_type)| {
+                    nts.get_ids().iter().enumerate().for_each(|(node_id, node_type)| {
                         // if the node has a node_type
                         if let Some(nt) = node_type {
                             // Get the index of the correct node type vector.
-                            node_sets[nt[0] as usize].push(node_id as u64);
+                            node_sets[nt[0] as usize].push(node_id as _);
                         };
                     });
 
@@ -1468,7 +1465,7 @@ impl Graph {
                         .iter()
                         .enumerate()
                         .filter_map(|(node_id, node_type)| {
-                            node_type.as_ref().map(|_| node_id as u64)
+                            node_type.as_ref().map(|_| node_id as NodeT)
                         })
                         .collect()]
                 }
@@ -1476,21 +1473,26 @@ impl Graph {
             .unwrap();
 
         // Allocate the vectors for the nodes of each
-        let mut train_node_types: Vec<Option<Vec<NodeTypeT>>> =
-            vec![None; self.get_nodes_number() as usize];
+        let mut train_node_types: Vec<Option<Vec<NodeTypeT>>> = self.node_types
+            .as_ref()
+            .as_ref()
+            .map(|nts| nts.get_ids().to_vec()).unwrap();
+
         let mut test_node_types: Vec<Option<Vec<NodeTypeT>>> =
             vec![None; self.get_nodes_number() as usize];
 
-        for node_set in node_sets {
+        for mut node_set in node_sets {
+            random_state = splitmix64(random_state);
             // Shuffle in a reproducible way the nodes of the current node_type
-            let validation_chunk = kfold(k, k_index, node_set, random_state)?;
+            let validation_chunk = kfold(k, k_index, &mut node_set, random_state)?;
             // Iterate of node ids
-            for node_id in 0..self.get_nodes_number() {
-                let node_type = unsafe { self.get_unchecked_node_type_ids_from_node_id(node_id) };
-                if validation_chunk.contains(node_id as u64) {
-                    test_node_types[node_id as usize] = node_type.map(|x| x.clone());
-                } else {
-                    train_node_types[node_id as usize] = node_type.map(|x| x.clone());
+            for test_node_id in validation_chunk {
+                let node_type = unsafe { 
+                    self.get_unchecked_node_type_ids_from_node_id(*test_node_id) 
+                };
+                if validation_chunk.contains(test_node_id) {
+                    test_node_types[ *test_node_id as usize] = node_type.cloned();
+                    train_node_types[*test_node_id as usize] = None;
                 }
             }
         }
@@ -1691,7 +1693,7 @@ impl Graph {
             return Err("It is not possible to create a edge label holdout when the number of edges with known edge type is less than two.".to_string());
         }
         let use_stratification = use_stratification.unwrap_or(false);
-        let random_state = random_state.unwrap_or(0xbadf00d);
+        let mut random_state = random_state.unwrap_or(0xbadf00d);
         if use_stratification && self.has_singleton_edge_types()? {
             return Err("It is impossible to create a stratified holdout when the graph has edge types with cardinality one.".to_string());
         }
@@ -1735,19 +1737,25 @@ impl Graph {
             .unwrap();
 
         // Allocate the vectors for the edges of each
-        let mut train_edge_types = vec![None; self.get_number_of_directed_edges() as usize];
+        let mut train_edge_types = self
+            .edge_types
+            .as_ref()
+            .as_ref()
+            .map(|ets| ets.get_ids().to_vec()).unwrap();
         let mut test_edge_types = vec![None; self.get_number_of_directed_edges() as usize];
 
-        for edge_set in edge_sets {
+        for mut edge_set in edge_sets {
+            random_state = splitmix64(random_state);
             // Shuffle in a reproducible way the edges of the current edge_type
-            let validation_chunk = kfold(k, k_index, edge_set, random_state)?;
+            let validation_chunk = kfold(k, k_index, &mut edge_set, random_state)?;
             // Iterate of edge ids
-            for edge_id in 0..self.get_edges_number() {
-                let edge_type = unsafe { self.get_unchecked_edge_type_id_from_edge_id(edge_id) };
-                if validation_chunk.contains(edge_id as u64) {
-                    test_edge_types[edge_id as usize] = edge_type;
-                } else {
-                    train_edge_types[edge_id as usize] = edge_type;
+            for edge_id in validation_chunk {
+                let edge_type = unsafe { 
+                    self.get_unchecked_edge_type_id_from_edge_id(*edge_id) 
+                };
+                if validation_chunk.contains(edge_id) {
+                    test_edge_types[ *edge_id as usize] = edge_type;
+                    train_edge_types[*edge_id as usize] = None;
                 }
             }
         }
@@ -1821,7 +1829,7 @@ impl Graph {
 
         // If edge types is not None, to compute the chunks only use the edges
         // of the chosen edge_types
-        let indices = if let Some(ets) = edge_types {
+        let mut indices = if let Some(ets) = edge_types {
             if ets.is_empty() {
                 return Err(String::from(
                     "Required edge types must be a non-empty list.",
@@ -1847,14 +1855,14 @@ impl Graph {
                 .collect::<Vec<EdgeT>>()
         };
 
-        let chunk = kfold(k, k_index, indices, random_state)?;
+        let chunk = kfold(k, k_index, &mut indices, random_state)?;
 
         // Create the two graphs
         self.get_edge_holdout(
             Some(random_state),
             chunk.len() as u64,
             false,
-            |edge_id, _, _, _| chunk.contains(edge_id),
+            |edge_id, _, _, _| chunk.contains(&edge_id),
             verbose,
         )
     }
