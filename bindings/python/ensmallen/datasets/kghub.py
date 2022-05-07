@@ -141,12 +141,53 @@ def KGIDG(
 			- 20220325
 			- 20220329
 			- 20220401
+			- 20220501
 			- current	
 	
 	
     """
     return AutomaticallyRetrievedGraph(
         "KGIDG", version, "kghub", directed, preprocess, load_nodes,
+        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
+        cache_path, cache_sys_var, kwargs
+    )()
+
+def KGPhenio(
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
+    load_edge_weights = True, auto_enable_tradeoffs = True,
+    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "current", **kwargs
+) -> Graph:
+    """Return kg-phenio graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    load_nodes = True
+        Load node names or use numeric range
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "current"
+        Version to retrieve	
+		The available versions are:
+			- 20220304
+			- 20220414
+			- 20220428
+			- 20220429
+			- 20220504
+			- current	
+	
+	
+    """
+    return AutomaticallyRetrievedGraph(
+        "KGPhenio", version, "kghub", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
     )()
@@ -206,6 +247,7 @@ def KGCOVID19(
 			- 20220328
 			- 20220330
 			- 20220402
+			- 20220502
 			- current	
 	
 	References

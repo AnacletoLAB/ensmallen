@@ -23,7 +23,7 @@ class KGHubGraphRepository(GraphRepository):
             "kg-covid-19": "KGCOVID19",
             "kg-microbe": "KGMicrobe",
             "KG-IDG": "KGIDG",
-            "KG-OntoML": "KGOntoML",
+            "kg-phenio": "KGPhenio",
             "eco-kg": "EcoKG"
         }
         root_pattern = "https://kg-hub.berkeleybop.io/{lower_graph_name}/index.html"
