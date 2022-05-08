@@ -817,7 +817,7 @@ impl CBOW {
                         .map(|central_index| {
                             (
                                 &random_walk[central_index.saturating_sub(self.window_size)
-                                    ..(central_index + self.window_size).max(random_walk_length)],
+                                    ..(central_index + self.window_size).min(random_walk_length)],
                                 random_walk[central_index],
                                 central_index,
                             )
