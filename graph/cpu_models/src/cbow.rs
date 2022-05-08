@@ -792,7 +792,11 @@ impl CBOW {
             let weighted_variation = variation * learning_rate;
 
             weighted_vector_sum(context_embedding_gradient, node_hidden, weighted_variation);
-            update_hidden(node_id, total_context_embedding, weighted_variation / context_size);
+            update_hidden(
+                node_id,
+                total_context_embedding,
+                weighted_variation / context_size,
+            );
 
             weighted_variation.abs()
         };
@@ -809,11 +813,11 @@ impl CBOW {
                 .par_iter_complete_walks(&walk_parameters)?
                 .enumerate()
                 .map(|(walk_number, random_walk)| {
-                    (self.window_size..random_walk_length - self.window_size)
+                    (0..random_walk_length)
                         .map(|central_index| {
                             (
-                                &random_walk[(central_index - self.window_size)
-                                    ..central_index + self.window_size],
+                                &random_walk[central_index.saturating_sub(self.window_size)
+                                    ..(central_index + self.window_size).max(random_walk_length)],
                                 random_walk[central_index],
                                 central_index,
                             )
