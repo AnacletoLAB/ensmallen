@@ -12,6 +12,10 @@ impl Graph {
     /// # Arguments
     /// * `node_ids_to_keep`: Option<Vec<NodeT>> - List of node IDs to keep during filtering.
     /// * `node_ids_to_filter`: Option<Vec<NodeT>> - List of node IDs to remove during filtering.
+    /// * `node_names_to_keep_from_graph`: Option<Graph> - Graph whose nodes are to be kept.
+    /// * `node_names_to_remove_from_graph`: Option<Graph> - Graph whose nodes are to be removed.
+    /// * `node_prefixes_to_keep`: Option<&[&str]> - List of node prefixes to keep during filtering.
+    /// * `node_prefixes_to_remove`: Option<&[&str]> - List of node prefixes to remove during filtering.
     /// * `node_type_ids_to_keep`: Option<Vec<Option<Vec<NodeTypeT>>>> - List of node type IDs to keep during filtering. The node types must match entirely the given node types vector provided.
     /// * `node_type_ids_to_filter`: Option<Vec<Option<Vec<NodeTypeT>>>> - List of node type IDs to remove during filtering. The node types must match entirely the given node types vector provided.
     /// * `node_type_id_to_keep`: Option<Vec<Option<NodeTypeT>>> - List of node type IDs to keep during filtering. Any of node types must match with one of the node types given.
@@ -47,6 +51,10 @@ impl Graph {
         &self,
         node_ids_to_keep: Option<Vec<NodeT>>,
         node_ids_to_filter: Option<Vec<NodeT>>,
+        node_names_to_keep_from_graph: Option<Graph>,
+        node_names_to_remove_from_graph: Option<Graph>,
+        node_prefixes_to_keep: Option<&[&str]>,
+        node_prefixes_to_remove: Option<&[&str]>,
         node_type_ids_to_keep: Option<Vec<Option<Vec<NodeTypeT>>>>,
         node_type_ids_to_filter: Option<Vec<Option<Vec<NodeTypeT>>>>,
         node_type_id_to_keep: Option<Vec<Option<NodeTypeT>>>,
@@ -90,6 +98,10 @@ impl Graph {
                 node_type_ids_to_filter.is_some(),
                 node_type_id_to_keep.is_some(),
                 node_type_id_to_filter.is_some(),
+                node_names_to_keep_from_graph.is_some(),
+                node_names_to_remove_from_graph.is_some(),
+                node_prefixes_to_keep.is_some(),
+                node_prefixes_to_remove.is_some(),
                 filter_singleton_nodes && self.has_singleton_nodes(),
                 filter_singleton_nodes_with_selfloop && self.has_singleton_nodes_with_selfloops(),
             ]
@@ -146,7 +158,7 @@ impl Graph {
             weight.map_or(true, |weight| weight >= min_edge_weight && weight <= max_edge_weight)
         };
 
-        let node_filter = |(node_id, _, node_type_ids, _): &(
+        let node_filter = |(node_id, node_name, node_type_ids, _): &(
             NodeT,
             String,
             Option<&Vec<NodeTypeT>>,
@@ -158,6 +170,18 @@ impl Graph {
                 && node_ids_to_filter
                     .as_ref()
                     .map_or(true, |nitf| !nitf.contains(node_id))
+                && node_names_to_keep_from_graph
+                .as_ref()
+                .map_or(true, |g| g.has_node_name(node_name))
+                && node_names_to_remove_from_graph
+                    .as_ref()
+                    .map_or(true, |g| !g.has_node_name(node_name))
+                && node_prefixes_to_keep
+                .as_ref()
+                .map_or(true, |nptk| nptk.iter().any(|prefix| node_name.starts_with(prefix)))
+                && node_prefixes_to_remove
+                    .as_ref()
+                    .map_or(true, |nptk| !nptk.iter().any(|prefix| node_name.starts_with(prefix)))
                 && node_type_ids_to_keep
                     .as_ref()
                     .map_or(true, |ntitk| ntitk.contains(&node_type_ids.map(|x| x.clone())))
@@ -318,6 +342,10 @@ impl Graph {
     /// # Arguments
     /// * `node_names_to_keep`: Option<Vec<&str>> - List of node names to keep during filtering.
     /// * `node_names_to_filter`: Option<Vec<&str>> - List of node names to remove during filtering.
+    /// * `node_names_to_keep_from_graph`: Option<Graph> - Graph whose nodes are to be kept.
+    /// * `node_names_to_remove_from_graph`: Option<Graph> - Graph whose nodes are to be removed.
+    /// * `node_prefixes_to_keep`: Option<&[&str]> - List of node prefixes to keep during filtering.
+    /// * `node_prefixes_to_remove`: Option<&[&str]> - List of node prefixes to remove during filtering.
     /// * `node_type_names_to_keep`: Option<Vec<Option<Vec<&str>>>> - List of node type names to keep during filtering. The node types must match entirely the given node types vector provided.
     /// * `node_type_names_to_filter`: Option<Vec<Option<Vec<&str>>>> - List of node type names to remove during filtering. The node types must match entirely the given node types vector provided.
     /// * `node_type_name_to_keep`: Option<Vec<Option<String>>> - List of node type name to keep during filtering. Any of node types must match with one of the node types given.
@@ -351,6 +379,10 @@ impl Graph {
         &self,
         node_names_to_keep: Option<Vec<&str>>,
         node_names_to_filter: Option<Vec<&str>>,
+        node_names_to_keep_from_graph: Option<Graph>,
+        node_names_to_remove_from_graph: Option<Graph>,
+        node_prefixes_to_keep: Option<&[&str]>,
+        node_prefixes_to_remove: Option<&[&str]>,
         node_type_names_to_keep: Option<Vec<Option<Vec<&str>>>>,
         node_type_names_to_filter: Option<Vec<Option<Vec<&str>>>>,
         node_type_name_to_keep: Option<Vec<Option<String>>>,
@@ -373,6 +405,10 @@ impl Graph {
             node_names_to_filter.map_or(Ok::<_, String>(None), |nntf| {
                 Ok(Some(self.get_node_ids_from_node_names(nntf)?))
             })?,
+            node_names_to_keep_from_graph,
+            node_names_to_remove_from_graph,
+            node_prefixes_to_keep,
+            node_prefixes_to_remove,
             node_type_names_to_keep.map_or(Ok::<_, String>(None), |ntntk| {
                 Ok(Some(
                     self.get_multiple_node_type_ids_from_node_type_names(ntntk)?,
@@ -424,6 +460,10 @@ impl Graph {
             None,
             None,
             None,
+            None,
+            None,
+            None,
+            None,
             Some(vec![None]),
             None,
             None,
@@ -453,6 +493,10 @@ impl Graph {
             None,
             None,
             None,
+            None,
+            None,
+            None,
+            None,
             Some(vec![None]),
             None,
             None,
@@ -476,6 +520,10 @@ impl Graph {
     ///
     pub fn remove_singleton_nodes(&self) -> Graph {
         self.filter_from_ids(
+            None,
+            None,
+            None,
+            None,
             None,
             None,
             None,
@@ -523,6 +571,10 @@ impl Graph {
             None,
             None,
             None,
+            None,
+            None,
+            None,
+            None,
         )
     }
 
@@ -537,6 +589,10 @@ impl Graph {
         self.filter_from_ids(
             None,
             Some(node_ids_to_filter),
+            None,
+            None,
+            None,
+            None,
             None,
             None,
             None,
@@ -588,6 +644,10 @@ impl Graph {
             None,
             None,
             None,
+            None,
+            None,
+            None,
+            None,
         )
         .unwrap()
     }
@@ -598,6 +658,10 @@ impl Graph {
     ///
     pub fn remove_singleton_nodes_with_selfloops(&self) -> Graph {
         self.filter_from_ids(
+            None,
+            None,
+            None,
+            None,
             None,
             None,
             None,
@@ -640,6 +704,10 @@ impl Graph {
             None,
             None,
             None,
+            None,
+            None,
+            None,
+            None,
             Some(true),
             Some(true),
             None,
@@ -668,6 +736,10 @@ impl Graph {
             None,
             None,
             None,
+            None,
+            None,
+            None,
+            None,
             Some(true),
             None,
         )
@@ -677,6 +749,10 @@ impl Graph {
     /// Returns new graph without parallel edges.
     pub fn remove_parallel_edges(&self) -> Graph {
         self.filter_from_ids(
+            None,
+            None,
+            None,
+            None,
             None,
             None,
             None,

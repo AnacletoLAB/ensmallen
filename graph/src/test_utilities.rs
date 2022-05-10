@@ -532,7 +532,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
                             - graph
                                 .get_unchecked_edge_weight_from_node_ids(dst_node_id, src_node_id))
                         .abs()
-                            < WeightT::EPSILON,
+                            < WeightT::EPSILON * 10.0,
                         concat!(
                             "In an undirected graph, we expect for the edge weights to be symmetrical ",
                             "but in the provided graph there has been found a case where the edge ",
@@ -1184,7 +1184,7 @@ pub fn test_dijkstra(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
                         // my be infinite, and therefore the epsilon check
                         // may not be enough.
                         src_to_dst_distance.is_infinite() && dst_to_src_distance.is_infinite()
-                            || (src_to_dst_distance - dst_to_src_distance).abs() < WeightT::EPSILON,
+                            || (src_to_dst_distance - dst_to_src_distance).abs() < WeightT::EPSILON * 10.0,
                         concat!(
                             "The path from source to destination has distance {} ",
                             "while the distance from destination to source has ",
@@ -2073,7 +2073,7 @@ pub fn test_graph_filter(graph: &Graph, _verbose: Option<bool>) -> Result<()> {
     let unfiltered = graph
         .filter_from_ids(
             None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-            None, None, None, None,
+            None, None, None, None, None, None, None, None,
         )
         .unwrap();
     assert_eq!(&unfiltered, graph);
@@ -2095,6 +2095,10 @@ pub fn test_graph_filter(graph: &Graph, _verbose: Option<bool>) -> Result<()> {
             None,
             None,
             None,
+            None,
+            None,
+            None,
+            None,
         )
         .is_err());
     for node_name in graph.iter_node_names().take(10) {
@@ -2102,6 +2106,10 @@ pub fn test_graph_filter(graph: &Graph, _verbose: Option<bool>) -> Result<()> {
         let graph_without_given_name_result = graph.filter_from_names(
             None,
             Some(vec![node_name.as_str()]),
+            None,
+            None,
+            None,
+            None,
             None,
             None,
             None,
@@ -2151,6 +2159,10 @@ pub fn test_graph_filter(graph: &Graph, _verbose: Option<bool>) -> Result<()> {
             None,
             None,
             None,
+            None,
+            None,
+            None,
+            None,
         );
         assert!(
             graph_with_given_name_result.is_ok(),
@@ -2176,6 +2188,10 @@ pub fn test_graph_filter(graph: &Graph, _verbose: Option<bool>) -> Result<()> {
     for node_type_name in graph.iter_unique_node_type_names()?.take(10) {
         // The following test should remove ONLY the given node name
         let graph_without_given_node_type_name_result = graph.filter_from_names(
+            None,
+            None,
+            None,
+            None,
             None,
             None,
             None,
