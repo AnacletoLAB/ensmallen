@@ -14,8 +14,8 @@ impl Graph {
     /// * `node_ids_to_filter`: Option<Vec<NodeT>> - List of node IDs to remove during filtering.
     /// * `node_names_to_keep_from_graph`: Option<Graph> - Graph whose nodes are to be kept.
     /// * `node_names_to_remove_from_graph`: Option<Graph> - Graph whose nodes are to be removed.
-    /// * `node_prefixes_to_keep`: Option<&[&str]> - List of node prefixes to keep during filtering.
-    /// * `node_prefixes_to_remove`: Option<&[&str]> - List of node prefixes to remove during filtering.
+    /// * `node_prefixes_to_keep`: Option<Vec<String>> - List of node prefixes to keep during filtering.
+    /// * `node_prefixes_to_remove`: Option<Vec<String>> - List of node prefixes to remove during filtering.
     /// * `node_type_ids_to_keep`: Option<Vec<Option<Vec<NodeTypeT>>>> - List of node type IDs to keep during filtering. The node types must match entirely the given node types vector provided.
     /// * `node_type_ids_to_filter`: Option<Vec<Option<Vec<NodeTypeT>>>> - List of node type IDs to remove during filtering. The node types must match entirely the given node types vector provided.
     /// * `node_type_id_to_keep`: Option<Vec<Option<NodeTypeT>>> - List of node type IDs to keep during filtering. Any of node types must match with one of the node types given.
@@ -53,8 +53,8 @@ impl Graph {
         node_ids_to_filter: Option<Vec<NodeT>>,
         node_names_to_keep_from_graph: Option<Graph>,
         node_names_to_remove_from_graph: Option<Graph>,
-        node_prefixes_to_keep: Option<&[&str]>,
-        node_prefixes_to_remove: Option<&[&str]>,
+        node_prefixes_to_keep: Option<Vec<String>>,
+        node_prefixes_to_remove: Option<Vec<String>>,
         node_type_ids_to_keep: Option<Vec<Option<Vec<NodeTypeT>>>>,
         node_type_ids_to_filter: Option<Vec<Option<Vec<NodeTypeT>>>>,
         node_type_id_to_keep: Option<Vec<Option<NodeTypeT>>>,
@@ -344,8 +344,8 @@ impl Graph {
     /// * `node_names_to_filter`: Option<Vec<&str>> - List of node names to remove during filtering.
     /// * `node_names_to_keep_from_graph`: Option<Graph> - Graph whose nodes are to be kept.
     /// * `node_names_to_remove_from_graph`: Option<Graph> - Graph whose nodes are to be removed.
-    /// * `node_prefixes_to_keep`: Option<&[&str]> - List of node prefixes to keep during filtering.
-    /// * `node_prefixes_to_remove`: Option<&[&str]> - List of node prefixes to remove during filtering.
+    /// * `node_prefixes_to_keep`: Option<Vec<String>> - List of node prefixes to keep during filtering.
+    /// * `node_prefixes_to_remove`: Option<Vec<String>> - List of node prefixes to remove during filtering.
     /// * `node_type_names_to_keep`: Option<Vec<Option<Vec<&str>>>> - List of node type names to keep during filtering. The node types must match entirely the given node types vector provided.
     /// * `node_type_names_to_filter`: Option<Vec<Option<Vec<&str>>>> - List of node type names to remove during filtering. The node types must match entirely the given node types vector provided.
     /// * `node_type_name_to_keep`: Option<Vec<Option<String>>> - List of node type name to keep during filtering. Any of node types must match with one of the node types given.
@@ -381,8 +381,8 @@ impl Graph {
         node_names_to_filter: Option<Vec<&str>>,
         node_names_to_keep_from_graph: Option<Graph>,
         node_names_to_remove_from_graph: Option<Graph>,
-        node_prefixes_to_keep: Option<&[&str]>,
-        node_prefixes_to_remove: Option<&[&str]>,
+        node_prefixes_to_keep: Option<Vec<String>>,
+        node_prefixes_to_remove: Option<Vec<String>>,
         node_type_names_to_keep: Option<Vec<Option<Vec<&str>>>>,
         node_type_names_to_filter: Option<Vec<Option<Vec<&str>>>>,
         node_type_name_to_keep: Option<Vec<Option<String>>>,
