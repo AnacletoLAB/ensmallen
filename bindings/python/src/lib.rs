@@ -12,6 +12,8 @@ mod macros;
 pub(crate) use crate::macros::*;
 mod cbow;
 pub(crate) use cbow::*;
+mod transe;
+pub(crate) use transe::*;
 mod edge_file_writer;
 mod hash;
 mod node_file_writer;
@@ -36,6 +38,7 @@ mod walks;
 #[pymodule]
 fn models(_py: Python, _m: &PyModule) -> PyResult<()> {
     _m.add_class::<CBOW>()?;
+    _m.add_class::<TransE>()?;
     _m.add_class::<SkipGram>()?;
     _m.add_class::<SPINE>()?;
     _m.add_class::<WeightedSPINE>()?;
