@@ -83,7 +83,7 @@ impl TransE {
     ) -> Result<(), String> {
         let epochs = epochs.unwrap_or(10);
         let verbose = verbose.unwrap_or(true);
-        let mut learning_rate = learning_rate.unwrap_or(0.01);
+        let mut learning_rate = learning_rate.unwrap_or(0.001);
         let learning_rate_decay = learning_rate_decay.unwrap_or(0.9);
         let mut random_state = splitmix64(self.random_state);
 
