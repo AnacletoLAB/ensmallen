@@ -195,7 +195,7 @@ impl TransE {
                     &mut (*shared_edge_type_embedding.get())
                         [(edge_type * self.embedding_size)..((edge_type + 1) * self.embedding_size)]
                 };
-                let edge_type_embedding_norm = norm(edge_type_embedding_norm);
+                let edge_type_embedding_norm = norm(edge_type_embedding);
 
                 src_embedding
                     .iter_mut()
