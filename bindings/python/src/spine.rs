@@ -35,10 +35,7 @@ impl SPINE {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        pe!(validate_kwargs(
-            kwargs,
-            build_walk_parameters_list(&["embedding_size",]).as_slice()
-        ))?;
+        pe!(validate_kwargs(kwargs, &["embedding_size",]))?;
 
         Ok(Self {
             inner: pe!(cpu_models::SPINE::new(extract_value_rust_result!(

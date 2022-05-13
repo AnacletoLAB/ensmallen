@@ -3,7 +3,6 @@ use crate::constructors::build_graph_from_integers;
 use super::*;
 use counter::Counter;
 use indicatif::ParallelProgressIterator;
-use indicatif::ProgressIterator;
 use rand::rngs::SmallRng;
 use rand::seq::SliceRandom;
 use rand::SeedableRng;
@@ -95,7 +94,6 @@ impl Graph {
     /// * `sample_only_edges_with_heterogeneous_node_types`: Option<bool> - Whether to sample negative edges only with source and destination nodes that have different node types.
     /// * `minimum_node_degree`: Option<NodeT> - The minimum node degree of either the source or destination node to be sampled. By default 0.
     /// * `maximum_node_degree`: Option<NodeT> - The maximum node degree of either the source or destination node to be sampled. By default, the number of nodes.
-    /// * `verbose`: Option<bool> - Whether to show the loading bar.
     ///
     /// # Raises
     /// * If the `sample_only_edges_with_heterogeneous_node_types` argument is provided as true, but the graph does not have node types.
@@ -108,7 +106,6 @@ impl Graph {
         sample_only_edges_with_heterogeneous_node_types: Option<bool>,
         minimum_node_degree: Option<NodeT>,
         maximum_node_degree: Option<NodeT>,
-        verbose: Option<bool>,
     ) -> Result<Graph> {
         if number_of_negative_samples == 0 {
             return Err(String::from("The number of negatives cannot be zero."));
@@ -127,7 +124,6 @@ impl Graph {
 
         let only_from_same_component = only_from_same_component.unwrap_or(false);
         let mut random_state = random_state.unwrap_or(0xbadf00d);
-        let verbose = verbose.unwrap_or(false);
 
         let seed_nodes: Option<RoaringBitmap> = if let Some(sg) = &seed_graph {
             if !self.overlaps(&sg)? {
@@ -158,7 +154,7 @@ impl Graph {
 
         // whether to sample negative edges only from the same connected component.
         let (node_components, mut complete_edges_number) = if only_from_same_component {
-            let node_components = self.get_node_connected_component_ids(Some(verbose));
+            let node_components = self.get_node_connected_component_ids(Some(false));
             let complete_edges_number: EdgeT = Counter::init(node_components.clone())
                 .into_iter()
                 .map(|(_, nodes_number): (_, &usize)| {
@@ -200,15 +196,8 @@ impl Graph {
             ));
         }
 
-        let pb1 = get_loading_bar(
-            verbose,
-            "Computing negative edges",
-            number_of_negative_samples as usize,
-        );
-
         let mut negative_edges_hashset =
             HashSet::with_capacity(number_of_negative_samples as usize);
-        let mut last_length = 0;
         let mut sampling_round: usize = 0;
 
         // randomly extract negative edges until we have the choosen number
@@ -219,11 +208,6 @@ impl Graph {
             random_state = splitmix64(random_state as u64) as EdgeT;
             let dst_random_state = rand_u64(random_state);
 
-            let tmp_tb = get_loading_bar(
-                verbose,
-                format!("Negatives sampling round {}", sampling_round).as_ref(),
-                number_of_negative_samples as usize,
-            );
             sampling_round += 1;
 
             // generate the random edge-sources
@@ -235,7 +219,6 @@ impl Graph {
                             .into_par_iter(),
                     )
                     // convert them to plain (src, dst)
-                    .progress_with(tmp_tb)
                     .filter_map(|(src_seed, dst_seed)| {
                         let src = sample_uniform(nodes_number as u64, src_seed as u64) as NodeT;
                         let dst = sample_uniform(nodes_number as u64, dst_seed as u64) as NodeT;
@@ -299,17 +282,7 @@ impl Graph {
                     })
                     .collect::<Vec<EdgeT>>();
 
-            let pb3 = get_loading_bar(
-                verbose,
-                format!(
-                    "Inserting negative graph edges (iteration {})",
-                    sampling_round
-                )
-                .as_ref(),
-                number_of_negative_samples as usize,
-            );
-
-            for edge_id in sampled_edge_ids.iter().progress_with(pb3) {
+            for edge_id in sampled_edge_ids.iter() {
                 if negative_edges_hashset.len() >= number_of_negative_samples as usize {
                     break;
                 }
@@ -324,12 +297,7 @@ impl Graph {
                 )
                 .to_string());
             }
-
-            pb1.inc((negative_edges_hashset.len() - last_length as usize) as u64);
-            last_length = negative_edges_hashset.len();
         }
-
-        pb1.finish();
 
         build_graph_from_integers(
             Some(negative_edges_hashset.into_par_iter().map(|edge| {

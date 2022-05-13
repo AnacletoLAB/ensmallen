@@ -260,25 +260,7 @@ impl WalksParameters {
     /// Set whether the walk destination nodes weights should be weighted by the destination node degree.
     ///
     /// # Arguments
-    ///
     /// * `normalize_by_degree`: Option<NodeT> - Number of neighbours to consider for each extraction.
-    ///
-    /// # Example
-    /// You can change the `normalize_by_degree` parameter as follows:
-    ///
-    /// ```rust
-    /// # use graph::walks_parameters::WalksParameters;
-    /// assert!(WalksParameters::new(32).unwrap().set_normalize_by_degree(Some(true)).is_err());
-    /// assert!(WalksParameters::new(32).unwrap().set_normalize_by_degree(Some(false)).is_ok());
-    /// ```
-    ///
-    /// You can also call the method with an option None, in order to avoid a match
-    /// wrapper above. This will end up don't doing anything, just a passthrough.
-    ///
-    /// ```rust
-    /// # use graph::walks_parameters::WalksParameters;
-    /// assert!(WalksParameters::new(32).unwrap().set_normalize_by_degree(None).is_ok());
-    /// ```
     pub fn set_normalize_by_degree(mut self, normalize_by_degree: Option<bool>) -> WalksParameters {
         if let Some(normalize_by_degree) = normalize_by_degree {
             self.single_walk_parameters.normalize_by_degree = normalize_by_degree;
@@ -289,7 +271,6 @@ impl WalksParameters {
     /// Set the random_state.
     ///
     /// # Arguments
-    ///
     /// * `random_state`: Option<usize> - random_state for reproducible random walks.
     ///
     pub fn set_random_state(mut self, random_state: Option<usize>) -> WalksParameters {

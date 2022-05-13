@@ -8042,7 +8042,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_ids_to_keep, node_ids_to_filter, node_type_ids_to_keep, node_type_ids_to_filter, node_type_id_to_keep, node_type_id_to_filter, edge_ids_to_keep, edge_ids_to_filter, edge_node_ids_to_keep, edge_node_ids_to_filter, edge_type_ids_to_keep, edge_type_ids_to_filter, min_edge_weight, max_edge_weight, filter_singleton_nodes, filter_singleton_nodes_with_selfloop, filter_selfloops, filter_parallel_edges)"]
+    #[text_signature = "($self, node_ids_to_keep, node_ids_to_filter, node_names_to_keep_from_graph, node_names_to_remove_from_graph, node_prefixes_to_keep, node_prefixes_to_remove, node_type_ids_to_keep, node_type_ids_to_filter, node_type_id_to_keep, node_type_id_to_filter, edge_ids_to_keep, edge_ids_to_filter, edge_node_ids_to_keep, edge_node_ids_to_filter, edge_type_ids_to_keep, edge_type_ids_to_filter, min_edge_weight, max_edge_weight, filter_singleton_nodes, filter_singleton_nodes_with_selfloop, filter_selfloops, filter_parallel_edges)"]
     /// Returns a **NEW** Graph that does not have the required attributes.
     ///
     /// Parameters
@@ -8051,6 +8051,14 @@ impl Graph {
     ///     List of node IDs to keep during filtering.
     /// node_ids_to_filter: Optional[List[int]]
     ///     List of node IDs to remove during filtering.
+    /// node_names_to_keep_from_graph: Optional[Graph]
+    ///     Graph whose nodes are to be kept.
+    /// node_names_to_remove_from_graph: Optional[Graph]
+    ///     Graph whose nodes are to be removed.
+    /// node_prefixes_to_keep: Optional[List[str]]
+    ///     List of node prefixes to keep during filtering.
+    /// node_prefixes_to_remove: Optional[List[str]]
+    ///     List of node prefixes to remove during filtering.
     /// node_type_ids_to_keep: Optional[List[Optional[List[int]]]]
     ///     List of node type IDs to keep during filtering. The node types must match entirely the given node types vector provided.
     /// node_type_ids_to_filter: Optional[List[Optional[List[int]]]]
@@ -8090,6 +8098,10 @@ impl Graph {
         &self,
         node_ids_to_keep: Option<Vec<NodeT>>,
         node_ids_to_filter: Option<Vec<NodeT>>,
+        node_names_to_keep_from_graph: Option<Graph>,
+        node_names_to_remove_from_graph: Option<Graph>,
+        node_prefixes_to_keep: Option<Vec<String>>,
+        node_prefixes_to_remove: Option<Vec<String>>,
         node_type_ids_to_keep: Option<Vec<Option<Vec<NodeTypeT>>>>,
         node_type_ids_to_filter: Option<Vec<Option<Vec<NodeTypeT>>>>,
         node_type_id_to_keep: Option<Vec<Option<NodeTypeT>>>,
@@ -8110,6 +8122,10 @@ impl Graph {
         Ok(pe!(self.inner.filter_from_ids(
             node_ids_to_keep.into(),
             node_ids_to_filter.into(),
+            node_names_to_keep_from_graph.map(|sg| sg.inner),
+            node_names_to_remove_from_graph.map(|sg| sg.inner),
+            node_prefixes_to_keep.into(),
+            node_prefixes_to_remove.into(),
             node_type_ids_to_keep.into(),
             node_type_ids_to_filter.into(),
             node_type_id_to_keep.into(),
@@ -8131,7 +8147,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_names_to_keep, node_names_to_filter, node_type_names_to_keep, node_type_names_to_filter, node_type_name_to_keep, node_type_name_to_filter, edge_node_names_to_keep, edge_node_names_to_filter, edge_type_names_to_keep, edge_type_names_to_filter, min_edge_weight, max_edge_weight, filter_singleton_nodes, filter_singleton_nodes_with_selfloop, filter_selfloops, filter_parallel_edges)"]
+    #[text_signature = "($self, node_names_to_keep, node_names_to_filter, node_names_to_keep_from_graph, node_names_to_remove_from_graph, node_prefixes_to_keep, node_prefixes_to_remove, node_type_names_to_keep, node_type_names_to_filter, node_type_name_to_keep, node_type_name_to_filter, edge_node_names_to_keep, edge_node_names_to_filter, edge_type_names_to_keep, edge_type_names_to_filter, min_edge_weight, max_edge_weight, filter_singleton_nodes, filter_singleton_nodes_with_selfloop, filter_selfloops, filter_parallel_edges)"]
     /// Returns a **NEW** Graph that does not have the required attributes.
     ///
     /// Parameters
@@ -8140,6 +8156,14 @@ impl Graph {
     ///     List of node names to keep during filtering.
     /// node_names_to_filter: Optional[List[str]]
     ///     List of node names to remove during filtering.
+    /// node_names_to_keep_from_graph: Optional[Graph]
+    ///     Graph whose nodes are to be kept.
+    /// node_names_to_remove_from_graph: Optional[Graph]
+    ///     Graph whose nodes are to be removed.
+    /// node_prefixes_to_keep: Optional[List[str]]
+    ///     List of node prefixes to keep during filtering.
+    /// node_prefixes_to_remove: Optional[List[str]]
+    ///     List of node prefixes to remove during filtering.
     /// node_type_names_to_keep: Optional[List[Optional[List[str]]]]
     ///     List of node type names to keep during filtering. The node types must match entirely the given node types vector provided.
     /// node_type_names_to_filter: Optional[List[Optional[List[str]]]]
@@ -8175,6 +8199,10 @@ impl Graph {
         &self,
         node_names_to_keep: Option<Vec<&str>>,
         node_names_to_filter: Option<Vec<&str>>,
+        node_names_to_keep_from_graph: Option<Graph>,
+        node_names_to_remove_from_graph: Option<Graph>,
+        node_prefixes_to_keep: Option<Vec<String>>,
+        node_prefixes_to_remove: Option<Vec<String>>,
         node_type_names_to_keep: Option<Vec<Option<Vec<&str>>>>,
         node_type_names_to_filter: Option<Vec<Option<Vec<&str>>>>,
         node_type_name_to_keep: Option<Vec<Option<String>>>,
@@ -8193,6 +8221,10 @@ impl Graph {
         Ok(pe!(self.inner.filter_from_names(
             node_names_to_keep.into(),
             node_names_to_filter.into(),
+            node_names_to_keep_from_graph.map(|sg| sg.inner),
+            node_names_to_remove_from_graph.map(|sg| sg.inner),
+            node_prefixes_to_keep.into(),
+            node_prefixes_to_remove.into(),
             node_type_names_to_keep.into(),
             node_type_names_to_filter.into(),
             node_type_name_to_keep.into(),

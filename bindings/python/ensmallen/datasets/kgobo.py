@@ -669,7 +669,7 @@ def OMP(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-03-04", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-04-11", **kwargs
 ) -> Graph:
     """Return OMP graph	
 
@@ -687,15 +687,16 @@ def OMP(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-03-04"
+    version = "2022-04-11"
         Version to retrieve	
 		The available versions are:
-			- 2022-04-11
+			- 2022-05-06
 			- 2021-10-01
 			- 2021-12-03
 			- 2022-01-07
 			- 2022-02-08
 			- 2022-03-04
+			- 2022-04-11
     """
     return AutomaticallyRetrievedGraph(
         "OMP", version, "kgobo", directed, preprocess, load_nodes,
@@ -1886,6 +1887,39 @@ def AEO(
         cache_path, cache_sys_var, kwargs
     )()
 
+def FOBI(
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
+    load_edge_weights = True, auto_enable_tradeoffs = True,
+    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "fobi", **kwargs
+) -> Graph:
+    """Return FOBI graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    load_nodes = True
+        Load node names or use numeric range
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "fobi"
+        Version to retrieve	
+		The available versions are:
+			- fobi
+    """
+    return AutomaticallyRetrievedGraph(
+        "FOBI", version, "kgobo", directed, preprocess, load_nodes,
+        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
+        cache_path, cache_sys_var, kwargs
+    )()
+
 def GENO(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
@@ -2416,6 +2450,7 @@ def OMO(
     version = "2020-06-08"
         Version to retrieve	
 		The available versions are:
+			- 2022-04-27
 			- 2020-06-08
     """
     return AutomaticallyRetrievedGraph(
@@ -2873,7 +2908,7 @@ def MONDO(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-03-01", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-04-04", **kwargs
 ) -> Graph:
     """Return MONDO graph	
 
@@ -2891,10 +2926,10 @@ def MONDO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-03-01"
+    version = "2022-04-04"
         Version to retrieve	
 		The available versions are:
-			- 2022-04-04
+			- 2022-05-02
 			- 2021-09-01
 			- 2021-10-01
 			- 2021-11-01
@@ -2902,6 +2937,7 @@ def MONDO(
 			- 2021-12-30
 			- 2022-02-04
 			- 2022-03-01
+			- 2022-04-04
     """
     return AutomaticallyRetrievedGraph(
         "MONDO", version, "kgobo", directed, preprocess, load_nodes,
@@ -2980,7 +3016,7 @@ def MAXO(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-04-08", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-04-11", **kwargs
 ) -> Graph:
     """Return MAXO graph	
 
@@ -2998,13 +3034,14 @@ def MAXO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-04-08"
+    version = "2022-04-11"
         Version to retrieve	
 		The available versions are:
-			- 2022-04-11
+			- 2022-05-06
 			- 2021-08-19
 			- 2022-03-23
 			- 2022-04-08
+			- 2022-04-11
     """
     return AutomaticallyRetrievedGraph(
         "MAXO", version, "kgobo", directed, preprocess, load_nodes,
@@ -3412,6 +3449,7 @@ def COB(
     version = "2021-09-13"
         Version to retrieve	
 		The available versions are:
+			- 2022-05-02
 			- 2021-09-13
     """
     return AutomaticallyRetrievedGraph(
@@ -4950,7 +4988,7 @@ def ECTO(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-08-25", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-03-09", **kwargs
 ) -> Graph:
     """Return ECTO graph	
 
@@ -4968,11 +5006,12 @@ def ECTO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-08-25"
+    version = "2022-03-09"
         Version to retrieve	
 		The available versions are:
-			- 2022-03-09
+			- 2022-05-04
 			- 2021-08-25
+			- 2022-03-09
     """
     return AutomaticallyRetrievedGraph(
         "ECTO", version, "kgobo", directed, preprocess, load_nodes,

@@ -4,7 +4,7 @@ use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::IntoParallelRefMutIterator;
 use rayon::iter::ParallelIterator;
-use vec_rand::{random_f32, splitmix64};
+use vec_rand::{random_f32, splitmix64, sample_uniform};
 
 #[derive(Clone, Debug)]
 pub struct SkipGram {
@@ -15,6 +15,9 @@ pub struct SkipGram {
     number_of_negative_samples: usize,
     log_sigmoid: bool,
     siamese: bool,
+    stochastic_downsample_by_degree: bool,
+    normalize_learning_rate_by_degree: bool,
+    use_zipfian_sampling: bool,
 }
 
 impl SkipGram {
@@ -28,6 +31,9 @@ impl SkipGram {
     /// `number_of_negative_samples`: Option<usize> - Number of negative samples to extract for each context.
     /// `log_sigmoid: Option<bool> - Whether to use the model using a sigmoid or log sigmoid. By default, log sigmoid.
     /// `siamese: Option<bool> - Whether to use the model in Siamese mode, using half the weights.
+    /// `stochastic_downsample_by_degree`: Option<bool> - Randomly skip samples with probability proportional to the degree of the central node. By default false.
+    /// `normalize_learning_rate_by_degree`: Option<bool> - Divide the learning rate by the degree of the central node. By default false.
+    /// `use_zipfian_sampling`: Option<bool> - Sample negatives proportionally to their degree. By default true.
     pub fn new(
         embedding_size: Option<usize>,
         walk_parameters: Option<WalksParameters>,
@@ -36,6 +42,9 @@ impl SkipGram {
         number_of_negative_samples: Option<usize>,
         log_sigmoid: Option<bool>,
         siamese: Option<bool>,
+        stochastic_downsample_by_degree: Option<bool>,
+        normalize_learning_rate_by_degree: Option<bool>,
+        use_zipfian_sampling: Option<bool>,
     ) -> Result<Self, String> {
         // Handle the values of the default parameters.
         let embedding_size = embedding_size.unwrap_or(100);
@@ -45,6 +54,9 @@ impl SkipGram {
         let number_of_negative_samples = number_of_negative_samples.unwrap_or(5);
         let log_sigmoid = log_sigmoid.unwrap_or(true);
         let siamese = siamese.unwrap_or(false);
+        let stochastic_downsample_by_degree = stochastic_downsample_by_degree.unwrap_or(false);
+        let normalize_learning_rate_by_degree = normalize_learning_rate_by_degree.unwrap_or(false);
+        let use_zipfian_sampling = use_zipfian_sampling.unwrap_or(true);
 
         // Validate that the provided parameters are within
         // reasonable bounds.
@@ -68,6 +80,9 @@ impl SkipGram {
             number_of_negative_samples,
             log_sigmoid,
             siamese,
+            stochastic_downsample_by_degree,
+            normalize_learning_rate_by_degree,
+            use_zipfian_sampling,
         })
     }
 
@@ -111,8 +126,8 @@ impl SkipGram {
         if !graph.has_nodes() {
             return Err("The provided graph does not have any node.".to_string());
         }
-
-        let expected_embedding_len = self.embedding_size * graph.get_nodes_number() as usize;
+        let nodes_number = graph.get_nodes_number();
+        let expected_embedding_len = self.embedding_size * nodes_number as usize;
 
         if embedding.len() != expected_embedding_len {
             return Err(format!(
@@ -250,7 +265,16 @@ impl SkipGram {
                     } else {
                         (exp_dot + 1.0).powf(2.0)
                     };
-            let weighted_loss = loss * learning_rate;
+            let mut weighted_loss = loss * learning_rate;
+
+            if self.normalize_learning_rate_by_degree {
+                weighted_loss *= 1.0 - (
+                    unsafe{
+                        graph.get_unchecked_node_degree_from_node_id(node_id) as f32
+                    }
+                    / nodes_number as f32
+                );
+            }
 
             update_hidden(node_id, total_context_embedding, weighted_loss);
             weighted_vector_sum(context_embedding_gradient, node_hidden, weighted_loss);
@@ -269,11 +293,29 @@ impl SkipGram {
                 .par_iter_complete_walks(&walk_parameters)?
                 .enumerate()
                 .map(|(walk_number, random_walk)| {
-                    (self.window_size..random_walk_length - self.window_size)
+                    (0..random_walk_length)
+                        .filter(|&central_index| {
+                            if !self.stochastic_downsample_by_degree {
+                                true
+                            } else {
+                                let degree = unsafe{
+                                    graph.get_unchecked_node_degree_from_node_id(random_walk[central_index as usize])
+                                };
+                                let seed = splitmix64(
+                                    random_state
+                                        + central_index as u64
+                                        + walk_number as u64
+                                );
+                                degree < sample_uniform(
+                                    nodes_number as _,
+                                    seed,
+                                ) as _
+                            }
+                        })
                         .map(|central_index| {
                             (
-                                &random_walk[central_index - self.window_size
-                                    ..central_index + self.window_size],
+                                &random_walk[central_index.saturating_sub(self.window_size)
+                                    ..(central_index + self.window_size).min(random_walk_length)],
                                 random_walk[central_index],
                                 central_index,
                             )
@@ -297,29 +339,59 @@ impl SkipGram {
                                     );
 
                                     // We compute the gradients relative to the negative classes.
-                                    let negative_variation = graph
-                                        .iter_random_source_node_ids(
-                                            self.number_of_negative_samples,
-                                            splitmix64(
-                                                random_state
-                                                    + central_index as u64
-                                                    + walk_number as u64,
-                                            ),
-                                        )
-                                        .filter(|&non_central_node_id| {
-                                            non_central_node_id != central_node_id
-                                                && non_central_node_id != context_node_id
-                                        })
-                                        .map(|non_central_node_id| {
-                                            compute_mini_batch_step(
-                                                &context_node_embedding,
-                                                context_gradient.as_mut_slice(),
-                                                non_central_node_id,
-                                                0.0,
-                                                learning_rate,
+                                    let negative_variation = if self.use_zipfian_sampling {
+                                        graph
+                                            .iter_random_source_node_ids(
+                                                self.number_of_negative_samples,
+                                                splitmix64(
+                                                    random_state
+                                                        + central_index as u64
+                                                        + walk_number as u64,
+                                                ),
                                             )
-                                        })
-                                        .sum::<f32>();
+                                            .filter(|&non_central_node_id| {
+                                                non_central_node_id != central_node_id
+                                                    && non_central_node_id != context_node_id
+                                            })
+                                            .map(|non_central_node_id| {
+                                                compute_mini_batch_step(
+                                                    &context_node_embedding,
+                                                    context_gradient.as_mut_slice(),
+                                                    non_central_node_id,
+                                                    0.0,
+                                                    learning_rate,
+                                                )
+                                            })
+                                            .sum::<f32>()
+                                        } else {
+                                            (0..self.number_of_negative_samples)
+                                                .map(|i| {
+                                                    let seed = splitmix64(
+                                                        random_state
+                                                            + central_index as u64
+                                                            + walk_number as u64
+                                                            + i as u64
+                                                    );
+                                                    sample_uniform(
+                                                        nodes_number as _,
+                                                        seed,
+                                                    ) as NodeT
+                                                })
+                                                .filter(|&non_central_node_id| {
+                                                    non_central_node_id != central_node_id
+                                                        && non_central_node_id != context_node_id
+                                                })
+                                                .map(|non_central_node_id| {
+                                                    compute_mini_batch_step(
+                                                        &context_node_embedding,
+                                                        context_gradient.as_mut_slice(),
+                                                        non_central_node_id,
+                                                        0.0,
+                                                        learning_rate,
+                                                    )
+                                                })
+                                                .sum::<f32>()
+                                        };
                                     update_embedding(context_node_id, &context_gradient);
                                     negative_variation + positive_variation
                                 })

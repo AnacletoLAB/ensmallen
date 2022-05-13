@@ -199,11 +199,11 @@ impl Graph {
 /// The weight can be validated as follows:
 /// ```rust
 /// # use graph::utils::parse_weight;
-/// assert!(parse_weight("0.0".to_string()).is_ok());
-/// assert!(parse_weight("-1.0".to_string()).is_ok());
-/// assert!(parse_weight("2.0".to_string()).is_ok());
-/// assert!(parse_weight("2ghgjh.0".to_string()).is_err());
-/// assert_eq!(parse_weight("2.0".to_string()).unwrap(), 2.0);
+/// assert!(parse_weight("0.0").is_ok());
+/// assert!(parse_weight("-1.0").is_ok());
+/// assert!(parse_weight("2.0").is_ok());
+/// assert!(parse_weight("2ghgjh.0").is_err());
+/// assert_eq!(parse_weight("2.0").unwrap(), 2.0);
 /// ```
 ///
 pub fn parse_weight(weight: &str) -> Result<WeightT> {

@@ -39,8 +39,7 @@ impl WeightedSPINE {
 
         pe!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&["embedding_size", "use_edge_weights_as_probabilities"])
-                .as_slice()
+            &["embedding_size", "use_edge_weights_as_probabilities"]
         ))?;
 
         Ok(Self {

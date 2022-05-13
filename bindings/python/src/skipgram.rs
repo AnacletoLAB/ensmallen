@@ -4,7 +4,7 @@ use numpy::PyArray2;
 ///
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, window_size, clipping_value, number_of_negative_samples, log_sigmoid, siamese, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree)"]
+#[text_signature = "(*, embedding_size, window_size, clipping_value, number_of_negative_samples, log_sigmoid, siamese, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_zipfian_sampling)"]
 pub struct SkipGram {
     pub inner: cpu_models::SkipGram,
 }
@@ -83,6 +83,12 @@ impl SkipGram {
     ///     and becomes an approximation of an exact walk.
     /// normalize_by_degree: Optional[bool] = False
     ///     Whether to normalize the random walks by the node degree.
+    /// stochastic_downsample_by_degree: Optional[bool]
+    ///     Randomly skip samples with probability proportional to the degree of the central node. By default false.
+    /// normalize_learning_rate_by_degree: Optional[bool]
+    ///     Divide the learning rate by the degree of the central node. By default false.
+    /// use_zipfian_sampling: Optional[bool]
+    ///     Sample negatives proportionally to their degree. By default true.
     pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<SkipGram> {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
@@ -96,6 +102,9 @@ impl SkipGram {
                 "number_of_negative_samples",
                 "log_sigmoid",
                 "siamese",
+                "stochastic_downsample_by_degree",
+                "normalize_learning_rate_by_degree",
+                "use_zipfian_sampling",
             ])
             .as_slice()
         ))?;
@@ -111,6 +120,9 @@ impl SkipGram {
                 extract_value_rust_result!(kwargs, "number_of_negative_samples", usize),
                 extract_value_rust_result!(kwargs, "log_sigmoid", bool),
                 extract_value_rust_result!(kwargs, "siamese", bool),
+                extract_value_rust_result!(kwargs, "stochastic_downsample_by_degree", bool),
+                extract_value_rust_result!(kwargs, "normalize_learning_rate_by_degree", bool),
+                extract_value_rust_result!(kwargs, "use_zipfian_sampling", bool),
             ))?,
         })
     }
