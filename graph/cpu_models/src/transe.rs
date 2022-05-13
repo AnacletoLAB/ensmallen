@@ -204,7 +204,7 @@ impl TransE {
                     .for_each(|((src_feature, edge_feature), dst_feature)| {
                         *src_feature /= src_embedding_norm;
                         *dst_feature /= dst_embedding_norm;
-                        *edge_type_feature /= edge_type_embedding_norm;
+                        *edge_feature /= edge_type_embedding_norm;
                         let feature_loss = sign
                             * 2.0
                             * (*src_feature + *edge_feature - *dst_feature)
