@@ -177,37 +177,34 @@ impl TransE {
                 + f32::EPSILON
         };
 
-        let normalize_embedding = |embedding: &mut [f32]| {
-            embedding
-                .par_chunks_mut(self.embedding_size)
-                .for_each(|vector| {
-                    let vector_norm = norm(vector);
-                    vector.iter_mut().for_each(|value| {
-                        *value /= vector_norm;
-                    });
-                });
-        };
-
         let compute_mini_batch_step =
             |src: usize, dst: usize, edge_type: usize, sign: f32, learning_rate: f32| {
                 let src_embedding = unsafe {
                     &mut (*shared_node_embedding.get())
                         [(src * self.embedding_size)..((src + 1) * self.embedding_size)]
                 };
+                let src_embedding_norm = norm(src_embedding);
+
                 let dst_embedding = unsafe {
                     &mut (*shared_node_embedding.get())
                         [(dst * self.embedding_size)..((dst + 1) * self.embedding_size)]
                 };
+                let dst_embedding_norm = norm(dst_embedding);
+
                 let edge_type_embedding = unsafe {
                     &mut (*shared_edge_type_embedding.get())
                         [(edge_type * self.embedding_size)..((edge_type + 1) * self.embedding_size)]
                 };
+                let edge_type_embedding_norm = norm(edge_type_embedding_norm);
 
                 src_embedding
                     .iter_mut()
                     .zip(edge_type_embedding.iter_mut())
                     .zip(dst_embedding.iter_mut())
                     .for_each(|((src_feature, edge_feature), dst_feature)| {
+                        *src_feature /= src_embedding_norm;
+                        *dst_feature /= dst_embedding_norm;
+                        *edge_type_feature /= edge_type_embedding_norm;
                         let feature_loss = sign
                             * 2.0
                             * (*src_feature + *edge_feature - *dst_feature)
@@ -223,13 +220,6 @@ impl TransE {
         (0..epochs)
             .progress_with(epochs_progress_bar)
             .for_each(|_| {
-
-                // Renormalize the vectors if required
-                if self.renormalize {
-                    unsafe { normalize_embedding(*shared_node_embedding.get()) };
-                    unsafe { normalize_embedding(*shared_edge_type_embedding.get()) };
-                }
-
                 // We update the random state used to generate the random walks
                 // and the negative samples.
                 random_state = splitmix64(random_state);
