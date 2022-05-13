@@ -4,7 +4,7 @@ use numpy::PyArray2;
 ///
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, renormalize, random_state)"]
+#[text_signature = "(*, embedding_size, renormalize, relu_bias, random_state)"]
 pub struct TransE {
     pub inner: cpu_models::TransE,
 }
@@ -33,6 +33,8 @@ impl TransE {
     ///     Size of the embedding.
     /// renormalize: bool = True
     ///     Whether to renormalize at each loop, by default true.
+    /// relu_bias: float = 1.0
+    ///     Bias to use for the ReLU.
     /// random_state: int = 42
     ///     random_state to use to reproduce the walks.
     pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<TransE> {
@@ -41,13 +43,14 @@ impl TransE {
 
         pe!(validate_kwargs(
             kwargs,
-            &["embedding_size", "renormalize", "random_state",]
+            &["embedding_size", "renormalize", "relu_bias", "random_state",]
         ))?;
 
         Ok(Self {
             inner: pe!(cpu_models::TransE::new(
                 extract_value_rust_result!(kwargs, "embedding_size", usize),
                 extract_value_rust_result!(kwargs, "renormalize", bool),
+                extract_value_rust_result!(kwargs, "relu_bias", f32),
                 extract_value_rust_result!(kwargs, "random_state", u64),
             ))?,
         })

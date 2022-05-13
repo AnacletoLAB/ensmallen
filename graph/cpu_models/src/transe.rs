@@ -4,15 +4,14 @@ use indicatif::{ProgressBar, ProgressStyle};
 use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelRefMutIterator;
 use rayon::iter::ParallelIterator;
-use rayon::slice::ParallelSliceMut;
 use vec_rand::{random_f32, sample_uniform, splitmix64};
 
 #[derive(Clone, Debug)]
 pub struct TransE {
     embedding_size: usize,
     renormalize: bool,
-    random_state: u64,
     relu_bias: f32,
+    random_state: u64,
 }
 
 impl TransE {
@@ -21,19 +20,19 @@ impl TransE {
     /// # Arguments
     /// `embedding_size`: Option<usize> - Size of the embedding.
     /// `renormalize`: Option<bool> - Whether to renormalize at each loop, by default true.
-    /// `random_state`: Option<u64> - The random state to use to reproduce the training.
     /// `relu_bias`: Option<f32> - The bias to apply to the relu. By default, 1.0.
+    /// `random_state`: Option<u64> - The random state to use to reproduce the training.
     pub fn new(
         embedding_size: Option<usize>,
         renormalize: Option<bool>,
-        random_state: Option<u64>,
         relu_bias: Option<f32>,
+        random_state: Option<u64>,
     ) -> Result<Self, String> {
         // Handle the values of the default parameters.
         let embedding_size = embedding_size.unwrap_or(100);
         let renormalize = renormalize.unwrap_or(true);
-        let random_state = random_state.unwrap_or(42);
         let relu_bias = relu_bias.unwrap_or(1.0);
+        let random_state = random_state.unwrap_or(42);
 
         // Validate that the provided parameters are within
         // reasonable bounds.
