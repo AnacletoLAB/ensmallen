@@ -12,6 +12,7 @@ pub struct TransE {
     embedding_size: usize,
     renormalize: bool,
     random_state: u64,
+    relu_bias: f32,
 }
 
 impl TransE {
@@ -21,15 +22,18 @@ impl TransE {
     /// `embedding_size`: Option<usize> - Size of the embedding.
     /// `renormalize`: Option<bool> - Whether to renormalize at each loop, by default true.
     /// `random_state`: Option<u64> - The random state to use to reproduce the training.
+    /// `relu_bias`: Option<f32> - The bias to apply to the relu. By default, 1.0.
     pub fn new(
         embedding_size: Option<usize>,
         renormalize: Option<bool>,
         random_state: Option<u64>,
+        relu_bias: Option<f32>,
     ) -> Result<Self, String> {
         // Handle the values of the default parameters.
         let embedding_size = embedding_size.unwrap_or(100);
         let renormalize = renormalize.unwrap_or(true);
         let random_state = random_state.unwrap_or(42);
+        let relu_bias = relu_bias.unwrap_or(1.0);
 
         // Validate that the provided parameters are within
         // reasonable bounds.
@@ -40,6 +44,7 @@ impl TransE {
         Ok(Self {
             embedding_size,
             renormalize,
+            relu_bias,
             random_state,
         })
     }
@@ -83,7 +88,8 @@ impl TransE {
     ) -> Result<(), String> {
         let epochs = epochs.unwrap_or(10);
         let verbose = verbose.unwrap_or(true);
-        let mut learning_rate = learning_rate.unwrap_or(0.001);
+        let scale_factor = (self.embedding_size as f32).sqrt();
+        let mut learning_rate = learning_rate.unwrap_or(0.001) / scale_factor;
         let learning_rate_decay = learning_rate_decay.unwrap_or(0.9);
         let mut random_state = splitmix64(self.random_state);
 
@@ -124,8 +130,6 @@ impl TransE {
             ));
         }
 
-        let scale_factor = (self.embedding_size as f32).sqrt();
-
         if !graph.has_nodes() {
             return Err("The provided graph does not have any node.".to_string());
         }
@@ -146,7 +150,9 @@ impl TransE {
             .par_iter_mut()
             .enumerate()
             .for_each(|(i, e)| *e = 2.0 * random_f32(splitmix64(random_state + i as u64)) - 1.0);
+
         random_state = splitmix64(random_state);
+
         edge_type_embedding
             .par_iter_mut()
             .enumerate()
@@ -177,44 +183,81 @@ impl TransE {
                 + f32::EPSILON
         };
 
-        let compute_mini_batch_step =
-            |src: usize, dst: usize, edge_type: usize, sign: f32, learning_rate: f32| {
-                let src_embedding = unsafe {
-                    &mut (*shared_node_embedding.get())
-                        [(src * self.embedding_size)..((src + 1) * self.embedding_size)]
-                };
-                let src_embedding_norm = norm(src_embedding);
-
-                let dst_embedding = unsafe {
-                    &mut (*shared_node_embedding.get())
-                        [(dst * self.embedding_size)..((dst + 1) * self.embedding_size)]
-                };
-                let dst_embedding_norm = norm(dst_embedding);
-
-                let edge_type_embedding = unsafe {
-                    &mut (*shared_edge_type_embedding.get())
-                        [(edge_type * self.embedding_size)..((edge_type + 1) * self.embedding_size)]
-                };
-                let edge_type_embedding_norm = norm(edge_type_embedding);
-
-                src_embedding
-                    .iter_mut()
-                    .zip(edge_type_embedding.iter_mut())
-                    .zip(dst_embedding.iter_mut())
-                    .for_each(|((src_feature, edge_feature), dst_feature)| {
-                        *src_feature /= src_embedding_norm;
-                        *dst_feature /= dst_embedding_norm;
-                        *edge_feature /= edge_type_embedding_norm;
-                        let feature_loss = sign
-                            * 2.0
-                            * (*src_feature + *edge_feature - *dst_feature)
-                            * learning_rate
-                            / scale_factor;
-                        *src_feature -= feature_loss;
-                        *dst_feature += feature_loss;
-                        *edge_feature -= feature_loss;
-                    });
+        let compute_mini_batch_step = |src: usize,
+                                       not_src: usize,
+                                       dst: usize,
+                                       not_dst: usize,
+                                       edge_type: usize,
+                                       learning_rate: f32| {
+            let src_embedding = unsafe {
+                &mut (*shared_node_embedding.get())
+                    [(src * self.embedding_size)..((src + 1) * self.embedding_size)]
             };
+            let not_src_embedding = unsafe {
+                &mut (*shared_node_embedding.get())
+                    [(not_src * self.embedding_size)..((not_src + 1) * self.embedding_size)]
+            };
+            let dst_embedding = unsafe {
+                &mut (*shared_node_embedding.get())
+                    [(dst * self.embedding_size)..((dst + 1) * self.embedding_size)]
+            };
+            let not_dst_embedding = unsafe {
+                &mut (*shared_node_embedding.get())
+                    [(not_dst * self.embedding_size)..((not_dst + 1) * self.embedding_size)]
+            };
+            let edge_type_embedding = unsafe {
+                &mut (*shared_edge_type_embedding.get())
+                    [(edge_type * self.embedding_size)..((edge_type + 1) * self.embedding_size)]
+            };
+
+            let (dst_norm, not_dst_norm, src_norm, not_src_norm, edge_type_norm) =
+                if self.renormalize {
+                    (
+                        norm(dst_embedding),
+                        norm(not_dst_embedding),
+                        norm(src_embedding),
+                        norm(not_src_embedding),
+                        norm(edge_type_embedding),
+                    )
+                } else {
+                    (1.0, 1.0, 1.0, 1.0, 1.0)
+                };
+
+            src_embedding
+                .iter_mut()
+                .zip(not_src_embedding.iter_mut())
+                .zip(dst_embedding.iter_mut().zip(not_dst_embedding.iter_mut()))
+                .zip(edge_type_embedding.iter_mut())
+                .for_each(
+                    |(
+                        ((src_feature, not_src_feature), (dst_feature, not_dst_feature)),
+                        edge_type_feature,
+                    )| {
+                        if self.renormalize {
+                            *src_feature /= src_norm;
+                            *not_src_feature /= not_src_norm;
+                            *dst_feature /= dst_norm;
+                            *not_dst_feature /= not_dst_norm;
+                            *edge_type_feature /= edge_type_norm;
+                        }
+
+                        let mut positive_distance = *src_feature + *edge_type_feature - *dst_feature;
+                        let mut negative_distance =
+                            *not_src_feature + *edge_type_feature - *not_dst_feature;
+                        let loss = positive_distance.powf(2.0) - negative_distance.powf(2.0);
+
+                        if loss > self.relu_bias {
+                            positive_distance *= learning_rate;
+                            negative_distance *= learning_rate;    
+                            *src_feature -= positive_distance;
+                            *dst_feature += positive_distance;
+                            *not_src_feature += negative_distance;
+                            *not_dst_feature -= negative_distance;
+                            *edge_type_feature -= positive_distance - negative_distance;
+                        }
+                    },
+                );
+        };
 
         // We start to loop over the required amount of epochs.
         (0..epochs)
@@ -229,21 +272,16 @@ impl TransE {
                     .par_iter_directed_edge_node_ids_and_edge_type_id()
                     .for_each(|(edge_id, src, dst, edge_type_id)| {
                         let edge_type_id = edge_type_id.unwrap() as usize;
+                        let not_src =
+                            sample_uniform(nodes_number as u64, splitmix64(random_state + edge_id));
+                        let not_dst =
+                            sample_uniform(nodes_number as u64, splitmix64(random_state + edge_id));
                         compute_mini_batch_step(
                             src as usize,
+                            not_src as usize,
                             dst as usize,
+                            not_dst as usize,
                             edge_type_id,
-                            1.0,
-                            learning_rate,
-                        );
-                        compute_mini_batch_step(
-                            sample_uniform(nodes_number as u64, splitmix64(random_state + edge_id)),
-                            sample_uniform(
-                                nodes_number as u64,
-                                splitmix64(random_state + edge_id + 1),
-                            ),
-                            edge_type_id,
-                            -1.0,
                             learning_rate,
                         );
                     });
