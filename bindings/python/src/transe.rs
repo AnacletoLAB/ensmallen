@@ -121,7 +121,7 @@ impl TransE {
 
         Ok((
             node_embedding.into_py(gil.python()),
-            edge_type_embedding.into_py(gil.python())
+            edge_type_embedding.into_py(gil.python()),
         ))
     }
 }

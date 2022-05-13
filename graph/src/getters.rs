@@ -569,6 +569,23 @@ impl Graph {
         })
     }
 
+    /// Return the known edge types of the edges, dropping unknown ones.
+    pub fn get_known_edge_type_ids(&self) -> Result<Vec<EdgeTypeT>> {
+        self.must_have_edge_types().map(|_| {
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| {
+                    ets.ids
+                        .par_iter()
+                        .copied()
+                        .filter_map(|et| et)
+                        .collect()
+                })
+                .unwrap()
+        })
+    }
+
     /// Return the unique edge type IDs of the graph edges.
     ///
     /// # Example

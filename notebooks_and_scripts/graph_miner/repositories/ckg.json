@@ -1,0 +1,34 @@
+{
+    "ClinicalKnowledgeGraph": {
+        "latest": {
+            "urls": [
+                "http://commondatastorage.googleapis.com/freebase-public/rdf/freebase-rdf-latest.gz"
+            ],
+            "paths": [
+                "ckg.tar.gz"
+            ],
+            "arguments": {
+                "name": "ClinicalKnowledgeGraph",
+                "node_type_path": "ckg_node_type_list.tsv",
+                "node_types_column": "node_type",
+                "edge_type_path": "ckg_edge_type_list.tsv",
+                "edge_types_column": "edge_type",
+                "node_path": "ckg_node_list.tsv",
+                "node_list_node_types_column": "category",
+                "nodes_column": "node_name",
+                "node_list_numeric_node_type_ids": true,
+                "edge_path": "ckg_edge_list.tsv",
+                "sources_column": "subject",
+                "edge_list_edge_types_column": "predicate",
+                "edge_list_numeric_edge_type_ids": true,
+                "edge_list_numeric_node_ids": true,
+                "destinations_column": "object",
+                "edge_list_header": true,
+                "edge_list_is_correct": true,
+                "node_list_is_correct": true,
+                "edge_type_list_is_correct": true,
+                "node_type_list_is_correct": true
+            }
+        }
+    }
+}
