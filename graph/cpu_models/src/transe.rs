@@ -4,7 +4,7 @@ use indicatif::{ProgressBar, ProgressStyle};
 use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelRefMutIterator;
 use rayon::iter::ParallelIterator;
-use vec_rand::{random_f32, sample_uniform, splitmix64};
+use vec_rand::{random_f32, splitmix64};
 
 #[derive(Clone, Debug)]
 pub struct TransE {
@@ -240,14 +240,15 @@ impl TransE {
                             *edge_type_feature /= edge_type_norm;
                         }
 
-                        let mut positive_distance = *src_feature + *edge_type_feature - *dst_feature;
+                        let mut positive_distance =
+                            *src_feature + *edge_type_feature - *dst_feature;
                         let mut negative_distance =
                             *not_src_feature + *edge_type_feature - *not_dst_feature;
                         let loss = positive_distance.powf(2.0) - negative_distance.powf(2.0);
 
                         if loss > self.relu_bias {
                             positive_distance *= learning_rate;
-                            negative_distance *= learning_rate;    
+                            negative_distance *= learning_rate;
                             *src_feature -= positive_distance;
                             *dst_feature += positive_distance;
                             *not_src_feature += negative_distance;
@@ -269,18 +270,23 @@ impl TransE {
                 // We iterate over the graph edges.
                 graph
                     .par_iter_directed_edge_node_ids_and_edge_type_id()
-                    .for_each(|(edge_id, src, dst, edge_type_id)| {
-                        let edge_type_id = edge_type_id.unwrap() as usize;
-                        let not_src =
-                            sample_uniform(nodes_number as u64, splitmix64(random_state + edge_id));
-                        let not_dst =
-                            sample_uniform(nodes_number as u64, splitmix64(random_state + edge_id));
+                    .zip(
+                        graph.par_iter_zipfian_random_source_node_ids(
+                            graph.get_number_of_directed_edges() as usize,
+                            random_state
+                        )
+                        .zip(graph.par_iter_zipfian_random_source_node_ids(
+                            graph.get_number_of_directed_edges() as usize,
+                            random_state.wrapping_mul(2)
+                        )),
+                    )
+                    .for_each(|((_, src, dst, edge_type_id), (not_src, not_dst))| {
                         compute_mini_batch_step(
                             src as usize,
                             not_src as usize,
                             dst as usize,
                             not_dst as usize,
-                            edge_type_id,
+                            edge_type_id.unwrap() as usize,
                             learning_rate,
                         );
                     });

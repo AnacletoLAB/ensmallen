@@ -341,7 +341,7 @@ impl SkipGram {
                                     // We compute the gradients relative to the negative classes.
                                     let negative_variation = if self.use_zipfian_sampling {
                                         graph
-                                            .iter_random_source_node_ids(
+                                            .iter_zipfian_random_source_node_ids(
                                                 self.number_of_negative_samples,
                                                 splitmix64(
                                                     random_state
