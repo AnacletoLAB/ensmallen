@@ -12,7 +12,6 @@ use rayon::iter::ParallelIterator;
 use roaring::{RoaringBitmap, RoaringTreemap};
 use std::collections::HashSet;
 use vec_rand::xorshift::xorshift as rand_u64;
-use vec_rand::{gen_random_vec, sample_uniform};
 
 /// Returns roaring tree map with the validation indices.
 ///
@@ -94,6 +93,7 @@ impl Graph {
     /// * `sample_only_edges_with_heterogeneous_node_types`: Option<bool> - Whether to sample negative edges only with source and destination nodes that have different node types.
     /// * `minimum_node_degree`: Option<NodeT> - The minimum node degree of either the source or destination node to be sampled. By default 0.
     /// * `maximum_node_degree`: Option<NodeT> - The maximum node degree of either the source or destination node to be sampled. By default, the number of nodes.
+    /// * `use_zipfian_sampling`: Option<bool> - Whether to sample the nodes using zipfian distribution. By default True. Not using this may cause significant biases.
     ///
     /// # Raises
     /// * If the `sample_only_edges_with_heterogeneous_node_types` argument is provided as true, but the graph does not have node types.
@@ -106,6 +106,7 @@ impl Graph {
         sample_only_edges_with_heterogeneous_node_types: Option<bool>,
         minimum_node_degree: Option<NodeT>,
         maximum_node_degree: Option<NodeT>,
+        use_zipfian_sampling: Option<bool>,
     ) -> Result<Graph> {
         if number_of_negative_samples == 0 {
             return Err(String::from("The number of negatives cannot be zero."));
@@ -122,6 +123,7 @@ impl Graph {
             ).to_string());
         }
 
+        let use_zipfian_sampling = use_zipfian_sampling.unwrap_or(true);
         let only_from_same_component = only_from_same_component.unwrap_or(false);
         let mut random_state = random_state.unwrap_or(0xbadf00d);
 
@@ -211,76 +213,83 @@ impl Graph {
             sampling_round += 1;
 
             // generate the random edge-sources
-            let sampled_edge_ids =
-                gen_random_vec(number_of_negative_samples as usize, src_random_state)
-                    .into_par_iter()
-                    .zip(
-                        gen_random_vec(number_of_negative_samples as usize, dst_random_state)
-                            .into_par_iter(),
-                    )
-                    // convert them to plain (src, dst)
-                    .filter_map(|(src_seed, dst_seed)| {
-                        let src = sample_uniform(nodes_number as u64, src_seed as u64) as NodeT;
-                        let dst = sample_uniform(nodes_number as u64, dst_seed as u64) as NodeT;
-                        if !self.is_directed() && src > dst {
-                            return None;
-                        }
+            let sampled_edge_ids = self
+                .par_iter_zipfian_random_source_node_ids(
+                    number_of_negative_samples as usize,
+                    src_random_state,
+                )
+                .zip(self.par_iter_zipfian_random_source_node_ids(
+                    number_of_negative_samples as usize,
+                    src_random_state,
+                ))
+                // convert them to plain (src, dst)
+                .filter_map(|(src, dst)| {
+                    if !self.is_directed() && src > dst {
+                        return None;
+                    }
 
-                        if !self.has_selfloops() && src == dst {
-                            return None;
-                        }
+                    if !self.has_selfloops() && src == dst {
+                        return None;
+                    }
 
-                        unsafe {
-                            if let Some(minimum_node_degree) = &minimum_node_degree {
-                                if self.get_unchecked_node_degree_from_node_id(src)
+                    unsafe {
+                        if let Some(minimum_node_degree) = &minimum_node_degree {
+                            if self.get_unchecked_node_degree_from_node_id(src)
+                                < *minimum_node_degree
+                                || self.get_unchecked_node_degree_from_node_id(dst)
                                     < *minimum_node_degree
-                                    || self.get_unchecked_node_degree_from_node_id(dst)
-                                        < *minimum_node_degree
-                                {
-                                    return None;
-                                }
+                            {
+                                return None;
                             }
+                        }
 
-                            if let Some(maximum_node_degree) = &maximum_node_degree {
-                                if self.get_unchecked_node_degree_from_node_id(src)
+                        if let Some(maximum_node_degree) = &maximum_node_degree {
+                            if self.get_unchecked_node_degree_from_node_id(src)
+                                > *maximum_node_degree
+                                || self.get_unchecked_node_degree_from_node_id(dst)
                                     > *maximum_node_degree
-                                    || self.get_unchecked_node_degree_from_node_id(dst)
-                                        > *maximum_node_degree
-                                {
-                                    return None;
-                                }
-                            }
-                        }
-
-                        if let Some(sn) = &seed_nodes {
-                            if !sn.contains(src) && !sn.contains(dst) {
+                            {
                                 return None;
                             }
                         }
-                        if let Some(ncs) = &node_components {
-                            if ncs[src as usize] != ncs[dst as usize] {
-                                return None;
-                            }
-                        }
+                    }
 
-                        if sample_only_edges_with_heterogeneous_node_types
-                            && unsafe {
-                                self.get_unchecked_node_type_ids_from_node_id(src)
-                                    == self.get_unchecked_node_type_ids_from_node_id(dst)
-                            }
-                        {
+                    if let Some(sn) = &seed_nodes {
+                        if !sn.contains(src) && !sn.contains(dst) {
                             return None;
                         }
-
-                        // If the edge is not a self-loop or the user allows self-loops and
-                        // the graph is directed or the edges are inserted in a way to avoid
-                        // inserting bidirectional edges.
-                        match self.has_edge_from_node_ids(src, dst) {
-                            true => None,
-                            false => Some(self.encode_edge(src, dst)),
+                    }
+                    if let Some(ncs) = &node_components {
+                        if ncs[src as usize] != ncs[dst as usize] {
+                            return None;
                         }
-                    })
-                    .collect::<Vec<EdgeT>>();
+                    }
+
+                    if sample_only_edges_with_heterogeneous_node_types
+                        && unsafe {
+                            self.get_unchecked_node_type_ids_from_node_id(src)
+                                == self.get_unchecked_node_type_ids_from_node_id(dst)
+                        }
+                    {
+                        return None;
+                    }
+
+                    // If the edge is not a self-loop or the user allows self-loops and
+                    // the graph is directed or the edges are inserted in a way to avoid
+                    // inserting bidirectional edges.
+                    if self.has_edge_from_node_ids(src, dst) {
+                        return None;
+                    }
+                    
+                    let fake_edge_id = self.encode_edge(src, dst);
+
+                    if negative_edges_hashset.contains(&fake_edge_id){
+                        return None;
+                    }
+                    
+                    Some(fake_edge_id)
+                })
+                .collect::<Vec<EdgeT>>();
 
             for edge_id in sampled_edge_ids.iter() {
                 if negative_edges_hashset.len() >= number_of_negative_samples as usize {
@@ -1416,13 +1425,16 @@ impl Graph {
                         vec![Vec::new(); self.get_node_types_number().unwrap() as usize];
                     // itering over the indices and adding each node to the
                     // vector of the corresponding node type.
-                    nts.get_ids().iter().enumerate().for_each(|(node_id, node_type)| {
-                        // if the node has a node_type
-                        if let Some(nt) = node_type {
-                            // Get the index of the correct node type vector.
-                            node_sets[nt[0] as usize].push(node_id as _);
-                        };
-                    });
+                    nts.get_ids()
+                        .iter()
+                        .enumerate()
+                        .for_each(|(node_id, node_type)| {
+                            // if the node has a node_type
+                            if let Some(nt) = node_type {
+                                // Get the index of the correct node type vector.
+                                node_sets[nt[0] as usize].push(node_id as _);
+                            };
+                        });
 
                     node_sets
                 } else {
@@ -1441,10 +1453,12 @@ impl Graph {
             .unwrap();
 
         // Allocate the vectors for the nodes of each
-        let mut train_node_types: Vec<Option<Vec<NodeTypeT>>> = self.node_types
+        let mut train_node_types: Vec<Option<Vec<NodeTypeT>>> = self
+            .node_types
             .as_ref()
             .as_ref()
-            .map(|nts| nts.get_ids().to_vec()).unwrap();
+            .map(|nts| nts.get_ids().to_vec())
+            .unwrap();
 
         let mut test_node_types: Vec<Option<Vec<NodeTypeT>>> =
             vec![None; self.get_nodes_number() as usize];
@@ -1455,11 +1469,10 @@ impl Graph {
             let validation_chunk = kfold(k, k_index, &mut node_set, random_state)?;
             // Iterate of node ids
             for test_node_id in validation_chunk {
-                let node_type = unsafe { 
-                    self.get_unchecked_node_type_ids_from_node_id(*test_node_id) 
-                };
+                let node_type =
+                    unsafe { self.get_unchecked_node_type_ids_from_node_id(*test_node_id) };
                 if validation_chunk.contains(test_node_id) {
-                    test_node_types[ *test_node_id as usize] = node_type.cloned();
+                    test_node_types[*test_node_id as usize] = node_type.cloned();
                     train_node_types[*test_node_id as usize] = None;
                 }
             }
@@ -1709,7 +1722,8 @@ impl Graph {
             .edge_types
             .as_ref()
             .as_ref()
-            .map(|ets| ets.get_ids().to_vec()).unwrap();
+            .map(|ets| ets.get_ids().to_vec())
+            .unwrap();
         let mut test_edge_types = vec![None; self.get_number_of_directed_edges() as usize];
 
         for mut edge_set in edge_sets {
@@ -1718,11 +1732,9 @@ impl Graph {
             let validation_chunk = kfold(k, k_index, &mut edge_set, random_state)?;
             // Iterate of edge ids
             for edge_id in validation_chunk {
-                let edge_type = unsafe { 
-                    self.get_unchecked_edge_type_id_from_edge_id(*edge_id) 
-                };
+                let edge_type = unsafe { self.get_unchecked_edge_type_id_from_edge_id(*edge_id) };
                 if validation_chunk.contains(edge_id) {
-                    test_edge_types[ *edge_id as usize] = edge_type;
+                    test_edge_types[*edge_id as usize] = edge_type;
                     train_edge_types[*edge_id as usize] = None;
                 }
             }
