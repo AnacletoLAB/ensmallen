@@ -574,7 +574,7 @@ impl Graph {
         let get_node_type_ids =
             move |node_id: NodeT| -> Option<Vec<NodeTypeT>> {
                 if return_node_types {
-                    let node_type_ids =
+                    let node_type_ids: Option<Vec<NodeTypeT>> =
                         unsafe { self.get_unchecked_node_type_ids_from_node_id(node_id) }
                             .map(|x| x.clone());
                     if multi_label {

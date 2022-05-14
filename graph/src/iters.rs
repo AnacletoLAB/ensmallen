@@ -525,7 +525,7 @@ impl Graph {
     /// # Arguments
     /// 'quantity': usize - Number of nodes to sample.
     /// 'random_state': u64 - Random state to use to sample the nodes.
-    pub fn iter_random_source_node_ids(
+    pub fn iter_zipfian_random_source_node_ids(
         &self,
         quantity: usize,
         mut random_state: u64,
@@ -546,7 +546,7 @@ impl Graph {
     /// # Arguments
     /// 'quantity': usize - Number of nodes to sample.
     /// 'random_state': u64 - Random state to use to sample the nodes.
-    pub fn par_iter_random_source_node_ids(
+    pub fn par_iter_zipfian_random_source_node_ids(
         &self,
         quantity: usize,
         random_state: u64,
@@ -561,10 +561,30 @@ impl Graph {
         })
     }
 
+    /// Return iterator on random (non unique) node IDs.
+    ///
+    /// # Implementation details
+    /// This method is different from `iter_zipfian_random_source_node_ids` as
+    /// it does not sample following any particular degree distribution.
+    ///
+    /// # Arguments
+    /// 'quantity': usize - Number of nodes to sample.
+    /// 'random_state': u64 - Random state to use to sample the nodes.
+    pub fn iter_random_node_ids(
+        &self,
+        quantity: usize,
+        random_state: u64,
+    ) -> impl Iterator<Item = NodeT> + '_ {
+        let number_of_nodes = self.get_nodes_number() as u64;
+        (0..quantity).map(move |i| {
+            sample_uniform(number_of_nodes, splitmix64(random_state + i as u64)) as NodeT
+        })
+    }
+
     /// Return parallel iterator on random (non unique) node IDs.
     ///
     /// # Implementation details
-    /// This method is different from `par_iter_random_source_node_ids` as
+    /// This method is different from `par_iter_zipfian_random_source_node_ids` as
     /// it does not sample following any particular degree distribution.
     ///
     /// # Arguments
