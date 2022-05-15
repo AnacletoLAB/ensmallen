@@ -4,7 +4,7 @@ use numpy::PyArray2;
 ///
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, window_size, clipping_value, number_of_negative_samples, log_sigmoid, siamese, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_zipfian_sampling)"]
+#[text_signature = "(*, embedding_size, window_size, clipping_value, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, stochastic_downsample_by_degree, use_zipfian_sampling)"]
 pub struct KGCBOW {
     pub inner: cpu_models::KGCBOW,
 }
@@ -38,10 +38,6 @@ impl KGCBOW {
     ///     By default, `6.0`, where the loss is already close to zero.
     /// number_of_negative_samples: Optional[int] = 5
     ///     Number of negative samples to extract for each context.
-    /// log_sigmoid: Optional[bool] = True
-    ///     Whether to use the model using a sigmoid or log sigmoid. By default, log sigmoid.
-    /// siamese: Optional[bool] = False
-    ///     Whether to use the model in Siamese mode, using half the weights and therefore half the memory.
     /// walk_length: Optional[int] = 32
     ///     Maximal length of the random walk.
     ///     On graphs without traps, all walks have this length.
@@ -85,8 +81,6 @@ impl KGCBOW {
     ///     Whether to normalize the random walks by the node degree.
     /// stochastic_downsample_by_degree: Optional[bool]
     ///     Randomly skip samples with probability proportional to the degree of the central node. By default false.
-    /// normalize_learning_rate_by_degree: Optional[bool]
-    ///     Divide the learning rate by the degree of the central node. By default false.
     /// use_zipfian_sampling: Optional[bool]
     ///     Sample negatives proportionally to their degree. By default true.
     pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<KGCBOW> {
@@ -100,10 +94,7 @@ impl KGCBOW {
                 "window_size",
                 "clipping_value",
                 "number_of_negative_samples",
-                "log_sigmoid",
-                "siamese",
                 "stochastic_downsample_by_degree",
-                "normalize_learning_rate_by_degree",
                 "use_zipfian_sampling",
             ])
             .as_slice()
@@ -118,10 +109,7 @@ impl KGCBOW {
                 extract_value_rust_result!(kwargs, "window_size", usize),
                 extract_value_rust_result!(kwargs, "clipping_value", f32),
                 extract_value_rust_result!(kwargs, "number_of_negative_samples", usize),
-                extract_value_rust_result!(kwargs, "log_sigmoid", bool),
-                extract_value_rust_result!(kwargs, "siamese", bool),
                 extract_value_rust_result!(kwargs, "stochastic_downsample_by_degree", bool),
-                extract_value_rust_result!(kwargs, "normalize_learning_rate_by_degree", bool),
                 extract_value_rust_result!(kwargs, "use_zipfian_sampling", bool),
             ))?,
         })
@@ -152,7 +140,7 @@ impl KGCBOW {
         &self,
         graph: &Graph,
         py_kwargs: Option<&PyDict>,
-    ) -> PyResult<(Py<PyArray2<f32>>, Py<PyArray2<f32>>, Py<PyArray2<f32>>)> {
+    ) -> PyResult<Py<PyArray2<f32>>> {
         let gil = pyo3::Python::acquire_gil();
 
         let py = pyo3::Python::acquire_gil();
@@ -169,44 +157,20 @@ impl KGCBOW {
             [graph.inner.get_nodes_number() as usize, columns_number],
             false,
         );
-        let node_type_embedding = PyArray2::zeros(
-            gil.python(),
-            [
-                pe!(graph.inner.get_node_types_number())? as usize,
-                columns_number,
-            ],
-            false,
-        );
-        let edge_type_embedding = PyArray2::zeros(
-            gil.python(),
-            [
-                pe!(graph.inner.get_edge_types_number())? as usize,
-                columns_number,
-            ],
-            false,
-        );
 
         let node_embedding_slice = unsafe { node_embedding.as_slice_mut().unwrap() };
-        let node_type_embedding_slice = unsafe { node_type_embedding.as_slice_mut().unwrap() };
-        let edge_type_embedding_slice = unsafe { edge_type_embedding.as_slice_mut().unwrap() };
 
         // We always use the racing version of the fit transform
         // as we generally do not care about memory collisions.
         pe!(self.inner.fit_transform(
             &graph.inner,
             node_embedding_slice,
-            node_type_embedding_slice,
-            edge_type_embedding_slice,
             extract_value_rust_result!(kwargs, "epochs", usize),
             extract_value_rust_result!(kwargs, "learning_rate", f32),
             extract_value_rust_result!(kwargs, "learning_rate_decay", f32),
             extract_value_rust_result!(kwargs, "verbose", bool),
         ))?;
 
-        Ok((
-            node_embedding.into_py(gil.python()),
-            node_type_embedding.into_py(gil.python()),
-            edge_type_embedding.into_py(gil.python()),
-        ))
+        Ok(node_embedding.into_py(gil.python()))
     }
 }

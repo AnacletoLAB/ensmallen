@@ -1,4 +1,4 @@
-use graph::{EdgeTypeT, Graph, NodeT, NodeTypeT, ThreadDataRaceAware, WalksParameters};
+use graph::{Graph, NodeT, ThreadDataRaceAware, WalksParameters};
 use indicatif::{ProgressBar, ProgressStyle};
 use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
@@ -13,10 +13,7 @@ pub struct KGCBOW {
     window_size: usize,
     clipping_value: f32,
     number_of_negative_samples: usize,
-    log_sigmoid: bool,
-    siamese: bool,
     stochastic_downsample_by_degree: bool,
-    normalize_learning_rate_by_degree: bool,
     use_zipfian_sampling: bool,
 }
 
@@ -29,10 +26,7 @@ impl KGCBOW {
     /// `window_size`: Option<usize> - Window size defining the contexts.
     /// `clipping_value`: Option<f32> - Value at which we clip the dot product, mostly for numerical stability issues. By default, `6.0`, where the loss is already close to zero.
     /// `number_of_negative_samples`: Option<usize> - Number of negative samples to extract for each context.
-    /// `log_sigmoid: Option<bool> - Whether to use the model using a sigmoid or log sigmoid. By default, log sigmoid.
-    /// `siamese: Option<bool> - Whether to use the model in Siamese mode, using half the weights.
     /// `stochastic_downsample_by_degree`: Option<bool> - Randomly skip samples with probability proportional to the degree of the central node. By default false.
-    /// `normalize_learning_rate_by_degree`: Option<bool> - Divide the learning rate by the degree of the central node. By default false.
     /// `use_zipfian_sampling`: Option<bool> - Sample negatives proportionally to their degree. By default true.
     pub fn new(
         embedding_size: Option<usize>,
@@ -40,10 +34,7 @@ impl KGCBOW {
         window_size: Option<usize>,
         clipping_value: Option<f32>,
         number_of_negative_samples: Option<usize>,
-        log_sigmoid: Option<bool>,
-        siamese: Option<bool>,
         stochastic_downsample_by_degree: Option<bool>,
-        normalize_learning_rate_by_degree: Option<bool>,
         use_zipfian_sampling: Option<bool>,
     ) -> Result<Self, String> {
         // Handle the values of the default parameters.
@@ -52,10 +43,7 @@ impl KGCBOW {
         let clipping_value = clipping_value.unwrap_or(6.0);
         let walk_parameters = walk_parameters.unwrap_or_else(|| WalksParameters::default());
         let number_of_negative_samples = number_of_negative_samples.unwrap_or(5);
-        let log_sigmoid = log_sigmoid.unwrap_or(true);
-        let siamese = siamese.unwrap_or(false);
         let stochastic_downsample_by_degree = stochastic_downsample_by_degree.unwrap_or(false);
-        let normalize_learning_rate_by_degree = normalize_learning_rate_by_degree.unwrap_or(false);
         let use_zipfian_sampling = use_zipfian_sampling.unwrap_or(true);
 
         // Validate that the provided parameters are within
@@ -78,10 +66,7 @@ impl KGCBOW {
             walk_parameters,
             clipping_value,
             number_of_negative_samples,
-            log_sigmoid,
-            siamese,
             stochastic_downsample_by_degree,
-            normalize_learning_rate_by_degree,
             use_zipfian_sampling,
         })
     }
@@ -102,8 +87,6 @@ impl KGCBOW {
     /// # Arguments
     /// `graph`: &Graph - The graph to embed
     /// `node_embedding`: &mut [f32] - The memory area where to write the node embedding.
-    /// `node_type_embedding`: &mut [f32] - The memory area where to write the node type embedding.
-    /// `edge_type_embedding`: &mut [f32] - The memory area where to write the edge type embedding.
     /// `epochs`: Option<usize> - The number of epochs to run the model for, by default 10.
     /// `learning_rate`: Option<f32> - The learning rate to update the gradient, by default 0.01.
     /// `learning_rate_decay`: Option<f32> - Factor to reduce the learning rate for at each epoch. By default 0.9.
@@ -112,8 +95,6 @@ impl KGCBOW {
         &self,
         graph: &Graph,
         node_embedding: &mut [f32],
-        node_type_embedding: &mut [f32],
-        edge_type_embedding: &mut [f32],
         epochs: Option<usize>,
         learning_rate: Option<f32>,
         learning_rate_decay: Option<f32>,
@@ -125,7 +106,6 @@ impl KGCBOW {
         let random_walk_length = walk_parameters.get_random_walk_length() as usize;
         let verbose = verbose.unwrap_or(true);
         let mut learning_rate = learning_rate.unwrap_or(0.01);
-        let max_node_types = graph.get_maximum_multilabel_count()?;
         let learning_rate_decay = learning_rate_decay.unwrap_or(0.9);
 
         // This is used to scale the dot product to avoid getting NaN due to
@@ -148,26 +128,6 @@ impl KGCBOW {
             ));
         }
 
-        let node_types_number = graph.get_node_types_number()?;
-        let expected_node_type_embedding_len = self.embedding_size * node_types_number as usize;
-        if node_type_embedding.len() != expected_node_type_embedding_len {
-            return Err(format!(
-                "The given memory allocation for the node type embeddings is {} long but we expect {}.",
-                node_type_embedding.len(),
-                expected_node_type_embedding_len
-            ));
-        }
-
-        let edge_types_number = graph.get_edge_types_number()?;
-        let expected_edge_type_embedding_len = self.embedding_size * edge_types_number as usize;
-        if edge_type_embedding.len() != expected_edge_type_embedding_len {
-            return Err(format!(
-                "The given memory allocation for the edge type embeddings is {} long but we expect {}.",
-                edge_type_embedding.len(),
-                expected_edge_type_embedding_len
-            ));
-        }
-
         // Populate the node embedding layer with random uniform value
         node_embedding
             .par_iter_mut()
@@ -177,41 +137,29 @@ impl KGCBOW {
         // Update the random state
         random_state = splitmix64(random_state);
 
-        // Populate the node type embedding layer with random uniform value
-        node_type_embedding
-            .par_iter_mut()
-            .enumerate()
-            .for_each(|(i, e)| *e = 2.0 * random_f32(splitmix64(random_state + i as u64)) - 1.0);
+        let mut hidden_nodes = (0..node_embedding.len())
+            .into_par_iter()
+            .map(|i| 2.0 * random_f32(splitmix64(random_state + i as u64)) - 1.0)
+            .collect::<Vec<_>>();
 
-        // Update the random state
         random_state = splitmix64(random_state);
 
-        // Populate the edge type embedding layer with random uniform value
-        edge_type_embedding
-            .par_iter_mut()
-            .enumerate()
-            .for_each(|(i, e)| *e = 2.0 * random_f32(splitmix64(random_state + i as u64)) - 1.0);
+        let mut hidden_node_types = (0..(graph.get_node_types_number()? as usize
+            * self.embedding_size))
+            .into_par_iter()
+            .map(|i| 2.0 * random_f32(splitmix64(random_state + i as u64)) - 1.0)
+            .collect::<Vec<_>>();
 
-        let mut hidden = if self.siamese {
-            Vec::new()
-        } else {
-            (0..node_embedding.len())
-                .into_par_iter()
-                .map(|i| 2.0 * random_f32(splitmix64(random_state + i as u64)) - 1.0)
-                .collect::<Vec<_>>()
-        };
+        let mut hidden_edge_types = (0..(graph.get_edge_types_number()? as usize
+            * self.embedding_size))
+            .into_par_iter()
+            .map(|i| 2.0 * random_f32(splitmix64(random_state + i as u64)) - 1.0)
+            .collect::<Vec<_>>();
 
-        let shared_hidden = ThreadDataRaceAware::new(hidden.as_mut_slice());
+        let shared_hidden_nodes = ThreadDataRaceAware::new(hidden_nodes.as_mut_slice());
+        let shared_hidden_node_types = ThreadDataRaceAware::new(hidden_node_types.as_mut_slice());
+        let shared_hidden_edge_types = ThreadDataRaceAware::new(hidden_edge_types.as_mut_slice());
         let shared_node_embedding = ThreadDataRaceAware::new(node_embedding);
-        let shared_node_type_embedding = ThreadDataRaceAware::new(node_type_embedding);
-        let shared_edge_type_embedding = ThreadDataRaceAware::new(edge_type_embedding);
-
-        let shared_node_embedding_ref = &shared_node_embedding;
-        let shared_hidden_ref = if self.siamese {
-            &shared_node_embedding
-        } else {
-            &shared_hidden
-        };
 
         // Depending whether verbosity was requested by the user
         // we create or not a visible progress bar to show the progress
@@ -249,43 +197,19 @@ impl KGCBOW {
             let node_id = node_id as usize;
             unsafe {
                 vector_sum(
-                    &mut (*shared_node_embedding_ref.get())
+                    &mut (*shared_node_embedding.get())
                         [node_id * self.embedding_size..(node_id + 1) * self.embedding_size],
                     variation,
                 )
             }
         };
 
-        // Create the closure to apply a gradient to a provided node types' embedding
-        let update_node_type_embedding = |node_type_id: NodeTypeT, variation: &[f32]| {
-            let node_type_id = node_type_id as usize;
-            unsafe {
-                vector_sum(
-                    &mut (*shared_node_type_embedding.get())[node_type_id * self.embedding_size
-                        ..(node_type_id + 1) * self.embedding_size],
-                    variation,
-                )
-            }
-        };
-
-        // Create the closure to apply a gradient to a provided edge types' embedding
-        let update_edge_type_embedding = |edge_type_id: EdgeTypeT, variation: &[f32]| {
-            let edge_type_id = edge_type_id as usize;
-            unsafe {
-                vector_sum(
-                    &mut (*shared_node_embedding_ref.get())[edge_type_id * self.embedding_size
-                        ..(edge_type_id + 1) * self.embedding_size],
-                    variation,
-                )
-            }
-        };
-
-        // Create the closure to apply a gradient to a provided node's hidden layer weights
-        let update_hidden = |node_id: NodeT, variation: &[f32], weight: f32| {
+        // Create the closure to apply a gradient to a provided node's hidden_nodes layer weights
+        let update_hidden_nodes = |node_id: NodeT, variation: &[f32], weight: f32| {
             let node_id = node_id as usize;
             unsafe {
                 weighted_vector_sum(
-                    &mut (*shared_hidden_ref.get())
+                    &mut (*shared_hidden_nodes.get())
                         [node_id * self.embedding_size..(node_id + 1) * self.embedding_size],
                     variation,
                     weight,
@@ -293,87 +217,168 @@ impl KGCBOW {
             }
         };
 
+        // Create the closure to apply a gradient to a provided node type's hidden_node_types layer weights
+        let update_hidden_node_types = |node_type_id: usize, variation: &[f32], weight: f32| unsafe {
+            weighted_vector_sum(
+                &mut (*shared_hidden_node_types.get())
+                    [node_type_id * self.embedding_size..(node_type_id + 1) * self.embedding_size],
+                variation,
+                weight,
+            )
+        };
+
+        // Create the closure to apply a gradient to a provided edge type's hidden_edge_types layer weights
+        let update_hidden_edge_types = |edge_type_id: usize, variation: &[f32], weight: f32| unsafe {
+            weighted_vector_sum(
+                &mut (*shared_hidden_edge_types.get())
+                    [edge_type_id * self.embedding_size..(edge_type_id + 1) * self.embedding_size],
+                variation,
+                weight,
+            )
+        };
+
         // We define a closure that returns a reference to the embedding of the given node.
         let get_node_embedding = |node_id: NodeT| {
             let node_id = node_id as usize;
             unsafe {
-                &(*shared_node_embedding_ref.get())
+                &(*shared_node_embedding.get())
                     [(node_id * self.embedding_size)..((node_id + 1) * self.embedding_size)]
             }
         };
 
-        // We define a closure that returns a reference to the embedding of the given node type.
-        let get_node_type_embedding = |node_type_id: NodeTypeT| {
-            let node_type_id = node_type_id as usize;
-            unsafe {
-                &(*shared_node_type_embedding.get())[(node_type_id * self.embedding_size)
-                    ..((node_type_id + 1) * self.embedding_size)]
-            }
-        };
-
-        // We define a closure that returns a reference to the embedding of the given edge type.
-        let get_edge_type_embedding = |edge_type_id: EdgeTypeT| {
-            let edge_type_id = edge_type_id as usize;
-            unsafe {
-                &(*shared_edge_type_embedding.get())[(edge_type_id * self.embedding_size)
-                    ..((edge_type_id + 1) * self.embedding_size)]
-            }
-        };
-
-        // We define a closure that returns a reference to the hidden of the given node.
-        let get_node_hidden = |node_id: NodeT| {
+        // We define a closure that returns a reference to the hidden_nodes of the given node.
+        let get_hidden_nodes = |node_id: NodeT| {
             let node_id = node_id as usize;
             unsafe {
-                &(*shared_hidden_ref.get())
+                &(*shared_hidden_nodes.get())
                     [(node_id * self.embedding_size)..((node_id + 1) * self.embedding_size)]
             }
         };
 
-        let compute_mini_batch_step = |total_context_embedding: &[f32],
-                                       context_embedding_gradient: &mut [f32],
-                                       node_id: NodeT,
-                                       label: f32,
-                                       context_size: f32,
-                                       learning_rate: f32| {
-            let node_hidden = get_node_hidden(node_id);
-            let dot = node_hidden
-                .iter()
-                .copied()
-                .zip(total_context_embedding.iter().copied())
-                .map(|(node_feature, contextual_feature)| node_feature * contextual_feature)
-                .sum::<f32>()
-                / context_size
-                / scale_factor;
+        let compute_central_mini_batch_step =
+            |total_context_embedding: &[f32],
+             context_embedding_gradient: &mut [f32],
+             node_id: NodeT,
+             label: f32,
+             context_size: f32,
+             learning_rate: f32| {
+                let node_hidden = get_hidden_nodes(node_id);
+                let dot = node_hidden
+                    .iter()
+                    .copied()
+                    .zip(total_context_embedding.iter().copied())
+                    .map(|(node_feature, contextual_feature)| node_feature * contextual_feature)
+                    .sum::<f32>()
+                    / context_size
+                    / scale_factor;
 
-            if dot > self.clipping_value || dot < -self.clipping_value {
-                return 0.0;
-            }
+                if dot > self.clipping_value || dot < -self.clipping_value {
+                    return 0.0;
+                }
 
-            let exp_dot = dot.exp();
-            let variation = label
-                - exp_dot
-                    / if self.log_sigmoid {
-                        exp_dot + 1.0
-                    } else {
-                        (exp_dot + 1.0).powf(2.0)
-                    };
-            let mut weighted_variation = variation * learning_rate;
+                let exp_dot = dot.exp();
+                let variation = label - (exp_dot / (exp_dot + 1.0));
+                let weighted_variation = variation * learning_rate;
 
-            if self.normalize_learning_rate_by_degree {
-                weighted_variation *= 1.0
-                    - (unsafe { graph.get_unchecked_node_degree_from_node_id(node_id) as f32 }
-                        / nodes_number as f32);
-            }
+                weighted_vector_sum(context_embedding_gradient, node_hidden, weighted_variation);
+                update_hidden_nodes(
+                    node_id,
+                    total_context_embedding,
+                    weighted_variation / context_size,
+                );
 
-            weighted_vector_sum(context_embedding_gradient, node_hidden, weighted_variation);
-            update_hidden(
-                node_id,
-                total_context_embedding,
-                weighted_variation / context_size,
-            );
+                weighted_variation.abs()
+            };
 
-            weighted_variation.abs()
-        };
+        let compute_node_types_mini_batch_step =
+            |total_context_embedding: &[f32],
+             context_embedding_gradient: &mut [f32],
+             node_type_counts: &mut [u8],
+             context_size: f32,
+             learning_rate: f32| {
+                node_type_counts
+                    .iter_mut()
+                    .zip(unsafe{(*shared_hidden_node_types.get()).chunks(self.embedding_size)})
+                    .enumerate()
+                    .for_each(|(node_type_id, (count, node_type_embedding))| {
+                        let dot = node_type_embedding
+                            .iter()
+                            .copied()
+                            .zip(total_context_embedding.iter().copied())
+                            .map(|(node_feature, contextual_feature)| {
+                                node_feature * contextual_feature
+                            })
+                            .sum::<f32>()
+                            / context_size
+                            / scale_factor;
+
+                        if dot > self.clipping_value || dot < -self.clipping_value {
+                            return;
+                        }
+
+                        let label = if *count > 0 { 1.0 } else { 0.0 };
+                        let exp_dot = dot.exp();
+                        let variation = (*count as f32) * (label - (exp_dot / (exp_dot + 1.0)));
+                        let weighted_variation = variation * learning_rate;
+                        *count = 0;
+
+                        weighted_vector_sum(
+                            context_embedding_gradient,
+                            node_type_embedding,
+                            weighted_variation,
+                        );
+                        update_hidden_node_types(
+                            node_type_id,
+                            total_context_embedding,
+                            weighted_variation / context_size,
+                        );
+                    });
+            };
+
+        let compute_edge_types_mini_batch_step =
+            |total_context_embedding: &[f32],
+             context_embedding_gradient: &mut [f32],
+             edge_type_counts: &mut [u8],
+             context_size: f32,
+             learning_rate: f32| {
+                edge_type_counts
+                    .iter_mut()
+                    .zip(unsafe{(*shared_hidden_edge_types.get()).chunks(self.embedding_size)})
+                    .enumerate()
+                    .for_each(|(edge_type_id, (count, edge_type_embedding))| {
+                        let dot = edge_type_embedding
+                            .iter()
+                            .copied()
+                            .zip(total_context_embedding.iter().copied())
+                            .map(|(edge_feature, contextual_feature)| {
+                                edge_feature * contextual_feature
+                            })
+                            .sum::<f32>()
+                            / context_size
+                            / scale_factor;
+
+                        if dot > self.clipping_value || dot < -self.clipping_value {
+                            return;
+                        }
+
+                        let label = if *count > 0 { 1.0 } else { 0.0 };
+                        let exp_dot = dot.exp();
+                        let variation = (*count as f32) * (label - (exp_dot / (exp_dot + 1.0)));
+                        let weighted_variation = variation * learning_rate;
+                        *count = 0;
+
+                        weighted_vector_sum(
+                            context_embedding_gradient,
+                            edge_type_embedding,
+                            weighted_variation,
+                        );
+                        update_hidden_edge_types(
+                            edge_type_id,
+                            total_context_embedding,
+                            weighted_variation / context_size,
+                        );
+                    });
+            };
 
         // We start to loop over the required amount of epochs.
         for _ in 0..epochs {
@@ -387,15 +392,10 @@ impl KGCBOW {
                 .par_iter_complete_walks(&walk_parameters)?
                 .enumerate()
                 .map(|(walk_number, random_walk)| {
-                    // At most we have to update window_size * 2 nodes.
-                    let mut contextual_nodes: Vec<NodeT> = vec![0; self.window_size * 2];
-
-                    // At most we have to update window_size * 2 edge types.
-                    let mut contextual_edge_types: Vec<EdgeTypeT> = vec![0; self.window_size * 2];
-
-                    // At most we have to update window_size * 2 * max_node_types
-                    let mut contextual_node_types: Vec<NodeTypeT> =
-                        vec![0; self.window_size * 2 * max_node_types as usize];
+                    let mut edge_type_counts: Vec<u8> =
+                        vec![0; graph.get_edge_types_number().unwrap() as usize];
+                    let mut node_type_counts: Vec<u8> =
+                        vec![0; graph.get_node_types_number().unwrap() as usize];
 
                     (0..random_walk_length)
                         .filter(|&central_index| {
@@ -425,11 +425,7 @@ impl KGCBOW {
                             // We compute the total context embedding.
                             // First, we assign to it the embedding of the first context.
                             let mut total_context_embedding = vec![0.0; self.embedding_size];
-
-                            // Since the context size is variable, we need to change the normalization.
-                            let mut node_context_size = 0;
-                            let mut node_type_context_size = 0;
-                            let mut edge_type_context_size = 0;
+                            let mut context_size = 0;
 
                             // Then we sum over it the other values.
                             context
@@ -437,14 +433,13 @@ impl KGCBOW {
                                 .copied()
                                 .filter(|&contextual_node_id| contextual_node_id != central_node_id)
                                 .for_each(|contextual_node_id| {
+                                    context_size += 1;
                                     get_node_embedding(contextual_node_id)
                                         .iter()
                                         .zip(total_context_embedding.iter_mut())
                                         .for_each(|(feature, total_feature)| {
                                             *total_feature += *feature;
                                         });
-                                    contextual_nodes[node_context_size] = contextual_node_id;
-                                    node_context_size += 1;
                                     unsafe {
                                         if let Some(node_type_ids) = graph
                                             .get_unchecked_node_type_ids_from_node_id(
@@ -453,15 +448,7 @@ impl KGCBOW {
                                         {
                                             node_type_ids.iter().copied().for_each(
                                                 |node_type_id| {
-                                                    contextual_node_types[node_type_context_size] =
-                                                        node_type_id;
-                                                    node_type_context_size += 1;
-                                                    get_node_type_embedding(node_type_id)
-                                                        .iter()
-                                                        .zip(total_context_embedding.iter_mut())
-                                                        .for_each(|(feature, total_feature)| {
-                                                            *total_feature += *feature;
-                                                        });
+                                                    node_type_counts[node_type_id as usize] += 1;
                                                 },
                                             );
                                         }
@@ -474,34 +461,21 @@ impl KGCBOW {
                                             if let Some(edge_type_id) = graph
                                                 .get_unchecked_edge_type_id_from_edge_id(edge_id)
                                             {
-                                                contextual_edge_types[edge_type_context_size] =
-                                                    edge_type_id;
-                                                edge_type_context_size += 1;
-                                                get_edge_type_embedding(edge_type_id)
-                                                    .iter()
-                                                    .zip(total_context_embedding.iter_mut())
-                                                    .for_each(|(feature, total_feature)| {
-                                                        *total_feature += *feature;
-                                                    });
+                                                edge_type_counts[edge_type_id as usize] += 1;
                                             }
                                         }
                                     }
                                 });
 
-                            let context_size = (node_context_size
-                                + node_type_context_size
-                                + edge_type_context_size)
-                                as f32;
-
                             let mut context_gradient = vec![0.0; self.embedding_size];
 
                             // We now compute the gradient relative to the positive
-                            let positive_variation = compute_mini_batch_step(
+                            let positive_variation = compute_central_mini_batch_step(
                                 total_context_embedding.as_slice(),
                                 context_gradient.as_mut_slice(),
                                 central_node_id,
                                 1.0,
-                                context_size,
+                                context_size as f32,
                                 learning_rate,
                             );
 
@@ -520,12 +494,12 @@ impl KGCBOW {
                                         *non_central_node_id != central_node_id
                                     })
                                     .map(|non_central_node_id| {
-                                        compute_mini_batch_step(
+                                        compute_central_mini_batch_step(
                                             total_context_embedding.as_slice(),
                                             context_gradient.as_mut_slice(),
                                             non_central_node_id,
                                             0.0,
-                                            context_size,
+                                            context_size as f32,
                                             learning_rate,
                                         )
                                     })
@@ -544,42 +518,42 @@ impl KGCBOW {
                                         *non_central_node_id != central_node_id
                                     })
                                     .map(|non_central_node_id| {
-                                        compute_mini_batch_step(
+                                        compute_central_mini_batch_step(
                                             total_context_embedding.as_slice(),
                                             context_gradient.as_mut_slice(),
                                             non_central_node_id,
                                             0.0,
-                                            context_size,
+                                            context_size as f32,
                                             learning_rate,
                                         )
                                     })
                                     .sum::<f32>()
                             };
 
-                            contextual_nodes[0..node_context_size]
+                            compute_node_types_mini_batch_step(
+                                total_context_embedding.as_slice(),
+                                context_gradient.as_mut_slice(),
+                                node_type_counts.as_mut_slice(),
+                                context_size as f32,
+                                learning_rate
+                            );
+
+                            compute_edge_types_mini_batch_step(
+                                total_context_embedding.as_slice(),
+                                context_gradient.as_mut_slice(),
+                                edge_type_counts.as_mut_slice(),
+                                context_size as f32,
+                                learning_rate
+                            );
+
+                            context
                                 .iter()
                                 .copied()
+                                .filter(|&contextual_node_id| contextual_node_id != central_node_id)
                                 .for_each(|contextual_node_id| {
                                     update_node_embedding(contextual_node_id, &context_gradient);
                                 });
-                            contextual_node_types[0..node_type_context_size]
-                                .iter()
-                                .copied()
-                                .for_each(|contextual_node_type_id| {
-                                    update_node_type_embedding(
-                                        contextual_node_type_id,
-                                        &context_gradient,
-                                    );
-                                });
-                            contextual_edge_types[0..edge_type_context_size]
-                                .iter()
-                                .copied()
-                                .for_each(|contextual_edge_type_id| {
-                                    update_edge_type_embedding(
-                                        contextual_edge_type_id,
-                                        &context_gradient,
-                                    );
-                                });
+
                             positive_variation + negative_variation
                         })
                         .sum::<f32>()
