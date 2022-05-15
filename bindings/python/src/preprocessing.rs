@@ -838,12 +838,12 @@ impl Graph {
         use_zipfian_sampling: Option<bool>,
     ) -> (
         Py<PyArray1<NodeT>>,
-        Option<Py<PyArray2<NodeTypeT>>>,
+        Py<PyArray1<NodeT>>,
+        Py<PyArray1<NodeT>>,
         Py<PyArray1<NodeT>>,
         Option<Py<PyArray2<NodeTypeT>>>,
-        Py<PyArray1<NodeT>>,
         Option<Py<PyArray2<NodeTypeT>>>,
-        Py<PyArray1<NodeT>>,
+        Option<Py<PyArray2<NodeTypeT>>>,
         Option<Py<PyArray2<NodeTypeT>>>,
         Option<Py<PyArray1<EdgeTypeT>>>,
     ) {
@@ -956,12 +956,12 @@ impl Graph {
 
         (
             srcs.t.to_owned(),
-            src_node_type_ids.map(|x| x.t.to_owned()),
             dsts.t.to_owned(),
-            dst_node_type_ids.map(|x| x.t.to_owned()),
             not_srcs.t.to_owned(),
-            not_src_node_type_ids.map(|x| x.t.to_owned()),
             not_dsts.t.to_owned(),
+            src_node_type_ids.map(|x| x.t.to_owned()),
+            dst_node_type_ids.map(|x| x.t.to_owned()),
+            not_src_node_type_ids.map(|x| x.t.to_owned()),
             not_dst_node_type_ids.map(|x| x.t.to_owned()),
             edge_type_ids.map(|x| x.t.to_owned()),
         )
