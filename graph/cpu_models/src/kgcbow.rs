@@ -150,6 +150,8 @@ impl KGCBOW {
             .map(|i| 2.0 * random_f32(splitmix64(random_state + i as u64)) - 1.0)
             .collect::<Vec<_>>();
 
+        random_state = splitmix64(random_state);
+
         let mut hidden_edge_types = (0..(graph.get_edge_types_number()? as usize
             * self.embedding_size))
             .into_par_iter()
@@ -167,7 +169,7 @@ impl KGCBOW {
         let epochs_progress_bar = if verbose {
             let pb = ProgressBar::new(epochs as u64);
             pb.set_style(ProgressStyle::default_bar().template(
-                "CBOW Epochs {msg} {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
+                "KGCBOW Epochs {msg} {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
             ));
             pb
         } else {

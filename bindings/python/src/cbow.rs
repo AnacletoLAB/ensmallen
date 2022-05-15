@@ -155,8 +155,7 @@ impl CBOW {
     ) -> PyResult<Py<PyArray2<f32>>> {
         let gil = pyo3::Python::acquire_gil();
 
-        let py = pyo3::Python::acquire_gil();
-        let kwargs = normalize_kwargs!(py_kwargs, py.python());
+        let kwargs = normalize_kwargs!(py_kwargs, gil.python());
 
         pe!(validate_kwargs(
             kwargs,
@@ -165,7 +164,7 @@ impl CBOW {
 
         let rows_number = graph.inner.get_nodes_number() as usize;
         let columns_number = self.inner.get_embedding_size();
-        let embedding = PyArray2::zeros(gil.python(), [rows_number, columns_number], false);
+        let embedding = PyArray2::new(gil.python(), [rows_number, columns_number], false);
 
         let embedding_slice = unsafe { embedding.as_slice_mut().unwrap() };
 

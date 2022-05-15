@@ -143,8 +143,7 @@ impl KGCBOW {
     ) -> PyResult<Py<PyArray2<f32>>> {
         let gil = pyo3::Python::acquire_gil();
 
-        let py = pyo3::Python::acquire_gil();
-        let kwargs = normalize_kwargs!(py_kwargs, py.python());
+        let kwargs = normalize_kwargs!(py_kwargs, gil.python());
 
         pe!(validate_kwargs(
             kwargs,
@@ -152,7 +151,7 @@ impl KGCBOW {
         ))?;
 
         let columns_number = self.inner.get_embedding_size();
-        let node_embedding = PyArray2::zeros(
+        let node_embedding = PyArray2::new(
             gil.python(),
             [graph.inner.get_nodes_number() as usize, columns_number],
             false,
