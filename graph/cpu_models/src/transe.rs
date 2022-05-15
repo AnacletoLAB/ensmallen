@@ -246,7 +246,7 @@ impl TransE {
                             *not_src_feature + *edge_type_feature - *not_dst_feature;
                         let loss = positive_distance.powf(2.0) - negative_distance.powf(2.0);
 
-                        if loss > self.relu_bias {
+                        if loss > -self.relu_bias {
                             positive_distance *= learning_rate;
                             negative_distance *= learning_rate;
                             *src_feature -= positive_distance;
