@@ -825,6 +825,10 @@ impl Graph {
     /// -------------
     /// random_state: int
     ///     Random state to reproduce sampling
+    /// use_node_types: bool
+    ///     Whether to use node types.
+    /// use_edge_types: bool
+    ///     Whether to use edge types.
     /// batch_size: int
     ///     The maximal size of the batch to generate,
     /// use_zipfian_sampling: bool = True
@@ -834,6 +838,8 @@ impl Graph {
     fn get_siamese_mini_batch(
         &self,
         random_state: u64,
+        use_node_types: bool,
+        use_edge_types: bool,
         batch_size: usize,
         use_zipfian_sampling: Option<bool>,
     ) -> (
@@ -866,7 +872,7 @@ impl Graph {
         };
 
         let (src_node_type_ids, dst_node_type_ids, not_src_node_type_ids, not_dst_node_type_ids) =
-            if self.inner.has_node_types() {
+            if self.inner.has_node_types() && use_node_types{
                 let max_node_type_count =
                     self.inner.get_maximum_multilabel_count().unwrap() as usize;
                 (
@@ -887,7 +893,7 @@ impl Graph {
                 (None, None, None, None)
             };
 
-        let edge_type_ids = if self.inner.has_edge_types() {
+        let edge_type_ids = if self.inner.has_edge_types() && use_edge_types{
             Some(ThreadDataRaceAware {
                 t: PyArray1::zeros(gil.python(), [batch_size], false),
             })
