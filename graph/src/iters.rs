@@ -1,6 +1,5 @@
 use super::*;
 use rayon::prelude::*;
-use vec_rand::sample_uniform;
 
 /// # Iterators
 /// The naming convention for the iterators is:
@@ -530,14 +529,9 @@ impl Graph {
         quantity: usize,
         mut random_state: u64,
     ) -> impl Iterator<Item = NodeT> + '_ {
-        let number_of_directed_edges = self.get_number_of_directed_edges();
-        (0..quantity).map(move |_| unsafe {
+        (0..quantity).map(move |_| {
             random_state = splitmix64(random_state);
-            self.get_unchecked_node_ids_from_edge_id(sample_uniform(
-                number_of_directed_edges,
-                random_state,
-            ) as EdgeT)
-                .0
+            self.get_random_zipfian_node(random_state)
         })
     }
 
@@ -551,14 +545,9 @@ impl Graph {
         quantity: usize,
         random_state: u64,
     ) -> impl IndexedParallelIterator<Item = NodeT> + '_ {
-        let number_of_directed_edges = self.get_number_of_directed_edges();
-        (0..quantity).into_par_iter().map(move |i| unsafe {
-            self.get_unchecked_node_ids_from_edge_id(sample_uniform(
-                number_of_directed_edges,
-                splitmix64(random_state + i as u64),
-            ) as EdgeT)
-                .0
-        })
+        (0..quantity)
+            .into_par_iter()
+            .map(move |i| self.get_random_zipfian_node(splitmix64(random_state + i as u64)))
     }
 
     /// Return iterator on random (non unique) node IDs.
@@ -573,11 +562,11 @@ impl Graph {
     pub fn iter_random_node_ids(
         &self,
         quantity: usize,
-        random_state: u64,
+        mut random_state: u64,
     ) -> impl Iterator<Item = NodeT> + '_ {
-        let number_of_nodes = self.get_nodes_number() as u64;
-        (0..quantity).map(move |i| {
-            sample_uniform(number_of_nodes, splitmix64(random_state + i as u64)) as NodeT
+        (0..quantity).map(move |_| {
+            random_state = splitmix64(random_state);
+            self.get_random_node(random_state)
         })
     }
 
@@ -595,10 +584,9 @@ impl Graph {
         quantity: usize,
         random_state: u64,
     ) -> impl IndexedParallelIterator<Item = NodeT> + '_ {
-        let number_of_nodes = self.get_nodes_number() as u64;
-        (0..quantity).into_par_iter().map(move |i| {
-            sample_uniform(number_of_nodes, splitmix64(random_state + i as u64)) as NodeT
-        })
+        (0..quantity)
+            .into_par_iter()
+            .map(move |i| self.get_random_node(splitmix64(random_state + i as u64)))
     }
 
     /// Return iterator on the (non unique) directed destination nodes of the graph.

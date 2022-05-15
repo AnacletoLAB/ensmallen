@@ -8636,7 +8636,7 @@ impl Graph {
     /// random_state: int
     ///     The random state to use to reproduce the sampling.
     ///
-    pub fn get_random_nodes(
+    pub fn get_sorted_unique_random_nodes(
         &self,
         number_of_nodes_to_sample: NodeT,
         random_state: u64,
@@ -8647,7 +8647,7 @@ impl Graph {
                 gil,
                 pe!(self
                     .inner
-                    .get_random_nodes(number_of_nodes_to_sample.into(), random_state.into()))?,
+                    .get_sorted_unique_random_nodes(number_of_nodes_to_sample.into(), random_state.into()))?,
                 NodeT
             )
         })
@@ -14107,7 +14107,7 @@ pub const GRAPH_METHODS_NAMES: &[&str] = &[
     "has_same_adjacency_matrix",
     "approximated_vertex_cover_set",
     "get_random_node",
-    "get_random_nodes",
+    "get_sorted_unique_random_nodes",
     "get_breadth_first_search_random_nodes",
     "get_uniform_random_walk_random_nodes",
     "get_node_sampling_methods",

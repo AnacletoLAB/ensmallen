@@ -6,7 +6,7 @@ use itertools::Itertools;
 use num_traits::Pow;
 use rayon::prelude::*;
 use std::collections::{HashMap, VecDeque};
-use vec_rand::xorshift::xorshift;
+use vec_rand::{sample_uniform, splitmix64};
 
 #[manual_binding]
 /// Return training batches for Word2Vec models.
@@ -241,21 +241,21 @@ impl Graph {
             )
             .to_string());
         }
-        let idx = splitmix64(idx);
+        let random_state = splitmix64(idx);
         Ok((0..batch_size).into_par_iter().map(move |i| unsafe {
-            let mut sample = xorshift(idx.wrapping_mul(splitmix64(i as u64)));
+            let mut random_state = splitmix64(random_state + i as u64);
             let (node_id, node_type_ids) = loop {
-                let node_id = sample as u32 % nodes_number;
+                random_state = splitmix64(random_state);
+                let node_id = self.get_random_node(random_state);
                 let node_type_ids = self.get_unchecked_node_type_ids_from_node_id(node_id);
                 if node_type_ids.is_some() {
                     break (node_id, node_type_ids.unwrap());
                 }
-                sample = xorshift(sample);
             };
             let (min_edge_id, max_edge_id, destinations, probabilistic_indices) = self
                 .get_unchecked_edges_and_destinations_from_source_node_id(
                     max_neighbours,
-                    idx,
+                    random_state,
                     node_id,
                 );
             let mut destinations = self
@@ -297,6 +297,7 @@ impl Graph {
     /// * `maximal_sampling_attempts`: Option<usize> - Number of attempts to execute to sample the negative edges.
     /// * `shuffle`: Option<bool> - Whether to shuffle the samples within the batch.
     /// * `sample_only_edges_with_heterogeneous_node_types`: Option<bool> - Whether to sample negative edges only with source and destination nodes that have different node types.
+    /// * `use_zipfian_sampling`: Option<bool> - Whether to sample the nodes using zipfian distribution. By default True. Not using this may cause significant biases.
     /// * `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
     /// # Raises
@@ -322,6 +323,7 @@ impl Graph {
         maximal_sampling_attempts: Option<usize>,
         shuffle: Option<bool>,
         sample_only_edges_with_heterogeneous_node_types: Option<bool>,
+        use_zipfian_sampling: Option<bool>,
         graph_to_avoid: Option<&'a Graph>,
     ) -> Result<
         impl IndexedParallelIterator<
@@ -345,6 +347,7 @@ impl Graph {
             return_only_edges_with_known_edge_types.unwrap_or(false);
         let maximal_sampling_attempts = maximal_sampling_attempts.unwrap_or(10_000);
         let shuffle = shuffle.unwrap_or(true);
+        let use_zipfian_sampling = use_zipfian_sampling.unwrap_or(true);
 
         if sample_only_edges_with_heterogeneous_node_types && !self.has_node_types() {
             return Err(concat!(
@@ -387,9 +390,6 @@ impl Graph {
         let expected_positive_samples_number = batch_size - expected_negative_samples_number;
 
         let edges_number = self.get_number_of_directed_edges();
-        let nodes_number = self.get_nodes_number();
-
-        let does_not_require_resampling = !(avoid_false_negatives || graph_to_avoid.is_some());
 
         let get_node_type_ids =
             move |node_id: NodeT| -> Option<Vec<NodeTypeT>> {
@@ -422,15 +422,16 @@ impl Graph {
             }
         };
 
-        let idx = splitmix64(idx);
+        let random_state = splitmix64(idx);
 
         Ok((0..batch_size).into_par_iter().map(move |i| unsafe {
-            let mut sampled = xorshift(idx.wrapping_mul(splitmix64(i as u64)));
-            if shuffle && sampled > negative_samples_threshold
+            let mut random_state = splitmix64(random_state + i as u64);
+            if shuffle && random_state > negative_samples_threshold
                 || !shuffle && i < expected_positive_samples_number
             {
-                for j in 0..maximal_sampling_attempts {
-                    let edge_id = (sampled + j as EdgeT) % edges_number;
+                for _ in 0..maximal_sampling_attempts {
+                    random_state = splitmix64(random_state);
+                    let edge_id = sample_uniform(edges_number, random_state) as EdgeT;
                     let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
                     let edge_type = if return_edge_types {
                         let edge_type = self.get_unchecked_edge_type_id_from_edge_id(edge_id);
@@ -452,33 +453,19 @@ impl Graph {
                     );
                 }
             }
-            if does_not_require_resampling {
-                // split the random u64 into 2 u32 and mod them to have
-                // usable nodes (this is slightly biased towards low values)
-                let src = (sampled & 0xffffffff) as u32 % nodes_number;
-                let dst = (sampled >> 32) as u32 % nodes_number;
-                let edge_type = if return_edge_types {
-                    Some(sampled as EdgeTypeT % edge_types_number)
-                } else {
-                    None
-                };
-
-                return (
-                    src,
-                    get_node_type_ids(src),
-                    dst,
-                    get_node_type_ids(dst),
-                    get_edge_metrics(src, dst),
-                    edge_type,
-                    false,
-                );
-            }
             for _ in 0..maximal_sampling_attempts {
-                sampled = xorshift(sampled);
-                // split the random u64 into 2 u32 and mod them to have
-                // usable nodes (this is slightly biased towards low values)
-                let src = (sampled & 0xffffffff) as u32 % nodes_number;
-                let dst = (sampled >> 32) as u32 % nodes_number;
+                random_state = splitmix64(random_state);
+                let (src, dst) = if use_zipfian_sampling {
+                    (
+                        self.get_random_zipfian_node(random_state),
+                        self.get_random_zipfian_node(random_state.wrapping_mul(2)),
+                    )
+                } else {
+                    (
+                        self.get_random_node(random_state),
+                        self.get_random_node(random_state.wrapping_mul(2)),
+                    )
+                };
 
                 if avoid_false_negatives && self.has_edge_from_node_ids(src, dst)
                     || sample_only_edges_with_heterogeneous_node_types && {
@@ -493,8 +480,8 @@ impl Graph {
                 }
 
                 let edge_type = if return_edge_types {
-                    sampled = xorshift(sampled);
-                    Some(sampled as EdgeTypeT % edge_types_number)
+                    random_state = splitmix64(random_state);
+                    Some(sample_uniform(edge_types_number as u64, random_state) as EdgeTypeT)
                 } else {
                     None
                 };
@@ -518,6 +505,64 @@ impl Graph {
                 maximal_sampling_attempts
             );
         }))
+    }
+
+    #[manual_binding]
+    /// Returns n-ple with terms used for training a siamese network.
+    ///
+    /// # Arguments
+    /// * `random_state`: u64 - The random state to reproduce the batch.
+    /// * `batch_size`: usize - The maximal size of the batch to generate,
+    /// * `use_zipfian_sampling`: Option<bool> - Whether to sample the nodes using zipfian distribution. By default True. Not using this may cause significant biases.
+    ///
+    pub fn par_iter_siamese_mini_batch<'a>(
+        &'a self,
+        random_state: u64,
+        batch_size: usize,
+        use_zipfian_sampling: Option<bool>,
+    ) -> impl IndexedParallelIterator<
+        Item = (
+            NodeT,
+            Option<&'a Vec<NodeTypeT>>,
+            NodeT,
+            Option<&'a Vec<NodeTypeT>>,
+            NodeT,
+            Option<&'a Vec<NodeTypeT>>,
+            NodeT,
+            Option<&'a Vec<NodeTypeT>>,
+            Option<EdgeTypeT>,
+        ),
+    >  + 'a{
+        let use_zipfian_sampling = use_zipfian_sampling.unwrap_or(true);
+        let random_state = splitmix64(random_state);
+        (0..batch_size).into_par_iter().map(move |i| unsafe {
+            let mut random_state = splitmix64(random_state + i as u64);
+            let edge_id = self.get_random_edge_id(random_state);
+            let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
+            random_state = splitmix64(random_state);
+            let (not_src, not_dst) = if use_zipfian_sampling {
+                (
+                    self.get_random_zipfian_node(random_state),
+                    self.get_random_zipfian_node(random_state.wrapping_mul(2)),
+                )
+            } else {
+                (
+                    self.get_random_node(random_state),
+                    self.get_random_node(random_state.wrapping_mul(2)),
+                )
+            };
+            (
+                src,
+                self.get_unchecked_node_type_ids_from_node_id(src),
+                dst,
+                self.get_unchecked_node_type_ids_from_node_id(dst),
+                not_src,
+                self.get_unchecked_node_type_ids_from_node_id(not_src),
+                not_dst,
+                self.get_unchecked_node_type_ids_from_node_id(not_dst),
+                self.get_unchecked_edge_type_id_from_edge_id(edge_id),
+            )
+        })
     }
 
     #[manual_binding]
@@ -644,6 +689,7 @@ impl Graph {
     /// * `maximal_sampling_attempts`: usize - Number of attempts to execute to sample the negative edges.
     /// * `shuffle`: Option<bool> - Whether to shuffle the samples within the batch.
     /// * `sample_only_edges_with_heterogeneous_node_types`: Option<bool> - Whether to sample negative edges only with source and destination nodes that have different node types.
+    /// * `use_zipfian_sampling`: Option<bool> - Whether to sample the nodes using zipfian distribution. By default True. Not using this may cause significant biases.
     /// * `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
     /// # Raises
@@ -658,6 +704,7 @@ impl Graph {
         maximal_sampling_attempts: Option<usize>,
         shuffle: Option<bool>,
         sample_only_edges_with_heterogeneous_node_types: Option<bool>,
+        use_zipfian_sampling: Option<bool>,
         graph_to_avoid: Option<&'a Graph>,
     ) -> Result<impl ParallelIterator<Item = (f64, f64, bool)> + 'a> {
         let iter = self.get_edge_prediction_mini_batch(
@@ -672,6 +719,7 @@ impl Graph {
             maximal_sampling_attempts,
             shuffle,
             sample_only_edges_with_heterogeneous_node_types,
+            use_zipfian_sampling,
             graph_to_avoid,
         )?;
 

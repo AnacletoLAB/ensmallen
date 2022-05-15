@@ -1901,6 +1901,7 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: Option<bool>) -> 
                 Some(false),
                 None,
                 None,
+                None
             )
             .unwrap()
             .collect::<Vec<_>>();
@@ -1916,6 +1917,7 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: Option<bool>) -> 
                 Some(false),
                 Some(10),
                 Some(false),
+                None,
                 None,
                 None,
             )

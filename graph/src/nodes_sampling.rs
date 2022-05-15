@@ -2,16 +2,38 @@ use super::*;
 use itertools::Itertools;
 use std::collections::HashSet;
 use vec_rand::sorted_unique_sub_sampling;
-use vec_rand::splitmix64;
+use vec_rand::{sample_uniform, splitmix64};
 
 /// # Nodes sampling
 impl Graph {
-    /// Return random number.
+    /// Return random node ID.
     ///
     /// # Arguments
     /// * `random_state`: u64 - The random state to use to reproduce the sampling.
     pub fn get_random_node(&self, random_state: u64) -> NodeT {
-        (splitmix64(random_state) % (self.get_nodes_number() as u64)) as NodeT
+        sample_uniform(self.get_nodes_number() as u64, splitmix64(random_state)) as NodeT
+    }
+
+    /// Return random edge ID.
+    ///
+    /// # Arguments
+    /// * `random_state`: u64 - The random state to use to reproduce the sampling.
+    pub fn get_random_edge_id(&self, random_state: u64) -> EdgeT {
+        sample_uniform(
+            self.get_number_of_directed_edges() as u64,
+            splitmix64(random_state),
+        ) as EdgeT
+    }
+
+    /// Return random node ID following zipfian distribution of the graph.
+    ///
+    /// # Arguments
+    /// * `random_state`: u64 - The random state to use to reproduce the sampling.
+    pub fn get_random_zipfian_node(&self, random_state: u64) -> NodeT {
+        unsafe {
+            self.get_unchecked_node_ids_from_edge_id(self.get_random_edge_id(random_state))
+                .0 as NodeT
+        }
     }
 
     /// Return random unique sorted numbers.
@@ -19,7 +41,7 @@ impl Graph {
     /// # Arguments
     /// * `number_of_nodes_to_sample`: NodeT - The number of nodes to sample.
     /// * `random_state`: u64 - The random state to use to reproduce the sampling.
-    pub fn get_random_nodes(
+    pub fn get_sorted_unique_random_nodes(
         &self,
         number_of_nodes_to_sample: NodeT,
         random_state: u64,
@@ -142,7 +164,7 @@ impl Graph {
         let root_node =
             root_node.unwrap_or(splitmix64(random_state) as NodeT % self.get_nodes_number());
         match node_sampling_method {
-            "random_nodes" => self.get_random_nodes(number_of_nodes_to_sample, random_state),
+            "random_nodes" => self.get_sorted_unique_random_nodes(number_of_nodes_to_sample, random_state),
             "breadth_first_search" => self.get_breadth_first_search_random_nodes(number_of_nodes_to_sample, root_node),
             "uniform_random_walk" => self.get_uniform_random_walk_random_nodes(root_node, random_state, number_of_nodes_to_sample as u64, unique),
             node_sampling_method => Err(format!(
