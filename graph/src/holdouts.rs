@@ -212,84 +212,95 @@ impl Graph {
 
             sampling_round += 1;
 
+            let sampling_filter_map = |src, dst| {
+                if !self.is_directed() && src > dst {
+                    return None;
+                }
+
+                if !self.has_selfloops() && src == dst {
+                    return None;
+                }
+
+                unsafe {
+                    if let Some(minimum_node_degree) = &minimum_node_degree {
+                        if self.get_unchecked_node_degree_from_node_id(src) < *minimum_node_degree
+                            || self.get_unchecked_node_degree_from_node_id(dst)
+                                < *minimum_node_degree
+                        {
+                            return None;
+                        }
+                    }
+
+                    if let Some(maximum_node_degree) = &maximum_node_degree {
+                        if self.get_unchecked_node_degree_from_node_id(src) > *maximum_node_degree
+                            || self.get_unchecked_node_degree_from_node_id(dst)
+                                > *maximum_node_degree
+                        {
+                            return None;
+                        }
+                    }
+                }
+
+                if let Some(sn) = &seed_nodes {
+                    if !sn.contains(src) && !sn.contains(dst) {
+                        return None;
+                    }
+                }
+                if let Some(ncs) = &node_components {
+                    if ncs[src as usize] != ncs[dst as usize] {
+                        return None;
+                    }
+                }
+
+                if sample_only_edges_with_heterogeneous_node_types
+                    && unsafe {
+                        self.get_unchecked_node_type_ids_from_node_id(src)
+                            == self.get_unchecked_node_type_ids_from_node_id(dst)
+                    }
+                {
+                    return None;
+                }
+
+                // If the edge is not a self-loop or the user allows self-loops and
+                // the graph is directed or the edges are inserted in a way to avoid
+                // inserting bidirectional edges.
+                if self.has_edge_from_node_ids(src, dst) {
+                    return None;
+                }
+
+                let fake_edge_id = self.encode_edge(src, dst);
+
+                if negative_edges_hashset.contains(&fake_edge_id) {
+                    return None;
+                }
+
+                Some(fake_edge_id)
+            };
+
             // generate the random edge-sources
-            let sampled_edge_ids = self
-                .par_iter_zipfian_random_source_node_ids(
+            let sampled_edge_ids = if use_zipfian_sampling {
+                self.par_iter_zipfian_random_source_node_ids(
                     number_of_negative_samples as usize,
                     src_random_state,
                 )
                 .zip(self.par_iter_zipfian_random_source_node_ids(
                     number_of_negative_samples as usize,
-                    src_random_state,
+                    dst_random_state,
                 ))
-                // convert them to plain (src, dst)
-                .filter_map(|(src, dst)| {
-                    if !self.is_directed() && src > dst {
-                        return None;
-                    }
-
-                    if !self.has_selfloops() && src == dst {
-                        return None;
-                    }
-
-                    unsafe {
-                        if let Some(minimum_node_degree) = &minimum_node_degree {
-                            if self.get_unchecked_node_degree_from_node_id(src)
-                                < *minimum_node_degree
-                                || self.get_unchecked_node_degree_from_node_id(dst)
-                                    < *minimum_node_degree
-                            {
-                                return None;
-                            }
-                        }
-
-                        if let Some(maximum_node_degree) = &maximum_node_degree {
-                            if self.get_unchecked_node_degree_from_node_id(src)
-                                > *maximum_node_degree
-                                || self.get_unchecked_node_degree_from_node_id(dst)
-                                    > *maximum_node_degree
-                            {
-                                return None;
-                            }
-                        }
-                    }
-
-                    if let Some(sn) = &seed_nodes {
-                        if !sn.contains(src) && !sn.contains(dst) {
-                            return None;
-                        }
-                    }
-                    if let Some(ncs) = &node_components {
-                        if ncs[src as usize] != ncs[dst as usize] {
-                            return None;
-                        }
-                    }
-
-                    if sample_only_edges_with_heterogeneous_node_types
-                        && unsafe {
-                            self.get_unchecked_node_type_ids_from_node_id(src)
-                                == self.get_unchecked_node_type_ids_from_node_id(dst)
-                        }
-                    {
-                        return None;
-                    }
-
-                    // If the edge is not a self-loop or the user allows self-loops and
-                    // the graph is directed or the edges are inserted in a way to avoid
-                    // inserting bidirectional edges.
-                    if self.has_edge_from_node_ids(src, dst) {
-                        return None;
-                    }
-                    
-                    let fake_edge_id = self.encode_edge(src, dst);
-
-                    if negative_edges_hashset.contains(&fake_edge_id){
-                        return None;
-                    }
-                    
-                    Some(fake_edge_id)
-                })
-                .collect::<Vec<EdgeT>>();
+                .filter_map(|(src, dst)| sampling_filter_map(src, dst))
+                .collect::<Vec<EdgeT>>()
+            } else {
+                self.par_iter_random_node_ids(
+                    number_of_negative_samples as usize,
+                    src_random_state,
+                )
+                .zip(self.par_iter_random_node_ids(
+                    number_of_negative_samples as usize,
+                    dst_random_state,
+                ))
+                .filter_map(|(src, dst)| sampling_filter_map(src, dst))
+                .collect::<Vec<EdgeT>>()
+            };
 
             for edge_id in sampled_edge_ids.iter() {
                 if negative_edges_hashset.len() >= number_of_negative_samples as usize {

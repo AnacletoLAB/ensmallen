@@ -1801,6 +1801,7 @@ pub fn test_negative_edges_generation(graph: &mut Graph, verbose: Option<bool>) 
             None,
             None,
             None,
+            None,
         )?;
         assert_eq!(
             graph.get_edges_number(),
