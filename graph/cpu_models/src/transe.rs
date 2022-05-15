@@ -269,18 +269,12 @@ impl TransE {
 
                 // We iterate over the graph edges.
                 graph
-                    .par_iter_directed_edge_node_ids_and_edge_type_id()
-                    .zip(
-                        graph.par_iter_zipfian_random_source_node_ids(
-                            graph.get_number_of_directed_edges() as usize,
-                            random_state
-                        )
-                        .zip(graph.par_iter_zipfian_random_source_node_ids(
-                            graph.get_number_of_directed_edges() as usize,
-                            random_state.wrapping_mul(2)
-                        )),
+                    .par_iter_siamese_mini_batch(
+                        random_state,
+                        graph.get_number_of_directed_edges() as usize,
+                        Some(true),
                     )
-                    .for_each(|((_, src, dst, edge_type_id), (not_src, not_dst))| {
+                    .for_each(|(src, _, dst, _, not_src, _, not_dst, _, edge_type_id)| {
                         compute_mini_batch_step(
                             src as usize,
                             not_src as usize,
