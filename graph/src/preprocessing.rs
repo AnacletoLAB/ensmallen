@@ -558,6 +558,48 @@ impl Graph {
     }
 
     #[manual_binding]
+    /// Returns n-ple with terms used for training a kgsiamese network.
+    ///
+    /// # Arguments
+    /// * `random_state`: u64 - The random state to reproduce the batch.
+    /// * `batch_size`: usize - The maximal size of the batch to generate,
+    /// * `use_zipfian_sampling`: Option<bool> - Whether to sample the nodes using zipfian distribution. By default True. Not using this may cause significant biases.
+    ///
+    pub fn par_iter_kgsiamese_mini_batch(
+        &self,
+        random_state: u64,
+        batch_size: usize,
+        use_zipfian_sampling: Option<bool>,
+    ) -> impl IndexedParallelIterator<
+        Item = (
+            NodeT,
+            NodeT,
+            NodeT,
+            NodeT,
+            Option<Vec<NodeTypeT>>,
+            Option<Vec<NodeTypeT>>,
+            Option<Vec<NodeTypeT>>,
+            Option<Vec<NodeTypeT>>,
+            Option<EdgeTypeT>,
+        ),
+    > + '_ {
+        self.par_iter_siamese_mini_batch(
+            random_state,
+            batch_size,
+            use_zipfian_sampling
+        ).map(move |(src, dst, not_src, not_dst, edge_type)|unsafe {
+            (
+                src, dst, not_src, not_dst,
+                self.get_unchecked_node_type_ids_from_node_id(src).map(|x| x.clone()),
+                self.get_unchecked_node_type_ids_from_node_id(dst).map(|x| x.clone()),
+                self.get_unchecked_node_type_ids_from_node_id(not_src).map(|x| x.clone()),
+                self.get_unchecked_node_type_ids_from_node_id(not_dst).map(|x| x.clone()),
+                edge_type
+            )
+        })
+    }
+
+    #[manual_binding]
     /// Returns n-ple with index to build numpy array, source node, source node type, destination node, destination node type.
     ///
     /// # Arguments
