@@ -144,18 +144,53 @@ impl TransE {
             ));
         }
 
+        let initialization_radius = 6.0 / scale_factor;
+
+        let norm = |vector: &[f32]| {
+            vector
+                .iter()
+                .map(|value| value.powf(2.0))
+                .sum::<f32>()
+                .sqrt()
+                + f32::EPSILON
+        };
+
         // Populate the embedding layers with random uniform value
         node_embedding
             .par_iter_mut()
             .enumerate()
-            .for_each(|(i, e)| *e = 2.0 * random_f32(splitmix64(random_state + i as u64)) - 1.0);
+            .for_each(|(i, e)| {
+                *e = 2.0 * initialization_radius * random_f32(splitmix64(random_state + i as u64))
+                    - initialization_radius
+            });
+
+        node_embedding
+            .par_chunks(self.embedding_size)
+            .for_each(|chunk| {
+                let chunk_norm = norm(chunk);
+                chunk.iter_mut().for_each(|value| {
+                    *value /= chunk_norm;
+                });
+            });
 
         random_state = splitmix64(random_state);
 
         edge_type_embedding
             .par_iter_mut()
             .enumerate()
-            .for_each(|(i, e)| *e = 2.0 * random_f32(splitmix64(random_state + i as u64)) - 1.0);
+            .for_each(|(i, e)| {
+                *e = 2.0 * initialization_radius * random_f32(splitmix64(random_state + i as u64))
+                    - initialization_radius
+            });
+
+        edge_type_embedding
+            .par_chunks(self.embedding_size)
+            .for_each(|chunk| {
+                let chunk_norm = norm(chunk);
+                chunk.iter_mut().for_each(|value| {
+                    *value /= chunk_norm;
+                });
+            });
 
         let shared_node_embedding = ThreadDataRaceAware::new(node_embedding);
         let shared_edge_type_embedding = ThreadDataRaceAware::new(edge_type_embedding);
@@ -171,15 +206,6 @@ impl TransE {
             pb
         } else {
             ProgressBar::hidden()
-        };
-
-        let norm = |vector: &[f32]| {
-            vector
-                .iter()
-                .map(|value| value.powf(2.0))
-                .sum::<f32>()
-                .sqrt()
-                + f32::EPSILON
         };
 
         let compute_mini_batch_step = |src: usize,
@@ -209,18 +235,16 @@ impl TransE {
                     [(edge_type * self.embedding_size)..((edge_type + 1) * self.embedding_size)]
             };
 
-            let (dst_norm, not_dst_norm, src_norm, not_src_norm, edge_type_norm) =
-                if self.renormalize {
-                    (
-                        norm(dst_embedding),
-                        norm(not_dst_embedding),
-                        norm(src_embedding),
-                        norm(not_src_embedding),
-                        norm(edge_type_embedding),
-                    )
-                } else {
-                    (1.0, 1.0, 1.0, 1.0, 1.0)
-                };
+            let (dst_norm, not_dst_norm, src_norm, not_src_norm) = if self.renormalize {
+                (
+                    norm(dst_embedding),
+                    norm(not_dst_embedding),
+                    norm(src_embedding),
+                    norm(not_src_embedding),
+                )
+            } else {
+                (1.0, 1.0, 1.0, 1.0)
+            };
 
             src_embedding
                 .iter_mut()
@@ -237,7 +261,6 @@ impl TransE {
                             *not_src_feature /= not_src_norm;
                             *dst_feature /= dst_norm;
                             *not_dst_feature /= not_dst_norm;
-                            *edge_type_feature /= edge_type_norm;
                         }
 
                         let mut positive_distance =
