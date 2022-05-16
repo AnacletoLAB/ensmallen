@@ -300,7 +300,7 @@ impl KGCBOW {
              learning_rate: f32| {
                 node_type_counts
                     .iter_mut()
-                    .zip(unsafe{(*shared_hidden_node_types.get()).chunks(self.embedding_size)})
+                    .zip(unsafe { (*shared_hidden_node_types.get()).chunks(self.embedding_size) })
                     .enumerate()
                     .for_each(|(node_type_id, (count, node_type_embedding))| {
                         let dot = node_type_embedding
@@ -315,6 +315,7 @@ impl KGCBOW {
                             / scale_factor;
 
                         if dot > self.clipping_value || dot < -self.clipping_value {
+                            *count = 0;
                             return;
                         }
 
@@ -345,7 +346,7 @@ impl KGCBOW {
              learning_rate: f32| {
                 edge_type_counts
                     .iter_mut()
-                    .zip(unsafe{(*shared_hidden_edge_types.get()).chunks(self.embedding_size)})
+                    .zip(unsafe { (*shared_hidden_edge_types.get()).chunks(self.embedding_size) })
                     .enumerate()
                     .for_each(|(edge_type_id, (count, edge_type_embedding))| {
                         let dot = edge_type_embedding
@@ -360,6 +361,7 @@ impl KGCBOW {
                             / scale_factor;
 
                         if dot > self.clipping_value || dot < -self.clipping_value {
+                            *count = 0;
                             return;
                         }
 
@@ -537,7 +539,7 @@ impl KGCBOW {
                                 context_gradient.as_mut_slice(),
                                 node_type_counts.as_mut_slice(),
                                 context_size as f32,
-                                learning_rate
+                                learning_rate,
                             );
 
                             compute_edge_types_mini_batch_step(
@@ -545,7 +547,7 @@ impl KGCBOW {
                                 context_gradient.as_mut_slice(),
                                 edge_type_counts.as_mut_slice(),
                                 context_size as f32,
-                                learning_rate
+                                learning_rate,
                             );
 
                             context
