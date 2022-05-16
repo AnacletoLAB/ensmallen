@@ -825,10 +825,6 @@ impl Graph {
     /// -------------
     /// random_state: int
     ///     Random state to reproduce sampling
-    /// use_node_types: bool
-    ///     Whether to use node types.
-    /// use_edge_types: bool
-    ///     Whether to use edge types.
     /// batch_size: int
     ///     The maximal size of the batch to generate,
     /// use_zipfian_sampling: bool = True
@@ -838,8 +834,6 @@ impl Graph {
     fn get_siamese_mini_batch(
         &self,
         random_state: u64,
-        use_node_types: bool,
-        use_edge_types: bool,
         batch_size: usize,
         use_zipfian_sampling: Option<bool>,
     ) -> (
@@ -847,11 +841,7 @@ impl Graph {
         Py<PyArray1<NodeT>>,
         Py<PyArray1<NodeT>>,
         Py<PyArray1<NodeT>>,
-        Option<Py<PyArray2<NodeTypeT>>>,
-        Option<Py<PyArray2<NodeTypeT>>>,
-        Option<Py<PyArray2<NodeTypeT>>>,
-        Option<Py<PyArray2<NodeTypeT>>>,
-        Option<Py<PyArray1<EdgeTypeT>>>,
+        Py<PyArray1<EdgeTypeT>>,
     ) {
         let gil = pyo3::Python::acquire_gil();
 
@@ -871,42 +861,8 @@ impl Graph {
             t: PyArray1::new(gil.python(), [batch_size], false),
         };
 
-        let (src_node_type_ids, dst_node_type_ids, not_src_node_type_ids, not_dst_node_type_ids) =
-            if self.inner.has_node_types() && use_node_types {
-                let max_node_type_count =
-                    self.inner.get_maximum_multilabel_count().unwrap() as usize;
-                (
-                    Some(ThreadDataRaceAware {
-                        t: PyArray2::zeros(gil.python(), [batch_size, max_node_type_count], false),
-                    }),
-                    Some(ThreadDataRaceAware {
-                        t: PyArray2::zeros(gil.python(), [batch_size, max_node_type_count], false),
-                    }),
-                    Some(ThreadDataRaceAware {
-                        t: PyArray2::zeros(gil.python(), [batch_size, max_node_type_count], false),
-                    }),
-                    Some(ThreadDataRaceAware {
-                        t: PyArray2::zeros(gil.python(), [batch_size, max_node_type_count], false),
-                    }),
-                )
-            } else {
-                (None, None, None, None)
-            };
-
-        let edge_type_ids = if self.inner.has_edge_types() && use_edge_types {
-            Some(ThreadDataRaceAware {
-                t: PyArray1::zeros(gil.python(), [batch_size], false),
-            })
-        } else {
-            None
-        };
-
-        let node_types_offset = if self.inner.has_unknown_node_types().unwrap_or(false)
-            || self.inner.has_multilabel_node_types().unwrap_or(false)
-        {
-            1
-        } else {
-            0
+        let edge_type_ids = ThreadDataRaceAware {
+            t: PyArray1::zeros(gil.python(), [batch_size], false),
         };
 
         let edge_types_offset = if self.inner.has_unknown_edge_types().unwrap_or(false) {
@@ -918,58 +874,26 @@ impl Graph {
         self.inner
             .par_iter_siamese_mini_batch(random_state, batch_size, use_zipfian_sampling)
             .enumerate()
-            .for_each(
-                |(
-                    i,
-                    (
-                        src,
-                        src_nt_ids,
-                        dst,
-                        dst_nt_ids,
-                        not_src,
-                        not_src_nt_ids,
-                        not_dst,
-                        not_dst_nt_ids,
-                        edge_type,
-                    ),
-                )| unsafe {
-                    for (node_ndarray, node, node_types_ndarray, node_type_ids) in [
-                        (&srcs, src, &src_node_type_ids, src_nt_ids),
-                        (&dsts, dst, &dst_node_type_ids, dst_nt_ids),
-                        (&not_srcs, not_src, &not_src_node_type_ids, not_src_nt_ids),
-                        (&not_dsts, not_dst, &not_dst_node_type_ids, not_dst_nt_ids),
-                    ] {
-                        *(node_ndarray.t.uget_mut([i])) = node;
-                        if let (Some(node_type_ids), Some(node_types_ndarray)) =
-                            (node_type_ids, node_types_ndarray.as_ref())
-                        {
-                            node_type_ids
-                                .into_iter()
-                                .enumerate()
-                                .for_each(|(j, node_type)| {
-                                    *(node_types_ndarray.t.uget_mut([i, j])) =
-                                        node_type + node_types_offset;
-                                });
-                        }
-                    }
-                    if let (Some(edge_type_ids), Some(edge_type)) =
-                        (edge_type_ids.as_ref(), edge_type)
-                    {
-                        *(edge_type_ids.t.uget_mut([i])) = edge_type + edge_types_offset;
-                    }
-                },
-            );
+            .for_each(|(i, (src, dst, not_src, not_dst, edge_type))| unsafe {
+                for (node_ndarray, node) in [
+                    (&srcs, src),
+                    (&dsts, dst),
+                    (&not_srcs, not_src),
+                    (&not_dsts, not_dst),
+                ] {
+                    *(node_ndarray.t.uget_mut([i])) = node;
+                }
+                if let Some(edge_type) = edge_type {
+                    *(edge_type_ids.t.uget_mut([i])) = edge_type + edge_types_offset;
+                }
+            });
 
         (
             srcs.t.to_owned(),
             dsts.t.to_owned(),
             not_srcs.t.to_owned(),
             not_dsts.t.to_owned(),
-            src_node_type_ids.map(|x| x.t.to_owned()),
-            dst_node_type_ids.map(|x| x.t.to_owned()),
-            not_src_node_type_ids.map(|x| x.t.to_owned()),
-            not_dst_node_type_ids.map(|x| x.t.to_owned()),
-            edge_type_ids.map(|x| x.t.to_owned()),
+            edge_type_ids.t.to_owned(),
         )
     }
 

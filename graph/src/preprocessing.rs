@@ -515,24 +515,20 @@ impl Graph {
     /// * `batch_size`: usize - The maximal size of the batch to generate,
     /// * `use_zipfian_sampling`: Option<bool> - Whether to sample the nodes using zipfian distribution. By default True. Not using this may cause significant biases.
     ///
-    pub fn par_iter_siamese_mini_batch<'a>(
-        &'a self,
+    pub fn par_iter_siamese_mini_batch(
+        &self,
         random_state: u64,
         batch_size: usize,
         use_zipfian_sampling: Option<bool>,
     ) -> impl IndexedParallelIterator<
         Item = (
             NodeT,
-            Option<&'a Vec<NodeTypeT>>,
             NodeT,
-            Option<&'a Vec<NodeTypeT>>,
             NodeT,
-            Option<&'a Vec<NodeTypeT>>,
             NodeT,
-            Option<&'a Vec<NodeTypeT>>,
             Option<EdgeTypeT>,
         ),
-    >  + 'a{
+    > + '_ {
         let use_zipfian_sampling = use_zipfian_sampling.unwrap_or(true);
         let random_state = splitmix64(random_state);
         (0..batch_size).into_par_iter().map(move |i| unsafe {
@@ -553,13 +549,9 @@ impl Graph {
             };
             (
                 src,
-                self.get_unchecked_node_type_ids_from_node_id(src),
                 dst,
-                self.get_unchecked_node_type_ids_from_node_id(dst),
                 not_src,
-                self.get_unchecked_node_type_ids_from_node_id(not_src),
                 not_dst,
-                self.get_unchecked_node_type_ids_from_node_id(not_dst),
                 self.get_unchecked_edge_type_id_from_edge_id(edge_id),
             )
         })

@@ -295,7 +295,7 @@ impl TransE {
                         graph.get_number_of_directed_edges() as usize,
                         Some(true),
                     )
-                    .for_each(|(src, _, dst, _, not_src, _, not_dst, _, edge_type_id)| {
+                    .for_each(|(src, dst, not_src, not_dst, edge_type_id)| {
                         compute_mini_batch_step(
                             src as usize,
                             not_src as usize,
