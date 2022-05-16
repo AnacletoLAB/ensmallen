@@ -12,8 +12,8 @@ mod macros;
 pub(crate) use crate::macros::*;
 mod cbow;
 pub(crate) use cbow::*;
-mod kgcbow;
-pub(crate) use kgcbow::*;
+mod glove;
+pub(crate) use glove::*;
 mod transe;
 pub(crate) use transe::*;
 mod edge_file_writer;
@@ -40,7 +40,7 @@ mod walks;
 #[pymodule]
 fn models(_py: Python, _m: &PyModule) -> PyResult<()> {
     _m.add_class::<CBOW>()?;
-    _m.add_class::<KGCBOW>()?;
+    _m.add_class::<GloVe>()?;
     _m.add_class::<TransE>()?;
     _m.add_class::<SkipGram>()?;
     _m.add_class::<SPINE>()?;

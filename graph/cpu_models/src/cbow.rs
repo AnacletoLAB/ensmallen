@@ -1,10 +1,7 @@
 use graph::{Graph, NodeT, ThreadDataRaceAware, WalksParameters};
 use indicatif::{ProgressBar, ProgressStyle};
-use rayon::iter::IndexedParallelIterator;
-use rayon::iter::IntoParallelIterator;
-use rayon::iter::IntoParallelRefMutIterator;
-use rayon::iter::ParallelIterator;
-use vec_rand::{random_f32, splitmix64, sample_uniform};
+use rayon::prelude::*;
+use vec_rand::{random_f32, sample_uniform, splitmix64};
 
 #[derive(Clone, Debug)]
 pub struct CBOW {
@@ -275,12 +272,9 @@ impl CBOW {
             let mut weighted_variation = variation * learning_rate;
 
             if self.normalize_learning_rate_by_degree {
-                weighted_variation *= 1.0 - (
-                    unsafe{
-                        graph.get_unchecked_node_degree_from_node_id(node_id) as f32
-                    }
-                    / nodes_number as f32
-                );
+                weighted_variation *= 1.0
+                    - (unsafe { graph.get_unchecked_node_degree_from_node_id(node_id) as f32 }
+                        / nodes_number as f32);
             }
 
             weighted_vector_sum(context_embedding_gradient, node_hidden, weighted_variation);
@@ -310,18 +304,15 @@ impl CBOW {
                             if !self.stochastic_downsample_by_degree {
                                 true
                             } else {
-                                let degree = unsafe{
-                                    graph.get_unchecked_node_degree_from_node_id(random_walk[central_index as usize])
+                                let degree = unsafe {
+                                    graph.get_unchecked_node_degree_from_node_id(
+                                        random_walk[central_index as usize],
+                                    )
                                 };
                                 let seed = splitmix64(
-                                    random_state
-                                        + central_index as u64
-                                        + walk_number as u64
+                                    random_state + central_index as u64 + walk_number as u64,
                                 );
-                                degree < sample_uniform(
-                                    nodes_number as _,
-                                    seed,
-                                ) as _
+                                degree < sample_uniform(nodes_number as _, seed) as _
                             }
                         })
                         .map(|central_index| {
@@ -367,7 +358,9 @@ impl CBOW {
                                     .iter_zipfian_random_source_node_ids(
                                         self.number_of_negative_samples,
                                         splitmix64(
-                                            random_state + central_index as u64 + walk_number as u64,
+                                            random_state
+                                                + central_index as u64
+                                                + walk_number as u64,
                                         ),
                                     )
                                     .filter(|non_central_node_id| {
@@ -383,19 +376,16 @@ impl CBOW {
                                         )
                                     })
                                     .sum::<f32>()
-                                } else {
-                                    (0..self.number_of_negative_samples)
+                            } else {
+                                (0..self.number_of_negative_samples)
                                     .map(|i| {
                                         let seed = splitmix64(
                                             random_state
                                                 + central_index as u64
                                                 + walk_number as u64
-                                                + i as u64
+                                                + i as u64,
                                         );
-                                        sample_uniform(
-                                            nodes_number as _,
-                                            seed,
-                                        ) as NodeT
+                                        sample_uniform(nodes_number as _, seed) as NodeT
                                     })
                                     .filter(|non_central_node_id| {
                                         *non_central_node_id != central_node_id
@@ -410,7 +400,7 @@ impl CBOW {
                                         )
                                     })
                                     .sum::<f32>()
-                                };
+                            };
 
                             for contextual_node_id in context.iter().copied() {
                                 if contextual_node_id == central_node_id {

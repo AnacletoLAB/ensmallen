@@ -1,9 +1,7 @@
 use graph::{Graph, ThreadDataRaceAware};
 use indicatif::ProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
-use rayon::iter::IndexedParallelIterator;
-use rayon::iter::IntoParallelRefMutIterator;
-use rayon::iter::ParallelIterator;
+use rayon::prelude::*;
 use vec_rand::{random_f32, splitmix64};
 
 #[derive(Clone, Debug)]
@@ -165,7 +163,7 @@ impl TransE {
             });
 
         node_embedding
-            .par_chunks(self.embedding_size)
+            .par_chunks_mut(self.embedding_size)
             .for_each(|chunk| {
                 let chunk_norm = norm(chunk);
                 chunk.iter_mut().for_each(|value| {
@@ -184,7 +182,7 @@ impl TransE {
             });
 
         edge_type_embedding
-            .par_chunks(self.embedding_size)
+            .par_chunks_mut(self.embedding_size)
             .for_each(|chunk| {
                 let chunk_norm = norm(chunk);
                 chunk.iter_mut().for_each(|value| {

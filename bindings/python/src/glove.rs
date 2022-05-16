@@ -4,28 +4,28 @@ use numpy::PyArray2;
 ///
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, window_size, clipping_value, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, stochastic_downsample_by_degree, use_zipfian_sampling)"]
-pub struct KGCBOW {
-    pub inner: cpu_models::KGCBOW,
+#[text_signature = "(*, embedding_size, window_size, clipping_value, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, normalize_by_degree)"]
+pub struct GloVe {
+    pub inner: cpu_models::GloVe,
 }
 
-impl From<cpu_models::KGCBOW> for KGCBOW {
-    fn from(val: cpu_models::KGCBOW) -> KGCBOW {
-        KGCBOW { inner: val }
+impl From<cpu_models::GloVe> for GloVe {
+    fn from(val: cpu_models::GloVe) -> GloVe {
+        GloVe { inner: val }
     }
 }
 
-impl From<KGCBOW> for cpu_models::KGCBOW {
-    fn from(val: KGCBOW) -> cpu_models::KGCBOW {
+impl From<GloVe> for cpu_models::GloVe {
+    fn from(val: GloVe) -> cpu_models::GloVe {
         val.inner
     }
 }
 
 #[pymethods]
-impl KGCBOW {
+impl GloVe {
     #[new]
     #[args(py_kwargs = "**")]
-    /// Return a new instance of the KGCBOW model.
+    /// Return a new instance of the GloVe model.
     ///
     /// Parameters
     /// ------------------------
@@ -36,8 +36,8 @@ impl KGCBOW {
     /// clipping_value: Optional[float] = 6.0
     ///     Value at which we clip the dot product, mostly for numerical stability issues.
     ///     By default, `6.0`, where the loss is already close to zero.
-    /// number_of_negative_samples: Optional[int] = 5
-    ///     Number of negative samples to extract for each context.
+    /// alpha: f64 = 0.75
+    ///     Alpha to use for the loss.
     /// walk_length: Optional[int] = 32
     ///     Maximal length of the random walk.
     ///     On graphs without traps, all walks have this length.
@@ -67,23 +67,13 @@ impl KGCBOW {
     ///     random_state to use to reproduce the walks.
     /// iterations: int = 1
     ///     Number of cycles on the graphs to execute.
-    /// dense_node_mapping: Dict[int, int] = None
-    ///     Mapping to use for converting sparse walk space into a dense space.
-    ///     This object can be created using the method available from graph
-    ///     called `get_dense_node_mapping` that returns a mapping from
-    ///     the non trap nodes (those from where a walk could start) and
-    ///     maps these nodes into a dense range of values.
     /// max_neighbours: Optional[int] = 100
     ///     Maximum number of randomly sampled neighbours to consider.
     ///     If this parameter is used, the walks becomes probabilistic in nature
     ///     and becomes an approximation of an exact walk.
     /// normalize_by_degree: Optional[bool] = False
     ///     Whether to normalize the random walks by the node degree.
-    /// stochastic_downsample_by_degree: Optional[bool]
-    ///     Randomly skip samples with probability proportional to the degree of the central node. By default false.
-    /// use_zipfian_sampling: Optional[bool]
-    ///     Sample negatives proportionally to their degree. By default true.
-    pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<KGCBOW> {
+    pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<GloVe> {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
@@ -93,9 +83,7 @@ impl KGCBOW {
                 "embedding_size",
                 "window_size",
                 "clipping_value",
-                "number_of_negative_samples",
-                "stochastic_downsample_by_degree",
-                "use_zipfian_sampling",
+                "alpha",
             ])
             .as_slice()
         ))?;
@@ -103,24 +91,22 @@ impl KGCBOW {
         let parameters = pe!(build_walk_parameters(kwargs))?;
 
         Ok(Self {
-            inner: pe!(cpu_models::KGCBOW::new(
+            inner: pe!(cpu_models::GloVe::new(
                 extract_value_rust_result!(kwargs, "embedding_size", usize),
                 Some(parameters),
                 extract_value_rust_result!(kwargs, "window_size", usize),
-                extract_value_rust_result!(kwargs, "clipping_value", f32),
-                extract_value_rust_result!(kwargs, "number_of_negative_samples", usize),
-                extract_value_rust_result!(kwargs, "stochastic_downsample_by_degree", bool),
-                extract_value_rust_result!(kwargs, "use_zipfian_sampling", bool),
+                extract_value_rust_result!(kwargs, "clipping_value", f64),
+                extract_value_rust_result!(kwargs, "alpha", f64),
             ))?,
         })
     }
 }
 
 #[pymethods]
-impl KGCBOW {
+impl GloVe {
     #[args(py_kwargs = "**")]
     #[text_signature = "($self, graph, *, epochs, learning_rate, learning_rate_decay, verbose)"]
-    /// Return numpy embedding with KGCBOW node embedding.
+    /// Return numpy embedding with GloVe node embedding.
     ///
     /// Parameters
     /// ---------
@@ -150,26 +136,23 @@ impl KGCBOW {
             &["epochs", "learning_rate", "learning_rate_decay", "verbose"]
         ))?;
 
+        let rows_number = graph.inner.get_nodes_number() as usize;
         let columns_number = self.inner.get_embedding_size();
-        let node_embedding = PyArray2::new(
-            gil.python(),
-            [graph.inner.get_nodes_number() as usize, columns_number],
-            false,
-        );
+        let embedding = PyArray2::new(gil.python(), [rows_number, columns_number], false);
 
-        let node_embedding_slice = unsafe { node_embedding.as_slice_mut().unwrap() };
+        let embedding_slice = unsafe { embedding.as_slice_mut().unwrap() };
 
         // We always use the racing version of the fit transform
         // as we generally do not care about memory collisions.
         pe!(self.inner.fit_transform(
             &graph.inner,
-            node_embedding_slice,
+            embedding_slice,
             extract_value_rust_result!(kwargs, "epochs", usize),
-            extract_value_rust_result!(kwargs, "learning_rate", f32),
-            extract_value_rust_result!(kwargs, "learning_rate_decay", f32),
+            extract_value_rust_result!(kwargs, "learning_rate", f64),
+            extract_value_rust_result!(kwargs, "learning_rate_decay", f64),
             extract_value_rust_result!(kwargs, "verbose", bool),
         ))?;
 
-        Ok(node_embedding.into_py(gil.python()))
+        Ok(embedding.into_py(gil.python()))
     }
 }
