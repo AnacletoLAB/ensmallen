@@ -575,13 +575,7 @@ impl Graph {
             self.edge_types
                 .as_ref()
                 .as_ref()
-                .map(|ets| {
-                    ets.ids
-                        .par_iter()
-                        .copied()
-                        .filter_map(|et| et)
-                        .collect()
-                })
+                .map(|ets| ets.ids.par_iter().copied().filter_map(|et| et).collect())
                 .unwrap()
         })
     }
@@ -843,13 +837,31 @@ impl Graph {
             .collect()
     }
 
-    /// Return vector with the sorted directed edge Ids.
+    /// Return vector with the sorted directed edge node IDs.
     pub fn get_directed_edge_node_ids(&self) -> Vec<Vec<NodeT>> {
-        let mut edge_ids = vec![vec![0; 2]; self.get_number_of_directed_edges() as usize];
+        let mut edge_node_ids = vec![vec![0; 2]; self.get_number_of_directed_edges() as usize];
         self.par_iter_directed_edge_node_ids()
             .map(|(_, src, dst)| vec![src, dst])
-            .collect_into_vec(&mut edge_ids);
-        edge_ids
+            .collect_into_vec(&mut edge_node_ids);
+        edge_node_ids
+    }
+
+    /// Return vector with the sorted directed triples with (source, edge_type, destination) IDs.
+    ///
+    /// # Raises
+    /// * If the graph does not contain edge types.
+    pub fn get_directed_edge_triples_ids(&self) -> Result<Vec<Vec<NodeT>>> {
+        self.must_have_edge_types()?;
+        Ok(self
+            .par_iter_directed_edge_node_ids_and_edge_type_id()
+            .filter_map(|(_, src, dst, edge_type)| {
+                if let Some(edge_type) = edge_type {
+                    Some(vec![src, edge_type as NodeT, dst])
+                } else {
+                    None
+                }
+            })
+            .collect::<Vec<Vec<NodeT>>>())
     }
 
     /// Return vector with the sorted edge names.
@@ -870,6 +882,24 @@ impl Graph {
             .map(|(_, _, src_name, _, dst_name)| (src_name, dst_name))
             .collect_into_vec(&mut edge_names);
         edge_names
+    }
+
+    /// Return vector with the sorted directed triples with (source, edge_type, destination) names.
+    ///
+    /// # Raises
+    /// * If the graph does not contain edge types.
+    pub fn get_directed_edge_triples_names(&self) -> Result<Vec<Vec<String>>> {
+        self.must_have_edge_types()?;
+        Ok(self
+            .par_iter_directed_edge_node_names_and_edge_type_name()
+            .filter_map(|(_, _, src, _, dst, _, edge_type)| {
+                if let Some(edge_type) = edge_type {
+                    Some(vec![src, edge_type, dst])
+                } else {
+                    None
+                }
+            })
+            .collect::<Vec<Vec<String>>>())
     }
 
     /// Returns number of nodes with unknown node type.
