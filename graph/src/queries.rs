@@ -410,13 +410,29 @@ impl Graph {
     /// assert!(graph.get_edge_id_from_node_ids(0, 100000000).is_err());
     /// ```
     pub fn get_edge_id_from_node_ids(&self, src: NodeT, dst: NodeT) -> Result<EdgeT> {
-        match self
+        match self.destinations.as_ref().as_ref().zip((*self.cumulative_node_degrees).as_ref().as_ref() ){
+            None => match self
             .edges
             .rank(self.encode_edge(src, dst))
             .map(|value| value as EdgeT) {
                 Some(edge_id) => Ok(edge_id),
                 None => Err(format!("The edge composed by the source node {} and destination node {} does not exist in this graph.", src, dst))
+            },
+            Some((dsts, outbounds)) => {
+                self.validate_node_id(src)?;
+                let start = outbounds[src as usize] as usize;
+                let end = outbounds[src as usize + 1] as usize;
+                match dsts[start..end].binary_search(&dst) {
+                    Ok(local_idx) => {
+                        Ok((start + local_idx) as EdgeT)
+                    }
+                    Err(_) => {
+                        Err(format!("The edge composed by the source node {} and destination node {} does not exist in this graph.", src, dst))
+                    }
+                }
             }
+        }
+        
     }
 
     #[inline(always)]
