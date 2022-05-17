@@ -1,6 +1,5 @@
 use super::*;
 use graph::{
-    cooccurence_matrix as rust_cooccurence_matrix,
     get_okapi_bm25_tfidf_from_documents as rust_get_okapi_bm25_tfidf_from_documents,
     get_tokenized_csv as rust_get_tokenized_csv, iter_okapi_bm25_tfidf_from_documents,
     word2vec as rust_word2vec, NodeT, NodeTypeT, Tokens,
@@ -14,7 +13,6 @@ use types::ThreadDataRaceAware;
 #[pymodule]
 fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_wrapped(wrap_pyfunction!(word2vec))?;
-    m.add_wrapped(wrap_pyfunction!(cooccurence_matrix))?;
     m.add_wrapped(wrap_pyfunction!(get_okapi_bm25_tfidf_from_documents_u16))?;
     m.add_wrapped(wrap_pyfunction!(get_okapi_bm25_tfidf_from_documents_u32))?;
     m.add_wrapped(wrap_pyfunction!(get_okapi_bm25_tfidf_from_documents_u64))?;
@@ -306,54 +304,6 @@ fn word2vec(
     )
 }
 
-#[pyfunction(py_kwargs = "**")]
-#[text_signature = "(sequences, *, window_size, verbose)"]
-/// Return triple with CSR representation of cooccurrence matrix.
-///
-/// The first vector has the sources, the second vector the destinations
-/// and the third one contains the min-max normalized frequencies.
-///
-/// Arguments
-/// ---------
-///
-/// sequences: List[List[int]]
-///     the sequence of sequences of integers to preprocess.
-/// window_size: int = 4
-///     Window size to consider for the sequences.
-/// verbose: bool = False
-///     whether to show the progress bars.
-///     The default behaviour is false.
-///     
-fn cooccurence_matrix(
-    sequences: Vec<Vec<NodeT>>,
-    py_kwargs: Option<&PyDict>,
-) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>, Py<PyArray1<f64>>)> {
-    let _ = ctrlc::set_handler(|| std::process::exit(2));
-    let gil = pyo3::Python::acquire_gil();
-    let kwargs = normalize_kwargs!(py_kwargs, gil.python());
-    pe!(validate_kwargs(kwargs, &["window_size", "verbose"]))?;
-    let len = sequences.len();
-
-    let (number_of_elements, iter) = pe!(rust_cooccurence_matrix(
-        sequences.into_par_iter(),
-        extract_value!(kwargs, "window_size", usize).unwrap_or(3),
-        len,
-        extract_value!(kwargs, "verbose", bool)
-    ))?;
-
-    let srcs = PyArray1::new(gil.python(), [number_of_elements], false);
-    let dsts = PyArray1::new(gil.python(), [number_of_elements], false);
-    let frequencies = PyArray1::new(gil.python(), [number_of_elements], false);
-
-    iter.enumerate().for_each(|(i, (src, dst, freq))| unsafe {
-        *srcs.uget_mut(i) = src;
-        *dsts.uget_mut(i) = dst;
-        *frequencies.uget_mut(i) = freq;
-    });
-
-    Ok((srcs.to_owned(), dsts.to_owned(), frequencies.to_owned()))
-}
-
 #[pymethods]
 impl Graph {
     #[args(py_kwargs = "**")]
@@ -413,32 +363,39 @@ impl Graph {
     fn cooccurence_matrix(
         &self,
         py_kwargs: Option<&PyDict>,
-    ) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>, Py<PyArray1<f64>>)> {
+    ) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>, Py<PyArray1<f32>>)> {
         let gil = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, gil.python());
 
         pe!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&["window_size", "verbose"]).as_slice(),
+            build_walk_parameters_list(&["window_size"]).as_slice(),
         ))?;
 
         let parameters = pe!(build_walk_parameters(kwargs))?;
 
-        let (number_of_elements, iter) = pe!(self.inner.cooccurence_matrix(
+        let triples = pe!(self.inner.par_iter_cooccurence_matrix(
             &parameters,
             extract_value!(kwargs, "window_size", usize).unwrap_or(3),
-            extract_value!(kwargs, "verbose", bool)
-        ))?;
+        ))?
+        .collect::<Vec<(NodeT, NodeT, f32)>>();
 
-        let srcs = PyArray1::new(gil.python(), [number_of_elements], false);
-        let dsts = PyArray1::new(gil.python(), [number_of_elements], false);
-        let frequencies = PyArray1::new(gil.python(), [number_of_elements], false);
+        let srcs = PyArray1::new(gil.python(), [triples.len()], false);
+        let dsts = PyArray1::new(gil.python(), [triples.len()], false);
+        let frequencies = PyArray1::new(gil.python(), [triples.len()], false);
 
-        iter.enumerate().for_each(|(i, (src, dst, freq))| unsafe {
-            *srcs.uget_mut(i) = src;
-            *dsts.uget_mut(i) = dst;
-            *frequencies.uget_mut(i) = freq;
-        });
+        let shared_srcs = ThreadDataRaceAware { t: srcs };
+        let shared_dsts = ThreadDataRaceAware { t: dsts };
+        let shared_frequencies = ThreadDataRaceAware { t: frequencies };
+
+        triples
+            .into_par_iter()
+            .enumerate()
+            .for_each(|(i, (src, dst, freq))| unsafe {
+                *shared_srcs.t.uget_mut(i) = src;
+                *shared_dsts.t.uget_mut(i) = dst;
+                *shared_frequencies.t.uget_mut(i) = freq;
+            });
 
         Ok((srcs.to_owned(), dsts.to_owned(), frequencies.to_owned()))
     }

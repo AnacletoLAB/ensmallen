@@ -1,4 +1,4 @@
-use graph::{Graph, NodeT, ThreadDataRaceAware, WalksParameters};
+use graph::{Graph, ThreadDataRaceAware, WalksParameters};
 use indicatif::{ProgressBar, ProgressStyle};
 use rayon::prelude::*;
 use vec_rand::{random_f32, splitmix64};
@@ -8,25 +8,25 @@ pub struct GloVe {
     embedding_size: usize,
     walk_parameters: WalksParameters,
     window_size: usize,
-    clipping_value: f64,
-    alpha: f64,
+    clipping_value: f32,
+    alpha: f32,
 }
 
 impl GloVe {
     /// Return new instance of GloVe model.
     ///
     /// # Arguments
-    /// `embedding_size`: Option<usize> - Size of the embedding.
-    /// `walk_parameters`: Option<WalksParameters> - Parameters to be used within the walks.
-    /// `window_size`: Option<usize> - Window size defining the contexts.
-    /// `clipping_value`: Option<f64> - Value at which we clip the dot product, mostly for numerical stability issues. By default, `100.0`, where the loss is already close to zero.
-    /// `alpha`: Option<f64> - Alpha to use for the loss. By default `0.75`.
+    /// * `embedding_size`: Option<usize> - Size of the embedding.
+    /// * `walk_parameters`: Option<WalksParameters> - Parameters to be used within the walks.
+    /// * `window_size`: Option<usize> - Window size defining the contexts.
+    /// * `clipping_value`: Option<f32> - Value at which we clip the dot product, mostly for numerical stability issues.
+    /// * `alpha`: Option<f32> - Alpha to use for the loss. By default `0.75`.
     pub fn new(
         embedding_size: Option<usize>,
         walk_parameters: Option<WalksParameters>,
         window_size: Option<usize>,
-        clipping_value: Option<f64>,
-        alpha: Option<f64>,
+        clipping_value: Option<f32>,
+        alpha: Option<f32>,
     ) -> Result<Self, String> {
         // Handle the values of the default parameters.
         let embedding_size = embedding_size.unwrap_or(100);
@@ -78,8 +78,8 @@ impl GloVe {
         graph: &Graph,
         node_embedding: &mut [f32],
         epochs: Option<usize>,
-        learning_rate: Option<f64>,
-        learning_rate_decay: Option<f64>,
+        learning_rate: Option<f32>,
+        learning_rate_decay: Option<f32>,
         verbose: Option<bool>,
     ) -> Result<(), String> {
         let epochs = epochs.unwrap_or(10);
@@ -89,38 +89,18 @@ impl GloVe {
         let mut learning_rate = learning_rate.unwrap_or(0.01);
         let learning_rate_decay = learning_rate_decay.unwrap_or(0.9);
 
-        let (number_of_sampled_cooccurrences, normalized_cooccurrence_iterator) =
-            graph.cooccurence_matrix(&walk_parameters, self.window_size, Some(verbose))?;
-
-        let mut srcs: Vec<NodeT> = vec![0; number_of_sampled_cooccurrences];
-        let mut dsts: Vec<NodeT> = vec![0; number_of_sampled_cooccurrences];
-        let mut frequencies: Vec<f64> = vec![0.0; number_of_sampled_cooccurrences];
-
-        normalized_cooccurrence_iterator
-            .zip(
-                srcs.iter_mut()
-                    .zip(dsts.iter_mut())
-                    .zip(frequencies.iter_mut()),
-            )
-            .for_each(
-                |((src, dst, frequency), ((target_src, target_dst), target_frequency))| {
-                    *target_src = src;
-                    *target_dst = dst;
-                    *target_frequency = frequency;
-                },
-            );
-
         // This is used to scale the dot product to avoid getting NaN due to
         // exp(dot) being inf and the sigmoid becomes Nan
         // we multiply by context size so we have a faster division when computing
         // the dotproduct of the mean contexted mebedding
-        let scale_factor = (self.embedding_size as f64).sqrt();
+        let scale_factor = (self.embedding_size as f32).sqrt();
 
         if !graph.has_nodes() {
             return Err("The provided graph does not have any node.".to_string());
         }
 
         let nodes_number = graph.get_nodes_number();
+        let log_squared_nodes_number = 2.0 * (nodes_number as f32).ln();
         let expected_node_embedding_len = self.embedding_size * nodes_number as usize;
         if node_embedding.len() != expected_node_embedding_len {
             return Err(format!(
@@ -139,7 +119,18 @@ impl GloVe {
         // Update the random state
         random_state = splitmix64(random_state);
 
+        // Allocate and populate the hidden layer
+        let hidden_layer = (0..node_embedding.len())
+            .into_par_iter()
+            .map(|i| 2.0 * random_f32(splitmix64(random_state + i as u64)) - 1.0)
+            .collect::<Vec<f32>>();
+
+        // Update the random state
+        random_state = splitmix64(random_state);
+
+        // Wrapping the layers into shared structures.
         let shared_node_embedding = ThreadDataRaceAware::new(node_embedding);
+        let shared_hidden_layer = ThreadDataRaceAware::new(hidden_layer);
 
         // Depending whether verbosity was requested by the user
         // we create or not a visible progress bar to show the progress
@@ -162,33 +153,45 @@ impl GloVe {
             walk_parameters = walk_parameters.set_random_state(Some(random_state as usize));
 
             // We start to compute the new gradients.
-            let total_variation = srcs
-                .par_iter().copied().map(|src| src as usize)
-                .zip(dsts.par_iter().copied().map(|src| src as usize))
-                .zip(frequencies.par_iter().copied())
-                .map(|((src, dst), freq)| unsafe {
+            let total_variation = graph
+                .par_iter_cooccurence_matrix(
+                    &walk_parameters,
+                    self.window_size,
+                )?
+                .map(|(src, dst, freq)| unsafe {
                     let src_embedding = &mut (*shared_node_embedding.get())
-                        [src * self.embedding_size..(src + 1) * self.embedding_size];
-                    let dst_embedding = &mut (*shared_node_embedding.get())
-                        [dst * self.embedding_size..(dst + 1) * self.embedding_size];
+                        [(src as usize) * self.embedding_size..((src as usize) + 1) * self.embedding_size];
+                    let dst_hidden = &mut (*shared_hidden_layer.get())
+                        [(dst as usize) * self.embedding_size..(dst as usize + 1) * self.embedding_size];
 
                     let dot = src_embedding
                         .iter()
                         .copied()
-                        .zip(dst_embedding.iter().copied())
-                        .map(|(src_feature, dst_feature)| (src_feature * dst_feature) as f64)
-                        .sum::<f64>()
+                        .zip(dst_hidden.iter().copied())
+                        .map(|(src_feature, dst_feature)| src_feature * dst_feature)
+                        .sum::<f32>()
                         / scale_factor;
 
                     if dot > self.clipping_value || dot < -self.clipping_value {
                         return 0.0;
                     }
 
-                    let loss: f32 = (2.0 * freq.powf(self.alpha) * (dot - freq.ln()) * learning_rate) as f32;
+                    let log_src_degree =
+                        (graph.get_unchecked_node_degree_from_node_id(src) as f32).ln();
+                    let log_dst_degree =
+                        (graph.get_unchecked_node_degree_from_node_id(dst) as f32).ln();
+
+                    let normalized_log_preferential_attachment =
+                        log_src_degree + log_dst_degree - log_squared_nodes_number;
+
+                    let loss: f32 = (2.0
+                        * freq.powf(self.alpha)
+                        * (dot + normalized_log_preferential_attachment - freq.ln())
+                        * learning_rate) as f32;
 
                     src_embedding
                         .iter_mut()
-                        .zip(dst_embedding.iter_mut())
+                        .zip(dst_hidden.iter_mut())
                         .for_each(|(src_feature, dst_feature)| {
                             *src_feature -= *dst_feature * loss;
                             *dst_feature -= *src_feature * loss;

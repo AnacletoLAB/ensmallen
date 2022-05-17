@@ -95,8 +95,8 @@ impl GloVe {
                 extract_value_rust_result!(kwargs, "embedding_size", usize),
                 Some(parameters),
                 extract_value_rust_result!(kwargs, "window_size", usize),
-                extract_value_rust_result!(kwargs, "clipping_value", f64),
-                extract_value_rust_result!(kwargs, "alpha", f64),
+                extract_value_rust_result!(kwargs, "clipping_value", f32),
+                extract_value_rust_result!(kwargs, "alpha", f32),
             ))?,
         })
     }
@@ -148,8 +148,8 @@ impl GloVe {
             &graph.inner,
             embedding_slice,
             extract_value_rust_result!(kwargs, "epochs", usize),
-            extract_value_rust_result!(kwargs, "learning_rate", f64),
-            extract_value_rust_result!(kwargs, "learning_rate_decay", f64),
+            extract_value_rust_result!(kwargs, "learning_rate", f32),
+            extract_value_rust_result!(kwargs, "learning_rate_decay", f32),
             extract_value_rust_result!(kwargs, "verbose", bool),
         ))?;
 

@@ -1,11 +1,12 @@
 use super::*;
 use atomic_float::AtomicF64;
 use bitvec::prelude::*;
+use hashbrown::HashMap;
 use indicatif::{ParallelProgressIterator, ProgressIterator};
 use itertools::Itertools;
 use num_traits::Pow;
 use rayon::prelude::*;
-use std::collections::{HashMap, VecDeque};
+use std::collections::VecDeque;
 use vec_rand::{sample_uniform, splitmix64};
 
 #[manual_binding]
@@ -52,77 +53,6 @@ pub fn word2vec<'a>(
     })
 }
 
-#[manual_binding]
-/// Return triple with CSR representation of cooccurrence matrix.
-///
-/// The first vector has the sources, the second vector the destinations
-/// and the third one contains the min-max normalized frequencies.
-///
-/// # Arguments
-///
-/// * `sequences`: impl ParallelIterator<Item = Vec<NodeT>> - the sequence of sequences of integers to preprocess.
-/// * `window_size`: Option<usize> - Window size to consider for the sequences.
-/// * `verbose`: Option<bool> - Whether to show the progress bars. The default behaviour is false.
-///     
-pub fn cooccurence_matrix(
-    sequences: impl ParallelIterator<Item = Vec<NodeT>>,
-    window_size: usize,
-    number_of_sequences: usize,
-    verbose: Option<bool>,
-) -> Result<(usize, impl Iterator<Item = (NodeT, NodeT, f64)>)> {
-    let verbose = verbose.unwrap_or(false);
-    let mut cooccurence_matrix: HashMap<(NodeT, NodeT), f64> = HashMap::new();
-    let mut max_frequency = 0.0;
-    let pb1 = get_loading_bar(verbose, "Computing frequencies", number_of_sequences);
-
-    // TODO!: Avoid this collect and create the cooccurrence matrix in a parallel way.
-    // We are currently working on this but is terribly non-trivial,
-    // as most parallel implementations end up being slower than sequential
-    // ones or require massive amounts of additional memory.
-    let vec = sequences.collect::<Vec<Vec<NodeT>>>();
-    vec.iter().progress_with(pb1).for_each(|sequence| {
-        let walk_length = sequence.len();
-        for (central_index, &central_word_id) in sequence.iter().enumerate() {
-            let upperbound = std::cmp::min(1 + window_size, walk_length - central_index);
-
-            for distance in 1..upperbound {
-                let context_id = sequence[central_index + distance];
-
-                let (smaller, bigger) = (
-                    std::cmp::min(central_word_id, context_id),
-                    std::cmp::max(central_word_id, context_id),
-                );
-
-                let freq = 1.0 / distance as f64;
-
-                // Get the current value for this pair of nodes
-                let ptr = cooccurence_matrix
-                    .entry((smaller, bigger))
-                    .and_modify(|e| *e += freq)
-                    .or_insert(freq);
-                // Update the max
-                if *ptr > max_frequency {
-                    max_frequency = *ptr;
-                }
-            }
-        }
-    });
-
-    let number_of_elements = cooccurence_matrix.len();
-    let pb2 = get_loading_bar(
-        verbose,
-        "Converting mapping into CSR matrix",
-        cooccurence_matrix.len(),
-    );
-    Ok((
-        number_of_elements,
-        cooccurence_matrix
-            .into_iter()
-            .progress_with(pb2)
-            .map(move |((word, context), frequency)| (word, context, frequency / max_frequency)),
-    ))
-}
-
 /// # Preprocessing for ML algorithms on graph.
 impl Graph {
     #[manual_binding]
@@ -165,25 +95,38 @@ impl Graph {
     /// and the third one contains the min-max normalized frequencies.
     ///
     /// # Arguments
-    ///
     /// * `walks_parameters`: &'a WalksParameters - the walks parameters.
     /// * `window_size`: usize - Window size to consider for the sequences.
-    /// * `verbose`: Option<bool> - Whether to show the progress bars. The default behaviour is false.
-    ///     
-    pub fn cooccurence_matrix<'a>(
+    pub fn par_iter_cooccurence_matrix<'a>(
         &'a self,
         walks_parameters: &'a WalksParameters,
         window_size: usize,
-        verbose: Option<bool>,
-    ) -> Result<(usize, impl Iterator<Item = (NodeT, NodeT, f64)> + 'a)> {
-        self.must_have_edges()?;
-        let walks = self.par_iter_complete_walks(walks_parameters)?;
-        cooccurence_matrix(
-            walks,
-            window_size,
-            (self.get_unique_source_nodes_number() * walks_parameters.iterations) as usize,
-            verbose,
-        )
+    ) -> Result<impl ParallelIterator<Item = (NodeT, NodeT, f32)> + 'a> {
+        Ok(self
+            .par_iter_complete_walks(walks_parameters)?
+            .flat_map(move |sequence| {
+                let mut cooccurence_matrix: HashMap<(NodeT, NodeT), f32> = HashMap::new();
+                (0..sequence.len())
+                    .map(|position| {
+                        (
+                            sequence[position],
+                            &sequence[(position.saturating_sub(window_size)
+                                ..(position + window_size).min(sequence.len()))],
+                        )
+                    })
+                    .for_each(|(central_id, context)| {
+                        context.iter().copied().for_each(|context_id| {
+                            // Get the current value for this pair of nodes
+                            cooccurence_matrix
+                                .entry((central_id, context_id))
+                                .and_modify(|e| *e += 1.0)
+                                .or_insert(1.0);
+                        });
+                    });
+                cooccurence_matrix
+                    .into_par_iter()
+                    .map(move |((central_id, context_id), freq)| (central_id, context_id, freq))
+            }))
     }
 
     #[manual_binding]
@@ -520,15 +463,8 @@ impl Graph {
         random_state: u64,
         batch_size: usize,
         use_zipfian_sampling: Option<bool>,
-    ) -> impl IndexedParallelIterator<
-        Item = (
-            NodeT,
-            NodeT,
-            NodeT,
-            NodeT,
-            Option<EdgeTypeT>,
-        ),
-    > + '_ {
+    ) -> impl IndexedParallelIterator<Item = (NodeT, NodeT, NodeT, NodeT, Option<EdgeTypeT>)> + '_
+    {
         let use_zipfian_sampling = use_zipfian_sampling.unwrap_or(true);
         let random_state = splitmix64(random_state);
         (0..batch_size).into_par_iter().map(move |i| unsafe {
@@ -583,20 +519,24 @@ impl Graph {
             Option<EdgeTypeT>,
         ),
     > + '_ {
-        self.par_iter_siamese_mini_batch(
-            random_state,
-            batch_size,
-            use_zipfian_sampling
-        ).map(move |(src, dst, not_src, not_dst, edge_type)|unsafe {
-            (
-                src, dst, not_src, not_dst,
-                self.get_unchecked_node_type_ids_from_node_id(src).map(|x| x.clone()),
-                self.get_unchecked_node_type_ids_from_node_id(dst).map(|x| x.clone()),
-                self.get_unchecked_node_type_ids_from_node_id(not_src).map(|x| x.clone()),
-                self.get_unchecked_node_type_ids_from_node_id(not_dst).map(|x| x.clone()),
-                edge_type
-            )
-        })
+        self.par_iter_siamese_mini_batch(random_state, batch_size, use_zipfian_sampling)
+            .map(move |(src, dst, not_src, not_dst, edge_type)| unsafe {
+                (
+                    src,
+                    dst,
+                    not_src,
+                    not_dst,
+                    self.get_unchecked_node_type_ids_from_node_id(src)
+                        .map(|x| x.clone()),
+                    self.get_unchecked_node_type_ids_from_node_id(dst)
+                        .map(|x| x.clone()),
+                    self.get_unchecked_node_type_ids_from_node_id(not_src)
+                        .map(|x| x.clone()),
+                    self.get_unchecked_node_type_ids_from_node_id(not_dst)
+                        .map(|x| x.clone()),
+                    edge_type,
+                )
+            })
     }
 
     #[manual_binding]

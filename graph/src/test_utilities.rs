@@ -1868,12 +1868,9 @@ pub fn test_dump_graph(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
     Ok(())
 }
 
-pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
+pub fn test_embiggen_preprocessing(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
     let walker = first_order_walker(&graph)?;
     if !graph.directed {
-        let (terms_number, iterator) = graph.cooccurence_matrix(&walker, 3, verbose)?;
-        assert_eq!(terms_number, iterator.count());
-
         let window_size = 3;
         let batch_size = 256;
         let data = graph
