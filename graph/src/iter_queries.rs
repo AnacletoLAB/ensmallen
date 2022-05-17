@@ -226,6 +226,39 @@ impl Graph {
         }
     }
 
+    /// Return iterator over edge type ids of the edges connected to the given source node id.
+    ///
+    /// # Arguments
+    /// * `src`: NodeT - The node whose neighbours are to be retrieved.
+    ///
+    /// # Safety
+    /// The behaviour is mot define and may lead to panic when the source node ID
+    /// is not present in the graph or the graph does not have edge type ids.
+    pub unsafe fn iter_unchecked_edge_type_id_from_source_node_id(
+        &self,
+        src: NodeT,
+    ) -> impl Iterator<Item = Option<EdgeTypeT>> + '_ {
+        self.iter_unchecked_edge_ids_from_source_node_id(src)
+            .map(move |edge_id| self.get_unchecked_edge_type_id_from_edge_id(edge_id as EdgeT))
+    }
+
+    /// Return iterator over edge type ids of the edges connected to the given source node id.
+    ///
+    /// # Arguments
+    /// * `src`: NodeT - The node whose neighbours are to be retrieved.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    /// * If the given source node ID does not exist in the graph.
+    pub fn iter_edge_type_id_from_source_node_id(
+        &self,
+        src: NodeT,
+    ) -> Result<impl Iterator<Item = Option<EdgeTypeT>> + '_> {
+        self.validate_node_id(src)?;
+        self.must_have_edge_types()?;
+        Ok(unsafe { self.iter_unchecked_edge_type_id_from_source_node_id(src) })
+    }
+
     /// Return iterator over NodeT of unique destinations of the given node src, excluding selfloops.
     ///
     /// # Arguments

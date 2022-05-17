@@ -93,11 +93,17 @@ impl Graph {
     /// * `sample_only_edges_with_heterogeneous_node_types`: Option<bool> - Whether to sample negative edges only with source and destination nodes that have different node types.
     /// * `minimum_node_degree`: Option<NodeT> - The minimum node degree of either the source or destination node to be sampled. By default 0.
     /// * `maximum_node_degree`: Option<NodeT> - The maximum node degree of either the source or destination node to be sampled. By default, the number of nodes.
+    /// * `source_node_types_names: Option<Vec<String>> - Node type names of the nodes to be samples as sources. If a node has any of the provided node types, it can be sampled as a source node.
+    /// * `destination_node_types_names`: Option<Vec<String>> - Node type names of the nodes to be samples as destinations. If a node has any of the provided node types, it can be sampled as a destination node.
+    /// * `source_edge_types_names`: Option<Vec<String>> - Edge type names of the nodes to be samples as sources. If a node has any of the provided edge types, it can be sampled as a source node.
+    /// * `destination_edge_types_names`: Option<Vec<String>> - Edge type names of the nodes to be samples as destinations. If a node has any of the provided edge types, it can be sampled as a destination node.
+    /// * `source_nodes_prefixes`: Option<Vec<String>> - Prefixes of the nodes names to be samples as sources. If a node starts with any of the provided prefixes, it can be sampled as a source node.
+    /// * `destination_nodes_prefixes`: Option<Vec<String>> - Prefixes of the nodes names to be samples as destinations. If a node starts with any of the provided prefixes, it can be sampled as a destinations node.
     /// * `use_zipfian_sampling`: Option<bool> - Whether to sample the nodes using zipfian distribution. By default True. Not using this may cause significant biases.
     ///
     /// # Raises
     /// * If the `sample_only_edges_with_heterogeneous_node_types` argument is provided as true, but the graph does not have node types.
-    pub fn sample_negatives(
+    pub fn get_negative_graph(
         &self,
         number_of_negative_samples: EdgeT,
         random_state: Option<EdgeT>,
@@ -106,6 +112,12 @@ impl Graph {
         sample_only_edges_with_heterogeneous_node_types: Option<bool>,
         minimum_node_degree: Option<NodeT>,
         maximum_node_degree: Option<NodeT>,
+        source_node_types_names: Option<Vec<String>>,
+        destination_node_types_names: Option<Vec<String>>,
+        source_edge_types_names: Option<Vec<String>>,
+        destination_edge_types_names: Option<Vec<String>>,
+        source_nodes_prefixes: Option<Vec<String>>,
+        destination_nodes_prefixes: Option<Vec<String>>,
         use_zipfian_sampling: Option<bool>,
     ) -> Result<Graph> {
         if number_of_negative_samples == 0 {
@@ -122,6 +134,76 @@ impl Graph {
                 "with a wrong filter operation or use the wrong parametrization to load the graph."
             ).to_string());
         }
+
+        let source_node_types_ids = if let Some(source_node_types_names) = source_node_types_names {
+            if source_node_types_names.is_empty() {
+                return Err("The provided vector `source_node_types_names` is empty!".to_string());
+            }
+            Some(
+                source_node_types_names
+                    .into_iter()
+                    .map(|node_type_name| {
+                        self.get_node_type_id_from_node_type_name(&node_type_name)
+                    })
+                    .collect::<Result<Vec<NodeTypeT>>>()?,
+            )
+        } else {
+            None
+        };
+
+        let destination_node_types_ids =
+            if let Some(destination_node_types_names) = destination_node_types_names {
+                if destination_node_types_names.is_empty() {
+                    return Err(
+                        "The provided vector `destination_node_types_names` is empty!".to_string(),
+                    );
+                }
+                Some(
+                    destination_node_types_names
+                        .into_iter()
+                        .map(|node_type_name| {
+                            self.get_node_type_id_from_node_type_name(&node_type_name)
+                        })
+                        .collect::<Result<Vec<NodeTypeT>>>()?,
+                )
+            } else {
+                None
+            };
+
+        let source_edge_types_ids = if let Some(source_edge_types_names) = source_edge_types_names {
+            if source_edge_types_names.is_empty() {
+                return Err("The provided vector `source_edge_types_names` is empty!".to_string());
+            }
+            Some(
+                source_edge_types_names
+                    .into_iter()
+                    .map(|node_type_name| {
+                        self.get_node_type_id_from_node_type_name(&node_type_name)
+                    })
+                    .collect::<Result<Vec<EdgeTypeT>>>()?,
+            )
+        } else {
+            None
+        };
+
+        let destination_edge_types_ids =
+            if let Some(destination_edge_types_names) = destination_edge_types_names {
+                if destination_edge_types_names.is_empty() {
+                    return Err(
+                        "The provided vector `destination_edge_types_names` is empty!".to_string(),
+                    );
+                }
+                Some(
+                    destination_edge_types_names
+                        .into_iter()
+                        .map(|node_type_name| {
+                            self.get_node_type_id_from_node_type_name(&node_type_name)
+                        })
+                        .collect::<Result<Vec<EdgeTypeT>>>()?,
+                )
+            } else {
+                None
+            };
 
         let use_zipfian_sampling = use_zipfian_sampling.unwrap_or(true);
         let only_from_same_component = only_from_same_component.unwrap_or(false);
@@ -217,6 +299,82 @@ impl Graph {
                     return None;
                 }
 
+                if let Some(source_node_types_ids) = &source_node_types_ids {
+                    if let Some(src_node_type) = self.get_node_type_ids_from_node_id(src).unwrap() {
+                        if source_node_types_ids
+                            .iter()
+                            .any(|node_type_it| src_node_type.contains(node_type_it))
+                        {
+                            return None;
+                        }
+                    } else {
+                        return None;
+                    }
+                }
+
+                if let Some(destination_node_types_ids) = &destination_node_types_ids {
+                    if let Some(dst_node_type) = self.get_node_type_ids_from_node_id(src).unwrap() {
+                        if destination_node_types_ids
+                            .iter()
+                            .any(|node_type_it| dst_node_type.contains(node_type_it))
+                        {
+                            return None;
+                        }
+                    } else {
+                        return None;
+                    }
+                }
+
+                if let Some(source_nodes_prefixes) = &source_nodes_prefixes {
+                    let src_node_name = unsafe { self.get_unchecked_node_name_from_node_id(src) };
+                    if source_nodes_prefixes
+                        .iter()
+                        .any(|prefix| src_node_name.starts_with(prefix))
+                    {
+                        return None;
+                    }
+                }
+
+                if let Some(destination_nodes_prefixes) = &destination_nodes_prefixes {
+                    let dst_node_name = unsafe { self.get_unchecked_node_name_from_node_id(src) };
+                    if destination_nodes_prefixes
+                        .iter()
+                        .any(|prefix| dst_node_name.starts_with(prefix))
+                    {
+                        return None;
+                    }
+                }
+
+                if let Some(source_edge_types_ids) = &source_edge_types_ids {
+                    if !source_edge_types_ids
+                        .iter()
+                        .copied()
+                        .any(|edge_type_id| unsafe {
+                            self.has_unchecked_edge_from_node_id_and_edge_type_id(
+                                src,
+                                Some(edge_type_id),
+                            )
+                        })
+                    {
+                        return None;
+                    }
+                }
+
+                if let Some(destination_edge_types_ids) = &destination_edge_types_ids {
+                    if !destination_edge_types_ids
+                        .iter()
+                        .copied()
+                        .any(|edge_type_id| unsafe {
+                            self.has_unchecked_edge_from_node_id_and_edge_type_id(
+                                dst,
+                                Some(edge_type_id),
+                            )
+                        })
+                    {
+                        return None;
+                    }
+                }
+
                 if !self.has_selfloops() && src == dst {
                     return None;
                 }
@@ -290,16 +448,13 @@ impl Graph {
                 .filter_map(|(src, dst)| sampling_filter_map(src, dst))
                 .collect::<Vec<EdgeT>>()
             } else {
-                self.par_iter_random_node_ids(
-                    number_of_negative_samples as usize,
-                    src_random_state,
-                )
-                .zip(self.par_iter_random_node_ids(
-                    number_of_negative_samples as usize,
-                    dst_random_state,
-                ))
-                .filter_map(|(src, dst)| sampling_filter_map(src, dst))
-                .collect::<Vec<EdgeT>>()
+                self.par_iter_random_node_ids(number_of_negative_samples as usize, src_random_state)
+                    .zip(self.par_iter_random_node_ids(
+                        number_of_negative_samples as usize,
+                        dst_random_state,
+                    ))
+                    .filter_map(|(src, dst)| sampling_filter_map(src, dst))
+                    .collect::<Vec<EdgeT>>()
             };
 
             for edge_id in sampled_edge_ids.iter() {

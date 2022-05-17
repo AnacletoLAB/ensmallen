@@ -1793,11 +1793,17 @@ pub fn test_negative_edges_generation(graph: &mut Graph, verbose: Option<bool>) 
         if *only_from_same_component && graph.get_number_of_directed_edges() < 100 {
             continue;
         }
-        let negatives = graph.sample_negatives(
+        let negatives = graph.get_negative_graph(
             graph.get_edges_number(),
             None,
             None,
             Some(*only_from_same_component),
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
             None,
             None,
             None,
